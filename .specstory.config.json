@@ -1,0 +1,31 @@
+{
+  "projectName": "Boise Gun Club - Treasure Valley Firearms Hub",
+  "specsDirectory": "./specs",
+  "enforceSpecsFirst": true,
+  "requiredChecks": [
+    "Design System Compliance",
+    "Acceptance Criteria",
+    "Prompt History"
+  ],
+  "integrations": {
+    "storybook": {
+      "storiesDirectory": "./src/stories",
+      "linkSpecs": true
+    },
+    "components": {
+      "directory": "./src/components",
+      "enforcePatterns": true
+    }
+  },
+  "aiEnforcement": {
+    "checklistPath": "./_resources/AI_ENFORCEMENT_CHECKLIST.md",
+    "designSystemPath": "./src/app/globals.css",
+    "componentPatternPath": "./src/components/ui/_component-pattern.tsx"
+  },
+  "qualityGates": {
+    "requireSpec": true,
+    "requirePromptHistory": true,
+    "requireDesignCompliance": true,
+    "requireLinkedFiles": true
+  }
+}

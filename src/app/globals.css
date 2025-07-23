@@ -1,26 +1,136 @@
+/* BGCv4 Design System Core - Copy to globals.css in new project */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ================== BGCv4 DESIGN SYSTEM CORE ================== */
+  
+  /* Typography - Essential fonts */
+  --font-heading: "Rajdhani", "Inter", "system-ui", sans-serif;
+  --font-body: "Noto Sans", "Inter", "system-ui", sans-serif;
+  --font-serif: "Noto Serif", "Georgia", "Times New Roman", serif;
+  
+  /* ================== BRAND COLORS (26 total) ================== */
+  
+  /* Primary Brand Colors */
+  --color-leonard-yellow: #F2CB05;
+  --color-lahoma-orange: #F28705;
+  --color-rich-black: #0A0A0A;
+  --color-pure-white: #FFFFFF;
+  
+  /* Light Theme - Spring Day Along The East Fork of The Owyhee River */
+  --color-cloudy-day-white: #f8f6f1;
+  --color-overcast: #ede7de;
+  --color-sand-dune-brown: #c08051;
+  --color-craters-of-the-moon: #372103;
+  --color-desert-cliff-brown: #693e21;
+  --color-clay-pidgeon-orange: #F23005;
+  --color-gunclub-orange: #f07b1d;
+  --color-wildeye-susan-yellow: #E3C03C;
+  --color-idaho-sky-blue: #5198cd;
+  --color-snake-river-blue: #3c81c0;
+  --color-owyhee-field-green: #6f7822;
+  --color-boise-yard-green: #909233;
+  --color-scoring-bench-red: #8C394B;
+  
+  /* Dark Theme - Misty Fall Morning in the Cascades */
+  --color-kent-slate-gray: #2F3135;
+  --color-ed-charcoal: #4B4B4B;
+  --color-pidgeon-clay-gray: #494657;
+  --color-chester-white: #FDFDFD;
+  --color-don-gray: #EEF1F7;
+  --color-jerry-orange: #F25C05;
+  --color-abe-red: #F23005;
+  --color-clubhouse-roof-blue: #4982A6;
+  --color-clubhouse-walk-gray: #C9D2EF;
+  --color-clubhouse-lawn-green: #3F6331;
+  
+  /* Legacy Compatibility */
+  --color-brand-blue: #5198cd;
+  --color-brand-green: #6f7822;
+  --color-brand-red: #8C394B;
+  
+  /* ================== ANIMATION SYSTEM ================== */
+  --timing-fast: 150ms;
+  --timing-normal: 250ms;
+  --timing-slow: 350ms;
+  --ease-stripe: cubic-bezier(0.215, 0.61, 0.355, 1);
+  
+  /* ================== SHADOW SYSTEM ================== */
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Brand-Colored Shadows */
+  --shadow-premium: 0 4px 8px -2px rgba(242, 203, 5, 0.25), 0 2px 4px -1px rgba(242, 135, 5, 0.15);
+  --shadow-elite: 0 8px 16px -4px rgba(242, 203, 5, 0.3), 0 4px 8px -2px rgba(242, 135, 5, 0.2);
+  
+  /* ================== GRADIENTS ================== */
+  --gradient-primary: linear-gradient(135deg, var(--color-leonard-yellow) 0%, var(--color-lahoma-orange) 100%);
+  --gradient-premium: linear-gradient(135deg, var(--color-leonard-yellow) 0%, var(--color-lahoma-orange) 45%, var(--color-leonard-yellow) 100%);
+  --gradient-elite: linear-gradient(135deg, var(--color-leonard-yellow) 0%, var(--color-lahoma-orange) 25%, var(--color-leonard-yellow) 50%, var(--color-lahoma-orange) 75%, var(--color-leonard-yellow) 100%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Light theme variables */
+    --background: #f8f6f1;
+    --foreground: #372103;
+    --card: #ffffff;
+    --card-foreground: #372103;
+    --border: #e5e7eb;
+    --input: #f8f6f1;
+    --ring: #F2CB05;
+  }
+
+  .dark {
+    /* Dark theme variables */
+    --background: #2F3135;
+    --foreground: #FDFDFD;
+    --card: #2F3135;
+    --card-foreground: #FDFDFD;
+    --border: #374151;
+    --input: #374151;
+    --ring: #F2CB05;
   }
 }
 
+/* Typography hierarchy */
 body {
-  background: var(--background);
+  font-family: var(--font-body);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+/* Utility classes */
+.font-heading { font-family: var(--font-heading); }
+.font-body { font-family: var(--font-body); }
+.font-serif { font-family: var(--font-serif); }
+
+.transition-fast { transition: all var(--timing-fast) var(--ease-stripe); }
+.transition-normal { transition: all var(--timing-normal) var(--ease-stripe); }
+
+.bg-gradient-premium { background: var(--gradient-premium); }
+.bg-gradient-elite { background: var(--gradient-elite); }
+.shadow-premium { box-shadow: var(--shadow-premium); }
+.shadow-elite { box-shadow: var(--shadow-elite); }
+
+/* Animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
 }

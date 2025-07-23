@@ -1,0 +1,666 @@
+# TBGC Design System: Complete Implementation Standards
+
+## 🎯 Design Philosophy
+
+**The Boise Gun Club: A Treasure Valley Firearm & Firearm Sports Collective**
+
+This design system represents the pinnacle of firearms industry web design, combining:
+- **Stripe-Inspired Precision:** 150ms cubic-bezier transitions, sophisticated shadow systems, micro-interactions
+- **ClickUp-Inspired Vibrancy:** Strategic gradients, professional glassmorphism, selective color splashes  
+- **Windows 11 Mica Integration:** Brand-aware noise patterns, material depth, dynamic backdrop blur
+
+**Quality Standard:** Flagship-level execution suitable for Fortune 500 presentation and innervate.agency portfolio showcase.
+
+---
+
+## 🎨 Complete Color System: "Idaho Firearms Heritage Palette" (26 Colors)
+
+### **Primary Brand Colors**
+```css
+--color-brass-yellow: #F2CB05         /* Primary CTA, highlights, premium actions */
+--color-copper-orange: #F28705        /* Secondary accent, hover states, energy */
+--color-gunmetal-black: #0A0A0A       /* Primary text, strong contrast */
+--color-nickel-white: #FFFFFF         /* Clean backgrounds, negative space */
+```
+
+**Tailwind Usage:**
+```tsx
+<Button className="bg-brass-yellow text-gunmetal-black hover:bg-copper-orange">
+<Card className="bg-nickel-white border-brass-yellow/20">
+```
+
+### **Light Theme: Spring Day at the Range**
+```css
+--color-range-white: #f8f6f1              /* Primary warm background */
+--color-shooting-bench: #ede7de           /* Secondary surface, card backgrounds */
+--color-walnut-stock: #c08051             /* Earth tone accents, warm highlights */
+--color-blued-steel: #372103              /* Primary text, strong contrast */
+--color-case-hardened: #693e21            /* Secondary text, muted content */
+--color-muzzle-flash: #F23005             /* Error states, urgent actions */
+--color-recoil-pad: #f07b1d               /* Info accents, notification badges */
+--color-sight-gold: #E3C03C               /* Warning states, caution indicators */
+--color-scope-blue: #5198cd               /* Links, info states, navigation */
+--color-trigger-blue: #3c81c0             /* Hover states for blue elements */
+--color-rifling-green: #6f7822            /* Success states, positive feedback */
+--color-bore-sight-green: #909233         /* Secondary success, nature elements */
+--color-safety-red: #8C394B               /* Destructive actions, critical warnings */
+```
+
+**Implementation Examples:**
+```tsx
+// Hero Section
+<section className="bg-range-white text-blued-steel">
+  <h1 className="font-rajdhani text-6xl font-black text-gunmetal-black">
+    THE BOISE GUN CLUB
+  </h1>
+  <p className="text-case-hardened">A Treasure Valley Firearms Collective</p>
+</section>
+
+// Business Directory Card
+<Card className="bg-shooting-bench border-l-4 border-l-scope-blue hover:shadow-md">
+  <CardHeader className="text-blued-steel">
+    <CardTitle>Idaho Firearms Training</CardTitle>
+  </CardHeader>
+  <CardContent className="text-case-hardened">
+    Professional instruction for all skill levels
+  </CardContent>
+</Card>
+
+// CTA Button
+<Button className="bg-brass-yellow text-gunmetal-black hover:bg-copper-orange shadow-premium">
+  Join the Community
+</Button>
+```
+
+### **Dark Theme: Evening Hunt in the Mountains**
+```css
+--color-night-sight: #2F3135              /* Primary dark background */
+--color-carbon-fiber: #4B4B4B             /* Elevated surfaces, cards */
+--color-tactical-gray: #494657            /* Muted surfaces, secondary cards */
+--color-titanium-white: #FDFDFD           /* High contrast text */
+--color-stainless-steel: #EEF1F7          /* Secondary text, descriptions */
+--color-flash-hider: #F25C05              /* Dark theme energy, accents */
+--color-crimson-trace: #F23005            /* Dark theme alerts, errors */
+--color-cerakote-blue: #4982A6            /* Dark theme info, links */
+--color-ghost-ring: #C9D2EF               /* Dark theme muted elements */
+--color-woodland-camo: #3F6331            /* Dark theme success states */
+```
+
+**Dark Mode Implementation:**
+```css
+@layer base {
+  .dark {
+    --background: var(--color-night-sight);
+    --foreground: var(--color-titanium-white);
+    --card: var(--color-carbon-fiber);
+    --card-foreground: var(--color-titanium-white);
+    --muted: var(--color-ghost-ring);
+    --muted-foreground: var(--color-stainless-steel);
+  }
+}
+```
+
+### **Tailwind v4 Modern Syntax (2025 Standard)**
+```tsx
+// ✅ CORRECT: Direct utility class syntax
+<div className="bg-brass-yellow">           // Solid color
+<div className="border-copper-orange/30">   // With opacity
+<div className="text-scope-blue">           // Text colors
+<div className="shadow-premium">            // Brand shadows
+
+// ❌ FORBIDDEN: All legacy syntax variations
+<div className="bg-[#F2CB05]">             // Hardcoded hex
+<div className="bg-[var(--color-brass-yellow)]">  // CSS var syntax
+<div style={{backgroundColor: '#F2CB05'}}>  // Inline styles
+```
+
+---
+
+## 📝 Typography System: Professional Hierarchy
+
+### **Font Stack Implementation**
+```css
+@theme {
+  --font-heading: "Rajdhani", "Inter", "system-ui", sans-serif;
+  --font-body: "Noto Sans", "Inter", "system-ui", sans-serif;
+  --font-serif: "Noto Serif", "Georgia", "Times New Roman", serif;
+}
+```
+
+### **Complete Typography Hierarchy with Examples**
+
+**H1 - Brand Titles (Rajdhani)**
+```tsx
+// Hero section main title
+<h1 className="font-rajdhani text-6xl md:text-8xl font-black uppercase tracking-tight">
+  <span className="text-gunmetal-black">THE BOISE</span>
+  <br />
+  <span className="font-light text-case-hardened">GUN CLUB</span>
+</h1>
+
+// Page titles
+<h1 className="font-rajdhani text-4xl md:text-6xl font-bold uppercase">
+  TREASURE VALLEY DIRECTORY
+</h1>
+```
+
+**H2 - Major Sections (Rajdhani)**
+```tsx
+// Section headers
+<h2 className="font-rajdhani text-3xl md:text-4xl font-semibold mb-6">
+  Find Local Experts
+</h2>
+
+// Feature titles
+<h2 className="font-rajdhani text-2xl md:text-3xl font-bold text-brass-yellow">
+  Premium Memberships
+</h2>
+```
+
+**H3-H6 - Content Hierarchy (Noto Sans)**
+```tsx
+// Card titles
+<h3 className="font-noto-sans text-xl font-semibold text-blued-steel mb-2">
+  Idaho Firearms Training
+</h3>
+
+// List headers
+<h4 className="font-noto-sans text-lg font-semibold text-gunmetal-black">
+  Services Offered
+</h4>
+
+// Subsection titles
+<h5 className="font-noto-sans text-base font-semibold text-case-hardened">
+  Contact Information
+</h5>
+```
+
+**Editorial Subtitles (Noto Serif)**
+```tsx
+// Taglines and sophisticated accents
+<p className="font-serif text-lg italic text-case-hardened/90 mb-4">
+  A comprehensive digital platform uniting the Treasure Valley firearms community
+</p>
+
+// Quote blocks
+<blockquote className="font-serif text-xl italic text-blued-steel border-l-4 border-brass-yellow pl-6">
+  "Safety, education, and community excellence in every interaction."
+</blockquote>
+```
+
+**Body Text (Noto Sans)**
+```tsx
+// Standard paragraphs
+<p className="font-noto-sans text-base md:text-lg leading-relaxed text-case-hardened">
+  Discover top gun shops, ranges, gunsmiths, and instructors across the Treasure Valley.
+</p>
+
+// Form labels
+<label className="font-noto-sans text-sm font-medium text-blued-steel">
+  Business Name
+</label>
+
+// Descriptions
+<p className="font-noto-sans text-sm text-case-hardened leading-normal">
+  Professional instruction for shooters of all skill levels.
+</p>
+```
+
+---
+
+## 🎭 Advanced Animation & Transition System
+
+### **Stripe-Inspired Precision Timing**
+```css
+@theme {
+  --timing-fast: 150ms;        /* Hover states, focus rings, micro-interactions */
+  --timing-normal: 250ms;      /* Standard transitions, modal appearances */
+  --timing-slow: 350ms;        /* Complex animations, page transitions */
+  --ease-stripe: cubic-bezier(0.215, 0.61, 0.355, 1);  /* Professional easing */
+}
+```
+
+### **Professional Utility Classes**
+```css
+.transition-stripe-fast    { transition: all 150ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+.transition-stripe-normal  { transition: all 250ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+.transition-stripe-slow    { transition: all 350ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+```
+
+### **Micro-Interaction Examples**
+```tsx
+// Button with proper hover states
+<Button className="
+  bg-brass-yellow 
+  text-gunmetal-black 
+  transition-stripe-fast 
+  hover:bg-copper-orange 
+  hover:shadow-premium 
+  active:scale-[0.98]
+  focus:ring-2 
+  focus:ring-brass-yellow/50
+">
+  
+// Card with elevation changes
+<Card className="
+  bg-shooting-bench 
+  shadow-sm 
+  transition-stripe-fast 
+  hover:shadow-md 
+  hover:-translate-y-0.5
+">
+
+// Form field focus states
+<Input className="
+  border-case-hardened/30 
+  transition-stripe-fast 
+  focus:border-brass-yellow 
+  focus:ring-2 
+  focus:ring-brass-yellow/20
+">
+```
+
+### **Advanced Keyframe Animations**
+```css
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-premium {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(242, 203, 5, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(242, 203, 5, 0); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+  background-size: 200% 100%;
+}
+
+.animate-pulse-premium {
+  animation: pulse-premium 2s infinite;
+}
+```
+
+---
+
+## 🌈 Sophisticated Gradient & Effect System
+
+### **Brand Gradient Definitions**
+```css
+@theme {
+  --gradient-primary: linear-gradient(135deg, #F2CB05 0%, #F28705 100%);
+  --gradient-premium: linear-gradient(135deg, #F2CB05 0%, #F28705 45%, #F2CB05 100%);
+  --gradient-elite: linear-gradient(135deg, #F2CB05 0%, #F28705 25%, #F2CB05 50%, #F28705 75%, #F2CB05 100%);
+  --gradient-subtle: linear-gradient(135deg, rgba(242, 203, 5, 0.05) 0%, rgba(242, 135, 5, 0.05) 100%);
+}
+```
+
+### **Utility Classes with Examples**
+```tsx
+// Premium CTA button
+<Button className="bg-gradient-premium text-gunmetal-black animate-shimmer">
+  Upgrade to Premium
+</Button>
+
+// Elite membership card
+<Card className="bg-gradient-elite shadow-elite animate-pulse-premium">
+  <CardHeader>
+    <h3 className="text-gunmetal-black font-bold">Elite Membership</h3>
+  </CardHeader>
+</Card>
+
+// Subtle background overlay
+<div className="bg-gradient-subtle backdrop-blur-sm">
+  Content with subtle brand gradient background
+</div>
+```
+
+### **Windows 11 Mica Implementation**
+```css
+.mica-premium {
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(242, 203, 5, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(242, 135, 5, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(242, 203, 5, 0.06) 0%, transparent 50%);
+  backdrop-filter: blur(16px);
+}
+
+.mica-elite {
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(242, 203, 5, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(242, 135, 5, 0.14) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(242, 203, 5, 0.10) 0%, transparent 50%);
+  backdrop-filter: blur(24px);
+}
+```
+
+### **Glassmorphism Variants**
+```tsx
+// Modal overlay
+<div className="glass-premium border border-brass-yellow/20">
+  <h2>Premium Feature Access</h2>
+  <p>Exclusive content for premium members</p>
+</div>
+
+// Hero section overlay
+<section className="relative bg-range-white">
+  <div className="glass-subtle absolute inset-0" />
+  <div className="relative z-10">
+    <h1>Content over glassmorphism background</h1>
+  </div>
+</section>
+```
+
+---
+
+## 💫 Professional Shadow System
+
+### **Layered Elevation Shadows**
+```css
+@theme {
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+```
+
+### **Brand-Colored Shadows**
+```css
+--shadow-premium: 
+  0 4px 8px -2px rgba(242, 203, 5, 0.25), 
+  0 2px 4px -1px rgba(242, 135, 5, 0.15),
+  0 1px 3px 0 rgba(0, 0, 0, 0.1);
+
+--shadow-elite: 
+  0 8px 16px -4px rgba(242, 203, 5, 0.3), 
+  0 4px 8px -2px rgba(242, 135, 5, 0.2),
+  0 2px 6px 0 rgba(0, 0, 0, 0.15);
+```
+
+### **Shadow Application Strategy**
+```tsx
+// Standard card
+<Card className="shadow-sm hover:shadow-md transition-stripe-fast">
+
+// Premium button
+<Button className="bg-brass-yellow shadow-premium hover:shadow-elite">
+
+// Elite membership card
+<Card className="bg-gradient-elite shadow-elite hover:shadow-xl">
+
+// Modal dialog
+<Dialog className="shadow-xl">
+```
+
+---
+
+## 🧩 CVA Component Pattern Implementation
+
+### **Complete Component Template**
+```tsx
+import * as React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
+import { cn } from "@/lib/utils"
+
+const componentVariants = cva(
+  // Base classes - consistent across all variants
+  "inline-flex items-center justify-center transition-stripe-fast relative overflow-hidden font-medium",
+  {
+    variants: {
+      variant: {
+        default: "bg-shooting-bench text-blued-steel border border-case-hardened/20 shadow-sm hover:shadow-md",
+        premium: "bg-gradient-premium text-gunmetal-black shadow-premium hover:shadow-elite hover:scale-[1.02] mica-premium",
+        elite: "bg-gradient-elite text-gunmetal-black shadow-elite animate-shimmer hover:scale-[1.05] mica-elite",
+        glass: "backdrop-blur-sm bg-shooting-bench/10 border-brass-yellow/20 text-blued-steel hover:bg-shooting-bench/20",
+        destructive: "bg-safety-red text-nickel-white shadow-sm hover:bg-safety-red/90",
+        outline: "border-2 border-brass-yellow text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black",
+        ghost: "text-blued-steel hover:bg-shooting-bench hover:text-blued-steel"
+      },
+      size: {
+        sm: "px-3 py-1.5 text-sm h-8",
+        default: "px-4 py-2 text-base h-10",
+        lg: "px-6 py-3 text-lg h-12",
+        xl: "px-8 py-4 text-xl h-14"
+      },
+      rounded: {
+        none: "rounded-none",
+        sm: "rounded-sm",
+        default: "rounded-md",
+        lg: "rounded-lg",
+        full: "rounded-full"
+      }
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+      rounded: "default"
+    }
+  }
+)
+
+interface ComponentProps 
+  extends React.ComponentProps<"button">, 
+         VariantProps<typeof componentVariants> {
+  asChild?: boolean
+}
+
+const Component = React.forwardRef<HTMLButtonElement, ComponentProps>(
+  ({ className, variant, size, rounded, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? "span" : "button"
+    
+    return (
+      <Comp
+        className={cn(componentVariants({ variant, size, rounded }), className)}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+Component.displayName = "Component"
+
+export { Component, componentVariants }
+export type { ComponentProps }
+```
+
+### **Real Implementation Examples**
+
+**Business Directory Card:**
+```tsx
+const DirectoryCard = ({ business }: { business: Business }) => (
+  <Card className="bg-shooting-bench shadow-sm hover:shadow-md transition-stripe-fast">
+    <CardHeader className="border-l-4 border-l-scope-blue">
+      <CardTitle className="font-noto-sans text-xl text-blued-steel">
+        {business.name}
+      </CardTitle>
+      <CardDescription className="text-case-hardened">
+        {business.type} • {business.location}
+      </CardDescription>
+    </CardHeader>
+    <CardContent>
+      <p className="text-case-hardened mb-4">{business.description}</p>
+      <div className="flex gap-2">
+        <Button variant="outline" size="sm">
+          View Details
+        </Button>
+        <Button variant="premium" size="sm">
+          Contact
+        </Button>
+      </div>
+    </CardContent>
+  </Card>
+)
+```
+
+**Premium Membership Banner:**
+```tsx
+const PremiumBanner = () => (
+  <Card className="bg-gradient-premium shadow-premium mica-premium animate-pulse-premium">
+    <CardContent className="p-6 text-center">
+      <h3 className="font-rajdhani text-2xl font-bold text-gunmetal-black mb-2">
+        PREMIUM MEMBERSHIP
+      </h3>
+      <p className="font-noto-sans text-gunmetal-black/80 mb-4">
+        Exclusive access to advanced features and priority support
+      </p>
+      <Button variant="elite" size="lg">
+        Upgrade Now
+      </Button>
+    </CardContent>
+  </Card>
+)
+```
+
+---
+
+## 🏗️ Layout & Spacing System
+
+### **Container System**
+```tsx
+// Page container
+<div className="container mx-auto px-4 py-8 max-w-7xl">
+
+// Section container  
+<section className="py-16 bg-range-white">
+  <div className="container mx-auto px-4 max-w-6xl">
+
+// Card grid container
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+```
+
+### **Spacing Scale with Context**
+```tsx
+// Component spacing
+<div className="space-y-4">        // Related elements
+<div className="space-y-6">        // Component sections  
+<div className="space-y-8">        // Major sections
+
+// Padding scale
+<Card className="p-4">             // Compact content
+<Card className="p-6">             // Standard content
+<Card className="p-8">             // Spacious content
+
+// Margin scale
+<section className="mb-8">         // Section separation
+<section className="mb-12">        // Major section separation
+<section className="mb-16">        // Page section separation
+```
+
+---
+
+## 🔒 Enforcement Rules & Quality Standards
+
+### **Forbidden Practices (Zero Tolerance)**
+```tsx
+// ❌ NEVER: Hardcoded colors
+<div style={{backgroundColor: '#F2CB05'}}>
+<div className="bg-[#F2CB05]">
+<div className="text-[var(--color-brass-yellow)]">
+
+// ❌ NEVER: Raw HTML elements
+<button onClick={handler}>Click me</button>     // Use <Button>
+<a href="/link">Link text</a>                  // Use <Link>
+<input type="text" />                          // Use <Input>
+
+// ❌ NEVER: Breaking typography hierarchy
+<h1 className="font-noto-sans">               // H1 must use font-rajdhani
+<h3 className="font-rajdhani">                // H3+ must use font-noto-sans
+
+// ❌ NEVER: Inconsistent timing
+<div className="transition-all duration-200">  // Use transition-stripe-fast
+<div className="transition-all duration-500">  // Use transition-stripe-slow
+```
+
+### **Required Practices (Always)**
+```tsx
+// ✅ ALWAYS: Use established brand colors
+<Button className="bg-brass-yellow text-gunmetal-black">
+
+// ✅ ALWAYS: Follow CVA patterns
+const buttonVariants = cva("base-classes", { variants: {...} })
+
+// ✅ ALWAYS: Maintain proper hierarchy  
+<h1 className="font-rajdhani text-6xl font-black">
+<h3 className="font-noto-sans text-xl font-semibold">
+
+// ✅ ALWAYS: Use professional timing
+<Card className="transition-stripe-fast hover:shadow-md">
+
+// ✅ ALWAYS: Support accessibility
+<Button 
+  className="focus:ring-2 focus:ring-brass-yellow/50" 
+  aria-label="Join the community"
+>
+```
+
+### **Quality Gate Checklist**
+- [ ] All colors use established design tokens
+- [ ] Typography follows hierarchy (Rajdhani H1-H2, Noto Sans H3-H6+body)
+- [ ] Animations use Stripe timing (150ms/250ms/350ms)
+- [ ] Components follow CVA pattern
+- [ ] Accessibility: 4.5:1 contrast ratio, keyboard navigation, ARIA labels
+- [ ] Dark mode support implemented
+- [ ] Mobile-responsive design
+- [ ] Performance optimized (no layout shifts, GPU-accelerated animations)
+
+---
+
+## 🌐 Regional Business Context Integration
+
+### **User Type Specific Patterns**
+
+**Gun Shop/Range Listings:**
+```tsx
+<BusinessCard 
+  variant="premium"
+  category="range"
+  className="border-l-4 border-l-scope-blue"
+>
+  <BusinessHeader>
+    <h3 className="font-noto-sans text-xl font-semibold text-blued-steel">
+      Boise Indoor Range
+    </h3>
+    <Badge variant="verified" className="bg-rifling-green">
+      Verified Business
+    </Badge>
+  </BusinessHeader>
+</BusinessCard>
+```
+
+**Community Event Promotion:**
+```tsx
+<EventCard className="bg-gradient-subtle border border-brass-yellow/20">
+  <EventDate className="text-brass-yellow font-rajdhani font-bold">
+    MAR 15
+  </EventDate>
+  <EventTitle className="font-noto-sans text-lg font-semibold">
+    Monthly Competition Shoot
+  </EventTitle>
+  <Button variant="premium" size="sm">
+    Register Now
+  </Button>
+</EventCard>
+```
+
+**Marketplace Integration:**
+```tsx
+<ProductListing className="bg-shooting-bench shadow-sm hover:shadow-premium">
+  <ProductImage className="rounded border border-case-hardened/10" />
+  <ProductInfo>
+    <h4 className="font-noto-sans font-semibold text-blued-steel">
+      Custom Holster - Leather
+    </h4>
+    <p className="text-case-hardened text-sm">By Idaho Leather Works</p>
+    <div className="flex justify-between items-center mt-4">
+      <span className="font-bold text-brass-yellow">$149.99</span>
+      <Button variant="outline" size="sm">Add to Cart</Button>
+    </div>
+  </ProductInfo>
+</ProductListing>
+```
+
+---
+
+**This design system represents the complete visual and technical foundation for "The Boise Gun Club: A Treasure Valley Firearm & Firearm Sports Collective" — a sophisticated, scalable platform demonstrating world-class design system integration suitable for Fortune 500 presentation while serving the unique needs of the regional firearms community.**
