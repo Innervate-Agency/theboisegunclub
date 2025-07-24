@@ -45,3 +45,6 @@ storybook-static
 
 # resources folder
 _resources/
+
+# Ignore legacy archive folder
+_archive/

@@ -3,14 +3,14 @@ import { Rajdhani, Noto_Sans, Noto_Serif } from "next/font/google";
 import "./globals.css";
 
 const rajdhani = Rajdhani({
-  variable: "--font-heading",
+  variable: "--font-rajdhani",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: 'swap',
 });
 
 const notoSans = Noto_Sans({
-  variable: "--font-body", 
+  variable: "--font-noto-sans", 
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: 'swap',
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rajdhani.variable} ${notoSans.variable} ${notoSerif.variable} font-body antialiased`}
+        className={`${rajdhani.variable} ${notoSans.variable} ${notoSerif.variable} font-noto-sans antialiased`}
       >
         {children}
       </body>

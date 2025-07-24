@@ -1,160 +1,186 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
-import { Card } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { MapPin, Phone, Star } from 'lucide-react'
+import type { Meta, StoryObj } from '@storybook/react';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 const meta: Meta<typeof Card> = {
-  title: 'TBGC/Card',
+  title: 'Core UI/Card',
   component: Card,
   parameters: {
     layout: 'centered',
-    docs: {
-      description: {
-        component: `
-**TBGC Card Component** - Sophisticated card system with Windows 11 Mica effects and brand-aware styling.
-
-**Advanced Features:**
-- Uses \`--card-shadow-default\` and \`--card-shadow-hover\` from actual implementation
-- Windows 11 Mica backgrounds: \`--card-bg-light\` (#fffffff2) with noise patterns
-- Brand-colored left borders using scope-blue, brass-yellow, copper-orange
-- Internal glow effects: \`--internal-glow-light\` for subtle depth
-- Proper micro-interactions with 150ms timing and Stripe easing
-
-**Real Implementation:**
-- \`--shadow-data-card\` for standard elevation  
-- \`--shadow-data-card-hover\` for hover states
-- \`--mica-border-premium\` and \`--mica-border-elite\` for advanced variants
-- Noise textures from \`--noise-fine\` and \`--noise-dense\` SVG patterns
-        `
-      }
-    }
   },
   tags: ['autodocs'],
   argTypes: {
     variant: {
-      control: { type: 'select' },
+      control: 'select',
       options: ['default', 'premium', 'elite', 'glass'],
-      description: 'Card variant following TBGC design system'
-    }
+    },
+    size: {
+      control: 'select',
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+    },
   },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    className: "w-80 p-6",
-    children: (
-      <div>
-        <h3 className="font-noto-sans text-lg font-semibold text-blued-steel mb-2">
-          Standard Card
-        </h3>
-        <p className="font-noto-sans text-sm text-case-hardened leading-relaxed">
-          Clean card with shooting-bench background and subtle shadow elevation.
-        </p>
-      </div>
-    )
-  }
-}
-
-export const BusinessDirectory: Story = {
-  render: () => (
-    <Card className="w-96 bg-shooting-bench shadow-sm hover:shadow-md transition-stripe-fast p-6 border-l-4 border-l-scope-blue hover:-translate-y-0.5">
-      <div className="flex flex-col h-full">
-        {/* Business header */}
-        <div className="flex justify-between items-start mb-3">
-          <div>
-            <h3 className="font-noto-sans text-xl font-semibold text-blued-steel">
-              Idaho Firearms Training
-            </h3>
-            <p className="font-noto-sans text-sm text-case-hardened">
-              Professional Instruction • Boise, ID
-            </p>
-          </div>
-          <div className="bg-rifling-green/20 text-rifling-green border border-rifling-green/30 px-2 py-1 rounded text-xs">
-            Verified
-          </div>
-        </div>
-        
-        {/* Rating */}
-        <div className="flex items-center gap-1 mb-3">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <Star key={star} className="h-4 w-4 fill-brass-yellow text-brass-yellow" />
-          ))}
-          <span className="font-noto-sans text-sm text-case-hardened ml-2">4.9 (127 reviews)</span>
-        </div>
-        
-        {/* Description */}
-        <p className="font-noto-sans text-sm text-case-hardened leading-relaxed mb-4 flex-1">
-          Comprehensive firearms training for all skill levels. NRA certified instructors, 
-          concealed carry classes, and advanced tactical courses.
-        </p>
-        
-        {/* Contact info */}
-        <div className="space-y-2 mb-4">
-          <div className="flex items-center gap-2 text-sm text-case-hardened">
-            <MapPin className="h-4 w-4 text-scope-blue" />
-            <span>1234 Range Road, Boise, ID 83702</span>
-          </div>
-          <div className="flex items-center gap-2 text-sm text-case-hardened">
-            <Phone className="h-4 w-4 text-scope-blue" />
-            <span>(208) 555-TRAIN</span>
-          </div>
-        </div>
-        
-        {/* Actions */}
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm" className="flex-1">
-            View Details
-          </Button>
-          <Button variant="premium" size="sm" className="flex-1">
-            Contact
-          </Button>
-        </div>
-      </div>
+  render: (args) => (
+    <Card className="w-[350px]" {...args}>
+      <CardHeader>
+        <CardTitle>Default Card</CardTitle>
+        <CardDescription>Clean card with warm cream background from your design system.</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>This uses your beautiful cloudy-day-white color instead of harsh white.</p>
+      </CardContent>
+      <CardFooter>
+        <Button variant="primary">Action</Button>
+      </CardFooter>
     </Card>
   ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Business directory card with left border accent, hover effects, and complete business information layout'
-      }
-    }
-  }
-}
+};
 
-export const ServiceCard: Story = {
-  render: () => (
-    <Card className="w-72 bg-shooting-bench shadow-sm hover:shadow-md transition-stripe-fast p-6 border-l-4 border-l-brass-yellow hover:-translate-y-0.5">
-      <div className="flex flex-col items-start text-left h-full">
-        {/* Icon */}
-        <div className="mb-4 p-3 rounded-lg bg-range-white border border-case-hardened/10">
-          <MapPin className="h-6 w-6 text-blued-steel" />
+export const Premium: Story = {
+  render: (args) => (
+    <Card variant="premium" className="w-[350px]" {...args}>
+      <CardHeader>
+        <CardTitle>Premium Membership</CardTitle>
+        <CardDescription>Subtle Leonard Yellow accent with professional styling</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-3">
+          <p>Elegant premium styling using your existing theme variables.</p>
+          <Badge variant="premium">Premium</Badge>
         </div>
-        
-        {/* Title */}
-        <h3 className="font-noto-sans text-lg font-semibold text-blued-steel mb-3 leading-tight">
-          Find Local Experts
-        </h3>
-        
-        {/* Description */}
-        <p className="font-noto-sans text-sm text-case-hardened leading-relaxed mb-6 flex-1">
-          Discover top gun shops, ranges, gunsmiths, and instructors across the Treasure Valley region.
-        </p>
-        
-        {/* Button */}
-        <Button variant="premium" size="sm" className="text-xs font-medium">
-          Get Started
+      </CardContent>
+      <CardFooter>
+        <Button variant="premium" className="w-full">
+          Upgrade to Premium
         </Button>
-      </div>
+      </CardFooter>
     </Card>
   ),
+};
+
+export const Elite: Story = {
+  render: (args) => (
+    <Card variant="elite" className="w-[350px]" {...args}>
+      <CardHeader>
+        <CardTitle>Elite Championship</CardTitle>
+        <CardDescription>Enhanced border and shadows with restraint</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-3">
+          <p>Professional elite styling that doesn't hurt your eyes.</p>
+          <Badge variant="elite">Elite</Badge>
+        </div>
+      </CardContent>
+      <CardFooter>
+        <Button variant="elite" className="w-full">
+          Join Elite Program
+        </Button>
+      </CardFooter>
+    </Card>
+  ),
+};
+
+export const Glass: Story = {
+  render: (args) => (
+    <div className="relative w-[400px] h-[300px] p-10 bg-cover bg-center rounded-lg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')" }}>
+      <Card variant="glass" {...args}>
+        <CardHeader>
+          <CardTitle>Glass Card</CardTitle>
+          <CardDescription>Clean glassmorphism effect</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p>Subtle and professional glass effect.</p>
+        </CardContent>
+      </Card>
+    </div>
+  ),
+};
+
+// Clean showcase without the garish colors
+export const MembershipTiers: Story = {
+  render: () => (
+    <div className="space-y-8 p-8 max-w-4xl">
+      <div className="text-center space-y-2">
+        <h2 className="text-2xl font-rajdhani font-bold">Membership Tiers</h2>
+        <p className="text-muted-foreground">Clean, professional card designs using your theme system</p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Card className="w-full">
+          <CardHeader>
+            <CardTitle>Standard Access</CardTitle>
+            <CardDescription>Basic membership benefits</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>• Range access during standard hours</li>
+              <li>• Basic safety training included</li>
+              <li>• Community events access</li>
+            </ul>
+          </CardContent>
+          <CardFooter>
+            <Button variant="outline" className="w-full">Learn More</Button>
+          </CardFooter>
+        </Card>
+
+        <Card variant="premium" className="w-full">
+          <CardHeader>
+            <CardTitle>Premium Membership</CardTitle>
+            <CardDescription>Enhanced access with subtle Leonard Yellow accent</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              <Badge variant="premium">Most Popular</Badge>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• Extended range hours</li>
+                <li>• Advanced training programs</li>
+                <li>• Equipment rental discounts</li>
+                <li>• Priority event booking</li>
+              </ul>
+            </div>
+          </CardContent>
+          <CardFooter>
+            <Button variant="premium" className="w-full">Choose Premium</Button>
+          </CardFooter>
+        </Card>
+
+        <Card variant="elite" className="w-full">
+          <CardHeader>
+            <CardTitle>Elite Championship</CardTitle>
+            <CardDescription>Professional styling with enhanced shadows</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              <Badge variant="elite">Exclusive</Badge>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• 24/7 range access</li>
+                <li>• Personal coaching sessions</li>
+                <li>• Championship competitions</li>
+                <li>• VIP lounge access</li>
+              </ul>
+            </div>
+          </CardContent>
+          <CardFooter>
+            <Button variant="elite" className="w-full">Join Elite</Button>
+          </CardFooter>
+        </Card>
+      </div>
+    </div>
+  ),
   parameters: {
-    docs: {
-      description: {
-        story: 'Service card matching the 6-card grid layout from the current splash page'
-      }
-    }
+    layout: 'fullscreen',
   }
-}
+};

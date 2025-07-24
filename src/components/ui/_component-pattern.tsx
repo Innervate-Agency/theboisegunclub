@@ -5,13 +5,13 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "./utils"
 
 const componentVariants = cva(
-  "inline-flex items-center justify-center transition-fast relative overflow-hidden",
+  "inline-flex items-center justify-center transition-stripe-fast relative overflow-hidden",
   {
     variants: {
       variant: {
         default: "bg-card text-card-foreground border border-border shadow-sm hover:shadow-md",
-        premium: "bg-gradient-to-r from-leonard-yellow to-lahoma-orange text-black shadow-premium border border-leonard-yellow/20 hover:shadow-elite hover:scale-[1.02] transition-normal group",
-        elite: "bg-gradient-to-r from-leonard-yellow via-lahoma-orange to-leonard-yellow bg-[length:200%_100%] text-black shadow-elite border-2 border-leonard-yellow/30 animate-shimmer hover:scale-[1.05] transition-normal group",
+        premium: "bg-gradient-to-r from-brass-yellow to-copper-orange text-black shadow-premium border border-brass-yellow/20 hover:shadow-elite hover:scale-[1.02] transition-stripe-normal group",
+        elite: "bg-gradient-to-r from-brass-yellow via-copper-orange to-brass-yellow bg-[length:200%_100%] text-black shadow-elite border-2 border-brass-yellow/30 animate-shimmer hover:scale-[1.05] transition-stripe-normal group",
         glass: "border-white/20 bg-card/10 backdrop-blur-sm text-card hover:bg-card/20 hover:border-white/30"
       },
       size: {
