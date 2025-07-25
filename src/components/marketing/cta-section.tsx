@@ -9,36 +9,12 @@ export function CTASection() {
           {/* Main CTA with exact styling from current site */}
           <div className="text-center mb-16">
             <Button 
-              className="
-                bg-brass-yellow 
-                text-gunmetal-black 
-                hover:bg-copper-orange 
-                shadow-premium 
-                hover:shadow-elite 
-                transition-stripe-fast 
-                hover:scale-[1.02]
-                active:scale-[0.98]
-                px-8 
-                py-4 
-                text-lg 
-                font-semibold
-                animate-pulse-premium
-                relative
-                overflow-hidden
-              "
-              style={{
-                background: 'var(--gradient-premium)',
-                boxShadow: 'var(--shadow-premium)',
-                transition: 'var(--timing-fast) var(--ease-stripe)'
-              }}
+              variant="premium"
+              size="xl"
+              className="font-semibold"
             >
-              {/* Subtle shimmer effect overlay */}
               <div 
-                className="absolute inset-0 opacity-20 pointer-events-none animate-shimmer"
-                style={{ 
-                  background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)',
-                  backgroundSize: '200% 100%'
-                }}
+                className="absolute inset-0 opacity-20 pointer-events-none animate-shimmer bg-gradient-to-r from-transparent via-white/40 to-transparent"
               />
               <span className="relative z-10">Join the Family</span>
             </Button>
@@ -74,10 +50,6 @@ export function CTASection() {
             {/* Right column - Enhanced signup card */}
             <Card 
               className="bg-shooting-bench shadow-sm border border-case-hardened/10 p-6 hover:shadow-md transition-stripe-fast"
-              style={{
-                background: 'var(--card-bg-light, #fffffff2)',
-                boxShadow: 'var(--card-shadow-default)'
-              }}
             >
               <div className="text-left">
                 <h3 className="font-noto-sans text-xl font-semibold text-blued-steel mb-4">
@@ -88,21 +60,9 @@ export function CTASection() {
                   Join our early access list for exclusive updates and launch benefits.
                 </p>
                 <Button 
-                  className="
-                    w-full 
-                    bg-brass-yellow 
-                    text-gunmetal-black 
-                    hover:bg-copper-orange 
-                    shadow-sm 
-                    hover:shadow-premium 
-                    transition-stripe-fast
-                    hover:scale-[1.02]
-                    active:scale-[0.98]
-                    font-medium
-                  "
-                  style={{
-                    transition: 'var(--timing-fast) var(--ease-stripe)'
-                  }}
+                  variant="premium"
+                  size="lg"
+                  className="w-full font-medium"
                 >
                   Sign Up
                 </Button>
@@ -112,20 +72,8 @@ export function CTASection() {
           
           {/* Bottom section with complex glassmorphism effects */}
           <div 
-            className="relative mt-16 p-8 rounded-lg border transition-stripe-fast hover:border-brass-yellow/40"
-            style={{
-              background: 'var(--mica-glass-bg, rgba(255, 255, 255, 0.9))',
-              backdropFilter: 'var(--mica-blur-subtle, blur(16px) saturate(1.1))',
-              border: 'var(--mica-border-subtle, 1px solid rgba(255, 255, 255, 0.3))',
-              boxShadow: 'var(--mica-glass-light, rgba(255, 255, 255, 0.7) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.05) 0px 0px 0px 2px inset, rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.05) 0px 8px 16px 0px)'
-            }}
+            className="relative mt-16 p-8 rounded-lg border transition-stripe-fast hover:border-brass-yellow/40 mica-premium"
           >
-            {/* Subtle noise texture */}
-            <div 
-              className="absolute inset-0 opacity-10 pointer-events-none rounded-lg"
-              style={{ backgroundImage: 'var(--noise-fine)' }}
-            />
-            
             <div className="text-center relative z-10">
               <h3 className="font-rajdhani text-2xl font-bold text-gunmetal-black mb-4">
                 THE BOISE GUN CLUB

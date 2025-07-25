@@ -4,7 +4,7 @@ import { CTASection } from '@/components/marketing/cta-section'
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-cloudy-day-white">
+    <main className="min-h-screen bg-range-white">
       <HeroSection />
       <ServiceGrid />
       <CTASection />

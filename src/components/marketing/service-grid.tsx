@@ -76,21 +76,11 @@ export function ServiceGrid() {
                 group
                 cursor-pointer
               `}
-              style={{
-                background: 'var(--card-bg-light, #fffffff2)',
-                boxShadow: 'var(--card-shadow-default)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = 'var(--card-shadow-hover)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = 'var(--card-shadow-default)'
-              }}
             >
               <div className="flex flex-col items-start text-left h-full">
                 {/* Icon with subtle background and proper spacing */}
                 <div className={`mb-4 p-3 rounded-lg bg-range-white border border-case-hardened/10 transition-stripe-fast group-hover:bg-${service.accentColor}/5 group-hover:border-${service.accentColor}/20`}>
-                  <service.icon className={`h-6 w-6 text-blued-steel transition-stripetransition-stripe-fast group-hover:text-${service.accentColor}`} />
+                  <service.icon className={`h-6 w-6 text-blued-steel transition-stripe-fast group-hover:text-${service.accentColor}`} />
                 </div>
                 
                 {/* Title with proper hierarchy and hover color */}
