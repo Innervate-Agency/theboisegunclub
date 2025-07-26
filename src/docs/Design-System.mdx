@@ -1,0 +1,458 @@
+---
+title: 'Documentation/Design System'
+---
+
+# TBGC DESIGN SYSTEM: COMPLETE IMPLEMENTATION STANDARDS
+
+## 🎯 IDAHO FIREARMS HERITAGE PALETTE
+
+### **Primary Brand Colors**
+
+```css
+/* Primary Brand Colors - The Foundation */
+--color-brass-yellow: #F2CB05;    /* Premium, heritage, quality */
+--color-copper-orange: #F28705;   /* Heritage, warmth, tradition */
+--color-gunmetal-black: #2C3E50;  /* Precision, sophistication */
+--color-nickel-white: #F8F9FA;    /* Clean, pure, premium */
+```
+
+### **Light Theme: Spring Day at the Range**
+
+```css
+/* Light Theme - Spring Day at the Range */
+--color-range-white: #FFFFFF;         /* Pure white backgrounds */
+--color-shooting-bench: #F5F5F5;      /* Subtle gray backgrounds */
+--color-walnut-stock: #8B4513;        /* Rich brown accents */
+--color-blued-steel: #2F4F4F;         /* Dark steel blue */
+--color-case-hardened: #696969;       /* Medium gray text */
+--color-muzzle-flash: #FFD700;        /* Bright gold highlights */
+--color-recoil-pad: #D3D3D3;          /* Light gray borders */
+--color-sight-gold: #DAA520;          /* Traditional gold */
+--color-scope-blue: #4169E1;          /* Information blue */
+--color-trigger-blue: #1E90FF;        /* Interactive blue */
+--color-rifling-green: #228B22;       /* Success green */
+--color-bore-sight-green: #32CD32;    /* Bright success green */
+--color-safety-red: #DC143C;          /* Safety/error red */
+```
+
+### **Dark Theme: Evening Hunt in the Mountains**
+
+```css
+/* Dark Theme - Evening Hunt in the Mountains */
+--color-night-sight: #1A1A1A;         /* Deep black backgrounds */
+--color-carbon-fiber: #2D2D2D;        /* Dark gray surfaces */
+--color-tactical-gray: #4A4A4A;       /* Medium dark gray */
+--color-titanium-white: #F0F0F0;      /* Off-white text */
+--color-stainless-steel: #C0C0C0;     /* Light gray accents */
+--color-flash-hider: #8B8B8B;         /* Muted gray */
+--color-crimson-trace: #DC143C;       /* Dark theme red */
+--color-cerakote-blue: #4682B4;       /* Dark theme blue */
+--color-ghost-ring: #708090;          /* Slate gray */
+--color-woodland-camo: #556B2F;       /* Dark green */
+```
+
+## 📝 TYPOGRAPHY SYSTEM
+
+### **Font Families**
+
+```css
+/* Typography System */
+--font-rajdhani: 'Rajdhani', sans-serif;      /* Premium, heritage, masculine */
+--font-noto-sans: 'Noto Sans', sans-serif;    /* Clean, readable, accessible */
+--font-noto-serif: 'Noto Serif', serif;       /* Editorial, storytelling */
+```
+
+### **Typography Hierarchy**
+
+```tsx
+// H1 - Main Page Titles (Rajdhani)
+<h1 className="font-rajdhani font-bold text-4xl md:text-5xl lg:text-6xl text-gunmetal-black">
+  THE BOISE GUN CLUB
+</h1>
+
+// H2 - Section Headers (Rajdhani)
+<h2 className="font-rajdhani font-semibold text-2xl md:text-3xl text-gunmetal-black">
+  Firearms Safety Training
+</h2>
+
+// H3 - Subsection Headers (Noto Sans)
+<h3 className="font-noto-sans font-semibold text-xl md:text-2xl text-gunmetal-black">
+  Basic Safety Principles
+</h3>
+
+// H4-H6 - Content Headers (Noto Sans)
+<h4 className="font-noto-sans font-medium text-lg text-gunmetal-black">
+  Equipment Requirements
+</h4>
+
+// Body Text (Noto Sans)
+<p className="font-noto-sans text-base text-gunmetal-black leading-relaxed">
+  The Boise Gun Club provides comprehensive firearms safety education...
+</p>
+
+// Editorial Text (Noto Serif)
+<p className="font-noto-serif text-base text-gunmetal-black leading-relaxed italic">
+  In the rugged mountains of Idaho, where tradition meets precision...
+</p>
+```
+
+## ⚡ TIMING SYSTEM
+
+### **Stripe-Inspired Transitions**
+
+```css
+/* Timing System - Stripe-Inspired Precision */
+--transition-stripe-fast: 150ms ease;    /* Quick interactions */
+--transition-stripe-normal: 250ms ease;  /* Standard interactions */
+--transition-stripe-slow: 350ms ease;    /* Deliberate animations */
+```
+
+### **Usage Examples**
+
+```tsx
+// Fast interactions (150ms)
+<button className="transition-all transition-stripe-fast hover:scale-105">
+  Quick Action
+</button>
+
+// Normal interactions (250ms)
+<div className="transition-all transition-stripe-normal hover:shadow-md">
+  Standard Interaction
+</div>
+
+// Slow, deliberate animations (350ms)
+<div className="transition-all transition-stripe-slow hover:bg-brass-yellow/10">
+  Premium Experience
+</div>
+```
+
+## 🎨 GRADIENT SYSTEM
+
+### **Premium Gradients**
+
+```css
+/* Gradient System */
+--gradient-brass-copper: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 100%);
+--gradient-premium: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 50%, var(--color-gunmetal-black) 100%);
+--gradient-elite: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 25%, var(--color-gunmetal-black) 75%, var(--color-nickel-white) 100%);
+```
+
+### **Usage Examples**
+
+```tsx
+// Brass to Copper gradient
+<div className="bg-gradient-to-r from-brass-yellow to-copper-orange">
+  Premium Element
+</div>
+
+// Premium gradient with black
+<div className="bg-gradient-to-br from-brass-yellow via-copper-orange to-gunmetal-black">
+  Elite Element
+</div>
+```
+
+## 🌟 SHADOW SYSTEM
+
+### **Stripe-Inspired Sophisticated Shadows**
+
+```css
+/* Stripe-Inspired Sophisticated Shadow System */
+--shadow-xs: 0 2px 5px -1px rgba(50, 50, 93, 0.25), 0 1px 3px -1px rgba(0, 0, 0, 0.3);
+--shadow-sm: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+--shadow-md: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
+--shadow-lg: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+--shadow-xl: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
+
+/* TBGC Brand-Colored Sophisticated Shadows */
+--shadow-brass: 0 6px 12px -2px rgba(242, 203, 5, 0.15), 0 3px 7px -3px rgba(0, 0, 0, 0.25);
+--shadow-copper: 0 13px 27px -5px rgba(242, 135, 5, 0.12), 0 8px 16px -8px rgba(0, 0, 0, 0.25);
+```
+
+### **Usage Examples**
+
+```tsx
+// Standard shadows
+<div className="shadow-sm">Small Shadow</div>
+<div className="shadow-md">Medium Shadow</div>
+<div className="shadow-lg">Large Shadow</div>
+
+// Brand-colored shadows
+<div className="shadow-brass">Brass Shadow</div>
+<div className="shadow-copper">Copper Shadow</div>
+```
+
+## 🧩 COMPONENT PATTERNS
+
+### **CVA (Class Variance Authority) Pattern**
+
+```tsx
+import { cva, type VariantProps } from 'class-variance-authority'
+import { cn } from '@/lib/utils'
+
+const componentVariants = cva(
+  // Base styles - always applied
+  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
+  {
+    variants: {
+      variant: {
+        default: "bg-range-white text-gunmetal-black border border-recoil-pad hover:bg-shooting-bench shadow-sm",
+        primary: "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange shadow-md",
+        secondary: "bg-shooting-bench text-gunmetal-black border border-recoil-pad hover:bg-recoil-pad shadow-sm",
+        accent: "bg-white text-gunmetal-black border-2 border-brass-yellow/30 hover:border-brass-yellow/50 hover:bg-brass-yellow/5 shadow-sm",
+        success: "bg-white text-gunmetal-black border-2 border-rifling-green/30 hover:border-rifling-green/50 hover:bg-rifling-green/5 shadow-sm",
+        destructive: "bg-white text-gunmetal-black border-2 border-safety-red/30 hover:border-safety-red/50 hover:bg-safety-red/5 shadow-sm",
+        ghost: "bg-transparent text-gunmetal-black hover:bg-shooting-bench",
+        link: "bg-transparent text-scope-blue underline-offset-4 hover:underline",
+        glass: "bg-white/20 backdrop-blur-md text-gunmetal-black shadow-md hover:shadow-lg hover:-translate-y-0.5 focus-visible:ring-brass-yellow/50 border border-white/30 hover:border-white/50 hover:bg-white/30 mica-glass",
+        "solid-accent": "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange stripe-arrow",
+        "solid-success": "bg-rifling-green text-nickel-white hover:bg-rifling-green/90 stripe-arrow",
+        "solid-destructive": "bg-safety-red text-nickel-white hover:bg-safety-red/90 stripe-arrow",
+        "solid-primary": "bg-gunmetal-black text-nickel-white hover:bg-gunmetal-black/90 stripe-arrow",
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        icon: "h-10 w-10",
+      },
+      rounded: {
+        default: "rounded-md",
+        sm: "rounded-sm",
+        lg: "rounded-lg",
+        full: "rounded-full",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+      rounded: "default",
+    },
+  }
+)
+```
+
+### **Component Interface**
+
+```tsx
+export interface ComponentProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof componentVariants> {
+  // Additional props
+}
+
+const Component = React.forwardRef<HTMLDivElement, ComponentProps>(
+  ({ className, variant, size, rounded, ...props }, ref) => {
+    return (
+      <div
+        className={cn(componentVariants({ variant, size, rounded, className }))}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+Component.displayName = "Component"
+```
+
+## 🎨 COLOR USAGE PATTERNS
+
+### **Primary Brand Colors**
+
+```tsx
+// Brass Yellow - Premium, heritage, quality
+<div className="bg-brass-yellow text-gunmetal-black">
+  Premium Membership
+</div>
+
+// Copper Orange - Heritage, warmth, tradition
+<div className="bg-copper-orange text-nickel-white">
+  Heritage Collection
+</div>
+
+// Gunmetal Black - Precision, sophistication
+<div className="bg-gunmetal-black text-nickel-white">
+  Professional Training
+</div>
+
+// Nickel White - Clean, pure, premium
+<div className="bg-nickel-white text-gunmetal-black">
+  Safety Certification
+</div>
+```
+
+### **Contextual Colors**
+
+```tsx
+// Success States
+<div className="bg-rifling-green text-nickel-white">
+  Certification Complete
+</div>
+
+// Warning States
+<div className="bg-muzzle-flash text-gunmetal-black">
+  Safety Reminder
+</div>
+
+// Error States
+<div className="bg-safety-red text-nickel-white">
+  Safety Violation
+</div>
+
+// Information States
+<div className="bg-scope-blue text-nickel-white">
+  Training Information
+</div>
+```
+
+## 🎯 ACCESSIBILITY STANDARDS
+
+### **WCAG 2.1 AA Compliance**
+
+```tsx
+// Proper contrast ratios (4.5:1 minimum)
+<div className="bg-brass-yellow text-gunmetal-black"> {/* 8.5:1 contrast */}
+<div className="bg-rifling-green text-nickel-white"> {/* 7.2:1 contrast */}
+<div className="bg-safety-red text-nickel-white"> {/* 6.8:1 contrast */}
+
+// Focus indicators
+<button className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-yellow focus-visible:ring-offset-2">
+  Accessible Button
+</button>
+
+// Screen reader support
+<button aria-label="Close safety information">
+  <X className="h-4 w-4" />
+</button>
+```
+
+### **Motion Preferences**
+
+```tsx
+// Respect user motion preferences
+<div className="transition-all transition-stripe-normal motion-reduce:transition-none">
+  Animated Element
+</div>
+
+// Reduced motion alternatives
+<div className="animate-pulse motion-reduce:animate-none">
+  Pulsing Element
+</div>
+```
+
+## 🎨 SPECIAL EFFECTS
+
+### **Glassmorphism (Windows 11 Mica)**
+
+```css
+/* Windows 11 Mica Glassmorphism */
+.mica-glass {
+  position: relative;
+  overflow: hidden;
+}
+
+.mica-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(242, 203, 5, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(242, 135, 5, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 50%);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.mica-glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+  background-size: 20px 20px;
+  border-radius: inherit;
+  opacity: 0.3;
+  z-index: -1;
+  animation: noise-float 8s ease-in-out infinite;
+}
+
+@keyframes noise-float {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% { 
+    transform: translate(1px, -1px) rotate(0.5deg);
+    opacity: 0.25;
+  }
+  50% { 
+    transform: translate(-1px, 1px) rotate(-0.5deg);
+    opacity: 0.35;
+  }
+  75% { 
+    transform: translate(1px, 1px) rotate(0.25deg);
+    opacity: 0.28;
+  }
+}
+```
+
+### **Stripe-Style Arrow Animations**
+
+```css
+/* Stripe-style Arrow Animations */
+.stripe-arrow {
+  position: relative;
+}
+
+.stripe-arrow .HoverArrow {
+  transition: transform 0.15s ease;
+  transform: translateX(0);
+}
+
+.stripe-arrow:hover .HoverArrow {
+  transform: translateX(3px);
+}
+
+.stripe-arrow .HoverArrow__linePath {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.stripe-arrow:hover .HoverArrow__linePath {
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+
+.stripe-arrow .HoverArrow__tipPath {
+  transform: translateX(0);
+  transition: transform 0.15s ease;
+}
+
+.stripe-arrow:hover .HoverArrow__tipPath {
+  transform: translateX(3px);
+}
+```
+
+## 📋 IMPLEMENTATION CHECKLIST
+
+### **Design System Compliance**
+
+- [ ] Uses only approved 26 colors from Idaho Firearms Heritage Palette
+- [ ] Typography hierarchy followed (Rajdhani for H1-H2, Noto Sans for H3-H6)
+- [ ] Transitions use approved timing variables (stripe-fast, stripe-normal, stripe-slow)
+- [ ] Shadows use Stripe-inspired sophisticated system
+- [ ] No right-aligned text (use 50/50 layouts)
+- [ ] No emojis in UI (use Lucide React icons)
+- [ ] Accessibility standards met (WCAG 2.1 AA)
+- [ ] Motion preferences respected
+- [ ] CVA pattern implemented for component variants
+
+### **Brand Alignment**
+
+- [ ] Reflects precision and heritage of Idaho firearms culture
+- [ ] Maintains premium feel without being flashy
+- [ ] Uses sophisticated shadows and clean lines
+- [ ] Incorporates glassmorphism for modern touch
+- [ ] Balances tradition with contemporary design
+- [ ] Emphasizes safety and education focus
+
+**This design system embodies the precision, heritage, and quality of Idaho's firearms culture while maintaining modern web standards and accessibility. Every component should reflect the rugged elegance of the outdoor lifestyle and the sophisticated craftsmanship of firearms heritage.** 

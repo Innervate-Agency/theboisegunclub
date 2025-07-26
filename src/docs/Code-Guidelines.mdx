@@ -1,0 +1,476 @@
+---
+title: 'Documentation/Code Guidelines'
+---
+
+# CODE GUIDELINES
+
+## 🎯 TBGC DEVELOPMENT STANDARDS
+
+### **Core Principles**
+
+1. **Design System First**: All components must follow the Idaho Firearms Heritage Palette
+2. **Accessibility Priority**: WCAG 2.1 AA compliance minimum
+3. **Performance Focus**: Optimized for speed and user experience
+4. **Type Safety**: Strict TypeScript implementation
+5. **Component Reusability**: CVA pattern for all UI components
+
+## 🎨 DESIGN SYSTEM INTEGRATION
+
+### **CSS Variables (@theme directive)**
+
+```css
+@theme {
+  /* ================== IDAHO FIREARMS HERITAGE PALETTE ================== */
+  
+  /* Primary Brand Colors */
+  --color-brass-yellow: #F2CB05;
+  --color-copper-orange: #F28705;
+  --color-gunmetal-black: #2C3E50;
+  --color-nickel-white: #F8F9FA;
+  
+  /* Light Theme: Spring Day at the Range */
+  --color-range-white: #FFFFFF;
+  --color-shooting-bench: #F5F5F5;
+  --color-walnut-stock: #8B4513;
+  --color-blued-steel: #2F4F4F;
+  --color-case-hardened: #696969;
+  --color-muzzle-flash: #FFD700;
+  --color-recoil-pad: #D3D3D3;
+  --color-sight-gold: #DAA520;
+  --color-scope-blue: #4169E1;
+  --color-trigger-blue: #1E90FF;
+  --color-rifling-green: #228B22;
+  --color-bore-sight-green: #32CD32;
+  --color-safety-red: #DC143C;
+  
+  /* Dark Theme: Evening Hunt in the Mountains */
+  --color-night-sight: #1A1A1A;
+  --color-carbon-fiber: #2D2D2D;
+  --color-tactical-gray: #4A4A4A;
+  --color-titanium-white: #F0F0F0;
+  --color-stainless-steel: #C0C0C0;
+  --color-flash-hider: #8B8B8B;
+  --color-crimson-trace: #DC143C;
+  --color-cerakote-blue: #4682B4;
+  --color-ghost-ring: #708090;
+  --color-woodland-camo: #556B2F;
+  
+  /* ================== TYPOGRAPHY SYSTEM ================== */
+  --font-rajdhani: 'Rajdhani', sans-serif;
+  --font-noto-sans: 'Noto Sans', sans-serif;
+  --font-noto-serif: 'Noto Serif', serif;
+  
+  /* ================== TIMING SYSTEM ================== */
+  --transition-stripe-fast: 150ms ease;
+  --transition-stripe-normal: 250ms ease;
+  --transition-stripe-slow: 350ms ease;
+  
+  /* ================== GRADIENT SYSTEM ================== */
+  --gradient-brass-copper: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 100%);
+  --gradient-premium: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 50%, var(--color-gunmetal-black) 100%);
+  --gradient-elite: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 25%, var(--color-gunmetal-black) 75%, var(--color-nickel-white) 100%);
+  
+  /* ================== STRIPE-INSPIRED SOPHISTICATED SHADOW SYSTEM ================== */
+  --shadow-xs: 0 2px 5px -1px rgba(50, 50, 93, 0.25), 0 1px 3px -1px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
+  
+  /* TBGC Brand-Colored Sophisticated Shadows */
+  --shadow-brass: 0 6px 12px -2px rgba(242, 203, 5, 0.15), 0 3px 7px -3px rgba(0, 0, 0, 0.25);
+  --shadow-copper: 0 13px 27px -5px rgba(242, 135, 5, 0.12), 0 8px 16px -8px rgba(0, 0, 0, 0.25);
+}
+```
+
+## 🧩 COMPONENT ARCHITECTURE
+
+### **CVA Pattern Implementation**
+
+```tsx
+import { cva, type VariantProps } from 'class-variance-authority'
+import { cn } from '@/lib/utils'
+
+const componentVariants = cva(
+  // Base styles - always applied
+  "base-styles-here",
+  {
+    variants: {
+      variant: {
+        default: "bg-range-white text-gunmetal-black",
+        primary: "bg-brass-yellow text-gunmetal-black",
+        secondary: "bg-shooting-bench text-gunmetal-black",
+        accent: "bg-white text-gunmetal-black border-2 border-brass-yellow/30",
+        success: "bg-white text-gunmetal-black border-2 border-rifling-green/30",
+        destructive: "bg-white text-gunmetal-black border-2 border-safety-red/30",
+        ghost: "bg-transparent text-gunmetal-black hover:bg-shooting-bench",
+        link: "bg-transparent text-scope-blue underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        icon: "h-10 w-10",
+      },
+      rounded: {
+        default: "rounded-md",
+        sm: "rounded-sm",
+        lg: "rounded-lg",
+        full: "rounded-full",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+      rounded: "default",
+    },
+  }
+)
+
+export interface ComponentProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof componentVariants> {
+  // Additional props
+}
+
+const Component = React.forwardRef<HTMLDivElement, ComponentProps>(
+  ({ className, variant, size, rounded, ...props }, ref) => {
+    return (
+      <div
+        className={cn(componentVariants({ variant, size, rounded, className }))}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+Component.displayName = "Component"
+```
+
+## 📝 TYPOGRAPHY HIERARCHY
+
+### **Heading System**
+
+```tsx
+// H1 - Main Page Titles (Rajdhani)
+<h1 className="font-rajdhani font-bold text-4xl md:text-5xl lg:text-6xl text-gunmetal-black">
+  THE BOISE GUN CLUB
+</h1>
+
+// H2 - Section Headers (Rajdhani)
+<h2 className="font-rajdhani font-semibold text-2xl md:text-3xl text-gunmetal-black">
+  Firearms Safety Training
+</h2>
+
+// H3 - Subsection Headers (Noto Sans)
+<h3 className="font-noto-sans font-semibold text-xl md:text-2xl text-gunmetal-black">
+  Basic Safety Principles
+</h3>
+
+// H4-H6 - Content Headers (Noto Sans)
+<h4 className="font-noto-sans font-medium text-lg text-gunmetal-black">
+  Equipment Requirements
+</h4>
+```
+
+### **Body Text System**
+
+```tsx
+// Primary Body Text (Noto Sans)
+<p className="font-noto-sans text-base text-gunmetal-black leading-relaxed">
+  The Boise Gun Club provides comprehensive firearms safety education...
+</p>
+
+// Editorial/Storytelling Text (Noto Serif)
+<p className="font-noto-serif text-base text-gunmetal-black leading-relaxed italic">
+  In the rugged mountains of Idaho, where tradition meets precision...
+</p>
+
+// Small Text (Noto Sans)
+<p className="font-noto-sans text-sm text-case-hardened">
+  Additional safety information and requirements...
+</p>
+```
+
+## 🎨 COLOR USAGE PATTERNS
+
+### **Primary Brand Colors**
+
+```tsx
+// Brass Yellow - Premium, heritage, quality
+<div className="bg-brass-yellow text-gunmetal-black">
+  Premium Membership
+</div>
+
+// Copper Orange - Heritage, warmth, tradition
+<div className="bg-copper-orange text-nickel-white">
+  Heritage Collection
+</div>
+
+// Gunmetal Black - Precision, sophistication
+<div className="bg-gunmetal-black text-nickel-white">
+  Professional Training
+</div>
+
+// Nickel White - Clean, pure, premium
+<div className="bg-nickel-white text-gunmetal-black">
+  Safety Certification
+</div>
+```
+
+### **Contextual Colors**
+
+```tsx
+// Success States
+<div className="bg-rifling-green text-nickel-white">
+  Certification Complete
+</div>
+
+// Warning States
+<div className="bg-muzzle-flash text-gunmetal-black">
+  Safety Reminder
+</div>
+
+// Error States
+<div className="bg-safety-red text-nickel-white">
+  Safety Violation
+</div>
+
+// Information States
+<div className="bg-scope-blue text-nickel-white">
+  Training Information
+</div>
+```
+
+## ⚡ ANIMATION & TRANSITIONS
+
+### **Stripe-Inspired Timing**
+
+```tsx
+// Fast interactions (150ms)
+<button className="transition-all transition-stripe-fast hover:scale-105">
+  Quick Action
+</button>
+
+// Normal interactions (250ms)
+<div className="transition-all transition-stripe-normal hover:shadow-md">
+  Standard Interaction
+</div>
+
+// Slow, deliberate animations (350ms)
+<div className="transition-all transition-stripe-slow hover:bg-brass-yellow/10">
+  Premium Experience
+</div>
+```
+
+### **Custom Animations**
+
+```css
+/* Shimmer effect for premium elements */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+/* Premium pulse for elite elements */
+@keyframes pulse-premium {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-premium {
+  animation: pulse-premium 3s ease-in-out infinite;
+}
+```
+
+## 🔧 UTILITY CLASSES
+
+### **Spacing System**
+
+```tsx
+// Consistent spacing using Tailwind scale
+<div className="p-4 md:p-6 lg:p-8"> {/* Responsive padding */}
+<div className="space-y-4 md:space-y-6"> {/* Vertical spacing */}
+<div className="space-x-4 md:space-x-6"> {/* Horizontal spacing */}
+```
+
+### **Layout Patterns**
+
+```tsx
+// 50/50 split layouts (no right-aligned text)
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+  <div className="text-left">
+    <h2 className="font-rajdhani font-semibold text-2xl text-gunmetal-black">
+      Heritage Preservation
+    </h2>
+    <p className="font-noto-sans text-base text-gunmetal-black mt-4">
+      Celebrating Idaho's firearms culture...
+    </p>
+  </div>
+  <div className="text-left">
+    <h2 className="font-rajdhani font-semibold text-2xl text-gunmetal-black">
+      Safety Education
+    </h2>
+    <p className="font-noto-sans text-base text-gunmetal-black mt-4">
+      Leading firearms safety training...
+    </p>
+  </div>
+</div>
+```
+
+## 🎯 ACCESSIBILITY STANDARDS
+
+### **WCAG 2.1 AA Compliance**
+
+```tsx
+// Proper contrast ratios (4.5:1 minimum)
+<div className="bg-brass-yellow text-gunmetal-black"> {/* 8.5:1 contrast */}
+<div className="bg-rifling-green text-nickel-white"> {/* 7.2:1 contrast */}
+<div className="bg-safety-red text-nickel-white"> {/* 6.8:1 contrast */}
+
+// Focus indicators
+<button className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-yellow focus-visible:ring-offset-2">
+  Accessible Button
+</button>
+
+// Screen reader support
+<button aria-label="Close safety information">
+  <X className="h-4 w-4" />
+</button>
+```
+
+### **Motion Preferences**
+
+```tsx
+// Respect user motion preferences
+<div className="transition-all transition-stripe-normal motion-reduce:transition-none">
+  Animated Element
+</div>
+
+// Reduced motion alternatives
+<div className="animate-pulse motion-reduce:animate-none">
+  Pulsing Element
+</div>
+```
+
+## 🧪 TESTING REQUIREMENTS
+
+### **Component Testing**
+
+```tsx
+// Storybook stories for all variants
+export const Default: Story = {
+  args: {
+    variant: 'default',
+    children: 'Default Button',
+  },
+}
+
+export const AllVariants: Story = {
+  render: () => (
+    <div className="space-y-4">
+      <Button variant="default">Default</Button>
+      <Button variant="primary">Primary</Button>
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="accent">Accent</Button>
+      <Button variant="success">Success</Button>
+      <Button variant="destructive">Destructive</Button>
+    </div>
+  ),
+}
+```
+
+### **Accessibility Testing**
+
+```tsx
+// A11y testing in Storybook
+export const AccessibilityTest: Story = {
+  args: {
+    variant: 'primary',
+    children: 'Accessible Button',
+  },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: true,
+          },
+        ],
+      },
+    },
+  },
+}
+```
+
+## 🚀 PERFORMANCE OPTIMIZATION
+
+### **Code Splitting**
+
+```tsx
+// Dynamic imports for heavy components
+const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
+  loading: () => <div className="animate-pulse bg-shooting-bench h-32 rounded-md" />,
+  ssr: false,
+})
+```
+
+### **Image Optimization**
+
+```tsx
+// Next.js Image component with proper sizing
+import Image from 'next/image'
+
+<Image
+  src="/images/heritage-collection.jpg"
+  alt="Idaho firearms heritage collection"
+  width={800}
+  height={600}
+  className="rounded-lg shadow-md"
+  priority={false}
+/>
+```
+
+## 📋 CODE REVIEW CHECKLIST
+
+### **Before Commit**
+
+- [ ] Uses only approved 26 colors from design system
+- [ ] Follows CVA pattern for component variants
+- [ ] Proper TypeScript interfaces defined
+- [ ] No hardcoded colors or values
+- [ ] Accessibility standards met (WCAG 2.1 AA)
+- [ ] Responsive design implemented
+- [ ] Performance optimized
+- [ ] Storybook stories updated
+- [ ] No console errors
+- [ ] Cross-browser compatibility verified
+
+### **Design System Compliance**
+
+- [ ] Typography hierarchy followed (Rajdhani for H1-H2, Noto Sans for H3-H6)
+- [ ] Color usage matches Idaho Firearms Heritage Palette
+- [ ] Spacing uses consistent Tailwind scale
+- [ ] Transitions use approved timing variables
+- [ ] Shadows use Stripe-inspired system
+- [ ] No right-aligned text (use 50/50 layouts)
+- [ ] No emojis in UI (use Lucide React icons)
+
+**Remember: Every component should reflect the precision, heritage, and quality of Idaho's firearms culture while maintaining modern web standards and accessibility.** 

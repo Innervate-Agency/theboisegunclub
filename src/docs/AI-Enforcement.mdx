@@ -1,0 +1,166 @@
+---
+title: 'Documentation/AI Enforcement Checklist'
+---
+
+# AI ENFORCEMENT CHECKLIST
+
+**MANDATORY VALIDATION BEFORE ANY CODE CHANGES**
+
+## 🚨 CRITICAL VIOLATIONS TO PREVENT
+
+### **Design System Violations**
+
+- [ ] **NO "premium/elite" without Brass Yellow/Copper Orange gradients**
+- [ ] **NO hardcoded hex colors** - Use ONLY the 26 approved colors from globals.css
+- [ ] **NO generic "premium" styling** - Follow exact brand color system
+- [ ] **NO right-aligned text** - Always left-align, use 50/50 div layouts instead
+- [ ] **NO emojis in UI** - Use Lucide React icons only
+- [ ] **NO outside images** - Only `/public/images/` directory files
+
+### **APPROVED COLORS ONLY (26 total)**
+
+**Primary Brand Colors:** `bg-brass-yellow`, `bg-copper-orange`, `bg-gunmetal-black`, `bg-nickel-white`
+
+**Light Theme (Spring Day at the Range):** `bg-range-white`, `bg-shooting-bench`, `bg-walnut-stock`, `bg-blued-steel`, `bg-case-hardened`, `bg-muzzle-flash`, `bg-recoil-pad`, `bg-sight-gold`, `bg-scope-blue`, `bg-trigger-blue`, `bg-rifling-green`, `bg-bore-sight-green`, `bg-safety-red`
+
+**Dark Theme (Evening Hunt in the Mountains):** `bg-night-sight`, `bg-carbon-fiber`, `bg-tactical-gray`, `bg-titanium-white`, `bg-stainless-steel`, `bg-flash-hider`, `bg-crimson-trace`, `bg-cerakote-blue`, `bg-ghost-ring`, `bg-woodland-camo`
+
+### **Typography Violations**
+
+- [ ] **NO wrong fonts** - H1-H2: Rajdhani, H3-H6: Noto Sans, Editorial: Noto Serif
+- [ ] **NO font-weight 800** - Maximum is 700 for Rajdhani
+- [ ] **NO hardcoded font families** - Use CSS custom properties only
+
+### **Technical Stack Violations**  
+
+- [ ] **NO inline styles** - Use Tailwind v4 classes only
+- [ ] **NO old Tailwind syntax** - `bg-brass-yellow` NOT `bg-[var(--color-brass-yellow)]`
+- [ ] **NO !important hacks** - Proper CSS specificity only
+- [ ] **NO hardcoded transitions** - Use `transition-stripe-fast` (150ms) or `transition-stripe-normal` (250ms) or `transition-stripe-slow` (350ms)
+
+## ✅ MANDATORY CHECKLIST FOR ANY COMPONENT WORK
+
+### **Before Starting:**
+
+1. [ ] Read component's current implementation in `src/components/ui/`
+2. [ ] Check Storybook story for existing variants
+3. [ ] Verify CSS variables exist in globals.css @theme
+4. [ ] Confirm fonts available: Rajdhani, Noto Sans, Noto Serif
+
+### **During Implementation:**
+
+1. [ ] Use ONLY the 26 approved colors from globals.css (see list above)
+2. [ ] Follow CVA pattern for variants (seen in existing components)
+3. [ ] Use Tailwind v4 direct syntax: `bg-brass-yellow/20` for opacity
+4. [ ] Implement proper Server/Client component patterns
+5. [ ] Add proper TypeScript interfaces
+6. [ ] Primary focus: Brass Yellow + Copper Orange for premium/elite variants
+
+### **After Implementation:**
+
+1. [ ] Verify no hardcoded colors in final code
+2. [ ] Confirm typography follows H1-H2 (Rajdhani), H3-H6 (Noto Sans) rules
+3. [ ] Test both light and dark themes
+4. [ ] Validate accessibility (4.5:1 contrast minimum)
+5. [ ] Check motion respects `prefers-reduced-motion`
+
+## 🎯 APPROVED PATTERNS TO FOLLOW
+
+### **Color Usage:**
+
+```tsx
+// ✅ CORRECT - Using approved 26-color palette
+<div className="bg-brass-yellow text-gunmetal-black">
+<div className="border-copper-orange/30 bg-range-white">
+<div className="hover:bg-copper-orange transition-stripe-fast">
+<div className="bg-night-sight text-titanium-white">
+<div className="border-scope-blue/50 bg-shooting-bench">
+
+// ❌ FORBIDDEN - All hardcoded colors
+<div className="bg-[#F2CB05]">
+<div className="bg-[var(--color-brass-yellow)]">
+<div style={{backgroundColor: '#F2CB05'}}>
+<div className="bg-blue-500">
+<div className="text-red-600">
+```
+
+### **Typography:**
+
+```tsx
+// ✅ CORRECT
+<h1 className="font-rajdhani font-bold">THE BOISE GUN CLUB</h1>
+<h3 className="font-noto-sans font-semibold">Section Header</h3>
+<p className="font-noto-sans">Body text content</p>
+
+// ❌ FORBIDDEN
+<h1 className="font-bold text-xl">Title</h1>
+<h3 style={{fontFamily: 'Arial'}}>Header</h3>
+```
+
+### **Component Structure:**
+
+```tsx
+// ✅ CORRECT - CVA Pattern
+const buttonVariants = cva(
+  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
+  {
+    variants: {
+      variant: {
+        default: "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange",
+        destructive: "bg-safety-red text-nickel-white hover:bg-safety-red/90",
+      },
+      size: {
+        default: "h-10 py-2 px-4",
+        sm: "h-9 px-3 rounded-md",
+        lg: "h-11 px-8 rounded-md",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+)
+```
+
+## 🚫 ABSOLUTE NO-GO ZONES
+
+### **Never Use These:**
+
+- `bg-blue-500`, `text-red-600`, `border-green-400` (generic colors)
+- `font-bold` without specifying font family
+- `transition-all` (use specific timing variables)
+- `!important` in any CSS
+- Hardcoded pixel values for spacing (use Tailwind scale)
+- Inline styles with `style={{}}`
+- Emojis in component text (use Lucide React icons)
+
+### **Always Use These:**
+
+- Design system colors: `bg-brass-yellow`, `text-gunmetal-black`
+- Typography classes: `font-rajdhani`, `font-noto-sans`
+- Transition timing: `transition-stripe-fast`, `transition-stripe-normal`
+- Proper contrast ratios for accessibility
+- Semantic HTML structure
+
+## 🔍 VALIDATION CHECKPOINTS
+
+### **Before Commit:**
+
+- [ ] No console errors in Storybook
+- [ ] All variants render correctly
+- [ ] Dark/light theme switching works
+- [ ] Accessibility audit passes
+- [ ] Mobile responsiveness verified
+- [ ] Performance impact minimal
+
+### **Code Review Checklist:**
+
+- [ ] Uses only approved 26 colors
+- [ ] Follows CVA pattern for variants
+- [ ] Proper TypeScript interfaces
+- [ ] No hardcoded values
+- [ ] Consistent with existing components
+- [ ] Storybook documentation updated
+
+**Remember: This is a firearms heritage brand. Every component should reflect precision, quality, and the rugged elegance of Idaho's outdoor culture.** 

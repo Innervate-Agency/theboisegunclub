@@ -1,20 +1,19 @@
-import type { StorybookConfig } from '@storybook/nextjs';
+import type { StorybookConfig } from '@storybook/nextjs-vite';
 
 const config: StorybookConfig = {
   stories: [
-    '../src/**/*.mdx',
+    // ONLY load .stories files - never loose MDX
     '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    // Documentation MDX files (safe, curated)
+    '../src/docs/*.mdx',
   ],
   addons: [
-    '@storybook/addon-interactions',
-    '@storybook/addon-a11y',
-    '@storybook/addon-onboarding',
+    '@storybook/addon-docs',
+    '@storybook/addon-a11y', 
     '@storybook/addon-themes',
-    '@storybook/addon-designs',
-    'storybook-addon-pseudo-states',
   ],
   framework: {
-    name: '@storybook/nextjs',
+    name: '@storybook/nextjs-vite',
     options: {},
   },
   docs: {
@@ -24,8 +23,10 @@ const config: StorybookConfig = {
     reactDocgen: 'react-docgen-typescript',
   },
   staticDirs: ['../public'],
+  // Error boundary to prevent build failures
   features: {
-    interactionsDebugger: true,
+    buildStoriesJson: false,
   },
 };
+
 export default config;
