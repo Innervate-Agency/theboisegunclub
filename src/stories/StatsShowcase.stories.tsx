@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { StatsShowcase } from '@/components/ui/stats-showcase';
 import { Users, Target, Trophy, Calendar } from 'lucide-react';
 
@@ -16,35 +16,35 @@ type Story = StoryObj<typeof meta>;
 
 const sampleStats = [
   {
-    label: 'Active Members',
-    value: '1,200+',
+    label: 'Listed Businesses',
+    value: '500+',
     icon: Users,
-    change: { value: '+5% this month', trend: 'up' },
+    change: { value: '+12% this month', trend: 'up' },
   },
   {
-    label: 'Targets Thrown',
-    value: '2.5M',
+    label: 'Community Members',
+    value: '15k+',
     icon: Target,
-    description: 'Annually across all disciplines',
+    description: 'Active users across the platform',
   },
   {
-    label: 'Tournaments Hosted',
-    value: 25,
+    label: 'Regional Events',
+    value: 85,
     icon: Trophy,
-    change: { value: '+3 from last year', trend: 'up' },
+    change: { value: '+15 from last year', trend: 'up' },
   },
   {
-    label: 'Events This Year',
-    value: 150,
+    label: 'Monthly Listings',
+    value: 250,
     icon: Calendar,
-    description: 'Including leagues and corporate outings',
+    description: 'New business and event submissions',
   },
 ];
 
 export const Default: Story = {
   args: {
-    title: 'Our Club by the Numbers',
-    subtitle: 'A Thriving Community',
+    title: 'Treasure Valley Firearms Hub',
+    subtitle: 'Regional Community Statistics',
     stats: sampleStats,
   },
   render: (args) => <StatsShowcase {...args} />,

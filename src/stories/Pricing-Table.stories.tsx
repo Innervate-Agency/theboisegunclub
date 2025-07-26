@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { PricingCard, PricingTable, PricingFusion } from '@/components/ui/pricing-table';
 import { Target, Trophy, Crown, Star, Users, Shield } from 'lucide-react';
 

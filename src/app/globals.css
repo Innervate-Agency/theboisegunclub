@@ -49,15 +49,17 @@
   --timing-slow: 350ms;
   --ease-stripe: cubic-bezier(0.215, 0.61, 0.355, 1);
   
-  /* ================== PROFESSIONAL SHADOW SYSTEM ================== */
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  /* ================== STRIPE-INSPIRED SOPHISTICATED SHADOW SYSTEM ================== */
+  /* Based on Stripe's layered shadow approach with colored + black shadows */
+  --shadow-xs: 0 2px 5px -1px rgba(50, 50, 93, 0.25), 0 1px 3px -1px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
 
-  /* Brand-Colored Shadows */
-  --shadow-premium: 0 4px 8px -2px rgba(242, 203, 5, 0.25), 0 2px 4px -1px rgba(242, 135, 5, 0.15), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  --shadow-elite: 0 8px 16px -4px rgba(242, 203, 5, 0.3), 0 4px 8px -2px rgba(242, 135, 5, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+  /* TBGC Brand-Colored Sophisticated Shadows (using our brass/copper palette) */
+  --shadow-brass: 0 6px 12px -2px rgba(242, 203, 5, 0.15), 0 3px 7px -3px rgba(0, 0, 0, 0.25);
+  --shadow-copper: 0 13px 27px -5px rgba(242, 135, 5, 0.12), 0 8px 16px -8px rgba(0, 0, 0, 0.25);
 
   /* ================== SOPHISTICATED GRADIENT SYSTEM ================== */
   --gradient-primary: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 100%);
@@ -78,6 +80,19 @@
     --border: var(--color-case-hardened);
     --input: var(--color-shooting-bench);
     --ring: var(--color-brass-yellow);
+    --radius: 0.5rem;
+
+    /* Semantic colors for components */
+    --primary: var(--color-blued-steel);
+    --primary-foreground: var(--color-range-white);
+    --secondary: var(--color-walnut-stock);
+    --secondary-foreground: var(--color-range-white);
+    --destructive: var(--color-muzzle-flash);
+    --destructive-foreground: var(--color-range-white);
+    --accent: var(--color-scope-blue);
+    --accent-foreground: var(--color-range-white);
+    --popover: var(--color-range-white);
+    --popover-foreground: var(--color-blued-steel);
   }
 
   .dark {
@@ -91,6 +106,18 @@
     --border: var(--color-tactical-gray);
     --input: var(--color-carbon-fiber);
     --ring: var(--color-brass-yellow);
+
+    /* Semantic colors for components */
+    --primary: var(--color-titanium-white);
+    --primary-foreground: var(--color-night-sight);
+    --secondary: var(--color-carbon-fiber);
+    --secondary-foreground: var(--color-titanium-white);
+    --destructive: var(--color-crimson-trace);
+    --destructive-foreground: var(--color-titanium-white);
+    --accent: var(--color-cerakote-blue);
+    --accent-foreground: var(--color-titanium-white);
+    --popover: var(--color-night-sight);
+    --popover-foreground: var(--color-titanium-white);
   }
 
   * {
@@ -114,40 +141,277 @@
   .transition-stripe-normal  { transition: all 250ms cubic-bezier(0.215, 0.61, 0.355, 1); }
   .transition-stripe-slow    { transition: all 350ms cubic-bezier(0.215, 0.61, 0.355, 1); }
 
-  /* Advanced Keyframe Animations */
+  /* ================== WINDOWS 11 MICA GLASSMORPHISM ================== */
+  .mica-glass {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mica-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(242, 203, 5, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(242, 135, 5, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 50%);
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .mica-glass::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+    background-size: 20px 20px;
+    border-radius: inherit;
+    opacity: 0.3;
+    z-index: -1;
+    animation: noise-float 8s ease-in-out infinite;
+  }
+
+  @keyframes noise-float {
+    0%, 100% { 
+      transform: translate(0, 0) rotate(0deg);
+      opacity: 0.3;
+    }
+    25% { 
+      transform: translate(1px, -1px) rotate(0.5deg);
+      opacity: 0.25;
+    }
+    50% { 
+      transform: translate(-1px, 1px) rotate(-0.5deg);
+      opacity: 0.35;
+    }
+    75% { 
+      transform: translate(1px, 1px) rotate(0.25deg);
+      opacity: 0.28;
+    }
+  }
+
+  /* Enhanced glassmorphism on hover */
+  .mica-glass:hover::before {
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(242, 203, 5, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(242, 135, 5, 0.10) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  }
+
+  .mica-glass:hover::after {
+    opacity: 0.4;
+  }
+
+  /* ================== STRIPE-STYLE ARROW ANIMATIONS ================== */
+  .stripe-arrow {
+    position: relative;
+  }
+
+  .stripe-arrow .HoverArrow {
+    transition: transform 0.15s ease;
+    transform: translateX(0);
+  }
+
+  .stripe-arrow:hover .HoverArrow {
+    transform: translateX(3px);
+  }
+
+  .stripe-arrow .HoverArrow__linePath {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  .stripe-arrow:hover .HoverArrow__linePath {
+    opacity: 1;
+    transition-delay: 0.1s;
+  }
+
+  .stripe-arrow .HoverArrow__tipPath {
+    transform: translateX(0);
+    transition: transform 0.15s ease;
+  }
+
+  .stripe-arrow:hover .HoverArrow__tipPath {
+    transform: translateX(3px);
+  }
+
+  /* Arrow icon spacing */
+  .stripe-arrow .arrow-icon {
+    margin-left: 0.5rem;
+    transition: margin-left 0.15s ease;
+  }
+
+  .stripe-arrow:hover .arrow-icon {
+    margin-left: 0.75rem;
+  }
+
+  /* ================== SOPHISTICATED GRADIENT BACKGROUNDS ================== */
+  .bg-gradient-premium {
+    background: linear-gradient(135deg, #F2CB05 0%, #F28705 45%, #F2CB05 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease-in-out infinite;
+  }
+
+  .bg-gradient-elite {
+    background: linear-gradient(135deg, #F2CB05 0%, #F28705 25%, #F2CB05 50%, #F28705 75%, #F2CB05 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 4s ease-in-out infinite;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* ================== ADVANCED KEYFRAME ANIMATIONS ================== */
   @keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
+    0% { 
+      background-position: -200% 0;
+      transform: translateX(-100%);
+    }
+    100% { 
+      background-position: 200% 0;
+      transform: translateX(100%);
+    }
   }
 
   @keyframes pulse-premium {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(242, 203, 5, 0.4); }
-    50% { box-shadow: 0 0 0 10px rgba(242, 203, 5, 0); }
+    0%, 100% { 
+      box-shadow: 0 0 0 0 rgba(242, 203, 5, 0.4);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 0 10px rgba(242, 203, 5, 0);
+      transform: scale(1.02);
+    }
   }
 
   .animate-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animate-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
     animation: shimmer 2s infinite linear;
-    background-size: 200% 100%;
   }
 
   .animate-pulse-premium {
     animation: pulse-premium 2s infinite;
   }
 
-  /* Windows 11 Mica Implementation */
+  /* ================== WINDOWS 11 MICA IMPLEMENTATION ================== */
   .mica-premium {
+    position: relative;
     background: 
       radial-gradient(circle at 20% 50%, rgba(242, 203, 5, 0.12) 0%, transparent 50%),
       radial-gradient(circle at 80% 20%, rgba(242, 135, 5, 0.08) 0%, transparent 50%),
       radial-gradient(circle at 40% 80%, rgba(242, 203, 5, 0.06) 0%, transparent 50%);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px) saturate(180%);
+  }
+
+  .mica-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(242, 203, 5, 0.1), rgba(242, 135, 5, 0.05));
+    border-radius: inherit;
+    z-index: -1;
   }
 
   .mica-elite {
+    position: relative;
     background: 
       radial-gradient(circle at 25% 25%, rgba(242, 203, 5, 0.18) 0%, transparent 50%),
       radial-gradient(circle at 75% 75%, rgba(242, 135, 5, 0.14) 0%, transparent 50%),
       radial-gradient(circle at 50% 50%, rgba(242, 203, 5, 0.10) 0%, transparent 50%);
-    backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px) saturate(200%);
+  }
+
+  .mica-elite::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(242, 203, 5, 0.15), rgba(242, 135, 5, 0.08));
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  /* ================== PROFESSIONAL SHADOW UTILITIES ================== */
+  .shadow-premium {
+    box-shadow: 0 4px 8px -2px rgba(242, 203, 5, 0.25), 0 2px 4px -1px rgba(242, 135, 5, 0.15), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-elite {
+    box-shadow: 0 8px 16px -4px rgba(242, 203, 5, 0.3), 0 4px 8px -2px rgba(242, 135, 5, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  /* ================== CLICKUP-INSPIRED VIBRANT EFFECTS ================== */
+  .hover\:shadow-clickup:hover {
+    box-shadow: 0 10px 25px rgba(118, 18, 250, 0.25), 0 4px 10px rgba(64, 221, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .gradient-clickup {
+    background: linear-gradient(135deg, #7612FA 0%, #40DDFF 100%);
+  }
+
+  .gradient-clickup-pink {
+    background: linear-gradient(135deg, #FA12E3 0%, #FFD700 100%);
+  }
+
+  /* ================== STRIPE-INSPIRED MICRO-INTERACTIONS ================== */
+  .button-stripe {
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+  }
+
+  .button-stripe::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  .button-stripe:hover::before {
+    left: 100%;
+  }
+
+  /* ================== ADVANCED BUTTON STATES ================== */
+  .btn-hover-lift {
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .btn-hover-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-hover-lift:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
 }

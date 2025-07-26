@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { BreadcrumbHero } from '@/components/ui/breadcrumb-hero';
 import { Target, Trophy, Users, Calendar, Shield, Star, MapPin, BookOpen, Settings } from 'lucide-react';
 

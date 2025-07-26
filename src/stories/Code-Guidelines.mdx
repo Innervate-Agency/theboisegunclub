@@ -1,0 +1,731 @@
+---
+title: 'Documentation/Code Guidelines'
+---
+
+# Code Guidelines: Technical Standards
+
+This document defines the technical standards and development practices for the Boise Gun Club v4 project. These guidelines ensure consistency, maintainability, and quality across the codebase.
+
+## 1. Core Philosophy
+
+1. **Component-Driven:** Our UI is built from a hierarchy of reusable components. Pages are compositions of these components, not monolithic blocks of code.
+2. **Convention Over Configuration:** We follow established patterns and conventions to minimize boilerplate and cognitive overhead.
+3. **Single Responsibility:** Each component, hook, or utility has a single, well-defined purpose.
+4. **Strictness and Clarity:** We use TypeScript's strict mode and explicit typing to catch errors early and make our code self-documenting.
+
+## 2. Project & Component Architecture
+
+We use a feature-based architecture within the Next.js App Router.
+
+### 2.1. Directory Structure
+
+- `src/app/`: Contains all routes and pages. The `page.tsx` file for any given route should be lean, focusing only on fetching data and composing components.
+- `src/components/ui/`: "Dumb" UI primitives that are globally reusable (e.g., `Button`, `Input`, `Card`). These should be highly generic and styleable.
+- `src/components/common/`: More complex components that are used across multiple features (e.g., `SiteHeader`, `PageTitle`).
+- `src/components/{feature-name}/`: Components that are specific to a single feature or page (e.g., `src/components/membership/MembershipCard`).
+- `src/lib/`: Utility functions, API helpers, and other shared logic.
+- `src/hooks/`: Custom hooks that encapsulate reusable logic.
+- `src/types/`: Global TypeScript type definitions and interfaces.
+
+### 2.2. Page Composition: The Gold Standard
+
+The `page.tsx` file should do as little as possible. Its primary role is to assemble the UI by importing and arranging the necessary components. Logic, state, and complex JSX should be encapsulated within those components.
+
+**Example (`src/app/about/page.tsx`):**
+
+```tsx
+// GOOD: A clean, declarative page composition
+import { AboutHero } from '@/components/about/AboutHero';
+import { OurHistory } from '@/components/about/OurHistory';
+import { BoardOfDirectors } from '@/components/about/BoardOfDirectors';
+
+export default function AboutPage() {
+  return (
+    <main>
+      <AboutHero />
+      <OurHistory />
+      <BoardOfDirectors />
+    </main>
+  );
+}
+```
+
+### 2.3. Server vs. Client Components
+
+- **Default to Server Components:** All components are Server Components by default. Use them for fetching data and accessing server-side resources.
+- **Opt-in to Client Components:** Only use Client Components when you need interactivity (e.g., `onClick`, `useState`, `useEffect`). Add `"use client";` to the top of the file to make it a Client Component.
+- **Isolate Interactivity:** Keep Client Components as small as possible. Create specific interactive components rather than making an entire page a client component.
+
+## 3. Styling with Tailwind CSS v4
+
+We use Tailwind CSS v4's CSS-first configuration. All styling rules are defined in `src/app/globals.css`.
+
+### 3.1. Design Tokens & Theming
+
+**There are no hardcoded hex codes.** All colors, fonts, and other design tokens must be defined as CSS variables under the `@theme` directive.
+
+**Example (`src/app/globals.css`):**
+
+```css
+@import "tailwindcss";
+
+@theme {
+  /* Primary Brand Colors */
+  --color-brass-yellow: #F2CB05;         /* Primary CTA, highlights, premium actions */
+  --color-copper-orange: #F28705;        /* Secondary accent, hover states, energy */
+  --color-gunmetal-black: #0A0A0A;       /* Primary text, strong contrast */
+  --color-nickel-white: #FFFFFF;         /* Clean backgrounds, negative space */
+
+  /* Light Theme: Spring Day at the Range */
+  --color-range-white: #f8f6f1;              /* Primary warm background */
+  --color-shooting-bench: #ede7de;           /* Secondary surface, card backgrounds */
+  --color-walnut-stock: #c08051;             /* Earth tone accents, warm highlights */
+  --color-blued-steel: #372103;              /* Primary text, strong contrast */
+  --color-case-hardened: #693e21;            /* Secondary text, muted content */
+  --color-muzzle-flash: #F23005;             /* Error states, urgent actions */
+  --color-recoil-pad: #f07b1d;               /* Info accents, notification badges */
+  --color-sight-gold: #E3C03C;               /* Warning states, caution indicators */
+  --color-scope-blue: #5198cd;               /* Links, info states, navigation */
+  --color-trigger-blue: #3c81c0;             /* Hover states for blue elements */
+  --color-rifling-green: #6f7822;            /* Success states, positive feedback */
+  --color-bore-sight-green: #909233;         /* Secondary success, nature elements */
+  --color-safety-red: #8C394B;               /* Destructive actions, critical warnings */
+
+  /* Dark Theme: Evening Hunt in the Mountains */
+  --color-night-sight: #2F3135;              /* Primary dark background */
+  --color-carbon-fiber: #4B4B4B;             /* Elevated surfaces, cards */
+  --color-tactical-gray: #494657;            /* Muted surfaces, secondary cards */
+  --color-titanium-white: #FDFDFD;           /* High contrast text */
+  --color-stainless-steel: #EEF1F7;          /* Secondary text, descriptions */
+  --color-flash-hider: #F25C05;              /* Dark theme energy, accents */
+  --color-crimson-trace: #F23005;            /* Dark theme alerts, errors */
+  --color-cerakote-blue: #4982A6;            /* Dark theme info, links */
+  --color-ghost-ring: #C9D2EF;               /* Dark theme muted elements */
+  --color-woodland-camo: #3F6331;            /* Dark theme success states */
+
+  /* Typography */
+  --font-heading: "Rajdhani", "Inter", "system-ui", sans-serif;
+  --font-body: "Noto Sans", "Inter", "system-ui", sans-serif;
+  --font-serif: "Noto Serif", "Georgia", "Times New Roman", serif;
+
+  /* Timing */
+  --timing-fast: 150ms;        /* Hover states, focus rings, micro-interactions */
+  --timing-normal: 250ms;      /* Standard transitions, modal appearances */
+  --timing-slow: 350ms;        /* Complex animations, page transitions */
+  --ease-stripe: cubic-bezier(0.215, 0.61, 0.355, 1);  /* Professional easing */
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #F2CB05 0%, #F28705 100%);
+  --gradient-premium: linear-gradient(135deg, #F2CB05 0%, #F28705 45%, #F2CB05 100%);
+  --gradient-elite: linear-gradient(135deg, #F2CB05 0%, #F28705 25%, #F2CB05 50%, #F28705 75%, #F2CB05 100%);
+  --gradient-subtle: linear-gradient(135deg, rgba(242, 203, 5, 0.05) 0%, rgba(242, 135, 5, 0.05) 100%);
+}
+```
+
+### 3.2. Light & Dark Mode
+
+We use **CSS variables with theme switching** strategy for dark mode. The `dark` class or `[data-theme="dark"]` selector activates it. All components must support both modes.
+
+- **Define Theme Variables:** Use CSS variables in `@layer base` for theme-aware colors.
+- **Override in Dark Mode:** Use `.dark` or `[data-theme="dark"]` selector to override variables.
+- **Reference in Components:** Use the CSS variables with Tailwind v4 syntax.
+
+**Example (`globals.css`):**
+```css
+@layer base {
+  :root {
+    --background: var(--color-range-white);
+    --foreground: var(--color-gunmetal-black);
+    --card: var(--color-shooting-bench);
+    --card-foreground: var(--color-blued-steel);
+    --muted: var(--color-case-hardened);
+    --muted-foreground: var(--color-case-hardened);
+  }
+
+  .dark, [data-theme="dark"] {
+    --background: var(--color-night-sight);
+    --foreground: var(--color-titanium-white);
+    --card: var(--color-carbon-fiber);
+    --card-foreground: var(--color-titanium-white);
+    --muted: var(--color-ghost-ring);
+    --muted-foreground: var(--color-stainless-steel);
+  }
+}
+```
+
+### 3.3. Component Styling
+
+**Use Tailwind v4 direct syntax:**
+```tsx
+// ✅ CORRECT
+<div className="bg-brass-yellow text-gunmetal-black">
+<Button className="bg-copper-orange hover:bg-brass-yellow">
+<Card className="bg-shooting-bench border-brass-yellow/20">
+
+// ❌ INCORRECT
+<div className="bg-[var(--color-brass-yellow)]">
+<div style={{backgroundColor: '#F2CB05'}}>
+```
+
+## 4. Component Development Standards
+
+### 4.1. Component Structure
+
+Every component should follow this structure:
+
+```tsx
+// 1. Imports
+import { cn } from "@/lib/utils"
+import { cva, type VariantProps } from "class-variance-authority"
+
+// 2. Variants (if applicable)
+const componentVariants = cva(
+  "base-classes",
+  {
+    variants: {
+      variant: {
+        default: "bg-shooting-bench text-blued-steel border border-case-hardened/20 shadow-sm hover:shadow-md",
+        premium: "bg-gradient-premium text-gunmetal-black shadow-premium hover:shadow-elite hover:scale-[1.02] mica-premium",
+        elite: "bg-gradient-elite text-gunmetal-black shadow-elite animate-shimmer hover:scale-[1.05] mica-elite",
+        glass: "backdrop-blur-sm bg-shooting-bench/10 border-brass-yellow/20 text-blued-steel hover:bg-shooting-bench/20",
+        destructive: "bg-safety-red text-nickel-white shadow-sm hover:bg-safety-red/90",
+        outline: "border-2 border-brass-yellow text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black",
+        ghost: "text-blued-steel hover:bg-shooting-bench hover:text-blued-steel"
+      },
+      size: {
+        sm: "px-3 py-1.5 text-sm h-8",
+        default: "px-4 py-2 text-base h-10",
+        lg: "px-6 py-3 text-lg h-12",
+        xl: "px-8 py-4 text-xl h-14"
+      },
+      rounded: {
+        none: "rounded-none",
+        sm: "rounded-sm",
+        default: "rounded-md",
+        lg: "rounded-lg",
+        full: "rounded-full"
+      }
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+      rounded: "default"
+    }
+  }
+)
+
+// 3. Props interface
+interface ComponentProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof componentVariants> {
+  // Additional props
+}
+
+// 4. Component implementation
+const Component = React.forwardRef<HTMLDivElement, ComponentProps>(
+  ({ className, variant, size, rounded, ...props }, ref) => {
+    return (
+      <div
+        className={cn(componentVariants({ variant, size, rounded, className }))}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+Component.displayName = "Component"
+
+export { Component, componentVariants }
+```
+
+### 4.2. TypeScript Standards
+
+- **Strict Mode:** Always use TypeScript's strict mode
+- **Explicit Types:** Avoid `any` and `unknown` when possible
+- **Interface over Type:** Use interfaces for object shapes
+- **Generic Components:** Use generics for flexible, reusable components
+
+**Example:**
+```tsx
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'default' | 'premium' | 'elite' | 'destructive' | 'outline' | 'ghost'
+  size?: 'sm' | 'default' | 'lg' | 'xl'
+  loading?: boolean
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, loading, children, ...props }, ref) => {
+    // Implementation
+  }
+)
+```
+
+## 5. Typography System
+
+### 5.1. Font Hierarchy
+
+**H1-H2 (Rajdhani):**
+```tsx
+// Hero section main title
+<h1 className="font-rajdhani text-6xl md:text-8xl font-black uppercase tracking-tight">
+  <span className="text-gunmetal-black">THE BOISE</span>
+  <br />
+  <span className="font-light text-case-hardened">GUN CLUB</span>
+</h1>
+
+// Page titles
+<h1 className="font-rajdhani text-4xl md:text-6xl font-bold uppercase">
+  TREASURE VALLEY DIRECTORY
+</h1>
+
+// Section headers
+<h2 className="font-rajdhani text-3xl md:text-4xl font-semibold mb-6">
+  Find Local Experts
+</h2>
+```
+
+**H3-H6 (Noto Sans):**
+```tsx
+// Card titles
+<h3 className="font-noto-sans text-xl font-semibold text-blued-steel mb-2">
+  Idaho Firearms Training
+</h3>
+
+// List headers
+<h4 className="font-noto-sans text-lg font-semibold text-gunmetal-black">
+  Services Offered
+</h4>
+
+// Subsection titles
+<h5 className="font-noto-sans text-base font-semibold text-case-hardened">
+  Contact Information
+</h5>
+```
+
+**Body Text (Noto Sans):**
+```tsx
+// Standard paragraphs
+<p className="font-noto-sans text-base md:text-lg leading-relaxed text-case-hardened">
+  Discover top gun shops, ranges, gunsmiths, and instructors across the Treasure Valley.
+</p>
+
+// Form labels
+<label className="font-noto-sans text-sm font-medium text-blued-steel">
+  Business Name
+</label>
+```
+
+**Editorial Accents (Noto Serif):**
+```tsx
+// Taglines and sophisticated accents
+<p className="font-serif text-lg italic text-case-hardened/90 mb-4">
+  A comprehensive digital platform uniting the Treasure Valley firearms community
+</p>
+
+// Quote blocks
+<blockquote className="font-serif text-xl italic text-blued-steel border-l-4 border-brass-yellow pl-6">
+  "Safety, education, and community excellence in every interaction."
+</blockquote>
+```
+
+## 6. Animation & Transition System
+
+### 6.1. Stripe-Inspired Precision Timing
+
+```css
+@theme {
+  --timing-fast: 150ms;        /* Hover states, focus rings, micro-interactions */
+  --timing-normal: 250ms;      /* Standard transitions, modal appearances */
+  --timing-slow: 350ms;        /* Complex animations, page transitions */
+  --ease-stripe: cubic-bezier(0.215, 0.61, 0.355, 1);  /* Professional easing */
+}
+```
+
+### 6.2. Professional Utility Classes
+
+```css
+.transition-stripe-fast    { transition: all 150ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+.transition-stripe-normal  { transition: all 250ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+.transition-stripe-slow    { transition: all 350ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+```
+
+### 6.3. Micro-Interaction Examples
+
+```tsx
+// Button with proper hover states
+<Button className="
+  bg-brass-yellow 
+  text-gunmetal-black 
+  transition-stripe-fast 
+  hover:bg-copper-orange 
+  hover:shadow-premium 
+  active:scale-[0.98]
+  focus:ring-2 
+  focus:ring-brass-yellow/50
+">
+
+// Card with elevation changes
+<Card className="
+  bg-shooting-bench 
+  shadow-sm 
+  transition-stripe-fast 
+  hover:shadow-md 
+  hover:-translate-y-0.5
+">
+
+// Form field focus states
+<Input className="
+  border-case-hardened/30 
+  transition-stripe-fast 
+  focus:border-brass-yellow 
+  focus:ring-2 
+  focus:ring-brass-yellow/20
+">
+```
+
+## 7. State Management
+
+### 7.1. Local State
+
+Use React's built-in state management for component-local state:
+
+```tsx
+const [isOpen, setIsOpen] = useState(false)
+const [data, setData] = useState<DataType[]>([])
+```
+
+### 7.2. Server State
+
+For server state, use React Query or SWR:
+
+```tsx
+import { useQuery } from '@tanstack/react-query'
+
+const { data, isLoading, error } = useQuery({
+  queryKey: ['vendors'],
+  queryFn: fetchVendors,
+})
+```
+
+### 7.3. Global State
+
+Use Zustand for global state management:
+
+```tsx
+import { create } from 'zustand'
+
+interface AppStore {
+  theme: 'light' | 'dark'
+  setTheme: (theme: 'light' | 'dark') => void
+}
+
+const useAppStore = create<AppStore>((set) => ({
+  theme: 'light',
+  setTheme: (theme) => set({ theme }),
+}))
+```
+
+## 8. Error Handling
+
+### 8.1. Error Boundaries
+
+Implement error boundaries for graceful error handling:
+
+```tsx
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { hasError: false }
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true }
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error('Error caught by boundary:', error, errorInfo)
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <ErrorFallback />
+    }
+
+    return this.props.children
+  }
+}
+```
+
+### 8.2. Async Error Handling
+
+Handle async errors properly:
+
+```tsx
+const handleSubmit = async (data: FormData) => {
+  try {
+    await submitData(data)
+    toast.success('Success!')
+  } catch (error) {
+    console.error('Submission error:', error)
+    toast.error('Something went wrong')
+  }
+}
+```
+
+## 9. Performance Optimization
+
+### 9.1. Code Splitting
+
+Use dynamic imports for code splitting:
+
+```tsx
+const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
+  loading: () => <Skeleton />,
+})
+```
+
+### 9.2. Memoization
+
+Use `React.memo`, `useMemo`, and `useCallback` appropriately:
+
+```tsx
+const ExpensiveComponent = React.memo(({ data }) => {
+  const processedData = useMemo(() => {
+    return data.map(item => expensiveProcessing(item))
+  }, [data])
+
+  const handleClick = useCallback(() => {
+    // Handle click
+  }, [])
+
+  return <div onClick={handleClick}>{processedData}</div>
+})
+```
+
+### 9.3. Image Optimization
+
+Use Next.js Image component for optimized images:
+
+```tsx
+import Image from 'next/image'
+
+<Image
+  src="/images/hero.jpg"
+  alt="Hero image"
+  width={1200}
+  height={600}
+  priority
+/>
+```
+
+## 10. Testing Standards
+
+### 10.1. Unit Tests
+
+Write unit tests for utilities and hooks:
+
+```tsx
+import { renderHook } from '@testing-library/react'
+import { useCounter } from './useCounter'
+
+describe('useCounter', () => {
+  it('should increment counter', () => {
+    const { result } = renderHook(() => useCounter())
+    
+    act(() => {
+      result.current.increment()
+    })
+    
+    expect(result.current.count).toBe(1)
+  })
+})
+```
+
+### 10.2. Component Tests
+
+Test component rendering and interactions:
+
+```tsx
+import { render, screen, fireEvent } from '@testing-library/react'
+import { Button } from './Button'
+
+describe('Button', () => {
+  it('should render with correct text', () => {
+    render(<Button>Click me</Button>)
+    expect(screen.getByText('Click me')).toBeInTheDocument()
+  })
+
+  it('should call onClick when clicked', () => {
+    const handleClick = jest.fn()
+    render(<Button onClick={handleClick}>Click me</Button>)
+    
+    fireEvent.click(screen.getByText('Click me'))
+    expect(handleClick).toHaveBeenCalledTimes(1)
+  })
+})
+```
+
+## 11. Accessibility Standards
+
+### 11.1. Semantic HTML
+
+Use semantic HTML elements:
+
+```tsx
+// ✅ GOOD
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+  </ul>
+</nav>
+
+// ❌ BAD
+<div>
+  <div>
+    <div><a href="/">Home</a></div>
+  </div>
+</div>
+```
+
+### 11.2. ARIA Attributes
+
+Use ARIA attributes when necessary:
+
+```tsx
+<button
+  aria-expanded={isOpen}
+  aria-controls="dropdown-menu"
+  aria-label="Toggle menu"
+>
+  Menu
+</button>
+```
+
+### 11.3. Keyboard Navigation
+
+Ensure all interactive elements are keyboard accessible:
+
+```tsx
+const handleKeyDown = (event: React.KeyboardEvent) => {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault()
+    handleClick()
+  }
+}
+```
+
+## 12. Code Quality
+
+### 12.1. ESLint Configuration
+
+Use strict ESLint rules:
+
+```json
+{
+  "extends": [
+    "next/core-web-vitals",
+    "@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "prefer-const": "error"
+  }
+}
+```
+
+### 12.2. Prettier Configuration
+
+Use consistent formatting:
+
+```json
+{
+  "semi": true,
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "printWidth": 80,
+  "tabWidth": 2
+}
+```
+
+### 12.3. Git Hooks
+
+Use pre-commit hooks for code quality:
+
+```json
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
+```
+
+## 13. Documentation
+
+### 13.1. Component Documentation
+
+Document all components with JSDoc:
+
+```tsx
+/**
+ * A button component with multiple variants and sizes.
+ * 
+ * @param variant - The visual style variant
+ * @param size - The size of the button
+ * @param loading - Whether the button is in a loading state
+ * @param children - The content to display inside the button
+ */
+interface ButtonProps {
+  variant?: 'default' | 'premium' | 'elite' | 'destructive' | 'outline' | 'ghost'
+  size?: 'sm' | 'default' | 'lg' | 'xl'
+  loading?: boolean
+  children: React.ReactNode
+}
+```
+
+### 13.2. Storybook Stories
+
+Create comprehensive Storybook stories:
+
+```tsx
+import type { Meta, StoryObj } from '@storybook/react'
+import { Button } from './Button'
+
+const meta: Meta<typeof Button> = {
+  title: 'UI/Button',
+  component: Button,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
+}
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const Default: Story = {
+  args: {
+    children: 'Button',
+  },
+}
+
+export const Premium: Story = {
+  args: {
+    variant: 'premium',
+    children: 'Premium',
+  },
+}
+```
+
+---
+
+**These guidelines ensure our codebase remains maintainable, scalable, and of the highest quality. Follow them consistently across all development work.**

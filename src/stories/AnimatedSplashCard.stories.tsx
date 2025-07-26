@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import AnimatedSplashCard from '@/components/ui/AnimatedSplashCard';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -11,7 +11,7 @@ const meta: Meta<typeof AnimatedSplashCard> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Animated card component with splash gradient effects on hover, perfect for highlighting important gun club content.'
+        component: 'Animated card component with splash gradient effects on hover, perfect for highlighting important community announcements and featured businesses.'
       }
     }
   },
@@ -33,21 +33,21 @@ export const Default: Story = {
       <div className="text-center">
         <Target className="mx-auto mb-4 h-12 w-12 text-copper-orange" />
         <h3 className="text-2xl font-bold text-foreground mb-2">
-                     Welcome to Boise Gun Club
+          Treasure Valley Firearms Hub
          </h3>
          <p className="text-muted-foreground mb-4">
-           Join Idaho&apos;s premier shooting facility and become part of our community
+           Connect with 500+ local businesses, events, and fellow enthusiasts across the region
         </p>
         <Button className="bg-copper-orange hover:bg-brass-yellow">
-          Learn More
+          Explore Directory
         </Button>
       </div>
     )
   }
 };
 
-// Membership promotion card
-export const MembershipPromotion: Story = {
+// Premium directory access promotion
+export const PremiumAccess: Story = {
   args: {
     children: (
       <div className="text-center">
@@ -56,17 +56,17 @@ export const MembershipPromotion: Story = {
         </Badge>
         <Trophy className="mx-auto mb-4 h-12 w-12 text-copper-orange" />
         <h3 className="text-2xl font-bold text-foreground mb-2">
-          50% Off First Year
+          50% Off Premium Access
         </h3>
         <p className="text-muted-foreground mb-4">
-          New members save big on their first year membership. Join now and start your shooting journey.
+          Unlock exclusive business deals, priority event notifications, and advanced search features.
         </p>
         <div className="flex gap-2 justify-center">
           <Button className="bg-copper-orange hover:bg-brass-yellow">
-            Join Now
+            Upgrade Now
           </Button>
           <Button variant="outline">
-            Learn More
+            View Benefits
           </Button>
         </div>
       </div>
@@ -74,27 +74,27 @@ export const MembershipPromotion: Story = {
   }
 };
 
-// Event announcement card
-export const EventAnnouncement: Story = {
+// Regional event announcement
+export const RegionalEvent: Story = {
   args: {
     children: (
       <div className="text-center">
         <Calendar className="mx-auto mb-4 h-12 w-12 text-copper-orange" />
         <h3 className="text-2xl font-bold text-foreground mb-2">
-          Monthly Trap Competition
+          Treasure Valley Gun Show
         </h3>
         <p className="text-muted-foreground mb-4">
-          Join us for our monthly trap shooting competition. All skill levels welcome!
+          The region's largest firearms event featuring 200+ vendors and educational seminars.
         </p>
         <div className="bg-muted/50 rounded-lg p-3 mb-4">
           <p className="text-sm text-foreground">
-            <strong>Date:</strong> First Saturday of Every Month<br />
-            <strong>Time:</strong> 9:00 AM - 2:00 PM<br />
-            <strong>Entry Fee:</strong> $25 for members, $35 for guests
+            <strong>Date:</strong> August 15-17, 2025<br />
+            <strong>Location:</strong> Ford Idaho Center<br />
+            <strong>Tickets:</strong> $15 adults, kids free
           </p>
         </div>
         <Button className="bg-copper-orange hover:bg-brass-yellow">
-          Register Now
+          Get Tickets
         </Button>
       </div>
     )

@@ -5,45 +5,60 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden",
+  "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none transition-stripe-fast overflow-hidden font-noto-sans",
   {
     variants: {
       variant: {
-        default:
-          "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
-        secondary:
-          "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
-        destructive:
-          "border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline:
-          "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+        default: "bg-shooting-bench text-blued-steel border-case-hardened/20 hover:bg-shooting-bench/80",
+        premium: "bg-gradient-premium text-gunmetal-black border-brass-yellow/30 shadow-premium hover:shadow-elite mica-premium",
+        elite: "bg-gradient-elite text-gunmetal-black border-brass-yellow/40 shadow-elite animate-shimmer mica-elite",
+        glass: "backdrop-blur-sm bg-shooting-bench/20 border-brass-yellow/30 text-blued-steel",
+        success: "bg-rifling-green text-nickel-white border-transparent hover:bg-rifling-green/90",
+        warning: "bg-sight-gold text-gunmetal-black border-transparent hover:bg-sight-gold/90",
+        error: "bg-safety-red text-nickel-white border-transparent hover:bg-safety-red/90",
+        info: "bg-scope-blue text-nickel-white border-transparent hover:bg-scope-blue/90",
+        outline: "text-blued-steel border-case-hardened hover:bg-shooting-bench",
+        destructive: "bg-safety-red text-nickel-white border-transparent hover:bg-safety-red/90"
       },
+      size: {
+        sm: "px-2 py-0.5 text-xs h-5",
+        default: "px-2.5 py-0.5 text-xs h-6",
+        lg: "px-3 py-1 text-sm h-7",
+        xl: "px-4 py-1.5 text-sm h-8"
+      }
     },
     defaultVariants: {
       variant: "default",
+      size: "default"
     },
   }
 )
 
+export interface BadgeProps
+  extends React.ComponentProps<"span">,
+    VariantProps<typeof badgeVariants> {
+  asChild?: boolean
+}
+
 function Badge({
   className,
   variant,
+  size,
   asChild = false,
   ...props
-}: React.ComponentProps<"span"> &
-  VariantProps<typeof badgeVariants> & { asChild?: boolean }) {
+}: BadgeProps) {
   const Comp = asChild ? Slot : "span"
 
   return (
     <Comp
       data-slot="badge"
-      className={cn(badgeVariants({ variant }), className)}
+      className={cn(badgeVariants({ variant, size }), className)}
       {...props}
     />
   )
 }
 
-// Additional badge components for specific use cases
+// Firearms-specific badge components
 function ClassificationBadge({
   classification,
   className,
@@ -52,13 +67,22 @@ function ClassificationBadge({
   const getVariant = (classification: string) => {
     switch (classification.toLowerCase()) {
       case 'master':
+      case 'aa':
+        return 'elite' as const
+      case 'a':
       case 'expert':
-        return 'default'
+        return 'premium' as const
+      case 'b':
       case 'sharpshooter':
+        return 'success' as const
+      case 'c':
       case 'marksman':
-        return 'secondary'
+        return 'info' as const
+      case 'd':
+      case 'novice':
+        return 'warning' as const
       default:
-        return 'outline'
+        return 'outline' as const
     }
   }
 
@@ -83,16 +107,23 @@ function StatusBadge({
       case 'active':
       case 'approved':
       case 'completed':
-        return 'default'
+        return 'success' as const
+      case 'premium':
+      case 'elite':
+        return 'premium' as const
       case 'pending':
+      case 'trial':
       case 'in-progress':
-        return 'secondary'
+        return 'warning' as const
       case 'inactive':
+      case 'expired':
+        return 'outline' as const
+      case 'suspended':
       case 'rejected':
       case 'cancelled':
-        return 'destructive'
+        return 'destructive' as const
       default:
-        return 'outline'
+        return 'default' as const
     }
   }
 
@@ -116,10 +147,12 @@ function ScoreBadge({
   const percentage = maxScore ? (score / maxScore) * 100 : score
   
   const getVariant = (percentage: number) => {
-    if (percentage >= 90) return 'default'
-    if (percentage >= 70) return 'secondary'
-    if (percentage >= 50) return 'outline'
-    return 'destructive'
+    if (percentage >= 95) return 'elite' as const
+    if (percentage >= 85) return 'premium' as const
+    if (percentage >= 75) return 'success' as const
+    if (percentage >= 60) return 'info' as const
+    if (percentage >= 40) return 'warning' as const
+    return 'error' as const
   }
 
   return (
@@ -134,3 +167,4 @@ function ScoreBadge({
 }
 
 export { Badge, badgeVariants, ClassificationBadge, StatusBadge, ScoreBadge }
+export type { BadgeProps }

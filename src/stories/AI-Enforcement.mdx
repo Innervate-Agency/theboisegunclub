@@ -1,0 +1,229 @@
+---
+title: 'Documentation/AI Enforcement Checklist'
+---
+
+# AI ENFORCEMENT CHECKLIST
+
+**MANDATORY VALIDATION BEFORE ANY CODE CHANGES**
+
+## 🚨 CRITICAL VIOLATIONS TO PREVENT
+
+### **Design System Violations**
+
+- [ ] **NO "premium/elite" without Brass Yellow/Copper Orange gradients**
+- [ ] **NO hardcoded hex colors** - Use ONLY the 26 approved colors from globals.css
+- [ ] **NO generic "premium" styling** - Follow exact brand color system
+- [ ] **NO right-aligned text** - Always left-align, use 50/50 div layouts instead
+- [ ] **NO emojis in UI** - Use Lucide React icons only
+- [ ] **NO outside images** - Only `/public/images/` directory files
+
+### **APPROVED COLORS ONLY (26 total)**
+
+**Primary Brand Colors:** `bg-brass-yellow`, `bg-copper-orange`, `bg-gunmetal-black`, `bg-nickel-white`
+
+**Light Theme (Spring Day at the Range):** `bg-range-white`, `bg-shooting-bench`, `bg-walnut-stock`, `bg-blued-steel`, `bg-case-hardened`, `bg-muzzle-flash`, `bg-recoil-pad`, `bg-sight-gold`, `bg-scope-blue`, `bg-trigger-blue`, `bg-rifling-green`, `bg-bore-sight-green`, `bg-safety-red`
+
+**Dark Theme (Evening Hunt in the Mountains):** `bg-night-sight`, `bg-carbon-fiber`, `bg-tactical-gray`, `bg-titanium-white`, `bg-stainless-steel`, `bg-flash-hider`, `bg-crimson-trace`, `bg-cerakote-blue`, `bg-ghost-ring`, `bg-woodland-camo`
+
+### **Typography Violations**
+
+- [ ] **NO wrong fonts** - H1-H2: Rajdhani, H3-H6: Noto Sans, Editorial: Noto Serif
+- [ ] **NO font-weight 800** - Maximum is 700 for Rajdhani
+- [ ] **NO hardcoded font families** - Use CSS custom properties only
+
+### **Technical Stack Violations**  
+
+- [ ] **NO inline styles** - Use Tailwind v4 classes only
+- [ ] **NO old Tailwind syntax** - `bg-brass-yellow` NOT `bg-[var(--color-brass-yellow)]`
+- [ ] **NO !important hacks** - Proper CSS specificity only
+- [ ] **NO hardcoded transitions** - Use `transition-stripe-fast` (150ms) or `transition-stripe-normal` (250ms) or `transition-stripe-slow` (350ms)
+
+## ✅ MANDATORY CHECKLIST FOR ANY COMPONENT WORK
+
+### **Before Starting:**
+
+1. [ ] Read component's current implementation in `/src/components/ui/`
+2. [ ] Check Storybook story for existing variants
+3. [ ] Verify CSS variables exist in `globals.css` @theme
+4. [ ] Confirm fonts available: Rajdhani, Noto Sans, Noto Serif
+
+### **During Implementation:**
+
+1. [ ] Use ONLY the 26 approved colors from globals.css (see list above)
+2. [ ] Follow CVA pattern for variants (seen in existing components)
+3. [ ] Use Tailwind v4 direct syntax: `bg-brass-yellow/20` for opacity
+4. [ ] Implement proper Server/Client component patterns
+5. [ ] Add proper TypeScript interfaces
+6. [ ] Primary focus: Brass Yellow + Copper Orange for premium/elite variants
+
+### **After Implementation:**
+
+1. [ ] Verify no hardcoded colors in final code
+2. [ ] Confirm typography follows H1-H2 (Rajdhani), H3-H6 (Noto Sans) rules
+3. [ ] Test both light and dark themes
+4. [ ] Validate accessibility (4.5:1 contrast minimum)
+5. [ ] Check motion respects `prefers-reduced-motion`
+
+## 🎯 APPROVED PATTERNS TO FOLLOW
+
+### **Color Usage:**
+
+```tsx
+// ✅ CORRECT - Using approved 26-color palette
+<div className="bg-brass-yellow text-gunmetal-black">
+<div className="border-copper-orange/30 bg-range-white">
+<div className="hover:bg-copper-orange transition-stripe-fast">
+<div className="bg-night-sight text-titanium-white">
+<div className="border-scope-blue/50 bg-shooting-bench">
+
+// ❌ FORBIDDEN - All hardcoded colors
+<div className="bg-[#F2CB05]">
+<div className="bg-[var(--color-brass-yellow)]">
+<div style={{backgroundColor: '#F2CB05'}}>
+<div className="bg-blue-500">
+<div className="text-red-600">
+```
+
+### **Typography:**
+
+```tsx
+// ✅ CORRECT
+<h1 className="font-rajdhani font-bold">THE BOISE GUN CLUB</h1>
+<h3 className="font-noto-sans font-semibold">Section Header</h3>
+<p className="font-noto-sans">Body text content</p>
+
+// ❌ FORBIDDEN
+<h1 className="font-bold text-xl">Title</h1>
+<h3 style={{fontFamily: 'Arial'}}>Header</h3>
+```
+
+### **Component Structure:**
+
+```tsx
+// ✅ CORRECT - Following established CVA pattern with approved colors
+const buttonVariants = cva(
+  "inline-flex items-center justify-center transition-stripe-fast",
+  {
+    variants: {
+      variant: {
+        default: "bg-shooting-bench text-blued-steel border border-case-hardened/20 shadow-sm hover:shadow-md",
+        premium: "bg-gradient-premium text-gunmetal-black shadow-premium hover:shadow-elite hover:scale-[1.02] mica-premium",
+        elite: "bg-gradient-elite text-gunmetal-black shadow-elite animate-shimmer hover:scale-[1.05] mica-elite",
+        glass: "backdrop-blur-sm bg-shooting-bench/10 border-brass-yellow/20 text-blued-steel hover:bg-shooting-bench/20",
+        destructive: "bg-safety-red text-nickel-white shadow-sm hover:bg-safety-red/90",
+        outline: "border-2 border-brass-yellow text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black",
+        ghost: "text-blued-steel hover:bg-shooting-bench hover:text-blued-steel"
+      },
+      size: {
+        sm: "px-3 py-1.5 text-sm h-8",
+        default: "px-4 py-2 text-base h-10",
+        lg: "px-6 py-3 text-lg h-12",
+        xl: "px-8 py-4 text-xl h-14"
+      }
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default"
+    }
+  }
+)
+```
+
+## 🚫 FORBIDDEN PATTERNS
+
+### **Color Violations:**
+
+```tsx
+// ❌ NEVER DO THESE
+<div className="bg-[#F2CB05]">                    // Hardcoded hex
+<div className="bg-[var(--color-brass-yellow)]"> // Old Tailwind syntax
+<div style={{backgroundColor: '#F2CB05'}}>         // Inline styles
+<div className="bg-blue-500">                      // Generic Tailwind colors
+<div className="text-red-600">                     // Generic Tailwind colors
+<div className="bg-premium">                       // Generic class names
+```
+
+### **Typography Violations:**
+
+```tsx
+// ❌ NEVER DO THESE
+<h1 className="font-bold text-xl">                 // Generic styling
+<h3 style={{fontFamily: 'Arial'}}>                // Inline font family
+<div className="text-center">                      // Right-aligned text
+<span>🚨</span>                                   // Emojis in UI
+```
+
+### **Component Violations:**
+
+```tsx
+// ❌ NEVER DO THESE
+const Button = ({ children, ...props }) => {
+  return (
+    <button 
+      style={{backgroundColor: '#F2CB05'}}        // Inline styles
+      className="bg-blue-500"                      // Generic colors
+      {...props}
+    >
+      {children}
+    </button>
+  )
+}
+```
+
+## 🔍 VALIDATION CHECKLIST
+
+### **Before Committing:**
+
+- [ ] No hardcoded hex colors found
+- [ ] All colors use approved 26-color palette
+- [ ] Typography follows font hierarchy rules
+- [ ] No inline styles present
+- [ ] No emojis in UI components
+- [ ] All images from `/public/images/` only
+- [ ] Transitions use approved timing (150ms/250ms/350ms)
+- [ ] Accessibility contrast ratios met
+- [ ] Dark mode support implemented
+- [ ] Motion respects `prefers-reduced-motion`
+
+### **Storybook Validation:**
+
+- [ ] Component renders correctly in both themes
+- [ ] All variants display properly
+- [ ] Interactive states work as expected
+- [ ] No console errors or warnings
+- [ ] Accessibility audit passes
+
+## 📋 QUICK REFERENCE
+
+### **Approved Color Classes:**
+- Primary: `brass-yellow`, `copper-orange`, `gunmetal-black`, `nickel-white`
+- Light: `range-white`, `shooting-bench`, `blued-steel`, `case-hardened`
+- Dark: `night-sight`, `carbon-fiber`, `titanium-white`, `stainless-steel`
+
+### **Typography Classes:**
+- Headings: `font-rajdhani` (H1-H2)
+- Body: `font-noto-sans` (H3-H6 & body text)
+- Editorial: `font-serif` (Noto Serif for accents)
+
+### **Transition Classes:**
+- Fast: `transition-stripe-fast` (150ms)
+- Normal: `transition-stripe-normal` (250ms)
+- Slow: `transition-stripe-slow` (350ms)
+
+### **Shadow Classes:**
+- Standard: `shadow-sm`, `shadow-md`, `shadow-lg`
+- Brand: `shadow-premium`, `shadow-elite`
+
+### **Gradient Classes:**
+- Primary: `bg-gradient-primary`
+- Premium: `bg-gradient-premium`
+- Elite: `bg-gradient-elite`
+- Subtle: `bg-gradient-subtle`
+
+### **Mica Effect Classes:**
+- Premium: `mica-premium`
+- Elite: `mica-elite`
+
+### **Animation Classes:**
+- Shimmer: `animate-shimmer`
+- Pulse Premium: `animate-pulse-premium`

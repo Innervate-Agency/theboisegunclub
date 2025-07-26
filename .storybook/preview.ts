@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/nextjs-vite'
 import '../src/app/globals.css'
+import { withThemeByClassName } from '@storybook/addon-themes';
 
 // Import Google Fonts for Storybook
 const link = document.createElement('link')
@@ -23,6 +24,17 @@ const preview: Preview = {
       test: 'todo'
     }
   },
+  decorators: [
+    withThemeByClassName({
+      themes: {
+        // name ==> class
+        light: '',
+        dark: 'dark',
+      },
+      defaultTheme: 'light',
+      parentSelector: 'html',
+    }),
+  ],
 };
 
 export default preview;

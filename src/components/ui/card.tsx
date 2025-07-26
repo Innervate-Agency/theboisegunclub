@@ -1,15 +1,41 @@
 import * as React from "react"
-
+import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
-function Card({ className, ...props }: React.ComponentProps<"div">) {
+const cardVariants = cva(
+  "bg-card text-card-foreground flex flex-col gap-4 rounded-xl border py-6 transition-stripe-fast relative overflow-hidden",
+  {
+    variants: {
+      variant: {
+        default: "bg-shooting-bench text-blued-steel border border-case-hardened/20 shadow-sm hover:shadow-md",
+        premium: "bg-gradient-premium text-gunmetal-black shadow-premium hover:shadow-elite mica-premium border-brass-yellow/20",
+        elite: "bg-gradient-elite text-gunmetal-black shadow-elite animate-shimmer hover:shadow-xl mica-elite border-brass-yellow/30",
+        glass: "backdrop-blur-sm bg-shooting-bench/10 border-brass-yellow/20 text-blued-steel hover:bg-shooting-bench/20"
+      },
+      size: {
+        xs: "p-3 gap-2 text-sm",
+        sm: "p-4 gap-3",
+        md: "py-6 gap-4",
+        lg: "p-8 gap-6",
+        xl: "p-10 gap-8"
+      }
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "md"
+    }
+  }
+)
+
+export interface CardProps
+  extends React.ComponentProps<"div">,
+    VariantProps<typeof cardVariants> {}
+
+function Card({ className, variant, size, ...props }: CardProps) {
   return (
     <div
       data-slot="card"
-      className={cn(
-        "bg-card text-card-foreground flex flex-col gap-4 rounded-xl border py-6 shadow-sm",
-        className
-      )}
+      className={cn(cardVariants({ variant, size }), className)}
       {...props}
     />
   )
@@ -32,7 +58,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-title"
-      className={cn("leading-none font-semibold", className)}
+      className={cn("leading-none font-semibold font-noto-sans text-xl text-blued-steel", className)}
       {...props}
     />
   )
@@ -42,7 +68,7 @@ function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-description"
-      className={cn("text-muted-foreground text-sm", className)}
+      className={cn("text-case-hardened text-sm leading-relaxed", className)}
       {...props}
     />
   )
@@ -89,4 +115,6 @@ export {
   CardAction,
   CardDescription,
   CardContent,
+  cardVariants
 }
+export type { CardProps }

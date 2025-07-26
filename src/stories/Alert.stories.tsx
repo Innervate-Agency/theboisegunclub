@@ -1,15 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 import { CheckCircle, AlertTriangle, XCircle, Info, Zap, Shield, Trophy, Target, Bell, Star } from 'lucide-react'
 import { 
   Alert, 
   AlertDescription, 
-  AlertTitle,
-  SuccessAlert,
-  WarningAlert,
-  ErrorAlert,
-  PremiumAlert,
-  EliteAlert,
-  GlassAlert
+  AlertTitle
 } from '@/components/ui/alert'
 
 const meta: Meta<typeof Alert> = {
@@ -117,7 +111,7 @@ export const Dismissible: Story = {
     <Alert dismissible {...args}>
       <AlertTitle>Dismissible</AlertTitle>
       <AlertDescription>
-        You can close this alert by clicking the 'X' icon.
+        You can close this alert by clicking the &apos;X&apos; icon.
       </AlertDescription>
     </Alert>
   ),
@@ -260,7 +254,7 @@ export const GunClubExamples: Story = {
           <Trophy />
           <AlertTitle>Competition Results</AlertTitle>
           <AlertDescription>
-            Congratulations! You've achieved a new personal best score of 24/25 in today's trap round.
+            Congratulations! You&apos;ve achieved a new personal best score of 24/25 in today&apos;s trap round.
           </AlertDescription>
         </Alert>
         
@@ -276,7 +270,7 @@ export const GunClubExamples: Story = {
           <Target />
           <AlertTitle>Elite Achievement Unlocked</AlertTitle>
           <AlertDescription>
-            You've reached Master Class classification! Your dedication to excellence is truly remarkable.
+            You&apos;ve reached Master Class classification! Your dedication to excellence is truly remarkable.
           </AlertDescription>
         </Alert>
         
@@ -284,7 +278,7 @@ export const GunClubExamples: Story = {
           <XCircle />
           <AlertTitle>Range Closure</AlertTitle>
           <AlertDescription>
-            Trap Field 2 is temporarily closed for maintenance. Please use alternative fields for today's session.
+            Trap Field 2 is temporarily closed for maintenance. Please use alternative fields for today&apos;s session.
           </AlertDescription>
         </Alert>
         
@@ -388,7 +382,7 @@ export const FusionShowcase: Story = {
         </div>
         <p className="text-muted-foreground font-noto-sans">
           This fusion approach creates components that feel like they belong in a Stripe product, 
-          have the energy of ClickUp's interface, display the material depth of Windows 11, 
+          have the energy of ClickUp&apos;s interface, display the material depth of Windows 11, 
           while maintaining the professional authority appropriate for a gun club context.
         </p>
       </div>

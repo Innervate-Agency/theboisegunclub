@@ -1,0 +1,304 @@
+---
+title: 'Documentation/Design System'
+---
+
+# TBGC Design System: Complete Implementation Standards
+
+## 🎯 Design Philosophy
+
+**The Boise Gun Club: A Treasure Valley Firearm & Firearm Sports Collective**
+
+This design system represents the pinnacle of firearms industry web design, combining:
+- **Stripe-Inspired Precision:** 150ms cubic-bezier transitions, sophisticated shadow systems, micro-interactions
+- **ClickUp-Inspired Vibrancy:** Strategic gradients, professional glassmorphism, selective color splashes  
+- **Windows 11 Mica Integration:** Brand-aware noise patterns, material depth, dynamic backdrop blur
+
+**Quality Standard:** Flagship-level execution suitable for Fortune 500 presentation and innervate.agency portfolio showcase.
+
+---
+
+## 🎨 Complete Color System: "Idaho Firearms Heritage Palette" (26 Colors)
+
+### **Primary Brand Colors**
+
+```css
+--color-brass-yellow: #F2CB05         /* Primary CTA, highlights, premium actions */
+--color-copper-orange: #F28705        /* Secondary accent, hover states, energy */
+--color-gunmetal-black: #0A0A0A       /* Primary text, strong contrast */
+--color-nickel-white: #FFFFFF         /* Clean backgrounds, negative space */
+```
+
+**Tailwind Usage:**
+```tsx
+<Button className="bg-brass-yellow text-gunmetal-black hover:bg-copper-orange">
+<Card className="bg-nickel-white border-brass-yellow/20">
+```
+
+### **Light Theme: Spring Day at the Range**
+
+```css
+--color-range-white: #f8f6f1              /* Primary warm background */
+--color-shooting-bench: #ede7de           /* Secondary surface, card backgrounds */
+--color-walnut-stock: #c08051             /* Earth tone accents, warm highlights */
+--color-blued-steel: #372103              /* Primary text, strong contrast */
+--color-case-hardened: #693e21            /* Secondary text, muted content */
+--color-muzzle-flash: #F23005             /* Error states, urgent actions */
+--color-recoil-pad: #f07b1d               /* Info accents, notification badges */
+--color-sight-gold: #E3C03C               /* Warning states, caution indicators */
+--color-scope-blue: #5198cd               /* Links, info states, navigation */
+--color-trigger-blue: #3c81c0             /* Hover states for blue elements */
+--color-rifling-green: #6f7822            /* Success states, positive feedback */
+--color-bore-sight-green: #909233         /* Secondary success, nature elements */
+--color-safety-red: #8C394B               /* Destructive actions, critical warnings */
+```
+
+**Implementation Examples:**
+```tsx
+// Hero Section
+<section className="bg-range-white text-blued-steel">
+  <h1 className="font-rajdhani text-6xl font-black text-gunmetal-black">
+    THE BOISE GUN CLUB
+  </h1>
+  <p className="text-case-hardened">A Treasure Valley Firearms Collective</p>
+</section>
+
+// Business Directory Card
+<Card className="bg-shooting-bench border-l-4 border-l-scope-blue hover:shadow-md">
+  <CardHeader className="text-blued-steel">
+    <CardTitle>Idaho Firearms Training</CardTitle>
+  </CardHeader>
+  <CardContent className="text-case-hardened">
+    Professional instruction for all skill levels
+  </CardContent>
+</Card>
+
+// CTA Button
+<Button className="bg-brass-yellow text-gunmetal-black hover:bg-copper-orange shadow-premium">
+  Join the Community
+</Button>
+```
+
+### **Dark Theme: Evening Hunt in the Mountains**
+
+```css
+--color-night-sight: #2F3135              /* Primary dark background */
+--color-carbon-fiber: #4B4B4B             /* Elevated surfaces, cards */
+--color-tactical-gray: #494657            /* Muted surfaces, secondary cards */
+--color-titanium-white: #FDFDFD           /* High contrast text */
+--color-stainless-steel: #EEF1F7          /* Secondary text, descriptions */
+--color-flash-hider: #F25C05              /* Dark theme energy, accents */
+--color-crimson-trace: #F23005            /* Dark theme alerts, errors */
+--color-cerakote-blue: #4982A6            /* Dark theme info, links */
+--color-ghost-ring: #C9D2EF               /* Dark theme muted elements */
+--color-woodland-camo: #3F6331            /* Dark theme success states */
+```
+
+**Dark Mode Implementation:**
+```css
+@layer base {
+  .dark {
+    --background: var(--color-night-sight);
+    --foreground: var(--color-titanium-white);
+    --card: var(--color-carbon-fiber);
+    --card-foreground: var(--color-titanium-white);
+    --muted: var(--color-ghost-ring);
+    --muted-foreground: var(--color-stainless-steel);
+  }
+}
+```
+
+---
+
+## 🔤 Typography System: Professional Hierarchy
+
+### **Three-Font Harmony**
+
+#### **Rajdhani (Headings H1-H2)**
+- **Usage:** Hero titles, section headers, feature titles
+- **Weights:** 300 (light), 400 (regular), 500 (medium), 600 (semibold), 700 (bold)
+- **Examples:** "THE BOISE GUN CLUB", "TREASURE VALLEY DIRECTORY"
+
+#### **Noto Sans (H3-H6 & Body Text)**
+- **Usage:** Card titles, body paragraphs, form labels
+- **Weights:** 300, 400, 500, 600, 700
+- **Examples:** "Find Local Experts", "Professional instruction for all skill levels"
+
+#### **Noto Serif (Editorial Accents)**
+- **Usage:** Sophisticated taglines, quote blocks, editorial content
+- **Weights:** 400, 500, 600, 700 (with italics)
+- **Examples:** "A Treasure Valley Firearms Collective"
+
+### **Complete Typography Hierarchy**
+
+**Font Stack Implementation:**
+```css
+@theme {
+  --font-heading: "Rajdhani", "Inter", "system-ui", sans-serif;
+  --font-body: "Noto Sans", "Inter", "system-ui", sans-serif;
+  --font-serif: "Noto Serif", "Georgia", "Times New Roman", serif;
+}
+```
+
+**H1 - Brand Titles (Rajdhani):**
+```tsx
+// Hero section main title
+<h1 className="font-rajdhani text-6xl md:text-8xl font-black uppercase tracking-tight">
+  <span className="text-gunmetal-black">THE BOISE</span>
+  <br />
+  <span className="font-light text-case-hardened">GUN CLUB</span>
+</h1>
+
+// Page titles
+<h1 className="font-rajdhani text-4xl md:text-6xl font-bold uppercase">
+  TREASURE VALLEY DIRECTORY
+</h1>
+```
+
+**H2 - Major Sections (Rajdhani):**
+```tsx
+// Section headers
+<h2 className="font-rajdhani text-3xl md:text-4xl font-semibold mb-6">
+  Find Local Experts
+</h2>
+
+// Feature titles
+<h2 className="font-rajdhani text-2xl md:text-3xl font-bold text-brass-yellow">
+  Premium Memberships
+</h2>
+```
+
+---
+
+## ⚡ Advanced Animation & Transition System
+
+### **Stripe-Inspired Precision Timing**
+
+- **Fast (150ms):** Micro-interactions, hover states, focus rings
+- **Normal (250ms):** Standard transitions, modal appearances  
+- **Slow (350ms):** Complex animations, page transitions
+
+### **Professional Utility Classes**
+
+```css
+.transition-stripe-fast    { transition: all 150ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+.transition-stripe-normal  { transition: all 250ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+.transition-stripe-slow    { transition: all 350ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+```
+
+### **CSS Variables for Timing**
+
+```css
+@theme {
+  --timing-fast: 150ms;        /* Hover states, focus rings, micro-interactions */
+  --timing-normal: 250ms;      /* Standard transitions, modal appearances */
+  --timing-slow: 350ms;        /* Complex animations, page transitions */
+  --ease-stripe: cubic-bezier(0.215, 0.61, 0.355, 1);  /* Professional easing */
+}
+```
+
+---
+
+## 🌈 Sophisticated Gradient & Glassmorphism System
+
+### **Windows 11 Mica + ClickUp Gradients**
+
+#### **Brand Gradient Definitions**
+
+```css
+@theme {
+  --gradient-primary: linear-gradient(135deg, #F2CB05 0%, #F28705 100%);
+  --gradient-premium: linear-gradient(135deg, #F2CB05 0%, #F28705 45%, #F2CB05 100%);
+  --gradient-elite: linear-gradient(135deg, #F2CB05 0%, #F28705 25%, #F2CB05 50%, #F28705 75%, #F2CB05 100%);
+  --gradient-subtle: linear-gradient(135deg, rgba(242, 203, 5, 0.05) 0%, rgba(242, 135, 5, 0.05) 100%);
+}
+```
+
+#### **Windows 11 Mica Implementation**
+
+```css
+.mica-premium {
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(242, 203, 5, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(242, 135, 5, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(242, 203, 5, 0.06) 0%, transparent 50%);
+  backdrop-filter: blur(16px);
+}
+
+.mica-elite {
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(242, 203, 5, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(242, 135, 5, 0.14) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(242, 203, 5, 0.10) 0%, transparent 50%);
+  backdrop-filter: blur(24px);
+}
+```
+
+---
+
+## ◆ Professional Shadow System
+
+### **Layered Elevation System**
+
+- **Small:** Subtle card elevation
+- **Medium:** Standard components
+- **Large:** Prominent elements
+- **Premium:** Brand-colored shadows
+
+### **Layered Elevation Shadows**
+
+```css
+@theme {
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+```
+
+### **Brand-Colored Shadows**
+
+```css
+@theme {
+  --shadow-premium: 
+    0 4px 8px -2px rgba(242, 203, 5, 0.25), 
+    0 2px 4px -1px rgba(242, 135, 5, 0.15),
+    0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-elite: 
+    0 8px 16px -4px rgba(242, 203, 5, 0.3), 
+    0 4px 8px -2px rgba(242, 135, 5, 0.2),
+    0 2px 6px 0 rgba(0, 0, 0, 0.15);
+}
+```
+
+### **Shadow Application Strategy**
+
+```tsx
+// Standard card
+<Card className="shadow-sm hover:shadow-md transition-stripe-fast">
+
+// Premium button
+<Button className="bg-brass-yellow shadow-premium hover:shadow-elite">
+
+// Elite membership card
+<Card className="bg-gradient-elite shadow-elite hover:shadow-xl">
+
+// Modal dialog
+<Dialog className="shadow-xl">
+```
+
+---
+
+## 🏆 Quality Standard
+
+**This design system represents the complete visual and technical foundation for "The Boise Gun Club: A Treasure Valley Firearm & Firearm Sports Collective"** — a sophisticated, scalable platform demonstrating world-class design system integration suitable for Fortune 500 presentation while serving the unique needs of the regional firearms community.
+
+### **Implementation Checklist**
+
+- [ ] All 26 colors properly defined in CSS variables
+- [ ] Typography hierarchy follows Rajdhani/Noto Sans/Noto Serif pattern
+- [ ] Transitions use 150ms/250ms/350ms timing with cubic-bezier easing
+- [ ] Gradients follow brand brass-yellow/copper-orange palette
+- [ ] Shadows use layered elevation system
+- [ ] Dark mode support implemented
+- [ ] Accessibility standards met (4.5:1 contrast minimum)
+- [ ] Motion respects `prefers-reduced-motion` 

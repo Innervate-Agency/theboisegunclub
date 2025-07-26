@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -91,15 +91,15 @@ export const GunClubNavigation: Story = {
       <Breadcrumb variant="gunclub">
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/">BOISE GUNCLUB</BreadcrumbLink>
+            <BreadcrumbLink href="/">DIRECTORY</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink href="/ranges">Ranges</BreadcrumbLink>
+            <BreadcrumbLink href="/directory/ranges">Shooting Ranges</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>Trap Range</BreadcrumbPage>
+            <BreadcrumbPage>Capital City Arms</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>

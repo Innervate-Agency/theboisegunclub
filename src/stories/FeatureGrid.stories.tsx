@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { FeatureGrid } from '@/components/ui/feature-grid';
 import { Target, Shield, Users } from 'lucide-react';
 

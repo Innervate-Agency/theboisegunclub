@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import AccessibilityFAB from '@/components/ui/AccessibilityFAB';
 
 const meta: Meta<typeof AccessibilityFAB> = {
@@ -8,7 +8,7 @@ const meta: Meta<typeof AccessibilityFAB> = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Floating accessibility button providing font size adjustment, high contrast mode, and other accessibility features for gun club website.'
+        component: 'Floating accessibility button providing font size adjustment, high contrast mode, and other accessibility features for the community platform.'
       }
     }
   },
@@ -23,12 +23,12 @@ export const Default: Story = {
   render: () => (
     <div className="relative h-96 w-full bg-gray-50 dark:bg-gray-900">
       <div className="p-8">
-        <h2 className="text-2xl font-bold mb-4">Boise Gun Club</h2>
+        <h2 className="text-2xl font-bold mb-4">Treasure Valley Firearms Hub</h2>
         <p className="text-gray-700 dark:text-gray-300 mb-4">
-          Welcome to our premier shooting facility. We provide a safe and welcoming environment for shooters of all skill levels.
+          Your comprehensive digital hub connecting the region's firearms community. Find businesses, events, and connect with fellow enthusiasts.
         </p>
         <p className="text-gray-700 dark:text-gray-300 mb-4">
-          Our facilities include modern shooting ranges, professional instruction, and competitive shooting programs.
+          Our directory features 500+ local businesses including gun shops, ranges, instructors, and gunsmiths throughout the Treasure Valley.
         </p>
         <p className="text-gray-700 dark:text-gray-300">
           Use the accessibility button in the bottom right corner to adjust font size and enable high contrast mode.
@@ -47,26 +47,26 @@ export const WithSampleContent: Story = {
       <div className="container mx-auto px-4 py-8">
         <header className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-            Boise Gun Club
+            The Boise Gun Club
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300">
-            Idaho&apos;s Premier Shooting Facility
+            Treasure Valley Firearms Collective
           </p>
         </header>
         
         <main className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <section>
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              Training Programs
+              Find Training Programs
             </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Our NRA certified instructors provide comprehensive training for all skill levels. From basic safety courses to advanced marksmanship training.
+              Connect with certified instructors throughout the region. Compare credentials, specialties, and reviews to find the perfect training for your needs.
             </p>
             <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-              <li>Basic Firearms Safety</li>
-              <li>Marksmanship Fundamentals</li>
-              <li>Competition Preparation</li>
-              <li>Youth Programs</li>
+              <li>NRA Certified Instructors</li>
+              <li>Concealed Carry Classes</li>
+              <li>Competition Training</li>
+              <li>Youth & Family Programs</li>
             </ul>
           </section>
           

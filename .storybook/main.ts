@@ -1,20 +1,31 @@
 import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
-  "stories": [
-    "../src/**/*.mdx",
-    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
+  stories: [
+    '../src/**/*.mdx',
+    '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
-  "addons": [
-    "@storybook/addon-docs",
-    "@storybook/addon-onboarding"
+  addons: [
+    '@storybook/addon-interactions',
+    '@storybook/addon-a11y',
+    '@storybook/addon-onboarding',
+    '@storybook/addon-themes',
+    '@storybook/addon-designs',
+    'storybook-addon-pseudo-states',
   ],
-  "framework": {
-    "name": "@storybook/nextjs",
-    "options": {}
+  framework: {
+    name: '@storybook/nextjs',
+    options: {},
   },
-  "staticDirs": [
-    "../public"
-  ]
+  docs: {
+    autodocs: 'tag',
+  },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+  },
+  staticDirs: ['../public'],
+  features: {
+    interactionsDebugger: true,
+  },
 };
 export default config;

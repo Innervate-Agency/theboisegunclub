@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import StatCard from '@/components/ui/StatCard';
 
 const meta: Meta<typeof StatCard> = {
@@ -18,6 +18,18 @@ const meta: Meta<typeof StatCard> = {
     },
     label: {
       control: 'text',
+    },
+    variant: {
+      control: 'select',
+      options: ['default', 'premium', 'elite', 'glass'],
+    },
+    size: {
+      control: 'select',
+      options: ['sm', 'default', 'lg'],
+    },
+    trend: {
+      control: 'select',
+      options: ['up', 'down', 'neutral'],
     },
   },
   tags: ['autodocs'],
@@ -56,25 +68,47 @@ export const LargeNumber: Story = {
 
 export const GunClubStats: Story = {
   render: () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      <StatCard
-        value="247"
-        label="Active Members"
-      />
-      <StatCard
-        value="89%"
-        label="Competition Average"
-      />
-      <StatCard
-        value="150+"
-        label="Trap Competitions"
-      />
-      <StatCard
-        value="1,234"
-        label="Clay Targets Hit"
-      />
+    <div className="space-y-6 p-6">
+      <div className="text-center">
+        <h2 className="text-2xl font-rajdhani font-bold text-blued-steel mb-2">TBGC Statistics</h2>
+        <p className="text-case-hardened">Real-time club metrics and performance data</p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StatCard
+          value="247"
+          label="Active Members"
+          trend="up"
+          trendValue="+12%"
+          description="Growing membership base"
+        />
+        <StatCard
+          value="89%"
+          label="Competition Average"
+          variant="premium"
+          trend="up"
+          trendValue="+3%"
+          description="Club championship performance"
+        />
+        <StatCard
+          value="150+"
+          label="Trap Competitions"
+          variant="elite"
+          description="Annual tournament schedule"
+        />
+        <StatCard
+          value="1,234"
+          label="Clay Targets Hit"
+          trend="up"
+          trendValue="+156"
+          description="This month's totals"
+        />
+      </div>
     </div>
   ),
+  parameters: {
+    layout: 'fullscreen',
+  },
 };
 
 export const MembershipStats: Story = {
@@ -126,7 +160,7 @@ export const AnimatedCounters: Story = {
         <h3 className="text-lg font-rajdhani font-bold text-blued-steel mb-4">
           Animated Counter Examples
         </h3>
-        <p className="text-sm text-desert-cliff-brown mb-6">
+        <p className="text-sm text-case-hardened mb-6">
           These cards animate when they come into view
         </p>
       </div>

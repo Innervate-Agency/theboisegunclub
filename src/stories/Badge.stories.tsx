@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
+import Image from 'next/image';
 import { 
   Badge, 
   ClassificationBadge,
@@ -22,7 +23,7 @@ const meta: Meta<typeof Badge> = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'primary', 'secondary', 'success', 'warning', 'error', 'info', 'premium', 'elite', 'glass', 'outline', 'destructive'],
+      options: ['default', 'premium', 'elite', 'glass', 'success', 'warning', 'error', 'info', 'outline', 'destructive'],
     },
     size: {
       control: 'select',
@@ -55,15 +56,13 @@ export const AllVariants: Story = {
       
       <div className="flex flex-wrap gap-4">
         <Badge variant="default">Default</Badge>
-        <Badge variant="primary">Primary</Badge>
-        <Badge variant="secondary">Secondary</Badge>
+        <Badge variant="premium">Premium</Badge>
+        <Badge variant="elite">Elite</Badge>
+        <Badge variant="glass">Glass</Badge>
         <Badge variant="success">Success</Badge>
         <Badge variant="warning">Warning</Badge>
         <Badge variant="error">Error</Badge>
         <Badge variant="info">Info</Badge>
-        <Badge variant="premium" shimmer>Premium</Badge>
-        <Badge variant="elite">Elite</Badge>
-        <Badge variant="glass">Glass</Badge>
         <Badge variant="outline">Outline</Badge>
         <Badge variant="destructive">Destructive</Badge>
       </div>
@@ -528,10 +527,6 @@ export const Playground: Story = {
   args: {
     variant: 'premium',
     size: 'default',
-    animate: true,
-    pulse: false,
-    shimmer: true,
-    dismissible: false,
     children: 'Premium Badge',
   },
   render: (args) => (
@@ -546,10 +541,11 @@ export const Playground: Story = {
 export const Glassmorphism: Story = {
   render: () => (
     <div className="relative h-64 w-full rounded-lg overflow-hidden">
-      <img 
+      <Image 
         src="https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop" 
         alt="Shooting range background"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 object-cover"
+        fill
       />
       <div className="absolute inset-0 bg-black/30" />
       <div className="relative h-full flex items-center justify-center gap-4">

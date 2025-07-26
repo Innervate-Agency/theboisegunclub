@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { SiteNavigation } from '@/components/ui/site-navigation';
-import { Home, Users, Calendar, Target, Trophy, Settings, Shield, FileText } from 'lucide-react';
+import { Home, Users, Calendar, Target, Trophy, Settings, Shield } from 'lucide-react';
 
 const meta: Meta<typeof SiteNavigation> = {
   title: 'Navigation/SiteNavigation',

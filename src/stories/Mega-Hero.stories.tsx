@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { MegaHero } from '@/components/ui/mega-hero';
 import { Target, Trophy, Users, Calendar, Shield, Star } from 'lucide-react';
 
