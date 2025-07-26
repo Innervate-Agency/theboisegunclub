@@ -8,50 +8,44 @@ const services = [
   {
     icon: Search,
     title: "Find Local Experts",
-    description: "Discover top gun shops, ranges, gunsmiths, and instructors across Treasure Valley",
+    description: "Directory of gun shops, ranges, gunsmiths, and instructors across Treasure Valley",
     borderColor: "border-l-scope-blue",
-    accentColor: "scope-blue",
-    buttonVariant: "outline" as const
+    accentColor: "scope-blue"
   },
   {
     icon: Calendar,
-    title: "Never Miss Out",
-    description: "Unified event calendar showcasing competitions, training, and community gatherings",
+    title: "Unified Events",
+    description: "Comprehensive calendar of competitions, training, and community gatherings",
     borderColor: "border-l-brass-yellow",
-    accentColor: "brass-yellow",
-    buttonVariant: "premium" as const
+    accentColor: "brass-yellow"
   },
   {
     icon: ShoppingCart,
-    title: "Book & Buy",
-    description: "Reserve range time, book training sessions, and shop from local firearms businesses",
+    title: "Service Marketplace",
+    description: "Book range time, training sessions, and services from local businesses",
     borderColor: "border-l-copper-orange",
-    accentColor: "copper-orange",
-    buttonVariant: "outline" as const
+    accentColor: "copper-orange"
   },
   {
     icon: Users,
-    title: "Connect & Share",
-    description: "Join discussions with fellow enthusiasts across all Treasure Valley shooting communities",
-    borderColor: "border-l-scope-blue",
-    accentColor: "scope-blue",
-    buttonVariant: "outline" as const
+    title: "Community Forum",
+    description: "Connect and discuss with fellow enthusiasts across Treasure Valley",
+    borderColor: "border-l-rifling-green",
+    accentColor: "rifling-green"
   },
   {
     icon: Info,
-    title: "Stay Informed",
-    description: "Latest news, safety updates, regulation changes, and community announcements",
-    borderColor: "border-l-brass-yellow",
-    accentColor: "brass-yellow",
-    buttonVariant: "premium" as const
+    title: "Content Engine",
+    description: "Educational resources, news, and safety information for the community",
+    borderColor: "border-l-walnut-stock",
+    accentColor: "walnut-stock"
   },
   {
     icon: Building,
-    title: "Build The Brand",
-    description: "List your business, promote events, and connect with the regional firearms community",
-    borderColor: "border-l-copper-orange",
-    accentColor: "copper-orange",
-    buttonVariant: "outline" as const
+    title: "Brand & Apparel",
+    description: "Official club merchandise and branded apparel for members",
+    borderColor: "border-l-case-hardened",
+    accentColor: "case-hardened"
   }
 ]
 
@@ -93,14 +87,6 @@ export function ServiceGrid() {
                   {service.description}
                 </p>
                 
-                {/* Button with proper variants and micro-interactions */}
-                <Button 
-                  variant={service.buttonVariant}
-                  size="sm" 
-                  className="text-xs font-medium transition-stripe-fast hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  {service.buttonVariant === "premium" ? "Get Started" : "Learn More"}
-                </Button>
               </div>
             </Card>
           ))}

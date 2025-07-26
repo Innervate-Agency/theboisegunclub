@@ -7,10 +7,9 @@ const cardVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-shooting-bench text-blued-steel border border-case-hardened/20 shadow-sm hover:shadow-md",
-        premium: "bg-gradient-premium text-gunmetal-black shadow-premium hover:shadow-elite mica-premium border-brass-yellow/20",
-        elite: "bg-gradient-elite text-gunmetal-black shadow-elite animate-shimmer hover:shadow-xl mica-elite border-brass-yellow/30",
-        glass: "backdrop-blur-sm bg-shooting-bench/10 border-brass-yellow/20 text-blued-steel hover:bg-shooting-bench/20"
+        default: "bg-card text-card-foreground border border-case-hardened/20 shadow-sm hover:shadow-md",
+        accented: "bg-card text-card-foreground border-t-4 border-t-brass-yellow shadow-md hover:shadow-lg",
+        glass: "backdrop-blur-sm bg-card/20 border border-brass-yellow/20 text-card-foreground hover:bg-card/30"
       },
       size: {
         xs: "p-3 gap-2 text-sm",

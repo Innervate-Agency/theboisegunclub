@@ -70,53 +70,54 @@
 
 @layer base {
   :root {
-    /* Light Theme Variables */
-    --background: var(--color-range-white);
+    /* Light Theme Variables - Site uses warm "Spring Day at the Range" colors */
+    --background: var(--color-range-white);        /* Warm site background */
     --foreground: var(--color-blued-steel);
-    --card: var(--color-shooting-bench);
+    --card: var(--color-nickel-white);             /* Clean white cards for contrast */
     --card-foreground: var(--color-blued-steel);
-    --muted: var(--color-walnut-stock);
+    --muted: var(--color-shooting-bench);          /* Muted areas use warm beige */
     --muted-foreground: var(--color-case-hardened);
     --border: var(--color-case-hardened);
-    --input: var(--color-shooting-bench);
+    --input: var(--color-nickel-white);            /* Clean input backgrounds */
     --ring: var(--color-brass-yellow);
     --radius: 0.5rem;
 
     /* Semantic colors for components */
     --primary: var(--color-blued-steel);
-    --primary-foreground: var(--color-range-white);
+    --primary-foreground: var(--color-nickel-white);
     --secondary: var(--color-walnut-stock);
-    --secondary-foreground: var(--color-range-white);
+    --secondary-foreground: var(--color-nickel-white);
     --destructive: var(--color-muzzle-flash);
-    --destructive-foreground: var(--color-range-white);
+    --destructive-foreground: var(--color-nickel-white);
     --accent: var(--color-scope-blue);
-    --accent-foreground: var(--color-range-white);
-    --popover: var(--color-range-white);
+    --accent-foreground: var(--color-nickel-white);
+    --popover: var(--color-nickel-white);          /* Clean popover backgrounds */
     --popover-foreground: var(--color-blued-steel);
   }
 
   .dark {
-    /* Dark Theme Variables */
-    --background: var(--color-night-sight);
+    /* Dark Theme Variables - "Evening Hunt in the Mountains" palette */
+    --background: var(--color-night-sight);        /* Deep dark site background */
     --foreground: var(--color-titanium-white);
-    --card: var(--color-carbon-fiber);
+    --card: var(--color-carbon-fiber);             /* Elevated dark cards */
     --card-foreground: var(--color-titanium-white);
-    --muted: var(--color-ghost-ring);
+    --muted: var(--color-tactical-gray);           /* Muted dark areas */
     --muted-foreground: var(--color-stainless-steel);
     --border: var(--color-tactical-gray);
-    --input: var(--color-carbon-fiber);
+    --input: var(--color-carbon-fiber);            /* Dark input backgrounds */
     --ring: var(--color-brass-yellow);
+    --radius: 0.5rem;
 
     /* Semantic colors for components */
     --primary: var(--color-titanium-white);
     --primary-foreground: var(--color-night-sight);
-    --secondary: var(--color-carbon-fiber);
+    --secondary: var(--color-tactical-gray);
     --secondary-foreground: var(--color-titanium-white);
     --destructive: var(--color-crimson-trace);
     --destructive-foreground: var(--color-titanium-white);
     --accent: var(--color-cerakote-blue);
     --accent-foreground: var(--color-titanium-white);
-    --popover: var(--color-night-sight);
+    --popover: var(--color-carbon-fiber);          /* Dark popover backgrounds */
     --popover-foreground: var(--color-titanium-white);
   }
 
