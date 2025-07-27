@@ -1,557 +1,353 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
-import Image from 'next/image';
-import { 
-  Badge, 
-  ClassificationBadge,
-  StatusBadge,
-  ScoreBadge
-} from '@/components/ui/badge';
-import { Trophy, Target, Award, CheckCircle, XCircle, Clock, Star, Zap } from 'lucide-react';
-import { useState } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Badge, ClassificationBadge, StatusBadge, ScoreBadge } from '@/components/ui/badge';
+import { Award, Shield, Target, Star, Zap, Crown, Trophy, CheckCircle, AlertCircle, XCircle, Info } from 'lucide-react';
 
 const meta: Meta<typeof Badge> = {
   title: 'Core UI/Badge',
   component: Badge,
   parameters: {
-    layout: 'padded',
-    docs: {
-      description: {
-        component: 'Premium Badge component with animations, brand gradients, and gun club specific presets for classifications, status indicators, and scores.',
-      },
-    },
+    layout: 'centered',
   },
+  tags: ['autodocs'],
   argTypes: {
     variant: {
-      control: 'select',
+      control: { type: 'select' },
       options: ['default', 'premium', 'elite', 'glass', 'success', 'warning', 'error', 'info', 'outline', 'destructive'],
     },
     size: {
-      control: 'select',
+      control: { type: 'select' },
       options: ['sm', 'default', 'lg', 'xl'],
     },
-    animate: {
-      control: 'boolean',
-    },
-    pulse: {
-      control: 'boolean',
-    },
-    shimmer: {
-      control: 'boolean',
-    },
-    dismissible: {
-      control: 'boolean',
-    },
   },
-  tags: ['autodocs'],
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// All Variants Showcase
-export const AllVariants: Story = {
-  render: () => (
-    <div className="space-y-8">
-      <h2 className="text-2xl font-rajdhani font-bold mb-4">Badge Variants</h2>
-      
-      <div className="flex flex-wrap gap-4">
-        <Badge variant="default">Default</Badge>
-        <Badge variant="premium">Premium</Badge>
-        <Badge variant="elite">Elite</Badge>
-        <Badge variant="glass">Glass</Badge>
-        <Badge variant="success">Success</Badge>
-        <Badge variant="warning">Warning</Badge>
-        <Badge variant="error">Error</Badge>
-        <Badge variant="info">Info</Badge>
-        <Badge variant="outline">Outline</Badge>
-        <Badge variant="destructive">Destructive</Badge>
-      </div>
-    </div>
-  ),
+// Basic variants
+export const Default: Story = {
+  args: {
+    children: 'Default Badge',
+  },
 };
 
-// Size Variations
-export const SizeVariations: Story = {
-  render: () => (
-    <div className="space-y-8">
-      <h2 className="text-2xl font-rajdhani font-bold mb-4">Size Options</h2>
-      
-      <div className="space-y-4">
-        <div className="flex items-center gap-4">
-          <Badge variant="success" size="sm">Small</Badge>
-          <Badge variant="warning" size="default">Default</Badge>
-          <Badge variant="info" size="lg">Large</Badge>
-          <Badge variant="premium" size="xl" shimmer>Extra Large</Badge>
-        </div>
-        
-        <div className="flex items-center gap-4">
-          <Badge variant="success" size="sm" icon={<CheckCircle className="h-2.5 w-2.5" />}>Small with Icon</Badge>
-          <Badge variant="warning" size="default" icon={<Clock className="h-3 w-3" />}>Default with Icon</Badge>
-          <Badge variant="info" size="lg" icon={<Star className="h-3.5 w-3.5" />}>Large with Icon</Badge>
-          <Badge variant="premium" size="xl" icon={<Zap className="h-4 w-4" />} shimmer>XL with Icon</Badge>
-        </div>
-      </div>
-    </div>
-  ),
-};
-
-// Interactive Features Component
-const InteractiveFeaturesComponent = () => {
-  const [badges, setBadges] = useState([
-    { id: 1, text: "Dismissible Badge", variant: "info" as const },
-    { id: 2, text: "Another Badge", variant: "warning" as const },
-    { id: 3, text: "Premium Badge", variant: "premium" as const },
-  ]);
-
-  const removeBadge = (id: number) => {
-    setBadges(badges.filter(badge => badge.id !== id));
-  };
-
-  return (
-    <div className="space-y-8">
-      <h2 className="text-2xl font-rajdhani font-bold mb-4">Interactive Features</h2>
-      
-      {/* Animated Badges */}
-      <div className="space-y-4">
-        <h3 className="font-rajdhani font-semibold">Animated Badges</h3>
-        <div className="flex flex-wrap gap-4">
-          <Badge variant="success" animate icon={<CheckCircle className="h-3 w-3" />}>Animated</Badge>
-          <Badge variant="warning" pulse>Pulsing</Badge>
-          <Badge variant="premium" shimmer animate>Premium Shimmer</Badge>
-          <Badge variant="info" animate>Hover to Scale</Badge>
-        </div>
-      </div>
-
-      {/* Dismissible Badges */}
-      <div className="space-y-4">
-        <h3 className="font-rajdhani font-semibold">Dismissible Badges</h3>
-        <div className="flex flex-wrap gap-4">
-          {badges.map((badge) => (
-            <Badge
-              key={badge.id}
-              variant={badge.variant}
-              dismissible
-              animate
-              onDismiss={() => removeBadge(badge.id)}
-              shimmer={badge.variant === 'premium'}
-            >
-              {badge.text}
-            </Badge>
-          ))}
-        </div>
-        {badges.length === 0 && (
-          <p className="text-muted-foreground text-sm">All badges dismissed! Refresh to reset.</p>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export const InteractiveFeatures: Story = {
-  render: () => <InteractiveFeaturesComponent />,
-};
-
-// Gun Club Classifications
-export const Classifications: Story = {
-  render: () => (
-    <div className="space-y-8">
-      <h2 className="text-2xl font-rajdhani font-bold mb-4">Shooting Classifications</h2>
-      
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div className="text-center">
-          <ClassificationBadge classification="Master" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-2">95%+ Average</p>
-        </div>
-        <div className="text-center">
-          <ClassificationBadge classification="AA" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-2">85-94% Average</p>
-        </div>
-        <div className="text-center">
-          <ClassificationBadge classification="A" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-2">75-84% Average</p>
-        </div>
-        <div className="text-center">
-          <ClassificationBadge classification="B" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-2">65-74% Average</p>
-        </div>
-        <div className="text-center">
-          <ClassificationBadge classification="C" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-2">50-64% Average</p>
-        </div>
-        <div className="text-center">
-          <ClassificationBadge classification="D" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-2">35-49% Average</p>
-        </div>
-        <div className="text-center">
-          <ClassificationBadge classification="Novice" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-2">Under 35%</p>
-        </div>
-      </div>
-      
-      <div className="bg-card/50 rounded-xl p-6 border border-border/20">
-        <div className="flex items-center gap-3 mb-4">
-          <Award className="h-5 w-5 text-color-leonard-yellow" />
-          <h3 className="font-rajdhani font-semibold">Classification Examples</h3>
-        </div>
-        <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <span className="font-medium">Mike Thompson</span>
-            <ClassificationBadge classification="Master" />
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="font-medium">Sarah Williams</span>
-            <ClassificationBadge classification="AA" />
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="font-medium">Tom Rodriguez</span>
-            <ClassificationBadge classification="A" />
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="font-medium">Lisa Chen</span>
-            <ClassificationBadge classification="B" />
-          </div>
-        </div>
-      </div>
-    </div>
-  ),
-};
-
-// Membership Status
-export const MembershipStatus: Story = {
-  render: () => (
-    <div className="space-y-8">
-      <h2 className="text-2xl font-rajdhani font-bold mb-4">Membership Status</h2>
-      
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-        <div className="text-center">
-          <StatusBadge status="Active" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-2">Full Access</p>
-        </div>
-        <div className="text-center">
-          <StatusBadge status="Premium" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-2">Elite Benefits</p>
-        </div>
-        <div className="text-center">
-          <StatusBadge status="Trial" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-2">30-Day Trial</p>
-        </div>
-        <div className="text-center">
-          <StatusBadge status="Inactive" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-2">Account Paused</p>
-        </div>
-        <div className="text-center">
-          <StatusBadge status="Suspended" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-2">Rule Violation</p>
-        </div>
-        <div className="text-center">
-          <StatusBadge status="Expired" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-2">Renewal Required</p>
-        </div>
-      </div>
-      
-      <div className="bg-card/50 rounded-xl p-6 border border-border/20">
-        <div className="flex items-center gap-3 mb-4">
-          <Trophy className="h-5 w-5 text-scope-blue" />
-          <h3 className="font-rajdhani font-semibold">Member Directory</h3>
-        </div>
-        <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <span className="font-medium">John Parker (Individual)</span>
-            <StatusBadge status="Premium" showIcon />
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="font-medium">Rodriguez Family</span>
-            <StatusBadge status="Active" showIcon />
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="font-medium">TechCorp Team</span>
-            <StatusBadge status="Active" showIcon />
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="font-medium">Amy Davis (Youth)</span>
-            <StatusBadge status="Trial" showIcon />
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="font-medium">Mike Wilson</span>
-            <StatusBadge status="Suspended" showIcon />
-          </div>
-        </div>
-      </div>
-    </div>
-  ),
-};
-
-// Score Badges
-export const ScoreBadges: Story = {
-  render: () => (
-    <div className="space-y-8">
-      <h2 className="text-2xl font-rajdhani font-bold mb-4">Score Indicators</h2>
-      
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div className="text-center">
-          <ScoreBadge score={25} maxScore={25} size="lg" />
-          <p className="text-sm text-muted-foreground mt-2">Perfect Round</p>
-        </div>
-        <div className="text-center">
-          <ScoreBadge score={23} maxScore={25} size="lg" />
-          <p className="text-sm text-muted-foreground mt-2">Excellent</p>
-        </div>
-        <div className="text-center">
-          <ScoreBadge score={19} maxScore={25} size="lg" />
-          <p className="text-sm text-muted-foreground mt-2">Good</p>
-        </div>
-        <div className="text-center">
-          <ScoreBadge score={12} maxScore={25} size="lg" />
-          <p className="text-sm text-muted-foreground mt-2">Needs Work</p>
-        </div>
-      </div>
-      
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div className="text-center">
-          <ScoreBadge score={96} maxScore={100} showPercentage size="lg" />
-          <p className="text-sm text-muted-foreground mt-2">Sporting Clays</p>
-        </div>
-        <div className="text-center">
-          <ScoreBadge score={87} maxScore={100} showPercentage size="lg" />
-          <p className="text-sm text-muted-foreground mt-2">Good Round</p>
-        </div>
-        <div className="text-center">
-          <ScoreBadge score={72} maxScore={100} showPercentage size="lg" />
-          <p className="text-sm text-muted-foreground mt-2">Average</p>
-        </div>
-        <div className="text-center">
-          <ScoreBadge score={45} maxScore={100} showPercentage size="lg" />
-          <p className="text-sm text-muted-foreground mt-2">Beginner</p>
-        </div>
-      </div>
-      
-      <div className="bg-card/50 rounded-xl p-6 border border-border/20">
-        <div className="flex items-center gap-3 mb-4">
-          <Target className="h-5 w-5 text-brand-green" />
-          <h3 className="font-rajdhani font-semibold">Recent Scores</h3>
-        </div>
-        <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <span className="font-medium">Trap Round 1</span>
-            <ScoreBadge score={24} maxScore={25} animate />
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="font-medium">Skeet Round 2</span>
-            <ScoreBadge score={21} maxScore={25} animate />
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="font-medium">Sporting Clays</span>
-            <ScoreBadge score={89} maxScore={100} showPercentage animate />
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="font-medium">5-Stand</span>
-            <ScoreBadge score={23} maxScore={25} animate />
-          </div>
-        </div>
-      </div>
-    </div>
-  ),
-};
-
-// Event Badges
-export const EventBadges: Story = {
-  render: () => (
-    <div className="space-y-8">
-      <h2 className="text-2xl font-rajdhani font-bold mb-4">Event & Tournament Badges</h2>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Tournament Results */}
-        <div className="bg-card/50 rounded-xl p-6 border border-border/20">
-          <div className="flex items-center gap-3 mb-4">
-            <Trophy className="h-5 w-5 text-brass-yellow" />
-            <h3 className="font-rajdhani font-semibold">Tournament Results</h3>
-          </div>
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="font-medium">1st Place</span>
-              <Badge variant="premium" icon={<Trophy className="h-3 w-3" />} shimmer animate>
-                Champion
-              </Badge>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="font-medium">2nd Place</span>
-              <Badge variant="success" icon={<Award className="h-3 w-3" />} animate>
-                Runner-up
-              </Badge>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="font-medium">3rd Place</span>
-              <Badge variant="warning" icon={<Star className="h-3 w-3" />} animate>
-                Third
-              </Badge>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="font-medium">Top 10</span>
-              <Badge variant="info" animate>
-                Finalist
-              </Badge>
-            </div>
-          </div>
-        </div>
-        
-        {/* Event Status */}
-        <div className="bg-card/50 rounded-xl p-6 border border-border/20">
-          <div className="flex items-center gap-3 mb-4">
-            <CheckCircle className="h-5 w-5 text-rifling-green" />
-            <h3 className="font-rajdhani font-semibold">Event Status</h3>
-          </div>
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="font-medium">Registration</span>
-              <Badge variant="success" pulse>
-                Open
-              </Badge>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="font-medium">Spring Championship</span>
-              <Badge variant="warning" icon={<Clock className="h-3 w-3" />}>
-                Few Spots
-              </Badge>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="font-medium">Monthly League</span>
-              <Badge variant="error" icon={<XCircle className="h-3 w-3" />}>
-                Full
-              </Badge>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="font-medium">Youth Training</span>
-              <Badge variant="info">
-                Upcoming
-              </Badge>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Achievement Badges */}
-      <div className="bg-gradient-to-br from-brass-yellow/10 to-copper-orange/10 rounded-xl p-6 border border-brass-yellow/20">
-        <div className="flex items-center gap-3 mb-6">
-          <Zap className="h-6 w-6 text-color-lahoma-orange" />
-          <h3 className="font-rajdhani font-bold">Achievement Unlocked!</h3>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="text-center">
-            <Badge variant="premium" size="lg" shimmer animate icon={<Trophy className="h-4 w-4" />}>
-              Perfectionist
-            </Badge>
-            <p className="text-xs text-muted-foreground mt-2">25/25 Trap Round</p>
-          </div>
-          <div className="text-center">
-            <Badge variant="success" size="lg" animate icon={<Target className="h-4 w-4" />}>
-              Marksman
-            </Badge>
-            <p className="text-xs text-muted-foreground mt-2">90%+ Average</p>
-          </div>
-          <div className="text-center">
-            <Badge variant="warning" size="lg" animate icon={<Star className="h-4 w-4" />}>
-              Consistent
-            </Badge>
-            <p className="text-xs text-muted-foreground mt-2">10 Rounds Straight</p>
-          </div>
-          <div className="text-center">
-            <Badge variant="info" size="lg" animate icon={<Award className="h-4 w-4" />}>
-              Competitor
-            </Badge>
-            <p className="text-xs text-muted-foreground mt-2">5 Tournaments</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  ),
-};
-
-// Elite Showcase
-export const EliteShowcase: Story = {
-  render: () => (
-    <div className="space-y-8">
-      <h2 className="text-2xl font-rajdhani font-bold mb-4">Elite Badge Variants</h2>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Premium vs Elite Comparison */}
-        <div className="bg-card/50 rounded-xl p-6 border border-border/20">
-          <h3 className="font-heading font-semibold mb-4">Premium vs Elite</h3>
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <span className="font-medium">Premium Badge</span>
-              <Badge variant="premium" shimmer size="lg">Premium</Badge>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="font-medium">Elite Badge</span>
-              <Badge variant="elite" size="lg">Elite</Badge>
-            </div>
-          </div>
-        </div>
-        
-        {/* Elite in Action */}
-        <div className="bg-card/50 rounded-xl p-6 border border-border/20">
-          <h3 className="font-heading font-semibold mb-4">Elite Classifications</h3>
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <span className="font-medium">Elite Champion</span>
-              <Badge variant="elite" icon={<Trophy className="h-3 w-3" />}>Champion</Badge>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="font-medium">Elite Member</span>
-              <Badge variant="elite" icon={<Star className="h-3 w-3" />}>Elite</Badge>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="font-medium">Master Class</span>
-              <Badge variant="elite" icon={<Award className="h-3 w-3" />}>Master</Badge>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Elite Size Variations */}
-      <div className="bg-gradient-to-br from-brass-yellow/10 to-copper-orange/10 rounded-xl p-6 border border-brass-yellow/20">
-        <h3 className="font-heading font-semibold mb-4">Elite Size Variations</h3>
-        <div className="flex items-center gap-4 flex-wrap">
-          <Badge variant="elite" size="sm">Small Elite</Badge>
-          <Badge variant="elite" size="default">Default Elite</Badge>
-          <Badge variant="elite" size="lg">Large Elite</Badge>
-          <Badge variant="elite" size="xl">Extra Large Elite</Badge>
-        </div>
-      </div>
-    </div>
-  ),
-};
-
-// Interactive Playground
-export const Playground: Story = {
+export const Premium: Story = {
   args: {
     variant: 'premium',
-    size: 'default',
-    children: 'Premium Badge',
+    children: (
+      <>
+        <Crown className="size-3" />
+        Premium
+      </>
+    ),
   },
-  render: (args) => (
-    <div className="space-y-4">
-      <h3 className="font-rajdhani font-semibold">Interactive Badge</h3>
-      <Badge {...args} />
+};
+
+export const Elite: Story = {
+  args: {
+    variant: 'elite',
+    children: (
+      <>
+        <Star className="size-3" />
+        Elite
+      </>
+    ),
+  },
+};
+
+export const Glass: Story = {
+  args: {
+    variant: 'glass',
+    children: (
+      <>
+        <Shield className="size-3" />
+        Glass Effect
+      </>
+    ),
+  },
+  parameters: {
+    backgrounds: {
+      default: 'gradient',
+      values: [{
+        name: 'gradient',
+        value: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      }],
+    },
+  },
+};
+
+export const Success: Story = {
+  args: {
+    variant: 'success',
+    children: (
+      <>
+        <CheckCircle className="size-3" />
+        Success
+      </>
+    ),
+  },
+};
+
+export const Warning: Story = {
+  args: {
+    variant: 'warning',
+    children: (
+      <>
+        <AlertCircle className="size-3" />
+        Warning
+      </>
+    ),
+  },
+};
+
+export const Error: Story = {
+  args: {
+    variant: 'error',
+    children: (
+      <>
+        <XCircle className="size-3" />
+        Error
+      </>
+    ),
+  },
+};
+
+export const Information: Story = {
+  args: {
+    variant: 'info',
+    children: (
+      <>
+        <Info className="size-3" />
+        Information
+      </>
+    ),
+  },
+};
+
+export const Outline: Story = {
+  args: {
+    variant: 'outline',
+    children: 'Outline',
+  },
+};
+
+// Size variants
+export const SizeVariants: Story = {
+  render: () => (
+    <div className="flex items-center gap-4">
+      <Badge size="sm" variant="premium">
+        <Trophy className="size-2.5" />
+        Small
+      </Badge>
+      <Badge size="default" variant="premium">
+        <Trophy className="size-3" />
+        Default
+      </Badge>
+      <Badge size="lg" variant="premium">
+        <Trophy className="size-3" />
+        Large
+      </Badge>
+      <Badge size="xl" variant="premium">
+        <Trophy className="size-4" />
+        Extra Large
+      </Badge>
     </div>
   ),
 };
 
-// Glassmorphism Showcase
-export const Glassmorphism: Story = {
+// Complete showcase
+export const CompleteShowcase: Story = {
   render: () => (
-    <div className="relative h-64 w-full rounded-lg overflow-hidden">
-      <Image 
-        src="https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop" 
-        alt="Shooting range background"
-        className="absolute inset-0 object-cover"
-        fill
-      />
-      <div className="absolute inset-0 bg-black/30" />
-      <div className="relative h-full flex items-center justify-center gap-4">
-        <Badge variant="glass" size="lg">Skeet Range</Badge>
-        <Badge variant="glass" size="lg" icon={<Target className="h-3.5 w-3.5" />}>Trap Field</Badge>
-        <Badge variant="glass" size="lg" icon={<Trophy className="h-3.5 w-3.5" />}>5-Stand</Badge>
+    <div className="space-y-8 max-w-6xl">
+      {/* Core Variants */}
+      <div className="space-y-4">
+        <h3 className="text-xl font-rajdhani font-bold text-blued-steel flex items-center gap-2">
+          <Star className="size-5 text-brass-yellow" />
+          Core Variants
+        </h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="text-center space-y-2">
+            <Badge variant="default" size="lg" className="w-full justify-center">
+              <Shield className="size-3" />
+              Default
+            </Badge>
+            <p className="text-xs text-case-hardened">Standard style</p>
+          </div>
+          <div className="text-center space-y-2">
+            <Badge variant="premium" size="lg" className="w-full justify-center">
+              <Crown className="size-3" />
+              Premium
+            </Badge>
+            <p className="text-xs text-case-hardened">Enhanced gradient</p>
+          </div>
+          <div className="text-center space-y-2">
+            <Badge variant="elite" size="lg" className="w-full justify-center">
+              <Star className="size-3" />
+              Elite
+            </Badge>
+            <p className="text-xs text-case-hardened">Highest tier</p>
+          </div>
+          <div className="text-center space-y-2">
+            <Badge variant="glass" size="lg" className="w-full justify-center">
+              <Award className="size-3" />
+              Glass
+            </Badge>
+            <p className="text-xs text-case-hardened">Glassmorphism</p>
+          </div>
+        </div>
+      </div>
+      
+      {/* Semantic Variants */}
+      <div className="space-y-4">
+        <h3 className="text-xl font-rajdhani font-bold text-blued-steel flex items-center gap-2">
+          <CheckCircle className="size-5 text-rifling-green" />
+          Semantic States
+        </h3>
+        <div className="flex flex-wrap gap-3">
+          <Badge variant="success" size="lg">
+            <CheckCircle className="size-3" />
+            Success
+          </Badge>
+          <Badge variant="warning" size="lg">
+            <AlertCircle className="size-3" />
+            Warning
+          </Badge>
+          <Badge variant="error" size="lg">
+            <XCircle className="size-3" />
+            Error
+          </Badge>
+          <Badge variant="info" size="lg">
+            <Info className="size-3" />
+            Info
+          </Badge>
+          <Badge variant="outline" size="lg">
+            Outline
+          </Badge>
+        </div>
+      </div>
+    </div>
+  ),
+};
+
+// Firearms-specific implementations
+export const FirearmsSystem: Story = {
+  render: () => (
+    <div className="space-y-8 max-w-5xl">
+      <div className="text-center space-y-2">
+        <h3 className="text-xl font-rajdhani font-bold text-blued-steel flex items-center justify-center gap-2">
+          <Target className="size-5 text-scope-blue" />
+          Firearms Industry Integration
+        </h3>
+        <p className="text-case-hardened">Specialized components for shooting sports community</p>
+      </div>
+
+      <div className="space-y-6">
+        {/* Classification System */}
+        <div className="space-y-3">
+          <h4 className="text-lg font-rajdhani font-semibold text-blued-steel">Classification Badges</h4>
+          <div className="flex flex-wrap gap-3">
+            <ClassificationBadge classification="Master" />
+            <ClassificationBadge classification="Expert" />
+            <ClassificationBadge classification="Sharpshooter" />
+            <ClassificationBadge classification="Marksman" />
+            <ClassificationBadge classification="Novice" />
+          </div>
+          <p className="text-sm text-case-hardened">
+            Competitive shooting classifications with appropriate visual hierarchy
+          </p>
+        </div>
+        
+        {/* Status System */}
+        <div className="space-y-3">
+          <h4 className="text-lg font-rajdhani font-semibold text-blued-steel">Status Indicators</h4>
+          <div className="flex flex-wrap gap-3">
+            <StatusBadge status="Active" />
+            <StatusBadge status="Premium" />
+            <StatusBadge status="Elite" />
+            <StatusBadge status="Pending" />
+            <StatusBadge status="Expired" />
+            <StatusBadge status="Suspended" />
+          </div>
+          <p className="text-sm text-case-hardened">
+            Member status tracking with semantic color coding
+          </p>
+        </div>
+        
+        {/* Score System */}
+        <div className="space-y-3">
+          <h4 className="text-lg font-rajdhani font-semibold text-blued-steel">Score-Based Variants</h4>
+          <div className="flex flex-wrap gap-3">
+            <ScoreBadge score={98} maxScore={100} />
+            <ScoreBadge score={87} maxScore={100} />
+            <ScoreBadge score={76} maxScore={100} />
+            <ScoreBadge score={65} maxScore={100} />
+            <ScoreBadge score={45} maxScore={100} />
+            <ScoreBadge score={28} maxScore={100} />
+          </div>
+          <p className="text-sm text-case-hardened">
+            Automatic variant selection based on performance scores
+          </p>
+        </div>
+      </div>
+    </div>
+  ),
+};
+
+// Business context examples
+export const BusinessUseCases: Story = {
+  render: () => (
+    <div className="space-y-8 max-w-4xl">
+      <div className="text-center space-y-2">
+        <h3 className="text-xl font-rajdhani font-bold text-blued-steel">Real-World Applications</h3>
+        <p className="text-case-hardened">How badges enhance user experience in firearms community platform</p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Member Profile */}
+        <div className="bg-shooting-bench p-6 rounded-xl border border-case-hardened/20">
+          <h4 className="text-lg font-rajdhani font-semibold text-blued-steel mb-4">Member Profile</h4>
+          <div className="space-y-3">
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-case-hardened">Status:</span>
+              <StatusBadge status="Premium" />
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-case-hardened">Classification:</span>
+              <ClassificationBadge classification="Expert" />
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-case-hardened">Last Score:</span>
+              <ScoreBadge score={94} maxScore={100} />
+            </div>
+          </div>
+        </div>
+
+        {/* Event Registration */}
+        <div className="bg-shooting-bench p-6 rounded-xl border border-case-hardened/20">
+          <h4 className="text-lg font-rajdhani font-semibold text-blued-steel mb-4">Event Features</h4>
+          <div className="space-y-3">
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="info" size="sm">
+                <Target className="size-2.5" />
+                Precision Rifle
+              </Badge>
+              <Badge variant="success" size="sm">
+                <Shield className="size-2.5" />
+                Safety Certified
+              </Badge>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="warning" size="sm">
+                <AlertCircle className="size-2.5" />
+                Limited Spots
+              </Badge>
+              <Badge variant="premium" size="sm">
+                <Crown className="size-2.5" />
+                Members Only
+              </Badge>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   ),

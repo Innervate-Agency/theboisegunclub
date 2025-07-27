@@ -47,7 +47,7 @@ const samplePlans = [
     ],
     popular: true,
     badge: 'Most Popular',
-    color: 'var(--lahoma-orange)',
+    color: 'rgb(242, 135, 5)', // copper-orange
     ctaText: 'Choose Standard',
     ctaVariant: 'default' as const
   },

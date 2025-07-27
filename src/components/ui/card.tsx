@@ -3,25 +3,41 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const cardVariants = cva(
-  "bg-card text-card-foreground flex flex-col gap-4 rounded-xl border py-6 transition-stripe-fast relative overflow-hidden",
+  // TBGC Design System V5: Stripe-inspired sophisticated shadows
+  "relative flex flex-col rounded-lg border bg-card text-card-foreground transition-all duration-150 ease-out",
   {
     variants: {
       variant: {
-        default: "bg-card text-card-foreground border border-case-hardened/20 shadow-sm hover:shadow-md",
-        accented: "bg-card text-card-foreground border-t-4 border-t-brass-yellow shadow-md hover:shadow-lg",
-        glass: "backdrop-blur-sm bg-card/20 border border-brass-yellow/20 text-card-foreground hover:bg-card/30"
+        // Default: Clean with good shadows
+        default: "bg-white border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300",
+        
+        // Elevated: More prominent
+        elevated: "bg-white border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-1",
+        
+        // Interactive: Clickable feedback
+        interactive: "bg-white border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300 hover:-translate-y-0.5 cursor-pointer",
+        
+        // Premium: Gold accent
+        premium: "bg-white border-yellow-200 shadow-md hover:shadow-xl hover:border-yellow-300 hover:-translate-y-1",
+        
+        // Glass: Modern glassmorphism
+        glass: "bg-white/80 border-white/30 shadow-lg backdrop-blur-sm hover:bg-white/90 hover:shadow-xl",
+        
+        // Outlined: Clean borders
+        outlined: "bg-white border-gray-300 hover:border-gray-400 hover:shadow-sm",
+        
+        // Subtle: Warm backgrounds
+        subtle: "bg-stone-50 border-stone-200 hover:bg-white hover:border-stone-300 hover:shadow-sm"
       },
       size: {
-        xs: "p-3 gap-2 text-sm",
-        sm: "p-4 gap-3",
-        md: "py-6 gap-4",
-        lg: "p-8 gap-6",
-        xl: "p-10 gap-8"
+        sm: "",           // Components handle their own padding
+        default: "",      // Components handle their own padding
+        lg: ""            // Components handle their own padding
       }
     },
     defaultVariants: {
       variant: "default",
-      size: "md"
+      size: "default"
     }
   }
 )
@@ -30,88 +46,92 @@ export interface CardProps
   extends React.ComponentProps<"div">,
     VariantProps<typeof cardVariants> {}
 
-function Card({ className, variant, size, ...props }: CardProps) {
-  return (
-    <div
-      data-slot="card"
-      className={cn(cardVariants({ variant, size }), className)}
-      {...props}
-    />
-  )
-}
+const Card = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className, variant, size, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(cardVariants({ variant, size }), className)}
+        {...props}
+      />
+    )
+  }
+)
+Card.displayName = "Card"
 
-function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card-header"
-      className={cn(
-        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
-        className
-      )}
-      {...props}
-    />
-  )
-}
+const CardHeader = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>(
+  ({ className, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn("flex flex-col space-y-1.5 p-6", className)}
+        {...props}
+      />
+    )
+  }
+)
+CardHeader.displayName = "CardHeader"
 
-function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card-title"
-      className={cn("leading-none font-semibold font-noto-sans text-xl text-blued-steel", className)}
-      {...props}
-    />
-  )
-}
+const CardTitle = React.forwardRef<HTMLHeadingElement, React.ComponentProps<"h3">>(
+  ({ className, ...props }, ref) => {
+    return (
+      <h3
+        ref={ref}
+        className={cn(
+          "font-semibold leading-none tracking-tight text-gray-900 text-lg",
+          className
+        )}
+        {...props}
+      />
+    )
+  }
+)
+CardTitle.displayName = "CardTitle"
 
-function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card-description"
-      className={cn("text-case-hardened text-sm leading-relaxed", className)}
-      {...props}
-    />
-  )
-}
+const CardDescription = React.forwardRef<HTMLParagraphElement, React.ComponentProps<"p">>(
+  ({ className, ...props }, ref) => {
+    return (
+      <p
+        ref={ref}
+        className={cn("text-sm text-gray-600", className)}
+        {...props}
+      />
+    )
+  }
+)
+CardDescription.displayName = "CardDescription"
 
-function CardAction({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card-action"
-      className={cn(
-        "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
-        className
-      )}
-      {...props}
-    />
-  )
-}
+const CardContent = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>(
+  ({ className, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn("px-6 pb-6", className)}
+        {...props}
+      />
+    )
+  }
+)
+CardContent.displayName = "CardContent"
 
-function CardContent({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card-content"
-      className={cn("px-6", className)}
-      {...props}
-    />
-  )
-}
-
-function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card-footer"
-      className={cn("flex items-center px-6 [.border-t]:pt-6", className)}
-      {...props}
-    />
-  )
-}
+const CardFooter = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>(
+  ({ className, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn("flex items-center px-6 pb-6 pt-0", className)}
+        {...props}
+      />
+    )
+  }
+)
+CardFooter.displayName = "CardFooter"
 
 export {
   Card,
   CardHeader,
   CardFooter,
   CardTitle,
-  CardAction,
   CardDescription,
   CardContent,
   cardVariants

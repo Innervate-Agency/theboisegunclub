@@ -7,12 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "storybook:reset": "rm -rf node_modules/.cache/storybook && npm run build-storybook",
     "storybook:check": "storybook dev --smoke-test",
     "storybook:fix": "node scripts/fix-storybook.js",
-    "storybook:validate": "node scripts/validate-stories.js"
+    "storybook:validate": "node scripts/validate-stories.js",
+    "health": "node scripts/health-check.js",
+    "fix": "node scripts/quick-fix.js",
+    "sync:docs": "node scripts/sync-design-docs.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",

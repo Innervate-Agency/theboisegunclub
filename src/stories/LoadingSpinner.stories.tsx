@@ -8,7 +8,7 @@ const meta: Meta<typeof LoadingSpinner> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Loading spinner component with clay target theming. Uses Leonard Yellow and Lahoma Orange for branded loading states.',
+        component: 'Loading spinner component with clay target theming. Uses Brass Yellow and Copper Orange for branded loading states.',
       },
     },
   },
@@ -89,15 +89,15 @@ export const GunClubContexts: Story = {
 export const InlineLoading: Story = {
   render: () => (
     <div className="space-y-8">
-      <div className="flex items-center gap-4 p-4 bg-cloudy-day-white rounded-lg">
+      <div className="flex items-center gap-4 p-4 bg-range-white rounded-lg">
         <LoadingSpinner size="sm" text="" />
         <span className="text-blued-steel">Processing membership application...</span>
       </div>
-      <div className="flex items-center gap-4 p-4 bg-cloudy-day-white rounded-lg">
+      <div className="flex items-center gap-4 p-4 bg-range-white rounded-lg">
         <LoadingSpinner size="sm" text="" />
         <span className="text-blued-steel">Loading range schedule...</span>
       </div>
-      <div className="flex items-center gap-4 p-4 bg-cloudy-day-white rounded-lg">
+      <div className="flex items-center gap-4 p-4 bg-range-white rounded-lg">
         <LoadingSpinner size="sm" text="" />
         <span className="text-blued-steel">Submitting competition scores...</span>
       </div>

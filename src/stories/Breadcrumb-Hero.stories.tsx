@@ -29,7 +29,7 @@ export const Default: Story = {
     title: 'Safety Training',
     description: 'Comprehensive firearms safety training for all skill levels',
     icon: Shield,
-    gradient: 'bg-gradient-to-r from-var(--lahoma-orange) to-var(--abe-red)',
+    gradient: 'bg-gradient-to-r from-copper-orange to-muzzle-flash',
     badges: ['NRA Certified', 'Required for All Members'],
     backLink: {
       href: '/training',
@@ -106,7 +106,7 @@ export const FacilitiesTour: Story = {
     title: 'Virtual Tour',
     description: 'Explore our state-of-the-art shooting facilities and amenities',
     icon: MapPin,
-    gradient: 'bg-gradient-to-r from-var(--cloudy-day-white) to-var(--lahoma-orange)',
+    gradient: 'bg-gradient-to-r from-range-white to-copper-orange',
     badges: ['Facilities', 'Virtual Tour', 'Interactive'],
     backLink: {
       href: '/facilities',
@@ -126,7 +126,7 @@ export const TrainingProgramDetail: Story = {
     title: 'Advanced Marksmanship',
     description: 'Precision shooting techniques for competitive and recreational shooters',
     icon: Target,
-    gradient: 'bg-gradient-to-r from-var(--kent-slate-gray) to-var(--lahoma-orange)',
+    gradient: 'bg-gradient-to-r from-night-sight to-copper-orange',
     badges: ['8 Week Course', 'Advanced Level', 'Competition Prep'],
     backLink: {
       href: '/training/programs',
@@ -164,7 +164,7 @@ export const ProShop: Story = {
     title: 'Pro Shop',
     description: 'Quality firearms, ammunition, and accessories for all your shooting needs',
     icon: Settings,
-    gradient: 'bg-gradient-to-r from-var(--sand-dune-brown) to-var(--lahoma-orange)',
+    gradient: 'bg-gradient-to-r from-walnut-stock to-copper-orange',
     badges: ['Pro Shop', 'Member Discounts', 'Expert Staff'],
     backLink: {
       href: '/facilities',
@@ -202,7 +202,7 @@ export const WithoutBackLink: Story = {
     title: 'Contact Us',
     description: 'Get in touch with our friendly team for any questions or assistance',
     icon: Shield,
-    gradient: 'bg-gradient-to-r from-var(--lahoma-orange) to-var(--abe-red)',
+    gradient: 'bg-gradient-to-r from-copper-orange to-muzzle-flash',
     badges: ['Contact', 'Support']
   }
 };

@@ -47,25 +47,25 @@ export const ThemeStates: Story = {
         <h3 className="text-lg font-rajdhani font-bold text-blued-steel mb-4">
           Theme States
         </h3>
-        <p className="text-sm text-desert-cliff-brown mb-6">
+        <p className="text-sm text-case-hardened mb-6">
           The toggle cycles through these three states:
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="p-6 bg-cloudy-day-white rounded-lg text-center">
+        <div className="p-6 bg-range-white rounded-lg text-center">
           <div className="text-2xl mb-2">☀️</div>
           <h4 className="font-rajdhani font-bold text-blued-steel mb-2">Light Mode</h4>
-          <p className="text-sm text-desert-cliff-brown">Bright, clean interface</p>
+          <p className="text-sm text-case-hardened">Bright, clean interface</p>
         </div>
-        <div className="p-6 bg-kent-slate-gray rounded-lg text-center">
+        <div className="p-6 bg-night-sight rounded-lg text-center">
           <div className="text-2xl mb-2">🌙</div>
-          <h4 className="font-rajdhani font-bold text-chester-white mb-2">Dark Mode</h4>
-          <p className="text-sm text-don-gray">Low-light friendly</p>
+          <h4 className="font-rajdhani font-bold text-titanium-white mb-2">Dark Mode</h4>
+          <p className="text-sm text-stainless-steel">Low-light friendly</p>
         </div>
-        <div className="p-6 bg-overcast rounded-lg text-center">
+        <div className="p-6 bg-tactical-gray rounded-lg text-center">
           <div className="text-2xl mb-2">🖥️</div>
           <h4 className="font-rajdhani font-bold text-blued-steel mb-2">System</h4>
-          <p className="text-sm text-desert-cliff-brown">Follows OS preference</p>
+          <p className="text-sm text-case-hardened">Follows OS preference</p>
         </div>
       </div>
     </div>
@@ -74,16 +74,16 @@ export const ThemeStates: Story = {
 
 export const FloatingPosition: Story = {
   render: () => (
-    <div className="relative min-h-96 p-8 bg-gradient-to-br from-cloudy-day-white to-overcast rounded-lg">
+    <div className="relative min-h-96 p-8 bg-gradient-to-br from-range-white to-tactical-gray rounded-lg">
       <div className="text-center">
         <h3 className="text-lg font-rajdhani font-bold text-blued-steel mb-4">
           Floating Theme Toggle
         </h3>
-        <p className="text-sm text-desert-cliff-brown mb-6">
+        <p className="text-sm text-case-hardened mb-6">
           The toggle is positioned fixed at the bottom-left corner
         </p>
-        <div className="p-6 bg-cloudy-day-white rounded-lg shadow-sm">
-          <p className="text-desert-cliff-brown">
+        <div className="p-6 bg-range-white rounded-lg shadow-sm">
+          <p className="text-case-hardened">
             This demonstrates the floating theme toggle positioned at the bottom-left of the screen.
             Click it to cycle through light, dark, and system themes.
           </p>

@@ -181,7 +181,7 @@ export const NewsletterSignup: Story = {
             className="w-full px-3 py-2 border rounded-md bg-background text-foreground border-border"
           />
           <div className="flex gap-2">
-            <Button className="flex-1 bg-var(--lahoma-orange) hover:bg-var(--leonard-yellow)">
+            <Button className="flex-1 bg-copper-orange hover:bg-brass-yellow">
               Subscribe
             </Button>
             <Button variant="outline" className="flex-1">
@@ -246,7 +246,7 @@ export const LargeFeatureCard: Story = {
             <div className="text-sm text-muted-foreground">Sporting Clays</div>
           </div>
         </div>
-        <Button className="w-full bg-var(--lahoma-orange) hover:bg-var(--leonard-yellow)">
+        <Button className="w-full bg-copper-orange hover:bg-brass-yellow">
           Schedule a Tour
         </Button>
       </div>

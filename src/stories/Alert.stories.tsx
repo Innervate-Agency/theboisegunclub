@@ -144,7 +144,7 @@ export const AllVariants: Story = {
           <AlertTriangle />
           <AlertTitle>Warning Alert</AlertTitle>
           <AlertDescription>
-            Leonard Yellow to Lahoma Orange gradient hints for important notices.
+            Brass Yellow to Copper Orange gradient hints for important notices.
           </AlertDescription>
         </Alert>
         
@@ -168,7 +168,7 @@ export const AllVariants: Story = {
           <Zap />
           <AlertTitle>Premium Alert</AlertTitle>
           <AlertDescription>
-            Windows 11 Mica effects with Leonard Yellow accent and hover enhancements.
+            Windows 11 Mica effects with Brass Yellow accent and hover enhancements.
           </AlertDescription>
         </Alert>
         
@@ -377,7 +377,7 @@ export const FusionShowcase: Story = {
       
       <div className="bg-card/50 rounded-xl p-6 border border-border/20">
         <div className="flex items-center gap-3 mb-4">
-          <Target className="h-5 w-5 text-lahoma-orange" />
+          <Target className="h-5 w-5 text-copper-orange" />
           <h3 className="font-rajdhani font-semibold">Result: Professional Authority</h3>
         </div>
         <p className="text-muted-foreground font-noto-sans">
