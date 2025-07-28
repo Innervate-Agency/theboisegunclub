@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { CheckCircle, AlertTriangle, XCircle, Info, Zap, Shield, Trophy, Target, Bell, Star } from 'lucide-react'
 import { 
   Alert, 

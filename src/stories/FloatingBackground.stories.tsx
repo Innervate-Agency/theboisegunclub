@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { FloatingBackground } from '@/components/ui/floating-background';
 
 const meta: Meta<typeof FloatingBackground> = {

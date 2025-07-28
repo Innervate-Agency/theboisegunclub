@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import AnimatedSplashCard from '@/components/ui/AnimatedSplashCard';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -31,7 +31,7 @@ export const Default: Story = {
   args: {
     children: (
       <div className="text-center">
-        <Target className="mx-auto mb-4 h-12 w-12 text-copper-orange" />
+        <Target className="mx-auto mb-4 icon-2xl icon-secondary" />
         <h3 className="text-2xl font-bold text-foreground mb-2">
           Treasure Valley Firearms Hub
          </h3>
@@ -54,7 +54,7 @@ export const PremiumAccess: Story = {
         <Badge className="mb-4 bg-brass-yellow text-gunmetal-black">
           Limited Time Offer
         </Badge>
-        <Trophy className="mx-auto mb-4 h-12 w-12 text-copper-orange" />
+        <Trophy className="mx-auto mb-4 icon-2xl icon-primary" />
         <h3 className="text-2xl font-bold text-foreground mb-2">
           50% Off Premium Access
         </h3>
@@ -79,7 +79,7 @@ export const RegionalEvent: Story = {
   args: {
     children: (
       <div className="text-center">
-        <Calendar className="mx-auto mb-4 h-12 w-12 text-copper-orange" />
+        <Calendar className="mx-auto mb-4 icon-2xl icon-secondary" />
         <h3 className="text-2xl font-bold text-foreground mb-2">
           Treasure Valley Gun Show
         </h3>
@@ -106,7 +106,7 @@ export const TrainingProgram: Story = {
   args: {
     children: (
       <div className="text-center">
-        <Users className="mx-auto mb-4 h-12 w-12 text-copper-orange" />
+        <Users className="mx-auto mb-4 icon-2xl icon-accent" />
         <h3 className="text-2xl font-bold text-foreground mb-2">
           NRA Certified Training
         </h3>
@@ -132,7 +132,7 @@ export const AchievementShowcase: Story = {
   args: {
     children: (
       <div className="text-center">
-        <Star className="mx-auto mb-4 h-12 w-12 text-brass-yellow" />
+        <Star className="mx-auto mb-4 icon-2xl icon-primary" />
         <h3 className="text-2xl font-bold text-foreground mb-2">
           Championship Results
         </h3>
@@ -220,7 +220,7 @@ export const LargeFeatureCard: Story = {
     children: (
       <div>
         <div className="text-center mb-6">
-          <Target className="mx-auto mb-4 h-16 w-16 text-copper-orange" />
+          <Target className="mx-auto mb-4 icon-2xl icon-secondary" />
           <h2 className="text-3xl font-bold text-foreground mb-3">
                        State-of-the-Art Facilities
            </h2>

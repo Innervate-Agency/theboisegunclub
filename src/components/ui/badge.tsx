@@ -5,20 +5,20 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none transition-stripe-fast overflow-hidden font-noto-sans",
+  "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none transition-all duration-150 ease-out overflow-hidden",
   {
     variants: {
       variant: {
-        default: "bg-shooting-bench text-blued-steel border-case-hardened/20 hover:bg-shooting-bench/80",
-        premium: "bg-gradient-premium text-gunmetal-black border-brass-yellow/30 shadow-premium hover:shadow-elite mica-premium",
-        elite: "bg-gradient-elite text-gunmetal-black border-brass-yellow/40 shadow-elite animate-shimmer mica-elite",
-        glass: "backdrop-blur-sm bg-shooting-bench/20 border-brass-yellow/30 text-blued-steel",
-        success: "bg-rifling-green text-nickel-white border-transparent hover:bg-rifling-green/90",
-        warning: "bg-sight-gold text-gunmetal-black border-transparent hover:bg-sight-gold/90",
-        error: "bg-safety-red text-nickel-white border-transparent hover:bg-safety-red/90",
-        info: "bg-scope-blue text-nickel-white border-transparent hover:bg-scope-blue/90",
-        outline: "text-blued-steel border-case-hardened hover:bg-shooting-bench",
-        destructive: "bg-safety-red text-nickel-white border-transparent hover:bg-safety-red/90"
+        default: "bg-stone-100 text-gray-900 border-stone-200 hover:bg-stone-200",
+        premium: "bg-yellow-100 text-yellow-900 border-yellow-200 hover:bg-yellow-200 shadow-sm",
+        elite: "bg-yellow-200 text-yellow-900 border-yellow-300 hover:bg-yellow-300 shadow-md",
+        glass: "backdrop-blur-sm bg-white/80 border-gray-200 text-gray-900 shadow-sm",
+        success: "bg-green-100 text-green-900 border-green-200 hover:bg-green-200",
+        warning: "bg-amber-100 text-amber-900 border-amber-200 hover:bg-amber-200",
+        error: "bg-red-100 text-red-900 border-red-200 hover:bg-red-200",
+        info: "bg-blue-100 text-blue-900 border-blue-200 hover:bg-blue-200",
+        outline: "text-gray-700 border-gray-300 hover:bg-gray-50",
+        destructive: "bg-red-100 text-red-900 border-red-200 hover:bg-red-200"
       },
       size: {
         sm: "px-2 py-0.5 text-xs h-5",

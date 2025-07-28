@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { PageHero } from '@/components/ui/page-hero';
 import { Target, Trophy, Users, Calendar, Shield, Star, MapPin, Clock } from 'lucide-react';
 

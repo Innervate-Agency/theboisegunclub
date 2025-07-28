@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import AccessibilityFAB from '@/components/ui/AccessibilityFAB';
 
 const meta: Meta<typeof AccessibilityFAB> = {

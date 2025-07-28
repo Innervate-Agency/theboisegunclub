@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { BlogCard, BlogList, BlogDetail } from '@/components/ui/blog-article';
 
 // Sample gun club blog articles

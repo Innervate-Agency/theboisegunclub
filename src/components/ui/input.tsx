@@ -8,8 +8,8 @@ const inputVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-range-white border-case-hardened/30 text-blued-steel shadow-xs hover:border-case-hardened/50 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
-        filled: "bg-shooting-bench border-case-hardened/20 text-blued-steel shadow-xs hover:bg-range-white hover:border-case-hardened/40 focus-visible:bg-range-white focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
+        default: "bg-range-white border-case-hardened/30 text-blued-steel shadow-flat hover:border-case-hardened/50 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
+        filled: "bg-shooting-bench border-case-hardened/20 text-blued-steel shadow-flat hover:bg-range-white hover:border-case-hardened/40 focus-visible:bg-range-white focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
         ghost: "bg-transparent border-transparent text-blued-steel hover:bg-shooting-bench/50 focus-visible:bg-shooting-bench/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
         glass: "bg-white/20 backdrop-blur-sm border-white/30 text-blued-steel shadow-glass hover:border-white/50 hover:bg-white/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20 mica-glass"
       },

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { BreadcrumbHero } from '@/components/ui/breadcrumb-hero';
 import { Target, Trophy, Users, Calendar, Shield, Star, MapPin, BookOpen, Settings } from 'lucide-react';
 
@@ -29,7 +29,7 @@ export const Default: Story = {
     title: 'Safety Training',
     description: 'Comprehensive firearms safety training for all skill levels',
     icon: Shield,
-    gradient: 'bg-gradient-to-r from-copper-orange to-muzzle-flash',
+    backgroundPreset: 'premium',
     badges: ['NRA Certified', 'Required for All Members'],
     backLink: {
       href: '/training',
@@ -48,7 +48,7 @@ export const CompetitionResults: Story = {
     title: 'March Results',
     description: 'Monthly trap shooting competition results and standings',
     icon: Trophy,
-    gradient: 'bg-gradient-to-r from-brass-yellow to-copper-orange',
+    backgroundPreset: 'mesh',
     badges: ['Competition', 'March 2024'],
     backLink: {
       href: '/competition',
@@ -67,7 +67,7 @@ export const EventRegistration: Story = {
     title: 'Annual Championship',
     description: 'Register for our biggest competition of the year',
     icon: Calendar,
-    gradient: 'bg-gradient-to-r from-scope-blue to-copper-orange',
+    backgroundPreset: 'cool',
     badges: ['Annual Event', 'July 15-17', 'Registration Open'],
     backLink: {
       href: '/events',
@@ -86,7 +86,7 @@ export const MembershipApplication: Story = {
     title: 'Join Our Community',
     description: 'Complete your membership application and become part of our family',
     icon: Users,
-    gradient: 'bg-gradient-to-r from-rifling-green to-copper-orange',
+    backgroundPreset: 'cool',
     badges: ['Membership', 'New Member Welcome'],
     backLink: {
       href: '/membership',
@@ -106,7 +106,7 @@ export const FacilitiesTour: Story = {
     title: 'Virtual Tour',
     description: 'Explore our state-of-the-art shooting facilities and amenities',
     icon: MapPin,
-    gradient: 'bg-gradient-to-r from-range-white to-copper-orange',
+    backgroundPreset: 'subtle',
     badges: ['Facilities', 'Virtual Tour', 'Interactive'],
     backLink: {
       href: '/facilities',
@@ -126,7 +126,7 @@ export const TrainingProgramDetail: Story = {
     title: 'Advanced Marksmanship',
     description: 'Precision shooting techniques for competitive and recreational shooters',
     icon: Target,
-    gradient: 'bg-gradient-to-r from-night-sight to-copper-orange',
+    backgroundPreset: 'cool',
     badges: ['8 Week Course', 'Advanced Level', 'Competition Prep'],
     backLink: {
       href: '/training/programs',
@@ -145,7 +145,7 @@ export const ClubRules: Story = {
     title: 'Club Rules & Guidelines',
     description: 'Important safety rules and guidelines for all members and visitors',
     icon: BookOpen,
-    gradient: 'bg-gradient-to-r from-safety-red to-copper-orange',
+    backgroundPreset: 'warm',
     badges: ['Safety', 'Required Reading', 'Updated 2024'],
     backLink: {
       href: '/about',
@@ -164,7 +164,7 @@ export const ProShop: Story = {
     title: 'Pro Shop',
     description: 'Quality firearms, ammunition, and accessories for all your shooting needs',
     icon: Settings,
-    gradient: 'bg-gradient-to-r from-walnut-stock to-copper-orange',
+    backgroundPreset: 'warm',
     badges: ['Pro Shop', 'Member Discounts', 'Expert Staff'],
     backLink: {
       href: '/facilities',
@@ -183,7 +183,7 @@ export const Gallery: Story = {
     title: 'Photo Gallery',
     description: 'Memories from our events, competitions, and daily activities',
     icon: Star,
-    gradient: 'bg-gradient-to-r from-brass-yellow to-copper-orange',
+    backgroundPreset: 'warm',
     badges: ['Photo Gallery', 'Community', 'Memories'],
     backLink: {
       href: '/about',
@@ -202,7 +202,7 @@ export const WithoutBackLink: Story = {
     title: 'Contact Us',
     description: 'Get in touch with our friendly team for any questions or assistance',
     icon: Shield,
-    gradient: 'bg-gradient-to-r from-copper-orange to-muzzle-flash',
+    backgroundPreset: 'warm',
     badges: ['Contact', 'Support']
   }
 };
@@ -219,7 +219,7 @@ export const DeepNavigation: Story = {
     title: 'Junior Shooters Program',
     description: 'Safe and fun introduction to shooting sports for young people aged 12-17',
     icon: Users,
-    gradient: 'bg-gradient-to-r from-rifling-green to-copper-orange',
+    backgroundPreset: 'warm',
     badges: ['Youth Program', 'Ages 12-17', 'Parent Required'],
     backLink: {
       href: '/training/programs/youth',

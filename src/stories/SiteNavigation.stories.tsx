@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { SiteNavigation } from '@/components/ui/site-navigation';
 import { Home, Users, Calendar, Target, Trophy, Settings, Shield } from 'lucide-react';
 

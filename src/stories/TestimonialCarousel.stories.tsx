@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { TestimonialCarousel } from '@/components/ui/testimonial-carousel';
 
 const meta: Meta<typeof TestimonialCarousel> = {

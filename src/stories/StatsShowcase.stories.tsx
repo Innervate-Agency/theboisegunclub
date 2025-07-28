@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { StatsShowcase } from '@/components/ui/stats-showcase';
 import { Users, Target, Trophy, Calendar } from 'lucide-react';
 

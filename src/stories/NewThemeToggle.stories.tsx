@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import NewThemeToggle from '@/components/ui/NewThemeToggle';
 
 const meta: Meta<typeof NewThemeToggle> = {

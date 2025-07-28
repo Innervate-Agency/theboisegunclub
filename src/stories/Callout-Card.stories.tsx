@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { CalloutCard, ImportantCallout, SubtleCallout } from '@/components/ui/callout-card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';

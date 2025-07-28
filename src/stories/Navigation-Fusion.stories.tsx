@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { NavigationFusion } from '@/components/ui/navigation-fusion';
 import { Home, Target, Users, Calendar, Trophy, Shield, MapPin, Phone, BookOpen, Settings } from 'lucide-react';
 

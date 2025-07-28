@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { GalleryGrid } from '@/components/ui/gallery-showcase';
 
 const meta: Meta<typeof GalleryGrid> = {

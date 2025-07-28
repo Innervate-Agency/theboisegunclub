@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { Home, Trophy, Calendar, Target, Users, Shield, Settings, FileText, Mail, Phone } from 'lucide-react'
 
 import { 

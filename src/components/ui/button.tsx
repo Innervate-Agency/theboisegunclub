@@ -56,6 +56,9 @@ const buttonVariants = cva(
         // Ghost: Minimal with subtle hover (like both sites use for tertiary actions)
         ghost: "text-gray-700 hover:bg-gray-50 hover:shadow-xs focus-visible:ring-gray-400 border-0",
         
+        // Flat: No shadows, perfect for inside cards (Stripe-like design system)
+        flat: "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange focus-visible:ring-brass-yellow/50 border-0 shadow-flat transition-colors duration-150",
+        
         // Link: Simple text, no shadow
         link: "text-blue-600 hover:text-blue-700 underline-offset-4 hover:underline focus-visible:ring-blue-400 border-0"
       },

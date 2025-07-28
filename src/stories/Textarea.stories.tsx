@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 

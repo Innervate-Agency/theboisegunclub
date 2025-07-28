@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import LocalImage, { HeroImage, EventImage, TrainingImage, MembershipImage } from '@/components/ui/UnsplashImage';
 
 const meta: Meta<typeof LocalImage> = {
