@@ -29,7 +29,7 @@ export const Default: Story = {
       <HoverCardContent className="w-80">
         <div className="flex justify-between space-x-4">
           <Avatar>
-            <AvatarImage src="https://github.com/vercel.png" />
+            <AvatarImage src="/images/Fractal/22.webp" />
             <AvatarFallback>VC</AvatarFallback>
           </Avatar>
           <div className="space-y-1">

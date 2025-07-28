@@ -11,9 +11,9 @@ const featureGridVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-white",
+        default: "bg-background",
         warm: "bg-gradient-hero-warm",
-        glass: "bg-white/80 backdrop-blur-sm"
+        glass: "bg-background/80 backdrop-blur-sm"
       },
       spacing: {
         comfortable: "py-16",
@@ -29,13 +29,13 @@ const featureGridVariants = cva(
 )
 
 const featureCardVariants = cva(
-  "group relative bg-white rounded-lg border p-6 shadow-sm hover:shadow-md transition-all duration-200 ease-out",
+  "group relative bg-card rounded-lg border-border p-6 shadow-sm hover:shadow-md transition-all duration-200 ease-out",
   {
     variants: {
       cardVariant: {
-        default: "border-gray-200 hover:border-brass-yellow/30",
-        glass: "bg-white/90 backdrop-blur-sm border-white/30 hover:bg-white/95",
-        branded: "border-brass-yellow/20 hover:border-brass-yellow/40 hover:bg-brass-yellow/5"
+        default: "border-border hover:border-scope-blue/30",
+        glass: "bg-card/90 backdrop-blur-sm border-border/30 hover:bg-card/95",
+        branded: "border-scope-blue/20 hover:border-scope-blue/40 hover:bg-scope-blue/5"
       }
     },
     defaultVariants: {

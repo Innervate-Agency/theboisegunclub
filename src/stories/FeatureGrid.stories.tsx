@@ -68,7 +68,7 @@ export const GlassVariant: Story = {
     cardVariant: 'glass',
   },
   render: (args) => (
-    <div className="bg-cover bg-center p-10" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')" }}>
+    <div className="bg-cover bg-center p-10" style={{ backgroundImage: "url('/images/Smoke/Background_06.webp')" }}>
       <FeatureGrid {...args} />
     </div>
   ),

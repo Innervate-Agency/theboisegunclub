@@ -34,7 +34,7 @@ export const Default: Story = {
   },
   render: (args) => (
     <Avatar {...args}>
-      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      <AvatarImage src="/images/Fractal/15.webp" alt="Shooter Profile" />
       <AvatarFallback>CN</AvatarFallback>
     </Avatar>
   ),
@@ -47,7 +47,7 @@ export const Premium: Story = {
   },
   render: (args) => (
     <Avatar {...args}>
-      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      <AvatarImage src="/images/Fractal/15.webp" alt="Shooter Profile" />
       <AvatarFallback>CN</AvatarFallback>
     </Avatar>
   ),
@@ -59,9 +59,9 @@ export const Glass: Story = {
     variant: 'glass',
   },
   render: (args) => (
-    <div className="relative p-10 bg-cover bg-center rounded-lg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')" }}>
+    <div className="relative p-10 bg-cover bg-center rounded-lg" style={{ backgroundImage: "url('/images/Smoke/Background_05.webp')" }}>
       <Avatar {...args}>
-        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+        <AvatarImage src="/images/Fractal/15.webp" alt="Shooter Profile" />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
     </div>

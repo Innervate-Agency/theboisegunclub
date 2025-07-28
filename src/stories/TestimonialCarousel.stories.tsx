@@ -19,7 +19,7 @@ const sampleTestimonials = [
     role: 'Community Member',
     content: 'This directory has been invaluable for finding quality firearms businesses across the Treasure Valley. The community connections and reviews are fantastic.',
     rating: 5,
-    avatar: 'https://github.com/shadcn.png',
+    avatar: '/images/PixelHeat/halfton-heat-FLAT-11.webp',
   },
   {
     name: 'Sarah Mitchell',

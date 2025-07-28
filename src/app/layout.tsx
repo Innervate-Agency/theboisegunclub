@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Rajdhani, Noto_Sans, Noto_Serif } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 const rajdhani = Rajdhani({
@@ -35,11 +36,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${rajdhani.variable} ${notoSans.variable} ${notoSerif.variable} font-noto-sans antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange={false}
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

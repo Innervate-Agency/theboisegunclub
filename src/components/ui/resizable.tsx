@@ -54,9 +54,15 @@ const ResizableHandle = ({
   </ResizablePrimitive.PanelResizeHandle>
 )
 
-// Legacy export for backwards compatibility
+// Legacy export for backwards compatibility - deprecated, use ResizablePanelGroup instead
 function Resizable() {
-  return <div>Resizable</div>
+  return (
+    <div className="p-4 bg-gradient-card-warm border border-brass-yellow/20 rounded-lg text-center">
+      <p className="text-case-hardened font-noto-sans text-sm">
+        This component is deprecated. Use ResizablePanelGroup instead.
+      </p>
+    </div>
+  )
 }
 
 export {

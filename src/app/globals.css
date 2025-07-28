@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Fix for Tailwind CSS v4 + next-themes dark mode integration */
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* ================== TBGC DESIGN SYSTEM: V5 CORE ================== */
   
@@ -262,6 +265,26 @@
   --leading-normal: 1.5;
   --leading-relaxed: 1.625;
   --leading-loose: 2;
+  
+  /* ================== WINDOWS 11 MICA NOISE OVERLAY SYSTEM ================== */
+  /* Base mica noise pattern using CSS filters and pseudo-elements */
+  --mica-noise-opacity: 0.03;
+  --mica-blur-strength: 20px;
+  --mica-saturation: 1.2;
+  --mica-brightness: 1.1;
+  
+  /* Overlay background colors with mica effect - using 26-color system */
+  --overlay-bg-light: rgba(255, 255, 255, 0.95);        /* More opaque for better contrast */
+  --overlay-bg-dark: rgba(32, 32, 32, 0.95);           /* Using carbon-fiber base */
+  --overlay-border-light: rgba(102, 102, 102, 0.15);    /* case-hardened */
+  --overlay-border-dark: rgba(192, 192, 192, 0.15);     /* stainless-steel */
+  
+  /* Overlay text colors for proper contrast */
+  --overlay-text-light: var(--color-blued-steel);       /* Dark text on light glass */
+  --overlay-text-dark: var(--color-nickel-white);       /* Light text on dark glass */
+  
+  /* Mica noise texture data URI - subtle grain pattern */
+  --mica-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
 }
 
 @layer base {
@@ -287,8 +310,10 @@
     --destructive-foreground: var(--color-nickel-white);
     --accent: var(--color-scope-blue);
     --accent-foreground: var(--color-nickel-white);
-    --popover: var(--color-nickel-white);          /* Clean popover backgrounds */
-    --popover-foreground: var(--color-blued-steel);
+    
+    /* Popover/Overlay colors - MICA BACKGROUNDS FOR MODERN GLASS EFFECT */
+    --popover: var(--overlay-bg-light);           /* Mica glass popover backgrounds */
+    --popover-foreground: var(--overlay-text-light);
   }
 
   .dark {
@@ -313,8 +338,8 @@
     --destructive-foreground: var(--color-titanium-white);
     --accent: var(--color-cerakote-blue);
     --accent-foreground: var(--color-titanium-white);
-    --popover: var(--color-carbon-fiber);          /* Dark popover backgrounds */
-    --popover-foreground: var(--color-titanium-white);
+    --popover: var(--overlay-bg-dark);            /* Mica glass dark popover backgrounds */
+    --popover-foreground: var(--overlay-text-dark);
   }
 
   * {
@@ -429,6 +454,83 @@
   /* Background variants for icon containers */
   .icon-bg-primary { background-color: var(--icon-primary); color: var(--color-gunmetal-black); }
   .icon-bg-secondary { background-color: var(--icon-secondary); color: var(--color-nickel-white); }
+  
+  /* ================== WINDOWS 11 MICA OVERLAY UTILITIES ================== */
+  /* Apply mica glass effect to any overlay component */
+  .mica-overlay {
+    background: var(--popover);
+    backdrop-filter: blur(var(--mica-blur-strength)) saturate(var(--mica-saturation)) brightness(var(--mica-brightness));
+    border: 1px solid var(--overlay-border-light);
+    position: relative;
+  }
+  
+  .dark .mica-overlay {
+    border-color: var(--overlay-border-dark);
+  }
+  
+  /* Add subtle noise texture overlay */
+  .mica-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--mica-noise);
+    opacity: var(--mica-noise-opacity);
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  
+  /* Specific mica variants for different overlay types */
+  .mica-popover {
+    background: var(--popover);
+    backdrop-filter: blur(var(--mica-blur-strength)) saturate(var(--mica-saturation)) brightness(var(--mica-brightness));
+    border: 1px solid var(--overlay-border-light);
+    position: relative;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  .mica-dropdown {
+    background: var(--popover);
+    backdrop-filter: blur(var(--mica-blur-strength)) saturate(var(--mica-saturation)) brightness(var(--mica-brightness));
+    border: 1px solid var(--overlay-border-light);
+    position: relative;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  }
+  
+  .mica-modal {
+    background: var(--popover);
+    backdrop-filter: blur(var(--mica-blur-strength)) saturate(var(--mica-saturation)) brightness(var(--mica-brightness));
+    border: 1px solid var(--overlay-border-light);
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+  }
+  
+  .mica-tooltip {
+    background: var(--popover);
+    backdrop-filter: blur(var(--mica-blur-strength)) saturate(var(--mica-saturation)) brightness(var(--mica-brightness));
+    border: 1px solid var(--overlay-border-light);
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  
+  .mica-toast {
+    background: var(--popover);
+    backdrop-filter: blur(var(--mica-blur-strength)) saturate(var(--mica-saturation)) brightness(var(--mica-brightness));
+    border: 1px solid var(--overlay-border-light);
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .dark .mica-popover,
+  .dark .mica-dropdown,
+  .dark .mica-modal,
+  .dark .mica-tooltip,
+  .dark .mica-toast {
+    border-color: var(--overlay-border-dark);
+  }
+  
   .icon-bg-accent { background-color: var(--icon-accent); color: var(--color-nickel-white); }
 
   /* ================== TYPOGRAPHY UTILITIES ================== */

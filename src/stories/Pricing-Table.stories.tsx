@@ -2,78 +2,94 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { PricingCard, PricingTable, PricingFusion } from '@/components/ui/pricing-table';
 import { Target, Trophy, Crown, Star, Users, Shield } from 'lucide-react';
 
-// Sample gun club membership plans
+// TBGC Business Directory Subscription Tiers
 const samplePlans = [
   {
-    id: 'basic',
-    name: 'Basic Membership',
-    description: 'Perfect for beginners and casual shooters',
+    id: 'free',
+    name: 'Free Listing',
+    description: 'Basic profile for any store, business, range, or service',
     price: {
-      monthly: 45,
-      annually: 450,
-      setup: 50
+      monthly: 0,
+      annually: 0,
+      setup: 0
     },
     icon: Target,
     features: [
-      { name: 'Range Access', included: true, description: 'Access to all shooting ranges' },
-      { name: 'Monthly Guest Passes', included: 2, description: 'Bring friends to try shooting' },
-      { name: 'Equipment Rental', included: true, description: 'Firearms and safety equipment' },
-      { name: 'Basic Training', included: 'limited', description: 'Intro safety course included' },
-      { name: 'Competition Entry', included: false, description: 'Club competitions not included' },
-      { name: 'Private Lessons', included: false, description: 'One-on-one instruction' },
-      { name: 'Gunsmithing Services', included: false, description: 'Equipment maintenance' }
+      { name: 'Basic Directory Listing', included: true, description: 'Name, address, phone, hours' },
+      { name: 'Business Category', included: true, description: 'Searchable business type' },
+      { name: 'Customer Reviews', included: true, description: 'Display customer ratings' },
+      { name: 'Photo Gallery', included: 1, description: 'One business photo' },
+      { name: 'Event Promotion', included: false, description: 'Promote events and classes' }
     ],
-    ctaText: 'Start Basic',
+    ctaText: 'Get Listed Free',
     ctaVariant: 'outline' as const
   },
   {
-    id: 'standard',
-    name: 'Standard Membership',
-    description: 'Great for regular shooters and enthusiasts',
+    id: 'silver',
+    name: 'Silver Profile',
+    description: 'Enhanced listing with content and advertising features',
     price: {
-      monthly: 85,
-      annually: 850,
-      setup: 25
+      monthly: 49.95,
+      annually: 499,
+      setup: 0
     },
     icon: Trophy,
     features: [
-      { name: 'Range Access', included: true, description: 'Access to all shooting ranges' },
-      { name: 'Monthly Guest Passes', included: 5, description: 'Bring friends to try shooting' },
-      { name: 'Equipment Rental', included: true, description: 'Firearms and safety equipment' },
-      { name: 'Basic Training', included: true, description: 'Full safety course included' },
-      { name: 'Competition Entry', included: true, description: 'Enter club competitions' },
-      { name: 'Private Lessons', included: 2, description: 'Two lessons per month' },
-      { name: 'Gunsmithing Services', included: 'limited', description: 'Basic maintenance included' }
+      { name: 'Enhanced Directory Profile', included: true, description: 'Detailed business description' },
+      { name: 'Photo Gallery', included: 10, description: 'Up to 10 business photos' },
+      { name: 'Event Promotion', included: true, description: 'Promote events and classes' },
+      { name: 'Social Media Links', included: true, description: 'Link to your social accounts' },
+      { name: 'Priority Support', included: true, description: 'Faster response times' }
     ],
     popular: true,
     badge: 'Most Popular',
     color: 'rgb(242, 135, 5)', // copper-orange
-    ctaText: 'Choose Standard',
+    ctaText: 'Upgrade to Silver',
     ctaVariant: 'default' as const
   },
   {
-    id: 'premium',
-    name: 'Premium Membership',
-    description: 'For serious competitors and frequent shooters',
+    id: 'gold',
+    name: 'Gold Profile',
+    description: 'Premium listing with featured placement and analytics',
     price: {
-      monthly: 125,
-      annually: 1250,
+      monthly: 99.95,
+      annually: 999,
       setup: 0
     },
     icon: Crown,
     features: [
-      { name: 'Range Access', included: true, description: 'Priority access to all ranges' },
-      { name: 'Monthly Guest Passes', included: 10, description: 'Bring friends to try shooting' },
-      { name: 'Equipment Rental', included: true, description: 'Premium firearms and equipment' },
-      { name: 'Basic Training', included: true, description: 'Advanced training courses' },
-      { name: 'Competition Entry', included: true, description: 'All competitions included' },
-      { name: 'Private Lessons', included: true, description: 'Unlimited private instruction' },
-      { name: 'Gunsmithing Services', included: true, description: 'Full service included' }
+      { name: 'Featured Directory Placement', included: true, description: 'Top placement in search results' },
+      { name: 'Unlimited Photos & Videos', included: true, description: 'Showcase your business fully' },
+      { name: 'Advanced Event Management', included: true, description: 'Event calendar integration' },
+      { name: 'Business Analytics', included: true, description: 'Track views and engagement' },
+      { name: 'Custom Business Page', included: true, description: 'Branded business landing page' }
     ],
     recommended: true,
     badge: 'Best Value',
     color: 'brass-yellow',
-    ctaText: 'Go Premium',
+    ctaText: 'Go Gold',
+    ctaVariant: 'default' as const
+  },
+  {
+    id: 'platinum',
+    name: 'Platinum Profile',
+    description: 'Enterprise solution for major retailers and ranges',
+    price: {
+      monthly: 199.95,
+      annually: 1999,
+      setup: 0
+    },
+    icon: Star,
+    features: [
+      { name: 'Premium Directory Placement', included: true, description: 'Top tier search placement' },
+      { name: 'Multi-Location Support', included: true, description: 'Manage multiple locations' },
+      { name: 'Advanced Marketing Tools', included: true, description: 'Email campaigns and promotions' },
+      { name: 'Dedicated Account Manager', included: true, description: 'Personal support representative' },
+      { name: 'API Integration', included: true, description: 'Connect with your existing systems' }
+    ],
+    badge: 'Enterprise',
+    color: 'safety-red',
+    ctaText: 'Contact Sales',
     ctaVariant: 'default' as const
   }
 ];
@@ -85,7 +101,7 @@ const meta: Meta<typeof PricingCard> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Comprehensive pricing table components for gun club membership plans with multiple display variants.'
+        component: 'Business directory subscription tiers for TBGC platform vendors with multiple display variants.'
       }
     }
   },
@@ -201,31 +217,29 @@ export const PricingFusionComplete: StoryObj<typeof PricingFusion> = {
   }
 };
 
-// Family membership plan
-export const FamilyMembership: Story = {
+// Platinum tier for major businesses
+export const PlatinumProfile: Story = {
   args: {
     plan: {
-      id: 'family',
-      name: 'Family Membership',
-      description: 'Perfect for families with multiple shooters',
+      id: 'platinum',
+      name: 'Platinum Profile',
+      description: 'Enterprise solution for major retailers and ranges',
       price: {
-        monthly: 150,
-        annually: 1500,
+        monthly: 199.95,
+        annually: 1999,
         setup: 0
       },
       icon: Users,
       features: [
-        { name: 'Range Access', included: true, description: 'Access for up to 4 family members' },
-        { name: 'Monthly Guest Passes', included: 8, description: 'Bring friends to try shooting' },
-        { name: 'Equipment Rental', included: true, description: 'Firearms and safety equipment' },
-        { name: 'Basic Training', included: true, description: 'Safety courses for all members' },
-        { name: 'Competition Entry', included: true, description: 'Family team competitions' },
-        { name: 'Private Lessons', included: 4, description: 'Lessons for each family member' },
-        { name: 'Gunsmithing Services', included: 'limited', description: 'Basic maintenance included' }
+        { name: 'Premium Directory Placement', included: true, description: 'Top tier search placement' },
+        { name: 'Multi-Location Support', included: true, description: 'Manage multiple locations' },
+        { name: 'Advanced Marketing Tools', included: true, description: 'Email campaigns and promotions' },
+        { name: 'Dedicated Account Manager', included: true, description: 'Personal support representative' },
+        { name: 'API Integration', included: true, description: 'Connect with your existing systems' }
       ],
-      badge: 'Family Deal',
+      badge: 'Enterprise',
       color: 'scope-blue',
-      ctaText: 'Choose Family',
+      ctaText: 'Contact Sales',
       ctaVariant: 'default' as const
     },
     isAnnual: false,

@@ -19,8 +19,8 @@ export const Default: Story = {
     <div className="w-[450px]">
       <AspectRatio ratio={16 / 9} className="bg-muted" {...args}>
         <Image
-          src="https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop"
-          alt="Photo by Anh Tuan To"
+          src="/images/Dust/VintageDust (3).webp"
+          alt="Vintage Dust Background"
           className="rounded-md object-cover"
           fill
         />

@@ -9,10 +9,10 @@ const directoryCardVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-white border-gray-200',
+        default: 'bg-card border-border',
         premium: 'bg-gradient-to-br from-brass-yellow/8 to-copper-orange/6 border-brass-yellow/20',
         elite: 'bg-gradient-to-br from-copper-orange/8 to-walnut-stock/6 border-copper-orange/20',
-        glass: 'bg-white/80 backdrop-blur-sm border-white/30 shadow-glass',
+        glass: 'bg-card/80 backdrop-blur-sm border-border/30 shadow-glass',
       },
       size: {
         sm: 'p-4 text-sm',

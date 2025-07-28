@@ -8,26 +8,26 @@ const cardVariants = cva(
   {
     variants: {
       variant: {
-        // Default: Clean with good shadows
-        default: "bg-white border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300",
+        // Default: Clean with good shadows - theme aware
+        default: "bg-card border-border shadow-sm hover:shadow-lg",
         
-        // Elevated: More prominent
-        elevated: "bg-white border-gray-200 shadow-md hover:shadow-xl hover:-translate-y-1",
+        // Elevated: More prominent - theme aware
+        elevated: "bg-card border-border shadow-md hover:shadow-xl hover:-translate-y-1",
         
-        // Interactive: Clickable feedback
-        interactive: "bg-white border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300 hover:-translate-y-0.5 cursor-pointer",
+        // Interactive: Clickable feedback - theme aware
+        interactive: "bg-card border-border shadow-sm hover:shadow-lg hover:-translate-y-0.5 cursor-pointer",
         
-        // Premium: Gold accent
-        premium: "bg-white border-yellow-200 shadow-md hover:shadow-xl hover:border-yellow-300 hover:-translate-y-1",
+        // Premium: Gold accent - theme aware
+        premium: "bg-card border-brass-yellow/30 shadow-md hover:shadow-xl hover:border-brass-yellow/50 hover:-translate-y-1",
         
-        // Glass: Modern glassmorphism
-        glass: "bg-white/80 border-white/30 shadow-lg backdrop-blur-sm hover:bg-white/90 hover:shadow-xl",
+        // Glass: Modern glassmorphism - theme aware
+        glass: "bg-card/80 border-border/30 shadow-lg backdrop-blur-sm hover:bg-card/90 hover:shadow-xl",
         
-        // Outlined: Clean borders
-        outlined: "bg-white border-gray-300 hover:border-gray-400 hover:shadow-sm",
+        // Outlined: Clean borders - theme aware
+        outlined: "bg-card border-border hover:shadow-sm",
         
-        // Subtle: Warm backgrounds
-        subtle: "bg-stone-50 border-stone-200 hover:bg-white hover:border-stone-300 hover:shadow-sm"
+        // Subtle: Muted backgrounds - theme aware
+        subtle: "bg-muted border-border hover:bg-card hover:shadow-sm"
       },
       size: {
         sm: "",           // Components handle their own padding
@@ -78,7 +78,7 @@ const CardTitle = React.forwardRef<HTMLHeadingElement, React.ComponentProps<"h3"
       <h3
         ref={ref}
         className={cn(
-          "font-semibold leading-none tracking-tight text-gray-900 text-lg",
+          "font-semibold leading-none tracking-tight text-card-foreground text-lg",
           className
         )}
         {...props}
@@ -93,7 +93,7 @@ const CardDescription = React.forwardRef<HTMLParagraphElement, React.ComponentPr
     return (
       <p
         ref={ref}
-        className={cn("text-sm text-gray-600", className)}
+        className={cn("text-sm text-muted-foreground", className)}
         {...props}
       />
     )

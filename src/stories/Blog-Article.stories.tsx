@@ -8,10 +8,10 @@ const sampleArticles = [
     title: 'Mastering the Art of Trap Shooting: A Beginner\'s Guide',
     excerpt: 'Learn the fundamentals of trap shooting with our comprehensive guide. From proper stance to target tracking, we cover everything you need to know.',
     content: 'Full article content would go here...',
-    image: '/images/training.jpg',
+    image: '/images/Fractal/25.webp',
     author: {
       name: 'John Smith',
-      avatar: '/images/avatars/instructor1.jpg',
+      avatar: '/images/PixelHeat/halfton-heat-FLAT-07.webp',
       bio: 'NRA Certified Instructor with 15 years of experience',
       title: 'Chief Instructor'
     },
@@ -28,10 +28,10 @@ const sampleArticles = [
     id: '2',
     title: 'Upcoming Spring Competition Schedule',
     excerpt: 'Mark your calendars! Our spring competition season is packed with exciting events for shooters of all skill levels.',
-    image: '/images/events.jpg',
+    image: '/images/Smoke/Background_08.webp',
     author: {
       name: 'Sarah Johnson',
-      avatar: '/images/avatars/admin1.jpg',
+      avatar: '/images/Grid/Grid (1).webp',
       bio: 'Event Coordinator and Competition Manager',
       title: 'Events Manager'
     },
@@ -48,10 +48,10 @@ const sampleArticles = [
     id: '3',
     title: 'New Member Orientation: What to Expect',
     excerpt: 'Welcome to Boise Gun Club! Here\'s everything new members need to know about facilities, safety protocols, and getting started.',
-    image: '/images/membership.jpg',
+    image: '/images/Dust/VintageDust (5).webp',
     author: {
       name: 'Mike Wilson',
-      avatar: '/images/avatars/safety1.jpg',
+      avatar: '/images/Fractal/12.webp',
       bio: 'Safety Officer and Member Services',
       title: 'Safety Officer'
     },

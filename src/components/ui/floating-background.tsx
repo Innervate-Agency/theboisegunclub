@@ -1,5 +1,115 @@
 'use client'
+
 import * as React from 'react'
-export function FloatingBackground() {
-  return <div>FloatingBackground</div>
+import { cva, type VariantProps } from "class-variance-authority"
+import { cn } from "@/lib/utils"
+
+const floatingBackgroundVariants = cva(
+  "relative overflow-hidden",
+  {
+    variants: {
+      preset: {
+        gunclub: "bg-gradient-to-br from-range-white via-shooting-bench to-walnut-stock",
+        cool: "bg-gradient-to-br from-scope-blue/20 via-trigger-blue/10 to-cerakote-blue/30",
+        warm: "bg-gradient-to-br from-brass-yellow/10 via-copper-orange/20 to-recoil-pad/15",
+        neutral: "bg-gradient-to-br from-stainless-steel/10 via-ghost-ring/5 to-titanium-white/20"
+      },
+      intensity: {
+        subtle: "opacity-60",
+        medium: "opacity-80",
+        premium: "opacity-100"
+      }
+    },
+    defaultVariants: {
+      preset: "gunclub",
+      intensity: "medium"
+    }
+  }
+)
+
+export interface FloatingBackgroundProps 
+  extends React.ComponentProps<"div">,
+    VariantProps<typeof floatingBackgroundVariants> {
+  children: React.ReactNode
+  animated?: boolean
+  particleCount?: number
+}
+
+export function FloatingBackground({
+  className,
+  children,
+  preset,
+  intensity,
+  animated = true,
+  particleCount = 20,
+  ...props
+}: FloatingBackgroundProps) {
+  // Generate floating particles
+  const particles = React.useMemo(() => {
+    return Array.from({ length: particleCount }, (_, i) => ({
+      id: i,
+      size: Math.random() * 4 + 2, // 2-6px
+      x: Math.random() * 100, // 0-100%
+      y: Math.random() * 100, // 0-100%
+      duration: Math.random() * 20 + 10, // 10-30s
+      delay: Math.random() * 5, // 0-5s delay
+      opacity: Math.random() * 0.3 + 0.1 // 0.1-0.4 opacity
+    }))
+  }, [particleCount])
+  
+  return (
+    <div className={cn(floatingBackgroundVariants({ preset, intensity }), className)} {...props}>
+      {/* Floating Particles */}
+      {animated && (
+        <div className="absolute inset-0 pointer-events-none">
+          {particles.map((particle) => (
+            <div
+              key={particle.id}
+              className={cn(
+                "absolute rounded-full",
+                preset === "gunclub" && "bg-brass-yellow",
+                preset === "cool" && "bg-scope-blue",
+                preset === "warm" && "bg-copper-orange",
+                preset === "neutral" && "bg-stainless-steel"
+              )}
+              style={{
+                width: particle.size,
+                height: particle.size,
+                left: `${particle.x}%`,
+                top: `${particle.y}%`,
+                opacity: particle.opacity,
+                animation: `float ${particle.duration}s linear infinite ${particle.delay}s`
+              }}
+            />
+          ))}
+        </div>
+      )}
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/10 pointer-events-none" />
+      
+      {/* Mesh Gradient Effect */}
+      <div className={cn(
+        "absolute inset-0 opacity-20 pointer-events-none",
+        "bg-[radial-gradient(circle_at_50%_50%,rgba(242,203,5,0.1),transparent_50%)]"  
+      )} />
+      
+      {/* Content */}
+      <div className="relative z-10">
+        {children}
+      </div>
+      
+      {/* CSS Animation Keyframes */}
+      <style jsx>{`
+        @keyframes float {
+          0% {
+            transform: translateY(100vh) rotate(0deg);
+          }
+          100% {
+            transform: translateY(-100vh) rotate(360deg);
+          }
+        }
+      `}</style>
+    </div>
+  )
 }

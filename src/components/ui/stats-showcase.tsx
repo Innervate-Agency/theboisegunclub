@@ -10,9 +10,9 @@ const statsShowcaseVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-white",
+        default: "bg-card",
         branded: "bg-gradient-hero-warm",
-        glass: "bg-white/80 backdrop-blur-sm"
+        glass: "bg-card/80 backdrop-blur-sm"
       },
       spacing: {
         comfortable: "py-16",
@@ -85,29 +85,29 @@ export function StatsShowcase({
             return (
               <div
                 key={index}
-                className="group bg-white rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md transition-all duration-200 ease-out"
+                className="group relative bg-card border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-200 ease-out"
               >
                 <div className="space-y-4">
                   {/* Icon and Value */}
                   <div className="flex items-center justify-between">
                     {Icon && (
-                      <div className="p-2 bg-brass-yellow/10 rounded-lg">
-                        <Icon className="h-5 w-5 text-brass-yellow" />
+                      <div className="p-2 bg-copper-orange/10 rounded-lg">
+                        <Icon className="h-5 w-5 text-copper-orange" />
                       </div>
                     )}
                     
                     {stat.change && (
                       <div className="flex items-center gap-1 text-xs">
                         {stat.change.trend === 'up' && (
-                          <TrendingUp className="h-3 w-3 text-green-600" />
+                          <TrendingUp className="h-3 w-3 text-clubhouse-lawn-green" />
                         )}
                         {stat.change.trend === 'down' && (
-                          <TrendingDown className="h-3 w-3 text-red-600" />
+                          <TrendingDown className="h-3 w-3 text-copper-orange" />
                         )}
                         <span className={cn(
                           "font-medium",
-                          stat.change.trend === 'up' && "text-green-600",
-                          stat.change.trend === 'down' && "text-red-600",
+                          stat.change.trend === 'up' && "text-clubhouse-lawn-green",
+                          stat.change.trend === 'down' && "text-copper-orange",
                           stat.change.trend === 'neutral' && "text-case-hardened"
                         )}>
                           {stat.change.value}
@@ -118,24 +118,24 @@ export function StatsShowcase({
 
                   {/* Main Stat */}
                   <div className="space-y-1">
-                    <div className="text-3xl font-rajdhani font-bold text-gunmetal-black group-hover:text-brass-yellow transition-colors duration-200">
+                    <div className="text-3xl font-rajdhani font-bold text-card-foreground group-hover:text-copper-orange transition-colors duration-200">
                       {typeof stat.value === 'number' ? stat.value.toLocaleString() : stat.value}
                     </div>
-                    <div className="text-sm font-noto-sans font-medium text-case-hardened">
+                    <div className="text-sm font-noto-sans font-medium text-muted-foreground">
                       {stat.label}
                     </div>
                   </div>
 
                   {/* Description */}
                   {stat.description && (
-                    <p className="text-xs text-case-hardened leading-relaxed">
+                    <p className="text-xs text-muted-foreground leading-relaxed">
                       {stat.description}
                     </p>
                   )}
                 </div>
 
                 {/* Hover accent bar */}
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-brass-yellow to-copper-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-copper-orange to-brass-yellow transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </div>
             )
           })}

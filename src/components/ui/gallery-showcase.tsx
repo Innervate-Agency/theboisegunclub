@@ -12,19 +12,13 @@ const galleryGridVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-white",
+        default: "bg-card",
         warm: "bg-gradient-hero-warm",
-        glass: "bg-white/80 backdrop-blur-sm"
-      },
-      layout: {
-        grid: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6",
-        masonry: "columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6",
-        list: "flex flex-col gap-4"
+        glass: "bg-card/80 backdrop-blur-sm"
       }
     },
     defaultVariants: {
-      variant: "default",
-      layout: "grid"
+      variant: "default"
     }
   }
 )
@@ -60,7 +54,6 @@ export function GalleryGrid({
   subtitle,
   images,
   variant,
-  layout,
   showFilters = true,
   showStats = true,
   onImageClick,
@@ -130,8 +123,8 @@ export function GalleryGrid({
                   className={cn(
                     "font-rajdhani font-semibold capitalize",
                     activeFilter === category 
-                      ? "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange" 
-                      : "border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black"
+                      ? "bg-copper-orange text-white hover:bg-lahoma-orange" 
+                      : "border-copper-orange/30 text-copper-orange hover:bg-copper-orange hover:text-white"
                   )}
                 >
                   {category}
@@ -145,7 +138,7 @@ export function GalleryGrid({
                 variant={viewMode === 'grid' ? 'default' : 'outline'}
                 size="icon"
                 onClick={() => setViewMode('grid')}
-                className="border-brass-yellow/30"
+                className="border-copper-orange/30"
               >
                 <Grid3X3 className="icon-sm" />
               </Button>
@@ -153,7 +146,7 @@ export function GalleryGrid({
                 variant={viewMode === 'list' ? 'default' : 'outline'}
                 size="icon"
                 onClick={() => setViewMode('list')}
-                className="border-brass-yellow/30"
+                className="border-copper-orange/30"
               >
                 <List className="icon-sm" />
               </Button>
@@ -175,17 +168,17 @@ export function GalleryGrid({
               <div
                 key={image.id}
                 className={cn(
-                  "group relative bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer",
+                  "group relative bg-card text-card-foreground border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer",
                   viewMode === 'masonry' && "break-inside-avoid mb-6",
                   viewMode === 'list' && "flex gap-4 p-4",
-                  isFeatured && "ring-2 ring-brass-yellow/50"
+                  isFeatured && "ring-2 ring-copper-orange/50"
                 )}
                 onClick={() => onImageClick?.(image)}
               >
                 {/* Featured Badge */}
                 {isFeatured && (
                   <div className="absolute top-2 left-2 z-10">
-                    <div className="bg-brass-yellow text-gunmetal-black text-xs font-rajdhani font-bold px-2 py-1 rounded">
+                    <div className="bg-copper-orange text-white text-xs font-rajdhani font-bold px-2 py-1 rounded">
                       Featured
                     </div>
                   </div>
@@ -215,7 +208,7 @@ export function GalleryGrid({
                       }}
                       className={cn(
                         "bg-white/90 border-0 shadow-sm",
-                        isLiked && "bg-safety-red text-white"
+                        isLiked && "bg-copper-orange text-white"
                       )}
                     >
                       <Heart className={cn("icon-sm", isLiked && "fill-current")} />
@@ -241,19 +234,19 @@ export function GalleryGrid({
                   viewMode === 'list' && "flex-1"
                 )}>
                   <div className="space-y-2">
-                    <h3 className="font-rajdhani font-semibold text-gunmetal-black group-hover:text-brass-yellow transition-colors duration-200">
+                    <h3 className="font-rajdhani font-semibold text-card-foreground group-hover:text-copper-orange transition-colors duration-200">
                       {image.alt}
                     </h3>
                     
                     {image.category && (
-                      <p className="text-xs text-case-hardened font-noto-sans uppercase tracking-wide">
+                      <p className="text-xs text-muted-foreground font-noto-sans uppercase tracking-wide">
                         {image.category}
                       </p>
                     )}
                     
                     {/* Stats */}
                     {showStats && (image.likes !== undefined || image.downloads !== undefined) && (
-                      <div className="flex items-center gap-4 text-xs text-case-hardened">
+                      <div className="flex items-center gap-4 text-xs text-muted-foreground">
                         {image.likes !== undefined && (
                           <div className="flex items-center gap-1">
                             <Heart className="icon-xs" />
@@ -279,10 +272,10 @@ export function GalleryGrid({
         {filteredImages.length === 0 && (
           <div className="text-center py-12">
             <Filter className="icon-2xl icon-muted mx-auto mb-4" />
-            <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-2">
+            <h3 className="text-lg font-rajdhani font-bold text-card-foreground mb-2">
               No images found
             </h3>
-            <p className="text-case-hardened font-noto-sans">
+            <p className="text-muted-foreground font-noto-sans">
               Try adjusting your filters to see more results.
             </p>
           </div>

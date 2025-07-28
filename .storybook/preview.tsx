@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/nextjs-vite'
 import { Rajdhani, Noto_Sans, Noto_Serif } from 'next/font/google'
+import { ThemeProvider } from 'next-themes'
 import '../src/app/globals.css'
 
 // Load the same fonts as the main app
@@ -33,6 +34,21 @@ const preview: Preview = {
        date: /Date$/i,
       },
     },
+    themes: {
+      default: 'light',
+      list: [
+        {
+          name: 'Light',
+          class: [],
+          color: '#f8f6f1',
+        },
+        {
+          name: 'Dark',
+          class: ['dark'],
+          color: '#2F3135',
+        }
+      ]
+    },
     backgrounds: {
       default: 'tbgc-light',
       values: [
@@ -62,9 +78,16 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div className={`${rajdhani.variable} ${notoSans.variable} ${notoSerif.variable} font-body antialiased`}>
-        <Story />
-      </div>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="light"
+        enableSystem
+        disableTransitionOnChange={false}
+      >
+        <div className={`${rajdhani.variable} ${notoSans.variable} ${notoSerif.variable} font-body antialiased`}>
+          <Story />
+        </div>
+      </ThemeProvider>
     ),
   ],
 };

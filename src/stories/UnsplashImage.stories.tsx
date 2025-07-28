@@ -33,7 +33,7 @@ type Story = StoryObj<typeof LocalImage>;
 // Default local image with fallback
 export const Default: Story = {
   args: {
-    fallback: '/images/hero-bg.webp',
+    fallback: '/images/Fractal/35.webp',
     alt: 'Boise Gun Club Range',
     width: 600,
     height: 400,
@@ -111,7 +111,7 @@ export const MembershipImageVariant: StoryObj<typeof MembershipImage> = {
 // Square aspect ratio
 export const SquareAspect: Story = {
   args: {
-    fallback: '/images/membership.jpg',
+    fallback: '/images/PixelHeat/halfton-heat-FLAT-05.webp',
     alt: 'Club Membership Benefits',
     width: 400,
     height: 400,
@@ -125,7 +125,7 @@ export const SquareAspect: Story = {
 // Wide aspect ratio
 export const WideAspect: Story = {
   args: {
-    fallback: '/images/events.jpg',
+    fallback: '/images/Smoke/Background_07.webp',
     alt: 'Shooting Competition Event',
     width: 800,
     height: 300,
@@ -139,7 +139,7 @@ export const WideAspect: Story = {
 // High priority loading
 export const PriorityLoading: Story = {
   args: {
-    fallback: '/images/hero-bg.webp',
+    fallback: '/images/Fractal/35.webp',
     alt: 'Boise Gun Club Main Range',
     width: 600,
     height: 400,
@@ -153,7 +153,7 @@ export const PriorityLoading: Story = {
 // High quality image
 export const HighQuality: Story = {
   args: {
-    fallback: '/images/training.jpg',
+    fallback: '/images/Grid/Grid (4).webp',
     alt: 'Professional Training Session',
     width: 600,
     height: 400,
@@ -167,7 +167,7 @@ export const HighQuality: Story = {
 // Small image with loading
 export const SmallImage: Story = {
   args: {
-    fallback: '/images/membership.jpg',
+    fallback: '/images/PixelHeat/halfton-heat-FLAT-05.webp',
     alt: 'Club Member',
     width: 200,
     height: 200,
@@ -181,7 +181,7 @@ export const SmallImage: Story = {
 // Large banner image
 export const BannerImage: Story = {
   args: {
-    fallback: '/images/hero-bg.webp',
+    fallback: '/images/Fractal/35.webp',
     alt: 'Boise Gun Club Facilities',
     width: 1200,
     height: 400,

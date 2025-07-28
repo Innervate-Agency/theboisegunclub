@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 export const GunShop: Story = {
   args: {
     title: 'Boise Firearms & Tactical',
-    icon: '/images/events.jpg',
+    icon: '/images/Fractal/8.webp',
     description: 'Full-service gun shop featuring new and used firearms, tactical gear, and expert gunsmithing services. Family-owned since 1985.',
     linkText: 'View Details',
     link: '/directory/boise-firearms-tactical',
@@ -36,7 +36,7 @@ export const GunShop: Story = {
 export const ShootingRange: Story = {
   args: {
     title: 'Capital City Arms Range',
-    icon: '/images/events.jpg', 
+    icon: '/images/PixelHeat/halfton-heat-FLAT-03.webp', 
     description: 'Modern indoor range with 20 lanes, rental firearms, and professional instruction. Open to the public with membership options available.',
     linkText: 'Visit Range',
     link: '/directory/capital-city-arms',
@@ -51,7 +51,7 @@ export const ShootingRange: Story = {
 export const Instructor: Story = {
   args: {
     title: 'Idaho Defensive Training',
-    icon: '/images/events.jpg',
+    icon: '/images/Smoke/Background_02.webp',
     description: 'NRA-certified instructor offering concealed carry, basic pistol, and advanced defensive shooting courses. Personalized training programs.',
     linkText: 'Book Training',
     link: '/directory/idaho-defensive-training',
@@ -66,7 +66,7 @@ export const Instructor: Story = {
 export const Gunsmith: Story = {
   args: {
     title: 'Treasure Valley Gunworks',
-    icon: '/images/events.jpg',
+    icon: '/images/Grid/Grid (2).webp',
     description: 'Expert gunsmithing services including custom builds, repairs, and restorations. Specializing in precision rifles and vintage firearms.',
     linkText: 'Get Quote',
     link: '/directory/tv-gunworks',
