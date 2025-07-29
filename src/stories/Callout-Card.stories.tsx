@@ -35,7 +35,7 @@ export const Default: Story = {
     variant: 'default',
     children: (
       <div className="flex items-center gap-2 mt-4">
-        <Shield className="h-4 w-4 text-orange-500" />
+        <Shield className="h-4 w-4 text-copper-orange" />
         <span className="text-sm font-medium">Safety First</span>
       </div>
     )
@@ -51,10 +51,10 @@ export const SafetyNotice: Story = {
     children: (
       <div className="space-y-3">
         <div className="flex items-center gap-2">
-          <AlertCircle className="h-4 w-4 text-red-500" />
-          <span className="text-sm font-semibold text-red-600">Required</span>
+          <AlertCircle className="h-4 w-4 text-safety-red" />
+          <span className="text-sm font-semibold text-safety-red">Required</span>
         </div>
-        <Button size="sm" className="bg-red-600 hover:bg-red-700">
+        <Button size="sm" variant="destructive">
           Schedule Training
         </Button>
       </div>
@@ -71,11 +71,11 @@ export const EventAnnouncement: Story = {
     children: (
       <div className="space-y-3">
         <div className="flex items-center gap-2">
-          <Calendar className="h-4 w-4 text-blue-500" />
+          <Calendar className="h-4 w-4 text-scope-blue" />
           <span className="text-sm">March 15th, 2024</span>
         </div>
         <div className="flex gap-2">
-          <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
+          <Button size="sm" variant="accent">
             Register Now
           </Button>
           <Button size="sm" variant="outline">
@@ -96,13 +96,13 @@ export const NewMemberWelcome: Story = {
     children: (
       <div className="space-y-3">
         <div className="flex items-center gap-2">
-          <Users className="h-4 w-4 text-green-500" />
-          <Badge variant="outline" className="text-green-700 border-green-300">
+          <Users className="h-4 w-4 text-rifling-green" />
+          <Badge variant="success">
             New Member
           </Badge>
         </div>
         <div className="flex gap-2">
-          <Button size="sm" className="bg-green-600 hover:bg-green-700">
+          <Button size="sm" variant="success">
             Start Orientation
           </Button>
           <Button size="sm" variant="outline">
@@ -123,7 +123,7 @@ export const CompetitionResults: Story = {
     children: (
       <div className="space-y-3">
         <div className="flex items-center gap-2">
-          <Trophy className="h-4 w-4 text-yellow-500" />
+          <Trophy className="h-4 w-4 text-sight-gold" />
           <span className="text-sm font-semibold">Results Posted</span>
         </div>
         <div className="space-y-2">
@@ -156,7 +156,7 @@ export const ImportantCalloutVariant: StoryObj<typeof ImportantCallout> = {
     children: (
       <div className="space-y-3">
         <div className="flex items-center gap-2">
-          <Info className="h-4 w-4 text-blue-500" />
+          <Info className="h-4 w-4 text-scope-blue" />
           <span className="text-sm font-semibold">March 18-19, 2024</span>
         </div>
         <p className="text-sm text-muted-foreground">
@@ -178,15 +178,15 @@ export const SubtleCalloutVariant: StoryObj<typeof SubtleCallout> = {
     children: (
       <div className="space-y-3">
         <div className="flex items-center gap-2">
-          <Target className="h-4 w-4 text-purple-500" />
-          <Badge variant="outline" className="text-purple-700 border-purple-300">
+          <Target className="h-4 w-4 text-case-hardened" />
+          <Badge variant="info">
             Limited Time
           </Badge>
         </div>
         <p className="text-sm text-muted-foreground">
           Valid through March 31st, 2024
         </p>
-        <Button size="sm" className="bg-purple-600 hover:bg-purple-700">
+        <Button size="sm" variant="accent">
           Shop Now
         </Button>
       </div>
@@ -203,8 +203,8 @@ export const TrainingProgram: Story = {
     children: (
       <div className="space-y-3">
         <div className="flex items-center gap-2">
-          <Target className="h-4 w-4 text-orange-500" />
-          <Badge variant="outline" className="text-orange-700 border-orange-300">
+          <Target className="h-4 w-4 text-copper-orange" />
+          <Badge variant="warning">
             8 Week Course
           </Badge>
         </div>
@@ -214,7 +214,7 @@ export const TrainingProgram: Story = {
           <p>• Equipment optimization</p>
         </div>
         <div className="flex gap-2">
-          <Button size="sm" className="bg-orange-600 hover:bg-orange-700">
+          <Button size="sm" variant="solid-accent">
             Enroll Now
           </Button>
           <Button size="sm" variant="outline">
@@ -235,11 +235,11 @@ export const MembershipRenewal: Story = {
     children: (
       <div className="space-y-3">
         <div className="flex items-center gap-2">
-          <Calendar className="h-4 w-4 text-amber-500" />
+          <Calendar className="h-4 w-4 text-sight-gold" />
           <span className="text-sm font-semibold">Expires: March 31, 2024</span>
         </div>
         <div className="flex gap-2">
-          <Button size="sm" className="bg-amber-600 hover:bg-amber-700">
+          <Button size="sm" variant="solid-accent">
             Renew Now
           </Button>
           <Button size="sm" variant="outline">

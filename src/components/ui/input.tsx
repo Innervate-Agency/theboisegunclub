@@ -11,12 +11,12 @@ const inputVariants = cva(
         default: "bg-range-white border-case-hardened/30 text-blued-steel shadow-flat hover:border-case-hardened/50 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
         filled: "bg-shooting-bench border-case-hardened/20 text-blued-steel shadow-flat hover:bg-range-white hover:border-case-hardened/40 focus-visible:bg-range-white focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
         ghost: "bg-transparent border-transparent text-blued-steel hover:bg-shooting-bench/50 focus-visible:bg-shooting-bench/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
-        glass: "bg-white/20 backdrop-blur-sm border-white/30 text-blued-steel shadow-glass hover:border-white/50 hover:bg-white/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20 mica-glass"
+        glass: "bg-card/20 backdrop-blur-sm border-border/30 text-card-foreground shadow-glass hover:border-border/50 hover:bg-card/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20 mica-glass"
       },
       size: {
-        sm: "h-8 px-3 py-1 text-sm",
-        default: "h-10 px-3 py-2 text-sm md:text-base",
-        lg: "h-12 px-4 py-3 text-base"
+        sm: "h-[var(--input-height-sm)] px-3 py-1 text-[var(--text-sm)]",
+        default: "h-[var(--input-height-base)] px-3 py-2 text-[var(--text-sm)] md:text-[var(--text-base)]",
+        lg: "h-[var(--input-height-lg)] px-4 py-3 text-[var(--text-base)]"
       },
       status: {
         default: "",

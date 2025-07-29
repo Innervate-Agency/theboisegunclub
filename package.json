@@ -16,7 +16,8 @@
     "storybook:validate": "node scripts/validate-stories.js",
     "health": "node scripts/health-check.js",
     "fix": "node scripts/quick-fix.js",
-    "sync:docs": "node scripts/sync-design-docs.js"
+    "sync:docs": "node scripts/sync-design-docs.js",
+    "ammo-list": "node scripts/generate-ammo-list.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",

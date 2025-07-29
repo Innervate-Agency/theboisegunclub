@@ -11,10 +11,10 @@ const siteNavigationVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-white border-b border-gray-200 shadow-sm",
+        default: "bg-card shadow-sm",
         premium: "bg-gradient-to-r from-brass-yellow/5 via-copper-orange/5 to-brass-yellow/5 border-b border-brass-yellow/20 shadow-md backdrop-blur-sm",
         elite: "bg-gradient-to-r from-blued-steel/10 via-case-hardened/10 to-blued-steel/10 border-b border-case-hardened/30 shadow-lg backdrop-blur-md",
-        glass: "bg-white/80 backdrop-blur-xl border-b border-white/20 shadow-xl",
+        glass: "bg-card/80 backdrop-blur-xl shadow-xl",
         gunclub: "bg-shooting-bench border-b border-tactical-gray/30 shadow-sm"
       },
       layout: {
@@ -74,10 +74,10 @@ export function SiteNavigation({
         <div className="p-6">
           {showLogo && (
             <div className="mb-8">
-              <h2 className="text-xl font-rajdhani font-bold text-gunmetal-black">
+              <h2 className="text-[var(--text-xl)] font-rajdhani font-bold text-gunmetal-black">
                 TBGC
               </h2>
-              <p className="text-sm text-case-hardened">Treasure Valley</p>
+              <p className="text-[var(--text-sm)] text-case-hardened">Treasure Valley</p>
             </div>
           )}
           
@@ -86,7 +86,7 @@ export function SiteNavigation({
               <a
                 key={item.href}
                 href={item.href}
-                className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-lg transition-all duration-150"
+                className="flex items-center gap-3 px-4 py-3 text-[var(--text-sm)] font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-lg transition-all duration-150"
               >
                 <item.icon className="h-4 w-4" />
                 {item.label}
@@ -114,10 +114,10 @@ export function SiteNavigation({
                   <Target className="h-4 w-4 text-gunmetal-black" />
                 </div>
                 <div>
-                  <h1 className="text-lg font-rajdhani font-bold text-gunmetal-black">
+                  <h1 className="text-[var(--text-lg)] font-rajdhani font-bold text-gunmetal-black">
                     The Boise Gun Club
                   </h1>
-                  <p className="text-xs text-case-hardened -mt-1">
+                  <p className="text-[var(--text-xs)] text-case-hardened -mt-1">
                     Treasure Valley Collective
                   </p>
                 </div>

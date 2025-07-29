@@ -52,7 +52,7 @@ export const Default: Story = {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Save changes</Button>
+          <Button size="sm" type="submit">Save changes</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

@@ -68,11 +68,11 @@ export const Glass: Story = {
       <RadioGroup {...args}>
         <div className="flex items-center space-x-2">
           <RadioGroupItem value="glass-a" id="rg1" />
-          <Label htmlFor="rg1" className="text-white">Glass A</Label>
+          <Label htmlFor="rg1" className="text-range-white">Glass A</Label>
         </div>
         <div className="flex items-center space-x-2">
           <RadioGroupItem value="glass-b" id="rg2" />
-          <Label htmlFor="rg2" className="text-white">Glass B</Label>
+          <Label htmlFor="rg2" className="text-range-white">Glass B</Label>
         </div>
       </RadioGroup>
     </div>

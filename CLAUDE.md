@@ -100,14 +100,49 @@ Use these patterns when adding new components or features to maintain consistenc
 
 - **ONLY** use the 26 approved colors from `src/app/globals.css` (Leonard Yellow through Clubhouse Lawn Green)
 - **NEVER** use hardcoded hex codes: `bg-[#F2CB05]` is **FORBIDDEN**
+- **NEVER** use generic Tailwind colors: `text-gray-500`, `bg-blue-600`, `border-red-400` etc.
 - **ALWAYS** use Tailwind v4 syntax: `bg-leonard-yellow/20` not `bg-[var(--color-leonard-yellow)]`
 - **Color Map**: Available in `src/lib/utils.ts` as `brandColors` object
+
+### Primary Accent Colors (Updated 2025-07-28)
+
+- **Light Theme Primary**: `copper-orange` - Perfect contrast on light backgrounds
+- **Dark Theme Primary**: `brass-yellow` - Optimal visibility on dark backgrounds  
+- **Success/Positive**: `clubhouse-lawn-green` - For verified badges, positive states
+- **Fire Gradients**: `from-copper-orange to-brass-yellow` - For hover animations and accents
+
+### Theme-Aware Component Classes (REQUIRED)
+
+All components MUST use theme-aware classes for dark/light mode support:
+
+```tsx
+// ✅ CORRECT - Theme-aware
+className="bg-card text-card-foreground border-border"
+
+// ❌ WRONG - Hardcoded colors  
+className="bg-white text-black border-gray-200"
+```
+
+**Required Theme Classes:**
+- `bg-card` instead of `bg-white`
+- `text-card-foreground` instead of `text-black` or `text-gray-900`
+- `text-muted-foreground` instead of `text-gray-500` or `text-gray-600`
+- `border-border` instead of `border-gray-200`
+- `bg-muted` instead of `bg-gray-50` or `bg-gray-100`
 
 ### Component Patterns
 
 - **CVA Components**: All UI components use Class Variance Authority pattern from `src/components/ui/_component-pattern.tsx`
-- **Required Variants**: Use `default | premium | elite | glass` with proper Leonard Yellow/Lahoma Orange gradients
+- **Required Variants**: Use `default | premium | elite | glass` with proper copper-orange/brass-yellow gradients
+- **Fire Animations**: Use `h-1 bg-gradient-to-r from-copper-orange to-brass-yellow` for bottom accent bars
 - **Component Reference**: Always check existing specs in `_resources/specs/` before creating components
+
+### Tailwind CSS v4 Compliance (ENFORCED)
+
+- **NO INLINE STYLES**: Never use `style="..."` attributes - use arbitrary values instead: `top-[117px]`
+- **PROPER @theme USAGE**: Use `@theme` directive, not `@theme inline` 
+- **CSS-BASED CONFIG**: No `tailwind.config.js` - all configuration in CSS files
+- **ARBITRARY VALUES**: Use `className="top-[117px]"` instead of inline styles
 
 ### Typography Hierarchy
 

@@ -116,7 +116,7 @@ export default function FacilityCard({
       {/* Verified badge */}
       {isVerified && (
         <div className="absolute top-4 left-4 z-10">
-          <Badge variant="secondary" className="bg-clubhouse-lawn-green/10 text-clubhouse-lawn-green border-clubhouse-lawn-green/30">
+          <Badge variant="secondary" className="bg-rifling-green/10 text-rifling-green border-rifling-green/30">
             <Shield className="h-3 w-3 mr-1" />
             Verified
           </Badge>

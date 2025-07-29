@@ -4,15 +4,15 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const alertVariants = cva(
-  "relative w-full rounded-lg border px-6 py-4 text-sm grid has-[>svg]:grid-cols-[1.5rem_1fr] grid-cols-[0_1fr] has-[>svg]:gap-x-3 gap-y-1 items-start [&>svg]:size-4 [&>svg]:translate-y-0.5 [&>svg]:text-current transition-all duration-150 ease-out shadow-sm",
+  "relative w-full rounded-lg px-6 py-4 text-sm grid has-[>svg]:grid-cols-[1.5rem_1fr] grid-cols-[0_1fr] has-[>svg]:gap-x-3 gap-y-1 items-start [&>svg]:size-4 [&>svg]:translate-y-0.5 [&>svg]:text-current transition-all duration-150 ease-out shadow-sm",
   {
     variants: {
       variant: {
-        default: "bg-white border-gray-200 text-gray-900",
-        info: "bg-blue-50 border-blue-200 text-blue-900 [&>svg]:text-blue-600",
-        success: "bg-green-50 border-green-200 text-green-900 [&>svg]:text-green-600",
-        warning: "bg-amber-50 border-amber-200 text-amber-900 [&>svg]:text-amber-600",
-        destructive: "bg-red-50 border-red-200 text-red-900 [&>svg]:text-red-600",
+        default: "bg-card text-card-foreground",
+        info: "bg-scope-blue/5 text-scope-blue [&>svg]:text-scope-blue",
+        success: "bg-rifling-green/5 text-rifling-green [&>svg]:text-rifling-green",
+        warning: "bg-sight-gold/5 text-sight-gold [&>svg]:text-sight-gold",
+        destructive: "bg-safety-red/5 text-safety-red [&>svg]:text-safety-red",
       },
     },
     defaultVariants: {

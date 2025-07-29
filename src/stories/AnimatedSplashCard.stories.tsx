@@ -38,7 +38,7 @@ export const Default: Story = {
          <p className="text-muted-foreground mb-4">
            Connect with 500+ local businesses, events, and fellow enthusiasts across the region
         </p>
-        <Button className="bg-copper-orange hover:bg-brass-yellow">
+        <Button size="sm" className="bg-copper-orange hover:bg-brass-yellow">
           Explore Directory
         </Button>
       </div>
@@ -62,10 +62,10 @@ export const PremiumAccess: Story = {
           Unlock exclusive business deals, priority event notifications, and advanced search features.
         </p>
         <div className="flex gap-2 justify-center">
-          <Button className="bg-copper-orange hover:bg-brass-yellow">
+          <Button size="sm" className="bg-copper-orange hover:bg-brass-yellow">
             Upgrade Now
           </Button>
-          <Button variant="outline">
+          <Button size="sm" variant="outline">
             View Benefits
           </Button>
         </div>
@@ -93,7 +93,7 @@ export const RegionalEvent: Story = {
             <strong>Tickets:</strong> $15 adults, kids free
           </p>
         </div>
-        <Button className="bg-copper-orange hover:bg-brass-yellow">
+        <Button size="sm" className="bg-copper-orange hover:bg-brass-yellow">
           Get Tickets
         </Button>
       </div>
@@ -119,7 +119,7 @@ export const TrainingProgram: Story = {
           <Badge variant="outline" className="text-xs">Competition Prep</Badge>
           <Badge variant="outline" className="text-xs">Youth Programs</Badge>
         </div>
-        <Button className="bg-copper-orange hover:bg-brass-yellow">
+        <Button size="sm" className="bg-copper-orange hover:bg-brass-yellow">
           View Programs
         </Button>
       </div>
@@ -153,7 +153,7 @@ export const AchievementShowcase: Story = {
             <Badge variant="outline">3rd Place</Badge>
           </div>
         </div>
-        <Button variant="outline">
+        <Button size="sm" variant="outline">
           View All Results
         </Button>
       </div>
@@ -181,10 +181,10 @@ export const NewsletterSignup: Story = {
             className="w-full px-3 py-2 border rounded-md bg-background text-foreground border-border"
           />
           <div className="flex gap-2">
-            <Button className="flex-1 bg-copper-orange hover:bg-brass-yellow">
+            <Button size="sm" className="flex-1 bg-copper-orange hover:bg-brass-yellow">
               Subscribe
             </Button>
-            <Button variant="outline" className="flex-1">
+            <Button size="sm" variant="outline" className="flex-1">
               Learn More
             </Button>
           </div>
@@ -246,7 +246,7 @@ export const LargeFeatureCard: Story = {
             <div className="text-sm text-muted-foreground">Sporting Clays</div>
           </div>
         </div>
-        <Button className="w-full bg-copper-orange hover:bg-brass-yellow">
+        <Button size="sm" className="w-full bg-copper-orange hover:bg-brass-yellow">
           Schedule a Tour
         </Button>
       </div>

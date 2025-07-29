@@ -9,11 +9,11 @@ const calloutCardVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-white border-brass-yellow/20 hover:shadow-md hover:border-brass-yellow/30",
-        subtle: "bg-gradient-card-warm border-gray-200 hover:shadow-md",
-        animated: "bg-gradient-to-r from-brass-yellow/5 via-white to-copper-orange/5 border-brass-yellow/30 hover:shadow-md hover:from-brass-yellow/8 hover:to-copper-orange/8",
-        important: "bg-gradient-to-br from-safety-red/5 via-white to-muzzle-flash/5 border-safety-red/30 shadow-md",
-        info: "bg-gradient-to-br from-scope-blue/5 via-white to-trigger-blue/5 border-scope-blue/30"
+        default: "bg-card border-brass-yellow/20 hover:shadow-md hover:border-brass-yellow/30",
+        subtle: "bg-gradient-card-warm border-border hover:shadow-md",
+        animated: "bg-gradient-to-r from-brass-yellow/5 via-card to-copper-orange/5 border-brass-yellow/30 hover:shadow-md hover:from-brass-yellow/8 hover:to-copper-orange/8",
+        important: "bg-gradient-to-br from-safety-red/5 via-card to-muzzle-flash/5 border-safety-red/30 shadow-md",
+        info: "bg-gradient-to-br from-scope-blue/5 via-card to-trigger-blue/5 border-scope-blue/30"
       }
     },
     defaultVariants: {
@@ -45,11 +45,11 @@ export function CalloutCard({
       
       <div className="relative space-y-3">
         <div className="space-y-2">
-          <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black leading-tight">
+          <h3 className="text-[var(--text-lg)] font-rajdhani font-bold text-gunmetal-black leading-tight">
             {title}
           </h3>
           {description && (
-            <p className="text-sm text-case-hardened font-noto-sans leading-relaxed">
+            <p className="text-[var(--text-sm)] text-case-hardened font-noto-sans leading-relaxed">
               {description}
             </p>
           )}
@@ -95,11 +95,11 @@ export function ImportantCallout({
             </div>
           </div>
           <div className="flex-1 space-y-2">
-            <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black leading-tight">
+            <h3 className="text-[var(--text-lg)] font-rajdhani font-bold text-gunmetal-black leading-tight">
               {title}
             </h3>
             {description && (
-              <p className="text-sm text-case-hardened font-noto-sans leading-relaxed">
+              <p className="text-[var(--text-sm)] text-case-hardened font-noto-sans leading-relaxed">
                 {description}
               </p>
             )}
@@ -137,11 +137,11 @@ export function SubtleCallout({
     >
       <div className="space-y-3">
         <div className="space-y-2">
-          <h3 className="text-base font-rajdhani font-semibold text-gunmetal-black leading-tight">
+          <h3 className="text-[var(--text-base)] font-rajdhani font-semibold text-gunmetal-black leading-tight">
             {title}
           </h3>
           {description && (
-            <p className="text-sm text-case-hardened font-noto-sans leading-relaxed">
+            <p className="text-[var(--text-sm)] text-case-hardened font-noto-sans leading-relaxed">
               {description}
             </p>
           )}

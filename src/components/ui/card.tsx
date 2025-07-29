@@ -4,30 +4,30 @@ import { cn } from "@/lib/utils"
 
 const cardVariants = cva(
   // TBGC Design System V5: Stripe-inspired sophisticated shadows
-  "relative flex flex-col rounded-lg border bg-card text-card-foreground transition-all duration-150 ease-out",
+  "relative flex flex-col rounded-lg bg-card text-card-foreground transition-all duration-150 ease-out",
   {
     variants: {
       variant: {
         // Default: Clean with good shadows - theme aware
-        default: "bg-card border-border shadow-sm hover:shadow-lg",
+        default: "bg-card shadow-sm hover:shadow-lg",
         
         // Elevated: More prominent - theme aware
-        elevated: "bg-card border-border shadow-md hover:shadow-xl hover:-translate-y-1",
+        elevated: "bg-card shadow-md hover:shadow-xl hover:-translate-y-1",
         
         // Interactive: Clickable feedback - theme aware
-        interactive: "bg-card border-border shadow-sm hover:shadow-lg hover:-translate-y-0.5 cursor-pointer",
+        interactive: "bg-card shadow-sm hover:shadow-lg hover:-translate-y-0.5 cursor-pointer",
         
         // Premium: Gold accent - theme aware
-        premium: "bg-card border-brass-yellow/30 shadow-md hover:shadow-xl hover:border-brass-yellow/50 hover:-translate-y-1",
+        premium: "bg-card shadow-md hover:shadow-xl hover:-translate-y-1 ring-1 ring-brass-yellow/20 hover:ring-brass-yellow/40",
         
         // Glass: Modern glassmorphism - theme aware
-        glass: "bg-card/80 border-border/30 shadow-lg backdrop-blur-sm hover:bg-card/90 hover:shadow-xl",
+        glass: "bg-card/80 shadow-lg backdrop-blur-sm hover:bg-card/90 hover:shadow-xl",
         
         // Outlined: Clean borders - theme aware
-        outlined: "bg-card border-border hover:shadow-sm",
+        outlined: "bg-card hover:shadow-sm ring-1 ring-border",
         
         // Subtle: Muted backgrounds - theme aware
-        subtle: "bg-muted border-border hover:bg-card hover:shadow-sm"
+        subtle: "bg-muted hover:bg-card hover:shadow-sm"
       },
       size: {
         sm: "",           // Components handle their own padding
@@ -64,7 +64,7 @@ const CardHeader = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>
     return (
       <div
         ref={ref}
-        className={cn("flex flex-col space-y-1.5 p-6", className)}
+        className={cn("flex flex-col space-y-3 p-[var(--card-padding)]", className)}
         {...props}
       />
     )
@@ -77,10 +77,7 @@ const CardTitle = React.forwardRef<HTMLHeadingElement, React.ComponentProps<"h3"
     return (
       <h3
         ref={ref}
-        className={cn(
-          "font-semibold leading-none tracking-tight text-card-foreground text-lg",
-          className
-        )}
+        className={cn("card-title", className)}
         {...props}
       />
     )
@@ -93,7 +90,7 @@ const CardDescription = React.forwardRef<HTMLParagraphElement, React.ComponentPr
     return (
       <p
         ref={ref}
-        className={cn("text-sm text-muted-foreground", className)}
+        className={cn("card-body", className)}
         {...props}
       />
     )
@@ -106,7 +103,7 @@ const CardContent = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">
     return (
       <div
         ref={ref}
-        className={cn("px-6 pb-6", className)}
+        className={cn("px-[var(--card-padding)] pb-[var(--card-padding)]", className)}
         {...props}
       />
     )
@@ -119,7 +116,7 @@ const CardFooter = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>
     return (
       <div
         ref={ref}
-        className={cn("flex items-center px-6 pb-6 pt-0", className)}
+        className={cn("flex items-center gap-2 px-[var(--card-padding)] pb-[var(--card-padding)] pt-0", className)}
         {...props}
       />
     )

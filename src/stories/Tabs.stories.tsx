@@ -48,7 +48,7 @@ export const Default: Story = {
             </div>
           </CardContent>
           <CardFooter>
-            <Button>Save changes</Button>
+            <Button size="sm">Save changes</Button>
           </CardFooter>
         </Card>
       </TabsContent>
@@ -71,7 +71,7 @@ export const Default: Story = {
             </div>
           </CardContent>
           <CardFooter>
-            <Button>Save password</Button>
+            <Button size="sm">Save password</Button>
           </CardFooter>
         </Card>
       </TabsContent>

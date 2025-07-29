@@ -17,7 +17,7 @@ const siteFooterVariants = cva(
       variant: {
         default: "bg-gunmetal-black text-nickel-white",
         glass: "bg-gunmetal-black/90 backdrop-blur-sm text-nickel-white",
-        minimal: "bg-white border-t border-gray-200 text-gunmetal-black"
+        minimal: "bg-card text-card-foreground"
       }
     },
     defaultVariants: {

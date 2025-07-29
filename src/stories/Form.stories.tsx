@@ -63,7 +63,7 @@ function ProfileForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button size="sm" type="submit">Submit</Button>
       </form>
     </Form>
   );

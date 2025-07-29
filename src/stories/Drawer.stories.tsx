@@ -65,9 +65,9 @@ export const Default: Story = {
             </div>
           </div>
           <DrawerFooter>
-            <Button>Submit</Button>
+            <Button size="sm">Submit</Button>
             <DrawerClose asChild>
-              <Button variant="outline">Cancel</Button>
+              <Button size="sm" variant="outline">Cancel</Button>
             </DrawerClose>
           </DrawerFooter>
         </div>

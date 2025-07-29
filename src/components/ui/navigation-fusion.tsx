@@ -10,8 +10,8 @@ const navigationFusionVariants = cva(
   {
     variants: {
       variant: {
-        glass: "bg-white/80 backdrop-blur-md border border-white/20 shadow-lg",
-        solid: "bg-white border border-gray-200 shadow-sm",
+        glass: "bg-card/80 backdrop-blur-md border border-border/20 shadow-lg",
+        solid: "bg-card border border-border shadow-sm",
         minimal: "bg-transparent"
       },
       orientation: {
@@ -37,9 +37,9 @@ const navigationItemVariants = cva(
   {
     variants: {
       variant: {
-        glass: "text-gunmetal-black hover:bg-white/50 hover:text-brass-yellow",
-        solid: "text-gunmetal-black hover:bg-brass-yellow/10 hover:text-brass-yellow",
-        minimal: "text-gunmetal-black hover:text-brass-yellow"
+        glass: "text-card-foreground hover:bg-card/50 hover:text-copper-orange",
+        solid: "text-card-foreground hover:bg-copper-orange/10 hover:text-copper-orange",
+        minimal: "text-card-foreground hover:text-copper-orange"
       },
       active: {
         true: "",
@@ -59,7 +59,7 @@ const navigationItemVariants = cva(
       {
         variant: "solid",
         active: true,
-        class: "bg-brass-yellow text-gunmetal-black shadow-sm"
+        class: "bg-copper-orange text-white shadow-sm"
       },
       {
         variant: "minimal",

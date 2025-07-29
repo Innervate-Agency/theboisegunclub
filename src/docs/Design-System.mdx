@@ -6,7 +6,7 @@ title: 'Documentation/Design System'
 
 ## 🎯 IDAHO FIREARMS HERITAGE PALETTE
 
-### **Primary Brand Colors**
+### **Primary Brand Colors (Updated 2025-07-28)**
 
 ```css
 /* Primary Brand Colors - The Foundation */
@@ -14,6 +14,22 @@ title: 'Documentation/Design System'
 --color-copper-orange: #F28705;   /* Heritage, warmth, tradition */
 --color-gunmetal-black: #2C3E50;  /* Precision, sophistication */
 --color-nickel-white: #F8F9FA;    /* Clean, pure, premium */
+```
+
+### **Theme-Aware Accent System**
+
+```css
+/* Light Theme Primary: Copper Orange - Perfect contrast on light */
+--accent-light: var(--color-copper-orange);
+
+/* Dark Theme Primary: Brass Yellow - Optimal visibility on dark */
+--accent-dark: var(--color-brass-yellow);
+
+/* Success/Positive: Clubhouse Lawn Green */
+--accent-success: var(--color-clubhouse-lawn-green);
+
+/* Fire Gradients: Copper to Brass */
+--gradient-fire: linear-gradient(90deg, var(--color-copper-orange) 0%, var(--color-brass-yellow) 100%);
 ```
 
 ### **Light Theme: Spring Day at the Range**
@@ -179,6 +195,70 @@ title: 'Documentation/Design System'
 // Brand-colored shadows
 <div className="shadow-brass">Brass Shadow</div>
 <div className="shadow-copper">Copper Shadow</div>
+```
+
+## 🎨 THEME-AWARE COMPONENT SYSTEM (REQUIRED)
+
+### **Critical Theme Classes**
+
+All components MUST use theme-aware classes for dark/light mode support:
+
+```tsx
+// ✅ CORRECT - Theme-aware
+className="bg-card text-card-foreground border-border"
+
+// ❌ WRONG - Hardcoded colors  
+className="bg-white text-black border-gray-200"
+```
+
+### **Required Theme Class Mappings**
+
+```tsx
+// Backgrounds
+bg-card          // Instead of bg-white
+bg-muted         // Instead of bg-gray-50 or bg-gray-100
+
+// Text Colors
+text-card-foreground     // Instead of text-black or text-gray-900
+text-muted-foreground    // Instead of text-gray-500 or text-gray-600
+text-foreground          // Instead of text-black
+
+// Borders
+border-border    // Instead of border-gray-200 or border-gray-300
+
+// Accents (Theme-Aware)
+hover:text-copper-orange     // Light theme accent
+dark:hover:text-brass-yellow // Dark theme accent
+```
+
+### **Fire Gradient Animations**
+
+Use the signature fire gradient for bottom accent bars:
+
+```tsx
+// Fire accent bar (1px thick for subtle effect)
+<div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-copper-orange to-brass-yellow transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+
+// Fire gradient button
+<button className="bg-gradient-to-r from-copper-orange to-brass-yellow text-white">
+  Premium Action
+</button>
+```
+
+### **Color Enforcement Rules**
+
+```tsx
+// ❌ FORBIDDEN - Generic Tailwind colors
+text-gray-500, bg-blue-600, border-red-400
+
+// ❌ FORBIDDEN - Hardcoded hex codes
+bg-[#F2CB05], text-[#333333]
+
+// ❌ FORBIDDEN - Inline styles
+style="color: #F28705"
+
+// ✅ CORRECT - 26-color palette
+text-copper-orange, bg-brass-yellow, border-clubhouse-lawn-green
 ```
 
 ## 🧩 COMPONENT PATTERNS

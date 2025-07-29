@@ -126,14 +126,14 @@ export default function AccessibilityFAB({
               <button
                 onClick={decreaseFontSize}
                 disabled={fontSize === 12}
-                className="px-3 py-2 bg-gray-100 dark:bg-tactical-gray text-popover-foreground rounded-md text-sm font-medium hover:bg-gray-200 dark:hover:bg-case-hardened disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="px-3 py-2 bg-muted text-popover-foreground rounded-md text-sm font-medium hover:bg-muted/80 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 aria-label="Decrease font size"
               >
                 A-
               </button>
               <button
                 onClick={resetFontSize}
-                className="px-3 py-2 bg-gray-100 dark:bg-tactical-gray text-popover-foreground rounded-md text-sm font-medium hover:bg-gray-200 dark:hover:bg-case-hardened transition-colors"
+                className="px-3 py-2 bg-muted text-popover-foreground rounded-md text-sm font-medium hover:bg-muted/80 transition-colors"
                 aria-label="Reset font size"
               >
                 Reset
@@ -141,7 +141,7 @@ export default function AccessibilityFAB({
               <button
                 onClick={increaseFontSize}
                 disabled={fontSize === 24}
-                className="px-3 py-2 bg-gray-100 dark:bg-tactical-gray text-popover-foreground rounded-md text-sm font-medium hover:bg-gray-200 dark:hover:bg-case-hardened disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="px-3 py-2 bg-muted text-popover-foreground rounded-md text-sm font-medium hover:bg-muted/80 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 aria-label="Increase font size"
               >
                 A+
@@ -161,7 +161,7 @@ export default function AccessibilityFAB({
                 "w-full px-4 py-3 rounded-md text-sm font-medium transition-colors text-left",
                 highContrast 
                   ? "bg-brass-yellow text-gunmetal-black" 
-                  : "bg-gray-100 dark:bg-tactical-gray text-popover-foreground hover:bg-gray-200 dark:hover:bg-case-hardened"
+                  : "bg-muted text-popover-foreground hover:bg-muted/80"
               )}
               aria-pressed={highContrast}
             >
@@ -169,7 +169,7 @@ export default function AccessibilityFAB({
                 <span>High Contrast Mode</span>
                 <div className={cn(
                   "w-10 h-6 rounded-full transition-colors relative",
-                  highContrast ? "bg-gunmetal-black" : "bg-gray-300 dark:bg-carbon-fiber"
+                  highContrast ? "bg-gunmetal-black" : "bg-muted"
                 )}>
                   <div className={cn(
                     "w-4 h-4 rounded-full bg-white absolute top-1 transition-transform",

@@ -17,8 +17,8 @@ const contactFormVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-white border border-gray-200 rounded-lg shadow-sm",
-        glass: "bg-white/80 backdrop-blur-xl border border-white/20 rounded-lg shadow-lg",
+        default: "bg-card border border-border rounded-lg shadow-sm",
+        glass: "bg-card/80 backdrop-blur-xl border border-border/20 rounded-lg shadow-lg",
         minimal: "bg-transparent border-0 shadow-none"
       }
     },
@@ -343,7 +343,7 @@ export function ContactForm({
           </form>
 
           {showContactInfo && (
-            <div className="border-t border-gray-200 pt-6">
+            <div className="border-t border-border pt-6">
               <h3 className="font-rajdhani font-bold text-gunmetal-black mb-4">
                 Contact Information
               </h3>

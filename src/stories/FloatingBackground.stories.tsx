@@ -21,7 +21,7 @@ export const Default: Story = {
   render: (args) => (
     <FloatingBackground {...args}>
       <div className="h-screen flex items-center justify-center">
-        <h1 className="text-4xl font-bold text-white">Floating Background</h1>
+        <h1 className="text-4xl font-bold text-range-white">Floating Background</h1>
       </div>
     </FloatingBackground>
   ),
@@ -35,7 +35,7 @@ export const CoolPreset: Story = {
   render: (args) => (
     <FloatingBackground {...args}>
       <div className="h-screen flex items-center justify-center">
-        <h1 className="text-4xl font-bold text-white">Cool Preset</h1>
+        <h1 className="text-4xl font-bold text-range-white">Cool Preset</h1>
       </div>
     </FloatingBackground>
   ),

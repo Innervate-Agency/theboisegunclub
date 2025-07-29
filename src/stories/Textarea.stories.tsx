@@ -50,7 +50,7 @@ export const Glass: Story = {
   render: (args) => (
     <div className="relative w-[400px] p-10 bg-cover bg-center rounded-lg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')" }}>
       <div className="grid w-full max-w-sm gap-1.5">
-        <Label htmlFor="glass-message" className="text-white">Glass Message</Label>
+        <Label htmlFor="glass-message" className="text-range-white">Glass Message</Label>
         <Textarea {...args} />
       </div>
     </div>

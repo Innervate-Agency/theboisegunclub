@@ -54,7 +54,7 @@ export const Default: Story = {
         </div>
         <SheetFooter>
           <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
+            <Button size="sm" type="submit">Save changes</Button>
           </SheetClose>
         </SheetFooter>
       </SheetContent>

@@ -97,12 +97,12 @@ export function GalleryGrid({
         {(title || subtitle) && (
           <div className="text-center mb-8">
             {subtitle && (
-              <p className="text-sm font-rajdhani font-semibold text-copper-orange mb-2 tracking-wide uppercase">
+              <p className="text-[var(--text-sm)] font-rajdhani font-semibold text-copper-orange mb-2 tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
             {title && (
-              <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-4">
+              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-gunmetal-black mb-4">
                 {title}
               </h2>
             )}
@@ -117,13 +117,13 @@ export function GalleryGrid({
               {categories.map((category) => (
                 <Button
                   key={category}
-                  variant={activeFilter === category ? "default" : "outline"}
+                  variant={activeFilter === category ? "default" : "secondary"}
                   size="sm"
                   onClick={() => setActiveFilter(category)}
                   className={cn(
                     "font-rajdhani font-semibold capitalize",
                     activeFilter === category 
-                      ? "bg-copper-orange text-white hover:bg-lahoma-orange" 
+                      ? "bg-copper-orange text-white hover:bg-recoil-pad" 
                       : "border-copper-orange/30 text-copper-orange hover:bg-copper-orange hover:text-white"
                   )}
                 >
@@ -135,7 +135,7 @@ export function GalleryGrid({
             {/* View Mode Controls */}
             <div className="flex items-center gap-2">
               <Button
-                variant={viewMode === 'grid' ? 'default' : 'outline'}
+                variant={viewMode === 'grid' ? 'default' : 'secondary'}
                 size="icon"
                 onClick={() => setViewMode('grid')}
                 className="border-copper-orange/30"
@@ -143,7 +143,7 @@ export function GalleryGrid({
                 <Grid3X3 className="icon-sm" />
               </Button>
               <Button
-                variant={viewMode === 'list' ? 'default' : 'outline'}
+                variant={viewMode === 'list' ? 'default' : 'secondary'}
                 size="icon"
                 onClick={() => setViewMode('list')}
                 className="border-copper-orange/30"
@@ -178,7 +178,7 @@ export function GalleryGrid({
                 {/* Featured Badge */}
                 {isFeatured && (
                   <div className="absolute top-2 left-2 z-10">
-                    <div className="bg-copper-orange text-white text-xs font-rajdhani font-bold px-2 py-1 rounded">
+                    <div className="bg-copper-orange text-white text-[var(--text-xs)] font-rajdhani font-bold px-2 py-1 rounded">
                       Featured
                     </div>
                   </div>
@@ -239,14 +239,14 @@ export function GalleryGrid({
                     </h3>
                     
                     {image.category && (
-                      <p className="text-xs text-muted-foreground font-noto-sans uppercase tracking-wide">
+                      <p className="text-[var(--text-xs)] text-muted-foreground font-noto-sans uppercase tracking-wide">
                         {image.category}
                       </p>
                     )}
                     
                     {/* Stats */}
                     {showStats && (image.likes !== undefined || image.downloads !== undefined) && (
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      <div className="flex items-center gap-4 text-[var(--text-xs)] text-muted-foreground">
                         {image.likes !== undefined && (
                           <div className="flex items-center gap-1">
                             <Heart className="icon-xs" />
@@ -272,7 +272,7 @@ export function GalleryGrid({
         {filteredImages.length === 0 && (
           <div className="text-center py-12">
             <Filter className="icon-2xl icon-muted mx-auto mb-4" />
-            <h3 className="text-lg font-rajdhani font-bold text-card-foreground mb-2">
+            <h3 className="text-[var(--text-lg)] font-rajdhani font-bold text-card-foreground mb-2">
               No images found
             </h3>
             <p className="text-muted-foreground font-noto-sans">

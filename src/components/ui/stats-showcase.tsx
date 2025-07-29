@@ -65,12 +65,12 @@ export function StatsShowcase({
         {(title || subtitle) && (
           <div className="text-center mb-12">
             {title && (
-              <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-3">
+              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-gunmetal-black mb-3">
                 {title}
               </h2>
             )}
             {subtitle && (
-              <p className="text-lg text-case-hardened font-noto-sans">
+              <p className="text-[var(--text-lg)] text-case-hardened font-noto-sans">
                 {subtitle}
               </p>
             )}
@@ -97,16 +97,16 @@ export function StatsShowcase({
                     )}
                     
                     {stat.change && (
-                      <div className="flex items-center gap-1 text-xs">
+                      <div className="flex items-center gap-1 text-[var(--text-xs)]">
                         {stat.change.trend === 'up' && (
-                          <TrendingUp className="h-3 w-3 text-clubhouse-lawn-green" />
+                          <TrendingUp className="h-3 w-3 text-rifling-green" />
                         )}
                         {stat.change.trend === 'down' && (
                           <TrendingDown className="h-3 w-3 text-copper-orange" />
                         )}
                         <span className={cn(
                           "font-medium",
-                          stat.change.trend === 'up' && "text-clubhouse-lawn-green",
+                          stat.change.trend === 'up' && "text-rifling-green",
                           stat.change.trend === 'down' && "text-copper-orange",
                           stat.change.trend === 'neutral' && "text-case-hardened"
                         )}>
@@ -121,14 +121,14 @@ export function StatsShowcase({
                     <div className="text-3xl font-rajdhani font-bold text-card-foreground group-hover:text-copper-orange transition-colors duration-200">
                       {typeof stat.value === 'number' ? stat.value.toLocaleString() : stat.value}
                     </div>
-                    <div className="text-sm font-noto-sans font-medium text-muted-foreground">
+                    <div className="text-[var(--text-sm)] font-noto-sans font-medium text-muted-foreground">
                       {stat.label}
                     </div>
                   </div>
 
                   {/* Description */}
                   {stat.description && (
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-[var(--text-xs)] text-muted-foreground leading-relaxed">
                       {stat.description}
                     </p>
                   )}

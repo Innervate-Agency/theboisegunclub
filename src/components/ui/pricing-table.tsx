@@ -88,10 +88,10 @@ export function PricingCard({
 
   const renderFeatureValue = (feature: PricingFeature) => {
     if (feature.included === true) {
-      return <Check className="h-4 w-4 text-green-600" />
+      return <Check className="h-4 w-4 text-rifling-green" />
     }
     if (feature.included === false) {
-      return <X className="h-4 w-4 text-gray-400" />
+      return <X className="h-4 w-4 text-case-hardened" />
     }
     if (typeof feature.included === 'number') {
       return <span className="text-sm font-medium text-gunmetal-black">{feature.included}</span>
@@ -100,7 +100,7 @@ export function PricingCard({
       return <span className="text-sm font-medium text-brass-yellow">∞</span>
     }
     if (feature.included === 'limited') {
-      return <Minus className="h-4 w-4 text-amber-500" />
+      return <Minus className="h-4 w-4 text-sight-gold" />
     }
     return <span className="text-xs text-case-hardened">{feature.included}</span>
   }

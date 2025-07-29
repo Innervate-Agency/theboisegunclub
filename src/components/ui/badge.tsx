@@ -5,26 +5,26 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none transition-all duration-150 ease-out overflow-hidden",
+  "inline-flex items-center justify-center rounded-md px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none transition-all duration-150 ease-out overflow-hidden",
   {
     variants: {
       variant: {
-        default: "bg-stone-100 text-gray-900 border-stone-200 hover:bg-stone-200",
-        premium: "bg-yellow-100 text-yellow-900 border-yellow-200 hover:bg-yellow-200 shadow-sm",
-        elite: "bg-yellow-200 text-yellow-900 border-yellow-300 hover:bg-yellow-300 shadow-md",
-        glass: "backdrop-blur-sm bg-white/80 border-gray-200 text-gray-900 shadow-sm",
-        success: "bg-green-100 text-green-900 border-green-200 hover:bg-green-200",
-        warning: "bg-amber-100 text-amber-900 border-amber-200 hover:bg-amber-200",
-        error: "bg-red-100 text-red-900 border-red-200 hover:bg-red-200",
-        info: "bg-blue-100 text-blue-900 border-blue-200 hover:bg-blue-200",
-        outline: "text-gray-700 border-gray-300 hover:bg-gray-50",
-        destructive: "bg-red-100 text-red-900 border-red-200 hover:bg-red-200"
+        default: "bg-muted text-card-foreground hover:bg-muted/80",
+        premium: "bg-brass-yellow/10 text-brass-yellow hover:bg-brass-yellow/20 shadow-sm",
+        elite: "bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20 shadow-md",
+        glass: "backdrop-blur-sm bg-card/80 text-card-foreground shadow-sm",
+        success: "bg-rifling-green/10 text-rifling-green hover:bg-rifling-green/20",
+        warning: "bg-sight-gold/10 text-sight-gold hover:bg-sight-gold/20",
+        error: "bg-safety-red/10 text-safety-red hover:bg-safety-red/20",
+        info: "bg-scope-blue/10 text-scope-blue hover:bg-scope-blue/20",
+        outline: "text-muted-foreground hover:bg-muted ring-1 ring-border",
+        destructive: "bg-muzzle-flash/10 text-muzzle-flash hover:bg-muzzle-flash/20"
       },
       size: {
-        sm: "px-2 py-0.5 text-xs h-5",
-        default: "px-2.5 py-0.5 text-xs h-6",
-        lg: "px-3 py-1 text-sm h-7",
-        xl: "px-4 py-1.5 text-sm h-8"
+        sm: "px-[var(--badge-padding-x-sm)] py-0.5 text-[var(--text-xs)] h-[var(--badge-height-sm)]",
+        default: "px-[var(--badge-padding-x-base)] py-0.5 text-[var(--text-xs)] h-[var(--badge-height-base)]",
+        lg: "px-[var(--badge-padding-x-lg)] py-1 text-[var(--text-sm)] h-[var(--badge-height-lg)]",
+        xl: "px-4 py-1.5 text-[var(--text-sm)] h-8"
       }
     },
     defaultVariants: {

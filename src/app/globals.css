@@ -238,10 +238,25 @@
   --input-height-sm: 2rem;         /* 32px */
   --input-height-base: 2.5rem;     /* 40px */
   --input-height-lg: 3rem;         /* 48px */
-  --button-height-sm: 2rem;        /* 32px */
-  --button-height-base: 2.5rem;    /* 40px */
-  --button-height-lg: 3rem;        /* 48px */
-  --button-height-xl: 3.5rem;      /* 56px */
+  --button-height-sm: 2rem;        /* 32px - for inside cards/forms */
+  --button-height-base: 2.5rem;    /* 40px - general use */
+  --button-height-lg: 3rem;        /* 48px - hero/primary actions */
+  --button-height-xl: 3.5rem;      /* 56px - call-to-action buttons */
+  
+  /* ================== STRIPE-INSPIRED COMPONENT CONTEXT TOKENS ================== */
+  /* Card Content Standards */
+  --card-padding: var(--space-md);           /* 24px - Stripe standard card padding */
+  --card-title-size: var(--text-lg);         /* 18px - proper card title sizing */
+  --card-body-size: var(--text-sm);          /* 14px - card body text */
+  --card-caption-size: var(--text-xs);       /* 12px - card captions/meta */
+  
+  /* Button Context Standards */
+  --button-text-sm: var(--text-xs);          /* 12px - small button text */  
+  --button-text-base: var(--text-sm);        /* 14px - default button text */
+  --button-text-lg: var(--text-base);        /* 16px - large button text */
+  --button-padding-sm: 0.5rem 0.75rem;       /* 8px 12px - small button padding */
+  --button-padding-base: 0.625rem 1rem;      /* 10px 16px - default button padding */
+  --button-padding-lg: 0.75rem 1.5rem;       /* 12px 24px - large button padding */
   
   /* ================== TYPOGRAPHY SCALING SYSTEM ================== */
   --text-xs: 0.75rem;              /* 12px */
@@ -554,6 +569,71 @@
   .leading-normal { line-height: var(--leading-normal); }
   .leading-relaxed { line-height: var(--leading-relaxed); }
   .leading-loose { line-height: var(--leading-loose); }
+
+  /* ================== STRIPE-INSPIRED COMPONENT CONTEXT CLASSES ================== */
+  /* Card Content Patterns */
+  .card-content {
+    padding: var(--card-padding);
+  }
+  
+  .card-title {
+    font-size: var(--card-title-size);
+    font-weight: 600;
+    line-height: var(--leading-tight);
+    color: var(--card-foreground);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .card-body {
+    font-size: var(--card-body-size);
+    line-height: var(--leading-normal);
+    color: var(--muted-foreground);
+  }
+  
+  .card-caption {
+    font-size: var(--card-caption-size);
+    line-height: var(--leading-normal);
+    color: var(--muted-foreground);
+    opacity: 0.8;
+  }
+  
+  /* Button Size Variants - Context Aware */
+  .btn-sm {
+    height: var(--button-height-sm);
+    padding: var(--button-padding-sm);
+    font-size: var(--button-text-sm);
+    font-weight: 500;
+  }
+  
+  .btn-base {
+    height: var(--button-height-base);
+    padding: var(--button-padding-base);
+    font-size: var(--button-text-base);
+    font-weight: 500;
+  }
+  
+  .btn-lg {
+    height: var(--button-height-lg);
+    padding: var(--button-padding-lg);
+    font-size: var(--button-text-lg);
+    font-weight: 600;
+  }
+  
+  /* Component Density Variants */
+  .density-compact {
+    --local-padding: var(--space-sm);
+    --local-gap: var(--space-xs);
+  }
+  
+  .density-default {
+    --local-padding: var(--space-md);
+    --local-gap: var(--space-sm);
+  }
+  
+  .density-spacious {
+    --local-padding: var(--space-lg);
+    --local-gap: var(--space-md);
+  }
 
   /* ================== COMPREHENSIVE SHADOW UTILITIES ================== */
   /* Container Shadows - For base level components */
@@ -1154,6 +1234,64 @@
     .grid-responsive {
       grid-template-columns: repeat(4, 1fr);
     }
+  }
+
+  /* ================== RESPONSIVE TYPOGRAPHY SCALING (STRIPE PATTERN) ================== */
+  /* Base mobile-first typography with systematic scaling */
+  
+  .text-responsive-xs { font-size: 0.75rem; line-height: 1.25; }    /* 12px mobile */
+  .text-responsive-sm { font-size: 0.875rem; line-height: 1.375; }  /* 14px mobile */
+  .text-responsive-base { font-size: 1rem; line-height: 1.5; }      /* 16px mobile */
+  .text-responsive-lg { font-size: 1.125rem; line-height: 1.5; }    /* 18px mobile */
+  .text-responsive-xl { font-size: 1.25rem; line-height: 1.5; }     /* 20px mobile */
+  .text-responsive-2xl { font-size: 1.5rem; line-height: 1.375; }   /* 24px mobile */
+  .text-responsive-3xl { font-size: 1.875rem; line-height: 1.25; }  /* 30px mobile */
+  .text-responsive-4xl { font-size: 2.25rem; line-height: 1.125; }  /* 36px mobile */
+
+  @media (min-width: 640px) {
+    .text-responsive-xs { font-size: 0.75rem; }    /* Same on tablet */
+    .text-responsive-sm { font-size: 0.875rem; }   /* Same on tablet */
+    .text-responsive-base { font-size: 1rem; }     /* Same on tablet */
+    .text-responsive-lg { font-size: 1.125rem; }   /* Same on tablet */
+    .text-responsive-xl { font-size: 1.375rem; }   /* 22px tablet */
+    .text-responsive-2xl { font-size: 1.75rem; }   /* 28px tablet */
+    .text-responsive-3xl { font-size: 2.25rem; }   /* 36px tablet */
+    .text-responsive-4xl { font-size: 2.75rem; }   /* 44px tablet */
+  }
+
+  @media (min-width: 1024px) {
+    .text-responsive-xl { font-size: 1.5rem; }     /* 24px desktop */
+    .text-responsive-2xl { font-size: 2rem; }      /* 32px desktop */
+    .text-responsive-3xl { font-size: 2.5rem; }    /* 40px desktop */
+    .text-responsive-4xl { font-size: 3rem; }      /* 48px desktop */
+  }
+
+  @media (min-width: 1280px) {
+    .text-responsive-xl { font-size: 1.625rem; }   /* 26px large desktop */
+    .text-responsive-2xl { font-size: 2.25rem; }   /* 36px large desktop */
+    .text-responsive-3xl { font-size: 2.75rem; }   /* 44px large desktop */
+    .text-responsive-4xl { font-size: 3.5rem; }    /* 56px large desktop */
+  }
+
+  /* ================== COMPONENT DENSITY UTILITIES ================== */
+  /* Stripe-style component density classes for consistent spacing */
+  
+  .density-compact {
+    --card-padding: var(--space-base);           /* 16px - compact cards */
+    --button-height-sm: 1.75rem;                /* 28px - tighter buttons */
+    --button-height-base: 2.25rem;              /* 36px - tighter buttons */
+  }
+  
+  .density-default {
+    --card-padding: var(--space-md);            /* 24px - default cards */
+    --button-height-sm: 2rem;                   /* 32px - standard buttons */
+    --button-height-base: 2.5rem;               /* 40px - standard buttons */
+  }
+  
+  .density-spacious {
+    --card-padding: var(--space-lg);            /* 32px - spacious cards */
+    --button-height-sm: 2.25rem;                /* 36px - larger buttons */
+    --button-height-base: 2.75rem;              /* 44px - larger buttons */
   }
 
   /* ================== ACCESSIBILITY UTILITIES ================== */

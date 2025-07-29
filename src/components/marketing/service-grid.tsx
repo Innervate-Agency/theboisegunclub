@@ -9,43 +9,37 @@ const services = [
     icon: Search,
     title: "Find Local Experts",
     description: "Directory of gun shops, ranges, gunsmiths, and instructors across Treasure Valley",
-    borderColor: "border-l-scope-blue",
-    accentColor: "scope-blue"
+    borderColor: "border-l-scope-blue"
   },
   {
     icon: Calendar,
     title: "Unified Events",
     description: "Comprehensive calendar of competitions, training, and community gatherings",
-    borderColor: "border-l-brass-yellow",
-    accentColor: "brass-yellow"
+    borderColor: "border-l-brass-yellow"
   },
   {
     icon: ShoppingCart,
     title: "Service Marketplace",
     description: "Book range time, training sessions, and services from local businesses",
-    borderColor: "border-l-copper-orange",
-    accentColor: "copper-orange"
+    borderColor: "border-l-copper-orange"
   },
   {
     icon: Users,
     title: "Community Forum",
     description: "Connect and discuss with fellow enthusiasts across Treasure Valley",
-    borderColor: "border-l-rifling-green",
-    accentColor: "rifling-green"
+    borderColor: "border-l-rifling-green"
   },
   {
     icon: Info,
     title: "Content Engine",
     description: "Educational resources, news, and safety information for the community",
-    borderColor: "border-l-walnut-stock",
-    accentColor: "walnut-stock"
+    borderColor: "border-l-walnut-stock"
   },
   {
     icon: Building,
     title: "Brand & Apparel",
     description: "Official club merchandise and branded apparel for members",
-    borderColor: "border-l-case-hardened",
-    accentColor: "case-hardened"
+    borderColor: "border-l-case-hardened"
   }
 ]
 
@@ -73,12 +67,12 @@ export function ServiceGrid() {
             >
               <div className="flex flex-col items-start text-left h-full">
                 {/* Icon with subtle background and proper spacing */}
-                <div className={`mb-4 p-3 rounded-lg bg-range-white border border-case-hardened/10 transition-stripe-fast group-hover:bg-${service.accentColor}/5 group-hover:border-${service.accentColor}/20`}>
-                  <service.icon className={`h-6 w-6 text-blued-steel transition-stripe-fast group-hover:text-${service.accentColor}`} />
+                <div className="mb-4 p-3 rounded-lg bg-range-white border border-case-hardened/10 transition-stripe-fast group-hover:bg-copper-orange/5 group-hover:border-copper-orange/20">
+                  <service.icon className="h-6 w-6 text-blued-steel transition-stripe-fast group-hover:text-copper-orange" />
                 </div>
                 
                 {/* Title with proper hierarchy and hover color */}
-                <h3 className={`font-noto-sans text-lg font-semibold text-blued-steel mb-3 leading-tight transition-stripe-fast group-hover:text-${service.accentColor}`}>
+                <h3 className="font-noto-sans text-lg font-semibold text-blued-steel mb-3 leading-tight transition-stripe-fast group-hover:text-copper-orange">
                   {service.title}
                 </h3>
                 

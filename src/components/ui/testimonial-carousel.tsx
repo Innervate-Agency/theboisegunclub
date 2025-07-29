@@ -11,7 +11,7 @@ const testimonialCarouselVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-white",
+        default: "bg-card",
         warm: "bg-gradient-hero-warm",
         branded: "bg-gradient-card-warm"
       }
@@ -93,12 +93,12 @@ export function TestimonialCarousel({
         {(title || subtitle) && (
           <div className="text-center mb-12">
             {subtitle && (
-              <p className="text-sm font-rajdhani font-semibold text-copper-orange mb-2 tracking-wide uppercase">
+              <p className="text-[var(--text-sm)] font-rajdhani font-semibold text-copper-orange mb-2 tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
             {title && (
-              <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black">
+              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-gunmetal-black">
                 {title}
               </h2>
             )}
@@ -107,7 +107,7 @@ export function TestimonialCarousel({
         
         {/* Testimonial Card */}
         <div className="relative">
-          <div className="bg-white rounded-xl border border-gray-200 p-8 md:p-12 shadow-sm hover:shadow-md transition-shadow duration-200">
+          <div className="bg-card text-card-foreground rounded-xl p-8 md:p-12 shadow-sm hover:shadow-md transition-shadow duration-200">
             {/* Quote Icon */}
             <div className="absolute -top-4 left-8">
               <div className="bg-brass-yellow rounded-full p-3 shadow-md">
@@ -125,7 +125,7 @@ export function TestimonialCarousel({
                       "icon-sm",
                       i < currentTestimonial.rating! 
                         ? "text-brass-yellow fill-brass-yellow" 
-                        : "text-gray-300"
+                        : "text-muted-foreground"
                     )}
                   />
                 ))}
@@ -134,7 +134,7 @@ export function TestimonialCarousel({
             
             {/* Content */}
             <blockquote className="text-center mb-8">
-              <p className="text-lg md:text-xl text-gunmetal-black font-noto-sans leading-relaxed italic">
+              <p className="text-responsive-lg md:text-responsive-xl text-gunmetal-black font-noto-sans leading-relaxed italic">
                 "{currentTestimonial.content}"
               </p>
             </blockquote>
@@ -142,7 +142,7 @@ export function TestimonialCarousel({
             {/* Author */}
             <div className="flex items-center justify-center gap-4">
               {currentTestimonial.avatar && (
-                <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden">
+                <div className="w-12 h-12 rounded-full bg-muted overflow-hidden">
                   <img 
                     src={currentTestimonial.avatar} 
                     alt={currentTestimonial.name}
@@ -154,7 +154,7 @@ export function TestimonialCarousel({
                 <div className="font-rajdhani font-bold text-gunmetal-black">
                   {currentTestimonial.name}
                 </div>
-                <div className="text-sm text-case-hardened font-noto-sans">
+                <div className="text-[var(--text-sm)] text-case-hardened font-noto-sans">
                   {currentTestimonial.role}
                   {currentTestimonial.company && (
                     <span> • {currentTestimonial.company}</span>
@@ -168,18 +168,18 @@ export function TestimonialCarousel({
           {testimonials.length > 1 && (
             <>
               <Button
-                variant="outline"
+                variant="secondary"
                 size="icon"
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white border-gray-200 hover:bg-brass-yellow hover:border-brass-yellow shadow-sm"
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-card hover:bg-brass-yellow shadow-sm"
                 onClick={goToPrevious}
               >
                 <ChevronLeft className="icon-sm" />
               </Button>
               
               <Button
-                variant="outline"
+                variant="secondary"
                 size="icon"
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white border-gray-200 hover:bg-brass-yellow hover:border-brass-yellow shadow-sm"
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-card hover:bg-brass-yellow shadow-sm"
                 onClick={goToNext}
               >
                 <ChevronRight className="icon-sm" />
@@ -198,7 +198,7 @@ export function TestimonialCarousel({
                   "w-2 h-2 rounded-full transition-all duration-200",
                   index === currentIndex 
                     ? "bg-brass-yellow w-8" 
-                    : "bg-gray-300 hover:bg-gray-400"
+                    : "bg-muted hover:bg-muted/80"
                 )}
                 onClick={() => goToSlide(index)}
               />

@@ -138,6 +138,165 @@ export const Link: Story = {
   },
 };
 
+export const Flat: Story = {
+  args: {
+    variant: 'flat',
+    children: 'Flat Button',
+  },
+};
+
+// ================== STRIPE-STYLE HIERARCHY ==================
+
+export const StripeHierarchy: Story = {
+  render: () => (
+    <div className="space-y-12 p-12 max-w-6xl bg-range-white min-h-screen">
+      {/* Header */}
+      <div className="text-center space-y-4">
+        <h1 className="text-3xl font-rajdhani font-bold text-gunmetal-black">
+          Stripe-Style Button Hierarchy
+        </h1>
+        <p className="text-case-hardened max-w-2xl mx-auto">
+          Proper button usage patterns following Stripe's design principles: heavy shadows for page buttons, flat styles for container buttons.
+        </p>
+      </div>
+
+      {/* Page-Level Buttons (Outside Containers) */}
+      <div className="space-y-6">
+        <h2 className="text-xl font-rajdhani font-semibold text-blued-steel">
+          🌟 Page-Level Buttons (Outside Containers)
+        </h2>
+        <p className="text-sm text-case-hardened">Heavy shadows, no borders - these grab attention on the page</p>
+        <div className="flex gap-4 flex-wrap">
+          <Button variant="primary" size="lg">
+            <Plus className="mr-2 h-4 w-4" />
+            Create Account
+          </Button>
+          <Button variant="default">
+            Browse Training
+          </Button>
+          <Button variant="secondary">
+            <Download className="mr-2 h-4 w-4" />
+            Download Guide
+          </Button>
+        </div>
+      </div>
+
+      {/* Card-Level Buttons (Inside Cards) */}
+      <div className="space-y-6">
+        <h2 className="text-xl font-rajdhani font-semibold text-blued-steel">
+          📋 Card-Level Buttons (Inside Cards/Forms)
+        </h2>
+        <p className="text-sm text-case-hardened">Flat style, no shadows - clean and doesn't compete with card shadows</p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Training Card */}
+          <div className="bg-card p-6 rounded-lg shadow-md border border-border">
+            <h3 className="font-rajdhani font-bold text-lg text-card-foreground mb-2">
+              Safety Training Course
+            </h3>
+            <p className="text-muted-foreground mb-4 text-sm">
+              Comprehensive firearms safety course for all skill levels. Learn fundamentals and best practices.
+            </p>
+            <div className="flex gap-3">
+              <Button variant="flat" size="sm">
+                Enroll Now
+              </Button>
+              <Button variant="ghost" size="sm">
+                Learn More
+              </Button>
+            </div>
+          </div>
+
+          {/* Membership Card */}
+          <div className="bg-card p-6 rounded-lg shadow-md border border-border">
+            <h3 className="font-rajdhani font-bold text-lg text-card-foreground mb-2">
+              Premium Membership
+            </h3>
+            <p className="text-muted-foreground mb-4 text-sm">
+              Access to all facilities, training programs, and exclusive member events.
+            </p>
+            <div className="flex gap-3">
+              <Button variant="flat" size="sm">
+                <Check className="mr-2 h-4 w-4" />
+                Join Today
+              </Button>
+              <Button variant="link" size="sm">
+                Compare Plans
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Form Buttons */}
+      <div className="space-y-6">
+        <h2 className="text-xl font-rajdhani font-semibold text-blued-steel">
+          📝 Form Buttons (Inside Forms)
+        </h2>
+        <p className="text-sm text-case-hardened">Flat style for form actions - consistent with card patterns</p>
+        
+        <div className="bg-card p-6 rounded-lg shadow-md border border-border max-w-md">
+          <h3 className="font-rajdhani font-bold text-lg text-card-foreground mb-4">
+            Contact Information
+          </h3>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-card-foreground mb-1">
+                Full Name
+              </label>
+              <input 
+                type="text" 
+                className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-card-foreground mb-1">
+                Email Address
+              </label>
+              <input 
+                type="email" 
+                className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div className="flex gap-3 pt-2">
+              <Button variant="flat" size="sm" className="flex-1">
+                Submit
+              </Button>
+              <Button variant="ghost" size="sm">
+                Cancel
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Special Accent Buttons */}
+      <div className="space-y-6">
+        <h2 className="text-xl font-rajdhani font-semibold text-blued-steel">
+          ⚡ Special Accent Buttons (Borders for Emphasis)
+        </h2>
+        <p className="text-sm text-case-hardened">Borders only for special occasions - warnings, confirmations, key actions</p>
+        <div className="flex gap-4 flex-wrap">
+          <Button variant="accent">
+            <ArrowRight className="mr-2 h-4 w-4" />
+            Get Started
+          </Button>
+          <Button variant="success">
+            <Check className="mr-2 h-4 w-4" />
+            Approve Application
+          </Button>
+          <Button variant="destructive">
+            <X className="mr-2 h-4 w-4" />
+            Reject Application
+          </Button>
+        </div>
+      </div>
+    </div>
+  ),
+};
+
 // ================== PROFESSIONAL SHOWCASE ==================
 
 export const CleanShowcase: Story = {
