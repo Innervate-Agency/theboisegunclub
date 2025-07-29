@@ -4,13 +4,13 @@ import { cn } from "@/lib/utils"
 
 const inputVariants = cva(
   // Foundation classes inspired by Stripe's sophisticated input design
-  "flex w-full min-w-0 rounded-md border bg-transparent text-base transition-stripe-fast outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-case-hardened selection:bg-brass-yellow selection:text-gunmetal-black font-noto-sans",
+  "flex w-full min-w-0 rounded-md border bg-transparent text-base transition-stripe-fast outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground selection:bg-brass-yellow selection:text-primary font-noto-sans",
   {
     variants: {
       variant: {
-        default: "bg-range-white border-case-hardened/30 text-blued-steel shadow-flat hover:border-case-hardened/50 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
-        filled: "bg-shooting-bench border-case-hardened/20 text-blued-steel shadow-flat hover:bg-range-white hover:border-case-hardened/40 focus-visible:bg-range-white focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
-        ghost: "bg-transparent border-transparent text-blued-steel hover:bg-shooting-bench/50 focus-visible:bg-shooting-bench/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
+        default: "bg-background border-border text-foreground shadow-flat hover:border-border/80 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
+        filled: "bg-muted border-border/60 text-foreground shadow-flat hover:bg-background hover:border-border/80 focus-visible:bg-background focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
+        ghost: "bg-transparent border-transparent text-foreground hover:bg-muted/50 focus-visible:bg-muted/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
         glass: "bg-card/20 backdrop-blur-sm border-border/30 text-card-foreground shadow-glass hover:border-border/50 hover:bg-card/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20 mica-glass"
       },
       size: {
@@ -81,7 +81,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
         )}
         {children}
         {description && !error && (
-          <p className="text-xs text-case-hardened leading-relaxed">
+          <p className="text-xs text-muted-foreground leading-relaxed">
             {description}
           </p>
         )}

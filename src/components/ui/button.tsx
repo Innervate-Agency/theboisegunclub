@@ -48,16 +48,16 @@ const buttonVariants = cva(
         glass: "mica-overlay text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-0.5 focus-visible:ring-brass-yellow/50 hover:bg-white/25 transition-all duration-200",
         
         // Solid variants - fun, colorful, no shadows, with interactive effects
-        "solid-accent": "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange focus-visible:ring-brass-yellow/50 border-0 transition-all duration-200 stripe-arrow",
+        "solid-accent": "bg-brass-yellow text-primary hover:bg-copper-orange focus-visible:ring-brass-yellow/50 border-0 transition-all duration-200 stripe-arrow",
         "solid-success": "bg-rifling-green text-white hover:bg-bore-sight-green focus-visible:ring-rifling-green/50 border-0 transition-all duration-200 stripe-arrow",
         "solid-destructive": "bg-copper-orange text-white hover:bg-recoil-pad focus-visible:ring-copper-orange/50 border-0 transition-all duration-200 stripe-arrow",
-        "solid-primary": "bg-gunmetal-black text-white hover:bg-night-sight focus-visible:ring-gunmetal-black/50 border-0 transition-all duration-200 stripe-arrow",
+        "solid-primary": "bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-primary/50 border-0 transition-all duration-200 stripe-arrow",
         
         // Ghost: Minimal with subtle hover (theme-aware)
         ghost: "text-muted-foreground hover:bg-muted hover:shadow-xs focus-visible:ring-copper-orange border-0",
         
         // Flat: No shadows, perfect for inside cards/forms (Stripe-like design system)
-        flat: "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange focus-visible:ring-brass-yellow/50 transition-colors duration-150",
+        flat: "bg-brass-yellow text-primary hover:bg-copper-orange focus-visible:ring-brass-yellow/50 transition-colors duration-150",
         
         // Link: Simple text, no shadow
         link: "text-copper-orange hover:text-recoil-pad underline-offset-4 hover:underline focus-visible:ring-copper-orange border-0"

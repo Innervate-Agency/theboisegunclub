@@ -154,7 +154,7 @@ export function TestimonialCarousel({
                 <div className="font-rajdhani font-bold text-foreground">
                   {currentTestimonial.name}
                 </div>
-                <div className="text-[var(--text-sm)] text-case-hardened font-noto-sans">
+                <div className="text-[var(--text-sm)] text-muted-foreground font-noto-sans">
                   {currentTestimonial.role}
                   {currentTestimonial.company && (
                     <span> • {currentTestimonial.company}</span>

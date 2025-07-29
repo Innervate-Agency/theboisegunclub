@@ -48,7 +48,7 @@ export function CalloutCard({
               {title}
             </h3>
             {description && (
-              <p className="text-[var(--text-sm)] text-case-hardened font-noto-sans leading-relaxed">
+              <p className="text-[var(--text-sm)] text-muted-foreground font-noto-sans leading-relaxed">
                 {description}
               </p>
             )}
@@ -99,7 +99,7 @@ export function ImportantCallout({
               {title}
             </h3>
             {description && (
-              <p className="text-[var(--text-sm)] text-case-hardened font-noto-sans leading-relaxed">
+              <p className="text-[var(--text-sm)] text-muted-foreground font-noto-sans leading-relaxed">
                 {description}
               </p>
             )}
@@ -141,7 +141,7 @@ export function SubtleCallout({
             {title}
           </h3>
           {description && (
-            <p className="text-[var(--text-sm)] text-case-hardened font-noto-sans leading-relaxed">
+            <p className="text-[var(--text-sm)] text-muted-foreground font-noto-sans leading-relaxed">
               {description}
             </p>
           )}

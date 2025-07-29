@@ -64,7 +64,7 @@ export default function StatCard({
       case "down":
         return "text-safety-red"
       default:
-        return "text-case-hardened"
+        return "text-muted-foreground"
     }
   }
 
@@ -101,12 +101,12 @@ export default function StatCard({
             )}
           </div>
           
-          <p className="text-sm font-noto-sans text-case-hardened uppercase tracking-wide">
+          <p className="text-sm font-noto-sans text-muted-foreground uppercase tracking-wide">
             {label}
           </p>
           
           {description && (
-            <p className="text-xs text-case-hardened/80 mt-2">
+            <p className="text-xs text-muted-foreground/80 mt-2">
               {description}
             </p>
           )}

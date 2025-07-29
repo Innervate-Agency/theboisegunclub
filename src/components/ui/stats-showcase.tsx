@@ -70,7 +70,7 @@ export function StatsShowcase({
               </h2>
             )}
             {subtitle && (
-              <p className="text-[var(--text-lg)] text-case-hardened font-noto-sans">
+              <p className="text-[var(--text-lg)] text-muted-foreground font-noto-sans">
                 {subtitle}
               </p>
             )}
@@ -108,7 +108,7 @@ export function StatsShowcase({
                           "font-medium",
                           stat.change.trend === 'up' && "text-rifling-green",
                           stat.change.trend === 'down' && "text-copper-orange",
-                          stat.change.trend === 'neutral' && "text-case-hardened"
+                          stat.change.trend === 'neutral' && "text-muted-foreground"
                         )}>
                           {stat.change.value}
                         </span>
