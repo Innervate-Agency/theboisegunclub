@@ -18,7 +18,7 @@ const contactFormVariants = cva(
     variants: {
       variant: {
         default: "bg-card border border-border rounded-lg shadow-sm",
-        glass: "bg-card/80 backdrop-blur-xl border border-border/20 rounded-lg shadow-lg",
+        glass: "mica-card border-border/20 rounded-lg shadow-lg",
         minimal: "bg-transparent border-0 shadow-none"
       }
     },

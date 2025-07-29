@@ -98,7 +98,7 @@ export function TestimonialCarousel({
               </p>
             )}
             {title && (
-              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-gunmetal-black">
+              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-foreground">
                 {title}
               </h2>
             )}
@@ -111,7 +111,7 @@ export function TestimonialCarousel({
             {/* Quote Icon */}
             <div className="absolute -top-4 left-8">
               <div className="bg-brass-yellow rounded-full p-3 shadow-md">
-                <Quote className="icon-md text-gunmetal-black" />
+                <Quote className="icon-md text-foreground" />
               </div>
             </div>
             
@@ -134,7 +134,7 @@ export function TestimonialCarousel({
             
             {/* Content */}
             <blockquote className="text-center mb-8">
-              <p className="text-responsive-lg md:text-responsive-xl text-gunmetal-black font-noto-sans leading-relaxed italic">
+              <p className="text-responsive-lg md:text-responsive-xl text-foreground font-noto-sans leading-relaxed italic">
                 "{currentTestimonial.content}"
               </p>
             </blockquote>
@@ -151,7 +151,7 @@ export function TestimonialCarousel({
                 </div>
               )}
               <div className="text-center">
-                <div className="font-rajdhani font-bold text-gunmetal-black">
+                <div className="font-rajdhani font-bold text-foreground">
                   {currentTestimonial.name}
                 </div>
                 <div className="text-[var(--text-sm)] text-case-hardened font-noto-sans">

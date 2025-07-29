@@ -10,7 +10,7 @@ const navigationFusionVariants = cva(
   {
     variants: {
       variant: {
-        glass: "bg-card/80 backdrop-blur-md border border-border/20 shadow-lg",
+        glass: "mica-card border-border/20 shadow-lg",
         solid: "bg-card border border-border shadow-sm",
         minimal: "bg-transparent"
       },

@@ -14,7 +14,7 @@ const galleryGridVariants = cva(
       variant: {
         default: "bg-card",
         warm: "bg-gradient-hero-warm",
-        glass: "bg-card/80 backdrop-blur-sm"
+        glass: "mica-card"
       }
     },
     defaultVariants: {
@@ -102,7 +102,7 @@ export function GalleryGrid({
               </p>
             )}
             {title && (
-              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-gunmetal-black mb-4">
+              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-foreground mb-4">
                 {title}
               </h2>
             )}

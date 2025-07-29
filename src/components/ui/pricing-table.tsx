@@ -16,7 +16,7 @@ const pricingCardVariants = cva(
         default: "bg-card border-border shadow-sm hover:shadow-md",
         compact: "bg-card border-border shadow-sm",
         detailed: "bg-card border-border shadow-lg",
-        fusion: "bg-gradient-to-br from-card via-scope-blue/5 to-copper-orange/5 border border-scope-blue/20 shadow-lg backdrop-blur-sm"
+        fusion: "mica-card-premium border-scope-blue/30 shadow-lg"
       },
       popular: {
         true: "border-scope-blue shadow-lg scale-105 z-10",
@@ -128,7 +128,7 @@ export function PricingCard({
             </div>
           </div>
           
-          <CardTitle className="text-xl font-rajdhani font-bold text-gunmetal-black">
+          <CardTitle className="text-xl font-rajdhani font-bold text-foreground">
             {plan.name}
           </CardTitle>
           
@@ -138,7 +138,7 @@ export function PricingCard({
           
           <div className="mt-4">
             <div className="flex items-baseline justify-center gap-1">
-              <span className="text-3xl font-rajdhani font-bold text-gunmetal-black">
+              <span className="text-3xl font-rajdhani font-bold text-foreground">
                 ${monthlyPrice.toFixed(0)}
               </span>
               <span className="text-sm text-case-hardened">/month</span>
@@ -345,9 +345,9 @@ export function PricingFusion({
   const [isAnnual, setIsAnnual] = React.useState(false)
 
   return (
-    <div className="w-full space-y-8 p-8 bg-gradient-to-br from-brass-yellow/5 via-white to-copper-orange/5 rounded-xl border border-brass-yellow/20">
+    <div className="w-full space-y-8 p-8 bg-solid-brand-warm rounded-xl border border-brass-yellow/20 hover-gradient-warm">
       <div className="text-center space-y-4">
-        <h2 className="text-3xl font-rajdhani font-bold text-gunmetal-black">
+        <h2 className="text-3xl font-rajdhani font-bold text-foreground">
           Choose Your Membership
         </h2>
         <p className="text-case-hardened max-w-2xl mx-auto">
@@ -358,7 +358,7 @@ export function PricingFusion({
       {/* Annual toggle */}
       {showAnnualDiscount && (
         <div className="flex justify-center">
-          <div className="flex items-center gap-4 p-1 bg-white/80 backdrop-blur-sm rounded-lg border border-brass-yellow/20">
+          <div className="flex items-center gap-4 p-1 mica-card rounded-lg border border-brass-yellow/20">
             <button
               className={cn(
                 "px-6 py-3 rounded-md text-sm font-medium transition-all duration-150",
@@ -404,7 +404,7 @@ export function PricingFusion({
 
       {/* Feature comparison with fusion styling */}
       {showFeatureComparison && (
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl border border-brass-yellow/20 p-6 overflow-x-auto">
+        <div className="mica-card rounded-xl border border-brass-yellow/20 p-6 overflow-x-auto">
           <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-6 text-center">
             Feature Comparison
           </h3>

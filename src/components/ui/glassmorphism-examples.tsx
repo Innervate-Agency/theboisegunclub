@@ -1,0 +1,262 @@
+'use client'
+
+import * as React from 'react'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { cn } from "@/lib/utils"
+import { ChevronDown, Settings, User, LogOut, Bell, Search } from 'lucide-react'
+
+interface GlassmorphismExamplesProps {
+  className?: string
+}
+
+export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps) {
+  const [showDropdown, setShowDropdown] = React.useState(false)
+  const [showModal, setShowModal] = React.useState(false)
+  const [showToast, setShowToast] = React.useState(false)
+
+  return (
+    <div className={cn("w-full max-w-6xl mx-auto p-8", className)}>
+      
+      {/* Hero Section with Background for Glass Effects */}
+      <div 
+        className="relative p-12 rounded-2xl overflow-hidden mb-12"
+        style={{
+          background: `
+            url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F2CB05' fill-opacity='0.15'%3E%3Cpath d='M20 20m-8 0a8,8 0 1,1 16,0a8,8 0 1,1 -16,0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+            url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F28705' fill-opacity='0.08'%3E%3Cpath d='M40 40m-16 0a16,16 0 1,1 32,0a16,16 0 1,1 -32,0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+            radial-gradient(circle at 25% 25%, rgba(242, 203, 5, 0.20) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(242, 135, 5, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 50% 10%, rgba(91, 155, 213, 0.10) 0%, transparent 70%),
+            linear-gradient(135deg, var(--color-range-white) 0%, var(--color-shooting-bench) 50%, var(--color-case-hardened) 100%)
+          `
+        }}
+      >
+        <div className="text-center space-y-6">
+          <h1 className="text-4xl font-rajdhani font-bold text-gunmetal-black">
+            Real-World Glassmorphism Examples
+          </h1>
+          <p className="text-lg text-case-hardened font-noto-sans max-w-3xl mx-auto">
+            See how Windows 11 Mica effects work in practical UI components. 
+            Glass only works when there's content behind it to blur.
+          </p>
+          
+          {/* Interactive Demo Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 pt-4">
+            <div className="relative">
+              <Button 
+                onClick={() => setShowDropdown(!showDropdown)}
+                className="gap-2"
+              >
+                User Menu <ChevronDown className="w-4 h-4" />
+              </Button>
+              
+              {/* Dropdown with Mica Glass */}
+              {showDropdown && (
+                <div className="absolute top-full mt-2 right-0 w-64 mica-dropdown rounded-lg shadow-lg border border-brass-yellow/20 z-50">
+                  <div className="p-4 space-y-3">
+                    <div className="flex items-center gap-3 pb-2 border-b border-border">
+                      <div className="w-8 h-8 bg-brass-yellow/20 rounded-full flex items-center justify-center">
+                        <User className="w-4 h-4 text-brass-yellow" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-foreground">John Doe</p>
+                        <p className="text-xs text-muted-foreground">Premium Member</p>
+                      </div>
+                    </div>
+                    
+                    <button className="w-full flex items-center gap-3 p-2 rounded-md hover:bg-white/20 text-left">
+                      <Settings className="w-4 h-4 text-muted-foreground" />
+                      <span className="text-sm">Account Settings</span>
+                    </button>
+                    
+                    <button className="w-full flex items-center gap-3 p-2 rounded-md hover:bg-white/20 text-left">
+                      <Bell className="w-4 h-4 text-muted-foreground" />
+                      <span className="text-sm">Notifications</span>
+                    </button>
+                    
+                    <button className="w-full flex items-center gap-3 p-2 rounded-md hover:bg-white/20 text-left text-safety-red">
+                      <LogOut className="w-4 h-4" />
+                      <span className="text-sm">Sign Out</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            <Button 
+              onClick={() => setShowModal(true)}
+              variant="secondary"
+            >
+              Open Modal
+            </Button>
+            
+            <Button 
+              onClick={() => setShowToast(true)}
+              variant="secondary"
+            >
+              Show Toast
+            </Button>
+          </div>
+        </div>
+        
+        {/* Background Decorative Elements */}
+        <div className="absolute top-8 left-8 w-48 h-48 bg-brass-yellow/25 rounded-full blur-2xl" />
+        <div className="absolute bottom-8 right-8 w-32 h-32 bg-copper-orange/20 rounded-full blur-xl" />
+        <div className="absolute top-1/2 left-1/4 w-56 h-28 bg-scope-blue/15 rounded-full blur-2xl" />
+        <div className="absolute top-4 right-1/4 w-24 h-24 bg-rifling-green/15 rounded-full blur-xl" />
+        <div className="absolute bottom-16 left-1/3 w-36 h-36 bg-leonard-yellow/20 rounded-full blur-2xl" />
+        
+        {/* Additional Pattern Elements */}
+        <div className="absolute top-12 right-12 w-16 h-16 border-2 border-brass-yellow/30 rounded-lg rotate-45" />
+        <div className="absolute bottom-12 left-12 w-20 h-20 border-2 border-copper-orange/25 rounded-full" />
+        <div className="absolute top-1/3 right-1/3 w-12 h-12 bg-gradient-to-br from-brass-yellow/20 to-copper-orange/15 rounded-sm rotate-12" />
+      </div>
+
+      {/* Component Examples Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        {/* Search Bar with Glass */}
+        <div className="relative">
+          <div 
+            className="absolute inset-0 rounded-xl opacity-80"
+            style={{
+              background: `
+                url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F2CB05' fill-opacity='0.12'%3E%3Ccircle cx='15' cy='15' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                radial-gradient(circle at 30% 20%, rgba(242, 203, 5, 0.25) 0%, transparent 60%),
+                radial-gradient(circle at 70% 80%, rgba(242, 135, 5, 0.18) 0%, transparent 60%),
+                var(--gradient-mesh-warm)
+              `
+            }}
+          />
+          <div className="relative p-6 space-y-4">
+            <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black">
+              Glass Search Component
+            </h3>
+            
+            <div className="mica-overlay p-4 rounded-lg border border-white/20">
+              <div className="flex items-center gap-3">
+                <Search className="w-5 h-5 text-muted-foreground" />
+                <input 
+                  placeholder="Search firearms, ranges, events..."
+                  className="flex-1 bg-transparent border-none outline-none text-foreground placeholder:text-muted-foreground"
+                />
+                <Badge variant="outline" className="text-xs">⌘K</Badge>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Notification Cards */}
+        <div className="relative">
+          <div 
+            className="absolute inset-0 rounded-xl opacity-80"
+            style={{
+              background: `
+                url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235B9BD5' fill-opacity='0.10'%3E%3Cpath d='M12.5 12.5m-5 0a5,5 0 1,1 10,0a5,5 0 1,1 -10,0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                radial-gradient(circle at 20% 30%, rgba(91, 155, 213, 0.22) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(185, 155, 96, 0.18) 0%, transparent 50%),
+                var(--gradient-mesh-cool)
+              `
+            }}
+          />
+          <div className="relative p-6 space-y-4">
+            <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black">
+              Glass Notification Cards
+            </h3>
+            
+            <div className="space-y-3">
+              <div className="mica-toast p-4 rounded-lg border border-white/20">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-rifling-green rounded-full mt-2" />
+                  <div className="flex-1">
+                    <p className="font-medium text-foreground">Training Reminder</p>
+                    <p className="text-sm text-muted-foreground">CCW class starts in 30 minutes</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mica-toast p-4 rounded-lg border border-white/20">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-brass-yellow rounded-full mt-2" />
+                  <div className="flex-1">
+                    <p className="font-medium text-foreground">New Event Posted</p>
+                    <p className="text-sm text-muted-foreground">Monthly competition signup open</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Modal Overlay */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Enhanced Backdrop with Pattern */}
+          <div 
+            className="absolute inset-0 backdrop-blur-sm"
+            style={{
+              background: `
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M50 50m-20 0a20,20 0 1,1 40,0a20,20 0 1,1 -40,0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                radial-gradient(circle at 30% 20%, rgba(0, 0, 0, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(0, 0, 0, 0.3) 0%, transparent 50%),
+                rgba(0, 0, 0, 0.25)
+              `
+            }}
+            onClick={() => setShowModal(false)}
+          />
+          
+          {/* Modal */}
+          <Card className="mica-modal relative z-10 w-full max-w-md shadow-2xl">
+            <CardContent className="p-6 space-y-4">
+              <h3 className="text-xl font-rajdhani font-bold text-foreground">
+                Glass Modal Example
+              </h3>
+              <p className="text-muted-foreground">
+                This modal uses the mica-modal class for strong backdrop blur while 
+                maintaining visual connection to the background content.
+              </p>
+              <div className="flex gap-3 pt-4">
+                <Button size="sm" className="flex-1">Confirm</Button>
+                <Button 
+                  size="sm" 
+                  variant="secondary"
+                  onClick={() => setShowModal(false)}
+                >
+                  Cancel
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      )}
+
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="fixed bottom-6 right-6 z-50">
+          <div className="mica-toast p-4 rounded-lg shadow-lg border border-brass-yellow/20 min-w-80">
+            <div className="flex items-start gap-3">
+              <div className="w-6 h-6 bg-rifling-green/20 rounded-full flex items-center justify-center">
+                <div className="w-2 h-2 bg-rifling-green rounded-full" />
+              </div>
+              <div className="flex-1">
+                <p className="font-medium text-foreground">Glass Effect Active!</p>
+                <p className="text-sm text-muted-foreground">
+                  This toast notification demonstrates the mica-toast glass effect.
+                </p>
+              </div>
+              <button 
+                onClick={() => setShowToast(false)}
+                className="text-muted-foreground hover:text-foreground"
+              >
+                ×
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}

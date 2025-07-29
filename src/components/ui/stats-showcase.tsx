@@ -12,7 +12,7 @@ const statsShowcaseVariants = cva(
       variant: {
         default: "bg-card",
         branded: "bg-gradient-hero-warm",
-        glass: "bg-card/80 backdrop-blur-sm"
+        glass: "mica-card"
       },
       spacing: {
         comfortable: "py-16",
@@ -65,7 +65,7 @@ export function StatsShowcase({
         {(title || subtitle) && (
           <div className="text-center mb-12">
             {title && (
-              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-gunmetal-black mb-3">
+              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-foreground mb-3">
                 {title}
               </h2>
             )}

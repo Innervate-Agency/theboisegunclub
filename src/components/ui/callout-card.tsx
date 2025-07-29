@@ -10,10 +10,11 @@ const calloutCardVariants = cva(
     variants: {
       variant: {
         default: "bg-card border-brass-yellow/20 hover:shadow-md hover:border-brass-yellow/30",
-        subtle: "bg-gradient-card-warm border-border hover:shadow-md",
-        animated: "bg-gradient-to-r from-brass-yellow/5 via-card to-copper-orange/5 border-brass-yellow/30 hover:shadow-md hover:from-brass-yellow/8 hover:to-copper-orange/8",
-        important: "bg-gradient-to-br from-safety-red/5 via-card to-muzzle-flash/5 border-safety-red/30 shadow-md",
-        info: "bg-gradient-to-br from-scope-blue/5 via-card to-trigger-blue/5 border-scope-blue/30"
+        subtle: "bg-solid-brand-warm border-border hover:shadow-md hover-gradient-warm",
+        animated: "bg-solid-brand-accent border-brass-yellow/30 hover:shadow-md hover-gradient-warm",
+        important: "bg-card border-safety-red/30 shadow-md hover:border-safety-red/40",
+        info: "bg-card border-scope-blue/30 hover:shadow-md hover-gradient-cool",
+        glass: "mica-card border-brass-yellow/20 hover:shadow-lg"
       }
     },
     defaultVariants: {
@@ -40,26 +41,25 @@ export function CalloutCard({
 }: CalloutCardProps) {
   return (
     <div className={cn(calloutCardVariants({ variant }), className)} {...props}>
-      {/* Subtle gradient border accent */}
-      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-brass-yellow/10 via-transparent to-copper-orange/10 opacity-0 transition-opacity duration-200 hover:opacity-100 pointer-events-none" />
-      
       <div className="relative space-y-3">
         <div className="space-y-2">
-          <h3 className="text-[var(--text-lg)] font-rajdhani font-bold text-gunmetal-black leading-tight">
-            {title}
-          </h3>
-          {description && (
-            <p className="text-[var(--text-sm)] text-case-hardened font-noto-sans leading-relaxed">
-              {description}
-            </p>
+          <div>
+            <h3 className="text-[var(--text-lg)] font-rajdhani font-bold text-foreground leading-tight">
+              {title}
+            </h3>
+            {description && (
+              <p className="text-[var(--text-sm)] text-case-hardened font-noto-sans leading-relaxed">
+                {description}
+              </p>
+            )}
+          </div>
+          
+          {children && (
+            <div className="pt-2">
+              {children}
+            </div>
           )}
         </div>
-        
-        {children && (
-          <div className="pt-2">
-            {children}
-          </div>
-        )}
       </div>
     </div>
   )
@@ -95,7 +95,7 @@ export function ImportantCallout({
             </div>
           </div>
           <div className="flex-1 space-y-2">
-            <h3 className="text-[var(--text-lg)] font-rajdhani font-bold text-gunmetal-black leading-tight">
+            <h3 className="text-[var(--text-lg)] font-rajdhani font-bold text-foreground leading-tight">
               {title}
             </h3>
             {description && (
@@ -137,7 +137,7 @@ export function SubtleCallout({
     >
       <div className="space-y-3">
         <div className="space-y-2">
-          <h3 className="text-[var(--text-base)] font-rajdhani font-semibold text-gunmetal-black leading-tight">
+          <h3 className="text-[var(--text-base)] font-rajdhani font-semibold text-foreground leading-tight">
             {title}
           </h3>
           {description && (

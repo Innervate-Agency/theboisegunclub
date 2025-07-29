@@ -45,7 +45,7 @@ const buttonVariants = cva(
         destructive: "bg-safety-red/10 text-safety-red shadow-sm hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-safety-red/50 hover:bg-safety-red/20",
         
         // Glass: Windows 11 Mica-inspired glassmorphism (borderless for clean look)
-        glass: "bg-card/20 backdrop-blur-md text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-0.5 focus-visible:ring-brass-yellow/50 hover:bg-card/30 mica-glass",
+        glass: "mica-overlay text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-0.5 focus-visible:ring-brass-yellow/50 hover:bg-white/25 transition-all duration-200",
         
         // Solid variants - fun, colorful, no shadows, with interactive effects
         "solid-accent": "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange focus-visible:ring-brass-yellow/50 border-0 transition-all duration-200 stripe-arrow",

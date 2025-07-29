@@ -470,80 +470,228 @@
   .icon-bg-primary { background-color: var(--icon-primary); color: var(--color-gunmetal-black); }
   .icon-bg-secondary { background-color: var(--icon-secondary); color: var(--color-nickel-white); }
   
-  /* ================== WINDOWS 11 MICA OVERLAY UTILITIES ================== */
+  /* ================== THEME-AWARE TEXT COLOR UTILITIES ================== */
+  /* Use these instead of hardcoded colors for proper dark mode support */
+  .text-theme-primary { color: var(--foreground); }
+  .text-theme-secondary { color: var(--muted-foreground); }
+  .text-theme-accent { color: var(--accent-foreground); }
+  .text-theme-muted { color: var(--muted-foreground); }
+  
+  /* Theme-aware brand colors that work in both light and dark */
+  .text-brand-primary { color: var(--color-brass-yellow); }
+  .text-brand-secondary { color: var(--color-copper-orange); }
+  .text-brand-accent { color: var(--color-scope-blue); }
+  
+  /* Background theme utilities */
+  .bg-theme-card { background-color: var(--card); }
+  .bg-theme-primary { background-color: var(--primary); }
+  .bg-theme-secondary { background-color: var(--secondary); }
+  .bg-theme-muted { background-color: var(--muted); }
+  
+  /* ================== ENHANCED WINDOWS 11 MICA OVERLAY SYSTEM ================== */
   /* Apply mica glass effect to any overlay component */
   .mica-overlay {
-    background: var(--popover);
-    backdrop-filter: blur(var(--mica-blur-strength)) saturate(var(--mica-saturation)) brightness(var(--mica-brightness));
-    border: 1px solid var(--overlay-border-light);
+    background: rgba(255, 255, 255, 0.85);  /* Much more opaque like real Mica */
+    -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(105%);
+    backdrop-filter: blur(30px) saturate(200%) brightness(105%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     position: relative;
+    isolation: isolate;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
   }
   
   .dark .mica-overlay {
-    border-color: var(--overlay-border-dark);
+    background: rgba(47, 49, 53, 0.90);  /* Even more opaque in dark mode */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(35px) saturate(220%) brightness(90%);
+    backdrop-filter: blur(35px) saturate(220%) brightness(90%);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.20),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
   }
   
   /* Add subtle noise texture overlay */
   .mica-overlay::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: var(--mica-noise);
-    opacity: var(--mica-noise-opacity);
-    pointer-events: none;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 25% 30%, rgba(242, 203, 5, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 75% 70%, rgba(242, 135, 5, 0.03) 0%, transparent 40%);
     border-radius: inherit;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  .dark .mica-overlay::before {
+    background: 
+      radial-gradient(circle at 25% 30%, rgba(242, 203, 5, 0.06) 0%, transparent 40%),
+      radial-gradient(circle at 75% 70%, rgba(242, 135, 5, 0.04) 0%, transparent 40%);
   }
   
   /* Specific mica variants for different overlay types */
   .mica-popover {
     background: var(--popover);
-    backdrop-filter: blur(var(--mica-blur-strength)) saturate(var(--mica-saturation)) brightness(var(--mica-brightness));
+    -webkit-backdrop-filter: blur(16px) saturate(180%) brightness(105%);
+    backdrop-filter: blur(16px) saturate(180%) brightness(105%);
     border: 1px solid var(--overlay-border-light);
     position: relative;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--shadow-md);
+    isolation: isolate;
   }
   
   .mica-dropdown {
-    background: var(--popover);
-    backdrop-filter: blur(var(--mica-blur-strength)) saturate(var(--mica-saturation)) brightness(var(--mica-brightness));
-    border: 1px solid var(--overlay-border-light);
+    background: rgba(255, 255, 255, 0.88);  /* Very opaque like Windows 11 */
+    -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(103%);
+    backdrop-filter: blur(32px) saturate(200%) brightness(103%);
+    border: 1px solid rgba(255, 255, 255, 0.45);
     position: relative;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    isolation: isolate;
+  }
+  
+  .dark .mica-dropdown {
+    background: rgba(47, 49, 53, 0.92);  /* Almost opaque in dark mode */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    -webkit-backdrop-filter: blur(36px) saturate(220%) brightness(85%);
+    backdrop-filter: blur(36px) saturate(220%) brightness(85%);
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
   }
   
   .mica-modal {
-    background: var(--popover);
-    backdrop-filter: blur(var(--mica-blur-strength)) saturate(var(--mica-saturation)) brightness(var(--mica-brightness));
-    border: 1px solid var(--overlay-border-light);
+    background: rgba(255, 255, 255, 0.90);  /* Very opaque for proper Mica feel */
+    -webkit-backdrop-filter: blur(40px) saturate(220%) brightness(108%);
+    backdrop-filter: blur(40px) saturate(220%) brightness(108%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     position: relative;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+    box-shadow: 
+      0 16px 48px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    isolation: isolate;
+  }
+  
+  .dark .mica-modal {
+    background: rgba(47, 49, 53, 0.95);  /* Almost completely opaque */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(45px) saturate(240%) brightness(80%);
+    backdrop-filter: blur(45px) saturate(240%) brightness(80%);
+    box-shadow: 
+      0 16px 48px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
   }
   
   .mica-tooltip {
-    background: var(--popover);
-    backdrop-filter: blur(var(--mica-blur-strength)) saturate(var(--mica-saturation)) brightness(var(--mica-brightness));
-    border: 1px solid var(--overlay-border-light);
+    background: rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(14px) saturate(140%) brightness(102%);
+    backdrop-filter: blur(14px) saturate(140%) brightness(102%);
+    border: 1px solid rgba(255, 255, 255, 0.20);
     position: relative;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: 
+      0 2px 12px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    isolation: isolate;
+  }
+  
+  .dark .mica-tooltip {
+    background: rgba(0, 0, 0, 0.20);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    -webkit-backdrop-filter: blur(16px) saturate(160%) brightness(88%);
+    backdrop-filter: blur(16px) saturate(160%) brightness(88%);
+    box-shadow: 
+      0 2px 12px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
   
   .mica-toast {
-    background: var(--popover);
-    backdrop-filter: blur(var(--mica-blur-strength)) saturate(var(--mica-saturation)) brightness(var(--mica-brightness));
-    border: 1px solid var(--overlay-border-light);
+    background: rgba(255, 255, 255, 0.16);
+    -webkit-backdrop-filter: blur(20px) saturate(190%) brightness(106%);
+    backdrop-filter: blur(20px) saturate(190%) brightness(106%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
     position: relative;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    isolation: isolate;
   }
   
+  .dark .mica-toast {
+    background: rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    -webkit-backdrop-filter: blur(24px) saturate(200%) brightness(88%);
+    backdrop-filter: blur(24px) saturate(200%) brightness(88%);
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Dark mode adjustments for all mica components */
   .dark .mica-popover,
   .dark .mica-dropdown,
   .dark .mica-modal,
   .dark .mica-tooltip,
   .dark .mica-toast {
     border-color: var(--overlay-border-dark);
+    -webkit-backdrop-filter: blur(20px) saturate(200%) brightness(90%);
+    backdrop-filter: blur(20px) saturate(200%) brightness(90%);
+  }
+  
+  /* ================== ENHANCED MICA CARD VARIANTS ================== */
+  /* For cards that should have mica effect */
+  .mica-card {
+    background: rgba(255, 255, 255, 0.85);  /* Windows 11 Mica opacity */
+    -webkit-backdrop-filter: blur(28px) saturate(180%) brightness(102%);
+    backdrop-filter: blur(28px) saturate(180%) brightness(102%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    position: relative;
+    isolation: isolate;
+    box-shadow: 
+      0 4px 16px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  
+  .dark .mica-card {
+    background: rgba(75, 75, 75, 0.88);  /* More opaque dark cards */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(85%);
+    backdrop-filter: blur(32px) saturate(200%) brightness(85%);
+    box-shadow: 
+      0 4px 16px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  /* For premium mica cards with brand gradient */
+  .mica-card-premium {
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(16px) saturate(170%) brightness(105%);
+    backdrop-filter: blur(16px) saturate(170%) brightness(105%);
+    border: 1px solid rgba(242, 203, 5, 0.2);
+    position: relative;
+    isolation: isolate;
+  }
+  
+  .mica-card-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(242, 203, 5, 0.03) 0%, rgba(242, 135, 5, 0.02) 100%);
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  .dark .mica-card-premium {
+    background: rgba(75, 75, 75, 0.9);
+    border-color: rgba(242, 203, 5, 0.3);
+  }
+  
+  .dark .mica-card-premium::before {
+    background: linear-gradient(135deg, rgba(242, 203, 5, 0.08) 0%, rgba(242, 135, 5, 0.05) 100%);
   }
   
   .icon-bg-accent { background-color: var(--icon-accent); color: var(--color-nickel-white); }
@@ -688,7 +836,56 @@
   .bg-gradient-glass-cool { background: var(--gradient-glass-cool); }
   .bg-gradient-glass-neutral { background: var(--gradient-glass-neutral); }
   
-  /* Legacy Gradients (backwards compatibility) */
+  /* ================== ENHANCED GRADIENT SYSTEM - RESTRAINED & PROFESSIONAL ================== */
+  /* 
+   * TBGC GRADIENT PHILOSOPHY:
+   * 1. RESTRAINED: Subtle 2-8% opacity for sophistication, not visual chaos
+   * 2. CONTEXTUAL: Different uses for different purposes (hero, card, subtle)  
+   * 3. SOLID FALLBACKS: When in doubt, use solid colors instead
+   * 4. BRAND COHESION: Only use TBGC palette colors with consistent opacities
+   */
+
+  /* Hero Section Gradients - For major sections */
+  .bg-gradient-hero-warm { background: var(--gradient-hero-warm); }
+  .bg-gradient-hero-cool { background: var(--gradient-hero-cool); }
+  .bg-gradient-hero-premium { background: var(--gradient-hero-premium); }
+  
+  /* Ultra-Subtle Card Gradients - Very restrained for card backgrounds */
+  .bg-gradient-card-warm { background: var(--gradient-card-warm); }
+  .bg-gradient-card-cool { background: var(--gradient-card-cool); }
+  .bg-gradient-card-neutral { background: var(--gradient-card-neutral); }
+  
+  /* Brand Accent Gradients - For special UI elements only */
+  .bg-gradient-brand-warm { background: var(--gradient-brand-warm); }
+  .bg-gradient-brand-cool { background: var(--gradient-brand-cool); }
+  .bg-gradient-brand-mixed { background: var(--gradient-brand-mixed); }
+  
+  /* Premium Mesh Gradients - For hero sections and landing areas */
+  .bg-gradient-mesh-premium { background: var(--gradient-mesh-premium); }
+  .bg-gradient-mesh-elite { background: var(--gradient-mesh-elite); }
+  
+  /* SOLID COLOR ALTERNATIVES - Use these instead of gradients for clean look */
+  .bg-solid-brand-warm { background-color: var(--color-range-white); }
+  .bg-solid-brand-neutral { background-color: var(--color-shooting-bench); }
+  .bg-solid-brand-accent { background-color: rgba(242, 203, 5, 0.05); }
+  
+  /* Accent Line Gradients - For borders and dividers only */
+  .border-gradient-brand {
+    border-image: linear-gradient(90deg, var(--color-brass-yellow), var(--color-copper-orange)) 1;
+  }
+  
+  /* Subtle Hover Effects - Very restrained interactions */
+  .hover-gradient-warm:hover {
+    background: linear-gradient(135deg, rgba(242, 203, 5, 0.04) 0%, rgba(242, 135, 5, 0.03) 100%);
+    transition: background 250ms ease-out;
+  }
+  
+  .hover-gradient-cool:hover {
+    background: linear-gradient(135deg, rgba(81, 152, 205, 0.04) 0%, rgba(60, 129, 192, 0.03) 100%);
+    transition: background 250ms ease-out;
+  }
+  
+  /* Legacy Gradients (backwards compatibility - avoid using these) */
   .bg-gradient-primary { background: var(--gradient-primary); }
   .bg-gradient-premium { background: var(--gradient-premium); }
   .bg-gradient-elite { background: var(--gradient-elite); }

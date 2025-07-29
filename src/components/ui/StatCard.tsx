@@ -12,7 +12,7 @@ const statCardVariants = cva(
         default: "bg-shooting-bench border-case-hardened/20",
         premium: "bg-gradient-premium border-brass-yellow/30 mica-premium",
         elite: "bg-gradient-elite border-brass-yellow/40 mica-elite animate-shimmer",
-        glass: "backdrop-blur-sm bg-shooting-bench/20 border-brass-yellow/30"
+        glass: "mica-overlay border-brass-yellow/30"
       },
       size: {
         sm: "p-4",
@@ -90,7 +90,7 @@ export default function StatCard({
         
         <div className="space-y-1">
           <div className="flex items-center justify-between">
-            <h3 className="text-3xl font-rajdhani font-bold text-blued-steel">
+            <h3 className="text-3xl font-rajdhani font-bold text-foreground">
               {formatValue(value)}
             </h3>
             {trend && trendValue && (

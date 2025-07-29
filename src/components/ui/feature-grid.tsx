@@ -13,7 +13,7 @@ const featureGridVariants = cva(
       variant: {
         default: "bg-background",
         warm: "bg-gradient-hero-warm",
-        glass: "bg-background/80 backdrop-blur-sm"
+        glass: "mica-overlay"
       },
       spacing: {
         comfortable: "py-16",
@@ -34,7 +34,7 @@ const featureCardVariants = cva(
     variants: {
       cardVariant: {
         default: "border-border hover:border-scope-blue/30",
-        glass: "bg-card/90 backdrop-blur-sm border-border/30 hover:bg-card/95",
+        glass: "mica-card border-border/30 hover:shadow-lg transition-shadow duration-200",
         branded: "border-scope-blue/20 hover:border-scope-blue/40 hover:bg-scope-blue/5"
       }
     },

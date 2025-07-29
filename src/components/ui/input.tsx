@@ -74,7 +74,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
         {...props}
       >
         {label && (
-          <label className="text-sm font-medium text-blued-steel font-noto-sans">
+          <label className="text-sm font-medium text-foreground font-noto-sans">
             {label}
             {required && <span className="text-safety-red ml-1">*</span>}
           </label>

@@ -21,7 +21,7 @@ const cardVariants = cva(
         premium: "bg-card shadow-md hover:shadow-xl hover:-translate-y-1 ring-1 ring-brass-yellow/20 hover:ring-brass-yellow/40",
         
         // Glass: Modern glassmorphism - theme aware
-        glass: "bg-card/80 shadow-lg backdrop-blur-sm hover:bg-card/90 hover:shadow-xl",
+        glass: "mica-card shadow-lg hover:shadow-xl transition-shadow duration-200",
         
         // Outlined: Clean borders - theme aware
         outlined: "bg-card hover:shadow-sm ring-1 ring-border",

@@ -12,7 +12,7 @@ const badgeVariants = cva(
         default: "bg-muted text-card-foreground hover:bg-muted/80",
         premium: "bg-brass-yellow/10 text-brass-yellow hover:bg-brass-yellow/20 shadow-sm",
         elite: "bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20 shadow-md",
-        glass: "backdrop-blur-sm bg-card/80 text-card-foreground shadow-sm",
+        glass: "mica-overlay text-card-foreground shadow-sm",
         success: "bg-rifling-green/10 text-rifling-green hover:bg-rifling-green/20",
         warning: "bg-sight-gold/10 text-sight-gold hover:bg-sight-gold/20",
         error: "bg-safety-red/10 text-safety-red hover:bg-safety-red/20",
