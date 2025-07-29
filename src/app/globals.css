@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Tailwind v4 dark mode variant */
+/* Fix for Tailwind CSS v4 + next-themes dark mode integration */
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -46,17 +46,18 @@
   --color-ghost-ring: #C9D2EF;
   --color-woodland-camo: #3F6331;
   
-  /* ================== SEMANTIC COLORS - LIGHT THEME DEFAULT ================== */
-  --background: #f8f6f1;        /* range-white */
-  --foreground: #372103;        /* blued-steel */
-  --card: #FFFFFF;              /* nickel-white */
-  --card-foreground: #372103;   /* blued-steel */
-  --muted: #ede7de;             /* shooting-bench */
-  --muted-foreground: #693e21;  /* case-hardened */
-  --border: #693e21;            /* case-hardened */
-  --input: #FFFFFF;             /* nickel-white */
-  --ring: #F2CB05;              /* brass-yellow */
-  --radius: 0.25rem;
+  /* ================== SEMANTIC COLORS FOR THEME SYSTEM ================== */
+  /* Light Theme Semantic Colors */
+  --background: #f8f6f1;        /* range-white - warm site background */
+  --foreground: #372103;        /* blued-steel - dark text */
+  --card: #FFFFFF;              /* nickel-white - clean cards */
+  --card-foreground: #372103;   /* blued-steel - dark text on cards */
+  --muted: #ede7de;             /* shooting-bench - muted areas */
+  --muted-foreground: #693e21;  /* case-hardened - muted text */
+  --border: #693e21;            /* case-hardened - borders */
+  --input: #FFFFFF;             /* nickel-white - input backgrounds */
+  --ring: #F2CB05;              /* brass-yellow - focus rings */
+  --radius: 0.25rem;            /* 4px - consistent boxy radius */
 
   /* Semantic component colors */
   --primary: #372103;           /* blued-steel */
@@ -69,36 +70,373 @@
   --accent-foreground: #FFFFFF;
   
   /* Popover/Overlay colors */
-  --popover: rgba(248, 246, 241, 0.85);
-  --popover-foreground: #372103;
+  --popover: rgba(248, 246, 241, 0.85);    /* light mica background */
+  --popover-foreground: #372103;           /* blued-steel text */
+  
+  /* ================== ICON SYSTEM - LUCIDE REACT INTEGRATION ================== */
+  /* Icon sizing tokens for consistent scaling */
+  --icon-xs: 12px;
+  --icon-sm: 16px;
+  --icon-md: 20px;
+  --icon-lg: 24px;
+  --icon-xl: 32px;
+  --icon-2xl: 48px;
+  
+  /* Icon color variants using TBGC palette */
+  --icon-primary: var(--color-brass-yellow);
+  --icon-secondary: var(--color-copper-orange);
+  --icon-accent: var(--color-scope-blue);
+  --icon-muted: var(--color-case-hardened);
+  --icon-success: var(--color-rifling-green);
+  --icon-warning: var(--color-recoil-pad);
+  --icon-danger: var(--color-safety-red);
+  --icon-info: var(--color-trigger-blue);
+  
+  /* ================== ANIMATION & TRANSITION SYSTEM ================== */
+  --timing-fast: 150ms;
+  --timing-normal: 250ms;
+  --timing-slow: 350ms;
+  --ease-stripe: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* ================== COMPLETE SPACING SYSTEM ================== */
+  --space-micro: 0.125rem;    /* 2px - fine details */
+  --space-tiny: 0.25rem;      /* 4px - minimal spacing */
+  --space-xs: 0.5rem;         /* 8px - small gaps */
+  --space-sm: 0.75rem;        /* 12px - compact elements */
+  --space-base: 1rem;         /* 16px - standard spacing */
+  --space-md: 1.5rem;         /* 24px - comfortable spacing */
+  --space-lg: 2rem;           /* 32px - section spacing */
+  --space-xl: 3rem;           /* 48px - large sections */
+  --space-2xl: 4rem;          /* 64px - major sections */
+  --space-3xl: 6rem;          /* 96px - hero sections */
+  --space-4xl: 8rem;          /* 128px - page sections */
+  
+  /* ================== COMPREHENSIVE BORDER RADIUS SYSTEM ================== */
+  --radius-none: 0;
+  --radius-micro: 0.125rem;   /* 2px - subtle rounding */
+  --radius-xs: 0.25rem;       /* 4px - minimal curves */
+  --radius-sm: 0.375rem;      /* 6px - small elements */
+  --radius-base: 0.25rem;     /* 4px - boxy with slight curve (NEW DEFAULT) */
+  --radius-md: 0.375rem;      /* 6px - slightly more curved */
+  --radius-lg: 0.5rem;        /* 8px - moderate curves */
+  --radius-xl: 0.75rem;       /* 12px - larger elements */
+  --radius-2xl: 1rem;         /* 16px - hero elements */
+  --radius-full: 9999px;      /* Full rounded */
+  
+  /* ================== Z-INDEX SYSTEM ================== */
+  --z-behind: -1;
+  --z-base: 0;
+  --z-elevated: 10;
+  --z-dropdown: 20;
+  --z-sticky: 30;
+  --z-popover: 40;
+  --z-overlay: 50;
+  --z-modal: 60;
+  --z-toast: 70;
+  --z-tooltip: 80;
+  --z-maximum: 999;
+  
+  /* ================== STRIPE-INSPIRED SOPHISTICATED SHADOW SYSTEM ================== */
+  /* Based on Stripe's layered shadow approach with colored + black shadows */
+  /* 
+   * SHADOW HIERARCHY RULES (Stripe Philosophy):
+   * 1. CONTAINERS ONLY: Only base containers (cards, modals, dropdowns) get shadows
+   * 2. FLAT NESTED: All elements INSIDE containers are shadow-free (inputs, buttons, icons)
+   * 3. SELECTIVE HOVER: Not everything needs hover shadow animations - be restrained
+   * 4. CONTEXT MATTERS: Standalone buttons can have shadows, nested buttons cannot
+   * 5. MICA EFFECTS: Glass variants use backdrop-blur + subtle shadows only
+   */
+  
+  /* Base Container Shadows - For cards, modals, dropdowns */
+  --shadow-xs: 0 2px 5px -1px rgba(50, 50, 93, 0.25), 0 1px 3px -1px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
+  
+  /* Flat Shadows - For nested elements inside containers */
+  --shadow-none: none;
+  --shadow-flat: none; /* Explicit token for flat elements */
+
+  /* TBGC Brand-Colored Sophisticated Shadows (using our brass/copper palette) */
+  --shadow-brass: 0 6px 12px -2px rgba(242, 203, 5, 0.15), 0 3px 7px -3px rgba(0, 0, 0, 0.25);
+  --shadow-copper: 0 13px 27px -5px rgba(242, 135, 5, 0.12), 0 8px 16px -8px rgba(0, 0, 0, 0.25);
+  --shadow-premium: 0 4px 8px -2px rgba(242, 203, 5, 0.25), 0 2px 4px -1px rgba(242, 135, 5, 0.15), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-elite: 0 8px 16px -4px rgba(242, 203, 5, 0.3), 0 4px 8px -2px rgba(242, 135, 5, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+  
+  /* ClickUp-Inspired Vibrant Shadows */
+  --shadow-purple: 0 10px 25px rgba(118, 18, 250, 0.25), 0 4px 10px rgba(64, 221, 255, 0.15);
+  --shadow-pink: 0 8px 20px rgba(250, 18, 227, 0.25), 0 3px 8px rgba(255, 215, 0, 0.15);
+  
+  /* Glass/Mica Shadows for Depth */
+  --shadow-glass: 0 4px 16px rgba(0, 0, 0, 0.1), 0 8px 32px rgba(0, 0, 0, 0.05);
+  --shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  
+  /* Focus Ring Shadows */
+  --shadow-focus-brass: 0 0 0 3px rgba(242, 203, 5, 0.3);
+  --shadow-focus-copper: 0 0 0 3px rgba(242, 135, 5, 0.3);
+  --shadow-focus-blue: 0 0 0 3px rgba(81, 152, 205, 0.3);
+
+  /* ================== SOPHISTICATED GRADIENT SYSTEM ================== */
+  /* Professional Background Gradients - Stripe/Figma Inspired */
+  
+  /* Subtle Brand Gradients (5-8% opacity - sophisticated restraint) */
+  --gradient-brand-warm: linear-gradient(135deg, rgba(242, 203, 5, 0.06) 0%, rgba(242, 135, 5, 0.04) 100%);
+  --gradient-brand-cool: linear-gradient(135deg, rgba(81, 152, 205, 0.06) 0%, rgba(60, 129, 192, 0.04) 100%);
+  --gradient-brand-mixed: linear-gradient(135deg, rgba(242, 203, 5, 0.05) 0%, rgba(81, 152, 205, 0.05) 50%, rgba(242, 135, 5, 0.04) 100%);
+  
+  /* Hero Section Gradients (slightly more prominent but still elegant) */
+  --gradient-hero-warm: linear-gradient(135deg, rgba(248, 246, 241, 1) 0%, rgba(237, 231, 222, 0.8) 100%);
+  --gradient-hero-cool: linear-gradient(135deg, rgba(248, 246, 241, 1) 0%, rgba(81, 152, 205, 0.08) 100%);
+  --gradient-hero-premium: linear-gradient(135deg, rgba(248, 246, 241, 1) 0%, rgba(242, 203, 5, 0.08) 50%, rgba(237, 231, 222, 1) 100%);
+  
+  /* Card & Component Gradients (ultra-subtle for backgrounds) */
+  --gradient-card-warm: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(242, 203, 5, 0.02) 100%);
+  --gradient-card-cool: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(81, 152, 205, 0.02) 100%);
+  --gradient-card-neutral: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(237, 231, 222, 0.3) 100%);
+  
+  /* Mesh Gradients (Figma-style complex backgrounds) */
+  --gradient-mesh-premium: 
+    radial-gradient(circle at 20% 30%, rgba(242, 203, 5, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(242, 135, 5, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 40% 80%, rgba(192, 128, 81, 0.04) 0%, transparent 40%),
+    linear-gradient(135deg, rgba(248, 246, 241, 1) 0%, rgba(237, 231, 222, 0.9) 100%);
+    
+  --gradient-mesh-elite: 
+    radial-gradient(circle at 25% 25%, rgba(81, 152, 205, 0.06) 0%, transparent 35%),
+    radial-gradient(circle at 75% 75%, rgba(242, 203, 5, 0.05) 0%, transparent 35%),
+    radial-gradient(circle at 50% 50%, rgba(60, 129, 192, 0.03) 0%, transparent 35%),
+    linear-gradient(135deg, rgba(248, 246, 241, 1) 0%, rgba(237, 231, 222, 0.8) 100%);
+  
+  /* Glass/Mica Gradients (Windows 11 inspired) */
+  --gradient-glass-warm: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(242, 203, 5, 0.1) 100%);
+  --gradient-glass-cool: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(81, 152, 205, 0.1) 100%);
+  --gradient-glass-neutral: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
+  
+  /* Legacy gradients (keeping for backwards compatibility but these are too strong) */
+  --gradient-primary: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 100%);
+  --gradient-premium: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 45%, var(--color-brass-yellow) 100%);
+  --gradient-elite: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 25%, var(--color-brass-yellow) 50%, var(--color-copper-orange) 75%, var(--color-brass-yellow) 100%);
+  --gradient-subtle: linear-gradient(135deg, rgba(242, 203, 5, 0.05) 0%, rgba(242, 135, 5, 0.05) 100%);
+  
+  /* ClickUp-Inspired Vibrant Gradients */
+  --gradient-purple: linear-gradient(135deg, #7612FA 0%, #40DDFF 100%);
+  --gradient-pink: linear-gradient(135deg, #FA12E3 0%, #FFD700 100%);
+  --gradient-success: linear-gradient(135deg, var(--color-rifling-green) 0%, var(--color-bore-sight-green) 100%);
+  --gradient-warning: linear-gradient(135deg, var(--color-sight-gold) 0%, var(--color-recoil-pad) 100%);
+  --gradient-danger: linear-gradient(135deg, var(--color-muzzle-flash) 0%, var(--color-safety-red) 100%);
+  --gradient-info: linear-gradient(135deg, var(--color-scope-blue) 0%, var(--color-trigger-blue) 100%);
+  
+  /* Glass/Mica Effect Gradients */
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  --gradient-glass-dark: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  
+  /* Mesh Gradients for Backgrounds */
+  --gradient-mesh-warm: 
+    radial-gradient(circle at 20% 50%, rgba(242, 203, 5, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(242, 135, 5, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(192, 128, 81, 0.06) 0%, transparent 50%);
+  --gradient-mesh-cool: 
+    radial-gradient(circle at 25% 25%, rgba(81, 152, 205, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(60, 129, 192, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(73, 130, 166, 0.06) 0%, transparent 50%);
+    
+  /* ================== ICON SIZING SYSTEM ================== */
+  --icon-xs: 0.75rem;         /* 12px - tiny icons */
+  --icon-sm: 1rem;            /* 16px - small icons */
+  --icon-base: 1.25rem;       /* 20px - standard icons */
+  --icon-md: 1.5rem;          /* 24px - medium icons */
+  --icon-lg: 2rem;            /* 32px - large icons */
+  --icon-xl: 2.5rem;          /* 40px - extra large icons */
+  --icon-2xl: 3rem;           /* 48px - huge icons */
+  --icon-3xl: 4rem;           /* 64px - hero icons */
+  
+  /* ================== BADGE & LABEL SYSTEM ================== */
+  --badge-height-sm: 1.25rem;      /* 20px */
+  --badge-height-base: 1.5rem;     /* 24px */
+  --badge-height-lg: 2rem;         /* 32px */
+  --badge-padding-x-sm: 0.5rem;    /* 8px */
+  --badge-padding-x-base: 0.75rem; /* 12px */
+  --badge-padding-x-lg: 1rem;      /* 16px */
+  
+  /* ================== COMPONENT SIZING STANDARDS ================== */
+  --input-height-sm: 2rem;         /* 32px */
+  --input-height-base: 2.5rem;     /* 40px */
+  --input-height-lg: 3rem;         /* 48px */
+  --button-height-sm: 2rem;        /* 32px - for inside cards/forms */
+  --button-height-base: 2.5rem;    /* 40px - general use */
+  --button-height-lg: 3rem;        /* 48px - hero/primary actions */
+  --button-height-xl: 3.5rem;      /* 56px - call-to-action buttons */
+  
+  /* ================== STRIPE-INSPIRED COMPONENT CONTEXT TOKENS ================== */
+  /* Card Content Standards */
+  --card-padding: var(--space-md);           /* 24px - Stripe standard card padding */
+  --card-title-size: var(--text-lg);         /* 18px - proper card title sizing */
+  --card-body-size: var(--text-sm);          /* 14px - card body text */
+  --card-caption-size: var(--text-xs);       /* 12px - card captions/meta */
+  
+  /* Button Context Standards */
+  --button-text-sm: var(--text-xs);          /* 12px - small button text */  
+  --button-text-base: var(--text-sm);        /* 14px - default button text */
+  --button-text-lg: var(--text-base);        /* 16px - large button text */
+  --button-padding-sm: 0.5rem 0.75rem;       /* 8px 12px - small button padding */
+  --button-padding-base: 0.625rem 1rem;      /* 10px 16px - default button padding */
+  --button-padding-lg: 0.75rem 1.5rem;       /* 12px 24px - large button padding */
+  
+  /* ================== TYPOGRAPHY SCALING SYSTEM ================== */
+  --text-xs: 0.75rem;              /* 12px */
+  --text-sm: 0.875rem;             /* 14px */
+  --text-base: 1rem;               /* 16px */
+  --text-lg: 1.125rem;             /* 18px */
+  --text-xl: 1.25rem;              /* 20px */
+  --text-2xl: 1.5rem;              /* 24px */
+  --text-3xl: 1.875rem;            /* 30px */
+  --text-4xl: 2.25rem;             /* 36px */
+  --text-5xl: 3rem;                /* 48px */
+  --text-6xl: 3.75rem;             /* 60px */
+  --text-7xl: 4.5rem;              /* 72px */
+  --text-8xl: 6rem;                /* 96px */
+  --text-9xl: 8rem;                /* 128px */
+  
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+  
+  /* ================== WINDOWS 11 MICA NOISE OVERLAY SYSTEM ================== */
+  /* Base mica noise pattern using CSS filters and pseudo-elements */
+  --mica-noise-opacity: 0.03;
+  --mica-blur-strength: 20px;
+  --mica-saturation: 1.2;
+  --mica-brightness: 1.1;
+  
+  /* Overlay background colors with mica effect - using 26-color system */
+  --overlay-bg-light: rgba(255, 255, 255, 0.95);        /* More opaque for better contrast */
+  --overlay-bg-dark: rgba(32, 32, 32, 0.95);           /* Using carbon-fiber base */
+  --overlay-border-light: rgba(102, 102, 102, 0.15);    /* case-hardened */
+  --overlay-border-dark: rgba(192, 192, 192, 0.15);     /* stainless-steel */
+  
+  /* Overlay text colors for proper contrast */
+  --overlay-text-light: var(--color-blued-steel);       /* Dark text on light glass */
+  --overlay-text-dark: var(--color-nickel-white);       /* Light text on dark glass */
+  
+  /* Mica noise texture data URI - subtle grain pattern */
+  --mica-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+
+  /* ================== SEMANTIC COLORS FOR LIGHT THEME ================== */
+  /* Light Theme - "Spring Day at the Range" colors */
+  --background: #f8f6f1;        /* range-white - warm site background */
+  --foreground: #372103;        /* blued-steel - dark text */
+  --card: #FFFFFF;              /* nickel-white - clean cards */
+  --card-foreground: #372103;   /* blued-steel - dark text on cards */
+  --muted: #ede7de;             /* shooting-bench - muted areas */
+  --muted-foreground: #693e21;  /* case-hardened - muted text */
+  --border: #693e21;            /* case-hardened - borders */
+  --input: #FFFFFF;             /* nickel-white - input backgrounds */
+  --ring: #F2CB05;              /* brass-yellow - focus rings */
+  --radius: 0.25rem;            /* 4px - consistent boxy radius */
+
+  /* Semantic component colors */
+  --primary: #372103;           /* blued-steel */
+  --primary-foreground: #FFFFFF;
+  --secondary: #c08051;         /* walnut-stock */
+  --secondary-foreground: #FFFFFF;
+  --destructive: #F23005;       /* muzzle-flash */
+  --destructive-foreground: #FFFFFF;
+  --accent: #5198cd;            /* scope-blue */
+  --accent-foreground: #FFFFFF;
+  
+  /* Popover/Overlay colors */
+  --popover: rgba(248, 246, 241, 0.85);    /* light mica background */
+  --popover-foreground: #372103;           /* blued-steel text */
 }
 
-/* ================== DARK MODE OVERRIDES ================== */
-@layer base {
-  .dark {
-    --background: #2F3135;        /* night-sight */
-    --foreground: #FDFDFD;        /* titanium-white */
-    --card: #4B4B4B;              /* carbon-fiber */
-    --card-foreground: #FDFDFD;   /* titanium-white */
-    --muted: #494657;             /* tactical-gray */
-    --muted-foreground: #EEF1F7;  /* stainless-steel */
-    --border: #494657;            /* tactical-gray */
-    --input: #4B4B4B;             /* carbon-fiber */
-    --ring: #F2CB05;              /* brass-yellow */
+@variant dark {
+  /* ================== SEMANTIC COLORS FOR DARK THEME ================== */
+  /* Dark Theme - "Evening Hunt in the Mountains" palette */
+  --background: #2F3135;        /* night-sight - deep dark background */
+  --foreground: #FDFDFD;        /* titanium-white - light text */
+  --card: #4B4B4B;              /* carbon-fiber - elevated dark cards */
+  --card-foreground: #FDFDFD;   /* titanium-white - light text on cards */
+  --muted: #494657;             /* tactical-gray - muted dark areas */
+  --muted-foreground: #EEF1F7;  /* stainless-steel - muted light text */
+  --border: #494657;            /* tactical-gray - dark borders */
+  --input: #4B4B4B;             /* carbon-fiber - dark inputs */
+  --ring: #F2CB05;              /* brass-yellow - focus rings */
 
-    /* Dark semantic component colors */
-    --primary: #FDFDFD;           /* titanium-white */
-    --primary-foreground: #2F3135;
-    --secondary: #494657;         /* tactical-gray */
-    --secondary-foreground: #FDFDFD;
-    --destructive: #F25C05;       /* flash-hider */
-    --destructive-foreground: #FDFDFD;
-    --accent: #4982A6;            /* cerakote-blue */
-    --accent-foreground: #FDFDFD;
+  /* Semantic component colors for dark mode */
+  --primary: #FDFDFD;           /* titanium-white */
+  --primary-foreground: #2F3135;
+  --secondary: #494657;         /* tactical-gray */
+  --secondary-foreground: #FDFDFD;
+  --destructive: #F25C05;       /* flash-hider */
+  --destructive-foreground: #FDFDFD;
+  --accent: #4982A6;            /* cerakote-blue */
+  --accent-foreground: #FDFDFD;
+  
+  /* Popover/Overlay colors for dark */
+  --popover: rgba(75, 75, 75, 0.90);      /* dark mica background */
+  --popover-foreground: #FDFDFD;          /* titanium-white text */
+}
+
+@layer base {
+  :root {
+    /* Light Theme Variables - Site uses warm "Spring Day at the Range" colors */
+    --background: var(--color-range-white);        /* Warm site background */
+    --foreground: var(--color-blued-steel);
+    --card: var(--color-nickel-white);             /* Clean white cards for contrast */
+    --card-foreground: var(--color-blued-steel);
+    --muted: var(--color-shooting-bench);          /* Muted areas use warm beige */
+    --muted-foreground: var(--color-case-hardened);
+    --border: var(--color-case-hardened);
+    --input: var(--color-nickel-white);            /* Clean input backgrounds */
+    --ring: var(--color-brass-yellow);
+    --radius: 0.25rem;                             /* Boxy with slight curve - 4px */
+
+    /* Semantic colors for components */
+    --primary: var(--color-blued-steel);
+    --primary-foreground: var(--color-nickel-white);
+    --secondary: var(--color-walnut-stock);
+    --secondary-foreground: var(--color-nickel-white);
+    --destructive: var(--color-muzzle-flash);
+    --destructive-foreground: var(--color-nickel-white);
+    --accent: var(--color-scope-blue);
+    --accent-foreground: var(--color-nickel-white);
     
-    /* Dark popover/overlay colors */
-    --popover: rgba(75, 75, 75, 0.90);
-    --popover-foreground: #FDFDFD;
+    /* Popover/Overlay colors - MICA BACKGROUNDS FOR MODERN GLASS EFFECT */
+    --popover: var(--overlay-bg-light);           /* Mica glass popover backgrounds */
+    --popover-foreground: var(--overlay-text-light);
+  }
+
+  .dark {
+    /* Dark Theme Variables - "Evening Hunt in the Mountains" palette */
+    --background: var(--color-night-sight);        /* Deep dark site background */
+    --foreground: var(--color-titanium-white);
+    --card: var(--color-carbon-fiber);             /* Elevated dark cards */
+    --card-foreground: var(--color-titanium-white);
+    --muted: var(--color-tactical-gray);           /* Muted dark areas */
+    --muted-foreground: var(--color-stainless-steel);
+    --border: var(--color-tactical-gray);
+    --input: var(--color-carbon-fiber);            /* Dark input backgrounds */
+    --ring: var(--color-brass-yellow);
+    --radius: 0.25rem;                             /* Consistent boxy radius */
+
+    /* Semantic colors for components */
+    --primary: var(--color-titanium-white);
+    --primary-foreground: var(--color-night-sight);
+    --secondary: var(--color-tactical-gray);
+    --secondary-foreground: var(--color-titanium-white);
+    --destructive: var(--color-crimson-trace);
+    --destructive-foreground: var(--color-titanium-white);
+    --accent: var(--color-cerakote-blue);
+    --accent-foreground: var(--color-titanium-white);
+    --popover: var(--overlay-bg-dark);            /* Mica glass dark popover backgrounds */
+    --popover-foreground: var(--overlay-text-dark);
   }
 
   * {
@@ -116,78 +454,277 @@
   }
 }
 
-/* ================== ENHANCED MICA SYSTEM FOR WINDOWS 11 GLASS EFFECTS ================== */
-@layer components {
-  /* Windows 11 Mica overlay effects with proper opacity */
+@layer utilities {
+  /* ================== PROFESSIONAL TRANSITION UTILITIES ================== */
+  .transition-stripe-fast    { transition: all 150ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .transition-stripe-normal  { transition: all 250ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .transition-stripe-slow    { transition: all 350ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .transition-elastic        { transition: all 250ms cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  .transition-smooth         { transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+  /* ================== COMPREHENSIVE SPACING UTILITIES ================== */
+  .space-micro { margin: var(--space-micro); }
+  .space-tiny { margin: var(--space-tiny); }
+  .space-xs { margin: var(--space-xs); }
+  .space-sm { margin: var(--space-sm); }
+  .space-base { margin: var(--space-base); }
+  .space-md { margin: var(--space-md); }
+  .space-lg { margin: var(--space-lg); }
+  .space-xl { margin: var(--space-xl); }
+  .space-2xl { margin: var(--space-2xl); }
+  .space-3xl { margin: var(--space-3xl); }
+  .space-4xl { margin: var(--space-4xl); }
+
+  /* Padding variants */
+  .p-micro { padding: var(--space-micro); }
+  .p-tiny { padding: var(--space-tiny); }
+  .p-xs { padding: var(--space-xs); }
+  .p-sm { padding: var(--space-sm); }
+  .p-base { padding: var(--space-base); }
+  .p-md { padding: var(--space-md); }
+  .p-lg { padding: var(--space-lg); }
+  .p-xl { padding: var(--space-xl); }
+  .p-2xl { padding: var(--space-2xl); }
+  .p-3xl { padding: var(--space-3xl); }
+  .p-4xl { padding: var(--space-4xl); }
+
+  /* Gap variants */
+  .gap-micro { gap: var(--space-micro); }
+  .gap-tiny { gap: var(--space-tiny); }
+  .gap-xs { gap: var(--space-xs); }
+  .gap-sm { gap: var(--space-sm); }
+  .gap-base { gap: var(--space-base); }
+  .gap-md { gap: var(--space-md); }
+  .gap-lg { gap: var(--space-lg); }
+  .gap-xl { gap: var(--space-xl); }
+  .gap-2xl { gap: var(--space-2xl); }
+  .gap-3xl { gap: var(--space-3xl); }
+  .gap-4xl { gap: var(--space-4xl); }
+
+  /* ================== BORDER RADIUS UTILITIES ================== */
+  .rounded-micro { border-radius: var(--radius-micro); }
+  .rounded-xs { border-radius: var(--radius-xs); }
+  .rounded-sm { border-radius: var(--radius-sm); }
+  .rounded-base { border-radius: var(--radius-base); }
+  .rounded-md { border-radius: var(--radius-md); }
+  .rounded-lg { border-radius: var(--radius-lg); }
+  .rounded-xl { border-radius: var(--radius-xl); }
+  .rounded-2xl { border-radius: var(--radius-2xl); }
+  .rounded-full { border-radius: var(--radius-full); }
+
+  /* ================== Z-INDEX UTILITIES ================== */
+  .z-behind { z-index: var(--z-behind); }
+  .z-base { z-index: var(--z-base); }
+  .z-elevated { z-index: var(--z-elevated); }
+  .z-dropdown { z-index: var(--z-dropdown); }
+  .z-sticky { z-index: var(--z-sticky); }
+  .z-popover { z-index: var(--z-popover); }
+  .z-overlay { z-index: var(--z-overlay); }
+  .z-modal { z-index: var(--z-modal); }
+  .z-toast { z-index: var(--z-toast); }
+  .z-tooltip { z-index: var(--z-tooltip); }
+  .z-maximum { z-index: var(--z-maximum); }
+
+  /* ================== ICON SIZE UTILITIES ================== */
+  .icon-xs { width: var(--icon-xs); height: var(--icon-xs); }
+  .icon-sm { width: var(--icon-sm); height: var(--icon-sm); }
+  .icon-md { width: var(--icon-md); height: var(--icon-md); }
+  .icon-lg { width: var(--icon-lg); height: var(--icon-lg); }
+  .icon-xl { width: var(--icon-xl); height: var(--icon-xl); }
+  .icon-2xl { width: var(--icon-2xl); height: var(--icon-2xl); }
+  
+  /* ================== ICON COLOR UTILITIES ================== */
+  .icon-primary { color: var(--icon-primary); }
+  .icon-secondary { color: var(--icon-secondary); }
+  .icon-accent { color: var(--icon-accent); }
+  .icon-muted { color: var(--icon-muted); }
+  .icon-success { color: var(--icon-success); }
+  .icon-warning { color: var(--icon-warning); }
+  .icon-danger { color: var(--icon-danger); }
+  .icon-info { color: var(--icon-info); }
+  
+  /* Hover variants for interactive icons */
+  .icon-hover-primary:hover { color: var(--icon-primary); }
+  .icon-hover-secondary:hover { color: var(--icon-secondary); }
+  .icon-hover-accent:hover { color: var(--icon-accent); }
+  
+  /* Background variants for icon containers */
+  .icon-bg-primary { background-color: var(--icon-primary); color: var(--color-gunmetal-black); }
+  .icon-bg-secondary { background-color: var(--icon-secondary); color: var(--color-nickel-white); }
+  
+  /* ================== THEME-AWARE TEXT COLOR UTILITIES ================== */
+  /* Use these instead of hardcoded colors for proper dark mode support */
+  .text-theme-primary { color: var(--foreground); }
+  .text-theme-secondary { color: var(--muted-foreground); }
+  .text-theme-accent { color: var(--accent-foreground); }
+  .text-theme-muted { color: var(--muted-foreground); }
+  
+  /* Theme-aware brand colors that work in both light and dark */
+  .text-brand-primary { color: var(--color-brass-yellow); }
+  .text-brand-secondary { color: var(--color-copper-orange); }
+  .text-brand-accent { color: var(--color-scope-blue); }
+  
+  /* Background theme utilities */
+  .bg-theme-card { background-color: var(--card); }
+  .bg-theme-primary { background-color: var(--primary); }
+  .bg-theme-secondary { background-color: var(--secondary); }
+  .bg-theme-muted { background-color: var(--muted); }
+  
+  /* ================== ENHANCED WINDOWS 11 MICA OVERLAY SYSTEM ================== */
+  /* Apply mica glass effect to any overlay component */
   .mica-overlay {
-    background: rgba(255, 255, 255, 0.85);  /* Windows 11 Mica opacity */
-    -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(102%);
-    backdrop-filter: blur(30px) saturate(200%) brightness(102%);
+    background: rgba(255, 255, 255, 0.85);  /* Much more opaque like real Mica */
+    -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(105%);
+    backdrop-filter: blur(30px) saturate(200%) brightness(105%);
     border: 1px solid rgba(255, 255, 255, 0.4);
     position: relative;
     isolation: isolate;
     box-shadow: 
       0 8px 32px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  }
-  
-  .dark .mica-overlay {
-    background: rgba(47, 49, 53, 0.90);  /* More opaque dark overlay */
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    -webkit-backdrop-filter: blur(35px) saturate(240%) brightness(85%);
-    backdrop-filter: blur(35px) saturate(240%) brightness(85%);
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.20),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  }
-
-  /* Dropdown menu mica effects */
-  .mica-dropdown {
-    background: rgba(255, 255, 255, 0.88);  /* Windows 11 dropdown opacity */
-    -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(102%);
-    backdrop-filter: blur(32px) saturate(200%) brightness(102%);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    position: relative;
-    isolation: isolate;
-    box-shadow: 
-      0 12px 48px rgba(0, 0, 0, 0.12),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  }
-  
-  .dark .mica-dropdown {
-    background: rgba(75, 75, 75, 0.95);  /* Very opaque dark dropdown */
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    -webkit-backdrop-filter: blur(36px) saturate(240%) brightness(85%);
-    backdrop-filter: blur(36px) saturate(240%) brightness(85%);
-    box-shadow: 
-      0 12px 48px rgba(0, 0, 0, 0.25),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  }
-
-  /* Modal mica effects */
-  .mica-modal {
-    background: rgba(255, 255, 255, 0.90);  /* Windows 11 modal opacity */
-    -webkit-backdrop-filter: blur(40px) saturate(220%) brightness(102%);
-    backdrop-filter: blur(40px) saturate(220%) brightness(102%);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    position: relative;
-    isolation: isolate;
-    box-shadow: 
-      0 20px 80px rgba(0, 0, 0, 0.15),
       inset 0 1px 0 rgba(255, 255, 255, 0.4);
   }
   
-  .dark .mica-modal {
-    background: rgba(47, 49, 53, 0.95);  /* Very opaque dark modal */
+  .dark .mica-overlay {
+    background: rgba(47, 49, 53, 0.90);  /* Even more opaque in dark mode */
     border: 1px solid rgba(255, 255, 255, 0.2);
-    -webkit-backdrop-filter: blur(45px) saturate(260%) brightness(85%);
-    backdrop-filter: blur(45px) saturate(260%) brightness(85%);
+    -webkit-backdrop-filter: blur(35px) saturate(220%) brightness(90%);
+    backdrop-filter: blur(35px) saturate(220%) brightness(90%);
     box-shadow: 
-      0 20px 80px rgba(0, 0, 0, 0.30),
+      0 8px 32px rgba(0, 0, 0, 0.20),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Add subtle noise texture overlay */
+  .mica-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 25% 30%, rgba(242, 203, 5, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 75% 70%, rgba(242, 135, 5, 0.03) 0%, transparent 40%);
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  .dark .mica-overlay::before {
+    background: 
+      radial-gradient(circle at 25% 30%, rgba(242, 203, 5, 0.06) 0%, transparent 40%),
+      radial-gradient(circle at 75% 70%, rgba(242, 135, 5, 0.04) 0%, transparent 40%);
+  }
+  
+  /* Specific mica variants for different overlay types */
+  .mica-popover {
+    background: var(--popover);
+    -webkit-backdrop-filter: blur(16px) saturate(180%) brightness(105%);
+    backdrop-filter: blur(16px) saturate(180%) brightness(105%);
+    border: 1px solid var(--overlay-border-light);
+    position: relative;
+    box-shadow: var(--shadow-md);
+    isolation: isolate;
+  }
+  
+  .mica-dropdown {
+    background: rgba(255, 255, 255, 0.88);  /* Very opaque like Windows 11 */
+    -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(103%);
+    backdrop-filter: blur(32px) saturate(200%) brightness(103%);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    position: relative;
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    isolation: isolate;
+  }
+  
+  .dark .mica-dropdown {
+    background: rgba(47, 49, 53, 0.92);  /* Almost opaque in dark mode */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    -webkit-backdrop-filter: blur(36px) saturate(220%) brightness(85%);
+    backdrop-filter: blur(36px) saturate(220%) brightness(85%);
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+  
+  .mica-modal {
+    background: rgba(255, 255, 255, 0.90);  /* Very opaque for proper Mica feel */
+    -webkit-backdrop-filter: blur(40px) saturate(220%) brightness(108%);
+    backdrop-filter: blur(40px) saturate(220%) brightness(108%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    box-shadow: 
+      0 16px 48px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    isolation: isolate;
+  }
+  
+  .dark .mica-modal {
+    background: rgba(47, 49, 53, 0.95);  /* Almost completely opaque */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(45px) saturate(240%) brightness(80%);
+    backdrop-filter: blur(45px) saturate(240%) brightness(80%);
+    box-shadow: 
+      0 16px 48px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  
+  .mica-tooltip {
+    background: rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(14px) saturate(140%) brightness(102%);
+    backdrop-filter: blur(14px) saturate(140%) brightness(102%);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    position: relative;
+    box-shadow: 
+      0 2px 12px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    isolation: isolate;
+  }
+  
+  .dark .mica-tooltip {
+    background: rgba(0, 0, 0, 0.20);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    -webkit-backdrop-filter: blur(16px) saturate(160%) brightness(88%);
+    backdrop-filter: blur(16px) saturate(160%) brightness(88%);
+    box-shadow: 
+      0 2px 12px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+  
+  .mica-toast {
+    background: rgba(255, 255, 255, 0.16);
+    -webkit-backdrop-filter: blur(20px) saturate(190%) brightness(106%);
+    backdrop-filter: blur(20px) saturate(190%) brightness(106%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    position: relative;
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    isolation: isolate;
+  }
+  
+  .dark .mica-toast {
+    background: rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    -webkit-backdrop-filter: blur(24px) saturate(200%) brightness(88%);
+    backdrop-filter: blur(24px) saturate(200%) brightness(88%);
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.18),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
-
-  /* Card mica effects */
+  
+  /* Dark mode adjustments for all mica components */
+  .dark .mica-popover,
+  .dark .mica-dropdown,
+  .dark .mica-modal,
+  .dark .mica-tooltip,
+  .dark .mica-toast {
+    border-color: var(--overlay-border-dark);
+    -webkit-backdrop-filter: blur(20px) saturate(200%) brightness(90%);
+    backdrop-filter: blur(20px) saturate(200%) brightness(90%);
+  }
+  
+  /* ================== ENHANCED MICA CARD VARIANTS ================== */
+  /* For cards that should have mica effect */
   .mica-card {
     background: rgba(255, 255, 255, 0.85);  /* Windows 11 Mica opacity */
     -webkit-backdrop-filter: blur(28px) saturate(180%) brightness(102%);
@@ -209,18 +746,1073 @@
       0 4px 16px rgba(0, 0, 0, 0.15),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
-}
-
-/* ================== THEME TOGGLE COMPONENT ================== */
-@layer components {
-  .theme-toggle {
-    @apply relative p-2 rounded-full transition-colors duration-200;
-    background: var(--card);
-    border: 1px solid var(--border);
-    color: var(--foreground);
+  
+  /* For premium mica cards with brand gradient */
+  .mica-card-premium {
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(16px) saturate(170%) brightness(105%);
+    backdrop-filter: blur(16px) saturate(170%) brightness(105%);
+    border: 1px solid rgba(242, 203, 5, 0.2);
+    position: relative;
+    isolation: isolate;
   }
   
-  .theme-toggle:hover {
-    background: var(--muted);
+  .mica-card-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(242, 203, 5, 0.03) 0%, rgba(242, 135, 5, 0.02) 100%);
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: -1;
   }
+  
+  .dark .mica-card-premium {
+    background: rgba(75, 75, 75, 0.9);
+    border-color: rgba(242, 203, 5, 0.3);
+  }
+  
+  .dark .mica-card-premium::before {
+    background: linear-gradient(135deg, rgba(242, 203, 5, 0.08) 0%, rgba(242, 135, 5, 0.05) 100%);
+  }
+  
+  .icon-bg-accent { background-color: var(--icon-accent); color: var(--color-nickel-white); }
+
+  /* ================== TYPOGRAPHY UTILITIES ================== */
+  .text-xs { font-size: var(--text-xs); }
+  .text-sm { font-size: var(--text-sm); }
+  .text-base { font-size: var(--text-base); }
+  .text-lg { font-size: var(--text-lg); }
+  .text-xl { font-size: var(--text-xl); }
+  .text-2xl { font-size: var(--text-2xl); }
+  .text-3xl { font-size: var(--text-3xl); }
+  .text-4xl { font-size: var(--text-4xl); }
+  .text-5xl { font-size: var(--text-5xl); }
+  .text-6xl { font-size: var(--text-6xl); }
+  .text-7xl { font-size: var(--text-7xl); }
+  .text-8xl { font-size: var(--text-8xl); }
+  .text-9xl { font-size: var(--text-9xl); }
+
+  .leading-none { line-height: var(--leading-none); }
+  .leading-tight { line-height: var(--leading-tight); }
+  .leading-snug { line-height: var(--leading-snug); }
+  .leading-normal { line-height: var(--leading-normal); }
+  .leading-relaxed { line-height: var(--leading-relaxed); }
+  .leading-loose { line-height: var(--leading-loose); }
+
+  /* ================== STRIPE-INSPIRED COMPONENT CONTEXT CLASSES ================== */
+  /* Card Content Patterns */
+  .card-content {
+    padding: var(--card-padding);
+  }
+  
+  .card-title {
+    font-size: var(--card-title-size);
+    font-weight: 600;
+    line-height: var(--leading-tight);
+    color: var(--card-foreground);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .card-body {
+    font-size: var(--card-body-size);
+    line-height: var(--leading-normal);
+    color: var(--muted-foreground);
+  }
+  
+  .card-caption {
+    font-size: var(--card-caption-size);
+    line-height: var(--leading-normal);
+    color: var(--muted-foreground);
+    opacity: 0.8;
+  }
+  
+  /* Button Size Variants - Context Aware */
+  .btn-sm {
+    height: var(--button-height-sm);
+    padding: var(--button-padding-sm);
+    font-size: var(--button-text-sm);
+    font-weight: 500;
+  }
+  
+  .btn-base {
+    height: var(--button-height-base);
+    padding: var(--button-padding-base);
+    font-size: var(--button-text-base);
+    font-weight: 500;
+  }
+  
+  .btn-lg {
+    height: var(--button-height-lg);
+    padding: var(--button-padding-lg);
+    font-size: var(--button-text-lg);
+    font-weight: 600;
+  }
+  
+  /* Component Density Variants */
+  .density-compact {
+    --local-padding: var(--space-sm);
+    --local-gap: var(--space-xs);
+  }
+  
+  .density-default {
+    --local-padding: var(--space-md);
+    --local-gap: var(--space-sm);
+  }
+  
+  .density-spacious {
+    --local-padding: var(--space-lg);
+    --local-gap: var(--space-md);
+  }
+
+  /* ================== COMPREHENSIVE SHADOW UTILITIES ================== */
+  /* Container Shadows - For base level components */
+  .shadow-xs { box-shadow: var(--shadow-xs); }
+  .shadow-sm { box-shadow: var(--shadow-sm); }
+  .shadow-md { box-shadow: var(--shadow-md); }
+  .shadow-lg { box-shadow: var(--shadow-lg); }
+  .shadow-xl { box-shadow: var(--shadow-xl); }
+  
+  /* Branded Shadows - Special cases */
+  .shadow-brass { box-shadow: var(--shadow-brass); }
+  .shadow-copper { box-shadow: var(--shadow-copper); }
+  .shadow-premium { box-shadow: var(--shadow-premium); }
+  .shadow-elite { box-shadow: var(--shadow-elite); }
+  .shadow-purple { box-shadow: var(--shadow-purple); }
+  .shadow-pink { box-shadow: var(--shadow-pink); }
+  .shadow-glass { box-shadow: var(--shadow-glass); }
+  .shadow-inset { box-shadow: var(--shadow-inset); }
+  
+  /* Flat Shadows - For nested elements (Stripe philosophy) */
+  .shadow-none { box-shadow: var(--shadow-none); }
+  .shadow-flat { box-shadow: var(--shadow-flat); }
+
+  /* Focus rings */
+  .focus-brass { box-shadow: var(--shadow-focus-brass); }
+  .focus-copper { box-shadow: var(--shadow-focus-copper); }
+  .focus-blue { box-shadow: var(--shadow-focus-blue); }
+
+  /* ================== GRADIENT BACKGROUND UTILITIES ================== */
+  /* ================== SOPHISTICATED GRADIENT UTILITIES ================== */
+  /* Professional Background Gradients */
+  .bg-gradient-brand-warm { background: var(--gradient-brand-warm); }
+  .bg-gradient-brand-cool { background: var(--gradient-brand-cool); }
+  .bg-gradient-brand-mixed { background: var(--gradient-brand-mixed); }
+  
+  /* Hero Section Gradients */
+  .bg-gradient-hero-warm { background: var(--gradient-hero-warm); }
+  .bg-gradient-hero-cool { background: var(--gradient-hero-cool); }
+  .bg-gradient-hero-premium { background: var(--gradient-hero-premium); }
+  
+  /* Card & Component Gradients */
+  .bg-gradient-card-warm { background: var(--gradient-card-warm); }
+  .bg-gradient-card-cool { background: var(--gradient-card-cool); }
+  .bg-gradient-card-neutral { background: var(--gradient-card-neutral); }
+  
+  /* Figma-Style Mesh Gradients */
+  .bg-gradient-mesh-premium { background: var(--gradient-mesh-premium); }
+  .bg-gradient-mesh-elite { background: var(--gradient-mesh-elite); }
+  
+  /* Glass/Mica Gradients */
+  .bg-gradient-glass-warm { background: var(--gradient-glass-warm); }
+  .bg-gradient-glass-cool { background: var(--gradient-glass-cool); }
+  .bg-gradient-glass-neutral { background: var(--gradient-glass-neutral); }
+  
+  /* ================== ENHANCED GRADIENT SYSTEM - RESTRAINED & PROFESSIONAL ================== */
+  /* 
+   * TBGC GRADIENT PHILOSOPHY:
+   * 1. RESTRAINED: Subtle 2-8% opacity for sophistication, not visual chaos
+   * 2. CONTEXTUAL: Different uses for different purposes (hero, card, subtle)  
+   * 3. SOLID FALLBACKS: When in doubt, use solid colors instead
+   * 4. BRAND COHESION: Only use TBGC palette colors with consistent opacities
+   */
+
+  /* Hero Section Gradients - For major sections */
+  .bg-gradient-hero-warm { background: var(--gradient-hero-warm); }
+  .bg-gradient-hero-cool { background: var(--gradient-hero-cool); }
+  .bg-gradient-hero-premium { background: var(--gradient-hero-premium); }
+  
+  /* Ultra-Subtle Card Gradients - Very restrained for card backgrounds */
+  .bg-gradient-card-warm { background: var(--gradient-card-warm); }
+  .bg-gradient-card-cool { background: var(--gradient-card-cool); }
+  .bg-gradient-card-neutral { background: var(--gradient-card-neutral); }
+  
+  /* Brand Accent Gradients - For special UI elements only */
+  .bg-gradient-brand-warm { background: var(--gradient-brand-warm); }
+  .bg-gradient-brand-cool { background: var(--gradient-brand-cool); }
+  .bg-gradient-brand-mixed { background: var(--gradient-brand-mixed); }
+  
+  /* Premium Mesh Gradients - For hero sections and landing areas */
+  .bg-gradient-mesh-premium { background: var(--gradient-mesh-premium); }
+  .bg-gradient-mesh-elite { background: var(--gradient-mesh-elite); }
+  
+  /* SOLID COLOR ALTERNATIVES - Use these instead of gradients for clean look */
+  .bg-solid-brand-warm { background-color: var(--color-range-white); }
+  .bg-solid-brand-neutral { background-color: var(--color-shooting-bench); }
+  .bg-solid-brand-accent { background-color: rgba(242, 203, 5, 0.05); }
+  
+  /* Accent Line Gradients - For borders and dividers only */
+  .border-gradient-brand {
+    border-image: linear-gradient(90deg, var(--color-brass-yellow), var(--color-copper-orange)) 1;
+  }
+  
+  /* Subtle Hover Effects - Very restrained interactions */
+  .hover-gradient-warm:hover {
+    background: linear-gradient(135deg, rgba(242, 203, 5, 0.04) 0%, rgba(242, 135, 5, 0.03) 100%);
+    transition: background 250ms ease-out;
+  }
+  
+  .hover-gradient-cool:hover {
+    background: linear-gradient(135deg, rgba(81, 152, 205, 0.04) 0%, rgba(60, 129, 192, 0.03) 100%);
+    transition: background 250ms ease-out;
+  }
+  
+  /* Legacy Gradients (backwards compatibility - avoid using these) */
+  .bg-gradient-primary { background: var(--gradient-primary); }
+  .bg-gradient-premium { background: var(--gradient-premium); }
+  .bg-gradient-elite { background: var(--gradient-elite); }
+  .bg-gradient-subtle { background: var(--gradient-subtle); }
+  .bg-gradient-purple { background: var(--gradient-purple); }
+  .bg-gradient-pink { background: var(--gradient-pink); }
+  .bg-gradient-success { background: var(--gradient-success); }
+  .bg-gradient-warning { background: var(--gradient-warning); }
+  .bg-gradient-danger { background: var(--gradient-danger); }
+  .bg-gradient-info { background: var(--gradient-info); }
+  .bg-gradient-glass { background: var(--gradient-glass); }
+  .bg-gradient-glass-dark { background: var(--gradient-glass-dark); }
+  .bg-gradient-mesh-warm { background: var(--gradient-mesh-warm); }
+  .bg-gradient-mesh-cool { background: var(--gradient-mesh-cool); }
+
+  /* ================== WINDOWS 11 MICA GLASSMORPHISM ================== */
+  .mica-glass {
+    position: relative;
+    overflow: hidden;
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    backdrop-filter: blur(16px) saturate(180%);
+  }
+
+  .mica-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(242, 203, 5, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(242, 135, 5, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 50%);
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .mica-glass::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+    background-size: 20px 20px;
+    border-radius: inherit;
+    opacity: 0.3;
+    z-index: -1;
+    animation: noise-float 8s ease-in-out infinite;
+  }
+
+  @keyframes noise-float {
+    0%, 100% { 
+      transform: translate(0, 0) rotate(0deg);
+      opacity: 0.3;
+    }
+    25% { 
+      transform: translate(1px, -1px) rotate(0.5deg);
+      opacity: 0.25;
+    }
+    50% { 
+      transform: translate(-1px, 1px) rotate(-0.5deg);
+      opacity: 0.35;
+    }
+    75% { 
+      transform: translate(1px, 1px) rotate(0.25deg);
+      opacity: 0.28;
+    }
+  }
+
+  /* Enhanced glassmorphism on hover */
+  .mica-glass:hover::before {
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(242, 203, 5, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(242, 135, 5, 0.10) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  }
+
+  .mica-glass:hover::after {
+    opacity: 0.4;
+  }
+
+  /* ================== ENHANCED MICA VARIANTS ================== */
+  .mica-premium {
+    position: relative;
+    background: var(--gradient-mesh-warm);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    backdrop-filter: blur(16px) saturate(180%);
+  }
+
+  .mica-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(242, 203, 5, 0.1), rgba(242, 135, 5, 0.05));
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .mica-elite {
+    position: relative;
+    background: 
+      radial-gradient(circle at 25% 25%, rgba(242, 203, 5, 0.18) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(242, 135, 5, 0.14) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(242, 203, 5, 0.10) 0%, transparent 50%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    backdrop-filter: blur(24px) saturate(200%);
+  }
+
+  .mica-elite::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(242, 203, 5, 0.15), rgba(242, 135, 5, 0.08));
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  /* Glass variants for different contexts */
+  .glass-card {
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    backdrop-filter: blur(12px) saturate(180%);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-card-dark {
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    backdrop-filter: blur(12px) saturate(180%);
+    background: rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-navigation {
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    backdrop-filter: blur(20px) saturate(200%);
+    background: rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* ================== STRIPE-STYLE ARROW ANIMATIONS ================== */
+  .stripe-arrow {
+    position: relative;
+  }
+
+  .stripe-arrow .HoverArrow {
+    transition: transform 0.15s ease;
+    transform: translateX(0);
+  }
+
+  .stripe-arrow:hover .HoverArrow {
+    transform: translateX(3px);
+  }
+
+  .stripe-arrow .HoverArrow__linePath {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  .stripe-arrow:hover .HoverArrow__linePath {
+    opacity: 1;
+    transition-delay: 0.1s;
+  }
+
+  .stripe-arrow .HoverArrow__tipPath {
+    transform: translateX(0);
+    transition: transform 0.15s ease;
+  }
+
+  .stripe-arrow:hover .HoverArrow__tipPath {
+    transform: translateX(3px);
+  }
+
+  /* Arrow icon spacing */
+  .stripe-arrow .arrow-icon {
+    margin-left: 0.5rem;
+    transition: margin-left 0.15s ease;
+  }
+
+  .stripe-arrow:hover .arrow-icon {
+    margin-left: 0.75rem;
+  }
+
+  /* ================== SOPHISTICATED GRADIENT BACKGROUNDS ================== */
+  .bg-gradient-premium {
+    background: linear-gradient(135deg, #F2CB05 0%, #F28705 45%, #F2CB05 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease-in-out infinite;
+  }
+
+  .bg-gradient-elite {
+    background: linear-gradient(135deg, #F2CB05 0%, #F28705 25%, #F2CB05 50%, #F28705 75%, #F2CB05 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 4s ease-in-out infinite;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* ================== ADVANCED KEYFRAME ANIMATIONS ================== */
+  @keyframes shimmer {
+    0% { 
+      background-position: -200% 0;
+      transform: translateX(-100%);
+    }
+    100% { 
+      background-position: 200% 0;
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes pulse-premium {
+    0%, 100% { 
+      box-shadow: 0 0 0 0 rgba(242, 203, 5, 0.4);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 0 10px rgba(242, 203, 5, 0);
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 20px rgba(242, 203, 5, 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 40px rgba(242, 203, 5, 0.6), 0 0 60px rgba(242, 135, 5, 0.4);
+    }
+  }
+
+  @keyframes float-up {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  @keyframes bounce-in {
+    0% { 
+      transform: scale(0.3);
+      opacity: 0;
+    }
+    50% { 
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+    70% { 
+      transform: scale(0.9);
+      opacity: 0.9;
+    }
+    100% { 
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-right {
+    0% { 
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% { 
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-scale {
+    0% { 
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% { 
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Animation Utility Classes */
+  .animate-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animate-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    animation: shimmer 2s infinite linear;
+  }
+
+  .animate-pulse-premium {
+    animation: pulse-premium 2s infinite;
+  }
+
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float-up 3s ease-in-out infinite;
+  }
+
+  .animate-bounce-in {
+    animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.5s ease-out;
+  }
+
+  .animate-fade-in-scale {
+    animation: fade-in-scale 0.3s ease-out;
+  }
+
+  /* ================== COMPONENT STATE UTILITIES ================== */
+  
+  /* Button States */
+  .btn-primary {
+    background: var(--gradient-primary);
+    color: var(--color-gunmetal-black);
+    border: none;
+    box-shadow: var(--shadow-premium);
+    transition: all 150ms var(--ease-stripe);
+  }
+
+  .btn-primary:hover {
+    background: var(--gradient-premium);
+    box-shadow: var(--shadow-elite);
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-brass);
+  }
+
+  .btn-secondary {
+    background: var(--color-shooting-bench);
+    color: var(--color-blued-steel);
+    border: 1px solid var(--color-case-hardened);
+    transition: all 150ms var(--ease-stripe);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-walnut-stock);
+    color: var(--color-nickel-white);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-brass-yellow);
+    border: 2px solid var(--color-brass-yellow);
+    transition: all 150ms var(--ease-stripe);
+  }
+
+  .btn-outline:hover {
+    background: var(--color-brass-yellow);
+    color: var(--color-gunmetal-black);
+    box-shadow: var(--shadow-brass);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-blued-steel);
+    border: none;
+    transition: all 150ms var(--ease-stripe);
+  }
+
+  .btn-ghost:hover {
+    background: var(--color-shooting-bench);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .btn-glass {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-blued-steel);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    transition: all 150ms var(--ease-stripe);
+  }
+
+  .btn-glass:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Input States */
+  .input-focus {
+    border-color: var(--color-brass-yellow);
+    box-shadow: var(--shadow-focus-brass);
+    outline: none;
+  }
+
+  .input-error {
+    border-color: var(--color-muzzle-flash);
+    box-shadow: var(--shadow-focus-copper);
+  }
+
+  .input-success {
+    border-color: var(--color-rifling-green);
+    box-shadow: 0 0 0 3px rgba(111, 120, 34, 0.3);
+  }
+
+  /* Card States */
+  .card-hover {
+    transition: all 150ms var(--ease-stripe);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .card-interactive {
+    cursor: pointer;
+    transition: all 150ms var(--ease-stripe);
+  }
+
+  .card-interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-interactive:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Loading States */
+  .loading-shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--color-shooting-bench) 25%,
+      var(--color-walnut-stock) 50%,
+      var(--color-shooting-bench) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .loading-skeleton {
+    background: var(--color-shooting-bench);
+    border-radius: var(--radius-sm);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .loading-skeleton::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* ================== RESPONSIVE DESIGN UTILITIES ================== */
+  
+  /* Container Queries */
+  .container-fluid {
+    width: 100%;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .container-centered {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .container-wide {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  /* Grid Systems */
+  .grid-auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .grid-auto-fill {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .grid-responsive {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  @media (min-width: 640px) {
+    .grid-responsive {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .grid-responsive {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .grid-responsive {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* ================== RESPONSIVE TYPOGRAPHY SCALING (STRIPE PATTERN) ================== */
+  /* Base mobile-first typography with systematic scaling */
+  
+  .text-responsive-xs { font-size: 0.75rem; line-height: 1.25; }    /* 12px mobile */
+  .text-responsive-sm { font-size: 0.875rem; line-height: 1.375; }  /* 14px mobile */
+  .text-responsive-base { font-size: 1rem; line-height: 1.5; }      /* 16px mobile */
+  .text-responsive-lg { font-size: 1.125rem; line-height: 1.5; }    /* 18px mobile */
+  .text-responsive-xl { font-size: 1.25rem; line-height: 1.5; }     /* 20px mobile */
+  .text-responsive-2xl { font-size: 1.5rem; line-height: 1.375; }   /* 24px mobile */
+  .text-responsive-3xl { font-size: 1.875rem; line-height: 1.25; }  /* 30px mobile */
+  .text-responsive-4xl { font-size: 2.25rem; line-height: 1.125; }  /* 36px mobile */
+
+  @media (min-width: 640px) {
+    .text-responsive-xs { font-size: 0.75rem; }    /* Same on tablet */
+    .text-responsive-sm { font-size: 0.875rem; }   /* Same on tablet */
+    .text-responsive-base { font-size: 1rem; }     /* Same on tablet */
+    .text-responsive-lg { font-size: 1.125rem; }   /* Same on tablet */
+    .text-responsive-xl { font-size: 1.375rem; }   /* 22px tablet */
+    .text-responsive-2xl { font-size: 1.75rem; }   /* 28px tablet */
+    .text-responsive-3xl { font-size: 2.25rem; }   /* 36px tablet */
+    .text-responsive-4xl { font-size: 2.75rem; }   /* 44px tablet */
+  }
+
+  @media (min-width: 1024px) {
+    .text-responsive-xl { font-size: 1.5rem; }     /* 24px desktop */
+    .text-responsive-2xl { font-size: 2rem; }      /* 32px desktop */
+    .text-responsive-3xl { font-size: 2.5rem; }    /* 40px desktop */
+    .text-responsive-4xl { font-size: 3rem; }      /* 48px desktop */
+  }
+
+  @media (min-width: 1280px) {
+    .text-responsive-xl { font-size: 1.625rem; }   /* 26px large desktop */
+    .text-responsive-2xl { font-size: 2.25rem; }   /* 36px large desktop */
+    .text-responsive-3xl { font-size: 2.75rem; }   /* 44px large desktop */
+    .text-responsive-4xl { font-size: 3.5rem; }    /* 56px large desktop */
+  }
+
+  /* ================== COMPONENT DENSITY UTILITIES ================== */
+  /* Stripe-style component density classes for consistent spacing */
+  
+  .density-compact {
+    --card-padding: var(--space-base);           /* 16px - compact cards */
+    --button-height-sm: 1.75rem;                /* 28px - tighter buttons */
+    --button-height-base: 2.25rem;              /* 36px - tighter buttons */
+  }
+  
+  .density-default {
+    --card-padding: var(--space-md);            /* 24px - default cards */
+    --button-height-sm: 2rem;                   /* 32px - standard buttons */
+    --button-height-base: 2.5rem;               /* 40px - standard buttons */
+  }
+  
+  .density-spacious {
+    --card-padding: var(--space-lg);            /* 32px - spacious cards */
+    --button-height-sm: 2.25rem;                /* 36px - larger buttons */
+    --button-height-base: 2.75rem;              /* 44px - larger buttons */
+  }
+
+  /* ================== ACCESSIBILITY UTILITIES ================== */
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .focus-visible {
+    outline: 2px solid var(--color-brass-yellow);
+    outline-offset: 2px;
+  }
+
+  .reduced-motion {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* ================== PRINT STYLES ================== */
+  
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    .print-only {
+      display: block !important;
+    }
+    
+    * {
+      box-shadow: none !important;
+      background-image: none !important;
+    }
+    
+    body {
+      background: white !important;
+      color: black !important;
+    }
+  }
+
+  /* ================== WINDOWS 11 MICA IMPLEMENTATION ================== */
+  .mica-premium {
+    position: relative;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(242, 203, 5, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(242, 135, 5, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(242, 203, 5, 0.06) 0%, transparent 50%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    backdrop-filter: blur(16px) saturate(180%);
+  }
+
+  .mica-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(242, 203, 5, 0.1), rgba(242, 135, 5, 0.05));
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .mica-elite {
+    position: relative;
+    background: 
+      radial-gradient(circle at 25% 25%, rgba(242, 203, 5, 0.18) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(242, 135, 5, 0.14) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(242, 203, 5, 0.10) 0%, transparent 50%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    backdrop-filter: blur(24px) saturate(200%);
+  }
+
+  .mica-elite::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(242, 203, 5, 0.15), rgba(242, 135, 5, 0.08));
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  /* ================== PROFESSIONAL SHADOW UTILITIES ================== */
+  .shadow-premium {
+    box-shadow: 0 4px 8px -2px rgba(242, 203, 5, 0.25), 0 2px 4px -1px rgba(242, 135, 5, 0.15), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-elite {
+    box-shadow: 0 8px 16px -4px rgba(242, 203, 5, 0.3), 0 4px 8px -2px rgba(242, 135, 5, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  /* ================== CLICKUP-INSPIRED VIBRANT EFFECTS ================== */
+  .hover\:shadow-clickup:hover {
+    box-shadow: 0 10px 25px rgba(118, 18, 250, 0.25), 0 4px 10px rgba(64, 221, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .gradient-clickup {
+    background: linear-gradient(135deg, #7612FA 0%, #40DDFF 100%);
+  }
+
+  .gradient-clickup-pink {
+    background: linear-gradient(135deg, #FA12E3 0%, #FFD700 100%);
+  }
+
+  /* ================== STRIPE-INSPIRED MICRO-INTERACTIONS ================== */
+  .button-stripe {
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+  }
+
+  .button-stripe::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  .button-stripe:hover::before {
+    left: 100%;
+  }
+
+  /* ================== ADVANCED BUTTON STATES ================== */
+  .btn-hover-lift {
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .btn-hover-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-hover-lift:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* ================== SHADOW HIERARCHY SYSTEM DOCUMENTATION ================== */
+  /*
+   * STRIPE-INSPIRED SHADOW HIERARCHY RULES
+   * ======================================
+   * 
+   * This system follows Stripe's sophisticated approach to shadows, ensuring
+   * clean visual hierarchy without visual noise.
+   * 
+   * CORE PRINCIPLES:
+   * 
+   * 1. CONTAINERS ONLY
+   *    - Only base containers get shadows: .shadow-sm, .shadow-md, .shadow-lg
+   *    - Examples: Cards, modals, dropdowns, tooltips, form containers
+   * 
+   * 2. FLAT NESTED ELEMENTS
+   *    - All elements INSIDE containers are shadow-free: .shadow-flat or .shadow-none
+   *    - Examples: Buttons inside cards, inputs inside forms, icons inside containers
+   * 
+   * 3. CONTEXT MATTERS
+   *    - Standalone buttons: Can have shadows (.shadow-sm + hover effects)
+   *    - Nested buttons: Must be flat (.shadow-flat)
+   *    - Navigation items: Flat (.shadow-flat)
+   *    - Form inputs: Always flat (.shadow-flat)
+   * 
+   * 4. SELECTIVE HOVER ANIMATIONS
+   *    - Not everything needs hover shadow animations
+   *    - Use restraint - only primary actions should "lift"
+   *    - Secondary actions should use color/background changes only
+   * 
+   * 5. GLASS/MICA EFFECTS
+   *    - Use backdrop-blur + subtle shadows only
+   *    - Never combine mica with heavy shadows
+   *    - Glass variants (.shadow-glass) for special cases only
+   * 
+   * COMPONENT GUIDELINES:
+   * ====================
+   * 
+   * Cards & Containers:
+   *   ✅ .shadow-sm (default cards)
+   *   ✅ .shadow-md (important cards)
+   *   ✅ .shadow-lg (modals, hero cards)
+   * 
+   * Buttons:
+   *   ✅ Standalone: .shadow-sm + hover effects
+   *   ✅ Inside cards: .shadow-flat (no hover shadow)
+   *   ✅ Navigation: .shadow-flat
+   * 
+   * Inputs & Forms:
+   *   ✅ Always: .shadow-flat
+   *   ✅ Focus: border + ring effects only
+   * 
+   * Icons & Badges:
+   *   ✅ Inside containers: .shadow-flat
+   *   ✅ Floating/standalone: .shadow-xs maximum
+   * 
+   * BEFORE/AFTER EXAMPLES:
+   * ======================
+   * 
+   * ❌ WRONG (Visual Noise):
+   *   <Card className="shadow-md">
+   *     <Input className="shadow-sm" />     <!-- Competing shadows -->
+   *     <Button className="shadow-md" />    <!-- Too many shadows -->
+   *   </Card>
+   * 
+   * ✅ CORRECT (Clean Hierarchy):
+   *   <Card className="shadow-md">
+   *     <Input className="shadow-flat" />   <!-- Flat inside container -->
+   *     <Button className="shadow-flat" />  <!-- Flat inside container -->
+   *   </Card>
+   * 
+   * USE THESE UTILITIES:
+   * ===================
+   * .shadow-flat     - For elements inside containers
+   * .shadow-none     - Same as flat, explicit removal
+   * .shadow-sm       - For base containers, standalone buttons
+   * .shadow-md       - For important containers, cards
+   * .shadow-lg       - For modals, major containers
+   * .shadow-glass    - For mica/glass effects only
+   */
 }

@@ -1,0 +1,134 @@
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { ThemeProvider } from '@/components/ui/theme-provider'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+
+const meta: Meta<typeof ThemeProvider> = {
+  title: 'Components/ThemeProvider',
+  component: ThemeProvider,
+  parameters: {
+    layout: 'fullscreen',
+    docs: {
+      description: {
+        component: 'Theme provider component that wraps the application to enable dark/light theme switching using next-themes.',
+      },
+    },
+  },
+  tags: ['autodocs'],
+}
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+const ThemeDemo = () => (
+  <div className="min-h-screen bg-background text-foreground p-8">
+    <div className="max-w-4xl mx-auto space-y-8">
+      <div className="text-center space-y-4">
+        <h1 className="text-4xl font-bold text-copper-orange">Theme System Demo</h1>
+        <p className="text-muted-foreground">
+          This demonstrates how the ThemeProvider enables seamless dark/light mode switching
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-brass-yellow">Light Theme Features</CardTitle>
+            <CardDescription>
+              Range white backgrounds with copper orange accents
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex gap-2">
+              <Badge variant="default">Primary</Badge>
+              <Badge variant="secondary">Secondary</Badge>
+            </div>
+            <Button className="w-full">Copper Orange Button</Button>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-copper-orange">Dark Theme Features</CardTitle>
+            <CardDescription>
+              Night sight backgrounds with brass yellow accents
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex gap-2">
+              <Badge variant="outline">Outlined</Badge>
+              <Badge className="bg-clubhouse-lawn-green">Success</Badge>
+            </div>
+            <Button variant="outline" className="w-full">
+              Brass Yellow Outline
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="bg-card border border-border rounded-lg p-6">
+        <h3 className="text-xl font-semibold mb-4">Theme-Aware Components</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+          <div className="space-y-2">
+            <div className="w-full h-8 bg-background border border-border rounded"></div>
+            <p className="text-muted-foreground">bg-background</p>
+          </div>
+          <div className="space-y-2">
+            <div className="w-full h-8 bg-card border border-border rounded"></div>
+            <p className="text-muted-foreground">bg-card</p>
+          </div>
+          <div className="space-y-2">
+            <div className="w-full h-8 bg-muted border border-border rounded"></div>
+            <p className="text-muted-foreground">bg-muted</p>
+          </div>
+          <div className="space-y-2">
+            <div className="w-full h-8 bg-copper-orange/20 border border-border rounded"></div>
+            <p className="text-muted-foreground">copper-orange/20</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
+export const Default: Story = {
+  render: () => (
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <ThemeDemo />
+    </ThemeProvider>
+  ),
+}
+
+export const LightMode: Story = {
+  render: () => (
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      enableSystem={false}
+      disableTransitionOnChange
+    >
+      <ThemeDemo />
+    </ThemeProvider>
+  ),
+}
+
+export const DarkMode: Story = {
+  render: () => (
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="dark"
+      enableSystem={false}
+      disableTransitionOnChange
+    >
+      <div className="dark">
+        <ThemeDemo />
+      </div>
+    </ThemeProvider>
+  ),
+}

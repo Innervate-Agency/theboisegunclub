@@ -1,3 +1,5 @@
+'use client'
+
 import { HeroSection } from '@/components/marketing/hero-section'
 import { ServiceGrid } from '@/components/marketing/service-grid'
 import { CTASection } from '@/components/marketing/cta-section'
@@ -5,7 +7,7 @@ import { FeatureGrid } from '@/components/ui/feature-grid'
 import { TestimonialCarousel } from '@/components/ui/testimonial-carousel'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { NavigationFusion } from '@/components/ui/navigation-fusion'
-import { NewThemeToggle } from '@/components/ui/NewThemeToggle'
+import NewThemeToggle from '@/components/ui/NewThemeToggle'
 import { Target, Shield, Users, Calendar } from 'lucide-react'
 
 const navItems = [
