@@ -83,7 +83,7 @@ export function PageHero({
           {/* Icon */}
           {Icon && (
             <div className="flex justify-center">
-              <div className="p-4 bg-white/80 backdrop-blur-sm rounded-full border border-brass-yellow/20 shadow-sm">
+              <div className="p-4 bg-card/80 backdrop-blur-sm rounded-full border border-brass-yellow/20 shadow-sm">
                 <Icon className="h-8 w-8 text-brass-yellow" />
               </div>
             </div>

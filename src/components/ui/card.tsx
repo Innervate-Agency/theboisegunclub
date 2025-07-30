@@ -27,7 +27,10 @@ const cardVariants = cva(
         outlined: "bg-card hover:shadow-sm ring-1 ring-border",
         
         // Subtle: Muted backgrounds - theme aware
-        subtle: "bg-muted hover:bg-card hover:shadow-sm"
+        subtle: "bg-muted hover:bg-card hover:shadow-sm",
+        
+        // Fire: The "fucking great" gradient accent - theme aware
+        fire: "bg-card shadow-md hover:shadow-xl hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-200 hover:after:h-2"
       },
       size: {
         sm: "",           // Components handle their own padding

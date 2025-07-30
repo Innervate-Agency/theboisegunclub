@@ -207,7 +207,7 @@ export function GalleryGrid({
                         handleLike(image.id)
                       }}
                       className={cn(
-                        "bg-white/90 border-0 shadow-sm",
+                        "bg-card/90 border-0 shadow-sm",
                         isLiked && "bg-copper-orange text-white"
                       )}
                     >
@@ -221,7 +221,7 @@ export function GalleryGrid({
                         e.stopPropagation()
                         onDownload?.(image.id)
                       }}
-                      className="bg-white/90 border-0 shadow-sm"
+                      className="bg-card/90 border-0 shadow-sm"
                     >
                       <Download className="icon-sm" />
                     </Button>

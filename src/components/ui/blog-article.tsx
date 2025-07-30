@@ -128,7 +128,7 @@ export function BlogCard({
           
           {/* Category Badge */}
           <div className="absolute top-3 right-3">
-            <Badge variant="secondary" className="bg-white/90 text-gunmetal-black text-xs">
+            <Badge variant="secondary" className="bg-card/90 text-gunmetal-black text-xs">
               {article.category}
             </Badge>
           </div>
@@ -244,7 +244,7 @@ export function BlogCard({
           
           {/* Stats Row */}
           {showStats && (article.views || article.comments) && (
-            <div className="flex items-center gap-4 pt-2 text-xs text-case-hardened border-t border-gray-100">
+            <div className="flex items-center gap-4 pt-2 text-xs text-case-hardened border-t border-border">
               {article.views && (
                 <div className="flex items-center gap-1">
                   <Eye className="icon-xs" />
@@ -440,7 +440,7 @@ export function BlogDetail({
               </h1>
               
               {/* Author */}
-              <div className="flex items-center gap-4 py-4 border-y border-gray-200">
+              <div className="flex items-center gap-4 py-4 border-y border-border">
                 <div className="flex items-center gap-3">
                   {article.author.avatar ? (
                     <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
@@ -497,7 +497,7 @@ export function BlogDetail({
             
             {/* Tags */}
             {article.tags && article.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2 pt-8 border-t border-gray-200 mt-8">
+              <div className="flex flex-wrap gap-2 pt-8 border-t border-border mt-8">
                 <Tag className="icon-sm text-case-hardened mr-2" />
                 {article.tags.map((tag) => (
                   <Badge key={tag} variant="outline" className="border-brass-yellow/30 text-brass-yellow">

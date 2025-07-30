@@ -31,47 +31,32 @@
   --color-scope-blue: #5198cd;
   --color-trigger-blue: #3c81c0;
   --color-rifling-green: #6f7822;
-  --color-bore-sight-green: #909233;
-  --color-safety-red: #8C394B;
+  --color-bore-sight-green: #75B700;    /* Replaced with ayu-green - more vibrant success */
+  --color-safety-red: #FF3B49;         /* Replaced with ayu-red - consistent with crimson-trace */
 
-  /* Dark Theme: Evening Hunt in the Mountains */
+  /* Dark Theme: Evening Hunt in the Mountains - Enhanced with Ayu Vibrancy */
   --color-night-sight: #2F3135;
   --color-carbon-fiber: #4B4B4B;
-  --color-tactical-gray: #494657;
+  --color-tactical-gray: #1C2431;        /* Replaced with ayu-gray - cleaner dark background */
   --color-titanium-white: #FDFDFD;
   --color-stainless-steel: #EEF1F7;
   --color-flash-hider: #F25C05;
-  --color-crimson-trace: #F23005;
-  --color-cerakote-blue: #4982A6;
+  --color-crimson-trace: #FF3B49;        /* Replaced with ayu-red - more vibrant */
+  --color-cerakote-blue: #009FED;        /* Replaced with ayu-blue - electric blue */
   --color-ghost-ring: #C9D2EF;
   --color-woodland-camo: #3F6331;
-  
-  /* ================== SEMANTIC COLORS FOR THEME SYSTEM ================== */
-  /* Light Theme Semantic Colors */
-  --background: #f8f6f1;        /* range-white - warm site background */
-  --foreground: #372103;        /* blued-steel - dark text */
-  --card: #FFFFFF;              /* nickel-white - clean cards */
-  --card-foreground: #372103;   /* blued-steel - dark text on cards */
-  --muted: #ede7de;             /* shooting-bench - muted areas */
-  --muted-foreground: #693e21;  /* case-hardened - muted text */
-  --border: #693e21;            /* case-hardened - borders */
-  --input: #FFFFFF;             /* nickel-white - input backgrounds */
-  --ring: #F2CB05;              /* brass-yellow - focus rings */
-  --radius: 0.25rem;            /* 4px - consistent boxy radius */
 
-  /* Semantic component colors */
-  --primary: #372103;           /* blued-steel */
-  --primary-foreground: #FFFFFF;
-  --secondary: #c08051;         /* walnut-stock */
-  --secondary-foreground: #FFFFFF;
-  --destructive: #F23005;       /* muzzle-flash */
-  --destructive-foreground: #FFFFFF;
-  --accent: #5198cd;            /* scope-blue */
-  --accent-foreground: #FFFFFF;
-  
-  /* Popover/Overlay colors */
-  --popover: rgba(248, 246, 241, 0.85);    /* light mica background */
-  --popover-foreground: #372103;           /* blued-steel text */
+  /* ================== AYU-MIRAGE SECONDARY COLOR PALLETE ================== */
+
+  /* Secondary Brand Colors */
+  --color-ayu-blue: #009FED;          /* Bright blue for accents */
+  --color-ayu-green: #75B700;        /* Fresh green for highlights */
+  --color-ayu-teal: #00C496;        /* Fresh teal for highlights */
+  --color-ayu-colbalt: #0C4367;       /* Deep cobalt for primary actions */
+  --color-ayu-purple: #6E5083;      /* Soft purple for subtle details */
+  --color-ayu-yellow: #FFA600;      /* Warm yellow for highlights */
+  --color-ayu-red: #FF3B49;         /* Vibrant red for alerts */
+  --color-ayu-gray: #1C2431;        /* Neutral gray for backgrounds */
   
   /* ================== ICON SYSTEM - LUCIDE REACT INTEGRATION ================== */
   /* Icon sizing tokens for consistent scaling */
@@ -82,15 +67,15 @@
   --icon-xl: 32px;
   --icon-2xl: 48px;
   
-  /* Icon color variants using TBGC palette */
+  /* Icon color variants using TBGC + Ayu enhanced palette */
   --icon-primary: var(--color-brass-yellow);
   --icon-secondary: var(--color-copper-orange);
-  --icon-accent: var(--color-scope-blue);
+  --icon-accent: var(--color-cerakote-blue);     /* Now using vibrant ayu-blue */
   --icon-muted: var(--color-case-hardened);
-  --icon-success: var(--color-rifling-green);
+  --icon-success: var(--color-bore-sight-green); /* Now using vibrant ayu-green */
   --icon-warning: var(--color-recoil-pad);
-  --icon-danger: var(--color-safety-red);
-  --icon-info: var(--color-trigger-blue);
+  --icon-danger: var(--color-safety-red);        /* Now using vibrant ayu-red */
+  --icon-info: var(--color-cerakote-blue);       /* Now using vibrant ayu-blue */
   
   /* ================== ANIMATION & TRANSITION SYSTEM ================== */
   --timing-fast: 150ms;
@@ -327,61 +312,6 @@
   
   /* Mica noise texture data URI - subtle grain pattern */
   --mica-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-
-  /* ================== SEMANTIC COLORS FOR LIGHT THEME ================== */
-  /* Light Theme - "Spring Day at the Range" colors */
-  --background: #f8f6f1;        /* range-white - warm site background */
-  --foreground: #372103;        /* blued-steel - dark text */
-  --card: #FFFFFF;              /* nickel-white - clean cards */
-  --card-foreground: #372103;   /* blued-steel - dark text on cards */
-  --muted: #ede7de;             /* shooting-bench - muted areas */
-  --muted-foreground: #693e21;  /* case-hardened - muted text */
-  --border: #693e21;            /* case-hardened - borders */
-  --input: #FFFFFF;             /* nickel-white - input backgrounds */
-  --ring: #F2CB05;              /* brass-yellow - focus rings */
-  --radius: 0.25rem;            /* 4px - consistent boxy radius */
-
-  /* Semantic component colors */
-  --primary: #372103;           /* blued-steel */
-  --primary-foreground: #FFFFFF;
-  --secondary: #c08051;         /* walnut-stock */
-  --secondary-foreground: #FFFFFF;
-  --destructive: #F23005;       /* muzzle-flash */
-  --destructive-foreground: #FFFFFF;
-  --accent: #5198cd;            /* scope-blue */
-  --accent-foreground: #FFFFFF;
-  
-  /* Popover/Overlay colors */
-  --popover: rgba(248, 246, 241, 0.85);    /* light mica background */
-  --popover-foreground: #372103;           /* blued-steel text */
-}
-
-@variant dark {
-  /* ================== SEMANTIC COLORS FOR DARK THEME ================== */
-  /* Dark Theme - "Evening Hunt in the Mountains" palette */
-  --background: #2F3135;        /* night-sight - deep dark background */
-  --foreground: #FDFDFD;        /* titanium-white - light text */
-  --card: #4B4B4B;              /* carbon-fiber - elevated dark cards */
-  --card-foreground: #FDFDFD;   /* titanium-white - light text on cards */
-  --muted: #494657;             /* tactical-gray - muted dark areas */
-  --muted-foreground: #EEF1F7;  /* stainless-steel - muted light text */
-  --border: #494657;            /* tactical-gray - dark borders */
-  --input: #4B4B4B;             /* carbon-fiber - dark inputs */
-  --ring: #F2CB05;              /* brass-yellow - focus rings */
-
-  /* Semantic component colors for dark mode */
-  --primary: #FDFDFD;           /* titanium-white */
-  --primary-foreground: #2F3135;
-  --secondary: #494657;         /* tactical-gray */
-  --secondary-foreground: #FDFDFD;
-  --destructive: #F25C05;       /* flash-hider */
-  --destructive-foreground: #FDFDFD;
-  --accent: #4982A6;            /* cerakote-blue */
-  --accent-foreground: #FDFDFD;
-  
-  /* Popover/Overlay colors for dark */
-  --popover: rgba(75, 75, 75, 0.90);      /* dark mica background */
-  --popover-foreground: #FDFDFD;          /* titanium-white text */
 }
 
 @layer base {
@@ -405,7 +335,7 @@
     --secondary-foreground: var(--color-nickel-white);
     --destructive: var(--color-muzzle-flash);
     --destructive-foreground: var(--color-nickel-white);
-    --accent: var(--color-scope-blue);
+    --accent: var(--color-cerakote-blue);        /* Now using vibrant ayu-blue */
     --accent-foreground: var(--color-nickel-white);
     
     /* Popover/Overlay colors - MICA BACKGROUNDS FOR MODERN GLASS EFFECT */
@@ -433,7 +363,7 @@
     --secondary-foreground: var(--color-titanium-white);
     --destructive: var(--color-crimson-trace);
     --destructive-foreground: var(--color-titanium-white);
-    --accent: var(--color-cerakote-blue);
+    --accent: var(--color-cerakote-blue);        /* Consistent vibrant ayu-blue */
     --accent-foreground: var(--color-titanium-white);
     --popover: var(--overlay-bg-dark);            /* Mica glass dark popover backgrounds */
     --popover-foreground: var(--overlay-text-dark);
@@ -625,47 +555,47 @@
   }
   
   .mica-dropdown {
-    background: rgba(255, 255, 255, 0.88);  /* Very opaque like Windows 11 */
-    -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(103%);
-    backdrop-filter: blur(32px) saturate(200%) brightness(103%);
-    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.18);
+    -webkit-backdrop-filter: blur(18px) saturate(160%) brightness(103%);
+    backdrop-filter: blur(18px) saturate(160%) brightness(103%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     position: relative;
     box-shadow: 
-      0 6px 24px rgba(0, 0, 0, 0.12),
-      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      0 4px 20px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
     isolation: isolate;
   }
   
   .dark .mica-dropdown {
-    background: rgba(47, 49, 53, 0.92);  /* Almost opaque in dark mode */
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    -webkit-backdrop-filter: blur(36px) saturate(220%) brightness(85%);
-    backdrop-filter: blur(36px) saturate(220%) brightness(85%);
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(22px) saturate(180%) brightness(90%);
+    backdrop-filter: blur(22px) saturate(180%) brightness(90%);
     box-shadow: 
-      0 6px 24px rgba(0, 0, 0, 0.25),
-      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      0 4px 20px rgba(0, 0, 0, 0.20),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
   
   .mica-modal {
-    background: rgba(255, 255, 255, 0.90);  /* Very opaque for proper Mica feel */
-    -webkit-backdrop-filter: blur(40px) saturate(220%) brightness(108%);
-    backdrop-filter: blur(40px) saturate(220%) brightness(108%);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.20);
+    -webkit-backdrop-filter: blur(24px) saturate(200%) brightness(108%);
+    backdrop-filter: blur(24px) saturate(200%) brightness(108%);
+    border: 1px solid rgba(255, 255, 255, 0.30);
     position: relative;
     box-shadow: 
-      0 16px 48px rgba(0, 0, 0, 0.15),
-      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      0 12px 40px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
     isolation: isolate;
   }
   
   .dark .mica-modal {
-    background: rgba(47, 49, 53, 0.95);  /* Almost completely opaque */
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    -webkit-backdrop-filter: blur(45px) saturate(240%) brightness(80%);
-    backdrop-filter: blur(45px) saturate(240%) brightness(80%);
+    background: rgba(0, 0, 0, 0.30);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    -webkit-backdrop-filter: blur(28px) saturate(220%) brightness(85%);
+    backdrop-filter: blur(28px) saturate(220%) brightness(85%);
     box-shadow: 
-      0 16px 48px rgba(0, 0, 0, 0.35),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      0 12px 40px rgba(0, 0, 0, 0.30),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
   }
   
   .mica-tooltip {
@@ -726,25 +656,19 @@
   /* ================== ENHANCED MICA CARD VARIANTS ================== */
   /* For cards that should have mica effect */
   .mica-card {
-    background: rgba(255, 255, 255, 0.85);  /* Windows 11 Mica opacity */
-    -webkit-backdrop-filter: blur(28px) saturate(180%) brightness(102%);
-    backdrop-filter: blur(28px) saturate(180%) brightness(102%);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.85);
+    -webkit-backdrop-filter: blur(12px) saturate(150%) brightness(102%);
+    backdrop-filter: blur(12px) saturate(150%) brightness(102%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     position: relative;
     isolation: isolate;
-    box-shadow: 
-      0 4px 16px rgba(0, 0, 0, 0.06),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
   
   .dark .mica-card {
-    background: rgba(75, 75, 75, 0.88);  /* More opaque dark cards */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(85%);
-    backdrop-filter: blur(32px) saturate(200%) brightness(85%);
-    box-shadow: 
-      0 4px 16px rgba(0, 0, 0, 0.15),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background: rgba(75, 75, 75, 0.85);
+    border-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(16px) saturate(180%) brightness(85%);
+    backdrop-filter: blur(16px) saturate(180%) brightness(85%);
   }
   
   /* For premium mica cards with brand gradient */

@@ -151,7 +151,7 @@ export default function FAQAccordion({
               key={faq.id} 
               value={faq.id}
               className={cn(
-                variant === "card" && "bg-white border border-gray-200 rounded-lg px-6 py-2 shadow-sm"
+                variant === "card" && "bg-card border border-border rounded-lg px-6 py-2 shadow-sm"
               )}
             >
               <AccordionTrigger className="text-left hover:no-underline py-4">

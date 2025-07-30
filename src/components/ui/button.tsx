@@ -60,7 +60,10 @@ const buttonVariants = cva(
         flat: "bg-brass-yellow text-primary hover:bg-copper-orange focus-visible:ring-brass-yellow/50 transition-colors duration-150",
         
         // Link: Simple text, no shadow
-        link: "text-copper-orange hover:text-recoil-pad underline-offset-4 hover:underline focus-visible:ring-copper-orange border-0"
+        link: "text-copper-orange hover:text-recoil-pad underline-offset-4 hover:underline focus-visible:ring-copper-orange border-0",
+        
+        // Fire: The "fucking great" gradient with bottom accent bar
+        fire: "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 focus-visible:ring-copper-orange transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-200 hover:after:h-2"
       },
       size: {
         xs: "px-2 py-1 text-xs h-6 gap-1",

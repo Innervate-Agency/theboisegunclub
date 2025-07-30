@@ -148,7 +148,7 @@ export function PricingCard({
               <div className="text-xs text-case-hardened mt-1">
                 Billed annually (${price}/year)
                 {savings > 0 && (
-                  <div className="text-green-600 font-medium">
+                  <div className="text-bore-sight-green font-medium">
                     Save ${savings} per year
                   </div>
                 )}
@@ -308,13 +308,13 @@ export function PricingTable({
   )
 
   function renderFeatureValue(feature?: PricingFeature) {
-    if (!feature) return <X className="h-4 w-4 text-gray-400 mx-auto" />
+    if (!feature) return <X className="h-4 w-4 text-muted-foreground mx-auto" />
     
     if (feature.included === true) {
-      return <Check className="h-4 w-4 text-green-600 mx-auto" />
+      return <Check className="h-4 w-4 text-bore-sight-green mx-auto" />
     }
     if (feature.included === false) {
-      return <X className="h-4 w-4 text-gray-400 mx-auto" />
+      return <X className="h-4 w-4 text-muted-foreground mx-auto" />
     }
     if (typeof feature.included === 'number') {
       return <span className="text-sm font-medium text-gunmetal-black">{feature.included}</span>
@@ -444,13 +444,13 @@ export function PricingFusion({
   )
 
   function renderFeatureValueFusion(feature?: PricingFeature) {
-    if (!feature) return <X className="h-4 w-4 text-gray-400 mx-auto" />
+    if (!feature) return <X className="h-4 w-4 text-muted-foreground mx-auto" />
     
     if (feature.included === true) {
-      return <Check className="h-4 w-4 text-green-600 mx-auto" />
+      return <Check className="h-4 w-4 text-bore-sight-green mx-auto" />
     }
     if (feature.included === false) {
-      return <X className="h-4 w-4 text-gray-400 mx-auto" />
+      return <X className="h-4 w-4 text-muted-foreground mx-auto" />
     }
     if (typeof feature.included === 'number') {
       return <span className="text-sm font-medium text-gunmetal-black">{feature.included}</span>
