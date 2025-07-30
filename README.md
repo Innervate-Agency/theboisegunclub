@@ -91,11 +91,19 @@ All components follow the **Class Variance Authority (CVA)** pattern with:
 - **Strategic Restraint**: Purposeful styling avoiding "gaudy" effects
 - **Typography Hierarchy**: Rajdhani (display), Noto Sans (body), Noto Serif (accent)
 
-### Shadow Hierarchy
+### Shadow Consistency & Strategic Restraint
 
-- **Containers**: Get shadows for depth
+**CRITICAL PRINCIPLE**: All components use consistent shadow depth to prevent visual noise and distraction.
+
+- **Universal Shadows**: `shadow-sm hover:shadow-md` across ALL components regardless of tier
+- **No Shadow Hierarchy**: Premium tiers DO NOT use deeper shadows (shadow-lg, shadow-xl, shadow-2xl)
 - **Nested Elements**: Stay flat to avoid shadow stacking
-- **Interaction States**: Subtle elevation changes on hover
+- **Premium Differentiation**: Achieved through:
+  - Subtle background overlays (`before:` pseudo-elements)
+  - Center-positioned gradient accents (`after:` pseudo-elements)  
+  - Background tints and glassmorphism effects
+  - Backdrop blur treatments
+- **Strategic Restraint**: Clean, professional appearance without competing visual elements
 
 ## 🧩 Component Library
 
@@ -151,6 +159,8 @@ All components follow the **Class Variance Authority (CVA)** pattern with:
 - ❌ Generic Tailwind colors: `text-gray-500`, `bg-blue-600`
 - ❌ Inline styles: `style="color: red"`
 - ❌ Non-theme-aware classes: `bg-white`, `text-black`
+- ❌ **Shadow depth for tier indication**: `shadow-lg`, `shadow-xl`, `shadow-2xl` for premium variants
+- ❌ **Decorative borders**: Use shadows and gradient accents instead
 
 ## 🔧 Configuration Files
 

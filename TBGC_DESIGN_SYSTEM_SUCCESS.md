@@ -28,6 +28,14 @@ Successfully applied the comprehensive 1,868-line TBGC design system to create b
 - **File**: `src/components/ui/button.tsx`
 - **Resolution**: Fixed duplicate CVA variants and TypeScript compilation errors
 - **Variants**: Proper fire-orange, fire-blue, fire-animated with design system classes
+
+### ✅ 5. Shadow Consistency & Strategic Restraint Applied (2025-07-30)
+- **CRITICAL UPDATE**: Eliminated shadow depth as tier indicator across entire system
+- **Components Updated**: VendorCard, StatCard, Card, CalloutCard, FacilityCard, DirectoryCard, EnhancedCard, EnhancedButton, PricingTable, SiteNavigation
+- **Philosophy**: Consistent `shadow-sm hover:shadow-md` prevents visual noise and distraction
+- **Premium Features**: Now expressed through sophisticated background overlays and gradient accents
+- **Layout Improvements**: Increased card spacing from `gap-6` to `gap-8` for better breathing room
+- **Design Maturity**: Professional, clean aesthetic without competing visual elements
 - **Integration**: Uses pre-built component state utilities from globals.css
 
 ## Technical Implementation Highlights

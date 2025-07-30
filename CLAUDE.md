@@ -104,6 +104,14 @@ Use these patterns when adding new components or features to maintain consistenc
 - **ALWAYS** use Tailwind v4 syntax: `bg-leonard-yellow/20` not `bg-[var(--color-leonard-yellow)]`
 - **Color Map**: Available in `src/lib/utils.ts` as `brandColors` object
 
+### Critical Shadow Rules (ZERO TOLERANCE)
+
+- **CONSISTENT SHADOWS**: ALL components use `shadow-sm hover:shadow-md` regardless of tier
+- **NEVER** use shadow depth for tier indication: `shadow-lg`, `shadow-xl`, `shadow-2xl` are **FORBIDDEN** for premium variants
+- **PREMIUM FEATURES**: Express through background overlays (`before:` pseudo-elements) and gradient accents (`after:` pseudo-elements)
+- **STRATEGIC RESTRAINT**: Avoid visual noise - consistent shadow depth maintains professional appearance
+- **SPACING**: Use `gap-8` for card grids, not `gap-6` or smaller for proper breathing room
+
 ### Primary Accent Colors (Updated 2025-07-28)
 
 - **Light Theme Primary**: `copper-orange` - Perfect contrast on light backgrounds
