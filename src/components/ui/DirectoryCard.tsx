@@ -88,3 +88,5 @@ export function DirectoryCard({
 }
 
 DirectoryCard.displayName = 'DirectoryCard';
+
+export { DirectoryCard };

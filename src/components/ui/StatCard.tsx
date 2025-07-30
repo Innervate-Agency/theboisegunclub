@@ -115,3 +115,5 @@ export default function StatCard({
     </Card>
   )
 }
+
+export { StatCard }

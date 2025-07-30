@@ -2,9 +2,6 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { DirectoryCard } from '@/components/ui/DirectoryCard'
-import { FacilityCard } from '@/components/ui/FacilityCard'
-import { StatCard } from '@/components/ui/StatCard'
 import { 
   Target, 
   Users, 
@@ -127,34 +124,42 @@ const BusinessShowcase = () => (
           Regional Impact
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <StatCard
-            title="Vendor Partners"
-            value="50+"
-            description="Gun shops, ranges, instructors"
-            trend="up"
-            className="border-l-4 border-l-copper-orange"
-          />
-          <StatCard
-            title="Community Members"
-            value="5,000+"
-            description="Active enthusiasts"
-            trend="up"
-            className="border-l-4 border-l-brass-yellow"
-          />
-          <StatCard
-            title="Monthly Events"
-            value="25+"
-            description="Competitions & training"
-            trend="up"
-            className="border-l-4 border-l-ayu-blue"
-          />
-          <StatCard
-            title="Service Bookings"
-            value="200+"
-            description="Monthly reservations"
-            trend="up"
-            className="border-l-4 border-l-clubhouse-lawn-green"
-          />
+          <Card className="border-l-4 border-l-copper-orange">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-medium text-muted-foreground">Vendor Partners</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold text-copper-orange">50+</div>
+              <p className="text-xs text-muted-foreground">Gun shops, ranges, instructors</p>
+            </CardContent>
+          </Card>
+          <Card className="border-l-4 border-l-brass-yellow">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-medium text-muted-foreground">Community Members</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold text-brass-yellow">5,000+</div>
+              <p className="text-xs text-muted-foreground">Active enthusiasts</p>
+            </CardContent>
+          </Card>
+          <Card className="border-l-4 border-l-ayu-blue">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-medium text-muted-foreground">Monthly Events</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold text-ayu-blue">25+</div>
+              <p className="text-xs text-muted-foreground">Competitions & training</p>
+            </CardContent>
+          </Card>
+          <Card className="border-l-4 border-l-clubhouse-lawn-green">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-medium text-muted-foreground">Service Bookings</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold text-clubhouse-lawn-green">200+</div>
+              <p className="text-xs text-muted-foreground">Monthly reservations</p>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
@@ -245,16 +250,39 @@ const BusinessShowcase = () => (
               <h3 className="text-xl font-bold text-copper-orange mb-2">Vendor Partners</h3>
               <p className="text-muted-foreground">Gun shops, ranges, instructors, gunsmiths</p>
             </div>
-            <FacilityCard
-              name="Capital City Guns"
-              type="Gun Store"
-              location="Boise, ID"
-              rating={4.8}
-              reviewCount={124}
-              features={["FFL Transfers", "Gunsmithing", "Training Classes"]}
-              verified={true}
-              className="shadow-sm"
-            />
+            <Card className="shadow-sm">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-copper-orange rounded-lg flex items-center justify-center">
+                    <Target className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-base">Capital City Guns</CardTitle>
+                    <CardDescription>Gun Store • Boise, ID</CardDescription>
+                  </div>
+                  <Badge className="ml-auto bg-clubhouse-lawn-green text-white">
+                    <Shield className="w-3 h-3 mr-1" />
+                    Verified
+                  </Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="flex">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star key={star} className="w-4 h-4 fill-brass-yellow text-brass-yellow" />
+                    ))}
+                  </div>
+                  <span className="text-sm text-muted-foreground">4.8 (124 reviews)</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary">FFL Transfers</Badge>
+                  <Badge variant="secondary">Gunsmithing</Badge>
+                  <Badge variant="secondary">Training Classes</Badge>
+                </div>
+                <div className="w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-4 rounded-full"></div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Enthusiasts */}
@@ -301,13 +329,25 @@ const BusinessShowcase = () => (
               <h3 className="text-xl font-bold text-ayu-blue mb-2">Visitors</h3>
               <p className="text-muted-foreground">Directory browsers and newcomers</p>
             </div>
-            <DirectoryCard
-              name="Treasure Valley Ranges"
-              description="Discover shooting ranges, training facilities, and competition venues across the region"
-              category="Directory"
-              itemCount={15}
-              className="shadow-sm"
-            />
+            <Card className="shadow-sm">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-ayu-blue rounded-lg flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-base">Treasure Valley Ranges</CardTitle>
+                    <CardDescription>Directory • 15 locations</CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Discover shooting ranges, training facilities, and competition venues across the region
+                </p>
+                <div className="w-full h-1 bg-gradient-to-r from-ayu-blue to-ayu-teal mt-4 rounded-full"></div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
@@ -382,39 +422,68 @@ export const VendorFocused: Story = {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <StatCard
-            title="Monthly Bookings"
-            value="47"
-            description="+23% from last month"
-            trend="up"
-            className="border-l-4 border-l-copper-orange"
-          />
-          <StatCard
-            title="Profile Views"
-            value="2,340"
-            description="Directory visibility"
-            trend="up"
-            className="border-l-4 border-l-brass-yellow"
-          />
-          <StatCard
-            title="Reviews"
-            value="4.9"
-            description="Average rating"
-            trend="up"
-            className="border-l-4 border-l-clubhouse-lawn-green"
-          />
+          <Card className="border-l-4 border-l-copper-orange">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-medium text-muted-foreground">Monthly Bookings</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold text-copper-orange">47</div>
+              <p className="text-xs text-muted-foreground">+23% from last month</p>
+            </CardContent>
+          </Card>
+          <Card className="border-l-4 border-l-brass-yellow">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-medium text-muted-foreground">Profile Views</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold text-brass-yellow">2,340</div>
+              <p className="text-xs text-muted-foreground">Directory visibility</p>
+            </CardContent>
+          </Card>
+          <Card className="border-l-4 border-l-clubhouse-lawn-green">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-medium text-muted-foreground">Reviews</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold text-clubhouse-lawn-green">4.9</div>
+              <p className="text-xs text-muted-foreground">Average rating</p>
+            </CardContent>
+          </Card>
         </div>
 
-        <FacilityCard
-          name="Your Business Listing"
-          type="Premium Vendor"
-          location="Boise, ID"
-          rating={4.9}
-          reviewCount={87}
-          features={["Priority Listing", "Advanced Analytics", "Direct Booking"]}
-          verified={true}
-          className="border-2 border-copper-orange/20"
-        />
+        <Card className="border-2 border-copper-orange/20">
+          <CardHeader>
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-copper-orange rounded-lg flex items-center justify-center">
+                <Shield className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <CardTitle className="text-base">Your Business Listing</CardTitle>
+                <CardDescription>Premium Vendor • Boise, ID</CardDescription>
+              </div>
+              <Badge className="ml-auto bg-clubhouse-lawn-green text-white">
+                <Shield className="w-3 h-3 mr-1" />
+                Verified
+              </Badge>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-center gap-2 mb-3">
+              <div className="flex">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star key={star} className="w-4 h-4 fill-brass-yellow text-brass-yellow" />
+                ))}
+              </div>
+              <span className="text-sm text-muted-foreground">4.9 (87 reviews)</span>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="secondary">Priority Listing</Badge>
+              <Badge variant="secondary">Advanced Analytics</Badge>
+              <Badge variant="secondary">Direct Booking</Badge>
+            </div>
+            <div className="w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-4 rounded-full"></div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   ),
