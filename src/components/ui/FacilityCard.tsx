@@ -15,8 +15,8 @@ const facilityCardVariants = cva(
       variant: {
         // STRATEGIC RESTRAINT: Shadow-first approach like VendorCard
         default: "bg-card shadow-sm hover:shadow-md",
-        featured: "bg-gradient-to-br from-brass-yellow/5 via-copper-orange/5 to-walnut-stock/5 shadow-md hover:shadow-lg relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
-        premium: "bg-gradient-to-br from-blued-steel/10 via-case-hardened/10 to-blued-steel/10 shadow-lg hover:shadow-xl hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-ayu-blue after:to-case-hardened after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        featured: "bg-gradient-to-br from-brass-yellow/5 via-copper-orange/5 to-walnut-stock/5 shadow-sm hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        premium: "bg-gradient-to-br from-blued-steel/10 via-case-hardened/10 to-blued-steel/10 shadow-sm hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-ayu-blue after:to-case-hardened after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         compact: "bg-card shadow-sm hover:shadow-md"
       },
       size: {

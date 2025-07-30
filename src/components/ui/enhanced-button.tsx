@@ -13,8 +13,8 @@ const enhancedButtonVariants = cva(
         // Default: Clean shadow hierarchy - no decorative borders
         default: "bg-primary text-primary-foreground shadow-sm hover:shadow-md hover:-translate-y-0.5",
         
-        // Primary: Brand gradient with sophisticated shadows
-        primary: "bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black shadow-md hover:shadow-lg hover:-translate-y-1 font-semibold",
+        // Primary: Brand gradient with consistent shadows
+        primary: "bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black shadow-sm hover:shadow-md hover:-translate-y-0.5 font-semibold",
         
         // Secondary: Walnut-themed with shadow depth
         secondary: "bg-walnut-stock text-nickel-white shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:bg-walnut-stock/90",
@@ -25,14 +25,14 @@ const enhancedButtonVariants = cva(
         // Ghost: Pure transparent approach
         ghost: "bg-transparent text-foreground hover:bg-muted hover:text-foreground hover:shadow-sm",
         
-        // Glass: Mica effect with shadow sophistication - no borders
-        glass: "mica-overlay text-foreground shadow-lg hover:shadow-xl backdrop-blur-sm",
+        // Glass: Mica effect with consistent shadows - no borders
+        glass: "mica-overlay text-foreground shadow-sm hover:shadow-md backdrop-blur-sm",
         
         // Fire: Center-positioned gradient accent like VendorCard
-        fire: "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
+        fire: "bg-card text-card-foreground shadow-sm hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
         // Fire Blue: Center-positioned cool gradient
-        "fire-blue": "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
+        "fire-blue": "bg-card text-card-foreground shadow-sm hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
         // Destructive: Shadow-first with enhanced depth
         destructive: "bg-muzzle-flash text-nickel-white shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:bg-muzzle-flash/90",

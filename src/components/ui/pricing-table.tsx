@@ -16,12 +16,12 @@ const pricingCardVariants = cva(
         // STRATEGIC RESTRAINT: Shadow-first approach for pricing tables
         default: "bg-card shadow-sm hover:shadow-md",
         compact: "bg-card shadow-sm hover:shadow-md",
-        detailed: "bg-card shadow-lg hover:shadow-xl",
-        fusion: "mica-card-premium shadow-lg hover:shadow-xl backdrop-blur-sm"
+        detailed: "bg-card shadow-sm hover:shadow-md",
+        fusion: "mica-card-premium shadow-sm hover:shadow-md backdrop-blur-sm"
       },
       popular: {
-        // Popular cards get enhanced shadow depth instead of borders
-        true: "shadow-xl hover:shadow-2xl scale-105 z-10 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-scope-blue after:to-ayu-blue after:transition-all after:duration-300 after:ease-out after:w-full after:rounded-b-lg",
+        // Popular cards get enhanced background treatment instead of deeper shadows
+        true: "shadow-sm hover:shadow-md scale-105 z-10 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-scope-blue after:to-ayu-blue after:transition-all after:duration-300 after:ease-out after:w-full after:rounded-b-lg",
         false: ""
       },
       recommended: {

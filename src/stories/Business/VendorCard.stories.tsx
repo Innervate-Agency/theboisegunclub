@@ -143,7 +143,7 @@ export const GoldTier: Story = {
 // Showcase all tiers together
 export const AllTiers: Story = {
   render: () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-8">
       <div className="space-y-4">
         <h3 className="font-rajdhani font-bold text-lg text-center">FREE TIER</h3>
         <VendorCard
@@ -245,7 +245,7 @@ export const ResponsiveGrid: Story = {
       </div>
       
       {/* Tablet: 2 columns */}
-      <div className="hidden md:grid lg:hidden grid-cols-2 gap-6">
+      <div className="hidden md:grid lg:hidden grid-cols-2 gap-8">
         <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true} featured={true} monthlyLeads={42} />
         <VendorCard {...sampleBusinesses.range} tier="silver" isVerified={true} />
         <VendorCard {...sampleBusinesses.gunsmith} tier="copper" isVerified={true} />
@@ -253,7 +253,7 @@ export const ResponsiveGrid: Story = {
       </div>
       
       {/* Desktop: 3 columns */} 
-      <div className="hidden lg:grid grid-cols-3 gap-6">
+      <div className="hidden lg:grid grid-cols-3 gap-8">
         <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true} featured={true} monthlyLeads={42} />
         <VendorCard {...sampleBusinesses.range} tier="silver" isVerified={true} featured={true} />
         <VendorCard {...sampleBusinesses.gunsmith} tier="copper" isVerified={true} />

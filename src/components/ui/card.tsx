@@ -9,19 +9,19 @@ const cardVariants = cva(
     variants: {
       variant: {
         // Default: Clean with good shadows - theme aware
-        default: "bg-card shadow-sm hover:shadow-lg",
+        default: "bg-card shadow-sm hover:shadow-md",
         
         // Elevated: More prominent - theme aware
-        elevated: "bg-card shadow-md hover:shadow-xl hover:-translate-y-1",
+        elevated: "bg-card shadow-sm hover:shadow-md hover:-translate-y-1",
         
-        // Interactive: Clickable feedback - theme aware
-        interactive: "bg-card shadow-sm hover:shadow-lg hover:-translate-y-0.5 cursor-pointer",
+        // Interactive: Clickable feedback - consistent shadows
+        interactive: "bg-card shadow-sm hover:shadow-md hover:-translate-y-0.5 cursor-pointer",
         
-        // Premium: Strategic restraint - shadow depth with gradient accent instead of rings
-        premium: "bg-card shadow-lg hover:shadow-xl hover:-translate-y-1 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/4 before:via-transparent before:to-copper-orange/3 before:rounded-lg before:pointer-events-none",
+        // Premium: Consistent default shadows with gradient accent instead of rings
+        premium: "bg-card shadow-sm hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/4 before:via-transparent before:to-copper-orange/3 before:rounded-lg before:pointer-events-none",
         
-        // Glass: Modern glassmorphism - theme aware
-        glass: "mica-card shadow-lg hover:shadow-xl transition-shadow duration-200",
+        // Glass: Modern glassmorphism - consistent shadows
+        glass: "mica-card shadow-sm hover:shadow-md transition-shadow duration-200",
         
         // Outlined: Strategic restraint - subtle shadow instead of ring
         outlined: "bg-card shadow-sm hover:shadow-md bg-gradient-to-br from-card/98 to-card/95",
@@ -30,16 +30,16 @@ const cardVariants = cva(
         subtle: "bg-muted hover:bg-card hover:shadow-sm",
         
         // Fire: The "fucking great" gradient accent - theme aware
-        fire: "bg-card shadow-md hover:shadow-xl hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        fire: "bg-card shadow-sm hover:shadow-md hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
         // Fire Blue: Blue to green fire gradient 
-        "fire-blue": "bg-card shadow-md hover:shadow-xl hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        "fire-blue": "bg-card shadow-sm hover:shadow-md hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
         // Fire Purple: Purple to cobalt fire gradient
-        "fire-purple": "bg-card shadow-md hover:shadow-xl hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        "fire-purple": "bg-card shadow-sm hover:shadow-md hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
         // Fire Green: Green variants fire gradient
-        "fire-green": "bg-card shadow-md hover:shadow-xl hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
+        "fire-green": "bg-card shadow-sm hover:shadow-md hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
       },
       size: {
         sm: "",           // Components handle their own padding

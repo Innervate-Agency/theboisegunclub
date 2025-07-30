@@ -74,9 +74,10 @@ export function SiteNavigation({
         <div className="p-6">
           {showLogo && (
             <div className="mb-8">
-              <h2 className="text-xl font-rajdhani font-bold text-gunmetal-black">
-                TBGC
-              </h2>
+              <div className="text-xl font-rajdhani text-gunmetal-black">
+                <span className="font-extrabold">THE BOISE GUN</span>{' '}
+                <span className="font-light">CLUB</span>
+              </div>
               <p className="text-sm text-case-hardened">Treasure Valley</p>
             </div>
           )}
@@ -114,9 +115,10 @@ export function SiteNavigation({
                   <Target className="h-4 w-4 text-gunmetal-black" />
                 </div>
                 <div>
-                                    <h1 className="text-lg font-rajdhani font-bold text-gunmetal-black">
-                    TBGC
-                  </h1>
+                  <div className="text-lg font-rajdhani text-gunmetal-black">
+                    <span className="font-extrabold">THE BOISE GUN</span>{' '}
+                    <span className="font-light">CLUB</span>
+                  </div>
                   <p className="text-xs text-case-hardened -mt-1">
                     Treasure Valley
                   </p>

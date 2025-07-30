@@ -128,7 +128,7 @@ export const StrategicHierarchy: Story = {
         <p className="text-muted-foreground">Each tier should make the next one obviously more valuable</p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div className="space-y-4">
           <div className="text-center">
             <h3 className="font-rajdhani font-bold text-sm text-muted-foreground">FREE - $0</h3>
