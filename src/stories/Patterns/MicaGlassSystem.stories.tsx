@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { MicaGlassDemo } from '../components/ui/mica-glass-demo'
-import { GlassmorphismExamples } from '../components/ui/glassmorphism-examples'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { MicaGlassDemo } from '@/components/ui/mica-glass-demo'
+import { GlassmorphismExamples } from '@/components/ui/glassmorphism-examples'
 
 const meta: Meta<typeof MicaGlassDemo> = {
-  title: 'TBGC Design System/Mica Glass System',
+  title: 'Patterns/Mica Glass System',
   component: MicaGlassDemo,
   parameters: {
     layout: 'fullscreen',

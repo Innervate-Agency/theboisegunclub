@@ -10,21 +10,21 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default: "bg-muted text-card-foreground hover:bg-muted/80",
-        premium: "bg-brass-yellow/10 text-brass-yellow hover:bg-brass-yellow/20 shadow-sm",
-        elite: "bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20 shadow-md",
-        glass: "mica-overlay text-card-foreground shadow-sm",
+        premium: "bg-brass-yellow/10 text-brass-yellow hover:bg-brass-yellow/20",
+        elite: "bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20",
+        glass: "mica-overlay text-card-foreground",
         success: "bg-rifling-green/10 text-rifling-green hover:bg-rifling-green/20",
         warning: "bg-sight-gold/10 text-sight-gold hover:bg-sight-gold/20",
         error: "bg-safety-red/10 text-safety-red hover:bg-safety-red/20",
         info: "bg-scope-blue/10 text-scope-blue hover:bg-scope-blue/20",
-        outline: "text-muted-foreground hover:bg-muted ring-1 ring-border",
+        outline: "text-muted-foreground hover:bg-muted ring-1 ring-border/30 hover:ring-border/50",
         destructive: "bg-muzzle-flash/10 text-muzzle-flash hover:bg-muzzle-flash/20"
       },
       size: {
-        sm: "px-[var(--badge-padding-x-sm)] py-0.5 text-[var(--text-xs)] h-[var(--badge-height-sm)]",
-        default: "px-[var(--badge-padding-x-base)] py-0.5 text-[var(--text-xs)] h-[var(--badge-height-base)]",
-        lg: "px-[var(--badge-padding-x-lg)] py-1 text-[var(--text-sm)] h-[var(--badge-height-lg)]",
-        xl: "px-4 py-1.5 text-[var(--text-sm)] h-8"
+        sm: "px-2 py-0.5 text-xs h-5",
+        default: "px-3 py-0.5 text-xs h-6",
+        lg: "px-4 py-1 text-sm h-8",
+        xl: "px-4 py-1.5 text-sm h-8"
       }
     },
     defaultVariants: {
@@ -167,4 +167,3 @@ function ScoreBadge({
 }
 
 export { Badge, badgeVariants, ClassificationBadge, StatusBadge, ScoreBadge }
-export type { BadgeProps }

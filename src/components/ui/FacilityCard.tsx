@@ -9,14 +9,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./car
 import { ExternalLink, MapPin, Clock, Phone, Star, Users, Shield } from "lucide-react"
 
 const facilityCardVariants = cva(
-  "group relative overflow-hidden transition-all duration-200 ease-out hover:shadow-md",
+  "group relative overflow-hidden transition-all duration-300 ease-out",
   {
     variants: {
       variant: {
-        default: "bg-card border-border shadow-sm",
-        featured: "bg-gradient-to-br from-brass-yellow/5 via-copper-orange/5 to-walnut-stock/5 border border-brass-yellow/30 shadow-md",
-        premium: "bg-gradient-to-br from-blued-steel/10 via-case-hardened/10 to-blued-steel/10 border border-case-hardened/30 shadow-lg",
-        compact: "bg-card border-border shadow-sm"
+        // STRATEGIC RESTRAINT: Shadow-first approach like VendorCard
+        default: "bg-card shadow-sm hover:shadow-md",
+        featured: "bg-gradient-to-br from-brass-yellow/5 via-copper-orange/5 to-walnut-stock/5 shadow-md hover:shadow-lg relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        premium: "bg-gradient-to-br from-blued-steel/10 via-case-hardened/10 to-blued-steel/10 shadow-lg hover:shadow-xl hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-ayu-blue after:to-case-hardened after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        compact: "bg-card shadow-sm hover:shadow-md"
       },
       size: {
         default: "p-6",
@@ -116,7 +117,7 @@ export default function FacilityCard({
       {/* Verified badge */}
       {isVerified && (
         <div className="absolute top-4 left-4 z-10">
-          <Badge variant="secondary" className="bg-rifling-green/10 text-rifling-green border-rifling-green/30">
+          <Badge variant="success">
             <Shield className="h-3 w-3 mr-1" />
             Verified
           </Badge>
@@ -128,7 +129,7 @@ export default function FacilityCard({
           {/* Business Icon/Image */}
           <div className="flex-shrink-0">
             {icon ? (
-              <div className="w-12 h-12 rounded-lg overflow-hidden border border-border">
+              <div className="w-12 h-12 rounded-lg overflow-hidden shadow-sm">
                 <img 
                   src={icon} 
                   alt={title}
@@ -136,7 +137,7 @@ export default function FacilityCard({
                 />
               </div>
             ) : (
-              <div className="w-12 h-12 bg-brass-yellow/10 rounded-lg flex items-center justify-center border border-brass-yellow/20">
+              <div className="w-12 h-12 bg-brass-yellow/10 rounded-lg flex items-center justify-center shadow-sm">
                 {getBusinessTypeIcon(businessType)}
               </div>
             )}
@@ -215,8 +216,8 @@ export default function FacilityCard({
             {badges.map((badge, index) => (
               <Badge 
                 key={index} 
-                variant="outline" 
-                className="text-xs bg-card border-scope-blue/30 text-card-foreground"
+                variant="info" 
+                className="text-xs"
               >
                 {badge}
               </Badge>
@@ -238,8 +239,7 @@ export default function FacilityCard({
         </div>
       </CardContent>
 
-      {/* Hover accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-brass-yellow to-copper-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+      {/* Strategic restraint: Gradient accent now handled by variants */}
     </Card>
   )
 }

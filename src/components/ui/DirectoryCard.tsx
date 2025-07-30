@@ -3,16 +3,35 @@ import { cn } from '@/lib/utils';
 import { Badge } from './badge';
 import Image from 'next/image';
 
-// CVA pattern for DirectoryCard - TBGC Design System
+// CVA pattern for DirectoryCard - TBGC Design System V5: Complete Fire & Mica Integration
 const directoryCardVariants = cva(
-  'relative flex flex-col rounded-lg border shadow-sm transition-all duration-150 ease-out hover:shadow-md',
+  'relative flex flex-col rounded-lg shadow-sm transition-all duration-300 ease-out overflow-hidden',
   {
     variants: {
       variant: {
-        default: 'bg-card border-border',
-        premium: 'bg-gradient-to-br from-brass-yellow/8 to-copper-orange/6 border-brass-yellow/20',
-        elite: 'bg-gradient-to-br from-copper-orange/8 to-walnut-stock/6 border-copper-orange/20',
-        glass: 'bg-card/80 backdrop-blur-sm border-border/30 shadow-glass',
+        // STRATEGIC RESTRAINT: Shadow-first approach aligned with VendorCard principles
+        default: 'bg-card text-card-foreground hover:shadow-md',
+        
+        // Premium: Sophisticated shadows with subtle gradient accent
+        premium: 'bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/4 before:via-transparent before:to-copper-orange/3 before:rounded-lg before:pointer-events-none',
+        
+        // Elite: Premium shadows with enhanced gradient accent
+        elite: 'bg-card text-card-foreground shadow-lg hover:shadow-xl hover:-translate-y-1 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-copper-orange/6 before:via-transparent before:to-brass-yellow/4 before:rounded-lg before:pointer-events-none',
+        
+        // Glass: Modern mica effect with shadow sophistication
+        glass: 'mica-overlay text-card-foreground shadow-lg hover:shadow-xl backdrop-blur-sm relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg',
+        
+        // Fire: Enhanced gradient accent positioning
+        fire: 'bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
+        
+        // Fire Blue: Blue to green gradient accent with center positioning
+        'fire-blue': 'bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
+        
+        // Fire Purple: Purple to cobalt gradient accent with center positioning
+        'fire-purple': 'bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
+        
+        // Fire Green: Green gradient accent with center positioning
+        'fire-green': 'bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
       },
       size: {
         sm: 'p-4 text-sm',
@@ -56,7 +75,7 @@ export function DirectoryCard({
     <div className={cn(directoryCardVariants({ variant, size }), className)} {...props}>
       <div className="flex items-center gap-4 mb-3">
         {imageUrl && !imgError ? (
-          <div className="relative h-14 w-14 rounded-lg overflow-hidden border border-brass-yellow/20 bg-shooting-bench shadow-flat">
+          <div className="relative h-14 w-14 rounded-lg overflow-hidden bg-shooting-bench shadow-sm">
             <Image
               src={imageUrl}
               alt={name}
@@ -68,14 +87,14 @@ export function DirectoryCard({
             />
           </div>
         ) : (
-          <div className="h-14 w-14 rounded-lg bg-brass-yellow/10 flex items-center justify-center font-bold text-xl text-gunmetal-black border border-brass-yellow/20 shadow-flat">
+          <div className="h-14 w-14 rounded-lg bg-brass-yellow/10 flex items-center justify-center font-bold text-xl text-gunmetal-black shadow-sm">
             {name.charAt(0)}
           </div>
         )}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
             <span className="font-rajdhani font-bold text-lg truncate text-gunmetal-black">{name}</span>
-            {status && <Badge variant={badgeVariant} size="sm" className="shadow-flat">{status}</Badge>}
+            {status && <Badge variant={badgeVariant} size="sm">{status}</Badge>}
           </div>
           <span className="text-sm text-case-hardened font-noto-sans">{type}</span>
         </div>
@@ -88,5 +107,3 @@ export function DirectoryCard({
 }
 
 DirectoryCard.displayName = 'DirectoryCard';
-
-export { DirectoryCard };

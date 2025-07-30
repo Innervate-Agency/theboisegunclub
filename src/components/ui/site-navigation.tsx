@@ -12,10 +12,10 @@ const siteNavigationVariants = cva(
     variants: {
       variant: {
         default: "bg-card shadow-sm",
-        premium: "bg-gradient-to-r from-brass-yellow/5 via-copper-orange/5 to-brass-yellow/5 border-b border-brass-yellow/20 shadow-md backdrop-blur-sm",
-        elite: "bg-gradient-to-r from-blued-steel/10 via-case-hardened/10 to-blued-steel/10 border-b border-case-hardened/30 shadow-lg backdrop-blur-md",
+        premium: "bg-gradient-to-r from-brass-yellow/5 via-copper-orange/5 to-brass-yellow/5 shadow-md backdrop-blur-sm relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-brass-yellow/40 after:to-transparent",
+        elite: "bg-gradient-to-r from-blued-steel/10 via-case-hardened/10 to-blued-steel/10 shadow-lg backdrop-blur-md relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-case-hardened/50 after:to-transparent",
         glass: "bg-card/80 backdrop-blur-xl shadow-xl",
-        gunclub: "bg-shooting-bench border-b border-tactical-gray/30 shadow-sm"
+        gunclub: "bg-shooting-bench shadow-sm relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-tactical-gray/40 after:to-transparent"
       },
       layout: {
         horizontal: "relative",
@@ -74,10 +74,10 @@ export function SiteNavigation({
         <div className="p-6">
           {showLogo && (
             <div className="mb-8">
-              <h2 className="text-[var(--text-xl)] font-rajdhani font-bold text-gunmetal-black">
+              <h2 className="text-xl font-rajdhani font-bold text-gunmetal-black">
                 TBGC
               </h2>
-              <p className="text-[var(--text-sm)] text-case-hardened">Treasure Valley</p>
+              <p className="text-sm text-case-hardened">Treasure Valley</p>
             </div>
           )}
           
@@ -86,7 +86,7 @@ export function SiteNavigation({
               <a
                 key={item.href}
                 href={item.href}
-                className="flex items-center gap-3 px-4 py-3 text-[var(--text-sm)] font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-lg transition-all duration-150"
+                className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-lg transition-all duration-150"
               >
                 <item.icon className="h-4 w-4" />
                 {item.label}
@@ -114,11 +114,11 @@ export function SiteNavigation({
                   <Target className="h-4 w-4 text-gunmetal-black" />
                 </div>
                 <div>
-                  <h1 className="text-[var(--text-lg)] font-rajdhani font-bold text-gunmetal-black">
-                    The Boise Gun Club
+                                    <h1 className="text-lg font-rajdhani font-bold text-gunmetal-black">
+                    TBGC
                   </h1>
-                  <p className="text-[var(--text-xs)] text-case-hardened -mt-1">
-                    Treasure Valley Collective
+                  <p className="text-xs text-case-hardened -mt-1">
+                    Treasure Valley
                   </p>
                 </div>
               </a>
@@ -172,7 +172,7 @@ export function SiteNavigation({
 
         {/* Mega Menu Content */}
         {layout === "mega" && (
-          <div className="border-t border-brass-yellow/20 py-6">
+          <div className="py-6 relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
             <div className="grid grid-cols-3 gap-8">
               <div>
                 <h3 className="text-sm font-rajdhani font-bold text-gunmetal-black mb-4">
@@ -239,7 +239,7 @@ export function SiteNavigation({
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-brass-yellow/20 py-4">
+          <div className="md:hidden py-4 relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
             <div className="space-y-2">
               {navigationItems.map((item) => (
                 <a
@@ -254,7 +254,7 @@ export function SiteNavigation({
               ))}
             </div>
             
-            <div className="pt-4 mt-4 border-t border-brass-yellow/20">
+            <div className="pt-4 mt-4 relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
               <div className="flex flex-col gap-2">
                 <Button variant="ghost" size="sm" className="justify-start">
                   Sign In

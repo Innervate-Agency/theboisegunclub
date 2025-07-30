@@ -58,6 +58,52 @@
   --color-ayu-red: #FF3B49;         /* Vibrant red for alerts */
   --color-ayu-gray: #1C2431;        /* Neutral gray for backgrounds */
   
+  /* Tailwind v4 Color Utilities */
+  --color*: initial;
+  
+  /* Brand Colors */
+  --color-brass-yellow: #F2CB05;
+  --color-copper-orange: #F28705;
+  --color-gunmetal-black: #0A0A0A;
+  --color-nickel-white: #FFFFFF;
+  
+  /* Light Theme Colors */
+  --color-range-white: #f8f6f1;
+  --color-shooting-bench: #ede7de;
+  --color-walnut-stock: #c08051;
+  --color-blued-steel: #372103;
+  --color-case-hardened: #693e21;
+  --color-muzzle-flash: #F23005;
+  --color-recoil-pad: #f07b1d;
+  --color-sight-gold: #E3C03C;
+  --color-scope-blue: #5198cd;
+  --color-trigger-blue: #3c81c0;
+  --color-rifling-green: #6f7822;
+  --color-bore-sight-green: #75B700;
+  --color-safety-red: #FF3B49;
+  
+  /* Dark Theme Colors */
+  --color-night-sight: #2F3135;
+  --color-carbon-fiber: #4B4B4B;
+  --color-tactical-gray: #1C2431;
+  --color-titanium-white: #FDFDFD;
+  --color-stainless-steel: #EEF1F7;
+  --color-flash-hider: #F25C05;
+  --color-crimson-trace: #FF3B49;
+  --color-cerakote-blue: #009FED;
+  --color-ghost-ring: #C9D2EF;
+  --color-woodland-camo: #3F6331;
+  
+  /* Ayu Enhancement Colors */
+  --color-ayu-blue: #009FED;
+  --color-ayu-green: #75B700;
+  --color-ayu-teal: #00C496;
+  --color-ayu-colbalt: #0C4367;
+  --color-ayu-purple: #6E5083;
+  --color-ayu-yellow: #FFA600;
+  --color-ayu-red: #FF3B49;
+  --color-ayu-gray: #1C2431;
+  
   /* ================== ICON SYSTEM - LUCIDE REACT INTEGRATION ================== */
   /* Icon sizing tokens for consistent scaling */
   --icon-xs: 12px;
@@ -205,6 +251,16 @@
   --gradient-premium: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 45%, var(--color-brass-yellow) 100%);
   --gradient-elite: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 25%, var(--color-brass-yellow) 50%, var(--color-copper-orange) 75%, var(--color-brass-yellow) 100%);
   --gradient-subtle: linear-gradient(135deg, rgba(242, 203, 5, 0.05) 0%, rgba(242, 135, 5, 0.05) 100%);
+  
+  /* ================== FIRE GRADIENT ANIMATION SYSTEM ================== */
+  /* Fire gradients that "unfurl" from left with proper orange→yellow transitions */
+  --gradient-fire-orange: linear-gradient(90deg, var(--color-copper-orange) 0%, var(--color-brass-yellow) 100%);
+  --gradient-fire-blue: linear-gradient(90deg, var(--color-ayu-blue) 0%, var(--color-ayu-green) 100%);
+  --gradient-fire-purple: linear-gradient(90deg, var(--color-ayu-purple) 0%, var(--color-ayu-colbalt) 100%);
+  --gradient-fire-green: linear-gradient(90deg, var(--color-ayu-green) 0%, var(--color-bore-sight-green) 100%);
+  
+  /* Animated fire gradients with proper left-origin scaling */
+  --gradient-fire-animated: linear-gradient(90deg, var(--color-copper-orange) 0%, var(--color-brass-yellow) 50%, var(--color-copper-orange) 100%);
   
   /* ClickUp-Inspired Vibrant Gradients */
   --gradient-purple: linear-gradient(135deg, #7612FA 0%, #40DDFF 100%);
@@ -1176,6 +1232,36 @@
     }
   }
 
+  /* ================== FIRE GRADIENT ANIMATIONS ================== */
+  @keyframes fire-unfurl {
+    0% { 
+      transform: scaleX(0);
+      transform-origin: left center;
+    }
+    100% { 
+      transform: scaleX(1);
+      transform-origin: left center;
+    }
+  }
+
+  @keyframes fire-pulse {
+    0%, 100% { 
+      background-position: 0% 50%;
+    }
+    50% { 
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes fire-glow {
+    0%, 100% { 
+      box-shadow: 0 0 5px rgba(242, 135, 5, 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 20px rgba(242, 135, 5, 0.6), 0 0 30px rgba(242, 203, 5, 0.4);
+    }
+  }
+
   /* Animation Utility Classes */
   .animate-shimmer {
     position: relative;
@@ -1226,6 +1312,46 @@
   .animate-fade-in-scale {
     animation: fade-in-scale 0.3s ease-out;
   }
+
+  /* ================== FIRE GRADIENT ANIMATION UTILITIES ================== */
+  .animate-fire-unfurl {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animate-fire-unfurl::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-fire-orange);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s ease-out;
+  }
+
+  .animate-fire-unfurl:hover::after {
+    transform: scaleX(1);
+  }
+
+  .animate-fire-pulse {
+    background: var(--gradient-fire-animated);
+    background-size: 200% 100%;
+    animation: fire-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-fire-glow {
+    animation: fire-glow 2s ease-in-out infinite;
+  }
+
+  /* Fire gradient background utilities */
+  .bg-fire-orange { background: var(--gradient-fire-orange); }
+  .bg-fire-blue { background: var(--gradient-fire-blue); }
+  .bg-fire-purple { background: var(--gradient-fire-purple); }
+  .bg-fire-green { background: var(--gradient-fire-green); }
+  .bg-fire-animated { background: var(--gradient-fire-animated); background-size: 200% 100%; }
 
   /* ================== COMPONENT STATE UTILITIES ================== */
   

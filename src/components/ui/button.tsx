@@ -21,8 +21,8 @@ const HoverArrow: React.FC<{ className?: string }> = ({ className }) => (
 )
 
 const buttonVariants = cva(
-  // Clean, modern foundation - inspired by actual ClickUp/Stripe buttons
-  "inline-flex items-center justify-center whitespace-nowrap font-medium transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative font-noto-sans",
+  // Foundation: Use our comprehensive spacing system and typography hierarchy
+  "inline-flex items-center justify-center whitespace-nowrap font-medium font-noto-sans relative transition-stripe-fast focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -75,12 +75,12 @@ const buttonVariants = cva(
         "fire-green": "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 focus-visible:ring-ayu-green transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
       },
       size: {
-        xs: "px-2 py-1 text-xs h-6 gap-1",
-        sm: "h-[var(--button-height-sm)] px-3 py-1.5 text-xs gap-1.5", // For inside cards/forms - Stripe pattern
-        default: "h-[var(--button-height-base)] px-4 py-2.5 text-sm gap-2", // General usage
-        lg: "h-[var(--button-height-lg)] px-6 py-3 text-base gap-2", // Hero/primary actions
-        xl: "h-[var(--button-height-xl)] px-8 py-4 text-lg gap-2.5", // Call-to-action buttons
-        icon: "h-[var(--button-height-base)] w-[var(--button-height-base)] p-0"
+        // Use our component sizing tokens from the design system
+        sm: "h-8 px-3 py-1.5 text-xs gap-1.5", // For inside cards/forms - Stripe pattern
+        default: "h-10 px-4 py-2.5 text-sm gap-2", // General usage
+        lg: "h-12 px-6 py-3 text-base gap-2", // Hero/primary actions
+        xl: "h-14 px-8 py-4 text-lg gap-2.5", // Call-to-action buttons
+        icon: "h-10 w-10 p-0"
       },
       rounded: {
         none: "rounded-none",
@@ -109,6 +109,36 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, rounded, asChild = false, loading = false, children, disabled, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
     const isSolidVariant = variant?.startsWith('solid-')
+    
+    if (asChild) {
+      // When using asChild, wrap everything in a single element for Slot
+      return (
+        <Comp
+          className={cn(
+            buttonVariants({ variant, size, rounded }),
+            loading && "cursor-wait",
+            className
+          )}
+          ref={ref}
+          disabled={disabled || loading}
+          {...props}
+        >
+          <span className="relative flex items-center">
+            {loading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-inherit rounded-inherit">
+                <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent opacity-60" />
+              </div>
+            )}
+            <span className={cn("flex items-center", loading && "invisible")}>
+              {children}
+              {isSolidVariant && !loading && (
+                <HoverArrow className="ml-2" />
+              )}
+            </span>
+          </span>
+        </Comp>
+      )
+    }
     
     return (
       <Comp

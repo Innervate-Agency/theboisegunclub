@@ -93,7 +93,7 @@ export function TestimonialCarousel({
         {(title || subtitle) && (
           <div className="text-center mb-12">
             {subtitle && (
-              <p className="text-[var(--text-sm)] font-rajdhani font-semibold text-copper-orange mb-2 tracking-wide uppercase">
+              <p className="text-sm font-rajdhani font-semibold text-copper-orange mb-2 tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
@@ -154,7 +154,7 @@ export function TestimonialCarousel({
                 <div className="font-rajdhani font-bold text-foreground">
                   {currentTestimonial.name}
                 </div>
-                <div className="text-[var(--text-sm)] text-muted-foreground font-noto-sans">
+                <div className="text-sm text-muted-foreground font-noto-sans">
                   {currentTestimonial.role}
                   {currentTestimonial.company && (
                     <span> • {currentTestimonial.company}</span>

@@ -5,16 +5,17 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const calloutCardVariants = cva(
-  "relative rounded-lg border p-6 shadow-sm transition-all duration-200 ease-out",
+  "relative rounded-lg p-6 transition-all duration-300 ease-out",
   {
     variants: {
       variant: {
-        default: "bg-card border-brass-yellow/20 hover:shadow-md hover:border-brass-yellow/30",
-        subtle: "bg-solid-brand-warm border-border hover:shadow-md hover-gradient-warm",
-        animated: "bg-solid-brand-accent border-brass-yellow/30 hover:shadow-md hover-gradient-warm",
-        important: "bg-card border-safety-red/30 shadow-md hover:border-safety-red/40",
-        info: "bg-card border-scope-blue/30 hover:shadow-md hover-gradient-cool",
-        glass: "mica-card border-brass-yellow/20 hover:shadow-lg"
+        // STRATEGIC RESTRAINT: Shadow-first approach with gradient accents like VendorCard
+        default: "bg-card shadow-md hover:shadow-lg relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        subtle: "bg-muted shadow-sm hover:shadow-md hover:bg-card",
+        animated: "bg-card shadow-md hover:shadow-lg relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/4 before:via-transparent before:to-copper-orange/3 before:rounded-lg before:pointer-events-none",
+        important: "bg-card shadow-lg hover:shadow-xl relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-safety-red after:to-muzzle-flash after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-safety-red/6 before:via-transparent before:to-muzzle-flash/4 before:rounded-lg before:pointer-events-none",
+        info: "bg-card shadow-md hover:shadow-lg relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-scope-blue after:to-ayu-blue after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-scope-blue/4 before:via-transparent before:to-ayu-blue/3 before:rounded-lg before:pointer-events-none",
+        glass: "mica-card shadow-lg hover:shadow-xl relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg"
       }
     },
     defaultVariants: {
@@ -44,11 +45,11 @@ export function CalloutCard({
       <div className="relative space-y-3">
         <div className="space-y-2">
           <div>
-            <h3 className="text-[var(--text-lg)] font-rajdhani font-bold text-foreground leading-tight">
+            <h3 className="text-lg font-rajdhani font-bold text-foreground leading-tight">
               {title}
             </h3>
             {description && (
-              <p className="text-[var(--text-sm)] text-muted-foreground font-noto-sans leading-relaxed">
+              <p className="text-sm text-muted-foreground font-noto-sans leading-relaxed">
                 {description}
               </p>
             )}
@@ -79,7 +80,6 @@ export function ImportantCallout({
     <div 
       className={cn(
         calloutCardVariants({ variant: "important" }), 
-        "border-l-4 border-l-safety-red pl-6",
         className
       )} 
       {...props}
@@ -95,11 +95,11 @@ export function ImportantCallout({
             </div>
           </div>
           <div className="flex-1 space-y-2">
-            <h3 className="text-[var(--text-lg)] font-rajdhani font-bold text-foreground leading-tight">
+            <h3 className="text-lg font-rajdhani font-bold text-foreground leading-tight">
               {title}
             </h3>
             {description && (
-              <p className="text-[var(--text-sm)] text-muted-foreground font-noto-sans leading-relaxed">
+              <p className="text-sm text-muted-foreground font-noto-sans leading-relaxed">
                 {description}
               </p>
             )}
@@ -137,11 +137,11 @@ export function SubtleCallout({
     >
       <div className="space-y-3">
         <div className="space-y-2">
-          <h3 className="text-[var(--text-base)] font-rajdhani font-semibold text-foreground leading-tight">
+          <h3 className="text-base font-rajdhani font-semibold text-foreground leading-tight">
             {title}
           </h3>
           {description && (
-            <p className="text-[var(--text-sm)] text-muted-foreground font-noto-sans leading-relaxed">
+            <p className="text-sm text-muted-foreground font-noto-sans leading-relaxed">
               {description}
             </p>
           )}

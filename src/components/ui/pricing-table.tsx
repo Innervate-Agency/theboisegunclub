@@ -9,21 +9,24 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./car
 import { Check, X, Minus, Star, Crown, Target } from 'lucide-react'
 
 const pricingCardVariants = cva(
-  "relative overflow-hidden transition-all duration-200 ease-out",
+  "relative overflow-hidden transition-all duration-300 ease-out",
   {
     variants: {
       variant: {
-        default: "bg-card border-border shadow-sm hover:shadow-md",
-        compact: "bg-card border-border shadow-sm",
-        detailed: "bg-card border-border shadow-lg",
-        fusion: "mica-card-premium border-scope-blue/30 shadow-lg"
+        // STRATEGIC RESTRAINT: Shadow-first approach for pricing tables
+        default: "bg-card shadow-sm hover:shadow-md",
+        compact: "bg-card shadow-sm hover:shadow-md",
+        detailed: "bg-card shadow-lg hover:shadow-xl",
+        fusion: "mica-card-premium shadow-lg hover:shadow-xl backdrop-blur-sm"
       },
       popular: {
-        true: "border-scope-blue shadow-lg scale-105 z-10",
+        // Popular cards get enhanced shadow depth instead of borders
+        true: "shadow-xl hover:shadow-2xl scale-105 z-10 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-scope-blue after:to-ayu-blue after:transition-all after:duration-300 after:ease-out after:w-full after:rounded-b-lg",
         false: ""
       },
       recommended: {
-        true: "ring-2 ring-scope-blue/50",
+        // Recommended gets subtle background overlay instead of ring
+        true: "before:absolute before:inset-0 before:bg-gradient-to-br before:from-scope-blue/6 before:via-transparent before:to-ayu-blue/4 before:rounded-lg before:pointer-events-none",
         false: ""
       }
     },

@@ -70,7 +70,7 @@ export function StatsShowcase({
               </h2>
             )}
             {subtitle && (
-              <p className="text-[var(--text-lg)] text-muted-foreground font-noto-sans">
+              <p className="text-lg text-muted-foreground font-noto-sans">
                 {subtitle}
               </p>
             )}
@@ -97,7 +97,7 @@ export function StatsShowcase({
                     )}
                     
                     {stat.change && (
-                      <div className="flex items-center gap-1 text-[var(--text-xs)]">
+                      <div className="flex items-center gap-1 text-xs">
                         {stat.change.trend === 'up' && (
                           <TrendingUp className="h-3 w-3 text-rifling-green" />
                         )}
@@ -121,14 +121,14 @@ export function StatsShowcase({
                     <div className="text-3xl font-rajdhani font-bold text-card-foreground group-hover:text-copper-orange transition-colors duration-200">
                       {typeof stat.value === 'number' ? stat.value.toLocaleString() : stat.value}
                     </div>
-                    <div className="text-[var(--text-sm)] font-noto-sans font-medium text-muted-foreground">
+                    <div className="text-sm font-noto-sans font-medium text-muted-foreground">
                       {stat.label}
                     </div>
                   </div>
 
                   {/* Description */}
                   {stat.description && (
-                    <p className="text-[var(--text-xs)] text-muted-foreground leading-relaxed">
+                    <p className="text-xs text-muted-foreground leading-relaxed">
                       {stat.description}
                     </p>
                   )}

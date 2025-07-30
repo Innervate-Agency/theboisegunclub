@@ -10,8 +10,8 @@ const componentVariants = cva(
     variants: {
       variant: {
         default: "bg-card text-card-foreground border border-border shadow-sm hover:shadow-md",
-        premium: "bg-gradient-to-r from-brass-yellow to-copper-orange text-black shadow-premium border border-brass-yellow/20 hover:shadow-elite hover:scale-[1.02] transition-stripe-normal group",
-        elite: "bg-gradient-to-r from-brass-yellow via-copper-orange to-brass-yellow bg-[length:200%_100%] text-black shadow-elite border-2 border-brass-yellow/30 animate-shimmer hover:scale-[1.05] transition-stripe-normal group",
+        premium: "bg-fire-orange text-white shadow-premium border border-brass-yellow/20 hover:shadow-elite hover:scale-[1.02] transition-stripe-normal group animate-fire-unfurl",
+        elite: "bg-fire-animated text-white shadow-elite border-2 border-brass-yellow/30 animate-fire-pulse hover:scale-[1.05] transition-stripe-normal group",
         glass: "border-white/20 bg-card/10 backdrop-blur-sm text-card hover:bg-card/20 hover:border-white/30"
       },
       size: {

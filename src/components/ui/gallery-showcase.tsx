@@ -97,7 +97,7 @@ export function GalleryGrid({
         {(title || subtitle) && (
           <div className="text-center mb-8">
             {subtitle && (
-              <p className="text-[var(--text-sm)] font-rajdhani font-semibold text-copper-orange mb-2 tracking-wide uppercase">
+              <p className="text-sm font-rajdhani font-semibold text-copper-orange mb-2 tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
@@ -178,7 +178,7 @@ export function GalleryGrid({
                 {/* Featured Badge */}
                 {isFeatured && (
                   <div className="absolute top-2 left-2 z-10">
-                    <div className="bg-copper-orange text-white text-[var(--text-xs)] font-rajdhani font-bold px-2 py-1 rounded">
+                    <div className="bg-copper-orange text-white text-xs font-rajdhani font-bold px-2 py-1 rounded">
                       Featured
                     </div>
                   </div>
@@ -239,14 +239,14 @@ export function GalleryGrid({
                     </h3>
                     
                     {image.category && (
-                      <p className="text-[var(--text-xs)] text-muted-foreground font-noto-sans uppercase tracking-wide">
+                      <p className="text-xs text-muted-foreground font-noto-sans uppercase tracking-wide">
                         {image.category}
                       </p>
                     )}
                     
                     {/* Stats */}
                     {showStats && (image.likes !== undefined || image.downloads !== undefined) && (
-                      <div className="flex items-center gap-4 text-[var(--text-xs)] text-muted-foreground">
+                      <div className="flex items-center gap-4 text-xs text-muted-foreground">
                         {image.likes !== undefined && (
                           <div className="flex items-center gap-1">
                             <Heart className="icon-xs" />
@@ -272,7 +272,7 @@ export function GalleryGrid({
         {filteredImages.length === 0 && (
           <div className="text-center py-12">
             <Filter className="icon-2xl icon-muted mx-auto mb-4" />
-            <h3 className="text-[var(--text-lg)] font-rajdhani font-bold text-card-foreground mb-2">
+            <h3 className="text-lg font-rajdhani font-bold text-card-foreground mb-2">
               No images found
             </h3>
             <p className="text-muted-foreground font-noto-sans">

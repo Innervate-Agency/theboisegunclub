@@ -17,14 +17,14 @@ const cardVariants = cva(
         // Interactive: Clickable feedback - theme aware
         interactive: "bg-card shadow-sm hover:shadow-lg hover:-translate-y-0.5 cursor-pointer",
         
-        // Premium: Gold accent - theme aware
-        premium: "bg-card shadow-md hover:shadow-xl hover:-translate-y-1 ring-1 ring-brass-yellow/20 hover:ring-brass-yellow/40",
+        // Premium: Strategic restraint - shadow depth with gradient accent instead of rings
+        premium: "bg-card shadow-lg hover:shadow-xl hover:-translate-y-1 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/4 before:via-transparent before:to-copper-orange/3 before:rounded-lg before:pointer-events-none",
         
         // Glass: Modern glassmorphism - theme aware
         glass: "mica-card shadow-lg hover:shadow-xl transition-shadow duration-200",
         
-        // Outlined: Clean borders - theme aware
-        outlined: "bg-card hover:shadow-sm ring-1 ring-border",
+        // Outlined: Strategic restraint - subtle shadow instead of ring
+        outlined: "bg-card shadow-sm hover:shadow-md bg-gradient-to-br from-card/98 to-card/95",
         
         // Subtle: Muted backgrounds - theme aware
         subtle: "bg-muted hover:bg-card hover:shadow-sm",
@@ -115,7 +115,7 @@ const CardContent = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">
     return (
       <div
         ref={ref}
-        className={cn("px-[var(--card-padding)] pb-[var(--card-padding)]", className)}
+        className={cn("px-6 pb-6", className)}
         {...props}
       />
     )
@@ -128,7 +128,7 @@ const CardFooter = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>
     return (
       <div
         ref={ref}
-        className={cn("flex items-center gap-2 px-[var(--card-padding)] pb-[var(--card-padding)] pt-0", className)}
+        className={cn("flex items-center gap-2 px-6 pb-6 pt-0", className)}
         {...props}
       />
     )
