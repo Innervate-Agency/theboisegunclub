@@ -8,7 +8,7 @@ const meta: Meta<typeof Toggle> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'atom', 'interactive'],
 };
 
 export default meta;

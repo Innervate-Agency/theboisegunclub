@@ -3,12 +3,12 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'Forms & Inputs/Checkbox',
+  title: 'Components/Atoms/Checkbox',
   component: Checkbox,
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'atom', 'form', 'interactive'],
   argTypes: {
     variant: {
       control: 'select',

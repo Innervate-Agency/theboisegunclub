@@ -14,7 +14,7 @@ const meta: Meta<typeof HoverCard> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'molecule', 'display'],
 };
 
 export default meta;

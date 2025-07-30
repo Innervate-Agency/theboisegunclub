@@ -3,12 +3,12 @@ import { FeatureGrid } from '@/components/ui/feature-grid';
 import { Target, Shield, Users } from 'lucide-react';
 
 const meta: Meta<typeof FeatureGrid> = {
-  title: 'Content & Media/FeatureGrid',
+  title: 'Components/Organisms/FeatureGrid',
   component: FeatureGrid,
   parameters: {
     layout: 'fullscreen',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'organism', 'display', 'community'],
 };
 
 export default meta;

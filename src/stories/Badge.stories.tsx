@@ -10,7 +10,7 @@ import { Trophy, Target, Award, CheckCircle, XCircle, Clock, Star, Zap } from 'l
 import { useState } from 'react';
 
 const meta: Meta<typeof Badge> = {
-  title: 'Core UI/Badge',
+  title: 'Components/Atoms/Badge',
   component: Badge,
   parameters: {
     layout: 'padded',
@@ -42,7 +42,7 @@ const meta: Meta<typeof Badge> = {
       control: 'boolean',
     },
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'atom', 'display', 'interactive'],
 };
 
 export default meta;
@@ -547,7 +547,7 @@ export const Glassmorphism: Story = {
         className="absolute inset-0 object-cover"
         fill
       />
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-gunmetal-black/30" />
       <div className="relative h-full flex items-center justify-center gap-4">
         <Badge variant="glass" size="lg">Skeet Range</Badge>
         <Badge variant="glass" size="lg" icon={<Target className="h-3.5 w-3.5" />}>Trap Field</Badge>

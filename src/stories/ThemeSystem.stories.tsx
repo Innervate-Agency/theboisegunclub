@@ -4,10 +4,11 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 
 const meta: Meta = {
-  title: 'Design System/Theme Testing',
+  title: 'Foundation/Theme System',
   parameters: {
     layout: 'padded',
   },
+  tags: ['autodocs', 'stable'],
 }
 
 export default meta

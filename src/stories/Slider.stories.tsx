@@ -7,7 +7,7 @@ const meta: Meta<typeof Slider> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'atom', 'form', 'interactive'],
 };
 
 export default meta;

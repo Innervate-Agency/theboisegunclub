@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import FacilityCard from '@/components/ui/FacilityCard';
 
 const meta: Meta<typeof FacilityCard> = {
-  title: 'Business Directory/Business Card',
+  title: 'Components/Molecules/FacilityCard',
   component: FacilityCard,
   parameters: {
     layout: 'centered',
@@ -12,7 +12,7 @@ const meta: Meta<typeof FacilityCard> = {
       }
     }
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'molecule', 'display', 'directory', 'vendor'],
 };
 
 export default meta;

@@ -13,7 +13,7 @@ const meta: Meta<typeof MegaHero> = {
       }
     }
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'organism', 'display', 'business'],
   argTypes: {
     backgroundPreset: {
       control: 'select',

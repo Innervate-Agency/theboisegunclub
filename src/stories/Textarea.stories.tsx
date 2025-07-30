@@ -3,12 +3,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 
 const meta: Meta<typeof Textarea> = {
-  title: 'Core UI/Textarea',
+  title: 'Components/Atoms/Textarea',
   component: Textarea,
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'atom', 'form', 'interactive'],
   argTypes: {
     variant: {
       control: 'select',

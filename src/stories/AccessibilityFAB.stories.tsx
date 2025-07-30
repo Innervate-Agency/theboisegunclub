@@ -142,7 +142,7 @@ export const WithFormContent: Story = {
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label htmlFor="email" className="block text-sm font-medium text-muted-foreground">
               Email
             </label>
             <input
@@ -152,7 +152,7 @@ export const WithFormContent: Story = {
             />
           </div>
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label htmlFor="message" className="block text-sm font-medium text-muted-foreground">
               Message
             </label>
             <textarea

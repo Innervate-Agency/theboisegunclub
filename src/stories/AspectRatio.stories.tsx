@@ -8,7 +8,7 @@ const meta: Meta<typeof AspectRatio> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'atom', 'display'],
 };
 
 export default meta;

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import StatCard from '@/components/ui/StatCard';
 
 const meta: Meta<typeof StatCard> = {
-  title: 'Core UI/StatCard',
+  title: 'Components/Molecules/StatCard',
   component: StatCard,
   parameters: {
     layout: 'centered',
@@ -32,7 +32,7 @@ const meta: Meta<typeof StatCard> = {
       options: ['up', 'down', 'neutral'],
     },
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'molecule', 'display', 'community'],
 };
 
 export default meta;

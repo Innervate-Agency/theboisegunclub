@@ -19,7 +19,7 @@ const meta: Meta<typeof Sheet> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'molecule', 'interactive', 'form'],
 };
 
 export default meta;

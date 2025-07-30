@@ -23,7 +23,7 @@ const meta: Meta<typeof DropdownMenu> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'molecule', 'interactive', 'navigation'],
 };
 
 export default meta;

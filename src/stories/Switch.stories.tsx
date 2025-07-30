@@ -3,12 +3,12 @@ import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 
 const meta: Meta<typeof Switch> = {
-  title: 'Forms & Inputs/Switch',
+  title: 'Components/Atoms/Switch',
   component: Switch,
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'atom', 'form', 'interactive'],
   argTypes: {
     variant: {
       control: 'select',

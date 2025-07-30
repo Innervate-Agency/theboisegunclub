@@ -15,7 +15,7 @@ const meta: Meta<typeof AnimatedSplashCard> = {
       }
     }
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'organism', 'display', 'community', 'business'],
   argTypes: {
     className: {
       control: 'text'

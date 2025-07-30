@@ -30,7 +30,7 @@ const meta: Meta<typeof Breadcrumb> = {
       options: ['sm', 'md', 'lg'],
     },
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'molecule', 'navigation'],
 };
 
 export default meta;
@@ -131,7 +131,7 @@ export const Variants: Story = {
   render: () => (
     <div className="space-y-6">
       <div>
-        <h3 className="text-sm font-medium text-desert-cliff-brown mb-2">Default</h3>
+        <h3 className="text-sm font-medium text-blued-steel mb-2">Default</h3>
         <Breadcrumb variant="default">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -150,7 +150,7 @@ export const Variants: Story = {
       </div>
       
       <div>
-        <h3 className="text-sm font-medium text-desert-cliff-brown mb-2">Premium</h3>
+        <h3 className="text-sm font-medium text-blued-steel mb-2">Premium</h3>
         <Breadcrumb variant="premium">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -169,7 +169,7 @@ export const Variants: Story = {
       </div>
       
       <div>
-        <h3 className="text-sm font-medium text-desert-cliff-brown mb-2">Minimal</h3>
+        <h3 className="text-sm font-medium text-blued-steel mb-2">Minimal</h3>
         <Breadcrumb variant="minimal">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -188,7 +188,7 @@ export const Variants: Story = {
       </div>
       
       <div>
-        <h3 className="text-sm font-medium text-desert-cliff-brown mb-2">Gun Club</h3>
+        <h3 className="text-sm font-medium text-blued-steel mb-2">Gun Club</h3>
         <Breadcrumb variant="gunclub">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -213,7 +213,7 @@ export const Sizes: Story = {
   render: () => (
     <div className="space-y-6">
       <div>
-        <h3 className="text-sm font-medium text-desert-cliff-brown mb-2">Small</h3>
+        <h3 className="text-sm font-medium text-blued-steel mb-2">Small</h3>
         <Breadcrumb size="sm">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -232,7 +232,7 @@ export const Sizes: Story = {
       </div>
       
       <div>
-        <h3 className="text-sm font-medium text-desert-cliff-brown mb-2">Medium</h3>
+        <h3 className="text-sm font-medium text-blued-steel mb-2">Medium</h3>
         <Breadcrumb size="md">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -251,7 +251,7 @@ export const Sizes: Story = {
       </div>
       
       <div>
-        <h3 className="text-sm font-medium text-desert-cliff-brown mb-2">Large</h3>
+        <h3 className="text-sm font-medium text-blued-steel mb-2">Large</h3>
         <Breadcrumb size="lg">
           <BreadcrumbList>
             <BreadcrumbItem>

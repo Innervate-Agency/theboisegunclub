@@ -30,7 +30,16 @@ const cardVariants = cva(
         subtle: "bg-muted hover:bg-card hover:shadow-sm",
         
         // Fire: The "fucking great" gradient accent - theme aware
-        fire: "bg-card shadow-md hover:shadow-xl hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-200 hover:after:h-2"
+        fire: "bg-card shadow-md hover:shadow-xl hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        
+        // Fire Blue: Blue to green fire gradient 
+        "fire-blue": "bg-card shadow-md hover:shadow-xl hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        
+        // Fire Purple: Purple to cobalt fire gradient
+        "fire-purple": "bg-card shadow-md hover:shadow-xl hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        
+        // Fire Green: Green variants fire gradient
+        "fire-green": "bg-card shadow-md hover:shadow-xl hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
       },
       size: {
         sm: "",           // Components handle their own padding

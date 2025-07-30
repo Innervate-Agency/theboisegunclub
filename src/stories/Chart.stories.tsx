@@ -12,7 +12,7 @@ const meta: Meta<typeof ChartContainer> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'organism', 'display'],
 };
 
 export default meta;

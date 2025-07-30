@@ -6,12 +6,12 @@ import {
 } from '@/components/ui/avatar';
 
 const meta: Meta<typeof Avatar> = {
-  title: 'Core UI/Avatar',
+  title: 'Components/Atoms/Avatar',
   component: Avatar,
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'atom', 'display'],
   argTypes: {
     variant: {
       control: 'select',

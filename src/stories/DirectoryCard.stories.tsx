@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { DirectoryCard } from '@/components/ui/DirectoryCard';
 
 const meta: Meta<typeof DirectoryCard> = {
-  title: 'Core UI/DirectoryCard',
+  title: 'Components/Molecules/DirectoryCard',
   component: DirectoryCard,
   parameters: {
     layout: 'padded',
@@ -26,7 +26,7 @@ const meta: Meta<typeof DirectoryCard> = {
       options: ['default', 'premium', 'elite', 'glass', 'success', 'warning', 'error', 'info'],
     },
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'molecule', 'display', 'directory', 'vendor', 'community'],
 };
 
 export default meta;

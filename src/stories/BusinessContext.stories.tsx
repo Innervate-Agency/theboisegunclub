@@ -15,7 +15,7 @@ import {
 } from 'lucide-react'
 
 const meta: Meta = {
-  title: 'TBGC Business Context/Treasure Valley Firearms Hub',
+  title: 'Business/Treasure Valley Firearms Hub',
   parameters: {
     layout: 'fullscreen',
     docs: {
@@ -73,7 +73,7 @@ The copper-to-brass gradient system represents the "fire" of firearms enthusiasm
       },
     },
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'vendor', 'community', 'directory'],
 }
 
 export default meta
@@ -182,7 +182,7 @@ const BusinessShowcase = () => (
               <CardDescription className="text-center">
                 Gun shops, ranges, gunsmiths, and instructors with integrated booking systems
               </CardDescription>
-              <div className="w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-4 rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
 
@@ -197,7 +197,7 @@ const BusinessShowcase = () => (
               <CardDescription className="text-center">
                 Gun Wiki, reviews, unified events calendar, and Idaho gun law guides
               </CardDescription>
-              <div className="w-full h-1 bg-gradient-to-r from-ayu-blue to-ayu-teal mt-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-blue to-ayu-teal mt-4 rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
 
@@ -212,7 +212,7 @@ const BusinessShowcase = () => (
               <CardDescription className="text-center">
                 Discussion, competition shooting, gear classifieds, and event coordination
               </CardDescription>
-              <div className="w-full h-1 bg-gradient-to-r from-ayu-green to-clubhouse-lawn-green mt-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-green to-clubhouse-lawn-green mt-4 rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
 
@@ -227,7 +227,7 @@ const BusinessShowcase = () => (
               <CardDescription className="text-center">
                 Print-on-demand branded gear with zero inventory risk
               </CardDescription>
-              <div className="w-full h-1 bg-gradient-to-r from-ayu-purple to-ayu-yellow mt-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-purple to-ayu-yellow mt-4 rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
         </div>
@@ -364,11 +364,11 @@ const BusinessShowcase = () => (
           community to enhance your firearms experience.
         </p>
         <div className="flex gap-4 justify-center">
-          <Button variant="secondary" size="lg" className="bg-white text-copper-orange hover:bg-gray-100">
+          <Button variant="secondary" size="lg" className="bg-card text-copper-orange hover:bg-muted">
             <Users className="w-5 h-5 mr-2" />
             Get Started Today
           </Button>
-          <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-copper-orange">
+          <Button variant="outline" size="lg" className="border-nickel-white text-nickel-white hover:bg-nickel-white hover:text-copper-orange">
             <Calendar className="w-5 h-5 mr-2" />
             View Events
           </Button>
@@ -537,7 +537,7 @@ export const CommunityFocused: Story = {
                   </div>
                 </div>
               </div>
-              <div className="w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-4 rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
 
@@ -569,7 +569,7 @@ export const CommunityFocused: Story = {
                   </div>
                 </div>
               </div>
-              <div className="w-full h-1 bg-gradient-to-r from-ayu-green to-ayu-blue mt-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-green to-ayu-blue mt-4 rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
         </div>

@@ -4,16 +4,16 @@ import { Button } from '../components/ui/button';
 import { Plus, Download, ArrowRight, Settings, Check, X, Search, User } from 'lucide-react';
 
 const meta: Meta<typeof Button> = {
-  title: 'Core UI/Button',
+  title: 'Components/Atoms/Button',
   component: Button,
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'interactive', 'atom'],
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['default', 'primary', 'secondary', 'accent', 'success', 'destructive', 'glass', 'solid-accent', 'solid-success', 'solid-destructive', 'solid-primary', 'ghost', 'link'],
+      options: ['default', 'primary', 'secondary', 'accent', 'success', 'destructive', 'glass', 'solid-accent', 'solid-success', 'solid-destructive', 'solid-primary', 'ghost', 'link', 'fire', 'fire-blue', 'fire-purple', 'fire-green'],
     },
     size: {
       control: 'select',
@@ -89,7 +89,7 @@ export const Glass: Story = {
       values: [
         {
           name: 'gradient',
-          value: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          value: 'linear-gradient(135deg, hsl(var(--ayu-blue)) 0%, hsl(var(--ayu-purple)) 100%)',
         },
       ],
     },
@@ -295,6 +295,140 @@ export const StripeHierarchy: Story = {
       </div>
     </div>
   ),
+};
+
+export const FireGradientSystem: Story = {
+  render: () => (
+    <div className="max-w-4xl mx-auto space-y-8 p-6">
+      <div className="text-center space-y-4">
+        <h1 className="text-3xl font-rajdhani font-bold text-foreground">
+          🔥 Fire Gradient System
+        </h1>
+        <p className="text-muted-foreground">
+          Color-coordinated fire gradients that unfurl from left on hover
+        </p>
+      </div>
+
+      {/* Fire Gradient Buttons */}
+      <div className="space-y-6">
+        <h2 className="text-xl font-rajdhani font-semibold text-copper-orange">
+          Fire Button Variants
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <Button variant="fire" size="lg">
+            <Target className="mr-2 h-4 w-4" />
+            Fire Orange
+          </Button>
+          <Button variant="fire-blue" size="lg">
+            <Shield className="mr-2 h-4 w-4" />
+            Fire Blue
+          </Button>
+          <Button variant="fire-purple" size="lg">
+            <Zap className="mr-2 h-4 w-4" />
+            Fire Purple  
+          </Button>
+          <Button variant="fire-green" size="lg">
+            <Check className="mr-2 h-4 w-4" />
+            Fire Green
+          </Button>
+        </div>
+      </div>
+
+      {/* Demo Cards */}
+      <div className="space-y-6">
+        <h2 className="text-xl font-rajdhani font-semibold text-ayu-blue">
+          Interactive Fire Cards
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow group">
+            <h3 className="font-rajdhani font-bold text-lg text-copper-orange mb-2">
+              Vendor Partners
+            </h3>
+            <p className="text-muted-foreground mb-4 text-sm">
+              Gun shops, ranges, instructors across the Treasure Valley
+            </p>
+            <Button variant="fire" size="sm" className="w-full">
+              <Users className="mr-2 h-4 w-4" />
+              Browse Directory
+            </Button>
+            <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-4 rounded-full transition-all duration-300 ease-out"></div>
+          </div>
+
+          <div className="bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow group">
+            <h3 className="font-rajdhani font-bold text-lg text-ayu-blue mb-2">
+              Community Hub
+            </h3>
+            <p className="text-muted-foreground mb-4 text-sm">
+              Connect with fellow enthusiasts and competitors
+            </p>
+            <Button variant="fire-blue" size="sm" className="w-full">
+              <MessageSquare className="mr-2 h-4 w-4" />
+              Join Discussions
+            </Button>
+            <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-blue to-ayu-green mt-4 rounded-full transition-all duration-300 ease-out"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Gradient Color Mapping */}
+      <div className="space-y-6">
+        <h2 className="text-xl font-rajdhani font-semibold text-ayu-purple">
+          Color Coordination Guide
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-muted p-4 rounded-lg">
+            <h4 className="font-medium text-foreground mb-3">🔥 Fire (Orange/Yellow)</h4>
+            <div className="h-3 bg-gradient-to-r from-copper-orange to-brass-yellow rounded-full mb-2"></div>
+            <p className="text-xs text-muted-foreground">Primary accent • Call-to-action • Success states</p>
+          </div>
+          
+          <div className="bg-muted p-4 rounded-lg">
+            <h4 className="font-medium text-foreground mb-3">💧 Fire Blue (Blue/Green)</h4>
+            <div className="h-3 bg-gradient-to-r from-ayu-blue to-ayu-green rounded-full mb-2"></div>
+            <p className="text-xs text-muted-foreground">Navigation • Community features • Information</p>
+          </div>
+          
+          <div className="bg-muted p-4 rounded-lg">
+            <h4 className="font-medium text-foreground mb-3">⚡ Fire Purple (Purple/Cobalt)</h4>
+            <div className="h-3 bg-gradient-to-r from-ayu-purple to-ayu-blue rounded-full mb-2"></div>
+            <p className="text-xs text-muted-foreground">Premium features • Special actions • Highlights</p>
+          </div>
+          
+          <div className="bg-muted p-4 rounded-lg">
+            <h4 className="font-medium text-foreground mb-3">🌿 Fire Green (Green variants)</h4>
+            <div className="h-3 bg-gradient-to-r from-ayu-green to-clubhouse-lawn-green rounded-full mb-2"></div>
+            <p className="text-xs text-muted-foreground">Success • Verification • Positive states</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: `
+## Fire Gradient System
+
+The TBGC fire gradient system provides color-coordinated animation effects that "unfurl" from left to right on hover. Each gradient combination serves specific UI purposes:
+
+### Animation Details
+- **Width**: Starts at \`w-0\` and animates to \`w-full\` on hover
+- **Duration**: 300ms with ease-out timing
+- **Origin**: Left-aligned using \`origin-left\`
+- **Height**: 1px default, grows to 2px on hover for buttons
+
+### Color Combinations
+- **Fire**: Orange to Yellow - Primary actions and success states
+- **Fire Blue**: Blue to Green - Navigation and community features  
+- **Fire Purple**: Purple to Cobalt - Premium features and highlights
+- **Fire Green**: Green variants - Verification and positive feedback
+
+### Usage Guidelines
+Apply gradients that match the semantic meaning of your component's primary color or context.
+        `,
+      },
+    },
+  },
 };
 
 // ================== PROFESSIONAL SHOWCASE ==================
@@ -744,19 +878,19 @@ export const SophisticatedShadows: Story = {
         <div className="space-y-6">
           <h3 className="text-xl font-rajdhani font-semibold text-blued-steel">Standard Shadow System</h3>
           <div className="space-y-6">
-            <Button className="shadow-xs bg-white text-gunmetal-black border border-recoil-pad w-full">
+            <Button className="shadow-xs bg-card text-card-foreground border border-recoil-pad w-full">
               Extra Small Shadow
             </Button>
-            <Button className="shadow-sm bg-white text-gunmetal-black border border-recoil-pad w-full">
+            <Button className="shadow-sm bg-card text-card-foreground border border-recoil-pad w-full">
               Small Shadow
             </Button>
-            <Button className="shadow-md bg-white text-gunmetal-black border border-recoil-pad w-full">
+            <Button className="shadow-md bg-card text-card-foreground border border-recoil-pad w-full">
               Medium Shadow
             </Button>
-            <Button className="shadow-lg bg-white text-gunmetal-black border border-recoil-pad w-full">
+            <Button className="shadow-lg bg-card text-card-foreground border border-recoil-pad w-full">
               Large Shadow
             </Button>
-            <Button className="shadow-xl bg-white text-gunmetal-black border border-recoil-pad w-full">
+            <Button className="shadow-xl bg-card text-card-foreground border border-recoil-pad w-full">
               Extra Large Shadow
             </Button>
           </div>
@@ -786,13 +920,13 @@ export const SophisticatedShadows: Story = {
           Interactive Shadow Transitions
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Button className="bg-white text-gunmetal-black border border-recoil-pad shadow-sm hover:shadow-brass hover:-translate-y-1 transition-all duration-300">
+          <Button className="bg-card text-card-foreground border border-recoil-pad shadow-sm hover:shadow-brass hover:-translate-y-1 transition-all duration-300">
             Hover for Brass Shadow
           </Button>
-          <Button className="bg-white text-gunmetal-black border border-recoil-pad shadow-sm hover:shadow-copper hover:-translate-y-1 transition-all duration-300">
+          <Button className="bg-card text-card-foreground border border-recoil-pad shadow-sm hover:shadow-copper hover:-translate-y-1 transition-all duration-300">
             Hover for Copper Shadow
           </Button>
-          <Button className="bg-white text-gunmetal-black border border-recoil-pad shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+          <Button className="bg-card text-card-foreground border border-recoil-pad shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
             Elegant Lift Effect
           </Button>
         </div>

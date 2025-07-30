@@ -20,7 +20,7 @@ const meta: Meta<typeof ContextMenu> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'molecule', 'interactive', 'navigation'],
 };
 
 export default meta;

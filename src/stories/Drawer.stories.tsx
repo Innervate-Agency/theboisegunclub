@@ -18,7 +18,7 @@ const meta: Meta<typeof Drawer> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'molecule', 'interactive', 'form'],
 };
 
 export default meta;

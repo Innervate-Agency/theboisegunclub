@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import NewThemeToggle from '@/components/ui/NewThemeToggle';
 
 const meta: Meta<typeof NewThemeToggle> = {
-  title: 'Core UI/NewThemeToggle',
+  title: 'Foundation/Theme Toggle',
   component: NewThemeToggle,
   parameters: {
     layout: 'centered',
@@ -12,7 +12,7 @@ const meta: Meta<typeof NewThemeToggle> = {
       },
     },
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'interactive'],
 };
 
 export default meta;

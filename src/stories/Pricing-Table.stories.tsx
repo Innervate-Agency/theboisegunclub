@@ -105,7 +105,7 @@ const meta: Meta<typeof PricingCard> = {
       }
     }
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'organism', 'display', 'business'],
   argTypes: {
     variant: {
       control: 'select',

@@ -12,7 +12,7 @@ const meta: Meta<typeof ContactForm> = {
       }
     }
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'organism', 'form', 'business'],
   argTypes: {
     variant: {
       control: 'select',

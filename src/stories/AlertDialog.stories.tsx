@@ -8,7 +8,7 @@ const meta: Meta<typeof AlertDialog> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'molecule', 'interactive'],
 };
 
 export default meta;

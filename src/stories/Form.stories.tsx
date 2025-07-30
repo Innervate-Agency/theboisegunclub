@@ -20,7 +20,7 @@ const meta: Meta<typeof Form> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'organism', 'form'],
 };
 
 export default meta;

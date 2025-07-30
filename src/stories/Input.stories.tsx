@@ -4,12 +4,12 @@ import { Search, Mail, Lock, Eye, EyeOff, User, Phone } from 'lucide-react';
 import { useState } from 'react';
 
 const meta: Meta<typeof Input> = {
-  title: 'Core UI/Input',
+  title: 'Components/Atoms/Input',
   component: Input,
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'atom', 'form', 'interactive'],
   argTypes: {
     variant: {
       control: { type: 'select' },
@@ -62,7 +62,7 @@ export const Glass: Story = {
       default: 'gradient',
       values: [{
         name: 'gradient',
-        value: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        value: 'linear-gradient(135deg, hsl(var(--ayu-blue)) 0%, hsl(var(--ayu-purple)) 100%)',
       }],
     },
   },

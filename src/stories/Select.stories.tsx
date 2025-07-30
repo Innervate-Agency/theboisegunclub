@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/select'
 
 const meta: Meta<typeof Select> = {
-  title: 'Forms & Inputs/Select',
+  title: 'Components/Atoms/Select',
   component: Select,
   parameters: {
     layout: 'padded',
@@ -25,7 +25,7 @@ const meta: Meta<typeof Select> = {
       },
     },
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'atom', 'form', 'interactive'],
   argTypes: {
     variant: {
       control: 'select',
@@ -72,7 +72,7 @@ export const Premium: Story = {
 
 export const Glass: Story = {
   render: () => (
-    <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-8 rounded-xl">
+    <div className="bg-gradient-to-br from-night-sight to-tactical-gray p-8 rounded-xl">
       <Select variant="glass">
         <SelectTrigger className="w-[250px]">
           <SelectValue placeholder="Glass selection..." />

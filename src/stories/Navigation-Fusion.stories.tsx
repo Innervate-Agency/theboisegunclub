@@ -3,7 +3,7 @@ import { NavigationFusion } from '@/components/ui/navigation-fusion';
 import { Home, Target, Users, Calendar, Trophy, Shield, MapPin, Phone, BookOpen, Settings } from 'lucide-react';
 
 const meta: Meta<typeof NavigationFusion> = {
-  title: 'Navigation/Navigation Fusion',
+  title: 'Components/Molecules/Navigation Fusion',
   component: NavigationFusion,
   parameters: {
     layout: 'centered',
@@ -13,7 +13,7 @@ const meta: Meta<typeof NavigationFusion> = {
       }
     }
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'molecule', 'navigation', 'interactive'],
   argTypes: {
     variant: {
       control: 'select',

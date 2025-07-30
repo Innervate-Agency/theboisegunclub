@@ -11,12 +11,12 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 const meta: Meta<typeof Card> = {
-  title: 'Core UI/Card',
+  title: 'Components/Atoms/Card',
   component: Card,
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'display', 'atom'],
   argTypes: {
     variant: {
       control: 'select',

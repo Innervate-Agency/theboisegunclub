@@ -33,7 +33,7 @@ const meta: Meta<typeof NavigationMenu> = {
       },
     },
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'organism', 'navigation'],
 }
 
 export default meta
