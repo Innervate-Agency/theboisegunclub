@@ -16,7 +16,7 @@ export function CTASection() {
               Join our community of enthusiasts, professionals, and businesses.
             </p>
             <Button 
-              variant="accented"
+              variant="accent"
               size="xl"
               className="font-semibold"
             >

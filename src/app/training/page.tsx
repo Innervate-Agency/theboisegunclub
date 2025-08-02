@@ -66,7 +66,7 @@ export default function TrainingPage() {
       <PageHero
         title="Training Programs"
         subtitle="Professional firearms education for all skill levels"
-        backgroundPreset="branded"
+        backgroundPreset="warm"
         primaryAction={{ text: "Browse All Courses", href: "/training/courses" }}
         secondaryAction={{ text: "Find Instructors", href: "/training/instructors" }}
       />
@@ -121,7 +121,7 @@ export default function TrainingPage() {
                       >
                         Enroll Now
                       </Button>
-                      <Button variant="outline" size="sm">
+                      <Button variant="secondary" size="sm">
                         Details
                       </Button>
                     </div>

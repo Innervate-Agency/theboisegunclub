@@ -209,7 +209,7 @@ function EventCard({ event }: { event: typeof upcomingEvents[0] }) {
           >
             Register
           </Button>
-          <Button variant="outline" size="sm">
+          <Button variant="secondary" size="sm">
             <Info className="icon-xs" />
           </Button>
         </div>
@@ -256,11 +256,11 @@ export default function EventsPage() {
               </div>
             </div>
             <div className="flex gap-[var(--space-xs)]">
-              <Button variant="outline" className="border-scope-blue/30 text-scope-blue hover:bg-scope-blue hover:text-white">
+              <Button variant="secondary" className="border-scope-blue/30 text-scope-blue hover:bg-scope-blue hover:text-white">
                 <Calendar className="icon-sm mr-[var(--space-xs)]" />
                 Date Range
               </Button>
-              <Button variant="outline" className="border-scope-blue/30 text-scope-blue hover:bg-scope-blue hover:text-white">
+              <Button variant="secondary" className="border-scope-blue/30 text-scope-blue hover:bg-scope-blue hover:text-white">
                 <Filter className="icon-sm mr-[var(--space-xs)]" />
                 Filters
               </Button>
@@ -278,7 +278,7 @@ export default function EventsPage() {
             ].map((category) => (
               <Button
                 key={category.value}
-                variant={category.active ? "default" : "outline"}
+                variant={category.active ? "default" : "secondary"}
                 size="sm"
                 className={
                   category.active

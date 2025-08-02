@@ -87,7 +87,7 @@ export default function ComponentsDemoPage() {
                     </p>
                   </div>
                   <DialogFooter>
-                    <Button variant="outline">Cancel</Button>
+                    <Button variant="secondary">Cancel</Button>
                     <Button className="bg-brass-yellow text-gunmetal-black hover:bg-copper-orange">Save</Button>
                   </DialogFooter>
                 </DialogContent>
@@ -99,7 +99,7 @@ export default function ComponentsDemoPage() {
               <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">Dropdown Menu</h3>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="outline" className="w-full">
+                  <Button variant="secondary" className="w-full">
                     Options <ChevronDown className="ml-[var(--space-xs)] h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
@@ -143,7 +143,7 @@ export default function ComponentsDemoPage() {
               <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">Popover</h3>
               <Popover>
                 <PopoverTrigger asChild>
-                  <Button variant="outline" className="w-full">
+                  <Button variant="secondary" className="w-full">
                     Open Popover
                   </Button>
                 </PopoverTrigger>
@@ -167,7 +167,7 @@ export default function ComponentsDemoPage() {
               <div className="flex justify-center">
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="outline">
+                    <Button variant="secondary">
                       <Info className="h-4 w-4" />
                       Hover me
                     </Button>
@@ -184,7 +184,7 @@ export default function ComponentsDemoPage() {
               <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">Sheet</h3>
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="outline" className="w-full">
+                  <Button variant="secondary" className="w-full">
                     <Menu className="mr-[var(--space-xs)] h-4 w-4" />
                     Open Sheet
                   </Button>
@@ -200,7 +200,7 @@ export default function ComponentsDemoPage() {
                     <Button className="w-full bg-brass-yellow text-gunmetal-black hover:bg-copper-orange">
                       Primary Action
                     </Button>
-                    <Button variant="outline" className="w-full">
+                    <Button variant="secondary" className="w-full">
                       Secondary Action
                     </Button>
                   </div>

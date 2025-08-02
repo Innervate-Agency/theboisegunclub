@@ -129,22 +129,22 @@ const featuredVendors = [
 // Four pillars content for FeatureGrid
 const communityPillars = [
   {
-    icon: <Calendar className="h-8 w-8" />,
+    icon: Calendar,
     title: "Unified Calendar",
     description: "Never miss an event with our comprehensive calendar aggregating all firearms-related activities across the Treasure Valley."
   },
   {
-    icon: <MapPin className="h-8 w-8" />,
+    icon: MapPin,
     title: "Local Directory", 
     description: "Find trusted local businesses including dealers, ranges, training facilities, and gunsmiths all in one place."
   },
   {
-    icon: <Users className="h-8 w-8" />,
+    icon: Users,
     title: "Community Forum",
     description: "Connect with fellow enthusiasts, share experiences, ask questions, and build lasting relationships in our safe space."
   },
   {
-    icon: <GraduationCap className="h-8 w-8" />,
+    icon: GraduationCap,
     title: "Education Center",
     description: "Access resources for safety training, legal updates, skill development, and continuing education opportunities."
   }
@@ -187,7 +187,7 @@ export default function HomePage() {
             A Community Built On
           </h2>
           <FeatureGrid 
-            variant="fourColumns"
+            columns={4}
             features={communityPillars.map(pillar => ({
               icon: pillar.icon,
               title: pillar.title,
@@ -247,15 +247,15 @@ export default function HomePage() {
             {featuredVendors.map((vendor, index) => (
               <VendorCard
                 key={index}
-                name={vendor.name}
-                category={vendor.category}
+                businessName={vendor.name}
+                businessType={vendor.category}
                 description={vendor.description}
-                location={vendor.location}
+                address={vendor.location}
                 tier={vendor.tier as "free" | "copper" | "silver" | "gold"}
-                features={vendor.features}
+                specialties={vendor.features}
                 phone={vendor.phone}
                 website={vendor.website}
-                verified={vendor.verified}
+                isVerified={vendor.verified}
               />
             ))}
           </div>

@@ -122,11 +122,11 @@ export default function DirectoryPage() {
               </div>
             </div>
             <div className="flex gap-[var(--space-xs)]">
-              <Button variant="outline" className="border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black">
+              <Button variant="secondary" className="border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black">
                 <MapPin className="icon-sm mr-[var(--space-xs)]" />
                 Location
               </Button>
-              <Button variant="outline" className="border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black">
+              <Button variant="secondary" className="border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black">
                 <Filter className="icon-sm mr-[var(--space-xs)]" />
                 Filters
               </Button>
@@ -145,7 +145,7 @@ export default function DirectoryPage() {
             ].map((category) => (
               <Button
                 key={category.value}
-                variant={category.active ? "default" : "outline"}
+                variant={category.active ? "default" : "secondary"}
                 size="sm"
                 className={
                   category.active
@@ -180,19 +180,22 @@ export default function DirectoryPage() {
               {directoryListings.map((listing) => (
                 <DirectoryCard
                   key={listing.id}
-                  name={listing.name}
-                  category={listing.category}
+                  title={listing.name}
                   description={listing.description}
-                  location={listing.location}
-                  rating={listing.rating}
-                  reviewCount={listing.reviewCount}
-                  priceRange={listing.priceRange}
-                  features={listing.features}
-                  verified={listing.verified}
-                  imageUrl={listing.image}
-                  onViewDetails={() => console.log('View details for', listing.name)}
-                  onContact={() => console.log('Contact', listing.name)}
-                />
+                >
+                  <div className="space-y-2">
+                    <div className="text-sm text-muted-foreground">{listing.location}</div>
+                    <div className="text-sm">Rating: {listing.rating}/5 ({listing.reviewCount} reviews)</div>
+                    <div className="text-sm">Price: {listing.priceRange}</div>
+                    <div className="flex flex-wrap gap-1 mt-2">
+                      {listing.features.map((feature, idx) => (
+                        <span key={idx} className="px-2 py-1 bg-muted rounded text-xs">
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </DirectoryCard>
               ))}
             </div>
           </Suspense>
