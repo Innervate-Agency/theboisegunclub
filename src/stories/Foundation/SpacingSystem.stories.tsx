@@ -1,0 +1,161 @@
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+
+const meta: Meta = {
+  title: 'Design System/Foundation/SpacingSystem',
+  parameters: {
+    layout: 'fullscreen',
+    docs: {
+      description: {
+        component: 'TBGC spacing system with consistent 1.5x scaling ratio. All spacing tokens are available as CSS variables and used throughout the design system.',
+      },
+    },
+    designToken: {
+      showPreview: true,
+      filterNames: ['--space-*', '--card-*', '--button-*'],
+      category: 'Spacing'
+    }
+  },
+  tags: ['foundation', 'spacing', 'design-system'],
+};
+
+export default meta;
+type Story = StoryObj;
+
+export const SpacingScale: Story = {
+  render: () => (
+    <div className="p-[var(--space-lg)] space-y-[var(--space-lg)]">
+      <div>
+        <h1 className="text-4xl font-rajdhani font-bold mb-[var(--space-xs)]">TBGC Spacing System</h1>
+        <p className="text-lg text-muted-foreground mb-[var(--space-lg)]">Consistent spacing with 1.5x scaling ratio</p>
+      </div>
+
+      {/* Base Spacing Scale */}
+      <section>
+        <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Base Spacing Scale</h2>
+        <div className="space-y-[var(--space-base)]">
+          {[
+            { name: 'Micro', value: '--space-micro', px: '2px', usage: 'Fine details, border thickness' },
+            { name: 'XS', value: '--space-xs', px: '8px', usage: 'Small gaps, compact layouts' },
+            { name: 'SM', value: '--space-sm', px: '12px', usage: 'Default gaps, form spacing' },
+            { name: 'Base', value: '--space-base', px: '16px', usage: 'Card padding, button padding' },
+            { name: 'MD', value: '--space-md', px: '24px', usage: 'Section spacing, large gaps' },
+            { name: 'LG', value: '--space-lg', px: '32px', usage: 'Component separation' },
+            { name: 'XL', value: '--space-xl', px: '48px', usage: 'Major section spacing' },
+            { name: '2XL', value: '--space-2xl', px: '64px', usage: 'Hero section spacing' },
+            { name: '3XL', value: '--space-3xl', px: '96px', usage: 'Large hero spacing' },
+            { name: '4XL', value: '--space-4xl', px: '128px', usage: 'Maximum section spacing' },
+          ].map((token) => (
+            <div key={token.name} className="flex items-center gap-[var(--space-base)] p-[var(--space-base)] bg-card rounded-lg border">
+              <div className="w-24 text-sm font-medium">{token.name}</div>
+              <div className="flex-1">
+                <div 
+                  className="bg-brass-yellow rounded"
+                  style={{ 
+                    width: `var(${token.value})`,
+                    height: '24px',
+                    minWidth: '2px'
+                  }}
+                ></div>
+              </div>
+              <div className="w-32 text-sm text-muted-foreground">{token.px}</div>
+              <div className="w-48 text-sm font-mono text-muted-foreground">{token.value}</div>
+              <div className="flex-1 text-xs text-muted-foreground">{token.usage}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Component Spacing */}
+      <section>
+        <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Component-Specific Spacing</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
+          
+          {/* Card Spacing */}
+          <div className="space-y-[var(--space-base)]">
+            <h3 className="text-lg font-semibold">Card Spacing</h3>
+            <div className="bg-card border rounded-lg" style={{ padding: 'var(--card-padding)' }}>
+              <div className="bg-muted rounded p-[var(--space-xs)] text-sm">
+                Card content with <code>--card-padding</code>
+              </div>
+            </div>
+            <div className="text-xs text-muted-foreground">
+              Uses <code>var(--card-padding)</code> for consistent card internal spacing
+            </div>
+          </div>
+
+          {/* Button Spacing */}
+          <div className="space-y-[var(--space-base)]">
+            <h3 className="text-lg font-semibold">Button Spacing</h3>
+            <div className="space-y-[var(--space-xs)]">
+              <button 
+                className="bg-brass-yellow text-gunmetal-black rounded font-medium"
+                style={{ 
+                  height: 'var(--button-height-sm)',
+                  padding: 'var(--button-padding-sm)'
+                }}
+              >
+                Small Button
+              </button>
+              <button 
+                className="bg-copper-orange text-white rounded font-medium"
+                style={{ 
+                  height: 'var(--button-height-base)',
+                  padding: 'var(--button-padding-base)'
+                }}
+              >
+                Default Button
+              </button>
+              <button 
+                className="bg-gunmetal-black text-brass-yellow rounded font-medium"
+                style={{ 
+                  height: 'var(--button-height-lg)',
+                  padding: 'var(--button-padding-lg)'
+                }}
+              >
+                Large Button
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Usage Examples */}
+      <section>
+        <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Usage Examples</h2>
+        <div className="bg-muted p-[var(--space-md)] rounded-lg">
+          <pre className="text-sm overflow-x-auto">
+{`/* CSS Variables */
+padding: var(--space-md);
+margin-bottom: var(--space-lg);
+gap: var(--space-xs);
+
+/* Tailwind with Design Tokens */
+className="p-[var(--space-md)] mb-[var(--space-lg)] gap-[var(--space-xs)]"
+
+/* Component-Specific Tokens */
+className="p-[var(--card-padding)]"
+style={{ height: 'var(--button-height-base)' }}`}
+          </pre>
+        </div>
+      </section>
+    </div>
+  ),
+};
+
+export const SpacingTokens: Story = {
+  parameters: {
+    designToken: {
+      showPreview: true,
+      filterNames: ['--space-*'],
+      category: 'Spacing Tokens'
+    }
+  },
+  render: () => (
+    <div className="p-[var(--space-lg)]">
+      <h1 className="text-3xl font-rajdhani font-bold mb-[var(--space-base)]">Spacing Token Reference</h1>
+      <p className="text-muted-foreground mb-[var(--space-lg)]">
+        All TBGC spacing tokens follow a consistent 1.5x scaling ratio and are displayed in the Design Tokens panel.
+      </p>
+    </div>
+  ),
+};

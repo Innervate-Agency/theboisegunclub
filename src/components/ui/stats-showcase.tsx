@@ -15,9 +15,9 @@ const statsShowcaseVariants = cva(
         glass: "mica-card"
       },
       spacing: {
-        comfortable: "py-16",
-        compact: "py-12",
-        minimal: "py-8"
+        comfortable: "py-[var(--space-2xl)]",
+        compact: "py-[var(--space-xl)]",
+        minimal: "py-[var(--space-lg)]"
       }
     },
     defaultVariants: {
@@ -60,12 +60,12 @@ export function StatsShowcase({
       className={cn(statsShowcaseVariants({ variant, spacing }), className)}
       {...props}
     >
-      <div className="w-full max-w-6xl mx-auto px-6">
+      <div className="w-full max-w-6xl mx-auto px-[var(--space-md)]">
         {/* Header */}
         {(title || subtitle) && (
-          <div className="text-center mb-12">
+          <div className="text-center mb-[var(--space-xl)]">
             {title && (
-              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-foreground mb-3">
+              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-foreground mb-[var(--space-sm)]">
                 {title}
               </h2>
             )}
@@ -78,26 +78,26 @@ export function StatsShowcase({
         )}
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-md)]">
           {stats.map((stat, index) => {
             const Icon = stat.icon
             
             return (
               <div
                 key={index}
-                className="group relative bg-card border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-200 ease-out"
+                className="group relative bg-card border-border rounded-lg p-[var(--space-md)] shadow-sm hover:shadow-md transition-all duration-200 ease-out"
               >
-                <div className="space-y-4">
+                <div className="space-y-[var(--space-base)]">
                   {/* Icon and Value */}
                   <div className="flex items-center justify-between">
                     {Icon && (
-                      <div className="p-2 bg-copper-orange/10 rounded-lg">
+                      <div className="p-[var(--space-xs)] bg-copper-orange/10 rounded-lg">
                         <Icon className="h-5 w-5 text-copper-orange" />
                       </div>
                     )}
                     
                     {stat.change && (
-                      <div className="flex items-center gap-1 text-xs">
+                      <div className="flex items-center gap-[var(--space-xs)] text-xs">
                         {stat.change.trend === 'up' && (
                           <TrendingUp className="h-3 w-3 text-rifling-green" />
                         )}
@@ -117,7 +117,7 @@ export function StatsShowcase({
                   </div>
 
                   {/* Main Stat */}
-                  <div className="space-y-1">
+                  <div className="space-y-[var(--space-micro)]">
                     <div className="text-3xl font-rajdhani font-bold text-card-foreground group-hover:text-copper-orange transition-colors duration-200">
                       {typeof stat.value === 'number' ? stat.value.toLocaleString() : stat.value}
                     </div>

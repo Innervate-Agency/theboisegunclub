@@ -57,7 +57,7 @@ const buttonVariants = cva(
         ghost: "text-muted-foreground hover:bg-muted hover:shadow-xs focus-visible:ring-copper-orange border-0",
         
         // Flat: No shadows, perfect for inside cards/forms (Stripe-like design system)
-        flat: "bg-brass-yellow text-primary hover:bg-copper-orange focus-visible:ring-brass-yellow/50 transition-colors duration-150",
+        flat: "bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20 focus-visible:ring-copper-orange/50 border-0 transition-colors duration-150",
         
         // Link: Simple text, no shadow
         link: "text-copper-orange hover:text-recoil-pad underline-offset-4 hover:underline focus-visible:ring-copper-orange border-0",
@@ -76,10 +76,10 @@ const buttonVariants = cva(
       },
       size: {
         // Use our component sizing tokens from the design system
-        sm: "h-8 px-3 py-1.5 text-xs gap-1.5", // For inside cards/forms - Stripe pattern
-        default: "h-10 px-4 py-2.5 text-sm gap-2", // General usage
-        lg: "h-12 px-6 py-3 text-base gap-2", // Hero/primary actions
-        xl: "h-14 px-8 py-4 text-lg gap-2.5", // Call-to-action buttons
+        sm: "h-8 px-[var(--space-sm)] py-[var(--space-xs)] text-xs gap-[var(--space-xs)]", // For inside cards/forms - Stripe pattern
+        default: "h-10 px-[var(--space-base)] py-[var(--space-sm)] text-sm gap-[var(--space-xs)]", // General usage
+        lg: "h-12 px-[var(--space-md)] py-[var(--space-sm)] text-base gap-[var(--space-xs)]", // Hero/primary actions
+        xl: "h-14 px-[var(--space-lg)] py-[var(--space-base)] text-lg gap-[var(--space-sm)]", // Call-to-action buttons
         icon: "h-10 w-10 p-0"
       },
       rounded: {
@@ -132,7 +132,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             <span className={cn("flex items-center", loading && "invisible")}>
               {children}
               {isSolidVariant && !loading && (
-                <HoverArrow className="ml-2" />
+                <HoverArrow className="ml-[var(--space-xs)]" />
               )}
             </span>
           </span>
@@ -159,7 +159,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         <span className={cn("flex items-center", loading && "invisible")}>
           {children}
           {isSolidVariant && !loading && (
-            <HoverArrow className="ml-2" />
+            <HoverArrow className="ml-[var(--space-xs)]" />
           )}
         </span>
       </Comp>

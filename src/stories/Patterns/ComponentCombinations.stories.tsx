@@ -23,13 +23,13 @@ type Story = StoryObj;
 
 export const StatsGrid: Story = {
   render: () => (
-    <div className="max-w-4xl space-y-6">
-      <div className="text-center space-y-2">
+    <div className="max-w-4xl space-y-[var(--space-md)]">
+      <div className="text-center space-y-[var(--space-xs)]">
         <h2 className="font-rajdhani text-3xl font-bold">Statistics Grid Pattern</h2>
         <p className="text-muted-foreground">Four-column stats showcase with fire gradient variants</p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-md)]">
         <StatCard
           value="1,247"
           label="Active Members"
@@ -69,25 +69,25 @@ export const StatsGrid: Story = {
 
 export const FireGradientCardGrid: Story = {
   render: () => (
-    <div className="max-w-5xl space-y-6">
-      <div className="text-center space-y-2">
+    <div className="max-w-5xl space-y-[var(--space-md)]">
+      <div className="text-center space-y-[var(--space-xs)]">
         <h2 className="font-rajdhani text-3xl font-bold">Fire Gradient Card Pattern</h2>
         <p className="text-muted-foreground">Interactive cards with different fire gradient effects</p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-md)]">
         {/* Unfurl Effect Card */}
         <Card className="relative overflow-hidden cursor-pointer animate-fire-unfurl group">
           <CardHeader>
-            <Badge className="w-fit mb-2">Unfurl Effect</Badge>
+            <Badge className="w-fit mb-[var(--space-xs)]">Unfurl Effect</Badge>
             <CardTitle className="relative z-10">Hover to Ignite</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="relative z-10 text-sm text-muted-foreground mb-4">
+            <p className="relative z-10 text-sm text-muted-foreground mb-[var(--space-base)]">
               The gradient unfurls from the left like a proper flame effect when you hover.
             </p>
             <Button variant="ghost" size="sm" className="relative z-10">
-              Experience Effect <ChevronRight className="ml-1 h-4 w-4" />
+              Experience Effect <ChevronRight className="ml-[var(--space-xs)] h-4 w-4" />
             </Button>
           </CardContent>
         </Card>
@@ -95,15 +95,15 @@ export const FireGradientCardGrid: Story = {
         {/* Pulsing Fire Card */}
         <Card className="animate-fire-pulse text-white">
           <CardHeader>
-            <Badge variant="secondary" className="w-fit mb-2 bg-black/20">Continuous</Badge>
+            <Badge variant="secondary" className="w-fit mb-[var(--space-xs)] bg-black/20">Continuous</Badge>
             <CardTitle>Pulsing Fire</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-sm opacity-90 mb-4">
+            <p className="text-sm opacity-90 mb-[var(--space-base)]">
               Continuously animated fire gradient that pulses across the background.
             </p>
             <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-white/20">
-              Learn More <ChevronRight className="ml-1 h-4 w-4" />
+              Learn More <ChevronRight className="ml-[var(--space-xs)] h-4 w-4" />
             </Button>
           </CardContent>
         </Card>
@@ -111,15 +111,15 @@ export const FireGradientCardGrid: Story = {
         {/* Glowing Fire Card */}
         <Card className="bg-fire-orange animate-fire-glow text-white">
           <CardHeader>
-            <Badge variant="secondary" className="w-fit mb-2 bg-black/20">Glow Effect</Badge>
+            <Badge variant="secondary" className="w-fit mb-[var(--space-xs)] bg-black/20">Glow Effect</Badge>
             <CardTitle>Fire Glow</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-sm opacity-90 mb-4">
+            <p className="text-sm opacity-90 mb-[var(--space-base)]">
               Fire gradient with a pulsing glow shadow effect for extra emphasis.
             </p>
             <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-white/20">
-              View Details <ChevronRight className="ml-1 h-4 w-4" />
+              View Details <ChevronRight className="ml-[var(--space-xs)] h-4 w-4" />
             </Button>
           </CardContent>
         </Card>
@@ -127,15 +127,15 @@ export const FireGradientCardGrid: Story = {
         {/* Blue Fire Variant */}
         <Card className="bg-fire-blue text-white">
           <CardHeader>
-            <Badge variant="secondary" className="w-fit mb-2 bg-black/20">Cool Fire</Badge>
+            <Badge variant="secondary" className="w-fit mb-[var(--space-xs)] bg-black/20">Cool Fire</Badge>
             <CardTitle>Blue Flames</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-sm opacity-90 mb-4">
+            <p className="text-sm opacity-90 mb-[var(--space-base)]">
               Cool blue fire gradient using ayu-blue to ayu-green transition.
             </p>
             <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-white/20">
-              Explore <ChevronRight className="ml-1 h-4 w-4" />
+              Explore <ChevronRight className="ml-[var(--space-xs)] h-4 w-4" />
             </Button>
           </CardContent>
         </Card>
@@ -143,15 +143,15 @@ export const FireGradientCardGrid: Story = {
         {/* Purple Fire Variant */}
         <Card className="bg-fire-purple text-white">
           <CardHeader>
-            <Badge variant="secondary" className="w-fit mb-2 bg-black/20">Royal Fire</Badge>
+            <Badge variant="secondary" className="w-fit mb-[var(--space-xs)] bg-black/20">Royal Fire</Badge>
             <CardTitle>Purple Flames</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-sm opacity-90 mb-4">
+            <p className="text-sm opacity-90 mb-[var(--space-base)]">
               Elegant purple fire gradient from ayu-purple to ayu-cobalt.
             </p>
             <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-white/20">
-              Discover <ChevronRight className="ml-1 h-4 w-4" />
+              Discover <ChevronRight className="ml-[var(--space-xs)] h-4 w-4" />
             </Button>
           </CardContent>
         </Card>
@@ -159,15 +159,15 @@ export const FireGradientCardGrid: Story = {
         {/* Green Fire Variant */}
         <Card className="bg-fire-green text-white">
           <CardHeader>
-            <Badge variant="secondary" className="w-fit mb-2 bg-black/20">Natural Fire</Badge>
+            <Badge variant="secondary" className="w-fit mb-[var(--space-xs)] bg-black/20">Natural Fire</Badge>
             <CardTitle>Green Flames</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-sm opacity-90 mb-4">
+            <p className="text-sm opacity-90 mb-[var(--space-base)]">
               Natural green fire gradient perfect for success states and growth.
             </p>
             <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-white/20">
-              Get Started <ChevronRight className="ml-1 h-4 w-4" />
+              Get Started <ChevronRight className="ml-[var(--space-xs)] h-4 w-4" />
             </Button>
           </CardContent>
         </Card>
@@ -178,15 +178,15 @@ export const FireGradientCardGrid: Story = {
 
 export const CallToActionSection: Story = {
   render: () => (
-    <div className="max-w-4xl space-y-8">
-      <div className="text-center space-y-2">
+    <div className="max-w-4xl space-y-[var(--space-lg)]">
+      <div className="text-center space-y-[var(--space-xs)]">
         <h2 className="font-rajdhani text-3xl font-bold">Call to Action Pattern</h2>
         <p className="text-muted-foreground">Standard CTA layout with fire gradient buttons</p>
       </div>
       
-      <Card className="text-center p-8 bg-gradient-mesh-premium">
-        <CardContent className="space-y-6">
-          <div className="space-y-4">
+      <Card className="text-center p-[var(--space-lg)] bg-gradient-mesh-premium">
+        <CardContent className="space-y-[var(--space-md)]">
+          <div className="space-y-[var(--space-base)]">
             <Badge className="bg-fire-orange text-white">Limited Time</Badge>
             <h3 className="font-rajdhani text-4xl font-bold">
               Join The Boise Gun Club Today
@@ -196,9 +196,9 @@ export const CallToActionSection: Story = {
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-[var(--space-base)] justify-center">
             <Button size="lg" variant="premium" className="animate-fire-unfurl">
-              Become a Member <ArrowRight className="ml-2 h-5 w-5" />
+              Become a Member <ArrowRight className="ml-[var(--space-xs)] h-5 w-5" />
             </Button>
             <Button size="lg" variant="elite">
               Schedule a Visit
@@ -208,7 +208,7 @@ export const CallToActionSection: Story = {
             </Button>
           </div>
           
-          <div className="grid grid-cols-3 gap-8 pt-6 border-t">
+          <div className="grid grid-cols-3 gap-[var(--space-lg)] pt-[var(--space-md)] border-t">
             <div className="text-center">
               <div className="text-2xl font-rajdhani font-bold text-brass-yellow">1,247</div>
               <div className="text-sm text-muted-foreground">Happy Members</div>
@@ -230,15 +230,15 @@ export const CallToActionSection: Story = {
 
 export const FeatureHighlight: Story = {
   render: () => (
-    <div className="max-w-6xl space-y-8">
-      <div className="text-center space-y-2">
+    <div className="max-w-6xl space-y-[var(--space-lg)]">
+      <div className="text-center space-y-[var(--space-xs)]">
         <h2 className="font-rajdhani text-3xl font-bold">Feature Highlight Pattern</h2>
         <p className="text-muted-foreground">Alternating content and visual layout</p>
       </div>
       
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6">
-          <div className="space-y-4">
+      <div className="grid lg:grid-cols-2 gap-[var(--space-xl)] items-center">
+        <div className="space-y-[var(--space-md)]">
+          <div className="space-y-[var(--space-base)]">
             <Badge className="bg-fire-blue text-white">Enhanced</Badge>
             <h3 className="font-rajdhani text-3xl font-bold">
               Fire Gradient Animation System
@@ -248,21 +248,21 @@ export const FeatureHighlight: Story = {
             </p>
           </div>
           
-          <ul className="space-y-3">
-            <li className="flex items-start gap-3">
-              <div className="w-2 h-2 rounded-full bg-brass-yellow mt-2.5"></div>
+          <ul className="space-y-[var(--space-sm)]">
+            <li className="flex items-start gap-[var(--space-sm)]">
+              <div className="w-2 h-2 rounded-full bg-brass-yellow mt-[var(--space-xs)].5"></div>
               <div>
                 <strong>Left-Origin Animation:</strong> Gradients unfurl from the left using transform-origin
               </div>
             </li>
-            <li className="flex items-start gap-3">
-              <div className="w-2 h-2 rounded-full bg-copper-orange mt-2.5"></div>
+            <li className="flex items-start gap-[var(--space-sm)]">
+              <div className="w-2 h-2 rounded-full bg-copper-orange mt-[var(--space-xs)].5"></div>
               <div>
                 <strong>Color Coordination:</strong> Orange→Yellow, Blue→Green, Purple→Cobalt variations
               </div>
             </li>
-            <li className="flex items-start gap-3">
-              <div className="w-2 h-2 rounded-full bg-ayu-blue mt-2.5"></div>
+            <li className="flex items-start gap-[var(--space-sm)]">
+              <div className="w-2 h-2 rounded-full bg-ayu-blue mt-[var(--space-xs)].5"></div>
               <div>
                 <strong>Multiple Effects:</strong> Unfurl, pulse, glow animations for different use cases
               </div>
@@ -270,37 +270,37 @@ export const FeatureHighlight: Story = {
           </ul>
           
           <Button variant="premium" className="animate-fire-unfurl">
-            Experience the Effect <ArrowRight className="ml-2 h-5 w-5" />
+            Experience the Effect <ArrowRight className="ml-[var(--space-xs)] h-5 w-5" />
           </Button>
         </div>
         
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-[var(--space-base)]">
           <Card className="animate-fire-unfurl cursor-pointer">
-            <CardContent className="p-6">
+            <CardContent className="p-[var(--space-md)]">
               <div className="relative z-10 text-center">
-                <Target className="h-8 w-8 mx-auto mb-2 text-brass-yellow" />
+                <Target className="h-8 w-8 mx-auto mb-[var(--space-xs)] text-brass-yellow" />
                 <h4 className="font-bold">Hover Effect</h4>
               </div>
             </CardContent>
           </Card>
           
           <Card className="animate-fire-pulse text-white">
-            <CardContent className="p-6 text-center">
-              <TrendingUp className="h-8 w-8 mx-auto mb-2" />
+            <CardContent className="p-[var(--space-md)] text-center">
+              <TrendingUp className="h-8 w-8 mx-auto mb-[var(--space-xs)]" />
               <h4 className="font-bold">Pulse Effect</h4>
             </CardContent>
           </Card>
           
           <Card className="bg-fire-blue text-white">
-            <CardContent className="p-6 text-center">
-              <Users className="h-8 w-8 mx-auto mb-2" />
+            <CardContent className="p-[var(--space-md)] text-center">
+              <Users className="h-8 w-8 mx-auto mb-[var(--space-xs)]" />
               <h4 className="font-bold">Blue Fire</h4>
             </CardContent>
           </Card>
           
           <Card className="bg-fire-purple text-white">
-            <CardContent className="p-6 text-center">
-              <Trophy className="h-8 w-8 mx-auto mb-2" />
+            <CardContent className="p-[var(--space-md)] text-center">
+              <Trophy className="h-8 w-8 mx-auto mb-[var(--space-xs)]" />
               <h4 className="font-bold">Purple Fire</h4>
             </CardContent>
           </Card>

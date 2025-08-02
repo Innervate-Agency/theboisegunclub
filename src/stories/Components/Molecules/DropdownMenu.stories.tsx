@@ -18,7 +18,7 @@ import {
 import { Button } from '@/components/ui/button';
 
 const meta: Meta<typeof DropdownMenu> = {
-  title: 'Overlays & Modals/DropdownMenu',
+  title: 'Design System/Molecules/DropdownMenu',
   component: DropdownMenu,
   parameters: {
     layout: 'centered',

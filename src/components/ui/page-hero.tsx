@@ -11,10 +11,10 @@ const pageHeroVariants = cva(
   {
     variants: {
       size: {
-        sm: "py-12",
-        md: "py-16", 
-        lg: "py-20",
-        xl: "py-24"
+        sm: "py-[var(--space-xl)]",
+        md: "py-[var(--space-2xl)]", 
+        lg: "py-[var(--space-3xl)]",
+        xl: "py-[var(--space-4xl)]"
       },
       backgroundPreset: {
         warm: "bg-gradient-to-br from-brass-yellow/5 via-copper-orange/5 to-walnut-stock/5",
@@ -77,23 +77,23 @@ export function PageHero({
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-mesh-warm opacity-20" />
       
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6">
-        <div className="text-center space-y-8">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-[var(--space-md)]">
+        <div className="text-center space-y-[var(--space-lg)]">
           
           {/* Icon */}
           {Icon && (
             <div className="flex justify-center">
-              <div className="p-4 bg-card/80 backdrop-blur-sm rounded-full border border-brass-yellow/20 shadow-sm">
+              <div className="p-[var(--space-base)] bg-card/80 backdrop-blur-sm rounded-full border border-brass-yellow/20 shadow-sm">
                 <Icon className="h-8 w-8 text-brass-yellow" />
               </div>
             </div>
           )}
 
           {/* Main content */}
-          <div className="space-y-6">
+          <div className="space-y-[var(--space-md)]">
             {badge && (
               <div className="flex justify-center">
-                <div className="px-4 py-2 bg-brass-yellow/10 border border-brass-yellow/20 rounded-full text-sm font-medium text-brass-yellow">
+                <div className="px-[var(--space-base)] py-[var(--space-xs)] bg-brass-yellow/10 border border-brass-yellow/20 rounded-full text-sm font-medium text-brass-yellow">
                   {badge}
                 </div>
               </div>
@@ -118,7 +118,7 @@ export function PageHero({
 
           {/* Actions */}
           {(primaryAction || secondaryAction) && (
-            <div className="flex gap-4 justify-center flex-wrap">
+            <div className="flex gap-[var(--space-base)] justify-center flex-wrap">
               {primaryAction && (
                 <Button
                   variant="flat"
@@ -145,7 +145,7 @@ export function PageHero({
 
           {/* Scroll indicator */}
           {showScrollIndicator && (
-            <div className="flex justify-center pt-8">
+            <div className="flex justify-center pt-[var(--space-lg)]">
               <div className="animate-bounce">
                 <ChevronDown className="h-6 w-6 text-case-hardened/60" />
               </div>

@@ -8,10 +8,10 @@ import { Badge } from '@/components/ui/badge';
 
 const DarkModeTest = () => {
   return (
-    <div className="space-y-8 p-8">
+    <div className="space-y-[var(--space-lg)] p-[var(--space-lg)]">
       <div>
-        <h1 className="text-3xl font-rajdhani font-bold mb-4">Dark Mode Theme Test</h1>
-        <p className="text-muted-foreground mb-8">
+        <h1 className="text-3xl font-rajdhani font-bold mb-[var(--space-base)]">Dark Mode Theme Test</h1>
+        <p className="text-muted-foreground mb-[var(--space-lg)]">
           This story tests the semantic color system in both light and dark modes. 
           Use the theme toggle in Storybook to test both modes.
         </p>
@@ -23,8 +23,8 @@ const DarkModeTest = () => {
           <CardTitle>Text Colors</CardTitle>
           <CardDescription>Testing foreground and muted-foreground colors</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
+        <CardContent className="space-y-[var(--space-base)]">
+          <div className="space-y-[var(--space-xs)]">
             <p className="text-foreground font-semibold">Primary Text (text-foreground)</p>
             <p className="text-muted-foreground">Secondary Text (text-muted-foreground)</p>
             <p className="text-primary">Primary Color (text-primary)</p>
@@ -34,7 +34,7 @@ const DarkModeTest = () => {
       </Card>
 
       {/* Components Test */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-md)]">
         <StatCard
           value="1,234"
           label="Active Members"
@@ -53,14 +53,14 @@ const DarkModeTest = () => {
           <CardHeader>
             <CardTitle>Input Test</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-[var(--space-base)]">
             <Input placeholder="Test input field" />
-            <div className="flex gap-2">
+            <div className="flex gap-[var(--space-xs)]">
               <Button variant="default">Default</Button>
               <Button variant="secondary">Secondary</Button>
               <Button variant="destructive">Destructive</Button>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-[var(--space-xs)]">
               <Badge variant="default">Default Badge</Badge>
               <Badge variant="secondary">Secondary Badge</Badge>
               <Badge variant="destructive">Destructive Badge</Badge>
@@ -75,17 +75,17 @@ const DarkModeTest = () => {
           <CardTitle>Background Colors</CardTitle>
           <CardDescription>Testing background, card, and muted backgrounds</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-background border border-border p-4 rounded">
+        <CardContent className="space-y-[var(--space-base)]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-base)]">
+            <div className="bg-background border border-border p-[var(--space-base)] rounded">
               <p className="text-foreground font-medium">Background</p>
               <p className="text-muted-foreground text-sm">bg-background</p>
             </div>
-            <div className="bg-card border border-border p-4 rounded">
+            <div className="bg-card border border-border p-[var(--space-base)] rounded">
               <p className="text-card-foreground font-medium">Card</p>
               <p className="text-muted-foreground text-sm">bg-card</p>
             </div>
-            <div className="bg-muted border border-border p-4 rounded">
+            <div className="bg-muted border border-border p-[var(--space-base)] rounded">
               <p className="text-foreground font-medium">Muted</p>
               <p className="text-muted-foreground text-sm">bg-muted</p>
             </div>
@@ -97,7 +97,7 @@ const DarkModeTest = () => {
 };
 
 const meta: Meta<typeof DarkModeTest> = {
-  title: 'Design System/Dark Mode Test',
+  title: 'Design System/Foundation/DarkModeTest',
   component: DarkModeTest,
   parameters: {
     layout: 'fullscreen',

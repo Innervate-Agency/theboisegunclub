@@ -3,7 +3,7 @@ import { MegaHero } from '@/components/ui/mega-hero';
 import { Target, Trophy, Users, Calendar, Shield, Star } from 'lucide-react';
 
 const meta: Meta<typeof MegaHero> = {
-  title: 'Heroes & Headers/Mega Hero',
+  title: 'Design System/Organisms/Mega Hero',
   component: MegaHero,
   parameters: {
     layout: 'fullscreen',

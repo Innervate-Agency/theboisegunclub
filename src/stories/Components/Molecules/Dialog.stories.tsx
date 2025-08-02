@@ -13,7 +13,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 
 const meta: Meta<typeof Dialog> = {
-  title: 'Overlays & Modals/Dialog',
+  title: 'Design System/Molecules/Dialog',
   component: Dialog,
   parameters: {
     layout: 'centered',
@@ -37,14 +37,14 @@ export const Default: Story = {
             Make changes to your profile here. Click save when you're done.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
+        <div className="grid gap-[var(--space-base)] py-[var(--space-base)]">
+          <div className="grid grid-cols-4 items-center gap-[var(--space-base)]">
             <Label htmlFor="name" className="text-right">
               Name
             </Label>
             <Input id="name" value="Pedro Duarte" className="col-span-3" />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
+          <div className="grid grid-cols-4 items-center gap-[var(--space-base)]">
             <Label htmlFor="username" className="text-right">
               Username
             </Label>

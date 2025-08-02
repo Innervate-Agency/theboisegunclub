@@ -1,17 +1,18 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
+import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center justify-center rounded-md px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none transition-all duration-150 ease-out overflow-hidden",
+  "inline-flex items-center justify-center rounded-md px-[var(--space-xs)] py-[var(--space-tiny)] text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-[var(--space-xs)] [&>svg]:pointer-events-none transition-all duration-[var(--timing-normal)] ease-out overflow-hidden relative",
   {
     variants: {
       variant: {
         default: "bg-muted text-card-foreground hover:bg-muted/80",
-        premium: "bg-brass-yellow/10 text-brass-yellow hover:bg-brass-yellow/20",
-        elite: "bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20",
+        premium: "bg-brass-yellow/10 text-brass-yellow hover:bg-brass-yellow/20 relative",
+        elite: "bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20 relative",
         glass: "mica-overlay text-card-foreground",
         success: "bg-rifling-green/10 text-rifling-green hover:bg-rifling-green/20",
         warning: "bg-sight-gold/10 text-sight-gold hover:bg-sight-gold/20",
@@ -21,10 +22,16 @@ const badgeVariants = cva(
         destructive: "bg-muzzle-flash/10 text-muzzle-flash hover:bg-muzzle-flash/20"
       },
       size: {
-        sm: "px-2 py-0.5 text-xs h-5",
-        default: "px-3 py-0.5 text-xs h-6",
-        lg: "px-4 py-1 text-sm h-8",
-        xl: "px-4 py-1.5 text-sm h-8"
+        sm: "px-[var(--space-xs)] py-[var(--space-tiny)] text-xs h-5",
+        default: "px-[var(--space-sm)] py-[var(--space-tiny)] text-xs h-6",
+        lg: "px-[var(--space-base)] py-[var(--space-xs)] text-sm h-8",
+        xl: "px-[var(--space-base)] py-[var(--space-sm)] text-sm h-10"
+      },
+      animate: {
+        true: "hover:scale-105 active:scale-95"
+      },
+      pulse: {
+        true: "animate-pulse"
       }
     },
     defaultVariants: {
@@ -38,6 +45,10 @@ export interface BadgeProps
   extends React.ComponentProps<"span">,
     VariantProps<typeof badgeVariants> {
   asChild?: boolean
+  icon?: React.ReactNode
+  shimmer?: boolean
+  dismissible?: boolean
+  onDismiss?: () => void
 }
 
 function Badge({
@@ -45,6 +56,13 @@ function Badge({
   variant,
   size,
   asChild = false,
+  icon,
+  shimmer = false,
+  dismissible = false,
+  onDismiss,
+  animate,
+  pulse,
+  children,
   ...props
 }: BadgeProps) {
   const Comp = asChild ? Slot : "span"
@@ -52,9 +70,26 @@ function Badge({
   return (
     <Comp
       data-slot="badge"
-      className={cn(badgeVariants({ variant, size }), className)}
+      className={cn(
+        badgeVariants({ variant, size, animate, pulse }),
+        shimmer && "before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:animate-[shimmer_1.5s_ease-in-out] before:transition-transform",
+        className
+      )}
       {...props}
-    />
+    >
+      {icon && <span className="shrink-0">{icon}</span>}
+      <span className="truncate">{children}</span>
+      {dismissible && (
+        <button
+          type="button"
+          onClick={onDismiss}
+          className="ml-[var(--space-tiny)] shrink-0 hover:bg-black/10 dark:hover:bg-white/10 rounded-full p-0.5 transition-colors duration-[var(--timing-fast)]"
+          aria-label="Remove badge"
+        >
+          <X className="h-2.5 w-2.5" />
+        </button>
+      )}
+    </Comp>
   )
 }
 

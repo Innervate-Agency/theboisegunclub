@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { IconShowcase } from '@/components/ui/icon-showcase';
 
 const meta: Meta<typeof IconShowcase> = {
-  title: 'Design System/Icon Showcase',
+  title: 'Design System/Foundation/IconShowcase',
   component: IconShowcase,
   parameters: {
     layout: 'fullscreen',

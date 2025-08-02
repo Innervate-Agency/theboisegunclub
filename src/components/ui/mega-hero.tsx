@@ -71,9 +71,9 @@ export function MegaHero({
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-mesh-warm opacity-30" />
       
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-16">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-[var(--space-md)] py-[var(--space-2xl)]">
         <div className={cn(
-          "space-y-8",
+          "space-y-[var(--space-lg)]",
           centerContent && "text-center"
         )}>
           
@@ -88,7 +88,7 @@ export function MegaHero({
           )}
 
           {/* Main content */}
-          <div className="space-y-6">
+          <div className="space-y-[var(--space-md)]">
             {subtitle && (
               <p className="text-sm uppercase tracking-wider font-medium text-case-hardened">
                 {subtitle}
@@ -109,13 +109,13 @@ export function MegaHero({
           {/* Badges */}
           {badges && badges.length > 0 && (
             <div className={cn(
-              "flex gap-4 flex-wrap",
+              "flex gap-[var(--space-base)] flex-wrap",
               centerContent ? "justify-center" : "justify-start"
             )}>
               {badges.map((badge, index) => (
                 <div
                   key={index}
-                  className="px-4 py-2 bg-white/80 backdrop-blur-sm border border-brass-yellow/20 rounded-lg text-sm font-medium text-blued-steel shadow-xs"
+                  className="px-[var(--space-base)] py-[var(--space-xs)] bg-white/80 backdrop-blur-sm border border-brass-yellow/20 rounded-lg text-sm font-medium text-blued-steel shadow-xs"
                 >
                   {badge}
                 </div>
@@ -126,7 +126,7 @@ export function MegaHero({
           {/* CTAs */}
           {(primaryCTA || secondaryCTA) && (
             <div className={cn(
-              "flex gap-4 flex-wrap",
+              "flex gap-[var(--space-base)] flex-wrap",
               centerContent ? "justify-center" : "justify-start"
             )}>
               {primaryCTA && (

@@ -35,7 +35,7 @@ const sampleFAQs = [
 ];
 
 const meta: Meta<typeof FAQAccordion> = {
-  title: 'Content & Media/FAQAccordion',
+  title: 'Design System/Molecules/FAQAccordion',
   component: FAQAccordion,
   parameters: {
     layout: 'padded',

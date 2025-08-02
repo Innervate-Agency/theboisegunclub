@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { TestimonialCarousel } from '@/components/ui/testimonial-carousel';
 
 const meta: Meta<typeof TestimonialCarousel> = {
-  title: 'Components/Organisms/TestimonialCarousel',
+  title: 'Design System/Organisms/TestimonialCarousel',
   component: TestimonialCarousel,
   parameters: {
     layout: 'fullscreen',

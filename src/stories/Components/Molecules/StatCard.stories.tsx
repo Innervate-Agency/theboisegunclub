@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import StatCard from '@/components/ui/StatCard';
 
 const meta: Meta<typeof StatCard> = {
-  title: 'Components/Molecules/StatCard',
+  title: 'Design System/Molecules/StatCard',
   component: StatCard,
   parameters: {
     layout: 'centered',
@@ -68,13 +68,13 @@ export const LargeNumber: Story = {
 
 export const GunClubStats: Story = {
   render: () => (
-    <div className="space-y-6 p-6">
+    <div className="space-y-[var(--space-md)] p-[var(--space-md)]">
       <div className="text-center">
-        <h2 className="text-2xl font-rajdhani font-bold text-blued-steel mb-2">TBGC Statistics</h2>
+        <h2 className="text-2xl font-rajdhani font-bold text-blued-steel mb-[var(--space-xs)]">TBGC Statistics</h2>
         <p className="text-case-hardened">Real-time club metrics and performance data</p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-md)]">
         <StatCard
           value="247"
           label="Active Members"
@@ -113,7 +113,7 @@ export const GunClubStats: Story = {
 
 export const MembershipStats: Story = {
   render: () => (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-base)]">
       <StatCard
         value="247"
         label="Current Members"
@@ -132,7 +132,7 @@ export const MembershipStats: Story = {
 
 export const CompetitionStats: Story = {
   render: () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
       <StatCard
         value="92%"
         label="Skeet Average"
@@ -155,16 +155,16 @@ export const CompetitionStats: Story = {
 
 export const AnimatedCounters: Story = {
   render: () => (
-    <div className="space-y-8">
+    <div className="space-y-[var(--space-lg)]">
       <div className="text-center">
-        <h3 className="text-lg font-rajdhani font-bold text-blued-steel mb-4">
+        <h3 className="text-lg font-rajdhani font-bold text-blued-steel mb-[var(--space-base)]">
           Animated Counter Examples
         </h3>
-        <p className="text-sm text-case-hardened mb-6">
+        <p className="text-sm text-case-hardened mb-[var(--space-md)]">
           These cards animate when they come into view
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-base)]">
         <StatCard
           value="2,450"
           label="Total Members"

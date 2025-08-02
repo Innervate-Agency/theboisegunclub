@@ -58,7 +58,7 @@ export default function LocalImage({
         )}
         style={{ width: fill ? '100%' : width, height: fill ? '100%' : height }}
       >
-        <div className="text-center space-y-2">
+        <div className="text-center space-y-[var(--space-xs)]">
           <ImageIcon className="icon-xl icon-muted mx-auto" />
           <p className="text-sm text-case-hardened font-noto-sans">Image unavailable</p>
         </div>
@@ -74,7 +74,7 @@ export default function LocalImage({
           className="absolute inset-0 bg-gradient-card-warm border border-brass-yellow/20 rounded-lg flex items-center justify-center z-10"
           style={{ width: fill ? '100%' : width, height: fill ? '100%' : height }}
         >
-          <div className="animate-pulse space-y-2 text-center">
+          <div className="animate-pulse space-y-[var(--space-xs)] text-center">
             <ImageIcon className="icon-lg icon-muted mx-auto" />
             <p className="text-xs text-case-hardened font-noto-sans">Loading...</p>
           </div>

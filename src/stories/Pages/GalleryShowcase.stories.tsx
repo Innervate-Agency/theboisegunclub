@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { GalleryGrid } from '@/components/ui/gallery-showcase';
 
 const meta: Meta<typeof GalleryGrid> = {
-  title: 'Data Display/GalleryShowcase',
+  title: 'Design System/Pages/GalleryShowcase',
   component: GalleryGrid,
   parameters: {
     layout: 'fullscreen',

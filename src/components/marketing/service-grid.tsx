@@ -45,10 +45,10 @@ const services = [
 
 export function ServiceGrid() {
   return (
-    <section className="py-16 bg-range-white">
-      <div className="container mx-auto px-4">
+    <section className="py-[var(--space-2xl)] bg-range-white">
+      <div className="container mx-auto px-[var(--space-base)]">
         {/* Service cards in 3x2 grid exactly matching screenshot layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-md)] max-w-5xl mx-auto">
           {services.map((service, index) => (
             <Card 
               key={index} 
@@ -57,7 +57,7 @@ export function ServiceGrid() {
                 shadow-sm 
                 hover:shadow-md 
                 transition-stripe-fast 
-                p-6 
+                p-[var(--space-md)] 
                 ${service.borderColor} 
                 border-l-4
                 hover:-translate-y-0.5
@@ -67,17 +67,17 @@ export function ServiceGrid() {
             >
               <div className="flex flex-col items-start text-left h-full">
                 {/* Icon with subtle background and proper spacing */}
-                <div className="mb-4 p-3 rounded-lg bg-range-white border border-case-hardened/10 transition-stripe-fast group-hover:bg-copper-orange/5 group-hover:border-copper-orange/20">
+                <div className="mb-[var(--space-base)] p-[var(--space-sm)] rounded-lg bg-range-white border border-case-hardened/10 transition-stripe-fast group-hover:bg-copper-orange/5 group-hover:border-copper-orange/20">
                   <service.icon className="h-6 w-6 text-foreground transition-stripe-fast group-hover:text-copper-orange" />
                 </div>
                 
                 {/* Title with proper hierarchy and hover color */}
-                <h3 className="font-noto-sans text-lg font-semibold text-foreground mb-3 leading-tight transition-stripe-fast group-hover:text-copper-orange">
+                <h3 className="font-noto-sans text-lg font-semibold text-foreground mb-[var(--space-sm)] leading-tight transition-stripe-fast group-hover:text-copper-orange">
                   {service.title}
                 </h3>
                 
                 {/* Description with proper text treatment */}
-                <p className="font-noto-sans text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
+                <p className="font-noto-sans text-sm text-muted-foreground leading-relaxed mb-[var(--space-md)] flex-1">
                   {service.description}
                 </p>
                 

@@ -6,7 +6,7 @@ import {
 } from '@/components/ui/resizable';
 
 const meta: Meta<typeof ResizablePanelGroup> = {
-  title: 'Layout & Containers/Resizable',
+  title: 'Design System/Atoms/Resizable',
   component: ResizablePanelGroup,
   parameters: {
     layout: 'centered',
@@ -25,7 +25,7 @@ export const Default: Story = {
       {...args}
     >
       <ResizablePanel defaultSize={50}>
-        <div className="flex h-[200px] items-center justify-center p-6">
+        <div className="flex h-[200px] items-center justify-center p-[var(--space-md)]">
           <span className="font-semibold">One</span>
         </div>
       </ResizablePanel>
@@ -33,13 +33,13 @@ export const Default: Story = {
       <ResizablePanel defaultSize={50}>
         <ResizablePanelGroup direction="vertical">
           <ResizablePanel defaultSize={25}>
-            <div className="flex h-full items-center justify-center p-6">
+            <div className="flex h-full items-center justify-center p-[var(--space-md)]">
               <span className="font-semibold">Two</span>
             </div>
           </ResizablePanel>
           <ResizableHandle />
           <ResizablePanel defaultSize={75}>
-            <div className="flex h-full items-center justify-center p-6">
+            <div className="flex h-full items-center justify-center p-[var(--space-md)]">
               <span className="font-semibold">Three</span>
             </div>
           </ResizablePanel>

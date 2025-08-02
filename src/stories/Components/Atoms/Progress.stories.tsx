@@ -3,7 +3,7 @@ import { Progress } from '@/components/ui/progress';
 import React from 'react';
 
 const meta: Meta<typeof Progress> = {
-  title: 'Core UI/Progress',
+  title: 'Design System/Atoms/Progress',
   component: Progress,
   parameters: {
     layout: 'centered',

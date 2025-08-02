@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+import Link from 'next/link'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
@@ -71,25 +72,25 @@ export function SiteNavigation({
         className={cn(siteNavigationVariants({ variant, layout, sticky }), className)}
         {...props}
       >
-        <div className="p-6">
+        <div className="p-[var(--space-md)]">
           {showLogo && (
-            <div className="mb-8">
-              <div className="text-xl font-rajdhani text-gunmetal-black">
+            <div className="mb-[var(--space-lg)]">
+              <div className="text-[var(--text-xl)] font-rajdhani text-gunmetal-black">
                 <span className="font-extrabold">THE BOISE GUN</span>{' '}
                 <span className="font-light">CLUB</span>
               </div>
-              <p className="text-sm text-case-hardened">Treasure Valley</p>
+              <p className="text-[var(--text-sm)] text-case-hardened">Treasure Valley</p>
             </div>
           )}
           
-          <div className="space-y-2">
+          <div className="space-y-[var(--space-xs)]">
             {navigationItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-lg transition-all duration-150"
+                className="flex items-center gap-[var(--space-sm)] px-[var(--space-base)] py-[var(--space-sm)] text-[var(--text-sm)] font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-lg transition-all duration-150"
               >
-                <item.icon className="h-4 w-4" />
+                <item.icon className="h-[var(--icon-sm)] w-[var(--icon-sm)]" />
                 {item.label}
               </a>
             ))}
@@ -104,45 +105,45 @@ export function SiteNavigation({
       className={cn(siteNavigationVariants({ variant, layout, sticky }), className)}
       {...props}
     >
-      <div className="w-full max-w-7xl mx-auto px-6">
+      <div className="w-full max-w-7xl mx-auto px-[var(--space-md)]">
         <div className="flex items-center justify-between h-16">
           
           {/* Logo */}
           {showLogo && (
             <div className="flex items-center">
-              <a href="/" className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-brass-yellow rounded-md flex items-center justify-center">
-                  <Target className="h-4 w-4 text-gunmetal-black" />
+              <Link href="/" className="flex items-center gap-[var(--space-sm)]">
+                <div className="w-[var(--icon-lg)] h-[var(--icon-lg)] bg-brass-yellow rounded-md flex items-center justify-center">
+                  <Target className="h-[var(--icon-sm)] w-[var(--icon-sm)] text-gunmetal-black" />
                 </div>
                 <div>
-                  <div className="text-lg font-rajdhani text-gunmetal-black">
+                  <div className="text-[var(--text-lg)] font-rajdhani text-gunmetal-black">
                     <span className="font-extrabold">THE BOISE GUN</span>{' '}
                     <span className="font-light">CLUB</span>
                   </div>
-                  <p className="text-xs text-case-hardened -mt-1">
+                  <p className="text-[var(--text-xs)] text-case-hardened -mt-[var(--space-xs)]">
                     Treasure Valley
                   </p>
                 </div>
-              </a>
+              </Link>
             </div>
           )}
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-[var(--space-micro)]">
             {navigationItems.slice(0, 6).map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-md transition-all duration-150"
+                className="flex items-center gap-[var(--space-xs)] px-[var(--space-base)] py-[var(--space-xs)] text-[var(--text-sm)] font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-md transition-all duration-150"
               >
-                <item.icon className="h-4 w-4" />
+                <item.icon className="h-[var(--icon-sm)] w-[var(--icon-sm)]" />
                 {item.label}
               </a>
             ))}
           </div>
 
           {/* Custom Content / Auth Buttons */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-[var(--space-base)]">
             {customContent || (
               <>
                 <Button variant="ghost" size="sm">
@@ -164,9 +165,9 @@ export function SiteNavigation({
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className="h-5 w-5" />
+                <X className="h-[var(--icon-base)] w-[var(--icon-base)]" />
               ) : (
-                <Menu className="h-5 w-5" />
+                <Menu className="h-[var(--icon-base)] w-[var(--icon-base)]" />
               )}
             </Button>
           </div>
@@ -174,63 +175,63 @@ export function SiteNavigation({
 
         {/* Mega Menu Content */}
         {layout === "mega" && (
-          <div className="py-6 relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
-            <div className="grid grid-cols-3 gap-8">
+          <div className="py-[var(--space-md)] relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
+            <div className="grid grid-cols-3 gap-[var(--space-lg)]">
               <div>
-                <h3 className="text-sm font-rajdhani font-bold text-gunmetal-black mb-4">
+                <h3 className="text-[var(--text-sm)] font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
                   Directory
                 </h3>
-                <div className="space-y-2">
-                  <a href="/directory/shops" className="block text-sm text-case-hardened hover:text-gunmetal-black">
+                <div className="space-y-[var(--space-xs)]">
+                  <a href="/directory/shops" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
                     Gun Shops
                   </a>
-                  <a href="/directory/ranges" className="block text-sm text-case-hardened hover:text-gunmetal-black">
+                  <a href="/directory/ranges" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
                     Shooting Ranges
                   </a>
-                  <a href="/directory/instructors" className="block text-sm text-case-hardened hover:text-gunmetal-black">
+                  <a href="/directory/instructors" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
                     Instructors
                   </a>
-                  <a href="/directory/gunsmiths" className="block text-sm text-case-hardened hover:text-gunmetal-black">
+                  <a href="/directory/gunsmiths" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
                     Gunsmiths
                   </a>
                 </div>
               </div>
               
               <div>
-                <h3 className="text-sm font-rajdhani font-bold text-gunmetal-black mb-4">
+                <h3 className="text-[var(--text-sm)] font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
                   Events
                 </h3>
-                <div className="space-y-2">
-                  <a href="/events/competitions" className="block text-sm text-case-hardened hover:text-gunmetal-black">
+                <div className="space-y-[var(--space-xs)]">
+                  <a href="/events/competitions" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
                     Competitions
                   </a>
-                  <a href="/events/training" className="block text-sm text-case-hardened hover:text-gunmetal-black">
+                  <a href="/events/training" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
                     Training Sessions
                   </a>
-                  <a href="/events/social" className="block text-sm text-case-hardened hover:text-gunmetal-black">
+                  <a href="/events/social" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
                     Social Events
                   </a>
-                  <a href="/events/gun-shows" className="block text-sm text-case-hardened hover:text-gunmetal-black">
+                  <a href="/events/gun-shows" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
                     Gun Shows
                   </a>
                 </div>
               </div>
               
               <div>
-                <h3 className="text-sm font-rajdhani font-bold text-gunmetal-black mb-4">
+                <h3 className="text-[var(--text-sm)] font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
                   Resources
                 </h3>
-                <div className="space-y-2">
-                  <a href="/safety" className="block text-sm text-case-hardened hover:text-gunmetal-black">
+                <div className="space-y-[var(--space-xs)]">
+                  <a href="/safety" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
                     Safety Guidelines
                   </a>
-                  <a href="/training/beginner" className="block text-sm text-case-hardened hover:text-gunmetal-black">
+                  <a href="/training/beginner" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
                     Beginner Resources
                   </a>
-                  <a href="/laws" className="block text-sm text-case-hardened hover:text-gunmetal-black">
+                  <a href="/laws" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
                     Idaho Gun Laws
                   </a>
-                  <a href="/community" className="block text-sm text-case-hardened hover:text-gunmetal-black">
+                  <a href="/community" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
                     Community Forum
                   </a>
                 </div>
@@ -241,23 +242,23 @@ export function SiteNavigation({
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
-            <div className="space-y-2">
+          <div className="md:hidden py-[var(--space-base)] relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
+            <div className="space-y-[var(--space-xs)]">
               {navigationItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-md transition-all duration-150"
+                  className="flex items-center gap-[var(--space-sm)] px-[var(--space-base)] py-[var(--space-sm)] text-[var(--text-sm)] font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-md transition-all duration-150"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <item.icon className="h-4 w-4" />
+                  <item.icon className="h-[var(--icon-sm)] w-[var(--icon-sm)]" />
                   {item.label}
                 </a>
               ))}
             </div>
             
-            <div className="pt-4 mt-4 relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
-              <div className="flex flex-col gap-2">
+            <div className="pt-[var(--space-base)] mt-[var(--space-base)] relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
+              <div className="flex flex-col gap-[var(--space-xs)]">
                 <Button variant="ghost" size="sm" className="justify-start">
                   Sign In
                 </Button>

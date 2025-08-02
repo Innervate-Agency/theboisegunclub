@@ -11,8 +11,10 @@ const config: StorybookConfig = {
 
   addons: [
     '@storybook/addon-docs',
-    '@storybook/addon-a11y', 
+    '@storybook/addon-a11y',
     '@storybook/addon-themes',
+    // Design token integration - temporarily disabled for 9.1.0 compatibility
+    // 'storybook-design-token'
   ],
 
   framework: {

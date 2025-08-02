@@ -148,10 +148,10 @@ function EventCard({ event }: { event: typeof upcomingEvents[0] }) {
       </div>
 
       {/* Content */}
-      <div className="p-6 space-y-4">
+      <div className="p-[var(--space-md)] space-y-[var(--space-base)]">
         {/* Title & Description */}
         <div>
-          <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black group-hover:text-brass-yellow transition-colors duration-200 mb-2">
+          <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black group-hover:text-brass-yellow transition-colors duration-200 mb-[var(--space-xs)]">
             {event.title}
           </h3>
           <p className="text-sm text-case-hardened font-noto-sans leading-relaxed">
@@ -160,8 +160,8 @@ function EventCard({ event }: { event: typeof upcomingEvents[0] }) {
         </div>
 
         {/* Event Details */}
-        <div className="space-y-2 text-sm text-case-hardened">
-          <div className="flex items-center gap-2">
+        <div className="space-y-[var(--space-xs)] text-sm text-case-hardened">
+          <div className="flex items-center gap-[var(--space-xs)]">
             <Calendar className="icon-xs text-brass-yellow" />
             <span>{new Date(event.date).toLocaleDateString('en-US', { 
               weekday: 'long', 
@@ -171,17 +171,17 @@ function EventCard({ event }: { event: typeof upcomingEvents[0] }) {
             })}</span>
           </div>
           
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-[var(--space-xs)]">
             <Clock className="icon-xs text-brass-yellow" />
             <span>{event.time} - {event.endTime}</span>
           </div>
           
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-[var(--space-xs)]">
             <MapPin className="icon-xs text-brass-yellow" />
             <span>{event.location}</span>
           </div>
           
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-[var(--space-xs)]">
             <Users className="icon-xs text-brass-yellow" />
             <span>{event.registered}/{event.capacity} registered</span>
             {isAlmostFull && (
@@ -193,7 +193,7 @@ function EventCard({ event }: { event: typeof upcomingEvents[0] }) {
         </div>
 
         {/* Features */}
-        <div className="flex flex-wrap gap-1">
+        <div className="flex flex-wrap gap-[var(--space-xs)]">
           {event.features.slice(0, 3).map((feature) => (
             <Badge key={feature} variant="outline" className="text-xs border-brass-yellow/30 text-brass-yellow">
               {feature}
@@ -202,7 +202,7 @@ function EventCard({ event }: { event: typeof upcomingEvents[0] }) {
         </div>
 
         {/* Actions */}
-        <div className="flex gap-2 pt-2">
+        <div className="flex gap-[var(--space-xs)] pt-[var(--space-xs)]">
           <Button 
             size="sm" 
             className="flex-1 bg-brass-yellow text-gunmetal-black hover:bg-copper-orange font-rajdhani font-semibold"
@@ -243,32 +243,32 @@ export default function EventsPage() {
       />
 
       {/* Search & Filter Section */}
-      <section className="py-12 bg-gradient-hero-cool">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row gap-4 mb-8">
+      <section className="py-[var(--space-xl)] bg-gradient-hero-cool">
+        <div className="max-w-6xl mx-auto px-[var(--space-md)]">
+          <div className="flex flex-col md:flex-row gap-[var(--space-base)] mb-[var(--space-lg)]">
             <div className="flex-1">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 icon-sm text-case-hardened" />
                 <Input
                   placeholder="Search events by name, location, or type..."
-                  className="pl-10 bg-white border-scope-blue/30 focus:border-scope-blue"
+                  className="pl-[var(--space-2xl)] bg-white border-scope-blue/30 focus:border-scope-blue"
                 />
               </div>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-[var(--space-xs)]">
               <Button variant="outline" className="border-scope-blue/30 text-scope-blue hover:bg-scope-blue hover:text-white">
-                <Calendar className="icon-sm mr-2" />
+                <Calendar className="icon-sm mr-[var(--space-xs)]" />
                 Date Range
               </Button>
               <Button variant="outline" className="border-scope-blue/30 text-scope-blue hover:bg-scope-blue hover:text-white">
-                <Filter className="icon-sm mr-2" />
+                <Filter className="icon-sm mr-[var(--space-xs)]" />
                 Filters
               </Button>
             </div>
           </div>
 
           {/* Category Tabs */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-[var(--space-xs)]">
             {[
               { label: "All Events", value: "all", active: true },
               { label: "Competitions", value: "competition" },
@@ -294,13 +294,13 @@ export default function EventsPage() {
       </section>
 
       {/* Events Grid */}
-      <section className="py-12">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-6 flex items-center justify-between">
+      <section className="py-[var(--space-xl)]">
+        <div className="max-w-6xl mx-auto px-[var(--space-md)]">
+          <div className="mb-[var(--space-md)] flex items-center justify-between">
             <h2 className="text-2xl font-rajdhani font-bold text-gunmetal-black">
               Upcoming Events
             </h2>
-            <select className="px-4 py-2 border border-gray-300 rounded-lg bg-white text-sm font-noto-sans">
+            <select className="px-[var(--space-base)] py-[var(--space-xs)] border border-gray-300 rounded-lg bg-white text-sm font-noto-sans">
               <option>Sort by Date</option>
               <option>Sort by Location</option>
               <option>Sort by Category</option>
@@ -309,7 +309,7 @@ export default function EventsPage() {
           </div>
 
           <Suspense fallback={<LoadingSpinner text="Loading events..." />}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-md)]">
               {upcomingEvents.map((event) => (
                 <EventCard key={event.id} event={event} />
               ))}
@@ -317,7 +317,7 @@ export default function EventsPage() {
           </Suspense>
 
           {/* Load More */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-[var(--space-xl)]">
             <Button size="lg" className="bg-scope-blue text-white hover:bg-trigger-blue font-rajdhani font-semibold">
               Load More Events
             </Button>

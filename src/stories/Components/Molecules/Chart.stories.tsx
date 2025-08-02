@@ -7,7 +7,7 @@ import {
 } from '@/components/ui/chart';
 
 const meta: Meta<typeof ChartContainer> = {
-  title: 'Data Display/Chart',
+  title: 'Design System/Molecules/Chart',
   component: ChartContainer,
   parameters: {
     layout: 'centered',

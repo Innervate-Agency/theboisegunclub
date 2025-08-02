@@ -38,10 +38,10 @@ const enhancedCardVariants = cva(
       },
       size: {
         // Proper spacing system application
-        xs: "p-3",      // --space-xs equivalent  
-        sm: "p-4",      // --space-sm equivalent
-        default: "p-6", // --space-md equivalent (24px)
-        lg: "p-8",      // --space-lg equivalent  
+        xs: "p-[var(--space-sm)]",      // --space-xs equivalent  
+        sm: "p-[var(--space-base)]",      // --space-sm equivalent
+        default: "p-[var(--space-md)]", // --space-md equivalent (24px)
+        lg: "p-[var(--space-lg)]",      // --space-lg equivalent  
         xl: "p-12",     // --space-xl equivalent
       },
       radius: {
@@ -81,12 +81,12 @@ export function EnhancedCard({
 }
 
 // Header component with proper typography hierarchy
-export interface EnhancedCardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {}
+export type EnhancedCardHeaderProps = React.HTMLAttributes<HTMLDivElement>
 
 export function EnhancedCardHeader({ className, children, ...props }: EnhancedCardHeaderProps) {
   return (
     <div 
-      className={cn("space-y-2 mb-6", className)} // Using spacing system
+      className={cn("space-y-[var(--space-xs)] mb-[var(--space-md)]", className)} // Using spacing system
       {...props}
     >
       {children}
@@ -95,7 +95,7 @@ export function EnhancedCardHeader({ className, children, ...props }: EnhancedCa
 }
 
 // Title with Rajdhani font (header typography)
-export interface EnhancedCardTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {}
+export type EnhancedCardTitleProps = React.HTMLAttributes<HTMLHeadingElement>
 
 export function EnhancedCardTitle({ className, children, ...props }: EnhancedCardTitleProps) {
   return (
@@ -109,7 +109,7 @@ export function EnhancedCardTitle({ className, children, ...props }: EnhancedCar
 }
 
 // Description with Noto Sans (body typography)
-export interface EnhancedCardDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+export type EnhancedCardDescriptionProps = React.HTMLAttributes<HTMLParagraphElement>
 
 export function EnhancedCardDescription({ className, children, ...props }: EnhancedCardDescriptionProps) {
   return (
@@ -123,7 +123,7 @@ export function EnhancedCardDescription({ className, children, ...props }: Enhan
 }
 
 // Content area - NO PADDING (follows Stripe pattern)
-export interface EnhancedCardContentProps extends React.HTMLAttributes<HTMLDivElement> {}
+export type EnhancedCardContentProps = React.HTMLAttributes<HTMLDivElement>
 
 export function EnhancedCardContent({ className, children, ...props }: EnhancedCardContentProps) {
   return (
@@ -134,12 +134,12 @@ export function EnhancedCardContent({ className, children, ...props }: EnhancedC
 }
 
 // Footer with proper spacing
-export interface EnhancedCardFooterProps extends React.HTMLAttributes<HTMLDivElement> {}
+export type EnhancedCardFooterProps = React.HTMLAttributes<HTMLDivElement>
 
 export function EnhancedCardFooter({ className, children, ...props }: EnhancedCardFooterProps) {
   return (
     <div 
-      className={cn("mt-6 pt-4", className)} // Strategic restraint: removed border divider
+      className={cn("mt-[var(--space-md)] pt-[var(--space-base)]", className)} // Strategic restraint: removed border divider
       {...props}
     >
       {children}

@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
@@ -10,7 +12,7 @@ import { Avatar, AvatarImage, AvatarFallback } from './avatar';
 // TBGC Business-Specific VendorCard - Strategic Restraint Implementation
 const vendorCardVariants = cva(
   // BASE: Clean professional foundation for all tiers
-  "relative overflow-hidden transition-all duration-300 bg-card text-card-foreground rounded-lg group",
+  "relative overflow-hidden transition-all duration-300 bg-card text-card-foreground rounded-[var(--radius-lg)] group",
   {
     variants: {
       tier: {
@@ -102,7 +104,7 @@ export function VendorCard({
       <div className="mb-[var(--space-md)]">
         <div className="flex items-center gap-[var(--space-sm)] mb-[var(--space-xs)]">
           {/* Business logo/image */}
-          <Avatar className="h-12 w-12 rounded-lg flex-shrink-0">
+          <Avatar className="h-[var(--icon-3xl)] w-[var(--icon-3xl)] rounded-[var(--radius-lg)] flex-shrink-0">
             {imageUrl && !imgError ? (
               <AvatarImage
                 src={imageUrl}
@@ -111,16 +113,16 @@ export function VendorCard({
                 onError={() => setImgError(true)}
               />
             ) : null}
-            <AvatarFallback className="rounded-lg bg-muted font-rajdhani font-bold text-xl text-muted-foreground">
+            <AvatarFallback className="rounded-[var(--radius-lg)] bg-muted font-rajdhani font-bold text-[var(--text-xl)] text-muted-foreground">
               {businessName.charAt(0).toUpperCase()}
             </AvatarFallback>
           </Avatar>
           
           <div className="space-y-[var(--space-micro)] flex-1">
-            <h3 className="font-rajdhani font-bold text-lg text-card-foreground leading-tight transition-colors duration-200 group-hover:text-copper-orange">
+            <h3 className="font-rajdhani font-bold text-[var(--text-lg)] text-card-foreground leading-tight transition-colors duration-200 group-hover:text-copper-orange">
               {businessName}
             </h3>
-            <p className="text-sm text-muted-foreground leading-tight">{businessType}</p>
+            <p className="text-[var(--text-sm)] text-muted-foreground leading-tight">{businessType}</p>
           </div>
         </div>
 
@@ -132,7 +134,7 @@ export function VendorCard({
                 variant={tier === 'gold' ? 'elite' : 'default'}
                 size="sm"
               >
-                <Shield className="w-3 h-3 mr-1" />
+                <Shield className="w-[var(--icon-xs)] h-[var(--icon-xs)] mr-[var(--space-xs)]" />
                 Verified
               </Badge>
             )}
@@ -147,7 +149,7 @@ export function VendorCard({
 
       {/* Description */}
       {description && (
-        <p className="text-sm text-muted-foreground mb-[var(--space-md)] line-clamp-2">
+        <p className="text-[var(--text-sm)] text-muted-foreground mb-[var(--space-md)] line-clamp-2">
           {description}
         </p>
       )}
@@ -155,20 +157,20 @@ export function VendorCard({
       {/* Contact Information */}
       <div className="space-y-[var(--space-xs)] mb-[var(--space-md)]">
         {address && (
-          <div className="flex items-center gap-[var(--space-xs)] text-sm text-muted-foreground">
-            <MapPin className="w-4 h-4 flex-shrink-0" />
+          <div className="flex items-center gap-[var(--space-xs)] text-[var(--text-sm)] text-muted-foreground">
+            <MapPin className="w-[var(--icon-sm)] h-[var(--icon-sm)] flex-shrink-0" />
             <span className="truncate">{address}</span>
           </div>
         )}
         {phone && (
-          <div className="flex items-center gap-[var(--space-xs)] text-sm text-muted-foreground">
-            <Phone className="w-4 h-4 flex-shrink-0" />
+          <div className="flex items-center gap-[var(--space-xs)] text-[var(--text-sm)] text-muted-foreground">
+            <Phone className="w-[var(--icon-sm)] h-[var(--icon-sm)] flex-shrink-0" />
             <span>{phone}</span>
           </div>
         )}
         {hours && (
-          <div className="flex items-center gap-[var(--space-xs)] text-sm text-muted-foreground">
-            <Clock className="w-4 h-4 flex-shrink-0" />
+          <div className="flex items-center gap-[var(--space-xs)] text-[var(--text-sm)] text-muted-foreground">
+            <Clock className="w-[var(--icon-sm)] h-[var(--icon-sm)] flex-shrink-0" />
             <span>{hours}</span>
           </div>
         )}
@@ -182,7 +184,7 @@ export function VendorCard({
               <Star
                 key={star}
                 className={cn(
-                  "w-4 h-4",
+                  "w-[var(--icon-sm)] h-[var(--icon-sm)]",
                   star <= rating 
                     ? "fill-brass-yellow text-brass-yellow" 
                     : "text-muted-foreground"
@@ -190,7 +192,7 @@ export function VendorCard({
               />
             ))}
           </div>
-          <span className="text-sm text-muted-foreground">
+          <span className="text-[var(--text-sm)] text-muted-foreground">
             {rating} ({reviewCount} reviews)
           </span>
         </div>
@@ -221,9 +223,9 @@ export function VendorCard({
 
       {/* Enhanced features for Silver/Gold tiers */}
       {showLeads && (
-        <div className="flex items-center gap-[var(--space-xs)] mb-[var(--space-md)] p-[var(--space-xs)] bg-rifling-green/10 rounded-md">
-          <TrendingUp className="w-4 h-4 text-rifling-green" />
-          <span className="text-sm text-rifling-green font-medium">
+        <div className="flex items-center gap-[var(--space-xs)] mb-[var(--space-md)] p-[var(--space-xs)] bg-rifling-green/10 rounded-[var(--radius-md)]">
+          <TrendingUp className="w-[var(--icon-sm)] h-[var(--icon-sm)] text-rifling-green" />
+          <span className="text-[var(--text-sm)] text-rifling-green font-medium">
             {monthlyLeads} leads this month
           </span>
         </div>
@@ -251,7 +253,7 @@ export function VendorCard({
               rel="noopener noreferrer"
               title={`Visit ${businessName}'s website (opens in new tab)`}
             >
-              <Globe className="w-4 h-4" />
+              <Globe className="w-[var(--icon-sm)] h-[var(--icon-sm)]" />
             </a>
           </Button>
         )}

@@ -60,32 +60,32 @@ export function SiteFooter({
   
   return (
     <footer className={cn(siteFooterVariants({ variant }), className)} {...props}>
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-[var(--space-md)]">
         {/* Main Footer Content */}
-        <div className="py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="py-[var(--space-3xl)]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-2xl)]">
             {/* Brand & Description */}
             <div className="lg:col-span-1">
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-[var(--space-xs)] mb-[var(--space-sm)]">
                 <Target className={cn("icon-lg", isMinimal ? "icon-primary" : "text-brass-yellow")} />
                 <h3 className={cn("text-xl font-rajdhani font-bold", textColor)}>
                   Boise Gun Club
                 </h3>
               </div>
-              <p className={cn("text-sm leading-relaxed mb-4", mutedColor)}>
+              <p className={cn("text-sm leading-relaxed mb-[var(--space-base)]", mutedColor)}>
                 Treasure Valley's premier firearms community hub. Connecting enthusiasts, 
                 businesses, and ranges across the region since 2017.
               </p>
-              <div className="space-y-2">
-                <div className={cn("flex items-center gap-2 text-sm", mutedColor)}>
+              <div className="space-y-[var(--space-xs)]">
+                <div className={cn("flex items-center gap-[var(--space-xs)] text-[var(--text-sm)]", mutedColor)}>
                   <MapPin className="icon-sm" />
                   <span>Boise, Idaho</span>
                 </div>
-                <div className={cn("flex items-center gap-2 text-sm", mutedColor)}>
+                <div className={cn("flex items-center gap-[var(--space-xs)] text-[var(--text-sm)]", mutedColor)}>
                   <Phone className="icon-sm" />
                   <span>(208) 555-GUNS</span>
                 </div>
-                <div className={cn("flex items-center gap-2 text-sm", mutedColor)}>
+                <div className={cn("flex items-center gap-[var(--space-xs)] text-[var(--text-sm)]", mutedColor)}>
                   <Mail className="icon-sm" />
                   <span>info@boisegunclub.com</span>
                 </div>
@@ -94,10 +94,10 @@ export function SiteFooter({
             
             {/* Quick Links */}
             <div>
-              <h4 className={cn("text-lg font-rajdhani font-bold mb-4", textColor)}>
+              <h4 className={cn("text-lg font-rajdhani font-bold mb-[var(--space-base)]", textColor)}>
                 Quick Links
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-[var(--space-xs)]">
                 {[
                   { name: "Business Directory", href: "/directory" },
                   { name: "Events Calendar", href: "/events" },
@@ -123,10 +123,10 @@ export function SiteFooter({
             
             {/* Services */}
             <div>
-              <h4 className={cn("text-lg font-rajdhani font-bold mb-4", textColor)}>
+              <h4 className={cn("text-lg font-rajdhani font-bold mb-[var(--space-base)]", textColor)}>
                 Services
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-[var(--space-xs)]">
                 {[
                   { name: "Firearms Training", icon: Shield },
                   { name: "Safety Courses", icon: Target },
@@ -135,7 +135,7 @@ export function SiteFooter({
                 ].map((service) => {
                   const Icon = service.icon
                   return (
-                    <li key={service.name} className={cn("flex items-center gap-2 text-sm", mutedColor)}>
+                    <li key={service.name} className={cn("flex items-center gap-[var(--space-xs)] text-[var(--text-sm)]", mutedColor)}>
                       <Icon className="icon-xs" />
                       <span>{service.name}</span>
                     </li>
@@ -147,14 +147,14 @@ export function SiteFooter({
             {/* Newsletter Signup */}
             {showNewsletter && (
               <div>
-                <h4 className={cn("text-lg font-rajdhani font-bold mb-4", textColor)}>
+                <h4 className={cn("text-lg font-rajdhani font-bold mb-[var(--space-base)]", textColor)}>
                   Stay Connected
                 </h4>
-                <p className={cn("text-sm mb-4", mutedColor)}>
+                <p className={cn("text-sm mb-[var(--space-base)]", mutedColor)}>
                   Get the latest news, events, and exclusive member benefits.
                 </p>
-                <form onSubmit={handleNewsletterSubmit} className="space-y-3">
-                  <div className="flex gap-2">
+                <form onSubmit={handleNewsletterSubmit} className="space-y-[var(--space-sm)]">
+                  <div className="flex gap-[var(--space-xs)]">
                     <Input
                       type="email"
                       placeholder="Enter your email"
@@ -164,7 +164,7 @@ export function SiteFooter({
                       className={cn(
                         "flex-1 text-sm",
                         isMinimal 
-                          ? "bg-white border-gray-300" 
+                          ? "bg-card border-border" 
                           : "bg-carbon-fiber border-tactical-gray text-titanium-white"
                       )}
                     />
@@ -184,10 +184,10 @@ export function SiteFooter({
         
         {/* Bottom Bar */}
         <div className={cn(
-          "border-t py-6", 
-          isMinimal ? "border-gray-200" : "border-tactical-gray"
+          "border-t py-[var(--space-md)]", 
+          isMinimal ? "border-border" : "border-tactical-gray"
         )}>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-[var(--space-base)]">
             {/* Copyright */}
             <div className={cn("text-sm", mutedColor)}>
               © {new Date().getFullYear()} Boise Gun Club. All rights reserved.
@@ -195,7 +195,7 @@ export function SiteFooter({
             
             {/* Social Links */}
             {showSocial && (
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-[var(--space-base)]">
                 {[
                   { icon: Facebook, label: "Facebook" },
                   { icon: Instagram, label: "Instagram" },
@@ -209,7 +209,7 @@ export function SiteFooter({
                       key={social.label}
                       href="#"
                       className={cn(
-                        "p-2 rounded-lg transition-all duration-200 hover:scale-110",
+                        "p-[var(--space-xs)] rounded-lg transition-all duration-200 hover:scale-110",
                         isMinimal 
                           ? "text-case-hardened hover:text-brass-yellow hover:bg-brass-yellow/10" 
                           : "text-stainless-steel hover:text-brass-yellow hover:bg-brass-yellow/10"
@@ -224,7 +224,7 @@ export function SiteFooter({
             )}
             
             {/* Legal Links */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-[var(--space-base)]">
               {[
                 { name: "Privacy Policy", href: "/privacy" },
                 { name: "Terms of Service", href: "/terms" },

@@ -7,7 +7,7 @@ import {
 } from '@/components/ui/input-otp';
 
 const meta: Meta<typeof InputOTP> = {
-  title: 'Forms & Inputs/InputOTP',
+  title: 'Design System/Atoms/InputOTP',
   component: InputOTP,
   parameters: {
     layout: 'centered',

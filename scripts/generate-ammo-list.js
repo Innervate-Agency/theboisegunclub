@@ -5,7 +5,7 @@ const path = require('path');
 
 // --- CONFIGURATION ---
 // Adjust these paths if your project structure is different.
-const storiesGlobPattern = '../src/**/*.stories.tsx'; // The pattern from your .storybook/main.ts
+const storiesGlobPattern = 'src/**/*.stories.tsx'; // The pattern from your .storybook/main.ts
 const rootDir = path.resolve(__dirname, '..'); // Assumes this script is in a 'scripts' folder at the project root.
 const outputFile = path.resolve(__dirname, '..', 'STORYBOOK_MANIFEST.md');
 
@@ -60,8 +60,8 @@ function parseStoryFile(filePath) {
         const titleMatch = content.match(/title:\s*['"]([^'"]+)['"]/);
         const componentTitle = titleMatch ? titleMatch[1] : path.basename(filePath);
 
-        // Extract individual story names from `export const StoryName = ...`
-        const storyMatches = [...content.matchAll(/export\s+const\s+([A-Z][a-zA-Z0-9_]*)\s*=/g)];
+        // Extract individual story names from `export const StoryName: Story = ...`
+        const storyMatches = [...content.matchAll(/export\s+const\s+([A-Z][a-zA-Z0-9_]*)\s*:\s*Story\s*=/g)];
         const stories = storyMatches.map(match => match[1]);
 
         return { title: componentTitle, stories };
@@ -78,7 +78,7 @@ function generateManifest() {
     console.log('🚀 Firing up the manifest generator...');
     console.log(`Searching for stories matching: ${storiesGlobPattern}`);
 
-    const storyFiles = globSync(storiesGlobPattern, __dirname);
+    const storyFiles = globSync(storiesGlobPattern, rootDir);
 
     if (storyFiles.length === 0) {
         console.warn('⚠️ No story files found. Check your glob pattern and directory structure.');
@@ -92,7 +92,9 @@ function generateManifest() {
     for (const file of storyFiles) {
         const result = parseStoryFile(file);
         if (result && result.stories.length > 0) {
-            const [category, componentName] = result.title.split('/');
+            const parts = result.title.split('/');
+            const category = parts[0];
+            const componentName = parts.slice(1).join('/');
             if (!components[category]) {
                 components[category] = [];
             }

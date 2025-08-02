@@ -40,9 +40,9 @@ const iconShowcaseVariants = cva(
         accent: "bg-scope-blue/10 border-scope-blue/30 hover:bg-scope-blue/20"
       },
       size: {
-        sm: "p-2",
-        md: "p-3",
-        lg: "p-4"
+        sm: "p-[var(--space-xs)]",
+        md: "p-[var(--space-sm)]",
+        lg: "p-[var(--space-base)]"
       }
     },
     defaultVariants: {
@@ -62,9 +62,9 @@ interface IconShowcaseItemProps extends VariantProps<typeof iconShowcaseVariants
 function IconShowcaseItem({ icon: Icon, name, category, variant, size, className }: IconShowcaseItemProps) {
   return (
     <div className={cn(iconShowcaseVariants({ variant, size }), className)}>
-      <div className="text-center space-y-2">
+      <div className="text-center space-y-[var(--space-xs)]">
         <Icon className="mx-auto icon-lg text-gunmetal-black" />
-        <div className="space-y-1">
+        <div className="space-y-[var(--space-micro)]">
           <div className="text-xs font-rajdhani font-semibold text-gunmetal-black">{name}</div>
           <div className="text-xs text-case-hardened">{category}</div>
         </div>
@@ -135,13 +135,13 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
   ]
 
   return (
-    <div className={cn("w-full py-12", className)} {...props}>
-      <div className="max-w-6xl mx-auto px-6">
+    <div className={cn("w-full py-[var(--space-xl)]", className)} {...props}>
+      <div className="max-w-6xl mx-auto px-[var(--space-md)]">
         {/* Header */}
         {(title || subtitle) && (
-          <div className="text-center mb-12">
+          <div className="text-center mb-[var(--space-xl)]">
             {title && (
-              <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-3">
+              <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-sm)]">
                 {title}
               </h2>
             )}
@@ -154,14 +154,14 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
         )}
 
         {/* Icon Categories */}
-        <div className="space-y-12">
+        <div className="space-y-[var(--space-xl)]">
           {iconCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="space-y-6">
-              <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black border-b border-gray-200 pb-2">
+            <div key={categoryIndex} className="space-y-[var(--space-md)]">
+              <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black border-b border-gray-200 pb-[var(--space-xs)]">
                 {category.name}
               </h3>
               
-              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-[var(--space-base)]">
                 {category.icons.map((iconItem, iconIndex) => (
                   <IconShowcaseItem
                     key={iconIndex}
@@ -177,34 +177,34 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
         </div>
 
         {/* Usage Examples */}
-        <div className="mt-16 p-8 bg-gradient-card-warm rounded-lg border border-brass-yellow/20">
-          <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-6">
+        <div className="mt-[var(--space-2xl)] p-[var(--space-lg)] bg-gradient-card-warm rounded-lg border border-brass-yellow/20">
+          <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-md)]">
             Design System Integration Examples
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-md)]">
             {/* Primary Usage */}
-            <div className="space-y-3">
+            <div className="space-y-[var(--space-sm)]">
               <h4 className="font-rajdhani font-semibold text-gunmetal-black">Primary Actions</h4>
-              <div className="flex items-center gap-3 p-3 bg-white rounded border">
+              <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-white rounded border">
                 <Target className="icon-lg icon-primary" />
                 <span className="text-sm font-noto-sans">Professional line icons</span>
               </div>
             </div>
 
             {/* Secondary Usage */}
-            <div className="space-y-3">
+            <div className="space-y-[var(--space-sm)]">
               <h4 className="font-rajdhani font-semibold text-gunmetal-black">Secondary Actions</h4>
-              <div className="flex items-center gap-3 p-3 bg-white rounded border">
+              <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-white rounded border">
                 <Users className="icon-lg icon-secondary" />
                 <span className="text-sm font-noto-sans">Clean, consistent design</span>
               </div>
             </div>
 
             {/* Accent Usage */}
-            <div className="space-y-3">
+            <div className="space-y-[var(--space-sm)]">
               <h4 className="font-rajdhani font-semibold text-gunmetal-black">Accent Elements</h4>
-              <div className="flex items-center gap-3 p-3 bg-white rounded border">
+              <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-white rounded border">
                 <Award className="icon-lg icon-accent" />
                 <span className="text-sm font-noto-sans">Idaho Firearms Heritage</span>
               </div>

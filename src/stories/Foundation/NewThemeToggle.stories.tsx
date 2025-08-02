@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import NewThemeToggle from '@/components/ui/NewThemeToggle';
 
 const meta: Meta<typeof NewThemeToggle> = {
-  title: 'Foundation/Theme Toggle',
+  title: 'Design System/Foundation/ThemeToggle',
   component: NewThemeToggle,
   parameters: {
     layout: 'centered',
@@ -24,12 +24,12 @@ export const Default: Story = {
 
 export const ThemeToggleExample: Story = {
   render: () => (
-    <div className="space-y-8">
+    <div className="space-y-[var(--space-lg)]">
       <div className="text-center">
-        <h3 className="text-lg font-rajdhani font-bold text-blued-steel mb-4">
+        <h3 className="text-lg font-rajdhani font-bold text-blued-steel mb-[var(--space-base)]">
           Theme Toggle
         </h3>
-        <p className="text-sm text-desert-cliff-brown mb-6">
+        <p className="text-sm text-desert-cliff-brown mb-[var(--space-md)]">
           Click to cycle through light → dark → system themes
         </p>
       </div>
@@ -42,29 +42,29 @@ export const ThemeToggleExample: Story = {
 
 export const ThemeStates: Story = {
   render: () => (
-    <div className="space-y-8">
+    <div className="space-y-[var(--space-lg)]">
       <div className="text-center">
-        <h3 className="text-lg font-rajdhani font-bold text-blued-steel mb-4">
+        <h3 className="text-lg font-rajdhani font-bold text-blued-steel mb-[var(--space-base)]">
           Theme States
         </h3>
-        <p className="text-sm text-case-hardened mb-6">
+        <p className="text-sm text-case-hardened mb-[var(--space-md)]">
           The toggle cycles through these three states:
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="p-6 bg-range-white rounded-lg text-center">
-          <div className="text-2xl mb-2">☀️</div>
-          <h4 className="font-rajdhani font-bold text-blued-steel mb-2">Light Mode</h4>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-md)]">
+        <div className="p-[var(--space-md)] bg-range-white rounded-lg text-center">
+          <div className="text-2xl mb-[var(--space-xs)]">☀️</div>
+          <h4 className="font-rajdhani font-bold text-blued-steel mb-[var(--space-xs)]">Light Mode</h4>
           <p className="text-sm text-case-hardened">Bright, clean interface</p>
         </div>
-        <div className="p-6 bg-night-sight rounded-lg text-center">
-          <div className="text-2xl mb-2">🌙</div>
-          <h4 className="font-rajdhani font-bold text-titanium-white mb-2">Dark Mode</h4>
+        <div className="p-[var(--space-md)] bg-night-sight rounded-lg text-center">
+          <div className="text-2xl mb-[var(--space-xs)]">🌙</div>
+          <h4 className="font-rajdhani font-bold text-titanium-white mb-[var(--space-xs)]">Dark Mode</h4>
           <p className="text-sm text-stainless-steel">Low-light friendly</p>
         </div>
-        <div className="p-6 bg-tactical-gray rounded-lg text-center">
-          <div className="text-2xl mb-2">🖥️</div>
-          <h4 className="font-rajdhani font-bold text-blued-steel mb-2">System</h4>
+        <div className="p-[var(--space-md)] bg-tactical-gray rounded-lg text-center">
+          <div className="text-2xl mb-[var(--space-xs)]">🖥️</div>
+          <h4 className="font-rajdhani font-bold text-blued-steel mb-[var(--space-xs)]">System</h4>
           <p className="text-sm text-case-hardened">Follows OS preference</p>
         </div>
       </div>
@@ -74,15 +74,15 @@ export const ThemeStates: Story = {
 
 export const FloatingPosition: Story = {
   render: () => (
-    <div className="relative min-h-96 p-8 bg-gradient-to-br from-range-white to-tactical-gray rounded-lg">
+    <div className="relative min-h-96 p-[var(--space-lg)] bg-gradient-to-br from-range-white to-tactical-gray rounded-lg">
       <div className="text-center">
-        <h3 className="text-lg font-rajdhani font-bold text-blued-steel mb-4">
+        <h3 className="text-lg font-rajdhani font-bold text-blued-steel mb-[var(--space-base)]">
           Floating Theme Toggle
         </h3>
-        <p className="text-sm text-case-hardened mb-6">
+        <p className="text-sm text-case-hardened mb-[var(--space-md)]">
           The toggle is positioned fixed at the bottom-left corner
         </p>
-        <div className="p-6 bg-range-white rounded-lg shadow-sm">
+        <div className="p-[var(--space-md)] bg-range-white rounded-lg shadow-sm">
           <p className="text-case-hardened">
             This demonstrates the floating theme toggle positioned at the bottom-left of the screen.
             Click it to cycle through light, dark, and system themes.

@@ -6,7 +6,7 @@ import {
 } from '@/components/ui/avatar';
 
 const meta: Meta<typeof Avatar> = {
-  title: 'Components/Atoms/Avatar',
+  title: 'Design System/Atoms/Avatar',
   component: Avatar,
   parameters: {
     layout: 'centered',

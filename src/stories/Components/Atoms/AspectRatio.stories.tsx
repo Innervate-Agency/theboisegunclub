@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const meta: Meta<typeof AspectRatio> = {
-  title: 'Layout & Containers/AspectRatio',
+  title: 'Design System/Atoms/AspectRatio',
   component: AspectRatio,
   parameters: {
     layout: 'centered',

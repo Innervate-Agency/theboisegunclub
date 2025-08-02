@@ -13,9 +13,9 @@ const faqAccordionVariants = cva(
   {
     variants: {
       variant: {
-        default: "space-y-2",
-        compact: "space-y-1",
-        card: "space-y-4"
+        default: "space-y-[var(--space-xs)]",
+        compact: "space-y-[var(--space-micro)]",
+        card: "space-y-[var(--space-base)]"
       }
     },
     defaultVariants: {
@@ -78,14 +78,14 @@ export default function FAQAccordion({
   return (
     <div className={cn(faqAccordionVariants({ variant }), className)} {...props}>
       {/* Header */}
-      <div className="text-center mb-8">
-        <div className="flex justify-center mb-4">
-          <div className="p-3 bg-brass-yellow/10 rounded-full border border-brass-yellow/20">
+      <div className="text-center mb-[var(--space-lg)]">
+        <div className="flex justify-center mb-[var(--space-base)]">
+          <div className="p-[var(--space-sm)] bg-brass-yellow/10 rounded-full border border-brass-yellow/20">
             <HelpCircle className="h-6 w-6 text-brass-yellow" />
           </div>
         </div>
         
-        <h2 className="text-2xl md:text-3xl font-rajdhani font-bold text-gunmetal-black mb-2">
+        <h2 className="text-2xl md:text-3xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-xs)]">
           {title}
         </h2>
         
@@ -98,7 +98,7 @@ export default function FAQAccordion({
 
       {/* Search */}
       {showSearch && (
-        <div className="mb-6">
+        <div className="mb-[var(--space-md)]">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
             <Input
@@ -106,7 +106,7 @@ export default function FAQAccordion({
               placeholder="Search questions..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10"
+              className="pl-[var(--space-2xl)]"
             />
           </div>
         </div>
@@ -114,14 +114,14 @@ export default function FAQAccordion({
 
       {/* Category Filters */}
       {showCategories && categories.length > 0 && (
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap gap-[var(--space-xs)] mb-[var(--space-md)]">
           <button
             onClick={() => setSelectedCategory(null)}
             className={cn(
-              "px-3 py-1 rounded-full text-sm font-medium transition-colors",
+              "px-[var(--space-sm)] py-[var(--space-xs)] rounded-full text-sm font-medium transition-colors",
               !selectedCategory 
                 ? "bg-brass-yellow text-gunmetal-black" 
-                : "bg-gray-100 text-case-hardened hover:bg-gray-200"
+                : "bg-muted text-case-hardened hover:bg-muted/80"
             )}
           >
             All Categories
@@ -131,10 +131,10 @@ export default function FAQAccordion({
               key={category}
               onClick={() => setSelectedCategory(category)}
               className={cn(
-                "px-3 py-1 rounded-full text-sm font-medium transition-colors",
+                "px-[var(--space-sm)] py-[var(--space-xs)] rounded-full text-sm font-medium transition-colors",
                 selectedCategory === category 
                   ? "bg-brass-yellow text-gunmetal-black" 
-                  : "bg-gray-100 text-case-hardened hover:bg-gray-200"
+                  : "bg-muted text-case-hardened hover:bg-muted/80"
               )}
             >
               {category}
@@ -151,11 +151,11 @@ export default function FAQAccordion({
               key={faq.id} 
               value={faq.id}
               className={cn(
-                variant === "card" && "bg-card border border-border rounded-lg px-6 py-2 shadow-sm"
+                variant === "card" && "bg-card border border-border rounded-lg px-[var(--space-md)] py-[var(--space-xs)] shadow-sm"
               )}
             >
-              <AccordionTrigger className="text-left hover:no-underline py-4">
-                <div className="flex items-start gap-3 w-full">
+              <AccordionTrigger className="text-left hover:no-underline py-[var(--space-base)]">
+                <div className="flex items-start gap-[var(--space-sm)] w-full">
                   <div className="flex-1">
                     <h3 className="font-rajdhani font-semibold text-gunmetal-black leading-tight">
                       {faq.question}
@@ -163,7 +163,7 @@ export default function FAQAccordion({
                     {faq.category && showCategories && (
                       <Badge 
                         variant="secondary" 
-                        className="mt-2 bg-brass-yellow/10 text-brass-yellow border-brass-yellow/20"
+                        className="mt-[var(--space-xs)] bg-brass-yellow/10 text-brass-yellow border-brass-yellow/20"
                       >
                         {faq.category}
                       </Badge>
@@ -171,18 +171,18 @@ export default function FAQAccordion({
                   </div>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="text-case-hardened font-noto-sans leading-relaxed pb-4">
+              <AccordionContent className="text-case-hardened font-noto-sans leading-relaxed pb-[var(--space-base)]">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
       ) : (
-        <div className="text-center py-12">
-          <div className="p-3 bg-gray-100 rounded-full w-fit mx-auto mb-4">
+        <div className="text-center py-[var(--space-xl)]">
+          <div className="p-[var(--space-sm)] bg-muted rounded-full w-fit mx-auto mb-[var(--space-base)]">
             <Search className="h-6 w-6 text-case-hardened" />
           </div>
-          <h3 className="font-rajdhani font-semibold text-gunmetal-black mb-2">
+          <h3 className="font-rajdhani font-semibold text-gunmetal-black mb-[var(--space-xs)]">
             No FAQs Found
           </h3>
           <p className="text-case-hardened">

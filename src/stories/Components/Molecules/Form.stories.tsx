@@ -15,7 +15,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 const meta: Meta<typeof Form> = {
-  title: 'Forms & Inputs/Form',
+  title: 'Design System/Molecules/Form',
   component: Form,
   parameters: {
     layout: 'centered',
@@ -46,7 +46,7 @@ function ProfileForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-[350px] space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-[350px] space-y-[var(--space-lg)]">
         <FormField
           control={form.control}
           name="username"

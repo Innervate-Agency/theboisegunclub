@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button';
 import { MinusIcon, PlusIcon } from 'lucide-react';
 
 const meta: Meta<typeof Drawer> = {
-  title: 'Layout & Containers/Drawer',
+  title: 'Design System/Molecules/Drawer',
   component: Drawer,
   parameters: {
     layout: 'centered',
@@ -36,8 +36,8 @@ export const Default: Story = {
             <DrawerTitle>Move Goal</DrawerTitle>
             <DrawerDescription>Set your daily activity goal.</DrawerDescription>
           </DrawerHeader>
-          <div className="p-4 pb-0">
-            <div className="flex items-center justify-center space-x-2">
+          <div className="p-[var(--space-base)] pb-0">
+            <div className="flex items-center justify-center space-x-[var(--space-xs)]">
               <Button
                 variant="outline"
                 size="icon"

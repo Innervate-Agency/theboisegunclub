@@ -7,7 +7,7 @@ import {
 } from '@/components/ui/accordion';
 
 const meta: Meta<typeof Accordion> = {
-  title: 'Layout & Containers/Accordion',
+  title: 'Design System/Molecules/Accordion',
   component: Accordion,
   parameters: {
     layout: 'centered',

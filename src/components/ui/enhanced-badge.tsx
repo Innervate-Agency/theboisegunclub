@@ -54,11 +54,11 @@ const enhancedBadgeVariants = cva(
       },
       size: {
         // Proper sizing using design tokens
-        xs: "px-2 py-0.5 text-xs h-5 gap-1",      // Extra small
-        sm: "px-2 py-0.5 text-xs h-5 gap-1",      // Small  
-        default: "px-3 py-0.5 text-xs h-6 gap-1", // Standard
-        lg: "px-4 py-1 text-sm h-8 gap-1.5",      // Large
-        xl: "px-4 py-1.5 text-sm h-8 gap-1.5",    // Extra large
+        xs: "px-[var(--space-xs)] py-[var(--space-tiny)] text-xs h-5 gap-[var(--space-xs)]",      // Extra small
+        sm: "px-[var(--space-xs)] py-[var(--space-tiny)] text-xs h-5 gap-[var(--space-xs)]",      // Small  
+        default: "px-[var(--space-sm)] py-[var(--space-tiny)] text-xs h-6 gap-[var(--space-xs)]", // Standard
+        lg: "px-[var(--space-base)] py-[var(--space-xs)] text-sm h-8 gap-[var(--space-md)]",      // Large
+        xl: "px-[var(--space-base)] py-[var(--space-md)] text-sm h-8 gap-[var(--space-md)]",    // Extra large
       },
       radius: {
         none: "rounded-none",
@@ -120,6 +120,7 @@ export function ClassificationBadge({ classification, ...props }: Classification
 
   return (
     <EnhancedBadge 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
       variant={getVariant(classification) as any}
       {...props}
     >
@@ -148,6 +149,7 @@ export function StatusBadge({ status, ...props }: StatusBadgeProps) {
 
   return (
     <EnhancedBadge 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
       variant={getVariant(status) as any}
       {...props}
     >
@@ -175,6 +177,7 @@ export function ScoreBadge({ score, maxScore, ...props }: ScoreBadgeProps) {
 
   return (
     <EnhancedBadge 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
       variant={getVariant(percentage) as any}
       {...props}
     >

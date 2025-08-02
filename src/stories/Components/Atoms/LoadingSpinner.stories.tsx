@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import LoadingSpinner from '@/components/ui/LoadingSpinner';
 
 const meta: Meta<typeof LoadingSpinner> = {
-  title: 'Core UI/LoadingSpinner',
+  title: 'Design System/Atoms/LoadingSpinner',
   component: LoadingSpinner,
   parameters: {
     layout: 'centered',
@@ -50,16 +50,16 @@ export const LoadingSchedule: Story = {
 
 export const Sizes: Story = {
   render: () => (
-    <div className="flex items-center gap-8">
-      <div className="flex flex-col items-center gap-2">
+    <div className="flex items-center gap-[var(--space-lg)]">
+      <div className="flex flex-col items-center gap-[var(--space-xs)]">
         <LoadingSpinner size="sm" text="Small" />
         <span className="text-sm text-desert-cliff-brown">Small</span>
       </div>
-      <div className="flex flex-col items-center gap-2">
+      <div className="flex flex-col items-center gap-[var(--space-xs)]">
         <LoadingSpinner size="md" text="Medium" />
         <span className="text-sm text-desert-cliff-brown">Medium</span>
       </div>
-      <div className="flex flex-col items-center gap-2">
+      <div className="flex flex-col items-center gap-[var(--space-xs)]">
         <LoadingSpinner size="lg" text="Large" />
         <span className="text-sm text-desert-cliff-brown">Large</span>
       </div>
@@ -69,16 +69,16 @@ export const Sizes: Story = {
 
 export const GunClubContexts: Story = {
   render: () => (
-    <div className="grid grid-cols-1 gap-6">
-      <div className="flex flex-col items-center gap-2">
+    <div className="grid grid-cols-1 gap-[var(--space-md)]">
+      <div className="flex flex-col items-center gap-[var(--space-xs)]">
         <LoadingSpinner size="md" text="Loading competition results..." />
         <span className="text-sm text-desert-cliff-brown">Competition Results</span>
       </div>
-      <div className="flex flex-col items-center gap-2">
+      <div className="flex flex-col items-center gap-[var(--space-xs)]">
         <LoadingSpinner size="md" text="Processing membership renewal..." />
         <span className="text-sm text-desert-cliff-brown">Membership Processing</span>
       </div>
-      <div className="flex flex-col items-center gap-2">
+      <div className="flex flex-col items-center gap-[var(--space-xs)]">
         <LoadingSpinner size="md" text="Uploading range photos..." />
         <span className="text-sm text-desert-cliff-brown">File Upload</span>
       </div>
@@ -88,16 +88,16 @@ export const GunClubContexts: Story = {
 
 export const InlineLoading: Story = {
   render: () => (
-    <div className="space-y-8">
-      <div className="flex items-center gap-4 p-4 bg-range-white rounded-lg">
+    <div className="space-y-[var(--space-lg)]">
+      <div className="flex items-center gap-[var(--space-base)] p-[var(--space-base)] bg-range-white rounded-lg">
         <LoadingSpinner size="sm" text="" />
         <span className="text-blued-steel">Processing membership application...</span>
       </div>
-      <div className="flex items-center gap-4 p-4 bg-range-white rounded-lg">
+      <div className="flex items-center gap-[var(--space-base)] p-[var(--space-base)] bg-range-white rounded-lg">
         <LoadingSpinner size="sm" text="" />
         <span className="text-blued-steel">Loading range schedule...</span>
       </div>
-      <div className="flex items-center gap-4 p-4 bg-range-white rounded-lg">
+      <div className="flex items-center gap-[var(--space-base)] p-[var(--space-base)] bg-range-white rounded-lg">
         <LoadingSpinner size="sm" text="" />
         <span className="text-blued-steel">Submitting competition scores...</span>
       </div>

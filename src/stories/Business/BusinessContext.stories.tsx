@@ -15,7 +15,7 @@ import {
 } from 'lucide-react'
 
 const meta: Meta = {
-  title: 'Business/Treasure Valley Firearms Hub',
+  title: 'Design System/Templates/BusinessContext',
   parameters: {
     layout: 'fullscreen',
     docs: {
@@ -83,9 +83,9 @@ const BusinessShowcase = () => (
   <div className="min-h-screen bg-background">
     {/* Hero Section */}
     <div className="bg-gradient-to-r from-range-white via-shooting-bench to-range-white">
-      <div className="container mx-auto px-6 py-16">
-        <div className="text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full shadow-sm">
+      <div className="container mx-auto px-[var(--space-md)] py-[var(--space-2xl)]">
+        <div className="text-center space-y-[var(--space-md)]">
+          <div className="inline-flex items-center gap-[var(--space-xs)] px-[var(--space-base)] py-[var(--space-xs)] bg-card rounded-full shadow-sm">
             <Target className="w-5 h-5 text-copper-orange" />
             <span className="text-sm font-medium text-muted-foreground">
               Treasure Valley's Premier Firearms Hub
@@ -103,13 +103,13 @@ const BusinessShowcase = () => (
           {/* Fire gradient accent bar */}
           <div className="w-24 h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mx-auto rounded-full"></div>
           
-          <div className="flex gap-4 justify-center pt-4">
+          <div className="flex gap-[var(--space-base)] justify-center pt-[var(--space-base)]">
             <Button className="bg-gradient-to-r from-copper-orange to-brass-yellow text-white hover:shadow-copper transition-all">
-              <Users className="w-4 h-4 mr-2" />
+              <Users className="w-4 h-4 mr-[var(--space-xs)]" />
               Join Community
             </Button>
             <Button variant="outline" className="border-copper-orange text-copper-orange hover:bg-copper-orange hover:text-white">
-              <MapPin className="w-4 h-4 mr-2" />
+              <MapPin className="w-4 h-4 mr-[var(--space-xs)]" />
               Browse Directory
             </Button>
           </div>
@@ -118,14 +118,14 @@ const BusinessShowcase = () => (
     </div>
 
     {/* Stats Showcase */}
-    <div className="py-16 bg-card">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+    <div className="py-[var(--space-2xl)] bg-card">
+      <div className="container mx-auto px-[var(--space-md)]">
+        <h2 className="text-3xl font-bold text-center mb-[var(--space-xl)] text-foreground">
           Regional Impact
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-[var(--space-md)]">
           <Card className="border-l-4 border-l-copper-orange">
-            <CardHeader className="pb-2">
+            <CardHeader className="pb-[var(--space-xs)]">
               <CardTitle className="text-sm font-medium text-muted-foreground">Vendor Partners</CardTitle>
             </CardHeader>
             <CardContent>
@@ -134,7 +134,7 @@ const BusinessShowcase = () => (
             </CardContent>
           </Card>
           <Card className="border-l-4 border-l-brass-yellow">
-            <CardHeader className="pb-2">
+            <CardHeader className="pb-[var(--space-xs)]">
               <CardTitle className="text-sm font-medium text-muted-foreground">Community Members</CardTitle>
             </CardHeader>
             <CardContent>
@@ -143,7 +143,7 @@ const BusinessShowcase = () => (
             </CardContent>
           </Card>
           <Card className="border-l-4 border-l-ayu-blue">
-            <CardHeader className="pb-2">
+            <CardHeader className="pb-[var(--space-xs)]">
               <CardTitle className="text-sm font-medium text-muted-foreground">Monthly Events</CardTitle>
             </CardHeader>
             <CardContent>
@@ -152,7 +152,7 @@ const BusinessShowcase = () => (
             </CardContent>
           </Card>
           <Card className="border-l-4 border-l-clubhouse-lawn-green">
-            <CardHeader className="pb-2">
+            <CardHeader className="pb-[var(--space-xs)]">
               <CardTitle className="text-sm font-medium text-muted-foreground">Service Bookings</CardTitle>
             </CardHeader>
             <CardContent>
@@ -165,15 +165,15 @@ const BusinessShowcase = () => (
     </div>
 
     {/* Business Pillars */}
-    <div className="py-16 bg-background">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+    <div className="py-[var(--space-2xl)] bg-background">
+      <div className="container mx-auto px-[var(--space-md)]">
+        <h2 className="text-3xl font-bold text-center mb-[var(--space-xl)] text-foreground">
           The Four Pillars
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-md)]">
           <Card className="hover:shadow-lg transition-shadow duration-300 group">
             <CardHeader className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-copper-orange to-brass-yellow rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-gradient-to-r from-copper-orange to-brass-yellow rounded-lg flex items-center justify-center mx-auto mb-[var(--space-base)]">
                 <MapPin className="w-6 h-6 text-white" />
               </div>
               <CardTitle className="text-copper-orange">Directory & Marketplace</CardTitle>
@@ -182,13 +182,13 @@ const BusinessShowcase = () => (
               <CardDescription className="text-center">
                 Gun shops, ranges, gunsmiths, and instructors with integrated booking systems
               </CardDescription>
-              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-4 rounded-full transition-all duration-300 ease-out origin-left"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-[var(--space-base)] rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
 
           <Card className="hover:shadow-lg transition-shadow duration-300 group">
             <CardHeader className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-ayu-blue to-ayu-teal rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-gradient-to-r from-ayu-blue to-ayu-teal rounded-lg flex items-center justify-center mx-auto mb-[var(--space-base)]">
                 <Zap className="w-6 h-6 text-white" />
               </div>
               <CardTitle className="text-ayu-blue">Content Engine</CardTitle>
@@ -197,13 +197,13 @@ const BusinessShowcase = () => (
               <CardDescription className="text-center">
                 Gun Wiki, reviews, unified events calendar, and Idaho gun law guides
               </CardDescription>
-              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-blue to-ayu-teal mt-4 rounded-full transition-all duration-300 ease-out origin-left"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-blue to-ayu-teal mt-[var(--space-base)] rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
 
           <Card className="hover:shadow-lg transition-shadow duration-300 group">
             <CardHeader className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-ayu-green to-clubhouse-lawn-green rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-gradient-to-r from-ayu-green to-clubhouse-lawn-green rounded-lg flex items-center justify-center mx-auto mb-[var(--space-base)]">
                 <MessageSquare className="w-6 h-6 text-white" />
               </div>
               <CardTitle className="text-ayu-green">Community Forum</CardTitle>
@@ -212,13 +212,13 @@ const BusinessShowcase = () => (
               <CardDescription className="text-center">
                 Discussion, competition shooting, gear classifieds, and event coordination
               </CardDescription>
-              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-green to-clubhouse-lawn-green mt-4 rounded-full transition-all duration-300 ease-out origin-left"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-green to-clubhouse-lawn-green mt-[var(--space-base)] rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
 
           <Card className="hover:shadow-lg transition-shadow duration-300 group">
             <CardHeader className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-ayu-purple to-ayu-yellow rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-gradient-to-r from-ayu-purple to-ayu-yellow rounded-lg flex items-center justify-center mx-auto mb-[var(--space-base)]">
                 <ShoppingCart className="w-6 h-6 text-white" />
               </div>
               <CardTitle className="text-ayu-purple">Merchandise</CardTitle>
@@ -227,7 +227,7 @@ const BusinessShowcase = () => (
               <CardDescription className="text-center">
                 Print-on-demand branded gear with zero inventory risk
               </CardDescription>
-              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-purple to-ayu-yellow mt-4 rounded-full transition-all duration-300 ease-out origin-left"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-purple to-ayu-yellow mt-[var(--space-base)] rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
         </div>
@@ -235,24 +235,24 @@ const BusinessShowcase = () => (
     </div>
 
     {/* User Types Showcase */}
-    <div className="py-16 bg-muted/50">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+    <div className="py-[var(--space-2xl)] bg-muted/50">
+      <div className="container mx-auto px-[var(--space-md)]">
+        <h2 className="text-3xl font-bold text-center mb-[var(--space-xl)] text-foreground">
           Built for Multiple User Types
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[var(--space-lg)]">
           {/* Vendors */}
-          <div className="space-y-6">
+          <div className="space-y-[var(--space-md)]">
             <div className="text-center">
-              <div className="w-16 h-16 bg-copper-orange rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-copper-orange rounded-full flex items-center justify-center mx-auto mb-[var(--space-base)]">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-copper-orange mb-2">Vendor Partners</h3>
+              <h3 className="text-xl font-bold text-copper-orange mb-[var(--space-xs)]">Vendor Partners</h3>
               <p className="text-muted-foreground">Gun shops, ranges, instructors, gunsmiths</p>
             </div>
             <Card className="shadow-sm">
               <CardHeader>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-[var(--space-sm)]">
                   <div className="w-12 h-12 bg-copper-orange rounded-lg flex items-center justify-center">
                     <Target className="w-6 h-6 text-white" />
                   </div>
@@ -261,13 +261,13 @@ const BusinessShowcase = () => (
                     <CardDescription>Gun Store • Boise, ID</CardDescription>
                   </div>
                   <Badge className="ml-auto bg-clubhouse-lawn-green text-white">
-                    <Shield className="w-3 h-3 mr-1" />
+                    <Shield className="w-3 h-3 mr-[var(--space-xs)]" />
                     Verified
                   </Badge>
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-[var(--space-xs)] mb-[var(--space-sm)]">
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <Star key={star} className="w-4 h-4 fill-brass-yellow text-brass-yellow" />
@@ -275,28 +275,28 @@ const BusinessShowcase = () => (
                   </div>
                   <span className="text-sm text-muted-foreground">4.8 (124 reviews)</span>
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-[var(--space-xs)]">
                   <Badge variant="secondary">FFL Transfers</Badge>
                   <Badge variant="secondary">Gunsmithing</Badge>
                   <Badge variant="secondary">Training Classes</Badge>
                 </div>
-                <div className="w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-4 rounded-full"></div>
+                <div className="w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-[var(--space-base)] rounded-full"></div>
               </CardContent>
             </Card>
           </div>
 
           {/* Enthusiasts */}
-          <div className="space-y-6">
+          <div className="space-y-[var(--space-md)]">
             <div className="text-center">
-              <div className="w-16 h-16 bg-brass-yellow rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-brass-yellow rounded-full flex items-center justify-center mx-auto mb-[var(--space-base)]">
                 <Users className="w-8 h-8 text-gunmetal-black" />
               </div>
-              <h3 className="text-xl font-bold text-brass-yellow mb-2">Community Members</h3>
+              <h3 className="text-xl font-bold text-brass-yellow mb-[var(--space-xs)]">Community Members</h3>
               <p className="text-muted-foreground">Active enthusiasts and competitors</p>
             </div>
             <Card className="shadow-sm">
               <CardHeader>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-[var(--space-sm)]">
                   <div className="w-10 h-10 bg-gradient-to-r from-copper-orange to-brass-yellow rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm">JD</span>
                   </div>
@@ -305,7 +305,7 @@ const BusinessShowcase = () => (
                     <CardDescription>Competition Shooter</CardDescription>
                   </div>
                   <Badge className="ml-auto bg-clubhouse-lawn-green text-white">
-                    <Star className="w-3 h-3 mr-1" />
+                    <Star className="w-3 h-3 mr-[var(--space-xs)]" />
                     Expert
                   </Badge>
                 </div>
@@ -315,23 +315,23 @@ const BusinessShowcase = () => (
                   "TBGC has revolutionized how our shooting community connects. The event calendar 
                   and vendor directory are game-changers!"
                 </p>
-                <div className="w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-4 rounded-full"></div>
+                <div className="w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-[var(--space-base)] rounded-full"></div>
               </CardContent>
             </Card>
           </div>
 
           {/* Visitors */}
-          <div className="space-y-6">
+          <div className="space-y-[var(--space-md)]">
             <div className="text-center">
-              <div className="w-16 h-16 bg-ayu-blue rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-ayu-blue rounded-full flex items-center justify-center mx-auto mb-[var(--space-base)]">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-ayu-blue mb-2">Visitors</h3>
+              <h3 className="text-xl font-bold text-ayu-blue mb-[var(--space-xs)]">Visitors</h3>
               <p className="text-muted-foreground">Directory browsers and newcomers</p>
             </div>
             <Card className="shadow-sm">
               <CardHeader>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-[var(--space-sm)]">
                   <div className="w-12 h-12 bg-ayu-blue rounded-lg flex items-center justify-center">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
@@ -342,10 +342,10 @@ const BusinessShowcase = () => (
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground mb-[var(--space-base)]">
                   Discover shooting ranges, training facilities, and competition venues across the region
                 </p>
-                <div className="w-full h-1 bg-gradient-to-r from-ayu-blue to-ayu-teal mt-4 rounded-full"></div>
+                <div className="w-full h-1 bg-gradient-to-r from-ayu-blue to-ayu-teal mt-[var(--space-base)] rounded-full"></div>
               </CardContent>
             </Card>
           </div>
@@ -354,22 +354,22 @@ const BusinessShowcase = () => (
     </div>
 
     {/* Call to Action */}
-    <div className="py-16 bg-gradient-to-r from-copper-orange to-brass-yellow">
-      <div className="container mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-white mb-4">
+    <div className="py-[var(--space-2xl)] bg-gradient-to-r from-copper-orange to-brass-yellow">
+      <div className="container mx-auto px-[var(--space-md)] text-center">
+        <h2 className="text-3xl font-bold text-white mb-[var(--space-base)]">
           Join the Treasure Valley Firearms Community
         </h2>
-        <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+        <p className="text-white/90 text-lg mb-[var(--space-lg)] max-w-2xl mx-auto">
           Whether you're a vendor, enthusiast, or newcomer, TBGC provides the tools and 
           community to enhance your firearms experience.
         </p>
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-[var(--space-base)] justify-center">
           <Button variant="secondary" size="lg" className="bg-card text-copper-orange hover:bg-muted">
-            <Users className="w-5 h-5 mr-2" />
+            <Users className="w-5 h-5 mr-[var(--space-xs)]" />
             Get Started Today
           </Button>
           <Button variant="outline" size="lg" className="border-nickel-white text-nickel-white hover:bg-nickel-white hover:text-copper-orange">
-            <Calendar className="w-5 h-5 mr-2" />
+            <Calendar className="w-5 h-5 mr-[var(--space-xs)]" />
             View Events
           </Button>
         </div>
@@ -411,9 +411,9 @@ This is not a gun club website - this is a flagship digital platform for the ent
 
 export const VendorFocused: Story = {
   render: () => (
-    <div className="min-h-screen bg-background p-8">
-      <div className="max-w-4xl mx-auto space-y-8">
-        <div className="text-center space-y-4">
+    <div className="min-h-screen bg-background p-[var(--space-lg)]">
+      <div className="max-w-4xl mx-auto space-y-[var(--space-lg)]">
+        <div className="text-center space-y-[var(--space-base)]">
           <h1 className="text-4xl font-bold text-copper-orange">Vendor Partner Dashboard</h1>
           <p className="text-muted-foreground">
             Comprehensive business management for Treasure Valley firearms professionals
@@ -421,9 +421,9 @@ export const VendorFocused: Story = {
           <div className="w-24 h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-md)]">
           <Card className="border-l-4 border-l-copper-orange">
-            <CardHeader className="pb-2">
+            <CardHeader className="pb-[var(--space-xs)]">
               <CardTitle className="text-sm font-medium text-muted-foreground">Monthly Bookings</CardTitle>
             </CardHeader>
             <CardContent>
@@ -432,7 +432,7 @@ export const VendorFocused: Story = {
             </CardContent>
           </Card>
           <Card className="border-l-4 border-l-brass-yellow">
-            <CardHeader className="pb-2">
+            <CardHeader className="pb-[var(--space-xs)]">
               <CardTitle className="text-sm font-medium text-muted-foreground">Profile Views</CardTitle>
             </CardHeader>
             <CardContent>
@@ -441,7 +441,7 @@ export const VendorFocused: Story = {
             </CardContent>
           </Card>
           <Card className="border-l-4 border-l-clubhouse-lawn-green">
-            <CardHeader className="pb-2">
+            <CardHeader className="pb-[var(--space-xs)]">
               <CardTitle className="text-sm font-medium text-muted-foreground">Reviews</CardTitle>
             </CardHeader>
             <CardContent>
@@ -453,7 +453,7 @@ export const VendorFocused: Story = {
 
         <Card className="border-2 border-copper-orange/20">
           <CardHeader>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-[var(--space-sm)]">
               <div className="w-12 h-12 bg-copper-orange rounded-lg flex items-center justify-center">
                 <Shield className="w-6 h-6 text-white" />
               </div>
@@ -462,13 +462,13 @@ export const VendorFocused: Story = {
                 <CardDescription>Premium Vendor • Boise, ID</CardDescription>
               </div>
               <Badge className="ml-auto bg-clubhouse-lawn-green text-white">
-                <Shield className="w-3 h-3 mr-1" />
+                <Shield className="w-3 h-3 mr-[var(--space-xs)]" />
                 Verified
               </Badge>
             </div>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center gap-2 mb-3">
+            <div className="flex items-center gap-[var(--space-xs)] mb-[var(--space-sm)]">
               <div className="flex">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star key={star} className="w-4 h-4 fill-brass-yellow text-brass-yellow" />
@@ -476,12 +476,12 @@ export const VendorFocused: Story = {
               </div>
               <span className="text-sm text-muted-foreground">4.9 (87 reviews)</span>
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-[var(--space-xs)]">
               <Badge variant="secondary">Priority Listing</Badge>
               <Badge variant="secondary">Advanced Analytics</Badge>
               <Badge variant="secondary">Direct Booking</Badge>
             </div>
-            <div className="w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-4 rounded-full"></div>
+            <div className="w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-[var(--space-base)] rounded-full"></div>
           </CardContent>
         </Card>
       </div>
@@ -498,9 +498,9 @@ export const VendorFocused: Story = {
 
 export const CommunityFocused: Story = {
   render: () => (
-    <div className="min-h-screen bg-background p-8">
-      <div className="max-w-4xl mx-auto space-y-8">
-        <div className="text-center space-y-4">
+    <div className="min-h-screen bg-background p-[var(--space-lg)]">
+      <div className="max-w-4xl mx-auto space-y-[var(--space-lg)]">
+        <div className="text-center space-y-[var(--space-base)]">
           <h1 className="text-4xl font-bold text-brass-yellow">Community Hub</h1>
           <p className="text-muted-foreground">
             Connect with fellow enthusiasts across the Treasure Valley
@@ -508,17 +508,17 @@ export const CommunityFocused: Story = {
           <div className="w-24 h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
           <Card className="group hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-[var(--space-sm)]">
                 <MessageSquare className="w-6 h-6 text-ayu-blue" />
                 <CardTitle>Latest Discussions</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+              <div className="space-y-[var(--space-sm)]">
+                <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-muted/50 rounded-lg">
                   <div className="w-8 h-8 bg-copper-orange rounded-full flex items-center justify-center">
                     <span className="text-white text-xs font-bold">MK</span>
                   </div>
@@ -527,7 +527,7 @@ export const CommunityFocused: Story = {
                     <p className="text-xs text-muted-foreground">Mike K. • 2 hours ago</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+                <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-muted/50 rounded-lg">
                   <div className="w-8 h-8 bg-brass-yellow rounded-full flex items-center justify-center">
                     <span className="text-gunmetal-black text-xs font-bold">JS</span>
                   </div>
@@ -537,20 +537,20 @@ export const CommunityFocused: Story = {
                   </div>
                 </div>
               </div>
-              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-4 rounded-full transition-all duration-300 ease-out origin-left"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-[var(--space-base)] rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
 
           <Card className="group hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-[var(--space-sm)]">
                 <Calendar className="w-6 h-6 text-ayu-green" />
                 <CardTitle>Upcoming Events</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+              <div className="space-y-[var(--space-sm)]">
+                <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-muted/50 rounded-lg">
                   <div className="w-8 h-8 bg-ayu-green rounded-full flex items-center justify-center">
                     <Target className="w-4 h-4 text-white" />
                   </div>
@@ -559,7 +559,7 @@ export const CommunityFocused: Story = {
                     <p className="text-xs text-muted-foreground">Saturday • Capital City Range</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+                <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-muted/50 rounded-lg">
                   <div className="w-8 h-8 bg-ayu-blue rounded-full flex items-center justify-center">
                     <Shield className="w-4 h-4 text-white" />
                   </div>
@@ -569,7 +569,7 @@ export const CommunityFocused: Story = {
                   </div>
                 </div>
               </div>
-              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-green to-ayu-blue mt-4 rounded-full transition-all duration-300 ease-out origin-left"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-green to-ayu-blue mt-[var(--space-base)] rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
         </div>

@@ -3,7 +3,7 @@ import { BreadcrumbHero } from '@/components/ui/breadcrumb-hero';
 import { Target, Trophy, Users, Calendar, Shield, Star, MapPin, BookOpen, Settings } from 'lucide-react';
 
 const meta: Meta<typeof BreadcrumbHero> = {
-  title: 'Heroes & Headers/Breadcrumb Hero',
+  title: 'Design System/Templates/BreadcrumbHero',
   component: BreadcrumbHero,
   parameters: {
     layout: 'fullscreen',

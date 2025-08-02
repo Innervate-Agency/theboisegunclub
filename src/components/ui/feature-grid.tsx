@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from 'lucide-react'
 
 const featureGridVariants = cva(
-  "w-full py-16",
+  "w-full py-[var(--space-2xl)]",
   {
     variants: {
       variant: {
@@ -16,9 +16,9 @@ const featureGridVariants = cva(
         glass: "mica-overlay"
       },
       spacing: {
-        comfortable: "py-16",
-        compact: "py-12",
-        minimal: "py-8"
+        comfortable: "py-[var(--space-2xl)]",
+        compact: "py-[var(--space-xl)]",
+        minimal: "py-[var(--space-lg)]"
       }
     },
     defaultVariants: {
@@ -29,7 +29,7 @@ const featureGridVariants = cva(
 )
 
 const featureCardVariants = cva(
-  "group relative bg-card rounded-lg border-border p-6 shadow-sm hover:shadow-md transition-all duration-200 ease-out",
+  "group relative bg-card rounded-lg border-border p-[var(--space-md)] shadow-sm hover:shadow-md transition-all duration-200 ease-out",
   {
     variants: {
       cardVariant: {
@@ -86,17 +86,17 @@ export function FeatureGrid({
   
   return (
     <section className={cn(featureGridVariants({ variant, spacing }), className)} {...props}>
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-[var(--space-md)]">
         {/* Header */}
         {(title || subtitle || description) && (
-          <div className="text-center mb-12">
+          <div className="text-center mb-[var(--space-xl)]">
             {subtitle && (
-              <p className="text-sm font-rajdhani font-semibold text-copper-orange mb-2 tracking-wide uppercase">
+              <p className="text-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
             {title && (
-              <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-4">
+              <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
                 {title}
               </h2>
             )}
@@ -109,7 +109,7 @@ export function FeatureGrid({
         )}
 
         {/* Features Grid */}
-        <div className={cn("grid gap-6", gridCols[columns])}>
+        <div className={cn("grid gap-[var(--space-md)]", gridCols[columns])}>
           {features.map((feature, index) => {
             const Icon = feature.icon
             
@@ -118,7 +118,7 @@ export function FeatureGrid({
                 key={index}
                 className={cn(featureCardVariants({ cardVariant }))}
               >
-                <div className="space-y-4">
+                <div className="space-y-[var(--space-base)]">
                   {/* Icon */}
                   {Icon && (
                     <div className="flex items-center justify-center w-12 h-12 bg-brass-yellow/10 rounded-lg group-hover:bg-brass-yellow/20 transition-colors duration-200">
@@ -127,7 +127,7 @@ export function FeatureGrid({
                   )}
                   
                   {/* Content */}
-                  <div className="space-y-3">
+                  <div className="space-y-[var(--space-sm)]">
                     <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black group-hover:text-brass-yellow transition-colors duration-200">
                       {feature.title}
                     </h3>
@@ -139,7 +139,7 @@ export function FeatureGrid({
                   
                   {/* Link */}
                   {feature.link && (
-                    <div className="pt-2">
+                    <div className="pt-[var(--space-xs)]">
                       <Button 
                         variant="ghost" 
                         size="sm"
@@ -147,7 +147,7 @@ export function FeatureGrid({
                         onClick={feature.link.onClick}
                       >
                         {feature.link.text}
-                        <ArrowRight className="ml-1 icon-sm group-hover/btn:translate-x-0.5 transition-transform duration-200" />
+                        <ArrowRight className="ml-[var(--space-xs)] icon-sm group-hover/btn:translate-x-0.5 transition-transform duration-200" />
                       </Button>
                     </div>
                   )}

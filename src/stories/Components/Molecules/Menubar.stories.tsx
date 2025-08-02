@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/menubar';
 
 const meta: Meta<typeof Menubar> = {
-  title: 'Navigation/Menubar',
+  title: 'Design System/Molecules/Menubar',
   component: Menubar,
   parameters: {
     layout: 'centered',

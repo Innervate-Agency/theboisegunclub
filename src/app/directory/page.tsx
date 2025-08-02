@@ -5,7 +5,7 @@ import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { NavigationFusion } from '@/components/ui/navigation-fusion'
 import { NewThemeToggle } from '@/components/ui/NewThemeToggle'
-import { Search, MapPin, Filter, Star, Clock, Phone, Globe } from 'lucide-react'
+import { Search, MapPin, Filter, Star, Clock } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
@@ -109,32 +109,32 @@ export default function DirectoryPage() {
       />
 
       {/* Search & Filter Section */}
-      <section className="py-12 bg-gradient-hero-warm">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row gap-4 mb-8">
+      <section className="py-[var(--space-xl)] bg-gradient-hero-warm">
+        <div className="max-w-6xl mx-auto px-[var(--space-md)]">
+          <div className="flex flex-col md:flex-row gap-[var(--space-base)] mb-[var(--space-lg)]">
             <div className="flex-1">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 icon-sm text-case-hardened" />
                 <Input
                   placeholder="Search businesses, services, or locations..."
-                  className="pl-10 bg-white border-brass-yellow/30 focus:border-brass-yellow"
+                  className="pl-[var(--space-2xl)] bg-white border-brass-yellow/30 focus:border-brass-yellow"
                 />
               </div>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-[var(--space-xs)]">
               <Button variant="outline" className="border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black">
-                <MapPin className="icon-sm mr-2" />
+                <MapPin className="icon-sm mr-[var(--space-xs)]" />
                 Location
               </Button>
               <Button variant="outline" className="border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black">
-                <Filter className="icon-sm mr-2" />
+                <Filter className="icon-sm mr-[var(--space-xs)]" />
                 Filters
               </Button>
             </div>
           </div>
 
           {/* Category Tabs */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-[var(--space-xs)]">
             {[
               { label: "All", value: "all", active: true },
               { label: "Gun Stores", value: "dealer" },
@@ -161,13 +161,13 @@ export default function DirectoryPage() {
       </section>
 
       {/* Directory Listings */}
-      <section className="py-12">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-6 flex items-center justify-between">
+      <section className="py-[var(--space-xl)]">
+        <div className="max-w-6xl mx-auto px-[var(--space-md)]">
+          <div className="mb-[var(--space-md)] flex items-center justify-between">
             <h2 className="text-2xl font-rajdhani font-bold text-gunmetal-black">
               {directoryListings.length} Businesses Found
             </h2>
-            <select className="px-4 py-2 border border-gray-300 rounded-lg bg-white text-sm font-noto-sans">
+            <select className="px-[var(--space-base)] py-[var(--space-xs)] border border-gray-300 rounded-lg bg-white text-sm font-noto-sans">
               <option>Sort by Relevance</option>
               <option>Sort by Rating</option>
               <option>Sort by Distance</option>
@@ -176,7 +176,7 @@ export default function DirectoryPage() {
           </div>
 
           <Suspense fallback={<LoadingSpinner text="Loading directory..." />}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
               {directoryListings.map((listing) => (
                 <DirectoryCard
                   key={listing.id}
@@ -198,7 +198,7 @@ export default function DirectoryPage() {
           </Suspense>
 
           {/* Load More */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-[var(--space-xl)]">
             <Button size="lg" className="bg-brass-yellow text-gunmetal-black hover:bg-copper-orange font-rajdhani font-semibold">
               Load More Businesses
             </Button>

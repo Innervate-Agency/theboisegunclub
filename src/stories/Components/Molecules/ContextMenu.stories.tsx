@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/context-menu';
 
 const meta: Meta<typeof ContextMenu> = {
-  title: 'Overlays & Modals/ContextMenu',
+  title: 'Design System/Molecules/ContextMenu',
   component: ContextMenu,
   parameters: {
     layout: 'centered',

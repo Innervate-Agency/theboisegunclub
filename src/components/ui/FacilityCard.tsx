@@ -20,9 +20,9 @@ const facilityCardVariants = cva(
         compact: "bg-card shadow-sm hover:shadow-md"
       },
       size: {
-        default: "p-6",
-        compact: "p-4",
-        large: "p-8"
+        default: "p-[var(--space-md)]",
+        compact: "p-[var(--space-base)]",
+        large: "p-[var(--space-lg)]"
       }
     },
     defaultVariants: {
@@ -118,14 +118,14 @@ export default function FacilityCard({
       {isVerified && (
         <div className="absolute top-4 left-4 z-10">
           <Badge variant="success">
-            <Shield className="h-3 w-3 mr-1" />
+            <Shield className="h-3 w-3 mr-[var(--space-xs)]" />
             Verified
           </Badge>
         </div>
       )}
 
-      <CardHeader className="space-y-4">
-        <div className="flex items-start gap-4">
+      <CardHeader className="space-y-[var(--space-base)]">
+        <div className="flex items-start gap-[var(--space-base)]">
           {/* Business Icon/Image */}
           <div className="flex-shrink-0">
             {icon ? (
@@ -145,21 +145,21 @@ export default function FacilityCard({
 
           {/* Business Info */}
           <div className="flex-1 min-w-0">
-            <div className="flex items-start justify-between gap-2">
+            <div className="flex items-start justify-between gap-[var(--space-xs)]">
               <CardTitle className="text-lg font-rajdhani font-bold text-gunmetal-black group-hover:text-brass-yellow transition-colors">
                 {title}
               </CardTitle>
             </div>
             
             {businessType && (
-              <p className="text-sm text-case-hardened font-medium mt-1">
+              <p className="text-sm text-case-hardened font-medium mt-[var(--space-xs)]">
                 {businessType}
               </p>
             )}
 
             {/* Rating */}
             {rating && (
-              <div className="flex items-center gap-2 mt-2">
+              <div className="flex items-center gap-[var(--space-xs)] mt-[var(--space-xs)]">
                 <div className="flex items-center">
                   {[...Array(5)].map((_, i) => (
                     <Star
@@ -180,7 +180,7 @@ export default function FacilityCard({
         </div>
       </CardHeader>
 
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-[var(--space-base)]">
         {/* Description */}
         <CardDescription className="text-case-hardened leading-relaxed">
           {description}
@@ -188,21 +188,21 @@ export default function FacilityCard({
 
         {/* Contact Info */}
         {(location || hours || phone) && (
-          <div className="space-y-2 text-sm">
+          <div className="space-y-[var(--space-xs)] text-sm">
             {location && (
-              <div className="flex items-center gap-2 text-case-hardened">
+              <div className="flex items-center gap-[var(--space-xs)] text-case-hardened">
                 <MapPin className="h-4 w-4 text-brass-yellow" />
                 <span>{location}</span>
               </div>
             )}
             {hours && (
-              <div className="flex items-center gap-2 text-case-hardened">
+              <div className="flex items-center gap-[var(--space-xs)] text-case-hardened">
                 <Clock className="h-4 w-4 text-brass-yellow" />
                 <span>{hours}</span>
               </div>
             )}
             {phone && (
-              <div className="flex items-center gap-2 text-case-hardened">
+              <div className="flex items-center gap-[var(--space-xs)] text-case-hardened">
                 <Phone className="h-4 w-4 text-brass-yellow" />
                 <span>{phone}</span>
               </div>
@@ -212,7 +212,7 @@ export default function FacilityCard({
 
         {/* Badges */}
         {badges && badges.length > 0 && (
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-[var(--space-xs)]">
             {badges.map((badge, index) => (
               <Badge 
                 key={index} 
@@ -226,7 +226,7 @@ export default function FacilityCard({
         )}
 
         {/* Action Button */}
-        <div className="pt-2">
+        <div className="pt-[var(--space-xs)]">
           <Button
             variant="outline"
             size="sm"
@@ -234,7 +234,7 @@ export default function FacilityCard({
             onClick={handleClick}
           >
             {linkText}
-            <ExternalLink className="h-4 w-4 ml-2" />
+            <ExternalLink className="h-4 w-4 ml-[var(--space-xs)]" />
           </Button>
         </div>
       </CardContent>

@@ -82,13 +82,13 @@ export default function TrainingPage() {
       />
 
       {/* Popular Courses */}
-      <section className="py-16 bg-gradient-hero-warm">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <p className="text-sm font-rajdhani font-semibold text-copper-orange mb-2 tracking-wide uppercase">
+      <section className="py-[var(--space-2xl)] bg-gradient-hero-warm">
+        <div className="max-w-6xl mx-auto px-[var(--space-md)]">
+          <div className="text-center mb-[var(--space-xl)]">
+            <p className="text-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
               Popular Courses
             </p>
-            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-4">
+            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
               Featured Training Programs
             </h2>
             <p className="text-lg text-case-hardened font-noto-sans max-w-3xl mx-auto">
@@ -97,12 +97,12 @@ export default function TrainingPage() {
           </div>
 
           <Suspense fallback={<LoadingSpinner text="Loading training programs..." />}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-[var(--space-lg)]">
               {trainingPrograms.map((program) => (
                 <Card key={program.id} className="group hover:shadow-lg transition-all duration-200 overflow-hidden">
-                  <div className="p-6 space-y-4">
+                  <div className="p-[var(--space-md)] space-y-[var(--space-base)]">
                     <div>
-                      <h3 className="text-xl font-rajdhani font-bold text-primary group-hover:text-accent transition-colors duration-200 mb-1">
+                      <h3 className="text-xl font-rajdhani font-bold text-primary group-hover:text-accent transition-colors duration-200 mb-[var(--space-xs)]">
                         {program.title}
                       </h3>
                       <p className="text-sm text-muted-foreground font-noto-sans">
@@ -114,7 +114,7 @@ export default function TrainingPage() {
                       {program.description}
                     </p>
 
-                    <div className="flex gap-2 pt-2">
+                    <div className="flex gap-[var(--space-xs)] pt-[var(--space-xs)]">
                       <Button 
                         size="sm" 
                         className="flex-1"

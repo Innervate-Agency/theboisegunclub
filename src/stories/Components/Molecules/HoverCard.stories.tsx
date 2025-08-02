@@ -9,7 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { CalendarIcon } from 'lucide-react';
 
 const meta: Meta<typeof HoverCard> = {
-  title: 'Overlays & Modals/HoverCard',
+  title: 'Design System/Molecules/HoverCard',
   component: HoverCard,
   parameters: {
     layout: 'centered',
@@ -27,18 +27,18 @@ export const Default: Story = {
         <Button variant="link">@nextjs</Button>
       </HoverCardTrigger>
       <HoverCardContent className="w-80">
-        <div className="flex justify-between space-x-4">
+        <div className="flex justify-between space-x-[var(--space-base)]">
           <Avatar>
             <AvatarImage src="/images/Fractal/22.webp" />
             <AvatarFallback>VC</AvatarFallback>
           </Avatar>
-          <div className="space-y-1">
+          <div className="space-y-[var(--space-micro)]">
             <h4 className="text-sm font-semibold">@nextjs</h4>
             <p className="text-sm">
               The React Framework – created and maintained by @vercel.
             </p>
-            <div className="flex items-center pt-2">
-              <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{' '}
+            <div className="flex items-center pt-[var(--space-xs)]">
+              <CalendarIcon className="mr-[var(--space-xs)] h-4 w-4 opacity-70" />{' '}
               <span className="text-xs text-muted-foreground">
                 Joined December 2021
               </span>

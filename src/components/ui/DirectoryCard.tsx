@@ -34,9 +34,9 @@ const directoryCardVariants = cva(
         'fire-green': 'bg-card text-card-foreground shadow-sm hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
       },
       size: {
-        sm: 'p-4 text-sm',
+        sm: 'p-[var(--space-base)] text-sm',
         md: 'p-5 text-base',
-        lg: 'p-6 text-lg',
+        lg: 'p-[var(--space-md)] text-lg',
       },
     },
     defaultVariants: {
@@ -73,7 +73,7 @@ export function DirectoryCard({
   const [imgError, setImgError] = useState(false);
   return (
     <div className={cn(directoryCardVariants({ variant, size }), className)} {...props}>
-      <div className="flex items-center gap-4 mb-3">
+      <div className="flex items-center gap-[var(--space-base)] mb-[var(--space-sm)]">
         {imageUrl && !imgError ? (
           <div className="relative h-14 w-14 rounded-lg overflow-hidden bg-shooting-bench shadow-sm">
             <Image
@@ -92,7 +92,7 @@ export function DirectoryCard({
           </div>
         )}
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-[var(--space-xs)]">
             <span className="font-rajdhani font-bold text-lg truncate text-gunmetal-black">{name}</span>
             {status && <Badge variant={badgeVariant} size="sm">{status}</Badge>}
           </div>
@@ -100,7 +100,7 @@ export function DirectoryCard({
         </div>
       </div>
       {contact && (
-        <div className="mt-2 text-xs text-case-hardened font-noto-sans truncate">{contact}</div>
+        <div className="mt-[var(--space-xs)] text-xs text-case-hardened font-noto-sans truncate">{contact}</div>
       )}
     </div>
   );

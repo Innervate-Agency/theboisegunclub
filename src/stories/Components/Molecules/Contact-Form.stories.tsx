@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { ContactForm } from '@/components/ui/contact-form';
 
 const meta: Meta<typeof ContactForm> = {
-  title: 'Forms & Inputs/Contact Form',
+  title: 'Design System/Molecules/Contact Form',
   component: ContactForm,
   parameters: {
     layout: 'centered',

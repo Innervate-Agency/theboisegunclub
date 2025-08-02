@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Separator } from '@/components/ui/separator';
 
 const meta: Meta<typeof Separator> = {
-  title: 'Core UI/Separator',
+  title: 'Design System/Atoms/Separator',
   component: Separator,
   parameters: {
     layout: 'centered',
@@ -16,14 +16,14 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: (args) => (
     <div>
-      <div className="space-y-1">
+      <div className="space-y-[var(--space-micro)]">
         <h4 className="text-sm font-medium leading-none">Radix Primitives</h4>
         <p className="text-sm text-muted-foreground">
           An open-source UI component library.
         </p>
       </div>
       <Separator className="my-4" {...args} />
-      <div className="flex h-5 items-center space-x-4 text-sm">
+      <div className="flex h-5 items-center space-x-[var(--space-base)] text-sm">
         <div>Blog</div>
         <Separator orientation="vertical" {...args} />
         <div>Docs</div>

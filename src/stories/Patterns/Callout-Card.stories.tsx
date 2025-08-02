@@ -34,7 +34,7 @@ export const Default: Story = {
     description: 'All members must complete the safety orientation before using the ranges.',
     variant: 'default',
     children: (
-      <div className="flex items-center gap-2 mt-4">
+      <div className="flex items-center gap-[var(--space-xs)] mt-[var(--space-base)]">
         <Shield className="h-4 w-4 text-copper-orange" />
         <span className="text-sm font-medium">Safety First</span>
       </div>
@@ -49,8 +49,8 @@ export const SafetyNotice: Story = {
     description: 'New safety training requirements are now in effect for all members.',
     variant: 'animated',
     children: (
-      <div className="space-y-3">
-        <div className="flex items-center gap-2">
+      <div className="space-y-[var(--space-sm)]">
+        <div className="flex items-center gap-[var(--space-xs)]">
           <AlertCircle className="h-4 w-4 text-safety-red" />
           <span className="text-sm font-semibold text-safety-red">Required</span>
         </div>
@@ -69,12 +69,12 @@ export const EventAnnouncement: Story = {
     description: 'Sign up for our monthly trap shooting competition. Limited spots available.',
     variant: 'default',
     children: (
-      <div className="space-y-3">
-        <div className="flex items-center gap-2">
+      <div className="space-y-[var(--space-sm)]">
+        <div className="flex items-center gap-[var(--space-xs)]">
           <Calendar className="h-4 w-4 text-scope-blue" />
           <span className="text-sm">March 15th, 2024</span>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-[var(--space-xs)]">
           <Button size="sm" variant="accent">
             Register Now
           </Button>
@@ -94,14 +94,14 @@ export const NewMemberWelcome: Story = {
     description: 'Get started with our comprehensive orientation program designed for new shooters.',
     variant: 'subtle',
     children: (
-      <div className="space-y-3">
-        <div className="flex items-center gap-2">
+      <div className="space-y-[var(--space-sm)]">
+        <div className="flex items-center gap-[var(--space-xs)]">
           <Users className="h-4 w-4 text-rifling-green" />
           <Badge variant="success">
             New Member
           </Badge>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-[var(--space-xs)]">
           <Button size="sm" variant="success">
             Start Orientation
           </Button>
@@ -121,12 +121,12 @@ export const CompetitionResults: Story = {
     description: 'Congratulations to our top performers in last month&apos;s competition.',
     variant: 'default',
     children: (
-      <div className="space-y-3">
-        <div className="flex items-center gap-2">
+      <div className="space-y-[var(--space-sm)]">
+        <div className="flex items-center gap-[var(--space-xs)]">
           <Trophy className="h-4 w-4 text-sight-gold" />
           <span className="text-sm font-semibold">Results Posted</span>
         </div>
-        <div className="space-y-2">
+        <div className="space-y-[var(--space-xs)]">
           <div className="flex justify-between text-sm">
             <span>1st Place: John Smith</span>
             <span className="font-semibold">95/100</span>
@@ -154,8 +154,8 @@ export const ImportantCalloutVariant: StoryObj<typeof ImportantCallout> = {
     title: 'Range Closure Notice',
     description: 'Indoor range will be closed for maintenance this weekend.',
     children: (
-      <div className="space-y-3">
-        <div className="flex items-center gap-2">
+      <div className="space-y-[var(--space-sm)]">
+        <div className="flex items-center gap-[var(--space-xs)]">
           <Info className="h-4 w-4 text-scope-blue" />
           <span className="text-sm font-semibold">March 18-19, 2024</span>
         </div>
@@ -176,8 +176,8 @@ export const SubtleCalloutVariant: StoryObj<typeof SubtleCallout> = {
     title: 'Pro Shop Special',
     description: 'Save 15% on all ammunition this week.',
     children: (
-      <div className="space-y-3">
-        <div className="flex items-center gap-2">
+      <div className="space-y-[var(--space-sm)]">
+        <div className="flex items-center gap-[var(--space-xs)]">
           <Target className="h-4 w-4 text-case-hardened" />
           <Badge variant="info">
             Limited Time
@@ -201,19 +201,19 @@ export const TrainingProgram: Story = {
     description: 'Take your shooting skills to the next level with our advanced training program.',
     variant: 'animated',
     children: (
-      <div className="space-y-3">
-        <div className="flex items-center gap-2">
+      <div className="space-y-[var(--space-sm)]">
+        <div className="flex items-center gap-[var(--space-xs)]">
           <Target className="h-4 w-4 text-copper-orange" />
           <Badge variant="warning">
             8 Week Course
           </Badge>
         </div>
-        <div className="text-sm space-y-1">
+        <div className="text-sm space-y-[var(--space-micro)]">
           <p>• Precision shooting techniques</p>
           <p>• Competition preparation</p>
           <p>• Equipment optimization</p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-[var(--space-xs)]">
           <Button size="sm" variant="solid-accent">
             Enroll Now
           </Button>
@@ -233,12 +233,12 @@ export const MembershipRenewal: Story = {
     description: 'Your membership expires soon. Renew now to continue enjoying all benefits.',
     variant: 'subtle',
     children: (
-      <div className="space-y-3">
-        <div className="flex items-center gap-2">
+      <div className="space-y-[var(--space-sm)]">
+        <div className="flex items-center gap-[var(--space-xs)]">
           <Calendar className="h-4 w-4 text-sight-gold" />
           <span className="text-sm font-semibold">Expires: March 31, 2024</span>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-[var(--space-xs)]">
           <Button size="sm" variant="solid-accent">
             Renew Now
           </Button>

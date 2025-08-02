@@ -35,9 +35,9 @@ const statCardVariants = cva(
         'fire-green': "bg-card text-card-foreground shadow-sm hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full"
       },
       size: {
-        sm: "p-4",
-        default: "p-6",
-        lg: "p-8"
+        sm: "p-[var(--space-base)]",
+        default: "p-[var(--space-md)]",
+        lg: "p-[var(--space-lg)]"
       }
     },
     defaultVariants: {
@@ -144,18 +144,18 @@ export default function StatCard({
     <Card className={cn(statCardVariants({ variant, size }), className)} {...props}>
       <CardContent className="p-0">
         {icon && (
-          <div className={cn("mb-3", textColors.icon)}>
+          <div className={cn("mb-[var(--space-sm)]", textColors.icon)}>
             {icon}
           </div>
         )}
         
-        <div className="space-y-1">
+        <div className="space-y-[var(--space-micro)]">
           <div className="flex items-center justify-between">
             <h3 className={cn("text-3xl font-rajdhani font-bold", textColors.title)}>
               {formatValue(value)}
             </h3>
             {trend && trendValue && (
-              <div className={cn("text-sm font-medium flex items-center gap-1", getTrendColor(trend, variant || "default"))}>
+              <div className={cn("text-sm font-medium flex items-center gap-[var(--space-xs)]", getTrendColor(trend, variant || "default"))}>
                 <span>{getTrendIcon(trend)}</span>
                 <span>{trendValue}</span>
               </div>
@@ -167,7 +167,7 @@ export default function StatCard({
           </p>
           
           {description && (
-            <p className={cn("text-xs mt-2", textColors.description)}>
+            <p className={cn("text-xs mt-[var(--space-xs)]", textColors.description)}>
               {description}
             </p>
           )}

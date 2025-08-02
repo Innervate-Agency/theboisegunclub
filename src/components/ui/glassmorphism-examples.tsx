@@ -17,11 +17,11 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
   const [showToast, setShowToast] = React.useState(false)
 
   return (
-    <div className={cn("w-full max-w-6xl mx-auto p-8", className)}>
+    <div className={cn("w-full max-w-6xl mx-auto p-[var(--space-lg)]", className)}>
       
       {/* Hero Section with Background for Glass Effects */}
       <div 
-        className="relative p-12 rounded-2xl overflow-hidden mb-12"
+        className="relative p-12 rounded-2xl overflow-hidden mb-[var(--space-xl)]"
         style={{
           background: `
             url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F2CB05' fill-opacity='0.15'%3E%3Cpath d='M20 20m-8 0a8,8 0 1,1 16,0a8,8 0 1,1 -16,0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
@@ -33,7 +33,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
           `
         }}
       >
-        <div className="text-center space-y-6">
+        <div className="text-center space-y-[var(--space-md)]">
           <h1 className="text-4xl font-rajdhani font-bold text-gunmetal-black">
             Real-World Glassmorphism Examples
           </h1>
@@ -43,20 +43,20 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
           </p>
           
           {/* Interactive Demo Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 pt-4">
+          <div className="flex flex-wrap justify-center gap-[var(--space-base)] pt-[var(--space-base)]">
             <div className="relative">
               <Button 
                 onClick={() => setShowDropdown(!showDropdown)}
-                className="gap-2"
+                className="gap-[var(--space-xs)]"
               >
                 User Menu <ChevronDown className="w-4 h-4" />
               </Button>
               
               {/* Dropdown with Mica Glass */}
               {showDropdown && (
-                <div className="absolute top-full mt-2 right-0 w-64 mica-dropdown rounded-lg shadow-lg border border-brass-yellow/20 z-50">
-                  <div className="p-4 space-y-3">
-                    <div className="flex items-center gap-3 pb-2 border-b border-border">
+                <div className="absolute top-full mt-[var(--space-xs)] right-0 w-64 mica-dropdown rounded-lg shadow-lg border border-brass-yellow/20 z-50">
+                  <div className="p-[var(--space-base)] space-y-[var(--space-sm)]">
+                    <div className="flex items-center gap-[var(--space-sm)] pb-[var(--space-xs)] border-b border-border">
                       <div className="w-8 h-8 bg-brass-yellow/20 rounded-full flex items-center justify-center">
                         <User className="w-4 h-4 text-brass-yellow" />
                       </div>
@@ -66,17 +66,17 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
                       </div>
                     </div>
                     
-                    <button className="w-full flex items-center gap-3 p-2 rounded-md hover:bg-white/20 text-left">
+                    <button className="w-full flex items-center gap-[var(--space-sm)] p-[var(--space-xs)] rounded-md hover:bg-white/20 text-left">
                       <Settings className="w-4 h-4 text-muted-foreground" />
                       <span className="text-sm">Account Settings</span>
                     </button>
                     
-                    <button className="w-full flex items-center gap-3 p-2 rounded-md hover:bg-white/20 text-left">
+                    <button className="w-full flex items-center gap-[var(--space-sm)] p-[var(--space-xs)] rounded-md hover:bg-white/20 text-left">
                       <Bell className="w-4 h-4 text-muted-foreground" />
                       <span className="text-sm">Notifications</span>
                     </button>
                     
-                    <button className="w-full flex items-center gap-3 p-2 rounded-md hover:bg-white/20 text-left text-safety-red">
+                    <button className="w-full flex items-center gap-[var(--space-sm)] p-[var(--space-xs)] rounded-md hover:bg-white/20 text-left text-safety-red">
                       <LogOut className="w-4 h-4" />
                       <span className="text-sm">Sign Out</span>
                     </button>
@@ -115,7 +115,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
       </div>
 
       {/* Component Examples Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--space-lg)]">
         
         {/* Search Bar with Glass */}
         <div className="relative">
@@ -130,13 +130,13 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
               `
             }}
           />
-          <div className="relative p-6 space-y-4">
+          <div className="relative p-[var(--space-md)] space-y-[var(--space-base)]">
             <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black">
               Glass Search Component
             </h3>
             
-            <div className="mica-overlay p-4 rounded-lg border border-white/20">
-              <div className="flex items-center gap-3">
+            <div className="mica-overlay p-[var(--space-base)] rounded-lg border border-white/20">
+              <div className="flex items-center gap-[var(--space-sm)]">
                 <Search className="w-5 h-5 text-muted-foreground" />
                 <input 
                   placeholder="Search firearms, ranges, events..."
@@ -161,15 +161,15 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
               `
             }}
           />
-          <div className="relative p-6 space-y-4">
+          <div className="relative p-[var(--space-md)] space-y-[var(--space-base)]">
             <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black">
               Glass Notification Cards
             </h3>
             
-            <div className="space-y-3">
-              <div className="mica-toast p-4 rounded-lg border border-white/20">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-rifling-green rounded-full mt-2" />
+            <div className="space-y-[var(--space-sm)]">
+              <div className="mica-toast p-[var(--space-base)] rounded-lg border border-white/20">
+                <div className="flex items-start gap-[var(--space-sm)]">
+                  <div className="w-2 h-2 bg-rifling-green rounded-full mt-[var(--space-xs)]" />
                   <div className="flex-1">
                     <p className="font-medium text-foreground">Training Reminder</p>
                     <p className="text-sm text-muted-foreground">CCW class starts in 30 minutes</p>
@@ -177,9 +177,9 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
                 </div>
               </div>
               
-              <div className="mica-toast p-4 rounded-lg border border-white/20">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-brass-yellow rounded-full mt-2" />
+              <div className="mica-toast p-[var(--space-base)] rounded-lg border border-white/20">
+                <div className="flex items-start gap-[var(--space-sm)]">
+                  <div className="w-2 h-2 bg-brass-yellow rounded-full mt-[var(--space-xs)]" />
                   <div className="flex-1">
                     <p className="font-medium text-foreground">New Event Posted</p>
                     <p className="text-sm text-muted-foreground">Monthly competition signup open</p>
@@ -193,7 +193,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
 
       {/* Modal Overlay */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-[var(--space-base)]">
           {/* Enhanced Backdrop with Pattern */}
           <div 
             className="absolute inset-0 backdrop-blur-sm"
@@ -210,7 +210,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
           
           {/* Modal */}
           <Card className="mica-modal relative z-10 w-full max-w-md shadow-2xl">
-            <CardContent className="p-6 space-y-4">
+            <CardContent className="p-[var(--space-md)] space-y-[var(--space-base)]">
               <h3 className="text-xl font-rajdhani font-bold text-foreground">
                 Glass Modal Example
               </h3>
@@ -218,7 +218,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
                 This modal uses the mica-modal class for strong backdrop blur while 
                 maintaining visual connection to the background content.
               </p>
-              <div className="flex gap-3 pt-4">
+              <div className="flex gap-[var(--space-sm)] pt-[var(--space-base)]">
                 <Button size="sm" className="flex-1">Confirm</Button>
                 <Button 
                   size="sm" 
@@ -236,8 +236,8 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
       {/* Toast Notification */}
       {showToast && (
         <div className="fixed bottom-6 right-6 z-50">
-          <div className="mica-toast p-4 rounded-lg shadow-lg border border-brass-yellow/20 min-w-80">
-            <div className="flex items-start gap-3">
+          <div className="mica-toast p-[var(--space-base)] rounded-lg shadow-lg border border-brass-yellow/20 min-w-80">
+            <div className="flex items-start gap-[var(--space-sm)]">
               <div className="w-6 h-6 bg-rifling-green/20 rounded-full flex items-center justify-center">
                 <div className="w-2 h-2 bg-rifling-green rounded-full" />
               </div>

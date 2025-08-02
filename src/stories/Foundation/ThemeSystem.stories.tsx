@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 
 const meta: Meta = {
-  title: 'Foundation/Theme System',
+  title: 'Design System/Foundation/ThemeSystem',
   parameters: {
     layout: 'padded',
   },
@@ -16,10 +16,10 @@ type Story = StoryObj
 
 export const ThemeContrastTest: Story = {
   render: () => (
-    <div className="space-y-8 p-6">
+    <div className="space-y-[var(--space-lg)] p-[var(--space-md)]">
       {/* Theme Info Display */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-rajdhani font-bold text-primary mb-2">
+      <div className="mb-[var(--space-lg)]">
+        <h1 className="text-3xl font-rajdhani font-bold text-primary mb-[var(--space-xs)]">
           TBGC Theme System Test
         </h1>
         <p className="text-muted-foreground">
@@ -28,14 +28,14 @@ export const ThemeContrastTest: Story = {
       </div>
 
       {/* Semantic Color Testing Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-md)]">
         
         {/* Primary Color Card */}
-        <Card className="p-6">
-          <h3 className="text-xl font-rajdhani font-bold text-primary mb-4">
+        <Card className="p-[var(--space-md)]">
+          <h3 className="text-xl font-rajdhani font-bold text-primary mb-[var(--space-base)]">
             Primary Colors
           </h3>
-          <div className="space-y-3">
+          <div className="space-y-[var(--space-sm)]">
             <div className="flex items-center justify-between">
               <span className="text-sm">Primary Text:</span>
               <div className="w-8 h-8 bg-primary rounded"></div>
@@ -49,11 +49,11 @@ export const ThemeContrastTest: Story = {
         </Card>
 
         {/* Contrast Color Card */}
-        <Card className="p-6">
-          <h3 className="text-xl font-rajdhani font-bold text-contrast mb-4">
+        <Card className="p-[var(--space-md)]">
+          <h3 className="text-xl font-rajdhani font-bold text-contrast mb-[var(--space-base)]">
             Contrast Colors
           </h3>
-          <div className="space-y-3">
+          <div className="space-y-[var(--space-sm)]">
             <div className="flex items-center justify-between">
               <span className="text-sm">Contrast Color:</span>
               <div className="w-8 h-8 bg-contrast rounded"></div>
@@ -67,11 +67,11 @@ export const ThemeContrastTest: Story = {
         </Card>
 
         {/* Background/Surface Card */}
-        <Card className="p-6">
-          <h3 className="text-xl font-rajdhani font-bold text-primary mb-4">
+        <Card className="p-[var(--space-md)]">
+          <h3 className="text-xl font-rajdhani font-bold text-primary mb-[var(--space-base)]">
             Surface Colors
           </h3>
-          <div className="space-y-3">
+          <div className="space-y-[var(--space-sm)]">
             <div className="flex items-center justify-between">
               <span className="text-sm">Background:</span>
               <div className="w-8 h-8 bg-background border rounded"></div>
@@ -89,18 +89,18 @@ export const ThemeContrastTest: Story = {
       </div>
 
       {/* Interactive Elements Testing */}
-      <Card className="p-6">
-        <h3 className="text-xl font-rajdhani font-bold text-primary mb-4">
+      <Card className="p-[var(--space-md)]">
+        <h3 className="text-xl font-rajdhani font-bold text-primary mb-[var(--space-base)]">
           Interactive Elements
         </h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-[var(--space-base)]">
           <Button variant="primary">Primary</Button>
           <Button variant="secondary">Secondary</Button>
           <Button variant="accent">Accent</Button>
           <Button variant="destructive">Destructive</Button>
         </div>
         
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-[var(--space-base)] flex flex-wrap gap-[var(--space-xs)]">
           <Badge variant="default">Default Badge</Badge>
           <Badge variant="secondary">Secondary Badge</Badge>
           <Badge variant="destructive">Destructive Badge</Badge>
@@ -108,18 +108,18 @@ export const ThemeContrastTest: Story = {
       </Card>
 
       {/* Hover/Focus Testing */}
-      <Card className="p-6">
-        <h3 className="text-xl font-rajdhani font-bold text-primary mb-4">
+      <Card className="p-[var(--space-md)]">
+        <h3 className="text-xl font-rajdhani font-bold text-primary mb-[var(--space-base)]">
           Hover Effects (Test contrast visibility)
         </h3>
-        <div className="space-y-4">
-          <div className="p-4 border rounded-lg hover:bg-muted transition-colors cursor-pointer">
+        <div className="space-y-[var(--space-base)]">
+          <div className="p-[var(--space-base)] border rounded-lg hover:bg-muted transition-colors cursor-pointer">
             <p className="text-primary hover:text-contrast transition-colors">
               Hover this card to test contrast colors
             </p>
           </div>
           
-          <div className="p-4 bg-card border rounded-lg group hover:shadow-lg transition-all cursor-pointer">
+          <div className="p-[var(--space-base)] bg-card border rounded-lg group hover:shadow-lg transition-all cursor-pointer">
             <h4 className="font-semibold text-primary group-hover:text-contrast transition-colors">
               Group Hover Test
             </h4>
@@ -131,11 +131,11 @@ export const ThemeContrastTest: Story = {
       </Card>
 
       {/* Color Values Display */}
-      <Card className="p-6">
-        <h3 className="text-xl font-rajdhani font-bold text-primary mb-4">
+      <Card className="p-[var(--space-md)]">
+        <h3 className="text-xl font-rajdhani font-bold text-primary mb-[var(--space-base)]">
           Current CSS Variables
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-mono">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)] text-sm font-mono">
           <div>
             <p><strong>Light Theme:</strong></p>
             <p>--contrast: {`var(--contrast)`} (copper-orange)</p>
@@ -156,29 +156,29 @@ export const ThemeContrastTest: Story = {
 
 export const ColorContrastComparison: Story = {
   render: () => (
-    <div className="space-y-8 p-6">
-      <h1 className="text-3xl font-rajdhani font-bold text-primary mb-6">
+    <div className="space-y-[var(--space-lg)] p-[var(--space-md)]">
+      <h1 className="text-3xl font-rajdhani font-bold text-primary mb-[var(--space-md)]">
         Contrast Comparison: Before vs After
       </h1>
       
       {/* Light Theme Test */}
-      <Card className="p-6">
-        <h3 className="text-xl font-rajdhani font-bold mb-4">Light Theme Contrast</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <Card className="p-[var(--space-md)]">
+        <h3 className="text-xl font-rajdhani font-bold mb-[var(--space-base)]">Light Theme Contrast</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
           
           {/* Old (Bad) - Brass Yellow on Light */}
-          <div className="space-y-4">
+          <div className="space-y-[var(--space-base)]">
             <h4 className="font-semibold text-red-600">❌ OLD: Brass Yellow (Poor Contrast)</h4>
-            <div className="p-4 bg-range-white border rounded-lg">
+            <div className="p-[var(--space-base)] bg-range-white border rounded-lg">
               <h5 className="text-brass-yellow font-bold">Hover Title (Hard to Read)</h5>
               <p className="text-case-hardened">Regular text that's readable</p>
             </div>
           </div>
 
           {/* New (Good) - Copper Orange on Light */}
-          <div className="space-y-4">
+          <div className="space-y-[var(--space-base)]">
             <h4 className="font-semibold text-green-600">✅ NEW: Copper Orange (Good Contrast)</h4>
-            <div className="p-4 bg-range-white border rounded-lg">
+            <div className="p-[var(--space-base)] bg-range-white border rounded-lg">
               <h5 className="text-contrast font-bold">Hover Title (Easy to Read)</h5>
               <p className="text-case-hardened">Regular text that's readable</p>
             </div>
@@ -187,23 +187,23 @@ export const ColorContrastComparison: Story = {
       </Card>
 
       {/* Dark Theme Test */}
-      <Card className="p-6 bg-night-sight text-titanium-white">
-        <h3 className="text-xl font-rajdhani font-bold mb-4">Dark Theme Contrast</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <Card className="p-[var(--space-md)] bg-night-sight text-titanium-white">
+        <h3 className="text-xl font-rajdhani font-bold mb-[var(--space-base)]">Dark Theme Contrast</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
           
           {/* Old (Bad) - Copper Orange on Dark */}
-          <div className="space-y-4">
+          <div className="space-y-[var(--space-base)]">
             <h4 className="font-semibold text-red-400">❌ OLD: Copper Orange (Poor Contrast)</h4>
-            <div className="p-4 bg-carbon-fiber border border-tactical-gray rounded-lg">
+            <div className="p-[var(--space-base)] bg-carbon-fiber border border-tactical-gray rounded-lg">
               <h5 className="text-copper-orange font-bold">Hover Title (Hard to Read)</h5>
               <p className="text-stainless-steel">Regular text that's readable</p>
             </div>
           </div>
 
           {/* New (Good) - Brass Yellow on Dark */}
-          <div className="space-y-4">
+          <div className="space-y-[var(--space-base)]">
             <h4 className="font-semibold text-green-400">✅ NEW: Brass Yellow (Good Contrast)</h4>
-            <div className="p-4 bg-carbon-fiber border border-tactical-gray rounded-lg">
+            <div className="p-[var(--space-base)] bg-carbon-fiber border border-tactical-gray rounded-lg">
               <h5 className="text-brass-yellow font-bold">Hover Title (Easy to Read)</h5>
               <p className="text-stainless-steel">Regular text that's readable</p>
             </div>

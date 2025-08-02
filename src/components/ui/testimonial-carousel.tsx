@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react'
 
 const testimonialCarouselVariants = cva(
-  "w-full py-16",
+  "w-full py-[var(--space-2xl)]",
   {
     variants: {
       variant: {
@@ -88,12 +88,12 @@ export function TestimonialCarousel({
       onMouseLeave={() => setIsAutoPlayPaused(false)}
       {...props}
     >
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-[var(--space-md)]">
         {/* Header */}
         {(title || subtitle) && (
-          <div className="text-center mb-12">
+          <div className="text-center mb-[var(--space-xl)]">
             {subtitle && (
-              <p className="text-sm font-rajdhani font-semibold text-copper-orange mb-2 tracking-wide uppercase">
+              <p className="text-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
@@ -107,17 +107,17 @@ export function TestimonialCarousel({
         
         {/* Testimonial Card */}
         <div className="relative">
-          <div className="bg-card text-card-foreground rounded-xl p-8 md:p-12 shadow-sm hover:shadow-md transition-shadow duration-200">
+          <div className="bg-card text-card-foreground rounded-xl p-[var(--space-lg)] md:p-12 shadow-sm hover:shadow-md transition-shadow duration-200">
             {/* Quote Icon */}
             <div className="absolute -top-4 left-8">
-              <div className="bg-brass-yellow rounded-full p-3 shadow-md">
+              <div className="bg-brass-yellow rounded-full p-[var(--space-sm)] shadow-md">
                 <Quote className="icon-md text-foreground" />
               </div>
             </div>
             
             {/* Rating */}
             {currentTestimonial.rating && (
-              <div className="flex items-center gap-1 mb-6 justify-center">
+              <div className="flex items-center gap-[var(--space-xs)] mb-[var(--space-md)] justify-center">
                 {Array.from({ length: 5 }, (_, i) => (
                   <Star
                     key={i}
@@ -133,14 +133,14 @@ export function TestimonialCarousel({
             )}
             
             {/* Content */}
-            <blockquote className="text-center mb-8">
+            <blockquote className="text-center mb-[var(--space-lg)]">
               <p className="text-responsive-lg md:text-responsive-xl text-foreground font-noto-sans leading-relaxed italic">
                 "{currentTestimonial.content}"
               </p>
             </blockquote>
             
             {/* Author */}
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-[var(--space-base)]">
               {currentTestimonial.avatar && (
                 <div className="w-12 h-12 rounded-full bg-muted overflow-hidden">
                   <img 
@@ -190,7 +190,7 @@ export function TestimonialCarousel({
         
         {/* Dots Indicator */}
         {testimonials.length > 1 && (
-          <div className="flex items-center justify-center gap-2 mt-8">
+          <div className="flex items-center justify-center gap-[var(--space-xs)] mt-[var(--space-lg)]">
             {testimonials.map((_, index) => (
               <button
                 key={index}

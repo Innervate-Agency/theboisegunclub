@@ -8,7 +8,7 @@ import {
 import { Button } from '@/components/ui/button';
 
 const meta: Meta<typeof Tooltip> = {
-  title: 'Core UI/Tooltip',
+  title: 'Design System/Atoms/Tooltip',
   component: Tooltip,
   parameters: {
     layout: 'centered',

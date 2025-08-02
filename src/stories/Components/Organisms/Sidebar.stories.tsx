@@ -43,7 +43,7 @@ import {
 } from 'lucide-react'
 
 const meta: Meta<typeof Sidebar> = {
-  title: 'Components/Sidebar',
+  title: 'Design System/Organisms/Sidebar',
   component: Sidebar,
   parameters: {
     layout: 'fullscreen',
@@ -62,7 +62,7 @@ type Story = StoryObj<typeof meta>
 const AppSidebar = () => (
   <Sidebar>
     <SidebarHeader>
-      <div className="flex items-center gap-2 px-2 py-1">
+      <div className="flex items-center gap-[var(--space-xs)] px-[var(--space-xs)] py-[var(--space-xs)]">
         <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-copper-orange text-white">
           <Target className="size-4" />
         </div>
@@ -178,15 +178,15 @@ const SidebarDemo = ({ defaultOpen = true, collapsible = "icon" as const }) => (
     <div className="flex h-screen w-full">
       <AppSidebar />
       <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
-          <SidebarTrigger className="-ml-1" />
+        <header className="flex h-16 shrink-0 items-center gap-[var(--space-xs)] border-b px-[var(--space-base)]">
+          <SidebarTrigger className="-ml-[var(--space-xs)]" />
           <div className="mx-2 h-4 w-px bg-border" />
-          <div className="flex items-center gap-2 text-sm">
+          <div className="flex items-center gap-[var(--space-xs)] text-sm">
             <span className="font-semibold">Treasure Valley Directory</span>
           </div>
         </header>
-        <div className="flex flex-1 flex-col gap-4 p-4">
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+        <div className="flex flex-1 flex-col gap-[var(--space-base)] p-[var(--space-base)]">
+          <div className="grid auto-rows-min gap-[var(--space-base)] md:grid-cols-3">
             <div className="aspect-video rounded-xl bg-muted/50" />
             <div className="aspect-video rounded-xl bg-muted/50" />
             <div className="aspect-video rounded-xl bg-muted/50" />
@@ -210,9 +210,9 @@ export const FloatingVariant: Story = {
   render: () => (
     <SidebarProvider defaultOpen={true}>
       <div className="flex h-screen w-full">
-        <Sidebar variant="floating" className="m-2">
+        <Sidebar variant="floating" className="m-[var(--space-xs)]">
           <SidebarHeader>
-            <div className="flex items-center gap-2 px-2 py-1">
+            <div className="flex items-center gap-[var(--space-xs)] px-[var(--space-xs)] py-[var(--space-xs)]">
               <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-brass-yellow text-gunmetal-black">
                 <Target className="size-4" />
               </div>
@@ -245,8 +245,8 @@ export const FloatingVariant: Story = {
           </SidebarContent>
         </Sidebar>
         <SidebarInset>
-          <div className="flex flex-1 flex-col gap-4 p-4">
-            <div className="grid auto-rows-min gap-4 md:grid-cols-2">
+          <div className="flex flex-1 flex-col gap-[var(--space-base)] p-[var(--space-base)]">
+            <div className="grid auto-rows-min gap-[var(--space-base)] md:grid-cols-2">
               <div className="aspect-video rounded-xl bg-muted/50" />
               <div className="aspect-video rounded-xl bg-muted/50" />
             </div>
@@ -263,7 +263,7 @@ export const InsetVariant: Story = {
       <div className="flex h-screen w-full">
         <Sidebar variant="inset">
           <SidebarHeader>
-            <div className="flex items-center gap-2 px-2 py-1">
+            <div className="flex items-center gap-[var(--space-xs)] px-[var(--space-xs)] py-[var(--space-xs)]">
               <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-copper-orange text-white">
                 <Shield className="size-4" />
               </div>
@@ -292,9 +292,9 @@ export const InsetVariant: Story = {
           </SidebarContent>
         </Sidebar>
         <SidebarInset>
-          <div className="flex flex-1 flex-col gap-4 p-4">
+          <div className="flex flex-1 flex-col gap-[var(--space-base)] p-[var(--space-base)]">
             <h2 className="text-2xl font-bold text-copper-orange">Inset Layout</h2>
-            <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+            <div className="grid auto-rows-min gap-[var(--space-base)] md:grid-cols-3">
               <div className="aspect-video rounded-xl bg-muted/50" />
               <div className="aspect-video rounded-xl bg-muted/50" />
               <div className="aspect-video rounded-xl bg-muted/50" />

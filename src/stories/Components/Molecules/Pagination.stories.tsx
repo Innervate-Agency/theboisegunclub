@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/pagination';
 
 const meta: Meta<typeof Pagination> = {
-  title: 'Navigation/Pagination',
+  title: 'Design System/Molecules/Pagination',
   component: Pagination,
   parameters: {
     layout: 'centered',

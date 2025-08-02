@@ -10,7 +10,7 @@ import {
 import { Home, Users, Calendar, Target, Settings } from 'lucide-react';
 
 const meta: Meta<typeof Breadcrumb> = {
-  title: 'Navigation/Breadcrumb',
+  title: 'Design System/Molecules/Breadcrumb',
   component: Breadcrumb,
   parameters: {
     layout: 'centered',
@@ -61,21 +61,21 @@ export const WithIcons: Story = {
     <Breadcrumb variant="premium">
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="/" className="flex items-center gap-2">
+          <BreadcrumbLink href="/" className="flex items-center gap-[var(--space-xs)]">
             <Home className="w-4 h-4" />
             Home
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href="/schedule" className="flex items-center gap-2">
+          <BreadcrumbLink href="/schedule" className="flex items-center gap-[var(--space-xs)]">
             <Calendar className="w-4 h-4" />
             Schedule
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage className="flex items-center gap-2">
+          <BreadcrumbPage className="flex items-center gap-[var(--space-xs)]">
             <Target className="w-4 h-4" />
             Competitions
           </BreadcrumbPage>
@@ -87,7 +87,7 @@ export const WithIcons: Story = {
 
 export const GunClubNavigation: Story = {
   render: () => (
-    <div className="space-y-4">
+    <div className="space-y-[var(--space-base)]">
       <Breadcrumb variant="gunclub">
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -129,9 +129,9 @@ export const GunClubNavigation: Story = {
 
 export const Variants: Story = {
   render: () => (
-    <div className="space-y-6">
+    <div className="space-y-[var(--space-md)]">
       <div>
-        <h3 className="text-sm font-medium text-blued-steel mb-2">Default</h3>
+        <h3 className="text-sm font-medium text-blued-steel mb-[var(--space-xs)]">Default</h3>
         <Breadcrumb variant="default">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -150,7 +150,7 @@ export const Variants: Story = {
       </div>
       
       <div>
-        <h3 className="text-sm font-medium text-blued-steel mb-2">Premium</h3>
+        <h3 className="text-sm font-medium text-blued-steel mb-[var(--space-xs)]">Premium</h3>
         <Breadcrumb variant="premium">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -169,7 +169,7 @@ export const Variants: Story = {
       </div>
       
       <div>
-        <h3 className="text-sm font-medium text-blued-steel mb-2">Minimal</h3>
+        <h3 className="text-sm font-medium text-blued-steel mb-[var(--space-xs)]">Minimal</h3>
         <Breadcrumb variant="minimal">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -188,7 +188,7 @@ export const Variants: Story = {
       </div>
       
       <div>
-        <h3 className="text-sm font-medium text-blued-steel mb-2">Gun Club</h3>
+        <h3 className="text-sm font-medium text-blued-steel mb-[var(--space-xs)]">Gun Club</h3>
         <Breadcrumb variant="gunclub">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -211,9 +211,9 @@ export const Variants: Story = {
 
 export const Sizes: Story = {
   render: () => (
-    <div className="space-y-6">
+    <div className="space-y-[var(--space-md)]">
       <div>
-        <h3 className="text-sm font-medium text-blued-steel mb-2">Small</h3>
+        <h3 className="text-sm font-medium text-blued-steel mb-[var(--space-xs)]">Small</h3>
         <Breadcrumb size="sm">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -232,7 +232,7 @@ export const Sizes: Story = {
       </div>
       
       <div>
-        <h3 className="text-sm font-medium text-blued-steel mb-2">Medium</h3>
+        <h3 className="text-sm font-medium text-blued-steel mb-[var(--space-xs)]">Medium</h3>
         <Breadcrumb size="md">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -251,7 +251,7 @@ export const Sizes: Story = {
       </div>
       
       <div>
-        <h3 className="text-sm font-medium text-blued-steel mb-2">Large</h3>
+        <h3 className="text-sm font-medium text-blued-steel mb-[var(--space-xs)]">Large</h3>
         <Breadcrumb size="lg">
           <BreadcrumbList>
             <BreadcrumbItem>

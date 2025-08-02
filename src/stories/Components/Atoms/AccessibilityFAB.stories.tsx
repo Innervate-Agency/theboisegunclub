@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import AccessibilityFAB from '@/components/ui/AccessibilityFAB';
 
 const meta: Meta<typeof AccessibilityFAB> = {
-  title: 'Accessibility & Effects/Accessibility FAB',
+  title: 'Design System/Atoms/Accessibility FAB',
   component: AccessibilityFAB,
   parameters: {
     layout: 'fullscreen',
@@ -22,12 +22,12 @@ type Story = StoryObj<typeof AccessibilityFAB>;
 export const Default: Story = {
   render: () => (
     <div className="relative h-96 w-full bg-muted">
-      <div className="p-8">
-        <h2 className="text-2xl font-bold mb-4">Treasure Valley Firearms Hub</h2>
-        <p className="text-muted-foreground mb-4">
+      <div className="p-[var(--space-lg)]">
+        <h2 className="text-2xl font-bold mb-[var(--space-base)]">Treasure Valley Firearms Hub</h2>
+        <p className="text-muted-foreground mb-[var(--space-base)]">
           Your comprehensive digital hub connecting the region's firearms community. Find businesses, events, and connect with fellow enthusiasts.
         </p>
-        <p className="text-muted-foreground mb-4">
+        <p className="text-muted-foreground mb-[var(--space-base)]">
           Our directory features 500+ local businesses including gun shops, ranges, instructors, and gunsmiths throughout the Treasure Valley.
         </p>
         <p className="text-muted-foreground">
@@ -44,9 +44,9 @@ export const Default: Story = {
 export const WithSampleContent: Story = {
   render: () => (
     <div className="relative h-screen w-full bg-card">
-      <div className="container mx-auto px-4 py-8">
-        <header className="mb-8">
-          <h1 className="text-4xl font-bold text-card-foreground mb-2">
+      <div className="container mx-auto px-[var(--space-base)] py-[var(--space-lg)]">
+        <header className="mb-[var(--space-lg)]">
+          <h1 className="text-4xl font-bold text-card-foreground mb-[var(--space-xs)]">
             The Boise Gun Club
           </h1>
           <p className="text-xl text-muted-foreground">
@@ -54,15 +54,15 @@ export const WithSampleContent: Story = {
           </p>
         </header>
         
-        <main className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <main className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-lg)]">
           <section>
-            <h2 className="text-2xl font-semibold text-card-foreground mb-4">
+            <h2 className="text-2xl font-semibold text-card-foreground mb-[var(--space-base)]">
               Find Training Programs
             </h2>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-muted-foreground mb-[var(--space-base)]">
               Connect with certified instructors throughout the region. Compare credentials, specialties, and reviews to find the perfect training for your needs.
             </p>
-            <ul className="list-disc list-inside text-muted-foreground space-y-2">
+            <ul className="list-disc list-inside text-muted-foreground space-y-[var(--space-xs)]">
               <li>NRA Certified Instructors</li>
               <li>Concealed Carry Classes</li>
               <li>Competition Training</li>
@@ -71,13 +71,13 @@ export const WithSampleContent: Story = {
           </section>
           
           <section>
-            <h2 className="text-2xl font-semibold text-card-foreground mb-4">
+            <h2 className="text-2xl font-semibold text-card-foreground mb-[var(--space-base)]">
               Facilities
             </h2>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-muted-foreground mb-[var(--space-base)]">
               State-of-the-art shooting facilities with modern equipment and safety features.
             </p>
-            <ul className="list-disc list-inside text-muted-foreground space-y-2">
+            <ul className="list-disc list-inside text-muted-foreground space-y-[var(--space-xs)]">
               <li>12 Indoor Shooting Lanes</li>
               <li>3 Trap Shooting Fields</li>
               <li>2 Skeet Shooting Fields</li>
@@ -86,7 +86,7 @@ export const WithSampleContent: Story = {
           </section>
         </main>
         
-        <footer className="mt-16 text-center text-muted-foreground">
+        <footer className="mt-[var(--space-2xl)] text-center text-muted-foreground">
           <p>Use the accessibility controls to adjust font size and contrast</p>
         </footer>
       </div>
@@ -100,17 +100,17 @@ export const WithSampleContent: Story = {
 export const DarkBackground: Story = {
   render: () => (
     <div className="relative h-96 w-full bg-gunmetal-black">
-      <div className="p-8">
-        <h2 className="text-2xl font-bold text-range-white mb-4">Competition Schedule</h2>
-        <p className="text-brass-yellow/80 mb-4">
+      <div className="p-[var(--space-lg)]">
+        <h2 className="text-2xl font-bold text-range-white mb-[var(--space-base)]">Competition Schedule</h2>
+        <p className="text-brass-yellow/80 mb-[var(--space-base)]">
           Join us for our weekly competitions and monthly championships. All skill levels welcome.
         </p>
-        <div className="space-y-4">
-          <div className="bg-blued-steel/20 p-4 rounded-lg">
+        <div className="space-y-[var(--space-base)]">
+          <div className="bg-blued-steel/20 p-[var(--space-base)] rounded-lg">
             <h3 className="text-lg font-semibold text-range-white">Weekly Trap Shoot</h3>
             <p className="text-brass-yellow/80">Every Saturday at 9:00 AM</p>
           </div>
-          <div className="bg-blued-steel/20 p-4 rounded-lg">
+          <div className="bg-blued-steel/20 p-[var(--space-base)] rounded-lg">
             <h3 className="text-lg font-semibold text-range-white">Monthly Championship</h3>
             <p className="text-brass-yellow/80">First Sunday of each month</p>
           </div>
@@ -126,11 +126,11 @@ export const DarkBackground: Story = {
 export const WithFormContent: Story = {
   render: () => (
     <div className="relative h-96 w-full bg-card">
-      <div className="p-8">
-        <h2 className="text-2xl font-bold text-card-foreground mb-4">
+      <div className="p-[var(--space-lg)]">
+        <h2 className="text-2xl font-bold text-card-foreground mb-[var(--space-base)]">
           Contact Us
         </h2>
-        <form className="space-y-4 max-w-md">
+        <form className="space-y-[var(--space-base)] max-w-md">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-card-foreground">
               Name
@@ -138,7 +138,7 @@ export const WithFormContent: Story = {
             <input
               type="text"
               id="name"
-              className="mt-1 block w-full px-3 py-2 border border-border rounded-md shadow-sm bg-card text-card-foreground"
+              className="mt-[var(--space-xs)] block w-full px-[var(--space-sm)] py-[var(--space-xs)] border border-border rounded-md shadow-sm bg-card text-card-foreground"
             />
           </div>
           <div>
@@ -148,7 +148,7 @@ export const WithFormContent: Story = {
             <input
               type="email"
               id="email"
-              className="mt-1 block w-full px-3 py-2 border border-border rounded-md shadow-sm bg-card text-card-foreground"
+              className="mt-[var(--space-xs)] block w-full px-[var(--space-sm)] py-[var(--space-xs)] border border-border rounded-md shadow-sm bg-card text-card-foreground"
             />
           </div>
           <div>
@@ -158,12 +158,12 @@ export const WithFormContent: Story = {
             <textarea
               id="message"
               rows={4}
-              className="mt-1 block w-full px-3 py-2 border border-border rounded-md shadow-sm bg-card text-card-foreground"
+              className="mt-[var(--space-xs)] block w-full px-[var(--space-sm)] py-[var(--space-xs)] border border-border rounded-md shadow-sm bg-card text-card-foreground"
             />
           </div>
           <button
             type="submit"
-            className="bg-copper-orange hover:bg-copper-orange/90 text-range-white font-medium py-2 px-4 rounded-md"
+            className="bg-copper-orange hover:bg-copper-orange/90 text-range-white font-medium py-[var(--space-xs)] px-[var(--space-base)] rounded-md"
           >
             Send Message
           </button>

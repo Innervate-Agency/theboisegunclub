@@ -6,7 +6,7 @@ import {
 import { Bold, Italic, Underline } from 'lucide-react';
 
 const meta: Meta<typeof ToggleGroup> = {
-  title: 'Specialized Controls/ToggleGroup',
+  title: 'Design System/Atoms/ToggleGroup',
   component: ToggleGroup,
   parameters: {
     layout: 'centered',

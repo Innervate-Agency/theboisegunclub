@@ -15,10 +15,10 @@ const componentVariants = cva(
         glass: "border-white/20 bg-card/10 backdrop-blur-sm text-card hover:bg-card/20 hover:border-white/30"
       },
       size: {
-        sm: "px-3 py-1.5 text-sm",
-        default: "px-4 py-2",
-        lg: "px-6 py-3 text-lg",
-        xl: "px-8 py-4 text-xl"
+        sm: "px-[var(--space-sm)] py-[var(--space-md)] text-sm",
+        default: "px-[var(--space-base)] py-[var(--space-xs)]",
+        lg: "px-[var(--space-md)] py-[var(--space-sm)] text-lg",
+        xl: "px-[var(--space-lg)] py-[var(--space-base)] text-xl"
       }
     },
     defaultVariants: {

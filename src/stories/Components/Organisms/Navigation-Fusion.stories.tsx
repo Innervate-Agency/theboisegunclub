@@ -3,7 +3,7 @@ import { NavigationFusion } from '@/components/ui/navigation-fusion';
 import { Home, Target, Users, Calendar, Trophy, Shield, MapPin, Phone, BookOpen, Settings } from 'lucide-react';
 
 const meta: Meta<typeof NavigationFusion> = {
-  title: 'Components/Molecules/Navigation Fusion',
+  title: 'Design System/Organisms/Navigation Fusion',
   component: NavigationFusion,
   parameters: {
     layout: 'centered',

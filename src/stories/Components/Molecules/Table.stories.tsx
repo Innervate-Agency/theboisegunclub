@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/table';
 
 const meta: Meta<typeof Table> = {
-  title: 'Data Display/Table',
+  title: 'Design System/Molecules/Table',
   component: Table,
   parameters: {
     layout: 'centered',

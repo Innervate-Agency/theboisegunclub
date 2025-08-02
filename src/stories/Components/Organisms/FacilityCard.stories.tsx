@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import FacilityCard from '@/components/ui/FacilityCard';
 
 const meta: Meta<typeof FacilityCard> = {
-  title: 'Components/Molecules/FacilityCard',
+  title: 'Design System/Organisms/FacilityCard',
   component: FacilityCard,
   parameters: {
     layout: 'centered',

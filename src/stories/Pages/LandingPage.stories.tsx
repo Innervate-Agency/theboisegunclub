@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Target, Users, Trophy, Calendar, ArrowRight } from 'lucide-react';
 
 const meta: Meta = {
-  title: 'Pages/Landing Page',
+  title: 'Design System/Pages/LandingPage',
   parameters: {
     layout: 'fullscreen',
     docs: {
@@ -25,11 +25,11 @@ export const Complete: Story = {
   render: () => (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-mesh-premium px-6 py-20 md:py-32">
+      <section className="relative overflow-hidden bg-gradient-mesh-premium px-[var(--space-md)] py-[var(--space-3xl)] md:py-[var(--space-5xl)]">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-            <div className="space-y-8">
-              <div className="space-y-4">
+          <div className="grid gap-[var(--space-xl)] lg:grid-cols-2 lg:gap-[var(--space-3xl)]">
+            <div className="space-y-[var(--space-lg)]">
+              <div className="space-y-[var(--space-base)]">
                 <Badge variant="secondary" className="bg-fire-orange text-white animate-fire-glow">
                   🔥 Enhanced Fire Gradients
                 </Badge>
@@ -41,9 +41,9 @@ export const Complete: Story = {
                 </p>
               </div>
               
-              <div className="flex flex-col gap-4 sm:flex-row">
+              <div className="flex flex-col gap-[var(--space-base)] sm:flex-row">
                 <Button size="lg" variant="premium" className="animate-fire-unfurl">
-                  Join Today <ArrowRight className="ml-2 h-5 w-5" />
+                  Join Today <ArrowRight className="ml-[var(--space-xs)] h-5 w-5" />
                 </Button>
                 <Button size="lg" variant="elite">
                   View Range Schedule
@@ -51,7 +51,7 @@ export const Complete: Story = {
               </div>
             </div>
             
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-[var(--space-md)] sm:grid-cols-2">
               <StatCard
                 value="1,247"
                 label="Active Members"
@@ -88,16 +88,16 @@ export const Complete: Story = {
       </section>
 
       {/* Fire Gradient Showcase Section */}
-      <section className="px-6 py-20">
+      <section className="px-[var(--space-md)] py-[var(--space-3xl)]">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center space-y-4 mb-12">
+          <div className="text-center space-y-[var(--space-base)] mb-[var(--space-xl)]">
             <h2 className="font-rajdhani text-4xl font-bold">Enhanced Fire Effects</h2>
             <p className="text-xl text-muted-foreground">
               Watch the gradients unfurl from the left on hover - like proper fire effects
             </p>
           </div>
           
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-[var(--space-md)] md:grid-cols-2 lg:grid-cols-4">
             <Card className="relative overflow-hidden cursor-pointer animate-fire-unfurl">
               <CardHeader>
                 <CardTitle className="relative z-10">Fire Orange</CardTitle>
@@ -146,57 +146,57 @@ export const Complete: Story = {
       </section>
 
       {/* Features Grid */}
-      <section className="bg-muted/50 px-6 py-20">
+      <section className="bg-muted/50 px-[var(--space-md)] py-[var(--space-3xl)]">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center space-y-4 mb-12">
+          <div className="text-center space-y-[var(--space-base)] mb-[var(--space-xl)]">
             <h2 className="font-rajdhani text-4xl font-bold">Design System Features</h2>
             <p className="text-xl text-muted-foreground">
               Comprehensive 77-story Storybook with systematic organization
             </p>
           </div>
           
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-[var(--space-lg)] md:grid-cols-2 lg:grid-cols-3">
             <Card>
               <CardHeader>
-                <Badge className="w-fit mb-2">Foundation</Badge>
+                <Badge className="w-fit mb-[var(--space-xs)]">Foundation</Badge>
                 <CardTitle>Design Tokens</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground mb-[var(--space-base)]">
                   26 carefully crafted colors from Idaho firearms heritage, fire gradients, typography, and spacing system.
                 </p>
                 <Button variant="ghost" size="sm">
-                  View Tokens <ArrowRight className="ml-2 h-4 w-4" />
+                  View Tokens <ArrowRight className="ml-[var(--space-xs)] h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
             
             <Card>
               <CardHeader>
-                <Badge className="w-fit mb-2">Components</Badge>
+                <Badge className="w-fit mb-[var(--space-xs)]">Components</Badge>
                 <CardTitle>Atomic Design</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground mb-[var(--space-base)]">
                   Organized hierarchy: Atoms → Molecules → Organisms with proper CVA variants and theme integration.
                 </p>
                 <Button variant="ghost" size="sm">
-                  View Components <ArrowRight className="ml-2 h-4 w-4" />
+                  View Components <ArrowRight className="ml-[var(--space-xs)] h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
             
             <Card>
               <CardHeader>
-                <Badge className="w-fit mb-2">Patterns</Badge>
+                <Badge className="w-fit mb-[var(--space-xs)]">Patterns</Badge>
                 <CardTitle>Page Building</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground mb-[var(--space-base)]">
                   Reusable patterns and complete page compositions for rapid development and consistent experiences.
                 </p>
                 <Button variant="ghost" size="sm">
-                  View Patterns <ArrowRight className="ml-2 h-4 w-4" />
+                  View Patterns <ArrowRight className="ml-[var(--space-xs)] h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
@@ -205,17 +205,17 @@ export const Complete: Story = {
       </section>
 
       {/* Call to Action */}
-      <section className="px-6 py-20">
+      <section className="px-[var(--space-md)] py-[var(--space-3xl)]">
         <div className="container mx-auto max-w-4xl text-center">
-          <div className="space-y-8">
-            <div className="space-y-4">
+          <div className="space-y-[var(--space-lg)]">
+            <div className="space-y-[var(--space-base)]">
               <h2 className="font-rajdhani text-4xl font-bold">Ready to Experience Premier Shooting?</h2>
               <p className="text-xl text-muted-foreground">
                 Join our community of shooting enthusiasts and experience our enhanced design system in action.
               </p>
             </div>
             
-            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <div className="flex flex-col gap-[var(--space-base)] sm:flex-row sm:justify-center">
               <Button size="xl" variant="elite" className="animate-fire-glow">
                 Become a Member
               </Button>
@@ -224,7 +224,7 @@ export const Complete: Story = {
               </Button>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-[var(--space-md)] pt-[var(--space-lg)]">
               <div className="text-center">
                 <div className="text-3xl font-rajdhani font-bold text-brass-yellow">1,247</div>
                 <div className="text-sm text-muted-foreground">Members</div>

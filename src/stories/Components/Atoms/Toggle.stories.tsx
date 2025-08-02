@@ -3,7 +3,7 @@ import { Toggle } from '@/components/ui/toggle';
 import { Bold } from 'lucide-react';
 
 const meta: Meta<typeof Toggle> = {
-  title: 'Specialized Controls/Toggle',
+  title: 'Design System/Atoms/Toggle',
   component: Toggle,
   parameters: {
     layout: 'centered',
@@ -25,7 +25,7 @@ export const Default: Story = {
 export const WithText: Story = {
   render: (args) => (
     <Toggle aria-label="Toggle bold" {...args}>
-      <Bold className="h-4 w-4 mr-2" />
+      <Bold className="h-4 w-4 mr-[var(--space-xs)]" />
       Bold
     </Toggle>
   ),

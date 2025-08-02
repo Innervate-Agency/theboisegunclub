@@ -67,7 +67,7 @@ const sampleArticles = [
 ];
 
 const meta: Meta<typeof BlogCard> = {
-  title: 'Content & Media/Blog Article',
+  title: 'Design System/Pages/BlogArticle',
   component: BlogCard,
   parameters: {
     layout: 'centered',

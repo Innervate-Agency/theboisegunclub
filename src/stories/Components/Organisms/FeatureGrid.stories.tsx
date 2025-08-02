@@ -3,7 +3,7 @@ import { FeatureGrid } from '@/components/ui/feature-grid';
 import { Target, Shield, Users } from 'lucide-react';
 
 const meta: Meta<typeof FeatureGrid> = {
-  title: 'Components/Organisms/FeatureGrid',
+  title: 'Design System/Organisms/FeatureGrid',
   component: FeatureGrid,
   parameters: {
     layout: 'fullscreen',

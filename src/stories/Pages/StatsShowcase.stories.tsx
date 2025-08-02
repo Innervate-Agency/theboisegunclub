@@ -3,7 +3,7 @@ import { StatsShowcase } from '@/components/ui/stats-showcase';
 import { Users, Target, Trophy, Calendar } from 'lucide-react';
 
 const meta: Meta<typeof StatsShowcase> = {
-  title: 'Data Display/StatsShowcase',
+  title: 'Design System/Pages/StatsShowcase',
   component: StatsShowcase,
   parameters: {
     layout: 'fullscreen',

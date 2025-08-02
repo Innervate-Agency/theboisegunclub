@@ -3,7 +3,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
 
 const meta: Meta<typeof ScrollArea> = {
-  title: 'Layout & Containers/ScrollArea',
+  title: 'Design System/Atoms/ScrollArea',
   component: ScrollArea,
   parameters: {
     layout: 'centered',
@@ -21,8 +21,8 @@ const tags = Array.from({ length: 50 }).map(
 export const Default: Story = {
   render: (args) => (
     <ScrollArea className="h-72 w-48 rounded-md border" {...args}>
-      <div className="p-4">
-        <h4 className="mb-4 text-sm font-medium leading-none">Tags</h4>
+      <div className="p-[var(--space-base)]">
+        <h4 className="mb-[var(--space-base)] text-sm font-medium leading-none">Tags</h4>
         {tags.map((tag) => (
           <>
             <div key={tag} className="text-sm">

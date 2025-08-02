@@ -3,7 +3,7 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { Button } from '@/components/ui/button';
 
 const meta: Meta<typeof AlertDialog> = {
-  title: 'Overlays & Modals/AlertDialog',
+  title: 'Design System/Molecules/AlertDialog',
   component: AlertDialog,
   parameters: {
     layout: 'centered',

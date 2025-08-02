@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { DirectoryCard } from '@/components/ui/DirectoryCard';
 
 const meta: Meta<typeof DirectoryCard> = {
-  title: 'Components/Molecules/DirectoryCard',
+  title: 'Design System/Molecules/DirectoryCard',
   component: DirectoryCard,
   parameters: {
     layout: 'padded',
@@ -34,7 +34,7 @@ type Story = StoryObj<typeof meta>;
 
 export const AllVariants: Story = {
   render: () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-lg)]">
       <DirectoryCard
         name="Boise Gun Club"
         type="Trap & Skeet Range"
@@ -76,7 +76,7 @@ export const AllVariants: Story = {
 
 export const Sizes: Story = {
   render: () => (
-    <div className="flex flex-col gap-6 max-w-md">
+    <div className="flex flex-col gap-[var(--space-md)] max-w-md">
       <DirectoryCard
         name="Caldwell Sportsmen"
         type="Outdoor Range"

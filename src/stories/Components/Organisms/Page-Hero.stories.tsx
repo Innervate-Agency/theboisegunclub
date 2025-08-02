@@ -3,7 +3,7 @@ import { PageHero } from '@/components/ui/page-hero';
 import { Target, Trophy, Users, Calendar, Shield, Star, MapPin, Clock } from 'lucide-react';
 
 const meta: Meta<typeof PageHero> = {
-  title: 'Heroes & Headers/Page Hero',
+  title: 'Design System/Organisms/Page Hero',
   component: PageHero,
   parameters: {
     layout: 'fullscreen',

@@ -3,7 +3,7 @@ import { Calendar } from '@/components/ui/calendar';
 import React from 'react';
 
 const meta: Meta<typeof Calendar> = {
-  title: 'Specialized Controls/Calendar',
+  title: 'Design System/Organisms/Calendar',
   component: Calendar,
   parameters: {
     layout: 'centered',

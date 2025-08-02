@@ -17,7 +17,7 @@ export interface NewThemeToggleProps extends React.ComponentProps<"div"> {
   showLabel?: boolean
 }
 
-export default function NewThemeToggle({ 
+export function NewThemeToggle({
   className, 
   variant = 'default',
   showLabel = false,
@@ -63,7 +63,7 @@ export default function NewThemeToggle({
   return (
     <div 
       className={cn(
-        "flex items-center gap-2",
+        "flex items-center gap-[var(--space-xs)]",
         variant === 'floating' && "fixed bottom-6 left-6 z-50",
         className
       )} 
@@ -81,7 +81,7 @@ export default function NewThemeToggle({
       >
         <CurrentIcon className="icon-sm group-hover:scale-110 transition-transform duration-200" />
         {showLabel && (
-          <span className="ml-2 font-rajdhani font-semibold">
+          <span className="ml-[var(--space-xs)] font-rajdhani font-semibold">
             {currentThemeData.label}
           </span>
         )}
@@ -89,7 +89,7 @@ export default function NewThemeToggle({
       
       {/* Theme indicator dots */}
       {variant === 'floating' && (
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-[var(--space-xs)]">
           {themes.map((themeData, index) => (
             <div
               key={themeData.name}
@@ -97,7 +97,7 @@ export default function NewThemeToggle({
                 "w-1.5 h-1.5 rounded-full transition-all duration-200",
                 index === currentThemeIndex 
                   ? "bg-brass-yellow" 
-                  : "bg-gray-300"
+                  : "bg-muted-foreground/30"
               )}
             />
           ))}

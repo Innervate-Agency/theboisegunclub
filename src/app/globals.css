@@ -52,7 +52,7 @@
   --color-ayu-blue: #009FED;          /* Bright blue for accents */
   --color-ayu-green: #75B700;        /* Fresh green for highlights */
   --color-ayu-teal: #00C496;        /* Fresh teal for highlights */
-  --color-ayu-colbalt: #0C4367;       /* Deep cobalt for primary actions */
+  --color-ayu-cobalt: #0C4367;       /* Deep cobalt for primary actions */
   --color-ayu-purple: #6E5083;      /* Soft purple for subtle details */
   --color-ayu-yellow: #FFA600;      /* Warm yellow for highlights */
   --color-ayu-red: #FF3B49;         /* Vibrant red for alerts */
@@ -98,7 +98,7 @@
   --color-ayu-blue: #009FED;
   --color-ayu-green: #75B700;
   --color-ayu-teal: #00C496;
-  --color-ayu-colbalt: #0C4367;
+  --color-ayu-cobalt: #0C4367;
   --color-ayu-purple: #6E5083;
   --color-ayu-yellow: #FFA600;
   --color-ayu-red: #FF3B49;
@@ -256,7 +256,7 @@
   /* Fire gradients that "unfurl" from left with proper orange→yellow transitions */
   --gradient-fire-orange: linear-gradient(90deg, var(--color-copper-orange) 0%, var(--color-brass-yellow) 100%);
   --gradient-fire-blue: linear-gradient(90deg, var(--color-ayu-blue) 0%, var(--color-ayu-green) 100%);
-  --gradient-fire-purple: linear-gradient(90deg, var(--color-ayu-purple) 0%, var(--color-ayu-colbalt) 100%);
+  --gradient-fire-purple: linear-gradient(90deg, var(--color-ayu-purple) 0%, var(--color-ayu-cobalt) 100%);
   --gradient-fire-green: linear-gradient(90deg, var(--color-ayu-green) 0%, var(--color-bore-sight-green) 100%);
   
   /* Animated fire gradients with proper left-origin scaling */
@@ -833,16 +833,25 @@
   .density-compact {
     --local-padding: var(--space-sm);
     --local-gap: var(--space-xs);
+    --card-padding: var(--space-base);           /* 16px - compact cards */
+    --button-height-sm: 1.75rem;                /* 28px - tighter buttons */
+    --button-height-base: 2.25rem;              /* 36px - tighter buttons */
   }
   
   .density-default {
     --local-padding: var(--space-md);
     --local-gap: var(--space-sm);
+    --card-padding: var(--space-md);            /* 24px - default cards */
+    --button-height-sm: 2rem;                   /* 32px - standard buttons */
+    --button-height-base: 2.5rem;               /* 40px - standard buttons */
   }
   
   .density-spacious {
     --local-padding: var(--space-lg);
     --local-gap: var(--space-md);
+    --card-padding: var(--space-lg);            /* 32px - spacious cards */
+    --button-height-sm: 2.25rem;                /* 36px - larger buttons */
+    --button-height-base: 2.75rem;              /* 44px - larger buttons */
   }
 
   /* ================== COMPREHENSIVE SHADOW UTILITIES ================== */
@@ -907,20 +916,7 @@
    * 4. BRAND COHESION: Only use TBGC palette colors with consistent opacities
    */
 
-  /* Hero Section Gradients - For major sections */
-  .bg-gradient-hero-warm { background: var(--gradient-hero-warm); }
-  .bg-gradient-hero-cool { background: var(--gradient-hero-cool); }
-  .bg-gradient-hero-premium { background: var(--gradient-hero-premium); }
-  
-  /* Ultra-Subtle Card Gradients - Very restrained for card backgrounds */
-  .bg-gradient-card-warm { background: var(--gradient-card-warm); }
-  .bg-gradient-card-cool { background: var(--gradient-card-cool); }
-  .bg-gradient-card-neutral { background: var(--gradient-card-neutral); }
-  
-  /* Brand Accent Gradients - For special UI elements only */
-  .bg-gradient-brand-warm { background: var(--gradient-brand-warm); }
-  .bg-gradient-brand-cool { background: var(--gradient-brand-cool); }
-  .bg-gradient-brand-mixed { background: var(--gradient-brand-mixed); }
+  /* NOTE: Gradient utilities are defined above in the first occurrence (lines 883-885) */
   
   /* Premium Mesh Gradients - For hero sections and landing areas */
   .bg-gradient-mesh-premium { background: var(--gradient-mesh-premium); }
@@ -1030,7 +1026,11 @@
   /* ================== ENHANCED MICA VARIANTS ================== */
   .mica-premium {
     position: relative;
-    background: var(--gradient-mesh-warm);
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(242, 203, 5, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(242, 135, 5, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(242, 203, 5, 0.06) 0%, transparent 50%),
+      var(--gradient-mesh-warm);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     backdrop-filter: blur(16px) saturate(180%);
   }
@@ -1603,25 +1603,7 @@
   }
 
   /* ================== COMPONENT DENSITY UTILITIES ================== */
-  /* Stripe-style component density classes for consistent spacing */
-  
-  .density-compact {
-    --card-padding: var(--space-base);           /* 16px - compact cards */
-    --button-height-sm: 1.75rem;                /* 28px - tighter buttons */
-    --button-height-base: 2.25rem;              /* 36px - tighter buttons */
-  }
-  
-  .density-default {
-    --card-padding: var(--space-md);            /* 24px - default cards */
-    --button-height-sm: 2rem;                   /* 32px - standard buttons */
-    --button-height-base: 2.5rem;               /* 40px - standard buttons */
-  }
-  
-  .density-spacious {
-    --card-padding: var(--space-lg);            /* 32px - spacious cards */
-    --button-height-sm: 2.25rem;                /* 36px - larger buttons */
-    --button-height-base: 2.75rem;              /* 44px - larger buttons */
-  }
+  /* NOTE: Density classes are defined above in the Component Density Variants section */
 
   /* ================== ACCESSIBILITY UTILITIES ================== */
   
@@ -1683,52 +1665,11 @@
   }
 
   /* ================== WINDOWS 11 MICA IMPLEMENTATION ================== */
-  .mica-premium {
-    position: relative;
-    background: 
-      radial-gradient(circle at 20% 50%, rgba(242, 203, 5, 0.12) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(242, 135, 5, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 40% 80%, rgba(242, 203, 5, 0.06) 0%, transparent 50%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    backdrop-filter: blur(16px) saturate(180%);
-  }
-
-  .mica-premium::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(242, 203, 5, 0.1), rgba(242, 135, 5, 0.05));
-    border-radius: inherit;
-    z-index: -1;
-  }
-
-  .mica-elite {
-    position: relative;
-    background: 
-      radial-gradient(circle at 25% 25%, rgba(242, 203, 5, 0.18) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(242, 135, 5, 0.14) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, rgba(242, 203, 5, 0.10) 0%, transparent 50%);
-    -webkit-backdrop-filter: blur(24px) saturate(200%);
-    backdrop-filter: blur(24px) saturate(200%);
-  }
-
-  .mica-elite::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(242, 203, 5, 0.15), rgba(242, 135, 5, 0.08));
-    border-radius: inherit;
-    z-index: -1;
-  }
+  /* NOTE: Mica implementations are defined above in the comprehensive MICA VARIANTS section */
 
   /* ================== PROFESSIONAL SHADOW UTILITIES ================== */
-  .shadow-premium {
-    box-shadow: 0 4px 8px -2px rgba(242, 203, 5, 0.25), 0 2px 4px -1px rgba(242, 135, 5, 0.15), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  }
-
-  .shadow-elite {
-    box-shadow: 0 8px 16px -4px rgba(242, 203, 5, 0.3), 0 4px 8px -2px rgba(242, 135, 5, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
-  }
+  /* NOTE: Shadow utilities use CSS variables defined above and should not override them with hardcoded values */
+  /* .shadow-premium and .shadow-elite are already defined using var(--shadow-premium) and var(--shadow-elite) */
 
   /* ================== CLICKUP-INSPIRED VIBRANT EFFECTS ================== */
   .hover\:shadow-clickup:hover {
@@ -1785,84 +1726,17 @@
     transform: translateY(-1px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
-
-  /* ================== SHADOW HIERARCHY SYSTEM DOCUMENTATION ================== */
-  /*
-   * STRIPE-INSPIRED SHADOW HIERARCHY RULES
-   * ======================================
-   * 
-   * This system follows Stripe's sophisticated approach to shadows, ensuring
-   * clean visual hierarchy without visual noise.
-   * 
-   * CORE PRINCIPLES:
-   * 
-   * 1. CONTAINERS ONLY
-   *    - Only base containers get shadows: .shadow-sm, .shadow-md, .shadow-lg
-   *    - Examples: Cards, modals, dropdowns, tooltips, form containers
-   * 
-   * 2. FLAT NESTED ELEMENTS
-   *    - All elements INSIDE containers are shadow-free: .shadow-flat or .shadow-none
-   *    - Examples: Buttons inside cards, inputs inside forms, icons inside containers
-   * 
-   * 3. CONTEXT MATTERS
-   *    - Standalone buttons: Can have shadows (.shadow-sm + hover effects)
-   *    - Nested buttons: Must be flat (.shadow-flat)
-   *    - Navigation items: Flat (.shadow-flat)
-   *    - Form inputs: Always flat (.shadow-flat)
-   * 
-   * 4. SELECTIVE HOVER ANIMATIONS
-   *    - Not everything needs hover shadow animations
-   *    - Use restraint - only primary actions should "lift"
-   *    - Secondary actions should use color/background changes only
-   * 
-   * 5. GLASS/MICA EFFECTS
-   *    - Use backdrop-blur + subtle shadows only
-   *    - Never combine mica with heavy shadows
-   *    - Glass variants (.shadow-glass) for special cases only
-   * 
-   * COMPONENT GUIDELINES:
-   * ====================
-   * 
-   * Cards & Containers:
-   *   ✅ .shadow-sm (default cards)
-   *   ✅ .shadow-md (important cards)
-   *   ✅ .shadow-lg (modals, hero cards)
-   * 
-   * Buttons:
-   *   ✅ Standalone: .shadow-sm + hover effects
-   *   ✅ Inside cards: .shadow-flat (no hover shadow)
-   *   ✅ Navigation: .shadow-flat
-   * 
-   * Inputs & Forms:
-   *   ✅ Always: .shadow-flat
-   *   ✅ Focus: border + ring effects only
-   * 
-   * Icons & Badges:
-   *   ✅ Inside containers: .shadow-flat
-   *   ✅ Floating/standalone: .shadow-xs maximum
-   * 
-   * BEFORE/AFTER EXAMPLES:
-   * ======================
-   * 
-   * ❌ WRONG (Visual Noise):
-   *   <Card className="shadow-md">
-   *     <Input className="shadow-sm" />     <!-- Competing shadows -->
-   *     <Button className="shadow-md" />    <!-- Too many shadows -->
-   *   </Card>
-   * 
-   * ✅ CORRECT (Clean Hierarchy):
-   *   <Card className="shadow-md">
-   *     <Input className="shadow-flat" />   <!-- Flat inside container -->
-   *     <Button className="shadow-flat" />  <!-- Flat inside container -->
-   *   </Card>
-   * 
-   * USE THESE UTILITIES:
-   * ===================
-   * .shadow-flat     - For elements inside containers
-   * .shadow-none     - Same as flat, explicit removal
-   * .shadow-sm       - For base containers, standalone buttons
-   * .shadow-md       - For important containers, cards
-   * .shadow-lg       - For modals, major containers
-   * .shadow-glass    - For mica/glass effects only
-   */
+  .btn-hover-lift:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(242, 203, 5, 0.3);
+  }
+  .btn-hover-lift:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  .btn-hover-lift:disabled:hover {
+    transform: none;
+  }
 }
+  

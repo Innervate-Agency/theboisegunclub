@@ -33,7 +33,7 @@ export interface LoadingSpinnerProps
   showText?: boolean
 }
 
-export default function LoadingSpinner({
+export function LoadingSpinner({
   className,
   size,
   variant,
@@ -44,7 +44,7 @@ export default function LoadingSpinner({
   const shouldShowText = showText && text && text.trim() !== ""
   
   return (
-    <div className={cn("flex flex-col items-center gap-3", className)} {...props}>
+    <div className={cn("flex flex-col items-center gap-[var(--space-sm)]", className)} {...props}>
       {/* Clay Target Spinner */}
       <div className="relative">
         {/* Outer ring - represents clay target */}

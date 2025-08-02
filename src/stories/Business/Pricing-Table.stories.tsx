@@ -95,7 +95,7 @@ const samplePlans = [
 ];
 
 const meta: Meta<typeof PricingCard> = {
-  title: 'Content & Media/Pricing Table',
+  title: 'Design System/Organisms/PricingTable',
   component: PricingCard,
   parameters: {
     layout: 'centered',

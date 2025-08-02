@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 
 const meta: Meta<typeof ThemeProvider> = {
-  title: 'Components/ThemeProvider',
+  title: 'Design System/Foundation/ThemeProvider',
   component: ThemeProvider,
   parameters: {
     layout: 'fullscreen',
@@ -22,16 +22,16 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 const ThemeDemo = () => (
-  <div className="min-h-screen bg-background text-foreground p-8">
-    <div className="max-w-4xl mx-auto space-y-8">
-      <div className="text-center space-y-4">
+  <div className="min-h-screen bg-background text-foreground p-[var(--space-lg)]">
+    <div className="max-w-4xl mx-auto space-y-[var(--space-lg)]">
+      <div className="text-center space-y-[var(--space-base)]">
         <h1 className="text-4xl font-bold text-copper-orange">Theme System Demo</h1>
         <p className="text-muted-foreground">
           This demonstrates how the ThemeProvider enables seamless dark/light mode switching
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
         <Card>
           <CardHeader>
             <CardTitle className="text-brass-yellow">Light Theme Features</CardTitle>
@@ -39,8 +39,8 @@ const ThemeDemo = () => (
               Range white backgrounds with copper orange accents
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex gap-2">
+          <CardContent className="space-y-[var(--space-base)]">
+            <div className="flex gap-[var(--space-xs)]">
               <Badge variant="default">Primary</Badge>
               <Badge variant="secondary">Secondary</Badge>
             </div>
@@ -55,8 +55,8 @@ const ThemeDemo = () => (
               Night sight backgrounds with brass yellow accents
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex gap-2">
+          <CardContent className="space-y-[var(--space-base)]">
+            <div className="flex gap-[var(--space-xs)]">
               <Badge variant="outline">Outlined</Badge>
               <Badge className="bg-clubhouse-lawn-green">Success</Badge>
             </div>
@@ -67,22 +67,22 @@ const ThemeDemo = () => (
         </Card>
       </div>
 
-      <div className="bg-card border border-border rounded-lg p-6">
-        <h3 className="text-xl font-semibold mb-4">Theme-Aware Components</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-          <div className="space-y-2">
+      <div className="bg-card border border-border rounded-lg p-[var(--space-md)]">
+        <h3 className="text-xl font-semibold mb-[var(--space-base)]">Theme-Aware Components</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-[var(--space-base)] text-sm">
+          <div className="space-y-[var(--space-xs)]">
             <div className="w-full h-8 bg-background border border-border rounded"></div>
             <p className="text-muted-foreground">bg-background</p>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-[var(--space-xs)]">
             <div className="w-full h-8 bg-card border border-border rounded"></div>
             <p className="text-muted-foreground">bg-card</p>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-[var(--space-xs)]">
             <div className="w-full h-8 bg-muted border border-border rounded"></div>
             <p className="text-muted-foreground">bg-muted</p>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-[var(--space-xs)]">
             <div className="w-full h-8 bg-copper-orange/20 border border-border rounded"></div>
             <p className="text-muted-foreground">copper-orange/20</p>
           </div>

@@ -45,11 +45,11 @@ const enhancedButtonVariants = cva(
       },
       size: {
         // Proper sizing system using design tokens
-        xs: "h-6 px-2 py-1 text-xs gap-1",           // Micro buttons
-        sm: "h-8 px-3 py-1.5 text-xs gap-1.5",      // Inside cards/forms (Stripe pattern)
-        default: "h-10 px-4 py-2.5 text-sm gap-2",  // General usage
-        lg: "h-12 px-6 py-3 text-base gap-2",       // Hero/primary actions
-        xl: "h-14 px-8 py-4 text-lg gap-2.5",       // Call-to-action buttons
+        xs: "h-6 px-[var(--space-xs)] py-[var(--space-xs)] text-xs gap-[var(--space-xs)]",           // Micro buttons
+        sm: "h-8 px-[var(--space-sm)] py-[var(--space-md)] text-xs gap-[var(--space-md)]",      // Inside cards/forms (Stripe pattern)
+        default: "h-10 px-[var(--space-base)] py-[var(--space-xs)].5 text-sm gap-[var(--space-xs)]",  // General usage
+        lg: "h-12 px-[var(--space-md)] py-[var(--space-sm)] text-base gap-[var(--space-xs)]",       // Hero/primary actions
+        xl: "h-14 px-[var(--space-lg)] py-[var(--space-base)] text-lg gap-[var(--space-xs)].5",       // Call-to-action buttons
         icon: "h-10 w-10 p-0",                      // Square icon buttons
       },
       radius: {

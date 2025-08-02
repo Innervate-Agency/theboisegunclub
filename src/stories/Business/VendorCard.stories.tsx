@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs'
 import { VendorCard } from '../../components/ui/VendorCard'
 
 const meta: Meta<typeof VendorCard> = {
-  title: 'Business/VendorCard',
+  title: 'Design System/Molecules/VendorCard',
   component: VendorCard,
   parameters: {
     layout: 'padded',
@@ -143,8 +143,8 @@ export const GoldTier: Story = {
 // Showcase all tiers together
 export const AllTiers: Story = {
   render: () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-8">
-      <div className="space-y-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-lg)] p-[var(--space-lg)]">
+      <div className="space-y-[var(--space-base)]">
         <h3 className="font-rajdhani font-bold text-lg text-center">FREE TIER</h3>
         <VendorCard
           {...sampleBusinesses.gunShop}
@@ -154,7 +154,7 @@ export const AllTiers: Story = {
         />
       </div>
       
-      <div className="space-y-4">
+      <div className="space-y-[var(--space-base)]">
         <h3 className="font-rajdhani font-bold text-lg text-center text-copper-orange">COPPER - $49/mo</h3>
         <VendorCard
           {...sampleBusinesses.range}
@@ -163,7 +163,7 @@ export const AllTiers: Story = {
         />
       </div>
       
-      <div className="space-y-4"> 
+      <div className="space-y-[var(--space-base)]"> 
         <h3 className="font-rajdhani font-bold text-lg text-center text-stainless-steel">SILVER - $99/mo</h3>
         <VendorCard
           {...sampleBusinesses.gunsmith}
@@ -173,7 +173,7 @@ export const AllTiers: Story = {
         />
       </div>
       
-      <div className="space-y-4">
+      <div className="space-y-[var(--space-base)]">
         <h3 className="font-rajdhani font-bold text-lg text-center text-brass-yellow">GOLD - $199/mo</h3>
         <VendorCard
           {...sampleBusinesses.gunShop}
@@ -236,16 +236,16 @@ export const TrainingAcademy: Story = {
 
 export const ResponsiveGrid: Story = {
   render: () => (
-    <div className="space-y-8">
+    <div className="space-y-[var(--space-lg)]">
       {/* Mobile: Single column */}
-      <div className="md:hidden space-y-4">
+      <div className="md:hidden space-y-[var(--space-base)]">
         <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true} featured={true} monthlyLeads={42} />
         <VendorCard {...sampleBusinesses.range} tier="silver" isVerified={true} />
         <VendorCard {...sampleBusinesses.gunsmith} tier="copper" isVerified={true} />
       </div>
       
       {/* Tablet: 2 columns */}
-      <div className="hidden md:grid lg:hidden grid-cols-2 gap-8">
+      <div className="hidden md:grid lg:hidden grid-cols-2 gap-[var(--space-lg)]">
         <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true} featured={true} monthlyLeads={42} />
         <VendorCard {...sampleBusinesses.range} tier="silver" isVerified={true} />
         <VendorCard {...sampleBusinesses.gunsmith} tier="copper" isVerified={true} />
@@ -253,7 +253,7 @@ export const ResponsiveGrid: Story = {
       </div>
       
       {/* Desktop: 3 columns */} 
-      <div className="hidden lg:grid grid-cols-3 gap-8">
+      <div className="hidden lg:grid grid-cols-3 gap-[var(--space-lg)]">
         <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true} featured={true} monthlyLeads={42} />
         <VendorCard {...sampleBusinesses.range} tier="silver" isVerified={true} featured={true} />
         <VendorCard {...sampleBusinesses.gunsmith} tier="copper" isVerified={true} />

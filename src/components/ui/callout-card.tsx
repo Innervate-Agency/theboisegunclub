@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const calloutCardVariants = cva(
-  "relative rounded-lg p-6 transition-all duration-300 ease-out",
+  "relative rounded-lg p-[var(--space-md)] transition-all duration-300 ease-out",
   {
     variants: {
       variant: {
@@ -42,8 +42,8 @@ export function CalloutCard({
 }: CalloutCardProps) {
   return (
     <div className={cn(calloutCardVariants({ variant }), className)} {...props}>
-      <div className="relative space-y-3">
-        <div className="space-y-2">
+      <div className="relative space-y-[var(--space-sm)]">
+        <div className="space-y-[var(--space-xs)]">
           <div>
             <h3 className="text-lg font-rajdhani font-bold text-foreground leading-tight">
               {title}
@@ -56,7 +56,7 @@ export function CalloutCard({
           </div>
           
           {children && (
-            <div className="pt-2">
+            <div className="pt-[var(--space-xs)]">
               {children}
             </div>
           )}
@@ -67,7 +67,7 @@ export function CalloutCard({
 }
 
 // Important callout with stronger visual emphasis
-export interface ImportantCalloutProps extends Omit<CalloutCardProps, 'variant'> {}
+export type ImportantCalloutProps = Omit<CalloutCardProps, 'variant'>
 
 export function ImportantCallout({
   className,
@@ -87,14 +87,14 @@ export function ImportantCallout({
       {/* Pulsing accent for important notices */}
       <div className="absolute -left-1 top-4 w-2 h-2 bg-safety-red rounded-full animate-pulse" />
       
-      <div className="space-y-3">
-        <div className="flex items-start gap-3">
-          <div className="flex-shrink-0 mt-0.5">
+      <div className="space-y-[var(--space-sm)]">
+        <div className="flex items-start gap-[var(--space-sm)]">
+          <div className="flex-shrink-0 mt-[var(--space-tiny)]">
             <div className="w-6 h-6 bg-safety-red/10 rounded-full flex items-center justify-center">
               <div className="w-2 h-2 bg-safety-red rounded-full" />
             </div>
           </div>
-          <div className="flex-1 space-y-2">
+          <div className="flex-1 space-y-[var(--space-xs)]">
             <h3 className="text-lg font-rajdhani font-bold text-foreground leading-tight">
               {title}
             </h3>
@@ -107,7 +107,7 @@ export function ImportantCallout({
         </div>
         
         {children && (
-          <div className="pl-9 pt-1">
+          <div className="pl-[var(--space-xl)] pt-[var(--space-xs)]">
             {children}
           </div>
         )}
@@ -117,7 +117,7 @@ export function ImportantCallout({
 }
 
 // Subtle callout for less prominent information
-export interface SubtleCalloutProps extends Omit<CalloutCardProps, 'variant'> {}
+export type SubtleCalloutProps = Omit<CalloutCardProps, 'variant'>
 
 export function SubtleCallout({
   className,
@@ -135,8 +135,8 @@ export function SubtleCallout({
       )} 
       {...props}
     >
-      <div className="space-y-3">
-        <div className="space-y-2">
+      <div className="space-y-[var(--space-sm)]">
+        <div className="space-y-[var(--space-xs)]">
           <h3 className="text-base font-rajdhani font-semibold text-foreground leading-tight">
             {title}
           </h3>
@@ -148,7 +148,7 @@ export function SubtleCallout({
         </div>
         
         {children && (
-          <div className="pt-1">
+          <div className="pt-[var(--space-xs)]">
             {children}
           </div>
         )}

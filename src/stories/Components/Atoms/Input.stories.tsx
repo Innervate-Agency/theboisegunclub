@@ -4,7 +4,7 @@ import { Search, Mail, Lock, Eye, EyeOff, User, Phone } from 'lucide-react';
 import { useState } from 'react';
 
 const meta: Meta<typeof Input> = {
-  title: 'Components/Atoms/Input',
+  title: 'Design System/Atoms/Input',
   component: Input,
   parameters: {
     layout: 'centered',
@@ -71,7 +71,7 @@ export const Glass: Story = {
 // Size variants
 export const SizeVariants: Story = {
   render: () => (
-    <div className="space-y-4 w-80">
+    <div className="space-y-[var(--space-base)] w-80">
       <Input size="sm" placeholder="Small input" />
       <Input size="default" placeholder="Default input" />
       <Input size="lg" placeholder="Large input" />
@@ -82,7 +82,7 @@ export const SizeVariants: Story = {
 // Status variants
 export const StatusVariants: Story = {
   render: () => (
-    <div className="space-y-4 w-80">
+    <div className="space-y-[var(--space-base)] w-80">
       <Input status="default" placeholder="Default status" />
       <Input status="success" placeholder="Success status" />
       <Input status="warning" placeholder="Warning status" />
@@ -97,12 +97,12 @@ export const WithIcons: Story = {
     const [showPassword, setShowPassword] = useState(false);
     
     return (
-      <div className="space-y-6 w-80">
+      <div className="space-y-[var(--space-md)] w-80">
         {/* Search input */}
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
           <Input
-            className="pl-10"
+            className="pl-[var(--space-2xl)]"
             placeholder="Search firearms..."
             type="search"
           />
@@ -112,7 +112,7 @@ export const WithIcons: Story = {
         <div className="relative">
           <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
           <Input
-            className="pl-10"
+            className="pl-[var(--space-2xl)]"
             placeholder="your@email.com"
             type="email"
           />
@@ -122,7 +122,7 @@ export const WithIcons: Story = {
         <div className="relative">
           <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
           <Input
-            className="pl-10 pr-10"
+            className="pl-[var(--space-2xl)] pr-[var(--space-2xl)]"
             placeholder="Password"
             type={showPassword ? 'text' : 'password'}
           />
@@ -142,7 +142,7 @@ export const WithIcons: Story = {
 // Input Group examples
 export const InputGroups: Story = {
   render: () => (
-    <div className="space-y-6 w-80">
+    <div className="space-y-[var(--space-md)] w-80">
       <InputGroup
         label="Full Name"
         description="Enter your first and last name"
@@ -158,7 +158,7 @@ export const InputGroups: Story = {
       >
         <div className="relative">
           <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
-          <Input className="pl-10" placeholder="your@email.com" type="email" />
+          <Input className="pl-[var(--space-2xl)]" placeholder="your@email.com" type="email" />
         </div>
       </InputGroup>
 
@@ -169,7 +169,7 @@ export const InputGroups: Story = {
         <div className="relative">
           <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
           <Input 
-            className="pl-10" 
+            className="pl-[var(--space-2xl)]" 
             placeholder="(555) 123-4567" 
             type="tel"
             status="error"
@@ -183,8 +183,8 @@ export const InputGroups: Story = {
 // Form examples in business context
 export const FirearmsFormExamples: Story = {
   render: () => (
-    <div className="space-y-8 max-w-2xl">
-      <div className="text-center space-y-2">
+    <div className="space-y-[var(--space-lg)] max-w-2xl">
+      <div className="text-center space-y-[var(--space-xs)]">
         <h3 className="text-xl font-rajdhani font-bold text-blued-steel">
           Membership Registration
         </h3>
@@ -193,7 +193,7 @@ export const FirearmsFormExamples: Story = {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
         <InputGroup label="First Name" required>
           <Input placeholder="John" />
         </InputGroup>
@@ -209,14 +209,14 @@ export const FirearmsFormExamples: Story = {
         >
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
-            <Input className="pl-10" placeholder="john@example.com" type="email" />
+            <Input className="pl-[var(--space-2xl)]" placeholder="john@example.com" type="email" />
           </div>
         </InputGroup>
 
         <InputGroup label="Phone Number">
           <div className="relative">
             <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
-            <Input className="pl-10" placeholder="(208) 555-0123" type="tel" />
+            <Input className="pl-[var(--space-2xl)]" placeholder="(208) 555-0123" type="tel" />
           </div>
         </InputGroup>
 
@@ -236,9 +236,9 @@ export const FirearmsFormExamples: Story = {
 // Design system showcase
 export const DesignSystemShowcase: Story = {
   render: () => (
-    <div className="space-y-12 max-w-4xl">
+    <div className="space-y-[var(--space-xl)] max-w-4xl">
       {/* Header */}
-      <div className="text-center space-y-4">
+      <div className="text-center space-y-[var(--space-base)]">
         <h2 className="text-2xl font-rajdhani font-bold text-blued-steel">
           TBGC Input Design System
         </h2>
@@ -248,25 +248,25 @@ export const DesignSystemShowcase: Story = {
       </div>
 
       {/* Variants showcase */}
-      <div className="space-y-8">
+      <div className="space-y-[var(--space-lg)]">
         <div>
-          <h3 className="text-lg font-rajdhani font-semibold text-blued-steel mb-4">
+          <h3 className="text-lg font-rajdhani font-semibold text-blued-steel mb-[var(--space-base)]">
             Variant Styles
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
+            <div className="space-y-[var(--space-sm)]">
               <label className="text-sm font-medium text-blued-steel">Default</label>
               <Input placeholder="Clean white background" />
             </div>
-            <div className="space-y-3">
+            <div className="space-y-[var(--space-sm)]">
               <label className="text-sm font-medium text-blued-steel">Filled</label>
               <Input variant="filled" placeholder="Subtle background fill" />
             </div>
-            <div className="space-y-3">
+            <div className="space-y-[var(--space-sm)]">
               <label className="text-sm font-medium text-blued-steel">Ghost</label>
               <Input variant="ghost" placeholder="Minimal transparent" />
             </div>
-            <div className="space-y-3">
+            <div className="space-y-[var(--space-sm)]">
               <label className="text-sm font-medium text-blued-steel">Glass</label>
               <Input variant="glass" placeholder="Glassmorphism effect" />
             </div>
@@ -274,23 +274,23 @@ export const DesignSystemShowcase: Story = {
         </div>
 
         <div>
-          <h3 className="text-lg font-rajdhani font-semibold text-blued-steel mb-4">
+          <h3 className="text-lg font-rajdhani font-semibold text-blued-steel mb-[var(--space-base)]">
             Status Indicators
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
+            <div className="space-y-[var(--space-sm)]">
               <label className="text-sm font-medium text-blued-steel">Success State</label>
               <Input status="success" placeholder="Valid input" value="john@example.com" />
             </div>
-            <div className="space-y-3">
+            <div className="space-y-[var(--space-sm)]">
               <label className="text-sm font-medium text-blued-steel">Warning State</label>
               <Input status="warning" placeholder="Needs attention" value="john@" />
             </div>
-            <div className="space-y-3">
+            <div className="space-y-[var(--space-sm)]">
               <label className="text-sm font-medium text-blued-steel">Error State</label>
               <Input status="error" placeholder="Invalid input" value="invalid-email" />
             </div>
-            <div className="space-y-3">
+            <div className="space-y-[var(--space-sm)]">
               <label className="text-sm font-medium text-blued-steel">With Helper Text</label>
               <InputGroup error="Email address is required">
                 <Input status="error" placeholder="your@email.com" />
@@ -300,14 +300,14 @@ export const DesignSystemShowcase: Story = {
         </div>
 
         <div>
-          <h3 className="text-lg font-rajdhani font-semibold text-blued-steel mb-4">
+          <h3 className="text-lg font-rajdhani font-semibold text-blued-steel mb-[var(--space-base)]">
             Interactive Features
           </h3>
-          <div className="bg-shooting-bench p-6 rounded-xl space-y-4">
-            <p className="text-sm text-case-hardened mb-4">
+          <div className="bg-shooting-bench p-[var(--space-md)] rounded-xl space-y-[var(--space-base)]">
+            <p className="text-sm text-case-hardened mb-[var(--space-base)]">
               Hover and focus on inputs to see sophisticated micro-interactions
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-base)]">
               <Input placeholder="Hover me" />
               <Input placeholder="Focus me" />
               <Input placeholder="Type in me" defaultValue="Sample text" />

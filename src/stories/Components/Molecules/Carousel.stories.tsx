@@ -9,7 +9,7 @@ import {
 import { Card, CardContent } from '@/components/ui/card';
 
 const meta: Meta<typeof Carousel> = {
-  title: 'Data Display/Carousel',
+  title: 'Design System/Molecules/Carousel',
   component: Carousel,
   parameters: {
     layout: 'centered',
@@ -28,7 +28,7 @@ export const Default: Story = {
           <CarouselItem key={index}>
             <div className="p-1">
               <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
+                <CardContent className="flex aspect-square items-center justify-center p-[var(--space-md)]">
                   <span className="text-4xl font-semibold">{index + 1}</span>
                 </CardContent>
               </Card>

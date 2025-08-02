@@ -29,9 +29,9 @@ const enhancedInputVariants = cva(
       },
       size: {
         // Proper sizing using design tokens
-        sm: "h-8 px-3 py-1 text-sm",         // 32px - compact
-        default: "h-10 px-3 py-2 text-sm",  // 40px - standard  
-        lg: "h-12 px-4 py-3 text-base",     // 48px - large
+        sm: "h-8 px-[var(--space-sm)] py-[var(--space-xs)] text-sm",         // 32px - compact
+        default: "h-10 px-[var(--space-sm)] py-[var(--space-xs)] text-sm",  // 40px - standard  
+        lg: "h-12 px-[var(--space-base)] py-[var(--space-sm)] text-base",     // 48px - large
       },
       radius: {
         none: "rounded-none",
