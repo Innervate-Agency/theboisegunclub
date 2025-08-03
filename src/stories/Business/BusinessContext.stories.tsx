@@ -66,7 +66,7 @@ Design authority must convey **regional expertise** and **professional trust**.
 ## 🔥 FIRE GRADIENT SIGNATURE
 
 The copper-to-brass gradient system represents the "fire" of firearms enthusiasm:
-- \`from-copper-orange to-brass-yellow\` - The signature accent
+- 'from-copper-orange to-brass-yellow' - The signature accent
 - Applied to: card accents, hover states, success indicators, call-to-action elements
 - Represents the passion and precision of the firearms community
         `,

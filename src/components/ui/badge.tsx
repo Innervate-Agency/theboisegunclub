@@ -6,7 +6,7 @@ import { X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center justify-center rounded-input px-[var(--space-xs)] py-[var(--space-tiny)] text-caption font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-[var(--space-xs)] [&>svg]:pointer-events-none transition-all duration-[var(--timing-normal)] ease-out overflow-hidden relative",
+  "inline-flex items-center justify-center rounded-input px-xs py-tiny text-caption font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-xs [&>svg]:pointer-events-none transition-all duration-[var(--timing-normal)] ease-out overflow-hidden relative",
   {
     variants: {
       variant: {
@@ -22,10 +22,10 @@ const badgeVariants = cva(
         destructive: "bg-muzzle-flash/10 text-muzzle-flash hover:bg-muzzle-flash/20"
       },
       size: {
-        sm: "px-[var(--space-xs)] py-[var(--space-tiny)] text-caption h-5",
-        default: "px-[var(--space-sm)] py-[var(--space-tiny)] text-caption h-6",
-        lg: "px-[var(--space-base)] py-[var(--space-xs)] text-body-sm h-8",
-        xl: "px-[var(--space-base)] py-[var(--space-sm)] text-body-sm h-10"
+        sm: "px-xs py-tiny text-caption h-5",
+        default: "px-sm py-tiny text-caption h-6",
+        lg: "px-base py-xs text-body-sm h-8",
+        xl: "px-base py-sm text-body-sm h-10"
       },
       animate: {
         true: "hover:scale-105 active:scale-95"

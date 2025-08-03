@@ -40,19 +40,16 @@ export const Default: Story = {
     description: 'Your comprehensive digital hub connecting ALL Treasure Valley firearms communities. Discover local gun shops, ranges, instructors, events, and connect with fellow enthusiasts across our premier firearms region.',
     primaryCTA: {
       text: 'Explore Directory',
-      onClick: () => console.log('Primary CTA clicked'),
-      icon: <Target className="h-4 w-4" />
+      onClick: () => console.log('Primary CTA clicked')
     },
     secondaryCTA: {
       text: 'Join Community',
-      onClick: () => console.log('Secondary CTA clicked'),
-      icon: <Users className="h-4 w-4" />
+      onClick: () => console.log('Secondary CTA clicked')
     },
     badges: ['500+ Businesses', 'Regional Coverage', 'All Disciplines'],
     backgroundPreset: 'gunclub',
     height: 'xl',
-    centerContent: true,
-    icon: <Target className="h-8 w-8" />
+    centerContent: true
   }
 };
 
