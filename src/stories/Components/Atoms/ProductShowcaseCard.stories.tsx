@@ -40,7 +40,7 @@ export const Default: Story = {
       { label: 'Members', value: '500+' }
     ],
     imageSlot: (
-      <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center">
+      <div className="w-16 h-16 rounded-card bg-primary/10 flex items-center justify-center">
         <Target className="w-8 h-8 text-primary" />
       </div>
     )
@@ -57,7 +57,7 @@ export const Premium: Story = {
       { label: 'Pass Rate', value: '98%' }
     ],
     imageSlot: (
-      <div className="w-16 h-16 rounded-lg bg-copper-orange/10 flex items-center justify-center">
+      <div className="w-16 h-16 rounded-card bg-copper-orange/10 flex items-center justify-center">
         <Shield className="w-8 h-8 text-copper-orange" />
       </div>
     )
@@ -74,7 +74,7 @@ export const Elite: Story = {
       { label: 'Accuracy', value: '99.9%' }
     ],
     imageSlot: (
-      <div className="w-16 h-16 rounded-lg bg-ayu-blue/10 flex items-center justify-center">
+      <div className="w-16 h-16 rounded-card bg-ayu-blue/10 flex items-center justify-center">
         <Zap className="w-8 h-8 text-ayu-blue" />
       </div>
     )
@@ -91,7 +91,7 @@ export const Success: Story = {
       { label: 'Events', value: '150+' }
     ],
     imageSlot: (
-      <div className="w-16 h-16 rounded-lg bg-rifling-green/10 flex items-center justify-center">
+      <div className="w-16 h-16 rounded-card bg-rifling-green/10 flex items-center justify-center">
         <Users className="w-8 h-8 text-rifling-green" />
       </div>
     )
@@ -101,7 +101,7 @@ export const Success: Story = {
 // Grid showcase - like Stripe's layout
 export const GridShowcase: Story = {
   render: () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-lg)] p-[var(--space-lg)] bg-gradient-to-br from-background via-muted/20 to-background">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg p-lg bg-gradient-to-br from-background via-muted/20 to-background">
       <ProductShowcaseCard
         title="Range Management"
         description="Comprehensive range management tools for scheduling, member check-ins, and safety protocols."
@@ -111,7 +111,7 @@ export const GridShowcase: Story = {
           { label: 'Members', value: '500+' }
         ]}
         imageSlot={
-          <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center">
+          <div className="w-16 h-16 rounded-card bg-primary/10 flex items-center justify-center">
             <Target className="w-8 h-8 text-primary" />
           </div>
         }
@@ -126,7 +126,7 @@ export const GridShowcase: Story = {
           { label: 'Pass Rate', value: '98%' }
         ]}
         imageSlot={
-          <div className="w-16 h-16 rounded-lg bg-copper-orange/10 flex items-center justify-center">
+          <div className="w-16 h-16 rounded-card bg-copper-orange/10 flex items-center justify-center">
             <Shield className="w-8 h-8 text-copper-orange" />
           </div>
         }
@@ -141,7 +141,7 @@ export const GridShowcase: Story = {
           { label: 'Accuracy', value: '99.9%' }
         ]}
         imageSlot={
-          <div className="w-16 h-16 rounded-lg bg-ayu-blue/10 flex items-center justify-center">
+          <div className="w-16 h-16 rounded-card bg-ayu-blue/10 flex items-center justify-center">
             <Zap className="w-8 h-8 text-ayu-blue" />
           </div>
         }
@@ -160,20 +160,20 @@ export const GridShowcase: Story = {
 // Animation Demo - shows the key interactions
 export const AnimationDemo: Story = {
   render: () => (
-    <div className="space-y-[var(--space-lg)] p-[var(--space-lg)]">
-      <div className="text-center space-y-[var(--space-xs)]">
-        <h2 className="text-2xl font-rajdhani font-bold">Hover Animation Effects</h2>
+    <div className="space-y-lg p-lg">
+      <div className="text-center space-y-xs">
+        <h2 className="text-display-md font-rajdhani font-bold">Hover Animation Effects</h2>
         <p className="text-muted-foreground">Hover over each card to see the Stripe-style animations</p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-lg)] max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-lg max-w-4xl mx-auto">
         <ProductShowcaseCard
           title="Validate your idea"
           description="Test your product idea by launching payments with little to no code."
           variant="elite"
           ctaText="Try Payment Links"
           imageSlot={
-            <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-ayu-blue/20 to-ayu-purple/20 flex items-center justify-center border border-ayu-blue/30">
+            <div className="w-16 h-16 rounded-card bg-gradient-to-br from-ayu-blue/20 to-ayu-purple/20 flex items-center justify-center border border-ayu-blue/30">
               <div className="w-8 h-8 rounded bg-ayu-blue/30" />
             </div>
           }
@@ -185,14 +185,14 @@ export const AnimationDemo: Story = {
           variant="premium"
           ctaText="Learn about Atlas"
           imageSlot={
-            <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-copper-orange/20 to-brass-yellow/20 flex items-center justify-center border border-copper-orange/30">
+            <div className="w-16 h-16 rounded-card bg-gradient-to-br from-copper-orange/20 to-brass-yellow/20 flex items-center justify-center border border-copper-orange/30">
               <div className="w-8 h-8 rounded bg-copper-orange/30" />
             </div>
           }
         />
       </div>
       
-      <div className="text-center text-sm text-muted-foreground">
+      <div className="text-center text-body-sm text-muted-foreground">
         <p><strong>Animation Features:</strong></p>
         <p>• Shadow expands from sm to lg on hover</p>
         <p>• Gradient splash appears behind image area</p>

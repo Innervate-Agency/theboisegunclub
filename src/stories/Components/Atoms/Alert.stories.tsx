@@ -120,10 +120,10 @@ export const Dismissible: Story = {
 // All Variants Showcase
 export const AllVariants: Story = {
   render: () => (
-    <div className="space-y-[var(--space-md)]">
-      <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Alert Variants</h2>
+    <div className="space-y-md">
+      <h2 className="text-display-md font-rajdhani font-bold mb-base">Alert Variants</h2>
       
-      <div className="space-y-[var(--space-base)]">
+      <div className="space-y-base">
         <Alert variant="default">
           <Info />
           <AlertTitle>Default Alert</AlertTitle>
@@ -195,10 +195,10 @@ export const AllVariants: Story = {
 // Size Variations
 export const SizeVariations: Story = {
   render: () => (
-    <div className="space-y-[var(--space-md)]">
-      <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Size Options</h2>
+    <div className="space-y-md">
+      <h2 className="text-display-md font-rajdhani font-bold mb-base">Size Options</h2>
       
-      <div className="space-y-[var(--space-base)]">
+      <div className="space-y-base">
         <Alert variant="success" size="sm">
           <CheckCircle />
           <AlertTitle>Small Alert</AlertTitle>
@@ -238,10 +238,10 @@ export const SizeVariations: Story = {
 // Gun Club Context Examples
 export const GunClubExamples: Story = {
   render: () => (
-    <div className="space-y-[var(--space-md)]">
-      <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Gun Club Context</h2>
+    <div className="space-y-md">
+      <h2 className="text-display-md font-rajdhani font-bold mb-base">Gun Club Context</h2>
       
-      <div className="space-y-[var(--space-base)]">
+      <div className="space-y-base">
         <Alert variant="warning" dismissible>
           <Shield />
           <AlertTitle>Range Safety Notice</AlertTitle>
@@ -298,10 +298,10 @@ export const GunClubExamples: Story = {
 export const InteractiveFeatures: Story = {
   render: () => {
     return (
-      <div className="space-y-[var(--space-md)]">
-        <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Interactive Features</h2>
+      <div className="space-y-md">
+        <h2 className="text-display-md font-rajdhani font-bold mb-base">Interactive Features</h2>
         
-        <div className="space-y-[var(--space-base)]">
+        <div className="space-y-base">
           <Alert variant="premium" dismissible animate>
             <Zap />
             <AlertTitle>Animated Premium Alert</AlertTitle>
@@ -334,13 +334,13 @@ export const InteractiveFeatures: Story = {
 // Fusion Design Showcase
 export const FusionShowcase: Story = {
   render: () => (
-    <div className="space-y-[var(--space-lg)]">
-      <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Triple Fusion Design</h2>
+    <div className="space-y-lg">
+      <h2 className="text-display-md font-rajdhani font-bold mb-base">Triple Fusion Design</h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-md)]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
         {/* Stripe Precision */}
-        <div className="space-y-[var(--space-base)]">
-          <h3 className="font-rajdhani font-semibold text-lg">Stripe Precision</h3>
+        <div className="space-y-base">
+          <h3 className="font-rajdhani font-semibold text-body-lg">Stripe Precision</h3>
           <Alert variant="default">
             <Info />
             <AlertTitle>Micro-interactions</AlertTitle>
@@ -351,8 +351,8 @@ export const FusionShowcase: Story = {
         </div>
         
         {/* ClickUp Vibrancy */}
-        <div className="space-y-[var(--space-base)]">
-          <h3 className="font-rajdhani font-semibold text-lg">ClickUp Vibrancy</h3>
+        <div className="space-y-base">
+          <h3 className="font-rajdhani font-semibold text-body-lg">ClickUp Vibrancy</h3>
           <Alert variant="warning">
             <AlertTriangle />
             <AlertTitle>Strategic Gradients</AlertTitle>
@@ -363,8 +363,8 @@ export const FusionShowcase: Story = {
         </div>
         
         {/* Windows 11 Mica */}
-        <div className="space-y-[var(--space-base)]">
-          <h3 className="font-rajdhani font-semibold text-lg">Windows 11 Mica</h3>
+        <div className="space-y-base">
+          <h3 className="font-rajdhani font-semibold text-body-lg">Windows 11 Mica</h3>
           <Alert variant="premium">
             <Zap />
             <AlertTitle>Material Depth</AlertTitle>
@@ -375,8 +375,8 @@ export const FusionShowcase: Story = {
         </div>
       </div>
       
-      <div className="bg-card/50 rounded-xl p-[var(--space-md)] border border-border/20">
-        <div className="flex items-center gap-[var(--space-sm)] mb-[var(--space-base)]">
+      <div className="bg-card/50 rounded-large p-md border border-border/20">
+        <div className="flex items-center gap-sm mb-base">
           <Target className="h-5 w-5 text-copper-orange" />
           <h3 className="font-rajdhani font-semibold">Result: Professional Authority</h3>
         </div>
@@ -399,7 +399,7 @@ export const Playground: Story = {
     animate: true,
   },
   render: (args) => (
-    <div className="space-y-[var(--space-base)]">
+    <div className="space-y-base">
       <h3 className="font-rajdhani font-semibold">Interactive Alert</h3>
       <Alert {...args}>
         <Zap />

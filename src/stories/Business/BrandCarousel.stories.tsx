@@ -37,7 +37,7 @@ export const CustomShowcase: Story = {
     showcases: [
       {
         companyName: "IDAHO PRECISION ACADEMY",
-        logo: <div className="flex items-center gap-[var(--space-xs)]"><Target className="w-6 h-6" /><span className="font-bold">IPA</span></div>,
+        logo: <div className="flex items-center gap-xs"><Target className="w-6 h-6" /><span className="font-bold">IPA</span></div>,
         stats: [
           { label: "Competition shooters trained", value: "500+" },
           { label: "National championships won", value: "25" }
@@ -51,7 +51,7 @@ export const CustomShowcase: Story = {
       },
       {
         companyName: "TREASURE VALLEY GUNWORKS",
-        logo: <div className="flex items-center gap-[var(--space-xs)]"><Settings className="w-6 h-6" /><span className="font-bold">TVG</span></div>,
+        logo: <div className="flex items-center gap-xs"><Settings className="w-6 h-6" /><span className="font-bold">TVG</span></div>,
         stats: [
           { label: "Custom builds completed", value: "1,200+" },
           { label: "Customer satisfaction", value: "99.8%" }
@@ -65,7 +65,7 @@ export const CustomShowcase: Story = {
       },
       {
         companyName: "BOISE TACTICAL COLLECTIVE",
-        logo: <div className="flex items-center gap-[var(--space-xs)]"><Shield className="w-6 h-6" /><span className="font-bold">BTC</span></div>,
+        logo: <div className="flex items-center gap-xs"><Shield className="w-6 h-6" /><span className="font-bold">BTC</span></div>,
         stats: [
           { label: "Law enforcement trained", value: "800+" },
           { label: "Training hours delivered", value: "50,000+" }
@@ -79,12 +79,12 @@ export const CustomShowcase: Story = {
       }
     ],
     partnerLogos: [
-      { name: "Glock", logo: <div className="font-bold text-xl">GLOCK</div> },
-      { name: "Sig Sauer", logo: <div className="font-bold text-lg">SIG SAUER</div> },
-      { name: "Smith & Wesson", logo: <div className="font-bold text-lg">S&W</div> },
-      { name: "Ruger", logo: <div className="font-bold text-xl">RUGER</div> },
-      { name: "Daniel Defense", logo: <div className="font-bold text-sm">DANIEL DEFENSE</div> },
-      { name: "Leupold", logo: <div className="font-bold text-lg">LEUPOLD</div> }
+      { name: "Glock", logo: <div className="font-bold text-display-sm">GLOCK</div> },
+      { name: "Sig Sauer", logo: <div className="font-bold text-body-lg">SIG SAUER</div> },
+      { name: "Smith & Wesson", logo: <div className="font-bold text-body-lg">S&W</div> },
+      { name: "Ruger", logo: <div className="font-bold text-display-sm">RUGER</div> },
+      { name: "Daniel Defense", logo: <div className="font-bold text-body-sm">DANIEL DEFENSE</div> },
+      { name: "Leupold", logo: <div className="font-bold text-body-lg">LEUPOLD</div> }
     ]
   },
 }
@@ -95,7 +95,7 @@ export const LaunchPhase: Story = {
     showcases: [
       {
         companyName: "COMING SOON",
-        logo: <div className="text-lg font-bold text-white">TBGC</div>,
+        logo: <div className="text-body-lg font-bold text-white">TBGC</div>,
         stats: [
           { label: "Partner inquiries", value: "25+" },
           { label: "Pre-launch signups", value: "150+" }
@@ -109,7 +109,7 @@ export const LaunchPhase: Story = {
       },
       {
         companyName: "YOUR BUSINESS HERE",
-        logo: <div className="text-lg font-bold text-white">???</div>,
+        logo: <div className="text-body-lg font-bold text-white">???</div>,
         stats: [
           { label: "Partnership benefits", value: "∞" },
           { label: "Growth potential", value: "100%" }
@@ -123,11 +123,11 @@ export const LaunchPhase: Story = {
       }
     ],
     partnerLogos: [
-      { name: "Local Partners", logo: <div className="text-sm opacity-60">LOCAL PARTNERS</div> },
-      { name: "Training Orgs", logo: <div className="text-sm opacity-60">TRAINING ORGS</div> },
-      { name: "Gun Stores", logo: <div className="text-sm opacity-60">GUN STORES</div> },
-      { name: "Ranges", logo: <div className="text-sm opacity-60">RANGES</div> },
-      { name: "Your Logo", logo: <div className="text-sm opacity-40">YOUR LOGO HERE</div> }
+      { name: "Local Partners", logo: <div className="text-body-sm opacity-60">LOCAL PARTNERS</div> },
+      { name: "Training Orgs", logo: <div className="text-body-sm opacity-60">TRAINING ORGS</div> },
+      { name: "Gun Stores", logo: <div className="text-body-sm opacity-60">GUN STORES</div> },
+      { name: "Ranges", logo: <div className="text-body-sm opacity-60">RANGES</div> },
+      { name: "Your Logo", logo: <div className="text-body-sm opacity-40">YOUR LOGO HERE</div> }
     ]
   },
 }

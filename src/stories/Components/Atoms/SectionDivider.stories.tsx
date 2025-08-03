@@ -81,53 +81,53 @@ export const Clean: Story = {
 // Showcase all variants
 export const AllVariants: Story = {
   render: () => (
-    <div className="space-y-[var(--space-2xl)] p-[var(--space-lg)]">
-      <div className="text-center space-y-[var(--space-xs)]">
+    <div className="space-y-2xl p-lg">
+      <div className="text-center space-y-xs">
         <h1 className="text-3xl font-rajdhani font-bold">TBGC Section Dividers</h1>
         <p className="text-muted-foreground">Firearms-appropriate alternatives to generic slanted dividers</p>
       </div>
       
       {/* Demo sections */}
       <div className="space-y-0">
-        <section className="py-[var(--space-lg)] bg-card rounded-t-lg">
-          <div className="container mx-auto px-[var(--space-base)] text-center">
-            <h2 className="text-2xl font-rajdhani font-semibold mb-[var(--space-base)]">Range Management</h2>
+        <section className="py-lg bg-card rounded-t-lg">
+          <div className="container mx-auto px-base text-center">
+            <h2 className="text-display-md font-rajdhani font-semibold mb-base">Range Management</h2>
             <p className="text-muted-foreground">Professional range scheduling and member management.</p>
           </div>
         </section>
         
         <SectionDivider variant="crosshair" spacing="none" />
         
-        <section className="py-[var(--space-lg)] bg-muted/30">
-          <div className="container mx-auto px-[var(--space-base)] text-center">
-            <h2 className="text-2xl font-rajdhani font-semibold mb-[var(--space-base)]">Safety Training</h2>
+        <section className="py-lg bg-muted/30">
+          <div className="container mx-auto px-base text-center">
+            <h2 className="text-display-md font-rajdhani font-semibold mb-base">Safety Training</h2>
             <p className="text-muted-foreground">Comprehensive safety protocols and certification tracking.</p>
           </div>
         </section>
         
         <SectionDivider variant="rifling" spacing="none" />
         
-        <section className="py-[var(--space-lg)] bg-card">
-          <div className="container mx-auto px-[var(--space-base)] text-center">
-            <h2 className="text-2xl font-rajdhani font-semibold mb-[var(--space-base)]">Performance Analytics</h2>
+        <section className="py-lg bg-card">
+          <div className="container mx-auto px-base text-center">
+            <h2 className="text-display-md font-rajdhani font-semibold mb-base">Performance Analytics</h2>
             <p className="text-muted-foreground">Real-time performance tracking and improvement insights.</p>
           </div>
         </section>
         
         <SectionDivider variant="sights" spacing="none" />
         
-        <section className="py-[var(--space-lg)] bg-muted/30">
-          <div className="container mx-auto px-[var(--space-base)] text-center">
-            <h2 className="text-2xl font-rajdhani font-semibold mb-[var(--space-base)]">Community Hub</h2>
+        <section className="py-lg bg-muted/30">
+          <div className="container mx-auto px-base text-center">
+            <h2 className="text-display-md font-rajdhani font-semibold mb-base">Community Hub</h2>
             <p className="text-muted-foreground">Connect with fellow enthusiasts and share experiences.</p>
           </div>
         </section>
         
         <SectionDivider variant="target" spacing="none" />
         
-        <section className="py-[var(--space-lg)] bg-card rounded-b-lg">
-          <div className="container mx-auto px-[var(--space-base)] text-center">
-            <h2 className="text-2xl font-rajdhani font-semibold mb-[var(--space-base)]">Premium Features</h2>
+        <section className="py-lg bg-card rounded-b-lg">
+          <div className="container mx-auto px-base text-center">
+            <h2 className="text-display-md font-rajdhani font-semibold mb-base">Premium Features</h2>
             <p className="text-muted-foreground">Advanced tools for serious enthusiasts and professionals.</p>
           </div>
         </section>
@@ -147,27 +147,27 @@ export const AllVariants: Story = {
 export const DarkThemeDemo: Story = {
   render: () => (
     <div className="min-h-screen bg-background space-y-0">
-      <section className="py-[var(--space-xl)] bg-card">
-        <div className="container mx-auto px-[var(--space-base)] text-center">
-          <h2 className="text-3xl font-rajdhani font-bold mb-[var(--space-base)]">Dark Theme Compatibility</h2>
+      <section className="py-xl bg-card">
+        <div className="container mx-auto px-base text-center">
+          <h2 className="text-3xl font-rajdhani font-bold mb-base">Dark Theme Compatibility</h2>
           <p className="text-muted-foreground">All dividers work seamlessly in both light and dark themes.</p>
         </div>
       </section>
       
       <SectionDivider variant="muzzle" spacing="none" />
       
-      <section className="py-[var(--space-xl)] bg-muted/10">
-        <div className="container mx-auto px-[var(--space-base)] text-center">
-          <h2 className="text-2xl font-rajdhani font-semibold mb-[var(--space-base)]">No Blinding White Spots</h2>
+      <section className="py-xl bg-muted/10">
+        <div className="container mx-auto px-base text-center">
+          <h2 className="text-display-md font-rajdhani font-semibold mb-base">No Blinding White Spots</h2>
           <p className="text-muted-foreground">Subtle patterns that maintain theme consistency at midnight or midday.</p>
         </div>
       </section>
       
       <SectionDivider variant="crosshair" spacing="none" />
       
-      <section className="py-[var(--space-xl)] bg-card">
-        <div className="container mx-auto px-[var(--space-base)] text-center">
-          <h2 className="text-2xl font-rajdhani font-semibold mb-[var(--space-base)]">Professional Aesthetics</h2>
+      <section className="py-xl bg-card">
+        <div className="container mx-auto px-base text-center">
+          <h2 className="text-display-md font-rajdhani font-semibold mb-base">Professional Aesthetics</h2>
           <p className="text-muted-foreground">Firearms-inspired patterns that look intentional, not generic.</p>
         </div>
       </section>
@@ -186,29 +186,29 @@ export const DarkThemeDemo: Story = {
 // Spacing variations
 export const SpacingDemo: Story = {
   render: () => (
-    <div className="space-y-0 p-[var(--space-lg)]">
-      <div className="text-center mb-[var(--space-lg)]">
-        <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-xs)]">Spacing Variations</h2>
+    <div className="space-y-0 p-lg">
+      <div className="text-center mb-lg">
+        <h2 className="text-display-md font-rajdhani font-bold mb-xs">Spacing Variations</h2>
         <p className="text-muted-foreground">Different spacing options for various layout needs</p>
       </div>
       
-      <div className="bg-card p-[var(--space-base)] rounded">
+      <div className="bg-card p-base rounded">
         <h3 className="font-semibold">No Spacing</h3>
       </div>
       <SectionDivider variant="crosshair" spacing="none" />
-      <div className="bg-muted/30 p-[var(--space-base)]">
+      <div className="bg-muted/30 p-base">
         <h3 className="font-semibold">Small Spacing</h3>
       </div>
       <SectionDivider variant="rifling" spacing="sm" />
-      <div className="bg-card p-[var(--space-base)]">
+      <div className="bg-card p-base">
         <h3 className="font-semibold">Medium Spacing (Default)</h3>
       </div>
       <SectionDivider variant="target" spacing="md" />
-      <div className="bg-muted/30 p-[var(--space-base)]">
+      <div className="bg-muted/30 p-base">
         <h3 className="font-semibold">Large Spacing</h3>
       </div>
       <SectionDivider variant="sights" spacing="lg" />
-      <div className="bg-card p-[var(--space-base)] rounded">
+      <div className="bg-card p-base rounded">
         <h3 className="font-semibold">Extra Large Spacing</h3>
       </div>
     </div>

@@ -23,16 +23,16 @@ type Story = StoryObj;
 
 export const SpacingScale: Story = {
   render: () => (
-    <div className="p-[var(--space-lg)] space-y-[var(--space-lg)]">
+    <div className="p-lg space-y-lg">
       <div>
-        <h1 className="text-4xl font-rajdhani font-bold mb-[var(--space-xs)]">TBGC Spacing System</h1>
-        <p className="text-lg text-muted-foreground mb-[var(--space-lg)]">Consistent spacing with 1.5x scaling ratio</p>
+        <h1 className="text-4xl font-rajdhani font-bold mb-xs">TBGC Spacing System</h1>
+        <p className="text-body-lg text-muted-foreground mb-lg">Consistent spacing with 1.5x scaling ratio</p>
       </div>
 
       {/* Base Spacing Scale */}
       <section>
-        <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Base Spacing Scale</h2>
-        <div className="space-y-[var(--space-base)]">
+        <h2 className="text-display-md font-rajdhani font-bold mb-base">Base Spacing Scale</h2>
+        <div className="space-y-base">
           {[
             { name: 'Micro', value: '--space-micro', px: '2px', usage: 'Fine details, border thickness' },
             { name: 'XS', value: '--space-xs', px: '8px', usage: 'Small gaps, compact layouts' },
@@ -45,8 +45,8 @@ export const SpacingScale: Story = {
             { name: '3XL', value: '--space-3xl', px: '96px', usage: 'Large hero spacing' },
             { name: '4XL', value: '--space-4xl', px: '128px', usage: 'Maximum section spacing' },
           ].map((token) => (
-            <div key={token.name} className="flex items-center gap-[var(--space-base)] p-[var(--space-base)] bg-card rounded-lg border">
-              <div className="w-24 text-sm font-medium">{token.name}</div>
+            <div key={token.name} className="flex items-center gap-base p-base bg-card rounded-card border">
+              <div className="w-24 text-body-sm font-medium">{token.name}</div>
               <div className="flex-1">
                 <div 
                   className="bg-brass-yellow rounded"
@@ -57,9 +57,9 @@ export const SpacingScale: Story = {
                   }}
                 ></div>
               </div>
-              <div className="w-32 text-sm text-muted-foreground">{token.px}</div>
-              <div className="w-48 text-sm font-mono text-muted-foreground">{token.value}</div>
-              <div className="flex-1 text-xs text-muted-foreground">{token.usage}</div>
+              <div className="w-32 text-body-sm text-muted-foreground">{token.px}</div>
+              <div className="w-48 text-body-sm font-mono text-muted-foreground">{token.value}</div>
+              <div className="flex-1 text-caption text-muted-foreground">{token.usage}</div>
             </div>
           ))}
         </div>
@@ -67,26 +67,26 @@ export const SpacingScale: Story = {
 
       {/* Component Spacing */}
       <section>
-        <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Component-Specific Spacing</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
+        <h2 className="text-display-md font-rajdhani font-bold mb-base">Component-Specific Spacing</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
           
           {/* Card Spacing */}
-          <div className="space-y-[var(--space-base)]">
-            <h3 className="text-lg font-semibold">Card Spacing</h3>
-            <div className="bg-card border rounded-lg" style={{ padding: 'var(--card-padding)' }}>
-              <div className="bg-muted rounded p-[var(--space-xs)] text-sm">
+          <div className="space-y-base">
+            <h3 className="text-body-lg font-semibold">Card Spacing</h3>
+            <div className="bg-card border rounded-card" style={{ padding: 'var(--card-padding)' }}>
+              <div className="bg-muted rounded p-xs text-body-sm">
                 Card content with <code>--card-padding</code>
               </div>
             </div>
-            <div className="text-xs text-muted-foreground">
+            <div className="text-caption text-muted-foreground">
               Uses <code>var(--card-padding)</code> for consistent card internal spacing
             </div>
           </div>
 
           {/* Button Spacing */}
-          <div className="space-y-[var(--space-base)]">
-            <h3 className="text-lg font-semibold">Button Spacing</h3>
-            <div className="space-y-[var(--space-xs)]">
+          <div className="space-y-base">
+            <h3 className="text-body-lg font-semibold">Button Spacing</h3>
+            <div className="space-y-xs">
               <button 
                 className="bg-brass-yellow text-gunmetal-black rounded font-medium"
                 style={{ 
@@ -121,19 +121,19 @@ export const SpacingScale: Story = {
 
       {/* Usage Examples */}
       <section>
-        <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Usage Examples</h2>
-        <div className="bg-muted p-[var(--space-md)] rounded-lg">
-          <pre className="text-sm overflow-x-auto">
+        <h2 className="text-display-md font-rajdhani font-bold mb-base">Usage Examples</h2>
+        <div className="bg-muted p-md rounded-card">
+          <pre className="text-body-sm overflow-x-auto">
 {`/* CSS Variables */
 padding: var(--space-md);
 margin-bottom: var(--space-lg);
 gap: var(--space-xs);
 
 /* Tailwind with Design Tokens */
-className="p-[var(--space-md)] mb-[var(--space-lg)] gap-[var(--space-xs)]"
+className="p-md mb-lg gap-xs"
 
 /* Component-Specific Tokens */
-className="p-[var(--card-padding)]"
+className="p-card"
 style={{ height: 'var(--button-height-base)' }}`}
           </pre>
         </div>
@@ -151,9 +151,9 @@ export const SpacingTokens: Story = {
     }
   },
   render: () => (
-    <div className="p-[var(--space-lg)]">
-      <h1 className="text-3xl font-rajdhani font-bold mb-[var(--space-base)]">Spacing Token Reference</h1>
-      <p className="text-muted-foreground mb-[var(--space-lg)]">
+    <div className="p-lg">
+      <h1 className="text-3xl font-rajdhani font-bold mb-base">Spacing Token Reference</h1>
+      <p className="text-muted-foreground mb-lg">
         All TBGC spacing tokens follow a consistent 1.5x scaling ratio and are displayed in the Design Tokens panel.
       </p>
     </div>

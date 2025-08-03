@@ -149,9 +149,9 @@ export const Flat: Story = {
 
 export const StripeHierarchy: Story = {
   render: () => (
-    <div className="space-y-[var(--space-xl)] p-12 max-w-6xl bg-range-white min-h-screen">
+    <div className="space-y-xl p-12 max-w-6xl bg-range-white min-h-screen">
       {/* Header */}
-      <div className="text-center space-y-[var(--space-base)]">
+      <div className="text-center space-y-base">
         <h1 className="text-3xl font-rajdhani font-bold text-gunmetal-black">
           Stripe-Style Button Hierarchy
         </h1>
@@ -161,43 +161,43 @@ export const StripeHierarchy: Story = {
       </div>
 
       {/* Page-Level Buttons (Outside Containers) */}
-      <div className="space-y-[var(--space-md)]">
-        <h2 className="text-xl font-rajdhani font-semibold text-blued-steel">
+      <div className="space-y-md">
+        <h2 className="text-display-sm font-rajdhani font-semibold text-blued-steel">
           🌟 Page-Level Buttons (Outside Containers)
         </h2>
-        <p className="text-sm text-case-hardened">Heavy shadows, no borders - these grab attention on the page</p>
-        <div className="flex gap-[var(--space-base)] flex-wrap">
+        <p className="text-body-sm text-case-hardened">Heavy shadows, no borders - these grab attention on the page</p>
+        <div className="flex gap-base flex-wrap">
           <Button variant="primary" size="lg">
-            <Plus className="mr-[var(--space-xs)] h-4 w-4" />
+            <Plus className="mr-xs h-4 w-4" />
             Create Account
           </Button>
           <Button variant="default">
             Browse Training
           </Button>
           <Button variant="secondary">
-            <Download className="mr-[var(--space-xs)] h-4 w-4" />
+            <Download className="mr-xs h-4 w-4" />
             Download Guide
           </Button>
         </div>
       </div>
 
       {/* Card-Level Buttons (Inside Cards) */}
-      <div className="space-y-[var(--space-md)]">
-        <h2 className="text-xl font-rajdhani font-semibold text-blued-steel">
+      <div className="space-y-md">
+        <h2 className="text-display-sm font-rajdhani font-semibold text-blued-steel">
           📋 Card-Level Buttons (Inside Cards/Forms)
         </h2>
-        <p className="text-sm text-case-hardened">Flat style, no shadows - clean and doesn't compete with card shadows</p>
+        <p className="text-body-sm text-case-hardened">Flat style, no shadows - clean and doesn't compete with card shadows</p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
           {/* Training Card */}
-          <div className="bg-card p-[var(--space-md)] rounded-lg shadow-md border border-border">
-            <h3 className="font-rajdhani font-bold text-lg text-card-foreground mb-[var(--space-xs)]">
+          <div className="bg-card p-md rounded-card shadow-elevated border border-border">
+            <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground mb-xs">
               Safety Training Course
             </h3>
-            <p className="text-muted-foreground mb-[var(--space-base)] text-sm">
+            <p className="text-muted-foreground mb-base text-body-sm">
               Comprehensive firearms safety course for all skill levels. Learn fundamentals and best practices.
             </p>
-            <div className="flex gap-[var(--space-sm)]">
+            <div className="flex gap-sm">
               <Button variant="flat" size="sm">
                 Enroll Now
               </Button>
@@ -208,16 +208,16 @@ export const StripeHierarchy: Story = {
           </div>
 
           {/* Membership Card */}
-          <div className="bg-card p-[var(--space-md)] rounded-lg shadow-md border border-border">
-            <h3 className="font-rajdhani font-bold text-lg text-card-foreground mb-[var(--space-xs)]">
+          <div className="bg-card p-md rounded-card shadow-elevated border border-border">
+            <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground mb-xs">
               Premium Membership
             </h3>
-            <p className="text-muted-foreground mb-[var(--space-base)] text-sm">
+            <p className="text-muted-foreground mb-base text-body-sm">
               Access to all facilities, training programs, and exclusive member events.
             </p>
-            <div className="flex gap-[var(--space-sm)]">
+            <div className="flex gap-sm">
               <Button variant="flat" size="sm">
-                <Check className="mr-[var(--space-xs)] h-4 w-4" />
+                <Check className="mr-xs h-4 w-4" />
                 Join Today
               </Button>
               <Button variant="link" size="sm">
@@ -229,38 +229,38 @@ export const StripeHierarchy: Story = {
       </div>
 
       {/* Form Buttons */}
-      <div className="space-y-[var(--space-md)]">
-        <h2 className="text-xl font-rajdhani font-semibold text-blued-steel">
+      <div className="space-y-md">
+        <h2 className="text-display-sm font-rajdhani font-semibold text-blued-steel">
           📝 Form Buttons (Inside Forms)
         </h2>
-        <p className="text-sm text-case-hardened">Flat style for form actions - consistent with card patterns</p>
+        <p className="text-body-sm text-case-hardened">Flat style for form actions - consistent with card patterns</p>
         
-        <div className="bg-card p-[var(--space-md)] rounded-lg shadow-md border border-border max-w-md">
-          <h3 className="font-rajdhani font-bold text-lg text-card-foreground mb-[var(--space-base)]">
+        <div className="bg-card p-md rounded-card shadow-elevated border border-border max-w-md">
+          <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground mb-base">
             Contact Information
           </h3>
-          <div className="space-y-[var(--space-base)]">
+          <div className="space-y-base">
             <div>
-              <label className="block text-sm font-medium text-card-foreground mb-[var(--space-xs)]">
+              <label className="block text-body-sm font-medium text-card-foreground mb-xs">
                 Full Name
               </label>
               <input 
                 type="text" 
-                className="w-full px-[var(--space-sm)] py-[var(--space-xs)] border border-border rounded-md bg-background text-foreground"
+                className="w-full px-sm py-xs border border-border rounded-input bg-background text-foreground"
                 placeholder="Enter your name"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-card-foreground mb-[var(--space-xs)]">
+              <label className="block text-body-sm font-medium text-card-foreground mb-xs">
                 Email Address
               </label>
               <input 
                 type="email" 
-                className="w-full px-[var(--space-sm)] py-[var(--space-xs)] border border-border rounded-md bg-background text-foreground"
+                className="w-full px-sm py-xs border border-border rounded-input bg-background text-foreground"
                 placeholder="Enter your email"
               />
             </div>
-            <div className="flex gap-[var(--space-sm)] pt-[var(--space-xs)]">
+            <div className="flex gap-sm pt-xs">
               <Button variant="flat" size="sm" className="flex-1">
                 Submit
               </Button>
@@ -273,22 +273,22 @@ export const StripeHierarchy: Story = {
       </div>
 
       {/* Special Accent Buttons */}
-      <div className="space-y-[var(--space-md)]">
-        <h2 className="text-xl font-rajdhani font-semibold text-blued-steel">
+      <div className="space-y-md">
+        <h2 className="text-display-sm font-rajdhani font-semibold text-blued-steel">
           ⚡ Special Accent Buttons (Borders for Emphasis)
         </h2>
-        <p className="text-sm text-case-hardened">Borders only for special occasions - warnings, confirmations, key actions</p>
-        <div className="flex gap-[var(--space-base)] flex-wrap">
+        <p className="text-body-sm text-case-hardened">Borders only for special occasions - warnings, confirmations, key actions</p>
+        <div className="flex gap-base flex-wrap">
           <Button variant="accent">
-            <ArrowRight className="mr-[var(--space-xs)] h-4 w-4" />
+            <ArrowRight className="mr-xs h-4 w-4" />
             Get Started
           </Button>
           <Button variant="success">
-            <Check className="mr-[var(--space-xs)] h-4 w-4" />
+            <Check className="mr-xs h-4 w-4" />
             Approve Application
           </Button>
           <Button variant="destructive">
-            <X className="mr-[var(--space-xs)] h-4 w-4" />
+            <X className="mr-xs h-4 w-4" />
             Reject Application
           </Button>
         </div>
@@ -299,8 +299,8 @@ export const StripeHierarchy: Story = {
 
 export const FireGradientSystem: Story = {
   render: () => (
-    <div className="max-w-4xl mx-auto space-y-[var(--space-lg)] p-[var(--space-md)]">
-      <div className="text-center space-y-[var(--space-base)]">
+    <div className="max-w-4xl mx-auto space-y-lg p-md">
+      <div className="text-center space-y-base">
         <h1 className="text-3xl font-rajdhani font-bold text-foreground">
           🔥 Fire Gradient System
         </h1>
@@ -310,94 +310,94 @@ export const FireGradientSystem: Story = {
       </div>
 
       {/* Fire Gradient Buttons */}
-      <div className="space-y-[var(--space-md)]">
-        <h2 className="text-xl font-rajdhani font-semibold text-copper-orange">
+      <div className="space-y-md">
+        <h2 className="text-display-sm font-rajdhani font-semibold text-copper-orange">
           Fire Button Variants
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-base)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-base">
           <Button variant="fire" size="lg">
-            <Target className="mr-[var(--space-xs)] h-4 w-4" />
+            <Target className="mr-xs h-4 w-4" />
             Fire Orange
           </Button>
           <Button variant="fire-blue" size="lg">
-            <Shield className="mr-[var(--space-xs)] h-4 w-4" />
+            <Shield className="mr-xs h-4 w-4" />
             Fire Blue
           </Button>
           <Button variant="fire-purple" size="lg">
-            <Zap className="mr-[var(--space-xs)] h-4 w-4" />
+            <Zap className="mr-xs h-4 w-4" />
             Fire Purple  
           </Button>
           <Button variant="fire-green" size="lg">
-            <Check className="mr-[var(--space-xs)] h-4 w-4" />
+            <Check className="mr-xs h-4 w-4" />
             Fire Green
           </Button>
         </div>
       </div>
 
       {/* Demo Cards */}
-      <div className="space-y-[var(--space-md)]">
-        <h2 className="text-xl font-rajdhani font-semibold text-ayu-blue">
+      <div className="space-y-md">
+        <h2 className="text-display-sm font-rajdhani font-semibold text-ayu-blue">
           Interactive Fire Cards
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
-          <div className="bg-card p-[var(--space-md)] rounded-lg shadow-md hover:shadow-lg transition-shadow group">
-            <h3 className="font-rajdhani font-bold text-lg text-copper-orange mb-[var(--space-xs)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
+          <div className="bg-card p-md rounded-card shadow-elevated hover:shadow-elevated transition-shadow group">
+            <h3 className="font-rajdhani font-bold text-body-lg text-copper-orange mb-xs">
               Vendor Partners
             </h3>
-            <p className="text-muted-foreground mb-[var(--space-base)] text-sm">
+            <p className="text-muted-foreground mb-base text-body-sm">
               Gun shops, ranges, instructors across the Treasure Valley
             </p>
             <Button variant="fire" size="sm" className="w-full">
-              <Users className="mr-[var(--space-xs)] h-4 w-4" />
+              <Users className="mr-xs h-4 w-4" />
               Browse Directory
             </Button>
-            <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-[var(--space-base)] rounded-full transition-all duration-300 ease-out"></div>
+            <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-base rounded-full transition-all duration-300 ease-out"></div>
           </div>
 
-          <div className="bg-card p-[var(--space-md)] rounded-lg shadow-md hover:shadow-lg transition-shadow group">
-            <h3 className="font-rajdhani font-bold text-lg text-ayu-blue mb-[var(--space-xs)]">
+          <div className="bg-card p-md rounded-card shadow-elevated hover:shadow-elevated transition-shadow group">
+            <h3 className="font-rajdhani font-bold text-body-lg text-ayu-blue mb-xs">
               Community Hub
             </h3>
-            <p className="text-muted-foreground mb-[var(--space-base)] text-sm">
+            <p className="text-muted-foreground mb-base text-body-sm">
               Connect with fellow enthusiasts and competitors
             </p>
             <Button variant="fire-blue" size="sm" className="w-full">
-              <MessageSquare className="mr-[var(--space-xs)] h-4 w-4" />
+              <MessageSquare className="mr-xs h-4 w-4" />
               Join Discussions
             </Button>
-            <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-blue to-ayu-green mt-[var(--space-base)] rounded-full transition-all duration-300 ease-out"></div>
+            <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-blue to-ayu-green mt-base rounded-full transition-all duration-300 ease-out"></div>
           </div>
         </div>
       </div>
 
       {/* Gradient Color Mapping */}
-      <div className="space-y-[var(--space-md)]">
-        <h2 className="text-xl font-rajdhani font-semibold text-ayu-purple">
+      <div className="space-y-md">
+        <h2 className="text-display-sm font-rajdhani font-semibold text-ayu-purple">
           Color Coordination Guide
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
-          <div className="bg-muted p-[var(--space-base)] rounded-lg">
-            <h4 className="font-medium text-foreground mb-[var(--space-sm)]">🔥 Fire (Orange/Yellow)</h4>
-            <div className="h-3 bg-gradient-to-r from-copper-orange to-brass-yellow rounded-full mb-[var(--space-xs)]"></div>
-            <p className="text-xs text-muted-foreground">Primary accent • Call-to-action • Success states</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
+          <div className="bg-muted p-base rounded-card">
+            <h4 className="font-medium text-foreground mb-sm">🔥 Fire (Orange/Yellow)</h4>
+            <div className="h-3 bg-gradient-to-r from-copper-orange to-brass-yellow rounded-full mb-xs"></div>
+            <p className="text-caption text-muted-foreground">Primary accent • Call-to-action • Success states</p>
           </div>
           
-          <div className="bg-muted p-[var(--space-base)] rounded-lg">
-            <h4 className="font-medium text-foreground mb-[var(--space-sm)]">💧 Fire Blue (Blue/Green)</h4>
-            <div className="h-3 bg-gradient-to-r from-ayu-blue to-ayu-green rounded-full mb-[var(--space-xs)]"></div>
-            <p className="text-xs text-muted-foreground">Navigation • Community features • Information</p>
+          <div className="bg-muted p-base rounded-card">
+            <h4 className="font-medium text-foreground mb-sm">💧 Fire Blue (Blue/Green)</h4>
+            <div className="h-3 bg-gradient-to-r from-ayu-blue to-ayu-green rounded-full mb-xs"></div>
+            <p className="text-caption text-muted-foreground">Navigation • Community features • Information</p>
           </div>
           
-          <div className="bg-muted p-[var(--space-base)] rounded-lg">
-            <h4 className="font-medium text-foreground mb-[var(--space-sm)]">⚡ Fire Purple (Purple/Cobalt)</h4>
-            <div className="h-3 bg-gradient-to-r from-ayu-purple to-ayu-blue rounded-full mb-[var(--space-xs)]"></div>
-            <p className="text-xs text-muted-foreground">Premium features • Special actions • Highlights</p>
+          <div className="bg-muted p-base rounded-card">
+            <h4 className="font-medium text-foreground mb-sm">⚡ Fire Purple (Purple/Cobalt)</h4>
+            <div className="h-3 bg-gradient-to-r from-ayu-purple to-ayu-blue rounded-full mb-xs"></div>
+            <p className="text-caption text-muted-foreground">Premium features • Special actions • Highlights</p>
           </div>
           
-          <div className="bg-muted p-[var(--space-base)] rounded-lg">
-            <h4 className="font-medium text-foreground mb-[var(--space-sm)]">🌿 Fire Green (Green variants)</h4>
-            <div className="h-3 bg-gradient-to-r from-ayu-green to-clubhouse-lawn-green rounded-full mb-[var(--space-xs)]"></div>
-            <p className="text-xs text-muted-foreground">Success • Verification • Positive states</p>
+          <div className="bg-muted p-base rounded-card">
+            <h4 className="font-medium text-foreground mb-sm">🌿 Fire Green (Green variants)</h4>
+            <div className="h-3 bg-gradient-to-r from-ayu-green to-clubhouse-lawn-green rounded-full mb-xs"></div>
+            <p className="text-caption text-muted-foreground">Success • Verification • Positive states</p>
           </div>
         </div>
       </div>
@@ -435,40 +435,40 @@ Apply gradients that match the semantic meaning of your component's primary colo
 
 export const CleanShowcase: Story = {
   render: () => (
-    <div className="space-y-[var(--space-xl)] p-12 max-w-6xl bg-range-white min-h-screen">
+    <div className="space-y-xl p-12 max-w-6xl bg-range-white min-h-screen">
       {/* Header */}
-      <div className="text-center space-y-[var(--space-base)]">
+      <div className="text-center space-y-base">
         <h1 className="text-4xl font-rajdhani font-bold text-gunmetal-black tracking-tight">
           TBGC Clean Button System
         </h1>
-        <p className="text-lg text-case-hardened max-w-3xl mx-auto">
+        <p className="text-body-lg text-case-hardened max-w-3xl mx-auto">
           Sophisticated buttons using our Idaho Firearms Heritage Palette - combining clean design with our distinctive brand colors
         </p>
       </div>
       
       {/* Primary Actions */}
-      <div className="space-y-[var(--space-lg)]">
-        <h2 className="text-2xl font-rajdhani font-semibold text-blued-steel text-center">Primary Actions</h2>
-        <div className="flex items-center justify-center gap-[var(--space-base)] flex-wrap">
+      <div className="space-y-lg">
+        <h2 className="text-display-md font-rajdhani font-semibold text-blued-steel text-center">Primary Actions</h2>
+        <div className="flex items-center justify-center gap-base flex-wrap">
           <Button variant="primary" size="lg">
-            <Plus className="mr-[var(--space-xs)] h-5 w-5" />
+            <Plus className="mr-xs h-5 w-5" />
             Create Project
           </Button>
           <Button variant="accent" size="lg">
             Get Started
-            <ArrowRight className="ml-[var(--space-xs)] h-5 w-5" />
+            <ArrowRight className="ml-xs h-5 w-5" />
           </Button>
           <Button variant="success" size="lg">
-            <Check className="mr-[var(--space-xs)] h-5 w-5" />
+            <Check className="mr-xs h-5 w-5" />
             Confirm
           </Button>
         </div>
       </div>
       
       {/* Size Variants */}
-      <div className="space-y-[var(--space-lg)]">
-        <h2 className="text-2xl font-rajdhani font-semibold text-blued-steel text-center">Size Variants</h2>
-        <div className="flex items-center justify-center gap-[var(--space-base)] flex-wrap">
+      <div className="space-y-lg">
+        <h2 className="text-display-md font-rajdhani font-semibold text-blued-steel text-center">Size Variants</h2>
+        <div className="flex items-center justify-center gap-base flex-wrap">
           <Button variant="default" size="xs">Extra Small</Button>
           <Button variant="default" size="sm">Small</Button>
           <Button variant="default" size="default">Default</Button>
@@ -481,30 +481,30 @@ export const CleanShowcase: Story = {
       </div>
       
       {/* Interactive States */}
-      <div className="space-y-[var(--space-lg)]">
-        <h2 className="text-2xl font-rajdhani font-semibold text-blued-steel text-center">Interactive States</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-lg)]">
-          <div className="space-y-[var(--space-base)]">
-            <h3 className="text-lg font-noto-sans font-medium text-case-hardened">Normal States</h3>
-            <div className="space-y-[var(--space-sm)]">
+      <div className="space-y-lg">
+        <h2 className="text-display-md font-rajdhani font-semibold text-blued-steel text-center">Interactive States</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-lg">
+          <div className="space-y-base">
+            <h3 className="text-body-lg font-noto-sans font-medium text-case-hardened">Normal States</h3>
+            <div className="space-y-sm">
               <Button variant="default" className="w-full">Default</Button>
               <Button variant="primary" className="w-full">Primary</Button>
               <Button variant="secondary" className="w-full">Secondary</Button>
             </div>
           </div>
           
-          <div className="space-y-[var(--space-base)]">
-            <h3 className="text-lg font-noto-sans font-medium text-case-hardened">Loading States</h3>
-            <div className="space-y-[var(--space-sm)]">
+          <div className="space-y-base">
+            <h3 className="text-body-lg font-noto-sans font-medium text-case-hardened">Loading States</h3>
+            <div className="space-y-sm">
               <Button variant="default" className="w-full" loading>Loading...</Button>
               <Button variant="primary" className="w-full" loading>Processing...</Button>
               <Button variant="accent" className="w-full" loading>Saving...</Button>
             </div>
           </div>
           
-          <div className="space-y-[var(--space-base)]">
-            <h3 className="text-lg font-noto-sans font-medium text-case-hardened">Disabled States</h3>
-            <div className="space-y-[var(--space-sm)]">
+          <div className="space-y-base">
+            <h3 className="text-body-lg font-noto-sans font-medium text-case-hardened">Disabled States</h3>
+            <div className="space-y-sm">
               <Button variant="default" className="w-full" disabled>Disabled</Button>
               <Button variant="primary" className="w-full" disabled>Disabled</Button>
               <Button variant="destructive" className="w-full" disabled>Disabled</Button>
@@ -514,14 +514,14 @@ export const CleanShowcase: Story = {
       </div>
       
       {/* Real-world Examples */}
-      <div className="space-y-[var(--space-lg)]">
-        <h2 className="text-2xl font-rajdhani font-semibold text-blued-steel text-center">Real-world Examples</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-lg)]">
+      <div className="space-y-lg">
+        <h2 className="text-display-md font-rajdhani font-semibold text-blued-steel text-center">Real-world Examples</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
           {/* Form Actions */}
-          <div className="bg-shooting-bench p-[var(--space-md)] rounded-xl shadow-sm border border-case-hardened/20">
-            <h3 className="text-lg font-noto-sans font-medium text-blued-steel mb-[var(--space-base)]">Form Actions</h3>
-            <div className="space-y-[var(--space-base)]">
-              <div className="flex gap-[var(--space-sm)]">
+          <div className="bg-shooting-bench p-md rounded-large shadow-flat border border-case-hardened/20">
+            <h3 className="text-body-lg font-noto-sans font-medium text-blued-steel mb-base">Form Actions</h3>
+            <div className="space-y-base">
+              <div className="flex gap-sm">
                 <Button variant="primary" className="flex-1">
                   Save Changes
                 </Button>
@@ -529,13 +529,13 @@ export const CleanShowcase: Story = {
                   Cancel
                 </Button>
               </div>
-              <div className="flex gap-[var(--space-sm)]">
+              <div className="flex gap-sm">
                 <Button variant="destructive" size="sm">
-                  <X className="mr-[var(--space-xs)] h-4 w-4" />
+                  <X className="mr-xs h-4 w-4" />
                   Delete
                 </Button>
                 <Button variant="secondary" size="sm">
-                  <Download className="mr-[var(--space-xs)] h-4 w-4" />
+                  <Download className="mr-xs h-4 w-4" />
                   Export
                 </Button>
               </div>
@@ -543,16 +543,16 @@ export const CleanShowcase: Story = {
           </div>
           
           {/* Navigation */}
-          <div className="bg-shooting-bench p-[var(--space-md)] rounded-xl shadow-sm border border-case-hardened/20">
-            <h3 className="text-lg font-noto-sans font-medium text-blued-steel mb-[var(--space-base)]">Navigation</h3>
-            <div className="space-y-[var(--space-base)]">
-              <div className="flex gap-[var(--space-sm)]">
+          <div className="bg-shooting-bench p-md rounded-large shadow-flat border border-case-hardened/20">
+            <h3 className="text-body-lg font-noto-sans font-medium text-blued-steel mb-base">Navigation</h3>
+            <div className="space-y-base">
+              <div className="flex gap-sm">
                 <Button variant="ghost">
-                  <User className="mr-[var(--space-xs)] h-4 w-4" />
+                  <User className="mr-xs h-4 w-4" />
                   Profile
                 </Button>
                 <Button variant="ghost">
-                  <Settings className="mr-[var(--space-xs)] h-4 w-4" />
+                  <Settings className="mr-xs h-4 w-4" />
                   Settings
                 </Button>
               </div>
@@ -565,9 +565,9 @@ export const CleanShowcase: Story = {
       </div>
       
       {/* Rounded Variants */}
-      <div className="space-y-[var(--space-lg)]">
-        <h2 className="text-2xl font-rajdhani font-semibold text-blued-steel text-center">Border Radius Options</h2>
-        <div className="flex items-center justify-center gap-[var(--space-base)] flex-wrap">
+      <div className="space-y-lg">
+        <h2 className="text-display-md font-rajdhani font-semibold text-blued-steel text-center">Border Radius Options</h2>
+        <div className="flex items-center justify-center gap-base flex-wrap">
           <Button variant="accent" rounded="none">None</Button>
           <Button variant="accent" rounded="sm">Small</Button>
           <Button variant="accent" rounded="default">Default</Button>
@@ -586,8 +586,8 @@ export const CleanShowcase: Story = {
 
 export const StripeStyleAnimations: Story = {
   render: () => (
-    <div className="space-y-[var(--space-xl)] p-12 max-w-4xl bg-range-white">
-      <div className="text-center space-y-[var(--space-base)]">
+    <div className="space-y-xl p-12 max-w-4xl bg-range-white">
+      <div className="text-center space-y-base">
         <h1 className="text-3xl font-rajdhani font-bold text-gunmetal-black">
           Stripe-Style Arrow Animations
         </h1>
@@ -596,10 +596,10 @@ export const StripeStyleAnimations: Story = {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-lg)]">
-        <div className="space-y-[var(--space-md)]">
-          <h3 className="text-xl font-rajdhani font-semibold text-blued-steel">Interactive Arrows</h3>
-          <div className="space-y-[var(--space-base)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+        <div className="space-y-md">
+          <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel">Interactive Arrows</h3>
+          <div className="space-y-base">
             <Button variant="solid-accent" size="lg" className="w-full">
               Get Premium Membership
             </Button>
@@ -615,9 +615,9 @@ export const StripeStyleAnimations: Story = {
           </div>
         </div>
 
-        <div className="space-y-[var(--space-md)]">
-          <h3 className="text-xl font-rajdhani font-semibold text-blued-steel">Timing Variations</h3>
-          <div className="space-y-[var(--space-base)]">
+        <div className="space-y-md">
+          <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel">Timing Variations</h3>
+          <div className="space-y-base">
             <Button variant="solid-accent" className="w-full transition-all transition-stripe-fast">
               Fast (150ms) - Quick Actions
             </Button>
@@ -648,37 +648,37 @@ export const GlassmorphismShowcase: Story = {
       <div className="absolute top-20 left-20 w-32 h-32 bg-nickel-white/10 rounded-full blur-xl"></div>
       <div className="absolute bottom-20 right-20 w-40 h-40 bg-brass-yellow/10 rounded-full blur-2xl"></div>
       
-      <div className="relative z-10 space-y-[var(--space-xl)]">
-        <div className="text-center space-y-[var(--space-base)]">
-          <h1 className="text-4xl font-rajdhani font-bold text-nickel-white drop-shadow-lg">
+      <div className="relative z-10 space-y-xl">
+        <div className="text-center space-y-base">
+          <h1 className="text-4xl font-rajdhani font-bold text-nickel-white drop-shadow-elevated">
             Windows 11 Mica Glassmorphism
           </h1>
-          <p className="text-nickel-white/90 text-lg max-w-2xl mx-auto">
+          <p className="text-nickel-white/90 text-body-lg max-w-2xl mx-auto">
             Our glassmorphism buttons with noise texture and sophisticated backdrop blur effects
           </p>
         </div>
 
-        <div className="flex flex-col items-center space-y-[var(--space-lg)]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-md)]">
+        <div className="flex flex-col items-center space-y-lg">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
             <Button variant="glass" size="lg" className="backdrop-blur-xl">
               Premium Glass Effect
             </Button>
             <Button variant="glass" size="lg" rounded="full" className="backdrop-blur-xl">
               Rounded Glassmorphism
             </Button>
-            <Button variant="glass" size="xl" className="backdrop-blur-xl px-[var(--space-xl)]">
+            <Button variant="glass" size="xl" className="backdrop-blur-xl px-xl">
               Extra Large Glass
             </Button>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-[var(--space-lg)] space-y-[var(--space-base)] mica-glass">
-            <h3 className="text-xl font-rajdhani font-semibold text-nickel-white">
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-overlay p-lg space-y-base mica-glass">
+            <h3 className="text-display-sm font-rajdhani font-semibold text-nickel-white">
               Glass Card Example
             </h3>
             <p className="text-nickel-white/80">
               Notice the subtle noise texture and multi-layered glass effect
             </p>
-            <div className="flex gap-[var(--space-base)]">
+            <div className="flex gap-base">
               <Button variant="glass">Learn More</Button>
               <Button variant="glass" size="sm">Details</Button>
             </div>
@@ -694,38 +694,38 @@ export const GlassmorphismShowcase: Story = {
 
 export const HeritageColorCombinations: Story = {
   render: () => (
-    <div className="space-y-[var(--space-xl)] p-12 max-w-6xl bg-range-white">
-      <div className="text-center space-y-[var(--space-base)]">
+    <div className="space-y-xl p-12 max-w-6xl bg-range-white">
+      <div className="text-center space-y-base">
         <h1 className="text-4xl font-rajdhani font-bold text-gunmetal-black">
           Sophisticated Color Harmonies
         </h1>
-        <p className="text-case-hardened text-lg max-w-3xl mx-auto">
+        <p className="text-case-hardened text-body-lg max-w-3xl mx-auto">
           Professionally curated color combinations with proper contrast ratios and visual hierarchy
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--space-xl)]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-xl">
         {/* Clean Professional Combinations */}
-        <div className="bg-shooting-bench p-[var(--space-lg)] rounded-2xl shadow-sm border border-case-hardened/20">
-          <h2 className="text-2xl font-rajdhani font-semibold text-gunmetal-black mb-[var(--space-md)]">
+        <div className="bg-shooting-bench p-lg rounded-overlay shadow-flat border border-case-hardened/20">
+          <h2 className="text-display-md font-rajdhani font-semibold text-gunmetal-black mb-md">
             Clean & Professional
           </h2>
-          <div className="space-y-[var(--space-md)]">
-            <div className="space-y-[var(--space-sm)]">
+          <div className="space-y-md">
+            <div className="space-y-sm">
               <h4 className="font-noto-sans font-medium text-blued-steel">Primary Actions</h4>
-              <div className="flex gap-[var(--space-sm)] flex-wrap">
-                <Button className="bg-brass-yellow text-gunmetal-black hover:bg-brass-yellow/90 shadow-sm">
+              <div className="flex gap-sm flex-wrap">
+                <Button className="bg-brass-yellow text-gunmetal-black hover:bg-brass-yellow/90 shadow-flat">
                   Premium Gold
                 </Button>
-                <Button className="bg-gunmetal-black text-range-white hover:bg-gunmetal-black/90 shadow-sm">
+                <Button className="bg-gunmetal-black text-range-white hover:bg-gunmetal-black/90 shadow-flat">
                   Professional Dark
                 </Button>
               </div>
             </div>
 
-            <div className="space-y-[var(--space-sm)]">
+            <div className="space-y-sm">
               <h4 className="font-noto-sans font-medium text-blued-steel">Subtle Accents</h4>
-              <div className="flex gap-[var(--space-sm)] flex-wrap">
+              <div className="flex gap-sm flex-wrap">
                 <Button className="bg-range-white text-gunmetal-black border-2 border-brass-yellow/30 hover:border-brass-yellow/60 hover:bg-brass-yellow/5">
                   Gold Accent
                 </Button>
@@ -738,30 +738,30 @@ export const HeritageColorCombinations: Story = {
         </div>
 
         {/* Warm Heritage Tones */}
-        <div className="bg-range-white p-[var(--space-lg)] rounded-2xl shadow-sm border border-case-hardened/20">
-          <h2 className="text-2xl font-rajdhani font-semibold text-gunmetal-black mb-[var(--space-md)]">
+        <div className="bg-range-white p-lg rounded-overlay shadow-flat border border-case-hardened/20">
+          <h2 className="text-display-md font-rajdhani font-semibold text-gunmetal-black mb-md">
             Heritage Warmth
           </h2>
-          <div className="space-y-[var(--space-md)]">
-            <div className="space-y-[var(--space-sm)]">
+          <div className="space-y-md">
+            <div className="space-y-sm">
               <h4 className="font-noto-sans font-medium text-blued-steel">Warm Metals</h4>
-              <div className="flex gap-[var(--space-sm)] flex-wrap">
-                <Button className="bg-copper-orange text-range-white hover:bg-copper-orange/90 shadow-sm">
+              <div className="flex gap-sm flex-wrap">
+                <Button className="bg-copper-orange text-range-white hover:bg-copper-orange/90 shadow-flat">
                   Copper Elegance
                 </Button>
-                <Button className="bg-walnut-stock text-range-white hover:bg-walnut-stock/90 shadow-sm">
+                <Button className="bg-walnut-stock text-range-white hover:bg-walnut-stock/90 shadow-flat">
                   Walnut Rich
                 </Button>
               </div>
             </div>
 
-            <div className="space-y-[var(--space-sm)]">
+            <div className="space-y-sm">
               <h4 className="font-noto-sans font-medium text-blued-steel">Heritage Highlights</h4>
-              <div className="flex gap-[var(--space-sm)] flex-wrap">
-                <Button className="bg-sight-gold text-gunmetal-black hover:bg-sight-gold/90 shadow-sm">
+              <div className="flex gap-sm flex-wrap">
+                <Button className="bg-sight-gold text-gunmetal-black hover:bg-sight-gold/90 shadow-flat">
                   Traditional Gold
                 </Button>
-                <Button className="bg-muzzle-flash text-gunmetal-black hover:bg-muzzle-flash/90 shadow-sm">
+                <Button className="bg-muzzle-flash text-gunmetal-black hover:bg-muzzle-flash/90 shadow-flat">
                   Bright Accent
                 </Button>
               </div>
@@ -771,11 +771,11 @@ export const HeritageColorCombinations: Story = {
       </div>
 
       {/* Monochromatic Excellence */}
-      <div className="bg-shooting-bench p-[var(--space-lg)] rounded-2xl border border-case-hardened/20">
-        <h2 className="text-2xl font-rajdhani font-semibold text-gunmetal-black text-center mb-[var(--space-lg)]">
+      <div className="bg-shooting-bench p-lg rounded-overlay border border-case-hardened/20">
+        <h2 className="text-display-md font-rajdhani font-semibold text-gunmetal-black text-center mb-lg">
           Monochromatic Sophistication
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-[var(--space-base)]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-base">
           <Button className="bg-gunmetal-black text-range-white hover:bg-gunmetal-black/90">
             Gunmetal
           </Button>
@@ -792,26 +792,26 @@ export const HeritageColorCombinations: Story = {
       </div>
 
       {/* Professional Gradients */}
-      <div className="space-y-[var(--space-lg)]">
-        <h2 className="text-2xl font-rajdhani font-semibold text-gunmetal-black text-center">
+      <div className="space-y-lg">
+        <h2 className="text-display-md font-rajdhani font-semibold text-gunmetal-black text-center">
           Sophisticated Gradients
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-md)]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
           <Button 
             size="lg" 
-            className="bg-gradient-to-r from-brass-yellow to-sight-gold text-gunmetal-black hover:shadow-md transition-all"
+            className="bg-gradient-to-r from-brass-yellow to-sight-gold text-gunmetal-black hover:shadow-elevated transition-all"
           >
             Gold Harmony
           </Button>
           <Button 
             size="lg"
-            className="bg-gradient-to-r from-copper-orange to-walnut-stock text-range-white hover:shadow-md transition-all"
+            className="bg-gradient-to-r from-copper-orange to-walnut-stock text-range-white hover:shadow-elevated transition-all"
           >
             Warm Heritage
           </Button>
           <Button 
             size="lg"
-            className="bg-gradient-to-r from-gunmetal-black to-blued-steel text-range-white hover:shadow-md transition-all"
+            className="bg-gradient-to-r from-gunmetal-black to-blued-steel text-range-white hover:shadow-elevated transition-all"
           >
             Steel Elegance
           </Button>
@@ -819,12 +819,12 @@ export const HeritageColorCombinations: Story = {
       </div>
 
       {/* State Colors Done Right */}
-      <div className="bg-shooting-bench p-[var(--space-lg)] rounded-2xl border border-case-hardened/20">
-        <h2 className="text-2xl font-rajdhani font-semibold text-gunmetal-black text-center mb-[var(--space-lg)]">
+      <div className="bg-shooting-bench p-lg rounded-overlay border border-case-hardened/20">
+        <h2 className="text-display-md font-rajdhani font-semibold text-gunmetal-black text-center mb-lg">
           Semantic Colors with Proper Contrast
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-md)]">
-          <div className="space-y-[var(--space-sm)]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
+          <div className="space-y-sm">
             <h4 className="font-noto-sans font-medium text-blued-steel">Success States</h4>
             <Button className="bg-rifling-green text-range-white hover:bg-rifling-green/90 w-full">
               Success Action
@@ -834,7 +834,7 @@ export const HeritageColorCombinations: Story = {
             </Button>
           </div>
           
-          <div className="space-y-[var(--space-sm)]">
+          <div className="space-y-sm">
             <h4 className="font-noto-sans font-medium text-blued-steel">Information</h4>
             <Button className="bg-scope-blue text-range-white hover:bg-scope-blue/90 w-full">
               Info Action
@@ -844,7 +844,7 @@ export const HeritageColorCombinations: Story = {
             </Button>
           </div>
           
-          <div className="space-y-[var(--space-sm)]">
+          <div className="space-y-sm">
             <h4 className="font-noto-sans font-medium text-blued-steel">Warning</h4>
             <Button className="bg-safety-red text-range-white hover:bg-safety-red/90 w-full">
               Warning Action
@@ -864,69 +864,69 @@ export const HeritageColorCombinations: Story = {
 
 export const SophisticatedShadows: Story = {
   render: () => (
-    <div className="space-y-[var(--space-xl)] p-12 max-w-5xl bg-range-white">
-      <div className="text-center space-y-[var(--space-base)]">
+    <div className="space-y-xl p-12 max-w-5xl bg-range-white">
+      <div className="text-center space-y-base">
         <h1 className="text-3xl font-rajdhani font-bold text-gunmetal-black">
           Stripe-Inspired Sophisticated Shadows
         </h1>
-        <p className="text-case-hardened text-lg">
+        <p className="text-case-hardened text-body-lg">
           Multi-layered shadow system with brand-colored variations
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-xl)]">
-        <div className="space-y-[var(--space-md)]">
-          <h3 className="text-xl font-rajdhani font-semibold text-blued-steel">Standard Shadow System</h3>
-          <div className="space-y-[var(--space-md)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-xl">
+        <div className="space-y-md">
+          <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel">Standard Shadow System</h3>
+          <div className="space-y-md">
             <Button className="shadow-xs bg-card text-card-foreground border border-recoil-pad w-full">
               Extra Small Shadow
             </Button>
-            <Button className="shadow-sm bg-card text-card-foreground border border-recoil-pad w-full">
+            <Button className="shadow-flat bg-card text-card-foreground border border-recoil-pad w-full">
               Small Shadow
             </Button>
-            <Button className="shadow-md bg-card text-card-foreground border border-recoil-pad w-full">
+            <Button className="shadow-elevated bg-card text-card-foreground border border-recoil-pad w-full">
               Medium Shadow
             </Button>
-            <Button className="shadow-lg bg-card text-card-foreground border border-recoil-pad w-full">
+            <Button className="shadow-elevated bg-card text-card-foreground border border-recoil-pad w-full">
               Large Shadow
             </Button>
-            <Button className="shadow-xl bg-card text-card-foreground border border-recoil-pad w-full">
+            <Button className="shadow-premium bg-card text-card-foreground border border-recoil-pad w-full">
               Extra Large Shadow
             </Button>
           </div>
         </div>
 
-        <div className="space-y-[var(--space-md)]">
-          <h3 className="text-xl font-rajdhani font-semibold text-blued-steel">Brand-Colored Shadows</h3>
-          <div className="space-y-[var(--space-md)]">
-            <Button className="shadow-brass bg-brass-yellow text-gunmetal-black w-full hover:shadow-lg transition-shadow">
+        <div className="space-y-md">
+          <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel">Brand-Colored Shadows</h3>
+          <div className="space-y-md">
+            <Button className="shadow-brass bg-brass-yellow text-gunmetal-black w-full hover:shadow-elevated transition-shadow">
               Brass Shadow Effect
             </Button>
-            <Button className="shadow-copper bg-copper-orange text-nickel-white w-full hover:shadow-xl transition-shadow">
+            <Button className="shadow-copper bg-copper-orange text-nickel-white w-full hover:shadow-premium transition-shadow">
               Copper Shadow Effect
             </Button>
-            <Button className="bg-rifling-green text-nickel-white w-full hover:shadow-lg hover:shadow-rifling-green/25 transition-shadow">
+            <Button className="bg-rifling-green text-nickel-white w-full hover:shadow-elevated hover:shadow-rifling-green/25 transition-shadow">
               Success Green Shadow
             </Button>
-            <Button className="bg-scope-blue text-nickel-white w-full hover:shadow-lg hover:shadow-scope-blue/25 transition-shadow">
+            <Button className="bg-scope-blue text-nickel-white w-full hover:shadow-elevated hover:shadow-scope-blue/25 transition-shadow">
               Information Blue Shadow
             </Button>
           </div>
         </div>
       </div>
 
-      <div className="bg-shooting-bench p-[var(--space-lg)] rounded-2xl border border-case-hardened/20">
-        <h3 className="text-xl font-rajdhani font-semibold text-blued-steel mb-[var(--space-md)] text-center">
+      <div className="bg-shooting-bench p-lg rounded-overlay border border-case-hardened/20">
+        <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel mb-md text-center">
           Interactive Shadow Transitions
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-md)]">
-          <Button className="bg-card text-card-foreground border border-recoil-pad shadow-sm hover:shadow-brass hover:-translate-y-1 transition-all duration-300">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
+          <Button className="bg-card text-card-foreground border border-recoil-pad shadow-flat hover:shadow-brass hover:-translate-y-1 transition-all duration-300">
             Hover for Brass Shadow
           </Button>
-          <Button className="bg-card text-card-foreground border border-recoil-pad shadow-sm hover:shadow-copper hover:-translate-y-1 transition-all duration-300">
+          <Button className="bg-card text-card-foreground border border-recoil-pad shadow-flat hover:shadow-copper hover:-translate-y-1 transition-all duration-300">
             Hover for Copper Shadow
           </Button>
-          <Button className="bg-card text-card-foreground border border-recoil-pad shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+          <Button className="bg-card text-card-foreground border border-recoil-pad shadow-flat hover:shadow-premium hover:-translate-y-2 transition-all duration-500">
             Elegant Lift Effect
           </Button>
         </div>
@@ -942,9 +942,9 @@ export const SophisticatedShadows: Story = {
 
 export const BusinessCard: Story = {
   render: () => (
-    <div className="bg-range-white p-[var(--space-lg)] rounded-xl shadow-sm border border-case-hardened/20 max-w-md space-y-[var(--space-md)]">
-      <div className="space-y-[var(--space-xs)]">
-        <h3 className="text-xl font-rajdhani font-semibold text-blued-steel">
+    <div className="bg-range-white p-lg rounded-large shadow-flat border border-case-hardened/20 max-w-md space-y-md">
+      <div className="space-y-xs">
+        <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel">
           Upgrade Your Membership
         </h3>
         <p className="text-case-hardened">
@@ -952,10 +952,10 @@ export const BusinessCard: Story = {
         </p>
       </div>
       
-      <div className="space-y-[var(--space-sm)]">
+      <div className="space-y-sm">
         <Button variant="accent" size="lg" className="w-full">
           Upgrade to Premium
-          <ArrowRight className="ml-[var(--space-xs)] h-5 w-5" />
+          <ArrowRight className="ml-xs h-5 w-5" />
         </Button>
         
         <Button variant="ghost" className="w-full">
@@ -971,14 +971,14 @@ export const BusinessCard: Story = {
 
 export const SearchInterface: Story = {
   render: () => (
-    <div className="bg-range-white p-[var(--space-md)] rounded-xl shadow-sm border border-case-hardened/20 max-w-lg space-y-[var(--space-base)]">
-      <div className="flex gap-[var(--space-xs)]">
+    <div className="bg-range-white p-md rounded-large shadow-flat border border-case-hardened/20 max-w-lg space-y-base">
+      <div className="flex gap-xs">
         <div className="flex-1 relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
           <input
             type="text"
             placeholder="Search members..."
-            className="w-full pl-[var(--space-2xl)] pr-[var(--space-base)] py-[var(--space-xs)].5 border border-case-hardened/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brass-yellow/50 focus:border-brass-yellow bg-shooting-bench text-blued-steel placeholder-case-hardened"
+            className="w-full pl-2xl pr-base py-xs border border-case-hardened/30 rounded-card focus:outline-none focus:ring-2 focus:ring-brass-yellow/50 focus:border-brass-yellow bg-shooting-bench text-blued-steel placeholder-case-hardened"
           />
         </div>
         <Button variant="accent">
@@ -986,7 +986,7 @@ export const SearchInterface: Story = {
         </Button>
       </div>
       
-      <div className="flex gap-[var(--space-xs)]">
+      <div className="flex gap-xs">
         <Button variant="secondary" size="sm">Recent</Button>
         <Button variant="ghost" size="sm">Popular</Button>
         <Button variant="ghost" size="sm">Active</Button>
@@ -1000,28 +1000,28 @@ export const SearchInterface: Story = {
 
 export const ProfessionalShowcase: Story = {
   render: () => (
-    <div className="space-y-[var(--space-2xl)] p-16 max-w-7xl bg-range-white">
+    <div className="space-y-2xl p-16 max-w-7xl bg-range-white">
       {/* Hero Section */}
-      <div className="text-center space-y-[var(--space-md)]">
+      <div className="text-center space-y-md">
         <h1 className="text-5xl font-rajdhani font-bold text-gunmetal-black tracking-tight">
           The Complete TBGC Button System
         </h1>
-        <p className="text-xl text-case-hardened max-w-4xl mx-auto leading-relaxed">
+        <p className="text-display-sm text-case-hardened max-w-4xl mx-auto leading-relaxed">
           Showcasing the full glory of our Idaho Firearms Heritage design system - from sophisticated shadows and Stripe-style animations to Windows 11 Mica glassmorphism
         </p>
       </div>
 
       {/* Complete Variant Grid */}
-      <div className="space-y-[var(--space-xl)]">
+      <div className="space-y-xl">
         <h2 className="text-3xl font-rajdhani font-semibold text-blued-steel text-center">
           Complete Variant Collection
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-lg)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
           {/* Clean Variants */}
-          <div className="bg-shooting-bench p-[var(--space-md)] rounded-2xl border border-case-hardened/20 space-y-[var(--space-base)]">
-            <h3 className="text-lg font-rajdhani font-semibold text-blued-steel">Clean & Professional</h3>
-            <div className="space-y-[var(--space-sm)]">
+          <div className="bg-shooting-bench p-md rounded-overlay border border-case-hardened/20 space-y-base">
+            <h3 className="text-body-lg font-rajdhani font-semibold text-blued-steel">Clean & Professional</h3>
+            <div className="space-y-sm">
               <Button variant="default" className="w-full">Default</Button>
               <Button variant="primary" className="w-full">Primary</Button>
               <Button variant="secondary" className="w-full">Secondary</Button>
@@ -1029,9 +1029,9 @@ export const ProfessionalShowcase: Story = {
           </div>
 
           {/* Accent Variants */}
-          <div className="bg-shooting-bench p-[var(--space-md)] rounded-2xl border border-case-hardened/20 space-y-[var(--space-base)]">
-            <h3 className="text-lg font-rajdhani font-semibold text-blued-steel">Heritage Accents</h3>
-            <div className="space-y-[var(--space-sm)]">
+          <div className="bg-shooting-bench p-md rounded-overlay border border-case-hardened/20 space-y-base">
+            <h3 className="text-body-lg font-rajdhani font-semibold text-blued-steel">Heritage Accents</h3>
+            <div className="space-y-sm">
               <Button variant="accent" className="w-full">Brass Accent</Button>
               <Button variant="success" className="w-full">Success State</Button>
               <Button variant="destructive" className="w-full">Destructive</Button>
@@ -1039,9 +1039,9 @@ export const ProfessionalShowcase: Story = {
           </div>
 
           {/* Solid Variants with Arrows */}
-          <div className="bg-shooting-bench p-[var(--space-md)] rounded-2xl border border-case-hardened/20 space-y-[var(--space-base)]">
-            <h3 className="text-lg font-rajdhani font-semibold text-blued-steel">Interactive Solids</h3>
-            <div className="space-y-[var(--space-sm)]">
+          <div className="bg-shooting-bench p-md rounded-overlay border border-case-hardened/20 space-y-base">
+            <h3 className="text-body-lg font-rajdhani font-semibold text-blued-steel">Interactive Solids</h3>
+            <div className="space-y-sm">
               <Button variant="solid-accent" className="w-full">Premium</Button>
               <Button variant="solid-success" className="w-full">Complete</Button>
               <Button variant="solid-primary" className="w-full">Learn More</Button>
@@ -1049,9 +1049,9 @@ export const ProfessionalShowcase: Story = {
           </div>
 
           {/* Glassmorphism */}
-          <div className="bg-gradient-to-br from-brass-yellow/20 via-copper-orange/20 to-gunmetal-black/20 p-[var(--space-md)] rounded-2xl border border-white/30 space-y-[var(--space-base)] backdrop-blur-sm">
-            <h3 className="text-lg font-rajdhani font-semibold text-gunmetal-black">Glassmorphism</h3>
-            <div className="space-y-[var(--space-sm)]">
+          <div className="bg-gradient-to-br from-brass-yellow/20 via-copper-orange/20 to-gunmetal-black/20 p-md rounded-overlay border border-white/30 space-y-base backdrop-blur-sm">
+            <h3 className="text-body-lg font-rajdhani font-semibold text-gunmetal-black">Glassmorphism</h3>
+            <div className="space-y-sm">
               <Button variant="glass" className="w-full">Glass Effect</Button>
               <Button variant="glass" size="sm" className="w-full">Small Glass</Button>
               <Button variant="glass" rounded="full" className="w-full">Round Glass</Button>
@@ -1059,9 +1059,9 @@ export const ProfessionalShowcase: Story = {
           </div>
 
           {/* Minimal Variants */}
-          <div className="bg-shooting-bench p-[var(--space-md)] rounded-2xl border border-case-hardened/20 space-y-[var(--space-base)]">
-            <h3 className="text-lg font-rajdhani font-semibold text-blued-steel">Minimal & Clean</h3>
-            <div className="space-y-[var(--space-sm)]">
+          <div className="bg-shooting-bench p-md rounded-overlay border border-case-hardened/20 space-y-base">
+            <h3 className="text-body-lg font-rajdhani font-semibold text-blued-steel">Minimal & Clean</h3>
+            <div className="space-y-sm">
               <Button variant="ghost" className="w-full">Ghost Button</Button>
               <Button variant="link" className="w-full">Link Style</Button>
               <Button variant="ghost" size="sm" className="w-full">Small Ghost</Button>
@@ -1069,9 +1069,9 @@ export const ProfessionalShowcase: Story = {
           </div>
 
           {/* All Sizes */}
-          <div className="bg-shooting-bench p-[var(--space-md)] rounded-2xl border border-case-hardened/20 space-y-[var(--space-base)]">
-            <h3 className="text-lg font-rajdhani font-semibold text-blued-steel">Size Spectrum</h3>
-            <div className="space-y-[var(--space-sm)] flex flex-col items-center">
+          <div className="bg-shooting-bench p-md rounded-overlay border border-case-hardened/20 space-y-base">
+            <h3 className="text-body-lg font-rajdhani font-semibold text-blued-steel">Size Spectrum</h3>
+            <div className="space-y-sm flex flex-col items-center">
               <Button variant="accent" size="xs">Extra Small</Button>
               <Button variant="accent" size="sm">Small</Button>
               <Button variant="accent" size="default">Default</Button>
@@ -1085,16 +1085,16 @@ export const ProfessionalShowcase: Story = {
       </div>
 
       {/* Interactive Demo */}
-      <div className="bg-gradient-to-br from-shooting-bench to-range-white p-12 rounded-3xl border border-case-hardened/20 shadow-lg">
-        <h2 className="text-3xl font-rajdhani font-semibold text-blued-steel text-center mb-[var(--space-xl)]">
+      <div className="bg-gradient-to-br from-shooting-bench to-range-white p-12 rounded-3xl border border-case-hardened/20 shadow-elevated">
+        <h2 className="text-3xl font-rajdhani font-semibold text-blued-steel text-center mb-xl">
           Interactive Features Demo
         </h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[var(--space-xl)]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl">
           {/* Loading States */}
-          <div className="space-y-[var(--space-md)]">
-            <h3 className="text-xl font-rajdhani font-semibold text-blued-steel">Loading States</h3>
-            <div className="space-y-[var(--space-base)]">
+          <div className="space-y-md">
+            <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel">Loading States</h3>
+            <div className="space-y-base">
               <Button variant="primary" loading className="w-full">Processing...</Button>
               <Button variant="accent" loading className="w-full">Saving...</Button>
               <Button variant="solid-success" loading className="w-full">Completing...</Button>
@@ -1102,9 +1102,9 @@ export const ProfessionalShowcase: Story = {
           </div>
 
           {/* Disabled States */}
-          <div className="space-y-[var(--space-md)]">
-            <h3 className="text-xl font-rajdhani font-semibold text-blued-steel">Disabled States</h3>
-            <div className="space-y-[var(--space-base)]">
+          <div className="space-y-md">
+            <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel">Disabled States</h3>
+            <div className="space-y-base">
               <Button variant="primary" disabled className="w-full">Unavailable</Button>
               <Button variant="accent" disabled className="w-full">Coming Soon</Button>
               <Button variant="solid-destructive" disabled className="w-full">Restricted</Button>
@@ -1112,19 +1112,19 @@ export const ProfessionalShowcase: Story = {
           </div>
 
           {/* With Icons */}
-          <div className="space-y-[var(--space-md)]">
-            <h3 className="text-xl font-rajdhani font-semibold text-blued-steel">With Icons</h3>
-            <div className="space-y-[var(--space-base)]">
+          <div className="space-y-md">
+            <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel">With Icons</h3>
+            <div className="space-y-base">
               <Button variant="primary" className="w-full">
-                <Plus className="mr-[var(--space-xs)] h-4 w-4" />
+                <Plus className="mr-xs h-4 w-4" />
                 Add Member
               </Button>
               <Button variant="accent" className="w-full">
-                <Download className="mr-[var(--space-xs)] h-4 w-4" />
+                <Download className="mr-xs h-4 w-4" />
                 Export Data
               </Button>
               <Button variant="solid-success" className="w-full">
-                <Check className="mr-[var(--space-xs)] h-4 w-4" />
+                <Check className="mr-xs h-4 w-4" />
                 Complete
               </Button>
             </div>
@@ -1133,12 +1133,12 @@ export const ProfessionalShowcase: Story = {
       </div>
 
       {/* Footer */}
-      <div className="text-center space-y-[var(--space-base)] pt-[var(--space-lg)] border-t border-case-hardened/20">
+      <div className="text-center space-y-base pt-lg border-t border-case-hardened/20">
         <p className="text-case-hardened font-noto-serif italic">
           "Every component reflects the precision, heritage, and quality of Idaho's firearms culture 
           while maintaining modern web standards and accessibility."
         </p>
-        <p className="text-sm text-case-hardened/70">
+        <p className="text-body-sm text-case-hardened/70">
           Design System v2.0 • The Boise Gun Club • 2025
         </p>
       </div>

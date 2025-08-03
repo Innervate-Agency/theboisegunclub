@@ -51,10 +51,10 @@ type Story = StoryObj<typeof meta>;
 // All Variants Showcase
 export const AllVariants: Story = {
   render: () => (
-    <div className="space-y-[var(--space-lg)]">
-      <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Badge Variants</h2>
+    <div className="space-y-lg">
+      <h2 className="text-display-md font-rajdhani font-bold mb-base">Badge Variants</h2>
       
-      <div className="flex flex-wrap gap-[var(--space-base)]">
+      <div className="flex flex-wrap gap-base">
         <Badge variant="default">Default</Badge>
         <Badge variant="premium">Premium</Badge>
         <Badge variant="elite">Elite</Badge>
@@ -73,18 +73,18 @@ export const AllVariants: Story = {
 // Size Variations
 export const SizeVariations: Story = {
   render: () => (
-    <div className="space-y-[var(--space-lg)]">
-      <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Size Options</h2>
+    <div className="space-y-lg">
+      <h2 className="text-display-md font-rajdhani font-bold mb-base">Size Options</h2>
       
-      <div className="space-y-[var(--space-base)]">
-        <div className="flex items-center gap-[var(--space-base)]">
+      <div className="space-y-base">
+        <div className="flex items-center gap-base">
           <Badge variant="success" size="sm">Small</Badge>
           <Badge variant="warning" size="default">Default</Badge>
           <Badge variant="info" size="lg">Large</Badge>
           <Badge variant="premium" size="xl" shimmer>Extra Large</Badge>
         </div>
         
-        <div className="flex items-center gap-[var(--space-base)]">
+        <div className="flex items-center gap-base">
           <Badge variant="success" size="sm" icon={<CheckCircle className="h-2.5 w-2.5" />}>Small with Icon</Badge>
           <Badge variant="warning" size="default" icon={<Clock className="h-3 w-3" />}>Default with Icon</Badge>
           <Badge variant="info" size="lg" icon={<Star className="h-3.5 w-3.5" />}>Large with Icon</Badge>
@@ -108,13 +108,13 @@ const InteractiveFeaturesComponent = () => {
   };
 
   return (
-    <div className="space-y-[var(--space-lg)]">
-      <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Interactive Features</h2>
+    <div className="space-y-lg">
+      <h2 className="text-display-md font-rajdhani font-bold mb-base">Interactive Features</h2>
       
       {/* Animated Badges */}
-      <div className="space-y-[var(--space-base)]">
+      <div className="space-y-base">
         <h3 className="font-rajdhani font-semibold">Animated Badges</h3>
-        <div className="flex flex-wrap gap-[var(--space-base)]">
+        <div className="flex flex-wrap gap-base">
           <Badge variant="success" animate icon={<CheckCircle className="h-3 w-3" />}>Animated</Badge>
           <Badge variant="warning" pulse>Pulsing</Badge>
           <Badge variant="premium" shimmer animate>Premium Shimmer</Badge>
@@ -123,9 +123,9 @@ const InteractiveFeaturesComponent = () => {
       </div>
 
       {/* Dismissible Badges */}
-      <div className="space-y-[var(--space-base)]">
+      <div className="space-y-base">
         <h3 className="font-rajdhani font-semibold">Dismissible Badges</h3>
-        <div className="flex flex-wrap gap-[var(--space-base)]">
+        <div className="flex flex-wrap gap-base">
           {badges.map((badge) => (
             <Badge
               key={badge.id}
@@ -140,7 +140,7 @@ const InteractiveFeaturesComponent = () => {
           ))}
         </div>
         {badges.length === 0 && (
-          <p className="text-muted-foreground text-sm">All badges dismissed! Refresh to reset.</p>
+          <p className="text-muted-foreground text-body-sm">All badges dismissed! Refresh to reset.</p>
         )}
       </div>
     </div>
@@ -154,46 +154,46 @@ export const InteractiveFeatures: Story = {
 // Gun Club Classifications
 export const Classifications: Story = {
   render: () => (
-    <div className="space-y-[var(--space-lg)]">
-      <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Shooting Classifications</h2>
+    <div className="space-y-lg">
+      <h2 className="text-display-md font-rajdhani font-bold mb-base">Shooting Classifications</h2>
       
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-[var(--space-md)]">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-md">
         <div className="text-center">
           <ClassificationBadge classification="Master" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">95%+ Average</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">95%+ Average</p>
         </div>
         <div className="text-center">
           <ClassificationBadge classification="AA" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">85-94% Average</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">85-94% Average</p>
         </div>
         <div className="text-center">
           <ClassificationBadge classification="A" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">75-84% Average</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">75-84% Average</p>
         </div>
         <div className="text-center">
           <ClassificationBadge classification="B" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">65-74% Average</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">65-74% Average</p>
         </div>
         <div className="text-center">
           <ClassificationBadge classification="C" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">50-64% Average</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">50-64% Average</p>
         </div>
         <div className="text-center">
           <ClassificationBadge classification="D" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">35-49% Average</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">35-49% Average</p>
         </div>
         <div className="text-center">
           <ClassificationBadge classification="Novice" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">Under 35%</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">Under 35%</p>
         </div>
       </div>
       
-      <div className="bg-card/50 rounded-xl p-[var(--space-md)] border border-border/20">
-        <div className="flex items-center gap-[var(--space-sm)] mb-[var(--space-base)]">
+      <div className="bg-card/50 rounded-large p-md border border-border/20">
+        <div className="flex items-center gap-sm mb-base">
           <Award className="h-5 w-5 text-brass-yellow" />
           <h3 className="font-rajdhani font-semibold">Classification Examples</h3>
         </div>
-        <div className="space-y-[var(--space-sm)]">
+        <div className="space-y-sm">
           <div className="flex items-center justify-between">
             <span className="font-medium">Mike Thompson</span>
             <ClassificationBadge classification="Master" />
@@ -219,42 +219,42 @@ export const Classifications: Story = {
 // Membership Status
 export const MembershipStatus: Story = {
   render: () => (
-    <div className="space-y-[var(--space-lg)]">
-      <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Membership Status</h2>
+    <div className="space-y-lg">
+      <h2 className="text-display-md font-rajdhani font-bold mb-base">Membership Status</h2>
       
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-[var(--space-md)]">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-md">
         <div className="text-center">
           <StatusBadge status="Active" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">Full Access</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">Full Access</p>
         </div>
         <div className="text-center">
           <StatusBadge status="Premium" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">Elite Benefits</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">Elite Benefits</p>
         </div>
         <div className="text-center">
           <StatusBadge status="Trial" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">30-Day Trial</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">30-Day Trial</p>
         </div>
         <div className="text-center">
           <StatusBadge status="Inactive" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">Account Paused</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">Account Paused</p>
         </div>
         <div className="text-center">
           <StatusBadge status="Suspended" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">Rule Violation</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">Rule Violation</p>
         </div>
         <div className="text-center">
           <StatusBadge status="Expired" size="lg" animate />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">Renewal Required</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">Renewal Required</p>
         </div>
       </div>
       
-      <div className="bg-card/50 rounded-xl p-[var(--space-md)] border border-border/20">
-        <div className="flex items-center gap-[var(--space-sm)] mb-[var(--space-base)]">
+      <div className="bg-card/50 rounded-large p-md border border-border/20">
+        <div className="flex items-center gap-sm mb-base">
           <Trophy className="h-5 w-5 text-scope-blue" />
           <h3 className="font-rajdhani font-semibold">Member Directory</h3>
         </div>
-        <div className="space-y-[var(--space-sm)]">
+        <div className="space-y-sm">
           <div className="flex items-center justify-between">
             <span className="font-medium">John Parker (Individual)</span>
             <StatusBadge status="Premium" showIcon />
@@ -284,53 +284,53 @@ export const MembershipStatus: Story = {
 // Score Badges
 export const ScoreBadges: Story = {
   render: () => (
-    <div className="space-y-[var(--space-lg)]">
-      <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Score Indicators</h2>
+    <div className="space-y-lg">
+      <h2 className="text-display-md font-rajdhani font-bold mb-base">Score Indicators</h2>
       
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-[var(--space-md)]">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-md">
         <div className="text-center">
           <ScoreBadge score={25} maxScore={25} size="lg" />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">Perfect Round</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">Perfect Round</p>
         </div>
         <div className="text-center">
           <ScoreBadge score={23} maxScore={25} size="lg" />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">Excellent</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">Excellent</p>
         </div>
         <div className="text-center">
           <ScoreBadge score={19} maxScore={25} size="lg" />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">Good</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">Good</p>
         </div>
         <div className="text-center">
           <ScoreBadge score={12} maxScore={25} size="lg" />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">Needs Work</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">Needs Work</p>
         </div>
       </div>
       
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-[var(--space-md)]">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-md">
         <div className="text-center">
           <ScoreBadge score={96} maxScore={100} showPercentage size="lg" />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">Sporting Clays</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">Sporting Clays</p>
         </div>
         <div className="text-center">
           <ScoreBadge score={87} maxScore={100} showPercentage size="lg" />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">Good Round</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">Good Round</p>
         </div>
         <div className="text-center">
           <ScoreBadge score={72} maxScore={100} showPercentage size="lg" />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">Average</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">Average</p>
         </div>
         <div className="text-center">
           <ScoreBadge score={45} maxScore={100} showPercentage size="lg" />
-          <p className="text-sm text-muted-foreground mt-[var(--space-xs)]">Beginner</p>
+          <p className="text-body-sm text-muted-foreground mt-xs">Beginner</p>
         </div>
       </div>
       
-      <div className="bg-card/50 rounded-xl p-[var(--space-md)] border border-border/20">
-        <div className="flex items-center gap-[var(--space-sm)] mb-[var(--space-base)]">
+      <div className="bg-card/50 rounded-large p-md border border-border/20">
+        <div className="flex items-center gap-sm mb-base">
           <Target className="h-5 w-5 text-brand-green" />
           <h3 className="font-rajdhani font-semibold">Recent Scores</h3>
         </div>
-        <div className="space-y-[var(--space-sm)]">
+        <div className="space-y-sm">
           <div className="flex items-center justify-between">
             <span className="font-medium">Trap Round 1</span>
             <ScoreBadge score={24} maxScore={25} animate />
@@ -356,17 +356,17 @@ export const ScoreBadges: Story = {
 // Event Badges
 export const EventBadges: Story = {
   render: () => (
-    <div className="space-y-[var(--space-lg)]">
-      <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Event & Tournament Badges</h2>
+    <div className="space-y-lg">
+      <h2 className="text-display-md font-rajdhani font-bold mb-base">Event & Tournament Badges</h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
         {/* Tournament Results */}
-        <div className="bg-card/50 rounded-xl p-[var(--space-md)] border border-border/20">
-          <div className="flex items-center gap-[var(--space-sm)] mb-[var(--space-base)]">
+        <div className="bg-card/50 rounded-large p-md border border-border/20">
+          <div className="flex items-center gap-sm mb-base">
             <Trophy className="h-5 w-5 text-brass-yellow" />
             <h3 className="font-rajdhani font-semibold">Tournament Results</h3>
           </div>
-          <div className="space-y-[var(--space-sm)]">
+          <div className="space-y-sm">
             <div className="flex items-center justify-between">
               <span className="font-medium">1st Place</span>
               <Badge variant="premium" icon={<Trophy className="h-3 w-3" />} shimmer animate>
@@ -395,12 +395,12 @@ export const EventBadges: Story = {
         </div>
         
         {/* Event Status */}
-        <div className="bg-card/50 rounded-xl p-[var(--space-md)] border border-border/20">
-          <div className="flex items-center gap-[var(--space-sm)] mb-[var(--space-base)]">
+        <div className="bg-card/50 rounded-large p-md border border-border/20">
+          <div className="flex items-center gap-sm mb-base">
             <CheckCircle className="h-5 w-5 text-rifling-green" />
             <h3 className="font-rajdhani font-semibold">Event Status</h3>
           </div>
-          <div className="space-y-[var(--space-sm)]">
+          <div className="space-y-sm">
             <div className="flex items-center justify-between">
               <span className="font-medium">Registration</span>
               <Badge variant="success" pulse>
@@ -430,35 +430,35 @@ export const EventBadges: Story = {
       </div>
       
       {/* Achievement Badges */}
-      <div className="bg-gradient-to-br from-brass-yellow/10 to-copper-orange/10 rounded-xl p-[var(--space-md)] border border-brass-yellow/20">
-        <div className="flex items-center gap-[var(--space-sm)] mb-[var(--space-md)]">
+      <div className="bg-gradient-to-br from-brass-yellow/10 to-copper-orange/10 rounded-large p-md border border-brass-yellow/20">
+        <div className="flex items-center gap-sm mb-md">
           <Zap className="h-6 w-6 text-copper-orange" />
           <h3 className="font-rajdhani font-bold">Achievement Unlocked!</h3>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-[var(--space-base)]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-base">
           <div className="text-center">
             <Badge variant="premium" size="lg" shimmer animate icon={<Trophy className="h-4 w-4" />}>
               Perfectionist
             </Badge>
-            <p className="text-xs text-muted-foreground mt-[var(--space-xs)]">25/25 Trap Round</p>
+            <p className="text-caption text-muted-foreground mt-xs">25/25 Trap Round</p>
           </div>
           <div className="text-center">
             <Badge variant="success" size="lg" animate icon={<Target className="h-4 w-4" />}>
               Marksman
             </Badge>
-            <p className="text-xs text-muted-foreground mt-[var(--space-xs)]">90%+ Average</p>
+            <p className="text-caption text-muted-foreground mt-xs">90%+ Average</p>
           </div>
           <div className="text-center">
             <Badge variant="warning" size="lg" animate icon={<Star className="h-4 w-4" />}>
               Consistent
             </Badge>
-            <p className="text-xs text-muted-foreground mt-[var(--space-xs)]">10 Rounds Straight</p>
+            <p className="text-caption text-muted-foreground mt-xs">10 Rounds Straight</p>
           </div>
           <div className="text-center">
             <Badge variant="info" size="lg" animate icon={<Award className="h-4 w-4" />}>
               Competitor
             </Badge>
-            <p className="text-xs text-muted-foreground mt-[var(--space-xs)]">5 Tournaments</p>
+            <p className="text-caption text-muted-foreground mt-xs">5 Tournaments</p>
           </div>
         </div>
       </div>
@@ -469,14 +469,14 @@ export const EventBadges: Story = {
 // Elite Showcase
 export const EliteShowcase: Story = {
   render: () => (
-    <div className="space-y-[var(--space-lg)]">
-      <h2 className="text-2xl font-rajdhani font-bold mb-[var(--space-base)]">Elite Badge Variants</h2>
+    <div className="space-y-lg">
+      <h2 className="text-display-md font-rajdhani font-bold mb-base">Elite Badge Variants</h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-lg)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
         {/* Premium vs Elite Comparison */}
-        <div className="bg-card/50 rounded-xl p-[var(--space-md)] border border-border/20">
-          <h3 className="font-heading font-semibold mb-[var(--space-base)]">Premium vs Elite</h3>
-          <div className="space-y-[var(--space-base)]">
+        <div className="bg-card/50 rounded-large p-md border border-border/20">
+          <h3 className="font-heading font-semibold mb-base">Premium vs Elite</h3>
+          <div className="space-y-base">
             <div className="flex items-center justify-between">
               <span className="font-medium">Premium Badge</span>
               <Badge variant="premium" shimmer size="lg">Premium</Badge>
@@ -489,9 +489,9 @@ export const EliteShowcase: Story = {
         </div>
         
         {/* Elite in Action */}
-        <div className="bg-card/50 rounded-xl p-[var(--space-md)] border border-border/20">
-          <h3 className="font-heading font-semibold mb-[var(--space-base)]">Elite Classifications</h3>
-          <div className="space-y-[var(--space-sm)]">
+        <div className="bg-card/50 rounded-large p-md border border-border/20">
+          <h3 className="font-heading font-semibold mb-base">Elite Classifications</h3>
+          <div className="space-y-sm">
             <div className="flex items-center justify-between">
               <span className="font-medium">Elite Champion</span>
               <Badge variant="elite" icon={<Trophy className="h-3 w-3" />}>Champion</Badge>
@@ -509,9 +509,9 @@ export const EliteShowcase: Story = {
       </div>
       
       {/* Elite Size Variations */}
-      <div className="bg-gradient-to-br from-brass-yellow/10 to-copper-orange/10 rounded-xl p-[var(--space-md)] border border-brass-yellow/20">
-        <h3 className="font-heading font-semibold mb-[var(--space-base)]">Elite Size Variations</h3>
-        <div className="flex items-center gap-[var(--space-base)] flex-wrap">
+      <div className="bg-gradient-to-br from-brass-yellow/10 to-copper-orange/10 rounded-large p-md border border-brass-yellow/20">
+        <h3 className="font-heading font-semibold mb-base">Elite Size Variations</h3>
+        <div className="flex items-center gap-base flex-wrap">
           <Badge variant="elite" size="sm">Small Elite</Badge>
           <Badge variant="elite" size="default">Default Elite</Badge>
           <Badge variant="elite" size="lg">Large Elite</Badge>
@@ -530,7 +530,7 @@ export const Playground: Story = {
     children: 'Premium Badge',
   },
   render: (args) => (
-    <div className="space-y-[var(--space-base)]">
+    <div className="space-y-base">
       <h3 className="font-rajdhani font-semibold">Interactive Badge</h3>
       <Badge {...args} />
     </div>
@@ -540,7 +540,7 @@ export const Playground: Story = {
 // Glassmorphism Showcase
 export const Glassmorphism: Story = {
   render: () => (
-    <div className="relative h-64 w-full rounded-lg overflow-hidden">
+    <div className="relative h-64 w-full rounded-card overflow-hidden">
       <Image 
         src="https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop" 
         alt="Shooting range background"
@@ -548,7 +548,7 @@ export const Glassmorphism: Story = {
         fill
       />
       <div className="absolute inset-0 bg-gunmetal-black/30" />
-      <div className="relative h-full flex items-center justify-center gap-[var(--space-base)]">
+      <div className="relative h-full flex items-center justify-center gap-base">
         <Badge variant="glass" size="lg">Skeet Range</Badge>
         <Badge variant="glass" size="lg" icon={<Target className="h-3.5 w-3.5" />}>Trap Field</Badge>
         <Badge variant="glass" size="lg" icon={<Trophy className="h-3.5 w-3.5" />}>5-Stand</Badge>

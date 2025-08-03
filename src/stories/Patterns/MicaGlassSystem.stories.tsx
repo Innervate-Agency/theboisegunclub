@@ -29,7 +29,7 @@ export const CompleteDemo: Story = {
   name: 'Complete Mica System Demo',
   render: () => (
     <div 
-      className="min-h-screen p-[var(--space-lg)] relative"
+      className="min-h-screen p-lg relative"
       style={{
         background: `
           radial-gradient(circle at 25% 25%, rgba(242, 203, 5, 0.08) 0%, transparent 40%),
@@ -57,7 +57,7 @@ export const CompleteDemo: Story = {
 export const DarkModeDemo: Story = {
   name: 'Dark Mode Mica Effects',
   render: () => (
-    <div className="dark min-h-screen bg-gradient-hero-premium p-[var(--space-lg)]">
+    <div className="dark min-h-screen bg-gradient-hero-premium p-lg">
       <MicaGlassDemo />
     </div>
   )
@@ -67,7 +67,7 @@ export const LayeredBackground: Story = {
   name: 'Complex Background Layering',
   render: () => (
     <div 
-      className="min-h-screen p-[var(--space-lg)]"
+      className="min-h-screen p-lg"
       style={{
         background: `
           radial-gradient(circle at 25% 25%, rgba(242, 203, 5, 0.06) 0%, transparent 35%),
@@ -93,9 +93,9 @@ export const PracticalExamples: Story = {
 export const MinimalDemo: Story = {
   name: 'Minimal Glass Effects',
   render: () => (
-    <div className="min-h-screen bg-solid-brand-neutral p-[var(--space-lg)]">
-      <div className="max-w-4xl mx-auto space-y-[var(--space-lg)]">
-        <div className="text-center space-y-[var(--space-base)]">
+    <div className="min-h-screen bg-solid-brand-neutral p-lg">
+      <div className="max-w-4xl mx-auto space-y-lg">
+        <div className="text-center space-y-base">
           <h2 className="text-3xl font-rajdhani font-bold text-foreground">
             Minimal Mica Integration
           </h2>
@@ -104,20 +104,20 @@ export const MinimalDemo: Story = {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-md)]">
-          <div className="mica-card p-[var(--space-md)] rounded-lg">
-            <h3 className="font-medium mb-[var(--space-xs)] text-foreground">Standard Card</h3>
-            <p className="text-sm text-muted-foreground">Subtle glass effect</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
+          <div className="mica-card p-md rounded-card">
+            <h3 className="font-medium mb-xs text-foreground">Standard Card</h3>
+            <p className="text-body-sm text-muted-foreground">Subtle glass effect</p>
           </div>
           
-          <div className="mica-dropdown p-[var(--space-md)] rounded-lg">
-            <h3 className="font-medium mb-[var(--space-xs)] text-foreground">Dropdown Style</h3>
-            <p className="text-sm text-muted-foreground">Optimized blur levels</p>
+          <div className="mica-dropdown p-md rounded-card">
+            <h3 className="font-medium mb-xs text-foreground">Dropdown Style</h3>
+            <p className="text-body-sm text-muted-foreground">Optimized blur levels</p>
           </div>
           
-          <div className="mica-overlay p-[var(--space-md)] rounded-lg">
-            <h3 className="font-medium mb-[var(--space-xs)] text-foreground">Overlay Effect</h3>
-            <p className="text-sm text-muted-foreground">Professional depth</p>
+          <div className="mica-overlay p-md rounded-card">
+            <h3 className="font-medium mb-xs text-foreground">Overlay Effect</h3>
+            <p className="text-body-sm text-muted-foreground">Professional depth</p>
           </div>
         </div>
       </div>
@@ -128,9 +128,9 @@ export const MinimalDemo: Story = {
 export const DarkModeTest: Story = {
   name: 'Dark Mode Theme Test',
   render: () => (
-    <div className="dark min-h-screen bg-background p-[var(--space-lg)]">
-      <div className="max-w-4xl mx-auto space-y-[var(--space-lg)]">
-        <div className="text-center space-y-[var(--space-base)]">
+    <div className="dark min-h-screen bg-background p-lg">
+      <div className="max-w-4xl mx-auto space-y-lg">
+        <div className="text-center space-y-base">
           <h2 className="text-3xl font-rajdhani font-bold text-foreground">
             Dark Mode Test - Theme Colors
           </h2>
@@ -139,25 +139,25 @@ export const DarkModeTest: Story = {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
-          <div className="bg-card text-card-foreground p-[var(--space-md)] rounded-lg border border-border">
-            <h3 className="font-medium mb-[var(--space-xs)] text-foreground">Card with Semantic Colors</h3>
-            <p className="text-sm text-muted-foreground">This uses bg-card and text-foreground</p>
-            <p className="text-xs text-muted-foreground mt-[var(--space-xs)]">Muted text should be lighter gray</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
+          <div className="bg-card text-card-foreground p-md rounded-card border border-border">
+            <h3 className="font-medium mb-xs text-foreground">Card with Semantic Colors</h3>
+            <p className="text-body-sm text-muted-foreground">This uses bg-card and text-foreground</p>
+            <p className="text-caption text-muted-foreground mt-xs">Muted text should be lighter gray</p>
           </div>
           
-          <div className="mica-card p-[var(--space-md)] rounded-lg">
-            <h3 className="font-medium mb-[var(--space-xs)] text-foreground">Mica Card</h3>
-            <p className="text-sm text-muted-foreground">Glass effect with theme colors</p>
-            <p className="text-xs text-brand-primary mt-[var(--space-xs)]">Brand primary (brass yellow)</p>
+          <div className="mica-card p-md rounded-card">
+            <h3 className="font-medium mb-xs text-foreground">Mica Card</h3>
+            <p className="text-body-sm text-muted-foreground">Glass effect with theme colors</p>
+            <p className="text-caption text-brand-primary mt-xs">Brand primary (brass yellow)</p>
           </div>
         </div>
         
-        <div className="bg-primary text-primary-foreground p-[var(--space-base)] rounded-lg">
+        <div className="bg-primary text-primary-foreground p-base rounded-card">
           <p className="font-medium">Primary background with primary foreground text</p>
         </div>
         
-        <div className="bg-secondary text-secondary-foreground p-[var(--space-base)] rounded-lg">
+        <div className="bg-secondary text-secondary-foreground p-base rounded-card">
           <p className="font-medium">Secondary background with secondary foreground text</p>
         </div>
       </div>

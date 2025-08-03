@@ -72,7 +72,7 @@ export const Premium: Story = {
 
 export const Glass: Story = {
   render: () => (
-    <div className="bg-gradient-to-br from-night-sight to-tactical-gray p-[var(--space-lg)] rounded-xl">
+    <div className="bg-gradient-to-br from-night-sight to-tactical-gray p-lg rounded-large">
       <Select variant="glass">
         <SelectTrigger className="w-[250px]">
           <SelectValue placeholder="Glass selection..." />
@@ -92,7 +92,7 @@ export const Glass: Story = {
 
 export const WithIcons: Story = {
   render: () => (
-    <div className="space-y-[var(--space-base)] max-w-md">
+    <div className="space-y-base max-w-md">
       <Select>
         <SelectTrigger leftIcon={<User className="h-4 w-4" />}>
           <SelectValue placeholder="Select member type..." />
@@ -120,7 +120,7 @@ export const WithIcons: Story = {
 
 export const Sizes: Story = {
   render: () => (
-    <div className="space-y-[var(--space-base)] max-w-md">
+    <div className="space-y-base max-w-md">
       <Select>
         <SelectTrigger size="sm" className="w-[180px]">
           <SelectValue placeholder="Small select..." />
@@ -186,9 +186,9 @@ export const GroupedOptions: Story = {
 
 export const AllVariants: Story = {
   render: () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)] max-w-4xl">
-      <div className="space-y-[var(--space-base)]">
-        <h3 className="font-semibold text-lg">Default</h3>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-md max-w-4xl">
+      <div className="space-y-base">
+        <h3 className="font-semibold text-body-lg">Default</h3>
         <Select>
           <SelectTrigger>
             <SelectValue placeholder="Default variant..." />
@@ -200,8 +200,8 @@ export const AllVariants: Story = {
         </Select>
       </div>
 
-      <div className="space-y-[var(--space-base)]">
-        <h3 className="font-semibold text-lg">Premium</h3>
+      <div className="space-y-base">
+        <h3 className="font-semibold text-body-lg">Premium</h3>
         <Select variant="premium">
           <SelectTrigger>
             <SelectValue placeholder="Premium variant..." />
@@ -213,8 +213,8 @@ export const AllVariants: Story = {
         </Select>
       </div>
 
-      <div className="space-y-[var(--space-base)]">
-        <h3 className="font-semibold text-lg">Outline</h3>
+      <div className="space-y-base">
+        <h3 className="font-semibold text-body-lg">Outline</h3>
         <Select variant="outline">
           <SelectTrigger>
             <SelectValue placeholder="Outline variant..." />
@@ -226,8 +226,8 @@ export const AllVariants: Story = {
         </Select>
       </div>
 
-      <div className="space-y-[var(--space-base)]">
-        <h3 className="font-semibold text-lg">Filled</h3>
+      <div className="space-y-base">
+        <h3 className="font-semibold text-body-lg">Filled</h3>
         <Select variant="filled">
           <SelectTrigger>
             <SelectValue placeholder="Filled variant..." />
@@ -245,19 +245,19 @@ export const AllVariants: Story = {
 export const GunClubPresets: Story = {
   name: 'Gun Club Presets',
   render: () => (
-    <div className="space-y-[var(--space-md)] max-w-lg">
-      <div className="space-y-[var(--space-sm)]">
-        <h3 className="font-rajdhani font-semibold text-lg text-card-foreground">Classification Select</h3>
+    <div className="space-y-md max-w-lg">
+      <div className="space-y-sm">
+        <h3 className="font-rajdhani font-semibold text-body-lg text-card-foreground">Classification Select</h3>
         <ClassificationSelect placeholder="Select your classification..." />
       </div>
 
-      <div className="space-y-[var(--space-sm)]">
-        <h3 className="font-rajdhani font-semibold text-lg text-card-foreground">Range Select</h3>
+      <div className="space-y-sm">
+        <h3 className="font-rajdhani font-semibold text-body-lg text-card-foreground">Range Select</h3>
         <RangeSelect placeholder="Choose a range..." />
       </div>
 
-      <div className="space-y-[var(--space-sm)]">
-        <h3 className="font-rajdhani font-semibold text-lg text-card-foreground">Tournament Registration</h3>
+      <div className="space-y-sm">
+        <h3 className="font-rajdhani font-semibold text-body-lg text-card-foreground">Tournament Registration</h3>
         <Select variant="premium">
           <SelectTrigger leftIcon={<Trophy className="h-4 w-4" />}>
             <SelectValue placeholder="Select tournament..." />
@@ -292,14 +292,14 @@ export const GunClubPresets: Story = {
 export const MembershipForm: Story = {
   name: 'Membership Application Form',
   render: () => (
-    <div className="space-y-[var(--space-md)] max-w-2xl">
-      <h3 className="font-rajdhani font-bold text-xl text-card-foreground">
+    <div className="space-y-md max-w-2xl">
+      <h3 className="font-rajdhani font-bold text-display-sm text-card-foreground">
         Membership Application
       </h3>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
-        <div className="space-y-[var(--space-xs)]">
-          <label className="text-sm font-medium text-card-foreground">Membership Type</label>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-base">
+        <div className="space-y-xs">
+          <label className="text-body-sm font-medium text-card-foreground">Membership Type</label>
           <Select variant="premium">
             <SelectTrigger leftIcon={<User className="h-4 w-4" />}>
               <SelectValue placeholder="Select membership..." />
@@ -318,13 +318,13 @@ export const MembershipForm: Story = {
           </Select>
         </div>
 
-        <div className="space-y-[var(--space-xs)]">
-          <label className="text-sm font-medium text-card-foreground">Current Classification</label>
+        <div className="space-y-xs">
+          <label className="text-body-sm font-medium text-card-foreground">Current Classification</label>
           <ClassificationSelect />
         </div>
 
-        <div className="space-y-[var(--space-xs)]">
-          <label className="text-sm font-medium text-card-foreground">Primary Discipline</label>
+        <div className="space-y-xs">
+          <label className="text-body-sm font-medium text-card-foreground">Primary Discipline</label>
           <Select>
             <SelectTrigger leftIcon={<Target className="h-4 w-4" />}>
               <SelectValue placeholder="Select discipline..." />
@@ -346,8 +346,8 @@ export const MembershipForm: Story = {
           </Select>
         </div>
 
-        <div className="space-y-[var(--space-xs)]">
-          <label className="text-sm font-medium text-card-foreground">Location</label>
+        <div className="space-y-xs">
+          <label className="text-body-sm font-medium text-card-foreground">Location</label>
           <Select variant="outline">
             <SelectTrigger leftIcon={<MapPin className="h-4 w-4" />}>
               <SelectValue placeholder="Select location..." />

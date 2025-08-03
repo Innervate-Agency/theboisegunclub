@@ -143,9 +143,9 @@ export const GoldTier: Story = {
 // Showcase all tiers together
 export const AllTiers: Story = {
   render: () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-lg)] p-[var(--space-lg)]">
-      <div className="space-y-[var(--space-base)]">
-        <h3 className="font-rajdhani font-bold text-lg text-center">FREE TIER</h3>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg p-lg">
+      <div className="space-y-base">
+        <h3 className="font-rajdhani font-bold text-body-lg text-center">FREE TIER</h3>
         <VendorCard
           {...sampleBusinesses.gunShop}
           tier="free"
@@ -154,8 +154,8 @@ export const AllTiers: Story = {
         />
       </div>
       
-      <div className="space-y-[var(--space-base)]">
-        <h3 className="font-rajdhani font-bold text-lg text-center text-copper-orange">COPPER - $49/mo</h3>
+      <div className="space-y-base">
+        <h3 className="font-rajdhani font-bold text-body-lg text-center text-copper-orange">COPPER - $49/mo</h3>
         <VendorCard
           {...sampleBusinesses.range}
           tier="copper"
@@ -163,8 +163,8 @@ export const AllTiers: Story = {
         />
       </div>
       
-      <div className="space-y-[var(--space-base)]"> 
-        <h3 className="font-rajdhani font-bold text-lg text-center text-stainless-steel">SILVER - $99/mo</h3>
+      <div className="space-y-base"> 
+        <h3 className="font-rajdhani font-bold text-body-lg text-center text-stainless-steel">SILVER - $99/mo</h3>
         <VendorCard
           {...sampleBusinesses.gunsmith}
           tier="silver"
@@ -173,8 +173,8 @@ export const AllTiers: Story = {
         />
       </div>
       
-      <div className="space-y-[var(--space-base)]">
-        <h3 className="font-rajdhani font-bold text-lg text-center text-brass-yellow">GOLD - $199/mo</h3>
+      <div className="space-y-base">
+        <h3 className="font-rajdhani font-bold text-body-lg text-center text-brass-yellow">GOLD - $199/mo</h3>
         <VendorCard
           {...sampleBusinesses.gunShop}
           tier="gold"
@@ -236,16 +236,16 @@ export const TrainingAcademy: Story = {
 
 export const ResponsiveGrid: Story = {
   render: () => (
-    <div className="space-y-[var(--space-lg)]">
+    <div className="space-y-lg">
       {/* Mobile: Single column */}
-      <div className="md:hidden space-y-[var(--space-base)]">
+      <div className="md:hidden space-y-base">
         <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true} featured={true} monthlyLeads={42} />
         <VendorCard {...sampleBusinesses.range} tier="silver" isVerified={true} />
         <VendorCard {...sampleBusinesses.gunsmith} tier="copper" isVerified={true} />
       </div>
       
       {/* Tablet: 2 columns */}
-      <div className="hidden md:grid lg:hidden grid-cols-2 gap-[var(--space-lg)]">
+      <div className="hidden md:grid lg:hidden grid-cols-2 gap-lg">
         <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true} featured={true} monthlyLeads={42} />
         <VendorCard {...sampleBusinesses.range} tier="silver" isVerified={true} />
         <VendorCard {...sampleBusinesses.gunsmith} tier="copper" isVerified={true} />
@@ -253,7 +253,7 @@ export const ResponsiveGrid: Story = {
       </div>
       
       {/* Desktop: 3 columns */} 
-      <div className="hidden lg:grid grid-cols-3 gap-[var(--space-lg)]">
+      <div className="hidden lg:grid grid-cols-3 gap-lg">
         <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true} featured={true} monthlyLeads={42} />
         <VendorCard {...sampleBusinesses.range} tier="silver" isVerified={true} featured={true} />
         <VendorCard {...sampleBusinesses.gunsmith} tier="copper" isVerified={true} />

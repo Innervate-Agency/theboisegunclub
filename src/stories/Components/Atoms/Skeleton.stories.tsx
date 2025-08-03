@@ -15,9 +15,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (args) => (
-    <div className="flex items-center space-x-[var(--space-base)]">
+    <div className="flex items-center space-x-base">
       <Skeleton className="h-12 w-12 rounded-full" {...args} />
-      <div className="space-y-[var(--space-xs)]">
+      <div className="space-y-xs">
         <Skeleton className="h-4 w-[250px]" {...args} />
         <Skeleton className="h-4 w-[200px]" {...args} />
       </div>

@@ -36,8 +36,8 @@ export const Default: Story = {
             <DrawerTitle>Move Goal</DrawerTitle>
             <DrawerDescription>Set your daily activity goal.</DrawerDescription>
           </DrawerHeader>
-          <div className="p-[var(--space-base)] pb-0">
-            <div className="flex items-center justify-center space-x-[var(--space-xs)]">
+          <div className="p-base pb-0">
+            <div className="flex items-center justify-center space-x-xs">
               <Button
                 variant="outline"
                 size="icon"

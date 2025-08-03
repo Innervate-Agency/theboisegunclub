@@ -62,13 +62,13 @@ type Story = StoryObj<typeof meta>
 const AppSidebar = () => (
   <Sidebar>
     <SidebarHeader>
-      <div className="flex items-center gap-[var(--space-xs)] px-[var(--space-xs)] py-[var(--space-xs)]">
-        <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-copper-orange text-white">
+      <div className="flex items-center gap-xs px-xs py-xs">
+        <div className="flex aspect-square size-8 items-center justify-center rounded-card bg-copper-orange text-white">
           <Target className="size-4" />
         </div>
-        <div className="grid flex-1 text-left text-sm leading-tight">
+        <div className="grid flex-1 text-left text-body-sm leading-tight">
           <span className="truncate font-semibold">Boise Gun Club</span>
-          <span className="truncate text-xs text-muted-foreground">Treasure Valley</span>
+          <span className="truncate text-caption text-muted-foreground">Treasure Valley</span>
         </div>
       </div>
     </SidebarHeader>
@@ -178,20 +178,20 @@ const SidebarDemo = ({ defaultOpen = true, collapsible = "icon" as const }) => (
     <div className="flex h-screen w-full">
       <AppSidebar />
       <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-[var(--space-xs)] border-b px-[var(--space-base)]">
-          <SidebarTrigger className="-ml-[var(--space-xs)]" />
+        <header className="flex h-16 shrink-0 items-center gap-xs border-b px-base">
+          <SidebarTrigger className="-ml-xs" />
           <div className="mx-2 h-4 w-px bg-border" />
-          <div className="flex items-center gap-[var(--space-xs)] text-sm">
+          <div className="flex items-center gap-xs text-body-sm">
             <span className="font-semibold">Treasure Valley Directory</span>
           </div>
         </header>
-        <div className="flex flex-1 flex-col gap-[var(--space-base)] p-[var(--space-base)]">
-          <div className="grid auto-rows-min gap-[var(--space-base)] md:grid-cols-3">
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
+        <div className="flex flex-1 flex-col gap-base p-base">
+          <div className="grid auto-rows-min gap-base md:grid-cols-3">
+            <div className="aspect-video rounded-large bg-muted/50" />
+            <div className="aspect-video rounded-large bg-muted/50" />
+            <div className="aspect-video rounded-large bg-muted/50" />
           </div>
-          <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+          <div className="min-h-[100vh] flex-1 rounded-large bg-muted/50 md:min-h-min" />
         </div>
       </SidebarInset>
     </div>
@@ -210,10 +210,10 @@ export const FloatingVariant: Story = {
   render: () => (
     <SidebarProvider defaultOpen={true}>
       <div className="flex h-screen w-full">
-        <Sidebar variant="floating" className="m-[var(--space-xs)]">
+        <Sidebar variant="floating" className="m-xs">
           <SidebarHeader>
-            <div className="flex items-center gap-[var(--space-xs)] px-[var(--space-xs)] py-[var(--space-xs)]">
-              <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-brass-yellow text-gunmetal-black">
+            <div className="flex items-center gap-xs px-xs py-xs">
+              <div className="flex aspect-square size-8 items-center justify-center rounded-card bg-brass-yellow text-gunmetal-black">
                 <Target className="size-4" />
               </div>
               <span className="font-semibold">Floating Sidebar</span>
@@ -245,10 +245,10 @@ export const FloatingVariant: Story = {
           </SidebarContent>
         </Sidebar>
         <SidebarInset>
-          <div className="flex flex-1 flex-col gap-[var(--space-base)] p-[var(--space-base)]">
-            <div className="grid auto-rows-min gap-[var(--space-base)] md:grid-cols-2">
-              <div className="aspect-video rounded-xl bg-muted/50" />
-              <div className="aspect-video rounded-xl bg-muted/50" />
+          <div className="flex flex-1 flex-col gap-base p-base">
+            <div className="grid auto-rows-min gap-base md:grid-cols-2">
+              <div className="aspect-video rounded-large bg-muted/50" />
+              <div className="aspect-video rounded-large bg-muted/50" />
             </div>
           </div>
         </SidebarInset>
@@ -263,8 +263,8 @@ export const InsetVariant: Story = {
       <div className="flex h-screen w-full">
         <Sidebar variant="inset">
           <SidebarHeader>
-            <div className="flex items-center gap-[var(--space-xs)] px-[var(--space-xs)] py-[var(--space-xs)]">
-              <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-copper-orange text-white">
+            <div className="flex items-center gap-xs px-xs py-xs">
+              <div className="flex aspect-square size-8 items-center justify-center rounded-card bg-copper-orange text-white">
                 <Shield className="size-4" />
               </div>
               <span className="font-semibold">Inset Sidebar</span>
@@ -292,12 +292,12 @@ export const InsetVariant: Story = {
           </SidebarContent>
         </Sidebar>
         <SidebarInset>
-          <div className="flex flex-1 flex-col gap-[var(--space-base)] p-[var(--space-base)]">
-            <h2 className="text-2xl font-bold text-copper-orange">Inset Layout</h2>
-            <div className="grid auto-rows-min gap-[var(--space-base)] md:grid-cols-3">
-              <div className="aspect-video rounded-xl bg-muted/50" />
-              <div className="aspect-video rounded-xl bg-muted/50" />
-              <div className="aspect-video rounded-xl bg-muted/50" />
+          <div className="flex flex-1 flex-col gap-base p-base">
+            <h2 className="text-display-md font-bold text-copper-orange">Inset Layout</h2>
+            <div className="grid auto-rows-min gap-base md:grid-cols-3">
+              <div className="aspect-video rounded-large bg-muted/50" />
+              <div className="aspect-video rounded-large bg-muted/50" />
+              <div className="aspect-video rounded-large bg-muted/50" />
             </div>
           </div>
         </SidebarInset>

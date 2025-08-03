@@ -8,10 +8,10 @@ import { Badge } from '@/components/ui/badge';
 
 const DarkModeTest = () => {
   return (
-    <div className="space-y-[var(--space-lg)] p-[var(--space-lg)]">
+    <div className="space-y-lg p-lg">
       <div>
-        <h1 className="text-3xl font-rajdhani font-bold mb-[var(--space-base)]">Dark Mode Theme Test</h1>
-        <p className="text-muted-foreground mb-[var(--space-lg)]">
+        <h1 className="text-3xl font-rajdhani font-bold mb-base">Dark Mode Theme Test</h1>
+        <p className="text-muted-foreground mb-lg">
           This story tests the semantic color system in both light and dark modes. 
           Use the theme toggle in Storybook to test both modes.
         </p>
@@ -23,8 +23,8 @@ const DarkModeTest = () => {
           <CardTitle>Text Colors</CardTitle>
           <CardDescription>Testing foreground and muted-foreground colors</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-[var(--space-base)]">
-          <div className="space-y-[var(--space-xs)]">
+        <CardContent className="space-y-base">
+          <div className="space-y-xs">
             <p className="text-foreground font-semibold">Primary Text (text-foreground)</p>
             <p className="text-muted-foreground">Secondary Text (text-muted-foreground)</p>
             <p className="text-primary">Primary Color (text-primary)</p>
@@ -34,7 +34,7 @@ const DarkModeTest = () => {
       </Card>
 
       {/* Components Test */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-md)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
         <StatCard
           value="1,234"
           label="Active Members"
@@ -53,14 +53,14 @@ const DarkModeTest = () => {
           <CardHeader>
             <CardTitle>Input Test</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-[var(--space-base)]">
+          <CardContent className="space-y-base">
             <Input placeholder="Test input field" />
-            <div className="flex gap-[var(--space-xs)]">
+            <div className="flex gap-xs">
               <Button variant="default">Default</Button>
               <Button variant="secondary">Secondary</Button>
               <Button variant="destructive">Destructive</Button>
             </div>
-            <div className="flex gap-[var(--space-xs)]">
+            <div className="flex gap-xs">
               <Badge variant="default">Default Badge</Badge>
               <Badge variant="secondary">Secondary Badge</Badge>
               <Badge variant="destructive">Destructive Badge</Badge>
@@ -75,19 +75,19 @@ const DarkModeTest = () => {
           <CardTitle>Background Colors</CardTitle>
           <CardDescription>Testing background, card, and muted backgrounds</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-[var(--space-base)]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-base)]">
-            <div className="bg-background border border-border p-[var(--space-base)] rounded">
+        <CardContent className="space-y-base">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-base">
+            <div className="bg-background border border-border p-base rounded">
               <p className="text-foreground font-medium">Background</p>
-              <p className="text-muted-foreground text-sm">bg-background</p>
+              <p className="text-muted-foreground text-body-sm">bg-background</p>
             </div>
-            <div className="bg-card border border-border p-[var(--space-base)] rounded">
+            <div className="bg-card border border-border p-base rounded">
               <p className="text-card-foreground font-medium">Card</p>
-              <p className="text-muted-foreground text-sm">bg-card</p>
+              <p className="text-muted-foreground text-body-sm">bg-card</p>
             </div>
-            <div className="bg-muted border border-border p-[var(--space-base)] rounded">
+            <div className="bg-muted border border-border p-base rounded">
               <p className="text-foreground font-medium">Muted</p>
-              <p className="text-muted-foreground text-sm">bg-muted</p>
+              <p className="text-muted-foreground text-body-sm">bg-muted</p>
             </div>
           </div>
         </CardContent>

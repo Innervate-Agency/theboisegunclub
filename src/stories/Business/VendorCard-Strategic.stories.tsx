@@ -122,17 +122,17 @@ export const Gold_PremiumFire: Story = {
 // Strategic comparison showing clear value progression
 export const StrategicHierarchy: Story = {
   render: () => (
-    <div className="space-y-[var(--space-lg)]">
-      <div className="text-center mb-[var(--space-lg)]">
-        <h2 className="font-rajdhani font-bold text-2xl mb-[var(--space-xs)]">Strategic Design Hierarchy</h2>
+    <div className="space-y-lg">
+      <div className="text-center mb-lg">
+        <h2 className="font-rajdhani font-bold text-display-md mb-xs">Strategic Design Hierarchy</h2>
         <p className="text-muted-foreground">Each tier should make the next one obviously more valuable</p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-lg)]">
-        <div className="space-y-[var(--space-base)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+        <div className="space-y-base">
           <div className="text-center">
-            <h3 className="font-rajdhani font-bold text-sm text-muted-foreground">FREE - $0</h3>
-            <p className="text-xs text-muted-foreground">Clean minimalism</p>
+            <h3 className="font-rajdhani font-bold text-body-sm text-muted-foreground">FREE - $0</h3>
+            <p className="text-caption text-muted-foreground">Clean minimalism</p>
           </div>
           <VendorCard
             {...strategicBusinesses.basic}
@@ -142,10 +142,10 @@ export const StrategicHierarchy: Story = {
           />
         </div>
         
-        <div className="space-y-[var(--space-base)]">
+        <div className="space-y-base">
           <div className="text-center">
-            <h3 className="font-rajdhani font-bold text-sm text-copper-orange">COPPER - $49</h3>
-            <p className="text-xs text-muted-foreground">One strategic accent</p>
+            <h3 className="font-rajdhani font-bold text-body-sm text-copper-orange">COPPER - $49</h3>
+            <p className="text-caption text-muted-foreground">One strategic accent</p>
           </div>
           <VendorCard
             {...strategicBusinesses.enhanced}
@@ -154,10 +154,10 @@ export const StrategicHierarchy: Story = {
           />
         </div>
         
-        <div className="space-y-[var(--space-base)]">
+        <div className="space-y-base">
           <div className="text-center">
-            <h3 className="font-rajdhani font-bold text-sm text-stainless-steel">SILVER - $99</h3>
-            <p className="text-xs text-muted-foreground">Metallic presence</p>
+            <h3 className="font-rajdhani font-bold text-body-sm text-stainless-steel">SILVER - $99</h3>
+            <p className="text-caption text-muted-foreground">Metallic presence</p>
           </div>
           <VendorCard
             {...strategicBusinesses.featured}
@@ -167,10 +167,10 @@ export const StrategicHierarchy: Story = {
           />
         </div>
         
-        <div className="space-y-[var(--space-base)]">
+        <div className="space-y-base">
           <div className="text-center">
-            <h3 className="font-rajdhani font-bold text-sm text-brass-yellow">GOLD - $199</h3>
-            <p className="text-xs text-muted-foreground">Premium fire treatment</p>
+            <h3 className="font-rajdhani font-bold text-body-sm text-brass-yellow">GOLD - $199</h3>
+            <p className="text-caption text-muted-foreground">Premium fire treatment</p>
           </div>
           <VendorCard
             {...strategicBusinesses.premium}
@@ -183,7 +183,7 @@ export const StrategicHierarchy: Story = {
         </div>
       </div>
       
-      <div className="text-center text-sm text-muted-foreground">
+      <div className="text-center text-body-sm text-muted-foreground">
         <p>Notice how each tier makes the next one look obviously better - that's strategic design!</p>
       </div>
     </div>

@@ -21,7 +21,7 @@ export const Default: Story = {
         <Image
           src="/images/Dust/VintageDust (3).webp"
           alt="Vintage Dust Background"
-          className="rounded-md object-cover"
+          className="rounded-input object-cover"
           fill
         />
       </AspectRatio>

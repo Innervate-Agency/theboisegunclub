@@ -27,15 +27,15 @@ export const Default: Story = {
         <Button variant="outline">Open popover</Button>
       </PopoverTrigger>
       <PopoverContent className="w-80">
-        <div className="grid gap-[var(--space-base)]">
-          <div className="space-y-[var(--space-xs)]">
+        <div className="grid gap-base">
+          <div className="space-y-xs">
             <h4 className="font-medium leading-none">Dimensions</h4>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-body-sm text-muted-foreground">
               Set the dimensions for the layer.
             </p>
           </div>
-          <div className="grid gap-[var(--space-xs)]">
-            <div className="grid grid-cols-3 items-center gap-[var(--space-base)]">
+          <div className="grid gap-xs">
+            <div className="grid grid-cols-3 items-center gap-base">
               <Label htmlFor="width">Width</Label>
               <Input
                 id="width"
@@ -43,7 +43,7 @@ export const Default: Story = {
                 className="col-span-2 h-8"
               />
             </div>
-            <div className="grid grid-cols-3 items-center gap-[var(--space-base)]">
+            <div className="grid grid-cols-3 items-center gap-base">
               <Label htmlFor="maxWidth">Max. width</Label>
               <Input
                 id="maxWidth"
@@ -51,7 +51,7 @@ export const Default: Story = {
                 className="col-span-2 h-8"
               />
             </div>
-            <div className="grid grid-cols-3 items-center gap-[var(--space-base)]">
+            <div className="grid grid-cols-3 items-center gap-base">
               <Label htmlFor="height">Height</Label>
               <Input
                 id="height"
@@ -59,7 +59,7 @@ export const Default: Story = {
                 className="col-span-2 h-8"
               />
             </div>
-            <div className="grid grid-cols-3 items-center gap-[var(--space-base)]">
+            <div className="grid grid-cols-3 items-center gap-base">
               <Label htmlFor="maxHeight">Max. height</Label>
               <Input
                 id="maxHeight"

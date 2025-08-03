@@ -106,18 +106,18 @@ export const Interactive: Story = {
 export const FireVariants: Story = {
   name: "Fire Gradient Animations",
   render: () => (
-    <div className="w-full max-w-5xl space-y-[var(--space-lg)]">
-      <div className="space-y-[var(--space-base)]">
-        <h2 className="text-2xl font-rajdhani font-bold text-card-foreground">Fire Gradient System</h2>
+    <div className="w-full max-w-5xl space-y-lg">
+      <div className="space-y-base">
+        <h2 className="text-display-md font-rajdhani font-bold text-card-foreground">Fire Gradient System</h2>
         <p className="card-body">
           Sophisticated gradient animations that "unfurl" on hover. Use sparingly for premium features.
         </p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-md)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
         <Card variant="fire" className="w-full">
           <CardHeader>
-            <CardTitle className="flex items-center gap-[var(--space-xs)]">
+            <CardTitle className="flex items-center gap-xs">
               <Target className="w-4 h-4" />
               Fire Orange
             </CardTitle>
@@ -126,7 +126,7 @@ export const FireVariants: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Badge variant="premium" className="mb-[var(--space-xs)]">Premium</Badge>
+            <Badge variant="premium" className="mb-xs">Premium</Badge>
             <p className="card-body">
               Copper to brass gradient animation
             </p>
@@ -135,7 +135,7 @@ export const FireVariants: Story = {
 
         <Card variant="fire-blue" className="w-full">
           <CardHeader>
-            <CardTitle className="flex items-center gap-[var(--space-xs)]">
+            <CardTitle className="flex items-center gap-xs">
               <Shield className="w-4 h-4" />
               Fire Blue
             </CardTitle>
@@ -144,7 +144,7 @@ export const FireVariants: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Badge variant="info" className="mb-[var(--space-xs)]">Tactical</Badge>
+            <Badge variant="info" className="mb-xs">Tactical</Badge>
             <p className="card-body">
               Blue to green gradient animation
             </p>
@@ -153,7 +153,7 @@ export const FireVariants: Story = {
 
         <Card variant="fire-purple" className="w-full">
           <CardHeader>
-            <CardTitle className="flex items-center gap-[var(--space-xs)]">
+            <CardTitle className="flex items-center gap-xs">
               <Zap className="w-4 h-4" />
               Fire Purple
             </CardTitle>
@@ -162,7 +162,7 @@ export const FireVariants: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Badge variant="elite" className="mb-[var(--space-xs)]">Elite</Badge>
+            <Badge variant="elite" className="mb-xs">Elite</Badge>
             <p className="card-body">
               Purple to cobalt gradient animation
             </p>
@@ -171,7 +171,7 @@ export const FireVariants: Story = {
 
         <Card variant="fire-green" className="w-full">
           <CardHeader>
-            <CardTitle className="flex items-center gap-[var(--space-xs)]">
+            <CardTitle className="flex items-center gap-xs">
               <Award className="w-4 h-4" />
               Fire Green
             </CardTitle>
@@ -180,7 +180,7 @@ export const FireVariants: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Badge variant="success" className="mb-[var(--space-xs)]">Achievement</Badge>
+            <Badge variant="success" className="mb-xs">Achievement</Badge>
             <p className="card-body">
               Green variants gradient animation
             </p>
@@ -196,18 +196,18 @@ export const FireVariants: Story = {
 export const AdvancedVariants: Story = {
   name: "Advanced Card Variants",
   render: () => (
-    <div className="w-full max-w-5xl space-y-[var(--space-lg)]">
-      <div className="space-y-[var(--space-base)]">
-        <h2 className="text-2xl font-rajdhani font-bold text-card-foreground">Advanced Styling Options</h2>
+    <div className="w-full max-w-5xl space-y-lg">
+      <div className="space-y-base">
+        <h2 className="text-display-md font-rajdhani font-bold text-card-foreground">Advanced Styling Options</h2>
         <p className="card-body">
           Premium, glass, and specialized variants for different use cases.
         </p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-md)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
         <Card variant="premium" className="w-full">
           <CardHeader>
-            <CardTitle className="flex items-center gap-[var(--space-xs)]">
+            <CardTitle className="flex items-center gap-xs">
               <Star className="w-4 h-4" />
               Premium Card
             </CardTitle>
@@ -216,7 +216,7 @@ export const AdvancedVariants: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-[var(--space-xs)]">
+            <div className="space-y-xs">
               <Badge variant="premium" shimmer>Premium Member</Badge>
               <p className="card-body">
                 Features subtle brand gradient overlay and bottom accent bar.
@@ -230,7 +230,7 @@ export const AdvancedVariants: Story = {
 
         <Card variant="glass" className="w-full">
           <CardHeader>
-            <CardTitle className="flex items-center gap-[var(--space-xs)]">
+            <CardTitle className="flex items-center gap-xs">
               <Zap className="w-4 h-4" />
               Glass Card
             </CardTitle>
@@ -239,7 +239,7 @@ export const AdvancedVariants: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-[var(--space-xs)]">
+            <div className="space-y-xs">
               <Badge variant="glass">Mica Effect</Badge>
               <p className="card-body">
                 Windows 11-inspired mica glass with backdrop blur.
@@ -253,7 +253,7 @@ export const AdvancedVariants: Story = {
 
         <Card variant="elevated" className="w-full">
           <CardHeader>
-            <CardTitle className="flex items-center gap-[var(--space-xs)]">
+            <CardTitle className="flex items-center gap-xs">
               <CheckCircle className="w-4 h-4" />
               Elevated Card
             </CardTitle>
@@ -262,7 +262,7 @@ export const AdvancedVariants: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-[var(--space-xs)]">
+            <div className="space-y-xs">
               <Badge variant="success">Available</Badge>
               <p className="card-body">
                 Lifts up on hover for prominent interactive feedback.
@@ -283,15 +283,15 @@ export const AdvancedVariants: Story = {
 export const TBGCBusinessCards: Story = {
   name: "TBGC Business Context",
   render: () => (
-    <div className="w-full max-w-6xl space-y-[var(--space-lg)]">
-      <div className="space-y-[var(--space-base)]">
-        <h2 className="text-2xl font-rajdhani font-bold text-card-foreground">Treasure Valley Firearms Directory</h2>
+    <div className="w-full max-w-6xl space-y-lg">
+      <div className="space-y-base">
+        <h2 className="text-display-md font-rajdhani font-bold text-card-foreground">Treasure Valley Firearms Directory</h2>
         <p className="card-body">
           Real-world application of the card component system in TBGC's business context.
         </p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-lg)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
         <Card variant="fire" className="w-full">
           <CardHeader>
             <CardTitle>Boise Firearms Depot</CardTitle>
@@ -300,15 +300,15 @@ export const TBGCBusinessCards: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-[var(--space-sm)]">
-              <div className="flex flex-wrap gap-[var(--space-xs)]">
+            <div className="space-y-sm">
+              <div className="flex flex-wrap gap-xs">
                 <Badge variant="premium" shimmer>Gold Member</Badge>
                 <Badge variant="success" icon={<CheckCircle className="w-3 h-3" />}>Verified</Badge>
               </div>
               <p className="card-body">
                 Specializing in tactical gear, custom builds, and professional gunsmithing services.
               </p>
-              <div className="text-xs text-muted-foreground">
+              <div className="text-caption text-muted-foreground">
                 <p>📍 1234 State Street, Boise, ID</p>
                 <p>⭐ 4.8/5 (247 reviews)</p>
               </div>
@@ -328,15 +328,15 @@ export const TBGCBusinessCards: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-[var(--space-sm)]">
-              <div className="flex flex-wrap gap-[var(--space-xs)]">
+            <div className="space-y-sm">
+              <div className="flex flex-wrap gap-xs">
                 <Badge variant="info" icon={<Shield className="w-3 h-3" />}>Silver Member</Badge>
                 <Badge variant="success">Open Today</Badge>
               </div>
               <p className="card-body">
                 25-lane climate-controlled range with tactical training courses.
               </p>
-              <div className="text-xs text-muted-foreground">
+              <div className="text-caption text-muted-foreground">
                 <p>📍 5678 Eagle Road, Meridian, ID</p>
                 <p>🕒 Mon-Sat 9AM-9PM</p>
               </div>
@@ -356,15 +356,15 @@ export const TBGCBusinessCards: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-[var(--space-sm)]">
-              <div className="flex flex-wrap gap-[var(--space-xs)]">
+            <div className="space-y-sm">
+              <div className="flex flex-wrap gap-xs">
                 <Badge variant="outline">Free Listing</Badge>
                 <Badge variant="warning" icon={<Clock className="w-3 h-3" />}>Updating Hours</Badge>
               </div>
               <p className="card-body">
                 Professional tactical training and equipment for law enforcement.
               </p>
-              <div className="text-xs text-muted-foreground">
+              <div className="text-caption text-muted-foreground">
                 <p>📍 Twin Falls, ID</p>
                 <p>📞 Contact for current hours</p>
               </div>

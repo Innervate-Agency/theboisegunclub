@@ -68,13 +68,13 @@ export const LargeNumber: Story = {
 
 export const GunClubStats: Story = {
   render: () => (
-    <div className="space-y-[var(--space-md)] p-[var(--space-md)]">
+    <div className="space-y-md p-md">
       <div className="text-center">
-        <h2 className="text-2xl font-rajdhani font-bold text-blued-steel mb-[var(--space-xs)]">TBGC Statistics</h2>
+        <h2 className="text-display-md font-rajdhani font-bold text-blued-steel mb-xs">TBGC Statistics</h2>
         <p className="text-case-hardened">Real-time club metrics and performance data</p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-md)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
         <StatCard
           value="247"
           label="Active Members"
@@ -113,7 +113,7 @@ export const GunClubStats: Story = {
 
 export const MembershipStats: Story = {
   render: () => (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-base)]">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-base">
       <StatCard
         value="247"
         label="Current Members"
@@ -132,7 +132,7 @@ export const MembershipStats: Story = {
 
 export const CompetitionStats: Story = {
   render: () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-base">
       <StatCard
         value="92%"
         label="Skeet Average"
@@ -155,16 +155,16 @@ export const CompetitionStats: Story = {
 
 export const AnimatedCounters: Story = {
   render: () => (
-    <div className="space-y-[var(--space-lg)]">
+    <div className="space-y-lg">
       <div className="text-center">
-        <h3 className="text-lg font-rajdhani font-bold text-blued-steel mb-[var(--space-base)]">
+        <h3 className="text-body-lg font-rajdhani font-bold text-blued-steel mb-base">
           Animated Counter Examples
         </h3>
-        <p className="text-sm text-case-hardened mb-[var(--space-md)]">
+        <p className="text-body-sm text-case-hardened mb-md">
           These cards animate when they come into view
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-base)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-base">
         <StatCard
           value="2,450"
           label="Total Members"

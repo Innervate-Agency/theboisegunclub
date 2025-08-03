@@ -46,7 +46,7 @@ function ProfileForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-[350px] space-y-[var(--space-lg)]">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-[350px] space-y-lg">
         <FormField
           control={form.control}
           name="username"

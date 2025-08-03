@@ -21,7 +21,7 @@ const DefaultCalendarComponent = (args: any) => {
       mode="single"
       selected={date}
       onSelect={setDate}
-      className="rounded-md border"
+      className="rounded-input border"
       {...args}
     />
   );

@@ -16,14 +16,14 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: (args) => (
     <div>
-      <div className="space-y-[var(--space-micro)]">
-        <h4 className="text-sm font-medium leading-none">Radix Primitives</h4>
-        <p className="text-sm text-muted-foreground">
+      <div className="space-y-micro">
+        <h4 className="text-body-sm font-medium leading-none">Radix Primitives</h4>
+        <p className="text-body-sm text-muted-foreground">
           An open-source UI component library.
         </p>
       </div>
       <Separator className="my-4" {...args} />
-      <div className="flex h-5 items-center space-x-[var(--space-base)] text-sm">
+      <div className="flex h-5 items-center space-x-base text-body-sm">
         <div>Blog</div>
         <Separator orientation="vertical" {...args} />
         <div>Docs</div>

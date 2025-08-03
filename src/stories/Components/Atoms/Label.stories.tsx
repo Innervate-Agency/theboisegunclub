@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: (args) => (
     <div>
-      <div className="flex items-center space-x-[var(--space-xs)]">
+      <div className="flex items-center space-x-xs">
         <Checkbox id="terms" />
         <Label htmlFor="terms" {...args}>
           Accept terms and conditions

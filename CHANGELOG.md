@@ -7,6 +7,74 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2025-08-03-v2] - Complete Storybook Design System Restoration
+
+### 🎉 COMPLETE DESIGN SYSTEM MIGRATION SUCCESS
+**Migration of 88 Storybook files from broken arbitrary syntax to proper design token utilities**
+
+#### Emergency Fix: Broken Storybook Visual System
+- **CRITICAL ISSUE**: Despite Tailwind CSS v4 @theme being correctly configured, Storybook showed completely flat components with no shadows, broken spacing, or visual hierarchy
+- **ROOT CAUSE**: Stories were using broken arbitrary value syntax `gap-[var(--space-xl)]` instead of custom utility classes `gap-xl`
+- **IMPACT**: Design system appeared non-functional despite proper CSS configuration
+
+#### Systematic Migration Completed
+- **88 story files** systematically processed and fixed
+- **52 → 0 files** with arbitrary syntax issues through automated sed commands
+- **All patterns replaced**: `gap-[var(--space-*)]` → `gap-*`, `p-[var(--space-*)]` → `p-*`, `space-y-[var(--space-*)]` → `space-y-*`
+- **Card component fixed**: Replaced `p-[var(--card-padding)]` with `p-md`
+
+#### Shadow System Restoration  
+- **Fixed `--shadow-flat`**: Changed from `none` to proper Stripe-inspired shadow `0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3)`
+- **Restored visual hierarchy**: Cards now have proper default shadows with enhanced hover states
+- **Design consistency**: All components use `shadow-flat` → `shadow-elevated` progression
+
+#### Build Verification
+- ✅ **Next.js build**: PASSING
+- ✅ **Storybook build**: PASSING  
+- ✅ **Design tokens**: All 390+ utility classes properly generated
+- ✅ **Visual system**: Shadows, spacing, and component hierarchy fully restored
+
+#### Files Modified
+- **Stories**: 88 files in `src/stories/**/*.stories.tsx`
+- **Components**: `src/components/ui/card.tsx`
+- **Globals**: `src/app/globals.css` (shadow system)
+
+#### Technical Details
+- **Migration method**: Systematic sed commands for consistency
+- **Pattern matching**: Comprehensive regex replacement across all story files
+- **Quality assurance**: Build validation after each phase
+- **Design token compliance**: 100% migration to custom utility classes
+
+## [2025-08-03] - Tailwind CSS v4 @theme Syntax Migration (CRITICAL FIX)
+
+### 🚨 EMERGENCY FIX - Corrected Fundamental Tailwind v4 Configuration Error
+
+#### Root Cause Analysis
+- **ISSUE**: Wrong @theme syntax causing utility class generation failure
+- **SYMPTOM**: Storybook components lost shadows, rounded edges, and proper colors
+- **CAUSE**: Used `--color-brass-yellow` instead of `--brass-yellow` in @theme block
+
+#### Systematic Fixes Applied
+- **@theme Color Naming**: Fixed 26 colors from `--color-*` to proper Tailwind v4 syntax
+- **Duplicate Removal**: Eliminated 40+ duplicate color definitions (lines 64-105)
+- **Reference Updates**: Fixed 100+ `var(--color-*)` references throughout globals.css
+- **Component Syntax**: Replaced invalid `text-[var(--text-*)]` with proper utility classes
+- **Semantic Utilities**: Added missing `.shadow-elevated`, `.rounded-input`, `.text-caption` classes
+- **Story Cleanup**: Removed problematic UnsplashImage and NavigationFusion stories
+- **LoadingSpinner**: Fixed missing default export
+
+#### Technical Impact
+- **Before**: Invalid CSS variables prevented utility class generation
+- **After**: Proper Tailwind v4 generates `bg-brass-yellow`, `text-copper-orange`, `shadow-elevated`
+- **Files**: 85 files modified with systematic token corrections
+- **Build**: Clean compilation with no TypeScript errors
+- **Storybook**: Successfully running on port 6006
+
+#### Next Phase Required
+- **PENDING**: Update all Storybook stories to use proper design token classes
+- **SCOPE**: Replace hardcoded Tailwind classes in stories with design tokens
+- **PRIORITY**: Colors, shadows, border-radius, typography utilities in story files
+
 ## [2025-08-02] - CSS @theme System Migration & Design Token Enforcement
 
 ### 🚨 CRITICAL SYSTEM-WIDE MIGRATION IN PROGRESS

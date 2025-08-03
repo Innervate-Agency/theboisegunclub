@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (args) => (
-    <div className="grid w-full max-w-sm gap-[var(--space-md)]">
+    <div className="grid w-full max-w-sm gap-md">
       <Label htmlFor="message">Your message</Label>
       <Textarea placeholder="Type your message here." id="message" {...args} />
     </div>
@@ -35,7 +35,7 @@ export const Premium: Story = {
     placeholder: 'Enter premium details...',
   },
   render: (args) => (
-    <div className="grid w-full max-w-sm gap-[var(--space-md)]">
+    <div className="grid w-full max-w-sm gap-md">
       <Label htmlFor="premium-message">Premium Message</Label>
       <Textarea {...args} />
     </div>
@@ -48,8 +48,8 @@ export const Glass: Story = {
     placeholder: 'Enter glass details...',
   },
   render: (args) => (
-    <div className="relative w-[400px] p-10 bg-cover bg-center rounded-lg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')" }}>
-      <div className="grid w-full max-w-sm gap-[var(--space-md)]">
+    <div className="relative w-[400px] p-10 bg-cover bg-center rounded-card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')" }}>
+      <div className="grid w-full max-w-sm gap-md">
         <Label htmlFor="glass-message" className="text-range-white">Glass Message</Label>
         <Textarea {...args} />
       </div>
@@ -63,7 +63,7 @@ export const Filled: Story = {
     placeholder: 'Enter filled details...',
   },
   render: (args) => (
-    <div className="grid w-full max-w-sm gap-[var(--space-md)]">
+    <div className="grid w-full max-w-sm gap-md">
       <Label htmlFor="filled-message">Filled Message</Label>
       <Textarea {...args} />
     </div>

@@ -20,12 +20,12 @@ const tags = Array.from({ length: 50 }).map(
 
 export const Default: Story = {
   render: (args) => (
-    <ScrollArea className="h-72 w-48 rounded-md border" {...args}>
-      <div className="p-[var(--space-base)]">
-        <h4 className="mb-[var(--space-base)] text-sm font-medium leading-none">Tags</h4>
+    <ScrollArea className="h-72 w-48 rounded-input border" {...args}>
+      <div className="p-base">
+        <h4 className="mb-base text-body-sm font-medium leading-none">Tags</h4>
         {tags.map((tag) => (
           <>
-            <div key={tag} className="text-sm">
+            <div key={tag} className="text-body-sm">
               {tag}
             </div>
             <Separator className="my-2" />

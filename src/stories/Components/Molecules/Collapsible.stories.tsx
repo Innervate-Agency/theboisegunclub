@@ -26,11 +26,11 @@ const DefaultCollapsibleComponent = (args: any) => {
     <Collapsible
       open={isOpen}
       onOpenChange={setIsOpen}
-      className="w-[350px] space-y-[var(--space-xs)]"
+      className="w-[350px] space-y-xs"
       {...args}
     >
-      <div className="flex items-center justify-between space-x-[var(--space-base)] px-[var(--space-base)]">
-        <h4 className="text-sm font-semibold">
+      <div className="flex items-center justify-between space-x-base px-base">
+        <h4 className="text-body-sm font-semibold">
           @peduarte starred 3 repositories
         </h4>
         <CollapsibleTrigger asChild>
@@ -40,14 +40,14 @@ const DefaultCollapsibleComponent = (args: any) => {
           </Button>
         </CollapsibleTrigger>
       </div>
-      <div className="rounded-md border px-[var(--space-base)] py-[var(--space-sm)] font-mono text-sm">
+      <div className="rounded-input border px-base py-sm font-mono text-body-sm">
         @radix-ui/primitives
       </div>
-      <CollapsibleContent className="space-y-[var(--space-xs)]">
-        <div className="rounded-md border px-[var(--space-base)] py-[var(--space-sm)] font-mono text-sm">
+      <CollapsibleContent className="space-y-xs">
+        <div className="rounded-input border px-base py-sm font-mono text-body-sm">
           @radix-ui/colors
         </div>
-        <div className="rounded-md border px-[var(--space-base)] py-[var(--space-sm)] font-mono text-sm">
+        <div className="rounded-input border px-base py-sm font-mono text-body-sm">
           @stitches/react
         </div>
       </CollapsibleContent>

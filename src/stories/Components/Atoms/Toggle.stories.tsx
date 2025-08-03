@@ -25,7 +25,7 @@ export const Default: Story = {
 export const WithText: Story = {
   render: (args) => (
     <Toggle aria-label="Toggle bold" {...args}>
-      <Bold className="h-4 w-4 mr-[var(--space-xs)]" />
+      <Bold className="h-4 w-4 mr-xs" />
       Bold
     </Toggle>
   ),
