@@ -29,12 +29,12 @@ const featureGridVariants = cva(
 )
 
 const featureCardVariants = cva(
-  "group relative bg-card rounded-lg border-border p-[var(--space-md)] shadow-sm hover:shadow-md transition-all duration-200 ease-out",
+  "group relative bg-card rounded-card border-border p-[var(--space-md)] shadow-flat hover:shadow-md transition-all duration-200 ease-out",
   {
     variants: {
       cardVariant: {
         default: "border-border hover:border-scope-blue/30",
-        glass: "mica-card border-border/30 hover:shadow-lg transition-shadow duration-200",
+        glass: "mica-card border-border/30 hover:shadow-elevated transition-shadow duration-200",
         branded: "border-scope-blue/20 hover:border-scope-blue/40 hover:bg-scope-blue/5"
       }
     },
@@ -91,17 +91,17 @@ export function FeatureGrid({
         {(title || subtitle || description) && (
           <div className="text-center mb-[var(--space-xl)]">
             {subtitle && (
-              <p className="text-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
+              <p className="text-body-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
             {title && (
-              <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+              <h2 className="text-heading-lg md:text-heading-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
                 {title}
               </h2>
             )}
             {description && (
-              <p className="text-lg text-case-hardened font-noto-sans max-w-3xl mx-auto leading-relaxed">
+              <p className="text-body-lg text-case-hardened font-noto-sans max-w-3xl mx-auto leading-relaxed">
                 {description}
               </p>
             )}
@@ -121,18 +121,18 @@ export function FeatureGrid({
                 <div className="space-y-[var(--space-base)]">
                   {/* Icon */}
                   {Icon && (
-                    <div className="flex items-center justify-center w-12 h-12 bg-brass-yellow/10 rounded-lg group-hover:bg-brass-yellow/20 transition-colors duration-200">
+                    <div className="flex items-center justify-center w-12 h-12 bg-brass-yellow/10 rounded-card group-hover:bg-brass-yellow/20 transition-colors duration-200">
                       <Icon className="icon-lg icon-primary group-hover:scale-110 transition-transform duration-200" />
                     </div>
                   )}
                   
                   {/* Content */}
                   <div className="space-y-[var(--space-sm)]">
-                    <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black group-hover:text-brass-yellow transition-colors duration-200">
+                    <h3 className="text-heading-sm font-rajdhani font-bold text-gunmetal-black group-hover:text-brass-yellow transition-colors duration-200">
                       {feature.title}
                     </h3>
                     
-                    <p className="text-sm text-case-hardened font-noto-sans leading-relaxed">
+                    <p className="text-body-sm text-case-hardened font-noto-sans leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

@@ -17,16 +17,16 @@ const vendorCardVariants = cva(
     variants: {
       tier: {
         // FREE: Clean baseline - professional foundation (no animation)
-        free: "shadow-sm hover:shadow-md",
+        free: "shadow-flat hover:shadow-md",
         
         // COPPER: Enhanced copper presence - subtle background tint with prominent gradient accent
-        copper: "shadow-sm hover:shadow-md bg-copper-orange/[0.02] hover:bg-copper-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        copper: "shadow-flat hover:shadow-md bg-copper-orange/[0.02] hover:bg-copper-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
         // SILVER: Consistent default shadows with subtle cobalt glassmorphism
-        silver: "relative shadow-sm hover:shadow-md bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-ayu-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-ayu-blue/8 dark:before:to-scope-blue/6 before:rounded-lg before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-blue after:to-tactical-gray after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg",
+        silver: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-ayu-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-ayu-blue/8 dark:before:to-scope-blue/6 before:rounded-card before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-blue after:to-tactical-gray after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg",
         
         // GOLD: Consistent default shadows with premium mica glassmorphism features
-        gold: "relative shadow-sm hover:shadow-md bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-tactical-gray/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/10 before:via-transparent before:to-copper-orange/8 dark:before:from-brass-yellow/14 dark:before:to-copper-orange/12 before:rounded-lg before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
+        gold: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-tactical-gray/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/10 before:via-transparent before:to-copper-orange/8 dark:before:from-brass-yellow/14 dark:before:to-copper-orange/12 before:rounded-card before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
       },
       size: {
         sm: "p-[var(--space-base)]",           // 16px - compact cards
@@ -113,16 +113,16 @@ export function VendorCard({
                 onError={() => setImgError(true)}
               />
             ) : null}
-            <AvatarFallback className="rounded-[var(--radius-lg)] bg-muted font-rajdhani font-bold text-[var(--text-xl)] text-muted-foreground">
+            <AvatarFallback className="rounded-[var(--radius-lg)] bg-muted font-rajdhani font-bold text-heading-sm text-muted-foreground">
               {businessName.charAt(0).toUpperCase()}
             </AvatarFallback>
           </Avatar>
           
           <div className="space-y-[var(--space-micro)] flex-1">
-            <h3 className="font-rajdhani font-bold text-[var(--text-lg)] text-card-foreground leading-tight transition-colors duration-200 group-hover:text-copper-orange">
+            <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground leading-tight transition-colors duration-200 group-hover:text-copper-orange">
               {businessName}
             </h3>
-            <p className="text-[var(--text-sm)] text-muted-foreground leading-tight">{businessType}</p>
+            <p className="text-body-sm text-muted-foreground leading-tight">{businessType}</p>
           </div>
         </div>
 
@@ -149,7 +149,7 @@ export function VendorCard({
 
       {/* Description */}
       {description && (
-        <p className="text-[var(--text-sm)] text-muted-foreground mb-[var(--space-md)] line-clamp-2">
+        <p className="text-body-sm text-muted-foreground mb-[var(--space-md)] line-clamp-2">
           {description}
         </p>
       )}
@@ -157,19 +157,19 @@ export function VendorCard({
       {/* Contact Information */}
       <div className="space-y-[var(--space-xs)] mb-[var(--space-md)]">
         {address && (
-          <div className="flex items-center gap-[var(--space-xs)] text-[var(--text-sm)] text-muted-foreground">
+          <div className="flex items-center gap-[var(--space-xs)] text-body-sm text-muted-foreground">
             <MapPin className="w-[var(--icon-sm)] h-[var(--icon-sm)] flex-shrink-0" />
             <span className="truncate">{address}</span>
           </div>
         )}
         {phone && (
-          <div className="flex items-center gap-[var(--space-xs)] text-[var(--text-sm)] text-muted-foreground">
+          <div className="flex items-center gap-[var(--space-xs)] text-body-sm text-muted-foreground">
             <Phone className="w-[var(--icon-sm)] h-[var(--icon-sm)] flex-shrink-0" />
             <span>{phone}</span>
           </div>
         )}
         {hours && (
-          <div className="flex items-center gap-[var(--space-xs)] text-[var(--text-sm)] text-muted-foreground">
+          <div className="flex items-center gap-[var(--space-xs)] text-body-sm text-muted-foreground">
             <Clock className="w-[var(--icon-sm)] h-[var(--icon-sm)] flex-shrink-0" />
             <span>{hours}</span>
           </div>
@@ -192,7 +192,7 @@ export function VendorCard({
               />
             ))}
           </div>
-          <span className="text-[var(--text-sm)] text-muted-foreground">
+          <span className="text-body-sm text-muted-foreground">
             {rating} ({reviewCount} reviews)
           </span>
         </div>
@@ -225,7 +225,7 @@ export function VendorCard({
       {showLeads && (
         <div className="flex items-center gap-[var(--space-xs)] mb-[var(--space-md)] p-[var(--space-xs)] bg-rifling-green/10 rounded-[var(--radius-md)]">
           <TrendingUp className="w-[var(--icon-sm)] h-[var(--icon-sm)] text-rifling-green" />
-          <span className="text-[var(--text-sm)] text-rifling-green font-medium">
+          <span className="text-body-sm text-rifling-green font-medium">
             {monthlyLeads} leads this month
           </span>
         </div>

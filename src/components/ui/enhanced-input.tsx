@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 // TBGC Enhanced Input - Complete Design System Application
 const enhancedInputVariants = cva(
   // Foundation: Flat elements inside containers (Stripe pattern) + proper typography
-  "flex w-full min-w-0 border bg-transparent font-noto-sans transition-stripe-fast outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground selection:bg-brass-yellow selection:text-gunmetal-black shadow-flat",
+  "flex w-full min-w-0 border bg-transparent font-noto-sans transition-stripe-fast outline-none file:border-0 file:bg-transparent file:text-body-sm file:font-medium placeholder:text-muted-foreground selection:bg-brass-yellow selection:text-gunmetal-black shadow-flat",
   {
     variants: {
       variant: {
@@ -29,15 +29,15 @@ const enhancedInputVariants = cva(
       },
       size: {
         // Proper sizing using design tokens
-        sm: "h-8 px-[var(--space-sm)] py-[var(--space-xs)] text-sm",         // 32px - compact
-        default: "h-10 px-[var(--space-sm)] py-[var(--space-xs)] text-sm",  // 40px - standard  
-        lg: "h-12 px-[var(--space-base)] py-[var(--space-sm)] text-base",     // 48px - large
+        sm: "h-8 px-[var(--space-sm)] py-[var(--space-xs)] text-body-sm",         // 32px - compact
+        default: "h-10 px-[var(--space-sm)] py-[var(--space-xs)] text-body-sm",  // 40px - standard  
+        lg: "h-12 px-[var(--space-base)] py-[var(--space-sm)] text-body",     // 48px - large
       },
       radius: {
         none: "rounded-none",
-        sm: "rounded-sm",      // --radius-sm
-        default: "rounded-md", // --radius-base
-        lg: "rounded-lg",      // --radius-lg
+        sm: "rounded-button",      // --radius-sm
+        default: "rounded-input", // --radius-base
+        lg: "rounded-card",      // --radius-lg
         full: "rounded-full",  // --radius-full
       },
       status: {

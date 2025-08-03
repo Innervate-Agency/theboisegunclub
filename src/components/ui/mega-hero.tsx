@@ -90,17 +90,17 @@ export function MegaHero({
           {/* Main content */}
           <div className="space-y-[var(--space-md)]">
             {subtitle && (
-              <p className="text-sm uppercase tracking-wider font-medium text-case-hardened">
+              <p className="text-body-sm uppercase tracking-wider font-medium text-case-hardened">
                 {subtitle}
               </p>
             )}
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-rajdhani font-bold text-gunmetal-black tracking-tight leading-tight">
+            <h1 className="text-heading-xl md:text-display-sm lg:text-6xl font-rajdhani font-bold text-gunmetal-black tracking-tight leading-tight">
               {title}
             </h1>
             
             {description && (
-              <p className="text-lg md:text-xl text-case-hardened font-noto-sans leading-relaxed max-w-3xl mx-auto">
+              <p className="text-body-lg md:text-heading-sm text-case-hardened font-noto-sans leading-relaxed max-w-3xl mx-auto">
                 {description}
               </p>
             )}
@@ -115,7 +115,7 @@ export function MegaHero({
               {badges.map((badge, index) => (
                 <div
                   key={index}
-                  className="px-[var(--space-base)] py-[var(--space-xs)] bg-white/80 backdrop-blur-sm border border-brass-yellow/20 rounded-lg text-sm font-medium text-blued-steel shadow-xs"
+                  className="px-[var(--space-base)] py-[var(--space-xs)] bg-card/80 backdrop-blur-sm border border-brass-yellow/20 rounded-card text-body-sm font-medium text-blued-steel shadow-xs"
                 >
                   {badge}
                 </div>
@@ -134,7 +134,7 @@ export function MegaHero({
                   variant="accent"
                   size="lg"
                   onClick={primaryCTA.onClick}
-                  className="shadow-md hover:shadow-lg transition-all duration-150"
+                  className="shadow-md hover:shadow-elevated transition-all duration-150"
                 >
                   {primaryCTA.icon}
                   {primaryCTA.text}
@@ -146,7 +146,7 @@ export function MegaHero({
                   variant="secondary"
                   size="lg"
                   onClick={secondaryCTA.onClick}
-                  className="shadow-sm hover:shadow-md transition-all duration-150"
+                  className="shadow-flat hover:shadow-md transition-all duration-150"
                 >
                   {secondaryCTA.icon}
                   {secondaryCTA.text}

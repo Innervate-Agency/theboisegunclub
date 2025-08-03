@@ -11,28 +11,28 @@ const statCardVariants = cva(
       variant: {
         // STRATEGIC RESTRAINT: Shadow-first approach aligned with VendorCard principles
         // Default: Clean theme-aware shadows
-        default: "bg-card text-card-foreground shadow-sm hover:shadow-md",
+        default: "bg-card text-card-foreground shadow-flat hover:shadow-md",
         
         // Premium: Consistent default shadows with strategic gradient accent
-        premium: "bg-card text-card-foreground shadow-sm hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/4 before:via-transparent before:to-copper-orange/3 before:rounded-lg before:pointer-events-none",
+        premium: "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/4 before:via-transparent before:to-copper-orange/3 before:rounded-card before:pointer-events-none",
         
         // Elite: Consistent default shadows with enhanced accent features
-        elite: "bg-card text-card-foreground shadow-sm hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-copper-orange/6 before:via-transparent before:to-brass-yellow/4 before:rounded-lg before:pointer-events-none",
+        elite: "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-copper-orange/6 before:via-transparent before:to-brass-yellow/4 before:rounded-card before:pointer-events-none",
         
         // Glass: Modern mica with consistent default shadows
-        glass: "mica-overlay text-card-foreground shadow-sm hover:shadow-md backdrop-blur-sm relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        glass: "mica-overlay text-card-foreground shadow-flat hover:shadow-md backdrop-blur-sm relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
         // Fire: Consistent default shadows with center-positioned gradient accent
-        fire: "bg-card text-card-foreground shadow-sm hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
+        fire: "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
         // Fire Blue: Consistent default shadows with center-positioned cool gradient
-        'fire-blue': "bg-card text-card-foreground shadow-sm hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
+        'fire-blue': "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
         // Fire Purple: Consistent default shadows with center-positioned purple gradient
-        'fire-purple': "bg-card text-card-foreground shadow-sm hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
+        'fire-purple': "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
         // Fire Green: Consistent default shadows with center-positioned green gradient
-        'fire-green': "bg-card text-card-foreground shadow-sm hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full"
+        'fire-green': "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full"
       },
       size: {
         sm: "p-[var(--space-base)]",
@@ -151,23 +151,23 @@ export default function StatCard({
         
         <div className="space-y-[var(--space-micro)]">
           <div className="flex items-center justify-between">
-            <h3 className={cn("text-3xl font-rajdhani font-bold", textColors.title)}>
+            <h3 className={cn("text-heading-lg font-rajdhani font-bold", textColors.title)}>
               {formatValue(value)}
             </h3>
             {trend && trendValue && (
-              <div className={cn("text-sm font-medium flex items-center gap-[var(--space-xs)]", getTrendColor(trend, variant || "default"))}>
+              <div className={cn("text-body-sm font-medium flex items-center gap-[var(--space-xs)]", getTrendColor(trend, variant || "default"))}>
                 <span>{getTrendIcon(trend)}</span>
                 <span>{trendValue}</span>
               </div>
             )}
           </div>
           
-          <p className={cn("text-sm font-noto-sans uppercase tracking-wide", textColors.label)}>
+          <p className={cn("text-body-sm font-noto-sans uppercase tracking-wide", textColors.label)}>
             {label}
           </p>
           
           {description && (
-            <p className={cn("text-xs mt-[var(--space-xs)]", textColors.description)}>
+            <p className={cn("text-caption mt-[var(--space-xs)]", textColors.description)}>
               {description}
             </p>
           )}

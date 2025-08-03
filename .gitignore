@@ -48,3 +48,6 @@ _resources/
 
 # Ignore legacy archive folder
 _archive/
+
+# Ignore root documentation files that contain design token patterns
+*.md

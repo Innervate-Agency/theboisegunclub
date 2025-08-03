@@ -85,7 +85,7 @@ export default function FAQAccordion({
           </div>
         </div>
         
-        <h2 className="text-2xl md:text-3xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-xs)]">
+        <h2 className="text-heading-md md:text-heading-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-xs)]">
           {title}
         </h2>
         
@@ -118,7 +118,7 @@ export default function FAQAccordion({
           <button
             onClick={() => setSelectedCategory(null)}
             className={cn(
-              "px-[var(--space-sm)] py-[var(--space-xs)] rounded-full text-sm font-medium transition-colors",
+              "px-[var(--space-sm)] py-[var(--space-xs)] rounded-full text-body-sm font-medium transition-colors",
               !selectedCategory 
                 ? "bg-brass-yellow text-gunmetal-black" 
                 : "bg-muted text-case-hardened hover:bg-muted/80"
@@ -131,7 +131,7 @@ export default function FAQAccordion({
               key={category}
               onClick={() => setSelectedCategory(category)}
               className={cn(
-                "px-[var(--space-sm)] py-[var(--space-xs)] rounded-full text-sm font-medium transition-colors",
+                "px-[var(--space-sm)] py-[var(--space-xs)] rounded-full text-body-sm font-medium transition-colors",
                 selectedCategory === category 
                   ? "bg-brass-yellow text-gunmetal-black" 
                   : "bg-muted text-case-hardened hover:bg-muted/80"
@@ -151,7 +151,7 @@ export default function FAQAccordion({
               key={faq.id} 
               value={faq.id}
               className={cn(
-                variant === "card" && "bg-card border border-border rounded-lg px-[var(--space-md)] py-[var(--space-xs)] shadow-sm"
+                variant === "card" && "bg-card border border-border rounded-card px-[var(--space-md)] py-[var(--space-xs)] shadow-flat"
               )}
             >
               <AccordionTrigger className="text-left hover:no-underline py-[var(--space-base)]">
@@ -162,7 +162,7 @@ export default function FAQAccordion({
                     </h3>
                     {faq.category && showCategories && (
                       <Badge 
-                        variant="secondary" 
+                        variant="default" 
                         className="mt-[var(--space-xs)] bg-brass-yellow/10 text-brass-yellow border-brass-yellow/20"
                       >
                         {faq.category}

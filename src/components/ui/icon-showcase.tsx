@@ -30,11 +30,11 @@ import {
 } from 'lucide-react'
 
 const iconShowcaseVariants = cva(
-  "flex items-center justify-center rounded-lg border transition-all duration-200 ease-out",
+  "flex items-center justify-center rounded-card border transition-all duration-200 ease-out",
   {
     variants: {
       variant: {
-        default: "bg-white border-gray-200 hover:border-brass-yellow/30 hover:bg-brass-yellow/5",
+        default: "bg-card border-border hover:border-brass-yellow/30 hover:bg-brass-yellow/5",
         primary: "bg-brass-yellow/10 border-brass-yellow/30 hover:bg-brass-yellow/20",
         secondary: "bg-copper-orange/10 border-copper-orange/30 hover:bg-copper-orange/20",
         accent: "bg-scope-blue/10 border-scope-blue/30 hover:bg-scope-blue/20"
@@ -65,8 +65,8 @@ function IconShowcaseItem({ icon: Icon, name, category, variant, size, className
       <div className="text-center space-y-[var(--space-xs)]">
         <Icon className="mx-auto icon-lg text-gunmetal-black" />
         <div className="space-y-[var(--space-micro)]">
-          <div className="text-xs font-rajdhani font-semibold text-gunmetal-black">{name}</div>
-          <div className="text-xs text-case-hardened">{category}</div>
+          <div className="text-caption font-rajdhani font-semibold text-gunmetal-black">{name}</div>
+          <div className="text-caption text-case-hardened">{category}</div>
         </div>
       </div>
     </div>
@@ -141,12 +141,12 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-xl)]">
             {title && (
-              <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-sm)]">
+              <h2 className="text-heading-lg md:text-heading-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-sm)]">
                 {title}
               </h2>
             )}
             {subtitle && (
-              <p className="text-lg text-case-hardened font-noto-sans">
+              <p className="text-body-lg text-case-hardened font-noto-sans">
                 {subtitle}
               </p>
             )}
@@ -157,7 +157,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
         <div className="space-y-[var(--space-xl)]">
           {iconCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="space-y-[var(--space-md)]">
-              <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black border-b border-gray-200 pb-[var(--space-xs)]">
+              <h3 className="text-heading-sm font-rajdhani font-bold text-gunmetal-black border-b border-border pb-[var(--space-xs)]">
                 {category.name}
               </h3>
               
@@ -177,8 +177,8 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
         </div>
 
         {/* Usage Examples */}
-        <div className="mt-[var(--space-2xl)] p-[var(--space-lg)] bg-gradient-card-warm rounded-lg border border-brass-yellow/20">
-          <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-md)]">
+        <div className="mt-[var(--space-2xl)] p-[var(--space-lg)] bg-gradient-card-warm rounded-card border border-brass-yellow/20">
+          <h3 className="text-heading-sm font-rajdhani font-bold text-gunmetal-black mb-[var(--space-md)]">
             Design System Integration Examples
           </h3>
           
@@ -186,27 +186,27 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
             {/* Primary Usage */}
             <div className="space-y-[var(--space-sm)]">
               <h4 className="font-rajdhani font-semibold text-gunmetal-black">Primary Actions</h4>
-              <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-white rounded border">
+              <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-card rounded border">
                 <Target className="icon-lg icon-primary" />
-                <span className="text-sm font-noto-sans">Professional line icons</span>
+                <span className="text-body-sm font-noto-sans">Professional line icons</span>
               </div>
             </div>
 
             {/* Secondary Usage */}
             <div className="space-y-[var(--space-sm)]">
               <h4 className="font-rajdhani font-semibold text-gunmetal-black">Secondary Actions</h4>
-              <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-white rounded border">
+              <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-card rounded border">
                 <Users className="icon-lg icon-secondary" />
-                <span className="text-sm font-noto-sans">Clean, consistent design</span>
+                <span className="text-body-sm font-noto-sans">Clean, consistent design</span>
               </div>
             </div>
 
             {/* Accent Usage */}
             <div className="space-y-[var(--space-sm)]">
               <h4 className="font-rajdhani font-semibold text-gunmetal-black">Accent Elements</h4>
-              <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-white rounded border">
+              <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-card rounded border">
                 <Award className="icon-lg icon-accent" />
-                <span className="text-sm font-noto-sans">Idaho Firearms Heritage</span>
+                <span className="text-body-sm font-noto-sans">Idaho Firearms Heritage</span>
               </div>
             </div>
           </div>

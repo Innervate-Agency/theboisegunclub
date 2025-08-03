@@ -54,7 +54,7 @@ export function ServiceGrid() {
               key={index} 
               className={`
                 bg-shooting-bench 
-                shadow-sm 
+                shadow-flat 
                 hover:shadow-md 
                 transition-stripe-fast 
                 p-[var(--space-md)] 
@@ -67,17 +67,17 @@ export function ServiceGrid() {
             >
               <div className="flex flex-col items-start text-left h-full">
                 {/* Icon with subtle background and proper spacing */}
-                <div className="mb-[var(--space-base)] p-[var(--space-sm)] rounded-lg bg-range-white border border-case-hardened/10 transition-stripe-fast group-hover:bg-copper-orange/5 group-hover:border-copper-orange/20">
+                <div className="mb-[var(--space-base)] p-[var(--space-sm)] rounded-card bg-range-white border border-case-hardened/10 transition-stripe-fast group-hover:bg-copper-orange/5 group-hover:border-copper-orange/20">
                   <service.icon className="h-6 w-6 text-foreground transition-stripe-fast group-hover:text-copper-orange" />
                 </div>
                 
                 {/* Title with proper hierarchy and hover color */}
-                <h3 className="font-noto-sans text-lg font-semibold text-foreground mb-[var(--space-sm)] leading-tight transition-stripe-fast group-hover:text-copper-orange">
+                <h3 className="font-noto-sans text-body-lg font-semibold text-foreground mb-[var(--space-sm)] leading-tight transition-stripe-fast group-hover:text-copper-orange">
                   {service.title}
                 </h3>
                 
                 {/* Description with proper text treatment */}
-                <p className="font-noto-sans text-sm text-muted-foreground leading-relaxed mb-[var(--space-md)] flex-1">
+                <p className="font-noto-sans text-body-sm text-muted-foreground leading-relaxed mb-[var(--space-md)] flex-1">
                   {service.description}
                 </p>
                 

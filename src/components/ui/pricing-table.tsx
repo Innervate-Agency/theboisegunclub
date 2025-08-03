@@ -14,19 +14,19 @@ const pricingCardVariants = cva(
     variants: {
       variant: {
         // STRATEGIC RESTRAINT: Shadow-first approach for pricing tables
-        default: "bg-card shadow-sm hover:shadow-md",
-        compact: "bg-card shadow-sm hover:shadow-md",
-        detailed: "bg-card shadow-sm hover:shadow-md",
-        fusion: "mica-card-premium shadow-sm hover:shadow-md backdrop-blur-sm"
+        default: "bg-card shadow-flat hover:shadow-md",
+        compact: "bg-card shadow-flat hover:shadow-md",
+        detailed: "bg-card shadow-flat hover:shadow-md",
+        fusion: "mica-card-premium shadow-flat hover:shadow-md backdrop-blur-sm"
       },
       popular: {
         // Popular cards get enhanced background treatment instead of deeper shadows
-        true: "shadow-sm hover:shadow-md scale-105 z-10 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-scope-blue after:to-ayu-blue after:transition-all after:duration-300 after:ease-out after:w-full after:rounded-b-lg",
+        true: "shadow-flat hover:shadow-md scale-105 z-10 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-scope-blue after:to-ayu-blue after:transition-all after:duration-300 after:ease-out after:w-full after:rounded-b-lg",
         false: ""
       },
       recommended: {
         // Recommended gets subtle background overlay instead of ring
-        true: "before:absolute before:inset-0 before:bg-gradient-to-br before:from-scope-blue/6 before:via-transparent before:to-ayu-blue/4 before:rounded-lg before:pointer-events-none",
+        true: "before:absolute before:inset-0 before:bg-gradient-to-br before:from-scope-blue/6 before:via-transparent before:to-ayu-blue/4 before:rounded-card before:pointer-events-none",
         false: ""
       }
     },
@@ -97,15 +97,15 @@ export function PricingCard({
       return <X className="h-4 w-4 text-case-hardened" />
     }
     if (typeof feature.included === 'number') {
-      return <span className="text-sm font-medium text-gunmetal-black">{feature.included}</span>
+      return <span className="text-body-sm font-medium text-gunmetal-black">{feature.included}</span>
     }
     if (feature.included === 'unlimited') {
-      return <span className="text-sm font-medium text-brass-yellow">∞</span>
+      return <span className="text-body-sm font-medium text-brass-yellow">∞</span>
     }
     if (feature.included === 'limited') {
       return <Minus className="h-4 w-4 text-sight-gold" />
     }
-    return <span className="text-xs text-case-hardened">{feature.included}</span>
+    return <span className="text-caption text-case-hardened">{feature.included}</span>
   }
 
   return (
@@ -117,7 +117,7 @@ export function PricingCard({
         {/* Popular badge */}
         {popular && plan.badge && (
           <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20">
-            <Badge variant="default" className="bg-brass-yellow text-gunmetal-black font-medium px-[var(--space-sm)] py-[var(--space-xs)] text-xs">
+            <Badge variant="default" className="bg-brass-yellow text-gunmetal-black font-medium px-[var(--space-sm)] py-[var(--space-xs)] text-caption">
               <Star className="h-3 w-3 mr-[var(--space-xs)]" />
               {plan.badge}
             </Badge>
@@ -131,7 +131,7 @@ export function PricingCard({
             </div>
           </div>
           
-          <CardTitle className="text-xl font-rajdhani font-bold text-foreground">
+          <CardTitle className="text-heading-sm font-rajdhani font-bold text-foreground">
             {plan.name}
           </CardTitle>
           
@@ -141,14 +141,14 @@ export function PricingCard({
           
           <div className="mt-[var(--space-base)]">
             <div className="flex items-baseline justify-center gap-[var(--space-xs)]">
-              <span className="text-3xl font-rajdhani font-bold text-foreground">
+              <span className="text-heading-lg font-rajdhani font-bold text-foreground">
                 ${monthlyPrice.toFixed(0)}
               </span>
-              <span className="text-sm text-case-hardened">/month</span>
+              <span className="text-body-sm text-case-hardened">/month</span>
             </div>
             
             {isAnnual && (
-              <div className="text-xs text-case-hardened mt-[var(--space-xs)]">
+              <div className="text-caption text-case-hardened mt-[var(--space-xs)]">
                 Billed annually (${price}/year)
                 {savings > 0 && (
                   <div className="text-bore-sight-green font-medium">
@@ -159,7 +159,7 @@ export function PricingCard({
             )}
             
             {plan.price.setup && plan.price.setup > 0 && (
-              <div className="text-xs text-case-hardened mt-[var(--space-xs)]">
+              <div className="text-caption text-case-hardened mt-[var(--space-xs)]">
                 + ${plan.price.setup} setup fee
               </div>
             )}
@@ -178,7 +178,7 @@ export function PricingCard({
 
           {showFeatures && (
             <div className="space-y-[var(--space-sm)]">
-              <h4 className="font-rajdhani font-bold text-gunmetal-black text-sm">
+              <h4 className="font-rajdhani font-bold text-gunmetal-black text-body-sm">
                 What's included:
               </h4>
               <div className="space-y-[var(--space-xs)]">
@@ -188,11 +188,11 @@ export function PricingCard({
                       {renderFeatureValue(feature)}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-gunmetal-black leading-snug">
+                      <p className="text-body-sm font-medium text-gunmetal-black leading-snug">
                         {feature.name}
                       </p>
                       {feature.description && (
-                        <p className="text-xs text-case-hardened leading-snug">
+                        <p className="text-caption text-case-hardened leading-snug">
                           {feature.description}
                         </p>
                       )}
@@ -230,11 +230,11 @@ export function PricingTable({
       {/* Annual toggle */}
       {showAnnualDiscount && (
         <div className="flex justify-center">
-          <div className="flex items-center gap-[var(--space-base)] p-1 bg-muted rounded-lg">
+          <div className="flex items-center gap-[var(--space-base)] p-xs bg-muted rounded-card">
             <button
               className={cn(
-                "px-[var(--space-base)] py-[var(--space-xs)] rounded-md text-sm font-medium transition-all duration-150",
-                !isAnnual ? "bg-white text-gunmetal-black shadow-sm" : "text-case-hardened"
+                "px-[var(--space-base)] py-[var(--space-xs)] rounded-input text-body-sm font-medium transition-all duration-150",
+                !isAnnual ? "bg-card text-card-foreground shadow-flat" : "text-muted-foreground"
               )}
               onClick={() => setIsAnnual(false)}
             >
@@ -242,13 +242,13 @@ export function PricingTable({
             </button>
             <button
               className={cn(
-                "px-[var(--space-base)] py-[var(--space-xs)] rounded-md text-sm font-medium transition-all duration-150 relative",
-                isAnnual ? "bg-white text-gunmetal-black shadow-sm" : "text-case-hardened"
+                "px-[var(--space-base)] py-[var(--space-xs)] rounded-input text-body-sm font-medium transition-all duration-150 relative",
+                isAnnual ? "bg-card text-card-foreground shadow-flat" : "text-muted-foreground"
               )}
               onClick={() => setIsAnnual(true)}
             >
               Annual
-              <Badge className="absolute -top-2 -right-2 bg-clubhouse-lawn-green text-white text-xs">
+              <Badge className="absolute -top-2 -right-2 bg-clubhouse-lawn-green text-card text-caption">
                 Save 15%
               </Badge>
             </button>
@@ -274,10 +274,10 @@ export function PricingTable({
       {showFeatureComparison && (
         <div className="overflow-x-auto">
           <div className="inline-block min-w-full align-middle">
-            <table className="min-w-full divide-y divide-gray-200">
+            <table className="min-w-full divide-y divide-border">
               <thead>
                 <tr>
-                  <th className="px-[var(--space-md)] py-[var(--space-base)] text-left text-sm font-rajdhani font-bold text-gunmetal-black">
+                  <th className="px-[var(--space-md)] py-[var(--space-base)] text-left text-body-sm font-rajdhani font-bold text-gunmetal-black">
                     Features
                   </th>
                   {plans.map((plan) => (
@@ -289,10 +289,10 @@ export function PricingTable({
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-border">
                 {plans[0]?.features.map((_, featureIndex) => (
                   <tr key={featureIndex} className="hover:bg-muted/30">
-                    <td className="px-[var(--space-md)] py-[var(--space-base)] text-sm font-medium text-gunmetal-black">
+                    <td className="px-[var(--space-md)] py-[var(--space-base)] text-body-sm font-medium text-gunmetal-black">
                       {plans[0].features[featureIndex]?.name}
                     </td>
                     {plans.map((plan) => (
@@ -320,15 +320,15 @@ export function PricingTable({
       return <X className="h-4 w-4 text-muted-foreground mx-auto" />
     }
     if (typeof feature.included === 'number') {
-      return <span className="text-sm font-medium text-gunmetal-black">{feature.included}</span>
+      return <span className="text-body-sm font-medium text-gunmetal-black">{feature.included}</span>
     }
     if (feature.included === 'unlimited') {
-      return <span className="text-sm font-medium text-brass-yellow">∞</span>
+      return <span className="text-body-sm font-medium text-brass-yellow">∞</span>
     }
     if (feature.included === 'limited') {
       return <Minus className="h-4 w-4 text-brass-yellow mx-auto" />
     }
-    return <span className="text-xs text-case-hardened">{feature.included}</span>
+    return <span className="text-caption text-case-hardened">{feature.included}</span>
   }
 }
 
@@ -348,9 +348,9 @@ export function PricingFusion({
   const [isAnnual, setIsAnnual] = React.useState(false)
 
   return (
-    <div className="w-full space-y-[var(--space-lg)] p-[var(--space-lg)] bg-solid-brand-warm rounded-xl border border-brass-yellow/20 hover-gradient-warm">
+    <div className="w-full space-y-[var(--space-lg)] p-[var(--space-lg)] bg-solid-brand-warm rounded-large border border-brass-yellow/20 hover-gradient-warm">
       <div className="text-center space-y-[var(--space-base)]">
-        <h2 className="text-3xl font-rajdhani font-bold text-foreground">
+        <h2 className="text-heading-lg font-rajdhani font-bold text-foreground">
           Choose Your Membership
         </h2>
         <p className="text-case-hardened max-w-2xl mx-auto">
@@ -361,11 +361,11 @@ export function PricingFusion({
       {/* Annual toggle */}
       {showAnnualDiscount && (
         <div className="flex justify-center">
-          <div className="flex items-center gap-[var(--space-base)] p-1 mica-card rounded-lg border border-brass-yellow/20">
+          <div className="flex items-center gap-[var(--space-base)] p-xs mica-card rounded-card border border-brass-yellow/20">
             <button
               className={cn(
-                "px-[var(--space-md)] py-[var(--space-sm)] rounded-md text-sm font-medium transition-all duration-150",
-                !isAnnual ? "bg-brass-yellow text-gunmetal-black shadow-sm" : "text-case-hardened hover:text-gunmetal-black"
+                "px-[var(--space-md)] py-[var(--space-sm)] rounded-input text-body-sm font-medium transition-all duration-150",
+                !isAnnual ? "bg-brass-yellow text-gunmetal-black shadow-flat" : "text-case-hardened hover:text-gunmetal-black"
               )}
               onClick={() => setIsAnnual(false)}
             >
@@ -373,13 +373,13 @@ export function PricingFusion({
             </button>
             <button
               className={cn(
-                "px-[var(--space-md)] py-[var(--space-sm)] rounded-md text-sm font-medium transition-all duration-150 relative",
-                isAnnual ? "bg-brass-yellow text-gunmetal-black shadow-sm" : "text-case-hardened hover:text-gunmetal-black"
+                "px-[var(--space-md)] py-[var(--space-sm)] rounded-input text-body-sm font-medium transition-all duration-150 relative",
+                isAnnual ? "bg-brass-yellow text-gunmetal-black shadow-flat" : "text-case-hardened hover:text-gunmetal-black"
               )}
               onClick={() => setIsAnnual(true)}
             >
               Annual Billing
-              <Badge className="absolute -top-2 -right-2 bg-clubhouse-lawn-green text-white text-xs">
+              <Badge className="absolute -top-2 -right-2 bg-clubhouse-lawn-green text-card text-caption">
                 Save 15%
               </Badge>
             </button>
@@ -407,14 +407,14 @@ export function PricingFusion({
 
       {/* Feature comparison with fusion styling */}
       {showFeatureComparison && (
-        <div className="mica-card rounded-xl border border-brass-yellow/20 p-[var(--space-md)] overflow-x-auto">
-          <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-md)] text-center">
+        <div className="mica-card rounded-large border border-brass-yellow/20 p-[var(--space-md)] overflow-x-auto">
+          <h3 className="text-heading-sm font-rajdhani font-bold text-gunmetal-black mb-[var(--space-md)] text-center">
             Feature Comparison
           </h3>
           <table className="w-full">
             <thead>
               <tr className="border-b border-brass-yellow/20">
-                <th className="px-[var(--space-base)] py-[var(--space-sm)] text-left text-sm font-rajdhani font-bold text-gunmetal-black">
+                <th className="px-[var(--space-base)] py-[var(--space-sm)] text-left text-body-sm font-rajdhani font-bold text-gunmetal-black">
                   Features
                 </th>
                 {plans.map((plan) => (
@@ -428,8 +428,8 @@ export function PricingFusion({
             </thead>
             <tbody>
               {plans[0]?.features.map((_, featureIndex) => (
-                <tr key={featureIndex} className="border-b border-gray-100 hover:bg-brass-yellow/5">
-                  <td className="px-[var(--space-base)] py-[var(--space-sm)] text-sm font-medium text-gunmetal-black">
+                <tr key={featureIndex} className="border-b border-border hover:bg-brass-yellow/5">
+                  <td className="px-[var(--space-base)] py-[var(--space-sm)] text-body-sm font-medium text-gunmetal-black">
                     {plans[0].features[featureIndex]?.name}
                   </td>
                   {plans.map((plan) => (
@@ -456,14 +456,14 @@ export function PricingFusion({
       return <X className="h-4 w-4 text-muted-foreground mx-auto" />
     }
     if (typeof feature.included === 'number') {
-      return <span className="text-sm font-medium text-gunmetal-black">{feature.included}</span>
+      return <span className="text-body-sm font-medium text-gunmetal-black">{feature.included}</span>
     }
     if (feature.included === 'unlimited') {
-      return <span className="text-sm font-medium text-brass-yellow">∞</span>
+      return <span className="text-body-sm font-medium text-brass-yellow">∞</span>
     }
     if (feature.included === 'limited') {
       return <Minus className="h-4 w-4 text-brass-yellow mx-auto" />
     }
-    return <span className="text-xs text-case-hardened">{feature.included}</span>
+    return <span className="text-caption text-case-hardened">{feature.included}</span>
   }
 }

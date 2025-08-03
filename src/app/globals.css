@@ -14,95 +14,49 @@
   /* ================== COMPLETE COLOR SYSTEM (26 COLORS) ================== */
   
   /* Primary Brand Colors */
-  --color-brass-yellow: #F2CB05;
-  --color-copper-orange: #F28705;
-  --color-gunmetal-black: #0A0A0A;
-  --color-nickel-white: #FFFFFF;
+  --brass-yellow: #F2CB05;
+  --copper-orange: #F28705;
+  --gunmetal-black: #0A0A0A;
+  --nickel-white: #FFFFFF;
 
   /* Light Theme: Spring Day at the Range */
-  --color-range-white: #f8f6f1;
-  --color-shooting-bench: #ede7de;
-  --color-walnut-stock: #c08051;
-  --color-blued-steel: #372103;
-  --color-case-hardened: #693e21;
-  --color-muzzle-flash: #F23005;
-  --color-recoil-pad: #f07b1d;
-  --color-sight-gold: #E3C03C;
-  --color-scope-blue: #5198cd;
-  --color-trigger-blue: #3c81c0;
-  --color-rifling-green: #6f7822;
-  --color-bore-sight-green: #75B700;    /* Replaced with ayu-green - more vibrant success */
-  --color-safety-red: #FF3B49;         /* Replaced with ayu-red - consistent with crimson-trace */
+  --range-white: #f8f6f1;
+  --shooting-bench: #ede7de;
+  --walnut-stock: #c08051;
+  --blued-steel: #372103;
+  --case-hardened: #693e21;
+  --muzzle-flash: #F23005;
+  --recoil-pad: #f07b1d;
+  --sight-gold: #E3C03C;
+  --scope-blue: #5198cd;
+  --trigger-blue: #3c81c0;
+  --rifling-green: #6f7822;
+  --bore-sight-green: #75B700;    /* Replaced with ayu-green - more vibrant success */
+  --safety-red: #FF3B49;         /* Replaced with ayu-red - consistent with crimson-trace */
 
   /* Dark Theme: Evening Hunt in the Mountains - Enhanced with Ayu Vibrancy */
-  --color-night-sight: #2F3135;
-  --color-carbon-fiber: #4B4B4B;
-  --color-tactical-gray: #1C2431;        /* Replaced with ayu-gray - cleaner dark background */
-  --color-titanium-white: #FDFDFD;
-  --color-stainless-steel: #EEF1F7;
-  --color-flash-hider: #F25C05;
-  --color-crimson-trace: #FF3B49;        /* Replaced with ayu-red - more vibrant */
-  --color-cerakote-blue: #009FED;        /* Replaced with ayu-blue - electric blue */
-  --color-ghost-ring: #C9D2EF;
-  --color-woodland-camo: #3F6331;
+  --night-sight: #2F3135;
+  --carbon-fiber: #4B4B4B;
+  --tactical-gray: #1C2431;        /* Replaced with ayu-gray - cleaner dark background */
+  --titanium-white: #FDFDFD;
+  --stainless-steel: #EEF1F7;
+  --flash-hider: #F25C05;
+  --crimson-trace: #FF3B49;        /* Replaced with ayu-red - more vibrant */
+  --cerakote-blue: #009FED;        /* Replaced with ayu-blue - electric blue */
+  --ghost-ring: #C9D2EF;
+  --woodland-camo: #3F6331;
 
   /* ================== AYU-MIRAGE SECONDARY COLOR PALLETE ================== */
 
   /* Secondary Brand Colors */
-  --color-ayu-blue: #009FED;          /* Bright blue for accents */
-  --color-ayu-green: #75B700;        /* Fresh green for highlights */
-  --color-ayu-teal: #00C496;        /* Fresh teal for highlights */
-  --color-ayu-cobalt: #0C4367;       /* Deep cobalt for primary actions */
-  --color-ayu-purple: #6E5083;      /* Soft purple for subtle details */
-  --color-ayu-yellow: #FFA600;      /* Warm yellow for highlights */
-  --color-ayu-red: #FF3B49;         /* Vibrant red for alerts */
-  --color-ayu-gray: #1C2431;        /* Neutral gray for backgrounds */
-  
-  /* Tailwind v4 Color Utilities */
-  --color*: initial;
-  
-  /* Brand Colors */
-  --color-brass-yellow: #F2CB05;
-  --color-copper-orange: #F28705;
-  --color-gunmetal-black: #0A0A0A;
-  --color-nickel-white: #FFFFFF;
-  
-  /* Light Theme Colors */
-  --color-range-white: #f8f6f1;
-  --color-shooting-bench: #ede7de;
-  --color-walnut-stock: #c08051;
-  --color-blued-steel: #372103;
-  --color-case-hardened: #693e21;
-  --color-muzzle-flash: #F23005;
-  --color-recoil-pad: #f07b1d;
-  --color-sight-gold: #E3C03C;
-  --color-scope-blue: #5198cd;
-  --color-trigger-blue: #3c81c0;
-  --color-rifling-green: #6f7822;
-  --color-bore-sight-green: #75B700;
-  --color-safety-red: #FF3B49;
-  
-  /* Dark Theme Colors */
-  --color-night-sight: #2F3135;
-  --color-carbon-fiber: #4B4B4B;
-  --color-tactical-gray: #1C2431;
-  --color-titanium-white: #FDFDFD;
-  --color-stainless-steel: #EEF1F7;
-  --color-flash-hider: #F25C05;
-  --color-crimson-trace: #FF3B49;
-  --color-cerakote-blue: #009FED;
-  --color-ghost-ring: #C9D2EF;
-  --color-woodland-camo: #3F6331;
-  
-  /* Ayu Enhancement Colors */
-  --color-ayu-blue: #009FED;
-  --color-ayu-green: #75B700;
-  --color-ayu-teal: #00C496;
-  --color-ayu-cobalt: #0C4367;
-  --color-ayu-purple: #6E5083;
-  --color-ayu-yellow: #FFA600;
-  --color-ayu-red: #FF3B49;
-  --color-ayu-gray: #1C2431;
+  --ayu-blue: #009FED;          /* Bright blue for accents */
+  --ayu-green: #75B700;        /* Fresh green for highlights */
+  --ayu-teal: #00C496;        /* Fresh teal for highlights */
+  --ayu-cobalt: #0C4367;       /* Deep cobalt for primary actions */
+  --ayu-purple: #6E5083;      /* Soft purple for subtle details */
+  --ayu-yellow: #FFA600;      /* Warm yellow for highlights */
+  --ayu-red: #FF3B49;         /* Vibrant red for alerts */
+  --ayu-gray: #1C2431;        /* Neutral gray for backgrounds */
   
   /* ================== ICON SYSTEM - LUCIDE REACT INTEGRATION ================== */
   /* Icon sizing tokens for consistent scaling */
@@ -114,14 +68,14 @@
   --icon-2xl: 48px;
   
   /* Icon color variants using TBGC + Ayu enhanced palette */
-  --icon-primary: var(--color-brass-yellow);
-  --icon-secondary: var(--color-copper-orange);
-  --icon-accent: var(--color-cerakote-blue);     /* Now using vibrant ayu-blue */
-  --icon-muted: var(--color-case-hardened);
-  --icon-success: var(--color-bore-sight-green); /* Now using vibrant ayu-green */
-  --icon-warning: var(--color-recoil-pad);
-  --icon-danger: var(--color-safety-red);        /* Now using vibrant ayu-red */
-  --icon-info: var(--color-cerakote-blue);       /* Now using vibrant ayu-blue */
+  --icon-primary: var(--brass-yellow);
+  --icon-secondary: var(--copper-orange);
+  --icon-accent: var(--cerakote-blue);     /* Now using vibrant ayu-blue */
+  --icon-muted: var(--case-hardened);
+  --icon-success: var(--bore-sight-green); /* Now using vibrant ayu-green */
+  --icon-warning: var(--recoil-pad);
+  --icon-danger: var(--safety-red);        /* Now using vibrant ayu-red */
+  --icon-info: var(--cerakote-blue);       /* Now using vibrant ayu-blue */
   
   /* ================== ANIMATION & TRANSITION SYSTEM ================== */
   --timing-fast: 150ms;
@@ -247,28 +201,28 @@
   --gradient-glass-neutral: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
   
   /* Legacy gradients (keeping for backwards compatibility but these are too strong) */
-  --gradient-primary: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 100%);
-  --gradient-premium: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 45%, var(--color-brass-yellow) 100%);
-  --gradient-elite: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 25%, var(--color-brass-yellow) 50%, var(--color-copper-orange) 75%, var(--color-brass-yellow) 100%);
+  --gradient-primary: linear-gradient(135deg, var(--brass-yellow) 0%, var(--copper-orange) 100%);
+  --gradient-premium: linear-gradient(135deg, var(--brass-yellow) 0%, var(--copper-orange) 45%, var(--brass-yellow) 100%);
+  --gradient-elite: linear-gradient(135deg, var(--brass-yellow) 0%, var(--copper-orange) 25%, var(--brass-yellow) 50%, var(--copper-orange) 75%, var(--brass-yellow) 100%);
   --gradient-subtle: linear-gradient(135deg, rgba(242, 203, 5, 0.05) 0%, rgba(242, 135, 5, 0.05) 100%);
   
   /* ================== FIRE GRADIENT ANIMATION SYSTEM ================== */
   /* Fire gradients that "unfurl" from left with proper orange→yellow transitions */
-  --gradient-fire-orange: linear-gradient(90deg, var(--color-copper-orange) 0%, var(--color-brass-yellow) 100%);
-  --gradient-fire-blue: linear-gradient(90deg, var(--color-ayu-blue) 0%, var(--color-ayu-green) 100%);
-  --gradient-fire-purple: linear-gradient(90deg, var(--color-ayu-purple) 0%, var(--color-ayu-cobalt) 100%);
-  --gradient-fire-green: linear-gradient(90deg, var(--color-ayu-green) 0%, var(--color-bore-sight-green) 100%);
+  --gradient-fire-orange: linear-gradient(90deg, var(--copper-orange) 0%, var(--brass-yellow) 100%);
+  --gradient-fire-blue: linear-gradient(90deg, var(--ayu-blue) 0%, var(--ayu-green) 100%);
+  --gradient-fire-purple: linear-gradient(90deg, var(--ayu-purple) 0%, var(--ayu-cobalt) 100%);
+  --gradient-fire-green: linear-gradient(90deg, var(--ayu-green) 0%, var(--bore-sight-green) 100%);
   
   /* Animated fire gradients with proper left-origin scaling */
-  --gradient-fire-animated: linear-gradient(90deg, var(--color-copper-orange) 0%, var(--color-brass-yellow) 50%, var(--color-copper-orange) 100%);
+  --gradient-fire-animated: linear-gradient(90deg, var(--copper-orange) 0%, var(--brass-yellow) 50%, var(--copper-orange) 100%);
   
   /* ClickUp-Inspired Vibrant Gradients */
   --gradient-purple: linear-gradient(135deg, #7612FA 0%, #40DDFF 100%);
   --gradient-pink: linear-gradient(135deg, #FA12E3 0%, #FFD700 100%);
-  --gradient-success: linear-gradient(135deg, var(--color-rifling-green) 0%, var(--color-bore-sight-green) 100%);
-  --gradient-warning: linear-gradient(135deg, var(--color-sight-gold) 0%, var(--color-recoil-pad) 100%);
-  --gradient-danger: linear-gradient(135deg, var(--color-muzzle-flash) 0%, var(--color-safety-red) 100%);
-  --gradient-info: linear-gradient(135deg, var(--color-scope-blue) 0%, var(--color-trigger-blue) 100%);
+  --gradient-success: linear-gradient(135deg, var(--rifling-green) 0%, var(--bore-sight-green) 100%);
+  --gradient-warning: linear-gradient(135deg, var(--sight-gold) 0%, var(--recoil-pad) 100%);
+  --gradient-danger: linear-gradient(135deg, var(--muzzle-flash) 0%, var(--safety-red) 100%);
+  --gradient-info: linear-gradient(135deg, var(--scope-blue) 0%, var(--trigger-blue) 100%);
   
   /* Glass/Mica Effect Gradients */
   --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
@@ -373,26 +327,26 @@
 @layer base {
   :root {
     /* Light Theme Variables - Site uses warm "Spring Day at the Range" colors */
-    --background: var(--color-range-white);        /* Warm site background */
-    --foreground: var(--color-blued-steel);
-    --card: var(--color-nickel-white);             /* Clean white cards for contrast */
-    --card-foreground: var(--color-blued-steel);
-    --muted: var(--color-shooting-bench);          /* Muted areas use warm beige */
-    --muted-foreground: var(--color-case-hardened);
-    --border: var(--color-case-hardened);
-    --input: var(--color-nickel-white);            /* Clean input backgrounds */
-    --ring: var(--color-brass-yellow);
+    --background: var(--range-white);        /* Warm site background */
+    --foreground: var(--blued-steel);
+    --card: var(--nickel-white);             /* Clean white cards for contrast */
+    --card-foreground: var(--blued-steel);
+    --muted: var(--shooting-bench);          /* Muted areas use warm beige */
+    --muted-foreground: var(--case-hardened);
+    --border: var(--case-hardened);
+    --input: var(--nickel-white);            /* Clean input backgrounds */
+    --ring: var(--brass-yellow);
     --radius: 0.25rem;                             /* Boxy with slight curve - 4px */
 
     /* Semantic colors for components */
-    --primary: var(--color-blued-steel);
-    --primary-foreground: var(--color-nickel-white);
-    --secondary: var(--color-walnut-stock);
-    --secondary-foreground: var(--color-nickel-white);
-    --destructive: var(--color-muzzle-flash);
-    --destructive-foreground: var(--color-nickel-white);
-    --accent: var(--color-cerakote-blue);        /* Now using vibrant ayu-blue */
-    --accent-foreground: var(--color-nickel-white);
+    --primary: var(--blued-steel);
+    --primary-foreground: var(--nickel-white);
+    --secondary: var(--walnut-stock);
+    --secondary-foreground: var(--nickel-white);
+    --destructive: var(--muzzle-flash);
+    --destructive-foreground: var(--nickel-white);
+    --accent: var(--cerakote-blue);        /* Now using vibrant ayu-blue */
+    --accent-foreground: var(--nickel-white);
     
     /* Popover/Overlay colors - MICA BACKGROUNDS FOR MODERN GLASS EFFECT */
     --popover: var(--overlay-bg-light);           /* Mica glass popover backgrounds */
@@ -401,26 +355,26 @@
 
   .dark {
     /* Dark Theme Variables - "Evening Hunt in the Mountains" palette */
-    --background: var(--color-night-sight);        /* Deep dark site background */
-    --foreground: var(--color-titanium-white);
-    --card: var(--color-carbon-fiber);             /* Elevated dark cards */
-    --card-foreground: var(--color-titanium-white);
-    --muted: var(--color-tactical-gray);           /* Muted dark areas */
-    --muted-foreground: var(--color-stainless-steel);
-    --border: var(--color-tactical-gray);
-    --input: var(--color-carbon-fiber);            /* Dark input backgrounds */
-    --ring: var(--color-brass-yellow);
+    --background: var(--night-sight);        /* Deep dark site background */
+    --foreground: var(--titanium-white);
+    --card: var(--carbon-fiber);             /* Elevated dark cards */
+    --card-foreground: var(--titanium-white);
+    --muted: var(--tactical-gray);           /* Muted dark areas */
+    --muted-foreground: var(--stainless-steel);
+    --border: var(--tactical-gray);
+    --input: var(--carbon-fiber);            /* Dark input backgrounds */
+    --ring: var(--brass-yellow);
     --radius: 0.25rem;                             /* Consistent boxy radius */
 
     /* Semantic colors for components */
-    --primary: var(--color-titanium-white);
-    --primary-foreground: var(--color-night-sight);
-    --secondary: var(--color-tactical-gray);
-    --secondary-foreground: var(--color-titanium-white);
-    --destructive: var(--color-crimson-trace);
-    --destructive-foreground: var(--color-titanium-white);
-    --accent: var(--color-cerakote-blue);        /* Consistent vibrant ayu-blue */
-    --accent-foreground: var(--color-titanium-white);
+    --primary: var(--titanium-white);
+    --primary-foreground: var(--night-sight);
+    --secondary: var(--tactical-gray);
+    --secondary-foreground: var(--titanium-white);
+    --destructive: var(--crimson-trace);
+    --destructive-foreground: var(--titanium-white);
+    --accent: var(--cerakote-blue);        /* Consistent vibrant ayu-blue */
+    --accent-foreground: var(--titanium-white);
     --popover: var(--overlay-bg-dark);            /* Mica glass dark popover backgrounds */
     --popover-foreground: var(--overlay-text-dark);
   }
@@ -497,6 +451,13 @@
   .rounded-xl { border-radius: var(--radius-xl); }
   .rounded-2xl { border-radius: var(--radius-2xl); }
   .rounded-full { border-radius: var(--radius-full); }
+  
+  /* Semantic Border Radius Utilities - Design Token Mapping */
+  .rounded-button { border-radius: var(--radius-sm); }
+  .rounded-input { border-radius: var(--radius-md); }
+  .rounded-card { border-radius: var(--radius-lg); }
+  .rounded-large { border-radius: var(--radius-xl); }
+  .rounded-overlay { border-radius: var(--radius-2xl); }
 
   /* ================== Z-INDEX UTILITIES ================== */
   .z-behind { z-index: var(--z-behind); }
@@ -535,8 +496,8 @@
   .icon-hover-accent:hover { color: var(--icon-accent); }
   
   /* Background variants for icon containers */
-  .icon-bg-primary { background-color: var(--icon-primary); color: var(--color-gunmetal-black); }
-  .icon-bg-secondary { background-color: var(--icon-secondary); color: var(--color-nickel-white); }
+  .icon-bg-primary { background-color: var(--icon-primary); color: var(--gunmetal-black); }
+  .icon-bg-secondary { background-color: var(--icon-secondary); color: var(--nickel-white); }
   
   /* ================== THEME-AWARE TEXT COLOR UTILITIES ================== */
   /* Use these instead of hardcoded colors for proper dark mode support */
@@ -546,9 +507,9 @@
   .text-theme-muted { color: var(--muted-foreground); }
   
   /* Theme-aware brand colors that work in both light and dark */
-  .text-brand-primary { color: var(--color-brass-yellow); }
-  .text-brand-secondary { color: var(--color-copper-orange); }
-  .text-brand-accent { color: var(--color-scope-blue); }
+  .text-brand-primary { color: var(--brass-yellow); }
+  .text-brand-secondary { color: var(--copper-orange); }
+  .text-brand-accent { color: var(--scope-blue); }
   
   /* Background theme utilities */
   .bg-theme-card { background-color: var(--card); }
@@ -756,7 +717,7 @@
     background: linear-gradient(135deg, rgba(242, 203, 5, 0.08) 0%, rgba(242, 135, 5, 0.05) 100%);
   }
   
-  .icon-bg-accent { background-color: var(--icon-accent); color: var(--color-nickel-white); }
+  .icon-bg-accent { background-color: var(--icon-accent); color: var(--nickel-white); }
 
   /* ================== TYPOGRAPHY UTILITIES ================== */
   .text-xs { font-size: var(--text-xs); }
@@ -772,6 +733,16 @@
   .text-7xl { font-size: var(--text-7xl); }
   .text-8xl { font-size: var(--text-8xl); }
   .text-9xl { font-size: var(--text-9xl); }
+  
+  /* Semantic Typography Utilities - Design Token Mapping */
+  .text-caption { font-size: var(--text-xs); }
+  .text-body { font-size: var(--text-base); }
+  .text-body-sm { font-size: var(--text-sm); }
+  .text-body-lg { font-size: var(--text-lg); }
+  .text-heading-sm { font-size: var(--text-xl); }
+  .text-heading-md { font-size: var(--text-2xl); }
+  .text-heading-lg { font-size: var(--text-3xl); }
+  .text-heading-xl { font-size: var(--text-4xl); }
 
   .leading-none { line-height: var(--leading-none); }
   .leading-tight { line-height: var(--leading-tight); }
@@ -875,6 +846,9 @@
   /* Flat Shadows - For nested elements (Stripe philosophy) */
   .shadow-none { box-shadow: var(--shadow-none); }
   .shadow-flat { box-shadow: var(--shadow-flat); }
+  
+  /* Semantic Shadow Utilities - Design Token Mapping */
+  .shadow-elevated { box-shadow: var(--shadow-md); }
 
   /* Focus rings */
   .focus-brass { box-shadow: var(--shadow-focus-brass); }
@@ -923,13 +897,13 @@
   .bg-gradient-mesh-elite { background: var(--gradient-mesh-elite); }
   
   /* SOLID COLOR ALTERNATIVES - Use these instead of gradients for clean look */
-  .bg-solid-brand-warm { background-color: var(--color-range-white); }
-  .bg-solid-brand-neutral { background-color: var(--color-shooting-bench); }
+  .bg-solid-brand-warm { background-color: var(--range-white); }
+  .bg-solid-brand-neutral { background-color: var(--shooting-bench); }
   .bg-solid-brand-accent { background-color: rgba(242, 203, 5, 0.05); }
   
   /* Accent Line Gradients - For borders and dividers only */
   .border-gradient-brand {
-    border-image: linear-gradient(90deg, var(--color-brass-yellow), var(--color-copper-orange)) 1;
+    border-image: linear-gradient(90deg, var(--brass-yellow), var(--copper-orange)) 1;
   }
   
   /* Subtle Hover Effects - Very restrained interactions */
@@ -1358,7 +1332,7 @@
   /* Button States */
   .btn-primary {
     background: var(--gradient-primary);
-    color: var(--color-gunmetal-black);
+    color: var(--gunmetal-black);
     border: none;
     box-shadow: var(--shadow-premium);
     transition: all 150ms var(--ease-stripe);
@@ -1376,46 +1350,46 @@
   }
 
   .btn-secondary {
-    background: var(--color-shooting-bench);
-    color: var(--color-blued-steel);
-    border: 1px solid var(--color-case-hardened);
+    background: var(--shooting-bench);
+    color: var(--blued-steel);
+    border: 1px solid var(--case-hardened);
     transition: all 150ms var(--ease-stripe);
   }
 
   .btn-secondary:hover {
-    background: var(--color-walnut-stock);
-    color: var(--color-nickel-white);
+    background: var(--walnut-stock);
+    color: var(--nickel-white);
     box-shadow: var(--shadow-sm);
   }
 
   .btn-outline {
     background: transparent;
-    color: var(--color-brass-yellow);
-    border: 2px solid var(--color-brass-yellow);
+    color: var(--brass-yellow);
+    border: 2px solid var(--brass-yellow);
     transition: all 150ms var(--ease-stripe);
   }
 
   .btn-outline:hover {
-    background: var(--color-brass-yellow);
-    color: var(--color-gunmetal-black);
+    background: var(--brass-yellow);
+    color: var(--gunmetal-black);
     box-shadow: var(--shadow-brass);
   }
 
   .btn-ghost {
     background: transparent;
-    color: var(--color-blued-steel);
+    color: var(--blued-steel);
     border: none;
     transition: all 150ms var(--ease-stripe);
   }
 
   .btn-ghost:hover {
-    background: var(--color-shooting-bench);
+    background: var(--shooting-bench);
     box-shadow: var(--shadow-xs);
   }
 
   .btn-glass {
     background: rgba(255, 255, 255, 0.1);
-    color: var(--color-blued-steel);
+    color: var(--blued-steel);
     border: 1px solid rgba(255, 255, 255, 0.2);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
@@ -1430,18 +1404,18 @@
 
   /* Input States */
   .input-focus {
-    border-color: var(--color-brass-yellow);
+    border-color: var(--brass-yellow);
     box-shadow: var(--shadow-focus-brass);
     outline: none;
   }
 
   .input-error {
-    border-color: var(--color-muzzle-flash);
+    border-color: var(--muzzle-flash);
     box-shadow: var(--shadow-focus-copper);
   }
 
   .input-success {
-    border-color: var(--color-rifling-green);
+    border-color: var(--rifling-green);
     box-shadow: 0 0 0 3px rgba(111, 120, 34, 0.3);
   }
 
@@ -1474,16 +1448,16 @@
   .loading-shimmer {
     background: linear-gradient(
       90deg,
-      var(--color-shooting-bench) 25%,
-      var(--color-walnut-stock) 50%,
-      var(--color-shooting-bench) 75%
+      var(--shooting-bench) 25%,
+      var(--walnut-stock) 50%,
+      var(--shooting-bench) 75%
     );
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite;
   }
 
   .loading-skeleton {
-    background: var(--color-shooting-bench);
+    background: var(--shooting-bench);
     border-radius: var(--radius-sm);
     position: relative;
     overflow: hidden;
@@ -1620,7 +1594,7 @@
   }
 
   .focus-visible {
-    outline: 2px solid var(--color-brass-yellow);
+    outline: 2px solid var(--brass-yellow);
     outline-offset: 2px;
   }
 

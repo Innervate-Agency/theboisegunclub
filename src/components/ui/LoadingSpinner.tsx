@@ -33,7 +33,7 @@ export interface LoadingSpinnerProps
   showText?: boolean
 }
 
-export function LoadingSpinner({
+function LoadingSpinner({
   className,
   size,
   variant,
@@ -70,9 +70,9 @@ export function LoadingSpinner({
       {shouldShowText && (
         <p className={cn(
           "font-noto-sans text-case-hardened animate-pulse",
-          size === "sm" && "text-xs",
-          size === "md" && "text-sm", 
-          size === "lg" && "text-base"
+          size === "sm" && "text-caption",
+          size === "md" && "text-body-sm", 
+          size === "lg" && "text-body"
         )}>
           {text}
         </p>
@@ -80,3 +80,6 @@ export function LoadingSpinner({
     </div>
   )
 }
+
+export { LoadingSpinner }
+export default LoadingSpinner

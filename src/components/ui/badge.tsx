@@ -6,7 +6,7 @@ import { X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center justify-center rounded-md px-[var(--space-xs)] py-[var(--space-tiny)] text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-[var(--space-xs)] [&>svg]:pointer-events-none transition-all duration-[var(--timing-normal)] ease-out overflow-hidden relative",
+  "inline-flex items-center justify-center rounded-input px-[var(--space-xs)] py-[var(--space-tiny)] text-caption font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-[var(--space-xs)] [&>svg]:pointer-events-none transition-all duration-[var(--timing-normal)] ease-out overflow-hidden relative",
   {
     variants: {
       variant: {
@@ -22,10 +22,10 @@ const badgeVariants = cva(
         destructive: "bg-muzzle-flash/10 text-muzzle-flash hover:bg-muzzle-flash/20"
       },
       size: {
-        sm: "px-[var(--space-xs)] py-[var(--space-tiny)] text-xs h-5",
-        default: "px-[var(--space-sm)] py-[var(--space-tiny)] text-xs h-6",
-        lg: "px-[var(--space-base)] py-[var(--space-xs)] text-sm h-8",
-        xl: "px-[var(--space-base)] py-[var(--space-sm)] text-sm h-10"
+        sm: "px-[var(--space-xs)] py-[var(--space-tiny)] text-caption h-5",
+        default: "px-[var(--space-sm)] py-[var(--space-tiny)] text-caption h-6",
+        lg: "px-[var(--space-base)] py-[var(--space-xs)] text-body-sm h-8",
+        xl: "px-[var(--space-base)] py-[var(--space-sm)] text-body-sm h-10"
       },
       animate: {
         true: "hover:scale-105 active:scale-95"
@@ -83,7 +83,7 @@ function Badge({
         <button
           type="button"
           onClick={onDismiss}
-          className="ml-[var(--space-tiny)] shrink-0 hover:bg-black/10 dark:hover:bg-white/10 rounded-full p-0.5 transition-colors duration-[var(--timing-fast)]"
+          className="ml-[var(--space-tiny)] shrink-0 hover:bg-black/10 dark:hover:bg-card/10 rounded-full p-0.5 transition-colors duration-[var(--timing-fast)]"
           aria-label="Remove badge"
         >
           <X className="h-2.5 w-2.5" />

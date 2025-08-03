@@ -11,52 +11,52 @@ const enhancedButtonVariants = cva(
     variants: {
       variant: {
         // Default: Clean shadow hierarchy - no decorative borders
-        default: "bg-primary text-primary-foreground shadow-sm hover:shadow-md hover:-translate-y-0.5",
+        default: "bg-primary text-primary-foreground shadow-flat hover:shadow-md hover:-translate-y-0.5",
         
         // Primary: Brand gradient with consistent shadows
-        primary: "bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black shadow-sm hover:shadow-md hover:-translate-y-0.5 font-semibold",
+        primary: "bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black shadow-flat hover:shadow-md hover:-translate-y-0.5 font-semibold",
         
         // Secondary: Walnut-themed with shadow depth
-        secondary: "bg-walnut-stock text-nickel-white shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:bg-walnut-stock/90",
+        secondary: "bg-walnut-stock text-nickel-white shadow-flat hover:shadow-md hover:-translate-y-0.5 hover:bg-walnut-stock/90",
         
         // Outline: Sophisticated shadow-based outline with subtle background on hover
-        outline: "bg-transparent text-brass-yellow shadow-sm hover:bg-brass-yellow/10 hover:shadow-md hover:text-brass-yellow ring-1 ring-brass-yellow/30 hover:ring-brass-yellow/50",
+        outline: "bg-transparent text-brass-yellow shadow-flat hover:bg-brass-yellow/10 hover:shadow-md hover:text-brass-yellow ring-1 ring-brass-yellow/30 hover:ring-brass-yellow/50",
         
         // Ghost: Pure transparent approach
-        ghost: "bg-transparent text-foreground hover:bg-muted hover:text-foreground hover:shadow-sm",
+        ghost: "bg-transparent text-foreground hover:bg-muted hover:text-foreground hover:shadow-flat",
         
         // Glass: Mica effect with consistent shadows - no borders
-        glass: "mica-overlay text-foreground shadow-sm hover:shadow-md backdrop-blur-sm",
+        glass: "mica-overlay text-foreground shadow-flat hover:shadow-md backdrop-blur-sm",
         
         // Fire: Center-positioned gradient accent like VendorCard
-        fire: "bg-card text-card-foreground shadow-sm hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
+        fire: "bg-card text-card-foreground shadow-flat hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
         // Fire Blue: Center-positioned cool gradient
-        "fire-blue": "bg-card text-card-foreground shadow-sm hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
+        "fire-blue": "bg-card text-card-foreground shadow-flat hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
         // Destructive: Shadow-first with enhanced depth
-        destructive: "bg-muzzle-flash text-nickel-white shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:bg-muzzle-flash/90",
+        destructive: "bg-muzzle-flash text-nickel-white shadow-flat hover:shadow-md hover:-translate-y-0.5 hover:bg-muzzle-flash/90",
         
         // Success: Shadow-first approach
-        success: "bg-bore-sight-green text-nickel-white shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:bg-bore-sight-green/90",
+        success: "bg-bore-sight-green text-nickel-white shadow-flat hover:shadow-md hover:-translate-y-0.5 hover:bg-bore-sight-green/90",
         
         // Warning: Clean shadow hierarchy
-        warning: "bg-sight-gold text-gunmetal-black shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:bg-sight-gold/90",
+        warning: "bg-sight-gold text-gunmetal-black shadow-flat hover:shadow-md hover:-translate-y-0.5 hover:bg-sight-gold/90",
       },
       size: {
         // Proper sizing system using design tokens
-        xs: "h-6 px-[var(--space-xs)] py-[var(--space-xs)] text-xs gap-[var(--space-xs)]",           // Micro buttons
-        sm: "h-8 px-[var(--space-sm)] py-[var(--space-md)] text-xs gap-[var(--space-md)]",      // Inside cards/forms (Stripe pattern)
-        default: "h-10 px-[var(--space-base)] py-[var(--space-xs)].5 text-sm gap-[var(--space-xs)]",  // General usage
-        lg: "h-12 px-[var(--space-md)] py-[var(--space-sm)] text-base gap-[var(--space-xs)]",       // Hero/primary actions
-        xl: "h-14 px-[var(--space-lg)] py-[var(--space-base)] text-lg gap-[var(--space-xs)].5",       // Call-to-action buttons
+        xs: "h-6 px-[var(--space-xs)] py-[var(--space-xs)] text-caption gap-[var(--space-xs)]",           // Micro buttons
+        sm: "h-8 px-[var(--space-sm)] py-[var(--space-md)] text-caption gap-[var(--space-md)]",      // Inside cards/forms (Stripe pattern)
+        default: "h-10 px-[var(--space-base)] py-[var(--space-xs)].5 text-body-sm gap-[var(--space-xs)]",  // General usage
+        lg: "h-12 px-[var(--space-md)] py-[var(--space-sm)] text-body gap-[var(--space-xs)]",       // Hero/primary actions
+        xl: "h-14 px-[var(--space-lg)] py-[var(--space-base)] text-body-lg gap-[var(--space-xs)].5",       // Call-to-action buttons
         icon: "h-10 w-10 p-0",                      // Square icon buttons
       },
       radius: {
         none: "rounded-none",
-        sm: "rounded-sm",      // --radius-sm
-        default: "rounded-lg", // --radius-base (boxy with slight curve)
-        lg: "rounded-xl",      // --radius-lg  
+        sm: "rounded-button",      // --radius-sm
+        default: "rounded-card", // --radius-base (boxy with slight curve)
+        lg: "rounded-large",      // --radius-lg  
         full: "rounded-full",  // --radius-full
       }
     },

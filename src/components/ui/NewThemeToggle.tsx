@@ -38,9 +38,9 @@ export function NewThemeToggle({
         className
       )}>
         <Button
-          variant="outline"
+          variant="secondary"
           size="icon"
-          className="bg-white border-gray-200 shadow-sm"
+          className="bg-card border-border shadow-flat"
           disabled
         >
           <Sun className="icon-sm" />
@@ -70,12 +70,12 @@ export function NewThemeToggle({
       {...props}
     >
       <Button
-        variant="outline"
+        variant="secondary"
         size={showLabel ? "default" : "icon"}
         onClick={handleToggle}
         className={cn(
-          "bg-white border-gray-200 hover:bg-brass-yellow hover:border-brass-yellow shadow-sm transition-all duration-200 group",
-          variant === 'floating' && "shadow-lg hover:shadow-xl"
+          "bg-card border-border hover:bg-brass-yellow hover:border-brass-yellow shadow-flat transition-all duration-200 group",
+          variant === 'floating' && "shadow-elevated hover:shadow-premium"
         )}
         title={`Switch to ${nextTheme.label.toLowerCase()} theme`}
       >

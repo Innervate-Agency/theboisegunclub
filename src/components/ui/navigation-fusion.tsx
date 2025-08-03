@@ -10,8 +10,8 @@ const navigationFusionVariants = cva(
   {
     variants: {
       variant: {
-        glass: "mica-card border-border/20 shadow-lg",
-        solid: "bg-card border border-border shadow-sm",
+        glass: "mica-card border-border/20 shadow-elevated",
+        solid: "bg-card border border-border shadow-flat",
         minimal: "bg-transparent"
       },
       orientation: {
@@ -33,7 +33,7 @@ const navigationFusionVariants = cva(
 )
 
 const navigationItemVariants = cva(
-  "flex items-center gap-[var(--space-xs)] px-[var(--space-sm)] py-[var(--space-xs)] rounded-lg transition-all duration-200 font-rajdhani font-semibold text-sm",
+  "flex items-center gap-[var(--space-xs)] px-[var(--space-sm)] py-[var(--space-xs)] rounded-card transition-all duration-200 font-rajdhani font-semibold text-body-sm",
   {
     variants: {
       variant: {
@@ -54,12 +54,12 @@ const navigationItemVariants = cva(
       {
         variant: "glass",
         active: true,
-        class: "bg-brass-yellow/20 text-brass-yellow shadow-sm"
+        class: "bg-brass-yellow/20 text-brass-yellow shadow-flat"
       },
       {
         variant: "solid",
         active: true,
-        class: "bg-copper-orange text-white shadow-sm"
+        class: "bg-copper-orange text-card-foreground shadow-flat"
       },
       {
         variant: "minimal",
@@ -111,7 +111,7 @@ export function NavigationFusion({
     <nav 
       className={cn(
         navigationFusionVariants({ variant, orientation, size }), 
-        orientation === "horizontal" ? "rounded-full" : "rounded-xl",
+        orientation === "horizontal" ? "rounded-full" : "rounded-large",
         className
       )} 
       {...props}
@@ -147,7 +147,7 @@ export function NavigationFusion({
             >
               {/* Active item background effect */}
               {isActive && variant === "glass" && (
-                <div className="absolute inset-0 bg-gradient-to-r from-brass-yellow/20 to-copper-orange/20 rounded-lg" />
+                <div className="absolute inset-0 bg-gradient-to-r from-brass-yellow/20 to-copper-orange/20 rounded-card" />
               )}
               
               {/* Icon */}
@@ -166,7 +166,7 @@ export function NavigationFusion({
               </span>
               
               {/* Hover effect */}
-              <div className="absolute inset-0 bg-brass-yellow/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+              <div className="absolute inset-0 bg-brass-yellow/10 rounded-card opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
             </button>
           )
         })}

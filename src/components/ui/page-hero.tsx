@@ -83,7 +83,7 @@ export function PageHero({
           {/* Icon */}
           {Icon && (
             <div className="flex justify-center">
-              <div className="p-[var(--space-base)] bg-card/80 backdrop-blur-sm rounded-full border border-brass-yellow/20 shadow-sm">
+              <div className="p-[var(--space-base)] bg-card/80 backdrop-blur-sm rounded-full border border-brass-yellow/20 shadow-flat">
                 <Icon className="h-8 w-8 text-brass-yellow" />
               </div>
             </div>
@@ -93,24 +93,24 @@ export function PageHero({
           <div className="space-y-[var(--space-md)]">
             {badge && (
               <div className="flex justify-center">
-                <div className="px-[var(--space-base)] py-[var(--space-xs)] bg-brass-yellow/10 border border-brass-yellow/20 rounded-full text-sm font-medium text-brass-yellow">
+                <div className="px-[var(--space-base)] py-[var(--space-xs)] bg-brass-yellow/10 border border-brass-yellow/20 rounded-full text-body-sm font-medium text-brass-yellow">
                   {badge}
                 </div>
               </div>
             )}
             
             {subtitle && (
-              <p className="text-sm uppercase tracking-wider font-medium text-case-hardened">
+              <p className="text-body-sm uppercase tracking-wider font-medium text-case-hardened">
                 {subtitle}
               </p>
             )}
             
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-rajdhani font-bold text-gunmetal-black tracking-tight leading-tight">
+            <h1 className="text-heading-lg md:text-heading-xl lg:text-display-sm font-rajdhani font-bold text-gunmetal-black tracking-tight leading-tight">
               {title}
             </h1>
             
             {description && (
-              <p className="text-lg text-case-hardened font-noto-sans leading-relaxed max-w-2xl mx-auto">
+              <p className="text-body-lg text-case-hardened font-noto-sans leading-relaxed max-w-2xl mx-auto">
                 {description}
               </p>
             )}

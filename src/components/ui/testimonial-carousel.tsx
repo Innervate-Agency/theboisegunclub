@@ -93,7 +93,7 @@ export function TestimonialCarousel({
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-xl)]">
             {subtitle && (
-              <p className="text-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
+              <p className="text-body-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
@@ -107,7 +107,7 @@ export function TestimonialCarousel({
         
         {/* Testimonial Card */}
         <div className="relative">
-          <div className="bg-card text-card-foreground rounded-xl p-[var(--space-lg)] md:p-12 shadow-sm hover:shadow-md transition-shadow duration-200">
+          <div className="bg-card text-card-foreground rounded-large p-[var(--space-lg)] md:p-12 shadow-flat hover:shadow-md transition-shadow duration-200">
             {/* Quote Icon */}
             <div className="absolute -top-4 left-8">
               <div className="bg-brass-yellow rounded-full p-[var(--space-sm)] shadow-md">
@@ -154,7 +154,7 @@ export function TestimonialCarousel({
                 <div className="font-rajdhani font-bold text-foreground">
                   {currentTestimonial.name}
                 </div>
-                <div className="text-sm text-muted-foreground font-noto-sans">
+                <div className="text-body-sm text-muted-foreground font-noto-sans">
                   {currentTestimonial.role}
                   {currentTestimonial.company && (
                     <span> • {currentTestimonial.company}</span>
@@ -170,7 +170,7 @@ export function TestimonialCarousel({
               <Button
                 variant="secondary"
                 size="icon"
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-card hover:bg-brass-yellow shadow-sm"
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-card hover:bg-brass-yellow shadow-flat"
                 onClick={goToPrevious}
               >
                 <ChevronLeft className="icon-sm" />
@@ -179,7 +179,7 @@ export function TestimonialCarousel({
               <Button
                 variant="secondary"
                 size="icon"
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-card hover:bg-brass-yellow shadow-sm"
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-card hover:bg-brass-yellow shadow-flat"
                 onClick={goToNext}
               >
                 <ChevronRight className="icon-sm" />

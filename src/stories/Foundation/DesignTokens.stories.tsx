@@ -11,7 +11,7 @@ const meta: Meta = {
     },
     designToken: {
       showPreview: true,
-      filterNames: ['--color-*', '--space-*', '--text-*', '--shadow-*'],
+      filterNames: ['--color-brass-yellow', '--color-copper-orange', '--space-base', '--space-md'],
       category: 'Design System Tokens'
     }
   },

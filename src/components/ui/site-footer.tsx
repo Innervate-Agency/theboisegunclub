@@ -68,24 +68,24 @@ export function SiteFooter({
             <div className="lg:col-span-1">
               <div className="flex items-center gap-[var(--space-xs)] mb-[var(--space-sm)]">
                 <Target className={cn("icon-lg", isMinimal ? "icon-primary" : "text-brass-yellow")} />
-                <h3 className={cn("text-xl font-rajdhani font-bold", textColor)}>
+                <h3 className={cn("text-heading-sm font-rajdhani font-bold", textColor)}>
                   Boise Gun Club
                 </h3>
               </div>
-              <p className={cn("text-sm leading-relaxed mb-[var(--space-base)]", mutedColor)}>
+              <p className={cn("text-body-sm leading-relaxed mb-[var(--space-base)]", mutedColor)}>
                 Treasure Valley's premier firearms community hub. Connecting enthusiasts, 
                 businesses, and ranges across the region since 2017.
               </p>
               <div className="space-y-[var(--space-xs)]">
-                <div className={cn("flex items-center gap-[var(--space-xs)] text-[var(--text-sm)]", mutedColor)}>
+                <div className={cn("flex items-center gap-[var(--space-xs)] text-body-sm", mutedColor)}>
                   <MapPin className="icon-sm" />
                   <span>Boise, Idaho</span>
                 </div>
-                <div className={cn("flex items-center gap-[var(--space-xs)] text-[var(--text-sm)]", mutedColor)}>
+                <div className={cn("flex items-center gap-[var(--space-xs)] text-body-sm", mutedColor)}>
                   <Phone className="icon-sm" />
                   <span>(208) 555-GUNS</span>
                 </div>
-                <div className={cn("flex items-center gap-[var(--space-xs)] text-[var(--text-sm)]", mutedColor)}>
+                <div className={cn("flex items-center gap-[var(--space-xs)] text-body-sm", mutedColor)}>
                   <Mail className="icon-sm" />
                   <span>info@boisegunclub.com</span>
                 </div>
@@ -94,7 +94,7 @@ export function SiteFooter({
             
             {/* Quick Links */}
             <div>
-              <h4 className={cn("text-lg font-rajdhani font-bold mb-[var(--space-base)]", textColor)}>
+              <h4 className={cn("text-body-lg font-rajdhani font-bold mb-[var(--space-base)]", textColor)}>
                 Quick Links
               </h4>
               <ul className="space-y-[var(--space-xs)]">
@@ -110,7 +110,7 @@ export function SiteFooter({
                     <a 
                       href={link.href}
                       className={cn(
-                        "text-sm hover:text-brass-yellow transition-colors duration-200", 
+                        "text-body-sm hover:text-brass-yellow transition-colors duration-200", 
                         mutedColor
                       )}
                     >
@@ -123,7 +123,7 @@ export function SiteFooter({
             
             {/* Services */}
             <div>
-              <h4 className={cn("text-lg font-rajdhani font-bold mb-[var(--space-base)]", textColor)}>
+              <h4 className={cn("text-body-lg font-rajdhani font-bold mb-[var(--space-base)]", textColor)}>
                 Services
               </h4>
               <ul className="space-y-[var(--space-xs)]">
@@ -135,7 +135,7 @@ export function SiteFooter({
                 ].map((service) => {
                   const Icon = service.icon
                   return (
-                    <li key={service.name} className={cn("flex items-center gap-[var(--space-xs)] text-[var(--text-sm)]", mutedColor)}>
+                    <li key={service.name} className={cn("flex items-center gap-[var(--space-xs)] text-body-sm", mutedColor)}>
                       <Icon className="icon-xs" />
                       <span>{service.name}</span>
                     </li>
@@ -147,10 +147,10 @@ export function SiteFooter({
             {/* Newsletter Signup */}
             {showNewsletter && (
               <div>
-                <h4 className={cn("text-lg font-rajdhani font-bold mb-[var(--space-base)]", textColor)}>
+                <h4 className={cn("text-body-lg font-rajdhani font-bold mb-[var(--space-base)]", textColor)}>
                   Stay Connected
                 </h4>
-                <p className={cn("text-sm mb-[var(--space-base)]", mutedColor)}>
+                <p className={cn("text-body-sm mb-[var(--space-base)]", mutedColor)}>
                   Get the latest news, events, and exclusive member benefits.
                 </p>
                 <form onSubmit={handleNewsletterSubmit} className="space-y-[var(--space-sm)]">
@@ -162,7 +162,7 @@ export function SiteFooter({
                       onChange={(e) => setNewsletterEmail(e.target.value)}
                       required
                       className={cn(
-                        "flex-1 text-sm",
+                        "flex-1 text-body-sm",
                         isMinimal 
                           ? "bg-card border-border" 
                           : "bg-carbon-fiber border-tactical-gray text-titanium-white"
@@ -189,7 +189,7 @@ export function SiteFooter({
         )}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-[var(--space-base)]">
             {/* Copyright */}
-            <div className={cn("text-sm", mutedColor)}>
+            <div className={cn("text-body-sm", mutedColor)}>
               © {new Date().getFullYear()} Boise Gun Club. All rights reserved.
             </div>
             
@@ -209,7 +209,7 @@ export function SiteFooter({
                       key={social.label}
                       href="#"
                       className={cn(
-                        "p-[var(--space-xs)] rounded-lg transition-all duration-200 hover:scale-110",
+                        "p-[var(--space-xs)] rounded-card transition-all duration-200 hover:scale-110",
                         isMinimal 
                           ? "text-case-hardened hover:text-brass-yellow hover:bg-brass-yellow/10" 
                           : "text-stainless-steel hover:text-brass-yellow hover:bg-brass-yellow/10"
@@ -234,7 +234,7 @@ export function SiteFooter({
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "text-xs hover:text-brass-yellow transition-colors duration-200", 
+                    "text-caption hover:text-brass-yellow transition-colors duration-200", 
                     mutedColor
                   )}
                 >

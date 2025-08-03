@@ -92,7 +92,7 @@ export function BreadcrumbHero({
           )}
 
           {/* Breadcrumb Navigation */}
-          <nav aria-label="Breadcrumb" className="flex items-center space-x-[var(--space-xs)] text-sm">
+          <nav aria-label="Breadcrumb" className="flex items-center space-x-[var(--space-xs)] text-body-sm">
             {breadcrumbs.map((item, index) => (
               <React.Fragment key={item.href}>
                 {index === 0 ? (
@@ -130,7 +130,7 @@ export function BreadcrumbHero({
               {/* Icon */}
               {Icon && (
                 <div className="flex-shrink-0">
-                  <div className="p-[var(--space-sm)] bg-brass-yellow/10 rounded-lg border border-brass-yellow/20">
+                  <div className="p-[var(--space-sm)] bg-brass-yellow/10 rounded-card border border-brass-yellow/20">
                     <Icon className="h-6 w-6 text-brass-yellow" />
                   </div>
                 </div>
@@ -138,12 +138,12 @@ export function BreadcrumbHero({
 
               {/* Title and Description */}
               <div className="flex-1 min-w-0">
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-rajdhani font-bold text-gunmetal-black tracking-tight leading-tight">
+                <h1 className="text-heading-md md:text-heading-lg lg:text-heading-xl font-rajdhani font-bold text-gunmetal-black tracking-tight leading-tight">
                   {title}
                 </h1>
                 
                 {description && (
-                  <p className="text-base md:text-lg text-case-hardened font-noto-sans leading-relaxed mt-[var(--space-xs)] max-w-3xl">
+                  <p className="text-body md:text-body-lg text-case-hardened font-noto-sans leading-relaxed mt-[var(--space-xs)] max-w-3xl">
                     {description}
                   </p>
                 )}
@@ -156,8 +156,8 @@ export function BreadcrumbHero({
                 {badges.map((badge, index) => (
                   <Badge
                     key={index}
-                    variant="secondary"
-                    className="bg-white/80 text-blued-steel border border-brass-yellow/20 shadow-flat"
+                    variant="default"
+                    className="bg-card/80 text-blued-steel border border-brass-yellow/20 shadow-flat"
                   >
                     {badge}
                   </Badge>

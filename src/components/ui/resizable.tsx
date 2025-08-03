@@ -33,7 +33,7 @@ const ResizableHandle = ({
     {...props}
   >
     {withHandle && (
-      <div className="z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-border">
+      <div className="z-10 flex h-4 w-3 items-center justify-center rounded-button border bg-border">
         <svg
           width="15"
           height="15"
@@ -57,8 +57,8 @@ const ResizableHandle = ({
 // Legacy export for backwards compatibility - deprecated, use ResizablePanelGroup instead
 function Resizable() {
   return (
-    <div className="p-[var(--space-base)] bg-gradient-card-warm border border-brass-yellow/20 rounded-lg text-center">
-      <p className="text-muted-foreground font-noto-sans text-sm">
+    <div className="p-[var(--space-base)] bg-gradient-card-warm border border-brass-yellow/20 rounded-card text-center">
+      <p className="text-muted-foreground font-noto-sans text-body-sm">
         This component is deprecated. Use ResizablePanelGroup instead.
       </p>
     </div>

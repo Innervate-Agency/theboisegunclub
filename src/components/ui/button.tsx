@@ -27,30 +27,30 @@ const buttonVariants = cva(
     variants: {
       variant: {
         // Default: Clean theme-aware with sophisticated shadow depth (NO BORDER)
-        default: "bg-card text-card-foreground shadow-sm hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-copper-orange",
+        default: "bg-card text-card-foreground shadow-flat hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-copper-orange",
         
         // Primary: More prominent theme-aware with deeper shadow (NO BORDER)
-        primary: "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 focus-visible:ring-copper-orange",
+        primary: "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 focus-visible:ring-copper-orange",
         
         // Secondary: Subtle theme-aware background with better depth (NO BORDER)
-        secondary: "bg-muted text-card-foreground shadow-sm hover:shadow-md hover:bg-muted/80 hover:-translate-y-0.5 focus-visible:ring-copper-orange",
+        secondary: "bg-muted text-card-foreground shadow-flat hover:shadow-md hover:bg-muted/80 hover:-translate-y-0.5 focus-visible:ring-copper-orange",
         
         // Accent: Clean theme-aware with copper accent background
-        accent: "bg-copper-orange/10 text-copper-orange shadow-sm hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-copper-orange/50 hover:bg-copper-orange/20",
+        accent: "bg-copper-orange/10 text-copper-orange shadow-flat hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-copper-orange/50 hover:bg-copper-orange/20",
         
         // Success: Clean theme-aware with green accent background
-        success: "bg-rifling-green/10 text-rifling-green shadow-sm hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-rifling-green/50 hover:bg-rifling-green/20",
+        success: "bg-rifling-green/10 text-rifling-green shadow-flat hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-rifling-green/50 hover:bg-rifling-green/20",
         
         // Destructive: Clean theme-aware with safety red accent background
-        destructive: "bg-safety-red/10 text-safety-red shadow-sm hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-safety-red/50 hover:bg-safety-red/20",
+        destructive: "bg-safety-red/10 text-safety-red shadow-flat hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-safety-red/50 hover:bg-safety-red/20",
         
         // Glass: Windows 11 Mica-inspired glassmorphism (borderless for clean look)
-        glass: "mica-overlay text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-0.5 focus-visible:ring-brass-yellow/50 hover:bg-white/25 transition-all duration-200",
+        glass: "mica-overlay text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-0.5 focus-visible:ring-brass-yellow/50 hover:bg-card/25 transition-all duration-200",
         
         // Solid variants - fun, colorful, no shadows, with interactive effects
         "solid-accent": "bg-brass-yellow text-primary hover:bg-copper-orange focus-visible:ring-brass-yellow/50 border-0 transition-all duration-200 stripe-arrow",
-        "solid-success": "bg-rifling-green text-white hover:bg-bore-sight-green focus-visible:ring-rifling-green/50 border-0 transition-all duration-200 stripe-arrow",
-        "solid-destructive": "bg-copper-orange text-white hover:bg-recoil-pad focus-visible:ring-copper-orange/50 border-0 transition-all duration-200 stripe-arrow",
+        "solid-success": "bg-rifling-green text-card-foreground hover:bg-bore-sight-green focus-visible:ring-rifling-green/50 border-0 transition-all duration-200 stripe-arrow",
+        "solid-destructive": "bg-copper-orange text-card-foreground hover:bg-recoil-pad focus-visible:ring-copper-orange/50 border-0 transition-all duration-200 stripe-arrow",
         "solid-primary": "bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-primary/50 border-0 transition-all duration-200 stripe-arrow",
         
         // Ghost: Minimal with subtle hover (theme-aware)
@@ -63,30 +63,30 @@ const buttonVariants = cva(
         link: "text-copper-orange hover:text-recoil-pad underline-offset-4 hover:underline focus-visible:ring-copper-orange border-0",
         
         // Fire: The "fucking great" gradient with bottom accent bar
-        fire: "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 focus-visible:ring-copper-orange transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        fire: "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 focus-visible:ring-copper-orange transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
         // Fire Blue: Blue to green fire gradient 
-        "fire-blue": "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 focus-visible:ring-ayu-blue transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        "fire-blue": "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 focus-visible:ring-ayu-blue transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
         // Fire Purple: Purple to cobalt fire gradient
-        "fire-purple": "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 focus-visible:ring-ayu-purple transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        "fire-purple": "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 focus-visible:ring-ayu-purple transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
         // Fire Green: Green variants fire gradient
-        "fire-green": "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 focus-visible:ring-ayu-green transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
+        "fire-green": "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 focus-visible:ring-ayu-green transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
       },
       size: {
         // Use our component sizing tokens from the design system
-        sm: "h-8 px-[var(--space-sm)] py-[var(--space-xs)] text-xs gap-[var(--space-xs)]", // For inside cards/forms - Stripe pattern
-        default: "h-10 px-[var(--space-base)] py-[var(--space-sm)] text-sm gap-[var(--space-xs)]", // General usage
-        lg: "h-12 px-[var(--space-md)] py-[var(--space-sm)] text-base gap-[var(--space-xs)]", // Hero/primary actions
-        xl: "h-14 px-[var(--space-lg)] py-[var(--space-base)] text-lg gap-[var(--space-sm)]", // Call-to-action buttons
+        sm: "h-8 px-[var(--space-sm)] py-[var(--space-xs)] text-caption gap-[var(--space-xs)]", // For inside cards/forms - Stripe pattern
+        default: "h-10 px-[var(--space-base)] py-[var(--space-sm)] text-body-sm gap-[var(--space-xs)]", // General usage
+        lg: "h-12 px-[var(--space-md)] py-[var(--space-sm)] text-body gap-[var(--space-xs)]", // Hero/primary actions
+        xl: "h-14 px-[var(--space-lg)] py-[var(--space-base)] text-body-lg gap-[var(--space-sm)]", // Call-to-action buttons
         icon: "h-10 w-10 p-0"
       },
       rounded: {
         none: "rounded-none",
-        sm: "rounded-sm",
-        default: "rounded-lg",
-        lg: "rounded-xl",
+        sm: "rounded-button",
+        default: "rounded-card",
+        lg: "rounded-large",
         full: "rounded-full"
       }
     },

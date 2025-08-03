@@ -67,11 +67,11 @@ export function EventCard({
         <div className="flex items-start justify-between gap-[var(--space-sm)]">
           <div className="flex-1">
             <div className="flex items-center gap-[var(--space-sm)] mb-[var(--space-xs)]">
-              <Badge variant="secondary" className="text-[var(--text-xs)]">
+              <Badge variant="default" className="text-caption">
                 {eventType}
               </Badge>
               {featured && (
-                <Badge variant="default" className="bg-copper-orange text-white text-[var(--text-xs)]">
+                <Badge variant="default" className="bg-copper-orange text-card-foreground text-caption">
                   Featured
                 </Badge>
               )}
@@ -82,7 +82,7 @@ export function EventCard({
           </div>
           {price && (
             <div className="text-right">
-              <div className="text-[var(--text-sm)] font-medium text-card-foreground">
+              <div className="text-body-sm font-medium text-card-foreground">
                 {price}
               </div>
             </div>

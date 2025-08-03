@@ -223,6 +223,61 @@ const config: StorybookConfig = {
 - **NEVER** mix `@storybook/nextjs` and `@storybook/nextjs-vite`
 - **ALWAYS** include `@storybook/addon-docs` for MDX support in Storybook 9
 
+## 🚨 ACTIVE MIGRATION: CSS @theme System Implementation
+
+### Current Status: Phase 1 - Shadow Migration (IN PROGRESS)
+
+**CRITICAL**: We are in the middle of a systematic migration of 861 violations across 84 component files from hardcoded Tailwind classes to CSS design tokens. This is being done via automated sed commands to prevent manual edit fatigue.
+
+#### Migration Progress
+- **COMPLETED**: `shadow-sm` → `shadow-flat` (40+ files)
+- **COMPLETED**: `shadow-lg` → `shadow-elevated` (15+ files)
+- **NEXT**: `shadow-xl` → `shadow-premium`
+- **NEXT**: `shadow-2xl` → `shadow-elite`
+
+#### Remaining Phases
+1. **Phase 2**: Typography violations (338 occurrences)
+2. **Phase 3**: Border-radius violations (255 occurrences)
+3. **Phase 4**: Spacing violations (122 occurrences)
+4. **Phase 5**: Final build validation and theme testing
+
+#### Migration Commands Being Used
+```bash
+# Phase 1: Shadow System
+find src/components -name "*.tsx" -exec sed -i 's/shadow-sm/shadow-flat/g' {} \; # COMPLETED
+find src/components -name "*.tsx" -exec sed -i 's/shadow-lg/shadow-elevated/g' {} \; # COMPLETED
+find src/components -name "*.tsx" -exec sed -i 's/shadow-xl/shadow-premium/g' {} \; # PENDING
+find src/components -name "*.tsx" -exec sed -i 's/shadow-2xl/shadow-elite/g' {} \; # PENDING
+
+# Phase 2: Typography (PENDING)
+find src/components -name "*.tsx" -exec sed -i 's/text-sm/text-body-sm/g' {} \;
+find src/components -name "*.tsx" -exec sed -i 's/text-lg/text-body-lg/g' {} \;
+# ... and 20+ more typography replacements
+
+# Phase 3: Border Radius (PENDING)
+find src/components -name "*.tsx" -exec sed -i 's/rounded-lg/rounded-card/g' {} \;
+find src/components -name "*.tsx" -exec sed -i 's/rounded-xl/rounded-large/g' {} \;
+# ... and 15+ more border radius replacements
+
+# Phase 4: Spacing (PENDING)
+find src/components -name "*.tsx" -exec sed -i 's/\bp-4\b/p-base/g' {} \;
+find src/components -name "*.tsx" -exec sed -i 's/\bm-6\b/m-lg/g' {} \;
+# ... and 30+ more spacing replacements
+```
+
+#### Why This Migration is Critical
+- **CONSISTENCY**: Eliminates 861 hardcoded values across the system
+- **THEMING**: Enables proper dark/light mode support
+- **MAINTENANCE**: Single source of truth for all design values
+- **SCALABILITY**: New components automatically inherit system tokens
+
+#### Files Being Actively Modified
+- All 84 component files in `src/components/`
+- Build validation after each phase
+- Storybook variant testing for theme compliance
+
+**⚠️ NOTE**: Do not manually edit component files during this migration. Use the systematic sed approach to maintain consistency and prevent conflicts.
+
 ## Key Reference Files
 
 - `src/app/globals.css` - Complete 26-color palette and design tokens
@@ -230,3 +285,4 @@ const config: StorybookConfig = {
 - `_resources/specs/` - Component specifications
 - `.github/copilot-instructions.md` - Additional AI coding guidelines
 - `scripts/fix-storybook.js` - Automated Storybook configuration fixer
+- **MIGRATION_PROGRESS.md** - Detailed sed command tracking and violation inventory

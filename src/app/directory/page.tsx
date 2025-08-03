@@ -1,79 +1,88 @@
 import { Suspense } from 'react'
 import { PageHero } from '@/components/ui/page-hero'
-import { DirectoryCard } from '@/components/ui/directory-card'
+import { VendorCard } from '@/components/ui/VendorCard'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { NavigationFusion } from '@/components/ui/navigation-fusion'
 import { NewThemeToggle } from '@/components/ui/NewThemeToggle'
-import { Search, MapPin, Filter, Star, Clock } from 'lucide-react'
+import { Search, MapPin, Filter, Star, Clock, Plus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { Card } from '@/components/ui/card'
 
-// Sample directory data
+// Treasure Valley business directory data with tier-based listings
 const directoryListings = [
   {
     id: 1,
-    name: "Boise Gun Club",
-    category: "shooting-range",
-    description: "Premier outdoor shooting facility with trap, skeet, and rifle ranges. NRA certified instruction available.",
-    location: "Boise, ID",
-    rating: 4.8,
-    reviewCount: 127,
-    priceRange: "$$",
-    features: ["Outdoor Range", "Training", "Equipment Rental", "Pro Shop"],
-    hours: "8AM - 6PM",
+    businessName: "Boise Gun Club",
+    businessType: "Shooting Range & Club",
+    description: "Premier outdoor shooting facility with trap, skeet, and rifle ranges. NRA certified instruction and competition hosting.",
+    address: "Boise, ID",
+    tier: "gold" as const,
+    specialties: ["Trap & Skeet", "Rifle Range", "Training", "Competitions", "Pro Shop"],
     phone: "(208) 555-0123",
     website: "https://boisegunclub.com",
-    verified: true,
-    image: "/images/directory/boise-gun-club.jpg"
+    isVerified: true
   },
   {
     id: 2,
-    name: "Treasure Valley Gunsmith",
-    category: "gunsmith",
-    description: "Expert gunsmithing services including custom builds, repairs, and restoration work.",
-    location: "Meridian, ID",
-    rating: 4.9,
-    reviewCount: 89,
-    priceRange: "$$$",
-    features: ["Custom Work", "Repairs", "Restoration", "Cerakote"],
-    hours: "9AM - 5PM",
+    businessName: "Treasure Valley Gunsmith",
+    businessType: "Custom Gunsmith",
+    description: "Expert gunsmithing services including custom builds, precision rifle work, and restoration services.",
+    address: "Meridian, ID",
+    tier: "silver" as const,
+    specialties: ["Custom Builds", "Precision Work", "Restoration", "Cerakote Finishing"],
     phone: "(208) 555-0456",
     website: "https://tvgunsmith.com",
-    verified: true,
-    image: "/images/directory/gunsmith.jpg"
+    isVerified: true
   },
   {
     id: 3,
-    name: "Idaho Firearms Academy",
-    category: "training",
-    description: "Professional firearms training from basic safety to advanced tactical courses.",
-    location: "Nampa, ID",
-    rating: 4.7,
-    reviewCount: 203,
-    priceRange: "$$",
-    features: ["CCW Classes", "Basic Training", "Advanced Courses", "Group Training"],
-    hours: "7AM - 8PM",
+    businessName: "Idaho Firearms Academy",
+    businessType: "Training Facility",
+    description: "Professional firearms training from basic safety to advanced tactical courses. Corporate training available.",
+    address: "Nampa, ID",
+    tier: "copper" as const,
+    specialties: ["CCW Classes", "Basic Safety", "Advanced Tactical", "Corporate Training"],
     phone: "(208) 555-0789",
     website: "https://idahofirearms.edu",
-    verified: true,
-    image: "/images/directory/training.jpg"
+    isVerified: true
   },
   {
     id: 4,
-    name: "Valley Gun & Pawn",
-    category: "dealer",
-    description: "Full-service gun store with new and used firearms, accessories, and ammunition.",
-    location: "Caldwell, ID",
-    rating: 4.5,
-    reviewCount: 156,
-    priceRange: "$$",
-    features: ["New & Used", "Accessories", "Ammo", "Transfers"],
-    hours: "10AM - 7PM",
+    businessName: "Valley Gun & Pawn",
+    businessType: "FFL Dealer",
+    description: "Full-service gun store with extensive inventory of new and used firearms, accessories, and ammunition.",
+    address: "Caldwell, ID",
+    tier: "free" as const,
+    specialties: ["New & Used Firearms", "Accessories", "Ammunition", "FFL Transfers"],
     phone: "(208) 555-0321",
     website: "https://valleygunpawn.com",
-    verified: true,
-    image: "/images/directory/gun-store.jpg"
+    isVerified: true
+  },
+  {
+    id: 5,
+    businessName: "Precision Rifle Works",
+    businessType: "Custom Shop",
+    description: "Specialized in long-range precision rifles, custom bolt actions, and competition rifle builds.",
+    address: "Eagle, ID",
+    tier: "gold" as const,
+    specialties: ["Precision Rifles", "Custom Bolt Actions", "Competition Builds", "Load Development"],
+    phone: "(208) 555-0987",
+    website: "https://precisionrifle.com",
+    isVerified: true
+  },
+  {
+    id: 6,
+    businessName: "Northwest Firearms Training",
+    businessType: "Training Academy",
+    description: "Comprehensive firearms education covering everything from basic safety to law enforcement training.",
+    address: "Star, ID",
+    tier: "copper" as const,
+    specialties: ["Basic Safety", "Hunter Education", "Law Enforcement", "Youth Programs"],
+    phone: "(208) 555-0654",
+    website: "https://nwfirearms.edu",
+    isVerified: true
   }
 ]
 
@@ -101,11 +110,11 @@ export default function DirectoryPage() {
 
       {/* Page Hero */}
       <PageHero
-        title="Business Directory"
-        subtitle="Find trusted firearms businesses across Treasure Valley"
+        title="Treasure Valley Business Directory"
+        subtitle="Building a comprehensive directory of firearms businesses across the region. Join us as a founding partner."
         backgroundPreset="warm"
-        primaryAction={{ text: "List Your Business", href: "/directory/add" }}
-        secondaryAction={{ text: "View Map", href: "/directory/map" }}
+        primaryAction={{ text: "List Your Business", href: "#business-submission" }}
+        secondaryAction={{ text: "Learn More", href: "#about-directory" }}
       />
 
       {/* Search & Filter Section */}
@@ -136,12 +145,12 @@ export default function DirectoryPage() {
           {/* Category Tabs */}
           <div className="flex flex-wrap gap-[var(--space-xs)]">
             {[
-              { label: "All", value: "all", active: true },
-              { label: "Gun Stores", value: "dealer" },
+              { label: "All Businesses", value: "all", active: true },
+              { label: "FFL Dealers", value: "dealer" },
               { label: "Shooting Ranges", value: "shooting-range" },
-              { label: "Training", value: "training" },
-              { label: "Gunsmiths", value: "gunsmith" },
-              { label: "Clubs", value: "club" }
+              { label: "Training Facilities", value: "training" },
+              { label: "Custom Gunsmiths", value: "gunsmith" },
+              { label: "Shooting Clubs", value: "club" }
             ].map((category) => (
               <Button
                 key={category.value}
@@ -157,54 +166,126 @@ export default function DirectoryPage() {
               </Button>
             ))}
           </div>
+
+          {/* Membership Tier Filter */}
+          <div className="mt-[var(--space-base)] flex flex-wrap gap-[var(--space-xs)]">
+            <span className="text-sm font-noto-sans text-case-hardened self-center mr-[var(--space-xs)]">
+              Filter by Membership:
+            </span>
+            {[
+              { label: "Gold Partners", value: "gold", color: "bg-brass-yellow" },
+              { label: "Silver Members", value: "silver", color: "bg-stainless-steel" },
+              { label: "Copper Members", value: "copper", color: "bg-copper-orange" },
+              { label: "Free Listings", value: "free", color: "bg-case-hardened" }
+            ].map((tier) => (
+              <Button
+                key={tier.value}
+                variant="secondary"
+                size="sm"
+                className={`border-${tier.value === 'gold' ? 'brass-yellow' : tier.value === 'silver' ? 'stainless-steel' : tier.value === 'copper' ? 'copper-orange' : 'case-hardened'}/30 text-${tier.value === 'gold' ? 'brass-yellow' : tier.value === 'silver' ? 'stainless-steel' : tier.value === 'copper' ? 'copper-orange' : 'case-hardened'} hover:${tier.color} hover:text-white`}
+              >
+                {tier.label}
+              </Button>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Directory Listings */}
-      <section className="py-[var(--space-xl)]">
+      {/* Directory Coming Soon */}
+      <section id="about-directory" className="py-[var(--space-xl)]">
         <div className="max-w-6xl mx-auto px-[var(--space-md)]">
-          <div className="mb-[var(--space-md)] flex items-center justify-between">
-            <h2 className="text-2xl font-rajdhani font-bold text-gunmetal-black">
-              {directoryListings.length} Businesses Found
+          <div className="text-center mb-[var(--space-xl)]">
+            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+              Building Treasure Valley's Definitive Firearms Directory
             </h2>
-            <select className="px-[var(--space-base)] py-[var(--space-xs)] border border-gray-300 rounded-lg bg-white text-sm font-noto-sans">
-              <option>Sort by Relevance</option>
-              <option>Sort by Rating</option>
-              <option>Sort by Distance</option>
-              <option>Sort by Name</option>
-            </select>
+            <p className="text-lg text-case-hardened font-noto-sans max-w-3xl mx-auto">
+              We're creating the most comprehensive directory of firearms businesses in the region. Our research has identified 117+ local businesses across FFLs, ranges, training, gunsmithing, and auction services.
+            </p>
           </div>
 
-          <Suspense fallback={<LoadingSpinner text="Loading directory..." />}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
-              {directoryListings.map((listing) => (
-                <DirectoryCard
-                  key={listing.id}
-                  title={listing.name}
-                  description={listing.description}
-                >
-                  <div className="space-y-2">
-                    <div className="text-sm text-muted-foreground">{listing.location}</div>
-                    <div className="text-sm">Rating: {listing.rating}/5 ({listing.reviewCount} reviews)</div>
-                    <div className="text-sm">Price: {listing.priceRange}</div>
-                    <div className="flex flex-wrap gap-1 mt-2">
-                      {listing.features.map((feature, idx) => (
-                        <span key={idx} className="px-2 py-1 bg-muted rounded text-xs">
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </DirectoryCard>
-              ))}
-            </div>
-          </Suspense>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-lg)] mb-[var(--space-xl)]">
+            <Card className="p-[var(--space-md)] text-center">
+              <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+                Retail Vendors & FFLs
+              </h3>
+              <p className="text-case-hardened font-noto-sans text-sm mb-[var(--space-base)]">
+                Gun stores, sporting goods, and licensed dealers across the valley
+              </p>
+              <div className="text-2xl font-rajdhani font-bold text-brass-yellow">19+</div>
+              <div className="text-sm text-case-hardened">Businesses Identified</div>
+            </Card>
+            
+            <Card className="p-[var(--space-md)] text-center">
+              <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+                Training & Education
+              </h3>
+              <p className="text-case-hardened font-noto-sans text-sm mb-[var(--space-base)]">
+                Certified instructors and training academies
+              </p>
+              <div className="text-2xl font-rajdhani font-bold text-brass-yellow">9+</div>
+              <div className="text-sm text-case-hardened">Training Providers</div>
+            </Card>
+            
+            <Card className="p-[var(--space-md)] text-center">
+              <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+                Ranges & Venues
+              </h3>
+              <p className="text-case-hardened font-noto-sans text-sm mb-[var(--space-base)]">
+                Shooting ranges, clubs, and competition venues
+              </p>
+              <div className="text-2xl font-rajdhani font-bold text-brass-yellow">9+</div>
+              <div className="text-sm text-case-hardened">Shooting Facilities</div>
+            </Card>
+          </div>
 
-          {/* Load More */}
-          <div className="text-center mt-[var(--space-xl)]">
-            <Button size="lg" className="bg-brass-yellow text-gunmetal-black hover:bg-copper-orange font-rajdhani font-semibold">
-              Load More Businesses
-            </Button>
+          {/* Business Submission Form */}
+          <div id="business-submission" className="bg-gradient-hero-warm rounded-lg border border-brass-yellow/20 p-[var(--space-xl)]">
+            <div className="text-center mb-[var(--space-lg)]">
+              <h3 className="text-2xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+                Join as a Founding Partner
+              </h3>
+              <p className="text-lg text-case-hardened font-noto-sans max-w-2xl mx-auto">
+                Be among the first businesses featured in Treasure Valley's premier firearms directory. No cost to join during our launch phase.
+              </p>
+            </div>
+            
+            <div className="max-w-2xl mx-auto space-y-[var(--space-base)]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
+                <Input placeholder="Business Name" className="bg-white border-brass-yellow/30 focus:border-brass-yellow" />
+                <Input placeholder="Your Name" className="bg-white border-brass-yellow/30 focus:border-brass-yellow" />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
+                <Input placeholder="Phone Number" className="bg-white border-brass-yellow/30 focus:border-brass-yellow" />
+                <Input placeholder="Email Address" className="bg-white border-brass-yellow/30 focus:border-brass-yellow" />
+              </div>
+              <Input placeholder="Business Address" className="bg-white border-brass-yellow/30 focus:border-brass-yellow" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
+                <select className="px-[var(--space-base)] py-[var(--space-xs)] border border-brass-yellow/30 rounded-lg bg-white text-sm font-noto-sans">
+                  <option>Business Type</option>
+                  <option>FFL Dealer / Gun Store</option>
+                  <option>Shooting Range</option>
+                  <option>Training / Education</option>
+                  <option>Gunsmith</option>
+                  <option>Shooting Club</option>
+                  <option>Auction House</option>
+                  <option>Other</option>
+                </select>
+                <Input placeholder="Website (if applicable)" className="bg-white border-brass-yellow/30 focus:border-brass-yellow" />
+              </div>
+              <textarea 
+                placeholder="Brief description of your business and services..."
+                className="w-full px-[var(--space-base)] py-[var(--space-xs)] border border-brass-yellow/30 rounded-lg bg-white text-sm font-noto-sans min-h-[100px] focus:border-brass-yellow focus:outline-none"
+              />
+              
+              <div className="text-center pt-[var(--space-base)]">
+                <Button size="lg" className="bg-brass-yellow text-gunmetal-black hover:bg-copper-orange font-rajdhani font-semibold">
+                  Submit Business Information
+                </Button>
+                <p className="text-sm text-case-hardened mt-[var(--space-xs)]">
+                  We'll review and contact you within 48 hours
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

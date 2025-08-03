@@ -2,23 +2,23 @@
 
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
-import { cn } from "./utils"
+import { cn } from "@/lib/utils"
 
 const componentVariants = cva(
   "inline-flex items-center justify-center transition-stripe-fast relative overflow-hidden",
   {
     variants: {
       variant: {
-        default: "bg-card text-card-foreground border border-border shadow-sm hover:shadow-md",
-        premium: "bg-fire-orange text-white shadow-premium border border-brass-yellow/20 hover:shadow-elite hover:scale-[1.02] transition-stripe-normal group animate-fire-unfurl",
-        elite: "bg-fire-animated text-white shadow-elite border-2 border-brass-yellow/30 animate-fire-pulse hover:scale-[1.05] transition-stripe-normal group",
-        glass: "border-white/20 bg-card/10 backdrop-blur-sm text-card hover:bg-card/20 hover:border-white/30"
+        default: "bg-card text-card-foreground border border-border shadow-flat hover:shadow-md",
+        premium: "bg-fire-orange text-card-foreground shadow-premium border border-brass-yellow/20 hover:shadow-elite hover:scale-[1.02] transition-stripe-normal group animate-fire-unfurl",
+        elite: "bg-fire-animated text-card-foreground shadow-elite border-2 border-brass-yellow/30 animate-fire-pulse hover:scale-[1.05] transition-stripe-normal group",
+        glass: "border-card/20 bg-card/10 backdrop-blur-sm text-card hover:bg-card/20 hover:border-card/30"
       },
       size: {
-        sm: "px-[var(--space-sm)] py-[var(--space-md)] text-sm",
+        sm: "px-[var(--space-sm)] py-[var(--space-md)] text-body-sm",
         default: "px-[var(--space-base)] py-[var(--space-xs)]",
-        lg: "px-[var(--space-md)] py-[var(--space-sm)] text-lg",
-        xl: "px-[var(--space-lg)] py-[var(--space-base)] text-xl"
+        lg: "px-[var(--space-md)] py-[var(--space-sm)] text-body-lg",
+        xl: "px-[var(--space-lg)] py-[var(--space-base)] text-heading-sm"
       }
     },
     defaultVariants: {

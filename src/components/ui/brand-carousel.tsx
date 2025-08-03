@@ -96,10 +96,10 @@ export function BrandCarousel({
             <div className="space-y-[var(--space-sm)]">
               {currentShowcase.stats.map((stat, index) => (
                 <div key={index} className="border-l-2 border-primary/20 pl-[var(--space-sm)]">
-                  <div className="text-[var(--text-3xl)] font-bold text-card-foreground">
+                  <div className="text-heading-lg font-bold text-card-foreground">
                     {stat.value}
                   </div>
-                  <div className="text-[var(--text-sm)] text-muted-foreground">
+                  <div className="text-body-sm text-muted-foreground">
                     {stat.label}
                   </div>
                 </div>
@@ -107,17 +107,17 @@ export function BrandCarousel({
             </div>
             
             <div className="pt-[var(--space-sm)]">
-              <div className="text-[var(--text-sm)] font-medium text-muted-foreground mb-[var(--space-xs)]">
+              <div className="text-body-sm font-medium text-muted-foreground mb-[var(--space-xs)]">
                 Products used
               </div>
               <div className="space-y-[var(--space-xs)]">
                 <div className="flex items-center gap-[var(--space-xs)]">
                   <div className="w-3 h-3 rounded bg-primary" />
-                  <span className="text-[var(--text-sm)] text-card-foreground">Range Management</span>
+                  <span className="text-body-sm text-card-foreground">Range Management</span>
                 </div>
                 <div className="flex items-center gap-[var(--space-xs)]">
                   <div className="w-3 h-3 rounded bg-copper-orange" />
-                  <span className="text-[var(--text-sm)] text-card-foreground">Safety Training</span>
+                  <span className="text-body-sm text-card-foreground">Safety Training</span>
                 </div>
               </div>
             </div>
@@ -125,7 +125,7 @@ export function BrandCarousel({
           
           {/* Main showcase card - takes up 3/4 of the width */}
           <div className="lg:col-span-3 relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg h-96">
+            <div className="relative rounded-overlay overflow-hidden shadow-elevated h-96">
               {/* Solid color background - 50% opacity */}
               <div className={cn(
                 "absolute inset-0 transition-colors duration-500",
@@ -148,19 +148,19 @@ export function BrandCarousel({
               </div>
               
               {/* Company logo */}
-              <div className="absolute top-[var(--space-lg)] right-[var(--space-lg)] bg-black/20 backdrop-blur-sm rounded-lg p-[var(--space-sm)]">
+              <div className="absolute top-[var(--space-lg)] right-[var(--space-lg)] bg-black/20 backdrop-blur-sm rounded-card p-[var(--space-sm)]">
                 {currentShowcase.logo}
               </div>
               
               {/* Overlay text content - WHITE TEXT */}
               <div className="absolute bottom-0 left-0 right-0 p-[var(--space-2xl)]">
-                <h2 className="text-[var(--text-2xl)] md:text-[var(--text-3xl)] font-rajdhani font-bold mb-[var(--space-sm)] leading-tight text-white">
+                <h2 className="text-heading-md md:text-heading-lg font-rajdhani font-bold mb-[var(--space-sm)] leading-tight text-card-foreground">
                   {currentShowcase.overlayTitle}
                 </h2>
-                <p className="text-white/90 mb-[var(--space-sm)] text-[var(--text-base)]">
+                <p className="text-card-foreground/90 mb-[var(--space-sm)] text-body">
                   {currentShowcase.overlayDescription}
                 </p>
-                <button className="text-[var(--text-sm)] font-medium text-white hover:text-white/80 transition-colors">
+                <button className="text-body-sm font-medium text-card-foreground hover:text-card-foreground/80 transition-colors">
                   Read their story →
                 </button>
               </div>
@@ -171,13 +171,13 @@ export function BrandCarousel({
           <>
             <button
               onClick={prevSlide}
-              className="absolute left-[var(--space-sm)] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card shadow-md hover:shadow-lg transition-shadow flex items-center justify-center"
+              className="absolute left-[var(--space-sm)] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card shadow-md hover:shadow-elevated transition-shadow flex items-center justify-center"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-[var(--space-sm)] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card shadow-md hover:shadow-lg transition-shadow flex items-center justify-center"
+              className="absolute right-[var(--space-sm)] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card shadow-md hover:shadow-elevated transition-shadow flex items-center justify-center"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -205,7 +205,7 @@ export function BrandCarousel({
       
       {/* Partner logos strip */}
       <div className="mt-[var(--space-4xl)] text-center">
-        <p className="text-[var(--text-sm)] text-muted-foreground mb-[var(--space-2xl)]">
+        <p className="text-body-sm text-muted-foreground mb-[var(--space-2xl)]">
           Trusted by industry leaders
         </p>
         <div className="flex items-center justify-center gap-[var(--space-3xl)] opacity-60 hover:opacity-80 transition-opacity">

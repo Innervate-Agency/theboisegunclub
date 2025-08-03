@@ -14,10 +14,10 @@ const facilityCardVariants = cva(
     variants: {
       variant: {
         // STRATEGIC RESTRAINT: Shadow-first approach like VendorCard
-        default: "bg-card shadow-sm hover:shadow-md",
-        featured: "bg-gradient-to-br from-brass-yellow/5 via-copper-orange/5 to-walnut-stock/5 shadow-sm hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
-        premium: "bg-gradient-to-br from-blued-steel/10 via-case-hardened/10 to-blued-steel/10 shadow-sm hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-ayu-blue after:to-case-hardened after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
-        compact: "bg-card shadow-sm hover:shadow-md"
+        default: "bg-card shadow-flat hover:shadow-md",
+        featured: "bg-gradient-to-br from-brass-yellow/5 via-copper-orange/5 to-walnut-stock/5 shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        premium: "bg-gradient-to-br from-blued-steel/10 via-case-hardened/10 to-blued-steel/10 shadow-flat hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-ayu-blue after:to-case-hardened after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        compact: "bg-card shadow-flat hover:shadow-md"
       },
       size: {
         default: "p-[var(--space-md)]",
@@ -129,7 +129,7 @@ export default function FacilityCard({
           {/* Business Icon/Image */}
           <div className="flex-shrink-0">
             {icon ? (
-              <div className="w-12 h-12 rounded-lg overflow-hidden shadow-sm">
+              <div className="w-12 h-12 rounded-card overflow-hidden shadow-flat">
                 <img 
                   src={icon} 
                   alt={title}
@@ -137,7 +137,7 @@ export default function FacilityCard({
                 />
               </div>
             ) : (
-              <div className="w-12 h-12 bg-brass-yellow/10 rounded-lg flex items-center justify-center shadow-sm">
+              <div className="w-12 h-12 bg-brass-yellow/10 rounded-card flex items-center justify-center shadow-flat">
                 {getBusinessTypeIcon(businessType)}
               </div>
             )}
@@ -146,13 +146,13 @@ export default function FacilityCard({
           {/* Business Info */}
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-[var(--space-xs)]">
-              <CardTitle className="text-lg font-rajdhani font-bold text-gunmetal-black group-hover:text-brass-yellow transition-colors">
+              <CardTitle className="text-body-lg font-rajdhani font-bold text-gunmetal-black group-hover:text-brass-yellow transition-colors">
                 {title}
               </CardTitle>
             </div>
             
             {businessType && (
-              <p className="text-sm text-case-hardened font-medium mt-[var(--space-xs)]">
+              <p className="text-body-sm text-case-hardened font-medium mt-[var(--space-xs)]">
                 {businessType}
               </p>
             )}
@@ -171,7 +171,7 @@ export default function FacilityCard({
                     />
                   ))}
                 </div>
-                <span className="text-sm text-case-hardened">
+                <span className="text-body-sm text-case-hardened">
                   {rating.toFixed(1)} {reviewCount && `(${reviewCount} reviews)`}
                 </span>
               </div>
@@ -188,7 +188,7 @@ export default function FacilityCard({
 
         {/* Contact Info */}
         {(location || hours || phone) && (
-          <div className="space-y-[var(--space-xs)] text-sm">
+          <div className="space-y-[var(--space-xs)] text-body-sm">
             {location && (
               <div className="flex items-center gap-[var(--space-xs)] text-case-hardened">
                 <MapPin className="h-4 w-4 text-brass-yellow" />
@@ -217,7 +217,7 @@ export default function FacilityCard({
               <Badge 
                 key={index} 
                 variant="info" 
-                className="text-xs"
+                className="text-caption"
               >
                 {badge}
               </Badge>
@@ -228,7 +228,7 @@ export default function FacilityCard({
         {/* Action Button */}
         <div className="pt-[var(--space-xs)]">
           <Button
-            variant="outline"
+            variant="secondary"
             size="sm"
             className="w-full group-hover:bg-brass-yellow/10 group-hover:border-brass-yellow/50 transition-colors"
             onClick={handleClick}

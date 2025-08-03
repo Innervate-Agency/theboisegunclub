@@ -12,11 +12,11 @@ const siteNavigationVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-card shadow-sm",
+        default: "bg-card shadow-flat",
         premium: "bg-gradient-to-r from-brass-yellow/5 via-copper-orange/5 to-brass-yellow/5 shadow-md backdrop-blur-sm relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-brass-yellow/40 after:to-transparent",
-        elite: "bg-gradient-to-r from-blued-steel/10 via-case-hardened/10 to-blued-steel/10 shadow-lg backdrop-blur-md relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-case-hardened/50 after:to-transparent",
-        glass: "bg-card/80 backdrop-blur-xl shadow-xl",
-        gunclub: "bg-shooting-bench shadow-sm relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-tactical-gray/40 after:to-transparent"
+        elite: "bg-gradient-to-r from-blued-steel/10 via-case-hardened/10 to-blued-steel/10 shadow-elevated backdrop-blur-md relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-case-hardened/50 after:to-transparent",
+        glass: "bg-card/80 backdrop-blur-xl shadow-premium",
+        gunclub: "bg-shooting-bench shadow-flat relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-tactical-gray/40 after:to-transparent"
       },
       layout: {
         horizontal: "relative",
@@ -75,11 +75,11 @@ export function SiteNavigation({
         <div className="p-[var(--space-md)]">
           {showLogo && (
             <div className="mb-[var(--space-lg)]">
-              <div className="text-[var(--text-xl)] font-rajdhani text-gunmetal-black">
+              <div className="text-heading-sm font-rajdhani text-gunmetal-black">
                 <span className="font-extrabold">THE BOISE GUN</span>{' '}
                 <span className="font-light">CLUB</span>
               </div>
-              <p className="text-[var(--text-sm)] text-case-hardened">Treasure Valley</p>
+              <p className="text-body-sm text-case-hardened">Treasure Valley</p>
             </div>
           )}
           
@@ -88,7 +88,7 @@ export function SiteNavigation({
               <a
                 key={item.href}
                 href={item.href}
-                className="flex items-center gap-[var(--space-sm)] px-[var(--space-base)] py-[var(--space-sm)] text-[var(--text-sm)] font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-lg transition-all duration-150"
+                className="flex items-center gap-[var(--space-sm)] px-[var(--space-base)] py-[var(--space-sm)] text-body-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-card transition-all duration-150"
               >
                 <item.icon className="h-[var(--icon-sm)] w-[var(--icon-sm)]" />
                 {item.label}
@@ -112,15 +112,15 @@ export function SiteNavigation({
           {showLogo && (
             <div className="flex items-center">
               <Link href="/" className="flex items-center gap-[var(--space-sm)]">
-                <div className="w-[var(--icon-lg)] h-[var(--icon-lg)] bg-brass-yellow rounded-md flex items-center justify-center">
+                <div className="w-[var(--icon-lg)] h-[var(--icon-lg)] bg-brass-yellow rounded-input flex items-center justify-center">
                   <Target className="h-[var(--icon-sm)] w-[var(--icon-sm)] text-gunmetal-black" />
                 </div>
                 <div>
-                  <div className="text-[var(--text-lg)] font-rajdhani text-gunmetal-black">
+                  <div className="text-body-lg font-rajdhani text-gunmetal-black">
                     <span className="font-extrabold">THE BOISE GUN</span>{' '}
                     <span className="font-light">CLUB</span>
                   </div>
-                  <p className="text-[var(--text-xs)] text-case-hardened -mt-[var(--space-xs)]">
+                  <p className="text-caption text-case-hardened -mt-[var(--space-xs)]">
                     Treasure Valley
                   </p>
                 </div>
@@ -134,7 +134,7 @@ export function SiteNavigation({
               <a
                 key={item.href}
                 href={item.href}
-                className="flex items-center gap-[var(--space-xs)] px-[var(--space-base)] py-[var(--space-xs)] text-[var(--text-sm)] font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-md transition-all duration-150"
+                className="flex items-center gap-[var(--space-xs)] px-[var(--space-base)] py-[var(--space-xs)] text-body-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-input transition-all duration-150"
               >
                 <item.icon className="h-[var(--icon-sm)] w-[var(--icon-sm)]" />
                 {item.label}
@@ -178,60 +178,60 @@ export function SiteNavigation({
           <div className="py-[var(--space-md)] relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
             <div className="grid grid-cols-3 gap-[var(--space-lg)]">
               <div>
-                <h3 className="text-[var(--text-sm)] font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+                <h3 className="text-body-sm font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
                   Directory
                 </h3>
                 <div className="space-y-[var(--space-xs)]">
-                  <a href="/directory/shops" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
+                  <a href="/directory/shops" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
                     Gun Shops
                   </a>
-                  <a href="/directory/ranges" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
+                  <a href="/directory/ranges" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
                     Shooting Ranges
                   </a>
-                  <a href="/directory/instructors" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
+                  <a href="/directory/instructors" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
                     Instructors
                   </a>
-                  <a href="/directory/gunsmiths" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
+                  <a href="/directory/gunsmiths" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
                     Gunsmiths
                   </a>
                 </div>
               </div>
               
               <div>
-                <h3 className="text-[var(--text-sm)] font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+                <h3 className="text-body-sm font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
                   Events
                 </h3>
                 <div className="space-y-[var(--space-xs)]">
-                  <a href="/events/competitions" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
+                  <a href="/events/competitions" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
                     Competitions
                   </a>
-                  <a href="/events/training" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
+                  <a href="/events/training" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
                     Training Sessions
                   </a>
-                  <a href="/events/social" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
+                  <a href="/events/social" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
                     Social Events
                   </a>
-                  <a href="/events/gun-shows" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
+                  <a href="/events/gun-shows" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
                     Gun Shows
                   </a>
                 </div>
               </div>
               
               <div>
-                <h3 className="text-[var(--text-sm)] font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+                <h3 className="text-body-sm font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
                   Resources
                 </h3>
                 <div className="space-y-[var(--space-xs)]">
-                  <a href="/safety" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
+                  <a href="/safety" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
                     Safety Guidelines
                   </a>
-                  <a href="/training/beginner" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
+                  <a href="/training/beginner" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
                     Beginner Resources
                   </a>
-                  <a href="/laws" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
+                  <a href="/laws" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
                     Idaho Gun Laws
                   </a>
-                  <a href="/community" className="block text-[var(--text-sm)] text-case-hardened hover:text-gunmetal-black">
+                  <a href="/community" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
                     Community Forum
                   </a>
                 </div>
@@ -248,7 +248,7 @@ export function SiteNavigation({
                 <a
                   key={item.href}
                   href={item.href}
-                  className="flex items-center gap-[var(--space-sm)] px-[var(--space-base)] py-[var(--space-sm)] text-[var(--text-sm)] font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-md transition-all duration-150"
+                  className="flex items-center gap-[var(--space-sm)] px-[var(--space-base)] py-[var(--space-sm)] text-body-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-input transition-all duration-150"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <item.icon className="h-[var(--icon-sm)] w-[var(--icon-sm)]" />

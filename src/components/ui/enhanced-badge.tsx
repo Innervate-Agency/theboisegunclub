@@ -54,17 +54,17 @@ const enhancedBadgeVariants = cva(
       },
       size: {
         // Proper sizing using design tokens
-        xs: "px-[var(--space-xs)] py-[var(--space-tiny)] text-xs h-5 gap-[var(--space-xs)]",      // Extra small
-        sm: "px-[var(--space-xs)] py-[var(--space-tiny)] text-xs h-5 gap-[var(--space-xs)]",      // Small  
-        default: "px-[var(--space-sm)] py-[var(--space-tiny)] text-xs h-6 gap-[var(--space-xs)]", // Standard
-        lg: "px-[var(--space-base)] py-[var(--space-xs)] text-sm h-8 gap-[var(--space-md)]",      // Large
-        xl: "px-[var(--space-base)] py-[var(--space-md)] text-sm h-8 gap-[var(--space-md)]",    // Extra large
+        xs: "px-[var(--space-xs)] py-[var(--space-tiny)] text-caption h-5 gap-[var(--space-xs)]",      // Extra small
+        sm: "px-[var(--space-xs)] py-[var(--space-tiny)] text-caption h-5 gap-[var(--space-xs)]",      // Small  
+        default: "px-[var(--space-sm)] py-[var(--space-tiny)] text-caption h-6 gap-[var(--space-xs)]", // Standard
+        lg: "px-[var(--space-base)] py-[var(--space-xs)] text-body-sm h-8 gap-[var(--space-md)]",      // Large
+        xl: "px-[var(--space-base)] py-[var(--space-md)] text-body-sm h-8 gap-[var(--space-md)]",    // Extra large
       },
       radius: {
         none: "rounded-none",
-        sm: "rounded-sm",      // --radius-sm  
-        default: "rounded-md", // --radius-base (boxy with slight curve)
-        lg: "rounded-lg",      // --radius-lg
+        sm: "rounded-button",      // --radius-sm  
+        default: "rounded-input", // --radius-base (boxy with slight curve)
+        lg: "rounded-card",      // --radius-lg
         full: "rounded-full",  // --radius-full
       }
     },

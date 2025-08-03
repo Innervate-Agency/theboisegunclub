@@ -17,8 +17,8 @@ const contactFormVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-card border border-border rounded-lg shadow-sm",
-        glass: "mica-card border-border/20 rounded-lg shadow-lg",
+        default: "bg-card border border-border rounded-card shadow-flat",
+        glass: "mica-card border-border/20 rounded-card shadow-elevated",
         minimal: "bg-transparent border-0 shadow-none"
       }
     },
@@ -29,7 +29,7 @@ const contactFormVariants = cva(
 )
 
 export interface ContactFormProps 
-  extends React.ComponentProps<"div">,
+  extends Omit<React.ComponentProps<"div">, 'onSubmit'>,
     VariantProps<typeof contactFormVariants> {
   title?: string
   subtitle?: string
@@ -302,7 +302,7 @@ export function ContactForm({
     <div className={cn(contactFormVariants({ variant }), className)} {...props}>
       <Card className={variant === 'minimal' ? 'border-0 shadow-none' : ''}>
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-rajdhani font-bold text-gunmetal-black">
+          <CardTitle className="text-heading-md font-rajdhani font-bold text-gunmetal-black">
             {title}
           </CardTitle>
           {subtitle && (
@@ -311,7 +311,7 @@ export function ContactForm({
             </CardDescription>
           )}
           {description && (
-            <p className="text-sm text-case-hardened leading-relaxed mt-[var(--space-xs)]">
+            <p className="text-body-sm text-case-hardened leading-relaxed mt-[var(--space-xs)]">
               {description}
             </p>
           )}
@@ -330,7 +330,7 @@ export function ContactForm({
             >
               {isSubmitting ? (
                 <>
-                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-[var(--space-xs)]" />
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-card mr-[var(--space-xs)]" />
                   Sending...
                 </>
               ) : (
@@ -347,9 +347,9 @@ export function ContactForm({
               <h3 className="font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
                 Contact Information
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)] text-sm">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)] text-body-sm">
                 <div className="flex items-center gap-[var(--space-sm)]">
-                  <div className="p-[var(--space-xs)] bg-brass-yellow/10 rounded-md">
+                  <div className="p-[var(--space-xs)] bg-brass-yellow/10 rounded-input">
                     <Phone className="h-4 w-4 text-brass-yellow" />
                   </div>
                   <div>
@@ -359,7 +359,7 @@ export function ContactForm({
                 </div>
                 
                 <div className="flex items-center gap-[var(--space-sm)]">
-                  <div className="p-[var(--space-xs)] bg-brass-yellow/10 rounded-md">
+                  <div className="p-[var(--space-xs)] bg-brass-yellow/10 rounded-input">
                     <Mail className="h-4 w-4 text-brass-yellow" />
                   </div>
                   <div>
@@ -369,7 +369,7 @@ export function ContactForm({
                 </div>
                 
                 <div className="flex items-center gap-[var(--space-sm)]">
-                  <div className="p-[var(--space-xs)] bg-brass-yellow/10 rounded-md">
+                  <div className="p-[var(--space-xs)] bg-brass-yellow/10 rounded-input">
                     <MapPin className="h-4 w-4 text-brass-yellow" />
                   </div>
                   <div>
@@ -379,7 +379,7 @@ export function ContactForm({
                 </div>
                 
                 <div className="flex items-center gap-[var(--space-sm)]">
-                  <div className="p-[var(--space-xs)] bg-brass-yellow/10 rounded-md">
+                  <div className="p-[var(--space-xs)] bg-brass-yellow/10 rounded-input">
                     <Clock className="h-4 w-4 text-brass-yellow" />
                   </div>
                   <div>

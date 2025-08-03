@@ -5,21 +5,21 @@ import { ArrowRight } from "lucide-react"
 
 const productShowcaseCardVariants = cva(
   // TBGC Design System: Strategic restraint with sophisticated animations
-  "group relative overflow-hidden rounded-lg bg-card text-card-foreground transition-all duration-500 ease-out cursor-pointer",
+  "group relative overflow-hidden rounded-card bg-card text-card-foreground transition-all duration-500 ease-out cursor-pointer",
   {
     variants: {
       variant: {
         // Default: Clean professional showcase
-        default: "shadow-sm hover:shadow-lg border border-border/20",
+        default: "shadow-flat hover:shadow-elevated border border-border/20",
         
         // Premium: Copper-orange gradient splash
-        premium: "shadow-sm hover:shadow-lg border border-copper-orange/20 relative after:absolute after:inset-0 after:bg-gradient-to-br after:from-copper-orange/3 after:via-transparent after:to-brass-yellow/2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 after:pointer-events-none",
+        premium: "shadow-flat hover:shadow-elevated border border-copper-orange/20 relative after:absolute after:inset-0 after:bg-gradient-to-br after:from-copper-orange/3 after:via-transparent after:to-brass-yellow/2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 after:pointer-events-none",
         
         // Elite: Blue gradient splash  
-        elite: "shadow-sm hover:shadow-lg border border-ayu-blue/20 relative after:absolute after:inset-0 after:bg-gradient-to-br after:from-ayu-blue/4 after:via-transparent after:to-scope-blue/3 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 after:pointer-events-none",
+        elite: "shadow-flat hover:shadow-elevated border border-ayu-blue/20 relative after:absolute after:inset-0 after:bg-gradient-to-br after:from-ayu-blue/4 after:via-transparent after:to-scope-blue/3 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 after:pointer-events-none",
         
         // Success: Green gradient splash
-        success: "shadow-sm hover:shadow-lg border border-rifling-green/20 relative after:absolute after:inset-0 after:bg-gradient-to-br after:from-rifling-green/3 after:via-transparent after:to-clubhouse-lawn-green/2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 after:pointer-events-none"
+        success: "shadow-flat hover:shadow-elevated border border-rifling-green/20 relative after:absolute after:inset-0 after:bg-gradient-to-br after:from-rifling-green/3 after:via-transparent after:to-clubhouse-lawn-green/2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 after:pointer-events-none"
       },
       size: {
         default: "w-full max-w-sm",
@@ -69,7 +69,7 @@ const ProductShowcaseCard = React.forwardRef<HTMLDivElement, ProductShowcaseCard
           )} />
           
           {/* Image Frame - Always visible with subtle styling */}
-          <div className="relative z-10 w-32 h-32 rounded-lg bg-card border border-border/50 flex items-center justify-center shadow-sm">
+          <div className="relative z-10 w-32 h-32 rounded-card bg-card border border-border/50 flex items-center justify-center shadow-flat">
             {imageSlot || (
               <div className="w-16 h-16 rounded bg-muted flex items-center justify-center">
                 <div className="w-8 h-8 rounded bg-muted-foreground/20" />
@@ -85,8 +85,8 @@ const ProductShowcaseCard = React.forwardRef<HTMLDivElement, ProductShowcaseCard
             <div className="flex gap-[var(--space-md)] mb-[var(--space-base)]">
               {stats.map((stat, index) => (
                 <div key={index} className="flex flex-col">
-                  <div className="text-2xl font-bold text-card-foreground">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-heading-md font-bold text-card-foreground">{stat.value}</div>
+                  <div className="text-body-sm text-muted-foreground">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -94,13 +94,13 @@ const ProductShowcaseCard = React.forwardRef<HTMLDivElement, ProductShowcaseCard
 
           {/* Main Content Container - Slides up on hover */}
           <div className="transform transition-transform duration-300 ease-out group-hover:-translate-y-3">
-            <h3 className="text-xl font-rajdhani font-semibold mb-[var(--space-xs)] text-card-foreground">{title}</h3>
-            <p className="text-muted-foreground mb-[var(--space-base)] text-sm leading-relaxed">{description}</p>
+            <h3 className="text-heading-sm font-rajdhani font-semibold mb-[var(--space-xs)] text-card-foreground">{title}</h3>
+            <p className="text-muted-foreground mb-[var(--space-base)] text-body-sm leading-relaxed">{description}</p>
           </div>
 
           {/* CTA Button - Appears on hover with slide up animation */}
           <div className="transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out delay-75">
-            <div className="flex items-center gap-[var(--space-xs)] text-sm font-medium text-copper-orange hover:text-copper-orange/80 transition-colors cursor-pointer">
+            <div className="flex items-center gap-[var(--space-xs)] text-body-sm font-medium text-copper-orange hover:text-copper-orange/80 transition-colors cursor-pointer">
               <span>{ctaText}</span>
               <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
             </div>
@@ -113,4 +113,3 @@ const ProductShowcaseCard = React.forwardRef<HTMLDivElement, ProductShowcaseCard
 ProductShowcaseCard.displayName = "ProductShowcaseCard"
 
 export { ProductShowcaseCard, productShowcaseCardVariants }
-export type { ProductShowcaseCardProps }

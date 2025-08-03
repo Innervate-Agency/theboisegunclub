@@ -70,7 +70,7 @@ export function StatsShowcase({
               </h2>
             )}
             {subtitle && (
-              <p className="text-lg text-muted-foreground font-noto-sans">
+              <p className="text-body-lg text-muted-foreground font-noto-sans">
                 {subtitle}
               </p>
             )}
@@ -85,19 +85,19 @@ export function StatsShowcase({
             return (
               <div
                 key={index}
-                className="group relative bg-card border-border rounded-lg p-[var(--space-md)] shadow-sm hover:shadow-md transition-all duration-200 ease-out"
+                className="group relative bg-card border-border rounded-card p-[var(--space-md)] shadow-flat hover:shadow-md transition-all duration-200 ease-out"
               >
                 <div className="space-y-[var(--space-base)]">
                   {/* Icon and Value */}
                   <div className="flex items-center justify-between">
                     {Icon && (
-                      <div className="p-[var(--space-xs)] bg-copper-orange/10 rounded-lg">
+                      <div className="p-[var(--space-xs)] bg-copper-orange/10 rounded-card">
                         <Icon className="h-5 w-5 text-copper-orange" />
                       </div>
                     )}
                     
                     {stat.change && (
-                      <div className="flex items-center gap-[var(--space-xs)] text-xs">
+                      <div className="flex items-center gap-[var(--space-xs)] text-caption">
                         {stat.change.trend === 'up' && (
                           <TrendingUp className="h-3 w-3 text-rifling-green" />
                         )}
@@ -118,17 +118,17 @@ export function StatsShowcase({
 
                   {/* Main Stat */}
                   <div className="space-y-[var(--space-micro)]">
-                    <div className="text-3xl font-rajdhani font-bold text-card-foreground group-hover:text-copper-orange transition-colors duration-200">
+                    <div className="text-heading-lg font-rajdhani font-bold text-card-foreground group-hover:text-copper-orange transition-colors duration-200">
                       {typeof stat.value === 'number' ? stat.value.toLocaleString() : stat.value}
                     </div>
-                    <div className="text-sm font-noto-sans font-medium text-muted-foreground">
+                    <div className="text-body-sm font-noto-sans font-medium text-muted-foreground">
                       {stat.label}
                     </div>
                   </div>
 
                   {/* Description */}
                   {stat.description && (
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-caption text-muted-foreground leading-relaxed">
                       {stat.description}
                     </p>
                   )}

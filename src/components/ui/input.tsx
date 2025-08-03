@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 
 const inputVariants = cva(
   // Foundation classes inspired by Stripe's sophisticated input design
-  "flex w-full min-w-0 rounded-md border bg-transparent text-base transition-stripe-fast outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground selection:bg-brass-yellow selection:text-primary font-noto-sans",
+  "flex w-full min-w-0 rounded-input border bg-transparent text-body transition-stripe-fast outline-none file:border-0 file:bg-transparent file:text-body-sm file:font-medium placeholder:text-muted-foreground selection:bg-brass-yellow selection:text-primary font-noto-sans",
   {
     variants: {
       variant: {
@@ -14,9 +14,9 @@ const inputVariants = cva(
         glass: "bg-card/20 backdrop-blur-sm border-border/30 text-card-foreground shadow-glass hover:border-border/50 hover:bg-card/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20 mica-glass"
       },
       size: {
-        sm: "h-[var(--input-height-sm)] px-[var(--space-sm)] py-[var(--space-xs)] text-[var(--text-sm)]",
-        default: "h-[var(--input-height-base)] px-[var(--space-sm)] py-[var(--space-xs)] text-[var(--text-sm)] md:text-[var(--text-base)]",
-        lg: "h-[var(--input-height-lg)] px-[var(--space-base)] py-[var(--space-sm)] text-[var(--text-base)]"
+        sm: "h-[var(--input-height-sm)] px-[var(--space-sm)] py-[var(--space-xs)] text-body-sm",
+        default: "h-[var(--input-height-base)] px-[var(--space-sm)] py-[var(--space-xs)] text-body-sm md:text-body",
+        lg: "h-[var(--input-height-lg)] px-[var(--space-base)] py-[var(--space-sm)] text-body"
       },
       status: {
         default: "",
@@ -74,19 +74,19 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
         {...props}
       >
         {label && (
-          <label className="text-[var(--text-sm)] font-medium text-foreground font-noto-sans">
+          <label className="text-body-sm font-medium text-foreground font-noto-sans">
             {label}
             {required && <span className="text-safety-red ml-[var(--space-xs)]">*</span>}
           </label>
         )}
         {children}
         {description && !error && (
-          <p className="text-[var(--text-xs)] text-muted-foreground leading-relaxed">
+          <p className="text-caption text-muted-foreground leading-relaxed">
             {description}
           </p>
         )}
         {error && (
-          <p className="text-[var(--text-xs)] text-safety-red leading-relaxed flex items-center gap-[var(--space-xs)]">
+          <p className="text-caption text-safety-red leading-relaxed flex items-center gap-[var(--space-xs)]">
             <svg className="h-[var(--icon-xs)] w-[var(--icon-xs)] flex-shrink-0" viewBox="0 0 16 16" fill="currentColor">
               <path fillRule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9-3a1 1 0 11-2 0 1 1 0 012 0zM8 7.5a.5.5 0 01.5.5v3a.5.5 0 01-1 0V8a.5.5 0 01.5-.5z" />
             </svg>

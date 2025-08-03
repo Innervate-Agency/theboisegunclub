@@ -11,7 +11,7 @@ const meta: Meta = {
     },
     designToken: {
       showPreview: true,
-      filterNames: ['--space-*', '--card-*', '--button-*'],
+      filterNames: ['--space-xs', '--space-sm', '--space-base', '--space-md', '--space-lg', '--space-xl', '--space-2xl'],
       category: 'Spacing'
     }
   },
@@ -146,7 +146,7 @@ export const SpacingTokens: Story = {
   parameters: {
     designToken: {
       showPreview: true,
-      filterNames: ['--space-*'],
+      filterNames: ['--space-xs', '--space-sm', '--space-base', '--space-md', '--space-lg', '--space-xl', '--space-2xl'],
       category: 'Spacing Tokens'
     }
   },

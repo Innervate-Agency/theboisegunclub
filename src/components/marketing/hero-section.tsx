@@ -6,7 +6,7 @@ export function HeroSection() {
       
       <div className="container mx-auto px-[var(--space-sm)] text-center relative z-10">
         {/* Launch banner with pulse animation */}
-        <div className="inline-block bg-brass-yellow text-gunmetal-black px-[var(--space-md)] py-[var(--space-xs)] rounded-full font-noto-sans text-[var(--text-sm)] font-semibold mb-[var(--space-2xl)] shadow-premium">
+        <div className="inline-block bg-brass-yellow text-gunmetal-black px-[var(--space-md)] py-[var(--space-xs)] rounded-full font-noto-sans text-body-sm font-semibold mb-[var(--space-2xl)] shadow-premium">
           Launching August 1st, 2025
         </div>
         

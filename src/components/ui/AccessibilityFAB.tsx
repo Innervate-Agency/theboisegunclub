@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { Accessibility, Type, Eye, Settings, X } from "lucide-react"
 
 const fabVariants = cva(
-  "fixed bottom-6 right-6 z-50 rounded-full shadow-lg transition-all duration-200 hover:scale-105 active:scale-95",
+  "fixed bottom-6 right-6 z-50 rounded-full shadow-elevated transition-all duration-200 hover:scale-105 active:scale-95",
   {
     variants: {
       state: {
@@ -21,7 +21,7 @@ const fabVariants = cva(
 )
 
 const menuVariants = cva(
-  "fixed bottom-20 right-6 z-40 bg-card border-border rounded-lg shadow-xl p-[var(--space-base)] min-w-[280px] transition-all duration-200",
+  "fixed bottom-20 right-6 z-40 bg-card border-border rounded-card shadow-premium p-[var(--space-base)] min-w-[280px] transition-all duration-200",
   {
     variants: {
       open: {
@@ -36,7 +36,7 @@ const menuVariants = cva(
 )
 
 export interface AccessibilityFABProps 
-  extends React.ComponentProps<"div">,
+  extends React.ComponentProps<"button">,
     VariantProps<typeof fabVariants> {
   initialFontSize?: number
   initialContrast?: boolean
@@ -112,13 +112,13 @@ export default function AccessibilityFAB({
         aria-label="Accessibility settings"
       >
         <div className="space-y-[var(--space-base)]">
-          <h3 className="text-lg font-rajdhani font-bold text-popover-foreground">
+          <h3 className="text-body-lg font-rajdhani font-bold text-popover-foreground">
             Accessibility Settings
           </h3>
 
           {/* Font Size Controls */}
           <div className="space-y-[var(--space-sm)]">
-            <h4 className="text-sm font-medium text-case-hardened dark:text-tactical-gray flex items-center gap-[var(--space-xs)]">
+            <h4 className="text-body-sm font-medium text-case-hardened dark:text-tactical-gray flex items-center gap-[var(--space-xs)]">
               <Type className="w-4 h-4" />
               Font Size: {fontSize}px
             </h4>
@@ -126,14 +126,14 @@ export default function AccessibilityFAB({
               <button
                 onClick={decreaseFontSize}
                 disabled={fontSize === 12}
-                className="px-[var(--space-sm)] py-[var(--space-xs)] bg-muted text-popover-foreground rounded-md text-sm font-medium hover:bg-muted/80 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="px-[var(--space-sm)] py-[var(--space-xs)] bg-muted text-popover-foreground rounded-input text-body-sm font-medium hover:bg-muted/80 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 aria-label="Decrease font size"
               >
                 A-
               </button>
               <button
                 onClick={resetFontSize}
-                className="px-[var(--space-sm)] py-[var(--space-xs)] bg-muted text-popover-foreground rounded-md text-sm font-medium hover:bg-muted/80 transition-colors"
+                className="px-[var(--space-sm)] py-[var(--space-xs)] bg-muted text-popover-foreground rounded-input text-body-sm font-medium hover:bg-muted/80 transition-colors"
                 aria-label="Reset font size"
               >
                 Reset
@@ -141,7 +141,7 @@ export default function AccessibilityFAB({
               <button
                 onClick={increaseFontSize}
                 disabled={fontSize === 24}
-                className="px-[var(--space-sm)] py-[var(--space-xs)] bg-muted text-popover-foreground rounded-md text-sm font-medium hover:bg-muted/80 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="px-[var(--space-sm)] py-[var(--space-xs)] bg-muted text-popover-foreground rounded-input text-body-sm font-medium hover:bg-muted/80 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 aria-label="Increase font size"
               >
                 A+
@@ -151,14 +151,14 @@ export default function AccessibilityFAB({
 
           {/* High Contrast Toggle */}
           <div className="space-y-[var(--space-sm)]">
-            <h4 className="text-sm font-medium text-case-hardened dark:text-tactical-gray flex items-center gap-[var(--space-xs)]">
+            <h4 className="text-body-sm font-medium text-case-hardened dark:text-tactical-gray flex items-center gap-[var(--space-xs)]">
               <Eye className="w-4 h-4" />
               Display Options
             </h4>
             <button
               onClick={toggleHighContrast}
               className={cn(
-                "w-full px-[var(--space-base)] py-[var(--space-sm)] rounded-md text-sm font-medium transition-colors text-left",
+                "w-full px-[var(--space-base)] py-[var(--space-sm)] rounded-input text-body-sm font-medium transition-colors text-left",
                 highContrast 
                   ? "bg-brass-yellow text-gunmetal-black" 
                   : "bg-muted text-popover-foreground hover:bg-muted/80"
@@ -172,7 +172,7 @@ export default function AccessibilityFAB({
                   highContrast ? "bg-gunmetal-black" : "bg-muted"
                 )}>
                   <div className={cn(
-                    "w-4 h-4 rounded-full bg-white absolute top-1 transition-transform",
+                    "w-4 h-4 rounded-full bg-card absolute top-1 transition-transform",
                     highContrast ? "translate-x-5" : "translate-x-1"
                   )} />
                 </div>
@@ -181,10 +181,10 @@ export default function AccessibilityFAB({
           </div>
 
           {/* Reset All Button */}
-          <div className="pt-[var(--space-xs)] border-t border-gray-200 dark:border-tactical-gray">
+          <div className="pt-[var(--space-xs)] border-t border-border">
             <button
               onClick={resetAll}
-              className="w-full px-[var(--space-base)] py-[var(--space-xs)] bg-copper-orange/10 hover:bg-copper-orange/20 text-popover-foreground rounded-md text-sm font-medium transition-colors flex items-center justify-center gap-[var(--space-xs)]"
+              className="w-full px-[var(--space-base)] py-[var(--space-xs)] bg-copper-orange/10 hover:bg-copper-orange/20 text-popover-foreground rounded-input text-body-sm font-medium transition-colors flex items-center justify-center gap-[var(--space-xs)]"
               aria-label="Reset all accessibility settings"
             >
               <Settings className="w-4 h-4" />
@@ -197,7 +197,7 @@ export default function AccessibilityFAB({
       {/* Backdrop */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-30 bg-black/20 backdrop-blur-sm"
+          className="fixed inset-0 z-30 bg-background/20 backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
         />

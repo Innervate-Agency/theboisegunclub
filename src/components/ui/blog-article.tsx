@@ -36,7 +36,7 @@ interface BlogArticle {
 }
 
 const blogCardVariants = cva(
-  "group bg-card rounded-lg border border-border overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer",
+  "group bg-card rounded-card border border-border overflow-hidden shadow-flat hover:shadow-md transition-all duration-200 cursor-pointer",
   {
     variants: {
       variant: {
@@ -128,7 +128,7 @@ export function BlogCard({
           
           {/* Category Badge */}
           <div className="absolute top-3 right-3">
-            <Badge variant="secondary" className="bg-card/90 text-gunmetal-black text-xs">
+            <Badge variant="default" className="bg-card/90 text-gunmetal-black text-caption">
               {article.category}
             </Badge>
           </div>
@@ -141,13 +141,13 @@ export function BlogCard({
           {/* Title */}
           <h3 className={cn(
             "font-rajdhani font-bold text-gunmetal-black group-hover:text-brass-yellow transition-colors duration-200 line-clamp-2",
-            variant === "featured" ? "text-xl" : "text-lg"
+            variant === "featured" ? "text-heading-sm" : "text-body-lg"
           )}>
             {article.title}
           </h3>
           
           {/* Excerpt */}
-          <p className="text-sm text-case-hardened font-noto-sans line-clamp-3 leading-relaxed">
+          <p className="text-body-sm text-case-hardened font-noto-sans line-clamp-3 leading-relaxed">
             {article.excerpt}
           </p>
           
@@ -155,7 +155,7 @@ export function BlogCard({
           {article.tags && article.tags.length > 0 && (
             <div className="flex flex-wrap gap-[var(--space-xs)]">
               {article.tags.slice(0, 3).map((tag) => (
-                <Badge key={tag} variant="outline" className="text-xs border-brass-yellow/30 text-brass-yellow">
+                <Badge key={tag} variant="outline" className="text-caption border-brass-yellow/30 text-brass-yellow">
                   {tag}
                 </Badge>
               ))}
@@ -183,16 +183,16 @@ export function BlogCard({
                       <User className="icon-xs text-brass-yellow" />
                     </div>
                   )}
-                  <div className="text-xs text-case-hardened">
+                  <div className="text-caption text-case-hardened">
                     <div className="font-semibold">{article.author.name}</div>
                     {article.author.title && (
-                      <div className="text-xs opacity-75">{article.author.title}</div>
+                      <div className="text-caption opacity-75">{article.author.title}</div>
                     )}
                   </div>
                 </div>
               )}
               
-              <div className="text-xs text-case-hardened flex items-center gap-[var(--space-sm)]">
+              <div className="text-caption text-case-hardened flex items-center gap-[var(--space-sm)]">
                 <div className="flex items-center gap-[var(--space-xs)]">
                   <Calendar className="icon-xs" />
                   <span>{new Date(article.publishDate).toLocaleDateString()}</span>
@@ -211,7 +211,7 @@ export function BlogCard({
                 size="sm"
                 onClick={handleLike}
                 className={cn(
-                  "h-8 px-[var(--space-xs)] text-xs",
+                  "h-8 px-[var(--space-xs)] text-caption",
                   isLiked && "text-safety-red bg-safety-red/10"
                 )}
               >
@@ -224,7 +224,7 @@ export function BlogCard({
                 size="sm"
                 onClick={handleBookmark}
                 className={cn(
-                  "h-8 px-[var(--space-xs)] text-xs",
+                  "h-8 px-[var(--space-xs)] text-caption",
                   isBookmarked && "text-brass-yellow bg-brass-yellow/10"
                 )}
               >
@@ -235,7 +235,7 @@ export function BlogCard({
                 variant="ghost"
                 size="sm"
                 onClick={handleShare}
-                className="h-8 px-[var(--space-xs)] text-xs"
+                className="h-8 px-[var(--space-xs)] text-caption"
               >
                 <Share2 className="icon-xs" />
               </Button>
@@ -244,7 +244,7 @@ export function BlogCard({
           
           {/* Stats Row */}
           {showStats && (article.views || article.comments) && (
-            <div className="flex items-center gap-[var(--space-base)] pt-[var(--space-xs)] text-xs text-case-hardened border-t border-border">
+            <div className="flex items-center gap-[var(--space-base)] pt-[var(--space-xs)] text-caption text-case-hardened border-t border-border">
               {article.views && (
                 <div className="flex items-center gap-[var(--space-xs)]">
                   <Eye className="icon-xs" />
@@ -305,12 +305,12 @@ export function BlogList({
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-lg)]">
             {subtitle && (
-              <p className="text-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
+              <p className="text-body-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
             {title && (
-              <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+              <h2 className="text-heading-lg md:text-heading-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
                 {title}
               </h2>
             )}
@@ -325,7 +325,7 @@ export function BlogList({
               {categories.map((category) => (
                 <Button
                   key={category}
-                  variant={activeFilter === category ? "default" : "outline"}
+                  variant={activeFilter === category ? "default" : "secondary"}
                   size="sm"
                   onClick={() => setActiveFilter(category)}
                   className={cn(
@@ -343,14 +343,14 @@ export function BlogList({
             {/* View Toggle */}
             <div className="flex items-center gap-[var(--space-xs)]">
               <Button
-                variant={viewMode === 'grid' ? 'default' : 'outline'}
+                variant={viewMode === 'grid' ? 'default' : 'secondary'}
                 size="icon"
                 onClick={() => setViewMode('grid')}
               >
                 <Grid3X3 className="icon-sm" />
               </Button>
               <Button
-                variant={viewMode === 'list' ? 'default' : 'outline'}
+                variant={viewMode === 'list' ? 'default' : 'secondary'}
                 size="icon"
                 onClick={() => setViewMode('list')}
               >
@@ -379,7 +379,7 @@ export function BlogList({
         {filteredArticles.length === 0 && (
           <div className="text-center py-[var(--space-xl)]">
             <Filter className="icon-2xl icon-muted mx-auto mb-[var(--space-base)]" />
-            <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-xs)]">
+            <h3 className="text-body-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-xs)]">
               No articles found
             </h3>
             <p className="text-case-hardened">
@@ -422,7 +422,7 @@ export function BlogDetail({
                 <Badge className="bg-brass-yellow text-gunmetal-black font-rajdhani font-bold">
                   {article.category}
                 </Badge>
-                <div className="flex items-center gap-[var(--space-base)] text-sm text-case-hardened">
+                <div className="flex items-center gap-[var(--space-base)] text-body-sm text-case-hardened">
                   <div className="flex items-center gap-[var(--space-xs)]">
                     <Calendar className="icon-xs" />
                     <span>{new Date(article.publishDate).toLocaleDateString()}</span>
@@ -435,7 +435,7 @@ export function BlogDetail({
               </div>
               
               {/* Title */}
-              <h1 className="text-4xl md:text-5xl font-rajdhani font-bold text-gunmetal-black leading-tight">
+              <h1 className="text-heading-xl md:text-display-sm font-rajdhani font-bold text-gunmetal-black leading-tight">
                 {article.title}
               </h1>
               
@@ -458,14 +458,14 @@ export function BlogDetail({
                     </div>
                   )}
                   <div>
-                    <div className="font-rajdhani font-bold text-lg text-gunmetal-black">
+                    <div className="font-rajdhani font-bold text-body-lg text-gunmetal-black">
                       {article.author.name}
                     </div>
                     {article.author.title && (
-                      <div className="text-sm text-case-hardened">{article.author.title}</div>
+                      <div className="text-body-sm text-case-hardened">{article.author.title}</div>
                     )}
                     {article.author.bio && (
-                      <div className="text-xs text-case-hardened mt-[var(--space-xs)]">{article.author.bio}</div>
+                      <div className="text-caption text-case-hardened mt-[var(--space-xs)]">{article.author.bio}</div>
                     )}
                   </div>
                 </div>
@@ -474,7 +474,7 @@ export function BlogDetail({
             
             {/* Featured Image */}
             {article.image && (
-              <div className="relative aspect-video rounded-lg overflow-hidden mb-[var(--space-lg)]">
+              <div className="relative aspect-video rounded-card overflow-hidden mb-[var(--space-lg)]">
                 <Image
                   src={article.image}
                   alt={article.title}
@@ -514,7 +514,7 @@ export function BlogDetail({
               {/* Related Articles */}
               {relatedArticles.length > 0 && (
                 <div>
-                  <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+                  <h3 className="text-heading-sm font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
                     Related Articles
                   </h3>
                   <div className="space-y-[var(--space-base)]">
@@ -522,7 +522,7 @@ export function BlogDetail({
                       <div key={relatedArticle.id} className="group cursor-pointer">
                         <div className="flex gap-[var(--space-sm)]">
                           {relatedArticle.image && (
-                            <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                            <div className="w-16 h-16 rounded-card overflow-hidden bg-muted flex-shrink-0">
                               <Image
                                 src={relatedArticle.image}
                                 alt={relatedArticle.title}
@@ -533,10 +533,10 @@ export function BlogDetail({
                             </div>
                           )}
                           <div className="flex-1 min-w-0">
-                            <h4 className="font-rajdhani font-semibold text-sm text-gunmetal-black group-hover:text-brass-yellow transition-colors duration-200 line-clamp-2">
+                            <h4 className="font-rajdhani font-semibold text-body-sm text-gunmetal-black group-hover:text-brass-yellow transition-colors duration-200 line-clamp-2">
                               {relatedArticle.title}
                             </h4>
-                            <p className="text-xs text-case-hardened mt-[var(--space-xs)]">
+                            <p className="text-caption text-case-hardened mt-[var(--space-xs)]">
                               {new Date(relatedArticle.publishDate).toLocaleDateString()}
                             </p>
                           </div>

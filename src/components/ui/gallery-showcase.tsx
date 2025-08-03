@@ -97,7 +97,7 @@ export function GalleryGrid({
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-lg)]">
             {subtitle && (
-              <p className="text-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
+              <p className="text-body-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
@@ -123,8 +123,8 @@ export function GalleryGrid({
                   className={cn(
                     "font-rajdhani font-semibold capitalize",
                     activeFilter === category 
-                      ? "bg-copper-orange text-white hover:bg-recoil-pad" 
-                      : "border-copper-orange/30 text-copper-orange hover:bg-copper-orange hover:text-white"
+                      ? "bg-copper-orange text-card-foreground hover:bg-recoil-pad" 
+                      : "border-copper-orange/30 text-copper-orange hover:bg-copper-orange hover:text-card-foreground"
                   )}
                 >
                   {category}
@@ -168,7 +168,7 @@ export function GalleryGrid({
               <div
                 key={image.id}
                 className={cn(
-                  "group relative bg-card text-card-foreground border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer",
+                  "group relative bg-card text-card-foreground border-border rounded-card overflow-hidden shadow-flat hover:shadow-md transition-all duration-200 cursor-pointer",
                   viewMode === 'masonry' && "break-inside-avoid mb-[var(--space-md)]",
                   viewMode === 'list' && "flex gap-[var(--space-base)] p-[var(--space-base)]",
                   isFeatured && "ring-2 ring-copper-orange/50"
@@ -178,7 +178,7 @@ export function GalleryGrid({
                 {/* Featured Badge */}
                 {isFeatured && (
                   <div className="absolute top-2 left-2 z-10">
-                    <div className="bg-copper-orange text-white text-xs font-rajdhani font-bold px-[var(--space-xs)] py-[var(--space-xs)] rounded">
+                    <div className="bg-copper-orange text-card-foreground text-caption font-rajdhani font-bold px-[var(--space-xs)] py-[var(--space-xs)] rounded">
                       Featured
                     </div>
                   </div>
@@ -198,7 +198,7 @@ export function GalleryGrid({
                   />
                   
                   {/* Overlay Actions */}
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-[var(--space-xs)]">
+                  <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-[var(--space-xs)]">
                     <Button
                       size="sm"
                       variant="secondary"
@@ -207,8 +207,8 @@ export function GalleryGrid({
                         handleLike(image.id)
                       }}
                       className={cn(
-                        "bg-card/90 border-0 shadow-sm",
-                        isLiked && "bg-copper-orange text-white"
+                        "bg-card/90 border-0 shadow-flat",
+                        isLiked && "bg-copper-orange text-card-foreground"
                       )}
                     >
                       <Heart className={cn("icon-sm", isLiked && "fill-current")} />
@@ -221,7 +221,7 @@ export function GalleryGrid({
                         e.stopPropagation()
                         onDownload?.(image.id)
                       }}
-                      className="bg-card/90 border-0 shadow-sm"
+                      className="bg-card/90 border-0 shadow-flat"
                     >
                       <Download className="icon-sm" />
                     </Button>
@@ -239,14 +239,14 @@ export function GalleryGrid({
                     </h3>
                     
                     {image.category && (
-                      <p className="text-xs text-muted-foreground font-noto-sans uppercase tracking-wide">
+                      <p className="text-caption text-muted-foreground font-noto-sans uppercase tracking-wide">
                         {image.category}
                       </p>
                     )}
                     
                     {/* Stats */}
                     {showStats && (image.likes !== undefined || image.downloads !== undefined) && (
-                      <div className="flex items-center gap-[var(--space-base)] text-xs text-muted-foreground">
+                      <div className="flex items-center gap-[var(--space-base)] text-caption text-muted-foreground">
                         {image.likes !== undefined && (
                           <div className="flex items-center gap-[var(--space-xs)]">
                             <Heart className="icon-xs" />
@@ -272,7 +272,7 @@ export function GalleryGrid({
         {filteredImages.length === 0 && (
           <div className="text-center py-[var(--space-xl)]">
             <Filter className="icon-2xl icon-muted mx-auto mb-[var(--space-base)]" />
-            <h3 className="text-lg font-rajdhani font-bold text-card-foreground mb-[var(--space-xs)]">
+            <h3 className="text-body-lg font-rajdhani font-bold text-card-foreground mb-[var(--space-xs)]">
               No images found
             </h3>
             <p className="text-muted-foreground font-noto-sans">
