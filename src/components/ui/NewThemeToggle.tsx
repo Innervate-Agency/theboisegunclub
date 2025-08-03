@@ -63,7 +63,7 @@ export function NewThemeToggle({
   return (
     <div 
       className={cn(
-        "flex items-center gap-[var(--space-xs)]",
+        "flex items-center gap-xs",
         variant === 'floating' && "fixed bottom-6 left-6 z-50",
         className
       )} 
@@ -81,7 +81,7 @@ export function NewThemeToggle({
       >
         <CurrentIcon className="icon-sm group-hover:scale-110 transition-transform duration-200" />
         {showLabel && (
-          <span className="ml-[var(--space-xs)] font-rajdhani font-semibold">
+          <span className="ml-xs font-rajdhani font-semibold">
             {currentThemeData.label}
           </span>
         )}
@@ -89,7 +89,7 @@ export function NewThemeToggle({
       
       {/* Theme indicator dots */}
       {variant === 'floating' && (
-        <div className="flex flex-col gap-[var(--space-xs)]">
+        <div className="flex flex-col gap-xs">
           {themes.map((themeData, index) => (
             <div
               key={themeData.name}

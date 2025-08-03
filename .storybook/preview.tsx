@@ -3,16 +3,16 @@ import { Rajdhani, Noto_Sans, Noto_Serif } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
 import '../src/app/globals.css'
 
-// Load the same fonts as the main app
+// Load the same fonts as the main app - EXACT MATCH to layout.tsx
 const rajdhani = Rajdhani({
-  variable: "--font-heading",
+  variable: "--font-rajdhani",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: 'swap',
 });
 
 const notoSans = Noto_Sans({
-  variable: "--font-body", 
+  variable: "--font-noto-sans", 
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: 'swap',
@@ -84,7 +84,7 @@ const preview: Preview = {
         enableSystem
         disableTransitionOnChange={false}
       >
-        <div className={`${rajdhani.variable} ${notoSans.variable} ${notoSerif.variable} font-body antialiased`}>
+        <div className={`${rajdhani.variable} ${notoSans.variable} ${notoSerif.variable} font-noto-sans antialiased`}>
           <Story />
         </div>
       </ThemeProvider>

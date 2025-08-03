@@ -77,13 +77,13 @@ export function PageHero({
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-mesh-warm opacity-20" />
       
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-[var(--space-md)]">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-md">
         <div className="text-center space-y-[var(--space-lg)]">
           
           {/* Icon */}
           {Icon && (
             <div className="flex justify-center">
-              <div className="p-[var(--space-base)] bg-card/80 backdrop-blur-sm rounded-full border border-brass-yellow/20 shadow-flat">
+              <div className="p-base bg-card/80 backdrop-blur-sm rounded-full border border-brass-yellow/20 shadow-flat">
                 <Icon className="h-8 w-8 text-brass-yellow" />
               </div>
             </div>
@@ -93,7 +93,7 @@ export function PageHero({
           <div className="space-y-[var(--space-md)]">
             {badge && (
               <div className="flex justify-center">
-                <div className="px-[var(--space-base)] py-[var(--space-xs)] bg-brass-yellow/10 border border-brass-yellow/20 rounded-full text-body-sm font-medium text-brass-yellow">
+                <div className="px-base py-xs bg-brass-yellow/10 border border-brass-yellow/20 rounded-full text-body-sm font-medium text-brass-yellow">
                   {badge}
                 </div>
               </div>
@@ -118,7 +118,7 @@ export function PageHero({
 
           {/* Actions */}
           {(primaryAction || secondaryAction) && (
-            <div className="flex gap-[var(--space-base)] justify-center flex-wrap">
+            <div className="flex gap-base justify-center flex-wrap">
               {primaryAction && (
                 <Button
                   variant="flat"

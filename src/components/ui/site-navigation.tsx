@@ -72,7 +72,7 @@ export function SiteNavigation({
         className={cn(siteNavigationVariants({ variant, layout, sticky }), className)}
         {...props}
       >
-        <div className="p-[var(--space-md)]">
+        <div className="p-md">
           {showLogo && (
             <div className="mb-[var(--space-lg)]">
               <div className="text-heading-sm font-rajdhani text-gunmetal-black">
@@ -88,9 +88,9 @@ export function SiteNavigation({
               <a
                 key={item.href}
                 href={item.href}
-                className="flex items-center gap-[var(--space-sm)] px-[var(--space-base)] py-[var(--space-sm)] text-body-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-card transition-all duration-150"
+                className="flex items-center gap-sm px-base py-sm text-body-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-card transition-all duration-150"
               >
-                <item.icon className="h-[var(--icon-sm)] w-[var(--icon-sm)]" />
+                <item.icon className="h-icon-sm w-icon-sm" />
                 {item.label}
               </a>
             ))}
@@ -105,15 +105,15 @@ export function SiteNavigation({
       className={cn(siteNavigationVariants({ variant, layout, sticky }), className)}
       {...props}
     >
-      <div className="w-full max-w-7xl mx-auto px-[var(--space-md)]">
+      <div className="w-full max-w-7xl mx-auto px-md">
         <div className="flex items-center justify-between h-16">
           
           {/* Logo */}
           {showLogo && (
             <div className="flex items-center">
-              <Link href="/" className="flex items-center gap-[var(--space-sm)]">
+              <Link href="/" className="flex items-center gap-sm">
                 <div className="w-[var(--icon-lg)] h-[var(--icon-lg)] bg-brass-yellow rounded-input flex items-center justify-center">
-                  <Target className="h-[var(--icon-sm)] w-[var(--icon-sm)] text-gunmetal-black" />
+                  <Target className="h-icon-sm w-icon-sm text-gunmetal-black" />
                 </div>
                 <div>
                   <div className="text-body-lg font-rajdhani text-gunmetal-black">
@@ -134,16 +134,16 @@ export function SiteNavigation({
               <a
                 key={item.href}
                 href={item.href}
-                className="flex items-center gap-[var(--space-xs)] px-[var(--space-base)] py-[var(--space-xs)] text-body-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-input transition-all duration-150"
+                className="flex items-center gap-xs px-base py-xs text-body-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-input transition-all duration-150"
               >
-                <item.icon className="h-[var(--icon-sm)] w-[var(--icon-sm)]" />
+                <item.icon className="h-icon-sm w-icon-sm" />
                 {item.label}
               </a>
             ))}
           </div>
 
           {/* Custom Content / Auth Buttons */}
-          <div className="hidden md:flex items-center gap-[var(--space-base)]">
+          <div className="hidden md:flex items-center gap-base">
             {customContent || (
               <>
                 <Button variant="ghost" size="sm">
@@ -175,8 +175,8 @@ export function SiteNavigation({
 
         {/* Mega Menu Content */}
         {layout === "mega" && (
-          <div className="py-[var(--space-md)] relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
-            <div className="grid grid-cols-3 gap-[var(--space-lg)]">
+          <div className="py-md relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
+            <div className="grid grid-cols-3 gap-lg">
               <div>
                 <h3 className="text-body-sm font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
                   Directory
@@ -242,23 +242,23 @@ export function SiteNavigation({
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-[var(--space-base)] relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
+          <div className="md:hidden py-base relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
             <div className="space-y-[var(--space-xs)]">
               {navigationItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="flex items-center gap-[var(--space-sm)] px-[var(--space-base)] py-[var(--space-sm)] text-body-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-input transition-all duration-150"
+                  className="flex items-center gap-sm px-base py-sm text-body-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-input transition-all duration-150"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <item.icon className="h-[var(--icon-sm)] w-[var(--icon-sm)]" />
+                  <item.icon className="h-icon-sm w-icon-sm" />
                   {item.label}
                 </a>
               ))}
             </div>
             
             <div className="pt-[var(--space-base)] mt-[var(--space-base)] relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
-              <div className="flex flex-col gap-[var(--space-xs)]">
+              <div className="flex flex-col gap-xs">
                 <Button variant="ghost" size="sm" className="justify-start">
                   Sign In
                 </Button>

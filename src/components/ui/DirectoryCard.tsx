@@ -34,9 +34,9 @@ const directoryCardVariants = cva(
         'fire-green': 'bg-card text-card-foreground shadow-flat hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
       },
       size: {
-        sm: 'p-[var(--space-base)] text-body-sm',
+        sm: 'p-base text-body-sm',
         md: 'p-5 text-body',
-        lg: 'p-[var(--space-md)] text-body-lg',
+        lg: 'p-md text-body-lg',
       },
     },
     defaultVariants: {
@@ -73,7 +73,7 @@ export function DirectoryCard({
   const [imgError, setImgError] = useState(false);
   return (
     <div className={cn(directoryCardVariants({ variant, size }), className)} {...props}>
-      <div className="flex items-center gap-[var(--space-base)] mb-[var(--space-sm)]">
+      <div className="flex items-center gap-base mb-[var(--space-sm)]">
         {imageUrl && !imgError ? (
           <div className="relative h-14 w-14 rounded-card overflow-hidden bg-shooting-bench shadow-flat">
             <Image
@@ -92,7 +92,7 @@ export function DirectoryCard({
           </div>
         )}
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-[var(--space-xs)]">
+          <div className="flex items-center gap-xs">
             <span className="font-rajdhani font-bold text-body-lg truncate text-gunmetal-black">{name}</span>
             {status && <Badge variant={badgeVariant} size="sm">{status}</Badge>}
           </div>

@@ -54,11 +54,11 @@ const enhancedBadgeVariants = cva(
       },
       size: {
         // Proper sizing using design tokens
-        xs: "px-[var(--space-xs)] py-[var(--space-tiny)] text-caption h-5 gap-[var(--space-xs)]",      // Extra small
-        sm: "px-[var(--space-xs)] py-[var(--space-tiny)] text-caption h-5 gap-[var(--space-xs)]",      // Small  
-        default: "px-[var(--space-sm)] py-[var(--space-tiny)] text-caption h-6 gap-[var(--space-xs)]", // Standard
-        lg: "px-[var(--space-base)] py-[var(--space-xs)] text-body-sm h-8 gap-[var(--space-md)]",      // Large
-        xl: "px-[var(--space-base)] py-[var(--space-md)] text-body-sm h-8 gap-[var(--space-md)]",    // Extra large
+        xs: "px-xs py-[var(--space-tiny)] text-caption h-5 gap-xs",      // Extra small
+        sm: "px-xs py-[var(--space-tiny)] text-caption h-5 gap-xs",      // Small  
+        default: "px-sm py-[var(--space-tiny)] text-caption h-6 gap-xs", // Standard
+        lg: "px-base py-xs text-body-sm h-8 gap-md",      // Large
+        xl: "px-base py-md text-body-sm h-8 gap-md",    // Extra large
       },
       radius: {
         none: "rounded-none",

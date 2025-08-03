@@ -92,7 +92,7 @@ export function GalleryGrid({
   
   return (
     <div className={cn(galleryGridVariants({ variant }), "py-[var(--space-xl)]", className)} {...props}>
-      <div className="max-w-7xl mx-auto px-[var(--space-md)]">
+      <div className="max-w-7xl mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-lg)]">
@@ -111,9 +111,9 @@ export function GalleryGrid({
         
         {/* Filters & View Controls */}
         {showFilters && (
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-[var(--space-base)] mb-[var(--space-lg)]">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-base mb-[var(--space-lg)]">
             {/* Category Filters */}
-            <div className="flex flex-wrap gap-[var(--space-xs)]">
+            <div className="flex flex-wrap gap-xs">
               {categories.map((category) => (
                 <Button
                   key={category}
@@ -133,7 +133,7 @@ export function GalleryGrid({
             </div>
             
             {/* View Mode Controls */}
-            <div className="flex items-center gap-[var(--space-xs)]">
+            <div className="flex items-center gap-xs">
               <Button
                 variant={viewMode === 'grid' ? 'default' : 'secondary'}
                 size="icon"
@@ -156,9 +156,9 @@ export function GalleryGrid({
         
         {/* Gallery Grid */}
         <div className={cn(
-          viewMode === 'grid' && "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[var(--space-md)]",
-          viewMode === 'masonry' && "columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-[var(--space-md)]",
-          viewMode === 'list' && "flex flex-col gap-[var(--space-base)]"
+          viewMode === 'grid' && "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-md",
+          viewMode === 'masonry' && "columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-md",
+          viewMode === 'list' && "flex flex-col gap-base"
         )}>
           {filteredImages.map((image) => {
             const isLiked = likedImages.has(image.id)
@@ -170,7 +170,7 @@ export function GalleryGrid({
                 className={cn(
                   "group relative bg-card text-card-foreground border-border rounded-card overflow-hidden shadow-flat hover:shadow-md transition-all duration-200 cursor-pointer",
                   viewMode === 'masonry' && "break-inside-avoid mb-[var(--space-md)]",
-                  viewMode === 'list' && "flex gap-[var(--space-base)] p-[var(--space-base)]",
+                  viewMode === 'list' && "flex gap-base p-base",
                   isFeatured && "ring-2 ring-copper-orange/50"
                 )}
                 onClick={() => onImageClick?.(image)}
@@ -178,7 +178,7 @@ export function GalleryGrid({
                 {/* Featured Badge */}
                 {isFeatured && (
                   <div className="absolute top-2 left-2 z-10">
-                    <div className="bg-copper-orange text-card-foreground text-caption font-rajdhani font-bold px-[var(--space-xs)] py-[var(--space-xs)] rounded">
+                    <div className="bg-copper-orange text-card-foreground text-caption font-rajdhani font-bold px-xs py-xs rounded">
                       Featured
                     </div>
                   </div>
@@ -198,7 +198,7 @@ export function GalleryGrid({
                   />
                   
                   {/* Overlay Actions */}
-                  <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-[var(--space-xs)]">
+                  <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-xs">
                     <Button
                       size="sm"
                       variant="secondary"
@@ -230,7 +230,7 @@ export function GalleryGrid({
                 
                 {/* Content */}
                 <div className={cn(
-                  "p-[var(--space-base)]",
+                  "p-base",
                   viewMode === 'list' && "flex-1"
                 )}>
                   <div className="space-y-[var(--space-xs)]">
@@ -246,15 +246,15 @@ export function GalleryGrid({
                     
                     {/* Stats */}
                     {showStats && (image.likes !== undefined || image.downloads !== undefined) && (
-                      <div className="flex items-center gap-[var(--space-base)] text-caption text-muted-foreground">
+                      <div className="flex items-center gap-base text-caption text-muted-foreground">
                         {image.likes !== undefined && (
-                          <div className="flex items-center gap-[var(--space-xs)]">
+                          <div className="flex items-center gap-xs">
                             <Heart className="icon-xs" />
                             <span>{image.likes}</span>
                           </div>
                         )}
                         {image.downloads !== undefined && (
-                          <div className="flex items-center gap-[var(--space-xs)]">
+                          <div className="flex items-center gap-xs">
                             <Download className="icon-xs" />
                             <span>{image.downloads}</span>
                           </div>

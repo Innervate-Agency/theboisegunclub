@@ -15,7 +15,7 @@ export default function AnimatedSplashCard({
   return (
     <div
       className={cn(
-        "group relative overflow-hidden rounded-large bg-card text-card-foreground p-[var(--space-lg)] shadow-flat transition-all duration-300 ease-out hover:shadow-elevated",
+        "group relative overflow-hidden rounded-large bg-card text-card-foreground p-lg shadow-flat transition-all duration-300 ease-out hover:shadow-elevated",
         className
       )}
       {...props}

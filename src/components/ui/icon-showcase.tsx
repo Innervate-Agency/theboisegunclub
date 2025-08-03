@@ -40,9 +40,9 @@ const iconShowcaseVariants = cva(
         accent: "bg-scope-blue/10 border-scope-blue/30 hover:bg-scope-blue/20"
       },
       size: {
-        sm: "p-[var(--space-xs)]",
-        md: "p-[var(--space-sm)]",
-        lg: "p-[var(--space-base)]"
+        sm: "p-xs",
+        md: "p-sm",
+        lg: "p-base"
       }
     },
     defaultVariants: {
@@ -136,7 +136,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
 
   return (
     <div className={cn("w-full py-[var(--space-xl)]", className)} {...props}>
-      <div className="max-w-6xl mx-auto px-[var(--space-md)]">
+      <div className="max-w-6xl mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-xl)]">
@@ -161,7 +161,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
                 {category.name}
               </h3>
               
-              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-[var(--space-base)]">
+              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-base">
                 {category.icons.map((iconItem, iconIndex) => (
                   <IconShowcaseItem
                     key={iconIndex}
@@ -177,16 +177,16 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
         </div>
 
         {/* Usage Examples */}
-        <div className="mt-[var(--space-2xl)] p-[var(--space-lg)] bg-gradient-card-warm rounded-card border border-brass-yellow/20">
+        <div className="mt-[var(--space-2xl)] p-lg bg-gradient-card-warm rounded-card border border-brass-yellow/20">
           <h3 className="text-heading-sm font-rajdhani font-bold text-gunmetal-black mb-[var(--space-md)]">
             Design System Integration Examples
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-md)]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
             {/* Primary Usage */}
             <div className="space-y-[var(--space-sm)]">
               <h4 className="font-rajdhani font-semibold text-gunmetal-black">Primary Actions</h4>
-              <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-card rounded border">
+              <div className="flex items-center gap-sm p-sm bg-card rounded border">
                 <Target className="icon-lg icon-primary" />
                 <span className="text-body-sm font-noto-sans">Professional line icons</span>
               </div>
@@ -195,7 +195,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
             {/* Secondary Usage */}
             <div className="space-y-[var(--space-sm)]">
               <h4 className="font-rajdhani font-semibold text-gunmetal-black">Secondary Actions</h4>
-              <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-card rounded border">
+              <div className="flex items-center gap-sm p-sm bg-card rounded border">
                 <Users className="icon-lg icon-secondary" />
                 <span className="text-body-sm font-noto-sans">Clean, consistent design</span>
               </div>
@@ -204,7 +204,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
             {/* Accent Usage */}
             <div className="space-y-[var(--space-sm)]">
               <h4 className="font-rajdhani font-semibold text-gunmetal-black">Accent Elements</h4>
-              <div className="flex items-center gap-[var(--space-sm)] p-[var(--space-sm)] bg-card rounded border">
+              <div className="flex items-center gap-sm p-sm bg-card rounded border">
                 <Award className="icon-lg icon-accent" />
                 <span className="text-body-sm font-noto-sans">Idaho Firearms Heritage</span>
               </div>

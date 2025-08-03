@@ -76,10 +76,10 @@ const buttonVariants = cva(
       },
       size: {
         // Use our component sizing tokens from the design system
-        sm: "h-8 px-[var(--space-sm)] py-[var(--space-xs)] text-caption gap-[var(--space-xs)]", // For inside cards/forms - Stripe pattern
-        default: "h-10 px-[var(--space-base)] py-[var(--space-sm)] text-body-sm gap-[var(--space-xs)]", // General usage
-        lg: "h-12 px-[var(--space-md)] py-[var(--space-sm)] text-body gap-[var(--space-xs)]", // Hero/primary actions
-        xl: "h-14 px-[var(--space-lg)] py-[var(--space-base)] text-body-lg gap-[var(--space-sm)]", // Call-to-action buttons
+        sm: "h-8 px-sm py-xs text-caption gap-xs", // For inside cards/forms - Stripe pattern
+        default: "h-10 px-base py-sm text-body-sm gap-xs", // General usage
+        lg: "h-12 px-md py-sm text-body gap-xs", // Hero/primary actions
+        xl: "h-14 px-lg py-base text-body-lg gap-sm", // Call-to-action buttons
         icon: "h-10 w-10 p-0"
       },
       rounded: {

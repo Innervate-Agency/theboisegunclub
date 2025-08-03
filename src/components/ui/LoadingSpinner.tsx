@@ -44,7 +44,7 @@ function LoadingSpinner({
   const shouldShowText = showText && text && text.trim() !== ""
   
   return (
-    <div className={cn("flex flex-col items-center gap-[var(--space-sm)]", className)} {...props}>
+    <div className={cn("flex flex-col items-center gap-sm", className)} {...props}>
       {/* Clay Target Spinner */}
       <div className="relative">
         {/* Outer ring - represents clay target */}

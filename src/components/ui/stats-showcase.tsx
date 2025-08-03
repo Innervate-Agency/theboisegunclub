@@ -17,7 +17,7 @@ const statsShowcaseVariants = cva(
       spacing: {
         comfortable: "py-[var(--space-2xl)]",
         compact: "py-[var(--space-xl)]",
-        minimal: "py-[var(--space-lg)]"
+        minimal: "py-lg"
       }
     },
     defaultVariants: {
@@ -60,7 +60,7 @@ export function StatsShowcase({
       className={cn(statsShowcaseVariants({ variant, spacing }), className)}
       {...props}
     >
-      <div className="w-full max-w-6xl mx-auto px-[var(--space-md)]">
+      <div className="w-full max-w-6xl mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-xl)]">
@@ -78,26 +78,26 @@ export function StatsShowcase({
         )}
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-md)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
           {stats.map((stat, index) => {
             const Icon = stat.icon
             
             return (
               <div
                 key={index}
-                className="group relative bg-card border-border rounded-card p-[var(--space-md)] shadow-flat hover:shadow-md transition-all duration-200 ease-out"
+                className="group relative bg-card border-border rounded-card p-md shadow-flat hover:shadow-md transition-all duration-200 ease-out"
               >
                 <div className="space-y-[var(--space-base)]">
                   {/* Icon and Value */}
                   <div className="flex items-center justify-between">
                     {Icon && (
-                      <div className="p-[var(--space-xs)] bg-copper-orange/10 rounded-card">
+                      <div className="p-xs bg-copper-orange/10 rounded-card">
                         <Icon className="h-5 w-5 text-copper-orange" />
                       </div>
                     )}
                     
                     {stat.change && (
-                      <div className="flex items-center gap-[var(--space-xs)] text-caption">
+                      <div className="flex items-center gap-xs text-caption">
                         {stat.change.trend === 'up' && (
                           <TrendingUp className="h-3 w-3 text-rifling-green" />
                         )}

@@ -80,7 +80,7 @@ export default function FAQAccordion({
       {/* Header */}
       <div className="text-center mb-[var(--space-lg)]">
         <div className="flex justify-center mb-[var(--space-base)]">
-          <div className="p-[var(--space-sm)] bg-brass-yellow/10 rounded-full border border-brass-yellow/20">
+          <div className="p-sm bg-brass-yellow/10 rounded-full border border-brass-yellow/20">
             <HelpCircle className="h-6 w-6 text-brass-yellow" />
           </div>
         </div>
@@ -114,11 +114,11 @@ export default function FAQAccordion({
 
       {/* Category Filters */}
       {showCategories && categories.length > 0 && (
-        <div className="flex flex-wrap gap-[var(--space-xs)] mb-[var(--space-md)]">
+        <div className="flex flex-wrap gap-xs mb-[var(--space-md)]">
           <button
             onClick={() => setSelectedCategory(null)}
             className={cn(
-              "px-[var(--space-sm)] py-[var(--space-xs)] rounded-full text-body-sm font-medium transition-colors",
+              "px-sm py-xs rounded-full text-body-sm font-medium transition-colors",
               !selectedCategory 
                 ? "bg-brass-yellow text-gunmetal-black" 
                 : "bg-muted text-case-hardened hover:bg-muted/80"
@@ -131,7 +131,7 @@ export default function FAQAccordion({
               key={category}
               onClick={() => setSelectedCategory(category)}
               className={cn(
-                "px-[var(--space-sm)] py-[var(--space-xs)] rounded-full text-body-sm font-medium transition-colors",
+                "px-sm py-xs rounded-full text-body-sm font-medium transition-colors",
                 selectedCategory === category 
                   ? "bg-brass-yellow text-gunmetal-black" 
                   : "bg-muted text-case-hardened hover:bg-muted/80"
@@ -151,11 +151,11 @@ export default function FAQAccordion({
               key={faq.id} 
               value={faq.id}
               className={cn(
-                variant === "card" && "bg-card border border-border rounded-card px-[var(--space-md)] py-[var(--space-xs)] shadow-flat"
+                variant === "card" && "bg-card border border-border rounded-card px-md py-xs shadow-flat"
               )}
             >
-              <AccordionTrigger className="text-left hover:no-underline py-[var(--space-base)]">
-                <div className="flex items-start gap-[var(--space-sm)] w-full">
+              <AccordionTrigger className="text-left hover:no-underline py-base">
+                <div className="flex items-start gap-sm w-full">
                   <div className="flex-1">
                     <h3 className="font-rajdhani font-semibold text-gunmetal-black leading-tight">
                       {faq.question}
@@ -179,7 +179,7 @@ export default function FAQAccordion({
         </Accordion>
       ) : (
         <div className="text-center py-[var(--space-xl)]">
-          <div className="p-[var(--space-sm)] bg-muted rounded-full w-fit mx-auto mb-[var(--space-base)]">
+          <div className="p-sm bg-muted rounded-full w-fit mx-auto mb-[var(--space-base)]">
             <Search className="h-6 w-6 text-case-hardened" />
           </div>
           <h3 className="font-rajdhani font-semibold text-gunmetal-black mb-[var(--space-xs)]">

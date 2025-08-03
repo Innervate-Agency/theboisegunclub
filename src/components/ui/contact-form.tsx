@@ -73,7 +73,7 @@ export function ContactForm({
   const getFormFields = () => {
     const baseFields = (
       <>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-base">
           <div className="space-y-[var(--space-xs)]">
             <Label htmlFor="firstName">First Name *</Label>
             <Input
@@ -173,7 +173,7 @@ export function ContactForm({
                 required
               />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-base">
               <div className="space-y-[var(--space-xs)]">
                 <Label htmlFor="eventDate">Event Date *</Label>
                 <Input
@@ -347,9 +347,9 @@ export function ContactForm({
               <h3 className="font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
                 Contact Information
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)] text-body-sm">
-                <div className="flex items-center gap-[var(--space-sm)]">
-                  <div className="p-[var(--space-xs)] bg-brass-yellow/10 rounded-input">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-base text-body-sm">
+                <div className="flex items-center gap-sm">
+                  <div className="p-xs bg-brass-yellow/10 rounded-input">
                     <Phone className="h-4 w-4 text-brass-yellow" />
                   </div>
                   <div>
@@ -358,8 +358,8 @@ export function ContactForm({
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-[var(--space-sm)]">
-                  <div className="p-[var(--space-xs)] bg-brass-yellow/10 rounded-input">
+                <div className="flex items-center gap-sm">
+                  <div className="p-xs bg-brass-yellow/10 rounded-input">
                     <Mail className="h-4 w-4 text-brass-yellow" />
                   </div>
                   <div>
@@ -368,8 +368,8 @@ export function ContactForm({
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-[var(--space-sm)]">
-                  <div className="p-[var(--space-xs)] bg-brass-yellow/10 rounded-input">
+                <div className="flex items-center gap-sm">
+                  <div className="p-xs bg-brass-yellow/10 rounded-input">
                     <MapPin className="h-4 w-4 text-brass-yellow" />
                   </div>
                   <div>
@@ -378,8 +378,8 @@ export function ContactForm({
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-[var(--space-sm)]">
-                  <div className="p-[var(--space-xs)] bg-brass-yellow/10 rounded-input">
+                <div className="flex items-center gap-sm">
+                  <div className="p-xs bg-brass-yellow/10 rounded-input">
                     <Clock className="h-4 w-4 text-brass-yellow" />
                   </div>
                   <div>

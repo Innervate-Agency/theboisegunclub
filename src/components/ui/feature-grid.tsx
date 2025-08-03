@@ -18,7 +18,7 @@ const featureGridVariants = cva(
       spacing: {
         comfortable: "py-[var(--space-2xl)]",
         compact: "py-[var(--space-xl)]",
-        minimal: "py-[var(--space-lg)]"
+        minimal: "py-lg"
       }
     },
     defaultVariants: {
@@ -29,7 +29,7 @@ const featureGridVariants = cva(
 )
 
 const featureCardVariants = cva(
-  "group relative bg-card rounded-card border-border p-[var(--space-md)] shadow-flat hover:shadow-md transition-all duration-200 ease-out",
+  "group relative bg-card rounded-card border-border p-md shadow-flat hover:shadow-md transition-all duration-200 ease-out",
   {
     variants: {
       cardVariant: {
@@ -86,7 +86,7 @@ export function FeatureGrid({
   
   return (
     <section className={cn(featureGridVariants({ variant, spacing }), className)} {...props}>
-      <div className="max-w-6xl mx-auto px-[var(--space-md)]">
+      <div className="max-w-6xl mx-auto px-md">
         {/* Header */}
         {(title || subtitle || description) && (
           <div className="text-center mb-[var(--space-xl)]">
@@ -109,7 +109,7 @@ export function FeatureGrid({
         )}
 
         {/* Features Grid */}
-        <div className={cn("grid gap-[var(--space-md)]", gridCols[columns])}>
+        <div className={cn("grid gap-md", gridCols[columns])}>
           {features.map((feature, index) => {
             const Icon = feature.icon
             

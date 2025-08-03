@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const calloutCardVariants = cva(
-  "relative rounded-card p-[var(--space-md)] transition-all duration-300 ease-out",
+  "relative rounded-card p-md transition-all duration-300 ease-out",
   {
     variants: {
       variant: {
@@ -88,7 +88,7 @@ export function ImportantCallout({
       <div className="absolute -left-1 top-4 w-2 h-2 bg-safety-red rounded-full animate-pulse" />
       
       <div className="space-y-[var(--space-sm)]">
-        <div className="flex items-start gap-[var(--space-sm)]">
+        <div className="flex items-start gap-sm">
           <div className="flex-shrink-0 mt-[var(--space-tiny)]">
             <div className="w-6 h-6 bg-safety-red/10 rounded-full flex items-center justify-center">
               <div className="w-2 h-2 bg-safety-red rounded-full" />

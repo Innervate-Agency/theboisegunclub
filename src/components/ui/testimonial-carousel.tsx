@@ -88,7 +88,7 @@ export function TestimonialCarousel({
       onMouseLeave={() => setIsAutoPlayPaused(false)}
       {...props}
     >
-      <div className="max-w-4xl mx-auto px-[var(--space-md)]">
+      <div className="max-w-4xl mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-xl)]">
@@ -107,17 +107,17 @@ export function TestimonialCarousel({
         
         {/* Testimonial Card */}
         <div className="relative">
-          <div className="bg-card text-card-foreground rounded-large p-[var(--space-lg)] md:p-12 shadow-flat hover:shadow-md transition-shadow duration-200">
+          <div className="bg-card text-card-foreground rounded-large p-lg md:p-12 shadow-flat hover:shadow-md transition-shadow duration-200">
             {/* Quote Icon */}
             <div className="absolute -top-4 left-8">
-              <div className="bg-brass-yellow rounded-full p-[var(--space-sm)] shadow-md">
+              <div className="bg-brass-yellow rounded-full p-sm shadow-md">
                 <Quote className="icon-md text-foreground" />
               </div>
             </div>
             
             {/* Rating */}
             {currentTestimonial.rating && (
-              <div className="flex items-center gap-[var(--space-xs)] mb-[var(--space-md)] justify-center">
+              <div className="flex items-center gap-xs mb-[var(--space-md)] justify-center">
                 {Array.from({ length: 5 }, (_, i) => (
                   <Star
                     key={i}
@@ -140,7 +140,7 @@ export function TestimonialCarousel({
             </blockquote>
             
             {/* Author */}
-            <div className="flex items-center justify-center gap-[var(--space-base)]">
+            <div className="flex items-center justify-center gap-base">
               {currentTestimonial.avatar && (
                 <div className="w-12 h-12 rounded-full bg-muted overflow-hidden">
                   <img 
@@ -190,7 +190,7 @@ export function TestimonialCarousel({
         
         {/* Dots Indicator */}
         {testimonials.length > 1 && (
-          <div className="flex items-center justify-center gap-[var(--space-xs)] mt-[var(--space-lg)]">
+          <div className="flex items-center justify-center gap-xs mt-[var(--space-lg)]">
             {testimonials.map((_, index) => (
               <button
                 key={index}

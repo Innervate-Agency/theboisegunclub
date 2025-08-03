@@ -20,9 +20,9 @@ const facilityCardVariants = cva(
         compact: "bg-card shadow-flat hover:shadow-md"
       },
       size: {
-        default: "p-[var(--space-md)]",
-        compact: "p-[var(--space-base)]",
-        large: "p-[var(--space-lg)]"
+        default: "p-md",
+        compact: "p-base",
+        large: "p-lg"
       }
     },
     defaultVariants: {
@@ -125,7 +125,7 @@ export default function FacilityCard({
       )}
 
       <CardHeader className="space-y-[var(--space-base)]">
-        <div className="flex items-start gap-[var(--space-base)]">
+        <div className="flex items-start gap-base">
           {/* Business Icon/Image */}
           <div className="flex-shrink-0">
             {icon ? (
@@ -145,7 +145,7 @@ export default function FacilityCard({
 
           {/* Business Info */}
           <div className="flex-1 min-w-0">
-            <div className="flex items-start justify-between gap-[var(--space-xs)]">
+            <div className="flex items-start justify-between gap-xs">
               <CardTitle className="text-body-lg font-rajdhani font-bold text-gunmetal-black group-hover:text-brass-yellow transition-colors">
                 {title}
               </CardTitle>
@@ -159,7 +159,7 @@ export default function FacilityCard({
 
             {/* Rating */}
             {rating && (
-              <div className="flex items-center gap-[var(--space-xs)] mt-[var(--space-xs)]">
+              <div className="flex items-center gap-xs mt-[var(--space-xs)]">
                 <div className="flex items-center">
                   {[...Array(5)].map((_, i) => (
                     <Star
@@ -190,19 +190,19 @@ export default function FacilityCard({
         {(location || hours || phone) && (
           <div className="space-y-[var(--space-xs)] text-body-sm">
             {location && (
-              <div className="flex items-center gap-[var(--space-xs)] text-case-hardened">
+              <div className="flex items-center gap-xs text-case-hardened">
                 <MapPin className="h-4 w-4 text-brass-yellow" />
                 <span>{location}</span>
               </div>
             )}
             {hours && (
-              <div className="flex items-center gap-[var(--space-xs)] text-case-hardened">
+              <div className="flex items-center gap-xs text-case-hardened">
                 <Clock className="h-4 w-4 text-brass-yellow" />
                 <span>{hours}</span>
               </div>
             )}
             {phone && (
-              <div className="flex items-center gap-[var(--space-xs)] text-case-hardened">
+              <div className="flex items-center gap-xs text-case-hardened">
                 <Phone className="h-4 w-4 text-brass-yellow" />
                 <span>{phone}</span>
               </div>
@@ -212,7 +212,7 @@ export default function FacilityCard({
 
         {/* Badges */}
         {badges && badges.length > 0 && (
-          <div className="flex flex-wrap gap-[var(--space-xs)]">
+          <div className="flex flex-wrap gap-xs">
             {badges.map((badge, index) => (
               <Badge 
                 key={index} 

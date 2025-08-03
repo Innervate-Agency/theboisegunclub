@@ -19,9 +19,9 @@ const navigationFusionVariants = cva(
         vertical: "flex-col items-stretch"
       },
       size: {
-        sm: "p-[var(--space-xs)]",
-        md: "p-[var(--space-sm)]",
-        lg: "p-[var(--space-base)]"
+        sm: "p-xs",
+        md: "p-sm",
+        lg: "p-base"
       }
     },
     defaultVariants: {
@@ -33,7 +33,7 @@ const navigationFusionVariants = cva(
 )
 
 const navigationItemVariants = cva(
-  "flex items-center gap-[var(--space-xs)] px-[var(--space-sm)] py-[var(--space-xs)] rounded-card transition-all duration-200 font-rajdhani font-semibold text-body-sm",
+  "flex items-center gap-xs px-sm py-xs rounded-card transition-all duration-200 font-rajdhani font-semibold text-body-sm",
   {
     variants: {
       variant: {
@@ -124,7 +124,7 @@ export function NavigationFusion({
       {/* Navigation Items */}
       <div className={cn(
         "relative flex",
-        orientation === "horizontal" ? "flex-row gap-[var(--space-xs)]" : "flex-col gap-[var(--space-xs)] w-full"
+        orientation === "horizontal" ? "flex-row gap-xs" : "flex-col gap-xs w-full"
       )}>
         {items.map((item, index) => {
           const isActive = item.active

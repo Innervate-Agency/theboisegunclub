@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* Fix for Tailwind CSS v4 + next-themes dark mode integration */
-@variant dark (&:where(.dark, .dark *));
+@variant dark (.dark &);
 
 @theme {
   /* ================== TBGC DESIGN SYSTEM: V5 CORE ================== */

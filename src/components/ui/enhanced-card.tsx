@@ -38,10 +38,10 @@ const enhancedCardVariants = cva(
       },
       size: {
         // Proper spacing system application
-        xs: "p-[var(--space-sm)]",      // --space-xs equivalent  
-        sm: "p-[var(--space-base)]",      // --space-sm equivalent
-        default: "p-[var(--space-md)]", // --space-md equivalent (24px)
-        lg: "p-[var(--space-lg)]",      // --space-lg equivalent  
+        xs: "p-sm",      // --space-xs equivalent  
+        sm: "p-base",      // --space-sm equivalent
+        default: "p-md", // --space-md equivalent (24px)
+        lg: "p-lg",      // --space-lg equivalent  
         xl: "p-12",     // --space-xl equivalent
       },
       radius: {

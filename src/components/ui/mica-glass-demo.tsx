@@ -12,7 +12,7 @@ interface MicaDemoProps {
 
 export function MicaGlassDemo({ className }: MicaDemoProps) {
   return (
-    <div className={cn("w-full max-w-4xl mx-auto p-[var(--space-lg)] space-y-[var(--space-lg)]", className)}>
+    <div className={cn("w-full max-w-4xl mx-auto p-lg space-y-[var(--space-lg)]", className)}>
       <div className="text-center space-y-[var(--space-base)]">
         <h2 className="text-heading-lg font-rajdhani font-bold text-gunmetal-black">
           Windows 11 Mica Glass System
@@ -25,7 +25,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
 
       {/* Layered Background Demo - This is KEY for glassmorphism to work */}
       <div 
-        className="relative p-[var(--space-lg)] rounded-large overflow-hidden"
+        className="relative p-lg rounded-large overflow-hidden"
         style={{
           background: `
             radial-gradient(circle at 20% 30%, rgba(242, 203, 5, 0.1) 0%, transparent 50%),
@@ -48,7 +48,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
             Mica Effects with Proper Background Layering
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-md)]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
             
             {/* Mica Card - Now with visible background to blur */}
             <Card className="mica-card relative z-10">
@@ -80,7 +80,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
             </Card>
 
             {/* Mica Overlay Demo */}
-            <div className="mica-overlay p-[var(--space-md)] rounded-card relative z-10">
+            <div className="mica-overlay p-md rounded-card relative z-10">
               <h4 className="font-rajdhani font-bold text-foreground mb-[var(--space-sm)]">Mica Overlay</h4>
               <p className="text-body-sm text-muted-foreground mb-[var(--space-base)]">
                 Perfect for dropdowns, modals, and floating UI elements.
@@ -99,7 +99,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
           Glassmorphism vs Solid: When to Use Each
         </h3>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-lg)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
           
           {/* Background for Comparison */}
           <div className="relative">
@@ -110,7 +110,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
               </h4>
               
               {/* Dropdown Simulation */}
-              <div className="mica-dropdown p-[var(--space-base)] rounded-card relative z-10">
+              <div className="mica-dropdown p-base rounded-card relative z-10">
                 <h5 className="font-medium mb-[var(--space-xs)]">Dropdown Menu</h5>
                 <p className="text-body-sm text-muted-foreground">
                   Floats over content, glass effect shows context
@@ -118,7 +118,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
               </div>
               
               {/* Modal Simulation */}
-              <div className="mica-modal p-[var(--space-base)] rounded-card relative z-10">
+              <div className="mica-modal p-base rounded-card relative z-10">
                 <h5 className="font-medium mb-[var(--space-xs)]">Modal Dialog</h5>
                 <p className="text-body-sm text-muted-foreground">
                   Strong blur maintains focus while showing background
@@ -134,7 +134,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
             </h4>
             
             <Card className="bg-card border-border">
-              <CardContent className="p-[var(--space-base)]">
+              <CardContent className="p-base">
                 <h5 className="font-medium mb-[var(--space-xs)]">Content Card</h5>
                 <p className="text-body-sm text-muted-foreground">
                   Primary content deserves solid, clean backgrounds
@@ -143,7 +143,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
             </Card>
             
             <Card className="bg-solid-brand-warm hover-gradient-warm border-brass-yellow/20">
-              <CardContent className="p-[var(--space-base)]">
+              <CardContent className="p-base">
                 <h5 className="font-medium mb-[var(--space-xs)]">Interactive Card</h5>
                 <p className="text-body-sm text-muted-foreground">
                   Subtle hover effect without overwhelming glass
@@ -155,22 +155,22 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
       </div>
 
       {/* Layered Demo */}
-      <div className="relative p-[var(--space-lg)] bg-gradient-hero-warm rounded-large border border-brass-yellow/20">
+      <div className="relative p-lg bg-gradient-hero-warm rounded-large border border-brass-yellow/20">
         <div className="absolute inset-0 bg-gradient-mesh-premium rounded-large" />
         <div className="relative space-y-[var(--space-md)]">
           <h3 className="text-heading-md font-rajdhani font-bold text-gunmetal-black">
             Layered Glass Effects
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
-            <div className="mica-dropdown p-[var(--space-base)] rounded-card">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-base">
+            <div className="mica-dropdown p-base rounded-card">
               <h4 className="font-medium text-foreground mb-[var(--space-xs)]">Dropdown Style</h4>
               <p className="text-body-sm text-muted-foreground">
                 Optimized for floating UI elements
               </p>
             </div>
             
-            <div className="mica-modal p-[var(--space-base)] rounded-card">
+            <div className="mica-modal p-base rounded-card">
               <h4 className="font-medium text-foreground mb-[var(--space-xs)]">Modal Style</h4>
               <p className="text-body-sm text-muted-foreground">
                 Strong blur for focus retention
@@ -186,20 +186,20 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
           Gradient Philosophy: Restraint Over Chaos
         </h3>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-md)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
           
           {/* Good Examples */}
           <div className="space-y-[var(--space-base)]">
             <h4 className="text-body-lg font-medium text-rifling-green">✅ Recommended Approach</h4>
             
             <Card className="bg-solid-brand-warm hover-gradient-warm">
-              <CardContent className="p-[var(--space-base)]">
+              <CardContent className="p-base">
                 <p className="text-body-sm">Solid color with subtle hover gradient</p>
               </CardContent>
             </Card>
             
             <Card className="bg-gradient-card-warm">
-              <CardContent className="p-[var(--space-base)]">
+              <CardContent className="p-base">
                 <p className="text-body-sm">Ultra-subtle design system gradient (2-4% opacity)</p>
               </CardContent>
             </Card>
@@ -210,13 +210,13 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
             <h4 className="text-body-lg font-medium text-safety-red">❌ Avoid These Patterns</h4>
             
             <Card className="bg-gradient-to-br from-brass-yellow/20 via-white to-copper-orange/20">
-              <CardContent className="p-[var(--space-base)]">
+              <CardContent className="p-base">
                 <p className="text-body-sm">Too strong - creates visual noise</p>
               </CardContent>
             </Card>
             
             <Card className="bg-gradient-to-r from-purple-500/30 to-pink-500/30">
-              <CardContent className="p-[var(--space-base)]">
+              <CardContent className="p-base">
                 <p className="text-body-sm">Off-brand colors break design cohesion</p>
               </CardContent>
             </Card>
@@ -225,11 +225,11 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
       </div>
       
       {/* Design Tokens Reference */}
-      <div className="bg-solid-brand-neutral p-[var(--space-md)] rounded-large border border-brass-yellow/20">
+      <div className="bg-solid-brand-neutral p-md rounded-large border border-brass-yellow/20">
         <h4 className="text-body-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
           Design Token Reference
         </h4>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-base)] text-body-sm font-noto-sans">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-base text-body-sm font-noto-sans">
           <div>
             <h5 className="font-medium text-case-hardened mb-[var(--space-xs)]">Mica Classes</h5>
             <ul className="space-y-[var(--space-micro)] text-muted-foreground">

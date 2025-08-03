@@ -12,7 +12,7 @@ const breadcrumbHeroVariants = cva(
   {
     variants: {
       size: {
-        sm: "py-[var(--space-lg)]",
+        sm: "py-lg",
         md: "py-[var(--space-xl)]", 
         lg: "py-[var(--space-2xl)]"
       },
@@ -73,7 +73,7 @@ export function BreadcrumbHero({
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-mesh-warm opacity-20" />
       
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-[var(--space-md)]">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-md">
         <div className="space-y-[var(--space-md)]">
           
           {/* Back Link */}
@@ -126,11 +126,11 @@ export function BreadcrumbHero({
 
           {/* Hero Content */}
           <div className="space-y-[var(--space-base)]">
-            <div className="flex items-start gap-[var(--space-base)]">
+            <div className="flex items-start gap-base">
               {/* Icon */}
               {Icon && (
                 <div className="flex-shrink-0">
-                  <div className="p-[var(--space-sm)] bg-brass-yellow/10 rounded-card border border-brass-yellow/20">
+                  <div className="p-sm bg-brass-yellow/10 rounded-card border border-brass-yellow/20">
                     <Icon className="h-6 w-6 text-brass-yellow" />
                   </div>
                 </div>
@@ -152,7 +152,7 @@ export function BreadcrumbHero({
 
             {/* Badges */}
             {badges && badges.length > 0 && (
-              <div className="flex flex-wrap gap-[var(--space-xs)]">
+              <div className="flex flex-wrap gap-xs">
                 {badges.map((badge, index) => (
                   <Badge
                     key={index}

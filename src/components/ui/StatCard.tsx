@@ -35,9 +35,9 @@ const statCardVariants = cva(
         'fire-green': "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full"
       },
       size: {
-        sm: "p-[var(--space-base)]",
-        default: "p-[var(--space-md)]",
-        lg: "p-[var(--space-lg)]"
+        sm: "p-base",
+        default: "p-md",
+        lg: "p-lg"
       }
     },
     defaultVariants: {
@@ -155,7 +155,7 @@ export default function StatCard({
               {formatValue(value)}
             </h3>
             {trend && trendValue && (
-              <div className={cn("text-body-sm font-medium flex items-center gap-[var(--space-xs)]", getTrendColor(trend, variant || "default"))}>
+              <div className={cn("text-body-sm font-medium flex items-center gap-xs", getTrendColor(trend, variant || "default"))}>
                 <span>{getTrendIcon(trend)}</span>
                 <span>{trendValue}</span>
               </div>

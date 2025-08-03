@@ -41,7 +41,7 @@ const blogCardVariants = cva(
     variants: {
       variant: {
         default: "flex flex-col",
-        compact: "flex flex-row gap-[var(--space-base)]",
+        compact: "flex flex-row gap-base",
         featured: "flex flex-col ring-2 ring-brass-yellow/30"
       }
     },
@@ -136,7 +136,7 @@ export function BlogCard({
       )}
       
       {/* Content */}
-      <div className="flex-1 p-[var(--space-md)]">
+      <div className="flex-1 p-md">
         <div className="space-y-[var(--space-sm)]">
           {/* Title */}
           <h3 className={cn(
@@ -153,7 +153,7 @@ export function BlogCard({
           
           {/* Tags */}
           {article.tags && article.tags.length > 0 && (
-            <div className="flex flex-wrap gap-[var(--space-xs)]">
+            <div className="flex flex-wrap gap-xs">
               {article.tags.slice(0, 3).map((tag) => (
                 <Badge key={tag} variant="outline" className="text-caption border-brass-yellow/30 text-brass-yellow">
                   {tag}
@@ -165,9 +165,9 @@ export function BlogCard({
           {/* Meta Info */}
           <div className="flex items-center justify-between pt-[var(--space-xs)]">
             {/* Author & Date */}
-            <div className="flex items-center gap-[var(--space-sm)]">
+            <div className="flex items-center gap-sm">
               {showAuthor && (
-                <div className="flex items-center gap-[var(--space-xs)]">
+                <div className="flex items-center gap-xs">
                   {article.author.avatar ? (
                     <div className="w-8 h-8 rounded-full overflow-hidden bg-muted">
                       <Image
@@ -192,12 +192,12 @@ export function BlogCard({
                 </div>
               )}
               
-              <div className="text-caption text-case-hardened flex items-center gap-[var(--space-sm)]">
-                <div className="flex items-center gap-[var(--space-xs)]">
+              <div className="text-caption text-case-hardened flex items-center gap-sm">
+                <div className="flex items-center gap-xs">
                   <Calendar className="icon-xs" />
                   <span>{new Date(article.publishDate).toLocaleDateString()}</span>
                 </div>
-                <div className="flex items-center gap-[var(--space-xs)]">
+                <div className="flex items-center gap-xs">
                   <Clock className="icon-xs" />
                   <span>{article.readTime} min</span>
                 </div>
@@ -205,13 +205,13 @@ export function BlogCard({
             </div>
             
             {/* Action Buttons */}
-            <div className="flex items-center gap-[var(--space-xs)]">
+            <div className="flex items-center gap-xs">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={handleLike}
                 className={cn(
-                  "h-8 px-[var(--space-xs)] text-caption",
+                  "h-8 px-xs text-caption",
                   isLiked && "text-safety-red bg-safety-red/10"
                 )}
               >
@@ -224,7 +224,7 @@ export function BlogCard({
                 size="sm"
                 onClick={handleBookmark}
                 className={cn(
-                  "h-8 px-[var(--space-xs)] text-caption",
+                  "h-8 px-xs text-caption",
                   isBookmarked && "text-brass-yellow bg-brass-yellow/10"
                 )}
               >
@@ -235,7 +235,7 @@ export function BlogCard({
                 variant="ghost"
                 size="sm"
                 onClick={handleShare}
-                className="h-8 px-[var(--space-xs)] text-caption"
+                className="h-8 px-xs text-caption"
               >
                 <Share2 className="icon-xs" />
               </Button>
@@ -244,15 +244,15 @@ export function BlogCard({
           
           {/* Stats Row */}
           {showStats && (article.views || article.comments) && (
-            <div className="flex items-center gap-[var(--space-base)] pt-[var(--space-xs)] text-caption text-case-hardened border-t border-border">
+            <div className="flex items-center gap-base pt-[var(--space-xs)] text-caption text-case-hardened border-t border-border">
               {article.views && (
-                <div className="flex items-center gap-[var(--space-xs)]">
+                <div className="flex items-center gap-xs">
                   <Eye className="icon-xs" />
                   <span>{article.views.toLocaleString()} views</span>
                 </div>
               )}
               {article.comments && (
-                <div className="flex items-center gap-[var(--space-xs)]">
+                <div className="flex items-center gap-xs">
                   <MessageCircle className="icon-xs" />
                   <span>{article.comments} comments</span>
                 </div>
@@ -300,7 +300,7 @@ export function BlogList({
   
   return (
     <section className={cn("w-full py-[var(--space-xl)]", className)} {...props}>
-      <div className="max-w-6xl mx-auto px-[var(--space-md)]">
+      <div className="max-w-6xl mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-lg)]">
@@ -319,9 +319,9 @@ export function BlogList({
         
         {/* Filters & Controls */}
         {showFilters && (
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-[var(--space-base)] mb-[var(--space-lg)]">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-base mb-[var(--space-lg)]">
             {/* Category Filters */}
-            <div className="flex flex-wrap gap-[var(--space-xs)]">
+            <div className="flex flex-wrap gap-xs">
               {categories.map((category) => (
                 <Button
                   key={category}
@@ -341,7 +341,7 @@ export function BlogList({
             </div>
             
             {/* View Toggle */}
-            <div className="flex items-center gap-[var(--space-xs)]">
+            <div className="flex items-center gap-xs">
               <Button
                 variant={viewMode === 'grid' ? 'default' : 'secondary'}
                 size="icon"
@@ -363,8 +363,8 @@ export function BlogList({
         {/* Articles Grid/List */}
         <div className={cn(
           viewMode === 'grid' 
-            ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-md)]"
-            : "flex flex-col gap-[var(--space-base)]"
+            ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md"
+            : "flex flex-col gap-base"
         )}>
           {filteredArticles.map((article) => (
             <BlogCard
@@ -408,9 +408,9 @@ export function BlogDetail({
 }: BlogDetailProps) {
   return (
     <article className={cn("w-full py-[var(--space-xl)]", className)} {...props}>
-      <div className="max-w-6xl mx-auto px-[var(--space-md)]">
+      <div className="max-w-6xl mx-auto px-md">
         <div className={cn(
-          "grid gap-[var(--space-lg)]",
+          "grid gap-lg",
           showSidebar ? "lg:grid-cols-3" : "lg:grid-cols-1 max-w-4xl mx-auto"
         )}>
           {/* Main Content */}
@@ -418,16 +418,16 @@ export function BlogDetail({
             {/* Header */}
             <div className="space-y-[var(--space-md)] mb-[var(--space-lg)]">
               {/* Category & Meta */}
-              <div className="flex items-center gap-[var(--space-base)]">
+              <div className="flex items-center gap-base">
                 <Badge className="bg-brass-yellow text-gunmetal-black font-rajdhani font-bold">
                   {article.category}
                 </Badge>
-                <div className="flex items-center gap-[var(--space-base)] text-body-sm text-case-hardened">
-                  <div className="flex items-center gap-[var(--space-xs)]">
+                <div className="flex items-center gap-base text-body-sm text-case-hardened">
+                  <div className="flex items-center gap-xs">
                     <Calendar className="icon-xs" />
                     <span>{new Date(article.publishDate).toLocaleDateString()}</span>
                   </div>
-                  <div className="flex items-center gap-[var(--space-xs)]">
+                  <div className="flex items-center gap-xs">
                     <Clock className="icon-xs" />
                     <span>{article.readTime} min read</span>
                   </div>
@@ -440,8 +440,8 @@ export function BlogDetail({
               </h1>
               
               {/* Author */}
-              <div className="flex items-center gap-[var(--space-base)] py-[var(--space-base)] border-y border-border">
-                <div className="flex items-center gap-[var(--space-sm)]">
+              <div className="flex items-center gap-base py-base border-y border-border">
+                <div className="flex items-center gap-sm">
                   {article.author.avatar ? (
                     <div className="w-12 h-12 rounded-full overflow-hidden bg-muted">
                       <Image
@@ -497,7 +497,7 @@ export function BlogDetail({
             
             {/* Tags */}
             {article.tags && article.tags.length > 0 && (
-              <div className="flex flex-wrap gap-[var(--space-xs)] pt-[var(--space-lg)] border-t border-border mt-[var(--space-lg)]">
+              <div className="flex flex-wrap gap-xs pt-[var(--space-lg)] border-t border-border mt-[var(--space-lg)]">
                 <Tag className="icon-sm text-case-hardened mr-[var(--space-xs)]" />
                 {article.tags.map((tag) => (
                   <Badge key={tag} variant="outline" className="border-brass-yellow/30 text-brass-yellow">
@@ -520,7 +520,7 @@ export function BlogDetail({
                   <div className="space-y-[var(--space-base)]">
                     {relatedArticles.slice(0, 3).map((relatedArticle) => (
                       <div key={relatedArticle.id} className="group cursor-pointer">
-                        <div className="flex gap-[var(--space-sm)]">
+                        <div className="flex gap-sm">
                           {relatedArticle.image && (
                             <div className="w-16 h-16 rounded-card overflow-hidden bg-muted flex-shrink-0">
                               <Image

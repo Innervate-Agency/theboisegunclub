@@ -64,9 +64,9 @@ export function EventCard({
     >
       <div className="space-y-[var(--space-sm)]">
         {/* Header */}
-        <div className="flex items-start justify-between gap-[var(--space-sm)]">
+        <div className="flex items-start justify-between gap-sm">
           <div className="flex-1">
-            <div className="flex items-center gap-[var(--space-sm)] mb-[var(--space-xs)]">
+            <div className="flex items-center gap-sm mb-[var(--space-xs)]">
               <Badge variant="default" className="text-caption">
                 {eventType}
               </Badge>
@@ -96,20 +96,20 @@ export function EventCard({
 
         {/* Event Details */}
         <div className="space-y-[var(--space-xs)]">
-          <div className="flex items-center gap-[var(--space-sm)] text-[var(--card-body-size)] text-muted-foreground">
+          <div className="flex items-center gap-sm text-[var(--card-body-size)] text-muted-foreground">
             <Calendar className="h-4 w-4" />
             <span>{date}</span>
           </div>
-          <div className="flex items-center gap-[var(--space-sm)] text-[var(--card-body-size)] text-muted-foreground">
+          <div className="flex items-center gap-sm text-[var(--card-body-size)] text-muted-foreground">
             <Clock className="h-4 w-4" />
             <span>{time}</span>
           </div>
-          <div className="flex items-center gap-[var(--space-sm)] text-[var(--card-body-size)] text-muted-foreground">
+          <div className="flex items-center gap-sm text-[var(--card-body-size)] text-muted-foreground">
             <MapPin className="h-4 w-4" />
             <span>{location}</span>
           </div>
           {capacity && (
-            <div className="flex items-center gap-[var(--space-sm)] text-[var(--card-body-size)] text-muted-foreground">
+            <div className="flex items-center gap-sm text-[var(--card-body-size)] text-muted-foreground">
               <Users className="h-4 w-4" />
               <span>
                 {registeredCount || 0}/{capacity} registered
@@ -129,7 +129,7 @@ export function EventCard({
             <Button 
               variant="accent" 
               size="sm" 
-              className="w-full gap-[var(--space-xs)]"
+              className="w-full gap-xs"
               onClick={() => window.open(registrationUrl, '_blank')}
             >
               Register Now

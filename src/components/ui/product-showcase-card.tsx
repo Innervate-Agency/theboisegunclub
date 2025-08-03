@@ -79,10 +79,10 @@ const ProductShowcaseCard = React.forwardRef<HTMLDivElement, ProductShowcaseCard
         </div>
 
         {/* Content Area - Slides up on hover */}
-        <div className="relative p-[var(--space-md)]">
+        <div className="relative p-md">
           {/* Stats - Always visible */}
           {stats && stats.length > 0 && (
-            <div className="flex gap-[var(--space-md)] mb-[var(--space-base)]">
+            <div className="flex gap-md mb-[var(--space-base)]">
               {stats.map((stat, index) => (
                 <div key={index} className="flex flex-col">
                   <div className="text-heading-md font-bold text-card-foreground">{stat.value}</div>
@@ -100,7 +100,7 @@ const ProductShowcaseCard = React.forwardRef<HTMLDivElement, ProductShowcaseCard
 
           {/* CTA Button - Appears on hover with slide up animation */}
           <div className="transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out delay-75">
-            <div className="flex items-center gap-[var(--space-xs)] text-body-sm font-medium text-copper-orange hover:text-copper-orange/80 transition-colors cursor-pointer">
+            <div className="flex items-center gap-xs text-body-sm font-medium text-copper-orange hover:text-copper-orange/80 transition-colors cursor-pointer">
               <span>{ctaText}</span>
               <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
             </div>

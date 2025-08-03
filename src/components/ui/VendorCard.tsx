@@ -29,9 +29,9 @@ const vendorCardVariants = cva(
         gold: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-tactical-gray/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/10 before:via-transparent before:to-copper-orange/8 dark:before:from-brass-yellow/14 dark:before:to-copper-orange/12 before:rounded-card before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
       },
       size: {
-        sm: "p-[var(--space-base)]",           // 16px - compact cards
+        sm: "p-base",           // 16px - compact cards
         md: "p-[var(--card-padding)]",         // 24px - standard Stripe card padding
-        lg: "p-[var(--space-lg)]"              // 32px - spacious cards
+        lg: "p-lg"              // 32px - spacious cards
       }
     },
     defaultVariants: {
@@ -102,7 +102,7 @@ export function VendorCard({
     >
       {/* Header with business info */}
       <div className="mb-[var(--space-md)]">
-        <div className="flex items-center gap-[var(--space-sm)] mb-[var(--space-xs)]">
+        <div className="flex items-center gap-sm mb-[var(--space-xs)]">
           {/* Business logo/image */}
           <Avatar className="h-[var(--icon-3xl)] w-[var(--icon-3xl)] rounded-[var(--radius-lg)] flex-shrink-0">
             {imageUrl && !imgError ? (
@@ -128,13 +128,13 @@ export function VendorCard({
 
         {/* Tier-specific badges - now below name block */}
         {(isVerified || showSponsored) && (
-          <div className="flex gap-[var(--space-sm)] ml-[calc(3rem+var(--space-sm))]">
+          <div className="flex gap-sm ml-[calc(3rem+var(--space-sm))]">
             {isVerified && (
               <Badge 
                 variant={tier === 'gold' ? 'elite' : 'default'}
                 size="sm"
               >
-                <Shield className="w-[var(--icon-xs)] h-[var(--icon-xs)] mr-[var(--space-xs)]" />
+                <Shield className="w-icon-xs h-icon-xs mr-[var(--space-xs)]" />
                 Verified
               </Badge>
             )}
@@ -157,20 +157,20 @@ export function VendorCard({
       {/* Contact Information */}
       <div className="space-y-[var(--space-xs)] mb-[var(--space-md)]">
         {address && (
-          <div className="flex items-center gap-[var(--space-xs)] text-body-sm text-muted-foreground">
-            <MapPin className="w-[var(--icon-sm)] h-[var(--icon-sm)] flex-shrink-0" />
+          <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
+            <MapPin className="w-icon-sm h-icon-sm flex-shrink-0" />
             <span className="truncate">{address}</span>
           </div>
         )}
         {phone && (
-          <div className="flex items-center gap-[var(--space-xs)] text-body-sm text-muted-foreground">
-            <Phone className="w-[var(--icon-sm)] h-[var(--icon-sm)] flex-shrink-0" />
+          <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
+            <Phone className="w-icon-sm h-icon-sm flex-shrink-0" />
             <span>{phone}</span>
           </div>
         )}
         {hours && (
-          <div className="flex items-center gap-[var(--space-xs)] text-body-sm text-muted-foreground">
-            <Clock className="w-[var(--icon-sm)] h-[var(--icon-sm)] flex-shrink-0" />
+          <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
+            <Clock className="w-icon-sm h-icon-sm flex-shrink-0" />
             <span>{hours}</span>
           </div>
         )}
@@ -178,13 +178,13 @@ export function VendorCard({
 
       {/* Rating */}
       {rating && reviewCount && (
-        <div className="flex items-center gap-[var(--space-xs)] mb-[var(--space-md)]">
+        <div className="flex items-center gap-xs mb-[var(--space-md)]">
           <div className="flex items-center">
             {[1, 2, 3, 4, 5].map((star) => (
               <Star
                 key={star}
                 className={cn(
-                  "w-[var(--icon-sm)] h-[var(--icon-sm)]",
+                  "w-icon-sm h-icon-sm",
                   star <= rating 
                     ? "fill-brass-yellow text-brass-yellow" 
                     : "text-muted-foreground"
@@ -223,8 +223,8 @@ export function VendorCard({
 
       {/* Enhanced features for Silver/Gold tiers */}
       {showLeads && (
-        <div className="flex items-center gap-[var(--space-xs)] mb-[var(--space-md)] p-[var(--space-xs)] bg-rifling-green/10 rounded-[var(--radius-md)]">
-          <TrendingUp className="w-[var(--icon-sm)] h-[var(--icon-sm)] text-rifling-green" />
+        <div className="flex items-center gap-xs mb-[var(--space-md)] p-xs bg-rifling-green/10 rounded-[var(--radius-md)]">
+          <TrendingUp className="w-icon-sm h-icon-sm text-rifling-green" />
           <span className="text-body-sm text-rifling-green font-medium">
             {monthlyLeads} leads this month
           </span>
@@ -232,7 +232,7 @@ export function VendorCard({
       )}
 
       {/* Action buttons - flat inside card container */}
-      <div className="flex gap-[var(--space-xs)] pt-[var(--space-sm)]">
+      <div className="flex gap-xs pt-[var(--space-sm)]">
         <Button 
           size="sm" 
           variant="solid-accent"
@@ -253,7 +253,7 @@ export function VendorCard({
               rel="noopener noreferrer"
               title={`Visit ${businessName}'s website (opens in new tab)`}
             >
-              <Globe className="w-[var(--icon-sm)] h-[var(--icon-sm)]" />
+              <Globe className="w-icon-sm h-icon-sm" />
             </a>
           </Button>
         )}
