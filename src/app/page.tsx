@@ -53,15 +53,22 @@ export default function HomePage() {
         body: JSON.stringify(data),
       });
 
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+
+      const responseData = await response.json();
+      console.log('Response data:', responseData);
+
       if (response.ok) {
         setSubmitStatus('success');
         (e.target as HTMLFormElement).reset();
         altchaRef.current?.reset();
       } else {
+        console.error('API Error Details:', responseData);
         setSubmitStatus('error');
       }
     } catch (error) {
-      console.error('Contact form error:', error);
+      console.error('Fetch error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

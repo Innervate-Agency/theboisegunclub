@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
@@ -51,11 +53,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Dynamic import of nodemailer to avoid build issues
-    const nodemailer = await import('nodemailer');
+    // Use require instead of dynamic import for better production compatibility
+    const nodemailer = require('nodemailer');
     
     // Create transporter for Stalwart SMTP
-    const transporter = nodemailer.default.createTransport({
+    const transporter = nodemailer.createTransport({
       host: '154.53.56.203',
       port: 587,
       secure: false, // Use STARTTLS
@@ -115,7 +117,9 @@ Reply directly to this email to respond to ${name}
     };
 
     // Send email
-    await transporter.sendMail(mailOptions);
+    console.log('Attempting to send email to:', 'business@boisegunclub.com');
+    const result = await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully:', result.messageId);
 
     return NextResponse.json(
       { message: 'Email sent successfully' },
@@ -123,9 +127,14 @@ Reply directly to this email to respond to ${name}
     );
 
   } catch (error) {
-    console.error('Contact form error:', error);
+    console.error('Contact form error details:', {
+      message: error.message,
+      code: error.code,
+      response: error.response,
+      stack: error.stack
+    });
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: 'Failed to send email', details: error.message },
       { status: 500 }
     );
   }
