@@ -1,6 +1,7 @@
 export const dynamic = 'force-dynamic';
 
 import { NextRequest, NextResponse } from 'next/server';
+import * as nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
   try {
@@ -53,8 +54,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Use require instead of dynamic import for better production compatibility
-    const nodemailer = require('nodemailer');
+    // Using static import for better TypeScript/production compatibility
     
     // Create transporter for Stalwart SMTP
     const transporter = nodemailer.createTransport({
