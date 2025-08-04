@@ -1,21 +1,39 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import StatCard from '@/components/ui/StatCard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
+import AltchaWidget, { AltchaWidgetRef } from '@/components/ui/altcha-widget';
 import { Search, Calendar, ShoppingCart, Share2, Bell, Building2, ArrowRight, MapPin, Users, Trophy, Target, AlertTriangle, Users2, MessageSquare, BookOpen, Shield, Megaphone, CheckCircle, Zap, Star, TrendingUp, Mail } from 'lucide-react';
 
 export default function HomePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const altchaRef = useRef<AltchaWidgetRef>(null);
 
   const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
+
+    // Check ALTCHA verification
+    if (!altchaRef.current) {
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
+
+    const altchaState = altchaRef.current.getState();
+    const altchaPayload = altchaRef.current.getPayload();
+
+    if (altchaState !== 'verified' || !altchaPayload) {
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
 
     const formData = new FormData(e.target as HTMLFormElement);
     const data = {
@@ -23,6 +41,7 @@ export default function HomePage() {
       email: formData.get('email') as string,
       subject: formData.get('subject') as string,
       message: formData.get('message') as string,
+      altchaPayload: altchaPayload,
     };
 
     try {
@@ -37,6 +56,7 @@ export default function HomePage() {
       if (response.ok) {
         setSubmitStatus('success');
         (e.target as HTMLFormElement).reset();
+        altchaRef.current?.reset();
       } else {
         setSubmitStatus('error');
       }
@@ -478,6 +498,17 @@ export default function HomePage() {
                         disabled={isSubmitting}
                       />
                     </div>
+                    
+                    {/* ALTCHA Anti-Spam Widget */}
+                    <div className="w-full">
+                      <AltchaWidget 
+                        ref={altchaRef}
+                        hidefooter={false}
+                        hidelogo={false}
+                        debug={false}
+                      />
+                    </div>
+                    
                     <Button 
                       type="submit" 
                       size="xl" 

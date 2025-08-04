@@ -45,6 +45,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${rajdhani.variable} ${notoSans.variable} ${notoSerif.variable} font-noto-sans antialiased`}
+        suppressHydrationWarning
       >
         <ThemeProvider
           attribute="class"

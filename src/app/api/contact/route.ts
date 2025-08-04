@@ -2,12 +2,50 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, subject, message } = await request.json();
+    const { name, email, subject, message, altchaPayload } = await request.json();
 
     // Validate required fields
     if (!name || !email || !subject || !message) {
       return NextResponse.json(
         { error: 'All fields are required' },
+        { status: 400 }
+      );
+    }
+
+    // Verify ALTCHA payload
+    if (!altchaPayload) {
+      return NextResponse.json(
+        { error: 'CAPTCHA verification required' },
+        { status: 400 }
+      );
+    }
+
+    // Dynamic import of altcha for server-side verification
+    let altcha;
+    try {
+      altcha = await import('altcha');
+    } catch (importError) {
+      console.error('Failed to import altcha:', importError);
+      return NextResponse.json(
+        { error: 'CAPTCHA service unavailable' },
+        { status: 500 }
+      );
+    }
+
+    // Verify the ALTCHA payload
+    try {
+      const verification = await altcha.verifySolution(altchaPayload, process.env.ALTCHA_HMAC_KEY || 'your-secret-hmac-key');
+      
+      if (!verification.verified) {
+        return NextResponse.json(
+          { error: 'Invalid CAPTCHA verification' },
+          { status: 400 }
+        );
+      }
+    } catch (verifyError) {
+      console.error('ALTCHA verification error:', verifyError);
+      return NextResponse.json(
+        { error: 'CAPTCHA verification failed' },
         { status: 400 }
       );
     }
