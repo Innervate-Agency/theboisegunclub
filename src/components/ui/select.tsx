@@ -370,6 +370,4 @@ export {
   selectContentVariants,
   selectItemVariants,
   selectLabelVariants,
-  type SelectTriggerProps,
-  type SelectItemProps,
 }
