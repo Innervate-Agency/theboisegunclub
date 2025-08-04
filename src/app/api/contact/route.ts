@@ -18,20 +18,21 @@ export async function POST(request: NextRequest) {
     // Create transporter for Stalwart SMTP
     const transporter = nodemailer.default.createTransport({
       host: '154.53.56.203',
-      port: 587, // or 25, 465 depending on your Stalwart config
-      secure: false, // true for 465, false for other ports
+      port: 587,
+      secure: false, // Use STARTTLS
       auth: {
-        user: process.env.SMTP_USER, // Your Stalwart email user
-        pass: process.env.SMTP_PASS, // Your Stalwart email password
+        user: 'steve@boisegunclub.com',
+        pass: 'GYqP%4c1jW6B*TC6&$0G%z7PbxfD*vxZpvdTQECa9jA9UeZyjge$QVGwQPD%6EAN',
       },
       tls: {
-        rejectUnauthorized: false, // For self-signed certs if needed
+        rejectUnauthorized: false, // For self-signed certs
       },
+      debug: true, // Enable debugging for troubleshooting
     });
 
     // Email content
     const mailOptions = {
-      from: `"TBGC Contact Form" <noreply@boisegunclub.com>`,
+      from: `"TBGC Contact Form" <steve@boisegunclub.com>`,
       to: 'business@boisegunclub.com',
       replyTo: email,
       subject: `[TBGC Contact] ${subject}`,
