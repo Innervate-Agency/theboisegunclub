@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import StatCard from '@/components/ui/StatCard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -9,6 +9,45 @@ import { Input } from '@/components/ui/input';
 import { Search, Calendar, ShoppingCart, Share2, Bell, Building2, ArrowRight, MapPin, Users, Trophy, Target, AlertTriangle, Users2, MessageSquare, BookOpen, Shield, Megaphone, CheckCircle, Zap, Star, TrendingUp, Mail } from 'lucide-react';
 
 export default function HomePage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      subject: formData.get('subject') as string,
+      message: formData.get('message') as string,
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -386,7 +425,20 @@ export default function HomePage() {
                     </p>
                   </div>
                   
-                  <form action="mailto:business@boisegunclub.com" method="post" encType="text/plain" className="space-y-base">
+                  <form onSubmit={handleContactSubmit} className="space-y-base">
+                    {submitStatus === 'success' && (
+                      <div className="p-base rounded-lg bg-clubhouse-lawn-green/10 border border-clubhouse-lawn-green/20 text-clubhouse-lawn-green">
+                        <CheckCircle className="h-4 w-4 inline mr-xs" />
+                        Message sent successfully! We'll get back to you within 24 hours.
+                      </div>
+                    )}
+                    {submitStatus === 'error' && (
+                      <div className="p-base rounded-lg bg-ayu-red/10 border border-ayu-red/20 text-ayu-red">
+                        <AlertTriangle className="h-4 w-4 inline mr-xs" />
+                        Failed to send message. Please try again or email us directly at business@boisegunclub.com
+                      </div>
+                    )}
+                    
                     <div className="grid gap-base sm:grid-cols-2">
                       <Input 
                         type="text"
@@ -395,6 +447,7 @@ export default function HomePage() {
                         variant="default"
                         size="lg"
                         required
+                        disabled={isSubmitting}
                       />
                       <Input 
                         type="email"
@@ -403,6 +456,7 @@ export default function HomePage() {
                         variant="default"
                         size="lg"
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                     <Input 
@@ -412,19 +466,26 @@ export default function HomePage() {
                       variant="default"
                       size="lg"
                       required
+                      disabled={isSubmitting}
                     />
                     <div className="relative">
                       <textarea 
                         name="message"
                         placeholder="Your message..."
                         rows={4}
-                        className="w-full p-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:border-brass-yellow focus:outline-none focus:ring-2 focus:ring-brass-yellow/20 resize-none"
+                        className="w-full p-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:border-brass-yellow focus:outline-none focus:ring-2 focus:ring-brass-yellow/20 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
-                    <Button type="submit" size="xl" className="w-full bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black hover:from-copper-orange hover:to-brass-yellow font-rajdhani font-bold text-lg shadow-lg transition-all duration-300">
+                    <Button 
+                      type="submit" 
+                      size="xl" 
+                      className="w-full bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black hover:from-copper-orange hover:to-brass-yellow font-rajdhani font-bold text-lg shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                      disabled={isSubmitting}
+                    >
                       <Mail className="h-5 w-5 mr-xs" />
-                      Send Message
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
                     </Button>
                   </form>
                 </div>
