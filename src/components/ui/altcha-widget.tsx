@@ -27,7 +27,7 @@ export interface AltchaWidgetRef {
   reset: () => void;
 }
 
-const AltchaWidget = forwardRef<AltchaWidgetRef, AltchaWidgetProps>((props, ref) => {
+const AltchaWidget = forwardRef<AltchaWidgetRef, AltchaWidgetProps>(({ challengeurl = '/api/altcha/challenge', ...props }, ref) => {
   const widgetRef = useRef<HTMLElement>(null);
 
   useImperativeHandle(ref, () => ({
@@ -80,6 +80,7 @@ const AltchaWidget = forwardRef<AltchaWidgetRef, AltchaWidgetProps>((props, ref)
 
   return React.createElement('altcha-widget', {
     ref: widgetRef,
+    challengeurl,
     style: { width: '100%', display: 'block' },
     ...props,
   });
