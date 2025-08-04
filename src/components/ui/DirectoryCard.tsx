@@ -52,7 +52,7 @@ export interface DirectoryCardProps extends React.HTMLAttributes<HTMLDivElement>
   contact?: string;
   imageUrl?: string;
   status?: string;
-  badgeVariant?: 'default' | 'premium' | 'elite' | 'glass' | 'success' | 'warning' | 'error' | 'info';
+  badgeVariant?: 'default' | 'secondary' | 'success' | 'destructive' | 'premium' | 'elite' | 'outline' | 'warning' | 'info';
 }
 
 
