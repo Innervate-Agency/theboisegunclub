@@ -12,6 +12,7 @@ import { Search, Calendar, ShoppingCart, Share2, Bell, Building2, ArrowRight, Ma
 export default function HomePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [altchaPayload, setAltchaPayload] = useState<string | null>(null);
   const altchaRef = useRef<AltchaWidgetRef>(null);
 
   const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -20,16 +21,7 @@ export default function HomePage() {
     setSubmitStatus('idle');
 
     // Check ALTCHA verification
-    if (!altchaRef.current) {
-      setSubmitStatus('error');
-      setIsSubmitting(false);
-      return;
-    }
-
-    const altchaState = altchaRef.current.getState();
-    const altchaPayload = altchaRef.current.getPayload();
-
-    if (altchaState !== 'verified' || !altchaPayload) {
+    if (!altchaPayload) {
       setSubmitStatus('error');
       setIsSubmitting(false);
       return;
@@ -63,6 +55,7 @@ export default function HomePage() {
         setSubmitStatus('success');
         (e.target as HTMLFormElement).reset();
         altchaRef.current?.reset();
+        setAltchaPayload(null);
       } else {
         console.error('API Error Details:', responseData);
         setSubmitStatus('error');
@@ -509,6 +502,10 @@ export default function HomePage() {
                     {/* ALTCHA Anti-Spam Widget */}
                     <div className="w-full">
                       <AltchaWidget 
+                        challengeurl="/api/altcha/challenge"
+                        onVerify={(payload) => {
+                          setAltchaPayload(payload);
+                        }}
                         ref={altchaRef}
                         hidefooter={false}
                         hidelogo={false}
