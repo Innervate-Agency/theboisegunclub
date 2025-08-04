@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,8 +12,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Dynamic import of nodemailer to avoid build issues
+    const nodemailer = await import('nodemailer');
+    
     // Create transporter for Stalwart SMTP
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.default.createTransport({
       host: '154.53.56.203',
       port: 587, // or 25, 465 depending on your Stalwart config
       secure: false, // true for 465, false for other ports
