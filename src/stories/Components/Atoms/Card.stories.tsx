@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import {
   Card,
@@ -21,20 +22,24 @@ const meta: Meta<typeof Card> = {
         component: `
 # Card - TBGC Design System Foundation
 
-The **Card** component is a foundational element of the TBGC design system, featuring sophisticated shadow hierarchies, fire gradient animations, and comprehensive theming support.
+The **Card** component is a foundational element of the TBGC design system, featuring strategic restraint, fire gradient animations, and comprehensive theming with the Idaho Firearms Heritage palette.
 
 ## Key Features
-- **Stripe-inspired shadow system** with consistent depth
-- **Fire gradient animations** (orange, blue, purple, green variants)  
-- **Mica glass effects** with backdrop blur
+- **Strategic restraint** - shadow system instead of borders (per design system policy)
+- **Fire gradient animations** (copper/brass, blue, green, red variants using Idaho palette)
+- **Windows 11 Mica glass effects** with backdrop blur
 - **Theme-aware styling** for light/dark modes
-- **Strategic restraint** - shadows for depth, not visual noise
+- **Size variants** - proper padding controls (sm, default, lg)
 
 ## Variant Philosophy
-- Use \`default\` for most content cards
-- Use \`interactive\` for clickable cards
-- Use \`fire\` variants sparingly for premium features
-- Use \`glass\` for overlays and modals
+- Use \`default\` for most content cards (clean baseline)
+- Use \`interactive\` for clickable cards (subtle hover feedback)
+- Use \`premium\` for enhanced cards (copper-brass accent)
+- Use \`fire\` variants sparingly for premium features (inspired by VendorCard tiers)
+- Use \`glass\` for overlays and modals (Windows 11 Mica)
+
+## Strategic Restraint
+Following VendorCard patterns - each variant should provide clear value progression without excessive visual noise.
         `
       }
     }
@@ -43,7 +48,7 @@ The **Card** component is a foundational element of the TBGC design system, feat
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'elevated', 'interactive', 'outlined', 'subtle', 'premium', 'glass', 'fire', 'fire-blue', 'fire-purple', 'fire-green'],
+      options: ['default', 'elevated', 'interactive', 'outlined', 'subtle', 'premium', 'glass', 'fire', 'fire-blue', 'fire-green', 'fire-red'],
       description: 'Card visual style variant'
     },
     size: {
@@ -68,12 +73,12 @@ export const Default: Story = {
       <CardHeader>
         <CardTitle>Default Card</CardTitle>
         <CardDescription>
-          Clean, professional styling with subtle shadows
+          Clean, professional styling with strategic restraint
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="card-body">
-          This is the standard card variant for most content. It uses theme-aware colors and consistent shadow depth.
+        <p>
+          This is the standard card variant for most content. It uses Idaho palette colors with strategic restraint design principles.
         </p>
       </CardContent>
     </Card>
@@ -93,7 +98,7 @@ export const Interactive: Story = {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="card-body">
+        <p >
           Interactive cards provide visual feedback when hovered, perfect for clickable content.
         </p>
       </CardContent>
@@ -109,7 +114,7 @@ export const FireVariants: Story = {
     <div className="w-full max-w-5xl space-y-lg">
       <div className="space-y-base">
         <h2 className="text-display-md font-rajdhani font-bold text-card-foreground">Fire Gradient System</h2>
-        <p className="card-body">
+        <p >
           Sophisticated gradient animations that "unfurl" on hover. Use sparingly for premium features.
         </p>
       </div>
@@ -127,7 +132,7 @@ export const FireVariants: Story = {
           </CardHeader>
           <CardContent>
             <Badge variant="premium" className="mb-xs">Premium</Badge>
-            <p className="card-body">
+            <p >
               Copper to brass gradient animation
             </p>
           </CardContent>
@@ -145,13 +150,13 @@ export const FireVariants: Story = {
           </CardHeader>
           <CardContent>
             <Badge variant="info" className="mb-xs">Tactical</Badge>
-            <p className="card-body">
+            <p >
               Blue to green gradient animation
             </p>
           </CardContent>
         </Card>
 
-        <Card variant="fire-purple" className="w-full">
+        <Card variant="fire-red" className="w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-xs">
               <Zap className="w-4 h-4" />
@@ -163,7 +168,7 @@ export const FireVariants: Story = {
           </CardHeader>
           <CardContent>
             <Badge variant="elite" className="mb-xs">Elite</Badge>
-            <p className="card-body">
+            <p >
               Purple to cobalt gradient animation
             </p>
           </CardContent>
@@ -181,7 +186,7 @@ export const FireVariants: Story = {
           </CardHeader>
           <CardContent>
             <Badge variant="success" className="mb-xs">Achievement</Badge>
-            <p className="card-body">
+            <p >
               Green variants gradient animation
             </p>
           </CardContent>
@@ -199,7 +204,7 @@ export const AdvancedVariants: Story = {
     <div className="w-full max-w-5xl space-y-lg">
       <div className="space-y-base">
         <h2 className="text-display-md font-rajdhani font-bold text-card-foreground">Advanced Styling Options</h2>
-        <p className="card-body">
+        <p >
           Premium, glass, and specialized variants for different use cases.
         </p>
       </div>
@@ -218,7 +223,7 @@ export const AdvancedVariants: Story = {
           <CardContent>
             <div className="space-y-xs">
               <Badge variant="premium" shimmer>Premium Member</Badge>
-              <p className="card-body">
+              <p >
                 Features subtle brand gradient overlay and bottom accent bar.
               </p>
             </div>
@@ -241,7 +246,7 @@ export const AdvancedVariants: Story = {
           <CardContent>
             <div className="space-y-xs">
               <Badge variant="glass">Mica Effect</Badge>
-              <p className="card-body">
+              <p >
                 Windows 11-inspired mica glass with backdrop blur.
               </p>
             </div>
@@ -264,7 +269,7 @@ export const AdvancedVariants: Story = {
           <CardContent>
             <div className="space-y-xs">
               <Badge variant="success">Available</Badge>
-              <p className="card-body">
+              <p >
                 Lifts up on hover for prominent interactive feedback.
               </p>
             </div>
@@ -286,7 +291,7 @@ export const TBGCBusinessCards: Story = {
     <div className="w-full max-w-6xl space-y-lg">
       <div className="space-y-base">
         <h2 className="text-display-md font-rajdhani font-bold text-card-foreground">Treasure Valley Firearms Directory</h2>
-        <p className="card-body">
+        <p >
           Real-world application of the card component system in TBGC's business context.
         </p>
       </div>
@@ -305,7 +310,7 @@ export const TBGCBusinessCards: Story = {
                 <Badge variant="premium" shimmer>Gold Member</Badge>
                 <Badge variant="success" icon={<CheckCircle className="w-3 h-3" />}>Verified</Badge>
               </div>
-              <p className="card-body">
+              <p >
                 Specializing in tactical gear, custom builds, and professional gunsmithing services.
               </p>
               <div className="text-caption text-muted-foreground">
@@ -333,7 +338,7 @@ export const TBGCBusinessCards: Story = {
                 <Badge variant="info" icon={<Shield className="w-3 h-3" />}>Silver Member</Badge>
                 <Badge variant="success">Open Today</Badge>
               </div>
-              <p className="card-body">
+              <p >
                 25-lane climate-controlled range with tactical training courses.
               </p>
               <div className="text-caption text-muted-foreground">
@@ -361,7 +366,7 @@ export const TBGCBusinessCards: Story = {
                 <Badge variant="outline">Free Listing</Badge>
                 <Badge variant="warning" icon={<Clock className="w-3 h-3" />}>Updating Hours</Badge>
               </div>
-              <p className="card-body">
+              <p >
                 Professional tactical training and equipment for law enforcement.
               </p>
               <div className="text-caption text-muted-foreground">

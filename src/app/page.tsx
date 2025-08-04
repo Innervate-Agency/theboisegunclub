@@ -1,258 +1,440 @@
 'use client'
 
-import { MegaHero } from '@/components/ui/mega-hero'
-import { FeatureGrid } from '@/components/ui/feature-grid'
-import { SiteFooter } from '@/components/ui/site-footer'
-import { SectionDivider } from '@/components/ui/section-divider'
-import AnimatedSplashCard from '@/components/ui/AnimatedSplashCard'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Badge } from '@/components/ui/badge'
-import { 
-  Search, Calendar, ShoppingCart, Share2, Bell, Building2, Target, Users 
-} from 'lucide-react'
-
-// Feature cards for the splash section
-const splashFeatures = [
-  {
-    icon: Search,
-    title: "Find Local Experts",
-    description: "Complete directory of gun shops, ranges, instructors, and gunsmiths throughout the valley."
-  },
-  {
-    icon: Calendar,
-    title: "Never Miss Out",
-    description: "All shooting events, competitions, and training from every club in the valley."
-  },
-  {
-    icon: ShoppingCart,
-    title: "Book & Buy",
-    description: "Training, gunsmithing, gear - book services and buy accessories in one place."
-  },
-  {
-    icon: Share2,
-    title: "Connect & Share",
-    description: "Discussion, tips, and classifieds - the social hub for Treasure Valley."
-  },
-  {
-    icon: Bell,
-    title: "Stay Informed",
-    description: "Idaho gun laws, safety guides, reviews, and comprehensive firearms information."
-  },
-  {
-    icon: Building2,
-    title: "Build The Brand",
-    description: "High-quality support and new revenue generation for participating vendors."
-  }
-]
-
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import StatCard from '@/components/ui/StatCard';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { Search, Calendar, ShoppingCart, Share2, Bell, Building2, ArrowRight, MapPin, Users, Trophy, Target, AlertTriangle, Users2, MessageSquare, BookOpen, Shield, Megaphone, CheckCircle, Zap, Star, TrendingUp, Mail } from 'lucide-react';
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header Section */}
-      <section className="px-[var(--space-md)] py-[var(--space-3xl)]">
-        <div className="max-w-6xl mx-auto text-center">
-          {/* Coming Soon Badge */}
-          <div className="mb-[var(--space-xl)]">
-            <Badge className="bg-brass-yellow text-gunmetal-black px-[var(--space-lg)] py-[var(--space-sm)] text-sm font-rajdhani font-bold uppercase tracking-wide">
-              Coming Soon
-            </Badge>
-          </div>
-          
-          {/* Main Title */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-rajdhani font-bold text-gunmetal-black tracking-tight leading-none mb-[var(--space-lg)]">
-            THE BOISE<br />GUN CLUB
-          </h1>
-          
-          {/* Subtitle */}
-          <p className="text-lg md:text-xl font-rajdhani font-medium text-case-hardened uppercase tracking-wider mb-[var(--space-xl)]">
-            A Treasure Valley Firearm & Firearm Sport Collective
-          </p>
-          
-          {/* Description */}
-          <p className="text-base md:text-lg font-noto-sans text-case-hardened leading-relaxed max-w-4xl mx-auto">
-            The comprehensive digital hub uniting ALL Treasure Valley firearms communities. Featuring unified events, all regional businesses, and connecting enthusiasts, families, and professionals across Idaho's premier firearms region.
-          </p>
-        </div>
-      </section>
-      
-      {/* Feature Cards Grid */}
-      <section className="px-[var(--space-md)] py-[var(--space-2xl)]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-xl)]">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-tactical-gray/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/10 before:via-transparent before:to-copper-orange/8 dark:before:from-brass-yellow/14 dark:before:to-copper-orange/12 before:pointer-events-none px-md py-4xl">
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="grid gap-xl lg:grid-cols-2 lg:gap-3xl">
+            <div className="space-y-lg">
+              <div className="space-y-base">
+                <Badge className="bg-brass-yellow text-gunmetal-black shadow-sm">
+                  <Target className="h-4 w-4 mr-xs" />
+                  Regional Platform
+                </Badge>
+                <h1 className="font-rajdhani text-6xl md:text-8xl leading-none text-foreground tracking-tight">
+                  <span className="font-extrabold">THE BOISE </span><span className="font-light">GUN CLUB</span>
+                </h1>
+                <p className="text-body-lg text-muted-foreground max-w-2xl">
+                  Building Treasure Valley's first comprehensive firearms community platform. Connecting local businesses, clubs, ranges, and enthusiasts across Idaho's premier firearms region.
+                </p>
+                <div className="space-y-sm">
+                  <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
+                    <Shield className="h-4 w-4 text-brass-yellow flex-shrink-0" />
+                    <span>Safety-first community focused on responsible firearms education</span>
+                  </div>
+                  <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
+                    <Star className="h-4 w-4 text-brass-yellow flex-shrink-0" />
+                    <span>Preserving Idaho's rich firearms heritage and outdoor traditions</span>
+                  </div>
+                  <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
+                    <Users className="h-4 w-4 text-brass-yellow flex-shrink-0" />
+                    <span>Connecting 250K+ gun owners across the Treasure Valley region</span>
+                  </div>
+                  <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
+                    <TrendingUp className="h-4 w-4 text-brass-yellow flex-shrink-0" />
+                    <span>4-tier subscription model supporting local businesses</span>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
             
-            <AnimatedSplashCard>
-              <div className="text-center">
-                <Badge className="mb-[var(--space-base)] bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30 text-xs">
-                  Directory Included
-                </Badge>
-                <Search className="h-12 w-12 text-brass-yellow mx-auto mb-[var(--space-base)]" />
-                <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-sm)]">
-                  Find Local Experts
-                </h3>
-                <p className="text-sm font-noto-sans text-case-hardened leading-relaxed mb-[var(--space-base)]">
-                  Complete directory of gun shops, ranges, instructors, and gunsmiths throughout the valley.
-                </p>
-                <Button variant="ghost" size="sm" className="text-xs text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black">
-                  Learn More
-                </Button>
-              </div>
-            </AnimatedSplashCard>
-
-            <AnimatedSplashCard>
-              <div className="text-center">
-                <Badge className="mb-[var(--space-base)] bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30 text-xs">
-                  Event Listings
-                </Badge>
-                <Calendar className="h-12 w-12 text-brass-yellow mx-auto mb-[var(--space-base)]" />
-                <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-sm)]">
-                  Never Miss Out
-                </h3>
-                <p className="text-sm font-noto-sans text-case-hardened leading-relaxed mb-[var(--space-base)]">
-                  All shooting events, competitions, and training from every club in the valley.
-                </p>
-                <Button variant="ghost" size="sm" className="text-xs text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black">
-                  Learn More
-                </Button>
-              </div>
-            </AnimatedSplashCard>
-
-            <AnimatedSplashCard>
-              <div className="text-center">
-                <Badge className="mb-[var(--space-base)] bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30 text-xs">
-                  Service Marketplace
-                </Badge>
-                <ShoppingCart className="h-12 w-12 text-brass-yellow mx-auto mb-[var(--space-base)]" />
-                <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-sm)]">
-                  Book & Buy
-                </h3>
-                <p className="text-sm font-noto-sans text-case-hardened leading-relaxed mb-[var(--space-base)]">
-                  Training, gunsmithing, gear - book services and buy accessories in one place.
-                </p>
-                <Button variant="ghost" size="sm" className="text-xs text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black">
-                  Learn More
-                </Button>
-              </div>
-            </AnimatedSplashCard>
-
-            <AnimatedSplashCard>
-              <div className="text-center">
-                <Badge className="mb-[var(--space-base)] bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30 text-xs">
-                  Community Forum
-                </Badge>
-                <Share2 className="h-12 w-12 text-brass-yellow mx-auto mb-[var(--space-base)]" />
-                <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-sm)]">
-                  Connect & Share
-                </h3>
-                <p className="text-sm font-noto-sans text-case-hardened leading-relaxed mb-[var(--space-base)]">
-                  Discussion, tips, and classifieds - the social hub for Treasure Valley.
-                </p>
-                <Button variant="ghost" size="sm" className="text-xs text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black">
-                  Learn More
-                </Button>
-              </div>
-            </AnimatedSplashCard>
-
-            <AnimatedSplashCard>
-              <div className="text-center">
-                <Badge className="mb-[var(--space-base)] bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30 text-xs">
-                  Content Engine
-                </Badge>
-                <Bell className="h-12 w-12 text-brass-yellow mx-auto mb-[var(--space-base)]" />
-                <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-sm)]">
-                  Stay Informed
-                </h3>
-                <p className="text-sm font-noto-sans text-case-hardened leading-relaxed mb-[var(--space-base)]">
-                  Idaho gun laws, safety guides, reviews, and comprehensive firearms information.
-                </p>
-                <Button variant="ghost" size="sm" className="text-xs text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black">
-                  Learn More
-                </Button>
-              </div>
-            </AnimatedSplashCard>
-
-            <AnimatedSplashCard>
-              <div className="text-center">
-                <Badge className="mb-[var(--space-base)] bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30 text-xs">
-                  Vendor Support
-                </Badge>
-                <Building2 className="h-12 w-12 text-brass-yellow mx-auto mb-[var(--space-base)]" />
-                <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-sm)]">
-                  Build The Brand
-                </h3>
-                <p className="text-sm font-noto-sans text-case-hardened leading-relaxed mb-[var(--space-base)]">
-                  High-quality support and new revenue generation for participating vendors.
-                </p>
-                <Button variant="ghost" size="sm" className="text-xs text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black">
-                  Learn More
-                </Button>
-              </div>
-            </AnimatedSplashCard>
-
+            <div className="grid gap-md sm:grid-cols-2">
+              <StatCard
+                value="Directory"
+                label="Local Gun Shops, Ranges & Trainers"
+                variant="default"
+                icon={<Building2 className="h-6 w-6" />}
+              />
+              <StatCard
+                value="Events"
+                label="Unified Calendar from All Clubs"
+                variant="default"
+                icon={<Calendar className="h-6 w-6" />}
+              />
+              <StatCard
+                value="Forum"
+                label="Community Discussion & Trading"
+                variant="default"
+                icon={<Share2 className="h-6 w-6" />}
+              />
+              <StatCard
+                value="Resources"
+                label="Idaho Laws, Safety & Training Info"
+                variant="default"
+                icon={<Bell className="h-6 w-6" />}
+              />
+            </div>
           </div>
         </div>
       </section>
-      
-      {/* Newsletter Section */}
-      <section className="px-[var(--space-md)] py-[var(--space-3xl)] bg-gradient-hero-warm">
-        <div className="max-w-2xl mx-auto">
-          <AnimatedSplashCard className="text-center">
-            <div className="space-y-[var(--space-lg)]">
+            
+
+      {/* Platform Features Section */}
+      <section className="px-md py-4xl">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center space-y-base mb-xl">
+            <h2 className="font-rajdhani text-4xl font-bold">What Makes TBGC Different</h2>
+            <p className="text-body-lg text-muted-foreground">
+              Advanced technology and business intelligence designed specifically for Idaho's firearms industry
+            </p>
+          </div>
+          
+          <div className="grid gap-md md:grid-cols-2 lg:grid-cols-4">
+            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader>
+                <Search className="h-8 w-8 text-brass-yellow mb-base group-hover:text-copper-orange transition-colors" />
+                <CardTitle className="flex items-center gap-xs">
+                  <Building2 className="h-5 w-5" />
+                  Business Directory
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-body-sm text-muted-foreground">
+                  Verified business profiles with real-time inventory, services, and customer reviews
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-brass-yellow after:to-copper-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader>
+                <Calendar className="h-8 w-8 text-brass-yellow mb-base group-hover:text-copper-orange transition-colors" />
+                <CardTitle className="flex items-center gap-xs">
+                  <Users2 className="h-5 w-5" />
+                  Unified Events
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-body-sm text-muted-foreground">
+                  Smart calendar preventing scheduling conflicts and maximizing participation
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-brass-yellow after:to-copper-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader>
+                <Share2 className="h-8 w-8 text-brass-yellow mb-base group-hover:text-copper-orange transition-colors" />
+                <CardTitle className="flex items-center gap-xs">
+                  <MessageSquare className="h-5 w-5" />
+                  Community Hub
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-body-sm text-muted-foreground">
+                  Secure trading platform with verified members and dispute resolution
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader>
+                <ShoppingCart className="h-8 w-8 text-brass-yellow mb-base group-hover:text-copper-orange transition-colors" />
+                <CardTitle className="flex items-center gap-xs">
+                  <Zap className="h-5 w-5" />
+                  Service Marketplace
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-body-sm text-muted-foreground">
+                  Advanced booking system with real-time availability and payment processing
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+          
+          {/* Problems Section */}
+          <div className="text-center space-y-base mb-xl mt-3xl">
+            <h2 className="font-rajdhani text-4xl font-bold">The Problems We're Solving</h2>
+            <p className="text-body-lg text-muted-foreground max-w-4xl mx-auto">
+              Despite having 250K+ gun owners and 117+ businesses, Treasure Valley lacks a unified digital ecosystem. These critical gaps are holding back our entire firearms community.
+            </p>
+          </div>
+          
+          <div className="grid gap-lg md:grid-cols-2 lg:grid-cols-3">
+            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-red after:to-ayu-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader>
+                <Badge className="w-fit mb-xs bg-ayu-red/20 text-ayu-red">
+                  <AlertTriangle className="h-3 w-3 mr-1" />
+                  Fragmentation
+                </Badge>
+                <CardTitle className="flex items-center gap-xs">
+                  <Search className="h-5 w-5 text-ayu-red" />
+                  Information Scattered Everywhere
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-body-sm text-muted-foreground">
+                  Events, training, and business info spread across dozens of Facebook groups, outdated websites, and word-of-mouth. New residents and visitors can't find anything.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-teal after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader>
+                <Badge className="w-fit mb-xs bg-ayu-blue/20 text-ayu-blue">
+                  <AlertTriangle className="h-3 w-3 mr-1" />
+                  Isolation
+                </Badge>
+                <CardTitle className="flex items-center gap-xs">
+                  <Building2 className="h-5 w-5 text-ayu-blue" />
+                  Clubs Operating in Silos
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-body-sm text-muted-foreground">
+                  Each range, club, and training organization operates independently. No unified calendar, competing for the same dates, missing collaboration opportunities.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-ayu-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader>
+                <Badge className="w-fit mb-xs bg-ayu-green/20 text-ayu-green">
+                  <AlertTriangle className="h-3 w-3 mr-1" />
+                  Discovery
+                </Badge>
+                <CardTitle className="flex items-center gap-xs">
+                  <TrendingUp className="h-5 w-5 text-ayu-green" />
+                  Businesses Struggle for Visibility
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-body-sm text-muted-foreground">
+                  Local gun shops, trainers, and gunsmiths rely on Facebook posts and word-of-mouth. No central hub to showcase services to the entire regional community.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-cobalt after:to-ayu-purple after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader>
+                <Badge className="w-fit mb-xs bg-ayu-cobalt/20 text-ayu-cobalt">
+                  <AlertTriangle className="h-3 w-3 mr-1" />
+                  Education
+                </Badge>
+                <CardTitle className="flex items-center gap-xs">
+                  <Shield className="h-5 w-5 text-ayu-cobalt" />
+                  Safety Education Gaps
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-body-sm text-muted-foreground">
+                  New gun owners and families struggle to find quality safety training. No centralized resource for Idaho-specific laws, regulations, and best practices.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-red after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader>
+                <Badge className="w-fit mb-xs bg-ayu-purple/20 text-ayu-purple">
+                  <AlertTriangle className="h-3 w-3 mr-1" />
+                  Heritage
+                </Badge>
+                <CardTitle className="flex items-center gap-xs">
+                  <BookOpen className="h-5 w-5 text-ayu-purple" />
+                  Heritage Being Lost
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-body-sm text-muted-foreground">
+                  Idaho's rich firearms heritage and traditions aren't being preserved or shared. Stories, knowledge, and community wisdom risk being lost.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-yellow after:to-ayu-blue after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader>
+                <Badge className="w-fit mb-xs bg-ayu-yellow/20 text-ayu-yellow">
+                  <AlertTriangle className="h-3 w-3 mr-1" />
+                  Advocacy
+                </Badge>
+                <CardTitle className="flex items-center gap-xs">
+                  <Megaphone className="h-5 w-5 text-ayu-yellow" />
+                  No Community Voice
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-body-sm text-muted-foreground">
+                  Treasure Valley's firearms community lacks a unified platform to advocate for rights, share legislative updates, and speak with one voice.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution Section */}
+      <section className="px-md pt-xl pb-4xl">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center">
+            <div className="bg-card rounded-lg p-xl shadow-sm max-w-4xl mx-auto relative overflow-hidden group after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-clubhouse-lawn-green after:to-brass-yellow after:transition-all after:duration-500 after:ease-out hover:after:w-full after:rounded-b-lg">
               <div>
-                <h2 className="text-2xl md:text-3xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
-                  Get Notified When We Launch
+                <Badge className="mb-base bg-clubhouse-lawn-green/20 text-clubhouse-lawn-green">
+                  <CheckCircle className="h-3 w-3 mr-1" />
+                  Our Solution
+                </Badge>
+                <h3 className="font-rajdhani text-heading-lg font-bold text-card-foreground mb-base flex items-center gap-xs">
+                  <Star className="h-6 w-6 text-brass-yellow" />
+                  One Platform to Unite Treasure Valley's Firearms Community
+                </h3>
+                <div className="grid gap-base md:grid-cols-2 text-left">
+                  <div className="flex items-start gap-xs">
+                    <Search className="h-5 w-5 text-clubhouse-lawn-green mt-xs flex-shrink-0" />
+                    <div>
+                      <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Verified Business Network</h4>
+                      <p className="text-body-sm text-muted-foreground">
+                        Authenticated professionals with background checks, insurance verification, and customer protection guarantees.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-xs">
+                    <Calendar className="h-5 w-5 text-clubhouse-lawn-green mt-xs flex-shrink-0" />
+                    <div>
+                      <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Smart Event Coordination</h4>
+                      <p className="text-body-sm text-muted-foreground">
+                        AI-powered scheduling prevents conflicts, optimizes attendance, and suggests complementary events.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-xs">
+                    <MessageSquare className="h-5 w-5 text-clubhouse-lawn-green mt-xs flex-shrink-0" />
+                    <div>
+                      <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Heritage & Education Center</h4>
+                      <p className="text-body-sm text-muted-foreground">
+                        Preserving Idaho firearms history, sharing knowledge, and providing certified safety education.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-xs">
+                    <BookOpen className="h-5 w-5 text-clubhouse-lawn-green mt-xs flex-shrink-0" />
+                    <div>
+                      <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Premium Business Tools</h4>
+                      <p className="text-body-sm text-muted-foreground">
+                        Advanced analytics, customer management, and marketing tools for participating businesses.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-gunmetal-black/95 to-tactical-gray/90 px-md py-4xl">
+        <div className="absolute inset-0 bg-gradient-to-br from-brass-yellow/5 via-transparent to-copper-orange/8 pointer-events-none"></div>
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="grid gap-xl lg:grid-cols-2 lg:gap-3xl items-center">
+            
+            {/* Left Side - Compelling Content */}
+            <div className="text-center lg:text-left space-y-lg">
+              <div className="space-y-base">
+                <Badge className="bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30">
+                  <MessageSquare className="h-4 w-4 mr-xs" />
+                  Get In Touch
+                </Badge>
+                <h2 className="font-rajdhani text-5xl md:text-6xl font-bold text-range-white leading-tight">
+                  Questions? Want to <span className="text-brass-yellow">Partner?</span>
                 </h2>
-                <p className="text-base font-noto-sans text-case-hardened">
-                  Be the first to gain when Boise's greatest firearms community platform goes live. Get the inside scoop on the exclusive opening events and early access.
+                <p className="text-body-lg text-range-white/80 max-w-2xl">
+                  We're building Idaho's premier firearms community platform and would love to hear from you. Whether you're interested in business partnerships, have questions about the platform, or want to get involved - let's connect.
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-[var(--space-base)] max-w-md mx-auto">
-                <Input 
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="flex-1 bg-white border-brass-yellow/30 focus:border-brass-yellow"
-                />
-                <Button className="bg-brass-yellow text-gunmetal-black hover:bg-copper-orange font-rajdhani font-semibold whitespace-nowrap">
-                  Get In Touch
-                </Button>
+              <div className="grid gap-sm sm:grid-cols-2 max-w-lg lg:max-w-none">
+                <div className="flex items-start gap-base">
+                  <Building2 className="h-5 w-5 text-brass-yellow mt-xs flex-shrink-0" />
+                  <div>
+                    <h4 className="font-rajdhani font-bold text-range-white">Business Partnerships</h4>
+                    <p className="text-body-sm text-range-white/70">Join our growing network of vendors</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-base">
+                  <Users className="h-5 w-5 text-brass-yellow mt-xs flex-shrink-0" />
+                  <div>
+                    <h4 className="font-rajdhani font-bold text-range-white">General Inquiries</h4>
+                    <p className="text-body-sm text-range-white/70">Questions about the platform</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </AnimatedSplashCard>
-        </div>
-      </section>
-      
-      {/* Vision Section */}
-      <section className="px-[var(--space-md)] py-[var(--space-3xl)]">
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-[var(--space-lg)]">
-            <h2 className="text-xl font-rajdhani font-bold text-gunmetal-black">
-              The Vision
-            </h2>
-            <div className="space-y-[var(--space-base)] text-sm font-noto-sans text-case-hardened leading-relaxed">
-              <p>
-                The Boise Gun Club is transforming into Treasure Valley's first comprehensive firearms community platform. What started as a local club will become a digital ecosystem that connects gun shops, enthusiasts from every organization and sporting discipline across Idaho's premier region.
-              </p>
-              <p>
-                Our platform will feature a true unified calendar - from BGC trap shoots to Capitol City competition, Complete Success Academy training, community forum, service marketplace, and educational resource center. From finding local gunsmith to coordinating community events.
-              </p>
-              <p>
-                The club itself will remain BGC's distinct club unified calendar and core principles. Together, families, and enthusiasts from every discipline can find supportive, safety-focused community that serve professionals and enthusiasts from every firearms community in Treasure Valley, that unite safety 1st principles and family-friendly values.
-              </p>
             </div>
             
-            <div className="flex justify-between items-center pt-[var(--space-lg)] border-t border-brass-yellow/20">
-              <div className="text-xs font-noto-sans text-case-hardened">
-                © 2025 TheBoiseGunClub. All rights reserved.
+            {/* Right Side - Enhanced Signup */}
+            <div className="max-w-lg mx-auto lg:mx-0">
+              <div className="bg-white dark:bg-gray-900 rounded-xl p-xl shadow-lg border border-brass-yellow/20 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-br from-brass-yellow/5 to-copper-orange/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute bottom-[-1px] left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-brass-yellow to-copper-orange transition-all duration-500 ease-out group-hover:w-full rounded-b-xl"></div>
+                
+                <div className="relative space-y-lg">
+                  <div className="text-left">
+                    <h3 className="font-rajdhani text-2xl font-bold text-card-foreground mb-xs flex items-center gap-xs">
+                      <Mail className="h-6 w-6 text-brass-yellow" />
+                      Contact Us
+                    </h3>
+                    <p className="text-body-sm text-muted-foreground">
+                      Drop us a line and we'll get back to you within 24 hours. All inquiries welcome.
+                    </p>
+                  </div>
+                  
+                  <form action="mailto:business@boisegunclub.com" method="post" encType="text/plain" className="space-y-base">
+                    <div className="grid gap-base sm:grid-cols-2">
+                      <Input 
+                        type="text"
+                        name="name"
+                        placeholder="Your name"
+                        variant="default"
+                        size="lg"
+                        required
+                      />
+                      <Input 
+                        type="email"
+                        name="email"
+                        placeholder="Email address"
+                        variant="default"
+                        size="lg"
+                        required
+                      />
+                    </div>
+                    <Input 
+                      type="text"
+                      name="subject"
+                      placeholder="Subject"
+                      variant="default"
+                      size="lg"
+                      required
+                    />
+                    <div className="relative">
+                      <textarea 
+                        name="message"
+                        placeholder="Your message..."
+                        rows={4}
+                        className="w-full p-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:border-brass-yellow focus:outline-none focus:ring-2 focus:ring-brass-yellow/20 resize-none"
+                        required
+                      />
+                    </div>
+                    <Button type="submit" size="xl" className="w-full bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black hover:from-copper-orange hover:to-brass-yellow font-rajdhani font-bold text-lg shadow-lg transition-all duration-300">
+                      <Mail className="h-5 w-5 mr-xs" />
+                      Send Message
+                    </Button>
+                  </form>
+                </div>
               </div>
-              <div className="text-xs font-noto-sans text-case-hardened">
-                Proudly serving Idaho's firearms community.
-              </div>
+              
             </div>
+            
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }

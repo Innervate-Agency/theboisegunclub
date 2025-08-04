@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -63,7 +64,7 @@ function ProfileForm() {
             </FormItem>
           )}
         />
-        <Button size="sm" type="submit">Submit</Button>
+        <Button variant="flat" size="sm" type="submit">Submit</Button>
       </form>
     </Form>
   );

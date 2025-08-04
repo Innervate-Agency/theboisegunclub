@@ -126,7 +126,8 @@ export default function DirectoryPage() {
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 icon-sm text-case-hardened" />
                 <Input
                   placeholder="Search businesses, services, or locations..."
-                  className="pl-[var(--space-2xl)] bg-white border-brass-yellow/30 focus:border-brass-yellow"
+                  className="bg-white border-brass-yellow/30 focus:border-brass-yellow"
+                  style={{paddingLeft: '48px'}}
                 />
               </div>
             </div>

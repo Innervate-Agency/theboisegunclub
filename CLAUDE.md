@@ -14,6 +14,11 @@ This is **The Boise Gun Club** - a Next.js 15 application serving as a comprehen
 - `npm run build` - Build production application
 - `npm start` - Start production server
 - `npm run lint` - Run ESLint for code quality
+- `npm run lint:fix` - ESLint with auto-fix
+- `npm run health` - Project health check
+- `npm run fix` - Quick fixes script
+- `npm run sync:docs` - Sync design documentation
+- `npm run ammo-list` - Generate ammo list
 
 ### Storybook (Component Development)
 
@@ -28,8 +33,9 @@ This is **The Boise Gun Club** - a Next.js 15 application serving as a comprehen
 
 - **Primary**: Tests are configured with Vitest and run through Storybook integration
 - **Browser Testing**: Uses Playwright with Chromium (`@vitest/browser`)
-- **Test Command**: No standalone test command - tests run through Storybook dev server
+- **Test Execution**: Tests auto-run when Storybook stories are loaded via `npm run storybook`
 - **Test Setup**: Configured in `vitest.config.ts` with Storybook addon integration
+- **No Standalone Tests**: All testing happens through Storybook's Vitest integration
 
 ## Architecture & Structure
 
@@ -112,6 +118,13 @@ Use these patterns when adding new components or features to maintain consistenc
 - **STRATEGIC RESTRAINT**: Avoid visual noise - consistent shadow depth maintains professional appearance
 - **SPACING**: Use `gap-8` for card grids, not `gap-6` or smaller for proper breathing room
 
+### Critical Border Rules (ZERO TOLERANCE - NEW POLICY)
+
+- **BORDERS ARE RESTRICTED**: Only use borders for alerts, badges, sonner/toast, form inputs, tables, and explicit outline variants
+- **USE SHADOWS INSTEAD**: Cards, modals, dropdowns, navigation, and content containers must use shadows for visual separation
+- **SHADOW HIERARCHY**: `shadow-xs` (minimal) → `shadow-sm` (default) → `shadow-md` (interactive) → `shadow-lg` (elevated) → `shadow-xl` (hero)
+- **EXCEPTION**: `outlined` variants can use borders when explicitly requesting outline styling
+
 ### Primary Accent Colors (Updated 2025-07-28)
 
 - **Light Theme Primary**: `copper-orange` - Perfect contrast on light backgrounds
@@ -143,7 +156,8 @@ className="bg-white text-black border-gray-200"
 - **CVA Components**: All UI components use Class Variance Authority pattern from `src/components/ui/_component-pattern.tsx`
 - **Required Variants**: Use `default | premium | elite | glass` with proper copper-orange/brass-yellow gradients
 - **Fire Animations**: Use `h-1 bg-gradient-to-r from-copper-orange to-brass-yellow` for bottom accent bars
-- **Component Reference**: Always check existing specs in `_resources/specs/` before creating components
+- **Component Reference**: Always check existing specs in `specs/` before creating components
+- **Design Validation**: Reference `_resources/specs/` directory for detailed component specifications
 
 ### Tailwind CSS v4 Compliance (ENFORCED)
 
@@ -266,11 +280,70 @@ find src/stories -name "*.stories.tsx" -exec sed -i 's/space-y-\[var(--space-xl)
 
 **🎉 RESULT**: Complete design system restoration with professional Stripe-inspired shadows and proper component hierarchy.
 
+## ✅ COMPLETED MILESTONE: Professional Splash Page (2025-08-04)
+
+### SPLASH PAGE TRANSFORMATION COMPLETE: LandingPage.stories.tsx
+
+**CRITICAL ACHIEVEMENT**: Complete professional splash page redesign with enhanced visual hierarchy, proper spacing, and compelling conversion-focused content.
+
+#### Final Status: ALL REQUIREMENTS COMPLETED
+- ✅ **Hero Section**: Premium glassmorphism background with single-line title and balanced content
+- ✅ **Feature Cards**: 4 main platform features with fire gradient rollovers
+- ✅ **Problem Section**: 6 ayu-colored problem cards with varied descriptive badges  
+- ✅ **Solution Section**: Dedicated section with comprehensive solution overview
+- ✅ **CTA Section**: Professional opaque form with founding member messaging
+- ✅ **Content Strategy**: Eliminated repetition, unique messaging per section
+- ✅ **Visual Polish**: Consistent py-4xl spacing, proper card hierarchy, strategic color usage
+
+#### Key Improvements Achieved
+```bash
+# HERO ENHANCEMENTS
+- Single-line title: "THE BOISE GUN CLUB" with font weights (800/300)
+- VendorCard-style glassmorphism background with brass-yellow/copper-orange overlay
+- Balanced 4-point feature list to match StatCards visual weight
+
+# CARD INTERACTIONS  
+- Fire gradient bottom bars on hover (VendorCard-style implementation)
+- 6 ayu colors for problem cards: ayu-red, ayu-blue, ayu-green, ayu-cobalt, ayu-purple, ayu-yellow
+- Descriptive badges: Fragmentation, Isolation, Discovery, Education, Heritage, Advocacy
+
+# LAYOUT RESTRUCTURE
+- Merged 6 problem cards into Platform Features section (eliminated awkward gap)
+- Dedicated Solution section with proper py-4xl spacing
+- Opaque CTA form with proper Input component variant="default" size="lg"
+```
+
+#### Content Strategy Success
+- **Hero**: Strategic business positioning and scale (250K+ gun owners, 4-tier model)
+- **Features**: Technical differentiation and advanced capabilities
+- **Problems**: Market gaps and specific pain points with varied categories
+- **Solution**: Professional tools and comprehensive platform benefits  
+- **CTA**: Launch urgency with partnership integration and founding member exclusivity
+
+#### Business Integration
+- **Partnership messaging** integrated into CTA description
+- **Coming Soon** messaging with "Launch In Progress" 
+- **Founding member perks** with proper brass-yellow star icons
+- **Professional conversion flow** with opaque form and gradient button
+
+**🎯 RESULT**: Professional, conversion-focused splash page ready for MVP launch with proper TBGC design system implementation and strategic business messaging.
+
 ## Key Reference Files
 
 - `src/app/globals.css` - Complete 26-color palette and design tokens
 - `src/components/ui/_component-pattern.tsx` - CVA component template
-- `_resources/specs/` - Component specifications
+- `specs/` - Component specifications and requirements
 - `.github/copilot-instructions.md` - Additional AI coding guidelines
+- `scripts/` - Automation scripts for health checks, fixes, and validation
 - `scripts/fix-storybook.js` - Automated Storybook configuration fixer
 - **MIGRATION_PROGRESS.md** - Detailed sed command tracking and violation inventory
+
+## Project Memory
+
+- The user prefers that all styling use their custom 26-color Idaho Firearms Heritage palette instead of generic Tailwind CSS classes.
+- The user prefers using design tokens and a restrained styling approach to ensure UI components look and function great.
+- Badges should have no shadows and instead use a very light outline in the same color (darker than the badge fill), and colors must come from the global.css palette.
+
+## Storybook Stories Guidance
+
+- When writing Storybook stories, use shared input story components rather than custom ones; buttons should follow flat style rules without shadows; ensure proper text hierarchy with titles larger than descriptions; apply design system rules consistently in Dialog and Tabs stories.

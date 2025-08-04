@@ -6,7 +6,18 @@ const meta: Meta = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'TBGC shadow system following strategic restraint principles. Consistent shadow-flat hover:shadow-elevated pattern across all components for professional appearance.',
+        component: `
+# TBGC Shadow System - Strategic Restraint
+
+**CRITICAL POLICY: Use SHADOWS instead of BORDERS** for visual separation and depth.
+
+## Border Usage Restrictions
+- **ALLOWED**: Alerts, badges, toast notifications, form inputs, tables, explicit outline variants  
+- **FORBIDDEN**: Cards, modals, dropdowns, navigation, content containers
+
+## Shadow Hierarchy  
+Following strategic restraint principles with consistent \`shadow-sm hover:shadow-md\` pattern across all components for professional appearance.
+        `,
       },
     },
     designToken: {

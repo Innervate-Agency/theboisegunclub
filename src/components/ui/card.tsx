@@ -3,48 +3,48 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const cardVariants = cva(
-  // TBGC Design System V5: Stripe-inspired sophisticated shadows
-  "relative flex flex-col rounded-card bg-card text-card-foreground transition-all duration-150 ease-out",
+  // TBGC Design System: Strategic restraint with clean theme-aware design
+  "relative flex flex-col rounded-card bg-card text-card-foreground transition-all duration-300 ease-out",
   {
     variants: {
       variant: {
-        // Default: Clean with good shadows - theme aware
-        default: "bg-card shadow-flat hover:shadow-md",
+        // Default: Clean baseline with shadow system (strategic restraint)
+        default: "bg-card text-card-foreground shadow-sm hover:shadow-md",
         
-        // Elevated: More prominent - theme aware
-        elevated: "bg-card shadow-flat hover:shadow-md hover:-translate-y-1",
+        // Elevated: Subtle elevation with strategic restraint
+        elevated: "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-0.5",
         
-        // Interactive: Clickable feedback - consistent shadows
-        interactive: "bg-card shadow-flat hover:shadow-md hover:-translate-y-0.5 cursor-pointer",
+        // Interactive: Clickable feedback with clear affordance
+        interactive: "bg-card text-card-foreground shadow-sm hover:shadow-md hover:-translate-y-0.5 cursor-pointer hover:bg-card/95",
         
-        // Premium: Consistent default shadows with gradient accent instead of rings
-        premium: "bg-card shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/4 before:via-transparent before:to-copper-orange/3 before:rounded-card before:pointer-events-none",
+        // Premium: Strategic copper-brass accent (inspired by VendorCard copper tier)
+        premium: "bg-card text-card-foreground shadow-sm hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/4 before:via-transparent before:to-copper-orange/3 before:rounded-card before:pointer-events-none",
         
-        // Glass: Modern glassmorphism - consistent shadows
-        glass: "mica-card shadow-flat hover:shadow-md transition-shadow duration-200",
+        // Glass: Windows 11 Mica glassmorphism
+        glass: "mica-card shadow-sm hover:shadow-md transition-all duration-200",
         
-        // Outlined: Strategic restraint - subtle shadow instead of ring
-        outlined: "bg-card shadow-flat hover:shadow-md bg-gradient-to-br from-card/98 to-card/95",
+        // Outlined: Exception - explicit outline variant can use borders per design system policy
+        outlined: "bg-transparent text-card-foreground border border-border hover:bg-card/50 hover:shadow-sm",
         
-        // Subtle: Muted backgrounds - theme aware
-        subtle: "bg-muted hover:bg-card hover:shadow-flat",
+        // Subtle: Muted appearance
+        subtle: "bg-muted text-card-foreground shadow-xs hover:shadow-sm hover:bg-card",
         
-        // Fire: The "fucking great" gradient accent - theme aware
-        fire: "bg-card shadow-flat hover:shadow-md hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        // Fire: Premium fire gradient (inspired by VendorCard gold tier)
+        fire: "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
-        // Fire Blue: Blue to green fire gradient 
-        "fire-blue": "bg-card shadow-flat hover:shadow-md hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        // Fire Blue: Idaho palette blue fire gradient 
+        "fire-blue": "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
-        // Fire Purple: Purple to cobalt fire gradient
-        "fire-purple": "bg-card shadow-flat hover:shadow-md hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        // Fire Green: Idaho palette green fire gradient
+        "fire-green": "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
-        // Fire Green: Green variants fire gradient
-        "fire-green": "bg-card shadow-flat hover:shadow-md hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
+        // Fire Red: Idaho palette red fire gradient
+        "fire-red": "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-copper-orange after:to-safety-red after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
       },
       size: {
-        sm: "",           // Components handle their own padding
-        default: "",      // Components handle their own padding
-        lg: ""            // Components handle their own padding
+        sm: "",              // Subcomponents handle their own padding
+        default: "",         // Subcomponents handle their own padding  
+        lg: ""               // Subcomponents handle their own padding
       }
     },
     defaultVariants: {
@@ -76,7 +76,7 @@ const CardHeader = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>
     return (
       <div
         ref={ref}
-        className={cn("flex flex-col space-y-sm p-md", className)}
+        className={cn("flex flex-col space-y-2 p-6", className)}
         {...props}
       />
     )
@@ -89,7 +89,7 @@ const CardTitle = React.forwardRef<HTMLHeadingElement, React.ComponentProps<"h3"
     return (
       <h3
         ref={ref}
-        className={cn("card-title", className)}
+        className={cn("font-rajdhani font-bold text-body-lg leading-tight", className)}
         {...props}
       />
     )
@@ -102,7 +102,7 @@ const CardDescription = React.forwardRef<HTMLParagraphElement, React.ComponentPr
     return (
       <p
         ref={ref}
-        className={cn("card-body", className)}
+        className={cn("font-noto-sans text-body-sm text-muted-foreground leading-relaxed", className)}
         {...props}
       />
     )
@@ -115,7 +115,7 @@ const CardContent = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">
     return (
       <div
         ref={ref}
-        className={cn("p-md", className)}
+        className={cn("p-6 pt-0", className)}
         {...props}
       />
     )
@@ -128,7 +128,7 @@ const CardFooter = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>
     return (
       <div
         ref={ref}
-        className={cn("flex items-center gap-xs p-md pt-0", className)}
+        className={cn("flex items-center p-6 pt-0", className)}
         {...props}
       />
     )

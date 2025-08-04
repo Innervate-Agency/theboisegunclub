@@ -20,17 +20,11 @@ const meta: Meta<typeof Alert> = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'success', 'warning', 'error', 'info', 'premium', 'elite', 'glass'],
+      options: ['default', 'info', 'success', 'warning', 'destructive'],
     },
     size: {
       control: 'select', 
-      options: ['sm', 'default', 'lg', 'xl'],
-    },
-    dismissible: {
-      control: 'boolean',
-    },
-    animate: {
-      control: 'boolean',
+      options: ['sm', 'default', 'lg'],
     },
   },
   tags: ['autodocs'],
@@ -76,6 +70,7 @@ export const InfoAlert: Story = {
 export const Warning: Story = {
   render: (args) => (
     <Alert variant="warning" {...args}>
+      <AlertTriangle className="h-4 w-4" />
       <AlertTitle>Warning!</AlertTitle>
       <AlertDescription>
         Please be careful when proceeding.
@@ -84,9 +79,97 @@ export const Warning: Story = {
   ),
 };
 
+export const Destructive: Story = {
+  render: (args) => (
+    <Alert variant="destructive" {...args}>
+      <XCircle className="h-4 w-4" />
+      <AlertTitle>Error!</AlertTitle>
+      <AlertDescription>
+        Something went wrong. Please try again.
+      </AlertDescription>
+    </Alert>
+  ),
+};
+
+export const AllVariants: Story = {
+  render: () => (
+    <div className="space-y-md max-w-2xl">
+      <Alert variant="default">
+        <Info className="h-4 w-4" />
+        <AlertTitle>Default Alert</AlertTitle>
+        <AlertDescription>
+          This is a default alert with clean theme-aware styling.
+        </AlertDescription>
+      </Alert>
+      
+      <Alert variant="info">
+        <Info className="h-4 w-4" />
+        <AlertTitle>Information</AlertTitle>
+        <AlertDescription>
+          This is an informational message with blue theme colors.
+        </AlertDescription>
+      </Alert>
+      
+      <Alert variant="success">
+        <CheckCircle className="h-4 w-4" />
+        <AlertTitle>Success!</AlertTitle>
+        <AlertDescription>
+          Your action was completed successfully.
+        </AlertDescription>
+      </Alert>
+      
+      <Alert variant="warning">
+        <AlertTriangle className="h-4 w-4" />
+        <AlertTitle>Warning</AlertTitle>
+        <AlertDescription>
+          Please review this information carefully.
+        </AlertDescription>
+      </Alert>
+      
+      <Alert variant="destructive">
+        <XCircle className="h-4 w-4" />
+        <AlertTitle>Error</AlertTitle>
+        <AlertDescription>
+          An error occurred. Please try again later.
+        </AlertDescription>
+      </Alert>
+    </div>
+  ),
+};
+
+export const Sizes: Story = {
+  render: () => (
+    <div className="space-y-md max-w-2xl">
+      <Alert size="sm" variant="info">
+        <Info className="h-4 w-4" />
+        <AlertTitle>Small Alert</AlertTitle>
+        <AlertDescription>
+          This is a compact alert with smaller text and padding.
+        </AlertDescription>
+      </Alert>
+      
+      <Alert size="default" variant="success">
+        <CheckCircle className="h-4 w-4" />
+        <AlertTitle>Default Size Alert</AlertTitle>
+        <AlertDescription>
+          This is the standard alert size with balanced spacing.
+        </AlertDescription>
+      </Alert>
+      
+      <Alert size="lg" variant="warning">
+        <AlertTriangle className="h-4 w-4" />
+        <AlertTitle>Large Alert</AlertTitle>
+        <AlertDescription>
+          This is a large alert with generous padding and bigger text for important messages.
+        </AlertDescription>
+      </Alert>
+    </div>
+  ),
+};
+
 export const Error: Story = {
   render: (args) => (
-    <Alert variant="error" {...args}>
+    <Alert variant="destructive" {...args}>
       <AlertTitle>Error!</AlertTitle>
       <AlertDescription>
         Something went wrong. Please try again.
@@ -97,7 +180,7 @@ export const Error: Story = {
 
 export const Premium: Story = {
   render: (args) => (
-    <Alert variant="premium" {...args}>
+    <Alert variant="info" {...args}>
       <AlertTitle>Premium Feature</AlertTitle>
       <AlertDescription>
         This is a premium feature. Thanks for being a member!
@@ -108,7 +191,7 @@ export const Premium: Story = {
 
 export const Dismissible: Story = {
   render: (args) => (
-    <Alert dismissible {...args}>
+    <Alert {...args}>
       <AlertTitle>Dismissible</AlertTitle>
       <AlertDescription>
         You can close this alert by clicking the &apos;X&apos; icon.
@@ -117,123 +200,9 @@ export const Dismissible: Story = {
   ),
 };
 
-// All Variants Showcase
-export const AllVariants: Story = {
-  render: () => (
-    <div className="space-y-md">
-      <h2 className="text-display-md font-rajdhani font-bold mb-base">Alert Variants</h2>
-      
-      <div className="space-y-base">
-        <Alert variant="default">
-          <Info />
-          <AlertTitle>Default Alert</AlertTitle>
-          <AlertDescription>
-            Clean, professional baseline with Stripe-inspired micro-interactions.
-          </AlertDescription>
-        </Alert>
-        
-        <Alert variant="success">
-          <CheckCircle />
-          <AlertTitle>Success Alert</AlertTitle>
-          <AlertDescription>
-            Successful operations with subtle gradients and data visualization shadows.
-          </AlertDescription>
-        </Alert>
-        
-        <Alert variant="warning">
-          <AlertTriangle />
-          <AlertTitle>Warning Alert</AlertTitle>
-          <AlertDescription>
-            Brass Yellow to Copper Orange gradient hints for important notices.
-          </AlertDescription>
-        </Alert>
-        
-        <Alert variant="error">
-          <XCircle />
-          <AlertTitle>Error Alert</AlertTitle>
-          <AlertDescription>
-            Clear error communication with proper contrast and accessibility.
-          </AlertDescription>
-        </Alert>
-        
-        <Alert variant="info">
-          <Info />
-          <AlertTitle>Info Alert</AlertTitle>
-          <AlertDescription>
-            Professional information display with enhanced visual hierarchy.
-          </AlertDescription>
-        </Alert>
-        
-        <Alert variant="premium">
-          <Zap />
-          <AlertTitle>Premium Alert</AlertTitle>
-          <AlertDescription>
-            Windows 11 Mica effects with Brass Yellow accent and hover enhancements.
-          </AlertDescription>
-        </Alert>
-        
-        <Alert variant="elite">
-          <Zap />
-          <AlertTitle>Elite Alert</AlertTitle>
-          <AlertDescription>
-            Maximum impact with animated shimmer, enhanced Mica effects, and scale transforms.
-          </AlertDescription>
-        </Alert>
-        
-        <Alert variant="glass">
-          <Bell />
-          <AlertTitle>Glass Alert</AlertTitle>
-          <AlertDescription>
-            Opaque glass with backdrop blur for overlays and hero sections.
-          </AlertDescription>
-        </Alert>
-      </div>
-    </div>
-  ),
-};
 
-// Size Variations
-export const SizeVariations: Story = {
-  render: () => (
-    <div className="space-y-md">
-      <h2 className="text-display-md font-rajdhani font-bold mb-base">Size Options</h2>
-      
-      <div className="space-y-base">
-        <Alert variant="success" size="sm">
-          <CheckCircle />
-          <AlertTitle>Small Alert</AlertTitle>
-          <AlertDescription>
-            Compact size for sidebar notifications.
-          </AlertDescription>
-        </Alert>
-        
-        <Alert variant="info" size="default">
-          <Info />
-          <AlertTitle>Default Alert</AlertTitle>
-          <AlertDescription>
-            Standard size for most use cases with optimal readability.
-          </AlertDescription>
-        </Alert>
-        
-        <Alert variant="warning" size="lg">
-          <AlertTriangle />
-          <AlertTitle>Large Alert</AlertTitle>
-          <AlertDescription>
-            Larger size for important announcements and featured content.
-          </AlertDescription>
-        </Alert>
-        
-        <Alert variant="premium" size="xl">
-          <Zap />
-          <AlertTitle>Extra Large Alert</AlertTitle>
-          <AlertDescription>
-            Maximum size for hero sections and major announcements with premium styling.
-          </AlertDescription>
-        </Alert>
-      </div>
-    </div>
-  ),
-};
+
+
 
 // Gun Club Context Examples
 export const GunClubExamples: Story = {
@@ -242,7 +211,7 @@ export const GunClubExamples: Story = {
       <h2 className="text-display-md font-rajdhani font-bold mb-base">Gun Club Context</h2>
       
       <div className="space-y-base">
-        <Alert variant="warning" dismissible>
+        <Alert variant="warning">
           <Shield />
           <AlertTitle>Range Safety Notice</AlertTitle>
           <AlertDescription>
@@ -258,7 +227,7 @@ export const GunClubExamples: Story = {
           </AlertDescription>
         </Alert>
         
-        <Alert variant="premium">
+        <Alert variant="info">
           <Star />
           <AlertTitle>Premium Member Benefit</AlertTitle>
           <AlertDescription>
@@ -266,7 +235,7 @@ export const GunClubExamples: Story = {
           </AlertDescription>
         </Alert>
         
-        <Alert variant="elite">
+        <Alert variant="success">
           <Target />
           <AlertTitle>Elite Achievement Unlocked</AlertTitle>
           <AlertDescription>
@@ -274,7 +243,7 @@ export const GunClubExamples: Story = {
           </AlertDescription>
         </Alert>
         
-        <Alert variant="error">
+        <Alert variant="destructive">
           <XCircle />
           <AlertTitle>Range Closure</AlertTitle>
           <AlertDescription>
@@ -302,15 +271,15 @@ export const InteractiveFeatures: Story = {
         <h2 className="text-display-md font-rajdhani font-bold mb-base">Interactive Features</h2>
         
         <div className="space-y-base">
-          <Alert variant="premium" dismissible animate>
+          <Alert variant="info" >
             <Zap />
             <AlertTitle>Animated Premium Alert</AlertTitle>
             <AlertDescription>
-              This alert features entrance animations, Mica effects, and dismissible functionality.
+              This alert features entrance animations, Mica effects, and functionality.
             </AlertDescription>
           </Alert>
           
-          <Alert variant="elite" dismissible animate>
+          <Alert variant="success" >
             <Star />
             <AlertTitle>Elite Interactive Alert</AlertTitle>
             <AlertDescription>
@@ -318,7 +287,7 @@ export const InteractiveFeatures: Story = {
             </AlertDescription>
           </Alert>
           
-          <Alert variant="glass" dismissible>
+          <Alert variant="default">
             <Bell />
             <AlertTitle>Glass Effect Alert</AlertTitle>
             <AlertDescription>
@@ -365,7 +334,7 @@ export const FusionShowcase: Story = {
         {/* Windows 11 Mica */}
         <div className="space-y-base">
           <h3 className="font-rajdhani font-semibold text-body-lg">Windows 11 Mica</h3>
-          <Alert variant="premium">
+          <Alert variant="info">
             <Zap />
             <AlertTitle>Material Depth</AlertTitle>
             <AlertDescription>
@@ -393,19 +362,17 @@ export const FusionShowcase: Story = {
 // Interactive Playground
 export const Playground: Story = {
   args: {
-    variant: 'premium',
+    variant: 'info',
     size: 'default',
-    dismissible: true,
-    animate: true,
   },
   render: (args) => (
     <div className="space-y-base">
       <h3 className="font-rajdhani font-semibold">Interactive Alert</h3>
       <Alert {...args}>
-        <Zap />
+        <Info className="h-4 w-4" />
         <AlertTitle>Customizable Alert</AlertTitle>
         <AlertDescription>
-          Use the controls to explore different variants, sizes, and features.
+          Use the controls to explore different variants and sizes.
         </AlertDescription>
       </Alert>
     </div>

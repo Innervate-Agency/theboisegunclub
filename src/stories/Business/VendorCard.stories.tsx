@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/nextjs'
 import { VendorCard } from '../../components/ui/VendorCard'
 
@@ -11,20 +12,24 @@ const meta: Meta<typeof VendorCard> = {
         component: `
 # VendorCard - TBGC Business Directory Component
 
-The **VendorCard** component showcases the complete TBGC design system with 4 pricing tiers for vendor subscriptions. Built specifically for the Treasure Valley firearms marketplace.
+The **VendorCard** component showcases the complete TBGC design system with strategic tier progression for vendor subscriptions. Built specifically for the Treasure Valley firearms marketplace.
 
-## Pricing Tiers
-- **FREE**: Basic directory listing
-- **COPPER** ($49/mo): Enhanced with photos & analytics  
-- **SILVER** ($99/mo): Featured placement & reviews
-- **GOLD** ($199/mo): Premium with sponsorship & fire gradients
+## Strategic Pricing Tiers
+- **FREE** ($0): Clean minimalism - content focused
+- **COPPER** ($49/mo): ONE strategic accent (copper badge) - enhanced presence
+- **SILVER** ($99/mo): Enhanced metallic presence - featured placement & reviews  
+- **GOLD** ($199/mo): Premium fire treatment (ONLY tier with fire) - sponsorship & gradients
 
 ## Design System Features
-- Fire gradient animations on Gold tier
-- Proper Stripe-inspired shadow hierarchy 
-- TBGC 26-color palette integration
+- Strategic restraint - each tier makes the next obviously more valuable
+- Fire gradient animations on Gold tier ONLY
+- Proper Stripe-inspired shadow hierarchy with strategic restraint
+- TBGC 26-color palette integration (scope-blue, rifling-green, etc.)
 - Responsive typography with Rajdhani/Noto Sans
 - Component state utilities from globals.css
+
+## Visual Hierarchy Philosophy
+Each tier should drive subscription upgrades through intentional design choices, not visual noise.
         `
       }
     }
@@ -39,10 +44,7 @@ The **VendorCard** component showcases the complete TBGC design system with 4 pr
       control: 'select', 
       options: ['sm', 'md', 'lg']
     },
-    featured: {
-      control: 'boolean',
-      description: 'Enhanced hover animations'
-    },
+
     isSponsored: {
       control: 'boolean',
       description: 'Show sponsored badge (Gold tier only)'
@@ -122,9 +124,7 @@ export const SilverTier: Story = {
   args: {
     ...sampleBusinesses.gunsmith,
     tier: 'silver',
-    isVerified: true,
-    featured: true,
-    monthlyLeads: undefined
+    isVerified: true
   }
 }
 
@@ -134,7 +134,6 @@ export const GoldTier: Story = {
     tier: 'gold',
     isVerified: true,
     isSponsored: true,
-    featured: true,
     monthlyLeads: 42,
     specialties: ["Premium Builds", "NFA Specialist", "Law Enforcement", "Training"]
   }
@@ -169,7 +168,7 @@ export const AllTiers: Story = {
           {...sampleBusinesses.gunsmith}
           tier="silver"
           isVerified={true}
-          featured={true}
+          
         />
       </div>
       
@@ -180,7 +179,7 @@ export const AllTiers: Story = {
           tier="gold"
           isVerified={true}
           isSponsored={true}
-          featured={true}
+          
           monthlyLeads={42}
           specialties={["Premium Builds", "NFA Specialist", "Law Enforcement", "Training"]}
         />
@@ -228,7 +227,6 @@ export const TrainingAcademy: Story = {
     reviewCount: 203,
     isVerified: true,
     isSponsored: true,
-    featured: true,
     monthlyLeads: 67,
     specialties: ["CCW Classes", "Advanced Tactical", "NRA Certified", "Corporate Training"]
   }
@@ -239,14 +237,14 @@ export const ResponsiveGrid: Story = {
     <div className="space-y-lg">
       {/* Mobile: Single column */}
       <div className="md:hidden space-y-base">
-        <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true} featured={true} monthlyLeads={42} />
+        <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true}  monthlyLeads={42} />
         <VendorCard {...sampleBusinesses.range} tier="silver" isVerified={true} />
         <VendorCard {...sampleBusinesses.gunsmith} tier="copper" isVerified={true} />
       </div>
       
       {/* Tablet: 2 columns */}
       <div className="hidden md:grid lg:hidden grid-cols-2 gap-lg">
-        <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true} featured={true} monthlyLeads={42} />
+        <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true}  monthlyLeads={42} />
         <VendorCard {...sampleBusinesses.range} tier="silver" isVerified={true} />
         <VendorCard {...sampleBusinesses.gunsmith} tier="copper" isVerified={true} />
         <VendorCard {...sampleBusinesses.gunShop} tier="free" isVerified={false} specialties={[]} />
@@ -254,8 +252,8 @@ export const ResponsiveGrid: Story = {
       
       {/* Desktop: 3 columns */} 
       <div className="hidden lg:grid grid-cols-3 gap-lg">
-        <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true} featured={true} monthlyLeads={42} />
-        <VendorCard {...sampleBusinesses.range} tier="silver" isVerified={true} featured={true} />
+        <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true}  monthlyLeads={42} />
+        <VendorCard {...sampleBusinesses.range} tier="silver" isVerified={true}  />
         <VendorCard {...sampleBusinesses.gunsmith} tier="copper" isVerified={true} />
         <VendorCard {...sampleBusinesses.gunShop} tier="free" isVerified={false} specialties={[]} />
         <VendorCard {...sampleBusinesses.range} tier="copper" isVerified={true} />
@@ -267,6 +265,118 @@ export const ResponsiveGrid: Story = {
     docs: {
       description: {
         story: 'Responsive grid layout demonstrating how VendorCards adapt to different screen sizes and maintain proper spacing.'
+      }
+    }
+  }
+}
+
+// Strategic tier progression - showing business value hierarchy
+export const StrategicTierProgression: Story = {
+  render: () => (
+    <div className="space-y-lg max-w-7xl">
+      <div className="text-center mb-lg">
+        <h2 className="font-rajdhani font-bold text-display-md mb-xs">Strategic Design Hierarchy</h2>
+        <p className="text-muted-foreground">Each tier should make the next one obviously more valuable - driving subscription upgrades through intentional design choices.</p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+        <div className="space-y-base">
+          <div className="text-center">
+            <h3 className="font-rajdhani font-bold text-body-lg text-muted-foreground">FREE</h3>
+            <p className="text-caption text-muted-foreground mb-xs">$0/month</p>
+            <p className="text-caption text-muted-foreground">Clean minimalism</p>
+          </div>
+          <VendorCard
+            businessName="Basic Firearms"
+            businessType="Local Gun Shop"  
+            description="Simple, professional firearms dealer serving the community."
+            address="123 Main St, Boise, ID"
+            phone="(208) 555-0100"
+            rating={4.2}
+            reviewCount={45}
+            tier="free"
+            isVerified={false}
+            specialties={[]}
+          />
+        </div>
+        
+        <div className="space-y-base">
+          <div className="text-center">
+            <h3 className="font-rajdhani font-bold text-body-lg text-copper-orange">COPPER</h3>
+            <p className="text-caption text-muted-foreground mb-xs">$49/month</p>
+            <p className="text-caption text-muted-foreground">One strategic accent</p>
+          </div>
+          <VendorCard
+            businessName="Enhanced Outfitters"
+            businessType="Outdoor Gear & Firearms"
+            description="Quality gear with enhanced visibility and customer analytics."
+            address="456 Valley Rd, Meridian, ID"
+            phone="(208) 555-0200"
+            rating={4.5}
+            reviewCount={127}
+            tier="copper"
+            isVerified={true}
+            specialties={["Outdoor Gear", "Hunting Supplies"]}
+          />
+        </div>
+        
+        <div className="space-y-base">
+          <div className="text-center">
+            <h3 className="font-rajdhani font-bold text-body-lg text-scope-blue">SILVER</h3>
+            <p className="text-caption text-muted-foreground mb-xs">$99/month</p>
+            <p className="text-caption text-muted-foreground">Enhanced metallic presence</p>
+          </div>
+          <VendorCard
+            businessName="Featured Firearms Co"
+            businessType="Premium Dealer"
+            description="Featured placement with enhanced customer engagement and review management."
+            address="789 Professional Ave, Boise, ID"
+            phone="(208) 555-0300"
+            rating={4.7}
+            reviewCount={203}
+            tier="silver"
+            isVerified={true}
+            
+            specialties={["Premium Firearms", "Custom Services", "Expert Consultation"]}
+          />
+        </div>
+        
+        <div className="space-y-base">
+          <div className="text-center">
+            <h3 className="font-rajdhani font-bold text-body-lg text-brass-yellow">GOLD</h3>
+            <p className="text-caption text-muted-foreground mb-xs">$199/month</p>
+            <p className="text-caption text-muted-foreground">Premium fire treatment</p>
+          </div>
+          <VendorCard
+            businessName="Elite Arms Collective"
+            businessType="Premium Collection"
+            description="Maximum impact sponsorship with fire gradients, enhanced Mica effects, and VIP treatment."
+            address="1000 Executive Blvd, Boise, ID"
+            phone="(208) 555-0400"
+            rating={4.9}
+            reviewCount={567}
+            tier="gold"
+            isVerified={true}
+            isSponsored={true}
+            
+            monthlyLeads={42}
+            specialties={["Custom Rifles", "Competition Arms", "Collector Items", "VIP Service"]}
+          />
+        </div>
+      </div>
+      
+      <div className="text-center mt-lg p-md bg-muted/50 rounded-card">
+        <p className="text-body-sm text-muted-foreground">
+          <strong>Strategic Restraint Philosophy:</strong> Each tier uses intentional design enhancements to create clear value progression, 
+          encouraging upgrades through visual hierarchy rather than excessive decoration.
+        </p>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Strategic tier progression showing how each subscription level provides clear visual value over the previous tier, driving business upgrades through intentional design choices.'
       }
     }
   }

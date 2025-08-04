@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import {
   Tooltip,
@@ -13,7 +14,7 @@ const meta: Meta<typeof Tooltip> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'overlay'],
 };
 
 export default meta;
@@ -24,7 +25,7 @@ export const Default: Story = {
     <TooltipProvider>
       <Tooltip {...args}>
         <TooltipTrigger asChild>
-          <Button variant="outline">Hover</Button>
+          <Button variant="ghost">Hover</Button>
         </TooltipTrigger>
         <TooltipContent>
           <p>Add to library</p>

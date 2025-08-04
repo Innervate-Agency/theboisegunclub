@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import {
   Tabs,
@@ -15,8 +16,27 @@ const meta: Meta<typeof Tabs> = {
   component: Tabs,
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: `
+# Tabs - TBGC Navigation Component
+
+Accessible tab navigation built with Radix UI and styled with TBGC design system principles.
+
+## Key Features
+- **Strategic restraint** - Clean shadow system instead of heavy borders
+- **Proper spacing** - Uses CSS variables for consistent spacing tokens
+- **Active state styling** - Subtle shadow and background changes for selected tabs
+- **Accessibility** - Full keyboard navigation and screen reader support
+- **Theme-aware** - Supports both light and dark modes
+
+## Usage
+Use for organizing related content into separate views, such as account settings, forms, or content categories.
+        `,
+      },
+    },
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'molecule', 'navigation'],
 };
 
 export default meta;
@@ -37,18 +57,18 @@ export const Default: Story = {
               Make changes to your account here. Click save when you&apos;re done.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-xs">
-            <div className="space-y-micro">
+          <CardContent className="space-y-[var(--space-xs)]">
+            <div className="space-y-[var(--space-micro)]">
               <Label htmlFor="name">Name</Label>
               <Input id="name" defaultValue="Pedro Duarte" />
             </div>
-            <div className="space-y-micro">
+            <div className="space-y-[var(--space-micro)]">
               <Label htmlFor="username">Username</Label>
               <Input id="username" defaultValue="@peduarte" />
             </div>
           </CardContent>
           <CardFooter>
-            <Button size="sm">Save changes</Button>
+            <Button variant="flat" size="sm">Save changes</Button>
           </CardFooter>
         </Card>
       </TabsContent>
@@ -60,18 +80,18 @@ export const Default: Story = {
               Change your password here. After saving, you&apos;ll be logged out.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-xs">
-            <div className="space-y-micro">
+          <CardContent className="space-y-[var(--space-xs)]">
+            <div className="space-y-[var(--space-micro)]">
               <Label htmlFor="current">Current password</Label>
               <Input id="current" type="password" />
             </div>
-            <div className="space-y-micro">
+            <div className="space-y-[var(--space-micro)]">
               <Label htmlFor="new">New password</Label>
               <Input id="new" type="password" />
             </div>
           </CardContent>
           <CardFooter>
-            <Button size="sm">Save password</Button>
+            <Button variant="flat" size="sm">Save password</Button>
           </CardFooter>
         </Card>
       </TabsContent>

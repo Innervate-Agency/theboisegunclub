@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 // TBGC Enhanced Input - Complete Design System Application
 const enhancedInputVariants = cva(
   // Foundation: Flat elements inside containers (Stripe pattern) + proper typography
-  "flex w-full min-w-0 border bg-transparent font-noto-sans transition-stripe-fast outline-none file:border-0 file:bg-transparent file:text-body-sm file:font-medium placeholder:text-muted-foreground selection:bg-brass-yellow selection:text-gunmetal-black shadow-flat",
+  "flex w-full min-w-0 border bg-transparent font-noto-sans transition-stripe-fast outline-none file:border-0 file:bg-transparent file:text-body-sm file:font-medium placeholder:text-muted-foreground selection:bg-brass-yellow selection:text-gunmetal-black",
   {
     variants: {
       variant: {
@@ -21,11 +21,11 @@ const enhancedInputVariants = cva(
         // Glass: Mica effect with backdrop blur (flat shadow)
         glass: "mica-overlay border-border/30 text-foreground hover:border-border/50 hover:bg-card/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20 backdrop-blur-sm",
         
-        // Premium: Brass-accented with subtle glow
-        premium: "bg-input border-brass-yellow/20 text-foreground hover:border-brass-yellow/40 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20 focus-visible:shadow-brass",
+        // Premium: Brass-accented variant
+        premium: "bg-input border-brass-yellow/20 text-foreground hover:border-brass-yellow/40 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
         
-        // Elite: Copper-accented with stronger effects
-        elite: "bg-input border-copper-orange/20 text-foreground hover:border-copper-orange/40 focus-visible:border-copper-orange focus-visible:ring-3 focus-visible:ring-copper-orange/20 focus-visible:shadow-copper",
+        // Elite: Copper-accented variant
+        elite: "bg-input border-copper-orange/20 text-foreground hover:border-copper-orange/40 focus-visible:border-copper-orange focus-visible:ring-3 focus-visible:ring-copper-orange/20",
       },
       size: {
         // Proper sizing using design tokens

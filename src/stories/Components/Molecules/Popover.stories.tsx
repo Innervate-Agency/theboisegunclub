@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import React from 'react';
 import {
   Popover,
   PopoverContent,
@@ -24,18 +25,18 @@ export const Default: Story = {
   render: (args) => (
     <Popover {...args}>
       <PopoverTrigger asChild>
-        <Button variant="outline">Open popover</Button>
+        <Button variant="ghost">Open popover</Button>
       </PopoverTrigger>
       <PopoverContent className="w-80">
-        <div className="grid gap-base">
-          <div className="space-y-xs">
+        <div className="grid gap-[var(--space-base)]">
+          <div className="space-y-[var(--space-xs)]">
             <h4 className="font-medium leading-none">Dimensions</h4>
             <p className="text-body-sm text-muted-foreground">
               Set the dimensions for the layer.
             </p>
           </div>
-          <div className="grid gap-xs">
-            <div className="grid grid-cols-3 items-center gap-base">
+          <div className="grid gap-[var(--space-xs)]">
+            <div className="grid grid-cols-3 items-center gap-[var(--space-base)]">
               <Label htmlFor="width">Width</Label>
               <Input
                 id="width"
@@ -43,7 +44,7 @@ export const Default: Story = {
                 className="col-span-2 h-8"
               />
             </div>
-            <div className="grid grid-cols-3 items-center gap-base">
+            <div className="grid grid-cols-3 items-center gap-[var(--space-base)]">
               <Label htmlFor="maxWidth">Max. width</Label>
               <Input
                 id="maxWidth"
@@ -51,7 +52,7 @@ export const Default: Story = {
                 className="col-span-2 h-8"
               />
             </div>
-            <div className="grid grid-cols-3 items-center gap-base">
+            <div className="grid grid-cols-3 items-center gap-[var(--space-base)]">
               <Label htmlFor="height">Height</Label>
               <Input
                 id="height"
@@ -59,7 +60,7 @@ export const Default: Story = {
                 className="col-span-2 h-8"
               />
             </div>
-            <div className="grid grid-cols-3 items-center gap-base">
+            <div className="grid grid-cols-3 items-center gap-[var(--space-base)]">
               <Label htmlFor="maxHeight">Max. height</Label>
               <Input
                 id="maxHeight"

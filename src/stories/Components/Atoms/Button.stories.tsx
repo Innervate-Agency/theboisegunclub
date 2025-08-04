@@ -971,14 +971,15 @@ export const BusinessCard: Story = {
 
 export const SearchInterface: Story = {
   render: () => (
-    <div className="bg-range-white p-md rounded-large shadow-flat border border-case-hardened/20 max-w-lg space-y-base">
+    <div className="bg-range-white p-md rounded-large border border-case-hardened/20 max-w-lg space-y-base">
       <div className="flex gap-xs">
         <div className="flex-1 relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
           <input
             type="text"
             placeholder="Search members..."
-            className="w-full pl-2xl pr-base py-xs border border-case-hardened/30 rounded-card focus:outline-none focus:ring-2 focus:ring-brass-yellow/50 focus:border-brass-yellow bg-shooting-bench text-blued-steel placeholder-case-hardened"
+            className="w-full pr-base py-xs border border-case-hardened/30 rounded-card focus:outline-none focus:ring-2 focus:ring-brass-yellow/50 focus:border-brass-yellow bg-shooting-bench text-blued-steel placeholder-case-hardened"
+            style={{paddingLeft: '48px'}}
           />
         </div>
         <Button variant="accent">

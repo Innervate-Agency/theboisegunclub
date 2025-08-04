@@ -289,7 +289,8 @@ export default function EventsPage() {
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 icon-sm text-case-hardened" />
                 <Input
                   placeholder="Search events by name, location, or type..."
-                  className="pl-[var(--space-2xl)] bg-white border-scope-blue/30 focus:border-scope-blue"
+                  className="bg-white border-scope-blue/30 focus:border-scope-blue"
+                  style={{paddingLeft: '48px'}}
                 />
               </div>
             </div>

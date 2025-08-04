@@ -17,9 +17,9 @@ const contactFormVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-card border border-border rounded-card shadow-flat",
-        glass: "mica-card border-border/20 rounded-card shadow-elevated",
-        minimal: "bg-transparent border-0 shadow-none"
+        default: "bg-card border border-border rounded-card",
+        glass: "mica-card border-border/20 rounded-card",
+        minimal: "bg-transparent border-0"
       }
     },
     defaultVariants: {
@@ -96,23 +96,31 @@ export function ContactForm({
 
         <div className="space-y-[var(--space-xs)]">
           <Label htmlFor="email">Email Address *</Label>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="john@example.com"
-            required
-          />
+          <div className="relative">
+            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="john@example.com"
+              className="pl-xl"
+              required
+            />
+          </div>
         </div>
 
         <div className="space-y-[var(--space-xs)]">
           <Label htmlFor="phone">Phone Number</Label>
-          <Input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="(208) 555-0123"
-          />
+          <div className="relative">
+            <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
+            <Input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="(208) 555-0123"
+              style={{paddingLeft: '48px'}}
+            />
+          </div>
         </div>
       </>
     )

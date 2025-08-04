@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import React from 'react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -33,7 +34,7 @@ export const Default: Story = {
   render: (args) => (
     <DropdownMenu {...args}>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open</Button>
+        <Button variant="ghost">Open</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>

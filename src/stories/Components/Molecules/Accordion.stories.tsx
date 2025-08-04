@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import {
   Accordion,
@@ -12,7 +13,7 @@ const meta: Meta<typeof Accordion> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'stable', 'molecule'],
   argTypes: {},
 };
 
@@ -21,24 +22,23 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (args) => (
-    <Accordion type="single" collapsible className="w-[400px]" {...args}>
+    <Accordion type="single" collapsible className="w-[450px]" {...args}>
       <AccordionItem value="item-1">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+        <AccordionTrigger>Firearm Safety Requirements</AccordionTrigger>
         <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
+          All range users must complete our comprehensive safety orientation and demonstrate proper firearm handling before using the facilities.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">
-        <AccordionTrigger>Is it styled?</AccordionTrigger>
+        <AccordionTrigger>Range Membership Benefits</AccordionTrigger>
         <AccordionContent>
-          Yes. It comes with default styles that matches the other
-          components&apos; aesthetic.
+          Members enjoy unlimited range access, discounted training courses, priority event booking, and access to our premium equipment collection.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-3">
-        <AccordionTrigger>Is it animated?</AccordionTrigger>
+        <AccordionTrigger>Training Course Schedule</AccordionTrigger>
         <AccordionContent>
-          Yes. It&apos;s animated by default, but you can disable it if you prefer.
+          We offer beginner through advanced courses every weekend, with specialized tactical and competitive shooting programs available monthly.
         </AccordionContent>
       </AccordionItem>
     </Accordion>

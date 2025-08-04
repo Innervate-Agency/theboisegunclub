@@ -106,7 +106,7 @@ export default function FAQAccordion({
               placeholder="Search questions..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-[var(--space-2xl)]"
+              style={{paddingLeft: '48px'}}
             />
           </div>
         </div>

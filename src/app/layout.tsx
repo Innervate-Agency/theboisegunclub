@@ -26,8 +26,14 @@ const notoSerif = Noto_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "The Boise Gun Club - Treasure Valley Firearms Collective",
-  description: "Your comprehensive digital hub uniting ALL Treasure Valley firearms communities. Featuring every club, event, all regional businesses, and connecting enthusiasts, families, and professionals across our premier firearms region.",
+  title: "The Boise Gun Club - Treasure Valley Firearms Directory & Community",
+  description: "Treasure Valley's comprehensive firearms community platform. Directory of 100+ local gun shops, ranges, and trainers. Unified events calendar from all clubs. Community forum connecting Idaho firearms enthusiasts, families, and professionals.",
+  keywords: "Treasure Valley firearms, Idaho gun shops, Boise shooting ranges, firearms training, gun clubs Idaho, firearms directory, shooting events, gun community",
+  authors: [{ name: "The Boise Gun Club" }],
+  creator: "The Boise Gun Club",
+  publisher: "The Boise Gun Club",
+  robots: "index, follow",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({

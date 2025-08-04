@@ -8,10 +8,10 @@ const inputVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-background border-border text-foreground shadow-flat hover:border-border/80 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
-        filled: "bg-muted border-border/60 text-foreground shadow-flat hover:bg-background hover:border-border/80 focus-visible:bg-background focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
+        default: "bg-background border-border text-foreground hover:border-border/80 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
+        filled: "bg-muted border-border/60 text-foreground hover:bg-background hover:border-border/80 focus-visible:bg-background focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
         ghost: "bg-transparent border-transparent text-foreground hover:bg-muted/50 focus-visible:bg-muted/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
-        glass: "bg-card/20 backdrop-blur-sm border-border/30 text-card-foreground shadow-glass hover:border-border/50 hover:bg-card/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20 mica-glass"
+        glass: "bg-card/20 backdrop-blur-sm border-border/30 text-card-foreground hover:border-border/50 hover:bg-card/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20 mica-glass"
       },
       size: {
         sm: "h-[var(--input-height-sm)] px-sm py-xs text-body-sm",
@@ -87,7 +87,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
         )}
         {error && (
           <p className="text-caption text-safety-red leading-relaxed flex items-center gap-xs">
-            <svg className="h-icon-xs w-icon-xs flex-shrink-0" viewBox="0 0 16 16" fill="currentColor">
+            <svg className="h-3 w-3 flex-shrink-0" viewBox="0 0 16 16" fill="currentColor">
               <path fillRule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9-3a1 1 0 11-2 0 1 1 0 012 0zM8 7.5a.5.5 0 01.5.5v3a.5.5 0 01-1 0V8a.5.5 0 01.5-.5z" />
             </svg>
             {error}

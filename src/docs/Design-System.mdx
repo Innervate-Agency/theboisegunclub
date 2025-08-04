@@ -263,6 +263,37 @@ text-copper-orange, bg-brass-yellow, border-clubhouse-lawn-green
 
 ## 🧩 COMPONENT PATTERNS
 
+### **Border Usage Policy - CRITICAL RULE**
+
+**BORDERS ARE RESTRICTED** - Only use borders for specific component types:
+
+```tsx
+// ✅ ALLOWED: Components that SHOULD have borders
+- Sonner/Toast notifications
+- Alert components  
+- Badge components
+- Outlined button variants (explicit outline intent)
+- Input/form components (field boundaries)
+- Table components (data separation)
+
+// ❌ FORBIDDEN: Components that should use SHADOWS instead
+- Card components (use shadow-sm, shadow-md, shadow-lg)
+- Modal/Dialog components (use shadows for depth)
+- Dropdown/Popover components (use shadows for elevation)
+- Navigation components (use shadows for hierarchy)
+- Content containers (use shadows for visual separation)
+```
+
+**Shadow System Hierarchy:**
+```css
+/* Use shadows for visual depth and separation */
+shadow-xs    /* Minimal elevation - subtle components */
+shadow-sm    /* Default cards, containers */ 
+shadow-md    /* Interactive states, hover effects */
+shadow-lg    /* Modals, important elevated content */
+shadow-xl    /* Hero sections, major emphasis */
+```
+
 ### **CVA (Class Variance Authority) Pattern**
 
 ```tsx

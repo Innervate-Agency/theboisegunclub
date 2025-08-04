@@ -6,6 +6,12 @@
 @theme {
   /* ================== TBGC DESIGN SYSTEM: V5 CORE ================== */
   
+  /* CRITICAL BORDER USAGE POLICY:
+   * BORDERS are RESTRICTED - only for: alerts, badges, sonner/toast, form inputs, tables, explicit outline variants
+   * USE SHADOWS instead for: cards, modals, dropdowns, navigation, content containers
+   * Shadow hierarchy: shadow-xs (minimal) → shadow-sm (default) → shadow-md (interactive) → shadow-lg (elevated) → shadow-xl (hero)
+   */
+  
   /* Typography - Idaho Firearms Heritage Palette */
   --font-rajdhani: "Rajdhani", "Inter", "system-ui", sans-serif;
   --font-noto-sans: "Noto Sans", "Inter", "system-ui", sans-serif;
@@ -561,6 +567,32 @@
   .px-3xl { padding-left: var(--space-3xl); padding-right: var(--space-3xl); }
   .px-4xl { padding-left: var(--space-4xl); padding-right: var(--space-4xl); }
 
+  /* Padding Left (pl-*) Utilities */
+  .pl-micro { padding-left: var(--space-micro); }
+  .pl-tiny { padding-left: var(--space-tiny); }
+  .pl-xs { padding-left: var(--space-xs); }
+  .pl-sm { padding-left: var(--space-sm); }
+  .pl-base { padding-left: var(--space-base); }
+  .pl-md { padding-left: var(--space-md); }
+  .pl-lg { padding-left: var(--space-lg); }
+  .pl-xl { padding-left: var(--space-xl); }
+  .pl-2xl { padding-left: var(--space-2xl); }
+  .pl-3xl { padding-left: var(--space-3xl); }
+  .pl-4xl { padding-left: var(--space-4xl); }
+
+  /* Padding Right (pr-*) Utilities */
+  .pr-micro { padding-right: var(--space-micro); }
+  .pr-tiny { padding-right: var(--space-tiny); }
+  .pr-xs { padding-right: var(--space-xs); }
+  .pr-sm { padding-right: var(--space-sm); }
+  .pr-base { padding-right: var(--space-base); }
+  .pr-md { padding-right: var(--space-md); }
+  .pr-lg { padding-right: var(--space-lg); }
+  .pr-xl { padding-right: var(--space-xl); }
+  .pr-2xl { padding-right: var(--space-2xl); }
+  .pr-3xl { padding-right: var(--space-3xl); }
+  .pr-4xl { padding-right: var(--space-4xl); }
+
   /* ================== BORDER RADIUS UTILITIES ================== */
   .rounded-micro { border-radius: var(--radius-micro); }
   .rounded-xs { border-radius: var(--radius-xs); }
@@ -680,140 +712,203 @@
       radial-gradient(circle at 75% 70%, rgba(242, 135, 5, 0.04) 0%, transparent 40%);
   }
   
-  /* Specific mica variants for different overlay types */
+  /* Specific mica variants for different overlay types - Windows 11 Mica style */
   .mica-popover {
-    background: var(--popover);
-    -webkit-backdrop-filter: blur(16px) saturate(180%) brightness(105%);
-    backdrop-filter: blur(16px) saturate(180%) brightness(105%);
-    border: 1px solid var(--overlay-border-light);
+    background: rgba(248, 250, 252, 0.76);
+    -webkit-backdrop-filter: blur(15px) saturate(310%) brightness(105%);
+    backdrop-filter: blur(15px) saturate(310%) brightness(105%);
+    border: 1px solid rgba(255, 255, 255, 0.38);
     position: relative;
-    box-shadow: var(--shadow-md);
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.10),
+      0 2px 6px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.45);
     isolation: isolate;
+  }
+
+  .dark .mica-popover {
+    background: rgba(15, 23, 42, 0.80);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    -webkit-backdrop-filter: blur(16px) saturate(270%) brightness(90%) contrast(112%);
+    backdrop-filter: blur(16px) saturate(270%) brightness(90%) contrast(112%);
+    box-shadow: 
+      0 8px 28px rgba(0, 0, 0, 0.28),
+      0 2px 8px rgba(0, 0, 0, 0.20),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
   
   .mica-dropdown {
-    background: rgba(255, 255, 255, 0.18);
-    -webkit-backdrop-filter: blur(18px) saturate(160%) brightness(103%);
-    backdrop-filter: blur(18px) saturate(160%) brightness(103%);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    /* Windows 11 Mica: Mainly opaque with highly saturated blur-through */
+    background: rgba(248, 250, 252, 0.78);
+    -webkit-backdrop-filter: blur(14px) saturate(320%) brightness(106%);
+    backdrop-filter: blur(14px) saturate(320%) brightness(106%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     position: relative;
     box-shadow: 
-      0 4px 20px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      0 8px 32px rgba(0, 0, 0, 0.12),
+      0 2px 8px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
     isolation: isolate;
   }
   
   .dark .mica-dropdown {
-    background: rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    -webkit-backdrop-filter: blur(22px) saturate(180%) brightness(90%);
-    backdrop-filter: blur(22px) saturate(180%) brightness(90%);
+    /* Dark mode: Opaque with saturated background colors bleeding through */
+    background: rgba(15, 23, 42, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    -webkit-backdrop-filter: blur(16px) saturate(280%) brightness(85%) contrast(115%);
+    backdrop-filter: blur(16px) saturate(280%) brightness(85%) contrast(115%);
     box-shadow: 
-      0 4px 20px rgba(0, 0, 0, 0.20),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      0 8px 32px rgba(0, 0, 0, 0.35),
+      0 2px 8px rgba(0, 0, 0, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
   
   .mica-modal {
-    background: rgba(255, 255, 255, 0.20);
-    -webkit-backdrop-filter: blur(24px) saturate(200%) brightness(108%);
-    backdrop-filter: blur(24px) saturate(200%) brightness(108%);
-    border: 1px solid rgba(255, 255, 255, 0.30);
+    /* Windows 11 Mica for modals - highly opaque with saturated blur */
+    background: rgba(248, 250, 252, 0.88);
+    -webkit-backdrop-filter: blur(22px) saturate(380%) brightness(108%);
+    backdrop-filter: blur(22px) saturate(380%) brightness(108%);
+    border: 1px solid rgba(255, 255, 255, 0.45);
     position: relative;
     box-shadow: 
-      0 12px 40px rgba(0, 0, 0, 0.15),
-      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      0 16px 48px rgba(0, 0, 0, 0.15),
+      0 4px 12px rgba(0, 0, 0, 0.10),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
     isolation: isolate;
   }
   
   .dark .mica-modal {
-    background: rgba(0, 0, 0, 0.30);
-    border: 1px solid rgba(255, 255, 255, 0.20);
-    -webkit-backdrop-filter: blur(28px) saturate(220%) brightness(85%);
-    backdrop-filter: blur(28px) saturate(220%) brightness(85%);
+    background: rgba(15, 23, 42, 0.90);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(24px) saturate(320%) brightness(88%) contrast(120%);
+    backdrop-filter: blur(24px) saturate(320%) brightness(88%) contrast(120%);
     box-shadow: 
-      0 12px 40px rgba(0, 0, 0, 0.30),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      0 16px 48px rgba(0, 0, 0, 0.40),
+      0 4px 12px rgba(0, 0, 0, 0.30),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
   }
   
   .mica-tooltip {
-    background: rgba(255, 255, 255, 0.15);
-    -webkit-backdrop-filter: blur(14px) saturate(140%) brightness(102%);
-    backdrop-filter: blur(14px) saturate(140%) brightness(102%);
-    border: 1px solid rgba(255, 255, 255, 0.20);
+    /* Windows 11 Mica for tooltips - balanced opacity with saturated blur */
+    background: rgba(248, 250, 252, 0.72);
+    -webkit-backdrop-filter: blur(12px) saturate(280%) brightness(102%);
+    backdrop-filter: blur(12px) saturate(280%) brightness(102%);
+    border: 1px solid rgba(255, 255, 255, 0.32);
     position: relative;
     box-shadow: 
-      0 2px 12px rgba(0, 0, 0, 0.06),
-      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      0 4px 16px rgba(0, 0, 0, 0.08),
+      0 1px 4px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
     isolation: isolate;
   }
   
   .dark .mica-tooltip {
-    background: rgba(0, 0, 0, 0.20);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    -webkit-backdrop-filter: blur(16px) saturate(160%) brightness(88%);
-    backdrop-filter: blur(16px) saturate(160%) brightness(88%);
+    background: rgba(15, 23, 42, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    -webkit-backdrop-filter: blur(14px) saturate(240%) brightness(90%) contrast(108%);
+    backdrop-filter: blur(14px) saturate(240%) brightness(90%) contrast(108%);
     box-shadow: 
-      0 2px 12px rgba(0, 0, 0, 0.15),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      0 4px 16px rgba(0, 0, 0, 0.25),
+      0 1px 4px rgba(0, 0, 0, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
   
   .mica-toast {
-    background: rgba(255, 255, 255, 0.16);
-    -webkit-backdrop-filter: blur(20px) saturate(190%) brightness(106%);
-    backdrop-filter: blur(20px) saturate(190%) brightness(106%);
-    border: 1px solid rgba(255, 255, 255, 0.22);
+    /* Windows 11 Mica for toasts - opaque with saturated background bleeding */
+    background: rgba(248, 250, 252, 0.74);
+    -webkit-backdrop-filter: blur(16px) saturate(300%) brightness(106%);
+    backdrop-filter: blur(16px) saturate(300%) brightness(106%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     position: relative;
     box-shadow: 
-      0 6px 24px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+      0 8px 28px rgba(0, 0, 0, 0.10),
+      0 2px 8px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.42);
     isolation: isolate;
   }
   
   .dark .mica-toast {
-    background: rgba(0, 0, 0, 0.22);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    -webkit-backdrop-filter: blur(24px) saturate(200%) brightness(88%);
-    backdrop-filter: blur(24px) saturate(200%) brightness(88%);
+    background: rgba(15, 23, 42, 0.80);
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    -webkit-backdrop-filter: blur(18px) saturate(260%) brightness(90%) contrast(112%);
+    backdrop-filter: blur(18px) saturate(260%) brightness(90%) contrast(112%);
     box-shadow: 
-      0 6px 24px rgba(0, 0, 0, 0.18),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      0 8px 28px rgba(0, 0, 0, 0.28),
+      0 2px 8px rgba(0, 0, 0, 0.20),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
   
-  /* Dark mode adjustments for all mica components */
-  .dark .mica-popover,
-  .dark .mica-dropdown,
-  .dark .mica-modal,
-  .dark .mica-tooltip,
-  .dark .mica-toast {
-    border-color: var(--overlay-border-dark);
-    -webkit-backdrop-filter: blur(20px) saturate(200%) brightness(90%);
-    backdrop-filter: blur(20px) saturate(200%) brightness(90%);
+  /* Removed generic dark mode rule - each component now has individual Windows 11 Mica styling */
+  
+  /* ================== ENHANCED TEXT CONTRAST FOR MICA DROPDOWNS ================== */
+  /* Ensure perfect readability against Windows 11 Mica backgrounds */
+  .mica-dropdown {
+    /* Enhanced text contrast and shadows for readability */
+    color: var(--foreground);
+  }
+  
+  .mica-dropdown [data-slot="select-item"] {
+    /* Stronger text contrast for dropdown items */
+    color: var(--foreground);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .mica-dropdown [data-slot="select-item"]:hover,
+  .mica-dropdown [data-slot="select-item"]:focus {
+    /* Enhanced hover/focus states for better visibility */
+    background: var(--accent);
+    color: var(--accent-foreground);
+    text-shadow: none;
+  }
+  
+  .mica-dropdown [data-slot="select-label"] {
+    /* Better label contrast */
+    color: var(--muted-foreground);
+    font-weight: 600;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+  }
+  
+  .dark .mica-dropdown {
+    /* Dark mode text enhancements */
+    color: var(--foreground);
+  }
+  
+  .dark .mica-dropdown [data-slot="select-item"] {
+    /* Dark mode item text */
+    color: var(--foreground);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dark .mica-dropdown [data-slot="select-label"] {
+    /* Dark mode label text */
+    color: var(--muted-foreground);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   }
   
   /* ================== ENHANCED MICA CARD VARIANTS ================== */
-  /* For cards that should have mica effect */
+  /* For cards that should have mica effect - Windows 11 Mica style */
   .mica-card {
-    background: rgba(255, 255, 255, 0.85);
-    -webkit-backdrop-filter: blur(12px) saturate(150%) brightness(102%);
-    backdrop-filter: blur(12px) saturate(150%) brightness(102%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(248, 250, 252, 0.80);
+    -webkit-backdrop-filter: blur(12px) saturate(300%) brightness(104%);
+    backdrop-filter: blur(12px) saturate(300%) brightness(104%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     position: relative;
     isolation: isolate;
   }
   
   .dark .mica-card {
-    background: rgba(75, 75, 75, 0.85);
-    border-color: rgba(255, 255, 255, 0.1);
-    -webkit-backdrop-filter: blur(16px) saturate(180%) brightness(85%);
-    backdrop-filter: blur(16px) saturate(180%) brightness(85%);
+    background: rgba(15, 23, 42, 0.84);
+    border-color: rgba(255, 255, 255, 0.12);
+    -webkit-backdrop-filter: blur(14px) saturate(260%) brightness(88%) contrast(110%);
+    backdrop-filter: blur(14px) saturate(260%) brightness(88%) contrast(110%);
   }
   
-  /* For premium mica cards with brand gradient */
+  /* For premium mica cards with brand gradient - Windows 11 Mica style */
   .mica-card-premium {
-    background: rgba(255, 255, 255, 0.9);
-    -webkit-backdrop-filter: blur(16px) saturate(170%) brightness(105%);
-    backdrop-filter: blur(16px) saturate(170%) brightness(105%);
-    border: 1px solid rgba(242, 203, 5, 0.2);
+    background: rgba(248, 250, 252, 0.85);
+    -webkit-backdrop-filter: blur(16px) saturate(340%) brightness(107%);
+    backdrop-filter: blur(16px) saturate(340%) brightness(107%);
+    border: 1px solid rgba(242, 203, 5, 0.25);
     position: relative;
     isolation: isolate;
   }
@@ -822,19 +917,21 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(242, 203, 5, 0.03) 0%, rgba(242, 135, 5, 0.02) 100%);
+    background: linear-gradient(135deg, rgba(242, 203, 5, 0.04) 0%, rgba(242, 135, 5, 0.03) 100%);
     border-radius: inherit;
     pointer-events: none;
     z-index: -1;
   }
   
   .dark .mica-card-premium {
-    background: rgba(75, 75, 75, 0.9);
-    border-color: rgba(242, 203, 5, 0.3);
+    background: rgba(15, 23, 42, 0.88);
+    border-color: rgba(242, 203, 5, 0.35);
+    -webkit-backdrop-filter: blur(18px) saturate(290%) brightness(92%) contrast(115%);
+    backdrop-filter: blur(18px) saturate(290%) brightness(92%) contrast(115%);
   }
   
   .dark .mica-card-premium::before {
-    background: linear-gradient(135deg, rgba(242, 203, 5, 0.08) 0%, rgba(242, 135, 5, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(242, 203, 5, 0.10) 0%, rgba(242, 135, 5, 0.07) 100%);
   }
   
   .icon-bg-accent { background-color: var(--icon-accent); color: var(--color-nickel-white); }

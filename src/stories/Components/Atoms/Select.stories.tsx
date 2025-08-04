@@ -54,27 +54,29 @@ export const Default: Story = {
 
 export const Premium: Story = {
   render: () => (
-    <Select variant="premium">
-      <SelectTrigger className="w-[250px]">
-        <SelectValue placeholder="Premium selection..." />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel>Premium Options</SelectLabel>
-          <SelectItem value="elite">Elite Membership</SelectItem>
-          <SelectItem value="championship">Championship Access</SelectItem>
-          <SelectItem value="vip">VIP Package</SelectItem>
-        </SelectGroup>
-      </SelectContent>
-    </Select>
+    <div className="bg-gradient-to-br from-brass-yellow/5 to-copper-orange/5 p-md rounded-large">
+      <Select>
+        <SelectTrigger variant="premium" className="w-[250px]">
+          <SelectValue placeholder="Premium selection..." />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            <SelectLabel>Premium Options</SelectLabel>
+            <SelectItem value="elite">Elite Membership</SelectItem>
+            <SelectItem value="championship">Championship Access</SelectItem>
+            <SelectItem value="vip">VIP Package</SelectItem>
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+    </div>
   ),
 }
 
 export const Glass: Story = {
   render: () => (
     <div className="bg-gradient-to-br from-night-sight to-tactical-gray p-lg rounded-large">
-      <Select variant="glass">
-        <SelectTrigger className="w-[250px]">
+      <Select>
+        <SelectTrigger variant="glass" className="w-[250px]">
           <SelectValue placeholder="Glass selection..." />
         </SelectTrigger>
         <SelectContent>
@@ -104,8 +106,8 @@ export const WithIcons: Story = {
         </SelectContent>
       </Select>
 
-      <Select variant="premium">
-        <SelectTrigger leftIcon={<Target className="h-4 w-4" />}>
+      <Select>
+        <SelectTrigger variant="premium" leftIcon={<Target className="h-4 w-4" />}>
           <SelectValue placeholder="Select discipline..." />
         </SelectTrigger>
         <SelectContent>
@@ -202,8 +204,8 @@ export const AllVariants: Story = {
 
       <div className="space-y-base">
         <h3 className="font-semibold text-body-lg">Premium</h3>
-        <Select variant="premium">
-          <SelectTrigger>
+        <Select>
+          <SelectTrigger variant="premium">
             <SelectValue placeholder="Premium variant..." />
           </SelectTrigger>
           <SelectContent>
@@ -214,9 +216,22 @@ export const AllVariants: Story = {
       </div>
 
       <div className="space-y-base">
+        <h3 className="font-semibold text-body-lg">Glass</h3>
+        <Select>
+          <SelectTrigger variant="glass">
+            <SelectValue placeholder="Glass variant..." />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="glass1">Glass Option 1</SelectItem>
+            <SelectItem value="glass2">Glass Option 2</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      <div className="space-y-base">
         <h3 className="font-semibold text-body-lg">Outline</h3>
-        <Select variant="outline">
-          <SelectTrigger>
+        <Select>
+          <SelectTrigger variant="outline">
             <SelectValue placeholder="Outline variant..." />
           </SelectTrigger>
           <SelectContent>
@@ -228,8 +243,8 @@ export const AllVariants: Story = {
 
       <div className="space-y-base">
         <h3 className="font-semibold text-body-lg">Filled</h3>
-        <Select variant="filled">
-          <SelectTrigger>
+        <Select>
+          <SelectTrigger variant="filled">
             <SelectValue placeholder="Filled variant..." />
           </SelectTrigger>
           <SelectContent>

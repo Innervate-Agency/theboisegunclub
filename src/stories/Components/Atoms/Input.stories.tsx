@@ -102,7 +102,7 @@ export const WithIcons: Story = {
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
           <Input
-            className="pl-2xl"
+            className="pl-xl"
             placeholder="Search firearms..."
             type="search"
           />
@@ -112,7 +112,7 @@ export const WithIcons: Story = {
         <div className="relative">
           <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
           <Input
-            className="pl-2xl"
+            style={{paddingLeft: '48px'}}
             placeholder="your@email.com"
             type="email"
           />
@@ -122,7 +122,8 @@ export const WithIcons: Story = {
         <div className="relative">
           <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
           <Input
-            className="pl-2xl pr-2xl"
+            className="pr-2xl"
+            style={{paddingLeft: '48px'}}
             placeholder="Password"
             type={showPassword ? 'text' : 'password'}
           />
@@ -158,7 +159,7 @@ export const InputGroups: Story = {
       >
         <div className="relative">
           <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
-          <Input className="pl-2xl" placeholder="your@email.com" type="email" />
+          <Input className="pl-[var(--space-xl)]" placeholder="your@email.com" type="email" />
         </div>
       </InputGroup>
 
@@ -168,8 +169,8 @@ export const InputGroups: Story = {
       >
         <div className="relative">
           <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
-          <Input 
-            className="pl-2xl" 
+                      <Input 
+            className="pl-[var(--space-xl)]" 
             placeholder="(555) 123-4567" 
             type="tel"
             status="error"
@@ -209,14 +210,14 @@ export const FirearmsFormExamples: Story = {
         >
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
-            <Input className="pl-2xl" placeholder="john@example.com" type="email" />
+            <Input style={{paddingLeft: '48px'}} placeholder="john@example.com" type="email" />
           </div>
         </InputGroup>
 
         <InputGroup label="Phone Number">
           <div className="relative">
             <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
-            <Input className="pl-2xl" placeholder="(208) 555-0123" type="tel" />
+            <Input style={{paddingLeft: '48px'}} placeholder="(208) 555-0123" type="tel" />
           </div>
         </InputGroup>
 
