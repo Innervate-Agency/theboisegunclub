@@ -114,7 +114,7 @@ const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   SelectTriggerProps
 >(({ className, variant, size = "default", leftIcon, children, ...props }, ref) => (
-  <SelectSizeContext.Provider value={size}>
+  <SelectSizeContext.Provider value={size || "default"}>
     <SelectPrimitive.Trigger
       ref={ref}
       data-slot="select-trigger"
