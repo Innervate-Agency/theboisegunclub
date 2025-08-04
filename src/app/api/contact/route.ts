@@ -127,14 +127,19 @@ Reply directly to this email to respond to ${name}
     );
 
   } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    const errorStack = error instanceof Error ? error.stack : undefined;
+    const errorCode = (error as any)?.code;
+    const errorResponse = (error as any)?.response;
+    
     console.error('Contact form error details:', {
-      message: error.message,
-      code: error.code,
-      response: error.response,
-      stack: error.stack
+      message: errorMessage,
+      code: errorCode,
+      response: errorResponse,
+      stack: errorStack
     });
     return NextResponse.json(
-      { error: 'Failed to send email', details: error.message },
+      { error: 'Failed to send email', details: errorMessage },
       { status: 500 }
     );
   }
