@@ -20,12 +20,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Dynamic import of altcha for server-side verification
-    let altcha;
+    // Dynamic import of altcha-lib for server-side verification
+    let verifySolution;
     try {
-      altcha = await import('altcha');
+      const altchaLib = await import('altcha-lib');
+      verifySolution = altchaLib.verifySolution;
     } catch (importError) {
-      console.error('Failed to import altcha:', importError);
+      console.error('Failed to import altcha-lib:', importError);
       return NextResponse.json(
         { error: 'CAPTCHA service unavailable' },
         { status: 500 }
@@ -34,9 +35,9 @@ export async function POST(request: NextRequest) {
 
     // Verify the ALTCHA payload
     try {
-      const verification = await altcha.verifySolution(altchaPayload, process.env.ALTCHA_HMAC_KEY || 'your-secret-hmac-key');
+      const isValid = await verifySolution(altchaPayload, process.env.ALTCHA_HMAC_KEY || 'your-secret-hmac-key');
       
-      if (!verification.verified) {
+      if (!isValid) {
         return NextResponse.json(
           { error: 'Invalid CAPTCHA verification' },
           { status: 400 }
