@@ -45,7 +45,7 @@ const AltchaWidget = forwardRef<AltchaWidgetRef, AltchaWidgetProps>((props, ref)
   React.useEffect(() => {
     const loadAltcha = async () => {
       if (typeof window !== 'undefined' && !customElements.get('altcha-widget')) {
-        const { default: altcha } = await import('altcha');
+        await import('altcha');
       }
     };
 
