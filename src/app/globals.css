@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-/* Fix for Tailwind CSS v4 + next-themes dark mode integration */
-@variant dark (.dark &);
+/* FIXED: Tailwind CSS v4 + next-themes dark mode integration - Modern 2025 syntax */
+@variant dark (&:where(.dark, .dark *));
 
 @theme {
   /* ================== TBGC DESIGN SYSTEM: V5 CORE ================== */
@@ -18,14 +18,15 @@
   --font-serif: "Noto Serif", "Georgia", "Times New Roman", serif;
   
   /* ================== COMPLETE COLOR SYSTEM (26 COLORS) ================== */
+  /* FIXED: Now ALL colors are mapped to Tailwind utilities via @theme directive */
   
-  /* Primary Brand Colors */
+  /* Primary Brand Colors - Available as bg-brass-yellow, text-copper-orange, etc. */
   --color-brass-yellow: #F2CB05;
   --color-copper-orange: #F28705;
   --color-gunmetal-black: #0A0A0A;
   --color-nickel-white: #FFFFFF;
 
-  /* Light Theme: Spring Day at the Range */
+  /* Light Theme: Spring Day at the Range - Available as bg-range-white, text-shooting-bench, etc. */
   --color-range-white: #f8f6f1;
   --color-shooting-bench: #ede7de;
   --color-walnut-stock: #c08051;
@@ -37,32 +38,33 @@
   --color-scope-blue: #5198cd;
   --color-trigger-blue: #3c81c0;
   --color-rifling-green: #6f7822;
-  --color-bore-sight-green: #75B700;    /* Replaced with ayu-green - more vibrant success */
-  --color-safety-red: #FF3B49;         /* Replaced with ayu-red - consistent with crimson-trace */
+  --color-bore-sight-green: #75B700;    /* Available as bg-bore-sight-green */
+  --color-safety-red: #FF3B49;         /* Available as text-safety-red */
 
-  /* Dark Theme: Evening Hunt in the Mountains - Enhanced with Ayu Vibrancy */
+  /* Dark Theme: Evening Hunt in the Mountains - Available as bg-night-sight, text-carbon-fiber, etc. */
   --color-night-sight: #2F3135;
   --color-carbon-fiber: #4B4B4B;
-  --color-tactical-gray: #1C2431;        /* Replaced with ayu-gray - cleaner dark background */
+  --color-tactical-gray: #1C2431;        /* Available as bg-tactical-gray */
   --color-titanium-white: #FDFDFD;
   --color-stainless-steel: #EEF1F7;
   --color-flash-hider: #F25C05;
-  --color-crimson-trace: #FF3B49;        /* Replaced with ayu-red - more vibrant */
-  --color-cerakote-blue: #009FED;        /* Replaced with ayu-blue - electric blue */
+  --color-crimson-trace: #FF3B49;        /* Available as text-crimson-trace */
+  --color-cerakote-blue: #009FED;        /* Available as bg-cerakote-blue */
   --color-ghost-ring: #C9D2EF;
   --color-woodland-camo: #3F6331;
 
-  /* ================== AYU-MIRAGE SECONDARY COLOR PALLETE ================== */
+  /* ================== AYU-MIRAGE SECONDARY COLOR PALETTE ================== */
+  /* FIXED: Now available as bg-ayu-blue, text-ayu-green, border-ayu-purple, etc. */
 
-  /* Secondary Brand Colors */
-  --color-ayu-blue: #009FED;          /* Bright blue for accents */
-  --color-ayu-green: #75B700;        /* Fresh green for highlights */
-  --color-ayu-teal: #00C496;        /* Fresh teal for highlights */
-  --color-ayu-cobalt: #0C4367;       /* Deep cobalt for primary actions */
-  --color-ayu-purple: #6E5083;      /* Soft purple for subtle details */
-  --color-ayu-yellow: #FFA600;      /* Warm yellow for highlights */
-  --color-ayu-red: #FF3B49;         /* Vibrant red for alerts */
-  --color-ayu-gray: #1C2431;        /* Neutral gray for backgrounds */
+  /* Secondary Brand Colors - Navigation individual colors NOW WORK */
+  --color-ayu-blue: #009FED;          /* NOW: text-ayu-blue, bg-ayu-blue work! */
+  --color-ayu-green: #75B700;        /* NOW: text-ayu-green, bg-ayu-green work! */
+  --color-ayu-teal: #00C496;        /* NOW: text-ayu-teal, bg-ayu-teal work! */
+  --color-ayu-cobalt: #0C4367;       /* NOW: text-ayu-cobalt, bg-ayu-cobalt work! */
+  --color-ayu-purple: #6E5083;      /* NOW: text-ayu-purple, bg-ayu-purple work! */
+  --color-ayu-yellow: #FFA600;      /* NOW: text-ayu-yellow, bg-ayu-yellow work! */
+  --color-ayu-red: #FF3B49;         /* NOW: text-ayu-red, bg-ayu-red work! */
+  --color-ayu-gray: #1C2431;        /* NOW: text-ayu-gray, bg-ayu-gray work! */
   
   /* ================== ICON SYSTEM - LUCIDE REACT INTEGRATION ================== */
   /* Icon sizing tokens for consistent scaling */
@@ -333,61 +335,74 @@
   --mica-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
 }
 
+@theme inline {
+  --background: var(--theme-background);
+  --foreground: var(--theme-foreground);
+  --card: var(--theme-card);
+  --card-foreground: var(--theme-card-foreground);
+  --popover: var(--theme-popover);
+  --popover-foreground: var(--theme-popover-foreground);
+  --primary: var(--theme-primary);
+  --primary-foreground: var(--theme-primary-foreground);
+  --secondary: var(--theme-secondary);
+  --secondary-foreground: var(--theme-secondary-foreground);
+  --muted: var(--theme-muted);
+  --muted-foreground: var(--theme-muted-foreground);
+  --accent: var(--theme-accent);
+  --accent-foreground: var(--theme-accent-foreground);
+  --destructive: var(--theme-destructive);
+  --destructive-foreground: var(--theme-destructive-foreground);
+  --border: var(--theme-border);
+  --input: var(--theme-input);
+  --ring: var(--theme-ring);
+}
+
+:root {
+  --theme-background: var(--color-range-white);
+  --theme-foreground: var(--color-blued-steel);
+  --theme-card: var(--color-nickel-white);
+  --theme-card-foreground: var(--color-blued-steel);
+  --theme-popover: var(--overlay-bg-light);
+  --theme-popover-foreground: var(--overlay-text-light);
+  --theme-primary: var(--color-blued-steel);
+  --theme-primary-foreground: var(--color-nickel-white);
+  --theme-secondary: var(--color-walnut-stock);
+  --theme-secondary-foreground: var(--color-nickel-white);
+  --theme-muted: var(--color-shooting-bench);
+  --theme-muted-foreground: var(--color-case-hardened);
+  --theme-accent: var(--color-cerakote-blue);
+  --theme-accent-foreground: var(--color-nickel-white);
+  --theme-destructive: var(--color-muzzle-flash);
+  --theme-destructive-foreground: var(--color-nickel-white);
+  --theme-border: var(--color-case-hardened);
+  --theme-input: var(--color-nickel-white);
+  --theme-ring: var(--color-brass-yellow);
+  --radius: 0.25rem;
+}
+
+.dark {
+  --theme-background: var(--color-night-sight);
+  --theme-foreground: var(--color-titanium-white);
+  --theme-card: var(--color-carbon-fiber);
+  --theme-card-foreground: var(--color-titanium-white);
+  --theme-popover: var(--overlay-bg-dark);
+  --theme-popover-foreground: var(--overlay-text-dark);
+  --theme-primary: var(--color-titanium-white);
+  --theme-primary-foreground: var(--color-night-sight);
+  --theme-secondary: var(--color-tactical-gray);
+  --theme-secondary-foreground: var(--color-titanium-white);
+  --theme-muted: var(--color-tactical-gray);
+  --theme-muted-foreground: var(--color-stainless-steel);
+  --theme-accent: var(--color-cerakote-blue);
+  --theme-accent-foreground: var(--color-titanium-white);
+  --theme-destructive: var(--color-crimson-trace);
+  --theme-destructive-foreground: var(--color-titanium-white);
+  --theme-border: var(--color-tactical-gray);
+  --theme-input: var(--color-carbon-fiber);
+  --theme-ring: var(--color-brass-yellow);
+}
+
 @layer base {
-  :root {
-    /* Light Theme Variables - Site uses warm "Spring Day at the Range" colors */
-    --background: var(--color-range-white);        /* Warm site background */
-    --foreground: var(--color-blued-steel);
-    --card: var(--color-nickel-white);             /* Clean white cards for contrast */
-    --card-foreground: var(--color-blued-steel);
-    --muted: var(--color-shooting-bench);          /* Muted areas use warm beige */
-    --muted-foreground: var(--color-case-hardened);
-    --border: var(--color-case-hardened);
-    --input: var(--color-nickel-white);            /* Clean input backgrounds */
-    --ring: var(--color-brass-yellow);
-    --radius: 0.25rem;                             /* Boxy with slight curve - 4px */
-
-    /* Semantic colors for components */
-    --primary: var(--color-blued-steel);
-    --primary-foreground: var(--color-nickel-white);
-    --secondary: var(--color-walnut-stock);
-    --secondary-foreground: var(--color-nickel-white);
-    --destructive: var(--color-muzzle-flash);
-    --destructive-foreground: var(--color-nickel-white);
-    --accent: var(--color-cerakote-blue);        /* Now using vibrant ayu-blue */
-    --accent-foreground: var(--color-nickel-white);
-    
-    /* Popover/Overlay colors - MICA BACKGROUNDS FOR MODERN GLASS EFFECT */
-    --popover: var(--overlay-bg-light);           /* Mica glass popover backgrounds */
-    --popover-foreground: var(--overlay-text-light);
-  }
-
-  .dark {
-    /* Dark Theme Variables - "Evening Hunt in the Mountains" palette */
-    --background: var(--color-night-sight);        /* Deep dark site background */
-    --foreground: var(--color-titanium-white);
-    --card: var(--color-carbon-fiber);             /* Elevated dark cards */
-    --card-foreground: var(--color-titanium-white);
-    --muted: var(--color-tactical-gray);           /* Muted dark areas */
-    --muted-foreground: var(--color-stainless-steel);
-    --border: var(--color-tactical-gray);
-    --input: var(--color-carbon-fiber);            /* Dark input backgrounds */
-    --ring: var(--color-brass-yellow);
-    --radius: 0.25rem;                             /* Consistent boxy radius */
-
-    /* Semantic colors for components */
-    --primary: var(--color-titanium-white);
-    --primary-foreground: var(--color-night-sight);
-    --secondary: var(--color-tactical-gray);
-    --secondary-foreground: var(--color-titanium-white);
-    --destructive: var(--color-crimson-trace);
-    --destructive-foreground: var(--color-titanium-white);
-    --accent: var(--color-cerakote-blue);        /* Consistent vibrant ayu-blue */
-    --accent-foreground: var(--color-titanium-white);
-    --popover: var(--overlay-bg-dark);            /* Mica glass dark popover backgrounds */
-    --popover-foreground: var(--overlay-text-dark);
-  }
-
   * {
     border-color: var(--border);
   }
@@ -402,6 +417,90 @@
     font-family: var(--font-rajdhani);
   }
 }
+
+/* ================== AI-RESISTANT DESIGN SYSTEM ENFORCEMENT ================== */
+/* CRITICAL: These rules make design system violations visually obvious to prevent AI tools from ignoring constraints */
+
+@layer components {
+  /* VIOLATION DETECTION: Highlight when forbidden default Tailwind colors are used */
+  .bg-gray-50, .bg-gray-100, .bg-gray-200, .bg-gray-300, .bg-gray-400, .bg-gray-500,
+  .bg-gray-600, .bg-gray-700, .bg-gray-800, .bg-gray-900, .bg-gray-950,
+  .bg-blue-50, .bg-blue-100, .bg-blue-200, .bg-blue-300, .bg-blue-400, .bg-blue-500,
+  .bg-blue-600, .bg-blue-700, .bg-blue-800, .bg-blue-900, .bg-blue-950,
+  .bg-red-50, .bg-red-100, .bg-red-200, .bg-red-300, .bg-red-400, .bg-red-500,
+  .bg-red-600, .bg-red-700, .bg-red-800, .bg-red-900, .bg-red-950 {
+    /* VIOLATION: Generic Tailwind colors detected - use TBGC 26-color system instead */
+    background: repeating-linear-gradient(
+      45deg,
+      #FF0000,
+      #FF0000 10px,
+      #FFFF00 10px,
+      #FFFF00 20px
+    ) !important;
+    position: relative !important;
+  }
+  
+  .bg-gray-50::before, .bg-gray-100::before, .bg-gray-200::before, .bg-gray-300::before,
+  .bg-gray-400::before, .bg-gray-500::before, .bg-gray-600::before, .bg-gray-700::before,
+  .bg-gray-800::before, .bg-gray-900::before, .bg-gray-950::before,
+  .bg-blue-50::before, .bg-blue-100::before, .bg-blue-200::before, .bg-blue-300::before,
+  .bg-blue-400::before, .bg-blue-500::before, .bg-blue-600::before, .bg-blue-700::before,
+  .bg-blue-800::before, .bg-blue-900::before, .bg-blue-950::before,
+  .bg-red-50::before, .bg-red-100::before, .bg-red-200::before, .bg-red-300::before,
+  .bg-red-400::before, .bg-red-500::before, .bg-red-600::before, .bg-red-700::before,
+  .bg-red-800::before, .bg-red-900::before, .bg-red-950::before {
+    content: "🚫 DESIGN SYSTEM VIOLATION: Use TBGC 26-color palette instead! Available: bg-copper-orange, bg-ayu-blue, etc." !important;
+    display: block !important;
+    background: #FF0000 !important;
+    color: #FFFFFF !important;
+    padding: 8px !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 9999 !important;
+    white-space: nowrap !important;
+  }
+  
+  /* TEXT VIOLATION DETECTION */
+  .text-gray-50, .text-gray-100, .text-gray-200, .text-gray-300, .text-gray-400, .text-gray-500,
+  .text-gray-600, .text-gray-700, .text-gray-800, .text-gray-900, .text-gray-950,
+  .text-blue-50, .text-blue-100, .text-blue-200, .text-blue-300, .text-blue-400, .text-blue-500,
+  .text-blue-600, .text-blue-700, .text-blue-800, .text-blue-900, .text-blue-950 {
+    /* VIOLATION: Use text-copper-orange, text-ayu-blue, text-gunmetal-black, etc. instead */
+    color: #FF0000 !important;
+    text-decoration: underline wavy #FF0000 !important;
+    text-decoration-thickness: 3px !important;
+  }
+}
+
+/* ================== APPROVED COLOR REFERENCE GUIDE (FOR AI TOOLS) ================== */
+/* 
+ * ONLY USE THESE 26 COLORS - NO EXCEPTIONS:
+ * 
+ * Primary Brand: bg-brass-yellow, bg-copper-orange, bg-gunmetal-black, bg-nickel-white
+ * 
+ * Light Theme: bg-range-white, bg-shooting-bench, bg-walnut-stock, bg-blued-steel, 
+ *              bg-case-hardened, bg-muzzle-flash, bg-recoil-pad, bg-sight-gold,
+ *              bg-scope-blue, bg-trigger-blue, bg-rifling-green, bg-bore-sight-green, bg-safety-red
+ * 
+ * Dark Theme: bg-night-sight, bg-carbon-fiber, bg-tactical-gray, bg-titanium-white,
+ *             bg-stainless-steel, bg-flash-hider, bg-crimson-trace, bg-cerakote-blue,
+ *             bg-ghost-ring, bg-woodland-camo
+ * 
+ * Ayu Accent: bg-ayu-blue, bg-ayu-green, bg-ayu-teal, bg-ayu-cobalt, 
+ *             bg-ayu-purple, bg-ayu-yellow, bg-ayu-red, bg-ayu-gray
+ * 
+ * NAVIGATION INDIVIDUAL COLORS:
+ * Home: text-copper-orange, hover:text-copper-orange
+ * Events: text-ayu-blue, hover:text-ayu-blue  
+ * Directory: text-ayu-green, hover:text-ayu-green
+ * Guides: text-ayu-purple, hover:text-ayu-purple
+ * Map: text-ayu-red, hover:text-ayu-red
+ * Marketplace: text-ayu-cobalt, hover:text-ayu-cobalt
+ * Community: text-ayu-teal, hover:text-ayu-teal
+ */
 
 @layer utilities {
   /* ================== PROFESSIONAL TRANSITION UTILITIES ================== */
@@ -447,6 +546,27 @@
   .gap-lg { gap: var(--space-lg); }
   .gap-xl { gap: var(--space-xl); }
   .gap-2xl { gap: var(--space-2xl); }
+
+  /* Directional Padding variants */
+  .px-micro { padding-left: var(--space-micro); padding-right: var(--space-micro); }
+  .px-tiny { padding-left: var(--space-tiny); padding-right: var(--space-tiny); }
+  .px-xs { padding-left: var(--space-xs); padding-right: var(--space-xs); }
+  .px-sm { padding-left: var(--space-sm); padding-right: var(--space-sm); }
+  .px-base { padding-left: var(--space-base); padding-right: var(--space-base); }
+  .px-md { padding-left: var(--space-md); padding-right: var(--space-md); }
+  .px-lg { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+  .px-xl { padding-left: var(--space-xl); padding-right: var(--space-xl); }
+  .px-2xl { padding-left: var(--space-2xl); padding-right: var(--space-2xl); }
+
+  .py-micro { padding-top: var(--space-micro); padding-bottom: var(--space-micro); }
+  .py-tiny { padding-top: var(--space-tiny); padding-bottom: var(--space-tiny); }
+  .py-xs { padding-top: var(--space-xs); padding-bottom: var(--space-xs); }
+  .py-sm { padding-top: var(--space-sm); padding-bottom: var(--space-sm); }
+  .py-base { padding-top: var(--space-base); padding-bottom: var(--space-base); }
+  .py-md { padding-top: var(--space-md); padding-bottom: var(--space-md); }
+  .py-lg { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+  .py-xl { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+  .py-2xl { padding-top: var(--space-2xl); padding-bottom: var(--space-2xl); }
   .gap-3xl { gap: var(--space-3xl); }
   .gap-4xl { gap: var(--space-4xl); }
 
@@ -671,46 +791,59 @@
   
   /* ================== ENHANCED WINDOWS 11 MICA OVERLAY SYSTEM ================== */
   /* Apply mica glass effect to any overlay component */
-  .mica-overlay {
-    background: rgba(255, 255, 255, 0.85);  /* Much more opaque like real Mica */
-    -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(105%);
-    backdrop-filter: blur(30px) saturate(200%) brightness(105%);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    position: relative;
-    isolation: isolate;
+  .mica {
+    /* Windows 11 Mica - backdrop effect applied directly to the element background */
+    background: rgba(248, 246, 241, 0.8);  /* 80% opaque theme background */
+    -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(105%);
+    backdrop-filter: blur(20px) saturate(180%) brightness(105%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 
       0 8px 32px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  }
-  
-  .dark .mica-overlay {
-    background: rgba(47, 49, 53, 0.90);  /* Even more opaque in dark mode */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    -webkit-backdrop-filter: blur(35px) saturate(220%) brightness(90%);
-    backdrop-filter: blur(35px) saturate(220%) brightness(90%);
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.20),
       inset 0 1px 0 rgba(255, 255, 255, 0.15);
   }
   
-  /* Add subtle noise texture overlay */
-  .mica-overlay::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-      radial-gradient(circle at 25% 30%, rgba(242, 203, 5, 0.04) 0%, transparent 40%),
-      radial-gradient(circle at 75% 70%, rgba(242, 135, 5, 0.03) 0%, transparent 40%);
-    border-radius: inherit;
-    pointer-events: none;
-    z-index: -1;
+  .dark .mica {
+    background: rgba(47, 49, 53, 0.8);  /* 80% opaque dark theme background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(95%);
+    backdrop-filter: blur(20px) saturate(180%) brightness(95%);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
   
-  .dark .mica-overlay::before {
-    background: 
-      radial-gradient(circle at 25% 30%, rgba(242, 203, 5, 0.06) 0%, transparent 40%),
-      radial-gradient(circle at 75% 70%, rgba(242, 135, 5, 0.04) 0%, transparent 40%);
+  /* ================== ACCESSIBILITY FEATURES ================== */
+  
+  /* Font Size Controls */
+  .text-size-small { font-size: 0.875rem; } /* 14px */
+  .text-size-medium { font-size: 1rem; }    /* 16px - default */
+  .text-size-large { font-size: 1.125rem; } /* 18px */
+  
+  /* High Contrast Mode */
+  .high-contrast {
+    --background: #000000;
+    --foreground: #ffffff;
+    --card: #000000;
+    --card-foreground: #ffffff;
+    --border: #ffffff;
+    --muted: #333333;
+    --muted-foreground: #ffffff;
   }
+  
+  /* Color Blind Filters */
+  .filter-protanopia {
+    filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='protanopia'%3E%3CfeColorMatrix values='0.567,0.433,0,0,0 0.558,0.442,0,0,0 0,0.242,0.758,0,0 0,0,0,1,0'/%3E%3C/filter%3E%3C/svg%3E#protanopia");
+  }
+  
+  .filter-deuteranopia {
+    filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='deuteranopia'%3E%3CfeColorMatrix values='0.625,0.375,0,0,0 0.7,0.3,0,0,0 0,0.3,0.7,0,0 0,0,0,1,0'/%3E%3C/filter%3E%3C/svg%3E#deuteranopia");
+  }
+  
+  .filter-tritanopia {
+    filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='tritanopia'%3E%3CfeColorMatrix values='0.95,0.05,0,0,0 0,0.433,0.567,0,0 0,0.475,0.525,0,0 0,0,0,1,0'/%3E%3C/filter%3E%3C/svg%3E#tritanopia");
+  }
+  
+  /* Removed problematic ::before pseudo-element that breaks sticky positioning */
   
   /* Specific mica variants for different overlay types - Windows 11 Mica style */
   .mica-popover {
@@ -1929,5 +2062,8 @@
   .btn-hover-lift:disabled:hover {
     transform: none;
   }
+
+  /* Inset utilities for positioning */
+  .inset-x-base { left: var(--space-base); right: var(--space-base); }
 }
   
