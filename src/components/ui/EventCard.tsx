@@ -9,11 +9,11 @@ import { Button } from "./button"
 import { Calendar, MapPin, Clock, Users, ExternalLink } from 'lucide-react'
 
 const eventCardVariants = cva(
-  "p-[var(--card-padding)] transition-all duration-300",
+  "p-md transition-all duration-300 group relative overflow-hidden",
   {
     variants: {
       featured: {
-        true: "border-copper-orange/20 bg-gradient-to-br from-card to-copper-orange/5",
+        true: "border-copper-orange/20 bg-gradient-to-br from-card to-copper-orange/5 hover:shadow-md",
         false: ""
       }
     },
@@ -57,32 +57,46 @@ export function EventCard({
   const spotsLeft = capacity && registeredCount ? capacity - registeredCount : null
 
   return (
-    <Card 
-      variant="interactive" 
+    <Card
+      variant="interactive"
       className={cn(eventCardVariants({ featured }), className)}
       {...props}
     >
-      <div className="space-y-[var(--space-sm)]">
+      {/* Fire gradient bottom bar for featured events */}
+      {featured && (
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-copper-orange to-brass-yellow" />
+      )}
+      
+      <div className="space-y-base">
         {/* Header */}
-        <div className="flex items-start justify-between gap-sm">
-          <div className="flex-1">
-            <div className="flex items-center gap-sm mb-[var(--space-xs)]">
-              <Badge variant="default" className="text-caption">
+        <div className="flex items-start justify-between">
+          <div className="space-y-xs flex-1">
+            <div className="flex items-center gap-xs">
+              <Badge 
+                variant={featured ? "default" : "outline"} 
+                size="sm"
+                className={cn(
+                  featured ? "bg-copper-orange/20 text-copper-orange border-copper-orange/30" : ""
+                )}
+              >
                 {eventType}
               </Badge>
               {featured && (
-                <Badge variant="default" className="bg-copper-orange text-card-foreground text-caption">
+                <Badge variant="destructive" size="sm" className="bg-safety-red text-white">
                   Featured
                 </Badge>
               )}
             </div>
-            <h3 className="font-rajdhani font-semibold text-[var(--card-title-size)] text-card-foreground leading-tight">
+            
+            <h3 className="font-rajdhani font-bold text-lg text-card-foreground leading-tight line-clamp-2">
               {title}
             </h3>
           </div>
+          
+          {/* Price Display */}
           {price && (
-            <div className="text-right">
-              <div className="text-body-sm font-medium text-card-foreground">
+            <div className="text-right ml-base">
+              <div className="text-lg font-rajdhani font-bold text-copper-orange">
                 {price}
               </div>
             </div>
@@ -90,50 +104,57 @@ export function EventCard({
         </div>
 
         {/* Description */}
-        <p className="text-[var(--card-body-size)] text-muted-foreground line-clamp-2">
+        <p className="text-sm text-muted-foreground line-clamp-3">
           {description}
         </p>
 
         {/* Event Details */}
-        <div className="space-y-[var(--space-xs)]">
-          <div className="flex items-center gap-sm text-[var(--card-body-size)] text-muted-foreground">
-            <Calendar className="h-4 w-4" />
+        <div className="space-y-xs text-sm">
+          <div className="flex items-center gap-xs text-muted-foreground">
+            <Calendar className="h-4 w-4 text-copper-orange flex-shrink-0" />
             <span>{date}</span>
           </div>
-          <div className="flex items-center gap-sm text-[var(--card-body-size)] text-muted-foreground">
-            <Clock className="h-4 w-4" />
+          <div className="flex items-center gap-xs text-muted-foreground">
+            <Clock className="h-4 w-4 text-copper-orange flex-shrink-0" />
             <span>{time}</span>
           </div>
-          <div className="flex items-center gap-sm text-[var(--card-body-size)] text-muted-foreground">
-            <MapPin className="h-4 w-4" />
-            <span>{location}</span>
+          <div className="flex items-center gap-xs text-muted-foreground">
+            <MapPin className="h-4 w-4 text-copper-orange flex-shrink-0" />
+            <span className="line-clamp-1">{location}</span>
           </div>
-          {capacity && (
-            <div className="flex items-center gap-sm text-[var(--card-body-size)] text-muted-foreground">
-              <Users className="h-4 w-4" />
-              <span>
-                {registeredCount || 0}/{capacity} registered
-                {spotsLeft && spotsLeft > 0 && (
-                  <span className="text-copper-orange ml-1">
-                    ({spotsLeft} spots left)
-                  </span>
-                )}
-              </span>
-            </div>
-          )}
         </div>
+
+        {/* Capacity Info */}
+        {capacity && (
+          <div className="flex items-center justify-between text-sm bg-muted/50 px-base py-xs rounded">
+            <div className="flex items-center gap-xs text-muted-foreground">
+              <Users className="h-4 w-4 text-copper-orange" />
+              <span>Capacity: {capacity}</span>
+            </div>
+            <div className={cn(
+              "font-medium",
+              spotsLeft && spotsLeft <= 10 ? "text-safety-red" : "text-card-foreground"
+            )}>
+              {registeredCount || 0} registered
+              {spotsLeft && spotsLeft <= 10 && (
+                <span className="text-safety-red ml-1">
+                  • {spotsLeft} left
+                </span>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Action Button */}
         {registrationUrl && (
-          <div className="pt-[var(--space-sm)]">
+          <div className="pt-xs">
             <Button 
-              variant="accent" 
-              size="sm" 
-              className="w-full gap-xs"
+              variant="outline" 
+              className="w-full gap-xs shadow-none" 
               onClick={() => window.open(registrationUrl, '_blank')}
             >
               Register Now
-              <ExternalLink className="h-3 w-3" />
+              <ExternalLink className="h-4 w-4" />
             </Button>
           </div>
         )}

@@ -24,7 +24,7 @@
   --color-brass-yellow: #F2CB05;
   --color-copper-orange: #F28705;
   --color-gunmetal-black: #0A0A0A;
-  --color-nickel-white: #FFFFFF;
+  --color-nickel-white: rgba(255, 255, 255, 0.8);
 
   /* Light Theme: Spring Day at the Range - Available as bg-range-white, text-shooting-bench, etc. */
   --color-range-white: #f8f6f1;
@@ -84,6 +84,46 @@
   --icon-warning: var(--color-recoil-pad);
   --icon-danger: var(--color-safety-red);        /* Now using vibrant ayu-red */
   --icon-info: var(--color-cerakote-blue);       /* Now using vibrant ayu-blue */
+  
+  /* ================== ACCESSIBILITY SYSTEM ================== */
+  /* Dynamic font scaling - Updated via CSS custom properties instead of classes */
+  --accessibility-font-scale: 1;          /* Default: 1 = medium, 0.875 = small, 1.125 = large */
+  --accessibility-contrast: 1;             /* Default: 1 = normal, 1.3 = high contrast */
+  --accessibility-filter: none;            /* Default: none, or color blind filter functions */
+  
+  /* Base font sizes that scale with accessibility settings */
+  --font-size-base: calc(1rem * var(--accessibility-font-scale));
+  --font-size-sm: calc(0.875rem * var(--accessibility-font-scale));
+  --font-size-lg: calc(1.125rem * var(--accessibility-font-scale));
+  --font-size-xl: calc(1.25rem * var(--accessibility-font-scale));
+  --font-size-2xl: calc(1.5rem * var(--accessibility-font-scale));
+  
+  /* ================== SITE-WIDE GRADIENT SYSTEM ================== */
+  /* Comprehensive gradient collection for backgrounds, buttons, and accents */
+  
+  /* Fire Gradient - Primary brand gradient (copper-orange to brass-yellow) */
+  --gradient-fire: linear-gradient(to right, var(--color-copper-orange), var(--color-brass-yellow));
+  --gradient-fire-reverse: linear-gradient(to right, var(--color-brass-yellow), var(--color-copper-orange));
+  
+  /* Ocean to Forest - Blue to green for nature/outdoor themes */
+  --gradient-ocean-forest: linear-gradient(to right, var(--color-ayu-blue), var(--color-ayu-green));
+  --gradient-ocean-forest-reverse: linear-gradient(to right, var(--color-ayu-green), var(--color-ayu-blue));
+  
+  /* Sunset Blaze - Orange to purple for dramatic sections */
+  --gradient-sunset-blaze: linear-gradient(to right, var(--color-copper-orange), var(--color-ayu-purple));
+  --gradient-sunset-blaze-reverse: linear-gradient(to right, var(--color-ayu-purple), var(--color-copper-orange));
+  
+  /* Crimson Night - Red to purple for alerts and drama */
+  --gradient-crimson-night: linear-gradient(to right, var(--color-safety-red), var(--color-ayu-purple));
+  --gradient-crimson-night-reverse: linear-gradient(to right, var(--color-ayu-purple), var(--color-safety-red));
+  
+  /* Aqua Flow - Teal to green for fresh, natural sections */
+  --gradient-aqua-flow: linear-gradient(to right, var(--color-ayu-teal), var(--color-rifling-green));
+  --gradient-aqua-flow-reverse: linear-gradient(to right, var(--color-rifling-green), var(--color-ayu-teal));
+  
+  /* Deep Current - Teal to cobalt for sophisticated depth */
+  --gradient-deep-current: linear-gradient(to right, var(--color-ayu-teal), var(--color-ayu-cobalt));
+  --gradient-deep-current-reverse: linear-gradient(to right, var(--color-ayu-cobalt), var(--color-ayu-teal));
   
   /* ================== ANIMATION & TRANSITION SYSTEM ================== */
   --timing-fast: 150ms;
@@ -159,7 +199,7 @@
   /* TBGC Brand-Colored Sophisticated Shadows (using our brass/copper palette) */
   --shadow-brass: 0 6px 12px -2px rgba(242, 203, 5, 0.15), 0 3px 7px -3px rgba(0, 0, 0, 0.25);
   --shadow-copper: 0 13px 27px -5px rgba(242, 135, 5, 0.12), 0 8px 16px -8px rgba(0, 0, 0, 0.25);
-  --shadow-premium: 0 4px 8px -2px rgba(242, 203, 5, 0.25), 0 2px 4px -1px rgba(242, 135, 5, 0.15), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-premium: 0 8px 16px -4px rgba(50, 50, 93, 0.25), 0 4px 8px -2px rgba(0, 0, 0, 0.3);
   --shadow-elite: 0 8px 16px -4px rgba(242, 203, 5, 0.3), 0 4px 8px -2px rgba(242, 135, 5, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
   
   /* ClickUp-Inspired Vibrant Shadows */
@@ -419,7 +459,7 @@
 }
 
 /* ================== AI-RESISTANT DESIGN SYSTEM ENFORCEMENT ================== */
-/* CRITICAL: These rules make design system violations visually obvious to prevent AI tools from ignoring constraints */
+/* AI enforcement disabled temporarily */
 
 @layer components {
   /* VIOLATION DETECTION: Highlight when forbidden default Tailwind colors are used */
@@ -891,6 +931,38 @@
   
   .filter-tritanopia {
     filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='tritanopia'%3E%3CfeColorMatrix values='0.95,0.05,0,0,0 0,0.433,0.567,0,0 0,0.475,0.525,0,0 0,0,0,1,0'/%3E%3C/filter%3E%3C/svg%3E#tritanopia");
+  }
+
+  /* ================== NEW ACCESSIBILITY SYSTEM - CSS CUSTOM PROPERTIES ================== */
+  /* Apply accessibility settings to the entire document dynamically */
+  html {
+    font-size: var(--font-size-base);
+    filter: var(--accessibility-filter);
+  }
+  
+  /* High contrast mode - Applied via data attribute instead of class */
+  html[data-accessibility-contrast="high"] {
+    --background: #000000;
+    --foreground: #ffffff;
+    --card: #000000;
+    --card-foreground: #ffffff;
+    --border: #ffffff;
+    --muted: #333333;
+    --muted-foreground: #cccccc;
+    filter: contrast(var(--accessibility-contrast));
+  }
+
+  /* Font size scaling - Applied via data attribute */
+  html[data-accessibility-font-size="small"] {
+    --accessibility-font-scale: 0.875;
+  }
+  
+  html[data-accessibility-font-size="medium"] {
+    --accessibility-font-scale: 1;
+  }
+  
+  html[data-accessibility-font-size="large"] {
+    --accessibility-font-scale: 1.125;
   }
   
   /* Removed problematic ::before pseudo-element that breaks sticky positioning */

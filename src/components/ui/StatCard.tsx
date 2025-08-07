@@ -52,6 +52,7 @@ export interface StatCardProps
     VariantProps<typeof statCardVariants> {
   value: string | number
   label: string
+  subtitle?: string
   description?: string
   trend?: "up" | "down" | "neutral"
   trendValue?: string

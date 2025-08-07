@@ -20,6 +20,103 @@ const HoverArrow: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 )
 
+// Plus/Minus toggle animation for expand/collapse states
+const PlusMinusToggle: React.FC<{ className?: string; isExpanded?: boolean }> = ({ className, isExpanded = false }) => (
+  <svg 
+    className={cn("PlusMinusToggle inline-block transition-all duration-300", className)} 
+    width="10" 
+    height="10" 
+    viewBox="0 0 10 10" 
+    aria-hidden="true"
+  >
+    <g fillRule="evenodd">
+      <path 
+        className="PlusMinusToggle__horizontal" 
+        d="M2 5h6" 
+        stroke="currentColor" 
+        strokeWidth="1.5" 
+        fill="none" 
+        strokeLinecap="round"
+      />
+      <path 
+        className={cn(
+          "PlusMinusToggle__vertical transition-all duration-300 origin-center",
+          isExpanded ? "scale-y-0 opacity-0" : "scale-y-100 opacity-100"
+        )}
+        d="M5 2v6" 
+        stroke="currentColor" 
+        strokeWidth="1.5" 
+        fill="none" 
+        strokeLinecap="round"
+      />
+    </g>
+  </svg>
+)
+
+// X/O toggle animation for on/off states
+const XOToggle: React.FC<{ className?: string; isActive?: boolean }> = ({ className, isActive = false }) => (
+  <svg 
+    className={cn("XOToggle inline-block", className)} 
+    width="10" 
+    height="10" 
+    viewBox="0 0 10 10" 
+    aria-hidden="true"
+  >
+    <g fillRule="evenodd">
+      {isActive ? (
+        // O shape when active
+        <circle 
+          cx="5" 
+          cy="5" 
+          r="3" 
+          stroke="currentColor" 
+          strokeWidth="1.5" 
+          fill="none"
+          className="transition-all duration-300 animate-in fade-in-0 zoom-in-75"
+        />
+      ) : (
+        // X shape when inactive
+        <g className="transition-all duration-300 animate-in fade-in-0 zoom-in-75">
+          <path d="M2 2l6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M8 2l-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        </g>
+      )}
+    </g>
+  </svg>
+)
+
+// Chevron rotation for sort/direction states
+const ChevronRotate: React.FC<{ className?: string; direction?: 'up' | 'down' | 'left' | 'right' }> = ({ 
+  className, 
+  direction = 'right' 
+}) => {
+  const rotationClass = {
+    'up': '-rotate-90',
+    'down': 'rotate-90', 
+    'left': 'rotate-180',
+    'right': 'rotate-0'
+  }[direction]
+
+  return (
+    <svg 
+      className={cn("ChevronRotate inline-block transition-transform duration-300", rotationClass, className)} 
+      width="10" 
+      height="10" 
+      viewBox="0 0 10 10" 
+      aria-hidden="true"
+    >
+      <path 
+        d="M3 2l4 3-4 3" 
+        stroke="currentColor" 
+        strokeWidth="1.5" 
+        fill="none" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 const buttonVariants = cva(
   // Foundation: Use our comprehensive spacing system and typography hierarchy
   "inline-flex items-center justify-center whitespace-nowrap font-medium font-noto-sans relative transition-stripe-fast focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
@@ -44,6 +141,9 @@ const buttonVariants = cva(
         // Destructive: Clean theme-aware with safety red accent background
         destructive: "bg-safety-red/10 text-safety-red shadow-flat hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-safety-red/50 hover:bg-safety-red/20",
         
+        // Outline: Clean theme-aware with border
+        outline: "border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground",
+
         // Glass: Windows 11 Mica-inspired glassmorphism (borderless for clean look)
         glass: "mica-overlay text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-0.5 focus-visible:ring-brass-yellow/50 hover:bg-card/25 transition-all duration-200",
         
@@ -103,12 +203,40 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
   loading?: boolean
+  // Micro-animation props
+  animationType?: 'arrow' | 'plus-minus' | 'x-o' | 'chevron' | 'none'
+  animationState?: boolean | 'up' | 'down' | 'left' | 'right'  // For toggles or chevron direction
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, rounded, asChild = false, loading = false, children, disabled, ...props }, ref) => {
+  ({ className, variant, size, rounded, asChild = false, loading = false, children, disabled, animationType, animationState, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
     const isSolidVariant = variant?.startsWith('solid-')
+    
+    // Determine which micro-animation to show
+    const renderMicroAnimation = () => {
+      if (loading || !animationType || animationType === 'none') return null
+      
+      const animationClassName = "ml-[var(--space-xs)]"
+      
+      switch (animationType) {
+        case 'arrow':
+          return <HoverArrow className={animationClassName} />
+        case 'plus-minus':
+          return <PlusMinusToggle className={animationClassName} isExpanded={Boolean(animationState)} />
+        case 'x-o':
+          return <XOToggle className={animationClassName} isActive={Boolean(animationState)} />
+        case 'chevron':
+          const direction = typeof animationState === 'string' ? animationState : 'right'
+          return <ChevronRotate className={animationClassName} direction={direction as 'up' | 'down' | 'left' | 'right'} />
+        default:
+          return null
+      }
+    }
+    
+    // Default to arrow for solid variants if no animationType specified
+    const shouldShowAnimation = animationType || (isSolidVariant && !loading)
+    const defaultAnimationType = animationType || (isSolidVariant ? 'arrow' : 'none')
     
     if (asChild) {
       // When using asChild, wrap everything in a single element for Slot
@@ -131,9 +259,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             )}
             <span className={cn("flex items-center", loading && "invisible")}>
               {children}
-              {isSolidVariant && !loading && (
-                <HoverArrow className="ml-[var(--space-xs)]" />
-              )}
+              {shouldShowAnimation && renderMicroAnimation()}
             </span>
           </span>
         </Comp>
@@ -158,9 +284,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         )}
         <span className={cn("flex items-center", loading && "invisible")}>
           {children}
-          {isSolidVariant && !loading && (
-            <HoverArrow className="ml-[var(--space-xs)]" />
-          )}
+          {shouldShowAnimation && renderMicroAnimation()}
         </span>
       </Comp>
     )
@@ -168,4 +292,4 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 )
 Button.displayName = "Button"
 
-export { Button, buttonVariants }
+export { Button, buttonVariants, HoverArrow, PlusMinusToggle, XOToggle, ChevronRotate }

@@ -13,6 +13,7 @@ const brandShowcaseVariants = cva(
         default: "bg-background",
         subtle: "bg-muted/20",
         branded: "bg-gradient-to-br from-background via-muted/10 to-background",
+        "launch-phase": "bg-transparent",
       }
     },
     defaultVariants: {
@@ -406,3 +407,5 @@ export function BrandCarousel({
     </div>
   )
 }
+
+BrandCarousel.displayName = "BrandCarousel"

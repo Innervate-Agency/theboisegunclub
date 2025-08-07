@@ -93,42 +93,17 @@ const ThemeDemo = () => (
 )
 
 export const Default: Story = {
-  render: () => (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      <ThemeDemo />
-    </ThemeProvider>
-  ),
-}
+  render: () => <ThemeDemo />,
+};
 
 export const LightMode: Story = {
-  render: () => (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="light"
-      enableSystem={false}
-      disableTransitionOnChange
-    >
-      <ThemeDemo />
-    </ThemeProvider>
-  ),
-}
+  render: () => <ThemeDemo />,
+};
 
 export const DarkMode: Story = {
   render: () => (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="dark"
-      enableSystem={false}
-      disableTransitionOnChange
-    >
-      <div className="dark">
-        <ThemeDemo />
-      </div>
-    </ThemeProvider>
+    <div className="dark">
+      <ThemeDemo />
+    </div>
   ),
-}
+};

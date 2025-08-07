@@ -47,7 +47,7 @@ const featureCardVariants = cva(
 interface Feature {
   title: string
   description: string
-  icon?: React.ComponentType<{ className?: string }>
+  icon?: React.ReactElement<{ className?: string }>
   link?: {
     text: string
     href?: string
@@ -111,7 +111,6 @@ export function FeatureGrid({
         {/* Features Grid */}
         <div className={cn("grid gap-md", gridCols[columns])}>
           {features.map((feature, index) => {
-            const Icon = feature.icon
             
             return (
               <div
@@ -120,9 +119,9 @@ export function FeatureGrid({
               >
                 <div className="space-y-[var(--space-base)]">
                   {/* Icon */}
-                  {Icon && (
+                  {feature.icon && (
                     <div className="flex items-center justify-center w-12 h-12 bg-brass-yellow/10 rounded-card group-hover:bg-brass-yellow/20 transition-colors duration-200">
-                      <Icon className="icon-lg icon-primary group-hover:scale-110 transition-transform duration-200" />
+                      {React.cloneElement(feature.icon, { className: "icon-lg icon-primary group-hover:scale-110 transition-transform duration-200" })}
                     </div>
                   )}
                   

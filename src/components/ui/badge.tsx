@@ -17,6 +17,7 @@ const badgeVariants = cva(
         info: "border border-scope-blue/30 bg-scope-blue/10 text-scope-blue hover:bg-scope-blue/20",
         premium: "border border-brass-yellow/30 bg-brass-yellow/10 text-brass-yellow hover:bg-brass-yellow/20",
         elite: "border border-copper-orange/30 bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20",
+        flat: "border-transparent bg-muted text-muted-foreground",
       },
       size: {
         default: "px-2.5 py-0.5 text-xs",

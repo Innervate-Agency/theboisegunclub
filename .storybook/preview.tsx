@@ -34,21 +34,6 @@ const preview: Preview = {
        date: /Date$/i,
       },
     },
-    themes: {
-      default: 'light',
-      list: [
-        {
-          name: 'Light',
-          class: [],
-          color: '#f8f6f1',
-        },
-        {
-          name: 'Dark',
-          class: ['dark'],
-          color: '#2F3135',
-        }
-      ]
-    },
     backgrounds: {
       default: 'tbgc-light',
       values: [
@@ -76,19 +61,32 @@ const preview: Preview = {
       },
     },
   },
+  globals: {
+    theme: 'light',
+  },
+  globalTypes: {
+    theme: {
+      name: 'Theme',
+      description: 'Global theme for components',
+      defaultValue: 'light',
+      toolbar: {
+        icon: 'circlehollow',
+        items: ['light', 'dark'],
+        showName: true,
+      },
+    },
+  },
   decorators: [
-    (Story) => (
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="light"
-        enableSystem
-        disableTransitionOnChange={false}
-      >
-        <div className={`${rajdhani.variable} ${notoSans.variable} ${notoSerif.variable} font-noto-sans antialiased`}>
+    (Story, context) => {
+      const { theme } = context.globals;
+      const themeClass = theme === 'dark' ? 'dark' : '';
+
+      return (
+        <div className={`${rajdhani.variable} ${notoSans.variable} ${notoSerif.variable} font-noto-sans antialiased ${themeClass}`}>
           <Story />
         </div>
-      </ThemeProvider>
-    ),
+      );
+    },
   ],
 };
 

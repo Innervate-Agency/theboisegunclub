@@ -1,453 +1,1040 @@
-import { Suspense } from 'react'
-import { PageHero } from '@/components/ui/page-hero'
-import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
+'use client'
+
+import React, { useState } from 'react'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { EventCard } from '@/components/ui/EventCard'
+import StatCard from '@/components/ui/StatCard'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
-import { NavigationFusion } from '@/components/ui/navigation-fusion'
-import { NewThemeToggle } from '@/components/ui/NewThemeToggle'
-import { EventImage } from '@/components/ui/UnsplashImage'
+import AccessibilityFAB from '@/components/ui/AccessibilityFAB'
+import { EventTicker } from '@/components/ui/event-ticker'
 import { 
   Calendar, Clock, MapPin, Users, Trophy, Target, 
-  Filter, Search, Star, DollarSign, Info 
+  Filter, Search, Star, DollarSign, Info, Plus, ArrowRight,
+  ChevronRight, CalendarDays, Zap, Eye, TrendingUp,
+  Building2, Award, MessageSquare, CheckCircle
 } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { Card } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
 
-// Real Treasure Valley events data from comprehensive research
+// Comprehensive events data for Treasure Valley firearms community
 const upcomingEvents = [
+  // Featured Events
   {
-    id: 1,
-    title: "USPSA Match",
-    description: "Monthly USPSA practical shooting match at Nampa Rod & Gun Club. Open to all skill levels with multiple divisions.",
-    date: "2025-08-05",
-    time: "8:00 AM",
-    endTime: "3:00 PM",
-    location: "Nampa Rod & Gun Club",
-    address: "7990 Bennet Road, Nampa, ID",
-    category: "competition",
-    difficulty: "All Levels",
-    price: 15,
+    title: "USPSA Monthly Match",
+    description: "Monthly USPSA practical shooting match at Nampa Rod & Gun Club. Open to all skill levels with multiple divisions including Production, Limited, and Open.",
+    date: "Saturday, August 9, 2025",
+    time: "8:00 AM - 3:00 PM",
+    location: "Nampa Rod & Gun Club, 7990 Bennet Road, Nampa, ID",
+    eventType: "Competition",
     capacity: 80,
-    registered: 54,
-    organizer: "Idaho Society of Practical Shooters",
-    features: ["Multiple Divisions", "All Skill Levels", "Awards Ceremony"],
-    image: "/images/events/uspsa-match.jpg",
+    registeredCount: 54,
+    registrationUrl: "https://practiscore.com/idaho-uspsa",
+    price: "$15",
     featured: true
   },
   {
-    id: 2,
     title: "Idaho State Camo Shoot",
-    description: "Premier sporting clays event benefiting Ducks Unlimited. Team-based competition with prizes and camaraderie.",
-    date: "2025-07-26",
-    time: "8:30 AM",
-    endTime: "6:00 PM",
-    location: "Caldwell Gun Club",
-    address: "21840 Pond Ln, Caldwell, ID",
-    category: "charity",
-    difficulty: "All Levels",
-    price: 600,
+    description: "Premier sporting clays event benefiting Ducks Unlimited. Team-based competition with lunch, prizes, and great camaraderie in the firearms community.",
+    date: "Saturday, July 26, 2025",
+    time: "8:30 AM - 6:00 PM",
+    location: "Caldwell Gun Club, 21840 Pond Ln, Caldwell, ID",
+    eventType: "Charity",
     capacity: 96,
-    registered: 78,
-    organizer: "Ducks Unlimited",
-    features: ["Team Event", "Lunch Included", "Prizes", "DU Membership"],
-    image: "/images/events/sporting-clays.jpg",
+    registeredCount: 78,
+    registrationUrl: "https://www.ducksunlimited.org/events",
+    price: "$600 (Team of 4)",
     featured: true
   },
   {
-    id: 3,
-    title: "Steel Challenge",
-    description: "Weekly Steel Challenge matches featuring speed and accuracy on reactive steel targets.",
-    date: "2025-08-07",
-    time: "4:00 PM",
-    endTime: "8:00 PM",
-    location: "Nampa Rod & Gun Club",
-    address: "7990 Bennet Road, Nampa, ID",
-    category: "competition",
-    difficulty: "Beginner Friendly",
-    price: 7,
-    capacity: 50,
-    registered: 32,
-    organizer: "Nampa Rod & Gun Club",
-    features: ["Weekly Event", "Steel Targets", "Fun & Fast"],
-    image: "/images/events/steel-challenge.jpg",
-    featured: false
-  },
-  {
-    id: 4,
-    title: "Defensive Pistol Advanced",
-    description: "Advanced defensive pistol techniques covering movement, cover, and real-world scenarios.",
-    date: "2025-08-16",
-    time: "9:00 AM",
-    endTime: "5:00 PM",
-    location: "Double Tapp Range",
-    address: "14010 E Double Tapp Lane, Boise, ID",
-    category: "training",
-    difficulty: "Advanced",
-    price: 285,
-    capacity: 12,
-    registered: 8,
-    organizer: "Simshot",
-    features: ["Live Fire", "Advanced Techniques", "Small Class Size"],
-    image: "/images/events/defensive-training.jpg",
-    featured: false
-  },
-  {
-    id: 5,
-    title: "Beginner Pistol Course",
-    description: "Professional firearms training covering safety, fundamentals, and marksmanship for new shooters.",
-    date: "2025-09-13",
-    time: "9:00 AM",
-    endTime: "5:00 PM",
-    location: "Double Tapp Range",
-    address: "14010 E Double Tapp Lane, Boise, ID",
-    category: "training",
-    difficulty: "Beginner",
-    price: 168,
-    capacity: 16,
-    registered: 11,
-    organizer: "Combat Absolute LLC",
-    features: ["LEO Instructor", "All Equipment Provided", "Safety Focused"],
-    image: "/images/events/pistol-basics.jpg",
-    featured: false
-  },
-  {
-    id: 6,
     title: "Great Idaho Gun Show",
-    description: "Treasure Valley's largest firearms expo featuring vendors, dealers, and collectors from across the region.",
-    date: "2025-09-20",
-    time: "9:00 AM",
-    endTime: "5:00 PM",
-    location: "Ford Idaho Center",
-    address: "16200 N Idaho Ctr Blvd, Nampa, ID",
-    category: "expo",
-    difficulty: "All Ages",
-    price: 10,
+    description: "Treasure Valley's largest firearms expo featuring 200+ vendors, dealers, and collectors from across the region. Family-friendly event with something for everyone.",
+    date: "Saturday-Sunday, September 20-21, 2025",
+    time: "9:00 AM - 5:00 PM",
+    location: "Ford Idaho Center, 16200 N Idaho Ctr Blvd, Nampa, ID",
+    eventType: "Expo",
     capacity: 5000,
-    registered: 3200,
-    organizer: "Lewis-Clark Trader",
-    features: ["200+ Vendors", "Collector Items", "Family Friendly"],
-    image: "/images/events/gun-show.jpg",
+    registeredCount: 3200,
+    registrationUrl: "https://lewisclarktrader.com/gun-shows",
+    price: "$10",
     featured: true
+  },
+
+  // Competition Events
+  {
+    title: "Steel Challenge Weekly",
+    description: "Weekly Steel Challenge matches featuring speed and accuracy on reactive steel targets. Fast-paced, fun format perfect for new and experienced shooters.",
+    date: "Thursday, August 7, 2025",
+    time: "4:00 PM - 8:00 PM",
+    location: "Nampa Rod & Gun Club, 7990 Bennet Road, Nampa, ID",
+    eventType: "Competition",
+    capacity: 50,
+    registeredCount: 32,
+    registrationUrl: "https://nampagunclub.org/steel-challenge",
+    price: "$7",
+    featured: false
+  },
+  {
+    title: "Precision Rifle Match",
+    description: "Long-range precision rifle competition testing marksmanship skills from 100-1000 yards. Ideal for hunters and precision enthusiasts.",
+    date: "Sunday, August 10, 2025",
+    time: "7:00 AM - 2:00 PM",
+    location: "Boise Rifle & Pistol Club, 6205 Hill Road, Boise, ID",
+    eventType: "Competition",
+    capacity: 40,
+    registeredCount: 28,
+    registrationUrl: "https://brpc.org/precision-match",
+    price: "$25",
+    featured: false
+  },
+  {
+    title: "3-Gun Championship",
+    description: "Multi-gun competition combining rifle, pistol, and shotgun stages. Test your skills across all three platforms in dynamic scenarios.",
+    date: "Saturday, August 23, 2025",
+    time: "8:00 AM - 4:00 PM",
+    location: "Caldwell Gun Club, 21840 Pond Ln, Caldwell, ID",
+    eventType: "Competition",
+    capacity: 60,
+    registeredCount: 45,
+    registrationUrl: "https://caldwellgunclub.org/3gun",
+    price: "$35",
+    featured: false
+  },
+  {
+    title: "IDPA Monthly Match",
+    description: "International Defensive Pistol Association match focusing on real-world self-defense scenarios with practical gear and techniques.",
+    date: "Saturday, August 16, 2025",
+    time: "9:00 AM - 3:00 PM",
+    location: "Double Tapp Range, 14010 E Double Tapp Lane, Boise, ID",
+    eventType: "Competition",
+    capacity: 45,
+    registeredCount: 29,
+    registrationUrl: "https://doubletapp.com/idpa",
+    price: "$20",
+    featured: false
+  },
+  {
+    title: "Rimfire Challenge",
+    description: "Multi-stage rimfire competition perfect for beginners and youth. Low-cost shooting fun with .22 caliber firearms only.",
+    date: "Sunday, August 24, 2025",
+    time: "10:00 AM - 2:00 PM",
+    location: "Nampa Rod & Gun Club, 7990 Bennet Road, Nampa, ID",
+    eventType: "Competition",
+    capacity: 35,
+    registeredCount: 18,
+    registrationUrl: "https://nampagunclub.org/rimfire",
+    price: "$10",
+    featured: false
+  },
+  {
+    title: "Cowboy Action Shooting",
+    description: "Old West themed competition using period-correct firearms and costumes. Fun family-friendly event celebrating western heritage.",
+    date: "Saturday, September 6, 2025",
+    time: "9:00 AM - 4:00 PM",
+    location: "Southwest Idaho Practical Shooters, Star, ID",
+    eventType: "Competition",
+    capacity: 50,
+    registeredCount: 31,
+    registrationUrl: "https://swips.org/cowboy",
+    price: "$25",
+    featured: false
+  },
+  {
+    title: "Tactical Rifle Match",
+    description: "Precision and speed rifle competition simulating real-world tactical scenarios. Multiple positions and distances up to 600 yards.",
+    date: "Sunday, September 7, 2025",
+    time: "8:00 AM - 3:00 PM",
+    location: "Boise Rifle & Pistol Club, 6205 Hill Road, Boise, ID",
+    eventType: "Competition",
+    capacity: 30,
+    registeredCount: 22,
+    registrationUrl: "https://brpc.org/tactical",
+    price: "$30",
+    featured: false
+  },
+
+  // Training Events
+  {
+    title: "Defensive Pistol Advanced",
+    description: "Advanced defensive pistol techniques covering movement, use of cover, low-light scenarios, and real-world defensive applications.",
+    date: "Saturday, August 16, 2025",
+    time: "9:00 AM - 5:00 PM",
+    location: "Double Tapp Range, 14010 E Double Tapp Lane, Boise, ID",
+    eventType: "Training",
+    capacity: 12,
+    registeredCount: 8,
+    registrationUrl: "https://simshot.com/training",
+    price: "$285",
+    featured: false
+  },
+  {
+    title: "Beginner Pistol Course",
+    description: "Professional firearms training covering safety fundamentals, basic marksmanship, and pistol operation for new shooters. LEO instructor led.",
+    date: "Saturday, September 13, 2025",
+    time: "9:00 AM - 5:00 PM",
+    location: "Double Tapp Range, 14010 E Double Tapp Lane, Boise, ID",
+    eventType: "Training",
+    capacity: 16,
+    registeredCount: 11,
+    registrationUrl: "https://combatabsolute.com/classes",
+    price: "$168",
+    featured: false
+  },
+  {
+    title: "CCW Permit Course",
+    description: "Idaho concealed carry permit class covering legal requirements, safe handling, and practical application. NRA certified instruction.",
+    date: "Sunday, August 10, 2025",
+    time: "9:00 AM - 4:00 PM",
+    location: "Idaho Firearms Academy, 567 Academy Dr, Nampa, ID",
+    eventType: "Training",
+    capacity: 20,
+    registeredCount: 16,
+    registrationUrl: "https://idahofirearms.edu/ccw",
+    price: "$75",
+    featured: false
+  },
+  {
+    title: "Hunter Safety Course",
+    description: "Idaho Fish & Game hunter education course required for all new hunters. Covers firearms safety, hunting ethics, and wildlife conservation.",
+    date: "Saturday-Sunday, August 23-24, 2025",
+    time: "8:00 AM - 5:00 PM",
+    location: "Caldwell Gun Club, 21840 Pond Ln, Caldwell, ID",
+    eventType: "Training",
+    capacity: 25,
+    registeredCount: 19,
+    registrationUrl: "https://idfg.idaho.gov/hunter-education",
+    price: "$10",
+    featured: false
+  },
+  {
+    title: "Rifle Marksmanship Clinic",
+    description: "Precision rifle fundamentals clinic covering proper shooting positions, breathing, trigger control, and ballistics basics.",
+    date: "Saturday, September 20, 2025",
+    time: "8:00 AM - 4:00 PM",
+    location: "Boise Rifle & Pistol Club, 6205 Hill Road, Boise, ID",
+    eventType: "Training",
+    capacity: 15,
+    registeredCount: 9,
+    registrationUrl: "https://brpc.org/marksmanship",
+    price: "$125",
+    featured: false
+  },
+  {
+    title: "Women's Shooting Clinic",
+    description: "Women-only firearms introduction covering safety, basic marksmanship, and equipment selection. Comfortable learning environment.",
+    date: "Sunday, September 14, 2025",
+    time: "10:00 AM - 3:00 PM",
+    location: "Northwest Tactical Academy, 321 Training Blvd, Star, ID",
+    eventType: "Training",
+    capacity: 12,
+    registeredCount: 8,
+    registrationUrl: "https://nwtactical.edu/women",
+    price: "$95",
+    featured: false
+  },
+  {
+    title: "Youth Introduction to Shooting",
+    description: "Supervised youth shooting program for ages 10-17. Safety-focused introduction to rimfire rifles and pistols with parent participation.",
+    date: "Saturday, August 30, 2025",
+    time: "9:00 AM - 1:00 PM",
+    location: "Nampa Rod & Gun Club, 7990 Bennet Road, Nampa, ID",
+    eventType: "Training",
+    capacity: 16,
+    registeredCount: 12,
+    registrationUrl: "https://nampagunclub.org/youth",
+    price: "$25",
+    featured: false
+  },
+  {
+    title: "Shotgun Fundamentals",
+    description: "Comprehensive shotgun training covering clay sports, hunting applications, and defensive use. All skill levels welcome.",
+    date: "Sunday, September 21, 2025",
+    time: "9:00 AM - 4:00 PM",
+    location: "Caldwell Gun Club, 21840 Pond Ln, Caldwell, ID",
+    eventType: "Training",
+    capacity: 20,
+    registeredCount: 14,
+    registrationUrl: "https://caldwellgunclub.org/shotgun",
+    price: "$150",
+    featured: false
+  },
+
+  // Charity Events
+  {
+    title: "Shoot for Heroes",
+    description: "Charity sporting clays tournament benefiting disabled veterans. Team format with prizes, lunch, and silent auction.",
+    date: "Saturday, August 30, 2025",
+    time: "8:00 AM - 4:00 PM",
+    location: "Caldwell Gun Club, 21840 Pond Ln, Caldwell, ID",
+    eventType: "Charity",
+    capacity: 80,
+    registeredCount: 52,
+    registrationUrl: "https://shootforheroes.org",
+    price: "$500 (Team of 4)",
+    featured: false
+  },
+  {
+    title: "Cops vs Cancer Clay Shoot",
+    description: "Annual law enforcement charity event supporting cancer research. Open to public with prizes and community support.",
+    date: "Sunday, September 7, 2025",
+    time: "9:00 AM - 3:00 PM",
+    location: "Boise Skeet & Trap Club, Boise, ID",
+    eventType: "Charity",
+    capacity: 100,
+    registeredCount: 67,
+    registrationUrl: "https://copsvscancer.org/boise",
+    price: "$400 (Team of 4)",
+    featured: false
+  },
+  {
+    title: "Pink Clay Classic",
+    description: "Ladies charity sporting clays event supporting breast cancer awareness. Fun, supportive atmosphere with prizes and lunch.",
+    date: "Saturday, September 27, 2025",
+    time: "9:00 AM - 3:00 PM",
+    location: "Caldwell Gun Club, 21840 Pond Ln, Caldwell, ID",
+    eventType: "Charity",
+    capacity: 60,
+    registeredCount: 41,
+    registrationUrl: "https://pinkclassic.org",
+    price: "$350 (Team of 4)",
+    featured: false
+  },
+
+  // Expo Events
+  {
+    title: "Boise Knife & Gun Expo",
+    description: "Regional firearms and blade show featuring collectors, custom makers, and dealers. Military surplus and historical displays included.",
+    date: "Saturday-Sunday, August 16-17, 2025",
+    time: "9:00 AM - 5:00 PM",
+    location: "Expo Idaho, 5610 N Glenwood St, Boise, ID",
+    eventType: "Expo",
+    capacity: 3000,
+    registeredCount: 1850,
+    registrationUrl: "https://boiseknifeshows.com",
+    price: "$8",
+    featured: false
+  },
+  {
+    title: "Treasure Valley Outdoor Expo",
+    description: "Complete outdoor recreation expo featuring hunting, fishing, camping, and shooting sports vendors and demonstrations.",
+    date: "Friday-Sunday, September 5-7, 2025",
+    time: "10:00 AM - 6:00 PM",
+    location: "Ford Idaho Center, 16200 N Idaho Ctr Blvd, Nampa, ID",
+    eventType: "Expo",
+    capacity: 4000,
+    registeredCount: 2100,
+    registrationUrl: "https://tvoutdoorexpo.com",
+    price: "$12",
+    featured: false
+  },
+  {
+    title: "Military Collector Show",
+    description: "Specialized military collectibles show featuring WWII through modern military firearms, gear, and memorabilia.",
+    date: "Saturday, September 13, 2025",
+    time: "9:00 AM - 4:00 PM",
+    location: "Boise Centre, 850 W Front St, Boise, ID",
+    eventType: "Expo",
+    capacity: 1500,
+    registeredCount: 890,
+    registrationUrl: "https://militarycollectors.org/boise",
+    price: "$15",
+    featured: false
+  },
+
+  // Social Events
+  {
+    title: "Monthly Club Social",
+    description: "Monthly social gathering for TBGC members and community. Guest speakers, equipment swap meet, and networking opportunity.",
+    date: "Thursday, August 14, 2025",
+    time: "6:00 PM - 9:00 PM",
+    location: "Boise Gun Club, 123 Range Road, Boise, ID",
+    eventType: "Social",
+    capacity: 75,
+    registeredCount: 43,
+    registrationUrl: "https://tbgc.com/social",
+    price: "Free",
+    featured: false
+  },
+  {
+    title: "Range Day BBQ",
+    description: "Community BBQ and informal shooting session. Bring your firearms and join fellow enthusiasts for food, fun, and range time.",
+    date: "Saturday, August 23, 2025",
+    time: "11:00 AM - 4:00 PM",
+    location: "Nampa Rod & Gun Club, 7990 Bennet Road, Nampa, ID",
+    eventType: "Social",
+    capacity: 100,
+    registeredCount: 67,
+    registrationUrl: "https://nampagunclub.org/bbq",
+    price: "$20",
+    featured: false
+  },
+  {
+    title: "New Shooter Welcome",
+    description: "Monthly welcome event for new shooters and TBGC members. Introductions, Q&A session, and guided range experience.",
+    date: "Sunday, August 31, 2025",
+    time: "1:00 PM - 4:00 PM",
+    location: "Double Tapp Range, 14010 E Double Tapp Lane, Boise, ID",
+    eventType: "Social",
+    capacity: 30,
+    registeredCount: 18,
+    registrationUrl: "https://tbgc.com/new-shooter",
+    price: "Free",
+    featured: false
+  },
+  {
+    title: "Reloading Workshop",
+    description: "Hands-on reloading workshop covering equipment, safety, and techniques for rifle and pistol ammunition. Materials provided.",
+    date: "Saturday, September 6, 2025",
+    time: "9:00 AM - 3:00 PM",
+    location: "Precision Rifle Works, 456 Precision Ave, Eagle, ID",
+    eventType: "Social",
+    capacity: 12,
+    registeredCount: 9,
+    registrationUrl: "https://precisionrifle.com/workshop",
+    price: "$85",
+    featured: false
+  },
+  {
+    title: "Vintage Military Rifles Day",
+    description: "Celebration of military surplus rifles with historical displays, shooting activities, and expert presentations.",
+    date: "Sunday, September 14, 2025",
+    time: "10:00 AM - 4:00 PM",
+    location: "Boise Rifle & Pistol Club, 6205 Hill Road, Boise, ID",
+    eventType: "Social",
+    capacity: 60,
+    registeredCount: 34,
+    registrationUrl: "https://brpc.org/vintage",
+    price: "$15",
+    featured: false
+  },
+
+  // Additional Events
+  {
+    title: "Suppressor Demo Day",
+    description: "Try before you buy suppressor demonstration featuring leading manufacturers. Expert guidance on selection and legal requirements.",
+    date: "Saturday, September 27, 2025",
+    time: "10:00 AM - 4:00 PM",
+    location: "Double Tapp Range, 14010 E Double Tapp Lane, Boise, ID",
+    eventType: "Demo",
+    capacity: 40,
+    registeredCount: 25,
+    registrationUrl: "https://doubletapp.com/suppressor-demo",
+    price: "$25",
+    featured: false
+  },
+  {
+    title: "Archery & Crossbow Clinic",
+    description: "Combination archery and crossbow fundamentals clinic. Equipment provided for beginners, advanced techniques for experienced archers.",
+    date: "Sunday, August 17, 2025",
+    time: "9:00 AM - 2:00 PM",
+    location: "Caldwell Gun Club, 21840 Pond Ln, Caldwell, ID",
+    eventType: "Training",
+    capacity: 20,
+    registeredCount: 13,
+    registrationUrl: "https://caldwellgunclub.org/archery",
+    price: "$65",
+    featured: false
+  },
+  {
+    title: "Black Powder Rendezvous",
+    description: "Traditional black powder shooting event with period dress encouraged. Muzzleloading rifles, pistols, and trade goods.",
+    date: "Saturday-Sunday, August 30-31, 2025",
+    time: "9:00 AM - 5:00 PM",
+    location: "Southwest Idaho Practical Shooters, Star, ID",
+    eventType: "Competition",
+    capacity: 50,
+    registeredCount: 28,
+    registrationUrl: "https://swips.org/blackpowder",
+    price: "$30",
+    featured: false
+  },
+  {
+    title: "Night Vision & Thermal Demo",
+    description: "After-dark demonstration of night vision and thermal optics from leading manufacturers. Educational and hands-on experience.",
+    date: "Friday, September 19, 2025",
+    time: "7:00 PM - 11:00 PM",
+    location: "Nampa Rod & Gun Club, 7990 Bennet Road, Nampa, ID",
+    eventType: "Demo",
+    capacity: 25,
+    registeredCount: 17,
+    registrationUrl: "https://nampagunclub.org/nightvision",
+    price: "$35",
+    featured: false
+  },
+  {
+    title: "First Aid for Shooters",
+    description: "Medical training specifically for shooting sports and range environments. Trauma care, range safety officer certification available.",
+    date: "Saturday, September 28, 2025",
+    time: "8:00 AM - 5:00 PM",
+    location: "Northwest Tactical Academy, 321 Training Blvd, Star, ID",
+    eventType: "Training",
+    capacity: 16,
+    registeredCount: 11,
+    registrationUrl: "https://nwtactical.edu/firstaid",
+    price: "$195",
+    featured: false
   }
 ]
 
-const navItems = [
-  { label: 'Home', href: '/', icon: <Search className="h-4 w-4" /> },
-  { label: 'Directory', href: '/directory', icon: <MapPin className="h-4 w-4" /> },
-  { label: 'Events', href: '/events', icon: <Clock className="h-4 w-4" />, active: true },
-  { label: 'Training', href: '/training', icon: <Star className="h-4 w-4" /> }
+const eventCategories = [
+  { label: "All Events", value: "all", count: upcomingEvents.length, color: "ayu-blue" },
+  { label: "Competitions", value: "Competition", count: upcomingEvents.filter(e => e.eventType === "Competition").length, color: "ayu-red" },
+  { label: "Training", value: "Training", count: upcomingEvents.filter(e => e.eventType === "Training").length, color: "ayu-green" },
+  { label: "Expos", value: "Expo", count: upcomingEvents.filter(e => e.eventType === "Expo").length, color: "ayu-purple" },
+  { label: "Charity", value: "Charity", count: upcomingEvents.filter(e => e.eventType === "Charity").length, color: "ayu-teal" },
+  { label: "Social", value: "Social", count: upcomingEvents.filter(e => e.eventType === "Social").length, color: "ayu-cobalt" },
+  { label: "Demos", value: "Demo", count: upcomingEvents.filter(e => e.eventType === "Demo").length, color: "ayu-orange" }
 ]
 
-function EventCard({ event }: { event: typeof upcomingEvents[0] }) {
-  const spotsLeft = event.capacity - event.registered
-  const isAlmostFull = spotsLeft <= 5
-  const categoryColors = {
-    competition: "bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30",
-    training: "bg-scope-blue/20 text-scope-blue border-scope-blue/30",
-    charity: "bg-rifling-green/20 text-rifling-green border-rifling-green/30",
-    expo: "bg-copper-orange/20 text-copper-orange border-copper-orange/30"
-  }
+export default function EventsPage() {
+  const [selectedCategory, setSelectedCategory] = useState("all")
+  const [searchQuery, setSearchQuery] = useState("")
+  const [currentPage, setCurrentPage] = useState(1)
+  const eventsPerPage = 12
+  
+  const filteredEvents = upcomingEvents.filter(event => {
+    const matchesCategory = selectedCategory === "all" || event.eventType === selectedCategory
+    const matchesSearch = searchQuery === "" || 
+      event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      event.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      event.location.toLowerCase().includes(searchQuery.toLowerCase())
+    return matchesCategory && matchesSearch
+  })
+
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredEvents.length / eventsPerPage)
+  const startIndex = (currentPage - 1) * eventsPerPage
+  const paginatedEvents = filteredEvents.slice(startIndex, startIndex + eventsPerPage)
+
+  // Reset to page 1 when filters change
+  React.useEffect(() => {
+    setCurrentPage(1)
+  }, [selectedCategory, searchQuery])
 
   return (
-    <Card className={`group hover:shadow-lg transition-all duration-200 overflow-hidden ${
-      event.featured ? 'ring-2 ring-brass-yellow/30' : ''
-    }`}>
-      {/* Event Image */}
-      <div className="relative aspect-video">
-        <EventImage
-          alt={event.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          priority={event.featured}
+    <>
+      <SiteNavigation variant="premium" sticky={true} />
+      <div className="min-h-screen bg-background">
+        {/* Breadcrumb Hero - Left Aligned */}
+        <section className="bg-gradient-to-br from-ayu-blue to-ayu-cobalt border-b border-border/20">
+          <div className="container mx-auto max-w-7xl px-md py-3xl">
+            <div className="flex items-center gap-xs text-sm text-range-white/80 mb-base">
+              <span>Home</span>
+              <ChevronRight className="h-4 w-4" />
+              <span className="text-copper-orange font-medium">Events</span>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-center">
+              <div className="lg:col-span-2 space-y-base">
+                <Badge className="bg-ayu-blue/20 text-ayu-blue border-ayu-blue/30 w-fit">
+                  <Calendar className="h-4 w-4 mr-xs" />
+                  Events Hub
+                </Badge>
+                <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-range-white leading-tight">
+                  Treasure Valley Events
+                </h1>
+                <p className="text-body-lg text-range-white/80 max-w-2xl">
+                  Discover competitions, training, shows, and community events across Idaho's premier firearms region.
+                </p>
+                <div className="flex gap-base">
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black hover:from-copper-orange hover:to-brass-yellow font-rajdhani font-bold"
+                  >
+                    <Plus className="h-4 w-4 mr-xs" />
+                    Submit Event
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="border-copper-orange/30 text-copper-orange hover:bg-copper-orange hover:text-gunmetal-black"
+                  >
+                    View Calendar
+                  </Button>
+                </div>
+              </div>
+              
+              {/* Featured Event Spotlight */}
+              <div className="lg:col-span-1">
+                <div className="relative">
+                  <Card className="mica border-copper-orange/30 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-copper-orange/20 to-brass-yellow/10 rounded-bl-full"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow"></div>
+                    
+                    <CardHeader className="pb-xs relative z-10">
+                      <div className="flex items-center justify-between mb-xs">
+                        <Badge className="bg-copper-orange/20 text-copper-orange border-copper-orange/30 font-rajdhani font-bold text-[10px]">
+                          <Zap className="h-3 w-3 mr-xs" />
+                          NEXT EVENT
+                        </Badge>
+                        <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                          <Clock className="h-3 w-3" />
+                          <span>3 days</span>
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-xs">
+                        <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">USPSA Monthly Match</h3>
+                        <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                          <MapPin className="h-3 w-3 text-copper-orange" />
+                          <span>Nampa Rod & Gun Club</span>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    
+                    <CardContent className="space-y-base relative z-10">
+                      <div className="flex items-center justify-between">
+                        <div className="space-y-xs">
+                          <div className="flex items-center gap-xs text-xs text-card-foreground/80">
+                            <Calendar className="h-3 w-3 text-brass-yellow" />
+                            <span className="font-medium">Sat, Aug 9 • 8:00 AM</span>
+                          </div>
+                          <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                            <Users className="h-3 w-3" />
+                            <span>54/80 registered</span>
+                            <DollarSign className="h-3 w-3 ml-xs" />
+                            <span>$15</span>
+                          </div>
+                        </div>
+                        
+                        <div className="text-right">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-copper-orange/30 to-brass-yellow/20 flex items-center justify-center mb-xs">
+                            <Trophy className="h-5 w-5 text-copper-orange" />
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <Button 
+                        className="w-full bg-gradient-to-r from-copper-orange to-brass-yellow text-gunmetal-black hover:from-brass-yellow hover:to-copper-orange font-rajdhani font-bold text-xs"
+                        size="sm"
+                      >
+                        REGISTER NOW
+                        <ArrowRight className="h-3 w-3 ml-xs" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Event Ticker */}
+        <EventTicker 
+          events={upcomingEvents.filter(e => e.featured).map(event => ({
+            title: event.title,
+            date: event.date.split(',')[1]?.trim() || event.date,
+            location: event.location,
+            eventType: event.eventType,
+            price: event.price,
+            featured: event.featured
+          }))}
         />
-        
-        {/* Category Badge */}
-        <div className="absolute top-3 left-3">
-          <Badge className={categoryColors[event.category as keyof typeof categoryColors]}>
-            {event.category}
-          </Badge>
-        </div>
-        
-        {/* Featured Badge */}
-        {event.featured && (
-          <div className="absolute top-3 right-3">
-            <Badge className="bg-brass-yellow text-gunmetal-black font-rajdhani font-bold">
-              Featured
-            </Badge>
-          </div>
-        )}
-        
-        {/* Price */}
-        <div className="absolute bottom-3 right-3">
-          <Badge className="bg-black/80 text-white">
-            ${event.price}
-          </Badge>
-        </div>
-      </div>
 
-      {/* Content */}
-      <div className="p-[var(--space-md)] space-y-[var(--space-base)]">
-        {/* Title & Description */}
-        <div>
-          <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black group-hover:text-brass-yellow transition-colors duration-200 mb-[var(--space-xs)]">
-            {event.title}
-          </h3>
-          <p className="text-sm text-case-hardened font-noto-sans leading-relaxed">
-            {event.description}
-          </p>
-        </div>
 
-        {/* Event Details */}
-        <div className="space-y-[var(--space-xs)] text-sm text-case-hardened">
-          <div className="flex items-center gap-[var(--space-xs)]">
-            <Calendar className="icon-xs text-brass-yellow" />
-            <span>{new Date(event.date).toLocaleDateString('en-US', { 
-              weekday: 'long', 
-              year: 'numeric', 
-              month: 'long', 
-              day: 'numeric' 
-            })}</span>
+        {/* Featured Events & Calendar Integration */}
+        <section className="py-2xl bg-muted/30">
+          <div className="container mx-auto max-w-7xl px-md">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl">
+              
+              {/* Featured Events */}
+              <div className="lg:col-span-2 space-y-base">
+                <div className="flex items-center justify-between">
+                  <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">Featured Events</h2>
+                  <Button variant="ghost" className="text-copper-orange hover:text-gunmetal-black">
+                    View All <ArrowRight className="h-4 w-4 ml-xs" />
+                  </Button>
+                </div>
+                
+                <div className="grid gap-base">
+                  {filteredEvents.filter(event => event.featured).slice(0, 3).map((event, index) => {
+                    const formatTicketDate = (dateString: string) => {
+                      const date = new Date(dateString)
+                      const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+                        "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+                      return {
+                        month: monthNames[date.getMonth()],
+                        day: date.getDate().toString().padStart(2, '0'),
+                        dayOfWeek: date.toLocaleDateString('en-US', { weekday: 'short' }).toUpperCase()
+                      }
+                    }
+                    
+                    const ticketDate = formatTicketDate(event.date)
+                    const eventId = `TBG${event.title.replace(/\s+/g, '').slice(0, 6).toUpperCase()}`
+                    
+                    return (
+                      <Card key={index} className="p-0 overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer group">
+                        <div className="flex">
+                          {/* Fixed Width Date Stub */}
+                          <div className="w-24 flex-shrink-0 bg-gradient-to-b from-ayu-blue/20 to-ayu-cobalt/15 p-base text-center relative border-r border-ayu-blue/20">
+                            {/* Perforated Edge */}
+                            <div className="absolute -right-1.5 top-2 bottom-2 flex flex-col justify-evenly">
+                              {Array.from({ length: 5 }, (_, i) => (
+                                <div key={i} className="w-3 h-3 bg-background rounded-full border border-border/50" />
+                              ))}
+                            </div>
+                            
+                            <div className="space-y-1">
+                              <div className="text-[10px] font-medium text-ayu-blue tracking-wide">
+                                {ticketDate.dayOfWeek}
+                              </div>
+                              <div className="text-2xl font-rajdhani font-bold text-ayu-blue leading-none">
+                                {ticketDate.day}
+                              </div>
+                              <div className="text-[10px] font-medium text-ayu-blue tracking-wide">
+                                {ticketDate.month}
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {/* Content Area */}
+                          <div className="flex-1 p-lg">
+                            <div className="space-y-xs">
+                              <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-xs">
+                                  <Badge className="bg-ayu-blue/20 text-ayu-blue border-ayu-blue/30 text-[10px]">
+                                    {event.eventType.toUpperCase()}
+                                  </Badge>
+                                  <Badge className="bg-safety-red text-white text-[10px]">FEATURED</Badge>
+                                </div>
+                                <div className="text-[10px] text-muted-foreground font-mono">#{eventId}</div>
+                              </div>
+                              
+                              <h3 className="font-rajdhani text-xl font-bold text-card-foreground group-hover:text-ayu-blue transition-colors">
+                                {event.title}
+                              </h3>
+                              
+                              <p className="text-sm text-muted-foreground line-clamp-2">{event.description}</p>
+                              
+                              <div className="flex items-center justify-between pt-xs">
+                                <div className="flex items-center gap-base text-xs text-muted-foreground">
+                                  <div className="flex items-center gap-xs">
+                                    <MapPin className="h-3 w-3 text-ayu-blue" />
+                                    <span>{event.location.split(',')[0]}</span>
+                                  </div>
+                                  <div className="flex items-center gap-xs">
+                                    <Users className="h-3 w-3 text-ayu-blue" />
+                                    <span>{event.registeredCount}/{event.capacity}</span>
+                                  </div>
+                                </div>
+                                <Button variant="ghost" size="sm" className="text-ayu-blue hover:text-ayu-cobalt shadow-none border border-ayu-blue/30 px-base py-xs">
+                                  REGISTER
+                                </Button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Card>
+                    )
+                  })}
+                </div>
+              </div>
+
+              {/* Calendar & Quick Actions */}
+              <div className="space-y-base">
+                <h3 className="font-rajdhani text-xl font-bold text-card-foreground">This Month</h3>
+                
+                <Card className="p-lg">
+                  <div className="space-y-base">
+                    <div className="grid grid-cols-7 gap-xs text-center">
+                      {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, i) => (
+                        <div key={i} className="text-xs font-medium text-muted-foreground p-xs">{day}</div>
+                      ))}
+                      {Array.from({ length: 35 }, (_, i) => {
+                        const date = i - 2; // Start from -2 to show previous month
+                        // Extract actual event dates from our events data
+                        const eventDates = filteredEvents
+                          .map(event => {
+                            const eventDate = new Date(event.date);
+                            return eventDate.getDate();
+                          })
+                          .filter(d => d >= 1 && d <= 31);
+                        const hasEvent = eventDates.includes(date);
+                        const eventCount = eventDates.filter(d => d === date).length;
+                        
+                        return (
+                          <div key={i} className={`
+                            text-xs p-xs rounded cursor-pointer transition-colors relative
+                            ${date < 1 || date > 31 ? 'text-muted-foreground/50' : 'text-card-foreground hover:bg-accent'}
+                            ${hasEvent ? 'bg-copper-orange/20 text-copper-orange font-bold' : ''}
+                          `}>
+                            {date < 1 ? 30 + date : date > 31 ? date - 31 : date}
+                            {eventCount > 1 && (
+                              <div className="absolute -top-1 -right-1 w-2 h-2 bg-copper-orange rounded-full text-[8px] flex items-center justify-center text-white">
+                                {eventCount}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                    
+                    <div className="pt-base border-t space-y-xs">
+                      <h4 className="font-medium text-sm">Quick Actions</h4>
+                      <div className="space-y-xs">
+                        <Button variant="ghost" className="justify-start w-full text-xs h-8">
+                          <Plus className="h-3 w-3 mr-xs" />
+                          Add to Calendar
+                        </Button>
+                        <Button variant="ghost" className="justify-start w-full text-xs h-8">
+                          <Eye className="h-3 w-3 mr-xs" />
+                          View Full Calendar
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+
+                {/* Event Stats */}
+                <Card className="p-base">
+                  <div className="space-y-base text-center">
+                    <div>
+                      <div className="font-rajdhani text-3xl font-bold text-copper-orange">132+</div>
+                      <div className="text-xs text-muted-foreground">Events This Month</div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-base text-center">
+                      <div>
+                        <div className="font-rajdhani text-lg font-bold text-copper-orange">45+</div>
+                        <div className="text-xs text-muted-foreground">Venues</div>
+                      </div>
+                      <div>
+                        <div className="font-rajdhani text-lg font-bold text-rifling-green">6</div>
+                        <div className="text-xs text-muted-foreground">Categories</div>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </div>
           </div>
-          
-          <div className="flex items-center gap-[var(--space-xs)]">
-            <Clock className="icon-xs text-brass-yellow" />
-            <span>{event.time} - {event.endTime}</span>
-          </div>
-          
-          <div className="flex items-center gap-[var(--space-xs)]">
-            <MapPin className="icon-xs text-brass-yellow" />
-            <span>{event.location}</span>
-          </div>
-          
-          <div className="flex items-center gap-[var(--space-xs)]">
-            <Users className="icon-xs text-brass-yellow" />
-            <span>{event.registered}/{event.capacity} registered</span>
-            {isAlmostFull && (
-              <Badge variant="outline" className="text-xs border-safety-red/30 text-safety-red">
-                Almost Full
-              </Badge>
+        </section>
+
+
+
+      {/* Events Grid */}
+      <section className="py-2xl">
+        <div className="container mx-auto max-w-6xl px-md">
+          <div className="space-y-2xl">
+            <div className="flex items-center justify-between">
+              <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">
+                {selectedCategory === "all" ? "All Events" : `${selectedCategory} Events`}
+              </h2>
+              <div className="text-muted-foreground">
+                {filteredEvents.length} {filteredEvents.length === 1 ? 'event' : 'events'} found
+              </div>
+            </div>
+
+            {/* Search and Category Filters */}
+            <div className="space-y-base">
+              {/* Search Bar */}
+              <div className="relative max-w-md">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  placeholder="Search events..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10"
+                />
+              </div>
+
+              {/* Category Filters */}
+              <div className="flex flex-wrap gap-xs">
+                {eventCategories.map((category) => (
+                  <Button
+                    key={category.value}
+                    variant={selectedCategory === category.value ? "solid-accent" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedCategory(category.value)}
+                    className={selectedCategory === category.value
+                      ? `bg-${category.color} text-gunmetal-black hover:bg-${category.color}/90`
+                      : `border-${category.color}/30 text-${category.color} hover:bg-${category.color}/10`
+                    }
+                  >
+                    {category.label}
+                    <Badge className="ml-xs bg-current/20 text-current text-[10px]">
+                      {category.count}
+                    </Badge>
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xl">
+              {paginatedEvents.map((event, index) => (
+                <EventCard
+                  key={startIndex + index}
+                  title={event.title}
+                  description={event.description}
+                  date={event.date}
+                  time={event.time}
+                  location={event.location}
+                  eventType={event.eventType}
+                  capacity={event.capacity}
+                  registeredCount={event.registeredCount}
+                  registrationUrl={event.registrationUrl}
+                  price={event.price}
+                  featured={event.featured}
+                />
+              ))}
+            </div>
+
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="flex items-center justify-center gap-base mt-2xl">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                  disabled={currentPage === 1}
+                  className="border-border/30 text-muted-foreground hover:text-card-foreground hover:bg-muted/50"
+                >
+                  <ArrowRight className="h-4 w-4 rotate-180 mr-xs" />
+                  Previous
+                </Button>
+                
+                <div className="flex items-center gap-xs">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                    <Button
+                      key={page}
+                      variant={currentPage === page ? "solid-accent" : "ghost"}
+                      size="sm"
+                      onClick={() => setCurrentPage(page)}
+                      className={currentPage === page 
+                        ? "bg-copper-orange text-gunmetal-black hover:bg-brass-yellow w-10 h-10"
+                        : "text-muted-foreground hover:text-card-foreground hover:bg-muted/50 w-10 h-10"
+                      }
+                    >
+                      {page}
+                    </Button>
+                  ))}
+                </div>
+                
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                  disabled={currentPage === totalPages}
+                  className="border-border/30 text-muted-foreground hover:text-card-foreground hover:bg-muted/50"
+                >
+                  Next
+                  <ArrowRight className="h-4 w-4 ml-xs" />
+                </Button>
+              </div>
+            )}
+
+            {filteredEvents.length === 0 && (
+              <div className="text-center py-6xl">
+                <div className="space-y-base">
+                  <div className="text-6xl">🎯</div>
+                  <h3 className="font-rajdhani text-2xl font-bold text-card-foreground">
+                    No events found
+                  </h3>
+                  <p className="text-muted-foreground max-w-md mx-auto">
+                    Try adjusting your search criteria or browse all events to discover what's happening in the Treasure Valley.
+                  </p>
+                  <Button 
+                    onClick={() => {
+                      setSelectedCategory("all")
+                      setSearchQuery("")
+                    }}
+                    className="bg-copper-orange text-gunmetal-black hover:bg-brass-yellow"
+                  >
+                    Show All Events
+                  </Button>
+                </div>
+              </div>
             )}
           </div>
         </div>
+      </section>
 
-        {/* Features */}
-        <div className="flex flex-wrap gap-[var(--space-xs)]">
-          {event.features.slice(0, 3).map((feature) => (
-            <Badge key={feature} variant="outline" className="text-xs border-brass-yellow/30 text-brass-yellow">
-              {feature}
+      {/* Event Submission CTA */}
+      <section className="py-2xl bg-gradient-to-br from-ayu-blue to-ayu-green">
+        <div className="container mx-auto max-w-4xl px-md text-center">
+          <div className="space-y-lg">
+            <Badge className="bg-range-white/20 text-range-white border-range-white/30">
+              <Plus className="h-4 w-4 mr-xs" />
+              Event Organizers
             </Badge>
-          ))}
-        </div>
-
-        {/* Actions */}
-        <div className="flex gap-[var(--space-xs)] pt-[var(--space-xs)]">
-          <Button 
-            size="sm" 
-            className="flex-1 bg-brass-yellow text-gunmetal-black hover:bg-copper-orange font-rajdhani font-semibold"
-          >
-            Register
-          </Button>
-          <Button variant="secondary" size="sm">
-            <Info className="icon-xs" />
-          </Button>
-        </div>
-      </div>
-    </Card>
-  )
-}
-
-export default function EventsPage() {
-  return (
-    <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
-        <NavigationFusion 
-          items={navItems}
-          variant="glass"
-          orientation="horizontal"
-        />
-      </div>
-
-      {/* Theme Toggle */}
-      <NewThemeToggle variant="floating" />
-
-      {/* Page Hero */}
-      <PageHero
-        title="Treasure Valley Events Calendar"
-        subtitle="Building a unified calendar for the region's firearms community. Help us launch with real events."
-        backgroundPreset="cool"
-        primaryAction={{ text: "Submit Your Event", href: "#event-submission" }}
-        secondaryAction={{ text: "Learn More", href: "#about-calendar" }}
-      />
-
-      {/* Search & Filter Section */}
-      <section className="py-[var(--space-xl)] bg-gradient-hero-cool">
-        <div className="max-w-6xl mx-auto px-[var(--space-md)]">
-          <div className="flex flex-col md:flex-row gap-[var(--space-base)] mb-[var(--space-lg)]">
-            <div className="flex-1">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 icon-sm text-case-hardened" />
-                <Input
-                  placeholder="Search events by name, location, or type..."
-                  className="bg-white border-scope-blue/30 focus:border-scope-blue"
-                  style={{paddingLeft: '48px'}}
-                />
-              </div>
-            </div>
-            <div className="flex gap-[var(--space-xs)]">
-              <Button variant="secondary" className="border-scope-blue/30 text-scope-blue hover:bg-scope-blue hover:text-white">
-                <Calendar className="icon-sm mr-[var(--space-xs)]" />
-                Date Range
-              </Button>
-              <Button variant="secondary" className="border-scope-blue/30 text-scope-blue hover:bg-scope-blue hover:text-white">
-                <Filter className="icon-sm mr-[var(--space-xs)]" />
-                Filters
-              </Button>
-            </div>
-          </div>
-
-          {/* Category Tabs */}
-          <div className="flex flex-wrap gap-[var(--space-xs)]">
-            {[
-              { label: "All Events", value: "all", active: true },
-              { label: "Competitions", value: "competition" },
-              { label: "Training & Education", value: "training" },
-              { label: "Gun Shows & Expos", value: "expo" },
-              { label: "Charity Events", value: "charity" }
-            ].map((category) => (
-              <Button
-                key={category.value}
-                variant={category.active ? "default" : "secondary"}
-                size="sm"
-                className={
-                  category.active
-                    ? "bg-scope-blue text-white"
-                    : "border-scope-blue/30 text-scope-blue hover:bg-scope-blue hover:text-white"
-                }
+            <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-range-white">
+              List Your Event <span className="text-range-white font-bold">Free</span>
+            </h2>
+            <p className="text-body-lg text-range-white/80 max-w-2xl mx-auto">
+              Help build Idaho's most comprehensive firearms events calendar. Submit your upcoming events and reach thousands of enthusiasts across the Treasure Valley.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-base justify-center">
+              <Button 
+                size="xl" 
+                className="bg-range-white text-ayu-blue hover:bg-range-white/90 font-rajdhani font-bold"
               >
-                {category.label}
+                Submit Your Event
+                <ArrowRight className="h-5 w-5 ml-xs" />
               </Button>
-            ))}
+              <Button 
+                variant="outline" 
+                size="xl"
+                className="border-range-white/30 text-range-white hover:bg-range-white hover:text-ayu-blue"
+              >
+                Event Guidelines
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Events Calendar Vision */}
-      <section id="about-calendar" className="py-[var(--space-xl)]">
-        <div className="max-w-6xl mx-auto px-[var(--space-md)]">
-          <div className="text-center mb-[var(--space-xl)]">
-            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
-              The Unified Events Calendar Vision
-            </h2>
-            <p className="text-lg text-case-hardened font-noto-sans max-w-3xl mx-auto">
-              Our research has identified the events landscape is fragmented across dozens of websites. We're building the definitive calendar for Treasure Valley firearms events.
+      {/* Why Choose TBGC - Moved above footer */}
+      <section className="py-2xl bg-muted/30">
+        <div className="container mx-auto max-w-4xl px-md">
+          <div className="text-center space-y-xl">
+            <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">Why Choose TBGC Events</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-xl">
+              <Card className="p-lg bg-gradient-to-br from-ayu-blue/5 to-ayu-cobalt/5">
+                <div className="text-center space-y-base">
+                  <div className="bg-ayu-blue/20 p-base rounded-full w-fit mx-auto">
+                    <CheckCircle className="h-6 w-6 text-ayu-blue" />
+                  </div>
+                  <div>
+                    <div className="font-rajdhani text-2xl font-bold text-card-foreground">Vetted</div>
+                    <div className="text-sm text-muted-foreground">Events & Organizers</div>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-lg">
+                <div className="text-center space-y-base">
+                  <div className="bg-rifling-green/20 p-base rounded-full w-fit mx-auto">
+                    <MapPin className="h-6 w-6 text-rifling-green" />
+                  </div>
+                  <div>
+                    <div className="font-rajdhani text-2xl font-bold text-card-foreground">Local</div>
+                    <div className="text-sm text-muted-foreground">Treasure Valley Focus</div>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-lg">
+                <div className="text-center space-y-base">
+                  <div className="bg-copper-orange/20 p-base rounded-full w-fit mx-auto">
+                    <Calendar className="h-6 w-6 text-copper-orange" />
+                  </div>
+                  <div>
+                    <div className="font-rajdhani text-2xl font-bold text-card-foreground">Free</div>
+                    <div className="text-sm text-muted-foreground">Event Listings</div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Find legitimate events from established ranges, clubs, and training organizations across the Treasure Valley. All events are verified before listing.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-lg)] mb-[var(--space-xl)]">
-            <Card className="p-[var(--space-md)] text-center">
-              <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
-                Training & Education
-              </h3>
-              <p className="text-case-hardened font-noto-sans text-sm mb-[var(--space-base)]">
-                CCW classes, safety courses, and advanced training
-              </p>
-              <div className="text-2xl font-rajdhani font-bold text-scope-blue">50+</div>
-              <div className="text-sm text-case-hardened">Annual Events</div>
-            </Card>
-            
-            <Card className="p-[var(--space-md)] text-center">
-              <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
-                Competitions
-              </h3>
-              <p className="text-case-hardened font-noto-sans text-sm mb-[var(--space-base)]">
-                USPSA, IDPA, Steel Challenge, and sporting clays
-              </p>
-              <div className="text-2xl font-rajdhani font-bold text-scope-blue">40+</div>
-              <div className="text-sm text-case-hardened">Annual Matches</div>
-            </Card>
-            
-            <Card className="p-[var(--space-md)] text-center">
-              <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
-                Gun Shows & Expos
-              </h3>
-              <p className="text-case-hardened font-noto-sans text-sm mb-[var(--space-base)]">
-                Regional gun shows and industry exhibitions
-              </p>
-              <div className="text-2xl font-rajdhani font-bold text-scope-blue">12+</div>
-              <div className="text-sm text-case-hardened">Annual Shows</div>
-            </Card>
-            
-            <Card className="p-[var(--space-md)] text-center">
-              <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
-                Community Events
-              </h3>
-              <p className="text-case-hardened font-noto-sans text-sm mb-[var(--space-base)]">
-                Charity shoots, club meetings, and social gatherings
-              </p>
-              <div className="text-2xl font-rajdhani font-bold text-scope-blue">30+</div>
-              <div className="text-sm text-case-hardened">Annual Events</div>
-            </Card>
-          </div>
-
-          {/* Event Submission Form */}
-          <div id="event-submission" className="bg-gradient-hero-cool rounded-lg border border-scope-blue/20 p-[var(--space-xl)]">
-            <div className="text-center mb-[var(--space-lg)]">
-              <h3 className="text-2xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
-                Submit Your Event
-              </h3>
-              <p className="text-lg text-case-hardened font-noto-sans max-w-2xl mx-auto">
-                Help us launch by submitting your upcoming firearms events. Be featured in our unified calendar at no cost.
-              </p>
-            </div>
-            
-            <div className="max-w-2xl mx-auto space-y-[var(--space-base)]">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
-                <Input placeholder="Event Name" className="bg-white border-scope-blue/30 focus:border-scope-blue" />
-                <Input placeholder="Organizer Name" className="bg-white border-scope-blue/30 focus:border-scope-blue" />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
-                <Input placeholder="Contact Email" className="bg-white border-scope-blue/30 focus:border-scope-blue" />
-                <Input placeholder="Contact Phone" className="bg-white border-scope-blue/30 focus:border-scope-blue" />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-base)]">
-                <Input type="date" placeholder="Event Date" className="bg-white border-scope-blue/30 focus:border-scope-blue" />
-                <Input type="time" placeholder="Start Time" className="bg-white border-scope-blue/30 focus:border-scope-blue" />
-                <Input type="time" placeholder="End Time" className="bg-white border-scope-blue/30 focus:border-scope-blue" />
-              </div>
-              <Input placeholder="Venue Name and Address" className="bg-white border-scope-blue/30 focus:border-scope-blue" />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
-                <select className="px-[var(--space-base)] py-[var(--space-xs)] border border-scope-blue/30 rounded-lg bg-white text-sm font-noto-sans">
-                  <option>Event Category</option>
-                  <option>Training & Education</option>
-                  <option>Competition</option>
-                  <option>Gun Show / Expo</option>
-                  <option>Charity Event</option>
-                  <option>Club Meeting</option>
-                  <option>Other</option>
-                </select>
-                <Input placeholder="Registration Fee (if any)" className="bg-white border-scope-blue/30 focus:border-scope-blue" />
-              </div>
-              <textarea 
-                placeholder="Event description and additional details..."
-                className="w-full px-[var(--space-base)] py-[var(--space-xs)] border border-scope-blue/30 rounded-lg bg-white text-sm font-noto-sans min-h-[100px] focus:border-scope-blue focus:outline-none"
-              />
-              
-              <div className="text-center pt-[var(--space-base)]">
-                <Button size="lg" className="bg-scope-blue text-white hover:bg-trigger-blue font-rajdhani font-semibold">
-                  Submit Event for Review
-                </Button>
-                <p className="text-sm text-case-hardened mt-[var(--space-xs)]">
-                  We'll review and add to the calendar within 24 hours
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
-
-      {/* Site Footer */}
-      <SiteFooter />
     </div>
-  )
+    <SiteFooter />
+    <AccessibilityFAB />
+  </>
+)
 }

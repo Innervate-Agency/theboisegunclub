@@ -15,10 +15,7 @@ const meta: Meta<typeof Button> = {
       control: { type: 'select' },
       options: ['default', 'primary', 'secondary', 'accent', 'success', 'destructive', 'glass', 'solid-accent', 'solid-success', 'solid-destructive', 'solid-primary', 'ghost', 'link', 'fire', 'fire-blue', 'fire-purple', 'fire-green'],
     },
-    size: {
-      control: 'select',
-      options: ['xs', 'sm', 'default', 'lg', 'xl', 'icon'],
-    },
+          options: ['xs', 'sm', 'default', 'lg', 'xl', 'icon'],
     rounded: {
       control: 'select',
       options: ['none', 'sm', 'default', 'lg', 'full'],

@@ -157,12 +157,12 @@ export const CustomShowcase: Story = {
       }
     ],
     partnerLogos: [
-      { name: "Glock", logo: <div className="font-bold text-display-sm">GLOCK</div> },
-      { name: "Sig Sauer", logo: <div className="font-bold text-body-lg">SIG SAUER</div> },
-      { name: "Smith & Wesson", logo: <div className="font-bold text-body-lg">S&W</div> },
-      { name: "Ruger", logo: <div className="font-bold text-display-sm">RUGER</div> },
-      { name: "Daniel Defense", logo: <div className="font-bold text-body-sm">DANIEL DEFENSE</div> },
-      { name: "Leupold", logo: <div className="font-bold text-body-lg">LEUPOLD</div> }
+      { name: "Glock", icon: Target, gradientColor: 'blue' as const },
+      { name: "Sig Sauer", icon: Shield, gradientColor: 'teal' as const },
+      { name: "Smith & Wesson", icon: Award, gradientColor: 'green' as const },
+      { name: "Ruger", icon: Settings, gradientColor: 'purple' as const },
+      { name: "Daniel Defense", icon: Zap, gradientColor: 'red' as const },
+      { name: "Leupold", icon: Users, gradientColor: 'yellow' as const }
     ]
   },
 }
@@ -201,11 +201,11 @@ export const LaunchPhase: Story = {
       }
     ],
     partnerLogos: [
-      { name: "Local Partners", logo: <div className="text-body-sm opacity-60">LOCAL PARTNERS</div> },
-      { name: "Training Orgs", logo: <div className="text-body-sm opacity-60">TRAINING ORGS</div> },
-      { name: "Gun Stores", logo: <div className="text-body-sm opacity-60">GUN STORES</div> },
-      { name: "Ranges", logo: <div className="text-body-sm opacity-60">RANGES</div> },
-      { name: "Your Logo", logo: <div className="text-body-sm opacity-40">YOUR LOGO HERE</div> }
+      { name: "Local Partners", icon: Users, gradientColor: 'blue' as const },
+      { name: "Training Orgs", icon: Shield, gradientColor: 'teal' as const },
+      { name: "Gun Stores", icon: Award, gradientColor: 'green' as const },
+      { name: "Ranges", icon: Settings, gradientColor: 'purple' as const },
+      { name: "Your Logo", icon: Zap, gradientColor: 'red' as const }
     ]
   },
 }

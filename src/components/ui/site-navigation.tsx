@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
@@ -13,19 +14,19 @@ const siteNavigationVariants = cva(
     variants: {
       variant: {
         default: "bg-card shadow-flat",
-        premium: "bg-gradient-to-r from-brass-yellow/5 via-copper-orange/5 to-brass-yellow/5 shadow-md backdrop-blur-sm relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-brass-yellow/40 after:to-transparent",
-        elite: "bg-gradient-to-r from-blued-steel/10 via-case-hardened/10 to-blued-steel/10 shadow-elevated backdrop-blur-md relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-case-hardened/50 after:to-transparent",
-        glass: "bg-card/80 backdrop-blur-xl shadow-premium",
-        gunclub: "bg-shooting-bench shadow-flat relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-tactical-gray/40 after:to-transparent"
+        premium: "mica",
+        elite: "mica-modal after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-case-hardened/50 after:to-transparent",
+        glass: "mica-card",
+        gunclub: "bg-shooting-bench shadow-flat after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-tactical-gray/40 after:to-transparent"
       },
       layout: {
-        horizontal: "relative",
+        horizontal: "",
         vertical: "flex flex-col min-h-screen w-64",
-        mega: "relative"
+        mega: ""
       },
       sticky: {
         true: "sticky top-0 z-50",
-        false: "relative"
+        false: ""
       }
     },
     defaultVariants: {
@@ -37,13 +38,13 @@ const siteNavigationVariants = cva(
 )
 
 const navigationItems = [
-  { label: "Home", icon: Home, href: "/" },
-  { label: "Directory", icon: Users, href: "/directory" },
-  { label: "Events", icon: Calendar, href: "/events" },
-  { label: "Training", icon: Target, href: "/training" },
-  { label: "Competitions", icon: Trophy, href: "/competitions" },
-  { label: "Safety", icon: Shield, href: "/safety" },
-  { label: "Settings", icon: Settings, href: "/settings" }
+  { label: "Home", icon: Home, href: "/", color: "copper-orange" },
+  { label: "Events", icon: Calendar, href: "/events", color: "ayu-blue" },
+  { label: "Directory", icon: Users, href: "/directory", color: "ayu-green" },
+  { label: "Guides", icon: Target, href: "/guides", color: "ayu-purple" },
+  { label: "Map", icon: Shield, href: "/map", color: "ayu-red" },
+  { label: "Marketplace", icon: Trophy, href: "/marketplace", color: "ayu-teal" },
+  { label: "Community", icon: Settings, href: "/community", color: "ayu-teal" }
 ]
 
 export interface SiteNavigationProps 
@@ -63,41 +64,45 @@ export function SiteNavigation({
   ...props
 }: SiteNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+  const pathname = usePathname()
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen)
 
-  if (layout === "vertical") {
-    return (
-      <nav
-        className={cn(siteNavigationVariants({ variant, layout, sticky }), className)}
-        {...props}
-      >
-        <div className="p-md">
-          {showLogo && (
-            <div className="mb-[var(--space-lg)]">
-              <div className="text-heading-sm font-rajdhani text-gunmetal-black">
-                <span className="font-extrabold">THE BOISE GUN</span>{' '}
-                <span className="font-light">CLUB</span>
-              </div>
-              <p className="text-body-sm text-case-hardened">Treasure Valley</p>
-            </div>
-          )}
-          
-          <div className="space-y-[var(--space-xs)]">
-            {navigationItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="flex items-center gap-sm px-base py-sm text-body-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-card transition-all duration-150"
-              >
-                <item.icon className="h-icon-sm w-icon-sm" />
-                {item.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
-    )
+  // Get individual hover classes for each nav item - text color only, no background
+  const getHoverClasses = (color: string) => {
+    switch(color) {
+      case 'copper-orange': return 'hover:text-copper-orange'
+      case 'ayu-blue': return 'hover:text-ayu-blue'
+      case 'ayu-green': return 'hover:text-ayu-green'
+      case 'ayu-purple': return 'hover:text-ayu-purple'
+      case 'ayu-red': return 'hover:text-ayu-red'
+      case 'ayu-teal': return 'hover:text-ayu-teal'
+      default: return 'hover:text-copper-orange'
+    }
+  }
+  
+  const getColorBarClass = (color: string) => {
+    switch(color) {
+      case 'copper-orange': return 'bg-copper-orange'
+      case 'ayu-blue': return 'bg-ayu-blue'
+      case 'ayu-green': return 'bg-ayu-green'
+      case 'ayu-purple': return 'bg-ayu-purple'
+      case 'ayu-red': return 'bg-ayu-red'
+      case 'ayu-teal': return 'bg-ayu-teal'
+      default: return 'bg-copper-orange'
+    }
+  }
+
+  const getActiveTextClass = (color: string) => {
+    switch(color) {
+      case 'copper-orange': return 'text-copper-orange'
+      case 'ayu-blue': return 'text-ayu-blue'
+      case 'ayu-green': return 'text-ayu-green'
+      case 'ayu-purple': return 'text-ayu-purple'
+      case 'ayu-red': return 'text-ayu-red'
+      case 'ayu-teal': return 'text-ayu-teal'
+      default: return 'text-copper-orange'
+    }
   }
 
   return (
@@ -106,22 +111,27 @@ export function SiteNavigation({
       {...props}
     >
       <div className="w-full max-w-7xl mx-auto px-md">
-        <div className="flex items-center justify-between h-16">
+        <div className="relative flex items-center justify-between h-16">
           
           {/* Logo */}
           {showLogo && (
             <div className="flex items-center">
               <Link href="/" className="flex items-center gap-sm">
-                <div className="w-[var(--icon-lg)] h-[var(--icon-lg)] bg-brass-yellow rounded-input flex items-center justify-center">
-                  <Target className="h-icon-sm w-icon-sm text-gunmetal-black" />
+                <div className="w-10 h-10 bg-gradient-to-br from-brass-yellow to-copper-orange rounded-lg flex flex-col items-center justify-center relative">
+                  <div className="text-[10px] font-rajdhani font-black text-gunmetal-black tracking-tight leading-none">
+                    TB
+                  </div>
+                  <div className="text-[10px] font-rajdhani font-black text-gunmetal-black tracking-tight leading-none">
+                    GC
+                  </div>
                 </div>
                 <div>
-                  <div className="text-body-lg font-rajdhani text-gunmetal-black">
-                    <span className="font-extrabold">THE BOISE GUN</span>{' '}
-                    <span className="font-light">CLUB</span>
+                  <div className="text-lg font-rajdhani text-card-foreground tracking-[0.2em] leading-none">
+                    <span className="font-bold">THEBOISE</span>
+                    <span className="font-light">GUNCLUB</span>
                   </div>
-                  <p className="text-caption text-case-hardened -mt-[var(--space-xs)]">
-                    Treasure Valley
+                  <p className="text-xs font-noto-sans text-muted-foreground mt-0">
+                    A TREASURE VALLEY COLLECTIVE
                   </p>
                 </div>
               </Link>
@@ -129,16 +139,36 @@ export function SiteNavigation({
           )}
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-[var(--space-micro)]">
-            {navigationItems.slice(0, 6).map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="flex items-center gap-xs px-base py-xs text-body-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-input transition-all duration-150"
-              >
-                <item.icon className="h-icon-sm w-icon-sm" />
-                {item.label}
-              </a>
+          <div className="hidden md:flex items-center">
+            {navigationItems.slice(0, 6).map((item, index) => (
+              <React.Fragment key={item.href}>
+                <Link
+                  href={item.href}
+                  className={`group relative flex items-center gap-xs px-base py-xs text-sm font-medium transition-all duration-200 hover:scale-105 hover:-translate-y-1 ${
+                    pathname === item.href 
+                      ? getActiveTextClass(item.color)
+                      : `text-muted-foreground ${getHoverClasses(item.color)}`
+                  }`}
+                >
+                  <item.icon className="h-3 w-3" />
+                  {item.label}
+                  
+                  {/* Stripe-style center-out underline - thicker and narrower to avoid collisions */}
+                  <div className={`absolute bottom-0 left-2 right-2 h-[3px] ${getColorBarClass(item.color)} transition-transform duration-200 origin-center ${
+                    pathname === item.href 
+                      ? 'scale-x-100' 
+                      : 'scale-x-0 group-hover:scale-x-100'
+                  }`} />
+                </Link>
+                
+                {/* Separator lines between nav items */}
+                {index < navigationItems.slice(0, 6).length - 1 && (
+                  <div className="h-4 w-px mx-xs relative">
+                    <div className="absolute inset-0 w-px bg-muted-foreground/30" />
+                    <div className="absolute inset-0 w-px bg-card/50 translate-x-px" />
+                  </div>
+                )}
+              </React.Fragment>
             ))}
           </div>
 
@@ -146,11 +176,11 @@ export function SiteNavigation({
           <div className="hidden md:flex items-center gap-base">
             {customContent || (
               <>
-                <Button variant="ghost" size="sm">
+                <Button variant="ghost" size="sm" className="shadow-none">
                   Sign In
                 </Button>
-                <Button variant="accent" size="sm">
-                  Join Now
+                <Button variant="ghost" size="sm" className="bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20 shadow-none border border-copper-orange/30 text-xs">
+                  60-Day Free Trial
                 </Button>
               </>
             )}
@@ -165,105 +195,42 @@ export function SiteNavigation({
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className="h-[var(--icon-base)] w-[var(--icon-base)]" />
+                <X className="h-icon-base w-icon-base" />
               ) : (
-                <Menu className="h-[var(--icon-base)] w-[var(--icon-base)]" />
+                <Menu className="h-icon-base w-icon-base" />
               )}
             </Button>
           </div>
         </div>
 
-        {/* Mega Menu Content */}
-        {layout === "mega" && (
-          <div className="py-md relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
-            <div className="grid grid-cols-3 gap-lg">
-              <div>
-                <h3 className="text-body-sm font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
-                  Directory
-                </h3>
-                <div className="space-y-[var(--space-xs)]">
-                  <a href="/directory/shops" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
-                    Gun Shops
-                  </a>
-                  <a href="/directory/ranges" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
-                    Shooting Ranges
-                  </a>
-                  <a href="/directory/instructors" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
-                    Instructors
-                  </a>
-                  <a href="/directory/gunsmiths" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
-                    Gunsmiths
-                  </a>
-                </div>
-              </div>
-              
-              <div>
-                <h3 className="text-body-sm font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
-                  Events
-                </h3>
-                <div className="space-y-[var(--space-xs)]">
-                  <a href="/events/competitions" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
-                    Competitions
-                  </a>
-                  <a href="/events/training" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
-                    Training Sessions
-                  </a>
-                  <a href="/events/social" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
-                    Social Events
-                  </a>
-                  <a href="/events/gun-shows" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
-                    Gun Shows
-                  </a>
-                </div>
-              </div>
-              
-              <div>
-                <h3 className="text-body-sm font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
-                  Resources
-                </h3>
-                <div className="space-y-[var(--space-xs)]">
-                  <a href="/safety" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
-                    Safety Guidelines
-                  </a>
-                  <a href="/training/beginner" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
-                    Beginner Resources
-                  </a>
-                  <a href="/laws" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
-                    Idaho Gun Laws
-                  </a>
-                  <a href="/community" className="block text-body-sm text-case-hardened hover:text-gunmetal-black">
-                    Community Forum
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden py-base relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
-            <div className="space-y-[var(--space-xs)]">
+            <div className="space-y-xs">
               {navigationItems.map((item) => (
-                <a
+                <Link
                   key={item.href}
                   href={item.href}
-                  className="flex items-center gap-sm px-base py-sm text-body-sm font-medium text-case-hardened hover:text-gunmetal-black hover:bg-brass-yellow/10 rounded-input transition-all duration-150"
+                  className={`flex items-center gap-sm px-base py-sm text-body-sm font-medium transition-all duration-150 rounded-input ${
+                    pathname === item.href 
+                      ? getActiveTextClass(item.color)
+                      : `text-muted-foreground ${getHoverClasses(item.color)}`
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <item.icon className="h-icon-sm w-icon-sm" />
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
             
-            <div className="pt-[var(--space-base)] mt-[var(--space-base)] relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
+            <div className="pt-base mt-base relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
               <div className="flex flex-col gap-xs">
-                <Button variant="ghost" size="sm" className="justify-start">
+                <Button variant="ghost" size="sm" className="justify-start shadow-none">
                   Sign In
                 </Button>
-                <Button variant="accent" size="sm" className="justify-start">
-                  Join Now
+                <Button variant="ghost" size="sm" className="justify-start bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20 shadow-none border border-copper-orange/30 text-xs">
+                  60-Day Free Trial
                 </Button>
               </div>
             </div>
