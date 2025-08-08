@@ -91,17 +91,17 @@ export function FeatureGrid({
         {(title || subtitle || description) && (
           <div className="text-center mb-[var(--space-xl)]">
             {subtitle && (
-              <p className="text-body-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
+              <p className="text-body-sm font-rajdhani font-semibold text-rusty-orange mb-[var(--space-xs)] tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
             {title && (
-              <h2 className="text-heading-lg md:text-heading-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+              <h2 className="text-heading-lg md:text-heading-xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
                 {title}
               </h2>
             )}
             {description && (
-              <p className="text-body-lg text-case-hardened font-noto-sans max-w-3xl mx-auto leading-relaxed">
+              <p className="text-body-lg text-warning-amber font-noto-sans max-w-3xl mx-auto leading-relaxed">
                 {description}
               </p>
             )}
@@ -120,18 +120,18 @@ export function FeatureGrid({
                 <div className="space-y-[var(--space-base)]">
                   {/* Icon */}
                   {feature.icon && (
-                    <div className="flex items-center justify-center w-12 h-12 bg-brass-yellow/10 rounded-card group-hover:bg-brass-yellow/20 transition-colors duration-200">
+                    <div className="flex items-center justify-center w-12 h-12 bg-sandy-ochre/10 rounded-card group-hover:bg-sandy-ochre/20 transition-colors duration-200">
                       {React.cloneElement(feature.icon, { className: "icon-lg icon-primary group-hover:scale-110 transition-transform duration-200" })}
                     </div>
                   )}
                   
                   {/* Content */}
                   <div className="space-y-[var(--space-sm)]">
-                    <h3 className="text-heading-sm font-rajdhani font-bold text-gunmetal-black group-hover:text-brass-yellow transition-colors duration-200">
+                    <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate group-hover:text-sandy-ochre transition-colors duration-200">
                       {feature.title}
                     </h3>
                     
-                    <p className="text-body-sm text-case-hardened font-noto-sans leading-relaxed">
+                    <p className="text-body-sm text-warning-amber font-noto-sans leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -142,7 +142,7 @@ export function FeatureGrid({
                       <Button 
                         variant="ghost" 
                         size="sm"
-                        className="group/btn p-0 h-auto font-rajdhani font-semibold text-brass-yellow hover:text-copper-orange"
+                        className="group/btn p-0 h-auto font-rajdhani font-semibold text-sandy-ochre hover:text-rusty-orange"
                         onClick={feature.link.onClick}
                       >
                         {feature.link.text}
@@ -153,7 +153,7 @@ export function FeatureGrid({
                 </div>
                 
                 {/* Hover accent line */}
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-brass-yellow to-copper-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-sandy-ochre to-rusty-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
               </div>
             )
           })}

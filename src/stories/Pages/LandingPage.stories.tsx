@@ -27,12 +27,12 @@ export const Complete: Story = {
   render: () => (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-tactical-gray/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/10 before:via-transparent before:to-copper-orange/8 dark:before:from-brass-yellow/14 dark:before:to-copper-orange/12 before:pointer-events-none px-md py-4xl">
+      <section className="relative overflow-hidden bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-warm-stone/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-sandy-ochre/14 dark:before:to-rusty-orange/12 before:pointer-events-none px-md py-4xl">
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="grid gap-xl lg:grid-cols-2 lg:gap-3xl">
             <div className="space-y-lg">
               <div className="space-y-base">
-                <Badge className="bg-brass-yellow text-gunmetal-black shadow-sm">
+                <Badge className="bg-sandy-ochre text-dark-chocolate shadow-sm">
                   <Target className="h-4 w-4 mr-xs" />
                   Regional Platform
                 </Badge>
@@ -44,19 +44,19 @@ export const Complete: Story = {
                 </p>
                 <div className="space-y-sm">
                   <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                    <Shield className="h-4 w-4 text-brass-yellow flex-shrink-0" />
+                    <Shield className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>Safety-first community focused on responsible firearms education</span>
                   </div>
                   <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                    <Star className="h-4 w-4 text-brass-yellow flex-shrink-0" />
+                    <Star className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>Preserving Idaho's rich firearms heritage and outdoor traditions</span>
                   </div>
                   <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                    <Users className="h-4 w-4 text-brass-yellow flex-shrink-0" />
+                    <Users className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>Connecting 250K+ gun owners across the Treasure Valley region</span>
                   </div>
                   <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                    <TrendingUp className="h-4 w-4 text-brass-yellow flex-shrink-0" />
+                    <TrendingUp className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>4-tier subscription model supporting local businesses</span>
                   </div>
                 </div>
@@ -106,9 +106,9 @@ export const Complete: Story = {
           </div>
           
           <div className="grid gap-md md:grid-cols-2 lg:grid-cols-4">
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+            <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
-                <Search className="h-8 w-8 text-brass-yellow mb-base group-hover:text-copper-orange transition-colors" />
+                <Search className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
                 <CardTitle className="flex items-center gap-xs">
                   <Building2 className="h-5 w-5" />
                   Business Directory
@@ -121,9 +121,9 @@ export const Complete: Story = {
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-brass-yellow after:to-copper-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+            <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sandy-ochre after:to-rusty-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
-                <Calendar className="h-8 w-8 text-brass-yellow mb-base group-hover:text-copper-orange transition-colors" />
+                <Calendar className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
                 <CardTitle className="flex items-center gap-xs">
                   <Users2 className="h-5 w-5" />
                   Unified Events
@@ -136,9 +136,9 @@ export const Complete: Story = {
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-brass-yellow after:to-copper-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+            <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sandy-ochre after:to-rusty-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
-                <Share2 className="h-8 w-8 text-brass-yellow mb-base group-hover:text-copper-orange transition-colors" />
+                <Share2 className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
                 <CardTitle className="flex items-center gap-xs">
                   <MessageSquare className="h-5 w-5" />
                   Community Hub
@@ -151,9 +151,9 @@ export const Complete: Story = {
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+            <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
-                <ShoppingCart className="h-8 w-8 text-brass-yellow mb-base group-hover:text-copper-orange transition-colors" />
+                <ShoppingCart className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
                 <CardTitle className="flex items-center gap-xs">
                   <Zap className="h-5 w-5" />
                   Service Marketplace
@@ -176,7 +176,7 @@ export const Complete: Story = {
           </div>
           
           <div className="grid gap-lg md:grid-cols-2 lg:grid-cols-3">
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-red after:to-ayu-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+            <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-red after:to-ayu-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
                 <Badge className="w-fit mb-xs bg-ayu-red/20 text-ayu-red">
                   <AlertTriangle className="h-3 w-3 mr-1" />
@@ -194,14 +194,14 @@ export const Complete: Story = {
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-teal after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+            <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-teal after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
-                <Badge className="w-fit mb-xs bg-ayu-blue/20 text-ayu-blue">
+                <Badge className="w-fit mb-xs bg-slate-blue/20 text-slate-blue">
                   <AlertTriangle className="h-3 w-3 mr-1" />
                   Isolation
                 </Badge>
                 <CardTitle className="flex items-center gap-xs">
-                  <Building2 className="h-5 w-5 text-ayu-blue" />
+                  <Building2 className="h-5 w-5 text-slate-blue" />
                   Clubs Operating in Silos
                 </CardTitle>
               </CardHeader>
@@ -212,7 +212,7 @@ export const Complete: Story = {
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-ayu-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+            <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-ayu-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
                 <Badge className="w-fit mb-xs bg-ayu-green/20 text-ayu-green">
                   <AlertTriangle className="h-3 w-3 mr-1" />
@@ -230,7 +230,7 @@ export const Complete: Story = {
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-cobalt after:to-ayu-purple after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+            <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-cobalt after:to-ayu-purple after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
                 <Badge className="w-fit mb-xs bg-ayu-cobalt/20 text-ayu-cobalt">
                   <AlertTriangle className="h-3 w-3 mr-1" />
@@ -248,7 +248,7 @@ export const Complete: Story = {
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-red after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+            <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-red after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
                 <Badge className="w-fit mb-xs bg-ayu-purple/20 text-ayu-purple">
                   <AlertTriangle className="h-3 w-3 mr-1" />
@@ -266,7 +266,7 @@ export const Complete: Story = {
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-yellow after:to-ayu-blue after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+            <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-yellow after:to-slate-blue after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
                 <Badge className="w-fit mb-xs bg-ayu-yellow/20 text-ayu-yellow">
                   <AlertTriangle className="h-3 w-3 mr-1" />
@@ -291,19 +291,19 @@ export const Complete: Story = {
       <section className="px-md pt-xl pb-4xl">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center">
-            <div className="bg-card rounded-lg p-xl shadow-sm max-w-4xl mx-auto relative overflow-hidden group after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-clubhouse-lawn-green after:to-brass-yellow after:transition-all after:duration-500 after:ease-out hover:after:w-full after:rounded-b-lg">
+            <div className="bg-card rounded-lg p-xl shadow-sm max-w-4xl mx-auto relative overflow-hidden group after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-sagebrush-green after:to-sandy-ochre after:transition-all after:duration-500 after:ease-out hover:after:w-full after:rounded-b-lg">
               <div>
-                <Badge className="mb-base bg-clubhouse-lawn-green/20 text-clubhouse-lawn-green">
+                <Badge className="mb-base bg-sagebrush-green/20 text-sagebrush-green">
                   <CheckCircle className="h-3 w-3 mr-1" />
                   Our Solution
                 </Badge>
                 <h3 className="font-rajdhani text-heading-lg font-bold text-card-foreground mb-base flex items-center gap-xs">
-                  <Star className="h-6 w-6 text-brass-yellow" />
+                  <Star className="h-6 w-6 text-sandy-ochre" />
                   One Platform to Unite Treasure Valley's Firearms Community
                 </h3>
                 <div className="grid gap-base md:grid-cols-2 text-left">
                   <div className="flex items-start gap-xs">
-                    <Search className="h-5 w-5 text-clubhouse-lawn-green mt-xs flex-shrink-0" />
+                    <Search className="h-5 w-5 text-sagebrush-green mt-xs flex-shrink-0" />
                     <div>
                       <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Verified Business Network</h4>
                       <p className="text-body-sm text-muted-foreground">
@@ -312,7 +312,7 @@ export const Complete: Story = {
                     </div>
                   </div>
                   <div className="flex items-start gap-xs">
-                    <Calendar className="h-5 w-5 text-clubhouse-lawn-green mt-xs flex-shrink-0" />
+                    <Calendar className="h-5 w-5 text-sagebrush-green mt-xs flex-shrink-0" />
                     <div>
                       <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Smart Event Coordination</h4>
                       <p className="text-body-sm text-muted-foreground">
@@ -321,7 +321,7 @@ export const Complete: Story = {
                     </div>
                   </div>
                   <div className="flex items-start gap-xs">
-                    <MessageSquare className="h-5 w-5 text-clubhouse-lawn-green mt-xs flex-shrink-0" />
+                    <MessageSquare className="h-5 w-5 text-sagebrush-green mt-xs flex-shrink-0" />
                     <div>
                       <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Heritage & Education Center</h4>
                       <p className="text-body-sm text-muted-foreground">
@@ -330,7 +330,7 @@ export const Complete: Story = {
                     </div>
                   </div>
                   <div className="flex items-start gap-xs">
-                    <BookOpen className="h-5 w-5 text-clubhouse-lawn-green mt-xs flex-shrink-0" />
+                    <BookOpen className="h-5 w-5 text-sagebrush-green mt-xs flex-shrink-0" />
                     <div>
                       <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Premium Business Tools</h4>
                       <p className="text-body-sm text-muted-foreground">
@@ -346,20 +346,20 @@ export const Complete: Story = {
       </section>
 
       {/* Call to Action */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gunmetal-black/95 to-tactical-gray/90 px-md py-4xl">
-        <div className="absolute inset-0 bg-gradient-to-br from-brass-yellow/5 via-transparent to-copper-orange/8 pointer-events-none"></div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90 px-md py-4xl">
+        <div className="absolute inset-0 bg-gradient-to-br from-sandy-ochre/5 via-transparent to-rusty-orange/8 pointer-events-none"></div>
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="grid gap-xl lg:grid-cols-2 lg:gap-3xl items-center">
             
             {/* Left Side - Compelling Content */}
             <div className="text-center lg:text-left space-y-lg">
               <div className="space-y-base">
-                <Badge className="bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30">
+                <Badge className="bg-sandy-ochre/20 text-sandy-ochre border-sandy-ochre/30">
                   <MessageSquare className="h-4 w-4 mr-xs" />
                   Get In Touch
                 </Badge>
                 <h2 className="font-rajdhani text-5xl md:text-6xl font-bold text-range-white leading-tight">
-                  Questions? Want to <span className="text-brass-yellow">Partner?</span>
+                  Questions? Want to <span className="text-sandy-ochre">Partner?</span>
                 </h2>
                 <p className="text-body-lg text-range-white/80 max-w-2xl">
                   We're building Idaho's premier firearms community platform and would love to hear from you. Whether you're interested in business partnerships, have questions about the platform, or want to get involved - let's connect.
@@ -368,14 +368,14 @@ export const Complete: Story = {
               
               <div className="grid gap-sm sm:grid-cols-2 max-w-lg lg:max-w-none">
                 <div className="flex items-start gap-base">
-                  <Building2 className="h-5 w-5 text-brass-yellow mt-xs flex-shrink-0" />
+                  <Building2 className="h-5 w-5 text-sandy-ochre mt-xs flex-shrink-0" />
                   <div>
                     <h4 className="font-rajdhani font-bold text-range-white">Business Partnerships</h4>
                     <p className="text-body-sm text-range-white/70">Join our growing network of vendors</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-base">
-                  <Users className="h-5 w-5 text-brass-yellow mt-xs flex-shrink-0" />
+                  <Users className="h-5 w-5 text-sandy-ochre mt-xs flex-shrink-0" />
                   <div>
                     <h4 className="font-rajdhani font-bold text-range-white">General Inquiries</h4>
                     <p className="text-body-sm text-range-white/70">Questions about the platform</p>
@@ -386,14 +386,14 @@ export const Complete: Story = {
             
             {/* Right Side - Enhanced Signup */}
             <div className="max-w-lg mx-auto lg:mx-0">
-              <div className="bg-white dark:bg-gray-900 rounded-xl p-xl shadow-lg border border-brass-yellow/20 relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-br from-brass-yellow/5 to-copper-orange/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute bottom-[-1px] left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-brass-yellow to-copper-orange transition-all duration-500 ease-out group-hover:w-full rounded-b-xl"></div>
+              <div className="bg-white dark:bg-gray-900 rounded-xl p-xl shadow-elevated border border-sandy-ochre/20 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-br from-sandy-ochre/5 to-rusty-orange/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute bottom-[-1px] left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-sandy-ochre to-rusty-orange transition-all duration-500 ease-out group-hover:w-full rounded-b-xl"></div>
                 
                 <div className="relative space-y-lg">
                   <div className="text-left">
                     <h3 className="font-rajdhani text-2xl font-bold text-card-foreground mb-xs flex items-center gap-xs">
-                      <Mail className="h-6 w-6 text-brass-yellow" />
+                      <Mail className="h-6 w-6 text-sandy-ochre" />
                       Contact Us
                     </h3>
                     <p className="text-body-sm text-muted-foreground">
@@ -433,11 +433,11 @@ export const Complete: Story = {
                         name="message"
                         placeholder="Your message..."
                         rows={4}
-                        className="w-full p-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:border-brass-yellow focus:outline-none focus:ring-2 focus:ring-brass-yellow/20 resize-none"
+                        className="w-full p-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:border-sandy-ochre focus:outline-none focus:ring-2 focus:ring-sandy-ochre/20 resize-none"
                         required
                       />
                     </div>
-                    <Button type="submit" size="xl" className="w-full bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black hover:from-copper-orange hover:to-brass-yellow font-rajdhani font-bold text-lg shadow-lg transition-all duration-300">
+                    <Button type="submit" size="xl" className="w-full bg-gradient-to-r from-sandy-ochre to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-sandy-ochre font-rajdhani font-bold text-lg shadow-elevated transition-all duration-300">
                       <Mail className="h-5 w-5 mr-xs" />
                       Send Message
                     </Button>

@@ -15,8 +15,8 @@ const FeatureTrustPoints = ({
   points,
 }: FeatureTrustPointsProps) => {
   return (
-    <div className="bg-card p-lg rounded-lg shadow-lg space-y-md">
-      {React.cloneElement(icon, { className: 'h-8 w-8 text-brass-yellow mb-base' })}
+    <div className="bg-card p-lg rounded-lg shadow-elevated space-y-md">
+      {React.cloneElement(icon, { className: 'h-8 w-8 text-sandy-ochre mb-base' })}
       <h3 className="font-rajdhani text-3xl font-bold">{title}</h3>
       <p className="text-body-lg text-muted-foreground">{description}</p>
       <Separator />

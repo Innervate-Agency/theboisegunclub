@@ -16,7 +16,7 @@ const meta: Meta = {
 - **FORBIDDEN**: Cards, modals, dropdowns, navigation, content containers
 
 ## Shadow Hierarchy  
-Following strategic restraint principles with consistent \`shadow-sm hover:shadow-md\` pattern across all components for professional appearance.
+Following strategic restraint principles with consistent \`shadow-flat hover:shadow-elevated\` pattern across all components for professional appearance.
         `,
       },
     },
@@ -71,11 +71,11 @@ export const ShadowHierarchy: Story = {
         <div className="bg-card p-md rounded-card border">
           <h3 className="font-semibold mb-base">Universal Pattern: shadow-flat hover:shadow-elevated</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-base">
-            <div className="bg-brass-yellow/10 p-base rounded-card shadow-flat hover:shadow-elevated transition-shadow cursor-pointer">
+            <div className="bg-sandy-ochre/10 p-base rounded-card shadow-flat hover:shadow-elevated transition-shadow cursor-pointer">
               <div className="font-medium">Standard Card</div>
               <div className="text-body-sm text-muted-foreground mt-xs">shadow-flat hover:shadow-elevated</div>
             </div>
-            <div className="bg-copper-orange/10 p-base rounded-card shadow-flat hover:shadow-elevated transition-shadow cursor-pointer">
+            <div className="bg-rusty-orange/10 p-base rounded-card shadow-flat hover:shadow-elevated transition-shadow cursor-pointer">
               <div className="font-medium">Premium Card</div>
               <div className="text-body-sm text-muted-foreground mt-xs">Same shadow pattern</div>
             </div>
@@ -95,10 +95,10 @@ export const ShadowHierarchy: Story = {
         <h2 className="text-display-md font-rajdhani font-bold mb-md">Branded Shadows</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
           {[
-            { name: 'Brass', class: 'shadow-brass', color: 'bg-brass-yellow/20' },
-            { name: 'Copper', class: 'shadow-copper', color: 'bg-copper-orange/20' },
-            { name: 'Premium', class: 'shadow-premium', color: 'bg-gradient-to-br from-brass-yellow/20 to-copper-orange/20' },
-            { name: 'Elite', class: 'shadow-elite', color: 'bg-gradient-to-br from-copper-orange/20 to-brass-yellow/20' },
+            { name: 'Brass', class: 'shadow-brass', color: 'bg-sandy-ochre/20' },
+            { name: 'Copper', class: 'shadow-copper', color: 'bg-rusty-orange/20' },
+            { name: 'Premium', class: 'shadow-premium', color: 'bg-gradient-to-br from-sandy-ochre/20 to-rusty-orange/20' },
+            { name: 'Elite', class: 'shadow-elite', color: 'bg-gradient-to-br from-rusty-orange/20 to-sandy-ochre/20' },
           ].map((shadow) => (
             <div key={shadow.name} className="space-y-sm">
               <div className={`${shadow.color} p-md rounded-card ${shadow.class} h-24 flex items-center justify-center`}>
@@ -224,7 +224,7 @@ export const InteractiveDemo: Story = {
             <h3 className="font-semibold mb-xs">{card.title}</h3>
             <p className="text-body-sm text-muted-foreground">{card.desc}</p>
             {card.variant === 'fire' && (
-              <div className="w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow rounded-full mt-base"></div>
+              <div className="w-full h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre rounded-full mt-base"></div>
             )}
           </div>
         ))}

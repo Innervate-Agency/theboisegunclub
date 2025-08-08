@@ -26,7 +26,7 @@ const samplePlans = [
   },
   {
     id: 'silver',
-    name: 'Silver Profile',
+    name: 'Copper Profile',
     description: 'Enhanced listing with content and advertising features',
     price: {
       monthly: 49.95,
@@ -43,7 +43,7 @@ const samplePlans = [
     ],
     popular: true,
     badge: 'Most Popular',
-    color: 'rgb(242, 135, 5)', // copper-orange
+    color: 'rgb(242, 135, 5)', // rusty-orange
     ctaText: 'Upgrade to Silver',
     ctaVariant: 'default' as const
   },
@@ -66,13 +66,13 @@ const samplePlans = [
     ],
     recommended: true,
     badge: 'Best Value',
-    color: 'brass-yellow',
+    color: 'sandy-ochre',
     ctaText: 'Go Gold',
     ctaVariant: 'default' as const
   },
   {
-    id: 'platinum',
-    name: 'Platinum Profile',
+    id: 'gold',
+    name: 'Gold Profile',
     description: 'Enterprise solution for major retailers and ranges',
     price: {
       monthly: 199.95,
@@ -127,8 +127,8 @@ type Story = StoryObj<typeof PricingCard>;
 export const Default: Story = {
   args: {
     plan: samplePlans[1],
+    tier: 'copper',
     isAnnual: false,
-    variant: 'default',
     showFeatures: true
   }
 };
@@ -221,8 +221,8 @@ export const PricingFusionComplete: StoryObj<typeof PricingFusion> = {
 export const PlatinumProfile: Story = {
   args: {
     plan: {
-      id: 'platinum',
-      name: 'Platinum Profile',
+      id: 'gold',
+      name: 'Gold Profile',
       description: 'Enterprise solution for major retailers and ranges',
       price: {
         monthly: 199.95,

@@ -38,7 +38,7 @@ export const Default: Story = {
          <p className="text-muted-foreground mb-base">
            Connect with 500+ local businesses, events, and fellow enthusiasts across the region
         </p>
-        <Button size="sm" className="bg-copper-orange hover:bg-brass-yellow">
+        <Button size="sm" className="bg-rusty-orange hover:bg-sandy-ochre">
           Explore Directory
         </Button>
       </div>
@@ -51,7 +51,7 @@ export const PremiumAccess: Story = {
   args: {
     children: (
       <div className="text-center">
-        <Badge className="mb-base bg-brass-yellow text-gunmetal-black">
+        <Badge className="mb-base bg-sandy-ochre text-dark-chocolate">
           Limited Time Offer
         </Badge>
         <Trophy className="mx-auto mb-base icon-2xl icon-primary" />
@@ -62,7 +62,7 @@ export const PremiumAccess: Story = {
           Unlock exclusive business deals, priority event notifications, and advanced search features.
         </p>
         <div className="flex gap-xs justify-center">
-          <Button size="sm" className="bg-copper-orange hover:bg-brass-yellow">
+          <Button size="sm" className="bg-rusty-orange hover:bg-sandy-ochre">
             Upgrade Now
           </Button>
           <Button size="sm" variant="outline">
@@ -93,7 +93,7 @@ export const RegionalEvent: Story = {
             <strong>Tickets:</strong> $15 adults, kids free
           </p>
         </div>
-        <Button size="sm" className="bg-copper-orange hover:bg-brass-yellow">
+        <Button size="sm" className="bg-rusty-orange hover:bg-sandy-ochre">
           Get Tickets
         </Button>
       </div>
@@ -119,7 +119,7 @@ export const TrainingProgram: Story = {
           <Badge variant="outline" className="text-caption">Competition Prep</Badge>
           <Badge variant="outline" className="text-caption">Youth Programs</Badge>
         </div>
-        <Button size="sm" className="bg-copper-orange hover:bg-brass-yellow">
+        <Button size="sm" className="bg-rusty-orange hover:bg-sandy-ochre">
           View Programs
         </Button>
       </div>
@@ -142,7 +142,7 @@ export const AchievementShowcase: Story = {
         <div className="space-y-xs mb-base">
           <div className="flex justify-between items-center bg-muted/50 rounded p-xs">
             <span className="text-body-sm font-medium">John Smith</span>
-            <Badge className="bg-brass-yellow text-gunmetal-black">1st Place</Badge>
+            <Badge className="bg-sandy-ochre text-dark-chocolate">1st Place</Badge>
           </div>
           <div className="flex justify-between items-center bg-muted/50 rounded p-xs">
             <span className="text-body-sm font-medium">Sarah Johnson</span>
@@ -181,7 +181,7 @@ export const NewsletterSignup: Story = {
             className="w-full px-sm py-xs border rounded-input bg-background text-foreground border-border"
           />
           <div className="flex gap-xs">
-            <Button size="sm" className="flex-1 bg-copper-orange hover:bg-brass-yellow">
+            <Button size="sm" className="flex-1 bg-rusty-orange hover:bg-sandy-ochre">
               Subscribe
             </Button>
             <Button size="sm" variant="outline" className="flex-1">
@@ -230,23 +230,23 @@ export const LargeFeatureCard: Story = {
         </div>
         <div className="grid grid-cols-2 gap-base mb-md">
           <div className="text-center">
-            <div className="text-display-md font-bold text-copper-orange">12</div>
+            <div className="text-display-md font-bold text-rusty-orange">12</div>
             <div className="text-body-sm text-muted-foreground">Shooting Lanes</div>
           </div>
           <div className="text-center">
-            <div className="text-display-md font-bold text-copper-orange">3</div>
+            <div className="text-display-md font-bold text-rusty-orange">3</div>
             <div className="text-body-sm text-muted-foreground">Trap Fields</div>
           </div>
           <div className="text-center">
-            <div className="text-display-md font-bold text-copper-orange">2</div>
+            <div className="text-display-md font-bold text-rusty-orange">2</div>
             <div className="text-body-sm text-muted-foreground">Skeet Fields</div>
           </div>
           <div className="text-center">
-            <div className="text-display-md font-bold text-copper-orange">1</div>
+            <div className="text-display-md font-bold text-rusty-orange">1</div>
             <div className="text-body-sm text-muted-foreground">Sporting Clays</div>
           </div>
         </div>
-        <Button size="sm" className="w-full bg-copper-orange hover:bg-brass-yellow">
+        <Button size="sm" className="w-full bg-rusty-orange hover:bg-sandy-ochre">
           Schedule a Tour
         </Button>
       </div>

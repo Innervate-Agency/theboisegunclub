@@ -85,22 +85,22 @@ export default function TrainingPage() {
       <section className="py-[var(--space-2xl)] bg-gradient-hero-warm">
         <div className="max-w-6xl mx-auto px-[var(--space-md)]">
           <div className="text-center mb-[var(--space-xl)]">
-            <p className="text-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
+            <p className="text-sm font-rajdhani font-semibold text-rusty-orange mb-[var(--space-xs)] tracking-wide uppercase">
               Popular Courses
             </p>
-            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
               Featured Training Programs
             </h2>
-            <p className="text-lg text-case-hardened font-noto-sans max-w-3xl mx-auto">
+            <p className="text-lg text-warning-amber font-noto-sans max-w-3xl mx-auto">
               Choose from our most popular courses designed to build skills and confidence at every level.
             </p>
           </div>
 
           <Suspense fallback={<LoadingSpinner text="Loading training programs..." />}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-[var(--space-lg)]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-lg">
               {trainingPrograms.map((program) => (
-                <Card key={program.id} className="group hover:shadow-lg transition-all duration-200 overflow-hidden">
-                  <div className="p-[var(--space-md)] space-y-[var(--space-base)]">
+                <Card key={program.id} className="group hover:shadow-elevated transition-all duration-200 overflow-hidden">
+                  <div className="p-md space-y-[var(--space-base)]">
                     <div>
                       <h3 className="text-xl font-rajdhani font-bold text-primary group-hover:text-accent transition-colors duration-200 mb-[var(--space-xs)]">
                         {program.title}

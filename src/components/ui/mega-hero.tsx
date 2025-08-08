@@ -17,10 +17,10 @@ const megaHeroVariants = cva(
         full: "min-h-screen"
       },
       backgroundPreset: {
-        warm: "bg-gradient-to-br from-brass-yellow/10 via-copper-orange/10 to-walnut-stock/10",
+        warm: "bg-gradient-to-br from-sandy-ochre/10 via-rusty-orange/10 to-walnut-stock/10",
         cool: "bg-gradient-to-br from-scope-blue/10 via-trigger-blue/10 to-cerakote-blue/10", 
-        mixed: "bg-gradient-to-br from-brass-yellow/10 via-scope-blue/10 to-walnut-stock/10",
-        gunclub: "bg-gradient-to-br from-range-white via-shooting-bench to-range-white"
+        mixed: "bg-gradient-to-br from-sandy-ochre/10 via-scope-blue/10 to-walnut-stock/10",
+        gunclub: "bg-gradient-to-br from-range-white via-card-surface to-range-white"
       }
     },
     defaultVariants: {
@@ -80,7 +80,7 @@ export function MegaHero({
           {/* Icon */}
           {icon && (
             <div className={cn(
-              "text-brass-yellow",
+              "text-sandy-ochre",
               centerContent ? "flex justify-center" : "flex"
             )}>
               {icon}
@@ -90,17 +90,17 @@ export function MegaHero({
           {/* Main content */}
           <div className="space-y-[var(--space-md)]">
             {subtitle && (
-              <p className="text-body-sm uppercase tracking-wider font-medium text-case-hardened">
+              <p className="text-body-sm uppercase tracking-wider font-medium text-warning-amber">
                 {subtitle}
               </p>
             )}
             
-            <h1 className="text-heading-xl md:text-display-sm lg:text-6xl font-rajdhani font-bold text-gunmetal-black tracking-tight leading-tight">
+            <h1 className="text-heading-xl md:text-display-sm lg:text-6xl font-rajdhani font-bold text-dark-chocolate tracking-tight leading-tight">
               {title}
             </h1>
             
             {description && (
-              <p className="text-body-lg md:text-heading-sm text-case-hardened font-noto-sans leading-relaxed max-w-3xl mx-auto">
+              <p className="text-body-lg md:text-heading-sm text-warning-amber font-noto-sans leading-relaxed max-w-3xl mx-auto">
                 {description}
               </p>
             )}
@@ -115,7 +115,7 @@ export function MegaHero({
               {badges.map((badge, index) => (
                 <div
                   key={index}
-                  className="px-base py-xs bg-card/80 backdrop-blur-sm border border-brass-yellow/20 rounded-card text-body-sm font-medium text-blued-steel shadow-xs"
+                  className="px-base py-xs bg-card/80 backdrop-blur-sm border border-sandy-ochre/20 rounded-card text-body-sm font-medium text-blued-steel shadow-xs"
                 >
                   {badge}
                 </div>

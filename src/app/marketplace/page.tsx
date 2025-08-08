@@ -255,21 +255,21 @@ function ProductCard({ item }: { item: typeof marketplaceListings[0] }) {
     "Ammunition": "bg-rifling-green/20 text-rifling-green border-rifling-green/30",
     "Optics": "bg-scope-blue/20 text-scope-blue border-scope-blue/30",
     "Accessories": "bg-ayu-purple/20 text-ayu-purple border-ayu-purple/30",
-    "Holsters": "bg-tactical-gray/20 text-tactical-gray border-tactical-gray/30"
+    "Holsters": "bg-warm-stone/20 text-warm-stone border-warm-stone/30"
   }
 
   const conditionColors = {
-    "New": "bg-clubhouse-lawn-green/20 text-clubhouse-lawn-green border-clubhouse-lawn-green/30",
+    "New": "bg-sagebrush-green/20 text-sagebrush-green border-sagebrush-green/30",
     "Like New": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30",
     "Excellent": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30",
-    "Good": "bg-case-hardened/20 text-case-hardened border-case-hardened/30"
+    "Good": "bg-warning-amber/20 text-warning-amber border-warning-amber/30"
   }
 
   const savings = item.originalPrice - item.price
   const savingsPercent = Math.round((savings / item.originalPrice) * 100)
 
   return (
-    <Card className={`group hover:shadow-lg transition-all duration-300 ${
+    <Card className={`group hover:shadow-elevated transition-all duration-300 ${
       item.featured ? 'ring-2 ring-rusty-orange/30 bg-rusty-orange/5' : ''
     }`}>
       <CardHeader className="pb-base">
@@ -358,7 +358,7 @@ function ProductCard({ item }: { item: typeof marketplaceListings[0] }) {
                 <span className="text-xs text-muted-foreground">{item.vendorRating}</span>
               </div>
             </div>
-            <Badge className={item.inStock ? "bg-clubhouse-lawn-green/20 text-clubhouse-lawn-green border-clubhouse-lawn-green/30" : "bg-safety-red/20 text-safety-red border-safety-red/30"}>
+            <Badge className={item.inStock ? "bg-sagebrush-green/20 text-sagebrush-green border-sagebrush-green/30" : "bg-safety-red/20 text-safety-red border-safety-red/30"}>
               {item.inStock ? `${item.quantity} Available` : "Out of Stock"}
             </Badge>
           </div>
@@ -428,7 +428,7 @@ export default function MarketplacePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-tactical-gray/90 px-md py-6xl">
+      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90 px-md py-6xl">
         <div className="absolute inset-0 bg-gradient-to-br from-rusty-orange/5 via-transparent to-rusty-orange/8 pointer-events-none"></div>
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center space-y-lg">
@@ -632,7 +632,7 @@ export default function MarketplacePage() {
       </section>
 
       {/* Legal Notice */}
-      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-tactical-gray/90">
+      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90">
         <div className="container mx-auto max-w-4xl px-md text-center">
           <div className="space-y-lg">
             <Badge className="bg-scale-blue/20 text-scale-blue border-scale-blue/30">

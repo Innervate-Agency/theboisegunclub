@@ -15,13 +15,13 @@ const services = [
     icon: Calendar,
     title: "Unified Events",
     description: "Comprehensive calendar of competitions, training, and community gatherings",
-    borderColor: "border-l-brass-yellow"
+    borderColor: "border-l-sandy-ochre"
   },
   {
     icon: ShoppingCart,
     title: "Service Marketplace",
     description: "Book range time, training sessions, and services from local businesses",
-    borderColor: "border-l-copper-orange"
+    borderColor: "border-l-rusty-orange"
   },
   {
     icon: Users,
@@ -39,7 +39,7 @@ const services = [
     icon: Building,
     title: "Brand & Apparel",
     description: "Official club merchandise and branded apparel for members",
-    borderColor: "border-l-case-hardened"
+    borderColor: "border-l-warning-amber"
   }
 ]
 
@@ -48,16 +48,16 @@ export function ServiceGrid() {
     <section className="py-[var(--space-2xl)] bg-range-white">
       <div className="container mx-auto px-[var(--space-base)]">
         {/* Service cards in 3x2 grid exactly matching screenshot layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-md)] max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-md max-w-5xl mx-auto">
           {services.map((service, index) => (
             <Card 
               key={index} 
               className={`
-                bg-shooting-bench 
+                bg-card-surface 
                 shadow-flat 
                 hover:shadow-md 
                 transition-stripe-fast 
-                p-[var(--space-md)] 
+                p-md 
                 ${service.borderColor} 
                 border-l-4
                 hover:-translate-y-0.5
@@ -67,12 +67,12 @@ export function ServiceGrid() {
             >
               <div className="flex flex-col items-start text-left h-full">
                 {/* Icon with subtle background and proper spacing */}
-                <div className="mb-[var(--space-base)] p-[var(--space-sm)] rounded-card bg-range-white border border-case-hardened/10 transition-stripe-fast group-hover:bg-copper-orange/5 group-hover:border-copper-orange/20">
-                  <service.icon className="h-6 w-6 text-foreground transition-stripe-fast group-hover:text-copper-orange" />
+                <div className="mb-[var(--space-base)] p-[var(--space-sm)] rounded-card bg-range-white border border-warning-amber/10 transition-stripe-fast group-hover:bg-rusty-orange/5 group-hover:border-rusty-orange/20">
+                  <service.icon className="h-6 w-6 text-foreground transition-stripe-fast group-hover:text-rusty-orange" />
                 </div>
                 
                 {/* Title with proper hierarchy and hover color */}
-                <h3 className="font-noto-sans text-body-lg font-semibold text-foreground mb-[var(--space-sm)] leading-tight transition-stripe-fast group-hover:text-copper-orange">
+                <h3 className="font-noto-sans text-body-lg font-semibold text-foreground mb-[var(--space-sm)] leading-tight transition-stripe-fast group-hover:text-rusty-orange">
                   {service.title}
                 </h3>
                 

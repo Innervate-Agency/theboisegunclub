@@ -66,7 +66,7 @@ Design authority must convey **regional expertise** and **professional trust**.
 ## 🔥 FIRE GRADIENT SIGNATURE
 
 The copper-to-brass gradient system represents the "fire" of firearms enthusiasm:
-- 'from-copper-orange to-brass-yellow' - The signature accent
+- 'from-rusty-orange to-sandy-ochre' - The signature accent
 - Applied to: card accents, hover states, success indicators, call-to-action elements
 - Represents the passion and precision of the firearms community
         `,
@@ -82,11 +82,11 @@ type Story = StoryObj<typeof meta>
 const BusinessShowcase = () => (
   <div className="min-h-screen bg-background">
     {/* Hero Section */}
-    <div className="bg-gradient-to-r from-range-white via-shooting-bench to-range-white">
+    <div className="bg-gradient-to-r from-range-white via-card-surface to-range-white">
       <div className="container mx-auto px-md py-2xl">
         <div className="text-center space-y-md">
           <div className="inline-flex items-center gap-xs px-base py-xs bg-card rounded-full shadow-flat">
-            <Target className="w-5 h-5 text-copper-orange" />
+            <Target className="w-5 h-5 text-rusty-orange" />
             <span className="text-body-sm font-medium text-muted-foreground">
               Treasure Valley's Premier Firearms Hub
             </span>
@@ -101,14 +101,14 @@ const BusinessShowcase = () => (
           </p>
           
           {/* Fire gradient accent bar */}
-          <div className="w-24 h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre mx-auto rounded-full"></div>
           
           <div className="flex gap-base justify-center pt-base">
-            <Button className="bg-gradient-to-r from-copper-orange to-brass-yellow text-white hover:shadow-copper transition-all">
+            <Button className="bg-gradient-to-r from-rusty-orange to-sandy-ochre text-white hover:shadow-copper transition-all">
               <Users className="w-4 h-4 mr-xs" />
               Join Community
             </Button>
-            <Button variant="outline" className="border-copper-orange text-copper-orange hover:bg-copper-orange hover:text-white">
+            <Button variant="outline" className="border-rusty-orange text-rusty-orange hover:bg-rusty-orange hover:text-white">
               <MapPin className="w-4 h-4 mr-xs" />
               Browse Directory
             </Button>
@@ -124,39 +124,39 @@ const BusinessShowcase = () => (
           Regional Impact
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-md">
-          <Card className="border-l-4 border-l-copper-orange">
+          <Card className="border-l-4 border-l-rusty-orange">
             <CardHeader className="pb-xs">
               <CardTitle className="text-body-sm font-medium text-muted-foreground">Vendor Partners</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-display-md font-bold text-copper-orange">50+</div>
+              <div className="text-display-md font-bold text-rusty-orange">50+</div>
               <p className="text-caption text-muted-foreground">Gun shops, ranges, instructors</p>
             </CardContent>
           </Card>
-          <Card className="border-l-4 border-l-brass-yellow">
+          <Card className="border-l-4 border-l-sandy-ochre">
             <CardHeader className="pb-xs">
               <CardTitle className="text-body-sm font-medium text-muted-foreground">Community Members</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-display-md font-bold text-brass-yellow">5,000+</div>
+              <div className="text-display-md font-bold text-sandy-ochre">5,000+</div>
               <p className="text-caption text-muted-foreground">Active enthusiasts</p>
             </CardContent>
           </Card>
-          <Card className="border-l-4 border-l-ayu-blue">
+          <Card className="border-l-4 border-l-slate-blue">
             <CardHeader className="pb-xs">
               <CardTitle className="text-body-sm font-medium text-muted-foreground">Monthly Events</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-display-md font-bold text-ayu-blue">25+</div>
+              <div className="text-display-md font-bold text-slate-blue">25+</div>
               <p className="text-caption text-muted-foreground">Competitions & training</p>
             </CardContent>
           </Card>
-          <Card className="border-l-4 border-l-clubhouse-lawn-green">
+          <Card className="border-l-4 border-l-sagebrush-green">
             <CardHeader className="pb-xs">
               <CardTitle className="text-body-sm font-medium text-muted-foreground">Service Bookings</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-display-md font-bold text-clubhouse-lawn-green">200+</div>
+              <div className="text-display-md font-bold text-sagebrush-green">200+</div>
               <p className="text-caption text-muted-foreground">Monthly reservations</p>
             </CardContent>
           </Card>
@@ -173,37 +173,37 @@ const BusinessShowcase = () => (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
           <Card className="hover:shadow-elevated transition-shadow duration-300 group">
             <CardHeader className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-copper-orange to-brass-yellow rounded-card flex items-center justify-center mx-auto mb-base">
+              <div className="w-12 h-12 bg-gradient-to-r from-rusty-orange to-sandy-ochre rounded-card flex items-center justify-center mx-auto mb-base">
                 <MapPin className="w-6 h-6 text-white" />
               </div>
-              <CardTitle className="text-copper-orange">Directory & Marketplace</CardTitle>
+              <CardTitle className="text-rusty-orange">Directory & Marketplace</CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription className="text-center">
                 Gun shops, ranges, gunsmiths, and instructors with integrated booking systems
               </CardDescription>
-              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-base rounded-full transition-all duration-300 ease-out origin-left"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre mt-base rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
 
           <Card className="hover:shadow-elevated transition-shadow duration-300 group">
             <CardHeader className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-ayu-blue to-ayu-teal rounded-card flex items-center justify-center mx-auto mb-base">
+              <div className="w-12 h-12 bg-gradient-to-r from-slate-blue to-ayu-teal rounded-card flex items-center justify-center mx-auto mb-base">
                 <Zap className="w-6 h-6 text-white" />
               </div>
-              <CardTitle className="text-ayu-blue">Content Engine</CardTitle>
+              <CardTitle className="text-slate-blue">Content Engine</CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription className="text-center">
                 Gun Wiki, reviews, unified events calendar, and Idaho gun law guides
               </CardDescription>
-              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-blue to-ayu-teal mt-base rounded-full transition-all duration-300 ease-out origin-left"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-slate-blue to-ayu-teal mt-base rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
 
           <Card className="hover:shadow-elevated transition-shadow duration-300 group">
             <CardHeader className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-ayu-green to-clubhouse-lawn-green rounded-card flex items-center justify-center mx-auto mb-base">
+              <div className="w-12 h-12 bg-gradient-to-r from-ayu-green to-sagebrush-green rounded-card flex items-center justify-center mx-auto mb-base">
                 <MessageSquare className="w-6 h-6 text-white" />
               </div>
               <CardTitle className="text-ayu-green">Community Forum</CardTitle>
@@ -212,7 +212,7 @@ const BusinessShowcase = () => (
               <CardDescription className="text-center">
                 Discussion, competition shooting, gear classifieds, and event coordination
               </CardDescription>
-              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-green to-clubhouse-lawn-green mt-base rounded-full transition-all duration-300 ease-out origin-left"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-green to-sagebrush-green mt-base rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
 
@@ -244,23 +244,23 @@ const BusinessShowcase = () => (
           {/* Vendors */}
           <div className="space-y-md">
             <div className="text-center">
-              <div className="w-16 h-16 bg-copper-orange rounded-full flex items-center justify-center mx-auto mb-base">
+              <div className="w-16 h-16 bg-rusty-orange rounded-full flex items-center justify-center mx-auto mb-base">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-display-sm font-bold text-copper-orange mb-xs">Vendor Partners</h3>
+              <h3 className="text-display-sm font-bold text-rusty-orange mb-xs">Vendor Partners</h3>
               <p className="text-muted-foreground">Gun shops, ranges, instructors, gunsmiths</p>
             </div>
             <Card className="shadow-flat">
               <CardHeader>
                 <div className="flex items-center gap-sm">
-                  <div className="w-12 h-12 bg-copper-orange rounded-card flex items-center justify-center">
+                  <div className="w-12 h-12 bg-rusty-orange rounded-card flex items-center justify-center">
                     <Target className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <CardTitle className="text-base">Capital City Guns</CardTitle>
                     <CardDescription>Gun Store • Boise, ID</CardDescription>
                   </div>
-                  <Badge className="ml-auto bg-clubhouse-lawn-green text-white">
+                  <Badge className="ml-auto bg-sagebrush-green text-white">
                     <Shield className="w-3 h-3 mr-xs" />
                     Verified
                   </Badge>
@@ -270,7 +270,7 @@ const BusinessShowcase = () => (
                 <div className="flex items-center gap-xs mb-sm">
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="w-4 h-4 fill-brass-yellow text-brass-yellow" />
+                      <Star key={star} className="w-4 h-4 fill-sandy-ochre text-sandy-ochre" />
                     ))}
                   </div>
                   <span className="text-body-sm text-muted-foreground">4.8 (124 reviews)</span>
@@ -280,7 +280,7 @@ const BusinessShowcase = () => (
                   <Badge variant="secondary">Gunsmithing</Badge>
                   <Badge variant="secondary">Training Classes</Badge>
                 </div>
-                <div className="w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-base rounded-full"></div>
+                <div className="w-full h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre mt-base rounded-full"></div>
               </CardContent>
             </Card>
           </div>
@@ -288,23 +288,23 @@ const BusinessShowcase = () => (
           {/* Enthusiasts */}
           <div className="space-y-md">
             <div className="text-center">
-              <div className="w-16 h-16 bg-brass-yellow rounded-full flex items-center justify-center mx-auto mb-base">
-                <Users className="w-8 h-8 text-gunmetal-black" />
+              <div className="w-16 h-16 bg-sandy-ochre rounded-full flex items-center justify-center mx-auto mb-base">
+                <Users className="w-8 h-8 text-dark-chocolate" />
               </div>
-              <h3 className="text-display-sm font-bold text-brass-yellow mb-xs">Community Members</h3>
+              <h3 className="text-display-sm font-bold text-sandy-ochre mb-xs">Community Members</h3>
               <p className="text-muted-foreground">Active enthusiasts and competitors</p>
             </div>
             <Card className="shadow-flat">
               <CardHeader>
                 <div className="flex items-center gap-sm">
-                  <div className="w-10 h-10 bg-gradient-to-r from-copper-orange to-brass-yellow rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-r from-rusty-orange to-sandy-ochre rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-body-sm">JD</span>
                   </div>
                   <div>
                     <CardTitle className="text-base">John Doe</CardTitle>
                     <CardDescription>Competition Shooter</CardDescription>
                   </div>
-                  <Badge className="ml-auto bg-clubhouse-lawn-green text-white">
+                  <Badge className="ml-auto bg-sagebrush-green text-white">
                     <Star className="w-3 h-3 mr-xs" />
                     Expert
                   </Badge>
@@ -315,7 +315,7 @@ const BusinessShowcase = () => (
                   "TBGC has revolutionized how our shooting community connects. The event calendar 
                   and vendor directory are game-changers!"
                 </p>
-                <div className="w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-base rounded-full"></div>
+                <div className="w-full h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre mt-base rounded-full"></div>
               </CardContent>
             </Card>
           </div>
@@ -323,16 +323,16 @@ const BusinessShowcase = () => (
           {/* Visitors */}
           <div className="space-y-md">
             <div className="text-center">
-              <div className="w-16 h-16 bg-ayu-blue rounded-full flex items-center justify-center mx-auto mb-base">
+              <div className="w-16 h-16 bg-slate-blue rounded-full flex items-center justify-center mx-auto mb-base">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-display-sm font-bold text-ayu-blue mb-xs">Visitors</h3>
+              <h3 className="text-display-sm font-bold text-slate-blue mb-xs">Visitors</h3>
               <p className="text-muted-foreground">Directory browsers and newcomers</p>
             </div>
             <Card className="shadow-flat">
               <CardHeader>
                 <div className="flex items-center gap-sm">
-                  <div className="w-12 h-12 bg-ayu-blue rounded-card flex items-center justify-center">
+                  <div className="w-12 h-12 bg-slate-blue rounded-card flex items-center justify-center">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -345,7 +345,7 @@ const BusinessShowcase = () => (
                 <p className="text-body-sm text-muted-foreground mb-base">
                   Discover shooting ranges, training facilities, and competition venues across the region
                 </p>
-                <div className="w-full h-1 bg-gradient-to-r from-ayu-blue to-ayu-teal mt-base rounded-full"></div>
+                <div className="w-full h-1 bg-gradient-to-r from-slate-blue to-ayu-teal mt-base rounded-full"></div>
               </CardContent>
             </Card>
           </div>
@@ -354,7 +354,7 @@ const BusinessShowcase = () => (
     </div>
 
     {/* Call to Action */}
-    <div className="py-2xl bg-gradient-to-r from-copper-orange to-brass-yellow">
+    <div className="py-2xl bg-gradient-to-r from-rusty-orange to-sandy-ochre">
       <div className="container mx-auto px-md text-center">
         <h2 className="text-3xl font-bold text-white mb-base">
           Join the Treasure Valley Firearms Community
@@ -364,11 +364,11 @@ const BusinessShowcase = () => (
           community to enhance your firearms experience.
         </p>
         <div className="flex gap-base justify-center">
-          <Button variant="secondary" size="lg" className="bg-card text-copper-orange hover:bg-muted">
+          <Button variant="secondary" size="lg" className="bg-card text-rusty-orange hover:bg-muted">
             <Users className="w-5 h-5 mr-xs" />
             Get Started Today
           </Button>
-          <Button variant="outline" size="lg" className="border-nickel-white text-nickel-white hover:bg-nickel-white hover:text-copper-orange">
+          <Button variant="outline" size="lg" className="border-nickel-white text-nickel-white hover:bg-nickel-white hover:text-rusty-orange">
             <Calendar className="w-5 h-5 mr-xs" />
             View Events
           </Button>
@@ -414,54 +414,54 @@ export const VendorFocused: Story = {
     <div className="min-h-screen bg-background p-lg">
       <div className="max-w-4xl mx-auto space-y-lg">
         <div className="text-center space-y-base">
-          <h1 className="text-4xl font-bold text-copper-orange">Vendor Partner Dashboard</h1>
+          <h1 className="text-4xl font-bold text-rusty-orange">Vendor Partner Dashboard</h1>
           <p className="text-muted-foreground">
             Comprehensive business management for Treasure Valley firearms professionals
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre mx-auto rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
-          <Card className="border-l-4 border-l-copper-orange">
+          <Card className="border-l-4 border-l-rusty-orange">
             <CardHeader className="pb-xs">
               <CardTitle className="text-body-sm font-medium text-muted-foreground">Monthly Bookings</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-display-md font-bold text-copper-orange">47</div>
+              <div className="text-display-md font-bold text-rusty-orange">47</div>
               <p className="text-caption text-muted-foreground">+23% from last month</p>
             </CardContent>
           </Card>
-          <Card className="border-l-4 border-l-brass-yellow">
+          <Card className="border-l-4 border-l-sandy-ochre">
             <CardHeader className="pb-xs">
               <CardTitle className="text-body-sm font-medium text-muted-foreground">Profile Views</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-display-md font-bold text-brass-yellow">2,340</div>
+              <div className="text-display-md font-bold text-sandy-ochre">2,340</div>
               <p className="text-caption text-muted-foreground">Directory visibility</p>
             </CardContent>
           </Card>
-          <Card className="border-l-4 border-l-clubhouse-lawn-green">
+          <Card className="border-l-4 border-l-sagebrush-green">
             <CardHeader className="pb-xs">
               <CardTitle className="text-body-sm font-medium text-muted-foreground">Reviews</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-display-md font-bold text-clubhouse-lawn-green">4.9</div>
+              <div className="text-display-md font-bold text-sagebrush-green">4.9</div>
               <p className="text-caption text-muted-foreground">Average rating</p>
             </CardContent>
           </Card>
         </div>
 
-        <Card className="border-2 border-copper-orange/20">
+        <Card className="border-2 border-rusty-orange/20">
           <CardHeader>
             <div className="flex items-center gap-sm">
-              <div className="w-12 h-12 bg-copper-orange rounded-card flex items-center justify-center">
+              <div className="w-12 h-12 bg-rusty-orange rounded-card flex items-center justify-center">
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <div>
                 <CardTitle className="text-base">Your Business Listing</CardTitle>
                 <CardDescription>Premium Vendor • Boise, ID</CardDescription>
               </div>
-              <Badge className="ml-auto bg-clubhouse-lawn-green text-white">
+              <Badge className="ml-auto bg-sagebrush-green text-white">
                 <Shield className="w-3 h-3 mr-xs" />
                 Verified
               </Badge>
@@ -471,7 +471,7 @@ export const VendorFocused: Story = {
             <div className="flex items-center gap-xs mb-sm">
               <div className="flex">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="w-4 h-4 fill-brass-yellow text-brass-yellow" />
+                  <Star key={star} className="w-4 h-4 fill-sandy-ochre text-sandy-ochre" />
                 ))}
               </div>
               <span className="text-body-sm text-muted-foreground">4.9 (87 reviews)</span>
@@ -481,7 +481,7 @@ export const VendorFocused: Story = {
               <Badge variant="secondary">Advanced Analytics</Badge>
               <Badge variant="secondary">Direct Booking</Badge>
             </div>
-            <div className="w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-base rounded-full"></div>
+            <div className="w-full h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre mt-base rounded-full"></div>
           </CardContent>
         </Card>
       </div>
@@ -501,25 +501,25 @@ export const CommunityFocused: Story = {
     <div className="min-h-screen bg-background p-lg">
       <div className="max-w-4xl mx-auto space-y-lg">
         <div className="text-center space-y-base">
-          <h1 className="text-4xl font-bold text-brass-yellow">Community Hub</h1>
+          <h1 className="text-4xl font-bold text-sandy-ochre">Community Hub</h1>
           <p className="text-muted-foreground">
             Connect with fellow enthusiasts across the Treasure Valley
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre mx-auto rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
           <Card className="group hover:shadow-elevated transition-shadow">
             <CardHeader>
               <div className="flex items-center gap-sm">
-                <MessageSquare className="w-6 h-6 text-ayu-blue" />
+                <MessageSquare className="w-6 h-6 text-slate-blue" />
                 <CardTitle>Latest Discussions</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
               <div className="space-y-sm">
                 <div className="flex items-center gap-sm p-sm bg-muted/50 rounded-card">
-                  <div className="w-8 h-8 bg-copper-orange rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-rusty-orange rounded-full flex items-center justify-center">
                     <span className="text-white text-caption font-bold">MK</span>
                   </div>
                   <div className="flex-1">
@@ -528,8 +528,8 @@ export const CommunityFocused: Story = {
                   </div>
                 </div>
                 <div className="flex items-center gap-sm p-sm bg-muted/50 rounded-card">
-                  <div className="w-8 h-8 bg-brass-yellow rounded-full flex items-center justify-center">
-                    <span className="text-gunmetal-black text-caption font-bold">JS</span>
+                  <div className="w-8 h-8 bg-sandy-ochre rounded-full flex items-center justify-center">
+                    <span className="text-dark-chocolate text-caption font-bold">JS</span>
                   </div>
                   <div className="flex-1">
                     <p className="text-body-sm font-medium">Steel Challenge tips?</p>
@@ -537,7 +537,7 @@ export const CommunityFocused: Story = {
                   </div>
                 </div>
               </div>
-              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-base rounded-full transition-all duration-300 ease-out origin-left"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre mt-base rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
 
@@ -560,7 +560,7 @@ export const CommunityFocused: Story = {
                   </div>
                 </div>
                 <div className="flex items-center gap-sm p-sm bg-muted/50 rounded-card">
-                  <div className="w-8 h-8 bg-ayu-blue rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-slate-blue rounded-full flex items-center justify-center">
                     <Shield className="w-4 h-4 text-white" />
                   </div>
                   <div className="flex-1">
@@ -569,7 +569,7 @@ export const CommunityFocused: Story = {
                   </div>
                 </div>
               </div>
-              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-green to-ayu-blue mt-base rounded-full transition-all duration-300 ease-out origin-left"></div>
+              <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-green to-slate-blue mt-base rounded-full transition-all duration-300 ease-out origin-left"></div>
             </CardContent>
           </Card>
         </div>

@@ -264,13 +264,13 @@ function ArticleCard({ article }: { article: typeof knowledgeBaseArticles[0] }) 
   }
 
   const difficultyColors = {
-    "Beginner": "bg-clubhouse-lawn-green/20 text-clubhouse-lawn-green border-clubhouse-lawn-green/30",
+    "Beginner": "bg-sagebrush-green/20 text-sagebrush-green border-sagebrush-green/30",
     "Intermediate": "bg-slate-blue/20 text-slate-blue border-slate-blue/30", 
     "Advanced": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30"
   }
 
   return (
-    <Card className={`group hover:shadow-lg transition-all duration-300 ${
+    <Card className={`group hover:shadow-elevated transition-all duration-300 ${
       article.featured ? 'ring-2 ring-slate-blue/30 bg-slate-blue/5' : ''
     }`}>
       <CardHeader className="pb-base">

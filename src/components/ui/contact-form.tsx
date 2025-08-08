@@ -97,7 +97,7 @@ export function ContactForm({
         <div className="space-y-[var(--space-xs)]">
           <Label htmlFor="email">Email Address *</Label>
           <div className="relative">
-            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
+            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
             <Input
               id="email"
               name="email"
@@ -112,7 +112,7 @@ export function ContactForm({
         <div className="space-y-[var(--space-xs)]">
           <Label htmlFor="phone">Phone Number</Label>
           <div className="relative">
-            <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
+            <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
             <Input
               id="phone"
               name="phone"
@@ -310,16 +310,16 @@ export function ContactForm({
     <div className={cn(contactFormVariants({ variant }), className)} {...props}>
       <Card className={variant === 'minimal' ? 'border-0 shadow-none' : ''}>
         <CardHeader className="text-center">
-          <CardTitle className="text-heading-md font-rajdhani font-bold text-gunmetal-black">
+          <CardTitle className="text-heading-md font-rajdhani font-bold text-dark-chocolate">
             {title}
           </CardTitle>
           {subtitle && (
-            <CardDescription className="text-case-hardened font-medium">
+            <CardDescription className="text-warning-amber font-medium">
               {subtitle}
             </CardDescription>
           )}
           {description && (
-            <p className="text-body-sm text-case-hardened leading-relaxed mt-[var(--space-xs)]">
+            <p className="text-body-sm text-warning-amber leading-relaxed mt-[var(--space-xs)]">
               {description}
             </p>
           )}
@@ -352,47 +352,47 @@ export function ContactForm({
 
           {showContactInfo && (
             <div className="border-t border-border pt-[var(--space-md)]">
-              <h3 className="font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+              <h3 className="font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
                 Contact Information
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-base text-body-sm">
                 <div className="flex items-center gap-sm">
-                  <div className="p-xs bg-brass-yellow/10 rounded-input">
-                    <Phone className="h-4 w-4 text-brass-yellow" />
+                  <div className="p-xs bg-sandy-ochre/10 rounded-input">
+                    <Phone className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>
-                    <p className="font-medium text-gunmetal-black">Phone</p>
-                    <p className="text-case-hardened">(208) 555-0123</p>
+                    <p className="font-medium text-dark-chocolate">Phone</p>
+                    <p className="text-warning-amber">(208) 555-0123</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-sm">
-                  <div className="p-xs bg-brass-yellow/10 rounded-input">
-                    <Mail className="h-4 w-4 text-brass-yellow" />
+                  <div className="p-xs bg-sandy-ochre/10 rounded-input">
+                    <Mail className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>
-                    <p className="font-medium text-gunmetal-black">Email</p>
-                    <p className="text-case-hardened">info@boisegunclub.com</p>
+                    <p className="font-medium text-dark-chocolate">Email</p>
+                    <p className="text-warning-amber">info@boisegunclub.com</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-sm">
-                  <div className="p-xs bg-brass-yellow/10 rounded-input">
-                    <MapPin className="h-4 w-4 text-brass-yellow" />
+                  <div className="p-xs bg-sandy-ochre/10 rounded-input">
+                    <MapPin className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>
-                    <p className="font-medium text-gunmetal-black">Location</p>
-                    <p className="text-case-hardened">Boise, Idaho</p>
+                    <p className="font-medium text-dark-chocolate">Location</p>
+                    <p className="text-warning-amber">Boise, Idaho</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-sm">
-                  <div className="p-xs bg-brass-yellow/10 rounded-input">
-                    <Clock className="h-4 w-4 text-brass-yellow" />
+                  <div className="p-xs bg-sandy-ochre/10 rounded-input">
+                    <Clock className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>
-                    <p className="font-medium text-gunmetal-black">Response Time</p>
-                    <p className="text-case-hardened">Within 24 hours</p>
+                    <p className="font-medium text-dark-chocolate">Response Time</p>
+                    <p className="text-warning-amber">Within 24 hours</p>
                   </div>
                 </div>
               </div>

@@ -6,22 +6,29 @@
 @theme {
   /* ================== BOGUS BASIN & RIVER/SAGEBRUSH COLOR SYSTEM ================== */
 
-  /* 🌑 DARK THEME: Bogus Basin - Warm lodge at dusk */
+  /* 🌑 DARK THEME: Bogus Basin - Warm lodge at dusk (Complete 10-Color Set) */
   --color-dark-chocolate: #260F07;      /* Background: Deep, warm foundation */
   --color-rusty-orange: #D9863B;        /* Primary Accent: Main CTAs, links, active states */
   --color-crisp-off-white: #F2F2F2;     /* Text (Foreground): Primary headlines, body text */
   --color-rich-loam: #311A0E;           /* Subtle Surface: Cards, popovers above background */
   --color-warm-stone: #A69287;          /* Muted Text: Secondary info, timestamps, disabled */
   --color-lodgepole-green: #7D6702;     /* Secondary Accent: Tags, confirmations, success states */
+  --color-deep-earth: #1A0C05;          /* Deeper Surface: For recessed elements, deeper than rich-loam */
+  --color-ember-glow: #E6A562;          /* Highlight Accent: For hover states, lighter than rusty-orange */
+  --color-warning-amber: #D4A574;       /* Warning/Caution: For alerts and caution states */
+  --color-border-bark: #4A3429;         /* Border/Divider: Subtle separators, warmer than warm-stone */
 
-  /* ☀️ LIGHT THEME: River/Sagebrush - Crisp riverside landscape */
-  --color-light-peachy: #F2D4D6;        /* Background: Base light background */
+  /* ☀️ LIGHT THEME: River/Sagebrush - Crisp riverside landscape (Complete 10-Color Set) */
+  --color-light-peachy: #F9FAFB;        /* Background: Base light background */
   --color-slate-blue: #3A5063;          /* Primary Accent: Cool, professional CTAs */
   --color-shared-dark: #260F07;         /* Text (Foreground): Shared with dark theme */
   --color-sandy-ochre: #D99F5D;         /* Secondary Accent: Info tags, warm highlights */
   --color-dried-clay: #A69287;          /* Muted Text: Placeholders, descriptions */
-  --color-pale-stone: #DED1D2;          /* Border & Inputs: Fields, separators */
+  --color-pale-stone: #E5E7EB;          /* Border & Inputs: Fields, separators */
   --color-sagebrush-green: #798246;     /* Confirmation Accent: Success, verified badges */
+  --color-card-surface: #F3F4F6;        /* Card Surface: Slightly darker than background for elevation */
+  --color-warning-clay: #B8956B;        /* Warning/Caution: For alerts and caution states */
+  --color-info-river: #5A7D8A;          /* Info Accent: For informational elements and highlights */
 
   /* ================== TYPOGRAPHY ================== */
   --font-rajdhani: "Rajdhani", "Inter", "system-ui", sans-serif;

@@ -86,7 +86,7 @@ export const Glass: Story = {
       values: [
         {
           name: 'gradient',
-          value: 'linear-gradient(135deg, hsl(var(--ayu-blue)) 0%, hsl(var(--ayu-purple)) 100%)',
+          value: 'linear-gradient(135deg, hsl(var(--slate-blue)) 0%, hsl(var(--ayu-purple)) 100%)',
         },
       ],
     },
@@ -149,10 +149,10 @@ export const StripeHierarchy: Story = {
     <div className="space-y-xl p-12 max-w-6xl bg-range-white min-h-screen">
       {/* Header */}
       <div className="text-center space-y-base">
-        <h1 className="text-3xl font-rajdhani font-bold text-gunmetal-black">
+        <h1 className="text-3xl font-rajdhani font-bold text-dark-chocolate">
           Stripe-Style Button Hierarchy
         </h1>
-        <p className="text-case-hardened max-w-2xl mx-auto">
+        <p className="text-warning-amber max-w-2xl mx-auto">
           Proper button usage patterns following Stripe's design principles: heavy shadows for page buttons, flat styles for container buttons.
         </p>
       </div>
@@ -162,7 +162,7 @@ export const StripeHierarchy: Story = {
         <h2 className="text-display-sm font-rajdhani font-semibold text-blued-steel">
           🌟 Page-Level Buttons (Outside Containers)
         </h2>
-        <p className="text-body-sm text-case-hardened">Heavy shadows, no borders - these grab attention on the page</p>
+        <p className="text-body-sm text-warning-amber">Heavy shadows, no borders - these grab attention on the page</p>
         <div className="flex gap-base flex-wrap">
           <Button variant="primary" size="lg">
             <Plus className="mr-xs h-4 w-4" />
@@ -183,7 +183,7 @@ export const StripeHierarchy: Story = {
         <h2 className="text-display-sm font-rajdhani font-semibold text-blued-steel">
           📋 Card-Level Buttons (Inside Cards/Forms)
         </h2>
-        <p className="text-body-sm text-case-hardened">Flat style, no shadows - clean and doesn't compete with card shadows</p>
+        <p className="text-body-sm text-warning-amber">Flat style, no shadows - clean and doesn't compete with card shadows</p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
           {/* Training Card */}
@@ -230,7 +230,7 @@ export const StripeHierarchy: Story = {
         <h2 className="text-display-sm font-rajdhani font-semibold text-blued-steel">
           📝 Form Buttons (Inside Forms)
         </h2>
-        <p className="text-body-sm text-case-hardened">Flat style for form actions - consistent with card patterns</p>
+        <p className="text-body-sm text-warning-amber">Flat style for form actions - consistent with card patterns</p>
         
         <div className="bg-card p-md rounded-card shadow-elevated border border-border max-w-md">
           <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground mb-base">
@@ -274,7 +274,7 @@ export const StripeHierarchy: Story = {
         <h2 className="text-display-sm font-rajdhani font-semibold text-blued-steel">
           ⚡ Special Accent Buttons (Borders for Emphasis)
         </h2>
-        <p className="text-body-sm text-case-hardened">Borders only for special occasions - warnings, confirmations, key actions</p>
+        <p className="text-body-sm text-warning-amber">Borders only for special occasions - warnings, confirmations, key actions</p>
         <div className="flex gap-base flex-wrap">
           <Button variant="accent">
             <ArrowRight className="mr-xs h-4 w-4" />
@@ -308,7 +308,7 @@ export const FireGradientSystem: Story = {
 
       {/* Fire Gradient Buttons */}
       <div className="space-y-md">
-        <h2 className="text-display-sm font-rajdhani font-semibold text-copper-orange">
+        <h2 className="text-display-sm font-rajdhani font-semibold text-rusty-orange">
           Fire Button Variants
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-base">
@@ -333,12 +333,12 @@ export const FireGradientSystem: Story = {
 
       {/* Demo Cards */}
       <div className="space-y-md">
-        <h2 className="text-display-sm font-rajdhani font-semibold text-ayu-blue">
+        <h2 className="text-display-sm font-rajdhani font-semibold text-slate-blue">
           Interactive Fire Cards
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
           <div className="bg-card p-md rounded-card shadow-elevated hover:shadow-elevated transition-shadow group">
-            <h3 className="font-rajdhani font-bold text-body-lg text-copper-orange mb-xs">
+            <h3 className="font-rajdhani font-bold text-body-lg text-rusty-orange mb-xs">
               Vendor Partners
             </h3>
             <p className="text-muted-foreground mb-base text-body-sm">
@@ -348,11 +348,11 @@ export const FireGradientSystem: Story = {
               <Users className="mr-xs h-4 w-4" />
               Browse Directory
             </Button>
-            <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow mt-base rounded-full transition-all duration-300 ease-out"></div>
+            <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre mt-base rounded-full transition-all duration-300 ease-out"></div>
           </div>
 
           <div className="bg-card p-md rounded-card shadow-elevated hover:shadow-elevated transition-shadow group">
-            <h3 className="font-rajdhani font-bold text-body-lg text-ayu-blue mb-xs">
+            <h3 className="font-rajdhani font-bold text-body-lg text-slate-blue mb-xs">
               Community Hub
             </h3>
             <p className="text-muted-foreground mb-base text-body-sm">
@@ -362,7 +362,7 @@ export const FireGradientSystem: Story = {
               <MessageSquare className="mr-xs h-4 w-4" />
               Join Discussions
             </Button>
-            <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-ayu-blue to-ayu-green mt-base rounded-full transition-all duration-300 ease-out"></div>
+            <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-slate-blue to-ayu-green mt-base rounded-full transition-all duration-300 ease-out"></div>
           </div>
         </div>
       </div>
@@ -375,25 +375,25 @@ export const FireGradientSystem: Story = {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
           <div className="bg-muted p-base rounded-card">
             <h4 className="font-medium text-foreground mb-sm">🔥 Fire (Orange/Yellow)</h4>
-            <div className="h-3 bg-gradient-to-r from-copper-orange to-brass-yellow rounded-full mb-xs"></div>
+            <div className="h-3 bg-gradient-to-r from-rusty-orange to-sandy-ochre rounded-full mb-xs"></div>
             <p className="text-caption text-muted-foreground">Primary accent • Call-to-action • Success states</p>
           </div>
           
           <div className="bg-muted p-base rounded-card">
             <h4 className="font-medium text-foreground mb-sm">💧 Fire Blue (Blue/Green)</h4>
-            <div className="h-3 bg-gradient-to-r from-ayu-blue to-ayu-green rounded-full mb-xs"></div>
+            <div className="h-3 bg-gradient-to-r from-slate-blue to-ayu-green rounded-full mb-xs"></div>
             <p className="text-caption text-muted-foreground">Navigation • Community features • Information</p>
           </div>
           
           <div className="bg-muted p-base rounded-card">
             <h4 className="font-medium text-foreground mb-sm">⚡ Fire Purple (Purple/Cobalt)</h4>
-            <div className="h-3 bg-gradient-to-r from-ayu-purple to-ayu-blue rounded-full mb-xs"></div>
+            <div className="h-3 bg-gradient-to-r from-ayu-purple to-slate-blue rounded-full mb-xs"></div>
             <p className="text-caption text-muted-foreground">Premium features • Special actions • Highlights</p>
           </div>
           
           <div className="bg-muted p-base rounded-card">
             <h4 className="font-medium text-foreground mb-sm">🌿 Fire Green (Green variants)</h4>
-            <div className="h-3 bg-gradient-to-r from-ayu-green to-clubhouse-lawn-green rounded-full mb-xs"></div>
+            <div className="h-3 bg-gradient-to-r from-ayu-green to-sagebrush-green rounded-full mb-xs"></div>
             <p className="text-caption text-muted-foreground">Success • Verification • Positive states</p>
           </div>
         </div>
@@ -435,10 +435,10 @@ export const CleanShowcase: Story = {
     <div className="space-y-xl p-12 max-w-6xl bg-range-white min-h-screen">
       {/* Header */}
       <div className="text-center space-y-base">
-        <h1 className="text-4xl font-rajdhani font-bold text-gunmetal-black tracking-tight">
+        <h1 className="text-4xl font-rajdhani font-bold text-dark-chocolate tracking-tight">
           TBGC Clean Button System
         </h1>
-        <p className="text-body-lg text-case-hardened max-w-3xl mx-auto">
+        <p className="text-body-lg text-warning-amber max-w-3xl mx-auto">
           Sophisticated buttons using our Idaho Firearms Heritage Palette - combining clean design with our distinctive brand colors
         </p>
       </div>
@@ -482,7 +482,7 @@ export const CleanShowcase: Story = {
         <h2 className="text-display-md font-rajdhani font-semibold text-blued-steel text-center">Interactive States</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-lg">
           <div className="space-y-base">
-            <h3 className="text-body-lg font-noto-sans font-medium text-case-hardened">Normal States</h3>
+            <h3 className="text-body-lg font-noto-sans font-medium text-warning-amber">Normal States</h3>
             <div className="space-y-sm">
               <Button variant="default" className="w-full">Default</Button>
               <Button variant="primary" className="w-full">Primary</Button>
@@ -491,7 +491,7 @@ export const CleanShowcase: Story = {
           </div>
           
           <div className="space-y-base">
-            <h3 className="text-body-lg font-noto-sans font-medium text-case-hardened">Loading States</h3>
+            <h3 className="text-body-lg font-noto-sans font-medium text-warning-amber">Loading States</h3>
             <div className="space-y-sm">
               <Button variant="default" className="w-full" loading>Loading...</Button>
               <Button variant="primary" className="w-full" loading>Processing...</Button>
@@ -500,7 +500,7 @@ export const CleanShowcase: Story = {
           </div>
           
           <div className="space-y-base">
-            <h3 className="text-body-lg font-noto-sans font-medium text-case-hardened">Disabled States</h3>
+            <h3 className="text-body-lg font-noto-sans font-medium text-warning-amber">Disabled States</h3>
             <div className="space-y-sm">
               <Button variant="default" className="w-full" disabled>Disabled</Button>
               <Button variant="primary" className="w-full" disabled>Disabled</Button>
@@ -515,7 +515,7 @@ export const CleanShowcase: Story = {
         <h2 className="text-display-md font-rajdhani font-semibold text-blued-steel text-center">Real-world Examples</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
           {/* Form Actions */}
-          <div className="bg-shooting-bench p-md rounded-large shadow-flat border border-case-hardened/20">
+          <div className="bg-card-surface p-md rounded-large shadow-flat border border-warning-amber/20">
             <h3 className="text-body-lg font-noto-sans font-medium text-blued-steel mb-base">Form Actions</h3>
             <div className="space-y-base">
               <div className="flex gap-sm">
@@ -540,7 +540,7 @@ export const CleanShowcase: Story = {
           </div>
           
           {/* Navigation */}
-          <div className="bg-shooting-bench p-md rounded-large shadow-flat border border-case-hardened/20">
+          <div className="bg-card-surface p-md rounded-large shadow-flat border border-warning-amber/20">
             <h3 className="text-body-lg font-noto-sans font-medium text-blued-steel mb-base">Navigation</h3>
             <div className="space-y-base">
               <div className="flex gap-sm">
@@ -585,10 +585,10 @@ export const StripeStyleAnimations: Story = {
   render: () => (
     <div className="space-y-xl p-12 max-w-4xl bg-range-white">
       <div className="text-center space-y-base">
-        <h1 className="text-3xl font-rajdhani font-bold text-gunmetal-black">
+        <h1 className="text-3xl font-rajdhani font-bold text-dark-chocolate">
           Stripe-Style Arrow Animations
         </h1>
-        <p className="text-case-hardened">
+        <p className="text-warning-amber">
           Watch the sophisticated arrow animations on our solid variant buttons
         </p>
       </div>
@@ -638,12 +638,12 @@ export const GlassmorphismShowcase: Story = {
   render: () => (
     <div className="relative min-h-[600px] p-12 overflow-hidden">
       {/* Dynamic Background with Idaho scenery colors */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brass-yellow via-copper-orange to-gunmetal-black"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-sandy-ochre via-rusty-orange to-dark-chocolate"></div>
       <div className="absolute inset-0 bg-gradient-to-tr from-muzzle-flash/20 via-transparent to-scope-blue/30"></div>
       
       {/* Floating elements for depth */}
       <div className="absolute top-20 left-20 w-32 h-32 bg-nickel-white/10 rounded-full blur-xl"></div>
-      <div className="absolute bottom-20 right-20 w-40 h-40 bg-brass-yellow/10 rounded-full blur-2xl"></div>
+      <div className="absolute bottom-20 right-20 w-40 h-40 bg-sandy-ochre/10 rounded-full blur-2xl"></div>
       
       <div className="relative z-10 space-y-xl">
         <div className="text-center space-y-base">
@@ -693,28 +693,28 @@ export const HeritageColorCombinations: Story = {
   render: () => (
     <div className="space-y-xl p-12 max-w-6xl bg-range-white">
       <div className="text-center space-y-base">
-        <h1 className="text-4xl font-rajdhani font-bold text-gunmetal-black">
+        <h1 className="text-4xl font-rajdhani font-bold text-dark-chocolate">
           Sophisticated Color Harmonies
         </h1>
-        <p className="text-case-hardened text-body-lg max-w-3xl mx-auto">
+        <p className="text-warning-amber text-body-lg max-w-3xl mx-auto">
           Professionally curated color combinations with proper contrast ratios and visual hierarchy
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-xl">
         {/* Clean Professional Combinations */}
-        <div className="bg-shooting-bench p-lg rounded-overlay shadow-flat border border-case-hardened/20">
-          <h2 className="text-display-md font-rajdhani font-semibold text-gunmetal-black mb-md">
+        <div className="bg-card-surface p-lg rounded-overlay shadow-flat border border-warning-amber/20">
+          <h2 className="text-display-md font-rajdhani font-semibold text-dark-chocolate mb-md">
             Clean & Professional
           </h2>
           <div className="space-y-md">
             <div className="space-y-sm">
               <h4 className="font-noto-sans font-medium text-blued-steel">Primary Actions</h4>
               <div className="flex gap-sm flex-wrap">
-                <Button className="bg-brass-yellow text-gunmetal-black hover:bg-brass-yellow/90 shadow-flat">
+                <Button className="bg-sandy-ochre text-dark-chocolate hover:bg-sandy-ochre/90 shadow-flat">
                   Premium Gold
                 </Button>
-                <Button className="bg-gunmetal-black text-range-white hover:bg-gunmetal-black/90 shadow-flat">
+                <Button className="bg-dark-chocolate text-range-white hover:bg-dark-chocolate/90 shadow-flat">
                   Professional Dark
                 </Button>
               </div>
@@ -723,7 +723,7 @@ export const HeritageColorCombinations: Story = {
             <div className="space-y-sm">
               <h4 className="font-noto-sans font-medium text-blued-steel">Subtle Accents</h4>
               <div className="flex gap-sm flex-wrap">
-                <Button className="bg-range-white text-gunmetal-black border-2 border-brass-yellow/30 hover:border-brass-yellow/60 hover:bg-brass-yellow/5">
+                <Button className="bg-range-white text-dark-chocolate border-2 border-sandy-ochre/30 hover:border-sandy-ochre/60 hover:bg-sandy-ochre/5">
                   Gold Accent
                 </Button>
                 <Button className="bg-range-white text-blued-steel border-2 border-blued-steel/30 hover:border-blued-steel/60 hover:bg-blued-steel/5">
@@ -735,15 +735,15 @@ export const HeritageColorCombinations: Story = {
         </div>
 
         {/* Warm Heritage Tones */}
-        <div className="bg-range-white p-lg rounded-overlay shadow-flat border border-case-hardened/20">
-          <h2 className="text-display-md font-rajdhani font-semibold text-gunmetal-black mb-md">
+        <div className="bg-range-white p-lg rounded-overlay shadow-flat border border-warning-amber/20">
+          <h2 className="text-display-md font-rajdhani font-semibold text-dark-chocolate mb-md">
             Heritage Warmth
           </h2>
           <div className="space-y-md">
             <div className="space-y-sm">
               <h4 className="font-noto-sans font-medium text-blued-steel">Warm Metals</h4>
               <div className="flex gap-sm flex-wrap">
-                <Button className="bg-copper-orange text-range-white hover:bg-copper-orange/90 shadow-flat">
+                <Button className="bg-rusty-orange text-range-white hover:bg-rusty-orange/90 shadow-flat">
                   Copper Elegance
                 </Button>
                 <Button className="bg-walnut-stock text-range-white hover:bg-walnut-stock/90 shadow-flat">
@@ -755,10 +755,10 @@ export const HeritageColorCombinations: Story = {
             <div className="space-y-sm">
               <h4 className="font-noto-sans font-medium text-blued-steel">Heritage Highlights</h4>
               <div className="flex gap-sm flex-wrap">
-                <Button className="bg-sight-gold text-gunmetal-black hover:bg-sight-gold/90 shadow-flat">
+                <Button className="bg-sight-gold text-dark-chocolate hover:bg-sight-gold/90 shadow-flat">
                   Traditional Gold
                 </Button>
-                <Button className="bg-muzzle-flash text-gunmetal-black hover:bg-muzzle-flash/90 shadow-flat">
+                <Button className="bg-muzzle-flash text-dark-chocolate hover:bg-muzzle-flash/90 shadow-flat">
                   Bright Accent
                 </Button>
               </div>
@@ -768,21 +768,21 @@ export const HeritageColorCombinations: Story = {
       </div>
 
       {/* Monochromatic Excellence */}
-      <div className="bg-shooting-bench p-lg rounded-overlay border border-case-hardened/20">
-        <h2 className="text-display-md font-rajdhani font-semibold text-gunmetal-black text-center mb-lg">
+      <div className="bg-card-surface p-lg rounded-overlay border border-warning-amber/20">
+        <h2 className="text-display-md font-rajdhani font-semibold text-dark-chocolate text-center mb-lg">
           Monochromatic Sophistication
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-base">
-          <Button className="bg-gunmetal-black text-range-white hover:bg-gunmetal-black/90">
+          <Button className="bg-dark-chocolate text-range-white hover:bg-dark-chocolate/90">
             Gunmetal
           </Button>
           <Button className="bg-blued-steel text-range-white hover:bg-blued-steel/90">
             Blued Steel
           </Button>
-          <Button className="bg-case-hardened text-range-white hover:bg-case-hardened/90">
+          <Button className="bg-warning-amber text-range-white hover:bg-warning-amber/90">
             Case Hardened
           </Button>
-          <Button className="bg-tactical-gray text-range-white hover:bg-tactical-gray/90">
+          <Button className="bg-warm-stone text-range-white hover:bg-warm-stone/90">
             Tactical Gray
           </Button>
         </div>
@@ -790,25 +790,25 @@ export const HeritageColorCombinations: Story = {
 
       {/* Professional Gradients */}
       <div className="space-y-lg">
-        <h2 className="text-display-md font-rajdhani font-semibold text-gunmetal-black text-center">
+        <h2 className="text-display-md font-rajdhani font-semibold text-dark-chocolate text-center">
           Sophisticated Gradients
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
           <Button 
             size="lg" 
-            className="bg-gradient-to-r from-brass-yellow to-sight-gold text-gunmetal-black hover:shadow-elevated transition-all"
+            className="bg-gradient-to-r from-sandy-ochre to-sight-gold text-dark-chocolate hover:shadow-elevated transition-all"
           >
             Gold Harmony
           </Button>
           <Button 
             size="lg"
-            className="bg-gradient-to-r from-copper-orange to-walnut-stock text-range-white hover:shadow-elevated transition-all"
+            className="bg-gradient-to-r from-rusty-orange to-walnut-stock text-range-white hover:shadow-elevated transition-all"
           >
             Warm Heritage
           </Button>
           <Button 
             size="lg"
-            className="bg-gradient-to-r from-gunmetal-black to-blued-steel text-range-white hover:shadow-elevated transition-all"
+            className="bg-gradient-to-r from-dark-chocolate to-blued-steel text-range-white hover:shadow-elevated transition-all"
           >
             Steel Elegance
           </Button>
@@ -816,8 +816,8 @@ export const HeritageColorCombinations: Story = {
       </div>
 
       {/* State Colors Done Right */}
-      <div className="bg-shooting-bench p-lg rounded-overlay border border-case-hardened/20">
-        <h2 className="text-display-md font-rajdhani font-semibold text-gunmetal-black text-center mb-lg">
+      <div className="bg-card-surface p-lg rounded-overlay border border-warning-amber/20">
+        <h2 className="text-display-md font-rajdhani font-semibold text-dark-chocolate text-center mb-lg">
           Semantic Colors with Proper Contrast
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
@@ -863,10 +863,10 @@ export const SophisticatedShadows: Story = {
   render: () => (
     <div className="space-y-xl p-12 max-w-5xl bg-range-white">
       <div className="text-center space-y-base">
-        <h1 className="text-3xl font-rajdhani font-bold text-gunmetal-black">
+        <h1 className="text-3xl font-rajdhani font-bold text-dark-chocolate">
           Stripe-Inspired Sophisticated Shadows
         </h1>
-        <p className="text-case-hardened text-body-lg">
+        <p className="text-warning-amber text-body-lg">
           Multi-layered shadow system with brand-colored variations
         </p>
       </div>
@@ -896,10 +896,10 @@ export const SophisticatedShadows: Story = {
         <div className="space-y-md">
           <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel">Brand-Colored Shadows</h3>
           <div className="space-y-md">
-            <Button className="shadow-brass bg-brass-yellow text-gunmetal-black w-full hover:shadow-elevated transition-shadow">
+            <Button className="shadow-brass bg-sandy-ochre text-dark-chocolate w-full hover:shadow-elevated transition-shadow">
               Brass Shadow Effect
             </Button>
-            <Button className="shadow-copper bg-copper-orange text-nickel-white w-full hover:shadow-premium transition-shadow">
+            <Button className="shadow-copper bg-rusty-orange text-nickel-white w-full hover:shadow-premium transition-shadow">
               Copper Shadow Effect
             </Button>
             <Button className="bg-rifling-green text-nickel-white w-full hover:shadow-elevated hover:shadow-rifling-green/25 transition-shadow">
@@ -912,7 +912,7 @@ export const SophisticatedShadows: Story = {
         </div>
       </div>
 
-      <div className="bg-shooting-bench p-lg rounded-overlay border border-case-hardened/20">
+      <div className="bg-card-surface p-lg rounded-overlay border border-warning-amber/20">
         <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel mb-md text-center">
           Interactive Shadow Transitions
         </h3>
@@ -939,12 +939,12 @@ export const SophisticatedShadows: Story = {
 
 export const BusinessCard: Story = {
   render: () => (
-    <div className="bg-range-white p-lg rounded-large shadow-flat border border-case-hardened/20 max-w-md space-y-md">
+    <div className="bg-range-white p-lg rounded-large shadow-flat border border-warning-amber/20 max-w-md space-y-md">
       <div className="space-y-xs">
         <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel">
           Upgrade Your Membership
         </h3>
-        <p className="text-case-hardened">
+        <p className="text-warning-amber">
           Get access to premium range time and exclusive events
         </p>
       </div>
@@ -968,14 +968,14 @@ export const BusinessCard: Story = {
 
 export const SearchInterface: Story = {
   render: () => (
-    <div className="bg-range-white p-md rounded-large border border-case-hardened/20 max-w-lg space-y-base">
+    <div className="bg-range-white p-md rounded-large border border-warning-amber/20 max-w-lg space-y-base">
       <div className="flex gap-xs">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
           <input
             type="text"
             placeholder="Search members..."
-            className="w-full pr-base py-xs border border-case-hardened/30 rounded-card focus:outline-none focus:ring-2 focus:ring-brass-yellow/50 focus:border-brass-yellow bg-shooting-bench text-blued-steel placeholder-case-hardened"
+            className="w-full pr-base py-xs border border-warning-amber/30 rounded-card focus:outline-none focus:ring-2 focus:ring-sandy-ochre/50 focus:border-sandy-ochre bg-card-surface text-blued-steel placeholder-warning-amber"
             style={{paddingLeft: '48px'}}
           />
         </div>
@@ -1001,10 +1001,10 @@ export const ProfessionalShowcase: Story = {
     <div className="space-y-2xl p-16 max-w-7xl bg-range-white">
       {/* Hero Section */}
       <div className="text-center space-y-md">
-        <h1 className="text-5xl font-rajdhani font-bold text-gunmetal-black tracking-tight">
+        <h1 className="text-5xl font-rajdhani font-bold text-dark-chocolate tracking-tight">
           The Complete TBGC Button System
         </h1>
-        <p className="text-display-sm text-case-hardened max-w-4xl mx-auto leading-relaxed">
+        <p className="text-display-sm text-warning-amber max-w-4xl mx-auto leading-relaxed">
           Showcasing the full glory of our Idaho Firearms Heritage design system - from sophisticated shadows and Stripe-style animations to Windows 11 Mica glassmorphism
         </p>
       </div>
@@ -1017,7 +1017,7 @@ export const ProfessionalShowcase: Story = {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
           {/* Clean Variants */}
-          <div className="bg-shooting-bench p-md rounded-overlay border border-case-hardened/20 space-y-base">
+          <div className="bg-card-surface p-md rounded-overlay border border-warning-amber/20 space-y-base">
             <h3 className="text-body-lg font-rajdhani font-semibold text-blued-steel">Clean & Professional</h3>
             <div className="space-y-sm">
               <Button variant="default" className="w-full">Default</Button>
@@ -1027,7 +1027,7 @@ export const ProfessionalShowcase: Story = {
           </div>
 
           {/* Accent Variants */}
-          <div className="bg-shooting-bench p-md rounded-overlay border border-case-hardened/20 space-y-base">
+          <div className="bg-card-surface p-md rounded-overlay border border-warning-amber/20 space-y-base">
             <h3 className="text-body-lg font-rajdhani font-semibold text-blued-steel">Heritage Accents</h3>
             <div className="space-y-sm">
               <Button variant="accent" className="w-full">Brass Accent</Button>
@@ -1037,7 +1037,7 @@ export const ProfessionalShowcase: Story = {
           </div>
 
           {/* Solid Variants with Arrows */}
-          <div className="bg-shooting-bench p-md rounded-overlay border border-case-hardened/20 space-y-base">
+          <div className="bg-card-surface p-md rounded-overlay border border-warning-amber/20 space-y-base">
             <h3 className="text-body-lg font-rajdhani font-semibold text-blued-steel">Interactive Solids</h3>
             <div className="space-y-sm">
               <Button variant="solid-accent" className="w-full">Premium</Button>
@@ -1047,8 +1047,8 @@ export const ProfessionalShowcase: Story = {
           </div>
 
           {/* Glassmorphism */}
-          <div className="bg-gradient-to-br from-brass-yellow/20 via-copper-orange/20 to-gunmetal-black/20 p-md rounded-overlay border border-white/30 space-y-base backdrop-blur-sm">
-            <h3 className="text-body-lg font-rajdhani font-semibold text-gunmetal-black">Glassmorphism</h3>
+          <div className="bg-gradient-to-br from-sandy-ochre/20 via-rusty-orange/20 to-dark-chocolate/20 p-md rounded-overlay border border-white/30 space-y-base backdrop-blur-sm">
+            <h3 className="text-body-lg font-rajdhani font-semibold text-dark-chocolate">Glassmorphism</h3>
             <div className="space-y-sm">
               <Button variant="glass" className="w-full">Glass Effect</Button>
               <Button variant="glass" size="sm" className="w-full">Small Glass</Button>
@@ -1057,7 +1057,7 @@ export const ProfessionalShowcase: Story = {
           </div>
 
           {/* Minimal Variants */}
-          <div className="bg-shooting-bench p-md rounded-overlay border border-case-hardened/20 space-y-base">
+          <div className="bg-card-surface p-md rounded-overlay border border-warning-amber/20 space-y-base">
             <h3 className="text-body-lg font-rajdhani font-semibold text-blued-steel">Minimal & Clean</h3>
             <div className="space-y-sm">
               <Button variant="ghost" className="w-full">Ghost Button</Button>
@@ -1067,7 +1067,7 @@ export const ProfessionalShowcase: Story = {
           </div>
 
           {/* All Sizes */}
-          <div className="bg-shooting-bench p-md rounded-overlay border border-case-hardened/20 space-y-base">
+          <div className="bg-card-surface p-md rounded-overlay border border-warning-amber/20 space-y-base">
             <h3 className="text-body-lg font-rajdhani font-semibold text-blued-steel">Size Spectrum</h3>
             <div className="space-y-sm flex flex-col items-center">
               <Button variant="accent" size="xs">Extra Small</Button>
@@ -1083,7 +1083,7 @@ export const ProfessionalShowcase: Story = {
       </div>
 
       {/* Interactive Demo */}
-      <div className="bg-gradient-to-br from-shooting-bench to-range-white p-12 rounded-3xl border border-case-hardened/20 shadow-elevated">
+      <div className="bg-gradient-to-br from-card-surface to-range-white p-12 rounded-3xl border border-warning-amber/20 shadow-elevated">
         <h2 className="text-3xl font-rajdhani font-semibold text-blued-steel text-center mb-xl">
           Interactive Features Demo
         </h2>
@@ -1131,12 +1131,12 @@ export const ProfessionalShowcase: Story = {
       </div>
 
       {/* Footer */}
-      <div className="text-center space-y-base pt-lg border-t border-case-hardened/20">
-        <p className="text-case-hardened font-noto-serif italic">
+      <div className="text-center space-y-base pt-lg border-t border-warning-amber/20">
+        <p className="text-warning-amber font-noto-serif italic">
           "Every component reflects the precision, heritage, and quality of Idaho's firearms culture 
           while maintaining modern web standards and accessibility."
         </p>
-        <p className="text-body-sm text-case-hardened/70">
+        <p className="text-body-sm text-warning-amber/70">
           Design System v2.0 • The Boise Gun Club • 2025
         </p>
       </div>

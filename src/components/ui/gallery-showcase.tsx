@@ -97,7 +97,7 @@ export function GalleryGrid({
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-lg)]">
             {subtitle && (
-              <p className="text-body-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
+              <p className="text-body-sm font-rajdhani font-semibold text-rusty-orange mb-[var(--space-xs)] tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
@@ -123,8 +123,8 @@ export function GalleryGrid({
                   className={cn(
                     "font-rajdhani font-semibold capitalize",
                     activeFilter === category 
-                      ? "bg-copper-orange text-card-foreground hover:bg-recoil-pad" 
-                      : "border-copper-orange/30 text-copper-orange hover:bg-copper-orange hover:text-card-foreground"
+                      ? "bg-rusty-orange text-card-foreground hover:bg-recoil-pad" 
+                      : "border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-card-foreground"
                   )}
                 >
                   {category}
@@ -138,7 +138,7 @@ export function GalleryGrid({
                 variant={viewMode === 'grid' ? 'default' : 'secondary'}
                 size="icon"
                 onClick={() => setViewMode('grid')}
-                className="border-copper-orange/30"
+                className="border-rusty-orange/30"
               >
                 <Grid3X3 className="icon-sm" />
               </Button>
@@ -146,7 +146,7 @@ export function GalleryGrid({
                 variant={viewMode === 'list' ? 'default' : 'secondary'}
                 size="icon"
                 onClick={() => setViewMode('list')}
-                className="border-copper-orange/30"
+                className="border-rusty-orange/30"
               >
                 <List className="icon-sm" />
               </Button>
@@ -171,14 +171,14 @@ export function GalleryGrid({
                   "group relative bg-card text-card-foreground border-border rounded-card overflow-hidden shadow-flat hover:shadow-md transition-all duration-200 cursor-pointer",
                   viewMode === 'masonry' && "break-inside-avoid mb-[var(--space-md)]",
                   viewMode === 'list' && "flex gap-base p-base",
-                  isFeatured && "ring-2 ring-copper-orange/50"
+                  isFeatured && "ring-2 ring-rusty-orange/50"
                 )}
                 onClick={() => onImageClick?.(image)}
               >
                 {/* Featured Badge */}
                 {isFeatured && (
                   <div className="absolute top-2 left-2 z-10">
-                    <div className="bg-copper-orange text-card-foreground text-caption font-rajdhani font-bold px-xs py-xs rounded">
+                    <div className="bg-rusty-orange text-card-foreground text-caption font-rajdhani font-bold px-xs py-xs rounded">
                       Featured
                     </div>
                   </div>
@@ -208,7 +208,7 @@ export function GalleryGrid({
                       }}
                       className={cn(
                         "bg-card/90 border-0 shadow-flat",
-                        isLiked && "bg-copper-orange text-card-foreground"
+                        isLiked && "bg-rusty-orange text-card-foreground"
                       )}
                     >
                       <Heart className={cn("icon-sm", isLiked && "fill-current")} />
@@ -234,7 +234,7 @@ export function GalleryGrid({
                   viewMode === 'list' && "flex-1"
                 )}>
                   <div className="space-y-[var(--space-xs)]">
-                    <h3 className="font-rajdhani font-semibold text-card-foreground group-hover:text-copper-orange transition-colors duration-200">
+                    <h3 className="font-rajdhani font-semibold text-card-foreground group-hover:text-rusty-orange transition-colors duration-200">
                       {image.alt}
                     </h3>
                     

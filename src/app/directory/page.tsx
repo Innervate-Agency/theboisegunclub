@@ -217,7 +217,7 @@ export default function DirectoryPage() {
       <SiteNavigation variant="premium" sticky={true} />
       <div className="min-h-screen bg-background">
         {/* Breadcrumb Hero - Left Aligned */}
-        <section className="bg-gradient-to-r from-dark-chocolate/95 to-tactical-gray/90 border-b border-border/20">
+        <section className="bg-gradient-to-r from-dark-chocolate/95 to-warm-stone/90 border-b border-border/20">
           <div className="container mx-auto max-w-7xl px-md py-lg">
             <div className="flex items-center gap-xs text-sm text-range-white/60 mb-base">
               <span>Home</span>
@@ -523,7 +523,7 @@ export default function DirectoryPage() {
       </section>
 
       {/* Partnership CTA */}
-      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-tactical-gray/90">
+      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90">
         <div className="container mx-auto max-w-4xl px-md text-center">
           <div className="space-y-lg">
             <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">

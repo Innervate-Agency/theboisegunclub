@@ -139,21 +139,21 @@ export default function TrainingPage() {
       <section className="px-[var(--space-md)] py-[var(--space-xl)] bg-gradient-hero-warm">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-[var(--space-xl)]">
-            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
               Building Treasure Valley's Training Hub
             </h2>
-            <p className="text-lg text-case-hardened font-noto-sans max-w-3xl mx-auto">
+            <p className="text-lg text-warning-amber font-noto-sans max-w-3xl mx-auto">
               We're creating a comprehensive directory of the region's firearms training resources. Help us connect the community with quality instruction.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-lg)]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
             {trainingFeatures.map((feature, index) => (
-              <Card key={index} className="p-[var(--space-md)] text-center hover:shadow-lg transition-all duration-200">
-                <feature.icon className="h-12 w-12 text-brass-yellow mx-auto mb-[var(--space-base)]" />
-                <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-xs)]">
+              <Card key={index} className="p-md text-center hover:shadow-elevated transition-all duration-200">
+                <feature.icon className="h-12 w-12 text-sandy-ochre mx-auto mb-[var(--space-base)]" />
+                <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-[var(--space-xs)]">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-case-hardened font-noto-sans">
+                <p className="text-sm text-warning-amber font-noto-sans">
                   {feature.description}
                 </p>
               </Card>
@@ -166,72 +166,72 @@ export default function TrainingPage() {
       <section id="about-training" className="py-[var(--space-2xl)]">
         <div className="max-w-6xl mx-auto px-[var(--space-md)]">
           <div className="text-center mb-[var(--space-xl)]">
-            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
               Treasure Valley Training Ecosystem
             </h2>
-            <p className="text-lg text-case-hardened font-noto-sans max-w-3xl mx-auto">
+            <p className="text-lg text-warning-amber font-noto-sans max-w-3xl mx-auto">
               Our research has identified 9+ training providers and instructors across the region. We're building the definitive directory.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-lg)] mb-[var(--space-xl)]">
-            <Card className="p-[var(--space-md)] text-center">
-              <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-lg mb-[var(--space-xl)]">
+            <Card className="p-md text-center">
+              <h3 className="text-xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
                 Basic Safety & CCW
               </h3>
-              <p className="text-case-hardened font-noto-sans text-sm mb-[var(--space-base)]">
+              <p className="text-warning-amber font-noto-sans text-sm mb-[var(--space-base)]">
                 NRA basic courses and Idaho Enhanced CCW certification
               </p>
-              <div className="text-2xl font-rajdhani font-bold text-brass-yellow">6+</div>
-              <div className="text-sm text-case-hardened">Certified Instructors</div>
+              <div className="text-2xl font-rajdhani font-bold text-sandy-ochre">6+</div>
+              <div className="text-sm text-warning-amber">Certified Instructors</div>
             </Card>
             
-            <Card className="p-[var(--space-md)] text-center">
-              <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+            <Card className="p-md text-center">
+              <h3 className="text-xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
                 Advanced Tactical
               </h3>
-              <p className="text-case-hardened font-noto-sans text-sm mb-[var(--space-base)]">
+              <p className="text-warning-amber font-noto-sans text-sm mb-[var(--space-base)]">
                 Defensive pistol, carbine, and specialized training
               </p>
-              <div className="text-2xl font-rajdhani font-bold text-brass-yellow">4+</div>
-              <div className="text-sm text-case-hardened">Tactical Schools</div>
+              <div className="text-2xl font-rajdhani font-bold text-sandy-ochre">4+</div>
+              <div className="text-sm text-warning-amber">Tactical Schools</div>
             </Card>
             
-            <Card className="p-[var(--space-md)] text-center">
-              <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+            <Card className="p-md text-center">
+              <h3 className="text-xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
                 Specialized Programs
               </h3>
-              <p className="text-case-hardened font-noto-sans text-sm mb-[var(--space-base)]">
+              <p className="text-warning-amber font-noto-sans text-sm mb-[var(--space-base)]">
                 Women's classes, youth programs, and custom training
               </p>
-              <div className="text-2xl font-rajdhani font-bold text-brass-yellow">3+</div>
-              <div className="text-sm text-case-hardened">Specialty Programs</div>
+              <div className="text-2xl font-rajdhani font-bold text-sandy-ochre">3+</div>
+              <div className="text-sm text-warning-amber">Specialty Programs</div>
             </Card>
           </div>
 
           {/* Instructor Signup Form */}
-          <div id="instructor-signup" className="bg-gradient-hero-warm rounded-lg border border-brass-yellow/20 p-[var(--space-xl)]">
+          <div id="instructor-signup" className="bg-gradient-hero-warm rounded-lg border border-sandy-ochre/20 p-[var(--space-xl)]">
             <div className="text-center mb-[var(--space-lg)]">
-              <h3 className="text-2xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+              <h3 className="text-2xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
                 Join Our Training Directory
               </h3>
-              <p className="text-lg text-case-hardened font-noto-sans max-w-2xl mx-auto">
+              <p className="text-lg text-warning-amber font-noto-sans max-w-2xl mx-auto">
                 Connect with students across Treasure Valley. List your training programs and certifications at no cost during our launch phase.
               </p>
             </div>
             
             <div className="max-w-2xl mx-auto space-y-[var(--space-base)]">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
-                <Input placeholder="Instructor/Organization Name" className="bg-white border-brass-yellow/30 focus:border-brass-yellow" />
-                <Input placeholder="Contact Name" className="bg-white border-brass-yellow/30 focus:border-brass-yellow" />
+                <Input placeholder="Instructor/Organization Name" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
+                <Input placeholder="Contact Name" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
-                <Input placeholder="Phone Number" className="bg-white border-brass-yellow/30 focus:border-brass-yellow" />
-                <Input placeholder="Email Address" className="bg-white border-brass-yellow/30 focus:border-brass-yellow" />
+                <Input placeholder="Phone Number" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
+                <Input placeholder="Email Address" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
               </div>
-              <Input placeholder="Primary Training Location" className="bg-white border-brass-yellow/30 focus:border-brass-yellow" />
+              <Input placeholder="Primary Training Location" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
-                <select className="px-[var(--space-base)] py-[var(--space-xs)] border border-brass-yellow/30 rounded-lg bg-white text-sm font-noto-sans">
+                <select className="px-[var(--space-base)] py-[var(--space-xs)] border border-sandy-ochre/30 rounded-lg bg-white text-sm font-noto-sans">
                   <option>Primary Training Type</option>
                   <option>Basic Safety / NRA Courses</option>
                   <option>CCW / Enhanced CCW</option>
@@ -243,19 +243,19 @@ export default function TrainingPage() {
                   <option>Law Enforcement</option>
                   <option>Other</option>
                 </select>
-                <Input placeholder="Website (if applicable)" className="bg-white border-brass-yellow/30 focus:border-brass-yellow" />
+                <Input placeholder="Website (if applicable)" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
               </div>
-              <Input placeholder="Certifications (NRA, USCCA, etc.)" className="bg-white border-brass-yellow/30 focus:border-brass-yellow" />
+              <Input placeholder="Certifications (NRA, USCCA, etc.)" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
               <textarea 
                 placeholder="Describe your training programs, experience, and qualifications..."
-                className="w-full px-[var(--space-base)] py-[var(--space-xs)] border border-brass-yellow/30 rounded-lg bg-white text-sm font-noto-sans min-h-[100px] focus:border-brass-yellow focus:outline-none"
+                className="w-full px-[var(--space-base)] py-[var(--space-xs)] border border-sandy-ochre/30 rounded-lg bg-white text-sm font-noto-sans min-h-[100px] focus:border-sandy-ochre focus:outline-none"
               />
               
               <div className="text-center pt-[var(--space-base)]">
-                <Button size="lg" className="bg-brass-yellow text-gunmetal-black hover:bg-copper-orange font-rajdhani font-semibold">
+                <Button size="lg" className="bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange font-rajdhani font-semibold">
                   Join Training Directory
                 </Button>
-                <p className="text-sm text-case-hardened mt-[var(--space-xs)]">
+                <p className="text-sm text-warning-amber mt-[var(--space-xs)]">
                   We'll review and contact you within 48 hours
                 </p>
               </div>

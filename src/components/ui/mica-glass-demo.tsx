@@ -14,10 +14,10 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
   return (
     <div className={cn("w-full max-w-4xl mx-auto p-lg space-y-[var(--space-lg)]", className)}>
       <div className="text-center space-y-[var(--space-base)]">
-        <h2 className="text-heading-lg font-rajdhani font-bold text-gunmetal-black">
+        <h2 className="text-heading-lg font-rajdhani font-bold text-dark-chocolate">
           Windows 11 Mica Glass System
         </h2>
-        <p className="text-case-hardened font-noto-sans max-w-2xl mx-auto">
+        <p className="text-warning-amber font-noto-sans max-w-2xl mx-auto">
           Professional glassmorphism effects that enhance your design without overwhelming it.
           Each variant is optimized for specific use cases with proper background layering.
         </p>
@@ -31,20 +31,20 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
             radial-gradient(circle at 20% 30%, rgba(242, 203, 5, 0.1) 0%, transparent 50%),
             radial-gradient(circle at 80% 70%, rgba(242, 135, 5, 0.08) 0%, transparent 50%),
             radial-gradient(circle at 50% 50%, rgba(192, 128, 81, 0.06) 0%, transparent 50%),
-            linear-gradient(135deg, var(--color-range-white) 0%, var(--color-shooting-bench) 100%)
+            linear-gradient(135deg, var(--color-range-white) 0%, var(--color-card-surface) 100%)
           `
         }}
       >
         {/* Background Pattern for Glass to Blur */}
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-4 left-4 w-32 h-32 bg-brass-yellow/20 rounded-full blur-xl" />
-          <div className="absolute top-12 right-8 w-24 h-24 bg-copper-orange/15 rounded-full blur-lg" />
+          <div className="absolute top-4 left-4 w-32 h-32 bg-sandy-ochre/20 rounded-full blur-xl" />
+          <div className="absolute top-12 right-8 w-24 h-24 bg-rusty-orange/15 rounded-full blur-lg" />
           <div className="absolute bottom-8 left-1/3 w-40 h-20 bg-scope-blue/10 rounded-full blur-2xl" />
           <div className="absolute bottom-4 right-4 w-28 h-28 bg-walnut-stock/15 rounded-full blur-xl" />
         </div>
 
         <div className="relative space-y-[var(--space-md)]">
-          <h3 className="text-heading-md font-rajdhani font-bold text-gunmetal-black text-center">
+          <h3 className="text-heading-md font-rajdhani font-bold text-dark-chocolate text-center">
             Mica Effects with Proper Background Layering
           </h3>
           
@@ -95,7 +95,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
 
       {/* Comparison: Glass vs Solid */}
       <div className="space-y-[var(--space-md)]">
-        <h3 className="text-heading-md font-rajdhani font-bold text-gunmetal-black text-center">
+        <h3 className="text-heading-md font-rajdhani font-bold text-dark-chocolate text-center">
           Glassmorphism vs Solid: When to Use Each
         </h3>
         
@@ -105,7 +105,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-mesh-premium rounded-large opacity-60" />
             <div className="relative space-y-[var(--space-base)]">
-              <h4 className="text-body-lg font-medium text-gunmetal-black text-center mb-[var(--space-base)]">
+              <h4 className="text-body-lg font-medium text-dark-chocolate text-center mb-[var(--space-base)]">
                 ✅ Perfect for Glassmorphism
               </h4>
               
@@ -129,7 +129,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
           
           {/* Solid Cards */}
           <div className="space-y-[var(--space-base)]">
-            <h4 className="text-body-lg font-medium text-gunmetal-black text-center mb-[var(--space-base)]">
+            <h4 className="text-body-lg font-medium text-dark-chocolate text-center mb-[var(--space-base)]">
               ✅ Perfect for Solid Colors
             </h4>
             
@@ -142,7 +142,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
               </CardContent>
             </Card>
             
-            <Card className="bg-solid-brand-warm hover-gradient-warm border-brass-yellow/20">
+            <Card className="bg-solid-brand-warm hover-gradient-warm border-sandy-ochre/20">
               <CardContent className="p-base">
                 <h5 className="font-medium mb-[var(--space-xs)]">Interactive Card</h5>
                 <p className="text-body-sm text-muted-foreground">
@@ -155,10 +155,10 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
       </div>
 
       {/* Layered Demo */}
-      <div className="relative p-lg bg-gradient-hero-warm rounded-large border border-brass-yellow/20">
+      <div className="relative p-lg bg-gradient-hero-warm rounded-large border border-sandy-ochre/20">
         <div className="absolute inset-0 bg-gradient-mesh-premium rounded-large" />
         <div className="relative space-y-[var(--space-md)]">
-          <h3 className="text-heading-md font-rajdhani font-bold text-gunmetal-black">
+          <h3 className="text-heading-md font-rajdhani font-bold text-dark-chocolate">
             Layered Glass Effects
           </h3>
           
@@ -182,7 +182,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
 
       {/* Gradient Philosophy Demo */}
       <div className="space-y-[var(--space-md)]">
-        <h3 className="text-heading-md font-rajdhani font-bold text-gunmetal-black text-center">
+        <h3 className="text-heading-md font-rajdhani font-bold text-dark-chocolate text-center">
           Gradient Philosophy: Restraint Over Chaos
         </h3>
         
@@ -209,7 +209,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
           <div className="space-y-[var(--space-base)]">
             <h4 className="text-body-lg font-medium text-safety-red">❌ Avoid These Patterns</h4>
             
-            <Card className="bg-gradient-to-br from-brass-yellow/20 via-white to-copper-orange/20">
+            <Card className="bg-gradient-to-br from-sandy-ochre/20 via-white to-rusty-orange/20">
               <CardContent className="p-base">
                 <p className="text-body-sm">Too strong - creates visual noise</p>
               </CardContent>
@@ -225,13 +225,13 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
       </div>
       
       {/* Design Tokens Reference */}
-      <div className="bg-solid-brand-neutral p-md rounded-large border border-brass-yellow/20">
-        <h4 className="text-body-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+      <div className="bg-solid-brand-neutral p-md rounded-large border border-sandy-ochre/20">
+        <h4 className="text-body-lg font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
           Design Token Reference
         </h4>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-base text-body-sm font-noto-sans">
           <div>
-            <h5 className="font-medium text-case-hardened mb-[var(--space-xs)]">Mica Classes</h5>
+            <h5 className="font-medium text-warning-amber mb-[var(--space-xs)]">Mica Classes</h5>
             <ul className="space-y-[var(--space-micro)] text-muted-foreground">
               <li><code>.mica-card</code></li>
               <li><code>.mica-card-premium</code></li>
@@ -240,7 +240,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
             </ul>
           </div>
           <div>
-            <h5 className="font-medium text-case-hardened mb-[var(--space-xs)]">Gradient Backgrounds</h5>
+            <h5 className="font-medium text-warning-amber mb-[var(--space-xs)]">Gradient Backgrounds</h5>
             <ul className="space-y-[var(--space-micro)] text-muted-foreground">
               <li><code>.bg-gradient-hero-warm</code></li>
               <li><code>.bg-gradient-card-warm</code></li>
@@ -248,7 +248,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
             </ul>
           </div>
           <div>
-            <h5 className="font-medium text-case-hardened mb-[var(--space-xs)]">Hover Effects</h5>
+            <h5 className="font-medium text-warning-amber mb-[var(--space-xs)]">Hover Effects</h5>
             <ul className="space-y-[var(--space-micro)] text-muted-foreground">
               <li><code>.hover-gradient-warm</code></li>
               <li><code>.hover-gradient-cool</code></li>

@@ -4,25 +4,25 @@ import { cn } from '@/lib/utils';
 import { Separator } from '@/components/ui/separator';
 
 const ayuColorMap = {
-  blue: 'border-ayu-blue',
+  blue: 'border-slate-blue',
   green: 'border-ayu-green',
   purple: 'border-ayu-purple',
   red: 'border-ayu-red',
   cobalt: 'border-ayu-cobalt',
   teal: 'border-ayu-teal',
   yellow: 'border-ayu-yellow',
-  'copper-orange': 'border-copper-orange',
+  'rusty-orange': 'border-rusty-orange',
 };
 
 const glowColorMap = {
-  blue: 'var(--color-ayu-blue)',
+  blue: 'var(--color-slate-blue)',
   green: 'var(--color-ayu-green)',
   purple: 'var(--color-ayu-purple)',
   red: 'var(--color-ayu-red)',
   cobalt: 'var(--color-ayu-cobalt)',
   teal: 'var(--color-ayu-teal)',
   yellow: 'var(--color-ayu-yellow)',
-  'copper-orange': 'var(--color-copper-orange)',
+  'rusty-orange': 'var(--color-rusty-orange)',
 }
 
 export type AyuColor = keyof typeof ayuColorMap;
@@ -77,7 +77,7 @@ const AlternatingFeatureSpotlight = ({
         <div className={cn('space-y-lg', reverse && 'md:order-last')}>
           <div style={accentStyle} className="border-l-2 pl-md">
             {React.cloneElement(icon, {
-              className: 'h-8 w-8 text-brass-yellow mb-base',
+              className: 'h-8 w-8 text-sandy-ochre mb-base',
             })}
             <h3 className="font-rajdhani text-3xl font-bold text-foreground md:text-4xl">
               {title}
@@ -108,7 +108,7 @@ const AlternatingFeatureSpotlight = ({
           {/* The elevated image canvas */}
           <div className="relative aspect-video transition-all duration-300 ease-out group-hover:-translate-y-2 group-hover:shadow-xl">
             {/* THIS IS THE FIX: No padding, no internal overflow hidden */}
-            <div className="bg-card rounded-lg shadow-lg h-full">
+            <div className="bg-card rounded-lg shadow-elevated h-full">
               <Image
                 src={imageSrc}
                 alt={imageAlt}

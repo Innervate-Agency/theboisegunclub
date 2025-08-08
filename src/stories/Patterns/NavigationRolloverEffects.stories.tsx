@@ -18,8 +18,8 @@ export default meta
 type Story = StoryObj
 
 const navigationItems = [
-  { label: "Home", icon: Home, color: "copper-orange" },
-  { label: "Events", icon: Calendar, color: "ayu-blue" },
+  { label: "Home", icon: Home, color: "rusty-orange" },
+  { label: "Events", icon: Calendar, color: "slate-blue" },
   { label: "Directory", icon: Users, color: "ayu-green" },
   { label: "Guides", icon: Target, color: "ayu-purple" },
   { label: "Map", icon: Shield, color: "ayu-red" },
@@ -90,8 +90,8 @@ export const FadeWithGlow: Story = {
         <div className="flex items-center gap-8">
           {navigationItems.slice(0, 4).map((item) => {
             const glowColors = {
-              'copper-orange': 'hover:drop-shadow-[0_0_8px_rgba(242,135,5,0.4)]',
-              'ayu-blue': 'hover:drop-shadow-[0_0_8px_rgba(0,159,237,0.4)]',
+              'rusty-orange': 'hover:drop-shadow-[0_0_8px_rgba(242,135,5,0.4)]',
+              'slate-blue': 'hover:drop-shadow-[0_0_8px_rgba(0,159,237,0.4)]',
               'ayu-green': 'hover:drop-shadow-[0_0_8px_rgba(117,183,0,0.4)]',
               'ayu-purple': 'hover:drop-shadow-[0_0_8px_rgba(110,80,131,0.4)]'
             }
@@ -100,7 +100,7 @@ export const FadeWithGlow: Story = {
               <a
                 key={item.label}
                 href="#"
-                className={`group flex items-center gap-2 px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-300 hover:text-${item.color} ${glowColors[item.color as keyof typeof glowColors] || glowColors['copper-orange']}`}
+                className={`group flex items-center gap-2 px-4 py-2 text-sm font-medium text-muted-foreground transition-all duration-300 hover:text-${item.color} ${glowColors[item.color as keyof typeof glowColors] || glowColors['rusty-orange']}`}
               >
                 <item.icon className="h-4 w-4" />
                 {item.label}
@@ -155,7 +155,7 @@ export const BonusFireGradient: Story = {
               {item.label}
               
               {/* Fire gradient underline that grows from center */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-copper-orange to-brass-yellow scale-x-0 origin-center group-hover:scale-x-100 transition-transform duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre scale-x-0 origin-center group-hover:scale-x-100 transition-transform duration-300" />
             </a>
           ))}
         </div>
@@ -243,7 +243,7 @@ export const AllEffectsComparison: Story = {
               >
                 <item.icon className="h-4 w-4" />
                 {item.label}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-copper-orange to-brass-yellow scale-x-0 origin-center group-hover:scale-x-100 transition-transform duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre scale-x-0 origin-center group-hover:scale-x-100 transition-transform duration-300" />
               </a>
             ))}
           </div>

@@ -15,8 +15,8 @@ const siteFooterVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-gunmetal-black text-nickel-white",
-        glass: "bg-gunmetal-black/90 backdrop-blur-sm text-nickel-white",
+        default: "bg-dark-chocolate text-nickel-white",
+        glass: "bg-dark-chocolate/90 backdrop-blur-sm text-nickel-white",
         minimal: "bg-card text-card-foreground"
       }
     },
@@ -55,8 +55,8 @@ export function SiteFooter({
   }
   
   const isMinimal = variant === "minimal"
-  const textColor = isMinimal ? "text-gunmetal-black" : "text-nickel-white"
-  const mutedColor = isMinimal ? "text-case-hardened" : "text-stainless-steel"
+  const textColor = isMinimal ? "text-dark-chocolate" : "text-nickel-white"
+  const mutedColor = isMinimal ? "text-warning-amber" : "text-stainless-steel"
   
   return (
     <footer className={cn(siteFooterVariants({ variant }), className)} {...props}>
@@ -67,7 +67,7 @@ export function SiteFooter({
             {/* Brand & Description */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-xs mb-[var(--space-sm)]">
-                <Target className={cn("icon-lg", isMinimal ? "icon-primary" : "text-brass-yellow")} />
+                <Target className={cn("icon-lg", isMinimal ? "icon-primary" : "text-sandy-ochre")} />
                 <h3 className={cn("text-heading-sm font-rajdhani font-bold", textColor)}>
                   Boise Gun Club
                 </h3>
@@ -110,7 +110,7 @@ export function SiteFooter({
                     <a 
                       href={link.href}
                       className={cn(
-                        "text-body-sm hover:text-brass-yellow transition-colors duration-200", 
+                        "text-body-sm hover:text-sandy-ochre transition-colors duration-200", 
                         mutedColor
                       )}
                     >
@@ -165,13 +165,13 @@ export function SiteFooter({
                         "flex-1 text-body-sm",
                         isMinimal 
                           ? "bg-card border-border" 
-                          : "bg-carbon-fiber border-tactical-gray text-titanium-white"
+                          : "bg-carbon-fiber border-warm-stone text-titanium-white"
                       )}
                     />
                     <Button 
                       type="submit" 
                       disabled={isSubscribing}
-                      className="bg-brass-yellow text-gunmetal-black hover:bg-copper-orange font-rajdhani font-semibold"
+                      className="bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange font-rajdhani font-semibold"
                     >
                       {isSubscribing ? "..." : "Join"}
                     </Button>
@@ -185,7 +185,7 @@ export function SiteFooter({
         {/* Bottom Bar */}
         <div className={cn(
           "border-t py-md", 
-          isMinimal ? "border-border" : "border-tactical-gray"
+          isMinimal ? "border-border" : "border-warm-stone"
         )}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-base">
             {/* Copyright */}
@@ -211,8 +211,8 @@ export function SiteFooter({
                       className={cn(
                         "p-xs rounded-card transition-all duration-200 hover:scale-110",
                         isMinimal 
-                          ? "text-case-hardened hover:text-brass-yellow hover:bg-brass-yellow/10" 
-                          : "text-stainless-steel hover:text-brass-yellow hover:bg-brass-yellow/10"
+                          ? "text-warning-amber hover:text-sandy-ochre hover:bg-sandy-ochre/10" 
+                          : "text-stainless-steel hover:text-sandy-ochre hover:bg-sandy-ochre/10"
                       )}
                       title={social.label}
                     >
@@ -234,7 +234,7 @@ export function SiteFooter({
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "text-caption hover:text-brass-yellow transition-colors duration-200", 
+                    "text-caption hover:text-sandy-ochre transition-colors duration-200", 
                     mutedColor
                   )}
                 >

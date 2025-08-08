@@ -34,19 +34,19 @@ export const AllColors: Story = {
         <h2 className="text-display-md font-rajdhani font-bold mb-base">Primary Brand Colors</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-base">
           <div className="space-y-xs">
-            <div className="h-20 bg-brass-yellow rounded-card shadow-flat"></div>
+            <div className="h-20 bg-sandy-ochre rounded-card shadow-flat"></div>
             <div className="text-body-sm font-medium">Brass Yellow</div>
-            <div className="text-caption text-muted-foreground">--color-brass-yellow</div>
+            <div className="text-caption text-muted-foreground">--color-sandy-ochre</div>
           </div>
           <div className="space-y-xs">
-            <div className="h-20 bg-copper-orange rounded-card shadow-flat"></div>
+            <div className="h-20 bg-rusty-orange rounded-card shadow-flat"></div>
             <div className="text-body-sm font-medium">Copper Orange</div>
-            <div className="text-caption text-muted-foreground">--color-copper-orange</div>
+            <div className="text-caption text-muted-foreground">--color-rusty-orange</div>
           </div>
           <div className="space-y-xs">
-            <div className="h-20 bg-gunmetal-black rounded-card shadow-flat"></div>
+            <div className="h-20 bg-dark-chocolate rounded-card shadow-flat"></div>
             <div className="text-body-sm font-medium">Gunmetal Black</div>
-            <div className="text-caption text-muted-foreground">--color-gunmetal-black</div>
+            <div className="text-caption text-muted-foreground">--color-dark-chocolate</div>
           </div>
           <div className="space-y-xs">
             <div className="h-20 bg-blued-steel rounded-card shadow-flat"></div>
@@ -66,14 +66,14 @@ export const AllColors: Story = {
             <div className="text-caption text-muted-foreground">--color-walnut-stock</div>
           </div>
           <div className="space-y-xs">
-            <div className="h-16 bg-case-hardened rounded-card shadow-flat"></div>
+            <div className="h-16 bg-warning-amber rounded-card shadow-flat"></div>
             <div className="text-body-sm font-medium">Case Hardened</div>
-            <div className="text-caption text-muted-foreground">--color-case-hardened</div>
+            <div className="text-caption text-muted-foreground">--color-warning-amber</div>
           </div>
           <div className="space-y-xs">
-            <div className="h-16 bg-tactical-gray rounded-card shadow-flat"></div>
+            <div className="h-16 bg-warm-stone rounded-card shadow-flat"></div>
             <div className="text-body-sm font-medium">Tactical Gray</div>
-            <div className="text-caption text-muted-foreground">--color-tactical-gray</div>
+            <div className="text-caption text-muted-foreground">--color-warm-stone</div>
           </div>
           <div className="space-y-xs">
             <div className="h-16 bg-rifling-green rounded-card shadow-flat"></div>
@@ -142,12 +142,12 @@ export const ColorTokens: Story = {
         <h3 className="font-semibold mb-xs">Usage Examples:</h3>
         <pre className="text-body-sm bg-muted p-base rounded overflow-x-auto">
 {`/* CSS Variables */
-color: var(--color-brass-yellow);
-background: var(--color-copper-orange);
+color: var(--color-sandy-ochre);
+background: var(--color-rusty-orange);
 
 /* Tailwind Classes */
-className="bg-brass-yellow text-copper-orange"
-className="border-tactical-gray text-gunmetal-black"`}
+className="bg-sandy-ochre text-rusty-orange"
+className="border-warm-stone text-dark-chocolate"`}
         </pre>
       </div>
     </div>

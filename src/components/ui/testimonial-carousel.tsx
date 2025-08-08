@@ -93,7 +93,7 @@ export function TestimonialCarousel({
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-xl)]">
             {subtitle && (
-              <p className="text-body-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
+              <p className="text-body-sm font-rajdhani font-semibold text-rusty-orange mb-[var(--space-xs)] tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
@@ -110,7 +110,7 @@ export function TestimonialCarousel({
           <div className="bg-card text-card-foreground rounded-large p-lg md:p-12 shadow-flat hover:shadow-md transition-shadow duration-200">
             {/* Quote Icon */}
             <div className="absolute -top-4 left-8">
-              <div className="bg-brass-yellow rounded-full p-sm shadow-md">
+              <div className="bg-sandy-ochre rounded-full p-sm shadow-md">
                 <Quote className="icon-md text-foreground" />
               </div>
             </div>
@@ -124,7 +124,7 @@ export function TestimonialCarousel({
                     className={cn(
                       "icon-sm",
                       i < currentTestimonial.rating! 
-                        ? "text-brass-yellow fill-brass-yellow" 
+                        ? "text-sandy-ochre fill-sandy-ochre" 
                         : "text-muted-foreground"
                     )}
                   />
@@ -170,7 +170,7 @@ export function TestimonialCarousel({
               <Button
                 variant="secondary"
                 size="icon"
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-card hover:bg-brass-yellow shadow-flat"
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-card hover:bg-sandy-ochre shadow-flat"
                 onClick={goToPrevious}
               >
                 <ChevronLeft className="icon-sm" />
@@ -179,7 +179,7 @@ export function TestimonialCarousel({
               <Button
                 variant="secondary"
                 size="icon"
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-card hover:bg-brass-yellow shadow-flat"
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-card hover:bg-sandy-ochre shadow-flat"
                 onClick={goToNext}
               >
                 <ChevronRight className="icon-sm" />
@@ -197,7 +197,7 @@ export function TestimonialCarousel({
                 className={cn(
                   "w-2 h-2 rounded-full transition-all duration-200",
                   index === currentIndex 
-                    ? "bg-brass-yellow w-8" 
+                    ? "bg-sandy-ochre w-8" 
                     : "bg-muted hover:bg-muted/80"
                 )}
                 onClick={() => goToSlide(index)}

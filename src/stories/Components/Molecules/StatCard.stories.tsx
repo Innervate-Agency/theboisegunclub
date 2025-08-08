@@ -71,7 +71,7 @@ export const GunClubStats: Story = {
     <div className="space-y-md p-md">
       <div className="text-center">
         <h2 className="text-display-md font-rajdhani font-bold text-blued-steel mb-xs">TBGC Statistics</h2>
-        <p className="text-case-hardened">Real-time club metrics and performance data</p>
+        <p className="text-warning-amber">Real-time club metrics and performance data</p>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
@@ -160,7 +160,7 @@ export const AnimatedCounters: Story = {
         <h3 className="text-body-lg font-rajdhani font-bold text-blued-steel mb-base">
           Animated Counter Examples
         </h3>
-        <p className="text-body-sm text-case-hardened mb-md">
+        <p className="text-body-sm text-warning-amber mb-md">
           These cards animate when they come into view
         </p>
       </div>

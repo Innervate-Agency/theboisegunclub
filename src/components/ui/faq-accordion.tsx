@@ -80,17 +80,17 @@ export default function FAQAccordion({
       {/* Header */}
       <div className="text-center mb-[var(--space-lg)]">
         <div className="flex justify-center mb-[var(--space-base)]">
-          <div className="p-sm bg-brass-yellow/10 rounded-full border border-brass-yellow/20">
-            <HelpCircle className="h-6 w-6 text-brass-yellow" />
+          <div className="p-sm bg-sandy-ochre/10 rounded-full border border-sandy-ochre/20">
+            <HelpCircle className="h-6 w-6 text-sandy-ochre" />
           </div>
         </div>
         
-        <h2 className="text-heading-md md:text-heading-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-xs)]">
+        <h2 className="text-heading-md md:text-heading-lg font-rajdhani font-bold text-dark-chocolate mb-[var(--space-xs)]">
           {title}
         </h2>
         
         {subtitle && (
-          <p className="text-case-hardened font-noto-sans leading-relaxed max-w-2xl mx-auto">
+          <p className="text-warning-amber font-noto-sans leading-relaxed max-w-2xl mx-auto">
             {subtitle}
           </p>
         )}
@@ -100,7 +100,7 @@ export default function FAQAccordion({
       {showSearch && (
         <div className="mb-[var(--space-md)]">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
             <Input
               type="text"
               placeholder="Search questions..."
@@ -120,8 +120,8 @@ export default function FAQAccordion({
             className={cn(
               "px-sm py-xs rounded-full text-body-sm font-medium transition-colors",
               !selectedCategory 
-                ? "bg-brass-yellow text-gunmetal-black" 
-                : "bg-muted text-case-hardened hover:bg-muted/80"
+                ? "bg-sandy-ochre text-dark-chocolate" 
+                : "bg-muted text-warning-amber hover:bg-muted/80"
             )}
           >
             All Categories
@@ -133,8 +133,8 @@ export default function FAQAccordion({
               className={cn(
                 "px-sm py-xs rounded-full text-body-sm font-medium transition-colors",
                 selectedCategory === category 
-                  ? "bg-brass-yellow text-gunmetal-black" 
-                  : "bg-muted text-case-hardened hover:bg-muted/80"
+                  ? "bg-sandy-ochre text-dark-chocolate" 
+                  : "bg-muted text-warning-amber hover:bg-muted/80"
               )}
             >
               {category}
@@ -157,13 +157,13 @@ export default function FAQAccordion({
               <AccordionTrigger className="text-left hover:no-underline py-base">
                 <div className="flex items-start gap-sm w-full">
                   <div className="flex-1">
-                    <h3 className="font-rajdhani font-semibold text-gunmetal-black leading-tight">
+                    <h3 className="font-rajdhani font-semibold text-dark-chocolate leading-tight">
                       {faq.question}
                     </h3>
                     {faq.category && showCategories && (
                       <Badge 
                         variant="default" 
-                        className="mt-[var(--space-xs)] bg-brass-yellow/10 text-brass-yellow border-brass-yellow/20"
+                        className="mt-[var(--space-xs)] bg-sandy-ochre/10 text-sandy-ochre border-sandy-ochre/20"
                       >
                         {faq.category}
                       </Badge>
@@ -171,7 +171,7 @@ export default function FAQAccordion({
                   </div>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="text-case-hardened font-noto-sans leading-relaxed pb-[var(--space-base)]">
+              <AccordionContent className="text-warning-amber font-noto-sans leading-relaxed pb-[var(--space-base)]">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
@@ -180,12 +180,12 @@ export default function FAQAccordion({
       ) : (
         <div className="text-center py-[var(--space-xl)]">
           <div className="p-sm bg-muted rounded-full w-fit mx-auto mb-[var(--space-base)]">
-            <Search className="h-6 w-6 text-case-hardened" />
+            <Search className="h-6 w-6 text-warning-amber" />
           </div>
-          <h3 className="font-rajdhani font-semibold text-gunmetal-black mb-[var(--space-xs)]">
+          <h3 className="font-rajdhani font-semibold text-dark-chocolate mb-[var(--space-xs)]">
             No FAQs Found
           </h3>
-          <p className="text-case-hardened">
+          <p className="text-warning-amber">
             Try adjusting your search or category filter to find what you're looking for.
           </p>
         </div>

@@ -54,7 +54,7 @@ const defaultShowcases = [
     overlayDescription: "Austrian engineering meets American excellence",
     gradientColor: 'blue' as const,
     productsUsed: [
-      { name: "Striker-fired pistols", icon: <Target className="icon-xs" />, color: "bg-ayu-blue" }
+      { name: "Striker-fired pistols", icon: <Target className="icon-xs" />, color: "bg-slate-blue" }
     ]
   },
   {
@@ -182,7 +182,7 @@ export function BrandCarousel({
   const currentShowcase = showcases[currentIndex]
   
   const gradientClasses = {
-    blue: 'bg-ayu-blue/70',
+    blue: 'bg-slate-blue/70',
     teal: 'bg-ayu-teal/70',
     green: 'bg-ayu-green/70', 
     purple: 'bg-ayu-purple/70',
@@ -191,7 +191,7 @@ export function BrandCarousel({
   }
   
   const borderClasses = {
-    blue: 'border-ayu-blue/60',
+    blue: 'border-slate-blue/60',
     teal: 'border-ayu-teal/60',
     green: 'border-ayu-green/60',
     purple: 'border-ayu-purple/60',
@@ -282,14 +282,14 @@ export function BrandCarousel({
               </div>
               
               {/* Company logo - better positioning */}
-              <div className="absolute top-6 left-6 bg-background/90 backdrop-blur-sm rounded-lg px-4 py-2 text-foreground font-bold shadow-lg border border-white/20">
+              <div className="absolute top-6 left-6 bg-background/90 backdrop-blur-sm rounded-lg px-4 py-2 text-foreground font-bold shadow-elevated border border-white/20">
                 {currentShowcase.logo}
               </div>
               
               {/* Overlay text content - ALWAYS LIGHT FOR CONTRAST ON COLORED OVERLAYS */}
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <div className="max-w-2xl">
-                  <h2 className="text-3xl md:text-4xl font-rajdhani font-bold mb-6 leading-tight text-white drop-shadow-lg">
+                  <h2 className="text-3xl md:text-4xl font-rajdhani font-bold mb-6 leading-tight text-white drop-shadow-elevated">
                     {currentShowcase.overlayTitle}
                   </h2>
                   <p className="text-xl text-white/95 mb-8 leading-relaxed font-noto-sans drop-shadow-md">
@@ -331,9 +331,9 @@ export function BrandCarousel({
               switch (gradientColor) {
                 case 'blue':
                   return {
-                    bg: "bg-ayu-blue/20",
-                    icon: "text-ayu-blue",
-                    text: "text-ayu-blue"
+                    bg: "bg-slate-blue/20",
+                    icon: "text-slate-blue",
+                    text: "text-slate-blue"
                   }
                 case 'teal':
                   return {
@@ -367,9 +367,9 @@ export function BrandCarousel({
                   }
                 default:
                   return {
-                    bg: "bg-brass-yellow/20",
-                    icon: "text-brass-yellow", 
-                    text: "text-brass-yellow"
+                    bg: "bg-sandy-ochre/20",
+                    icon: "text-sandy-ochre", 
+                    text: "text-sandy-ochre"
                   }
               }
             }

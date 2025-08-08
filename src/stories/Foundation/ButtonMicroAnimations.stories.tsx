@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -198,7 +198,7 @@ export const Default: Story = {
                 <HoverArrow isHovered={states.hover} />
               </Button>
               <p className="text-xs text-muted-foreground">
-                Classic ">" transforms to "->" on hover. Perfect for CTAs and navigation.
+                Classic &quot;&gt;&quot; transforms to &quot;-&gt;&quot; on hover. Perfect for CTAs and navigation.
               </p>
             </div>
 

@@ -99,20 +99,20 @@ export const WithSampleContent: Story = {
 // Accessibility FAB on dark background
 export const DarkBackground: Story = {
   render: () => (
-    <div className="relative h-96 w-full bg-gunmetal-black">
+    <div className="relative h-96 w-full bg-dark-chocolate">
       <div className="p-lg">
         <h2 className="text-display-md font-bold text-range-white mb-base">Competition Schedule</h2>
-        <p className="text-brass-yellow/80 mb-base">
+        <p className="text-sandy-ochre/80 mb-base">
           Join us for our weekly competitions and monthly championships. All skill levels welcome.
         </p>
         <div className="space-y-base">
           <div className="bg-blued-steel/20 p-base rounded-card">
             <h3 className="text-body-lg font-semibold text-range-white">Weekly Trap Shoot</h3>
-            <p className="text-brass-yellow/80">Every Saturday at 9:00 AM</p>
+            <p className="text-sandy-ochre/80">Every Saturday at 9:00 AM</p>
           </div>
           <div className="bg-blued-steel/20 p-base rounded-card">
             <h3 className="text-body-lg font-semibold text-range-white">Monthly Championship</h3>
-            <p className="text-brass-yellow/80">First Sunday of each month</p>
+            <p className="text-sandy-ochre/80">First Sunday of each month</p>
           </div>
         </div>
       </div>
@@ -163,7 +163,7 @@ export const WithFormContent: Story = {
           </div>
           <button
             type="submit"
-            className="bg-copper-orange hover:bg-copper-orange/90 text-range-white font-medium py-xs px-base rounded-input"
+            className="bg-rusty-orange hover:bg-rusty-orange/90 text-range-white font-medium py-xs px-base rounded-input"
           >
             Send Message
           </button>

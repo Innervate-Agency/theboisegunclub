@@ -477,14 +477,15 @@ const upcomingEvents = [
   }
 ]
 
+// Strategic 10-Color Distribution using our design system colors
 const eventCategories = [
-  { label: "All Events", value: "all", count: upcomingEvents.length, color: "ayu-blue" },
-  { label: "Competitions", value: "Competition", count: upcomingEvents.filter(e => e.eventType === "Competition").length, color: "ayu-red" },
-  { label: "Training", value: "Training", count: upcomingEvents.filter(e => e.eventType === "Training").length, color: "ayu-green" },
-  { label: "Expos", value: "Expo", count: upcomingEvents.filter(e => e.eventType === "Expo").length, color: "ayu-purple" },
-  { label: "Charity", value: "Charity", count: upcomingEvents.filter(e => e.eventType === "Charity").length, color: "ayu-teal" },
-  { label: "Social", value: "Social", count: upcomingEvents.filter(e => e.eventType === "Social").length, color: "ayu-cobalt" },
-  { label: "Demos", value: "Demo", count: upcomingEvents.filter(e => e.eventType === "Demo").length, color: "ayu-orange" }
+  { label: "All Events", value: "all", count: upcomingEvents.length, color: "slate-blue", bgColor: "slate-blue/10", borderColor: "slate-blue/30" },
+  { label: "Competitions", value: "Competition", count: upcomingEvents.filter(e => e.eventType === "Competition").length, color: "slate-blue", bgColor: "slate-blue/10", borderColor: "slate-blue/30" },
+  { label: "Training", value: "Training", count: upcomingEvents.filter(e => e.eventType === "Training").length, color: "sandy-ochre", bgColor: "sandy-ochre/10", borderColor: "sandy-ochre/30" },
+  { label: "Expos", value: "Expo", count: upcomingEvents.filter(e => e.eventType === "Expo").length, color: "info-river", bgColor: "info-river/10", borderColor: "info-river/30" },
+  { label: "Charity", value: "Charity", count: upcomingEvents.filter(e => e.eventType === "Charity").length, color: "sagebrush-green", bgColor: "sagebrush-green/10", borderColor: "sagebrush-green/30" },
+  { label: "Social", value: "Social", count: upcomingEvents.filter(e => e.eventType === "Social").length, color: "rusty-orange", bgColor: "rusty-orange/10", borderColor: "rusty-orange/30" },
+  { label: "Demos", value: "Demo", count: upcomingEvents.filter(e => e.eventType === "Demo").length, color: "warning-clay", bgColor: "warning-clay/10", borderColor: "warning-clay/30" }
 ]
 
 export default function EventsPage() {
@@ -517,7 +518,7 @@ export default function EventsPage() {
       <SiteNavigation variant="premium" sticky={true} />
       <div className="min-h-screen bg-background">
         {/* Breadcrumb Hero - Left Aligned */}
-        <section className="bg-gradient-to-br from-ayu-blue to-ayu-cobalt border-b border-border/20">
+        <section className="bg-gradient-to-br from-slate-blue to-ayu-cobalt border-b border-border/20">
           <div className="container mx-auto max-w-7xl px-md py-3xl">
             <div className="flex items-center gap-xs text-sm text-range-white/80 mb-base">
               <span>Home</span>
@@ -526,7 +527,7 @@ export default function EventsPage() {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-center">
               <div className="lg:col-span-2 space-y-base">
-                <Badge className="bg-ayu-blue/20 text-ayu-blue border-ayu-blue/30 w-fit">
+                <Badge className="bg-slate-blue/20 text-slate-blue border-slate-blue/30 w-fit">
                   <Calendar className="h-4 w-4 mr-xs" />
                   Events Hub
                 </Badge>
@@ -557,7 +558,7 @@ export default function EventsPage() {
               {/* Featured Event Spotlight */}
               <div className="lg:col-span-1">
                 <div className="relative">
-                  <Card className="mica border-rusty-orange/30 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                  <Card className="mica border-rusty-orange/30 hover:shadow-elevated transition-all duration-300 overflow-hidden">
                     <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-rusty-orange/20 to-rusty-orange/10 rounded-bl-full"></div>
                     <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-rusty-orange to-rusty-orange"></div>
                     
@@ -635,7 +636,7 @@ export default function EventsPage() {
         {/* Featured Events & Calendar Integration */}
         <section className="py-2xl bg-muted/30">
           <div className="container mx-auto max-w-7xl px-md">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-2xl">
               
               {/* Featured Events */}
               <div className="lg:col-span-2 space-y-base">
@@ -646,7 +647,7 @@ export default function EventsPage() {
                   </Button>
                 </div>
                 
-                <div className="grid gap-base">
+                <div className="grid gap-lg">
                   {filteredEvents.filter(event => event.featured).slice(0, 3).map((event, index) => {
                     const formatTicketDate = (dateString: string) => {
                       const date = new Date(dateString)
@@ -663,10 +664,10 @@ export default function EventsPage() {
                     const eventId = `TBG${event.title.replace(/\s+/g, '').slice(0, 6).toUpperCase()}`
                     
                     return (
-                      <Card key={index} className="p-0 overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer group">
+                      <Card key={index} className="p-0 overflow-hidden hover:shadow-elevated transition-all duration-300 cursor-pointer group">
                         <div className="flex">
                           {/* Fixed Width Date Stub */}
-                          <div className="w-24 flex-shrink-0 bg-gradient-to-b from-ayu-blue/20 to-ayu-cobalt/15 p-base text-center relative border-r border-ayu-blue/20">
+                          <div className="w-24 flex-shrink-0 bg-gradient-to-b from-slate-blue/20 to-ayu-cobalt/15 p-base text-center relative border-r border-slate-blue/20">
                             {/* Perforated Edge */}
                             <div className="absolute -right-1.5 top-2 bottom-2 flex flex-col justify-evenly">
                               {Array.from({ length: 5 }, (_, i) => (
@@ -675,13 +676,13 @@ export default function EventsPage() {
                             </div>
                             
                             <div className="space-y-1">
-                              <div className="text-[10px] font-medium text-ayu-blue tracking-wide">
+                              <div className="text-[10px] font-medium text-slate-blue tracking-wide">
                                 {ticketDate.dayOfWeek}
                               </div>
-                              <div className="text-2xl font-rajdhani font-bold text-ayu-blue leading-none">
+                              <div className="text-2xl font-rajdhani font-bold text-slate-blue leading-none">
                                 {ticketDate.day}
                               </div>
-                              <div className="text-[10px] font-medium text-ayu-blue tracking-wide">
+                              <div className="text-[10px] font-medium text-slate-blue tracking-wide">
                                 {ticketDate.month}
                               </div>
                             </div>
@@ -692,7 +693,7 @@ export default function EventsPage() {
                             <div className="space-y-xs">
                               <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-xs">
-                                  <Badge className="bg-ayu-blue/20 text-ayu-blue border-ayu-blue/30 text-[10px]">
+                                  <Badge className="bg-slate-blue/20 text-slate-blue border-slate-blue/30 text-[10px]">
                                     {event.eventType.toUpperCase()}
                                   </Badge>
                                   <Badge className="bg-safety-red text-white text-[10px]">FEATURED</Badge>
@@ -700,7 +701,7 @@ export default function EventsPage() {
                                 <div className="text-[10px] text-muted-foreground font-mono">#{eventId}</div>
                               </div>
                               
-                              <h3 className="font-rajdhani text-xl font-bold text-card-foreground group-hover:text-ayu-blue transition-colors">
+                              <h3 className="font-rajdhani text-xl font-bold text-card-foreground group-hover:text-slate-blue transition-colors">
                                 {event.title}
                               </h3>
                               
@@ -709,15 +710,15 @@ export default function EventsPage() {
                               <div className="flex items-center justify-between pt-xs">
                                 <div className="flex items-center gap-base text-xs text-muted-foreground">
                                   <div className="flex items-center gap-xs">
-                                    <MapPin className="h-3 w-3 text-ayu-blue" />
+                                    <MapPin className="h-3 w-3 text-slate-blue" />
                                     <span>{event.location.split(',')[0]}</span>
                                   </div>
                                   <div className="flex items-center gap-xs">
-                                    <Users className="h-3 w-3 text-ayu-blue" />
+                                    <Users className="h-3 w-3 text-slate-blue" />
                                     <span>{event.registeredCount}/{event.capacity}</span>
                                   </div>
                                 </div>
-                                <Button variant="ghost" size="sm" className="text-ayu-blue hover:text-ayu-cobalt shadow-none border border-ayu-blue/30 px-base py-xs">
+                                <Button variant="ghost" size="sm" className="text-slate-blue hover:text-ayu-cobalt shadow-none border border-slate-blue/30 px-base py-xs">
                                   REGISTER
                                 </Button>
                               </div>
@@ -813,7 +814,7 @@ export default function EventsPage() {
 
       {/* Events Grid */}
       <section className="py-2xl">
-        <div className="container mx-auto max-w-6xl px-md">
+        <div className="container mx-auto max-w-7xl px-md">
           <div className="space-y-2xl">
             <div className="flex items-center justify-between">
               <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">
@@ -838,20 +839,20 @@ export default function EventsPage() {
               </div>
 
               {/* Category Filters */}
-              <div className="flex flex-wrap gap-xs">
+              <div className="flex flex-wrap gap-sm">
                 {eventCategories.map((category) => (
                   <Button
                     key={category.value}
-                    variant={selectedCategory === category.value ? "solid-accent" : "outline"}
+                    variant={selectedCategory === category.value ? "default" : "outline"}
                     size="sm"
                     onClick={() => setSelectedCategory(category.value)}
                     className={selectedCategory === category.value
-                      ? `bg-${category.color} text-dark-chocolate hover:bg-${category.color}/90`
-                      : `border-${category.color}/30 text-${category.color} hover:bg-${category.color}/10`
+                      ? `bg-${category.color} text-card-foreground hover:bg-${category.color}/90 shadow-none`
+                      : `border border-${category.borderColor} text-${category.color} hover:bg-${category.bgColor} shadow-none`
                     }
                   >
                     {category.label}
-                    <Badge className="ml-xs bg-current/20 text-current text-[10px]">
+                    <Badge className="ml-xs bg-current/20 text-current text-[10px] border-0">
                       {category.count}
                     </Badge>
                   </Button>
@@ -859,7 +860,7 @@ export default function EventsPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-lg">
               {paginatedEvents.map((event, index) => (
                 <EventCard
                   key={startIndex + index}
@@ -949,7 +950,7 @@ export default function EventsPage() {
       </section>
 
       {/* Event Submission CTA */}
-      <section className="py-2xl bg-gradient-to-br from-ayu-blue to-ayu-green">
+      <section className="py-2xl bg-gradient-to-br from-slate-blue to-ayu-green">
         <div className="container mx-auto max-w-4xl px-md text-center">
           <div className="space-y-lg">
             <Badge className="bg-range-white/20 text-range-white border-range-white/30">
@@ -965,7 +966,7 @@ export default function EventsPage() {
             <div className="flex flex-col sm:flex-row gap-base justify-center">
               <Button 
                 size="xl" 
-                className="bg-range-white text-ayu-blue hover:bg-range-white/90 font-rajdhani font-bold"
+                className="bg-range-white text-slate-blue hover:bg-range-white/90 font-rajdhani font-bold"
               >
                 Submit Your Event
                 <ArrowRight className="h-5 w-5 ml-xs" />
@@ -973,7 +974,7 @@ export default function EventsPage() {
               <Button 
                 variant="outline" 
                 size="xl"
-                className="border-range-white/30 text-range-white hover:bg-range-white hover:text-ayu-blue"
+                className="border-range-white/30 text-range-white hover:bg-range-white hover:text-slate-blue"
               >
                 Event Guidelines
               </Button>
@@ -989,10 +990,10 @@ export default function EventsPage() {
             <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">Why Choose TBGC Events</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-xl">
-              <Card className="p-lg bg-gradient-to-br from-ayu-blue/5 to-ayu-cobalt/5">
+              <Card className="p-lg bg-gradient-to-br from-slate-blue/5 to-ayu-cobalt/5">
                 <div className="text-center space-y-base">
-                  <div className="bg-ayu-blue/20 p-base rounded-full w-fit mx-auto">
-                    <CheckCircle className="h-6 w-6 text-ayu-blue" />
+                  <div className="bg-slate-blue/20 p-base rounded-full w-fit mx-auto">
+                    <CheckCircle className="h-6 w-6 text-slate-blue" />
                   </div>
                   <div>
                     <div className="font-rajdhani text-2xl font-bold text-card-foreground">Vetted</div>

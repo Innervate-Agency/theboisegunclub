@@ -15,8 +15,8 @@ const facilityCardVariants = cva(
       variant: {
         // STRATEGIC RESTRAINT: Shadow-first approach like VendorCard
         default: "bg-card shadow-flat hover:shadow-md",
-        featured: "bg-gradient-to-br from-brass-yellow/5 via-copper-orange/5 to-walnut-stock/5 shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
-        premium: "bg-gradient-to-br from-blued-steel/10 via-case-hardened/10 to-blued-steel/10 shadow-flat hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-ayu-blue after:to-case-hardened after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        featured: "bg-gradient-to-br from-sandy-ochre/5 via-rusty-orange/5 to-walnut-stock/5 shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        premium: "bg-gradient-to-br from-blued-steel/10 via-warning-amber/10 to-blued-steel/10 shadow-flat hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-slate-blue after:to-warning-amber after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         compact: "bg-card shadow-flat hover:shadow-md"
       },
       size: {
@@ -108,7 +108,7 @@ export default function FacilityCard({
       {/* Featured badge */}
       {isFeatured && (
         <div className="absolute top-4 right-4 z-10">
-          <Badge variant="default" className="bg-brass-yellow text-gunmetal-black font-medium">
+          <Badge variant="default" className="bg-sandy-ochre text-dark-chocolate font-medium">
             Featured
           </Badge>
         </div>
@@ -137,7 +137,7 @@ export default function FacilityCard({
                 />
               </div>
             ) : (
-              <div className="w-12 h-12 bg-brass-yellow/10 rounded-card flex items-center justify-center shadow-flat">
+              <div className="w-12 h-12 bg-sandy-ochre/10 rounded-card flex items-center justify-center shadow-flat">
                 {getBusinessTypeIcon(businessType)}
               </div>
             )}
@@ -146,13 +146,13 @@ export default function FacilityCard({
           {/* Business Info */}
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-xs">
-              <CardTitle className="text-body-lg font-rajdhani font-bold text-gunmetal-black group-hover:text-brass-yellow transition-colors">
+              <CardTitle className="text-body-lg font-rajdhani font-bold text-dark-chocolate group-hover:text-sandy-ochre transition-colors">
                 {title}
               </CardTitle>
             </div>
             
             {businessType && (
-              <p className="text-body-sm text-case-hardened font-medium mt-[var(--space-xs)]">
+              <p className="text-body-sm text-warning-amber font-medium mt-[var(--space-xs)]">
                 {businessType}
               </p>
             )}
@@ -166,12 +166,12 @@ export default function FacilityCard({
                       key={i}
                       className={cn(
                         "h-4 w-4",
-                        i < Math.floor(rating) ? "text-brass-yellow fill-current" : "text-muted-foreground"
+                        i < Math.floor(rating) ? "text-sandy-ochre fill-current" : "text-muted-foreground"
                       )}
                     />
                   ))}
                 </div>
-                <span className="text-body-sm text-case-hardened">
+                <span className="text-body-sm text-warning-amber">
                   {rating.toFixed(1)} {reviewCount && `(${reviewCount} reviews)`}
                 </span>
               </div>
@@ -182,7 +182,7 @@ export default function FacilityCard({
 
       <CardContent className="space-y-[var(--space-base)]">
         {/* Description */}
-        <CardDescription className="text-case-hardened leading-relaxed">
+        <CardDescription className="text-warning-amber leading-relaxed">
           {description}
         </CardDescription>
 
@@ -190,20 +190,20 @@ export default function FacilityCard({
         {(location || hours || phone) && (
           <div className="space-y-[var(--space-xs)] text-body-sm">
             {location && (
-              <div className="flex items-center gap-xs text-case-hardened">
-                <MapPin className="h-4 w-4 text-brass-yellow" />
+              <div className="flex items-center gap-xs text-warning-amber">
+                <MapPin className="h-4 w-4 text-sandy-ochre" />
                 <span>{location}</span>
               </div>
             )}
             {hours && (
-              <div className="flex items-center gap-xs text-case-hardened">
-                <Clock className="h-4 w-4 text-brass-yellow" />
+              <div className="flex items-center gap-xs text-warning-amber">
+                <Clock className="h-4 w-4 text-sandy-ochre" />
                 <span>{hours}</span>
               </div>
             )}
             {phone && (
-              <div className="flex items-center gap-xs text-case-hardened">
-                <Phone className="h-4 w-4 text-brass-yellow" />
+              <div className="flex items-center gap-xs text-warning-amber">
+                <Phone className="h-4 w-4 text-sandy-ochre" />
                 <span>{phone}</span>
               </div>
             )}
@@ -230,7 +230,7 @@ export default function FacilityCard({
           <Button
             variant="secondary"
             size="sm"
-            className="w-full group-hover:bg-brass-yellow/10 group-hover:border-brass-yellow/50 transition-colors"
+            className="w-full group-hover:bg-sandy-ochre/10 group-hover:border-sandy-ochre/50 transition-colors"
             onClick={handleClick}
           >
             {linkText}

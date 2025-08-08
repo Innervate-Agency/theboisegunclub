@@ -10,9 +10,9 @@ title: 'Documentation/Design System'
 
 ```css
 /* Primary Brand Colors - The Foundation */
---color-brass-yellow: #FF00FF;    /* Premium, heritage, quality */
---color-copper-orange: #FF00FF;   /* Heritage, warmth, tradition */
---color-gunmetal-black: #2C3E50;  /* Precision, sophistication */
+--color-sandy-ochre: #FF00FF;    /* Premium, heritage, quality */
+--color-rusty-orange: #FF00FF;   /* Heritage, warmth, tradition */
+--color-dark-chocolate: #2C3E50;  /* Precision, sophistication */
 --color-nickel-white: #F8F9FA;    /* Clean, pure, premium */
 ```
 
@@ -20,16 +20,16 @@ title: 'Documentation/Design System'
 
 ```css
 /* Light Theme Primary: Copper Orange - Perfect contrast on light */
---accent-light: var(--color-copper-orange);
+--accent-light: var(--color-rusty-orange);
 
 /* Dark Theme Primary: Brass Yellow - Optimal visibility on dark */
---accent-dark: var(--color-brass-yellow);
+--accent-dark: var(--color-sandy-ochre);
 
 /* Success/Positive: Clubhouse Lawn Green */
---accent-success: var(--color-clubhouse-lawn-green);
+--accent-success: var(--color-sagebrush-green);
 
 /* Fire Gradients: Copper to Brass */
---gradient-fire: linear-gradient(90deg, var(--color-copper-orange) 0%, var(--color-brass-yellow) 100%);
+--gradient-fire: linear-gradient(90deg, var(--color-rusty-orange) 0%, var(--color-sandy-ochre) 100%);
 ```
 
 ### **Light Theme: Spring Day at the Range**
@@ -37,10 +37,10 @@ title: 'Documentation/Design System'
 ```css
 /* Light Theme - Spring Day at the Range */
 --color-range-white: #FFFFFF;         /* Pure white backgrounds */
---color-shooting-bench: #F5F5F5;      /* Subtle gray backgrounds */
+--color-card-surface: #F5F5F5;      /* Subtle gray backgrounds */
 --color-walnut-stock: #8B4513;        /* Rich brown accents */
 --color-blued-steel: #2F4F4F;         /* Dark steel blue */
---color-case-hardened: #696969;       /* Medium gray text */
+--color-warning-amber: #696969;       /* Medium gray text */
 --color-muzzle-flash: #FFD700;        /* Bright gold highlights */
 --color-recoil-pad: #D3D3D3;          /* Light gray borders */
 --color-sight-gold: #CCCCCC;          /* Traditional gold */
@@ -57,7 +57,7 @@ title: 'Documentation/Design System'
 /* Dark Theme - Evening Hunt in the Mountains */
 --color-night-sight: #1A1A1A;         /* Deep black backgrounds */
 --color-carbon-fiber: #2D2D2D;        /* Dark gray surfaces */
---color-tactical-gray: #4A4A4A;       /* Medium dark gray */
+--color-warm-stone: #4A4A4A;       /* Medium dark gray */
 --color-titanium-white: #F0F0F0;      /* Off-white text */
 --color-stainless-steel: #C0C0C0;     /* Light gray accents */
 --color-flash-hider: #8B8B8B;         /* Muted gray */
@@ -142,9 +142,9 @@ Here's an example of how the new architecture works:
 
 ```css
 /* Primary Brand Colors - The Foundation */
---color-brass-yellow: #FF00FF;    /* Premium, heritage, quality */
---color-copper-orange: #FF00FF;   /* Heritage, warmth, tradition */
---color-gunmetal-black: #2C3E50;  /* Precision, sophistication */
+--color-sandy-ochre: #FF00FF;    /* Premium, heritage, quality */
+--color-rusty-orange: #FF00FF;   /* Heritage, warmth, tradition */
+--color-dark-chocolate: #2C3E50;  /* Precision, sophistication */
 --color-nickel-white: #F8F9FA;    /* Clean, pure, premium */
 ```
 
@@ -152,16 +152,16 @@ Here's an example of how the new architecture works:
 
 ```css
 /* Light Theme Primary: Copper Orange - Perfect contrast on light */
---accent-light: var(--color-copper-orange);
+--accent-light: var(--color-rusty-orange);
 
 /* Dark Theme Primary: Brass Yellow - Optimal visibility on dark */
---accent-dark: var(--color-brass-yellow);
+--accent-dark: var(--color-sandy-ochre);
 
 /* Success/Positive: Clubhouse Lawn Green */
---accent-success: var(--color-clubhouse-lawn-green);
+--accent-success: var(--color-sagebrush-green);
 
 /* Fire Gradients: Copper to Brass */
---gradient-fire: linear-gradient(90deg, var(--color-copper-orange) 0%, var(--color-brass-yellow) 100%);
+--gradient-fire: linear-gradient(90deg, var(--color-rusty-orange) 0%, var(--color-sandy-ochre) 100%);
 ```
 
 ### **Light Theme: Spring Day at the Range**
@@ -169,10 +169,10 @@ Here's an example of how the new architecture works:
 ```css
 /* Light Theme - Spring Day at the Range */
 --color-range-white: #FFFFFF;         /* Pure white backgrounds */
---color-shooting-bench: #F5F5F5;      /* Subtle gray backgrounds */
+--color-card-surface: #F5F5F5;      /* Subtle gray backgrounds */
 --color-walnut-stock: #8B4513;        /* Rich brown accents */
 --color-blued-steel: #2F4F4F;         /* Dark steel blue */
---color-case-hardened: #696969;       /* Medium gray text */
+--color-warning-amber: #696969;       /* Medium gray text */
 --color-muzzle-flash: #FFD700;        /* Bright gold highlights */
 --color-recoil-pad: #D3D3D3;          /* Light gray borders */
 --color-sight-gold: #CCCCCC;          /* Traditional gold */
@@ -189,7 +189,7 @@ Here's an example of how the new architecture works:
 /* Dark Theme - Evening Hunt in the Mountains */
 --color-night-sight: #1A1A1A;         /* Deep black backgrounds */
 --color-carbon-fiber: #2D2D2D;        /* Dark gray surfaces */
---color-tactical-gray: #4A4A4A;       /* Medium dark gray */
+--color-warm-stone: #4A4A4A;       /* Medium dark gray */
 --color-titanium-white: #F0F0F0;      /* Off-white text */
 --color-stainless-steel: #C0C0C0;     /* Light gray accents */
 --color-flash-hider: #8B8B8B;         /* Muted gray */
@@ -214,32 +214,32 @@ Here's an example of how the new architecture works:
 
 ```tsx
 // H1 - Main Page Titles (Rajdhani)
-<h1 className="font-rajdhani font-bold text-4xl md:text-5xl lg:text-6xl text-gunmetal-black">
+<h1 className="font-rajdhani font-bold text-4xl md:text-5xl lg:text-6xl text-dark-chocolate">
   THE BOISE GUN CLUB
 </h1>
 
 // H2 - Section Headers (Rajdhani)
-<h2 className="font-rajdhani font-semibold text-2xl md:text-3xl text-gunmetal-black">
+<h2 className="font-rajdhani font-semibold text-2xl md:text-3xl text-dark-chocolate">
   Firearms Safety Training
 </h2>
 
 // H3 - Subsection Headers (Noto Sans)
-<h3 className="font-noto-sans font-semibold text-xl md:text-2xl text-gunmetal-black">
+<h3 className="font-noto-sans font-semibold text-xl md:text-2xl text-dark-chocolate">
   Basic Safety Principles
 </h3>
 
 // H4-H6 - Content Headers (Noto Sans)
-<h4 className="font-noto-sans font-medium text-lg text-gunmetal-black">
+<h4 className="font-noto-sans font-medium text-lg text-dark-chocolate">
   Equipment Requirements
 </h4>
 
 // Body Text (Noto Sans)
-<p className="font-noto-sans text-base text-gunmetal-black leading-relaxed">
+<p className="font-noto-sans text-base text-dark-chocolate leading-relaxed">
   The Boise Gun Club provides comprehensive firearms safety education...
 </p>
 
 // Editorial Text (Noto Serif)
-<p className="font-noto-serif text-base text-gunmetal-black leading-relaxed italic">
+<p className="font-noto-serif text-base text-dark-chocolate leading-relaxed italic">
   In the rugged mountains of Idaho, where tradition meets precision...
 </p>
 ```
@@ -269,7 +269,7 @@ Here's an example of how the new architecture works:
 </div>
 
 // Slow, deliberate animations (350ms)
-<div className="transition-all transition-stripe-slow hover:bg-brass-yellow/10">
+<div className="transition-all transition-stripe-slow hover:bg-sandy-ochre/10">
   Premium Experience
 </div>
 ```
@@ -280,21 +280,21 @@ Here's an example of how the new architecture works:
 
 ```css
 /* Gradient System */
---gradient-brass-copper: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 100%);
---gradient-premium: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 50%, var(--color-gunmetal-black) 100%);
---gradient-elite: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 25%, var(--color-gunmetal-black) 75%, var(--color-nickel-white) 100%);
+--gradient-brass-copper: linear-gradient(135deg, var(--color-sandy-ochre) 0%, var(--color-rusty-orange) 100%);
+--gradient-premium: linear-gradient(135deg, var(--color-sandy-ochre) 0%, var(--color-rusty-orange) 50%, var(--color-dark-chocolate) 100%);
+--gradient-elite: linear-gradient(135deg, var(--color-sandy-ochre) 0%, var(--color-rusty-orange) 25%, var(--color-dark-chocolate) 75%, var(--color-nickel-white) 100%);
 ```
 
 ### **Usage Examples**
 
 ```tsx
 // Brass to Copper gradient
-<div className="bg-gradient-to-r from-brass-yellow to-copper-orange">
+<div className="bg-gradient-to-r from-sandy-ochre to-rusty-orange">
   Premium Element
 </div>
 
 // Premium gradient with black
-<div className="bg-gradient-to-br from-brass-yellow via-copper-orange to-gunmetal-black">
+<div className="bg-gradient-to-br from-sandy-ochre via-rusty-orange to-dark-chocolate">
   Elite Element
 </div>
 ```
@@ -308,7 +308,7 @@ Here's an example of how the new architecture works:
 --shadow-xs: 0 2px 5px -1px rgba(50, 50, 93, 0.25), 0 1px 3px -1px rgba(0, 0, 0, 0.3);
 --shadow-sm: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
 --shadow-md: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
---shadow-lg: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+--shadow-elevated: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
 --shadow-xl: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
 
 /* TBGC Brand-Colored Sophisticated Shadows */
@@ -322,7 +322,7 @@ Here's an example of how the new architecture works:
 // Standard shadows
 <div className="shadow-sm">Small Shadow</div>
 <div className="shadow-md">Medium Shadow</div>
-<div className="shadow-lg">Large Shadow</div>
+<div className="shadow-elevated">Large Shadow</div>
 
 // Brand-colored shadows
 <div className="shadow-brass">Brass Shadow</div>
@@ -360,7 +360,7 @@ text-muted-foreground    // Instead of text-gray-500 or text-gray-400
 border-border    // Instead of border-gray-200 or border-gray-700
 
 // Accents (Theme-Aware)
-hover:text-accent     // Instead of hover:text-copper-orange
+hover:text-accent     // Instead of hover:text-rusty-orange
 ```
 
 ### **Fire Gradient Animations**
@@ -369,10 +369,10 @@ Use the signature fire gradient for bottom accent bars:
 
 ```tsx
 // Fire accent bar (1px thick for subtle effect)
-<div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-copper-orange to-brass-yellow transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+<div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
 
 // Fire gradient button
-<button className="bg-gradient-to-r from-copper-orange to-brass-yellow text-white">
+<button className="bg-gradient-to-r from-rusty-orange to-sandy-ochre text-white">
   Premium Action
 </button>
 ```
@@ -390,7 +390,7 @@ bg-[#FF00FF], text-[#333333]
 style="color: #FF00FF"
 
 // ✅ CORRECT - 26-color palette
-text-copper-orange, bg-brass-yellow, border-clubhouse-lawn-green
+text-rusty-orange, bg-sandy-ochre, border-sagebrush-green
 ```
 
 ## 🧩 COMPONENT PATTERNS
@@ -409,7 +409,7 @@ text-copper-orange, bg-brass-yellow, border-clubhouse-lawn-green
 - Table components (data separation)
 
 // ❌ FORBIDDEN: Components that should use SHADOWS instead
-- Card components (use shadow-sm, shadow-md, shadow-lg)
+- Card components (use shadow-sm, shadow-md, shadow-elevated)
 - Modal/Dialog components (use shadows for depth)
 - Dropdown/Popover components (use shadows for elevation)
 - Navigation components (use shadows for hierarchy)
@@ -422,7 +422,7 @@ text-copper-orange, bg-brass-yellow, border-clubhouse-lawn-green
 shadow-xs    /* Minimal elevation - subtle components */
 shadow-sm    /* Default cards, containers */ 
 shadow-md    /* Interactive states, hover effects */
-shadow-lg    /* Modals, important elevated content */
+shadow-elevated    /* Modals, important elevated content */
 shadow-xl    /* Hero sections, major emphasis */
 ```
 
@@ -446,7 +446,7 @@ const componentVariants = cva(
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-sm",
         ghost: "bg-transparent text-foreground hover:bg-muted",
         link: "bg-transparent text-primary underline-offset-4 hover:underline",
-        glass: "bg-card/20 backdrop-blur-md text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-0.5 focus-visible:ring-ring/50 border border-border/30 hover:border-border/50 hover:bg-card/30 mica-glass",
+        glass: "bg-card/20 backdrop-blur-md text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-0.5 focus-visible:ring-ring/50 border border-border/30 hover:border-border/50 hover:bg-card/30 mica-glass",
         "solid-accent": "bg-accent text-accent-foreground hover:bg-accent/90 stripe-arrow",
         "solid-success": "bg-success text-success-foreground hover:bg-success/90 stripe-arrow",
         "solid-destructive": "bg-destructive text-destructive-foreground hover:bg-destructive/90 stripe-arrow",
@@ -503,22 +503,22 @@ Component.displayName = "Component"
 
 ```tsx
 // Brass Yellow - Premium, heritage, quality
-<div className="bg-brass-yellow text-gunmetal-black">
+<div className="bg-sandy-ochre text-dark-chocolate">
   Premium Membership
 </div>
 
 // Copper Orange - Heritage, warmth, tradition
-<div className="bg-copper-orange text-nickel-white">
+<div className="bg-rusty-orange text-nickel-white">
   Heritage Collection
 </div>
 
 // Gunmetal Black - Precision, sophistication
-<div className="bg-gunmetal-black text-nickel-white">
+<div className="bg-dark-chocolate text-nickel-white">
   Professional Training
 </div>
 
 // Nickel White - Clean, pure, premium
-<div className="bg-nickel-white text-gunmetal-black">
+<div className="bg-nickel-white text-dark-chocolate">
   Safety Certification
 </div>
 ```
@@ -532,7 +532,7 @@ Component.displayName = "Component"
 </div>
 
 // Warning States
-<div className="bg-muzzle-flash text-gunmetal-black">
+<div className="bg-muzzle-flash text-dark-chocolate">
   Safety Reminder
 </div>
 
@@ -553,12 +553,12 @@ Component.displayName = "Component"
 
 ```tsx
 // Proper contrast ratios (4.5:1 minimum)
-<div className="bg-brass-yellow text-gunmetal-black"> {/* 8.5:1 contrast */}
+<div className="bg-sandy-ochre text-dark-chocolate"> {/* 8.5:1 contrast */}
 <div className="bg-rifling-green text-nickel-white"> {/* 7.2:1 contrast */}
 <div className="bg-safety-red text-nickel-white"> {/* 6.8:1 contrast */}
 
 // Focus indicators
-<button className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-yellow focus-visible:ring-offset-2">
+<button className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sandy-ochre focus-visible:ring-offset-2">
   Accessible Button
 </button>
 
@@ -726,7 +726,7 @@ Component.displayName = "Component"
 </div>
 
 // Slow, deliberate animations (350ms)
-<div className="transition-all transition-stripe-slow hover:bg-brass-yellow/10">
+<div className="transition-all transition-stripe-slow hover:bg-sandy-ochre/10">
   Premium Experience
 </div>
 ```
@@ -737,21 +737,21 @@ Component.displayName = "Component"
 
 ```css
 /* Gradient System */
---gradient-brass-copper: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 100%);
---gradient-premium: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 50%, var(--color-gunmetal-black) 100%);
---gradient-elite: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 25%, var(--color-gunmetal-black) 75%, var(--color-nickel-white) 100%);
+--gradient-brass-copper: linear-gradient(135deg, var(--color-sandy-ochre) 0%, var(--color-rusty-orange) 100%);
+--gradient-premium: linear-gradient(135deg, var(--color-sandy-ochre) 0%, var(--color-rusty-orange) 50%, var(--color-dark-chocolate) 100%);
+--gradient-elite: linear-gradient(135deg, var(--color-sandy-ochre) 0%, var(--color-rusty-orange) 25%, var(--color-dark-chocolate) 75%, var(--color-nickel-white) 100%);
 ```
 
 ### **Usage Examples**
 
 ```tsx
 // Brass to Copper gradient
-<div className="bg-gradient-to-r from-brass-yellow to-copper-orange">
+<div className="bg-gradient-to-r from-sandy-ochre to-rusty-orange">
   Premium Element
 </div>
 
 // Premium gradient with black
-<div className="bg-gradient-to-br from-brass-yellow via-copper-orange to-gunmetal-black">
+<div className="bg-gradient-to-br from-sandy-ochre via-rusty-orange to-dark-chocolate">
   Elite Element
 </div>
 ```
@@ -765,7 +765,7 @@ Component.displayName = "Component"
 --shadow-xs: 0 2px 5px -1px rgba(50, 50, 93, 0.25), 0 1px 3px -1px rgba(0, 0, 0, 0.3);
 --shadow-sm: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
 --shadow-md: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
---shadow-lg: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+--shadow-elevated: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
 --shadow-xl: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
 
 /* TBGC Brand-Colored Sophisticated Shadows */
@@ -779,7 +779,7 @@ Component.displayName = "Component"
 // Standard shadows
 <div className="shadow-sm">Small Shadow</div>
 <div className="shadow-md">Medium Shadow</div>
-<div className="shadow-lg">Large Shadow</div>
+<div className="shadow-elevated">Large Shadow</div>
 
 // Brand-colored shadows
 <div className="shadow-brass">Brass Shadow</div>
@@ -816,8 +816,8 @@ text-foreground          // Instead of text-black
 border-border    // Instead of border-gray-200 or border-gray-300
 
 // Accents (Theme-Aware)
-hover:text-copper-orange     // Light theme accent
-dark:hover:text-brass-yellow // Dark theme accent
+hover:text-rusty-orange     // Light theme accent
+dark:hover:text-sandy-ochre // Dark theme accent
 ```
 
 ### **Fire Gradient Animations**
@@ -826,10 +826,10 @@ Use the signature fire gradient for bottom accent bars:
 
 ```tsx
 // Fire accent bar (1px thick for subtle effect)
-<div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-copper-orange to-brass-yellow transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+<div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
 
 // Fire gradient button
-<button className="bg-gradient-to-r from-copper-orange to-brass-yellow text-white">
+<button className="bg-gradient-to-r from-rusty-orange to-sandy-ochre text-white">
   Premium Action
 </button>
 ```
@@ -847,7 +847,7 @@ bg-[#FF00FF], text-[#333333]
 style="color: #FF00FF"
 
 // ✅ CORRECT - 26-color palette
-text-copper-orange, bg-brass-yellow, border-clubhouse-lawn-green
+text-rusty-orange, bg-sandy-ochre, border-sagebrush-green
 ```
 
 ## 🧩 COMPONENT PATTERNS
@@ -866,7 +866,7 @@ text-copper-orange, bg-brass-yellow, border-clubhouse-lawn-green
 - Table components (data separation)
 
 // ❌ FORBIDDEN: Components that should use SHADOWS instead
-- Card components (use shadow-sm, shadow-md, shadow-lg)
+- Card components (use shadow-sm, shadow-md, shadow-elevated)
 - Modal/Dialog components (use shadows for depth)
 - Dropdown/Popover components (use shadows for elevation)
 - Navigation components (use shadows for hierarchy)
@@ -879,7 +879,7 @@ text-copper-orange, bg-brass-yellow, border-clubhouse-lawn-green
 shadow-xs    /* Minimal elevation - subtle components */
 shadow-sm    /* Default cards, containers */ 
 shadow-md    /* Interactive states, hover effects */
-shadow-lg    /* Modals, important elevated content */
+shadow-elevated    /* Modals, important elevated content */
 shadow-xl    /* Hero sections, major emphasis */
 ```
 
@@ -895,19 +895,19 @@ const componentVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-range-white text-gunmetal-black border border-recoil-pad hover:bg-shooting-bench shadow-sm",
-        primary: "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange shadow-md",
-        secondary: "bg-shooting-bench text-gunmetal-black border border-recoil-pad hover:bg-recoil-pad shadow-sm",
-        accent: "bg-white text-gunmetal-black border-2 border-brass-yellow/30 hover:border-brass-yellow/50 hover:bg-brass-yellow/5 shadow-sm",
-        success: "bg-white text-gunmetal-black border-2 border-rifling-green/30 hover:border-rifling-green/50 hover:bg-rifling-green/5 shadow-sm",
-        destructive: "bg-white text-gunmetal-black border-2 border-safety-red/30 hover:border-safety-red/50 hover:bg-safety-red/5 shadow-sm",
-        ghost: "bg-transparent text-gunmetal-black hover:bg-shooting-bench",
+        default: "bg-range-white text-dark-chocolate border border-recoil-pad hover:bg-card-surface shadow-sm",
+        primary: "bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange shadow-md",
+        secondary: "bg-card-surface text-dark-chocolate border border-recoil-pad hover:bg-recoil-pad shadow-sm",
+        accent: "bg-white text-dark-chocolate border-2 border-sandy-ochre/30 hover:border-sandy-ochre/50 hover:bg-sandy-ochre/5 shadow-sm",
+        success: "bg-white text-dark-chocolate border-2 border-rifling-green/30 hover:border-rifling-green/50 hover:bg-rifling-green/5 shadow-sm",
+        destructive: "bg-white text-dark-chocolate border-2 border-safety-red/30 hover:border-safety-red/50 hover:bg-safety-red/5 shadow-sm",
+        ghost: "bg-transparent text-dark-chocolate hover:bg-card-surface",
         link: "bg-transparent text-scope-blue underline-offset-4 hover:underline",
-        glass: "bg-white/20 backdrop-blur-md text-gunmetal-black shadow-md hover:shadow-lg hover:-translate-y-0.5 focus-visible:ring-brass-yellow/50 border border-white/30 hover:border-white/50 hover:bg-white/30 mica-glass",
-        "solid-accent": "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange stripe-arrow",
+        glass: "bg-white/20 backdrop-blur-md text-dark-chocolate shadow-md hover:shadow-elevated hover:-translate-y-0.5 focus-visible:ring-sandy-ochre/50 border border-white/30 hover:border-white/50 hover:bg-white/30 mica-glass",
+        "solid-accent": "bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange stripe-arrow",
         "solid-success": "bg-rifling-green text-nickel-white hover:bg-rifling-green/90 stripe-arrow",
         "solid-destructive": "bg-safety-red text-nickel-white hover:bg-safety-red/90 stripe-arrow",
-        "solid-primary": "bg-gunmetal-black text-nickel-white hover:bg-gunmetal-black/90 stripe-arrow",
+        "solid-primary": "bg-dark-chocolate text-nickel-white hover:bg-dark-chocolate/90 stripe-arrow",
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -960,22 +960,22 @@ Component.displayName = "Component"
 
 ```tsx
 // Brass Yellow - Premium, heritage, quality
-<div className="bg-brass-yellow text-gunmetal-black">
+<div className="bg-sandy-ochre text-dark-chocolate">
   Premium Membership
 </div>
 
 // Copper Orange - Heritage, warmth, tradition
-<div className="bg-copper-orange text-nickel-white">
+<div className="bg-rusty-orange text-nickel-white">
   Heritage Collection
 </div>
 
 // Gunmetal Black - Precision, sophistication
-<div className="bg-gunmetal-black text-nickel-white">
+<div className="bg-dark-chocolate text-nickel-white">
   Professional Training
 </div>
 
 // Nickel White - Clean, pure, premium
-<div className="bg-nickel-white text-gunmetal-black">
+<div className="bg-nickel-white text-dark-chocolate">
   Safety Certification
 </div>
 ```
@@ -989,7 +989,7 @@ Component.displayName = "Component"
 </div>
 
 // Warning States
-<div className="bg-muzzle-flash text-gunmetal-black">
+<div className="bg-muzzle-flash text-dark-chocolate">
   Safety Reminder
 </div>
 
@@ -1010,12 +1010,12 @@ Component.displayName = "Component"
 
 ```tsx
 // Proper contrast ratios (4.5:1 minimum)
-<div className="bg-brass-yellow text-gunmetal-black"> {/* 8.5:1 contrast */}
+<div className="bg-sandy-ochre text-dark-chocolate"> {/* 8.5:1 contrast */}
 <div className="bg-rifling-green text-nickel-white"> {/* 7.2:1 contrast */}
 <div className="bg-safety-red text-nickel-white"> {/* 6.8:1 contrast */}
 
 // Focus indicators
-<button className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-yellow focus-visible:ring-offset-2">
+<button className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sandy-ochre focus-visible:ring-offset-2">
   Accessible Button
 </button>
 

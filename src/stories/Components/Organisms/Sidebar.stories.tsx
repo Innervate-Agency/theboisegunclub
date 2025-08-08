@@ -63,7 +63,7 @@ const AppSidebar = () => (
   <Sidebar>
     <SidebarHeader>
       <div className="flex items-center gap-xs px-xs py-xs">
-        <div className="flex aspect-square size-8 items-center justify-center rounded-card bg-copper-orange text-white">
+        <div className="flex aspect-square size-8 items-center justify-center rounded-card bg-rusty-orange text-white">
           <Target className="size-4" />
         </div>
         <div className="grid flex-1 text-left text-body-sm leading-tight">
@@ -213,7 +213,7 @@ export const FloatingVariant: Story = {
         <Sidebar variant="floating" className="m-xs">
           <SidebarHeader>
             <div className="flex items-center gap-xs px-xs py-xs">
-              <div className="flex aspect-square size-8 items-center justify-center rounded-card bg-brass-yellow text-gunmetal-black">
+              <div className="flex aspect-square size-8 items-center justify-center rounded-card bg-sandy-ochre text-dark-chocolate">
                 <Target className="size-4" />
               </div>
               <span className="font-semibold">Floating Sidebar</span>
@@ -264,7 +264,7 @@ export const InsetVariant: Story = {
         <Sidebar variant="inset">
           <SidebarHeader>
             <div className="flex items-center gap-xs px-xs py-xs">
-              <div className="flex aspect-square size-8 items-center justify-center rounded-card bg-copper-orange text-white">
+              <div className="flex aspect-square size-8 items-center justify-center rounded-card bg-rusty-orange text-white">
                 <Shield className="size-4" />
               </div>
               <span className="font-semibold">Inset Sidebar</span>
@@ -293,7 +293,7 @@ export const InsetVariant: Story = {
         </Sidebar>
         <SidebarInset>
           <div className="flex flex-1 flex-col gap-base p-base">
-            <h2 className="text-display-md font-bold text-copper-orange">Inset Layout</h2>
+            <h2 className="text-display-md font-bold text-rusty-orange">Inset Layout</h2>
             <div className="grid auto-rows-min gap-base md:grid-cols-3">
               <div className="aspect-video rounded-large bg-muted/50" />
               <div className="aspect-video rounded-large bg-muted/50" />

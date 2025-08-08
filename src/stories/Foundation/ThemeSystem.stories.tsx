@@ -138,13 +138,13 @@ export const ThemeContrastTest: Story = {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-base text-body-sm font-mono">
           <div>
             <p><strong>Light Theme:</strong></p>
-            <p>--contrast: {`var(--contrast)`} (copper-orange)</p>
-            <p>--accent: {`var(--accent)`} (copper-orange)</p>
+            <p>--contrast: {`var(--contrast)`} (rusty-orange)</p>
+            <p>--accent: {`var(--accent)`} (rusty-orange)</p>
             <p>--primary: {`var(--primary)`} (blued-steel)</p>
           </div>
           <div>
             <p><strong>Dark Theme:</strong></p>
-            <p>--contrast: {`var(--contrast)`} (brass-yellow)</p>
+            <p>--contrast: {`var(--contrast)`} (sandy-ochre)</p>
             <p>--accent: {`var(--accent)`} (cerakote-blue)</p>
             <p>--primary: {`var(--primary)`} (titanium-white)</p>
           </div>
@@ -170,8 +170,8 @@ export const ColorContrastComparison: Story = {
           <div className="space-y-base">
             <h4 className="font-semibold text-red-600">❌ OLD: Brass Yellow (Poor Contrast)</h4>
             <div className="p-base bg-range-white border rounded-card">
-              <h5 className="text-brass-yellow font-bold">Hover Title (Hard to Read)</h5>
-              <p className="text-case-hardened">Regular text that's readable</p>
+              <h5 className="text-sandy-ochre font-bold">Hover Title (Hard to Read)</h5>
+              <p className="text-warning-amber">Regular text that's readable</p>
             </div>
           </div>
 
@@ -180,7 +180,7 @@ export const ColorContrastComparison: Story = {
             <h4 className="font-semibold text-green-600">✅ NEW: Copper Orange (Good Contrast)</h4>
             <div className="p-base bg-range-white border rounded-card">
               <h5 className="text-contrast font-bold">Hover Title (Easy to Read)</h5>
-              <p className="text-case-hardened">Regular text that's readable</p>
+              <p className="text-warning-amber">Regular text that's readable</p>
             </div>
           </div>
         </div>
@@ -194,8 +194,8 @@ export const ColorContrastComparison: Story = {
           {/* Old (Bad) - Copper Orange on Dark */}
           <div className="space-y-base">
             <h4 className="font-semibold text-red-400">❌ OLD: Copper Orange (Poor Contrast)</h4>
-            <div className="p-base bg-carbon-fiber border border-tactical-gray rounded-card">
-              <h5 className="text-copper-orange font-bold">Hover Title (Hard to Read)</h5>
+            <div className="p-base bg-carbon-fiber border border-warm-stone rounded-card">
+              <h5 className="text-rusty-orange font-bold">Hover Title (Hard to Read)</h5>
               <p className="text-stainless-steel">Regular text that's readable</p>
             </div>
           </div>
@@ -203,8 +203,8 @@ export const ColorContrastComparison: Story = {
           {/* New (Good) - Brass Yellow on Dark */}
           <div className="space-y-base">
             <h4 className="font-semibold text-green-400">✅ NEW: Brass Yellow (Good Contrast)</h4>
-            <div className="p-base bg-carbon-fiber border border-tactical-gray rounded-card">
-              <h5 className="text-brass-yellow font-bold">Hover Title (Easy to Read)</h5>
+            <div className="p-base bg-carbon-fiber border border-warm-stone rounded-card">
+              <h5 className="text-sandy-ochre font-bold">Hover Title (Easy to Read)</h5>
               <p className="text-stainless-steel">Regular text that's readable</p>
             </div>
           </div>

@@ -14,8 +14,8 @@ const loadingSpinnerVariants = cva(
         lg: "h-12 w-12 border-4"
       },
       variant: {
-        default: "border-brass-yellow/30 border-t-brass-yellow",
-        copper: "border-copper-orange/30 border-t-copper-orange",
+        default: "border-sandy-ochre/30 border-t-sandy-ochre",
+        copper: "border-rusty-orange/30 border-t-rusty-orange",
         accent: "border-scope-blue/30 border-t-scope-blue"
       }
     },
@@ -58,7 +58,7 @@ function LoadingSpinner({
           size === "lg" && "top-1.5 left-1.5"
         )}>
           <div className={cn(
-            "rounded-full bg-gunmetal-black",
+            "rounded-full bg-dark-chocolate",
             size === "sm" && "h-1 w-1",
             size === "md" && "h-2 w-2",
             size === "lg" && "h-3 w-3"
@@ -69,7 +69,7 @@ function LoadingSpinner({
       {/* Loading Text */}
       {shouldShowText && (
         <p className={cn(
-          "font-noto-sans text-case-hardened animate-pulse",
+          "font-noto-sans text-warning-amber animate-pulse",
           size === "sm" && "text-caption",
           size === "md" && "text-body-sm", 
           size === "lg" && "text-body"

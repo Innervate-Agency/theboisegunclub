@@ -132,7 +132,7 @@ export const FireGradientCardGrid: Story = {
           </CardHeader>
           <CardContent>
             <p className="text-body-sm opacity-90 mb-base">
-              Cool blue fire gradient using ayu-blue to ayu-green transition.
+              Cool blue fire gradient using slate-blue to ayu-green transition.
             </p>
             <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-white/20">
               Explore <ChevronRight className="ml-xs h-4 w-4" />
@@ -210,15 +210,15 @@ export const CallToActionSection: Story = {
           
           <div className="grid grid-cols-3 gap-lg pt-md border-t">
             <div className="text-center">
-              <div className="text-display-md font-rajdhani font-bold text-brass-yellow">1,247</div>
+              <div className="text-display-md font-rajdhani font-bold text-sandy-ochre">1,247</div>
               <div className="text-body-sm text-muted-foreground">Happy Members</div>
             </div>
             <div className="text-center">
-              <div className="text-display-md font-rajdhani font-bold text-copper-orange">98.5%</div>
+              <div className="text-display-md font-rajdhani font-bold text-rusty-orange">98.5%</div>
               <div className="text-body-sm text-muted-foreground">Safety Rating</div>
             </div>
             <div className="text-center">
-              <div className="text-display-md font-rajdhani font-bold text-ayu-blue">24/7</div>
+              <div className="text-display-md font-rajdhani font-bold text-slate-blue">24/7</div>
               <div className="text-body-sm text-muted-foreground">Range Access</div>
             </div>
           </div>
@@ -250,19 +250,19 @@ export const FeatureHighlight: Story = {
           
           <ul className="space-y-sm">
             <li className="flex items-start gap-sm">
-              <div className="w-2 h-2 rounded-full bg-brass-yellow mt-xs.5"></div>
+              <div className="w-2 h-2 rounded-full bg-sandy-ochre mt-xs.5"></div>
               <div>
                 <strong>Left-Origin Animation:</strong> Gradients unfurl from the left using transform-origin
               </div>
             </li>
             <li className="flex items-start gap-sm">
-              <div className="w-2 h-2 rounded-full bg-copper-orange mt-xs.5"></div>
+              <div className="w-2 h-2 rounded-full bg-rusty-orange mt-xs.5"></div>
               <div>
                 <strong>Color Coordination:</strong> Orange→Yellow, Blue→Green, Purple→Cobalt variations
               </div>
             </li>
             <li className="flex items-start gap-sm">
-              <div className="w-2 h-2 rounded-full bg-ayu-blue mt-xs.5"></div>
+              <div className="w-2 h-2 rounded-full bg-slate-blue mt-xs.5"></div>
               <div>
                 <strong>Multiple Effects:</strong> Unfurl, pulse, glow animations for different use cases
               </div>
@@ -278,7 +278,7 @@ export const FeatureHighlight: Story = {
           <Card className="animate-fire-unfurl cursor-pointer">
             <CardContent className="p-md">
               <div className="relative z-10 text-center">
-                <Target className="h-8 w-8 mx-auto mb-xs text-brass-yellow" />
+                <Target className="h-8 w-8 mx-auto mb-xs text-sandy-ochre" />
                 <h4 className="font-bold">Hover Effect</h4>
               </div>
             </CardContent>

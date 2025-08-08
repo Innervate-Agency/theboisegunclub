@@ -19,11 +19,11 @@ title: 'Documentation/AI Enforcement Checklist'
 
 ### **APPROVED COLORS ONLY (26 total)**
 
-**Primary Brand Colors:** `bg-brass-yellow`, `bg-copper-orange`, `bg-gunmetal-black`, `bg-nickel-white`
+**Primary Brand Colors:** `bg-sandy-ochre`, `bg-rusty-orange`, `bg-dark-chocolate`, `bg-nickel-white`
 
-**Light Theme (Spring Day at the Range):** `bg-range-white`, `bg-shooting-bench`, `bg-walnut-stock`, `bg-blued-steel`, `bg-case-hardened`, `bg-muzzle-flash`, `bg-recoil-pad`, `bg-sight-gold`, `bg-scope-blue`, `bg-trigger-blue`, `bg-rifling-green`, `bg-bore-sight-green`, `bg-safety-red`
+**Light Theme (Spring Day at the Range):** `bg-range-white`, `bg-card-surface`, `bg-walnut-stock`, `bg-blued-steel`, `bg-warning-amber`, `bg-muzzle-flash`, `bg-recoil-pad`, `bg-sight-gold`, `bg-scope-blue`, `bg-trigger-blue`, `bg-rifling-green`, `bg-bore-sight-green`, `bg-safety-red`
 
-**Dark Theme (Evening Hunt in the Mountains):** `bg-night-sight`, `bg-carbon-fiber`, `bg-tactical-gray`, `bg-titanium-white`, `bg-stainless-steel`, `bg-flash-hider`, `bg-crimson-trace`, `bg-cerakote-blue`, `bg-ghost-ring`, `bg-woodland-camo`
+**Dark Theme (Evening Hunt in the Mountains):** `bg-night-sight`, `bg-carbon-fiber`, `bg-warm-stone`, `bg-titanium-white`, `bg-stainless-steel`, `bg-flash-hider`, `bg-crimson-trace`, `bg-cerakote-blue`, `bg-ghost-ring`, `bg-woodland-camo`
 
 ### **Typography Violations**
 
@@ -34,7 +34,7 @@ title: 'Documentation/AI Enforcement Checklist'
 ### **Technical Stack Violations**  
 
 - [ ] **NO inline styles** - Use Tailwind v4 classes only
-- [ ] **NO old Tailwind syntax** - `bg-brass-yellow` NOT `bg-[var(--color-brass-yellow)]`
+- [ ] **NO old Tailwind syntax** - `bg-sandy-ochre` NOT `bg-[var(--color-sandy-ochre)]`
 - [ ] **NO !important hacks** - Proper CSS specificity only
 - [ ] **NO hardcoded transitions** - Use `transition-stripe-fast` (150ms) or `transition-stripe-normal` (250ms) or `transition-stripe-slow` (350ms)
 
@@ -51,7 +51,7 @@ title: 'Documentation/AI Enforcement Checklist'
 
 1. [ ] Use ONLY the 26 approved colors from globals.css (see list above)
 2. [ ] Follow CVA pattern for variants (seen in existing components)
-3. [ ] Use Tailwind v4 direct syntax: `bg-brass-yellow/20` for opacity
+3. [ ] Use Tailwind v4 direct syntax: `bg-sandy-ochre/20` for opacity
 4. [ ] Implement proper Server/Client component patterns
 5. [ ] Add proper TypeScript interfaces
 6. [ ] Primary focus: Brass Yellow + Copper Orange for premium/elite variants
@@ -70,15 +70,15 @@ title: 'Documentation/AI Enforcement Checklist'
 
 ```tsx
 // ✅ CORRECT - Using approved 26-color palette
-<div className="bg-brass-yellow text-gunmetal-black">
-<div className="border-copper-orange/30 bg-range-white">
-<div className="hover:bg-copper-orange transition-stripe-fast">
+<div className="bg-sandy-ochre text-dark-chocolate">
+<div className="border-rusty-orange/30 bg-range-white">
+<div className="hover:bg-rusty-orange transition-stripe-fast">
 <div className="bg-night-sight text-titanium-white">
-<div className="border-scope-blue/50 bg-shooting-bench">
+<div className="border-scope-blue/50 bg-card-surface">
 
 // ❌ FORBIDDEN - All hardcoded colors
 <div className="bg-[#FF00FF]">
-<div className="bg-[var(--color-brass-yellow)]">
+<div className="bg-[var(--color-sandy-ochre)]">
 <div style={{backgroundColor: '#FF00FF'}}>
 <div className="bg-blue-500">
 <div className="text-red-600">
@@ -106,7 +106,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange",
+        default: "bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange",
         destructive: "bg-safety-red text-nickel-white hover:bg-safety-red/90",
       },
       size: {
@@ -137,7 +137,7 @@ const buttonVariants = cva(
 
 ### **Always Use These:**
 
-- Design system colors: `bg-brass-yellow`, `text-gunmetal-black`
+- Design system colors: `bg-sandy-ochre`, `text-dark-chocolate`
 - Typography classes: `font-rajdhani`, `font-noto-sans`
 - Transition timing: `transition-stripe-fast`, `transition-stripe-normal`
 - Proper contrast ratios for accessibility

@@ -22,7 +22,7 @@ export function EventTicker({ events }: EventTickerProps) {
   const extendedEvents = [...events, ...events, ...events]
   
   return (
-    <div className="bg-gradient-to-r from-ayu-blue/10 to-ayu-cobalt/10 border-b border-border/20 overflow-hidden">
+    <div className="bg-gradient-to-r from-slate-blue/10 to-ayu-cobalt/10 border-b border-border/20 overflow-hidden">
       <div className="relative">
         <div className="flex animate-scroll whitespace-nowrap py-base">
           {extendedEvents.map((event, index) => (
@@ -48,7 +48,7 @@ export function EventTicker({ events }: EventTickerProps) {
                       <span>{event.location.split(',')[0]}</span>
                     </div>
                     <div className="flex items-center gap-xs">
-                      <span className="font-medium text-copper-orange">{event.price}</span>
+                      <span className="font-medium text-rusty-orange">{event.price}</span>
                     </div>
                   </div>
                 </div>

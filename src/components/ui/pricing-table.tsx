@@ -9,37 +9,32 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./car
 import { Check, X, Minus, Star, Target } from 'lucide-react'
 
 const pricingCardVariants = cva(
-  "relative overflow-hidden transition-all duration-300 ease-out bg-card text-card-foreground rounded-[var(--radius-lg)] group",
+  // BASE: Clean professional foundation for all tiers - LITERAL COPY from VendorCard
+  "relative overflow-hidden transition-all duration-300 bg-card text-card-foreground rounded-[var(--radius-lg)] group",
   {
     variants: {
-      variant: {
-        // FREE TIER: Clean baseline foundation matching VendorCard free tier
-        default: "shadow-flat hover:shadow-md",
+      tier: {
+        // FREE: Clean baseline - professional foundation (no animation)
+        free: "shadow-flat hover:shadow-md",
         
-        // COMPACT: Streamlined version with consistent shadows
-        compact: "shadow-flat hover:shadow-md",
+        // COPPER: Enhanced copper presence - subtle background tint with prominent gradient accent
+        copper: "shadow-flat hover:shadow-md bg-rusty-orange/[0.02] hover:bg-rusty-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
-        // DETAILED: Enhanced with subtle background treatment
-        detailed: "shadow-flat hover:shadow-md bg-gradient-to-br from-card/98 via-card/95 to-card/98",
+        // SILVER: Consistent default shadows with subtle cobalt glassmorphism
+        silver: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-card before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-warm-stone after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg",
         
-        // FUSION: Premium glassmorphism matching VendorCard gold tier
-        fusion: "shadow-flat hover:shadow-md bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-tactical-gray/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/10 before:via-transparent before:to-copper-orange/8 dark:before:from-brass-yellow/14 dark:before:to-copper-orange/12 before:rounded-card before:pointer-events-none"
+        // GOLD: Consistent default shadows with premium mica glassmorphism features
+        gold: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-warm-stone/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-sandy-ochre/14 dark:before:to-rusty-orange/12 before:rounded-card before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
       },
-      popular: {
-        // Popular cards get copper-orange accent bar like VendorCard copper tier
-        true: "shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out after:w-full after:rounded-b-lg scale-105 z-10",
-        false: ""
-      },
-      recommended: {
-        // Recommended gets brass-yellow overlay like VendorCard gold tier
-        true: "before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/8 before:via-transparent before:to-copper-orange/6 dark:before:from-brass-yellow/12 dark:before:to-copper-orange/10 before:rounded-card before:pointer-events-none",
-        false: ""
+      size: {
+        sm: "p-base",
+        md: "p-lg", 
+        lg: "p-xl"
       }
     },
     defaultVariants: {
-      variant: "default",
-      popular: false,
-      recommended: false
+      tier: "free",
+      size: "md"
     }
   }
 )
@@ -76,12 +71,14 @@ export interface PricingCardProps
   isAnnual?: boolean
   showFeatures?: boolean
   onSelectPlan?: (planId: string) => void
+  tier?: 'free' | 'copper' | 'silver' | 'gold'
 }
 
 export function PricingCard({
   className,
   plan,
-  variant,
+  tier,
+  size,
   popular = plan.popular,
   recommended = plan.recommended,
   isAnnual = false,
@@ -100,30 +97,30 @@ export function PricingCard({
       return <Check className="h-4 w-4 text-rifling-green" />
     }
     if (feature.included === false) {
-      return <X className="h-4 w-4 text-case-hardened" />
+      return <X className="h-4 w-4 text-warning-amber" />
     }
     if (typeof feature.included === 'number') {
-      return <span className="text-body-sm font-medium text-gunmetal-black">{feature.included}</span>
+      return <span className="text-body-sm font-medium text-dark-chocolate">{feature.included}</span>
     }
     if (feature.included === 'unlimited') {
-      return <span className="text-body-sm font-medium text-brass-yellow">∞</span>
+      return <span className="text-body-sm font-medium text-rusty-orange">∞</span>
     }
     if (feature.included === 'limited') {
       return <Minus className="h-4 w-4 text-sight-gold" />
     }
-    return <span className="text-caption text-case-hardened">{feature.included}</span>
+    return <span className="text-caption text-warning-amber">{feature.included}</span>
   }
 
   return (
     <div
-      className={cn(pricingCardVariants({ variant, popular, recommended }), className)}
+      className={cn(pricingCardVariants({ tier, size }), className)}
       {...props}
     >
       <Card className="border-0 shadow-none h-full">
         {/* Popular badge */}
         {popular && plan.badge && (
           <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
-            <Badge variant="default" className="bg-brass-yellow text-gunmetal-black font-medium px-md py-sm text-caption shadow-md">
+            <Badge variant="default" className="bg-rusty-orange text-nickel-white font-medium px-md py-sm text-caption shadow-md">
               <Star className="h-3 w-3 mr-xs" />
               {plan.badge}
             </Badge>
@@ -132,8 +129,8 @@ export function PricingCard({
 
         <CardHeader className="text-center pb-base pt-xl">
           <div className="flex justify-center mb-base">
-            <div className="p-sm bg-brass-yellow/10 rounded-full">
-              <Icon className="h-6 w-6 text-brass-yellow" />
+            <div className="p-sm bg-rusty-orange/10 rounded-full">
+              <Icon className="h-6 w-6 text-rusty-orange" />
             </div>
           </div>
           
@@ -141,7 +138,7 @@ export function PricingCard({
             {plan.name}
           </CardTitle>
           
-          <CardDescription className="text-case-hardened">
+          <CardDescription className="text-warning-amber">
             {plan.description}
           </CardDescription>
           
@@ -150,11 +147,11 @@ export function PricingCard({
               <span className="text-heading-lg font-rajdhani font-bold text-foreground">
                 ${monthlyPrice.toFixed(0)}
               </span>
-              <span className="text-body-sm text-case-hardened">/month</span>
+              <span className="text-body-sm text-warning-amber">/month</span>
             </div>
             
             {isAnnual && (
-              <div className="text-caption text-case-hardened mt-xs">
+              <div className="text-caption text-warning-amber mt-xs">
                 Billed annually (${price}/year)
                 {savings > 0 && (
                   <div className="text-bore-sight-green font-medium">
@@ -165,7 +162,7 @@ export function PricingCard({
             )}
             
             {plan.price.setup && plan.price.setup > 0 && (
-              <div className="text-caption text-case-hardened mt-xs">
+              <div className="text-caption text-warning-amber mt-xs">
                 + ${plan.price.setup} setup fee
               </div>
             )}
@@ -174,8 +171,8 @@ export function PricingCard({
 
         <CardContent className="space-y-md">
           <Button
-            className="w-full"
-            variant="flat"
+            className="w-full shadow-none"
+            variant="ghost"
             size="sm"
             onClick={() => onSelectPlan?.(plan.id)}
           >
@@ -184,7 +181,7 @@ export function PricingCard({
 
           {showFeatures && (
             <div className="space-y-sm">
-              <h4 className="font-rajdhani font-bold text-gunmetal-black text-body-sm">
+              <h4 className="font-rajdhani font-bold text-dark-chocolate text-body-sm">
                 What's included:
               </h4>
               <div className="space-y-xs">
@@ -194,11 +191,11 @@ export function PricingCard({
                       {renderFeatureValue(feature)}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-body-sm font-medium text-gunmetal-black leading-snug">
+                      <p className="text-body-sm font-medium text-dark-chocolate leading-snug">
                         {feature.name}
                       </p>
                       {feature.description && (
-                        <p className="text-caption text-case-hardened leading-snug">
+                        <p className="text-caption text-warning-amber leading-snug">
                           {feature.description}
                         </p>
                       )}
@@ -254,7 +251,7 @@ export function PricingTable({
               onClick={() => setIsAnnual(true)}
             >
               Annual
-              <Badge className="absolute -top-2 -right-2 bg-clubhouse-lawn-green text-card text-caption">
+              <Badge className="absolute -top-2 -right-2 bg-sagebrush-green text-card text-caption">
                 Save 15%
               </Badge>
             </button>
@@ -283,12 +280,12 @@ export function PricingTable({
             <table className="min-w-full divide-y divide-border">
               <thead>
                 <tr>
-                  <th className="px-md py-base text-left text-body-sm font-rajdhani font-bold text-gunmetal-black">
+                  <th className="px-md py-base text-left text-body-sm font-rajdhani font-bold text-dark-chocolate">
                     Features
                   </th>
                   {plans.map((plan) => (
                     <th key={plan.id} className="px-md py-base text-center">
-                      <div className="font-rajdhani font-bold text-gunmetal-black">
+                      <div className="font-rajdhani font-bold text-dark-chocolate">
                         {plan.name}
                       </div>
                     </th>
@@ -298,7 +295,7 @@ export function PricingTable({
               <tbody className="divide-y divide-border">
                 {plans[0]?.features.map((_, featureIndex) => (
                   <tr key={featureIndex} className="hover:bg-muted/30">
-                    <td className="px-md py-base text-body-sm font-medium text-gunmetal-black">
+                    <td className="px-md py-base text-body-sm font-medium text-dark-chocolate">
                       {plans[0].features[featureIndex]?.name}
                     </td>
                     {plans.map((plan) => (
@@ -326,15 +323,15 @@ export function PricingTable({
       return <X className="h-4 w-4 text-muted-foreground mx-auto" />
     }
     if (typeof feature.included === 'number') {
-      return <span className="text-body-sm font-medium text-gunmetal-black">{feature.included}</span>
+      return <span className="text-body-sm font-medium text-dark-chocolate">{feature.included}</span>
     }
     if (feature.included === 'unlimited') {
-      return <span className="text-body-sm font-medium text-brass-yellow">∞</span>
+      return <span className="text-body-sm font-medium text-rusty-orange">∞</span>
     }
     if (feature.included === 'limited') {
-      return <Minus className="h-4 w-4 text-brass-yellow mx-auto" />
+      return <Minus className="h-4 w-4 text-rusty-orange mx-auto" />
     }
-    return <span className="text-caption text-case-hardened">{feature.included}</span>
+    return <span className="text-caption text-warning-amber">{feature.included}</span>
   }
 }
 
@@ -354,12 +351,12 @@ export function PricingFusion({
   const [isAnnual, setIsAnnual] = React.useState(false)
 
   return (
-    <div className="w-full space-y-2xl p-lg bg-solid-brand-warm rounded-large border border-brass-yellow/20 hover-gradient-warm">
+    <div className="w-full space-y-2xl p-lg bg-solid-brand-warm rounded-large border border-rusty-orange/20 hover-gradient-warm">
       <div className="text-center space-y-[base]">
         <h2 className="text-heading-lg font-rajdhani font-bold text-foreground">
           Choose Your Membership
         </h2>
-        <p className="text-case-hardened max-w-2xl mx-auto">
+        <p className="text-warning-amber max-w-2xl mx-auto">
           Select the perfect membership plan for your shooting needs. All memberships include access to our state-of-the-art facilities and expert instruction.
         </p>
       </div>
@@ -367,11 +364,11 @@ export function PricingFusion({
       {/* Annual toggle */}
       {showAnnualDiscount && (
         <div className="flex justify-center">
-          <div className="flex items-center gap-base p-xs mica-card rounded-card border border-brass-yellow/20">
+          <div className="flex items-center gap-base p-xs mica-card rounded-card border border-rusty-orange/20">
             <button
               className={cn(
                 "px-md py-sm rounded-input text-body-sm font-medium transition-all duration-150",
-                !isAnnual ? "bg-brass-yellow text-gunmetal-black shadow-flat" : "text-case-hardened hover:text-gunmetal-black"
+                !isAnnual ? "bg-rusty-orange text-dark-chocolate shadow-flat" : "text-warning-amber hover:text-dark-chocolate"
               )}
               onClick={() => setIsAnnual(false)}
             >
@@ -380,12 +377,12 @@ export function PricingFusion({
             <button
               className={cn(
                 "px-md py-sm rounded-input text-body-sm font-medium transition-all duration-150 relative",
-                isAnnual ? "bg-brass-yellow text-gunmetal-black shadow-flat" : "text-case-hardened hover:text-gunmetal-black"
+                isAnnual ? "bg-rusty-orange text-dark-chocolate shadow-flat" : "text-warning-amber hover:text-dark-chocolate"
               )}
               onClick={() => setIsAnnual(true)}
             >
               Annual Billing
-              <Badge className="absolute -top-2 -right-2 bg-clubhouse-lawn-green text-card text-caption">
+              <Badge className="absolute -top-2 -right-2 bg-sagebrush-green text-card text-caption">
                 Save 15%
               </Badge>
             </button>
@@ -413,19 +410,19 @@ export function PricingFusion({
 
       {/* Feature comparison with fusion styling */}
       {showFeatureComparison && (
-        <div className="mica-card rounded-large border border-brass-yellow/20 p-md overflow-x-auto">
-          <h3 className="text-heading-sm font-rajdhani font-bold text-gunmetal-black mb-[md] text-center">
+        <div className="mica-card rounded-large border border-rusty-orange/20 p-md overflow-x-auto">
+          <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate mb-[md] text-center">
             Feature Comparison
           </h3>
           <table className="w-full">
             <thead>
-              <tr className="border-b border-brass-yellow/20">
-                <th className="px-base py-sm text-left text-body-sm font-rajdhani font-bold text-gunmetal-black">
+              <tr className="border-b border-rusty-orange/20">
+                <th className="px-base py-sm text-left text-body-sm font-rajdhani font-bold text-dark-chocolate">
                   Features
                 </th>
                 {plans.map((plan) => (
                   <th key={plan.id} className="px-base py-sm text-center">
-                    <div className="font-rajdhani font-bold text-gunmetal-black">
+                    <div className="font-rajdhani font-bold text-dark-chocolate">
                       {plan.name}
                     </div>
                   </th>
@@ -434,8 +431,8 @@ export function PricingFusion({
             </thead>
             <tbody>
               {plans[0]?.features.map((_, featureIndex) => (
-                <tr key={featureIndex} className="border-b border-border hover:bg-brass-yellow/5">
-                  <td className="px-base py-sm text-body-sm font-medium text-gunmetal-black">
+                <tr key={featureIndex} className="border-b border-border hover:bg-rusty-orange/5">
+                  <td className="px-base py-sm text-body-sm font-medium text-dark-chocolate">
                     {plans[0].features[featureIndex]?.name}
                   </td>
                   {plans.map((plan) => (
@@ -462,14 +459,14 @@ export function PricingFusion({
       return <X className="h-4 w-4 text-muted-foreground mx-auto" />
     }
     if (typeof feature.included === 'number') {
-      return <span className="text-body-sm font-medium text-gunmetal-black">{feature.included}</span>
+      return <span className="text-body-sm font-medium text-dark-chocolate">{feature.included}</span>
     }
     if (feature.included === 'unlimited') {
-      return <span className="text-body-sm font-medium text-brass-yellow">∞</span>
+      return <span className="text-body-sm font-medium text-rusty-orange">∞</span>
     }
     if (feature.included === 'limited') {
-      return <Minus className="h-4 w-4 text-brass-yellow mx-auto" />
+      return <Minus className="h-4 w-4 text-rusty-orange mx-auto" />
     }
-    return <span className="text-caption text-case-hardened">{feature.included}</span>
+    return <span className="text-caption text-warning-amber">{feature.included}</span>
   }
 }

@@ -51,7 +51,7 @@ export const CustomShowcase: Story = {
         overlayDescription: "From local competitions to national championships",
         gradientColor: 'blue',
         productsUsed: [
-          { name: "Competition Training", icon: <Target className="icon-xs" />, color: "bg-ayu-blue" },
+          { name: "Competition Training", icon: <Target className="icon-xs" />, color: "bg-slate-blue" },
           { name: "Safety Protocols", icon: <Shield className="icon-xs" />, color: "bg-ayu-yellow" }
         ]
       },
@@ -72,7 +72,7 @@ export const CustomShowcase: Story = {
         gradientColor: 'teal',
         productsUsed: [
           { name: "Custom Manufacturing", icon: <Settings className="icon-xs" />, color: "bg-ayu-teal" },
-          { name: "Quality Control", icon: <Award className="icon-xs" />, color: "bg-ayu-blue" }
+          { name: "Quality Control", icon: <Award className="icon-xs" />, color: "bg-slate-blue" }
         ]
       },
       {
@@ -132,7 +132,7 @@ export const CustomShowcase: Story = {
         gradientColor: 'red',
         productsUsed: [
           { name: "Defense Manufacturing", icon: <Award className="icon-xs" />, color: "bg-ayu-red" },
-          { name: "Quality Assurance", icon: <Shield className="icon-xs" />, color: "bg-ayu-blue" }
+          { name: "Quality Assurance", icon: <Shield className="icon-xs" />, color: "bg-slate-blue" }
         ]
       },
       {

@@ -15,9 +15,9 @@ const siteNavigationVariants = cva(
       variant: {
         default: "bg-card shadow-flat",
         premium: "mica",
-        elite: "mica-modal after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-case-hardened/50 after:to-transparent",
+        elite: "mica-modal after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warning-amber/50 after:to-transparent",
         glass: "mica-card",
-        gunclub: "bg-shooting-bench shadow-flat after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-tactical-gray/40 after:to-transparent"
+        gunclub: "bg-card-surface shadow-flat after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warm-stone/40 after:to-transparent"
       },
       layout: {
         horizontal: "",
@@ -39,7 +39,7 @@ const siteNavigationVariants = cva(
 
 const navigationItems = [
   { label: "Home", icon: Home, href: "/", color: "rusty-orange" },
-  { label: "Events", icon: Calendar, href: "/events", color: "ayu-blue" },
+  { label: "Events", icon: Calendar, href: "/events", color: "slate-blue" },
   { label: "Directory", icon: Users, href: "/directory", color: "ayu-green" },
   { label: "Guides", icon: Target, href: "/guides", color: "ayu-purple" },
   { label: "Map", icon: Shield, href: "/map", color: "ayu-red" },
@@ -72,7 +72,7 @@ export function SiteNavigation({
   const getHoverClasses = (color: string) => {
     switch(color) {
       case 'rusty-orange': return 'hover:text-rusty-orange'
-      case 'ayu-blue': return 'hover:text-ayu-blue'
+      case 'slate-blue': return 'hover:text-slate-blue'
       case 'ayu-green': return 'hover:text-ayu-green'
       case 'ayu-purple': return 'hover:text-ayu-purple'
       case 'ayu-red': return 'hover:text-ayu-red'
@@ -84,7 +84,7 @@ export function SiteNavigation({
   const getColorBarClass = (color: string) => {
     switch(color) {
       case 'rusty-orange': return 'bg-rusty-orange'
-      case 'ayu-blue': return 'bg-ayu-blue'
+      case 'slate-blue': return 'bg-slate-blue'
       case 'ayu-green': return 'bg-ayu-green'
       case 'ayu-purple': return 'bg-ayu-purple'
       case 'ayu-red': return 'bg-ayu-red'
@@ -96,7 +96,7 @@ export function SiteNavigation({
   const getActiveTextClass = (color: string) => {
     switch(color) {
       case 'rusty-orange': return 'text-rusty-orange'
-      case 'ayu-blue': return 'text-ayu-blue'
+      case 'slate-blue': return 'text-slate-blue'
       case 'ayu-green': return 'text-ayu-green'
       case 'ayu-purple': return 'text-ayu-purple'
       case 'ayu-red': return 'text-ayu-red'

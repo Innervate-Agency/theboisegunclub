@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import AlternatingFeatureSpotlight from '@/components/organisms/AlternatingFeatureSpotlight';
 import { Search, Calendar, MessageSquare, ShieldCheck, List, Star, Users, Lock, Store } from 'lucide-react';
 
@@ -43,7 +43,7 @@ export const DirectorySpotlight: Story = {
     imageSrc: '/images/Fractal/1.webp',
     imageAlt: 'Abstract fractal image representing a network.',
     glowColor1: '#3F6331', // woodland-camo
-    glowColor2: '#FF00FF', // copper-orange
+    glowColor2: '#FF00FF', // rusty-orange
     accentColor: '#3F6331',
     reverse: false,
   },

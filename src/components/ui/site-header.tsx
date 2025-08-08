@@ -36,12 +36,12 @@ export function SiteHeader() {
           {/* Logo */}
           <div className="flex items-center gap-base">
             <Link href="/" className="flex items-center gap-xs">
-              <div className="h-8 w-8 rounded-button bg-gradient-to-br from-brass-yellow to-copper-orange flex items-center justify-center">
-                <span className="text-gunmetal-black font-rajdhani font-bold text-sm">TBG</span>
+              <div className="h-8 w-8 rounded-button bg-gradient-to-br from-sandy-ochre to-rusty-orange flex items-center justify-center">
+                <span className="text-dark-chocolate font-rajdhani font-bold text-sm">TBG</span>
               </div>
               <div className="hidden sm:block">
                 <span className="font-rajdhani font-bold text-lg text-card-foreground">THE BOISE</span>
-                <span className="font-rajdhani font-bold text-lg text-brass-yellow ml-xs">GUN CLUB</span>
+                <span className="font-rajdhani font-bold text-lg text-sandy-ochre ml-xs">GUN CLUB</span>
               </div>
             </Link>
             <Badge variant="outline" className="hidden md:block text-xs text-muted-foreground">
@@ -174,7 +174,7 @@ export function SiteHeader() {
               <LogIn className="h-4 w-4" />
               Sign In
             </Button>
-            <Button size="sm" className="hidden md:block bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black hover:from-copper-orange hover:to-brass-yellow font-rajdhani font-bold">
+            <Button size="sm" className="hidden md:block bg-gradient-to-r from-sandy-ochre to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-sandy-ochre font-rajdhani font-bold">
               Join TBGC
             </Button>
             
@@ -223,7 +223,7 @@ export function SiteHeader() {
                   <LogIn className="h-4 w-4" />
                   Sign In
                 </Button>
-                <Button size="sm" className="justify-start bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black hover:from-copper-orange hover:to-brass-yellow font-rajdhani font-bold">
+                <Button size="sm" className="justify-start bg-gradient-to-r from-sandy-ochre to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-sandy-ochre font-rajdhani font-bold">
                   Join TBGC
                 </Button>
               </div>

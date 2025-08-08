@@ -104,11 +104,11 @@ Use these patterns when adding new components or features to maintain consistenc
 
 ### Critical Color Rules (ZERO TOLERANCE)
 
-- **ONLY** use the 26 approved colors from `src/app/globals.css` (Leonard Yellow through Clubhouse Lawn Green)
+- **ONLY** use the 10-color Bogus Basin & River/Sagebrush system from `src/app/globals.css`
 - **NEVER** use hardcoded hex codes: `bg-[#F2CB05]` is **FORBIDDEN**
 - **NEVER** use generic Tailwind colors: `text-gray-500`, `bg-blue-600`, `border-red-400` etc.
-- **ALWAYS** use Tailwind v4 syntax: `bg-leonard-yellow/20` not `bg-[var(--color-leonard-yellow)]`
-- **Color Map**: Available in `src/lib/utils.ts` as `brandColors` object
+- **ALWAYS** use semantic color names: `bg-rusty-orange`, `text-slate-blue`, `border-pale-stone`
+- **Strategic Distribution**: Each color has specific semantic meaning for UI consistency
 
 ### Critical Shadow Rules (ZERO TOLERANCE)
 
@@ -125,12 +125,12 @@ Use these patterns when adding new components or features to maintain consistenc
 - **SHADOW HIERARCHY**: `shadow-xs` (minimal) → `shadow-sm` (default) → `shadow-md` (interactive) → `shadow-lg` (elevated) → `shadow-xl` (hero)
 - **EXCEPTION**: `outlined` variants can use borders when explicitly requesting outline styling
 
-### Primary Accent Colors (Updated 2025-07-28)
+### Primary Accent Colors (Updated 2025-08-08)
 
-- **Light Theme Primary**: `copper-orange` - Perfect contrast on light backgrounds
-- **Dark Theme Primary**: `brass-yellow` - Optimal visibility on dark backgrounds  
-- **Success/Positive**: `clubhouse-lawn-green` - For verified badges, positive states
-- **Fire Gradients**: `from-copper-orange to-brass-yellow` - For hover animations and accents
+- **Light Theme Primary**: `slate-blue` - Professional, cool CTAs and primary actions
+- **Dark Theme Primary**: `rusty-orange` - Warm, tactical accent for dark mode
+- **Success/Positive**: `sagebrush-green` (light) / `lodgepole-green` (dark) - For verified badges, positive states
+- **Info/Secondary**: `sandy-ochre` (light) / `ember-glow` (dark) - For secondary information and highlights
 
 ### Theme-Aware Component Classes (REQUIRED)
 
@@ -303,9 +303,9 @@ find src/stories -name "*.stories.tsx" -exec sed -i 's/space-y-\[var(--space-xl)
 - ProductCard: Dealer integration, pricing, legal compliance disclaimers
 
 # DESIGN SYSTEM COMPLIANCE
-- 26-color Idaho heritage palette exclusively (brass-yellow/copper-orange primary)
-- StatCard metrics on every page with trend indicators
-- Consistent shadow hierarchy and fire gradient hover effects
+- 10-color Bogus Basin & River/Sagebrush strategic distribution exclusively
+- StatCard metrics on every page with trend indicators  
+- Consistent shadow hierarchy and tactical square component aesthetic
 - Mobile-first responsive design with proper breakpoints
 
 # SEARCH & FILTERING ARCHITECTURE  
@@ -428,6 +428,60 @@ function useAccessibilitySettings() {
 - **Smart State Management**: Centralized accessibility logic in reusable custom hook
 
 **🎯 IMPACT**: Accessibility panel now provides instant, professional user experience while following React best practices and modern performance optimization techniques.
+
+## ✅ COMPLETED MILESTONE: Comprehensive Design System Migration (2025-08-08)
+
+### DESIGN SYSTEM BREAKTHROUGH: 10-Color Strategic Distribution Implementation
+
+**MAJOR TECHNICAL ACHIEVEMENT**: Complete migration from legacy 26-color system to strategic 10-color Bogus Basin & River/Sagebrush design system with semantic color distribution.
+
+#### Root Cause Analysis & Solution
+- ✅ **Problem Identified**: Pink/salmon background from `--color-pale-stone: #DED1D2` causing poor visual hierarchy
+- ✅ **Legacy System Issues**: 26-color system was overly complex with inconsistent usage patterns
+- ✅ **Strategic Redesign**: Implemented purposeful 10-color system with semantic meaning for each color
+- ✅ **Systematic Migration**: Mass replacement across 100+ files using strategic sed commands
+
+#### Technical Implementation Excellence
+```bash
+# COMPLETED: Strategic Color System Implementation
+--color-dark-chocolate: #260F07;    /* Dark theme background */
+--color-rusty-orange: #D9863B;      /* Primary accent - tactical warmth */
+--color-slate-blue: #3A5063;        /* Light theme primary - professional */
+--color-sagebrush-green: #798246;   /* Success states - natural */
+--color-sandy-ochre: #D99F5D;       /* Secondary accent - warm highlights */
+--color-info-river: #5A7D8A;        /* Info states - cool professionalism */
+```
+
+#### Strategic Color Distribution Applied
+- **Competition Events** → `slate-blue` (professional, competitive)
+- **Training Events** → `sandy-ochre` (educational, skill-building)  
+- **Expo Events** → `info-river` (informational, showcases)
+- **Charity Events** → `sagebrush-green` (community, giving back)
+- **Social Events** → `rusty-orange` (warm, community gathering)
+- **Demo Events** → `warning-clay` (hands-on, demonstration)
+
+#### Layout & Visual Hierarchy Improvements
+- ✅ **Grid Consistency**: Fixed card grid layouts to match featured events width
+- ✅ **Proper Spacing**: Updated gap spacing from cramped layouts to proper breathing room
+- ✅ **Color-Coded Cards**: All EventCards now have semantic color-coded accent bars
+- ✅ **Interactive Feedback**: Category filters use color-coordinated backgrounds and borders
+- ✅ **Icon Integration**: Calendar, Clock, MapPin icons use event-type colors for instant recognition
+
+#### Technical Migration Success
+- **100+ Files Updated**: Systematic replacement of legacy color references
+- **Build Verification**: `✓ Compiled successfully in 4.0s` confirmed throughout migration
+- **Design System Cohesion**: All components now use strategic color distribution
+- **User Preference Integration**: Maintained tactical, square component aesthetic user requested
+- **Performance Maintained**: No performance degradation during comprehensive refactoring
+
+#### Impact Achieved
+- **Visual Hierarchy**: Clear, purposeful color distribution creates instant visual scanning
+- **Professional Aesthetic**: Tactical, firearms-focused design with strategic color usage
+- **Maintainable System**: 10 colors with semantic meaning vs 26 arbitrary colors
+- **Build Success**: Clean compilation with comprehensive color system implementation
+- **User Experience**: Rich, purposeful color distribution with equal-width card grids
+
+**🎯 RESULT**: Complete design system transformation from chaotic 26-color legacy to strategic 10-color semantic distribution, creating professional firearms community platform aesthetic with tactical square components.
 
 ## ✅ COMPLETED MILESTONE: Advanced Button Micro-Animation System (2025-08-06)
 

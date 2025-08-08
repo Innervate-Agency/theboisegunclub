@@ -96,12 +96,12 @@ function useAccessibilitySettings() {
 }
 
 const fabVariants = cva(
-  "fixed bottom-6 left-6 z-50 rounded-full shadow-sm hover:shadow-md transition-all duration-200",
+  "fixed bottom-6 left-6 z-50 rounded-full shadow-flat hover:shadow-elevated transition-all duration-200",
   {
     variants: {
       state: {
-        closed: "w-14 h-14 mica border border-border hover:shadow-lg",
-        open: "w-16 h-16 mica border border-border hover:shadow-lg"
+        closed: "w-14 h-14 mica border border-border hover:shadow-elevated",
+        open: "w-16 h-16 mica border border-border hover:shadow-elevated"
       }
     },
     defaultVariants: {
@@ -111,7 +111,7 @@ const fabVariants = cva(
 )
 
 const menuVariants = cva(
-  "fixed bottom-20 left-6 z-40 mica border border-border rounded-card shadow-md hover:shadow-lg p-6 min-w-[320px] max-w-[380px] transition-all duration-200",
+  "fixed bottom-20 left-6 z-40 mica border border-border rounded-card shadow-md hover:shadow-elevated p-6 min-w-[320px] max-w-[380px] transition-all duration-200",
   {
     variants: {
       open: {
@@ -232,7 +232,7 @@ export default function AccessibilityFAB({
                 className={cn(
                   "flex-1 gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
                   theme === 'light' 
-                    ? "bg-copper-orange/20 text-copper-orange border-copper-orange/30" 
+                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
                 onClick={() => handleThemeChange('light')}
@@ -244,7 +244,7 @@ export default function AccessibilityFAB({
                 className={cn(
                   "flex-1 gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
                   theme === 'dark' 
-                    ? "bg-copper-orange/20 text-copper-orange border-copper-orange/30" 
+                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
                 onClick={() => handleThemeChange('dark')}
@@ -256,7 +256,7 @@ export default function AccessibilityFAB({
                 className={cn(
                   "flex-1 gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
                   theme === 'system' 
-                    ? "bg-copper-orange/20 text-copper-orange border-copper-orange/30" 
+                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
                 onClick={() => handleThemeChange('system')}
@@ -279,7 +279,7 @@ export default function AccessibilityFAB({
                 <Minus className="h-4 w-4" />
               </button>
               <div className="flex-1 text-center">
-                <div className="bg-copper-orange/10 text-copper-orange px-3 py-1 rounded-input text-sm font-medium capitalize">
+                <div className="bg-rusty-orange/10 text-rusty-orange px-3 py-1 rounded-input text-sm font-medium capitalize">
                   {fontSize}
                 </div>
               </div>
@@ -301,7 +301,7 @@ export default function AccessibilityFAB({
                 className={cn(
                   "flex-1 px-3 py-2 rounded-input text-sm font-medium transition-colors",
                   contrastMode === 'normal' 
-                    ? "bg-copper-orange/20 text-copper-orange border-copper-orange/30" 
+                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
                 onClick={() => handleContrastChange('normal')}
@@ -312,7 +312,7 @@ export default function AccessibilityFAB({
                 className={cn(
                   "flex-1 gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
                   contrastMode === 'high' 
-                    ? "bg-copper-orange/20 text-copper-orange border-copper-orange/30" 
+                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
                 onClick={() => handleContrastChange('high')}
@@ -331,7 +331,7 @@ export default function AccessibilityFAB({
                 className={cn(
                   "gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
                   colorBlindFilter === 'none' 
-                    ? "bg-copper-orange/20 text-copper-orange border-copper-orange/30" 
+                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
                 onClick={() => handleColorBlindFilterChange('none')}
@@ -343,7 +343,7 @@ export default function AccessibilityFAB({
                 className={cn(
                   "px-2 py-2 rounded-input text-xs font-medium transition-colors",
                   colorBlindFilter === 'protanopia' 
-                    ? "bg-copper-orange/20 text-copper-orange border-copper-orange/30" 
+                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
                 onClick={() => handleColorBlindFilterChange('protanopia')}
@@ -354,7 +354,7 @@ export default function AccessibilityFAB({
                 className={cn(
                   "px-2 py-2 rounded-input text-xs font-medium transition-colors",
                   colorBlindFilter === 'deuteranopia' 
-                    ? "bg-copper-orange/20 text-copper-orange border-copper-orange/30" 
+                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
                 onClick={() => handleColorBlindFilterChange('deuteranopia')}
@@ -365,7 +365,7 @@ export default function AccessibilityFAB({
                 className={cn(
                   "px-2 py-2 rounded-input text-xs font-medium transition-colors",
                   colorBlindFilter === 'tritanopia' 
-                    ? "bg-copper-orange/20 text-copper-orange border-copper-orange/30" 
+                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
                 onClick={() => handleColorBlindFilterChange('tritanopia')}

@@ -58,8 +58,8 @@ export function StickySearchMenu({
                 size="sm"
                 onClick={() => onCategoryChange(category.value)}
                 className={selectedCategory === category.value ? 
-                  "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange" : 
-                  "border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black"
+                  "bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange" : 
+                  "border-sandy-ochre/30 text-sandy-ochre hover:bg-sandy-ochre hover:text-dark-chocolate"
                 }
               >
                 {category.label}

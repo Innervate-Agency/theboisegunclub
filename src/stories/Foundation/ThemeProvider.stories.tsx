@@ -25,7 +25,7 @@ const ThemeDemo = () => (
   <div className="min-h-screen bg-background text-foreground p-lg">
     <div className="max-w-4xl mx-auto space-y-lg">
       <div className="text-center space-y-base">
-        <h1 className="text-4xl font-bold text-copper-orange">Theme System Demo</h1>
+        <h1 className="text-4xl font-bold text-rusty-orange">Theme System Demo</h1>
         <p className="text-muted-foreground">
           This demonstrates how the ThemeProvider enables seamless dark/light mode switching
         </p>
@@ -34,7 +34,7 @@ const ThemeDemo = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
         <Card>
           <CardHeader>
-            <CardTitle className="text-brass-yellow">Light Theme Features</CardTitle>
+            <CardTitle className="text-sandy-ochre">Light Theme Features</CardTitle>
             <CardDescription>
               Range white backgrounds with copper orange accents
             </CardDescription>
@@ -50,7 +50,7 @@ const ThemeDemo = () => (
 
         <Card>
           <CardHeader>
-            <CardTitle className="text-copper-orange">Dark Theme Features</CardTitle>
+            <CardTitle className="text-rusty-orange">Dark Theme Features</CardTitle>
             <CardDescription>
               Night sight backgrounds with brass yellow accents
             </CardDescription>
@@ -58,7 +58,7 @@ const ThemeDemo = () => (
           <CardContent className="space-y-base">
             <div className="flex gap-xs">
               <Badge variant="outline">Outlined</Badge>
-              <Badge className="bg-clubhouse-lawn-green">Success</Badge>
+              <Badge className="bg-sagebrush-green">Success</Badge>
             </div>
             <Button variant="outline" className="w-full">
               Brass Yellow Outline
@@ -83,8 +83,8 @@ const ThemeDemo = () => (
             <p className="text-muted-foreground">bg-muted</p>
           </div>
           <div className="space-y-xs">
-            <div className="w-full h-8 bg-copper-orange/20 border border-border rounded"></div>
-            <p className="text-muted-foreground">copper-orange/20</p>
+            <div className="w-full h-8 bg-rusty-orange/20 border border-border rounded"></div>
+            <p className="text-muted-foreground">rusty-orange/20</p>
           </div>
         </div>
       </div>

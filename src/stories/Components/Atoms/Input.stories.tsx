@@ -62,7 +62,7 @@ export const Glass: Story = {
       default: 'gradient',
       values: [{
         name: 'gradient',
-        value: 'linear-gradient(135deg, hsl(var(--ayu-blue)) 0%, hsl(var(--ayu-purple)) 100%)',
+        value: 'linear-gradient(135deg, hsl(var(--slate-blue)) 0%, hsl(var(--ayu-purple)) 100%)',
       }],
     },
   },
@@ -100,7 +100,7 @@ export const WithIcons: Story = {
       <div className="space-y-md w-80">
         {/* Search input */}
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
           <Input
             className="pl-xl"
             placeholder="Search firearms..."
@@ -110,7 +110,7 @@ export const WithIcons: Story = {
 
         {/* Email input */}
         <div className="relative">
-          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
+          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
           <Input
             style={{paddingLeft: '48px'}}
             placeholder="your@email.com"
@@ -120,7 +120,7 @@ export const WithIcons: Story = {
 
         {/* Password input with toggle */}
         <div className="relative">
-          <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
+          <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
           <Input
             className="pr-2xl"
             style={{paddingLeft: '48px'}}
@@ -130,7 +130,7 @@ export const WithIcons: Story = {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-case-hardened hover:text-blued-steel transition-colors"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-warning-amber hover:text-blued-steel transition-colors"
           >
             {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
           </button>
@@ -158,7 +158,7 @@ export const InputGroups: Story = {
         required
       >
         <div className="relative">
-          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
+          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
           <Input className="pl-[var(--space-xl)]" placeholder="your@email.com" type="email" />
         </div>
       </InputGroup>
@@ -168,7 +168,7 @@ export const InputGroups: Story = {
         error="Please enter a valid phone number"
       >
         <div className="relative">
-          <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
+          <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
                       <Input 
             className="pl-[var(--space-xl)]" 
             placeholder="(555) 123-4567" 
@@ -189,7 +189,7 @@ export const FirearmsFormExamples: Story = {
         <h3 className="text-display-sm font-rajdhani font-bold text-blued-steel">
           Membership Registration
         </h3>
-        <p className="text-case-hardened">
+        <p className="text-warning-amber">
           Join The Boise Gun Club community
         </p>
       </div>
@@ -209,14 +209,14 @@ export const FirearmsFormExamples: Story = {
           required
         >
           <div className="relative">
-            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
+            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
             <Input style={{paddingLeft: '48px'}} placeholder="john@example.com" type="email" />
           </div>
         </InputGroup>
 
         <InputGroup label="Phone Number">
           <div className="relative">
-            <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-case-hardened" />
+            <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
             <Input style={{paddingLeft: '48px'}} placeholder="(208) 555-0123" type="tel" />
           </div>
         </InputGroup>
@@ -243,7 +243,7 @@ export const DesignSystemShowcase: Story = {
         <h2 className="text-display-md font-rajdhani font-bold text-blued-steel">
           TBGC Input Design System
         </h2>
-        <p className="text-case-hardened max-w-2xl mx-auto">
+        <p className="text-warning-amber max-w-2xl mx-auto">
           Sophisticated input components using our Idaho Firearms Heritage Palette with Stripe-inspired interactions
         </p>
       </div>
@@ -304,8 +304,8 @@ export const DesignSystemShowcase: Story = {
           <h3 className="text-body-lg font-rajdhani font-semibold text-blued-steel mb-base">
             Interactive Features
           </h3>
-          <div className="bg-shooting-bench p-md rounded-large space-y-base">
-            <p className="text-body-sm text-case-hardened mb-base">
+          <div className="bg-card-surface p-md rounded-large space-y-base">
+            <p className="text-body-sm text-warning-amber mb-base">
               Hover and focus on inputs to see sophisticated micro-interactions
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-base">

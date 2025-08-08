@@ -49,7 +49,7 @@ export const SpacingScale: Story = {
               <div className="w-24 text-body-sm font-medium">{token.name}</div>
               <div className="flex-1">
                 <div 
-                  className="bg-brass-yellow rounded"
+                  className="bg-sandy-ochre rounded"
                   style={{ 
                     width: `var(${token.value})`,
                     height: '24px',
@@ -88,7 +88,7 @@ export const SpacingScale: Story = {
             <h3 className="text-body-lg font-semibold">Button Spacing</h3>
             <div className="space-y-xs">
               <button 
-                className="bg-brass-yellow text-gunmetal-black rounded font-medium"
+                className="bg-sandy-ochre text-dark-chocolate rounded font-medium"
                 style={{ 
                   height: 'var(--button-height-sm)',
                   padding: 'var(--button-padding-sm)'
@@ -97,7 +97,7 @@ export const SpacingScale: Story = {
                 Small Button
               </button>
               <button 
-                className="bg-copper-orange text-white rounded font-medium"
+                className="bg-rusty-orange text-white rounded font-medium"
                 style={{ 
                   height: 'var(--button-height-base)',
                   padding: 'var(--button-padding-base)'
@@ -106,7 +106,7 @@ export const SpacingScale: Story = {
                 Default Button
               </button>
               <button 
-                className="bg-gunmetal-black text-brass-yellow rounded font-medium"
+                className="bg-dark-chocolate text-sandy-ochre rounded font-medium"
                 style={{ 
                   height: 'var(--button-height-lg)',
                   padding: 'var(--button-padding-lg)'

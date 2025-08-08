@@ -7,6 +7,96 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2025-08-08] - Comprehensive Design System Migration
+
+### 🎨 MAJOR DESIGN SYSTEM BREAKTHROUGH: 10-Color Strategic Distribution
+
+#### 🚨 Root Cause Fixed
+- **CRITICAL BUG**: Pink/salmon background issue resolved by changing `--color-pale-stone` from `#DED1D2` to `#E5E7EB`
+- **LEGACY SYSTEM**: Migrated from complex 26-color "Idaho Firearms Heritage" palette to strategic 10-color system
+- **SEMANTIC MEANING**: Each color now has specific semantic purpose vs arbitrary color usage
+- **BUILD SUCCESS**: `✓ Compiled successfully in 4.0s` maintained throughout 100+ file migration
+
+#### 🎯 New Color System: Bogus Basin & River/Sagebrush
+**Dark Theme (Bogus Basin - Warm Lodge at Dusk):**
+- `dark-chocolate` (#260F07) - Deep, warm background foundation
+- `rusty-orange` (#D9863B) - Primary accent for CTAs and active states
+- `crisp-off-white` (#F2F2F2) - Primary text and headlines
+- `rich-loam` (#311A0E) - Card surfaces above background
+- `warm-stone` (#A69287) - Muted text and secondary info
+- `lodgepole-green` (#7D6702) - Success states and confirmations
+- `deep-earth` (#1A0C05) - Recessed elements, deeper surfaces
+- `ember-glow` (#E6A562) - Hover states, lighter accents
+- `warning-amber` (#D4A574) - Warning and caution states
+- `border-bark` (#4A3429) - Subtle separators and dividers
+
+**Light Theme (River/Sagebrush - Crisp Riverside Landscape):**
+- `light-peachy` (#F9FAFB) - Clean base background
+- `slate-blue` (#3A5063) - Professional primary CTAs
+- `shared-dark` (#260F07) - Primary text (shared with dark theme)
+- `sandy-ochre` (#D99F5D) - Secondary accents and info tags
+- `dried-clay` (#A69287) - Muted text and placeholders
+- `pale-stone` (#E5E7EB) - Borders, inputs, and separators
+- `sagebrush-green` (#798246) - Success states and verified badges
+- `card-surface` (#F3F4F6) - Card backgrounds with elevation
+- `warning-clay` (#B8956B) - Warning and caution states
+- `info-river` (#5A7D8A) - Informational elements and highlights
+
+#### 🎨 Strategic Color Distribution Implementation
+- **Competition Events** → `slate-blue` (professional, competitive)
+- **Training Events** → `sandy-ochre` (educational, skill-building)
+- **Expo Events** → `info-river` (informational, showcases)
+- **Charity Events** → `sagebrush-green` (community, giving back)
+- **Social Events** → `rusty-orange` (warm, community gathering)
+- **Demo Events** → `warning-clay` (hands-on, demonstration)
+
+#### 🛠️ Technical Implementation
+- **Mass Migration**: 100+ files updated with systematic color replacements
+- **EventCard Enhancement**: Added color-coded accent bars and semantic icon coloring
+- **Layout Consistency**: Fixed grid widths and spacing to match featured events
+- **Category Filters**: Color-coordinated backgrounds and borders for visual hierarchy
+- **Build Verification**: Maintained clean compilation throughout migration process
+
+#### 📐 Layout & Spacing Improvements
+- **Grid Consistency**: Updated main events grid from `lg:grid-cols-3` to `xl:grid-cols-3`
+- **Container Width**: Changed from `max-w-6xl` to `max-w-7xl` to match featured section
+- **Proper Spacing**: Improved gaps from `gap-xl` to `gap-lg` for better breathing room
+- **Section Spacing**: Enhanced spacing between featured and main grid sections
+
+#### 🔥 User Experience Enhancements
+- **Visual Scanning**: Color-coded event types enable instant visual identification
+- **Professional Aesthetic**: Tactical, square component design preserved per user preference
+- **Interactive Feedback**: Category filters provide clear active/inactive states
+- **Icon Consistency**: All event-related icons use semantic color coding
+- **Brand Cohesion**: Unified color system across entire platform
+
+#### 🧹 Code Quality & Maintainability
+- **Semantic Naming**: Clear, purposeful color names replace arbitrary legacy names
+- **Design Token System**: Proper Tailwind v4 syntax with CSS custom properties
+- **Strategic Restraint**: 10 meaningful colors vs 26 arbitrary color choices
+- **Build Performance**: No performance degradation during comprehensive refactoring
+- **Documentation**: Complete CLAUDE.md updates reflecting new system
+
+### Changed
+- Migrated from 26-color "Idaho Firearms Heritage" to 10-color Bogus Basin & River/Sagebrush system
+- Updated all EventCard components with color-coded accent bars and semantic icon colors
+- Improved events page layout consistency and grid spacing
+- Enhanced category filter visual hierarchy with color-coordinated backgrounds
+
+### Fixed
+- Pink/salmon background issue by correcting `--color-pale-stone` color value
+- Grid width inconsistencies between featured events and main events sections
+- Cramped card spacing and poor visual breathing room
+- Monochromatic gray appearance across event types
+
+### Added
+- Strategic color distribution system with semantic meaning for each color
+- Color-coded event type identification across all UI components
+- Professional tactical aesthetic with square component design
+- Comprehensive design system documentation in CLAUDE.md
+
+**🎯 IMPACT**: Complete transformation from chaotic legacy color system to strategic, semantic 10-color distribution creating professional firearms community platform with tactical aesthetic.
+
 ## [2025-08-07] - Accessibility Panel Performance Optimization
 
 ### 🚀 MAJOR PERFORMANCE BREAKTHROUGH: Eliminated Accessibility Panel Lag

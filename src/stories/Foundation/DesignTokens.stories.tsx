@@ -11,7 +11,7 @@ const meta: Meta = {
     },
     designToken: {
       showPreview: true,
-      filterNames: ['--color-brass-yellow', '--color-copper-orange', '--space-base', '--space-md'],
+      filterNames: ['--color-sandy-ochre', '--color-rusty-orange', '--space-base', '--space-md'],
       category: 'Design System Tokens'
     }
   },
@@ -33,15 +33,15 @@ export const ColorPalette: Story = {
       <section>
         <h2 className="text-display-md font-rajdhani font-bold mb-base">Primary Brand Colors</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-base">
-          <div className="bg-brass-yellow p-md rounded-card text-black">
+          <div className="bg-sandy-ochre p-md rounded-card text-black">
             <div className="font-bold">Brass Yellow</div>
             <div className="text-body-sm opacity-80">#FF00FF</div>
           </div>
-          <div className="bg-copper-orange p-md rounded-card text-white">
+          <div className="bg-rusty-orange p-md rounded-card text-white">
             <div className="font-bold">Copper Orange</div>
             <div className="text-body-sm opacity-80">#FF00FF</div>
           </div>
-          <div className="bg-gunmetal-black p-md rounded-card text-white">
+          <div className="bg-dark-chocolate p-md rounded-card text-white">
             <div className="font-bold">Gunmetal Black</div>
             <div className="text-body-sm opacity-80">#000000</div>
           </div>
@@ -59,7 +59,7 @@ export const ColorPalette: Story = {
           <div className="bg-range-white p-base rounded-card text-black border">
             <div className="font-bold text-body-sm">Range White</div>
           </div>
-          <div className="bg-shooting-bench p-base rounded-card text-black">
+          <div className="bg-card-surface p-base rounded-card text-black">
             <div className="font-bold text-body-sm">Shooting Bench</div>
           </div>
           <div className="bg-walnut-stock p-base rounded-card text-white">
@@ -68,7 +68,7 @@ export const ColorPalette: Story = {
           <div className="bg-blued-steel p-base rounded-card text-white">
             <div className="font-bold text-body-sm">Blued Steel</div>
           </div>
-          <div className="bg-case-hardened p-base rounded-card text-white">
+          <div className="bg-warning-amber p-base rounded-card text-white">
             <div className="font-bold text-body-sm">Case Hardened</div>
           </div>
           <div className="bg-muzzle-flash p-base rounded-card text-white">
@@ -81,7 +81,7 @@ export const ColorPalette: Story = {
       <section>
         <h2 className="text-display-md font-rajdhani font-bold mb-base">Ayu Enhancement Colors</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-base">
-          <div className="bg-ayu-blue p-base rounded-card text-white">
+          <div className="bg-slate-blue p-base rounded-card text-white">
             <div className="font-bold text-body-sm">Ayu Blue</div>
           </div>
           <div className="bg-ayu-green p-base rounded-card text-white">
@@ -237,7 +237,7 @@ export const Spacing: Story = {
             <div key={space.name} className="flex items-center gap-base">
               <div className="w-20 text-body-sm font-mono">{space.name}</div>
               <div className="w-16 text-caption text-muted-foreground">{space.value}</div>
-              <div className={`bg-brass-yellow h-5`} style={{ width: space.value }}></div>
+              <div className={`bg-sandy-ochre h-5`} style={{ width: space.value }}></div>
             </div>
           ))}
         </div>

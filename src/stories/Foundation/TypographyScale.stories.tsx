@@ -139,13 +139,13 @@ export const TypeScale: Story = {
           <div className="space-y-base">
             <h3 className="text-body-lg font-semibold">Button Typography</h3>
             <div className="space-y-xs">
-              <button className="bg-brass-yellow text-gunmetal-black px-sm py-md rounded text-caption font-medium">
+              <button className="bg-sandy-ochre text-dark-chocolate px-sm py-md rounded text-caption font-medium">
                 Small Button Text
               </button>
-              <button className="bg-copper-orange text-white px-base py-xs rounded text-body-sm font-medium">
+              <button className="bg-rusty-orange text-white px-base py-xs rounded text-body-sm font-medium">
                 Default Button Text  
               </button>
-              <button className="bg-gunmetal-black text-brass-yellow px-md py-sm rounded text-base font-medium">
+              <button className="bg-dark-chocolate text-sandy-ochre px-md py-sm rounded text-base font-medium">
                 Large Button Text
               </button>
             </div>
@@ -173,7 +173,7 @@ export const ResponsiveTypography: Story = {
         <h2 className="text-display-md font-rajdhani font-bold mb-md">Responsive Classes in Action</h2>
         <div className="space-y-lg">
           <div>
-            <div className="text-responsive-4xl font-rajdhani font-bold text-gunmetal-black">
+            <div className="text-responsive-4xl font-rajdhani font-bold text-dark-chocolate">
               Responsive Hero Heading
             </div>
             <div className="text-caption text-muted-foreground mt-xs">
@@ -182,7 +182,7 @@ export const ResponsiveTypography: Story = {
           </div>
           
           <div>
-            <div className="text-responsive-2xl font-rajdhani font-semibold text-copper-orange">
+            <div className="text-responsive-2xl font-rajdhani font-semibold text-rusty-orange">
               Responsive Section Heading
             </div>
             <div className="text-caption text-muted-foreground mt-xs">

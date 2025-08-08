@@ -42,7 +42,7 @@ const blogCardVariants = cva(
       variant: {
         default: "flex flex-col",
         compact: "flex flex-row gap-base",
-        featured: "flex flex-col ring-2 ring-brass-yellow/30"
+        featured: "flex flex-col ring-2 ring-sandy-ochre/30"
       }
     },
     defaultVariants: {
@@ -105,7 +105,7 @@ export function BlogCard({
       {/* Featured Badge */}
       {article.featured && variant === "featured" && (
         <div className="absolute top-4 left-4 z-10">
-          <Badge className="bg-brass-yellow text-gunmetal-black font-rajdhani font-bold">
+          <Badge className="bg-sandy-ochre text-dark-chocolate font-rajdhani font-bold">
             Featured
           </Badge>
         </div>
@@ -128,7 +128,7 @@ export function BlogCard({
           
           {/* Category Badge */}
           <div className="absolute top-3 right-3">
-            <Badge variant="default" className="bg-card/90 text-gunmetal-black text-caption">
+            <Badge variant="default" className="bg-card/90 text-dark-chocolate text-caption">
               {article.category}
             </Badge>
           </div>
@@ -140,14 +140,14 @@ export function BlogCard({
         <div className="space-y-[var(--space-sm)]">
           {/* Title */}
           <h3 className={cn(
-            "font-rajdhani font-bold text-gunmetal-black group-hover:text-brass-yellow transition-colors duration-200 line-clamp-2",
+            "font-rajdhani font-bold text-dark-chocolate group-hover:text-sandy-ochre transition-colors duration-200 line-clamp-2",
             variant === "featured" ? "text-heading-sm" : "text-body-lg"
           )}>
             {article.title}
           </h3>
           
           {/* Excerpt */}
-          <p className="text-body-sm text-case-hardened font-noto-sans line-clamp-3 leading-relaxed">
+          <p className="text-body-sm text-warning-amber font-noto-sans line-clamp-3 leading-relaxed">
             {article.excerpt}
           </p>
           
@@ -155,7 +155,7 @@ export function BlogCard({
           {article.tags && article.tags.length > 0 && (
             <div className="flex flex-wrap gap-xs">
               {article.tags.slice(0, 3).map((tag) => (
-                <Badge key={tag} variant="outline" className="text-caption border-brass-yellow/30 text-brass-yellow">
+                <Badge key={tag} variant="outline" className="text-caption border-sandy-ochre/30 text-sandy-ochre">
                   {tag}
                 </Badge>
               ))}
@@ -179,11 +179,11 @@ export function BlogCard({
                       />
                     </div>
                   ) : (
-                    <div className="w-8 h-8 rounded-full bg-brass-yellow/20 flex items-center justify-center">
-                      <User className="icon-xs text-brass-yellow" />
+                    <div className="w-8 h-8 rounded-full bg-sandy-ochre/20 flex items-center justify-center">
+                      <User className="icon-xs text-sandy-ochre" />
                     </div>
                   )}
-                  <div className="text-caption text-case-hardened">
+                  <div className="text-caption text-warning-amber">
                     <div className="font-semibold">{article.author.name}</div>
                     {article.author.title && (
                       <div className="text-caption opacity-75">{article.author.title}</div>
@@ -192,7 +192,7 @@ export function BlogCard({
                 </div>
               )}
               
-              <div className="text-caption text-case-hardened flex items-center gap-sm">
+              <div className="text-caption text-warning-amber flex items-center gap-sm">
                 <div className="flex items-center gap-xs">
                   <Calendar className="icon-xs" />
                   <span>{new Date(article.publishDate).toLocaleDateString()}</span>
@@ -225,7 +225,7 @@ export function BlogCard({
                 onClick={handleBookmark}
                 className={cn(
                   "h-8 px-xs text-caption",
-                  isBookmarked && "text-brass-yellow bg-brass-yellow/10"
+                  isBookmarked && "text-sandy-ochre bg-sandy-ochre/10"
                 )}
               >
                 <Bookmark className={cn("icon-xs", isBookmarked && "fill-current")} />
@@ -244,7 +244,7 @@ export function BlogCard({
           
           {/* Stats Row */}
           {showStats && (article.views || article.comments) && (
-            <div className="flex items-center gap-base pt-[var(--space-xs)] text-caption text-case-hardened border-t border-border">
+            <div className="flex items-center gap-base pt-[var(--space-xs)] text-caption text-warning-amber border-t border-border">
               {article.views && (
                 <div className="flex items-center gap-xs">
                   <Eye className="icon-xs" />
@@ -305,12 +305,12 @@ export function BlogList({
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-lg)]">
             {subtitle && (
-              <p className="text-body-sm font-rajdhani font-semibold text-copper-orange mb-[var(--space-xs)] tracking-wide uppercase">
+              <p className="text-body-sm font-rajdhani font-semibold text-rusty-orange mb-[var(--space-xs)] tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
             {title && (
-              <h2 className="text-heading-lg md:text-heading-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+              <h2 className="text-heading-lg md:text-heading-xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
                 {title}
               </h2>
             )}
@@ -331,8 +331,8 @@ export function BlogList({
                   className={cn(
                     "font-rajdhani font-semibold capitalize",
                     activeFilter === category 
-                      ? "bg-brass-yellow text-gunmetal-black" 
-                      : "border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black"
+                      ? "bg-sandy-ochre text-dark-chocolate" 
+                      : "border-sandy-ochre/30 text-sandy-ochre hover:bg-sandy-ochre hover:text-dark-chocolate"
                   )}
                 >
                   {category}
@@ -379,10 +379,10 @@ export function BlogList({
         {filteredArticles.length === 0 && (
           <div className="text-center py-[var(--space-xl)]">
             <Filter className="icon-2xl icon-muted mx-auto mb-[var(--space-base)]" />
-            <h3 className="text-body-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-xs)]">
+            <h3 className="text-body-lg font-rajdhani font-bold text-dark-chocolate mb-[var(--space-xs)]">
               No articles found
             </h3>
-            <p className="text-case-hardened">
+            <p className="text-warning-amber">
               Try adjusting your filters to see more content.
             </p>
           </div>
@@ -419,10 +419,10 @@ export function BlogDetail({
             <div className="space-y-[var(--space-md)] mb-[var(--space-lg)]">
               {/* Category & Meta */}
               <div className="flex items-center gap-base">
-                <Badge className="bg-brass-yellow text-gunmetal-black font-rajdhani font-bold">
+                <Badge className="bg-sandy-ochre text-dark-chocolate font-rajdhani font-bold">
                   {article.category}
                 </Badge>
-                <div className="flex items-center gap-base text-body-sm text-case-hardened">
+                <div className="flex items-center gap-base text-body-sm text-warning-amber">
                   <div className="flex items-center gap-xs">
                     <Calendar className="icon-xs" />
                     <span>{new Date(article.publishDate).toLocaleDateString()}</span>
@@ -435,7 +435,7 @@ export function BlogDetail({
               </div>
               
               {/* Title */}
-              <h1 className="text-heading-xl md:text-display-sm font-rajdhani font-bold text-gunmetal-black leading-tight">
+              <h1 className="text-heading-xl md:text-display-sm font-rajdhani font-bold text-dark-chocolate leading-tight">
                 {article.title}
               </h1>
               
@@ -453,19 +453,19 @@ export function BlogDetail({
                       />
                     </div>
                   ) : (
-                    <div className="w-12 h-12 rounded-full bg-brass-yellow/20 flex items-center justify-center">
-                      <User className="icon-lg text-brass-yellow" />
+                    <div className="w-12 h-12 rounded-full bg-sandy-ochre/20 flex items-center justify-center">
+                      <User className="icon-lg text-sandy-ochre" />
                     </div>
                   )}
                   <div>
-                    <div className="font-rajdhani font-bold text-body-lg text-gunmetal-black">
+                    <div className="font-rajdhani font-bold text-body-lg text-dark-chocolate">
                       {article.author.name}
                     </div>
                     {article.author.title && (
-                      <div className="text-body-sm text-case-hardened">{article.author.title}</div>
+                      <div className="text-body-sm text-warning-amber">{article.author.title}</div>
                     )}
                     {article.author.bio && (
-                      <div className="text-caption text-case-hardened mt-[var(--space-xs)]">{article.author.bio}</div>
+                      <div className="text-caption text-warning-amber mt-[var(--space-xs)]">{article.author.bio}</div>
                     )}
                   </div>
                 </div>
@@ -498,9 +498,9 @@ export function BlogDetail({
             {/* Tags */}
             {article.tags && article.tags.length > 0 && (
               <div className="flex flex-wrap gap-xs pt-[var(--space-lg)] border-t border-border mt-[var(--space-lg)]">
-                <Tag className="icon-sm text-case-hardened mr-[var(--space-xs)]" />
+                <Tag className="icon-sm text-warning-amber mr-[var(--space-xs)]" />
                 {article.tags.map((tag) => (
-                  <Badge key={tag} variant="outline" className="border-brass-yellow/30 text-brass-yellow">
+                  <Badge key={tag} variant="outline" className="border-sandy-ochre/30 text-sandy-ochre">
                     {tag}
                   </Badge>
                 ))}
@@ -514,7 +514,7 @@ export function BlogDetail({
               {/* Related Articles */}
               {relatedArticles.length > 0 && (
                 <div>
-                  <h3 className="text-heading-sm font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+                  <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
                     Related Articles
                   </h3>
                   <div className="space-y-[var(--space-base)]">
@@ -533,10 +533,10 @@ export function BlogDetail({
                             </div>
                           )}
                           <div className="flex-1 min-w-0">
-                            <h4 className="font-rajdhani font-semibold text-body-sm text-gunmetal-black group-hover:text-brass-yellow transition-colors duration-200 line-clamp-2">
+                            <h4 className="font-rajdhani font-semibold text-body-sm text-dark-chocolate group-hover:text-sandy-ochre transition-colors duration-200 line-clamp-2">
                               {relatedArticle.title}
                             </h4>
-                            <p className="text-caption text-case-hardened mt-[var(--space-xs)]">
+                            <p className="text-caption text-warning-amber mt-[var(--space-xs)]">
                               {new Date(relatedArticle.publishDate).toLocaleDateString()}
                             </p>
                           </div>

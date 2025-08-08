@@ -74,7 +74,7 @@ export function NewThemeToggle({
         size={showLabel ? "default" : "icon"}
         onClick={handleToggle}
         className={cn(
-          "bg-card border-border hover:bg-brass-yellow hover:border-brass-yellow shadow-flat transition-all duration-200 group",
+          "bg-card border-border hover:bg-sandy-ochre hover:border-sandy-ochre shadow-flat transition-all duration-200 group",
           variant === 'floating' && "shadow-elevated hover:shadow-premium"
         )}
         title={`Switch to ${nextTheme.label.toLowerCase()} theme`}
@@ -96,7 +96,7 @@ export function NewThemeToggle({
               className={cn(
                 "w-1.5 h-1.5 rounded-full transition-all duration-200",
                 index === currentThemeIndex 
-                  ? "bg-brass-yellow" 
+                  ? "bg-sandy-ochre" 
                   : "bg-muted-foreground/30"
               )}
             />

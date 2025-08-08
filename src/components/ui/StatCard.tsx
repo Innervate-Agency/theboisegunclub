@@ -14,25 +14,25 @@ const statCardVariants = cva(
         default: "bg-card text-card-foreground shadow-flat hover:shadow-md",
         
         // Premium: Consistent default shadows with strategic gradient accent
-        premium: "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/4 before:via-transparent before:to-copper-orange/3 before:rounded-card before:pointer-events-none",
+        premium: "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-card before:pointer-events-none",
         
         // Elite: Consistent default shadows with enhanced accent features
-        elite: "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-copper-orange/6 before:via-transparent before:to-brass-yellow/4 before:rounded-card before:pointer-events-none",
+        elite: "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/6 before:via-transparent before:to-sandy-ochre/4 before:rounded-card before:pointer-events-none",
         
         // Glass: Modern mica with consistent default shadows
-        glass: "mica-overlay text-card-foreground shadow-flat hover:shadow-md backdrop-blur-sm relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        glass: "mica-overlay text-card-foreground shadow-flat hover:shadow-md backdrop-blur-sm relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
         // Fire: Consistent default shadows with center-positioned gradient accent
-        fire: "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
+        fire: "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
         // Fire Blue: Consistent default shadows with center-positioned cool gradient
-        'fire-blue': "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
+        'fire-blue': "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
         // Fire Purple: Consistent default shadows with center-positioned purple gradient
-        'fire-purple': "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
+        'fire-purple': "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-slate-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
         // Fire Green: Consistent default shadows with center-positioned green gradient
-        'fire-green': "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full"
+        'fire-green': "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-sagebrush-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full"
       },
       size: {
         sm: "p-base",
@@ -85,7 +85,7 @@ export default function StatCard({
           title: "text-foreground",
           label: "text-muted-foreground",
           description: "text-muted-foreground/80", 
-          icon: "text-copper-orange"
+          icon: "text-rusty-orange"
         }
       case "premium":
       case "elite":
@@ -93,7 +93,7 @@ export default function StatCard({
           title: "text-foreground",
           label: "text-muted-foreground",
           description: "text-muted-foreground/80",
-          icon: "text-brass-yellow"
+          icon: "text-sandy-ochre"
         }
       case "fire":
       case "fire-blue": 
@@ -103,14 +103,14 @@ export default function StatCard({
           title: "text-foreground",
           label: "text-muted-foreground",
           description: "text-muted-foreground/80",
-          icon: "text-copper-orange"
+          icon: "text-rusty-orange"
         }
       default:
         return {
           title: "text-foreground",
           label: "text-muted-foreground",
           description: "text-muted-foreground/80",
-          icon: "text-brass-yellow"
+          icon: "text-sandy-ochre"
         }
     }
   }

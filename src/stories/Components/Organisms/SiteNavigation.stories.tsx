@@ -129,14 +129,14 @@ export const ResponsiveDesign: Story = {
     <div className="space-y-lg">
       <div>
         <h3 className="text-body-lg font-rajdhani font-bold text-blued-steel mb-base">Desktop View</h3>
-        <div className="border border-tactical-gray rounded-card overflow-hidden">
+        <div className="border border-warm-stone rounded-card overflow-hidden">
           <SiteNavigation variant="premium" layout="horizontal" showLogo={true} />
         </div>
       </div>
       
       <div>
         <h3 className="text-body-lg font-rajdhani font-bold text-blued-steel mb-base">Mobile View</h3>
-        <div className="max-w-sm border border-tactical-gray rounded-card overflow-hidden">
+        <div className="max-w-sm border border-warm-stone rounded-card overflow-hidden">
           <SiteNavigation variant="premium" layout="horizontal" showLogo={true} />
         </div>
       </div>
@@ -153,10 +153,10 @@ export const WithCustomContent: Story = {
         showLogo={true}
         customContent={
           <div className="flex items-center gap-base">
-            <button className="px-base py-xs bg-brass-yellow text-gunmetal-black font-medium rounded-input hover:bg-copper-orange transition-colors">
+            <button className="px-base py-xs bg-sandy-ochre text-dark-chocolate font-medium rounded-input hover:bg-rusty-orange transition-colors">
               Member Login
             </button>
-            <button className="px-base py-xs bg-transparent text-blued-steel font-medium border border-case-hardened rounded-input hover:bg-case-hardened/10 transition-colors">
+            <button className="px-base py-xs bg-transparent text-blued-steel font-medium border border-warning-amber rounded-input hover:bg-warning-amber/10 transition-colors">
               Join Now
             </button>
           </div>

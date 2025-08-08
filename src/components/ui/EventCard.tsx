@@ -13,7 +13,7 @@ const eventCardVariants = cva(
   {
     variants: {
       featured: {
-        true: "border-copper-orange/20 bg-gradient-to-br from-card to-copper-orange/5 hover:shadow-md",
+        true: "border-rusty-orange/20 bg-gradient-to-br from-card to-rusty-orange/5 hover:shadow-md",
         false: ""
       }
     },
@@ -56,15 +56,30 @@ export function EventCard({
 }: EventCardProps) {
   const spotsLeft = capacity && registeredCount ? capacity - registeredCount : null
 
+  // Color mapping for event types using our 10-color system
+  const getEventColors = (type: string) => {
+    switch (type) {
+      case 'Competition': return { bg: 'slate-blue/10', border: 'slate-blue/30', text: 'slate-blue', accent: 'slate-blue' }
+      case 'Training': return { bg: 'sandy-ochre/10', border: 'sandy-ochre/30', text: 'sandy-ochre', accent: 'sandy-ochre' }
+      case 'Expo': return { bg: 'info-river/10', border: 'info-river/30', text: 'info-river', accent: 'info-river' }
+      case 'Charity': return { bg: 'sagebrush-green/10', border: 'sagebrush-green/30', text: 'sagebrush-green', accent: 'sagebrush-green' }
+      case 'Social': return { bg: 'rusty-orange/10', border: 'rusty-orange/30', text: 'rusty-orange', accent: 'rusty-orange' }
+      case 'Demo': return { bg: 'warning-clay/10', border: 'warning-clay/30', text: 'warning-clay', accent: 'warning-clay' }
+      default: return { bg: 'pale-stone/10', border: 'pale-stone/30', text: 'dried-clay', accent: 'pale-stone' }
+    }
+  }
+
+  const colors = getEventColors(eventType)
+
   return (
     <Card
       variant="interactive"
       className={cn(eventCardVariants({ featured }), className)}
       {...props}
     >
-      {/* Fire gradient bottom bar for featured events */}
+      {/* Color-coded accent bar for all events */}\n      <div className={`absolute bottom-0 left-0 right-0 h-1 bg-${colors.accent}`} />\n      {/* Additional featured accent */}
       {featured && (
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-copper-orange to-brass-yellow" />
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre" />
       )}
       
       <div className="space-y-base">
@@ -73,10 +88,10 @@ export function EventCard({
           <div className="space-y-xs flex-1">
             <div className="flex items-center gap-xs">
               <Badge 
-                variant={featured ? "default" : "outline"} 
+                variant="outline" 
                 size="sm"
                 className={cn(
-                  featured ? "bg-copper-orange/20 text-copper-orange border-copper-orange/30" : ""
+                  `bg-${colors.bg} text-${colors.text} border-${colors.border}`
                 )}
               >
                 {eventType}
@@ -96,7 +111,7 @@ export function EventCard({
           {/* Price Display */}
           {price && (
             <div className="text-right ml-base">
-              <div className="text-lg font-rajdhani font-bold text-copper-orange">
+              <div className="text-lg font-rajdhani font-bold text-rusty-orange">
                 {price}
               </div>
             </div>
@@ -111,15 +126,15 @@ export function EventCard({
         {/* Event Details */}
         <div className="space-y-xs text-sm">
           <div className="flex items-center gap-xs text-muted-foreground">
-            <Calendar className="h-4 w-4 text-copper-orange flex-shrink-0" />
+            <Calendar className={`h-4 w-4 text-${colors.accent} flex-shrink-0`} />
             <span>{date}</span>
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
-            <Clock className="h-4 w-4 text-copper-orange flex-shrink-0" />
+            <Clock className={`h-4 w-4 text-${colors.accent} flex-shrink-0`} />
             <span>{time}</span>
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
-            <MapPin className="h-4 w-4 text-copper-orange flex-shrink-0" />
+            <MapPin className={`h-4 w-4 text-${colors.accent} flex-shrink-0`} />
             <span className="line-clamp-1">{location}</span>
           </div>
         </div>
@@ -128,7 +143,7 @@ export function EventCard({
         {capacity && (
           <div className="flex items-center justify-between text-sm bg-muted/50 px-base py-xs rounded">
             <div className="flex items-center gap-xs text-muted-foreground">
-              <Users className="h-4 w-4 text-copper-orange" />
+              <Users className={`h-4 w-4 text-${colors.accent}`} />
               <span>Capacity: {capacity}</span>
             </div>
             <div className={cn(

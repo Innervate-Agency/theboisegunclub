@@ -35,7 +35,7 @@ export const Default: Story = {
     variant: 'default',
     children: (
       <div className="flex items-center gap-xs mt-base">
-        <Shield className="h-4 w-4 text-copper-orange" />
+        <Shield className="h-4 w-4 text-rusty-orange" />
         <span className="text-body-sm font-medium">Safety First</span>
       </div>
     )
@@ -178,7 +178,7 @@ export const SubtleCalloutVariant: StoryObj<typeof SubtleCallout> = {
     children: (
       <div className="space-y-sm">
         <div className="flex items-center gap-xs">
-          <Target className="h-4 w-4 text-case-hardened" />
+          <Target className="h-4 w-4 text-warning-amber" />
           <Badge variant="info">
             Limited Time
           </Badge>
@@ -203,7 +203,7 @@ export const TrainingProgram: Story = {
     children: (
       <div className="space-y-sm">
         <div className="flex items-center gap-xs">
-          <Target className="h-4 w-4 text-copper-orange" />
+          <Target className="h-4 w-4 text-rusty-orange" />
           <Badge variant="warning">
             8 Week Course
           </Badge>

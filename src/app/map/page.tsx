@@ -134,18 +134,18 @@ function LocationCard({ location }: { location: typeof shootingLocations[0] }) {
     "Designated Area": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30",
     "Forest Service": "bg-scope-blue/20 text-scope-blue border-scope-blue/30",
     "Remote/4WD": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30",
-    "Popular Spot": "bg-case-hardened/20 text-case-hardened border-case-hardened/30",
+    "Popular Spot": "bg-warning-amber/20 text-warning-amber border-warning-amber/30",
     "Dispersed": "bg-ayu-purple/20 text-ayu-purple border-ayu-purple/30"
   }
 
   const difficultyColors = {
-    "Easy": "bg-clubhouse-lawn-green/20 text-clubhouse-lawn-green border-clubhouse-lawn-green/30",
+    "Easy": "bg-sagebrush-green/20 text-sagebrush-green border-sagebrush-green/30",
     "Moderate": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30",
     "Difficult": "bg-safety-red/20 text-safety-red border-safety-red/30"
   }
 
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300">
+    <Card className="group hover:shadow-elevated transition-all duration-300">
       <CardHeader className="pb-base">
         <div className="flex items-start justify-between gap-base mb-xs">
           <div className="flex gap-xs">
@@ -157,7 +157,7 @@ function LocationCard({ location }: { location: typeof shootingLocations[0] }) {
             </Badge>
           </div>
           {location.verified && (
-            <Badge className="bg-clubhouse-lawn-green/20 text-clubhouse-lawn-green border-clubhouse-lawn-green/30">
+            <Badge className="bg-sagebrush-green/20 text-sagebrush-green border-sagebrush-green/30">
               <Shield className="h-3 w-3 mr-xs" />
               Verified
             </Badge>
@@ -274,7 +274,7 @@ export default function MapPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-tactical-gray/90 px-md py-6xl">
+      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90 px-md py-6xl">
         <div className="absolute inset-0 bg-gradient-to-br from-rusty-orange/5 via-transparent to-rusty-orange/8 pointer-events-none"></div>
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center space-y-lg">
@@ -478,7 +478,7 @@ export default function MapPage() {
       </section>
 
       {/* Safety Notice */}
-      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-tactical-gray/90">
+      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90">
         <div className="container mx-auto max-w-4xl px-md text-center">
           <div className="space-y-lg">
             <Badge className="bg-safety-red/20 text-safety-red border-safety-red/30">

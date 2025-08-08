@@ -21,10 +21,10 @@ export default function AnimatedSplashCard({
       {...props}
     >
       {/* Animated gradient splash background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brass-yellow/0 via-copper-orange/0 to-walnut-stock/0 transition-all duration-500 group-hover:from-brass-yellow/8 group-hover:via-copper-orange/6 group-hover:to-walnut-stock/4" />
+      <div className="absolute inset-0 bg-gradient-to-br from-sandy-ochre/0 via-rusty-orange/0 to-walnut-stock/0 transition-all duration-500 group-hover:from-sandy-ochre/8 group-hover:via-rusty-orange/6 group-hover:to-walnut-stock/4" />
       
       {/* Animated border accent */}
-      <div className="absolute inset-0 rounded-large bg-gradient-to-r from-brass-yellow/20 via-copper-orange/20 to-brass-yellow/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" 
+      <div className="absolute inset-0 rounded-large bg-gradient-to-r from-sandy-ochre/20 via-rusty-orange/20 to-sandy-ochre/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" 
            style={{ 
              mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
              maskComposite: 'xor',
@@ -35,8 +35,8 @@ export default function AnimatedSplashCard({
       
       {/* Floating particles effect */}
       <div className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-30">
-        <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-brass-yellow rounded-full animate-ping animation-delay-100" />
-        <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-copper-orange rounded-full animate-ping animation-delay-300" />
+        <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-sandy-ochre rounded-full animate-ping animation-delay-100" />
+        <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-rusty-orange rounded-full animate-ping animation-delay-300" />
         <div className="absolute top-1/2 right-1/3 w-0.5 h-0.5 bg-walnut-stock rounded-full animate-ping animation-delay-500" />
       </div>
       

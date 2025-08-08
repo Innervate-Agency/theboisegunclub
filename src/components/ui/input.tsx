@@ -4,14 +4,14 @@ import { cn } from "@/lib/utils"
 
 const inputVariants = cva(
   // Foundation classes inspired by Stripe's sophisticated input design
-  "flex w-full min-w-0 rounded-input border bg-transparent text-body transition-stripe-fast outline-none file:border-0 file:bg-transparent file:text-body-sm file:font-medium placeholder:text-muted-foreground selection:bg-brass-yellow selection:text-primary font-noto-sans",
+  "flex w-full min-w-0 rounded-input border bg-transparent text-body transition-stripe-fast outline-none file:border-0 file:bg-transparent file:text-body-sm file:font-medium placeholder:text-muted-foreground selection:bg-sandy-ochre selection:text-primary font-noto-sans",
   {
     variants: {
       variant: {
-        default: "bg-background border-border text-foreground hover:border-border/80 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
-        filled: "bg-muted border-border/60 text-foreground hover:bg-background hover:border-border/80 focus-visible:bg-background focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
-        ghost: "bg-transparent border-transparent text-foreground hover:bg-muted/50 focus-visible:bg-muted/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
-        glass: "bg-card/20 backdrop-blur-sm border-border/30 text-card-foreground hover:border-border/50 hover:bg-card/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20 mica-glass"
+        default: "bg-background border-border text-foreground hover:border-border/80 focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20",
+        filled: "bg-muted border-border/60 text-foreground hover:bg-background hover:border-border/80 focus-visible:bg-background focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20",
+        ghost: "bg-transparent border-transparent text-foreground hover:bg-muted/50 focus-visible:bg-muted/30 focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20",
+        glass: "bg-card/20 backdrop-blur-sm border-border/30 text-card-foreground hover:border-border/50 hover:bg-card/30 focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20 mica-glass"
       },
       size: {
         sm: "h-[var(--input-height-sm)] px-sm py-xs text-body-sm",

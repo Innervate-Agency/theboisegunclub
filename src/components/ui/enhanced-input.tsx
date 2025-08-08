@@ -5,27 +5,27 @@ import { cn } from '@/lib/utils';
 // TBGC Enhanced Input - Complete Design System Application
 const enhancedInputVariants = cva(
   // Foundation: Flat elements inside containers (Stripe pattern) + proper typography
-  "flex w-full min-w-0 border bg-transparent font-noto-sans transition-stripe-fast outline-none file:border-0 file:bg-transparent file:text-body-sm file:font-medium placeholder:text-muted-foreground selection:bg-brass-yellow selection:text-gunmetal-black",
+  "flex w-full min-w-0 border bg-transparent font-noto-sans transition-stripe-fast outline-none file:border-0 file:bg-transparent file:text-body-sm file:font-medium placeholder:text-muted-foreground selection:bg-sandy-ochre selection:text-dark-chocolate",
   {
     variants: {
       variant: {
         // Default: Clean input with proper focus states
-        default: "bg-input border-border text-foreground hover:border-border/80 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
+        default: "bg-input border-border text-foreground hover:border-border/80 focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20",
         
         // Filled: Muted background variant
-        filled: "bg-muted border-border/60 text-foreground hover:bg-input hover:border-border/80 focus-visible:bg-input focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
+        filled: "bg-muted border-border/60 text-foreground hover:bg-input hover:border-border/80 focus-visible:bg-input focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20",
         
         // Ghost: Transparent with subtle hover
-        ghost: "bg-transparent border-transparent text-foreground hover:bg-muted/50 focus-visible:bg-muted/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
+        ghost: "bg-transparent border-transparent text-foreground hover:bg-muted/50 focus-visible:bg-muted/30 focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20",
         
         // Glass: Mica effect with backdrop blur (flat shadow)
-        glass: "mica-overlay border-border/30 text-foreground hover:border-border/50 hover:bg-card/30 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20 backdrop-blur-sm",
+        glass: "mica-overlay border-border/30 text-foreground hover:border-border/50 hover:bg-card/30 focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20 backdrop-blur-sm",
         
         // Premium: Brass-accented variant
-        premium: "bg-input border-brass-yellow/20 text-foreground hover:border-brass-yellow/40 focus-visible:border-brass-yellow focus-visible:ring-3 focus-visible:ring-brass-yellow/20",
+        premium: "bg-input border-sandy-ochre/20 text-foreground hover:border-sandy-ochre/40 focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20",
         
         // Elite: Copper-accented variant
-        elite: "bg-input border-copper-orange/20 text-foreground hover:border-copper-orange/40 focus-visible:border-copper-orange focus-visible:ring-3 focus-visible:ring-copper-orange/20",
+        elite: "bg-input border-rusty-orange/20 text-foreground hover:border-rusty-orange/40 focus-visible:border-rusty-orange focus-visible:ring-3 focus-visible:ring-rusty-orange/20",
       },
       size: {
         // Proper sizing using design tokens

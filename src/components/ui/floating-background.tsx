@@ -9,9 +9,9 @@ const floatingBackgroundVariants = cva(
   {
     variants: {
       preset: {
-        gunclub: "bg-gradient-to-br from-range-white via-shooting-bench to-walnut-stock",
+        gunclub: "bg-gradient-to-br from-range-white via-card-surface to-walnut-stock",
         cool: "bg-gradient-to-br from-scope-blue/20 via-trigger-blue/10 to-cerakote-blue/30",
-        warm: "bg-gradient-to-br from-brass-yellow/10 via-copper-orange/20 to-recoil-pad/15",
+        warm: "bg-gradient-to-br from-sandy-ochre/10 via-rusty-orange/20 to-recoil-pad/15",
         neutral: "bg-gradient-to-br from-stainless-steel/10 via-ghost-ring/5 to-titanium-white/20"
       },
       intensity: {
@@ -67,9 +67,9 @@ export function FloatingBackground({
               key={particle.id}
               className={cn(
                 "absolute rounded-full",
-                preset === "gunclub" && "bg-brass-yellow",
+                preset === "gunclub" && "bg-sandy-ochre",
                 preset === "cool" && "bg-scope-blue",
-                preset === "warm" && "bg-copper-orange",
+                preset === "warm" && "bg-rusty-orange",
                 preset === "neutral" && "bg-stainless-steel"
               )}
               style={{

@@ -233,13 +233,13 @@ function ArticleCard({ article }: { article: typeof knowledgeBaseArticles[0] }) 
   }
 
   const difficultyColors = {
-    "Beginner": "bg-clubhouse-lawn-green/20 text-clubhouse-lawn-green border-clubhouse-lawn-green/30",
+    "Beginner": "bg-sagebrush-green/20 text-sagebrush-green border-sagebrush-green/30",
     "Intermediate": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30", 
     "Advanced": "bg-safety-red/20 text-safety-red border-safety-red/30"
   }
 
   return (
-    <Card className={`group hover:shadow-lg transition-all duration-300 ${
+    <Card className={`group hover:shadow-elevated transition-all duration-300 ${
       article.featured ? 'ring-2 ring-rusty-orange/30 bg-rusty-orange/5' : ''
     }`}>
       <CardHeader className="pb-base">
@@ -351,7 +351,7 @@ export default function GuidesPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-tactical-gray/90 px-md py-6xl">
+      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90 px-md py-6xl">
         <div className="absolute inset-0 bg-gradient-to-br from-rusty-orange/5 via-transparent to-rusty-orange/8 pointer-events-none"></div>
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center space-y-lg">
@@ -551,7 +551,7 @@ export default function GuidesPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-tactical-gray/90">
+      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90">
         <div className="container mx-auto max-w-4xl px-md text-center">
           <div className="space-y-lg">
             <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">

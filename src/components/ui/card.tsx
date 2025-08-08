@@ -4,24 +4,24 @@ import { cn } from "@/lib/utils"
 
 const cardVariants = cva(
   // TBGC Design System: Strategic restraint with clean theme-aware design
-  "relative flex flex-col rounded-card bg-card text-card-foreground transition-all duration-300 ease-out",
+  "relative flex flex-col rounded-none bg-card text-card-foreground transition-all duration-300 ease-out",
   {
     variants: {
       variant: {
         // Default: Clean baseline with shadow system (strategic restraint)
-        default: "bg-card text-card-foreground shadow-sm hover:shadow-md",
+        default: "bg-card text-card-foreground shadow-flat hover:shadow-elevated",
         
         // Elevated: Subtle elevation with strategic restraint
-        elevated: "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-0.5",
+        elevated: "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-0.5",
         
         // Interactive: Clickable feedback with clear affordance
-        interactive: "bg-card text-card-foreground shadow-sm hover:shadow-md hover:-translate-y-0.5 cursor-pointer hover:bg-card/95",
+        interactive: "bg-card text-card-foreground shadow-flat hover:shadow-elevated hover:-translate-y-0.5 cursor-pointer hover:bg-card/95",
         
         // Premium: Strategic copper-brass accent (inspired by VendorCard copper tier)
-        premium: "bg-card text-card-foreground shadow-sm hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/4 before:via-transparent before:to-copper-orange/3 before:rounded-card before:pointer-events-none",
+        premium: "bg-card text-card-foreground shadow-flat hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-none before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-none before:pointer-events-none",
         
         // Glass: Windows 11 Mica glassmorphism
-        glass: "mica-card shadow-sm hover:shadow-md transition-all duration-200",
+        glass: "mica-card shadow-flat hover:shadow-elevated transition-all duration-200",
         
         // Outlined: Exception - explicit outline variant can use borders per design system policy
         outlined: "bg-transparent text-card-foreground border border-border hover:bg-card/50 hover:shadow-sm",
@@ -30,16 +30,16 @@ const cardVariants = cva(
         subtle: "bg-muted text-card-foreground shadow-xs hover:shadow-sm hover:bg-card",
         
         // Fire: Premium fire gradient (inspired by VendorCard gold tier)
-        fire: "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        fire: "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
         // Fire Blue: Idaho palette blue fire gradient 
-        "fire-blue": "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        "fire-blue": "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
         // Fire Green: Idaho palette green fire gradient
-        "fire-green": "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-clubhouse-lawn-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        "fire-green": "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-sagebrush-green after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
         // Fire Red: Idaho palette red fire gradient
-        "fire-red": "bg-card text-card-foreground shadow-md hover:shadow-lg hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-copper-orange after:to-safety-red after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
+        "fire-red": "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-safety-red after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
       },
       size: {
         sm: "",              // Subcomponents handle their own padding

@@ -68,7 +68,7 @@ export const ThemeContrastTest: Story = {
             Hover to Test Accent
           </h3>
           <p className="text-muted-foreground">
-            The title should change to copper-orange (light) or brass-yellow (dark) on hover
+            The title should change to rusty-orange (light) or sandy-ochre (dark) on hover
           </p>
           <div className="space-y-xs">
             <div className="p-sm rounded-card bg-primary/10 border border-primary/20">

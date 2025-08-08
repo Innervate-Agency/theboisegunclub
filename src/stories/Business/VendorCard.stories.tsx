@@ -154,7 +154,7 @@ export const AllTiers: Story = {
       </div>
       
       <div className="space-y-base">
-        <h3 className="font-rajdhani font-bold text-body-lg text-center text-copper-orange">COPPER - $49/mo</h3>
+        <h3 className="font-rajdhani font-bold text-body-lg text-center text-rusty-orange">COPPER - $49/mo</h3>
         <VendorCard
           {...sampleBusinesses.range}
           tier="copper"
@@ -173,7 +173,7 @@ export const AllTiers: Story = {
       </div>
       
       <div className="space-y-base">
-        <h3 className="font-rajdhani font-bold text-body-lg text-center text-brass-yellow">GOLD - $199/mo</h3>
+        <h3 className="font-rajdhani font-bold text-body-lg text-center text-sandy-ochre">GOLD - $199/mo</h3>
         <VendorCard
           {...sampleBusinesses.gunShop}
           tier="gold"
@@ -302,7 +302,7 @@ export const StrategicTierProgression: Story = {
         
         <div className="space-y-base">
           <div className="text-center">
-            <h3 className="font-rajdhani font-bold text-body-lg text-copper-orange">COPPER</h3>
+            <h3 className="font-rajdhani font-bold text-body-lg text-rusty-orange">COPPER</h3>
             <p className="text-caption text-muted-foreground mb-xs">$49/month</p>
             <p className="text-caption text-muted-foreground">One strategic accent</p>
           </div>
@@ -343,7 +343,7 @@ export const StrategicTierProgression: Story = {
         
         <div className="space-y-base">
           <div className="text-center">
-            <h3 className="font-rajdhani font-bold text-body-lg text-brass-yellow">GOLD</h3>
+            <h3 className="font-rajdhani font-bold text-body-lg text-sandy-ochre">GOLD</h3>
             <p className="text-caption text-muted-foreground mb-xs">$199/month</p>
             <p className="text-caption text-muted-foreground">Premium fire treatment</p>
           </div>

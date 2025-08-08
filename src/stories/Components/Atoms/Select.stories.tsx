@@ -54,7 +54,7 @@ export const Default: Story = {
 
 export const Premium: Story = {
   render: () => (
-    <div className="bg-gradient-to-br from-brass-yellow/5 to-copper-orange/5 p-md rounded-large">
+    <div className="bg-gradient-to-br from-sandy-ochre/5 to-rusty-orange/5 p-md rounded-large">
       <Select>
         <SelectTrigger variant="premium" className="w-[250px]">
           <SelectValue placeholder="Premium selection..." />
@@ -74,7 +74,7 @@ export const Premium: Story = {
 
 export const Glass: Story = {
   render: () => (
-    <div className="bg-gradient-to-br from-night-sight to-tactical-gray p-lg rounded-large">
+    <div className="bg-gradient-to-br from-night-sight to-warm-stone p-lg rounded-large">
       <Select>
         <SelectTrigger variant="glass" className="w-[250px]">
           <SelectValue placeholder="Glass selection..." />

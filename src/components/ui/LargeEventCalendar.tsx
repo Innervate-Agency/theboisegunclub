@@ -223,7 +223,7 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
                     const Icon = config.icon
 
                     return (
-                      <Card key={idx} className="hover:shadow-lg transition-all duration-300">
+                      <Card key={idx} className="hover:shadow-elevated transition-all duration-300">
                         <CardContent className="p-lg space-y-base">
                           <div className="flex items-start justify-between">
                             <div className="flex items-center gap-sm">

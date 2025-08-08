@@ -35,14 +35,14 @@ export const CompleteDemo: Story = {
           radial-gradient(circle at 25% 25%, rgba(242, 203, 5, 0.08) 0%, transparent 40%),
           radial-gradient(circle at 75% 75%, rgba(242, 135, 5, 0.06) 0%, transparent 40%),
           radial-gradient(circle at 50% 50%, rgba(81, 152, 205, 0.04) 0%, transparent 40%),
-          linear-gradient(135deg, var(--color-range-white) 0%, var(--color-shooting-bench) 100%)
+          linear-gradient(135deg, var(--color-range-white) 0%, var(--color-card-surface) 100%)
         `
       }}
     >
       {/* Background Elements for Glass to Blur */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-brass-yellow/10 rounded-full blur-3xl" />
-        <div className="absolute top-40 right-32 w-48 h-48 bg-copper-orange/8 rounded-full blur-2xl" />
+        <div className="absolute top-20 left-20 w-64 h-64 bg-sandy-ochre/10 rounded-full blur-3xl" />
+        <div className="absolute top-40 right-32 w-48 h-48 bg-rusty-orange/8 rounded-full blur-2xl" />
         <div className="absolute bottom-32 left-1/3 w-80 h-40 bg-scope-blue/6 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-20 w-56 h-56 bg-walnut-stock/8 rounded-full blur-2xl" />
       </div>
@@ -72,7 +72,7 @@ export const LayeredBackground: Story = {
         background: `
           radial-gradient(circle at 25% 25%, rgba(242, 203, 5, 0.06) 0%, transparent 35%),
           radial-gradient(circle at 75% 75%, rgba(242, 135, 5, 0.04) 0%, transparent 35%),
-          linear-gradient(135deg, var(--color-range-white) 0%, var(--color-shooting-bench) 100%)
+          linear-gradient(135deg, var(--color-range-white) 0%, var(--color-card-surface) 100%)
         `
       }}
     >

@@ -13,10 +13,10 @@ const siteNavigationVariants = cva(
     variants: {
       variant: {
         default: "bg-card shadow-flat",
-        premium: "mica-overlay after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-copper-orange/40 after:to-transparent",
-        elite: "mica-modal after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-case-hardened/50 after:to-transparent",
+        premium: "mica-overlay after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-rusty-orange/40 after:to-transparent",
+        elite: "mica-modal after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warning-amber/50 after:to-transparent",
         glass: "mica-card",
-        gunclub: "bg-shooting-bench shadow-flat after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-tactical-gray/40 after:to-transparent"
+        gunclub: "bg-card-surface shadow-flat after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warm-stone/40 after:to-transparent"
       },
       layout: {
         horizontal: "",
@@ -37,8 +37,8 @@ const siteNavigationVariants = cva(
 )
 
 const navigationItems = [
-  { label: "Home", icon: Home, href: "/", color: "copper-orange" },
-  { label: "Events", icon: Calendar, href: "/events", color: "ayu-blue" },
+  { label: "Home", icon: Home, href: "/", color: "rusty-orange" },
+  { label: "Events", icon: Calendar, href: "/events", color: "slate-blue" },
   { label: "Directory", icon: Users, href: "/directory", color: "ayu-green" },
   { label: "Guides", icon: Target, href: "/guides", color: "ayu-purple" },
   { label: "Map", icon: Shield, href: "/map", color: "ayu-red" },
@@ -69,25 +69,25 @@ export function SiteNavigation({
   // Get individual hover classes for each nav item
   const getHoverClasses = (color: string) => {
     switch(color) {
-      case 'copper-orange': return 'hover:text-copper-orange hover:bg-copper-orange/10'
-      case 'ayu-blue': return 'hover:text-ayu-blue hover:bg-ayu-blue/10'
+      case 'rusty-orange': return 'hover:text-rusty-orange hover:bg-rusty-orange/10'
+      case 'slate-blue': return 'hover:text-slate-blue hover:bg-slate-blue/10'
       case 'ayu-green': return 'hover:text-ayu-green hover:bg-ayu-green/10'
       case 'ayu-purple': return 'hover:text-ayu-purple hover:bg-ayu-purple/10'
       case 'ayu-red': return 'hover:text-ayu-red hover:bg-ayu-red/10'
       case 'ayu-teal': return 'hover:text-ayu-teal hover:bg-ayu-teal/10'
-      default: return 'hover:text-copper-orange hover:bg-copper-orange/10'
+      default: return 'hover:text-rusty-orange hover:bg-rusty-orange/10'
     }
   }
   
   const getColorBarClass = (color: string) => {
     switch(color) {
-      case 'copper-orange': return 'bg-copper-orange'
-      case 'ayu-blue': return 'bg-ayu-blue'
+      case 'rusty-orange': return 'bg-rusty-orange'
+      case 'slate-blue': return 'bg-slate-blue'
       case 'ayu-green': return 'bg-ayu-green'
       case 'ayu-purple': return 'bg-ayu-purple'
       case 'ayu-red': return 'bg-ayu-red'
       case 'ayu-teal': return 'bg-ayu-teal'
-      default: return 'bg-copper-orange'
+      default: return 'bg-rusty-orange'
     }
   }
 
@@ -103,11 +103,11 @@ export function SiteNavigation({
           {showLogo && (
             <div className="flex items-center">
               <Link href="/" className="flex items-center gap-sm">
-                <div className="w-10 h-10 bg-gradient-to-br from-brass-yellow to-copper-orange rounded-lg flex flex-col items-center justify-center relative">
-                  <div className="text-[10px] font-rajdhani font-black text-gunmetal-black tracking-tight leading-none">
+                <div className="w-10 h-10 bg-gradient-to-br from-sandy-ochre to-rusty-orange rounded-lg flex flex-col items-center justify-center relative">
+                  <div className="text-[10px] font-rajdhani font-black text-dark-chocolate tracking-tight leading-none">
                     TB
                   </div>
-                  <div className="text-[10px] font-rajdhani font-black text-gunmetal-black tracking-tight leading-none">
+                  <div className="text-[10px] font-rajdhani font-black text-dark-chocolate tracking-tight leading-none">
                     GC
                   </div>
                 </div>
@@ -157,7 +157,7 @@ export function SiteNavigation({
                 <Button variant="ghost" size="sm" className="shadow-none">
                   Sign In
                 </Button>
-                <Button variant="ghost" size="sm" className="bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20 shadow-none border border-copper-orange/30 text-xs">
+                <Button variant="ghost" size="sm" className="bg-rusty-orange/10 text-rusty-orange hover:bg-rusty-orange/20 shadow-none border border-rusty-orange/30 text-xs">
                   60-Day Free Trial
                 </Button>
               </>
@@ -183,7 +183,7 @@ export function SiteNavigation({
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-base relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
+          <div className="md:hidden py-base relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-sandy-ochre/30 before:to-transparent">
             <div className="space-y-xs">
               {navigationItems.map((item) => (
                 <Link
@@ -198,12 +198,12 @@ export function SiteNavigation({
               ))}
             </div>
             
-            <div className="pt-base mt-base relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
+            <div className="pt-base mt-base relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-sandy-ochre/30 before:to-transparent">
               <div className="flex flex-col gap-xs">
                 <Button variant="ghost" size="sm" className="justify-start shadow-none">
                   Sign In
                 </Button>
-                <Button variant="ghost" size="sm" className="justify-start bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20 shadow-none border border-copper-orange/30 text-xs">
+                <Button variant="ghost" size="sm" className="justify-start bg-rusty-orange/10 text-rusty-orange hover:bg-rusty-orange/20 shadow-none border border-rusty-orange/30 text-xs">
                   60-Day Free Trial
                 </Button>
               </div>

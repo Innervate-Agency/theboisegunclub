@@ -205,7 +205,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
       {/* Accessibility Panel Overlay */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/20 backdrop-blur-sm">
-          <div className="w-full max-w-md mica border border-border rounded-card shadow-lg overflow-hidden">
+          <div className="w-full max-w-md mica border border-border rounded-card shadow-elevated overflow-hidden">
             <div className="flex flex-row items-center justify-between p-6 pb-4">
               <div className="flex items-center gap-sm">
                 <div className="bg-muted p-2 rounded-lg border border-border">

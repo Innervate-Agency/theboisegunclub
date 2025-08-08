@@ -17,10 +17,10 @@ const pageHeroVariants = cva(
         xl: "py-[var(--space-4xl)]"
       },
       backgroundPreset: {
-        warm: "bg-gradient-to-br from-brass-yellow/5 via-copper-orange/5 to-walnut-stock/5",
+        warm: "bg-gradient-to-br from-sandy-ochre/5 via-rusty-orange/5 to-walnut-stock/5",
         cool: "bg-gradient-to-br from-scope-blue/5 via-trigger-blue/5 to-cerakote-blue/5", 
-        mixed: "bg-gradient-to-br from-brass-yellow/5 via-scope-blue/5 to-walnut-stock/5",
-        gunclub: "bg-gradient-to-br from-range-white to-shooting-bench"
+        mixed: "bg-gradient-to-br from-sandy-ochre/5 via-scope-blue/5 to-walnut-stock/5",
+        gunclub: "bg-gradient-to-br from-range-white to-card-surface"
       },
       intensity: {
         subtle: "bg-opacity-30",
@@ -83,8 +83,8 @@ export function PageHero({
           {/* Icon */}
           {Icon && (
             <div className="flex justify-center">
-              <div className="p-base bg-card/80 backdrop-blur-sm rounded-full border border-brass-yellow/20 shadow-flat">
-                <Icon className="h-8 w-8 text-brass-yellow" />
+              <div className="p-base bg-card/80 backdrop-blur-sm rounded-full border border-sandy-ochre/20 shadow-flat">
+                <Icon className="h-8 w-8 text-sandy-ochre" />
               </div>
             </div>
           )}
@@ -93,24 +93,24 @@ export function PageHero({
           <div className="space-y-[var(--space-md)]">
             {badge && (
               <div className="flex justify-center">
-                <div className="px-base py-xs bg-brass-yellow/10 border border-brass-yellow/20 rounded-full text-body-sm font-medium text-brass-yellow">
+                <div className="px-base py-xs bg-sandy-ochre/10 border border-sandy-ochre/20 rounded-full text-body-sm font-medium text-sandy-ochre">
                   {badge}
                 </div>
               </div>
             )}
             
             {subtitle && (
-              <p className="text-body-sm uppercase tracking-wider font-medium text-case-hardened">
+              <p className="text-body-sm uppercase tracking-wider font-medium text-warning-amber">
                 {subtitle}
               </p>
             )}
             
-            <h1 className="text-heading-lg md:text-heading-xl lg:text-display-sm font-rajdhani font-bold text-gunmetal-black tracking-tight leading-tight">
+            <h1 className="text-heading-lg md:text-heading-xl lg:text-display-sm font-rajdhani font-bold text-dark-chocolate tracking-tight leading-tight">
               {title}
             </h1>
             
             {description && (
-              <p className="text-body-lg text-case-hardened font-noto-sans leading-relaxed max-w-2xl mx-auto">
+              <p className="text-body-lg text-warning-amber font-noto-sans leading-relaxed max-w-2xl mx-auto">
                 {description}
               </p>
             )}
@@ -147,7 +147,7 @@ export function PageHero({
           {showScrollIndicator && (
             <div className="flex justify-center pt-[var(--space-lg)]">
               <div className="animate-bounce">
-                <ChevronDown className="h-6 w-6 text-case-hardened/60" />
+                <ChevronDown className="h-6 w-6 text-warning-amber/60" />
               </div>
             </div>
           )}

@@ -61,9 +61,6 @@ const preview: Preview = {
       },
     },
   },
-  globals: {
-    theme: 'light',
-  },
   globalTypes: {
     theme: {
       name: 'Theme',
@@ -88,6 +85,9 @@ const preview: Preview = {
       );
     },
   ],
+  initialGlobals: {
+    theme: 'light',
+  },
 };
 
 export default preview;

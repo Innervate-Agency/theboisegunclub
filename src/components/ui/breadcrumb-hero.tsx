@@ -17,12 +17,12 @@ const breadcrumbHeroVariants = cva(
         lg: "py-[var(--space-2xl)]"
       },
       backgroundPreset: {
-        warm: "bg-gradient-to-br from-range-white via-copper-orange/15 to-shooting-bench",
+        warm: "bg-gradient-to-br from-range-white via-rusty-orange/15 to-card-surface",
         cool: "bg-gradient-to-br from-range-white via-scope-blue/20 to-trigger-blue/10", 
-        mixed: "bg-gradient-to-br from-brass-yellow/15 via-scope-blue/12 to-copper-orange/18",
-        subtle: "bg-gradient-to-br from-white via-shooting-bench/50 to-range-white",
-        premium: "bg-gradient-to-br from-brass-yellow/12 via-copper-orange/15 to-range-white",
-        mesh: "bg-gradient-to-br from-brass-yellow/20 via-copper-orange/15 to-walnut-stock/12"
+        mixed: "bg-gradient-to-br from-sandy-ochre/15 via-scope-blue/12 to-rusty-orange/18",
+        subtle: "bg-gradient-to-br from-white via-card-surface/50 to-range-white",
+        premium: "bg-gradient-to-br from-sandy-ochre/12 via-rusty-orange/15 to-range-white",
+        mesh: "bg-gradient-to-br from-sandy-ochre/20 via-rusty-orange/15 to-walnut-stock/12"
       }
     },
     defaultVariants: {
@@ -82,7 +82,7 @@ export function BreadcrumbHero({
               <Button
                 variant="ghost"
                 size="sm"
-                className="shadow-flat -ml-[var(--space-xs)] text-case-hardened hover:text-gunmetal-black"
+                className="shadow-flat -ml-[var(--space-xs)] text-warning-amber hover:text-dark-chocolate"
                 onClick={() => window.location.href = backLink.href}
               >
                 <ArrowLeft className="h-4 w-4 mr-[var(--space-xs)]" />
@@ -98,22 +98,22 @@ export function BreadcrumbHero({
                 {index === 0 ? (
                   <a
                     href={item.href}
-                    className="flex items-center text-case-hardened hover:text-gunmetal-black transition-colors duration-150"
+                    className="flex items-center text-warning-amber hover:text-dark-chocolate transition-colors duration-150"
                   >
                     <Home className="h-4 w-4 mr-[var(--space-xs)]" />
                     {item.label}
                   </a>
                 ) : (
                   <>
-                    <ChevronRight className="h-4 w-4 text-case-hardened/60" />
+                    <ChevronRight className="h-4 w-4 text-warning-amber/60" />
                     {index === breadcrumbs.length - 1 ? (
-                      <span className="text-gunmetal-black font-medium">
+                      <span className="text-dark-chocolate font-medium">
                         {item.label}
                       </span>
                     ) : (
                       <a
                         href={item.href}
-                        className="text-case-hardened hover:text-gunmetal-black transition-colors duration-150"
+                        className="text-warning-amber hover:text-dark-chocolate transition-colors duration-150"
                       >
                         {item.label}
                       </a>
@@ -130,20 +130,20 @@ export function BreadcrumbHero({
               {/* Icon */}
               {Icon && (
                 <div className="flex-shrink-0">
-                  <div className="p-sm bg-brass-yellow/10 rounded-card border border-brass-yellow/20">
-                    <Icon className="h-6 w-6 text-brass-yellow" />
+                  <div className="p-sm bg-sandy-ochre/10 rounded-card border border-sandy-ochre/20">
+                    <Icon className="h-6 w-6 text-sandy-ochre" />
                   </div>
                 </div>
               )}
 
               {/* Title and Description */}
               <div className="flex-1 min-w-0">
-                <h1 className="text-heading-md md:text-heading-lg lg:text-heading-xl font-rajdhani font-bold text-gunmetal-black tracking-tight leading-tight">
+                <h1 className="text-heading-md md:text-heading-lg lg:text-heading-xl font-rajdhani font-bold text-dark-chocolate tracking-tight leading-tight">
                   {title}
                 </h1>
                 
                 {description && (
-                  <p className="text-body md:text-body-lg text-case-hardened font-noto-sans leading-relaxed mt-[var(--space-xs)] max-w-3xl">
+                  <p className="text-body md:text-body-lg text-warning-amber font-noto-sans leading-relaxed mt-[var(--space-xs)] max-w-3xl">
                     {description}
                   </p>
                 )}
@@ -157,7 +157,7 @@ export function BreadcrumbHero({
                   <Badge
                     key={index}
                     variant="default"
-                    className="bg-card/80 text-blued-steel border border-brass-yellow/20 shadow-flat"
+                    className="bg-card/80 text-blued-steel border border-sandy-ochre/20 shadow-flat"
                   >
                     {badge}
                   </Badge>

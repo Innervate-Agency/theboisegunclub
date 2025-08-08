@@ -91,8 +91,8 @@ export function StatsShowcase({
                   {/* Icon and Value */}
                   <div className="flex items-center justify-between">
                     {Icon && (
-                      <div className="p-xs bg-copper-orange/10 rounded-card">
-                        <Icon className="h-5 w-5 text-copper-orange" />
+                      <div className="p-xs bg-rusty-orange/10 rounded-card">
+                        <Icon className="h-5 w-5 text-rusty-orange" />
                       </div>
                     )}
                     
@@ -102,12 +102,12 @@ export function StatsShowcase({
                           <TrendingUp className="h-3 w-3 text-rifling-green" />
                         )}
                         {stat.change.trend === 'down' && (
-                          <TrendingDown className="h-3 w-3 text-copper-orange" />
+                          <TrendingDown className="h-3 w-3 text-rusty-orange" />
                         )}
                         <span className={cn(
                           "font-medium",
                           stat.change.trend === 'up' && "text-rifling-green",
-                          stat.change.trend === 'down' && "text-copper-orange",
+                          stat.change.trend === 'down' && "text-rusty-orange",
                           stat.change.trend === 'neutral' && "text-muted-foreground"
                         )}>
                           {stat.change.value}
@@ -118,7 +118,7 @@ export function StatsShowcase({
 
                   {/* Main Stat */}
                   <div className="space-y-[var(--space-micro)]">
-                    <div className="text-heading-lg font-rajdhani font-bold text-card-foreground group-hover:text-copper-orange transition-colors duration-200">
+                    <div className="text-heading-lg font-rajdhani font-bold text-card-foreground group-hover:text-rusty-orange transition-colors duration-200">
                       {typeof stat.value === 'number' ? stat.value.toLocaleString() : stat.value}
                     </div>
                     <div className="text-body-sm font-noto-sans font-medium text-muted-foreground">
@@ -135,7 +135,7 @@ export function StatsShowcase({
                 </div>
 
                 {/* Hover accent bar */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-copper-orange to-brass-yellow transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </div>
             )
           })}

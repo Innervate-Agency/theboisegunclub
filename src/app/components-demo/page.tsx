@@ -63,14 +63,14 @@ export default function ComponentsDemoPage() {
       {/* Demo Section */}
       <section id="demo" className="py-[var(--space-2xl)]">
         <div className="max-w-4xl mx-auto px-[var(--space-md)]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-md)]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
             
             {/* Dialog Demo */}
-            <Card className="p-[var(--space-md)]">
-              <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">Dialog</h3>
+            <Card className="p-md">
+              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">Dialog</h3>
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button className="w-full bg-brass-yellow text-gunmetal-black hover:bg-copper-orange">
+                  <Button className="w-full bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange">
                     Open Dialog
                   </Button>
                 </DialogTrigger>
@@ -82,21 +82,21 @@ export default function ComponentsDemoPage() {
                     </DialogDescription>
                   </DialogHeader>
                   <div className="py-[var(--space-base)]">
-                    <p className="text-sm text-case-hardened font-noto-sans">
+                    <p className="text-sm text-warning-amber font-noto-sans">
                       Content goes here. The background should be completely opaque and readable.
                     </p>
                   </div>
                   <DialogFooter>
                     <Button variant="secondary">Cancel</Button>
-                    <Button className="bg-brass-yellow text-gunmetal-black hover:bg-copper-orange">Save</Button>
+                    <Button className="bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange">Save</Button>
                   </DialogFooter>
                 </DialogContent>
               </Dialog>
             </Card>
 
             {/* Dropdown Menu Demo */}
-            <Card className="p-[var(--space-md)]">
-              <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">Dropdown Menu</h3>
+            <Card className="p-md">
+              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">Dropdown Menu</h3>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="secondary" className="w-full">
@@ -123,8 +123,8 @@ export default function ComponentsDemoPage() {
             </Card>
 
             {/* Select Demo */}
-            <Card className="p-[var(--space-md)]">
-              <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">Select</h3>
+            <Card className="p-md">
+              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">Select</h3>
               <Select value={selectedValue} onValueChange={setSelectedValue}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select an option" />
@@ -139,8 +139,8 @@ export default function ComponentsDemoPage() {
             </Card>
 
             {/* Popover Demo */}
-            <Card className="p-[var(--space-md)]">
-              <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">Popover</h3>
+            <Card className="p-md">
+              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">Popover</h3>
               <Popover>
                 <PopoverTrigger asChild>
                   <Button variant="secondary" className="w-full">
@@ -150,10 +150,10 @@ export default function ComponentsDemoPage() {
                 <PopoverContent>
                   <div className="space-y-[var(--space-xs)]">
                     <h4 className="font-rajdhani font-semibold">Popover Content</h4>
-                    <p className="text-sm text-case-hardened font-noto-sans">
+                    <p className="text-sm text-warning-amber font-noto-sans">
                       This popover should have a solid background and be clearly readable.
                     </p>
-                    <Button size="sm" className="w-full bg-brass-yellow text-gunmetal-black hover:bg-copper-orange">
+                    <Button size="sm" className="w-full bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange">
                       Action Button
                     </Button>
                   </div>
@@ -162,8 +162,8 @@ export default function ComponentsDemoPage() {
             </Card>
 
             {/* Tooltip Demo */}
-            <Card className="p-[var(--space-md)]">
-              <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">Tooltip</h3>
+            <Card className="p-md">
+              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">Tooltip</h3>
               <div className="flex justify-center">
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -180,8 +180,8 @@ export default function ComponentsDemoPage() {
             </Card>
 
             {/* Sheet Demo */}
-            <Card className="p-[var(--space-md)]">
-              <h3 className="text-lg font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">Sheet</h3>
+            <Card className="p-md">
+              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">Sheet</h3>
               <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="secondary" className="w-full">
@@ -197,7 +197,7 @@ export default function ComponentsDemoPage() {
                     </SheetDescription>
                   </SheetHeader>
                   <div className="py-[var(--space-base)] space-y-[var(--space-base)]">
-                    <Button className="w-full bg-brass-yellow text-gunmetal-black hover:bg-copper-orange">
+                    <Button className="w-full bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange">
                       Primary Action
                     </Button>
                     <Button variant="secondary" className="w-full">
@@ -211,8 +211,8 @@ export default function ComponentsDemoPage() {
           </div>
 
           {/* Status Section */}
-          <div className="mt-[var(--space-2xl)] p-[var(--space-lg)] bg-gradient-card-warm rounded-lg border border-brass-yellow/20">
-            <h3 className="text-xl font-rajdhani font-bold text-gunmetal-black mb-[var(--space-base)]">
+          <div className="mt-[var(--space-2xl)] p-[var(--space-lg)] bg-gradient-card-warm rounded-lg border border-sandy-ochre/20">
+            <h3 className="text-xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
               Component Status
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)] text-sm font-noto-sans">

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 
@@ -20,19 +20,19 @@ const gradients = [
   {
     name: 'Fire Gradient',
     description: 'Primary brand gradient for CTAs and premium features',
-    classes: 'from-copper-orange to-brass-yellow',
+    classes: 'from-rusty-orange to-sandy-ochre',
     usage: 'Buttons, hover effects, fire animations, premium accents'
   },
   {
     name: 'Ocean to Forest',
     description: 'Blue to green transition for nature/outdoor themes',
-    classes: 'from-ayu-blue to-ayu-green',
+    classes: 'from-slate-blue to-ayu-green',
     usage: 'Backgrounds, event categories, outdoor sections'
   },
   {
     name: 'Sunset Blaze',
     description: 'Orange to purple for dramatic sections',
-    classes: 'from-copper-orange to-ayu-purple',
+    classes: 'from-rusty-orange to-ayu-purple',
     usage: 'Hero sections, featured content, dramatic backgrounds'
   },
   {
@@ -59,7 +59,7 @@ export const Default: Story = {
   render: () => (
     <div className="max-w-6xl mx-auto p-xl space-y-xl">
       <div className="text-center space-y-base">
-        <Badge className="bg-copper-orange/20 text-copper-orange border-copper-orange/30">
+        <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
           Design System
         </Badge>
         <h1 className="font-rajdhani text-4xl font-bold text-card-foreground">
@@ -114,7 +114,7 @@ export const Default: Story = {
             {gradients.map((gradient, index) => (
               <button
                 key={index}
-                className={`px-lg py-base rounded-md font-rajdhani font-bold text-gunmetal-black bg-gradient-to-r ${gradient.classes} hover:scale-105 transition-transform`}
+                className={`px-lg py-base rounded-md font-rajdhani font-bold text-dark-chocolate bg-gradient-to-r ${gradient.classes} hover:scale-105 transition-transform`}
               >
                 {gradient.name}
               </button>

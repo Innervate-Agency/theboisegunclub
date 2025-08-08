@@ -141,11 +141,11 @@ export const Premium: Story = {
               <div className="row-span-3">
                 <NavigationMenuLink
                   variant="premium"
-                  className="flex h-full w-full select-none flex-col justify-end rounded-input bg-gradient-to-b from-brass-yellow/20 to-copper-orange/20 p-md no-underline outline-none focus:shadow-elevated"
+                  className="flex h-full w-full select-none flex-col justify-end rounded-input bg-gradient-to-b from-sandy-ochre/20 to-rusty-orange/20 p-md no-underline outline-none focus:shadow-elevated"
                   href="/"
                 >
-                  <Trophy className="h-6 w-6 text-brass-yellow" />
-                  <div className="mb-xs mt-base text-body-lg font-medium text-brass-yellow">
+                  <Trophy className="h-6 w-6 text-sandy-ochre" />
+                  <div className="mb-xs mt-base text-body-lg font-medium text-sandy-ochre">
                     Elite Championships
                   </div>
                   <p className="text-body-sm leading-tight text-muted-foreground">
@@ -183,28 +183,28 @@ export const Premium: Story = {
           <NavigationMenuContent>
             <div className="grid w-[400px] gap-sm p-base md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               <NavigationMenuLink variant="premium" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
-                <Calendar className="h-4 w-4 mb-xs text-brass-yellow" />
+                <Calendar className="h-4 w-4 mb-xs text-sandy-ochre" />
                 <div className="text-body-sm font-medium leading-none">Event Calendar</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   Complete calendar of tournaments and events.
                 </p>
               </NavigationMenuLink>
               <NavigationMenuLink variant="premium" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
-                <Users className="h-4 w-4 mb-xs text-brass-yellow" />
+                <Users className="h-4 w-4 mb-xs text-sandy-ochre" />
                 <div className="text-body-sm font-medium leading-none">Registration</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   Event registration and payment processing.
                 </p>
               </NavigationMenuLink>
               <NavigationMenuLink variant="premium" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
-                <Target className="h-4 w-4 mb-xs text-brass-yellow" />
+                <Target className="h-4 w-4 mb-xs text-sandy-ochre" />
                 <div className="text-body-sm font-medium leading-none">Range Schedule</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   Range availability and booking system.
                 </p>
               </NavigationMenuLink>
               <NavigationMenuLink variant="premium" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
-                <Settings className="h-4 w-4 mb-xs text-brass-yellow" />
+                <Settings className="h-4 w-4 mb-xs text-sandy-ochre" />
                 <div className="text-body-sm font-medium leading-none">My Schedule</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   Personal event schedule and reminders.
@@ -340,11 +340,11 @@ export const Tournament: Story = {
                 <div className="row-span-3">
                   <NavigationMenuLink
                     variant="tournament"
-                    className="flex h-full w-full select-none flex-col justify-end rounded-input bg-gradient-to-b from-slate-800/90 to-slate-700/90 p-md no-underline outline-none focus:shadow-elevated border border-brass-yellow/30"
+                    className="flex h-full w-full select-none flex-col justify-end rounded-input bg-gradient-to-b from-slate-800/90 to-slate-700/90 p-md no-underline outline-none focus:shadow-elevated border border-sandy-ochre/30"
                     href="/"
                   >
-                    <Trophy className="h-6 w-6 text-brass-yellow" />
-                    <div className="mb-xs mt-base text-body-lg font-medium text-brass-yellow">
+                    <Trophy className="h-6 w-6 text-sandy-ochre" />
+                    <div className="mb-xs mt-base text-body-lg font-medium text-sandy-ochre">
                       Elite Tournament System
                     </div>
                     <p className="text-body-sm leading-tight text-nickel-white/80">
@@ -382,28 +382,28 @@ export const Tournament: Story = {
             <NavigationMenuContent>
               <div className="grid w-[400px] gap-sm p-base md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 <NavigationMenuLink variant="tournament" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
-                  <Users className="h-4 w-4 mb-xs text-brass-yellow" />
+                  <Users className="h-4 w-4 mb-xs text-sandy-ochre" />
                   <div className="text-body-sm font-medium leading-none">Registration</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-stainless-steel">
                     Elite competitor registration system.
                   </p>
                 </NavigationMenuLink>
                 <NavigationMenuLink variant="tournament" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
-                  <Target className="h-4 w-4 mb-xs text-brass-yellow" />
+                  <Target className="h-4 w-4 mb-xs text-sandy-ochre" />
                   <div className="text-body-sm font-medium leading-none">Squad Assignments</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-stainless-steel">
                     Professional squad management system.
                   </p>
                 </NavigationMenuLink>
                 <NavigationMenuLink variant="tournament" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
-                  <FileText className="h-4 w-4 mb-xs text-brass-yellow" />
+                  <FileText className="h-4 w-4 mb-xs text-sandy-ochre" />
                   <div className="text-body-sm font-medium leading-none">Score Cards</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-stainless-steel">
                     Digital scorecards and results tracking.
                   </p>
                 </NavigationMenuLink>
                 <NavigationMenuLink variant="tournament" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
-                  <Trophy className="h-4 w-4 mb-xs text-brass-yellow" />
+                  <Trophy className="h-4 w-4 mb-xs text-sandy-ochre" />
                   <div className="text-body-sm font-medium leading-none">Awards</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-stainless-steel">
                     Championship awards and recognition.

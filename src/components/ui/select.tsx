@@ -17,7 +17,7 @@ const selectTriggerVariants = cva(
     variants: {
       variant: {
         default: "bg-background border-border hover:bg-accent/50",
-        premium: "bg-background border-brass-yellow/30 hover:bg-brass-yellow/10 focus-visible:border-brass-yellow",
+        premium: "bg-background border-sandy-ochre/30 hover:bg-sandy-ochre/10 focus-visible:border-sandy-ochre",
         glass: "mica-card border-border/50 hover:bg-background/80",
         outline: "bg-transparent border-border hover:bg-accent/50",
         filled: "bg-muted border-transparent hover:bg-muted/80",

@@ -15,8 +15,8 @@ const badgeVariants = cva(
         success: "border border-bore-sight-green/30 bg-bore-sight-green/10 text-bore-sight-green hover:bg-bore-sight-green/20",
         warning: "border border-sight-gold/30 bg-sight-gold/10 text-sight-gold hover:bg-sight-gold/20",
         info: "border border-scope-blue/30 bg-scope-blue/10 text-scope-blue hover:bg-scope-blue/20",
-        premium: "border border-brass-yellow/30 bg-brass-yellow/10 text-brass-yellow hover:bg-brass-yellow/20",
-        elite: "border border-copper-orange/30 bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20",
+        premium: "border border-sandy-ochre/30 bg-sandy-ochre/10 text-sandy-ochre hover:bg-sandy-ochre/20",
+        elite: "border border-rusty-orange/30 bg-rusty-orange/10 text-rusty-orange hover:bg-rusty-orange/20",
         flat: "border-transparent bg-muted text-muted-foreground",
       },
       size: {

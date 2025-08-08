@@ -37,9 +37,9 @@ const navigationItemVariants = cva(
   {
     variants: {
       variant: {
-        glass: "text-card-foreground hover:bg-card/50 hover:text-copper-orange",
-        solid: "text-card-foreground hover:bg-copper-orange/10 hover:text-copper-orange",
-        minimal: "text-card-foreground hover:text-copper-orange"
+        glass: "text-card-foreground hover:bg-card/50 hover:text-rusty-orange",
+        solid: "text-card-foreground hover:bg-rusty-orange/10 hover:text-rusty-orange",
+        minimal: "text-card-foreground hover:text-rusty-orange"
       },
       active: {
         true: "",
@@ -54,17 +54,17 @@ const navigationItemVariants = cva(
       {
         variant: "glass",
         active: true,
-        class: "bg-brass-yellow/20 text-brass-yellow shadow-flat"
+        class: "bg-sandy-ochre/20 text-sandy-ochre shadow-flat"
       },
       {
         variant: "solid",
         active: true,
-        class: "bg-copper-orange text-card-foreground shadow-flat"
+        class: "bg-rusty-orange text-card-foreground shadow-flat"
       },
       {
         variant: "minimal",
         active: true,
-        class: "text-brass-yellow border-b-2 border-brass-yellow"
+        class: "text-sandy-ochre border-b-2 border-sandy-ochre"
       }
     ],
     defaultVariants: {
@@ -118,7 +118,7 @@ export function NavigationFusion({
     >
       {/* Glass morphism effect overlay */}
       {variant === "glass" && (
-        <div className="absolute inset-0 bg-gradient-to-r from-brass-yellow/5 via-transparent to-copper-orange/5 rounded-inherit" />
+        <div className="absolute inset-0 bg-gradient-to-r from-sandy-ochre/5 via-transparent to-rusty-orange/5 rounded-inherit" />
       )}
       
       {/* Navigation Items */}
@@ -147,7 +147,7 @@ export function NavigationFusion({
             >
               {/* Active item background effect */}
               {isActive && variant === "glass" && (
-                <div className="absolute inset-0 bg-gradient-to-r from-brass-yellow/20 to-copper-orange/20 rounded-card" />
+                <div className="absolute inset-0 bg-gradient-to-r from-sandy-ochre/20 to-rusty-orange/20 rounded-card" />
               )}
               
               {/* Icon */}
@@ -166,7 +166,7 @@ export function NavigationFusion({
               </span>
               
               {/* Hover effect */}
-              <div className="absolute inset-0 bg-brass-yellow/10 rounded-card opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+              <div className="absolute inset-0 bg-sandy-ochre/10 rounded-card opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
             </button>
           )
         })}
@@ -181,7 +181,7 @@ export function NavigationFusion({
               className={cn(
                 "flex-1 transition-all duration-300",
                 item.active 
-                  ? "bg-brass-yellow" 
+                  ? "bg-sandy-ochre" 
                   : "bg-transparent"
               )}
             />

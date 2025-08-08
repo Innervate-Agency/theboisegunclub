@@ -65,7 +65,7 @@ function DialogContent({
         )}
         {...props}
       >
-        <div className="mica-modal text-card-foreground w-full max-w-[calc(100%-2rem)] sm:max-w-lg grid gap-[var(--space-base)] rounded-card p-[var(--space-md)] data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 relative">
+        <div className="mica-modal text-card-foreground w-full max-w-[calc(100%-2rem)] sm:max-w-lg grid gap-[var(--space-base)] rounded-card p-md data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 relative">
           {children}
           {showCloseButton && (
             <DialogPrimitive.Close
