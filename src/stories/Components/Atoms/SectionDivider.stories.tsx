@@ -15,7 +15,7 @@ const meta: Meta<typeof SectionDivider> = {
       default: 'light',
       values: [
         { name: 'light', value: '#ffffff' },
-        { name: 'dark', value: '#0a0a0a' },
+        { name: 'dark', value: '#000000' },
         { name: 'gray', value: '#f8f9fa' },
       ],
     },

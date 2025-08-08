@@ -20,13 +20,13 @@ const vendorCardVariants = cva(
         free: "shadow-flat hover:shadow-md",
         
         // COPPER: Enhanced copper presence - subtle background tint with prominent gradient accent
-        copper: "shadow-flat hover:shadow-md bg-copper-orange/[0.02] hover:bg-copper-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-copper-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        copper: "shadow-flat hover:shadow-md bg-rusty-orange/[0.02] hover:bg-rusty-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
         // SILVER: Consistent default shadows with subtle cobalt glassmorphism
         silver: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-ayu-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-ayu-blue/8 dark:before:to-scope-blue/6 before:rounded-card before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-blue after:to-tactical-gray after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg",
         
         // GOLD: Consistent default shadows with premium mica glassmorphism features
-        gold: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-tactical-gray/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-brass-yellow/10 before:via-transparent before:to-copper-orange/8 dark:before:from-brass-yellow/14 dark:before:to-copper-orange/12 before:rounded-card before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
+        gold: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-tactical-gray/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-rusty-orange/14 dark:before:to-rusty-orange/12 before:rounded-card before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-rusty-orange after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
       },
       size: {
         sm: "p-base",           // 16px - compact cards
@@ -119,7 +119,7 @@ export function VendorCard({
           </Avatar>
           
           <div className="space-y-[var(--space-micro)] flex-1">
-            <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground leading-tight transition-colors duration-200 group-hover:text-copper-orange">
+            <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground leading-tight transition-colors duration-200 group-hover:text-rusty-orange">
               {businessName}
             </h3>
             <p className="text-body-sm text-muted-foreground leading-tight">{businessType}</p>
@@ -186,7 +186,7 @@ export function VendorCard({
                 className={cn(
                   "w-icon-sm h-icon-sm",
                   star <= rating 
-                    ? "fill-brass-yellow text-brass-yellow" 
+                    ? "fill-rusty-orange text-rusty-orange" 
                     : "text-muted-foreground"
                 )}
               />
@@ -236,7 +236,7 @@ export function VendorCard({
         <Button 
           size="sm" 
           variant="solid-accent"
-          className="flex-1 bg-shooting-bench text-card-foreground border-0 shadow-none hover:bg-shooting-bench/80 group-hover:!bg-brass-yellow group-hover:!text-primary transition-all duration-300"
+          className="flex-1 bg-shooting-bench text-card-foreground border-0 shadow-none hover:bg-shooting-bench/80 group-hover:!bg-rusty-orange group-hover:!text-primary transition-all duration-300"
         >
           View Details
         </Button>

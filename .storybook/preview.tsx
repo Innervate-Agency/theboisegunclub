@@ -39,15 +39,15 @@ const preview: Preview = {
       values: [
         {
           name: 'tbgc-light',
-          value: '#f8f6f1', // range-white from design system
+          value: '#F2D4D6', // light-peachy from design system
         },
         {
           name: 'tbgc-dark', 
-          value: '#2F3135', // night-sight from design system
+          value: '#260F07', // dark-chocolate from design system
         },
         {
-          name: 'shooting-bench',
-          value: '#ede7de', // shooting-bench from design system
+          name: 'rich-loam',
+          value: '#311A0E', // rich-loam from design system
         },
         {
           name: 'white',

@@ -174,9 +174,9 @@ const businessTypes = [
 ]
 
 const tierFilters = [
-  { label: "Gold Partners", value: "gold", count: directoryListings.filter(b => b.tier === "gold").length, color: "brass-yellow" },
+  { label: "Gold Partners", value: "gold", count: directoryListings.filter(b => b.tier === "gold").length, color: "rusty-orange" },
   { label: "Silver Members", value: "silver", count: directoryListings.filter(b => b.tier === "silver").length, color: "stainless-steel" },
-  { label: "Copper Members", value: "copper", count: directoryListings.filter(b => b.tier === "copper").length, color: "copper-orange" },
+  { label: "Copper Members", value: "copper", count: directoryListings.filter(b => b.tier === "copper").length, color: "rusty-orange" },
   { label: "Free Listings", value: "free", count: directoryListings.filter(b => b.tier === "free").length, color: "muted-foreground" }
 ]
 
@@ -217,16 +217,16 @@ export default function DirectoryPage() {
       <SiteNavigation variant="premium" sticky={true} />
       <div className="min-h-screen bg-background">
         {/* Breadcrumb Hero - Left Aligned */}
-        <section className="bg-gradient-to-r from-gunmetal-black/95 to-tactical-gray/90 border-b border-border/20">
+        <section className="bg-gradient-to-r from-dark-chocolate/95 to-tactical-gray/90 border-b border-border/20">
           <div className="container mx-auto max-w-7xl px-md py-lg">
             <div className="flex items-center gap-xs text-sm text-range-white/60 mb-base">
               <span>Home</span>
               <ChevronRight className="h-4 w-4" />
-              <span className="text-brass-yellow">Directory</span>
+              <span className="text-rusty-orange">Directory</span>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-center">
               <div className="lg:col-span-2 space-y-base">
-                <Badge className="bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30 w-fit">
+                <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30 w-fit">
                   <Building2 className="h-4 w-4 mr-xs" />
                   Business Directory
                 </Badge>
@@ -239,7 +239,7 @@ export default function DirectoryPage() {
                 <div className="flex gap-base">
                   <Button 
                     size="lg" 
-                    className="bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black hover:from-copper-orange hover:to-brass-yellow font-rajdhani font-bold"
+                    className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
                   >
                     <Plus className="h-4 w-4 mr-xs" />
                     List Your Business
@@ -247,7 +247,7 @@ export default function DirectoryPage() {
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black"
+                    className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
                   >
                     Partnership Info
                   </Button>
@@ -256,15 +256,15 @@ export default function DirectoryPage() {
               
               {/* Featured Business Spotlight */}
               <div className="lg:col-span-1">
-                <Card className="bg-white/5 border-brass-yellow/30 hover:bg-white/10 transition-all duration-300">
+                <Card className="bg-white/5 border-rusty-orange/30 hover:bg-white/10 transition-all duration-300">
                   <CardHeader className="pb-xs">
                     <div className="flex items-center justify-between">
-                      <Badge className="bg-brass-yellow text-gunmetal-black font-rajdhani font-bold">
+                      <Badge className="bg-rusty-orange text-dark-chocolate font-rajdhani font-bold">
                         <Award className="h-3 w-3 mr-xs" />
                         Gold Partner
                       </Badge>
                       <div className="flex items-center gap-xs text-xs text-range-white/60">
-                        <Star className="h-3 w-3 fill-brass-yellow text-brass-yellow" />
+                        <Star className="h-3 w-3 fill-rusty-orange text-rusty-orange" />
                         <span>4.8</span>
                       </div>
                     </div>
@@ -277,7 +277,7 @@ export default function DirectoryPage() {
                         <TrendingUp className="h-3 w-3" />
                         <span>245 leads this month</span>
                       </div>
-                      <Button variant="ghost" size="sm" className="text-brass-yellow hover:text-copper-orange p-0">
+                      <Button variant="ghost" size="sm" className="text-rusty-orange hover:text-rusty-orange p-0">
                         View Details <ArrowRight className="h-3 w-3 ml-xs" />
                       </Button>
                     </div>
@@ -323,11 +323,11 @@ export default function DirectoryPage() {
               <div className="space-y-base">
                 <div className="grid grid-cols-2 lg:grid-cols-1 gap-base">
                   <div className="text-center p-base bg-card rounded-button border">
-                    <div className="font-rajdhani text-2xl font-bold text-brass-yellow">127+</div>
+                    <div className="font-rajdhani text-2xl font-bold text-rusty-orange">127+</div>
                     <div className="text-sm text-muted-foreground">Local Businesses</div>
                   </div>
                   <div className="text-center p-base bg-card rounded-button border">
-                    <div className="font-rajdhani text-2xl font-bold text-copper-orange">4.6</div>
+                    <div className="font-rajdhani text-2xl font-bold text-rusty-orange">4.6</div>
                     <div className="text-sm text-muted-foreground">Average Rating</div>
                   </div>
                 </div>
@@ -349,8 +349,8 @@ export default function DirectoryPage() {
                     size="sm"
                     onClick={() => setSelectedType(type.value)}
                     className={selectedType === type.value ? 
-                      "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange" : 
-                      "border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black"
+                      "bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange" : 
+                      "border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
                     }
                   >
                     {type.label}
@@ -373,7 +373,7 @@ export default function DirectoryPage() {
               <div className="space-y-base">
                 <div className="flex items-center justify-between">
                   <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">Partnership Tiers</h2>
-                  <Button variant="ghost" className="text-brass-yellow hover:text-copper-orange">
+                  <Button variant="ghost" className="text-rusty-orange hover:text-rusty-orange">
                     View All <ArrowRight className="h-4 w-4 ml-xs" />
                   </Button>
                 </div>
@@ -395,7 +395,7 @@ export default function DirectoryPage() {
                           variant="ghost" 
                           size="sm"
                           onClick={() => setSelectedTier(tier.value)}
-                          className="text-brass-yellow hover:text-copper-orange"
+                          className="text-rusty-orange hover:text-rusty-orange"
                         >
                           Browse
                         </Button>
@@ -409,11 +409,11 @@ export default function DirectoryPage() {
               <div className="space-y-base">
                 <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">Why Choose Directory Partners</h2>
                 
-                <Card className="p-lg bg-gradient-to-br from-brass-yellow/5 to-copper-orange/5">
+                <Card className="p-lg bg-gradient-to-br from-rusty-orange/5 to-rusty-orange/5">
                   <div className="space-y-base">
                     <div className="flex items-center gap-base">
-                      <div className="bg-brass-yellow/20 p-base rounded-full">
-                        <CheckCircle className="h-6 w-6 text-brass-yellow" />
+                      <div className="bg-rusty-orange/20 p-base rounded-full">
+                        <CheckCircle className="h-6 w-6 text-rusty-orange" />
                       </div>
                       <div>
                         <div className="font-rajdhani text-2xl font-bold text-card-foreground">100%</div>
@@ -435,7 +435,7 @@ export default function DirectoryPage() {
                   ].map((feature, i) => (
                     <Card key={i} className="p-base">
                       <div className="flex items-center gap-base">
-                        <feature.icon className="h-5 w-5 text-brass-yellow" />
+                        <feature.icon className="h-5 w-5 text-rusty-orange" />
                         <div>
                           <h4 className="font-medium text-sm">{feature.label}</h4>
                           <div className="text-xs text-muted-foreground">{feature.desc}</div>
@@ -511,7 +511,7 @@ export default function DirectoryPage() {
                       setSelectedTier("all")
                       setSearchQuery("")
                     }}
-                    className="bg-brass-yellow text-gunmetal-black hover:bg-copper-orange"
+                    className="bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange"
                   >
                     Show All Businesses
                   </Button>
@@ -523,28 +523,28 @@ export default function DirectoryPage() {
       </section>
 
       {/* Partnership CTA */}
-      <section className="py-6xl bg-gradient-to-br from-gunmetal-black/95 to-tactical-gray/90">
+      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-tactical-gray/90">
         <div className="container mx-auto max-w-4xl px-md text-center">
           <div className="space-y-lg">
-            <Badge className="bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30">
+            <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
               <Shield className="h-4 w-4 mr-xs" />
               Partnership Program
             </Badge>
             <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-range-white">
-              Join as a <span className="text-brass-yellow">Partner</span>
+              Join as a <span className="text-rusty-orange">Partner</span>
             </h2>
             <p className="text-body-lg text-range-white/80 max-w-2xl mx-auto">
               Get enhanced visibility, lead generation, and exclusive benefits in Treasure Valley's premier firearms business directory. Multiple partnership tiers available.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-base text-left">
-              <Card className="p-lg bg-white/5 border-brass-yellow/20">
+              <Card className="p-lg bg-white/5 border-rusty-orange/20">
                 <CardHeader className="pb-base">
-                  <CardTitle className="text-brass-yellow font-rajdhani">Gold Partner</CardTitle>
+                  <CardTitle className="text-rusty-orange font-rajdhani">Gold Partner</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-xs text-range-white/80">
-                  <div className="flex items-center gap-xs"><Shield className="h-4 w-4 text-brass-yellow" /> Enhanced listing with priority placement</div>
-                  <div className="flex items-center gap-xs"><TrendingUp className="h-4 w-4 text-brass-yellow" /> Lead generation tracking</div>
-                  <div className="flex items-center gap-xs"><Star className="h-4 w-4 text-brass-yellow" /> Sponsored badge and featured placement</div>
+                  <div className="flex items-center gap-xs"><Shield className="h-4 w-4 text-rusty-orange" /> Enhanced listing with priority placement</div>
+                  <div className="flex items-center gap-xs"><TrendingUp className="h-4 w-4 text-rusty-orange" /> Lead generation tracking</div>
+                  <div className="flex items-center gap-xs"><Star className="h-4 w-4 text-rusty-orange" /> Sponsored badge and featured placement</div>
                 </CardContent>
               </Card>
               <Card className="p-lg bg-white/5 border-stainless-steel/20">
@@ -557,21 +557,21 @@ export default function DirectoryPage() {
                   <div className="flex items-center gap-xs"><MapPin className="h-4 w-4 text-stainless-steel" /> Map integration and hours display</div>
                 </CardContent>
               </Card>
-              <Card className="p-lg bg-white/5 border-copper-orange/20">
+              <Card className="p-lg bg-white/5 border-rusty-orange/20">
                 <CardHeader className="pb-base">
-                  <CardTitle className="text-copper-orange font-rajdhani">Copper Member</CardTitle>
+                  <CardTitle className="text-rusty-orange font-rajdhani">Copper Member</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-xs text-range-white/80">
-                  <div className="flex items-center gap-xs"><Building2 className="h-4 w-4 text-copper-orange" /> Standard enhanced listing</div>
-                  <div className="flex items-center gap-xs"><Phone className="h-4 w-4 text-copper-orange" /> Contact information display</div>
-                  <div className="flex items-center gap-xs"><Target className="h-4 w-4 text-copper-orange" /> Specialty tags and categories</div>
+                  <div className="flex items-center gap-xs"><Building2 className="h-4 w-4 text-rusty-orange" /> Standard enhanced listing</div>
+                  <div className="flex items-center gap-xs"><Phone className="h-4 w-4 text-rusty-orange" /> Contact information display</div>
+                  <div className="flex items-center gap-xs"><Target className="h-4 w-4 text-rusty-orange" /> Specialty tags and categories</div>
                 </CardContent>
               </Card>
             </div>
             <div className="flex flex-col sm:flex-row gap-base justify-center">
               <Button 
                 size="xl" 
-                className="bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black hover:from-copper-orange hover:to-brass-yellow font-rajdhani font-bold"
+                className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
               >
                 Start Partnership
                 <ArrowRight className="h-5 w-5 ml-xs" />
@@ -579,7 +579,7 @@ export default function DirectoryPage() {
               <Button 
                 variant="outline" 
                 size="xl"
-                className="border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black"
+                className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
               >
                 View Pricing
               </Button>

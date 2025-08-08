@@ -54,7 +54,7 @@ const directoryData = {
   imageSrc: '/images/Fractal/1.webp',
   imageAlt: 'Abstract fractal image representing a network.',
   glowColor1: '#3F6331',
-  glowColor2: '#F28705',
+  glowColor2: '#FF00FF',
   accentColor: '#3F6331',
 };
 
@@ -72,9 +72,9 @@ const calendarData = {
   ],
   imageSrc: '/images/Fractal/2.webp',
   imageAlt: 'Abstract fractal image representing a timeline.',
-  glowColor1: '#009FED',
+  glowColor1: '#FF00FF',
   glowColor2: '#75B700',
-  accentColor: '#009FED',
+  accentColor: '#FF00FF',
 };
 
 const communityData = {
@@ -91,9 +91,9 @@ const communityData = {
   ],
   imageSrc: '/images/Fractal/3.webp',
   imageAlt: 'Abstract fractal image representing connections.',
-  glowColor1: '#6E5083',
+  glowColor1: '#FF00FF',
   glowColor2: '#FF3B49',
-  accentColor: '#6E5083',
+  accentColor: '#FF00FF',
 };
 
 export default function HomePage() {

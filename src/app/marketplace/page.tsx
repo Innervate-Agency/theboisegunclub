@@ -250,8 +250,8 @@ const priceRanges = [
 
 function ProductCard({ item }: { item: typeof marketplaceListings[0] }) {
   const categoryColors = {
-    "Handguns": "bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30",
-    "Rifles": "bg-copper-orange/20 text-copper-orange border-copper-orange/30",
+    "Handguns": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30",
+    "Rifles": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30",
     "Ammunition": "bg-rifling-green/20 text-rifling-green border-rifling-green/30",
     "Optics": "bg-scope-blue/20 text-scope-blue border-scope-blue/30",
     "Accessories": "bg-ayu-purple/20 text-ayu-purple border-ayu-purple/30",
@@ -260,8 +260,8 @@ function ProductCard({ item }: { item: typeof marketplaceListings[0] }) {
 
   const conditionColors = {
     "New": "bg-clubhouse-lawn-green/20 text-clubhouse-lawn-green border-clubhouse-lawn-green/30",
-    "Like New": "bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30",
-    "Excellent": "bg-copper-orange/20 text-copper-orange border-copper-orange/30",
+    "Like New": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30",
+    "Excellent": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30",
     "Good": "bg-case-hardened/20 text-case-hardened border-case-hardened/30"
   }
 
@@ -270,7 +270,7 @@ function ProductCard({ item }: { item: typeof marketplaceListings[0] }) {
 
   return (
     <Card className={`group hover:shadow-lg transition-all duration-300 ${
-      item.featured ? 'ring-2 ring-brass-yellow/30 bg-brass-yellow/5' : ''
+      item.featured ? 'ring-2 ring-rusty-orange/30 bg-rusty-orange/5' : ''
     }`}>
       <CardHeader className="pb-base">
         <div className="flex items-start justify-between gap-base mb-xs">
@@ -284,7 +284,7 @@ function ProductCard({ item }: { item: typeof marketplaceListings[0] }) {
           </div>
           <div className="text-right">
             {item.featured && (
-              <Badge className="bg-brass-yellow text-gunmetal-black font-rajdhani font-bold mb-xs">
+              <Badge className="bg-rusty-orange text-dark-chocolate font-rajdhani font-bold mb-xs">
                 Featured
               </Badge>
             )}
@@ -296,13 +296,13 @@ function ProductCard({ item }: { item: typeof marketplaceListings[0] }) {
           </div>
         </div>
         
-        <CardTitle className="font-rajdhani text-xl font-bold text-card-foreground group-hover:text-brass-yellow transition-colors duration-200 leading-tight">
+        <CardTitle className="font-rajdhani text-xl font-bold text-card-foreground group-hover:text-rusty-orange transition-colors duration-200 leading-tight">
           {item.title}
         </CardTitle>
         
         <div className="flex items-center gap-base">
           <div className="flex items-baseline gap-xs">
-            <span className="text-2xl font-rajdhani font-bold text-brass-yellow">
+            <span className="text-2xl font-rajdhani font-bold text-rusty-orange">
               ${item.price}
             </span>
             {item.originalPrice > item.price && (
@@ -351,10 +351,10 @@ function ProductCard({ item }: { item: typeof marketplaceListings[0] }) {
         <div className="pt-xs border-t border-border space-y-xs">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-xs">
-              <Store className="h-4 w-4 text-brass-yellow" />
+              <Store className="h-4 w-4 text-rusty-orange" />
               <span className="font-medium text-sm">{item.vendor}</span>
               <div className="flex items-center gap-xs">
-                <Star className="h-3 w-3 fill-brass-yellow text-brass-yellow" />
+                <Star className="h-3 w-3 fill-rusty-orange text-rusty-orange" />
                 <span className="text-xs text-muted-foreground">{item.vendorRating}</span>
               </div>
             </div>
@@ -377,7 +377,7 @@ function ProductCard({ item }: { item: typeof marketplaceListings[0] }) {
         
         <div className="flex gap-xs pt-xs">
           <Button 
-            className="flex-1 bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black hover:from-copper-orange hover:to-brass-yellow font-rajdhani font-bold"
+            className="flex-1 bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
             size="sm"
           >
             <Phone className="h-4 w-4 mr-xs" />
@@ -428,16 +428,16 @@ export default function MarketplacePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gunmetal-black/95 to-tactical-gray/90 px-md py-6xl">
-        <div className="absolute inset-0 bg-gradient-to-br from-brass-yellow/5 via-transparent to-copper-orange/8 pointer-events-none"></div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-tactical-gray/90 px-md py-6xl">
+        <div className="absolute inset-0 bg-gradient-to-br from-rusty-orange/5 via-transparent to-rusty-orange/8 pointer-events-none"></div>
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center space-y-lg">
-            <Badge className="bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30">
+            <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
               <ShoppingCart className="h-4 w-4 mr-xs" />
               Marketplace
             </Badge>
             <h1 className="font-rajdhani text-6xl md:text-7xl font-bold text-range-white leading-tight">
-              Treasure Valley <span className="text-brass-yellow">Marketplace</span>
+              Treasure Valley <span className="text-rusty-orange">Marketplace</span>
             </h1>
             <p className="text-body-lg text-range-white/80 max-w-3xl mx-auto">
               Browse inventory from local firearms dealers across the Treasure Valley. From firearms and ammunition to accessories and optics - discover great deals from trusted local businesses.
@@ -446,7 +446,7 @@ export default function MarketplacePage() {
             <div className="flex flex-wrap justify-center gap-base">
               <Button 
                 size="xl" 
-                className="bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black hover:from-copper-orange hover:to-brass-yellow font-rajdhani font-bold"
+                className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
               >
                 <Store className="h-5 w-5 mr-xs" />
                 List Your Items
@@ -454,7 +454,7 @@ export default function MarketplacePage() {
               <Button 
                 variant="outline" 
                 size="xl"
-                className="border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black"
+                className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
               >
                 Dealer Information
               </Button>
@@ -543,8 +543,8 @@ export default function MarketplacePage() {
                     size="sm"
                     onClick={() => setSelectedCategory(category.value)}
                     className={selectedCategory === category.value ? 
-                      "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange" : 
-                      "border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black"
+                      "bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange" : 
+                      "border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
                     }
                   >
                     {category.label}
@@ -569,8 +569,8 @@ export default function MarketplacePage() {
                     size="sm"
                     onClick={() => setSelectedPriceRange(range.value)}
                     className={selectedPriceRange === range.value ? 
-                      "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange" : 
-                      "border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black"
+                      "bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange" : 
+                      "border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
                     }
                   >
                     {range.label}
@@ -620,7 +620,7 @@ export default function MarketplacePage() {
                       setSelectedPriceRange("all")
                       setSearchQuery("")
                     }}
-                    className="bg-brass-yellow text-gunmetal-black hover:bg-copper-orange"
+                    className="bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange"
                   >
                     Show All Items
                   </Button>
@@ -632,7 +632,7 @@ export default function MarketplacePage() {
       </section>
 
       {/* Legal Notice */}
-      <section className="py-6xl bg-gradient-to-br from-gunmetal-black/95 to-tactical-gray/90">
+      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-tactical-gray/90">
         <div className="container mx-auto max-w-4xl px-md text-center">
           <div className="space-y-lg">
             <Badge className="bg-scale-blue/20 text-scale-blue border-scale-blue/30">
@@ -640,7 +640,7 @@ export default function MarketplacePage() {
               Legal Notice
             </Badge>
             <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-range-white">
-              Important <span className="text-brass-yellow">Information</span>
+              Important <span className="text-rusty-orange">Information</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-lg text-left max-w-3xl mx-auto">
               <div className="space-y-base">
@@ -667,7 +667,7 @@ export default function MarketplacePage() {
             </p>
             <Button 
               size="xl" 
-              className="bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black hover:from-copper-orange hover:to-brass-yellow font-rajdhani font-bold"
+              className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
             >
               Contact Support
               <ArrowRight className="h-5 w-5 ml-xs" />

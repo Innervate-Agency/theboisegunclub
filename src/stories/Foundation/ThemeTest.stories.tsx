@@ -9,8 +9,8 @@ const meta: Meta = {
     backgrounds: {
       default: 'light',
       values: [
-        { name: 'light', value: '#f8f6f1' },
-        { name: 'dark', value: '#2F3135' },
+        { name: 'light', value: '#CCCCCC' },
+        { name: 'dark', value: '#CCCCCC' },
       ],
     },
   },
@@ -93,19 +93,19 @@ export const ThemeContrastTest: Story = {
           <div className="p-base rounded-card bg-card border border-border">
             <h4 className="font-semibold text-accent mb-xs">Light Theme</h4>
             <ul className="space-y-micro text-muted-foreground">
-              <li>• Accent: Copper Orange (#F28705) - Good contrast</li>
-              <li>• Primary: Blued Steel (#372103)</li>
-              <li>• Background: Range White (#f8f6f1)</li>
+              <li>• Accent: Copper Orange (#FF00FF) - Good contrast</li>
+              <li>• Primary: Blued Steel (#000000)</li>
+              <li>• Background: Range White (#CCCCCC)</li>
               <li>• Cards: Nickel White (#FFFFFF)</li>
             </ul>
           </div>
           <div className="p-base rounded-card bg-card border border-border">
             <h4 className="font-semibold text-accent mb-xs">Dark Theme</h4>
             <ul className="space-y-micro text-muted-foreground">
-              <li>• Accent: Brass Yellow (#F2CB05) - Good contrast</li>
-              <li>• Primary: Titanium White (#FDFDFD)</li>
-              <li>• Background: Night Sight (#2F3135)</li>
-              <li>• Cards: Carbon Fiber (#4B4B4B)</li>
+              <li>• Accent: Brass Yellow (#FF00FF) - Good contrast</li>
+              <li>• Primary: Titanium White (#CCCCCC)</li>
+              <li>• Background: Night Sight (#CCCCCC)</li>
+              <li>• Cards: Carbon Fiber (#CCCCCC)</li>
             </ul>
           </div>
         </div>

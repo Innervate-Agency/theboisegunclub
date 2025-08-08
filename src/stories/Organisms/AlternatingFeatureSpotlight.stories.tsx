@@ -43,7 +43,7 @@ export const DirectorySpotlight: Story = {
     imageSrc: '/images/Fractal/1.webp',
     imageAlt: 'Abstract fractal image representing a network.',
     glowColor1: '#3F6331', // woodland-camo
-    glowColor2: '#F28705', // copper-orange
+    glowColor2: '#FF00FF', // copper-orange
     accentColor: '#3F6331',
     reverse: false,
   },
@@ -66,9 +66,9 @@ export const CalendarSpotlight: Story = {
     ],
     imageSrc: '/images/Fractal/2.webp',
     imageAlt: 'Abstract fractal image representing a timeline.',
-    glowColor1: '#009FED', // cerakote-blue
+    glowColor1: '#FF00FF', // cerakote-blue
     glowColor2: '#75B700', // ayu-green
-    accentColor: '#009FED',
+    accentColor: '#FF00FF',
     reverse: true,
   },
 };
@@ -90,9 +90,9 @@ export const CommunitySpotlight: Story = {
       ],
       imageSrc: '/images/Fractal/3.webp',
       imageAlt: 'Abstract fractal image representing connections.',
-      glowColor1: '#6E5083', // ayu-purple
+      glowColor1: '#FF00FF', // ayu-purple
       glowColor2: '#FF3B49', // ayu-red
-      accentColor: '#6E5083',
+      accentColor: '#FF00FF',
       reverse: false,
     },
   };

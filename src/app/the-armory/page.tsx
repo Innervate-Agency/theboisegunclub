@@ -6,10 +6,14 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import StatCard from '@/components/ui/StatCard'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { SiteNavigation } from '@/components/ui/site-navigation'
+import { SiteFooter } from '@/components/ui/site-footer'
+import AccessibilityFAB from '@/components/ui/AccessibilityFAB'
+import { EventTicker } from '@/components/ui/event-ticker'
 import { 
   Search, BookOpen, Filter, Clock, User, ArrowRight, 
   Shield, Scale, GraduationCap, Wrench, Target, FileText,
-  Star, Eye, MessageSquare, Calendar
+  Star, Eye, MessageSquare, Calendar, ChevronRight, Plus
 } from 'lucide-react'
 
 // Knowledge Base articles for Idaho firearms community
@@ -207,6 +211,33 @@ const knowledgeBaseArticles = [
   }
 ]
 
+const upcomingEvents = [
+  {
+    title: "USPSA Monthly Match",
+    date: "August 9, 2025",
+    location: "Nampa Rod & Gun Club",
+    eventType: "Competition",
+    price: "$15",
+    featured: true
+  },
+  {
+    title: "Idaho State Camo Shoot",
+    date: "July 26, 2025",
+    location: "Caldwell Gun Club",
+    eventType: "Charity",
+    price: "$600 (Team of 4)",
+    featured: true
+  },
+  {
+    title: "Great Idaho Gun Show",
+    date: "September 20-21, 2025",
+    location: "Ford Idaho Center",
+    eventType: "Expo",
+    price: "$10",
+    featured: true
+  },
+];
+
 const categories = [
   { label: "All Articles", value: "all", icon: <BookOpen className="h-4 w-4" />, count: knowledgeBaseArticles.length },
   { label: "Legal", value: "Legal", icon: <Scale className="h-4 w-4" />, count: knowledgeBaseArticles.filter(a => a.category === "Legal").length },
@@ -226,21 +257,21 @@ const difficultyLevels = [
 function ArticleCard({ article }: { article: typeof knowledgeBaseArticles[0] }) {
   const categoryColors = {
     "Legal": "bg-scale-blue/20 text-scale-blue border-scale-blue/30",
-    "Buying Guide": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30",
-    "Safety": "bg-safety-red/20 text-safety-red border-safety-red/30",
-    "Training": "bg-rifling-green/20 text-rifling-green border-rifling-green/30",
+    "Buying Guide": "bg-slate-blue/20 text-slate-blue border-slate-blue/30",
+    "Safety": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30",
+    "Training": "bg-sage-green/20 text-sage-green border-sage-green/30",
     "Maintenance": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30"
   }
 
   const difficultyColors = {
     "Beginner": "bg-clubhouse-lawn-green/20 text-clubhouse-lawn-green border-clubhouse-lawn-green/30",
-    "Intermediate": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30", 
-    "Advanced": "bg-safety-red/20 text-safety-red border-safety-red/30"
+    "Intermediate": "bg-slate-blue/20 text-slate-blue border-slate-blue/30", 
+    "Advanced": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30"
   }
 
   return (
     <Card className={`group hover:shadow-lg transition-all duration-300 ${
-      article.featured ? 'ring-2 ring-rusty-orange/30 bg-rusty-orange/5' : ''
+      article.featured ? 'ring-2 ring-slate-blue/30 bg-slate-blue/5' : ''
     }`}>
       <CardHeader className="pb-base">
         <div className="flex items-start justify-between gap-base mb-xs">
@@ -253,13 +284,13 @@ function ArticleCard({ article }: { article: typeof knowledgeBaseArticles[0] }) 
             </Badge>
           </div>
           {article.featured && (
-            <Badge className="bg-rusty-orange text-dark-chocolate font-rajdhani font-bold">
+            <Badge className="bg-slate-blue text-dark-chocolate font-rajdhani font-bold">
               Featured
             </Badge>
           )}
         </div>
         
-        <CardTitle className="font-rajdhani text-xl font-bold text-card-foreground group-hover:text-rusty-orange transition-colors duration-200 leading-tight">
+        <CardTitle className="font-rajdhani text-xl font-bold text-card-foreground group-hover:text-slate-blue transition-colors duration-200 leading-tight">
           {article.title}
         </CardTitle>
       </CardHeader>
@@ -315,7 +346,7 @@ function ArticleCard({ article }: { article: typeof knowledgeBaseArticles[0] }) 
             </div>
           </div>
           
-          <Button variant="ghost" size="sm" className="text-rusty-orange hover:text-rusty-orange">
+          <Button variant="ghost" size="sm" className="text-slate-blue hover:text-rusty-orange">
             Read Article
             <ArrowRight className="h-3 w-3 ml-xs" />
           </Button>
@@ -350,41 +381,63 @@ export default function GuidesPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-tactical-gray/90 px-md py-6xl">
-        <div className="absolute inset-0 bg-gradient-to-br from-rusty-orange/5 via-transparent to-rusty-orange/8 pointer-events-none"></div>
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center space-y-lg">
-            <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
-              <BookOpen className="h-4 w-4 mr-xs" />
-              Knowledge Base
-            </Badge>
-            <h1 className="font-rajdhani text-6xl md:text-7xl font-bold text-range-white leading-tight">
-              Idaho Firearms <span className="text-rusty-orange">Guides</span>
-            </h1>
-            <p className="text-body-lg text-range-white/80 max-w-3xl mx-auto">
-              Comprehensive guides covering Idaho gun laws, safety practices, buying advice, and training resources. Everything you need to know about firearms ownership in the Treasure Valley.
-            </p>
-            
-            <div className="flex flex-wrap justify-center gap-base">
-              <Button 
-                size="xl" 
-                className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
-              >
-                <FileText className="h-5 w-5 mr-xs" />
-                Suggest Article
-              </Button>
-              <Button 
-                variant="outline" 
-                size="xl"
-                className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
-              >
-                Subscribe to Updates
-              </Button>
+      <SiteNavigation variant="premium" sticky={true} />
+      {/* Breadcrumb Hero - Left Aligned */}
+      <section className="bg-gradient-to-r from-slate-blue to-slate-blue border-b border-border/20">
+        <div className="container mx-auto max-w-7xl px-md py-3xl">
+          <div className="flex items-center gap-xs text-sm text-peachy-white/80 mb-base">
+            <span>Home</span>
+            <ChevronRight className="h-4 w-4" />
+            <span className="text-rusty-orange font-medium">Guides</span>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-center">
+            <div className="lg:col-span-2 space-y-base">
+              <Badge className="bg-slate-blue/20 text-slate-blue border-slate-blue/30 w-fit">
+                <BookOpen className="h-4 w-4 mr-xs" />
+                Knowledge Base
+              </Badge>
+              <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-peachy-white leading-tight">
+                Idaho Firearms Guides
+              </h1>
+              <p className="text-body-lg text-peachy-white/80 max-w-2xl">
+                Comprehensive guides covering Idaho gun laws, safety practices, buying advice, and training resources.
+              </p>
+              <div className="flex gap-base">
+                <Button 
+                  variant="solid-accent"
+                  size="lg" 
+                  animationType="arrow"
+                  className="font-rajdhani font-bold"
+                >
+                  <Plus className="h-4 w-4 mr-xs" />
+                  Suggest Article
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  animationType="chevron"
+                  animationState="right"
+                  className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
+                >
+                  View Categories
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Event Ticker */}
+      <EventTicker 
+        events={upcomingEvents.map(event => ({
+          title: event.title,
+          date: event.date,
+          location: event.location,
+          eventType: event.eventType,
+          price: event.price,
+          featured: event.featured
+        }))}
+      />
 
       {/* Stats Section */}
       <section className="py-4xl bg-muted/50">
@@ -461,8 +514,8 @@ export default function GuidesPage() {
                     size="sm"
                     onClick={() => setSelectedCategory(category.value)}
                     className={selectedCategory === category.value ? 
-                      "bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange" : 
-                      "border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
+                      "bg-slate-blue text-dark-chocolate hover:bg-rusty-orange" : 
+                      "border-slate-blue/30 text-slate-blue hover:bg-slate-blue hover:text-dark-chocolate"
                     }
                   >
                     {category.icon}
@@ -488,8 +541,8 @@ export default function GuidesPage() {
                     size="sm"
                     onClick={() => setSelectedDifficulty(level.value)}
                     className={selectedDifficulty === level.value ? 
-                      "bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange" : 
-                      "border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
+                      "bg-slate-blue text-dark-chocolate hover:bg-rusty-orange" : 
+                      "border-slate-blue/30 text-slate-blue hover:bg-slate-blue hover:text-dark-chocolate"
                     }
                   >
                     {level.label}
@@ -539,7 +592,7 @@ export default function GuidesPage() {
                       setSelectedDifficulty("all")
                       setSearchQuery("")
                     }}
-                    className="bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange"
+                    className="bg-slate-blue text-dark-chocolate hover:bg-rusty-orange"
                   >
                     Show All Articles
                   </Button>
@@ -551,37 +604,40 @@ export default function GuidesPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-tactical-gray/90">
+      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-sage-green/90">
         <div className="container mx-auto max-w-4xl px-md text-center">
           <div className="space-y-lg">
-            <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
+            <Badge className="bg-slate-blue/20 text-slate-blue border-slate-blue/30">
               <BookOpen className="h-4 w-4 mr-xs" />
               Stay Updated
             </Badge>
-            <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-range-white">
-              Never Miss an <span className="text-rusty-orange">Update</span>
+            <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-peachy-white">
+              Never Miss an <span className="text-slate-blue">Update</span>
             </h2>
-            <p className="text-body-lg text-range-white/80 max-w-2xl mx-auto">
-              Get notified when we publish new guides, legal updates, and important information for Idaho firearms owners. No spam, just valuable content.
+            <p className="text-body-lg text-peachy-white/80 max-w-2xl mx-auto">
+              Get notified when we publish new articles, legal updates, and important information for Idaho firearms owners. No spam, just valuable content.
             </p>
             <div className="flex flex-col sm:flex-row gap-base justify-center max-w-md mx-auto">
               <Input 
                 placeholder="Enter your email" 
-                className="bg-white/10 border-rusty-orange/30 text-range-white placeholder:text-range-white/60"
+                className="bg-white/10 border-slate-blue/30 text-peachy-white placeholder:text-peachy-white/60"
               />
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
+                className="bg-gradient-to-r from-slate-blue to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-slate-blue font-rajdhani font-bold"
               >
                 Subscribe
               </Button>
             </div>
-            <p className="text-xs text-range-white/60">
+            <p className="text-xs text-peachy-white/60">
               Join 2,800+ subscribers. Unsubscribe anytime.
             </p>
           </div>
         </div>
       </section>
+
+      <SiteFooter />
+      <AccessibilityFAB />
     </div>
   )
 }

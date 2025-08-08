@@ -131,16 +131,16 @@ const difficultyLevels = [
 function LocationCard({ location }: { location: typeof shootingLocations[0] }) {
   const categoryColors = {
     "Public Land": "bg-rifling-green/20 text-rifling-green border-rifling-green/30",
-    "Designated Area": "bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30",
+    "Designated Area": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30",
     "Forest Service": "bg-scope-blue/20 text-scope-blue border-scope-blue/30",
-    "Remote/4WD": "bg-copper-orange/20 text-copper-orange border-copper-orange/30",
+    "Remote/4WD": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30",
     "Popular Spot": "bg-case-hardened/20 text-case-hardened border-case-hardened/30",
     "Dispersed": "bg-ayu-purple/20 text-ayu-purple border-ayu-purple/30"
   }
 
   const difficultyColors = {
     "Easy": "bg-clubhouse-lawn-green/20 text-clubhouse-lawn-green border-clubhouse-lawn-green/30",
-    "Moderate": "bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30",
+    "Moderate": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30",
     "Difficult": "bg-safety-red/20 text-safety-red border-safety-red/30"
   }
 
@@ -164,12 +164,12 @@ function LocationCard({ location }: { location: typeof shootingLocations[0] }) {
           )}
         </div>
         
-        <CardTitle className="font-rajdhani text-xl font-bold text-card-foreground group-hover:text-brass-yellow transition-colors duration-200 leading-tight">
+        <CardTitle className="font-rajdhani text-xl font-bold text-card-foreground group-hover:text-rusty-orange transition-colors duration-200 leading-tight">
           {location.name}
         </CardTitle>
         
         <div className="flex items-center gap-xs text-sm text-muted-foreground">
-          <MapPin className="h-4 w-4 text-brass-yellow" />
+          <MapPin className="h-4 w-4 text-rusty-orange" />
           <span>{location.address}</span>
         </div>
       </CardHeader>
@@ -181,13 +181,13 @@ function LocationCard({ location }: { location: typeof shootingLocations[0] }) {
         
         <div className="space-y-xs text-sm">
           <div className="flex items-center gap-xs">
-            <Navigation className="h-4 w-4 text-brass-yellow" />
+            <Navigation className="h-4 w-4 text-rusty-orange" />
             <span className="font-medium">Coordinates:</span>
             <span className="text-muted-foreground font-mono text-xs">{location.coordinates}</span>
           </div>
           
           <div className="flex items-center gap-xs">
-            <Flag className="h-4 w-4 text-brass-yellow" />
+            <Flag className="h-4 w-4 text-rusty-orange" />
             <span className="font-medium">Access:</span>
             <span className="text-muted-foreground">{location.access}</span>
           </div>
@@ -219,7 +219,7 @@ function LocationCard({ location }: { location: typeof shootingLocations[0] }) {
         <div className="flex items-center justify-between pt-xs border-t border-border">
           <div className="flex items-center gap-base text-xs text-muted-foreground">
             <div className="flex items-center gap-xs">
-              <Star className="h-3 w-3 fill-brass-yellow text-brass-yellow" />
+              <Star className="h-3 w-3 fill-rusty-orange text-rusty-orange" />
               <span>{location.rating}</span>
             </div>
             <div className="flex items-center gap-xs">
@@ -232,7 +232,7 @@ function LocationCard({ location }: { location: typeof shootingLocations[0] }) {
             </div>
           </div>
           
-          <Button variant="ghost" size="sm" className="text-brass-yellow hover:text-copper-orange">
+          <Button variant="ghost" size="sm" className="text-rusty-orange hover:text-rusty-orange">
             View Details
             <ArrowRight className="h-3 w-3 ml-xs" />
           </Button>
@@ -274,16 +274,16 @@ export default function MapPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gunmetal-black/95 to-tactical-gray/90 px-md py-6xl">
-        <div className="absolute inset-0 bg-gradient-to-br from-brass-yellow/5 via-transparent to-copper-orange/8 pointer-events-none"></div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-tactical-gray/90 px-md py-6xl">
+        <div className="absolute inset-0 bg-gradient-to-br from-rusty-orange/5 via-transparent to-rusty-orange/8 pointer-events-none"></div>
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center space-y-lg">
-            <Badge className="bg-brass-yellow/20 text-brass-yellow border-brass-yellow/30">
+            <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
               <Compass className="h-4 w-4 mr-xs" />
               Shooting Locations
             </Badge>
             <h1 className="font-rajdhani text-6xl md:text-7xl font-bold text-range-white leading-tight">
-              Idaho Shooting <span className="text-brass-yellow">Map</span>
+              Idaho Shooting <span className="text-rusty-orange">Map</span>
             </h1>
             <p className="text-body-lg text-range-white/80 max-w-3xl mx-auto">
               Community-driven map of legal shooting locations across Idaho. From BLM land to designated shooting areas - discover places to practice and enjoy the sport safely.
@@ -292,7 +292,7 @@ export default function MapPage() {
             <div className="flex flex-wrap justify-center gap-base">
               <Button 
                 size="xl" 
-                className="bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black hover:from-copper-orange hover:to-brass-yellow font-rajdhani font-bold"
+                className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
               >
                 <Plus className="h-5 w-5 mr-xs" />
                 Submit Location
@@ -300,7 +300,7 @@ export default function MapPage() {
               <Button 
                 variant="outline" 
                 size="xl"
-                className="border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black"
+                className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
               >
                 View Interactive Map
               </Button>
@@ -389,8 +389,8 @@ export default function MapPage() {
                     size="sm"
                     onClick={() => setSelectedType(type.value)}
                     className={selectedType === type.value ? 
-                      "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange" : 
-                      "border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black"
+                      "bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange" : 
+                      "border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
                     }
                   >
                     {type.label}
@@ -415,8 +415,8 @@ export default function MapPage() {
                     size="sm"
                     onClick={() => setSelectedDifficulty(level.value)}
                     className={selectedDifficulty === level.value ? 
-                      "bg-brass-yellow text-gunmetal-black hover:bg-copper-orange" : 
-                      "border-brass-yellow/30 text-brass-yellow hover:bg-brass-yellow hover:text-gunmetal-black"
+                      "bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange" : 
+                      "border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
                     }
                   >
                     {level.label}
@@ -466,7 +466,7 @@ export default function MapPage() {
                       setSelectedDifficulty("all")
                       setSearchQuery("")
                     }}
-                    className="bg-brass-yellow text-gunmetal-black hover:bg-copper-orange"
+                    className="bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange"
                   >
                     Show All Locations
                   </Button>
@@ -478,7 +478,7 @@ export default function MapPage() {
       </section>
 
       {/* Safety Notice */}
-      <section className="py-6xl bg-gradient-to-br from-gunmetal-black/95 to-tactical-gray/90">
+      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-tactical-gray/90">
         <div className="container mx-auto max-w-4xl px-md text-center">
           <div className="space-y-lg">
             <Badge className="bg-safety-red/20 text-safety-red border-safety-red/30">
@@ -486,7 +486,7 @@ export default function MapPage() {
               Safety First
             </Badge>
             <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-range-white">
-              Shoot <span className="text-brass-yellow">Responsibly</span>
+              Shoot <span className="text-rusty-orange">Responsibly</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-lg text-left max-w-3xl mx-auto">
               <div className="space-y-base">
@@ -510,7 +510,7 @@ export default function MapPage() {
             </div>
             <Button 
               size="xl" 
-              className="bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black hover:from-copper-orange hover:to-brass-yellow font-rajdhani font-bold"
+              className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
             >
               Submit New Location
               <ArrowRight className="h-5 w-5 ml-xs" />

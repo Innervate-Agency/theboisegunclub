@@ -1,0 +1,44 @@
+import { getGuideData, getAllGuides } from '@/lib/guides';
+import MdxContent from '@/components/molecules/MdxContent';
+import SiteNavigation from '@/components/organisms/SiteNavigation';
+import SiteFooter from '@/components/organisms/SiteFooter';
+import PageHero from '@/components/organisms/PageHero';
+import { Metadata } from 'next';
+
+type Props = {
+  params: { slug: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const guide = getGuideData(params.slug);
+  return {
+    title: guide.frontmatter.title,
+    description: `A guide on ${guide.frontmatter.title}`,
+  };
+}
+
+export async function generateStaticParams() {
+  const guides = getAllGuides();
+  return guides.map((guide) => ({
+    slug: guide.slug,
+  }));
+}
+
+export default async function ArmoryItemPage({ params }: Props) {
+  const item = getArmoryData(params.slug);
+
+  return (
+    <>
+      <SiteNavigation />
+      <PageHero title={item.frontmatter.title} />
+      <main className="bg-peachy-white">
+        <div className="container mx-auto max-w-4xl py-xl px-md">
+          <article className="prose dark:prose-invert prose-lg">
+            <MdxContent source={item.content} />
+          </article>
+        </div>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}

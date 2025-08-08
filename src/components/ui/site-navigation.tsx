@@ -38,7 +38,7 @@ const siteNavigationVariants = cva(
 )
 
 const navigationItems = [
-  { label: "Home", icon: Home, href: "/", color: "copper-orange" },
+  { label: "Home", icon: Home, href: "/", color: "rusty-orange" },
   { label: "Events", icon: Calendar, href: "/events", color: "ayu-blue" },
   { label: "Directory", icon: Users, href: "/directory", color: "ayu-green" },
   { label: "Guides", icon: Target, href: "/guides", color: "ayu-purple" },
@@ -71,37 +71,37 @@ export function SiteNavigation({
   // Get individual hover classes for each nav item - text color only, no background
   const getHoverClasses = (color: string) => {
     switch(color) {
-      case 'copper-orange': return 'hover:text-copper-orange'
+      case 'rusty-orange': return 'hover:text-rusty-orange'
       case 'ayu-blue': return 'hover:text-ayu-blue'
       case 'ayu-green': return 'hover:text-ayu-green'
       case 'ayu-purple': return 'hover:text-ayu-purple'
       case 'ayu-red': return 'hover:text-ayu-red'
       case 'ayu-teal': return 'hover:text-ayu-teal'
-      default: return 'hover:text-copper-orange'
+      default: return 'hover:text-rusty-orange'
     }
   }
   
   const getColorBarClass = (color: string) => {
     switch(color) {
-      case 'copper-orange': return 'bg-copper-orange'
+      case 'rusty-orange': return 'bg-rusty-orange'
       case 'ayu-blue': return 'bg-ayu-blue'
       case 'ayu-green': return 'bg-ayu-green'
       case 'ayu-purple': return 'bg-ayu-purple'
       case 'ayu-red': return 'bg-ayu-red'
       case 'ayu-teal': return 'bg-ayu-teal'
-      default: return 'bg-copper-orange'
+      default: return 'bg-rusty-orange'
     }
   }
 
   const getActiveTextClass = (color: string) => {
     switch(color) {
-      case 'copper-orange': return 'text-copper-orange'
+      case 'rusty-orange': return 'text-rusty-orange'
       case 'ayu-blue': return 'text-ayu-blue'
       case 'ayu-green': return 'text-ayu-green'
       case 'ayu-purple': return 'text-ayu-purple'
       case 'ayu-red': return 'text-ayu-red'
       case 'ayu-teal': return 'text-ayu-teal'
-      default: return 'text-copper-orange'
+      default: return 'text-rusty-orange'
     }
   }
 
@@ -117,11 +117,11 @@ export function SiteNavigation({
           {showLogo && (
             <div className="flex items-center">
               <Link href="/" className="flex items-center gap-sm">
-                <div className="w-10 h-10 bg-gradient-to-br from-brass-yellow to-copper-orange rounded-lg flex flex-col items-center justify-center relative">
-                  <div className="text-[10px] font-rajdhani font-black text-gunmetal-black tracking-tight leading-none">
+                <div className="w-10 h-10 bg-gradient-to-br from-rusty-orange to-rusty-orange rounded-lg flex flex-col items-center justify-center relative">
+                  <div className="text-[10px] font-rajdhani font-black text-dark-chocolate tracking-tight leading-none">
                     TB
                   </div>
-                  <div className="text-[10px] font-rajdhani font-black text-gunmetal-black tracking-tight leading-none">
+                  <div className="text-[10px] font-rajdhani font-black text-dark-chocolate tracking-tight leading-none">
                     GC
                   </div>
                 </div>
@@ -179,7 +179,7 @@ export function SiteNavigation({
                 <Button variant="ghost" size="sm" className="shadow-none">
                   Sign In
                 </Button>
-                <Button variant="ghost" size="sm" className="bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20 shadow-none border border-copper-orange/30 text-xs">
+                <Button variant="ghost" size="sm" className="bg-rusty-orange/10 text-rusty-orange hover:bg-rusty-orange/20 shadow-none border border-rusty-orange/30 text-xs">
                   60-Day Free Trial
                 </Button>
               </>
@@ -205,7 +205,7 @@ export function SiteNavigation({
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-base relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
+          <div className="md:hidden py-base relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
             <div className="space-y-xs">
               {navigationItems.map((item) => (
                 <Link
@@ -224,12 +224,12 @@ export function SiteNavigation({
               ))}
             </div>
             
-            <div className="pt-base mt-base relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-brass-yellow/30 before:to-transparent">
+            <div className="pt-base mt-base relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
               <div className="flex flex-col gap-xs">
                 <Button variant="ghost" size="sm" className="justify-start shadow-none">
                   Sign In
                 </Button>
-                <Button variant="ghost" size="sm" className="justify-start bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20 shadow-none border border-copper-orange/30 text-xs">
+                <Button variant="ghost" size="sm" className="justify-start bg-rusty-orange/10 text-rusty-orange hover:bg-rusty-orange/20 shadow-none border border-rusty-orange/30 text-xs">
                   60-Day Free Trial
                 </Button>
               </div>

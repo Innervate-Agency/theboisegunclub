@@ -522,7 +522,7 @@ export default function EventsPage() {
             <div className="flex items-center gap-xs text-sm text-range-white/80 mb-base">
               <span>Home</span>
               <ChevronRight className="h-4 w-4" />
-              <span className="text-copper-orange font-medium">Events</span>
+              <span className="text-rusty-orange font-medium">Events</span>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-center">
               <div className="lg:col-span-2 space-y-base">
@@ -539,7 +539,7 @@ export default function EventsPage() {
                 <div className="flex gap-base">
                   <Button 
                     size="lg" 
-                    className="bg-gradient-to-r from-brass-yellow to-copper-orange text-gunmetal-black hover:from-copper-orange hover:to-brass-yellow font-rajdhani font-bold"
+                    className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
                   >
                     <Plus className="h-4 w-4 mr-xs" />
                     Submit Event
@@ -547,7 +547,7 @@ export default function EventsPage() {
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="border-copper-orange/30 text-copper-orange hover:bg-copper-orange hover:text-gunmetal-black"
+                    className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
                   >
                     View Calendar
                   </Button>
@@ -557,13 +557,13 @@ export default function EventsPage() {
               {/* Featured Event Spotlight */}
               <div className="lg:col-span-1">
                 <div className="relative">
-                  <Card className="mica border-copper-orange/30 hover:shadow-lg transition-all duration-300 overflow-hidden">
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-copper-orange/20 to-brass-yellow/10 rounded-bl-full"></div>
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-copper-orange to-brass-yellow"></div>
+                  <Card className="mica border-rusty-orange/30 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-rusty-orange/20 to-rusty-orange/10 rounded-bl-full"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-rusty-orange to-rusty-orange"></div>
                     
                     <CardHeader className="pb-xs relative z-10">
                       <div className="flex items-center justify-between mb-xs">
-                        <Badge className="bg-copper-orange/20 text-copper-orange border-copper-orange/30 font-rajdhani font-bold text-[10px]">
+                        <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30 font-rajdhani font-bold text-[10px]">
                           <Zap className="h-3 w-3 mr-xs" />
                           NEXT EVENT
                         </Badge>
@@ -576,7 +576,7 @@ export default function EventsPage() {
                       <div className="space-y-xs">
                         <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">USPSA Monthly Match</h3>
                         <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                          <MapPin className="h-3 w-3 text-copper-orange" />
+                          <MapPin className="h-3 w-3 text-rusty-orange" />
                           <span>Nampa Rod & Gun Club</span>
                         </div>
                       </div>
@@ -586,7 +586,7 @@ export default function EventsPage() {
                       <div className="flex items-center justify-between">
                         <div className="space-y-xs">
                           <div className="flex items-center gap-xs text-xs text-card-foreground/80">
-                            <Calendar className="h-3 w-3 text-brass-yellow" />
+                            <Calendar className="h-3 w-3 text-rusty-orange" />
                             <span className="font-medium">Sat, Aug 9 • 8:00 AM</span>
                           </div>
                           <div className="flex items-center gap-xs text-xs text-muted-foreground">
@@ -598,14 +598,14 @@ export default function EventsPage() {
                         </div>
                         
                         <div className="text-right">
-                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-copper-orange/30 to-brass-yellow/20 flex items-center justify-center mb-xs">
-                            <Trophy className="h-5 w-5 text-copper-orange" />
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rusty-orange/30 to-rusty-orange/20 flex items-center justify-center mb-xs">
+                            <Trophy className="h-5 w-5 text-rusty-orange" />
                           </div>
                         </div>
                       </div>
                       
                       <Button 
-                        className="w-full bg-gradient-to-r from-copper-orange to-brass-yellow text-gunmetal-black hover:from-brass-yellow hover:to-copper-orange font-rajdhani font-bold text-xs"
+                        className="w-full bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold text-xs"
                         size="sm"
                       >
                         REGISTER NOW
@@ -641,7 +641,7 @@ export default function EventsPage() {
               <div className="lg:col-span-2 space-y-base">
                 <div className="flex items-center justify-between">
                   <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">Featured Events</h2>
-                  <Button variant="ghost" className="text-copper-orange hover:text-gunmetal-black">
+                  <Button variant="ghost" className="text-rusty-orange hover:text-dark-chocolate">
                     View All <ArrowRight className="h-4 w-4 ml-xs" />
                   </Button>
                 </div>
@@ -756,11 +756,11 @@ export default function EventsPage() {
                           <div key={i} className={`
                             text-xs p-xs rounded cursor-pointer transition-colors relative
                             ${date < 1 || date > 31 ? 'text-muted-foreground/50' : 'text-card-foreground hover:bg-accent'}
-                            ${hasEvent ? 'bg-copper-orange/20 text-copper-orange font-bold' : ''}
+                            ${hasEvent ? 'bg-rusty-orange/20 text-rusty-orange font-bold' : ''}
                           `}>
                             {date < 1 ? 30 + date : date > 31 ? date - 31 : date}
                             {eventCount > 1 && (
-                              <div className="absolute -top-1 -right-1 w-2 h-2 bg-copper-orange rounded-full text-[8px] flex items-center justify-center text-white">
+                              <div className="absolute -top-1 -right-1 w-2 h-2 bg-rusty-orange rounded-full text-[8px] flex items-center justify-center text-white">
                                 {eventCount}
                               </div>
                             )}
@@ -789,12 +789,12 @@ export default function EventsPage() {
                 <Card className="p-base">
                   <div className="space-y-base text-center">
                     <div>
-                      <div className="font-rajdhani text-3xl font-bold text-copper-orange">132+</div>
+                      <div className="font-rajdhani text-3xl font-bold text-rusty-orange">132+</div>
                       <div className="text-xs text-muted-foreground">Events This Month</div>
                     </div>
                     <div className="grid grid-cols-2 gap-base text-center">
                       <div>
-                        <div className="font-rajdhani text-lg font-bold text-copper-orange">45+</div>
+                        <div className="font-rajdhani text-lg font-bold text-rusty-orange">45+</div>
                         <div className="text-xs text-muted-foreground">Venues</div>
                       </div>
                       <div>
@@ -846,7 +846,7 @@ export default function EventsPage() {
                     size="sm"
                     onClick={() => setSelectedCategory(category.value)}
                     className={selectedCategory === category.value
-                      ? `bg-${category.color} text-gunmetal-black hover:bg-${category.color}/90`
+                      ? `bg-${category.color} text-dark-chocolate hover:bg-${category.color}/90`
                       : `border-${category.color}/30 text-${category.color} hover:bg-${category.color}/10`
                     }
                   >
@@ -900,7 +900,7 @@ export default function EventsPage() {
                       size="sm"
                       onClick={() => setCurrentPage(page)}
                       className={currentPage === page 
-                        ? "bg-copper-orange text-gunmetal-black hover:bg-brass-yellow w-10 h-10"
+                        ? "bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange w-10 h-10"
                         : "text-muted-foreground hover:text-card-foreground hover:bg-muted/50 w-10 h-10"
                       }
                     >
@@ -937,7 +937,7 @@ export default function EventsPage() {
                       setSelectedCategory("all")
                       setSearchQuery("")
                     }}
-                    className="bg-copper-orange text-gunmetal-black hover:bg-brass-yellow"
+                    className="bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange"
                   >
                     Show All Events
                   </Button>
@@ -1015,8 +1015,8 @@ export default function EventsPage() {
 
               <Card className="p-lg">
                 <div className="text-center space-y-base">
-                  <div className="bg-copper-orange/20 p-base rounded-full w-fit mx-auto">
-                    <Calendar className="h-6 w-6 text-copper-orange" />
+                  <div className="bg-rusty-orange/20 p-base rounded-full w-fit mx-auto">
+                    <Calendar className="h-6 w-6 text-rusty-orange" />
                   </div>
                   <div>
                     <div className="font-rajdhani text-2xl font-bold text-card-foreground">Free</div>

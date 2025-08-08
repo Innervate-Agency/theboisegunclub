@@ -124,16 +124,16 @@ const buttonVariants = cva(
     variants: {
       variant: {
         // Default: Clean theme-aware with sophisticated shadow depth (NO BORDER)
-        default: "bg-card text-card-foreground shadow-flat hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-copper-orange",
+        default: "bg-card text-card-foreground shadow-flat hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-rusty-orange",
         
         // Primary: More prominent theme-aware with deeper shadow (NO BORDER)
-        primary: "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 focus-visible:ring-copper-orange",
+        primary: "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 focus-visible:ring-rusty-orange",
         
         // Secondary: Subtle theme-aware background with better depth (NO BORDER)
-        secondary: "bg-muted text-card-foreground shadow-flat hover:shadow-md hover:bg-muted/80 hover:-translate-y-0.5 focus-visible:ring-copper-orange",
+        secondary: "bg-muted text-card-foreground shadow-flat hover:shadow-md hover:bg-muted/80 hover:-translate-y-0.5 focus-visible:ring-rusty-orange",
         
         // Accent: Clean theme-aware with copper accent background
-        accent: "bg-copper-orange/10 text-copper-orange shadow-flat hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-copper-orange/50 hover:bg-copper-orange/20",
+        accent: "bg-rusty-orange/10 text-rusty-orange shadow-flat hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-rusty-orange/50 hover:bg-rusty-orange/20",
         
         // Success: Clean theme-aware with green accent background
         success: "bg-rifling-green/10 text-rifling-green shadow-flat hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-rifling-green/50 hover:bg-rifling-green/20",
@@ -145,25 +145,25 @@ const buttonVariants = cva(
         outline: "border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground",
 
         // Glass: Windows 11 Mica-inspired glassmorphism (borderless for clean look)
-        glass: "mica-overlay text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-0.5 focus-visible:ring-brass-yellow/50 hover:bg-card/25 transition-all duration-200",
+        glass: "mica-overlay text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-0.5 focus-visible:ring-rusty-orange/50 hover:bg-card/25 transition-all duration-200",
         
         // Solid variants - fun, colorful, no shadows, with interactive effects
-        "solid-accent": "bg-brass-yellow text-primary hover:bg-copper-orange focus-visible:ring-brass-yellow/50 border-0 transition-all duration-200 stripe-arrow",
+        "solid-accent": "bg-rusty-orange text-primary hover:bg-rusty-orange focus-visible:ring-rusty-orange/50 border-0 transition-all duration-200 stripe-arrow",
         "solid-success": "bg-rifling-green text-card-foreground hover:bg-bore-sight-green focus-visible:ring-rifling-green/50 border-0 transition-all duration-200 stripe-arrow",
-        "solid-destructive": "bg-copper-orange text-card-foreground hover:bg-recoil-pad focus-visible:ring-copper-orange/50 border-0 transition-all duration-200 stripe-arrow",
+        "solid-destructive": "bg-rusty-orange text-card-foreground hover:bg-recoil-pad focus-visible:ring-rusty-orange/50 border-0 transition-all duration-200 stripe-arrow",
         "solid-primary": "bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-primary/50 border-0 transition-all duration-200 stripe-arrow",
         
         // Ghost: Minimal with subtle hover (theme-aware)
-        ghost: "text-muted-foreground hover:bg-muted hover:shadow-xs focus-visible:ring-copper-orange border-0",
+        ghost: "text-muted-foreground hover:bg-muted hover:shadow-xs focus-visible:ring-rusty-orange border-0",
         
         // Flat: No shadows, perfect for inside cards/forms (Stripe-like design system)
-        flat: "bg-copper-orange/10 text-copper-orange hover:bg-copper-orange/20 focus-visible:ring-copper-orange/50 border-0 transition-colors duration-150",
+        flat: "bg-rusty-orange/10 text-rusty-orange hover:bg-rusty-orange/20 focus-visible:ring-rusty-orange/50 border-0 transition-colors duration-150",
         
         // Link: Simple text, no shadow
-        link: "text-copper-orange hover:text-recoil-pad underline-offset-4 hover:underline focus-visible:ring-copper-orange border-0",
+        link: "text-rusty-orange hover:text-recoil-pad underline-offset-4 hover:underline focus-visible:ring-rusty-orange border-0",
         
         // Fire: The "fucking great" gradient with bottom accent bar
-        fire: "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 focus-visible:ring-copper-orange transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-copper-orange after:to-brass-yellow after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        fire: "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 focus-visible:ring-rusty-orange transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-rusty-orange after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
         // Fire Blue: Blue to green fire gradient 
         "fire-blue": "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 focus-visible:ring-ayu-blue transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
