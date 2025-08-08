@@ -106,7 +106,7 @@ export default function HomePage() {
         {/* 2. Hero Section */}
         <section>
           <MegaHero
-            variant="default"
+            backgroundPreset="home"
             title="The Boise Gun Club"
             subtitle="A Treasure Valley Collective"
             description="Your central hub for all things firearms in the Treasure Valley. Connect with local shops, ranges, and trainers."

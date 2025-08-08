@@ -15,8 +15,8 @@ const siteFooterVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-dark-chocolate text-nickel-white",
-        glass: "bg-dark-chocolate/90 backdrop-blur-sm text-nickel-white",
+        default: "bg-[var(--color-dark-chocolate)] text-[var(--color-crisp-off-white)]",
+        glass: "bg-[var(--color-dark-chocolate)]/90 backdrop-blur-sm text-[var(--color-crisp-off-white)]",
         minimal: "bg-card text-card-foreground"
       }
     },
@@ -55,8 +55,8 @@ export function SiteFooter({
   }
   
   const isMinimal = variant === "minimal"
-  const textColor = isMinimal ? "text-dark-chocolate" : "text-nickel-white"
-  const mutedColor = isMinimal ? "text-warning-amber" : "text-stainless-steel"
+  const textColor = isMinimal ? "text-[var(--color-shared-dark)]" : "text-[var(--color-crisp-off-white)]"
+  const mutedColor = isMinimal ? "text-[var(--color-sandy-ochre)]" : "text-[var(--color-warm-stone)]"
   
   return (
     <footer className={cn(siteFooterVariants({ variant }), className)} {...props}>
@@ -67,7 +67,7 @@ export function SiteFooter({
             {/* Brand & Description */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-xs mb-[var(--space-sm)]">
-                <Target className={cn("icon-lg", isMinimal ? "icon-primary" : "text-sandy-ochre")} />
+                <Target className={cn("icon-lg", isMinimal ? "icon-primary" : "text-[var(--color-sandy-ochre)]")} />
                 <h3 className={cn("text-heading-sm font-rajdhani font-bold", textColor)}>
                   Boise Gun Club
                 </h3>
@@ -110,7 +110,7 @@ export function SiteFooter({
                     <a 
                       href={link.href}
                       className={cn(
-                        "text-body-sm hover:text-sandy-ochre transition-colors duration-200", 
+                        "text-body-sm hover:text-[var(--color-sandy-ochre)] transition-colors duration-200", 
                         mutedColor
                       )}
                     >
@@ -165,13 +165,13 @@ export function SiteFooter({
                         "flex-1 text-body-sm",
                         isMinimal 
                           ? "bg-card border-border" 
-                          : "bg-carbon-fiber border-warm-stone text-titanium-white"
+                          : "bg-[var(--color-rich-loam)] border-[var(--color-warm-stone)] text-[var(--color-crisp-off-white)]"
                       )}
                     />
                     <Button 
                       type="submit" 
                       disabled={isSubscribing}
-                      className="bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange font-rajdhani font-semibold"
+                      className="bg-[var(--color-sandy-ochre)] text-[var(--color-shared-dark)] hover:bg-[var(--color-rusty-orange)] font-rajdhani font-semibold"
                     >
                       {isSubscribing ? "..." : "Join"}
                     </Button>
@@ -185,7 +185,7 @@ export function SiteFooter({
         {/* Bottom Bar */}
         <div className={cn(
           "border-t py-md", 
-          isMinimal ? "border-border" : "border-warm-stone"
+          isMinimal ? "border-border" : "border-[var(--color-warm-stone)]"
         )}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-base">
             {/* Copyright */}
@@ -211,8 +211,8 @@ export function SiteFooter({
                       className={cn(
                         "p-xs rounded-card transition-all duration-200 hover:scale-110",
                         isMinimal 
-                          ? "text-warning-amber hover:text-sandy-ochre hover:bg-sandy-ochre/10" 
-                          : "text-stainless-steel hover:text-sandy-ochre hover:bg-sandy-ochre/10"
+                          ? "text-[var(--color-sandy-ochre)] hover:text-[var(--color-rusty-orange)] hover:bg-[var(--color-sandy-ochre)]/10" 
+                          : "text-[var(--color-warm-stone)] hover:text-[var(--color-sandy-ochre)] hover:bg-[var(--color-sandy-ochre)]/10"
                       )}
                       title={social.label}
                     >
@@ -234,7 +234,7 @@ export function SiteFooter({
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "text-caption hover:text-sandy-ochre transition-colors duration-200", 
+                    "text-caption hover:text-[var(--color-sandy-ochre)] transition-colors duration-200", 
                     mutedColor
                   )}
                 >

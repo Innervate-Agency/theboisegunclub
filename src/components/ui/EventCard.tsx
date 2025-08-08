@@ -56,16 +56,58 @@ export function EventCard({
 }: EventCardProps) {
   const spotsLeft = capacity && registeredCount ? capacity - registeredCount : null
 
-  // Color mapping for event types using our 10-color system
+  // Color mapping for event types using our 10-color system with explicit CSS variables
   const getEventColors = (type: string) => {
     switch (type) {
-      case 'Competition': return { bg: 'slate-blue/10', border: 'slate-blue/30', text: 'slate-blue', accent: 'slate-blue' }
-      case 'Training': return { bg: 'sandy-ochre/10', border: 'sandy-ochre/30', text: 'sandy-ochre', accent: 'sandy-ochre' }
-      case 'Expo': return { bg: 'info-river/10', border: 'info-river/30', text: 'info-river', accent: 'info-river' }
-      case 'Charity': return { bg: 'sagebrush-green/10', border: 'sagebrush-green/30', text: 'sagebrush-green', accent: 'sagebrush-green' }
-      case 'Social': return { bg: 'rusty-orange/10', border: 'rusty-orange/30', text: 'rusty-orange', accent: 'rusty-orange' }
-      case 'Demo': return { bg: 'warning-clay/10', border: 'warning-clay/30', text: 'warning-clay', accent: 'warning-clay' }
-      default: return { bg: 'pale-stone/10', border: 'pale-stone/30', text: 'dried-clay', accent: 'pale-stone' }
+      case 'Competition': return { 
+        bg: 'bg-[color-mix(in_srgb,var(--color-slate-blue)_10%,transparent)]', 
+        border: 'border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]', 
+        text: 'text-[var(--color-slate-blue)]', 
+        accent: 'bg-[var(--color-slate-blue)]',
+        iconColor: 'text-[var(--color-slate-blue)]'
+      }
+      case 'Training': return { 
+        bg: 'bg-[color-mix(in_srgb,var(--color-sandy-ochre)_10%,transparent)]', 
+        border: 'border-[color-mix(in_srgb,var(--color-sandy-ochre)_30%,transparent)]', 
+        text: 'text-[var(--color-sandy-ochre)]', 
+        accent: 'bg-[var(--color-sandy-ochre)]',
+        iconColor: 'text-[var(--color-sandy-ochre)]'
+      }
+      case 'Expo': return { 
+        bg: 'bg-[color-mix(in_srgb,var(--color-info-river)_10%,transparent)]', 
+        border: 'border-[color-mix(in_srgb,var(--color-info-river)_30%,transparent)]', 
+        text: 'text-[var(--color-info-river)]', 
+        accent: 'bg-[var(--color-info-river)]',
+        iconColor: 'text-[var(--color-info-river)]'
+      }
+      case 'Charity': return { 
+        bg: 'bg-[color-mix(in_srgb,var(--color-sagebrush-green)_10%,transparent)]', 
+        border: 'border-[color-mix(in_srgb,var(--color-sagebrush-green)_30%,transparent)]', 
+        text: 'text-[var(--color-sagebrush-green)]', 
+        accent: 'bg-[var(--color-sagebrush-green)]',
+        iconColor: 'text-[var(--color-sagebrush-green)]'
+      }
+      case 'Social': return { 
+        bg: 'bg-[color-mix(in_srgb,var(--color-rusty-orange)_10%,transparent)]', 
+        border: 'border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)]', 
+        text: 'text-[var(--color-rusty-orange)]', 
+        accent: 'bg-[var(--color-rusty-orange)]',
+        iconColor: 'text-[var(--color-rusty-orange)]'
+      }
+      case 'Demo': return { 
+        bg: 'bg-[color-mix(in_srgb,var(--color-warning-clay)_10%,transparent)]', 
+        border: 'border-[color-mix(in_srgb,var(--color-warning-clay)_30%,transparent)]', 
+        text: 'text-[var(--color-warning-clay)]', 
+        accent: 'bg-[var(--color-warning-clay)]',
+        iconColor: 'text-[var(--color-warning-clay)]'
+      }
+      default: return { 
+        bg: 'bg-[color-mix(in_srgb,var(--color-slate-blue)_10%,transparent)]', 
+        border: 'border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]', 
+        text: 'text-[var(--color-slate-blue)]', 
+        accent: 'bg-[var(--color-slate-blue)]',
+        iconColor: 'text-[var(--color-slate-blue)]'
+      }
     }
   }
 
@@ -77,7 +119,9 @@ export function EventCard({
       className={cn(eventCardVariants({ featured }), className)}
       {...props}
     >
-      {/* Color-coded accent bar for all events */}\n      <div className={`absolute bottom-0 left-0 right-0 h-1 bg-${colors.accent}`} />\n      {/* Additional featured accent */}
+      {/* Color-coded accent bar for all events */}
+      <div className={cn("absolute bottom-0 left-0 right-0 h-1", colors.accent)} />
+      {/* Additional featured accent */}
       {featured && (
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre" />
       )}
@@ -90,9 +134,7 @@ export function EventCard({
               <Badge 
                 variant="outline" 
                 size="sm"
-                className={cn(
-                  `bg-${colors.bg} text-${colors.text} border-${colors.border}`
-                )}
+                className={cn(colors.bg, colors.text, colors.border)}
               >
                 {eventType}
               </Badge>
@@ -126,15 +168,15 @@ export function EventCard({
         {/* Event Details */}
         <div className="space-y-xs text-sm">
           <div className="flex items-center gap-xs text-muted-foreground">
-            <Calendar className={`h-4 w-4 text-${colors.accent} flex-shrink-0`} />
+            <Calendar className={cn("h-4 w-4 flex-shrink-0", colors.iconColor)} />
             <span>{date}</span>
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
-            <Clock className={`h-4 w-4 text-${colors.accent} flex-shrink-0`} />
+            <Clock className={cn("h-4 w-4 flex-shrink-0", colors.iconColor)} />
             <span>{time}</span>
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
-            <MapPin className={`h-4 w-4 text-${colors.accent} flex-shrink-0`} />
+            <MapPin className={cn("h-4 w-4 flex-shrink-0", colors.iconColor)} />
             <span className="line-clamp-1">{location}</span>
           </div>
         </div>
@@ -143,7 +185,7 @@ export function EventCard({
         {capacity && (
           <div className="flex items-center justify-between text-sm bg-muted/50 px-base py-xs rounded">
             <div className="flex items-center gap-xs text-muted-foreground">
-              <Users className={`h-4 w-4 text-${colors.accent}`} />
+              <Users className={cn("h-4 w-4", colors.iconColor)} />
               <span>Capacity: {capacity}</span>
             </div>
             <div className={cn(

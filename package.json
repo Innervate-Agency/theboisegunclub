@@ -22,6 +22,7 @@
     "ammo-list": "node scripts/generate-ammo-list.js"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^5.1.1",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",
@@ -68,10 +69,12 @@
     "next-mdx-remote": "^5.0.0",
     "next-themes": "^0.4.6",
     "nodemailer": "^6.9.15",
+    "phosphor-react": "^1.4.1",
     "react": "19.1.0",
     "react-day-picker": "^9.8.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.61.1",
+    "react-icons": "^5.5.0",
     "react-resizable-panels": "^3.0.3",
     "recharts": "^2.15.4",
     "sonner": "^2.0.6",

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 
 const megaHeroVariants = cva(
-  "relative w-full flex items-center justify-center overflow-hidden",
+  "relative w-full flex items-center justify-center overflow-hidden py-[var(--space-3xl)]",
   {
     variants: {
       height: {
@@ -17,15 +17,19 @@ const megaHeroVariants = cva(
         full: "min-h-screen"
       },
       backgroundPreset: {
-        warm: "bg-gradient-to-br from-sandy-ochre/10 via-rusty-orange/10 to-walnut-stock/10",
-        cool: "bg-gradient-to-br from-scope-blue/10 via-trigger-blue/10 to-cerakote-blue/10", 
-        mixed: "bg-gradient-to-br from-sandy-ochre/10 via-scope-blue/10 to-walnut-stock/10",
-        gunclub: "bg-gradient-to-br from-range-white via-card-surface to-range-white"
+        home: "bg-gradient-to-br from-[var(--color-rusty-orange)] to-[color-mix(in_srgb,var(--color-rusty-orange)_80%,var(--color-ember-glow))]",
+        events: "bg-gradient-to-br from-[var(--color-slate-blue)] to-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)]",
+        directory: "bg-gradient-to-br from-[var(--color-sagebrush-green)] to-[color-mix(in_srgb,var(--color-sagebrush-green)_80%,var(--color-sandy-ochre))]",
+        guides: "bg-gradient-to-br from-[var(--color-info-river)] to-[color-mix(in_srgb,var(--color-info-river)_80%,var(--color-warning-clay))]",
+        map: "bg-gradient-to-br from-[var(--color-sandy-ochre)] to-[color-mix(in_srgb,var(--color-sandy-ochre)_80%,var(--color-sagebrush-green))]",
+        marketplace: "bg-gradient-to-br from-[var(--color-warning-clay)] to-[color-mix(in_srgb,var(--color-warning-clay)_80%,var(--color-sagebrush-green))]",
+        community: "bg-gradient-to-br from-[var(--color-ember-glow)] to-[color-mix(in_srgb,var(--color-ember-glow)_80%,var(--color-rusty-orange))]",
+        gunclub: "bg-gradient-to-br from-[var(--color-light-peachy)] via-[var(--color-crisp-off-white)] to-[var(--color-light-peachy)]"
       }
     },
     defaultVariants: {
       height: "lg",
-      backgroundPreset: "gunclub"
+      backgroundPreset: "home"
     }
   }
 )
@@ -80,7 +84,7 @@ export function MegaHero({
           {/* Icon */}
           {icon && (
             <div className={cn(
-              "text-sandy-ochre",
+              "text-[var(--color-crisp-off-white)]",
               centerContent ? "flex justify-center" : "flex"
             )}>
               {icon}
@@ -90,17 +94,17 @@ export function MegaHero({
           {/* Main content */}
           <div className="space-y-[var(--space-md)]">
             {subtitle && (
-              <p className="text-body-sm uppercase tracking-wider font-medium text-warning-amber">
+              <p className="text-body-sm uppercase tracking-wider font-medium text-[var(--color-crisp-off-white)]">
                 {subtitle}
               </p>
             )}
             
-            <h1 className="text-heading-xl md:text-display-sm lg:text-6xl font-rajdhani font-bold text-dark-chocolate tracking-tight leading-tight">
+            <h1 className="text-heading-xl md:text-display-sm lg:text-6xl font-rajdhani font-bold text-[var(--color-crisp-off-white)] tracking-tight leading-tight">
               {title}
             </h1>
             
             {description && (
-              <p className="text-body-lg md:text-heading-sm text-warning-amber font-noto-sans leading-relaxed max-w-3xl mx-auto">
+              <p className="text-body-lg md:text-heading-sm text-[var(--color-crisp-off-white)]/90 font-noto-sans leading-relaxed max-w-3xl mx-auto">
                 {description}
               </p>
             )}
@@ -115,7 +119,7 @@ export function MegaHero({
               {badges.map((badge, index) => (
                 <div
                   key={index}
-                  className="px-base py-xs bg-card/80 backdrop-blur-sm border border-sandy-ochre/20 rounded-card text-body-sm font-medium text-blued-steel shadow-xs"
+                  className="px-base py-xs bg-[var(--color-crisp-off-white)]/20 backdrop-blur-sm border border-[var(--color-crisp-off-white)]/30 rounded-card text-body-sm font-medium text-[var(--color-crisp-off-white)] shadow-xs"
                 >
                   {badge}
                 </div>

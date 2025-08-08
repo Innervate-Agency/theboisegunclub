@@ -11,12 +11,22 @@ import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import AccessibilityFAB from '@/components/ui/AccessibilityFAB'
 import { EventTicker } from '@/components/ui/event-ticker'
+import { cn } from '@/lib/utils'
 import { 
   Calendar, Clock, MapPin, Users, Trophy, Target, 
   Filter, Search, Star, DollarSign, Info, Plus, ArrowRight,
   ChevronRight, CalendarDays, Zap, Eye, TrendingUp,
-  Building2, Award, MessageSquare, CheckCircle
+  Building2, Award, MessageSquare, CheckCircle, Shield,
+  Crosshair, Flame, Bolt, Crown, Sparkles, Gem
 } from 'lucide-react'
+import { 
+  IconCalendarEvent, IconMapPin, IconTrophy, IconTarget,
+  IconBullseye, IconShield, IconStar, IconBolt, IconCrown,
+  IconDiamond, IconFlame, IconSparkles, IconShootingStar
+} from '@tabler/icons-react'
+import { FaAward, FaMedal, FaBullseye, FaCrosshairs, FaFire } from 'react-icons/fa'
+import { GiCrossedPistols, GiRifle, GiPistolGun, GiTarget, GiBullseye } from 'react-icons/gi'
+import { RiMedalFill, RiTrophyFill, RiStarFill, RiFireFill } from 'react-icons/ri'
 
 // Comprehensive events data for Treasure Valley firearms community
 const upcomingEvents = [
@@ -477,15 +487,57 @@ const upcomingEvents = [
   }
 ]
 
-// Strategic 10-Color Distribution using our design system colors
+// Strategic 10-Color Distribution using explicit CSS variables
 const eventCategories = [
-  { label: "All Events", value: "all", count: upcomingEvents.length, color: "slate-blue", bgColor: "slate-blue/10", borderColor: "slate-blue/30" },
-  { label: "Competitions", value: "Competition", count: upcomingEvents.filter(e => e.eventType === "Competition").length, color: "slate-blue", bgColor: "slate-blue/10", borderColor: "slate-blue/30" },
-  { label: "Training", value: "Training", count: upcomingEvents.filter(e => e.eventType === "Training").length, color: "sandy-ochre", bgColor: "sandy-ochre/10", borderColor: "sandy-ochre/30" },
-  { label: "Expos", value: "Expo", count: upcomingEvents.filter(e => e.eventType === "Expo").length, color: "info-river", bgColor: "info-river/10", borderColor: "info-river/30" },
-  { label: "Charity", value: "Charity", count: upcomingEvents.filter(e => e.eventType === "Charity").length, color: "sagebrush-green", bgColor: "sagebrush-green/10", borderColor: "sagebrush-green/30" },
-  { label: "Social", value: "Social", count: upcomingEvents.filter(e => e.eventType === "Social").length, color: "rusty-orange", bgColor: "rusty-orange/10", borderColor: "rusty-orange/30" },
-  { label: "Demos", value: "Demo", count: upcomingEvents.filter(e => e.eventType === "Demo").length, color: "warning-clay", bgColor: "warning-clay/10", borderColor: "warning-clay/30" }
+  { 
+    label: "All Events", 
+    value: "all", 
+    count: upcomingEvents.length, 
+    activeClasses: "bg-[var(--color-slate-blue)] text-white hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_90%,black)]", 
+    inactiveClasses: "border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)] text-[var(--color-slate-blue)] hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_10%,transparent)]" 
+  },
+  { 
+    label: "Competitions", 
+    value: "Competition", 
+    count: upcomingEvents.filter(e => e.eventType === "Competition").length, 
+    activeClasses: "bg-[var(--color-slate-blue)] text-white hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_90%,black)]", 
+    inactiveClasses: "border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)] text-[var(--color-slate-blue)] hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_10%,transparent)]" 
+  },
+  { 
+    label: "Training", 
+    value: "Training", 
+    count: upcomingEvents.filter(e => e.eventType === "Training").length, 
+    activeClasses: "bg-[var(--color-sandy-ochre)] text-white hover:bg-[color-mix(in_srgb,var(--color-sandy-ochre)_90%,black)]", 
+    inactiveClasses: "border-[color-mix(in_srgb,var(--color-sandy-ochre)_30%,transparent)] text-[var(--color-sandy-ochre)] hover:bg-[color-mix(in_srgb,var(--color-sandy-ochre)_10%,transparent)]" 
+  },
+  { 
+    label: "Expos", 
+    value: "Expo", 
+    count: upcomingEvents.filter(e => e.eventType === "Expo").length, 
+    activeClasses: "bg-[var(--color-info-river)] text-white hover:bg-[color-mix(in_srgb,var(--color-info-river)_90%,black)]", 
+    inactiveClasses: "border-[color-mix(in_srgb,var(--color-info-river)_30%,transparent)] text-[var(--color-info-river)] hover:bg-[color-mix(in_srgb,var(--color-info-river)_10%,transparent)]" 
+  },
+  { 
+    label: "Charity", 
+    value: "Charity", 
+    count: upcomingEvents.filter(e => e.eventType === "Charity").length, 
+    activeClasses: "bg-[var(--color-sagebrush-green)] text-white hover:bg-[color-mix(in_srgb,var(--color-sagebrush-green)_90%,black)]", 
+    inactiveClasses: "border-[color-mix(in_srgb,var(--color-sagebrush-green)_30%,transparent)] text-[var(--color-sagebrush-green)] hover:bg-[color-mix(in_srgb,var(--color-sagebrush-green)_10%,transparent)]" 
+  },
+  { 
+    label: "Social", 
+    value: "Social", 
+    count: upcomingEvents.filter(e => e.eventType === "Social").length, 
+    activeClasses: "bg-[var(--color-rusty-orange)] text-white hover:bg-[color-mix(in_srgb,var(--color-rusty-orange)_90%,black)]", 
+    inactiveClasses: "border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)] text-[var(--color-rusty-orange)] hover:bg-[color-mix(in_srgb,var(--color-rusty-orange)_10%,transparent)]" 
+  },
+  { 
+    label: "Demos", 
+    value: "Demo", 
+    count: upcomingEvents.filter(e => e.eventType === "Demo").length, 
+    activeClasses: "bg-[var(--color-warning-clay)] text-white hover:bg-[color-mix(in_srgb,var(--color-warning-clay)_90%,black)]", 
+    inactiveClasses: "border-[color-mix(in_srgb,var(--color-warning-clay)_30%,transparent)] text-[var(--color-warning-clay)] hover:bg-[color-mix(in_srgb,var(--color-warning-clay)_10%,transparent)]" 
+  }
 ]
 
 export default function EventsPage() {
@@ -493,6 +545,82 @@ export default function EventsPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
   const eventsPerPage = 12
+
+  // Color mapping function for featured events using explicit CSS variables
+  const getEventColors = (eventType: string) => {
+    switch (eventType) {
+      case 'Competition': return {
+        background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] to-[color-mix(in_srgb,var(--color-slate-blue)_15%,transparent)]',
+        border: 'border-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)]',
+        text: 'text-[var(--color-slate-blue)]',
+        iconText: 'text-[var(--color-slate-blue)]',
+        badge: 'bg-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] text-[var(--color-slate-blue)] border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]',
+        buttonBorder: 'border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]',
+        buttonText: 'text-[var(--color-slate-blue)]',
+        hoverText: 'hover:text-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)]'
+      }
+      case 'Training': return {
+        background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-sandy-ochre)_20%,transparent)] to-[color-mix(in_srgb,var(--color-sandy-ochre)_15%,transparent)]',
+        border: 'border-[color-mix(in_srgb,var(--color-sandy-ochre)_20%,transparent)]',
+        text: 'text-[var(--color-sandy-ochre)]',
+        iconText: 'text-[var(--color-sandy-ochre)]',
+        badge: 'bg-[color-mix(in_srgb,var(--color-sandy-ochre)_20%,transparent)] text-[var(--color-sandy-ochre)] border-[color-mix(in_srgb,var(--color-sandy-ochre)_30%,transparent)]',
+        buttonBorder: 'border-[color-mix(in_srgb,var(--color-sandy-ochre)_30%,transparent)]',
+        buttonText: 'text-[var(--color-sandy-ochre)]',
+        hoverText: 'hover:text-[color-mix(in_srgb,var(--color-sandy-ochre)_80%,black)]'
+      }
+      case 'Expo': return {
+        background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-info-river)_20%,transparent)] to-[color-mix(in_srgb,var(--color-info-river)_15%,transparent)]',
+        border: 'border-[color-mix(in_srgb,var(--color-info-river)_20%,transparent)]',
+        text: 'text-[var(--color-info-river)]',
+        iconText: 'text-[var(--color-info-river)]',
+        badge: 'bg-[color-mix(in_srgb,var(--color-info-river)_20%,transparent)] text-[var(--color-info-river)] border-[color-mix(in_srgb,var(--color-info-river)_30%,transparent)]',
+        buttonBorder: 'border-[color-mix(in_srgb,var(--color-info-river)_30%,transparent)]',
+        buttonText: 'text-[var(--color-info-river)]',
+        hoverText: 'hover:text-[color-mix(in_srgb,var(--color-info-river)_80%,black)]'
+      }
+      case 'Charity': return {
+        background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-sagebrush-green)_20%,transparent)] to-[color-mix(in_srgb,var(--color-sagebrush-green)_15%,transparent)]',
+        border: 'border-[color-mix(in_srgb,var(--color-sagebrush-green)_20%,transparent)]',
+        text: 'text-[var(--color-sagebrush-green)]',
+        iconText: 'text-[var(--color-sagebrush-green)]',
+        badge: 'bg-[color-mix(in_srgb,var(--color-sagebrush-green)_20%,transparent)] text-[var(--color-sagebrush-green)] border-[color-mix(in_srgb,var(--color-sagebrush-green)_30%,transparent)]',
+        buttonBorder: 'border-[color-mix(in_srgb,var(--color-sagebrush-green)_30%,transparent)]',
+        buttonText: 'text-[var(--color-sagebrush-green)]',
+        hoverText: 'hover:text-[color-mix(in_srgb,var(--color-sagebrush-green)_80%,black)]'
+      }
+      case 'Social': return {
+        background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-rusty-orange)_20%,transparent)] to-[color-mix(in_srgb,var(--color-rusty-orange)_15%,transparent)]',
+        border: 'border-[color-mix(in_srgb,var(--color-rusty-orange)_20%,transparent)]',
+        text: 'text-[var(--color-rusty-orange)]',
+        iconText: 'text-[var(--color-rusty-orange)]',
+        badge: 'bg-[color-mix(in_srgb,var(--color-rusty-orange)_20%,transparent)] text-[var(--color-rusty-orange)] border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)]',
+        buttonBorder: 'border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)]',
+        buttonText: 'text-[var(--color-rusty-orange)]',
+        hoverText: 'hover:text-[color-mix(in_srgb,var(--color-rusty-orange)_80%,black)]'
+      }
+      case 'Demo': return {
+        background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-warning-clay)_20%,transparent)] to-[color-mix(in_srgb,var(--color-warning-clay)_15%,transparent)]',
+        border: 'border-[color-mix(in_srgb,var(--color-warning-clay)_20%,transparent)]',
+        text: 'text-[var(--color-warning-clay)]',
+        iconText: 'text-[var(--color-warning-clay)]',
+        badge: 'bg-[color-mix(in_srgb,var(--color-warning-clay)_20%,transparent)] text-[var(--color-warning-clay)] border-[color-mix(in_srgb,var(--color-warning-clay)_30%,transparent)]',
+        buttonBorder: 'border-[color-mix(in_srgb,var(--color-warning-clay)_30%,transparent)]',
+        buttonText: 'text-[var(--color-warning-clay)]',
+        hoverText: 'hover:text-[color-mix(in_srgb,var(--color-warning-clay)_80%,black)]'
+      }
+      default: return {
+        background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] to-[color-mix(in_srgb,var(--color-slate-blue)_15%,transparent)]',
+        border: 'border-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)]',
+        text: 'text-[var(--color-slate-blue)]',
+        iconText: 'text-[var(--color-slate-blue)]',
+        badge: 'bg-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] text-[var(--color-slate-blue)] border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]',
+        buttonBorder: 'border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]',
+        buttonText: 'text-[var(--color-slate-blue)]',
+        hoverText: 'hover:text-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)]'
+      }
+    }
+  }
   
   const filteredEvents = upcomingEvents.filter(event => {
     const matchesCategory = selectedCategory === "all" || event.eventType === selectedCategory
@@ -518,37 +646,39 @@ export default function EventsPage() {
       <SiteNavigation variant="premium" sticky={true} />
       <div className="min-h-screen bg-background">
         {/* Breadcrumb Hero - Left Aligned */}
-        <section className="bg-gradient-to-br from-slate-blue to-ayu-cobalt border-b border-border/20">
-          <div className="container mx-auto max-w-7xl px-md py-3xl">
-            <div className="flex items-center gap-xs text-sm text-range-white/80 mb-base">
+        <section className="bg-gradient-to-br from-[var(--color-slate-blue)] to-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)] border-b border-border/20 pt-[calc(var(--space-3xl)+var(--space-lg))] pb-3xl">
+          <div className="container mx-auto max-w-7xl px-md">
+            <div className="flex items-center gap-xs text-sm text-[var(--color-crisp-off-white)]/80 mb-sm">
               <span>Home</span>
               <ChevronRight className="h-4 w-4" />
-              <span className="text-rusty-orange font-medium">Events</span>
+              <span className="text-[var(--color-rusty-orange)] font-medium">Events</span>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-center">
-              <div className="lg:col-span-2 space-y-base">
-                <Badge className="bg-slate-blue/20 text-slate-blue border-slate-blue/30 w-fit">
-                  <Calendar className="h-4 w-4 mr-xs" />
-                  Events Hub
-                </Badge>
-                <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-range-white leading-tight">
-                  Treasure Valley Events
-                </h1>
-                <p className="text-body-lg text-range-white/80 max-w-2xl">
-                  Discover competitions, training, shows, and community events across Idaho's premier firearms region.
-                </p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch">
+              <div className="lg:col-span-2 h-full flex flex-col justify-between">
+                <div className="space-y-xs">
+                  <Badge className="bg-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] text-[var(--color-slate-blue)] border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)] w-fit">
+                    <IconCalendarEvent className="h-4 w-4 mr-xs" />
+                    Events Hub
+                  </Badge>
+                  <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-[var(--color-crisp-off-white)] leading-tight">
+                    Treasure Valley Events
+                  </h1>
+                  <p className="text-body-lg text-[var(--color-crisp-off-white)]/80 max-w-2xl">
+                    Discover competitions, training, shows, and community events across Idaho's premier firearms region.
+                  </p>
+                </div>
                 <div className="flex gap-base">
                   <Button 
                     size="lg" 
-                    className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
+                    className="bg-gradient-to-r from-[var(--color-rusty-orange)] to-[var(--color-rusty-orange)] text-[var(--color-shared-dark)] hover:from-[var(--color-rusty-orange)] hover:to-[var(--color-rusty-orange)] font-rajdhani font-bold"
                   >
-                    <Plus className="h-4 w-4 mr-xs" />
+                    <RiFireFill className="h-4 w-4 mr-xs" />
                     Submit Event
                   </Button>
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
+                    className="border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)] text-[var(--color-rusty-orange)] hover:bg-[var(--color-rusty-orange)] hover:text-[var(--color-shared-dark)]"
                   >
                     View Calendar
                   </Button>
@@ -557,15 +687,15 @@ export default function EventsPage() {
               
               {/* Featured Event Spotlight */}
               <div className="lg:col-span-1">
-                <div className="relative">
-                  <Card className="mica border-rusty-orange/30 hover:shadow-elevated transition-all duration-300 overflow-hidden">
+                <div className="relative h-full">
+                  <Card className="mica border-rusty-orange/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
                     <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-rusty-orange/20 to-rusty-orange/10 rounded-bl-full"></div>
                     <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-rusty-orange to-rusty-orange"></div>
                     
                     <CardHeader className="pb-xs relative z-10">
                       <div className="flex items-center justify-between mb-xs">
                         <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30 font-rajdhani font-bold text-[10px]">
-                          <Zap className="h-3 w-3 mr-xs" />
+                          <IconBolt className="h-3 w-3 mr-xs" />
                           NEXT EVENT
                         </Badge>
                         <div className="flex items-center gap-xs text-xs text-muted-foreground">
@@ -577,7 +707,7 @@ export default function EventsPage() {
                       <div className="space-y-xs">
                         <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">USPSA Monthly Match</h3>
                         <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                          <MapPin className="h-3 w-3 text-rusty-orange" />
+                          <IconMapPin className="h-3 w-3 text-rusty-orange" />
                           <span>Nampa Rod & Gun Club</span>
                         </div>
                       </div>
@@ -587,7 +717,7 @@ export default function EventsPage() {
                       <div className="flex items-center justify-between">
                         <div className="space-y-xs">
                           <div className="flex items-center gap-xs text-xs text-card-foreground/80">
-                            <Calendar className="h-3 w-3 text-rusty-orange" />
+                            <IconCalendarEvent className="h-3 w-3 text-rusty-orange" />
                             <span className="font-medium">Sat, Aug 9 • 8:00 AM</span>
                           </div>
                           <div className="flex items-center gap-xs text-xs text-muted-foreground">
@@ -600,7 +730,7 @@ export default function EventsPage() {
                         
                         <div className="text-right">
                           <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rusty-orange/30 to-rusty-orange/20 flex items-center justify-center mb-xs">
-                            <Trophy className="h-5 w-5 text-rusty-orange" />
+                            <GiCrossedPistols className="h-5 w-5 text-rusty-orange" />
                           </div>
                         </div>
                       </div>
@@ -662,12 +792,13 @@ export default function EventsPage() {
                     
                     const ticketDate = formatTicketDate(event.date)
                     const eventId = `TBG${event.title.replace(/\s+/g, '').slice(0, 6).toUpperCase()}`
+                    const colors = getEventColors(event.eventType)
                     
                     return (
                       <Card key={index} className="p-0 overflow-hidden hover:shadow-elevated transition-all duration-300 cursor-pointer group">
                         <div className="flex">
                           {/* Fixed Width Date Stub */}
-                          <div className="w-24 flex-shrink-0 bg-gradient-to-b from-slate-blue/20 to-ayu-cobalt/15 p-base text-center relative border-r border-slate-blue/20">
+                          <div className={cn("w-24 flex-shrink-0 p-base text-center relative border-r", colors.background, colors.border)}>
                             {/* Perforated Edge */}
                             <div className="absolute -right-1.5 top-2 bottom-2 flex flex-col justify-evenly">
                               {Array.from({ length: 5 }, (_, i) => (
@@ -676,13 +807,13 @@ export default function EventsPage() {
                             </div>
                             
                             <div className="space-y-1">
-                              <div className="text-[10px] font-medium text-slate-blue tracking-wide">
+                              <div className={cn("text-[10px] font-medium tracking-wide", colors.text)}>
                                 {ticketDate.dayOfWeek}
                               </div>
-                              <div className="text-2xl font-rajdhani font-bold text-slate-blue leading-none">
+                              <div className={cn("text-2xl font-rajdhani font-bold leading-none", colors.text)}>
                                 {ticketDate.day}
                               </div>
-                              <div className="text-[10px] font-medium text-slate-blue tracking-wide">
+                              <div className={cn("text-[10px] font-medium tracking-wide", colors.text)}>
                                 {ticketDate.month}
                               </div>
                             </div>
@@ -693,7 +824,7 @@ export default function EventsPage() {
                             <div className="space-y-xs">
                               <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-xs">
-                                  <Badge className="bg-slate-blue/20 text-slate-blue border-slate-blue/30 text-[10px]">
+                                  <Badge className={cn("text-[10px]", colors.badge)}>
                                     {event.eventType.toUpperCase()}
                                   </Badge>
                                   <Badge className="bg-safety-red text-white text-[10px]">FEATURED</Badge>
@@ -701,7 +832,7 @@ export default function EventsPage() {
                                 <div className="text-[10px] text-muted-foreground font-mono">#{eventId}</div>
                               </div>
                               
-                              <h3 className="font-rajdhani text-xl font-bold text-card-foreground group-hover:text-slate-blue transition-colors">
+                              <h3 className={cn("font-rajdhani text-xl font-bold text-card-foreground transition-colors", colors.hoverText.replace('hover:', 'group-hover:'))}>
                                 {event.title}
                               </h3>
                               
@@ -710,15 +841,15 @@ export default function EventsPage() {
                               <div className="flex items-center justify-between pt-xs">
                                 <div className="flex items-center gap-base text-xs text-muted-foreground">
                                   <div className="flex items-center gap-xs">
-                                    <MapPin className="h-3 w-3 text-slate-blue" />
+                                    <MapPin className={cn("h-3 w-3", colors.iconText)} />
                                     <span>{event.location.split(',')[0]}</span>
                                   </div>
                                   <div className="flex items-center gap-xs">
-                                    <Users className="h-3 w-3 text-slate-blue" />
+                                    <Users className={cn("h-3 w-3", colors.iconText)} />
                                     <span>{event.registeredCount}/{event.capacity}</span>
                                   </div>
                                 </div>
-                                <Button variant="ghost" size="sm" className="text-slate-blue hover:text-ayu-cobalt shadow-none border border-slate-blue/30 px-base py-xs">
+                                <Button variant="ghost" size="sm" className={cn("shadow-none border px-base py-xs", colors.buttonText, colors.buttonBorder, colors.hoverText)}>
                                   REGISTER
                                 </Button>
                               </div>
@@ -735,76 +866,72 @@ export default function EventsPage() {
               <div className="space-y-base">
                 <h3 className="font-rajdhani text-xl font-bold text-card-foreground">This Month</h3>
                 
-                <Card className="p-lg">
-                  <div className="space-y-base">
-                    <div className="grid grid-cols-7 gap-xs text-center">
-                      {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, i) => (
-                        <div key={i} className="text-xs font-medium text-muted-foreground p-xs">{day}</div>
-                      ))}
-                      {Array.from({ length: 35 }, (_, i) => {
-                        const date = i - 2; // Start from -2 to show previous month
-                        // Extract actual event dates from our events data
-                        const eventDates = filteredEvents
-                          .map(event => {
-                            const eventDate = new Date(event.date);
-                            return eventDate.getDate();
-                          })
-                          .filter(d => d >= 1 && d <= 31);
-                        const hasEvent = eventDates.includes(date);
-                        const eventCount = eventDates.filter(d => d === date).length;
-                        
-                        return (
-                          <div key={i} className={`
-                            text-xs p-xs rounded cursor-pointer transition-colors relative
-                            ${date < 1 || date > 31 ? 'text-muted-foreground/50' : 'text-card-foreground hover:bg-accent'}
-                            ${hasEvent ? 'bg-rusty-orange/20 text-rusty-orange font-bold' : ''}
-                          `}>
-                            {date < 1 ? 30 + date : date > 31 ? date - 31 : date}
-                            {eventCount > 1 && (
-                              <div className="absolute -top-1 -right-1 w-2 h-2 bg-rusty-orange rounded-full text-[8px] flex items-center justify-center text-white">
-                                {eventCount}
-                              </div>
-                            )}
-                          </div>
-                        );
-                      })}
-                    </div>
-                    
-                    <div className="pt-base border-t space-y-xs">
-                      <h4 className="font-medium text-sm">Quick Actions</h4>
-                      <div className="space-y-xs">
-                        <Button variant="ghost" className="justify-start w-full text-xs h-8">
-                          <Plus className="h-3 w-3 mr-xs" />
-                          Add to Calendar
-                        </Button>
-                        <Button variant="ghost" className="justify-start w-full text-xs h-8">
-                          <Eye className="h-3 w-3 mr-xs" />
-                          View Full Calendar
-                        </Button>
-                      </div>
+                <div className="space-y-base">
+                  <div className="grid grid-cols-7 gap-xs text-center">
+                    {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, i) => (
+                      <div key={i} className="text-xs font-medium text-muted-foreground p-xs">{day}</div>
+                    ))}
+                    {Array.from({ length: 35 }, (_, i) => {
+                      const date = i - 2; // Start from -2 to show previous month
+                      // Extract actual event dates from our events data
+                      const eventDates = filteredEvents
+                        .map(event => {
+                          const eventDate = new Date(event.date);
+                          return eventDate.getDate();
+                        })
+                        .filter(d => d >= 1 && d <= 31);
+                      const hasEvent = eventDates.includes(date);
+                      const eventCount = eventDates.filter(d => d === date).length;
+                      
+                      return (
+                        <div key={i} className={`
+                          text-xs p-xs rounded cursor-pointer transition-colors relative
+                          ${date < 1 || date > 31 ? 'text-muted-foreground/50' : 'text-card-foreground hover:bg-accent'}
+                          ${hasEvent ? 'bg-[var(--color-rusty-orange)]/20 text-[var(--color-rusty-orange)] font-bold' : ''}
+                        `}>
+                          {date < 1 ? 30 + date : date > 31 ? date - 31 : date}
+                          {eventCount > 1 && (
+                            <div className="absolute -top-1 -right-1 w-2 h-2 bg-[var(--color-rusty-orange)] rounded-full text-[8px] flex items-center justify-center text-[var(--color-crisp-off-white)]">
+                              {eventCount}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                  
+                  <div className="pt-base border-t space-y-xs">
+                    <h4 className="font-medium text-sm">Quick Actions</h4>
+                    <div className="space-y-xs">
+                      <Button variant="ghost" className="justify-start w-full text-xs h-8">
+                        <Plus className="h-3 w-3 mr-xs" />
+                        Add to Calendar
+                      </Button>
+                      <Button variant="ghost" className="justify-start w-full text-xs h-8">
+                        <Eye className="h-3 w-3 mr-xs" />
+                        View Full Calendar
+                      </Button>
                     </div>
                   </div>
-                </Card>
+                </div>
 
                 {/* Event Stats */}
-                <Card className="p-base">
-                  <div className="space-y-base text-center">
+                <div className="space-y-base text-center">
+                  <div>
+                    <div className="font-rajdhani text-3xl font-bold text-[var(--color-rusty-orange)]">132+</div>
+                    <div className="text-xs text-muted-foreground">Events This Month</div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-base text-center">
                     <div>
-                      <div className="font-rajdhani text-3xl font-bold text-rusty-orange">132+</div>
-                      <div className="text-xs text-muted-foreground">Events This Month</div>
+                      <div className="font-rajdhani text-lg font-bold text-[var(--color-rusty-orange)]">45+</div>
+                      <div className="text-xs text-muted-foreground">Venues</div>
                     </div>
-                    <div className="grid grid-cols-2 gap-base text-center">
-                      <div>
-                        <div className="font-rajdhani text-lg font-bold text-rusty-orange">45+</div>
-                        <div className="text-xs text-muted-foreground">Venues</div>
-                      </div>
-                      <div>
-                        <div className="font-rajdhani text-lg font-bold text-rifling-green">6</div>
-                        <div className="text-xs text-muted-foreground">Categories</div>
-                      </div>
+                    <div>
+                      <div className="font-rajdhani text-lg font-bold text-[var(--color-sagebrush-green)]">6</div>
+                      <div className="text-xs text-muted-foreground">Categories</div>
                     </div>
                   </div>
-                </Card>
+                </div>
               </div>
             </div>
           </div>
@@ -846,10 +973,12 @@ export default function EventsPage() {
                     variant={selectedCategory === category.value ? "default" : "outline"}
                     size="sm"
                     onClick={() => setSelectedCategory(category.value)}
-                    className={selectedCategory === category.value
-                      ? `bg-${category.color} text-card-foreground hover:bg-${category.color}/90 shadow-none`
-                      : `border border-${category.borderColor} text-${category.color} hover:bg-${category.bgColor} shadow-none`
-                    }
+                    className={cn(
+                      "shadow-none border",
+                      selectedCategory === category.value
+                        ? category.activeClasses
+                        : category.inactiveClasses
+                    )}
                   >
                     {category.label}
                     <Badge className="ml-xs bg-current/20 text-current text-[10px] border-0">
