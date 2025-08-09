@@ -461,7 +461,7 @@ export default function DirectoryPage() {
 
       {/* Directory Listings */}
       <section className="pb-6xl">
-        <div className="container mx-auto max-w-6xl px-md">
+        <div className="container mx-auto max-w-site px-md">
           <div className="space-y-xl">
             <div className="flex items-center justify-between">
               <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">
@@ -524,7 +524,7 @@ export default function DirectoryPage() {
 
       {/* Partnership CTA */}
       <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90">
-        <div className="container mx-auto max-w-4xl px-md text-center">
+        <div className="container mx-auto max-w-site px-md text-center">
           <div className="space-y-lg">
             <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
               <Shield className="h-4 w-4 mr-xs" />

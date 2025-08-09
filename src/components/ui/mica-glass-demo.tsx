@@ -12,7 +12,7 @@ interface MicaDemoProps {
 
 export function MicaGlassDemo({ className }: MicaDemoProps) {
   return (
-    <div className={cn("w-full max-w-4xl mx-auto p-lg space-y-[var(--space-lg)]", className)}>
+    <div className={cn("w-full max-w-site mx-auto p-lg space-y-[var(--space-lg)]", className)}>
       <div className="text-center space-y-[var(--space-base)]">
         <h2 className="text-heading-lg font-rajdhani font-bold text-dark-chocolate">
           Windows 11 Mica Glass System

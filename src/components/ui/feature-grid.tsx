@@ -86,7 +86,7 @@ export function FeatureGrid({
   
   return (
     <section className={cn(featureGridVariants({ variant, spacing }), className)} {...props}>
-      <div className="max-w-6xl mx-auto px-md">
+      <div className="max-w-site mx-auto px-md">
         {/* Header */}
         {(title || subtitle || description) && (
           <div className="text-center mb-[var(--space-xl)]">

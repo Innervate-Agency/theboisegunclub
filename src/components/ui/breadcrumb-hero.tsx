@@ -73,7 +73,7 @@ export function BreadcrumbHero({
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-mesh-warm opacity-20" />
       
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-md">
+      <div className="relative z-10 w-full max-w-site mx-auto px-md">
         <div className="space-y-[var(--space-md)]">
           
           {/* Back Link */}

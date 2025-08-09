@@ -1080,7 +1080,7 @@ export default function EventsPage() {
 
       {/* Event Submission CTA */}
       <section className="py-2xl bg-gradient-to-br from-slate-blue to-ayu-green">
-        <div className="container mx-auto max-w-4xl px-md text-center">
+        <div className="container mx-auto max-w-site px-md text-center">
           <div className="space-y-lg">
             <Badge className="bg-range-white/20 text-range-white border-range-white/30">
               <Plus className="h-4 w-4 mr-xs" />
@@ -1114,7 +1114,7 @@ export default function EventsPage() {
 
       {/* Why Choose TBGC - Moved above footer */}
       <section className="py-2xl bg-muted/30">
-        <div className="container mx-auto max-w-4xl px-md">
+        <div className="container mx-auto max-w-site px-md">
           <div className="text-center space-y-xl">
             <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">Why Choose TBGC Events</h2>
             

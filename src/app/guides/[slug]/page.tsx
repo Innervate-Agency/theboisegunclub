@@ -44,7 +44,7 @@ export default async function GuidePage({ params }: { params: { slug: string } }
         ]}
       />
       <main className="py-xl">
-        <div className="max-w-4xl mx-auto px-md">
+        <div className="max-w-site mx-auto px-md">
           <article className="prose dark:prose-invert prose-lg">
             <MdxContent source={guide.content} />
           </article>

@@ -83,7 +83,7 @@ export default function TrainingPage() {
 
       {/* Popular Courses */}
       <section className="py-[var(--space-2xl)] bg-gradient-hero-warm">
-        <div className="max-w-6xl mx-auto px-[var(--space-md)]">
+        <div className="max-w-site mx-auto px-[var(--space-md)]">
           <div className="text-center mb-[var(--space-xl)]">
             <p className="text-sm font-rajdhani font-semibold text-rusty-orange mb-[var(--space-xs)] tracking-wide uppercase">
               Popular Courses

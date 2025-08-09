@@ -60,7 +60,7 @@ export function StatsShowcase({
       className={cn(statsShowcaseVariants({ variant, spacing }), className)}
       {...props}
     >
-      <div className="w-full max-w-6xl mx-auto px-md">
+      <div className="w-full max-w-site mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-xl)]">

@@ -300,7 +300,7 @@ export function BlogList({
   
   return (
     <section className={cn("w-full py-[var(--space-xl)]", className)} {...props}>
-      <div className="max-w-6xl mx-auto px-md">
+      <div className="max-w-site mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-lg)]">
@@ -408,10 +408,10 @@ export function BlogDetail({
 }: BlogDetailProps) {
   return (
     <article className={cn("w-full py-[var(--space-xl)]", className)} {...props}>
-      <div className="max-w-6xl mx-auto px-md">
+      <div className="max-w-site mx-auto px-md">
         <div className={cn(
           "grid gap-lg",
-          showSidebar ? "lg:grid-cols-3" : "lg:grid-cols-1 max-w-4xl mx-auto"
+          showSidebar ? "lg:grid-cols-3" : "lg:grid-cols-1 max-w-site mx-auto"
         )}>
           {/* Main Content */}
           <div className={cn(showSidebar ? "lg:col-span-2" : "")}>

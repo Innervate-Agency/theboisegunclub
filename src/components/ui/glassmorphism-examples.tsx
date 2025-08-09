@@ -17,7 +17,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
   const [showToast, setShowToast] = React.useState(false)
 
   return (
-    <div className={cn("w-full max-w-6xl mx-auto p-lg", className)}>
+    <div className={cn("w-full max-w-site mx-auto p-lg", className)}>
       
       {/* Hero Section with Background for Glass Effects */}
       <div 

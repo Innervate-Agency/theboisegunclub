@@ -96,7 +96,7 @@ export function SiteNavigation({
       className={cn(siteNavigationVariants({ variant, layout, sticky }), className)}
       {...props}
     >
-      <div className="w-full max-w-7xl mx-auto px-md">
+      <div className="w-full max-w-site mx-auto px-md">
         <div className="relative flex items-center justify-between h-16">
           
           {/* Logo */}

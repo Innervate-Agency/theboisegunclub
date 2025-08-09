@@ -48,7 +48,7 @@ export function ServiceGrid() {
     <section className="py-[var(--space-2xl)] bg-range-white">
       <div className="container mx-auto px-[var(--space-base)]">
         {/* Service cards in 3x2 grid exactly matching screenshot layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-md max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-md max-w-site mx-auto">
           {services.map((service, index) => (
             <Card 
               key={index} 

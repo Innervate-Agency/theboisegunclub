@@ -62,7 +62,7 @@ export default function ComponentsDemoPage() {
 
       {/* Demo Section */}
       <section id="demo" className="py-[var(--space-2xl)]">
-        <div className="max-w-4xl mx-auto px-[var(--space-md)]">
+        <div className="max-w-site mx-auto px-[var(--space-md)]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
             
             {/* Dialog Demo */}

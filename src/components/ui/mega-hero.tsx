@@ -75,7 +75,7 @@ export function MegaHero({
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-mesh-warm opacity-30" />
       
-      <div className="relative z-10 w-full max-w-site mx-auto px-md py-[var(--space-2xl)]">
+      <div className="relative z-10 w-full max-w-site mx-auto px-[--space-md] py-[var(--space-2xl)]">
         <div className={cn(
           "space-y-[var(--space-lg)]",
           centerContent && "text-center"
@@ -113,13 +113,13 @@ export function MegaHero({
           {/* Badges */}
           {badges && badges.length > 0 && (
             <div className={cn(
-              "flex gap-base flex-wrap",
+              "flex gap-[--space-base] flex-wrap",
               centerContent ? "justify-center" : "justify-start"
             )}>
               {badges.map((badge, index) => (
                 <div
                   key={index}
-                  className="px-base py-xs bg-[var(--color-crisp-off-white)]/20 backdrop-blur-sm border border-[var(--color-crisp-off-white)]/30 rounded-card text-body-sm font-medium text-[var(--color-crisp-off-white)] shadow-xs"
+                  className="px-[--space-base] py-[--space-xs] bg-[var(--color-crisp-off-white)]/20 backdrop-blur-sm border border-[var(--color-crisp-off-white)]/30 rounded-[--radius-base] text-body-sm font-medium text-[var(--color-crisp-off-white)] shadow-[--shadow-xs]"
                 >
                   {badge}
                 </div>
@@ -130,7 +130,7 @@ export function MegaHero({
           {/* CTAs */}
           {(primaryCTA || secondaryCTA) && (
             <div className={cn(
-              "flex gap-base flex-wrap",
+              "flex gap-[--space-base] flex-wrap",
               centerContent ? "justify-center" : "justify-start"
             )}>
               {primaryCTA && (

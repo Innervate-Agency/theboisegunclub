@@ -430,7 +430,7 @@ export default function MarketplacePage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90 px-md py-6xl">
         <div className="absolute inset-0 bg-gradient-to-br from-rusty-orange/5 via-transparent to-rusty-orange/8 pointer-events-none"></div>
-        <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="container mx-auto max-w-site relative z-10">
           <div className="text-center space-y-lg">
             <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
               <ShoppingCart className="h-4 w-4 mr-xs" />
@@ -465,7 +465,7 @@ export default function MarketplacePage() {
 
       {/* Stats Section */}
       <section className="py-4xl bg-muted/50">
-        <div className="container mx-auto max-w-6xl px-md">
+        <div className="container mx-auto max-w-site px-md">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-xl">
             <StatCard
               title="Total Items"
@@ -505,7 +505,7 @@ export default function MarketplacePage() {
 
       {/* Search and Filter Section */}
       <section className="py-4xl">
-        <div className="container mx-auto max-w-6xl px-md">
+        <div className="container mx-auto max-w-site px-md">
           <div className="space-y-xl">
             {/* Search Bar */}
             <div className="flex flex-col md:flex-row gap-base">
@@ -587,7 +587,7 @@ export default function MarketplacePage() {
 
       {/* Marketplace Listings */}
       <section className="pb-6xl">
-        <div className="container mx-auto max-w-6xl px-md">
+        <div className="container mx-auto max-w-site px-md">
           <div className="space-y-xl">
             <div className="flex items-center justify-between">
               <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">
@@ -633,7 +633,7 @@ export default function MarketplacePage() {
 
       {/* Legal Notice */}
       <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90">
-        <div className="container mx-auto max-w-4xl px-md text-center">
+        <div className="container mx-auto max-w-site px-md text-center">
           <div className="space-y-lg">
             <Badge className="bg-scale-blue/20 text-scale-blue border-scale-blue/30">
               <Shield className="h-4 w-4 mr-xs" />

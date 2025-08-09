@@ -17,8 +17,8 @@ const contactFormVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-card border border-border rounded-card",
-        glass: "mica-card border-border/20 rounded-card",
+        default: "bg-card border border-border rounded-[--radius-base]",
+        glass: "mica-card border-border/20 rounded-[--radius-base]",
         minimal: "bg-transparent border-0"
       }
     },
@@ -73,7 +73,7 @@ export function ContactForm({
   const getFormFields = () => {
     const baseFields = (
       <>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-base">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[--space-base]">
           <div className="space-y-[var(--space-xs)]">
             <Label htmlFor="firstName">First Name *</Label>
             <Input
@@ -103,7 +103,7 @@ export function ContactForm({
               name="email"
               type="email"
               placeholder="john@example.com"
-              className="pl-xl"
+              className="pl-[--space-xl]"
               required
             />
           </div>
@@ -181,7 +181,7 @@ export function ContactForm({
                 required
               />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-base">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[--space-base]">
               <div className="space-y-[var(--space-xs)]">
                 <Label htmlFor="eventDate">Event Date *</Label>
                 <Input
@@ -355,9 +355,9 @@ export function ContactForm({
               <h3 className="font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
                 Contact Information
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-base text-body-sm">
-                <div className="flex items-center gap-sm">
-                  <div className="p-xs bg-sandy-ochre/10 rounded-input">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[--space-base] text-body-sm">
+                <div className="flex items-center gap-[--space-sm]">
+                  <div className="p-[--space-xs] bg-sandy-ochre/10 rounded-[--radius-base]">
                     <Phone className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>
@@ -366,8 +366,8 @@ export function ContactForm({
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-sm">
-                  <div className="p-xs bg-sandy-ochre/10 rounded-input">
+                <div className="flex items-center gap-[--space-sm]">
+                  <div className="p-[--space-xs] bg-sandy-ochre/10 rounded-[--radius-base]">
                     <Mail className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>
@@ -376,8 +376,8 @@ export function ContactForm({
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-sm">
-                  <div className="p-xs bg-sandy-ochre/10 rounded-input">
+                <div className="flex items-center gap-[--space-sm]">
+                  <div className="p-[--space-xs] bg-sandy-ochre/10 rounded-[--radius-base]">
                     <MapPin className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>
@@ -386,8 +386,8 @@ export function ContactForm({
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-sm">
-                  <div className="p-xs bg-sandy-ochre/10 rounded-input">
+                <div className="flex items-center gap-[--space-sm]">
+                  <div className="p-[--space-xs] bg-sandy-ochre/10 rounded-[--radius-base]">
                     <Clock className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>

@@ -32,7 +32,7 @@ export default async function ArmoryItemPage({ params }: Props) {
       <SiteNavigation />
       <PageHero title={item.frontmatter.title} />
       <main className="bg-peachy-white">
-        <div className="container mx-auto max-w-4xl py-xl px-md">
+        <div className="container mx-auto max-w-site py-xl px-md">
           <article className="prose dark:prose-invert prose-lg">
             <MdxContent source={item.content} />
           </article>

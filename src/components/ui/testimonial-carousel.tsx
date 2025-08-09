@@ -88,7 +88,7 @@ export function TestimonialCarousel({
       onMouseLeave={() => setIsAutoPlayPaused(false)}
       {...props}
     >
-      <div className="max-w-4xl mx-auto px-md">
+      <div className="max-w-site mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-xl)]">

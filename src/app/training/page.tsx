@@ -137,7 +137,7 @@ export default function TrainingPage() {
 
       {/* Training Features */}
       <section className="px-[var(--space-md)] py-[var(--space-xl)] bg-gradient-hero-warm">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-site mx-auto">
           <div className="text-center mb-[var(--space-xl)]">
             <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
               Building Treasure Valley's Training Hub
@@ -164,7 +164,7 @@ export default function TrainingPage() {
 
       {/* Training Directory Vision */}
       <section id="about-training" className="py-[var(--space-2xl)]">
-        <div className="max-w-6xl mx-auto px-[var(--space-md)]">
+        <div className="max-w-site mx-auto px-[var(--space-md)]">
           <div className="text-center mb-[var(--space-xl)]">
             <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
               Treasure Valley Training Ecosystem

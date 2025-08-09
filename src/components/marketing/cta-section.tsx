@@ -5,7 +5,7 @@ export function CTASection() {
   return (
     <section className="py-[var(--space-2xl)] bg-range-white">
       <div className="container mx-auto px-[var(--space-base)]">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-site mx-auto text-center">
           {/* Main CTA */}
           <Card className="bg-card shadow-md border border-warning-amber/20 p-[var(--space-lg)] mb-[var(--space-xl)]">
             <h2 className="font-rajdhani text-heading-lg md:text-heading-xl font-bold text-dark-chocolate mb-[var(--space-md)]">

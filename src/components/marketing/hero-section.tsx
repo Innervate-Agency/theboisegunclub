@@ -17,12 +17,12 @@ export function HeroSection() {
         </h1>
         
         {/* Editorial subtitle with Noto Serif */}
-        <p className="font-serif text-xl italic text-warning-amber/90 mb-base max-w-4xl mx-auto">
+        <p className="font-serif text-xl italic text-warning-amber/90 mb-base max-w-site mx-auto">
           Treasure Valley's Comprehensive Firearms Community Platform
         </p>
         
         {/* Value proposition */}
-        <p className="font-noto-sans text-lg text-warning-amber leading-relaxed mb-xl max-w-5xl mx-auto">
+        <p className="font-noto-sans text-lg text-warning-amber leading-relaxed mb-xl max-w-site mx-auto">
           The digital hub uniting ALL Treasure Valley firearms communities. Featuring unified events calendar, comprehensive business directory, community forum, and connecting enthusiasts, families, and professionals across Idaho's premier firearms region.
         </p>
       </div>

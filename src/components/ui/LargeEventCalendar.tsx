@@ -77,7 +77,7 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
     <div className={cn("w-full", className)}>
       {/* Hero Header */}
       <div className="bg-gradient-to-r from-slate-blue to-slate-blue text-white py-3xl">
-        <div className="container mx-auto max-w-6xl px-lg text-center">
+        <div className="container mx-auto max-w-site px-lg text-center">
           <h1 className="font-rajdhani text-6xl font-bold mb-base">Event Calendar</h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Discover upcoming firearms events across the Treasure Valley. Click any date to see events.
@@ -87,7 +87,7 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
 
       {/* Main Calendar Section */}
       <div className="py-3xl bg-background">
-        <div className="container mx-auto max-w-6xl px-lg">
+        <div className="container mx-auto max-w-site px-lg">
           <div className="space-y-2xl">
             
             {/* Calendar Header */}
