@@ -7,6 +7,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2025-08-09] - Page-Specific Theming System
+
+### 🎨 REVOLUTIONARY THEMING: Dynamic Page-Specific Color Theming
+
+#### 🚨 New Theming Architecture
+- **PAGE THEMES**: Each navigation page now has signature Boise landscape color
+- **CSS CUSTOM PROPERTIES**: Dynamic theming using `--page-primary`, `--page-accent`, `--page-gradient`
+- **23-COLOR SYSTEM**: Enhanced from 20 to 23 colors with Boise landscape additions
+- **ZERO JAVASCRIPT**: Pure CSS-based theming system with automatic inheritance
+
+#### 🎯 Page Color Mapping
+**7 Distinct Page Themes:**
+- **Home**: Sandy Ochre (Golden amber warmth)
+- **Events**: Slate Blue (Professional competition)
+- **Directory**: Sagebrush Green (Natural community)
+- **Armory**: Foothills Purple (Tactical knowledge)
+- **Intel**: High Desert Sage (Reconnaissance calm)
+- **Marketplace**: Canyon Clay (Commerce grounded)
+- **Forums**: Info River (Community flow)
+
+#### ✨ Features Added
+- **New Boise Colors**: `foothills-purple` (#8B7AA8), `canyon-clay` (#B85450), `high-desert-sage` (#9CAF88)
+- **Fixed Background**: `dark-chocolate` updated from #260F07 to #1a0f0d for better contrast
+- **Enhanced Shadows**: Warm brown-tinted shadow system instead of blue
+- **Premium Layout**: Standardized 1440px max-width (`max-w-site`) across all pages
+- **Theme Utilities**: Complete `.bg-page-primary`, `.text-page-primary`, `.bg-page-gradient` system
+
+#### 🔧 Technical Implementation
+- **Scalable**: New pages themed by adding `theme-[page]` class to root element
+- **Maintainable**: Single source of truth for page colors
+- **Performance**: Zero runtime overhead - pure CSS custom properties
+- **Consistent**: All UI elements automatically inherit page theme
+
+#### 📄 Pages Updated
+- ✅ **Armory Page**: Complete foothills-purple theme implementation
+- ✅ **Home Page**: Complete sandy-ochre theme implementation
+- 🔄 **Remaining Pages**: Events, Directory, Intel, Marketplace (ready for theming)
+
 ## [2025-08-08] - Comprehensive Design System Migration
 
 ### 🎨 MAJOR DESIGN SYSTEM BREAKTHROUGH: 10-Color Strategic Distribution

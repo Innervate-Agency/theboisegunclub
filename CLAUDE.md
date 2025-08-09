@@ -237,6 +237,59 @@ const config: StorybookConfig = {
 - **NEVER** mix `@storybook/nextjs` and `@storybook/nextjs-vite`
 - **ALWAYS** include `@storybook/addon-docs` for MDX support in Storybook 9
 
+## ✅ COMPLETED MILESTONE: Page-Specific Theming System (2025-08-09)
+
+### THEMING BREAKTHROUGH: Dynamic Page-Specific Color Theming Implementation
+
+**MAJOR TECHNICAL ACHIEVEMENT**: Complete implementation of page-specific theming system using CSS custom properties and 23-color Boise landscape palette with signature themes for each navigation page.
+
+#### Technical Implementation Excellence
+```css
+/* Page-Specific Theme Classes */
+.theme-home {
+  --page-primary: var(--color-sandy-ochre);
+  --page-primary-foreground: var(--color-dark-chocolate);
+  --page-accent: var(--color-ember-glow);
+  --page-gradient: linear-gradient(135deg, var(--color-sandy-ochre), var(--color-ember-glow));
+}
+
+.theme-armory {
+  --page-primary: var(--color-foothills-purple);
+  --page-primary-foreground: var(--color-crisp-off-white);
+  --page-accent: var(--color-slate-blue);
+  --page-gradient: linear-gradient(135deg, var(--color-foothills-purple), var(--color-slate-blue));
+}
+```
+
+#### Dynamic Theming System Architecture
+- ✅ **CSS Custom Properties**: `--page-primary`, `--page-accent`, `--page-gradient` for dynamic theming
+- ✅ **Theme Utility Classes**: `.bg-page-primary`, `.text-page-primary`, `.bg-page-gradient` for consistent application
+- ✅ **7 Distinct Themes**: Each navigation page has signature Boise landscape color (sandy-ochre, foothills-purple, canyon-clay, high-desert-sage, etc.)
+- ✅ **23-Color System**: Enhanced from 20 to 23 colors with Boise landscape additions
+- ✅ **Automatic Inheritance**: All page elements inherit theme colors through CSS custom properties
+
+#### Color System Enhancements
+- **New Boise Colors**: Added `foothills-purple` (#8B7AA8), `canyon-clay` (#B85450), `high-desert-sage` (#9CAF88)
+- **Fixed Background**: Updated `dark-chocolate` from #260F07 to #1a0f0d for better contrast
+- **Enhanced Shadows**: Updated shadow system to use warm brown tones instead of blue-tinted
+- **Complete Utility Classes**: All 23 colors have text, background, and hover variants
+
+#### Layout & Visual Improvements
+- ✅ **Premium Max Width**: Standardized to 1440px (`max-w-site`) across all pages for modern premium feel
+- ✅ **Armory Page**: Complete theme implementation with foothills-purple signature color
+- ✅ **Home Page**: Complete theme implementation with sandy-ochre signature color
+- ✅ **Consistent Theming**: Hero sections, CTAs, badges, filters all use page-specific colors
+- ✅ **Theme-Aware Components**: All UI elements automatically adapt to page theme
+
+#### Technical Benefits Achieved
+- **Scalability**: New pages can be themed by simply adding `theme-[page]` class to root element
+- **Maintainability**: Single source of truth for page colors through CSS custom properties
+- **Performance**: Zero JavaScript required - pure CSS-based theming system
+- **Consistency**: Guaranteed color consistency across all page elements
+- **Brand Identity**: Each page has distinct personality while maintaining design system cohesion
+
+**🎯 RESULT**: Revolutionary page-specific theming system that gives each navigation page its own signature Boise landscape identity while maintaining the tactical firearms community aesthetic and design system consistency.
+
 ## ✅ COMPLETED MIGRATION: Storybook Design System Restoration (2025-08-03)
 
 ### MIGRATION COMPLETE: 100% Success
