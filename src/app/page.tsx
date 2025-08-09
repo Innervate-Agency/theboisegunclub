@@ -98,7 +98,7 @@ const communityData = {
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="theme-home flex flex-col min-h-screen bg-background">
       {/* 1. Site Navigation */}
       <SiteNavigation variant="premium" />
 
@@ -115,7 +115,7 @@ export default function HomePage() {
 
         {/* 3. Stat Cards Section */}
         <section className="py-xl lg:py-2xl">
-          <div className="container mx-auto max-w-6xl px-md">
+          <div className="container mx-auto max-w-site px-md">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {statCardsData.map((card, index) => (
                 <StatCard
@@ -132,7 +132,7 @@ export default function HomePage() {
 
         {/* 4. Platform Blueprint Section */}
         <section className="py-xl lg:py-2xl">
-          <div className="container mx-auto max-w-6xl px-md space-y-2xl">
+          <div className="container mx-auto max-w-site px-md space-y-2xl">
             <div className="text-center">
               <h2 className="font-rajdhani text-4xl font-bold">The Platform Blueprint</h2>
               <p className="text-body-lg text-muted-foreground mt-sm">The core features that power our community.</p>
@@ -145,14 +145,14 @@ export default function HomePage() {
 
         {/* 5. Brand Carousel Section */}
         <section className="py-xl lg:py-2xl">
-          <div className="container mx-auto max-w-6xl px-md">
+          <div className="container mx-auto max-w-site px-md">
             <BrandCarousel variant="launch-phase" />
           </div>
         </section>
 
         {/* 6. Business Context Section */}
-        <section className="py-xl lg:py-2xl bg-muted">
-          <div className="container mx-auto max-w-6xl px-md">
+        <section className="py-xl lg:py-2xl bg-page-primary/5">
+          <div className="container mx-auto max-w-site px-md">
             {/* As `BusinessContext` does not exist, `DirectoryCard` is used as a substitute. */}
             <DirectoryCard
                 variant="premium"
@@ -166,7 +166,7 @@ export default function HomePage() {
 
         {/* 7. Contact Form Section */}
         <section className="py-xl lg:py-2xl">
-          <div className="container mx-auto max-w-6xl px-md">
+          <div className="container mx-auto max-w-site px-md">
             <ContactForm />
           </div>
         </section>

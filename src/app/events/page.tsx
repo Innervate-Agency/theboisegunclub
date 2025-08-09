@@ -647,7 +647,7 @@ export default function EventsPage() {
       <div className="min-h-screen bg-background">
         {/* Breadcrumb Hero - Left Aligned */}
         <section className="bg-gradient-to-br from-[var(--color-slate-blue)] to-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)] border-b border-border/20 pt-[calc(var(--space-3xl)+var(--space-lg))] pb-3xl">
-          <div className="container mx-auto max-w-7xl px-md">
+          <div className="container mx-auto max-w-site px-md">
             <div className="flex items-center gap-xs text-sm text-[var(--color-crisp-off-white)]/80 mb-sm">
               <span>Home</span>
               <ChevronRight className="h-4 w-4" />
@@ -765,7 +765,7 @@ export default function EventsPage() {
 
         {/* Featured Events & Calendar Integration */}
         <section className="py-2xl bg-muted/30">
-          <div className="container mx-auto max-w-7xl px-md">
+          <div className="container mx-auto max-w-site px-md">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-2xl">
               
               {/* Featured Events */}
@@ -941,7 +941,7 @@ export default function EventsPage() {
 
       {/* Events Grid */}
       <section className="py-2xl">
-        <div className="container mx-auto max-w-7xl px-md">
+        <div className="container mx-auto max-w-site px-md">
           <div className="space-y-2xl">
             <div className="flex items-center justify-between">
               <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">

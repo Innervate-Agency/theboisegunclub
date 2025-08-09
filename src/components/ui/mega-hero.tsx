@@ -75,7 +75,7 @@ export function MegaHero({
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-mesh-warm opacity-30" />
       
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-md py-[var(--space-2xl)]">
+      <div className="relative z-10 w-full max-w-site mx-auto px-md py-[var(--space-2xl)]">
         <div className={cn(
           "space-y-[var(--space-lg)]",
           centerContent && "text-center"

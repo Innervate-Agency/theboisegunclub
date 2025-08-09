@@ -38,13 +38,13 @@ const siteNavigationVariants = cva(
 )
 
 const navigationItems = [
-  { label: "Home", icon: Home, href: "/", color: "rusty-orange" },
+  { label: "Home", icon: Home, href: "/", color: "sandy-ochre" },
   { label: "Events", icon: Calendar, href: "/events", color: "slate-blue" },
-  { label: "Directory", icon: Users, href: "/directory", color: "ayu-green" },
-  { label: "Guides", icon: Target, href: "/guides", color: "ayu-purple" },
-  { label: "Map", icon: Shield, href: "/map", color: "ayu-red" },
-  { label: "Marketplace", icon: Trophy, href: "/marketplace", color: "ayu-teal" },
-  { label: "Community", icon: Settings, href: "/community", color: "ayu-teal" }
+  { label: "Directory", icon: Users, href: "/directory", color: "sagebrush-green" },
+  { label: "Armory", icon: Target, href: "/the-armory", color: "foothills-purple" },
+  { label: "Intel", icon: Shield, href: "/intel", color: "high-desert-sage" },
+  { label: "Marketplace", icon: Trophy, href: "/marketplace", color: "canyon-clay" },
+  { label: "Forums", icon: Settings, href: "https://boisegunclub.com/forums/", color: "info-river" }
 ]
 
 export interface SiteNavigationProps 
@@ -68,40 +68,70 @@ export function SiteNavigation({
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen)
 
+  // Helper function to check if URL is external
+  const isExternalUrl = (url: string) => url.startsWith('http')
+
+  // Helper function to render navigation link
+  const renderNavLink = (item: typeof navigationItems[0], className: string, children: React.ReactNode) => {
+    const isExternal = isExternalUrl(item.href)
+    
+    if (isExternal) {
+      return (
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={className}
+        >
+          {children}
+        </a>
+      )
+    }
+    
+    return (
+      <Link href={item.href} className={className}>
+        {children}
+      </Link>
+    )
+  }
+
   // Get individual hover classes for each nav item - text color only, no background
   const getHoverClasses = (color: string) => {
     switch(color) {
-      case 'rusty-orange': return 'hover:text-rusty-orange'
+      case 'sandy-ochre': return 'hover:text-sandy-ochre'
       case 'slate-blue': return 'hover:text-slate-blue'
-      case 'ayu-green': return 'hover:text-ayu-green'
-      case 'ayu-purple': return 'hover:text-ayu-purple'
-      case 'ayu-red': return 'hover:text-ayu-red'
-      case 'ayu-teal': return 'hover:text-ayu-teal'
-      default: return 'hover:text-rusty-orange'
+      case 'sagebrush-green': return 'hover:text-sagebrush-green'
+      case 'foothills-purple': return 'hover:text-foothills-purple'
+      case 'high-desert-sage': return 'hover:text-high-desert-sage'
+      case 'canyon-clay': return 'hover:text-canyon-clay'
+      case 'info-river': return 'hover:text-info-river'
+      default: return 'hover:text-sandy-ochre'
     }
   }
   
   const getColorBarClass = (color: string) => {
     switch(color) {
-      case 'rusty-orange': return 'bg-rusty-orange'
+      case 'sandy-ochre': return 'bg-sandy-ochre'
       case 'slate-blue': return 'bg-slate-blue'
-      case 'ayu-green': return 'bg-ayu-green'
-      case 'ayu-purple': return 'bg-ayu-purple'
-      case 'ayu-red': return 'bg-ayu-red'
-      case 'ayu-teal': return 'bg-ayu-teal'
-      default: return 'bg-rusty-orange'
+      case 'sagebrush-green': return 'bg-sagebrush-green'
+      case 'foothills-purple': return 'bg-foothills-purple'
+      case 'high-desert-sage': return 'bg-high-desert-sage'
+      case 'canyon-clay': return 'bg-canyon-clay'
+      case 'info-river': return 'bg-info-river'
+      default: return 'bg-sandy-ochre'
     }
   }
 
   const getActiveTextClass = (color: string) => {
     switch(color) {
-      case 'rusty-orange': return 'text-rusty-orange'
+      case 'sandy-ochre': return 'text-sandy-ochre'
       case 'slate-blue': return 'text-slate-blue'
-      case 'ayu-green': return 'text-ayu-green'
-      case 'ayu-purple': return 'text-ayu-purple'
-      case 'ayu-red': return 'text-ayu-red'
-      case 'ayu-teal': return 'text-ayu-teal'
-      default: return 'text-rusty-orange'
+      case 'sagebrush-green': return 'text-sagebrush-green'
+      case 'foothills-purple': return 'text-foothills-purple'
+      case 'high-desert-sage': return 'text-high-desert-sage'
+      case 'canyon-clay': return 'text-canyon-clay'
+      case 'info-river': return 'text-info-river'
+      default: return 'text-sandy-ochre'
     }
   }
 
@@ -110,7 +140,7 @@ export function SiteNavigation({
       className={cn(siteNavigationVariants({ variant, layout, sticky }), className)}
       {...props}
     >
-      <div className="w-full max-w-7xl mx-auto px-md">
+      <div className="w-full max-w-site mx-auto px-md">
         <div className="relative flex items-center justify-between h-16">
           
           {/* Logo */}
@@ -140,29 +170,30 @@ export function SiteNavigation({
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center">
-            {navigationItems.slice(0, 6).map((item, index) => (
+            {navigationItems.slice(0, 7).map((item, index) => (
               <React.Fragment key={item.href}>
-                <Link
-                  href={item.href}
-                  className={`group relative flex items-center gap-xs px-base py-xs text-sm font-medium transition-all duration-200 hover:scale-105 hover:-translate-y-1 ${
+                {renderNavLink(
+                  item,
+                  `group relative flex items-center gap-xs px-base py-xs text-sm font-medium transition-all duration-200 hover:scale-105 hover:-translate-y-1 ${
                     pathname === item.href 
                       ? getActiveTextClass(item.color)
                       : `text-muted-foreground ${getHoverClasses(item.color)}`
-                  }`}
-                >
-                  <item.icon className="h-3 w-3" />
-                  {item.label}
-                  
-                  {/* Stripe-style center-out underline - thicker and narrower to avoid collisions */}
-                  <div className={`absolute bottom-0 left-2 right-2 h-[3px] ${getColorBarClass(item.color)} transition-transform duration-200 origin-center ${
-                    pathname === item.href 
-                      ? 'scale-x-100' 
-                      : 'scale-x-0 group-hover:scale-x-100'
-                  }`} />
-                </Link>
+                  }`,
+                  <>
+                    <item.icon className="h-3 w-3" />
+                    {item.label}
+                    
+                    {/* Stripe-style center-out underline - thicker and narrower to avoid collisions */}
+                    <div className={`absolute bottom-0 left-2 right-2 h-[3px] ${getColorBarClass(item.color)} transition-transform duration-200 origin-center ${
+                      pathname === item.href 
+                        ? 'scale-x-100' 
+                        : 'scale-x-0 group-hover:scale-x-100'
+                    }`} />
+                  </>
+                )}
                 
                 {/* Separator lines between nav items */}
-                {index < navigationItems.slice(0, 6).length - 1 && (
+                {index < navigationItems.slice(0, 7).length - 1 && (
                   <div className="h-4 w-px mx-xs relative">
                     <div className="absolute inset-0 w-px bg-muted-foreground/30" />
                     <div className="absolute inset-0 w-px bg-card/50 translate-x-px" />
@@ -208,19 +239,20 @@ export function SiteNavigation({
           <div className="md:hidden py-base relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
             <div className="space-y-xs">
               {navigationItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`flex items-center gap-sm px-base py-sm text-body-sm font-medium transition-all duration-150 rounded-input ${
-                    pathname === item.href 
-                      ? getActiveTextClass(item.color)
-                      : `text-muted-foreground ${getHoverClasses(item.color)}`
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <item.icon className="h-icon-sm w-icon-sm" />
-                  {item.label}
-                </Link>
+                <div key={item.href} onClick={() => setIsMobileMenuOpen(false)}>
+                  {renderNavLink(
+                    item,
+                    `flex items-center gap-sm px-base py-sm text-body-sm font-medium transition-all duration-150 rounded-input ${
+                      pathname === item.href 
+                        ? getActiveTextClass(item.color)
+                        : `text-muted-foreground ${getHoverClasses(item.color)}`
+                    }`,
+                    <>
+                      <item.icon className="h-icon-sm w-icon-sm" />
+                      {item.label}
+                    </>
+                  )}
+                </div>
               ))}
             </div>
             

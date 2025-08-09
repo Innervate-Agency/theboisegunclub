@@ -92,7 +92,7 @@ export function GalleryGrid({
   
   return (
     <div className={cn(galleryGridVariants({ variant }), "py-[var(--space-xl)]", className)} {...props}>
-      <div className="max-w-7xl mx-auto px-md">
+      <div className="max-w-site mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
           <div className="text-center mb-[var(--space-lg)]">

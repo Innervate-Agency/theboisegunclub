@@ -218,7 +218,7 @@ export default function DirectoryPage() {
       <div className="min-h-screen bg-background">
         {/* Breadcrumb Hero - Left Aligned */}
         <section className="bg-gradient-to-r from-dark-chocolate/95 to-warm-stone/90 border-b border-border/20">
-          <div className="container mx-auto max-w-7xl px-md py-lg">
+          <div className="container mx-auto max-w-site px-md py-lg">
             <div className="flex items-center gap-xs text-sm text-range-white/60 mb-base">
               <span>Home</span>
               <ChevronRight className="h-4 w-4" />
@@ -290,7 +290,7 @@ export default function DirectoryPage() {
 
         {/* Search-First Section */}
         <section className="py-xl bg-card/50">
-          <div className="container mx-auto max-w-7xl px-md">
+          <div className="container mx-auto max-w-site px-md">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-xl">
               <div className="lg:col-span-3">
                 <div className="space-y-base">
@@ -338,7 +338,7 @@ export default function DirectoryPage() {
 
         {/* Business Type Categories */}
         <section className="py-xl">
-          <div className="container mx-auto max-w-7xl px-md">
+          <div className="container mx-auto max-w-site px-md">
             <div className="space-y-base">
               <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">Browse by Category</h2>
               <div className="flex flex-wrap gap-xs">
@@ -366,7 +366,7 @@ export default function DirectoryPage() {
 
         {/* Featured Partners & Trust Signals */}
         <section className="py-xl bg-muted/30">
-          <div className="container mx-auto max-w-7xl px-md">
+          <div className="container mx-auto max-w-site px-md">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-xl">
               
               {/* Partnership Tiers */}

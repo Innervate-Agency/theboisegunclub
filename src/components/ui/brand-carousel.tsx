@@ -211,7 +211,7 @@ export function BrandCarousel({
   return (
     <div className={cn(brandShowcaseVariants({ variant }), className)} {...props}>
       {/* Main layout container */}
-      <div className="relative max-w-7xl mx-auto">
+      <div className="relative max-w-site mx-auto">
         <div className="grid lg:grid-cols-4 gap-2xl items-center">
           
           {/* Left stats panel - OUTSIDE the card, changes with carousel */}

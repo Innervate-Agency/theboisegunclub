@@ -7,10 +7,10 @@
   /* ================== BOGUS BASIN & RIVER/SAGEBRUSH COLOR SYSTEM ================== */
 
   /* 🌑 DARK THEME: Bogus Basin - Warm lodge at dusk (Complete 10-Color Set) */
-  --color-dark-chocolate: #260F07;      /* Background: Deep, warm foundation */
+  --color-dark-chocolate: #1a0f0d;      /* Background: Deep, warm foundation */
   --color-rusty-orange: #D9863B;        /* Primary Accent: Main CTAs, links, active states */
   --color-crisp-off-white: #F2F2F2;     /* Text (Foreground): Primary headlines, body text */
-  --color-rich-loam: #311A0E;           /* Subtle Surface: Cards, popovers above background */
+  --color-rich-loam: #2d201d;           /* Subtle Surface: Cards, popovers above background */
   --color-warm-stone: #A69287;          /* Muted Text: Secondary info, timestamps, disabled */
   --color-lodgepole-green: #7D6702;     /* Secondary Accent: Tags, confirmations, success states */
   --color-deep-earth: #1A0C05;          /* Deeper Surface: For recessed elements, deeper than rich-loam */
@@ -29,6 +29,11 @@
   --color-card-surface: #F3F4F6;        /* Card Surface: Slightly darker than background for elevation */
   --color-warning-clay: #B8956B;        /* Warning/Caution: For alerts and caution states */
   --color-info-river: #5A7D8A;          /* Info Accent: For informational elements and highlights */
+
+  /* =================== BOISE LANDSCAPE ADDITIONS =================== */
+  --color-foothills-purple: #8B7AA8;   /* Mountain Dusk: Distant foothills at sunset, premium themes */
+  --color-canyon-clay: #B85450;        /* Red Rock: Terracotta canyon walls, warm grounded feeling */
+  --color-high-desert-sage: #9CAF88;   /* Desert Sage: Silvery-green high desert plants, education/calm */
 
   /* ================== TYPOGRAPHY ================== */
   --font-rajdhani: "Rajdhani", "Inter", "system-ui", sans-serif;
@@ -83,11 +88,11 @@
 
   /* ================== SHADOW SYSTEM (Stripe-inspired) ================== */
   --shadow-none: none;
-  --shadow-xs: 0 2px 5px -1px rgba(50, 50, 93, 0.25), 0 1px 3px -1px rgba(0, 0, 0, 0.3);
-  --shadow-sm: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
-  --shadow-xl: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
+  --shadow-xs: 0 2px 5px -1px rgba(26, 15, 13, 0.35), 0 1px 3px -1px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 6px 12px -2px rgba(26, 15, 13, 0.35), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 13px 27px -5px rgba(26, 15, 13, 0.35), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 30px 60px -12px rgba(26, 15, 13, 0.35), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 50px 100px -20px rgba(26, 15, 13, 0.35), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
   --shadow-flat: var(--shadow-sm);
   --shadow-elevated: var(--shadow-md);
 
@@ -514,6 +519,162 @@
   .bg-gradient-card-cool { background: var(--gradient-card-cool); }
   .bg-gradient-glass { background: var(--gradient-glass); }
   .bg-gradient-glass-dark { background: var(--gradient-glass-dark); }
+
+  /* ================== SITE LAYOUT UTILITIES ================== */
+  .max-w-site { max-width: 1440px; }
+
+  /* ================== PAGE-SPECIFIC THEMING SYSTEM ================== */
+  
+  /* Home Theme - Sandy Ochre (Golden Amber) */
+  .theme-home {
+    --page-primary: var(--color-sandy-ochre);
+    --page-primary-foreground: var(--color-dark-chocolate);
+    --page-accent: var(--color-ember-glow);
+    --page-gradient: linear-gradient(135deg, var(--color-sandy-ochre), var(--color-ember-glow));
+  }
+  
+  /* Events Theme - Slate Blue (Professional) */
+  .theme-events {
+    --page-primary: var(--color-slate-blue);
+    --page-primary-foreground: var(--color-crisp-off-white);
+    --page-accent: var(--color-info-river);
+    --page-gradient: linear-gradient(135deg, var(--color-slate-blue), var(--color-info-river));
+  }
+  
+  /* Directory Theme - Sagebrush Green (Natural) */
+  .theme-directory {
+    --page-primary: var(--color-sagebrush-green);
+    --page-primary-foreground: var(--color-crisp-off-white);
+    --page-accent: var(--color-high-desert-sage);
+    --page-gradient: linear-gradient(135deg, var(--color-sagebrush-green), var(--color-high-desert-sage));
+  }
+  
+  /* Armory Theme - Foothills Purple (Tactical) */
+  .theme-armory {
+    --page-primary: var(--color-foothills-purple);
+    --page-primary-foreground: var(--color-crisp-off-white);
+    --page-accent: var(--color-slate-blue);
+    --page-gradient: linear-gradient(135deg, var(--color-foothills-purple), var(--color-slate-blue));
+  }
+  
+  /* Intel Theme - High Desert Sage (Reconnaissance) */
+  .theme-intel {
+    --page-primary: var(--color-high-desert-sage);
+    --page-primary-foreground: var(--color-dark-chocolate);
+    --page-accent: var(--color-sagebrush-green);
+    --page-gradient: linear-gradient(135deg, var(--color-high-desert-sage), var(--color-sagebrush-green));
+  }
+  
+  /* Marketplace Theme - Canyon Clay (Commerce) */
+  .theme-marketplace {
+    --page-primary: var(--color-canyon-clay);
+    --page-primary-foreground: var(--color-crisp-off-white);
+    --page-accent: var(--color-sandy-ochre);
+    --page-gradient: linear-gradient(135deg, var(--color-canyon-clay), var(--color-sandy-ochre));
+  }
+  
+  /* Forums Theme - Info River (Community) */
+  .theme-forums {
+    --page-primary: var(--color-info-river);
+    --page-primary-foreground: var(--color-crisp-off-white);
+    --page-accent: var(--color-slate-blue);
+    --page-gradient: linear-gradient(135deg, var(--color-info-river), var(--color-slate-blue));
+  }
+  
+  /* Page Theme Utility Classes */
+  .bg-page-primary { background-color: var(--page-primary); }
+  .text-page-primary { color: var(--page-primary); }
+  .text-page-primary-foreground { color: var(--page-primary-foreground); }
+  .bg-page-accent { background-color: var(--page-accent); }
+  .text-page-accent { color: var(--page-accent); }
+  .bg-page-gradient { background: var(--page-gradient); }
+  .border-page-primary { border-color: var(--page-primary); }
+  
+  /* Page Theme Variants */
+  .bg-page-primary-10 { background-color: color-mix(in srgb, var(--page-primary) 10%, transparent); }
+  .bg-page-primary-20 { background-color: color-mix(in srgb, var(--page-primary) 20%, transparent); }
+  .bg-page-primary-30 { background-color: color-mix(in srgb, var(--page-primary) 30%, transparent); }
+  .hover\\:bg-page-primary:hover { background-color: var(--page-primary); }
+  .hover\\:text-page-primary:hover { color: var(--page-primary); }
+  .border-page-primary-30 { border-color: color-mix(in srgb, var(--page-primary) 30%, transparent); }
+
+  /* ================== 20-COLOR SYSTEM UTILITIES ================== */
+  /* Dark Theme: Bogus Basin Colors */
+  .text-dark-chocolate { color: var(--color-dark-chocolate); }
+  .text-rusty-orange { color: var(--color-rusty-orange); }
+  .text-crisp-off-white { color: var(--color-crisp-off-white); }
+  .text-rich-loam { color: var(--color-rich-loam); }
+  .text-warm-stone { color: var(--color-warm-stone); }
+  .text-lodgepole-green { color: var(--color-lodgepole-green); }
+  .text-deep-earth { color: var(--color-deep-earth); }
+  .text-ember-glow { color: var(--color-ember-glow); }
+  .text-warning-amber { color: var(--color-warning-amber); }
+  .text-border-bark { color: var(--color-border-bark); }
+
+  /* Light Theme: River/Sagebrush Colors */
+  .text-light-peachy { color: var(--color-light-peachy); }
+  .text-slate-blue { color: var(--color-slate-blue); }
+  .text-shared-dark { color: var(--color-shared-dark); }
+  .text-sandy-ochre { color: var(--color-sandy-ochre); }
+  .text-dried-clay { color: var(--color-dried-clay); }
+  .text-pale-stone { color: var(--color-pale-stone); }
+  .text-sagebrush-green { color: var(--color-sagebrush-green); }
+  .text-card-surface { color: var(--color-card-surface); }
+  .text-warning-clay { color: var(--color-warning-clay); }
+  .text-info-river { color: var(--color-info-river); }
+  .text-foothills-purple { color: var(--color-foothills-purple); }
+  .text-canyon-clay { color: var(--color-canyon-clay); }
+  .text-high-desert-sage { color: var(--color-high-desert-sage); }
+
+  /* Background Colors */
+  .bg-dark-chocolate { background-color: var(--color-dark-chocolate); }
+  .bg-rusty-orange { background-color: var(--color-rusty-orange); }
+  .bg-crisp-off-white { background-color: var(--color-crisp-off-white); }
+  .bg-rich-loam { background-color: var(--color-rich-loam); }
+  .bg-warm-stone { background-color: var(--color-warm-stone); }
+  .bg-lodgepole-green { background-color: var(--color-lodgepole-green); }
+  .bg-deep-earth { background-color: var(--color-deep-earth); }
+  .bg-ember-glow { background-color: var(--color-ember-glow); }
+  .bg-warning-amber { background-color: var(--color-warning-amber); }
+  .bg-border-bark { background-color: var(--color-border-bark); }
+  .bg-light-peachy { background-color: var(--color-light-peachy); }
+  .bg-slate-blue { background-color: var(--color-slate-blue); }
+  .bg-shared-dark { background-color: var(--color-shared-dark); }
+  .bg-sandy-ochre { background-color: var(--color-sandy-ochre); }
+  .bg-dried-clay { background-color: var(--color-dried-clay); }
+  .bg-pale-stone { background-color: var(--color-pale-stone); }
+  .bg-sagebrush-green { background-color: var(--color-sagebrush-green); }
+  .bg-card-surface { background-color: var(--color-card-surface); }
+  .bg-warning-clay { background-color: var(--color-warning-clay); }
+  .bg-info-river { background-color: var(--color-info-river); }
+  .bg-foothills-purple { background-color: var(--color-foothills-purple); }
+  .bg-canyon-clay { background-color: var(--color-canyon-clay); }
+  .bg-high-desert-sage { background-color: var(--color-high-desert-sage); }
+
+  /* Hover Text Colors */
+  .hover\\:text-dark-chocolate:hover { color: var(--color-dark-chocolate); }
+  .hover\\:text-rusty-orange:hover { color: var(--color-rusty-orange); }
+  .hover\\:text-crisp-off-white:hover { color: var(--color-crisp-off-white); }
+  .hover\\:text-rich-loam:hover { color: var(--color-rich-loam); }
+  .hover\\:text-warm-stone:hover { color: var(--color-warm-stone); }
+  .hover\\:text-lodgepole-green:hover { color: var(--color-lodgepole-green); }
+  .hover\\:text-deep-earth:hover { color: var(--color-deep-earth); }
+  .hover\\:text-ember-glow:hover { color: var(--color-ember-glow); }
+  .hover\\:text-warning-amber:hover { color: var(--color-warning-amber); }
+  .hover\\:text-border-bark:hover { color: var(--color-border-bark); }
+  .hover\\:text-light-peachy:hover { color: var(--color-light-peachy); }
+  .hover\\:text-slate-blue:hover { color: var(--color-slate-blue); }
+  .hover\\:text-shared-dark:hover { color: var(--color-shared-dark); }
+  .hover\\:text-sandy-ochre:hover { color: var(--color-sandy-ochre); }
+  .hover\\:text-dried-clay:hover { color: var(--color-dried-clay); }
+  .hover\\:text-pale-stone:hover { color: var(--color-pale-stone); }
+  .hover\\:text-sagebrush-green:hover { color: var(--color-sagebrush-green); }
+  .hover\\:text-card-surface:hover { color: var(--color-card-surface); }
+  .hover\\:text-warning-clay:hover { color: var(--color-warning-clay); }
+  .hover\\:text-info-river:hover { color: var(--color-info-river); }
+  .hover\\:text-foothills-purple:hover { color: var(--color-foothills-purple); }
+  .hover\\:text-canyon-clay:hover { color: var(--color-canyon-clay); }
+  .hover\\:text-high-desert-sage:hover { color: var(--color-high-desert-sage); }
 
   /* ================== WINDOWS 11 MICA EFFECT ================== */
   .mica {

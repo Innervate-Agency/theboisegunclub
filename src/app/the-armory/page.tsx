@@ -271,7 +271,7 @@ function ArticleCard({ article }: { article: typeof knowledgeBaseArticles[0] }) 
 
   return (
     <Card className={`group hover:shadow-elevated transition-all duration-300 ${
-      article.featured ? 'ring-2 ring-slate-blue/30 bg-slate-blue/5' : ''
+      article.featured ? 'ring-2 ring-page-primary/30 bg-page-primary/5' : ''
     }`}>
       <CardHeader className="pb-base">
         <div className="flex items-start justify-between gap-base mb-xs">
@@ -284,13 +284,13 @@ function ArticleCard({ article }: { article: typeof knowledgeBaseArticles[0] }) 
             </Badge>
           </div>
           {article.featured && (
-            <Badge className="bg-slate-blue text-dark-chocolate font-rajdhani font-bold">
+            <Badge className="bg-page-primary text-page-primary-foreground font-rajdhani font-bold">
               Featured
             </Badge>
           )}
         </div>
         
-        <CardTitle className="font-rajdhani text-xl font-bold text-card-foreground group-hover:text-slate-blue transition-colors duration-200 leading-tight">
+        <CardTitle className="font-rajdhani text-xl font-bold text-card-foreground group-hover:text-page-primary transition-colors duration-200 leading-tight">
           {article.title}
         </CardTitle>
       </CardHeader>
@@ -346,7 +346,7 @@ function ArticleCard({ article }: { article: typeof knowledgeBaseArticles[0] }) 
             </div>
           </div>
           
-          <Button variant="ghost" size="sm" className="text-slate-blue hover:text-rusty-orange">
+          <Button variant="ghost" size="sm" className="text-page-primary hover:text-page-accent">
             Read Article
             <ArrowRight className="h-3 w-3 ml-xs" />
           </Button>
@@ -356,7 +356,7 @@ function ArticleCard({ article }: { article: typeof knowledgeBaseArticles[0] }) 
   )
 }
 
-export default function GuidesPage() {
+export default function ArmoryPage() {
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [selectedDifficulty, setSelectedDifficulty] = useState("all") 
   const [searchQuery, setSearchQuery] = useState("")
@@ -380,27 +380,27 @@ export default function GuidesPage() {
   })
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="theme-armory min-h-screen bg-background">
       <SiteNavigation variant="premium" sticky={true} />
       {/* Breadcrumb Hero - Left Aligned */}
-      <section className="bg-gradient-to-r from-slate-blue to-slate-blue border-b border-border/20">
-        <div className="container mx-auto max-w-7xl px-md py-3xl">
+      <section className="bg-page-gradient border-b border-border/20">
+        <div className="container mx-auto max-w-site px-md py-3xl">
           <div className="flex items-center gap-xs text-sm text-peachy-white/80 mb-base">
             <span>Home</span>
             <ChevronRight className="h-4 w-4" />
-            <span className="text-rusty-orange font-medium">Guides</span>
+            <span className="text-page-primary font-medium">Armory</span>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-center">
             <div className="lg:col-span-2 space-y-base">
-              <Badge className="bg-slate-blue/20 text-slate-blue border-slate-blue/30 w-fit">
+              <Badge className="bg-page-primary/20 text-page-primary border-page-primary/30 w-fit">
                 <BookOpen className="h-4 w-4 mr-xs" />
                 Knowledge Base
               </Badge>
               <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-peachy-white leading-tight">
-                Idaho Firearms Guides
+                The Armory
               </h1>
               <p className="text-body-lg text-peachy-white/80 max-w-2xl">
-                Comprehensive guides covering Idaho gun laws, safety practices, buying advice, and training resources.
+                Comprehensive firearms knowledge base covering Idaho gun laws, safety practices, buying advice, and training resources for the Treasure Valley community.
               </p>
               <div className="flex gap-base">
                 <Button 
@@ -417,7 +417,7 @@ export default function GuidesPage() {
                   size="lg"
                   animationType="chevron"
                   animationState="right"
-                  className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
+                  className="border-page-primary/30 text-page-primary hover:bg-page-primary hover:text-page-primary-foreground"
                 >
                   View Categories
                 </Button>
@@ -441,7 +441,7 @@ export default function GuidesPage() {
 
       {/* Stats Section */}
       <section className="py-4xl bg-muted/50">
-        <div className="container mx-auto max-w-6xl px-md">
+        <div className="container mx-auto max-w-site px-md">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-xl">
             <StatCard
               title="Total Articles"
@@ -480,7 +480,7 @@ export default function GuidesPage() {
 
       {/* Search and Filter Section */}
       <section className="py-4xl">
-        <div className="container mx-auto max-w-6xl px-md">
+        <div className="container mx-auto max-w-site px-md">
           <div className="space-y-xl">
             {/* Search Bar */}
             <div className="flex flex-col md:flex-row gap-base">
@@ -514,8 +514,8 @@ export default function GuidesPage() {
                     size="sm"
                     onClick={() => setSelectedCategory(category.value)}
                     className={selectedCategory === category.value ? 
-                      "bg-slate-blue text-dark-chocolate hover:bg-rusty-orange" : 
-                      "border-slate-blue/30 text-slate-blue hover:bg-slate-blue hover:text-dark-chocolate"
+                      "bg-page-primary text-page-primary-foreground hover:bg-page-accent" : 
+                      "border-page-primary/30 text-page-primary hover:bg-page-primary hover:text-page-primary-foreground"
                     }
                   >
                     {category.icon}
@@ -541,8 +541,8 @@ export default function GuidesPage() {
                     size="sm"
                     onClick={() => setSelectedDifficulty(level.value)}
                     className={selectedDifficulty === level.value ? 
-                      "bg-slate-blue text-dark-chocolate hover:bg-rusty-orange" : 
-                      "border-slate-blue/30 text-slate-blue hover:bg-slate-blue hover:text-dark-chocolate"
+                      "bg-page-primary text-page-primary-foreground hover:bg-page-accent" : 
+                      "border-page-primary/30 text-page-primary hover:bg-page-primary hover:text-page-primary-foreground"
                     }
                   >
                     {level.label}
@@ -559,7 +559,7 @@ export default function GuidesPage() {
 
       {/* Articles Grid */}
       <section className="pb-6xl">
-        <div className="container mx-auto max-w-6xl px-md">
+        <div className="container mx-auto max-w-site px-md">
           <div className="space-y-xl">
             <div className="flex items-center justify-between">
               <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">
@@ -592,7 +592,7 @@ export default function GuidesPage() {
                       setSelectedDifficulty("all")
                       setSearchQuery("")
                     }}
-                    className="bg-slate-blue text-dark-chocolate hover:bg-rusty-orange"
+                    className="bg-page-primary text-page-primary-foreground hover:bg-page-accent"
                   >
                     Show All Articles
                   </Button>
@@ -604,15 +604,15 @@ export default function GuidesPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-sage-green/90">
+      <section className="py-6xl bg-page-gradient">
         <div className="container mx-auto max-w-4xl px-md text-center">
           <div className="space-y-lg">
-            <Badge className="bg-slate-blue/20 text-slate-blue border-slate-blue/30">
+            <Badge className="bg-page-primary/20 text-page-primary border-page-primary/30">
               <BookOpen className="h-4 w-4 mr-xs" />
               Stay Updated
             </Badge>
             <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-peachy-white">
-              Never Miss an <span className="text-slate-blue">Update</span>
+              Never Miss an <span className="text-page-primary">Update</span>
             </h2>
             <p className="text-body-lg text-peachy-white/80 max-w-2xl mx-auto">
               Get notified when we publish new articles, legal updates, and important information for Idaho firearms owners. No spam, just valuable content.
@@ -620,11 +620,11 @@ export default function GuidesPage() {
             <div className="flex flex-col sm:flex-row gap-base justify-center max-w-md mx-auto">
               <Input 
                 placeholder="Enter your email" 
-                className="bg-white/10 border-slate-blue/30 text-peachy-white placeholder:text-peachy-white/60"
+                className="bg-white/10 border-page-primary/30 text-peachy-white placeholder:text-peachy-white/60"
               />
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-slate-blue to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-slate-blue font-rajdhani font-bold"
+                className="bg-page-gradient text-page-primary-foreground hover:opacity-90 font-rajdhani font-bold"
               >
                 Subscribe
               </Button>
