@@ -42,7 +42,7 @@ const trainingFeatures = [
   {
     title: 'NRA Certified Instructors',
     description: 'All our instructors are NRA certified with years of experience in firearms education and safety.',
-    icon: Award,
+    icon: <Award />,
     link: { text: 'Meet Our Instructors', href: '/training/instructors' }
   }
 ]

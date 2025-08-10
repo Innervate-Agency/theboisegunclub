@@ -147,7 +147,8 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
                   day_hidden: "invisible",
                 }}
                 components={{
-                  DayContent: ({ date }) => {
+                  Day: ({ day }) => {
+                    const date = day.date;
                     const dateStr = date.toDateString()
                     const dayEvents = eventsByDate.get(dateStr) || []
                     const isSelected = selectedDate?.toDateString() === dateStr

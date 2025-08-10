@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* PROPER: Tailwind CSS v4 cascade layers declaration */
+@layer theme, base, components, utilities;
+
 /* FIXED: Tailwind CSS v4 + next-themes dark mode integration - Modern 2025 syntax */
 @variant dark (&:where(.dark, .dark *));
 
@@ -34,6 +37,56 @@
   --color-foothills-purple: #8B7AA8;   /* Mountain Dusk: Distant foothills at sunset, premium themes */
   --color-canyon-clay: #B85450;        /* Red Rock: Terracotta canyon walls, warm grounded feeling */
   --color-high-desert-sage: #9CAF88;   /* Desert Sage: Silvery-green high desert plants, education/calm */
+
+  /* =================== GRUVBOX-INSPIRED EYE COMFORT SYSTEM =================== */
+  /* Night Ops Mode - Gruvbox-inspired colors for extended reading comfort */
+  --gruvbox-bg-dark: #282828;          /* Main background - warmer than pure dark */
+  --gruvbox-bg-soft: #32302f;          /* Secondary background - cards, elevated surfaces */
+  --gruvbox-bg-surface: #3c3836;       /* Interactive surfaces - buttons, inputs */
+  --gruvbox-fg-cream: #fbf1c7;         /* Primary text - that beautiful yellowish-white */
+  --gruvbox-fg-soft: #ebdbb2;          /* Secondary text - softer cream for descriptions */
+  --gruvbox-fg-muted: #a89984;         /* Muted text - timestamps, placeholders */
+  --gruvbox-orange: #fe8019;           /* Gruvbox orange - complements our rusty-orange */
+  --gruvbox-yellow: #fabd2f;           /* Gruvbox yellow - works with our golden tones */
+  --gruvbox-green: #b8bb26;            /* Gruvbox green - tactical accent */
+  --gruvbox-blue: #83a598;             /* Gruvbox blue - cool tactical accent */
+  --gruvbox-purple: #d3869b;           /* Gruvbox purple - premium accent */
+  --gruvbox-aqua: #8ec07c;             /* Gruvbox aqua - that sick teal color! */
+  --gruvbox-red: #fb4934;              /* Gruvbox red - alerts and warnings */
+  /* =================== COLOR PSYCHOLOGY OPTIMIZATIONS =================== */
+  /* Boise Landscape Psychology Colors - Based on actual geographic features */
+  --color-sunrise-amber: #E8B04B;       /* Events: Treasure Valley sunrise - energetic, competitive psychology */
+  --color-meadow-sage: #A8B888;         /* Forums: Valley grassland - calming community psychology */
+  --color-bruneau-sandstone: #C4A882;   /* Directory: Bruneau Dunes - stable, professional psychology */
+  --color-volcanic-ash: #7A7D82;        /* Intel: Craters of the Moon - analytical, focused psychology */
+
+  /* =================== REFINED 7-COLOR NAVIGATION SYSTEM =================== */
+  /* Light Theme Navigation Colors - FINAL REFINED PALETTE */
+  --nav-home-light: #eb7d01;           /* Warm Orange - Perfect home welcome energy */
+  --nav-events-light: #D51F00;         /* Red - High energy, attention-grabbing for events */
+  --nav-directory-light: #2ebfe6;      /* Bright Cyan - Professional, modern directory */
+  --nav-armory-light: #8B7AA8;         /* Purple-Gray - Tactical sophistication */
+  --nav-intel-light: #ffbc20;          /* Golden Yellow - Intelligence/reconnaissance */
+  --nav-marketplace-light: #C9C301;    /* Bright Yellow-Green - Commerce energy, vibrant */
+  --nav-forums-light: #D3D3D3;         /* Light Gray - Boring neutral for forums */
+
+  /* Dark Theme Navigation Colors - Same vibrant palette for dark backgrounds */
+  --nav-home-dark: #eb7d01;            /* Warm Orange - Glows perfectly on dark */
+  --nav-events-dark: #FF4444;          /* Brightened Red - More visible on dark without being harsh */
+  --nav-directory-dark: #2ebfe6;       /* Bright Cyan - Pops beautifully on dark */
+  --nav-armory-dark: #A98FBC;          /* Lighter Purple-Gray - Maintains sophistication */
+  --nav-intel-dark: #ffbc20;           /* Golden Yellow - Perfect visibility on dark */
+  --nav-marketplace-dark: #C9C301;     /* Bright Yellow-Green - Pops on dark backgrounds */
+  --nav-forums-dark: #B8B8B8;          /* Medium Gray - Visible but boring on dark */
+
+  /* Theme-aware navigation color system - automatically switches based on theme */
+  --nav-home: var(--nav-home-light);
+  --nav-events: var(--nav-events-light);
+  --nav-directory: var(--nav-directory-light);
+  --nav-armory: var(--nav-armory-light);
+  --nav-intel: var(--nav-intel-light);
+  --nav-marketplace: var(--nav-marketplace-light);
+  --nav-forums: var(--nav-forums-light);
 
   /* ================== TYPOGRAPHY ================== */
   --font-rajdhani: "Rajdhani", "Inter", "system-ui", sans-serif;
@@ -238,6 +291,8 @@
   --button-height-xl: 3.5rem;      /* 56px */
 
   /* ================== TYPOGRAPHY SCALING ================== */
+  --text-2xs: 0.625rem;            /* 10px */
+  --text-3xs: 0.5rem;              /* 8px */
   --text-xs: 0.75rem;              /* 12px */
   --text-sm: 0.875rem;             /* 14px */
   --text-base: 1rem;               /* 16px */
@@ -295,7 +350,9 @@
   --ring: var(--theme-ring);
 }
 
-:root {
+@layer theme {
+  :root,
+  .light {
   /* ☀️ LIGHT THEME: River/Sagebrush (Default) */
   --theme-background: var(--color-light-peachy);
   --theme-foreground: var(--color-shared-dark);
@@ -317,6 +374,15 @@
   --theme-input: var(--color-pale-stone);
   --theme-ring: var(--color-slate-blue);
   --radius: 0.25rem;
+  
+  /* Navigation colors for light theme */
+  --nav-home: var(--nav-home-light);
+  --nav-events: var(--nav-events-light);
+  --nav-directory: var(--nav-directory-light);
+  --nav-armory: var(--nav-armory-light);
+  --nav-intel: var(--nav-intel-light);
+  --nav-marketplace: var(--nav-marketplace-light);
+  --nav-forums: var(--nav-forums-light);
 }
 
 .dark {
@@ -340,6 +406,48 @@
   --theme-border: var(--color-rich-loam);
   --theme-input: var(--color-rich-loam);
   --theme-ring: var(--color-rusty-orange);
+  
+  /* 🎯 1970s Navigation Dark Theme Overrides - Soft glow for 2am comfort */
+  --nav-home: var(--nav-home-dark);
+  --nav-events: var(--nav-events-dark);
+  --nav-directory: var(--nav-directory-dark);
+  --nav-armory: var(--nav-armory-dark);
+  --nav-intel: var(--nav-intel-dark);
+  --nav-marketplace: var(--nav-marketplace-dark);
+  --nav-forums: var(--nav-forums-dark);
+}
+
+.gruvbox {
+  /* 🌙 GRUVBOX THEME: Night Ops Mode - Eye-friendly for extended reading */
+  --theme-background: var(--gruvbox-bg-dark);
+  --theme-foreground: var(--gruvbox-fg-cream);
+  --theme-card: var(--gruvbox-bg-soft);
+  --theme-card-foreground: var(--gruvbox-fg-cream);
+  --theme-popover: var(--gruvbox-bg-surface);
+  --theme-popover-foreground: var(--gruvbox-fg-cream);
+  --theme-primary: var(--gruvbox-orange);
+  --theme-primary-foreground: var(--gruvbox-bg-dark);
+  --theme-secondary: var(--gruvbox-yellow);
+  --theme-secondary-foreground: var(--gruvbox-bg-dark);
+  --theme-muted: var(--gruvbox-bg-soft);
+  --theme-muted-foreground: var(--gruvbox-fg-muted);
+  --theme-accent: var(--gruvbox-aqua);
+  --theme-accent-foreground: var(--gruvbox-bg-dark);
+  --theme-destructive: var(--gruvbox-red);
+  --theme-destructive-foreground: var(--gruvbox-fg-cream);
+  --theme-border: var(--gruvbox-bg-surface);
+  --theme-input: var(--gruvbox-bg-surface);
+  --theme-ring: var(--gruvbox-orange);
+  
+  /* 🎯 Gruvbox Navigation Colors - Softer variants for eye comfort */
+  --nav-home: var(--gruvbox-yellow);      /* Warm butter yellow */
+  --nav-events: var(--gruvbox-orange);    /* Softer orange-red */
+  --nav-directory: #7c6f64;              /* Gruvbox brown variant */
+  --nav-armory: var(--gruvbox-aqua);      /* That sick aqua/teal! */
+  --nav-intel: #504945;                   /* Gruvbox dark brown */
+  --nav-marketplace: var(--gruvbox-yellow); /* Golden commerce */
+  --nav-forums: var(--gruvbox-green);     /* Community green */
+  }
 }
 
 @layer base {
@@ -432,60 +540,60 @@
 
   /* ================== PAGE-SPECIFIC THEMING SYSTEM ================== */
   
-  /* Home Theme - Sandy Ochre (Golden Amber) */
+  /* Home Theme - 1970s Butter Yellow/Golden Sunrise */
   .theme-home {
-    --page-primary: var(--color-sandy-ochre);
+    --page-primary: var(--nav-home);
     --page-primary-foreground: var(--color-dark-chocolate);
     --page-accent: var(--color-ember-glow);
-    --page-gradient: linear-gradient(135deg, var(--color-sandy-ochre), var(--color-ember-glow));
+    --page-gradient: linear-gradient(135deg, var(--nav-home), var(--color-ember-glow));
   }
   
-  /* Events Theme - Slate Blue (Professional) */
+  /* Events Theme - 1970s Competition Red/Energy Orange-Red */
   .theme-events {
-    --page-primary: var(--color-slate-blue);
+    --page-primary: var(--nav-events);
     --page-primary-foreground: var(--color-crisp-off-white);
-    --page-accent: var(--color-info-river);
-    --page-gradient: linear-gradient(135deg, var(--color-slate-blue), var(--color-info-river));
+    --page-accent: var(--nav-home);
+    --page-gradient: linear-gradient(135deg, var(--nav-events), var(--nav-home));
   }
   
-  /* Directory Theme - Sagebrush Green (Natural) */
+  /* Directory Theme - 1970s Rich Chocolate/Warm Burgundy */
   .theme-directory {
-    --page-primary: var(--color-sagebrush-green);
+    --page-primary: var(--nav-directory);
     --page-primary-foreground: var(--color-crisp-off-white);
-    --page-accent: var(--color-high-desert-sage);
-    --page-gradient: linear-gradient(135deg, var(--color-sagebrush-green), var(--color-high-desert-sage));
+    --page-accent: var(--nav-forums);
+    --page-gradient: linear-gradient(135deg, var(--nav-directory), var(--nav-forums));
   }
   
-  /* Armory Theme - Foothills Purple (Tactical) */
+  /* Armory Theme - 1970s Steel Blue/Tactical Cyan */
   .theme-armory {
-    --page-primary: var(--color-foothills-purple);
+    --page-primary: var(--nav-armory);
     --page-primary-foreground: var(--color-crisp-off-white);
-    --page-accent: var(--color-slate-blue);
-    --page-gradient: linear-gradient(135deg, var(--color-foothills-purple), var(--color-slate-blue));
+    --page-accent: var(--nav-intel);
+    --page-gradient: linear-gradient(135deg, var(--nav-armory), var(--nav-intel));
   }
   
-  /* Intel Theme - High Desert Sage (Reconnaissance) */
-  .theme-intel {
-    --page-primary: var(--color-high-desert-sage);
-    --page-primary-foreground: var(--color-dark-chocolate);
-    --page-accent: var(--color-sagebrush-green);
-    --page-gradient: linear-gradient(135deg, var(--color-high-desert-sage), var(--color-sagebrush-green));
+  /* Intel Theme - 1970s Military Brown/Amber Alert */
+  .theme-map {
+    --page-primary: var(--nav-intel);
+    --page-primary-foreground: var(--color-crisp-off-white);
+    --page-accent: var(--nav-armory);
+    --page-gradient: linear-gradient(135deg, var(--nav-intel), var(--nav-armory));
   }
   
-  /* Marketplace Theme - Canyon Clay (Commerce) */
+  /* Marketplace Theme - 1970s Commerce Gold/Chartreuse Highlight */
   .theme-marketplace {
-    --page-primary: var(--color-canyon-clay);
-    --page-primary-foreground: var(--color-crisp-off-white);
-    --page-accent: var(--color-sandy-ochre);
-    --page-gradient: linear-gradient(135deg, var(--color-canyon-clay), var(--color-sandy-ochre));
+    --page-primary: var(--nav-marketplace);
+    --page-primary-foreground: var(--color-dark-chocolate);
+    --page-accent: var(--nav-events);
+    --page-gradient: linear-gradient(135deg, var(--nav-marketplace), var(--nav-events));
   }
   
-  /* Forums Theme - Info River (Community) */
+  /* Forums Theme - 1970s Community Amber/Soft Discussion */
   .theme-forums {
-    --page-primary: var(--color-info-river);
-    --page-primary-foreground: var(--color-crisp-off-white);
-    --page-accent: var(--color-slate-blue);
-    --page-gradient: linear-gradient(135deg, var(--color-info-river), var(--color-slate-blue));
+    --page-primary: var(--nav-forums);
+    --page-primary-foreground: var(--color-dark-chocolate);
+    --page-accent: var(--nav-home);
+    --page-gradient: linear-gradient(135deg, var(--nav-forums), var(--nav-home));
   }
   
   /* Page Theme Utility Classes */
@@ -532,6 +640,10 @@
   .text-foothills-purple { color: var(--color-foothills-purple); }
   .text-canyon-clay { color: var(--color-canyon-clay); }
   .text-high-desert-sage { color: var(--color-high-desert-sage); }
+  .text-sunrise-amber { color: var(--color-sunrise-amber); }
+  .text-meadow-sage { color: var(--color-meadow-sage); }
+  .text-bruneau-sandstone { color: var(--color-bruneau-sandstone); }
+  .text-volcanic-ash { color: var(--color-volcanic-ash); }
 
   /* Background Colors */
   .bg-dark-chocolate { background-color: var(--color-dark-chocolate); }
@@ -557,6 +669,10 @@
   .bg-foothills-purple { background-color: var(--color-foothills-purple); }
   .bg-canyon-clay { background-color: var(--color-canyon-clay); }
   .bg-high-desert-sage { background-color: var(--color-high-desert-sage); }
+  .bg-sunrise-amber { background-color: var(--color-sunrise-amber); }
+  .bg-meadow-sage { background-color: var(--color-meadow-sage); }
+  .bg-bruneau-sandstone { background-color: var(--color-bruneau-sandstone); }
+  .bg-volcanic-ash { background-color: var(--color-volcanic-ash); }
 
   /* Hover Text Colors */
   .hover\\:text-dark-chocolate:hover { color: var(--color-dark-chocolate); }
@@ -582,6 +698,74 @@
   .hover\\:text-foothills-purple:hover { color: var(--color-foothills-purple); }
   .hover\\:text-canyon-clay:hover { color: var(--color-canyon-clay); }
   .hover\\:text-high-desert-sage:hover { color: var(--color-high-desert-sage); }
+  .hover\\:text-sunrise-amber:hover { color: var(--color-sunrise-amber); }
+  .hover\\:text-meadow-sage:hover { color: var(--color-meadow-sage); }
+  .hover\\:text-bruneau-sandstone:hover { color: var(--color-bruneau-sandstone); }
+  .hover\\:text-volcanic-ash:hover { color: var(--color-volcanic-ash); }
+
+  /* ================== 1970s NAVIGATION UTILITIES ================== */
+  /* Theme-aware navigation colors - automatically switch based on light/dark */
+  .text-nav-home { color: var(--nav-home); }
+  .text-nav-events { color: var(--nav-events); }
+  .text-nav-directory { color: var(--nav-directory); }
+  .text-nav-armory { color: var(--nav-armory); }
+  .text-nav-intel { color: var(--nav-intel); }
+  .text-nav-marketplace { color: var(--nav-marketplace); }
+  .text-nav-forums { color: var(--nav-forums); }
+
+  .bg-nav-home { background-color: var(--nav-home); }
+  .bg-nav-events { background-color: var(--nav-events); }
+  .bg-nav-directory { background-color: var(--nav-directory); }
+  .bg-nav-armory { background-color: var(--nav-armory); }
+  .bg-nav-intel { background-color: var(--nav-intel); }
+  .bg-nav-marketplace { background-color: var(--nav-marketplace); }
+  .bg-nav-forums { background-color: var(--nav-forums); }
+
+  .hover\\:text-nav-home:hover { color: var(--nav-home); }
+  .hover\\:text-nav-events:hover { color: var(--nav-events); }
+  .hover\\:text-nav-directory:hover { color: var(--nav-directory); }
+  .hover\\:text-nav-armory:hover { color: var(--nav-armory); }
+  .hover\\:text-nav-intel:hover { color: var(--nav-intel); }
+  .hover\\:text-nav-marketplace:hover { color: var(--nav-marketplace); }
+  .hover\\:text-nav-forums:hover { color: var(--nav-forums); }
+
+  .border-nav-home { border-color: var(--nav-home); }
+  .border-nav-events { border-color: var(--nav-events); }
+  .border-nav-directory { border-color: var(--nav-directory); }
+  .border-nav-armory { border-color: var(--nav-armory); }
+  .border-nav-intel { border-color: var(--nav-intel); }
+  .border-nav-marketplace { border-color: var(--nav-marketplace); }
+  .border-nav-forums { border-color: var(--nav-forums); }
+
+  /* ================== GRUVBOX UTILITIES ================== */
+  /* Night Ops theme colors for eye-friendly reading */
+  .text-gruvbox-cream { color: var(--gruvbox-fg-cream); }
+  .text-gruvbox-soft { color: var(--gruvbox-fg-soft); }
+  .text-gruvbox-muted { color: var(--gruvbox-fg-muted); }
+  .text-gruvbox-orange { color: var(--gruvbox-orange); }
+  .text-gruvbox-yellow { color: var(--gruvbox-yellow); }
+  .text-gruvbox-green { color: var(--gruvbox-green); }
+  .text-gruvbox-blue { color: var(--gruvbox-blue); }
+  .text-gruvbox-aqua { color: var(--gruvbox-aqua); }
+  .text-gruvbox-purple { color: var(--gruvbox-purple); }
+  .text-gruvbox-red { color: var(--gruvbox-red); }
+
+  .bg-gruvbox-dark { background-color: var(--gruvbox-bg-dark); }
+  .bg-gruvbox-soft { background-color: var(--gruvbox-bg-soft); }
+  .bg-gruvbox-surface { background-color: var(--gruvbox-bg-surface); }
+  .bg-gruvbox-orange { background-color: var(--gruvbox-orange); }
+  .bg-gruvbox-yellow { background-color: var(--gruvbox-yellow); }
+  .bg-gruvbox-green { background-color: var(--gruvbox-green); }
+  .bg-gruvbox-blue { background-color: var(--gruvbox-blue); }
+  .bg-gruvbox-aqua { background-color: var(--gruvbox-aqua); }
+  .bg-gruvbox-purple { background-color: var(--gruvbox-purple); }
+  .bg-gruvbox-red { background-color: var(--gruvbox-red); }
+
+  /* Gruvbox opacity variants for subtle effects */
+  .bg-gruvbox-orange\/10 { background-color: color-mix(in srgb, var(--gruvbox-orange) 10%, transparent); }
+  .bg-gruvbox-orange\/20 { background-color: color-mix(in srgb, var(--gruvbox-orange) 20%, transparent); }
+  .bg-gruvbox-orange\/30 { background-color: color-mix(in srgb, var(--gruvbox-orange) 30%, transparent); }
+  .border-gruvbox-orange\/30 { border-color: color-mix(in srgb, var(--gruvbox-orange) 30%, transparent); }
 
   /* ================== WINDOWS 11 MICA EFFECT ================== */
   .mica {

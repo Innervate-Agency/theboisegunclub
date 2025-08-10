@@ -6,10 +6,14 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import StatCard from '@/components/ui/StatCard'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { SiteNavigation } from '@/components/ui/site-navigation'
+import { SiteFooter } from '@/components/ui/site-footer'
+import AccessibilityFAB from '@/components/ui/AccessibilityFAB'
+import { cn } from '@/lib/utils'
 import { 
   Search, ShoppingCart, Filter, ExternalLink, ArrowRight, 
   Store, DollarSign, Package, Star, Eye, Building2, 
-  MapPin, Phone, Clock, Shield, TrendingUp, Zap
+  MapPin, Phone, Clock, Shield, TrendingUp, Zap, ChevronRight, CheckCircle
 } from 'lucide-react'
 
 // Marketplace inventory aggregation from local dealers
@@ -269,9 +273,7 @@ function ProductCard({ item }: { item: typeof marketplaceListings[0] }) {
   const savingsPercent = Math.round((savings / item.originalPrice) * 100)
 
   return (
-    <Card className={`group hover:shadow-elevated transition-all duration-300 ${
-      item.featured ? 'ring-2 ring-rusty-orange/30 bg-rusty-orange/5' : ''
-    }`}>
+    <Card className={cn("group hover:shadow-elevated transition-all duration-300", item.featured && "ring-2 ring-rusty-orange/30 bg-rusty-orange/5")}>
       <CardHeader className="pb-base">
         <div className="flex items-start justify-between gap-base mb-xs">
           <div className="flex gap-xs">
@@ -426,38 +428,99 @@ export default function MarketplacePage() {
   })
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90 px-md py-6xl">
-        <div className="absolute inset-0 bg-gradient-to-br from-rusty-orange/5 via-transparent to-rusty-orange/8 pointer-events-none"></div>
+    <>
+      <SiteNavigation variant="premium" sticky={true} />
+      <div className="min-h-screen bg-background theme-marketplace">
+      {/* Marketplace Hero - Content Left, Card Right (Layout 5) */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-nav-marketplace via-nav-home to-nav-events px-md py-6xl">
+        <div className="absolute inset-0 bg-gradient-to-br from-gruvbox-bg-dark/20 via-transparent to-gruvbox-bg-dark/10 pointer-events-none"></div>
         <div className="container mx-auto max-w-site relative z-10">
-          <div className="text-center space-y-lg">
-            <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
-              <ShoppingCart className="h-4 w-4 mr-xs" />
-              Marketplace
-            </Badge>
-            <h1 className="font-rajdhani text-6xl md:text-7xl font-bold text-crisp-off-white leading-tight">
-              Treasure Valley <span className="text-rusty-orange">Marketplace</span>
-            </h1>
-            <p className="text-body-lg text-crisp-off-white/80 max-w-3xl mx-auto">
-              Browse inventory from local firearms dealers across the Treasure Valley. From firearms and ammunition to accessories and optics - discover great deals from trusted local businesses.
-            </p>
+          <div className="flex items-center gap-xs text-sm text-gruvbox-fg-cream/80 mb-sm">
+            <span>Home</span>
+            <ChevronRight className="h-4 w-4" />
+            <span className="text-nav-marketplace font-medium">Marketplace</span>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4xl items-stretch">
+            {/* Content - Left side */}
+            <div className="lg:col-span-2 h-full flex flex-col justify-between">
+              <div className="space-y-xs">
+                <Badge className="bg-nav-marketplace/20 text-nav-marketplace border-nav-marketplace/30 w-fit">
+                  <ShoppingCart className="h-4 w-4 mr-xs" />
+                  Marketplace
+                </Badge>
+                <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-gruvbox-fg-cream leading-tight">
+                  Treasure Valley <span className="text-nav-marketplace">Marketplace</span>
+                </h1>
+                <p className="text-body-lg text-gruvbox-fg-cream/80 max-w-2xl">
+                  Browse inventory from local firearms dealers across the Treasure Valley. From firearms and ammunition to accessories and optics - discover great deals from trusted local businesses.
+                </p>
+              </div>
+              <div className="flex gap-base">
+                <Button 
+                  size="lg" 
+                  className="bg-nav-marketplace text-gruvbox-bg-dark hover:bg-nav-marketplace/90 font-rajdhani font-bold"
+                >
+                  <Store className="h-4 w-4 mr-xs" />
+                  List Your Items
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="border-nav-marketplace/30 text-nav-marketplace hover:bg-nav-marketplace hover:text-gruvbox-bg-dark"
+                >
+                  Dealer Information
+                </Button>
+              </div>
+            </div>
             
-            <div className="flex flex-wrap justify-center gap-base">
-              <Button 
-                size="xl" 
-                className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
-              >
-                <Store className="h-5 w-5 mr-xs" />
-                List Your Items
-              </Button>
-              <Button 
-                variant="outline" 
-                size="xl"
-                className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
-              >
-                Dealer Information
-              </Button>
+            {/* Featured Product Card - Right side */}
+            <div className="lg:col-span-1">
+              <div className="relative h-full">
+                <Card className="mica border-nav-marketplace/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-marketplace/20 to-nav-marketplace/10 rounded-bl-full"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-marketplace to-nav-marketplace"></div>
+                  
+                  <CardHeader className="pb-xs relative z-10">
+                    <div className="flex items-center justify-between mb-xs">
+                      <Badge className="bg-nav-marketplace/20 text-nav-marketplace border-nav-marketplace/30 font-rajdhani font-bold text-[10px]">
+                        <CheckCircle className="h-3 w-3 mr-xs" />
+                        IN STOCK
+                      </Badge>
+                      <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                        <Store className="h-3 w-3 text-nav-marketplace" />
+                        <span>Local Dealer</span>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-xs">
+                      <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">Glock 19 Gen 5</h3>
+                      <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                        <Building2 className="h-3 w-3 text-nav-marketplace" />
+                        <span>Precision Arms Co • Boise, ID</span>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  
+                  <CardContent className="space-y-base relative z-10">
+                    <p className="text-sm text-muted-foreground line-clamp-3">
+                      New condition. Includes case, documentation, and three magazines. Background check required.
+                    </p>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="text-nav-marketplace font-rajdhani font-bold text-lg">
+                        $549.99
+                      </div>
+                      <Button 
+                        className="bg-gradient-to-r from-nav-marketplace to-nav-marketplace text-gruvbox-bg-dark hover:from-nav-marketplace hover:to-nav-marketplace font-rajdhani font-bold text-xs"
+                        size="sm"
+                      >
+                        VIEW ITEM
+                        <ArrowRight className="h-3 w-3 ml-xs" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
@@ -675,6 +738,9 @@ export default function MarketplacePage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+      <SiteFooter />
+      <AccessibilityFAB />
+    </>
   )
 }

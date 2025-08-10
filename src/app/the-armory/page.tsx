@@ -10,6 +10,7 @@ import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import AccessibilityFAB from '@/components/ui/AccessibilityFAB'
 import { EventTicker } from '@/components/ui/event-ticker'
+import { cn } from '@/lib/utils'
 import { 
   Search, BookOpen, Filter, Clock, User, ArrowRight, 
   Shield, Scale, GraduationCap, Wrench, Target, FileText,
@@ -270,12 +271,10 @@ function ArticleCard({ article }: { article: typeof knowledgeBaseArticles[0] }) 
   }
 
   return (
-    <Card className={`group hover:shadow-elevated transition-all duration-300 ${
-      article.featured ? 'ring-2 ring-page-primary/30 bg-page-primary/5' : ''
-    }`}>
-      <CardHeader className="pb-(--spacing-base)">
-        <div className="flex items-start justify-between gap-(--spacing-base) mb-(--spacing-xs)">
-          <div className="flex gap-(--spacing-xs)">
+    <Card className={cn("group hover:shadow-elevated transition-all duration-300", article.featured && "ring-2 ring-page-primary/30 bg-page-primary/5")}>
+      <CardHeader className="pb-base">
+        <div className="flex items-start justify-between gap-base mb-xs">
+          <div className="flex gap-xs">
             <Badge className={categoryColors[article.category as keyof typeof categoryColors]}>
               {article.category}
             </Badge>
@@ -295,12 +294,12 @@ function ArticleCard({ article }: { article: typeof knowledgeBaseArticles[0] }) 
         </CardTitle>
       </CardHeader>
       
-      <CardContent className="space-y-(--spacing-base)">
+      <CardContent className="space-y-base">
         <p className="text-sm text-muted-foreground line-clamp-3">
           {article.description}
         </p>
         
-        <div className="flex flex-wrap gap-(--spacing-xs)">
+        <div className="flex flex-wrap gap-xs">
           {article.tags.slice(0, 3).map((tag) => (
             <Badge key={tag} variant="outline" className="text-xs">
               {tag}
@@ -314,33 +313,33 @@ function ArticleCard({ article }: { article: typeof knowledgeBaseArticles[0] }) 
         </div>
         
         <div className="flex items-center justify-between text-xs text-muted-foreground">
-          <div className="flex items-center gap-(--spacing-base)">
-            <div className="flex items-center gap-(--spacing-xs)">
+          <div className="flex items-center gap-base">
+            <div className="flex items-center gap-xs">
               <Clock className="h-3 w-3" />
               <span>{article.readTime}</span>
             </div>
-            <div className="flex items-center gap-(--spacing-xs)">
+            <div className="flex items-center gap-xs">
               <User className="h-3 w-3" />
               <span>{article.author}</span>
             </div>
-            <div className="flex items-center gap-(--spacing-xs)">
+            <div className="flex items-center gap-xs">
               <Calendar className="h-3 w-3" />
               <span>{new Date(article.lastUpdated).toLocaleDateString()}</span>
             </div>
           </div>
         </div>
         
-        <div className="flex items-center justify-between pt-(--spacing-xs) border-t border-border">
-          <div className="flex items-center gap-(--spacing-base) text-xs text-muted-foreground">
-            <div className="flex items-center gap-(--spacing-xs)">
+        <div className="flex items-center justify-between pt-xs border-t border-border">
+          <div className="flex items-center gap-base text-xs text-muted-foreground">
+            <div className="flex items-center gap-xs">
               <Eye className="h-3 w-3" />
               <span>{article.views.toLocaleString()}</span>
             </div>
-            <div className="flex items-center gap-(--spacing-xs)">
+            <div className="flex items-center gap-xs">
               <Star className="h-3 w-3" />
               <span>{article.likes}</span>
             </div>
-            <div className="flex items-center gap-(--spacing-xs)">
+            <div className="flex items-center gap-xs">
               <MessageSquare className="h-3 w-3" />
               <span>{article.comments}</span>
             </div>
@@ -348,7 +347,7 @@ function ArticleCard({ article }: { article: typeof knowledgeBaseArticles[0] }) 
           
           <Button variant="ghost" size="sm" className="text-page-primary hover:text-page-accent">
             Read Article
-            <ArrowRight className="h-3 w-3 ml-(--spacing-xs)" />
+            <ArrowRight className="h-3 w-3 ml-xs" />
           </Button>
         </div>
       </CardContent>
@@ -382,45 +381,96 @@ export default function ArmoryPage() {
   return (
     <div className="theme-armory min-h-screen bg-background">
       <SiteNavigation variant="premium" sticky={true} />
-      {/* Breadcrumb Hero - Left Aligned */}
-      <section className="bg-page-gradient border-b border-border/20">
-        <div className="container mx-auto max-w-site px-(--spacing-md) py-(--spacing-3xl)">
-          <div className="flex items-center gap-(--spacing-xs) text-sm text-crisp-off-white/80 mb-(--spacing-base)">
+      {/* Armory Hero - Content Left, Card Right (Layout 3) */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-nav-armory via-nav-intel to-nav-events px-md py-6xl">
+        <div className="absolute inset-0 bg-gradient-to-br from-gruvbox-bg-dark/20 via-transparent to-gruvbox-bg-dark/10 pointer-events-none"></div>
+        <div className="container mx-auto max-w-site relative z-10">
+          <div className="flex items-center gap-xs text-sm text-gruvbox-fg-cream/80 mb-sm">
             <span>Home</span>
             <ChevronRight className="h-4 w-4" />
-            <span className="text-page-primary font-medium">Armory</span>
+            <span className="text-nav-armory font-medium">Armory</span>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-(--spacing-xl) items-center">
-            <div className="lg:col-span-2 space-y-(--spacing-base)">
-              <Badge className="bg-page-primary/20 text-page-primary border-page-primary/30 w-fit">
-                <BookOpen className="h-4 w-4 mr-(--spacing-xs)" />
-                Knowledge Base
-              </Badge>
-              <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-crisp-off-white leading-tight">
-                The Armory
-              </h1>
-              <p className="text-body-lg text-crisp-off-white/80 max-w-2xl">
-                Comprehensive firearms knowledge base covering Idaho gun laws, safety practices, buying advice, and training resources for the Treasure Valley community.
-              </p>
-              <div className="flex gap-(--spacing-base)">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch">
+            {/* Content - Left side */}
+            <div className="lg:col-span-2 h-full flex flex-col justify-between">
+              <div className="space-y-xs">
+                <Badge className="bg-nav-armory/20 text-nav-armory border-nav-armory/30 w-fit">
+                  <BookOpen className="h-4 w-4 mr-xs" />
+                  Knowledge Base
+                </Badge>
+                <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-gruvbox-fg-cream leading-tight">
+                  The Armory
+                </h1>
+                <p className="text-body-lg text-gruvbox-fg-cream/80 max-w-2xl">
+                  Comprehensive firearms knowledge base covering Idaho gun laws, safety practices, buying advice, and training resources for the Treasure Valley community.
+                </p>
+              </div>
+              <div className="flex gap-base">
                 <Button 
-                  variant="solid-accent"
                   size="lg" 
-                  animationType="arrow"
-                  className="font-rajdhani font-bold"
+                  className="bg-nav-armory text-gruvbox-bg-dark hover:bg-nav-armory/90 font-rajdhani font-bold"
                 >
-                  <Plus className="h-4 w-4 mr-(--spacing-xs)" />
+                  <Plus className="h-4 w-4 mr-xs" />
                   Suggest Article
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg"
-                  animationType="chevron"
-                  animationState="right"
-                  className="border-page-primary/30 text-page-primary hover:bg-page-primary hover:text-page-primary-foreground"
+                  className="border-nav-armory/30 text-nav-armory hover:bg-nav-armory hover:text-gruvbox-bg-dark"
                 >
                   View Categories
                 </Button>
+              </div>
+            </div>
+            
+            {/* Featured Article Card - Right side */}
+            <div className="lg:col-span-1">
+              <div className="relative h-full">
+                <Card className="mica border-nav-armory/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-armory/20 to-nav-armory/10 rounded-bl-full"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-armory to-nav-armory"></div>
+                  
+                  <CardHeader className="pb-xs relative z-10">
+                    <div className="flex items-center justify-between mb-xs">
+                      <Badge className="bg-nav-armory/20 text-nav-armory border-nav-armory/30 font-rajdhani font-bold text-[10px]">
+                        <Shield className="h-3 w-3 mr-xs" />
+                        FEATURED GUIDE
+                      </Badge>
+                      <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                        <Eye className="h-3 w-3" />
+                        <span>2.1k views</span>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-xs">
+                      <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">Idaho Gun Laws 2025</h3>
+                      <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                        <User className="h-3 w-3 text-nav-armory" />
+                        <span>Legal Expert • 8 min read</span>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  
+                  <CardContent className="space-y-base relative z-10">
+                    <p className="text-sm text-muted-foreground line-clamp-3">
+                      Complete guide to Idaho's firearms laws including constitutional carry, concealed carry permits, and recent legislative updates for 2025.
+                    </p>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                        <Star className="h-3 w-3 fill-nav-armory text-nav-armory" />
+                        <span>Expert Verified</span>
+                      </div>
+                      <Button 
+                        className="bg-gradient-to-r from-nav-armory to-nav-armory text-gruvbox-bg-dark hover:from-nav-armory hover:to-nav-armory font-rajdhani font-bold text-xs"
+                        size="sm"
+                      >
+                        READ NOW
+                        <ArrowRight className="h-3 w-3 ml-xs" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
@@ -440,9 +490,9 @@ export default function ArmoryPage() {
       />
 
       {/* Stats Section */}
-      <section className="py-(--spacing-4xl) bg-muted/50">
-        <div className="container mx-auto max-w-site px-(--spacing-md)">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-(--spacing-xl)">
+      <section className="py-4xl bg-muted/50">
+        <div className="container mx-auto max-w-site px-md">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-xl">
             <StatCard
               title="Total Articles"
               value={knowledgeBaseArticles.length.toString()}
@@ -479,11 +529,11 @@ export default function ArmoryPage() {
       </section>
 
       {/* Search and Filter Section */}
-      <section className="py-(--spacing-4xl)">
-        <div className="container mx-auto max-w-site px-(--spacing-md)">
-          <div className="space-y-(--spacing-xl)">
+      <section className="py-4xl">
+        <div className="container mx-auto max-w-site px-md">
+          <div className="space-y-xl">
             {/* Search Bar */}
-            <div className="flex flex-col md:flex-row gap-(--spacing-base)">
+            <div className="flex flex-col md:flex-row gap-base">
               <div className="flex-1 relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
@@ -493,8 +543,8 @@ export default function ArmoryPage() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
-              <div className="flex gap-(--spacing-xs)">
-                <Button variant="outline" className="gap-(--spacing-xs)">
+              <div className="flex gap-xs">
+                <Button variant="outline" className="gap-xs">
                   <Filter className="h-4 w-4" />
                   Advanced Search
                 </Button>
@@ -502,11 +552,11 @@ export default function ArmoryPage() {
             </div>
 
             {/* Category Filters */}
-            <div className="space-y-(--spacing-base)">
+            <div className="space-y-base">
               <h3 className="font-rajdhani text-lg font-bold text-card-foreground">
                 Browse by Category
               </h3>
-              <div className="flex flex-wrap gap-(--spacing-xs)">
+              <div className="flex flex-wrap gap-xs">
                 {categories.map((category) => (
                   <Button
                     key={category.value}
@@ -519,8 +569,8 @@ export default function ArmoryPage() {
                     }
                   >
                     {category.icon}
-                    <span className="ml-(--spacing-xs)">{category.label}</span>
-                    <Badge variant="secondary" className="ml-(--spacing-xs)">
+                    <span className="ml-xs">{category.label}</span>
+                    <Badge variant="secondary" className="ml-xs">
                       {category.count}
                     </Badge>
                   </Button>
@@ -529,11 +579,11 @@ export default function ArmoryPage() {
             </div>
 
             {/* Difficulty Filters */}
-            <div className="space-y-(--spacing-base)">
+            <div className="space-y-base">
               <h3 className="font-rajdhani text-lg font-bold text-card-foreground">
                 Filter by Difficulty Level
               </h3>
-              <div className="flex flex-wrap gap-(--spacing-xs)">
+              <div className="flex flex-wrap gap-xs">
                 {difficultyLevels.map((level) => (
                   <Button
                     key={level.value}
@@ -546,7 +596,7 @@ export default function ArmoryPage() {
                     }
                   >
                     {level.label}
-                    <Badge variant="secondary" className="ml-(--spacing-xs)">
+                    <Badge variant="secondary" className="ml-xs">
                       {level.count}
                     </Badge>
                   </Button>
@@ -558,9 +608,9 @@ export default function ArmoryPage() {
       </section>
 
       {/* Articles Grid */}
-      <section className="pb-(--spacing-6xl)">
-        <div className="container mx-auto max-w-site px-(--spacing-md)">
-          <div className="space-y-(--spacing-xl)">
+      <section className="pb-6xl">
+        <div className="container mx-auto max-w-site px-md">
+          <div className="space-y-xl">
             <div className="flex items-center justify-between">
               <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">
                 {selectedCategory === "all" ? "All Articles" : categories.find(c => c.value === selectedCategory)?.label}
@@ -570,15 +620,15 @@ export default function ArmoryPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-(--spacing-xl)">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xl">
               {sortedArticles.map((article, index) => (
                 <ArticleCard key={index} article={article} />
               ))}
             </div>
 
             {sortedArticles.length === 0 && (
-              <div className="text-center py-(--spacing-6xl)">
-                <div className="space-y-(--spacing-base)">
+              <div className="text-center py-6xl">
+                <div className="space-y-base">
                   <div className="text-6xl">📚</div>
                   <h3 className="font-rajdhani text-2xl font-bold text-card-foreground">
                     No articles found
@@ -604,11 +654,11 @@ export default function ArmoryPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-(--spacing-6xl) bg-page-gradient">
-        <div className="container mx-auto max-w-site px-(--spacing-md) text-center">
-          <div className="space-y-(--spacing-lg)">
+      <section className="py-6xl bg-page-gradient">
+        <div className="container mx-auto max-w-site px-md text-center">
+          <div className="space-y-lg">
             <Badge className="bg-page-primary/20 text-page-primary border-page-primary/30">
-              <BookOpen className="h-4 w-4 mr-(--spacing-xs)" />
+              <BookOpen className="h-4 w-4 mr-xs" />
               Stay Updated
             </Badge>
             <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-crisp-off-white">
@@ -617,7 +667,7 @@ export default function ArmoryPage() {
             <p className="text-body-lg text-crisp-off-white/80 max-w-2xl mx-auto">
               Get notified when we publish new articles, legal updates, and important information for Idaho firearms owners. No spam, just valuable content.
             </p>
-            <div className="flex flex-col sm:flex-row gap-(--spacing-base) justify-center max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-base justify-center max-w-md mx-auto">
               <Input 
                 placeholder="Enter your email" 
                 className="bg-white/10 border-page-primary/30 text-crisp-off-white placeholder:text-crisp-off-white/60"

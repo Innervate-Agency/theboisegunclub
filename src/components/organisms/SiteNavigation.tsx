@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const SiteNavigation = () => {
   return (
@@ -6,12 +7,12 @@ const SiteNavigation = () => {
       <nav className="container mx-auto flex justify-between">
         <Link href="/" className="font-bold text-xl">The Boise Gun Club</Link>
         <div>
-          <a href="/the-armory" className="px-4">Armory</Link>
-          <a href="/directory" className="px-4">Directory</Link>
-          <a href="/events" className="px-4">Events</Link>
-          <a href="/map" className="px-4">Map</Link>
-          <a href="/marketplace" className="px-4">Marketplace</Link>
-          <a href="/training" className="px-4">Training</Link>
+          <Link href="/the-armory" className="px-4">Armory</Link>
+          <Link href="/directory" className="px-4">Directory</Link>
+          <Link href="/events" className="px-4">Events</Link>
+          <Link href="/map" className="px-4">Map</Link>
+          <Link href="/marketplace" className="px-4">Marketplace</Link>
+          <Link href="/training" className="px-4">Training</Link>
         </div>
       </nav>
     </header>

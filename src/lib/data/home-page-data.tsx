@@ -26,7 +26,7 @@ export const statCardsData = [
     label: 'Community Support',
     variant: 'default',
   },
-];
+] as const;
 
 export const directoryData = {
   icon: <Search />,

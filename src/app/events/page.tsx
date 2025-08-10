@@ -636,57 +636,59 @@ export default function EventsPage() {
   return (
     <>
       <SiteNavigation variant="premium" sticky={true} />
-      <div className="min-h-screen bg-background">
-        {/* Breadcrumb Hero - Left Aligned */}
-        <section className="bg-gradient-to-br from-(--color-slate-blue) to-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)] border-b border-border/20 pt-[calc(var(--spacing-3xl)+var(--spacing-lg))] pb-3xl">
-          <div className="container mx-auto max-w-site px-md">
-            <div className="flex items-center gap-xs text-sm text-(--color-crisp-off-white)/80 mb-sm">
+      <div className="min-h-screen bg-background theme-events">
+        {/* Events Hero - Content Left, Card Right (Layout 1) */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-nav-events via-nav-marketplace to-nav-home px-md py-8xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-gruvbox-bg-dark/20 via-transparent to-gruvbox-bg-dark/10 pointer-events-none"></div>
+          <div className="container mx-auto max-w-site relative z-10">
+            <div className="flex items-center gap-xs text-sm text-gruvbox-fg-cream/80 mb-lg">
               <span>Home</span>
               <ChevronRight className="h-4 w-4" />
-              <span className="text-(--color-rusty-orange) font-medium">Events</span>
+              <span className="text-nav-events font-medium">Events</span>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch">
-              <div className="lg:col-span-2 h-full flex flex-col justify-between">
-                <div className="space-y-xs">
-                  <Badge className="bg-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] text-(--color-slate-blue) border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)] w-fit">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3xl items-stretch min-h-[600px]">
+              {/* Content - Left side (50%) */}
+              <div className="flex flex-col justify-between p-xl">
+                <div className="space-y-lg">
+                  <Badge className="bg-nav-events/20 text-nav-events border-nav-events/30 w-fit">
                     <Calendar className="h-4 w-4 mr-xs" />
                     Events Hub
                   </Badge>
-                  <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-(--color-crisp-off-white) leading-tight">
+                  <h1 className="font-rajdhani text-4xl md:text-6xl font-bold text-gruvbox-fg-cream leading-tight">
                     Treasure Valley Events
                   </h1>
-                  <p className="text-body-lg text-(--color-crisp-off-white)/80 max-w-2xl">
+                  <p className="text-body-lg text-gruvbox-fg-cream/80">
                     Discover competitions, training, shows, and community events across Idaho's premier firearms region.
                   </p>
                 </div>
                 <div className="flex gap-base">
                   <Button 
                     size="lg" 
-                    className="bg-gradient-to-r from-(--color-rusty-orange) to-(--color-rusty-orange) text-(--color-shared-dark) hover:from-(--color-rusty-orange) hover:to-(--color-rusty-orange) font-rajdhani font-bold"
+                    className="bg-nav-events text-gruvbox-bg-dark hover:bg-nav-events/90 font-rajdhani font-bold"
                   >
-                    <ArrowRight className="h-4 w-4 mr-xs" />
+                    <Plus className="h-4 w-4 mr-xs" />
                     Submit Event
                   </Button>
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)] text-(--color-rusty-orange) hover:bg-(--color-rusty-orange) hover:text-(--color-shared-dark)"
+                    className="border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-gruvbox-bg-dark"
                   >
                     View Calendar
                   </Button>
                 </div>
               </div>
               
-              {/* Featured Event Spotlight */}
-              <div className="lg:col-span-1">
+              {/* Featured Event Card - Right side (50%) */}
+              <div className="flex items-center justify-center p-xl">
                 <div className="relative h-full">
-                  <Card className="mica border-rusty-orange/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-rusty-orange/20 to-rusty-orange/10 rounded-bl-full"></div>
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-rusty-orange to-rusty-orange"></div>
+                  <Card className="mica border-nav-events/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-events/20 to-nav-events/10 rounded-bl-full"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-events to-nav-events"></div>
                     
                     <CardHeader className="pb-xs relative z-10">
                       <div className="flex items-center justify-between mb-xs">
-                        <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30 font-rajdhani font-bold text-[10px]">
+                        <Badge className="bg-nav-events/20 text-nav-events border-nav-events/30 font-rajdhani font-bold text-[10px]">
                           <ChevronRight className="h-3 w-3 mr-xs" />
                           NEXT EVENT
                         </Badge>
@@ -699,7 +701,7 @@ export default function EventsPage() {
                       <div className="space-y-xs">
                         <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">USPSA Monthly Match</h3>
                         <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                          <MapPin className="h-3 w-3 text-rusty-orange" />
+                          <MapPin className="h-3 w-3 text-nav-events" />
                           <span>Nampa Rod & Gun Club</span>
                         </div>
                       </div>
@@ -709,7 +711,7 @@ export default function EventsPage() {
                       <div className="flex items-center justify-between">
                         <div className="space-y-xs">
                           <div className="flex items-center gap-xs text-xs text-card-foreground/80">
-                            <Calendar className="h-3 w-3 text-rusty-orange" />
+                            <Calendar className="h-3 w-3 text-nav-events" />
                             <span className="font-medium">Sat, Aug 9 • 8:00 AM</span>
                           </div>
                           <div className="flex items-center gap-xs text-xs text-muted-foreground">
@@ -721,14 +723,14 @@ export default function EventsPage() {
                         </div>
                         
                         <div className="text-right">
-                          <div className="w-12 h-12 rounded-pill bg-gradient-to-br from-rusty-orange/30 to-rusty-orange/20 flex items-center justify-center mb-xs">
-                            <Users className="h-5 w-5 text-rusty-orange" />
+                          <div className="w-12 h-12 rounded-pill bg-gradient-to-br from-nav-events/30 to-nav-events/20 flex items-center justify-center mb-xs">
+                            <Users className="h-5 w-5 text-nav-events" />
                           </div>
                         </div>
                       </div>
                       
                       <Button 
-                        className="w-full bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold text-xs"
+                        className="w-full bg-gradient-to-r from-nav-events to-nav-events text-gruvbox-bg-dark hover:from-nav-events hover:to-nav-events font-rajdhani font-bold text-xs"
                         size="sm"
                       >
                         REGISTER NOW

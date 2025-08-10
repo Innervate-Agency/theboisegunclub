@@ -104,42 +104,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
     }))
   ]
 
-  // Custom day renderer with event indicators
-  const DayContent = ({ date }: { date: Date }) => {
-    const dateStr = date.toDateString()
-    const dayEvents = eventsByDate.get(dateStr) || []
-    const isSelected = selectedDate?.toDateString() === dateStr
-    const isToday = new Date().toDateString() === dateStr
-
-    return (
-      <div className="relative w-full h-full flex flex-col items-center justify-center">
-        <span className={cn(
-          "text-sm font-medium",
-          isSelected && "text-primary",
-          isToday && "font-bold text-rusty-orange"
-        )}>
-          {date.getDate()}
-        </span>
-        
-        {dayEvents.length > 0 && (
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex gap-0.5">
-            {dayEvents.slice(0, 3).map((event, idx) => {
-              const config = eventTypeConfig[event.eventType as keyof typeof eventTypeConfig]
-              return (
-                <div
-                  key={idx}
-                  className={`w-1 h-1 rounded-pill bg-${config.color}`}
-                />
-              )
-            })}
-            {dayEvents.length > 3 && (
-              <div className="w-1 h-1 rounded-pill bg-muted-foreground" />
-            )}
-          </div>
-        )}
-      </div>
-    )
-  }
+  
 
   const formatEventTime = (time: string) => {
     // Extract start time from time range (e.g., "8:00 AM - 3:00 PM" -> "8:00 AM")
@@ -270,7 +235,8 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
               day_hidden: "invisible",
             }}
             components={{
-              DayContent: ({ date }) => {
+              Day: ({ day }) => {
+                const date = day.date;
                 const dateStr = date.toDateString()
                 const dayEvents = eventsByDate.get(dateStr) || []
                 const isSelected = selectedDate?.toDateString() === dateStr

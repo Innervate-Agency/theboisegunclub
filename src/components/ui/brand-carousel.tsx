@@ -67,6 +67,10 @@ export function BrandCarousel({
   }, [showcases.length])
   
   const currentShowcase = showcases[currentIndex]
+
+  if (!currentShowcase) {
+    return null;
+  }
   
   const gradientClasses = {
     blue: 'bg-slate-blue/70',

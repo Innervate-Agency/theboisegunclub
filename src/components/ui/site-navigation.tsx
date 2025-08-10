@@ -38,13 +38,13 @@ const siteNavigationVariants = cva(
 )
 
 const navigationItems = [
-  { label: "Home", icon: Home, href: "/", color: "sandy-ochre" },
-  { label: "Events", icon: Calendar, href: "/events", color: "slate-blue" },
-  { label: "Directory", icon: Users, href: "/directory", color: "sagebrush-green" },
-  { label: "Armory", icon: Target, href: "/the-armory", color: "foothills-purple" },
-  { label: "Intel", icon: Shield, href: "/intel", color: "high-desert-sage" },
-  { label: "Marketplace", icon: Trophy, href: "/marketplace", color: "canyon-clay" },
-  { label: "Forums", icon: Settings, href: "https://boisegunclub.com/forums/", color: "info-river" }
+  { label: "Home", icon: Home, href: "/", color: "nav-home" },
+  { label: "Events", icon: Calendar, href: "/events", color: "nav-events" },
+  { label: "Directory", icon: Users, href: "/directory", color: "nav-directory" },
+  { label: "Armory", icon: Target, href: "/the-armory", color: "nav-armory" },
+  { label: "Intel", icon: Shield, href: "/map", color: "nav-intel" },
+  { label: "Marketplace", icon: Trophy, href: "/marketplace", color: "nav-marketplace" },
+  { label: "Forums", icon: Settings, href: "https://boisegunclub.com/forums/", color: "nav-forums" }
 ]
 
 export interface SiteNavigationProps 
@@ -95,43 +95,43 @@ export function SiteNavigation({
     )
   }
 
-  // Get individual hover classes for each nav item - text color only, no background
+  // Get individual hover classes for each nav item - 1970s theme-aware colors
   const getHoverClasses = (color: string) => {
     switch(color) {
-      case 'sandy-ochre': return 'hover:text-sandy-ochre'
-      case 'slate-blue': return 'hover:text-slate-blue'
-      case 'sagebrush-green': return 'hover:text-sagebrush-green'
-      case 'foothills-purple': return 'hover:text-foothills-purple'
-      case 'high-desert-sage': return 'hover:text-high-desert-sage'
-      case 'canyon-clay': return 'hover:text-canyon-clay'
-      case 'info-river': return 'hover:text-info-river'
-      default: return 'hover:text-sandy-ochre'
+      case 'nav-home': return 'hover:text-nav-home'
+      case 'nav-events': return 'hover:text-nav-events'
+      case 'nav-directory': return 'hover:text-nav-directory'
+      case 'nav-armory': return 'hover:text-nav-armory'
+      case 'nav-intel': return 'hover:text-nav-intel'
+      case 'nav-marketplace': return 'hover:text-nav-marketplace'
+      case 'nav-forums': return 'hover:text-nav-forums'
+      default: return 'hover:text-nav-home'
     }
   }
   
   const getColorBarClass = (color: string) => {
     switch(color) {
-      case 'sandy-ochre': return 'bg-sandy-ochre'
-      case 'slate-blue': return 'bg-slate-blue'
-      case 'sagebrush-green': return 'bg-sagebrush-green'
-      case 'foothills-purple': return 'bg-foothills-purple'
-      case 'high-desert-sage': return 'bg-high-desert-sage'
-      case 'canyon-clay': return 'bg-canyon-clay'
-      case 'info-river': return 'bg-info-river'
-      default: return 'bg-sandy-ochre'
+      case 'nav-home': return 'bg-nav-home'
+      case 'nav-events': return 'bg-nav-events'
+      case 'nav-directory': return 'bg-nav-directory'
+      case 'nav-armory': return 'bg-nav-armory'
+      case 'nav-intel': return 'bg-nav-intel'
+      case 'nav-marketplace': return 'bg-nav-marketplace'
+      case 'nav-forums': return 'bg-nav-forums'
+      default: return 'bg-nav-home'
     }
   }
 
   const getActiveTextClass = (color: string) => {
     switch(color) {
-      case 'sandy-ochre': return 'text-sandy-ochre'
-      case 'slate-blue': return 'text-slate-blue'
-      case 'sagebrush-green': return 'text-sagebrush-green'
-      case 'foothills-purple': return 'text-foothills-purple'
-      case 'high-desert-sage': return 'text-high-desert-sage'
-      case 'canyon-clay': return 'text-canyon-clay'
-      case 'info-river': return 'text-info-river'
-      default: return 'text-sandy-ochre'
+      case 'nav-home': return 'text-nav-home'
+      case 'nav-events': return 'text-nav-events'
+      case 'nav-directory': return 'text-nav-directory'
+      case 'nav-armory': return 'text-nav-armory'
+      case 'nav-intel': return 'text-nav-intel'
+      case 'nav-marketplace': return 'text-nav-marketplace'
+      case 'nav-forums': return 'text-nav-forums'
+      default: return 'text-nav-home'
     }
   }
 

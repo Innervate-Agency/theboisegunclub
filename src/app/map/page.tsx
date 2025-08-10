@@ -6,10 +6,13 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import StatCard from '@/components/ui/StatCard'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { SiteNavigation } from '@/components/ui/site-navigation'
+import { SiteFooter } from '@/components/ui/site-footer'
+import AccessibilityFAB from '@/components/ui/AccessibilityFAB'
 import { 
   Search, MapPin, Filter, Plus, ArrowRight, 
   Navigation, Mountain, Trees, Shield, Users, 
-  Star, Eye, Flag, Compass, Info
+  Star, Eye, Flag, Compass, Info, ChevronRight
 } from 'lucide-react'
 
 // Idaho shooting locations database
@@ -272,38 +275,100 @@ export default function MapPage() {
   })
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90 px-md py-6xl">
-        <div className="absolute inset-0 bg-gradient-to-br from-rusty-orange/5 via-transparent to-rusty-orange/8 pointer-events-none"></div>
+    <>
+      <SiteNavigation variant="premium" sticky={true} />
+      <div className="min-h-screen bg-background theme-intel">
+      {/* Map Hero - Card Left, Content Right (Layout 4) */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-nav-intel via-nav-directory to-nav-armory px-md py-6xl">
+        <div className="absolute inset-0 bg-gradient-to-br from-gruvbox-bg-dark/20 via-transparent to-gruvbox-bg-dark/10 pointer-events-none"></div>
         <div className="container mx-auto max-w-site relative z-10">
-          <div className="text-center space-y-lg">
-            <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
-              <Compass className="h-4 w-4 mr-xs" />
-              Shooting Locations
-            </Badge>
-            <h1 className="font-rajdhani text-6xl md:text-7xl font-bold text-crisp-off-white leading-tight">
-              Idaho Shooting <span className="text-rusty-orange">Map</span>
-            </h1>
-            <p className="text-body-lg text-crisp-off-white/80 max-w-3xl mx-auto">
-              Community-driven map of legal shooting locations across Idaho. From BLM land to designated shooting areas - discover places to practice and enjoy the sport safely.
-            </p>
+          <div className="flex items-center gap-xs text-sm text-gruvbox-fg-cream/80 mb-sm">
+            <span>Home</span>
+            <ChevronRight className="h-4 w-4" />
+            <span className="text-nav-intel font-medium">Intel</span>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch">
+            {/* Featured Location Card - Left side */}
+            <div className="lg:col-span-1 lg:order-1">
+              <div className="relative h-full">
+                <Card className="mica border-nav-intel/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-intel/20 to-nav-intel/10 rounded-bl-full"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-intel to-nav-intel"></div>
+                  
+                  <CardHeader className="pb-xs relative z-10">
+                    <div className="flex items-center justify-between mb-xs">
+                      <Badge className="bg-nav-intel/20 text-nav-intel border-nav-intel/30 font-rajdhani font-bold text-[10px]">
+                        <Shield className="h-3 w-3 mr-xs" />
+                        VERIFIED LOCATION
+                      </Badge>
+                      <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                        <Star className="h-3 w-3 fill-nav-intel text-nav-intel" />
+                        <span>4.5</span>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-xs">
+                      <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">Lucky Peak Area</h3>
+                      <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                        <MapPin className="h-3 w-3 text-nav-intel" />
+                        <span>Near Lucky Peak Dam, ID</span>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  
+                  <CardContent className="space-y-base relative z-10">
+                    <p className="text-sm text-muted-foreground line-clamp-3">
+                      Established shooting area with improved backstops and designated firing lines. Popular with locals and well-maintained.
+                    </p>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                        <Navigation className="h-3 w-3 text-nav-intel" />
+                        <span>Free Access</span>
+                      </div>
+                      <Button 
+                        className="bg-gradient-to-r from-nav-intel to-nav-intel text-gruvbox-bg-dark hover:from-nav-intel hover:to-nav-intel font-rajdhani font-bold text-xs"
+                        size="sm"
+                      >
+                        VIEW DETAILS
+                        <ArrowRight className="h-3 w-3 ml-xs" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
             
-            <div className="flex flex-wrap justify-center gap-base">
-              <Button 
-                size="xl" 
-                className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
-              >
-                <Plus className="h-5 w-5 mr-xs" />
-                Submit Location
-              </Button>
-              <Button 
-                variant="outline" 
-                size="xl"
-                className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
-              >
-                View Interactive Map
-              </Button>
+            {/* Content - Right side */}
+            <div className="lg:col-span-2 lg:order-2 h-full flex flex-col justify-between">
+              <div className="space-y-xs">
+                <Badge className="bg-nav-intel/20 text-nav-intel border-nav-intel/30 w-fit">
+                  <Compass className="h-4 w-4 mr-xs" />
+                  Shooting Locations
+                </Badge>
+                <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-gruvbox-fg-cream leading-tight">
+                  Idaho Shooting <span className="text-nav-intel">Map</span>
+                </h1>
+                <p className="text-body-lg text-gruvbox-fg-cream/80 max-w-2xl">
+                  Community-driven map of legal shooting locations across Idaho. From BLM land to designated shooting areas - discover places to practice and enjoy the sport safely.
+                </p>
+              </div>
+              <div className="flex gap-base">
+                <Button 
+                  size="lg" 
+                  className="bg-nav-intel text-gruvbox-bg-dark hover:bg-nav-intel/90 font-rajdhani font-bold"
+                >
+                  <Plus className="h-4 w-4 mr-xs" />
+                  Submit Location
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-gruvbox-bg-dark"
+                >
+                  View Interactive Map
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -518,6 +583,9 @@ export default function MapPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+      <SiteFooter />
+      <AccessibilityFAB />
+    </>
   )
 }

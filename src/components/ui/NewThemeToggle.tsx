@@ -53,6 +53,10 @@ export function NewThemeToggle({
   const nextThemeIndex = (currentThemeIndex + 1) % themes.length
   const nextTheme = themes[nextThemeIndex]
   const currentThemeData = themes[currentThemeIndex] || themes[0]
+
+  if (!nextTheme) {
+    return null;
+  }
   
   const handleToggle = () => {
     setTheme(nextTheme.name)

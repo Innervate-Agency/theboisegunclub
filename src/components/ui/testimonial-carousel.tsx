@@ -80,6 +80,10 @@ export function TestimonialCarousel({
   if (!testimonials.length) return null
   
   const currentTestimonial = testimonials[currentIndex]
+
+  if (!currentTestimonial) {
+    return null;
+  }
   
   return (
     <section 

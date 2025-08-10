@@ -72,6 +72,8 @@ export interface PricingCardProps
   showFeatures?: boolean
   onSelectPlan?: (planId: string) => void
   tier?: 'free' | 'copper' | 'silver' | 'gold'
+  popular?: boolean
+  recommended?: boolean
 }
 
 export function PricingCard({
@@ -79,8 +81,6 @@ export function PricingCard({
   plan,
   tier,
   size,
-  popular = plan.popular,
-  recommended = plan.recommended,
   isAnnual = false,
   showFeatures = true,
   onSelectPlan,
@@ -118,7 +118,7 @@ export function PricingCard({
     >
       <Card className="border-0 shadow-none h-full">
         {/* Popular badge */}
-        {popular && plan.badge && (
+        {plan.popular && plan.badge && (
           <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
             <Badge variant="default" className="bg-rusty-orange text-nickel-white font-medium px-md py-sm text-caption shadow-md">
               <Star className="h-3 w-3 mr-xs" />
@@ -265,7 +265,6 @@ export function PricingTable({
           <PricingCard
             key={plan.id}
             plan={plan}
-            variant={variant}
             isAnnual={isAnnual}
             showFeatures={!showFeatureComparison}
             onSelectPlan={onSelectPlan}
@@ -274,42 +273,46 @@ export function PricingTable({
       </div>
 
       {/* Feature comparison table */}
-      {showFeatureComparison && (
-        <div className="overflow-x-auto">
-          <div className="inline-block min-w-full align-middle">
-            <table className="min-w-full divide-y divide-border">
-              <thead>
-                <tr>
-                  <th className="px-md py-base text-left text-body-sm font-rajdhani font-bold text-dark-chocolate">
-                    Features
-                  </th>
-                  {plans.map((plan) => (
-                    <th key={plan.id} className="px-md py-base text-center">
-                      <div className="font-rajdhani font-bold text-dark-chocolate">
-                        {plan.name}
-                      </div>
+      {showFeatureComparison && plans && plans.length > 0 && (() => {
+        const firstPlan = plans[0];
+        if (!firstPlan || !firstPlan.features) return null;
+        return (
+          <div className="overflow-x-auto">
+            <div className="inline-block min-w-full align-middle">
+              <table className="min-w-full divide-y divide-border">
+                <thead>
+                  <tr>
+                    <th className="px-md py-base text-left text-body-sm font-rajdhani font-bold text-dark-chocolate">
+                      Features
                     </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {plans[0]?.features.map((_, featureIndex) => (
-                  <tr key={featureIndex} className="hover:bg-muted/30">
-                    <td className="px-md py-base text-body-sm font-medium text-dark-chocolate">
-                      {plans[0].features[featureIndex]?.name}
-                    </td>
                     {plans.map((plan) => (
-                      <td key={plan.id} className="px-md py-base text-center">
-                        {renderFeatureValue(plan.features[featureIndex])}
-                      </td>
+                      <th key={plan.id} className="px-md py-base text-center">
+                        <div className="font-rajdhani font-bold text-dark-chocolate">
+                          {plan.name}
+                        </div>
+                      </th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {firstPlan.features.map((_, featureIndex) => (
+                    <tr key={featureIndex} className="hover:bg-muted/30">
+                      <td className="px-md py-base text-body-sm font-medium text-dark-chocolate">
+                        {firstPlan.features[featureIndex]?.name}
+                      </td>
+                      {plans.map((plan) => (
+                        <td key={plan.id} className="px-md py-base text-center">
+                          {renderFeatureValue(plan.features[featureIndex])}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
-      )}
+        )
+      })()}
     </div>
   )
 
@@ -352,7 +355,7 @@ export function PricingFusion({
 
   return (
     <div className="w-full space-y-2xl p-lg bg-solid-brand-warm rounded-md border border-rusty-orange/20 hover-gradient-warm">
-      <div className="text-center space-y-[base]">
+      <div className="text-center space-y-base">
         <h2 className="text-heading-lg font-rajdhani font-bold text-foreground">
           Choose Your Membership
         </h2>
@@ -396,7 +399,6 @@ export function PricingFusion({
           <PricingCard
             key={plan.id}
             plan={plan}
-            variant="fusion"
             isAnnual={isAnnual}
             showFeatures={!showFeatureComparison}
             onSelectPlan={onSelectPlan}
@@ -409,43 +411,47 @@ export function PricingFusion({
       </div>
 
       {/* Feature comparison with fusion styling */}
-      {showFeatureComparison && (
-        <div className="mica-card rounded-md border border-rusty-orange/20 p-md overflow-x-auto">
-          <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate mb-[md] text-center">
-            Feature Comparison
-          </h3>
-          <table className="w-full">
-            <thead>
-              <tr className="border-b border-rusty-orange/20">
-                <th className="px-base py-sm text-left text-body-sm font-rajdhani font-bold text-dark-chocolate">
-                  Features
-                </th>
-                {plans.map((plan) => (
-                  <th key={plan.id} className="px-base py-sm text-center">
-                    <div className="font-rajdhani font-bold text-dark-chocolate">
-                      {plan.name}
-                    </div>
+      {showFeatureComparison && plans && plans.length > 0 && (() => {
+        const firstPlan = plans[0];
+        if (!firstPlan || !firstPlan.features) return null;
+        return (
+          <div className="mica-card rounded-md border border-rusty-orange/20 p-md overflow-x-auto">
+            <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate mb-[md] text-center">
+              Feature Comparison
+            </h3>
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-rusty-orange/20">
+                  <th className="px-base py-sm text-left text-body-sm font-rajdhani font-bold text-dark-chocolate">
+                    Features
                   </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {plans[0]?.features.map((_, featureIndex) => (
-                <tr key={featureIndex} className="border-b border-border hover:bg-rusty-orange/5">
-                  <td className="px-base py-sm text-body-sm font-medium text-dark-chocolate">
-                    {plans[0].features[featureIndex]?.name}
-                  </td>
                   {plans.map((plan) => (
-                    <td key={plan.id} className="px-base py-sm text-center">
-                      {renderFeatureValueFusion(plan.features[featureIndex])}
-                    </td>
+                    <th key={plan.id} className="px-base py-sm text-center">
+                      <div className="font-rajdhani font-bold text-dark-chocolate">
+                        {plan.name}
+                      </div>
+                    </th>
                   ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+              </thead>
+              <tbody>
+                {firstPlan.features.map((_, featureIndex) => (
+                  <tr key={featureIndex} className="border-b border-border hover:bg-rusty-orange/5">
+                    <td className="px-base py-sm text-body-sm font-medium text-dark-chocolate">
+                      {firstPlan.features[featureIndex]?.name}
+                    </td>
+                    {plans.map((plan) => (
+                      <td key={plan.id} className="px-base py-sm text-center">
+                        {renderFeatureValueFusion(plan.features[featureIndex])}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )
+      })()}
     </div>
   )
 

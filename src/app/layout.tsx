@@ -52,6 +52,7 @@ export default function RootLayout({
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange={false}
+          themes={['light', 'dark', 'gruvbox', 'system']}
         >
           {children}
         </ThemeProvider>
