@@ -1,6 +1,13 @@
 'use server'
 
-import { contactSchema, type ContactFormState } from '@/schemas/contact.schema'
+import { contactSchema, type ContactFormState, type ContactFormData } from '@/schemas/contact.schema'
+import type { ZodError } from 'zod'
+
+// Helper to safely extract string from FormData
+function getFormString(formData: FormData, key: string): string | null {
+  const value = formData.get(key)
+  return typeof value === 'string' ? value : null
+}
 
 export async function submitContactForm(
   prevState: ContactFormState,
@@ -8,12 +15,12 @@ export async function submitContactForm(
 ): Promise<ContactFormState> {
   try {
     const rawData = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      phone: formData.get('phone') || undefined,
-      subject: formData.get('subject'),
-      message: formData.get('message'),
-      inquiryType: formData.get('inquiryType') || 'general',
+      name: getFormString(formData, 'name'),
+      email: getFormString(formData, 'email'),
+      phone: getFormString(formData, 'phone') || undefined,
+      subject: getFormString(formData, 'subject'),
+      message: getFormString(formData, 'message'),
+      inquiryType: getFormString(formData, 'inquiryType') || 'general',
       consent: formData.get('consent') === 'on'
     }
 
@@ -21,7 +28,9 @@ export async function submitContactForm(
     
     if (!parsed.success) {
       const fieldErrors: Record<string, string[]> = {}
-      parsed.error.errors.forEach((error) => {
+      const zodError = parsed.error as ZodError
+      
+      zodError.issues.forEach((error) => {
         const field = error.path[0] as string
         if (!fieldErrors[field]) fieldErrors[field] = []
         fieldErrors[field].push(error.message)
@@ -31,7 +40,7 @@ export async function submitContactForm(
         success: false,
         message: 'Please fix the errors below.',
         errors: fieldErrors,
-        values: rawData
+        values: rawData as Partial<ContactFormData>
       }
     }
 
@@ -47,10 +56,12 @@ export async function submitContactForm(
     }
 
   } catch (error) {
+    console.error('Contact form error:', error)
+    const formValues = Object.fromEntries(formData)
     return {
       success: false,
       message: 'An error occurred. Please try again.',
-      values: Object.fromEntries(formData)
+      values: formValues as Partial<ContactFormData>
     }
   }
 }

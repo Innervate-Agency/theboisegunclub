@@ -13,10 +13,10 @@ export const contactSchema = z.object({
 export type ContactFormData = z.infer<typeof contactSchema>
 
 export interface ContactFormState {
-  success?: boolean
-  message?: string
-  errors?: Partial<Record<keyof ContactFormData, string[]>>
-  values?: Partial<ContactFormData>
+  success?: boolean | undefined
+  message?: string | undefined
+  errors?: Partial<Record<keyof ContactFormData, string[]>> | undefined
+  values?: Partial<ContactFormData> | undefined
 }
 
 export const initialContactFormState: ContactFormState = {
