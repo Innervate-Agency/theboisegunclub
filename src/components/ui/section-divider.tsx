@@ -86,7 +86,7 @@ export function SectionDivider({ className, variant, spacing, ...props }: Sectio
       
       {/* Three-Dot Sights Pattern */}
       {variant === "sights" && (
-        <div className="absolute inset-0 flex items-center justify-center gap-[var(--space-5xl)]">
+        <div className="absolute inset-0 flex items-center justify-center gap-(--space-5xl)">
           <div className="w-2 h-2 rounded-full bg-muted-foreground/40" />
           <div className="w-3 h-3 rounded-full bg-primary/60" />
           <div className="w-2 h-2 rounded-full bg-muted-foreground/40" />

@@ -310,7 +310,7 @@ function SidebarInset({ className, ...props }: React.ComponentProps<"main">) {
       data-slot="sidebar-inset"
       className={cn(
         "bg-background relative flex w-full flex-1 flex-col",
-        "md:peer-data-[variant=inset]:m-[var(--space-xs)] md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-large md:peer-data-[variant=inset]:shadow-flat md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-[var(--space-xs)]",
+        "md:peer-data-[variant=inset]:m-(--space-xs) md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-large md:peer-data-[variant=inset]:shadow-flat md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-(--space-xs)",
         className
       )}
       {...props}
@@ -406,7 +406,7 @@ function SidebarGroupLabel({
       data-sidebar="group-label"
       className={cn(
         "text-sidebar-foreground/70 ring-sidebar-ring flex h-8 shrink-0 items-center rounded-input px-xs text-caption font-medium outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0",
-        "group-data-[collapsible=icon]:-mt-[var(--space-lg)] group-data-[collapsible=icon]:opacity-0",
+        "group-data-[collapsible=icon]:-mt-(--space-lg) group-data-[collapsible=icon]:opacity-0",
         className
       )}
       {...props}
@@ -474,7 +474,7 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<"li">) {
 }
 
 const sidebarMenuButtonVariants = cva(
-  "peer/menu-button flex w-full items-center gap-xs overflow-hidden rounded-input p-xs text-left text-body-sm outline-hidden ring-sidebar-ring transition-[width,height,padding] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-[var(--space-lg)] aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-xs! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0",
+  "peer/menu-button flex w-full items-center gap-xs overflow-hidden rounded-input p-xs text-left text-body-sm outline-hidden ring-sidebar-ring transition-[width,height,padding] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-data-[sidebar=menu-action]/menu-item:pr-(--space-lg) aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-xs! [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -586,7 +586,7 @@ function SidebarMenuBadge({
       data-slot="sidebar-menu-badge"
       data-sidebar="menu-badge"
       className={cn(
-        "text-sidebar-foreground pointer-events-none absolute right-1 flex h-5 min-w-5 items-center justify-center rounded-input px-[var(--space-micro)] text-caption font-medium tabular-nums select-none",
+        "text-sidebar-foreground pointer-events-none absolute right-1 flex h-5 min-w-5 items-center justify-center rounded-input px-(--space-micro) text-caption font-medium tabular-nums select-none",
         "peer-hover/menu-button:text-sidebar-accent-foreground peer-data-[active=true]/menu-button:text-sidebar-accent-foreground",
         "peer-data-[size=sm]/menu-button:top-1",
         "peer-data-[size=default]/menu-button:top-1.5",
@@ -643,7 +643,7 @@ function SidebarMenuSub({ className, ...props }: React.ComponentProps<"ul">) {
       data-slot="sidebar-menu-sub"
       data-sidebar="menu-sub"
       className={cn(
-        "border-sidebar-border mx-3.5 flex min-w-0 translate-x-px flex-col gap-xs border-l px-xs.5 py-[var(--space-tiny)]",
+        "border-sidebar-border mx-3.5 flex min-w-0 translate-x-px flex-col gap-xs border-l px-xs.5 py-(--space-tiny)",
         "group-data-[collapsible=icon]:hidden",
         className
       )}

@@ -493,50 +493,50 @@ const eventCategories = [
     label: "All Events", 
     value: "all", 
     count: upcomingEvents.length, 
-    activeClasses: "bg-[var(--color-slate-blue)] text-white hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_90%,black)]", 
-    inactiveClasses: "border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)] text-[var(--color-slate-blue)] hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_10%,transparent)]" 
+    activeClasses: "bg-(--color-slate-blue) text-white hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_90%,black)]", 
+    inactiveClasses: "border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)] text-(--color-slate-blue) hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_10%,transparent)]" 
   },
   { 
     label: "Competitions", 
     value: "Competition", 
     count: upcomingEvents.filter(e => e.eventType === "Competition").length, 
-    activeClasses: "bg-[var(--color-slate-blue)] text-white hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_90%,black)]", 
-    inactiveClasses: "border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)] text-[var(--color-slate-blue)] hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_10%,transparent)]" 
+    activeClasses: "bg-(--color-slate-blue) text-white hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_90%,black)]", 
+    inactiveClasses: "border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)] text-(--color-slate-blue) hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_10%,transparent)]" 
   },
   { 
     label: "Training", 
     value: "Training", 
     count: upcomingEvents.filter(e => e.eventType === "Training").length, 
-    activeClasses: "bg-[var(--color-sandy-ochre)] text-white hover:bg-[color-mix(in_srgb,var(--color-sandy-ochre)_90%,black)]", 
-    inactiveClasses: "border-[color-mix(in_srgb,var(--color-sandy-ochre)_30%,transparent)] text-[var(--color-sandy-ochre)] hover:bg-[color-mix(in_srgb,var(--color-sandy-ochre)_10%,transparent)]" 
+    activeClasses: "bg-(--color-sandy-ochre) text-white hover:bg-[color-mix(in_srgb,var(--color-sandy-ochre)_90%,black)]", 
+    inactiveClasses: "border-[color-mix(in_srgb,var(--color-sandy-ochre)_30%,transparent)] text-(--color-sandy-ochre) hover:bg-[color-mix(in_srgb,var(--color-sandy-ochre)_10%,transparent)]" 
   },
   { 
     label: "Expos", 
     value: "Expo", 
     count: upcomingEvents.filter(e => e.eventType === "Expo").length, 
-    activeClasses: "bg-[var(--color-info-river)] text-white hover:bg-[color-mix(in_srgb,var(--color-info-river)_90%,black)]", 
-    inactiveClasses: "border-[color-mix(in_srgb,var(--color-info-river)_30%,transparent)] text-[var(--color-info-river)] hover:bg-[color-mix(in_srgb,var(--color-info-river)_10%,transparent)]" 
+    activeClasses: "bg-(--color-info-river) text-white hover:bg-[color-mix(in_srgb,var(--color-info-river)_90%,black)]", 
+    inactiveClasses: "border-[color-mix(in_srgb,var(--color-info-river)_30%,transparent)] text-(--color-info-river) hover:bg-[color-mix(in_srgb,var(--color-info-river)_10%,transparent)]" 
   },
   { 
     label: "Charity", 
     value: "Charity", 
     count: upcomingEvents.filter(e => e.eventType === "Charity").length, 
-    activeClasses: "bg-[var(--color-sagebrush-green)] text-white hover:bg-[color-mix(in_srgb,var(--color-sagebrush-green)_90%,black)]", 
-    inactiveClasses: "border-[color-mix(in_srgb,var(--color-sagebrush-green)_30%,transparent)] text-[var(--color-sagebrush-green)] hover:bg-[color-mix(in_srgb,var(--color-sagebrush-green)_10%,transparent)]" 
+    activeClasses: "bg-(--color-sagebrush-green) text-white hover:bg-[color-mix(in_srgb,var(--color-sagebrush-green)_90%,black)]", 
+    inactiveClasses: "border-[color-mix(in_srgb,var(--color-sagebrush-green)_30%,transparent)] text-(--color-sagebrush-green) hover:bg-[color-mix(in_srgb,var(--color-sagebrush-green)_10%,transparent)]" 
   },
   { 
     label: "Social", 
     value: "Social", 
     count: upcomingEvents.filter(e => e.eventType === "Social").length, 
-    activeClasses: "bg-[var(--color-rusty-orange)] text-white hover:bg-[color-mix(in_srgb,var(--color-rusty-orange)_90%,black)]", 
-    inactiveClasses: "border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)] text-[var(--color-rusty-orange)] hover:bg-[color-mix(in_srgb,var(--color-rusty-orange)_10%,transparent)]" 
+    activeClasses: "bg-(--color-rusty-orange) text-white hover:bg-[color-mix(in_srgb,var(--color-rusty-orange)_90%,black)]", 
+    inactiveClasses: "border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)] text-(--color-rusty-orange) hover:bg-[color-mix(in_srgb,var(--color-rusty-orange)_10%,transparent)]" 
   },
   { 
     label: "Demos", 
     value: "Demo", 
     count: upcomingEvents.filter(e => e.eventType === "Demo").length, 
-    activeClasses: "bg-[var(--color-warning-clay)] text-white hover:bg-[color-mix(in_srgb,var(--color-warning-clay)_90%,black)]", 
-    inactiveClasses: "border-[color-mix(in_srgb,var(--color-warning-clay)_30%,transparent)] text-[var(--color-warning-clay)] hover:bg-[color-mix(in_srgb,var(--color-warning-clay)_10%,transparent)]" 
+    activeClasses: "bg-(--color-warning-clay) text-white hover:bg-[color-mix(in_srgb,var(--color-warning-clay)_90%,black)]", 
+    inactiveClasses: "border-[color-mix(in_srgb,var(--color-warning-clay)_30%,transparent)] text-(--color-warning-clay) hover:bg-[color-mix(in_srgb,var(--color-warning-clay)_10%,transparent)]" 
   }
 ]
 
@@ -552,71 +552,71 @@ export default function EventsPage() {
       case 'Competition': return {
         background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] to-[color-mix(in_srgb,var(--color-slate-blue)_15%,transparent)]',
         border: 'border-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)]',
-        text: 'text-[var(--color-slate-blue)]',
-        iconText: 'text-[var(--color-slate-blue)]',
-        badge: 'bg-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] text-[var(--color-slate-blue)] border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]',
+        text: 'text-(--color-slate-blue)',
+        iconText: 'text-(--color-slate-blue)',
+        badge: 'bg-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] text-(--color-slate-blue) border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]',
         buttonBorder: 'border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]',
-        buttonText: 'text-[var(--color-slate-blue)]',
+        buttonText: 'text-(--color-slate-blue)',
         hoverText: 'hover:text-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)]'
       }
       case 'Training': return {
         background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-sandy-ochre)_20%,transparent)] to-[color-mix(in_srgb,var(--color-sandy-ochre)_15%,transparent)]',
         border: 'border-[color-mix(in_srgb,var(--color-sandy-ochre)_20%,transparent)]',
-        text: 'text-[var(--color-sandy-ochre)]',
-        iconText: 'text-[var(--color-sandy-ochre)]',
-        badge: 'bg-[color-mix(in_srgb,var(--color-sandy-ochre)_20%,transparent)] text-[var(--color-sandy-ochre)] border-[color-mix(in_srgb,var(--color-sandy-ochre)_30%,transparent)]',
+        text: 'text-(--color-sandy-ochre)',
+        iconText: 'text-(--color-sandy-ochre)',
+        badge: 'bg-[color-mix(in_srgb,var(--color-sandy-ochre)_20%,transparent)] text-(--color-sandy-ochre) border-[color-mix(in_srgb,var(--color-sandy-ochre)_30%,transparent)]',
         buttonBorder: 'border-[color-mix(in_srgb,var(--color-sandy-ochre)_30%,transparent)]',
-        buttonText: 'text-[var(--color-sandy-ochre)]',
+        buttonText: 'text-(--color-sandy-ochre)',
         hoverText: 'hover:text-[color-mix(in_srgb,var(--color-sandy-ochre)_80%,black)]'
       }
       case 'Expo': return {
         background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-info-river)_20%,transparent)] to-[color-mix(in_srgb,var(--color-info-river)_15%,transparent)]',
         border: 'border-[color-mix(in_srgb,var(--color-info-river)_20%,transparent)]',
-        text: 'text-[var(--color-info-river)]',
-        iconText: 'text-[var(--color-info-river)]',
-        badge: 'bg-[color-mix(in_srgb,var(--color-info-river)_20%,transparent)] text-[var(--color-info-river)] border-[color-mix(in_srgb,var(--color-info-river)_30%,transparent)]',
+        text: 'text-(--color-info-river)',
+        iconText: 'text-(--color-info-river)',
+        badge: 'bg-[color-mix(in_srgb,var(--color-info-river)_20%,transparent)] text-(--color-info-river) border-[color-mix(in_srgb,var(--color-info-river)_30%,transparent)]',
         buttonBorder: 'border-[color-mix(in_srgb,var(--color-info-river)_30%,transparent)]',
-        buttonText: 'text-[var(--color-info-river)]',
+        buttonText: 'text-(--color-info-river)',
         hoverText: 'hover:text-[color-mix(in_srgb,var(--color-info-river)_80%,black)]'
       }
       case 'Charity': return {
         background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-sagebrush-green)_20%,transparent)] to-[color-mix(in_srgb,var(--color-sagebrush-green)_15%,transparent)]',
         border: 'border-[color-mix(in_srgb,var(--color-sagebrush-green)_20%,transparent)]',
-        text: 'text-[var(--color-sagebrush-green)]',
-        iconText: 'text-[var(--color-sagebrush-green)]',
-        badge: 'bg-[color-mix(in_srgb,var(--color-sagebrush-green)_20%,transparent)] text-[var(--color-sagebrush-green)] border-[color-mix(in_srgb,var(--color-sagebrush-green)_30%,transparent)]',
+        text: 'text-(--color-sagebrush-green)',
+        iconText: 'text-(--color-sagebrush-green)',
+        badge: 'bg-[color-mix(in_srgb,var(--color-sagebrush-green)_20%,transparent)] text-(--color-sagebrush-green) border-[color-mix(in_srgb,var(--color-sagebrush-green)_30%,transparent)]',
         buttonBorder: 'border-[color-mix(in_srgb,var(--color-sagebrush-green)_30%,transparent)]',
-        buttonText: 'text-[var(--color-sagebrush-green)]',
+        buttonText: 'text-(--color-sagebrush-green)',
         hoverText: 'hover:text-[color-mix(in_srgb,var(--color-sagebrush-green)_80%,black)]'
       }
       case 'Social': return {
         background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-rusty-orange)_20%,transparent)] to-[color-mix(in_srgb,var(--color-rusty-orange)_15%,transparent)]',
         border: 'border-[color-mix(in_srgb,var(--color-rusty-orange)_20%,transparent)]',
-        text: 'text-[var(--color-rusty-orange)]',
-        iconText: 'text-[var(--color-rusty-orange)]',
-        badge: 'bg-[color-mix(in_srgb,var(--color-rusty-orange)_20%,transparent)] text-[var(--color-rusty-orange)] border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)]',
+        text: 'text-(--color-rusty-orange)',
+        iconText: 'text-(--color-rusty-orange)',
+        badge: 'bg-[color-mix(in_srgb,var(--color-rusty-orange)_20%,transparent)] text-(--color-rusty-orange) border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)]',
         buttonBorder: 'border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)]',
-        buttonText: 'text-[var(--color-rusty-orange)]',
+        buttonText: 'text-(--color-rusty-orange)',
         hoverText: 'hover:text-[color-mix(in_srgb,var(--color-rusty-orange)_80%,black)]'
       }
       case 'Demo': return {
         background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-warning-clay)_20%,transparent)] to-[color-mix(in_srgb,var(--color-warning-clay)_15%,transparent)]',
         border: 'border-[color-mix(in_srgb,var(--color-warning-clay)_20%,transparent)]',
-        text: 'text-[var(--color-warning-clay)]',
-        iconText: 'text-[var(--color-warning-clay)]',
-        badge: 'bg-[color-mix(in_srgb,var(--color-warning-clay)_20%,transparent)] text-[var(--color-warning-clay)] border-[color-mix(in_srgb,var(--color-warning-clay)_30%,transparent)]',
+        text: 'text-(--color-warning-clay)',
+        iconText: 'text-(--color-warning-clay)',
+        badge: 'bg-[color-mix(in_srgb,var(--color-warning-clay)_20%,transparent)] text-(--color-warning-clay) border-[color-mix(in_srgb,var(--color-warning-clay)_30%,transparent)]',
         buttonBorder: 'border-[color-mix(in_srgb,var(--color-warning-clay)_30%,transparent)]',
-        buttonText: 'text-[var(--color-warning-clay)]',
+        buttonText: 'text-(--color-warning-clay)',
         hoverText: 'hover:text-[color-mix(in_srgb,var(--color-warning-clay)_80%,black)]'
       }
       default: return {
         background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] to-[color-mix(in_srgb,var(--color-slate-blue)_15%,transparent)]',
         border: 'border-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)]',
-        text: 'text-[var(--color-slate-blue)]',
-        iconText: 'text-[var(--color-slate-blue)]',
-        badge: 'bg-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] text-[var(--color-slate-blue)] border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]',
+        text: 'text-(--color-slate-blue)',
+        iconText: 'text-(--color-slate-blue)',
+        badge: 'bg-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] text-(--color-slate-blue) border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]',
         buttonBorder: 'border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]',
-        buttonText: 'text-[var(--color-slate-blue)]',
+        buttonText: 'text-(--color-slate-blue)',
         hoverText: 'hover:text-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)]'
       }
     }
@@ -646,31 +646,31 @@ export default function EventsPage() {
       <SiteNavigation variant="premium" sticky={true} />
       <div className="min-h-screen bg-background">
         {/* Breadcrumb Hero - Left Aligned */}
-        <section className="bg-gradient-to-br from-[var(--color-slate-blue)] to-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)] border-b border-border/20 pt-[calc(var(--space-3xl)+var(--space-lg))] pb-3xl">
+        <section className="bg-gradient-to-br from-(--color-slate-blue) to-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)] border-b border-border/20 pt-[calc(var(--space-3xl)+var(--space-lg))] pb-3xl">
           <div className="container mx-auto max-w-site px-md">
-            <div className="flex items-center gap-xs text-sm text-[var(--color-crisp-off-white)]/80 mb-sm">
+            <div className="flex items-center gap-xs text-sm text-(--color-crisp-off-white)/80 mb-sm">
               <span>Home</span>
               <ChevronRight className="h-4 w-4" />
-              <span className="text-[var(--color-rusty-orange)] font-medium">Events</span>
+              <span className="text-(--color-rusty-orange) font-medium">Events</span>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch">
               <div className="lg:col-span-2 h-full flex flex-col justify-between">
                 <div className="space-y-xs">
-                  <Badge className="bg-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] text-[var(--color-slate-blue)] border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)] w-fit">
+                  <Badge className="bg-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] text-(--color-slate-blue) border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)] w-fit">
                     <IconCalendarEvent className="h-4 w-4 mr-xs" />
                     Events Hub
                   </Badge>
-                  <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-[var(--color-crisp-off-white)] leading-tight">
+                  <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-(--color-crisp-off-white) leading-tight">
                     Treasure Valley Events
                   </h1>
-                  <p className="text-body-lg text-[var(--color-crisp-off-white)]/80 max-w-2xl">
+                  <p className="text-body-lg text-(--color-crisp-off-white)/80 max-w-2xl">
                     Discover competitions, training, shows, and community events across Idaho's premier firearms region.
                   </p>
                 </div>
                 <div className="flex gap-base">
                   <Button 
                     size="lg" 
-                    className="bg-gradient-to-r from-[var(--color-rusty-orange)] to-[var(--color-rusty-orange)] text-[var(--color-shared-dark)] hover:from-[var(--color-rusty-orange)] hover:to-[var(--color-rusty-orange)] font-rajdhani font-bold"
+                    className="bg-gradient-to-r from-(--color-rusty-orange) to-(--color-rusty-orange) text-(--color-shared-dark) hover:from-(--color-rusty-orange) hover:to-(--color-rusty-orange) font-rajdhani font-bold"
                   >
                     <RiFireFill className="h-4 w-4 mr-xs" />
                     Submit Event
@@ -678,7 +678,7 @@ export default function EventsPage() {
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)] text-[var(--color-rusty-orange)] hover:bg-[var(--color-rusty-orange)] hover:text-[var(--color-shared-dark)]"
+                    className="border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)] text-(--color-rusty-orange) hover:bg-(--color-rusty-orange) hover:text-(--color-shared-dark)"
                   >
                     View Calendar
                   </Button>
@@ -887,11 +887,11 @@ export default function EventsPage() {
                         <div key={i} className={`
                           text-xs p-xs rounded cursor-pointer transition-colors relative
                           ${date < 1 || date > 31 ? 'text-muted-foreground/50' : 'text-card-foreground hover:bg-accent'}
-                          ${hasEvent ? 'bg-[var(--color-rusty-orange)]/20 text-[var(--color-rusty-orange)] font-bold' : ''}
+                          ${hasEvent ? 'bg-(--color-rusty-orange)/20 text-(--color-rusty-orange) font-bold' : ''}
                         `}>
                           {date < 1 ? 30 + date : date > 31 ? date - 31 : date}
                           {eventCount > 1 && (
-                            <div className="absolute -top-1 -right-1 w-2 h-2 bg-[var(--color-rusty-orange)] rounded-full text-[8px] flex items-center justify-center text-[var(--color-crisp-off-white)]">
+                            <div className="absolute -top-1 -right-1 w-2 h-2 bg-(--color-rusty-orange) rounded-full text-[8px] flex items-center justify-center text-(--color-crisp-off-white)">
                               {eventCount}
                             </div>
                           )}
@@ -918,16 +918,16 @@ export default function EventsPage() {
                 {/* Event Stats */}
                 <div className="space-y-base text-center">
                   <div>
-                    <div className="font-rajdhani text-3xl font-bold text-[var(--color-rusty-orange)]">132+</div>
+                    <div className="font-rajdhani text-3xl font-bold text-(--color-rusty-orange)">132+</div>
                     <div className="text-xs text-muted-foreground">Events This Month</div>
                   </div>
                   <div className="grid grid-cols-2 gap-base text-center">
                     <div>
-                      <div className="font-rajdhani text-lg font-bold text-[var(--color-rusty-orange)]">45+</div>
+                      <div className="font-rajdhani text-lg font-bold text-(--color-rusty-orange)">45+</div>
                       <div className="text-xs text-muted-foreground">Venues</div>
                     </div>
                     <div>
-                      <div className="font-rajdhani text-lg font-bold text-[var(--color-sagebrush-green)]">6</div>
+                      <div className="font-rajdhani text-lg font-bold text-(--color-sagebrush-green)">6</div>
                       <div className="text-xs text-muted-foreground">Categories</div>
                     </div>
                   </div>

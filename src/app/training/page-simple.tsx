@@ -82,13 +82,13 @@ export default function TrainingPage() {
       />
 
       {/* Popular Courses */}
-      <section className="py-[var(--space-2xl)] bg-gradient-hero-warm">
-        <div className="max-w-site mx-auto px-[var(--space-md)]">
-          <div className="text-center mb-[var(--space-xl)]">
-            <p className="text-sm font-rajdhani font-semibold text-rusty-orange mb-[var(--space-xs)] tracking-wide uppercase">
+      <section className="py-(--space-2xl) bg-gradient-hero-warm">
+        <div className="max-w-site mx-auto px-(--space-md)">
+          <div className="text-center mb-(--space-xl)">
+            <p className="text-sm font-rajdhani font-semibold text-rusty-orange mb-(--space-xs) tracking-wide uppercase">
               Popular Courses
             </p>
-            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
+            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-dark-chocolate mb-(--space-base)">
               Featured Training Programs
             </h2>
             <p className="text-lg text-warning-amber font-noto-sans max-w-3xl mx-auto">
@@ -100,9 +100,9 @@ export default function TrainingPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-lg">
               {trainingPrograms.map((program) => (
                 <Card key={program.id} className="group hover:shadow-elevated transition-all duration-200 overflow-hidden">
-                  <div className="p-md space-y-[var(--space-base)]">
+                  <div className="p-md space-y-(--space-base)">
                     <div>
-                      <h3 className="text-xl font-rajdhani font-bold text-primary group-hover:text-accent transition-colors duration-200 mb-[var(--space-xs)]">
+                      <h3 className="text-xl font-rajdhani font-bold text-primary group-hover:text-accent transition-colors duration-200 mb-(--space-xs)">
                         {program.title}
                       </h3>
                       <p className="text-sm text-muted-foreground font-noto-sans">
@@ -114,7 +114,7 @@ export default function TrainingPage() {
                       {program.description}
                     </p>
 
-                    <div className="flex gap-[var(--space-xs)] pt-[var(--space-xs)]">
+                    <div className="flex gap-(--space-xs) pt-(--space-xs)">
                       <Button 
                         size="sm" 
                         className="flex-1"

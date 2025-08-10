@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 
 const megaHeroVariants = cva(
-  "relative w-full flex items-center justify-center overflow-hidden py-[var(--space-3xl)]",
+  "relative w-full flex items-center justify-center overflow-hidden py-(--space-3xl)",
   {
     variants: {
       height: {
@@ -17,14 +17,14 @@ const megaHeroVariants = cva(
         full: "min-h-screen"
       },
       backgroundPreset: {
-        home: "bg-gradient-to-br from-[var(--color-rusty-orange)] to-[color-mix(in_srgb,var(--color-rusty-orange)_80%,var(--color-ember-glow))]",
-        events: "bg-gradient-to-br from-[var(--color-slate-blue)] to-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)]",
-        directory: "bg-gradient-to-br from-[var(--color-sagebrush-green)] to-[color-mix(in_srgb,var(--color-sagebrush-green)_80%,var(--color-sandy-ochre))]",
-        guides: "bg-gradient-to-br from-[var(--color-info-river)] to-[color-mix(in_srgb,var(--color-info-river)_80%,var(--color-warning-clay))]",
-        map: "bg-gradient-to-br from-[var(--color-sandy-ochre)] to-[color-mix(in_srgb,var(--color-sandy-ochre)_80%,var(--color-sagebrush-green))]",
-        marketplace: "bg-gradient-to-br from-[var(--color-warning-clay)] to-[color-mix(in_srgb,var(--color-warning-clay)_80%,var(--color-sagebrush-green))]",
-        community: "bg-gradient-to-br from-[var(--color-ember-glow)] to-[color-mix(in_srgb,var(--color-ember-glow)_80%,var(--color-rusty-orange))]",
-        gunclub: "bg-gradient-to-br from-[var(--color-light-peachy)] via-[var(--color-crisp-off-white)] to-[var(--color-light-peachy)]"
+        home: "bg-gradient-to-br from-(--color-rusty-orange) to-[color-mix(in_srgb,var(--color-rusty-orange)_80%,var(--color-ember-glow))]",
+        events: "bg-gradient-to-br from-(--color-slate-blue) to-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)]",
+        directory: "bg-gradient-to-br from-(--color-sagebrush-green) to-[color-mix(in_srgb,var(--color-sagebrush-green)_80%,var(--color-sandy-ochre))]",
+        guides: "bg-gradient-to-br from-(--color-info-river) to-[color-mix(in_srgb,var(--color-info-river)_80%,var(--color-warning-clay))]",
+        map: "bg-gradient-to-br from-(--color-sandy-ochre) to-[color-mix(in_srgb,var(--color-sandy-ochre)_80%,var(--color-sagebrush-green))]",
+        marketplace: "bg-gradient-to-br from-(--color-warning-clay) to-[color-mix(in_srgb,var(--color-warning-clay)_80%,var(--color-sagebrush-green))]",
+        community: "bg-gradient-to-br from-(--color-ember-glow) to-[color-mix(in_srgb,var(--color-ember-glow)_80%,var(--color-rusty-orange))]",
+        gunclub: "bg-gradient-to-br from-(--color-light-peachy) via-(--color-crisp-off-white) to-(--color-light-peachy)"
       }
     },
     defaultVariants: {
@@ -75,16 +75,16 @@ export function MegaHero({
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-mesh-warm opacity-30" />
       
-      <div className="relative z-10 w-full max-w-site mx-auto px-[--space-md] py-[var(--space-2xl)]">
+      <div className="relative z-10 w-full max-w-site mx-auto px-(--space-md) py-(--space-2xl)">
         <div className={cn(
-          "space-y-[var(--space-lg)]",
+          "space-y-(--space-lg)",
           centerContent && "text-center"
         )}>
           
           {/* Icon */}
           {icon && (
             <div className={cn(
-              "text-[var(--color-crisp-off-white)]",
+              "text-(--color-crisp-off-white)",
               centerContent ? "flex justify-center" : "flex"
             )}>
               {icon}
@@ -92,19 +92,19 @@ export function MegaHero({
           )}
 
           {/* Main content */}
-          <div className="space-y-[var(--space-md)]">
+          <div className="space-y-(--space-md)">
             {subtitle && (
-              <p className="text-body-sm uppercase tracking-wider font-medium text-[var(--color-crisp-off-white)]">
+              <p className="text-body-sm uppercase tracking-wider font-medium text-(--color-crisp-off-white)">
                 {subtitle}
               </p>
             )}
             
-            <h1 className="text-heading-xl md:text-display-sm lg:text-6xl font-rajdhani font-bold text-[var(--color-crisp-off-white)] tracking-tight leading-tight">
+            <h1 className="text-heading-xl md:text-display-sm lg:text-6xl font-rajdhani font-bold text-(--color-crisp-off-white) tracking-tight leading-tight">
               {title}
             </h1>
             
             {description && (
-              <p className="text-body-lg md:text-heading-sm text-[var(--color-crisp-off-white)]/90 font-noto-sans leading-relaxed max-w-3xl mx-auto">
+              <p className="text-body-lg md:text-heading-sm text-(--color-crisp-off-white)/90 font-noto-sans leading-relaxed max-w-3xl mx-auto">
                 {description}
               </p>
             )}
@@ -113,13 +113,13 @@ export function MegaHero({
           {/* Badges */}
           {badges && badges.length > 0 && (
             <div className={cn(
-              "flex gap-[--space-base] flex-wrap",
+              "flex gap-(--space-base) flex-wrap",
               centerContent ? "justify-center" : "justify-start"
             )}>
               {badges.map((badge, index) => (
                 <div
                   key={index}
-                  className="px-[--space-base] py-[--space-xs] bg-(var(--color-crisp-off-white))/20 backdrop-blur-sm border border-(var(--color-crisp-off-white))/30 rounded-(--radius-base) text-body-sm font-medium text-[var(--color-crisp-off-white)] shadow-(--shadow-xs)"
+                  className="px-(--space-base) py-(--space-xs) bg-(var(--color-crisp-off-white))/20 backdrop-blur-sm border border-(var(--color-crisp-off-white))/30 rounded-(--radius-base) text-body-sm font-medium text-(--color-crisp-off-white) shadow-(--shadow-xs)"
                 >
                   {badge}
                 </div>
@@ -130,7 +130,7 @@ export function MegaHero({
           {/* CTAs */}
           {(primaryCTA || secondaryCTA) && (
             <div className={cn(
-              "flex gap-[--space-base] flex-wrap",
+              "flex gap-(--space-base) flex-wrap",
               centerContent ? "justify-center" : "justify-start"
             )}>
               {primaryCTA && (

@@ -271,7 +271,7 @@ function ChartLegendContent({
     <div
       className={cn(
         "flex items-center justify-center gap-base",
-        verticalAlign === "top" ? "pb-[var(--space-sm)]" : "pt-[var(--space-sm)]",
+        verticalAlign === "top" ? "pb-(--space-sm)" : "pt-(--space-sm)",
         className
       )}
     >

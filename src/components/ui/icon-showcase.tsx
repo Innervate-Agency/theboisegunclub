@@ -62,9 +62,9 @@ interface IconShowcaseItemProps extends VariantProps<typeof iconShowcaseVariants
 function IconShowcaseItem({ icon: Icon, name, category, variant, size, className }: IconShowcaseItemProps) {
   return (
     <div className={cn(iconShowcaseVariants({ variant, size }), className)}>
-      <div className="text-center space-y-[var(--space-xs)]">
+      <div className="text-center space-y-(--space-xs)">
         <Icon className="mx-auto icon-lg text-dark-chocolate" />
-        <div className="space-y-[var(--space-micro)]">
+        <div className="space-y-(--space-micro)">
           <div className="text-caption font-rajdhani font-semibold text-dark-chocolate">{name}</div>
           <div className="text-caption text-warning-amber">{category}</div>
         </div>
@@ -135,13 +135,13 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
   ]
 
   return (
-    <div className={cn("w-full py-[var(--space-xl)]", className)} {...props}>
+    <div className={cn("w-full py-(--space-xl)", className)} {...props}>
       <div className="max-w-site mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
-          <div className="text-center mb-[var(--space-xl)]">
+          <div className="text-center mb-(--space-xl)">
             {title && (
-              <h2 className="text-heading-lg md:text-heading-xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-sm)]">
+              <h2 className="text-heading-lg md:text-heading-xl font-rajdhani font-bold text-dark-chocolate mb-(--space-sm)">
                 {title}
               </h2>
             )}
@@ -156,8 +156,8 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
         {/* Icon Categories */}
         <div className="space-y-xl">
           {iconCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="space-y-[var(--space-md)]">
-              <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate border-b border-border pb-[var(--space-xs)]">
+            <div key={categoryIndex} className="space-y-(--space-md)">
+              <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate border-b border-border pb-(--space-xs)">
                 {category.name}
               </h3>
               
@@ -177,14 +177,14 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
         </div>
 
         {/* Usage Examples */}
-        <div className="mt-[var(--space-2xl)] p-lg bg-gradient-card-warm rounded-card border border-sandy-ochre/20">
-          <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate mb-[var(--space-md)]">
+        <div className="mt-(--space-2xl) p-lg bg-gradient-card-warm rounded-card border border-sandy-ochre/20">
+          <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate mb-(--space-md)">
             Design System Integration Examples
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
             {/* Primary Usage */}
-            <div className="space-y-[var(--space-sm)]">
+            <div className="space-y-(--space-sm)">
               <h4 className="font-rajdhani font-semibold text-dark-chocolate">Primary Actions</h4>
               <div className="flex items-center gap-sm p-sm bg-card rounded border">
                 <Target className="icon-lg icon-primary" />
@@ -193,7 +193,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
             </div>
 
             {/* Secondary Usage */}
-            <div className="space-y-[var(--space-sm)]">
+            <div className="space-y-(--space-sm)">
               <h4 className="font-rajdhani font-semibold text-dark-chocolate">Secondary Actions</h4>
               <div className="flex items-center gap-sm p-sm bg-card rounded border">
                 <Users className="icon-lg icon-secondary" />
@@ -202,7 +202,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
             </div>
 
             {/* Accent Usage */}
-            <div className="space-y-[var(--space-sm)]">
+            <div className="space-y-(--space-sm)">
               <h4 className="font-rajdhani font-semibold text-dark-chocolate">Accent Elements</h4>
               <div className="flex items-center gap-sm p-sm bg-card rounded border">
                 <Award className="icon-lg icon-accent" />

@@ -71,22 +71,22 @@ const AlternatingFeatureSpotlight = ({
   } as React.CSSProperties;
 
   return (
-    <div className="container mx-auto px-[--space-md] py-[--space-2xl]">
-      <div className="grid items-center gap-[--space-xl] md:grid-cols-2 md:gap-[--space-3xl]">
+    <div className="container mx-auto px-(--space-md) py-(--space-2xl)">
+      <div className="grid items-center gap-(--space-xl) md:grid-cols-2 md:gap-(--space-3xl)">
         {/* Text Content Column */}
-        <div className={cn('space-y-[--space-lg]', reverse && 'md:order-last')}>
+        <div className={cn('space-y-(--space-lg)', reverse && 'md:order-last')}>
           <div style={accentStyle} className="border-l-2 pl-(--space-md)">
             {React.cloneElement(icon, {
-              className: 'h-8 w-8 text-sandy-ochre mb-[--space-base]',
+              className: 'h-8 w-8 text-sandy-ochre mb-(--space-base)',
             })}
             <h3 className="font-rajdhani text-3xl font-bold text-foreground md:text-4xl">
               {title}
             </h3>
-            <p className="mt-[--space-md] text-body-lg text-muted-foreground max-w-lg">
+            <p className="mt-(--space-md) text-body-lg text-muted-foreground max-w-lg">
               {description}
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[--space-md] pt-[--space-md] pl-(--space-md)">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-(--space-md) pt-(--space-md) pl-(--space-md)">
             {features.map((feature, index) => (
               <div key={index} className="flex items-start gap-(--space-sm)">
                 {React.cloneElement(feature.icon, {

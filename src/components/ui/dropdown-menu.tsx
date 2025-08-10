@@ -74,7 +74,7 @@ function DropdownMenuItem({
       data-inset={inset}
       data-variant={variant}
       className={cn(
-        "focus:bg-accent focus:text-accent-foreground hover:bg-accent hover:text-accent-foreground data-[variant=destructive]:text-safety-red data-[variant=destructive]:focus:bg-safety-red/10 data-[variant=destructive]:focus:text-safety-red [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-xs rounded-button px-xs py-xs text-body-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-[var(--space-lg)] [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 transition-colors duration-150",
+        "focus:bg-accent focus:text-accent-foreground hover:bg-accent hover:text-accent-foreground data-[variant=destructive]:text-safety-red data-[variant=destructive]:focus:bg-safety-red/10 data-[variant=destructive]:focus:text-safety-red [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-xs rounded-button px-xs py-xs text-body-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-(--space-lg) [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 transition-colors duration-150",
         className
       )}
       {...props}
@@ -92,7 +92,7 @@ function DropdownMenuCheckboxItem({
     <DropdownMenuPrimitive.CheckboxItem
       data-slot="dropdown-menu-checkbox-item"
       className={cn(
-        "focus:bg-accent focus:text-accent-foreground relative flex cursor-default items-center gap-xs rounded-button py-xs pr-[var(--space-xs)] pl-[var(--space-lg)] text-body-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "focus:bg-accent focus:text-accent-foreground relative flex cursor-default items-center gap-xs rounded-button py-xs pr-(--space-xs) pl-(--space-lg) text-body-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       checked={checked}
@@ -128,7 +128,7 @@ function DropdownMenuRadioItem({
     <DropdownMenuPrimitive.RadioItem
       data-slot="dropdown-menu-radio-item"
       className={cn(
-        "focus:bg-accent focus:text-accent-foreground relative flex cursor-default items-center gap-xs rounded-button py-xs pr-[var(--space-xs)] pl-[var(--space-lg)] text-body-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "focus:bg-accent focus:text-accent-foreground relative flex cursor-default items-center gap-xs rounded-button py-xs pr-(--space-xs) pl-(--space-lg) text-body-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}
@@ -155,7 +155,7 @@ function DropdownMenuLabel({
       data-slot="dropdown-menu-label"
       data-inset={inset}
       className={cn(
-        "px-xs py-sm text-body-sm font-medium data-[inset]:pl-[var(--space-lg)]",
+        "px-xs py-sm text-body-sm font-medium data-[inset]:pl-(--space-lg)",
         className
       )}
       {...props}
@@ -211,7 +211,7 @@ function DropdownMenuSubTrigger({
       data-slot="dropdown-menu-sub-trigger"
       data-inset={inset}
       className={cn(
-        "focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground flex cursor-default items-center rounded-button px-xs py-xs text-body-sm outline-hidden select-none data-[inset]:pl-[var(--space-lg)]",
+        "focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground flex cursor-default items-center rounded-button px-xs py-xs text-body-sm outline-hidden select-none data-[inset]:pl-(--space-lg)",
         className
       )}
       {...props}

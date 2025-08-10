@@ -1,9 +1,9 @@
 export function HeroSection() {
   return (
-    <section className="relative py-[var(--space-4xl)] bg-range-white overflow-hidden">
+    <section className="relative py-(--space-4xl) bg-range-white overflow-hidden">
       <div className="absolute inset-0 bg-gradient-hero-warm opacity-80" />
       
-      <div className="container mx-auto px-[var(--space-sm)] text-center relative z-10">
+      <div className="container mx-auto px-(--space-sm) text-center relative z-10">
         {/* Coming Soon banner */}
         <div className="inline-block bg-sandy-ochre text-dark-chocolate px-md py-xs rounded-full font-noto-sans text-body-sm font-semibold mb-2xl shadow-sm">
           Coming Soon

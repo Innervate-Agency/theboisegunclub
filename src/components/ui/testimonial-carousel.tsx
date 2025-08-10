@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react'
 
 const testimonialCarouselVariants = cva(
-  "w-full py-[var(--space-2xl)]",
+  "w-full py-(--space-2xl)",
   {
     variants: {
       variant: {
@@ -91,9 +91,9 @@ export function TestimonialCarousel({
       <div className="max-w-site mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
-          <div className="text-center mb-[var(--space-xl)]">
+          <div className="text-center mb-(--space-xl)">
             {subtitle && (
-              <p className="text-body-sm font-rajdhani font-semibold text-rusty-orange mb-[var(--space-xs)] tracking-wide uppercase">
+              <p className="text-body-sm font-rajdhani font-semibold text-rusty-orange mb-(--space-xs) tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
@@ -117,7 +117,7 @@ export function TestimonialCarousel({
             
             {/* Rating */}
             {currentTestimonial.rating && (
-              <div className="flex items-center gap-xs mb-[var(--space-md)] justify-center">
+              <div className="flex items-center gap-xs mb-(--space-md) justify-center">
                 {Array.from({ length: 5 }, (_, i) => (
                   <Star
                     key={i}
@@ -133,7 +133,7 @@ export function TestimonialCarousel({
             )}
             
             {/* Content */}
-            <blockquote className="text-center mb-[var(--space-lg)]">
+            <blockquote className="text-center mb-(--space-lg)">
               <p className="text-responsive-lg md:text-responsive-xl text-foreground font-noto-sans leading-relaxed italic">
                 "{currentTestimonial.content}"
               </p>
@@ -190,7 +190,7 @@ export function TestimonialCarousel({
         
         {/* Dots Indicator */}
         {testimonials.length > 1 && (
-          <div className="flex items-center justify-center gap-xs mt-[var(--space-lg)]">
+          <div className="flex items-center justify-center gap-xs mt-(--space-lg)">
             {testimonials.map((_, index) => (
               <button
                 key={index}

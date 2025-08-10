@@ -12,7 +12,7 @@ import { Avatar, AvatarImage, AvatarFallback } from './avatar';
 // TBGC Business-Specific VendorCard - Strategic Restraint Implementation
 const vendorCardVariants = cva(
   // BASE: Clean professional foundation for all tiers
-  "relative overflow-hidden transition-all duration-300 bg-card text-card-foreground rounded-[var(--radius-lg)] group",
+  "relative overflow-hidden transition-all duration-300 bg-card text-card-foreground rounded-(--radius-lg) group",
   {
     variants: {
       tier: {
@@ -30,7 +30,7 @@ const vendorCardVariants = cva(
       },
       size: {
         sm: "p-base",           // 16px - compact cards
-        md: "p-[var(--card-padding)]",         // 24px - standard Stripe card padding
+        md: "p-(--card-padding)",         // 24px - standard Stripe card padding
         lg: "p-lg"              // 32px - spacious cards
       }
     },
@@ -101,10 +101,10 @@ export function VendorCard({
       {...props}
     >
       {/* Header with business info */}
-      <div className="mb-[var(--space-md)]">
-        <div className="flex items-center gap-sm mb-[var(--space-xs)]">
+      <div className="mb-(--space-md)">
+        <div className="flex items-center gap-sm mb-(--space-xs)">
           {/* Business logo/image */}
-          <Avatar className="h-[var(--icon-3xl)] w-[var(--icon-3xl)] rounded-[var(--radius-lg)] flex-shrink-0">
+          <Avatar className="h-(--icon-3xl) w-(--icon-3xl) rounded-(--radius-lg) flex-shrink-0">
             {imageUrl && !imgError ? (
               <AvatarImage
                 src={imageUrl}
@@ -113,12 +113,12 @@ export function VendorCard({
                 onError={() => setImgError(true)}
               />
             ) : null}
-            <AvatarFallback className="rounded-[var(--radius-lg)] bg-muted font-rajdhani font-bold text-heading-sm text-muted-foreground">
+            <AvatarFallback className="rounded-(--radius-lg) bg-muted font-rajdhani font-bold text-heading-sm text-muted-foreground">
               {businessName.charAt(0).toUpperCase()}
             </AvatarFallback>
           </Avatar>
           
-          <div className="space-y-[var(--space-micro)] flex-1">
+          <div className="space-y-(--space-micro) flex-1">
             <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground leading-tight transition-colors duration-200 group-hover:text-rusty-orange">
               {businessName}
             </h3>
@@ -134,7 +134,7 @@ export function VendorCard({
                 variant={tier === 'gold' ? 'elite' : 'default'}
                 size="sm"
               >
-                <Shield className="w-icon-xs h-icon-xs mr-[var(--space-xs)]" />
+                <Shield className="w-icon-xs h-icon-xs mr-(--space-xs)" />
                 Verified
               </Badge>
             )}
@@ -149,13 +149,13 @@ export function VendorCard({
 
       {/* Description */}
       {description && (
-        <p className="text-body-sm text-muted-foreground mb-[var(--space-md)] line-clamp-2">
+        <p className="text-body-sm text-muted-foreground mb-(--space-md) line-clamp-2">
           {description}
         </p>
       )}
 
       {/* Contact Information */}
-      <div className="space-y-[var(--space-xs)] mb-[var(--space-md)]">
+      <div className="space-y-(--space-xs) mb-(--space-md)">
         {address && (
           <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
             <MapPin className="w-icon-sm h-icon-sm flex-shrink-0" />
@@ -178,7 +178,7 @@ export function VendorCard({
 
       {/* Rating */}
       {rating && reviewCount && (
-        <div className="flex items-center gap-xs mb-[var(--space-md)]">
+        <div className="flex items-center gap-xs mb-(--space-md)">
           <div className="flex items-center">
             {[1, 2, 3, 4, 5].map((star) => (
               <Star
@@ -200,7 +200,7 @@ export function VendorCard({
 
       {/* Specialties */}
       {specialties.length > 0 && (
-        <div className="flex flex-wrap gap-[var(--space-tiny)] mb-[var(--space-md)]">
+        <div className="flex flex-wrap gap-(--space-tiny) mb-(--space-md)">
           {specialties.slice(0, 3).map((specialty, index) => (
             <Badge 
               key={index} 
@@ -223,7 +223,7 @@ export function VendorCard({
 
       {/* Enhanced features for Silver/Gold tiers */}
       {showLeads && (
-        <div className="flex items-center gap-xs mb-[var(--space-md)] p-xs bg-rifling-green/10 rounded-[var(--radius-md)]">
+        <div className="flex items-center gap-xs mb-(--space-md) p-xs bg-rifling-green/10 rounded-(--radius-md)">
           <TrendingUp className="w-icon-sm h-icon-sm text-rifling-green" />
           <span className="text-body-sm text-rifling-green font-medium">
             {monthlyLeads} leads this month
@@ -232,7 +232,7 @@ export function VendorCard({
       )}
 
       {/* Action buttons - flat inside card container */}
-      <div className="flex gap-xs pt-[var(--space-sm)]">
+      <div className="flex gap-xs pt-(--space-sm)">
         <Button 
           size="sm" 
           variant="solid-accent"

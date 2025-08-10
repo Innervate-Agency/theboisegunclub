@@ -159,7 +159,7 @@ export const InputGroups: Story = {
       >
         <div className="relative">
           <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
-          <Input className="pl-[var(--space-xl)]" placeholder="your@email.com" type="email" />
+          <Input className="pl-(--space-xl)" placeholder="your@email.com" type="email" />
         </div>
       </InputGroup>
 
@@ -170,7 +170,7 @@ export const InputGroups: Story = {
         <div className="relative">
           <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
                       <Input 
-            className="pl-[var(--space-xl)]" 
+            className="pl-(--space-xl)" 
             placeholder="(555) 123-4567" 
             type="tel"
             status="error"

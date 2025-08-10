@@ -86,7 +86,7 @@ export type EnhancedCardHeaderProps = React.HTMLAttributes<HTMLDivElement>
 export function EnhancedCardHeader({ className, children, ...props }: EnhancedCardHeaderProps) {
   return (
     <div 
-      className={cn("space-y-[var(--space-xs)] mb-[var(--space-md)]", className)} // Using spacing system
+      className={cn("space-y-(--space-xs) mb-(--space-md)", className)} // Using spacing system
       {...props}
     >
       {children}
@@ -139,7 +139,7 @@ export type EnhancedCardFooterProps = React.HTMLAttributes<HTMLDivElement>
 export function EnhancedCardFooter({ className, children, ...props }: EnhancedCardFooterProps) {
   return (
     <div 
-      className={cn("mt-[var(--space-md)] pt-[var(--space-base)]", className)} // Strategic restraint: removed border divider
+      className={cn("mt-(--space-md) pt-(--space-base)", className)} // Strategic restraint: removed border divider
       {...props}
     >
       {children}

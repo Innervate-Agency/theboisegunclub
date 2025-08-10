@@ -118,13 +118,13 @@ export default function FacilityCard({
       {isVerified && (
         <div className="absolute top-4 left-4 z-10">
           <Badge variant="success">
-            <Shield className="h-3 w-3 mr-[var(--space-xs)]" />
+            <Shield className="h-3 w-3 mr-(--space-xs)" />
             Verified
           </Badge>
         </div>
       )}
 
-      <CardHeader className="space-y-[var(--space-base)]">
+      <CardHeader className="space-y-(--space-base)">
         <div className="flex items-start gap-base">
           {/* Business Icon/Image */}
           <div className="flex-shrink-0">
@@ -152,14 +152,14 @@ export default function FacilityCard({
             </div>
             
             {businessType && (
-              <p className="text-body-sm text-warning-amber font-medium mt-[var(--space-xs)]">
+              <p className="text-body-sm text-warning-amber font-medium mt-(--space-xs)">
                 {businessType}
               </p>
             )}
 
             {/* Rating */}
             {rating && (
-              <div className="flex items-center gap-xs mt-[var(--space-xs)]">
+              <div className="flex items-center gap-xs mt-(--space-xs)">
                 <div className="flex items-center">
                   {[...Array(5)].map((_, i) => (
                     <Star
@@ -180,7 +180,7 @@ export default function FacilityCard({
         </div>
       </CardHeader>
 
-      <CardContent className="space-y-[var(--space-base)]">
+      <CardContent className="space-y-(--space-base)">
         {/* Description */}
         <CardDescription className="text-warning-amber leading-relaxed">
           {description}
@@ -188,7 +188,7 @@ export default function FacilityCard({
 
         {/* Contact Info */}
         {(location || hours || phone) && (
-          <div className="space-y-[var(--space-xs)] text-body-sm">
+          <div className="space-y-(--space-xs) text-body-sm">
             {location && (
               <div className="flex items-center gap-xs text-warning-amber">
                 <MapPin className="h-4 w-4 text-sandy-ochre" />
@@ -226,7 +226,7 @@ export default function FacilityCard({
         )}
 
         {/* Action Button */}
-        <div className="pt-[var(--space-xs)]">
+        <div className="pt-(--space-xs)">
           <Button
             variant="secondary"
             size="sm"
@@ -234,7 +234,7 @@ export default function FacilityCard({
             onClick={handleClick}
           >
             {linkText}
-            <ExternalLink className="h-4 w-4 ml-[var(--space-xs)]" />
+            <ExternalLink className="h-4 w-4 ml-(--space-xs)" />
           </Button>
         </div>
       </CardContent>

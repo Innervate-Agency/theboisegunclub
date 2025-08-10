@@ -17,8 +17,8 @@ const contactFormVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-card border border-border rounded-[--radius-base]",
-        glass: "mica-card border-border/20 rounded-[--radius-base]",
+        default: "bg-card border border-border rounded-(--radius-base)",
+        glass: "mica-card border-border/20 rounded-(--radius-base)",
         minimal: "bg-transparent border-0"
       }
     },
@@ -73,8 +73,8 @@ export function ContactForm({
   const getFormFields = () => {
     const baseFields = (
       <>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[--space-base]">
-          <div className="space-y-[var(--space-xs)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-(--space-base)">
+          <div className="space-y-(--space-xs)">
             <Label htmlFor="firstName">First Name *</Label>
             <Input
               id="firstName"
@@ -83,7 +83,7 @@ export function ContactForm({
               required
             />
           </div>
-          <div className="space-y-[var(--space-xs)]">
+          <div className="space-y-(--space-xs)">
             <Label htmlFor="lastName">Last Name *</Label>
             <Input
               id="lastName"
@@ -94,7 +94,7 @@ export function ContactForm({
           </div>
         </div>
 
-        <div className="space-y-[var(--space-xs)]">
+        <div className="space-y-(--space-xs)">
           <Label htmlFor="email">Email Address *</Label>
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
@@ -103,13 +103,13 @@ export function ContactForm({
               name="email"
               type="email"
               placeholder="john@example.com"
-              className="pl-[--space-xl]"
+              className="pl-(--space-xl)"
               required
             />
           </div>
         </div>
 
-        <div className="space-y-[var(--space-xs)]">
+        <div className="space-y-(--space-xs)">
           <Label htmlFor="phone">Phone Number</Label>
           <div className="relative">
             <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
@@ -130,7 +130,7 @@ export function ContactForm({
         return (
           <>
             {baseFields}
-            <div className="space-y-[var(--space-xs)]">
+            <div className="space-y-(--space-xs)">
               <Label htmlFor="businessName">Business Name *</Label>
               <Input
                 id="businessName"
@@ -139,7 +139,7 @@ export function ContactForm({
                 required
               />
             </div>
-            <div className="space-y-[var(--space-xs)]">
+            <div className="space-y-(--space-xs)">
               <Label htmlFor="businessType">Business Type *</Label>
               <Select name="businessType" required>
                 <SelectTrigger>
@@ -155,7 +155,7 @@ export function ContactForm({
                 </SelectContent>
               </Select>
             </div>
-            <div className="space-y-[var(--space-xs)]">
+            <div className="space-y-(--space-xs)">
               <Label htmlFor="message">Tell us about your business *</Label>
               <Textarea
                 id="message"
@@ -172,7 +172,7 @@ export function ContactForm({
         return (
           <>
             {baseFields}
-            <div className="space-y-[var(--space-xs)]">
+            <div className="space-y-(--space-xs)">
               <Label htmlFor="eventName">Event Name *</Label>
               <Input
                 id="eventName"
@@ -181,8 +181,8 @@ export function ContactForm({
                 required
               />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-[--space-base]">
-              <div className="space-y-[var(--space-xs)]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--space-base)">
+              <div className="space-y-(--space-xs)">
                 <Label htmlFor="eventDate">Event Date *</Label>
                 <Input
                   id="eventDate"
@@ -191,7 +191,7 @@ export function ContactForm({
                   required
                 />
               </div>
-              <div className="space-y-[var(--space-xs)]">
+              <div className="space-y-(--space-xs)">
                 <Label htmlFor="eventTime">Event Time</Label>
                 <Input
                   id="eventTime"
@@ -200,7 +200,7 @@ export function ContactForm({
                 />
               </div>
             </div>
-            <div className="space-y-[var(--space-xs)]">
+            <div className="space-y-(--space-xs)">
               <Label htmlFor="eventLocation">Location *</Label>
               <Input
                 id="eventLocation"
@@ -209,7 +209,7 @@ export function ContactForm({
                 required
               />
             </div>
-            <div className="space-y-[var(--space-xs)]">
+            <div className="space-y-(--space-xs)">
               <Label htmlFor="message">Event Description *</Label>
               <Textarea
                 id="message"
@@ -227,7 +227,7 @@ export function ContactForm({
         return (
           <>
             {baseFields}
-            <div className="space-y-[var(--space-xs)]">
+            <div className="space-y-(--space-xs)">
               <Label htmlFor="experience">Experience Level</Label>
               <Select name="experience">
                 <SelectTrigger>
@@ -241,7 +241,7 @@ export function ContactForm({
                 </SelectContent>
               </Select>
             </div>
-            <div className="space-y-[var(--space-xs)]">
+            <div className="space-y-(--space-xs)">
               <Label htmlFor="interests">Areas of Interest</Label>
               <Textarea
                 id="interests"
@@ -250,7 +250,7 @@ export function ContactForm({
                 rows={3}
               />
             </div>
-            <div className="space-y-[var(--space-xs)]">
+            <div className="space-y-(--space-xs)">
               <Label htmlFor="message">Additional Information</Label>
               <Textarea
                 id="message"
@@ -266,7 +266,7 @@ export function ContactForm({
         return (
           <>
             {baseFields}
-            <div className="space-y-[var(--space-xs)]">
+            <div className="space-y-(--space-xs)">
               <Label htmlFor="subject">Subject</Label>
               <Input
                 id="subject"
@@ -274,7 +274,7 @@ export function ContactForm({
                 placeholder="What's this regarding?"
               />
             </div>
-            <div className="space-y-[var(--space-xs)]">
+            <div className="space-y-(--space-xs)">
               <Label htmlFor="message">Message *</Label>
               <Textarea
                 id="message"
@@ -319,14 +319,14 @@ export function ContactForm({
             </CardDescription>
           )}
           {description && (
-            <p className="text-body-sm text-warning-amber leading-relaxed mt-[var(--space-xs)]">
+            <p className="text-body-sm text-warning-amber leading-relaxed mt-(--space-xs)">
               {description}
             </p>
           )}
         </CardHeader>
 
-        <CardContent className="space-y-[var(--space-md)]">
-          <form onSubmit={handleSubmit} className="space-y-[var(--space-md)]">
+        <CardContent className="space-y-(--space-md)">
+          <form onSubmit={handleSubmit} className="space-y-(--space-md)">
             {getFormFields()}
 
             <Button
@@ -338,12 +338,12 @@ export function ContactForm({
             >
               {isSubmitting ? (
                 <>
-                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-card mr-[var(--space-xs)]" />
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-card mr-(--space-xs)" />
                   Sending...
                 </>
               ) : (
                 <>
-                  <Send className="h-4 w-4 mr-[var(--space-xs)]" />
+                  <Send className="h-4 w-4 mr-(--space-xs)" />
                   {getSubmitButtonText()}
                 </>
               )}
@@ -351,13 +351,13 @@ export function ContactForm({
           </form>
 
           {showContactInfo && (
-            <div className="border-t border-border pt-[var(--space-md)]">
-              <h3 className="font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
+            <div className="border-t border-border pt-(--space-md)">
+              <h3 className="font-rajdhani font-bold text-dark-chocolate mb-(--space-base)">
                 Contact Information
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-[--space-base] text-body-sm">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-(--space-base) text-body-sm">
                 <div className="flex items-center gap-(--space-sm)">
-                  <div className="p-(--space-xs) bg-sandy-ochre/10 rounded-[--radius-base]">
+                  <div className="p-(--space-xs) bg-sandy-ochre/10 rounded-(--radius-base)">
                     <Phone className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>
@@ -367,7 +367,7 @@ export function ContactForm({
                 </div>
                 
                 <div className="flex items-center gap-(--space-sm)">
-                  <div className="p-(--space-xs) bg-sandy-ochre/10 rounded-[--radius-base]">
+                  <div className="p-(--space-xs) bg-sandy-ochre/10 rounded-(--radius-base)">
                     <Mail className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>
@@ -377,7 +377,7 @@ export function ContactForm({
                 </div>
                 
                 <div className="flex items-center gap-(--space-sm)">
-                  <div className="p-(--space-xs) bg-sandy-ochre/10 rounded-[--radius-base]">
+                  <div className="p-(--space-xs) bg-sandy-ochre/10 rounded-(--radius-base)">
                     <MapPin className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>
@@ -387,7 +387,7 @@ export function ContactForm({
                 </div>
                 
                 <div className="flex items-center gap-(--space-sm)">
-                  <div className="p-(--space-xs) bg-sandy-ochre/10 rounded-[--radius-base]">
+                  <div className="p-(--space-xs) bg-sandy-ochre/10 rounded-(--radius-base)">
                     <Clock className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>

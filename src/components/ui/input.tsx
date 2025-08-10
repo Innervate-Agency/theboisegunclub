@@ -14,9 +14,9 @@ const inputVariants = cva(
         glass: "bg-card/20 backdrop-blur-sm border-border/30 text-card-foreground hover:border-border/50 hover:bg-card/30 focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20 mica-glass"
       },
       size: {
-        sm: "h-[var(--input-height-sm)] px-sm py-xs text-body-sm",
-        default: "h-[var(--input-height-base)] px-sm py-xs text-body-sm md:text-body",
-        lg: "h-[var(--input-height-lg)] px-base py-sm text-body"
+        sm: "h-(--input-height-sm) px-sm py-xs text-body-sm",
+        default: "h-(--input-height-base) px-sm py-xs text-body-sm md:text-body",
+        lg: "h-(--input-height-lg) px-base py-sm text-body"
       },
       status: {
         default: "",
@@ -70,13 +70,13 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
     return (
       <div
         ref={ref}
-        className={cn("space-y-[var(--space-xs)]", className)}
+        className={cn("space-y-(--space-xs)", className)}
         {...props}
       >
         {label && (
           <label className="text-body-sm font-medium text-foreground font-noto-sans">
             {label}
-            {required && <span className="text-safety-red ml-[var(--space-xs)]">*</span>}
+            {required && <span className="text-safety-red ml-(--space-xs)">*</span>}
           </label>
         )}
         {children}

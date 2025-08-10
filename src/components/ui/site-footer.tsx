@@ -15,8 +15,8 @@ const siteFooterVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-[var(--color-dark-chocolate)] text-[var(--color-crisp-off-white)]",
-        glass: "bg-[var(--color-dark-chocolate)]/90 backdrop-blur-sm text-[var(--color-crisp-off-white)]",
+        default: "bg-(--color-dark-chocolate) text-(--color-crisp-off-white)",
+        glass: "bg-(--color-dark-chocolate)/90 backdrop-blur-sm text-(--color-crisp-off-white)",
         minimal: "bg-card text-card-foreground"
       }
     },
@@ -55,38 +55,38 @@ export function SiteFooter({
   }
   
   const isMinimal = variant === "minimal"
-  const textColor = isMinimal ? "text-[var(--color-shared-dark)]" : "text-[var(--color-crisp-off-white)]"
-  const mutedColor = isMinimal ? "text-[var(--color-sandy-ochre)]" : "text-[var(--color-warm-stone)]"
+  const textColor = isMinimal ? "text-(--color-shared-dark)" : "text-(--color-crisp-off-white)"
+  const mutedColor = isMinimal ? "text-(--color-sandy-ochre)" : "text-(--color-warm-stone)"
   
   return (
     <footer className={cn(siteFooterVariants({ variant }), className)} {...props}>
-      <div className="max-w-site mx-auto px-[--space-md]">
+      <div className="max-w-site mx-auto px-(--space-md)">
         {/* Main Footer Content */}
-        <div className="py-[var(--space-3xl)]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-2xl)]">
+        <div className="py-(--space-3xl)">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-(--space-2xl)">
             {/* Brand & Description */}
             <div className="lg:col-span-1">
-              <div className="flex items-center gap-[--space-xs] mb-[var(--space-sm)]">
-                <Target className={cn("h-[--icon-lg] w-[--icon-lg]", isMinimal ? "icon-primary" : "text-[var(--color-sandy-ochre)]")} />
+              <div className="flex items-center gap-(--space-xs) mb-(--space-sm)">
+                <Target className={cn("h-(--icon-lg) w-(--icon-lg)", isMinimal ? "icon-primary" : "text-(--color-sandy-ochre)")} />
                 <h3 className={cn("text-heading-sm font-rajdhani font-bold", textColor)}>
                   Boise Gun Club
                 </h3>
               </div>
-              <p className={cn("text-body-sm leading-relaxed mb-[var(--space-base)]", mutedColor)}>
+              <p className={cn("text-body-sm leading-relaxed mb-(--space-base)", mutedColor)}>
                 Treasure Valley's premier firearms community hub. Connecting enthusiasts, 
                 businesses, and ranges across the region since 2017.
               </p>
-              <div className="space-y-[var(--space-xs)]">
-                <div className={cn("flex items-center gap-[--space-xs] text-body-sm", mutedColor)}>
-                  <MapPin className="h-[--icon-sm] w-[--icon-sm]" />
+              <div className="space-y-(--space-xs)">
+                <div className={cn("flex items-center gap-(--space-xs) text-body-sm", mutedColor)}>
+                  <MapPin className="h-(--icon-sm) w-(--icon-sm)" />
                   <span>Boise, Idaho</span>
                 </div>
-                <div className={cn("flex items-center gap-[--space-xs] text-body-sm", mutedColor)}>
-                  <Phone className="h-[--icon-sm] w-[--icon-sm]" />
+                <div className={cn("flex items-center gap-(--space-xs) text-body-sm", mutedColor)}>
+                  <Phone className="h-(--icon-sm) w-(--icon-sm)" />
                   <span>(208) 555-GUNS</span>
                 </div>
-                <div className={cn("flex items-center gap-[--space-xs] text-body-sm", mutedColor)}>
-                  <Mail className="h-[--icon-sm] w-[--icon-sm]" />
+                <div className={cn("flex items-center gap-(--space-xs) text-body-sm", mutedColor)}>
+                  <Mail className="h-(--icon-sm) w-(--icon-sm)" />
                   <span>info@boisegunclub.com</span>
                 </div>
               </div>
@@ -94,10 +94,10 @@ export function SiteFooter({
             
             {/* Quick Links */}
             <div>
-              <h4 className={cn("text-body-lg font-rajdhani font-bold mb-[var(--space-base)]", textColor)}>
+              <h4 className={cn("text-body-lg font-rajdhani font-bold mb-(--space-base)", textColor)}>
                 Quick Links
               </h4>
-              <ul className="space-y-[var(--space-xs)]">
+              <ul className="space-y-(--space-xs)">
                 {[
                   { name: "Business Directory", href: "/directory" },
                   { name: "Events Calendar", href: "/events" },
@@ -110,7 +110,7 @@ export function SiteFooter({
                     <a 
                       href={link.href}
                       className={cn(
-                        "text-body-sm hover:text-[var(--color-sandy-ochre)] transition-colors duration-200", 
+                        "text-body-sm hover:text-(--color-sandy-ochre) transition-colors duration-200", 
                         mutedColor
                       )}
                     >
@@ -123,10 +123,10 @@ export function SiteFooter({
             
             {/* Services */}
             <div>
-              <h4 className={cn("text-body-lg font-rajdhani font-bold mb-[var(--space-base)]", textColor)}>
+              <h4 className={cn("text-body-lg font-rajdhani font-bold mb-(--space-base)", textColor)}>
                 Services
               </h4>
-              <ul className="space-y-[var(--space-xs)]">
+              <ul className="space-y-(--space-xs)">
                 {[
                   { name: "Firearms Training", icon: Shield },
                   { name: "Safety Courses", icon: Target },
@@ -135,8 +135,8 @@ export function SiteFooter({
                 ].map((service) => {
                   const Icon = service.icon
                   return (
-                    <li key={service.name} className={cn("flex items-center gap-[--space-xs] text-body-sm", mutedColor)}>
-                      <Icon className="h-[--icon-xs] w-[--icon-xs]" />
+                    <li key={service.name} className={cn("flex items-center gap-(--space-xs) text-body-sm", mutedColor)}>
+                      <Icon className="h-(--icon-xs) w-(--icon-xs)" />
                       <span>{service.name}</span>
                     </li>
                   )
@@ -147,14 +147,14 @@ export function SiteFooter({
             {/* Newsletter Signup */}
             {showNewsletter && (
               <div>
-                <h4 className={cn("text-body-lg font-rajdhani font-bold mb-[var(--space-base)]", textColor)}>
+                <h4 className={cn("text-body-lg font-rajdhani font-bold mb-(--space-base)", textColor)}>
                   Stay Connected
                 </h4>
-                <p className={cn("text-body-sm mb-[var(--space-base)]", mutedColor)}>
+                <p className={cn("text-body-sm mb-(--space-base)", mutedColor)}>
                   Get the latest news, events, and exclusive member benefits.
                 </p>
-                <form onSubmit={handleNewsletterSubmit} className="space-y-[var(--space-sm)]">
-                  <div className="flex gap-[--space-xs]">
+                <form onSubmit={handleNewsletterSubmit} className="space-y-(--space-sm)">
+                  <div className="flex gap-(--space-xs)">
                     <Input
                       type="email"
                       placeholder="Enter your email"
@@ -165,13 +165,13 @@ export function SiteFooter({
                         "flex-1 text-body-sm",
                         isMinimal 
                           ? "bg-card border-border" 
-                          : "bg-[var(--color-rich-loam)] border-[var(--color-warm-stone)] text-[var(--color-crisp-off-white)]"
+                          : "bg-(--color-rich-loam) border-(--color-warm-stone) text-(--color-crisp-off-white)"
                       )}
                     />
                     <Button 
                       type="submit" 
                       disabled={isSubscribing}
-                      className="bg-[var(--color-sandy-ochre)] text-[var(--color-shared-dark)] hover:bg-[var(--color-rusty-orange)] font-rajdhani font-semibold"
+                      className="bg-(--color-sandy-ochre) text-(--color-shared-dark) hover:bg-(--color-rusty-orange) font-rajdhani font-semibold"
                     >
                       {isSubscribing ? "..." : "Join"}
                     </Button>
@@ -184,10 +184,10 @@ export function SiteFooter({
         
         {/* Bottom Bar */}
         <div className={cn(
-          "border-t py-[--space-md]", 
-          isMinimal ? "border-border" : "border-[var(--color-warm-stone)]"
+          "border-t py-(--space-md)", 
+          isMinimal ? "border-border" : "border-(--color-warm-stone)"
         )}>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-[--space-base]">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-(--space-base)">
             {/* Copyright */}
             <div className={cn("text-body-sm", mutedColor)}>
               © {new Date().getFullYear()} Boise Gun Club. All rights reserved.
@@ -195,7 +195,7 @@ export function SiteFooter({
             
             {/* Social Links */}
             {showSocial && (
-              <div className="flex items-center gap-[--space-base]">
+              <div className="flex items-center gap-(--space-base)">
                 {[
                   { icon: Facebook, label: "Facebook" },
                   { icon: Instagram, label: "Instagram" },
@@ -209,14 +209,14 @@ export function SiteFooter({
                       key={social.label}
                       href="#"
                       className={cn(
-                        "p-[--space-xs] rounded-(--radius-base) transition-all duration-200 hover:scale-110",
+                        "p-(--space-xs) rounded-(--radius-base) transition-all duration-200 hover:scale-110",
                         isMinimal 
-                          ? "text-[var(--color-sandy-ochre)] hover:text-[var(--color-rusty-orange)] hover:bg-(--color-sandy-ochre)/10" 
-                          : "text-[var(--color-warm-stone)] hover:text-[var(--color-sandy-ochre)] hover:bg-(--color-sandy-ochre)/10"
+                          ? "text-(--color-sandy-ochre) hover:text-(--color-rusty-orange) hover:bg-(--color-sandy-ochre)/10" 
+                          : "text-(--color-warm-stone) hover:text-(--color-sandy-ochre) hover:bg-(--color-sandy-ochre)/10"
                       )}
                       title={social.label}
                     >
-                      <Icon className="h-[--icon-sm] w-[--icon-sm]" />
+                      <Icon className="h-(--icon-sm) w-(--icon-sm)" />
                     </a>
                   )
                 })}
@@ -224,7 +224,7 @@ export function SiteFooter({
             )}
             
             {/* Legal Links */}
-            <div className="flex items-center gap-[--space-base]">
+            <div className="flex items-center gap-(--space-base)">
               {[
                 { name: "Privacy Policy", href: "/privacy" },
                 { name: "Terms of Service", href: "/terms" },
@@ -234,7 +234,7 @@ export function SiteFooter({
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "text-caption hover:text-[var(--color-sandy-ochre)] transition-colors duration-200", 
+                    "text-caption hover:text-(--color-sandy-ochre) transition-colors duration-200", 
                     mutedColor
                   )}
                 >

@@ -145,12 +145,12 @@ export default function StatCard({
     <Card className={cn(statCardVariants({ variant, size }), className)} {...props}>
       <CardContent className="p-0">
         {icon && (
-          <div className={cn("mb-[var(--space-sm)]", textColors.icon)}>
+          <div className={cn("mb-(--space-sm)", textColors.icon)}>
             {icon}
           </div>
         )}
         
-        <div className="space-y-[var(--space-micro)]">
+        <div className="space-y-(--space-micro)">
           <div className="flex items-center justify-between">
             <h3 className={cn("text-heading-lg font-rajdhani font-bold", textColors.title)}>
               {formatValue(value)}
@@ -168,7 +168,7 @@ export default function StatCard({
           </p>
           
           {description && (
-            <p className={cn("text-caption mt-[var(--space-xs)]", textColors.description)}>
+            <p className={cn("text-caption mt-(--space-xs)", textColors.description)}>
               {description}
             </p>
           )}

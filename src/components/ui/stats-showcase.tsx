@@ -15,8 +15,8 @@ const statsShowcaseVariants = cva(
         glass: "mica-card"
       },
       spacing: {
-        comfortable: "py-[var(--space-2xl)]",
-        compact: "py-[var(--space-xl)]",
+        comfortable: "py-(--space-2xl)",
+        compact: "py-(--space-xl)",
         minimal: "py-lg"
       }
     },
@@ -63,9 +63,9 @@ export function StatsShowcase({
       <div className="w-full max-w-site mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
-          <div className="text-center mb-[var(--space-xl)]">
+          <div className="text-center mb-(--space-xl)">
             {title && (
-              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-foreground mb-[var(--space-sm)]">
+              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-foreground mb-(--space-sm)">
                 {title}
               </h2>
             )}
@@ -87,7 +87,7 @@ export function StatsShowcase({
                 key={index}
                 className="group relative bg-card border-border rounded-card p-md shadow-flat hover:shadow-md transition-all duration-200 ease-out"
               >
-                <div className="space-y-[var(--space-base)]">
+                <div className="space-y-(--space-base)">
                   {/* Icon and Value */}
                   <div className="flex items-center justify-between">
                     {Icon && (
@@ -117,7 +117,7 @@ export function StatsShowcase({
                   </div>
 
                   {/* Main Stat */}
-                  <div className="space-y-[var(--space-micro)]">
+                  <div className="space-y-(--space-micro)">
                     <div className="text-heading-lg font-rajdhani font-bold text-card-foreground group-hover:text-rusty-orange transition-colors duration-200">
                       {typeof stat.value === 'number' ? stat.value.toLocaleString() : stat.value}
                     </div>

@@ -13,8 +13,8 @@ const breadcrumbHeroVariants = cva(
     variants: {
       size: {
         sm: "py-lg",
-        md: "py-[var(--space-xl)]", 
-        lg: "py-[var(--space-2xl)]"
+        md: "py-(--space-xl)", 
+        lg: "py-(--space-2xl)"
       },
       backgroundPreset: {
         warm: "bg-gradient-to-br from-range-white via-rusty-orange/15 to-card-surface",
@@ -74,7 +74,7 @@ export function BreadcrumbHero({
       <div className="absolute inset-0 bg-gradient-mesh-warm opacity-20" />
       
       <div className="relative z-10 w-full max-w-site mx-auto px-md">
-        <div className="space-y-[var(--space-md)]">
+        <div className="space-y-(--space-md)">
           
           {/* Back Link */}
           {backLink && (
@@ -82,17 +82,17 @@ export function BreadcrumbHero({
               <Button
                 variant="ghost"
                 size="sm"
-                className="shadow-flat -ml-[var(--space-xs)] text-warning-amber hover:text-dark-chocolate"
+                className="shadow-flat -ml-(--space-xs) text-warning-amber hover:text-dark-chocolate"
                 onClick={() => window.location.href = backLink.href}
               >
-                <ArrowLeft className="h-4 w-4 mr-[var(--space-xs)]" />
+                <ArrowLeft className="h-4 w-4 mr-(--space-xs)" />
                 {backLink.label}
               </Button>
             </div>
           )}
 
           {/* Breadcrumb Navigation */}
-          <nav aria-label="Breadcrumb" className="flex items-center space-x-[var(--space-xs)] text-body-sm">
+          <nav aria-label="Breadcrumb" className="flex items-center space-x-(--space-xs) text-body-sm">
             {breadcrumbs.map((item, index) => (
               <React.Fragment key={item.href}>
                 {index === 0 ? (
@@ -100,7 +100,7 @@ export function BreadcrumbHero({
                     href={item.href}
                     className="flex items-center text-warning-amber hover:text-dark-chocolate transition-colors duration-150"
                   >
-                    <Home className="h-4 w-4 mr-[var(--space-xs)]" />
+                    <Home className="h-4 w-4 mr-(--space-xs)" />
                     {item.label}
                   </a>
                 ) : (
@@ -125,7 +125,7 @@ export function BreadcrumbHero({
           </nav>
 
           {/* Hero Content */}
-          <div className="space-y-[var(--space-base)]">
+          <div className="space-y-(--space-base)">
             <div className="flex items-start gap-base">
               {/* Icon */}
               {Icon && (
@@ -143,7 +143,7 @@ export function BreadcrumbHero({
                 </h1>
                 
                 {description && (
-                  <p className="text-body md:text-body-lg text-warning-amber font-noto-sans leading-relaxed mt-[var(--space-xs)] max-w-3xl">
+                  <p className="text-body md:text-body-lg text-warning-amber font-noto-sans leading-relaxed mt-(--space-xs) max-w-3xl">
                     {description}
                   </p>
                 )}

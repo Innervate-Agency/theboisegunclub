@@ -23,8 +23,8 @@ const selectTriggerVariants = cva(
         filled: "bg-muted border-transparent hover:bg-muted/80",
       },
       size: {
-        sm: "h-[var(--input-height-sm)] px-xs py-xs text-body-sm",
-        default: "h-[var(--input-height-base)] px-sm py-xs text-body-sm", 
+        sm: "h-(--input-height-sm) px-xs py-xs text-body-sm",
+        default: "h-(--input-height-base) px-sm py-xs text-body-sm", 
         lg: "h-12 px-md py-sm text-body-base",
       },
     },
@@ -58,9 +58,9 @@ const selectItemVariants = cva(
   {
     variants: {
       size: {
-        sm: "py-xs pr-[var(--space-md)] pl-[var(--space-xs)] text-body-sm min-h-[28px]",
-        default: "py-xs pr-[var(--space-lg)] pl-[var(--space-xs)] text-body-sm min-h-[32px]",
-        lg: "py-sm pr-[var(--space-lg)] pl-[var(--space-sm)] text-body-base min-h-[40px]",
+        sm: "py-xs pr-(--space-md) pl-(--space-xs) text-body-sm min-h-[28px]",
+        default: "py-xs pr-(--space-lg) pl-(--space-xs) text-body-sm min-h-[32px]",
+        lg: "py-sm pr-(--space-lg) pl-(--space-sm) text-body-base min-h-[40px]",
       },
     },
     defaultVariants: {
@@ -159,7 +159,7 @@ const SelectContent = React.forwardRef<
         <SelectScrollUpButton />
         <SelectPrimitive.Viewport
           className={cn(
-            "p-[var(--space-micro)]",
+            "p-(--space-micro)",
             position === "popper" &&
               "h-radix-select-trigger-height w-full min-w-radix-select-trigger-width scroll-my-1"
           )}
@@ -216,7 +216,7 @@ const SelectItem = React.forwardRef<
         </span>
       )}
       <SelectPrimitive.ItemText className="flex-1">{children}</SelectPrimitive.ItemText>
-      <span className="absolute right-[var(--space-xs)] flex h-icon-sm w-icon-sm items-center justify-center">
+      <span className="absolute right-(--space-xs) flex h-icon-sm w-icon-sm items-center justify-center">
         <SelectPrimitive.ItemIndicator>
           <CheckIcon className="h-icon-sm w-icon-sm" />
         </SelectPrimitive.ItemIndicator>
@@ -234,7 +234,7 @@ function SelectSeparator({
   return (
     <SelectPrimitive.Separator
       data-slot="select-separator"
-      className={cn("bg-border pointer-events-none -mx-[var(--space-micro)] my-[var(--space-micro)] h-px", className)}
+      className={cn("bg-border pointer-events-none -mx-(--space-micro) my-(--space-micro) h-px", className)}
       {...props}
     />
   )
@@ -248,7 +248,7 @@ function SelectScrollUpButton({
     <SelectPrimitive.ScrollUpButton
       data-slot="select-scroll-up-button"
       className={cn(
-        "flex cursor-default items-center justify-center py-[var(--space-micro)]",
+        "flex cursor-default items-center justify-center py-(--space-micro)",
         className
       )}
       {...props}
@@ -266,7 +266,7 @@ function SelectScrollDownButton({
     <SelectPrimitive.ScrollDownButton
       data-slot="select-scroll-down-button"
       className={cn(
-        "flex cursor-default items-center justify-center py-[var(--space-micro)]",
+        "flex cursor-default items-center justify-center py-(--space-micro)",
         className
       )}
       {...props}

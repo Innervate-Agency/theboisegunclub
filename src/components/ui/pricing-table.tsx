@@ -10,7 +10,7 @@ import { Check, X, Minus, Star, Target } from 'lucide-react'
 
 const pricingCardVariants = cva(
   // BASE: Clean professional foundation for all tiers - LITERAL COPY from VendorCard
-  "relative overflow-hidden transition-all duration-300 bg-card text-card-foreground rounded-[var(--radius-lg)] group",
+  "relative overflow-hidden transition-all duration-300 bg-card text-card-foreground rounded-(--radius-lg) group",
   {
     variants: {
       tier: {

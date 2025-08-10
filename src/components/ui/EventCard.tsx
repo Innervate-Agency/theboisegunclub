@@ -62,51 +62,51 @@ export function EventCard({
       case 'Competition': return { 
         bg: 'bg-[color-mix(in_srgb,var(--color-slate-blue)_10%,transparent)]', 
         border: 'border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]', 
-        text: 'text-[var(--color-slate-blue)]', 
-        accent: 'bg-[var(--color-slate-blue)]',
-        iconColor: 'text-[var(--color-slate-blue)]'
+        text: 'text-(--color-slate-blue)', 
+        accent: 'bg-(--color-slate-blue)',
+        iconColor: 'text-(--color-slate-blue)'
       }
       case 'Training': return { 
         bg: 'bg-[color-mix(in_srgb,var(--color-sandy-ochre)_10%,transparent)]', 
         border: 'border-[color-mix(in_srgb,var(--color-sandy-ochre)_30%,transparent)]', 
-        text: 'text-[var(--color-sandy-ochre)]', 
-        accent: 'bg-[var(--color-sandy-ochre)]',
-        iconColor: 'text-[var(--color-sandy-ochre)]'
+        text: 'text-(--color-sandy-ochre)', 
+        accent: 'bg-(--color-sandy-ochre)',
+        iconColor: 'text-(--color-sandy-ochre)'
       }
       case 'Expo': return { 
         bg: 'bg-[color-mix(in_srgb,var(--color-info-river)_10%,transparent)]', 
         border: 'border-[color-mix(in_srgb,var(--color-info-river)_30%,transparent)]', 
-        text: 'text-[var(--color-info-river)]', 
-        accent: 'bg-[var(--color-info-river)]',
-        iconColor: 'text-[var(--color-info-river)]'
+        text: 'text-(--color-info-river)', 
+        accent: 'bg-(--color-info-river)',
+        iconColor: 'text-(--color-info-river)'
       }
       case 'Charity': return { 
         bg: 'bg-[color-mix(in_srgb,var(--color-sagebrush-green)_10%,transparent)]', 
         border: 'border-[color-mix(in_srgb,var(--color-sagebrush-green)_30%,transparent)]', 
-        text: 'text-[var(--color-sagebrush-green)]', 
-        accent: 'bg-[var(--color-sagebrush-green)]',
-        iconColor: 'text-[var(--color-sagebrush-green)]'
+        text: 'text-(--color-sagebrush-green)', 
+        accent: 'bg-(--color-sagebrush-green)',
+        iconColor: 'text-(--color-sagebrush-green)'
       }
       case 'Social': return { 
         bg: 'bg-[color-mix(in_srgb,var(--color-rusty-orange)_10%,transparent)]', 
         border: 'border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)]', 
-        text: 'text-[var(--color-rusty-orange)]', 
-        accent: 'bg-[var(--color-rusty-orange)]',
-        iconColor: 'text-[var(--color-rusty-orange)]'
+        text: 'text-(--color-rusty-orange)', 
+        accent: 'bg-(--color-rusty-orange)',
+        iconColor: 'text-(--color-rusty-orange)'
       }
       case 'Demo': return { 
         bg: 'bg-[color-mix(in_srgb,var(--color-warning-clay)_10%,transparent)]', 
         border: 'border-[color-mix(in_srgb,var(--color-warning-clay)_30%,transparent)]', 
-        text: 'text-[var(--color-warning-clay)]', 
-        accent: 'bg-[var(--color-warning-clay)]',
-        iconColor: 'text-[var(--color-warning-clay)]'
+        text: 'text-(--color-warning-clay)', 
+        accent: 'bg-(--color-warning-clay)',
+        iconColor: 'text-(--color-warning-clay)'
       }
       default: return { 
         bg: 'bg-[color-mix(in_srgb,var(--color-slate-blue)_10%,transparent)]', 
         border: 'border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]', 
-        text: 'text-[var(--color-slate-blue)]', 
-        accent: 'bg-[var(--color-slate-blue)]',
-        iconColor: 'text-[var(--color-slate-blue)]'
+        text: 'text-(--color-slate-blue)', 
+        accent: 'bg-(--color-slate-blue)',
+        iconColor: 'text-(--color-slate-blue)'
       }
     }
   }

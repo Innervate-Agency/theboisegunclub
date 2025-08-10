@@ -99,11 +99,11 @@ export function BrandCarousel({
     <div className={cn(brandShowcaseVariants({ variant }), className)} {...props}>
       {/* Main layout container */}
       <div className="relative max-w-site mx-auto">
-        <div className="grid lg:grid-cols-4 gap-[--space-2xl] items-center">
+        <div className="grid lg:grid-cols-4 gap-(--space-2xl) items-center">
           
           {/* Left stats panel - OUTSIDE the card, changes with carousel */}
-          <div className="lg:col-span-1 space-y-[--space-lg]">
-            <div className="space-y-[--space-sm]">
+          <div className="lg:col-span-1 space-y-(--space-lg)">
+            <div className="space-y-(--space-sm)">
               {currentShowcase.stats.map((stat, index) => (
                 <div key={index} className={cn(
                   "border-l-2 pl-4 transition-colors duration-500",
@@ -120,13 +120,13 @@ export function BrandCarousel({
             </div>
             
             {currentShowcase.productsUsed && (
-              <div className="pt-[--space-sm]">
-                <div className="text-body-sm font-medium text-muted-foreground mb-[--space-xs]">
+              <div className="pt-(--space-sm)">
+                <div className="text-body-sm font-medium text-muted-foreground mb-(--space-xs)">
                   Products used
                 </div>
-                <div className="space-y-[--space-xs]">
+                <div className="space-y-(--space-xs)">
                   {currentShowcase.productsUsed.map((product, index) => (
-                    <div key={index} className="flex items-center gap-[--space-xs]">
+                    <div key={index} className="flex items-center gap-(--space-xs)">
                       <div className={cn("p-1 rounded", product.color)}>
                         {product.icon}
                       </div>
@@ -140,7 +140,7 @@ export function BrandCarousel({
           
           {/* Main showcase card - takes up 3/4 of the width */}
           <div className="lg:col-span-3 relative">
-            <div className="relative rounded-[--radius-xl] overflow-hidden shadow-elevated h-96">
+            <div className="relative rounded-(--radius-xl) overflow-hidden shadow-elevated h-96">
               {/* Background image - like Stripe */}
               <div className="absolute inset-0">
                 <img 
@@ -196,7 +196,7 @@ export function BrandCarousel({
       </div>
       
       {/* Partner logos strip - clickable with large icons */}
-      <div className="mt-[--space-4xl] text-center">
+      <div className="mt-(--space-4xl) text-center">
         <p className="text-body-sm text-muted-foreground mb-(--space-2xl)">
           Trusted by industry leaders
         </p>

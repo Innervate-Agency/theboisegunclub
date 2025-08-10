@@ -45,8 +45,8 @@ const services = [
 
 export function ServiceGrid() {
   return (
-    <section className="py-[var(--space-2xl)] bg-range-white">
-      <div className="container mx-auto px-[var(--space-base)]">
+    <section className="py-(--space-2xl) bg-range-white">
+      <div className="container mx-auto px-(--space-base)">
         {/* Service cards in 3x2 grid exactly matching screenshot layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-md max-w-site mx-auto">
           {services.map((service, index) => (
@@ -67,17 +67,17 @@ export function ServiceGrid() {
             >
               <div className="flex flex-col items-start text-left h-full">
                 {/* Icon with subtle background and proper spacing */}
-                <div className="mb-[var(--space-base)] p-[var(--space-sm)] rounded-card bg-range-white border border-warning-amber/10 transition-stripe-fast group-hover:bg-rusty-orange/5 group-hover:border-rusty-orange/20">
+                <div className="mb-(--space-base) p-(--space-sm) rounded-card bg-range-white border border-warning-amber/10 transition-stripe-fast group-hover:bg-rusty-orange/5 group-hover:border-rusty-orange/20">
                   <service.icon className="h-6 w-6 text-foreground transition-stripe-fast group-hover:text-rusty-orange" />
                 </div>
                 
                 {/* Title with proper hierarchy and hover color */}
-                <h3 className="font-noto-sans text-body-lg font-semibold text-foreground mb-[var(--space-sm)] leading-tight transition-stripe-fast group-hover:text-rusty-orange">
+                <h3 className="font-noto-sans text-body-lg font-semibold text-foreground mb-(--space-sm) leading-tight transition-stripe-fast group-hover:text-rusty-orange">
                   {service.title}
                 </h3>
                 
                 {/* Description with proper text treatment */}
-                <p className="font-noto-sans text-body-sm text-muted-foreground leading-relaxed mb-[var(--space-md)] flex-1">
+                <p className="font-noto-sans text-body-sm text-muted-foreground leading-relaxed mb-(--space-md) flex-1">
                   {service.description}
                 </p>
                 

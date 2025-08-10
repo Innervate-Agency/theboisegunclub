@@ -140,13 +140,13 @@ export function SiteNavigation({
       className={cn(siteNavigationVariants({ variant, layout, sticky }), className)}
       {...props}
     >
-      <div className="w-full max-w-site mx-auto px-[--space-md]">
+      <div className="w-full max-w-site mx-auto px-(--space-md)">
         <div className="relative flex items-center justify-between h-16">
           
           {/* Logo */}
           {showLogo && (
             <div className="flex items-center">
-              <Link href="/" className="flex items-center gap-[--space-sm]">
+              <Link href="/" className="flex items-center gap-(--space-sm)">
                 <div className="w-10 h-10 bg-gradient-to-br from-rusty-orange to-rusty-orange rounded-lg flex flex-col items-center justify-center relative">
                   <div className="text-[10px] font-rajdhani font-black text-dark-chocolate tracking-tight leading-none">
                     TB
@@ -174,7 +174,7 @@ export function SiteNavigation({
               <React.Fragment key={item.href}>
                 {renderNavLink(
                   item,
-                  `group relative flex items-center gap-[--space-xs] px-[--space-base] py-[--space-xs] text-sm font-medium transition-all duration-200 hover:scale-105 hover:-translate-y-1 ${
+                  `group relative flex items-center gap-(--space-xs) px-(--space-base) py-(--space-xs) text-sm font-medium transition-all duration-200 hover:scale-105 hover:-translate-y-1 ${
                     pathname === item.href 
                       ? getActiveTextClass(item.color)
                       : `text-muted-foreground ${getHoverClasses(item.color)}`
@@ -194,7 +194,7 @@ export function SiteNavigation({
                 
                 {/* Separator lines between nav items */}
                 {index < navigationItems.slice(0, 7).length - 1 && (
-                  <div className="h-4 w-px mx-[--space-xs] relative">
+                  <div className="h-4 w-px mx-(--space-xs) relative">
                     <div className="absolute inset-0 w-px bg-muted-foreground/30" />
                     <div className="absolute inset-0 w-px bg-card/50 translate-x-px" />
                   </div>
@@ -204,7 +204,7 @@ export function SiteNavigation({
           </div>
 
           {/* Custom Content / Auth Buttons */}
-          <div className="hidden md:flex items-center gap-[--space-base]">
+          <div className="hidden md:flex items-center gap-(--space-base)">
             {customContent || (
               <>
                 <Button variant="ghost" size="sm" className="shadow-none">
@@ -226,9 +226,9 @@ export function SiteNavigation({
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className="h-[--icon-base] w-(--icon-base)" />
+                <X className="h-(--icon-base) w-(--icon-base)" />
               ) : (
-                <Menu className="h-[--icon-base] w-(--icon-base)" />
+                <Menu className="h-(--icon-base) w-(--icon-base)" />
               )}
             </Button>
           </div>
@@ -236,19 +236,19 @@ export function SiteNavigation({
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-[--space-base] relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
-            <div className="space-y-[--space-xs]">
+          <div className="md:hidden py-(--space-base) relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
+            <div className="space-y-(--space-xs)">
               {navigationItems.map((item) => (
                 <div key={item.href} onClick={() => setIsMobileMenuOpen(false)}>
                   {renderNavLink(
                     item,
-                    `flex items-center gap-[--space-sm] px-[--space-base] py-[--space-sm] text-body-sm font-medium transition-all duration-150 rounded-[--radius-base] ${
+                    `flex items-center gap-(--space-sm) px-(--space-base) py-(--space-sm) text-body-sm font-medium transition-all duration-150 rounded-(--radius-base) ${
                       pathname === item.href 
                         ? getActiveTextClass(item.color)
                         : `text-muted-foreground ${getHoverClasses(item.color)}`
                     }`,
                     <>
-                      <item.icon className="h-[--icon-sm] w-(--icon-sm)" />
+                      <item.icon className="h-(--icon-sm) w-(--icon-sm)" />
                       {item.label}
                     </>
                   )}
@@ -256,8 +256,8 @@ export function SiteNavigation({
               ))}
             </div>
             
-            <div className="pt-[--space-base] mt-(--space-base) relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
-              <div className="flex flex-col gap-[--space-xs]">
+            <div className="pt-(--space-base) mt-(--space-base) relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
+              <div className="flex flex-col gap-(--space-xs)">
                 <Button variant="ghost" size="sm" className="justify-start shadow-none">
                   Sign In
                 </Button>

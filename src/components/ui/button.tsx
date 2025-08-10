@@ -217,7 +217,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const renderMicroAnimation = () => {
       if (loading || !animationType || animationType === 'none') return null
       
-      const animationClassName = "ml-[var(--space-xs)]"
+      const animationClassName = "ml-(--space-xs)"
       
       switch (animationType) {
         case 'arrow':
