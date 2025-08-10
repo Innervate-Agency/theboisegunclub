@@ -19,14 +19,6 @@ import {
   Building2, Award, MessageSquare, CheckCircle, Shield,
   Crosshair, Flame, Bolt, Crown, Sparkles, Gem
 } from 'lucide-react'
-import { 
-  IconCalendarEvent, IconMapPin, IconTrophy, IconTarget,
-  IconBullseye, IconShield, IconStar, IconBolt, IconCrown,
-  IconDiamond, IconFlame, IconSparkles, IconShootingStar
-} from '@tabler/icons-react'
-import { FaAward, FaMedal, FaBullseye, FaCrosshairs, FaFire } from 'react-icons/fa'
-import { GiCrossedPistols, GiRifle, GiPistolGun, GiTarget, GiBullseye } from 'react-icons/gi'
-import { RiMedalFill, RiTrophyFill, RiStarFill, RiFireFill } from 'react-icons/ri'
 
 // Comprehensive events data for Treasure Valley firearms community
 const upcomingEvents = [
