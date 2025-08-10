@@ -699,7 +699,7 @@ export default function EventsPage() {
                       <div className="space-y-xs">
                         <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">USPSA Monthly Match</h3>
                         <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                          <IconMapPin className="h-3 w-3 text-rusty-orange" />
+                          <MapPin className="h-3 w-3 text-rusty-orange" />
                           <span>Nampa Rod & Gun Club</span>
                         </div>
                       </div>
@@ -722,7 +722,7 @@ export default function EventsPage() {
                         
                         <div className="text-right">
                           <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rusty-orange/30 to-rusty-orange/20 flex items-center justify-center mb-xs">
-                            <GiCrossedPistols className="h-5 w-5 text-rusty-orange" />
+                            <Users className="h-5 w-5 text-rusty-orange" />
                           </div>
                         </div>
                       </div>

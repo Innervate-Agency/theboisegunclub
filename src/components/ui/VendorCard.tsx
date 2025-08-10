@@ -47,25 +47,25 @@ export interface VendorCardProps
   // Business Information
   businessName: string;
   businessType: string;
-  description?: string;
-  imageUrl?: string;
+  description?: string | undefined;
+  imageUrl?: string | undefined;
   
   // Contact & Location  
-  address?: string;
-  phone?: string;
-  website?: string;
-  hours?: string;
+  address?: string | undefined;
+  phone?: string | undefined;
+  website?: string | undefined;
+  hours?: string | undefined;
   
   // Social Proof
-  rating?: number;
-  reviewCount?: number;
-  isVerified?: boolean;
+  rating?: number | undefined;
+  reviewCount?: number | undefined;
+  isVerified?: boolean | undefined;
   
   // Tier-Specific Features
   tier: 'free' | 'copper' | 'silver' | 'gold';
-  specialties?: string[];
-  isSponsored?: boolean;
-  monthlyLeads?: number;
+  specialties?: string[] | undefined;
+  isSponsored?: boolean | undefined;
+  monthlyLeads?: number | undefined;
 }
 
 export function VendorCard({

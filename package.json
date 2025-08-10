@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "dev:turbo": "next dev --turbo",
     "dev:swc": "next dev",
     "build": "next build",
@@ -19,7 +19,9 @@
     "health": "node scripts/health-check.js",
     "fix": "node scripts/quick-fix.js",
     "sync:docs": "node scripts/sync-design-docs.js",
-    "ammo-list": "node scripts/generate-ammo-list.js"
+    "ammo-list": "node scripts/generate-ammo-list.js",
+    "analyze": "ANALYZE=true npm run build",
+    "lighthouse": "npx lighthouse http://localhost:3000 --output html --output-path ./lighthouse-report.html"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
@@ -81,6 +83,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^4.1.0",
     "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "^15.4.6",
     "@storybook/addon-a11y": "^9.1.1",
     "@storybook/addon-docs": "^9.1.1",
     "@storybook/addon-onboarding": "^9.1.1",
