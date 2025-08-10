@@ -649,7 +649,7 @@ export default function EventsPage() {
               <div className="lg:col-span-2 h-full flex flex-col justify-between">
                 <div className="space-y-xs">
                   <Badge className="bg-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] text-(--color-slate-blue) border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)] w-fit">
-                    <IconCalendarEvent className="h-4 w-4 mr-xs" />
+                    <Calendar className="h-4 w-4 mr-xs" />
                     Events Hub
                   </Badge>
                   <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-(--color-crisp-off-white) leading-tight">
@@ -664,7 +664,7 @@ export default function EventsPage() {
                     size="lg" 
                     className="bg-gradient-to-r from-(--color-rusty-orange) to-(--color-rusty-orange) text-(--color-shared-dark) hover:from-(--color-rusty-orange) hover:to-(--color-rusty-orange) font-rajdhani font-bold"
                   >
-                    <RiFireFill className="h-4 w-4 mr-xs" />
+                    <ArrowRight className="h-4 w-4 mr-xs" />
                     Submit Event
                   </Button>
                   <Button 
@@ -687,7 +687,7 @@ export default function EventsPage() {
                     <CardHeader className="pb-xs relative z-10">
                       <div className="flex items-center justify-between mb-xs">
                         <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30 font-rajdhani font-bold text-[10px]">
-                          <IconBolt className="h-3 w-3 mr-xs" />
+                          <ChevronRight className="h-3 w-3 mr-xs" />
                           NEXT EVENT
                         </Badge>
                         <div className="flex items-center gap-xs text-xs text-muted-foreground">
@@ -709,7 +709,7 @@ export default function EventsPage() {
                       <div className="flex items-center justify-between">
                         <div className="space-y-xs">
                           <div className="flex items-center gap-xs text-xs text-card-foreground/80">
-                            <IconCalendarEvent className="h-3 w-3 text-rusty-orange" />
+                            <Calendar className="h-3 w-3 text-rusty-orange" />
                             <span className="font-medium">Sat, Aug 9 • 8:00 AM</span>
                           </div>
                           <div className="flex items-center gap-xs text-xs text-muted-foreground">
