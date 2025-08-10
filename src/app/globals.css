@@ -250,6 +250,14 @@
   --gradient-fire: linear-gradient(to right, var(--color-rusty-orange), var(--color-sandy-ochre));
   --gradient-nature: linear-gradient(to right, var(--color-slate-blue), var(--color-lodgepole-green));
   --gradient-success: linear-gradient(to right, var(--color-lodgepole-green), var(--color-sagebrush-green));
+  
+  /* Strategic Color Flow Gradients - Each page flows toward next page's energy */
+  --gradient-home-hero: linear-gradient(to bottom right, var(--nav-home), var(--color-rusty-orange));
+  --gradient-events-hero: linear-gradient(to bottom right, var(--nav-events), var(--color-canyon-clay));
+  --gradient-directory-hero: linear-gradient(to bottom right, var(--nav-directory), var(--color-info-river));
+  --gradient-armory-hero: linear-gradient(to bottom right, var(--nav-armory), var(--color-slate-blue));
+  --gradient-intel-hero: linear-gradient(to bottom right, var(--nav-intel), var(--color-sunrise-amber));
+  --gradient-marketplace-hero: linear-gradient(to bottom right, var(--nav-marketplace), var(--color-sagebrush-green));
 
   /* Subtle Background Gradients (5-8% opacity) */
   --gradient-brand-warm: linear-gradient(135deg, rgba(217, 134, 59, 0.06) 0%, rgba(217, 159, 93, 0.04) 100%);
@@ -534,6 +542,14 @@
   .bg-gradient-card-cool { background: var(--gradient-card-cool); }
   .bg-gradient-glass { background: var(--gradient-glass); }
   .bg-gradient-glass-dark { background: var(--gradient-glass-dark); }
+  
+  /* Strategic Color Flow Hero Gradients */
+  .bg-gradient-home-hero { background: var(--gradient-home-hero); }
+  .bg-gradient-events-hero { background: var(--gradient-events-hero); }
+  .bg-gradient-directory-hero { background: var(--gradient-directory-hero); }
+  .bg-gradient-armory-hero { background: var(--gradient-armory-hero); }
+  .bg-gradient-intel-hero { background: var(--gradient-intel-hero); }
+  .bg-gradient-marketplace-hero { background: var(--gradient-marketplace-hero); }
 
   /* ================== SITE LAYOUT UTILITIES ================== */
   .max-w-site { max-width: 1440px; }

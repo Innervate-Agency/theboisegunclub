@@ -20,8 +20,19 @@
     "fix": "node scripts/quick-fix.js",
     "sync:docs": "node scripts/sync-design-docs.js",
     "ammo-list": "node scripts/generate-ammo-list.js",
-    "analyze": "ANALYZE=true npm run build",
-    "lighthouse": "npx lighthouse http://localhost:3000 --output html --output-path ./lighthouse-report.html"
+    "analyze": "node scripts/analyze-build.js",
+    "lighthouse": "npx lighthouse http://localhost:3000 --output html --output-path ./lighthouse-report.html",
+    "docs:generate": "node scripts/generate-docs.js",
+    "perf": "node scripts/performance-monitor.js",
+    "reports": "ls -la _reports/",
+    "clean:reports": "rm -rf _reports/*",
+    "clean:docs": "rm -rf _documentation/*",
+    "config:optimize": "node scripts/optimize-configs.js",
+    "bundle:analyze": "du -sh .next storybook-static node_modules 2>/dev/null || echo \"Run npm run build first\"",
+    "security:audit": "node scripts/security-audit.js",
+    "quality:check": "node scripts/code-quality-check.js",
+    "project:cleanup": "node scripts/project-cleanup.js",
+    "optimize:all": "npm run config:optimize && npm run security:audit && npm run quality:check"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",

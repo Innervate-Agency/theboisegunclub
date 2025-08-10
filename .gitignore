@@ -51,3 +51,9 @@ _archive/
 
 # Ignore root documentation files that contain design token patterns
 *.md
+_backup/
+
+# Analysis and documentation directories
+_reports/
+_documentation/
+_backup/

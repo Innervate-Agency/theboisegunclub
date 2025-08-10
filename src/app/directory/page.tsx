@@ -216,67 +216,63 @@ export default function DirectoryPage() {
     <>
       <SiteNavigation variant="premium" sticky={true} />
       <div className="min-h-screen bg-background theme-directory">
-        {/* Directory Hero - Content Right, Card Left (Layout 2) */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-nav-directory via-nav-forums to-nav-home px-md py-6xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-gruvbox-bg-dark/20 via-transparent to-gruvbox-bg-dark/10 pointer-events-none"></div>
+        {/* Directory Hero - Content Left, Card Right (Layout 1) */}
+        <section className="relative overflow-hidden bg-gradient-directory-hero px-md py-lg">
           <div className="container mx-auto max-w-site relative z-10">
-            <div className="flex items-center gap-xs text-sm text-gruvbox-fg-cream/80 mb-sm">
-              <span>Home</span>
-              <ChevronRight className="h-4 w-4" />
-              <span className="text-nav-directory font-medium">Directory</span>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch">
-              {/* Featured Business Card - Left side */}
-              <div className="lg:col-span-1 lg:order-1">
-                <div className="relative h-full">
-                  <Card className="mica border-nav-directory/30 hover:shadow-elevated transition-all duration-300">
-                    <CardHeader className="pb-xs">
-                      <div className="flex items-center justify-between">
-                        <Badge className="bg-nav-directory/20 text-nav-directory border-nav-directory/30 font-rajdhani font-bold">
-                          <Award className="h-3 w-3 mr-xs" />
-                          GOLD PARTNER
-                        </Badge>
-                        <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                          <Star className="h-3 w-3 fill-nav-directory text-nav-directory" />
-                          <span>4.8</span>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="space-y-xs">
-                      <h3 className="font-rajdhani font-bold text-card-foreground text-lg">Boise Gun Club</h3>
-                      <p className="text-sm text-muted-foreground">Premier Shooting Range & Club</p>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                          <TrendingUp className="h-3 w-3 text-nav-directory" />
-                          <span>245 leads this month</span>
-                        </div>
-                        <Button variant="ghost" size="sm" className="text-nav-directory hover:text-nav-directory p-0">
-                          View Details <ArrowRight className="h-3 w-3 ml-xs" />
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
+              {/* Content - Left side */}
+              <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
+                {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
+                <div className="flex items-center gap-base">
+                  <div className="bg-white/10 p-base rounded-sm border border-white/20">
+                    <Building2 className="h-8 w-8 text-white" />
+                  </div>
+                  <div className="space-y-base">
+                    {/* Breadcrumbs */}
+                    <div className="flex items-center gap-xs text-sm text-white/60">
+                      <span>Home</span>
+                      <ChevronRight className="h-4 w-4" />
+                      <span className="text-white font-medium">Directory</span>
+                    </div>
+                    
+                    {/* Badges */}
+                    <div className="flex flex-wrap gap-xs">
+                      <Badge className="bg-white/10 text-white border-white/20">
+                        <Building2 className="h-4 w-4 mr-xs" />
+                        Verified Businesses
+                      </Badge>
+                      <Badge className="bg-white/10 text-white border-white/20">
+                        <Award className="h-4 w-4 mr-xs" />
+                        Partnership Tiers
+                      </Badge>
+                      <Badge className="bg-white/10 text-white border-white/20">
+                        <MapPin className="h-4 w-4 mr-xs" />
+                        Local Focus
+                      </Badge>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              
-              {/* Content - Right side */}
-              <div className="lg:col-span-2 lg:order-2 h-full flex flex-col justify-between">
+
+                {/* Titles - H1 & H2 Butt Buddies */}
                 <div className="space-y-xs">
-                  <Badge className="bg-nav-directory/20 text-nav-directory border-nav-directory/30 w-fit">
-                    <Building2 className="h-4 w-4 mr-xs" />
-                    Business Directory
-                  </Badge>
-                  <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-gruvbox-fg-cream leading-tight">
-                    Treasure Valley Directory
+                  <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
+                    Idaho Gun Stores & <span className="text-white">FFL Dealers Directory</span>
                   </h1>
-                  <p className="text-body-lg text-gruvbox-fg-cream/80 max-w-2xl">
-                    Connect with verified firearms businesses across Idaho. From FFLs and ranges to training and custom work.
-                  </p>
+                  <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
+                    Licensed Firearms Dealers in Boise & Treasure Valley
+                  </h2>
                 </div>
+                
+                {/* Chunky Description */}
+                <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
+                  Find licensed FFLs, shooting ranges, training facilities, and gunsmiths throughout the Treasure Valley. All businesses are verified and categorized by partnership tier for trusted, professional service.
+                </p>
+                
+                {/* Buttons */}
                 <div className="flex gap-base">
                   <Button 
                     size="lg" 
-                    className="bg-nav-directory text-gruvbox-bg-dark hover:bg-nav-directory/90 font-rajdhani font-bold"
+                    className="bg-white text-nav-directory hover:bg-white/90 font-rajdhani font-bold"
                   >
                     <Plus className="h-4 w-4 mr-xs" />
                     List Your Business
@@ -284,10 +280,103 @@ export default function DirectoryPage() {
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="border-nav-directory/30 text-nav-directory hover:bg-nav-directory hover:text-gruvbox-bg-dark"
+                    className="border-white/30 text-white hover:bg-white hover:text-nav-directory"
                   >
                     Partnership Info
                   </Button>
+                </div>
+              </div>
+              
+              {/* Featured Business Spotlight - Right side */}
+              <div className="lg:col-span-1 py-md min-h-[400px]">
+                <div className="relative h-full">
+                  <Card className="mica border-nav-directory/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col">
+                    {/* Gold Partnership Badge */}
+                    <div className="absolute top-0 right-0 z-20">
+                      <Badge className="bg-gradient-to-r from-nav-directory to-nav-directory text-gruvbox-bg-dark font-rajdhani font-bold text-xs rounded-bl-sm rounded-tr-none">
+                        <Award className="h-3 w-3 mr-xs" />
+                        GOLD PARTNER
+                      </Badge>
+                    </div>
+                    
+                    {/* Business Header */}
+                    <CardHeader className="pb-sm space-y-xs">
+                      <div className="flex items-start gap-sm">
+                        <div className="bg-nav-directory/10 p-sm rounded-sm border border-nav-directory/20">
+                          <Building2 className="h-8 w-8 text-nav-directory" />
+                        </div>
+                        <div className="flex-1 space-y-xs">
+                          <h3 className="font-rajdhani text-lg font-bold text-card-foreground leading-tight">Boise Rifle & Pistol Club</h3>
+                          <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                            <Star className="h-3 w-3 fill-nav-directory text-nav-directory" />
+                            <span className="font-medium">4.9</span>
+                            <span>•</span>
+                            <span>Since 1954</span>
+                            <span>•</span>
+                            <span>NRA Certified</span>
+                          </div>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    
+                    <CardContent className="flex-1 space-y-sm">
+                      {/* Services */}
+                      <div className="space-y-xs">
+                        <h4 className="font-rajdhani font-bold text-nav-directory text-sm">Premium Services</h4>
+                        <div className="grid grid-cols-2 gap-xs text-xs">
+                          <div className="flex items-center gap-xs">
+                            <CheckCircle className="h-3 w-3 text-nav-directory" />
+                            <span className="text-card-foreground">Indoor Range</span>
+                          </div>
+                          <div className="flex items-center gap-xs">
+                            <CheckCircle className="h-3 w-3 text-nav-directory" />
+                            <span className="text-card-foreground">Training</span>
+                          </div>
+                          <div className="flex items-center gap-xs">
+                            <CheckCircle className="h-3 w-3 text-nav-directory" />
+                            <span className="text-card-foreground">Gunsmithing</span>
+                          </div>
+                          <div className="flex items-center gap-xs">
+                            <CheckCircle className="h-3 w-3 text-nav-directory" />
+                            <span className="text-card-foreground">Retail Shop</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Special Offers */}
+                      <div className="bg-nav-directory/5 p-xs rounded-sm border border-nav-directory/20">
+                        <div className="flex items-center gap-xs mb-xs">
+                          <Zap className="h-3 w-3 text-nav-directory" />
+                          <span className="font-rajdhani font-bold text-nav-directory text-xs">SPECIAL OFFER</span>
+                        </div>
+                        <p className="text-xs text-card-foreground">New member signup: First month FREE + complimentary safety course</p>
+                      </div>
+                      
+                      {/* Contact Info */}
+                      <div className="space-y-xs pt-xs border-t border-border/50">
+                        <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                          <MapPin className="h-3 w-3 text-nav-directory" />
+                          <span>6205 Hill Road, Boise, ID</span>
+                        </div>
+                        <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                          <Phone className="h-3 w-3 text-nav-directory" />
+                          <span>(208) 555-0198</span>
+                        </div>
+                      </div>
+                      
+                      {/* Premium CTA */}
+                      <Button 
+                        className="w-full bg-gradient-to-r from-nav-directory to-nav-directory text-gruvbox-bg-dark hover:from-nav-directory/90 hover:to-nav-directory/90 font-rajdhani font-bold"
+                        size="sm"
+                      >
+                        <ArrowRight className="h-4 w-4 mr-xs" />
+                        VIEW BUSINESS
+                      </Button>
+                    </CardContent>
+                    
+                    {/* Bottom Accent Bar */}
+                    <div className="h-1 bg-gradient-to-r from-nav-directory to-nav-directory"></div>
+                  </Card>
                 </div>
               </div>
             </div>

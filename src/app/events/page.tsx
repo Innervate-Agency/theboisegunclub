@@ -638,33 +638,62 @@ export default function EventsPage() {
       <SiteNavigation variant="premium" sticky={true} />
       <div className="min-h-screen bg-background theme-events">
         {/* Events Hero - Content Left, Card Right (Layout 1) */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-nav-events via-nav-marketplace to-nav-home px-md py-8xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-gruvbox-bg-dark/20 via-transparent to-gruvbox-bg-dark/10 pointer-events-none"></div>
+        <section className="relative overflow-hidden bg-gradient-events-hero px-md py-lg">
           <div className="container mx-auto max-w-site relative z-10">
-            <div className="flex items-center gap-xs text-sm text-gruvbox-fg-cream/80 mb-lg">
-              <span>Home</span>
-              <ChevronRight className="h-4 w-4" />
-              <span className="text-nav-events font-medium">Events</span>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3xl items-stretch min-h-[600px]">
-              {/* Content - Left side (50%) */}
-              <div className="flex flex-col justify-between p-xl">
-                <div className="space-y-lg">
-                  <Badge className="bg-nav-events/20 text-nav-events border-nav-events/30 w-fit">
-                    <Calendar className="h-4 w-4 mr-xs" />
-                    Events Hub
-                  </Badge>
-                  <h1 className="font-rajdhani text-4xl md:text-6xl font-bold text-gruvbox-fg-cream leading-tight">
-                    Treasure Valley Events
-                  </h1>
-                  <p className="text-body-lg text-gruvbox-fg-cream/80">
-                    Discover competitions, training, shows, and community events across Idaho's premier firearms region.
-                  </p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
+              {/* Content - Left side */}
+              <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
+                {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
+                <div className="flex items-center gap-base">
+                  <div className="bg-white/10 p-base rounded-sm border border-white/20">
+                    <Calendar className="h-8 w-8 text-white" />
+                  </div>
+                  <div className="space-y-base">
+                    {/* Breadcrumbs */}
+                    <div className="flex items-center gap-xs text-sm text-white/60">
+                      <span>Home</span>
+                      <ChevronRight className="h-4 w-4" />
+                      <span className="text-white font-medium">Events</span>
+                    </div>
+                    
+                    {/* Badges */}
+                    <div className="flex flex-wrap gap-xs">
+                      <Badge className="bg-white/10 text-white border-white/20">
+                        <Calendar className="h-4 w-4 mr-xs" />
+                        Events Hub
+                      </Badge>
+                      <Badge className="bg-white/10 text-white border-white/20">
+                        <Trophy className="h-4 w-4 mr-xs" />
+                        Competitions
+                      </Badge>
+                      <Badge className="bg-white/10 text-white border-white/20">
+                        <Target className="h-4 w-4 mr-xs" />
+                        Training Events
+                      </Badge>
+                    </div>
+                  </div>
                 </div>
+
+                {/* Titles - H1 & H2 Butt Buddies */}
+                <div className="space-y-xs">
+                  <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
+                    Idaho Gun Shows & <span className="text-white">Firearms Events 2025</span>
+                  </h1>
+                  <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
+                    Boise, Meridian & Treasure Valley Shooting Events
+                  </h2>
+                </div>
+                
+                {/* Chunky Description */}
+                <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
+                  Discover USPSA matches, gun shows, training courses, and charity shoots throughout the Treasure Valley. Connect with Idaho's firearms community through verified events and professional instruction.
+                </p>
+                
+                {/* Buttons */}
                 <div className="flex gap-base">
                   <Button 
                     size="lg" 
-                    className="bg-nav-events text-gruvbox-bg-dark hover:bg-nav-events/90 font-rajdhani font-bold"
+                    className="bg-white text-nav-events hover:bg-white/90 font-rajdhani font-bold"
                   >
                     <Plus className="h-4 w-4 mr-xs" />
                     Submit Event
@@ -672,25 +701,25 @@ export default function EventsPage() {
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-gruvbox-bg-dark"
+                    className="border-white/30 text-white hover:bg-white hover:text-nav-events"
                   >
                     View Calendar
                   </Button>
                 </div>
               </div>
               
-              {/* Featured Event Card - Right side (50%) */}
-              <div className="flex items-center justify-center p-xl">
+              {/* Featured Event Card - Right side */}
+              <div className="lg:col-span-1 py-md min-h-[400px]">
                 <div className="relative h-full">
-                  <Card className="mica border-nav-events/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-events/20 to-nav-events/10 rounded-bl-full"></div>
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-events to-nav-events"></div>
+                  <Card className="mica border-page-primary-30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-page-gradient opacity-20 rounded-bl-full"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-page-gradient"></div>
                     
                     <CardHeader className="pb-xs relative z-10">
                       <div className="flex items-center justify-between mb-xs">
-                        <Badge className="bg-nav-events/20 text-nav-events border-nav-events/30 font-rajdhani font-bold text-[10px]">
-                          <ChevronRight className="h-3 w-3 mr-xs" />
-                          NEXT EVENT
+                        <Badge className="bg-page-primary-20 text-page-primary border-page-primary-30 font-rajdhani font-bold text-[10px]">
+                          <Crown className="h-3 w-3 mr-xs" />
+                          FEATURED EVENT
                         </Badge>
                         <div className="flex items-center gap-xs text-xs text-muted-foreground">
                           <Clock className="h-3 w-3" />
@@ -701,7 +730,7 @@ export default function EventsPage() {
                       <div className="space-y-xs">
                         <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">USPSA Monthly Match</h3>
                         <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                          <MapPin className="h-3 w-3 text-nav-events" />
+                          <MapPin className="h-3 w-3 text-page-primary" />
                           <span>Nampa Rod & Gun Club</span>
                         </div>
                       </div>
@@ -711,7 +740,7 @@ export default function EventsPage() {
                       <div className="flex items-center justify-between">
                         <div className="space-y-xs">
                           <div className="flex items-center gap-xs text-xs text-card-foreground/80">
-                            <Calendar className="h-3 w-3 text-nav-events" />
+                            <Calendar className="h-3 w-3 text-page-primary" />
                             <span className="font-medium">Sat, Aug 9 • 8:00 AM</span>
                           </div>
                           <div className="flex items-center gap-xs text-xs text-muted-foreground">
@@ -723,14 +752,14 @@ export default function EventsPage() {
                         </div>
                         
                         <div className="text-right">
-                          <div className="w-12 h-12 rounded-pill bg-gradient-to-br from-nav-events/30 to-nav-events/20 flex items-center justify-center mb-xs">
-                            <Users className="h-5 w-5 text-nav-events" />
+                          <div className="w-12 h-12 rounded-pill bg-page-primary-20 flex items-center justify-center mb-xs">
+                            <Users className="h-5 w-5 text-page-primary" />
                           </div>
                         </div>
                       </div>
                       
                       <Button 
-                        className="w-full bg-gradient-to-r from-nav-events to-nav-events text-gruvbox-bg-dark hover:from-nav-events hover:to-nav-events font-rajdhani font-bold text-xs"
+                        className="w-full bg-page-gradient text-page-primary-foreground hover:bg-page-primary font-rajdhani font-bold text-xs"
                         size="sm"
                       >
                         REGISTER NOW
@@ -968,7 +997,7 @@ export default function EventsPage() {
                     size="sm"
                     onClick={() => setSelectedCategory(category.value)}
                     className={cn(
-                      "shadow-none border",
+                      "shadow-none transition-all duration-300",
                       selectedCategory === category.value
                         ? category.activeClasses
                         : category.inactiveClasses

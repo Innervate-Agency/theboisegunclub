@@ -432,29 +432,58 @@ export default function MarketplacePage() {
       <SiteNavigation variant="premium" sticky={true} />
       <div className="min-h-screen bg-background theme-marketplace">
       {/* Marketplace Hero - Content Left, Card Right (Layout 5) */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-nav-marketplace via-nav-home to-nav-events px-md py-6xl">
-        <div className="absolute inset-0 bg-gradient-to-br from-gruvbox-bg-dark/20 via-transparent to-gruvbox-bg-dark/10 pointer-events-none"></div>
+      <section className="relative overflow-hidden bg-gradient-marketplace-hero px-md py-lg">
         <div className="container mx-auto max-w-site relative z-10">
-          <div className="flex items-center gap-xs text-sm text-gruvbox-fg-cream/80 mb-sm">
-            <span>Home</span>
-            <ChevronRight className="h-4 w-4" />
-            <span className="text-nav-marketplace font-medium">Marketplace</span>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4xl items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
             {/* Content - Left side */}
-            <div className="lg:col-span-2 h-full flex flex-col justify-between">
-              <div className="space-y-xs">
-                <Badge className="bg-nav-marketplace/20 text-nav-marketplace border-nav-marketplace/30 w-fit">
-                  <ShoppingCart className="h-4 w-4 mr-xs" />
-                  Marketplace
-                </Badge>
-                <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-gruvbox-fg-cream leading-tight">
-                  Treasure Valley <span className="text-nav-marketplace">Marketplace</span>
-                </h1>
-                <p className="text-body-lg text-gruvbox-fg-cream/80 max-w-2xl">
-                  Browse inventory from local firearms dealers across the Treasure Valley. From firearms and ammunition to accessories and optics - discover great deals from trusted local businesses.
-                </p>
+            <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
+              {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
+              <div className="flex items-center gap-base">
+                <div className="bg-white/10 p-base rounded-sm border border-white/20">
+                  <ShoppingCart className="h-8 w-8 text-white" />
+                </div>
+                <div className="space-y-base">
+                  {/* Breadcrumbs */}
+                  <div className="flex items-center gap-xs text-sm text-white/60">
+                    <span>Home</span>
+                    <ChevronRight className="h-4 w-4" />
+                    <span className="text-white font-medium">Marketplace</span>
+                  </div>
+                  
+                  {/* Badges */}
+                  <div className="flex flex-wrap gap-xs">
+                    <Badge className="bg-white/10 text-white border-white/20">
+                      <ShoppingCart className="h-4 w-4 mr-xs" />
+                      Local Dealers
+                    </Badge>
+                    <Badge className="bg-white/10 text-white border-white/20">
+                      <Package className="h-4 w-4 mr-xs" />
+                      Live Inventory
+                    </Badge>
+                    <Badge className="bg-white/10 text-white border-white/20">
+                      <Shield className="h-4 w-4 mr-xs" />
+                      FFL Compliant
+                    </Badge>
+                  </div>
+                </div>
               </div>
+
+              {/* Titles - H1 & H2 Butt Buddies */}
+              <div className="space-y-xs">
+                <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
+                  Idaho Firearms & <span className="text-white">Ammo Marketplace</span>
+                </h1>
+                <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
+                  Buy Guns, Ammo & Accessories from Local Dealers
+                </h2>
+              </div>
+              
+              {/* Chunky Description */}
+              <p className="text-body-lg text-destructive-foreground/70 max-w-2xl leading-relaxed">
+                Browse real-time inventory from licensed dealers across the Treasure Valley. Find firearms, ammo, optics, and accessories with FFL-compliant transactions and proper background checks.
+              </p>
+              
+              {/* Buttons */}
               <div className="flex gap-base">
                 <Button 
                   size="lg" 
@@ -466,59 +495,88 @@ export default function MarketplacePage() {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-nav-marketplace/30 text-nav-marketplace hover:bg-nav-marketplace hover:text-gruvbox-bg-dark"
+                  className="border-destructive-foreground/30 text-destructive-foreground hover:bg-nav-marketplace hover:text-gruvbox-bg-dark"
                 >
                   Dealer Information
                 </Button>
               </div>
             </div>
             
-            {/* Featured Product Card - Right side */}
-            <div className="lg:col-span-1">
+            {/* Featured Dealer Spotlight - Premium Advertising Space */}
+            <div className="lg:col-span-1 py-md min-h-[400px]">
               <div className="relative h-full">
-                <Card className="mica border-nav-marketplace/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-marketplace/20 to-nav-marketplace/10 rounded-bl-full"></div>
-                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-marketplace to-nav-marketplace"></div>
+                <Card className="mica border-nav-marketplace/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col">
+                  {/* Premium Badge */}
+                  <div className="absolute top-0 right-0 z-20">
+                    <Badge className="bg-gradient-to-r from-nav-marketplace to-nav-marketplace text-gruvbox-bg-dark font-rajdhani font-bold text-xs rounded-bl-sm rounded-tr-none">
+                      FEATURED DEALER
+                    </Badge>
+                  </div>
                   
-                  <CardHeader className="pb-xs relative z-10">
-                    <div className="flex items-center justify-between mb-xs">
-                      <Badge className="bg-nav-marketplace/20 text-nav-marketplace border-nav-marketplace/30 font-rajdhani font-bold text-[10px]">
-                        <CheckCircle className="h-3 w-3 mr-xs" />
-                        IN STOCK
-                      </Badge>
-                      <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                        <Store className="h-3 w-3 text-nav-marketplace" />
-                        <span>Local Dealer</span>
+                  {/* Dealer Branding Header */}
+                  <CardHeader className="pb-sm space-y-xs">
+                    <div className="flex items-start gap-sm">
+                      <div className="bg-nav-marketplace/10 p-sm rounded-sm border border-nav-marketplace/20">
+                        <Building2 className="h-8 w-8 text-nav-marketplace" />
                       </div>
-                    </div>
-                    
-                    <div className="space-y-xs">
-                      <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">Glock 19 Gen 5</h3>
-                      <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                        <Building2 className="h-3 w-3 text-nav-marketplace" />
-                        <span>Precision Arms Co • Boise, ID</span>
+                      <div className="flex-1 space-y-xs">
+                        <h3 className="font-rajdhani text-lg font-bold text-card-foreground leading-tight">Valley Gun & Pawn</h3>
+                        <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                          <Star className="h-3 w-3 fill-nav-marketplace text-nav-marketplace" />
+                          <span className="font-medium">4.8</span>
+                          <span>•</span>
+                          <span>Since 1987</span>
+                          <span>•</span>
+                          <span>FFL Licensed</span>
+                        </div>
                       </div>
                     </div>
                   </CardHeader>
                   
-                  <CardContent className="space-y-base relative z-10">
-                    <p className="text-sm text-muted-foreground line-clamp-3">
-                      New condition. Includes case, documentation, and three magazines. Background check required.
-                    </p>
-                    
-                    <div className="flex items-center justify-between">
-                      <div className="text-nav-marketplace font-rajdhani font-bold text-lg">
-                        $549.99
+                  <CardContent className="flex-1 space-y-sm">
+                    {/* Hot Deals Section */}
+                    <div className="space-y-xs">
+                      <h4 className="font-rajdhani font-bold text-nav-marketplace text-sm">Today's Hot Deals</h4>
+                      <div className="space-y-xs text-xs">
+                        <div className="flex justify-between items-center">
+                          <span className="text-card-foreground">Glock 19 Gen 5</span>
+                          <span className="font-bold text-nav-marketplace">$549</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-card-foreground">Federal 9mm HST (50rd)</span>
+                          <span className="font-bold text-nav-marketplace">$32</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-card-foreground">Vortex Red Dot</span>
+                          <span className="font-bold text-nav-marketplace">$199</span>
+                        </div>
                       </div>
-                      <Button 
-                        className="bg-gradient-to-r from-nav-marketplace to-nav-marketplace text-gruvbox-bg-dark hover:from-nav-marketplace hover:to-nav-marketplace font-rajdhani font-bold text-xs"
-                        size="sm"
-                      >
-                        VIEW ITEM
-                        <ArrowRight className="h-3 w-3 ml-xs" />
-                      </Button>
                     </div>
+                    
+                    {/* Contact Info */}
+                    <div className="space-y-xs pt-xs border-t border-border/50">
+                      <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                        <MapPin className="h-3 w-3 text-nav-marketplace" />
+                        <span>21840 Pond Ln, Caldwell, ID</span>
+                      </div>
+                      <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                        <Phone className="h-3 w-3 text-nav-marketplace" />
+                        <span>(208) 555-0321</span>
+                      </div>
+                    </div>
+                    
+                    {/* Premium CTA */}
+                    <Button 
+                      className="w-full bg-gradient-to-r from-nav-marketplace to-nav-marketplace text-gruvbox-bg-dark hover:from-nav-marketplace/90 hover:to-nav-marketplace/90 font-rajdhani font-bold"
+                      size="sm"
+                    >
+                      <Store className="h-4 w-4 mr-xs" />
+                      VISIT STORE
+                    </Button>
                   </CardContent>
+                  
+                  {/* Bottom Accent Bar */}
+                  <div className="h-1 bg-gradient-to-r from-nav-marketplace to-nav-marketplace"></div>
                 </Card>
               </div>
             </div>

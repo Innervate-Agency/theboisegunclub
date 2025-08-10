@@ -17,12 +17,13 @@ const megaHeroVariants = cva(
         full: "min-h-screen"
       },
       backgroundPreset: {
-        home: "bg-gradient-to-br from-(--color-rusty-orange) to-[color-mix(in_srgb,var(--color-rusty-orange)_80%,var(--color-ember-glow))]",
-        events: "bg-gradient-to-br from-(--color-slate-blue) to-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)]",
-        directory: "bg-gradient-to-br from-(--color-sagebrush-green) to-[color-mix(in_srgb,var(--color-sagebrush-green)_80%,var(--color-sandy-ochre))]",
+        home: "bg-gradient-home-hero",
+        events: "bg-gradient-events-hero", 
+        directory: "bg-gradient-directory-hero",
         guides: "bg-gradient-to-br from-(--color-info-river) to-[color-mix(in_srgb,var(--color-info-river)_80%,var(--color-warning-clay))]",
-        map: "bg-gradient-to-br from-(--color-sandy-ochre) to-[color-mix(in_srgb,var(--color-sandy-ochre)_80%,var(--color-sagebrush-green))]",
-        marketplace: "bg-gradient-to-br from-(--color-warning-clay) to-[color-mix(in_srgb,var(--color-warning-clay)_80%,var(--color-sagebrush-green))]",
+        map: "bg-gradient-intel-hero",
+        marketplace: "bg-gradient-marketplace-hero",
+        armory: "bg-gradient-armory-hero",
         community: "bg-gradient-to-br from-(--color-ember-glow) to-[color-mix(in_srgb,var(--color-ember-glow)_80%,var(--color-rusty-orange))]",
         gunclub: "bg-gradient-to-br from-(--color-light-peachy) via-(--color-crisp-off-white) to-(--color-light-peachy)"
       }

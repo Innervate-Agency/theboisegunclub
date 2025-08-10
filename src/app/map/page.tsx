@@ -278,18 +278,88 @@ export default function MapPage() {
     <>
       <SiteNavigation variant="premium" sticky={true} />
       <div className="min-h-screen bg-background theme-intel">
-      {/* Map Hero - Card Left, Content Right (Layout 4) */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-nav-intel via-nav-directory to-nav-armory px-md py-6xl">
-        <div className="absolute inset-0 bg-gradient-to-br from-gruvbox-bg-dark/20 via-transparent to-gruvbox-bg-dark/10 pointer-events-none"></div>
+      {/* Map Hero - Content Left, Card Right (Layout 1) */}
+      <section className="relative overflow-hidden bg-gradient-intel-hero px-md py-lg">
+        {/* Topographic Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/images/Heroes/tbgc-intel-hero-background.webp')",
+            backgroundPosition: 'center right',
+            opacity: 0.66
+          }}
+        ></div>
         <div className="container mx-auto max-w-site relative z-10">
-          <div className="flex items-center gap-xs text-sm text-gruvbox-fg-cream/80 mb-sm">
-            <span>Home</span>
-            <ChevronRight className="h-4 w-4" />
-            <span className="text-nav-intel font-medium">Intel</span>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch">
-            {/* Featured Location Card - Left side */}
-            <div className="lg:col-span-1 lg:order-1">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
+            {/* Content - Left side */}
+            <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
+              {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
+              <div className="flex items-center gap-base">
+                <div className="bg-white/10 p-base rounded-sm border border-white/20">
+                  <Compass className="h-8 w-8 text-white" />
+                </div>
+                <div className="space-y-base">
+                  {/* Breadcrumbs */}
+                  <div className="flex items-center gap-xs text-sm text-white/60">
+                    <span>Home</span>
+                    <ChevronRight className="h-4 w-4" />
+                    <span className="text-white font-medium">Intel</span>
+                  </div>
+                  
+                  {/* Badges */}
+                  <div className="flex flex-wrap gap-xs">
+                    <Badge className="bg-white/10 text-white border-white/20">
+                      <Compass className="h-4 w-4 mr-xs" />
+                      Shooting Locations
+                    </Badge>
+                    <Badge className="bg-white/10 text-white border-white/20">
+                      <Shield className="h-4 w-4 mr-xs" />
+                      Verified Areas
+                    </Badge>
+                    <Badge className="bg-white/10 text-white border-white/20">
+                      <Mountain className="h-4 w-4 mr-xs" />
+                      BLM & Forest Service
+                    </Badge>
+                  </div>
+                </div>
+              </div>
+
+              {/* Titles - H1 & H2 Butt Buddies */}
+              <div className="space-y-xs">
+                <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
+                  Idaho Shooting Locations & <span className="text-white">Ranges Map</span>
+                </h1>
+                <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
+                  BLM Land & Public Shooting Areas Near Boise
+                </h2>
+              </div>
+              
+              {/* Chunky Description */}
+              <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
+                Find legal shooting locations across Idaho including BLM land, Forest Service areas, and designated ranges. Community-verified locations with access requirements, restrictions, and safety information.
+              </p>
+              
+              {/* Buttons */}
+              <div className="flex gap-base">
+                <Button 
+                  size="lg" 
+                  className="bg-white text-nav-intel hover:bg-white/90 font-rajdhani font-bold"
+                >
+                  <Plus className="h-4 w-4 mr-xs" />
+                  Submit Location
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="border-white/30 text-white hover:bg-white hover:text-nav-intel"
+                >
+                  View Interactive Map
+                </Button>
+              </div>
+            </div>
+            
+            {/* Featured Location Card - Right side */}
+            <div className="lg:col-span-1 py-md min-h-[400px]">
               <div className="relative h-full">
                 <Card className="mica border-nav-intel/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-intel/20 to-nav-intel/10 rounded-bl-full"></div>
@@ -336,38 +406,6 @@ export default function MapPage() {
                     </div>
                   </CardContent>
                 </Card>
-              </div>
-            </div>
-            
-            {/* Content - Right side */}
-            <div className="lg:col-span-2 lg:order-2 h-full flex flex-col justify-between">
-              <div className="space-y-xs">
-                <Badge className="bg-nav-intel/20 text-nav-intel border-nav-intel/30 w-fit">
-                  <Compass className="h-4 w-4 mr-xs" />
-                  Shooting Locations
-                </Badge>
-                <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-gruvbox-fg-cream leading-tight">
-                  Idaho Shooting <span className="text-nav-intel">Map</span>
-                </h1>
-                <p className="text-body-lg text-gruvbox-fg-cream/80 max-w-2xl">
-                  Community-driven map of legal shooting locations across Idaho. From BLM land to designated shooting areas - discover places to practice and enjoy the sport safely.
-                </p>
-              </div>
-              <div className="flex gap-base">
-                <Button 
-                  size="lg" 
-                  className="bg-nav-intel text-gruvbox-bg-dark hover:bg-nav-intel/90 font-rajdhani font-bold"
-                >
-                  <Plus className="h-4 w-4 mr-xs" />
-                  Submit Location
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-gruvbox-bg-dark"
-                >
-                  View Interactive Map
-                </Button>
               </div>
             </div>
           </div>

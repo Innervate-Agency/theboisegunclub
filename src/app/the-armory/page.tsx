@@ -382,29 +382,59 @@ export default function ArmoryPage() {
     <div className="theme-armory min-h-screen bg-background">
       <SiteNavigation variant="premium" sticky={true} />
       {/* Armory Hero - Content Left, Card Right (Layout 3) */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-nav-armory via-nav-intel to-nav-events px-md py-6xl">
+      <section className="relative overflow-hidden bg-gradient-armory-hero px-md py-lg">
         <div className="absolute inset-0 bg-gradient-to-br from-gruvbox-bg-dark/20 via-transparent to-gruvbox-bg-dark/10 pointer-events-none"></div>
         <div className="container mx-auto max-w-site relative z-10">
-          <div className="flex items-center gap-xs text-sm text-gruvbox-fg-cream/80 mb-sm">
-            <span>Home</span>
-            <ChevronRight className="h-4 w-4" />
-            <span className="text-nav-armory font-medium">Armory</span>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
             {/* Content - Left side */}
-            <div className="lg:col-span-2 h-full flex flex-col justify-between">
-              <div className="space-y-xs">
-                <Badge className="bg-nav-armory/20 text-nav-armory border-nav-armory/30 w-fit">
-                  <BookOpen className="h-4 w-4 mr-xs" />
-                  Knowledge Base
-                </Badge>
-                <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-gruvbox-fg-cream leading-tight">
-                  The Armory
-                </h1>
-                <p className="text-body-lg text-gruvbox-fg-cream/80 max-w-2xl">
-                  Comprehensive firearms knowledge base covering Idaho gun laws, safety practices, buying advice, and training resources for the Treasure Valley community.
-                </p>
+            <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
+              {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
+              <div className="flex items-center gap-base">
+                <div className="bg-nav-armory/20 p-base rounded-sm border border-nav-armory/30">
+                  <BookOpen className="h-8 w-8 text-nav-armory" />
+                </div>
+                <div className="space-y-base">
+                  {/* Breadcrumbs */}
+                  <div className="flex items-center gap-xs text-sm text-destructive-foreground/60">
+                    <span>Home</span>
+                    <ChevronRight className="h-4 w-4" />
+                    <span className="text-nav-armory font-medium">Armory</span>
+                  </div>
+                  
+                  {/* Badges */}
+                  <div className="flex flex-wrap gap-xs">
+                    <Badge className="bg-nav-armory/20 text-nav-armory border-nav-armory/30">
+                      <BookOpen className="h-4 w-4 mr-xs" />
+                      Expert Knowledge
+                    </Badge>
+                    <Badge className="bg-nav-armory/20 text-nav-armory border-nav-armory/30">
+                      <Star className="h-4 w-4 mr-xs" />
+                      Equipment Reviews
+                    </Badge>
+                    <Badge className="bg-nav-armory/20 text-nav-armory border-nav-armory/30">
+                      <Target className="h-4 w-4 mr-xs" />
+                      Tactical Guides
+                    </Badge>
+                  </div>
+                </div>
               </div>
+
+              {/* Titles - H1 & H2 Butt Buddies */}
+              <div className="space-y-xs">
+                <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-destructive-foreground leading-tight">
+                  Idaho Gun Reviews & <span className="text-nav-armory">Firearms Guides</span>
+                </h1>
+                <h2 className="font-rajdhani text-lg md:text-xl font-medium text-destructive-foreground/80 leading-snug">
+                  Expert Equipment Reviews & Tactical Knowledge Base
+                </h2>
+              </div>
+              
+              {/* Chunky Description */}
+              <p className="text-body-lg text-destructive-foreground/70 max-w-2xl leading-relaxed">
+                Dive deep into expert knowledge, comprehensive equipment reviews, and tactical insights from Idaho's most experienced firearms professionals. From precision rifle builds and optics selection to holster reviews and gear comparisons, The Armory provides the technical expertise you need to make informed decisions. Whether you're building your first AR-15, selecting duty gear, or researching competition equipment, our community-driven content ensures you get real-world performance data.
+              </p>
+              
+              {/* Buttons */}
               <div className="flex gap-base">
                 <Button 
                   size="lg" 
@@ -416,7 +446,7 @@ export default function ArmoryPage() {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-nav-armory/30 text-nav-armory hover:bg-nav-armory hover:text-gruvbox-bg-dark"
+                  className="border-destructive-foreground/30 text-destructive-foreground hover:bg-nav-armory hover:text-gruvbox-bg-dark"
                 >
                   View Categories
                 </Button>
@@ -424,7 +454,7 @@ export default function ArmoryPage() {
             </div>
             
             {/* Featured Article Card - Right side */}
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 py-md min-h-[400px]">
               <div className="relative h-full">
                 <Card className="mica border-nav-armory/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-armory/20 to-nav-armory/10 rounded-bl-full"></div>
