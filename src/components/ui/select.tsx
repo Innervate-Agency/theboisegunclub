@@ -54,13 +54,13 @@ const selectContentVariants = cva(
 
 const selectItemVariants = cva(
   // Base: Better contrast and size-responsive styling
-  "focus:bg-accent/80 focus:text-accent-foreground hover:bg-accent/80 hover:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex w-full cursor-default items-center gap-xs rounded-button outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 transition-colors duration-150",
+  "focus:bg-accent/80 focus:text-accent-foreground hover:bg-accent/80 hover:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex w-full cursor-default items-center gap-xs rounded-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 transition-colors duration-150",
   {
     variants: {
       size: {
-        sm: "py-xs pr-(--space-md) pl-(--space-xs) text-body-sm min-h-[28px]",
-        default: "py-xs pr-(--space-lg) pl-(--space-xs) text-body-sm min-h-[32px]",
-        lg: "py-sm pr-(--space-lg) pl-(--space-sm) text-body-base min-h-[40px]",
+        sm: "py-xs pr-(--spacing-md) pl-(--spacing-xs) text-body-sm min-h-[28px]",
+        default: "py-xs pr-(--spacing-lg) pl-(--spacing-xs) text-body-sm min-h-[32px]",
+        lg: "py-sm pr-(--spacing-lg) pl-(--spacing-sm) text-body-base min-h-[40px]",
       },
     },
     defaultVariants: {
@@ -159,7 +159,7 @@ const SelectContent = React.forwardRef<
         <SelectScrollUpButton />
         <SelectPrimitive.Viewport
           className={cn(
-            "p-(--space-micro)",
+            "p-(--spacing-micro)",
             position === "popper" &&
               "h-radix-select-trigger-height w-full min-w-radix-select-trigger-width scroll-my-1"
           )}
@@ -216,7 +216,7 @@ const SelectItem = React.forwardRef<
         </span>
       )}
       <SelectPrimitive.ItemText className="flex-1">{children}</SelectPrimitive.ItemText>
-      <span className="absolute right-(--space-xs) flex h-icon-sm w-icon-sm items-center justify-center">
+      <span className="absolute right-(--spacing-xs) flex h-icon-sm w-icon-sm items-center justify-center">
         <SelectPrimitive.ItemIndicator>
           <CheckIcon className="h-icon-sm w-icon-sm" />
         </SelectPrimitive.ItemIndicator>
@@ -234,7 +234,7 @@ function SelectSeparator({
   return (
     <SelectPrimitive.Separator
       data-slot="select-separator"
-      className={cn("bg-border pointer-events-none -mx-(--space-micro) my-(--space-micro) h-px", className)}
+      className={cn("bg-border pointer-events-none -mx-(--spacing-micro) my-(--spacing-micro) h-px", className)}
       {...props}
     />
   )
@@ -248,7 +248,7 @@ function SelectScrollUpButton({
     <SelectPrimitive.ScrollUpButton
       data-slot="select-scroll-up-button"
       className={cn(
-        "flex cursor-default items-center justify-center py-(--space-micro)",
+        "flex cursor-default items-center justify-center py-(--spacing-micro)",
         className
       )}
       {...props}
@@ -266,7 +266,7 @@ function SelectScrollDownButton({
     <SelectPrimitive.ScrollDownButton
       data-slot="select-scroll-down-button"
       className={cn(
-        "flex cursor-default items-center justify-center py-(--space-micro)",
+        "flex cursor-default items-center justify-center py-(--spacing-micro)",
         className
       )}
       {...props}

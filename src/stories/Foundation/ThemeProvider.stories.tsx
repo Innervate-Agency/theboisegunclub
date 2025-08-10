@@ -67,7 +67,7 @@ const ThemeDemo = () => (
         </Card>
       </div>
 
-      <div className="bg-card border border-border rounded-card p-md">
+      <div className="bg-card border border-border rounded-sm p-md">
         <h3 className="text-display-sm font-semibold mb-base">Theme-Aware Components</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-base text-body-sm">
           <div className="space-y-xs">

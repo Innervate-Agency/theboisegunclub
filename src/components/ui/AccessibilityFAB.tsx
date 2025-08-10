@@ -111,7 +111,7 @@ const fabVariants = cva(
 )
 
 const menuVariants = cva(
-  "fixed bottom-20 left-6 z-40 mica border border-border rounded-card shadow-md hover:shadow-elevated p-6 min-w-[320px] max-w-[380px] transition-all duration-200",
+  "fixed bottom-20 left-6 z-40 mica border border-border rounded-sm shadow-md hover:shadow-elevated p-6 min-w-[320px] max-w-[380px] transition-all duration-200",
   {
     variants: {
       open: {
@@ -217,7 +217,7 @@ export default function AccessibilityFAB({
           {/* Header */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="bg-muted p-2 rounded-lg border border-border">
+              <div className="bg-muted p-2 rounded-md border border-border">
                 <Settings className="h-5 w-5 text-card-foreground" />
               </div>
               <h2 className="text-lg font-rajdhani font-bold text-card-foreground">Accessibility</h2>

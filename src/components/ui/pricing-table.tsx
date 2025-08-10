@@ -21,10 +21,10 @@ const pricingCardVariants = cva(
         copper: "shadow-flat hover:shadow-md bg-rusty-orange/[0.02] hover:bg-rusty-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
         // SILVER: Consistent default shadows with subtle cobalt glassmorphism
-        silver: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-card before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-warm-stone after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg",
+        silver: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-sm before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-warm-stone after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg",
         
         // GOLD: Consistent default shadows with premium mica glassmorphism features
-        gold: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-warm-stone/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-sandy-ochre/14 dark:before:to-rusty-orange/12 before:rounded-card before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
+        gold: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-warm-stone/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-sandy-ochre/14 dark:before:to-rusty-orange/12 before:rounded-sm before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
       },
       size: {
         sm: "p-base",
@@ -233,7 +233,7 @@ export function PricingTable({
       {/* Annual toggle */}
       {showAnnualDiscount && (
         <div className="flex justify-center">
-          <div className="flex items-center gap-base p-xs bg-muted rounded-card">
+          <div className="flex items-center gap-base p-xs bg-muted rounded-sm">
             <button
               className={cn(
                 "px-base py-xs rounded-input text-body-sm font-medium transition-all duration-150",
@@ -351,7 +351,7 @@ export function PricingFusion({
   const [isAnnual, setIsAnnual] = React.useState(false)
 
   return (
-    <div className="w-full space-y-2xl p-lg bg-solid-brand-warm rounded-large border border-rusty-orange/20 hover-gradient-warm">
+    <div className="w-full space-y-2xl p-lg bg-solid-brand-warm rounded-md border border-rusty-orange/20 hover-gradient-warm">
       <div className="text-center space-y-[base]">
         <h2 className="text-heading-lg font-rajdhani font-bold text-foreground">
           Choose Your Membership
@@ -364,7 +364,7 @@ export function PricingFusion({
       {/* Annual toggle */}
       {showAnnualDiscount && (
         <div className="flex justify-center">
-          <div className="flex items-center gap-base p-xs mica-card rounded-card border border-rusty-orange/20">
+          <div className="flex items-center gap-base p-xs mica-card rounded-sm border border-rusty-orange/20">
             <button
               className={cn(
                 "px-md py-sm rounded-input text-body-sm font-medium transition-all duration-150",
@@ -410,7 +410,7 @@ export function PricingFusion({
 
       {/* Feature comparison with fusion styling */}
       {showFeatureComparison && (
-        <div className="mica-card rounded-large border border-rusty-orange/20 p-md overflow-x-auto">
+        <div className="mica-card rounded-md border border-rusty-orange/20 p-md overflow-x-auto">
           <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate mb-[md] text-center">
             Feature Comparison
           </h3>

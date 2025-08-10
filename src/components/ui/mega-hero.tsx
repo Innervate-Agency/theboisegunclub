@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 
 const megaHeroVariants = cva(
-  "relative w-full flex items-center justify-center overflow-hidden py-(--space-3xl)",
+  "relative w-full flex items-center justify-center overflow-hidden py-(--spacing-3xl)",
   {
     variants: {
       height: {
@@ -75,9 +75,9 @@ export function MegaHero({
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-mesh-warm opacity-30" />
       
-      <div className="relative z-10 w-full max-w-site mx-auto px-(--space-md) py-(--space-2xl)">
+      <div className="relative z-10 w-full max-w-site mx-auto px-(--spacing-md) py-(--spacing-2xl)">
         <div className={cn(
-          "space-y-(--space-lg)",
+          "space-y-(--spacing-lg)",
           centerContent && "text-center"
         )}>
           
@@ -92,7 +92,7 @@ export function MegaHero({
           )}
 
           {/* Main content */}
-          <div className="space-y-(--space-md)">
+          <div className="space-y-(--spacing-md)">
             {subtitle && (
               <p className="text-body-sm uppercase tracking-wider font-medium text-(--color-crisp-off-white)">
                 {subtitle}
@@ -113,13 +113,13 @@ export function MegaHero({
           {/* Badges */}
           {badges && badges.length > 0 && (
             <div className={cn(
-              "flex gap-(--space-base) flex-wrap",
+              "flex gap-(--spacing-base) flex-wrap",
               centerContent ? "justify-center" : "justify-start"
             )}>
               {badges.map((badge, index) => (
                 <div
                   key={index}
-                  className="px-(--space-base) py-(--space-xs) bg-(var(--color-crisp-off-white))/20 backdrop-blur-sm border border-(var(--color-crisp-off-white))/30 rounded-(--radius-base) text-body-sm font-medium text-(--color-crisp-off-white) shadow-(--shadow-xs)"
+                  className="px-(--spacing-base) py-(--spacing-xs) bg-(var(--color-crisp-off-white))/20 backdrop-blur-sm border border-(var(--color-crisp-off-white))/30 rounded-(--radius-base) text-body-sm font-medium text-(--color-crisp-off-white) shadow-(--shadow-xs)"
                 >
                   {badge}
                 </div>
@@ -130,7 +130,7 @@ export function MegaHero({
           {/* CTAs */}
           {(primaryCTA || secondaryCTA) && (
             <div className={cn(
-              "flex gap-(--space-base) flex-wrap",
+              "flex gap-(--spacing-base) flex-wrap",
               centerContent ? "justify-center" : "justify-start"
             )}>
               {primaryCTA && (

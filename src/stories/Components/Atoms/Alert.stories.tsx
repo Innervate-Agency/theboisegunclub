@@ -344,7 +344,7 @@ export const FusionShowcase: Story = {
         </div>
       </div>
       
-      <div className="bg-card/50 rounded-large p-md border border-border/20">
+      <div className="bg-card/50 rounded-xs p-md border border-border/20">
         <div className="flex items-center gap-sm mb-base">
           <Target className="h-5 w-5 text-rusty-orange" />
           <h3 className="font-rajdhani font-semibold">Result: Professional Authority</h3>

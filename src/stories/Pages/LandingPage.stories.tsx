@@ -291,7 +291,7 @@ export const Complete: Story = {
       <section className="px-md pt-xl pb-4xl">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center">
-            <div className="bg-card rounded-lg p-xl shadow-sm max-w-4xl mx-auto relative overflow-hidden group after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-sagebrush-green after:to-sandy-ochre after:transition-all after:duration-500 after:ease-out hover:after:w-full after:rounded-b-lg">
+            <div className="bg-card rounded-xs p-xl shadow-sm max-w-4xl mx-auto relative overflow-hidden group after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-sagebrush-green after:to-sandy-ochre after:transition-all after:duration-500 after:ease-out hover:after:w-full after:rounded-b-lg">
               <div>
                 <Badge className="mb-base bg-sagebrush-green/20 text-sagebrush-green">
                   <CheckCircle className="h-3 w-3 mr-1" />
@@ -386,7 +386,7 @@ export const Complete: Story = {
             
             {/* Right Side - Enhanced Signup */}
             <div className="max-w-lg mx-auto lg:mx-0">
-              <div className="bg-white dark:bg-gray-900 rounded-xl p-xl shadow-elevated border border-sandy-ochre/20 relative overflow-hidden group">
+              <div className="bg-white dark:bg-gray-900 rounded-none p-xl shadow-elevated border border-sandy-ochre/20 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-sandy-ochre/5 to-rusty-orange/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute bottom-[-1px] left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-sandy-ochre to-rusty-orange transition-all duration-500 ease-out group-hover:w-full rounded-b-xl"></div>
                 
@@ -433,7 +433,7 @@ export const Complete: Story = {
                         name="message"
                         placeholder="Your message..."
                         rows={4}
-                        className="w-full p-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:border-sandy-ochre focus:outline-none focus:ring-2 focus:ring-sandy-ochre/20 resize-none"
+                        className="w-full p-base rounded-xs border border-border bg-background text-foreground placeholder:text-muted-foreground focus:border-sandy-ochre focus:outline-none focus:ring-2 focus:ring-sandy-ochre/20 resize-none"
                         required
                       />
                     </div>

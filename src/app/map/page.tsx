@@ -205,7 +205,7 @@ function LocationCard({ location }: { location: typeof shootingLocations[0] }) {
         </div>
         
         {location.restrictions && (
-          <div className="p-xs bg-safety-red/10 rounded-md border border-safety-red/20">
+          <div className="p-xs bg-safety-red/10 rounded-sm border border-safety-red/20">
             <div className="flex items-start gap-xs">
               <Info className="h-4 w-4 text-safety-red mt-0.5 flex-shrink-0" />
               <div>
@@ -282,10 +282,10 @@ export default function MapPage() {
               <Compass className="h-4 w-4 mr-xs" />
               Shooting Locations
             </Badge>
-            <h1 className="font-rajdhani text-6xl md:text-7xl font-bold text-range-white leading-tight">
+            <h1 className="font-rajdhani text-6xl md:text-7xl font-bold text-crisp-off-white leading-tight">
               Idaho Shooting <span className="text-rusty-orange">Map</span>
             </h1>
-            <p className="text-body-lg text-range-white/80 max-w-3xl mx-auto">
+            <p className="text-body-lg text-crisp-off-white/80 max-w-3xl mx-auto">
               Community-driven map of legal shooting locations across Idaho. From BLM land to designated shooting areas - discover places to practice and enjoy the sport safely.
             </p>
             
@@ -485,13 +485,13 @@ export default function MapPage() {
               <Shield className="h-4 w-4 mr-xs" />
               Safety First
             </Badge>
-            <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-range-white">
+            <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-crisp-off-white">
               Shoot <span className="text-rusty-orange">Responsibly</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-lg text-left max-w-3xl mx-auto">
               <div className="space-y-base">
-                <h3 className="font-rajdhani text-xl font-bold text-range-white">Before You Go:</h3>
-                <ul className="space-y-xs text-range-white/80">
+                <h3 className="font-rajdhani text-xl font-bold text-crisp-off-white">Before You Go:</h3>
+                <ul className="space-y-xs text-crisp-off-white/80">
                   <li className="flex items-center gap-xs">• Check current fire restrictions</li>
                   <li className="flex items-center gap-xs">• Verify seasonal closures</li>
                   <li className="flex items-center gap-xs">• Bring adequate backstop if needed</li>
@@ -499,8 +499,8 @@ export default function MapPage() {
                 </ul>
               </div>
               <div className="space-y-base">
-                <h3 className="font-rajdhani text-xl font-bold text-range-white">Safety Rules:</h3>
-                <ul className="space-y-xs text-range-white/80">
+                <h3 className="font-rajdhani text-xl font-bold text-crisp-off-white">Safety Rules:</h3>
+                <ul className="space-y-xs text-crisp-off-white/80">
                   <li className="flex items-center gap-xs">• Follow the four fundamental rules</li>
                   <li className="flex items-center gap-xs">• Be aware of your surroundings</li>
                   <li className="flex items-center gap-xs">• Respect private property</li>

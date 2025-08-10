@@ -60,12 +60,12 @@ function DialogContent({
       <DialogPrimitive.Content
         data-slot="dialog-content"
         className={cn(
-          "fixed inset-0 z-50 flex items-center justify-center p-(--space-base) data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+          "fixed inset-0 z-50 flex items-center justify-center p-(--spacing-base) data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
           className
         )}
         {...props}
       >
-        <div className="mica-modal text-card-foreground w-full max-w-[calc(100%-2rem)] sm:max-w-lg grid gap-(--space-base) rounded-card p-md data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 relative">
+        <div className="mica-modal text-card-foreground w-full max-w-[calc(100%-2rem)] sm:max-w-lg grid gap-(--spacing-base) rounded-sm p-md data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 relative">
           {children}
           {showCloseButton && (
             <DialogPrimitive.Close
@@ -86,7 +86,7 @@ function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="dialog-header"
-      className={cn("flex flex-col gap-(--space-xs) text-center sm:text-left", className)}
+      className={cn("flex flex-col gap-(--spacing-xs) text-center sm:text-left", className)}
       {...props}
     />
   )
@@ -97,7 +97,7 @@ function DialogFooter({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="dialog-footer"
       className={cn(
-        "flex flex-col-reverse gap-(--space-xs) sm:flex-row sm:justify-end",
+        "flex flex-col-reverse gap-(--spacing-xs) sm:flex-row sm:justify-end",
         className
       )}
       {...props}

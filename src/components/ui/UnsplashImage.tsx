@@ -53,12 +53,12 @@ export default function LocalImage({
     return (
       <div 
         className={cn(
-          "bg-gradient-card-warm border border-sandy-ochre/20 rounded-card flex items-center justify-center",
+          "bg-gradient-card-warm border border-sandy-ochre/20 rounded-sm flex items-center justify-center",
           className
         )}
         style={{ width: fill ? '100%' : width, height: fill ? '100%' : height }}
       >
-        <div className="text-center space-y-(--space-xs)">
+        <div className="text-center space-y-(--spacing-xs)">
           <ImageIcon className="icon-xl icon-muted mx-auto" />
           <p className="text-body-sm text-warning-amber font-noto-sans">Image unavailable</p>
         </div>
@@ -71,10 +71,10 @@ export default function LocalImage({
       {/* Loading Placeholder */}
       {isLoading && (
         <div 
-          className="absolute inset-0 bg-gradient-card-warm border border-sandy-ochre/20 rounded-card flex items-center justify-center z-10"
+          className="absolute inset-0 bg-gradient-card-warm border border-sandy-ochre/20 rounded-sm flex items-center justify-center z-10"
           style={{ width: fill ? '100%' : width, height: fill ? '100%' : height }}
         >
-          <div className="animate-pulse space-y-(--space-xs) text-center">
+          <div className="animate-pulse space-y-(--spacing-xs) text-center">
             <ImageIcon className="icon-lg icon-muted mx-auto" />
             <p className="text-caption text-warning-amber font-noto-sans">Loading...</p>
           </div>
@@ -120,7 +120,7 @@ export function HeroImage({
       height={height}
       priority={priority}
       quality={quality}
-      className={cn("rounded-large shadow-elevated", className)}
+      className={cn("rounded-md shadow-elevated", className)}
       fallback="/images/hero-bg.webp"
       {...props}
     />
@@ -144,7 +144,7 @@ export function EventImage({
       height={height}
       priority={priority}
       quality={quality}
-      className={cn("rounded-card", className)}
+      className={cn("rounded-sm", className)}
       fallback="/images/events.jpg"
       {...props}
     />
@@ -168,7 +168,7 @@ export function TrainingImage({
       height={height}
       priority={priority}
       quality={quality}
-      className={cn("rounded-card", className)}
+      className={cn("rounded-sm", className)}
       fallback="/images/training.jpg"
       {...props}
     />
@@ -192,7 +192,7 @@ export function MembershipImage({
       height={height}
       priority={priority}
       quality={quality}
-      className={cn("rounded-card", className)}
+      className={cn("rounded-sm", className)}
       fallback="/images/membership.jpg"
       {...props}
     />

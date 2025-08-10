@@ -48,7 +48,7 @@ export const Glass: Story = {
     placeholder: 'Enter glass details...',
   },
   render: (args) => (
-    <div className="relative w-[400px] p-10 bg-cover bg-center rounded-card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')" }}>
+    <div className="relative w-[400px] p-10 bg-cover bg-center rounded-sm" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')" }}>
       <div className="grid w-full max-w-sm gap-md">
         <Label htmlFor="glass-message" className="text-range-white">Glass Message</Label>
         <Textarea {...args} />

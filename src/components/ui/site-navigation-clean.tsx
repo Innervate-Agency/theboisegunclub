@@ -103,7 +103,7 @@ export function SiteNavigation({
           {showLogo && (
             <div className="flex items-center">
               <Link href="/" className="flex items-center gap-sm">
-                <div className="w-10 h-10 bg-gradient-to-br from-sandy-ochre to-rusty-orange rounded-lg flex flex-col items-center justify-center relative">
+                <div className="w-10 h-10 bg-gradient-to-br from-sandy-ochre to-rusty-orange rounded-md flex flex-col items-center justify-center relative">
                   <div className="text-[10px] font-rajdhani font-black text-dark-chocolate tracking-tight leading-none">
                     TB
                   </div>
@@ -130,7 +130,7 @@ export function SiteNavigation({
               <React.Fragment key={item.href}>
                 <Link
                   href={item.href}
-                  className={`group relative flex items-center gap-xs px-base py-xs text-sm font-medium text-muted-foreground transition-all duration-200 hover:-translate-y-1 ${getHoverClasses(item.color)}`}
+                  className={`group relative flex items-center gap-xs px-base py-xs text-sm font-medium text-muted-foreground transition-all duration-200  ${getHoverClasses(item.color)}`}
                 >
                   <item.icon className="h-3 w-3" />
                   {item.label}

@@ -16,17 +16,17 @@ const vendorCardVariants = cva(
   {
     variants: {
       tier: {
-        // FREE: Clean baseline - professional foundation (no animation)
-        free: "shadow-flat hover:shadow-md",
+        // FREE: Clean baseline - foundational presence
+        free: "shadow-present hover:shadow-elevated",
         
-        // COPPER: Enhanced copper presence - subtle background tint with prominent gradient accent
-        copper: "shadow-flat hover:shadow-md bg-rusty-orange/[0.02] hover:bg-rusty-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        // COPPER: Enhanced copper presence - premium depth with tactical warmth
+        copper: "shadow-elevated hover:shadow-prominent bg-rusty-orange/[0.02] hover:bg-rusty-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
-        // SILVER: Consistent default shadows with subtle cobalt glassmorphism
-        silver: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-card before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-warm-stone after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg",
+        // SILVER: Professional prominence with sophisticated glassmorphism
+        silver: "relative shadow-prominent hover:shadow-commanding bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-none before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-warm-stone after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg",
         
-        // GOLD: Consistent default shadows with premium mica glassmorphism features
-        gold: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-warm-stone/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-rusty-orange/14 dark:before:to-rusty-orange/12 before:rounded-card before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-rusty-orange after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
+        // GOLD: Hero-level commanding presence with premium tactical depth
+        gold: "relative shadow-commanding hover:shadow-hero bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-warm-stone/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-rusty-orange/14 dark:before:to-rusty-orange/12 before:rounded-none before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-rusty-orange after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
       },
       size: {
         sm: "p-base",           // 16px - compact cards
@@ -101,8 +101,8 @@ export function VendorCard({
       {...props}
     >
       {/* Header with business info */}
-      <div className="mb-(--space-md)">
-        <div className="flex items-center gap-sm mb-(--space-xs)">
+      <div className="mb-(--spacing-md)">
+        <div className="flex items-center gap-sm mb-(--spacing-xs)">
           {/* Business logo/image */}
           <Avatar className="h-(--icon-3xl) w-(--icon-3xl) rounded-(--radius-lg) flex-shrink-0">
             {imageUrl && !imgError ? (
@@ -118,7 +118,7 @@ export function VendorCard({
             </AvatarFallback>
           </Avatar>
           
-          <div className="space-y-(--space-micro) flex-1">
+          <div className="space-y-(--spacing-micro) flex-1">
             <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground leading-tight transition-colors duration-200 group-hover:text-rusty-orange">
               {businessName}
             </h3>
@@ -128,13 +128,13 @@ export function VendorCard({
 
         {/* Tier-specific badges - now below name block */}
         {(isVerified || showSponsored) && (
-          <div className="flex gap-sm ml-[calc(3rem+var(--space-sm))]">
+          <div className="flex gap-sm ml-[calc(3rem+var(--spacing-sm))]">
             {isVerified && (
               <Badge 
                 variant={tier === 'gold' ? 'elite' : 'default'}
                 size="sm"
               >
-                <Shield className="w-icon-xs h-icon-xs mr-(--space-xs)" />
+                <Shield className="w-icon-xs h-icon-xs mr-(--spacing-xs)" />
                 Verified
               </Badge>
             )}
@@ -149,13 +149,13 @@ export function VendorCard({
 
       {/* Description */}
       {description && (
-        <p className="text-body-sm text-muted-foreground mb-(--space-md) line-clamp-2">
+        <p className="text-body-sm text-muted-foreground mb-(--spacing-md) line-clamp-2">
           {description}
         </p>
       )}
 
       {/* Contact Information */}
-      <div className="space-y-(--space-xs) mb-(--space-md)">
+      <div className="space-y-(--spacing-xs) mb-(--spacing-md)">
         {address && (
           <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
             <MapPin className="w-icon-sm h-icon-sm flex-shrink-0" />
@@ -178,7 +178,7 @@ export function VendorCard({
 
       {/* Rating */}
       {rating && reviewCount && (
-        <div className="flex items-center gap-xs mb-(--space-md)">
+        <div className="flex items-center gap-xs mb-(--spacing-md)">
           <div className="flex items-center">
             {[1, 2, 3, 4, 5].map((star) => (
               <Star
@@ -200,7 +200,7 @@ export function VendorCard({
 
       {/* Specialties */}
       {specialties.length > 0 && (
-        <div className="flex flex-wrap gap-(--space-tiny) mb-(--space-md)">
+        <div className="flex flex-wrap gap-(--spacing-tiny) mb-(--spacing-md)">
           {specialties.slice(0, 3).map((specialty, index) => (
             <Badge 
               key={index} 
@@ -223,7 +223,7 @@ export function VendorCard({
 
       {/* Enhanced features for Silver/Gold tiers */}
       {showLeads && (
-        <div className="flex items-center gap-xs mb-(--space-md) p-xs bg-rifling-green/10 rounded-(--radius-md)">
+        <div className="flex items-center gap-xs mb-(--spacing-md) p-xs bg-rifling-green/10 rounded-(--radius-md)">
           <TrendingUp className="w-icon-sm h-icon-sm text-rifling-green" />
           <span className="text-body-sm text-rifling-green font-medium">
             {monthlyLeads} leads this month
@@ -232,7 +232,7 @@ export function VendorCard({
       )}
 
       {/* Action buttons - flat inside card container */}
-      <div className="flex gap-xs pt-(--space-sm)">
+      <div className="flex gap-xs pt-(--spacing-sm)">
         <Button 
           size="sm" 
           variant="solid-accent"

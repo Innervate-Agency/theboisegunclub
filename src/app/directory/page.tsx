@@ -219,7 +219,7 @@ export default function DirectoryPage() {
         {/* Breadcrumb Hero - Left Aligned */}
         <section className="bg-gradient-to-r from-dark-chocolate/95 to-warm-stone/90 border-b border-border/20">
           <div className="container mx-auto max-w-site px-md py-lg">
-            <div className="flex items-center gap-xs text-sm text-range-white/60 mb-base">
+            <div className="flex items-center gap-xs text-sm text-crisp-off-white/60 mb-base">
               <span>Home</span>
               <ChevronRight className="h-4 w-4" />
               <span className="text-rusty-orange">Directory</span>
@@ -230,10 +230,10 @@ export default function DirectoryPage() {
                   <Building2 className="h-4 w-4 mr-xs" />
                   Business Directory
                 </Badge>
-                <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-range-white leading-tight">
+                <h1 className="font-rajdhani text-4xl md:text-5xl font-bold text-crisp-off-white leading-tight">
                   Treasure Valley Directory
                 </h1>
-                <p className="text-body-lg text-range-white/80 max-w-2xl">
+                <p className="text-body-lg text-crisp-off-white/80 max-w-2xl">
                   Connect with verified firearms businesses across Idaho. From FFLs and ranges to training and custom work.
                 </p>
                 <div className="flex gap-base">
@@ -263,17 +263,17 @@ export default function DirectoryPage() {
                         <Award className="h-3 w-3 mr-xs" />
                         Gold Partner
                       </Badge>
-                      <div className="flex items-center gap-xs text-xs text-range-white/60">
+                      <div className="flex items-center gap-xs text-xs text-crisp-off-white/60">
                         <Star className="h-3 w-3 fill-rusty-orange text-rusty-orange" />
                         <span>4.8</span>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-xs">
-                    <h3 className="font-rajdhani font-bold text-range-white text-lg">Boise Gun Club</h3>
-                    <p className="text-sm text-range-white/80">Premier Shooting Range & Club</p>
+                    <h3 className="font-rajdhani font-bold text-crisp-off-white text-lg">Boise Gun Club</h3>
+                    <p className="text-sm text-crisp-off-white/80">Premier Shooting Range & Club</p>
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-xs text-xs text-range-white/60">
+                      <div className="flex items-center gap-xs text-xs text-crisp-off-white/60">
                         <TrendingUp className="h-3 w-3" />
                         <span>245 leads this month</span>
                       </div>
@@ -322,11 +322,11 @@ export default function DirectoryPage() {
               {/* Quick Stats */}
               <div className="space-y-base">
                 <div className="grid grid-cols-2 lg:grid-cols-1 gap-base">
-                  <div className="text-center p-base bg-card rounded-button border">
+                  <div className="text-center p-base bg-card rounded-sm border">
                     <div className="font-rajdhani text-2xl font-bold text-rusty-orange">127+</div>
                     <div className="text-sm text-muted-foreground">Local Businesses</div>
                   </div>
-                  <div className="text-center p-base bg-card rounded-button border">
+                  <div className="text-center p-base bg-card rounded-sm border">
                     <div className="font-rajdhani text-2xl font-bold text-rusty-orange">4.6</div>
                     <div className="text-sm text-muted-foreground">Average Rating</div>
                   </div>
@@ -383,7 +383,7 @@ export default function DirectoryPage() {
                     <Card key={tier.value} className="p-base hover:shadow-md transition-all duration-300">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-base">
-                          <div className={`w-3 h-3 rounded-full bg-${tier.color}`}></div>
+                          <div className={`w-3 h-3 rounded-pill bg-${tier.color}`}></div>
                           <div>
                             <h3 className="font-medium text-card-foreground">{tier.label}</h3>
                             <div className="text-sm text-muted-foreground">
@@ -530,10 +530,10 @@ export default function DirectoryPage() {
               <Shield className="h-4 w-4 mr-xs" />
               Partnership Program
             </Badge>
-            <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-range-white">
+            <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-crisp-off-white">
               Join as a <span className="text-rusty-orange">Partner</span>
             </h2>
-            <p className="text-body-lg text-range-white/80 max-w-2xl mx-auto">
+            <p className="text-body-lg text-crisp-off-white/80 max-w-2xl mx-auto">
               Get enhanced visibility, lead generation, and exclusive benefits in Treasure Valley's premier firearms business directory. Multiple partnership tiers available.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-base text-left">
@@ -541,7 +541,7 @@ export default function DirectoryPage() {
                 <CardHeader className="pb-base">
                   <CardTitle className="text-rusty-orange font-rajdhani">Gold Partner</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-xs text-range-white/80">
+                <CardContent className="space-y-xs text-crisp-off-white/80">
                   <div className="flex items-center gap-xs"><Shield className="h-4 w-4 text-rusty-orange" /> Enhanced listing with priority placement</div>
                   <div className="flex items-center gap-xs"><TrendingUp className="h-4 w-4 text-rusty-orange" /> Lead generation tracking</div>
                   <div className="flex items-center gap-xs"><Star className="h-4 w-4 text-rusty-orange" /> Sponsored badge and featured placement</div>
@@ -551,7 +551,7 @@ export default function DirectoryPage() {
                 <CardHeader className="pb-base">
                   <CardTitle className="text-stainless-steel font-rajdhani">Silver Member</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-xs text-range-white/80">
+                <CardContent className="space-y-xs text-crisp-off-white/80">
                   <div className="flex items-center gap-xs"><Shield className="h-4 w-4 text-stainless-steel" /> Enhanced listing with extra details</div>
                   <div className="flex items-center gap-xs"><Users className="h-4 w-4 text-stainless-steel" /> Customer review management</div>
                   <div className="flex items-center gap-xs"><MapPin className="h-4 w-4 text-stainless-steel" /> Map integration and hours display</div>
@@ -561,7 +561,7 @@ export default function DirectoryPage() {
                 <CardHeader className="pb-base">
                   <CardTitle className="text-rusty-orange font-rajdhani">Copper Member</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-xs text-range-white/80">
+                <CardContent className="space-y-xs text-crisp-off-white/80">
                   <div className="flex items-center gap-xs"><Building2 className="h-4 w-4 text-rusty-orange" /> Standard enhanced listing</div>
                   <div className="flex items-center gap-xs"><Phone className="h-4 w-4 text-rusty-orange" /> Contact information display</div>
                   <div className="flex items-center gap-xs"><Target className="h-4 w-4 text-rusty-orange" /> Specialty tags and categories</div>

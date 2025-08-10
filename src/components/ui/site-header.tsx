@@ -36,7 +36,7 @@ export function SiteHeader() {
           {/* Logo */}
           <div className="flex items-center gap-base">
             <Link href="/" className="flex items-center gap-xs">
-              <div className="h-8 w-8 rounded-button bg-gradient-to-br from-sandy-ochre to-rusty-orange flex items-center justify-center">
+              <div className="h-8 w-8 rounded-sm bg-gradient-to-br from-sandy-ochre to-rusty-orange flex items-center justify-center">
                 <span className="text-dark-chocolate font-rajdhani font-bold text-sm">TBG</span>
               </div>
               <div className="hidden sm:block">
@@ -65,15 +65,15 @@ export function SiteHeader() {
                       <p className="text-sm text-muted-foreground">Competitions, training, and community events</p>
                     </div>
                     <div className="grid gap-xs">
-                      <NavigationMenuLink href="/events" className="block select-none rounded-button p-base hover:bg-accent hover:text-accent-foreground">
+                      <NavigationMenuLink href="/events" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-sm font-medium">All Events</div>
                         <p className="text-xs text-muted-foreground">Browse all upcoming events</p>
                       </NavigationMenuLink>
-                      <NavigationMenuLink href="/events?category=competition" className="block select-none rounded-button p-base hover:bg-accent hover:text-accent-foreground">
+                      <NavigationMenuLink href="/events?category=competition" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-sm font-medium">Competitions</div>
                         <p className="text-xs text-muted-foreground">USPSA, IDPA, and local matches</p>
                       </NavigationMenuLink>
-                      <NavigationMenuLink href="/events?category=training" className="block select-none rounded-button p-base hover:bg-accent hover:text-accent-foreground">
+                      <NavigationMenuLink href="/events?category=training" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-sm font-medium">Training Events</div>
                         <p className="text-xs text-muted-foreground">Education and skill development</p>
                       </NavigationMenuLink>
@@ -95,15 +95,15 @@ export function SiteHeader() {
                       <p className="text-sm text-muted-foreground">Local firearms businesses and services</p>
                     </div>
                     <div className="grid gap-xs">
-                      <NavigationMenuLink href="/directory" className="block select-none rounded-button p-base hover:bg-accent hover:text-accent-foreground">
+                      <NavigationMenuLink href="/directory" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-sm font-medium">All Businesses</div>
                         <p className="text-xs text-muted-foreground">Complete Treasure Valley directory</p>
                       </NavigationMenuLink>
-                      <NavigationMenuLink href="/directory?type=dealer" className="block select-none rounded-button p-base hover:bg-accent hover:text-accent-foreground">
+                      <NavigationMenuLink href="/directory?type=dealer" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-sm font-medium">FFL Dealers</div>
                         <p className="text-xs text-muted-foreground">Licensed firearms dealers</p>
                       </NavigationMenuLink>
-                      <NavigationMenuLink href="/directory?type=range" className="block select-none rounded-button p-base hover:bg-accent hover:text-accent-foreground">
+                      <NavigationMenuLink href="/directory?type=range" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-sm font-medium">Shooting Ranges</div>
                         <p className="text-xs text-muted-foreground">Indoor and outdoor facilities</p>
                       </NavigationMenuLink>
@@ -149,15 +149,15 @@ export function SiteHeader() {
                       <p className="text-sm text-muted-foreground">Join the conversation</p>
                     </div>
                     <div className="grid gap-xs">
-                      <NavigationMenuLink href="/forums" className="block select-none rounded-button p-base hover:bg-accent hover:text-accent-foreground">
+                      <NavigationMenuLink href="/forums" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-sm font-medium">Forums</div>
                         <p className="text-xs text-muted-foreground">Community discussions</p>
                       </NavigationMenuLink>
-                      <NavigationMenuLink href="/about" className="block select-none rounded-button p-base hover:bg-accent hover:text-accent-foreground">
+                      <NavigationMenuLink href="/about" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-sm font-medium">About TBGC</div>
                         <p className="text-xs text-muted-foreground">Our mission and story</p>
                       </NavigationMenuLink>
-                      <NavigationMenuLink href="/contact" className="block select-none rounded-button p-base hover:bg-accent hover:text-accent-foreground">
+                      <NavigationMenuLink href="/contact" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-sm font-medium">Contact Us</div>
                         <p className="text-xs text-muted-foreground">Get in touch</p>
                       </NavigationMenuLink>
@@ -194,27 +194,27 @@ export function SiteHeader() {
         {isMenuOpen && (
           <div className="lg:hidden py-base border-t border-border/40">
             <nav className="space-y-base">
-              <Link href="/events" className="flex items-center gap-xs p-xs rounded-button hover:bg-accent text-card-foreground">
+              <Link href="/events" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
                 <Calendar className="h-4 w-4" />
                 Events
               </Link>
-              <Link href="/directory" className="flex items-center gap-xs p-xs rounded-button hover:bg-accent text-card-foreground">
+              <Link href="/directory" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
                 <Building2 className="h-4 w-4" />
                 Directory
               </Link>
-              <Link href="/guides" className="flex items-center gap-xs p-xs rounded-button hover:bg-accent text-card-foreground">
+              <Link href="/guides" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
                 <BookOpen className="h-4 w-4" />
                 Guides
               </Link>
-              <Link href="/map" className="flex items-center gap-xs p-xs rounded-button hover:bg-accent text-card-foreground">
+              <Link href="/map" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
                 <MapPin className="h-4 w-4" />
                 Map
               </Link>
-              <Link href="/marketplace" className="flex items-center gap-xs p-xs rounded-button hover:bg-accent text-card-foreground">
+              <Link href="/marketplace" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
                 <ShoppingCart className="h-4 w-4" />
                 Marketplace
               </Link>
-              <Link href="/forums" className="flex items-center gap-xs p-xs rounded-button hover:bg-accent text-card-foreground">
+              <Link href="/forums" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
                 <Users className="h-4 w-4" />
                 Forums
               </Link>

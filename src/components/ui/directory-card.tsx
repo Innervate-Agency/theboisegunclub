@@ -11,8 +11,8 @@ export interface DirectoryCardProps {
 export function DirectoryCard({ title, description, children }: DirectoryCardProps) {
   return (
     <Card className="p-(--card-padding)">
-      <h3 className="text-(--card-title-size) font-semibold mb-(--space-xs)">{title}</h3>
-      {description && <p className="text-muted-foreground mb-(--space-sm)">{description}</p>}
+      <h3 className="text-(--card-title-size) font-semibold mb-(--spacing-xs)">{title}</h3>
+      {description && <p className="text-muted-foreground mb-(--spacing-sm)">{description}</p>}
       {children}
     </Card>
   )

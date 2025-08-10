@@ -10,7 +10,8 @@ This is **The Boise Gun Club** - a Next.js 15 application serving as a comprehen
 
 ### Core Development
 
-- `npm run dev` - Start development server with Turbopack (uses --turbopack flag)
+- `npm run dev` - Start development server (Next.js 15)
+- `npm run dev:turbo` - Start development server with Turbopack
 - `npm run build` - Build production application
 - `npm start` - Start production server
 - `npm run lint` - Run ESLint for code quality
@@ -19,6 +20,8 @@ This is **The Boise Gun Club** - a Next.js 15 application serving as a comprehen
 - `npm run fix` - Quick fixes script
 - `npm run sync:docs` - Sync design documentation
 - `npm run ammo-list` - Generate ammo list
+- `npm run analyze` - Bundle analysis with webpack-bundle-analyzer
+- `npm run lighthouse` - Performance audit
 
 ### Storybook (Component Development)
 
@@ -35,7 +38,8 @@ This is **The Boise Gun Club** - a Next.js 15 application serving as a comprehen
 - **Browser Testing**: Uses Playwright with Chromium (`@vitest/browser`)
 - **Test Execution**: Tests auto-run when Storybook stories are loaded via `npm run storybook`
 - **Test Setup**: Configured in `vitest.config.ts` with Storybook addon integration
-- **No Standalone Tests**: All testing happens through Storybook's Vitest integration
+- **Node Tests**: Additional specs in `/specs/*.spec.ts` run with Vitest node environment
+- **No Standalone Commands**: All testing happens through Storybook's Vitest integration
 
 ## Architecture & Structure
 
@@ -104,26 +108,28 @@ Use these patterns when adding new components or features to maintain consistenc
 
 ### Critical Color Rules (ZERO TOLERANCE)
 
-- **ONLY** use the 10-color Bogus Basin & River/Sagebrush system from `src/app/globals.css`
+- **ONLY** use the 23-color Boise landscape system from `src/app/globals.css`
+- **Core 10 Colors**: Bogus Basin (dark theme) & River/Sagebrush (light theme) strategic distribution
+- **Extended Colors**: Additional Boise landscape colors (foothills-purple, canyon-clay, high-desert-sage)
 - **NEVER** use hardcoded hex codes: `bg-[#F2CB05]` is **FORBIDDEN**
 - **NEVER** use generic Tailwind colors: `text-gray-500`, `bg-blue-600`, `border-red-400` etc.
 - **ALWAYS** use semantic color names: `bg-rusty-orange`, `text-slate-blue`, `border-pale-stone`
 - **Strategic Distribution**: Each color has specific semantic meaning for UI consistency
 
-### Critical Shadow Rules (ZERO TOLERANCE)
+### Critical Shadow System (SEMANTIC HIERARCHY)
 
-- **CONSISTENT SHADOWS**: ALL components use `shadow-sm hover:shadow-md` regardless of tier
-- **NEVER** use shadow depth for tier indication: `shadow-lg`, `shadow-xl`, `shadow-2xl` are **FORBIDDEN** for premium variants
-- **PREMIUM FEATURES**: Express through background overlays (`before:` pseudo-elements) and gradient accents (`after:` pseudo-elements)
-- **STRATEGIC RESTRAINT**: Avoid visual noise - consistent shadow depth maintains professional appearance
-- **SPACING**: Use `gap-8` for card grids, not `gap-6` or smaller for proper breathing room
+- **STRIPE-INSPIRED DEPTH**: 8-level semantic shadow system provides dramatic visual distinction
+- **SHADOW PROGRESSION**: `shadow-ghost` → `shadow-whisper` → `shadow-present` → `shadow-elevated` → `shadow-prominent` → `shadow-commanding` → `shadow-hero` → `shadow-modal`
+- **CONTEXTUAL SEMANTICS**: Each shadow level communicates importance and interactive affordance
+- **INTERACTIVE PROGRESSION**: Every shadow steps up logically on hover (present→elevated, prominent→commanding, etc.)
+- **NO GENERIC SIZES**: Use semantic names (`shadow-prominent`) not generic sizes (`shadow-lg`)
 
-### Critical Border Rules (ZERO TOLERANCE - NEW POLICY)
+### Critical Border Radius Rules (TACTICAL AESTHETIC)
 
-- **BORDERS ARE RESTRICTED**: Only use borders for alerts, badges, sonner/toast, form inputs, tables, and explicit outline variants
-- **USE SHADOWS INSTEAD**: Cards, modals, dropdowns, navigation, and content containers must use shadows for visual separation
-- **SHADOW HIERARCHY**: `shadow-xs` (minimal) → `shadow-sm` (default) → `shadow-md` (interactive) → `shadow-lg` (elevated) → `shadow-xl` (hero)
-- **EXCEPTION**: `outlined` variants can use borders when explicitly requesting outline styling
+- **SQUARE TACTICAL**: Main cards and structural components use `rounded-none` (0px) for tactical firearms aesthetic  
+- **SUBTLE INTERACTION**: Interactive elements use minimal rounding (buttons: `rounded-xs` 4px, badges: `rounded-sm` 8px)
+- **SHADOW-FIRST**: Visual hierarchy achieved through dramatic shadows, not border radius
+- **COMPONENT HIERARCHY**: Structure=Square, Interaction=Subtle, Visual Separation=Shadow-Driven
 
 ### Primary Accent Colors (Updated 2025-08-08)
 
@@ -236,6 +242,39 @@ const config: StorybookConfig = {
 - **ALWAYS** run `npm run storybook:fix` after configuration changes
 - **NEVER** mix `@storybook/nextjs` and `@storybook/nextjs-vite`
 - **ALWAYS** include `@storybook/addon-docs` for MDX support in Storybook 9
+
+## ✅ COMPLETED MILESTONE: Semantic Shadow System & Tactical Square Aesthetic (2025-08-10)
+
+### SOPHISTICATED SHADOW SYSTEM: Stripe-Inspired Semantic Depth Hierarchy
+
+**MAJOR TECHNICAL ACHIEVEMENT**: Complete implementation of 8-level semantic shadow system with dramatic visual distinction, replacing generic morphic design with sophisticated contextual depth hierarchy.
+
+#### Technical Implementation
+```css
+/* 8-Level Semantic Shadow System */
+--shadow-ghost: 0 1px 1px 0 rgba(50, 50, 93, 0.04);
+--shadow-whisper: 0 1px 3px 0 rgba(50, 50, 93, 0.09);
+--shadow-present: 0 4px 6px -1px rgba(50, 50, 93, 0.11);
+--shadow-elevated: 0 10px 15px -3px rgba(50, 50, 93, 0.11), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+--shadow-prominent: 0 20px 25px -5px rgba(50, 50, 93, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+--shadow-commanding: 0 25px 50px -12px rgba(50, 50, 93, 0.35), 0 0 0 1px rgba(50, 50, 93, 0.05);
+--shadow-hero: 0 32px 80px -12px rgba(50, 50, 93, 0.4), 0 0 0 1px rgba(50, 50, 93, 0.08);
+--shadow-modal: 0 50px 100px -20px rgba(50, 50, 93, 0.5), 0 30px 60px -30px rgba(0, 0, 0, 0.35);
+```
+
+#### Component Applications
+- **VendorCard Tiers**: Free (present→elevated) → Gold (commanding→hero) with clear value progression
+- **Button Variants**: Semantic shadow progression communicates interaction importance
+- **Card System**: Context-aware depth (subtle=ghost, premium=prominent, fire=commanding)
+- **Interactive Feedback**: Every component steps up shadow level on hover
+
+#### Tactical Square Aesthetic Implementation
+- **Main Cards**: `rounded-none` (square tactical) for structural authority
+- **Interactive Elements**: Subtle rounding (buttons 4px, badges 8px) for usability
+- **Shadow-First Design**: Visual hierarchy through depth, not border radius
+- **Systematic Update**: Used sed commands to efficiently update 90+ components
+
+**🎯 RESULT**: Professional shadow system with dramatic visual distinction like Stripe's implementation, combined with tactical square aesthetic perfect for firearms community platform.
 
 ## ✅ COMPLETED MILESTONE: Page-Specific Theming System (2025-08-09)
 
@@ -601,19 +640,20 @@ function useAccessibilitySettings() {
 
 ## Key Reference Files
 
-- `src/app/globals.css` - Complete 26-color palette and design tokens
+- `src/app/globals.css` - Complete 23-color Boise landscape palette and design tokens
 - `src/components/ui/_component-pattern.tsx` - CVA component template
-- `specs/` - Component specifications and requirements
+- `specs/` - Component specifications and requirements (Vitest specs)
 - `.github/copilot-instructions.md` - Additional AI coding guidelines
 - `scripts/` - Automation scripts for health checks, fixes, and validation
-- `scripts/fix-storybook.js` - Automated Storybook configuration fixer
-- **MIGRATION_PROGRESS.md** - Detailed sed command tracking and violation inventory
+- `vitest.config.ts` - Testing configuration with Storybook integration
+- `package.json` - All available npm scripts and dependencies
 
 ## Project Memory
 
-- The user prefers that all styling use their custom 26-color Idaho Firearms Heritage palette instead of generic Tailwind CSS classes.
-- The user prefers using design tokens and a restrained styling approach to ensure UI components look and function great.
-- Badges should have no shadows and instead use a very light outline in the same color (darker than the badge fill), and colors must come from the global.css palette.
+- The user prefers that all styling use their custom 23-color Boise landscape palette instead of generic Tailwind CSS colors
+- The user prefers using design tokens and a restrained styling approach to ensure UI components look and function great
+- Badges should have no shadows and instead use a very light outline in the same color (darker than the badge fill), and colors must come from the globals.css palette
+- The user prefers tactical, square component aesthetic with strategic color distribution
 
 ## Storybook Stories Guidance
 

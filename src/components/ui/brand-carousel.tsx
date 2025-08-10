@@ -99,11 +99,11 @@ export function BrandCarousel({
     <div className={cn(brandShowcaseVariants({ variant }), className)} {...props}>
       {/* Main layout container */}
       <div className="relative max-w-site mx-auto">
-        <div className="grid lg:grid-cols-4 gap-(--space-2xl) items-center">
+        <div className="grid lg:grid-cols-4 gap-(--spacing-2xl) items-center">
           
           {/* Left stats panel - OUTSIDE the card, changes with carousel */}
-          <div className="lg:col-span-1 space-y-(--space-lg)">
-            <div className="space-y-(--space-sm)">
+          <div className="lg:col-span-1 space-y-(--spacing-lg)">
+            <div className="space-y-(--spacing-sm)">
               {currentShowcase.stats.map((stat, index) => (
                 <div key={index} className={cn(
                   "border-l-2 pl-4 transition-colors duration-500",
@@ -120,13 +120,13 @@ export function BrandCarousel({
             </div>
             
             {currentShowcase.productsUsed && (
-              <div className="pt-(--space-sm)">
-                <div className="text-body-sm font-medium text-muted-foreground mb-(--space-xs)">
+              <div className="pt-(--spacing-sm)">
+                <div className="text-body-sm font-medium text-muted-foreground mb-(--spacing-xs)">
                   Products used
                 </div>
-                <div className="space-y-(--space-xs)">
+                <div className="space-y-(--spacing-xs)">
                   {currentShowcase.productsUsed.map((product, index) => (
-                    <div key={index} className="flex items-center gap-(--space-xs)">
+                    <div key={index} className="flex items-center gap-(--spacing-xs)">
                       <div className={cn("p-1 rounded", product.color)}>
                         {product.icon}
                       </div>
@@ -169,7 +169,7 @@ export function BrandCarousel({
               </div>
               
               {/* Company logo - better positioning */}
-              <div className="absolute top-6 left-6 bg-background/90 backdrop-blur-sm rounded-lg px-4 py-2 text-foreground font-bold shadow-elevated border border-white/20">
+              <div className="absolute top-6 left-6 bg-background/90 backdrop-blur-sm rounded-md px-4 py-2 text-foreground font-bold shadow-elevated border border-white/20">
                 {currentShowcase.logo}
               </div>
               
@@ -196,8 +196,8 @@ export function BrandCarousel({
       </div>
       
       {/* Partner logos strip - clickable with large icons */}
-      <div className="mt-(--space-4xl) text-center">
-        <p className="text-body-sm text-muted-foreground mb-(--space-2xl)">
+      <div className="mt-(--spacing-4xl) text-center">
+        <p className="text-body-sm text-muted-foreground mb-(--spacing-2xl)">
           Trusted by industry leaders
         </p>
         <div className="flex items-center justify-center gap-8 opacity-80 hover:opacity-100 transition-opacity">
@@ -278,7 +278,7 @@ export function BrandCarousel({
                 disabled={index >= showcases.length}
               >
                 <div className={cn(
-                  "w-12 h-12 rounded-lg flex items-center justify-center transition-colors",
+                  "w-12 h-12 rounded-md flex items-center justify-center transition-colors",
                   colors.bg
                 )}>
                   <IconComponent className={cn("w-6 h-6 transition-colors", colors.icon)} />

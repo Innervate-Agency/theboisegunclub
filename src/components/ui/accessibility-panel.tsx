@@ -99,7 +99,7 @@ function useAccessibilitySettings() {
 }
 
 const floatingButtonVariants = cva(
-  "fixed z-50 rounded-full shadow-flat transition-all duration-200 hover:shadow-md hover:-translate-y-0.5",
+  "fixed z-50 rounded-full shadow-flat transition-all duration-200 hover:shadow-md ",
   {
     variants: {
       variant: {
@@ -205,10 +205,10 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
       {/* Accessibility Panel Overlay */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/20 backdrop-blur-sm">
-          <div className="w-full max-w-md mica border border-border rounded-card shadow-elevated overflow-hidden">
+          <div className="w-full max-w-md mica border border-border rounded-sm shadow-elevated overflow-hidden">
             <div className="flex flex-row items-center justify-between p-6 pb-4">
               <div className="flex items-center gap-sm">
-                <div className="bg-muted p-2 rounded-lg border border-border">
+                <div className="bg-muted p-2 rounded-md border border-border">
                   <Settings className="h-5 w-5 text-card-foreground" />
                 </div>
                 <h2 className="text-lg font-rajdhani font-bold text-card-foreground">Accessibility</h2>

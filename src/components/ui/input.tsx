@@ -70,13 +70,13 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
     return (
       <div
         ref={ref}
-        className={cn("space-y-(--space-xs)", className)}
+        className={cn("space-y-(--spacing-xs)", className)}
         {...props}
       >
         {label && (
           <label className="text-body-sm font-medium text-foreground font-noto-sans">
             {label}
-            {required && <span className="text-safety-red ml-(--space-xs)">*</span>}
+            {required && <span className="text-safety-red ml-(--spacing-xs)">*</span>}
           </label>
         )}
         {children}

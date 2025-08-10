@@ -436,10 +436,10 @@ export default function MarketplacePage() {
               <ShoppingCart className="h-4 w-4 mr-xs" />
               Marketplace
             </Badge>
-            <h1 className="font-rajdhani text-6xl md:text-7xl font-bold text-range-white leading-tight">
+            <h1 className="font-rajdhani text-6xl md:text-7xl font-bold text-crisp-off-white leading-tight">
               Treasure Valley <span className="text-rusty-orange">Marketplace</span>
             </h1>
-            <p className="text-body-lg text-range-white/80 max-w-3xl mx-auto">
+            <p className="text-body-lg text-crisp-off-white/80 max-w-3xl mx-auto">
               Browse inventory from local firearms dealers across the Treasure Valley. From firearms and ammunition to accessories and optics - discover great deals from trusted local businesses.
             </p>
             
@@ -639,13 +639,13 @@ export default function MarketplacePage() {
               <Shield className="h-4 w-4 mr-xs" />
               Legal Notice
             </Badge>
-            <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-range-white">
+            <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-crisp-off-white">
               Important <span className="text-rusty-orange">Information</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-lg text-left max-w-3xl mx-auto">
               <div className="space-y-base">
-                <h3 className="font-rajdhani text-xl font-bold text-range-white">For Buyers:</h3>
-                <ul className="space-y-xs text-range-white/80 text-sm">
+                <h3 className="font-rajdhani text-xl font-bold text-crisp-off-white">For Buyers:</h3>
+                <ul className="space-y-xs text-crisp-off-white/80 text-sm">
                   <li>• All firearm purchases require background check</li>
                   <li>• Must be legally eligible to own firearms</li>
                   <li>• Valid ID required for all transactions</li>
@@ -653,8 +653,8 @@ export default function MarketplacePage() {
                 </ul>
               </div>
               <div className="space-y-base">
-                <h3 className="font-rajdhani text-xl font-bold text-range-white">For Dealers:</h3>
-                <ul className="space-y-xs text-range-white/80 text-sm">
+                <h3 className="font-rajdhani text-xl font-bold text-crisp-off-white">For Dealers:</h3>
+                <ul className="space-y-xs text-crisp-off-white/80 text-sm">
                   <li>• Valid FFL required for firearms sales</li>
                   <li>• Maintain accurate inventory records</li>
                   <li>• Update listings within 24 hours</li>
@@ -662,7 +662,7 @@ export default function MarketplacePage() {
                 </ul>
               </div>
             </div>
-            <p className="text-xs text-range-white/60 max-w-2xl mx-auto">
+            <p className="text-xs text-crisp-off-white/60 max-w-2xl mx-auto">
               The Boise Gun Club Marketplace facilitates connections between buyers and licensed dealers. All transactions must comply with applicable federal, state, and local firearms laws. We do not process payments or handle transfers directly.
             </p>
             <Button 

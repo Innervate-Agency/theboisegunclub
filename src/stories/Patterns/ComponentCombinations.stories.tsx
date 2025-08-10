@@ -250,19 +250,19 @@ export const FeatureHighlight: Story = {
           
           <ul className="space-y-sm">
             <li className="flex items-start gap-sm">
-              <div className="w-2 h-2 rounded-full bg-sandy-ochre mt-xs.5"></div>
+              <div className="w-2 h-2 rounded-pill bg-sandy-ochre mt-xs.5"></div>
               <div>
                 <strong>Left-Origin Animation:</strong> Gradients unfurl from the left using transform-origin
               </div>
             </li>
             <li className="flex items-start gap-sm">
-              <div className="w-2 h-2 rounded-full bg-rusty-orange mt-xs.5"></div>
+              <div className="w-2 h-2 rounded-pill bg-rusty-orange mt-xs.5"></div>
               <div>
                 <strong>Color Coordination:</strong> Orange→Yellow, Blue→Green, Purple→Cobalt variations
               </div>
             </li>
             <li className="flex items-start gap-sm">
-              <div className="w-2 h-2 rounded-full bg-slate-blue mt-xs.5"></div>
+              <div className="w-2 h-2 rounded-pill bg-slate-blue mt-xs.5"></div>
               <div>
                 <strong>Multiple Effects:</strong> Unfurl, pulse, glow animations for different use cases
               </div>

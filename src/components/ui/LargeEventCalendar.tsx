@@ -122,7 +122,7 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
             </div>
 
             {/* Massive Calendar */}
-            <div className="bg-card rounded-large p-2xl shadow-md">
+            <div className="bg-card rounded-md p-2xl shadow-md">
               <Calendar
                 mode="single"
                 selected={selectedDate}
@@ -227,7 +227,7 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
                         <CardContent className="p-lg space-y-base">
                           <div className="flex items-start justify-between">
                             <div className="flex items-center gap-sm">
-                              <div className={`p-sm rounded-lg bg-${config.color}/20`}>
+                              <div className={`p-sm rounded-md bg-${config.color}/20`}>
                                 <Icon className={`h-5 w-5 text-${config.color}`} />
                               </div>
                               <Badge className={`bg-${config.color}/20 text-${config.color}`}>

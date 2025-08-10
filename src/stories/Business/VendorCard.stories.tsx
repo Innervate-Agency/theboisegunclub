@@ -20,16 +20,21 @@ The **VendorCard** component showcases the complete TBGC design system with stra
 - **SILVER** ($99/mo): Enhanced metallic presence - featured placement & reviews  
 - **GOLD** ($199/mo): Premium fire treatment (ONLY tier with fire) - sponsorship & gradients
 
+## Semantic Shadow Hierarchy by Tier
+- **FREE**: shadow-present → hover:shadow-elevated (foundational presence)
+- **COPPER**: shadow-elevated → hover:shadow-prominent (premium depth with tactical warmth)
+- **SILVER**: shadow-prominent → hover:shadow-commanding (professional prominence with glassmorphism)
+- **GOLD**: shadow-commanding → hover:shadow-hero (hero-level commanding presence)
+
 ## Design System Features
-- Strategic restraint - each tier makes the next obviously more valuable
-- Fire gradient animations on Gold tier ONLY
-- Proper Stripe-inspired shadow hierarchy with strategic restraint
-- TBGC 26-color palette integration (scope-blue, rifling-green, etc.)
-- Responsive typography with Rajdhani/Noto Sans
-- Component state utilities from globals.css
+- **Semantic Shadow Progression**: Each tier uses purposeful shadow depth that communicates value
+- **Fire gradient animations** on Gold tier ONLY for maximum impact
+- **Interactive Shadow Feedback**: Sophisticated hover progressions enhance user understanding
+- **TBGC 23-color palette integration** (rusty-orange, slate-blue, sagebrush-green, etc.)
+- **Tactical Design Philosophy**: Stripe-inspired depth system with firearms community aesthetic
 
 ## Visual Hierarchy Philosophy
-Each tier should drive subscription upgrades through intentional design choices, not visual noise.
+Strategic shadow semantics drive subscription upgrades - each tier's depth communicates its importance and value proposition.
         `
       }
     }
@@ -365,7 +370,7 @@ export const StrategicTierProgression: Story = {
         </div>
       </div>
       
-      <div className="text-center mt-lg p-md bg-muted/50 rounded-card">
+      <div className="text-center mt-lg p-md bg-muted/50 rounded-sm">
         <p className="text-body-sm text-muted-foreground">
           <strong>Strategic Restraint Philosophy:</strong> Each tier uses intentional design enhancements to create clear value progression, 
           encouraging upgrades through visual hierarchy rather than excessive decoration.

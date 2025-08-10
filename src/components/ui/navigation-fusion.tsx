@@ -33,7 +33,7 @@ const navigationFusionVariants = cva(
 )
 
 const navigationItemVariants = cva(
-  "flex items-center gap-xs px-sm py-xs rounded-card transition-all duration-200 font-rajdhani font-semibold text-body-sm",
+  "flex items-center gap-xs px-sm py-xs rounded-sm transition-all duration-200 font-rajdhani font-semibold text-body-sm",
   {
     variants: {
       variant: {
@@ -111,7 +111,7 @@ export function NavigationFusion({
     <nav 
       className={cn(
         navigationFusionVariants({ variant, orientation, size }), 
-        orientation === "horizontal" ? "rounded-full" : "rounded-large",
+        orientation === "horizontal" ? "rounded-full" : "rounded-md",
         className
       )} 
       {...props}
@@ -147,7 +147,7 @@ export function NavigationFusion({
             >
               {/* Active item background effect */}
               {isActive && variant === "glass" && (
-                <div className="absolute inset-0 bg-gradient-to-r from-sandy-ochre/20 to-rusty-orange/20 rounded-card" />
+                <div className="absolute inset-0 bg-gradient-to-r from-sandy-ochre/20 to-rusty-orange/20 rounded-sm" />
               )}
               
               {/* Icon */}
@@ -166,7 +166,7 @@ export function NavigationFusion({
               </span>
               
               {/* Hover effect */}
-              <div className="absolute inset-0 bg-sandy-ochre/10 rounded-card opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+              <div className="absolute inset-0 bg-sandy-ochre/10 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
             </button>
           )
         })}

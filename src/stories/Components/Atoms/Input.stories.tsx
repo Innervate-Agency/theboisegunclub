@@ -159,7 +159,7 @@ export const InputGroups: Story = {
       >
         <div className="relative">
           <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
-          <Input className="pl-(--space-xl)" placeholder="your@email.com" type="email" />
+          <Input className="pl-(--spacing-xl)" placeholder="your@email.com" type="email" />
         </div>
       </InputGroup>
 
@@ -170,7 +170,7 @@ export const InputGroups: Story = {
         <div className="relative">
           <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
                       <Input 
-            className="pl-(--space-xl)" 
+            className="pl-(--spacing-xl)" 
             placeholder="(555) 123-4567" 
             type="tel"
             status="error"
@@ -304,7 +304,7 @@ export const DesignSystemShowcase: Story = {
           <h3 className="text-body-lg font-rajdhani font-semibold text-blued-steel mb-base">
             Interactive Features
           </h3>
-          <div className="bg-card-surface p-md rounded-large space-y-base">
+          <div className="bg-card-surface p-md rounded-xs space-y-base">
             <p className="text-body-sm text-warning-amber mb-base">
               Hover and focus on inputs to see sophisticated micro-interactions
             </p>

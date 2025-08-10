@@ -5,16 +5,16 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const calloutCardVariants = cva(
-  "relative rounded-card p-md transition-all duration-300 ease-out",
+  "relative rounded-none p-md transition-all duration-300 ease-out",
   {
     variants: {
       variant: {
         // STRATEGIC RESTRAINT: Shadow-first approach with gradient accents like VendorCard
         default: "bg-card shadow-flat hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         subtle: "bg-muted shadow-flat hover:shadow-elevated hover:bg-card",
-        animated: "bg-card shadow-flat hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-card before:pointer-events-none",
-        important: "bg-card shadow-flat hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-safety-red after:to-muzzle-flash after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-safety-red/6 before:via-transparent before:to-muzzle-flash/4 before:rounded-card before:pointer-events-none",
-        info: "bg-card shadow-flat hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-scope-blue after:to-slate-blue after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-scope-blue/4 before:via-transparent before:to-slate-blue/3 before:rounded-card before:pointer-events-none",
+        animated: "bg-card shadow-flat hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-none before:pointer-events-none",
+        important: "bg-card shadow-flat hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-safety-red after:to-muzzle-flash after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-safety-red/6 before:via-transparent before:to-muzzle-flash/4 before:rounded-none before:pointer-events-none",
+        info: "bg-card shadow-flat hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-scope-blue after:to-slate-blue after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-scope-blue/4 before:via-transparent before:to-slate-blue/3 before:rounded-none before:pointer-events-none",
         glass: "mica-card shadow-flat hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg"
       }
     },
@@ -42,8 +42,8 @@ export function CalloutCard({
 }: CalloutCardProps) {
   return (
     <div className={cn(calloutCardVariants({ variant }), className)} {...props}>
-      <div className="relative space-y-(--space-sm)">
-        <div className="space-y-(--space-xs)">
+      <div className="relative space-y-(--spacing-sm)">
+        <div className="space-y-(--spacing-xs)">
           <div>
             <h3 className="text-body-lg font-rajdhani font-bold text-foreground leading-tight">
               {title}
@@ -56,7 +56,7 @@ export function CalloutCard({
           </div>
           
           {children && (
-            <div className="pt-(--space-xs)">
+            <div className="pt-(--spacing-xs)">
               {children}
             </div>
           )}
@@ -87,14 +87,14 @@ export function ImportantCallout({
       {/* Pulsing accent for important notices */}
       <div className="absolute -left-1 top-4 w-2 h-2 bg-safety-red rounded-full animate-pulse" />
       
-      <div className="space-y-(--space-sm)">
+      <div className="space-y-(--spacing-sm)">
         <div className="flex items-start gap-sm">
-          <div className="flex-shrink-0 mt-(--space-tiny)">
+          <div className="flex-shrink-0 mt-(--spacing-tiny)">
             <div className="w-6 h-6 bg-safety-red/10 rounded-full flex items-center justify-center">
               <div className="w-2 h-2 bg-safety-red rounded-full" />
             </div>
           </div>
-          <div className="flex-1 space-y-(--space-xs)">
+          <div className="flex-1 space-y-(--spacing-xs)">
             <h3 className="text-body-lg font-rajdhani font-bold text-foreground leading-tight">
               {title}
             </h3>
@@ -107,7 +107,7 @@ export function ImportantCallout({
         </div>
         
         {children && (
-          <div className="pl-(--space-xl) pt-(--space-xs)">
+          <div className="pl-(--spacing-xl) pt-(--spacing-xs)">
             {children}
           </div>
         )}
@@ -135,8 +135,8 @@ export function SubtleCallout({
       )} 
       {...props}
     >
-      <div className="space-y-(--space-sm)">
-        <div className="space-y-(--space-xs)">
+      <div className="space-y-(--spacing-sm)">
+        <div className="space-y-(--spacing-xs)">
           <h3 className="text-body font-rajdhani font-semibold text-foreground leading-tight">
             {title}
           </h3>
@@ -148,7 +148,7 @@ export function SubtleCallout({
         </div>
         
         {children && (
-          <div className="pt-(--space-xs)">
+          <div className="pt-(--spacing-xs)">
             {children}
           </div>
         )}

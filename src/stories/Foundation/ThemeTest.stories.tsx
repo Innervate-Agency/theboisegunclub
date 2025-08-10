@@ -54,7 +54,7 @@ export const ThemeContrastTest: Story = {
             <Button variant="secondary" className="w-full">
               Secondary Button
             </Button>
-            <div className="p-sm rounded-card bg-accent/10 border border-accent/20">
+            <div className="p-sm rounded-sm bg-accent/10 border border-accent/20">
               <p className="text-accent font-medium">
                 Accent Color (Copper Orange in Light / Brass Yellow in Dark)
               </p>
@@ -71,12 +71,12 @@ export const ThemeContrastTest: Story = {
             The title should change to rusty-orange (light) or sandy-ochre (dark) on hover
           </p>
           <div className="space-y-xs">
-            <div className="p-sm rounded-card bg-primary/10 border border-primary/20">
+            <div className="p-sm rounded-sm bg-primary/10 border border-primary/20">
               <p className="text-primary font-medium">
                 Primary Color (Blued Steel in Light / Titanium White in Dark)
               </p>
             </div>
-            <div className="p-sm rounded-card bg-secondary/10 border border-secondary/20">
+            <div className="p-sm rounded-sm bg-secondary/10 border border-secondary/20">
               <p className="text-secondary font-medium">
                 Secondary Color (Walnut Stock in Light / Tactical Gray in Dark)
               </p>
@@ -90,7 +90,7 @@ export const ThemeContrastTest: Story = {
           Color Usage Guidelines
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-base text-body-sm">
-          <div className="p-base rounded-card bg-card border border-border">
+          <div className="p-base rounded-sm bg-card border border-border">
             <h4 className="font-semibold text-accent mb-xs">Light Theme</h4>
             <ul className="space-y-micro text-muted-foreground">
               <li>• Accent: Copper Orange (#FF00FF) - Good contrast</li>
@@ -99,7 +99,7 @@ export const ThemeContrastTest: Story = {
               <li>• Cards: Nickel White (#FFFFFF)</li>
             </ul>
           </div>
-          <div className="p-base rounded-card bg-card border border-border">
+          <div className="p-base rounded-sm bg-card border border-border">
             <h4 className="font-semibold text-accent mb-xs">Dark Theme</h4>
             <ul className="space-y-micro text-muted-foreground">
               <li>• Accent: Brass Yellow (#FF00FF) - Good contrast</li>

@@ -15,8 +15,8 @@ const statsShowcaseVariants = cva(
         glass: "mica-card"
       },
       spacing: {
-        comfortable: "py-(--space-2xl)",
-        compact: "py-(--space-xl)",
+        comfortable: "py-(--spacing-2xl)",
+        compact: "py-(--spacing-xl)",
         minimal: "py-lg"
       }
     },
@@ -63,9 +63,9 @@ export function StatsShowcase({
       <div className="w-full max-w-site mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
-          <div className="text-center mb-(--space-xl)">
+          <div className="text-center mb-(--spacing-xl)">
             {title && (
-              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-foreground mb-(--space-sm)">
+              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-foreground mb-(--spacing-sm)">
                 {title}
               </h2>
             )}
@@ -85,13 +85,13 @@ export function StatsShowcase({
             return (
               <div
                 key={index}
-                className="group relative bg-card border-border rounded-card p-md shadow-flat hover:shadow-md transition-all duration-200 ease-out"
+                className="group relative bg-card border-border rounded-sm p-md shadow-flat hover:shadow-md transition-all duration-200 ease-out"
               >
-                <div className="space-y-(--space-base)">
+                <div className="space-y-(--spacing-base)">
                   {/* Icon and Value */}
                   <div className="flex items-center justify-between">
                     {Icon && (
-                      <div className="p-xs bg-rusty-orange/10 rounded-card">
+                      <div className="p-xs bg-rusty-orange/10 rounded-sm">
                         <Icon className="h-5 w-5 text-rusty-orange" />
                       </div>
                     )}
@@ -117,7 +117,7 @@ export function StatsShowcase({
                   </div>
 
                   {/* Main Stat */}
-                  <div className="space-y-(--space-micro)">
+                  <div className="space-y-(--spacing-micro)">
                     <div className="text-heading-lg font-rajdhani font-bold text-card-foreground group-hover:text-rusty-orange transition-colors duration-200">
                       {typeof stat.value === 'number' ? stat.value.toLocaleString() : stat.value}
                     </div>

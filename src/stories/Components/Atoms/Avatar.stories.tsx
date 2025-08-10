@@ -59,7 +59,7 @@ export const Glass: Story = {
     variant: 'glass',
   },
   render: (args) => (
-    <div className="relative p-10 bg-cover bg-center rounded-card" style={{ backgroundImage: "url('/images/Smoke/Background_05.webp')" }}>
+    <div className="relative p-10 bg-cover bg-center rounded-sm" style={{ backgroundImage: "url('/images/Smoke/Background_05.webp')" }}>
       <Avatar {...args}>
         <AvatarImage src="/images/Fractal/15.webp" alt="Shooter Profile" />
         <AvatarFallback>CN</AvatarFallback>

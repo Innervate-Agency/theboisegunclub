@@ -25,21 +25,20 @@ const meta: Meta<typeof Card> = {
 The **Card** component is a foundational element of the TBGC design system, featuring strategic restraint, fire gradient animations, and comprehensive theming with the Idaho Firearms Heritage palette.
 
 ## Key Features
-- **Strategic restraint** - shadow system instead of borders (per design system policy)
+- **Semantic Shadow Hierarchy** - 8-level Stripe-inspired depth system (ghost → whisper → present → elevated → prominent → commanding → hero → modal)
+- **Interactive Progressions** - each shadow level steps up logically on hover for clear affordance
 - **Fire gradient animations** (copper/brass, blue, green, red variants using Idaho palette)
-- **Windows 11 Mica glass effects** with backdrop blur
-- **Theme-aware styling** for light/dark modes
-- **Size variants** - proper padding controls (sm, default, lg)
+- **Windows 11 Mica glass effects** with backdrop blur and elevated shadows
+- **Theme-aware styling** for light/dark modes with tactical undertones
 
-## Variant Philosophy
-- Use \`default\` for most content cards (clean baseline)
-- Use \`interactive\` for clickable cards (subtle hover feedback)
-- Use \`premium\` for enhanced cards (copper-brass accent)
-- Use \`fire\` variants sparingly for premium features (inspired by VendorCard tiers)
-- Use \`glass\` for overlays and modals (Windows 11 Mica)
+## Shadow Philosophy
+- **Present/Elevated**: Standard content baseline (replaces old flat/md shadows)
+- **Prominent/Commanding**: Important content demanding attention (premium/fire variants)
+- **Hero**: Maximum impact for critical elements (fire variants on hover)
+- **Ghost/Whisper**: Minimal presence for secondary content (subtle/outlined variants)
 
-## Strategic Restraint
-Following VendorCard patterns - each variant should provide clear value progression without excessive visual noise.
+## Semantic Depth System
+Each variant uses purposeful shadow semantics - no more generic "shadow-lg" but contextual "shadow-commanding" that communicates the element's importance and interactive affordance.
         `
       }
     }
@@ -61,6 +60,103 @@ Following VendorCard patterns - each variant should provide clear value progress
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
+// ================== SEMANTIC SHADOW SHOWCASE ==================
+
+export const SemanticShadowHierarchy: Story = {
+  name: "Semantic Shadow System",
+  render: () => (
+    <div className="w-full max-w-6xl space-y-lg">
+      <div className="space-y-base">
+        <h2 className="text-display-md font-rajdhani font-bold text-card-foreground">8-Level Semantic Shadow Hierarchy</h2>
+        <p className="text-muted-foreground">
+          Stripe-inspired depth system that communicates importance and interactive affordance through purposeful shadow semantics. 
+          Hover each card to see the sophisticated shadow progressions.
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+        <Card variant="subtle" className="w-full">
+          <CardHeader>
+            <CardTitle className="text-body-lg">Ghost → Whisper</CardTitle>
+            <CardDescription>
+              Minimal presence for secondary content
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Badge variant="outline" className="mb-xs">Subtle</Badge>
+            <p className="text-body-sm">
+              Used for background elements and secondary information.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card variant="default" className="w-full">
+          <CardHeader>
+            <CardTitle className="text-body-lg">Present → Elevated</CardTitle>
+            <CardDescription>
+              Standard content baseline
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Badge variant="default" className="mb-xs">Default</Badge>
+            <p className="text-body-sm">
+              The foundation for most content cards with established presence.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card variant="premium" className="w-full">
+          <CardHeader>
+            <CardTitle className="text-body-lg">Prominent → Commanding</CardTitle>
+            <CardDescription>
+              Important content demanding attention
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Badge variant="premium" className="mb-xs">Premium</Badge>
+            <p className="text-body-sm">
+              Enhanced cards with tactical copper accents and strategic depth.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card variant="fire" className="w-full">
+          <CardHeader>
+            <CardTitle className="text-body-lg">Commanding → Hero</CardTitle>
+            <CardDescription>
+              Maximum impact for critical elements
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Badge variant="elite" className="mb-xs">Fire</Badge>
+            <p className="text-body-sm">
+              Hero-level presence with tactical gradient animations.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="space-y-base pt-lg border-t border-border">
+        <h3 className="text-display-sm font-rajdhani font-bold text-card-foreground">Interactive Shadow Progressions</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
+          <div className="space-y-xs">
+            <h4 className="font-rajdhani font-semibold text-card-foreground">Baseline Content</h4>
+            <p className="text-caption text-muted-foreground">shadow-present → hover:shadow-elevated</p>
+          </div>
+          <div className="space-y-xs">
+            <h4 className="font-rajdhani font-semibold text-card-foreground">Important Features</h4>
+            <p className="text-caption text-muted-foreground">shadow-prominent → hover:shadow-commanding</p>
+          </div>
+          <div className="space-y-xs">
+            <h4 className="font-rajdhani font-semibold text-card-foreground">Hero Elements</h4>
+            <p className="text-caption text-muted-foreground">shadow-commanding → hover:shadow-hero</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+};
 
 // ================== BASIC VARIANTS SHOWCASE ==================
 

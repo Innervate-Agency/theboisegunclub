@@ -114,7 +114,7 @@ export const Default: Story = {
             {gradients.map((gradient, index) => (
               <button
                 key={index}
-                className={`px-lg py-base rounded-md font-rajdhani font-bold text-dark-chocolate bg-gradient-to-r ${gradient.classes} hover:scale-105 transition-transform`}
+                className={`px-lg py-base rounded-sm font-rajdhani font-bold text-dark-chocolate bg-gradient-to-r ${gradient.classes} hover:scale-105 transition-transform`}
               >
                 {gradient.name}
               </button>
@@ -128,7 +128,7 @@ export const Default: Story = {
             {gradients.map((gradient, index) => (
               <div
                 key={index}
-                className={`h-24 rounded-md bg-gradient-to-br ${gradient.classes} flex items-center justify-center`}
+                className={`h-24 rounded-sm bg-gradient-to-br ${gradient.classes} flex items-center justify-center`}
               >
                 <div className="font-rajdhani font-bold text-white text-center px-base">
                   <div>{gradient.name}</div>

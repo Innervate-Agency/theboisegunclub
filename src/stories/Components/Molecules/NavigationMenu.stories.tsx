@@ -215,7 +215,7 @@ export const Premium: Story = {
         </NavigationMenuItem>
         
         <NavigationMenuItem>
-          <NavigationMenuLink variant="premium" href="/membership" className="group inline-flex h-10 w-max items-center justify-center rounded-card px-lg py-xs text-body-sm font-semibold">
+          <NavigationMenuLink variant="premium" href="/membership" className="group inline-flex h-10 w-max items-center justify-center rounded-sm px-lg py-xs text-body-sm font-semibold">
             <Users className="size-4 mr-xs" />
             Membership
           </NavigationMenuLink>
@@ -227,7 +227,7 @@ export const Premium: Story = {
 
 export const Glass: Story = {
   render: () => (
-    <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-lg rounded-large">
+    <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-lg rounded-xs">
       <NavigationMenu variant="glass">
         <NavigationMenuList variant="glass">
           <NavigationMenuItem>
@@ -314,7 +314,7 @@ export const Glass: Story = {
           </NavigationMenuItem>
           
           <NavigationMenuItem>
-            <NavigationMenuLink variant="glass" href="/emergency" className="group inline-flex h-10 w-max items-center justify-center rounded-card px-lg py-xs text-body-sm font-medium text-range-white">
+            <NavigationMenuLink variant="glass" href="/emergency" className="group inline-flex h-10 w-max items-center justify-center rounded-sm px-lg py-xs text-body-sm font-medium text-range-white">
               <Shield className="size-4 mr-xs" />
               Emergency
             </NavigationMenuLink>
@@ -327,7 +327,7 @@ export const Glass: Story = {
 
 export const Tournament: Story = {
   render: () => (
-    <div className="bg-gradient-to-br from-slate-900 to-slate-700 p-lg rounded-large">
+    <div className="bg-gradient-to-br from-slate-900 to-slate-700 p-lg rounded-xs">
       <NavigationMenu variant="tournament">
         <NavigationMenuList variant="tournament">
           <NavigationMenuItem>
@@ -414,7 +414,7 @@ export const Tournament: Story = {
           </NavigationMenuItem>
           
           <NavigationMenuItem>
-            <NavigationMenuLink variant="tournament" href="/tournament/master-control" className="group inline-flex h-12 w-max items-center justify-center rounded-card px-md py-sm text-body-sm font-bold text-range-white">
+            <NavigationMenuLink variant="tournament" href="/tournament/master-control" className="group inline-flex h-12 w-max items-center justify-center rounded-sm px-md py-sm text-body-sm font-bold text-range-white">
               <Settings className="size-5 mr-xs" />
               Master Control
             </NavigationMenuLink>
@@ -507,7 +507,7 @@ export const SiteNavigationPreset: Story = {
         </SiteNavigation>
       </div>
       
-      <div className="bg-gradient-to-br from-slate-900 to-slate-700 p-md rounded-large">
+      <div className="bg-gradient-to-br from-slate-900 to-slate-700 p-md rounded-xs">
         <h3 className="font-semibold mb-base text-range-white">Admin Navigation</h3>
         <SiteNavigation section="admin">
           <NavigationMenuList variant="tournament">

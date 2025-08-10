@@ -128,12 +128,12 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
               return (
                 <div
                   key={idx}
-                  className={`w-1 h-1 rounded-full bg-${config.color}`}
+                  className={`w-1 h-1 rounded-pill bg-${config.color}`}
                 />
               )
             })}
             {dayEvents.length > 3 && (
-              <div className="w-1 h-1 rounded-full bg-muted-foreground" />
+              <div className="w-1 h-1 rounded-pill bg-muted-foreground" />
             )}
           </div>
         )}
@@ -261,7 +261,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
               head_cell: "text-muted-foreground font-medium text-2xl w-full h-20 text-center p-base",
               row: "",
               cell: "relative w-full h-32 text-center p-0",
-              day: "w-full h-full hover:bg-accent/30 transition-colors rounded-lg flex flex-col items-center justify-start pt-base",
+              day: "w-full h-full hover:bg-accent/30 transition-colors rounded-md flex flex-col items-center justify-start pt-base",
               day_selected: "bg-rusty-orange/20 text-rusty-orange font-bold",
               day_today: "bg-slate-blue/20 text-slate-blue font-bold",
               day_outside: "text-muted-foreground/30",
@@ -293,7 +293,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                           return (
                             <div
                               key={idx}
-                              className={`w-3 h-3 rounded-full bg-${config.color}`}
+                              className={`w-3 h-3 rounded-pill bg-${config.color}`}
                               title={event.title}
                             />
                           )
@@ -319,7 +319,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
 
           {/* Selected Date Events - Below Calendar */}
           {selectedDate && (
-            <div className="bg-muted/30 rounded-card p-lg">
+            <div className="bg-muted/30 rounded-sm p-lg">
               <div className="space-y-base">
                 {/* Selected Date Header */}
                 <div className="text-center space-y-xs">

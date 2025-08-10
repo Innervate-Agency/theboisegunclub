@@ -106,11 +106,11 @@ export const DarkBackground: Story = {
           Join us for our weekly competitions and monthly championships. All skill levels welcome.
         </p>
         <div className="space-y-base">
-          <div className="bg-blued-steel/20 p-base rounded-card">
+          <div className="bg-blued-steel/20 p-base rounded-sm">
             <h3 className="text-body-lg font-semibold text-range-white">Weekly Trap Shoot</h3>
             <p className="text-sandy-ochre/80">Every Saturday at 9:00 AM</p>
           </div>
-          <div className="bg-blued-steel/20 p-base rounded-card">
+          <div className="bg-blued-steel/20 p-base rounded-sm">
             <h3 className="text-body-lg font-semibold text-range-white">Monthly Championship</h3>
             <p className="text-sandy-ochre/80">First Sunday of each month</p>
           </div>

@@ -638,7 +638,7 @@ export default function EventsPage() {
       <SiteNavigation variant="premium" sticky={true} />
       <div className="min-h-screen bg-background">
         {/* Breadcrumb Hero - Left Aligned */}
-        <section className="bg-gradient-to-br from-(--color-slate-blue) to-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)] border-b border-border/20 pt-[calc(var(--space-3xl)+var(--space-lg))] pb-3xl">
+        <section className="bg-gradient-to-br from-(--color-slate-blue) to-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)] border-b border-border/20 pt-[calc(var(--spacing-3xl)+var(--spacing-lg))] pb-3xl">
           <div className="container mx-auto max-w-site px-md">
             <div className="flex items-center gap-xs text-sm text-(--color-crisp-off-white)/80 mb-sm">
               <span>Home</span>
@@ -721,7 +721,7 @@ export default function EventsPage() {
                         </div>
                         
                         <div className="text-right">
-                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rusty-orange/30 to-rusty-orange/20 flex items-center justify-center mb-xs">
+                          <div className="w-12 h-12 rounded-pill bg-gradient-to-br from-rusty-orange/30 to-rusty-orange/20 flex items-center justify-center mb-xs">
                             <Users className="h-5 w-5 text-rusty-orange" />
                           </div>
                         </div>
@@ -1074,14 +1074,14 @@ export default function EventsPage() {
       <section className="py-2xl bg-gradient-to-br from-slate-blue to-ayu-green">
         <div className="container mx-auto max-w-site px-md text-center">
           <div className="space-y-lg">
-            <Badge className="bg-range-white/20 text-range-white border-range-white/30">
+            <Badge className="bg-range-white/20 text-crisp-off-white border-range-white/30">
               <Plus className="h-4 w-4 mr-xs" />
               Event Organizers
             </Badge>
-            <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-range-white">
-              List Your Event <span className="text-range-white font-bold">Free</span>
+            <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-crisp-off-white">
+              List Your Event <span className="text-crisp-off-white font-bold">Free</span>
             </h2>
-            <p className="text-body-lg text-range-white/80 max-w-2xl mx-auto">
+            <p className="text-body-lg text-crisp-off-white/80 max-w-2xl mx-auto">
               Help build Idaho's most comprehensive firearms events calendar. Submit your upcoming events and reach thousands of enthusiasts across the Treasure Valley.
             </p>
             <div className="flex flex-col sm:flex-row gap-base justify-center">
@@ -1095,7 +1095,7 @@ export default function EventsPage() {
               <Button 
                 variant="outline" 
                 size="xl"
-                className="border-range-white/30 text-range-white hover:bg-range-white hover:text-slate-blue"
+                className="border-range-white/30 text-crisp-off-white hover:bg-range-white hover:text-slate-blue"
               >
                 Event Guidelines
               </Button>

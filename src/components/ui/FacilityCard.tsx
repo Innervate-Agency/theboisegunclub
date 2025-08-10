@@ -16,7 +16,7 @@ const facilityCardVariants = cva(
         // STRATEGIC RESTRAINT: Shadow-first approach like VendorCard
         default: "bg-card shadow-flat hover:shadow-md",
         featured: "bg-gradient-to-br from-sandy-ochre/5 via-rusty-orange/5 to-walnut-stock/5 shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
-        premium: "bg-gradient-to-br from-blued-steel/10 via-warning-amber/10 to-blued-steel/10 shadow-flat hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-slate-blue after:to-warning-amber after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        premium: "bg-gradient-to-br from-blued-steel/10 via-warning-amber/10 to-blued-steel/10 shadow-flat hover:shadow-md  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-slate-blue after:to-warning-amber after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         compact: "bg-card shadow-flat hover:shadow-md"
       },
       size: {
@@ -118,18 +118,18 @@ export default function FacilityCard({
       {isVerified && (
         <div className="absolute top-4 left-4 z-10">
           <Badge variant="success">
-            <Shield className="h-3 w-3 mr-(--space-xs)" />
+            <Shield className="h-3 w-3 mr-(--spacing-xs)" />
             Verified
           </Badge>
         </div>
       )}
 
-      <CardHeader className="space-y-(--space-base)">
+      <CardHeader className="space-y-(--spacing-base)">
         <div className="flex items-start gap-base">
           {/* Business Icon/Image */}
           <div className="flex-shrink-0">
             {icon ? (
-              <div className="w-12 h-12 rounded-card overflow-hidden shadow-flat">
+              <div className="w-12 h-12 rounded-none overflow-hidden shadow-flat">
                 <img 
                   src={icon} 
                   alt={title}
@@ -137,7 +137,7 @@ export default function FacilityCard({
                 />
               </div>
             ) : (
-              <div className="w-12 h-12 bg-sandy-ochre/10 rounded-card flex items-center justify-center shadow-flat">
+              <div className="w-12 h-12 bg-sandy-ochre/10 rounded-none flex items-center justify-center shadow-flat">
                 {getBusinessTypeIcon(businessType)}
               </div>
             )}
@@ -152,14 +152,14 @@ export default function FacilityCard({
             </div>
             
             {businessType && (
-              <p className="text-body-sm text-warning-amber font-medium mt-(--space-xs)">
+              <p className="text-body-sm text-warning-amber font-medium mt-(--spacing-xs)">
                 {businessType}
               </p>
             )}
 
             {/* Rating */}
             {rating && (
-              <div className="flex items-center gap-xs mt-(--space-xs)">
+              <div className="flex items-center gap-xs mt-(--spacing-xs)">
                 <div className="flex items-center">
                   {[...Array(5)].map((_, i) => (
                     <Star
@@ -180,7 +180,7 @@ export default function FacilityCard({
         </div>
       </CardHeader>
 
-      <CardContent className="space-y-(--space-base)">
+      <CardContent className="space-y-(--spacing-base)">
         {/* Description */}
         <CardDescription className="text-warning-amber leading-relaxed">
           {description}
@@ -188,7 +188,7 @@ export default function FacilityCard({
 
         {/* Contact Info */}
         {(location || hours || phone) && (
-          <div className="space-y-(--space-xs) text-body-sm">
+          <div className="space-y-(--spacing-xs) text-body-sm">
             {location && (
               <div className="flex items-center gap-xs text-warning-amber">
                 <MapPin className="h-4 w-4 text-sandy-ochre" />
@@ -226,7 +226,7 @@ export default function FacilityCard({
         )}
 
         {/* Action Button */}
-        <div className="pt-(--space-xs)">
+        <div className="pt-(--spacing-xs)">
           <Button
             variant="secondary"
             size="sm"
@@ -234,7 +234,7 @@ export default function FacilityCard({
             onClick={handleClick}
           >
             {linkText}
-            <ExternalLink className="h-4 w-4 ml-(--space-xs)" />
+            <ExternalLink className="h-4 w-4 ml-(--spacing-xs)" />
           </Button>
         </div>
       </CardContent>

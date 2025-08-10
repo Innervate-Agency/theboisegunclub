@@ -21,7 +21,7 @@ export const Default: Story = {
   render: (args) => (
     <ResizablePanelGroup
       direction="horizontal"
-      className="max-w-md rounded-card border"
+      className="max-w-md rounded-sm border"
       {...args}
     >
       <ResizablePanel defaultSize={50}>
