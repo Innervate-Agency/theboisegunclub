@@ -356,8 +356,8 @@ export function ContactForm({
                 Contact Information
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-[--space-base] text-body-sm">
-                <div className="flex items-center gap-[--space-sm]">
-                  <div className="p-[--space-xs] bg-sandy-ochre/10 rounded-[--radius-base]">
+                <div className="flex items-center gap-(--space-sm)">
+                  <div className="p-(--space-xs) bg-sandy-ochre/10 rounded-[--radius-base]">
                     <Phone className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>
@@ -366,8 +366,8 @@ export function ContactForm({
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-[--space-sm]">
-                  <div className="p-[--space-xs] bg-sandy-ochre/10 rounded-[--radius-base]">
+                <div className="flex items-center gap-(--space-sm)">
+                  <div className="p-(--space-xs) bg-sandy-ochre/10 rounded-[--radius-base]">
                     <Mail className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>
@@ -376,8 +376,8 @@ export function ContactForm({
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-[--space-sm]">
-                  <div className="p-[--space-xs] bg-sandy-ochre/10 rounded-[--radius-base]">
+                <div className="flex items-center gap-(--space-sm)">
+                  <div className="p-(--space-xs) bg-sandy-ochre/10 rounded-[--radius-base]">
                     <MapPin className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>
@@ -386,8 +386,8 @@ export function ContactForm({
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-[--space-sm]">
-                  <div className="p-[--space-xs] bg-sandy-ochre/10 rounded-[--radius-base]">
+                <div className="flex items-center gap-(--space-sm)">
+                  <div className="p-(--space-xs) bg-sandy-ochre/10 rounded-[--radius-base]">
                     <Clock className="h-4 w-4 text-sandy-ochre" />
                   </div>
                   <div>

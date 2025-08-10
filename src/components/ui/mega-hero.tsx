@@ -119,7 +119,7 @@ export function MegaHero({
               {badges.map((badge, index) => (
                 <div
                   key={index}
-                  className="px-[--space-base] py-[--space-xs] bg-[var(--color-crisp-off-white)]/20 backdrop-blur-sm border border-[var(--color-crisp-off-white)]/30 rounded-[--radius-base] text-body-sm font-medium text-[var(--color-crisp-off-white)] shadow-[--shadow-xs]"
+                  className="px-[--space-base] py-[--space-xs] bg-(var(--color-crisp-off-white))/20 backdrop-blur-sm border border-(var(--color-crisp-off-white))/30 rounded-(--radius-base) text-body-sm font-medium text-[var(--color-crisp-off-white)] shadow-(--shadow-xs)"
                 >
                   {badge}
                 </div>

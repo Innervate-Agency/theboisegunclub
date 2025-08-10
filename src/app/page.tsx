@@ -49,10 +49,10 @@ export default function HomePage() {
 
         {/* 4. Platform Blueprint Section */}
         <section className="py-[--space-xl] lg:py-[--space-2xl]">
-          <div className="container mx-auto max-w-site px-[--space-md] space-y-[--space-2xl]">
+          <div className="container mx-auto max-w-site px-[--space-md] space-y-(--space-2xl)">
             <div className="text-center">
               <h2 className="font-rajdhani text-4xl font-bold">The Platform Blueprint</h2>
-              <p className="text-body-lg text-muted-foreground mt-[--space-sm]">The core features that power our community.</p>
+              <p className="text-body-lg text-muted-foreground mt-(--space-sm)">The core features that power our community.</p>
             </div>
             <AlternatingFeatureSpotlight {...directoryData} />
             <AlternatingFeatureSpotlight {...calendarData} reverse={true} />

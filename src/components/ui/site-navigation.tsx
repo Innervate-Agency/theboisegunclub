@@ -226,9 +226,9 @@ export function SiteNavigation({
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className="h-[--icon-base] w-[--icon-base]" />
+                <X className="h-[--icon-base] w-(--icon-base)" />
               ) : (
-                <Menu className="h-[--icon-base] w-[--icon-base]" />
+                <Menu className="h-[--icon-base] w-(--icon-base)" />
               )}
             </Button>
           </div>
@@ -248,7 +248,7 @@ export function SiteNavigation({
                         : `text-muted-foreground ${getHoverClasses(item.color)}`
                     }`,
                     <>
-                      <item.icon className="h-[--icon-sm] w-[--icon-sm]" />
+                      <item.icon className="h-[--icon-sm] w-(--icon-sm)" />
                       {item.label}
                     </>
                   )}
@@ -256,7 +256,7 @@ export function SiteNavigation({
               ))}
             </div>
             
-            <div className="pt-[--space-base] mt-[--space-base] relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
+            <div className="pt-[--space-base] mt-(--space-base) relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
               <div className="flex flex-col gap-[--space-xs]">
                 <Button variant="ghost" size="sm" className="justify-start shadow-none">
                   Sign In

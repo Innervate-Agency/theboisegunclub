@@ -75,7 +75,7 @@ const AlternatingFeatureSpotlight = ({
       <div className="grid items-center gap-[--space-xl] md:grid-cols-2 md:gap-[--space-3xl]">
         {/* Text Content Column */}
         <div className={cn('space-y-[--space-lg]', reverse && 'md:order-last')}>
-          <div style={accentStyle} className="border-l-2 pl-[--space-md]">
+          <div style={accentStyle} className="border-l-2 pl-(--space-md)">
             {React.cloneElement(icon, {
               className: 'h-8 w-8 text-sandy-ochre mb-[--space-base]',
             })}
@@ -86,9 +86,9 @@ const AlternatingFeatureSpotlight = ({
               {description}
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[--space-md] pt-[--space-md] pl-[--space-md]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[--space-md] pt-[--space-md] pl-(--space-md)">
             {features.map((feature, index) => (
-              <div key={index} className="flex items-start gap-[--space-sm]">
+              <div key={index} className="flex items-start gap-(--space-sm)">
                 {React.cloneElement(feature.icon, {
                   className: 'h-5 w-5 text-ayu-green flex-shrink-0 mt-1',
                 })}

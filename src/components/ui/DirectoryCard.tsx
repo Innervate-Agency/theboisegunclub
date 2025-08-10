@@ -102,7 +102,7 @@ export function DirectoryCard({
         </div>
       </div>
       {contact && (
-        <div className="mt-[var(--space-xs)] text-caption text-warning-amber font-noto-sans truncate">{contact}</div>
+        <div className="mt-(var(--space-xs)) text-caption text-warning-amber font-noto-sans truncate">{contact}</div>
       )}
     </div>
   );

@@ -197,7 +197,7 @@ export function BrandCarousel({
       
       {/* Partner logos strip - clickable with large icons */}
       <div className="mt-[--space-4xl] text-center">
-        <p className="text-body-sm text-muted-foreground mb-[--space-2xl]">
+        <p className="text-body-sm text-muted-foreground mb-(--space-2xl)">
           Trusted by industry leaders
         </p>
         <div className="flex items-center justify-center gap-8 opacity-80 hover:opacity-100 transition-opacity">

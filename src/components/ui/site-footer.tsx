@@ -209,10 +209,10 @@ export function SiteFooter({
                       key={social.label}
                       href="#"
                       className={cn(
-                        "p-[--space-xs] rounded-[--radius-base] transition-all duration-200 hover:scale-110",
+                        "p-[--space-xs] rounded-(--radius-base) transition-all duration-200 hover:scale-110",
                         isMinimal 
-                          ? "text-[var(--color-sandy-ochre)] hover:text-[var(--color-rusty-orange)] hover:bg-[var(--color-sandy-ochre)]/10" 
-                          : "text-[var(--color-warm-stone)] hover:text-[var(--color-sandy-ochre)] hover:bg-[var(--color-sandy-ochre)]/10"
+                          ? "text-[var(--color-sandy-ochre)] hover:text-[var(--color-rusty-orange)] hover:bg-(--color-sandy-ochre)/10" 
+                          : "text-[var(--color-warm-stone)] hover:text-[var(--color-sandy-ochre)] hover:bg-(--color-sandy-ochre)/10"
                       )}
                       title={social.label}
                     >
