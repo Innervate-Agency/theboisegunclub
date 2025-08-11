@@ -71,24 +71,24 @@ const AlternatingFeatureSpotlight = ({
   } as React.CSSProperties;
 
   return (
-    <div className="container mx-auto px-[--space-md] py-[--space-2xl]">
-      <div className="grid items-center gap-[--space-xl] md:grid-cols-2 md:gap-[--space-3xl]">
+    <div className="container mx-auto px-(--spacing-md) py-(--spacing-2xl)">
+      <div className="grid items-center gap-(--spacing-xl) md:grid-cols-2 md:gap-(--spacing-3xl)">
         {/* Text Content Column */}
-        <div className={cn('space-y-[--space-lg]', reverse && 'md:order-last')}>
-          <div style={accentStyle} className="border-l-2 pl-[--space-md]">
+        <div className={cn('space-y-(--spacing-lg)', reverse && 'md:order-last')}>
+          <div style={accentStyle} className="border-l-2 pl-(--spacing-md)">
             {React.cloneElement(icon, {
-              className: 'h-8 w-8 text-sandy-ochre mb-[--space-base]',
+              className: 'h-8 w-8 text-sandy-ochre mb-(--spacing-base)',
             })}
             <h3 className="font-rajdhani text-3xl font-bold text-foreground md:text-4xl">
               {title}
             </h3>
-            <p className="mt-[--space-md] text-body-lg text-muted-foreground max-w-lg">
+            <p className="mt-(--spacing-md) text-body-lg text-muted-foreground max-w-lg">
               {description}
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[--space-md] pt-[--space-md] pl-[--space-md]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-(--spacing-md) pt-(--spacing-md) pl-(--spacing-md)">
             {features.map((feature, index) => (
-              <div key={index} className="flex items-start gap-[--space-sm]">
+              <div key={index} className="flex items-start gap-(--spacing-sm)">
                 {React.cloneElement(feature.icon, {
                   className: 'h-5 w-5 text-ayu-green flex-shrink-0 mt-1',
                 })}
@@ -108,13 +108,13 @@ const AlternatingFeatureSpotlight = ({
           {/* The elevated image canvas */}
           <div className="relative aspect-video transition-all duration-300 ease-out group-hover:-translate-y-2 group-hover:shadow-xl">
             {/* THIS IS THE FIX: No padding, no internal overflow hidden */}
-            <div className="bg-card rounded-lg shadow-elevated h-full">
+            <div className="bg-card rounded-md shadow-elevated h-full">
               <Image
                 src={imageSrc}
                 alt={imageAlt}
                 width={1200}
                 height={675}
-                className="w-full h-full object-cover rounded-lg" // Rounded corners applied directly to the image
+                className="w-full h-full object-cover rounded-md" // Rounded corners applied directly to the image
               />
             </div>
           </div>

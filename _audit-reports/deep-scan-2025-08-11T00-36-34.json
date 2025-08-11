@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-08-11T00:36:32.782Z",
+  "vulnerabilities": [],
+  "performance": [],
+  "dependencies": [
+    {
+      "package": "@next",
+      "size": "272M"
+    },
+    {
+      "package": "next",
+      "size": "151M"
+    },
+    {
+      "package": "lucide-react",
+      "size": "42M"
+    },
+    {
+      "package": "storybook",
+      "size": "41M"
+    },
+    {
+      "package": "date-fns",
+      "size": "39M"
+    }
+  ],
+  "buildOptimization": [],
+  "recommendations": [
+    "Add *.log to .gitignore",
+    "Add dist to .gitignore"
+  ]
+}

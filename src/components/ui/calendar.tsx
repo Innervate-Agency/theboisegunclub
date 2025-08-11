@@ -81,7 +81,7 @@ function Calendar({
           "select-none font-medium",
           captionLayout === "label"
             ? "text-body-sm"
-            : "rounded-input pl-[var(--space-xs)] pr-[var(--space-xs)] flex items-center gap-xs text-body-sm h-8 [&>svg]:text-muted-foreground [&>svg]:size-3.5",
+            : "rounded-input pl-(--spacing-xs) pr-(--spacing-xs) flex items-center gap-xs text-body-sm h-8 [&>svg]:text-muted-foreground [&>svg]:size-3.5",
           defaultClassNames.caption_label
         ),
         table: "w-full border-collapse",
@@ -90,7 +90,7 @@ function Calendar({
           "text-muted-foreground rounded-input flex-1 font-normal text-[0.8rem] select-none",
           defaultClassNames.weekday
         ),
-        week: cn("flex w-full mt-[var(--space-xs)]", defaultClassNames.week),
+        week: cn("flex w-full mt-(var(--spacing-xs))", defaultClassNames.week),
         week_number_header: cn(
           "select-none w-(--cell-size)",
           defaultClassNames.week_number_header

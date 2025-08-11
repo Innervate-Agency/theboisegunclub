@@ -86,7 +86,7 @@ export const RegionalEvent: Story = {
         <p className="text-muted-foreground mb-base">
           The region's largest firearms event featuring 200+ vendors and educational seminars.
         </p>
-        <div className="bg-muted/50 rounded-card p-sm mb-base">
+        <div className="bg-muted/50 rounded-sm p-sm mb-base">
           <p className="text-body-sm text-foreground">
             <strong>Date:</strong> August 15-17, 2025<br />
             <strong>Location:</strong> Ford Idaho Center<br />

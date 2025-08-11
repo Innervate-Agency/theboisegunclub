@@ -5,34 +5,34 @@ import { cn } from "@/lib/utils"
 import { Card, CardContent } from "@/components/ui/card"
 
 const statCardVariants = cva(
-  "relative overflow-hidden transition-all duration-300 ease-out hover:-translate-y-0.5",
+  "relative overflow-hidden transition-all duration-300 ease-out ",
   {
     variants: {
       variant: {
-        // STRATEGIC RESTRAINT: Shadow-first approach aligned with VendorCard principles
-        // Default: Clean theme-aware shadows
-        default: "bg-card text-card-foreground shadow-flat hover:shadow-md",
+        // SEMANTIC SHADOW SYSTEM: Stripe-inspired depth hierarchy for stats display
+        // Default: Present - established baseline for metric visibility
+        default: "bg-card text-card-foreground shadow-present hover:shadow-elevated",
         
-        // Premium: Consistent default shadows with strategic gradient accent
-        premium: "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-card before:pointer-events-none",
+        // Premium: Elevated - enhanced importance for key metrics
+        premium: "bg-card text-card-foreground shadow-elevated hover:shadow-prominent relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-none before:pointer-events-none",
         
-        // Elite: Consistent default shadows with enhanced accent features
-        elite: "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/6 before:via-transparent before:to-sandy-ochre/4 before:rounded-card before:pointer-events-none",
+        // Elite: Prominent - high-impact metrics demanding attention
+        elite: "bg-card text-card-foreground shadow-prominent hover:shadow-commanding relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/6 before:via-transparent before:to-sandy-ochre/4 before:rounded-none before:pointer-events-none",
         
-        // Glass: Modern mica with consistent default shadows
-        glass: "mica-overlay text-card-foreground shadow-flat hover:shadow-md backdrop-blur-sm relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        // Glass: Elevated with glassmorphism - modern metrics display
+        glass: "mica-overlay text-card-foreground shadow-elevated hover:shadow-prominent backdrop-blur-sm relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
-        // Fire: Consistent default shadows with center-positioned gradient accent
-        fire: "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
+        // Fire: Prominent - dynamic stats with tactical gradient accents
+        fire: "bg-card text-card-foreground shadow-prominent hover:shadow-commanding relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
-        // Fire Blue: Consistent default shadows with center-positioned cool gradient
-        'fire-blue': "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
+        // Fire Blue: Prominent with cool tactical gradients
+        'fire-blue': "bg-card text-card-foreground shadow-prominent hover:shadow-commanding relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
-        // Fire Purple: Consistent default shadows with center-positioned purple gradient
-        'fire-purple': "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-slate-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
+        // Fire Purple: Prominent with purple tactical gradients
+        'fire-purple': "bg-card text-card-foreground shadow-prominent hover:shadow-commanding relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-slate-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
-        // Fire Green: Consistent default shadows with center-positioned green gradient
-        'fire-green': "bg-card text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-sagebrush-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full"
+        // Fire Green: Prominent with green tactical gradients
+        'fire-green': "bg-card text-card-foreground shadow-prominent hover:shadow-commanding relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-sagebrush-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full"
       },
       size: {
         sm: "p-base",
@@ -145,12 +145,20 @@ export default function StatCard({
     <Card className={cn(statCardVariants({ variant, size }), className)} {...props}>
       <CardContent className="p-4">
         {icon && (
+<<<<<<< HEAD
           <div className={cn("mb-4", textColors.icon)}>
+=======
+          <div className={cn("mb-(--spacing-sm)", textColors.icon)}>
+>>>>>>> refactor/summer-2025-standards
             {icon}
           </div>
         )}
         
+<<<<<<< HEAD
         <div className="space-y-0">
+=======
+        <div className="space-y-(--spacing-micro)">
+>>>>>>> refactor/summer-2025-standards
           <div className="flex items-center justify-between">
             <h3 className={cn("text-3xl font-rajdhani font-bold", textColors.title)}>
               {formatValue(value)}
@@ -168,7 +176,7 @@ export default function StatCard({
           </p>
           
           {description && (
-            <p className={cn("text-caption mt-[var(--space-xs)]", textColors.description)}>
+            <p className={cn("text-caption mt-(--spacing-xs)", textColors.description)}>
               {description}
             </p>
           )}

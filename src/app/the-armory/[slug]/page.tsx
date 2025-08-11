@@ -1,31 +1,42 @@
-import { getGuideData, getAllGuides } from '@/lib/guides';
+import { getArmoryItem, getAllArmoryItems } from '@/lib/the-armory';
 import MdxContent from '@/components/molecules/MdxContent';
 import SiteNavigation from '@/components/organisms/SiteNavigation';
 import SiteFooter from '@/components/organisms/SiteFooter';
 import PageHero from '@/components/organisms/PageHero';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 type Props = {
   params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const guide = getGuideData(params.slug);
+  const item = getArmoryItem(params.slug);
+
+  if (!item) {
+    notFound();
+  }
+
   return {
-    title: guide.frontmatter.title,
-    description: `A guide on ${guide.frontmatter.title}`,
+    title: item.frontmatter.title,
+    description: `Details for ${item.frontmatter.title}`,
   };
 }
 
 export async function generateStaticParams() {
-  const guides = getAllGuides();
-  return guides.map((guide) => ({
-    slug: guide.slug,
+  const items = getAllArmoryItems();
+  return items.map((item) => ({
+    slug: item.slug,
   }));
 }
 
 export default async function ArmoryItemPage({ params }: Props) {
-  const item = getArmoryData(params.slug);
+  const item = getArmoryItem(params.slug);
+
+  if (!item) {
+    notFound();
+  }
 
   return (
     <>

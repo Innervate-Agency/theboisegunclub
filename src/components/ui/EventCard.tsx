@@ -56,62 +56,20 @@ export function EventCard({
 }: EventCardProps) {
   const spotsLeft = capacity && registeredCount ? capacity - registeredCount : null
 
-  // Color mapping for event types using our 10-color system with explicit CSS variables
-  const getEventColors = (type: string) => {
+  // Clean event type color mapping using globals.css system
+  const getEventTypeColor = (type: string) => {
     switch (type) {
-      case 'Competition': return { 
-        bg: 'bg-[color-mix(in_srgb,var(--color-slate-blue)_10%,transparent)]', 
-        border: 'border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]', 
-        text: 'text-[var(--color-slate-blue)]', 
-        accent: 'bg-[var(--color-slate-blue)]',
-        iconColor: 'text-[var(--color-slate-blue)]'
-      }
-      case 'Training': return { 
-        bg: 'bg-[color-mix(in_srgb,var(--color-sandy-ochre)_10%,transparent)]', 
-        border: 'border-[color-mix(in_srgb,var(--color-sandy-ochre)_30%,transparent)]', 
-        text: 'text-[var(--color-sandy-ochre)]', 
-        accent: 'bg-[var(--color-sandy-ochre)]',
-        iconColor: 'text-[var(--color-sandy-ochre)]'
-      }
-      case 'Expo': return { 
-        bg: 'bg-[color-mix(in_srgb,var(--color-info-river)_10%,transparent)]', 
-        border: 'border-[color-mix(in_srgb,var(--color-info-river)_30%,transparent)]', 
-        text: 'text-[var(--color-info-river)]', 
-        accent: 'bg-[var(--color-info-river)]',
-        iconColor: 'text-[var(--color-info-river)]'
-      }
-      case 'Charity': return { 
-        bg: 'bg-[color-mix(in_srgb,var(--color-sagebrush-green)_10%,transparent)]', 
-        border: 'border-[color-mix(in_srgb,var(--color-sagebrush-green)_30%,transparent)]', 
-        text: 'text-[var(--color-sagebrush-green)]', 
-        accent: 'bg-[var(--color-sagebrush-green)]',
-        iconColor: 'text-[var(--color-sagebrush-green)]'
-      }
-      case 'Social': return { 
-        bg: 'bg-[color-mix(in_srgb,var(--color-rusty-orange)_10%,transparent)]', 
-        border: 'border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)]', 
-        text: 'text-[var(--color-rusty-orange)]', 
-        accent: 'bg-[var(--color-rusty-orange)]',
-        iconColor: 'text-[var(--color-rusty-orange)]'
-      }
-      case 'Demo': return { 
-        bg: 'bg-[color-mix(in_srgb,var(--color-warning-clay)_10%,transparent)]', 
-        border: 'border-[color-mix(in_srgb,var(--color-warning-clay)_30%,transparent)]', 
-        text: 'text-[var(--color-warning-clay)]', 
-        accent: 'bg-[var(--color-warning-clay)]',
-        iconColor: 'text-[var(--color-warning-clay)]'
-      }
-      default: return { 
-        bg: 'bg-[color-mix(in_srgb,var(--color-slate-blue)_10%,transparent)]', 
-        border: 'border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]', 
-        text: 'text-[var(--color-slate-blue)]', 
-        accent: 'bg-[var(--color-slate-blue)]',
-        iconColor: 'text-[var(--color-slate-blue)]'
-      }
+      case 'Competition': return 'nav-events'      // Red - high energy
+      case 'Training': return 'sandy-ochre'       // Educational warmth  
+      case 'Expo': return 'info-river'            // Informational blue
+      case 'Charity': return 'sagebrush-green'    // Community giving
+      case 'Social': return 'nav-home'            // Warm gathering orange
+      case 'Demo': return 'warning-clay'          // Hands-on demonstration
+      default: return 'nav-events'                // Default to page primary
     }
   }
 
-  const colors = getEventColors(eventType)
+  const eventColor = getEventTypeColor(eventType)
 
   return (
     <Card
@@ -120,10 +78,10 @@ export function EventCard({
       {...props}
     >
       {/* Color-coded accent bar for all events */}
-      <div className={cn("absolute bottom-0 left-0 right-0 h-1", colors.accent)} />
-      {/* Additional featured accent */}
+      <div className={cn("absolute bottom-0 left-0 right-0 h-1", `bg-${eventColor}`)} />
+      {/* Featured events get gradient accent */}
       {featured && (
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre" />
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-page-gradient" />
       )}
       
       <div className="space-y-base">
@@ -134,7 +92,7 @@ export function EventCard({
               <Badge 
                 variant="outline" 
                 size="sm"
-                className={cn(colors.bg, colors.text, colors.border)}
+                className={`bg-${eventColor}/10 text-${eventColor} border-${eventColor}/30`}
               >
                 {eventType}
               </Badge>
@@ -153,7 +111,7 @@ export function EventCard({
           {/* Price Display */}
           {price && (
             <div className="text-right ml-base">
-              <div className="text-lg font-rajdhani font-bold text-rusty-orange">
+              <div className={`text-lg font-rajdhani font-bold text-${eventColor}`}>
                 {price}
               </div>
             </div>
@@ -168,15 +126,15 @@ export function EventCard({
         {/* Event Details */}
         <div className="space-y-xs text-sm">
           <div className="flex items-center gap-xs text-muted-foreground">
-            <Calendar className={cn("h-4 w-4 flex-shrink-0", colors.iconColor)} />
+            <Calendar className={`h-4 w-4 flex-shrink-0 text-${eventColor}`} />
             <span>{date}</span>
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
-            <Clock className={cn("h-4 w-4 flex-shrink-0", colors.iconColor)} />
+            <Clock className={`h-4 w-4 flex-shrink-0 text-${eventColor}`} />
             <span>{time}</span>
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
-            <MapPin className={cn("h-4 w-4 flex-shrink-0", colors.iconColor)} />
+            <MapPin className={`h-4 w-4 flex-shrink-0 text-${eventColor}`} />
             <span className="line-clamp-1">{location}</span>
           </div>
         </div>
@@ -185,7 +143,7 @@ export function EventCard({
         {capacity && (
           <div className="flex items-center justify-between text-sm bg-muted/50 px-base py-xs rounded">
             <div className="flex items-center gap-xs text-muted-foreground">
-              <Users className={cn("h-4 w-4", colors.iconColor)} />
+              <Users className={`h-4 w-4 text-${eventColor}`} />
               <span>Capacity: {capacity}</span>
             </div>
             <div className={cn(

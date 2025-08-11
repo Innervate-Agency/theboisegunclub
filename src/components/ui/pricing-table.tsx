@@ -10,7 +10,7 @@ import { Check, X, Minus, Star, Target } from 'lucide-react'
 
 const pricingCardVariants = cva(
   // BASE: Clean professional foundation for all tiers - LITERAL COPY from VendorCard
-  "relative overflow-hidden transition-all duration-300 bg-card text-card-foreground rounded-[var(--radius-lg)] group",
+  "relative overflow-hidden transition-all duration-300 bg-card text-card-foreground rounded-(--radius-lg) group",
   {
     variants: {
       tier: {
@@ -21,10 +21,10 @@ const pricingCardVariants = cva(
         copper: "shadow-flat hover:shadow-md bg-rusty-orange/[0.02] hover:bg-rusty-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
         // SILVER: Consistent default shadows with subtle cobalt glassmorphism
-        silver: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-card before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-warm-stone after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg",
+        silver: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-sm before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-warm-stone after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg",
         
         // GOLD: Consistent default shadows with premium mica glassmorphism features
-        gold: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-warm-stone/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-sandy-ochre/14 dark:before:to-rusty-orange/12 before:rounded-card before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
+        gold: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-warm-stone/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-sandy-ochre/14 dark:before:to-rusty-orange/12 before:rounded-sm before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
       },
       size: {
         sm: "p-base",
@@ -72,6 +72,8 @@ export interface PricingCardProps
   showFeatures?: boolean
   onSelectPlan?: (planId: string) => void
   tier?: 'free' | 'copper' | 'silver' | 'gold'
+  popular?: boolean
+  recommended?: boolean
 }
 
 export function PricingCard({
@@ -79,8 +81,6 @@ export function PricingCard({
   plan,
   tier,
   size,
-  popular = plan.popular,
-  recommended = plan.recommended,
   isAnnual = false,
   showFeatures = true,
   onSelectPlan,
@@ -118,7 +118,7 @@ export function PricingCard({
     >
       <Card className="border-0 shadow-none h-full">
         {/* Popular badge */}
-        {popular && plan.badge && (
+        {plan.popular && plan.badge && (
           <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
             <Badge variant="default" className="bg-rusty-orange text-nickel-white font-medium px-md py-sm text-caption shadow-md">
               <Star className="h-3 w-3 mr-xs" />
@@ -233,7 +233,7 @@ export function PricingTable({
       {/* Annual toggle */}
       {showAnnualDiscount && (
         <div className="flex justify-center">
-          <div className="flex items-center gap-base p-xs bg-muted rounded-card">
+          <div className="flex items-center gap-base p-xs bg-muted rounded-sm">
             <button
               className={cn(
                 "px-base py-xs rounded-input text-body-sm font-medium transition-all duration-150",
@@ -265,7 +265,6 @@ export function PricingTable({
           <PricingCard
             key={plan.id}
             plan={plan}
-            variant={variant}
             isAnnual={isAnnual}
             showFeatures={!showFeatureComparison}
             onSelectPlan={onSelectPlan}
@@ -274,42 +273,46 @@ export function PricingTable({
       </div>
 
       {/* Feature comparison table */}
-      {showFeatureComparison && (
-        <div className="overflow-x-auto">
-          <div className="inline-block min-w-full align-middle">
-            <table className="min-w-full divide-y divide-border">
-              <thead>
-                <tr>
-                  <th className="px-md py-base text-left text-body-sm font-rajdhani font-bold text-dark-chocolate">
-                    Features
-                  </th>
-                  {plans.map((plan) => (
-                    <th key={plan.id} className="px-md py-base text-center">
-                      <div className="font-rajdhani font-bold text-dark-chocolate">
-                        {plan.name}
-                      </div>
+      {showFeatureComparison && plans && plans.length > 0 && (() => {
+        const firstPlan = plans[0];
+        if (!firstPlan || !firstPlan.features) return null;
+        return (
+          <div className="overflow-x-auto">
+            <div className="inline-block min-w-full align-middle">
+              <table className="min-w-full divide-y divide-border">
+                <thead>
+                  <tr>
+                    <th className="px-md py-base text-left text-body-sm font-rajdhani font-bold text-dark-chocolate">
+                      Features
                     </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {plans[0]?.features.map((_, featureIndex) => (
-                  <tr key={featureIndex} className="hover:bg-muted/30">
-                    <td className="px-md py-base text-body-sm font-medium text-dark-chocolate">
-                      {plans[0].features[featureIndex]?.name}
-                    </td>
                     {plans.map((plan) => (
-                      <td key={plan.id} className="px-md py-base text-center">
-                        {renderFeatureValue(plan.features[featureIndex])}
-                      </td>
+                      <th key={plan.id} className="px-md py-base text-center">
+                        <div className="font-rajdhani font-bold text-dark-chocolate">
+                          {plan.name}
+                        </div>
+                      </th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {firstPlan.features.map((_, featureIndex) => (
+                    <tr key={featureIndex} className="hover:bg-muted/30">
+                      <td className="px-md py-base text-body-sm font-medium text-dark-chocolate">
+                        {firstPlan.features[featureIndex]?.name}
+                      </td>
+                      {plans.map((plan) => (
+                        <td key={plan.id} className="px-md py-base text-center">
+                          {renderFeatureValue(plan.features[featureIndex])}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
-      )}
+        )
+      })()}
     </div>
   )
 
@@ -351,8 +354,8 @@ export function PricingFusion({
   const [isAnnual, setIsAnnual] = React.useState(false)
 
   return (
-    <div className="w-full space-y-2xl p-lg bg-solid-brand-warm rounded-large border border-rusty-orange/20 hover-gradient-warm">
-      <div className="text-center space-y-[base]">
+    <div className="w-full space-y-2xl p-lg bg-solid-brand-warm rounded-md border border-rusty-orange/20 hover-gradient-warm">
+      <div className="text-center space-y-base">
         <h2 className="text-heading-lg font-rajdhani font-bold text-foreground">
           Choose Your Membership
         </h2>
@@ -364,7 +367,7 @@ export function PricingFusion({
       {/* Annual toggle */}
       {showAnnualDiscount && (
         <div className="flex justify-center">
-          <div className="flex items-center gap-base p-xs mica-card rounded-card border border-rusty-orange/20">
+          <div className="flex items-center gap-base p-xs mica-card rounded-sm border border-rusty-orange/20">
             <button
               className={cn(
                 "px-md py-sm rounded-input text-body-sm font-medium transition-all duration-150",
@@ -396,7 +399,6 @@ export function PricingFusion({
           <PricingCard
             key={plan.id}
             plan={plan}
-            variant="fusion"
             isAnnual={isAnnual}
             showFeatures={!showFeatureComparison}
             onSelectPlan={onSelectPlan}
@@ -409,43 +411,47 @@ export function PricingFusion({
       </div>
 
       {/* Feature comparison with fusion styling */}
-      {showFeatureComparison && (
-        <div className="mica-card rounded-large border border-rusty-orange/20 p-md overflow-x-auto">
-          <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate mb-[md] text-center">
-            Feature Comparison
-          </h3>
-          <table className="w-full">
-            <thead>
-              <tr className="border-b border-rusty-orange/20">
-                <th className="px-base py-sm text-left text-body-sm font-rajdhani font-bold text-dark-chocolate">
-                  Features
-                </th>
-                {plans.map((plan) => (
-                  <th key={plan.id} className="px-base py-sm text-center">
-                    <div className="font-rajdhani font-bold text-dark-chocolate">
-                      {plan.name}
-                    </div>
+      {showFeatureComparison && plans && plans.length > 0 && (() => {
+        const firstPlan = plans[0];
+        if (!firstPlan || !firstPlan.features) return null;
+        return (
+          <div className="mica-card rounded-md border border-rusty-orange/20 p-md overflow-x-auto">
+            <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate mb-[md] text-center">
+              Feature Comparison
+            </h3>
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-rusty-orange/20">
+                  <th className="px-base py-sm text-left text-body-sm font-rajdhani font-bold text-dark-chocolate">
+                    Features
                   </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {plans[0]?.features.map((_, featureIndex) => (
-                <tr key={featureIndex} className="border-b border-border hover:bg-rusty-orange/5">
-                  <td className="px-base py-sm text-body-sm font-medium text-dark-chocolate">
-                    {plans[0].features[featureIndex]?.name}
-                  </td>
                   {plans.map((plan) => (
-                    <td key={plan.id} className="px-base py-sm text-center">
-                      {renderFeatureValueFusion(plan.features[featureIndex])}
-                    </td>
+                    <th key={plan.id} className="px-base py-sm text-center">
+                      <div className="font-rajdhani font-bold text-dark-chocolate">
+                        {plan.name}
+                      </div>
+                    </th>
                   ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+              </thead>
+              <tbody>
+                {firstPlan.features.map((_, featureIndex) => (
+                  <tr key={featureIndex} className="border-b border-border hover:bg-rusty-orange/5">
+                    <td className="px-base py-sm text-body-sm font-medium text-dark-chocolate">
+                      {firstPlan.features[featureIndex]?.name}
+                    </td>
+                    {plans.map((plan) => (
+                      <td key={plan.id} className="px-base py-sm text-center">
+                        {renderFeatureValueFusion(plan.features[featureIndex])}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )
+      })()}
     </div>
   )
 

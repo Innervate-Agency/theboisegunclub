@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react"
 
 const productShowcaseCardVariants = cva(
   // TBGC Design System: Strategic restraint with sophisticated animations
-  "group relative overflow-hidden rounded-card bg-card text-card-foreground transition-all duration-500 ease-out cursor-pointer",
+  "group relative overflow-hidden rounded-none bg-card text-card-foreground transition-all duration-500 ease-out cursor-pointer",
   {
     variants: {
       variant: {
@@ -69,7 +69,7 @@ const ProductShowcaseCard = React.forwardRef<HTMLDivElement, ProductShowcaseCard
           )} />
           
           {/* Image Frame - Always visible with subtle styling */}
-          <div className="relative z-10 w-32 h-32 rounded-card bg-card border border-border/50 flex items-center justify-center shadow-flat">
+          <div className="relative z-10 w-32 h-32 rounded-none bg-card border border-border/50 flex items-center justify-center shadow-flat">
             {imageSlot || (
               <div className="w-16 h-16 rounded bg-muted flex items-center justify-center">
                 <div className="w-8 h-8 rounded bg-muted-foreground/20" />
@@ -82,7 +82,7 @@ const ProductShowcaseCard = React.forwardRef<HTMLDivElement, ProductShowcaseCard
         <div className="relative p-md">
           {/* Stats - Always visible */}
           {stats && stats.length > 0 && (
-            <div className="flex gap-md mb-[var(--space-base)]">
+            <div className="flex gap-md mb-(--spacing-base)">
               {stats.map((stat, index) => (
                 <div key={index} className="flex flex-col">
                   <div className="text-heading-md font-bold text-card-foreground">{stat.value}</div>
@@ -94,8 +94,8 @@ const ProductShowcaseCard = React.forwardRef<HTMLDivElement, ProductShowcaseCard
 
           {/* Main Content Container - Slides up on hover */}
           <div className="transform transition-transform duration-300 ease-out group-hover:-translate-y-3">
-            <h3 className="text-heading-sm font-rajdhani font-semibold mb-[var(--space-xs)] text-card-foreground">{title}</h3>
-            <p className="text-muted-foreground mb-[var(--space-base)] text-body-sm leading-relaxed">{description}</p>
+            <h3 className="text-heading-sm font-rajdhani font-semibold mb-(--spacing-xs) text-card-foreground">{title}</h3>
+            <p className="text-muted-foreground mb-(--spacing-base) text-body-sm leading-relaxed">{description}</p>
           </div>
 
           {/* CTA Button - Appears on hover with slide up animation */}

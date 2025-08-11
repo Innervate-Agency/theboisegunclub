@@ -423,10 +423,10 @@
   .rounded-xs { border-radius: var(--radius-xs); }
   .rounded-sm { border-radius: var(--radius-sm); }
   .rounded-base { border-radius: var(--radius-base); }
-  .rounded-md { border-radius: var(--radius-md); }
-  .rounded-lg { border-radius: var(--radius-lg); }
-  .rounded-xl { border-radius: var(--radius-xl); }
-  .rounded-2xl { border-radius: var(--radius-2xl); }
+  .rounded-sm { border-radius: var(--radius-md); }
+  .rounded-md { border-radius: var(--radius-lg); }
+  .rounded-lg { border-radius: var(--radius-xl); }
+  .rounded-xl { border-radius: var(--radius-2xl); }
   .rounded-full { border-radius: var(--radius-full); }
 
   /* ================== Z-INDEX UTILITIES ================== */

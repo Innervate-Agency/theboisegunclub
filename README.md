@@ -12,7 +12,7 @@ A comprehensive digital hub for the Treasure Valley firearms community - serving
 - **Event Aggregation**: Community-wide firearms events and training
 - **Forum Categories**: Discussion spaces for different user types
 - **Component Library**: 80+ professionally designed UI components
-- **Design System**: 26-color TBGC palette with strategic restraint philosophy
+- **Design System**: Semantic shadow hierarchy with tactical square aesthetic
 
 ## 🚀 Quick Start
 
@@ -91,12 +91,19 @@ All components follow the **Class Variance Authority (CVA)** pattern with:
 - **Strategic Restraint**: Purposeful styling avoiding "gaudy" effects
 - **Typography Hierarchy**: Rajdhani (display), Noto Sans (body), Noto Serif (accent)
 
-### Shadow Consistency & Strategic Restraint
+### Semantic Shadow Hierarchy & Tactical Aesthetic
 
-**CRITICAL PRINCIPLE**: All components use consistent shadow depth to prevent visual noise and distraction.
+**STRIPE-INSPIRED DEPTH SYSTEM**: 8-level semantic shadow hierarchy with dramatic visual distinction and tactical square aesthetic.
 
-- **Universal Shadows**: `shadow-sm hover:shadow-md` across ALL components regardless of tier
-- **No Shadow Hierarchy**: Premium tiers DO NOT use deeper shadows (shadow-lg, shadow-xl, shadow-2xl)
+#### Shadow Progression
+- **Semantic Levels**: `shadow-ghost` → `shadow-whisper` → `shadow-present` → `shadow-elevated` → `shadow-prominent` → `shadow-commanding` → `shadow-hero` → `shadow-modal`
+- **Interactive Feedback**: Every shadow steps up on hover (present→elevated, prominent→commanding, etc.)
+- **Contextual Meaning**: Each level communicates importance and interactive affordance
+
+#### Tactical Border Radius Hierarchy
+- **Structural Elements**: Main cards and containers use `rounded-none` (square tactical)
+- **Interactive Elements**: Buttons `rounded-xs` (4px), badges `rounded-sm` (8px) for usability
+- **Shadow-First Design**: Visual hierarchy achieved through depth, not border radius
 - **Nested Elements**: Stay flat to avoid shadow stacking
 - **Premium Differentiation**: Achieved through:
   - Subtle background overlays (`before:` pseudo-elements)

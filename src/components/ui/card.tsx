@@ -3,43 +3,44 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const cardVariants = cva(
-  // TBGC Design System: Strategic restraint with clean theme-aware design
+  // TBGC Design System: Square tactical aesthetic with dramatic shadow hierarchy
   "relative flex flex-col rounded-none bg-card text-card-foreground transition-all duration-300 ease-out",
   {
     variants: {
       variant: {
-        // Default: Clean baseline with shadow system (strategic restraint)
-        default: "bg-card text-card-foreground shadow-flat hover:shadow-elevated",
+        // SEMANTIC SHADOW HIERARCHY: Stripe-inspired depth system for content cards
+        // Default: Present - established baseline for content visibility
+        default: "bg-card text-card-foreground shadow-present hover:shadow-elevated",
         
-        // Elevated: Subtle elevation with strategic restraint
-        elevated: "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-0.5",
+        // Elevated: Enhanced presence for important content
+        elevated: "bg-card text-card-foreground shadow-elevated hover:shadow-prominent",
         
-        // Interactive: Clickable feedback with clear affordance
-        interactive: "bg-card text-card-foreground shadow-flat hover:shadow-elevated hover:-translate-y-0.5 cursor-pointer hover:bg-card/95",
+        // Interactive: Clear clickable affordance with tactical feedback
+        interactive: "bg-card text-card-foreground shadow-present hover:shadow-elevated cursor-pointer hover:bg-card/95",
         
-        // Premium: Strategic copper-brass accent (inspired by VendorCard copper tier)
-        premium: "bg-card text-card-foreground shadow-flat hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-none before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-none before:pointer-events-none",
+        // Premium: Prominent depth with strategic copper-brass accent
+        premium: "bg-card text-card-foreground shadow-prominent hover:shadow-commanding relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-none before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-none before:pointer-events-none",
         
-        // Glass: Windows 11 Mica glassmorphism
-        glass: "mica-card shadow-flat hover:shadow-elevated transition-all duration-200",
+        // Glass: Elevated glassmorphism for modern content display
+        glass: "mica-card shadow-elevated hover:shadow-prominent transition-all duration-200",
         
-        // Outlined: Exception - explicit outline variant can use borders per design system policy
-        outlined: "bg-transparent text-card-foreground border border-border hover:bg-card/50 hover:shadow-sm",
+        // Outlined: Exception - minimal whisper shadow for outlined variants
+        outlined: "bg-transparent text-card-foreground border border-border hover:bg-card/50 hover:shadow-whisper",
         
-        // Subtle: Muted appearance
-        subtle: "bg-muted text-card-foreground shadow-xs hover:shadow-sm hover:bg-card",
+        // Subtle: Ghost-level subtle presence for secondary content
+        subtle: "bg-muted text-card-foreground shadow-ghost hover:shadow-whisper hover:bg-card",
         
-        // Fire: Premium fire gradient (inspired by VendorCard gold tier)
-        fire: "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        // Fire: Commanding presence with premium tactical gradient
+        fire: "bg-card text-card-foreground shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
-        // Fire Blue: Idaho palette blue fire gradient 
-        "fire-blue": "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        // Fire Blue: Commanding with cool tactical gradients
+        "fire-blue": "bg-card text-card-foreground shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
-        // Fire Green: Idaho palette green fire gradient
-        "fire-green": "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-sagebrush-green after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        // Fire Green: Commanding with green tactical gradients
+        "fire-green": "bg-card text-card-foreground shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-sagebrush-green after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
-        // Fire Red: Idaho palette red fire gradient
-        "fire-red": "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-safety-red after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
+        // Fire Red: Commanding with red tactical gradients
+        "fire-red": "bg-card text-card-foreground shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-safety-red after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
       },
       size: {
         sm: "",              // Subcomponents handle their own padding

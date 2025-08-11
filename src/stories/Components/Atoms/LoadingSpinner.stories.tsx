@@ -89,15 +89,15 @@ export const GunClubContexts: Story = {
 export const InlineLoading: Story = {
   render: () => (
     <div className="space-y-lg">
-      <div className="flex items-center gap-base p-base bg-range-white rounded-card">
+      <div className="flex items-center gap-base p-base bg-range-white rounded-sm">
         <LoadingSpinner size="sm" text="" />
         <span className="text-blued-steel">Processing membership application...</span>
       </div>
-      <div className="flex items-center gap-base p-base bg-range-white rounded-card">
+      <div className="flex items-center gap-base p-base bg-range-white rounded-sm">
         <LoadingSpinner size="sm" text="" />
         <span className="text-blued-steel">Loading range schedule...</span>
       </div>
-      <div className="flex items-center gap-base p-base bg-range-white rounded-card">
+      <div className="flex items-center gap-base p-base bg-range-white rounded-sm">
         <LoadingSpinner size="sm" text="" />
         <span className="text-blued-steel">Submitting competition scores...</span>
       </div>

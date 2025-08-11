@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 
 const alertVariants = cva(
   // Base: Strategic restraint with clean theme-aware design
-  "relative w-full rounded-card px-md py-base text-body-sm grid has-[>svg]:grid-cols-[1.5rem_1fr] grid-cols-[0_1fr] has-[>svg]:gap-x-3 gap-y-1 items-start [&>svg]:size-4 [&>svg]:translate-y-0.5 [&>svg]:text-current transition-colors duration-150 ease-out",
+  "relative w-full rounded-sm px-md py-base text-body-sm grid has-[>svg]:grid-cols-[1.5rem_1fr] grid-cols-[0_1fr] has-[>svg]:gap-x-3 gap-y-1 items-start [&>svg]:size-4 [&>svg]:translate-y-0.5 [&>svg]:text-current transition-colors duration-150 ease-out",
   {
     variants: {
       variant: {

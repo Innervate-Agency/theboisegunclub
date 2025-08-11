@@ -113,7 +113,7 @@ const trainingFeatures = [
 
 export default function TrainingPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background theme-forums">
       {/* Navigation */}
       <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
         <NavigationFusion 
@@ -136,10 +136,10 @@ export default function TrainingPage() {
       />
 
       {/* Training Features */}
-      <section className="px-[var(--space-md)] py-[var(--space-xl)] bg-gradient-hero-warm">
+      <section className="px-(--spacing-md) py-(--spacing-xl) bg-gradient-hero-warm">
         <div className="max-w-site mx-auto">
-          <div className="text-center mb-[var(--space-xl)]">
-            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
+          <div className="text-center mb-(--spacing-xl)">
+            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">
               Building Treasure Valley's Training Hub
             </h2>
             <p className="text-lg text-warning-amber font-noto-sans max-w-3xl mx-auto">
@@ -149,8 +149,8 @@ export default function TrainingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
             {trainingFeatures.map((feature, index) => (
               <Card key={index} className="p-md text-center hover:shadow-elevated transition-all duration-200">
-                <feature.icon className="h-12 w-12 text-sandy-ochre mx-auto mb-[var(--space-base)]" />
-                <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-[var(--space-xs)]">
+                <feature.icon className="h-12 w-12 text-sandy-ochre mx-auto mb-(--spacing-base)" />
+                <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-(--spacing-xs)">
                   {feature.title}
                 </h3>
                 <p className="text-sm text-warning-amber font-noto-sans">
@@ -163,10 +163,10 @@ export default function TrainingPage() {
       </section>
 
       {/* Training Directory Vision */}
-      <section id="about-training" className="py-[var(--space-2xl)]">
-        <div className="max-w-site mx-auto px-[var(--space-md)]">
-          <div className="text-center mb-[var(--space-xl)]">
-            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
+      <section id="about-training" className="py-(--spacing-2xl)">
+        <div className="max-w-site mx-auto px-(--spacing-md)">
+          <div className="text-center mb-(--spacing-xl)">
+            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">
               Treasure Valley Training Ecosystem
             </h2>
             <p className="text-lg text-warning-amber font-noto-sans max-w-3xl mx-auto">
@@ -174,12 +174,12 @@ export default function TrainingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-lg mb-[var(--space-xl)]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-lg mb-(--spacing-xl)">
             <Card className="p-md text-center">
-              <h3 className="text-xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
+              <h3 className="text-xl font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">
                 Basic Safety & CCW
               </h3>
-              <p className="text-warning-amber font-noto-sans text-sm mb-[var(--space-base)]">
+              <p className="text-warning-amber font-noto-sans text-sm mb-(--spacing-base)">
                 NRA basic courses and Idaho Enhanced CCW certification
               </p>
               <div className="text-2xl font-rajdhani font-bold text-sandy-ochre">6+</div>
@@ -187,10 +187,10 @@ export default function TrainingPage() {
             </Card>
             
             <Card className="p-md text-center">
-              <h3 className="text-xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
+              <h3 className="text-xl font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">
                 Advanced Tactical
               </h3>
-              <p className="text-warning-amber font-noto-sans text-sm mb-[var(--space-base)]">
+              <p className="text-warning-amber font-noto-sans text-sm mb-(--spacing-base)">
                 Defensive pistol, carbine, and specialized training
               </p>
               <div className="text-2xl font-rajdhani font-bold text-sandy-ochre">4+</div>
@@ -198,10 +198,10 @@ export default function TrainingPage() {
             </Card>
             
             <Card className="p-md text-center">
-              <h3 className="text-xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
+              <h3 className="text-xl font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">
                 Specialized Programs
               </h3>
-              <p className="text-warning-amber font-noto-sans text-sm mb-[var(--space-base)]">
+              <p className="text-warning-amber font-noto-sans text-sm mb-(--spacing-base)">
                 Women's classes, youth programs, and custom training
               </p>
               <div className="text-2xl font-rajdhani font-bold text-sandy-ochre">3+</div>
@@ -210,9 +210,9 @@ export default function TrainingPage() {
           </div>
 
           {/* Instructor Signup Form */}
-          <div id="instructor-signup" className="bg-gradient-hero-warm rounded-lg border border-sandy-ochre/20 p-[var(--space-xl)]">
-            <div className="text-center mb-[var(--space-lg)]">
-              <h3 className="text-2xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
+          <div id="instructor-signup" className="bg-gradient-hero-warm rounded-md border border-sandy-ochre/20 p-(--spacing-xl)">
+            <div className="text-center mb-(--spacing-lg)">
+              <h3 className="text-2xl font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">
                 Join Our Training Directory
               </h3>
               <p className="text-lg text-warning-amber font-noto-sans max-w-2xl mx-auto">
@@ -220,18 +220,18 @@ export default function TrainingPage() {
               </p>
             </div>
             
-            <div className="max-w-2xl mx-auto space-y-[var(--space-base)]">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
+            <div className="max-w-2xl mx-auto space-y-(--spacing-base)">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-(--spacing-base)">
                 <Input placeholder="Instructor/Organization Name" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
                 <Input placeholder="Contact Name" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-(--spacing-base)">
                 <Input placeholder="Phone Number" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
                 <Input placeholder="Email Address" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
               </div>
               <Input placeholder="Primary Training Location" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-base)]">
-                <select className="px-[var(--space-base)] py-[var(--space-xs)] border border-sandy-ochre/30 rounded-lg bg-white text-sm font-noto-sans">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-(--spacing-base)">
+                <select className="px-(--spacing-base) py-(--spacing-xs) border border-sandy-ochre/30 rounded-md bg-white text-sm font-noto-sans">
                   <option>Primary Training Type</option>
                   <option>Basic Safety / NRA Courses</option>
                   <option>CCW / Enhanced CCW</option>
@@ -248,14 +248,14 @@ export default function TrainingPage() {
               <Input placeholder="Certifications (NRA, USCCA, etc.)" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
               <textarea 
                 placeholder="Describe your training programs, experience, and qualifications..."
-                className="w-full px-[var(--space-base)] py-[var(--space-xs)] border border-sandy-ochre/30 rounded-lg bg-white text-sm font-noto-sans min-h-[100px] focus:border-sandy-ochre focus:outline-none"
+                className="w-full px-(--spacing-base) py-(--spacing-xs) border border-sandy-ochre/30 rounded-md bg-white text-sm font-noto-sans min-h-[100px] focus:border-sandy-ochre focus:outline-none"
               />
               
-              <div className="text-center pt-[var(--space-base)]">
+              <div className="text-center pt-(--spacing-base)">
                 <Button size="lg" className="bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange font-rajdhani font-semibold">
                   Join Training Directory
                 </Button>
-                <p className="text-sm text-warning-amber mt-[var(--space-xs)]">
+                <p className="text-sm text-warning-amber mt-(--spacing-xs)">
                   We'll review and contact you within 48 hours
                 </p>
               </div>

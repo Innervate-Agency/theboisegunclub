@@ -4,12 +4,18 @@ import { SiteFooter } from '@/components/ui/site-footer';
 import { BreadcrumbHero } from '@/components/ui/breadcrumb-hero';
 import MdxContent from '@/components/molecules/MdxContent';
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+type Props = {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const guide = getGuideData(params.slug);
 
   if (!guide) {
-    return notFound();
+    notFound();
   }
 
   return {
@@ -25,7 +31,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function GuidePage({ params }: { params: { slug: string } }) {
+export default async function GuidePage({ params }: Props) {
   const guide = getGuideData(params.slug);
 
   if (!guide) {

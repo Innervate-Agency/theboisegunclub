@@ -46,7 +46,7 @@ export const Glass: Story = {
     variant: 'glass',
   },
   render: (args) => (
-    <div className="relative p-10 bg-cover bg-center rounded-card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')" }}>
+    <div className="relative p-10 bg-cover bg-center rounded-sm" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')" }}>
       <div className="flex items-center space-x-xs">
         <Switch id="glass-mode" {...args} />
         <Label htmlFor="glass-mode" className="text-range-white">Glass Mode</Label>

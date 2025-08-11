@@ -115,7 +115,7 @@ const EyeToggle = ({ isVisible }: { isVisible: boolean }) => (
 const CheckTransition = ({ isChecked }: { isChecked: boolean }) => (
   <div className="relative w-4 h-4">
     <div className={`absolute inset-0 transition-all duration-300 ${isChecked ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
-      <div className="w-4 h-4 rounded-full bg-sage-green flex items-center justify-center">
+      <div className="w-4 h-4 rounded-pill bg-sage-green flex items-center justify-center">
         <Check className="w-3 h-3 text-white" strokeWidth={3} />
       </div>
     </div>
@@ -142,9 +142,9 @@ const LoadingDots = () => (
 
 const PulseRing = ({ isActive }: { isActive: boolean }) => (
   <div className="relative">
-    <div className="w-4 h-4 rounded-full bg-current" />
+    <div className="w-4 h-4 rounded-pill bg-current" />
     {isActive && (
-      <div className="absolute inset-0 w-4 h-4 rounded-full bg-current animate-ping opacity-30" />
+      <div className="absolute inset-0 w-4 h-4 rounded-pill bg-current animate-ping opacity-30" />
     )}
   </div>
 )
@@ -526,7 +526,7 @@ export const InteractivePlayground: Story = {
               <CardTitle>Animation Preview</CardTitle>
             </CardHeader>
             <CardContent className="space-y-lg">
-              <div className="h-32 flex items-center justify-center bg-muted/30 rounded-card">
+              <div className="h-32 flex items-center justify-center bg-muted/30 rounded-sm">
                 <div className="text-6xl">
                   {renderAnimation()}
                 </div>

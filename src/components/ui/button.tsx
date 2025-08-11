@@ -123,56 +123,56 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // Default: Clean theme-aware with sophisticated shadow depth (NO BORDER)
-        default: "bg-card text-card-foreground shadow-flat hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-rusty-orange",
+        // Default: Present baseline with elevated interactions (NO BORDER)
+        default: "bg-card text-card-foreground shadow-present hover:shadow-elevated focus-visible:ring-rusty-orange",
         
-        // Primary: More prominent theme-aware with deeper shadow (NO BORDER)
-        primary: "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 focus-visible:ring-rusty-orange",
+        // Primary: Elevated prominence with commanding interactions (NO BORDER)  
+        primary: "bg-card text-card-foreground shadow-elevated hover:shadow-prominent focus-visible:ring-rusty-orange",
         
-        // Secondary: Subtle theme-aware background with better depth (NO BORDER)
-        secondary: "bg-muted text-card-foreground shadow-flat hover:shadow-md hover:bg-muted/80 hover:-translate-y-0.5 focus-visible:ring-rusty-orange",
+        // Secondary: Whisper subtlety with present interactions (NO BORDER)
+        secondary: "bg-muted text-card-foreground shadow-whisper hover:shadow-present hover:bg-muted/80 focus-visible:ring-rusty-orange",
         
-        // Accent: Clean theme-aware with copper accent background
-        accent: "bg-rusty-orange/10 text-rusty-orange shadow-flat hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-rusty-orange/50 hover:bg-rusty-orange/20",
+        // Accent: Present with tactical copper accenting
+        accent: "bg-rusty-orange/10 text-rusty-orange shadow-present hover:shadow-elevated focus-visible:ring-rusty-orange/50 hover:bg-rusty-orange/20",
         
-        // Success: Clean theme-aware with green accent background
-        success: "bg-rifling-green/10 text-rifling-green shadow-flat hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-rifling-green/50 hover:bg-rifling-green/20",
+        // Success: Present with tactical green accenting
+        success: "bg-rifling-green/10 text-rifling-green shadow-present hover:shadow-elevated focus-visible:ring-rifling-green/50 hover:bg-rifling-green/20",
         
-        // Destructive: Clean theme-aware with safety red accent background
-        destructive: "bg-safety-red/10 text-safety-red shadow-flat hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-safety-red/50 hover:bg-safety-red/20",
+        // Destructive: Present with tactical red accenting
+        destructive: "bg-safety-red/10 text-safety-red shadow-present hover:shadow-elevated focus-visible:ring-safety-red/50 hover:bg-safety-red/20",
         
         // Outline: Clean theme-aware with border
         outline: "border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground",
 
-        // Glass: Windows 11 Mica-inspired glassmorphism (borderless for clean look)
-        glass: "mica-overlay text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-0.5 focus-visible:ring-rusty-orange/50 hover:bg-card/25 transition-all duration-200",
+        // Glass: Elevated glassmorphism with tactical transparency
+        glass: "mica-overlay text-card-foreground shadow-elevated hover:shadow-prominent focus-visible:ring-rusty-orange/50 hover:bg-card/25 transition-all duration-200",
         
-        // Solid variants - fun, colorful, no shadows, with interactive effects
+        // Solid variants - tactical colors, no shadows for flat design
         "solid-accent": "bg-rusty-orange text-primary hover:bg-rusty-orange focus-visible:ring-rusty-orange/50 border-0 transition-all duration-200 stripe-arrow",
         "solid-success": "bg-rifling-green text-card-foreground hover:bg-bore-sight-green focus-visible:ring-rifling-green/50 border-0 transition-all duration-200 stripe-arrow",
         "solid-destructive": "bg-rusty-orange text-card-foreground hover:bg-recoil-pad focus-visible:ring-rusty-orange/50 border-0 transition-all duration-200 stripe-arrow",
         "solid-primary": "bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-primary/50 border-0 transition-all duration-200 stripe-arrow",
         
-        // Ghost: Minimal with subtle hover (theme-aware)
-        ghost: "text-muted-foreground hover:bg-muted hover:shadow-xs focus-visible:ring-rusty-orange border-0",
+        // Ghost: Whisper subtlety with tactical hover
+        ghost: "text-muted-foreground hover:bg-muted hover:shadow-whisper focus-visible:ring-rusty-orange border-0",
         
-        // Flat: No shadows, perfect for inside cards/forms (Stripe-like design system)
+        // Flat: No shadows - perfect for card interiors (Stripe flat design)
         flat: "bg-rusty-orange/10 text-rusty-orange hover:bg-rusty-orange/20 focus-visible:ring-rusty-orange/50 border-0 transition-colors duration-150",
         
-        // Link: Simple text, no shadow
+        // Link: Text-only, minimal presence
         link: "text-rusty-orange hover:text-recoil-pad underline-offset-4 hover:underline focus-visible:ring-rusty-orange border-0",
         
-        // Fire: The "fucking great" gradient with bottom accent bar
-        fire: "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 focus-visible:ring-rusty-orange transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-rusty-orange after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        // Fire: Commanding presence with tactical gradient accents
+        fire: "bg-card text-card-foreground shadow-commanding hover:shadow-hero focus-visible:ring-rusty-orange transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-rusty-orange after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
-        // Fire Blue: Blue to green fire gradient 
-        "fire-blue": "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 focus-visible:ring-slate-blue transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        // Fire Blue: Commanding with cool tactical gradients
+        "fire-blue": "bg-card text-card-foreground shadow-commanding hover:shadow-hero focus-visible:ring-slate-blue transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
-        // Fire Purple: Purple to cobalt fire gradient
-        "fire-purple": "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 focus-visible:ring-ayu-purple transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-purple after:to-slate-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        // Fire Purple: Commanding with purple tactical gradients  
+        "fire-purple": "bg-card text-card-foreground shadow-commanding hover:shadow-hero focus-visible:ring-ayu-purple transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-purple after:to-slate-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
-        // Fire Green: Green variants fire gradient
-        "fire-green": "bg-card text-card-foreground shadow-md hover:shadow-elevated hover:-translate-y-1 focus-visible:ring-ayu-green transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-sagebrush-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
+        // Fire Green: Commanding with green tactical gradients
+        "fire-green": "bg-card text-card-foreground shadow-commanding hover:shadow-hero focus-visible:ring-ayu-green transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-sagebrush-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
       },
       size: {
         // Use our component sizing tokens from the design system
@@ -183,10 +183,10 @@ const buttonVariants = cva(
         icon: "h-10 w-10 p-0"
       },
       rounded: {
-        none: "rounded-none",
-        sm: "rounded-button",
-        default: "rounded-card",
-        lg: "rounded-large",
+        none: "rounded-xs",
+        sm: "rounded-xs",
+        default: "rounded-xs",
+        lg: "rounded-md",
         full: "rounded-full"
       }
     },
@@ -217,7 +217,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const renderMicroAnimation = () => {
       if (loading || !animationType || animationType === 'none') return null
       
-      const animationClassName = "ml-[var(--space-xs)]"
+      const animationClassName = "ml-(--spacing-xs)"
       
       switch (animationType) {
         case 'arrow':

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from 'lucide-react'
 
 const featureGridVariants = cva(
-  "w-full py-[var(--space-2xl)]",
+  "w-full py-(--spacing-2xl)",
   {
     variants: {
       variant: {
@@ -16,8 +16,8 @@ const featureGridVariants = cva(
         glass: "mica-overlay"
       },
       spacing: {
-        comfortable: "py-[var(--space-2xl)]",
-        compact: "py-[var(--space-xl)]",
+        comfortable: "py-(--spacing-2xl)",
+        compact: "py-(--spacing-xl)",
         minimal: "py-lg"
       }
     },
@@ -29,7 +29,7 @@ const featureGridVariants = cva(
 )
 
 const featureCardVariants = cva(
-  "group relative bg-card rounded-card border-border p-md shadow-flat hover:shadow-md transition-all duration-200 ease-out",
+  "group relative bg-card rounded-sm border-border p-md shadow-flat hover:shadow-md transition-all duration-200 ease-out",
   {
     variants: {
       cardVariant: {
@@ -89,14 +89,14 @@ export function FeatureGrid({
       <div className="max-w-site mx-auto px-md">
         {/* Header */}
         {(title || subtitle || description) && (
-          <div className="text-center mb-[var(--space-xl)]">
+          <div className="text-center mb-(--spacing-xl)">
             {subtitle && (
-              <p className="text-body-sm font-rajdhani font-semibold text-rusty-orange mb-[var(--space-xs)] tracking-wide uppercase">
+              <p className="text-body-sm font-rajdhani font-semibold text-rusty-orange mb-(--spacing-xs) tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
             {title && (
-              <h2 className="text-heading-lg md:text-heading-xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-base)]">
+              <h2 className="text-heading-lg md:text-heading-xl font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">
                 {title}
               </h2>
             )}
@@ -117,16 +117,16 @@ export function FeatureGrid({
                 key={index}
                 className={cn(featureCardVariants({ cardVariant }))}
               >
-                <div className="space-y-[var(--space-base)]">
+                <div className="space-y-(--spacing-base)">
                   {/* Icon */}
                   {feature.icon && (
-                    <div className="flex items-center justify-center w-12 h-12 bg-sandy-ochre/10 rounded-card group-hover:bg-sandy-ochre/20 transition-colors duration-200">
+                    <div className="flex items-center justify-center w-12 h-12 bg-sandy-ochre/10 rounded-sm group-hover:bg-sandy-ochre/20 transition-colors duration-200">
                       {React.cloneElement(feature.icon, { className: "icon-lg icon-primary group-hover:scale-110 transition-transform duration-200" })}
                     </div>
                   )}
                   
                   {/* Content */}
-                  <div className="space-y-[var(--space-sm)]">
+                  <div className="space-y-(--spacing-sm)">
                     <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate group-hover:text-sandy-ochre transition-colors duration-200">
                       {feature.title}
                     </h3>
@@ -138,7 +138,7 @@ export function FeatureGrid({
                   
                   {/* Link */}
                   {feature.link && (
-                    <div className="pt-[var(--space-xs)]">
+                    <div className="pt-(--spacing-xs)">
                       <Button 
                         variant="ghost" 
                         size="sm"
@@ -146,7 +146,7 @@ export function FeatureGrid({
                         onClick={feature.link.onClick}
                       >
                         {feature.link.text}
-                        <ArrowRight className="ml-[var(--space-xs)] icon-sm group-hover/btn:translate-x-0.5 transition-transform duration-200" />
+                        <ArrowRight className="ml-(--spacing-xs) icon-sm group-hover/btn:translate-x-0.5 transition-transform duration-200" />
                       </Button>
                     </div>
                   )}

@@ -34,7 +34,7 @@ title: 'Documentation/AI Enforcement Checklist'
 ### **Technical Stack Violations**  
 
 - [ ] **NO inline styles** - Use Tailwind v4 classes only
-- [ ] **NO old Tailwind syntax** - `bg-sandy-ochre` NOT `bg-[var(--color-sandy-ochre)]`
+- [ ] **NO old Tailwind syntax** - `bg-sandy-ochre` NOT `bg-(--color-sandy-ochre)`
 - [ ] **NO !important hacks** - Proper CSS specificity only
 - [ ] **NO hardcoded transitions** - Use `transition-stripe-fast` (150ms) or `transition-stripe-normal` (250ms) or `transition-stripe-slow` (350ms)
 
@@ -78,7 +78,7 @@ title: 'Documentation/AI Enforcement Checklist'
 
 // ❌ FORBIDDEN - All hardcoded colors
 <div className="bg-[#FF00FF]">
-<div className="bg-[var(--color-sandy-ochre)]">
+<div className="bg-(--color-sandy-ochre)">
 <div style={{backgroundColor: '#FF00FF'}}>
 <div className="bg-blue-500">
 <div className="text-red-600">

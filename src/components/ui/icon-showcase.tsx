@@ -17,20 +17,20 @@ import {
   Plus, Minus, X, Check, Info, AlertTriangle, AlertCircle,
   
   // Social & Communication
-  MessageCircle, Heart, Share2, Bookmark, ThumbsUp, Eye,
+  MessageCircle, Heart, Bookmark, ThumbsUp, Eye,
   
   // Business & Shopping
   ShoppingCart, CreditCard, DollarSign, Package, Truck, Calendar,
   
   // Technical
-  Settings, Edit, Trash2, Download, Upload, Copy, ExternalLink,
+  Settings, Edit, Trash2, Download, Upload, Copy,
   
   // Weather & Environment
   Sun, Moon, Cloud, CloudRain, Wind, Mountain, Trees
 } from 'lucide-react'
 
 const iconShowcaseVariants = cva(
-  "flex items-center justify-center rounded-card border transition-all duration-200 ease-out",
+  "flex items-center justify-center rounded-sm border transition-all duration-200 ease-out",
   {
     variants: {
       variant: {
@@ -62,9 +62,9 @@ interface IconShowcaseItemProps extends VariantProps<typeof iconShowcaseVariants
 function IconShowcaseItem({ icon: Icon, name, category, variant, size, className }: IconShowcaseItemProps) {
   return (
     <div className={cn(iconShowcaseVariants({ variant, size }), className)}>
-      <div className="text-center space-y-[var(--space-xs)]">
+      <div className="text-center space-y-(--spacing-xs)">
         <Icon className="mx-auto icon-lg text-dark-chocolate" />
-        <div className="space-y-[var(--space-micro)]">
+        <div className="space-y-(--spacing-micro)">
           <div className="text-caption font-rajdhani font-semibold text-dark-chocolate">{name}</div>
           <div className="text-caption text-warning-amber">{category}</div>
         </div>
@@ -135,13 +135,13 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
   ]
 
   return (
-    <div className={cn("w-full py-[var(--space-xl)]", className)} {...props}>
+    <div className={cn("w-full py-(--spacing-xl)", className)} {...props}>
       <div className="max-w-site mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
-          <div className="text-center mb-[var(--space-xl)]">
+          <div className="text-center mb-(--spacing-xl)">
             {title && (
-              <h2 className="text-heading-lg md:text-heading-xl font-rajdhani font-bold text-dark-chocolate mb-[var(--space-sm)]">
+              <h2 className="text-heading-lg md:text-heading-xl font-rajdhani font-bold text-dark-chocolate mb-(--spacing-sm)">
                 {title}
               </h2>
             )}
@@ -156,8 +156,8 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
         {/* Icon Categories */}
         <div className="space-y-xl">
           {iconCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="space-y-[var(--space-md)]">
-              <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate border-b border-border pb-[var(--space-xs)]">
+            <div key={categoryIndex} className="space-y-(--spacing-md)">
+              <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate border-b border-border pb-(--spacing-xs)">
                 {category.name}
               </h3>
               
@@ -177,14 +177,14 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
         </div>
 
         {/* Usage Examples */}
-        <div className="mt-[var(--space-2xl)] p-lg bg-gradient-card-warm rounded-card border border-sandy-ochre/20">
-          <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate mb-[var(--space-md)]">
+        <div className="mt-(--spacing-2xl) p-lg bg-gradient-card-warm rounded-sm border border-sandy-ochre/20">
+          <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate mb-(--spacing-md)">
             Design System Integration Examples
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
             {/* Primary Usage */}
-            <div className="space-y-[var(--space-sm)]">
+            <div className="space-y-(--spacing-sm)">
               <h4 className="font-rajdhani font-semibold text-dark-chocolate">Primary Actions</h4>
               <div className="flex items-center gap-sm p-sm bg-card rounded border">
                 <Target className="icon-lg icon-primary" />
@@ -193,7 +193,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
             </div>
 
             {/* Secondary Usage */}
-            <div className="space-y-[var(--space-sm)]">
+            <div className="space-y-(--spacing-sm)">
               <h4 className="font-rajdhani font-semibold text-dark-chocolate">Secondary Actions</h4>
               <div className="flex items-center gap-sm p-sm bg-card rounded border">
                 <Users className="icon-lg icon-secondary" />
@@ -202,7 +202,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
             </div>
 
             {/* Accent Usage */}
-            <div className="space-y-[var(--space-sm)]">
+            <div className="space-y-(--spacing-sm)">
               <h4 className="font-rajdhani font-semibold text-dark-chocolate">Accent Elements</h4>
               <div className="flex items-center gap-sm p-sm bg-card rounded border">
                 <Award className="icon-lg icon-accent" />

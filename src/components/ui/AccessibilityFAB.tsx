@@ -111,7 +111,7 @@ const fabVariants = cva(
 )
 
 const menuVariants = cva(
-  "fixed bottom-20 left-6 z-40 mica border border-border rounded-card shadow-md hover:shadow-elevated p-6 min-w-[320px] max-w-[380px] transition-all duration-200",
+  "fixed bottom-20 left-6 z-40 mica border border-border rounded-sm shadow-md hover:shadow-elevated p-6 min-w-[320px] max-w-[380px] transition-all duration-200",
   {
     variants: {
       open: {
@@ -137,6 +137,12 @@ export default function AccessibilityFAB({
 }: AccessibilityFABProps) {
   const { theme, setTheme } = useTheme()
   const [isOpen, setIsOpen] = React.useState(false)
+  const [mounted, setMounted] = React.useState(false)
+
+  // Ensure SSR/Client consistency
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
   
   // Use optimized accessibility hook instead of multiple useEffect hooks
   const {
@@ -149,10 +155,11 @@ export default function AccessibilityFAB({
     resetSettings
   } = useAccessibilitySettings()
 
-  // Memoize theme icon to prevent unnecessary re-renders
+  // Memoize theme icon to prevent unnecessary re-renders (SSR-safe)
   const ThemeIcon = React.useMemo(() => {
+    if (!mounted) return Monitor // Default during SSR
     return theme === 'light' ? Sun : theme === 'dark' ? Moon : Monitor
-  }, [theme])
+  }, [theme, mounted])
 
   // Memoize event handlers for performance
   const handleTogglePanel = React.useCallback(() => setIsOpen(!isOpen), [isOpen])
@@ -217,7 +224,7 @@ export default function AccessibilityFAB({
           {/* Header */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="bg-muted p-2 rounded-lg border border-border">
+              <div className="bg-muted p-2 rounded-md border border-border">
                 <Settings className="h-5 w-5 text-card-foreground" />
               </div>
               <h2 className="text-lg font-rajdhani font-bold text-card-foreground">Accessibility</h2>
@@ -227,11 +234,11 @@ export default function AccessibilityFAB({
           {/* Theme Switcher */}
           <div className="space-y-3">
             <h3 className="font-medium text-card-foreground">Theme</h3>
-            <div className="flex gap-2">
+            <div className="grid grid-cols-2 gap-2">
               <button
                 className={cn(
-                  "flex-1 gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
-                  theme === 'light' 
+                  "gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  mounted && theme === 'light' 
                     ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
@@ -242,29 +249,44 @@ export default function AccessibilityFAB({
               </button>
               <button
                 className={cn(
-                  "flex-1 gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
-                  theme === 'dark' 
+                  "gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  mounted && theme === 'dark' 
                     ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
                 onClick={() => handleThemeChange('dark')}
               >
                 <Moon className="h-4 w-4" />
-                Dark
+                Fire Mode
               </button>
               <button
                 className={cn(
-                  "flex-1 gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
-                  theme === 'system' 
+                  "gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  mounted && theme === 'system' 
                     ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
                 onClick={() => handleThemeChange('system')}
               >
                 <Monitor className="h-4 w-4" />
-                System
+                Auto
+              </button>
+              <button
+                className={cn(
+                  "gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  mounted && theme === 'gruvbox' 
+                    ? "bg-gruvbox-orange/20 text-gruvbox-orange border-gruvbox-orange/30" 
+                    : "bg-muted text-card-foreground hover:bg-muted/80"
+                )}
+                onClick={() => handleThemeChange('gruvbox')}
+              >
+                <Eye className="h-4 w-4" />
+                Night Ops
               </button>
             </div>
+            <p className="text-xs text-muted-foreground">
+              Night Ops mode reduces eye strain for extended reading sessions
+            </p>
           </div>
 
           {/* Font Size */}

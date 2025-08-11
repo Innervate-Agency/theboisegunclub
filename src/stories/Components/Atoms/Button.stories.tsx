@@ -187,7 +187,7 @@ export const StripeHierarchy: Story = {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
           {/* Training Card */}
-          <div className="bg-card p-md rounded-card shadow-elevated border border-border">
+          <div className="bg-card p-md rounded-sm shadow-elevated border border-border">
             <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground mb-xs">
               Safety Training Course
             </h3>
@@ -205,7 +205,7 @@ export const StripeHierarchy: Story = {
           </div>
 
           {/* Membership Card */}
-          <div className="bg-card p-md rounded-card shadow-elevated border border-border">
+          <div className="bg-card p-md rounded-sm shadow-elevated border border-border">
             <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground mb-xs">
               Premium Membership
             </h3>
@@ -232,7 +232,7 @@ export const StripeHierarchy: Story = {
         </h2>
         <p className="text-body-sm text-warning-amber">Flat style for form actions - consistent with card patterns</p>
         
-        <div className="bg-card p-md rounded-card shadow-elevated border border-border max-w-md">
+        <div className="bg-card p-md rounded-sm shadow-elevated border border-border max-w-md">
           <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground mb-base">
             Contact Information
           </h3>
@@ -337,7 +337,7 @@ export const FireGradientSystem: Story = {
           Interactive Fire Cards
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
-          <div className="bg-card p-md rounded-card shadow-elevated hover:shadow-elevated transition-shadow group">
+          <div className="bg-card p-md rounded-sm shadow-elevated hover:shadow-elevated transition-shadow group">
             <h3 className="font-rajdhani font-bold text-body-lg text-rusty-orange mb-xs">
               Vendor Partners
             </h3>
@@ -351,7 +351,7 @@ export const FireGradientSystem: Story = {
             <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre mt-base rounded-full transition-all duration-300 ease-out"></div>
           </div>
 
-          <div className="bg-card p-md rounded-card shadow-elevated hover:shadow-elevated transition-shadow group">
+          <div className="bg-card p-md rounded-sm shadow-elevated hover:shadow-elevated transition-shadow group">
             <h3 className="font-rajdhani font-bold text-body-lg text-slate-blue mb-xs">
               Community Hub
             </h3>
@@ -373,25 +373,25 @@ export const FireGradientSystem: Story = {
           Color Coordination Guide
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
-          <div className="bg-muted p-base rounded-card">
+          <div className="bg-muted p-base rounded-sm">
             <h4 className="font-medium text-foreground mb-sm">🔥 Fire (Orange/Yellow)</h4>
             <div className="h-3 bg-gradient-to-r from-rusty-orange to-sandy-ochre rounded-full mb-xs"></div>
             <p className="text-caption text-muted-foreground">Primary accent • Call-to-action • Success states</p>
           </div>
           
-          <div className="bg-muted p-base rounded-card">
+          <div className="bg-muted p-base rounded-sm">
             <h4 className="font-medium text-foreground mb-sm">💧 Fire Blue (Blue/Green)</h4>
             <div className="h-3 bg-gradient-to-r from-slate-blue to-ayu-green rounded-full mb-xs"></div>
             <p className="text-caption text-muted-foreground">Navigation • Community features • Information</p>
           </div>
           
-          <div className="bg-muted p-base rounded-card">
+          <div className="bg-muted p-base rounded-sm">
             <h4 className="font-medium text-foreground mb-sm">⚡ Fire Purple (Purple/Cobalt)</h4>
             <div className="h-3 bg-gradient-to-r from-ayu-purple to-slate-blue rounded-full mb-xs"></div>
             <p className="text-caption text-muted-foreground">Premium features • Special actions • Highlights</p>
           </div>
           
-          <div className="bg-muted p-base rounded-card">
+          <div className="bg-muted p-base rounded-sm">
             <h4 className="font-medium text-foreground mb-sm">🌿 Fire Green (Green variants)</h4>
             <div className="h-3 bg-gradient-to-r from-ayu-green to-sagebrush-green rounded-full mb-xs"></div>
             <p className="text-caption text-muted-foreground">Success • Verification • Positive states</p>
@@ -515,7 +515,7 @@ export const CleanShowcase: Story = {
         <h2 className="text-display-md font-rajdhani font-semibold text-blued-steel text-center">Real-world Examples</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
           {/* Form Actions */}
-          <div className="bg-card-surface p-md rounded-large shadow-flat border border-warning-amber/20">
+          <div className="bg-card-surface p-md rounded-xs shadow-flat border border-warning-amber/20">
             <h3 className="text-body-lg font-noto-sans font-medium text-blued-steel mb-base">Form Actions</h3>
             <div className="space-y-base">
               <div className="flex gap-sm">
@@ -540,7 +540,7 @@ export const CleanShowcase: Story = {
           </div>
           
           {/* Navigation */}
-          <div className="bg-card-surface p-md rounded-large shadow-flat border border-warning-amber/20">
+          <div className="bg-card-surface p-md rounded-xs shadow-flat border border-warning-amber/20">
             <h3 className="text-body-lg font-noto-sans font-medium text-blued-steel mb-base">Navigation</h3>
             <div className="space-y-base">
               <div className="flex gap-sm">
@@ -917,10 +917,10 @@ export const SophisticatedShadows: Story = {
           Interactive Shadow Transitions
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-          <Button className="bg-card text-card-foreground border border-recoil-pad shadow-flat hover:shadow-brass hover:-translate-y-1 transition-all duration-300">
+          <Button className="bg-card text-card-foreground border border-recoil-pad shadow-flat hover:shadow-brass  transition-all duration-300">
             Hover for Brass Shadow
           </Button>
-          <Button className="bg-card text-card-foreground border border-recoil-pad shadow-flat hover:shadow-copper hover:-translate-y-1 transition-all duration-300">
+          <Button className="bg-card text-card-foreground border border-recoil-pad shadow-flat hover:shadow-copper  transition-all duration-300">
             Hover for Copper Shadow
           </Button>
           <Button className="bg-card text-card-foreground border border-recoil-pad shadow-flat hover:shadow-premium hover:-translate-y-2 transition-all duration-500">
@@ -939,7 +939,7 @@ export const SophisticatedShadows: Story = {
 
 export const BusinessCard: Story = {
   render: () => (
-    <div className="bg-range-white p-lg rounded-large shadow-flat border border-warning-amber/20 max-w-md space-y-md">
+    <div className="bg-range-white p-lg rounded-xs shadow-flat border border-warning-amber/20 max-w-md space-y-md">
       <div className="space-y-xs">
         <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel">
           Upgrade Your Membership
@@ -968,14 +968,14 @@ export const BusinessCard: Story = {
 
 export const SearchInterface: Story = {
   render: () => (
-    <div className="bg-range-white p-md rounded-large border border-warning-amber/20 max-w-lg space-y-base">
+    <div className="bg-range-white p-md rounded-xs border border-warning-amber/20 max-w-lg space-y-base">
       <div className="flex gap-xs">
         <div className="flex-1 relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
           <input
             type="text"
             placeholder="Search members..."
-            className="w-full pr-base py-xs border border-warning-amber/30 rounded-card focus:outline-none focus:ring-2 focus:ring-sandy-ochre/50 focus:border-sandy-ochre bg-card-surface text-blued-steel placeholder-warning-amber"
+            className="w-full pr-base py-xs border border-warning-amber/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-sandy-ochre/50 focus:border-sandy-ochre bg-card-surface text-blued-steel placeholder-warning-amber"
             style={{paddingLeft: '48px'}}
           />
         </div>

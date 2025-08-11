@@ -58,7 +58,7 @@ function LoadingSpinner({
           size === "lg" && "top-1.5 left-1.5"
         )}>
           <div className={cn(
-            "rounded-full bg-dark-chocolate",
+            "rounded-pill bg-dark-chocolate",
             size === "sm" && "h-1 w-1",
             size === "md" && "h-2 w-2",
             size === "lg" && "h-3 w-3"

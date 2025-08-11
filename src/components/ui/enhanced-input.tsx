@@ -35,9 +35,9 @@ const enhancedInputVariants = cva(
       },
       radius: {
         none: "rounded-none",
-        sm: "rounded-button",      // --radius-sm
+        sm: "rounded-sm",      // --radius-sm
         default: "rounded-input", // --radius-base
-        lg: "rounded-card",      // --radius-lg
+        lg: "rounded-sm",      // --radius-lg
         full: "rounded-full",  // --radius-full
       },
       status: {

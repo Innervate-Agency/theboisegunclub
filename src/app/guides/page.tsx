@@ -349,9 +349,9 @@ export default function GuidesPage() {
   })
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background theme-map">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90 px-md py-6xl">
+      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90 px-md py-8xl">
         <div className="absolute inset-0 bg-gradient-to-br from-rusty-orange/5 via-transparent to-rusty-orange/8 pointer-events-none"></div>
         <div className="container mx-auto max-w-site relative z-10">
           <div className="text-center space-y-lg">
@@ -359,10 +359,10 @@ export default function GuidesPage() {
               <BookOpen className="h-4 w-4 mr-xs" />
               Knowledge Base
             </Badge>
-            <h1 className="font-rajdhani text-6xl md:text-7xl font-bold text-range-white leading-tight">
+            <h1 className="font-rajdhani text-6xl md:text-7xl font-bold text-crisp-off-white leading-tight">
               Idaho Firearms <span className="text-rusty-orange">Guides</span>
             </h1>
-            <p className="text-body-lg text-range-white/80 max-w-3xl mx-auto">
+            <p className="text-body-lg text-crisp-off-white/80 max-w-3xl mx-auto">
               Comprehensive guides covering Idaho gun laws, safety practices, buying advice, and training resources. Everything you need to know about firearms ownership in the Treasure Valley.
             </p>
             
@@ -558,16 +558,16 @@ export default function GuidesPage() {
               <BookOpen className="h-4 w-4 mr-xs" />
               Stay Updated
             </Badge>
-            <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-range-white">
+            <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-crisp-off-white">
               Never Miss an <span className="text-rusty-orange">Update</span>
             </h2>
-            <p className="text-body-lg text-range-white/80 max-w-2xl mx-auto">
+            <p className="text-body-lg text-crisp-off-white/80 max-w-2xl mx-auto">
               Get notified when we publish new guides, legal updates, and important information for Idaho firearms owners. No spam, just valuable content.
             </p>
             <div className="flex flex-col sm:flex-row gap-base justify-center max-w-md mx-auto">
               <Input 
                 placeholder="Enter your email" 
-                className="bg-white/10 border-rusty-orange/30 text-range-white placeholder:text-range-white/60"
+                className="bg-white/10 border-rusty-orange/30 text-crisp-off-white placeholder:text-crisp-off-white/60"
               />
               <Button 
                 size="lg" 
@@ -576,7 +576,7 @@ export default function GuidesPage() {
                 Subscribe
               </Button>
             </div>
-            <p className="text-xs text-range-white/60">
+            <p className="text-xs text-crisp-off-white/60">
               Join 2,800+ subscribers. Unsubscribe anytime.
             </p>
           </div>

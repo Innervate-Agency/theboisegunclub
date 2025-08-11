@@ -173,7 +173,7 @@ function ChartTooltipContent({
   return (
     <div
       className={cn(
-        "border-border/50 bg-background grid min-w-[8rem] items-start gap-md rounded-card border px-xs.5 py-md text-caption shadow-premium",
+        "border-border/50 bg-background grid min-w-[8rem] items-start gap-md rounded-sm border px-xs.5 py-md text-caption shadow-premium",
         className
       )}
     >
@@ -202,7 +202,7 @@ function ChartTooltipContent({
                     !hideIndicator && (
                       <div
                         className={cn(
-                          "shrink-0 rounded-[2px] border-(--color-border) bg-(--color-bg)",
+                          "shrink-0 rounded-micro border-(--color-border) bg-(--color-bg)",
                           {
                             "h-2.5 w-2.5": indicator === "dot",
                             "w-1": indicator === "line",
@@ -271,7 +271,7 @@ function ChartLegendContent({
     <div
       className={cn(
         "flex items-center justify-center gap-base",
-        verticalAlign === "top" ? "pb-[var(--space-sm)]" : "pt-[var(--space-sm)]",
+        verticalAlign === "top" ? "pb-(--spacing-sm)" : "pt-(--spacing-sm)",
         className
       )}
     >
@@ -290,7 +290,7 @@ function ChartLegendContent({
               <itemConfig.icon />
             ) : (
               <div
-                className="h-2 w-2 shrink-0 rounded-[2px]"
+                className="h-2 w-2 shrink-0 rounded-micro"
                 style={{
                   backgroundColor: item.color,
                 }}

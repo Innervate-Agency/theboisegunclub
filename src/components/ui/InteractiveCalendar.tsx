@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { 
   ChevronLeft, ChevronRight, Calendar as CalendarIcon, 
-  MapPin, Clock, Users, Search, Filter, X, ExternalLink,
+  MapPin, Clock, Users, Search, Filter, X,
   Zap, Trophy, Target, GraduationCap, Heart, Eye
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -104,42 +104,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
     }))
   ]
 
-  // Custom day renderer with event indicators
-  const DayContent = ({ date }: { date: Date }) => {
-    const dateStr = date.toDateString()
-    const dayEvents = eventsByDate.get(dateStr) || []
-    const isSelected = selectedDate?.toDateString() === dateStr
-    const isToday = new Date().toDateString() === dateStr
-
-    return (
-      <div className="relative w-full h-full flex flex-col items-center justify-center">
-        <span className={cn(
-          "text-sm font-medium",
-          isSelected && "text-primary",
-          isToday && "font-bold text-rusty-orange"
-        )}>
-          {date.getDate()}
-        </span>
-        
-        {dayEvents.length > 0 && (
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex gap-0.5">
-            {dayEvents.slice(0, 3).map((event, idx) => {
-              const config = eventTypeConfig[event.eventType as keyof typeof eventTypeConfig]
-              return (
-                <div
-                  key={idx}
-                  className={`w-1 h-1 rounded-full bg-${config.color}`}
-                />
-              )
-            })}
-            {dayEvents.length > 3 && (
-              <div className="w-1 h-1 rounded-full bg-muted-foreground" />
-            )}
-          </div>
-        )}
-      </div>
-    )
-  }
+  
 
   const formatEventTime = (time: string) => {
     // Extract start time from time range (e.g., "8:00 AM - 3:00 PM" -> "8:00 AM")
@@ -261,7 +226,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
               head_cell: "text-muted-foreground font-medium text-2xl w-full h-20 text-center p-base",
               row: "",
               cell: "relative w-full h-32 text-center p-0",
-              day: "w-full h-full hover:bg-accent/30 transition-colors rounded-lg flex flex-col items-center justify-start pt-base",
+              day: "w-full h-full hover:bg-accent/30 transition-colors rounded-md flex flex-col items-center justify-start pt-base",
               day_selected: "bg-rusty-orange/20 text-rusty-orange font-bold",
               day_today: "bg-slate-blue/20 text-slate-blue font-bold",
               day_outside: "text-muted-foreground/30",
@@ -270,7 +235,8 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
               day_hidden: "invisible",
             }}
             components={{
-              DayContent: ({ date }) => {
+              Day: ({ day }) => {
+                const date = day.date;
                 const dateStr = date.toDateString()
                 const dayEvents = eventsByDate.get(dateStr) || []
                 const isSelected = selectedDate?.toDateString() === dateStr
@@ -293,7 +259,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                           return (
                             <div
                               key={idx}
-                              className={`w-3 h-3 rounded-full bg-${config.color}`}
+                              className={`w-3 h-3 rounded-pill bg-${config.color}`}
                               title={event.title}
                             />
                           )
@@ -319,7 +285,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
 
           {/* Selected Date Events - Below Calendar */}
           {selectedDate && (
-            <div className="bg-muted/30 rounded-card p-lg">
+            <div className="bg-muted/30 rounded-sm p-lg">
               <div className="space-y-base">
                 {/* Selected Date Header */}
                 <div className="text-center space-y-xs">

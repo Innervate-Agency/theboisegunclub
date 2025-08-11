@@ -129,14 +129,14 @@ export const ResponsiveDesign: Story = {
     <div className="space-y-lg">
       <div>
         <h3 className="text-body-lg font-rajdhani font-bold text-blued-steel mb-base">Desktop View</h3>
-        <div className="border border-warm-stone rounded-card overflow-hidden">
+        <div className="border border-warm-stone rounded-sm overflow-hidden">
           <SiteNavigation variant="premium" layout="horizontal" showLogo={true} />
         </div>
       </div>
       
       <div>
         <h3 className="text-body-lg font-rajdhani font-bold text-blued-steel mb-base">Mobile View</h3>
-        <div className="max-w-sm border border-warm-stone rounded-card overflow-hidden">
+        <div className="max-w-sm border border-warm-stone rounded-sm overflow-hidden">
           <SiteNavigation variant="premium" layout="horizontal" showLogo={true} />
         </div>
       </div>
@@ -186,7 +186,7 @@ export const AccessibilityFeatures: Story = {
   render: () => (
     <div className="space-y-md">
       <SiteNavigation variant="premium" layout="horizontal" showLogo={true} />
-      <div className="p-md bg-range-white rounded-card">
+      <div className="p-md bg-range-white rounded-sm">
         <h3 className="text-body-lg font-rajdhani font-bold text-blued-steel mb-base">Accessibility Features</h3>
         <ul className="space-y-xs text-desert-cliff-brown">
           <li>✓ Keyboard navigation support</li>

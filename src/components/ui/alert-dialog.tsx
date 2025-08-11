@@ -41,7 +41,7 @@ const AlertDialogContent = React.forwardRef<
       )}
       {...props}
     >
-      <div className="mica-modal w-full max-w-lg text-popover-foreground p-md grid gap-base rounded-card data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95">
+      <div className="mica-modal w-full max-w-lg text-popover-foreground p-md grid gap-base rounded-sm data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95">
         {children}
       </div>
     </AlertDialogPrimitive.Content>
@@ -54,7 +54,7 @@ const AlertDialogHeader = ({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={cn("flex flex-col space-y-[var(--space-xs)] text-center sm:text-left", className)}
+    className={cn("flex flex-col space-y-(--spacing-xs) text-center sm:text-left", className)}
     {...props}
   />
 )
@@ -66,7 +66,7 @@ const AlertDialogFooter = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-[var(--space-xs)]",
+      "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-(--spacing-xs)",
       className
     )}
     {...props}
@@ -118,7 +118,7 @@ const AlertDialogCancel = React.forwardRef<
     ref={ref}
     className={cn(
       buttonVariants({ variant: "secondary" }),
-      "mt-[var(--space-xs)] sm:mt-0",
+      "mt-(--spacing-xs) sm:mt-0",
       className
     )}
     {...props}

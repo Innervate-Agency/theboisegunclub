@@ -173,7 +173,7 @@ const BusinessShowcase = () => (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
           <Card className="hover:shadow-elevated transition-shadow duration-300 group">
             <CardHeader className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-rusty-orange to-sandy-ochre rounded-card flex items-center justify-center mx-auto mb-base">
+              <div className="w-12 h-12 bg-gradient-to-r from-rusty-orange to-sandy-ochre rounded-sm flex items-center justify-center mx-auto mb-base">
                 <MapPin className="w-6 h-6 text-white" />
               </div>
               <CardTitle className="text-rusty-orange">Directory & Marketplace</CardTitle>
@@ -188,7 +188,7 @@ const BusinessShowcase = () => (
 
           <Card className="hover:shadow-elevated transition-shadow duration-300 group">
             <CardHeader className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-slate-blue to-ayu-teal rounded-card flex items-center justify-center mx-auto mb-base">
+              <div className="w-12 h-12 bg-gradient-to-r from-slate-blue to-ayu-teal rounded-sm flex items-center justify-center mx-auto mb-base">
                 <Zap className="w-6 h-6 text-white" />
               </div>
               <CardTitle className="text-slate-blue">Content Engine</CardTitle>
@@ -203,7 +203,7 @@ const BusinessShowcase = () => (
 
           <Card className="hover:shadow-elevated transition-shadow duration-300 group">
             <CardHeader className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-ayu-green to-sagebrush-green rounded-card flex items-center justify-center mx-auto mb-base">
+              <div className="w-12 h-12 bg-gradient-to-r from-ayu-green to-sagebrush-green rounded-sm flex items-center justify-center mx-auto mb-base">
                 <MessageSquare className="w-6 h-6 text-white" />
               </div>
               <CardTitle className="text-ayu-green">Community Forum</CardTitle>
@@ -218,7 +218,7 @@ const BusinessShowcase = () => (
 
           <Card className="hover:shadow-elevated transition-shadow duration-300 group">
             <CardHeader className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-ayu-purple to-ayu-yellow rounded-card flex items-center justify-center mx-auto mb-base">
+              <div className="w-12 h-12 bg-gradient-to-r from-ayu-purple to-ayu-yellow rounded-sm flex items-center justify-center mx-auto mb-base">
                 <ShoppingCart className="w-6 h-6 text-white" />
               </div>
               <CardTitle className="text-ayu-purple">Merchandise</CardTitle>
@@ -253,7 +253,7 @@ const BusinessShowcase = () => (
             <Card className="shadow-flat">
               <CardHeader>
                 <div className="flex items-center gap-sm">
-                  <div className="w-12 h-12 bg-rusty-orange rounded-card flex items-center justify-center">
+                  <div className="w-12 h-12 bg-rusty-orange rounded-sm flex items-center justify-center">
                     <Target className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -332,7 +332,7 @@ const BusinessShowcase = () => (
             <Card className="shadow-flat">
               <CardHeader>
                 <div className="flex items-center gap-sm">
-                  <div className="w-12 h-12 bg-slate-blue rounded-card flex items-center justify-center">
+                  <div className="w-12 h-12 bg-slate-blue rounded-sm flex items-center justify-center">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -454,7 +454,7 @@ export const VendorFocused: Story = {
         <Card className="border-2 border-rusty-orange/20">
           <CardHeader>
             <div className="flex items-center gap-sm">
-              <div className="w-12 h-12 bg-rusty-orange rounded-card flex items-center justify-center">
+              <div className="w-12 h-12 bg-rusty-orange rounded-sm flex items-center justify-center">
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -518,7 +518,7 @@ export const CommunityFocused: Story = {
             </CardHeader>
             <CardContent>
               <div className="space-y-sm">
-                <div className="flex items-center gap-sm p-sm bg-muted/50 rounded-card">
+                <div className="flex items-center gap-sm p-sm bg-muted/50 rounded-sm">
                   <div className="w-8 h-8 bg-rusty-orange rounded-full flex items-center justify-center">
                     <span className="text-white text-caption font-bold">MK</span>
                   </div>
@@ -527,7 +527,7 @@ export const CommunityFocused: Story = {
                     <p className="text-caption text-muted-foreground">Mike K. • 2 hours ago</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-sm p-sm bg-muted/50 rounded-card">
+                <div className="flex items-center gap-sm p-sm bg-muted/50 rounded-sm">
                   <div className="w-8 h-8 bg-sandy-ochre rounded-full flex items-center justify-center">
                     <span className="text-dark-chocolate text-caption font-bold">JS</span>
                   </div>
@@ -550,7 +550,7 @@ export const CommunityFocused: Story = {
             </CardHeader>
             <CardContent>
               <div className="space-y-sm">
-                <div className="flex items-center gap-sm p-sm bg-muted/50 rounded-card">
+                <div className="flex items-center gap-sm p-sm bg-muted/50 rounded-sm">
                   <div className="w-8 h-8 bg-ayu-green rounded-full flex items-center justify-center">
                     <Target className="w-4 h-4 text-white" />
                   </div>
@@ -559,7 +559,7 @@ export const CommunityFocused: Story = {
                     <p className="text-caption text-muted-foreground">Saturday • Capital City Range</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-sm p-sm bg-muted/50 rounded-card">
+                <div className="flex items-center gap-sm p-sm bg-muted/50 rounded-sm">
                   <div className="w-8 h-8 bg-slate-blue rounded-full flex items-center justify-center">
                     <Shield className="w-4 h-4 text-white" />
                   </div>

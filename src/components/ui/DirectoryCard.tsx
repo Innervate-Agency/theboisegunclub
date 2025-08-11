@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 // CVA pattern for DirectoryCard - TBGC Design System V5: Complete Fire & Mica Integration
 const directoryCardVariants = cva(
-  'relative flex flex-col rounded-[--radius-base] shadow-[--shadow-flat] transition-all duration-300 ease-out overflow-hidden',
+  'relative flex flex-col rounded-(--radius-base) shadow-(--shadow-flat) transition-all duration-300 ease-out overflow-hidden',
   {
     variants: {
       variant: {
@@ -15,30 +15,30 @@ const directoryCardVariants = cva(
         default: 'bg-card text-card-foreground hover:shadow-md',
         
         // Premium: Consistent shadows with subtle gradient accent
-        premium: 'bg-card text-card-foreground shadow-[--shadow-flat] hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-[--radius-base] before:pointer-events-none',
+        premium: 'bg-card text-card-foreground shadow-(--shadow-flat) hover:shadow-md  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-(--radius-base) before:pointer-events-none',
         
         // Elite: Consistent shadows with enhanced gradient accent via background
-        elite: 'bg-card text-card-foreground shadow-[--shadow-flat] hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/6 before:via-transparent before:to-sandy-ochre/4 before:rounded-[--radius-base] before:pointer-events-none',
+        elite: 'bg-card text-card-foreground shadow-(--shadow-flat) hover:shadow-md  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/6 before:via-transparent before:to-sandy-ochre/4 before:rounded-(--radius-base) before:pointer-events-none',
         
         // Glass: Modern mica effect with consistent shadows
-        glass: 'mica-overlay text-card-foreground shadow-[--shadow-flat] hover:shadow-md backdrop-blur-sm relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg',
+        glass: 'mica-overlay text-card-foreground shadow-(--shadow-flat) hover:shadow-md backdrop-blur-sm relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg',
         
         // Fire: Enhanced gradient accent positioning
-        fire: 'bg-card text-card-foreground shadow-[--shadow-flat] hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
+        fire: 'bg-card text-card-foreground shadow-(--shadow-flat) hover:shadow-md  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
         
         // Fire Blue: Blue to green gradient accent with center positioning
-        'fire-blue': 'bg-card text-card-foreground shadow-[--shadow-flat] hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
+        'fire-blue': 'bg-card text-card-foreground shadow-(--shadow-flat) hover:shadow-md  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
         
         // Fire Purple: Purple to cobalt gradient accent with center positioning
-        'fire-purple': 'bg-card text-card-foreground shadow-[--shadow-flat] hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-slate-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
+        'fire-purple': 'bg-card text-card-foreground shadow-(--shadow-flat) hover:shadow-md  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-slate-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
         
         // Fire Green: Green gradient accent with center positioning
-        'fire-green': 'bg-card text-card-foreground shadow-[--shadow-flat] hover:shadow-md hover:-translate-y-0.5 relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-sagebrush-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
+        'fire-green': 'bg-card text-card-foreground shadow-(--shadow-flat) hover:shadow-md  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-sagebrush-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
       },
       size: {
-        sm: 'p-[--space-base] text-body-sm',
+        sm: 'p-(--spacing-base) text-body-sm',
         md: 'p-5 text-body',
-        lg: 'p-[--space-md] text-body-lg',
+        lg: 'p-(--spacing-md) text-body-lg',
       },
     },
     defaultVariants: {
@@ -75,9 +75,9 @@ export function DirectoryCard({
   const [imgError, setImgError] = useState(false);
   return (
     <div className={cn(directoryCardVariants({ variant, size }), className)} {...props}>
-      <div className="flex items-center gap-[--space-base] mb-[var(--space-sm)]">
+      <div className="flex items-center gap-(--spacing-base) mb-(--spacing-sm)">
         {imageUrl && !imgError ? (
-          <div className="relative h-14 w-14 rounded-[--radius-base] overflow-hidden bg-card-surface shadow-[--shadow-flat]">
+          <div className="relative h-14 w-14 rounded-(--radius-base) overflow-hidden bg-card-surface shadow-(--shadow-flat)">
             <Image
               src={imageUrl}
               alt={name}
@@ -89,12 +89,12 @@ export function DirectoryCard({
             />
           </div>
         ) : (
-          <div className="h-14 w-14 rounded-[--radius-base] bg-sandy-ochre/10 flex items-center justify-center font-bold text-heading-sm text-dark-chocolate shadow-[--shadow-flat]">
+          <div className="h-14 w-14 rounded-(--radius-base) bg-sandy-ochre/10 flex items-center justify-center font-bold text-heading-sm text-dark-chocolate shadow-(--shadow-flat)">
             {name.charAt(0)}
           </div>
         )}
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-[--space-xs]">
+          <div className="flex items-center gap-(--spacing-xs)">
             <span className="font-rajdhani font-bold text-body-lg truncate text-dark-chocolate">{name}</span>
             {status && <Badge variant={badgeVariant} size="sm">{status}</Badge>}
           </div>
@@ -102,7 +102,7 @@ export function DirectoryCard({
         </div>
       </div>
       {contact && (
-        <div className="mt-[var(--space-xs)] text-caption text-warning-amber font-noto-sans truncate">{contact}</div>
+        <div className="mt-(var(--spacing-xs)) text-caption text-warning-amber font-noto-sans truncate">{contact}</div>
       )}
     </div>
   );

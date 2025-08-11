@@ -53,7 +53,7 @@ export const ShadowHierarchy: Story = {
             { name: 'XL', class: 'shadow-premium', usage: 'Maximum elevation, overlays' },
           ].map((shadow) => (
             <div key={shadow.name} className="space-y-sm">
-              <div className={`bg-card p-md rounded-card ${shadow.class} h-32 flex items-center justify-center`}>
+              <div className={`bg-card p-md rounded-sm ${shadow.class} h-32 flex items-center justify-center`}>
                 <div className="text-center">
                   <div className="font-medium">{shadow.name}</div>
                   <div className="text-body-sm text-muted-foreground">{shadow.class}</div>
@@ -68,18 +68,18 @@ export const ShadowHierarchy: Story = {
       {/* Strategic Restraint Pattern */}
       <section>
         <h2 className="text-display-md font-rajdhani font-bold mb-md">Strategic Restraint Pattern</h2>
-        <div className="bg-card p-md rounded-card border">
+        <div className="bg-card p-md rounded-sm border">
           <h3 className="font-semibold mb-base">Universal Pattern: shadow-flat hover:shadow-elevated</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-base">
-            <div className="bg-sandy-ochre/10 p-base rounded-card shadow-flat hover:shadow-elevated transition-shadow cursor-pointer">
+            <div className="bg-sandy-ochre/10 p-base rounded-sm shadow-flat hover:shadow-elevated transition-shadow cursor-pointer">
               <div className="font-medium">Standard Card</div>
               <div className="text-body-sm text-muted-foreground mt-xs">shadow-flat hover:shadow-elevated</div>
             </div>
-            <div className="bg-rusty-orange/10 p-base rounded-card shadow-flat hover:shadow-elevated transition-shadow cursor-pointer">
+            <div className="bg-rusty-orange/10 p-base rounded-sm shadow-flat hover:shadow-elevated transition-shadow cursor-pointer">
               <div className="font-medium">Premium Card</div>
               <div className="text-body-sm text-muted-foreground mt-xs">Same shadow pattern</div>
             </div>
-            <div className="bg-rifling-green/10 p-base rounded-card shadow-flat hover:shadow-elevated transition-shadow cursor-pointer">
+            <div className="bg-rifling-green/10 p-base rounded-sm shadow-flat hover:shadow-elevated transition-shadow cursor-pointer">
               <div className="font-medium">Elite Card</div>
               <div className="text-body-sm text-muted-foreground mt-xs">Consistent depth</div>
             </div>
@@ -101,7 +101,7 @@ export const ShadowHierarchy: Story = {
             { name: 'Elite', class: 'shadow-elite', color: 'bg-gradient-to-br from-rusty-orange/20 to-sandy-ochre/20' },
           ].map((shadow) => (
             <div key={shadow.name} className="space-y-sm">
-              <div className={`${shadow.color} p-md rounded-card ${shadow.class} h-24 flex items-center justify-center`}>
+              <div className={`${shadow.color} p-md rounded-sm ${shadow.class} h-24 flex items-center justify-center`}>
                 <div className="text-center">
                   <div className="font-medium">{shadow.name}</div>
                   <div className="text-body-sm text-muted-foreground">{shadow.class}</div>
@@ -120,7 +120,7 @@ export const ShadowHierarchy: Story = {
         <h2 className="text-display-md font-rajdhani font-bold mb-md">Glass & Special Effects</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
           <div className="space-y-sm">
-            <div className="bg-card/50 backdrop-blur-sm p-md rounded-card shadow-glass border border-white/20 h-24 flex items-center justify-center">
+            <div className="bg-card/50 backdrop-blur-sm p-md rounded-sm shadow-glass border border-white/20 h-24 flex items-center justify-center">
               <div className="text-center">
                 <div className="font-medium">Glass</div>
                 <div className="text-body-sm text-muted-foreground">shadow-glass</div>
@@ -130,7 +130,7 @@ export const ShadowHierarchy: Story = {
           </div>
           
           <div className="space-y-sm">
-            <div className="bg-card p-md rounded-card shadow-inset h-24 flex items-center justify-center">
+            <div className="bg-card p-md rounded-sm shadow-inset h-24 flex items-center justify-center">
               <div className="text-center">
                 <div className="font-medium">Inset</div>
                 <div className="text-body-sm text-muted-foreground">shadow-inset</div>
@@ -140,7 +140,7 @@ export const ShadowHierarchy: Story = {
           </div>
 
           <div className="space-y-sm">
-            <div className="bg-card p-md rounded-card shadow-flat h-24 flex items-center justify-center">
+            <div className="bg-card p-md rounded-sm shadow-flat h-24 flex items-center justify-center">
               <div className="text-center">
                 <div className="font-medium">Flat</div>
                 <div className="text-body-sm text-muted-foreground">shadow-flat</div>
@@ -154,7 +154,7 @@ export const ShadowHierarchy: Story = {
       {/* Usage Guidelines */}
       <section>
         <h2 className="text-display-md font-rajdhani font-bold mb-md">Usage Guidelines</h2>
-        <div className="bg-card p-md rounded-card border space-y-base">
+        <div className="bg-card p-md rounded-sm border space-y-base">
           <div>
             <h3 className="font-semibold text-rifling-green mb-xs">✅ Do</h3>
             <ul className="text-body-sm space-y-micro text-muted-foreground">
@@ -175,7 +175,7 @@ export const ShadowHierarchy: Story = {
           </div>
         </div>
 
-        <div className="bg-muted p-md rounded-card mt-md">
+        <div className="bg-muted p-md rounded-sm mt-md">
           <h3 className="font-semibold mb-sm">Code Examples</h3>
           <pre className="text-body-sm overflow-x-auto">
 {`/* CSS Variables */
@@ -215,7 +215,7 @@ export const InteractiveDemo: Story = {
           <div 
             key={index}
             className={`
-              bg-card p-md rounded-card transition-all duration-200 cursor-pointer
+              bg-card p-md rounded-sm transition-all duration-200 cursor-pointer
               ${card.variant === 'glass' ? 'bg-card/50 backdrop-blur-sm border border-white/20 shadow-glass hover:shadow-elevated' : 
                 card.variant === 'branded' ? 'shadow-premium hover:shadow-elite' :
                 'shadow-flat hover:shadow-elevated'}

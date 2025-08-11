@@ -1,0 +1,229 @@
+{
+  "timestamp": "2025-08-11T00:35:00.339Z",
+  "pages": [
+    {
+      "path": "src/app/components-demo/page.tsx",
+      "lines": 256,
+      "security": [],
+      "performance": [
+        {
+          "issue": "State usage",
+          "severity": "INFO",
+          "count": 1
+        }
+      ],
+      "accessibility": [],
+      "seo": []
+    },
+    {
+      "path": "src/app/directory/page.tsx",
+      "lines": 689,
+      "security": [],
+      "performance": [
+        {
+          "issue": "State usage",
+          "severity": "INFO",
+          "count": 3
+        }
+      ],
+      "accessibility": [],
+      "seo": []
+    },
+    {
+      "path": "src/app/events/page.tsx",
+      "lines": 1193,
+      "security": [],
+      "performance": [
+        {
+          "issue": "State usage",
+          "severity": "INFO",
+          "count": 3
+        },
+        {
+          "issue": "Effect usage",
+          "severity": "INFO",
+          "count": 1
+        }
+      ],
+      "accessibility": [],
+      "seo": []
+    },
+    {
+      "path": "src/app/guides/[slug]/page.tsx",
+      "lines": 63,
+      "security": [],
+      "performance": [],
+      "accessibility": [],
+      "seo": []
+    },
+    {
+      "path": "src/app/guides/page.tsx",
+      "lines": 587,
+      "security": [],
+      "performance": [
+        {
+          "issue": "State usage",
+          "severity": "INFO",
+          "count": 3
+        }
+      ],
+      "accessibility": [],
+      "seo": []
+    },
+    {
+      "path": "src/app/intel/page.tsx",
+      "lines": 22,
+      "security": [],
+      "performance": [
+        {
+          "issue": "Effect usage",
+          "severity": "INFO",
+          "count": 1
+        }
+      ],
+      "accessibility": [],
+      "seo": []
+    },
+    {
+      "path": "src/app/map/page.tsx",
+      "lines": 656,
+      "security": [],
+      "performance": [],
+      "accessibility": [],
+      "seo": []
+    },
+    {
+      "path": "src/app/marketplace/page.tsx",
+      "lines": 804,
+      "security": [],
+      "performance": [
+        {
+          "issue": "State usage",
+          "severity": "INFO",
+          "count": 3
+        }
+      ],
+      "accessibility": [],
+      "seo": []
+    },
+    {
+      "path": "src/app/page.tsx",
+      "lines": 96,
+      "security": [],
+      "performance": [],
+      "accessibility": [],
+      "seo": []
+    },
+    {
+      "path": "src/app/the-armory/[slug]/page.tsx",
+      "lines": 56,
+      "security": [],
+      "performance": [],
+      "accessibility": [],
+      "seo": []
+    },
+    {
+      "path": "src/app/the-armory/page.tsx",
+      "lines": 723,
+      "security": [],
+      "performance": [
+        {
+          "issue": "State usage",
+          "severity": "INFO",
+          "count": 3
+        }
+      ],
+      "accessibility": [],
+      "seo": []
+    },
+    {
+      "path": "src/app/training/page.tsx",
+      "lines": 272,
+      "security": [],
+      "performance": [],
+      "accessibility": [],
+      "seo": []
+    }
+  ],
+  "components": [
+    {
+      "path": "src/components/marketing/cta-section.tsx",
+      "lines": 42,
+      "hasProps": false,
+      "hasForwardRef": false,
+      "hooks": 0
+    },
+    {
+      "path": "src/components/marketing/hero-section.tsx",
+      "lines": 32,
+      "hasProps": false,
+      "hasForwardRef": false,
+      "hooks": 0
+    },
+    {
+      "path": "src/components/marketing/service-grid.tsx",
+      "lines": 92,
+      "hasProps": false,
+      "hasForwardRef": false,
+      "hooks": 0
+    },
+    {
+      "path": "src/components/molecules/ArticleCard.tsx",
+      "lines": 32,
+      "hasProps": true,
+      "hasForwardRef": false,
+      "hooks": 0
+    },
+    {
+      "path": "src/components/molecules/MdxContent.tsx",
+      "lines": 12,
+      "hasProps": true,
+      "hasForwardRef": false,
+      "hooks": 0
+    },
+    {
+      "path": "src/components/organisms/AlternatingFeatureSpotlight.tsx",
+      "lines": 127,
+      "hasProps": true,
+      "hasForwardRef": false,
+      "hooks": 0
+    },
+    {
+      "path": "src/components/organisms/PageHero.tsx",
+      "lines": 20,
+      "hasProps": true,
+      "hasForwardRef": false,
+      "hooks": 0
+    },
+    {
+      "path": "src/components/organisms/SiteFooter.tsx",
+      "lines": 14,
+      "hasProps": false,
+      "hasForwardRef": false,
+      "hooks": 0
+    },
+    {
+      "path": "src/components/organisms/SiteNavigation.tsx",
+      "lines": 23,
+      "hasProps": false,
+      "hasForwardRef": false,
+      "hooks": 0
+    },
+    {
+      "path": "src/components/templates/BreadcrumbHero.tsx",
+      "lines": 19,
+      "hasProps": true,
+      "hasForwardRef": false,
+      "hooks": 0
+    }
+  ],
+  "summary": {
+    "totalPages": 12,
+    "totalComponents": 107,
+    "totalSecurityIssues": 0,
+    "totalA11yIssues": 0,
+    "criticalIssues": 0,
+    "highIssues": 0,
+    "mediumIssues": 0
+  }
+}

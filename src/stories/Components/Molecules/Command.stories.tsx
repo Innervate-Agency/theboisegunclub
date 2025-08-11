@@ -33,7 +33,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (args) => (
-    <Command className="rounded-card border shadow-elevated w-[450px]" {...args}>
+    <Command className="rounded-sm border shadow-elevated w-[450px]" {...args}>
       <CommandInput placeholder="Type a command or search..." />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>

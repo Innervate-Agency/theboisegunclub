@@ -11,10 +11,10 @@ const pageHeroVariants = cva(
   {
     variants: {
       size: {
-        sm: "py-[var(--space-xl)]",
-        md: "py-[var(--space-2xl)]", 
-        lg: "py-[var(--space-3xl)]",
-        xl: "py-[var(--space-4xl)]"
+        sm: "py-(--spacing-xl)",
+        md: "py-(--spacing-2xl)", 
+        lg: "py-(--spacing-3xl)",
+        xl: "py-(--spacing-4xl)"
       },
       backgroundPreset: {
         warm: "bg-gradient-to-br from-sandy-ochre/5 via-rusty-orange/5 to-walnut-stock/5",
@@ -78,7 +78,7 @@ export function PageHero({
       <div className="absolute inset-0 bg-gradient-mesh-warm opacity-20" />
       
       <div className="relative z-10 w-full max-w-site mx-auto px-md">
-        <div className="text-center space-y-[var(--space-lg)]">
+        <div className="text-center space-y-(--spacing-lg)">
           
           {/* Icon */}
           {Icon && (
@@ -90,7 +90,7 @@ export function PageHero({
           )}
 
           {/* Main content */}
-          <div className="space-y-[var(--space-md)]">
+          <div className="space-y-(--spacing-md)">
             {badge && (
               <div className="flex justify-center">
                 <div className="px-base py-xs bg-sandy-ochre/10 border border-sandy-ochre/20 rounded-full text-body-sm font-medium text-sandy-ochre">
@@ -145,7 +145,7 @@ export function PageHero({
 
           {/* Scroll indicator */}
           {showScrollIndicator && (
-            <div className="flex justify-center pt-[var(--space-lg)]">
+            <div className="flex justify-center pt-(--spacing-lg)">
               <div className="animate-bounce">
                 <ChevronDown className="h-6 w-6 text-warning-amber/60" />
               </div>

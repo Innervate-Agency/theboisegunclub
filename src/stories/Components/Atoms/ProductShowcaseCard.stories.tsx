@@ -40,7 +40,7 @@ export const Default: Story = {
       { label: 'Members', value: '500+' }
     ],
     imageSlot: (
-      <div className="w-16 h-16 rounded-card bg-primary/10 flex items-center justify-center">
+      <div className="w-16 h-16 rounded-sm bg-primary/10 flex items-center justify-center">
         <Target className="w-8 h-8 text-primary" />
       </div>
     )
@@ -57,7 +57,7 @@ export const Premium: Story = {
       { label: 'Pass Rate', value: '98%' }
     ],
     imageSlot: (
-      <div className="w-16 h-16 rounded-card bg-rusty-orange/10 flex items-center justify-center">
+      <div className="w-16 h-16 rounded-sm bg-rusty-orange/10 flex items-center justify-center">
         <Shield className="w-8 h-8 text-rusty-orange" />
       </div>
     )
@@ -74,7 +74,7 @@ export const Elite: Story = {
       { label: 'Accuracy', value: '99.9%' }
     ],
     imageSlot: (
-      <div className="w-16 h-16 rounded-card bg-slate-blue/10 flex items-center justify-center">
+      <div className="w-16 h-16 rounded-sm bg-slate-blue/10 flex items-center justify-center">
         <Zap className="w-8 h-8 text-slate-blue" />
       </div>
     )
@@ -91,7 +91,7 @@ export const Success: Story = {
       { label: 'Events', value: '150+' }
     ],
     imageSlot: (
-      <div className="w-16 h-16 rounded-card bg-rifling-green/10 flex items-center justify-center">
+      <div className="w-16 h-16 rounded-sm bg-rifling-green/10 flex items-center justify-center">
         <Users className="w-8 h-8 text-rifling-green" />
       </div>
     )
@@ -111,7 +111,7 @@ export const GridShowcase: Story = {
           { label: 'Members', value: '500+' }
         ]}
         imageSlot={
-          <div className="w-16 h-16 rounded-card bg-primary/10 flex items-center justify-center">
+          <div className="w-16 h-16 rounded-sm bg-primary/10 flex items-center justify-center">
             <Target className="w-8 h-8 text-primary" />
           </div>
         }
@@ -126,7 +126,7 @@ export const GridShowcase: Story = {
           { label: 'Pass Rate', value: '98%' }
         ]}
         imageSlot={
-          <div className="w-16 h-16 rounded-card bg-rusty-orange/10 flex items-center justify-center">
+          <div className="w-16 h-16 rounded-sm bg-rusty-orange/10 flex items-center justify-center">
             <Shield className="w-8 h-8 text-rusty-orange" />
           </div>
         }
@@ -141,7 +141,7 @@ export const GridShowcase: Story = {
           { label: 'Accuracy', value: '99.9%' }
         ]}
         imageSlot={
-          <div className="w-16 h-16 rounded-card bg-slate-blue/10 flex items-center justify-center">
+          <div className="w-16 h-16 rounded-sm bg-slate-blue/10 flex items-center justify-center">
             <Zap className="w-8 h-8 text-slate-blue" />
           </div>
         }
@@ -173,7 +173,7 @@ export const AnimationDemo: Story = {
           variant="elite"
           ctaText="Try Payment Links"
           imageSlot={
-            <div className="w-16 h-16 rounded-card bg-gradient-to-br from-slate-blue/20 to-ayu-purple/20 flex items-center justify-center border border-slate-blue/30">
+            <div className="w-16 h-16 rounded-sm bg-gradient-to-br from-slate-blue/20 to-ayu-purple/20 flex items-center justify-center border border-slate-blue/30">
               <div className="w-8 h-8 rounded bg-slate-blue/30" />
             </div>
           }
@@ -185,7 +185,7 @@ export const AnimationDemo: Story = {
           variant="premium"
           ctaText="Learn about Atlas"
           imageSlot={
-            <div className="w-16 h-16 rounded-card bg-gradient-to-br from-rusty-orange/20 to-sandy-ochre/20 flex items-center justify-center border border-rusty-orange/30">
+            <div className="w-16 h-16 rounded-sm bg-gradient-to-br from-rusty-orange/20 to-sandy-ochre/20 flex items-center justify-center border border-rusty-orange/30">
               <div className="w-8 h-8 rounded bg-rusty-orange/30" />
             </div>
           }

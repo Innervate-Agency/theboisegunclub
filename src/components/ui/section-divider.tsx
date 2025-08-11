@@ -80,16 +80,16 @@ export function SectionDivider({ className, variant, spacing, ...props }: Sectio
           {/* Vertical line */}
           <div className="absolute h-full w-px bg-gradient-to-b from-transparent via-muted-foreground/30 to-transparent" />
           {/* Center dot */}
-          <div className="w-1 h-1 rounded-full bg-muted-foreground/40" />
+          <div className="w-1 h-1 rounded-pill bg-muted-foreground/40" />
         </div>
       )}
       
       {/* Three-Dot Sights Pattern */}
       {variant === "sights" && (
-        <div className="absolute inset-0 flex items-center justify-center gap-[var(--space-5xl)]">
-          <div className="w-2 h-2 rounded-full bg-muted-foreground/40" />
-          <div className="w-3 h-3 rounded-full bg-primary/60" />
-          <div className="w-2 h-2 rounded-full bg-muted-foreground/40" />
+        <div className="absolute inset-0 flex items-center justify-center gap-(--spacing-5xl)">
+          <div className="w-2 h-2 rounded-pill bg-muted-foreground/40" />
+          <div className="w-3 h-3 rounded-pill bg-primary/60" />
+          <div className="w-2 h-2 rounded-pill bg-muted-foreground/40" />
         </div>
       )}
       
@@ -110,7 +110,7 @@ export function SectionDivider({ className, variant, spacing, ...props }: Sectio
                 }}
               />
             ))}
-            <div className="w-2 h-2 rounded-full bg-primary/60 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+            <div className="w-2 h-2 rounded-pill bg-primary/60 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
           </div>
         </div>
       )}

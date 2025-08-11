@@ -32,7 +32,7 @@ export const StripeStyleCenterOut: Story = {
       <h2 className="text-2xl font-rajdhani font-bold mb-6 text-card-foreground">
         Option 1: Stripe-Style Center-Out Underline
       </h2>
-      <div className="bg-muted p-6 rounded-card">
+      <div className="bg-muted p-6 rounded-sm">
         <div className="flex items-center gap-8">
           {navigationItems.slice(0, 4).map((item) => (
             <a
@@ -59,7 +59,7 @@ export const LeftToRightSlide: Story = {
       <h2 className="text-2xl font-rajdhani font-bold mb-6 text-card-foreground">
         Option 2: Left-to-Right Slide Underline
       </h2>
-      <div className="bg-muted p-6 rounded-card">
+      <div className="bg-muted p-6 rounded-sm">
         <div className="flex items-center gap-8">
           {navigationItems.slice(0, 4).map((item) => (
             <a
@@ -86,7 +86,7 @@ export const FadeWithGlow: Story = {
       <h2 className="text-2xl font-rajdhani font-bold mb-6 text-card-foreground">
         Option 3: Fade + Subtle Glow Effect
       </h2>
-      <div className="bg-muted p-6 rounded-card">
+      <div className="bg-muted p-6 rounded-sm">
         <div className="flex items-center gap-8">
           {navigationItems.slice(0, 4).map((item) => {
             const glowColors = {
@@ -119,7 +119,7 @@ export const ColorAndScale: Story = {
       <h2 className="text-2xl font-rajdhani font-bold mb-6 text-card-foreground">
         Option 4: Color + Scale Text Effect
       </h2>
-      <div className="bg-muted p-6 rounded-card">
+      <div className="bg-muted p-6 rounded-sm">
         <div className="flex items-center gap-8">
           {navigationItems.slice(0, 4).map((item) => (
             <a
@@ -143,7 +143,7 @@ export const BonusFireGradient: Story = {
       <h2 className="text-2xl font-rajdhani font-bold mb-6 text-card-foreground">
         Bonus: Fire Gradient Underline (TBGC Special)
       </h2>
-      <div className="bg-muted p-6 rounded-card">
+      <div className="bg-muted p-6 rounded-sm">
         <div className="flex items-center gap-8">
           {navigationItems.slice(0, 4).map((item) => (
             <a
@@ -174,7 +174,7 @@ export const AllEffectsComparison: Story = {
       {/* Effect 1 */}
       <div className="space-y-4">
         <h3 className="text-lg font-semibold text-card-foreground">1. Stripe-Style Center-Out</h3>
-        <div className="bg-muted p-4 rounded-card">
+        <div className="bg-muted p-4 rounded-sm">
           <div className="flex items-center gap-6">
             {navigationItems.slice(0, 3).map((item) => (
               <a
@@ -194,7 +194,7 @@ export const AllEffectsComparison: Story = {
       {/* Effect 2 */}
       <div className="space-y-4">
         <h3 className="text-lg font-semibold text-card-foreground">2. Left-to-Right Slide</h3>
-        <div className="bg-muted p-4 rounded-card">
+        <div className="bg-muted p-4 rounded-sm">
           <div className="flex items-center gap-6">
             {navigationItems.slice(0, 3).map((item) => (
               <a
@@ -214,7 +214,7 @@ export const AllEffectsComparison: Story = {
       {/* Effect 3 */}
       <div className="space-y-4">
         <h3 className="text-lg font-semibold text-card-foreground">3. Scale + Color</h3>
-        <div className="bg-muted p-4 rounded-card">
+        <div className="bg-muted p-4 rounded-sm">
           <div className="flex items-center gap-6">
             {navigationItems.slice(0, 3).map((item) => (
               <a
@@ -233,7 +233,7 @@ export const AllEffectsComparison: Story = {
       {/* Effect 4 - Fire Gradient */}
       <div className="space-y-4">
         <h3 className="text-lg font-semibold text-card-foreground">4. Fire Gradient (TBGC Special)</h3>
-        <div className="bg-muted p-4 rounded-card">
+        <div className="bg-muted p-4 rounded-sm">
           <div className="flex items-center gap-6">
             {navigationItems.slice(0, 3).map((item) => (
               <a

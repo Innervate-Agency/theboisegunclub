@@ -105,17 +105,17 @@ export const MinimalDemo: Story = {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-          <div className="mica-card p-md rounded-card">
+          <div className="mica-card p-md rounded-sm">
             <h3 className="font-medium mb-xs text-foreground">Standard Card</h3>
             <p className="text-body-sm text-muted-foreground">Subtle glass effect</p>
           </div>
           
-          <div className="mica-dropdown p-md rounded-card">
+          <div className="mica-dropdown p-md rounded-sm">
             <h3 className="font-medium mb-xs text-foreground">Dropdown Style</h3>
             <p className="text-body-sm text-muted-foreground">Optimized blur levels</p>
           </div>
           
-          <div className="mica-overlay p-md rounded-card">
+          <div className="mica-overlay p-md rounded-sm">
             <h3 className="font-medium mb-xs text-foreground">Overlay Effect</h3>
             <p className="text-body-sm text-muted-foreground">Professional depth</p>
           </div>
@@ -140,24 +140,24 @@ export const DarkModeTest: Story = {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
-          <div className="bg-card text-card-foreground p-md rounded-card border border-border">
+          <div className="bg-card text-card-foreground p-md rounded-sm border border-border">
             <h3 className="font-medium mb-xs text-foreground">Card with Semantic Colors</h3>
             <p className="text-body-sm text-muted-foreground">This uses bg-card and text-foreground</p>
             <p className="text-caption text-muted-foreground mt-xs">Muted text should be lighter gray</p>
           </div>
           
-          <div className="mica-card p-md rounded-card">
+          <div className="mica-card p-md rounded-sm">
             <h3 className="font-medium mb-xs text-foreground">Mica Card</h3>
             <p className="text-body-sm text-muted-foreground">Glass effect with theme colors</p>
             <p className="text-caption text-brand-primary mt-xs">Brand primary (brass yellow)</p>
           </div>
         </div>
         
-        <div className="bg-primary text-primary-foreground p-base rounded-card">
+        <div className="bg-primary text-primary-foreground p-base rounded-sm">
           <p className="font-medium">Primary background with primary foreground text</p>
         </div>
         
-        <div className="bg-secondary text-secondary-foreground p-base rounded-card">
+        <div className="bg-secondary text-secondary-foreground p-base rounded-sm">
           <p className="font-medium">Secondary background with secondary foreground text</p>
         </div>
       </div>

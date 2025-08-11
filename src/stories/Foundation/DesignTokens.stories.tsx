@@ -11,7 +11,7 @@ const meta: Meta = {
     },
     designToken: {
       showPreview: true,
-      filterNames: ['--color-sandy-ochre', '--color-rusty-orange', '--space-base', '--space-md'],
+      filterNames: ['--color-sandy-ochre', '--color-rusty-orange', '--spacing-base', '--spacing-md'],
       category: 'Design System Tokens'
     }
   },
@@ -33,19 +33,19 @@ export const ColorPalette: Story = {
       <section>
         <h2 className="text-display-md font-rajdhani font-bold mb-base">Primary Brand Colors</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-base">
-          <div className="bg-sandy-ochre p-md rounded-card text-black">
+          <div className="bg-sandy-ochre p-md rounded-sm text-black">
             <div className="font-bold">Brass Yellow</div>
             <div className="text-body-sm opacity-80">#FF00FF</div>
           </div>
-          <div className="bg-rusty-orange p-md rounded-card text-white">
+          <div className="bg-rusty-orange p-md rounded-sm text-white">
             <div className="font-bold">Copper Orange</div>
             <div className="text-body-sm opacity-80">#FF00FF</div>
           </div>
-          <div className="bg-dark-chocolate p-md rounded-card text-white">
+          <div className="bg-dark-chocolate p-md rounded-sm text-white">
             <div className="font-bold">Gunmetal Black</div>
             <div className="text-body-sm opacity-80">#000000</div>
           </div>
-          <div className="bg-nickel-white p-md rounded-card text-black border">
+          <div className="bg-nickel-white p-md rounded-sm text-black border">
             <div className="font-bold">Nickel White</div>
             <div className="text-body-sm opacity-80">#FFFFFF</div>
           </div>
@@ -56,22 +56,22 @@ export const ColorPalette: Story = {
       <section>
         <h2 className="text-display-md font-rajdhani font-bold mb-base">Light Theme - Spring Day at the Range</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-base">
-          <div className="bg-range-white p-base rounded-card text-black border">
+          <div className="bg-range-white p-base rounded-sm text-black border">
             <div className="font-bold text-body-sm">Range White</div>
           </div>
-          <div className="bg-card-surface p-base rounded-card text-black">
+          <div className="bg-card-surface p-base rounded-sm text-black">
             <div className="font-bold text-body-sm">Shooting Bench</div>
           </div>
-          <div className="bg-walnut-stock p-base rounded-card text-white">
+          <div className="bg-walnut-stock p-base rounded-sm text-white">
             <div className="font-bold text-body-sm">Walnut Stock</div>
           </div>
-          <div className="bg-blued-steel p-base rounded-card text-white">
+          <div className="bg-blued-steel p-base rounded-sm text-white">
             <div className="font-bold text-body-sm">Blued Steel</div>
           </div>
-          <div className="bg-warning-amber p-base rounded-card text-white">
+          <div className="bg-warning-amber p-base rounded-sm text-white">
             <div className="font-bold text-body-sm">Case Hardened</div>
           </div>
-          <div className="bg-muzzle-flash p-base rounded-card text-white">
+          <div className="bg-muzzle-flash p-base rounded-sm text-white">
             <div className="font-bold text-body-sm">Muzzle Flash</div>
           </div>
         </div>
@@ -81,22 +81,22 @@ export const ColorPalette: Story = {
       <section>
         <h2 className="text-display-md font-rajdhani font-bold mb-base">Ayu Enhancement Colors</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-base">
-          <div className="bg-slate-blue p-base rounded-card text-white">
+          <div className="bg-slate-blue p-base rounded-sm text-white">
             <div className="font-bold text-body-sm">Ayu Blue</div>
           </div>
-          <div className="bg-ayu-green p-base rounded-card text-white">
+          <div className="bg-ayu-green p-base rounded-sm text-white">
             <div className="font-bold text-body-sm">Ayu Green</div>
           </div>
-          <div className="bg-ayu-teal p-base rounded-card text-white">
+          <div className="bg-ayu-teal p-base rounded-sm text-white">
             <div className="font-bold text-body-sm">Ayu Teal</div>
           </div>
-          <div className="bg-ayu-cobalt p-base rounded-card text-white">
+          <div className="bg-ayu-cobalt p-base rounded-sm text-white">
             <div className="font-bold text-body-sm">Ayu Cobalt</div>
           </div>
-          <div className="bg-ayu-purple p-base rounded-card text-white">
+          <div className="bg-ayu-purple p-base rounded-sm text-white">
             <div className="font-bold text-body-sm">Ayu Purple</div>
           </div>
-          <div className="bg-ayu-red p-base rounded-card text-white">
+          <div className="bg-ayu-red p-base rounded-sm text-white">
             <div className="font-bold text-body-sm">Ayu Red</div>
           </div>
         </div>
@@ -117,19 +117,19 @@ export const FireGradients: Story = {
       <section>
         <h2 className="text-display-md font-rajdhani font-bold mb-base">Static Fire Gradients</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
-          <div className="bg-fire-orange p-lg rounded-card text-white">
+          <div className="bg-fire-orange p-lg rounded-sm text-white">
             <div className="font-bold text-display-sm">Fire Orange</div>
             <div className="text-body-sm opacity-80">Copper Orange → Brass Yellow</div>
           </div>
-          <div className="bg-fire-blue p-lg rounded-card text-white">
+          <div className="bg-fire-blue p-lg rounded-sm text-white">
             <div className="font-bold text-display-sm">Fire Blue</div>
             <div className="text-body-sm opacity-80">Ayu Blue → Ayu Green</div>
           </div>
-          <div className="bg-fire-purple p-lg rounded-card text-white">
+          <div className="bg-fire-purple p-lg rounded-sm text-white">
             <div className="font-bold text-display-sm">Fire Purple</div>
             <div className="text-body-sm opacity-80">Ayu Purple → Ayu Cobalt</div>
           </div>
-          <div className="bg-fire-green p-lg rounded-card text-white">
+          <div className="bg-fire-green p-lg rounded-sm text-white">
             <div className="font-bold text-display-sm">Fire Green</div>
             <div className="text-body-sm opacity-80">Ayu Green → Bore Sight Green</div>
           </div>
@@ -140,19 +140,19 @@ export const FireGradients: Story = {
       <section>
         <h2 className="text-display-md font-rajdhani font-bold mb-base">Animated Fire Effects</h2>
         <div className="space-y-md">
-          <div className="relative bg-card p-lg rounded-card border overflow-hidden cursor-pointer animate-fire-unfurl">
+          <div className="relative bg-card p-lg rounded-sm border overflow-hidden cursor-pointer animate-fire-unfurl">
             <div className="relative z-10">
               <div className="font-bold text-display-sm">Fire Unfurl Effect</div>
               <div className="text-body-sm text-muted-foreground">Hover to see gradient unfurl from left</div>
             </div>
           </div>
           
-          <div className="animate-fire-pulse p-lg rounded-card text-white">
+          <div className="animate-fire-pulse p-lg rounded-sm text-white">
             <div className="font-bold text-display-sm">Fire Pulse Animation</div>
             <div className="text-body-sm opacity-80">Continuous background animation</div>
           </div>
           
-          <div className="bg-fire-orange animate-fire-glow p-lg rounded-card text-white">
+          <div className="bg-fire-orange animate-fire-glow p-lg rounded-sm text-white">
             <div className="font-bold text-display-sm">Fire Glow Effect</div>
             <div className="text-body-sm opacity-80">Pulsing glow shadow</div>
           </div>
@@ -173,15 +173,15 @@ export const Typography: Story = {
       <section>
         <h2 className="text-display-md font-rajdhani font-bold mb-base">Font Families</h2>
         <div className="space-y-base">
-          <div className="p-md bg-card rounded-card border">
+          <div className="p-md bg-card rounded-sm border">
             <h3 className="font-rajdhani text-display-sm font-bold mb-xs">Rajdhani - Display Font</h3>
             <p className="text-muted-foreground">Used for H1, H2 headers and display text</p>
           </div>
-          <div className="p-md bg-card rounded-card border">
+          <div className="p-md bg-card rounded-sm border">
             <h3 className="font-noto-sans text-display-sm font-bold mb-xs">Noto Sans - Body Font</h3>
             <p className="text-muted-foreground">Used for H3-H6, body text, and UI components</p>
           </div>
-          <div className="p-md bg-card rounded-card border">
+          <div className="p-md bg-card rounded-sm border">
             <h3 className="font-serif text-display-sm font-bold mb-xs">Noto Serif - Editorial Font</h3>
             <p className="text-muted-foreground">Used for articles, blog posts, and editorial content</p>
           </div>

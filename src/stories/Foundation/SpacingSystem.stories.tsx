@@ -11,7 +11,7 @@ const meta: Meta = {
     },
     designToken: {
       showPreview: true,
-      filterNames: ['--space-xs', '--space-sm', '--space-base', '--space-md', '--space-lg', '--space-xl', '--space-2xl'],
+      filterNames: ['--spacing-xs', '--spacing-sm', '--spacing-base', '--spacing-md', '--spacing-lg', '--spacing-xl', '--spacing-2xl'],
       category: 'Spacing'
     }
   },
@@ -34,18 +34,18 @@ export const SpacingScale: Story = {
         <h2 className="text-display-md font-rajdhani font-bold mb-base">Base Spacing Scale</h2>
         <div className="space-y-base">
           {[
-            { name: 'Micro', value: '--space-micro', px: '2px', usage: 'Fine details, border thickness' },
-            { name: 'XS', value: '--space-xs', px: '8px', usage: 'Small gaps, compact layouts' },
-            { name: 'SM', value: '--space-sm', px: '12px', usage: 'Default gaps, form spacing' },
-            { name: 'Base', value: '--space-base', px: '16px', usage: 'Card padding, button padding' },
-            { name: 'MD', value: '--space-md', px: '24px', usage: 'Section spacing, large gaps' },
-            { name: 'LG', value: '--space-lg', px: '32px', usage: 'Component separation' },
-            { name: 'XL', value: '--space-xl', px: '48px', usage: 'Major section spacing' },
-            { name: '2XL', value: '--space-2xl', px: '64px', usage: 'Hero section spacing' },
-            { name: '3XL', value: '--space-3xl', px: '96px', usage: 'Large hero spacing' },
-            { name: '4XL', value: '--space-4xl', px: '128px', usage: 'Maximum section spacing' },
+            { name: 'Micro', value: '--spacing-micro', px: '2px', usage: 'Fine details, border thickness' },
+            { name: 'XS', value: '--spacing-xs', px: '8px', usage: 'Small gaps, compact layouts' },
+            { name: 'SM', value: '--spacing-sm', px: '12px', usage: 'Default gaps, form spacing' },
+            { name: 'Base', value: '--spacing-base', px: '16px', usage: 'Card padding, button padding' },
+            { name: 'MD', value: '--spacing-md', px: '24px', usage: 'Section spacing, large gaps' },
+            { name: 'LG', value: '--spacing-lg', px: '32px', usage: 'Component separation' },
+            { name: 'XL', value: '--spacing-xl', px: '48px', usage: 'Major section spacing' },
+            { name: '2XL', value: '--spacing-2xl', px: '64px', usage: 'Hero section spacing' },
+            { name: '3XL', value: '--spacing-3xl', px: '96px', usage: 'Large hero spacing' },
+            { name: '4XL', value: '--spacing-4xl', px: '128px', usage: 'Maximum section spacing' },
           ].map((token) => (
-            <div key={token.name} className="flex items-center gap-base p-base bg-card rounded-card border">
+            <div key={token.name} className="flex items-center gap-base p-base bg-card rounded-sm border">
               <div className="w-24 text-body-sm font-medium">{token.name}</div>
               <div className="flex-1">
                 <div 
@@ -73,7 +73,7 @@ export const SpacingScale: Story = {
           {/* Card Spacing */}
           <div className="space-y-base">
             <h3 className="text-body-lg font-semibold">Card Spacing</h3>
-            <div className="bg-card border rounded-card" style={{ padding: 'var(--card-padding)' }}>
+            <div className="bg-card border rounded-sm" style={{ padding: 'var(--card-padding)' }}>
               <div className="bg-muted rounded p-xs text-body-sm">
                 Card content with <code>--card-padding</code>
               </div>
@@ -122,12 +122,12 @@ export const SpacingScale: Story = {
       {/* Usage Examples */}
       <section>
         <h2 className="text-display-md font-rajdhani font-bold mb-base">Usage Examples</h2>
-        <div className="bg-muted p-md rounded-card">
+        <div className="bg-muted p-md rounded-sm">
           <pre className="text-body-sm overflow-x-auto">
 {`/* CSS Variables */
-padding: var(--space-md);
-margin-bottom: var(--space-lg);
-gap: var(--space-xs);
+padding: var(--spacing-md);
+margin-bottom: var(--spacing-lg);
+gap: var(--spacing-xs);
 
 /* Tailwind with Design Tokens */
 className="p-md mb-lg gap-xs"
@@ -146,7 +146,7 @@ export const SpacingTokens: Story = {
   parameters: {
     designToken: {
       showPreview: true,
-      filterNames: ['--space-xs', '--space-sm', '--space-base', '--space-md', '--space-lg', '--space-xl', '--space-2xl'],
+      filterNames: ['--spacing-xs', '--spacing-sm', '--spacing-base', '--spacing-md', '--spacing-lg', '--spacing-xl', '--spacing-2xl'],
       category: 'Spacing Tokens'
     }
   },

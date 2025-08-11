@@ -100,7 +100,7 @@ export const TypeScale: Story = {
             { name: '3XL', size: 'text-3xl', responsive: 'text-responsive-3xl', css: '--text-3xl', px: '30px', usage: 'Page headings' },
             { name: '4XL', size: 'text-4xl', responsive: 'text-responsive-4xl', css: '--text-4xl', px: '36px', usage: 'Hero headings' },
           ].map((type) => (
-            <div key={type.name} className="border rounded-card p-md">
+            <div key={type.name} className="border rounded-sm p-md">
               <div className="flex items-center gap-base mb-base">
                 <div className="w-16 text-body-sm font-medium">{type.name}</div>
                 <div className="text-body-sm text-muted-foreground">{type.px}</div>
@@ -124,7 +124,7 @@ export const TypeScale: Story = {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
           
           {/* Card Typography */}
-          <div className="bg-card border rounded-card p-md">
+          <div className="bg-card border rounded-sm p-md">
             <h3 className="card-title mb-xs">Card Title</h3>
             <p className="card-body mb-base">This is card body text using the card-body class for consistent typography across all card components.</p>
             <div className="card-caption">Card caption text for metadata</div>
@@ -203,7 +203,7 @@ export const ResponsiveTypography: Story = {
 
       <section className="mt-xl">
         <h2 className="text-display-md font-rajdhani font-bold mb-base">Usage Guidelines</h2>
-        <div className="bg-muted p-md rounded-card">
+        <div className="bg-muted p-md rounded-sm">
           <pre className="text-body-sm overflow-x-auto">
 {`/* CSS Variables */
 font-size: var(--text-display-sm);
