@@ -145,12 +145,20 @@ export default function StatCard({
     <Card className={cn(statCardVariants({ variant, size }), className)} {...props}>
       <CardContent className="p-4">
         {icon && (
+<<<<<<< HEAD
+          <div className={cn("mb-4", textColors.icon)}>
+=======
           <div className={cn("mb-(--spacing-sm)", textColors.icon)}>
+>>>>>>> refactor/summer-2025-standards
             {icon}
           </div>
         )}
         
+<<<<<<< HEAD
+        <div className="space-y-0">
+=======
         <div className="space-y-(--spacing-micro)">
+>>>>>>> refactor/summer-2025-standards
           <div className="flex items-center justify-between">
             <h3 className={cn("text-3xl font-rajdhani font-bold", textColors.title)}>
               {formatValue(value)}
