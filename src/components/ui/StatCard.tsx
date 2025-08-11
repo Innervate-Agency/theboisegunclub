@@ -143,16 +143,16 @@ export default function StatCard({
 
   return (
     <Card className={cn(statCardVariants({ variant, size }), className)} {...props}>
-      <CardContent className="p-0">
+      <CardContent className="p-4">
         {icon && (
-          <div className={cn("mb-[var(--space-sm)]", textColors.icon)}>
+          <div className={cn("mb-4", textColors.icon)}>
             {icon}
           </div>
         )}
         
-        <div className="space-y-[var(--space-micro)]">
+        <div className="space-y-0">
           <div className="flex items-center justify-between">
-            <h3 className={cn("text-heading-lg font-rajdhani font-bold", textColors.title)}>
+            <h3 className={cn("text-3xl font-rajdhani font-bold", textColors.title)}>
               {formatValue(value)}
             </h3>
             {trend && trendValue && (
@@ -163,7 +163,7 @@ export default function StatCard({
             )}
           </div>
           
-          <p className={cn("text-body-sm font-noto-sans uppercase tracking-wide", textColors.label)}>
+          <p className={cn("text-body-sm font-noto-sans tracking-wide", textColors.label)}>
             {label}
           </p>
           

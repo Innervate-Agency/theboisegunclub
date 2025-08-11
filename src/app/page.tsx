@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import AltchaWidget, { AltchaWidgetRef } from '@/components/ui/altcha-widget';
-import { Search, Calendar, ShoppingCart, Share2, Bell, Building2, ArrowRight, MapPin, Users, Trophy, Target, AlertTriangle, Users2, MessageSquare, BookOpen, Shield, Megaphone, CheckCircle, Zap, Star, TrendingUp, Mail } from 'lucide-react';
+import { Search, Calendar, ShoppingCart, Share2, Bell, Building2, ArrowRight, MapPin, Users, Trophy, Target, AlertTriangle, Users2, MessageSquare, Database, Shield, Megaphone, CheckCircle, Zap, Star, TrendingUp, Mail, Bookmark, FileText } from 'lucide-react';
 
 export default function HomePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -71,35 +71,35 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-light-peachy/95 via-crisp-off-white/90 to-light-peachy/95 dark:from-dark-chocolate/95 dark:via-rich-loam/90 dark:to-dark-chocolate/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-sandy-ochre/14 dark:before:to-rusty-orange/12 before:pointer-events-none px-md py-4xl">
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="grid gap-xl lg:grid-cols-2 lg:gap-3xl">
-            <div className="space-y-lg">
-              <div className="space-y-base">
+      <section className="relative overflow-hidden bg-gradient-to-br from-light-peachy/95 via-crisp-off-white/90 to-light-peachy/95 dark:from-dark-chocolate/95 dark:via-rich-loam/90 dark:to-dark-chocolate/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-sandy-ochre/14 dark:before:to-rusty-orange/12 before:pointer-events-none px-6 py-32">
+        <div className="container-wide relative z-10">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
+            <div className="space-y-8">
+              <div className="space-y-4">
                 <Badge className="bg-sandy-ochre text-dark-chocolate shadow-sm">
-                  <Target className="h-4 w-4 mr-xs" />
+                  <Target className="h-4 w-4 mr-2" />
                   Regional Platform
                 </Badge>
-                <h1 className="font-rajdhani text-6xl md:text-8xl leading-none text-foreground tracking-tight">
+                <h1 className="font-rajdhani text-responsive-4xl leading-none text-foreground tracking-tight">
                   <span className="font-extrabold">THE BOISE </span><span className="font-light">GUN CLUB</span>
                 </h1>
-                <p className="text-body-lg text-muted-foreground max-w-2xl">
+                <p className="text-lg text-muted-foreground max-w-2xl">
                   Building Treasure Valley's first comprehensive firearms community platform. Connecting local businesses, clubs, ranges, and enthusiasts across Idaho's premier firearms region.
                 </p>
-                <div className="space-y-sm">
-                  <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Shield className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>Safety-first community focused on responsible firearms education</span>
                   </div>
-                  <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Star className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>Preserving Idaho's rich firearms heritage and outdoor traditions</span>
                   </div>
-                  <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Users className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>Connecting 250K+ gun owners across the Treasure Valley region</span>
                   </div>
-                  <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <TrendingUp className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>4-tier subscription model supporting local businesses</span>
                   </div>
@@ -108,30 +108,30 @@ export default function HomePage() {
               
             </div>
             
-            <div className="grid gap-md sm:grid-cols-2">
+            <div className="grid gap-6 sm:grid-cols-2">
               <StatCard
                 value="Directory"
-                label="Local Gun Shops, Ranges & Trainers"
+                label="Local gun shops, ranges & trainers"
                 variant="default"
-                icon={<Building2 className="h-6 w-6" />}
+                icon={<div className="w-12 h-12 rounded-lg bg-sandy-ochre/20 border-2 border-sandy-ochre/30 flex items-center justify-center"><Building2 className="h-6 w-6 text-sandy-ochre" /></div>}
               />
               <StatCard
                 value="Events"
-                label="Unified Calendar from All Clubs"
+                label="Unified calendar from all clubs"
                 variant="default"
-                icon={<Calendar className="h-6 w-6" />}
+                icon={<div className="w-12 h-12 rounded-lg bg-slate-blue/20 border-2 border-slate-blue/30 flex items-center justify-center"><Calendar className="h-6 w-6 text-slate-blue" /></div>}
               />
               <StatCard
                 value="Forum"
-                label="Community Discussion & Trading"
+                label="Community discussion & trading"
                 variant="default"
-                icon={<Share2 className="h-6 w-6" />}
+                icon={<div className="w-12 h-12 rounded-lg bg-sagebrush-green/20 border-2 border-sagebrush-green/30 flex items-center justify-center"><Share2 className="h-6 w-6 text-sagebrush-green" /></div>}
               />
               <StatCard
                 value="Resources"
-                label="Idaho Laws, Safety & Training Info"
+                label="Idaho laws, safety & training info"
                 variant="default"
-                icon={<Bell className="h-6 w-6" />}
+                icon={<div className="w-12 h-12 rounded-lg bg-info-river/20 border-2 border-info-river/30 flex items-center justify-center"><Bell className="h-6 w-6 text-info-river" /></div>}
               />
             </div>
           </div>
@@ -140,71 +140,71 @@ export default function HomePage() {
             
 
       {/* Platform Features Section */}
-      <section className="px-md py-4xl">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center space-y-base mb-xl">
-            <h2 className="font-rajdhani text-4xl font-bold">What Makes TBGC Different</h2>
-            <p className="text-body-lg text-muted-foreground">
+      <section className="px-6 py-32">
+        <div className="container-wide">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="font-rajdhani text-responsive-3xl font-bold">What Makes TBGC Different</h2>
+            <p className="text-lg text-muted-foreground">
               Advanced technology and business intelligence designed specifically for Idaho's firearms industry
             </p>
           </div>
           
-          <div className="grid gap-md md:grid-cols-2 lg:grid-cols-4">
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
-              <CardHeader>
-                <Search className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
-                <CardTitle className="flex items-center gap-xs">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader className="space-y-3">
+                <Search className="h-8 w-8 text-sandy-ochre group-hover:text-rusty-orange transition-colors" />
+                <CardTitle className="flex items-center gap-2">
                   <Building2 className="h-5 w-5" />
                   Business Directory
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground">
                   Verified business profiles with real-time inventory, services, and customer reviews
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sandy-ochre after:to-rusty-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
-              <CardHeader>
-                <Calendar className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
-                <CardTitle className="flex items-center gap-xs">
+            <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sandy-ochre after:to-rusty-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader className="space-y-3">
+                <Calendar className="h-8 w-8 text-sandy-ochre group-hover:text-rusty-orange transition-colors" />
+                <CardTitle className="flex items-center gap-2">
                   <Users2 className="h-5 w-5" />
                   Unified Events
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground">
                   Smart calendar preventing scheduling conflicts and maximizing participation
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sandy-ochre after:to-rusty-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
-              <CardHeader>
-                <Share2 className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
-                <CardTitle className="flex items-center gap-xs">
+            <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sandy-ochre after:to-rusty-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader className="space-y-3">
+                <Share2 className="h-8 w-8 text-sandy-ochre group-hover:text-rusty-orange transition-colors" />
+                <CardTitle className="flex items-center gap-2">
                   <MessageSquare className="h-5 w-5" />
                   Community Hub
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground">
                   Secure trading platform with verified members and dispute resolution
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
-              <CardHeader>
-                <ShoppingCart className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
-                <CardTitle className="flex items-center gap-xs">
+            <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader className="space-y-3">
+                <ShoppingCart className="h-8 w-8 text-sandy-ochre group-hover:text-rusty-orange transition-colors" />
+                <CardTitle className="flex items-center gap-2">
                   <Zap className="h-5 w-5" />
                   Service Marketplace
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground">
                   Advanced booking system with real-time availability and payment processing
                 </p>
               </CardContent>
@@ -212,117 +212,117 @@ export default function HomePage() {
           </div>
           
           {/* Problems Section */}
-          <div className="text-center space-y-base mb-xl mt-3xl">
-            <h2 className="font-rajdhani text-4xl font-bold">The Problems We're Solving</h2>
-            <p className="text-body-lg text-muted-foreground max-w-4xl mx-auto">
+          <div className="text-center space-y-4 mb-16 mt-24">
+            <h2 className="font-rajdhani text-responsive-3xl font-bold">The Problems We're Solving</h2>
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
               Despite having 250K+ gun owners and 117+ businesses, Treasure Valley lacks a unified digital ecosystem. These critical gaps are holding back our entire firearms community.
             </p>
           </div>
           
-          <div className="grid gap-lg md:grid-cols-2 lg:grid-cols-3">
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-red after:to-ayu-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
-              <CardHeader>
-                <Badge className="w-fit mb-xs bg-ayu-red/20 text-ayu-red">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-canyon-clay after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader className="space-y-4">
+                <Badge className="w-fit bg-canyon-clay/20 text-canyon-clay">
                   <AlertTriangle className="h-3 w-3 mr-1" />
                   Fragmentation
                 </Badge>
-                <CardTitle className="flex items-center gap-xs">
-                  <Search className="h-5 w-5 text-ayu-red" />
+                <CardTitle className="flex items-center gap-2">
+                  <Search className="h-5 w-5 text-canyon-clay" />
                   Information Scattered Everywhere
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground">
                   Events, training, and business info spread across dozens of Facebook groups, outdated websites, and word-of-mouth. New residents and visitors can't find anything.
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-blue after:to-ayu-teal after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
-              <CardHeader>
-                <Badge className="w-fit mb-xs bg-ayu-blue/20 text-ayu-blue">
+            <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-info-river after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader className="space-y-4">
+                <Badge className="w-fit bg-slate-blue/20 text-slate-blue">
                   <AlertTriangle className="h-3 w-3 mr-1" />
                   Isolation
                 </Badge>
-                <CardTitle className="flex items-center gap-xs">
-                  <Building2 className="h-5 w-5 text-ayu-blue" />
+                <CardTitle className="flex items-center gap-2">
+                  <Building2 className="h-5 w-5 text-slate-blue" />
                   Clubs Operating in Silos
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground">
                   Each range, club, and training organization operates independently. No unified calendar, competing for the same dates, missing collaboration opportunities.
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-ayu-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
-              <CardHeader>
-                <Badge className="w-fit mb-xs bg-ayu-green/20 text-ayu-green">
+            <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sagebrush-green after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader className="space-y-4">
+                <Badge className="w-fit bg-sagebrush-green/20 text-sagebrush-green">
                   <AlertTriangle className="h-3 w-3 mr-1" />
                   Discovery
                 </Badge>
-                <CardTitle className="flex items-center gap-xs">
-                  <TrendingUp className="h-5 w-5 text-ayu-green" />
+                <CardTitle className="flex items-center gap-2">
+                  <TrendingUp className="h-5 w-5 text-sagebrush-green" />
                   Businesses Struggle for Visibility
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground">
                   Local gun shops, trainers, and gunsmiths rely on Facebook posts and word-of-mouth. No central hub to showcase services to the entire regional community.
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-cobalt after:to-ayu-purple after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
-              <CardHeader>
-                <Badge className="w-fit mb-xs bg-ayu-cobalt/20 text-ayu-cobalt">
+            <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-foothills-purple after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader className="space-y-4">
+                <Badge className="w-fit bg-slate-blue/20 text-slate-blue">
                   <AlertTriangle className="h-3 w-3 mr-1" />
                   Education
                 </Badge>
-                <CardTitle className="flex items-center gap-xs">
-                  <Shield className="h-5 w-5 text-ayu-cobalt" />
+                <CardTitle className="flex items-center gap-2">
+                  <Shield className="h-5 w-5 text-slate-blue" />
                   Safety Education Gaps
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground">
                   New gun owners and families struggle to find quality safety training. No centralized resource for Idaho-specific laws, regulations, and best practices.
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-red after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
-              <CardHeader>
-                <Badge className="w-fit mb-xs bg-ayu-purple/20 text-ayu-purple">
+            <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-foothills-purple after:to-canyon-clay after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader className="space-y-4">
+                <Badge className="w-fit bg-foothills-purple/20 text-foothills-purple">
                   <AlertTriangle className="h-3 w-3 mr-1" />
-                  Heritage
+                  Reviews
                 </Badge>
-                <CardTitle className="flex items-center gap-xs">
-                  <BookOpen className="h-5 w-5 text-ayu-purple" />
-                  Heritage Being Lost
+                <CardTitle className="flex items-center gap-2">
+                  <Database className="h-5 w-5 text-foothills-purple" />
+                  Community Firearm Reviews
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body-sm text-muted-foreground">
-                  Idaho's rich firearms heritage and traditions aren't being preserved or shared. Stories, knowledge, and community wisdom risk being lost.
+                <p className="text-sm text-muted-foreground">
+                  No comprehensive firearm rating system exists. Building the first IMDb/Rotten Tomatoes for firearms with community reviews, specs, and performance data.
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="shadow-sm hover:shadow-md transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-yellow after:to-ayu-blue after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
-              <CardHeader>
-                <Badge className="w-fit mb-xs bg-ayu-yellow/20 text-ayu-yellow">
+            <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sandy-ochre after:to-slate-blue after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
+              <CardHeader className="space-y-4">
+                <Badge className="w-fit bg-sandy-ochre/20 text-sandy-ochre">
                   <AlertTriangle className="h-3 w-3 mr-1" />
                   Advocacy
                 </Badge>
-                <CardTitle className="flex items-center gap-xs">
-                  <Megaphone className="h-5 w-5 text-ayu-yellow" />
+                <CardTitle className="flex items-center gap-2">
+                  <Megaphone className="h-5 w-5 text-sandy-ochre" />
                   No Community Voice
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground">
                   Treasure Valley's firearms community lacks a unified platform to advocate for rights, share legislative updates, and speak with one voice.
                 </p>
               </CardContent>
@@ -332,52 +332,52 @@ export default function HomePage() {
       </section>
 
       {/* Solution Section */}
-      <section className="px-md pt-xl pb-4xl">
-        <div className="container mx-auto max-w-6xl">
+      <section className="px-6 pt-12 pb-32">
+        <div className="container-wide">
           <div className="text-center">
-            <div className="bg-card rounded-lg p-xl shadow-sm max-w-4xl mx-auto relative overflow-hidden group after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-clubhouse-lawn-green after:to-sandy-ochre after:transition-all after:duration-500 after:ease-out hover:after:w-full after:rounded-b-lg">
+            <div className="bg-card rounded-lg p-12 shadow-sm max-w-4xl mx-auto relative overflow-hidden group after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-sagebrush-green after:to-sandy-ochre after:transition-all after:duration-500 after:ease-out hover:after:w-full after:rounded-b-lg">
               <div>
-                <Badge className="mb-base bg-clubhouse-lawn-green/20 text-clubhouse-lawn-green">
+                <Badge className="mb-4 bg-sagebrush-green/20 text-sagebrush-green">
                   <CheckCircle className="h-3 w-3 mr-1" />
                   Our Solution
                 </Badge>
-                <h3 className="font-rajdhani text-heading-lg font-bold text-card-foreground mb-base flex items-center gap-xs">
+                <h3 className="font-rajdhani text-3xl font-bold text-card-foreground mb-4 flex items-center gap-2">
                   <Star className="h-6 w-6 text-sandy-ochre" />
                   One Platform to Unite Treasure Valley's Firearms Community
                 </h3>
-                <div className="grid gap-base md:grid-cols-2 text-left">
-                  <div className="flex items-start gap-xs">
-                    <Search className="h-5 w-5 text-clubhouse-lawn-green mt-xs flex-shrink-0" />
+                <div className="grid gap-4 md:grid-cols-2 text-left">
+                  <div className="flex items-start gap-2">
+                    <Search className="h-5 w-5 text-sagebrush-green mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Verified Business Network</h4>
-                      <p className="text-body-sm text-muted-foreground">
+                      <h4 className="font-rajdhani font-bold text-card-foreground mb-1">Verified Business Network</h4>
+                      <p className="text-sm text-muted-foreground">
                         Authenticated professionals with background checks, insurance verification, and customer protection guarantees.
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-xs">
-                    <Calendar className="h-5 w-5 text-clubhouse-lawn-green mt-xs flex-shrink-0" />
+                  <div className="flex items-start gap-2">
+                    <Calendar className="h-5 w-5 text-sagebrush-green mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Smart Event Coordination</h4>
-                      <p className="text-body-sm text-muted-foreground">
+                      <h4 className="font-rajdhani font-bold text-card-foreground mb-1">Smart Event Coordination</h4>
+                      <p className="text-sm text-muted-foreground">
                         AI-powered scheduling prevents conflicts, optimizes attendance, and suggests complementary events.
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-xs">
-                    <MessageSquare className="h-5 w-5 text-clubhouse-lawn-green mt-xs flex-shrink-0" />
+                  <div className="flex items-start gap-2">
+                    <MessageSquare className="h-5 w-5 text-sagebrush-green mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Heritage & Education Center</h4>
-                      <p className="text-body-sm text-muted-foreground">
-                        Preserving Idaho firearms history, sharing knowledge, and providing certified safety education.
+                      <h4 className="font-rajdhani font-bold text-card-foreground mb-1">Firearm Review Database</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Comprehensive community-driven firearm ratings, reviews, and specifications database.
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-xs">
-                    <BookOpen className="h-5 w-5 text-clubhouse-lawn-green mt-xs flex-shrink-0" />
+                  <div className="flex items-start gap-2">
+                    <FileText className="h-5 w-5 text-sagebrush-green mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Premium Business Tools</h4>
-                      <p className="text-body-sm text-muted-foreground">
+                      <h4 className="font-rajdhani font-bold text-card-foreground mb-1">Premium Business Tools</h4>
+                      <p className="text-sm text-muted-foreground">
                         Advanced analytics, customer management, and marketing tools for participating businesses.
                       </p>
                     </div>
@@ -390,39 +390,39 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-rich-loam/90 px-md py-4xl">
+      <section className="relative overflow-hidden bg-gradient-to-br from-dark-chocolate/95 to-rich-loam/90 px-6 py-32">
         <div className="absolute inset-0 bg-gradient-to-br from-sandy-ochre/5 via-transparent to-rusty-orange/8 pointer-events-none"></div>
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="grid gap-xl lg:grid-cols-2 lg:gap-3xl items-center">
+        <div className="container-wide relative z-10">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
             
             {/* Left Side - Compelling Content */}
-            <div className="text-center lg:text-left space-y-lg">
-              <div className="space-y-base">
+            <div className="text-center lg:text-left space-y-8">
+              <div className="space-y-4">
                 <Badge className="bg-sandy-ochre/20 text-sandy-ochre border-sandy-ochre/30">
-                  <MessageSquare className="h-4 w-4 mr-xs" />
+                  <MessageSquare className="h-4 w-4 mr-2" />
                   Get In Touch
                 </Badge>
-                <h2 className="font-rajdhani text-5xl md:text-6xl font-bold text-crisp-off-white leading-tight">
+                <h2 className="font-rajdhani text-responsive-4xl font-bold text-crisp-off-white leading-tight">
                   Questions? Want to <span className="text-sandy-ochre">Partner?</span>
                 </h2>
-                <p className="text-body-lg text-crisp-off-white/80 max-w-2xl">
+                <p className="text-lg text-crisp-off-white/80 max-w-2xl">
                   We're building Idaho's premier firearms community platform and would love to hear from you. Whether you're interested in business partnerships, have questions about the platform, or want to get involved - let's connect.
                 </p>
               </div>
               
               <div className="grid gap-sm sm:grid-cols-2 max-w-lg lg:max-w-none">
-                <div className="flex items-start gap-base">
-                  <Building2 className="h-5 w-5 text-sandy-ochre mt-xs flex-shrink-0" />
+                <div className="flex items-start gap-4">
+                  <Building2 className="h-5 w-5 text-sandy-ochre mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-rajdhani font-bold text-crisp-off-white">Business Partnerships</h4>
-                    <p className="text-body-sm text-crisp-off-white/70">Join our growing network of vendors</p>
+                    <p className="text-sm text-crisp-off-white/70">Join our growing network of vendors</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-base">
-                  <Users className="h-5 w-5 text-sandy-ochre mt-xs flex-shrink-0" />
+                <div className="flex items-start gap-4">
+                  <Users className="h-5 w-5 text-sandy-ochre mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-rajdhani font-bold text-crisp-off-white">General Inquiries</h4>
-                    <p className="text-body-sm text-crisp-off-white/70">Questions about the platform</p>
+                    <p className="text-sm text-crisp-off-white/70">Questions about the platform</p>
                   </div>
                 </div>
               </div>
@@ -430,36 +430,36 @@ export default function HomePage() {
             
             {/* Right Side - Enhanced Signup */}
             <div className="max-w-lg mx-auto lg:mx-0">
-              <div className="bg-white dark:bg-gray-900 rounded-xl p-xl shadow-lg border border-sandy-ochre/20 relative overflow-hidden group">
+              <div className="bg-white dark:bg-gray-900 rounded-xl p-12 shadow-lg border border-sandy-ochre/20 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-sandy-ochre/5 to-rusty-orange/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute bottom-[-1px] left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-sandy-ochre to-rusty-orange transition-all duration-500 ease-out group-hover:w-full rounded-b-xl"></div>
+                <div className="absolute bottom-[-1px] left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-fire transition-all duration-500 ease-out group-hover:w-full rounded-b-xl"></div>
                 
-                <div className="relative space-y-lg">
+                <div className="relative space-y-8">
                   <div className="text-left">
-                    <h3 className="font-rajdhani text-2xl font-bold text-card-foreground mb-xs flex items-center gap-xs">
+                    <h3 className="font-rajdhani text-responsive-2xl font-bold text-card-foreground mb-1 flex items-center gap-2">
                       <Mail className="h-6 w-6 text-sandy-ochre" />
                       Contact Us
                     </h3>
-                    <p className="text-body-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground">
                       Drop us a line and we'll get back to you within 24 hours. All inquiries welcome.
                     </p>
                   </div>
                   
-                  <form onSubmit={handleContactSubmit} className="space-y-base">
+                  <form onSubmit={handleContactSubmit} className="space-y-4">
                     {submitStatus === 'success' && (
-                      <div className="p-base rounded-lg bg-clubhouse-lawn-green/10 border border-clubhouse-lawn-green/20 text-clubhouse-lawn-green">
-                        <CheckCircle className="h-4 w-4 inline mr-xs" />
+                      <div className="p-4 rounded-lg bg-sagebrush-green/10 border border-sagebrush-green/20 text-sagebrush-green">
+                        <CheckCircle className="h-4 w-4 inline mr-2" />
                         Message sent successfully! We'll get back to you within 24 hours.
                       </div>
                     )}
                     {submitStatus === 'error' && (
-                      <div className="p-base rounded-lg bg-ayu-red/10 border border-ayu-red/20 text-ayu-red">
-                        <AlertTriangle className="h-4 w-4 inline mr-xs" />
+                      <div className="p-4 rounded-lg bg-canyon-clay/10 border border-canyon-clay/20 text-canyon-clay">
+                        <AlertTriangle className="h-4 w-4 inline mr-2" />
                         Failed to send message. Please try again or email us directly at business@boisegunclub.com
                       </div>
                     )}
                     
-                    <div className="grid gap-base sm:grid-cols-2">
+                    <div className="grid gap-4 sm:grid-cols-2">
                       <Input 
                         type="text"
                         name="name"
@@ -493,7 +493,7 @@ export default function HomePage() {
                         name="message"
                         placeholder="Your message..."
                         rows={4}
-                        className="w-full p-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:border-sandy-ochre focus:outline-none focus:ring-2 focus:ring-sandy-ochre/20 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full p-4 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:border-sandy-ochre focus:outline-none focus:ring-2 focus:ring-sandy-ochre/20 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                         required
                         disabled={isSubmitting}
                       />
@@ -516,10 +516,10 @@ export default function HomePage() {
                     <Button 
                       type="submit" 
                       size="xl" 
-                      className="w-full bg-gradient-to-r from-sandy-ochre to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-sandy-ochre font-rajdhani font-bold text-lg shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-gradient-fire text-dark-chocolate hover:from-rusty-orange hover:to-sandy-ochre font-rajdhani font-bold text-lg shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                       disabled={isSubmitting}
                     >
-                      <Mail className="h-5 w-5 mr-xs" />
+                      <Mail className="h-5 w-5 mr-2" />
                       {isSubmitting ? 'Sending...' : 'Send Message'}
                     </Button>
                   </form>
