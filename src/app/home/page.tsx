@@ -14,6 +14,11 @@ import AlternatingFeatureSpotlight from '@/components/organisms/AlternatingFeatu
 import { statCardsData, directoryData, calendarData, communityData } from '@/lib/data/home-page-data';
 
 export default function HomePage() {
+  // Skip this page in production builds - not needed for splash page deployment
+  if (process.env.NODE_ENV === 'production') {
+    return <div>Page not available</div>;
+  }
+  
   return (
     <div className="theme-home flex flex-col min-h-screen bg-background">
       {/* 1. Site Navigation */}
