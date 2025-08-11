@@ -10,6 +10,10 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // Skip metadata generation in production
+  if (process.env.NODE_ENV === 'production') {
+    return { title: 'Not Found' };
+  }
   const guide = getGuideData(params.slug);
   return {
     title: guide.frontmatter.title,
@@ -18,6 +22,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
+  // Skip static generation in production
+  if (process.env.NODE_ENV === 'production') {
+    return [];
+  }
   const guides = getAllGuides();
   return guides.map((guide) => ({
     slug: guide.slug,
@@ -25,6 +33,10 @@ export async function generateStaticParams() {
 }
 
 export default async function ArmoryItemPage({ params }: Props) {
+  // Skip this page in production builds - not needed for splash page deployment
+  if (process.env.NODE_ENV === 'production') {
+    return <div>Page not available</div>;
+  }
   const item = getArmoryData(params.slug);
 
   return (
