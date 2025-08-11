@@ -6,7 +6,7 @@ import PageHero from '@/components/organisms/PageHero';
 import { Metadata } from 'next';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -14,7 +14,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (process.env.NODE_ENV === 'production') {
     return { title: 'Not Found' };
   }
-  const guide = getGuideData(params.slug);
+  const { slug } = await params;
+  const guide = getGuideData(slug);
   return {
     title: guide.frontmatter.title,
     description: `A guide on ${guide.frontmatter.title}`,
