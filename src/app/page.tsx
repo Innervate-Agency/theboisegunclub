@@ -13,7 +13,17 @@ import AlternatingFeatureSpotlight from '@/components/organisms/AlternatingFeatu
 
 import { statCardsData, directoryData, calendarData, communityData } from '@/lib/data/home-page-data';
 
+// Import splash page component
+import SplashPage from './splash/page';
+
 export default function HomePage() {
+  // Feature flag: Show splash page if ENABLE_SPLASH_MODE is true
+  const isSplashMode = process.env.ENABLE_SPLASH_MODE === 'true';
+  
+  if (isSplashMode) {
+    return <SplashPage />;
+  }
+  
   return (
     <div className="theme-home flex flex-col min-h-screen bg-background">
       {/* 1. Site Navigation */}

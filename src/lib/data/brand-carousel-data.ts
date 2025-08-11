@@ -16,7 +16,7 @@ export const defaultShowcases = [
     overlayDescription: "Austrian engineering meets American excellence",
     gradientColor: 'blue' as const,
     productsUsed: [
-      { name: "Striker-fired pistols", icon: <Target className="icon-xs" />, color: "bg-slate-blue" }
+      { name: "Striker-fired pistols", icon: "Target", color: "bg-slate-blue" }
     ]
   },
   {
@@ -33,7 +33,7 @@ export const defaultShowcases = [
     overlayDescription: "From the Wild West to modern law enforcement",
     gradientColor: 'teal' as const,
     productsUsed: [
-      { name: "Revolvers & Pistols", icon: <Shield className="icon-xs" />, color: "bg-ayu-teal" }
+      { name: "Revolvers & Pistols", icon: "Shield", color: "bg-ayu-teal" }
     ]
   },
   {
@@ -50,7 +50,7 @@ export const defaultShowcases = [
     overlayDescription: "Precision engineering for hunters and sport shooters",
     gradientColor: 'green' as const,
     productsUsed: [
-      { name: "Sporting rifles", icon: <Award className="icon-xs" />, color: "bg-ayu-green" }
+      { name: "Sporting rifles", icon: "Award", color: "bg-ayu-green" }
     ]
   },
   {
@@ -67,7 +67,7 @@ export const defaultShowcases = [
     overlayDescription: "Military-grade precision for professional users",
     gradientColor: 'purple' as const,
     productsUsed: [
-      { name: "Tactical systems", icon: <Settings className="icon-xs" />, color: "bg-ayu-purple" }
+      { name: "Tactical systems", icon: "Settings", color: "bg-ayu-purple" }
     ]
   },
   {
@@ -84,7 +84,7 @@ export const defaultShowcases = [
     overlayDescription: "Oregon-made optics for the world's best shooters",
     gradientColor: 'red' as const,
     productsUsed: [
-      { name: "Precision optics", icon: <Zap className="icon-xs" />, color: "bg-ayu-red" }
+      { name: "Precision optics", icon: "Zap", color: "bg-ayu-red" }
     ]
   },
   {
@@ -101,7 +101,7 @@ export const defaultShowcases = [
     overlayDescription: "Swiss precision engineering for critical missions",
     gradientColor: 'yellow' as const,
     productsUsed: [
-      { name: "Military systems", icon: <Users className="icon-xs" />, color: "bg-ayu-yellow" }
+      { name: "Military systems", icon: "Users", color: "bg-ayu-yellow" }
     ]
   }
 ]
