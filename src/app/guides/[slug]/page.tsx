@@ -5,11 +5,17 @@ import { BreadcrumbHero } from '@/components/ui/breadcrumb-hero';
 import MdxContent from '@/components/molecules/MdxContent';
 import { notFound } from 'next/navigation';
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const guide = getGuideData(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  // Skip metadata generation in production
+  if (process.env.NODE_ENV === 'production') {
+    return { title: 'Not Found' };
+  }
+
+  const { slug } = await params;
+  const guide = getGuideData(slug);
 
   if (!guide) {
-    return notFound();
+    return { title: 'Not Found' };
   }
 
   return {
@@ -19,14 +25,25 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export async function generateStaticParams() {
+  // Skip static generation in production
+  if (process.env.NODE_ENV === 'production') {
+    return [];
+  }
+
   const guides = getAllGuides();
   return guides.map((guide) => ({
     slug: guide.slug,
   }));
 }
 
-export default async function GuidePage({ params }: { params: { slug: string } }) {
-  const guide = getGuideData(params.slug);
+export default async function GuidePage({ params }: { params: Promise<{ slug: string }> }) {
+  // Skip this page in production builds - not needed for splash page deployment
+  if (process.env.NODE_ENV === 'production') {
+    return notFound();
+  }
+
+  const { slug } = await params;
+  const guide = getGuideData(slug);
 
   if (!guide) {
     return notFound();
