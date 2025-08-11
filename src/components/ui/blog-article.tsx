@@ -8,8 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import { 
   Calendar, Clock, Eye, Heart, MessageCircle, User, Tag,
-  Filter, Grid3X3, List, Share2, Bookmark, ArrowRight
-} from 'lucide-react'
+  Filter, Grid3X3, List, Share2, Bookmark} from 'lucide-react'
 
 interface BlogAuthor {
   name: string

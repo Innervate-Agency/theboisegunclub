@@ -1,187 +1,77 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code when working with this repository.
 
 ## Project Overview
 
-This is **The Boise Gun Club** - a Next.js 15 application serving as a comprehensive digital hub for Treasure Valley firearms communities. The project uses React 19, TypeScript, and Tailwind CSS with extensive UI components based on shadcn/ui and Radix UI primitives.
+**The Boise Gun Club** - Next.js 15 application serving as a comprehensive digital hub for Treasure Valley firearms communities. Built with React 19, TypeScript, Tailwind CSS v4, and shadcn/ui components.
 
 ## Development Commands
 
-### Core Development
-
-- `npm run dev` - Start development server (Next.js 15)
-- `npm run dev:turbo` - Start development server with Turbopack
-- `npm run build` - Build production application
-- `npm start` - Start production server
-- `npm run lint` - Run ESLint for code quality
-- `npm run lint:fix` - ESLint with auto-fix
+### Essential Commands
+- `npm run dev` - Development server (Next.js 15)
+- `npm run build` - Production build  
+- `npm run lint` - ESLint code quality check
 - `npm run health` - Project health check
-- `npm run fix` - Quick fixes script
-- `npm run sync:docs` - Sync design documentation
-- `npm run ammo-list` - Generate ammo list
-- `npm run analyze` - Bundle analysis with webpack-bundle-analyzer
-- `npm run lighthouse` - Performance audit
+- `npm run storybook` - Component development (port 6006)
 
-### Storybook (Component Development)
+### Testing & Quality
+- **Testing**: Vitest with Storybook integration (auto-runs via `npm run storybook`)
+- **Browser Testing**: Playwright + Chromium
+- **Specs**: Additional tests in `/specs/*.spec.ts`
 
-- `npm run storybook` - Start Storybook dev server on port 6006
-- `npm run build-storybook` - Build Storybook for production
-- `npm run storybook:reset` - Clear cache and rebuild (fix broken builds)
-- `npm run storybook:check` - Validate configuration (smoke test)  
-- `npm run storybook:fix` - Automated configuration fix script
-- `npm run storybook:validate` - Validate file organization (run before adding files)
+## Architecture
 
-### Testing
-
-- **Primary**: Tests are configured with Vitest and run through Storybook integration
-- **Browser Testing**: Uses Playwright with Chromium (`@vitest/browser`)
-- **Test Execution**: Tests auto-run when Storybook stories are loaded via `npm run storybook`
-- **Test Setup**: Configured in `vitest.config.ts` with Storybook addon integration
-- **Node Tests**: Additional specs in `/specs/*.spec.ts` run with Vitest node environment
-- **No Standalone Commands**: All testing happens through Storybook's Vitest integration
-
-## Architecture & Structure
-
-### Core Technologies
-
-- **Next.js 15** with App Router (TypeScript)
-- **React 19** with RSC (React Server Components)
-- **Tailwind CSS v4** for styling
-- **shadcn/ui** component system with "new-york" style
-- **Framer Motion** for animations
-- **next-themes** for theme management
+### Core Stack
+- **Next.js 15** (App Router, TypeScript)
+- **React 19** (Server Components)  
+- **Tailwind CSS v4** (CSS-based config)
+- **shadcn/ui** ("new-york" style)
+- **Framer Motion** (animations)
 
 ### Project Structure
-
 ```
 src/
-├── app/           # Next.js App Router (layout, pages)
-├── components/    # React components
-│   ├── ui/        # shadcn/ui components (80+ components)
-│   └── marketing/ # Business-specific components
-├── lib/           # Utilities (cn function for class merging)
-├── hooks/         # Custom React hooks
-├── stories/       # Storybook stories for all components
-└── docs/          # Project documentation
+├── app/           # Pages & layouts
+├── components/ui/ # shadcn/ui components (80+)
+├── lib/           # Utilities (cn function)
+├── stories/       # Storybook stories
+└── hooks/         # Custom React hooks
 ```
-
-### Key Configuration Files
-
-- `components.json` - shadcn/ui configuration with path aliases
-- `tsconfig.json` - TypeScript with `@/*` path mapping to `./src/*`
-- `vitest.config.ts` - Testing setup integrated with Storybook
-
-### Component System
-
-- **Base**: shadcn/ui components in `/src/components/ui/`
-- **Custom**: Business components like `FacilityCard`, `StatCard`, `AnimatedSplashCard`
-- **Layout**: Navigation, hero sections, footers
-- **Styling**: Uses CSS variables, supports dark/light themes
-- **Icons**: Lucide React and Radix UI icons
-
-### Typography & Fonts
-
-- **Primary**: Noto Sans (body text)
-- **Display**: Rajdhani (headings, weights 300-700)
-- **Serif**: Noto Serif (accent text)
-- All fonts use `display: 'swap'` optimization
-
-### Development Patterns
-
-- TypeScript strict mode enabled
-- CSS-in-JS with Tailwind utilities
-- Component-first architecture with extensive Storybook coverage
-- Form handling with React Hook Form + Zod validation
-- Responsive design with mobile-first approach
 
 ### Path Aliases
-
 - `@/components` → `src/components`
 - `@/lib` → `src/lib`
-- `@/hooks` → `src/hooks`
 - `@/ui` → `src/components/ui`
 
-Use these patterns when adding new components or features to maintain consistency with the existing codebase.
+## Design System (CRITICAL - ZERO TOLERANCE)
 
-## Design System Enforcement
+### Color System
+- **ONLY** use Boise landscape colors from `src/app/globals.css` (26-color system)
+- **FORBIDDEN**: Generic Tailwind (`text-gray-500`), hex codes (`bg-[#F2CB05]`)
+- **REQUIRED**: Semantic names (`bg-rusty-orange`, `text-slate-blue`)
+- **Theme Classes**: Always use `bg-card`, `text-card-foreground`, `border-border` (never `bg-white`)
 
-### Critical Color Rules (ZERO TOLERANCE)
+### Shadow System (8-Level Semantic)
+- **Progression**: `shadow-ghost` → `shadow-whisper` → `shadow-present` → `shadow-elevated` → `shadow-prominent` → `shadow-commanding` → `shadow-hero` → `shadow-modal`
+- **Interactive**: Shadows step up on hover (present→elevated, prominent→commanding)
 
-- **ONLY** use the 26-color Boise landscape system from `src/app/globals.css`
-- **Core 10 Colors**: Bogus Basin (dark theme) & River/Sagebrush (light theme) strategic distribution
-- **Extended Colors**: Additional Boise landscape colors (foothills-purple, canyon-clay, high-desert-sage)
-- **NEVER** use hardcoded hex codes: `bg-[#F2CB05]` is **FORBIDDEN**
-- **NEVER** use generic Tailwind colors: `text-gray-500`, `bg-blue-600`, `border-red-400` etc.
-- **ALWAYS** use semantic color names: `bg-rusty-orange`, `text-slate-blue`, `border-pale-stone`
-- **Strategic Distribution**: Each color has specific semantic meaning for UI consistency
+### Tactical Square Aesthetic
+- **Main Cards**: `rounded-none` (square tactical)
+- **Interactive**: Minimal rounding (buttons `rounded-xs`, badges `rounded-sm`)
+- **Hierarchy**: Shadow-first, not border-radius
 
-### Critical Shadow System (SEMANTIC HIERARCHY)
+### Primary Accents
+- **Light Theme**: `slate-blue` (CTAs), `sagebrush-green` (success)
+- **Dark Theme**: `rusty-orange` (CTAs), `lodgepole-green` (success)
 
-- **STRIPE-INSPIRED DEPTH**: 8-level semantic shadow system provides dramatic visual distinction
-- **SHADOW PROGRESSION**: `shadow-ghost` → `shadow-whisper` → `shadow-present` → `shadow-elevated` → `shadow-prominent` → `shadow-commanding` → `shadow-hero` → `shadow-modal`
-- **CONTEXTUAL SEMANTICS**: Each shadow level communicates importance and interactive affordance
-- **INTERACTIVE PROGRESSION**: Every shadow steps up logically on hover (present→elevated, prominent→commanding, etc.)
-- **NO GENERIC SIZES**: Use semantic names (`shadow-prominent`) not generic sizes (`shadow-lg`)
-
-### Critical Border Radius Rules (TACTICAL AESTHETIC)
-
-- **SQUARE TACTICAL**: Main cards and structural components use `rounded-none` (0px) for tactical firearms aesthetic  
-- **SUBTLE INTERACTION**: Interactive elements use minimal rounding (buttons: `rounded-xs` 4px, badges: `rounded-sm` 8px)
-- **SHADOW-FIRST**: Visual hierarchy achieved through dramatic shadows, not border radius
-- **COMPONENT HIERARCHY**: Structure=Square, Interaction=Subtle, Visual Separation=Shadow-Driven
-
-### Primary Accent Colors (Updated 2025-08-08)
-
-- **Light Theme Primary**: `slate-blue` - Professional, cool CTAs and primary actions
-- **Dark Theme Primary**: `rusty-orange` - Warm, tactical accent for dark mode
-- **Success/Positive**: `sagebrush-green` (light) / `lodgepole-green` (dark) - For verified badges, positive states
-- **Info/Secondary**: `sandy-ochre` (light) / `ember-glow` (dark) - For secondary information and highlights
-
-### Theme-Aware Component Classes (REQUIRED)
-
-All components MUST use theme-aware classes for dark/light mode support:
-
-```tsx
-// ✅ CORRECT - Theme-aware
-className="bg-card text-card-foreground border-border"
-
-// ❌ WRONG - Hardcoded colors  
-className="bg-white text-black border-gray-200"
-```
-
-**Required Theme Classes:**
-- `bg-card` instead of `bg-white`
-- `text-card-foreground` instead of `text-black` or `text-gray-900`
-- `text-muted-foreground` instead of `text-gray-500` or `text-gray-600`
-- `border-border` instead of `border-gray-200`
-- `bg-muted` instead of `bg-gray-50` or `bg-gray-100`
-
-### Component Patterns
-
-- **CVA Components**: All UI components use Class Variance Authority pattern from `src/components/ui/_component-pattern.tsx`
-- **Required Variants**: Use `default | premium | elite | glass` with proper copper-orange/brass-yellow gradients
-- **Fire Animations**: Use `h-1 bg-gradient-to-r from-copper-orange to-brass-yellow` for bottom accent bars
-- **Component Reference**: Always check existing specs in `specs/` before creating components
-- **Design Validation**: Reference `_resources/specs/` directory for detailed component specifications
-
-### Tailwind CSS v4 Compliance (ENFORCED)
-
-- **NO INLINE STYLES**: Never use `style="..."` attributes - use arbitrary values instead: `top-[117px]`
-- **PROPER @theme USAGE**: Use `@theme` directive, not `@theme inline` 
-- **CSS-BASED CONFIG**: No `tailwind.config.js` - all configuration in CSS files
-- **ARBITRARY VALUES**: Use `className="top-[117px]"` instead of inline styles
-
-### Typography Hierarchy
-
-- **Display**: Rajdhani (headings H1-H2, weights 300-700)
-- **Primary**: Noto Sans (body text, H3-H6)
-- **Serif**: Noto Serif (accent/editorial text)
-- All fonts use `display: 'swap'` optimization
+### Typography
+- **Display**: Rajdhani (H1-H2, weights 300-700)
+- **Body**: Noto Sans (H3-H6, body text)
+- **Accent**: Noto Serif (editorial)
 
 ## Business Context
-
-This is **The Boise Gun Club** - a regional marketplace/directory platform serving the entire Treasure Valley firearms community. This is NOT a single gun club website but a comprehensive digital hub for multiple user types: vendors, clubs, ranges, enthusiasts, and families. Design decisions should reflect scalable systems: directory listings, event aggregation, forum categories.
+**The Boise Gun Club** is a regional marketplace/directory platform for the entire Treasure Valley firearms community - NOT a single gun club. Design for scalable systems: directory listings, event aggregation, forum categories.
 
 ## Storybook - BULLETPROOF SETUP (CRITICAL - READ FIRST)
 

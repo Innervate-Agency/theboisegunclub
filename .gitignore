@@ -57,3 +57,6 @@ _backup/
 _reports/
 _documentation/
 _backup/
+*.log
+dist/
+coverage/

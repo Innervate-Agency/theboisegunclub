@@ -32,7 +32,12 @@
     "security:audit": "node scripts/security-audit.js",
     "quality:check": "node scripts/code-quality-check.js",
     "project:cleanup": "node scripts/project-cleanup.js",
-    "optimize:all": "npm run config:optimize && npm run security:audit && npm run quality:check"
+    "optimize:all": "npm run config:optimize && npm run security:audit && npm run quality:check",
+    "audit:fort-knox": "node scripts/fort-knox-audit.js",
+    "scan:vulnerability": "node scripts/deep-vulnerability-scan.js",
+    "analyze:components": "node scripts/component-deep-dive.js",
+    "refactor:plan": "node scripts/component-refactor-assistant.js",
+    "fortress:complete": "npm run audit:fort-knox && npm run scan:vulnerability && npm run analyze:components"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",

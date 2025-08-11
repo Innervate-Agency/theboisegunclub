@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, Calendar, Share2, Target, Search, MessageSquare, ShieldCheck, List, Star, Users, Lock, Store } from 'lucide-react';
+import { Calendar, Target, Search, MessageSquare, ShieldCheck, List, Star, Users, Lock, Store } from 'lucide-react';
 
 // Adjusted paths to match project structure
 import { SiteNavigation } from '@/components/ui/site-navigation';

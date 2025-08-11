@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 import { Badge } from './badge';
 import { Button } from './button';
 import Image from 'next/image';
-import { MapPin, Phone, Clock, Star, Globe, TrendingUp, Shield, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, Clock, Star, Globe, TrendingUp, Shield} from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from './avatar';
 
 // TBGC Business-Specific VendorCard - Strategic Restraint Implementation

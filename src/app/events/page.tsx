@@ -12,12 +12,38 @@ import { SiteFooter } from '@/components/ui/site-footer'
 import AccessibilityFAB from '@/components/ui/AccessibilityFAB'
 import { EventTicker } from '@/components/ui/event-ticker'
 import { cn } from '@/lib/utils'
-import { 
-  Calendar, Clock, MapPin, Users, Trophy, Target, 
-  Filter, Search, Star, DollarSign, Info, Plus, ArrowRight,
-  ChevronRight, CalendarDays, Zap, Eye, TrendingUp,
-  Building2, Award, MessageSquare, CheckCircle, Shield,
-  Crosshair, Flame, Bolt, Crown, Sparkles, Gem
+import {
+  Calendar,
+  Clock,
+  MapPin,
+  Users,
+  Trophy,
+  Target,
+  Filter,
+  Search,
+  Star,
+  DollarSign,
+  Info,
+  Plus,
+  ArrowRight,
+  ChevronRight,
+  CalendarDays,
+  Zap,
+  Eye,
+  TrendingUp,
+  Award,
+  MessageSquare,
+  CheckCircle,
+  Shield,
+  Crosshair,
+  Flame,
+  Bolt,
+  Crown,
+  Sparkles,
+  Gem,
+  BarChart3,
+  Activity,
+  AlertTriangle,
 } from 'lucide-react'
 
 // Comprehensive events data for Treasure Valley firearms community
@@ -479,57 +505,14 @@ const upcomingEvents = [
   }
 ]
 
-// Strategic 10-Color Distribution using explicit CSS variables
 const eventCategories = [
-  { 
-    label: "All Events", 
-    value: "all", 
-    count: upcomingEvents.length, 
-    activeClasses: "bg-(--color-slate-blue) text-white hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_90%,black)]", 
-    inactiveClasses: "border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)] text-(--color-slate-blue) hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_10%,transparent)]" 
-  },
-  { 
-    label: "Competitions", 
-    value: "Competition", 
-    count: upcomingEvents.filter(e => e.eventType === "Competition").length, 
-    activeClasses: "bg-(--color-slate-blue) text-white hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_90%,black)]", 
-    inactiveClasses: "border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)] text-(--color-slate-blue) hover:bg-[color-mix(in_srgb,var(--color-slate-blue)_10%,transparent)]" 
-  },
-  { 
-    label: "Training", 
-    value: "Training", 
-    count: upcomingEvents.filter(e => e.eventType === "Training").length, 
-    activeClasses: "bg-(--color-sandy-ochre) text-white hover:bg-[color-mix(in_srgb,var(--color-sandy-ochre)_90%,black)]", 
-    inactiveClasses: "border-[color-mix(in_srgb,var(--color-sandy-ochre)_30%,transparent)] text-(--color-sandy-ochre) hover:bg-[color-mix(in_srgb,var(--color-sandy-ochre)_10%,transparent)]" 
-  },
-  { 
-    label: "Expos", 
-    value: "Expo", 
-    count: upcomingEvents.filter(e => e.eventType === "Expo").length, 
-    activeClasses: "bg-(--color-info-river) text-white hover:bg-[color-mix(in_srgb,var(--color-info-river)_90%,black)]", 
-    inactiveClasses: "border-[color-mix(in_srgb,var(--color-info-river)_30%,transparent)] text-(--color-info-river) hover:bg-[color-mix(in_srgb,var(--color-info-river)_10%,transparent)]" 
-  },
-  { 
-    label: "Charity", 
-    value: "Charity", 
-    count: upcomingEvents.filter(e => e.eventType === "Charity").length, 
-    activeClasses: "bg-(--color-sagebrush-green) text-white hover:bg-[color-mix(in_srgb,var(--color-sagebrush-green)_90%,black)]", 
-    inactiveClasses: "border-[color-mix(in_srgb,var(--color-sagebrush-green)_30%,transparent)] text-(--color-sagebrush-green) hover:bg-[color-mix(in_srgb,var(--color-sagebrush-green)_10%,transparent)]" 
-  },
-  { 
-    label: "Social", 
-    value: "Social", 
-    count: upcomingEvents.filter(e => e.eventType === "Social").length, 
-    activeClasses: "bg-(--color-rusty-orange) text-white hover:bg-[color-mix(in_srgb,var(--color-rusty-orange)_90%,black)]", 
-    inactiveClasses: "border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)] text-(--color-rusty-orange) hover:bg-[color-mix(in_srgb,var(--color-rusty-orange)_10%,transparent)]" 
-  },
-  { 
-    label: "Demos", 
-    value: "Demo", 
-    count: upcomingEvents.filter(e => e.eventType === "Demo").length, 
-    activeClasses: "bg-(--color-warning-clay) text-white hover:bg-[color-mix(in_srgb,var(--color-warning-clay)_90%,black)]", 
-    inactiveClasses: "border-[color-mix(in_srgb,var(--color-warning-clay)_30%,transparent)] text-(--color-warning-clay) hover:bg-[color-mix(in_srgb,var(--color-warning-clay)_10%,transparent)]" 
-  }
+    { label: "All Events", value: "all", count: upcomingEvents.length },
+    { label: "Competitions", value: "Competition", count: upcomingEvents.filter(e => e.eventType === "Competition").length },
+    { label: "Training", value: "Training", count: upcomingEvents.filter(e => e.eventType === "Training").length },
+    { label: "Expos", value: "Expo", count: upcomingEvents.filter(e => e.eventType === "Expo").length },
+    { label: "Charity", value: "Charity", count: upcomingEvents.filter(e => e.eventType === "Charity").length },
+    { label: "Social", value: "Social", count: upcomingEvents.filter(e => e.eventType === "Social").length },
+    { label: "Demos", value: "Demo", count: upcomingEvents.filter(e => e.eventType === "Demo").length }
 ]
 
 export default function EventsPage() {
@@ -538,85 +521,9 @@ export default function EventsPage() {
   const [currentPage, setCurrentPage] = useState(1)
   const eventsPerPage = 12
 
-  // Color mapping function for featured events using explicit CSS variables
-  const getEventColors = (eventType: string) => {
-    switch (eventType) {
-      case 'Competition': return {
-        background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] to-[color-mix(in_srgb,var(--color-slate-blue)_15%,transparent)]',
-        border: 'border-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)]',
-        text: 'text-(--color-slate-blue)',
-        iconText: 'text-(--color-slate-blue)',
-        badge: 'bg-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] text-(--color-slate-blue) border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]',
-        buttonBorder: 'border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]',
-        buttonText: 'text-(--color-slate-blue)',
-        hoverText: 'hover:text-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)]'
-      }
-      case 'Training': return {
-        background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-sandy-ochre)_20%,transparent)] to-[color-mix(in_srgb,var(--color-sandy-ochre)_15%,transparent)]',
-        border: 'border-[color-mix(in_srgb,var(--color-sandy-ochre)_20%,transparent)]',
-        text: 'text-(--color-sandy-ochre)',
-        iconText: 'text-(--color-sandy-ochre)',
-        badge: 'bg-[color-mix(in_srgb,var(--color-sandy-ochre)_20%,transparent)] text-(--color-sandy-ochre) border-[color-mix(in_srgb,var(--color-sandy-ochre)_30%,transparent)]',
-        buttonBorder: 'border-[color-mix(in_srgb,var(--color-sandy-ochre)_30%,transparent)]',
-        buttonText: 'text-(--color-sandy-ochre)',
-        hoverText: 'hover:text-[color-mix(in_srgb,var(--color-sandy-ochre)_80%,black)]'
-      }
-      case 'Expo': return {
-        background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-info-river)_20%,transparent)] to-[color-mix(in_srgb,var(--color-info-river)_15%,transparent)]',
-        border: 'border-[color-mix(in_srgb,var(--color-info-river)_20%,transparent)]',
-        text: 'text-(--color-info-river)',
-        iconText: 'text-(--color-info-river)',
-        badge: 'bg-[color-mix(in_srgb,var(--color-info-river)_20%,transparent)] text-(--color-info-river) border-[color-mix(in_srgb,var(--color-info-river)_30%,transparent)]',
-        buttonBorder: 'border-[color-mix(in_srgb,var(--color-info-river)_30%,transparent)]',
-        buttonText: 'text-(--color-info-river)',
-        hoverText: 'hover:text-[color-mix(in_srgb,var(--color-info-river)_80%,black)]'
-      }
-      case 'Charity': return {
-        background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-sagebrush-green)_20%,transparent)] to-[color-mix(in_srgb,var(--color-sagebrush-green)_15%,transparent)]',
-        border: 'border-[color-mix(in_srgb,var(--color-sagebrush-green)_20%,transparent)]',
-        text: 'text-(--color-sagebrush-green)',
-        iconText: 'text-(--color-sagebrush-green)',
-        badge: 'bg-[color-mix(in_srgb,var(--color-sagebrush-green)_20%,transparent)] text-(--color-sagebrush-green) border-[color-mix(in_srgb,var(--color-sagebrush-green)_30%,transparent)]',
-        buttonBorder: 'border-[color-mix(in_srgb,var(--color-sagebrush-green)_30%,transparent)]',
-        buttonText: 'text-(--color-sagebrush-green)',
-        hoverText: 'hover:text-[color-mix(in_srgb,var(--color-sagebrush-green)_80%,black)]'
-      }
-      case 'Social': return {
-        background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-rusty-orange)_20%,transparent)] to-[color-mix(in_srgb,var(--color-rusty-orange)_15%,transparent)]',
-        border: 'border-[color-mix(in_srgb,var(--color-rusty-orange)_20%,transparent)]',
-        text: 'text-(--color-rusty-orange)',
-        iconText: 'text-(--color-rusty-orange)',
-        badge: 'bg-[color-mix(in_srgb,var(--color-rusty-orange)_20%,transparent)] text-(--color-rusty-orange) border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)]',
-        buttonBorder: 'border-[color-mix(in_srgb,var(--color-rusty-orange)_30%,transparent)]',
-        buttonText: 'text-(--color-rusty-orange)',
-        hoverText: 'hover:text-[color-mix(in_srgb,var(--color-rusty-orange)_80%,black)]'
-      }
-      case 'Demo': return {
-        background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-warning-clay)_20%,transparent)] to-[color-mix(in_srgb,var(--color-warning-clay)_15%,transparent)]',
-        border: 'border-[color-mix(in_srgb,var(--color-warning-clay)_20%,transparent)]',
-        text: 'text-(--color-warning-clay)',
-        iconText: 'text-(--color-warning-clay)',
-        badge: 'bg-[color-mix(in_srgb,var(--color-warning-clay)_20%,transparent)] text-(--color-warning-clay) border-[color-mix(in_srgb,var(--color-warning-clay)_30%,transparent)]',
-        buttonBorder: 'border-[color-mix(in_srgb,var(--color-warning-clay)_30%,transparent)]',
-        buttonText: 'text-(--color-warning-clay)',
-        hoverText: 'hover:text-[color-mix(in_srgb,var(--color-warning-clay)_80%,black)]'
-      }
-      default: return {
-        background: 'bg-gradient-to-b from-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] to-[color-mix(in_srgb,var(--color-slate-blue)_15%,transparent)]',
-        border: 'border-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)]',
-        text: 'text-(--color-slate-blue)',
-        iconText: 'text-(--color-slate-blue)',
-        badge: 'bg-[color-mix(in_srgb,var(--color-slate-blue)_20%,transparent)] text-(--color-slate-blue) border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]',
-        buttonBorder: 'border-[color-mix(in_srgb,var(--color-slate-blue)_30%,transparent)]',
-        buttonText: 'text-(--color-slate-blue)',
-        hoverText: 'hover:text-[color-mix(in_srgb,var(--color-slate-blue)_80%,black)]'
-      }
-    }
-  }
-  
   const filteredEvents = upcomingEvents.filter(event => {
     const matchesCategory = selectedCategory === "all" || event.eventType === selectedCategory
-    const matchesSearch = searchQuery === "" || 
+    const matchesSearch = searchQuery === "" ||
       event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       event.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       event.location.toLowerCase().includes(searchQuery.toLowerCase())
@@ -637,145 +544,119 @@ export default function EventsPage() {
     <>
       <SiteNavigation variant="premium" sticky={true} />
       <div className="min-h-screen bg-background theme-events">
-        {/* Events Hero - Content Left, Card Right (Layout 1) */}
+        {/* Events Hero */}
         <section className="relative overflow-hidden bg-gradient-events-hero px-md py-lg">
           <div className="container mx-auto max-w-site relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
               {/* Content - Left side */}
               <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
-                {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
                 <div className="flex items-center gap-base">
                   <div className="bg-white/10 p-base rounded-sm border border-white/20">
                     <Calendar className="h-8 w-8 text-white" />
                   </div>
                   <div className="space-y-base">
-                    {/* Breadcrumbs */}
                     <div className="flex items-center gap-xs text-sm text-white/60">
                       <span>Home</span>
                       <ChevronRight className="h-4 w-4" />
                       <span className="text-white font-medium">Events</span>
                     </div>
-                    
-                    {/* Badges */}
                     <div className="flex flex-wrap gap-xs">
-                      <Badge className="bg-white/10 text-white border-white/20">
-                        <Calendar className="h-4 w-4 mr-xs" />
-                        Events Hub
-                      </Badge>
                       <Badge className="bg-white/10 text-white border-white/20">
                         <Trophy className="h-4 w-4 mr-xs" />
                         Competitions
                       </Badge>
                       <Badge className="bg-white/10 text-white border-white/20">
                         <Target className="h-4 w-4 mr-xs" />
-                        Training Events
+                        Training
+                      </Badge>
+                      <Badge className="bg-white/10 text-white border-white/20">
+                        <Users className="h-4 w-4 mr-xs" />
+                        Community
                       </Badge>
                     </div>
                   </div>
                 </div>
-
-                {/* Titles - H1 & H2 Butt Buddies */}
                 <div className="space-y-xs">
                   <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
-                    Idaho Gun Shows & <span className="text-white">Firearms Events 2025</span>
+                    Idaho Gun Shows & Firearms Events
                   </h1>
                   <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
-                    Boise, Meridian & Treasure Valley Shooting Events
+                    Your hub for Treasure Valley shooting competitions, training, and expos.
                   </h2>
                 </div>
-                
-                {/* Chunky Description */}
                 <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
-                  Discover USPSA matches, gun shows, training courses, and charity shoots throughout the Treasure Valley. Connect with Idaho's firearms community through verified events and professional instruction.
+                  Discover USPSA matches, gun shows, training courses, and charity shoots. Connect with Idaho's firearms community through verified events and professional instruction.
                 </p>
-                
-                {/* Buttons */}
                 <div className="flex gap-base">
-                  <Button 
-                    size="lg" 
-                    className="bg-white text-nav-events hover:bg-white/90 font-rajdhani font-bold"
-                  >
+                  <Button size="lg" className="bg-white text-nav-events hover:bg-white/90 font-rajdhani font-bold">
                     <Plus className="h-4 w-4 mr-xs" />
                     Submit Event
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    size="lg"
-                    className="border-white/30 text-white hover:bg-white hover:text-nav-events"
-                  >
+                  <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white hover:text-nav-events">
                     View Calendar
                   </Button>
                 </div>
               </div>
-              
               {/* Featured Event Card - Right side */}
               <div className="lg:col-span-1 py-md min-h-[400px]">
-                <div className="relative h-full">
-                  <Card className="mica border-page-primary-30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-page-gradient opacity-20 rounded-bl-full"></div>
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-page-gradient"></div>
-                    
-                    <CardHeader className="pb-xs relative z-10">
-                      <div className="flex items-center justify-between mb-xs">
-                        <Badge className="bg-page-primary-20 text-page-primary border-page-primary-30 font-rajdhani font-bold text-[10px]">
-                          <Crown className="h-3 w-3 mr-xs" />
-                          FEATURED EVENT
-                        </Badge>
-                        <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                          <Clock className="h-3 w-3" />
-                          <span>3 days</span>
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-xs">
-                        <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">USPSA Monthly Match</h3>
-                        <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                          <MapPin className="h-3 w-3 text-page-primary" />
-                          <span>Nampa Rod & Gun Club</span>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    
-                    <CardContent className="space-y-base relative z-10">
-                      <div className="flex items-center justify-between">
-                        <div className="space-y-xs">
-                          <div className="flex items-center gap-xs text-xs text-card-foreground/80">
-                            <Calendar className="h-3 w-3 text-page-primary" />
-                            <span className="font-medium">Sat, Aug 9 • 8:00 AM</span>
-                          </div>
-                          <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                            <Users className="h-3 w-3" />
-                            <span>54/80 registered</span>
-                            <DollarSign className="h-3 w-3 ml-xs" />
-                            <span>$15</span>
-                          </div>
-                        </div>
-                        
-                        <div className="text-right">
-                          <div className="w-12 h-12 rounded-pill bg-page-primary-20 flex items-center justify-center mb-xs">
-                            <Users className="h-5 w-5 text-page-primary" />
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <Button 
-                        className="w-full bg-page-gradient text-page-primary-foreground hover:bg-page-primary font-rajdhani font-bold text-xs"
-                        size="sm"
-                      >
-                        REGISTER NOW
-                        <ArrowRight className="h-3 w-3 ml-xs" />
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </div>
+                  <div className="relative h-full">
+                      <Card className="mica border-nav-events/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
+                          <div className="absolute inset-0 bg-gradient-to-br from-nav-events/10 to-nav-events/30 opacity-50"></div>
+                          <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-events/20 to-nav-events/10 rounded-bl-full"></div>
+                          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-events to-nav-events"></div>
+                          <CardHeader className="pb-xs relative z-10">
+                              <div className="flex items-center justify-between mb-xs">
+                                  <Badge className="bg-nav-events/20 text-nav-events border-nav-events/30 font-rajdhani font-bold text-[10px]">
+                                      <Crown className="h-3 w-3 mr-xs" />
+                                      FEATURED EVENT
+                                  </Badge>
+                                  <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                                      <Clock className="h-3 w-3" />
+                                      <span>3 days</span>
+                                  </div>
+                              </div>
+                              <div className="space-y-xs">
+                                  <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">USPSA Monthly Match</h3>
+                                  <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                                      <MapPin className="h-3 w-3 text-nav-events" />
+                                      <span>Nampa Rod & Gun Club</span>
+                                  </div>
+                              </div>
+                          </CardHeader>
+                          <CardContent className="space-y-base relative z-10">
+                              <div className="flex items-center justify-between">
+                                  <div className="space-y-xs">
+                                      <div className="flex items-center gap-xs text-xs text-card-foreground/80">
+                                          <Calendar className="h-3 w-3 text-nav-events" />
+                                          <span className="font-medium">Sat, Aug 9 • 8:00 AM</span>
+                                      </div>
+                                      <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                                          <Users className="h-3 w-3" />
+                                          <span>54/80 registered</span>
+                                          <DollarSign className="h-3 w-3 ml-xs" />
+                                          <span>$15</span>
+                                      </div>
+                                  </div>
+                                  <div className="text-right">
+                                      <div className="w-12 h-12 rounded-pill bg-nav-events/20 flex items-center justify-center mb-xs">
+                                          <Trophy className="h-5 w-5 text-nav-events" />
+                                      </div>
+                                  </div>
+                              </div>
+                              <Button className="w-full bg-gradient-to-r from-nav-events to-nav-events text-white hover:from-nav-events hover:to-nav-events font-rajdhani font-bold text-xs" size="sm">
+                                  REGISTER NOW
+                                  <ArrowRight className="h-3 w-3 ml-xs" />
+                              </Button>
+                          </CardContent>
+                      </Card>
+                  </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Event Ticker */}
-        <EventTicker 
-          events={upcomingEvents.filter(e => e.featured).map(event => ({
+        <EventTicker events={upcomingEvents.filter(e => e.featured).map(event => ({
             title: event.title,
             date: event.date.split(',')[1]?.trim() || event.date,
             location: event.location,
@@ -785,409 +666,325 @@ export default function EventsPage() {
           }))}
         />
 
-
-        {/* Featured Events & Calendar Integration */}
-        <section className="py-2xl bg-muted/30">
-          <div className="container mx-auto max-w-site px-md">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-2xl">
-              
-              {/* Featured Events */}
-              <div className="lg:col-span-2 space-y-base">
-                <div className="flex items-center justify-between">
-                  <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">Featured Events</h2>
-                  <Button variant="ghost" className="text-rusty-orange hover:text-dark-chocolate">
-                    View All <ArrowRight className="h-4 w-4 ml-xs" />
-                  </Button>
-                </div>
-                
-                <div className="grid gap-lg">
-                  {filteredEvents.filter(event => event.featured).slice(0, 3).map((event, index) => {
-                    const formatTicketDate = (dateString: string) => {
-                      const date = new Date(dateString)
-                      const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN",
-                        "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
-                      return {
-                        month: monthNames[date.getMonth()],
-                        day: date.getDate().toString().padStart(2, '0'),
-                        dayOfWeek: date.toLocaleDateString('en-US', { weekday: 'short' }).toUpperCase()
-                      }
-                    }
-                    
-                    const ticketDate = formatTicketDate(event.date)
-                    const eventId = `TBG${event.title.replace(/\s+/g, '').slice(0, 6).toUpperCase()}`
-                    const colors = getEventColors(event.eventType)
-                    
-                    return (
-                      <Card key={index} className="p-0 overflow-hidden hover:shadow-elevated transition-all duration-300 cursor-pointer group">
-                        <div className="flex">
-                          {/* Fixed Width Date Stub */}
-                          <div className={cn("w-24 flex-shrink-0 p-base text-center relative border-r", colors.background, colors.border)}>
-                            {/* Perforated Edge */}
-                            <div className="absolute -right-1.5 top-2 bottom-2 flex flex-col justify-evenly">
-                              {Array.from({ length: 5 }, (_, i) => (
-                                <div key={i} className="w-3 h-3 bg-background rounded-full border border-border/50" />
-                              ))}
-                            </div>
-                            
-                            <div className="space-y-1">
-                              <div className={cn("text-[10px] font-medium tracking-wide", colors.text)}>
-                                {ticketDate.dayOfWeek}
-                              </div>
-                              <div className={cn("text-2xl font-rajdhani font-bold leading-none", colors.text)}>
-                                {ticketDate.day}
-                              </div>
-                              <div className={cn("text-[10px] font-medium tracking-wide", colors.text)}>
-                                {ticketDate.month}
-                              </div>
-                            </div>
-                          </div>
-                          
-                          {/* Content Area */}
-                          <div className="flex-1 p-lg">
-                            <div className="space-y-xs">
-                              <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-xs">
-                                  <Badge className={cn("text-[10px]", colors.badge)}>
-                                    {event.eventType.toUpperCase()}
-                                  </Badge>
-                                  <Badge className="bg-safety-red text-white text-[10px]">FEATURED</Badge>
-                                </div>
-                                <div className="text-[10px] text-muted-foreground font-mono">#{eventId}</div>
-                              </div>
-                              
-                              <h3 className={cn("font-rajdhani text-xl font-bold text-card-foreground transition-colors", colors.hoverText.replace('hover:', 'group-hover:'))}>
-                                {event.title}
-                              </h3>
-                              
-                              <p className="text-sm text-muted-foreground line-clamp-2">{event.description}</p>
-                              
-                              <div className="flex items-center justify-between pt-xs">
-                                <div className="flex items-center gap-base text-xs text-muted-foreground">
-                                  <div className="flex items-center gap-xs">
-                                    <MapPin className={cn("h-3 w-3", colors.iconText)} />
-                                    <span>{event.location.split(',')[0]}</span>
-                                  </div>
-                                  <div className="flex items-center gap-xs">
-                                    <Users className={cn("h-3 w-3", colors.iconText)} />
-                                    <span>{event.registeredCount}/{event.capacity}</span>
-                                  </div>
-                                </div>
-                                <Button variant="ghost" size="sm" className={cn("shadow-none border px-base py-xs", colors.buttonText, colors.buttonBorder, colors.hoverText)}>
-                                  REGISTER
-                                </Button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </Card>
-                    )
-                  })}
-                </div>
-              </div>
-
-              {/* Calendar & Quick Actions */}
-              <div className="space-y-base">
-                <h3 className="font-rajdhani text-xl font-bold text-card-foreground">This Month</h3>
-                
-                <div className="space-y-base">
-                  <div className="grid grid-cols-7 gap-xs text-center">
-                    {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, i) => (
-                      <div key={i} className="text-xs font-medium text-muted-foreground p-xs">{day}</div>
-                    ))}
-                    {Array.from({ length: 35 }, (_, i) => {
-                      const date = i - 2; // Start from -2 to show previous month
-                      // Extract actual event dates from our events data
-                      const eventDates = filteredEvents
-                        .map(event => {
-                          const eventDate = new Date(event.date);
-                          return eventDate.getDate();
-                        })
-                        .filter(d => d >= 1 && d <= 31);
-                      const hasEvent = eventDates.includes(date);
-                      const eventCount = eventDates.filter(d => d === date).length;
-                      
-                      return (
-                        <div key={i} className={`
-                          text-xs p-xs rounded cursor-pointer transition-colors relative
-                          ${date < 1 || date > 31 ? 'text-muted-foreground/50' : 'text-card-foreground hover:bg-accent'}
-                          ${hasEvent ? 'bg-(--color-rusty-orange)/20 text-(--color-rusty-orange) font-bold' : ''}
-                        `}>
-                          {date < 1 ? 30 + date : date > 31 ? date - 31 : date}
-                          {eventCount > 1 && (
-                            <div className="absolute -top-1 -right-1 w-2 h-2 bg-(--color-rusty-orange) rounded-full text-[8px] flex items-center justify-center text-(--color-crisp-off-white)">
-                              {eventCount}
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                  
-                  <div className="pt-base border-t space-y-xs">
-                    <h4 className="font-medium text-sm">Quick Actions</h4>
-                    <div className="space-y-xs">
-                      <Button variant="ghost" className="justify-start w-full text-xs h-8">
-                        <Plus className="h-3 w-3 mr-xs" />
-                        Add to Calendar
-                      </Button>
-                      <Button variant="ghost" className="justify-start w-full text-xs h-8">
-                        <Eye className="h-3 w-3 mr-xs" />
-                        View Full Calendar
-                      </Button>
+        {/* Quick Access Toolbar */}
+        <section className="py-lg bg-muted/30 border-b border-nav-events/10">
+            <div className="container mx-auto max-w-site px-md">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-base">
+                    <div className="flex flex-wrap items-center gap-xs">
+                        <span className="text-sm font-medium text-nav-events mr-base">Quick Filters:</span>
+                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white transition-all duration-200">
+                            <Trophy className="h-3 w-3" />
+                            Competitions
+                        </Button>
+                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white transition-all duration-200">
+                            <Target className="h-3 w-3" />
+                            Training
+                        </Button>
+                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white transition-all duration-200">
+                            <Sparkles className="h-3 w-3" />
+                            Expos
+                        </Button>
+                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white transition-all duration-200">
+                            <Users className="h-3 w-3" />
+                            Social
+                        </Button>
                     </div>
-                  </div>
-                </div>
-
-                {/* Event Stats */}
-                <div className="space-y-base text-center">
-                  <div>
-                    <div className="font-rajdhani text-3xl font-bold text-(--color-rusty-orange)">132+</div>
-                    <div className="text-xs text-muted-foreground">Events This Month</div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-base text-center">
-                    <div>
-                      <div className="font-rajdhani text-lg font-bold text-(--color-rusty-orange)">45+</div>
-                      <div className="text-xs text-muted-foreground">Venues</div>
+                    <div className="flex items-center gap-xs">
+                        <Button variant="ghost" size="sm" className="gap-xs text-nav-events hover:bg-nav-events/10 transition-all duration-200">
+                            <CalendarDays className="h-3 w-3" />
+                            Calendar View
+                        </Button>
+                        <div className="h-4 w-px bg-nav-events/30 mx-xs" />
+                        <Button variant="ghost" size="sm" className="gap-xs text-nav-events hover:bg-nav-events/10 transition-all duration-200">
+                            <TrendingUp className="h-3 w-3" />
+                            Sort: Date
+                        </Button>
                     </div>
-                    <div>
-                      <div className="font-rajdhani text-lg font-bold text-(--color-sagebrush-green)">6</div>
-                      <div className="text-xs text-muted-foreground">Categories</div>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
         </section>
 
-
-
-      {/* Events Grid */}
-      <section className="py-2xl">
-        <div className="container mx-auto max-w-site px-md">
-          <div className="space-y-2xl">
-            <div className="flex items-center justify-between">
-              <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">
-                {selectedCategory === "all" ? "All Events" : `${selectedCategory} Events`}
-              </h2>
-              <div className="text-muted-foreground">
-                {filteredEvents.length} {filteredEvents.length === 1 ? 'event' : 'events'} found
-              </div>
+        {/* Enhanced Stats Section */}
+        <section className="py-4xl bg-gradient-brand-cool">
+            <div className="container mx-auto max-w-site px-md">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-xl">
+                    <StatCard title="Total Events" value={`${upcomingEvents.length}+`} label="This Quarter" variant="default" trend="up" trendValue="12%" />
+                    <StatCard title="Competitions" value={`${upcomingEvents.filter(e => e.eventType === "Competition").length}`} label="Matches & Leagues" variant="default" trend="up" trendValue="5" />
+                    <StatCard title="Training Courses" value={`${upcomingEvents.filter(e => e.eventType === "Training").length}`} label="Classes & Clinics" variant="default" trend="down" trendValue="2" />
+                    <StatCard title="Community Members" value="12,500+" label="Active Participants" variant="default" trend="up" trendValue="250" />
+                </div>
             </div>
+        </section>
 
-            {/* Search and Category Filters */}
-            <div className="space-y-base">
-              {/* Search Bar */}
-              <div className="relative max-w-md">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <Input
-                  placeholder="Search events..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10"
-                />
-              </div>
+        {/* Main Content Area */}
+        <section className="py-2xl">
+            <div className="container mx-auto max-w-site px-md">
+                <div className="space-y-2xl">
+                    <div className="flex items-center justify-between">
+                        <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">
+                            {selectedCategory === "all" ? "All Events" : `${selectedCategory} Events`}
+                        </h2>
+                        <div className="text-muted-foreground">
+                            {filteredEvents.length} {filteredEvents.length === 1 ? 'event' : 'events'} found
+                        </div>
+                    </div>
 
-              {/* Category Filters */}
-              <div className="flex flex-wrap gap-sm">
-                {eventCategories.map((category) => (
-                  <Button
-                    key={category.value}
-                    variant={selectedCategory === category.value ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedCategory(category.value)}
-                    className={cn(
-                      "shadow-none transition-all duration-300",
-                      selectedCategory === category.value
-                        ? category.activeClasses
-                        : category.inactiveClasses
+                    {/* Search and Category Filters */}
+                    <div className="space-y-base">
+                        <div className="relative max-w-md">
+                            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                            <Input
+                                placeholder="Search events by name, location, or description..."
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                className="pl-10"
+                            />
+                        </div>
+                        <div className="flex flex-wrap gap-sm">
+                            {eventCategories.map((category) => (
+                                <Button
+                                    key={category.value}
+                                    variant={selectedCategory === category.value ? "default" : "outline"}
+                                    size="sm"
+                                    onClick={() => setSelectedCategory(category.value)}
+                                    className={cn(
+                                        "shadow-none transition-all duration-300",
+                                        selectedCategory === category.value
+                                            ? 'bg-nav-events text-white'
+                                            : 'border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white'
+                                    )}
+                                >
+                                    {category.label}
+                                    <Badge className="ml-xs bg-current/20 text-current text-[10px] border-0">
+                                        {category.count}
+                                    </Badge>
+                                </Button>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-lg">
+                        {paginatedEvents.map((event, index) => (
+                            <EventCard
+                                key={startIndex + index}
+                                title={event.title}
+                                description={event.description}
+                                date={event.date}
+                                time={event.time}
+                                location={event.location}
+                                eventType={event.eventType}
+                                capacity={event.capacity}
+                                registeredCount={event.registeredCount}
+                                registrationUrl={event.registrationUrl}
+                                price={event.price}
+                                featured={event.featured}
+                            />
+                        ))}
+                    </div>
+
+                    {totalPages > 1 && (
+                        <div className="flex items-center justify-center gap-base mt-2xl">
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                                disabled={currentPage === 1}
+                                className="border-border/30 text-muted-foreground hover:text-card-foreground hover:bg-muted/50"
+                            >
+                                <ArrowRight className="h-4 w-4 rotate-180 mr-xs" />
+                                Previous
+                            </Button>
+                            <div className="flex items-center gap-xs">
+                                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                                    <Button
+                                        key={page}
+                                        variant={currentPage === page ? "default" : "ghost"}
+                                        size="sm"
+                                        onClick={() => setCurrentPage(page)}
+                                        className={cn(
+                                            "w-10 h-10",
+                                            currentPage === page
+                                                ? "bg-nav-events text-white"
+                                                : "text-muted-foreground hover:bg-muted/50"
+                                        )}
+                                    >
+                                        {page}
+                                    </Button>
+                                ))}
+                            </div>
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                                disabled={currentPage === totalPages}
+                                className="border-border/30 text-muted-foreground hover:text-card-foreground hover:bg-muted/50"
+                            >
+                                Next
+                                <ArrowRight className="h-4 w-4 ml-xs" />
+                            </Button>
+                        </div>
                     )}
-                  >
-                    {category.label}
-                    <Badge className="ml-xs bg-current/20 text-current text-[10px] border-0">
-                      {category.count}
-                    </Badge>
-                  </Button>
-                ))}
-              </div>
+
+                    {filteredEvents.length === 0 && (
+                        <div className="text-center py-6xl col-span-full">
+                            <div className="space-y-base">
+                                <div className="mx-auto w-fit rounded-full bg-nav-events/10 p-lg">
+                                    <Target className="h-12 w-12 text-nav-events" />
+                                </div>
+                                <h3 className="font-rajdhani text-2xl font-bold text-card-foreground">
+                                    No Events Found
+                                </h3>
+                                <p className="text-muted-foreground max-w-md mx-auto">
+                                    Your search and filter combination yielded no results. Try a different search or broaden your category selection.
+                                </p>
+                                <Button
+                                    onClick={() => {
+                                        setSelectedCategory("all")
+                                        setSearchQuery("")
+                                    }}
+                                    className="bg-nav-events text-white hover:bg-nav-events/90"
+                                >
+                                    Clear Filters & Show All
+                                </Button>
+                            </div>
+                        </div>
+                    )}
+                </div>
             </div>
+        </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-lg">
-              {paginatedEvents.map((event, index) => (
-                <EventCard
-                  key={startIndex + index}
-                  title={event.title}
-                  description={event.description}
-                  date={event.date}
-                  time={event.time}
-                  location={event.location}
-                  eventType={event.eventType}
-                  capacity={event.capacity}
-                  registeredCount={event.registeredCount}
-                  registrationUrl={event.registrationUrl}
-                  price={event.price}
-                  featured={event.featured}
-                />
-              ))}
+        {/* Recent Activity & Community Updates */}
+        <section className="py-6xl bg-gradient-to-br from-nav-events/5 to-nav-events/10">
+            <div className="container mx-auto max-w-site px-md">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl">
+                    <div className="lg:col-span-2 space-y-xl">
+                        <div className="flex items-center justify-between">
+                            <h2 className="font-rajdhani text-3xl font-bold text-nav-events">
+                                Recent Activity
+                            </h2>
+                            <Button variant="ghost" size="sm" className="text-nav-events">
+                                View All Activity
+                                <ArrowRight className="h-3 w-3 ml-xs" />
+                            </Button>
+                        </div>
+                        <div className="space-y-base">
+                            <Card className="shadow-present hover:shadow-elevated transition-all duration-200">
+                                <div className="flex items-start gap-base p-base">
+                                    <div className="w-8 h-8 rounded-full bg-sagebrush-green/20 flex items-center justify-center flex-shrink-0">
+                                        <CheckCircle className="h-4 w-4 text-sagebrush-green" />
+                                    </div>
+                                    <div className="flex-1 space-y-xs">
+                                        <div className="flex items-center justify-between">
+                                            <p className="font-medium text-card-foreground">
+                                                USPSA Match registration is now open.
+                                            </p>
+                                            <span className="text-xs text-muted-foreground">1h ago</span>
+                                        </div>
+                                        <p className="text-sm text-muted-foreground">
+                                            Slots are filling up fast for the upcoming competition. Secure your spot today!
+                                        </p>
+                                    </div>
+                                </div>
+                            </Card>
+                            <Card className="shadow-present hover:shadow-elevated transition-all duration-200">
+                                <div className="flex items-start gap-base p-base">
+                                    <div className="w-8 h-8 rounded-full bg-nav-events/20 flex items-center justify-center flex-shrink-0">
+                                        <Plus className="h-4 w-4 text-nav-events" />
+                                    </div>
+                                    <div className="flex-1 space-y-xs">
+                                        <div className="flex items-center justify-between">
+                                            <p className="font-medium text-card-foreground">
+                                                New Event: Defensive Pistol Advanced
+                                            </p>
+                                            <span className="text-xs text-muted-foreground">3h ago</span>
+                                        </div>
+                                        <p className="text-sm text-muted-foreground">
+                                            A new advanced training course has been added for September.
+                                        </p>
+                                    </div>
+                                </div>
+                            </Card>
+                            <Card className="shadow-present hover:shadow-elevated transition-all duration-200">
+                                <div className="flex items-start gap-base p-base">
+                                    <div className="w-8 h-8 rounded-full bg-warning-clay/20 flex items-center justify-center flex-shrink-0">
+                                        <AlertTriangle className="h-4 w-4 text-warning-clay" />
+                                    </div>
+                                    <div className="flex-1 space-y-xs">
+                                        <div className="flex items-center justify-between">
+                                            <p className="font-medium text-card-foreground">
+                                                Location Change: Hunter Safety Course
+                                            </p>
+                                            <span className="text-xs text-muted-foreground">1d ago</span>
+                                        </div>
+                                        <p className="text-sm text-muted-foreground">
+                                            The August 23-24 course has been moved to the Boise location.
+                                        </p>
+                                    </div>
+                                </div>
+                            </Card>
+                        </div>
+                    </div>
+                    <div className="lg:col-span-1 space-y-xl">
+                        <div>
+                            <h3 className="font-rajdhani text-xl font-bold text-nav-events mb-base">
+                                Community Stats
+                            </h3>
+                            <div className="space-y-base">
+                                <Card className="shadow-whisper hover:shadow-present transition-all duration-200">
+                                    <div className="flex items-center justify-between p-base">
+                                        <div>
+                                            <p className="text-2xl font-bold text-nav-events font-rajdhani">1,200+</p>
+                                            <p className="text-sm text-muted-foreground">Registrations</p>
+                                        </div>
+                                        <Users className="h-6 w-6 text-nav-events" />
+                                    </div>
+                                </Card>
+                                <Card className="shadow-whisper hover:shadow-present transition-all duration-200">
+                                    <div className="flex items-center justify-between p-base">
+                                        <div>
+                                            <p className="text-2xl font-bold text-nav-events font-rajdhani">45+</p>
+                                            <p className="text-sm text-muted-foreground">Event Hosts</p>
+                                        </div>
+                                        <Award className="h-6 w-6 text-nav-events" />
+                                    </div>
+                                </Card>
+                                <Card className="shadow-whisper hover:shadow-present transition-all duration-200">
+                                    <div className="flex items-center justify-between p-base">
+                                        <div>
+                                            <p className="text-2xl font-bold text-nav-events font-rajdhani">350+</p>
+                                            <p className="text-sm text-muted-foreground">Reviews</p>
+                                        </div>
+                                        <MessageSquare className="h-6 w-6 text-nav-events" />
+                                    </div>
+                                </Card>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 className="font-rajdhani text-xl font-bold text-nav-events mb-base">
+                                Contribute
+                            </h3>
+                            <div className="space-y-xs">
+                                <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white transition-all duration-200">
+                                    <Plus className="h-4 w-4" />
+                                    Submit an Event
+                                </Button>
+                                <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white transition-all duration-200">
+                                    <MessageSquare className="h-4 w-4" />
+                                    Review an Event
+                                </Button>
+                                <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white transition-all duration-200">
+                                    <AlertTriangle className="h-4 w-4" />
+                                    Report an Issue
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            {/* Pagination */}
-            {totalPages > 1 && (
-              <div className="flex items-center justify-center gap-base mt-2xl">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
-                  disabled={currentPage === 1}
-                  className="border-border/30 text-muted-foreground hover:text-card-foreground hover:bg-muted/50"
-                >
-                  <ArrowRight className="h-4 w-4 rotate-180 mr-xs" />
-                  Previous
-                </Button>
-                
-                <div className="flex items-center gap-xs">
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                    <Button
-                      key={page}
-                      variant={currentPage === page ? "solid-accent" : "ghost"}
-                      size="sm"
-                      onClick={() => setCurrentPage(page)}
-                      className={currentPage === page 
-                        ? "bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange w-10 h-10"
-                        : "text-muted-foreground hover:text-card-foreground hover:bg-muted/50 w-10 h-10"
-                      }
-                    >
-                      {page}
-                    </Button>
-                  ))}
-                </div>
-                
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
-                  disabled={currentPage === totalPages}
-                  className="border-border/30 text-muted-foreground hover:text-card-foreground hover:bg-muted/50"
-                >
-                  Next
-                  <ArrowRight className="h-4 w-4 ml-xs" />
-                </Button>
-              </div>
-            )}
-
-            {filteredEvents.length === 0 && (
-              <div className="text-center py-6xl">
-                <div className="space-y-base">
-                  <div className="text-6xl">🎯</div>
-                  <h3 className="font-rajdhani text-2xl font-bold text-card-foreground">
-                    No events found
-                  </h3>
-                  <p className="text-muted-foreground max-w-md mx-auto">
-                    Try adjusting your search criteria or browse all events to discover what's happening in the Treasure Valley.
-                  </p>
-                  <Button 
-                    onClick={() => {
-                      setSelectedCategory("all")
-                      setSearchQuery("")
-                    }}
-                    className="bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange"
-                  >
-                    Show All Events
-                  </Button>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Event Submission CTA */}
-      <section className="py-2xl bg-gradient-to-br from-slate-blue to-ayu-green">
-        <div className="container mx-auto max-w-site px-md text-center">
-          <div className="space-y-lg">
-            <Badge className="bg-range-white/20 text-crisp-off-white border-range-white/30">
-              <Plus className="h-4 w-4 mr-xs" />
-              Event Organizers
-            </Badge>
-            <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-crisp-off-white">
-              List Your Event <span className="text-crisp-off-white font-bold">Free</span>
-            </h2>
-            <p className="text-body-lg text-crisp-off-white/80 max-w-2xl mx-auto">
-              Help build Idaho's most comprehensive firearms events calendar. Submit your upcoming events and reach thousands of enthusiasts across the Treasure Valley.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-base justify-center">
-              <Button 
-                size="xl" 
-                className="bg-range-white text-slate-blue hover:bg-range-white/90 font-rajdhani font-bold"
-              >
-                Submit Your Event
-                <ArrowRight className="h-5 w-5 ml-xs" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="xl"
-                className="border-range-white/30 text-crisp-off-white hover:bg-range-white hover:text-slate-blue"
-              >
-                Event Guidelines
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose TBGC - Moved above footer */}
-      <section className="py-2xl bg-muted/30">
-        <div className="container mx-auto max-w-site px-md">
-          <div className="text-center space-y-xl">
-            <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">Why Choose TBGC Events</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-xl">
-              <Card className="p-lg bg-gradient-to-br from-slate-blue/5 to-ayu-cobalt/5">
-                <div className="text-center space-y-base">
-                  <div className="bg-slate-blue/20 p-base rounded-full w-fit mx-auto">
-                    <CheckCircle className="h-6 w-6 text-slate-blue" />
-                  </div>
-                  <div>
-                    <div className="font-rajdhani text-2xl font-bold text-card-foreground">Vetted</div>
-                    <div className="text-sm text-muted-foreground">Events & Organizers</div>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-lg">
-                <div className="text-center space-y-base">
-                  <div className="bg-rifling-green/20 p-base rounded-full w-fit mx-auto">
-                    <MapPin className="h-6 w-6 text-rifling-green" />
-                  </div>
-                  <div>
-                    <div className="font-rajdhani text-2xl font-bold text-card-foreground">Local</div>
-                    <div className="text-sm text-muted-foreground">Treasure Valley Focus</div>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-lg">
-                <div className="text-center space-y-base">
-                  <div className="bg-rusty-orange/20 p-base rounded-full w-fit mx-auto">
-                    <Calendar className="h-6 w-6 text-rusty-orange" />
-                  </div>
-                  <div>
-                    <div className="font-rajdhani text-2xl font-bold text-card-foreground">Free</div>
-                    <div className="text-sm text-muted-foreground">Event Listings</div>
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Find legitimate events from established ranges, clubs, and training organizations across the Treasure Valley. All events are verified before listing.
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
-    <SiteFooter />
-    <AccessibilityFAB />
-  </>
-)
+        </section>
+      </div>
+      <SiteFooter />
+      <AccessibilityFAB />
+    </>
+  )
 }

@@ -42,7 +42,7 @@ const navigationItems = [
   { label: "Events", icon: Calendar, href: "/events", color: "nav-events" },
   { label: "Directory", icon: Users, href: "/directory", color: "nav-directory" },
   { label: "Armory", icon: Target, href: "/the-armory", color: "nav-armory" },
-  { label: "Intel", icon: Shield, href: "/map", color: "nav-intel" },
+  { label: "Intel", icon: Shield, href: "/intel", color: "nav-intel" },
   { label: "Marketplace", icon: Trophy, href: "/marketplace", color: "nav-marketplace" },
   { label: "Forums", icon: Settings, href: "https://boisegunclub.com/forums/", color: "nav-forums" }
 ]

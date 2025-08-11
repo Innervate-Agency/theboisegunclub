@@ -17,13 +17,13 @@ import {
   Plus, Minus, X, Check, Info, AlertTriangle, AlertCircle,
   
   // Social & Communication
-  MessageCircle, Heart, Share2, Bookmark, ThumbsUp, Eye,
+  MessageCircle, Heart, Bookmark, ThumbsUp, Eye,
   
   // Business & Shopping
   ShoppingCart, CreditCard, DollarSign, Package, Truck, Calendar,
   
   // Technical
-  Settings, Edit, Trash2, Download, Upload, Copy, ExternalLink,
+  Settings, Edit, Trash2, Download, Upload, Copy,
   
   // Weather & Environment
   Sun, Moon, Cloud, CloudRain, Wind, Mountain, Trees

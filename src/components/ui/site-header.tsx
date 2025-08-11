@@ -122,7 +122,7 @@ export function SiteHeader() {
 
               {/* Map */}
               <NavigationMenuItem>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "gap-xs")} href="/map">
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "gap-xs")} href="/intel">
                   <MapPin className="h-4 w-4" />
                   Map
                 </NavigationMenuLink>
@@ -206,7 +206,7 @@ export function SiteHeader() {
                 <BookOpen className="h-4 w-4" />
                 Guides
               </Link>
-              <Link href="/map" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
+              <Link href="/intel" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
                 <MapPin className="h-4 w-4" />
                 Map
               </Link>

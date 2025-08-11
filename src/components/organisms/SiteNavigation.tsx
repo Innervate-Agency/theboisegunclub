@@ -10,7 +10,7 @@ const SiteNavigation = () => {
           <Link href="/the-armory" className="px-4">Armory</Link>
           <Link href="/directory" className="px-4">Directory</Link>
           <Link href="/events" className="px-4">Events</Link>
-          <Link href="/map" className="px-4">Map</Link>
+          <Link href="/intel" className="px-4">Intel</Link>
           <Link href="/marketplace" className="px-4">Marketplace</Link>
           <Link href="/training" className="px-4">Training</Link>
         </div>

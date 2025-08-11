@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { 
   ChevronLeft, ChevronRight, Calendar as CalendarIcon, 
-  MapPin, Clock, Users, Search, Filter, X, ExternalLink,
+  MapPin, Clock, Users, Search, Filter, X,
   Zap, Trophy, Target, GraduationCap, Heart, Eye
 } from 'lucide-react'
 import { cn } from '@/lib/utils'

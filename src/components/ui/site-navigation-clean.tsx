@@ -41,7 +41,7 @@ const navigationItems = [
   { label: "Events", icon: Calendar, href: "/events", color: "slate-blue" },
   { label: "Directory", icon: Users, href: "/directory", color: "ayu-green" },
   { label: "Guides", icon: Target, href: "/guides", color: "ayu-purple" },
-  { label: "Map", icon: Shield, href: "/map", color: "ayu-red" },
+  { label: "Intel", icon: Shield, href: "/intel", color: "ayu-red" },
   { label: "Marketplace", icon: Trophy, href: "/marketplace", color: "ayu-teal" },
   { label: "Community", icon: Settings, href: "/community", color: "ayu-teal" }
 ]
