@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Boise Gun Club - A Treasure Valley Collective</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        /* CSS Variables - EXACT match to globals.css */
+        :root {
+            /* BOGUS BASIN & RIVER/SAGEBRUSH COLOR SYSTEM */
+            --color-dark-chocolate: #1a0f0d;
+            --color-rusty-orange: #D9863B;
+            --color-crisp-off-white: #F2F2F2;
+            --color-rich-loam: #2d201d;
+            --color-warm-stone: #A69287;
+            --color-lodgepole-green: #7D6702;
+            --color-deep-earth: #1A0C05;
+            --color-ember-glow: #E6A562;
+            --color-warning-amber: #D4A574;
+            --color-border-bark: #4A3429;
+
+            --color-light-peachy: #F9FAFB;
+            --color-slate-blue: #3A5063;
+            --color-shared-dark: #260F07;
+            --color-sandy-ochre: #D99F5D;
+            --color-dried-clay: #A69287;
+            --color-pale-stone: #E5E7EB;
+            --color-sagebrush-green: #798246;
+            --color-card-surface: #F3F4F6;
+            --color-warning-clay: #B8956B;
+            --color-info-river: #5A7D8A;
+
+            /* BOISE LANDSCAPE ADDITIONS */
+            --color-foothills-purple: #8B7AA8;
+            --color-canyon-clay: #B85450;
+            --color-high-desert-sage: #9CAF88;
+
+            /* TYPOGRAPHY */
+            --font-rajdhani: "Rajdhani", "Inter", system-ui, sans-serif;
+            --font-noto-sans: "Noto Sans", "Inter", system-ui, sans-serif;
+            --font-serif: "Noto Serif", Georgia, "Times New Roman", serif;
+
+            /* SPACING SYSTEM */
+            --space-micro: 0.125rem;
+            --space-tiny: 0.25rem;
+            --space-xs: 0.5rem;
+            --space-sm: 0.75rem;
+            --space-base: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+            --space-4xl: 8rem;
+
+            /* SHADOW SYSTEM */
+            --shadow-flat: 0 6px 12px -2px rgba(26, 15, 13, 0.35), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+            --shadow-elevated: 0 13px 27px -5px rgba(26, 15, 13, 0.35), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
+
+            /* THEME MAPPINGS */
+            --background: var(--color-light-peachy);
+            --foreground: var(--color-shared-dark);
+            --muted-foreground: var(--color-dried-clay);
+            --card: var(--color-card-surface);
+            --card-foreground: var(--color-shared-dark);
+            --border: var(--color-pale-stone);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: var(--color-dark-chocolate);
+                --foreground: var(--color-crisp-off-white);
+                --muted-foreground: var(--color-warm-stone);
+                --card: var(--color-rich-loam);
+                --card-foreground: var(--color-crisp-off-white);
+                --border: var(--color-border-bark);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-noto-sans);
+            line-height: 1.5;
+            color: var(--foreground);
+            background: var(--background);
+            min-height: 100vh;
+        }
+
+        /* UTILITY CLASSES */
+        .container {
+            max-width: 72rem;
+            margin: 0 auto;
+            padding-left: var(--space-md);
+            padding-right: var(--space-md);
+        }
+
+        .font-rajdhani { font-family: var(--font-rajdhani); }
+        .font-noto-sans { font-family: var(--font-noto-sans); }
+        
+        .text-6xl { font-size: 3.75rem; line-height: 1; }
+        .text-8xl { font-size: 6rem; line-height: 1; }
+        .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        
+        .font-extrabold { font-weight: 800; }
+        .font-light { font-weight: 300; }
+        .font-bold { font-weight: 700; }
+        .font-medium { font-weight: 500; }
+        
+        .text-center { text-align: center; }
+        .leading-none { line-height: 1; }
+        .leading-tight { line-height: 1.25; }
+        .tracking-tight { letter-spacing: -0.025em; }
+
+        /* COLORS */
+        .text-foreground { color: var(--foreground); }
+        .text-muted-foreground { color: var(--muted-foreground); }
+        .text-sandy-ochre { color: var(--color-sandy-ochre); }
+        .text-dark-chocolate { color: var(--color-dark-chocolate); }
+        .text-ayu-red { color: #F07178; }
+        .text-slate-blue { color: var(--color-slate-blue); }
+        .text-ayu-green { color: #C3E88D; }
+        .text-ayu-teal { color: #95E6CB; }
+
+        .bg-sandy-ochre { background-color: var(--color-sandy-ochre); }
+        .bg-dark-chocolate { background-color: var(--color-dark-chocolate); }
+        .bg-card { background-color: var(--card); }
+        .bg-muted { background-color: var(--color-pale-stone); }
+
+        /* SPACING */
+        .p-base { padding: var(--space-base); }
+        .px-md { padding-left: var(--space-md); padding-right: var(--space-md); }
+        .py-4xl { padding-top: var(--space-4xl); padding-bottom: var(--space-4xl); }
+        .py-xl { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+        .py-lg { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+        .py-md { padding-top: var(--space-md); padding-bottom: var(--space-md); }
+        .py-sm { padding-top: var(--space-sm); padding-bottom: var(--space-sm); }
+        .py-xs { padding-top: var(--space-xs); padding-bottom: var(--space-xs); }
+
+        .mb-xl { margin-bottom: var(--space-xl); }
+        .mb-lg { margin-bottom: var(--space-lg); }
+        .mb-base { margin-bottom: var(--space-base); }
+        .mb-sm { margin-bottom: var(--space-sm); }
+        .mb-xs { margin-bottom: var(--space-xs); }
+        .mr-xs { margin-right: var(--space-xs); }
+        .ml-xs { margin-left: var(--space-xs); }
+        .mt-3xl { margin-top: var(--space-3xl); }
+
+        .gap-xl { gap: var(--space-xl); }
+        .gap-3xl { gap: var(--space-3xl); }
+        .gap-lg { gap: var(--space-lg); }
+        .gap-md { gap: var(--space-md); }
+        .gap-base { gap: var(--space-base); }
+        .gap-sm { gap: var(--space-sm); }
+        .gap-xs { gap: var(--space-xs); }
+
+        .space-y-lg > * + * { margin-top: var(--space-lg); }
+        .space-y-base > * + * { margin-top: var(--space-base); }
+        .space-y-sm > * + * { margin-top: var(--space-sm); }
+        .space-y-xs > * + * { margin-top: var(--space-xs); }
+
+        /* LAYOUT */
+        .min-h-screen { min-height: 100vh; }
+        .max-w-6xl { max-width: 72rem; }
+        .max-w-4xl { max-width: 56rem; }
+        .max-w-2xl { max-width: 42rem; }
+        
+        .flex { display: flex; }
+        .grid { display: grid; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .overflow-hidden { overflow: hidden; }
+
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .flex-shrink-0 { flex-shrink: 0; }
+
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+        .w-full { width: 100%; }
+        .w-fit { width: fit-content; }
+        .h-4 { height: 1rem; }
+        .h-5 { height: 1.25rem; }
+        .h-6 { height: 1.5rem; }
+        .h-8 { height: 2rem; }
+
+        /* RESPONSIVE */
+        @media (min-width: 768px) {
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .md\:text-8xl { font-size: 6rem; line-height: 1; }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .lg\:gap-3xl { gap: var(--space-3xl); }
+        }
+
+        /* SHADOWS & EFFECTS */
+        .shadow-sm { box-shadow: 0 2px 5px -1px rgba(26, 15, 13, 0.35), 0 1px 3px -1px rgba(0, 0, 0, 0.3); }
+        .shadow-flat { box-shadow: var(--shadow-flat); }
+        .shadow-elevated { box-shadow: var(--shadow-elevated); }
+
+        /* ROUNDED CORNERS */
+        .rounded-lg { border-radius: 0.5rem; }
+        .rounded-base { border-radius: 0.25rem; }
+
+        /* HERO SECTION SPECIFIC */
+        .hero-bg {
+            background: linear-gradient(135deg, 
+                rgba(249, 250, 251, 0.95) 0%, 
+                rgba(243, 244, 246, 0.9) 50%, 
+                rgba(249, 250, 251, 0.95) 100%);
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, 
+                rgba(217, 159, 93, 0.1) 0%, 
+                transparent 50%, 
+                rgba(217, 134, 59, 0.08) 100%);
+            pointer-events: none;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .hero-bg {
+                background: linear-gradient(135deg, 
+                    rgba(26, 15, 13, 0.95) 0%, 
+                    rgba(166, 146, 135, 0.9) 50%, 
+                    rgba(26, 15, 13, 0.95) 100%);
+            }
+            
+            .hero-bg::before {
+                background: linear-gradient(135deg, 
+                    rgba(217, 159, 93, 0.14) 0%, 
+                    transparent 50%, 
+                    rgba(217, 134, 59, 0.12) 100%);
+            }
+        }
+
+        .z-10 { z-index: 10; }
+
+        /* COMPONENT STYLES */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--space-xs);
+            font-size: 0.875rem;
+            font-weight: 500;
+            background-color: var(--color-sandy-ochre);
+            color: var(--color-dark-chocolate);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-card {
+            background-color: var(--card);
+            color: var(--card-foreground);
+            border-radius: 0.5rem;
+            padding: var(--space-md);
+            box-shadow: var(--shadow-flat);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .card {
+            background-color: var(--card);
+            color: var(--card-foreground);
+            border-radius: 0.5rem;
+            padding: 0;
+            box-shadow: var(--shadow-flat);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 6px;
+            background: linear-gradient(to right, var(--color-rusty-orange), var(--color-sandy-ochre));
+            transition: all 0.3s ease-out;
+            border-radius: 0 0 0.5rem 0.5rem;
+        }
+
+        .card:hover::after {
+            width: 100%;
+        }
+
+        .card-header {
+            padding: var(--space-md) var(--space-md) var(--space-sm) var(--space-md);
+        }
+
+        .card-content {
+            padding: 0 var(--space-md) var(--space-md) var(--space-md);
+        }
+
+        .card-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .input {
+            width: 100%;
+            padding: var(--space-sm);
+            border: 1px solid var(--border);
+            border-radius: 0.375rem;
+            background-color: var(--background);
+            color: var(--foreground);
+            font-size: 0.875rem;
+        }
+
+        .input:focus {
+            outline: none;
+            border-color: var(--color-sandy-ochre);
+            box-shadow: 0 0 0 2px rgba(217, 159, 93, 0.2);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-sm) var(--space-base);
+            border: none;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .button-primary {
+            background-color: var(--color-sandy-ochre);
+            color: var(--color-dark-chocolate);
+        }
+
+        .button-primary:hover {
+            background-color: rgba(217, 159, 93, 0.9);
+        }
+
+        .button-outline {
+            background-color: transparent;
+            color: var(--foreground);
+            border: 1px solid var(--border);
+        }
+
+        .button-outline:hover {
+            background-color: var(--card);
+        }
+
+        /* NAVIGATION */
+        .navigation {
+            background: rgba(26, 15, 13, 0.8);
+            backdrop-filter: blur(20px);
+            color: var(--color-crisp-off-white);
+            padding: var(--space-base);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 72rem;
+            margin: 0 auto;
+        }
+
+        .nav-logo {
+            font-family: var(--font-rajdhani);
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--color-crisp-off-white);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-base);
+        }
+
+        .nav-link {
+            color: var(--color-crisp-off-white);
+            text-decoration: none;
+            padding: var(--space-xs);
+            transition: color 0.15s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-sandy-ochre);
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: var(--color-rich-loam);
+            color: var(--color-warm-stone);
+            padding: var(--space-xl) 0;
+            text-align: center;
+            border-top: 1px solid var(--color-border-bark);
+        }
+
+        /* PROBLEM CARDS - Special styling for different colors */
+        .card-ayu-red::after {
+            background: linear-gradient(to right, #F07178, #FFCB6B);
+        }
+
+        .card-slate-blue::after {
+            background: linear-gradient(to right, var(--color-slate-blue), #95E6CB);
+        }
+
+        .card-ayu-green::after {
+            background: linear-gradient(to right, #C3E88D, #FFCB6B);
+        }
+
+        .badge-ayu-red {
+            background-color: rgba(240, 113, 120, 0.2);
+            color: #F07178;
+        }
+
+        .badge-slate-blue {
+            background-color: rgba(58, 80, 99, 0.2);
+            color: var(--color-slate-blue);
+        }
+
+        .badge-ayu-green {
+            background-color: rgba(195, 232, 141, 0.2);
+            color: #C3E88D;
+        }
+
+        .icon {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .icon-lg {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .transition-colors {
+            transition: color 0.3s ease;
+        }
+
+        .group:hover .group-hover-rusty-orange {
+            color: var(--color-rusty-orange);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navigation">
+        <nav class="nav-container">
+            <a href="#" class="nav-logo">The Boise Gun Club</a>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Armory</a>
+                <a href="#" class="nav-link">Directory</a>
+                <a href="#" class="nav-link">Events</a>
+                <a href="#" class="nav-link">Map</a>
+                <a href="#" class="nav-link">Marketplace</a>
+                <a href="#" class="nav-link">Training</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden hero-bg px-md py-4xl">
+            <div class="container max-w-6xl relative z-10">
+                <div class="grid gap-xl lg:grid-cols-2 lg:gap-3xl">
+                    <div class="space-y-lg">
+                        <div class="space-y-base">
+                            <div class="badge">
+                                <i data-lucide="target" class="icon mr-xs"></i>
+                                Regional Platform
+                            </div>
+                            <h1 class="font-rajdhani text-6xl md:text-8xl leading-none text-foreground tracking-tight">
+                                <span class="font-extrabold">THE BOISE </span><span class="font-light">GUN CLUB</span>
+                            </h1>
+                            <p class="text-lg text-muted-foreground max-w-2xl">
+                                Building Treasure Valley's first comprehensive firearms community platform. Connecting local businesses, clubs, ranges, and enthusiasts across Idaho's premier firearms region.
+                            </p>
+                            <div class="space-y-sm">
+                                <div class="flex items-center gap-xs text-sm text-muted-foreground">
+                                    <i data-lucide="shield" class="icon text-sandy-ochre flex-shrink-0"></i>
+                                    <span>Safety-first community focused on responsible firearms education</span>
+                                </div>
+                                <div class="flex items-center gap-xs text-sm text-muted-foreground">
+                                    <i data-lucide="star" class="icon text-sandy-ochre flex-shrink-0"></i>
+                                    <span>Preserving Idaho's rich firearms heritage and outdoor traditions</span>
+                                </div>
+                                <div class="flex items-center gap-xs text-sm text-muted-foreground">
+                                    <i data-lucide="users" class="icon text-sandy-ochre flex-shrink-0"></i>
+                                    <span>Connecting 250K+ gun owners across the Treasure Valley region</span>
+                                </div>
+                                <div class="flex items-center gap-xs text-sm text-muted-foreground">
+                                    <i data-lucide="trending-up" class="icon text-sandy-ochre flex-shrink-0"></i>
+                                    <span>4-tier subscription model supporting local businesses</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid gap-md md:grid-cols-2">
+                        <div class="stat-card">
+                            <div class="flex items-center gap-base mb-sm">
+                                <i data-lucide="building-2" class="icon-lg text-sandy-ochre"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-xs">Directory</h3>
+                            <p class="text-sm text-muted-foreground">Local Gun Shops, Ranges & Trainers</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="flex items-center gap-base mb-sm">
+                                <i data-lucide="calendar" class="icon-lg text-sandy-ochre"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-xs">Events</h3>
+                            <p class="text-sm text-muted-foreground">Unified Calendar from All Clubs</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="flex items-center gap-base mb-sm">
+                                <i data-lucide="share-2" class="icon-lg text-sandy-ochre"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-xs">Forum</h3>
+                            <p class="text-sm text-muted-foreground">Community Discussion & Trading</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="flex items-center gap-base mb-sm">
+                                <i data-lucide="bell" class="icon-lg text-sandy-ochre"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-xs">Resources</h3>
+                            <p class="text-sm text-muted-foreground">Idaho Laws, Safety & Training Info</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Features Section -->
+        <section class="px-md py-4xl">
+            <div class="container max-w-6xl">
+                <div class="text-center space-y-base mb-xl">
+                    <h2 class="font-rajdhani text-4xl font-bold">What Makes TBGC Different</h2>
+                    <p class="text-lg text-muted-foreground">
+                        Advanced technology and business intelligence designed specifically for Idaho's firearms industry
+                    </p>
+                </div>
+                
+                <div class="grid gap-md md:grid-cols-2 lg:grid-cols-4">
+                    <div class="card group">
+                        <div class="card-header">
+                            <i data-lucide="search" class="icon-lg text-sandy-ochre mb-base transition-colors group-hover-rusty-orange"></i>
+                            <div class="card-title">
+                                <i data-lucide="building-2" class="icon"></i>
+                                Business Directory
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p class="text-sm text-muted-foreground">
+                                Verified business profiles with real-time inventory, services, and customer reviews
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="card group">
+                        <div class="card-header">
+                            <i data-lucide="calendar" class="icon-lg text-sandy-ochre mb-base transition-colors group-hover-rusty-orange"></i>
+                            <div class="card-title">
+                                <i data-lucide="users-2" class="icon"></i>
+                                Unified Events
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p class="text-sm text-muted-foreground">
+                                Smart calendar preventing scheduling conflicts and maximizing participation
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="card group">
+                        <div class="card-header">
+                            <i data-lucide="share-2" class="icon-lg text-sandy-ochre mb-base transition-colors group-hover-rusty-orange"></i>
+                            <div class="card-title">
+                                <i data-lucide="message-square" class="icon"></i>
+                                Community Hub
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p class="text-sm text-muted-foreground">
+                                Secure trading platform with verified members and dispute resolution
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="card group">
+                        <div class="card-header">
+                            <i data-lucide="shopping-cart" class="icon-lg text-sandy-ochre mb-base transition-colors group-hover-rusty-orange"></i>
+                            <div class="card-title">
+                                <i data-lucide="zap" class="icon"></i>
+                                Service Marketplace
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p class="text-sm text-muted-foreground">
+                                Advanced booking system with real-time availability and payment processing
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problems Section -->
+                <div class="text-center space-y-base mb-xl mt-3xl">
+                    <h2 class="font-rajdhani text-4xl font-bold">The Problems We're Solving</h2>
+                    <p class="text-lg text-muted-foreground max-w-4xl mx-auto">
+                        Despite having 250K+ gun owners and 117+ businesses, Treasure Valley lacks a unified digital ecosystem. These critical gaps are holding back our entire firearms community.
+                    </p>
+                </div>
+                
+                <div class="grid gap-lg md:grid-cols-2 lg:grid-cols-3">
+                    <div class="card card-ayu-red">
+                        <div class="card-header">
+                            <div class="badge badge-ayu-red w-fit mb-xs">
+                                <i data-lucide="alert-triangle" class="h-3 w-3 mr-1"></i>
+                                Fragmentation
+                            </div>
+                            <div class="card-title">
+                                <i data-lucide="search" class="icon text-ayu-red"></i>
+                                Information Scattered Everywhere
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p class="text-sm text-muted-foreground">
+                                Events, training, and business info spread across dozens of Facebook groups, outdated websites, and word-of-mouth. New residents and visitors can't find anything.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="card card-slate-blue">
+                        <div class="card-header">
+                            <div class="badge badge-slate-blue w-fit mb-xs">
+                                <i data-lucide="alert-triangle" class="h-3 w-3 mr-1"></i>
+                                Isolation
+                            </div>
+                            <div class="card-title">
+                                <i data-lucide="building-2" class="icon text-slate-blue"></i>
+                                Clubs Operating in Silos
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p class="text-sm text-muted-foreground">
+                                Each range, club, and training organization operates independently. No unified calendar, competing for the same dates, missing collaboration opportunities.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="card card-ayu-green">
+                        <div class="card-header">
+                            <div class="badge badge-ayu-green w-fit mb-xs">
+                                <i data-lucide="alert-triangle" class="h-3 w-3 mr-1"></i>
+                                Discovery
+                            </div>
+                            <div class="card-title">
+                                <i data-lucide="trending-up" class="icon text-ayu-green"></i>
+                                Businesses Struggle for Visibility
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <p class="text-sm text-muted-foreground">
+                                Local businesses can't effectively reach their target market. No centralized marketing channel, relying on expensive advertising or ineffective social media.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="px-md py-4xl" style="background-color: rgba(229, 231, 235, 0.3);">
+            <div class="container max-w-4xl">
+                <div class="text-center space-y-base mb-xl">
+                    <div class="badge">
+                        <i data-lucide="mail" class="icon mr-xs"></i>
+                        Get Early Access
+                    </div>
+                    <h2 class="font-rajdhani text-4xl font-bold">Join the Revolution</h2>
+                    <p class="text-lg text-muted-foreground">
+                        Be among the first businesses and community members to join Idaho's premier firearms platform.
+                    </p>
+                </div>
+                
+                <div class="grid gap-lg md:grid-cols-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Business Owners</h3>
+                            <p class="text-sm text-muted-foreground">
+                                Join our verified business directory and connect with thousands of potential customers.
+                            </p>
+                        </div>
+                        <div class="card-content space-y-base">
+                            <div class="space-y-xs">
+                                <input type="text" placeholder="Business Name" class="input">
+                                <input type="email" placeholder="Your Email" class="input">
+                                <input type="tel" placeholder="Phone Number" class="input">
+                            </div>
+                            <button class="button button-primary w-full">
+                                Register Your Business
+                                <i data-lucide="arrow-right" class="icon ml-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Community Members</h3>
+                            <p class="text-sm text-muted-foreground">
+                                Stay updated on platform development and be first to access new features.
+                            </p>
+                        </div>
+                        <div class="card-content space-y-base">
+                            <div class="space-y-xs">
+                                <input type="text" placeholder="Your Name" class="input">
+                                <input type="email" placeholder="Email Address" class="input">
+                                <input type="text" placeholder="ZIP Code" class="input">
+                            </div>
+                            <button class="button button-outline w-full">
+                                Join Mailing List
+                                <i data-lucide="mail" class="icon ml-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 The Boise Gun Club. A Treasure Valley Collective.</p>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+        
+        // Add some basic interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Could add smooth scroll to sections here
+                });
+            });
+
+            // Add form submission handlers
+            const buttons = document.querySelectorAll('.button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your interest! We\'ll be in touch soon.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

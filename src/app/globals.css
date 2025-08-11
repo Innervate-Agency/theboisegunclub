@@ -1,121 +1,151 @@
 @import "tailwindcss";
 
-/* Fix for Tailwind CSS v4 + next-themes dark mode integration */
-@variant dark (.dark &);
+/* PROPER: Tailwind CSS v4 cascade layers declaration */
+@layer theme, base, components, utilities;
+
+/* FIXED: Tailwind CSS v4 + next-themes dark mode integration - Modern 2025 syntax */
+@variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* ================== TBGC DESIGN SYSTEM: V5 CORE ================== */
-  
-  /* CRITICAL BORDER USAGE POLICY:
-   * BORDERS are RESTRICTED - only for: alerts, badges, sonner/toast, form inputs, tables, explicit outline variants
-   * USE SHADOWS instead for: cards, modals, dropdowns, navigation, content containers
-   * Shadow hierarchy: shadow-xs (minimal) → shadow-sm (default) → shadow-md (interactive) → shadow-lg (elevated) → shadow-xl (hero)
-   */
-  
-  /* Typography - Idaho Firearms Heritage Palette */
+  /* ================== BOGUS BASIN & RIVER/SAGEBRUSH COLOR SYSTEM ================== */
+
+  /* 🌑 DARK THEME: Bogus Basin - Warm lodge at dusk (Complete 10-Color Set) */
+  --color-dark-chocolate: #1a0f0d;      /* Background: Deep, warm foundation */
+  --color-rusty-orange: #D9863B;        /* Primary Accent: Main CTAs, links, active states */
+  --color-crisp-off-white: #F2F2F2;     /* Text (Foreground): Primary headlines, body text */
+  --color-rich-loam: #2d201d;           /* Subtle Surface: Cards, popovers above background */
+  --color-warm-stone: #A69287;          /* Muted Text: Secondary info, timestamps, disabled */
+  --color-lodgepole-green: #7D6702;     /* Secondary Accent: Tags, confirmations, success states */
+  --color-deep-earth: #1A0C05;          /* Deeper Surface: For recessed elements, deeper than rich-loam */
+  --color-ember-glow: #E6A562;          /* Highlight Accent: For hover states, lighter than rusty-orange */
+  --color-warning-amber: #D4A574;       /* Warning/Caution: For alerts and caution states */
+  --color-border-bark: #4A3429;         /* Border/Divider: Subtle separators, warmer than warm-stone */
+
+  /* ☀️ LIGHT THEME: River/Sagebrush - Crisp riverside landscape (Complete 10-Color Set) */
+  --color-light-peachy: #F9FAFB;        /* Background: Base light background */
+  --color-slate-blue: #3A5063;          /* Primary Accent: Cool, professional CTAs */
+  --color-shared-dark: #260F07;         /* Text (Foreground): Shared with dark theme */
+  --color-sandy-ochre: #D99F5D;         /* Secondary Accent: Info tags, warm highlights */
+  --color-dried-clay: #A69287;          /* Muted Text: Placeholders, descriptions */
+  --color-pale-stone: #E5E7EB;          /* Border & Inputs: Fields, separators */
+  --color-sagebrush-green: #798246;     /* Confirmation Accent: Success, verified badges */
+  --color-card-surface: #F3F4F6;        /* Card Surface: Slightly darker than background for elevation */
+  --color-warning-clay: #B8956B;        /* Warning/Caution: For alerts and caution states */
+  --color-info-river: #5A7D8A;          /* Info Accent: For informational elements and highlights */
+
+  /* =================== BOISE LANDSCAPE ADDITIONS =================== */
+  --color-foothills-purple: #8B7AA8;   /* Mountain Dusk: Distant foothills at sunset, premium themes */
+  --color-canyon-clay: #B85450;        /* Red Rock: Terracotta canyon walls, warm grounded feeling */
+  --color-high-desert-sage: #9CAF88;   /* Desert Sage: Silvery-green high desert plants, education/calm */
+
+  /* =================== GRUVBOX-INSPIRED EYE COMFORT SYSTEM =================== */
+  /* Night Ops Mode - Gruvbox-inspired colors for extended reading comfort */
+  --gruvbox-bg-dark: #282828;          /* Main background - warmer than pure dark */
+  --gruvbox-bg-soft: #32302f;          /* Secondary background - cards, elevated surfaces */
+  --gruvbox-bg-surface: #3c3836;       /* Interactive surfaces - buttons, inputs */
+  --gruvbox-fg-cream: #fbf1c7;         /* Primary text - that beautiful yellowish-white */
+  --gruvbox-fg-soft: #ebdbb2;          /* Secondary text - softer cream for descriptions */
+  --gruvbox-fg-muted: #a89984;         /* Muted text - timestamps, placeholders */
+  --gruvbox-orange: #fe8019;           /* Gruvbox orange - complements our rusty-orange */
+  --gruvbox-yellow: #fabd2f;           /* Gruvbox yellow - works with our golden tones */
+  --gruvbox-green: #b8bb26;            /* Gruvbox green - tactical accent */
+  --gruvbox-blue: #83a598;             /* Gruvbox blue - cool tactical accent */
+  --gruvbox-purple: #d3869b;           /* Gruvbox purple - premium accent */
+  --gruvbox-aqua: #8ec07c;             /* Gruvbox aqua - that sick teal color! */
+  --gruvbox-red: #fb4934;              /* Gruvbox red - alerts and warnings */
+  /* =================== COLOR PSYCHOLOGY OPTIMIZATIONS =================== */
+  /* Boise Landscape Psychology Colors - Based on actual geographic features */
+  --color-sunrise-amber: #E8B04B;       /* Events: Treasure Valley sunrise - energetic, competitive psychology */
+  --color-meadow-sage: #A8B888;         /* Forums: Valley grassland - calming community psychology */
+  --color-bruneau-sandstone: #C4A882;   /* Directory: Bruneau Dunes - stable, professional psychology */
+  --color-volcanic-ash: #7A7D82;        /* Intel: Craters of the Moon - analytical, focused psychology */
+
+  /* =================== REFINED 7-COLOR NAVIGATION SYSTEM =================== */
+  /* Light Theme Navigation Colors - FINAL REFINED PALETTE */
+  --nav-home-light: #eb7d01;           /* Warm Orange - Perfect home welcome energy */
+  --nav-events-light: #D51F00;         /* Red - High energy, attention-grabbing for events */
+  --nav-directory-light: #2ebfe6;      /* Bright Cyan - Professional, modern directory */
+  --nav-armory-light: #8B7AA8;         /* Purple-Gray - Tactical sophistication */
+  --nav-intel-light: #ffbc20;          /* Golden Yellow - Intelligence/reconnaissance */
+  --nav-marketplace-light: #C9C301;    /* Bright Yellow-Green - Commerce energy, vibrant */
+  --nav-forums-light: #D3D3D3;         /* Light Gray - Boring neutral for forums */
+
+  /* Dark Theme Navigation Colors - Same vibrant palette for dark backgrounds */
+  --nav-home-dark: #eb7d01;            /* Warm Orange - Glows perfectly on dark */
+  --nav-events-dark: #FF4444;          /* Brightened Red - More visible on dark without being harsh */
+  --nav-directory-dark: #2ebfe6;       /* Bright Cyan - Pops beautifully on dark */
+  --nav-armory-dark: #A98FBC;          /* Lighter Purple-Gray - Maintains sophistication */
+  --nav-intel-dark: #ffbc20;           /* Golden Yellow - Perfect visibility on dark */
+  --nav-marketplace-dark: #C9C301;     /* Bright Yellow-Green - Pops on dark backgrounds */
+  --nav-forums-dark: #B8B8B8;          /* Medium Gray - Visible but boring on dark */
+
+  /* Theme-aware navigation color system - automatically switches based on theme */
+  --nav-home: var(--nav-home-light);
+  --nav-events: var(--nav-events-light);
+  --nav-directory: var(--nav-directory-light);
+  --nav-armory: var(--nav-armory-light);
+  --nav-intel: var(--nav-intel-light);
+  --nav-marketplace: var(--nav-marketplace-light);
+  --nav-forums: var(--nav-forums-light);
+
+  /* ================== TYPOGRAPHY ================== */
   --font-rajdhani: "Rajdhani", "Inter", "system-ui", sans-serif;
   --font-noto-sans: "Noto Sans", "Inter", "system-ui", sans-serif;
   --font-serif: "Noto Serif", "Georgia", "Times New Roman", serif;
-  
-  /* ================== COMPLETE COLOR SYSTEM (26 COLORS) ================== */
-  
-  /* Primary Brand Colors */
-  --color-brass-yellow: #F2CB05;
-  --color-copper-orange: #F28705;
-  --color-gunmetal-black: #0A0A0A;
-  --color-nickel-white: #FFFFFF;
 
-  /* Light Theme: Spring Day at the Range */
-  --color-range-white: #f8f6f1;
-  --color-shooting-bench: #ede7de;
-  --color-walnut-stock: #c08051;
-  --color-blued-steel: #372103;
-  --color-case-hardened: #693e21;
-  --color-muzzle-flash: #F23005;
-  --color-recoil-pad: #f07b1d;
-  --color-sight-gold: #E3C03C;
-  --color-scope-blue: #5198cd;
-  --color-trigger-blue: #3c81c0;
-  --color-rifling-green: #6f7822;
-  --color-bore-sight-green: #75B700;    /* Replaced with ayu-green - more vibrant success */
-  --color-safety-red: #FF3B49;         /* Replaced with ayu-red - consistent with crimson-trace */
+  /* ================== SPACING SYSTEM ================== */
+  --space-micro: 0.125rem;    /* 2px */
+  --space-tiny: 0.25rem;      /* 4px */
+  --space-xs: 0.5rem;         /* 8px */
+  --space-sm: 0.75rem;        /* 12px */
+  --space-base: 1rem;         /* 16px */
+  --space-md: 1.5rem;         /* 24px */
+  --space-lg: 2rem;           /* 32px */
+  --space-xl: 3rem;           /* 48px */
+  --space-2xl: 4rem;          /* 64px */
+  --space-3xl: 6rem;          /* 96px */
+  --space-4xl: 8rem;          /* 128px */
 
-  /* Dark Theme: Evening Hunt in the Mountains - Enhanced with Ayu Vibrancy */
-  --color-night-sight: #2F3135;
-  --color-carbon-fiber: #4B4B4B;
-  --color-tactical-gray: #1C2431;        /* Replaced with ayu-gray - cleaner dark background */
-  --color-titanium-white: #FDFDFD;
-  --color-stainless-steel: #EEF1F7;
-  --color-flash-hider: #F25C05;
-  --color-crimson-trace: #FF3B49;        /* Replaced with ayu-red - more vibrant */
-  --color-cerakote-blue: #009FED;        /* Replaced with ayu-blue - electric blue */
-  --color-ghost-ring: #C9D2EF;
-  --color-woodland-camo: #3F6331;
+  /* Map to Tailwind spacing utilities - enables p-micro, m-lg, space-y-xl, gap-md etc. */
+  --spacing-micro: var(--space-micro);
+  --spacing-tiny: var(--space-tiny);
+  --spacing-xs: var(--space-xs);
+  --spacing-sm: var(--space-sm);
+  --spacing-base: var(--space-base);
+  --spacing-md: var(--space-md);
+  --spacing-lg: var(--space-lg);
+  --spacing-xl: var(--space-xl);
+  --spacing-2xl: var(--space-2xl);
+  --spacing-3xl: var(--space-3xl);
+  --spacing-4xl: var(--space-4xl);
 
-  /* ================== AYU-MIRAGE SECONDARY COLOR PALLETE ================== */
+  /* Max-width scale for content containers */
+  --max-width-xs: 20rem;     /* 320px */
+  --max-width-sm: 24rem;     /* 384px */
+  --max-width-md: 28rem;     /* 448px */
+  --max-width-lg: 32rem;     /* 512px */
+  --max-width-xl: 36rem;     /* 576px */
+  --max-width-2xl: 42rem;    /* 672px - proper paragraph width */
+  --max-width-3xl: 48rem;    /* 768px */
+  --max-width-4xl: 56rem;    /* 896px */
+  --max-width-5xl: 64rem;    /* 1024px */
+  --max-width-prose: 65ch;   /* Optimal reading width */
 
-  /* Secondary Brand Colors */
-  --color-ayu-blue: #009FED;          /* Bright blue for accents */
-  --color-ayu-green: #75B700;        /* Fresh green for highlights */
-  --color-ayu-teal: #00C496;        /* Fresh teal for highlights */
-  --color-ayu-cobalt: #0C4367;       /* Deep cobalt for primary actions */
-  --color-ayu-purple: #6E5083;      /* Soft purple for subtle details */
-  --color-ayu-yellow: #FFA600;      /* Warm yellow for highlights */
-  --color-ayu-red: #FF3B49;         /* Vibrant red for alerts */
-  --color-ayu-gray: #1C2431;        /* Neutral gray for backgrounds */
-  
-  /* ================== ICON SYSTEM - LUCIDE REACT INTEGRATION ================== */
-  /* Icon sizing tokens for consistent scaling */
-  --icon-xs: 12px;
-  --icon-sm: 16px;
-  --icon-md: 20px;
-  --icon-lg: 24px;
-  --icon-xl: 32px;
-  --icon-2xl: 48px;
-  
-  /* Icon color variants using TBGC + Ayu enhanced palette */
-  --icon-primary: var(--color-brass-yellow);
-  --icon-secondary: var(--color-copper-orange);
-  --icon-accent: var(--color-cerakote-blue);     /* Now using vibrant ayu-blue */
-  --icon-muted: var(--color-case-hardened);
-  --icon-success: var(--color-bore-sight-green); /* Now using vibrant ayu-green */
-  --icon-warning: var(--color-recoil-pad);
-  --icon-danger: var(--color-safety-red);        /* Now using vibrant ayu-red */
-  --icon-info: var(--color-cerakote-blue);       /* Now using vibrant ayu-blue */
-  
-  /* ================== ANIMATION & TRANSITION SYSTEM ================== */
-  --timing-fast: 150ms;
-  --timing-normal: 250ms;
-  --timing-slow: 350ms;
-  --ease-stripe: cubic-bezier(0.215, 0.61, 0.355, 1);
-  --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-  
-  /* ================== COMPLETE SPACING SYSTEM ================== */
-  --space-micro: 0.125rem;    /* 2px - fine details */
-  --space-tiny: 0.25rem;      /* 4px - minimal spacing */
-  --space-xs: 0.5rem;         /* 8px - small gaps */
-  --space-sm: 0.75rem;        /* 12px - compact elements */
-  --space-base: 1rem;         /* 16px - standard spacing */
-  --space-md: 1.5rem;         /* 24px - comfortable spacing */
-  --space-lg: 2rem;           /* 32px - section spacing */
-  --space-xl: 3rem;           /* 48px - large sections */
-  --space-2xl: 4rem;          /* 64px - major sections */
-  --space-3xl: 6rem;          /* 96px - hero sections */
-  --space-4xl: 8rem;          /* 128px - page sections */
-  
-  /* ================== COMPREHENSIVE BORDER RADIUS SYSTEM ================== */
-  --radius-none: 0;
-  --radius-micro: 0.125rem;   /* 2px - subtle rounding */
-  --radius-xs: 0.25rem;       /* 4px - minimal curves */
-  --radius-sm: 0.375rem;      /* 6px - small elements */
-  --radius-base: 0.25rem;     /* 4px - boxy with slight curve (NEW DEFAULT) */
-  --radius-md: 0.375rem;      /* 6px - slightly more curved */
-  --radius-lg: 0.5rem;        /* 8px - moderate curves */
-  --radius-xl: 0.75rem;       /* 12px - larger elements */
-  --radius-2xl: 1rem;         /* 16px - hero elements */
-  --radius-full: 9999px;      /* Full rounded */
-  
+  /* ================== BORDER RADIUS SYSTEM ================== */
+  /* Direct Tailwind CSS v4 border-radius mappings - Progressive scale */
+  --border-radius-none: 0;           /* Square tactical - main cards, large components */
+  --border-radius-micro: 0.125rem;   /* 2px - minimal detail elements */
+  --border-radius-xs: 0.25rem;       /* 4px - buttons, interactive elements */
+  --border-radius-sm: 0.5rem;        /* 8px - badges, categories, flat buttons */
+  --border-radius-base: 0.5rem;      /* 8px - same as sm for consistency */
+  --border-radius-md: 0.75rem;       /* 12px - special cases only */
+  --border-radius-lg: 1rem;          /* 16px - special cases only */
+  --border-radius-xl: 1.25rem;       /* 20px - special cases only */
+  --border-radius-2xl: 1.5rem;       /* 24px - special cases only */
+  --border-radius-3xl: 2rem;         /* 32px - special cases only */
+  --border-radius-pill: 50rem;       /* Pill badges only when explicitly needed */
+  --border-radius-full: 9999px;      /* Avatar circles, specific rounded elements */
+
   /* ================== Z-INDEX SYSTEM ================== */
   --z-behind: -1;
   --z-base: 0;
@@ -128,168 +158,149 @@
   --z-toast: 70;
   --z-tooltip: 80;
   --z-maximum: 999;
+
+  /* ================== ANIMATION & TRANSITION SYSTEM ================== */
+  --timing-fast: 150ms;
+  --timing-normal: 250ms;
+  --timing-slow: 350ms;
+  --ease-stripe: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ================== FIREARMS COMMUNITY SEMANTIC SHADOW SYSTEM ================== */
+  /* Inspired by Stripe's sophisticated 8-level hierarchy with firearms-specific applications */
   
-  /* ================== STRIPE-INSPIRED SOPHISTICATED SHADOW SYSTEM ================== */
-  /* Based on Stripe's layered shadow approach with colored + black shadows */
-  /* 
-   * SHADOW HIERARCHY RULES (Stripe Philosophy):
-   * 1. CONTAINERS ONLY: Only base containers (cards, modals, dropdowns) get shadows
-   * 2. FLAT NESTED: All elements INSIDE containers are shadow-free (inputs, buttons, icons)
-   * 3. SELECTIVE HOVER: Not everything needs hover shadow animations - be restrained
-   * 4. CONTEXT MATTERS: Standalone buttons can have shadows, nested buttons cannot
-   * 5. MICA EFFECTS: Glass variants use backdrop-blur + subtle shadows only
-   */
-  
-  /* Base Container Shadows - For cards, modals, dropdowns */
-  --shadow-xs: 0 2px 5px -1px rgba(50, 50, 93, 0.25), 0 1px 3px -1px rgba(0, 0, 0, 0.3);
-  --shadow-sm: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
-  --shadow-xl: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
-  
-  /* Default Shadow System - Stripe-inspired sophisticated shadows */
   --shadow-none: none;
-  --shadow-flat: 0 6px 12px -2px rgba(50, 50, 93, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3); /* Default card shadow - same as --shadow-sm */
   
-  /* Design Token Shadow Mapping - Semantic Names */
-  --shadow-elevated: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3); /* Same as --shadow-md */
+  /* Ghost - Background data, inactive states, technical specs that shouldn't distract */
+  --shadow-ghost: 0 1px 1px 0 rgba(50, 50, 93, 0.04);
+  
+  /* Whisper - Secondary info (ammo specs, technical details, supporting content) */
+  --shadow-whisper: 0 1px 3px 0 rgba(50, 50, 93, 0.09);
+  
+  /* Present - Standard content cards (event listings, vendor info, directory entries) */
+  --shadow-present: 0 4px 6px -1px rgba(50, 50, 93, 0.11);
+  
+  /* Elevated - Interactive cards (hover states, clickable content, navigation) */
+  --shadow-elevated: 0 10px 15px -3px rgba(50, 50, 93, 0.11), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Prominent - Priority content (featured vendors, important events, premium tiers) */
+  --shadow-prominent: 0 20px 25px -5px rgba(50, 50, 93, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Commanding - CTAs (registration, contact, buy buttons, call-to-actions) */
+  --shadow-commanding: 0 25px 50px -12px rgba(50, 50, 93, 0.35), 0 0 0 1px rgba(50, 50, 93, 0.05);
+  
+  /* Hero - Main features (event spotlights, featured products, hero sections) */
+  --shadow-hero: 0 32px 80px -12px rgba(50, 50, 93, 0.4), 0 0 0 1px rgba(50, 50, 93, 0.08);
+  
+  /* Modal - Overlays, critical alerts, confirmations, highest priority */
+  --shadow-modal: 0 50px 100px -20px rgba(50, 50, 93, 0.5), 0 30px 60px -30px rgba(0, 0, 0, 0.35);
 
-  /* TBGC Brand-Colored Sophisticated Shadows (using our brass/copper palette) */
-  --shadow-brass: 0 6px 12px -2px rgba(242, 203, 5, 0.15), 0 3px 7px -3px rgba(0, 0, 0, 0.25);
-  --shadow-copper: 0 13px 27px -5px rgba(242, 135, 5, 0.12), 0 8px 16px -8px rgba(0, 0, 0, 0.25);
-  --shadow-premium: 0 4px 8px -2px rgba(242, 203, 5, 0.25), 0 2px 4px -1px rgba(242, 135, 5, 0.15), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  --shadow-elite: 0 8px 16px -4px rgba(242, 203, 5, 0.3), 0 4px 8px -2px rgba(242, 135, 5, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
-  
-  /* ClickUp-Inspired Vibrant Shadows */
-  --shadow-purple: 0 10px 25px rgba(118, 18, 250, 0.25), 0 4px 10px rgba(64, 221, 255, 0.15);
-  --shadow-pink: 0 8px 20px rgba(250, 18, 227, 0.25), 0 3px 8px rgba(255, 215, 0, 0.15);
-  
-  /* Glass/Mica Shadows for Depth */
-  --shadow-glass: 0 4px 16px rgba(0, 0, 0, 0.1), 0 8px 32px rgba(0, 0, 0, 0.05);
+  /* Legacy aliases for backward compatibility */
+  --shadow-xs: var(--shadow-whisper);
+  --shadow-sm: var(--shadow-present);
+  --shadow-md: var(--shadow-elevated);
+  --shadow-lg: var(--shadow-prominent);
+  --shadow-xl: var(--shadow-hero);
+  --shadow-flat: var(--shadow-present);
+  --shadow-elevated-legacy: var(--shadow-elevated);
+
+  /* Tactical variants - Warm brown undertones for brand consistency */
+  --shadow-tactical-ghost: 0 1px 1px 0 rgba(26, 15, 13, 0.04), 0 0 0 1px rgba(26, 15, 13, 0.01);
+  --shadow-tactical-whisper: 0 1px 2px 0 rgba(26, 15, 13, 0.06), 0 1px 3px 0 rgba(26, 15, 13, 0.04);
+  --shadow-tactical-present: 0 2px 4px 0 rgba(26, 15, 13, 0.08), 0 1px 6px 0 rgba(26, 15, 13, 0.06);
+  --shadow-tactical-elevated: 0 4px 8px 0 rgba(26, 15, 13, 0.11), 0 2px 12px 0 rgba(26, 15, 13, 0.08);
+
+  /* Brand-colored shadows for CTAs and interactive elements */
+  --shadow-primary: 0 2px 4px 0 rgba(217, 134, 59, 0.10), 0 1px 6px 0 rgba(217, 134, 59, 0.08);
+  --shadow-secondary: 0 2px 4px 0 rgba(125, 103, 2, 0.10), 0 1px 6px 0 rgba(125, 103, 2, 0.08);
+  --shadow-success: 0 2px 4px 0 rgba(121, 130, 70, 0.10), 0 1px 6px 0 rgba(121, 130, 70, 0.08);
+  --shadow-warning: 0 2px 4px 0 rgba(184, 149, 107, 0.10), 0 1px 6px 0 rgba(184, 149, 107, 0.08);
+
+  /* Interactive shadow progressions - each level steps up on interaction */
+  --shadow-ghost-hover: var(--shadow-whisper);
+  --shadow-whisper-hover: var(--shadow-present);
+  --shadow-present-hover: var(--shadow-elevated);
+  --shadow-elevated-hover: var(--shadow-prominent);
+  --shadow-prominent-hover: var(--shadow-commanding);
+  --shadow-commanding-hover: var(--shadow-hero);
+  --shadow-hero-hover: var(--shadow-modal);
+
+  /* Focus states - add subtle colored glow */
+  --shadow-focus-tactical: 0 0 0 3px rgba(217, 134, 59, 0.15);
+  --shadow-focus-success: 0 0 0 3px rgba(121, 130, 70, 0.15);
+  --shadow-focus-warning: 0 0 0 3px rgba(184, 149, 107, 0.15);
+
+  /* Active states - pressed feeling (step down one level) */
+  --shadow-whisper-active: var(--shadow-ghost);
+  --shadow-present-active: var(--shadow-whisper);
+  --shadow-elevated-active: var(--shadow-present);
+  --shadow-prominent-active: var(--shadow-elevated);
+  --shadow-commanding-active: var(--shadow-prominent);
+  --shadow-glass: 0 5px 10px 0 rgba(50, 50, 93, 0.08), 0 15px 25px 0 rgba(50, 50, 93, 0.05);
   --shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-  
-  /* Focus Ring Shadows */
-  --shadow-focus-brass: 0 0 0 3px rgba(242, 203, 5, 0.3);
-  --shadow-focus-copper: 0 0 0 3px rgba(242, 135, 5, 0.3);
-  --shadow-focus-blue: 0 0 0 3px rgba(81, 152, 205, 0.3);
 
-  /* ================== SOPHISTICATED GRADIENT SYSTEM ================== */
-  /* Professional Background Gradients - Stripe/Figma Inspired */
+  /* Legacy focus rings - updated */
+  --shadow-focus-primary: var(--shadow-focus-tactical);
+  --shadow-focus-secondary: var(--shadow-focus-success);
+  --shadow-focus-blue: 0 0 0 3px rgba(58, 80, 99, 0.15);
+
+  /* ================== GRADIENT SYSTEM ================== */
+  /* Fire Gradients using new colors */
+  --gradient-fire: linear-gradient(to right, var(--color-rusty-orange), var(--color-sandy-ochre));
+  --gradient-nature: linear-gradient(to right, var(--color-slate-blue), var(--color-lodgepole-green));
+  --gradient-success: linear-gradient(to right, var(--color-lodgepole-green), var(--color-sagebrush-green));
   
-  /* Subtle Brand Gradients (5-8% opacity - sophisticated restraint) */
-  --gradient-brand-warm: linear-gradient(135deg, rgba(242, 203, 5, 0.06) 0%, rgba(242, 135, 5, 0.04) 100%);
-  --gradient-brand-cool: linear-gradient(135deg, rgba(81, 152, 205, 0.06) 0%, rgba(60, 129, 192, 0.04) 100%);
-  --gradient-brand-mixed: linear-gradient(135deg, rgba(242, 203, 5, 0.05) 0%, rgba(81, 152, 205, 0.05) 50%, rgba(242, 135, 5, 0.04) 100%);
-  
-  /* Hero Section Gradients (slightly more prominent but still elegant) */
-  --gradient-hero-warm: linear-gradient(135deg, rgba(248, 246, 241, 1) 0%, rgba(237, 231, 222, 0.8) 100%);
-  --gradient-hero-cool: linear-gradient(135deg, rgba(248, 246, 241, 1) 0%, rgba(81, 152, 205, 0.08) 100%);
-  --gradient-hero-premium: linear-gradient(135deg, rgba(248, 246, 241, 1) 0%, rgba(242, 203, 5, 0.08) 50%, rgba(237, 231, 222, 1) 100%);
-  
-  /* Card & Component Gradients (ultra-subtle for backgrounds) */
-  --gradient-card-warm: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(242, 203, 5, 0.02) 100%);
-  --gradient-card-cool: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(81, 152, 205, 0.02) 100%);
-  --gradient-card-neutral: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(237, 231, 222, 0.3) 100%);
-  
-  /* Mesh Gradients (Figma-style complex backgrounds) */
-  --gradient-mesh-premium: 
-    radial-gradient(circle at 20% 30%, rgba(242, 203, 5, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 80% 20%, rgba(242, 135, 5, 0.06) 0%, transparent 40%),
-    radial-gradient(circle at 40% 80%, rgba(192, 128, 81, 0.04) 0%, transparent 40%),
-    linear-gradient(135deg, rgba(248, 246, 241, 1) 0%, rgba(237, 231, 222, 0.9) 100%);
-    
-  --gradient-mesh-elite: 
-    radial-gradient(circle at 25% 25%, rgba(81, 152, 205, 0.06) 0%, transparent 35%),
-    radial-gradient(circle at 75% 75%, rgba(242, 203, 5, 0.05) 0%, transparent 35%),
-    radial-gradient(circle at 50% 50%, rgba(60, 129, 192, 0.03) 0%, transparent 35%),
-    linear-gradient(135deg, rgba(248, 246, 241, 1) 0%, rgba(237, 231, 222, 0.8) 100%);
-  
-  /* Glass/Mica Gradients (Windows 11 inspired) */
-  --gradient-glass-warm: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(242, 203, 5, 0.1) 100%);
-  --gradient-glass-cool: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(81, 152, 205, 0.1) 100%);
-  --gradient-glass-neutral: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
-  
-  /* Legacy gradients (keeping for backwards compatibility but these are too strong) */
-  --gradient-primary: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 100%);
-  --gradient-premium: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 45%, var(--color-brass-yellow) 100%);
-  --gradient-elite: linear-gradient(135deg, var(--color-brass-yellow) 0%, var(--color-copper-orange) 25%, var(--color-brass-yellow) 50%, var(--color-copper-orange) 75%, var(--color-brass-yellow) 100%);
-  --gradient-subtle: linear-gradient(135deg, rgba(242, 203, 5, 0.05) 0%, rgba(242, 135, 5, 0.05) 100%);
-  
-  /* ================== FIRE GRADIENT ANIMATION SYSTEM ================== */
-  /* Fire gradients that "unfurl" from left with proper orange→yellow transitions */
-  --gradient-fire-orange: linear-gradient(90deg, var(--color-copper-orange) 0%, var(--color-brass-yellow) 100%);
-  --gradient-fire-blue: linear-gradient(90deg, var(--color-ayu-blue) 0%, var(--color-ayu-green) 100%);
-  --gradient-fire-purple: linear-gradient(90deg, var(--color-ayu-purple) 0%, var(--color-ayu-cobalt) 100%);
-  --gradient-fire-green: linear-gradient(90deg, var(--color-ayu-green) 0%, var(--color-bore-sight-green) 100%);
-  
-  /* Animated fire gradients with proper left-origin scaling */
-  --gradient-fire-animated: linear-gradient(90deg, var(--color-copper-orange) 0%, var(--color-brass-yellow) 50%, var(--color-copper-orange) 100%);
-  
-  /* ClickUp-Inspired Vibrant Gradients */
-  --gradient-purple: linear-gradient(135deg, #7612FA 0%, #40DDFF 100%);
-  --gradient-pink: linear-gradient(135deg, #FA12E3 0%, #FFD700 100%);
-  --gradient-success: linear-gradient(135deg, var(--color-rifling-green) 0%, var(--color-bore-sight-green) 100%);
-  --gradient-warning: linear-gradient(135deg, var(--color-sight-gold) 0%, var(--color-recoil-pad) 100%);
-  --gradient-danger: linear-gradient(135deg, var(--color-muzzle-flash) 0%, var(--color-safety-red) 100%);
-  --gradient-info: linear-gradient(135deg, var(--color-scope-blue) 0%, var(--color-trigger-blue) 100%);
-  
-  /* Glass/Mica Effect Gradients */
+  /* Strategic Color Flow Gradients - Each page flows toward next page's energy */
+  --gradient-home-hero: linear-gradient(to bottom right, var(--nav-home), var(--color-rusty-orange));
+  --gradient-events-hero: linear-gradient(to bottom right, var(--nav-events), var(--color-canyon-clay));
+  --gradient-directory-hero: linear-gradient(to bottom right, var(--nav-directory), var(--color-info-river));
+  --gradient-armory-hero: linear-gradient(to bottom right, var(--nav-armory), var(--color-slate-blue));
+  --gradient-intel-hero: linear-gradient(to bottom right, var(--nav-intel), var(--color-sunrise-amber));
+  --gradient-marketplace-hero: linear-gradient(to bottom right, var(--nav-marketplace), var(--color-sagebrush-green));
+
+  /* Subtle Background Gradients (5-8% opacity) */
+  --gradient-brand-warm: linear-gradient(135deg, rgba(217, 134, 59, 0.06) 0%, rgba(217, 159, 93, 0.04) 100%);
+  --gradient-brand-cool: linear-gradient(135deg, rgba(58, 80, 99, 0.06) 0%, rgba(49, 26, 14, 0.04) 100%);
+
+  /* Card Gradients (ultra-subtle) */
+  --gradient-card-warm: linear-gradient(135deg, rgba(242, 242, 242, 1) 0%, rgba(217, 134, 59, 0.02) 100%);
+  --gradient-card-cool: linear-gradient(135deg, rgba(242, 242, 242, 1) 0%, rgba(58, 80, 99, 0.02) 100%);
+
+  /* Glass/Mica Gradients */
   --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
   --gradient-glass-dark: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-  
-  /* Mesh Gradients for Backgrounds */
-  --gradient-mesh-warm: 
-    radial-gradient(circle at 20% 50%, rgba(242, 203, 5, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(242, 135, 5, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(192, 128, 81, 0.06) 0%, transparent 50%);
-  --gradient-mesh-cool: 
-    radial-gradient(circle at 25% 25%, rgba(81, 152, 205, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(60, 129, 192, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(73, 130, 166, 0.06) 0%, transparent 50%);
-    
-  /* ================== ICON SIZING SYSTEM ================== */
-  --icon-xs: 0.75rem;         /* 12px - tiny icons */
-  --icon-sm: 1rem;            /* 16px - small icons */
-  --icon-base: 1.25rem;       /* 20px - standard icons */
-  --icon-md: 1.5rem;          /* 24px - medium icons */
-  --icon-lg: 2rem;            /* 32px - large icons */
-  --icon-xl: 2.5rem;          /* 40px - extra large icons */
-  --icon-2xl: 3rem;           /* 48px - huge icons */
-  --icon-3xl: 4rem;           /* 64px - hero icons */
-  
-  /* ================== BADGE & LABEL SYSTEM ================== */
-  --badge-height-sm: 1.25rem;      /* 20px */
-  --badge-height-base: 1.5rem;     /* 24px */
-  --badge-height-lg: 2rem;         /* 32px */
-  --badge-padding-x-sm: 0.5rem;    /* 8px */
-  --badge-padding-x-base: 0.75rem; /* 12px */
-  --badge-padding-x-lg: 1rem;      /* 16px */
-  
-  /* ================== COMPONENT SIZING STANDARDS ================== */
+
+  /* ================== ICON SYSTEM ================== */
+  --icon-xs: 0.75rem;         /* 12px */
+  --icon-sm: 1rem;            /* 16px */
+  --icon-base: 1.25rem;       /* 20px */
+  --icon-md: 1.5rem;          /* 24px */
+  --icon-lg: 2rem;            /* 32px */
+  --icon-xl: 2.5rem;          /* 40px */
+  --icon-2xl: 3rem;           /* 48px */
+  --icon-3xl: 4rem;           /* 64px */
+
+  /* Icon colors using new theme */
+  --icon-primary: var(--color-rusty-orange);
+  --icon-secondary: var(--color-lodgepole-green);
+  --icon-accent: var(--color-sandy-ochre);
+  --icon-muted: var(--color-warm-stone);
+  --icon-success: var(--color-sagebrush-green);
+  --icon-info: var(--color-slate-blue);
+
+  /* ================== COMPONENT SIZING ================== */
   --input-height-sm: 2rem;         /* 32px */
   --input-height-base: 2.5rem;     /* 40px */
   --input-height-lg: 3rem;         /* 48px */
-  --button-height-sm: 2rem;        /* 32px - for inside cards/forms */
-  --button-height-base: 2.5rem;    /* 40px - general use */
-  --button-height-lg: 3rem;        /* 48px - hero/primary actions */
-  --button-height-xl: 3.5rem;      /* 56px - call-to-action buttons */
-  
-  /* ================== STRIPE-INSPIRED COMPONENT CONTEXT TOKENS ================== */
-  /* Card Content Standards */
-  --card-padding: var(--space-md);           /* 24px - Stripe standard card padding */
-  --card-title-size: var(--text-lg);         /* 18px - proper card title sizing */
-  --card-body-size: var(--text-sm);          /* 14px - card body text */
-  --card-caption-size: var(--text-xs);       /* 12px - card captions/meta */
-  
-  /* Button Context Standards */
-  --button-text-sm: var(--text-xs);          /* 12px - small button text */  
-  --button-text-base: var(--text-sm);        /* 14px - default button text */
-  --button-text-lg: var(--text-base);        /* 16px - large button text */
-  --button-padding-sm: 0.5rem 0.75rem;       /* 8px 12px - small button padding */
-  --button-padding-base: 0.625rem 1rem;      /* 10px 16px - default button padding */
-  --button-padding-lg: 0.75rem 1.5rem;       /* 12px 24px - large button padding */
-  
-  /* ================== TYPOGRAPHY SCALING SYSTEM ================== */
+  --button-height-sm: 2rem;        /* 32px */
+  --button-height-base: 2.5rem;    /* 40px */
+  --button-height-lg: 3rem;        /* 48px */
+  --button-height-xl: 3.5rem;      /* 56px */
+
+  /* ================== TYPOGRAPHY SCALING ================== */
+  --text-2xs: 0.625rem;            /* 10px */
+  --text-3xs: 0.5rem;              /* 8px */
   --text-xs: 0.75rem;              /* 12px */
   --text-sm: 0.875rem;             /* 14px */
   --text-base: 1rem;               /* 16px */
@@ -303,7 +314,7 @@
   --text-7xl: 4.5rem;              /* 72px */
   --text-8xl: 6rem;                /* 96px */
   --text-9xl: 8rem;                /* 128px */
-  
+
   /* Line Heights */
   --leading-none: 1;
   --leading-tight: 1.25;
@@ -311,83 +322,143 @@
   --leading-normal: 1.5;
   --leading-relaxed: 1.625;
   --leading-loose: 2;
+
+  /* ================== ACCESSIBILITY SYSTEM ================== */
+  --accessibility-font-scale: 1;
+  --accessibility-contrast: 1;
+  --accessibility-filter: none;
+
+  /* Base font sizes that scale */
+  --font-size-base: calc(1rem * var(--accessibility-font-scale));
+  --font-size-sm: calc(0.875rem * var(--accessibility-font-scale));
+  --font-size-lg: calc(1.125rem * var(--accessibility-font-scale));
+  --font-size-xl: calc(1.25rem * var(--accessibility-font-scale));
+  --font-size-2xl: calc(1.5rem * var(--accessibility-font-scale));
+}
+
+@theme inline {
+  --background: var(--theme-background);
+  --foreground: var(--theme-foreground);
+  --card: var(--theme-card);
+  --card-foreground: var(--theme-card-foreground);
+  --popover: var(--theme-popover);
+  --popover-foreground: var(--theme-popover-foreground);
+  --primary: var(--theme-primary);
+  --primary-foreground: var(--theme-primary-foreground);
+  --secondary: var(--theme-secondary);
+  --secondary-foreground: var(--theme-secondary-foreground);
+  --muted: var(--theme-muted);
+  --muted-foreground: var(--theme-muted-foreground);
+  --accent: var(--theme-accent);
+  --accent-foreground: var(--theme-accent-foreground);
+  --destructive: var(--theme-destructive);
+  --destructive-foreground: var(--theme-destructive-foreground);
+  --border: var(--theme-border);
+  --input: var(--theme-input);
+  --ring: var(--theme-ring);
+}
+
+@layer theme {
+  :root,
+  .light {
+  /* ☀️ LIGHT THEME: River/Sagebrush (Default) */
+  --theme-background: var(--color-light-peachy);
+  --theme-foreground: var(--color-shared-dark);
+  --theme-card: var(--color-light-peachy);
+  --theme-card-foreground: var(--color-shared-dark);
+  --theme-popover: var(--color-light-peachy);
+  --theme-popover-foreground: var(--color-shared-dark);
+  --theme-primary: var(--color-slate-blue);
+  --theme-primary-foreground: var(--color-light-peachy);
+  --theme-secondary: var(--color-sandy-ochre);
+  --theme-secondary-foreground: var(--color-shared-dark);
+  --theme-muted: var(--color-pale-stone);
+  --theme-muted-foreground: var(--color-dried-clay);
+  --theme-accent: var(--color-sagebrush-green);
+  --theme-accent-foreground: var(--color-shared-dark);
+  --theme-destructive: var(--color-rusty-orange);
+  --theme-destructive-foreground: var(--color-crisp-off-white);
+  --theme-border: var(--color-pale-stone);
+  --theme-input: var(--color-pale-stone);
+  --theme-ring: var(--color-slate-blue);
+  --radius: 0.25rem;
   
-  /* ================== WINDOWS 11 MICA NOISE OVERLAY SYSTEM ================== */
-  /* Base mica noise pattern using CSS filters and pseudo-elements */
-  --mica-noise-opacity: 0.03;
-  --mica-blur-strength: 20px;
-  --mica-saturation: 1.2;
-  --mica-brightness: 1.1;
+  /* Navigation colors for light theme */
+  --nav-home: var(--nav-home-light);
+  --nav-events: var(--nav-events-light);
+  --nav-directory: var(--nav-directory-light);
+  --nav-armory: var(--nav-armory-light);
+  --nav-intel: var(--nav-intel-light);
+  --nav-marketplace: var(--nav-marketplace-light);
+  --nav-forums: var(--nav-forums-light);
+}
+
+.dark {
+  /* 🌑 DARK THEME: Bogus Basin */
+  --theme-background: var(--color-dark-chocolate);
+  --theme-foreground: var(--color-crisp-off-white);
+  --theme-card: var(--color-rich-loam);
+  --theme-card-foreground: var(--color-crisp-off-white);
+  --theme-popover: var(--color-rich-loam);
+  --theme-popover-foreground: var(--color-crisp-off-white);
+  --theme-primary: var(--color-rusty-orange);
+  --theme-primary-foreground: var(--color-dark-chocolate);
+  --theme-secondary: var(--color-lodgepole-green);
+  --theme-secondary-foreground: var(--color-crisp-off-white);
+  --theme-muted: var(--color-rich-loam);
+  --theme-muted-foreground: var(--color-warm-stone);
+  --theme-accent: var(--color-lodgepole-green);
+  --theme-accent-foreground: var(--color-crisp-off-white);
+  --theme-destructive: var(--color-rusty-orange);
+  --theme-destructive-foreground: var(--color-crisp-off-white);
+  --theme-border: var(--color-rich-loam);
+  --theme-input: var(--color-rich-loam);
+  --theme-ring: var(--color-rusty-orange);
   
-  /* Overlay background colors with mica effect - using 26-color system */
-  --overlay-bg-light: rgba(255, 255, 255, 0.95);        /* More opaque for better contrast */
-  --overlay-bg-dark: rgba(32, 32, 32, 0.95);           /* Using carbon-fiber base */
-  --overlay-border-light: rgba(102, 102, 102, 0.15);    /* case-hardened */
-  --overlay-border-dark: rgba(192, 192, 192, 0.15);     /* stainless-steel */
+  /* 🎯 1970s Navigation Dark Theme Overrides - Soft glow for 2am comfort */
+  --nav-home: var(--nav-home-dark);
+  --nav-events: var(--nav-events-dark);
+  --nav-directory: var(--nav-directory-dark);
+  --nav-armory: var(--nav-armory-dark);
+  --nav-intel: var(--nav-intel-dark);
+  --nav-marketplace: var(--nav-marketplace-dark);
+  --nav-forums: var(--nav-forums-dark);
+}
+
+.gruvbox {
+  /* 🌙 GRUVBOX THEME: Night Ops Mode - Eye-friendly for extended reading */
+  --theme-background: var(--gruvbox-bg-dark);
+  --theme-foreground: var(--gruvbox-fg-cream);
+  --theme-card: var(--gruvbox-bg-soft);
+  --theme-card-foreground: var(--gruvbox-fg-cream);
+  --theme-popover: var(--gruvbox-bg-surface);
+  --theme-popover-foreground: var(--gruvbox-fg-cream);
+  --theme-primary: var(--gruvbox-orange);
+  --theme-primary-foreground: var(--gruvbox-bg-dark);
+  --theme-secondary: var(--gruvbox-yellow);
+  --theme-secondary-foreground: var(--gruvbox-bg-dark);
+  --theme-muted: var(--gruvbox-bg-soft);
+  --theme-muted-foreground: var(--gruvbox-fg-muted);
+  --theme-accent: var(--gruvbox-aqua);
+  --theme-accent-foreground: var(--gruvbox-bg-dark);
+  --theme-destructive: var(--gruvbox-red);
+  --theme-destructive-foreground: var(--gruvbox-fg-cream);
+  --theme-border: var(--gruvbox-bg-surface);
+  --theme-input: var(--gruvbox-bg-surface);
+  --theme-ring: var(--gruvbox-orange);
   
-  /* Overlay text colors for proper contrast */
-  --overlay-text-light: var(--color-blued-steel);       /* Dark text on light glass */
-  --overlay-text-dark: var(--color-nickel-white);       /* Light text on dark glass */
-  
-  /* Mica noise texture data URI - subtle grain pattern */
-  --mica-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  /* 🎯 Gruvbox Navigation Colors - Softer variants for eye comfort */
+  --nav-home: var(--gruvbox-yellow);      /* Warm butter yellow */
+  --nav-events: var(--gruvbox-orange);    /* Softer orange-red */
+  --nav-directory: #7c6f64;              /* Gruvbox brown variant */
+  --nav-armory: var(--gruvbox-aqua);      /* That sick aqua/teal! */
+  --nav-intel: #504945;                   /* Gruvbox dark brown */
+  --nav-marketplace: var(--gruvbox-yellow); /* Golden commerce */
+  --nav-forums: var(--gruvbox-green);     /* Community green */
+  }
 }
 
 @layer base {
-  :root {
-    /* Light Theme Variables - Site uses warm "Spring Day at the Range" colors */
-    --background: var(--color-range-white);        /* Warm site background */
-    --foreground: var(--color-blued-steel);
-    --card: var(--color-nickel-white);             /* Clean white cards for contrast */
-    --card-foreground: var(--color-blued-steel);
-    --muted: var(--color-shooting-bench);          /* Muted areas use warm beige */
-    --muted-foreground: var(--color-case-hardened);
-    --border: var(--color-case-hardened);
-    --input: var(--color-nickel-white);            /* Clean input backgrounds */
-    --ring: var(--color-brass-yellow);
-    --radius: 0.25rem;                             /* Boxy with slight curve - 4px */
-
-    /* Semantic colors for components */
-    --primary: var(--color-blued-steel);
-    --primary-foreground: var(--color-nickel-white);
-    --secondary: var(--color-walnut-stock);
-    --secondary-foreground: var(--color-nickel-white);
-    --destructive: var(--color-muzzle-flash);
-    --destructive-foreground: var(--color-nickel-white);
-    --accent: var(--color-cerakote-blue);        /* Now using vibrant ayu-blue */
-    --accent-foreground: var(--color-nickel-white);
-    
-    /* Popover/Overlay colors - MICA BACKGROUNDS FOR MODERN GLASS EFFECT */
-    --popover: var(--overlay-bg-light);           /* Mica glass popover backgrounds */
-    --popover-foreground: var(--overlay-text-light);
-  }
-
-  .dark {
-    /* Dark Theme Variables - "Evening Hunt in the Mountains" palette */
-    --background: var(--color-night-sight);        /* Deep dark site background */
-    --foreground: var(--color-titanium-white);
-    --card: var(--color-carbon-fiber);             /* Elevated dark cards */
-    --card-foreground: var(--color-titanium-white);
-    --muted: var(--color-tactical-gray);           /* Muted dark areas */
-    --muted-foreground: var(--color-stainless-steel);
-    --border: var(--color-tactical-gray);
-    --input: var(--color-carbon-fiber);            /* Dark input backgrounds */
-    --ring: var(--color-brass-yellow);
-    --radius: 0.25rem;                             /* Consistent boxy radius */
-
-    /* Semantic colors for components */
-    --primary: var(--color-titanium-white);
-    --primary-foreground: var(--color-night-sight);
-    --secondary: var(--color-tactical-gray);
-    --secondary-foreground: var(--color-titanium-white);
-    --destructive: var(--color-crimson-trace);
-    --destructive-foreground: var(--color-titanium-white);
-    --accent: var(--color-cerakote-blue);        /* Consistent vibrant ayu-blue */
-    --accent-foreground: var(--color-titanium-white);
-    --popover: var(--overlay-bg-dark);            /* Mica glass dark popover backgrounds */
-    --popover-foreground: var(--overlay-text-dark);
-  }
-
   * {
     border-color: var(--border);
   }
@@ -404,322 +475,342 @@
 }
 
 @layer utilities {
-  /* ================== PROFESSIONAL TRANSITION UTILITIES ================== */
+  /* ================== TRANSITION UTILITIES ================== */
   .transition-stripe-fast    { transition: all 150ms cubic-bezier(0.215, 0.61, 0.355, 1); }
   .transition-stripe-normal  { transition: all 250ms cubic-bezier(0.215, 0.61, 0.355, 1); }
   .transition-stripe-slow    { transition: all 350ms cubic-bezier(0.215, 0.61, 0.355, 1); }
   .transition-elastic        { transition: all 250ms cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   .transition-smooth         { transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
 
-  /* ================== COMPREHENSIVE SPACING UTILITIES ================== */
-  .space-micro { margin: var(--space-micro); }
-  .space-tiny { margin: var(--space-tiny); }
-  .space-xs { margin: var(--space-xs); }
-  .space-sm { margin: var(--space-sm); }
-  .space-base { margin: var(--space-base); }
-  .space-md { margin: var(--space-md); }
-  .space-lg { margin: var(--space-lg); }
-  .space-xl { margin: var(--space-xl); }
-  .space-2xl { margin: var(--space-2xl); }
-  .space-3xl { margin: var(--space-3xl); }
-  .space-4xl { margin: var(--space-4xl); }
-
-  /* Padding variants */
-  .p-micro { padding: var(--space-micro); }
-  .p-tiny { padding: var(--space-tiny); }
-  .p-xs { padding: var(--space-xs); }
-  .p-sm { padding: var(--space-sm); }
-  .p-base { padding: var(--space-base); }
-  .p-md { padding: var(--space-md); }
-  .p-lg { padding: var(--space-lg); }
-  .p-xl { padding: var(--space-xl); }
-  .p-2xl { padding: var(--space-2xl); }
-  .p-3xl { padding: var(--space-3xl); }
-  .p-4xl { padding: var(--space-4xl); }
-
-  /* Gap variants */
-  .gap-micro { gap: var(--space-micro); }
-  .gap-tiny { gap: var(--space-tiny); }
-  .gap-xs { gap: var(--space-xs); }
-  .gap-sm { gap: var(--space-sm); }
-  .gap-base { gap: var(--space-base); }
-  .gap-md { gap: var(--space-md); }
-  .gap-lg { gap: var(--space-lg); }
-  .gap-xl { gap: var(--space-xl); }
-  .gap-2xl { gap: var(--space-2xl); }
-  .gap-3xl { gap: var(--space-3xl); }
-  .gap-4xl { gap: var(--space-4xl); }
-
-  /* Space Between (space-y-*) Utilities */
-  .space-y-micro > * + * { margin-top: var(--space-micro); }
-  .space-y-tiny > * + * { margin-top: var(--space-tiny); }
-  .space-y-xs > * + * { margin-top: var(--space-xs); }
-  .space-y-sm > * + * { margin-top: var(--space-sm); }
-  .space-y-base > * + * { margin-top: var(--space-base); }
-  .space-y-md > * + * { margin-top: var(--space-md); }
-  .space-y-lg > * + * { margin-top: var(--space-lg); }
-  .space-y-xl > * + * { margin-top: var(--space-xl); }
-  .space-y-2xl > * + * { margin-top: var(--space-2xl); }
-  .space-y-3xl > * + * { margin-top: var(--space-3xl); }
-  .space-y-4xl > * + * { margin-top: var(--space-4xl); }
-
-  /* Margin Top (mt-*) Utilities */
-  .mt-micro { margin-top: var(--space-micro); }
-  .mt-tiny { margin-top: var(--space-tiny); }
-  .mt-xs { margin-top: var(--space-xs); }
-  .mt-sm { margin-top: var(--space-sm); }
-  .mt-base { margin-top: var(--space-base); }
-  .mt-md { margin-top: var(--space-md); }
-  .mt-lg { margin-top: var(--space-lg); }
-  .mt-xl { margin-top: var(--space-xl); }
-  .mt-2xl { margin-top: var(--space-2xl); }
-  .mt-3xl { margin-top: var(--space-3xl); }
-  .mt-4xl { margin-top: var(--space-4xl); }
-
-  /* Margin Bottom (mb-*) Utilities */
-  .mb-micro { margin-bottom: var(--space-micro); }
-  .mb-tiny { margin-bottom: var(--space-tiny); }
-  .mb-xs { margin-bottom: var(--space-xs); }
-  .mb-sm { margin-bottom: var(--space-sm); }
-  .mb-base { margin-bottom: var(--space-base); }
-  .mb-md { margin-bottom: var(--space-md); }
-  .mb-lg { margin-bottom: var(--space-lg); }
-  .mb-xl { margin-bottom: var(--space-xl); }
-  .mb-2xl { margin-bottom: var(--space-2xl); }
-  .mb-3xl { margin-bottom: var(--space-3xl); }
-  .mb-4xl { margin-bottom: var(--space-4xl); }
-
-  /* Margin Left (ml-*) Utilities */
-  .ml-micro { margin-left: var(--space-micro); }
-  .ml-tiny { margin-left: var(--space-tiny); }
-  .ml-xs { margin-left: var(--space-xs); }
-  .ml-sm { margin-left: var(--space-sm); }
-  .ml-base { margin-left: var(--space-base); }
-  .ml-md { margin-left: var(--space-md); }
-  .ml-lg { margin-left: var(--space-lg); }
-  .ml-xl { margin-left: var(--space-xl); }
-  .ml-2xl { margin-left: var(--space-2xl); }
-  .ml-3xl { margin-left: var(--space-3xl); }
-  .ml-4xl { margin-left: var(--space-4xl); }
-
-  /* Margin Right (mr-*) Utilities */
-  .mr-micro { margin-right: var(--space-micro); }
-  .mr-tiny { margin-right: var(--space-tiny); }
-  .mr-xs { margin-right: var(--space-xs); }
-  .mr-sm { margin-right: var(--space-sm); }
-  .mr-base { margin-right: var(--space-base); }
-  .mr-md { margin-right: var(--space-md); }
-  .mr-lg { margin-right: var(--space-lg); }
-  .mr-xl { margin-right: var(--space-xl); }
-  .mr-2xl { margin-right: var(--space-2xl); }
-  .mr-3xl { margin-right: var(--space-3xl); }
-  .mr-4xl { margin-right: var(--space-4xl); }
-
-  /* Padding Top (pt-*) Utilities */
-  .pt-micro { padding-top: var(--space-micro); }
-  .pt-tiny { padding-top: var(--space-tiny); }
-  .pt-xs { padding-top: var(--space-xs); }
-  .pt-sm { padding-top: var(--space-sm); }
-  .pt-base { padding-top: var(--space-base); }
-  .pt-md { padding-top: var(--space-md); }
-  .pt-lg { padding-top: var(--space-lg); }
-  .pt-xl { padding-top: var(--space-xl); }
-  .pt-2xl { padding-top: var(--space-2xl); }
-  .pt-3xl { padding-top: var(--space-3xl); }
-  .pt-4xl { padding-top: var(--space-4xl); }
-
-  /* Padding Bottom (pb-*) Utilities */
-  .pb-micro { padding-bottom: var(--space-micro); }
-  .pb-tiny { padding-bottom: var(--space-tiny); }
-  .pb-xs { padding-bottom: var(--space-xs); }
-  .pb-sm { padding-bottom: var(--space-sm); }
-  .pb-base { padding-bottom: var(--space-base); }
-  .pb-md { padding-bottom: var(--space-md); }
-  .pb-lg { padding-bottom: var(--space-lg); }
-  .pb-xl { padding-bottom: var(--space-xl); }
-  .pb-2xl { padding-bottom: var(--space-2xl); }
-  .pb-3xl { padding-bottom: var(--space-3xl); }
-  .pb-4xl { padding-bottom: var(--space-4xl); }
-
-  /* Padding Y (py-*) Utilities */
-  .py-micro { padding-top: var(--space-micro); padding-bottom: var(--space-micro); }
-  .py-tiny { padding-top: var(--space-tiny); padding-bottom: var(--space-tiny); }
-  .py-xs { padding-top: var(--space-xs); padding-bottom: var(--space-xs); }
-  .py-sm { padding-top: var(--space-sm); padding-bottom: var(--space-sm); }
-  .py-base { padding-top: var(--space-base); padding-bottom: var(--space-base); }
-  .py-md { padding-top: var(--space-md); padding-bottom: var(--space-md); }
-  .py-lg { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
-  .py-xl { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
-  .py-2xl { padding-top: var(--space-2xl); padding-bottom: var(--space-2xl); }
-  .py-3xl { padding-top: var(--space-3xl); padding-bottom: var(--space-3xl); }
-  .py-4xl { padding-top: var(--space-4xl); padding-bottom: var(--space-4xl); }
-
-  /* Padding X (px-*) Utilities */
-  .px-micro { padding-left: var(--space-micro); padding-right: var(--space-micro); }
-  .px-tiny { padding-left: var(--space-tiny); padding-right: var(--space-tiny); }
-  .px-xs { padding-left: var(--space-xs); padding-right: var(--space-xs); }
-  .px-sm { padding-left: var(--space-sm); padding-right: var(--space-sm); }
-  .px-base { padding-left: var(--space-base); padding-right: var(--space-base); }
-  .px-md { padding-left: var(--space-md); padding-right: var(--space-md); }
-  .px-lg { padding-left: var(--space-lg); padding-right: var(--space-lg); }
-  .px-xl { padding-left: var(--space-xl); padding-right: var(--space-xl); }
-  .px-2xl { padding-left: var(--space-2xl); padding-right: var(--space-2xl); }
-  .px-3xl { padding-left: var(--space-3xl); padding-right: var(--space-3xl); }
-  .px-4xl { padding-left: var(--space-4xl); padding-right: var(--space-4xl); }
-
-  /* Padding Left (pl-*) Utilities */
-  .pl-micro { padding-left: var(--space-micro); }
-  .pl-tiny { padding-left: var(--space-tiny); }
-  .pl-xs { padding-left: var(--space-xs); }
-  .pl-sm { padding-left: var(--space-sm); }
-  .pl-base { padding-left: var(--space-base); }
-  .pl-md { padding-left: var(--space-md); }
-  .pl-lg { padding-left: var(--space-lg); }
-  .pl-xl { padding-left: var(--space-xl); }
-  .pl-2xl { padding-left: var(--space-2xl); }
-  .pl-3xl { padding-left: var(--space-3xl); }
-  .pl-4xl { padding-left: var(--space-4xl); }
-
-  /* Padding Right (pr-*) Utilities */
-  .pr-micro { padding-right: var(--space-micro); }
-  .pr-tiny { padding-right: var(--space-tiny); }
-  .pr-xs { padding-right: var(--space-xs); }
-  .pr-sm { padding-right: var(--space-sm); }
-  .pr-base { padding-right: var(--space-base); }
-  .pr-md { padding-right: var(--space-md); }
-  .pr-lg { padding-right: var(--space-lg); }
-  .pr-xl { padding-right: var(--space-xl); }
-  .pr-2xl { padding-right: var(--space-2xl); }
-  .pr-3xl { padding-right: var(--space-3xl); }
-  .pr-4xl { padding-right: var(--space-4xl); }
-
-  /* ================== BORDER RADIUS UTILITIES ================== */
-  .rounded-micro { border-radius: var(--radius-micro); }
-  .rounded-xs { border-radius: var(--radius-xs); }
-  .rounded-sm { border-radius: var(--radius-sm); }
-  .rounded-base { border-radius: var(--radius-base); }
-  .rounded-md { border-radius: var(--radius-md); }
-  .rounded-lg { border-radius: var(--radius-lg); }
-  .rounded-xl { border-radius: var(--radius-xl); }
-  .rounded-2xl { border-radius: var(--radius-2xl); }
-  .rounded-full { border-radius: var(--radius-full); }
   
-  /* Semantic Border Radius Utilities - Design Token Mapping */
-  .rounded-button { border-radius: var(--radius-sm); }
-  .rounded-input { border-radius: var(--radius-md); }
-  .rounded-card { border-radius: var(--radius-lg); }
-  .rounded-large { border-radius: var(--radius-xl); }
-  .rounded-overlay { border-radius: var(--radius-2xl); }
 
-  /* ================== Z-INDEX UTILITIES ================== */
-  .z-behind { z-index: var(--z-behind); }
-  .z-base { z-index: var(--z-base); }
-  .z-elevated { z-index: var(--z-elevated); }
-  .z-dropdown { z-index: var(--z-dropdown); }
-  .z-sticky { z-index: var(--z-sticky); }
-  .z-popover { z-index: var(--z-popover); }
-  .z-overlay { z-index: var(--z-overlay); }
-  .z-modal { z-index: var(--z-modal); }
-  .z-toast { z-index: var(--z-toast); }
-  .z-tooltip { z-index: var(--z-tooltip); }
-  .z-maximum { z-index: var(--z-maximum); }
+  .focus-primary { box-shadow: var(--shadow-focus-primary); }
+  .focus-secondary { box-shadow: var(--shadow-focus-secondary); }
+  .focus-blue { box-shadow: var(--shadow-focus-blue); }
 
-  /* ================== ICON SIZE UTILITIES ================== */
-  .icon-xs { width: var(--icon-xs); height: var(--icon-xs); }
-  .icon-sm { width: var(--icon-sm); height: var(--icon-sm); }
-  .icon-md { width: var(--icon-md); height: var(--icon-md); }
-  .icon-lg { width: var(--icon-lg); height: var(--icon-lg); }
-  .icon-xl { width: var(--icon-xl); height: var(--icon-xl); }
-  .icon-2xl { width: var(--icon-2xl); height: var(--icon-2xl); }
+  /* ================== SEMANTIC SHADOW UTILITIES ================== */
+  /* Base shadow levels */
+  .shadow-ghost { box-shadow: var(--shadow-ghost); }
+  .shadow-whisper { box-shadow: var(--shadow-whisper); }
+  .shadow-present { box-shadow: var(--shadow-present); }
+  .shadow-elevated { box-shadow: var(--shadow-elevated); }
+  .shadow-prominent { box-shadow: var(--shadow-prominent); }
+  .shadow-commanding { box-shadow: var(--shadow-commanding); }
+  .shadow-hero { box-shadow: var(--shadow-hero); }
+  .shadow-modal { box-shadow: var(--shadow-modal); }
+
+  /* Tactical variants */
+  .shadow-tactical-ghost { box-shadow: var(--shadow-tactical-ghost); }
+  .shadow-tactical-whisper { box-shadow: var(--shadow-tactical-whisper); }
+  .shadow-tactical-present { box-shadow: var(--shadow-tactical-present); }
+  .shadow-tactical-elevated { box-shadow: var(--shadow-tactical-elevated); }
+
+  /* Brand-colored shadows */
+  .shadow-primary { box-shadow: var(--shadow-primary); }
+  .shadow-secondary { box-shadow: var(--shadow-secondary); }
+  .shadow-success { box-shadow: var(--shadow-success); }
+  .shadow-warning { box-shadow: var(--shadow-warning); }
+
+  /* Interactive hover progressions */
+  .shadow-ghost:hover { box-shadow: var(--shadow-ghost-hover); }
+  .shadow-whisper:hover { box-shadow: var(--shadow-whisper-hover); }
+  .shadow-present:hover { box-shadow: var(--shadow-present-hover); }
+  .shadow-elevated:hover { box-shadow: var(--shadow-elevated-hover); }
+  .shadow-prominent:hover { box-shadow: var(--shadow-prominent-hover); }
+  .shadow-commanding:hover { box-shadow: var(--shadow-commanding-hover); }
+  .shadow-hero:hover { box-shadow: var(--shadow-hero-hover); }
+
+  /* Focus states with colored glow */
+  .shadow-focus-tactical { box-shadow: var(--shadow-focus-tactical); }
+  .shadow-focus-success { box-shadow: var(--shadow-focus-success); }
+  .shadow-focus-warning { box-shadow: var(--shadow-focus-warning); }
+
+  /* Active states (pressed feeling) */
+  .shadow-whisper:active { box-shadow: var(--shadow-whisper-active); }
+  .shadow-present:active { box-shadow: var(--shadow-present-active); }
+  .shadow-elevated:active { box-shadow: var(--shadow-elevated-active); }
+  .shadow-prominent:active { box-shadow: var(--shadow-prominent-active); }
+  .shadow-commanding:active { box-shadow: var(--shadow-commanding-active); }
+
+  /* ================== GRADIENT UTILITIES ================== */
+  .bg-gradient-fire { background: var(--gradient-fire); }
+  .bg-gradient-nature { background: var(--gradient-nature); }
+  .bg-gradient-success { background: var(--gradient-success); }
+  .bg-gradient-brand-warm { background: var(--gradient-brand-warm); }
+  .bg-gradient-brand-cool { background: var(--gradient-brand-cool); }
+  .bg-gradient-card-warm { background: var(--gradient-card-warm); }
+  .bg-gradient-card-cool { background: var(--gradient-card-cool); }
+  .bg-gradient-glass { background: var(--gradient-glass); }
+  .bg-gradient-glass-dark { background: var(--gradient-glass-dark); }
   
-  /* ================== ICON COLOR UTILITIES ================== */
-  .icon-primary { color: var(--icon-primary); }
-  .icon-secondary { color: var(--icon-secondary); }
-  .icon-accent { color: var(--icon-accent); }
-  .icon-muted { color: var(--icon-muted); }
-  .icon-success { color: var(--icon-success); }
-  .icon-warning { color: var(--icon-warning); }
-  .icon-danger { color: var(--icon-danger); }
-  .icon-info { color: var(--icon-info); }
+  /* Strategic Color Flow Hero Gradients */
+  .bg-gradient-home-hero { background: var(--gradient-home-hero); }
+  .bg-gradient-events-hero { background: var(--gradient-events-hero); }
+  .bg-gradient-directory-hero { background: var(--gradient-directory-hero); }
+  .bg-gradient-armory-hero { background: var(--gradient-armory-hero); }
+  .bg-gradient-intel-hero { background: var(--gradient-intel-hero); }
+  .bg-gradient-marketplace-hero { background: var(--gradient-marketplace-hero); }
+
+  /* ================== SITE LAYOUT UTILITIES ================== */
+  .max-w-site { max-width: 1440px; }
+
+  /* ================== PAGE-SPECIFIC THEMING SYSTEM ================== */
   
-  /* Hover variants for interactive icons */
-  .icon-hover-primary:hover { color: var(--icon-primary); }
-  .icon-hover-secondary:hover { color: var(--icon-secondary); }
-  .icon-hover-accent:hover { color: var(--icon-accent); }
-  
-  /* Background variants for icon containers */
-  .icon-bg-primary { background-color: var(--icon-primary); color: var(--color-gunmetal-black); }
-  .icon-bg-secondary { background-color: var(--icon-secondary); color: var(--color-nickel-white); }
-  
-  /* ================== THEME-AWARE TEXT COLOR UTILITIES ================== */
-  /* Use these instead of hardcoded colors for proper dark mode support */
-  .text-theme-primary { color: var(--foreground); }
-  .text-theme-secondary { color: var(--muted-foreground); }
-  .text-theme-accent { color: var(--accent-foreground); }
-  .text-theme-muted { color: var(--muted-foreground); }
-  
-  /* Theme-aware brand colors that work in both light and dark */
-  .text-brand-primary { color: var(--color-brass-yellow); }
-  .text-brand-secondary { color: var(--color-copper-orange); }
-  .text-brand-accent { color: var(--color-scope-blue); }
-  
-  /* Background theme utilities */
-  .bg-theme-card { background-color: var(--card); }
-  .bg-theme-primary { background-color: var(--primary); }
-  .bg-theme-secondary { background-color: var(--secondary); }
-  .bg-theme-muted { background-color: var(--muted); }
-  
-  /* ================== ENHANCED WINDOWS 11 MICA OVERLAY SYSTEM ================== */
-  /* Apply mica glass effect to any overlay component */
-  .mica-overlay {
-    background: rgba(255, 255, 255, 0.85);  /* Much more opaque like real Mica */
-    -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(105%);
-    backdrop-filter: blur(30px) saturate(200%) brightness(105%);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    position: relative;
-    isolation: isolate;
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  /* Home Theme - 1970s Butter Yellow/Golden Sunrise */
+  .theme-home {
+    --page-primary: var(--nav-home);
+    --page-primary-foreground: var(--color-dark-chocolate);
+    --page-accent: var(--color-ember-glow);
+    --page-gradient: linear-gradient(135deg, var(--nav-home), var(--color-ember-glow));
   }
   
-  .dark .mica-overlay {
-    background: rgba(47, 49, 53, 0.90);  /* Even more opaque in dark mode */
+  /* Events Theme - 1970s Competition Red/Energy Orange-Red */
+  .theme-events {
+    --page-primary: var(--nav-events);
+    --page-primary-foreground: var(--color-crisp-off-white);
+    --page-accent: var(--nav-home);
+    --page-gradient: linear-gradient(135deg, var(--nav-events), var(--nav-home));
+  }
+  
+  /* Directory Theme - 1970s Rich Chocolate/Warm Burgundy */
+  .theme-directory {
+    --page-primary: var(--nav-directory);
+    --page-primary-foreground: var(--color-crisp-off-white);
+    --page-accent: var(--nav-forums);
+    --page-gradient: linear-gradient(135deg, var(--nav-directory), var(--nav-forums));
+  }
+  
+  /* Armory Theme - 1970s Steel Blue/Tactical Cyan */
+  .theme-armory {
+    --page-primary: var(--nav-armory);
+    --page-primary-foreground: var(--color-crisp-off-white);
+    --page-accent: var(--nav-intel);
+    --page-gradient: linear-gradient(135deg, var(--nav-armory), var(--nav-intel));
+  }
+  
+  /* Intel Theme - 1970s Military Brown/Amber Alert */
+  .theme-map {
+    --page-primary: var(--nav-intel);
+    --page-primary-foreground: var(--color-crisp-off-white);
+    --page-accent: var(--nav-armory);
+    --page-gradient: linear-gradient(135deg, var(--nav-intel), var(--nav-armory));
+  }
+  
+  /* Marketplace Theme - 1970s Commerce Gold/Chartreuse Highlight */
+  .theme-marketplace {
+    --page-primary: var(--nav-marketplace);
+    --page-primary-foreground: var(--color-dark-chocolate);
+    --page-accent: var(--nav-events);
+    --page-gradient: linear-gradient(135deg, var(--nav-marketplace), var(--nav-events));
+  }
+  
+  /* Forums Theme - 1970s Community Amber/Soft Discussion */
+  .theme-forums {
+    --page-primary: var(--nav-forums);
+    --page-primary-foreground: var(--color-dark-chocolate);
+    --page-accent: var(--nav-home);
+    --page-gradient: linear-gradient(135deg, var(--nav-forums), var(--nav-home));
+  }
+  
+  /* Page Theme Utility Classes */
+  .bg-page-primary { background-color: var(--page-primary); }
+  .text-page-primary { color: var(--page-primary); }
+  .text-page-primary-foreground { color: var(--page-primary-foreground); }
+  .bg-page-accent { background-color: var(--page-accent); }
+  .text-page-accent { color: var(--page-accent); }
+  .bg-page-gradient { background: var(--page-gradient); }
+  .border-page-primary { border-color: var(--page-primary); }
+  
+  /* Page Theme Variants */
+  .bg-page-primary-10 { background-color: color-mix(in srgb, var(--page-primary) 10%, transparent); }
+  .bg-page-primary-20 { background-color: color-mix(in srgb, var(--page-primary) 20%, transparent); }
+  .bg-page-primary-30 { background-color: color-mix(in srgb, var(--page-primary) 30%, transparent); }
+  .hover\:bg-page-primary:hover { background-color: var(--page-primary); }
+  .hover\:text-page-primary:hover { color: var(--page-primary); }
+  .border-page-primary-30 { border-color: color-mix(in srgb, var(--page-primary) 30%, transparent); }
+
+  /* ================== 20-COLOR SYSTEM UTILITIES ================== */
+  /* Dark Theme: Bogus Basin Colors */
+  .text-dark-chocolate { color: var(--color-dark-chocolate); }
+  .text-rusty-orange { color: var(--color-rusty-orange); }
+  .text-crisp-off-white { color: var(--color-crisp-off-white); }
+  .text-rich-loam { color: var(--color-rich-loam); }
+  .text-warm-stone { color: var(--color-warm-stone); }
+  .text-lodgepole-green { color: var(--color-lodgepole-green); }
+  .text-deep-earth { color: var(--color-deep-earth); }
+  .text-ember-glow { color: var(--color-ember-glow); }
+  .text-warning-amber { color: var(--color-warning-amber); }
+  .text-border-bark { color: var(--color-border-bark); }
+
+  /* Light Theme: River/Sagebrush Colors */
+  .text-light-peachy { color: var(--color-light-peachy); }
+  .text-slate-blue { color: var(--color-slate-blue); }
+  .text-shared-dark { color: var(--color-shared-dark); }
+  .text-sandy-ochre { color: var(--color-sandy-ochre); }
+  .text-dried-clay { color: var(--color-dried-clay); }
+  .text-pale-stone { color: var(--color-pale-stone); }
+  .text-sagebrush-green { color: var(--color-sagebrush-green); }
+  .text-card-surface { color: var(--color-card-surface); }
+  .text-warning-clay { color: var(--color-warning-clay); }
+  .text-info-river { color: var(--color-info-river); }
+  .text-foothills-purple { color: var(--color-foothills-purple); }
+  .text-canyon-clay { color: var(--color-canyon-clay); }
+  .text-high-desert-sage { color: var(--color-high-desert-sage); }
+  .text-sunrise-amber { color: var(--color-sunrise-amber); }
+  .text-meadow-sage { color: var(--color-meadow-sage); }
+  .text-bruneau-sandstone { color: var(--color-bruneau-sandstone); }
+  .text-volcanic-ash { color: var(--color-volcanic-ash); }
+
+  /* Background Colors */
+  .bg-dark-chocolate { background-color: var(--color-dark-chocolate); }
+  .bg-rusty-orange { background-color: var(--color-rusty-orange); }
+  .bg-crisp-off-white { background-color: var(--color-crisp-off-white); }
+  .bg-rich-loam { background-color: var(--color-rich-loam); }
+  .bg-warm-stone { background-color: var(--color-warm-stone); }
+  .bg-lodgepole-green { background-color: var(--color-lodgepole-green); }
+  .bg-deep-earth { background-color: var(--color-deep-earth); }
+  .bg-ember-glow { background-color: var(--color-ember-glow); }
+  .bg-warning-amber { background-color: var(--color-warning-amber); }
+  .bg-border-bark { background-color: var(--color-border-bark); }
+  .bg-light-peachy { background-color: var(--color-light-peachy); }
+  .bg-slate-blue { background-color: var(--color-slate-blue); }
+  .bg-shared-dark { background-color: var(--color-shared-dark); }
+  .bg-sandy-ochre { background-color: var(--color-sandy-ochre); }
+  .bg-dried-clay { background-color: var(--color-dried-clay); }
+  .bg-pale-stone { background-color: var(--color-pale-stone); }
+  .bg-sagebrush-green { background-color: var(--color-sagebrush-green); }
+  .bg-card-surface { background-color: var(--color-card-surface); }
+  .bg-warning-clay { background-color: var(--color-warning-clay); }
+  .bg-info-river { background-color: var(--color-info-river); }
+  .bg-foothills-purple { background-color: var(--color-foothills-purple); }
+  .bg-canyon-clay { background-color: var(--color-canyon-clay); }
+  .bg-high-desert-sage { background-color: var(--color-high-desert-sage); }
+  .bg-sunrise-amber { background-color: var(--color-sunrise-amber); }
+  .bg-meadow-sage { background-color: var(--color-meadow-sage); }
+  .bg-bruneau-sandstone { background-color: var(--color-bruneau-sandstone); }
+  .bg-volcanic-ash { background-color: var(--color-volcanic-ash); }
+
+  /* Hover Text Colors */
+  .hover\:text-dark-chocolate:hover { color: var(--color-dark-chocolate); }
+  .hover\:text-rusty-orange:hover { color: var(--color-rusty-orange); }
+  .hover\:text-crisp-off-white:hover { color: var(--color-crisp-off-white); }
+  .hover\:text-rich-loam:hover { color: var(--color-rich-loam); }
+  .hover\:text-warm-stone:hover { color: var(--color-warm-stone); }
+  .hover\:text-lodgepole-green:hover { color: var(--color-lodgepole-green); }
+  .hover\:text-deep-earth:hover { color: var(--color-deep-earth); }
+  .hover\:text-ember-glow:hover { color: var(--color-ember-glow); }
+  .hover\:text-warning-amber:hover { color: var(--color-warning-amber); }
+  .hover\:text-border-bark:hover { color: var(--color-border-bark); }
+  .hover\:text-light-peachy:hover { color: var(--color-light-peachy); }
+  .hover\:text-slate-blue:hover { color: var(--color-slate-blue); }
+  .hover\:text-shared-dark:hover { color: var(--color-shared-dark); }
+  .hover\:text-sandy-ochre:hover { color: var(--color-sandy-ochre); }
+  .hover\:text-dried-clay:hover { color: var(--color-dried-clay); }
+  .hover\:text-pale-stone:hover { color: var(--color-pale-stone); }
+  .hover\:text-sagebrush-green:hover { color: var(--color-sagebrush-green); }
+  .hover\:text-card-surface:hover { color: var(--color-card-surface); }
+  .hover\:text-warning-clay:hover { color: var(--color-warning-clay); }
+  .hover\:text-info-river:hover { color: var(--color-info-river); }
+  .hover\:text-foothills-purple:hover { color: var(--color-foothills-purple); }
+  .hover\:text-canyon-clay:hover { color: var(--color-canyon-clay); }
+  .hover\:text-high-desert-sage:hover { color: var(--color-high-desert-sage); }
+  .hover\:text-sunrise-amber:hover { color: var(--color-sunrise-amber); }
+  .hover\:text-meadow-sage:hover { color: var(--color-meadow-sage); }
+  .hover\:text-bruneau-sandstone:hover { color: var(--color-bruneau-sandstone); }
+  .hover\:text-volcanic-ash:hover { color: var(--color-volcanic-ash); }
+
+  /* ================== 1970s NAVIGATION UTILITIES ================== */
+  /* Theme-aware navigation colors - automatically switch based on light/dark */
+  .text-nav-home { color: var(--nav-home); }
+  .text-nav-events { color: var(--nav-events); }
+  .text-nav-directory { color: var(--nav-directory); }
+  .text-nav-armory { color: var(--nav-armory); }
+  .text-nav-intel { color: var(--nav-intel); }
+  .text-nav-marketplace { color: var(--nav-marketplace); }
+  .text-nav-forums { color: var(--nav-forums); }
+
+  .bg-nav-home { background-color: var(--nav-home); }
+  .bg-nav-events { background-color: var(--nav-events); }
+  .bg-nav-directory { background-color: var(--nav-directory); }
+  .bg-nav-armory { background-color: var(--nav-armory); }
+  .bg-nav-intel { background-color: var(--nav-intel); }
+  .bg-nav-marketplace { background-color: var(--nav-marketplace); }
+  .bg-nav-forums { background-color: var(--nav-forums); }
+
+  .hover\:text-nav-home:hover { color: var(--nav-home); }
+  .hover\:text-nav-events:hover { color: var(--nav-events); }
+  .hover\:text-nav-directory:hover { color: var(--nav-directory); }
+  .hover\:text-nav-armory:hover { color: var(--nav-armory); }
+  .hover\:text-nav-intel:hover { color: var(--nav-intel); }
+  .hover\:text-nav-marketplace:hover { color: var(--nav-marketplace); }
+  .hover\:text-nav-forums:hover { color: var(--nav-forums); }
+
+  .border-nav-home { border-color: var(--nav-home); }
+  .border-nav-events { border-color: var(--nav-events); }
+  .border-nav-directory { border-color: var(--nav-directory); }
+  .border-nav-armory { border-color: var(--nav-armory); }
+  .border-nav-intel { border-color: var(--nav-intel); }
+  .border-nav-marketplace { border-color: var(--nav-marketplace); }
+  .border-nav-forums { border-color: var(--nav-forums); }
+
+  /* ================== GRUVBOX UTILITIES ================== */
+  /* Night Ops theme colors for eye-friendly reading */
+  .text-gruvbox-cream { color: var(--gruvbox-fg-cream); }
+  .text-gruvbox-soft { color: var(--gruvbox-fg-soft); }
+  .text-gruvbox-muted { color: var(--gruvbox-fg-muted); }
+  .text-gruvbox-orange { color: var(--gruvbox-orange); }
+  .text-gruvbox-yellow { color: var(--gruvbox-yellow); }
+  .text-gruvbox-green { color: var(--gruvbox-green); }
+  .text-gruvbox-blue { color: var(--gruvbox-blue); }
+  .text-gruvbox-aqua { color: var(--gruvbox-aqua); }
+  .text-gruvbox-purple { color: var(--gruvbox-purple); }
+  .text-gruvbox-red { color: var(--gruvbox-red); }
+
+  .bg-gruvbox-dark { background-color: var(--gruvbox-bg-dark); }
+  .bg-gruvbox-soft { background-color: var(--gruvbox-bg-soft); }
+  .bg-gruvbox-surface { background-color: var(--gruvbox-bg-surface); }
+  .bg-gruvbox-orange { background-color: var(--gruvbox-orange); }
+  .bg-gruvbox-yellow { background-color: var(--gruvbox-yellow); }
+  .bg-gruvbox-green { background-color: var(--gruvbox-green); }
+  .bg-gruvbox-blue { background-color: var(--gruvbox-blue); }
+  .bg-gruvbox-aqua { background-color: var(--gruvbox-aqua); }
+  .bg-gruvbox-purple { background-color: var(--gruvbox-purple); }
+  .bg-gruvbox-red { background-color: var(--gruvbox-red); }
+
+  /* Gruvbox opacity variants for subtle effects */
+  .bg-gruvbox-orange\/10 { background-color: color-mix(in srgb, var(--gruvbox-orange) 10%, transparent); }
+  .bg-gruvbox-orange\/20 { background-color: color-mix(in srgb, var(--gruvbox-orange) 20%, transparent); }
+  .bg-gruvbox-orange\/30 { background-color: color-mix(in srgb, var(--gruvbox-orange) 30%, transparent); }
+  .border-gruvbox-orange\/30 { border-color: color-mix(in srgb, var(--gruvbox-orange) 30%, transparent); }
+
+  /* ================== WINDOWS 11 MICA EFFECT ================== */
+  .mica {
+    background: rgba(248, 246, 241, 0.8);
+    -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(105%);
+    backdrop-filter: blur(20px) saturate(180%) brightness(105%);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    -webkit-backdrop-filter: blur(35px) saturate(220%) brightness(90%);
-    backdrop-filter: blur(35px) saturate(220%) brightness(90%);
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.20),
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.08),
       inset 0 1px 0 rgba(255, 255, 255, 0.15);
   }
-  
-  /* Add subtle noise texture overlay */
-  .mica-overlay::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-      radial-gradient(circle at 25% 30%, rgba(242, 203, 5, 0.04) 0%, transparent 40%),
-      radial-gradient(circle at 75% 70%, rgba(242, 135, 5, 0.03) 0%, transparent 40%);
-    border-radius: inherit;
-    pointer-events: none;
-    z-index: -1;
+
+  .dark .mica {
+    background: rgba(47, 49, 53, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(95%);
+    backdrop-filter: blur(20px) saturate(180%) brightness(95%);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
-  
-  .dark .mica-overlay::before {
-    background: 
-      radial-gradient(circle at 25% 30%, rgba(242, 203, 5, 0.06) 0%, transparent 40%),
-      radial-gradient(circle at 75% 70%, rgba(242, 135, 5, 0.04) 0%, transparent 40%);
-  }
-  
-  /* Specific mica variants for different overlay types - Windows 11 Mica style */
+
   .mica-popover {
     background: rgba(248, 250, 252, 0.76);
     -webkit-backdrop-filter: blur(15px) saturate(310%) brightness(105%);
     backdrop-filter: blur(15px) saturate(310%) brightness(105%);
     border: 1px solid rgba(255, 255, 255, 0.38);
     position: relative;
-    box-shadow: 
+    box-shadow:
       0 6px 24px rgba(0, 0, 0, 0.10),
       0 2px 6px rgba(0, 0, 0, 0.06),
       inset 0 1px 0 rgba(255, 255, 255, 0.45);
@@ -731,162 +822,108 @@
     border: 1px solid rgba(255, 255, 255, 0.10);
     -webkit-backdrop-filter: blur(16px) saturate(270%) brightness(90%) contrast(112%);
     backdrop-filter: blur(16px) saturate(270%) brightness(90%) contrast(112%);
-    box-shadow: 
+    box-shadow:
       0 8px 28px rgba(0, 0, 0, 0.28),
       0 2px 8px rgba(0, 0, 0, 0.20),
       inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
-  
+
   .mica-dropdown {
-    /* Windows 11 Mica: Mainly opaque with highly saturated blur-through */
     background: rgba(248, 250, 252, 0.78);
     -webkit-backdrop-filter: blur(14px) saturate(320%) brightness(106%);
     backdrop-filter: blur(14px) saturate(320%) brightness(106%);
     border: 1px solid rgba(255, 255, 255, 0.4);
     position: relative;
-    box-shadow: 
+    box-shadow:
       0 8px 32px rgba(0, 0, 0, 0.12),
       0 2px 8px rgba(0, 0, 0, 0.08),
       inset 0 1px 0 rgba(255, 255, 255, 0.5);
     isolation: isolate;
   }
-  
+
   .dark .mica-dropdown {
-    /* Dark mode: Opaque with saturated background colors bleeding through */
     background: rgba(15, 23, 42, 0.82);
     border: 1px solid rgba(255, 255, 255, 0.12);
     -webkit-backdrop-filter: blur(16px) saturate(280%) brightness(85%) contrast(115%);
     backdrop-filter: blur(16px) saturate(280%) brightness(85%) contrast(115%);
-    box-shadow: 
+    box-shadow:
       0 8px 32px rgba(0, 0, 0, 0.35),
       0 2px 8px rgba(0, 0, 0, 0.25),
       inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
-  
+
   .mica-modal {
-    /* Windows 11 Mica for modals - highly opaque with saturated blur */
     background: rgba(248, 250, 252, 0.88);
     -webkit-backdrop-filter: blur(22px) saturate(380%) brightness(108%);
     backdrop-filter: blur(22px) saturate(380%) brightness(108%);
     border: 1px solid rgba(255, 255, 255, 0.45);
     position: relative;
-    box-shadow: 
+    box-shadow:
       0 16px 48px rgba(0, 0, 0, 0.15),
       0 4px 12px rgba(0, 0, 0, 0.10),
       inset 0 1px 0 rgba(255, 255, 255, 0.6);
     isolation: isolate;
   }
-  
+
   .dark .mica-modal {
     background: rgba(15, 23, 42, 0.90);
     border: 1px solid rgba(255, 255, 255, 0.15);
     -webkit-backdrop-filter: blur(24px) saturate(320%) brightness(88%) contrast(120%);
     backdrop-filter: blur(24px) saturate(320%) brightness(88%) contrast(120%);
-    box-shadow: 
+    box-shadow:
       0 16px 48px rgba(0, 0, 0, 0.40),
       0 4px 12px rgba(0, 0, 0, 0.30),
       inset 0 1px 0 rgba(255, 255, 255, 0.12);
   }
-  
+
   .mica-tooltip {
-    /* Windows 11 Mica for tooltips - balanced opacity with saturated blur */
     background: rgba(248, 250, 252, 0.72);
     -webkit-backdrop-filter: blur(12px) saturate(280%) brightness(102%);
     backdrop-filter: blur(12px) saturate(280%) brightness(102%);
     border: 1px solid rgba(255, 255, 255, 0.32);
     position: relative;
-    box-shadow: 
+    box-shadow:
       0 4px 16px rgba(0, 0, 0, 0.08),
       0 1px 4px rgba(0, 0, 0, 0.05),
       inset 0 1px 0 rgba(255, 255, 255, 0.4);
     isolation: isolate;
   }
-  
+
   .dark .mica-tooltip {
     background: rgba(15, 23, 42, 0.78);
     border: 1px solid rgba(255, 255, 255, 0.10);
     -webkit-backdrop-filter: blur(14px) saturate(240%) brightness(90%) contrast(108%);
     backdrop-filter: blur(14px) saturate(240%) brightness(90%) contrast(108%);
-    box-shadow: 
+    box-shadow:
       0 4px 16px rgba(0, 0, 0, 0.25),
       0 1px 4px rgba(0, 0, 0, 0.18),
       inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
-  
+
   .mica-toast {
-    /* Windows 11 Mica for toasts - opaque with saturated background bleeding */
     background: rgba(248, 250, 252, 0.74);
     -webkit-backdrop-filter: blur(16px) saturate(300%) brightness(106%);
     backdrop-filter: blur(16px) saturate(300%) brightness(106%);
     border: 1px solid rgba(255, 255, 255, 0.35);
     position: relative;
-    box-shadow: 
+    box-shadow:
       0 8px 28px rgba(0, 0, 0, 0.10),
       0 2px 8px rgba(0, 0, 0, 0.06),
       inset 0 1px 0 rgba(255, 255, 255, 0.42);
     isolation: isolate;
   }
-  
+
   .dark .mica-toast {
     background: rgba(15, 23, 42, 0.80);
     border: 1px solid rgba(255, 255, 255, 0.11);
     -webkit-backdrop-filter: blur(18px) saturate(260%) brightness(90%) contrast(112%);
     backdrop-filter: blur(18px) saturate(260%) brightness(90%) contrast(112%);
-    box-shadow: 
+    box-shadow:
       0 8px 28px rgba(0, 0, 0, 0.28),
       0 2px 8px rgba(0, 0, 0, 0.20),
       inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
-  
-  /* Removed generic dark mode rule - each component now has individual Windows 11 Mica styling */
-  
-  /* ================== ENHANCED TEXT CONTRAST FOR MICA DROPDOWNS ================== */
-  /* Ensure perfect readability against Windows 11 Mica backgrounds */
-  .mica-dropdown {
-    /* Enhanced text contrast and shadows for readability */
-    color: var(--foreground);
-  }
-  
-  .mica-dropdown [data-slot="select-item"] {
-    /* Stronger text contrast for dropdown items */
-    color: var(--foreground);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  }
-  
-  .mica-dropdown [data-slot="select-item"]:hover,
-  .mica-dropdown [data-slot="select-item"]:focus {
-    /* Enhanced hover/focus states for better visibility */
-    background: var(--accent);
-    color: var(--accent-foreground);
-    text-shadow: none;
-  }
-  
-  .mica-dropdown [data-slot="select-label"] {
-    /* Better label contrast */
-    color: var(--muted-foreground);
-    font-weight: 600;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
-  }
-  
-  .dark .mica-dropdown {
-    /* Dark mode text enhancements */
-    color: var(--foreground);
-  }
-  
-  .dark .mica-dropdown [data-slot="select-item"] {
-    /* Dark mode item text */
-    color: var(--foreground);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  }
-  
-  .dark .mica-dropdown [data-slot="select-label"] {
-    /* Dark mode label text */
-    color: var(--muted-foreground);
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* ================== ENHANCED MICA CARD VARIANTS ================== */
-  /* For cards that should have mica effect - Windows 11 Mica style */
+
   .mica-card {
     background: rgba(248, 250, 252, 0.80);
     -webkit-backdrop-filter: blur(12px) saturate(300%) brightness(104%);
@@ -895,468 +932,33 @@
     position: relative;
     isolation: isolate;
   }
-  
+
   .dark .mica-card {
     background: rgba(15, 23, 42, 0.84);
     border-color: rgba(255, 255, 255, 0.12);
     -webkit-backdrop-filter: blur(14px) saturate(260%) brightness(88%) contrast(110%);
     backdrop-filter: blur(14px) saturate(260%) brightness(88%) contrast(110%);
   }
-  
-  /* For premium mica cards with brand gradient - Windows 11 Mica style */
-  .mica-card-premium {
-    background: rgba(248, 250, 252, 0.85);
-    -webkit-backdrop-filter: blur(16px) saturate(340%) brightness(107%);
-    backdrop-filter: blur(16px) saturate(340%) brightness(107%);
-    border: 1px solid rgba(242, 203, 5, 0.25);
-    position: relative;
-    isolation: isolate;
-  }
-  
-  .mica-card-premium::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(242, 203, 5, 0.04) 0%, rgba(242, 135, 5, 0.03) 100%);
-    border-radius: inherit;
-    pointer-events: none;
-    z-index: -1;
-  }
-  
-  .dark .mica-card-premium {
-    background: rgba(15, 23, 42, 0.88);
-    border-color: rgba(242, 203, 5, 0.35);
-    -webkit-backdrop-filter: blur(18px) saturate(290%) brightness(92%) contrast(115%);
-    backdrop-filter: blur(18px) saturate(290%) brightness(92%) contrast(115%);
-  }
-  
-  .dark .mica-card-premium::before {
-    background: linear-gradient(135deg, rgba(242, 203, 5, 0.10) 0%, rgba(242, 135, 5, 0.07) 100%);
-  }
-  
-  .icon-bg-accent { background-color: var(--icon-accent); color: var(--color-nickel-white); }
 
-  /* ================== TYPOGRAPHY UTILITIES ================== */
-  .text-xs { font-size: var(--text-xs); }
-  .text-sm { font-size: var(--text-sm); }
-  .text-base { font-size: var(--text-base); }
-  .text-lg { font-size: var(--text-lg); }
-  .text-xl { font-size: var(--text-xl); }
-  .text-2xl { font-size: var(--text-2xl); }
-  .text-3xl { font-size: var(--text-3xl); }
-  .text-4xl { font-size: var(--text-4xl); }
-  .text-5xl { font-size: var(--text-5xl); }
-  .text-6xl { font-size: var(--text-6xl); }
-  .text-7xl { font-size: var(--text-7xl); }
-  .text-8xl { font-size: var(--text-8xl); }
-  .text-9xl { font-size: var(--text-9xl); }
-  
-  /* Semantic Typography Utilities - Design Token Mapping */
-  .text-caption { font-size: var(--text-xs); }
-  .text-body { font-size: var(--text-base); }
-  .text-body-sm { font-size: var(--text-sm); }
-  .text-body-lg { font-size: var(--text-lg); }
-  .text-heading-sm { font-size: var(--text-xl); }
-  .text-heading-md { font-size: var(--text-2xl); }
-  .text-heading-lg { font-size: var(--text-3xl); }
-  .text-heading-xl { font-size: var(--text-4xl); }
-
-  .leading-none { line-height: var(--leading-none); }
-  .leading-tight { line-height: var(--leading-tight); }
-  .leading-snug { line-height: var(--leading-snug); }
-  .leading-normal { line-height: var(--leading-normal); }
-  .leading-relaxed { line-height: var(--leading-relaxed); }
-  .leading-loose { line-height: var(--leading-loose); }
-
-  /* ================== STRIPE-INSPIRED COMPONENT CONTEXT CLASSES ================== */
-  /* Card Content Patterns */
-  .card-content {
-    padding: var(--card-padding);
-  }
-  
-  .card-title {
-    font-size: var(--card-title-size);
-    font-weight: 600;
-    line-height: var(--leading-tight);
-    color: var(--card-foreground);
-    margin-bottom: var(--space-sm);
-  }
-  
-  .card-body {
-    font-size: var(--card-body-size);
-    line-height: var(--leading-normal);
-    color: var(--muted-foreground);
-  }
-  
-  .card-caption {
-    font-size: var(--card-caption-size);
-    line-height: var(--leading-normal);
-    color: var(--muted-foreground);
-    opacity: 0.8;
-  }
-  
-  /* Button Size Variants - Context Aware */
-  .btn-sm {
-    height: var(--button-height-sm);
-    padding: var(--button-padding-sm);
-    font-size: var(--button-text-sm);
-    font-weight: 500;
-  }
-  
-  .btn-base {
-    height: var(--button-height-base);
-    padding: var(--button-padding-base);
-    font-size: var(--button-text-base);
-    font-weight: 500;
-  }
-  
-  .btn-lg {
-    height: var(--button-height-lg);
-    padding: var(--button-padding-lg);
-    font-size: var(--button-text-lg);
-    font-weight: 600;
-  }
-  
-  /* Component Density Variants */
-  .density-compact {
-    --local-padding: var(--space-sm);
-    --local-gap: var(--space-xs);
-    --card-padding: var(--space-base);           /* 16px - compact cards */
-    --button-height-sm: 1.75rem;                /* 28px - tighter buttons */
-    --button-height-base: 2.25rem;              /* 36px - tighter buttons */
-  }
-  
-  .density-default {
-    --local-padding: var(--space-md);
-    --local-gap: var(--space-sm);
-    --card-padding: var(--space-md);            /* 24px - default cards */
-    --button-height-sm: 2rem;                   /* 32px - standard buttons */
-    --button-height-base: 2.5rem;               /* 40px - standard buttons */
-  }
-  
-  .density-spacious {
-    --local-padding: var(--space-lg);
-    --local-gap: var(--space-md);
-    --card-padding: var(--space-lg);            /* 32px - spacious cards */
-    --button-height-sm: 2.25rem;                /* 36px - larger buttons */
-    --button-height-base: 2.75rem;              /* 44px - larger buttons */
-  }
-
-  /* ================== COMPREHENSIVE SHADOW UTILITIES ================== */
-  /* Container Shadows - For base level components */
-  .shadow-xs { box-shadow: var(--shadow-xs); }
-  .shadow-sm { box-shadow: var(--shadow-sm); }
-  .shadow-md { box-shadow: var(--shadow-md); }
-  .shadow-lg { box-shadow: var(--shadow-lg); }
-  .shadow-xl { box-shadow: var(--shadow-xl); }
-  
-  /* Branded Shadows - Special cases */
-  .shadow-brass { box-shadow: var(--shadow-brass); }
-  .shadow-copper { box-shadow: var(--shadow-copper); }
-  .shadow-premium { box-shadow: var(--shadow-premium); }
-  .shadow-elite { box-shadow: var(--shadow-elite); }
-  .shadow-purple { box-shadow: var(--shadow-purple); }
-  .shadow-pink { box-shadow: var(--shadow-pink); }
-  .shadow-glass { box-shadow: var(--shadow-glass); }
-  .shadow-inset { box-shadow: var(--shadow-inset); }
-  
-  /* Flat Shadows - For nested elements (Stripe philosophy) */
-  .shadow-none { box-shadow: var(--shadow-none); }
-  .shadow-flat { box-shadow: var(--shadow-flat); }
-  
-  /* Semantic Shadow Utilities - Design Token Mapping */
-  .shadow-elevated { box-shadow: var(--shadow-elevated); }
-
-  /* Focus rings */
-  .focus-brass { box-shadow: var(--shadow-focus-brass); }
-  .focus-copper { box-shadow: var(--shadow-focus-copper); }
-  .focus-blue { box-shadow: var(--shadow-focus-blue); }
-
-  /* ================== GRADIENT BACKGROUND UTILITIES ================== */
-  /* ================== SOPHISTICATED GRADIENT UTILITIES ================== */
-  /* Professional Background Gradients */
-  .bg-gradient-brand-warm { background: var(--gradient-brand-warm); }
-  .bg-gradient-brand-cool { background: var(--gradient-brand-cool); }
-  .bg-gradient-brand-mixed { background: var(--gradient-brand-mixed); }
-  
-  /* Hero Section Gradients */
-  .bg-gradient-hero-warm { background: var(--gradient-hero-warm); }
-  .bg-gradient-hero-cool { background: var(--gradient-hero-cool); }
-  .bg-gradient-hero-premium { background: var(--gradient-hero-premium); }
-  
-  /* Card & Component Gradients */
-  .bg-gradient-card-warm { background: var(--gradient-card-warm); }
-  .bg-gradient-card-cool { background: var(--gradient-card-cool); }
-  .bg-gradient-card-neutral { background: var(--gradient-card-neutral); }
-  
-  /* Figma-Style Mesh Gradients */
-  .bg-gradient-mesh-premium { background: var(--gradient-mesh-premium); }
-  .bg-gradient-mesh-elite { background: var(--gradient-mesh-elite); }
-  
-  /* Glass/Mica Gradients */
-  .bg-gradient-glass-warm { background: var(--gradient-glass-warm); }
-  .bg-gradient-glass-cool { background: var(--gradient-glass-cool); }
-  .bg-gradient-glass-neutral { background: var(--gradient-glass-neutral); }
-  
-  /* ================== ENHANCED GRADIENT SYSTEM - RESTRAINED & PROFESSIONAL ================== */
-  /* 
-   * TBGC GRADIENT PHILOSOPHY:
-   * 1. RESTRAINED: Subtle 2-8% opacity for sophistication, not visual chaos
-   * 2. CONTEXTUAL: Different uses for different purposes (hero, card, subtle)  
-   * 3. SOLID FALLBACKS: When in doubt, use solid colors instead
-   * 4. BRAND COHESION: Only use TBGC palette colors with consistent opacities
-   */
-
-  /* NOTE: Gradient utilities are defined above in the first occurrence (lines 883-885) */
-  
-  /* Premium Mesh Gradients - For hero sections and landing areas */
-  .bg-gradient-mesh-premium { background: var(--gradient-mesh-premium); }
-  .bg-gradient-mesh-elite { background: var(--gradient-mesh-elite); }
-  
-  /* SOLID COLOR ALTERNATIVES - Use these instead of gradients for clean look */
-  .bg-solid-brand-warm { background-color: var(--color-range-white); }
-  .bg-solid-brand-neutral { background-color: var(--color-shooting-bench); }
-  .bg-solid-brand-accent { background-color: rgba(242, 203, 5, 0.05); }
-  
-  /* Accent Line Gradients - For borders and dividers only */
-  .border-gradient-brand {
-    border-image: linear-gradient(90deg, var(--color-brass-yellow), var(--color-copper-orange)) 1;
-  }
-  
-  /* Subtle Hover Effects - Very restrained interactions */
-  .hover-gradient-warm:hover {
-    background: linear-gradient(135deg, rgba(242, 203, 5, 0.04) 0%, rgba(242, 135, 5, 0.03) 100%);
-    transition: background 250ms ease-out;
-  }
-  
-  .hover-gradient-cool:hover {
-    background: linear-gradient(135deg, rgba(81, 152, 205, 0.04) 0%, rgba(60, 129, 192, 0.03) 100%);
-    transition: background 250ms ease-out;
-  }
-  
-  /* Legacy Gradients (backwards compatibility - avoid using these) */
-  .bg-gradient-primary { background: var(--gradient-primary); }
-  .bg-gradient-premium { background: var(--gradient-premium); }
-  .bg-gradient-elite { background: var(--gradient-elite); }
-  .bg-gradient-subtle { background: var(--gradient-subtle); }
-  .bg-gradient-purple { background: var(--gradient-purple); }
-  .bg-gradient-pink { background: var(--gradient-pink); }
-  .bg-gradient-success { background: var(--gradient-success); }
-  .bg-gradient-warning { background: var(--gradient-warning); }
-  .bg-gradient-danger { background: var(--gradient-danger); }
-  .bg-gradient-info { background: var(--gradient-info); }
-  .bg-gradient-glass { background: var(--gradient-glass); }
-  .bg-gradient-glass-dark { background: var(--gradient-glass-dark); }
-  .bg-gradient-mesh-warm { background: var(--gradient-mesh-warm); }
-  .bg-gradient-mesh-cool { background: var(--gradient-mesh-cool); }
-
-  /* ================== WINDOWS 11 MICA GLASSMORPHISM ================== */
-  .mica-glass {
-    position: relative;
-    overflow: hidden;
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    backdrop-filter: blur(16px) saturate(180%);
-  }
-
-  .mica-glass::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-      radial-gradient(circle at 20% 30%, rgba(242, 203, 5, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, rgba(242, 135, 5, 0.06) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 50%);
-    border-radius: inherit;
-    z-index: -1;
-  }
-
-  .mica-glass::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: 
-      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
-    background-size: 20px 20px;
-    border-radius: inherit;
-    opacity: 0.3;
-    z-index: -1;
-    animation: noise-float 8s ease-in-out infinite;
-  }
-
-  @keyframes noise-float {
-    0%, 100% { 
-      transform: translate(0, 0) rotate(0deg);
-      opacity: 0.3;
-    }
-    25% { 
-      transform: translate(1px, -1px) rotate(0.5deg);
-      opacity: 0.25;
-    }
-    50% { 
-      transform: translate(-1px, 1px) rotate(-0.5deg);
-      opacity: 0.35;
-    }
-    75% { 
-      transform: translate(1px, 1px) rotate(0.25deg);
-      opacity: 0.28;
-    }
-  }
-
-  /* Enhanced glassmorphism on hover */
-  .mica-glass:hover::before {
-    background: 
-      radial-gradient(circle at 20% 30%, rgba(242, 203, 5, 0.12) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, rgba(242, 135, 5, 0.10) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
-  }
-
-  .mica-glass:hover::after {
-    opacity: 0.4;
-  }
-
-  /* ================== ENHANCED MICA VARIANTS ================== */
-  .mica-premium {
-    position: relative;
-    background: 
-      radial-gradient(circle at 20% 50%, rgba(242, 203, 5, 0.12) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(242, 135, 5, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 40% 80%, rgba(242, 203, 5, 0.06) 0%, transparent 50%),
-      var(--gradient-mesh-warm);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    backdrop-filter: blur(16px) saturate(180%);
-  }
-
-  .mica-premium::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(242, 203, 5, 0.1), rgba(242, 135, 5, 0.05));
-    border-radius: inherit;
-    z-index: -1;
-  }
-
-  .mica-elite {
-    position: relative;
-    background: 
-      radial-gradient(circle at 25% 25%, rgba(242, 203, 5, 0.18) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(242, 135, 5, 0.14) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, rgba(242, 203, 5, 0.10) 0%, transparent 50%);
-    -webkit-backdrop-filter: blur(24px) saturate(200%);
-    backdrop-filter: blur(24px) saturate(200%);
-  }
-
-  .mica-elite::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(242, 203, 5, 0.15), rgba(242, 135, 5, 0.08));
-    border-radius: inherit;
-    z-index: -1;
-  }
-
-  /* Glass variants for different contexts */
-  .glass-card {
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    backdrop-filter: blur(12px) saturate(180%);
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .glass-card-dark {
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    backdrop-filter: blur(12px) saturate(180%);
-    background: rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  .glass-navigation {
-    -webkit-backdrop-filter: blur(20px) saturate(200%);
-    backdrop-filter: blur(20px) saturate(200%);
-    background: rgba(255, 255, 255, 0.12);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  }
-
-  /* ================== STRIPE-STYLE ARROW ANIMATIONS ================== */
-  .stripe-arrow {
-    position: relative;
-  }
-
-  .stripe-arrow .HoverArrow {
-    transition: transform 0.15s ease;
-    transform: translateX(0);
-  }
-
-  .stripe-arrow:hover .HoverArrow {
-    transform: translateX(3px);
-  }
-
-  .stripe-arrow .HoverArrow__linePath {
-    opacity: 0;
-    transition: opacity 0.15s ease;
-  }
-
-  .stripe-arrow:hover .HoverArrow__linePath {
-    opacity: 1;
-    transition-delay: 0.1s;
-  }
-
-  .stripe-arrow .HoverArrow__tipPath {
-    transform: translateX(0);
-    transition: transform 0.15s ease;
-  }
-
-  .stripe-arrow:hover .HoverArrow__tipPath {
-    transform: translateX(3px);
-  }
-
-  /* Arrow icon spacing */
-  .stripe-arrow .arrow-icon {
-    margin-left: 0.5rem;
-    transition: margin-left 0.15s ease;
-  }
-
-  .stripe-arrow:hover .arrow-icon {
-    margin-left: 0.75rem;
-  }
-
-  /* ================== SOPHISTICATED GRADIENT BACKGROUNDS ================== */
-  .bg-gradient-premium {
-    background: linear-gradient(135deg, #F2CB05 0%, #F28705 45%, #F2CB05 100%);
-    background-size: 200% 200%;
-    animation: gradientShift 3s ease-in-out infinite;
-  }
-
-  .bg-gradient-elite {
-    background: linear-gradient(135deg, #F2CB05 0%, #F28705 25%, #F2CB05 50%, #F28705 75%, #F2CB05 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 4s ease-in-out infinite;
-  }
-
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  /* ================== ADVANCED KEYFRAME ANIMATIONS ================== */
+  /* ================== ANIMATION KEYFRAMES ================== */
   @keyframes shimmer {
-    0% { 
+    0% {
       background-position: -200% 0;
       transform: translateX(-100%);
     }
-    100% { 
+    100% {
       background-position: 200% 0;
       transform: translateX(100%);
     }
   }
 
   @keyframes pulse-premium {
-    0%, 100% { 
-      box-shadow: 0 0 0 0 rgba(242, 203, 5, 0.4);
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(217, 134, 59, 0.4);
       transform: scale(1);
     }
-    50% { 
-      box-shadow: 0 0 0 10px rgba(242, 203, 5, 0);
+    50% {
+      box-shadow: 0 0 0 10px rgba(217, 134, 59, 0);
       transform: scale(1.02);
     }
   }
@@ -1368,11 +970,11 @@
   }
 
   @keyframes glow-pulse {
-    0%, 100% { 
-      box-shadow: 0 0 20px rgba(242, 203, 5, 0.3);
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(217, 134, 59, 0.3);
     }
-    50% { 
-      box-shadow: 0 0 40px rgba(242, 203, 5, 0.6), 0 0 60px rgba(242, 135, 5, 0.4);
+    50% {
+      box-shadow: 0 0 40px rgba(217, 134, 59, 0.6), 0 0 60px rgba(217, 159, 93, 0.4);
     }
   }
 
@@ -1383,73 +985,91 @@
   }
 
   @keyframes bounce-in {
-    0% { 
+    0% {
       transform: scale(0.3);
       opacity: 0;
     }
-    50% { 
+    50% {
       transform: scale(1.05);
       opacity: 0.8;
     }
-    70% { 
+    70% {
       transform: scale(0.9);
       opacity: 0.9;
     }
-    100% { 
+    100% {
       transform: scale(1);
       opacity: 1;
     }
   }
 
   @keyframes slide-in-right {
-    0% { 
+    0% {
       transform: translateX(100%);
       opacity: 0;
     }
-    100% { 
+    100% {
       transform: translateX(0);
       opacity: 1;
     }
   }
 
   @keyframes fade-in-scale {
-    0% { 
+    0% {
       transform: scale(0.95);
       opacity: 0;
     }
-    100% { 
+    100% {
       transform: scale(1);
       opacity: 1;
     }
   }
 
-  /* ================== FIRE GRADIENT ANIMATIONS ================== */
   @keyframes fire-unfurl {
-    0% { 
+    0% {
       transform: scaleX(0);
       transform-origin: left center;
     }
-    100% { 
+    100% {
       transform: scaleX(1);
       transform-origin: left center;
     }
   }
 
   @keyframes fire-pulse {
-    0%, 100% { 
+    0%, 100% {
       background-position: 0% 50%;
     }
-    50% { 
+    50% {
       background-position: 100% 50%;
     }
   }
 
   @keyframes fire-glow {
-    0%, 100% { 
-      box-shadow: 0 0 5px rgba(242, 135, 5, 0.3);
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(217, 134, 59, 0.3);
     }
-    50% { 
-      box-shadow: 0 0 20px rgba(242, 135, 5, 0.6), 0 0 30px rgba(242, 203, 5, 0.4);
+    50% {
+      box-shadow: 0 0 20px rgba(217, 134, 59, 0.6), 0 0 30px rgba(217, 159, 93, 0.4);
+    }
+  }
+
+  @keyframes noise-float {
+    0%, 100% {
+      transform: translate(0, 0) rotate(0deg);
+      opacity: 0.3;
+    }
+    25% {
+      transform: translate(1px, -1px) rotate(0.5deg);
+      opacity: 0.25;
+    }
+    50% {
+      transform: translate(-1px, 1px) rotate(-0.5deg);
+      opacity: 0.35;
+    }
+    75% {
+      transform: translate(1px, 1px) rotate(0.25deg);
+      opacity: 0.28;
     }
   }
 
@@ -1504,7 +1124,6 @@
     animation: fade-in-scale 0.3s ease-out;
   }
 
-  /* ================== FIRE GRADIENT ANIMATION UTILITIES ================== */
   .animate-fire-unfurl {
     position: relative;
     overflow: hidden;
@@ -1517,7 +1136,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--gradient-fire-orange);
+    background: var(--gradient-fire);
     transform: scaleX(0);
     transform-origin: left center;
     transition: transform 0.3s ease-out;
@@ -1528,7 +1147,7 @@
   }
 
   .animate-fire-pulse {
-    background: var(--gradient-fire-animated);
+    background: var(--gradient-fire);
     background-size: 200% 100%;
     animation: fire-pulse 2s ease-in-out infinite;
   }
@@ -1537,76 +1156,64 @@
     animation: fire-glow 2s ease-in-out infinite;
   }
 
-  /* Fire gradient background utilities */
-  .bg-fire-orange { background: var(--gradient-fire-orange); }
-  .bg-fire-blue { background: var(--gradient-fire-blue); }
-  .bg-fire-purple { background: var(--gradient-fire-purple); }
-  .bg-fire-green { background: var(--gradient-fire-green); }
-  .bg-fire-animated { background: var(--gradient-fire-animated); background-size: 200% 100%; }
-
-  /* ================== COMPONENT STATE UTILITIES ================== */
-  
-  /* Button States */
+  /* ================== BUTTON STATES ================== */
   .btn-primary {
-    background: var(--gradient-primary);
-    color: var(--color-gunmetal-black);
+    background: var(--primary);
+    color: var(--primary-foreground);
     border: none;
-    box-shadow: var(--shadow-premium);
+    box-shadow: var(--shadow-primary);
     transition: all 150ms var(--ease-stripe);
   }
 
   .btn-primary:hover {
-    background: var(--gradient-premium);
-    box-shadow: var(--shadow-elite);
+    box-shadow: var(--shadow-elevated);
     transform: translateY(-2px);
   }
 
   .btn-primary:active {
     transform: translateY(0);
-    box-shadow: var(--shadow-brass);
+    box-shadow: var(--shadow-sm);
   }
 
   .btn-secondary {
-    background: var(--color-shooting-bench);
-    color: var(--color-blued-steel);
-    border: 1px solid var(--color-case-hardened);
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+    border: 1px solid var(--border);
     transition: all 150ms var(--ease-stripe);
   }
 
   .btn-secondary:hover {
-    background: var(--color-walnut-stock);
-    color: var(--color-nickel-white);
     box-shadow: var(--shadow-sm);
   }
 
   .btn-outline {
     background: transparent;
-    color: var(--color-brass-yellow);
-    border: 2px solid var(--color-brass-yellow);
+    color: var(--primary);
+    border: 2px solid var(--primary);
     transition: all 150ms var(--ease-stripe);
   }
 
   .btn-outline:hover {
-    background: var(--color-brass-yellow);
-    color: var(--color-gunmetal-black);
-    box-shadow: var(--shadow-brass);
+    background: var(--primary);
+    color: var(--primary-foreground);
+    box-shadow: var(--shadow-primary);
   }
 
   .btn-ghost {
     background: transparent;
-    color: var(--color-blued-steel);
+    color: var(--foreground);
     border: none;
     transition: all 150ms var(--ease-stripe);
   }
 
   .btn-ghost:hover {
-    background: var(--color-shooting-bench);
+    background: var(--muted);
     box-shadow: var(--shadow-xs);
   }
 
   .btn-glass {
     background: rgba(255, 255, 255, 0.1);
-    color: var(--color-blued-steel);
+    color: var(--foreground);
     border: 1px solid rgba(255, 255, 255, 0.2);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
@@ -1619,24 +1226,36 @@
     box-shadow: var(--shadow-glass);
   }
 
-  /* Input States */
-  .input-focus {
-    border-color: var(--color-brass-yellow);
-    box-shadow: var(--shadow-focus-brass);
+  .btn-hover-lift {
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .btn-hover-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-hover-lift:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-hover-lift:focus {
     outline: none;
+    box-shadow: var(--shadow-focus-primary);
   }
 
-  .input-error {
-    border-color: var(--color-muzzle-flash);
-    box-shadow: var(--shadow-focus-copper);
+  .btn-hover-lift:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
   }
 
-  .input-success {
-    border-color: var(--color-rifling-green);
-    box-shadow: 0 0 0 3px rgba(111, 120, 34, 0.3);
+  .btn-hover-lift:disabled:hover {
+    transform: none;
   }
 
-  /* Card States */
+  /* ================== CARD STATES ================== */
   .card-hover {
     transition: all 150ms var(--ease-stripe);
   }
@@ -1661,20 +1280,20 @@
     box-shadow: var(--shadow-sm);
   }
 
-  /* Loading States */
+  /* ================== LOADING STATES ================== */
   .loading-shimmer {
     background: linear-gradient(
       90deg,
-      var(--color-shooting-bench) 25%,
-      var(--color-walnut-stock) 50%,
-      var(--color-shooting-bench) 75%
+      var(--muted) 25%,
+      var(--card) 50%,
+      var(--muted) 75%
     );
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite;
   }
 
   .loading-skeleton {
-    background: var(--color-shooting-bench);
+    background: var(--muted);
     border-radius: var(--radius-sm);
     position: relative;
     overflow: hidden;
@@ -1696,9 +1315,7 @@
     animation: shimmer 1.5s infinite;
   }
 
-  /* ================== RESPONSIVE DESIGN UTILITIES ================== */
-  
-  /* Container Queries */
+  /* ================== RESPONSIVE UTILITIES ================== */
   .container-fluid {
     width: 100%;
     padding-left: var(--space-md);
@@ -1719,7 +1336,6 @@
     padding-right: var(--space-lg);
   }
 
-  /* Grid Systems */
   .grid-auto-fit {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1756,48 +1372,38 @@
     }
   }
 
-  /* ================== RESPONSIVE TYPOGRAPHY SCALING (STRIPE PATTERN) ================== */
-  /* Base mobile-first typography with systematic scaling */
-  
-  .text-responsive-xs { font-size: 0.75rem; line-height: 1.25; }    /* 12px mobile */
-  .text-responsive-sm { font-size: 0.875rem; line-height: 1.375; }  /* 14px mobile */
-  .text-responsive-base { font-size: 1rem; line-height: 1.5; }      /* 16px mobile */
-  .text-responsive-lg { font-size: 1.125rem; line-height: 1.5; }    /* 18px mobile */
-  .text-responsive-xl { font-size: 1.25rem; line-height: 1.5; }     /* 20px mobile */
-  .text-responsive-2xl { font-size: 1.5rem; line-height: 1.375; }   /* 24px mobile */
-  .text-responsive-3xl { font-size: 1.875rem; line-height: 1.25; }  /* 30px mobile */
-  .text-responsive-4xl { font-size: 2.25rem; line-height: 1.125; }  /* 36px mobile */
+  /* ================== RESPONSIVE TYPOGRAPHY ================== */
+  .text-responsive-xs { font-size: 0.75rem; line-height: 1.25; }
+  .text-responsive-sm { font-size: 0.875rem; line-height: 1.375; }
+  .text-responsive-base { font-size: 1rem; line-height: 1.5; }
+  .text-responsive-lg { font-size: 1.125rem; line-height: 1.5; }
+  .text-responsive-xl { font-size: 1.25rem; line-height: 1.5; }
+  .text-responsive-2xl { font-size: 1.5rem; line-height: 1.375; }
+  .text-responsive-3xl { font-size: 1.875rem; line-height: 1.25; }
+  .text-responsive-4xl { font-size: 2.25rem; line-height: 1.125; }
 
   @media (min-width: 640px) {
-    .text-responsive-xs { font-size: 0.75rem; }    /* Same on tablet */
-    .text-responsive-sm { font-size: 0.875rem; }   /* Same on tablet */
-    .text-responsive-base { font-size: 1rem; }     /* Same on tablet */
-    .text-responsive-lg { font-size: 1.125rem; }   /* Same on tablet */
-    .text-responsive-xl { font-size: 1.375rem; }   /* 22px tablet */
-    .text-responsive-2xl { font-size: 1.75rem; }   /* 28px tablet */
-    .text-responsive-3xl { font-size: 2.25rem; }   /* 36px tablet */
-    .text-responsive-4xl { font-size: 2.75rem; }   /* 44px tablet */
+    .text-responsive-xl { font-size: 1.375rem; }
+    .text-responsive-2xl { font-size: 1.75rem; }
+    .text-responsive-3xl { font-size: 2.25rem; }
+    .text-responsive-4xl { font-size: 2.75rem; }
   }
 
   @media (min-width: 1024px) {
-    .text-responsive-xl { font-size: 1.5rem; }     /* 24px desktop */
-    .text-responsive-2xl { font-size: 2rem; }      /* 32px desktop */
-    .text-responsive-3xl { font-size: 2.5rem; }    /* 40px desktop */
-    .text-responsive-4xl { font-size: 3rem; }      /* 48px desktop */
+    .text-responsive-xl { font-size: 1.5rem; }
+    .text-responsive-2xl { font-size: 2rem; }
+    .text-responsive-3xl { font-size: 2.5rem; }
+    .text-responsive-4xl { font-size: 3rem; }
   }
 
-  @media (min-width: 1280px) {
-    .text-responsive-xl { font-size: 1.625rem; }   /* 26px large desktop */
-    .text-responsive-2xl { font-size: 2.25rem; }   /* 36px large desktop */
-    .text-responsive-3xl { font-size: 2.75rem; }   /* 44px large desktop */
-    .text-responsive-4xl { font-size: 3.5rem; }    /* 56px large desktop */
+  @media (min-w-1280) {
+    .text-responsive-xl { font-size: 1.625rem; }
+    .text-responsive-2xl { font-size: 2.25rem; }
+    .text-responsive-3xl { font-size: 2.75rem; }
+    .text-responsive-4xl { font-size: 3.5rem; }
   }
-
-  /* ================== COMPONENT DENSITY UTILITIES ================== */
-  /* NOTE: Density classes are defined above in the Component Density Variants section */
 
   /* ================== ACCESSIBILITY UTILITIES ================== */
-  
   .sr-only {
     position: absolute;
     width: 1px;
@@ -1811,7 +1417,7 @@
   }
 
   .focus-visible {
-    outline: 2px solid var(--color-brass-yellow);
+    outline: 2px solid var(--primary);
     outline-offset: 2px;
   }
 
@@ -1833,101 +1439,53 @@
     }
   }
 
+  /* Accessibility Settings */
+  html {
+    font-size: var(--font-size-base);
+    filter: var(--accessibility-filter);
+  }
+
+  html[data-accessibility-contrast="high"] {
+    --background: #000000;
+    --foreground: #ffffff;
+    --card: #000000;
+    --card-foreground: #ffffff;
+    --border: #ffffff;
+    --muted: #333333;
+    --muted-foreground: #cccccc;
+    filter: contrast(var(--accessibility-contrast));
+  }
+
+  html[data-accessibility-font-size="small"] {
+    --accessibility-font-scale: 0.875;
+  }
+
+  html[data-accessibility-font-size="medium"] {
+    --accessibility-font-scale: 1;
+  }
+
+  html[data-accessibility-font-size="large"] {
+    --accessibility-font-scale: 1.125;
+  }
+
   /* ================== PRINT STYLES ================== */
-  
   @media print {
     .no-print {
       display: none !important;
     }
-    
+
     .print-only {
       display: block !important;
     }
-    
+
     * {
       box-shadow: none !important;
       background-image: none !important;
     }
-    
+
     body {
       background: white !important;
       color: black !important;
     }
   }
-
-  /* ================== WINDOWS 11 MICA IMPLEMENTATION ================== */
-  /* NOTE: Mica implementations are defined above in the comprehensive MICA VARIANTS section */
-
-  /* ================== PROFESSIONAL SHADOW UTILITIES ================== */
-  /* NOTE: Shadow utilities use CSS variables defined above and should not override them with hardcoded values */
-  /* .shadow-premium and .shadow-elite are already defined using var(--shadow-premium) and var(--shadow-elite) */
-
-  /* ================== CLICKUP-INSPIRED VIBRANT EFFECTS ================== */
-  .hover\:shadow-clickup:hover {
-    box-shadow: 0 10px 25px rgba(118, 18, 250, 0.25), 0 4px 10px rgba(64, 221, 255, 0.15);
-    transform: translateY(-2px);
-  }
-
-  .gradient-clickup {
-    background: linear-gradient(135deg, #7612FA 0%, #40DDFF 100%);
-  }
-
-  .gradient-clickup-pink {
-    background: linear-gradient(135deg, #FA12E3 0%, #FFD700 100%);
-  }
-
-  /* ================== STRIPE-INSPIRED MICRO-INTERACTIONS ================== */
-  .button-stripe {
-    position: relative;
-    overflow: hidden;
-    transform: translateZ(0);
-  }
-
-  .button-stripe::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.1),
-      transparent
-    );
-    transition: left 0.5s;
-  }
-
-  .button-stripe:hover::before {
-    left: 100%;
-  }
-
-  /* ================== ADVANCED BUTTON STATES ================== */
-  .btn-hover-lift {
-    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  .btn-hover-lift:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  }
-
-  .btn-hover-lift:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-  .btn-hover-lift:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(242, 203, 5, 0.3);
-  }
-  .btn-hover-lift:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    box-shadow: none;
-  }
-  .btn-hover-lift:disabled:hover {
-    transform: none;
-  }
 }
-  
