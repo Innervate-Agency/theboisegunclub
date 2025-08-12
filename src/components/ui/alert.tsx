@@ -5,7 +5,7 @@ import { X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const alertVariants = cva(
-  "relative w-full rounded-lg border p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground",
+  "relative w-full rounded-sm border p-sm [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-sm [&>svg]:text-foreground",
   {
     variants: {
       variant: {
@@ -19,8 +19,8 @@ const alertVariants = cva(
       },
       size: {
         sm: "px-3 py-2 text-xs",
-        default: "p-4 text-sm",
-        lg: "p-6 text-base",
+        default: "p-sm text-sm",
+        lg: "p-md text-base",
       },
     },
     defaultVariants: {
@@ -63,7 +63,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         {dismissible && (
           <button
             onClick={handleDismiss}
-            className="absolute top-2 right-2 p-1 rounded-md hover:bg-muted/50"
+            className="absolute top-tiny right-2 p-micro rounded-xs hover:bg-muted/50"
           >
             <X className="h-4 w-4" />
           </button>

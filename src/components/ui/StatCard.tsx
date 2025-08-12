@@ -143,7 +143,7 @@ export default function StatCard({
 
   return (
     <Card className={cn(statCardVariants({ variant, size }), className)} {...props}>
-      <CardContent className="p-4">
+      <CardContent className="p-sm">
         {icon && (
           <div className={cn("mb-(--spacing-sm)", textColors.icon)}>
             {icon}

@@ -139,7 +139,7 @@ export function MegaHero({
                   variant="accent"
                   size="lg"
                   onClick={primaryCTA.onClick}
-                  className="shadow-md hover:shadow-elevated transition-all duration-150"
+                  className="shadow-present hover:shadow-elevated transition-all duration-150"
                 >
                   {primaryCTA.icon}
                   {primaryCTA.text}
@@ -151,7 +151,7 @@ export function MegaHero({
                   variant="secondary"
                   size="lg"
                   onClick={secondaryCTA.onClick}
-                  className="shadow-flat hover:shadow-md transition-all duration-150"
+                  className="shadow-flat hover:shadow-present transition-all duration-150"
                 >
                   {secondaryCTA.icon}
                   {secondaryCTA.text}

@@ -21,11 +21,11 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
       
       {/* Hero Section with Background for Glass Effects */}
       <div 
-        className="relative p-12 rounded-overlay overflow-hidden mb-(--spacing-xl)"
+        className="relative p-micro2 rounded-overlay overflow-hidden mb-(--spacing-xl)"
         style={{
           background: `
-            url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F2CB05' fill-opacity='0.15'%3E%3Cpath d='M20 20m-8 0a8,8 0 1,1 16,0a8,8 0 1,1 -16,0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
-            url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F28705' fill-opacity='0.08'%3E%3Cpath d='M40 40m-16 0a16,16 0 1,1 32,0a16,16 0 1,1 -32,0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+            url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F2CB05' fill-opacity='0.15'%3E%3Cpath d='M20 20m-lg 0a8,8 0 1,1 16,0a8,8 0 1,1 -16,0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+            url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F28705' fill-opacity='0.08'%3E%3Cpath d='M40 40m-micro6 0a16,16 0 1,1 32,0a16,16 0 1,1 -32,0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
             radial-gradient(circle at 25% 25%, rgba(242, 203, 5, 0.20) 0%, transparent 50%),
             radial-gradient(circle at 75% 75%, rgba(242, 135, 5, 0.15) 0%, transparent 50%),
             radial-gradient(circle at 50% 10%, rgba(91, 155, 213, 0.10) 0%, transparent 70%),
@@ -102,16 +102,16 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
         </div>
         
         {/* Background Decorative Elements */}
-        <div className="absolute top-8 left-8 w-48 h-48 bg-sandy-ochre/25 rounded-full blur-2xl" />
-        <div className="absolute bottom-8 right-8 w-32 h-32 bg-rusty-orange/20 rounded-full blur-xl" />
-        <div className="absolute top-1/2 left-1/4 w-56 h-28 bg-scope-blue/15 rounded-full blur-2xl" />
-        <div className="absolute top-4 right-1/4 w-24 h-24 bg-rifling-green/15 rounded-full blur-xl" />
-        <div className="absolute bottom-16 left-1/3 w-36 h-36 bg-ember-glow/20 rounded-full blur-2xl" />
+        <div className="absolute top-lg left-8 w-48 h-48 bg-sandy-ochre/25 rounded-full blur-2xl" />
+        <div className="absolute bottom-lg right-8 w-32 h-32 bg-rusty-orange/20 rounded-full blur-xl" />
+        <div className="absolute top-micro/2 left-1/4 w-56 h-28 bg-scope-blue/15 rounded-full blur-2xl" />
+        <div className="absolute top-sm right-1/4 w-24 h-24 bg-rifling-green/15 rounded-full blur-xl" />
+        <div className="absolute bottom-micro6 left-1/3 w-36 h-36 bg-ember-glow/20 rounded-full blur-2xl" />
         
         {/* Additional Pattern Elements */}
-        <div className="absolute top-12 right-12 w-16 h-16 border-2 border-sandy-ochre/30 rounded-sm rotate-45" />
-        <div className="absolute bottom-12 left-12 w-20 h-20 border-2 border-rusty-orange/25 rounded-full" />
-        <div className="absolute top-1/3 right-1/3 w-12 h-12 bg-gradient-to-br from-sandy-ochre/20 to-rusty-orange/15 rounded-sm rotate-12" />
+        <div className="absolute top-micro2 right-12 w-16 h-16 border-2 border-sandy-ochre/30 rounded-sm rotate-45" />
+        <div className="absolute bottom-micro2 left-12 w-20 h-20 border-2 border-rusty-orange/25 rounded-full" />
+        <div className="absolute top-micro/3 right-1/3 w-12 h-12 bg-gradient-to-br from-sandy-ochre/20 to-rusty-orange/15 rounded-sm rotate-12" />
       </div>
 
       {/* Component Examples Grid */}
@@ -120,7 +120,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
         {/* Search Bar with Glass */}
         <div className="relative">
           <div 
-            className="absolute inset-0 rounded-md opacity-80"
+            className="absolute inset-0 rounded-xs opacity-80"
             style={{
               background: `
                 url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F2CB05' fill-opacity='0.12'%3E%3Ccircle cx='15' cy='15' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
@@ -151,10 +151,10 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
         {/* Notification Cards */}
         <div className="relative">
           <div 
-            className="absolute inset-0 rounded-md opacity-80"
+            className="absolute inset-0 rounded-xs opacity-80"
             style={{
               background: `
-                url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235B9BD5' fill-opacity='0.10'%3E%3Cpath d='M12.5 12.5m-5 0a5,5 0 1,1 10,0a5,5 0 1,1 -10,0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235B9BD5' fill-opacity='0.10'%3E%3Cpath d='M12.5 12.5m-base 0a5,5 0 1,1 10,0a5,5 0 1,1 -10,0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
                 radial-gradient(circle at 20% 30%, rgba(91, 155, 213, 0.22) 0%, transparent 50%),
                 radial-gradient(circle at 80% 70%, rgba(185, 155, 96, 0.18) 0%, transparent 50%),
                 var(--gradient-mesh-cool)
@@ -199,7 +199,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
             className="absolute inset-0 backdrop-blur-sm"
             style={{
               background: `
-                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M50 50m-20 0a20,20 0 1,1 40,0a20,20 0 1,1 -40,0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M50 50m-tiny0 0a20,20 0 1,1 40,0a20,20 0 1,1 -40,0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
                 radial-gradient(circle at 30% 20%, rgba(0, 0, 0, 0.4) 0%, transparent 50%),
                 radial-gradient(circle at 70% 80%, rgba(0, 0, 0, 0.3) 0%, transparent 50%),
                 rgba(0, 0, 0, 0.25)
@@ -235,7 +235,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
 
       {/* Toast Notification */}
       {showToast && (
-        <div className="fixed bottom-6 right-6 z-50">
+        <div className="fixed bottom-md right-6 z-50">
           <div className="mica-toast p-base rounded-sm shadow-elevated border border-sandy-ochre/20 min-w-80">
             <div className="flex items-start gap-sm">
               <div className="w-6 h-6 bg-rifling-green/20 rounded-full flex items-center justify-center">

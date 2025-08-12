@@ -9,7 +9,7 @@ const componentVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-card text-card-foreground border border-border shadow-flat hover:shadow-md",
+        default: "bg-card text-card-foreground border border-border shadow-flat hover:shadow-present",
         premium: "bg-fire-orange text-card-foreground shadow-premium border border-sandy-ochre/20 hover:shadow-elite hover:scale-[1.02] transition-stripe-normal group animate-fire-unfurl",
         elite: "bg-fire-animated text-card-foreground shadow-elite border-2 border-sandy-ochre/30 animate-fire-pulse hover:scale-[1.05] transition-stripe-normal group",
         glass: "border-card/20 bg-card/10 backdrop-blur-sm text-card hover:bg-card/20 hover:border-card/30"

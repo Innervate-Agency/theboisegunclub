@@ -86,7 +86,7 @@ export function ResizableSidebar({
       {/* Drag Handle */}
       <div
         className={cn(
-          'absolute top-1/2 -right-2 transform -translate-y-1/2 z-50',
+          'absolute top-micro/2 -right-2 transform -translate-y-1/2 z-50',
           'w-1 h-16 bg-foothills-purple/20 rounded-full cursor-col-resize',
           'hover:bg-foothills-purple/40 hover:w-1.5 transition-all duration-200',
           'opacity-0 hover:opacity-100',

@@ -46,7 +46,7 @@ export function StickySearchMenu({
   if (!isVisible) return null
 
   return (
-    <div className="fixed top-16 left-0 right-0 z-40 bg-background/95 backdrop-blur-sm border-b border-border shadow-whisper">
+    <div className="fixed top-micro6 left-0 right-0 z-40 bg-background/95 backdrop-blur-sm border-b border-border shadow-whisper">
       <div className="container mx-auto max-w-site px-md py-base">
         <div className="flex flex-col lg:flex-row items-center gap-base justify-between">
           {/* Categories */}
@@ -73,7 +73,7 @@ export function StickySearchMenu({
           {/* Search */}
           <div className="flex gap-xs">
             <div className="relative min-w-[300px]">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-micro/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder="Search events..."
                 className="pl-10"

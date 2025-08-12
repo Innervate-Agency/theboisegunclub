@@ -15,10 +15,10 @@ const facilityCardVariants = cva(
     variants: {
       variant: {
         // STRATEGIC RESTRAINT: Shadow-first approach like VendorCard
-        default: "bg-card shadow-flat hover:shadow-md",
-        featured: "bg-gradient-to-br from-sandy-ochre/5 via-rusty-orange/5 to-walnut-stock/5 shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
-        premium: "bg-gradient-to-br from-blued-steel/10 via-warning-amber/10 to-blued-steel/10 shadow-flat hover:shadow-md  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-slate-blue after:to-warning-amber after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
-        compact: "bg-card shadow-flat hover:shadow-md"
+        default: "bg-card shadow-flat hover:shadow-present",
+        featured: "bg-gradient-to-br from-sandy-ochre/5 via-rusty-orange/5 to-walnut-stock/5 shadow-flat hover:shadow-present relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        premium: "bg-gradient-to-br from-blued-steel/10 via-warning-amber/10 to-blued-steel/10 shadow-flat hover:shadow-present  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-slate-blue after:to-warning-amber after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        compact: "bg-card shadow-flat hover:shadow-present"
       },
       size: {
         default: "p-md",
@@ -108,7 +108,7 @@ export default function FacilityCard({
     >
       {/* Featured badge */}
       {isFeatured && (
-        <div className="absolute top-4 right-4 z-10">
+        <div className="absolute top-sm right-4 z-10">
           <Badge variant="default" className="bg-sandy-ochre text-dark-chocolate font-medium">
             Featured
           </Badge>
@@ -117,7 +117,7 @@ export default function FacilityCard({
 
       {/* Verified badge */}
       {isVerified && (
-        <div className="absolute top-4 left-4 z-10">
+        <div className="absolute top-sm left-4 z-10">
           <Badge variant="success">
             <Shield className="h-3 w-3 mr-(--spacing-xs)" />
             Verified

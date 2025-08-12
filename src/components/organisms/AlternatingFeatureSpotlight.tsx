@@ -92,15 +92,15 @@ const AlternatingFeatureSpotlight = ({
               style={gradientStyle}
             />
             {/* The elevated image canvas */}
-            <div className="relative aspect-video transition-all duration-300 ease-out group-hover:-translate-y-2 group-hover:shadow-xl">
+            <div className="relative aspect-video transition-all duration-300 ease-out group-hover:-translate-y-2 group-hover:shadow-prominent">
               {/* THIS IS THE FIX: No padding, no internal overflow hidden */}
-              <div className="bg-card rounded-md shadow-elevated h-full">
+              <div className="bg-card rounded-xs shadow-elevated h-full">
                 <Image
                   src={imageSrc}
                   alt={imageAlt}
                   width={1200}
                   height={675}
-                  className="w-full h-full object-cover rounded-md" // Rounded corners applied directly to the image
+                  className="w-full h-full object-cover rounded-xs" // Rounded corners applied directly to the image
                 />
               </div>
             </div>

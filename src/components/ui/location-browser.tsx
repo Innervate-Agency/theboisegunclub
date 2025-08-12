@@ -69,7 +69,7 @@ function LocationCard({ location }: { location: ShootingLocation }) {
       {/* Photo Thumbnail */}
       <div className="aspect-video relative overflow-hidden">
         <div className="w-full h-full bg-nav-intel/10 group-hover:scale-105 transition-transform duration-300 rounded-xs" />
-        <div className="absolute top-2 right-2">
+        <div className="absolute top-tiny right-2">
           <Badge className="bg-black/60 text-white border-none backdrop-blur-sm">
             {photoCount}
           </Badge>
@@ -118,7 +118,7 @@ function LocationCard({ location }: { location: ShootingLocation }) {
       </CardHeader>
       
       <CardContent className="space-y-base">
-        <p className="text-sm text-muted-foreground line-clamp-2">
+        <p className="text-sm text-muted-foreground line-clamp-tiny">
           {location.description}
         </p>
         
@@ -262,7 +262,7 @@ export function LocationBrowser({ locations, locationTypes, difficultyLevels }: 
             {/* Search Bar */}
             <div className="flex flex-col md:flex-row gap-base">
               <div className="flex-1 relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Search className="absolute left-3 top-micro/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
                   placeholder="Search locations, areas, or features..."
                   className="pl-10"

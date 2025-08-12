@@ -13,7 +13,7 @@ const eventCardVariants = cva(
   {
     variants: {
       featured: {
-        true: "border-rusty-orange/20 bg-gradient-to-br from-card to-rusty-orange/5 hover:shadow-md",
+        true: "border-rusty-orange/20 bg-gradient-to-br from-card to-rusty-orange/5 hover:shadow-present",
         false: ""
       }
     },
@@ -100,7 +100,7 @@ export function EventCard({
               )}
             </div>
             
-            <h3 className="font-rajdhani font-bold text-lg text-card-foreground leading-tight line-clamp-2">
+            <h3 className="font-rajdhani font-bold text-lg text-card-foreground leading-tight line-clamp-tiny">
               {title}
             </h3>
           </div>
@@ -116,7 +116,7 @@ export function EventCard({
         </div>
 
         {/* Description */}
-        <p className="text-sm text-muted-foreground line-clamp-3">
+        <p className="text-sm text-muted-foreground line-clamp-xs">
           {description}
         </p>
 
@@ -132,7 +132,7 @@ export function EventCard({
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
             <MapPin className="h-4 w-4 flex-shrink-0" />
-            <span className="line-clamp-1">{location}</span>
+            <span className="line-clamp-micro">{location}</span>
           </div>
         </div>
 
@@ -163,7 +163,6 @@ export function EventCard({
             <Button 
               variant="micro"
               size="sm"
-              animationType="arrow"
               className="w-full" 
               onClick={() => window.open(registrationUrl, '_blank')}
             >

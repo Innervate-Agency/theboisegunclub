@@ -111,7 +111,7 @@ export function NavigationFusion({
     <nav 
       className={cn(
         navigationFusionVariants({ variant, orientation, size }), 
-        orientation === "horizontal" ? "rounded-full" : "rounded-md",
+        orientation === "horizontal" ? "rounded-full" : "rounded-xs",
         className
       )} 
       {...props}

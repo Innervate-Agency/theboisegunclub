@@ -120,7 +120,7 @@ export function HeroImage({
       height={height}
       priority={priority}
       quality={quality}
-      className={cn("rounded-md shadow-elevated", className)}
+      className={cn("rounded-xs shadow-elevated", className)}
       fallback="/images/hero-bg.webp"
       {...props}
     />

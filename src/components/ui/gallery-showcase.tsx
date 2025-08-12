@@ -168,7 +168,7 @@ export function GalleryGrid({
               <div
                 key={image.id}
                 className={cn(
-                  "group relative bg-card text-card-foreground border-border rounded-sm overflow-hidden shadow-flat hover:shadow-md transition-all duration-200 cursor-pointer",
+                  "group relative bg-card text-card-foreground border-border rounded-sm overflow-hidden shadow-flat hover:shadow-present transition-all duration-200 cursor-pointer",
                   viewMode === 'masonry' && "break-inside-avoid mb-(--spacing-md)",
                   viewMode === 'list' && "flex gap-base p-base",
                   isFeatured && "ring-2 ring-rusty-orange/50"
@@ -177,7 +177,7 @@ export function GalleryGrid({
               >
                 {/* Featured Badge */}
                 {isFeatured && (
-                  <div className="absolute top-2 left-2 z-10">
+                  <div className="absolute top-tiny left-2 z-10">
                     <div className="bg-rusty-orange text-card-foreground text-caption font-rajdhani font-bold px-xs py-xs rounded">
                       Featured
                     </div>

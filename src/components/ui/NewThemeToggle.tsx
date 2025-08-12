@@ -34,7 +34,7 @@ export function NewThemeToggle({
   if (!mounted) {
     return (
       <div className={cn(
-        variant === 'floating' && "fixed bottom-6 left-6 z-50",
+        variant === 'floating' && "fixed bottom-md left-6 z-50",
         className
       )}>
         <Button
@@ -68,7 +68,7 @@ export function NewThemeToggle({
     <div 
       className={cn(
         "flex items-center gap-xs",
-        variant === 'floating' && "fixed bottom-6 left-6 z-50",
+        variant === 'floating' && "fixed bottom-md left-6 z-50",
         className
       )} 
       {...props}

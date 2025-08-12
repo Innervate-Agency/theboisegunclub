@@ -15,16 +15,16 @@ const pricingCardVariants = cva(
     variants: {
       tier: {
         // FREE: Clean baseline - professional foundation (no animation)
-        free: "shadow-flat hover:shadow-md",
+        free: "shadow-flat hover:shadow-present",
         
         // COPPER: Enhanced copper presence - subtle background tint with prominent gradient accent
-        copper: "shadow-flat hover:shadow-md bg-rusty-orange/[0.02] hover:bg-rusty-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        copper: "shadow-flat hover:shadow-present bg-rusty-orange/[0.02] hover:bg-rusty-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
         // SILVER: Consistent default shadows with subtle cobalt glassmorphism
-        silver: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-sm before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-warm-stone after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg",
+        silver: "relative shadow-flat hover:shadow-present bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-sm before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-warm-stone after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg",
         
         // GOLD: Consistent default shadows with premium mica glassmorphism features
-        gold: "relative shadow-flat hover:shadow-md bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-warm-stone/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-sandy-ochre/14 dark:before:to-rusty-orange/12 before:rounded-sm before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
+        gold: "relative shadow-flat hover:shadow-present bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-warm-stone/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-sandy-ochre/14 dark:before:to-rusty-orange/12 before:rounded-sm before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
       },
       size: {
         sm: "p-base",
@@ -119,8 +119,8 @@ export function PricingCard({
       <Card className="border-0 shadow-none h-full">
         {/* Popular badge */}
         {plan.popular && plan.badge && (
-          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
-            <Badge variant="default" className="bg-rusty-orange text-nickel-white font-medium px-md py-sm text-caption shadow-md">
+          <div className="absolute -top-xs left-1/2 transform -translate-x-1/2 z-20">
+            <Badge variant="default" className="bg-rusty-orange text-nickel-white font-medium px-md py-sm text-caption shadow-present">
               <Star className="h-3 w-3 mr-xs" />
               {plan.badge}
             </Badge>
@@ -251,7 +251,7 @@ export function PricingTable({
               onClick={() => setIsAnnual(true)}
             >
               Annual
-              <Badge className="absolute -top-2 -right-2 bg-sagebrush-green text-card text-caption">
+              <Badge className="absolute -top-tiny -right-2 bg-sagebrush-green text-card text-caption">
                 Save 15%
               </Badge>
             </button>
@@ -354,7 +354,7 @@ export function PricingFusion({
   const [isAnnual, setIsAnnual] = React.useState(false)
 
   return (
-    <div className="w-full space-y-2xl p-lg bg-solid-brand-warm rounded-md border border-rusty-orange/20 hover-gradient-warm">
+    <div className="w-full space-y-2xl p-lg bg-solid-brand-warm rounded-xs border border-rusty-orange/20 hover-gradient-warm">
       <div className="text-center space-y-base">
         <h2 className="text-heading-lg font-rajdhani font-bold text-foreground">
           Choose Your Membership
@@ -385,7 +385,7 @@ export function PricingFusion({
               onClick={() => setIsAnnual(true)}
             >
               Annual Billing
-              <Badge className="absolute -top-2 -right-2 bg-sagebrush-green text-card text-caption">
+              <Badge className="absolute -top-tiny -right-2 bg-sagebrush-green text-card text-caption">
                 Save 15%
               </Badge>
             </button>
@@ -415,7 +415,7 @@ export function PricingFusion({
         const firstPlan = plans[0];
         if (!firstPlan || !firstPlan.features) return null;
         return (
-          <div className="mica-card rounded-md border border-rusty-orange/20 p-md overflow-x-auto">
+          <div className="mica-card rounded-xs border border-rusty-orange/20 p-md overflow-x-auto">
             <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate mb-[md] text-center">
               Feature Comparison
             </h3>

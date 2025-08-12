@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 import { Eye, EyeOff, AlertCircle } from "lucide-react"
 
 const inputVariants = cva(
-  "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+  "flex h-10 w-full rounded-xs border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -80,7 +80,7 @@ export interface InputGroupProps extends React.HTMLAttributes<HTMLDivElement> {
 const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
   ({ className, label, description, error, required, icon, children, ...props }, ref) => {
     return (
-      <div ref={ref} className={cn("grid gap-2", className)} {...props}>
+      <div ref={ref} className={cn("grid gap-tiny", className)} {...props}>
         {label && (
           <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
             {label}

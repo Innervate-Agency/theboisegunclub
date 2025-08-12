@@ -99,7 +99,7 @@ function useAccessibilitySettings() {
 }
 
 const floatingButtonVariants = cva(
-  "fixed z-50 rounded-full shadow-flat transition-all duration-200 hover:shadow-md ",
+  "fixed z-50 rounded-full shadow-flat transition-all duration-200 hover:shadow-present ",
   {
     variants: {
       variant: {
@@ -186,7 +186,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
     <>
       {/* Floating Accessibility Button - Bottom Left */}
       <Button
-        className={cn(floatingButtonVariants({ variant: "accessibility" }), "bottom-6 left-6")}
+        className={cn(floatingButtonVariants({ variant: "accessibility" }), "bottom-md left-6")}
         onClick={handleOpenPanel}
         aria-label="Open accessibility panel"
       >
@@ -195,7 +195,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
 
       {/* Floating Chat Button - Bottom Right */}
       <Button
-        className={cn(floatingButtonVariants({ variant: "chat", size: "sm" }), "bottom-6 right-6")}
+        className={cn(floatingButtonVariants({ variant: "chat", size: "sm" }), "bottom-md right-6")}
         onClick={handleChatClick}
         aria-label="Open support chat"
       >
@@ -204,11 +204,11 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
 
       {/* Accessibility Panel Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/20 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-sm bg-black/20 backdrop-blur-sm">
           <div className="w-full max-w-md mica border border-border rounded-sm shadow-elevated overflow-hidden">
-            <div className="flex flex-row items-center justify-between p-6 pb-4">
+            <div className="flex flex-row items-center justify-between p-md pb-4">
               <div className="flex items-center gap-sm">
-                <div className="bg-muted p-2 rounded-md border border-border">
+                <div className="bg-muted p-tiny rounded-xs border border-border">
                   <Settings className="h-5 w-5 text-card-foreground" />
                 </div>
                 <h2 className="text-lg font-rajdhani font-bold text-card-foreground">Accessibility</h2>
@@ -223,17 +223,16 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
               </Button>
             </div>
 
-            <div className="p-6 pt-0 space-y-6">
+            <div className="p-md pt-0 space-y-6">
               {/* Theme Switcher */}
               <div className="space-y-3">
                 <h3 className="font-medium text-card-foreground">Theme</h3>
-                <div className="flex gap-2">
+                <div className="flex gap-tiny">
                   <Button
                     variant={theme === 'light' ? 'solid-accent' : 'solid-primary'}
                     size="sm"
                     onClick={() => handleThemeChange('light')}
                     className="flex-1 gap-xs"
-                    animationType="x-o"
                     animationState={theme === 'light'}
                   >
                     <Sun className="h-4 w-4" />
@@ -244,7 +243,6 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     size="sm"
                     onClick={() => handleThemeChange('dark')}
                     className="flex-1 gap-xs"
-                    animationType="x-o"
                     animationState={theme === 'dark'}
                   >
                     <Moon className="h-4 w-4" />
@@ -255,7 +253,6 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     size="sm"
                     onClick={() => handleThemeChange('system')}
                     className="flex-1 gap-xs"
-                    animationType="x-o"
                     animationState={theme === 'system'}
                   >
                     <Monitor className="h-4 w-4" />
@@ -267,13 +264,12 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
               {/* Font Size */}
               <div className="space-y-3">
                 <h3 className="font-medium text-card-foreground">Text Size</h3>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-tiny">
                   <Button
                     variant="solid-primary"
                     size="sm"
                     onClick={handleFontSizeDecrease}
                     disabled={fontSize === 'small'}
-                    animationType="none"
                   >
                     <Minus className="h-4 w-4" />
                   </Button>
@@ -287,7 +283,6 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     size="sm"
                     onClick={handleFontSizeIncrease}
                     disabled={fontSize === 'large'}
-                    animationType="none"
                   >
                     <Plus className="h-4 w-4" />
                   </Button>
@@ -297,7 +292,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
               {/* Contrast Mode */}
               <div className="space-y-3">
                 <h3 className="font-medium text-card-foreground">Contrast</h3>
-                <div className="flex gap-2">
+                <div className="flex gap-tiny">
                   <Button
                     variant={contrastMode === 'normal' ? 'solid-accent' : 'solid-primary'}
                     size="sm"
@@ -321,7 +316,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
               {/* Color Vision */}
               <div className="space-y-3">
                 <h3 className="font-medium text-card-foreground">Color Vision</h3>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-tiny">
                   <Button
                     variant={colorBlindFilter === 'none' ? 'solid-accent' : 'solid-primary'}
                     size="sm"

@@ -114,7 +114,7 @@ export function VendorCard({
       <div className="mb-md">
         <div className="flex items-center gap-sm mb-xs">
           {/* Business logo/image */}
-          <Avatar className="h-[var(--icon-3xl)] w-[var(--icon-3xl)] rounded-lg flex-shrink-0">
+          <Avatar className="h-[var(--icon-3xl)] w-[var(--icon-3xl)] rounded-sm flex-shrink-0">
             {imageUrl && !imgError ? (
               <AvatarImage
                 src={imageUrl}
@@ -123,7 +123,7 @@ export function VendorCard({
                 onError={() => setImgError(true)}
               />
             ) : null}
-            <AvatarFallback className="rounded-lg bg-muted font-rajdhani font-bold text-heading-sm text-muted-foreground">
+            <AvatarFallback className="rounded-sm bg-muted font-rajdhani font-bold text-heading-sm text-muted-foreground">
               {businessName.charAt(0).toUpperCase()}
             </AvatarFallback>
           </Avatar>
@@ -171,7 +171,7 @@ export function VendorCard({
 
       {/* Description */}
       {description && (
-        <p className="text-body-sm text-muted-foreground mb-md line-clamp-2">
+        <p className="text-body-sm text-muted-foreground mb-md line-clamp-tiny">
           {description}
         </p>
       )}
@@ -245,7 +245,7 @@ export function VendorCard({
 
       {/* Enhanced features for Silver/Gold tiers */}
       {showLeads && (
-        <div className="flex items-center gap-xs mb-md p-xs bg-rifling-green/10 rounded-md">
+        <div className="flex items-center gap-xs mb-md p-xs bg-rifling-green/10 rounded-xs">
           <TrendingUp className="w-icon-sm h-icon-sm text-rifling-green" />
           <span className="text-body-sm text-rifling-green font-medium">
             {monthlyLeads} leads this month

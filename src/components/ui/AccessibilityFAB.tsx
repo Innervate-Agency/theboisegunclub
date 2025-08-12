@@ -96,7 +96,7 @@ function useAccessibilitySettings() {
 }
 
 const fabVariants = cva(
-  "fixed bottom-6 left-6 z-50 rounded-full shadow-flat hover:shadow-elevated transition-all duration-200",
+  "fixed bottom-md left-6 z-50 rounded-full shadow-flat hover:shadow-elevated transition-all duration-200",
   {
     variants: {
       state: {
@@ -111,7 +111,7 @@ const fabVariants = cva(
 )
 
 const menuVariants = cva(
-  "fixed bottom-20 left-6 z-40 mica border border-border rounded-sm shadow-md hover:shadow-elevated p-6 min-w-[320px] max-w-[380px] transition-all duration-200",
+  "fixed bottom-tiny0 left-6 z-40 mica border border-border rounded-sm shadow-present hover:shadow-elevated p-md min-w-[320px] max-w-[380px] transition-all duration-200",
   {
     variants: {
       open: {
@@ -223,8 +223,8 @@ export default function AccessibilityFAB({
         <div className="space-y-6">
           {/* Header */}
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="bg-muted p-2 rounded-md border border-border">
+            <div className="flex items-center gap-xs">
+              <div className="bg-muted p-tiny rounded-xs border border-border">
                 <Settings className="h-5 w-5 text-card-foreground" />
               </div>
               <h2 className="text-lg font-rajdhani font-bold text-card-foreground">Accessibility</h2>
@@ -234,10 +234,10 @@ export default function AccessibilityFAB({
           {/* Theme Switcher */}
           <div className="space-y-3">
             <h3 className="font-medium text-card-foreground">Theme</h3>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-tiny">
               <button
                 className={cn(
-                  "gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  "gap-tiny px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
                   mounted && theme === 'light' 
                     ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
@@ -249,7 +249,7 @@ export default function AccessibilityFAB({
               </button>
               <button
                 className={cn(
-                  "gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  "gap-tiny px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
                   mounted && theme === 'dark' 
                     ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
@@ -261,7 +261,7 @@ export default function AccessibilityFAB({
               </button>
               <button
                 className={cn(
-                  "gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  "gap-tiny px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
                   mounted && theme === 'system' 
                     ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
@@ -273,7 +273,7 @@ export default function AccessibilityFAB({
               </button>
               <button
                 className={cn(
-                  "gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  "gap-tiny px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
                   mounted && theme === 'gruvbox' 
                     ? "bg-gruvbox-orange/20 text-gruvbox-orange border-gruvbox-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
@@ -292,7 +292,7 @@ export default function AccessibilityFAB({
           {/* Font Size */}
           <div className="space-y-3">
             <h3 className="font-medium text-card-foreground">Text Size</h3>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-tiny">
               <button
                 className="bg-muted hover:bg-muted/80 text-card-foreground px-3 py-2 rounded-input text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 onClick={handleFontSizeDecrease}
@@ -318,7 +318,7 @@ export default function AccessibilityFAB({
           {/* Contrast Mode */}
           <div className="space-y-3">
             <h3 className="font-medium text-card-foreground">Contrast</h3>
-            <div className="flex gap-2">
+            <div className="flex gap-tiny">
               <button
                 className={cn(
                   "flex-1 px-3 py-2 rounded-input text-sm font-medium transition-colors",
@@ -332,7 +332,7 @@ export default function AccessibilityFAB({
               </button>
               <button
                 className={cn(
-                  "flex-1 gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  "flex-1 gap-tiny px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
                   contrastMode === 'high' 
                     ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
@@ -348,10 +348,10 @@ export default function AccessibilityFAB({
           {/* Color Vision */}
           <div className="space-y-3">
             <h3 className="font-medium text-card-foreground">Color Vision</h3>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-tiny">
               <button
                 className={cn(
-                  "gap-2 px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  "gap-tiny px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
                   colorBlindFilter === 'none' 
                     ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
                     : "bg-muted text-card-foreground hover:bg-muted/80"
@@ -400,7 +400,7 @@ export default function AccessibilityFAB({
           {/* Reset Button */}
           <div className="pt-2 border-t border-border/30">
             <button
-              className="w-full bg-muted hover:bg-muted/80 text-card-foreground px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center gap-2"
+              className="w-full bg-muted hover:bg-muted/80 text-card-foreground px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center gap-tiny"
               onClick={handleResetAll}
             >
               <Settings className="h-4 w-4" />

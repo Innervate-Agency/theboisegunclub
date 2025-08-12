@@ -5,7 +5,7 @@ export function HeroSection() {
       
       <div className="container mx-auto px-(--spacing-sm) text-center relative z-10">
         {/* Coming Soon banner */}
-        <div className="inline-block bg-sandy-ochre text-dark-chocolate px-md py-xs rounded-full font-noto-sans text-body-sm font-semibold mb-2xl shadow-sm">
+        <div className="inline-block bg-sandy-ochre text-dark-chocolate px-md py-xs rounded-full font-noto-sans text-body-sm font-semibold mb-2xl shadow-whisper">
           Coming Soon
         </div>
         

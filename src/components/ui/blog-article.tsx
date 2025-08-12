@@ -103,7 +103,7 @@ export function BlogCard({
     <article className={cn(blogCardVariants({ variant }), className)} {...props}>
       {/* Featured Badge */}
       {article.featured && variant === "featured" && (
-        <div className="absolute top-4 left-4 z-10">
+        <div className="absolute top-sm left-4 z-10">
           <Badge variant="elite" className="font-rajdhani font-bold">
             Featured
           </Badge>
@@ -126,7 +126,7 @@ export function BlogCard({
           />
           
           {/* Category Badge */}
-          <div className="absolute top-3 right-3">
+          <div className="absolute top-xs right-3">
             <Badge variant="default" className="bg-card/90 text-card-foreground text-caption">
               {article.category}
             </Badge>
@@ -139,14 +139,14 @@ export function BlogCard({
         <div className="space-y-sm">
           {/* Title */}
           <h3 className={cn(
-            "font-rajdhani font-bold text-card-foreground group-hover:text-rusty-orange transition-colors duration-200 line-clamp-2",
+            "font-rajdhani font-bold text-card-foreground group-hover:text-rusty-orange transition-colors duration-200 line-clamp-tiny",
             variant === "featured" ? "text-heading-sm" : "text-body-lg"
           )}>
             {article.title}
           </h3>
           
           {/* Excerpt */}
-          <p className="text-body-sm text-muted-foreground font-noto-sans line-clamp-3 leading-relaxed">
+          <p className="text-body-sm text-muted-foreground font-noto-sans line-clamp-xs leading-relaxed">
             {article.excerpt}
           </p>
           
@@ -235,7 +235,6 @@ export function BlogCard({
                 size="sm"
                 onClick={handleShare}
                 className="h-8 px-xs text-caption"
-                animationType="arrow"
               >
                 <Share2 className="icon-xs" />
               </Button>
@@ -533,7 +532,7 @@ export function BlogDetail({
                             </div>
                           )}
                           <div className="flex-1 min-w-0">
-                            <h4 className="font-rajdhani font-semibold text-body-sm text-card-foreground group-hover:text-rusty-orange transition-colors duration-200 line-clamp-2">
+                            <h4 className="font-rajdhani font-semibold text-body-sm text-card-foreground group-hover:text-rusty-orange transition-colors duration-200 line-clamp-tiny">
                               {relatedArticle.title}
                             </h4>
                             <p className="text-caption text-muted-foreground mt-xs">

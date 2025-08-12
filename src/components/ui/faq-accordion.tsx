@@ -100,7 +100,7 @@ export default function FAQAccordion({
       {showSearch && (
         <div className="mb-(--spacing-md)">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
+            <Search className="absolute left-3 top-micro/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
             <Input
               type="text"
               placeholder="Search questions..."

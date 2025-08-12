@@ -25,7 +25,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
 
       {/* Layered Background Demo - This is KEY for glassmorphism to work */}
       <div 
-        className="relative p-lg rounded-md overflow-hidden"
+        className="relative p-lg rounded-xs overflow-hidden"
         style={{
           background: `
             radial-gradient(circle at 20% 30%, rgba(242, 203, 5, 0.1) 0%, transparent 50%),
@@ -37,10 +37,10 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
       >
         {/* Background Pattern for Glass to Blur */}
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-4 left-4 w-32 h-32 bg-sandy-ochre/20 rounded-full blur-xl" />
-          <div className="absolute top-12 right-8 w-24 h-24 bg-rusty-orange/15 rounded-full blur-lg" />
-          <div className="absolute bottom-8 left-1/3 w-40 h-20 bg-scope-blue/10 rounded-full blur-2xl" />
-          <div className="absolute bottom-4 right-4 w-28 h-28 bg-walnut-stock/15 rounded-full blur-xl" />
+          <div className="absolute top-sm left-4 w-32 h-32 bg-sandy-ochre/20 rounded-full blur-xl" />
+          <div className="absolute top-micro2 right-8 w-24 h-24 bg-rusty-orange/15 rounded-full blur-lg" />
+          <div className="absolute bottom-lg left-1/3 w-40 h-20 bg-scope-blue/10 rounded-full blur-2xl" />
+          <div className="absolute bottom-sm right-4 w-28 h-28 bg-walnut-stock/15 rounded-full blur-xl" />
         </div>
 
         <div className="relative space-y-(--spacing-md)">
@@ -103,7 +103,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
           
           {/* Background for Comparison */}
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-mesh-premium rounded-md opacity-60" />
+            <div className="absolute inset-0 bg-gradient-mesh-premium rounded-xs opacity-60" />
             <div className="relative space-y-(--spacing-base)">
               <h4 className="text-body-lg font-medium text-dark-chocolate text-center mb-(--spacing-base)">
                 ✅ Perfect for Glassmorphism
@@ -155,8 +155,8 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
       </div>
 
       {/* Layered Demo */}
-      <div className="relative p-lg bg-gradient-hero-warm rounded-md border border-sandy-ochre/20">
-        <div className="absolute inset-0 bg-gradient-mesh-premium rounded-md" />
+      <div className="relative p-lg bg-gradient-hero-warm rounded-xs border border-sandy-ochre/20">
+        <div className="absolute inset-0 bg-gradient-mesh-premium rounded-xs" />
         <div className="relative space-y-(--spacing-md)">
           <h3 className="text-heading-md font-rajdhani font-bold text-dark-chocolate">
             Layered Glass Effects
@@ -225,7 +225,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
       </div>
       
       {/* Design Tokens Reference */}
-      <div className="bg-solid-brand-neutral p-md rounded-md border border-sandy-ochre/20">
+      <div className="bg-solid-brand-neutral p-md rounded-xs border border-sandy-ochre/20">
         <h4 className="text-body-lg font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">
           Design Token Reference
         </h4>

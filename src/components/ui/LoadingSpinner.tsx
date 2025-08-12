@@ -54,8 +54,8 @@ function LoadingSpinner({
         <div className={cn(
           "absolute inset-0 flex items-center justify-center",
           size === "sm" && "top-0.5 left-0.5",
-          size === "md" && "top-1 left-1", 
-          size === "lg" && "top-1.5 left-1.5"
+          size === "md" && "top-micro left-1", 
+          size === "lg" && "top-micro.5 left-1.5"
         )}>
           <div className={cn(
             "rounded-pill bg-dark-chocolate",

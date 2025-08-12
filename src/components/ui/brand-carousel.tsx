@@ -131,7 +131,7 @@ export function BrandCarousel({
                 <div className="space-y-(--spacing-xs)">
                   {currentShowcase.productsUsed.map((product, index) => (
                     <div key={index} className="flex items-center gap-(--spacing-xs)">
-                      <div className={cn("p-1 rounded", product.color)}>
+                      <div className={cn("p-micro rounded", product.color)}>
                         {product.icon}
                       </div>
                       <span className="text-body-sm text-foreground">{product.name}</span>
@@ -175,20 +175,20 @@ export function BrandCarousel({
               </div>
               
               {/* Company logo - better positioning */}
-              <div className="absolute top-6 left-6 bg-background/90 backdrop-blur-sm rounded-md px-4 py-2 text-foreground font-bold shadow-elevated border border-white/20">
+              <div className="absolute top-md left-6 bg-background/90 backdrop-blur-sm rounded-xs px-4 py-2 text-foreground font-bold shadow-elevated border border-white/20">
                 {currentShowcase.logo}
               </div>
               
               {/* Overlay text content - ALWAYS LIGHT FOR CONTRAST ON COLORED OVERLAYS */}
-              <div className="absolute bottom-0 left-0 right-0 p-8">
+              <div className="absolute bottom-0 left-0 right-0 p-lg">
                 <div className="max-w-2xl">
                   <h2 className="text-3xl md:text-4xl font-rajdhani font-bold mb-6 leading-tight text-white drop-shadow-elevated">
                     {currentShowcase.overlayTitle}
                   </h2>
-                  <p className="text-xl text-white/95 mb-8 leading-relaxed font-noto-sans drop-shadow-md">
+                  <p className="text-xl text-white/95 mb-8 leading-relaxed font-noto-sans drop-shadow-present">
                     {currentShowcase.overlayDescription}
                   </p>
-                  <button className="text-lg font-medium text-white/95 hover:text-white transition-colors group flex items-center gap-3 drop-shadow-md">
+                  <button className="text-lg font-medium text-white/95 hover:text-white transition-colors group flex items-center gap-xs drop-shadow-present">
                     Read their story 
                     <span className="group-hover:translate-x-1 transition-transform text-xl">→</span>
                   </button>
@@ -206,7 +206,7 @@ export function BrandCarousel({
         <p className="text-body-sm text-muted-foreground mb-(--spacing-2xl)">
           Trusted by industry leaders
         </p>
-        <div className="flex items-center justify-center gap-8 opacity-80 hover:opacity-100 transition-opacity">
+        <div className="flex items-center justify-center gap-lg opacity-80 hover:opacity-100 transition-opacity">
           {partnerLogos.map((partner, index) => {
             const IconComponent = partner.icon
             const isActive = index === currentIndex
@@ -278,13 +278,13 @@ export function BrandCarousel({
                   }
                 }}
                 className={cn(
-                  "flex flex-col items-center gap-2 transition-all duration-300 hover:scale-105",
+                  "flex flex-col items-center gap-tiny transition-all duration-300 hover:scale-105",
                   isActive ? "transform scale-110" : "hover:text-foreground"
                 )}
                 disabled={index >= showcases.length}
               >
                 <div className={cn(
-                  "w-12 h-12 rounded-md flex items-center justify-center transition-colors",
+                  "w-12 h-12 rounded-xs flex items-center justify-center transition-colors",
                   colors.bg
                 )}>
                   <IconComponent className={cn("w-6 h-6 transition-colors", colors.icon)} />

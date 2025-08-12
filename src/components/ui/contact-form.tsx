@@ -97,7 +97,7 @@ export function ContactForm({
         <div className="space-y-(--spacing-xs)">
           <Label htmlFor="email">Email Address *</Label>
           <div className="relative">
-            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
+            <Mail className="absolute left-3 top-micro/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
             <Input
               id="email"
               name="email"
@@ -112,7 +112,7 @@ export function ContactForm({
         <div className="space-y-(--spacing-xs)">
           <Label htmlFor="phone">Phone Number</Label>
           <div className="relative">
-            <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
+            <Phone className="absolute left-3 top-micro/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
             <Input
               id="phone"
               name="phone"

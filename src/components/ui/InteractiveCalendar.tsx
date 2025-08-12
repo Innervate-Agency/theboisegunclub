@@ -119,7 +119,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
           <div className="flex flex-col sm:flex-row gap-base flex-1">
             {/* Search */}
             <div className="relative min-w-64">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-micro/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder="Search events..."
                 value={searchQuery}
@@ -130,7 +130,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="absolute right-1 top-1/2 transform -translate-y-1/2 h-6 w-6 p-0"
+                  className="absolute right-1 top-micro/2 transform -translate-y-1/2 h-6 w-6 p-0"
                   onClick={() => setSearchQuery('')}
                 >
                   <X className="h-3 w-3" />
@@ -175,7 +175,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
       </div>
 
       {/* Main Calendar Layout - Single Column, Truly Massive */}
-      <div className="bg-background p-2xl">
+      <div className="bg-background p-tinyxl">
         <div className="max-w-none space-y-2xl">
           
           {/* Calendar Header */}
@@ -226,7 +226,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
               head_cell: "text-muted-foreground font-medium text-2xl w-full h-20 text-center p-base",
               row: "",
               cell: "relative w-full h-32 text-center p-0",
-              day: "w-full h-full hover:bg-accent/30 transition-colors rounded-md flex flex-col items-center justify-start pt-base",
+              day: "w-full h-full hover:bg-accent/30 transition-colors rounded-xs flex flex-col items-center justify-start pt-base",
               day_selected: "bg-rusty-orange/20 text-rusty-orange font-bold",
               day_today: "bg-slate-blue/20 text-slate-blue font-bold",
               day_outside: "text-muted-foreground/30",
@@ -322,7 +322,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                       return (
                         <Card 
                           key={idx} 
-                          className="p-base hover:shadow-md transition-shadow cursor-pointer"
+                          className="p-base hover:shadow-present transition-shadow cursor-pointer"
                           onClick={() => setSelectedEvent(event)}
                         >
                           <div className="space-y-xs">

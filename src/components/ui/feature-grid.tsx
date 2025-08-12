@@ -29,7 +29,7 @@ const featureGridVariants = cva(
 )
 
 const featureCardVariants = cva(
-  "group relative bg-card rounded-sm border-border p-md shadow-flat hover:shadow-md transition-all duration-200 ease-out",
+  "group relative bg-card rounded-sm border-border p-md shadow-flat hover:shadow-present transition-all duration-200 ease-out",
   {
     variants: {
       cardVariant: {

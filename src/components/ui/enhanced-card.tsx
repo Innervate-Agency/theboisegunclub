@@ -10,31 +10,31 @@ const enhancedCardVariants = cva(
     variants: {
       variant: {
         // Default: Clean shadow hierarchy
-        default: "bg-card text-card-foreground shadow-flat hover:shadow-md",
+        default: "bg-card text-card-foreground shadow-flat hover:shadow-present",
         
         // Premium: Consistent shadows with strategic gradient accent
-        premium: "bg-card text-card-foreground shadow-flat hover:shadow-md  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-none before:pointer-events-none",
+        premium: "bg-card text-card-foreground shadow-flat hover:shadow-present  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-none before:pointer-events-none",
         
         // Elite: Consistent shadows with enhanced visual impact via background  
-        elite: "bg-card text-card-foreground shadow-flat hover:shadow-md  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/6 before:via-transparent before:to-sandy-ochre/4 before:rounded-none before:pointer-events-none",
+        elite: "bg-card text-card-foreground shadow-flat hover:shadow-present  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/6 before:via-transparent before:to-sandy-ochre/4 before:rounded-none before:pointer-events-none",
         
         // Glass: Modern mica effect with consistent shadows
-        glass: "mica-card text-card-foreground shadow-flat hover:shadow-md backdrop-blur-sm relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        glass: "mica-card text-card-foreground shadow-flat hover:shadow-present backdrop-blur-sm relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
         // Glass Premium: Enhanced mica with strategic accent
-        "glass-premium": "mica-card-premium text-card-foreground shadow-flat hover:shadow-md relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        "glass-premium": "mica-card-premium text-card-foreground shadow-flat hover:shadow-present relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
         // Fire: Center-positioned gradient accent
-        fire: "bg-card text-card-foreground shadow-flat hover:shadow-md  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        fire: "bg-card text-card-foreground shadow-flat hover:shadow-present  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
         // Fire Blue: Cool gradient with center positioning
-        "fire-blue": "bg-card text-card-foreground shadow-flat hover:shadow-md  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        "fire-blue": "bg-card text-card-foreground shadow-flat hover:shadow-present  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
         // Muted: Subtle variant with clean shadows
-        muted: "bg-muted text-muted-foreground shadow-flat hover:shadow-md hover:bg-card",
+        muted: "bg-muted text-muted-foreground shadow-flat hover:shadow-present hover:bg-card",
         
         // Interactive: Clickable with shadow feedback
-        interactive: "bg-card text-card-foreground shadow-flat hover:shadow-md cursor-pointer",
+        interactive: "bg-card text-card-foreground shadow-flat hover:shadow-present cursor-pointer",
       },
       size: {
         // Proper spacing system application
@@ -42,13 +42,13 @@ const enhancedCardVariants = cva(
         sm: "p-base",      // --spacing-sm equivalent
         default: "p-md", // --spacing-md equivalent (24px)
         lg: "p-lg",      // --spacing-lg equivalent  
-        xl: "p-12",     // --spacing-xl equivalent
+        xl: "p-micro2",     // --spacing-xl equivalent
       },
       radius: {
         none: "rounded-none",
         sm: "rounded-none",       // --radius-sm
         default: "rounded-none",  // --radius-base (boxy with slight curve)
-        lg: "rounded-md",       // --radius-lg
+        lg: "rounded-xs",       // --radius-lg
         full: "rounded-overlay",    // --radius-2xl
       }
     },

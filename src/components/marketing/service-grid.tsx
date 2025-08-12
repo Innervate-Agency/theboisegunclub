@@ -55,7 +55,7 @@ export function ServiceGrid() {
               className={`
                 bg-card-surface 
                 shadow-flat 
-                hover:shadow-md 
+                hover:shadow-present 
                 transition-stripe-fast 
                 p-md 
                 ${service.borderColor} 

@@ -85,7 +85,7 @@ export function ImportantCallout({
       {...props}
     >
       {/* Pulsing accent for important notices */}
-      <div className="absolute -left-1 top-4 w-2 h-2 bg-safety-red rounded-full animate-pulse" />
+      <div className="absolute -left-1 top-sm w-2 h-2 bg-safety-red rounded-full animate-pulse" />
       
       <div className="space-y-(--spacing-sm)">
         <div className="flex items-start gap-sm">

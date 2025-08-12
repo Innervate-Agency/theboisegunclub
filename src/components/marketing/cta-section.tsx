@@ -7,7 +7,7 @@ export function CTASection() {
       <div className="container mx-auto px-(--spacing-base)">
         <div className="max-w-site mx-auto text-center">
           {/* Main CTA */}
-          <Card className="bg-card shadow-md border border-warning-amber/20 p-(--spacing-lg) mb-(--spacing-xl)">
+          <Card className="bg-card shadow-present border border-warning-amber/20 p-(--spacing-lg) mb-(--spacing-xl)">
             <h2 className="font-rajdhani text-heading-lg md:text-heading-xl font-bold text-dark-chocolate mb-(--spacing-md)">
               Get Notified When We Launch
             </h2>

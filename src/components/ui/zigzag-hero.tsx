@@ -125,7 +125,7 @@ export function ZigzagHero({
       
       <div className="relative z-10 max-w-site mx-auto px-6 py-24">
         <div className={cn(
-          "grid lg:grid-cols-2 gap-16 items-center min-h-[400px]",
+          "grid lg:grid-cols-2 gap-micro6 items-center min-h-[400px]",
           isRightLayout && "lg:grid-cols-2"
         )}>
           
@@ -143,7 +143,7 @@ export function ZigzagHero({
             {breadcrumbs && (
               <motion.nav 
                 variants={itemVariants}
-                className={cn("flex items-center gap-2 text-sm", isRightLayout ? "justify-end" : "justify-start")}
+                className={cn("flex items-center gap-tiny text-sm", isRightLayout ? "justify-end" : "justify-start")}
               >
                 {breadcrumbs.map((crumb, index) => (
                   <React.Fragment key={index}>
@@ -168,7 +168,7 @@ export function ZigzagHero({
             {badges && (
               <motion.div 
                 variants={itemVariants}
-                className={cn("flex flex-wrap gap-3", isRightLayout ? "justify-end" : "justify-start")}
+                className={cn("flex flex-wrap gap-xs", isRightLayout ? "justify-end" : "justify-start")}
               >
                 {badges.map((badge, index) => (
                   <Badge 
@@ -212,7 +212,7 @@ export function ZigzagHero({
             {(primaryAction || secondaryAction) && (
               <motion.div 
                 variants={itemVariants}
-                className={cn("flex flex-wrap gap-4", isRightLayout ? "justify-end" : "justify-start")}
+                className={cn("flex flex-wrap gap-sm", isRightLayout ? "justify-end" : "justify-start")}
               >
                 {primaryAction && (
                   <Button 
@@ -241,7 +241,7 @@ export function ZigzagHero({
             {stats && (
               <motion.div 
                 variants={itemVariants}
-                className={cn("grid grid-cols-3 gap-8 pt-8", isRightLayout ? "text-right" : "text-left")}
+                className={cn("grid grid-cols-3 gap-lg pt-8", isRightLayout ? "text-right" : "text-left")}
               >
                 {stats.map((stat, index) => (
                   <div key={index} className="space-y-2">
