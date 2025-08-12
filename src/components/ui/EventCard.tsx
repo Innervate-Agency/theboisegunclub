@@ -56,20 +56,20 @@ export function EventCard({
 }: EventCardProps) {
   const spotsLeft = capacity && registeredCount ? capacity - registeredCount : null
 
-  // Clean event type color mapping using globals.css system
-  const getEventTypeColor = (type: string) => {
+  // Map event types to badge variants
+  const getEventBadgeVariant = (type: string) => {
     switch (type) {
-      case 'Competition': return 'nav-events'      // Red - high energy
-      case 'Training': return 'sandy-ochre'       // Educational warmth  
-      case 'Expo': return 'info-river'            // Informational blue
-      case 'Charity': return 'sagebrush-green'    // Community giving
-      case 'Social': return 'nav-home'            // Warm gathering orange
-      case 'Demo': return 'warning-clay'          // Hands-on demonstration
-      default: return 'nav-events'                // Default to page primary
+      case 'Competition': return 'competition'
+      case 'Training': return 'training'  
+      case 'Expo': return 'expo'
+      case 'Charity': return 'charity'
+      case 'Social': return 'social'
+      case 'Demo': return 'demo'
+      default: return 'competition'
     }
   }
 
-  const eventColor = getEventTypeColor(eventType)
+  const badgeVariant = getEventBadgeVariant(eventType)
 
   return (
     <Card
@@ -77,8 +77,6 @@ export function EventCard({
       className={cn(eventCardVariants({ featured }), className)}
       {...props}
     >
-      {/* Color-coded accent bar for all events */}
-      <div className={cn("absolute bottom-0 left-0 right-0 h-1", `bg-${eventColor}`)} />
       {/* Featured events get gradient accent */}
       {featured && (
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-page-gradient" />
@@ -90,9 +88,8 @@ export function EventCard({
           <div className="space-y-xs flex-1">
             <div className="flex items-center gap-xs">
               <Badge 
-                variant="outline" 
+                variant={badgeVariant as any}
                 size="sm"
-                className={`bg-${eventColor}/10 text-${eventColor} border-${eventColor}/30`}
               >
                 {eventType}
               </Badge>
@@ -111,7 +108,7 @@ export function EventCard({
           {/* Price Display */}
           {price && (
             <div className="text-right ml-base">
-              <div className={`text-lg font-rajdhani font-bold text-${eventColor}`}>
+              <div className="text-lg font-rajdhani font-bold text-foreground">
                 {price}
               </div>
             </div>
@@ -126,15 +123,15 @@ export function EventCard({
         {/* Event Details */}
         <div className="space-y-xs text-sm">
           <div className="flex items-center gap-xs text-muted-foreground">
-            <Calendar className={`h-4 w-4 flex-shrink-0 text-${eventColor}`} />
+            <Calendar className="h-4 w-4 flex-shrink-0" />
             <span>{date}</span>
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
-            <Clock className={`h-4 w-4 flex-shrink-0 text-${eventColor}`} />
+            <Clock className="h-4 w-4 flex-shrink-0" />
             <span>{time}</span>
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
-            <MapPin className={`h-4 w-4 flex-shrink-0 text-${eventColor}`} />
+            <MapPin className="h-4 w-4 flex-shrink-0" />
             <span className="line-clamp-1">{location}</span>
           </div>
         </div>
@@ -143,7 +140,7 @@ export function EventCard({
         {capacity && (
           <div className="flex items-center justify-between text-sm bg-muted/50 px-base py-xs rounded">
             <div className="flex items-center gap-xs text-muted-foreground">
-              <Users className={`h-4 w-4 text-${eventColor}`} />
+              <Users className="h-4 w-4" />
               <span>Capacity: {capacity}</span>
             </div>
             <div className={cn(
@@ -164,12 +161,13 @@ export function EventCard({
         {registrationUrl && (
           <div className="pt-xs">
             <Button 
-              variant="outline" 
-              className="w-full gap-xs shadow-none" 
+              variant="micro"
+              size="sm"
+              animationType="arrow"
+              className="w-full" 
               onClick={() => window.open(registrationUrl, '_blank')}
             >
               Register Now
-              <ExternalLink className="h-4 w-4" />
             </Button>
           </div>
         )}

@@ -12,7 +12,7 @@ function Tabs({
   return (
     <TabsPrimitive.Root
       data-slot="tabs"
-      className={cn("flex flex-col gap-(--spacing-xs)", className)}
+      className={cn("flex flex-col gap-xs", className)}
       {...props}
     />
   )
@@ -26,7 +26,7 @@ function TabsList({
     <TabsPrimitive.List
       data-slot="tabs-list"
       className={cn(
-        "bg-muted text-muted-foreground inline-flex h-(--button-height-sm) w-fit items-center justify-center rounded-sm p-(--spacing-micro)",
+        "bg-muted text-muted-foreground inline-flex h-[var(--button-height-sm)] w-fit items-center justify-center rounded-sm p-micro",
         className
       )}
       {...props}

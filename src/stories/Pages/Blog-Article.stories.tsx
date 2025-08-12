@@ -166,7 +166,9 @@ export const BlogListGrid: StoryObj<typeof BlogList> = {
   args: {
     articles: sampleArticles,
     variant: 'grid',
-    showFilters: true
+    showFilters: true,
+    title: "Latest Articles",
+    subtitle: "Knowledge Hub"
   }
 };
 
@@ -180,7 +182,9 @@ export const BlogListList: StoryObj<typeof BlogList> = {
   args: {
     articles: sampleArticles,
     variant: 'list',
-    showFilters: false
+    showFilters: false,
+    title: "Article Feed",
+    subtitle: "Latest Updates"
   }
 };
 
@@ -208,9 +212,12 @@ export const BlogDetailView: StoryObj<typeof BlogDetail> = {
         </ul>
         
         <h3>Proper Stance and Form</h3>
-        <p>Your stance is crucial for consistent shooting. Position your feet shoulder-width apart, with your weight evenly distributed...</p>
+        <p>Your stance is crucial for consistent shooting. Position your feet shoulder-width apart, with your weight evenly distributed. Keep your dominant foot slightly back and lean forward into the gun.</p>
         
-        <p>Remember, practice makes perfect. Start with shorter distances and gradually work your way up as your skills improve.</p>
+        <h3>Target Acquisition</h3>
+        <p>Focus on the front sight, not the target. The target should appear slightly blurry while your front sight remains sharp and clear. This is the key to consistent accuracy.</p>
+        
+        <p>Remember, practice makes perfect. Start with shorter distances and gradually work your way up as your skills improve. Consider taking a basic marksmanship course from a certified instructor.</p>
       `
     },
     relatedArticles: sampleArticles.slice(1),

@@ -1,8 +1,9 @@
 import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import StatCard from '@/components/ui/StatCard'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { CompactStatsBar } from '@/components/ui/compact-stats-bar'
+import { SectionDivider } from '@/components/ui/section-divider'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import AccessibilityFAB from '@/components/ui/AccessibilityFAB'
@@ -36,7 +37,8 @@ const shootingLocations = [
     reviews: 340,
     difficulty: "Easy",
     category: "Public Range",
-    verified: true,
+    verified: false,
+    needsVerification: true,
     lastUpdated: "2025-01-15"
   },
   {
@@ -54,7 +56,8 @@ const shootingLocations = [
     reviews: 189,
     difficulty: "Easy", 
     category: "Public Range",
-    verified: true,
+    verified: false,
+    needsVerification: true,
     lastUpdated: "2025-01-12"
   },
   {
@@ -72,7 +75,8 @@ const shootingLocations = [
     reviews: 92,
     difficulty: "Moderate",
     category: "Public Range", 
-    verified: true,
+    verified: false,
+    needsVerification: true,
     lastUpdated: "2024-12-20"
   },
   {
@@ -90,7 +94,8 @@ const shootingLocations = [
     reviews: 234,
     difficulty: "Easy",
     category: "BLM Land",
-    verified: true,
+    verified: false,
+    needsVerification: true,
     lastUpdated: "2025-01-10"
   },
   {
@@ -108,7 +113,8 @@ const shootingLocations = [
     reviews: 156,
     difficulty: "Easy",
     category: "BLM Land",
-    verified: true,
+    verified: false,
+    needsVerification: true,
     lastUpdated: "2024-12-08"
   },
   {
@@ -126,7 +132,8 @@ const shootingLocations = [
     reviews: 87,
     difficulty: "Difficult", 
     category: "Remote/4WD",
-    verified: true,
+    verified: false,
+    needsVerification: true,
     lastUpdated: "2024-11-15"
   }
 ]
@@ -161,6 +168,17 @@ const difficultyLevels = [
 export default async function MapPage() {
   // Fetch live weather data for featured locations
   const liveWeatherConditions = await fetchWeatherForMultipleLocations(featuredWeatherLocations)
+
+  // Calculate real stats from location data - honest MVP numbers
+  const locationStats = {
+    totalLocations: shootingLocations.length,
+    verifiedLocations: shootingLocations.filter(l => l.verified).length, // Will be 0 until verified
+    publicAreas: shootingLocations.filter(l => l.category.includes("Public") || l.category.includes("BLM")).length,
+    avgRating: shootingLocations.reduce((acc, loc) => acc + loc.rating, 0) / shootingLocations.length,
+    milesOfLand: 850, // Estimated acres of shooting land in Idaho (BLM + Forest Service)
+    publicClubs: shootingLocations.filter(l => l.category === "Public Range").length,
+    privateClubs: shootingLocations.filter(l => l.category === "Private Club").length
+  }
 
   return (
     <>
@@ -263,10 +281,12 @@ export default async function MapPage() {
                   
                   <CardHeader className="pb-xs relative z-10">
                     <div className="flex items-center justify-between mb-xs">
-                      <Badge className="bg-nav-intel/20 text-nav-intel border-nav-intel/30 font-rajdhani font-bold text-[10px]">
-                        <Shield className="h-3 w-3 mr-xs" />
-                        VERIFIED LOCATION
-                      </Badge>
+                      <div className="flex items-center gap-xs">
+                        <Badge className="bg-warning-clay/20 text-warning-clay border-warning-clay/30 font-rajdhani font-bold text-[10px]">
+                          <AlertTriangle className="h-3 w-3 mr-xs" />
+                          UNVERIFIED
+                        </Badge>
+                      </div>
                       <div className="flex items-center gap-xs text-xs text-muted-foreground">
                         <Star className="h-3 w-3 fill-nav-intel text-nav-intel" />
                         <span>4.5</span>
@@ -310,6 +330,13 @@ export default async function MapPage() {
 
       {/* Weather Conditions Ticker - Live Data with Caching */}
       <WeatherConditionsTicker conditions={liveWeatherConditions} />
+
+      {/* Compact Stats Bar - Stripe Style */}
+      <section className="py-4 bg-background border-b">
+        <div className="container mx-auto max-w-site px-md">
+          <CompactStatsBar stats={locationStats} />
+        </div>
+      </section>
 
       {/* Quick Access Toolbar */}
       <section className="py-lg bg-muted/30 border-b border-nav-intel/10">
@@ -356,192 +383,228 @@ export default async function MapPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-4xl bg-gradient-brand-cool">
+      {/* Section Divider */}
+      <SectionDivider variant="crosshair" spacing="none" />
+
+      {/* Featured Locations - Full Width, Left Aligned */}
+      <section className="py-6xl bg-gradient-to-br from-background to-muted/5">
         <div className="container mx-auto max-w-site px-md">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-xl">
-            <StatCard
-              title="Total Locations"
-              value="127+"
-              label="Identified"
-              variant="default"
-              trend="up"
-              trendValue={`${15}%`}
-            />
-            <StatCard
-              title="Verified Spots"
-              value={shootingLocations.filter(l => l.verified).length.toString()}
-              label="Community Verified"
-              variant="default"
-              trend="up"
-              trendValue={`${89}%`}
-            />
-            <StatCard
-              title="BLM/Public Areas"
-              value="45+"
-              label="Free Access"
-              variant="default"
-              trend="up"
-              trendValue={`${100}%`}
-            />
-            <StatCard
-              title="User Reviews"
-              value="650+"
-              label="Community Input"
-              variant="default"
-              trend="up"
-              trendValue={`${4.3}`}
-            />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl">
+            {/* Content - Left aligned */}
+            <div className="lg:col-span-1 space-y-xl">
+              <div className="space-y-lg">
+                <Badge className="bg-nav-intel/20 text-nav-intel border-nav-intel/30 font-rajdhani font-semibold">
+                  <Shield className="h-4 w-4 mr-xs" />
+                  Featured Locations
+                </Badge>
+                <h2 className="font-rajdhani text-6xl font-bold text-card-foreground leading-tight">
+                  Most Popular <span className="text-nav-intel">Shooting Areas</span>
+                </h2>
+                <p className="text-body-lg text-muted-foreground leading-relaxed max-w-md">
+                  Top-rated locations from across the Treasure Valley with detailed access information and community feedback.
+                </p>
+              </div>
+              <Button variant="outline" size="lg" className="border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white font-rajdhani font-bold">
+                View All {shootingLocations.length} Locations
+                <ArrowRight className="h-5 w-5 ml-base" />
+              </Button>
+            </div>
+            
+            {/* Featured Cards - Right side - 3 columns */}
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-lg">
+              {shootingLocations.slice(0, 6).map((location, index) => (
+                <Card key={location.name} className="shadow-present hover:shadow-elevated transition-all duration-300 overflow-hidden">
+                  <CardHeader className="pb-lg">
+                    <div className="flex items-center justify-between mb-md">
+                      <Badge className="bg-nav-intel/20 text-nav-intel border-nav-intel/30 text-xs font-rajdhani font-semibold">
+                        {location.type}
+                      </Badge>
+                      <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                        <Star className="h-3 w-3 fill-warning-clay text-warning-clay" />
+                        <span className="font-medium">{location.rating}</span>
+                      </div>
+                    </div>
+                    <h3 className="font-rajdhani font-bold text-xl leading-tight text-card-foreground">{location.name}</h3>
+                  </CardHeader>
+                  <CardContent className="space-y-lg">
+                    <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
+                      {location.description}
+                    </p>
+                    <div className="flex items-center justify-between pt-md border-t border-border">
+                      <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                        <MapPin className="h-4 w-4 text-nav-intel" />
+                        <span className="font-medium">{location.access}</span>
+                      </div>
+                      <Button size="sm" className="bg-nav-intel text-white hover:bg-nav-intel/90 font-rajdhani font-bold">
+                        Details
+                        <ArrowRight className="h-3 w-3 ml-xs" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Location Browser - Client Component with Filtering */}
+      {/* Section Divider */}
+      <SectionDivider variant="sights" spacing="none" />
+
+      {/* Browse Categories - Contained, Right Aligned */}
+      <section className="py-6xl">
+        <div className="container mx-auto max-w-6xl px-md">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl">
+            {/* Categories - Left side */}
+            <div className="lg:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-base">
+              {locationTypes.slice(1).map((type, index) => (
+                <Card key={type.value} className="shadow-whisper hover:shadow-present transition-all duration-200 text-center p-base">
+                  <div className="space-y-base">
+                    <div className="w-12 h-12 mx-auto rounded-full bg-nav-intel/10 flex items-center justify-center">
+                      {type.value === "Public Land" && <Mountain className="h-6 w-6 text-nav-intel" />}
+                      {type.value === "Designated Area" && <Target className="h-6 w-6 text-nav-intel" />}
+                      {type.value === "Forest Service" && <Navigation className="h-6 w-6 text-nav-intel" />}
+                      {type.value === "Remote/4WD" && <Compass className="h-6 w-6 text-nav-intel" />}
+                    </div>
+                    <div>
+                      <h3 className="font-rajdhani font-semibold text-sm">{type.label}</h3>
+                      <p className="text-xs text-muted-foreground">{type.count} locations</p>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+            
+            {/* Content - Right aligned */}
+            <div className="lg:col-span-1 space-y-base">
+              <div>
+                <Badge className="bg-nav-intel/20 text-nav-intel border-nav-intel/30">
+                  <Compass className="h-4 w-4 mr-xs" />
+                  Browse by Type
+                </Badge>
+                <h2 className="font-rajdhani text-3xl font-bold text-card-foreground mt-base">
+                  Find Your <span className="text-nav-intel">Perfect Spot</span>
+                </h2>
+                <p className="text-muted-foreground mt-base">
+                  Whether you prefer designated ranges or remote BLM land, we have locations for every shooting style.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Location Browser - Compact Version */}
       <LocationBrowser 
         locations={shootingLocations}
         locationTypes={locationTypes}
         difficultyLevels={difficultyLevels}
       />
 
-      {/* Recent Activity & Community Updates */}
+      {/* Section Divider */}
+      <SectionDivider variant="target" spacing="none" />
+
+      {/* Community Activity - Full Width, Left Aligned */}
       <section className="py-6xl bg-gradient-to-br from-nav-intel/5 to-nav-intel/10">
         <div className="container mx-auto max-w-site px-md">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl">
-            
-            {/* Recent Activity Feed */}
-            <div className="lg:col-span-2 space-y-xl">
-              <div className="flex items-center justify-between">
-                <h2 className="font-rajdhani text-3xl font-bold text-nav-intel">
-                  Recent Activity
+            {/* Content - Left aligned */}
+            <div className="lg:col-span-1 space-y-base">
+              <div>
+                <Badge className="bg-nav-intel/20 text-nav-intel border-nav-intel/30">
+                  <Activity className="h-4 w-4 mr-xs" />
+                  Live Updates
+                </Badge>
+                <h2 className="font-rajdhani text-3xl font-bold text-card-foreground mt-base">
+                  Community <span className="text-nav-intel">Activity</span>
                 </h2>
-                <Button variant="ghost" size="sm" className="text-nav-intel">
-                  View All Activity
-                  <ArrowRight className="h-3 w-3 ml-xs" />
-                </Button>
+                <p className="text-muted-foreground mt-base">
+                  Real-time updates from our community including new locations, safety alerts, and verified information.
+                </p>
               </div>
               
-              <div className="space-y-base">
-                {/* Activity Items */}
-                <Card className="shadow-present hover:shadow-elevated transition-all duration-200">
-                  <div className="flex items-start gap-base p-base">
-                    <div className="w-8 h-8 rounded-full bg-sagebrush-green/20 flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="h-4 w-4 text-sagebrush-green" />
-                    </div>
-                    <div className="flex-1 space-y-xs">
-                      <div className="flex items-center justify-between">
-                        <p className="font-medium text-card-foreground">
-                          Black's Creek Range verified by Range Officer
-                        </p>
-                        <span className="text-xs text-muted-foreground">2h ago</span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Range conditions and safety protocols confirmed current. New 300yd rifle positions available.
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-                
-                <Card className="shadow-present hover:shadow-elevated transition-all duration-200">
-                  <div className="flex items-start gap-base p-base">
-                    <div className="w-8 h-8 rounded-full bg-nav-intel/20 flex items-center justify-center flex-shrink-0">
-                      <Camera className="h-4 w-4 text-nav-intel" />
-                    </div>
-                    <div className="flex-1 space-y-xs">
-                      <div className="flex items-center justify-between">
-                        <p className="font-medium text-card-foreground">
-                          New photos added to Snake River BOP Area
-                        </p>
-                        <span className="text-xs text-muted-foreground">4h ago</span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Community member shared updated access road conditions and new shooting positions.
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-                
-                <Card className="shadow-present hover:shadow-elevated transition-all duration-200">
-                  <div className="flex items-start gap-base p-base">
-                    <div className="w-8 h-8 rounded-full bg-warning-clay/20 flex items-center justify-center flex-shrink-0">
-                      <AlertTriangle className="h-4 w-4 text-warning-clay" />
-                    </div>
-                    <div className="flex-1 space-y-xs">
-                      <div className="flex items-center justify-between">
-                        <p className="font-medium text-card-foreground">
-                          Fire restrictions updated for Owyhee Mountains
-                        </p>
-                        <span className="text-xs text-muted-foreground">1d ago</span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        High fire danger - steel targets prohibited. Check local conditions before visiting.
-                      </p>
-                    </div>
-                  </div>
-                </Card>
+              {/* Verification Stats - Honest Numbers */}
+              <div className="grid grid-cols-3 gap-xs">
+                <div className="bg-card/50 p-xs rounded-sm text-center border border-nav-intel/20">
+                  <p className="text-lg font-bold text-nav-intel font-rajdhani">{locationStats.verifiedLocations}</p>
+                  <p className="text-xs text-muted-foreground">Verified</p>
+                </div>
+                <div className="bg-card/50 p-xs rounded-sm text-center border border-nav-intel/20">
+                  <p className="text-lg font-bold text-warning-clay font-rajdhani">{locationStats.totalLocations - locationStats.verifiedLocations}</p>
+                  <p className="text-xs text-muted-foreground">Need Review</p>
+                </div>
+                <div className="bg-card/50 p-xs rounded-sm text-center border border-nav-intel/20">
+                  <p className="text-lg font-bold text-nav-intel font-rajdhani">0</p>
+                  <p className="text-xs text-muted-foreground">In Progress</p>
+                </div>
               </div>
             </div>
             
-            {/* Community Stats & Quick Actions */}
-            <div className="lg:col-span-1 space-y-xl">
-              <div>
-                <h3 className="font-rajdhani text-xl font-bold text-nav-intel mb-base">
-                  Community Stats
-                </h3>
-                <div className="space-y-base">
-                  <Card className="shadow-whisper hover:shadow-present transition-all duration-200">
-                    <div className="flex items-center justify-between p-base">
-                      <div>
-                        <p className="text-2xl font-bold text-nav-intel font-rajdhani">23</p>
-                        <p className="text-sm text-muted-foreground">New Photos</p>
-                      </div>
-                      <Camera className="h-6 w-6 text-nav-intel" />
+            {/* Activity Feed - Right side */}
+            <div className="lg:col-span-2 space-y-base">
+              <Card className="shadow-present hover:shadow-elevated transition-all duration-200">
+                <div className="flex items-start gap-base p-base">
+                  <div className="w-8 h-8 rounded-full bg-nav-intel/20 flex items-center justify-center flex-shrink-0">
+                    <Plus className="h-4 w-4 text-nav-intel" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-xs">
+                      <p className="font-medium text-card-foreground text-sm">New location submitted: Table Rock Area</p>
+                      <span className="text-xs text-muted-foreground">2h ago</span>
                     </div>
-                  </Card>
-                  
-                  <Card className="shadow-whisper hover:shadow-present transition-all duration-200">
-                    <div className="flex items-center justify-between p-base">
-                      <div>
-                        <p className="text-2xl font-bold text-nav-intel font-rajdhani">8</p>
-                        <p className="text-sm text-muted-foreground">New Reviews</p>
-                      </div>
-                      <Star className="h-6 w-6 text-nav-intel" />
-                    </div>
-                  </Card>
-                  
-                  <Card className="shadow-whisper hover:shadow-present transition-all duration-200">
-                    <div className="flex items-center justify-between p-base">
-                      <div>
-                        <p className="text-2xl font-bold text-nav-intel font-rajdhani">156</p>
-                        <p className="text-sm text-muted-foreground">Check-ins</p>
-                      </div>
-                      <Target className="h-6 w-6 text-nav-intel" />
-                    </div>
-                  </Card>
+                    <p className="text-xs text-muted-foreground">Waiting for community verification</p>
+                  </div>
                 </div>
-              </div>
+              </Card>
               
-              <div>
-                <h3 className="font-rajdhani text-xl font-bold text-nav-intel mb-base">
-                  Contribute
-                </h3>
-                <div className="space-y-xs">
-                  <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white transition-all duration-200">
-                    <Plus className="h-4 w-4" />
-                    Submit New Location
-                  </Button>
-                  <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white transition-all duration-200">
-                    <Camera className="h-4 w-4" />
-                    Add Photos
-                  </Button>
-                  <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white transition-all duration-200">
-                    <MessageSquare className="h-4 w-4" />
-                    Write Review
-                  </Button>
-                  <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white transition-all duration-200">
-                    <AlertTriangle className="h-4 w-4" />
-                    Report Issue
-                  </Button>
+              <Card className="shadow-present hover:shadow-elevated transition-all duration-200">
+                <div className="flex items-start gap-base p-base">
+                  <div className="w-8 h-8 rounded-full bg-warning-clay/20 flex items-center justify-center flex-shrink-0">
+                    <Camera className="h-4 w-4 text-warning-clay" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-xs">
+                      <p className="font-medium text-card-foreground text-sm">Photos needed: Snake River Area</p>
+                      <span className="text-xs text-muted-foreground">6h ago</span>
+                    </div>
+                    <p className="text-xs text-muted-foreground">Help verify access conditions and backstops</p>
+                  </div>
                 </div>
+              </Card>
+              
+              <Card className="shadow-present hover:shadow-elevated transition-all duration-200">
+                <div className="flex items-start gap-base p-base">
+                  <div className="w-8 h-8 rounded-full bg-warning-clay/20 flex items-center justify-center flex-shrink-0">
+                    <AlertTriangle className="h-4 w-4 text-warning-clay" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-xs">
+                      <p className="font-medium text-card-foreground text-sm">6 locations need verification</p>
+                      <span className="text-xs text-muted-foreground">1d ago</span>
+                    </div>
+                    <p className="text-xs text-muted-foreground">Community help needed to verify safety and access info</p>
+                  </div>
+                </div>
+              </Card>
+              
+              {/* Contribute Buttons */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-xs mt-base">
+                <Button variant="outline" size="sm" className="text-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white">
+                  <Plus className="h-3 w-3 mr-xs" />
+                  Submit
+                </Button>
+                <Button variant="outline" size="sm" className="text-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white">
+                  <Camera className="h-3 w-3 mr-xs" />
+                  Photos
+                </Button>
+                <Button variant="outline" size="sm" className="text-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white">
+                  <MessageSquare className="h-3 w-3 mr-xs" />
+                  Review
+                </Button>
+                <Button variant="outline" size="sm" className="text-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white">
+                  <AlertTriangle className="h-3 w-3 mr-xs" />
+                  Report
+                </Button>
               </div>
             </div>
           </div>

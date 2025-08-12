@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -10,207 +10,220 @@ import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import AccessibilityFAB from '@/components/ui/AccessibilityFAB'
 import { EventTicker } from '@/components/ui/event-ticker'
+import { BlogList, BlogCard } from '@/components/ui/blog-article'
+import { ArmorySidebar } from '@/components/ui/armory-sidebar'
+import { 
+  SidebarProvider, 
+  SidebarInset, 
+  SidebarTrigger
+} from '@/components/ui/sidebar'
 import { cn } from '@/lib/utils'
 import { 
-  Search, BookOpen, Filter, Clock, User, ArrowRight, 
-  Shield, Scale, GraduationCap, Wrench, Target, FileText,
-  Star, Eye, MessageSquare, Calendar, ChevronRight, Plus
+  Shield, BookOpen, Target, Star, ChevronRight, Plus, ArrowRight, User, Eye
 } from 'lucide-react'
 
-// Knowledge Base articles for Idaho firearms community
-const knowledgeBaseArticles = [
+// Blog articles for The Armory - Idaho firearms content
+const armoryArticles = [
   // Legal & Compliance
   {
+    id: 'idaho-gun-laws-2025',
     title: "Idaho Gun Laws: Complete 2025 Guide",
-    description: "Comprehensive overview of Idaho's firearms laws, including constitutional carry, concealed carry permits, prohibited locations, and recent legislative updates.",
+    excerpt: "Comprehensive overview of Idaho's firearms laws, including constitutional carry, concealed carry permits, prohibited locations, and recent legislative updates for Idaho residents.",
     category: "Legal",
-    difficulty: "Beginner",
-    readTime: "12 min",
-    author: "Legal Team",
-    lastUpdated: "2025-01-15",
+    author: {
+      name: "Legal Team",
+      title: "Legal Experts",
+      bio: "Idaho firearms law specialists"
+    },
+    publishDate: "2025-01-15",
+    readTime: 12,
     views: 2840,
     likes: 127,
     comments: 23,
     featured: true,
-    tags: ["Constitutional Carry", "CCW", "State Laws", "Permits"]
+    tags: ["Constitutional Carry", "CCW", "State Laws", "Permits"],
+    image: "/images/Fractal/25.webp"
   },
   {
+    id: 'federal-vs-state-laws',
     title: "Federal vs. State Gun Laws in Idaho",
-    description: "Understanding the interaction between federal firearms regulations and Idaho state law, including areas where federal law takes precedence.",
+    excerpt: "Understanding the interaction between federal firearms regulations and Idaho state law, including areas where federal law takes precedence.",
     category: "Legal",
-    difficulty: "Intermediate",
-    readTime: "8 min",
-    author: "Legal Team",
-    lastUpdated: "2025-01-10",
+    author: {
+      name: "Legal Team",
+      title: "Legal Experts",
+      bio: "Federal and state law specialists"
+    },
+    publishDate: "2025-01-10",
+    readTime: 8,
     views: 1560,
     likes: 89,
     comments: 15,
     featured: false,
-    tags: ["Federal Law", "State Law", "Compliance", "ATF"]
+    tags: ["Federal Law", "State Law", "Compliance", "ATF"],
+    image: "/images/Smoke/Background_08.webp"
   },
   {
+    id: 'nfa-items-idaho',
     title: "NFA Items in Idaho: Suppressors, SBRs, and More",
-    description: "Complete guide to owning NFA regulated items in Idaho, including the application process, wait times, and legal considerations.",
+    excerpt: "Complete guide to owning NFA regulated items in Idaho, including the application process, wait times, and legal considerations for Idaho gun owners.",
     category: "Legal",
-    difficulty: "Advanced",
-    readTime: "15 min",
-    author: "Legal Team",
-    lastUpdated: "2024-12-20",
+    author: {
+      name: "Legal Team",
+      title: "NFA Specialists",
+      bio: "National Firearms Act experts"
+    },
+    publishDate: "2024-12-20",
+    readTime: 15,
     views: 980,
     likes: 67,
     comments: 31,
     featured: true,
-    tags: ["NFA", "Suppressors", "SBR", "ATF Forms"]
+    tags: ["NFA", "Suppressors", "SBR", "ATF Forms"],
+    image: "/images/Dust/VintageDust (5).webp"
   },
 
   // Buying Guides
   {
+    id: 'first-time-buyer-idaho',
     title: "First-Time Gun Buyer's Guide: Idaho Edition",
-    description: "Step-by-step guide for purchasing your first firearm in Idaho, covering background checks, FFL dealers, and what to expect at the gun store.",
+    excerpt: "Step-by-step guide for purchasing your first firearm in Idaho, covering background checks, FFL dealers, and what to expect at the gun store.",
     category: "Buying Guide",
-    difficulty: "Beginner",
-    readTime: "10 min",
-    author: "Education Team",
-    lastUpdated: "2025-01-08",
+    author: {
+      name: "Education Team",
+      title: "Firearms Educators",
+      bio: "Idaho firearms education specialists"
+    },
+    publishDate: "2025-01-08",
+    readTime: 10,
     views: 3200,
     likes: 245,
     comments: 18,
     featured: true,
-    tags: ["First Time Buyer", "Background Check", "FFL", "Gun Store"]
+    tags: ["First Time Buyer", "Background Check", "FFL", "Gun Store"],
+    image: "/images/Grid/Grid (1).webp"
   },
   {
+    id: 'first-ccw-pistol',
     title: "Choosing Your First Concealed Carry Pistol",
-    description: "Factors to consider when selecting a concealed carry handgun, including size, caliber, reliability, and Idaho-specific considerations.",
-    category: "Buying Guide",  
-    difficulty: "Beginner",
-    readTime: "14 min",
-    author: "Training Team",
-    lastUpdated: "2024-12-15",
+    excerpt: "Factors to consider when selecting a concealed carry handgun, including size, caliber, reliability, and Idaho-specific considerations for new CCW holders.",
+    category: "Buying Guide",
+    author: {
+      name: "Training Team",
+      title: "Firearms Instructors",
+      bio: "Idaho concealed carry specialists"
+    },
+    publishDate: "2024-12-15",
+    readTime: 14,
     views: 2100,
     likes: 178,
     comments: 42,
     featured: false,
-    tags: ["Concealed Carry", "Pistol Selection", "CCW", "Self Defense"]
-  },
-  {
-    title: "Home Defense Firearms: Shotgun vs. Rifle vs. Handgun",
-    description: "Comparing different firearm types for home defense, with pros and cons of each option for Idaho homeowners.",
-    category: "Buying Guide",
-    difficulty: "Intermediate",
-    readTime: "11 min",
-    author: "Training Team",
-    lastUpdated: "2024-11-28",
-    views: 1890,
-    likes: 134,
-    comments: 28,
-    featured: false,
-    tags: ["Home Defense", "Shotgun", "Rifle", "Handgun"]
+    tags: ["Concealed Carry", "Pistol Selection", "CCW", "Self Defense"],
+    image: "/images/Fractal/12.webp"
   },
 
   // Safety & Training
   {
+    id: 'firearm-safety-fundamentals',
     title: "Firearm Safety: The Four Fundamental Rules",
-    description: "Essential firearm safety rules that every gun owner must know and practice, with practical examples and real-world applications.",
+    excerpt: "Essential firearm safety rules that every gun owner must know and practice, with practical examples and real-world applications for safe firearms handling.",
     category: "Safety",
-    difficulty: "Beginner",
-    readTime: "6 min",
-    author: "Safety Team",
-    lastUpdated: "2025-01-12",
+    author: {
+      name: "Safety Team",
+      title: "Certified Safety Instructors",
+      bio: "NRA certified firearms safety experts"
+    },
+    publishDate: "2025-01-12",
+    readTime: 6,
     views: 4100,
     likes: 312,
     comments: 8,
     featured: true,
-    tags: ["Safety Rules", "Gun Safety", "Fundamentals", "Training"]
+    tags: ["Safety Rules", "Gun Safety", "Fundamentals", "Training"],
+    image: "/images/Smoke/Background_08.webp"
   },
   {
+    id: 'safe-firearms-storage',
     title: "Safe Storage: Protecting Your Family and Firearms",
-    description: "Best practices for firearm storage in the home, including safes, locks, and balancing security with accessibility.",
+    excerpt: "Best practices for firearm storage in the home, including safes, locks, and balancing security with accessibility for Idaho gun owners.",
     category: "Safety",
-    difficulty: "Beginner",
-    readTime: "9 min",
-    author: "Safety Team",
-    lastUpdated: "2024-12-30",
+    author: {
+      name: "Safety Team",
+      title: "Home Security Experts",
+      bio: "Firearms storage and child safety specialists"
+    },
+    publishDate: "2024-12-30",
+    readTime: 9,
     views: 1670,
     likes: 98,
     comments: 19,
     featured: false,
-    tags: ["Gun Safe", "Storage", "Child Safety", "Security"]
+    tags: ["Gun Safe", "Storage", "Child Safety", "Security"],
+    image: "/images/Dust/VintageDust (5).webp"
   },
   {
+    id: 'range-etiquette-safety',
     title: "Range Etiquette and Safety Protocols",
-    description: "Proper behavior and safety procedures at shooting ranges, including commands, lane safety, and working with range officers.",
+    excerpt: "Proper behavior and safety procedures at shooting ranges, including commands, lane safety, and working with range officers at Idaho facilities.",
     category: "Safety",
-    difficulty: "Beginner",
-    readTime: "7 min",
-    author: "Training Team",
-    lastUpdated: "2024-12-22",
+    author: {
+      name: "Training Team",
+      title: "Range Safety Officers",
+      bio: "Certified range safety and training professionals"
+    },
+    publishDate: "2024-12-22",
+    readTime: 7,
     views: 1340,
     likes: 76,
     comments: 12,
     featured: false,
-    tags: ["Range Safety", "Etiquette", "Shooting Range", "Protocols"]
+    tags: ["Range Safety", "Etiquette", "Shooting Range", "Protocols"],
+    image: "/images/Grid/Grid (1).webp"
   },
 
-  // Maintenance & Gunsmithing
+  // Maintenance
   {
+    id: 'basic-firearm-maintenance',
     title: "Basic Firearm Cleaning and Maintenance",
-    description: "Essential cleaning procedures and maintenance schedules to keep your firearms in optimal condition and ensure reliable operation.",
+    excerpt: "Essential cleaning procedures and maintenance schedules to keep your firearms in optimal condition and ensure reliable operation year-round.",
     category: "Maintenance",
-    difficulty: "Beginner",
-    readTime: "13 min",
-    author: "Technical Team",
-    lastUpdated: "2024-12-18",
+    author: {
+      name: "Technical Team",
+      title: "Gunsmith Professionals",
+      bio: "Licensed gunsmiths and maintenance experts"
+    },
+    publishDate: "2024-12-18",
+    readTime: 13,
     views: 2200,
     likes: 156,
     comments: 34,
     featured: false,
-    tags: ["Cleaning", "Maintenance", "Gun Care", "Reliability"]
+    tags: ["Cleaning", "Maintenance", "Gun Care", "Reliability"],
+    image: "/images/Fractal/25.webp"
   },
   {
-    title: "When to See a Gunsmith: DIY vs. Professional",
-    description: "Understanding which firearm issues you can handle yourself and when professional gunsmith services are necessary.",
-    category: "Maintenance",
-    difficulty: "Intermediate",
-    readTime: "10 min",
-    author: "Technical Team",
-    lastUpdated: "2024-11-15",
-    views: 980,
-    likes: 67,
-    comments: 21,
-    featured: false,
-    tags: ["Gunsmith", "DIY", "Repairs", "Maintenance"]
-  },
-
-  // Training & Skills
-  {
+    id: 'marksmanship-fundamentals',
     title: "Fundamentals of Marksmanship",
-    description: "Core shooting principles including stance, grip, sight alignment, and trigger control for improved accuracy.",
+    excerpt: "Core shooting principles including stance, grip, sight alignment, and trigger control for improved accuracy and precision shooting.",
     category: "Training",
-    difficulty: "Beginner",
-    readTime: "16 min",
-    author: "Training Team",
-    lastUpdated: "2024-12-05",
+    author: {
+      name: "Training Team",
+      title: "Marksmanship Instructors",
+      bio: "Competition shooters and certified instructors"
+    },
+    publishDate: "2024-12-05",
+    readTime: 16,
     views: 1780,
     likes: 123,
     comments: 26,
     featured: false,
-    tags: ["Marksmanship", "Shooting Skills", "Accuracy", "Fundamentals"]
-  },
-  {
-    title: "Dry Fire Practice: Training at Home Safely",
-    description: "How to practice shooting skills at home using dry fire techniques, including safety protocols and training drills.",
-    category: "Training",
-    difficulty: "Intermediate",
-    readTime: "12 min", 
-    author: "Training Team",
-    lastUpdated: "2024-11-08",
-    views: 1450,
-    likes: 98,
-    comments: 17,
-    featured: false,
-    tags: ["Dry Fire", "Home Training", "Practice", "Skills"]
+    tags: ["Marksmanship", "Shooting Skills", "Accuracy", "Fundamentals"],
+    image: "/images/Fractal/12.webp"
   }
 ]
+
+// Real Idaho firearms content structure for The Armory blog functionality
 
 const upcomingEvents = [
   {
@@ -239,148 +252,30 @@ const upcomingEvents = [
   },
 ];
 
-const categories = [
-  { label: "All Articles", value: "all", icon: <BookOpen className="h-4 w-4" />, count: knowledgeBaseArticles.length },
-  { label: "Legal", value: "Legal", icon: <Scale className="h-4 w-4" />, count: knowledgeBaseArticles.filter(a => a.category === "Legal").length },
-  { label: "Buying Guides", value: "Buying Guide", icon: <Target className="h-4 w-4" />, count: knowledgeBaseArticles.filter(a => a.category === "Buying Guide").length },
-  { label: "Safety", value: "Safety", icon: <Shield className="h-4 w-4" />, count: knowledgeBaseArticles.filter(a => a.category === "Safety").length },
-  { label: "Training", value: "Training", icon: <GraduationCap className="h-4 w-4" />, count: knowledgeBaseArticles.filter(a => a.category === "Training").length },
-  { label: "Maintenance", value: "Maintenance", icon: <Wrench className="h-4 w-4" />, count: knowledgeBaseArticles.filter(a => a.category === "Maintenance").length }
-]
+// Categories and filters now handled by BlogList component
 
-const difficultyLevels = [
-  { label: "All Levels", value: "all", count: knowledgeBaseArticles.length },
-  { label: "Beginner", value: "Beginner", count: knowledgeBaseArticles.filter(a => a.difficulty === "Beginner").length },
-  { label: "Intermediate", value: "Intermediate", count: knowledgeBaseArticles.filter(a => a.difficulty === "Intermediate").length },
-  { label: "Advanced", value: "Advanced", count: knowledgeBaseArticles.filter(a => a.difficulty === "Advanced").length }
-]
-
-function ArticleCard({ article }: { article: typeof knowledgeBaseArticles[0] }) {
-  const categoryColors = {
-    "Legal": "bg-scale-blue/20 text-scale-blue border-scale-blue/30",
-    "Buying Guide": "bg-slate-blue/20 text-slate-blue border-slate-blue/30",
-    "Safety": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30",
-    "Training": "bg-sage-green/20 text-sage-green border-sage-green/30",
-    "Maintenance": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30"
-  }
-
-  const difficultyColors = {
-    "Beginner": "bg-sagebrush-green/20 text-sagebrush-green border-sagebrush-green/30",
-    "Intermediate": "bg-slate-blue/20 text-slate-blue border-slate-blue/30", 
-    "Advanced": "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30"
-  }
-
-  return (
-    <Card className={cn("group hover:shadow-elevated transition-all duration-300", article.featured && "ring-2 ring-page-primary/30 bg-page-primary/5")}>
-      <CardHeader className="pb-base">
-        <div className="flex items-start justify-between gap-base mb-xs">
-          <div className="flex gap-xs">
-            <Badge className={categoryColors[article.category as keyof typeof categoryColors]}>
-              {article.category}
-            </Badge>
-            <Badge className={difficultyColors[article.difficulty as keyof typeof difficultyColors]}>
-              {article.difficulty}
-            </Badge>
-          </div>
-          {article.featured && (
-            <Badge className="bg-page-primary text-page-primary-foreground font-rajdhani font-bold">
-              Featured
-            </Badge>
-          )}
-        </div>
-        
-        <CardTitle className="font-rajdhani text-xl font-bold text-card-foreground group-hover:text-page-primary transition-colors duration-200 leading-tight">
-          {article.title}
-        </CardTitle>
-      </CardHeader>
-      
-      <CardContent className="space-y-base">
-        <p className="text-sm text-muted-foreground line-clamp-3">
-          {article.description}
-        </p>
-        
-        <div className="flex flex-wrap gap-xs">
-          {article.tags.slice(0, 3).map((tag) => (
-            <Badge key={tag} variant="outline" className="text-xs">
-              {tag}
-            </Badge>
-          ))}
-          {article.tags.length > 3 && (
-            <Badge variant="outline" className="text-xs">
-              +{article.tags.length - 3} more
-            </Badge>
-          )}
-        </div>
-        
-        <div className="flex items-center justify-between text-xs text-muted-foreground">
-          <div className="flex items-center gap-base">
-            <div className="flex items-center gap-xs">
-              <Clock className="h-3 w-3" />
-              <span>{article.readTime}</span>
-            </div>
-            <div className="flex items-center gap-xs">
-              <User className="h-3 w-3" />
-              <span>{article.author}</span>
-            </div>
-            <div className="flex items-center gap-xs">
-              <Calendar className="h-3 w-3" />
-              <span>{new Date(article.lastUpdated).toLocaleDateString()}</span>
-            </div>
-          </div>
-        </div>
-        
-        <div className="flex items-center justify-between pt-xs border-t border-border">
-          <div className="flex items-center gap-base text-xs text-muted-foreground">
-            <div className="flex items-center gap-xs">
-              <Eye className="h-3 w-3" />
-              <span>{article.views.toLocaleString()}</span>
-            </div>
-            <div className="flex items-center gap-xs">
-              <Star className="h-3 w-3" />
-              <span>{article.likes}</span>
-            </div>
-            <div className="flex items-center gap-xs">
-              <MessageSquare className="h-3 w-3" />
-              <span>{article.comments}</span>
-            </div>
-          </div>
-          
-          <Button variant="ghost" size="sm" className="text-page-primary hover:text-page-accent">
-            Read Article
-            <ArrowRight className="h-3 w-3 ml-xs" />
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
-  )
-}
+// Removed ArticleCard - now using BlogCard from blog-article component
 
 export default function ArmoryPage() {
-  const [selectedCategory, setSelectedCategory] = useState("all")
-  const [selectedDifficulty, setSelectedDifficulty] = useState("all") 
-  const [searchQuery, setSearchQuery] = useState("")
-  
-  const filteredArticles = knowledgeBaseArticles.filter(article => {
-    const matchesCategory = selectedCategory === "all" || article.category === selectedCategory
-    const matchesDifficulty = selectedDifficulty === "all" || article.difficulty === selectedDifficulty
-    const matchesSearch = searchQuery === "" || 
-      article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      article.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      article.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
-      article.category.toLowerCase().includes(searchQuery.toLowerCase())
-    return matchesCategory && matchesDifficulty && matchesSearch
-  })
-
-  // Sort by featured first, then by views
-  const sortedArticles = filteredArticles.sort((a, b) => {
-    if (a.featured && !b.featured) return -1
-    if (!a.featured && b.featured) return 1
-    return b.views - a.views
-  })
 
   return (
-    <div className="theme-armory min-h-screen bg-background">
-      <SiteNavigation variant="premium" sticky={true} />
+    <div className="theme-armory min-h-screen">
+      <SiteNavigation />
+      <SidebarProvider>
+        <ArmorySidebar />
+        <SidebarInset className="flex-1">
+          {/* Header with Sidebar Trigger */}
+          <header className="flex h-16 shrink-0 items-center gap-xs border-b px-base">
+            <SidebarTrigger className="-ml-1" />
+            <div className="flex items-center gap-xs text-body-sm ml-2">
+              <Shield className="size-4 text-foothills-purple" />
+              <span className="font-semibold font-rajdhani">The Armory</span>
+              <span className="text-muted-foreground">|</span>
+              <span className="text-muted-foreground">Firearms Information Hub</span>
+            </div>
+          </header>
+          
+          <div className="flex-1 overflow-auto">{/* Main content wrapper */}
       {/* Armory Hero - Content Left, Card Right (Layout 3) */}
       <section className="relative overflow-hidden bg-gradient-armory-hero px-md py-lg">
         <div className="absolute inset-0 bg-gradient-to-br from-gruvbox-bg-dark/20 via-transparent to-gruvbox-bg-dark/10 pointer-events-none"></div>
@@ -525,7 +420,7 @@ export default function ArmoryPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-xl">
             <StatCard
               title="Total Articles"
-              value={knowledgeBaseArticles.length.toString()}
+              value={armoryArticles.length.toString()}
               label="Expert Guides"
               trend="up"
               trendValue={`${8}%`}
@@ -558,130 +453,17 @@ export default function ArmoryPage() {
         </div>
       </section>
 
-      {/* Search and Filter Section */}
-      <section className="py-4xl">
-        <div className="container mx-auto max-w-site px-md">
-          <div className="space-y-xl">
-            {/* Search Bar */}
-            <div className="flex flex-col md:flex-row gap-base">
-              <div className="flex-1 relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <Input
-                  placeholder="Search articles, topics, or keywords..."
-                  className="pl-10"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-              </div>
-              <div className="flex gap-xs">
-                <Button variant="outline" className="gap-xs">
-                  <Filter className="h-4 w-4" />
-                  Advanced Search
-                </Button>
-              </div>
-            </div>
+      {/* Search section removed - now handled by BlogList component */}
 
-            {/* Category Filters */}
-            <div className="space-y-base">
-              <h3 className="font-rajdhani text-lg font-bold text-card-foreground">
-                Browse by Category
-              </h3>
-              <div className="flex flex-wrap gap-xs">
-                {categories.map((category) => (
-                  <Button
-                    key={category.value}
-                    variant={selectedCategory === category.value ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedCategory(category.value)}
-                    className={selectedCategory === category.value ? 
-                      "bg-page-primary text-page-primary-foreground hover:bg-page-accent" : 
-                      "border-page-primary/30 text-page-primary hover:bg-page-primary hover:text-page-primary-foreground"
-                    }
-                  >
-                    {category.icon}
-                    <span className="ml-xs">{category.label}</span>
-                    <Badge variant="secondary" className="ml-xs">
-                      {category.count}
-                    </Badge>
-                  </Button>
-                ))}
-              </div>
-            </div>
-
-            {/* Difficulty Filters */}
-            <div className="space-y-base">
-              <h3 className="font-rajdhani text-lg font-bold text-card-foreground">
-                Filter by Difficulty Level
-              </h3>
-              <div className="flex flex-wrap gap-xs">
-                {difficultyLevels.map((level) => (
-                  <Button
-                    key={level.value}
-                    variant={selectedDifficulty === level.value ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedDifficulty(level.value)}
-                    className={selectedDifficulty === level.value ? 
-                      "bg-page-primary text-page-primary-foreground hover:bg-page-accent" : 
-                      "border-page-primary/30 text-page-primary hover:bg-page-primary hover:text-page-primary-foreground"
-                    }
-                  >
-                    {level.label}
-                    <Badge variant="secondary" className="ml-xs">
-                      {level.count}
-                    </Badge>
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Articles Grid */}
-      <section className="pb-6xl">
-        <div className="container mx-auto max-w-site px-md">
-          <div className="space-y-xl">
-            <div className="flex items-center justify-between">
-              <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">
-                {selectedCategory === "all" ? "All Articles" : categories.find(c => c.value === selectedCategory)?.label}
-              </h2>
-              <div className="text-muted-foreground">
-                {sortedArticles.length} {sortedArticles.length === 1 ? 'article' : 'articles'} found
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xl">
-              {sortedArticles.map((article, index) => (
-                <ArticleCard key={index} article={article} />
-              ))}
-            </div>
-
-            {sortedArticles.length === 0 && (
-              <div className="text-center py-6xl">
-                <div className="space-y-base">
-                  <div className="text-6xl">📚</div>
-                  <h3 className="font-rajdhani text-2xl font-bold text-card-foreground">
-                    No articles found
-                  </h3>
-                  <p className="text-muted-foreground max-w-md mx-auto">
-                    Try adjusting your search criteria or browse all articles to discover helpful guides and resources.
-                  </p>
-                  <Button 
-                    onClick={() => {
-                      setSelectedCategory("all")
-                      setSelectedDifficulty("all")
-                      setSearchQuery("")
-                    }}
-                    className="bg-page-primary text-page-primary-foreground hover:bg-page-accent"
-                  >
-                    Show All Articles
-                  </Button>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+      {/* Blog Content Section */}
+      <BlogList 
+        articles={armoryArticles}
+        variant="grid"
+        showFilters={false}
+        title="Latest Articles"
+        subtitle="Expert Knowledge"
+        className="pb-6xl"
+      />
 
       {/* Newsletter CTA */}
       <section className="py-6xl bg-page-gradient">
@@ -718,6 +500,9 @@ export default function ArmoryPage() {
 
       <SiteFooter />
       <AccessibilityFAB />
+          </div>{/* End main content wrapper */}
+        </SidebarInset>
+      </SidebarProvider>
     </div>
   )
 }

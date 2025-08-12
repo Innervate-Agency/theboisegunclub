@@ -7,12 +7,12 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
 type Props = {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const guide = getGuideData(params.slug);
+  const { slug } = await params;
+  const guide = getGuideData(slug);
 
   if (!guide) {
     notFound();
@@ -32,7 +32,8 @@ export async function generateStaticParams() {
 }
 
 export default async function GuidePage({ params }: Props) {
-  const guide = getGuideData(params.slug);
+  const { slug } = await params;
+  const guide = getGuideData(slug);
 
   if (!guide) {
     return notFound();

@@ -53,20 +53,20 @@ function Calendar({
         ),
         button_previous: cn(
           buttonVariants({ variant: buttonVariant }),
-          "size-(--cell-size) aria-disabled:opacity-50 p-0 select-none",
+          "size-[var(--icon-2xl)] aria-disabled:opacity-50 p-0 select-none",
           defaultClassNames.button_previous
         ),
         button_next: cn(
           buttonVariants({ variant: buttonVariant }),
-          "size-(--cell-size) aria-disabled:opacity-50 p-0 select-none",
+          "size-[var(--icon-2xl)] aria-disabled:opacity-50 p-0 select-none",
           defaultClassNames.button_next
         ),
         month_caption: cn(
-          "flex items-center justify-center h-(--cell-size) w-full px-(--cell-size)",
+          "flex items-center justify-center h-[var(--icon-2xl)] w-full px-[var(--icon-2xl)]",
           defaultClassNames.month_caption
         ),
         dropdowns: cn(
-          "w-full flex items-center text-body-sm font-medium justify-center h-(--cell-size) gap-md",
+          "w-full flex items-center text-body-sm font-medium justify-center h-[var(--icon-2xl)] gap-md",
           defaultClassNames.dropdowns
         ),
         dropdown_root: cn(
@@ -159,7 +159,7 @@ function Calendar({
         WeekNumber: ({ children, ...props }) => {
           return (
             <td {...props}>
-              <div className="flex size-(--cell-size) items-center justify-center text-center">
+              <div className="flex size-[var(--icon-2xl)] items-center justify-center text-center">
                 {children}
               </div>
             </td>

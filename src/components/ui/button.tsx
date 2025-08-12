@@ -162,6 +162,9 @@ const buttonVariants = cva(
         // Link: Text-only, minimal presence
         link: "text-rusty-orange hover:text-recoil-pad underline-offset-4 hover:underline focus-visible:ring-rusty-orange border-0",
         
+        // Micro: Small action buttons with no shadows and Stripe-style micro-animations
+        micro: "bg-transparent text-muted-foreground hover:text-foreground hover:bg-accent/50 focus-visible:ring-rusty-orange/50 border border-border/40 transition-all duration-200 group",
+        
         // Fire: Commanding presence with tactical gradient accents
         fire: "bg-card text-card-foreground shadow-commanding hover:shadow-hero focus-visible:ring-rusty-orange transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-rusty-orange after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
@@ -175,12 +178,12 @@ const buttonVariants = cva(
         "fire-green": "bg-card text-card-foreground shadow-commanding hover:shadow-hero focus-visible:ring-ayu-green transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-sagebrush-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
       },
       size: {
-        // Use our component sizing tokens from the design system
-        sm: "h-8 px-sm py-xs text-caption gap-xs", // For inside cards/forms - Stripe pattern
-        default: "h-10 px-base py-sm text-body-sm gap-xs", // General usage
-        lg: "h-12 px-md py-sm text-body gap-xs", // Hero/primary actions
-        xl: "h-14 px-lg py-base text-body-lg gap-sm", // Call-to-action buttons
-        icon: "h-10 w-10 p-0"
+        // Use our component sizing tokens from the design system (globals.css)
+        sm: "h-[var(--button-height-sm)] px-sm py-xs text-caption gap-xs", // 32px - Stripe pattern
+        default: "h-[var(--button-height-base)] px-base py-sm text-body-sm gap-xs", // 40px - General usage
+        lg: "h-[var(--button-height-lg)] px-md py-sm text-body gap-xs", // 48px - Hero/primary actions
+        xl: "h-[var(--button-height-xl)] px-lg py-base text-body-lg gap-sm", // 56px - Call-to-action buttons
+        icon: "h-[var(--button-height-base)] w-[var(--button-height-base)] p-0" // Square icon button
       },
       rounded: {
         none: "rounded-xs",
@@ -217,7 +220,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const renderMicroAnimation = () => {
       if (loading || !animationType || animationType === 'none') return null
       
-      const animationClassName = "ml-(--spacing-xs)"
+      const animationClassName = "ml-xs"
       
       switch (animationType) {
         case 'arrow':

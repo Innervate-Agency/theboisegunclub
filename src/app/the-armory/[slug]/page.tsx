@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
@@ -32,7 +32,8 @@ export async function generateStaticParams() {
 }
 
 export default async function ArmoryItemPage({ params }: Props) {
-  const item = getArmoryItem(params.slug);
+  const { slug } = await params;
+  const item = getArmoryItem(slug);
 
   if (!item) {
     notFound();

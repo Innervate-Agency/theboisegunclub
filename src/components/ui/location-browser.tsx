@@ -8,7 +8,8 @@ import { Card, CardContent, CardHeader, CardTitle } from './card'
 import { 
   Search, MapPin, Filter, ArrowRight, 
   Navigation, Shield, Users, 
-  Star, Eye, Flag, Info, ExternalLink
+  Star, Eye, Flag, Info, ExternalLink,
+  Camera, CheckCircle, AlertTriangle
 } from 'lucide-react'
 
 // Types for shooting locations
@@ -28,6 +29,7 @@ interface ShootingLocation {
   difficulty: string
   category: string
   verified: boolean
+  needsVerification?: boolean
   lastUpdated: string
 }
 
@@ -89,10 +91,15 @@ function LocationCard({ location }: { location: ShootingLocation }) {
               {location.difficulty}
             </Badge>
           </div>
-          {location.verified && (
+          {location.verified ? (
             <Badge className="bg-sagebrush-green/20 text-sagebrush-green border-sagebrush-green/30">
               <Shield className="h-3 w-3 mr-xs" />
               Verified
+            </Badge>
+          ) : (
+            <Badge className="bg-warning-clay/20 text-warning-clay border-warning-clay/30">
+              <AlertTriangle className="h-3 w-3 mr-xs" />
+              Unverified
             </Badge>
           )}
         </div>
@@ -151,6 +158,31 @@ function LocationCard({ location }: { location: ShootingLocation }) {
                 <h4 className="font-medium text-safety-red text-sm">Restrictions:</h4>
                 <p className="text-xs text-safety-red/80">{location.restrictions}</p>
               </div>
+            </div>
+          </div>
+        )}
+        
+        {/* Verification CTA - Only show for unverified locations */}
+        {!location.verified && location.needsVerification && (
+          <div className="bg-warning-clay/5 border border-warning-clay/20 rounded-sm p-base">
+            <div className="flex items-start justify-between gap-base mb-base">
+              <div className="flex-1">
+                <h4 className="font-rajdhani font-bold text-sm text-warning-clay mb-xs">Help Verify This Location</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Have you been here? Help the community by verifying access conditions, safety info, and current restrictions.
+                </p>
+              </div>
+              <Shield className="h-5 w-5 text-warning-clay/60 flex-shrink-0 mt-xs" />
+            </div>
+            <div className="grid grid-cols-2 gap-xs">
+              <Button size="sm" className="bg-warning-clay text-white hover:bg-warning-clay/90 font-rajdhani font-semibold">
+                <Camera className="h-4 w-4 mr-xs" />
+                Add Photos
+              </Button>
+              <Button variant="outline" size="sm" className="border-warning-clay/30 text-warning-clay hover:bg-warning-clay hover:text-white font-rajdhani font-semibold">
+                <CheckCircle className="h-4 w-4 mr-xs" />
+                Verify Details
+              </Button>
             </div>
           </div>
         )}

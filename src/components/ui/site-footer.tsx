@@ -67,7 +67,7 @@ export function SiteFooter({
             {/* Brand & Description */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-(--spacing-xs) mb-(--spacing-sm)">
-                <Target className={cn("h-(--icon-lg) w-(--icon-lg)", isMinimal ? "icon-primary" : "text-(--color-sandy-ochre)")} />
+                <Target className={cn("h-[var(--icon-lg)] w-[var(--icon-lg)]", isMinimal ? "icon-primary" : "text-sandy-ochre")} />
                 <h3 className={cn("text-heading-sm font-rajdhani font-bold", textColor)}>
                   Boise Gun Club
                 </h3>
@@ -78,15 +78,15 @@ export function SiteFooter({
               </p>
               <div className="space-y-(--spacing-xs)">
                 <div className={cn("flex items-center gap-(--spacing-xs) text-body-sm", mutedColor)}>
-                  <MapPin className="h-(--icon-sm) w-(--icon-sm)" />
+                  <MapPin className="h-[var(--icon-sm)] w-[var(--icon-sm)]" />
                   <span>Boise, Idaho</span>
                 </div>
                 <div className={cn("flex items-center gap-(--spacing-xs) text-body-sm", mutedColor)}>
-                  <Phone className="h-(--icon-sm) w-(--icon-sm)" />
+                  <Phone className="h-[var(--icon-sm)] w-[var(--icon-sm)]" />
                   <span>(208) 555-GUNS</span>
                 </div>
                 <div className={cn("flex items-center gap-(--spacing-xs) text-body-sm", mutedColor)}>
-                  <Mail className="h-(--icon-sm) w-(--icon-sm)" />
+                  <Mail className="h-[var(--icon-sm)] w-[var(--icon-sm)]" />
                   <span>info@boisegunclub.com</span>
                 </div>
               </div>
@@ -136,7 +136,7 @@ export function SiteFooter({
                   const Icon = service.icon
                   return (
                     <li key={service.name} className={cn("flex items-center gap-(--spacing-xs) text-body-sm", mutedColor)}>
-                      <Icon className="h-(--icon-xs) w-(--icon-xs)" />
+                      <Icon className="h-[var(--icon-xs)] w-[var(--icon-xs)]" />
                       <span>{service.name}</span>
                     </li>
                   )
@@ -216,7 +216,7 @@ export function SiteFooter({
                       )}
                       title={social.label}
                     >
-                      <Icon className="h-(--icon-sm) w-(--icon-sm)" />
+                      <Icon className="h-[var(--icon-sm)] w-[var(--icon-sm)]" />
                     </a>
                   )
                 })}

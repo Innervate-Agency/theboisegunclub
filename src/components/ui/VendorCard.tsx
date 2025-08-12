@@ -30,7 +30,7 @@ const vendorCardVariants = cva(
       },
       size: {
         sm: "p-base",           // 16px - compact cards
-        md: "p-(--card-padding)",         // 24px - standard Stripe card padding
+        md: "p-md",         // 24px - Stripe-standard card padding
         lg: "p-lg"              // 32px - spacious cards
       }
     },
@@ -68,6 +68,16 @@ export interface VendorCardProps
   monthlyLeads?: number | undefined;
 }
 
+// Map business types to badge variants
+const getBusinessBadgeVariant = (businessType: string) => {
+  if (businessType.includes('FFL') || businessType.includes('Dealer')) return 'ffl'
+  if (businessType.includes('Range') || businessType.includes('Club')) return 'range'
+  if (businessType.includes('Gunsmith') || businessType.includes('Custom')) return 'gunsmith'
+  if (businessType.includes('Training') || businessType.includes('Academy') || businessType.includes('Education')) return 'training_facility'
+  if (businessType.includes('Gun Club') || businessType.includes('Shooting Club')) return 'club'
+  return 'range' // default
+}
+
 export function VendorCard({
   businessName,
   businessType,
@@ -101,10 +111,10 @@ export function VendorCard({
       {...props}
     >
       {/* Header with business info */}
-      <div className="mb-(--spacing-md)">
-        <div className="flex items-center gap-sm mb-(--spacing-xs)">
+      <div className="mb-md">
+        <div className="flex items-center gap-sm mb-xs">
           {/* Business logo/image */}
-          <Avatar className="h-(--icon-3xl) w-(--icon-3xl) rounded-(--radius-lg) flex-shrink-0">
+          <Avatar className="h-[var(--icon-3xl)] w-[var(--icon-3xl)] rounded-lg flex-shrink-0">
             {imageUrl && !imgError ? (
               <AvatarImage
                 src={imageUrl}
@@ -113,28 +123,40 @@ export function VendorCard({
                 onError={() => setImgError(true)}
               />
             ) : null}
-            <AvatarFallback className="rounded-(--radius-lg) bg-muted font-rajdhani font-bold text-heading-sm text-muted-foreground">
+            <AvatarFallback className="rounded-lg bg-muted font-rajdhani font-bold text-heading-sm text-muted-foreground">
               {businessName.charAt(0).toUpperCase()}
             </AvatarFallback>
           </Avatar>
           
-          <div className="space-y-(--spacing-micro) flex-1">
-            <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground leading-tight transition-colors duration-200 group-hover:text-rusty-orange">
-              {businessName}
-            </h3>
+          <div className="space-y-micro flex-1">
+            <div className="flex items-center gap-xs mb-xs">
+              <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground leading-tight transition-colors duration-200 group-hover:text-rusty-orange">
+                {businessName}
+              </h3>
+              <Badge 
+                variant={getBusinessBadgeVariant(businessType) as any}
+                size="sm"
+              >
+                {businessType.includes('Range') ? 'Range' :
+                 businessType.includes('Gunsmith') || businessType.includes('Custom') ? 'Gunsmith' :
+                 businessType.includes('Training') || businessType.includes('Academy') ? 'Training' :
+                 businessType.includes('FFL') || businessType.includes('Dealer') ? 'FFL' :
+                 businessType.includes('Gun Club') ? 'Club' : 'Business'}
+              </Badge>
+            </div>
             <p className="text-body-sm text-muted-foreground leading-tight">{businessType}</p>
           </div>
         </div>
 
         {/* Tier-specific badges - now below name block */}
         {(isVerified || showSponsored) && (
-          <div className="flex gap-sm ml-[calc(3rem+var(--spacing-sm))]">
+          <div className="flex gap-sm ml-[calc(4rem+0.75rem)]">
             {isVerified && (
               <Badge 
                 variant={tier === 'gold' ? 'elite' : 'default'}
                 size="sm"
               >
-                <Shield className="w-icon-xs h-icon-xs mr-(--spacing-xs)" />
+                <Shield className="w-icon-xs h-icon-xs mr-xs" />
                 Verified
               </Badge>
             )}
@@ -149,13 +171,13 @@ export function VendorCard({
 
       {/* Description */}
       {description && (
-        <p className="text-body-sm text-muted-foreground mb-(--spacing-md) line-clamp-2">
+        <p className="text-body-sm text-muted-foreground mb-md line-clamp-2">
           {description}
         </p>
       )}
 
       {/* Contact Information */}
-      <div className="space-y-(--spacing-xs) mb-(--spacing-md)">
+      <div className="space-y-xs mb-md">
         {address && (
           <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
             <MapPin className="w-icon-sm h-icon-sm flex-shrink-0" />
@@ -178,7 +200,7 @@ export function VendorCard({
 
       {/* Rating */}
       {rating && reviewCount && (
-        <div className="flex items-center gap-xs mb-(--spacing-md)">
+        <div className="flex items-center gap-xs mb-md">
           <div className="flex items-center">
             {[1, 2, 3, 4, 5].map((star) => (
               <Star
@@ -200,7 +222,7 @@ export function VendorCard({
 
       {/* Specialties */}
       {specialties.length > 0 && (
-        <div className="flex flex-wrap gap-(--spacing-tiny) mb-(--spacing-md)">
+        <div className="flex flex-wrap gap-tiny mb-md">
           {specialties.slice(0, 3).map((specialty, index) => (
             <Badge 
               key={index} 
@@ -223,7 +245,7 @@ export function VendorCard({
 
       {/* Enhanced features for Silver/Gold tiers */}
       {showLeads && (
-        <div className="flex items-center gap-xs mb-(--spacing-md) p-xs bg-rifling-green/10 rounded-(--radius-md)">
+        <div className="flex items-center gap-xs mb-md p-xs bg-rifling-green/10 rounded-md">
           <TrendingUp className="w-icon-sm h-icon-sm text-rifling-green" />
           <span className="text-body-sm text-rifling-green font-medium">
             {monthlyLeads} leads this month
@@ -232,11 +254,12 @@ export function VendorCard({
       )}
 
       {/* Action buttons - flat inside card container */}
-      <div className="flex gap-xs pt-(--spacing-sm)">
+      <div className="flex gap-xs pt-sm">
         <Button 
           size="sm" 
-          variant="solid-accent"
-          className="flex-1 bg-card-surface text-card-foreground border-0 shadow-none hover:bg-card-surface/80 group-hover:!bg-rusty-orange group-hover:!text-primary transition-all duration-300"
+          variant="micro"
+          animationType="arrow"
+          className="flex-1"
         >
           View Details
         </Button>
