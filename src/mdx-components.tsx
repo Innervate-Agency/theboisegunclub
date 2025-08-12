@@ -17,10 +17,10 @@ import {
 // Custom components for MDX content
 function LegalDisclaimer({ children }: { children: React.ReactNode }) {
   return (
-    <Alert className="my-base border-amber-500/30 bg-amber-500/5">
-      <Scale className="h-4 w-4 text-amber-600" />
-      <AlertTitle className="text-amber-700 font-rajdhani font-bold">Legal Disclaimer</AlertTitle>
-      <AlertDescription className="text-amber-600">
+    <Alert variant="warning" className="my-base">
+      <Scale className="h-4 w-4" />
+      <AlertTitle className="font-rajdhani font-bold">Legal Disclaimer</AlertTitle>
+      <AlertDescription>
         {children}
       </AlertDescription>
     </Alert>
@@ -29,10 +29,10 @@ function LegalDisclaimer({ children }: { children: React.ReactNode }) {
 
 function SafetyWarning({ children }: { children: React.ReactNode }) {
   return (
-    <Alert className="my-base border-red-500/30 bg-red-500/5">
-      <AlertTriangle className="h-4 w-4 text-red-600" />
-      <AlertTitle className="text-red-700 font-rajdhani font-bold">Safety Warning</AlertTitle>
-      <AlertDescription className="text-red-600">
+    <Alert variant="destructive" className="my-base">
+      <AlertTriangle className="h-4 w-4" />
+      <AlertTitle className="font-rajdhani font-bold">Safety Warning</AlertTitle>
+      <AlertDescription>
         {children}
       </AlertDescription>
     </Alert>
@@ -41,10 +41,10 @@ function SafetyWarning({ children }: { children: React.ReactNode }) {
 
 function InfoBox({ children }: { children: React.ReactNode }) {
   return (
-    <Alert className="my-base border-blue-500/30 bg-blue-500/5">
-      <Info className="h-4 w-4 text-blue-600" />
-      <AlertTitle className="text-blue-700 font-rajdhani font-bold">Information</AlertTitle>
-      <AlertDescription className="text-blue-600">
+    <Alert variant="info" className="my-base">
+      <Info className="h-4 w-4" />
+      <AlertTitle className="font-rajdhani font-bold">Information</AlertTitle>
+      <AlertDescription>
         {children}
       </AlertDescription>
     </Alert>
@@ -53,10 +53,10 @@ function InfoBox({ children }: { children: React.ReactNode }) {
 
 function ProTip({ children }: { children: React.ReactNode }) {
   return (
-    <Alert className="my-base border-green-500/30 bg-green-500/5">
-      <CheckCircle className="h-4 w-4 text-green-600" />
-      <AlertTitle className="text-green-700 font-rajdhani font-bold">Pro Tip</AlertTitle>
-      <AlertDescription className="text-green-600">
+    <Alert variant="success" className="my-base">
+      <CheckCircle className="h-4 w-4" />
+      <AlertTitle className="font-rajdhani font-bold">Pro Tip</AlertTitle>
+      <AlertDescription>
         {children}
       </AlertDescription>
     </Alert>
@@ -65,12 +65,12 @@ function ProTip({ children }: { children: React.ReactNode }) {
 
 function CallToAction({ text, href }: { text: string; href?: string }) {
   return (
-    <div className="my-lg p-base bg-gradient-to-r from-rusty-orange/10 to-slate-blue/10 rounded-sm border border-rusty-orange/20">
+    <div className="my-lg p-base bg-gradient-to-r from-primary/10 to-secondary/10 rounded-sm border border-primary/20">
       <div className="text-center">
         <Button 
           asChild={!!href}
           size="lg" 
-          className="bg-rusty-orange text-white hover:bg-rusty-orange/90 font-rajdhani font-bold"
+          className="font-rajdhani font-bold"
         >
           {href ? <a href={href}>{text}</a> : <span>{text}</span>}
         </Button>
@@ -88,7 +88,7 @@ function FeatureCard({ title, description, icon }: { title: string; description:
     <Card className="my-base">
       <CardHeader className="pb-sm">
         <CardTitle className="flex items-center gap-xs font-rajdhani">
-          <IconComponent className="h-5 w-5 text-rusty-orange" />
+          <IconComponent className="h-5 w-5 text-primary" />
           {title}
         </CardTitle>
       </CardHeader>
@@ -196,7 +196,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     blockquote: ({ className, ...props }) => (
       <blockquote
         className={cn(
-          "mt-base border-l-4 border-rusty-orange pl-base italic text-muted-foreground bg-muted/30 py-sm rounded-r-sm",
+          "mt-base border-l-4 border-primary pl-base italic text-muted-foreground bg-muted/30 py-sm rounded-r-sm",
           className
         )}
         {...props}

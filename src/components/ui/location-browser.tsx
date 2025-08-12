@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { Badge } from './badge'
 import { Button } from './button'
 import { Input } from './input'
@@ -67,12 +68,7 @@ function LocationCard({ location }: { location: ShootingLocation }) {
     <Card className="group hover:shadow-elevated transition-all duration-300 overflow-hidden">
       {/* Photo Thumbnail */}
       <div className="aspect-video relative overflow-hidden">
-        <img 
-          src={`https://picsum.photos/id/${imageId}/400/225`}
-          alt={`${location.name} shooting location`}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          loading="lazy"
-        />
+        <div className="w-full h-full bg-nav-intel/10 group-hover:scale-105 transition-transform duration-300 rounded-xs" />
         <div className="absolute top-2 right-2">
           <Badge className="bg-black/60 text-white border-none backdrop-blur-sm">
             {photoCount}

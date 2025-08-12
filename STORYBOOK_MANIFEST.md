@@ -1,22 +1,12 @@
 # 🔫 Storybook Component Arsenal
 
-*Generated on: 8/1/2025, 10:47:14 PM*
+*Generated on: 8/12/2025, 3:10:30 PM*
 
 A complete manifest of all reusable components available for page assembly.
 
 ---
 
 ## Accessibility & Effects
-
-### Callout Card
-*Stories (Variants):*
-- `Default`
-- `SafetyNotice`
-- `EventAnnouncement`
-- `NewMemberWelcome`
-- `CompetitionResults`
-- `TrainingProgram`
-- `MembershipRenewal`
 
 ### FloatingBackground
 *Stories (Variants):*
@@ -38,11 +28,12 @@ A complete manifest of all reusable components available for page assembly.
 - `Success`
 - `InfoAlert`
 - `Warning`
+- `Destructive`
+- `AllVariants`
+- `Sizes`
 - `Error`
 - `Premium`
 - `Dismissible`
-- `AllVariants`
-- `SizeVariations`
 - `GunClubExamples`
 - `InteractiveFeatures`
 - `FusionShowcase`
@@ -61,16 +52,17 @@ A complete manifest of all reusable components available for page assembly.
 
 ### Atoms/Badge
 *Stories (Variants):*
+- `Default`
+- `Secondary`
+- `Destructive`
+- `Outline`
+- `Success`
+- `Warning`
+- `Info`
+- `Premium`
+- `Elite`
 - `AllVariants`
-- `SizeVariations`
-- `InteractiveFeatures`
-- `Classifications`
-- `MembershipStatus`
-- `ScoreBadges`
-- `EventBadges`
-- `EliteShowcase`
-- `Playground`
-- `Glassmorphism`
+- `Sizes`
 
 ### Atoms/Button
 *Stories (Variants):*
@@ -101,6 +93,7 @@ A complete manifest of all reusable components available for page assembly.
 
 ### Atoms/Card
 *Stories (Variants):*
+- `SemanticShadowHierarchy`
 - `Default`
 - `Interactive`
 - `FireVariants`
@@ -239,6 +232,16 @@ A complete manifest of all reusable components available for page assembly.
 *Stories (Variants):*
 - `Default`
 
+### Components/Molecules/Callout Card
+*Stories (Variants):*
+- `Default`
+- `SafetyNotice`
+- `EventAnnouncement`
+- `NewMemberWelcome`
+- `CompetitionResults`
+- `TrainingProgram`
+- `MembershipRenewal`
+
 ### Foundation/ColorPalette
 *Stories (Variants):*
 - `AllColors`
@@ -302,16 +305,6 @@ A complete manifest of all reusable components available for page assembly.
 - `FontFamilies`
 - `TypeScale`
 - `ResponsiveTypography`
-
-### Foundation/UnsplashImage
-*Stories (Variants):*
-- `Default`
-- `SquareAspect`
-- `WideAspect`
-- `PriorityLoading`
-- `HighQuality`
-- `SmallImage`
-- `BannerImage`
 
 ### Molecules/Accordion
 *Stories (Variants):*
@@ -449,14 +442,19 @@ A complete manifest of all reusable components available for page assembly.
 - `FFLDealer`
 - `TrainingAcademy`
 - `ResponsiveGrid`
+- `StrategicTierProgression`
 
-### Molecules/VendorCardStrategic
+### Organisms/AlternatingFeatureSpotlight
 *Stories (Variants):*
-- `Free_CleanMinimal`
-- `Copper_OneAccent`
-- `Silver_MetallicPresence`
-- `Gold_PremiumFire`
-- `StrategicHierarchy`
+- `DirectorySpotlight`
+- `CalendarSpotlight`
+- `CommunitySpotlight`
+
+### Organisms/ArmorySidebar
+*Stories (Variants):*
+- `Default`
+- `Collapsed`
+- `TreasureValleyFocus`
 
 ### Organisms/BrandCarousel
 *Stories (Variants):*
@@ -491,19 +489,6 @@ A complete manifest of all reusable components available for page assembly.
 - `EventAnnouncement`
 - `CompactHero`
 - `FullScreenHero`
-
-### Organisms/Navigation Fusion
-*Stories (Variants):*
-- `Default`
-- `WithActiveState`
-- `SolidVariant`
-- `MinimalVariant`
-- `VerticalNavigation`
-- `VerticalSolid`
-- `CompetitionNavigation`
-- `FacilitiesNavigation`
-- `SidebarNavigation`
-- `MobileNavigation`
 
 ### Organisms/Page Hero
 *Stories (Variants):*
@@ -579,6 +564,15 @@ A complete manifest of all reusable components available for page assembly.
 - `FusionLayout`
 - `InlineLayout`
 
+### Patterns/Navigation Rollover Effects
+*Stories (Variants):*
+- `StripeStyleCenterOut`
+- `LeftToRightSlide`
+- `FadeWithGlow`
+- `ColorAndScale`
+- `BonusFireGradient`
+- `AllEffectsComparison`
+
 ### Templates/AnimatedSplashCard
 *Stories (Variants):*
 - `Default`
@@ -610,6 +604,17 @@ A complete manifest of all reusable components available for page assembly.
 - `VendorFocused`
 - `CommunityFocused`
 
+## Foundation
+
+### Button Micro-Animations
+*Stories (Variants):*
+- `Default`
+- `InteractivePlayground`
+
+### Gradient Showcase
+*Stories (Variants):*
+- `Default`
+
 ## Mastering the Art of Trap Shooting: A Beginner\
 
 ### Mastering the Art of Trap Shooting: A Beginner\
@@ -619,6 +624,12 @@ A complete manifest of all reusable components available for page assembly.
 - `Featured`
 - `NoImage`
 - `NoStats`
+
+## Molecules
+
+### ArticleCard
+*Stories (Variants):*
+- `Default`
 
 ## Patterns
 

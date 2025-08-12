@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // Dynamic import of altcha-lib for server-side challenge generation
     const altchaLib = await import('altcha-lib');

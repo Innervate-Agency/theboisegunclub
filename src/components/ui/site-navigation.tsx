@@ -7,6 +7,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { Home, Users, Calendar, Target, Trophy, Settings, Shield, Menu, X } from 'lucide-react'
+import { Diamond } from '@phosphor-icons/react'
 
 const siteNavigationVariants = cva(
   "w-full transition-all duration-200 ease-out",
@@ -65,6 +66,18 @@ export function SiteNavigation({
 }: SiteNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const pathname = usePathname()
+
+  // Get current page color based on pathname
+  const getCurrentPageColor = () => {
+    if (pathname === '/') return 'text-nav-home'
+    if (pathname.startsWith('/events')) return 'text-nav-events'
+    if (pathname.startsWith('/directory')) return 'text-nav-directory'
+    if (pathname.startsWith('/the-armory')) return 'text-nav-armory'
+    if (pathname.startsWith('/intel')) return 'text-nav-intel'
+    if (pathname.startsWith('/marketplace')) return 'text-nav-marketplace'
+    if (pathname.startsWith('/forums')) return 'text-nav-forums'
+    return 'text-rusty-orange' // fallback
+  }
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen)
 
@@ -147,22 +160,16 @@ export function SiteNavigation({
           {showLogo && (
             <div className="flex items-center">
               <Link href="/" className="flex items-center gap-sm">
-                <div className="w-10 h-10 bg-gradient-to-br from-rusty-orange to-rusty-orange rounded-md flex flex-col items-center justify-center relative">
-                  <div className="text-[10px] font-rajdhani font-black text-dark-chocolate tracking-tight leading-none">
-                    TB
+                <div className="flex items-center gap-sm">
+                  <Diamond className={`w-10 h-10 ${getCurrentPageColor()}`} weight="bold" />
+                  <div>
+                    <div className="text-2xl font-rajdhani text-card-foreground leading-none font-[800]">
+                      The Boise Gun Club
+                    </div>
+                    <p className="text-xs font-noto-sans font-[400] text-muted-foreground uppercase leading-none tracking-[0.0125em]">
+                      A Treasure Valley Collective
+                    </p>
                   </div>
-                  <div className="text-[10px] font-rajdhani font-black text-dark-chocolate tracking-tight leading-none">
-                    GC
-                  </div>
-                </div>
-                <div>
-                  <div className="text-lg font-rajdhani text-card-foreground tracking-[0.2em] leading-none">
-                    <span className="font-bold">THEBOISE</span>
-                    <span className="font-light">GUNCLUB</span>
-                  </div>
-                  <p className="text-xs font-noto-sans text-muted-foreground mt-0">
-                    A TREASURE VALLEY COLLECTIVE
-                  </p>
                 </div>
               </Link>
             </div>
@@ -174,7 +181,7 @@ export function SiteNavigation({
               <React.Fragment key={item.href}>
                 {renderNavLink(
                   item,
-                  `group relative flex items-center gap-xs px-base py-xs text-sm font-medium transition-all duration-200 hover:scale-105  ${
+                  `group relative flex items-center gap-xs px-sm py-xs text-sm font-medium transition-all duration-200 hover:scale-105  ${
                     pathname === item.href 
                       ? getActiveTextClass(item.color)
                       : `text-muted-foreground ${getHoverClasses(item.color)}`
@@ -242,7 +249,7 @@ export function SiteNavigation({
                 <div key={item.href} onClick={() => setIsMobileMenuOpen(false)}>
                   {renderNavLink(
                     item,
-                    `flex items-center gap-sm px-base py-sm text-body-sm font-medium transition-all duration-150 rounded-base ${
+                    `flex items-center gap-sm px-sm py-sm text-body-sm font-medium transition-all duration-150 rounded-base ${
                       pathname === item.href 
                         ? getActiveTextClass(item.color)
                         : `text-muted-foreground ${getHoverClasses(item.color)}`

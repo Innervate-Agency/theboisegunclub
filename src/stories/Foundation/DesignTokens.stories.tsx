@@ -35,19 +35,19 @@ export const ColorPalette: Story = {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-base">
           <div className="bg-sandy-ochre p-md rounded-sm text-black">
             <div className="font-bold">Brass Yellow</div>
-            <div className="text-body-sm opacity-80">#FF00FF</div>
+            <div className="text-body-sm opacity-80">sandy-ochre</div>
           </div>
           <div className="bg-rusty-orange p-md rounded-sm text-white">
             <div className="font-bold">Copper Orange</div>
-            <div className="text-body-sm opacity-80">#FF00FF</div>
+            <div className="text-body-sm opacity-80">rusty-orange</div>
           </div>
           <div className="bg-dark-chocolate p-md rounded-sm text-white">
             <div className="font-bold">Gunmetal Black</div>
-            <div className="text-body-sm opacity-80">#000000</div>
+            <div className="text-body-sm opacity-80">dark-chocolate</div>
           </div>
-          <div className="bg-nickel-white p-md rounded-sm text-black border">
+          <div className="bg-card-surface p-md rounded-sm text-black border">
             <div className="font-bold">Nickel White</div>
-            <div className="text-body-sm opacity-80">#FFFFFF</div>
+            <div className="text-body-sm opacity-80">card-surface</div>
           </div>
         </div>
       </section>

@@ -26,9 +26,9 @@ export default function AnimatedSplashCard({
       {/* Animated border accent */}
       <div className="absolute inset-0 rounded-md bg-gradient-to-r from-sandy-ochre/20 via-rusty-orange/20 to-sandy-ochre/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" 
            style={{ 
-             mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+             mask: 'linear-gradient(var(--background) 0 0) content-box, linear-gradient(var(--background) 0 0)',
              maskComposite: 'xor',
-             WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+             WebkitMask: 'linear-gradient(var(--background) 0 0) content-box, linear-gradient(var(--background) 0 0)',
              WebkitMaskComposite: 'xor',
              padding: '1px'
            }} />
@@ -47,7 +47,7 @@ export default function AnimatedSplashCard({
       
       {/* Subtle shimmer effect */}
       <div className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100">
-        <div className="absolute -inset-10 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 translate-x-full group-hover:animate-shimmer" />
+        <div className="absolute -inset-10 bg-gradient-to-r from-transparent via-background/10 to-transparent skew-x-12 translate-x-full group-hover:animate-shimmer" />
       </div>
     </div>
   )

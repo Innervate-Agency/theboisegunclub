@@ -62,8 +62,8 @@ export async function POST(request: NextRequest) {
       port: 587,
       secure: false, // Use STARTTLS
       auth: {
-        user: 'steve@boisegunclub.com',
-        pass: 'GYqP%4c1jW6B*TC6&$0G%z7PbxfD*vxZpvdTQECa9jA9UeZyjge$QVGwQPD%6EAN',
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
       tls: {
         rejectUnauthorized: false, // For self-signed certs
@@ -78,23 +78,23 @@ export async function POST(request: NextRequest) {
       replyTo: email,
       subject: `[TBGC Contact] ${subject}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #B8860B; border-bottom: 2px solid #B8860B; padding-bottom: 10px;">
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: var(--color-light-peachy); color: var(--color-shared-dark);">
+          <h2 style="color: var(--color-sandy-ochre); border-bottom: 2px solid var(--color-sandy-ochre); padding-bottom: 10px;">
             New Contact Form Submission
           </h2>
           
-          <div style="background: #f9f9f9; padding: 20px; border-radius: 5px; margin: 20px 0;">
+          <div style="background: var(--color-card-surface); padding: 20px; border-radius: 5px; margin: 20px 0;">
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Subject:</strong> ${subject}</p>
           </div>
           
-          <div style="background: white; padding: 20px; border-left: 4px solid #B8860B; margin: 20px 0;">
-            <h3 style="margin-top: 0; color: #333;">Message:</h3>
-            <p style="line-height: 1.6; color: #555;">${message.replace(/\n/g, '<br>')}</p>
+          <div style="background: var(--color-card-surface); padding: 20px; border-left: 4px solid var(--color-sandy-ochre); margin: 20px 0;">
+            <h3 style="margin-top: 0; color: var(--color-shared-dark);">Message:</h3>
+            <p style="line-height: 1.6; color: var(--color-shared-dark);">${message.replace(/\n/g, '<br>')}</p>
           </div>
           
-          <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 14px;">
+          <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--color-pale-stone); color: var(--color-dried-clay); font-size: 14px;">
             <p>Sent from The Boise Gun Club contact form</p>
             <p>Reply directly to this email to respond to ${name}</p>
           </div>
@@ -129,8 +129,8 @@ Reply directly to this email to respond to ${name}
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     const errorStack = error instanceof Error ? error.stack : undefined;
-    const errorCode = (error as any)?.code;
-    const errorResponse = (error as any)?.response;
+    const errorCode = error && typeof error === 'object' && 'code' in error ? String(error.code) : undefined;
+    const errorResponse = error && typeof error === 'object' && 'response' in error ? String(error.response) : undefined;
     
     console.error('Contact form error details:', {
       message: errorMessage,

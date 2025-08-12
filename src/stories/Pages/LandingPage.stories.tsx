@@ -386,7 +386,7 @@ export const Complete: Story = {
             
             {/* Right Side - Enhanced Signup */}
             <div className="max-w-lg mx-auto lg:mx-0">
-              <div className="bg-white dark:bg-gray-900 rounded-none p-xl shadow-elevated border border-sandy-ochre/20 relative overflow-hidden group">
+              <div className="bg-card text-card-foreground rounded-none p-xl shadow-elevated border border-sandy-ochre/20 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-sandy-ochre/5 to-rusty-orange/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute bottom-[-1px] left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-sandy-ochre to-rusty-orange transition-all duration-500 ease-out group-hover:w-full rounded-b-xl"></div>
                 

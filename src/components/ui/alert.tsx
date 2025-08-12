@@ -1,33 +1,26 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
+import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
 const alertVariants = cva(
-  // Base: Strategic restraint with clean theme-aware design
-  "relative w-full rounded-sm px-md py-base text-body-sm grid has-[>svg]:grid-cols-[1.5rem_1fr] grid-cols-[0_1fr] has-[>svg]:gap-x-3 gap-y-1 items-start [&>svg]:size-4 [&>svg]:translate-y-0.5 [&>svg]:text-current transition-colors duration-150 ease-out",
+  "relative w-full rounded-lg border p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground",
   {
     variants: {
       variant: {
-        // Default: Clean theme-aware background with whisper shadow
-        default: "bg-card text-card-foreground border border-border shadow-whisper",
-        
-        // Info: Bogus Basin palette - info river blue tones
-        info: "bg-info-river/10 text-info-river border border-info-river/30 [&>svg]:text-info-river shadow-whisper hover:shadow-present",
-        
-        // Success: Bogus Basin palette - sagebrush green tones  
-        success: "bg-sagebrush-green/10 text-sagebrush-green border border-sagebrush-green/30 [&>svg]:text-sagebrush-green shadow-whisper hover:shadow-present",
-        
-        // Warning: Bogus Basin palette - warning amber tones
-        warning: "bg-warning-amber/10 text-warning-amber border border-warning-amber/30 [&>svg]:text-warning-amber shadow-whisper hover:shadow-present",
-        
-        // Destructive: Bogus Basin palette - canyon clay red tones
-        destructive: "bg-canyon-clay/10 text-canyon-clay border border-canyon-clay/30 [&>svg]:text-canyon-clay shadow-whisper hover:shadow-present",
+        default: "bg-background text-foreground",
+        destructive: "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive",
+        success: "border-success/50 text-success dark:border-success [&>svg]:text-success",
+        warning: "border-warning/50 text-warning dark:border-warning [&>svg]:text-warning",
+        info: "border-info/50 text-info dark:border-info [&>svg]:text-info",
+        premium: "border-premium/50 text-premium dark:border-premium [&>svg]:text-premium bg-gradient-to-r from-rusty-orange/10 to-sandy-ochre/10",
+        elite: "border-elite/50 text-elite dark:border-elite [&>svg]:text-elite bg-gradient-to-r from-foothills-purple/10 to-canyon-clay/10",
       },
       size: {
-        sm: "px-sm py-xs text-body-sm",
-        default: "px-md py-base text-body-sm", 
-        lg: "px-lg py-md text-body-base",
+        sm: "px-3 py-2 text-xs",
+        default: "p-4 text-sm",
+        lg: "p-6 text-base",
       },
     },
     defaultVariants: {
@@ -38,58 +31,70 @@ const alertVariants = cva(
 )
 
 export interface AlertProps
-  extends React.ComponentProps<"div">,
-    VariantProps<typeof alertVariants> {}
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof alertVariants> {
+  dismissible?: boolean
+  onDismiss?: () => void
+}
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
-  ({ className, variant, size, ...props }, ref) => (
-    <div
-      ref={ref}
-      data-slot="alert"
-      role="alert"
-      className={cn(alertVariants({ variant, size }), className)}
-      {...props}
-    />
-  )
-)
+  ({ className, variant, size, dismissible = false, onDismiss, children, ...props }, ref) => {
+    const [isDismissed, setIsDismissed] = React.useState(false)
 
+    const handleDismiss = () => {
+      setIsDismissed(true)
+      if (onDismiss) {
+        onDismiss()
+      }
+    }
+
+    if (isDismissed) {
+      return null
+    }
+
+    return (
+      <div
+        ref={ref}
+        role="alert"
+        className={cn(alertVariants({ variant, size }), className)}
+        {...props}
+      >
+        {children}
+        {dismissible && (
+          <button
+            onClick={handleDismiss}
+            className="absolute top-2 right-2 p-1 rounded-md hover:bg-muted/50"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        )}
+      </div>
+    )
+  }
+)
 Alert.displayName = "Alert"
 
-const AlertTitle = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>(
+const AlertTitle = React.forwardRef<HTMLHeadingElement, React.HTMLAttributes<HTMLHeadingElement>>(
   ({ className, ...props }, ref) => (
-    <div
+    <h5
       ref={ref}
-      data-slot="alert-title"
-      className={cn(
-        "col-start-2 line-clamp-1 min-h-4 font-semibold tracking-tight text-body leading-none",
-        className
-      )}
+      className={cn("mb-1 font-medium leading-none tracking-tight", className)}
       {...props}
     />
   )
 )
-
 AlertTitle.displayName = "AlertTitle"
 
-const AlertDescription = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>(
-  ({ className, ...props }, ref) => (
-    <div
-      ref={ref}
-      data-slot="alert-description"
-      className={cn(
-        "col-start-2 text-body-sm leading-relaxed [&_p]:leading-relaxed",
-        className
-      )}
-      {...props}
-    />
-  )
-)
-
+const AlertDescription = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("text-sm [&_p]:leading-relaxed", className)}
+    {...props}
+  />
+))
 AlertDescription.displayName = "AlertDescription"
 
-export { 
-  Alert, 
-  AlertTitle, 
-  AlertDescription,
-  alertVariants,
-}
+export { Alert, AlertTitle, AlertDescription }

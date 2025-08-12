@@ -43,7 +43,7 @@ const samplePlans = [
     ],
     popular: true,
     badge: 'Most Popular',
-    color: 'rgb(242, 135, 5)', // rusty-orange
+    color: 'rusty-orange', // rusty-orange
     ctaText: 'Upgrade to Silver',
     ctaVariant: 'default' as const
   },
@@ -88,7 +88,7 @@ const samplePlans = [
       { name: 'API Integration', included: true, description: 'Connect with your existing systems' }
     ],
     badge: 'Enterprise',
-    color: 'safety-red',
+    color: 'canyon-clay',
     ctaText: 'Contact Sales',
     ctaVariant: 'default' as const
   }

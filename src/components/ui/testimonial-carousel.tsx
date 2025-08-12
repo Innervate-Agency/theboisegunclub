@@ -111,10 +111,10 @@ export function TestimonialCarousel({
         
         {/* Testimonial Card */}
         <div className="relative">
-          <div className="bg-card text-card-foreground rounded-md p-lg md:p-12 shadow-flat hover:shadow-md transition-shadow duration-200">
+          <div className="bg-card text-card-foreground rounded-md p-lg md:p-12 shadow-flat hover:shadow-present transition-shadow duration-200">
             {/* Quote Icon */}
             <div className="absolute -top-4 left-8">
-              <div className="bg-sandy-ochre rounded-full p-sm shadow-md">
+              <div className="bg-sandy-ochre rounded-full p-sm shadow-present">
                 <Quote className="icon-md text-foreground" />
               </div>
             </div>
@@ -147,9 +147,11 @@ export function TestimonialCarousel({
             <div className="flex items-center justify-center gap-base">
               {currentTestimonial.avatar && (
                 <div className="w-12 h-12 rounded-pill bg-muted overflow-hidden">
-                  <img 
+                  <Image 
                     src={currentTestimonial.avatar} 
                     alt={currentTestimonial.name}
+                    width={48}
+                    height={48}
                     className="w-full h-full object-cover"
                   />
                 </div>

@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Image from 'next/image';
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
@@ -130,9 +131,11 @@ export default function FacilityCard({
           <div className="flex-shrink-0">
             {icon ? (
               <div className="w-12 h-12 rounded-none overflow-hidden shadow-flat">
-                <img 
+                <Image 
                   src={icon} 
                   alt={title}
+                  width={48}
+                  height={48}
                   className="w-full h-full object-cover"
                 />
               </div>

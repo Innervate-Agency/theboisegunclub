@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const SiteNavigation = () => {
   return (
-    <header className="bg-gray-800 text-white p-4">
+    <header className="bg-primary text-primary-foreground p-base">
       <nav className="container mx-auto flex justify-between">
         <Link href="/" className="font-bold text-xl">The Boise Gun Club</Link>
         <div>

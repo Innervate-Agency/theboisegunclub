@@ -14,9 +14,9 @@ const meta: Meta<typeof SectionDivider> = {
     backgrounds: {
       default: 'light',
       values: [
-        { name: 'light', value: '#ffffff' },
-        { name: 'dark', value: '#000000' },
-        { name: 'gray', value: '#f8f9fa' },
+        { name: 'light', value: 'var(--color-light-peachy)' },
+        { name: 'dark', value: 'var(--color-dark-chocolate)' },
+        { name: 'gray', value: 'var(--color-card-surface)' },
       ],
     },
   },

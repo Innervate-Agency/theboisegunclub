@@ -185,7 +185,7 @@ export default async function MapPage() {
       <SiteNavigation variant="premium" sticky={true} />
       <div className="min-h-screen bg-background theme-intel">
       {/* Map Hero - Content Left, Card Right (Layout 1) */}
-      <section className="relative overflow-hidden bg-gradient-intel-hero px-md py-lg">
+      <section className="relative overflow-hidden bg-gradient-intel-hero px-md py-xl">
         {/* Topographic Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
@@ -195,9 +195,9 @@ export default async function MapPage() {
           }}
         ></div>
         <div className="container mx-auto max-w-site relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-lg min-h-[400px]">
             {/* Content - Left side */}
-            <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
+            <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-xl py-lg">
               {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
               <div className="flex items-center gap-base">
                 <div className="bg-white/10 p-base rounded-sm border border-white/20">
@@ -247,9 +247,10 @@ export default async function MapPage() {
               {/* Buttons */}
               <div className="flex gap-base">
                 <Button 
+                  variant="solid-primary"
                   size="lg" 
                   className="bg-white text-nav-intel hover:bg-white/90 font-rajdhani font-bold"
-                >
+                                  >
                   <Plus className="h-4 w-4 mr-xs" />
                   Submit Location
                 </Button>
@@ -257,23 +258,19 @@ export default async function MapPage() {
                   variant="outline" 
                   size="lg"
                   className="border-white/30 text-white hover:bg-white hover:text-nav-intel"
-                >
+                                  >
                   View Interactive Map
                 </Button>
               </div>
             </div>
             
             {/* Featured Location Card - Right side */}
-            <div className="lg:col-span-1 py-md min-h-[400px]">
+            <div className="lg:col-span-1 py-lg min-h-[400px]">
               <div className="relative h-full">
-                <Card className="mica border-nav-intel/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
+                <Card className="mica border-nav-intel/30 shadow-present hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
                   {/* Hero Image Background */}
                   <div className="absolute inset-0">
-                    <img 
-                      src="https://picsum.photos/id/42/400/500"
-                      alt="Lucky Peak shooting area"
-                      className="w-full h-full object-cover opacity-20"
-                    />
+                    <div className="w-full h-full bg-nav-intel/10 opacity-20 rounded-xs" />
                     <div className="absolute inset-0 bg-gradient-to-br from-nav-intel/10 to-nav-intel/30" />
                   </div>
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-intel/20 to-nav-intel/10 rounded-bl-full"></div>
@@ -313,11 +310,11 @@ export default async function MapPage() {
                         <span>Free Access</span>
                       </div>
                       <Button 
+                        variant="solid-primary"
                         className="bg-gradient-to-r from-nav-intel to-nav-intel text-gruvbox-bg-dark hover:from-nav-intel hover:to-nav-intel font-rajdhani font-bold text-xs"
                         size="sm"
-                      >
+                                              >
                         VIEW DETAILS
-                        <ArrowRight className="h-3 w-3 ml-xs" />
                       </Button>
                     </div>
                   </CardContent>
@@ -332,14 +329,14 @@ export default async function MapPage() {
       <WeatherConditionsTicker conditions={liveWeatherConditions} />
 
       {/* Compact Stats Bar - Stripe Style */}
-      <section className="py-4 bg-background border-b">
+      <section className="py-base bg-background border-b">
         <div className="container mx-auto max-w-site px-md">
           <CompactStatsBar stats={locationStats} />
         </div>
       </section>
 
       {/* Quick Access Toolbar */}
-      <section className="py-lg bg-muted/30 border-b border-nav-intel/10">
+      <section className="py-xl bg-muted/30 border-b border-nav-intel/10">
         <div className="container mx-auto max-w-site px-md">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-base">
             {/* Quick Filters */}
@@ -387,7 +384,7 @@ export default async function MapPage() {
       <SectionDivider variant="crosshair" spacing="none" />
 
       {/* Featured Locations - Full Width, Left Aligned */}
-      <section className="py-6xl bg-gradient-to-br from-background to-muted/5">
+      <section className="py-4xl bg-gradient-to-br from-background to-muted/5">
         <div className="container mx-auto max-w-site px-md">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl">
             {/* Content - Left aligned */}
@@ -404,16 +401,19 @@ export default async function MapPage() {
                   Top-rated locations from across the Treasure Valley with detailed access information and community feedback.
                 </p>
               </div>
-              <Button variant="outline" size="lg" className="border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white font-rajdhani font-bold">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white font-rajdhani font-bold"
+                              >
                 View All {shootingLocations.length} Locations
-                <ArrowRight className="h-5 w-5 ml-base" />
               </Button>
             </div>
             
             {/* Featured Cards - Right side - 3 columns */}
             <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-lg">
               {shootingLocations.slice(0, 6).map((location, index) => (
-                <Card key={location.name} className="shadow-present hover:shadow-elevated transition-all duration-300 overflow-hidden">
+                <Card key={location.name} className="shadow-whisper hover:shadow-present transition-all duration-300 overflow-hidden">
                   <CardHeader className="pb-lg">
                     <div className="flex items-center justify-between mb-md">
                       <Badge className="bg-nav-intel/20 text-nav-intel border-nav-intel/30 text-xs font-rajdhani font-semibold">
@@ -435,9 +435,12 @@ export default async function MapPage() {
                         <MapPin className="h-4 w-4 text-nav-intel" />
                         <span className="font-medium">{location.access}</span>
                       </div>
-                      <Button size="sm" className="bg-nav-intel text-white hover:bg-nav-intel/90 font-rajdhani font-bold">
+                      <Button 
+                        variant="solid-primary"
+                        size="sm" 
+                        className="bg-nav-intel text-white hover:bg-nav-intel/90 font-rajdhani font-bold"
+                                              >
                         Details
-                        <ArrowRight className="h-3 w-3 ml-xs" />
                       </Button>
                     </div>
                   </CardContent>
@@ -452,13 +455,13 @@ export default async function MapPage() {
       <SectionDivider variant="sights" spacing="none" />
 
       {/* Browse Categories - Contained, Right Aligned */}
-      <section className="py-6xl">
-        <div className="container mx-auto max-w-6xl px-md">
+      <section className="py-4xl">
+        <div className="container mx-auto max-w-site px-md">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl">
             {/* Categories - Left side */}
             <div className="lg:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-base">
               {locationTypes.slice(1).map((type, index) => (
-                <Card key={type.value} className="shadow-whisper hover:shadow-present transition-all duration-200 text-center p-base">
+                <Card key={type.value} className="shadow-ghost hover:shadow-whisper transition-all duration-200 text-center p-base">
                   <div className="space-y-base">
                     <div className="w-12 h-12 mx-auto rounded-full bg-nav-intel/10 flex items-center justify-center">
                       {type.value === "Public Land" && <Mountain className="h-6 w-6 text-nav-intel" />}
@@ -505,7 +508,7 @@ export default async function MapPage() {
       <SectionDivider variant="target" spacing="none" />
 
       {/* Community Activity - Full Width, Left Aligned */}
-      <section className="py-6xl bg-gradient-to-br from-nav-intel/5 to-nav-intel/10">
+      <section className="py-4xl bg-gradient-to-br from-nav-intel/5 to-nav-intel/10">
         <div className="container mx-auto max-w-site px-md">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl">
             {/* Content - Left aligned */}
@@ -542,7 +545,7 @@ export default async function MapPage() {
             
             {/* Activity Feed - Right side */}
             <div className="lg:col-span-2 space-y-base">
-              <Card className="shadow-present hover:shadow-elevated transition-all duration-200">
+              <Card className="shadow-whisper hover:shadow-present transition-all duration-200">
                 <div className="flex items-start gap-base p-base">
                   <div className="w-8 h-8 rounded-full bg-nav-intel/20 flex items-center justify-center flex-shrink-0">
                     <Plus className="h-4 w-4 text-nav-intel" />
@@ -557,7 +560,7 @@ export default async function MapPage() {
                 </div>
               </Card>
               
-              <Card className="shadow-present hover:shadow-elevated transition-all duration-200">
+              <Card className="shadow-whisper hover:shadow-present transition-all duration-200">
                 <div className="flex items-start gap-base p-base">
                   <div className="w-8 h-8 rounded-full bg-warning-clay/20 flex items-center justify-center flex-shrink-0">
                     <Camera className="h-4 w-4 text-warning-clay" />
@@ -572,7 +575,7 @@ export default async function MapPage() {
                 </div>
               </Card>
               
-              <Card className="shadow-present hover:shadow-elevated transition-all duration-200">
+              <Card className="shadow-whisper hover:shadow-present transition-all duration-200">
                 <div className="flex items-start gap-base p-base">
                   <div className="w-8 h-8 rounded-full bg-warning-clay/20 flex items-center justify-center flex-shrink-0">
                     <AlertTriangle className="h-4 w-4 text-warning-clay" />
@@ -612,10 +615,10 @@ export default async function MapPage() {
       </section>
 
       {/* Safety Notice */}
-      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90">
+      <section className="py-4xl bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90">
         <div className="container mx-auto max-w-site px-md text-center">
           <div className="space-y-lg">
-            <Badge className="bg-safety-red/20 text-safety-red border-safety-red/30">
+            <Badge className="bg-canyon-clay/20 text-canyon-clay border-canyon-clay/30">
               <Shield className="h-4 w-4 mr-xs" />
               Safety First
             </Badge>
@@ -643,11 +646,11 @@ export default async function MapPage() {
               </div>
             </div>
             <Button 
+              variant="solid-accent"
               size="xl" 
               className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
-            >
+                          >
               Submit New Location
-              <ArrowRight className="h-5 w-5 ml-xs" />
             </Button>
           </div>
         </div>

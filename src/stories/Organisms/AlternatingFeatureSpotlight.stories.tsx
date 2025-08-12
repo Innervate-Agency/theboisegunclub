@@ -29,6 +29,7 @@ type Story = StoryObj<typeof AlternatingFeatureSpotlight>;
 export const DirectorySpotlight: Story = {
   name: 'Spotlight: Directory',
   args: {
+    variant: 'directory',
     icon: <Search />,
     title: "The Last Directory You'll Ever Need",
     description: "A complete, verified, and always up-to-date directory of every FFL, range, and trainer in the Treasure Valley. Find exactly what you need, instantly.",
@@ -42,9 +43,6 @@ export const DirectorySpotlight: Story = {
     ],
     imageSrc: '/images/Fractal/1.webp',
     imageAlt: 'Abstract fractal image representing a network.',
-    glowColor1: '#3F6331', // woodland-camo
-    glowColor2: '#FF00FF', // rusty-orange
-    accentColor: '#3F6331',
     reverse: false,
   },
 };
@@ -53,6 +51,7 @@ export const CalendarSpotlight: Story = {
   name: 'Spotlight: Calendar (Reversed)',
   args: {
     ...DirectorySpotlight.args,
+    variant: 'calendar',
     icon: <Calendar />,
     title: 'One Calendar to Rule Them All',
     description: "We're consolidating every match, class, and event from every local club into one master calendar. Stop searching, start participating.",
@@ -66,9 +65,6 @@ export const CalendarSpotlight: Story = {
     ],
     imageSrc: '/images/Fractal/2.webp',
     imageAlt: 'Abstract fractal image representing a timeline.',
-    glowColor1: '#FF00FF', // cerakote-blue
-    glowColor2: '#75B700', // ayu-green
-    accentColor: '#FF00FF',
     reverse: true,
   },
 };
@@ -77,6 +73,7 @@ export const CommunitySpotlight: Story = {
     name: 'Spotlight: Community',
     args: {
       ...DirectorySpotlight.args,
+      variant: 'community',
       icon: <MessageSquare />,
       title: 'Built for Us, by Us',
       description: "A secure, private, and Idaho-focused space for discussion, trading, and connecting with fellow enthusiasts. No more Facebook bullshit.",
@@ -90,9 +87,6 @@ export const CommunitySpotlight: Story = {
       ],
       imageSrc: '/images/Fractal/3.webp',
       imageAlt: 'Abstract fractal image representing connections.',
-      glowColor1: '#FF00FF', // ayu-purple
-      glowColor2: '#FF3B49', // ayu-red
-      accentColor: '#FF00FF',
       reverse: false,
     },
   };

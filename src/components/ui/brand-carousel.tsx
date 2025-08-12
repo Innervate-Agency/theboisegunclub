@@ -147,10 +147,12 @@ export function BrandCarousel({
             <div className="relative rounded-(--radius-xl) overflow-hidden shadow-elevated h-96">
               {/* Background image - like Stripe */}
               <div className="absolute inset-0">
-                <img 
+                <Image 
                   src={backgroundImages[currentIndex % backgroundImages.length]} 
                   alt="Background texture"
-                  className="w-full h-full object-cover"
+                  layout="fill"
+                  objectFit="cover"
+                  className="w-full h-full"
                 />
               </div>
               

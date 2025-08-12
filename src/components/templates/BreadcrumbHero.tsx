@@ -6,7 +6,7 @@ interface BreadcrumbHeroProps {
 
 const BreadcrumbHero = ({ title }: BreadcrumbHeroProps) => {
   return (
-    <section className="bg-gray-700 text-white p-8">
+    <section className="bg-muted text-muted-foreground p-xl">
       <div className="container mx-auto">
         <h1 className="text-4xl font-bold">{title}</h1>
         {/* Add breadcrumbs here if needed */}

@@ -46,7 +46,7 @@ export function StickySearchMenu({
   if (!isVisible) return null
 
   return (
-    <div className="fixed top-16 left-0 right-0 z-40 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
+    <div className="fixed top-16 left-0 right-0 z-40 bg-background/95 backdrop-blur-sm border-b border-border shadow-whisper">
       <div className="container mx-auto max-w-site px-md py-base">
         <div className="flex flex-col lg:flex-row items-center gap-base justify-between">
           {/* Categories */}

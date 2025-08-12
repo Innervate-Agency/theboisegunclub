@@ -475,6 +475,11 @@
 }
 
 @layer utilities {
+  /* ================== FONT UTILITIES ================== */
+  .font-rajdhani { font-family: var(--font-rajdhani); }
+  .font-noto-sans { font-family: var(--font-noto-sans); }
+  .font-serif { font-family: var(--font-serif); }
+
   /* ================== TRANSITION UTILITIES ================== */
   .transition-stripe-fast    { transition: all 150ms cubic-bezier(0.215, 0.61, 0.355, 1); }
   .transition-stripe-normal  { transition: all 250ms cubic-bezier(0.215, 0.61, 0.355, 1); }

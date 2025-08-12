@@ -1,95 +1,102 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
+import { Eye, EyeOff, AlertCircle } from "lucide-react"
 
 const inputVariants = cva(
-  // Foundation classes inspired by Stripe's sophisticated input design
-  "flex w-full min-w-0 rounded-input border bg-transparent text-body transition-stripe-fast outline-none file:border-0 file:bg-transparent file:text-body-sm file:font-medium placeholder:text-muted-foreground selection:bg-sandy-ochre selection:text-primary font-noto-sans",
+  "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-background border-border text-foreground shadow-whisper hover:border-border/80 hover:shadow-present focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20 focus-visible:shadow-present",
-        filled: "bg-muted border-border/60 text-foreground shadow-whisper hover:bg-background hover:border-border/80 hover:shadow-present focus-visible:bg-background focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20 focus-visible:shadow-present",
-        ghost: "bg-transparent border-transparent text-foreground hover:bg-muted/50 hover:shadow-ghost focus-visible:bg-muted/30 focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20 focus-visible:shadow-whisper",
-        glass: "bg-card/20 backdrop-blur-sm border-border/30 text-card-foreground shadow-ghost hover:border-border/50 hover:bg-card/30 hover:shadow-whisper focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20 focus-visible:shadow-present mica-glass"
+        default: "border-input",
+        filled: "bg-muted",
+        ghost: "border-transparent hover:bg-muted/50",
+        glass: "bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/70",
       },
       size: {
-        sm: "h-[var(--input-height-sm)] px-sm py-xs text-body-sm",
-        default: "h-[var(--input-height-base)] px-sm py-xs text-body-sm md:text-body",
-        lg: "h-[var(--input-height-lg)] px-base py-sm text-body"
+        sm: "h-9 px-2",
+        default: "h-10 px-3 py-2",
+        lg: "h-11 px-4",
       },
       status: {
         default: "",
-        error: "border-canyon-clay focus-visible:border-canyon-clay focus-visible:ring-canyon-clay/20 aria-invalid:border-canyon-clay aria-invalid:ring-canyon-clay/20",
-        success: "border-sagebrush-green focus-visible:border-sagebrush-green focus-visible:ring-sagebrush-green/20",
-        warning: "border-warning-amber focus-visible:border-warning-amber focus-visible:ring-warning-amber/20"
-      }
+        error: "border-destructive text-destructive placeholder:text-destructive/70",
+        success: "border-success text-success placeholder:text-success/70",
+        warning: "border-warning text-warning placeholder:text-warning/70",
+      },
     },
     defaultVariants: {
       variant: "default",
       size: "default",
-      status: "default"
-    }
+      status: "default",
+    },
   }
 )
 
 export interface InputProps
-  extends Omit<React.ComponentProps<"input">, "size">,
+  extends React.InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof inputVariants> {}
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, variant, size, status, type, disabled, ...props }, ref) => {
+  ({ className, variant, size, status, type, ...props }, ref) => {
+    const [showPassword, setShowPassword] = React.useState(false)
+    const isPassword = type === "password"
+
+    const handleTogglePassword = () => {
+      setShowPassword((prev) => !prev)
+    }
+
     return (
-      <input
-        type={type}
-        data-slot="input"
-        className={cn(
-          inputVariants({ variant, size, status }),
-          disabled && "cursor-not-allowed opacity-50 pointer-events-none",
-          className
+      <div className="relative w-full">
+        <input
+          type={isPassword && showPassword ? "text" : type}
+          className={cn(inputVariants({ variant, size, status }), className)}
+          ref={ref}
+          {...props}
+        />
+        {isPassword && (
+          <button
+            type="button"
+            onClick={handleTogglePassword}
+            className="absolute inset-y-0 right-0 flex items-center pr-3 text-muted-foreground hover:text-foreground"
+          >
+            {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+          </button>
         )}
-        ref={ref}
-        disabled={disabled}
-        {...props}
-      />
+      </div>
     )
   }
 )
 Input.displayName = "Input"
 
-// Enhanced input with label and description support
-export interface InputGroupProps extends React.ComponentProps<"div"> {
+export interface InputGroupProps extends React.HTMLAttributes<HTMLDivElement> {
   label?: string
   description?: string
   error?: string
   required?: boolean
+  icon?: React.ReactNode
 }
 
 const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
-  ({ className, label, description, error, required, children, ...props }, ref) => {
+  ({ className, label, description, error, required, icon, children, ...props }, ref) => {
     return (
-      <div
-        ref={ref}
-        className={cn("space-y-xs", className)}
-        {...props}
-      >
+      <div ref={ref} className={cn("grid gap-2", className)} {...props}>
         {label && (
-          <label className="text-body-sm font-medium text-foreground font-noto-sans">
+          <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
             {label}
-            {required && <span className="text-canyon-clay ml-xs">*</span>}
+            {required && <span className="text-destructive ml-1">*</span>}
           </label>
         )}
-        {children}
+        <div className="relative flex items-center">
+          {icon && <div className="absolute left-3">{icon}</div>}
+          <div className={cn("w-full", icon ? "pl-10" : "")}>{children}</div>
+        </div>
         {description && !error && (
-          <p className="text-caption text-muted-foreground leading-relaxed">
-            {description}
-          </p>
+          <p className="text-sm text-muted-foreground">{description}</p>
         )}
         {error && (
-          <p className="text-caption text-canyon-clay leading-relaxed flex items-center gap-xs">
-            <svg className="h-3 w-3 flex-shrink-0" viewBox="0 0 16 16" fill="currentColor">
-              <path fillRule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9-3a1 1 0 11-2 0 1 1 0 012 0zM8 7.5a.5.5 0 01.5.5v3a.5.5 0 01-1 0V8a.5.5 0 01.5-.5z" />
-            </svg>
+          <p className="text-sm text-destructive flex items-center">
+            <AlertCircle className="h-4 w-4 mr-2" />
             {error}
           </p>
         )}
