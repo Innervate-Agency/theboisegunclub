@@ -8,10 +8,10 @@ const inputVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-background border-border text-foreground hover:border-border/80 focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20",
-        filled: "bg-muted border-border/60 text-foreground hover:bg-background hover:border-border/80 focus-visible:bg-background focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20",
-        ghost: "bg-transparent border-transparent text-foreground hover:bg-muted/50 focus-visible:bg-muted/30 focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20",
-        glass: "bg-card/20 backdrop-blur-sm border-border/30 text-card-foreground hover:border-border/50 hover:bg-card/30 focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20 mica-glass"
+        default: "bg-background border-border text-foreground shadow-whisper hover:border-border/80 hover:shadow-present focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20 focus-visible:shadow-present",
+        filled: "bg-muted border-border/60 text-foreground shadow-whisper hover:bg-background hover:border-border/80 hover:shadow-present focus-visible:bg-background focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20 focus-visible:shadow-present",
+        ghost: "bg-transparent border-transparent text-foreground hover:bg-muted/50 hover:shadow-ghost focus-visible:bg-muted/30 focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20 focus-visible:shadow-whisper",
+        glass: "bg-card/20 backdrop-blur-sm border-border/30 text-card-foreground shadow-ghost hover:border-border/50 hover:bg-card/30 hover:shadow-whisper focus-visible:border-sandy-ochre focus-visible:ring-3 focus-visible:ring-sandy-ochre/20 focus-visible:shadow-present mica-glass"
       },
       size: {
         sm: "h-[var(--input-height-sm)] px-sm py-xs text-body-sm",
@@ -20,9 +20,9 @@ const inputVariants = cva(
       },
       status: {
         default: "",
-        error: "border-safety-red focus-visible:border-safety-red focus-visible:ring-safety-red/20 aria-invalid:border-safety-red aria-invalid:ring-safety-red/20",
-        success: "border-rifling-green focus-visible:border-rifling-green focus-visible:ring-rifling-green/20",
-        warning: "border-sight-gold focus-visible:border-sight-gold focus-visible:ring-sight-gold/20"
+        error: "border-canyon-clay focus-visible:border-canyon-clay focus-visible:ring-canyon-clay/20 aria-invalid:border-canyon-clay aria-invalid:ring-canyon-clay/20",
+        success: "border-sagebrush-green focus-visible:border-sagebrush-green focus-visible:ring-sagebrush-green/20",
+        warning: "border-warning-amber focus-visible:border-warning-amber focus-visible:ring-warning-amber/20"
       }
     },
     defaultVariants: {
@@ -76,7 +76,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
         {label && (
           <label className="text-body-sm font-medium text-foreground font-noto-sans">
             {label}
-            {required && <span className="text-safety-red ml-xs">*</span>}
+            {required && <span className="text-canyon-clay ml-xs">*</span>}
           </label>
         )}
         {children}
@@ -86,7 +86,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
           </p>
         )}
         {error && (
-          <p className="text-caption text-safety-red leading-relaxed flex items-center gap-xs">
+          <p className="text-caption text-canyon-clay leading-relaxed flex items-center gap-xs">
             <svg className="h-3 w-3 flex-shrink-0" viewBox="0 0 16 16" fill="currentColor">
               <path fillRule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9-3a1 1 0 11-2 0 1 1 0 012 0zM8 7.5a.5.5 0 01.5.5v3a.5.5 0 01-1 0V8a.5.5 0 01.5-.5z" />
             </svg>

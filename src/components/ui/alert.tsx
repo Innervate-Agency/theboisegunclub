@@ -9,20 +9,20 @@ const alertVariants = cva(
   {
     variants: {
       variant: {
-        // Default: Clean theme-aware background
-        default: "bg-card text-card-foreground border border-border",
+        // Default: Clean theme-aware background with whisper shadow
+        default: "bg-card text-card-foreground border border-border shadow-whisper",
         
-        // Info: Idaho palette - scope blue tones
-        info: "bg-scope-blue/10 text-scope-blue border border-scope-blue/30 [&>svg]:text-scope-blue dark:bg-scope-blue/20 dark:text-cerakote-blue dark:border-scope-blue/40 dark:[&>svg]:text-cerakote-blue",
+        // Info: Bogus Basin palette - info river blue tones
+        info: "bg-info-river/10 text-info-river border border-info-river/30 [&>svg]:text-info-river shadow-whisper hover:shadow-present",
         
-        // Success: Idaho palette - rifling green tones  
-        success: "bg-rifling-green/10 text-rifling-green border border-rifling-green/30 [&>svg]:text-rifling-green dark:bg-bore-sight-green/20 dark:text-bore-sight-green dark:border-rifling-green/40 dark:[&>svg]:text-bore-sight-green",
+        // Success: Bogus Basin palette - sagebrush green tones  
+        success: "bg-sagebrush-green/10 text-sagebrush-green border border-sagebrush-green/30 [&>svg]:text-sagebrush-green shadow-whisper hover:shadow-present",
         
-        // Warning: Idaho palette - sight gold tones
-        warning: "bg-sight-gold/10 text-sight-gold border border-sight-gold/30 [&>svg]:text-sight-gold dark:bg-recoil-pad/20 dark:text-sight-gold dark:border-sight-gold/40 dark:[&>svg]:text-recoil-pad",
+        // Warning: Bogus Basin palette - warning amber tones
+        warning: "bg-warning-amber/10 text-warning-amber border border-warning-amber/30 [&>svg]:text-warning-amber shadow-whisper hover:shadow-present",
         
-        // Destructive: Idaho palette - safety red tones
-        destructive: "bg-safety-red/10 text-safety-red border border-safety-red/30 [&>svg]:text-safety-red dark:bg-muzzle-flash/20 dark:text-safety-red dark:border-safety-red/40 dark:[&>svg]:text-muzzle-flash",
+        // Destructive: Bogus Basin palette - canyon clay red tones
+        destructive: "bg-canyon-clay/10 text-canyon-clay border border-canyon-clay/30 [&>svg]:text-canyon-clay shadow-whisper hover:shadow-present",
       },
       size: {
         sm: "px-sm py-xs text-body-sm",

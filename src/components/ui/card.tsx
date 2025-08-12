@@ -34,13 +34,13 @@ const cardVariants = cva(
         fire: "bg-card text-card-foreground shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
         // Fire Blue: Commanding with cool tactical gradients
-        "fire-blue": "bg-card text-card-foreground shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        "fire-blue": "bg-card text-card-foreground shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-slate-blue after:to-info-river after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
         // Fire Green: Commanding with green tactical gradients
-        "fire-green": "bg-card text-card-foreground shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-sagebrush-green after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        "fire-green": "bg-card text-card-foreground shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-sagebrush-green after:to-lodgepole-green after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
-        // Fire Red: Commanding with red tactical gradients
-        "fire-red": "bg-card text-card-foreground shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-safety-red after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
+        // Fire Red: Commanding with red tactical gradients  
+        "fire-red": "bg-card text-card-foreground shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-canyon-clay after:to-rusty-orange after:rounded-b-none after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
       },
       size: {
         sm: "",              // Subcomponents handle their own padding

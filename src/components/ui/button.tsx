@@ -136,10 +136,10 @@ const buttonVariants = cva(
         accent: "bg-rusty-orange/10 text-rusty-orange shadow-present hover:shadow-elevated focus-visible:ring-rusty-orange/50 hover:bg-rusty-orange/20",
         
         // Success: Present with tactical green accenting
-        success: "bg-rifling-green/10 text-rifling-green shadow-present hover:shadow-elevated focus-visible:ring-rifling-green/50 hover:bg-rifling-green/20",
+        success: "bg-sagebrush-green/10 text-sagebrush-green shadow-present hover:shadow-elevated focus-visible:ring-sagebrush-green/50 hover:bg-sagebrush-green/20",
         
-        // Destructive: Present with tactical red accenting
-        destructive: "bg-safety-red/10 text-safety-red shadow-present hover:shadow-elevated focus-visible:ring-safety-red/50 hover:bg-safety-red/20",
+        // Destructive: Present with tactical red accenting  
+        destructive: "bg-canyon-clay/10 text-canyon-clay shadow-present hover:shadow-elevated focus-visible:ring-canyon-clay/50 hover:bg-canyon-clay/20",
         
         // Outline: Clean theme-aware with border
         outline: "border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground",
@@ -147,11 +147,11 @@ const buttonVariants = cva(
         // Glass: Elevated glassmorphism with tactical transparency
         glass: "mica-overlay text-card-foreground shadow-elevated hover:shadow-prominent focus-visible:ring-rusty-orange/50 hover:bg-card/25 transition-all duration-200",
         
-        // Solid variants - tactical colors, no shadows for flat design
-        "solid-accent": "bg-rusty-orange text-primary hover:bg-rusty-orange focus-visible:ring-rusty-orange/50 border-0 transition-all duration-200 stripe-arrow",
-        "solid-success": "bg-rifling-green text-card-foreground hover:bg-bore-sight-green focus-visible:ring-rifling-green/50 border-0 transition-all duration-200 stripe-arrow",
-        "solid-destructive": "bg-rusty-orange text-card-foreground hover:bg-recoil-pad focus-visible:ring-rusty-orange/50 border-0 transition-all duration-200 stripe-arrow",
-        "solid-primary": "bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-primary/50 border-0 transition-all duration-200 stripe-arrow",
+        // Solid variants - elevated standalone buttons with shadows  
+        "solid-accent": "bg-rusty-orange text-crisp-off-white shadow-present hover:shadow-elevated hover:bg-ember-glow focus-visible:ring-rusty-orange/50 border-0 transition-all duration-200 stripe-arrow",
+        "solid-success": "bg-sagebrush-green text-crisp-off-white shadow-present hover:shadow-elevated hover:bg-lodgepole-green focus-visible:ring-sagebrush-green/50 border-0 transition-all duration-200 stripe-arrow",
+        "solid-destructive": "bg-canyon-clay text-crisp-off-white shadow-present hover:shadow-elevated hover:bg-canyon-clay/90 focus-visible:ring-canyon-clay/50 border-0 transition-all duration-200 stripe-arrow",
+        "solid-primary": "bg-slate-blue text-crisp-off-white shadow-present hover:shadow-elevated hover:bg-slate-blue/90 focus-visible:ring-slate-blue/50 border-0 transition-all duration-200 stripe-arrow",
         
         // Ghost: Whisper subtlety with tactical hover
         ghost: "text-muted-foreground hover:bg-muted hover:shadow-whisper focus-visible:ring-rusty-orange border-0",
@@ -169,13 +169,13 @@ const buttonVariants = cva(
         fire: "bg-card text-card-foreground shadow-commanding hover:shadow-hero focus-visible:ring-rusty-orange transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-rusty-orange after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
         // Fire Blue: Commanding with cool tactical gradients
-        "fire-blue": "bg-card text-card-foreground shadow-commanding hover:shadow-hero focus-visible:ring-slate-blue transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        "fire-blue": "bg-card text-card-foreground shadow-commanding hover:shadow-hero focus-visible:ring-slate-blue transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-slate-blue after:to-info-river after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
         // Fire Purple: Commanding with purple tactical gradients  
-        "fire-purple": "bg-card text-card-foreground shadow-commanding hover:shadow-hero focus-visible:ring-ayu-purple transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-purple after:to-slate-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
+        "fire-purple": "bg-card text-card-foreground shadow-commanding hover:shadow-hero focus-visible:ring-foothills-purple transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-foothills-purple after:to-slate-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2",
         
         // Fire Green: Commanding with green tactical gradients
-        "fire-green": "bg-card text-card-foreground shadow-commanding hover:shadow-hero focus-visible:ring-ayu-green transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-ayu-green after:to-sagebrush-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
+        "fire-green": "bg-card text-card-foreground shadow-commanding hover:shadow-hero focus-visible:ring-sagebrush-green transition-all duration-200 relative group after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 after:bg-gradient-to-r after:from-sagebrush-green after:to-lodgepole-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full hover:after:h-2"
       },
       size: {
         // Use our component sizing tokens from the design system (globals.css)
