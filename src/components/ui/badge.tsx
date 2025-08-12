@@ -70,7 +70,7 @@ const badgeVariants = cva(
 )
 
 // Icon mapping for badge variants
-const getBadgeIcon = (variant?: string) => {
+const getBadgeIcon = (variant?: string | null) => {
   switch (variant) {
     // Event Type Categories
     case 'competition': return <Trophy className="w-3 h-3 mr-1" />
