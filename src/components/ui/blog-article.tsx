@@ -168,7 +168,7 @@ export function BlogCard({
               {showAuthor && (
                 <div className="flex items-center gap-xs">
                   {article.author.avatar ? (
-                    <div className="w-8 h-8 rounded-full overflow-hidden bg-muted">
+                    <div className="size-8 rounded-full overflow-hidden bg-muted">
                       <Image
                         src={article.author.avatar}
                         alt={article.author.name}
@@ -178,7 +178,7 @@ export function BlogCard({
                       />
                     </div>
                   ) : (
-                    <div className="w-8 h-8 rounded-pill bg-rusty-orange/20 flex items-center justify-center">
+                    <div className="size-8 rounded-pill bg-rusty-orange/20 flex items-center justify-center">
                       <User className="icon-xs text-rusty-orange" />
                     </div>
                   )}

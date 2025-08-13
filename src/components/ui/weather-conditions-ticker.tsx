@@ -39,10 +39,10 @@ export function WeatherConditionsTicker({ conditions }: WeatherConditionsTickerP
 
   const getAccessStatusIcon = (status: string) => {
     switch (status) {
-      case 'Open': return <CheckCircle className="h-3 w-3 text-sagebrush-green" />
-      case 'Restrictions': return <AlertTriangle className="h-3 w-3 text-sandy-ochre" />
-      case 'Closed': return <XCircle className="h-3 w-3 text-safety-red" />
-      default: return <Shield className="h-3 w-3 text-muted-foreground" />
+      case 'Open': return <CheckCircle className="size-3 text-sagebrush-green" />
+      case 'Restrictions': return <AlertTriangle className="size-3 text-sandy-ochre" />
+      case 'Closed': return <XCircle className="size-3 text-safety-red" />
+      default: return <Shield className="size-3 text-muted-foreground" />
     }
   }
 
@@ -60,7 +60,7 @@ export function WeatherConditionsTicker({ conditions }: WeatherConditionsTickerP
         {/* Header Label */}
         <div className="absolute left-0 top-0 bottom-0 bg-gradient-to-r from-nav-intel/20 to-transparent z-10 flex items-center px-lg">
           <div className="flex items-center gap-xs text-body-sm font-rajdhani font-bold text-nav-intel">
-            <Mountain className="h-4 w-4" />
+            <Mountain className="size-4" />
             <span>LIVE CONDITIONS</span>
           </div>
         </div>
@@ -81,13 +81,13 @@ export function WeatherConditionsTicker({ conditions }: WeatherConditionsTickerP
                   <div className="flex items-center gap-base text-xs text-muted-foreground">
                     {/* Temperature */}
                     <div className="flex items-center gap-xs">
-                      <Thermometer className="h-3 w-3 text-nav-intel" />
+                      <Thermometer className="size-3 text-nav-intel" />
                       <span className="font-medium">{condition.temperature}°F</span>
                     </div>
                     
                     {/* Wind */}
                     <div className="flex items-center gap-xs">
-                      <Wind className="h-3 w-3 text-nav-intel" />
+                      <Wind className="size-3 text-nav-intel" />
                       <span className="font-medium">
                         {condition.windSpeed}mph {getWindDirectionArrow(condition.windDirection)}
                       </span>
@@ -95,7 +95,7 @@ export function WeatherConditionsTicker({ conditions }: WeatherConditionsTickerP
                     
                     {/* Fire Danger */}
                     <div className="flex items-center gap-xs">
-                      <Flame className="h-3 w-3 text-nav-intel" />
+                      <Flame className="size-3 text-nav-intel" />
                       <Badge className={getFireDangerColor(condition.fireDanger)}>
                         {condition.fireDanger}
                       </Badge>

@@ -202,7 +202,7 @@ export function SiteNavigation({
               <Link href="/" className="flex items-center gap-sm">
                 <div className="flex items-center gap-sm">
                   {React.createElement(getCurrentPageIcon(), { 
-                    className: `w-8 h-8 ${getCurrentPageColor()} -rotate-[28deg]`, 
+                    className: `size-8 ${getCurrentPageColor()} -rotate-[28deg]`, 
                     weight: "bold" 
                   })}
                   <div>
@@ -281,7 +281,7 @@ export function SiteNavigation({
                             transition: { duration: 0.3 }
                           }}
                         >
-                          <item.icon className="h-4 w-4" weight="bold" />
+                          <item.icon className="size-4" weight="bold" />
                         </motion.div>
                         {item.label}
                       </motion.div>
@@ -345,7 +345,7 @@ export function SiteNavigation({
                         : `text-muted-foreground ${getHoverClasses(item.color)}`
                     }`,
                     <>
-                      <item.icon className="h-4 w-4" weight="bold" />
+                      <item.icon className="size-4" weight="bold" />
                       {item.label}
                     </>
                   )}

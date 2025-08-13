@@ -40,11 +40,11 @@ export function EventTicker({ events }: EventTickerProps) {
                   
                   <div className="flex items-center gap-base text-xs text-muted-foreground">
                     <div className="flex items-center gap-xs">
-                      <Calendar className="h-3 w-3" />
+                      <Calendar className="size-3" />
                       <span>{event.date}</span>
                     </div>
                     <div className="flex items-center gap-xs">
-                      <MapPin className="h-3 w-3" />
+                      <MapPin className="size-3" />
                       <span>{event.location.split(',')[0]}</span>
                     </div>
                     <div className="flex items-center gap-xs">

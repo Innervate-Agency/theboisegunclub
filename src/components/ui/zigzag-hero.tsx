@@ -246,7 +246,7 @@ export function ZigzagHero({
                 {stats.map((stat, index) => (
                   <div key={index} className="space-y-tiny">
                     {stat.icon && (
-                      <stat.icon className="h-8 w-8 text-primary-foreground/80 mx-auto" />
+                      <stat.icon className="size-8 text-primary-foreground/80 mx-auto" />
                     )}
                     <div className="text-3xl font-rajdhani font-bold text-primary-foreground">
                       {stat.value}

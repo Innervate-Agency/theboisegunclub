@@ -73,7 +73,7 @@ export function StickySearchMenu({
           {/* Search */}
           <div className="flex gap-xs">
             <div className="relative min-w-[300px]">
-              <Search className="absolute left-3 top-micro/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-micro/2 -translate-y-1/2 size-4 text-muted-foreground" />
               <Input
                 placeholder="Search events..."
                 className="pl-10"
@@ -82,7 +82,7 @@ export function StickySearchMenu({
               />
             </div>
             <Button variant="outline" size="sm" className="gap-xs">
-              <Filter className="h-4 w-4" />
+              <Filter className="size-4" />
               Filters
             </Button>
           </div>

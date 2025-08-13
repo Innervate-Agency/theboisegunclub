@@ -72,7 +72,7 @@ const ProductShowcaseCard = React.forwardRef<HTMLDivElement, ProductShowcaseCard
           <div className="relative z-10 w-32 h-32 rounded-none bg-card border border-border/50 flex items-center justify-center shadow-flat">
             {imageSlot || (
               <div className="w-16 h-16 rounded bg-muted flex items-center justify-center">
-                <div className="w-8 h-8 rounded bg-muted-foreground/20" />
+                <div className="size-8 rounded bg-muted-foreground/20" />
               </div>
             )}
           </div>
@@ -102,7 +102,7 @@ const ProductShowcaseCard = React.forwardRef<HTMLDivElement, ProductShowcaseCard
           <div className="transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out delay-75">
             <div className="flex items-center gap-xs text-body-sm font-medium text-rusty-orange hover:text-rusty-orange/80 transition-colors cursor-pointer">
               <span>{ctaText}</span>
-              <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowRight className="size-4 transform group-hover:translate-x-1 transition-transform duration-300" />
             </div>
           </div>
         </div>

@@ -103,7 +103,7 @@ export function SiteNavigation({
           {showLogo && (
             <div className="flex items-center">
               <Link href="/" className="flex items-center gap-sm">
-                <div className="w-10 h-10 bg-gradient-to-br from-sandy-ochre to-rusty-orange rounded-xs flex flex-col items-center justify-center relative">
+                <div className="w-10 h-button-lg bg-gradient-to-br from-sandy-ochre to-rusty-orange rounded-xs flex flex-col items-center justify-center relative">
                   <div className="text-[10px] font-rajdhani font-black text-dark-chocolate tracking-tight leading-none">
                     TB
                   </div>
@@ -132,7 +132,7 @@ export function SiteNavigation({
                   href={item.href}
                   className={`group relative flex items-center gap-xs px-base py-xs text-body-sm font-medium text-muted-foreground transition-all duration-200  ${getHoverClasses(item.color)}`}
                 >
-                  <item.icon className="h-3 w-3" />
+                  <item.icon className="size-3" />
                   {item.label}
                   
                   {/* Individual color bar at bottom edge of navbar */}

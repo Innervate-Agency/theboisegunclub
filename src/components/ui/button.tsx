@@ -35,11 +35,11 @@ const buttonVariants = cva(
         "fire-purple": "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-foothills-purple after:to-canyon-clay after:transition-all after:duration-300 hover:after:h-1",
       },
       size: {
-        default: "h-10 px-sm py-tiny",
-        sm: "h-9 rounded-sm px-xs"
+        default: "h-button-lg px-sm py-tiny",
+        sm: "h-button rounded-sm px-xs"
         lg: "h-11 rounded-xs px-lg"
         xl: "h-12 rounded-xs px-xl text-heading-lg"
-        icon: "h-10 w-10",
+        icon: "h-button-lg w-10",
       },
     },
     defaultVariants: {
@@ -116,7 +116,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ) : (
           // Normal button rendering with loading spinner and animations
           <>
-            {loading ? <Diamond className="mr-tiny h-4 w-4 animate-spin" weight="bold" /> : null}
+            {loading ? <Diamond className="mr-tiny size-4 animate-spin" weight="bold" /> : null}
             {children}
             {renderAnimation()}
           </>

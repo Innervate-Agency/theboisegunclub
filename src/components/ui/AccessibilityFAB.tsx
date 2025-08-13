@@ -126,9 +126,9 @@ export default function AccessibilityFAB({
         {...props}
       >
         {isOpen ? (
-          <X className="w-6 h-6 text-card-foreground mx-auto" />
+          <X className="size-6 text-card-foreground mx-auto" />
         ) : (
-          <Accessibility className="w-6 h-6 text-card-foreground mx-auto" />
+          <Accessibility className="size-6 text-card-foreground mx-auto" />
         )}
       </button>
 
@@ -141,7 +141,7 @@ export default function AccessibilityFAB({
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-xs">
               <div className="bg-muted p-tiny rounded-xs border border-border">
-                <Settings className="h-5 w-5 text-card-foreground" />
+                <Settings className="size-5 text-card-foreground" />
               </div>
               <h2 className="text-heading-lg font-rajdhani font-bold text-card-foreground">Accessibility</h2>
             </div>
@@ -159,7 +159,7 @@ export default function AccessibilityFAB({
                 )}
                 onClick={() => handleThemeChange("light")}
               >
-                <Sun className="h-4 w-4" />
+                <Sun className="size-4" />
                 Light
               </button>
               <button
@@ -171,7 +171,7 @@ export default function AccessibilityFAB({
                 )}
                 onClick={() => handleThemeChange("dark")}
               >
-                <Moon className="h-4 w-4" />
+                <Moon className="size-4" />
                 Fire Mode
               </button>
               <button
@@ -183,7 +183,7 @@ export default function AccessibilityFAB({
                 )}
                 onClick={() => handleThemeChange("system")}
               >
-                <Monitor className="h-4 w-4" />
+                <Monitor className="size-4" />
                 Auto
               </button>
               <button
@@ -195,7 +195,7 @@ export default function AccessibilityFAB({
                 )}
                 onClick={() => handleThemeChange("gruvbox")}
               >
-                <Eye className="h-4 w-4" />
+                <Eye className="size-4" />
                 Night Ops
               </button>
             </div>
@@ -212,7 +212,7 @@ export default function AccessibilityFAB({
                 onClick={handleFontSizeDecrease}
                 disabled={fontSize === "small"}
               >
-                <Minus className="h-4 w-4" />
+                <Minus className="size-4" />
               </button>
               <div className="flex-1 text-center">
                 <div className="bg-primary/10 text-primary px-sm py-micro rounded-input text-body-sm font-medium capitalize">
@@ -224,7 +224,7 @@ export default function AccessibilityFAB({
                 onClick={handleFontSizeIncrease}
                 disabled={fontSize === "large"}
               >
-                <Plus className="h-4 w-4" />
+                <Plus className="size-4" />
               </button>
             </div>
           </div>
@@ -252,7 +252,7 @@ export default function AccessibilityFAB({
                 )}
                 onClick={() => handleContrastChange("high")}
               >
-                <Contrast className="h-4 w-4" />
+                <Contrast className="size-4" />
                 High
               </button>
             </div>
@@ -270,7 +270,7 @@ export default function AccessibilityFAB({
                 )}
                 onClick={() => handleColorBlindFilterChange("none")}
               >
-                <Eye className="h-4 w-4" />
+                <Eye className="size-4" />
                 Normal
               </button>
               <button
@@ -314,7 +314,7 @@ export default function AccessibilityFAB({
               className="w-full bg-muted hover:bg-muted/80 text-card-foreground px-sm py-tiny rounded-input text-body-sm font-medium transition-colors flex items-center justify-center gap-tiny"
               onClick={handleResetAll}
             >
-              <Settings className="h-4 w-4" />
+              <Settings className="size-4" />
               Reset to Defaults
             </button>
           </div>

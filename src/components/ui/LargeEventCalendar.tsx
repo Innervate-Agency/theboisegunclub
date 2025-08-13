@@ -101,7 +101,7 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
                   size="xl"
                   onClick={() => setCurrentMonth(new Date(currentMonth.setMonth(currentMonth.getMonth() - 1)))}
                 >
-                  <ChevronLeft className="h-6 w-6" />
+                  <ChevronLeft className="size-6" />
                 </Button>
                 <Button
                   variant="outline"
@@ -116,7 +116,7 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
                   size="xl"
                   onClick={() => setCurrentMonth(new Date(currentMonth.setMonth(currentMonth.getMonth() + 1)))}
                 >
-                  <ChevronRight className="h-6 w-6" />
+                  <ChevronRight className="size-6" />
                 </Button>
               </div>
             </div>
@@ -229,7 +229,7 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
                           <div className="flex items-start justify-between">
                             <div className="flex items-center gap-sm">
                               <div className={`p-sm rounded-xs bg-${config.color}/20`}>
-                                <Icon className={`h-5 w-5 text-${config.color}`} />
+                                <Icon className={`size-5 text-${config.color}`} />
                               </div>
                               <Badge className={`bg-${config.color}/20 text-${config.color}`}>
                                 {event.eventType}
@@ -250,16 +250,16 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
 
                           <div className="space-y-xs">
                             <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                              <Clock className="h-4 w-4" />
+                              <Clock className="size-4" />
                               <span>{event.time.split(' - ')[0]}</span>
                             </div>
                             <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                              <MapPin className="h-4 w-4" />
+                              <MapPin className="size-4" />
                               <span>{event.location.split(',')[0]}</span>
                             </div>
                             {event.capacity && event.registeredCount && (
                               <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                                <Users className="h-4 w-4" />
+                                <Users className="size-4" />
                                 <span>{event.registeredCount}/{event.capacity}</span>
                               </div>
                             )}

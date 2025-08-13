@@ -13,7 +13,7 @@ export function HoverArrow({ className, isActive = false }: AnimationProps) {
   return (
     <ArrowRight 
       className={cn(
-        "h-4 w-4 transition-transform duration-300",
+        "size-4 transition-transform duration-300",
         isActive && "translate-x-1",
         className
       )} 
@@ -24,16 +24,16 @@ export function HoverArrow({ className, isActive = false }: AnimationProps) {
 // Smooth plus ↔ minus for expand/collapse states
 export function PlusMinusToggle({ className, isActive = false }: AnimationProps) {
   return (
-    <div className={cn("relative h-4 w-4", className)}>
+    <div className={cn("relative size-4", className)}>
       <Plus 
         className={cn(
-          "absolute inset-0 h-4 w-4 transition-all duration-300",
+          "absolute inset-0 size-4 transition-all duration-300",
           isActive ? "rotate-45 opacity-0" : "rotate-0 opacity-100"
         )} 
       />
       <Minus 
         className={cn(
-          "absolute inset-0 h-4 w-4 transition-all duration-300",
+          "absolute inset-0 size-4 transition-all duration-300",
           isActive ? "rotate-0 opacity-100" : "rotate-45 opacity-0"
         )} 
       />
@@ -44,16 +44,16 @@ export function PlusMinusToggle({ className, isActive = false }: AnimationProps)
 // Clean X ↔ O transformation for on/off toggles
 export function XOToggle({ className, isActive = false }: AnimationProps) {
   return (
-    <div className={cn("relative h-4 w-4", className)}>
+    <div className={cn("relative size-4", className)}>
       <X 
         className={cn(
-          "absolute inset-0 h-4 w-4 transition-all duration-300",
+          "absolute inset-0 size-4 transition-all duration-300",
           isActive ? "rotate-0 opacity-100" : "rotate-90 opacity-0"
         )} 
       />
       <Circle 
         className={cn(
-          "absolute inset-0 h-4 w-4 transition-all duration-300",
+          "absolute inset-0 size-4 transition-all duration-300",
           isActive ? "scale-75 opacity-0" : "scale-100 opacity-100"
         )} 
       />
@@ -70,7 +70,7 @@ export function ChevronRotate({ className, isActive = false, direction = 'up' }:
   return (
     <ChevronIcon 
       className={cn(
-        "h-4 w-4 transition-transform duration-300",
+        "size-4 transition-transform duration-300",
         isActive && (
           direction === 'up' ? "rotate-180" :
           direction === 'down' ? "rotate-180" :

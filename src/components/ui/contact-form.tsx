@@ -97,7 +97,7 @@ export function ContactForm({
         <div className="space-y-(--spacing-xs)">
           <Label htmlFor="email">Email Address *</Label>
           <div className="relative">
-            <Mail className="absolute left-3 top-micro/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
+            <Mail className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-warning-amber" />
             <Input
               id="email"
               name="email"
@@ -112,7 +112,7 @@ export function ContactForm({
         <div className="space-y-(--spacing-xs)">
           <Label htmlFor="phone">Phone Number</Label>
           <div className="relative">
-            <Phone className="absolute left-3 top-micro/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
+            <Phone className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-warning-amber" />
             <Input
               id="phone"
               name="phone"
@@ -338,12 +338,12 @@ export function ContactForm({
             >
               {isSubmitting ? (
                 <>
-                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-card mr-(--spacing-xs)" />
+                  <div className="animate-spin rounded-full size-4 border-b-2 border-card mr-(--spacing-xs)" />
                   Sending...
                 </>
               ) : (
                 <>
-                  <Send className="h-4 w-4 mr-(--spacing-xs)" />
+                  <Send className="size-4 mr-(--spacing-xs)" />
                   {getSubmitButtonText()}
                 </>
               )}
@@ -358,7 +358,7 @@ export function ContactForm({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-(--spacing-base) text-body-sm">
                 <div className="flex items-center gap-(--spacing-sm)">
                   <div className="p-(--spacing-xs) bg-sandy-ochre/10 rounded-(--radius-base)">
-                    <Phone className="h-4 w-4 text-sandy-ochre" />
+                    <Phone className="size-4 text-sandy-ochre" />
                   </div>
                   <div>
                     <p className="font-medium text-dark-chocolate">Phone</p>
@@ -368,7 +368,7 @@ export function ContactForm({
                 
                 <div className="flex items-center gap-(--spacing-sm)">
                   <div className="p-(--spacing-xs) bg-sandy-ochre/10 rounded-(--radius-base)">
-                    <Mail className="h-4 w-4 text-sandy-ochre" />
+                    <Mail className="size-4 text-sandy-ochre" />
                   </div>
                   <div>
                     <p className="font-medium text-dark-chocolate">Email</p>
@@ -378,7 +378,7 @@ export function ContactForm({
                 
                 <div className="flex items-center gap-(--spacing-sm)">
                   <div className="p-(--spacing-xs) bg-sandy-ochre/10 rounded-(--radius-base)">
-                    <MapPin className="h-4 w-4 text-sandy-ochre" />
+                    <MapPin className="size-4 text-sandy-ochre" />
                   </div>
                   <div>
                     <p className="font-medium text-dark-chocolate">Location</p>
@@ -388,7 +388,7 @@ export function ContactForm({
                 
                 <div className="flex items-center gap-(--spacing-sm)">
                   <div className="p-(--spacing-xs) bg-sandy-ochre/10 rounded-(--radius-base)">
-                    <Clock className="h-4 w-4 text-sandy-ochre" />
+                    <Clock className="size-4 text-sandy-ochre" />
                   </div>
                   <div>
                     <p className="font-medium text-dark-chocolate">Response Time</p>

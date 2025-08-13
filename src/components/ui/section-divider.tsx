@@ -87,9 +87,9 @@ export function SectionDivider({ className, variant, spacing, ...props }: Sectio
       {/* Three-Dot Sights Pattern */}
       {variant === "sights" && (
         <div className="absolute inset-0 flex items-center justify-center gap-(--spacing-5xl)">
-          <div className="w-2 h-2 rounded-pill bg-muted-foreground/40" />
-          <div className="w-3 h-3 rounded-pill bg-primary/60" />
-          <div className="w-2 h-2 rounded-pill bg-muted-foreground/40" />
+          <div className="size-2 rounded-pill bg-muted-foreground/40" />
+          <div className="size-3 rounded-pill bg-primary/60" />
+          <div className="size-2 rounded-pill bg-muted-foreground/40" />
         </div>
       )}
       
@@ -110,7 +110,7 @@ export function SectionDivider({ className, variant, spacing, ...props }: Sectio
                 }}
               />
             ))}
-            <div className="w-2 h-2 rounded-pill bg-primary/60 absolute top-micro/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+            <div className="size-2 rounded-pill bg-primary/60 absolute top-micro/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
           </div>
         </div>
       )}

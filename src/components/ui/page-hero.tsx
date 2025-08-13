@@ -84,7 +84,7 @@ export function PageHero({
           {Icon && (
             <div className="flex justify-center">
               <div className="p-base bg-card/80 backdrop-blur-sm rounded-full border border-sandy-ochre/20 shadow-flat">
-                <Icon className="h-8 w-8 text-sandy-ochre" />
+                <Icon className="size-8 text-sandy-ochre" />
               </div>
             </div>
           )}
@@ -147,7 +147,7 @@ export function PageHero({
           {showScrollIndicator && (
             <div className="flex justify-center pt-(--spacing-lg)">
               <div className="animate-bounce">
-                <ChevronDown className="h-6 w-6 text-warning-amber/60" />
+                <ChevronDown className="size-6 text-warning-amber/60" />
               </div>
             </div>
           )}

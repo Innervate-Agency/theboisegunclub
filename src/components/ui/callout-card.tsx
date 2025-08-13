@@ -85,13 +85,13 @@ export function ImportantCallout({
       {...props}
     >
       {/* Pulsing accent for important notices */}
-      <div className="absolute -left-1 top-sm w-2 h-2 bg-safety-red rounded-full animate-pulse" />
+      <div className="absolute -left-1 top-sm size-2 bg-safety-red rounded-full animate-pulse" />
       
       <div className="space-y-(--spacing-sm)">
         <div className="flex items-start gap-sm">
           <div className="flex-shrink-0 mt-(--spacing-tiny)">
-            <div className="w-6 h-6 bg-safety-red/10 rounded-full flex items-center justify-center">
-              <div className="w-2 h-2 bg-safety-red rounded-full" />
+            <div className="size-6 bg-safety-red/10 rounded-full flex items-center justify-center">
+              <div className="size-2 bg-safety-red rounded-full" />
             </div>
           </div>
           <div className="flex-1 space-y-(--spacing-xs)">

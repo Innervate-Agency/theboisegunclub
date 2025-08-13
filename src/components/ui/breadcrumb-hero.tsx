@@ -85,7 +85,7 @@ export function BreadcrumbHero({
                 className="shadow-flat -ml-(--spacing-xs) text-warning-amber hover:text-dark-chocolate"
                 onClick={() => window.location.href = backLink.href}
               >
-                <ArrowLeft className="h-4 w-4 mr-(--spacing-xs)" />
+                <ArrowLeft className="size-4 mr-(--spacing-xs)" />
                 {backLink.label}
               </Button>
             </div>
@@ -100,12 +100,12 @@ export function BreadcrumbHero({
                     href={item.href}
                     className="flex items-center text-warning-amber hover:text-dark-chocolate transition-colors duration-150"
                   >
-                    <Home className="h-4 w-4 mr-(--spacing-xs)" />
+                    <Home className="size-4 mr-(--spacing-xs)" />
                     {item.label}
                   </a>
                 ) : (
                   <>
-                    <ChevronRight className="h-4 w-4 text-warning-amber/60" />
+                    <ChevronRight className="size-4 text-warning-amber/60" />
                     {index === breadcrumbs.length - 1 ? (
                       <span className="text-dark-chocolate font-medium">
                         {item.label}
@@ -131,7 +131,7 @@ export function BreadcrumbHero({
               {Icon && (
                 <div className="flex-shrink-0">
                   <div className="p-sm bg-sandy-ochre/10 rounded-sm border border-sandy-ochre/20">
-                    <Icon className="h-6 w-6 text-sandy-ochre" />
+                    <Icon className="size-6 text-sandy-ochre" />
                   </div>
                 </div>
               )}

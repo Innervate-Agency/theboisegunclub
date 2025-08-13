@@ -92,17 +92,17 @@ export function StatsShowcase({
                   <div className="flex items-center justify-between">
                     {Icon && (
                       <div className="p-xs bg-rusty-orange/10 rounded-sm">
-                        <Icon className="h-5 w-5 text-rusty-orange" />
+                        <Icon className="size-5 text-rusty-orange" />
                       </div>
                     )}
                     
                     {stat.change && (
                       <div className="flex items-center gap-xs text-caption">
                         {stat.change.trend === 'up' && (
-                          <TrendingUp className="h-3 w-3 text-rifling-green" />
+                          <TrendingUp className="size-3 text-rifling-green" />
                         )}
                         {stat.change.trend === 'down' && (
-                          <TrendingDown className="h-3 w-3 text-rusty-orange" />
+                          <TrendingDown className="size-3 text-rusty-orange" />
                         )}
                         <span className={cn(
                           "font-medium",

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 import { Eye, EyeOff, AlertCircle } from "lucide-react"
 
 const inputVariants = cva(
-  "flex h-10 w-full rounded-xs border border-input bg-background px-xs py-tiny text-body-sm ring-offset-background file:border-0 file:bg-transparent file:text-body-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+  "flex h-button-lg w-full rounded-xs border border-input bg-background px-xs py-tiny text-body-sm ring-offset-background file:border-0 file:bg-transparent file:text-body-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -14,8 +14,8 @@ const inputVariants = cva(
         glass: "bg-popover/10 backdrop-blur-sm border-border/20 text-foreground placeholder:text-foreground/70",
       },
       size: {
-        sm: "h-9 px-tiny",
-        default: "h-10 px-xs py-tiny",
+        sm: "h-button px-tiny",
+        default: "h-button-lg px-xs py-tiny",
         lg: "h-11 px-sm",
       },
       status: {
@@ -60,7 +60,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             onClick={handleTogglePassword}
             className="absolute inset-y-0 right-0 flex items-center pr-3 text-muted-foreground hover:text-foreground"
           >
-            {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+            {showPassword ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
           </button>
         )}
       </div>
@@ -96,7 +96,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
         )}
         {error && (
           <p className="text-body-sm text-destructive flex items-center">
-            <AlertCircle className="h-4 w-4 mr-tiny" />
+            <AlertCircle className="size-4 mr-tiny" />
             {error}
           </p>
         )}

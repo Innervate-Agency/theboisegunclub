@@ -94,10 +94,10 @@ export function PricingCard({
 
   const renderFeatureValue = (feature: PricingFeature) => {
     if (feature.included === true) {
-      return <Check className="h-4 w-4 text-rifling-green" />
+      return <Check className="size-4 text-rifling-green" />
     }
     if (feature.included === false) {
-      return <X className="h-4 w-4 text-warning-amber" />
+      return <X className="size-4 text-warning-amber" />
     }
     if (typeof feature.included === 'number') {
       return <span className="text-body-sm font-medium text-dark-chocolate">{feature.included}</span>
@@ -106,7 +106,7 @@ export function PricingCard({
       return <span className="text-body-sm font-medium text-rusty-orange">∞</span>
     }
     if (feature.included === 'limited') {
-      return <Minus className="h-4 w-4 text-sight-gold" />
+      return <Minus className="size-4 text-sight-gold" />
     }
     return <span className="text-caption text-warning-amber">{feature.included}</span>
   }
@@ -121,7 +121,7 @@ export function PricingCard({
         {plan.popular && plan.badge && (
           <div className="absolute -top-xs left-1/2 transform -translate-x-1/2 z-20">
             <Badge variant="default" className="bg-rusty-orange text-nickel-white font-medium px-md py-sm text-caption shadow-present">
-              <Star className="h-3 w-3 mr-xs" />
+              <Star className="size-3 mr-xs" />
               {plan.badge}
             </Badge>
           </div>
@@ -130,7 +130,7 @@ export function PricingCard({
         <CardHeader className="text-center pb-base pt-xl">
           <div className="flex justify-center mb-base">
             <div className="p-sm bg-rusty-orange/10 rounded-full">
-              <Icon className="h-6 w-6 text-rusty-orange" />
+              <Icon className="size-6 text-rusty-orange" />
             </div>
           </div>
           
@@ -317,13 +317,13 @@ export function PricingTable({
   )
 
   function renderFeatureValue(feature?: PricingFeature) {
-    if (!feature) return <X className="h-4 w-4 text-muted-foreground mx-auto" />
+    if (!feature) return <X className="size-4 text-muted-foreground mx-auto" />
     
     if (feature.included === true) {
-      return <Check className="h-4 w-4 text-bore-sight-green mx-auto" />
+      return <Check className="size-4 text-bore-sight-green mx-auto" />
     }
     if (feature.included === false) {
-      return <X className="h-4 w-4 text-muted-foreground mx-auto" />
+      return <X className="size-4 text-muted-foreground mx-auto" />
     }
     if (typeof feature.included === 'number') {
       return <span className="text-body-sm font-medium text-dark-chocolate">{feature.included}</span>
@@ -332,7 +332,7 @@ export function PricingTable({
       return <span className="text-body-sm font-medium text-rusty-orange">∞</span>
     }
     if (feature.included === 'limited') {
-      return <Minus className="h-4 w-4 text-rusty-orange mx-auto" />
+      return <Minus className="size-4 text-rusty-orange mx-auto" />
     }
     return <span className="text-caption text-warning-amber">{feature.included}</span>
   }
@@ -456,13 +456,13 @@ export function PricingFusion({
   )
 
   function renderFeatureValueFusion(feature?: PricingFeature) {
-    if (!feature) return <X className="h-4 w-4 text-muted-foreground mx-auto" />
+    if (!feature) return <X className="size-4 text-muted-foreground mx-auto" />
     
     if (feature.included === true) {
-      return <Check className="h-4 w-4 text-bore-sight-green mx-auto" />
+      return <Check className="size-4 text-bore-sight-green mx-auto" />
     }
     if (feature.included === false) {
-      return <X className="h-4 w-4 text-muted-foreground mx-auto" />
+      return <X className="size-4 text-muted-foreground mx-auto" />
     }
     if (typeof feature.included === 'number') {
       return <span className="text-body-sm font-medium text-dark-chocolate">{feature.included}</span>
@@ -471,7 +471,7 @@ export function PricingFusion({
       return <span className="text-body-sm font-medium text-rusty-orange">∞</span>
     }
     if (feature.included === 'limited') {
-      return <Minus className="h-4 w-4 text-rusty-orange mx-auto" />
+      return <Minus className="size-4 text-rusty-orange mx-auto" />
     }
     return <span className="text-caption text-warning-amber">{feature.included}</span>
   }

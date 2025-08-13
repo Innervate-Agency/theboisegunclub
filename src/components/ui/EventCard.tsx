@@ -117,15 +117,15 @@ export function EventCard({
 
         <div className="space-y-xs text-body-sm">
           <div className="flex items-center gap-xs text-muted-foreground">
-            <Calendar className="h-4 w-4 flex-shrink-0" />
+            <Calendar className="size-4 flex-shrink-0" />
             <span>{date}</span>
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
-            <Clock className="h-4 w-4 flex-shrink-0" />
+            <Clock className="size-4 flex-shrink-0" />
             <span>{time}</span>
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
-            <MapPin className="h-4 w-4 flex-shrink-0" />
+            <MapPin className="size-4 flex-shrink-0" />
             <span className="line-clamp-1">{location}</span>
           </div>
         </div>
@@ -133,7 +133,7 @@ export function EventCard({
         {capacity && (
           <div className="flex items-center justify-between text-body-sm bg-muted/50 px-base py-xs rounded-sm">
             <div className="flex items-center gap-xs text-muted-foreground">
-              <Users className="h-4 w-4" />
+              <Users className="size-4" />
               <span>Capacity: {capacity}</span>
             </div>
             <div className={cn(

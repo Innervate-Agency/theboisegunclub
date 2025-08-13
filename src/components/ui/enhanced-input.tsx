@@ -30,7 +30,7 @@ const enhancedInputVariants = cva(
       size: {
         // Proper sizing using design tokens
         sm: "h-8 px-sm py-xs text-body-sm",         // 32px - compact
-        default: "h-10 px-sm py-xs text-body-sm",  // 40px - standard  
+        default: "h-button-lg px-sm py-xs text-body-sm",  // 40px - standard  
         lg: "h-12 px-base py-sm text-body",     // 48px - large
       },
       radius: {

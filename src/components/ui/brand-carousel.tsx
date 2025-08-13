@@ -288,7 +288,7 @@ export function BrandCarousel({
                   "w-12 h-12 rounded-xs flex items-center justify-center transition-colors",
                   colors.bg
                 )}>
-                  <IconComponent className={cn("w-6 h-6 transition-colors", colors.icon)} />
+                  <IconComponent className={cn("size-6 transition-colors", colors.icon)} />
                 </div>
                 <span className={cn("text-xs font-medium transition-colors", colors.text)}>
                   {partner.name.toUpperCase()}

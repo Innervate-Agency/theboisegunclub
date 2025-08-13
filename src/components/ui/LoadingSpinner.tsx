@@ -9,8 +9,8 @@ const loadingSpinnerVariants = cva(
   {
     variants: {
       size: {
-        sm: "h-4 w-4 border-2",
-        md: "h-8 w-8 border-3", 
+        sm: "size-4 border-2",
+        md: "size-8 border-3", 
         lg: "h-12 w-12 border-4"
       },
       variant: {
@@ -60,8 +60,8 @@ function LoadingSpinner({
           <div className={cn(
             "rounded-pill bg-dark-chocolate",
             size === "sm" && "h-1 w-1",
-            size === "md" && "h-2 w-2",
-            size === "lg" && "h-3 w-3"
+            size === "md" && "size-2",
+            size === "lg" && "size-3"
           )} />
         </div>
       </div>

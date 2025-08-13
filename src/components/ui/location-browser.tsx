@@ -89,12 +89,12 @@ function LocationCard({ location }: { location: ShootingLocation }) {
           </div>
           {location.verified ? (
             <Badge className="bg-sagebrush-green/20 text-sagebrush-green border-sagebrush-green/30">
-              <Shield className="h-3 w-3 mr-xs" />
+              <Shield className="size-3 mr-xs" />
               Verified
             </Badge>
           ) : (
             <Badge className="bg-warning-clay/20 text-warning-clay border-warning-clay/30">
-              <AlertTriangle className="h-3 w-3 mr-xs" />
+              <AlertTriangle className="size-3 mr-xs" />
               Unverified
             </Badge>
           )}
@@ -107,11 +107,11 @@ function LocationCard({ location }: { location: ShootingLocation }) {
         {/* GPS Coordinates - Moved Higher for Shooting Locations */}
         <div className="space-y-xs text-body-sm">
           <div className="flex items-center gap-xs text-rusty-orange font-medium">
-            <Navigation className="h-4 w-4" />
+            <Navigation className="size-4" />
             <span className="font-mono text-xs">{location.coordinates}</span>
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
-            <MapPin className="h-4 w-4 text-rusty-orange" />
+            <MapPin className="size-4 text-rusty-orange" />
             <span>{location.address}</span>
           </div>
         </div>
@@ -124,7 +124,7 @@ function LocationCard({ location }: { location: ShootingLocation }) {
         
         {/* Access Information */}
         <div className="flex items-center gap-xs text-body-sm">
-          <Flag className="h-4 w-4 text-rusty-orange" />
+          <Flag className="size-4 text-rusty-orange" />
           <span className="font-medium">Access:</span>
           <span className="text-muted-foreground">{location.access}</span>
         </div>
@@ -149,7 +149,7 @@ function LocationCard({ location }: { location: ShootingLocation }) {
         {location.restrictions && (
           <div className="p-xs bg-safety-red/10 rounded-sm border border-safety-red/20">
             <div className="flex items-start gap-xs">
-              <Info className="h-4 w-4 text-safety-red mt-0.5 flex-shrink-0" />
+              <Info className="size-4 text-safety-red mt-0.5 flex-shrink-0" />
               <div>
                 <h4 className="font-medium text-safety-red text-body-sm">Restrictions:</h4>
                 <p className="text-xs text-safety-red/80">{location.restrictions}</p>
@@ -168,15 +168,15 @@ function LocationCard({ location }: { location: ShootingLocation }) {
                   Have you been here? Help the community by verifying access conditions, safety info, and current restrictions.
                 </p>
               </div>
-              <Shield className="h-5 w-5 text-warning-clay/60 flex-shrink-0 mt-xs" />
+              <Shield className="size-5 text-warning-clay/60 flex-shrink-0 mt-xs" />
             </div>
             <div className="grid grid-cols-2 gap-xs">
               <Button size="sm" className="bg-warning-clay text-white hover:bg-warning-clay/90 font-rajdhani font-semibold">
-                <Camera className="h-4 w-4 mr-xs" />
+                <Camera className="size-4 mr-xs" />
                 Add Photos
               </Button>
               <Button variant="outline" size="sm" className="border-warning-clay/30 text-warning-clay hover:bg-warning-clay hover:text-white font-rajdhani font-semibold">
-                <CheckCircle className="h-4 w-4 mr-xs" />
+                <CheckCircle className="size-4 mr-xs" />
                 Verify Details
               </Button>
             </div>
@@ -186,15 +186,15 @@ function LocationCard({ location }: { location: ShootingLocation }) {
         <div className="flex items-center justify-between pt-xs border-t border-border">
           <div className="flex items-center gap-base text-xs text-muted-foreground">
             <div className="flex items-center gap-xs">
-              <Star className="h-3 w-3 fill-rusty-orange text-rusty-orange" />
+              <Star className="size-3 fill-rusty-orange text-rusty-orange" />
               <span>{location.rating}</span>
             </div>
             <div className="flex items-center gap-xs">
-              <Users className="h-3 w-3" />
+              <Users className="size-3" />
               <span>{location.reviews} reviews</span>
             </div>
             <div className="flex items-center gap-xs">
-              <Eye className="h-3 w-3" />
+              <Eye className="size-3" />
               <span>Updated {new Date(location.lastUpdated).toLocaleDateString()}</span>
             </div>
           </div>
@@ -210,12 +210,12 @@ function LocationCard({ location }: { location: ShootingLocation }) {
                 window.open(googleMapsUrl, '_blank')
               }}
             >
-              <ExternalLink className="h-3 w-3 mr-xs" />
+              <ExternalLink className="size-3 mr-xs" />
               Directions
             </Button>
             <Button variant="ghost" size="sm" className="text-rusty-orange hover:text-rusty-orange">
               View Details
-              <ArrowRight className="h-3 w-3 ml-xs" />
+              <ArrowRight className="size-3 ml-xs" />
             </Button>
           </div>
         </div>
@@ -262,7 +262,7 @@ export function LocationBrowser({ locations, locationTypes, difficultyLevels }: 
             {/* Search Bar */}
             <div className="flex flex-col md:flex-row gap-base">
               <div className="flex-1 relative">
-                <Search className="absolute left-3 top-micro/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Search className="absolute left-3 top-micro/2 -translate-y-1/2 size-4 text-muted-foreground" />
                 <Input
                   placeholder="Search locations, areas, or features..."
                   className="pl-10"
@@ -272,11 +272,11 @@ export function LocationBrowser({ locations, locationTypes, difficultyLevels }: 
               </div>
               <div className="flex gap-xs">
                 <Button variant="outline" className="gap-xs">
-                  <MapPin className="h-4 w-4" />
+                  <MapPin className="size-4" />
                   Near Me
                 </Button>
                 <Button variant="outline" className="gap-xs">
-                  <Filter className="h-4 w-4" />
+                  <Filter className="size-4" />
                   Advanced
                 </Button>
               </div>

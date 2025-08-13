@@ -559,6 +559,24 @@
   /* ================== SITE LAYOUT UTILITIES ================== */
   .max-w-site { max-width: 1440px; }
 
+  /* ================== SIZE UTILITIES ================== */
+  /* Height utilities mapped to button/component heights */
+  .h-9 { height: 2.25rem; }     /* 36px - TabsTrigger, button sm */
+  .h-10 { height: 2.5rem; }     /* 40px - default button height */
+  .h-11 { height: 2.75rem; }    /* 44px - button lg */
+  .h-12 { height: 3rem; }       /* 48px - button xl */
+  
+  /* Width utilities for specific components */
+  .w-11 { width: 2.75rem; }     /* 44px - switch track width */
+  
+  /* Size utilities for icons (combined width/height) */
+  .size-2 { width: 0.5rem; height: 0.5rem; }       /* 8px */
+  .size-3 { width: 0.75rem; height: 0.75rem; }     /* 12px */
+  .size-4 { width: 1rem; height: 1rem; }           /* 16px */
+  .size-5 { width: 1.25rem; height: 1.25rem; }     /* 20px */
+  .size-6 { width: 1.5rem; height: 1.5rem; }       /* 24px */
+  .size-8 { width: 2rem; height: 2rem; }           /* 32px */
+
   /* ================== PAGE-SPECIFIC THEMING SYSTEM ================== */
   
   /* Home Theme - 1970s Butter Yellow/Golden Sunrise */

@@ -85,15 +85,15 @@ export default function FacilityCard({
     switch (type?.toLowerCase()) {
       case 'gun shop':
       case 'gunshop':
-        return <Shield className="h-4 w-4" />
+        return <Shield className="size-4" />
       case 'shooting range':
       case 'range':
-        return <Users className="h-4 w-4" />
+        return <Users className="size-4" />
       case 'instructor':
       case 'training':
-        return <Star className="h-4 w-4" />
+        return <Star className="size-4" />
       default:
-        return <MapPin className="h-4 w-4" />
+        return <MapPin className="size-4" />
     }
   }
 
@@ -116,7 +116,7 @@ export default function FacilityCard({
       {isVerified && (
         <div className="absolute top-sm left-4 z-10">
           <Badge variant="success">
-            <Shield className="h-3 w-3 mr-xs" />
+            <Shield className="size-3 mr-xs" />
             Verified
           </Badge>
         </div>
@@ -162,7 +162,7 @@ export default function FacilityCard({
                     <Star
                       key={i}
                       className={cn(
-                        "h-4 w-4",
+                        "size-4",
                         i < Math.floor(rating) ? "text-primary fill-current" : "text-muted-foreground"
                       )}
                     />
@@ -186,19 +186,19 @@ export default function FacilityCard({
           <div className="space-y-xs text-body-sm">
             {location && (
               <div className="flex items-center gap-xs text-muted-foreground">
-                <MapPin className="h-4 w-4 text-primary" />
+                <MapPin className="size-4 text-primary" />
                 <span>{location}</span>
               </div>
             )}
             {hours && (
               <div className="flex items-center gap-xs text-muted-foreground">
-                <Clock className="h-4 w-4 text-primary" />
+                <Clock className="size-4 text-primary" />
                 <span>{hours}</span>
               </div>
             )}
             {phone && (
               <div className="flex items-center gap-xs text-muted-foreground">
-                <Phone className="h-4 w-4 text-primary" />
+                <Phone className="size-4 text-primary" />
                 <span>{phone}</span>
               </div>
             )}
@@ -227,7 +227,7 @@ export default function FacilityCard({
             onClick={handleClick}
           >
             {linkText}
-            <ExternalLink className="h-4 w-4 ml-xs" />
+            <ExternalLink className="size-4 ml-xs" />
           </Button>
         </div>
       </CardContent>

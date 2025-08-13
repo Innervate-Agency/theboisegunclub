@@ -119,7 +119,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
           <div className="flex flex-col sm:flex-row gap-base flex-1">
             {/* Search */}
             <div className="relative min-w-64">
-              <Search className="absolute left-3 top-micro/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-muted-foreground" />
               <Input
                 placeholder="Search events..."
                 value={searchQuery}
@@ -130,10 +130,10 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="absolute right-1 top-micro/2 transform -translate-y-1/2 h-6 w-6 p-0"
+                  className="absolute right-1 top-micro/2 transform -translate-y-1/2 size-6 p-0"
                   onClick={() => setSearchQuery('')}
                 >
-                  <X className="h-3 w-3" />
+                  <X className="size-3" />
                 </Button>
               )}
             </div>
@@ -190,7 +190,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                 size="xl"
                 onClick={() => setCurrentMonth(new Date(currentMonth.setMonth(currentMonth.getMonth() - 1)))}
               >
-                <ChevronLeft className="h-6 w-6" />
+                <ChevronLeft className="size-6" />
               </Button>
               <Button
                 variant="outline"
@@ -205,7 +205,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                 size="xl"
                 onClick={() => setCurrentMonth(new Date(currentMonth.setMonth(currentMonth.getMonth() + 1)))}
               >
-                <ChevronRight className="h-6 w-6" />
+                <ChevronRight className="size-6" />
               </Button>
             </div>
           </div>
@@ -260,7 +260,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                           return (
                             <div
                               key={idx}
-                              className={`w-3 h-3 rounded-pill bg-${config.color}`}
+                              className={`size-3 rounded-pill bg-${config.color}`}
                               title={event.title}
                             />
                           )
@@ -291,7 +291,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                 {/* Selected Date Header */}
                 <div className="text-center space-y-xs">
                   <div className="flex items-center justify-center gap-xs text-muted-foreground">
-                    <CalendarIcon className="h-5 w-5" />
+                    <CalendarIcon className="size-5" />
                     <span className="text-heading-lg">
                       {selectedDate.toLocaleDateString('en-US', { 
                         weekday: 'long', 
@@ -330,7 +330,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                             <div className="flex items-start justify-between">
                               <div className="flex items-center gap-xs">
                                 <div className={`p-xs rounded bg-${config.color}/20`}>
-                                  <Icon className={`h-4 w-4 text-${config.color}`} />
+                                  <Icon className={`size-4 text-${config.color}`} />
                                 </div>
                                 <span className={`text-${config.color} text-xs font-medium`}>
                                   {event.eventType.toUpperCase()}
@@ -349,16 +349,16 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
 
                             <div className="space-y-xs">
                               <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                                <Clock className="h-4 w-4" />
+                                <Clock className="size-4" />
                                 <span>{formatEventTime(event.time)}</span>
                               </div>
                               <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                                <MapPin className="h-4 w-4" />
+                                <MapPin className="size-4" />
                                 <span>{event.location.split(',')[0]}</span>
                               </div>
                               {event.capacity && event.registeredCount && (
                                 <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                                  <Users className="h-4 w-4" />
+                                  <Users className="size-4" />
                                   <span>{event.registeredCount}/{event.capacity}</span>
                                 </div>
                               )}

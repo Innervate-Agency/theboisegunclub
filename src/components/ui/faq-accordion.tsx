@@ -81,7 +81,7 @@ export default function FAQAccordion({
       <div className="text-center mb-(--spacing-lg)">
         <div className="flex justify-center mb-(--spacing-base)">
           <div className="p-sm bg-sandy-ochre/10 rounded-full border border-sandy-ochre/20">
-            <HelpCircle className="h-6 w-6 text-sandy-ochre" />
+            <HelpCircle className="size-6 text-sandy-ochre" />
           </div>
         </div>
         
@@ -100,7 +100,7 @@ export default function FAQAccordion({
       {showSearch && (
         <div className="mb-(--spacing-md)">
           <div className="relative">
-            <Search className="absolute left-3 top-micro/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
+            <Search className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-warning-amber" />
             <Input
               type="text"
               placeholder="Search questions..."
@@ -180,7 +180,7 @@ export default function FAQAccordion({
       ) : (
         <div className="text-center py-(--spacing-xl)">
           <div className="p-sm bg-muted rounded-full w-fit mx-auto mb-(--spacing-base)">
-            <Search className="h-6 w-6 text-warning-amber" />
+            <Search className="size-6 text-warning-amber" />
           </div>
           <h3 className="font-rajdhani font-semibold text-dark-chocolate mb-(--spacing-xs)">
             No FAQs Found

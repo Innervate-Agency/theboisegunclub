@@ -290,7 +290,7 @@ function ChartLegendContent({
               <itemConfig.icon />
             ) : (
               <div
-                className="h-2 w-2 shrink-0 rounded-micro"
+                className="size-2 shrink-0 rounded-micro"
                 style={{
                   backgroundColor: item.color,
                 }}

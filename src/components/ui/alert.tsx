@@ -65,7 +65,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
             onClick={handleDismiss}
             className="absolute top-tiny right-2 p-micro rounded-xs hover:bg-muted/50"
           >
-            <X className="h-4 w-4" />
+            <X className="size-4" />
           </button>
         )}
       </div>

@@ -36,7 +36,7 @@ export function SiteHeader() {
           {/* Logo */}
           <div className="flex items-center gap-base">
             <Link href="/" className="flex items-center gap-xs">
-              <div className="h-8 w-8 rounded-sm bg-gradient-to-br from-sandy-ochre to-rusty-orange flex items-center justify-center">
+              <div className="size-8 rounded-sm bg-gradient-to-br from-sandy-ochre to-rusty-orange flex items-center justify-center">
                 <span className="text-dark-chocolate font-rajdhani font-bold text-body-sm">TBG</span>
               </div>
               <div className="hidden sm:block">
@@ -55,7 +55,7 @@ export function SiteHeader() {
               {/* Events */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="gap-xs">
-                  <Calendar className="h-4 w-4" />
+                  <Calendar className="size-4" />
                   Events
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -85,7 +85,7 @@ export function SiteHeader() {
               {/* Directory */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="gap-xs">
-                  <Building2 className="h-4 w-4" />
+                  <Building2 className="size-4" />
                   Directory
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -115,7 +115,7 @@ export function SiteHeader() {
               {/* Guides */}
               <NavigationMenuItem>
                 <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "gap-xs")} href="/guides">
-                  <BookOpen className="h-4 w-4" />
+                  <BookOpen className="size-4" />
                   Guides
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -123,7 +123,7 @@ export function SiteHeader() {
               {/* Map */}
               <NavigationMenuItem>
                 <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "gap-xs")} href="/intel">
-                  <MapPin className="h-4 w-4" />
+                  <MapPin className="size-4" />
                   Map
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -131,7 +131,7 @@ export function SiteHeader() {
               {/* Marketplace */}
               <NavigationMenuItem>
                 <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "gap-xs")} href="/marketplace">
-                  <ShoppingCart className="h-4 w-4" />
+                  <ShoppingCart className="size-4" />
                   Marketplace
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -139,7 +139,7 @@ export function SiteHeader() {
               {/* Community */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="gap-xs">
-                  <Users className="h-4 w-4" />
+                  <Users className="size-4" />
                   Community
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -171,7 +171,7 @@ export function SiteHeader() {
           {/* Action Buttons */}
           <div className="flex items-center gap-base">
             <Button variant="outline" size="sm" className="hidden md:flex gap-xs">
-              <LogIn className="h-4 w-4" />
+              <LogIn className="size-4" />
               Sign In
             </Button>
             <Button size="sm" className="hidden md:block bg-gradient-to-r from-sandy-ochre to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-sandy-ochre font-rajdhani font-bold">
@@ -185,7 +185,7 @@ export function SiteHeader() {
               className="lg:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
             </Button>
           </div>
         </div>
@@ -195,32 +195,32 @@ export function SiteHeader() {
           <div className="lg:hidden py-base border-t border-border/40">
             <nav className="space-y-base">
               <Link href="/events" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
-                <Calendar className="h-4 w-4" />
+                <Calendar className="size-4" />
                 Events
               </Link>
               <Link href="/directory" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
-                <Building2 className="h-4 w-4" />
+                <Building2 className="size-4" />
                 Directory
               </Link>
               <Link href="/guides" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
-                <BookOpen className="h-4 w-4" />
+                <BookOpen className="size-4" />
                 Guides
               </Link>
               <Link href="/intel" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
-                <MapPin className="h-4 w-4" />
+                <MapPin className="size-4" />
                 Map
               </Link>
               <Link href="/marketplace" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
-                <ShoppingCart className="h-4 w-4" />
+                <ShoppingCart className="size-4" />
                 Marketplace
               </Link>
               <Link href="/forums" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
-                <Users className="h-4 w-4" />
+                <Users className="size-4" />
                 Forums
               </Link>
               <div className="pt-base border-t border-border/40 flex flex-col gap-xs">
                 <Button variant="outline" size="sm" className="justify-start gap-xs">
-                  <LogIn className="h-4 w-4" />
+                  <LogIn className="size-4" />
                   Sign In
                 </Button>
                 <Button size="sm" className="justify-start bg-gradient-to-r from-sandy-ochre to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-sandy-ochre font-rajdhani font-bold">
