@@ -26,7 +26,7 @@ const buttonVariants = cva(
         "solid-accent": "bg-rusty-orange text-white hover:bg-rusty-orange/90 shadow-present hover:shadow-elevated",
         
         // Micro Variant
-        micro: "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-card-foreground shadow-whisper hover:shadow-present text-xs px-2 py-1 h-7",
+        micro: "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-card-foreground shadow-whisper hover:shadow-present text-xs px-tiny py-micro h-7",
 
         // Fire Variants
         fire: "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 hover:after:h-1",
@@ -35,10 +35,10 @@ const buttonVariants = cva(
         "fire-purple": "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-foothills-purple after:to-canyon-clay after:transition-all after:duration-300 hover:after:h-1",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-sm px-3",
-        lg: "h-11 rounded-xs px-8",
-        xl: "h-12 rounded-xs px-10 text-lg",
+        default: "h-10 px-sm py-tiny",
+        sm: "h-9 rounded-sm px-xs"
+        lg: "h-11 rounded-xs px-lg"
+        xl: "h-12 rounded-xs px-xl text-heading-lg"
         icon: "h-10 w-10",
       },
     },
