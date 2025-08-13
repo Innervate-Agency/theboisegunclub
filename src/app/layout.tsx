@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Rajdhani, Noto_Sans, Noto_Serif } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import AccessibilityFAB from "@/components/ui/AccessibilityFAB";
 import "./globals.css";
 
 const rajdhani = Rajdhani({
@@ -55,6 +56,8 @@ export default function RootLayout({
           themes={['light', 'dark', 'gruvbox', 'system']}
         >
           {children}
+          {/* Global accessibility control */}
+          <AccessibilityFAB />
         </ThemeProvider>
       </body>
     </html>
