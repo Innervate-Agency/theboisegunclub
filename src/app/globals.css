@@ -577,6 +577,17 @@
   .size-6 { width: 1.5rem; height: 1.5rem; }       /* 24px */
   .size-8 { width: 2rem; height: 2rem; }           /* 32px */
 
+  /* ================== BORDER RADIUS UTILITIES ================== */
+  /* Tactical square aesthetic with strategic rounding for usability */
+  .rounded-none { border-radius: 0; }                    /* Square tactical */
+  .rounded-micro { border-radius: 0.125rem; }           /* 2px - minimal details */
+  .rounded-xs { border-radius: 0.25rem; }               /* 4px - buttons, inputs */
+  .rounded-sm { border-radius: 0.5rem; }                /* 8px - badges, categories */
+  .rounded-base { border-radius: 0.5rem; }              /* 8px - same as sm */
+  .rounded-input { border-radius: 0.25rem; }            /* 4px - form inputs */
+  .rounded-pill { border-radius: 50rem; }               /* Pill badges */
+  .rounded-full { border-radius: 9999px; }              /* Circular avatars */
+
   /* ================== PAGE-SPECIFIC THEMING SYSTEM ================== */
   
   /* Home Theme - 1970s Butter Yellow/Golden Sunrise */
