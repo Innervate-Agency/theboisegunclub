@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { useTheme } from 'next-themes'
+import { useTheme } from "next-themes"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { 
@@ -17,86 +17,10 @@ import {
   Minus,
   Plus
 } from "lucide-react"
-
-// Debounce hook for performance optimization
-function useDebounce<T>(value: T, delay: number): T {
-  const [debouncedValue, setDebouncedValue] = React.useState<T>(value)
-
-  React.useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedValue(value)
-    }, delay)
-
-    return () => {
-      clearTimeout(handler)
-    }
-  }, [value, delay])
-
-  return debouncedValue
-}
-
-type FontSize = 'small' | 'medium' | 'large'
-type ContrastMode = 'normal' | 'high'
-type ColorBlindFilter = 'none' | 'protanopia' | 'deuteranopia' | 'tritanopia'
-
-// Optimized accessibility settings hook
-function useAccessibilitySettings() {
-  const [fontSize, setFontSize] = React.useState<FontSize>('medium')
-  const [contrastMode, setContrastMode] = React.useState<ContrastMode>('normal')
-  const [colorBlindFilter, setColorBlindFilter] = React.useState<ColorBlindFilter>('none')
-
-  // Debounce all settings to prevent excessive DOM updates
-  const debouncedFontSize = useDebounce(fontSize, 100)
-  const debouncedContrastMode = useDebounce(contrastMode, 100)
-  const debouncedColorBlindFilter = useDebounce(colorBlindFilter, 100)
-
-  // Single optimized effect using useLayoutEffect to prevent flicker
-  React.useLayoutEffect(() => {
-    const root = document.documentElement
-    const style = root.style
-
-    // Update CSS custom properties instead of classList manipulation
-    // Font size scaling
-    const fontScales = { small: '0.875', medium: '1', large: '1.125' }
-    style.setProperty('--accessibility-font-scale', fontScales[debouncedFontSize])
-    root.setAttribute('data-accessibility-font-size', debouncedFontSize)
-
-    // Contrast mode
-    const contrastValues = { normal: '1', high: '1.3' }
-    style.setProperty('--accessibility-contrast', contrastValues[debouncedContrastMode])
-    root.setAttribute('data-accessibility-contrast', debouncedContrastMode)
-
-    // Color blind filters
-    const filterMap = {
-      none: 'none',
-      protanopia: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'protanopia\'%3E%3CfeColorMatrix values=\'0.567,0.433,0,0,0 0.558,0.442,0,0,0 0,0.242,0.758,0,0 0,0,0,1,0\'/%3E%3C/filter%3E%3C/svg%3E#protanopia")',
-      deuteranopia: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'deuteranopia\'%3E%3CfeColorMatrix values=\'0.625,0.375,0,0,0 0.7,0.3,0,0,0 0,0.3,0.7,0,0 0,0,0,1,0\'/%3E%3C/filter%3E%3C/svg%3E#deuteranopia")',
-      tritanopia: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'tritanopia\'%3E%3CfeColorMatrix values=\'0.95,0.05,0,0,0 0,0.433,0.567,0,0 0,0.475,0.525,0,0 0,0,0,1,0\'/%3E%3C/filter%3E%3C/svg%3E#tritanopia")'
-    }
-    style.setProperty('--accessibility-filter', filterMap[debouncedColorBlindFilter])
-
-    // Performance: batch all DOM updates in a single layout operation
-  }, [debouncedFontSize, debouncedContrastMode, debouncedColorBlindFilter])
-
-  const resetSettings = React.useCallback(() => {
-    setFontSize('medium')
-    setContrastMode('normal')
-    setColorBlindFilter('none')
-  }, [])
-
-  return {
-    fontSize,
-    setFontSize,
-    contrastMode,
-    setContrastMode,
-    colorBlindFilter,
-    setColorBlindFilter,
-    resetSettings
-  }
-}
+import { useAccessibility } from "@/hooks/use-accessibility"
 
 const fabVariants = cva(
-  "fixed bottom-md left-6 z-50 rounded-full shadow-flat hover:shadow-elevated transition-all duration-200",
+  "fixed bottom-md left-6 z-50 rounded-full shadow-present hover:shadow-elevated transition-all duration-200",
   {
     variants: {
       state: {
@@ -111,7 +35,7 @@ const fabVariants = cva(
 )
 
 const menuVariants = cva(
-  "fixed bottom-tiny0 left-6 z-40 mica border border-border rounded-sm shadow-present hover:shadow-elevated p-md min-w-[320px] max-w-[380px] transition-all duration-200",
+  "fixed bottom-24 left-6 z-40 mica border border-border rounded-sm shadow-present hover:shadow-elevated p-md min-w-[320px] max-w-[380px] transition-all duration-200",
   {
     variants: {
       open: {
@@ -139,12 +63,10 @@ export default function AccessibilityFAB({
   const [isOpen, setIsOpen] = React.useState(false)
   const [mounted, setMounted] = React.useState(false)
 
-  // Ensure SSR/Client consistency
   React.useEffect(() => {
     setMounted(true)
   }, [])
   
-  // Use optimized accessibility hook instead of multiple useEffect hooks
   const {
     fontSize,
     setFontSize,
@@ -153,15 +75,13 @@ export default function AccessibilityFAB({
     colorBlindFilter,
     setColorBlindFilter,
     resetSettings
-  } = useAccessibilitySettings()
+  } = useAccessibility()
 
-  // Memoize theme icon to prevent unnecessary re-renders (SSR-safe)
   const ThemeIcon = React.useMemo(() => {
-    if (!mounted) return Monitor // Default during SSR
-    return theme === 'light' ? Sun : theme === 'dark' ? Moon : Monitor
+    if (!mounted) return Monitor
+    return theme === "light" ? Sun : theme === "dark" ? Moon : Monitor
   }, [theme, mounted])
 
-  // Memoize event handlers for performance
   const handleTogglePanel = React.useCallback(() => setIsOpen(!isOpen), [isOpen])
   const handleClosePanel = React.useCallback(() => setIsOpen(false), [])
   
@@ -169,37 +89,35 @@ export default function AccessibilityFAB({
     setTheme(newTheme)
   }, [setTheme])
 
-  const handleFontSizeChange = React.useCallback((newSize: FontSize) => {
+  const handleFontSizeChange = React.useCallback((newSize: "small" | "medium" | "large") => {
     setFontSize(newSize)
   }, [setFontSize])
 
-  const handleContrastChange = React.useCallback((newContrast: ContrastMode) => {
+  const handleContrastChange = React.useCallback((newContrast: "normal" | "high") => {
     setContrastMode(newContrast)
   }, [setContrastMode])
 
-  const handleColorBlindFilterChange = React.useCallback((newFilter: ColorBlindFilter) => {
+  const handleColorBlindFilterChange = React.useCallback((newFilter: "none" | "protanopia" | "deuteranopia" | "tritanopia") => {
     setColorBlindFilter(newFilter)
   }, [setColorBlindFilter])
 
-  // Font size handlers with cleaner logic
   const handleFontSizeDecrease = React.useCallback(() => {
-    if (fontSize === 'large') handleFontSizeChange('medium')
-    else if (fontSize === 'medium') handleFontSizeChange('small')
+    if (fontSize === "large") handleFontSizeChange("medium")
+    else if (fontSize === "medium") handleFontSizeChange("small")
   }, [fontSize, handleFontSizeChange])
 
   const handleFontSizeIncrease = React.useCallback(() => {
-    if (fontSize === 'small') handleFontSizeChange('medium')
-    else if (fontSize === 'medium') handleFontSizeChange('large')
+    if (fontSize === "small") handleFontSizeChange("medium")
+    else if (fontSize === "medium") handleFontSizeChange("large")
   }, [fontSize, handleFontSizeChange])
 
   const handleResetAll = React.useCallback(() => {
     resetSettings()
-    setTheme('system')
+    setTheme("system")
   }, [resetSettings, setTheme])
 
   return (
     <>
-      {/* Main FAB Button */}
       <button
         className={cn(fabVariants({ state: isOpen ? "open" : "closed" }), className)}
         onClick={handleTogglePanel}
@@ -214,14 +132,12 @@ export default function AccessibilityFAB({
         )}
       </button>
 
-      {/* Accessibility Menu */}
       <div
         className={cn(menuVariants({ open: isOpen }))}
         role="dialog"
         aria-label="Accessibility settings"
       >
-        <div className="space-y-6">
-          {/* Header */}
+        <div className="space-y-md">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-xs">
               <div className="bg-muted p-tiny rounded-xs border border-border">
@@ -231,54 +147,53 @@ export default function AccessibilityFAB({
             </div>
           </div>
 
-          {/* Theme Switcher */}
-          <div className="space-y-3">
+          <div className="space-y-sm">
             <h3 className="font-medium text-card-foreground">Theme</h3>
             <div className="grid grid-cols-2 gap-tiny">
               <button
                 className={cn(
-                  "gap-tiny px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
-                  mounted && theme === 'light' 
-                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
+                  "gap-tiny px-sm py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  mounted && theme === "light" 
+                    ? "bg-primary text-primary-foreground"
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
-                onClick={() => handleThemeChange('light')}
+                onClick={() => handleThemeChange("light")}
               >
                 <Sun className="h-4 w-4" />
                 Light
               </button>
               <button
                 className={cn(
-                  "gap-tiny px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
-                  mounted && theme === 'dark' 
-                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
+                  "gap-tiny px-sm py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  mounted && theme === "dark" 
+                    ? "bg-primary text-primary-foreground"
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
-                onClick={() => handleThemeChange('dark')}
+                onClick={() => handleThemeChange("dark")}
               >
                 <Moon className="h-4 w-4" />
                 Fire Mode
               </button>
               <button
                 className={cn(
-                  "gap-tiny px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
-                  mounted && theme === 'system' 
-                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
+                  "gap-tiny px-sm py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  mounted && theme === "system" 
+                    ? "bg-primary text-primary-foreground"
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
-                onClick={() => handleThemeChange('system')}
+                onClick={() => handleThemeChange("system")}
               >
                 <Monitor className="h-4 w-4" />
                 Auto
               </button>
               <button
                 className={cn(
-                  "gap-tiny px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
-                  mounted && theme === 'gruvbox' 
-                    ? "bg-gruvbox-orange/20 text-gruvbox-orange border-gruvbox-orange/30" 
+                  "gap-tiny px-sm py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  mounted && theme === "gruvbox" 
+                    ? "bg-primary text-primary-foreground"
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
-                onClick={() => handleThemeChange('gruvbox')}
+                onClick={() => handleThemeChange("gruvbox")}
               >
                 <Eye className="h-4 w-4" />
                 Night Ops
@@ -289,55 +204,53 @@ export default function AccessibilityFAB({
             </p>
           </div>
 
-          {/* Font Size */}
-          <div className="space-y-3">
+          <div className="space-y-sm">
             <h3 className="font-medium text-card-foreground">Text Size</h3>
             <div className="flex items-center gap-tiny">
               <button
-                className="bg-muted hover:bg-muted/80 text-card-foreground px-3 py-2 rounded-input text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-muted hover:bg-muted/80 text-card-foreground px-sm py-2 rounded-input text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 onClick={handleFontSizeDecrease}
-                disabled={fontSize === 'small'}
+                disabled={fontSize === "small"}
               >
                 <Minus className="h-4 w-4" />
               </button>
               <div className="flex-1 text-center">
-                <div className="bg-rusty-orange/10 text-rusty-orange px-3 py-1 rounded-input text-sm font-medium capitalize">
+                <div className="bg-primary/10 text-primary px-sm py-1 rounded-input text-sm font-medium capitalize">
                   {fontSize}
                 </div>
               </div>
               <button
-                className="bg-muted hover:bg-muted/80 text-card-foreground px-3 py-2 rounded-input text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-muted hover:bg-muted/80 text-card-foreground px-sm py-2 rounded-input text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 onClick={handleFontSizeIncrease}
-                disabled={fontSize === 'large'}
+                disabled={fontSize === "large"}
               >
                 <Plus className="h-4 w-4" />
               </button>
             </div>
           </div>
 
-          {/* Contrast Mode */}
-          <div className="space-y-3">
+          <div className="space-y-sm">
             <h3 className="font-medium text-card-foreground">Contrast</h3>
             <div className="flex gap-tiny">
               <button
                 className={cn(
-                  "flex-1 px-3 py-2 rounded-input text-sm font-medium transition-colors",
-                  contrastMode === 'normal' 
-                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
+                  "flex-1 px-sm py-2 rounded-input text-sm font-medium transition-colors",
+                  contrastMode === "normal" 
+                    ? "bg-primary text-primary-foreground"
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
-                onClick={() => handleContrastChange('normal')}
+                onClick={() => handleContrastChange("normal")}
               >
                 Normal
               </button>
               <button
                 className={cn(
-                  "flex-1 gap-tiny px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
-                  contrastMode === 'high' 
-                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
+                  "flex-1 gap-tiny px-sm py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  contrastMode === "high" 
+                    ? "bg-primary text-primary-foreground"
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
-                onClick={() => handleContrastChange('high')}
+                onClick={() => handleContrastChange("high")}
               >
                 <Contrast className="h-4 w-4" />
                 High
@@ -345,62 +258,60 @@ export default function AccessibilityFAB({
             </div>
           </div>
 
-          {/* Color Vision */}
-          <div className="space-y-3">
+          <div className="space-y-sm">
             <h3 className="font-medium text-card-foreground">Color Vision</h3>
             <div className="grid grid-cols-2 gap-tiny">
               <button
                 className={cn(
-                  "gap-tiny px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
-                  colorBlindFilter === 'none' 
-                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
+                  "gap-tiny px-sm py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center",
+                  colorBlindFilter === "none" 
+                    ? "bg-primary text-primary-foreground"
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
-                onClick={() => handleColorBlindFilterChange('none')}
+                onClick={() => handleColorBlindFilterChange("none")}
               >
                 <Eye className="h-4 w-4" />
                 Normal
               </button>
               <button
                 className={cn(
-                  "px-2 py-2 rounded-input text-xs font-medium transition-colors",
-                  colorBlindFilter === 'protanopia' 
-                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
+                  "px-tiny py-2 rounded-input text-xs font-medium transition-colors",
+                  colorBlindFilter === "protanopia" 
+                    ? "bg-primary text-primary-foreground"
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
-                onClick={() => handleColorBlindFilterChange('protanopia')}
+                onClick={() => handleColorBlindFilterChange("protanopia")}
               >
                 Protanopia
               </button>
               <button
                 className={cn(
-                  "px-2 py-2 rounded-input text-xs font-medium transition-colors",
-                  colorBlindFilter === 'deuteranopia' 
-                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
+                  "px-tiny py-2 rounded-input text-xs font-medium transition-colors",
+                  colorBlindFilter === "deuteranopia" 
+                    ? "bg-primary text-primary-foreground"
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
-                onClick={() => handleColorBlindFilterChange('deuteranopia')}
+                onClick={() => handleColorBlindFilterChange("deuteranopia")}
               >
                 Deuteranopia
               </button>
               <button
                 className={cn(
-                  "px-2 py-2 rounded-input text-xs font-medium transition-colors",
-                  colorBlindFilter === 'tritanopia' 
-                    ? "bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30" 
+                  "px-tiny py-2 rounded-input text-xs font-medium transition-colors",
+                  colorBlindFilter === "tritanopia" 
+                    ? "bg-primary text-primary-foreground"
                     : "bg-muted text-card-foreground hover:bg-muted/80"
                 )}
-                onClick={() => handleColorBlindFilterChange('tritanopia')}
+                onClick={() => handleColorBlindFilterChange("tritanopia")}
               >
                 Tritanopia
               </button>
             </div>
           </div>
 
-          {/* Reset Button */}
-          <div className="pt-2 border-t border-border/30">
+          <div className="pt-sm border-t border-border/30">
             <button
-              className="w-full bg-muted hover:bg-muted/80 text-card-foreground px-3 py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center gap-tiny"
+              className="w-full bg-muted hover:bg-muted/80 text-card-foreground px-sm py-2 rounded-input text-sm font-medium transition-colors flex items-center justify-center gap-tiny"
               onClick={handleResetAll}
             >
               <Settings className="h-4 w-4" />
@@ -410,7 +321,6 @@ export default function AccessibilityFAB({
         </div>
       </div>
 
-      {/* Backdrop */}
       {isOpen && (
         <div
           className="fixed inset-0 z-30 bg-background/20 backdrop-blur-sm"

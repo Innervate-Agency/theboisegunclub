@@ -68,7 +68,7 @@
   --nav-armory-light: #8B7AA8;         /* Purple-Gray - Tactical sophistication */
   --nav-intel-light: #ffbc20;          /* Golden Yellow - Intelligence/reconnaissance */
   --nav-marketplace-light: #C9C301;    /* Bright Yellow-Green - Commerce energy, vibrant */
-  --nav-forums-light: #D3D3D3;         /* Light Gray - Boring neutral for forums */
+  --nav-forums-light: #6B7280;         /* Darker Gray for light theme - better visibility */
 
   /* Dark Theme Navigation Colors - Same vibrant palette for dark backgrounds */
   --nav-home-dark: #eb7d01;            /* Warm Orange - Glows perfectly on dark */
@@ -77,7 +77,7 @@
   --nav-armory-dark: #A98FBC;          /* Lighter Purple-Gray - Maintains sophistication */
   --nav-intel-dark: #ffbc20;           /* Golden Yellow - Perfect visibility on dark */
   --nav-marketplace-dark: #C9C301;     /* Bright Yellow-Green - Pops on dark backgrounds */
-  --nav-forums-dark: #B8B8B8;          /* Medium Gray - Visible but boring on dark */
+  --nav-forums-dark: #9CA3AF;          /* Medium Gray - Perfect visibility for dark themes */
 
   /* Theme-aware navigation color system - automatically switches based on theme */
   --nav-home: var(--nav-home-light);

@@ -204,7 +204,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
 
       {/* Accessibility Panel Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-sm bg-black/20 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-sm bg-background/50">
           <div className="w-full max-w-md mica border border-border rounded-sm shadow-elevated overflow-hidden">
             <div className="flex flex-row items-center justify-between p-md pb-4">
               <div className="flex items-center gap-sm">
@@ -233,6 +233,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     size="sm"
                     onClick={() => handleThemeChange('light')}
                     className="flex-1 gap-xs"
+                    animationType="x-o"
                     animationState={theme === 'light'}
                   >
                     <Sun className="h-4 w-4" />
@@ -243,6 +244,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     size="sm"
                     onClick={() => handleThemeChange('dark')}
                     className="flex-1 gap-xs"
+                    animationType="x-o"
                     animationState={theme === 'dark'}
                   >
                     <Moon className="h-4 w-4" />
@@ -253,6 +255,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     size="sm"
                     onClick={() => handleThemeChange('system')}
                     className="flex-1 gap-xs"
+                    animationType="x-o"
                     animationState={theme === 'system'}
                   >
                     <Monitor className="h-4 w-4" />
@@ -270,6 +273,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     size="sm"
                     onClick={handleFontSizeDecrease}
                     disabled={fontSize === 'small'}
+                    animationType="none"
                   >
                     <Minus className="h-4 w-4" />
                   </Button>
@@ -283,6 +287,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     size="sm"
                     onClick={handleFontSizeIncrease}
                     disabled={fontSize === 'large'}
+                    animationType="none"
                   >
                     <Plus className="h-4 w-4" />
                   </Button>

@@ -235,6 +235,7 @@ export function BlogCard({
                 size="sm"
                 onClick={handleShare}
                 className="h-8 px-xs text-caption"
+                animationType="arrow"
               >
                 <Share2 className="icon-xs" />
               </Button>

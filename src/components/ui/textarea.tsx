@@ -10,7 +10,7 @@ const textareaVariants = cva(
       variant: {
         default: "border-input",
         premium: "border-premium/50 bg-gradient-to-r from-rusty-orange/10 to-sandy-ochre/10",
-        glass: "bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/70",
+        glass: "bg-popover/10 backdrop-blur-sm border-border/20 text-foreground placeholder:text-foreground/70",
         filled: "bg-muted",
       },
     },

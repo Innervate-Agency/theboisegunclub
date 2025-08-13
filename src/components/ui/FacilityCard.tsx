@@ -14,11 +14,10 @@ const facilityCardVariants = cva(
   {
     variants: {
       variant: {
-        // STRATEGIC RESTRAINT: Shadow-first approach like VendorCard
-        default: "bg-card shadow-flat hover:shadow-present",
-        featured: "bg-gradient-to-br from-sandy-ochre/5 via-rusty-orange/5 to-walnut-stock/5 shadow-flat hover:shadow-present relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
-        premium: "bg-gradient-to-br from-blued-steel/10 via-warning-amber/10 to-blued-steel/10 shadow-flat hover:shadow-present  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-slate-blue after:to-warning-amber after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
-        compact: "bg-card shadow-flat hover:shadow-present"
+        default: "bg-card shadow-present hover:shadow-elevated",
+        featured: "bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-primary after:to-secondary after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm",
+        premium: "bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 shadow-present hover:shadow-elevated  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-primary after:to-secondary after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm",
+        compact: "bg-card shadow-present hover:shadow-elevated"
       },
       size: {
         default: "p-md",
@@ -34,7 +33,7 @@ const facilityCardVariants = cva(
 )
 
 export interface FacilityCardProps 
-  extends React.ComponentProps<"div">,
+  extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof facilityCardVariants> {
   title: string
   description: string
@@ -106,31 +105,28 @@ export default function FacilityCard({
       )} 
       {...props}
     >
-      {/* Featured badge */}
       {isFeatured && (
         <div className="absolute top-sm right-4 z-10">
-          <Badge variant="default" className="bg-sandy-ochre text-dark-chocolate font-medium">
+          <Badge variant="premium">
             Featured
           </Badge>
         </div>
       )}
 
-      {/* Verified badge */}
       {isVerified && (
         <div className="absolute top-sm left-4 z-10">
           <Badge variant="success">
-            <Shield className="h-3 w-3 mr-(--spacing-xs)" />
+            <Shield className="h-3 w-3 mr-xs" />
             Verified
           </Badge>
         </div>
       )}
 
-      <CardHeader className="space-y-(--spacing-base)">
+      <CardHeader className="space-y-base">
         <div className="flex items-start gap-base">
-          {/* Business Icon/Image */}
           <div className="flex-shrink-0">
             {icon ? (
-              <div className="w-12 h-12 rounded-none overflow-hidden shadow-flat">
+              <div className="w-12 h-12 rounded-sm overflow-hidden shadow-present">
                 <Image 
                   src={icon} 
                   alt={title}
@@ -140,41 +136,39 @@ export default function FacilityCard({
                 />
               </div>
             ) : (
-              <div className="w-12 h-12 bg-sandy-ochre/10 rounded-none flex items-center justify-center shadow-flat">
+              <div className="w-12 h-12 bg-primary/10 rounded-sm flex items-center justify-center shadow-present">
                 {getBusinessTypeIcon(businessType)}
               </div>
             )}
           </div>
 
-          {/* Business Info */}
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-xs">
-              <CardTitle className="text-body-lg font-rajdhani font-bold text-dark-chocolate group-hover:text-sandy-ochre transition-colors">
+              <CardTitle className="text-lg font-rajdhani font-bold text-foreground group-hover:text-primary transition-colors">
                 {title}
               </CardTitle>
             </div>
             
             {businessType && (
-              <p className="text-body-sm text-warning-amber font-medium mt-(--spacing-xs)">
+              <p className="text-sm text-muted-foreground font-medium mt-xs">
                 {businessType}
               </p>
             )}
 
-            {/* Rating */}
             {rating && (
-              <div className="flex items-center gap-xs mt-(--spacing-xs)">
+              <div className="flex items-center gap-xs mt-xs">
                 <div className="flex items-center">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
                       className={cn(
                         "h-4 w-4",
-                        i < Math.floor(rating) ? "text-sandy-ochre fill-current" : "text-muted-foreground"
+                        i < Math.floor(rating) ? "text-primary fill-current" : "text-muted-foreground"
                       )}
                     />
                   ))}
                 </div>
-                <span className="text-body-sm text-warning-amber">
+                <span className="text-sm text-muted-foreground">
                   {rating.toFixed(1)} {reviewCount && `(${reviewCount} reviews)`}
                 </span>
               </div>
@@ -183,44 +177,41 @@ export default function FacilityCard({
         </div>
       </CardHeader>
 
-      <CardContent className="space-y-(--spacing-base)">
-        {/* Description */}
-        <CardDescription className="text-warning-amber leading-relaxed">
+      <CardContent className="space-y-base">
+        <CardDescription className="text-muted-foreground leading-relaxed">
           {description}
         </CardDescription>
 
-        {/* Contact Info */}
         {(location || hours || phone) && (
-          <div className="space-y-(--spacing-xs) text-body-sm">
+          <div className="space-y-xs text-sm">
             {location && (
-              <div className="flex items-center gap-xs text-warning-amber">
-                <MapPin className="h-4 w-4 text-sandy-ochre" />
+              <div className="flex items-center gap-xs text-muted-foreground">
+                <MapPin className="h-4 w-4 text-primary" />
                 <span>{location}</span>
               </div>
             )}
             {hours && (
-              <div className="flex items-center gap-xs text-warning-amber">
-                <Clock className="h-4 w-4 text-sandy-ochre" />
+              <div className="flex items-center gap-xs text-muted-foreground">
+                <Clock className="h-4 w-4 text-primary" />
                 <span>{hours}</span>
               </div>
             )}
             {phone && (
-              <div className="flex items-center gap-xs text-warning-amber">
-                <Phone className="h-4 w-4 text-sandy-ochre" />
+              <div className="flex items-center gap-xs text-muted-foreground">
+                <Phone className="h-4 w-4 text-primary" />
                 <span>{phone}</span>
               </div>
             )}
           </div>
         )}
 
-        {/* Badges */}
         {badges && badges.length > 0 && (
           <div className="flex flex-wrap gap-xs">
             {badges.map((badge, index) => (
               <Badge 
                 key={index} 
                 variant="info" 
-                className="text-caption"
+                className="text-xs"
               >
                 {badge}
               </Badge>
@@ -228,21 +219,18 @@ export default function FacilityCard({
           </div>
         )}
 
-        {/* Action Button */}
-        <div className="pt-(--spacing-xs)">
+        <div className="pt-xs">
           <Button
             variant="secondary"
             size="sm"
-            className="w-full group-hover:bg-sandy-ochre/10 group-hover:border-sandy-ochre/50 transition-colors"
+            className="w-full group-hover:bg-primary/10 group-hover:border-primary/50 transition-colors"
             onClick={handleClick}
           >
             {linkText}
-            <ExternalLink className="h-4 w-4 ml-(--spacing-xs)" />
+            <ExternalLink className="h-4 w-4 ml-xs" />
           </Button>
         </div>
       </CardContent>
-
-      {/* Strategic restraint: Gradient accent now handled by variants */}
     </Card>
   )
 }

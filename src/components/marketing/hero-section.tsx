@@ -17,7 +17,7 @@ export function HeroSection() {
         </h1>
         
         {/* Editorial subtitle with Noto Serif */}
-        <p className="font-serif text-xl italic text-warning-amber/90 mb-base max-w-site mx-auto">
+        <p className="font-noto-serif text-xl italic text-warning-amber/90 mb-base max-w-site mx-auto">
           Treasure Valley's Comprehensive Firearms Community Platform
         </p>
         

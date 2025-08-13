@@ -17,6 +17,8 @@ const Toaster = ({ ...props }: ToasterProps) => {
           "--normal-border": "var(--border)",
         } as React.CSSProperties
       }
+      // Apply mica toast styling to individual toasts where supported
+      {...({ toastOptions: { classNames: { toast: "mica-toast shadow-elevated" } } } as any)}
       {...props}
     />
   )

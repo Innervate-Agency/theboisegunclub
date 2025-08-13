@@ -163,7 +163,7 @@ export function BrandCarousel({
               )} />
               
               {/* Additional text readability overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/20 to-transparent" />
               
               {/* Hero content area - keep for additional icons if needed */}
               <div className="absolute inset-0 flex items-center justify-center">
@@ -175,20 +175,20 @@ export function BrandCarousel({
               </div>
               
               {/* Company logo - better positioning */}
-              <div className="absolute top-md left-6 bg-background/90 backdrop-blur-sm rounded-xs px-4 py-2 text-foreground font-bold shadow-elevated border border-white/20">
+              <div className="absolute top-md left-6 bg-background/90 backdrop-blur-sm rounded-xs px-4 py-2 text-foreground font-bold shadow-elevated border border-border/20">
                 {currentShowcase.logo}
               </div>
               
               {/* Overlay text content - ALWAYS LIGHT FOR CONTRAST ON COLORED OVERLAYS */}
               <div className="absolute bottom-0 left-0 right-0 p-lg">
                 <div className="max-w-2xl">
-                  <h2 className="text-3xl md:text-4xl font-rajdhani font-bold mb-6 leading-tight text-white drop-shadow-elevated">
+                  <h2 className="text-3xl md:text-4xl font-rajdhani font-bold mb-6 leading-tight text-white shadow-elevated">
                     {currentShowcase.overlayTitle}
                   </h2>
-                  <p className="text-xl text-white/95 mb-8 leading-relaxed font-noto-sans drop-shadow-present">
+                  <p className="text-xl text-white/95 mb-8 leading-relaxed font-noto-sans shadow-present">
                     {currentShowcase.overlayDescription}
                   </p>
-                  <button className="text-lg font-medium text-white/95 hover:text-white transition-colors group flex items-center gap-xs drop-shadow-present">
+                  <button className="text-lg font-medium text-white/95 hover:text-white transition-colors group flex items-center gap-xs shadow-present">
                     Read their story 
                     <span className="group-hover:translate-x-1 transition-transform text-xl">→</span>
                   </button>

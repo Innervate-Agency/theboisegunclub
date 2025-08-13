@@ -6,14 +6,14 @@ import { cn } from "@/lib/utils"
 import { Card } from "./card"
 import { Badge } from "./badge"
 import { Button } from "./button"
-import { Calendar, MapPin, Clock, Users, ExternalLink } from 'lucide-react'
+import { Calendar, MapPin, Clock, Users } from 'lucide-react'
 
 const eventCardVariants = cva(
   "p-md transition-all duration-300 group relative overflow-hidden",
   {
     variants: {
       featured: {
-        true: "border-rusty-orange/20 bg-gradient-to-br from-card to-rusty-orange/5 hover:shadow-present",
+        true: "border-primary/20 bg-gradient-to-br from-card to-primary/5 hover:shadow-present",
         false: ""
       }
     },
@@ -24,7 +24,7 @@ const eventCardVariants = cva(
 )
 
 export interface EventCardProps 
-  extends React.ComponentProps<"div">,
+  extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof eventCardVariants> {
   title: string
   date: string
@@ -56,16 +56,15 @@ export function EventCard({
 }: EventCardProps) {
   const spotsLeft = capacity && registeredCount ? capacity - registeredCount : null
 
-  // Map event types to badge variants
-  const getEventBadgeVariant = (type: string) => {
+  const getEventBadgeVariant = (type: string): VariantProps<typeof Badge>["variant"] => {
     switch (type) {
-      case 'Competition': return 'competition'
-      case 'Training': return 'training'  
-      case 'Expo': return 'expo'
-      case 'Charity': return 'charity'
-      case 'Social': return 'social'
-      case 'Demo': return 'demo'
-      default: return 'competition'
+      case 'Competition': return 'premium'
+      case 'Training': return 'info'
+      case 'Expo': return 'secondary'
+      case 'Charity': return 'success'
+      case 'Social': return 'default'
+      case 'Demo': return 'warning'
+      default: return 'default'
     }
   }
 
@@ -77,35 +76,32 @@ export function EventCard({
       className={cn(eventCardVariants({ featured }), className)}
       {...props}
     >
-      {/* Featured events get gradient accent */}
       {featured && (
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-page-gradient" />
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/50" />
       )}
       
       <div className="space-y-base">
-        {/* Header */}
         <div className="flex items-start justify-between">
           <div className="space-y-xs flex-1">
             <div className="flex items-center gap-xs">
               <Badge 
-                variant={badgeVariant as any}
+                variant={badgeVariant}
                 size="sm"
               >
                 {eventType}
               </Badge>
               {featured && (
-                <Badge variant="destructive" size="sm" className="bg-safety-red text-white">
+                <Badge variant="destructive" size="sm">
                   Featured
                 </Badge>
               )}
             </div>
             
-            <h3 className="font-rajdhani font-bold text-lg text-card-foreground leading-tight line-clamp-tiny">
+            <h3 className="font-rajdhani font-bold text-lg text-card-foreground leading-tight line-clamp-2">
               {title}
             </h3>
           </div>
           
-          {/* Price Display */}
           {price && (
             <div className="text-right ml-base">
               <div className="text-lg font-rajdhani font-bold text-foreground">
@@ -115,12 +111,10 @@ export function EventCard({
           )}
         </div>
 
-        {/* Description */}
-        <p className="text-sm text-muted-foreground line-clamp-xs">
+        <p className="text-sm text-muted-foreground line-clamp-3">
           {description}
         </p>
 
-        {/* Event Details */}
         <div className="space-y-xs text-sm">
           <div className="flex items-center gap-xs text-muted-foreground">
             <Calendar className="h-4 w-4 flex-shrink-0" />
@@ -132,24 +126,23 @@ export function EventCard({
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
             <MapPin className="h-4 w-4 flex-shrink-0" />
-            <span className="line-clamp-micro">{location}</span>
+            <span className="line-clamp-1">{location}</span>
           </div>
         </div>
 
-        {/* Capacity Info */}
         {capacity && (
-          <div className="flex items-center justify-between text-sm bg-muted/50 px-base py-xs rounded">
+          <div className="flex items-center justify-between text-sm bg-muted/50 px-base py-xs rounded-sm">
             <div className="flex items-center gap-xs text-muted-foreground">
               <Users className="h-4 w-4" />
               <span>Capacity: {capacity}</span>
             </div>
             <div className={cn(
               "font-medium",
-              spotsLeft && spotsLeft <= 10 ? "text-safety-red" : "text-card-foreground"
+              spotsLeft && spotsLeft <= 10 ? "text-destructive" : "text-card-foreground"
             )}>
               {registeredCount || 0} registered
               {spotsLeft && spotsLeft <= 10 && (
-                <span className="text-safety-red ml-1">
+                <span className="text-destructive ml-1">
                   • {spotsLeft} left
                 </span>
               )}
@@ -157,11 +150,10 @@ export function EventCard({
           </div>
         )}
 
-        {/* Action Button */}
         {registrationUrl && (
           <div className="pt-xs">
             <Button 
-              variant="micro"
+              variant="outline"
               size="sm"
               className="w-full" 
               onClick={() => window.open(registrationUrl, '_blank')}

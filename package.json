@@ -40,6 +40,7 @@
     "fortress:complete": "npm run audit:fort-knox && npm run scan:vulnerability && npm run analyze:components"
   },
   "dependencies": {
+    "@google/gemini-cli": "^0.1.19",
     "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^5.1.1",
     "@mdx-js/loader": "^3.1.0",

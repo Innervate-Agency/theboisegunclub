@@ -13,7 +13,7 @@ const switchVariants = cva(
       variant: {
         default: "data-[state=checked]:bg-primary data-[state=unchecked]:bg-input",
         premium: "data-[state=checked]:bg-gradient-to-r from-rusty-orange to-sandy-ochre data-[state=unchecked]:bg-input",
-        glass: "data-[state=checked]:bg-white/20 data-[state=unchecked]:bg-white/10 backdrop-blur-sm border-white/20",
+        glass: "data-[state=checked]:bg-popover/20 data-[state=unchecked]:bg-popover/10 backdrop-blur-sm border-border/20",
       },
     },
     defaultVariants: {

@@ -11,7 +11,7 @@ const inputVariants = cva(
         default: "border-input",
         filled: "bg-muted",
         ghost: "border-transparent hover:bg-muted/50",
-        glass: "bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/70",
+        glass: "bg-popover/10 backdrop-blur-sm border-border/20 text-foreground placeholder:text-foreground/70",
       },
       size: {
         sm: "h-9 px-2",
