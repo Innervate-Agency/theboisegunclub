@@ -210,7 +210,7 @@ export function SiteNavigation({
                       <span className="font-[800]">The Boise</span> <span className="font-[300]">Gun Club</span>
                     </div>
                     <p className="text-base font-rajdhani font-[400] text-muted-foreground leading-none lowercase tracking-wider text-center">
-                      A Treasure Valley Collective
+                      Treasure Valley Collective
                     </p>
                   </div>
                 </div>
