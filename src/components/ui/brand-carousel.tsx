@@ -183,10 +183,10 @@ export function BrandCarousel({
               {/* Overlay text content - ALWAYS LIGHT FOR CONTRAST ON COLORED OVERLAYS */}
               <div className="absolute bottom-0 left-0 right-0 p-lg">
                 <div className="max-w-2xl">
-                  <h2 className="text-3xl md:text-4xl font-rajdhani font-bold mb-6 leading-tight text-white shadow-elevated">
+                  <h2 className="text-3xl md:text-4xl font-rajdhani font-bold mb-base leading-tight text-white shadow-elevated">
                     {currentShowcase.overlayTitle}
                   </h2>
-                  <p className="text-xl text-white/95 mb-8 leading-relaxed font-noto-sans shadow-present">
+                  <p className="text-xl text-white/95 mb-lg leading-relaxed font-noto-sans shadow-present">
                     {currentShowcase.overlayDescription}
                   </p>
                   <button className="text-heading-lg font-medium text-white/95 hover:text-white transition-colors group flex items-center gap-xs shadow-present">

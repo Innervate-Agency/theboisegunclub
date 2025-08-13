@@ -142,7 +142,7 @@ export function EventCard({
             )}>
               {registeredCount || 0} registered
               {spotsLeft && spotsLeft <= 10 && (
-                <span className="text-destructive ml-1">
+                <span className="text-destructive ml-micro">
                   • {spotsLeft} left
                 </span>
               )}

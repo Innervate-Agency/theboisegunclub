@@ -84,7 +84,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
         {label && (
           <label className="text-body-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
             {label}
-            {required && <span className="text-destructive ml-1">*</span>}
+            {required && <span className="text-destructive ml-micro">*</span>}
           </label>
         )}
         <div className="relative flex items-center">
@@ -96,7 +96,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
         )}
         {error && (
           <p className="text-body-sm text-destructive flex items-center">
-            <AlertCircle className="h-4 w-4 mr-2" />
+            <AlertCircle className="h-4 w-4 mr-tiny" />
             {error}
           </p>
         )}

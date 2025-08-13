@@ -136,7 +136,7 @@ export function SiteNavigation({
                   {item.label}
                   
                   {/* Individual color bar at bottom edge of navbar */}
-                  <div className={`absolute bottom-0 left-0 right-0 h-1.5 ${getColorBarClass(item.color)} scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left -mb-6`} />
+                  <div className={`absolute bottom-0 left-0 right-0 h-1.5 ${getColorBarClass(item.color)} scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left -mb-base`} />
                 </Link>
                 
                 {/* Separator lines between nav items */}

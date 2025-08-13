@@ -91,13 +91,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       
       switch (detectedAnimationType) {
         case 'arrow':
-          return <HoverArrow isActive={isActive} className="ml-2" />
+          return <HoverArrow isActive={isActive} className="ml-tiny" />
         case 'plus-minus':
-          return <PlusMinusToggle isActive={isActive} className="ml-2" />
+          return <PlusMinusToggle isActive={isActive} className="ml-tiny" />
         case 'x-o':
-          return <XOToggle isActive={isActive} className="ml-2" />
+          return <XOToggle isActive={isActive} className="ml-tiny" />
         case 'chevron':
-          return <ChevronRotate isActive={isActive} direction={animationDirection} className="ml-2" />
+          return <ChevronRotate isActive={isActive} direction={animationDirection} className="ml-tiny" />
         default:
           return null
       }
@@ -116,7 +116,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ) : (
           // Normal button rendering with loading spinner and animations
           <>
-            {loading ? <Diamond className="mr-2 h-4 w-4 animate-spin" weight="bold" /> : null}
+            {loading ? <Diamond className="mr-tiny h-4 w-4 animate-spin" weight="bold" /> : null}
             {children}
             {renderAnimation()}
           </>

@@ -28,8 +28,8 @@ const sectionDividerVariants = cva(
         clean: "h-px bg-border"
       },
       spacing: {
-        none: "my-0",
-        sm: "my-8",
+        none: "my-none",
+        sm: "my-lg",
         md: "my-16", 
         lg: "my-24",
         xl: "my-32"
