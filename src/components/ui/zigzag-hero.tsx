@@ -123,7 +123,7 @@ export function ZigzagHero({
         }}
       />
       
-      <div className="relative z-10 max-w-site mx-auto px-6 py-24">
+      <div className="relative z-10 max-w-site mx-auto px-base py-24">
         <div className={cn(
           "grid lg:grid-cols-2 gap-micro6 items-center min-h-[400px]",
           isRightLayout && "lg:grid-cols-2"
@@ -218,7 +218,7 @@ export function ZigzagHero({
                   <Button 
                     size="lg" 
                     variant="default"
-                    className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90 font-semibold px-8 py-6 text-lg shadow-commanding"
+                    className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90 font-semibold px-lg py-base text-lg shadow-commanding"
                     onClick={primaryAction.onClick}
                   >
                     {primaryAction.label}
@@ -228,7 +228,7 @@ export function ZigzagHero({
                   <Button 
                     size="lg" 
                     variant="outline"
-                    className="border-border/50 text-foreground hover:bg-accent/10 font-semibold px-8 py-6 text-lg"
+                    className="border-border/50 text-foreground hover:bg-accent/10 font-semibold px-lg py-base text-lg"
                     onClick={secondaryAction.onClick}
                   >
                     {secondaryAction.label}

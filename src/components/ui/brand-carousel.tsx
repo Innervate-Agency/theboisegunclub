@@ -176,7 +176,7 @@ export function BrandCarousel({
               </div>
               
               {/* Company logo - better positioning */}
-              <div className="absolute top-md left-6 bg-background/90 backdrop-blur-sm rounded-xs px-4 py-2 text-foreground font-bold shadow-elevated border border-border/20">
+              <div className="absolute top-md left-6 bg-background/90 backdrop-blur-sm rounded-xs px-sm py-tiny text-foreground font-bold shadow-elevated border border-border/20">
                 {currentShowcase.logo}
               </div>
               

@@ -31,7 +31,7 @@ export function CompactStatsBar({ stats, className }: CompactStatsBarProps) {
 
   return (
     <div className={cn(
-      "bg-card border rounded-sm px-4 py-3 shadow-whisper hover:shadow-present transition-all duration-200",
+      "bg-card border rounded-sm px-sm py-xs shadow-whisper hover:shadow-present transition-all duration-200",
       className
     )}>
       <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">

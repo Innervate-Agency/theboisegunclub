@@ -228,7 +228,7 @@ export function SiteNavigation({
               return (
                 <React.Fragment key={item.href}>
                   <div 
-                    className="relative px-1 py-1"
+                    className="relative px-micro py-micro"
                     onMouseEnter={() => setHoveredPath(item.href)}
                     onMouseLeave={() => setHoveredPath(pathname)}
                   >

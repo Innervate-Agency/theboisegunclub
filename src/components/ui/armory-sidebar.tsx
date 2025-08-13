@@ -28,7 +28,7 @@ import {
 export function ArmorySidebar() {
   return (
     <Sidebar variant="inset" className="border-none shadow-elevated hover:shadow-prominent transition-all duration-300">
-      <SidebarHeader className="border-b px-4 py-3">
+      <SidebarHeader className="border-b px-sm py-xs">
         <div className="flex items-center space-x-3">
           <div className="flex h-8 w-8 items-center justify-center rounded-xs bg-foothills-purple">
             <Shield className="h-4 w-4 text-primary-foreground" />
@@ -40,10 +40,10 @@ export function ArmorySidebar() {
         </div>
       </SidebarHeader>
 
-      <SidebarContent className="px-3 py-4">
+      <SidebarContent className="px-xs py-sm">
         {/* Idaho Content */}
         <SidebarGroup>
-          <SidebarGroupLabel className="px-1 text-xs font-semibold font-rajdhani text-foothills-purple mb-2 group-data-[collapsible=icon]:hidden">
+          <SidebarGroupLabel className="px-micro text-xs font-semibold font-rajdhani text-foothills-purple mb-2 group-data-[collapsible=icon]:hidden">
             IDAHO CONTENT
           </SidebarGroupLabel>
           <SidebarMenu className="space-y-1">
@@ -73,7 +73,7 @@ export function ArmorySidebar() {
 
         {/* Local Resources */}
         <SidebarGroup className="mt-6">
-          <SidebarGroupLabel className="px-1 text-xs font-semibold font-rajdhani text-foothills-purple mb-2 group-data-[collapsible=icon]:hidden">
+          <SidebarGroupLabel className="px-micro text-xs font-semibold font-rajdhani text-foothills-purple mb-2 group-data-[collapsible=icon]:hidden">
             LOCAL RESOURCES
           </SidebarGroupLabel>
           <SidebarMenu className="space-y-1">
@@ -103,7 +103,7 @@ export function ArmorySidebar() {
 
         {/* Coming Soon */}
         <SidebarGroup className="mt-6">
-          <SidebarGroupLabel className="px-1 text-xs font-semibold font-rajdhani text-muted-foreground mb-2 group-data-[collapsible=icon]:hidden">
+          <SidebarGroupLabel className="px-micro text-xs font-semibold font-rajdhani text-muted-foreground mb-2 group-data-[collapsible=icon]:hidden">
             COMING SOON
           </SidebarGroupLabel>
           <SidebarMenu className="space-y-1">
@@ -125,7 +125,7 @@ export function ArmorySidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="border-t px-4 py-3 group-data-[collapsible=icon]:hidden">
+      <SidebarFooter className="border-t px-sm py-xs group-data-[collapsible=icon]:hidden">
         <div className="text-xs text-muted-foreground">
           <p>540K+ Idaho gun owners</p>
           <p className="mt-1">Updated daily</p>

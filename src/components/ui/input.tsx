@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 import { Eye, EyeOff, AlertCircle } from "lucide-react"
 
 const inputVariants = cva(
-  "flex h-10 w-full rounded-xs border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+  "flex h-10 w-full rounded-xs border border-input bg-background px-xs py-tiny text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -14,9 +14,9 @@ const inputVariants = cva(
         glass: "bg-popover/10 backdrop-blur-sm border-border/20 text-foreground placeholder:text-foreground/70",
       },
       size: {
-        sm: "h-9 px-2",
-        default: "h-10 px-3 py-2",
-        lg: "h-11 px-4",
+        sm: "h-9 px-tiny",
+        default: "h-10 px-xs py-tiny",
+        lg: "h-11 px-sm",
       },
       status: {
         default: "",

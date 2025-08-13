@@ -29,7 +29,7 @@ export function LoadingSpinnerWithText({
   size = "md" 
 }: LoadingSpinnerProps & { text?: string }) {
   return (
-    <div className={cn("flex items-center gap-2", className)}>
+    <div className={cn("flex items-center gap-tiny", className)}>
       <LoadingSpinner size={size} />
       <span className="text-sm text-muted-foreground">{text}</span>
     </div>
