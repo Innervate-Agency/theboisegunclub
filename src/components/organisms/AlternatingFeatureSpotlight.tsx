@@ -47,8 +47,6 @@ const AlternatingFeatureSpotlight = ({
   reverse = false,
 }: AlternatingFeatureSpotlightProps) => {
   const gradientStyle = {
-    '--glow-color-1': glowColor1,
-    '--glow-color-2': glowColor2,
     backgroundImage: `
       radial-gradient(circle at 25% 75%, var(--glow-color-1) 0%, transparent 40%),
       radial-gradient(circle at 75% 35%, var(--glow-color-2) 0%, transparent 40%)

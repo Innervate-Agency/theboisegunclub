@@ -27,16 +27,20 @@ This file provides guidance to Claude Code when working with this repository.
 - **React 19** (Server Components)  
 - **Tailwind CSS v4** (CSS-based config)
 - **shadcn/ui** ("new-york" style)
-- **Framer Motion** (animations)
+- **Framer Motion** (Magic Line navigation, micro-animations)
+- **Phosphor Icons** (Primary icon system with tactical aesthetic)
 
 ### Project Structure
 ```
 src/
-├── app/           # Pages & layouts
-├── components/ui/ # shadcn/ui components (80+)
-├── lib/           # Utilities (cn function)
-├── stories/       # Storybook stories
-└── hooks/         # Custom React hooks
+├── app/                    # Pages & layouts
+├── components/ui/          # shadcn/ui components (80+)
+│   ├── micro-animations.tsx # HoverArrow, PlusMinusToggle, XOToggle, ChevronRotate
+│   ├── loading-spinner.tsx  # Branded Diamond spinner component
+│   └── site-navigation.tsx  # Magic Line navigation with spring physics
+├── lib/                    # Utilities (cn function)
+├── stories/                # Storybook stories
+└── hooks/                  # Custom React hooks (useAccessibilitySettings)
 ```
 
 ### Path Aliases
@@ -66,9 +70,23 @@ src/
 - **Dark Theme**: `rusty-orange` (CTAs), `lodgepole-green` (success)
 
 ### Typography
-- **Display**: Rajdhani (H1-H2, weights 300-700)
+- **Display**: Rajdhani (H1-H2, weights 300-800 for site title)
 - **Body**: Noto Sans (H3-H6, body text)
 - **Accent**: Noto Serif (editorial)
+
+### Animation System (Micro-Interactions)
+- **Button Animations**: Context-aware micro-animations (arrow, plus-minus, x-o, chevron)
+- **Navigation Effects**: Magic Line sliding with spring physics (bounce: 0.25, stiffness: 130, damping: 9)
+- **Icon Interactions**: Subtle wiggle animations (-5°, 5°, 0°) with glow effects
+- **Loading States**: Branded spinning Diamond (replaces generic spinners)
+- **Performance**: All animations disabled during loading, use currentColor for theming
+
+### Icon System (Phosphor Primary)
+- **Primary Library**: Phosphor Icons (@phosphor-icons/react)
+- **Fallback Libraries**: Tabler, Heroicons, React Icons for specialized needs
+- **Weight System**: Use "bold" weight for navigation (tactical aesthetic)
+- **Sizing Standard**: h-4 w-4 for most contexts, h-6 w-6 for prominent elements
+- **Tactical Aesthetic**: Angular, geometric icons preferred over rounded alternatives
 
 ## Business Context
 **The Boise Gun Club** is a regional marketplace/directory platform for the entire Treasure Valley firearms community - NOT a single gun club. Design for scalable systems: directory listings, event aggregation, forum categories.
@@ -545,6 +563,85 @@ function useAccessibilitySettings() {
 
 **🎯 IMPACT**: Accessibility panel now provides instant, professional user experience while following React best practices and modern performance optimization techniques.
 
+## ✅ COMPLETED MILESTONE: Advanced Navigation & Micro-Animation System (2025-08-12)
+
+### NAVIGATION & ANIMATION BREAKTHROUGH: Magic Line Navigation with Sophisticated Micro-Interactions
+
+**MAJOR TECHNICAL ACHIEVEMENT**: Complete implementation of professional-grade navigation system with Magic Line sliding effects and comprehensive micro-animation system for all interactive elements.
+
+#### Magic Line Navigation Implementation
+```tsx
+// MAGIC LINE SYSTEM: Framer Motion with Spring Physics
+<motion.div
+  layoutId="navbar-magic-line"
+  className={`absolute bottom-0 left-0 right-0 h-1 rounded-full ${getMagicLineColor(item.color)}`}
+  transition={{
+    type: "spring",
+    bounce: 0.25,        // Professional bounce (like Vercel)
+    stiffness: 130,      // Responsive feel
+    damping: 9,          // Smooth stop
+    duration: 0.3,       // Quick but not jarring
+  }}
+/>
+```
+
+#### Technical Implementation Excellence
+- ✅ **Framer Motion Integration**: Professional spring physics matching industry standards (Vercel/Stripe)
+- ✅ **Dynamic Page Icons**: Logo changes based on current page with 28-degree tactical tilt
+- ✅ **Phosphor Icon Migration**: Complete replacement of Lucide with thematic Phosphor icons
+- ✅ **Icon Glow Effects**: Subtle hover glows with blur and scale animations
+- ✅ **Typography Refinements**: Perfect Rajdhani font weights (800/300) with proper tracking
+- ✅ **Spinning Diamond Loader**: Branded loading states replacing generic spinners
+
+#### Comprehensive Button Micro-Animation System
+```tsx
+// INTELLIGENT ANIMATION DETECTION: Context-aware micro-interactions
+<Button variant="solid-accent">Learn More</Button>                    // → Arrow (navigation)
+<Button animationType="x-o" animationState={isActive}>Toggle</Button> // → X/O (on/off)
+<Button animationType="plus-minus" animationState={expanded}>Expand</Button> // → +/- (expand)
+<Button animationType="chevron" animationState="up">Sort</Button>     // → Chevron (direction)
+```
+
+#### Animation Components Architecture
+- ✅ **HoverArrow**: Stripe-style arrow animation for navigation buttons
+- ✅ **PlusMinusToggle**: Smooth morphing plus ↔ minus for expand/collapse
+- ✅ **XOToggle**: Clean X ↔ O transformation for on/off states  
+- ✅ **ChevronRotate**: Directional chevron rotation for sorting/direction
+- ✅ **Smart Detection**: Solid button variants automatically get arrow animations unless overridden
+
+#### React Component Composition Fixes
+- ✅ **Slot Component Integration**: Proper handling of Radix UI Slot with asChild prop
+- ✅ **React.Children.only Resolution**: Fixed composition errors with conditional animation rendering
+- ✅ **Performance Optimization**: Animations disabled during loading states
+- ✅ **Theme Awareness**: All animations use `currentColor` for automatic theme adaptation
+
+#### Navigation Color System Enhancement
+```css
+/* PERFECTED 7-COLOR NAVIGATION SYSTEM */
+Home: var(--nav-home)         /* Sandy ochre warmth */
+Events: var(--nav-events)     /* High-energy red */
+Directory: var(--nav-directory) /* Professional cyan */
+Armory: var(--nav-armory)     /* Tactical purple */
+Intel: var(--nav-intel)       /* Intelligence yellow */
+Marketplace: var(--nav-marketplace) /* Commerce green */
+Forums: var(--nav-forums)     /* Community gray */
+```
+
+#### Icon Library Expansion Success
+- **Comprehensive Installation**: Phosphor, Tabler, Heroicons, React Icons (4 major libraries)
+- **Thematic Choices**: Angular, tactical icons perfect for firearms community
+- **Weight System**: Proper Phosphor icon weights (thin, light, regular, bold, fill, duotone)
+- **Consistency**: Standardized 4w-4h sizing across navigation with bold weights
+
+#### Professional Polish Achievements
+- **Magic Line Sliding**: Smooth color-coordinated sliding indicator between navigation items
+- **Icon Wiggle Effects**: Subtle rotate animation on hover (-5°, 5°, back to 0°)
+- **Loading States**: Branded spinning Diamond replaces generic Loader2 icons
+- **Typography Hierarchy**: Perfect font weight distribution (800/300 for site title)
+- **Accessibility Integration**: X/O toggles in accessibility panel demonstrate advanced animations
+
+**🎯 RESULT**: Professional-grade navigation system with sophisticated micro-interactions matching industry leaders like Vercel, Stripe, and Linear. Ready for production with comprehensive animation system that enhances user experience without overwhelming the tactical firearms aesthetic.
+
 ## ✅ COMPLETED MILESTONE: Comprehensive Design System Migration (2025-08-08)
 
 ### DESIGN SYSTEM BREAKTHROUGH: 10-Color Strategic Distribution Implementation
@@ -665,12 +762,18 @@ function useAccessibilitySettings() {
 ## Key Reference Files
 
 - `src/app/globals.css` - Complete 26-color Boise landscape palette and design tokens
+- `src/components/ui/button.tsx` - Enhanced with micro-animation system and animationType props
+- `src/components/ui/micro-animations.tsx` - HoverArrow, PlusMinusToggle, XOToggle, ChevronRotate components
+- `src/components/ui/site-navigation.tsx` - Magic Line navigation with Framer Motion spring physics
+- `src/components/ui/loading-spinner.tsx` - Branded Diamond spinner component
+- `src/components/ui/accessibility-panel.tsx` - Performance-optimized with CSS custom properties
 - `src/components/ui/_component-pattern.tsx` - CVA component template
 - `specs/` - Component specifications and requirements (Vitest specs)
 - `.github/copilot-instructions.md` - Additional AI coding guidelines
 - `scripts/` - Automation scripts for health checks, fixes, and validation
 - `vitest.config.ts` - Testing configuration with Storybook integration
 - `package.json` - All available npm scripts and dependencies
+- `CHANGELOG.md` - Complete documentation of navigation & animation system implementation
 
 ## Project Memory
 
@@ -678,6 +781,11 @@ function useAccessibilitySettings() {
 - The user prefers using design tokens and a restrained styling approach to ensure UI components look and function great
 - Badges should have no shadows and instead use a very light outline in the same color (darker than the badge fill), and colors must come from the globals.css palette
 - The user prefers tactical, square component aesthetic with strategic color distribution
+- **CRITICAL**: Always use Phosphor Icons as primary choice - tactical, angular aesthetic preferred over rounded Lucide alternatives
+- **Animation Philosophy**: Context-aware micro-interactions that enhance UX without being overwhelming - arrows for navigation, toggles for state changes, plus/minus for expansion
+- **Performance**: All animations must be disabled during loading states and use currentColor for automatic theme adaptation
+- **Navigation**: Magic Line sliding effect is signature feature - never remove without explicit approval
+- **Typography**: Rajdhani font weights 300-800 for display typography, with perfect kerning and letter-spacing
 
 ## Storybook Stories Guidance
 

@@ -70,7 +70,7 @@ function LocationCard({ location }: { location: ShootingLocation }) {
       <div className="aspect-video relative overflow-hidden">
         <div className="w-full h-full bg-nav-intel/10 group-hover:scale-105 transition-transform duration-300 rounded-xs" />
         <div className="absolute top-tiny right-2">
-          <Badge className="bg-black/60 text-white border-none backdrop-blur-sm">
+          <Badge className="bg-background/60 text-foreground border-none backdrop-blur-sm">
             {photoCount}
           </Badge>
         </div>

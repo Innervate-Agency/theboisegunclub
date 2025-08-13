@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 import { ChevronLeft, ChevronRight, Target, Shield, Settings, Award, Zap, Users } from 'lucide-react'

@@ -103,7 +103,7 @@ export function ZigzagHero({
       {...props}
     >
       {/* Gradient Overlay for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 via-foreground/20 to-foreground/60" />
       
       {/* Animated Background Pattern */}
       <motion.div 
@@ -147,7 +147,7 @@ export function ZigzagHero({
               >
                 {breadcrumbs.map((crumb, index) => (
                   <React.Fragment key={index}>
-                    <span className="text-white/70 hover:text-white transition-colors">
+                    <span className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                       {crumb.href ? (
                         <a href={crumb.href} className="hover:underline">
                           {crumb.label}
@@ -157,7 +157,7 @@ export function ZigzagHero({
                       )}
                     </span>
                     {index < breadcrumbs.length - 1 && (
-                      <span className="text-white/50">/</span>
+                      <span className="text-primary-foreground/50">/</span>
                     )}
                   </React.Fragment>
                 ))}
@@ -174,7 +174,7 @@ export function ZigzagHero({
                   <Badge 
                     key={index} 
                     variant={badge.variant || 'default'}
-                    className="bg-white/20 text-white border-white/30 hover:bg-white/30"
+                    className="bg-accent/20 text-accent-foreground border-border/30 hover:bg-accent/30"
                   >
                     {badge.label}
                   </Badge>
@@ -186,7 +186,7 @@ export function ZigzagHero({
             {subtitle && (
               <motion.p 
                 variants={itemVariants}
-                className="text-white/90 font-rajdhani font-medium text-lg tracking-wide"
+              className="text-primary-foreground/90 font-rajdhani font-medium text-lg tracking-wide"
               >
                 {subtitle}
               </motion.p>
@@ -195,7 +195,7 @@ export function ZigzagHero({
             {/* Title */}
             <motion.h1 
               variants={itemVariants}
-              className="font-rajdhani font-bold text-5xl md:text-6xl lg:text-7xl text-white leading-tight tracking-tight"
+              className="font-rajdhani font-bold text-5xl md:text-6xl lg:text-7xl text-primary-foreground leading-tight tracking-tight"
             >
               {title}
             </motion.h1>
@@ -203,7 +203,7 @@ export function ZigzagHero({
             {/* Description */}
             <motion.p 
               variants={itemVariants}
-              className="text-xl text-white/90 leading-relaxed max-w-2xl"
+              className="text-xl text-primary-foreground/90 leading-relaxed max-w-2xl"
             >
               {description}
             </motion.p>
@@ -218,7 +218,7 @@ export function ZigzagHero({
                   <Button 
                     size="lg" 
                     variant="default"
-                    className="bg-white text-dark-chocolate hover:bg-white/90 font-semibold px-8 py-6 text-lg shadow-commanding"
+                    className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90 font-semibold px-8 py-6 text-lg shadow-commanding"
                     onClick={primaryAction.onClick}
                   >
                     {primaryAction.label}
@@ -228,7 +228,7 @@ export function ZigzagHero({
                   <Button 
                     size="lg" 
                     variant="outline"
-                    className="border-white/50 text-white hover:bg-white/10 font-semibold px-8 py-6 text-lg"
+                    className="border-border/50 text-foreground hover:bg-accent/10 font-semibold px-8 py-6 text-lg"
                     onClick={secondaryAction.onClick}
                   >
                     {secondaryAction.label}
@@ -246,12 +246,12 @@ export function ZigzagHero({
                 {stats.map((stat, index) => (
                   <div key={index} className="space-y-2">
                     {stat.icon && (
-                      <stat.icon className="h-8 w-8 text-white/80 mx-auto" />
+                      <stat.icon className="h-8 w-8 text-primary-foreground/80 mx-auto" />
                     )}
-                    <div className="text-3xl font-rajdhani font-bold text-white">
+                    <div className="text-3xl font-rajdhani font-bold text-primary-foreground">
                       {stat.value}
                     </div>
-                    <div className="text-sm text-white/70 font-medium">
+                    <div className="text-sm text-primary-foreground/70 font-medium">
                       {stat.label}
                     </div>
                   </div>

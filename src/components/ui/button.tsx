@@ -18,7 +18,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         premium: "bg-gradient-to-r from-rusty-orange to-sandy-ochre text-white shadow-commanding hover:shadow-hero transition-all duration-300 ease-out hover:scale-105",
-        glass: "bg-white/10 backdrop-blur-sm text-white border border-white/20 shadow-elevated hover:shadow-prominent hover:bg-white/20",
+        glass: "bg-popover/10 backdrop-blur-sm text-foreground border border-border/20 shadow-elevated hover:shadow-prominent hover:bg-popover/20",
         flat: "bg-transparent text-foreground hover:bg-muted/50",
 
         // Solid Variants
