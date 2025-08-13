@@ -102,7 +102,7 @@ export function GuidesClient({ articles, categories, difficultyLevels }: GuidesC
 
             {/* Category Filters */}
             <div className="space-y-base">
-              <h3 className="font-rajdhani text-lg font-bold text-card-foreground">
+              <h3 className="font-rajdhani text-heading-lg font-bold text-card-foreground">
                 Browse by Category
               </h3>
               <div className="flex flex-wrap gap-xs">
@@ -129,7 +129,7 @@ export function GuidesClient({ articles, categories, difficultyLevels }: GuidesC
 
             {/* Difficulty Filters */}
             <div className="space-y-base">
-              <h3 className="font-rajdhani text-lg font-bold text-card-foreground">
+              <h3 className="font-rajdhani text-heading-lg font-bold text-card-foreground">
                 Filter by Difficulty Level
               </h3>
               <div className="flex flex-wrap gap-xs">

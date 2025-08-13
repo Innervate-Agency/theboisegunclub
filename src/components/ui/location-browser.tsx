@@ -105,7 +105,7 @@ function LocationCard({ location }: { location: ShootingLocation }) {
         </CardTitle>
         
         {/* GPS Coordinates - Moved Higher for Shooting Locations */}
-        <div className="space-y-xs text-sm">
+        <div className="space-y-xs text-body-sm">
           <div className="flex items-center gap-xs text-rusty-orange font-medium">
             <Navigation className="h-4 w-4" />
             <span className="font-mono text-xs">{location.coordinates}</span>
@@ -118,12 +118,12 @@ function LocationCard({ location }: { location: ShootingLocation }) {
       </CardHeader>
       
       <CardContent className="space-y-base">
-        <p className="text-sm text-muted-foreground line-clamp-tiny">
+        <p className="text-body-sm text-muted-foreground line-clamp-tiny">
           {location.description}
         </p>
         
         {/* Access Information */}
-        <div className="flex items-center gap-xs text-sm">
+        <div className="flex items-center gap-xs text-body-sm">
           <Flag className="h-4 w-4 text-rusty-orange" />
           <span className="font-medium">Access:</span>
           <span className="text-muted-foreground">{location.access}</span>
@@ -131,7 +131,7 @@ function LocationCard({ location }: { location: ShootingLocation }) {
         
         {/* Key Amenities - Top 4 Only for Card View */}
         <div className="space-y-xs">
-          <h4 className="font-medium text-sm">Key Features:</h4>
+          <h4 className="font-medium text-body-sm">Key Features:</h4>
           <div className="flex flex-wrap gap-xs">
             {location.amenities.slice(0, 4).map((amenity) => (
               <Badge key={amenity} variant="outline" className="text-xs">
@@ -151,7 +151,7 @@ function LocationCard({ location }: { location: ShootingLocation }) {
             <div className="flex items-start gap-xs">
               <Info className="h-4 w-4 text-safety-red mt-0.5 flex-shrink-0" />
               <div>
-                <h4 className="font-medium text-safety-red text-sm">Restrictions:</h4>
+                <h4 className="font-medium text-safety-red text-body-sm">Restrictions:</h4>
                 <p className="text-xs text-safety-red/80">{location.restrictions}</p>
               </div>
             </div>
@@ -163,7 +163,7 @@ function LocationCard({ location }: { location: ShootingLocation }) {
           <div className="bg-warning-clay/5 border border-warning-clay/20 rounded-sm p-base">
             <div className="flex items-start justify-between gap-base mb-base">
               <div className="flex-1">
-                <h4 className="font-rajdhani font-bold text-sm text-warning-clay mb-xs">Help Verify This Location</h4>
+                <h4 className="font-rajdhani font-bold text-body-sm text-warning-clay mb-xs">Help Verify This Location</h4>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   Have you been here? Help the community by verifying access conditions, safety info, and current restrictions.
                 </p>
@@ -284,7 +284,7 @@ export function LocationBrowser({ locations, locationTypes, difficultyLevels }: 
 
             {/* Location Type Filters */}
             <div className="space-y-base">
-              <h3 className="font-rajdhani text-lg font-bold text-card-foreground">
+              <h3 className="font-rajdhani text-heading-lg font-bold text-card-foreground">
                 Filter by Location Type
               </h3>
               <div className="flex flex-wrap gap-xs">
@@ -310,7 +310,7 @@ export function LocationBrowser({ locations, locationTypes, difficultyLevels }: 
 
             {/* Difficulty Filters */}
             <div className="space-y-base">
-              <h3 className="font-rajdhani text-lg font-bold text-card-foreground">
+              <h3 className="font-rajdhani text-heading-lg font-bold text-card-foreground">
                 Filter by Access Difficulty
               </h3>
               <div className="flex flex-wrap gap-xs">

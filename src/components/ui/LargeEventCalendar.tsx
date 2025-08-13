@@ -244,21 +244,21 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
                             {event.title}
                           </h4>
 
-                          <p className="text-sm text-muted-foreground line-clamp-tiny">
+                          <p className="text-body-sm text-muted-foreground line-clamp-tiny">
                             {event.description}
                           </p>
 
                           <div className="space-y-xs">
-                            <div className="flex items-center gap-xs text-sm text-muted-foreground">
+                            <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
                               <Clock className="h-4 w-4" />
                               <span>{event.time.split(' - ')[0]}</span>
                             </div>
-                            <div className="flex items-center gap-xs text-sm text-muted-foreground">
+                            <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
                               <MapPin className="h-4 w-4" />
                               <span>{event.location.split(',')[0]}</span>
                             </div>
                             {event.capacity && event.registeredCount && (
-                              <div className="flex items-center gap-xs text-sm text-muted-foreground">
+                              <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
                                 <Users className="h-4 w-4" />
                                 <span>{event.registeredCount}/{event.capacity}</span>
                               </div>
@@ -266,7 +266,7 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
                           </div>
 
                           <div className="flex items-center justify-between pt-sm">
-                            <span className="font-rajdhani text-lg font-bold text-rusty-orange">
+                            <span className="font-rajdhani text-heading-lg font-bold text-rusty-orange">
                               {event.price}
                             </span>
                             <Button variant="solid-accent" size="sm">

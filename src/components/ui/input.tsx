@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 import { Eye, EyeOff, AlertCircle } from "lucide-react"
 
 const inputVariants = cva(
-  "flex h-10 w-full rounded-xs border border-input bg-background px-xs py-tiny text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+  "flex h-10 w-full rounded-xs border border-input bg-background px-xs py-tiny text-body-sm ring-offset-background file:border-0 file:bg-transparent file:text-body-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -82,7 +82,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
     return (
       <div ref={ref} className={cn("grid gap-tiny", className)} {...props}>
         {label && (
-          <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+          <label className="text-body-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
             {label}
             {required && <span className="text-destructive ml-1">*</span>}
           </label>
@@ -92,10 +92,10 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
           <div className={cn("w-full", icon ? "pl-10" : "")}>{children}</div>
         </div>
         {description && !error && (
-          <p className="text-sm text-muted-foreground">{description}</p>
+          <p className="text-body-sm text-muted-foreground">{description}</p>
         )}
         {error && (
-          <p className="text-sm text-destructive flex items-center">
+          <p className="text-body-sm text-destructive flex items-center">
             <AlertCircle className="h-4 w-4 mr-2" />
             {error}
           </p>

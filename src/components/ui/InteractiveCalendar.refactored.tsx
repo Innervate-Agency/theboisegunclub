@@ -84,7 +84,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
             </div>
           </div>
 
-          <div className="text-sm text-muted-foreground whitespace-nowrap">
+          <div className="text-body-sm text-muted-foreground whitespace-nowrap">
             {filteredEvents.length} event{filteredEvents.length !== 1 ? 's' : ''} found
           </div>
         </div>
@@ -176,7 +176,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                           )
                         })}
                         {dayEvents.length > 6 && (
-                          <div className="text-sm text-muted-foreground font-mono font-bold">
+                          <div className="text-body-sm text-muted-foreground font-mono font-bold">
                             +{dayEvents.length - 6}
                           </div>
                         )}
@@ -200,7 +200,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                 <div className="text-center space-y-xs">
                   <div className="flex items-center justify-center gap-xs text-muted-foreground">
                     <CalendarIcon className="h-5 w-5" />
-                    <span className="text-lg">
+                    <span className="text-heading-lg">
                       {selectedDate.toLocaleDateString('en-US', { 
                         weekday: 'long', 
                         month: 'long', 
@@ -217,7 +217,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
 
                 {selectedDateEvents.length === 0 ? (
                   <div className="text-center p-xl">
-                    <div className="text-muted-foreground text-lg">
+                    <div className="text-muted-foreground text-heading-lg">
                       No events scheduled for this date.
                     </div>
                   </div>
@@ -249,16 +249,16 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                             </h4>
 
                             <div className="space-y-xs">
-                              <div className="flex items-center gap-xs text-sm text-muted-foreground">
+                              <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
                                 <Clock className="h-4 w-4" />
                                 <span>{formatEventTime(event.time)}</span>
                               </div>
-                              <div className="flex items-center gap-xs text-sm text-muted-foreground">
+                              <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
                                 <MapPin className="h-4 w-4" />
                                 <span>{event.location.split(',')[0]}</span>
                               </div>
                               {event.capacity && event.registeredCount && (
-                                <div className="flex items-center gap-xs text-sm text-muted-foreground">
+                                <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
                                   <Users className="h-4 w-4" />
                                   <span>{event.registeredCount}/{event.capacity}</span>
                                 </div>
@@ -266,7 +266,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                             </div>
 
                             <div className="flex items-center justify-between pt-xs">
-                              <span className="text-sm font-medium text-primary">
+                              <span className="text-body-sm font-medium text-primary">
                                 {event.price}
                               </span>
                               <Button variant="outline" size="sm" className="h-8 px-sm text-xs">
@@ -288,7 +288,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
               <div className="font-rajdhani text-3xl font-bold text-primary">
                 {monthEvents.length}
               </div>
-              <div className="text-sm text-muted-foreground">
+              <div className="text-body-sm text-muted-foreground">
                 Events This Month
               </div>
             </Card>
@@ -296,13 +296,13 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
               <div className="font-rajdhani text-3xl font-bold text-success">
                 {monthEvents.filter(e => e.featured).length}
               </div>
-              <div className="text-sm text-muted-foreground">Featured Events</div>
+              <div className="text-body-sm text-muted-foreground">Featured Events</div>
             </Card>
             <Card className="p-base bg-card text-center">
               <div className="font-rajdhani text-3xl font-bold text-info">
                 {new Set(monthEvents.map(e => e.location.split(',')[0])).size}
               </div>
-              <div className="text-sm text-muted-foreground">Venues</div>
+              <div className="text-body-sm text-muted-foreground">Venues</div>
             </Card>
           </div>
         </div>

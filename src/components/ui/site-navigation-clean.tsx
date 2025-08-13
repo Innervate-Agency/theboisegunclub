@@ -112,7 +112,7 @@ export function SiteNavigation({
                   </div>
                 </div>
                 <div>
-                  <div className="text-lg font-rajdhani text-card-foreground tracking-[0.2em] leading-none">
+                  <div className="text-heading-lg font-rajdhani text-card-foreground tracking-[0.2em] leading-none">
                     <span className="font-bold">THEBOISE</span>
                     <span className="font-light">GUNCLUB</span>
                   </div>
@@ -130,7 +130,7 @@ export function SiteNavigation({
               <React.Fragment key={item.href}>
                 <Link
                   href={item.href}
-                  className={`group relative flex items-center gap-xs px-base py-xs text-sm font-medium text-muted-foreground transition-all duration-200  ${getHoverClasses(item.color)}`}
+                  className={`group relative flex items-center gap-xs px-base py-xs text-body-sm font-medium text-muted-foreground transition-all duration-200  ${getHoverClasses(item.color)}`}
                 >
                   <item.icon className="h-3 w-3" />
                   {item.label}

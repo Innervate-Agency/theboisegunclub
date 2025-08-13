@@ -189,7 +189,7 @@ export function BrandCarousel({
                   <p className="text-xl text-white/95 mb-8 leading-relaxed font-noto-sans shadow-present">
                     {currentShowcase.overlayDescription}
                   </p>
-                  <button className="text-lg font-medium text-white/95 hover:text-white transition-colors group flex items-center gap-xs shadow-present">
+                  <button className="text-heading-lg font-medium text-white/95 hover:text-white transition-colors group flex items-center gap-xs shadow-present">
                     Read their story 
                     <span className="group-hover:translate-x-1 transition-transform text-xl">→</span>
                   </button>

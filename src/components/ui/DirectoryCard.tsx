@@ -21,9 +21,9 @@ const directoryCardVariants = cva(
         'fire-green': 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sagebrush-green after:to-lodgepole-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
       },
       size: {
-        sm: 'p-sm text-sm',
+        sm: 'p-sm text-body-sm',
         md: 'p-base text-base',
-        lg: 'p-md text-lg',
+        lg: 'p-md text-heading-lg',
       },
     },
     defaultVariants: {
@@ -71,16 +71,16 @@ export function DirectoryCard({
             />
           </div>
         ) : (
-          <div className="h-14 w-14 rounded-base bg-sandy-ochre/10 flex items-center justify-center font-bold text-lg text-dark-chocolate shadow-present">
+          <div className="h-14 w-14 rounded-base bg-sandy-ochre/10 flex items-center justify-center font-bold text-heading-lg text-dark-chocolate shadow-present">
             {name.charAt(0)}
           </div>
         )}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-xs">
-            <span className="font-rajdhani font-bold text-lg truncate text-dark-chocolate">{name}</span>
+            <span className="font-rajdhani font-bold text-heading-lg truncate text-dark-chocolate">{name}</span>
             {status && <Badge variant={badgeVariant} size="sm">{status}</Badge>}
           </div>
-          <span className="text-sm text-warning-amber font-noto-sans">{type}</span>
+          <span className="text-body-sm text-warning-amber font-noto-sans">{type}</span>
         </div>
       </div>
       {contact && (

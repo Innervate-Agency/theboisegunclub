@@ -144,13 +144,13 @@ export default function FacilityCard({
 
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-xs">
-              <CardTitle className="text-lg font-rajdhani font-bold text-foreground group-hover:text-primary transition-colors">
+              <CardTitle className="text-heading-lg font-rajdhani font-bold text-foreground group-hover:text-primary transition-colors">
                 {title}
               </CardTitle>
             </div>
             
             {businessType && (
-              <p className="text-sm text-muted-foreground font-medium mt-xs">
+              <p className="text-body-sm text-muted-foreground font-medium mt-xs">
                 {businessType}
               </p>
             )}
@@ -168,7 +168,7 @@ export default function FacilityCard({
                     />
                   ))}
                 </div>
-                <span className="text-sm text-muted-foreground">
+                <span className="text-body-sm text-muted-foreground">
                   {rating.toFixed(1)} {reviewCount && `(${reviewCount} reviews)`}
                 </span>
               </div>
@@ -183,7 +183,7 @@ export default function FacilityCard({
         </CardDescription>
 
         {(location || hours || phone) && (
-          <div className="space-y-xs text-sm">
+          <div className="space-y-xs text-body-sm">
             {location && (
               <div className="flex items-center gap-xs text-muted-foreground">
                 <MapPin className="h-4 w-4 text-primary" />

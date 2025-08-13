@@ -211,7 +211,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                 <div className="bg-muted p-tiny rounded-xs border border-border">
                   <Settings className="h-5 w-5 text-card-foreground" />
                 </div>
-                <h2 className="text-lg font-rajdhani font-bold text-card-foreground">Accessibility</h2>
+                <h2 className="text-heading-lg font-rajdhani font-bold text-card-foreground">Accessibility</h2>
               </div>
               <Button
                 variant="solid-primary"
@@ -223,7 +223,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
               </Button>
             </div>
 
-            <div className="p-md pt-0 space-y-6">
+            <div className="p-md pt-0 space-y-base">
               {/* Theme Switcher */}
               <div className="space-y-3">
                 <h3 className="font-medium text-card-foreground">Theme</h3>

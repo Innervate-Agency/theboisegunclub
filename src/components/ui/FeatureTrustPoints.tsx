@@ -39,13 +39,13 @@ export const FeatureTrustPoints = ({
     <div className={cn(featureTrustPointsVariants({ variant }), className)} {...props}>
       {React.cloneElement(icon, { className: 'h-8 w-8 text-primary mb-base' })}
       <h3 className="font-rajdhani text-3xl font-bold">{title}</h3>
-      <p className="text-lg text-muted-foreground">{description}</p>
+      <p className="text-heading-lg text-muted-foreground">{description}</p>
       <Separator />
       <div className="space-y-md">
         {points.map((point, index) => (
           <div key={index} className="flex items-start gap-sm">
             {React.cloneElement(point.icon, { className: 'h-5 w-5 text-success' })}
-            <span className="text-sm text-muted-foreground">
+            <span className="text-body-sm text-muted-foreground">
               {point.text}
             </span>
           </div>

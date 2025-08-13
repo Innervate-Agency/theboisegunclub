@@ -97,25 +97,25 @@ export function EventCard({
               )}
             </div>
             
-            <h3 className="font-rajdhani font-bold text-lg text-card-foreground leading-tight line-clamp-2">
+            <h3 className="font-rajdhani font-bold text-heading-lg text-card-foreground leading-tight line-clamp-2">
               {title}
             </h3>
           </div>
           
           {price && (
             <div className="text-right ml-base">
-              <div className="text-lg font-rajdhani font-bold text-foreground">
+              <div className="text-heading-lg font-rajdhani font-bold text-foreground">
                 {price}
               </div>
             </div>
           )}
         </div>
 
-        <p className="text-sm text-muted-foreground line-clamp-3">
+        <p className="text-body-sm text-muted-foreground line-clamp-3">
           {description}
         </p>
 
-        <div className="space-y-xs text-sm">
+        <div className="space-y-xs text-body-sm">
           <div className="flex items-center gap-xs text-muted-foreground">
             <Calendar className="h-4 w-4 flex-shrink-0" />
             <span>{date}</span>
@@ -131,7 +131,7 @@ export function EventCard({
         </div>
 
         {capacity && (
-          <div className="flex items-center justify-between text-sm bg-muted/50 px-base py-xs rounded-sm">
+          <div className="flex items-center justify-between text-body-sm bg-muted/50 px-base py-xs rounded-sm">
             <div className="flex items-center gap-xs text-muted-foreground">
               <Users className="h-4 w-4" />
               <span>Capacity: {capacity}</span>

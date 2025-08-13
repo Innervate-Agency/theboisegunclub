@@ -19,7 +19,7 @@ const alertVariants = cva(
       },
       size: {
         sm: "px-xs py-tiny text-xs",
-        default: "p-sm text-sm",
+        default: "p-sm text-body-sm",
         lg: "p-md text-base",
       },
     },
@@ -91,7 +91,7 @@ const AlertDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("text-sm [&_p]:leading-relaxed", className)}
+    className={cn("text-body-sm [&_p]:leading-relaxed", className)}
     {...props}
   />
 ))

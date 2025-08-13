@@ -132,7 +132,7 @@ export function ZigzagHero({
           {/* Content Section */}
           <motion.div 
             className={cn(
-              "space-y-8",
+              "space-y-lg",
               isRightLayout ? "lg:order-2 text-right" : "lg:order-1 text-left"
             )}
             variants={containerVariants}
@@ -143,7 +143,7 @@ export function ZigzagHero({
             {breadcrumbs && (
               <motion.nav 
                 variants={itemVariants}
-                className={cn("flex items-center gap-tiny text-sm", isRightLayout ? "justify-end" : "justify-start")}
+                className={cn("flex items-center gap-tiny text-body-sm", isRightLayout ? "justify-end" : "justify-start")}
               >
                 {breadcrumbs.map((crumb, index) => (
                   <React.Fragment key={index}>
@@ -186,7 +186,7 @@ export function ZigzagHero({
             {subtitle && (
               <motion.p 
                 variants={itemVariants}
-              className="text-primary-foreground/90 font-rajdhani font-medium text-lg tracking-wide"
+              className="text-primary-foreground/90 font-rajdhani font-medium text-heading-lg tracking-wide"
               >
                 {subtitle}
               </motion.p>
@@ -218,7 +218,7 @@ export function ZigzagHero({
                   <Button 
                     size="lg" 
                     variant="default"
-                    className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90 font-semibold px-lg py-base text-lg shadow-commanding"
+                    className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90 font-semibold px-lg py-base text-heading-lg shadow-commanding"
                     onClick={primaryAction.onClick}
                   >
                     {primaryAction.label}
@@ -228,7 +228,7 @@ export function ZigzagHero({
                   <Button 
                     size="lg" 
                     variant="outline"
-                    className="border-border/50 text-foreground hover:bg-accent/10 font-semibold px-lg py-base text-lg"
+                    className="border-border/50 text-foreground hover:bg-accent/10 font-semibold px-lg py-base text-heading-lg"
                     onClick={secondaryAction.onClick}
                   >
                     {secondaryAction.label}
@@ -244,14 +244,14 @@ export function ZigzagHero({
                 className={cn("grid grid-cols-3 gap-lg pt-8", isRightLayout ? "text-right" : "text-left")}
               >
                 {stats.map((stat, index) => (
-                  <div key={index} className="space-y-2">
+                  <div key={index} className="space-y-tiny">
                     {stat.icon && (
                       <stat.icon className="h-8 w-8 text-primary-foreground/80 mx-auto" />
                     )}
                     <div className="text-3xl font-rajdhani font-bold text-primary-foreground">
                       {stat.value}
                     </div>
-                    <div className="text-sm text-primary-foreground/70 font-medium">
+                    <div className="text-body-sm text-primary-foreground/70 font-medium">
                       {stat.label}
                     </div>
                   </div>

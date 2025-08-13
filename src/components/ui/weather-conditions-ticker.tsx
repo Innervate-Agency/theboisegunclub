@@ -59,7 +59,7 @@ export function WeatherConditionsTicker({ conditions }: WeatherConditionsTickerP
       <div className="relative">
         {/* Header Label */}
         <div className="absolute left-0 top-0 bottom-0 bg-gradient-to-r from-nav-intel/20 to-transparent z-10 flex items-center px-lg">
-          <div className="flex items-center gap-xs text-sm font-rajdhani font-bold text-nav-intel">
+          <div className="flex items-center gap-xs text-body-sm font-rajdhani font-bold text-nav-intel">
             <Mountain className="h-4 w-4" />
             <span>LIVE CONDITIONS</span>
           </div>
@@ -72,10 +72,10 @@ export function WeatherConditionsTicker({ conditions }: WeatherConditionsTickerP
                 {/* Location & Weather */}
                 <div className="space-y-xs">
                   <div className="flex items-center gap-xs">
-                    <span className="font-rajdhani font-bold text-sm text-card-foreground">
+                    <span className="font-rajdhani font-bold text-body-sm text-card-foreground">
                       {condition.locationName}
                     </span>
-                    <span className="text-lg">{condition.weatherIcon}</span>
+                    <span className="text-heading-lg">{condition.weatherIcon}</span>
                   </div>
                   
                   <div className="flex items-center gap-base text-xs text-muted-foreground">

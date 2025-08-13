@@ -30,7 +30,7 @@ export function EventTicker({ events }: EventTickerProps) {
               <div className="flex items-center gap-xs">
                 <div className="space-y-xs">
                   <div className="flex items-center gap-xs">
-                    <span className="font-rajdhani font-bold text-sm text-card-foreground">
+                    <span className="font-rajdhani font-bold text-body-sm text-card-foreground">
                       {event.title}
                     </span>
                     <Badge variant="outline" className="text-xs">
