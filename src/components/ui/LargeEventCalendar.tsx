@@ -76,10 +76,10 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
   return (
     <div className={cn("w-full", className)}>
       {/* Hero Header */}
-      <div className="bg-gradient-to-r from-slate-blue to-slate-blue text-white py-3xl">
+      <div className="bg-gradient-to-r from-slate-blue to-slate-blue text-primary-foreground py-3xl">
         <div className="container mx-auto max-w-site px-lg text-center">
           <h1 className="font-rajdhani text-6xl font-bold mb-base">Event Calendar</h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
             Discover upcoming firearms events across the Treasure Valley. Click any date to see events.
           </p>
         </div>
@@ -169,7 +169,7 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
                             <Badge className={cn(
                               "text-xs h-5",
                               dayEvents.some(e => e.featured) 
-                                ? "bg-rusty-orange text-white" 
+                                ? "bg-rusty-orange text-primary-foreground" 
                                 : "bg-muted text-muted-foreground"
                             )}>
                               {dayEvents.length}
@@ -236,7 +236,7 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
                               </Badge>
                             </div>
                             {event.featured && (
-                              <Badge className="bg-rusty-orange text-white">Featured</Badge>
+                              <Badge className="bg-rusty-orange text-primary-foreground">Featured</Badge>
                             )}
                           </div>
 

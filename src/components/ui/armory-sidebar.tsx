@@ -31,7 +31,7 @@ export function ArmorySidebar() {
       <SidebarHeader className="border-b px-4 py-3">
         <div className="flex items-center space-x-3">
           <div className="flex h-8 w-8 items-center justify-center rounded-xs bg-foothills-purple">
-            <Shield className="h-4 w-4 text-white" />
+            <Shield className="h-4 w-4 text-primary-foreground" />
           </div>
           <div className="group-data-[collapsible=icon]:hidden">
             <h2 className="text-sm font-semibold font-rajdhani">The Armory</h2>
