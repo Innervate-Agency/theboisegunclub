@@ -30,19 +30,6 @@ This file provides guidance to Claude Code when working with this repository.
 - **Framer Motion** (Magic Line navigation, micro-animations)
 - **Phosphor Icons** (Primary icon system with tactical aesthetic)
 
-### Project Structure
-```
-src/
-├── app/                    # Pages & layouts
-├── components/ui/          # shadcn/ui components (80+)
-│   ├── micro-animations.tsx # HoverArrow, PlusMinusToggle, XOToggle, ChevronRotate
-│   ├── loading-spinner.tsx  # Branded Diamond spinner component
-│   └── site-navigation.tsx  # Magic Line navigation with spring physics
-├── lib/                    # Utilities (cn function)
-├── stories/                # Storybook stories
-└── hooks/                  # Custom React hooks (useAccessibilitySettings)
-```
-
 ### Path Aliases
 - `@/components` → `src/components`
 - `@/lib` → `src/lib`

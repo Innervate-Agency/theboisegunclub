@@ -20,12 +20,12 @@ import {
 import { useAccessibility } from "@/hooks/use-accessibility"
 
 const fabVariants = cva(
-  "fixed bottom-md left-6 z-50 rounded-full shadow-present hover:shadow-elevated transition-all duration-200",
+  "fixed bottom-md left-6 z-50 rounded-full shadow-present hover:shadow-elevated hover:bg-accent/10 transition-all duration-200",
   {
     variants: {
       state: {
-        closed: "w-14 h-14 mica border border-border hover:shadow-elevated",
-        open: "w-16 h-16 mica border border-border hover:shadow-elevated"
+        closed: "w-14 h-14 mica-card border border-border",
+        open: "w-16 h-16 mica-card border border-border"
       }
     },
     defaultVariants: {
@@ -35,7 +35,7 @@ const fabVariants = cva(
 )
 
 const menuVariants = cva(
-  "fixed bottom-24 left-6 z-40 mica border border-border rounded-sm shadow-present hover:shadow-elevated p-md min-w-[320px] max-w-[380px] transition-all duration-200",
+  "fixed bottom-24 left-6 z-40 mica-modal border border-border rounded-sm shadow-present hover:shadow-elevated p-md min-w-[320px] max-w-[380px] transition-all duration-200",
   {
     variants: {
       open: {
