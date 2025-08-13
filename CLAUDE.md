@@ -78,65 +78,17 @@ This file provides guidance to Claude Code when working with this repository.
 ## Business Context
 **The Boise Gun Club** is a regional marketplace/directory platform for the entire Treasure Valley firearms community - NOT a single gun club. Design for scalable systems: directory listings, event aggregation, forum categories.
 
-## Storybook - BULLETPROOF SETUP (CRITICAL - READ FIRST)
+## Storybook Setup
 
-### 🔒 **BULLETPROOF FILE ORGANIZATION**
-
+### File Organization
 - **Stories**: `src/stories/*.stories.tsx` - Component stories ONLY
 - **Documentation**: `src/docs/*.mdx` - Safe, curated documentation ONLY  
 - **NEVER**: Put loose `.mdx` files in `src/stories/` (will break build)
 
-### 🛡️ **SAFEGUARDS AGAINST BREAKAGE**
-
-1. **Before adding ANY file**: Run `npm run storybook:validate`
-2. **Before committing**: Run `npm run storybook:fix && npm run storybook`
-3. **Documentation rule**: ONLY put `.mdx` files in `src/docs/`
-4. **Story rule**: ONLY put `.stories.*` files in `src/stories/`
-
-### Before Starting Storybook
-
-1. **If MDX errors occur**: Run `npm run storybook:reset` to clear cache and rebuild
-2. **Configuration issues**: Run `npm run storybook:fix` for automated fixes
-3. **Framework conflicts**: Ensure `.storybook/main.ts` uses `@storybook/nextjs-vite`
-4. **Preview conflicts**: Keep ONLY `.storybook/preview.tsx` (delete any preview.ts)
-
-### Common Error Fixes
-
-- **"MDX parse failed"** → Missing `@storybook/addon-docs` in main.ts or backticks in MDX content
-- **"Webpack compilation error"** → Run `npm run storybook:reset` to clear cache
-- **"Multiple preview files"** → Delete `.storybook/preview.ts`, keep `preview.tsx`
-- **"Framework mismatch"** → Use `@storybook/nextjs-vite` not `@storybook/nextjs`
-- **"Vite parsing errors"** → Escape backticks in MDX files or use code blocks
-
-### Required Storybook Configuration
-
-```typescript
-// .storybook/main.ts - EXACT CONFIGURATION
-import type { StorybookConfig } from '@storybook/nextjs-vite';
-
-const config: StorybookConfig = {
-  stories: [
-    // BULLETPROOF: Only load .stories files and curated docs
-    '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-    '../src/docs/*.mdx', // Safe, curated documentation only
-  ],
-  addons: [
-    '@storybook/addon-docs', // REQUIRED for MDX support
-    '@storybook/addon-a11y',
-    '@storybook/addon-themes',
-  ],
-  framework: { name: '@storybook/nextjs-vite', options: {} },
-  docs: { autodocs: 'tag' },
-  staticDirs: ['../public'],
-};
-```
-
-### Prevention Rules
-
-- **NEVER** manually edit Storybook config without running the fix script after
-- **ALWAYS** run `npm run storybook:fix` after configuration changes
-- **NEVER** mix `@storybook/nextjs` and `@storybook/nextjs-vite`
-- **ALWAYS** include `@storybook/addon-docs` for MDX support in Storybook 9
+### Commands
+- **Before committing**: Run `npm run storybook:fix && npm run storybook`
+- **If errors occur**: Run `npm run storybook:reset` to clear cache
+- **Framework**: Ensure `.storybook/main.ts` uses `@storybook/nextjs-vite`
 
 ## ✅ COMPLETED MILESTONE: Premium Hero Section & Revenue-Ready Advertising System (2025-08-10)
 
