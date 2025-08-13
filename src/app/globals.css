@@ -588,6 +588,131 @@
   .rounded-pill { border-radius: 50rem; }               /* Pill badges */
   .rounded-full { border-radius: 9999px; }              /* Circular avatars */
 
+  /* ================== POSITION UTILITIES ================== */
+  /* Position utilities mapped to spacing design tokens */
+  .top-micro { top: 0.125rem; }       /* 2px */
+  .top-tiny { top: 0.25rem; }         /* 4px */
+  .top-xs { top: 0.5rem; }            /* 8px */
+  .top-sm { top: 0.75rem; }           /* 12px */
+  .top-base { top: 1rem; }            /* 16px */
+  .top-md { top: 1.5rem; }            /* 24px */
+  .top-lg { top: 2rem; }              /* 32px */
+  
+  .bottom-micro { bottom: 0.125rem; } /* 2px */
+  .bottom-tiny { bottom: 0.25rem; }   /* 4px */
+  .bottom-xs { bottom: 0.5rem; }      /* 8px */
+  .bottom-sm { bottom: 0.75rem; }     /* 12px */
+  .bottom-base { bottom: 1rem; }      /* 16px */
+  .bottom-md { bottom: 1.5rem; }      /* 24px */
+  .bottom-lg { bottom: 2rem; }        /* 32px */
+  
+  .left-micro { left: 0.125rem; }     /* 2px */
+  .left-tiny { left: 0.25rem; }       /* 4px */
+  .left-xs { left: 0.5rem; }          /* 8px */
+  .left-sm { left: 0.75rem; }         /* 12px */
+  .left-base { left: 1rem; }          /* 16px */
+  .left-md { left: 1.5rem; }          /* 24px */
+  .left-lg { left: 2rem; }            /* 32px */
+  
+  .right-micro { right: 0.125rem; }   /* 2px */
+  .right-tiny { right: 0.25rem; }     /* 4px */
+  .right-xs { right: 0.5rem; }        /* 8px */
+  .right-sm { right: 0.75rem; }       /* 12px */
+  .right-base { right: 1rem; }        /* 16px */
+  .right-md { right: 1.5rem; }        /* 24px */
+  .right-lg { right: 2rem; }          /* 32px */
+
+  /* ================== SPACING UTILITIES ================== */
+  /* Padding utilities mapped to spacing design tokens */
+  .p-micro { padding: 0.125rem; }     /* 2px */
+  .p-tiny { padding: 0.25rem; }       /* 4px */
+  .p-xs { padding: 0.5rem; }          /* 8px */
+  .p-sm { padding: 0.75rem; }         /* 12px */
+  .p-base { padding: 1rem; }          /* 16px */
+  .p-md { padding: 1.5rem; }          /* 24px */
+  .p-lg { padding: 2rem; }            /* 32px */
+  .p-xl { padding: 3rem; }            /* 48px */
+  
+  /* Padding X-axis (horizontal) */
+  .px-micro { padding-left: 0.125rem; padding-right: 0.125rem; }  /* 2px */
+  .px-tiny { padding-left: 0.25rem; padding-right: 0.25rem; }     /* 4px */
+  .px-xs { padding-left: 0.5rem; padding-right: 0.5rem; }         /* 8px */
+  .px-sm { padding-left: 0.75rem; padding-right: 0.75rem; }       /* 12px */
+  .px-base { padding-left: 1rem; padding-right: 1rem; }           /* 16px */
+  .px-md { padding-left: 1.5rem; padding-right: 1.5rem; }         /* 24px */
+  .px-lg { padding-left: 2rem; padding-right: 2rem; }             /* 32px */
+  .px-xl { padding-left: 3rem; padding-right: 3rem; }             /* 48px */
+  
+  /* Padding Y-axis (vertical) */
+  .py-micro { padding-top: 0.125rem; padding-bottom: 0.125rem; }  /* 2px */
+  .py-tiny { padding-top: 0.25rem; padding-bottom: 0.25rem; }     /* 4px */
+  .py-xs { padding-top: 0.5rem; padding-bottom: 0.5rem; }         /* 8px */
+  .py-sm { padding-top: 0.75rem; padding-bottom: 0.75rem; }       /* 12px */
+  .py-base { padding-top: 1rem; padding-bottom: 1rem; }           /* 16px */
+  .py-md { padding-top: 1.5rem; padding-bottom: 1.5rem; }         /* 24px */
+  .py-lg { padding-top: 2rem; padding-bottom: 2rem; }             /* 32px */
+  .py-xl { padding-top: 3rem; padding-bottom: 3rem; }             /* 48px */
+  
+  /* Individual padding sides */
+  .pt-xs { padding-top: 0.5rem; }     /* 8px */
+  .pt-sm { padding-top: 0.75rem; }    /* 12px */
+  .pt-base { padding-top: 1rem; }     /* 16px */
+  .pt-lg { padding-top: 2rem; }       /* 32px */
+  .pt-xl { padding-top: 3rem; }       /* 48px */
+  
+  .pb-base { padding-bottom: 1rem; }  /* 16px */
+  
+  .pl-lg { padding-left: 2rem; }      /* 32px */
+  .pr-xs { padding-right: 0.5rem; }   /* 8px */
+  .pr-lg { padding-right: 2rem; }     /* 32px */
+  
+  /* Margin utilities mapped to spacing design tokens */
+  .m-xs { margin: 0.5rem; }           /* 8px */
+  
+  /* Margin X-axis (horizontal) */
+  .mx-tiny { margin-left: 0.25rem; margin-right: 0.25rem; }       /* 4px */
+  .mx-xs { margin-left: 0.5rem; margin-right: 0.5rem; }           /* 8px */
+  
+  /* Margin Y-axis (vertical) */
+  .my-micro { margin-top: 0.125rem; margin-bottom: 0.125rem; }    /* 2px */
+  .my-lg { margin-top: 2rem; margin-bottom: 2rem; }               /* 32px */
+  
+  /* Individual margin sides */
+  .mt-micro { margin-top: 0.125rem; } /* 2px */
+  .mt-tiny { margin-top: 0.25rem; }   /* 4px */
+  .mt-xs { margin-top: 0.5rem; }      /* 8px */
+  .mt-base { margin-top: 1rem; }      /* 16px */
+  .mt-md { margin-top: 1.5rem; }      /* 24px */
+  .mt-lg { margin-top: 2rem; }        /* 32px */
+  
+  .mb-micro { margin-bottom: 0.125rem; } /* 2px */
+  .mb-tiny { margin-bottom: 0.25rem; }   /* 4px */
+  .mb-xs { margin-bottom: 0.5rem; }      /* 8px */
+  .mb-sm { margin-bottom: 0.75rem; }     /* 12px */
+  .mb-base { margin-bottom: 1rem; }      /* 16px */
+  .mb-md { margin-bottom: 1.5rem; }      /* 24px */
+  .mb-lg { margin-bottom: 2rem; }        /* 32px */
+  .mb-xl { margin-bottom: 3rem; }        /* 48px */
+  
+  .ml-micro { margin-left: 0.125rem; }   /* 2px */
+  .ml-tiny { margin-left: 0.25rem; }     /* 4px */
+  .ml-xs { margin-left: 0.5rem; }        /* 8px */
+  .ml-base { margin-left: 1rem; }        /* 16px */
+  
+  .mr-micro { margin-right: 0.125rem; }  /* 2px */
+  .mr-tiny { margin-right: 0.25rem; }    /* 4px */
+  .mr-xs { margin-right: 0.5rem; }       /* 8px */
+  
+  /* Gap utilities for flexbox/grid */
+  .gap-micro { gap: 0.125rem; }       /* 2px */
+  .gap-tiny { gap: 0.25rem; }         /* 4px */
+  .gap-xs { gap: 0.5rem; }            /* 8px */
+  .gap-sm { gap: 0.75rem; }           /* 12px */
+  .gap-base { gap: 1rem; }            /* 16px */
+  .gap-md { gap: 1.5rem; }            /* 24px */
+  .gap-lg { gap: 2rem; }              /* 32px */
+  .gap-xl { gap: 3rem; }              /* 48px */
+
   /* ================== PAGE-SPECIFIC THEMING SYSTEM ================== */
   
   /* Home Theme - 1970s Butter Yellow/Golden Sunrise */
