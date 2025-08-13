@@ -9,17 +9,17 @@ const productShowcaseCardVariants = cva(
   {
     variants: {
       variant: {
-        // Default: Clean professional showcase
-        default: "shadow-flat hover:shadow-elevated border border-border/20",
+        // Default: Standard floating showcase
+        default: "shadow-present hover:shadow-elevated border border-border/20",
         
-        // Premium: Copper-orange gradient splash
-        premium: "shadow-flat hover:shadow-elevated border border-rusty-orange/20 relative after:absolute after:inset-0 after:bg-gradient-to-br after:from-rusty-orange/3 after:via-transparent after:to-sandy-ochre/2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 after:pointer-events-none",
+        // Premium: Important showcase with dramatic hover
+        premium: "shadow-elevated hover:shadow-prominent border border-rusty-orange/20 relative after:absolute after:inset-0 after:bg-gradient-to-br after:from-rusty-orange/3 after:via-transparent after:to-sandy-ochre/2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 after:pointer-events-none",
         
-        // Elite: Blue gradient splash  
-        elite: "shadow-flat hover:shadow-elevated border border-slate-blue/20 relative after:absolute after:inset-0 after:bg-gradient-to-br after:from-slate-blue/4 after:via-transparent after:to-scope-blue/3 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 after:pointer-events-none",
+        // Elite: Critical showcase with commanding presence
+        elite: "shadow-prominent hover:shadow-commanding border border-slate-blue/20 relative after:absolute after:inset-0 after:bg-gradient-to-br after:from-slate-blue/4 after:via-transparent after:to-scope-blue/3 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 after:pointer-events-none",
         
-        // Success: Green gradient splash
-        success: "shadow-flat hover:shadow-elevated border border-rifling-green/20 relative after:absolute after:inset-0 after:bg-gradient-to-br after:from-rifling-green/3 after:via-transparent after:to-sagebrush-green/2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 after:pointer-events-none"
+        // Success: Success showcase with strong presence
+        success: "shadow-elevated hover:shadow-prominent border border-rifling-green/20 relative after:absolute after:inset-0 after:bg-gradient-to-br after:from-rifling-green/3 after:via-transparent after:to-sagebrush-green/2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500 after:pointer-events-none"
       },
       size: {
         default: "w-full max-w-sm",
@@ -69,7 +69,7 @@ const ProductShowcaseCard = React.forwardRef<HTMLDivElement, ProductShowcaseCard
           )} />
           
           {/* Image Frame - Always visible with subtle styling */}
-          <div className="relative z-10 w-32 h-32 rounded-none bg-card border border-border/50 flex items-center justify-center shadow-flat">
+          <div className="relative z-10 w-32 h-32 rounded-none bg-card border border-border/50 flex items-center justify-center">
             {imageSlot || (
               <div className="w-16 h-16 rounded bg-muted flex items-center justify-center">
                 <div className="size-8 rounded bg-muted-foreground/20" />

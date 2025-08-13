@@ -9,13 +9,13 @@ const calloutCardVariants = cva(
   {
     variants: {
       variant: {
-        // STRATEGIC RESTRAINT: Shadow-first approach with gradient accents like VendorCard
-        default: "bg-card shadow-flat hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
-        subtle: "bg-muted shadow-flat hover:shadow-elevated hover:bg-card",
-        animated: "bg-card shadow-flat hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-none before:pointer-events-none",
-        important: "bg-card shadow-flat hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-safety-red after:to-muzzle-flash after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-safety-red/6 before:via-transparent before:to-muzzle-flash/4 before:rounded-none before:pointer-events-none",
-        info: "bg-card shadow-flat hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-scope-blue after:to-slate-blue after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-scope-blue/4 before:via-transparent before:to-slate-blue/3 before:rounded-none before:pointer-events-none",
-        glass: "mica-card shadow-flat hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg"
+        // Standard callout - floating above content
+        default: "bg-card shadow-elevated hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm",
+        subtle: "bg-muted shadow-elevated hover:shadow-elevated hover:bg-card",
+        animated: "bg-card shadow-elevated hover:shadow-prominent relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-none before:pointer-events-none",
+        important: "bg-card shadow-prominent hover:shadow-commanding relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-safety-red after:to-muzzle-flash after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-safety-red/6 before:via-transparent before:to-muzzle-flash/4 before:rounded-none before:pointer-events-none",
+        info: "bg-card shadow-elevated hover:shadow-prominent relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-scope-blue after:to-slate-blue after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-scope-blue/4 before:via-transparent before:to-slate-blue/3 before:rounded-none before:pointer-events-none",
+        glass: "mica-card shadow-elevated hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm"
       }
     },
     defaultVariants: {
@@ -130,7 +130,6 @@ export function SubtleCallout({
     <div 
       className={cn(
         calloutCardVariants({ variant: "subtle" }), 
-        "shadow-flat hover:shadow-flat",
         className
       )} 
       {...props}

@@ -9,32 +9,32 @@ const enhancedCardVariants = cva(
   {
     variants: {
       variant: {
-        // Default: Clean shadow hierarchy
-        default: "bg-card text-card-foreground shadow-flat hover:shadow-present",
+        // Default: Standard floating card elevation
+        default: "bg-card text-card-foreground shadow-present hover:shadow-elevated",
         
-        // Premium: Consistent shadows with strategic gradient accent
-        premium: "bg-card text-card-foreground shadow-flat hover:shadow-present  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-none before:pointer-events-none",
+        // Premium: Important content with strategic gradient accent
+        premium: "bg-card text-card-foreground shadow-elevated hover:shadow-prominent relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-none before:pointer-events-none",
         
-        // Elite: Consistent shadows with enhanced visual impact via background  
-        elite: "bg-card text-card-foreground shadow-flat hover:shadow-present  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/6 before:via-transparent before:to-sandy-ochre/4 before:rounded-none before:pointer-events-none",
+        // Elite: Critical content with enhanced visual impact 
+        elite: "bg-card text-card-foreground shadow-prominent hover:shadow-commanding relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/6 before:via-transparent before:to-sandy-ochre/4 before:rounded-none before:pointer-events-none",
         
-        // Glass: Modern mica effect with consistent shadows
-        glass: "mica-card text-card-foreground shadow-flat hover:shadow-present backdrop-blur-sm relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        // Glass: Floating mica card with proper depth
+        glass: "mica-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
-        // Glass Premium: Enhanced mica with strategic accent
-        "glass-premium": "mica-card-premium text-card-foreground shadow-flat hover:shadow-present relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        // Glass Premium: Enhanced mica with prominent depth
+        "glass-premium": "mica-card text-card-foreground shadow-elevated hover:shadow-prominent relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
-        // Fire: Center-positioned gradient accent
-        fire: "bg-card text-card-foreground shadow-flat hover:shadow-present  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        // Fire: Attention-grabbing with dramatic hover
+        fire: "bg-card text-card-foreground shadow-elevated hover:shadow-commanding relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
-        // Fire Blue: Cool gradient with center positioning
-        "fire-blue": "bg-card text-card-foreground shadow-flat hover:shadow-present  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        // Fire Blue: Cool gradient with strong interaction
+        "fire-blue": "bg-card text-card-foreground shadow-elevated hover:shadow-commanding relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
-        // Muted: Subtle variant with clean shadows
-        muted: "bg-muted text-muted-foreground shadow-flat hover:shadow-present hover:bg-card",
+        // Muted: Subtle floating content
+        muted: "bg-muted text-muted-foreground shadow-present hover:shadow-elevated hover:bg-card",
         
-        // Interactive: Clickable with shadow feedback
-        interactive: "bg-card text-card-foreground shadow-flat hover:shadow-present cursor-pointer",
+        // Interactive: Standard interactive card with dramatic hover
+        interactive: "bg-card text-card-foreground shadow-present hover:shadow-commanding cursor-pointer",
       },
       size: {
         // Proper spacing system application
@@ -46,10 +46,11 @@ const enhancedCardVariants = cva(
       },
       radius: {
         none: "rounded-none",
-        sm: "rounded-none",       // --radius-sm
-        default: "rounded-none",  // --radius-base (boxy with slight curve)
-        lg: "rounded-xs",       // --radius-lg
-        full: "rounded-overlay",    // --radius-2xl
+        xs: "rounded-xs",
+        default: "rounded-sm",
+        md: "rounded-md",
+        lg: "rounded-lg",
+        full: "rounded-full",
       }
     },
     defaultVariants: {

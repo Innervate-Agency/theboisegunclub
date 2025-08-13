@@ -17,16 +17,16 @@ const vendorCardVariants = cva(
     variants: {
       tier: {
         // FREE: Clean baseline - foundational presence
-        free: "shadow-present hover:shadow-elevated",
+        free: "shadow-present hover:shadow-hero",
         
         // COPPER: Enhanced copper presence - premium depth with tactical warmth
-        copper: "shadow-elevated hover:shadow-prominent bg-rusty-orange/[0.02] hover:bg-rusty-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        copper: "shadow-present hover:shadow-hero bg-rusty-orange/[0.02] hover:bg-rusty-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm",
         
         // SILVER: Professional prominence with sophisticated glassmorphism
-        silver: "relative shadow-prominent hover:shadow-commanding bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-none before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-warm-stone after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg",
+        silver: "relative shadow-present hover:shadow-hero bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-none before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-warm-stone after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-sm",
         
         // GOLD: Hero-level commanding presence with premium tactical depth
-        gold: "relative shadow-commanding hover:shadow-hero bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-warm-stone/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-rusty-orange/14 dark:before:to-rusty-orange/12 before:rounded-none before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-rusty-orange after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
+        gold: "relative shadow-present hover:shadow-hero mica-card before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-rusty-orange/14 dark:before:to-rusty-orange/12 before:rounded-none before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-rusty-orange after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-sm"
       },
       size: {
         sm: "p-base",           // 16px - compact cards
@@ -69,13 +69,13 @@ export interface VendorCardProps
 }
 
 // Map business types to badge variants
-const getBusinessBadgeVariant = (businessType: string) => {
-  if (businessType.includes('FFL') || businessType.includes('Dealer')) return 'ffl'
-  if (businessType.includes('Range') || businessType.includes('Club')) return 'range'
-  if (businessType.includes('Gunsmith') || businessType.includes('Custom')) return 'gunsmith'
-  if (businessType.includes('Training') || businessType.includes('Academy') || businessType.includes('Education')) return 'training_facility'
-  if (businessType.includes('Gun Club') || businessType.includes('Shooting Club')) return 'club'
-  return 'range' // default
+const getBusinessBadgeVariant = (businessType: string): VariantProps<typeof Badge>["variant"] => {
+    if (businessType.includes('FFL') || businessType.includes('Dealer')) return 'slate-blue';
+    if (businessType.includes('Range') || businessType.includes('Club')) return 'lodgepole-green';
+    if (businessType.includes('Gunsmith') || businessType.includes('Custom')) return 'warm-stone';
+    if (businessType.includes('Training') || businessType.includes('Academy') || businessType.includes('Education')) return 'info-river';
+    if (businessType.includes('Gun Club') || businessType.includes('Shooting Club')) return 'sagebrush-green';
+    return 'default';
 }
 
 export function VendorCard({
@@ -134,7 +134,7 @@ export function VendorCard({
                 {businessName}
               </h3>
               <Badge 
-                variant={getBusinessBadgeVariant(businessType) as any}
+                variant={getBusinessBadgeVariant(businessType)}
                 size="sm"
               >
                 {businessType.includes('Range') ? 'Range' :
@@ -226,7 +226,7 @@ export function VendorCard({
           {specialties.slice(0, 3).map((specialty, index) => (
             <Badge 
               key={index} 
-              variant={tier === 'gold' ? 'elite' : tier === 'silver' ? 'info' : 'default'} 
+              variant={tier === 'gold' ? 'foothills-purple' : tier === 'silver' ? 'info-river' : 'default'} 
               size="sm"
             >
               {specialty}
@@ -234,7 +234,7 @@ export function VendorCard({
           ))}
           {specialties.length > 3 && (
             <Badge 
-              variant={tier === 'gold' ? 'elite' : tier === 'silver' ? 'info' : 'default'} 
+              variant={tier === 'gold' ? 'foothills-purple' : tier === 'silver' ? 'info-river' : 'default'} 
               size="sm"
             >
               +{specialties.length - 3} more

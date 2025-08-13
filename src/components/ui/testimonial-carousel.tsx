@@ -112,10 +112,10 @@ export function TestimonialCarousel({
         
         {/* Testimonial Card */}
         <div className="relative">
-          <div className="bg-card text-card-foreground rounded-xs p-lg md:p-micro2 shadow-flat hover:shadow-present transition-shadow duration-200">
+          <div className="bg-card text-card-foreground rounded-xs p-lg md:p-micro2 shadow-present hover:shadow-elevated transition-shadow duration-200">
             {/* Quote Icon */}
             <div className="absolute -top-sm left-8">
-              <div className="bg-sandy-ochre rounded-full p-sm shadow-present">
+              <div className="bg-sandy-ochre rounded-full p-sm">
                 <Quote className="icon-md text-foreground" />
               </div>
             </div>
@@ -177,7 +177,7 @@ export function TestimonialCarousel({
               <Button
                 variant="secondary"
                 size="icon"
-                className="absolute left-4 top-micro/2 -translate-y-1/2 bg-card hover:bg-sandy-ochre shadow-flat"
+                className="absolute left-4 top-micro/2 -translate-y-1/2 bg-card hover:bg-sandy-ochre shadow-none"
                 onClick={goToPrevious}
               >
                 <ChevronLeft className="icon-sm" />
@@ -186,7 +186,7 @@ export function TestimonialCarousel({
               <Button
                 variant="secondary"
                 size="icon"
-                className="absolute right-4 top-micro/2 -translate-y-1/2 bg-card hover:bg-sandy-ochre shadow-flat"
+                className="absolute right-4 top-micro/2 -translate-y-1/2 bg-card hover:bg-sandy-ochre shadow-none"
                 onClick={goToNext}
               >
                 <ChevronRight className="icon-sm" />

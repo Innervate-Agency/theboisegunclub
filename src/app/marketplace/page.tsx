@@ -8,7 +8,6 @@ import StatCard from '@/components/ui/StatCard'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
-import AccessibilityFAB from '@/components/ui/AccessibilityFAB'
 import { cn } from '@/lib/utils'
 import { 
   Search, ShoppingCart, Filter, ExternalLink, ArrowRight, 
@@ -798,7 +797,6 @@ export default function MarketplacePage() {
       </section>
       </div>
       <SiteFooter />
-      <AccessibilityFAB />
     </>
   )
 }

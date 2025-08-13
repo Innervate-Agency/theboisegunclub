@@ -4,7 +4,6 @@ import StatCard from '@/components/ui/StatCard'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
-import AccessibilityFAB from '@/components/ui/AccessibilityFAB'
 import { EventTicker } from '@/components/ui/event-ticker'
 import { BlogList } from '@/components/ui/blog-article'
 import { contentService } from '@/lib/content-service'
@@ -270,7 +269,6 @@ export default async function GuidesPage() {
       </section>
 
       <SiteFooter />
-      <AccessibilityFAB />
     </div>
   )
 }

@@ -30,7 +30,7 @@ export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background">
       <div className="container mx-auto max-w-site px-md">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -44,7 +44,7 @@ export function SiteHeader() {
                 <span className="font-rajdhani font-bold text-heading-lg text-sandy-ochre ml-xs">GUN CLUB</span>
               </div>
             </Link>
-            <Badge variant="outline" className="hidden md:block text-xs text-muted-foreground">
+            <Badge variant="default" className="hidden md:block text-xs text-muted-foreground">
               Community Platform
             </Badge>
           </div>

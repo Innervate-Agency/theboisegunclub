@@ -41,7 +41,7 @@ const AlertDialogContent = React.forwardRef<
       )}
       {...props}
     >
-      <div className="mica-modal w-full max-w-lg text-popover-foreground p-md grid gap-base rounded-sm data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95">
+      <div className="mica-modal shadow-modal w-full max-w-lg text-popover-foreground p-md grid gap-base rounded-md data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95">
         {children}
       </div>
     </AlertDialogPrimitive.Content>

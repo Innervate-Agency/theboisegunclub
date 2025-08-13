@@ -104,7 +104,7 @@ export function BlogCard({
       {/* Featured Badge */}
       {article.featured && variant === "featured" && (
         <div className="absolute top-sm left-4 z-10">
-          <Badge variant="elite" className="font-rajdhani font-bold">
+          <Badge variant="featured" className="font-rajdhani font-bold">
             Featured
           </Badge>
         </div>
@@ -419,7 +419,7 @@ export function BlogDetail({
             <div className="space-y-md mb-lg">
               {/* Category & Meta */}
               <div className="flex items-center gap-base">
-                <Badge variant="premium" className="font-rajdhani font-bold">
+                <Badge variant="default" className="font-rajdhani font-bold">
                   {article.category}
                 </Badge>
                 <div className="flex items-center gap-base text-body-sm text-muted-foreground">

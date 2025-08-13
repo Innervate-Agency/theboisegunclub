@@ -3,7 +3,6 @@ import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Loader2 } from "lucide-react"
-import { Diamond } from "@phosphor-icons/react"
 import { HoverArrow, PlusMinusToggle, XOToggle, ChevronRotate } from "./micro-animations"
 
 const buttonVariants = cva(
@@ -11,35 +10,35 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-present hover:shadow-elevated",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-present hover:shadow-elevated",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground shadow-whisper hover:shadow-present",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-whisper hover:shadow-present",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        premium: "bg-gradient-to-r from-rusty-orange to-sandy-ochre text-white shadow-commanding hover:shadow-hero transition-all duration-300 ease-out hover:scale-105",
-        glass: "bg-popover/10 backdrop-blur-sm text-foreground border border-border/20 shadow-elevated hover:shadow-prominent hover:bg-popover/20",
+        premium: "bg-gradient-to-r from-rusty-orange to-sandy-ochre text-white transition-all duration-300 ease-out hover:scale-105",
+        glass: "bg-popover/10 backdrop-blur-sm text-foreground border border-border/20 hover:bg-popover/20",
         flat: "bg-transparent text-foreground hover:bg-muted/50",
 
         // Solid Variants
-        "solid-primary": "bg-slate-blue text-white hover:bg-slate-blue/90 shadow-present hover:shadow-elevated",
-        "solid-accent": "bg-rusty-orange text-white hover:bg-rusty-orange/90 shadow-present hover:shadow-elevated",
+        "solid-primary": "bg-slate-blue text-white hover:bg-slate-blue/90",
+        "solid-accent": "bg-rusty-orange text-white hover:bg-rusty-orange/90",
         
         // Micro Variant
-        micro: "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-card-foreground shadow-whisper hover:shadow-present text-xs px-tiny py-micro h-7",
+        micro: "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-card-foreground text-xs px-tiny py-micro h-7",
 
         // Fire Variants
-        fire: "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 hover:after:h-1",
-        "fire-blue": "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-slate-blue after:to-info-river after:transition-all after:duration-300 hover:after:h-1",
-        "fire-green": "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-sagebrush-green after:to-lodgepole-green after:transition-all after:duration-300 hover:after:h-1",
-        "fire-purple": "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-foothills-purple after:to-canyon-clay after:transition-all after:duration-300 hover:after:h-1",
+        fire: "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 hover:after:h-1",
+        "fire-blue": "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-slate-blue after:to-info-river after:transition-all after:duration-300 hover:after:h-1",
+        "fire-green": "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-sagebrush-green after:to-lodgepole-green after:transition-all after:duration-300 hover:after:h-1",
+        "fire-purple": "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-foothills-purple after:to-canyon-clay after:transition-all after:duration-300 hover:after:h-1",
       },
       size: {
-        default: "h-button-lg px-sm py-tiny",
-        sm: "h-button rounded-sm px-xs"
-        lg: "h-11 rounded-xs px-lg"
-        xl: "h-12 rounded-xs px-xl text-heading-lg"
-        icon: "h-button-lg w-10",
+        default: "h-10 px-sm py-tiny rounded-sm",
+        sm: "h-9 rounded-sm px-xs",
+        lg: "h-11 rounded-sm px-lg",
+        xl: "h-12 rounded-lg px-xl text-heading-lg",
+        icon: "h-10 w-10 rounded-full",
       },
     },
     defaultVariants: {
@@ -116,7 +115,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ) : (
           // Normal button rendering with loading spinner and animations
           <>
-            {loading ? <Diamond className="mr-tiny size-4 animate-spin" weight="bold" /> : null}
+            {loading ? <Loader2 className="mr-tiny size-4 animate-spin" /> : null}
             {children}
             {renderAnimation()}
           </>

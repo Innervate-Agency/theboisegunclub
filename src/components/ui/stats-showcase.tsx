@@ -85,7 +85,7 @@ export function StatsShowcase({
             return (
               <div
                 key={index}
-                className="group relative bg-card border-border rounded-sm p-md shadow-flat hover:shadow-present transition-all duration-200 ease-out"
+                className="group relative bg-card border-border rounded-sm p-md shadow-present hover:shadow-elevated transition-all duration-200 ease-out"
               >
                 <div className="space-y-(--spacing-base)">
                   {/* Icon and Value */}

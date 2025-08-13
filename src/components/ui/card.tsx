@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 
 const cardVariants = cva(
   // TBGC Design System: Square tactical aesthetic with dramatic shadow hierarchy
-  "relative flex flex-col rounded-none bg-card text-card-foreground transition-all duration-300 ease-out",
+  "relative flex flex-col rounded-sm bg-card text-card-foreground transition-all duration-300 ease-out",
   {
     variants: {
       variant: {

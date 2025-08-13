@@ -65,12 +65,12 @@ function DialogContent({
         )}
         {...props}
       >
-        <div className="mica-modal text-card-foreground w-full max-w-[calc(100%-2rem)] sm:max-w-lg grid gap-base rounded-sm p-md data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 relative">
+        <div className="mica-modal text-card-foreground shadow-modal w-full max-w-[calc(100%-2rem)] sm:max-w-lg grid gap-base rounded-xs p-md data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 relative">
           {children}
           {showCloseButton && (
             <DialogPrimitive.Close
               data-slot="dialog-close"
-              className="absolute top-sm right-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground size-4"
+              className="absolute top-sm right-4 rounded-xs opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground size-4"
             >
               <XIcon />
               <span className="sr-only">Close</span>

@@ -17,15 +17,17 @@ import {
   Minus,
   Plus
 } from "lucide-react"
+import { Button } from "./button"
+import { Badge } from "./badge"
 import { useAccessibility } from "@/hooks/use-accessibility"
 
 const fabVariants = cva(
-  "fixed bottom-md left-6 z-50 rounded-full shadow-present hover:shadow-elevated hover:bg-accent/10 transition-all duration-200",
+  "fixed bottom-6 left-6 z-50 rounded-full shadow-present hover:shadow-elevated hover:bg-accent/10 transition-all duration-200 bg-card border border-border",
   {
     variants: {
       state: {
-        closed: "w-14 h-14 mica-card border border-border",
-        open: "w-16 h-16 mica-card border border-border"
+        closed: "w-14 h-14",
+        open: "w-16 h-16"
       }
     },
     defaultVariants: {
@@ -35,12 +37,12 @@ const fabVariants = cva(
 )
 
 const menuVariants = cva(
-  "fixed bottom-24 left-6 z-40 mica-modal border border-border rounded-sm shadow-present hover:shadow-elevated p-md min-w-[320px] max-w-[380px] transition-all duration-200",
+  "fixed left-28 bottom-6 z-40 mica-card shadow-elevated p-md min-w-[320px] max-w-[380px] max-h-[calc(100vh-6rem)] overflow-y-auto transition-all duration-200",
   {
     variants: {
       open: {
-        true: "opacity-100 scale-100 translate-y-0",
-        false: "opacity-0 scale-95 translate-y-2 pointer-events-none"
+        true: "opacity-100 scale-100",
+        false: "opacity-0 scale-95 pointer-events-none"
       }
     },
     defaultVariants: {
@@ -132,11 +134,12 @@ export default function AccessibilityFAB({
         )}
       </button>
 
-      <div
-        className={cn(menuVariants({ open: isOpen }))}
-        role="dialog"
-        aria-label="Accessibility settings"
-      >
+      {isOpen && (
+        <div
+          className={cn(menuVariants({ open: isOpen }))}
+          role="dialog"
+          aria-label="Accessibility settings"
+        >
         <div className="space-y-md">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-xs">
@@ -150,54 +153,70 @@ export default function AccessibilityFAB({
           <div className="space-y-sm">
             <h3 className="font-medium text-card-foreground">Theme</h3>
             <div className="grid grid-cols-2 gap-tiny">
-              <button
+              <Button
+                variant="flat"
+                size="sm"
+                animationType="x-o"
+                animationState={mounted && theme === "light"}
+                onClick={() => handleThemeChange("light")}
                 className={cn(
-                  "gap-tiny px-sm py-tiny rounded-input text-body-sm font-medium transition-colors flex items-center justify-center",
+                  "gap-tiny",
                   mounted && theme === "light" 
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-card-foreground hover:bg-muted/80"
+                    : "text-card-foreground"
                 )}
-                onClick={() => handleThemeChange("light")}
               >
                 <Sun className="size-4" />
                 Light
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="flat"
+                size="sm"
+                animationType="x-o"
+                animationState={mounted && theme === "dark"}
+                onClick={() => handleThemeChange("dark")}
                 className={cn(
-                  "gap-tiny px-sm py-tiny rounded-input text-body-sm font-medium transition-colors flex items-center justify-center",
+                  "gap-tiny",
                   mounted && theme === "dark" 
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-card-foreground hover:bg-muted/80"
+                    : "text-card-foreground"
                 )}
-                onClick={() => handleThemeChange("dark")}
               >
                 <Moon className="size-4" />
                 Fire Mode
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="flat"
+                size="sm"
+                animationType="x-o"
+                animationState={mounted && theme === "system"}
+                onClick={() => handleThemeChange("system")}
                 className={cn(
-                  "gap-tiny px-sm py-tiny rounded-input text-body-sm font-medium transition-colors flex items-center justify-center",
+                  "gap-tiny",
                   mounted && theme === "system" 
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-card-foreground hover:bg-muted/80"
+                    : "text-card-foreground"
                 )}
-                onClick={() => handleThemeChange("system")}
               >
                 <Monitor className="size-4" />
                 Auto
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="flat"
+                size="sm"
+                animationType="x-o"
+                animationState={mounted && theme === "gruvbox"}
+                onClick={() => handleThemeChange("gruvbox")}
                 className={cn(
-                  "gap-tiny px-sm py-tiny rounded-input text-body-sm font-medium transition-colors flex items-center justify-center",
+                  "gap-tiny",
                   mounted && theme === "gruvbox" 
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-card-foreground hover:bg-muted/80"
+                    : "text-card-foreground"
                 )}
-                onClick={() => handleThemeChange("gruvbox")}
               >
                 <Eye className="size-4" />
                 Night Ops
-              </button>
+              </Button>
             </div>
             <p className="text-xs text-muted-foreground">
               Night Ops mode reduces eye strain for extended reading sessions
@@ -207,119 +226,145 @@ export default function AccessibilityFAB({
           <div className="space-y-sm">
             <h3 className="font-medium text-card-foreground">Text Size</h3>
             <div className="flex items-center gap-tiny">
-              <button
-                className="bg-muted hover:bg-muted/80 text-card-foreground px-sm py-tiny rounded-input text-body-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              <Button
+                variant="flat"
+                size="sm"
+                animationType="none"
                 onClick={handleFontSizeDecrease}
                 disabled={fontSize === "small"}
               >
                 <Minus className="size-4" />
-              </button>
+              </Button>
               <div className="flex-1 text-center">
-                <div className="bg-primary/10 text-primary px-sm py-micro rounded-input text-body-sm font-medium capitalize">
+                <Badge variant="outline" className="capitalize">
                   {fontSize}
-                </div>
+                </Badge>
               </div>
-              <button
-                className="bg-muted hover:bg-muted/80 text-card-foreground px-sm py-tiny rounded-input text-body-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              <Button
+                variant="flat"
+                size="sm"
+                animationType="none"
                 onClick={handleFontSizeIncrease}
                 disabled={fontSize === "large"}
               >
                 <Plus className="size-4" />
-              </button>
+              </Button>
             </div>
           </div>
 
           <div className="space-y-sm">
             <h3 className="font-medium text-card-foreground">Contrast</h3>
             <div className="flex gap-tiny">
-              <button
+              <Button
+                variant="flat"
+                size="sm"
+                animationType="x-o"
+                animationState={contrastMode === "normal"}
+                onClick={() => handleContrastChange("normal")}
                 className={cn(
-                  "flex-1 px-sm py-tiny rounded-input text-body-sm font-medium transition-colors",
+                  "flex-1",
                   contrastMode === "normal" 
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-card-foreground hover:bg-muted/80"
+                    : "text-card-foreground"
                 )}
-                onClick={() => handleContrastChange("normal")}
               >
                 Normal
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="flat"
+                size="sm"
+                animationType="x-o"
+                animationState={contrastMode === "high"}
+                onClick={() => handleContrastChange("high")}
                 className={cn(
-                  "flex-1 gap-tiny px-sm py-tiny rounded-input text-body-sm font-medium transition-colors flex items-center justify-center",
+                  "flex-1 gap-tiny",
                   contrastMode === "high" 
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-card-foreground hover:bg-muted/80"
+                    : "text-card-foreground"
                 )}
-                onClick={() => handleContrastChange("high")}
               >
                 <Contrast className="size-4" />
                 High
-              </button>
+              </Button>
             </div>
           </div>
 
           <div className="space-y-sm">
             <h3 className="font-medium text-card-foreground">Color Vision</h3>
             <div className="grid grid-cols-2 gap-tiny">
-              <button
+              <Button
+                variant="flat"
+                size="sm"
+                animationType="x-o"
+                animationState={colorBlindFilter === "none"}
+                onClick={() => handleColorBlindFilterChange("none")}
                 className={cn(
-                  "gap-tiny px-sm py-tiny rounded-input text-body-sm font-medium transition-colors flex items-center justify-center",
+                  "gap-tiny",
                   colorBlindFilter === "none" 
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-card-foreground hover:bg-muted/80"
+                    : "text-card-foreground"
                 )}
-                onClick={() => handleColorBlindFilterChange("none")}
               >
                 <Eye className="size-4" />
                 Normal
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="micro"
+                animationType="x-o"
+                animationState={colorBlindFilter === "protanopia"}
+                onClick={() => handleColorBlindFilterChange("protanopia")}
                 className={cn(
-                  "px-tiny py-tiny rounded-input text-xs font-medium transition-colors",
                   colorBlindFilter === "protanopia" 
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-card-foreground hover:bg-muted/80"
+                    : "text-card-foreground"
                 )}
-                onClick={() => handleColorBlindFilterChange("protanopia")}
               >
                 Protanopia
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="micro"
+                animationType="x-o"
+                animationState={colorBlindFilter === "deuteranopia"}
+                onClick={() => handleColorBlindFilterChange("deuteranopia")}
                 className={cn(
-                  "px-tiny py-tiny rounded-input text-xs font-medium transition-colors",
                   colorBlindFilter === "deuteranopia" 
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-card-foreground hover:bg-muted/80"
+                    : "text-card-foreground"
                 )}
-                onClick={() => handleColorBlindFilterChange("deuteranopia")}
               >
                 Deuteranopia
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="micro"
+                animationType="x-o"
+                animationState={colorBlindFilter === "tritanopia"}
+                onClick={() => handleColorBlindFilterChange("tritanopia")}
                 className={cn(
-                  "px-tiny py-tiny rounded-input text-xs font-medium transition-colors",
                   colorBlindFilter === "tritanopia" 
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-card-foreground hover:bg-muted/80"
+                    : "text-card-foreground"
                 )}
-                onClick={() => handleColorBlindFilterChange("tritanopia")}
               >
                 Tritanopia
-              </button>
+              </Button>
             </div>
           </div>
 
           <div className="pt-sm border-t border-border/30">
-            <button
-              className="w-full bg-muted hover:bg-muted/80 text-card-foreground px-sm py-tiny rounded-input text-body-sm font-medium transition-colors flex items-center justify-center gap-tiny"
+            <Button
+              variant="flat"
+              size="sm"
+              animationType="arrow"
               onClick={handleResetAll}
+              className="w-full gap-tiny"
             >
               <Settings className="size-4" />
               Reset to Defaults
-            </button>
+            </Button>
           </div>
         </div>
-      </div>
+        </div>
+      )}
 
       {isOpen && (
         <div

@@ -67,7 +67,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
             {/* Premium Mica Card */}
             <Card className="mica-card-premium relative z-10">
               <CardHeader>
-                <Badge variant="premium" className="w-fit mb-(--spacing-xs)">Premium</Badge>
+                <Badge variant="foothills-purple" className="w-fit mb-(--spacing-xs)">Premium</Badge>
                 <CardTitle className="text-body-lg">Premium Mica</CardTitle>
                 <CardDescription>Enhanced glass with brand accent</CardDescription>
               </CardHeader>

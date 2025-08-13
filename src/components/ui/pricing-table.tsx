@@ -14,17 +14,17 @@ const pricingCardVariants = cva(
   {
     variants: {
       tier: {
-        // FREE: Clean baseline - professional foundation (no animation)
-        free: "shadow-flat hover:shadow-present",
+        // FREE: Clean baseline - standard floating card
+        free: "shadow-present hover:shadow-elevated",
         
-        // COPPER: Enhanced copper presence - subtle background tint with prominent gradient accent
-        copper: "shadow-flat hover:shadow-present bg-rusty-orange/[0.02] hover:bg-rusty-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
+        // COPPER: Enhanced presence - important content
+        copper: "shadow-elevated hover:shadow-prominent bg-rusty-orange/[0.02] hover:bg-rusty-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
-        // SILVER: Consistent default shadows with subtle cobalt glassmorphism
-        silver: "relative shadow-flat hover:shadow-present bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-sm before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-warm-stone after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg",
+        // SILVER: Prominent presence with glassmorphism
+        silver: "relative shadow-prominent hover:shadow-commanding bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-sm before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-warm-stone after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg",
         
-        // GOLD: Consistent default shadows with premium mica glassmorphism features
-        gold: "relative shadow-flat hover:shadow-present bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-warm-stone/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-sandy-ochre/14 dark:before:to-rusty-orange/12 before:rounded-sm before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
+        // GOLD: Hero presence - jump off the page
+        gold: "relative shadow-commanding hover:shadow-hero bg-gradient-to-br from-range-white/95 via-titanium-white/90 to-range-white/95 dark:from-night-sight/95 dark:via-warm-stone/90 dark:to-night-sight/95 backdrop-blur-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-sandy-ochre/14 dark:before:to-rusty-orange/12 before:rounded-sm before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-lg"
       },
       size: {
         sm: "p-base",
@@ -120,7 +120,7 @@ export function PricingCard({
         {/* Popular badge */}
         {plan.popular && plan.badge && (
           <div className="absolute -top-xs left-1/2 transform -translate-x-1/2 z-20">
-            <Badge variant="default" className="bg-rusty-orange text-nickel-white font-medium px-md py-sm text-caption shadow-present">
+            <Badge variant="default" className="bg-rusty-orange text-nickel-white font-medium px-md py-sm text-caption">
               <Star className="size-3 mr-xs" />
               {plan.badge}
             </Badge>

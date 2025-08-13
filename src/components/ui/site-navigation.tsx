@@ -27,11 +27,11 @@ const siteNavigationVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-card shadow-flat",
-        premium: "mica",
-        elite: "mica-modal after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warning-amber/50 after:to-transparent",
-        glass: "mica-card",
-        gunclub: "bg-card-surface shadow-flat after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warm-stone/40 after:to-transparent"
+        default: "mica shadow-present bg-card/95",
+        premium: "mica shadow-elevated",
+        elite: "mica-modal shadow-prominent after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warning-amber/50 after:to-transparent",
+        glass: "mica-card shadow-elevated",
+        gunclub: "mica shadow-present after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warm-stone/40 after:to-transparent"
       },
       layout: {
         horizontal: "",

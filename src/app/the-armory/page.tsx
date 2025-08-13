@@ -8,7 +8,6 @@ import StatCard from '@/components/ui/StatCard'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
-import AccessibilityFAB from '@/components/ui/AccessibilityFAB'
 import { EventTicker } from '@/components/ui/event-ticker'
 import { BlogList, BlogCard } from '@/components/ui/blog-article'
 import { ArmorySidebar } from '@/components/ui/armory-sidebar'
@@ -499,7 +498,6 @@ export default function ArmoryPage() {
       </section>
 
       <SiteFooter />
-      <AccessibilityFAB />
           </div>{/* End main content wrapper */}
         </SidebarInset>
       </SidebarProvider>

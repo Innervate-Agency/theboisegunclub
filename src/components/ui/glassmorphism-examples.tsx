@@ -142,7 +142,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
                   placeholder="Search firearms, ranges, events..."
                   className="flex-1 bg-transparent border-none outline-none text-foreground placeholder:text-muted-foreground"
                 />
-                <Badge variant="outline" className="text-caption">⌘K</Badge>
+                <Badge variant="default" className="text-caption">⌘K</Badge>
               </div>
             </div>
           </div>

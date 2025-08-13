@@ -6,7 +6,6 @@ import { CompactStatsBar } from '@/components/ui/compact-stats-bar'
 import { SectionDivider } from '@/components/ui/section-divider'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
-import AccessibilityFAB from '@/components/ui/AccessibilityFAB'
 import { WeatherConditionsTicker } from '@/components/ui/weather-conditions-ticker'
 import { LocationBrowser } from '@/components/ui/location-browser'
 import { fetchWeatherForMultipleLocations } from '@/lib/weather-service'
@@ -657,7 +656,6 @@ export default async function MapPage() {
       </section>
       </div>
       <SiteFooter />
-      <AccessibilityFAB />
     </>
   )
 }

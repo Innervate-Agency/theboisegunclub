@@ -75,12 +75,13 @@ src/
 The design system enforces **26 approved colors** with zero tolerance for generic Tailwind colors:
 
 **Primary Accents:**
-- `copper-orange` - Light theme primary
-- `brass-yellow` - Dark theme primary  
-- `clubhouse-lawn-green` - Success states
+- **Light Theme**: `slate-blue` (CTAs), `sagebrush-green` (success)
+- **Dark Theme**: `rusty-orange` (CTAs), `lodgepole-green` (success)
 
-**Fire Gradients:**
-- `from-copper-orange to-brass-yellow` - Hover animations and accents
+**Icon System (Phosphor Primary):**
+- **Primary Library**: Phosphor Icons (@phosphor-icons/react) with tactical aesthetic
+- **Weight System**: Use "bold" weight for navigation (tactical aesthetic)
+- **Sizing Standard**: h-4 w-4 for most contexts, h-6 w-6 for prominent elements
 
 ### Component Patterns
 
@@ -129,11 +130,17 @@ All components follow the **Class Variance Authority (CVA)** pattern with:
 - **TestimonialCarousel**: Community feedback showcase
 - **AnimatedSplashCard**: Hero section components
 
+### Animation & Interaction Components
+- **Magic Line Navigation**: Signature feature with spring physics (bounce: 0.25, stiffness: 130, damping: 9)
+- **Micro-Animation System**: Context-aware button animations (arrow, plus-minus, x-o, chevron)
+- **Diamond Spinner**: Branded loading component (replaces generic spinners)
+- **AccessibilityFAB**: Performance-optimized with CSS custom properties
+
 ### Layout Components
-- **SiteNavigation**: Responsive header with theme toggle
+- **SiteNavigation**: Magic Line navigation with Framer Motion spring physics
 - **SiteFooter**: Multi-section footer with links
-- **PageHero**: Consistent page header patterns
-- **StatsShowcase**: Metric display grids
+- **PageHero**: Consistent page header patterns with tactical square aesthetic
+- **StatsShowcase**: Metric display grids with semantic shadow hierarchy
 
 ## 📋 Development Guidelines
 

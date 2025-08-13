@@ -13,8 +13,8 @@ const eventCardVariants = cva(
   {
     variants: {
       featured: {
-        true: "border-primary/20 bg-gradient-to-br from-card to-primary/5 hover:shadow-present",
-        false: ""
+        true: "border-primary/20 bg-gradient-to-br from-card to-primary/5 shadow-elevated hover:shadow-commanding",
+        false: "shadow-present hover:shadow-prominent"
       }
     },
     defaultVariants: {
@@ -58,12 +58,12 @@ export function EventCard({
 
   const getEventBadgeVariant = (type: string): VariantProps<typeof Badge>["variant"] => {
     switch (type) {
-      case 'Competition': return 'premium'
-      case 'Training': return 'info'
-      case 'Expo': return 'secondary'
-      case 'Charity': return 'success'
-      case 'Social': return 'default'
-      case 'Demo': return 'warning'
+      case 'Competition': return 'foothills-purple'
+      case 'Training': return 'info-river'
+      case 'Expo': return 'sandy-ochre'
+      case 'Charity': return 'sagebrush-green'
+      case 'Social': return 'light-peachy'
+      case 'Demo': return 'warning-clay'
       default: return 'default'
     }
   }
@@ -91,7 +91,7 @@ export function EventCard({
                 {eventType}
               </Badge>
               {featured && (
-                <Badge variant="destructive" size="sm">
+                <Badge variant="featured" size="sm">
                   Featured
                 </Badge>
               )}
@@ -156,6 +156,7 @@ export function EventCard({
               variant="outline"
               size="sm"
               className="w-full" 
+              animationType="arrow"
               onClick={() => window.open(registrationUrl, '_blank')}
             >
               Register Now

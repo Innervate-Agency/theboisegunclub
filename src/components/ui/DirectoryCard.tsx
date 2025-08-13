@@ -7,18 +7,18 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 
 const directoryCardVariants = cva(
-  'relative flex flex-col rounded-base shadow-present transition-all duration-300 ease-out overflow-hidden',
+  'relative flex flex-col rounded-xs shadow-present transition-all duration-300 ease-out overflow-hidden',
   {
     variants: {
       variant: {
-        default: 'bg-card text-card-foreground hover:shadow-elevated',
-        premium: 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-base before:pointer-events-none',
-        elite: 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/6 before:via-transparent before:to-sandy-ochre/4 before:rounded-base before:pointer-events-none',
-        glass: 'mica-overlay text-card-foreground shadow-present hover:shadow-elevated backdrop-blur-sm relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg',
-        fire: 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
-        'fire-blue': 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-info-river after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
-        'fire-purple': 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-foothills-purple after:to-slate-blue after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
-        'fire-green': 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sagebrush-green after:to-lodgepole-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full',
+        default: 'bg-card text-card-foreground shadow-present hover:shadow-elevated',
+        premium: 'bg-card text-card-foreground shadow-elevated hover:shadow-prominent relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-xs before:pointer-events-none',
+        elite: 'bg-card text-card-foreground shadow-elevated hover:shadow-commanding relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/6 before:via-transparent before:to-sandy-ochre/4 before:rounded-xs before:pointer-events-none',
+        glass: 'mica-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm',
+        fire: 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:rounded-b-sm after:transition-all after:duration-300 after:ease-out hover:after:w-full',
+        'fire-blue': 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-info-river after:rounded-b-sm after:transition-all after:duration-300 after:ease-out hover:after:w-full',
+        'fire-purple': 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-foothills-purple after:to-slate-blue after:rounded-b-sm after:transition-all after:duration-300 after:ease-out hover:after:w-full',
+        'fire-green': 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sagebrush-green after:to-lodgepole-green after:rounded-b-sm after:transition-all after:duration-300 after:ease-out hover:after:w-full',
       },
       size: {
         sm: 'p-sm text-body-sm',
@@ -59,7 +59,7 @@ export function DirectoryCard({
     <div className={cn(directoryCardVariants({ variant, size }), className)} {...props}>
       <div className="flex items-center gap-base mb-sm">
         {imageUrl && !imgError ? (
-          <div className="relative h-14 w-14 rounded-base overflow-hidden bg-card-surface shadow-present">
+          <div className="relative h-14 w-14 rounded-xs overflow-hidden bg-card-surface">
             <Image
               src={imageUrl}
               alt={name}
@@ -71,7 +71,7 @@ export function DirectoryCard({
             />
           </div>
         ) : (
-          <div className="h-14 w-14 rounded-base bg-sandy-ochre/10 flex items-center justify-center font-bold text-heading-lg text-dark-chocolate shadow-present">
+          <div className="h-14 w-14 rounded-xs bg-sandy-ochre/10 flex items-center justify-center font-bold text-heading-lg text-dark-chocolate">
             {name.charAt(0)}
           </div>
         )}

@@ -18,7 +18,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
         } as React.CSSProperties
       }
       // Apply mica toast styling to individual toasts where supported
-      {...({ toastOptions: { classNames: { toast: "mica-toast shadow-elevated" } } } as any)}
+      {...({ toastOptions: { classNames: { toast: "mica-toast shadow-commanding" } } } as any)}
       {...props}
     />
   )

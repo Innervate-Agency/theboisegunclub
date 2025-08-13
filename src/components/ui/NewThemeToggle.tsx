@@ -40,7 +40,7 @@ export function NewThemeToggle({
         <Button
           variant="secondary"
           size="icon"
-          className="bg-card border-border shadow-flat"
+          className="bg-card border-border shadow-none"
           disabled
         >
           <Sun className="icon-sm" />
@@ -78,8 +78,8 @@ export function NewThemeToggle({
         size={showLabel ? "default" : "icon"}
         onClick={handleToggle}
         className={cn(
-          "bg-card border-border hover:bg-sandy-ochre hover:border-sandy-ochre shadow-flat transition-all duration-200 group",
-          variant === 'floating' && "shadow-elevated hover:shadow-premium"
+          "bg-card border-border hover:bg-sandy-ochre hover:border-sandy-ochre shadow-none transition-all duration-200 group",
+          variant === 'floating' && "shadow-present hover:shadow-elevated"
         )}
         title={`Switch to ${nextTheme.label.toLowerCase()} theme`}
       >
