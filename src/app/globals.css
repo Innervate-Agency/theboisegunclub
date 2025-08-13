@@ -1509,6 +1509,92 @@
     }
   }
 
+  /* ================== PIANO KEY NAVIGATION ================== */
+  /* Base piano key styling */
+  .piano-key {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0.75rem;
+    font-family: var(--font-rajdhani);
+    font-size: 1.125rem;
+    font-weight: 700;
+    transition: all 300ms ease-out;
+    background: linear-gradient(180deg, #FAFBFC 0%, #F9FAFB 50%, #F5F7FA 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -1px 0 rgba(0,0,0,0.05);
+  }
+
+  /* Base piano text styling */
+  .piano-text {
+    position: relative;
+    z-index: 10;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 100% 200%;
+    background-position: 0 100%;
+    transition: all 300ms ease-out;
+  }
+
+  /* Events - Red */
+  .piano-text-events {
+    background: linear-gradient(to top, #D51F00 0%, #D51F00 0%, rgba(107, 114, 128, 0.4) 0%, rgba(107, 114, 128, 0.4) 100%);
+    color: rgba(107, 114, 128, 0.4);
+  }
+  .piano-key-events:hover .piano-text-events {
+    background: linear-gradient(to top, #D51F00 0%, #D51F00 100%, transparent 100%, transparent 100%);
+    background-position: 0 0%;
+  }
+
+  /* Directory - Cyan */
+  .piano-text-directory {
+    background: linear-gradient(to top, #2ebfe6 0%, #2ebfe6 0%, rgba(107, 114, 128, 0.4) 0%, rgba(107, 114, 128, 0.4) 100%);
+    color: rgba(107, 114, 128, 0.4);
+  }
+  .piano-key-directory:hover .piano-text-directory {
+    background: linear-gradient(to top, #2ebfe6 0%, #2ebfe6 100%, transparent 100%, transparent 100%);
+    background-position: 0 0%;
+  }
+
+  /* Armory - Purple */
+  .piano-text-armory {
+    background: linear-gradient(to top, #8B7AA8 0%, #8B7AA8 0%, rgba(107, 114, 128, 0.4) 0%, rgba(107, 114, 128, 0.4) 100%);
+    color: rgba(107, 114, 128, 0.4);
+  }
+  .piano-key-armory:hover .piano-text-armory {
+    background: linear-gradient(to top, #8B7AA8 0%, #8B7AA8 100%, transparent 100%, transparent 100%);
+    background-position: 0 0%;
+  }
+
+  /* Intel - Yellow */
+  .piano-text-intel {
+    background: linear-gradient(to top, #ffbc20 0%, #ffbc20 0%, rgba(107, 114, 128, 0.4) 0%, rgba(107, 114, 128, 0.4) 100%);
+    color: rgba(107, 114, 128, 0.4);
+  }
+  .piano-key-intel:hover .piano-text-intel {
+    background: linear-gradient(to top, #ffbc20 0%, #ffbc20 100%, transparent 100%, transparent 100%);
+    background-position: 0 0%;
+  }
+
+  /* Marketplace - Lime */
+  .piano-text-marketplace {
+    background: linear-gradient(to top, #C9C301 0%, #C9C301 0%, rgba(107, 114, 128, 0.4) 0%, rgba(107, 114, 128, 0.4) 100%);
+    color: rgba(107, 114, 128, 0.4);
+  }
+  .piano-key-marketplace:hover .piano-text-marketplace {
+    background: linear-gradient(to top, #C9C301 0%, #C9C301 100%, transparent 100%, transparent 100%);
+    background-position: 0 0%;
+  }
+
+  /* Forums - Gray */
+  .piano-text-forums {
+    background: linear-gradient(to top, #6B7280 0%, #6B7280 0%, rgba(107, 114, 128, 0.4) 0%, rgba(107, 114, 128, 0.4) 100%);
+    color: rgba(107, 114, 128, 0.4);
+  }
+  .piano-key-forums:hover .piano-text-forums {
+    background: linear-gradient(to top, #6B7280 0%, #6B7280 100%, transparent 100%, transparent 100%);
+    background-position: 0 0%;
+  }
+
   /* Animation Utility Classes */
   .animate-shimmer {
     position: relative;
