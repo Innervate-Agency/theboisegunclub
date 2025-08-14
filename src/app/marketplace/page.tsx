@@ -454,7 +454,7 @@ export default function MarketplacePage() {
                         </BreadcrumbLink>
                       </BreadcrumbItem>
                       <BreadcrumbSeparator>
-                        <ChevronRight className="h-4 w-4" weight="bold" />
+                        <ChevronRight className="h-4 w-4" />
                       </BreadcrumbSeparator>
                       <BreadcrumbItem>
                         <BreadcrumbPage className="text-white font-medium">
