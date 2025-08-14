@@ -13,6 +13,7 @@ import {
   MagnifyingGlass as Search, 
   MapPin, 
   Funnel as Filter, 
+  Star,
   Plus, 
   Buildings as Building2,
   Target, 
