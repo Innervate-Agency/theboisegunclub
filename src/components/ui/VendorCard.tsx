@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 import { Badge } from './badge';
 import { Button } from './button';
 import Image from 'next/image';
-import { MapPin, Phone, Clock, Star, Globe, TrendingUp, Shield, ChatsCircle} from '@phosphor-icons/react';
+import { MapPin, Phone, Clock, Star, Globe, TrendUpIcon as TrendingUp, Shield, ChatsCircle} from '@phosphor-icons/react';
 import { Avatar, AvatarImage, AvatarFallback } from './avatar';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './tooltip';
 import { ReviewsDisplay } from './reviews-display';

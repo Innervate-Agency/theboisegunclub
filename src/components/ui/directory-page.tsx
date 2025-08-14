@@ -41,9 +41,9 @@ import {
   CheckCircle, 
   Lightning as Zap, 
   ChatCircle as MessageSquare,
-  Rows3 as List,
-  GridNine as Grid,
-  Cards as CardView,
+  List,
+  GridFour as Grid,
+  SquaresFour as CardView,
   SortAscending as SortAsc,
   SortDescending as SortDesc,
   CaretDown as ChevronDown

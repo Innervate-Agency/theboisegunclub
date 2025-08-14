@@ -18,14 +18,10 @@ import { IntelWeatherCard } from '@/components/ui/intel-weather-card'
 import { MarketplaceDealCard } from '@/components/ui/marketplace-deal-card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent } from '@/components/ui/card'
 import { ParticleSystem } from '@/components/ui/particle-system'
 import { motion } from 'framer-motion'
 import { 
   ArrowRight,
-  Users,
-  Calendar,
-  Storefront,
   Camera,
   ChatsCircle,
   Trophy
