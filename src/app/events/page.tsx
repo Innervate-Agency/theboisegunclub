@@ -11,7 +11,7 @@ import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { EventTicker } from '@/components/ui/event-ticker'
 import { cn } from '@/lib/utils'
-// Phosphor Icons - Primary choice for tactical aesthetic
+// Temporary: Using Lucide React until Phosphor icons are fixed
 import {
   Calendar,
   Clock,
@@ -19,20 +19,20 @@ import {
   Users,
   Trophy,
   Target,
-  MagnifyingGlass as Search,
-  CurrencyDollar as DollarSign,
+  Search,
+  DollarSign,
   Plus,
   ArrowRight,
-  CaretRight as ChevronRight,
-  CalendarCheck as CalendarDays,
+  ChevronRight,
+  CalendarDays,
   TrendingUp,
-  Medal as Award,
-  ChatCircle as MessageSquare,
+  Award,
+  MessageSquare,
   CheckCircle,
   Crown,
   Sparkles,
-  Warning as AlertTriangle,
-} from '@phosphor-icons/react'
+  AlertTriangle,
+} from 'lucide-react'
 
 // Comprehensive events data for Treasure Valley firearms community
 const upcomingEvents = [
@@ -540,25 +540,25 @@ export default function EventsPage() {
               <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
                 <div className="flex items-center gap-base">
                   <div className="bg-card/10 p-base rounded-xs border border-border">
-                    <Calendar weight="bold" className="h-8 w-8 text-white" />
+                    <Calendar className="h-8 w-8 text-white" />
                   </div>
                   <div className="space-y-base">
                     <div className="flex items-center gap-xs text-sm text-white/60">
                       <span>Home</span>
-                      <ChevronRight weight="bold" className="h-4 w-4" />
+                      <ChevronRight className="h-4 w-4" />
                       <span className="text-white font-medium">Events</span>
                     </div>
                     <div className="flex flex-wrap gap-xs">
                       <Badge className="bg-card/10 text-white border-border rounded-xs">
-                        <Trophy weight="bold" className="h-4 w-4 mr-xs" />
+                        <Trophy className="h-4 w-4 mr-xs" />
                         Competitions
                       </Badge>
                       <Badge className="bg-card/10 text-white border-border rounded-xs">
-                        <Target weight="bold" className="h-4 w-4 mr-xs" />
+                        <Target className="h-4 w-4 mr-xs" />
                         Training
                       </Badge>
                       <Badge className="bg-card/10 text-white border-border rounded-xs">
-                        <Users weight="bold" className="h-4 w-4 mr-xs" />
+                        <Users className="h-4 w-4 mr-xs" />
                         Community
                       </Badge>
                     </div>
@@ -576,11 +576,11 @@ export default function EventsPage() {
                   Discover USPSA matches, gun shows, training courses, and charity shoots. Connect with Idaho's firearms community through verified events and professional instruction.
                 </p>
                 <div className="flex gap-base">
-                  <Button size="lg" className="bg-white text-nav-events hover:bg-white/90 font-rajdhani font-bold">
-                    <Plus weight="bold" className="h-4 w-4 mr-xs" />
+                  <Button size="lg" className="bg-white text-nav-events hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
+                    <Plus className="h-4 w-4 mr-xs" />
                     Submit Event
                   </Button>
-                  <Button variant="outline" size="lg" className="border-border text-white hover:bg-white hover:text-nav-events">
+                  <Button variant="outline" size="lg" className="border-border text-white hover:bg-white hover:text-nav-events" animationType="arrow">
                     View Calendar
                   </Button>
                 </div>
@@ -588,25 +588,25 @@ export default function EventsPage() {
               {/* Featured Event Card - Right side */}
               <div className="lg:col-span-1 py-md min-h-[400px]">
                   <div className="relative h-full">
-                      <Card variant="interactive" className="mica border-nav-events/30 overflow-hidden h-full flex flex-col justify-between">
+                      <Card variant="interactive" className="mica border-nav-events/30 overflow-hidden h-full flex flex-col justify-between shadow-elevated hover:shadow-hero">
                           <div className="absolute inset-0 bg-gradient-to-br from-nav-events/10 to-nav-events/30 opacity-50"></div>
                           <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-events/20 to-nav-events/10 rounded-bl-full"></div>
                           <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-events to-nav-events"></div>
                           <CardHeader className="pb-xs relative z-10">
                               <div className="flex items-center justify-between mb-xs">
                                   <Badge size="xs" variant="events-featured" className="font-rajdhani font-bold">
-                                      <Crown weight="bold" className="h-3 w-3 mr-xs" />
+                                      <Crown className="h-3 w-3 mr-xs" />
                                       FEATURED EVENT
                                   </Badge>
                                   <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                                      <Clock weight="bold" className="h-3 w-3" />
+                                      <Clock className="h-3 w-3" />
                                       <span>3 days</span>
                                   </div>
                               </div>
                               <div className="space-y-xs">
                                   <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">USPSA Monthly Match</h3>
                                   <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                                      <MapPin weight="bold" className="h-3 w-3 text-nav-events" />
+                                      <MapPin className="h-3 w-3 text-nav-events" />
                                       <span>Nampa Rod & Gun Club</span>
                                   </div>
                               </div>
@@ -615,25 +615,25 @@ export default function EventsPage() {
                               <div className="flex items-center justify-between">
                                   <div className="space-y-xs">
                                       <div className="flex items-center gap-xs text-xs text-card-foreground/80">
-                                          <Calendar weight="bold" className="h-3 w-3 text-nav-events" />
+                                          <Calendar className="h-3 w-3 text-nav-events" />
                                           <span className="font-medium">Sat, Aug 9 • 8:00 AM</span>
                                       </div>
                                       <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                                          <Users weight="bold" className="h-3 w-3" />
+                                          <Users className="h-3 w-3" />
                                           <span>54/80 registered</span>
-                                          <DollarSign weight="bold" className="h-3 w-3 ml-xs" />
+                                          <DollarSign className="h-3 w-3 ml-xs" />
                                           <span>$15</span>
                                       </div>
                                   </div>
                                   <div className="text-right">
                                       <div className="w-12 h-12 rounded-pill bg-nav-events/20 flex items-center justify-center mb-xs">
-                                          <Trophy weight="bold" className="h-5 w-5 text-nav-events" />
+                                          <Trophy className="h-5 w-5 text-nav-events" />
                                       </div>
                                   </div>
                               </div>
                               <Button className="w-full bg-gradient-to-r from-nav-events to-nav-events text-dark-chocolate hover:from-nav-events hover:to-nav-events font-rajdhani font-bold text-xs" size="sm">
                                   REGISTER NOW
-                                  <ArrowRight weight="bold" className="h-3 w-3 ml-xs" />
+                                  <ArrowRight className="h-3 w-3 ml-xs" />
                               </Button>
                           </CardContent>
                       </Card>
@@ -660,31 +660,31 @@ export default function EventsPage() {
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-base">
                     <div className="flex flex-wrap items-center gap-xs">
                         <span className="text-sm font-medium text-nav-events mr-base">Quick Filters:</span>
-                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200">
-                            <Trophy weight="bold" className="h-3 w-3" />
+                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200 shadow-none hover:shadow-elevated">
+                            <Trophy className="h-3 w-3" />
                             Competitions
                         </Button>
-                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200">
-                            <Target weight="bold" className="h-3 w-3" />
+                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200 shadow-none hover:shadow-elevated">
+                            <Target className="h-3 w-3" />
                             Training
                         </Button>
-                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200">
-                            <Sparkles weight="bold" className="h-3 w-3" />
+                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200 shadow-none hover:shadow-elevated">
+                            <Sparkles className="h-3 w-3" />
                             Expos
                         </Button>
-                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200">
-                            <Users weight="bold" className="h-3 w-3" />
+                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200 shadow-none hover:shadow-elevated">
+                            <Users className="h-3 w-3" />
                             Social
                         </Button>
                     </div>
                     <div className="flex items-center gap-xs">
-                        <Button variant="ghost" size="sm" className="gap-xs text-nav-events hover:bg-nav-events/10 transition-all duration-200">
-                            <CalendarDays weight="bold" className="h-3 w-3" />
+                        <Button variant="ghost" size="sm" className="gap-xs text-nav-events hover:bg-nav-events/10 transition-all duration-200 shadow-none hover:shadow-whisper" animationType="arrow">
+                            <CalendarDays className="h-3 w-3" />
                             Calendar View
                         </Button>
                         <div className="h-4 w-px bg-nav-events/30 mx-xs" />
-                        <Button variant="ghost" size="sm" className="gap-xs text-nav-events hover:bg-nav-events/10 transition-all duration-200">
-                            <TrendingUp weight="bold" className="h-3 w-3" />
+                        <Button variant="ghost" size="sm" className="gap-xs text-nav-events hover:bg-nav-events/10 transition-all duration-200 shadow-none hover:shadow-whisper" animationType="chevron">
+                            <TrendingUp className="h-3 w-3" />
                             Sort: Date
                         </Button>
                     </div>
@@ -720,7 +720,7 @@ export default function EventsPage() {
                     {/* Search and Category Filters */}
                     <div className="space-y-base">
                         <div className="relative max-w-md">
-                            <Search weight="bold" className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                             <Input
                                 placeholder="Search events by name, location, or description..."
                                 value={searchQuery}
@@ -736,9 +736,9 @@ export default function EventsPage() {
                                     size="sm"
                                     onClick={() => setSelectedCategory(category.value)}
                                     className={cn(
-                                        "shadow-none transition-all duration-300",
+                                        "shadow-none hover:shadow-elevated transition-all duration-300",
                                         selectedCategory === category.value
-                                            ? 'bg-nav-events text-white'
+                                            ? 'bg-nav-events text-white shadow-present'
                                             : 'border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate'
                                     )}
                                 >
@@ -777,9 +777,10 @@ export default function EventsPage() {
                                 size="sm"
                                 onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
                                 disabled={currentPage === 1}
-                                className="border-border/30 text-muted-foreground hover:text-card-foreground hover:bg-muted/50"
+                                className="border-border/30 text-muted-foreground hover:text-card-foreground hover:bg-muted/50 shadow-none hover:shadow-elevated"
+                                animationType="arrow"
                             >
-                                <ArrowRight weight="bold" className="h-4 w-4 rotate-180 mr-xs" />
+                                <ArrowRight className="h-4 w-4 rotate-180 mr-xs" />
                                 Previous
                             </Button>
                             <div className="flex items-center gap-xs">
@@ -790,10 +791,10 @@ export default function EventsPage() {
                                         size="sm"
                                         onClick={() => setCurrentPage(page)}
                                         className={cn(
-                                            "w-10 h-10",
+                                            "w-10 h-10 shadow-none transition-all duration-200",
                                             currentPage === page
-                                                ? "bg-nav-events text-white"
-                                                : "text-muted-foreground hover:bg-muted/50"
+                                                ? "bg-nav-events text-white shadow-present"
+                                                : "text-muted-foreground hover:bg-muted/50 hover:shadow-elevated"
                                         )}
                                     >
                                         {page}
@@ -805,10 +806,11 @@ export default function EventsPage() {
                                 size="sm"
                                 onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
                                 disabled={currentPage === totalPages}
-                                className="border-border/30 text-muted-foreground hover:text-card-foreground hover:bg-muted/50"
+                                className="border-border/30 text-muted-foreground hover:text-card-foreground hover:bg-muted/50 shadow-none hover:shadow-elevated"
+                                animationType="arrow"
                             >
                                 Next
-                                <ArrowRight weight="bold" className="h-4 w-4 ml-xs" />
+                                <ArrowRight className="h-4 w-4 ml-xs" />
                             </Button>
                         </div>
                     )}
@@ -817,7 +819,7 @@ export default function EventsPage() {
                         <div className="text-center py-6xl col-span-full">
                             <div className="space-y-base">
                                 <div className="mx-auto w-fit rounded-full bg-nav-events/10 p-lg">
-                                    <Target weight="bold" className="h-12 w-12 text-nav-events" />
+                                    <Target className="h-12 w-12 text-nav-events" />
                                 </div>
                                 <h3 className="font-rajdhani text-2xl font-bold text-card-foreground">
                                     No Events Found
@@ -830,7 +832,8 @@ export default function EventsPage() {
                                         setSelectedCategory("all")
                                         setSearchQuery("")
                                     }}
-                                    className="bg-nav-events text-white hover:bg-nav-events/90"
+                                    className="bg-nav-events text-white hover:bg-nav-events/90 shadow-elevated hover:shadow-hero"
+                                    animationType="x-o"
                                 >
                                     Clear Filters & Show All
                                 </Button>
@@ -850,16 +853,16 @@ export default function EventsPage() {
                             <h2 className="font-rajdhani text-3xl font-bold text-nav-events">
                                 Recent Activity
                             </h2>
-                            <Button variant="ghost" size="sm" className="text-nav-events">
+                            <Button variant="ghost" size="sm" className="text-nav-events hover:bg-nav-events/10 shadow-none hover:shadow-whisper" animationType="arrow">
                                 View All Activity
-                                <ArrowRight weight="bold" className="h-3 w-3 ml-xs" />
+                                <ArrowRight className="h-3 w-3 ml-xs" />
                             </Button>
                         </div>
                         <div className="space-y-base">
-                            <Card className="shadow-present hover:shadow-elevated transition-all duration-200">
+                            <Card variant="interactive" className="shadow-present hover:shadow-elevated transition-all duration-200">
                                 <div className="flex items-start gap-base p-base">
                                     <div className="w-8 h-8 rounded-full bg-sagebrush-green/20 flex items-center justify-center flex-shrink-0">
-                                        <CheckCircle weight="bold" className="h-4 w-4 text-sagebrush-green" />
+                                        <CheckCircle className="h-4 w-4 text-sagebrush-green" />
                                     </div>
                                     <div className="flex-1 space-y-xs">
                                         <div className="flex items-center justify-between">
@@ -874,10 +877,10 @@ export default function EventsPage() {
                                     </div>
                                 </div>
                             </Card>
-                            <Card className="shadow-present hover:shadow-elevated transition-all duration-200">
+                            <Card variant="interactive" className="shadow-present hover:shadow-elevated transition-all duration-200">
                                 <div className="flex items-start gap-base p-base">
                                     <div className="w-8 h-8 rounded-full bg-nav-events/20 flex items-center justify-center flex-shrink-0">
-                                        <Plus weight="bold" className="h-4 w-4 text-nav-events" />
+                                        <Plus className="h-4 w-4 text-nav-events" />
                                     </div>
                                     <div className="flex-1 space-y-xs">
                                         <div className="flex items-center justify-between">
@@ -892,10 +895,10 @@ export default function EventsPage() {
                                     </div>
                                 </div>
                             </Card>
-                            <Card className="shadow-present hover:shadow-elevated transition-all duration-200">
+                            <Card variant="interactive" className="shadow-present hover:shadow-elevated transition-all duration-200">
                                 <div className="flex items-start gap-base p-base">
                                     <div className="w-8 h-8 rounded-full bg-warning-clay/20 flex items-center justify-center flex-shrink-0">
-                                        <AlertTriangle weight="bold" className="h-4 w-4 text-warning-clay" />
+                                        <AlertTriangle className="h-4 w-4 text-warning-clay" />
                                     </div>
                                     <div className="flex-1 space-y-xs">
                                         <div className="flex items-center justify-between">
@@ -918,31 +921,31 @@ export default function EventsPage() {
                                 Community Stats
                             </h3>
                             <div className="space-y-base">
-                                <Card className="shadow-whisper hover:shadow-present transition-all duration-200">
+                                <Card variant="interactive" className="shadow-whisper hover:shadow-present transition-all duration-200">
                                     <div className="flex items-center justify-between p-base">
                                         <div>
                                             <p className="text-2xl font-bold text-nav-events font-rajdhani">1,200+</p>
                                             <p className="text-sm text-muted-foreground">Registrations</p>
                                         </div>
-                                        <Users weight="bold" className="h-6 w-6 text-nav-events" />
+                                        <Users className="h-6 w-6 text-nav-events" />
                                     </div>
                                 </Card>
-                                <Card className="shadow-whisper hover:shadow-present transition-all duration-200">
+                                <Card variant="interactive" className="shadow-whisper hover:shadow-present transition-all duration-200">
                                     <div className="flex items-center justify-between p-base">
                                         <div>
                                             <p className="text-2xl font-bold text-nav-events font-rajdhani">45+</p>
                                             <p className="text-sm text-muted-foreground">Event Hosts</p>
                                         </div>
-                                        <Award weight="bold" className="h-6 w-6 text-nav-events" />
+                                        <Award className="h-6 w-6 text-nav-events" />
                                     </div>
                                 </Card>
-                                <Card className="shadow-whisper hover:shadow-present transition-all duration-200">
+                                <Card variant="interactive" className="shadow-whisper hover:shadow-present transition-all duration-200">
                                     <div className="flex items-center justify-between p-base">
                                         <div>
                                             <p className="text-2xl font-bold text-nav-events font-rajdhani">350+</p>
                                             <p className="text-sm text-muted-foreground">Reviews</p>
                                         </div>
-                                        <MessageSquare weight="bold" className="h-6 w-6 text-nav-events" />
+                                        <MessageSquare className="h-6 w-6 text-nav-events" />
                                     </div>
                                 </Card>
                             </div>
@@ -952,16 +955,16 @@ export default function EventsPage() {
                                 Contribute
                             </h3>
                             <div className="space-y-xs">
-                                <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200">
-                                    <Plus weight="bold" className="h-4 w-4" />
+                                <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200 shadow-none hover:shadow-elevated" animationType="plus-minus">
+                                    <Plus className="h-4 w-4" />
                                     Submit an Event
                                 </Button>
-                                <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200">
-                                    <MessageSquare weight="bold" className="h-4 w-4" />
+                                <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200 shadow-none hover:shadow-elevated" animationType="arrow">
+                                    <MessageSquare className="h-4 w-4" />
                                     Review an Event
                                 </Button>
-                                <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200">
-                                    <AlertTriangle weight="bold" className="h-4 w-4" />
+                                <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200 shadow-none hover:shadow-elevated">
+                                    <AlertTriangle className="h-4 w-4" />
                                     Report an Issue
                                 </Button>
                             </div>

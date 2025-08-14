@@ -6,9 +6,10 @@ import { cn } from '@/lib/utils';
 import { Badge } from './badge';
 import { Button } from './button';
 import Image from 'next/image';
-import { MapPin, Phone, Clock, Star, Globe, TrendingUp, Shield} from 'lucide-react';
+import { MapPin, Phone, Clock, Star, Globe, TrendingUp, Shield, ChatsCircle} from '@phosphor-icons/react';
 import { Avatar, AvatarImage, AvatarFallback } from './avatar';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './tooltip';
+import { ReviewsDisplay } from './reviews-display';
 
 // TBGC Business-Specific VendorCard - Strategic Restraint Implementation
 const vendorCardVariants = cva(
@@ -57,11 +58,12 @@ export interface VendorCardProps
   website?: string | undefined;
   hours?: string | undefined;
   
-  // Social Proof
+  // Social Proof & Reviews
   rating?: number | undefined;
   reviewCount?: number | undefined;
   isVerified?: boolean | undefined;
   verificationStatus?: string | undefined;
+  googlePlaceId?: string | undefined;
   
   // Tier-Specific Features
   tier: 'free' | 'copper' | 'silver' | 'gold';
@@ -93,6 +95,7 @@ export function VendorCard({
   reviewCount,
   isVerified,
   verificationStatus,
+  googlePlaceId,
   tier,
   specialties = [],
   isSponsored,
@@ -101,7 +104,35 @@ export function VendorCard({
   className,
   ...props
 }: VendorCardProps) {
-  const [imgError, setImgError] = useState(false);
+  const [imgError, setImgError] = useState(false)
+  const [reviewsData, setReviewsData] = useState<any>(null)
+  const [loadingReviews, setLoadingReviews] = useState(false)
+  
+  // Load reviews function
+  const loadReviews = async () => {
+    if (!googlePlaceId || loadingReviews) return
+    
+    setLoadingReviews(true)
+    try {
+      const response = await fetch('/api/reviews', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          placeId: googlePlaceId, 
+          businessName 
+        })
+      })
+      
+      if (response.ok) {
+        const data = await response.json()
+        setReviewsData(data)
+      }
+    } catch (error) {
+      console.error('Failed to load reviews:', error)
+    } finally {
+      setLoadingReviews(false)
+    }
+  }
 
   // Strategic tier-based features
   const showSponsored = tier === 'gold' && isSponsored;
@@ -162,7 +193,7 @@ export function VendorCard({
                       variant={tier === 'gold' ? 'elite' : 'default'}
                       size="sm"
                     >
-                      <Shield className="w-icon-xs h-icon-xs mr-xs" />
+                      <Shield className="w-icon-xs h-icon-xs mr-xs" weight="bold" />
                       Verified
                     </Badge>
                   </TooltipTrigger>
@@ -192,32 +223,54 @@ export function VendorCard({
       <div className="space-y-xs mb-md">
         {address && (
           <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-            <MapPin className="w-icon-sm h-icon-sm flex-shrink-0" />
+            <MapPin className="w-icon-sm h-icon-sm flex-shrink-0" weight="bold" />
             <span className="truncate">{address}</span>
           </div>
         )}
         {phone && (
           <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-            <Phone className="w-icon-sm h-icon-sm flex-shrink-0" />
+            <Phone className="w-icon-sm h-icon-sm flex-shrink-0" weight="bold" />
             <span>{phone}</span>
           </div>
         )}
         {hours && (
           <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-            <Clock className="w-icon-sm h-icon-sm flex-shrink-0" />
+            <Clock className="w-icon-sm h-icon-sm flex-shrink-0" weight="bold" />
             <span>{hours}</span>
           </div>
         )}
       </div>
 
-      {/* Reviews placeholder - Google Reviews coming soon */}
-      {!rating && !reviewCount && (
-        <div className="flex items-center gap-xs mb-md">
-          <span className="text-sm text-muted-foreground italic">
-            Reviews coming soon • Be the first to review!
-          </span>
-        </div>
-      )}
+      {/* Reviews section */}
+      <div className="mb-md">
+        {reviewsData ? (
+          <ReviewsDisplay 
+            reviewsData={reviewsData}
+            showHeader={false}
+            variant="default"
+            autoPlay={false}
+          />
+        ) : googlePlaceId ? (
+          <div className="flex items-center gap-xs">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={loadReviews}
+              disabled={loadingReviews}
+              className="p-0 h-auto font-normal text-muted-foreground hover:text-card-foreground"
+            >
+              <ChatsCircle className="size-4 mr-xs" weight="bold" />
+              {loadingReviews ? 'Loading reviews...' : 'View customer reviews'}
+            </Button>
+          </div>
+        ) : (
+          <div className="flex items-center gap-xs">
+            <span className="text-sm text-muted-foreground italic">
+              Reviews coming soon • Be the first to review!
+            </span>
+          </div>
+        )}
+      </div>
 
       {/* Specialties */}
       {specialties.length > 0 && (
@@ -245,7 +298,7 @@ export function VendorCard({
       {/* Enhanced features for Silver/Gold tiers */}
       {showLeads && (
         <div className="flex items-center gap-xs mb-md p-xs bg-rifling-green/10 rounded-xs">
-          <TrendingUp className="w-icon-sm h-icon-sm text-rifling-green" />
+          <TrendingUp className="w-icon-sm h-icon-sm text-rifling-green" weight="bold" />
           <span className="text-body-sm text-rifling-green font-medium">
             {monthlyLeads} leads this month
           </span>
@@ -275,7 +328,7 @@ export function VendorCard({
               rel="noopener noreferrer"
               title={`Visit ${businessName}'s website (opens in new tab)`}
             >
-              <Globe className="w-icon-sm h-icon-sm" />
+              <Globe className="w-icon-sm h-icon-sm" weight="bold" />
             </a>
           </Button>
         )}

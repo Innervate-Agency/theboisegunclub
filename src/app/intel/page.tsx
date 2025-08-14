@@ -309,30 +309,32 @@ const shootingLocations = [
   }
 ]
 
-// High-priority weather monitoring locations for ticker display
+// High-priority weather monitoring locations for ticker display - OUTDOOR ONLY
 const featuredWeatherLocations = [
   { name: "Black's Creek Public Shooting Range", lat: 43.4629, lng: -116.1559 },
-  { name: "Independence Indoor Shooting", lat: 43.5684, lng: -116.2494 },
   { name: "Snake River Birds of Prey Area", lat: 43.2661, lng: -116.4170 },
   { name: "Table Rock Area - Boise Foothills", lat: 43.5949, lng: -116.1429 },
   { name: "Lucky Peak Area - East Boise", lat: 43.5234, lng: -116.0654 },
   { name: "Owyhee Mountains - Jump Creek", lat: 43.0234, lng: -116.7892 }
 ]
 
-// Weather monitoring prioritizes locations with high weatherPriority ratings
-// Indoor ranges have low priority since weather doesn't affect indoor shooting
+// Weather monitoring: outdoor locations only for API efficiency
+// Indoor ranges excluded - weather doesn't affect climate-controlled facilities
+// Free tier: 1000 calls/day = ~20 locations max (48 calls/day per location)
 
 export default async function MapPage() {
   // Fetch live weather data for featured locations (ticker display)
   const liveWeatherConditions = await fetchWeatherForMultipleLocations(featuredWeatherLocations)
   
-  // Fetch weather data for all locations for enhanced location browser
-  const allLocationCoords = shootingLocations.map(loc => ({
-    name: loc.name,
-    lat: loc.lat,
-    lng: loc.lng
-  }))
-  const allWeatherData = await fetchWeatherForMultipleLocations(allLocationCoords)
+  // Fetch weather data for OUTDOOR locations only (exclude indoor ranges)
+  const outdoorLocationCoords = shootingLocations
+    .filter(loc => loc.category !== 'Indoor Range' && loc.weatherPriority !== 'low')
+    .map(loc => ({
+      name: loc.name,
+      lat: loc.lat,
+      lng: loc.lng
+    }))
+  const allWeatherData = await fetchWeatherForMultipleLocations(outdoorLocationCoords)
 
   // Calculate real stats from location data - honest MVP numbers
   const locationStats = {

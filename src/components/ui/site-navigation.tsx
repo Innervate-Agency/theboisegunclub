@@ -29,8 +29,8 @@ const siteNavigationVariants = cva(
   {
     variants: {
       variant: {
-        default: "mica shadow-present bg-card/95",
-        premium: "mica shadow-elevated",
+        default: "mica-navbar shadow-whisper",
+        premium: "mica-navbar shadow-present",
         elite: "mica-modal shadow-prominent after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warning-amber/50 after:to-transparent",
         glass: "mica-card shadow-elevated",
         gunclub: "mica shadow-present after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warm-stone/40 after:to-transparent"
@@ -107,6 +107,18 @@ export function SiteNavigation({
     if (pathname.startsWith('/forums')) return Users
     return Diamond // fallback
   }
+
+  // Get current page subtitle based on pathname (memoized for performance)
+  const currentPageSubtitle = React.useMemo(() => {
+    if (pathname === '/') return 'Treasure Valley Collective'
+    if (pathname.startsWith('/events')) return 'Your Trusted Event Source'
+    if (pathname.startsWith('/directory')) return 'Local Business Network'
+    if (pathname.startsWith('/the-armory')) return 'Gear Reviews & Insights'
+    if (pathname.startsWith('/intel')) return 'Range Conditions & Data'
+    if (pathname.startsWith('/marketplace')) return 'Community Commerce Hub'
+    if (pathname.startsWith('/forums')) return 'Community Discussion Space'
+    return 'Treasure Valley Collective' // fallback
+  }, [pathname])
 
   // Get background color for magic line based on hovered/active path
   const getMagicLineColor = (itemColor: string) => {
@@ -242,8 +254,8 @@ export function SiteNavigation({
                     <div className="text-2xl font-rajdhani text-card-foreground leading-none uppercase">
                       <span className="font-[800]">The Boise</span> <span className="font-[300]">Gun Club</span>
                     </div>
-                    <p className="text-base font-rajdhani font-[400] text-muted-foreground leading-none lowercase tracking-wider text-center">
-                      Treasure Valley Collective
+                    <p className="text-base font-rajdhani font-[500] text-muted-foreground leading-none lowercase tracking-wider text-center">
+                      {currentPageSubtitle}
                     </p>
                   </div>
                 </div>

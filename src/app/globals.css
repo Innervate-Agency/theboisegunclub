@@ -1331,6 +1331,41 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
+  .mica-navbar {
+    /* NAVBAR GLASSMORPHISM: Diagonal opacity gradient for navigation */
+    background: 
+      /* Navbar noise texture */
+      radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(0, 0, 0, 0.01) 0%, transparent 50%),
+      /* Diagonal opacity gradient from logo (97%) to nav (80%) */
+      linear-gradient(135deg, rgba(248, 250, 252, 0.97) 0%, rgba(248, 250, 252, 0.88) 50%, rgba(248, 250, 252, 0.80) 100%);
+    backdrop-filter: blur(12px) saturate(1.6) contrast(1.05);
+    -webkit-backdrop-filter: blur(12px) saturate(1.6) contrast(1.05);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.08),
+      0 1px 4px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    isolation: isolate;
+  }
+
+  .dark .mica-navbar {
+    /* DARK NAVBAR GLASSMORPHISM: Dark diagonal gradient */
+    background: 
+      /* Dark navbar noise texture */
+      radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.015) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
+      /* Dark diagonal opacity gradient */
+      linear-gradient(135deg, rgba(22, 28, 36, 0.97) 0%, rgba(22, 28, 36, 0.88) 50%, rgba(22, 28, 36, 0.80) 100%);
+    backdrop-filter: blur(16px) saturate(1.8) contrast(1.1);
+    -webkit-backdrop-filter: blur(16px) saturate(1.8) contrast(1.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.15),
+      0 1px 4px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
   /* ================== WEB GLASSMORPHISM WITH MICA TWIST DOCUMENTATION ==================
    * 
    * REAL GLASSMORPHISM IMPLEMENTATION GUIDE
