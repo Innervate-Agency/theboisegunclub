@@ -6,7 +6,8 @@ import { cn } from "@/lib/utils"
 import { Card } from "./card"
 import { Badge } from "./badge"
 import { Button } from "./button"
-import { Calendar, MapPin, Clock, Users } from 'lucide-react'
+// Phosphor Icons - Primary choice for tactical aesthetic
+import { Calendar, MapPin, Clock, Users } from '@phosphor-icons/react'
 
 const eventCardVariants = cva(
   "p-md transition-all duration-300 group relative overflow-hidden",
@@ -58,13 +59,13 @@ export function EventCard({
 
   const getEventBadgeVariant = (type: string): VariantProps<typeof Badge>["variant"] => {
     switch (type) {
-      case 'Competition': return 'foothills-purple'
-      case 'Training': return 'info-river'
-      case 'Expo': return 'sandy-ochre'
-      case 'Charity': return 'sagebrush-green'
-      case 'Social': return 'light-peachy'
-      case 'Demo': return 'warning-clay'
-      default: return 'default'
+      case 'Competition': return 'events-competition'
+      case 'Training': return 'events-training'
+      case 'Expo': return 'events-featured'
+      case 'Charity': return 'events-social'
+      case 'Social': return 'events-social'
+      case 'Demo': return 'events-registration'
+      default: return 'status-info'
     }
   }
 
@@ -91,7 +92,7 @@ export function EventCard({
                 {eventType}
               </Badge>
               {featured && (
-                <Badge variant="featured" size="sm">
+                <Badge variant="events-featured" size="sm">
                   Featured
                 </Badge>
               )}
@@ -117,23 +118,23 @@ export function EventCard({
 
         <div className="space-y-xs text-body-sm">
           <div className="flex items-center gap-xs text-muted-foreground">
-            <Calendar className="size-4 flex-shrink-0" />
+            <Calendar weight="bold" className="size-4 flex-shrink-0" />
             <span>{date}</span>
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
-            <Clock className="size-4 flex-shrink-0" />
+            <Clock weight="bold" className="size-4 flex-shrink-0" />
             <span>{time}</span>
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
-            <MapPin className="size-4 flex-shrink-0" />
+            <MapPin weight="bold" className="size-4 flex-shrink-0" />
             <span className="line-clamp-1">{location}</span>
           </div>
         </div>
 
         {capacity && (
-          <div className="flex items-center justify-between text-body-sm bg-muted/50 px-base py-xs rounded-sm">
+          <div className="flex items-center justify-between text-body-sm bg-muted/50 px-base py-xs rounded-xs">
             <div className="flex items-center gap-xs text-muted-foreground">
-              <Users className="size-4" />
+              <Users weight="bold" className="size-4" />
               <span>Capacity: {capacity}</span>
             </div>
             <div className={cn(
