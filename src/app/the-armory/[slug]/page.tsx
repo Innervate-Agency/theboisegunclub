@@ -1,7 +1,7 @@
 import { getArmoryItem, getAllArmoryItems } from '@/lib/the-armory';
 import MdxContent from '@/components/molecules/MdxContent';
 import SiteNavigation from '@/components/organisms/SiteNavigation';
-import SiteFooter from '@/components/organisms/SiteFooter';
+import { SiteFooter } from '@/components/ui/site-footer';
 import PageHero from '@/components/organisms/PageHero';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';

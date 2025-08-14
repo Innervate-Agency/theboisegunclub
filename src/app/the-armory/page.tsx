@@ -497,7 +497,7 @@ export default function ArmoryPage() {
         </div>
       </section>
 
-      <SiteFooter />
+      <SiteFooter currentPage="armory" />
           </div>{/* End main content wrapper */}
         </SidebarInset>
       </SidebarProvider>

@@ -102,95 +102,79 @@ const directoryListings = [
     imageUrl: "/images/vendors/idaho-firearms.jpg"
   },
   {
-    businessName: "Caldwell Gun Club",
-    businessType: "Shooting Range & Club",
-    description: "Established shooting club with outdoor ranges for rifle, pistol, and sporting clays. Member and public shooting with regular competitions.",
-    address: "21840 Pond Ln, Caldwell, ID 83607",
-    phone: "(208) 555-0432",
-    website: "https://caldwellgunclub.org",
-    hours: "Wed-Sun: 9AM-5PM, Members: 24/7 access",
+    businessName: "Mountain West Shooting Sports",
+    businessType: "Indoor Shooting Range",
+    description: "Modern indoor facility with 25-yard pistol lanes and training areas. Retail shop with firearms, ammunition, and accessories.",
+    address: "432 Sports Complex Dr, Caldwell, ID 83605",
+    phone: "(208) 555-0321",
+    website: "https://mwshooting.com",
+    hours: "Daily: 10AM-9PM",
     rating: 4.4,
-    reviewCount: 51,
+    reviewCount: 88,
     tier: "copper" as const,
-    specialties: ["Sporting Clays", "Rifle Range", "Pistol Range", "Competitions", "Memberships"],
+    specialties: ["Indoor Range", "Retail Shop", "Lane Rentals", "Basic Training"],
     isVerified: true,
-    imageUrl: "/images/vendors/caldwell-gun.jpg"
+    imageUrl: "/images/vendors/mw-shooting.jpg"
   },
 
   // Free Tier - Basic Listings
   {
-    businessName: "Valley Gun & Pawn",
-    businessType: "FFL Dealer & Pawn Shop",
-    description: "Full-service gun store with extensive inventory of new and used firearms, accessories, ammunition, and FFL transfer services.",
-    address: "890 Main St, Caldwell, ID 83605",
-    phone: "(208) 555-0321",
-    website: "https://valleygunpawn.com",
-    hours: "Mon-Sat: 9AM-7PM, Sun: 11AM-5PM",
+    businessName: "Collector's Corner FFL",
+    businessType: "FFL Transfer Services",
+    description: "Licensed FFL dealer providing transfer services, background checks, and basic gunsmith work. Family-owned business serving the community for 15+ years.",
+    address: "123 Main St, Middleton, ID 83644",
+    phone: "(208) 555-0147",
+    website: "",
+    hours: "Mon-Fri: 10AM-6PM, Sat: 10AM-4PM",
     rating: 4.2,
-    reviewCount: 38,
+    reviewCount: 35,
     tier: "free" as const,
-    specialties: ["New & Used Firearms", "Accessories", "Ammunition", "FFL Transfers"],
-    isVerified: true,
-    imageUrl: "/images/vendors/valley-gun.jpg"
+    specialties: ["FFL Transfers", "Background Checks", "Basic Gunsmith"],
+    isVerified: true
   },
   {
-    businessName: "Mountain View Sporting Goods",
-    businessType: "Sporting Goods & Firearms",
-    description: "Local sporting goods store specializing in hunting and shooting sports equipment, firearms, and outdoor gear for the Treasure Valley.",
-    address: "432 Sports Way, Kuna, ID 83634",
-    phone: "(208) 555-0876",
-    website: "https://mvfirearms.com",
-    hours: "Mon-Sat: 9AM-6PM, Sun: 12PM-5PM",
-    rating: 4.1,
-    reviewCount: 29,
-    tier: "free" as const,
-    specialties: ["Hunting Gear", "Firearms Sales", "Ammunition", "Outdoor Equipment"],
-    isVerified: true,
-    imageUrl: "/images/vendors/mountain-view.jpg"
-  },
-  {
-    businessName: "Gem State Guns",
-    businessType: "FFL Dealer",
-    description: "Local firearms dealer specializing in transfers, consignments, and custom orders. Personalized service for all your firearms needs.",
-    address: "123 Liberty St, Middleton, ID 83644",
-    phone: "(208) 555-0543",
-    website: "https://gemstateguns.com",
-    hours: "Tue-Sat: 10AM-6PM, Closed Sun-Mon",
+    businessName: "Valley Tactical Supply",
+    businessType: "Tactical Gear & Accessories",
+    description: "Tactical equipment, accessories, holsters, and gear for law enforcement and civilian use. Custom Kydex work and equipment consultation.",
+    address: "789 Industrial Way, Garden City, ID 83714",
+    phone: "(208) 555-0852",
+    website: "https://valleytactical.com",
+    hours: "Mon-Fri: 9AM-6PM, Sat: 10AM-5PM",
     rating: 4.3,
-    reviewCount: 22,
+    reviewCount: 42,
     tier: "free" as const,
-    specialties: ["FFL Transfers", "Custom Orders", "Consignments", "Accessories"],
-    isVerified: true,
-    imageUrl: "/images/vendors/gem-state.jpg"
+    specialties: ["Tactical Gear", "Holsters", "Custom Kydex", "Consultation"],
+    isVerified: true
+  },
+  {
+    businessName: "High Country Outfitters",
+    businessType: "Hunting & Sporting Goods",
+    description: "Complete hunting outfitter with firearms, archery equipment, hunting gear, and guided hunting services throughout Idaho's wilderness areas.",
+    address: "654 Wilderness Rd, Kuna, ID 83634",
+    phone: "(208) 555-0963",
+    website: "https://highcountryid.com",
+    hours: "Mon-Sat: 8AM-7PM, Sun: 10AM-5PM",
+    rating: 4.1,
+    reviewCount: 28,
+    tier: "free" as const,
+    specialties: ["Hunting Gear", "Archery", "Guided Hunts", "Wilderness Gear"],
+    isVerified: false
   }
-]
-
-const businessTypes = [
-  { label: "All Businesses", value: "all", count: directoryListings.length },
-  { label: "FFL Dealers", value: "dealer", count: directoryListings.filter(b => b.businessType.toLowerCase().includes("dealer") || b.businessType.toLowerCase().includes("gun")).length },
-  { label: "Shooting Ranges", value: "range", count: directoryListings.filter(b => b.businessType.toLowerCase().includes("range") || b.businessType.toLowerCase().includes("club")).length },
-  { label: "Training", value: "training", count: directoryListings.filter(b => b.businessType.toLowerCase().includes("training") || b.businessType.toLowerCase().includes("academy")).length },
-  { label: "Gunsmiths", value: "gunsmith", count: directoryListings.filter(b => b.businessType.toLowerCase().includes("gunsmith") || b.businessType.toLowerCase().includes("custom")).length },
-]
-
-const tierFilters = [
-  { label: "Gold Partners", value: "gold", count: directoryListings.filter(b => b.tier === "gold").length, color: "rusty-orange" },
-  { label: "Silver Members", value: "silver", count: directoryListings.filter(b => b.tier === "silver").length, color: "stainless-steel" },
-  { label: "Copper Members", value: "copper", count: directoryListings.filter(b => b.tier === "copper").length, color: "rusty-orange" },
-  { label: "Free Listings", value: "free", count: directoryListings.filter(b => b.tier === "free").length, color: "muted-foreground" }
 ]
 
 export default function DirectoryPage() {
   const [selectedType, setSelectedType] = useState("all")
   const [selectedTier, setSelectedTier] = useState("all")
   const [searchQuery, setSearchQuery] = useState("")
-  
+
+  // Filter businesses based on selections
   const filteredBusinesses = directoryListings.filter(business => {
     const matchesType = selectedType === "all" || 
-      (selectedType === "dealer" && (business.businessType.toLowerCase().includes("dealer") || business.businessType.toLowerCase().includes("gun") || business.businessType.toLowerCase().includes("pawn"))) ||
-      (selectedType === "range" && (business.businessType.toLowerCase().includes("range") || business.businessType.toLowerCase().includes("club"))) ||
-      (selectedType === "training" && (business.businessType.toLowerCase().includes("training") || business.businessType.toLowerCase().includes("academy"))) ||
-      (selectedType === "gunsmith" && (business.businessType.toLowerCase().includes("gunsmith") || business.businessType.toLowerCase().includes("custom")))
+      (selectedType === "dealer" && (business.businessType.toLowerCase().includes("dealer") || business.businessType.toLowerCase().includes("gun") || business.businessType.toLowerCase().includes("ffl"))) ||
+      (selectedType === "range" && (business.businessType.toLowerCase().includes("range") || business.businessType.toLowerCase().includes("shooting"))) ||
+      (selectedType === "training" && (business.businessType.toLowerCase().includes("training") || business.businessType.toLowerCase().includes("academy") || business.businessType.toLowerCase().includes("education"))) ||
+      (selectedType === "gunsmith" && (business.businessType.toLowerCase().includes("gunsmith") || business.businessType.toLowerCase().includes("custom"))) ||
+      (selectedType === "tactical" && (business.businessType.toLowerCase().includes("tactical") || business.businessType.toLowerCase().includes("gear")))
     
     const matchesTier = selectedTier === "all" || business.tier === selectedTier
     
@@ -199,18 +183,33 @@ export default function DirectoryPage() {
       business.businessType.toLowerCase().includes(searchQuery.toLowerCase()) ||
       business.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       business.address.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      business.specialties.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()))
-    
+      business.specialties.some(specialty => specialty.toLowerCase().includes(searchQuery.toLowerCase()))
+
     return matchesType && matchesTier && matchesSearch
   })
 
-  // Sort by tier priority (gold > silver > copper > free) then by rating
-  const sortedBusinesses = filteredBusinesses.sort((a, b) => {
-    const tierOrder = { gold: 4, silver: 3, copper: 2, free: 1 }
-    const tierDiff = tierOrder[b.tier] - tierOrder[a.tier]
-    if (tierDiff !== 0) return tierDiff
-    return (b.rating || 0) - (a.rating || 0)
-  })
+  // Directory stats
+  const totalBusinesses = directoryListings.length
+  const verifiedBusinesses = directoryListings.filter(b => b.isVerified).length
+  const averageRating = (directoryListings.reduce((sum, b) => sum + b.rating, 0) / totalBusinesses).toFixed(1)
+  const totalReviews = directoryListings.reduce((sum, b) => sum + b.reviewCount, 0)
+
+  const businessTypeFilters = [
+    { id: "all", label: "All Categories", icon: Building2 },
+    { id: "dealer", label: "Dealers & FFLs", icon: Shield },
+    { id: "range", label: "Shooting Ranges", icon: Target },
+    { id: "training", label: "Training & Education", icon: Award },
+    { id: "gunsmith", label: "Gunsmiths", icon: Zap },
+    { id: "tactical", label: "Tactical & Gear", icon: MessageSquare }
+  ]
+
+  const tierFilters = [
+    { id: "all", label: "All Tiers", color: "default" },
+    { id: "gold", label: "Gold Partners", color: "warning" },
+    { id: "silver", label: "Silver Enhanced", color: "secondary" },
+    { id: "copper", label: "Copper Standard", color: "tertiary" },
+    { id: "free", label: "Free Listings", color: "default" }
+  ]
 
   return (
     <>
@@ -418,11 +417,11 @@ export default function DirectoryPage() {
               <div className="space-y-base">
                 <div className="grid grid-cols-2 lg:grid-cols-1 gap-base">
                   <div className="text-center p-base bg-card rounded-sm border">
-                    <div className="font-rajdhani text-2xl font-bold text-rusty-orange">127+</div>
+                    <div className="font-rajdhani text-2xl font-bold text-nav-directory">{totalBusinesses}+</div>
                     <div className="text-sm text-muted-foreground">Local Businesses</div>
                   </div>
                   <div className="text-center p-base bg-card rounded-sm border">
-                    <div className="font-rajdhani text-2xl font-bold text-rusty-orange">4.6</div>
+                    <div className="font-rajdhani text-2xl font-bold text-nav-directory">{averageRating}</div>
                     <div className="text-sm text-muted-foreground">Average Rating</div>
                   </div>
                 </div>
@@ -431,259 +430,174 @@ export default function DirectoryPage() {
           </div>
         </section>
 
-        {/* Business Type Categories */}
-        <section className="py-xl">
-          <div className="container mx-auto max-w-site px-md">
-            <div className="space-y-base">
-              <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">Browse by Category</h2>
-              <div className="flex flex-wrap gap-xs">
-                {businessTypes.map((type) => (
-                  <Button
-                    key={type.value}
-                    variant={selectedType === type.value ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedType(type.value)}
-                    className={selectedType === type.value ? 
-                      "bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange" : 
-                      "border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
-                    }
-                  >
-                    {type.label}
-                    <Badge variant="secondary" className="ml-xs">
-                      {type.count}
-                    </Badge>
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Partners & Trust Signals */}
-        <section className="py-xl bg-muted/30">
-          <div className="container mx-auto max-w-site px-md">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-xl">
-              
-              {/* Partnership Tiers */}
-              <div className="space-y-base">
-                <div className="flex items-center justify-between">
-                  <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">Partnership Tiers</h2>
-                  <Button variant="ghost" className="text-rusty-orange hover:text-rusty-orange">
-                    View All <ArrowRight className="h-4 w-4 ml-xs" />
-                  </Button>
-                </div>
-                
-                <div className="space-y-base">
-                  {tierFilters.map((tier) => (
-                    <Card key={tier.value} className="p-base hover:shadow-md transition-all duration-300">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-base">
-                          <div className={`w-3 h-3 rounded-pill bg-${tier.color}`}></div>
-                          <div>
-                            <h3 className="font-medium text-card-foreground">{tier.label}</h3>
-                            <div className="text-sm text-muted-foreground">
-                              {tier.count} businesses • Enhanced features & visibility
-                            </div>
-                          </div>
-                        </div>
-                        <Button 
-                          variant="ghost" 
-                          size="sm"
-                          onClick={() => setSelectedTier(tier.value)}
-                          className="text-rusty-orange hover:text-rusty-orange"
-                        >
-                          Browse
-                        </Button>
-                      </div>
-                    </Card>
+        <div className="max-w-site mx-auto px-md py-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-2xl">
+          
+          {/* Filters Sidebar */}
+          <div className="lg:col-span-1 space-y-lg">
+            
+            {/* Business Type Filters */}
+            <Card className="mica shadow-present rounded-xs">
+              <CardHeader className="pb-base">
+                <CardTitle className="font-rajdhani text-xl flex items-center gap-sm text-card-foreground">
+                  <Filter className="size-5" />
+                  Business Type
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-xs">
+                  {businessTypeFilters.map((filter) => (
+                    <Button
+                      key={filter.id}
+                      variant={selectedType === filter.id ? "solid" : "ghost"}
+                      onClick={() => setSelectedType(filter.id)}
+                      className="w-full justify-start gap-sm font-rajdhani font-medium shadow-none rounded-xs"
+                    >
+                      {React.createElement(filter.icon, { className: "size-4" })}
+                      {filter.label}
+                    </Button>
                   ))}
                 </div>
-              </div>
+              </CardContent>
+            </Card>
 
-              {/* Trust Signals & Community */}
-              <div className="space-y-base">
-                <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">Why Choose Directory Partners</h2>
-                
-                <Card className="p-lg bg-gradient-to-br from-rusty-orange/5 to-rusty-orange/5">
-                  <div className="space-y-base">
-                    <div className="flex items-center gap-base">
-                      <div className="bg-rusty-orange/20 p-base rounded-full">
-                        <CheckCircle className="h-6 w-6 text-rusty-orange" />
-                      </div>
-                      <div>
-                        <div className="font-rajdhani text-2xl font-bold text-card-foreground">100%</div>
-                        <div className="text-sm text-muted-foreground">Verified Businesses</div>
-                      </div>
-                    </div>
+            {/* Tier Filters */}
+            <Card className="mica shadow-present rounded-xs">
+              <CardHeader className="pb-base">
+                <CardTitle className="font-rajdhani text-xl flex items-center gap-sm text-card-foreground">
+                  <Award className="size-5" />
+                  Membership Tier
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-xs">
+                  {tierFilters.map((filter) => (
+                    <Button
+                      key={filter.id}
+                      variant={selectedTier === filter.id ? "solid" : "ghost"}
+                      onClick={() => setSelectedTier(filter.id)}
+                      className="w-full justify-start font-rajdhani font-medium shadow-none rounded-xs"
+                    >
+                      {filter.label}
+                    </Button>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Directory Info */}
+            <Card className="mica shadow-present rounded-xs border-nav-directory/20">
+              <CardContent className="pt-base">
+                <div className="space-y-base text-center">
+                  <div className="space-y-xs">
+                    <Target className="size-8 text-nav-directory mx-auto" />
+                    <h3 className="font-rajdhani font-bold text-lg text-card-foreground">
+                      List Your Business
+                    </h3>
                     <p className="text-sm text-muted-foreground">
-                      Every business in our directory is verified for licensing, insurance, and community standing.
+                      Join Idaho's premier firearms directory and connect with thousands of responsible gun owners.
                     </p>
                   </div>
-                </Card>
-
-                <div className="space-y-base">
-                  <h3 className="font-medium text-card-foreground">Trust Features</h3>
-                  {[
-                    { icon: Shield, label: "FFL License Verified", desc: "All dealers verified with ATF database" },
-                    { icon: Star, label: "Customer Reviews", desc: "Real reviews from verified customers" },
-                    { icon: Award, label: "Community Endorsed", desc: "Recommended by local enthusiasts" }
-                  ].map((feature, i) => (
-                    <Card key={i} className="p-base">
-                      <div className="flex items-center gap-base">
-                        <feature.icon className="h-5 w-5 text-rusty-orange" />
-                        <div>
-                          <h4 className="font-medium text-sm">{feature.label}</h4>
-                          <div className="text-xs text-muted-foreground">{feature.desc}</div>
-                        </div>
-                      </div>
-                    </Card>
-                  ))}
-                </div>
-
-                <Card className="p-base bg-rifling-green/10 border-rifling-green/20">
-                  <div className="flex items-center gap-xs text-rifling-green">
-                    <Zap className="h-4 w-4" />
-                    <span className="text-sm font-medium">Instant Contact & Booking</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground mt-xs">
-                    Direct phone, email, and website access with verified contact information.
-                  </p>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      {/* Directory Listings */}
-      <section className="pb-6xl">
-        <div className="container mx-auto max-w-site px-md">
-          <div className="space-y-xl">
-            <div className="flex items-center justify-between">
-              <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">
-                {selectedType === "all" ? "All Businesses" : businessTypes.find(t => t.value === selectedType)?.label}
-              </h2>
-              <div className="text-muted-foreground">
-                {sortedBusinesses.length} {sortedBusinesses.length === 1 ? 'business' : 'businesses'} found
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xl">
-              {sortedBusinesses.map((business, index) => (
-                <VendorCard
-                  key={index}
-                  businessName={business.businessName}
-                  businessType={business.businessType}
-                  description={business.description}
-                  address={business.address}
-                  phone={business.phone}
-                  website={business.website}
-                  hours={business.hours}
-                  rating={business.rating}
-                  reviewCount={business.reviewCount}
-                  tier={business.tier}
-                  specialties={business.specialties}
-                  isVerified={business.isVerified}
-                  isSponsored={business.isSponsored}
-                  monthlyLeads={business.monthlyLeads}
-                  imageUrl={business.imageUrl}
-                />
-              ))}
-            </div>
-
-            {sortedBusinesses.length === 0 && (
-              <div className="text-center py-6xl">
-                <div className="space-y-base">
-                  <div className="text-6xl">🏢</div>
-                  <h3 className="font-rajdhani text-2xl font-bold text-card-foreground">
-                    No businesses found
-                  </h3>
-                  <p className="text-muted-foreground max-w-md mx-auto">
-                    Try adjusting your search criteria or browse all businesses to discover local firearms providers in the Treasure Valley.
-                  </p>
-                  <Button 
-                    onClick={() => {
-                      setSelectedType("all")
-                      setSelectedTier("all")
-                      setSearchQuery("")
-                    }}
-                    className="bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange"
-                  >
-                    Show All Businesses
+                  <Button className="w-full shadow-elevated hover:shadow-prominent rounded-xs">
+                    <Plus className="size-4 mr-xs" />
+                    Get Listed
                   </Button>
                 </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Business Listings */}
+          <div className="lg:col-span-3 space-y-lg">
+            
+            {/* Results Header */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base">
+              <div>
+                <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">
+                  {filteredBusinesses.length} {filteredBusinesses.length === 1 ? 'Business' : 'Businesses'} Found
+                </h2>
+                <p className="text-muted-foreground">
+                  {selectedType !== "all" && `Filtered by: ${businessTypeFilters.find(f => f.id === selectedType)?.label}`}
+                  {selectedTier !== "all" && ` • ${tierFilters.find(f => f.id === selectedTier)?.label}`}
+                  {searchQuery && ` • Search: "${searchQuery}"`}
+                </p>
+              </div>
+              
+              <div className="flex items-center gap-sm">
+                <Button variant="outline" className="shadow-none rounded-xs">
+                  <MapPin className="size-4 mr-xs" />
+                  Map View
+                </Button>
+              </div>
+            </div>
+
+            {/* Business Cards Grid */}
+            <div className="grid gap-lg">
+              {filteredBusinesses.length > 0 ? (
+                filteredBusinesses.map((business, index) => (
+                  <VendorCard
+                    key={index}
+                    businessName={business.businessName}
+                    businessType={business.businessType}
+                    description={business.description}
+                    address={business.address}
+                    phone={business.phone}
+                    website={business.website}
+                    hours={business.hours}
+                    rating={business.rating}
+                    reviewCount={business.reviewCount}
+                    tier={business.tier}
+                    specialties={business.specialties}
+                    isVerified={business.isVerified}
+                    isSponsored={business.isSponsored}
+                    monthlyLeads={business.monthlyLeads}
+                    imageUrl={business.imageUrl}
+                    className="mica shadow-present hover:shadow-elevated transition-all duration-300 rounded-xs"
+                  />
+                ))
+              ) : (
+                <Card className="mica shadow-present rounded-xs">
+                  <CardContent className="py-2xl text-center">
+                    <div className="space-y-base">
+                      <Search className="size-12 text-muted-foreground mx-auto" />
+                      <div className="space-y-sm">
+                        <h3 className="font-rajdhani font-bold text-xl text-card-foreground">
+                          No businesses found
+                        </h3>
+                        <p className="text-muted-foreground">
+                          Try adjusting your filters or search terms to find more results.
+                        </p>
+                      </div>
+                      <Button 
+                        onClick={() => {
+                          setSelectedType("all")
+                          setSelectedTier("all") 
+                          setSearchQuery("")
+                        }}
+                        className="rounded-xs shadow-none"
+                      >
+                        Clear All Filters
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+            </div>
+
+            {/* Load More */}
+            {filteredBusinesses.length > 0 && (
+              <div className="text-center pt-lg">
+                <Button variant="outline" className="shadow-none rounded-xs">
+                  <Eye className="size-4 mr-xs" />
+                  Load More Results
+                </Button>
               </div>
             )}
           </div>
         </div>
-      </section>
-
-      {/* Partnership CTA */}
-      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90">
-        <div className="container mx-auto max-w-site px-md text-center">
-          <div className="space-y-lg">
-            <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
-              <Shield className="h-4 w-4 mr-xs" />
-              Partnership Program
-            </Badge>
-            <h2 className="font-rajdhani text-4xl md:text-5xl font-bold text-crisp-off-white">
-              Join as a <span className="text-rusty-orange">Partner</span>
-            </h2>
-            <p className="text-body-lg text-crisp-off-white/80 max-w-2xl mx-auto">
-              Get enhanced visibility, lead generation, and exclusive benefits in Treasure Valley's premier firearms business directory. Multiple partnership tiers available.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-base text-left">
-              <Card className="p-lg bg-white/5 border-rusty-orange/20">
-                <CardHeader className="pb-base">
-                  <CardTitle className="text-rusty-orange font-rajdhani">Gold Partner</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-xs text-crisp-off-white/80">
-                  <div className="flex items-center gap-xs"><Shield className="h-4 w-4 text-rusty-orange" /> Enhanced listing with priority placement</div>
-                  <div className="flex items-center gap-xs"><TrendingUp className="h-4 w-4 text-rusty-orange" /> Lead generation tracking</div>
-                  <div className="flex items-center gap-xs"><Star className="h-4 w-4 text-rusty-orange" /> Sponsored badge and featured placement</div>
-                </CardContent>
-              </Card>
-              <Card className="p-lg bg-white/5 border-stainless-steel/20">
-                <CardHeader className="pb-base">
-                  <CardTitle className="text-stainless-steel font-rajdhani">Silver Member</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-xs text-crisp-off-white/80">
-                  <div className="flex items-center gap-xs"><Shield className="h-4 w-4 text-stainless-steel" /> Enhanced listing with extra details</div>
-                  <div className="flex items-center gap-xs"><Users className="h-4 w-4 text-stainless-steel" /> Customer review management</div>
-                  <div className="flex items-center gap-xs"><MapPin className="h-4 w-4 text-stainless-steel" /> Map integration and hours display</div>
-                </CardContent>
-              </Card>
-              <Card className="p-lg bg-white/5 border-rusty-orange/20">
-                <CardHeader className="pb-base">
-                  <CardTitle className="text-rusty-orange font-rajdhani">Copper Member</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-xs text-crisp-off-white/80">
-                  <div className="flex items-center gap-xs"><Building2 className="h-4 w-4 text-rusty-orange" /> Standard enhanced listing</div>
-                  <div className="flex items-center gap-xs"><Phone className="h-4 w-4 text-rusty-orange" /> Contact information display</div>
-                  <div className="flex items-center gap-xs"><Target className="h-4 w-4 text-rusty-orange" /> Specialty tags and categories</div>
-                </CardContent>
-              </Card>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-base justify-center">
-              <Button 
-                size="xl" 
-                className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
-              >
-                Start Partnership
-                <ArrowRight className="h-5 w-5 ml-xs" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="xl"
-                className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
-              >
-                View Pricing
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
-    <SiteFooter />
-  </>
-)
+      <SiteFooter currentPage="directory" />
+    </>
+  )
 }

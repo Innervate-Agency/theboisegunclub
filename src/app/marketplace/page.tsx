@@ -796,7 +796,7 @@ export default function MarketplacePage() {
         </div>
       </section>
       </div>
-      <SiteFooter />
+      <SiteFooter currentPage="marketplace" />
     </>
   )
 }

@@ -982,7 +982,7 @@ export default function EventsPage() {
             </div>
         </section>
       </div>
-      <SiteFooter />
+      <SiteFooter currentPage="events" />
     </>
   )
 }

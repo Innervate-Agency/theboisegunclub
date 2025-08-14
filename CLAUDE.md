@@ -76,7 +76,7 @@ This file provides guidance to Claude Code when working with this repository.
 - **Tactical Aesthetic**: Angular, geometric icons preferred over rounded alternatives
 
 ## Business Context
-**The Boise Gun Club** is a regional marketplace/directory platform for the entire Treasure Valley firearms community - NOT a single gun club. Design for scalable systems: directory listings, event aggregation, forum categories.
+**The Boise Gun Club** is a regional marketplace/directory platform for the entire Treasure Valley firearms community - NOT a single gun club. **Community-focused platform** built by Idaho gun owners, for Idaho gun owners, emphasizing authentic voice over corporate messaging. Design for scalable systems: directory listings, event aggregation, forum categories.
 
 ## Storybook Setup
 
@@ -91,6 +91,22 @@ This file provides guidance to Claude Code when working with this repository.
 - **Framework**: Ensure `.storybook/main.ts` uses `@storybook/nextjs-vite`
 
 ## Key Recent Achievements
+
+### Modern Footer Redesign & LLC Integration (2025-08-14)
+- **Multi-Tier "Fat Footer"**: Complete redesign following 2024-2025 modern patterns with newsletter CTA, 5-column architecture, and comprehensive navigation
+- **LLC Branding Integration**: Updated copyright to "Boise Gun Collective, LLC" with professional contact information (info@boiseguncollective.com)
+- **Phosphor Icon Migration**: Complete footer icon consistency using tactical Phosphor icons with weight="bold"
+- **Page-Specific Accent Bar**: Dynamic colored strip using navigation color system (home=golden, events=orange, directory=cyan, etc.)
+- **Micro-Animation System**: HoverArrow newsletter button, social icon hover effects, back-to-top FAB with smooth scroll
+- **Rajdhani Typography**: Consistent font application throughout entire footer for professional brand cohesion
+- **Tactical Square Aesthetic**: rounded-none containers with shadow-elevated hierarchy maintaining design system integrity
+
+### Authentic Community Home Page Redesign (2025-08-14)
+- **Community-Focused Messaging**: Complete transformation from corporate platform to authentic Idaho gun owner voice
+- **Seven Platform Pillars**: Strategic restructuring around 7 core features (Directory, Forums, Events, Intel, Marketplace, Armory, Training)
+- **Mission-Driven Content**: Emphasis on community benefits, contribution opportunities, and genuine local ownership
+- **Idaho Steward Voice**: Implementation of down-to-earth, anti-corporate messaging that resonates with Treasure Valley gun owners
+- **Community Contribution**: Clear pathways for members to contribute (forum participation, range photos, firearm reviews)
 
 ### Magic Line Navigation System (2025-08-12)
 - **Framer Motion Integration**: Professional spring physics with Magic Line sliding indicator
@@ -112,15 +128,22 @@ This file provides guidance to Claude Code when working with this repository.
 
 ## Key Reference Files
 
+- `src/app/page.tsx` - **Home page with authentic community messaging and 7-pillar platform structure**
 - `src/app/globals.css` - Complete 26-color Boise landscape palette and design tokens
+- `_resources/docs/AI Persona & Writing Guidelines_ _The Idaho Steward_.md` - Community voice and messaging guidelines
+- `_resources/docs/Idaho Shooting and Sporting Venues.md` - Local venue data and community statistics
 - `src/components/ui/button.tsx` - Enhanced with micro-animation system and animationType props
 - `src/components/ui/micro-animations.tsx` - HoverArrow, PlusMinusToggle, XOToggle, ChevronRotate components
 - `src/components/ui/site-navigation.tsx` - Magic Line navigation with Framer Motion spring physics
+- `src/components/ui/site-footer.tsx` - Modern "fat footer" with LLC branding, Phosphor icons, and micro-animations
 - `src/components/ui/loading-spinner.tsx` - Branded Diamond spinner component
 - `src/components/ui/accessibility-panel.tsx` - Performance-optimized with CSS custom properties
 
 ## Project Memory
 
+- **Community Voice**: Platform messaging emphasizes authentic Idaho gun owner voice - anti-corporate, genuine, down-to-earth
+- **Seven Platform Pillars**: Always reference the 7 core features (Directory, Forums, Events, Intel, Marketplace, Armory, Training)
+- **Community Contribution**: Encourage user participation through forums, range photos, firearm reviews, and local knowledge sharing
 - **Colors**: ONLY use custom 26-color Boise landscape palette from `globals.css` - NEVER generic Tailwind
 - **Icons**: Always use Phosphor Icons as primary choice - tactical, angular aesthetic preferred
 - **Aesthetic**: Tactical square components (`rounded-none` for cards, minimal rounding for interactive)
@@ -128,4 +151,5 @@ This file provides guidance to Claude Code when working with this repository.
 - **Performance**: All animations disabled during loading, use `currentColor` for theming
 - **Navigation**: Magic Line sliding effect is signature feature - never remove without approval
 - **Typography**: Rajdhani font weights 300-800 for display, perfect kerning and letter-spacing
+- **Home Page**: Mission-driven content structure with trust indicators (8 locations, 150+ businesses, 5K+ members)
 - **Development**: Kill dev server before restarting, run in background
