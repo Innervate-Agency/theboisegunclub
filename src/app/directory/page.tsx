@@ -5,35 +5,47 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { VendorCard } from '@/components/ui/VendorCard'
-import StatCard from '@/components/ui/StatCard'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
+// Phosphor Icons - Primary choice for tactical aesthetic
 import { 
-  Search, MapPin, Filter, Star, Clock, Plus, Building2, 
-  Target, Shield, ArrowRight, Users, TrendingUp, Phone,
-  ChevronRight, Eye, Award, CheckCircle, Zap, MessageSquare
-} from 'lucide-react'
+  MagnifyingGlass as Search, 
+  MapPin, 
+  Funnel as Filter, 
+  Plus, 
+  Buildings as Building2,
+  Target, 
+  Shield, 
+  ArrowRight, 
+  Phone,
+  CaretRight as ChevronRight, 
+  Eye, 
+  Medal as Award, 
+  CheckCircle, 
+  Lightning as Zap, 
+  ChatCircle as MessageSquare
+} from '@phosphor-icons/react'
 
 // Treasure Valley firearms business directory with tier-based listings
 const directoryListings = [
   // Gold Tier - Premium Partners
   {
-    businessName: "Boise Gun Club",
-    businessType: "Premier Shooting Range & Club",
-    description: "Treasure Valley's premier outdoor shooting facility with trap, skeet, sporting clays, and rifle ranges. NRA certified instruction and competition hosting with full pro shop.",
-    address: "123 Range Road, Boise, ID 83704",
-    phone: "(208) 555-0123",
-    website: "https://boisegunclub.com",
-    hours: "Mon-Sat: 9AM-7PM, Sun: 10AM-5PM",
-    rating: 4.8,
-    reviewCount: 127,
+    businessName: "Independence Indoor Shooting",
+    businessType: "Premier Indoor Shooting Range",
+    description: "The region's largest and most modern indoor facility. Three ranges, including a 100-yard range, retail pro shop, and full-service gunsmithing.",
+    address: "2749 E Gala Ct, Meridian, ID 83642",
+    phone: "(208) 576-4867",
+    website: "https://www.iishooting.com/",
+    hours: "Mon-Sat: 10AM-8PM, Sun: 10AM-6PM",
+    rating: 4.9,
+    reviewCount: 342,
     tier: "gold" as const,
-    specialties: ["Trap & Skeet", "Rifle Range", "NRA Training", "Competitions", "Pro Shop"],
+    specialties: ["100-Yard Indoor Range", "Tactical Range", "Gunsmithing", "Retail Pro Shop", "Training Academy"],
     isVerified: true,
     isSponsored: true,
-    monthlyLeads: 245,
-    imageUrl: "/images/vendors/boise-gun-club.jpg"
+    monthlyLeads: 312,
+    imageUrl: "/images/vendors/independence-indoor.jpg"
   },
   {
     businessName: "Precision Rifle Works",
@@ -55,110 +67,110 @@ const directoryListings = [
 
   // Silver Tier - Enhanced Listings
   {
-    businessName: "Treasure Valley Gunsmith",
-    businessType: "Full-Service Custom Gunsmith",
-    description: "Expert gunsmithing services including custom builds, precision rifle work, restoration services, and Cerakote finishing for modern and vintage firearms.",
-    address: "789 Craft Lane, Meridian, ID 83642",
-    phone: "(208) 555-0456",
-    website: "https://tvgunsmith.com",
-    hours: "Mon-Fri: 8AM-5PM, Sat: 9AM-2PM",
-    rating: 4.7,
-    reviewCount: 64,
+    businessName: "Black's Creek Public Shooting Range",
+    businessType: "Public Outdoor Shooting Range",
+    description: "Idaho's largest and most frequented public shooting range, operated by EE-DA-HOW Long Rifle & Pistol Club. Features a 200-yard main range and a 500-meter long-range facility.",
+    address: "2420 E Kuna-Mora Rd, Kuna, ID 83634",
+    phone: "(208) 342-9614",
+    website: "https://idfg.idaho.gov/shoot/blacks-creek",
+    hours: "Seasonal (see website)",
+    rating: 4.6,
+    reviewCount: 189,
     tier: "silver" as const,
-    specialties: ["Custom Builds", "Precision Work", "Restoration", "Cerakote Finishing", "Threading"],
+    specialties: ["Public Range", "200-Yard Range", "500-Meter Range", "Hunter Education", "Sight-in Days"],
     isVerified: true,
-    imageUrl: "/images/vendors/tv-gunsmith.jpg"
+    imageUrl: "/images/vendors/blacks-creek.jpg"
   },
   {
-    businessName: "Northwest Tactical Academy",
-    businessType: "Professional Training Facility",
-    description: "Comprehensive firearms education covering everything from basic safety to advanced tactical training. Corporate training and law enforcement instruction available.",
-    address: "321 Training Blvd, Star, ID 83669",
-    phone: "(208) 555-0654",
-    website: "https://nwtactical.edu",
-    hours: "Mon-Sat: 8AM-6PM, Classes by appointment",
-    rating: 4.6,
-    reviewCount: 92,
+    businessName: "Caldwell Shotgun Complex",
+    businessType: "Shotgun Sports Club",
+    description: "A dedicated shotgun-only facility and a central hub for clay target shooting. Open to the public, offering Trap, 5-Stand, and Sporting Clays.",
+    address: "21840 Pond Ln, Caldwell, ID 83607",
+    phone: "(208) 459-2616",
+    website: "https://caldwellshotguncomplex.com",
+    hours: "Varies (see website for schedule)",
+    rating: 4.7,
+    reviewCount: 78,
     tier: "silver" as const,
-    specialties: ["Basic Safety", "Hunter Education", "Tactical Training", "Corporate Training", "CCW Classes"],
+    specialties: ["Sporting Clays", "Trap", "5-Stand", "NSCA Events", "Community Leagues"],
     isVerified: true,
-    imageUrl: "/images/vendors/nw-tactical.jpg"
+    imageUrl: "/images/vendors/caldwell-shotgun.jpg"
   },
 
   // Copper Tier - Standard Enhanced
   {
-    businessName: "Idaho Firearms Academy",
-    businessType: "Training & Education Center",
-    description: "Professional firearms training from basic safety to advanced courses. NRA certified instructors with focus on safety and practical application.",
-    address: "567 Academy Dr, Nampa, ID 83687",
-    phone: "(208) 555-0789",
-    website: "https://idahofirearms.edu",
-    hours: "Mon-Fri: 9AM-6PM, Weekend classes available",
+    businessName: "Parma Rod and Gun Club",
+    businessType: "Private Rod & Gun Club",
+    description: "A premier 160-acre club for a wide variety of shooting disciplines, including Trap, Sporting Clays, IDPA, and Long Range shooting out to 550 yards.",
+    address: "11300 Pearl Rd, Parma, ID 83660",
+    phone: "N/A",
+    website: "http://www.parmarng.org/",
+    hours: "Members Only",
     rating: 4.5,
-    reviewCount: 73,
+    reviewCount: 45,
     tier: "copper" as const,
-    specialties: ["CCW Classes", "Basic Safety", "Advanced Courses", "Hunter Education"],
+    specialties: ["Long Range (550yd)", "IDPA", "Trap & Skeet", "Hunter Education", "Private Club"],
     isVerified: true,
-    imageUrl: "/images/vendors/idaho-firearms.jpg"
+    imageUrl: "/images/vendors/parma-rgc.jpg"
   },
   {
-    businessName: "Mountain West Shooting Sports",
-    businessType: "Indoor Shooting Range",
-    description: "Modern indoor facility with 25-yard pistol lanes and training areas. Retail shop with firearms, ammunition, and accessories.",
-    address: "432 Sports Complex Dr, Caldwell, ID 83605",
-    phone: "(208) 555-0321",
-    website: "https://mwshooting.com",
-    hours: "Daily: 10AM-9PM",
+    businessName: "Nampa Public Shooting Range",
+    businessType: "Indoor Airgun & Archery Range",
+    description: "A unique public facility managed by Idaho Fish and Game, focusing on sophisticated air guns and indoor archery.",
+    address: "222 W Railroad St, Nampa, ID 83687",
+    phone: "(208) 442-4414",
+    website: "https://idfg.idaho.gov/shoot/nampa",
+    hours: "Varies (see website)",
     rating: 4.4,
-    reviewCount: 88,
+    reviewCount: 32,
     tier: "copper" as const,
-    specialties: ["Indoor Range", "Retail Shop", "Lane Rentals", "Basic Training"],
+    specialties: ["Indoor Airgun", "Indoor Archery", "Public Access", "Family Friendly", "IDFG Managed"],
     isVerified: true,
-    imageUrl: "/images/vendors/mw-shooting.jpg"
+    imageUrl: "/images/vendors/nampa-public-range.jpg"
   },
 
   // Free Tier - Basic Listings
   {
-    businessName: "Collector's Corner FFL",
-    businessType: "FFL Transfer Services",
-    description: "Licensed FFL dealer providing transfer services, background checks, and basic gunsmith work. Family-owned business serving the community for 15+ years.",
-    address: "123 Main St, Middleton, ID 83644",
-    phone: "(208) 555-0147",
-    website: "",
-    hours: "Mon-Fri: 10AM-6PM, Sat: 10AM-4PM",
-    rating: 4.2,
-    reviewCount: 35,
+    businessName: "George W. Nourse Gun Range",
+    businessType: "Public Outdoor Range",
+    description: "A free, unsupervised public range operated by Canyon County. Features twelve shooting lanes of varying lengths for rifle and pistol shooting.",
+    address: "16802 Nash Rd, Nampa, ID 83686",
+    phone: "(208) 454-6884",
+    website: "https://www.canyoncounty.id.gov/project/george-w-nourse-gun-range/",
+    hours: "Dawn to Dusk",
+    rating: 3.8,
+    reviewCount: 55,
     tier: "free" as const,
-    specialties: ["FFL Transfers", "Background Checks", "Basic Gunsmith"],
-    isVerified: true
-  },
-  {
-    businessName: "Valley Tactical Supply",
-    businessType: "Tactical Gear & Accessories",
-    description: "Tactical equipment, accessories, holsters, and gear for law enforcement and civilian use. Custom Kydex work and equipment consultation.",
-    address: "789 Industrial Way, Garden City, ID 83714",
-    phone: "(208) 555-0852",
-    website: "https://valleytactical.com",
-    hours: "Mon-Fri: 9AM-6PM, Sat: 10AM-5PM",
-    rating: 4.3,
-    reviewCount: 42,
-    tier: "free" as const,
-    specialties: ["Tactical Gear", "Holsters", "Custom Kydex", "Consultation"],
-    isVerified: true
-  },
-  {
-    businessName: "High Country Outfitters",
-    businessType: "Hunting & Sporting Goods",
-    description: "Complete hunting outfitter with firearms, archery equipment, hunting gear, and guided hunting services throughout Idaho's wilderness areas.",
-    address: "654 Wilderness Rd, Kuna, ID 83634",
-    phone: "(208) 555-0963",
-    website: "https://highcountryid.com",
-    hours: "Mon-Sat: 8AM-7PM, Sun: 10AM-5PM",
-    rating: 4.1,
-    reviewCount: 28,
-    tier: "free" as const,
-    specialties: ["Hunting Gear", "Archery", "Guided Hunts", "Wilderness Gear"],
+    specialties: ["Free Public Access", "Rifle & Pistol Lanes", "Unsupervised", "County-Operated"],
     isVerified: false
+  },
+  {
+    businessName: "Homedale Rod and Gun Club",
+    businessType: "Community Gun Club",
+    description: "A local Owyhee County club with a focus on organized, public-friendly events like monthly 50/50 shoots and trap shoots.",
+    address: "9576 US Hwy 95, Homedale, ID 83628",
+    phone: "N/A",
+    website: "https://www.homedalegunclub.com/",
+    hours: "Event-based",
+    rating: 4.2,
+    reviewCount: 19,
+    tier: "free" as const,
+    specialties: ["Trap Shooting", "Community Events", "Public Welcome", "Volunteer-Run"],
+    isVerified: true
+  },
+  {
+    businessName: "Endless Archery",
+    businessType: "Indoor Archery Range",
+    description: "The largest indoor archery facility in the Treasure Valley, with 54 lanes, shooting distances out to 60 yards, and 24-hour member access.",
+    address: "N/A, Nampa, ID",
+    phone: "N/A",
+    website: "https://www.endlessarchery.com/range",
+    hours: "24/7 for Members",
+    rating: 4.8,
+    reviewCount: 61,
+    tier: "free" as const,
+    specialties: ["60-Yard Indoor Range", "24/7 Member Access", "Archery Leagues", "Pro Coaching"],
+    isVerified: true
   }
 ]
 
@@ -190,9 +202,7 @@ export default function DirectoryPage() {
 
   // Directory stats
   const totalBusinesses = directoryListings.length
-  const verifiedBusinesses = directoryListings.filter(b => b.isVerified).length
   const averageRating = (directoryListings.reduce((sum, b) => sum + b.rating, 0) / totalBusinesses).toFixed(1)
-  const totalReviews = directoryListings.reduce((sum, b) => sum + b.reviewCount, 0)
 
   const businessTypeFilters = [
     { id: "all", label: "All Categories", icon: Building2 },
@@ -223,29 +233,29 @@ export default function DirectoryPage() {
               <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
                 {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
                 <div className="flex items-center gap-base">
-                  <div className="bg-white/10 p-base rounded-sm border border-white/20">
-                    <Building2 className="h-8 w-8 text-white" />
+                  <div className="bg-card/10 p-base rounded-xs border border-border">
+                    <Building2 weight="bold" className="h-8 w-8 text-white" />
                   </div>
                   <div className="space-y-base">
                     {/* Breadcrumbs */}
                     <div className="flex items-center gap-xs text-sm text-white/60">
                       <span>Home</span>
-                      <ChevronRight className="h-4 w-4" />
+                      <ChevronRight weight="bold" className="h-4 w-4" />
                       <span className="text-white font-medium">Directory</span>
                     </div>
                     
                     {/* Badges */}
                     <div className="flex flex-wrap gap-xs">
-                      <Badge className="bg-white/10 text-white border-white/20">
-                        <Building2 className="h-4 w-4 mr-xs" />
+                      <Badge variant="directory-business" size="sm" className="bg-card/10 text-white border-border rounded-xs">
+                        <Building2 weight="bold" className="h-4 w-4 mr-xs" />
                         Verified Businesses
                       </Badge>
-                      <Badge className="bg-white/10 text-white border-white/20">
-                        <Award className="h-4 w-4 mr-xs" />
+                      <Badge variant="directory-gold" size="sm" className="bg-card/10 text-white border-border rounded-xs">
+                        <Award weight="bold" className="h-4 w-4 mr-xs" />
                         Partnership Tiers
                       </Badge>
-                      <Badge className="bg-white/10 text-white border-white/20">
-                        <MapPin className="h-4 w-4 mr-xs" />
+                      <Badge variant="intel-location" size="sm" className="bg-card/10 text-white border-border rounded-xs">
+                        <MapPin weight="bold" className="h-4 w-4 mr-xs" />
                         Local Focus
                       </Badge>
                     </div>
@@ -273,13 +283,13 @@ export default function DirectoryPage() {
                     size="lg" 
                     className="bg-white text-nav-directory hover:bg-white/90 font-rajdhani font-bold"
                   >
-                    <Plus className="h-4 w-4 mr-xs" />
+                    <Plus weight="bold" className="h-4 w-4 mr-xs" />
                     List Your Business
                   </Button>
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="border-white/30 text-white hover:bg-white hover:text-nav-directory"
+                    className="border-border text-white hover:bg-white hover:text-nav-directory"
                   >
                     Partnership Info
                   </Button>
@@ -289,11 +299,11 @@ export default function DirectoryPage() {
               {/* Featured Business Spotlight - Right side */}
               <div className="lg:col-span-1 py-md min-h-[400px]">
                 <div className="relative h-full">
-                  <Card className="mica border-nav-directory/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col">
+                  <Card variant="interactive" className="mica border-nav-directory/30 overflow-hidden h-full flex flex-col">
                     {/* Gold Partnership Badge */}
                     <div className="absolute top-0 right-0 z-20">
-                      <Badge className="bg-gradient-to-r from-nav-directory to-nav-directory text-gruvbox-bg-dark font-rajdhani font-bold text-xs rounded-bl-sm rounded-tr-none">
-                        <Award className="h-3 w-3 mr-xs" />
+                      <Badge variant="directory-gold" size="xs" className="bg-gradient-to-r from-nav-directory to-nav-directory text-gruvbox-bg-dark font-rajdhani font-bold rounded-bl-xs rounded-tr-none">
+                        <Award weight="bold" className="h-3 w-3 mr-xs" />
                         GOLD PARTNER
                       </Badge>
                     </div>
@@ -301,13 +311,13 @@ export default function DirectoryPage() {
                     {/* Business Header */}
                     <CardHeader className="pb-sm space-y-xs">
                       <div className="flex items-start gap-sm">
-                        <div className="bg-nav-directory/10 p-sm rounded-sm border border-nav-directory/20">
-                          <Building2 className="h-8 w-8 text-nav-directory" />
+                        <div className="bg-nav-directory/10 p-sm rounded-xs border border-nav-directory/20">
+                          <Building2 weight="bold" className="h-8 w-8 text-nav-directory" />
                         </div>
                         <div className="flex-1 space-y-xs">
                           <h3 className="font-rajdhani text-lg font-bold text-card-foreground leading-tight">Boise Rifle & Pistol Club</h3>
                           <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                            <Star className="h-3 w-3 fill-nav-directory text-nav-directory" />
+                            <Star weight="bold" className="h-3 w-3 fill-nav-directory text-nav-directory" />
                             <span className="font-medium">4.9</span>
                             <span>•</span>
                             <span>Since 1954</span>
@@ -324,28 +334,28 @@ export default function DirectoryPage() {
                         <h4 className="font-rajdhani font-bold text-nav-directory text-sm">Premium Services</h4>
                         <div className="grid grid-cols-2 gap-xs text-xs">
                           <div className="flex items-center gap-xs">
-                            <CheckCircle className="h-3 w-3 text-nav-directory" />
+                            <CheckCircle weight="bold" className="h-3 w-3 text-nav-directory" />
                             <span className="text-card-foreground">Indoor Range</span>
                           </div>
                           <div className="flex items-center gap-xs">
-                            <CheckCircle className="h-3 w-3 text-nav-directory" />
+                            <CheckCircle weight="bold" className="h-3 w-3 text-nav-directory" />
                             <span className="text-card-foreground">Training</span>
                           </div>
                           <div className="flex items-center gap-xs">
-                            <CheckCircle className="h-3 w-3 text-nav-directory" />
+                            <CheckCircle weight="bold" className="h-3 w-3 text-nav-directory" />
                             <span className="text-card-foreground">Gunsmithing</span>
                           </div>
                           <div className="flex items-center gap-xs">
-                            <CheckCircle className="h-3 w-3 text-nav-directory" />
+                            <CheckCircle weight="bold" className="h-3 w-3 text-nav-directory" />
                             <span className="text-card-foreground">Retail Shop</span>
                           </div>
                         </div>
                       </div>
                       
                       {/* Special Offers */}
-                      <div className="bg-nav-directory/5 p-xs rounded-sm border border-nav-directory/20">
+                      <div className="bg-nav-directory/5 p-xs rounded-xs border border-nav-directory/20">
                         <div className="flex items-center gap-xs mb-xs">
-                          <Zap className="h-3 w-3 text-nav-directory" />
+                          <Zap weight="bold" className="h-3 w-3 text-nav-directory" />
                           <span className="font-rajdhani font-bold text-nav-directory text-xs">SPECIAL OFFER</span>
                         </div>
                         <p className="text-xs text-card-foreground">New member signup: First month FREE + complimentary safety course</p>
@@ -354,11 +364,11 @@ export default function DirectoryPage() {
                       {/* Contact Info */}
                       <div className="space-y-xs pt-xs border-t border-border/50">
                         <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                          <MapPin className="h-3 w-3 text-nav-directory" />
+                          <MapPin weight="bold" className="h-3 w-3 text-nav-directory" />
                           <span>6205 Hill Road, Boise, ID</span>
                         </div>
                         <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                          <Phone className="h-3 w-3 text-nav-directory" />
+                          <Phone weight="bold" className="h-3 w-3 text-nav-directory" />
                           <span>(208) 555-0198</span>
                         </div>
                       </div>
@@ -368,7 +378,7 @@ export default function DirectoryPage() {
                         className="w-full bg-gradient-to-r from-nav-directory to-nav-directory text-gruvbox-bg-dark hover:from-nav-directory/90 hover:to-nav-directory/90 font-rajdhani font-bold"
                         size="sm"
                       >
-                        <ArrowRight className="h-4 w-4 mr-xs" />
+                        <ArrowRight weight="bold" className="h-4 w-4 mr-xs" />
                         VIEW BUSINESS
                       </Button>
                     </CardContent>
@@ -391,7 +401,7 @@ export default function DirectoryPage() {
                   <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">Find Local Firearms Businesses</h2>
                   <div className="flex flex-col sm:flex-row gap-base">
                     <div className="flex-1 relative">
-                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <Search weight="bold" className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                       <Input
                         placeholder="Search businesses, services, or locations..."
                         className="pl-10 h-12"
@@ -401,11 +411,11 @@ export default function DirectoryPage() {
                     </div>
                     <div className="flex gap-xs">
                       <Button variant="outline" className="gap-xs h-12">
-                        <MapPin className="h-4 w-4" />
+                        <MapPin weight="bold" className="h-4 w-4" />
                         Near Me
                       </Button>
                       <Button variant="outline" className="gap-xs h-12">
-                        <Filter className="h-4 w-4" />
+                        <Filter weight="bold" className="h-4 w-4" />
                         Filters
                       </Button>
                     </div>
@@ -416,11 +426,11 @@ export default function DirectoryPage() {
               {/* Quick Stats */}
               <div className="space-y-base">
                 <div className="grid grid-cols-2 lg:grid-cols-1 gap-base">
-                  <div className="text-center p-base bg-card rounded-sm border">
+                  <div className="text-center p-base bg-card rounded-xs border">
                     <div className="font-rajdhani text-2xl font-bold text-nav-directory">{totalBusinesses}+</div>
                     <div className="text-sm text-muted-foreground">Local Businesses</div>
                   </div>
-                  <div className="text-center p-base bg-card rounded-sm border">
+                  <div className="text-center p-base bg-card rounded-xs border">
                     <div className="font-rajdhani text-2xl font-bold text-nav-directory">{averageRating}</div>
                     <div className="text-sm text-muted-foreground">Average Rating</div>
                   </div>
@@ -437,10 +447,10 @@ export default function DirectoryPage() {
           <div className="lg:col-span-1 space-y-lg">
             
             {/* Business Type Filters */}
-            <Card className="mica shadow-present rounded-xs">
+            <Card variant="default" className="mica rounded-xs">
               <CardHeader className="pb-base">
                 <CardTitle className="font-rajdhani text-xl flex items-center gap-sm text-card-foreground">
-                  <Filter className="size-5" />
+                  <Filter weight="bold" className="size-5" />
                   Business Type
                 </CardTitle>
               </CardHeader>
@@ -453,7 +463,7 @@ export default function DirectoryPage() {
                       onClick={() => setSelectedType(filter.id)}
                       className="w-full justify-start gap-sm font-rajdhani font-medium shadow-none rounded-xs"
                     >
-                      {React.createElement(filter.icon, { className: "size-4" })}
+                      {React.createElement(filter.icon, { weight: "bold", className: "size-4" })}
                       {filter.label}
                     </Button>
                   ))}
@@ -462,10 +472,10 @@ export default function DirectoryPage() {
             </Card>
 
             {/* Tier Filters */}
-            <Card className="mica shadow-present rounded-xs">
+            <Card variant="default" className="mica rounded-xs">
               <CardHeader className="pb-base">
                 <CardTitle className="font-rajdhani text-xl flex items-center gap-sm text-card-foreground">
-                  <Award className="size-5" />
+                  <Award weight="bold" className="size-5" />
                   Membership Tier
                 </CardTitle>
               </CardHeader>
@@ -486,11 +496,11 @@ export default function DirectoryPage() {
             </Card>
 
             {/* Directory Info */}
-            <Card className="mica shadow-present rounded-xs border-nav-directory/20">
+            <Card variant="default" className="mica rounded-xs border-nav-directory/20">
               <CardContent className="pt-base">
                 <div className="space-y-base text-center">
                   <div className="space-y-xs">
-                    <Target className="size-8 text-nav-directory mx-auto" />
+                    <Target weight="bold" className="size-8 text-nav-directory mx-auto" />
                     <h3 className="font-rajdhani font-bold text-lg text-card-foreground">
                       List Your Business
                     </h3>
@@ -499,7 +509,7 @@ export default function DirectoryPage() {
                     </p>
                   </div>
                   <Button className="w-full shadow-elevated hover:shadow-prominent rounded-xs">
-                    <Plus className="size-4 mr-xs" />
+                    <Plus weight="bold" className="size-4 mr-xs" />
                     Get Listed
                   </Button>
                 </div>
@@ -525,7 +535,7 @@ export default function DirectoryPage() {
               
               <div className="flex items-center gap-sm">
                 <Button variant="outline" className="shadow-none rounded-xs">
-                  <MapPin className="size-4 mr-xs" />
+                  <MapPin weight="bold" className="size-4 mr-xs" />
                   Map View
                 </Button>
               </div>
@@ -549,17 +559,18 @@ export default function DirectoryPage() {
                     tier={business.tier}
                     specialties={business.specialties}
                     isVerified={business.isVerified}
+                    verificationStatus={business.isVerified ? 'Fully Verified' : 'ATF Record Only - Unverified'}
                     isSponsored={business.isSponsored}
                     monthlyLeads={business.monthlyLeads}
                     imageUrl={business.imageUrl}
-                    className="mica shadow-present hover:shadow-elevated transition-all duration-300 rounded-xs"
+                    className="mica shadow-present hover:shadow-prominent transition-all duration-300 rounded-xs"
                   />
                 ))
               ) : (
-                <Card className="mica shadow-present rounded-xs">
+                <Card variant="default" className="mica rounded-xs">
                   <CardContent className="py-2xl text-center">
                     <div className="space-y-base">
-                      <Search className="size-12 text-muted-foreground mx-auto" />
+                      <Search weight="bold" className="size-12 text-muted-foreground mx-auto" />
                       <div className="space-y-sm">
                         <h3 className="font-rajdhani font-bold text-xl text-card-foreground">
                           No businesses found
@@ -588,7 +599,7 @@ export default function DirectoryPage() {
             {filteredBusinesses.length > 0 && (
               <div className="text-center pt-lg">
                 <Button variant="outline" className="shadow-none rounded-xs">
-                  <Eye className="size-4 mr-xs" />
+                  <Eye weight="bold" className="size-4 mr-xs" />
                   Load More Results
                 </Button>
               </div>
