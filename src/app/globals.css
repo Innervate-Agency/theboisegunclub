@@ -586,48 +586,50 @@
   }    /* 20px/30px */
 
   /* Heading Scale - Rajdhani for tactical aesthetic */
+  /* Subtitles and smaller headings: 400-600 weight */
   .text-heading-xs { 
     font-size: 0.875rem; 
     line-height: 1.25rem; 
     font-family: var(--font-rajdhani);
-    font-weight: 600; 
+    font-weight: 500; 
   }  /* 14px */
   
   .text-heading-sm { 
     font-size: 1rem; 
     line-height: 1.5rem; 
     font-family: var(--font-rajdhani);
-    font-weight: 600; 
+    font-weight: 500; 
   }       /* 16px */
   
   .text-heading-base { 
     font-size: 1.25rem; 
     line-height: 1.75rem; 
     font-family: var(--font-rajdhani);
-    font-weight: 700; 
+    font-weight: 600; 
   } /* 20px */
   
   .text-heading-md { 
     font-size: 1.375rem; 
     line-height: 1.875rem; 
     font-family: var(--font-rajdhani);
-    font-weight: 700; 
+    font-weight: 600; 
   }      /* 22px */
   
   .text-heading-lg { 
     font-size: 1.5rem; 
     line-height: 2rem; 
     font-family: var(--font-rajdhani);
-    font-weight: 700; 
+    font-weight: 600; 
   }       /* 24px */
   
   .text-heading-xl { 
     font-size: 1.875rem; 
     line-height: 2.25rem; 
     font-family: var(--font-rajdhani);
-    font-weight: 700; 
+    font-weight: 600; 
   }  /* 30px */
   
+  /* Main titles: 800 weight for H1s */
   .text-heading-2xl { 
     font-size: 2.25rem; 
     line-height: 2.5rem; 
@@ -646,7 +648,7 @@
     font-size: 3.75rem; 
     line-height: 4rem; 
     font-family: var(--font-rajdhani);
-    font-weight: 900; 
+    font-weight: 800; 
   }     /* 60px */
 
   /* Display Scale (Hero/Marketing) - Rajdhani for impact */
@@ -703,6 +705,43 @@
     text-transform: uppercase;
     letter-spacing: 0.025em;
   }      /* 12px */
+
+  /* Button Text Scale - Rajdhani for tactical aesthetic */
+  .text-button-xs { 
+    font-size: 0.75rem; 
+    line-height: 1rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }      /* 12px */
+  
+  .text-button-sm { 
+    font-size: 0.875rem; 
+    line-height: 1.25rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }   /* 14px */
+  
+  .text-button-base { 
+    font-size: 1rem; 
+    line-height: 1.5rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }      /* 16px */
+  
+  .text-button-lg { 
+    font-size: 1.125rem; 
+    line-height: 1.75rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }   /* 18px */
 
   /* Code/Monospace Scale */
   .text-code-xs { 

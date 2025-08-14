@@ -135,6 +135,8 @@ This file provides guidance to Claude Code when working with this repository.
 - `src/components/ui/button.tsx` - Enhanced with micro-animation system and animationType props
 - `src/components/ui/micro-animations.tsx` - HoverArrow, PlusMinusToggle, XOToggle, ChevronRotate components
 - `src/components/ui/site-navigation.tsx` - Magic Line navigation with Framer Motion spring physics
+- `src/components/ui/hero-overhang-section.tsx` - **Treasure chest opening navigation with dynamic colored shadows**
+- `src/components/ui/treasure-chest-glow.tsx` - **Animated radial gradient with pulsing effects for hero bottom**
 - `src/components/ui/site-footer.tsx` - Modern "fat footer" with LLC branding, Phosphor icons, and micro-animations
 - `src/components/ui/loading-spinner.tsx` - Branded Diamond spinner component
 - `src/components/ui/accessibility-panel.tsx` - Performance-optimized with CSS custom properties
@@ -150,6 +152,9 @@ This file provides guidance to Claude Code when working with this repository.
 - **Animation**: Context-aware micro-interactions - arrows for navigation, toggles for state changes
 - **Performance**: All animations disabled during loading, use `currentColor` for theming
 - **Navigation**: Magic Line sliding effect is signature feature - never remove without approval
+- **Homepage Overhang**: Treasure chest opening effect with 6-button navigation, dynamic colored shadows, and wave animations
+- **Color Shadows**: Use diffused shadows (120px spread, 0.15 opacity) - NEVER plastic-y full-color shadows
+- **Piano Key Effect**: Buttons lift up (-translate-y-1) and scale (0.98) with staggered color wave (border→icon→text)
 - **Typography**: Rajdhani font weights 300-800 for display, perfect kerning and letter-spacing
 - **Home Page**: Mission-driven content structure with trust indicators (8 locations, 150+ businesses, 5K+ members)
 - **Development**: Kill dev server before restarting, run in background

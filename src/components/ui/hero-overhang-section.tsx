@@ -98,10 +98,10 @@ export function HeroOverhangSection({
       className={cn(heroOverhangVariants({ variant }), className)}
       {...props}
     >
-      <div className="px-lg">
+      <div>
         {/* Piano Key Navigation Container */}
         <div 
-          className="mica bg-card rounded-md border border-border/20 overflow-hidden pointer-events-auto transition-all duration-500"
+          className="mica bg-card rounded-md overflow-hidden pointer-events-auto transition-all duration-500"
           style={{
             boxShadow: 'var(--dynamic-shadow, 0 50px 100px -20px rgba(0, 0, 0, 0.25))'
           } as React.CSSProperties}
@@ -110,75 +110,65 @@ export function HeroOverhangSection({
           <div className="h-1 bg-gradient-to-r from-transparent via-sandy-ochre/50 to-transparent" />
           
           {/* Navigation Buttons */}
-          <div className="grid grid-cols-6 h-32 gap-0">
+          <div className="grid grid-cols-6 h-32">
             {navigationItems.map((item, index) => (
               <Link
                 key={index}
                 href={item.href}
-                className="relative overflow-hidden bg-card border-r border-border/10 last:border-r-0 group transition-all duration-500"
+                className="relative overflow-hidden bg-card border-r border-border/10 last:border-r-0 group transition-all duration-500 hover:shadow-inset hover:bg-muted/30 active:scale-95"
                 onMouseEnter={(e) => {
-                  // Set the dynamic shadow color for the big container
+                  // Set the dynamic shadow color for the big container - subtle and diffused
                   const container = e.currentTarget.closest('[style*="--dynamic-shadow"]') as HTMLElement
                   if (container) {
-                    container.style.setProperty('--dynamic-shadow', `0 50px 100px -20px var(--${item.colorClass})`)
-                    // Add springy wobble effect
-                    container.style.transform = 'scale(1.02) translateY(-1px)'
-                    container.style.transition = 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+                    container.style.setProperty('--dynamic-shadow', `0 50px 120px -40px rgba(var(--${item.colorClass}-rgb), 0.15)`)
                   }
                 }}
                 onMouseLeave={(e) => {
-                  // Reset to default shadow and remove wobble
+                  // Reset to default shadow
                   const container = e.currentTarget.closest('[style*="--dynamic-shadow"]') as HTMLElement
                   if (container) {
                     container.style.setProperty('--dynamic-shadow', '0 50px 100px -20px rgba(0, 0, 0, 0.25)')
-                    container.style.transform = 'scale(1) translateY(0)'
-                    container.style.transition = 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
                   }
                 }}
               >
-                {/* Colored glow effect on hover */}
+                {/* Colored bottom border on hover */}
                 <div 
-                  className="absolute inset-x-0 bottom-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  className="absolute inset-x-0 bottom-0 h-0 group-hover:h-[7px] transition-all duration-500 z-20"
                   style={{
                     background: `var(--${item.colorClass})`,
-                    boxShadow: `0 4px 20px var(--${item.colorClass})`
+                    boxShadow: `0 8px 32px -8px var(--${item.colorClass})`,
+                    marginBottom: '-1px'
                   }}
                 />
                 
-                <div className="relative z-10 flex flex-col items-center justify-center h-full py-4 px-3">
+                <div className="relative z-10 flex flex-col items-center justify-center h-full py-4 px-3 transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-[0.98]">
                   {/* Icon */}
                   <div 
-                    className="transition-all duration-500 text-muted-foreground/70 group-hover:scale-110 mb-1"
-                    style={{
-                      color: 'inherit'
-                    }}
-                  >
-                    <div 
-                      className="transition-colors duration-500"
-                      style={{
-                        color: `var(--${item.colorClass})`
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.color = `var(--${item.colorClass})`
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.color = ''
-                      }}
-                    >
-                      {React.cloneElement(item.icon as React.ReactElement, {
-                        className: "h-8 w-8 transition-colors duration-500 group-hover:[&>*]:fill-current"
-                      })}
-                    </div>
-                  </div>
-                  
-                  {/* Text */}
-                  <div 
-                    className="text-lg font-rajdhani font-semibold text-card-foreground transition-colors duration-500"
+                    className="transition-all duration-300 delay-75 text-muted-foreground/70 group-hover:scale-110 mb-1"
                     style={{
                       color: 'inherit'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = `var(--${item.colorClass})`
+                      setTimeout(() => {
+                        e.currentTarget.style.color = `var(--${item.colorClass})`
+                      }, 150)
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = ''
+                    }}
+                  >
+                    {React.cloneElement(item.icon as React.ReactElement, {
+                      className: "h-8 w-8 transition-colors duration-300"
+                    })}
+                  </div>
+                  
+                  {/* Text */}
+                  <div 
+                    className="text-lg font-rajdhani font-semibold text-card-foreground transition-colors duration-300 delay-100"
+                    onMouseEnter={(e) => {
+                      setTimeout(() => {
+                        e.currentTarget.style.color = `var(--${item.colorClass})`
+                      }, 200)
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.color = ''
