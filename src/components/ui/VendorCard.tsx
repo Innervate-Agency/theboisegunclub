@@ -8,6 +8,7 @@ import { Button } from './button';
 import Image from 'next/image';
 import { MapPin, Phone, Clock, Star, Globe, TrendingUp, Shield} from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from './avatar';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './tooltip';
 
 // TBGC Business-Specific VendorCard - Strategic Restraint Implementation
 const vendorCardVariants = cva(
@@ -152,13 +153,22 @@ export function VendorCard({
         {(isVerified || showSponsored) && (
           <div className="flex gap-sm ml-[calc(4rem+0.75rem)]">
             {isVerified && (
-              <Badge 
-                variant={tier === 'gold' ? 'elite' : 'default'}
-                size="sm"
-              >
-                <Shield className="w-icon-xs h-icon-xs mr-xs" />
-                Verified
-              </Badge>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Badge 
+                      variant={tier === 'gold' ? 'elite' : 'default'}
+                      size="sm"
+                    >
+                      <Shield className="w-icon-xs h-icon-xs mr-xs" />
+                      Verified
+                    </Badge>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{verificationStatus}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             )}
             {showSponsored && (
               <Badge variant={tier === 'gold' ? 'elite' : 'default'} size="sm">
