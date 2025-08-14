@@ -125,10 +125,10 @@ export function SiteFooter({
           {showNewsletter && (
             <div className="py-12 border-b border-border text-center">
               <div className="max-w-2xl mx-auto">
-                <h2 className={cn("text-2xl font-rajdhani font-bold mb-2", textColor)}>
+                <h2 className={cn("text-heading-xl font-rajdhani font-bold mb-2", textColor)}>
                   Stay on Target
                 </h2>
-                <p className={cn("text-lg mb-6 font-rajdhani", mutedColor)}>
+                <p className={cn("text-body-lg mb-6 font-rajdhani", mutedColor)}>
                   Join 5,000+ members for exclusive updates, events, and insights from the Treasure Valley firearms community.
                 </p>
                 <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -152,7 +152,7 @@ export function SiteFooter({
                     {!isSubscribing && <HoverArrow className="ml-2 group-hover:translate-x-1 transition-transform" />}
                   </Button>
                 </form>
-                <div className="flex items-center justify-center gap-6 mt-6 text-sm text-muted-foreground font-rajdhani">
+                <div className="flex items-center justify-center gap-lg mt-lg text-body-sm text-muted-foreground font-rajdhani">
                   <span className="flex items-center gap-1">
                     <Users weight="bold" className="h-4 w-4" />
                     5,000+ Members
@@ -180,26 +180,26 @@ export function SiteFooter({
                     className: `size-12 ${getCurrentPageColor()} -rotate-[28deg] mb-4`, 
                     weight: "bold" 
                   })}
-                  <div className="text-2xl font-rajdhani text-card-foreground leading-none uppercase">
+                  <div className="text-heading-xl font-rajdhani text-card-foreground leading-none uppercase">
                     <span className="font-[800]">The Boise</span> <span className="font-[300]">Gun Club</span>
                   </div>
-                  <p className="text-base font-rajdhani font-[400] text-muted-foreground leading-none lowercase tracking-wider">
+                  <p className="text-body-base font-rajdhani font-[400] text-muted-foreground leading-none lowercase tracking-wider">
                     Treasure Valley Collective
                   </p>
                 </div>
-                <p className={cn("text-base leading-relaxed mb-6 font-rajdhani", mutedColor)}>
+                <p className={cn("text-body-base leading-relaxed mb-6 font-rajdhani", mutedColor)}>
                   Treasure Valley's premier firearms community hub. Connecting enthusiasts, businesses, and ranges across the region.
                 </p>
                 <div className="space-y-3">
-                  <a href="tel:+12085556867" className={cn("flex items-center gap-3 text-base transition-colors font-rajdhani", mutedColor, linkHoverColor)}>
+                  <a href="tel:+12085556867" className={cn("flex items-center gap-3 text-body-base transition-colors font-rajdhani", mutedColor, linkHoverColor)}>
                     <Phone weight="bold" className="h-5 w-5" />
                     <span>(208) 555-GUNS</span>
                   </a>
-                  <a href="mailto:info@boiseguncollective.com" className={cn("flex items-center gap-3 text-base transition-colors font-rajdhani", mutedColor, linkHoverColor)}>
+                  <a href="mailto:info@boiseguncollective.com" className={cn("flex items-center gap-3 text-body-base transition-colors font-rajdhani", mutedColor, linkHoverColor)}>
                     <Envelope weight="bold" className="h-5 w-5" />
                     <span>info@boiseguncollective.com</span>
                   </a>
-                  <div className={cn("flex items-center gap-3 text-base font-rajdhani", mutedColor)}>
+                  <div className={cn("flex items-center gap-3 text-body-base font-rajdhani", mutedColor)}>
                     <MapPin weight="bold" className="h-5 w-5" />
                     <span>Boise, Idaho</span>
                   </div>
@@ -208,7 +208,7 @@ export function SiteFooter({
               
               {/* Quick Links */}
               <div>
-                <h4 className={cn("text-lg font-rajdhani font-bold mb-4", textColor)}>
+                <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Quick Links
                 </h4>
                 <ul className="space-y-3">
@@ -226,7 +226,7 @@ export function SiteFooter({
                         <a 
                           href={link.href}
                           className={cn(
-                            "flex items-center gap-3 text-base transition-all duration-300 font-rajdhani group", 
+                            "flex items-center gap-3 text-body-base transition-all duration-300 font-rajdhani group", 
                             mutedColor,
                             link.color
                           )}
@@ -249,7 +249,7 @@ export function SiteFooter({
               
               {/* Resources */}
               <div>
-                <h4 className={cn("text-lg font-rajdhani font-bold mb-4", textColor)}>
+                <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Resources
                 </h4>
                 <ul className="space-y-3">
@@ -267,7 +267,7 @@ export function SiteFooter({
                         <a 
                           href={resource.href}
                           className={cn(
-                            "flex items-center gap-2 text-base transition-colors duration-200 group font-rajdhani", 
+                            "flex items-center gap-2 text-body-base transition-colors duration-200 group font-rajdhani", 
                             mutedColor,
                             linkHoverColor
                           )}
@@ -283,7 +283,7 @@ export function SiteFooter({
               
               {/* Support */}
               <div>
-                <h4 className={cn("text-lg font-rajdhani font-bold mb-4", textColor)}>
+                <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Support
                 </h4>
                 <ul className="space-y-3">
@@ -301,7 +301,7 @@ export function SiteFooter({
                         <a 
                           href={support.href}
                           className={cn(
-                            "flex items-center gap-2 text-base transition-colors duration-200 group font-rajdhani", 
+                            "flex items-center gap-2 text-body-base transition-colors duration-200 group font-rajdhani", 
                             mutedColor,
                             linkHoverColor
                           )}
@@ -318,15 +318,15 @@ export function SiteFooter({
           </div>
           
           {/* Bottom Bar */}
-          <div className="border-t border-border py-6">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="border-t border-border py-lg">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-lg">
               {/* Copyright */}
-              <div className={cn("text-base font-rajdhani font-medium", mutedColor)}>
+              <div className={cn("text-body-base font-rajdhani font-medium", mutedColor)}>
                 Copyright © 2025 - Boise Gun Collective, LLC - All rights reserved
               </div>
               
               {/* Legal Links */}
-              <div className="flex items-center gap-4 text-sm font-rajdhani">
+              <div className="flex items-center gap-md text-body-sm font-rajdhani">
                 {[
                   { name: "Privacy", href: "/privacy" },
                   { name: "Terms", href: "/terms" },

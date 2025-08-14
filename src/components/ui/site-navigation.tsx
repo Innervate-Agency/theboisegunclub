@@ -251,10 +251,10 @@ export function SiteNavigation({
                     weight: "bold" 
                   })}
                   <div>
-                    <div className="text-2xl font-rajdhani text-card-foreground leading-none uppercase">
+                    <div className="text-heading-xl font-rajdhani text-card-foreground leading-none uppercase">
                       <span className="font-[800]">The Boise</span> <span className="font-[300]">Gun Club</span>
                     </div>
-                    <p className="text-base font-rajdhani font-[500] text-muted-foreground leading-none lowercase tracking-wider text-center">
+                    <p className="text-body-base font-rajdhani font-[500] text-muted-foreground leading-none lowercase tracking-wider text-center">
                       {currentPageSubtitle}
                     </p>
                   </div>
@@ -308,7 +308,7 @@ export function SiteNavigation({
                     
                     {renderNavLink(
                       item,
-                      `relative z-10 flex items-center gap-xs px-xs py-xs text-base font-rajdhani font-medium transition-all duration-200 ${
+                      `relative z-10 flex items-center gap-xs px-xs py-xs text-body-base font-rajdhani font-medium transition-all duration-200 ${
                         isActive
                           ? getActiveTextClass(item.color)
                           : isHovered 

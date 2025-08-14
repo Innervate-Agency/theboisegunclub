@@ -24,7 +24,7 @@ import {
 } from "@tabler/icons-react"
 
 const badgeVariants = cva(
-  "inline-flex items-center gap-xs font-rajdhani font-semibold text-xs border transition-colors focus:outline-none",
+  "inline-flex items-center gap-xs font-rajdhani font-semibold text-body-xs border transition-colors focus:outline-none",
   {
     variants: {
       variant: {
@@ -107,10 +107,10 @@ const badgeVariants = cva(
         "fire-extreme": "bg-[var(--theme-destructive)] bg-opacity-10 text-[var(--theme-destructive)] border-[var(--theme-destructive)] border-opacity-30 rounded-xs"
       },
       size: {
-        xs: "px-xs py-[0.0625rem] text-xs",
-        sm: "px-sm py-micro text-xs", 
-        md: "px-base py-micro text-sm",
-        lg: "px-lg py-micro text-sm"
+        xs: "px-xs py-[0.0625rem] text-body-xs",
+        sm: "px-sm py-micro text-body-xs", 
+        md: "px-base py-micro text-body-sm",
+        lg: "px-lg py-micro text-body-sm"
       }
     },
     defaultVariants: {

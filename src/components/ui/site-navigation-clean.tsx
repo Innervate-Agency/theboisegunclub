@@ -113,10 +113,10 @@ export function SiteNavigation({
                 </div>
                 <div>
                   <div className="text-heading-lg font-rajdhani text-card-foreground tracking-[0.2em] leading-none">
-                    <span className="font-bold">THEBOISE</span>
+                    <span className="font-rajdhani font-bold">THEBOISE</span>
                     <span className="font-light">GUNCLUB</span>
                   </div>
-                  <p className="text-xs font-noto-sans text-muted-foreground mt-0">
+                  <p className="text-body-xs font-noto-sans text-muted-foreground mt-0">
                     A TREASURE VALLEY COLLECTIVE
                   </p>
                 </div>
@@ -157,7 +157,7 @@ export function SiteNavigation({
                 <Button variant="ghost" size="sm" className="shadow-none">
                   Sign In
                 </Button>
-                <Button variant="ghost" size="sm" className="bg-rusty-orange/10 text-rusty-orange hover:bg-rusty-orange/20 shadow-none border border-rusty-orange/30 text-xs">
+                <Button variant="ghost" size="sm" className="bg-rusty-orange/10 text-rusty-orange hover:bg-rusty-orange/20 shadow-none border border-rusty-orange/30 text-body-xs">
                   60-Day Free Trial
                 </Button>
               </>
@@ -203,7 +203,7 @@ export function SiteNavigation({
                 <Button variant="ghost" size="sm" className="justify-start shadow-none">
                   Sign In
                 </Button>
-                <Button variant="ghost" size="sm" className="justify-start bg-rusty-orange/10 text-rusty-orange hover:bg-rusty-orange/20 shadow-none border border-rusty-orange/30 text-xs">
+                <Button variant="ghost" size="sm" className="justify-start bg-rusty-orange/10 text-rusty-orange hover:bg-rusty-orange/20 shadow-none border border-rusty-orange/30 text-body-xs">
                   60-Day Free Trial
                 </Button>
               </div>

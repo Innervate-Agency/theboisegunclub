@@ -56,7 +56,7 @@ export function PageSection({
           <div className="flex items-center justify-between mb-xl">
             <div className="space-y-sm">
               {title && (
-                <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">
+                <h2 className="font-rajdhani text-heading-2xl font-bold text-card-foreground">
                   {title}
                 </h2>
               )}

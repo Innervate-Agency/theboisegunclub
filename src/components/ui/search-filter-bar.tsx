@@ -70,7 +70,7 @@ export function SearchFilterBar({
             // Handle FilterGroup[]
             (filters as FilterGroup[]).map((group, index) => (
               <div key={index} className="space-y-base">
-                <h3 className="font-rajdhani text-lg font-bold text-card-foreground">
+                <h3 className="font-rajdhani text-body-lg font-bold text-card-foreground">
                   {group.label}
                 </h3>
                 <div className="flex flex-wrap gap-xs">

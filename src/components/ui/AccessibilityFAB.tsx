@@ -218,7 +218,7 @@ export default function AccessibilityFAB({
                 Night Ops
               </Button>
             </div>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-body-xs text-muted-foreground">
               Night Ops mode reduces eye strain for extended reading sessions
             </p>
           </div>

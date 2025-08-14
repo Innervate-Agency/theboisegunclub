@@ -214,7 +214,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                 <h2 className="text-heading-lg font-rajdhani font-bold text-card-foreground">Accessibility</h2>
               </div>
               <Button
-                variant="solid-primary"
+                variant="solid-primary" animationType="arrow"
                 size="sm"
                 onClick={handleClosePanel}
                 aria-label="Close accessibility panel"
@@ -269,7 +269,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                 <h3 className="font-medium text-card-foreground">Text Size</h3>
                 <div className="flex items-center gap-tiny">
                   <Button
-                    variant="solid-primary"
+                    variant="solid-primary" animationType="arrow"
                     size="sm"
                     onClick={handleFontSizeDecrease}
                     disabled={fontSize === 'small'}
@@ -283,7 +283,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     </Badge>
                   </div>
                   <Button
-                    variant="solid-primary"
+                    variant="solid-primary" animationType="arrow"
                     size="sm"
                     onClick={handleFontSizeIncrease}
                     disabled={fontSize === 'large'}
@@ -335,7 +335,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     variant={colorBlindFilter === 'protanopia' ? 'solid-accent' : 'solid-primary'}
                     size="sm"
                     onClick={() => handleColorBlindFilterChange('protanopia')}
-                    className="text-xs"
+                    className="text-body-xs"
                   >
                     Protanopia
                   </Button>
@@ -343,7 +343,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     variant={colorBlindFilter === 'deuteranopia' ? 'solid-accent' : 'solid-primary'}
                     size="sm"
                     onClick={() => handleColorBlindFilterChange('deuteranopia')}
-                    className="text-xs"
+                    className="text-body-xs"
                   >
                     Deuteranopia
                   </Button>
@@ -351,7 +351,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     variant={colorBlindFilter === 'tritanopia' ? 'solid-accent' : 'solid-primary'}
                     size="sm"
                     onClick={() => handleColorBlindFilterChange('tritanopia')}
-                    className="text-xs"
+                    className="text-body-xs"
                   >
                     Tritanopia
                   </Button>
@@ -361,7 +361,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
               {/* Reset Button */}
               <div className="pt-2 border-t">
                 <Button
-                  variant="solid-primary"
+                  variant="solid-primary" animationType="arrow"
                   size="sm"
                   onClick={handleResetAndClose}
                   className="w-full"

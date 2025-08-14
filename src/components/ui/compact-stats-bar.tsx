@@ -38,26 +38,26 @@ export function CompactStatsBar({ stats, className }: CompactStatsBarProps) {
           <div className="flex items-center gap-tiny">
             <div className="size-2 bg-nav-intel rounded-full"></div>
             <span className="text-body-sm font-medium text-card-foreground">{totalLocations}</span>
-            <span className="text-xs text-muted-foreground">Total Locations</span>
+            <span className="text-body-xs text-muted-foreground">Total Locations</span>
           </div>
           
           <div className="flex items-center gap-tiny">
             <Shield className="size-3 text-sagebrush-green" />
             <span className="text-body-sm font-medium text-card-foreground">{verifiedLocations}</span>
-            <span className="text-xs text-muted-foreground">Verified</span>
+            <span className="text-body-xs text-muted-foreground">Verified</span>
           </div>
           
           <div className="flex items-center gap-tiny">
             <MapPin className="size-3 text-info-river" />
             <span className="text-body-sm font-medium text-card-foreground">{publicAreas}</span>
-            <span className="text-xs text-muted-foreground">Public Areas</span>
+            <span className="text-body-xs text-muted-foreground">Public Areas</span>
           </div>
           
         </div>
 
         {/* Secondary Stats - Optional */}
         {(milesOfLand || publicClubs || privateClubs) && (
-          <div className="flex items-center gap-sm text-xs text-muted-foreground">
+          <div className="flex items-center gap-sm text-body-xs text-muted-foreground">
             {milesOfLand && (
               <div className="flex items-center gap-micro">
                 <Target className="size-3" />
@@ -75,7 +75,7 @@ export function CompactStatsBar({ stats, className }: CompactStatsBarProps) {
         )}
 
         {/* Trend Indicator */}
-        <Badge variant="secondary" className="text-xs">
+        <Badge variant="secondary" className="text-body-xs">
           <TrendingUp className="size-3 mr-micro" />
           Updated daily
         </Badge>

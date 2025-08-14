@@ -160,7 +160,7 @@ export function GuidesClient({ articles, categories, difficultyLevels }: GuidesC
       <section className="pb-6xl">
         <div className="container mx-auto max-w-site px-md">
           <div className="flex items-center justify-between mb-xl">
-            <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">
+            <h2 className="font-rajdhani text-heading-2xl font-bold text-card-foreground">
               {selectedCategory === "all" ? "All Articles" : categories.find(c => c.value === selectedCategory)?.label}
             </h2>
             <div className="text-muted-foreground">
@@ -172,8 +172,8 @@ export function GuidesClient({ articles, categories, difficultyLevels }: GuidesC
           {sortedArticles.length === 0 && (
             <div className="text-center py-6xl">
               <div className="space-y-base">
-                <div className="text-6xl">📚</div>
-                <h3 className="font-rajdhani text-2xl font-bold text-card-foreground">
+                <div className="text-display-lg">📚</div>
+                <h3 className="font-rajdhani text-heading-xl font-bold text-card-foreground">
                   No articles found
                 </h3>
                 <p className="text-muted-foreground max-w-md mx-auto">

@@ -219,7 +219,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
                 maintaining visual connection to the background content.
               </p>
               <div className="flex gap-sm pt-(--spacing-base)">
-                <Button size="sm" className="flex-1">Confirm</Button>
+                <Button variant="flat" size="sm" className="flex-1">Confirm</Button>
                 <Button 
                   size="sm" 
                   variant="secondary"

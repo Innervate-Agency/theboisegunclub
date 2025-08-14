@@ -14,7 +14,7 @@ const enhancedButtonVariants = cva(
         default: "bg-primary text-primary-foreground shadow-flat hover:shadow-present ",
         
         // Primary: Brand gradient with consistent shadows
-        primary: "bg-gradient-to-r from-sandy-ochre to-rusty-orange text-dark-chocolate shadow-flat hover:shadow-present  font-semibold",
+        primary: "bg-gradient-to-r from-sandy-ochre to-rusty-orange text-dark-chocolate shadow-flat hover:shadow-present  font-rajdhani font-semibold",
         
         // Secondary: Walnut-themed with shadow depth
         secondary: "bg-walnut-stock text-nickel-white shadow-flat hover:shadow-present  hover:bg-walnut-stock/90",

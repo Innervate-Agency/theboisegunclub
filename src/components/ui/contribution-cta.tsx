@@ -78,7 +78,7 @@ export function ContributionCTA({
             <Handshake className="h-6 w-6 text-rusty-orange" weight="bold" />
             <Badge variant="rusty-orange" size="sm">Community Built</Badge>
           </div>
-          <h2 className="font-rajdhani font-bold text-3xl text-card-foreground">
+          <h2 className="font-rajdhani font-bold text-heading-2xl text-card-foreground">
             {title}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -97,10 +97,10 @@ export function ContributionCTA({
                     <Icon className={`h-5 w-5 ${contribution.iconColor}`} weight="bold" />
                   </div>
                   <div className="space-y-sm flex-1">
-                    <h3 className="font-rajdhani font-bold text-lg text-card-foreground">
+                    <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground">
                       {contribution.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-body-sm text-muted-foreground leading-relaxed">
                       {contribution.description}
                     </p>
                     <Button 
@@ -122,7 +122,7 @@ export function ContributionCTA({
         <div className="text-center pt-base border-t border-border">
           <div className="flex items-center justify-center gap-xs mb-sm">
             <Users className="h-4 w-4 text-muted-foreground" weight="bold" />
-            <span className="text-sm text-muted-foreground">Built by Idaho gun owners, for Idaho gun owners</span>
+            <span className="text-body-sm text-muted-foreground">Built by Idaho gun owners, for Idaho gun owners</span>
           </div>
           <Button 
             variant="outline" 

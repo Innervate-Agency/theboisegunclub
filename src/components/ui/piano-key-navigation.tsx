@@ -8,15 +8,17 @@ import { cn } from "@/lib/utils"
 import { FlipText } from "./flip-text"
 
 const pianoKeyVariants = cva(
-  "relative overflow-hidden font-rajdhani cursor-pointer w-full h-full group rounded-none border-r border-border/20 last:border-r-0 bg-card transition-all duration-300 ease-out",
+  "relative overflow-hidden font-rajdhani cursor-pointer w-full h-full group rounded-none bg-card transition-all duration-300 ease-out",
   {
     variants: {
       variant: {
-        default: "shadow-present",
+        default: "border-r border-border/20 last:border-r-0",
+        overhang: "border-r border-border/10 last:border-r-0",
       },
       size: {
         default: "py-4 px-3",
-        compact: "py-3 px-2",
+        compact: "p-0",
+        fill: "p-0",
       },
     },
     defaultVariants: {
@@ -31,8 +33,8 @@ const pianoTextVariants = cva(
   {
     variants: {
       size: {
-        default: "text-lg",
-        compact: "text-base",
+        default: "text-body-lg",
+        compact: "text-body-base",
       },
     },
     defaultVariants: {
@@ -73,7 +75,7 @@ const PianoKey = React.forwardRef<HTMLButtonElement, PianoKeyProps>(
       <Comp
         className={cn(
           pianoKeyVariants({ variant, size, className }),
-          "hover:shadow-elevated hover:transform hover:-translate-y-1"
+          variant !== "overhang" && "hover:shadow-elevated hover:transform hover:-translate-y-1"
         )}
         ref={ref}
         onMouseEnter={() => setIsHovered(true)}
@@ -81,20 +83,23 @@ const PianoKey = React.forwardRef<HTMLButtonElement, PianoKeyProps>(
         {...props}
       >
         {/* Content container */}
-        <div className="relative z-10 flex flex-col items-center gap-1 justify-center h-full">
+        <div className={cn(
+          "relative z-10 flex flex-col items-center justify-center h-full gap-0",
+          (size === "fill" || size === "compact") && "py-4 px-3"
+        )}>
           {/* Icon */}
-          <div className="transition-all duration-300 ease-out text-muted-foreground/70 group-hover:text-white group-hover:scale-110 mb-1">
+          <div className="transition-all duration-300 ease-out text-muted-foreground/70 group-hover:text-white group-hover:scale-110">
             {icon}
           </div>
           
           {/* Text with horizontal flip animation */}
           <FlipText
-            text={label}
+            text={label.toUpperCase()}
             variant="horizontal"
             color={getColorValue(colorClass)}
             staggerDelay={80}
             isActive={isHovered}
-            className="text-lg font-bold"
+            className="text-base font-rajdhani font-semibold"
           />
         </div>
       </Comp>
@@ -134,7 +139,7 @@ const PianoKeyNavigation = React.forwardRef<HTMLDivElement, PianoKeyNavigationPr
     return (
       <div
         ref={ref}
-        className={cn("grid grid-cols-6 w-full gap-0", className)}
+        className={cn("grid w-full gap-0", className)}
         {...props}
       >
         {items.map((item, index) => (

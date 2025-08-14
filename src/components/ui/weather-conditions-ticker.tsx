@@ -78,7 +78,7 @@ export function WeatherConditionsTicker({ conditions }: WeatherConditionsTickerP
                     <span className="text-heading-lg">{condition.weatherIcon}</span>
                   </div>
                   
-                  <div className="flex items-center gap-base text-xs text-muted-foreground">
+                  <div className="flex items-center gap-base text-body-xs text-muted-foreground">
                     {/* Temperature */}
                     <div className="flex items-center gap-xs">
                       <Thermometer className="size-3 text-nav-intel" />

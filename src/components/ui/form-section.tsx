@@ -44,7 +44,7 @@ export function FormSection({
 }: FormSectionProps) {
   const backgroundClasses = {
     default: '',
-    warm: 'bg-gradient-hero-warm rounded-md border border-sandy-ochre/20',
+    warm: 'bg-gradient-hero-warm rounded-xs border border-sandy-ochre/20',
     muted: 'bg-muted/50 rounded-xs border border-border'
   }
 
@@ -57,7 +57,7 @@ export function FormSection({
   }
 
   const renderField = (field: FormField, index: number) => {
-    const baseClassName = field.className || "bg-white border-sandy-ochre/30 focus:border-sandy-ochre"
+    const baseClassName = field.className || "bg-card border-sandy-ochre/30 focus:border-sandy-ochre"
     
     switch (field.type) {
       case 'input':
@@ -75,7 +75,7 @@ export function FormSection({
           <select
             key={index}
             name={field.name}
-            className={`px-base py-xs border border-sandy-ochre/30 rounded-md bg-white text-sm font-noto-sans ${baseClassName}`}
+            className={`px-base py-xs border border-sandy-ochre/30 rounded-xs bg-card text-body-sm font-noto-sans ${baseClassName}`}
             required={field.required}
           >
             <option>{field.placeholder}</option>
@@ -90,7 +90,7 @@ export function FormSection({
             key={index}
             name={field.name}
             placeholder={field.placeholder}
-            className={`w-full px-base py-xs border border-sandy-ochre/30 rounded-md bg-white text-sm font-noto-sans min-h-[100px] focus:border-sandy-ochre focus:outline-none ${baseClassName}`}
+            className={`w-full px-base py-xs border border-sandy-ochre/30 rounded-xs bg-card text-body-sm font-noto-sans min-h-[100px] focus:border-sandy-ochre focus:outline-none ${baseClassName}`}
             required={field.required}
           />
         )
@@ -107,16 +107,16 @@ export function FormSection({
             {badge.text}
           </Badge>
         )}
-        <h3 className="text-2xl font-rajdhani font-bold text-dark-chocolate mb-base">
+        <h3 className="text-heading-xl font-rajdhani font-bold text-dark-chocolate mb-base">
           {title}
         </h3>
         {subtitle && (
-          <h4 className="text-lg font-rajdhani font-medium text-warning-amber mb-base">
+          <h4 className="text-body-lg font-rajdhani font-medium text-warning-amber mb-base">
             {subtitle}
           </h4>
         )}
         {description && (
-          <p className="text-lg text-warning-amber font-noto-sans max-w-2xl mx-auto">
+          <p className="text-body-lg text-warning-amber font-noto-sans max-w-2xl mx-auto">
             {description}
           </p>
         )}
@@ -148,11 +148,11 @@ export function FormSection({
         })}
         
         <div className="text-center pt-base">
-          <Button size="lg" className="bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange font-rajdhani font-semibold">
+          <Button variant="flat" size="lg" className="bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange font-rajdhani font-semibold">
             {submitText}
           </Button>
           {submitNote && (
-            <p className="text-sm text-warning-amber mt-xs">
+            <p className="text-body-sm text-warning-amber mt-xs">
               {submitNote}
             </p>
           )}

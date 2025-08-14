@@ -38,7 +38,7 @@ export function TrustIndicators({
 }: TrustIndicatorsProps) {
   return (
     <motion.div 
-      className={`flex flex-wrap justify-center gap-md text-dark-chocolate/60 text-sm font-rajdhani ${className}`}
+      className={`flex flex-wrap justify-center gap-md text-dark-chocolate/60 text-body-sm font-rajdhani ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
@@ -54,7 +54,7 @@ export function TrustIndicators({
             className="flex items-center gap-xs"
           >
             <Icon className="h-4 w-4" weight="bold" />
-            <span className="font-bold">{indicator.value}</span>
+            <span className="font-rajdhani font-bold">{indicator.value}</span>
             <span>{indicator.label}</span>
           </motion.div>
         )

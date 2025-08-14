@@ -37,13 +37,13 @@ export function PlatformFeatureCard({
         <div className={`w-12 h-12 ${iconBgColor} rounded-xs flex items-center justify-center mx-auto`}>
           <Icon className={`h-6 w-6 ${iconColor}`} weight="bold" />
         </div>
-        <h3 className="font-rajdhani font-bold text-xl text-card-foreground">{title}</h3>
-        <p className="text-sm text-muted-foreground leading-relaxed">
+        <h3 className="font-rajdhani font-bold text-body-xl text-card-foreground">{title}</h3>
+        <p className="text-body-sm text-muted-foreground leading-relaxed">
           {description}
         </p>
         <div className="space-y-xs">
-          <p className="text-xs text-card-foreground font-medium">How you can help:</p>
-          <p className="text-xs text-muted-foreground">{helpText}</p>
+          <p className="text-body-xs text-card-foreground font-medium">How you can help:</p>
+          <p className="text-body-xs text-muted-foreground">{helpText}</p>
         </div>
       </CardContent>
     </Card>

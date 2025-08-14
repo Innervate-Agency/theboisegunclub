@@ -48,8 +48,8 @@ const enhancedCardVariants = cva(
         none: "rounded-none",
         xs: "rounded-xs",
         default: "rounded-sm",
-        md: "rounded-md",
-        lg: "rounded-lg",
+        md: "rounded-xs",
+        lg: "rounded-xs",
         full: "rounded-full",
       }
     },

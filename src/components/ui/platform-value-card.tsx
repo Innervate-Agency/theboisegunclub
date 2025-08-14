@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from './card'
 import { Badge } from './badge'
+import { Shield, Lightning, Users, MapTrifold } from '@phosphor-icons/react'
 
 interface PlatformValueCardProps {
   icon: React.ComponentType<{ className?: string; weight?: string }>
@@ -42,7 +43,7 @@ export function PlatformValueCard({
             )}
           </div>
           
-          <h3 className="font-rajdhani font-bold text-2xl text-card-foreground group-hover:text-rusty-orange transition-colors duration-200">
+          <h3 className="font-rajdhani font-bold text-heading-xl text-card-foreground group-hover:text-rusty-orange transition-colors duration-200">
             {title}
           </h3>
           
@@ -56,7 +57,7 @@ export function PlatformValueCard({
           {benefits.map((benefit, index) => (
             <div key={index} className="flex items-start gap-sm">
               <div className="w-1.5 h-1.5 bg-rusty-orange rounded-full mt-2 flex-shrink-0" />
-              <span className="text-sm text-card-foreground">{benefit}</span>
+              <span className="text-body-sm text-card-foreground">{benefit}</span>
             </div>
           ))}
         </div>
@@ -68,10 +69,7 @@ export function PlatformValueCard({
 // Pre-configured value proposition cards
 export const platformValueCards = [
   {
-    icon: ({ className, weight }: { className?: string; weight?: string }) => {
-      const { Shield } = require('@phosphor-icons/react')
-      return <Shield className={className} weight={weight} />
-    },
+    icon: Shield,
     title: "Community First",
     description: "Built by Idaho gun owners, for Idaho gun owners. No corporate agenda, no coastal politics.",
     benefits: [
@@ -86,10 +84,7 @@ export const platformValueCards = [
     iconBgColor: "bg-slate-blue/20"
   },
   {
-    icon: ({ className, weight }: { className?: string; weight?: string }) => {
-      const { Users } = require('@phosphor-icons/react')
-      return <Users className={className} weight={weight} />
-    },
+    icon: Users,
     title: "Authentic Connections",
     description: "Connect with real people in your community. No bots, no fake reviews, just genuine recommendations.",
     benefits: [
@@ -104,10 +99,7 @@ export const platformValueCards = [
     iconBgColor: "bg-sagebrush-green/20"
   },
   {
-    icon: ({ className, weight }: { className?: string; weight?: string }) => {
-      const { MapTrifold } = require('@phosphor-icons/react')
-      return <MapTrifold className={className} weight={weight} />
-    },
+    icon: MapTrifold,
     title: "Local Knowledge",
     description: "Real-time intel from people who actually shoot at these ranges and train with these instructors.",
     benefits: [

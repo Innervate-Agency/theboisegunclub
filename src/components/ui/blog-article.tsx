@@ -183,7 +183,7 @@ export function BlogCard({
                     </div>
                   )}
                   <div className="text-caption text-muted-foreground">
-                    <div className="font-semibold">{article.author.name}</div>
+                    <div className="font-rajdhani font-semibold">{article.author.name}</div>
                     {article.author.title && (
                       <div className="text-caption text-muted-foreground/75">{article.author.title}</div>
                     )}

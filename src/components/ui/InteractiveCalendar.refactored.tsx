@@ -75,7 +75,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                     onClick={() => setSelectedCategory(category.value)}
                   >
                     {category.label}
-                    <span className="ml-xs text-xs font-mono opacity-70">
+                    <span className="ml-xs text-body-xs font-mono opacity-70">
                       {category.count}
                     </span>
                   </Button>
@@ -94,7 +94,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
         <div className="max-w-none space-y-xl">
           
           <div className="flex items-center justify-between">
-            <h2 className="font-rajdhani text-5xl font-bold text-card-foreground">
+            <h2 className="font-rajdhani text-heading-4xl font-bold text-card-foreground">
               {currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
             </h2>
             <div className="flex items-center gap-lg">
@@ -135,12 +135,12 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
               caption: "hidden",
               table: "w-full border-collapse border-spacing-0",
               head_row: "",
-              head_cell: "text-muted-foreground font-medium text-2xl w-full h-20 text-center p-base",
+              head_cell: "text-muted-foreground font-medium text-heading-xl w-full h-20 text-center p-base",
               row: "",
               cell: "relative w-full h-32 text-center p-0",
               day: "w-full h-full hover:bg-accent/30 transition-colors rounded-sm flex flex-col items-center justify-start pt-base",
-              day_selected: "bg-primary/20 text-primary font-bold",
-              day_today: "bg-secondary/20 text-secondary font-bold",
+              day_selected: "bg-primary/20 text-primary font-rajdhani font-bold",
+              day_today: "bg-secondary/20 text-secondary font-rajdhani font-bold",
               day_outside: "text-muted-foreground/30",
               day_disabled: "text-muted-foreground/20",
               day_range_middle: "aria-selected:bg-accent aria-selected:text-accent-foreground",
@@ -157,7 +157,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                 return (
                   <div className="w-full h-full flex flex-col items-center justify-start pt-base px-sm">
                     <span className={cn(
-                      "text-2xl font-bold mb-base",
+                      "text-heading-xl font-bold mb-base",
                       isSelected && "text-primary",
                       isToday && "text-secondary"
                     )}>
@@ -176,7 +176,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                           )
                         })}
                         {dayEvents.length > 6 && (
-                          <div className="text-body-sm text-muted-foreground font-mono font-bold">
+                          <div className="text-body-sm text-muted-foreground font-mono font-rajdhani font-bold">
                             +{dayEvents.length - 6}
                           </div>
                         )}
@@ -184,7 +184,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                     )}
                     
                     {dayEvents.length > 0 && (
-                      <div className="text-xs text-muted-foreground mt-xs text-center">
+                      <div className="text-body-xs text-muted-foreground mt-xs text-center">
                         {dayEvents.length} event{dayEvents.length !== 1 ? 's' : ''}
                       </div>
                     )}
@@ -209,7 +209,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                     </span>
                   </div>
                   {selectedDateEvents.length > 0 && (
-                    <h3 className="font-rajdhani text-2xl font-bold text-card-foreground">
+                    <h3 className="font-rajdhani text-heading-xl font-bold text-card-foreground">
                       {selectedDateEvents.length} Event{selectedDateEvents.length !== 1 ? 's' : ''}
                     </h3>
                   )}
@@ -238,13 +238,13 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                                 </Badge>
                               </div>
                               {event.featured && (
-                                <span className="text-primary text-xs font-medium">
+                                <span className="text-primary text-body-xs font-medium">
                                   FEATURED
                                 </span>
                               )}
                             </div>
 
-                            <h4 className="font-medium text-base text-card-foreground">
+                            <h4 className="font-medium text-body-base text-card-foreground">
                               {event.title}
                             </h4>
 
@@ -269,7 +269,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                               <span className="text-body-sm font-medium text-primary">
                                 {event.price}
                               </span>
-                              <Button variant="outline" size="sm" className="h-8 px-sm text-xs">
+                              <Button variant="outline" size="sm" className="h-8 px-sm text-body-xs">
                                 View Details
                               </Button>
                             </div>
@@ -285,7 +285,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-base">
             <Card className="p-base bg-card text-center">
-              <div className="font-rajdhani text-3xl font-bold text-primary">
+              <div className="font-rajdhani text-heading-2xl font-bold text-primary">
                 {monthEvents.length}
               </div>
               <div className="text-body-sm text-muted-foreground">
@@ -293,13 +293,13 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
               </div>
             </Card>
             <Card className="p-base bg-card text-center">
-              <div className="font-rajdhani text-3xl font-bold text-success">
+              <div className="font-rajdhani text-heading-2xl font-bold text-success">
                 {monthEvents.filter(e => e.featured).length}
               </div>
               <div className="text-body-sm text-muted-foreground">Featured Events</div>
             </Card>
             <Card className="p-base bg-card text-center">
-              <div className="font-rajdhani text-3xl font-bold text-info">
+              <div className="font-rajdhani text-heading-2xl font-bold text-info">
                 {new Set(monthEvents.map(e => e.location.split(',')[0])).size}
               </div>
               <div className="text-body-sm text-muted-foreground">Venues</div>

@@ -195,7 +195,7 @@ export function ZigzagHero({
             {/* Title */}
             <motion.h1 
               variants={itemVariants}
-              className="font-rajdhani font-bold text-5xl md:text-6xl lg:text-7xl text-primary-foreground leading-tight tracking-tight"
+              className="font-rajdhani font-bold text-heading-4xl md:text-display-lg lg:text-7xl text-primary-foreground leading-tight tracking-tight"
             >
               {title}
             </motion.h1>
@@ -203,7 +203,7 @@ export function ZigzagHero({
             {/* Description */}
             <motion.p 
               variants={itemVariants}
-              className="text-xl text-primary-foreground/90 leading-relaxed max-w-2xl"
+              className="text-body-xl text-primary-foreground/90 leading-relaxed max-w-2xl"
             >
               {description}
             </motion.p>
@@ -248,7 +248,7 @@ export function ZigzagHero({
                     {stat.icon && (
                       <stat.icon className="size-8 text-primary-foreground/80 mx-auto" />
                     )}
-                    <div className="text-3xl font-rajdhani font-bold text-primary-foreground">
+                    <div className="text-heading-2xl font-rajdhani font-bold text-primary-foreground">
                       {stat.value}
                     </div>
                     <div className="text-body-sm text-primary-foreground/70 font-medium">

@@ -31,7 +31,7 @@ const buttonVariants = cva(
         "solid-accent": "bg-rusty-orange text-white hover:bg-rusty-orange/90 font-noto-sans",
         
         // Micro Variant
-        micro: "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-card-foreground text-xs px-tiny py-micro h-7 font-noto-sans",
+        micro: "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-card-foreground text-body-xs px-tiny py-micro h-7 font-noto-sans",
 
         // Fire Variants
         fire: "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 hover:after:h-1 font-rajdhani",

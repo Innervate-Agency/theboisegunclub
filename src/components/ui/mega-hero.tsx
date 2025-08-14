@@ -100,7 +100,7 @@ export function MegaHero({
               </p>
             )}
             
-            <h1 className="text-heading-xl md:text-display-sm lg:text-6xl font-rajdhani font-bold text-(--color-crisp-off-white) tracking-tight leading-tight">
+            <h1 className="text-heading-xl md:text-display-sm lg:text-display-lg font-rajdhani font-bold text-(--color-crisp-off-white) tracking-tight leading-tight">
               {title}
             </h1>
             

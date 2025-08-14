@@ -11,7 +11,7 @@ import {
   Phone,
   Calendar
 } from '@phosphor-icons/react'
-import { TrendingDown, Clock } from 'react-icons/lu'
+import { FiTrendingDown as TrendingDown } from 'react-icons/fi'
 
 interface MarketplaceDeal {
   title: string
@@ -103,7 +103,7 @@ export function MarketplaceDealCard({
                 )}
               </div>
               
-              <h3 className="font-rajdhani font-bold text-xl text-card-foreground leading-tight group-hover:text-rusty-orange transition-colors duration-200">
+              <h3 className="font-rajdhani font-bold text-body-xl text-card-foreground leading-tight group-hover:text-rusty-orange transition-colors duration-200">
                 {deal.title}
               </h3>
             </div>
@@ -115,7 +115,7 @@ export function MarketplaceDealCard({
               {discountPercentage > 0 && (
                 <div className="flex items-center gap-xs">
                   <TrendingDown className="h-4 w-4 text-sagebrush-green" weight="bold" />
-                  <span className="font-rajdhani font-bold text-lg text-sagebrush-green">
+                  <span className="font-rajdhani font-bold text-body-lg text-sagebrush-green">
                     {discountPercentage}% OFF
                   </span>
                 </div>
@@ -123,7 +123,7 @@ export function MarketplaceDealCard({
             </div>
           </div>
 
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          <p className="text-body-sm text-muted-foreground leading-relaxed">
             {deal.description}
           </p>
         </div>
@@ -132,19 +132,19 @@ export function MarketplaceDealCard({
         <div className="space-y-sm">
           <div className="flex items-center gap-base">
             <div className="space-y-xs">
-              <p className="font-rajdhani font-bold text-3xl text-card-foreground">
+              <p className="font-rajdhani font-bold text-heading-2xl text-card-foreground">
                 {formatPrice(deal.salePrice)}
               </p>
               {deal.originalPrice > deal.salePrice && (
-                <p className="text-sm text-muted-foreground line-through">
+                <p className="text-body-sm text-muted-foreground line-through">
                   {formatPrice(deal.originalPrice)}
                 </p>
               )}
             </div>
             {deal.originalPrice > deal.salePrice && (
               <div className="text-center p-sm bg-sagebrush-green/10 rounded-xs">
-                <p className="text-xs text-sagebrush-green font-medium">You Save</p>
-                <p className="font-rajdhani font-bold text-lg text-sagebrush-green">
+                <p className="text-body-xs text-sagebrush-green font-medium">You Save</p>
+                <p className="font-rajdhani font-bold text-body-lg text-sagebrush-green">
                   {formatPrice(deal.originalPrice - deal.salePrice)}
                 </p>
               </div>
@@ -164,13 +164,13 @@ export function MarketplaceDealCard({
             )}
           </div>
           
-          <div className="flex items-center gap-sm text-sm">
+          <div className="flex items-center gap-sm text-body-sm">
             <MapPin className="h-4 w-4 text-muted-foreground" weight="bold" />
             <span className="text-muted-foreground">{deal.location}</span>
           </div>
 
           {deal.rating && deal.reviewCount && (
-            <div className="flex items-center gap-sm text-sm">
+            <div className="flex items-center gap-sm text-body-sm">
               <Star className="h-4 w-4 text-rusty-orange" weight="bold" />
               <span className="font-medium text-card-foreground">{deal.rating}</span>
               <span className="text-muted-foreground">({deal.reviewCount} reviews)</span>
@@ -182,7 +182,7 @@ export function MarketplaceDealCard({
         {deal.expiresAt && (
           <div className="flex items-center gap-sm p-sm bg-rusty-orange/10 rounded-xs">
             <Calendar className="h-4 w-4 text-rusty-orange" weight="bold" />
-            <span className="text-sm text-rusty-orange font-medium">
+            <span className="text-body-sm text-rusty-orange font-medium">
               Deal expires {deal.expiresAt}
             </span>
           </div>

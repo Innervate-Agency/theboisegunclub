@@ -29,10 +29,10 @@ export function ActivityFeedCard({
         </div>
         <div className="flex-1 space-y-xs">
           <div className="flex items-center justify-between">
-            <p className="font-medium text-card-foreground text-sm">{title}</p>
-            <span className="text-xs text-muted-foreground">{timeAgo}</span>
+            <p className="font-medium text-card-foreground text-body-sm">{title}</p>
+            <span className="text-body-xs text-muted-foreground">{timeAgo}</span>
           </div>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-body-xs text-muted-foreground">
             {description}
           </p>
         </div>

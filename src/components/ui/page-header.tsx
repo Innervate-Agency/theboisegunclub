@@ -19,10 +19,10 @@ export function PageHeader({ title, subtitle, badge, icon: Icon }: PageHeaderPro
           {badge}
         </Badge>
       )}
-      <h1 className="font-rajdhani text-4xl lg:text-5xl font-bold text-foreground leading-none">
+      <h1 className="font-rajdhani text-heading-3xl lg:text-heading-4xl font-bold text-foreground leading-none">
         {title}
       </h1>
-      <p className="text-lg text-muted-foreground leading-relaxed">
+      <p className="text-body-lg text-muted-foreground leading-relaxed">
         {subtitle}
       </p>
     </div>

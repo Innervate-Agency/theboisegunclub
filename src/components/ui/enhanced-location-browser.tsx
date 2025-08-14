@@ -139,7 +139,7 @@ export function EnhancedLocationBrowser({ locations, weatherData }: EnhancedLoca
             <Badge variant="intel-location" size="md">
               Enhanced Location Browser
             </Badge>
-            <h2 className="font-rajdhani text-5xl font-bold text-card-foreground leading-tight">
+            <h2 className="font-rajdhani text-heading-4xl font-bold text-card-foreground leading-tight">
               Explore All <span className="text-nav-intel">Shooting Locations</span>
             </h2>
             <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
@@ -154,7 +154,7 @@ export function EnhancedLocationBrowser({ locations, weatherData }: EnhancedLoca
               
               {/* Category Filter */}
               <div className="space-y-sm">
-                <label className="text-sm font-medium text-card-foreground">Category</label>
+                <label className="text-body-sm font-medium text-card-foreground">Category</label>
                 <div className="flex flex-wrap gap-xs">
                   {categoryFilters.map((filter) => (
                     <Button
@@ -162,7 +162,7 @@ export function EnhancedLocationBrowser({ locations, weatherData }: EnhancedLoca
                       variant={selectedCategory === filter.id ? "solid" : "ghost"}
                       size="sm"
                       onClick={() => setSelectedCategory(filter.id)}
-                      className="text-xs font-rajdhani font-medium"
+                      className="text-body-xs font-rajdhani font-medium"
                     >
                       {React.createElement(filter.icon, { className: "h-3 w-3 mr-xs" })}
                       {filter.label}
@@ -173,7 +173,7 @@ export function EnhancedLocationBrowser({ locations, weatherData }: EnhancedLoca
 
               {/* Difficulty Filter */}
               <div className="space-y-sm">
-                <label className="text-sm font-medium text-card-foreground">Difficulty</label>
+                <label className="text-body-sm font-medium text-card-foreground">Difficulty</label>
                 <div className="flex flex-wrap gap-xs">
                   {difficultyFilters.map((filter) => (
                     <Button
@@ -181,7 +181,7 @@ export function EnhancedLocationBrowser({ locations, weatherData }: EnhancedLoca
                       variant={selectedDifficulty === filter.id ? "solid" : "ghost"}
                       size="sm"
                       onClick={() => setSelectedDifficulty(filter.id)}
-                      className="text-xs font-rajdhani font-medium"
+                      className="text-body-xs font-rajdhani font-medium"
                     >
                       {filter.label}
                     </Button>
@@ -191,7 +191,7 @@ export function EnhancedLocationBrowser({ locations, weatherData }: EnhancedLoca
 
               {/* Sort Options */}
               <div className="space-y-sm">
-                <label className="text-sm font-medium text-card-foreground">Sort By</label>
+                <label className="text-body-sm font-medium text-card-foreground">Sort By</label>
                 <div className="flex flex-wrap gap-xs">
                   {sortOptions.map((option) => (
                     <Button
@@ -199,7 +199,7 @@ export function EnhancedLocationBrowser({ locations, weatherData }: EnhancedLoca
                       variant={selectedSort === option.id ? "solid" : "ghost"}
                       size="sm"
                       onClick={() => setSelectedSort(option.id)}
-                      className="text-xs font-rajdhani font-medium"
+                      className="text-body-xs font-rajdhani font-medium"
                     >
                       {React.createElement(option.icon, { className: "h-3 w-3 mr-xs" })}
                       {option.label}
@@ -210,12 +210,12 @@ export function EnhancedLocationBrowser({ locations, weatherData }: EnhancedLoca
 
               {/* Results Summary */}
               <div className="space-y-sm">
-                <label className="text-sm font-medium text-card-foreground">Results</label>
+                <label className="text-body-sm font-medium text-card-foreground">Results</label>
                 <div className="space-y-xs">
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-body-sm text-muted-foreground">
                     Showing {startIndex + 1}-{Math.min(endIndex, filteredAndSortedLocations.length)} of {filteredAndSortedLocations.length} locations
                   </div>
-                  <div className="text-xs text-muted-foreground">
+                  <div className="text-body-xs text-muted-foreground">
                     Page {currentPage} of {totalPages}
                   </div>
                 </div>
@@ -286,7 +286,7 @@ export function EnhancedLocationBrowser({ locations, weatherData }: EnhancedLoca
             <div className="text-center py-4xl">
               <div className="space-y-base">
                 <Target className="h-12 w-12 text-muted-foreground mx-auto" />
-                <h3 className="font-rajdhani text-xl font-bold text-card-foreground">
+                <h3 className="font-rajdhani text-body-xl font-bold text-card-foreground">
                   No locations found
                 </h3>
                 <p className="text-muted-foreground max-w-md mx-auto">

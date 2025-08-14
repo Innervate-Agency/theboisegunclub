@@ -76,10 +76,10 @@ export function JoinMovementCTA({
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="space-y-base"
         >
-          <h2 className="font-rajdhani font-bold text-4xl md:text-5xl text-card-foreground leading-tight">
+          <h2 className="font-rajdhani font-bold text-heading-3xl md:text-heading-4xl text-card-foreground leading-tight">
             {title}
           </h2>
-          <p className="font-rajdhani font-medium text-xl md:text-2xl text-rusty-orange">
+          <p className="font-rajdhani font-medium text-body-xl md:text-heading-xl text-rusty-orange">
             {subtitle}
           </p>
         </motion.div>
@@ -90,7 +90,7 @@ export function JoinMovementCTA({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
         >
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+          <p className="text-body-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             {description}
           </p>
         </motion.div>
@@ -125,7 +125,7 @@ export function JoinMovementCTA({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
-          className="flex flex-wrap justify-center gap-lg text-sm text-muted-foreground font-rajdhani"
+          className="flex flex-wrap justify-center gap-lg text-body-sm text-muted-foreground font-rajdhani"
         >
           <div className="flex items-center gap-xs">
             <MapPin className="h-4 w-4" weight="bold" />

@@ -211,7 +211,7 @@ export default function FacilityCard({
               <Badge 
                 key={index} 
                 variant="info" 
-                className="text-xs"
+                className="text-body-xs"
               >
                 {badge}
               </Badge>

@@ -114,11 +114,11 @@ function WindDirectionArrow({ direction, speed }: { direction: string, speed: nu
       >
         <Navigation className="h-4 w-4 text-nav-intel" />
       </div>
-      <div className="text-sm">
+      <div className="text-body-sm">
         <span className="font-bold text-card-foreground">{speed}</span>
-        <span className="text-muted-foreground text-xs">mph</span>
+        <span className="text-muted-foreground text-body-xs">mph</span>
       </div>
-      <span className="text-xs text-muted-foreground font-medium">{direction}</span>
+      <span className="text-body-xs text-muted-foreground font-medium">{direction}</span>
     </div>
   )
 }
@@ -148,7 +148,7 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
               <span className="ml-xs">{shootingStatus.message.toUpperCase()}</span>
             </Badge>
           </div>
-          <div className="flex items-center gap-xs text-xs text-muted-foreground">
+          <div className="flex items-center gap-xs text-body-xs text-muted-foreground">
             {location.verified && (
               <>
                 <Shield className="h-3 w-3 text-nav-intel" />
@@ -159,10 +159,10 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
         </div>
         
         <div className="space-y-xs">
-          <CardTitle className="font-rajdhani font-bold text-lg leading-tight text-card-foreground">
+          <CardTitle className="font-rajdhani font-bold text-body-lg leading-tight text-card-foreground">
             {location.name}
           </CardTitle>
-          <div className="flex items-center gap-xs text-xs text-muted-foreground">
+          <div className="flex items-center gap-xs text-body-xs text-muted-foreground">
             <MapPin className="h-3 w-3 text-nav-intel" />
             <span>{location.distanceFromBoise} miles from Boise</span>
             <span>•</span>
@@ -178,7 +178,7 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
             <div className="grid grid-cols-2 gap-base mb-sm">
               {/* Wind - Primary Focus */}
               <div className="space-y-xs">
-                <div className="flex items-center gap-xs text-xs text-nav-intel font-semibold">
+                <div className="flex items-center gap-xs text-body-xs text-nav-intel font-rajdhani font-semibold">
                   <Wind className="h-3 w-3" />
                   WIND
                 </div>
@@ -187,18 +187,18 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
               
               {/* Temperature */}
               <div className="space-y-xs">
-                <div className="flex items-center gap-xs text-xs text-nav-intel font-semibold">
+                <div className="flex items-center gap-xs text-body-xs text-nav-intel font-rajdhani font-semibold">
                   <Thermometer className="h-3 w-3" />
                   TEMP
                 </div>
-                <div className="text-lg font-bold text-card-foreground">
+                <div className="text-body-lg font-bold text-card-foreground">
                   {weatherData.temperature}°F
                 </div>
               </div>
             </div>
             
             {/* Fire Danger & Alerts */}
-            <div className="flex items-center justify-between text-xs">
+            <div className="flex items-center justify-between text-body-xs">
               <div className="flex items-center gap-xs">
                 <span className="text-muted-foreground">Fire Danger:</span>
                 <Badge 
@@ -219,7 +219,7 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
                 {weatherData.alerts.slice(0, 1).map((alert, index) => (
                   <div key={index} className="flex items-start gap-xs">
                     <AlertTriangle className="h-3 w-3 text-warning-clay mt-px flex-shrink-0" />
-                    <span className="text-xs text-card-foreground">{alert}</span>
+                    <span className="text-body-xs text-card-foreground">{alert}</span>
                   </div>
                 ))}
               </div>
@@ -229,19 +229,19 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
         
         {/* Location Details */}
         <div className="space-y-xs">
-          <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed">
+          <p className="text-body-sm text-muted-foreground line-clamp-2 leading-relaxed">
             {location.description}
           </p>
           
           {/* Key Amenities */}
           <div className="flex flex-wrap gap-xs">
             {location.amenities.slice(0, 2).map((amenity, index) => (
-              <Badge key={index} className="bg-muted text-muted-foreground text-xs">
+              <Badge key={index} className="bg-muted text-muted-foreground text-body-xs">
                 {amenity}
               </Badge>
             ))}
             {location.amenities.length > 2 && (
-              <Badge className="bg-muted text-muted-foreground text-xs">
+              <Badge className="bg-muted text-muted-foreground text-body-xs">
                 +{location.amenities.length - 2} more
               </Badge>
             )}
@@ -250,11 +250,11 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
         
         {/* Best Shooting Conditions */}
         <div className="bg-card/50 p-xs rounded-sm">
-          <div className="flex items-center gap-xs text-xs text-muted-foreground mb-xs">
+          <div className="flex items-center gap-xs text-body-xs text-muted-foreground mb-xs">
             <Target className="h-3 w-3 text-nav-intel" />
             <span className="font-medium">Best Conditions:</span>
           </div>
-          <span className="text-xs text-card-foreground">{location.bestWindConditions}</span>
+          <span className="text-body-xs text-card-foreground">{location.bestWindConditions}</span>
         </div>
         
         {/* Action Button */}

@@ -22,7 +22,7 @@ const directoryCardVariants = cva(
       },
       size: {
         sm: 'p-sm text-body-sm',
-        md: 'p-base text-base',
+        md: 'p-base text-body-base',
         lg: 'p-md text-heading-lg',
       },
     },
@@ -84,7 +84,7 @@ export function DirectoryCard({
         </div>
       </div>
       {contact && (
-        <div className="mt-xs text-xs text-warning-amber font-noto-sans truncate">{contact}</div>
+        <div className="mt-xs text-body-xs text-warning-amber font-noto-sans truncate">{contact}</div>
       )}
     </div>
   );

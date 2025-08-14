@@ -44,7 +44,7 @@ export function SiteHeader() {
                 <span className="font-rajdhani font-bold text-heading-lg text-sandy-ochre ml-xs">GUN CLUB</span>
               </div>
             </Link>
-            <Badge variant="default" className="hidden md:block text-xs text-muted-foreground">
+            <Badge variant="default" className="hidden md:block text-body-xs text-muted-foreground">
               Community Platform
             </Badge>
           </div>
@@ -67,15 +67,15 @@ export function SiteHeader() {
                     <div className="grid gap-xs">
                       <NavigationMenuLink href="/events" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-body-sm font-medium">All Events</div>
-                        <p className="text-xs text-muted-foreground">Browse all upcoming events</p>
+                        <p className="text-body-xs text-muted-foreground">Browse all upcoming events</p>
                       </NavigationMenuLink>
                       <NavigationMenuLink href="/events?category=competition" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-body-sm font-medium">Competitions</div>
-                        <p className="text-xs text-muted-foreground">USPSA, IDPA, and local matches</p>
+                        <p className="text-body-xs text-muted-foreground">USPSA, IDPA, and local matches</p>
                       </NavigationMenuLink>
                       <NavigationMenuLink href="/events?category=training" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-body-sm font-medium">Training Events</div>
-                        <p className="text-xs text-muted-foreground">Education and skill development</p>
+                        <p className="text-body-xs text-muted-foreground">Education and skill development</p>
                       </NavigationMenuLink>
                     </div>
                   </div>
@@ -97,15 +97,15 @@ export function SiteHeader() {
                     <div className="grid gap-xs">
                       <NavigationMenuLink href="/directory" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-body-sm font-medium">All Businesses</div>
-                        <p className="text-xs text-muted-foreground">Complete Treasure Valley directory</p>
+                        <p className="text-body-xs text-muted-foreground">Complete Treasure Valley directory</p>
                       </NavigationMenuLink>
                       <NavigationMenuLink href="/directory?type=dealer" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-body-sm font-medium">FFL Dealers</div>
-                        <p className="text-xs text-muted-foreground">Licensed firearms dealers</p>
+                        <p className="text-body-xs text-muted-foreground">Licensed firearms dealers</p>
                       </NavigationMenuLink>
                       <NavigationMenuLink href="/directory?type=range" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-body-sm font-medium">Shooting Ranges</div>
-                        <p className="text-xs text-muted-foreground">Indoor and outdoor facilities</p>
+                        <p className="text-body-xs text-muted-foreground">Indoor and outdoor facilities</p>
                       </NavigationMenuLink>
                     </div>
                   </div>
@@ -151,15 +151,15 @@ export function SiteHeader() {
                     <div className="grid gap-xs">
                       <NavigationMenuLink href="/forums" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-body-sm font-medium">Forums</div>
-                        <p className="text-xs text-muted-foreground">Community discussions</p>
+                        <p className="text-body-xs text-muted-foreground">Community discussions</p>
                       </NavigationMenuLink>
                       <NavigationMenuLink href="/about" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-body-sm font-medium">About TBGC</div>
-                        <p className="text-xs text-muted-foreground">Our mission and story</p>
+                        <p className="text-body-xs text-muted-foreground">Our mission and story</p>
                       </NavigationMenuLink>
                       <NavigationMenuLink href="/contact" className="block select-none rounded-sm p-base hover:bg-accent hover:text-accent-foreground">
                         <div className="text-body-sm font-medium">Contact Us</div>
-                        <p className="text-xs text-muted-foreground">Get in touch</p>
+                        <p className="text-body-xs text-muted-foreground">Get in touch</p>
                       </NavigationMenuLink>
                     </div>
                   </div>

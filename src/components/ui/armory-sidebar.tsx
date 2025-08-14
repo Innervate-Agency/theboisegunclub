@@ -35,7 +35,7 @@ export function ArmorySidebar() {
           </div>
           <div className="group-data-[collapsible=icon]:hidden">
             <h2 className="text-body-sm font-semibold font-rajdhani">The Armory</h2>
-            <p className="text-xs text-muted-foreground">Information Hub</p>
+            <p className="text-body-xs text-muted-foreground">Information Hub</p>
           </div>
         </div>
       </SidebarHeader>
@@ -43,7 +43,7 @@ export function ArmorySidebar() {
       <SidebarContent className="px-xs py-sm">
         {/* Idaho Content */}
         <SidebarGroup>
-          <SidebarGroupLabel className="px-micro text-xs font-semibold font-rajdhani text-foothills-purple mb-tiny group-data-[collapsible=icon]:hidden">
+          <SidebarGroupLabel className="px-micro text-body-xs font-semibold font-rajdhani text-foothills-purple mb-tiny group-data-[collapsible=icon]:hidden">
             IDAHO CONTENT
           </SidebarGroupLabel>
           <SidebarMenu className="space-y-1">
@@ -51,21 +51,21 @@ export function ArmorySidebar() {
               <SidebarMenuButton className="w-full justify-start text-body-sm hover:bg-foothills-purple/10" tooltip="Idaho Laws">
                 <Scale className="mr-xs size-4" />
                 <span className="group-data-[collapsible=icon]:hidden">Idaho Laws</span>
-                <Badge variant="secondary" className="ml-auto text-xs group-data-[collapsible=icon]:hidden">12</Badge>
+                <Badge variant="secondary" className="ml-auto text-body-xs group-data-[collapsible=icon]:hidden">12</Badge>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton className="w-full justify-start text-body-sm hover:bg-foothills-purple/10" tooltip="Buying Guides">
                 <FileText className="mr-xs size-4" />
                 <span className="group-data-[collapsible=icon]:hidden">Buying Guides</span>
-                <Badge variant="secondary" className="ml-auto text-xs group-data-[collapsible=icon]:hidden">8</Badge>
+                <Badge variant="secondary" className="ml-auto text-body-xs group-data-[collapsible=icon]:hidden">8</Badge>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton className="w-full justify-start text-body-sm hover:bg-foothills-purple/10" tooltip="Safety Training">
                 <Shield className="mr-xs size-4" />
                 <span className="group-data-[collapsible=icon]:hidden">Safety Training</span>
-                <Badge variant="secondary" className="ml-auto text-xs group-data-[collapsible=icon]:hidden">15</Badge>
+                <Badge variant="secondary" className="ml-auto text-body-xs group-data-[collapsible=icon]:hidden">15</Badge>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
@@ -73,7 +73,7 @@ export function ArmorySidebar() {
 
         {/* Local Resources */}
         <SidebarGroup className="mt-base">
-          <SidebarGroupLabel className="px-micro text-xs font-semibold font-rajdhani text-foothills-purple mb-tiny group-data-[collapsible=icon]:hidden">
+          <SidebarGroupLabel className="px-micro text-body-xs font-semibold font-rajdhani text-foothills-purple mb-tiny group-data-[collapsible=icon]:hidden">
             LOCAL RESOURCES
           </SidebarGroupLabel>
           <SidebarMenu className="space-y-1">
@@ -81,21 +81,21 @@ export function ArmorySidebar() {
               <SidebarMenuButton className="w-full justify-start text-body-sm hover:bg-foothills-purple/10" tooltip="Shooting Ranges">
                 <MapPin className="mr-xs size-4" />
                 <span className="group-data-[collapsible=icon]:hidden">Shooting Ranges</span>
-                <Badge variant="secondary" className="ml-auto text-xs group-data-[collapsible=icon]:hidden">18</Badge>
+                <Badge variant="secondary" className="ml-auto text-body-xs group-data-[collapsible=icon]:hidden">18</Badge>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton className="w-full justify-start text-body-sm hover:bg-foothills-purple/10" tooltip="Training Facilities">
                 <Target className="mr-xs size-4" />
                 <span className="group-data-[collapsible=icon]:hidden">Training Facilities</span>
-                <Badge variant="secondary" className="ml-auto text-xs group-data-[collapsible=icon]:hidden">12</Badge>
+                <Badge variant="secondary" className="ml-auto text-body-xs group-data-[collapsible=icon]:hidden">12</Badge>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton className="w-full justify-start text-body-sm hover:bg-foothills-purple/10" tooltip="Local FFLs">
                 <Users className="mr-xs size-4" />
                 <span className="group-data-[collapsible=icon]:hidden">Local FFLs</span>
-                <Badge variant="secondary" className="ml-auto text-xs group-data-[collapsible=icon]:hidden">34</Badge>
+                <Badge variant="secondary" className="ml-auto text-body-xs group-data-[collapsible=icon]:hidden">34</Badge>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
@@ -103,7 +103,7 @@ export function ArmorySidebar() {
 
         {/* Coming Soon */}
         <SidebarGroup className="mt-base">
-          <SidebarGroupLabel className="px-micro text-xs font-semibold font-rajdhani text-muted-foreground mb-tiny group-data-[collapsible=icon]:hidden">
+          <SidebarGroupLabel className="px-micro text-body-xs font-semibold font-rajdhani text-muted-foreground mb-tiny group-data-[collapsible=icon]:hidden">
             COMING SOON
           </SidebarGroupLabel>
           <SidebarMenu className="space-y-1">
@@ -111,14 +111,14 @@ export function ArmorySidebar() {
               <SidebarMenuButton disabled className="w-full justify-start text-body-sm opacity-50" tooltip="Firearm Database">
                 <Globe className="mr-xs size-4" />
                 <span className="group-data-[collapsible=icon]:hidden">Firearm Database</span>
-                <Badge variant="outline" className="ml-auto text-xs group-data-[collapsible=icon]:hidden">12K+</Badge>
+                <Badge variant="outline" className="ml-auto text-body-xs group-data-[collapsible=icon]:hidden">12K+</Badge>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton disabled className="w-full justify-start text-body-sm opacity-50" tooltip="Maintenance Guides">
                 <Wrench className="mr-xs size-4" />
                 <span className="group-data-[collapsible=icon]:hidden">Maintenance Guides</span>
-                <Badge variant="outline" className="ml-auto text-xs group-data-[collapsible=icon]:hidden">Soon</Badge>
+                <Badge variant="outline" className="ml-auto text-body-xs group-data-[collapsible=icon]:hidden">Soon</Badge>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
@@ -126,7 +126,7 @@ export function ArmorySidebar() {
       </SidebarContent>
 
       <SidebarFooter className="border-t px-sm py-xs group-data-[collapsible=icon]:hidden">
-        <div className="text-xs text-muted-foreground">
+        <div className="text-body-xs text-muted-foreground">
           <p>540K+ Idaho gun owners</p>
           <p className="mt-micro">Updated daily</p>
         </div>

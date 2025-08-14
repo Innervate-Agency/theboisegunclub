@@ -18,7 +18,7 @@ export function HeroBadge({
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`inline-block ${className}`}
     >
-      <span className="inline-flex items-center gap-xs px-sm py-micro bg-rusty-orange/10 border border-rusty-orange/30 rounded-xs text-rusty-orange font-rajdhani font-bold text-sm uppercase tracking-wider">
+      <span className="inline-flex items-center gap-xs px-sm py-micro bg-rusty-orange/10 border border-rusty-orange/30 rounded-xs text-rusty-orange font-rajdhani font-bold text-body-sm uppercase tracking-wider">
         <span className="size-2 bg-rusty-orange rounded-full animate-pulse" />
         {text}
       </span>

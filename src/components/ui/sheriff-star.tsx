@@ -64,7 +64,7 @@ const SheriffStar = React.forwardRef<HTMLDivElement, SheriffStarProps>(
         `}</style>
         
         {badge && (
-          <span className="text-xs font-bold text-gunmetal absolute inset-0 flex items-center justify-center font-rajdhani uppercase">
+          <span className="text-body-xs font-bold text-gunmetal absolute inset-0 flex items-center justify-center font-rajdhani uppercase">
             {badge}
           </span>
         )}

@@ -152,7 +152,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                     animationType="plus-minus"
                     animationState={isSelected}
                     className={cn(
-                      "text-xs transition-colors duration-200",
+                      "text-body-xs transition-colors duration-200",
                       isSelected 
                         ? "bg-rusty-orange/20 text-rusty-orange font-medium" 
                         : "bg-transparent text-muted-foreground hover:text-card-foreground hover:bg-muted/30"
@@ -181,7 +181,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
           
           {/* Calendar Header */}
           <div className="flex items-center justify-between">
-            <h2 className="font-rajdhani text-5xl font-bold text-card-foreground">
+            <h2 className="font-rajdhani text-heading-4xl font-bold text-card-foreground">
               {currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
             </h2>
             <div className="flex items-center gap-lg">
@@ -224,12 +224,12 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
               caption: "hidden", // Hide default caption since we have custom header
               table: "w-full border-collapse border-spacing-0",
               head_row: "",
-              head_cell: "text-muted-foreground font-medium text-2xl w-full h-20 text-center p-base",
+              head_cell: "text-muted-foreground font-medium text-heading-xl w-full h-20 text-center p-base",
               row: "",
               cell: "relative w-full h-32 text-center p-0",
               day: "w-full h-full hover:bg-accent/30 transition-colors rounded-xs flex flex-col items-center justify-start pt-base",
-              day_selected: "bg-rusty-orange/20 text-rusty-orange font-bold",
-              day_today: "bg-slate-blue/20 text-slate-blue font-bold",
+              day_selected: "bg-rusty-orange/20 text-rusty-orange font-rajdhani font-bold",
+              day_today: "bg-slate-blue/20 text-slate-blue font-rajdhani font-bold",
               day_outside: "text-muted-foreground/30",
               day_disabled: "text-muted-foreground/20",
               day_range_middle: "aria-selected:bg-accent aria-selected:text-accent-foreground",
@@ -246,7 +246,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                 return (
                   <div className="w-full h-full flex flex-col items-center justify-start pt-base px-sm">
                     <span className={cn(
-                      "text-2xl font-bold mb-base",
+                      "text-heading-xl font-bold mb-base",
                       isSelected && "text-rusty-orange",
                       isToday && "text-slate-blue"
                     )}>
@@ -266,7 +266,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                           )
                         })}
                         {dayEvents.length > 6 && (
-                          <div className="text-body-sm text-muted-foreground font-mono font-bold">
+                          <div className="text-body-sm text-muted-foreground font-mono font-rajdhani font-bold">
                             +{dayEvents.length - 6}
                           </div>
                         )}
@@ -274,7 +274,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                     )}
                     
                     {dayEvents.length > 0 && (
-                      <div className="text-xs text-muted-foreground mt-xs text-center">
+                      <div className="text-body-xs text-muted-foreground mt-xs text-center">
                         {dayEvents.length} event{dayEvents.length !== 1 ? 's' : ''}
                       </div>
                     )}
@@ -301,7 +301,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                     </span>
                   </div>
                   {selectedDateEvents.length > 0 && (
-                    <h3 className="font-rajdhani text-2xl font-bold text-card-foreground">
+                    <h3 className="font-rajdhani text-heading-xl font-bold text-card-foreground">
                       {selectedDateEvents.length} Event{selectedDateEvents.length !== 1 ? 's' : ''}
                     </h3>
                   )}
@@ -332,18 +332,18 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                                 <div className={`p-xs rounded bg-${config.color}/20`}>
                                   <Icon className={`size-4 text-${config.color}`} />
                                 </div>
-                                <span className={`text-${config.color} text-xs font-medium`}>
+                                <span className={`text-${config.color} text-body-xs font-medium`}>
                                   {event.eventType.toUpperCase()}
                                 </span>
                               </div>
                               {event.featured && (
-                                <span className="text-rusty-orange text-xs font-medium">
+                                <span className="text-rusty-orange text-body-xs font-medium">
                                   FEATURED
                                 </span>
                               )}
                             </div>
 
-                            <h4 className="font-medium text-base text-card-foreground">
+                            <h4 className="font-medium text-body-base text-card-foreground">
                               {event.title}
                             </h4>
 
@@ -368,7 +368,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                               <span className="text-body-sm font-medium text-rusty-orange">
                                 {event.price}
                               </span>
-                              <Button variant="flat" size="sm" className="h-8 px-sm text-xs">
+                              <Button variant="flat" size="sm" className="h-8 px-sm text-body-xs">
                                 View Details
                               </Button>
                             </div>
@@ -385,7 +385,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
           {/* Quick Stats for Current Month */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-base">
             <Card className="p-base bg-card text-center">
-              <div className="font-rajdhani text-3xl font-bold text-rusty-orange">
+              <div className="font-rajdhani text-heading-2xl font-bold text-rusty-orange">
                 {monthEvents.length}
               </div>
               <div className="text-body-sm text-muted-foreground">
@@ -393,13 +393,13 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
               </div>
             </Card>
             <Card className="p-base bg-card text-center">
-              <div className="font-rajdhani text-3xl font-bold text-sage-green">
+              <div className="font-rajdhani text-heading-2xl font-bold text-sage-green">
                 {monthEvents.filter(e => e.featured).length}
               </div>
               <div className="text-body-sm text-muted-foreground">Featured Events</div>
             </Card>
             <Card className="p-base bg-card text-center">
-              <div className="font-rajdhani text-3xl font-bold text-slate-blue">
+              <div className="font-rajdhani text-heading-2xl font-bold text-slate-blue">
                 {new Set(monthEvents.map(e => e.location.split(',')[0])).size}
               </div>
               <div className="text-body-sm text-muted-foreground">Venues</div>

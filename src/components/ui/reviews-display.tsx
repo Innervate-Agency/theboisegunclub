@@ -59,7 +59,7 @@ export function ReviewsDisplay({
     return (
       <div className="text-center py-lg">
         <p className="text-muted-foreground">No reviews available yet.</p>
-        <p className="text-sm text-muted-foreground mt-xs">Be the first to leave a review!</p>
+        <p className="text-body-sm text-muted-foreground mt-xs">Be the first to leave a review!</p>
       </div>
     )
   }
@@ -71,15 +71,15 @@ export function ReviewsDisplay({
       {showHeader && (
         <div className="text-center space-y-xs">
           <div className="flex items-center justify-center gap-xs">
-            <h3 className="font-rajdhani text-2xl font-bold text-card-foreground">
+            <h3 className="font-rajdhani text-heading-xl font-bold text-card-foreground">
               Customer Reviews
             </h3>
             {reviewsData.averageRating && (
               <div className="flex items-center gap-micro ml-sm">
-                <span className="font-rajdhani text-2xl font-bold text-warning-amber">
+                <span className="font-rajdhani text-heading-xl font-bold text-warning-amber">
                   {reviewsData.averageRating.toFixed(1)}
                 </span>
-                <div className="text-xs text-muted-foreground">
+                <div className="text-body-xs text-muted-foreground">
                   ({reviewsData.totalReviews} reviews)
                 </div>
               </div>
@@ -91,7 +91,7 @@ export function ReviewsDisplay({
               <Shield className="size-3 mr-xs" />
               Verified Google Reviews
             </Badge>
-            <span className="text-xs text-muted-foreground">
+            <span className="text-body-xs text-muted-foreground">
               Updated {reviewsData.lastUpdated}
             </span>
           </div>

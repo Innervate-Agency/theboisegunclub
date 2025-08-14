@@ -18,9 +18,9 @@ const alertVariants = cva(
         elite: "border-elite/50 text-elite dark:border-elite [&>svg]:text-elite bg-gradient-to-r from-foothills-purple/10 to-canyon-clay/10",
       },
       size: {
-        sm: "px-xs py-tiny text-xs",
+        sm: "px-xs py-tiny text-body-xs",
         default: "p-sm text-body-sm",
-        lg: "p-md text-base",
+        lg: "p-md text-body-base",
       },
     },
     defaultVariants: {

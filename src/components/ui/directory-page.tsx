@@ -278,12 +278,12 @@ export function DirectoryPageComponent() {
                         Business Directory
                       </Badge>
                     </div>
-                    <h1 className="font-rajdhani text-4xl lg:text-5xl font-bold text-foreground leading-none">
+                    <h1 className="font-rajdhani text-heading-3xl lg:text-heading-4xl font-bold text-foreground leading-none">
                       Find Local Firearms
                       <br />
                       <span className="text-nav-directory">Businesses</span>
                     </h1>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
+                    <p className="text-body-lg text-muted-foreground leading-relaxed">
                       Connect with Idaho's premier firearms community. From FFLs to ranges, training to gunsmithing — find trusted professionals in the Treasure Valley.
                     </p>
                   </div>
@@ -294,12 +294,12 @@ export function DirectoryPageComponent() {
                       <Search weight="bold" className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                       <Input
                         placeholder="Search businesses, services, or locations..."
-                        className="pl-10 h-12 text-base shadow-elevated"
+                        className="pl-10 h-12 text-body-base shadow-elevated"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                       />
                     </div>
-                    <Button size="lg" className="shadow-elevated hover:shadow-prominent">
+                    <Button variant="flat" size="lg" className=" hover:shadow-prominent">
                       <Search weight="bold" className="h-4 w-4 mr-xs" />
                       Search
                     </Button>
@@ -316,13 +316,13 @@ export function DirectoryPageComponent() {
                             <Shield weight="bold" className="h-3 w-3 mr-xs" />
                             Featured Gold Partner
                           </Badge>
-                          <h3 className="font-rajdhani font-bold text-xl text-card-foreground">
+                          <h3 className="font-rajdhani font-bold text-body-xl text-card-foreground">
                             Independence Indoor
                           </h3>
-                          <p className="text-sm text-muted-foreground">
+                          <p className="text-body-sm text-muted-foreground">
                             Premier 100-yard indoor facility with full-service pro shop and gunsmithing.
                           </p>
-                          <div className="flex items-center justify-center gap-xs text-xs text-muted-foreground">
+                          <div className="flex items-center justify-center gap-xs text-body-xs text-muted-foreground">
                             <span>Since 1954</span>
                             <span>•</span>
                             <span>NRA Certified</span>
@@ -331,11 +331,11 @@ export function DirectoryPageComponent() {
                         
                         {/* Contact Info */}
                         <div className="space-y-xs pt-xs border-t border-border/50">
-                          <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                          <div className="flex items-center gap-xs text-body-xs text-muted-foreground">
                             <MapPin weight="bold" className="h-3 w-3 text-nav-directory" />
                             <span>2749 E Gala Ct, Meridian, ID</span>
                           </div>
-                          <div className="flex items-center gap-xs text-xs text-muted-foreground">
+                          <div className="flex items-center gap-xs text-body-xs text-muted-foreground">
                             <Phone weight="bold" className="h-3 w-3 text-nav-directory" />
                             <span>(208) 576-4867</span>
                           </div>
@@ -365,7 +365,7 @@ export function DirectoryPageComponent() {
             {/* Results Header with Controls */}
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-base mb-xl">
               <div>
-                <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">
+                <h2 className="font-rajdhani text-heading-xl font-bold text-card-foreground">
                   {sortedBusinesses.length} {sortedBusinesses.length === 1 ? 'Business' : 'Businesses'} Found
                 </h2>
                 <p className="text-muted-foreground">
@@ -469,7 +469,7 @@ export function DirectoryPageComponent() {
                       <div className="space-y-base">
                         <Eye weight="bold" className="size-12 text-muted-foreground mx-auto" />
                         <div className="space-y-xs">
-                          <h3 className="font-rajdhani text-xl font-bold text-card-foreground">No Businesses Found</h3>
+                          <h3 className="font-rajdhani text-body-xl font-bold text-card-foreground">No Businesses Found</h3>
                           <p className="text-muted-foreground">Try adjusting your search terms or filters to find what you're looking for.</p>
                         </div>
                         <Button 

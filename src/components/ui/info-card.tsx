@@ -26,7 +26,7 @@ export function InfoCard({
       <CardContent className={layout === 'horizontal' ? "pt-base flex items-start gap-base" : "pt-base text-center space-y-base"}>
         <Icon className={`h-8 w-8 ${iconColor} ${layout === 'horizontal' ? 'flex-shrink-0 mt-xs' : 'mx-auto'}`} />
         <div className={layout === 'horizontal' ? '' : 'space-y-sm'}>
-          <h3 className="font-rajdhani font-bold text-xl">{title}</h3>
+          <h3 className="font-rajdhani font-bold text-body-xl font-rajdhani">{title}</h3>
           <p className="text-muted-foreground">{description}</p>
         </div>
       </CardContent>

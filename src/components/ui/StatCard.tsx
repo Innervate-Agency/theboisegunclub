@@ -152,7 +152,7 @@ export default function StatCard({
         
         <div className="space-y-(--spacing-micro)">
           <div className="flex items-center justify-between">
-            <h3 className={cn("text-3xl font-rajdhani font-bold", textColors.title)}>
+            <h3 className={cn("text-heading-2xl font-rajdhani font-bold", textColors.title)}>
               {formatValue(value)}
             </h3>
             {trend && trendValue && (

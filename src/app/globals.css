@@ -546,6 +546,237 @@
   .font-noto-sans { font-family: var(--font-noto-sans); }
   .font-serif { font-family: var(--font-serif); }
 
+  /* ================== TYPOGRAPHY SYSTEM ================== */
+  /* Semantic typography scale with proper line heights and font families */
+
+  /* Body Text Scale - Noto Sans for readability */
+  .text-body-xs { 
+    font-size: 0.75rem; 
+    line-height: 1rem; 
+    font-family: var(--font-noto-sans);
+    font-weight: 400;
+  }      /* 12px/16px */
+  
+  .text-body-sm { 
+    font-size: 0.875rem; 
+    line-height: 1.25rem; 
+    font-family: var(--font-noto-sans);
+    font-weight: 400;
+  }   /* 14px/20px */
+  
+  .text-body-base { 
+    font-size: 1rem; 
+    line-height: 1.5rem; 
+    font-family: var(--font-noto-sans);
+    font-weight: 400;
+  }      /* 16px/24px */
+  
+  .text-body-lg { 
+    font-size: 1.125rem; 
+    line-height: 1.75rem; 
+    font-family: var(--font-noto-sans);
+    font-weight: 400;
+  }   /* 18px/28px */
+
+  .text-body-xl { 
+    font-size: 1.25rem; 
+    line-height: 1.875rem; 
+    font-family: var(--font-noto-sans);
+    font-weight: 400;
+  }    /* 20px/30px */
+
+  /* Heading Scale - Rajdhani for tactical aesthetic */
+  .text-heading-xs { 
+    font-size: 0.875rem; 
+    line-height: 1.25rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 600; 
+  }  /* 14px */
+  
+  .text-heading-sm { 
+    font-size: 1rem; 
+    line-height: 1.5rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 600; 
+  }       /* 16px */
+  
+  .text-heading-base { 
+    font-size: 1.25rem; 
+    line-height: 1.75rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 700; 
+  } /* 20px */
+  
+  .text-heading-md { 
+    font-size: 1.375rem; 
+    line-height: 1.875rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 700; 
+  }      /* 22px */
+  
+  .text-heading-lg { 
+    font-size: 1.5rem; 
+    line-height: 2rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 700; 
+  }       /* 24px */
+  
+  .text-heading-xl { 
+    font-size: 1.875rem; 
+    line-height: 2.25rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 700; 
+  }  /* 30px */
+  
+  .text-heading-2xl { 
+    font-size: 2.25rem; 
+    line-height: 2.5rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 800; 
+  }   /* 36px */
+  
+  .text-heading-3xl { 
+    font-size: 3rem; 
+    line-height: 3.25rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 800; 
+  }     /* 48px */
+  
+  .text-heading-4xl { 
+    font-size: 3.75rem; 
+    line-height: 4rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 900; 
+  }     /* 60px */
+
+  /* Display Scale (Hero/Marketing) - Rajdhani for impact */
+  .text-display-sm { 
+    font-size: 2.25rem; 
+    line-height: 2.5rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 900; 
+  }    /* 36px */
+  
+  .text-display-base { 
+    font-size: 3rem; 
+    line-height: 3.25rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 900; 
+  }    /* 48px */
+  
+  .text-display-lg { 
+    font-size: 3.75rem; 
+    line-height: 4rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 900; 
+  }      /* 60px */
+  
+  .text-display-xl { 
+    font-size: 4.5rem; 
+    line-height: 4.75rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 900; 
+  }    /* 72px */
+  
+  .text-display-2xl { 
+    font-size: 6rem; 
+    line-height: 6rem; 
+    font-family: var(--font-rajdhani);
+    font-weight: 900; 
+  }        /* 96px */
+
+  /* Label Scale - Small text for forms, captions, metadata */
+  .text-label-xs { 
+    font-size: 0.625rem; 
+    line-height: 0.875rem; 
+    font-family: var(--font-noto-sans);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }     /* 10px */
+  
+  .text-label-sm { 
+    font-size: 0.75rem; 
+    line-height: 1rem; 
+    font-family: var(--font-noto-sans);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }      /* 12px */
+
+  /* Code/Monospace Scale */
+  .text-code-xs { 
+    font-size: 0.75rem; 
+    line-height: 1rem; 
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight: 400;
+  }
+  
+  .text-code-sm { 
+    font-size: 0.875rem; 
+    line-height: 1.25rem; 
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight: 400;
+  }
+  
+  .text-code-base { 
+    font-size: 1rem; 
+    line-height: 1.5rem; 
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight: 400;
+  }
+
+  /* Responsive Typography Modifiers */
+  @media (min-width: 768px) {
+    .md\\:text-heading-lg { 
+      font-size: 1.5rem; 
+      line-height: 2rem; 
+    }
+    .md\\:text-heading-xl { 
+      font-size: 1.875rem; 
+      line-height: 2.25rem; 
+    }
+    .md\\:text-heading-2xl { 
+      font-size: 2.25rem; 
+      line-height: 2.5rem; 
+    }
+    .md\\:text-heading-3xl { 
+      font-size: 3rem; 
+      line-height: 3.25rem; 
+    }
+    .md\\:text-display-lg { 
+      font-size: 3.75rem; 
+      line-height: 4rem; 
+    }
+    .md\\:text-display-xl { 
+      font-size: 4.5rem; 
+      line-height: 4.75rem; 
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .lg\\:text-heading-2xl { 
+      font-size: 2.25rem; 
+      line-height: 2.5rem; 
+    }
+    .lg\\:text-heading-3xl { 
+      font-size: 3rem; 
+      line-height: 3.25rem; 
+    }
+    .lg\\:text-heading-4xl { 
+      font-size: 3.75rem; 
+      line-height: 4rem; 
+    }
+    .lg\\:text-display-xl { 
+      font-size: 4.5rem; 
+      line-height: 4.75rem; 
+    }
+    .lg\\:text-display-2xl { 
+      font-size: 6rem; 
+      line-height: 6rem; 
+    }
+  }
+
   /* ================== TRANSITION UTILITIES ================== */
   .transition-stripe-fast    { transition: all 150ms cubic-bezier(0.215, 0.61, 0.355, 1); }
   .transition-stripe-normal  { transition: all 250ms cubic-bezier(0.215, 0.61, 0.355, 1); }

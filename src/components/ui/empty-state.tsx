@@ -30,7 +30,7 @@ export function EmptyState({
         <div className={`mx-auto w-fit rounded-full bg-muted/30 p-lg`}>
           <Icon className={`h-12 w-12 ${iconColor}`} />
         </div>
-        <h3 className="font-rajdhani text-2xl font-bold text-card-foreground">
+        <h3 className="font-rajdhani text-heading-xl font-bold text-card-foreground">
           {title}
         </h3>
         <p className="text-muted-foreground max-w-md mx-auto">

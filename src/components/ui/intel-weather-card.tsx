@@ -12,7 +12,7 @@ import {
   MapPin,
   Clock
 } from '@phosphor-icons/react'
-import { TrendingUp, AlertTriangle } from 'react-icons/lu'
+import { FiTrendingUp as TrendingUp, FiAlertTriangle as AlertTriangle } from 'react-icons/fi'
 
 interface WeatherCondition {
   location: string
@@ -81,11 +81,11 @@ export function IntelWeatherCard({
           <div className="space-y-xs">
             <div className="flex items-center gap-sm">
               <MapPin className="h-4 w-4 text-canyon-clay" weight="bold" />
-              <h3 className="font-rajdhani font-bold text-lg text-card-foreground">
+              <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground">
                 {weather.locationShort}
               </h3>
             </div>
-            <p className="text-xs text-muted-foreground">{weather.location}</p>
+            <p className="text-body-xs text-muted-foreground">{weather.location}</p>
           </div>
           
           <Badge 
@@ -103,33 +103,33 @@ export function IntelWeatherCard({
           {/* Temperature */}
           <div className="text-center space-y-xs">
             <CloudSun className="h-6 w-6 text-rusty-orange mx-auto" weight="bold" />
-            <p className="font-rajdhani font-bold text-2xl text-card-foreground">
+            <p className="font-rajdhani font-bold text-heading-xl text-card-foreground">
               {weather.temperature}°
             </p>
-            <p className="text-xs text-muted-foreground">{weather.conditions}</p>
+            <p className="text-body-xs text-muted-foreground">{weather.conditions}</p>
           </div>
 
           {/* Wind */}
           <div className="text-center space-y-xs">
             <Wind className="h-6 w-6 text-slate-blue mx-auto" weight="bold" />
-            <p className="font-rajdhani font-bold text-lg text-card-foreground">
+            <p className="font-rajdhani font-bold text-body-lg text-card-foreground">
               {weather.windSpeed} mph
             </p>
-            <p className="text-xs text-muted-foreground">{weather.windDirection}</p>
+            <p className="text-body-xs text-muted-foreground">{weather.windDirection}</p>
           </div>
 
           {/* Visibility */}
           <div className="text-center space-y-xs">
             <Eye className="h-6 w-6 text-sagebrush-green mx-auto" weight="bold" />
-            <p className="font-rajdhani font-bold text-lg text-card-foreground">
+            <p className="font-rajdhani font-bold text-body-lg text-card-foreground">
               {weather.visibility} mi
             </p>
-            <p className="text-xs text-muted-foreground">Visibility</p>
+            <p className="text-body-xs text-muted-foreground">Visibility</p>
           </div>
         </div>
 
         {/* Additional Details */}
-        <div className="grid grid-cols-2 gap-base text-sm">
+        <div className="grid grid-cols-2 gap-base text-body-sm">
           <div className="flex items-center gap-sm">
             <Gauge className="h-4 w-4 text-muted-foreground" weight="bold" />
             <span className="text-muted-foreground">Humidity:</span>
@@ -137,7 +137,7 @@ export function IntelWeatherCard({
           </div>
           <div className="flex items-center gap-sm">
             <Clock className="h-4 w-4 text-muted-foreground" weight="bold" />
-            <span className="text-xs text-muted-foreground">Updated {weather.lastUpdated}</span>
+            <span className="text-body-xs text-muted-foreground">Updated {weather.lastUpdated}</span>
           </div>
         </div>
 
@@ -147,7 +147,7 @@ export function IntelWeatherCard({
             {weather.alerts.map((alert, index) => (
               <div key={index} className="flex items-start gap-sm p-sm bg-sagebrush-green/10 rounded-xs">
                 <TrendingUp className="h-4 w-4 text-sagebrush-green mt-0.5 flex-shrink-0" weight="bold" />
-                <p className="text-sm text-sagebrush-green">{alert}</p>
+                <p className="text-body-sm text-sagebrush-green">{alert}</p>
               </div>
             ))}
           </div>

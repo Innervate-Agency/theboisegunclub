@@ -164,7 +164,7 @@ export function VendorCard({
           
           <div className="space-y-micro flex-1">
             <div className="flex items-center gap-xs mb-xs">
-              <h3 className="font-rajdhani font-bold text-2xl md:text-3xl text-card-foreground leading-tight transition-colors duration-200 group-hover:text-rusty-orange">
+              <h3 className="font-rajdhani font-bold text-heading-xl md:text-heading-2xl text-card-foreground leading-tight transition-colors duration-200 group-hover:text-rusty-orange">
                 {businessName}
               </h3>
               <Badge 
@@ -265,7 +265,7 @@ export function VendorCard({
           </div>
         ) : (
           <div className="flex items-center gap-xs">
-            <span className="text-sm text-muted-foreground italic">
+            <span className="text-body-sm text-muted-foreground italic">
               Reviews coming soon • Be the first to review!
             </span>
           </div>

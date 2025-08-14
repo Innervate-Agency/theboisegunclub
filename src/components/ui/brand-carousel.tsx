@@ -183,15 +183,15 @@ export function BrandCarousel({
               {/* Overlay text content - ALWAYS LIGHT FOR CONTRAST ON COLORED OVERLAYS */}
               <div className="absolute bottom-0 left-0 right-0 p-lg">
                 <div className="max-w-2xl">
-                  <h2 className="text-3xl md:text-4xl font-rajdhani font-bold mb-base leading-tight text-white shadow-elevated">
+                  <h2 className="text-heading-2xl md:text-heading-3xl font-rajdhani font-bold mb-base leading-tight text-white shadow-elevated">
                     {currentShowcase.overlayTitle}
                   </h2>
-                  <p className="text-xl text-white/95 mb-lg leading-relaxed font-noto-sans shadow-present">
+                  <p className="text-body-xl text-white/95 mb-lg leading-relaxed font-noto-sans shadow-present">
                     {currentShowcase.overlayDescription}
                   </p>
                   <button className="text-heading-lg font-medium text-white/95 hover:text-white transition-colors group flex items-center gap-xs shadow-present">
                     Read their story 
-                    <span className="group-hover:translate-x-1 transition-transform text-xl">→</span>
+                    <span className="group-hover:translate-x-1 transition-transform text-body-xl font-rajdhani">→</span>
                   </button>
                 </div>
               </div>
@@ -290,7 +290,7 @@ export function BrandCarousel({
                 )}>
                   <IconComponent className={cn("size-6 transition-colors", colors.icon)} />
                 </div>
-                <span className={cn("text-xs font-medium transition-colors", colors.text)}>
+                <span className={cn("text-body-xs font-medium transition-colors", colors.text)}>
                   {partner.name.toUpperCase()}
                 </span>
               </button>

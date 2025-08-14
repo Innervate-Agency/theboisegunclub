@@ -19,6 +19,8 @@ import { MarketplaceDealCard } from '@/components/ui/marketplace-deal-card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ParticleSystem } from '@/components/ui/particle-system'
+import { TreasureChestGlow } from '@/components/ui/treasure-chest-glow'
+import { HeroOverhangSection } from '@/components/ui/hero-overhang-section'
 import { motion } from 'framer-motion'
 import { 
   ArrowRight,
@@ -97,7 +99,7 @@ export default function HomePage() {
 
       <main className="flex-grow relative">
         {/* Hero Section */}
-        <section className="relative">
+        <section className="relative overflow-visible">
           {/* Hero Background */}
           <div className="absolute inset-0 bg-rusty-orange" 
                style={{ 
@@ -175,10 +177,20 @@ export default function HomePage() {
 
           {/* Particles */}
           <ParticleSystem />
+          
+          {/* Treasure Chest Glow Effect */}
+          <TreasureChestGlow 
+            size="xl" 
+            intensity="default"
+            animated={true}
+          />
+          
+          {/* Hero Overhang Section with Piano Key Navigation */}
+          <HeroOverhangSection />
         </section>
 
         {/* Platform Features Section */}
-        <section className="py-3xl bg-card">
+        <section className="pt-24 pb-3xl bg-card">
           <div className="container mx-auto px-lg">
             <div className="text-center space-y-xl mb-2xl">
               <Badge variant="slate-blue" size="lg" className="font-rajdhani font-bold">

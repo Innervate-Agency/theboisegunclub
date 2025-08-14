@@ -1,0 +1,4051 @@
+{
+  "timestamp": "2025-08-14T22:08:41.615Z",
+  "components": [
+    {
+      "path": "src/components/auth/auth-button.tsx",
+      "name": "auth-button",
+      "lines": 126,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 5,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 8
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/auth/auth-context.tsx",
+      "name": "auth-context",
+      "lines": 172,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 8,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/auth/auth-modal.tsx",
+      "name": "auth-modal",
+      "lines": 296,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 7,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 10
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Component is very large - consider breaking down",
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/auth/user-dropdown.tsx",
+      "name": "user-dropdown",
+      "lines": 206,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 2,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 9
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Component is very large - consider breaking down",
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/marketing/cta-section.tsx",
+      "name": "cta-section",
+      "lines": 42,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/marketing/hero-section.tsx",
+      "name": "hero-section",
+      "lines": 32,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 0
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/marketing/service-grid.tsx",
+      "name": "service-grid",
+      "lines": 92,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/molecules/ArticleCard.tsx",
+      "name": "ArticleCard",
+      "lines": 32,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": true,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/molecules/MdxContent.tsx",
+      "name": "MdxContent",
+      "lines": 12,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": true,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 1
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/organisms/AlternatingFeatureSpotlight.tsx",
+      "name": "AlternatingFeatureSpotlight",
+      "lines": 113,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": true,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/organisms/PageHero.tsx",
+      "name": "PageHero",
+      "lines": 20,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": true,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 1
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/organisms/SiteNavigation.tsx",
+      "name": "SiteNavigation",
+      "lines": 23,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": true,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/providers.tsx",
+      "name": "providers",
+      "lines": 24,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/templates/BreadcrumbHero.tsx",
+      "name": "BreadcrumbHero",
+      "lines": 19,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": true,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 1
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/theme-provider.tsx",
+      "name": "theme-provider",
+      "lines": 10,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/AccessibilityFAB.tsx",
+      "name": "AccessibilityFAB",
+      "lines": 379,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 17,
+        "hasDefaultExport": true,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 8
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "good",
+        "performance": "optimized",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/AnimatedSplashCard.tsx",
+      "name": "AnimatedSplashCard",
+      "lines": 65,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": true,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/DirectoryCard.tsx",
+      "name": "DirectoryCard",
+      "lines": 94,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 2,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/EventCard.tsx",
+      "name": "EventCard",
+      "lines": 171,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 7
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/FacilityCard.tsx",
+      "name": "FacilityCard",
+      "lines": 239,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": true,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 8
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/FeatureTrustPoints.tsx",
+      "name": "FeatureTrustPoints",
+      "lines": 57,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/InteractiveCalendar.refactored.tsx",
+      "name": "InteractiveCalendar.refactored",
+      "lines": 313,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 2,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 9
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "good",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/InteractiveCalendar.tsx",
+      "name": "InteractiveCalendar",
+      "lines": 412,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 9,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 8
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "good",
+        "performance": "optimized",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/LargeEventCalendar.tsx",
+      "name": "LargeEventCalendar",
+      "lines": 334,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 5,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 7
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "optimized",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down",
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/LoadingSpinner.tsx",
+      "name": "LoadingSpinner",
+      "lines": 86,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": true,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/NewThemeToggle.tsx",
+      "name": "NewThemeToggle",
+      "lines": 113,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 4,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/StatCard.tsx",
+      "name": "StatCard",
+      "lines": 182,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": true,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/UnsplashImage.tsx",
+      "name": "UnsplashImage",
+      "lines": 201,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 3,
+        "hasDefaultExport": true,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/VendorCard.tsx",
+      "name": "VendorCard",
+      "lines": 340,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 4,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 10
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Component is very large - consider breaking down",
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/_component-pattern.tsx",
+      "name": "_component-pattern",
+      "lines": 54,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/accessibility-panel.tsx",
+      "name": "accessibility-panel",
+      "lines": 379,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 29,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 8
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "good",
+        "performance": "optimized",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/accordion.tsx",
+      "name": "accordion",
+      "lines": 67,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/activity-feed-card.tsx",
+      "name": "activity-feed-card",
+      "lines": 42,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 1
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/aged-paper-background.tsx",
+      "name": "aged-paper-background",
+      "lines": 129,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/alert-dialog.tsx",
+      "name": "alert-dialog",
+      "lines": 142,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": true,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": false,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/alert.tsx",
+      "name": "alert",
+      "lines": 100,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 1,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "good",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/altcha-widget.tsx",
+      "name": "altcha-widget",
+      "lines": 91,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 7,
+        "hasDefaultExport": true,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 1
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/armory-sidebar.tsx",
+      "name": "armory-sidebar",
+      "lines": 137,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/aspect-ratio.tsx",
+      "name": "aspect-ratio",
+      "lines": 12,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 1
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/avatar.tsx",
+      "name": "avatar",
+      "lines": 54,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/badge.tsx",
+      "name": "badge",
+      "lines": 226,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Component is very large - consider breaking down",
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/blog-article.tsx",
+      "name": "blog-article",
+      "lines": 556,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 9,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 7
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "optimized",
+        "testing": "tested"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/brand-carousel.tsx",
+      "name": "brand-carousel",
+      "lines": 306,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 4,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 6
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down",
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/breadcrumb-hero.tsx",
+      "name": "breadcrumb-hero",
+      "lines": 173,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 6
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "good",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/breadcrumb.tsx",
+      "name": "breadcrumb",
+      "lines": 110,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "good",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/bullet-hole.tsx",
+      "name": "bullet-hole",
+      "lines": 87,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/button.tsx",
+      "name": "button",
+      "lines": 140,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 6
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/calendar.tsx",
+      "name": "calendar",
+      "lines": 214,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 2,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "good",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety",
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/callout-card.tsx",
+      "name": "callout-card",
+      "lines": 158,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/card.tsx",
+      "name": "card",
+      "lines": 130,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/carousel.tsx",
+      "name": "carousel",
+      "lines": 242,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 20,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "good",
+        "performance": "optimized",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety",
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/chart.tsx",
+      "name": "chart",
+      "lines": 354,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 7,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "optimized",
+        "testing": "tested"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety",
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/checkbox.tsx",
+      "name": "checkbox",
+      "lines": 33,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "good",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/collapsible.tsx",
+      "name": "collapsible",
+      "lines": 34,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 1
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/command.tsx",
+      "name": "command",
+      "lines": 185,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/compact-stats-bar.tsx",
+      "name": "compact-stats-bar",
+      "lines": 85,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/contact-form.tsx",
+      "name": "contact-form",
+      "lines": 406,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 1,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 11
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Component is very large - consider breaking down",
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/context-menu.tsx",
+      "name": "context-menu",
+      "lines": 253,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety",
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/contribution-cta.tsx",
+      "name": "contribution-cta",
+      "lines": 139,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/dialog.tsx",
+      "name": "dialog",
+      "lines": 146,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/directory-card.tsx",
+      "name": "directory-card",
+      "lines": 20,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/directory-page.tsx",
+      "name": "directory-page",
+      "lines": 544,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 11,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 11
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "optimized",
+        "testing": "tested"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety",
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/directory-sidebar.tsx",
+      "name": "directory-sidebar",
+      "lines": 179,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/directory-stats-grid.tsx",
+      "name": "directory-stats-grid",
+      "lines": 71,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/drawer.tsx",
+      "name": "drawer",
+      "lines": 136,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/dropdown-menu.tsx",
+      "name": "dropdown-menu",
+      "lines": 258,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety",
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/empty-state.tsx",
+      "name": "empty-state",
+      "lines": 51,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/enhanced-button.tsx",
+      "name": "enhanced-button",
+      "lines": 93,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/enhanced-card.tsx",
+      "name": "enhanced-card",
+      "lines": 152,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/enhanced-input.tsx",
+      "name": "enhanced-input",
+      "lines": 87,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "good",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/enhanced-location-browser.tsx",
+      "name": "enhanced-location-browser",
+      "lines": 312,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 8,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "optimized",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/event-ticker.tsx",
+      "name": "event-ticker",
+      "lines": 81,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/faq-accordion.tsx",
+      "name": "faq-accordion",
+      "lines": 196,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 4,
+        "hasDefaultExport": true,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 7
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "optimized",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/feature-grid.tsx",
+      "name": "feature-grid",
+      "lines": 165,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/featured-event-spotlight.tsx",
+      "name": "featured-event-spotlight",
+      "lines": 177,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/flip-text.tsx",
+      "name": "flip-text",
+      "lines": 159,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/floating-background.tsx",
+      "name": "floating-background",
+      "lines": 116,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 1,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "optimized",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/form-section.tsx",
+      "name": "form-section",
+      "lines": 163,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/form.tsx",
+      "name": "form",
+      "lines": 178,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": true,
+        "hooksUsed": 12,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "good",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/gallery-showcase.tsx",
+      "name": "gallery-showcase",
+      "lines": 287,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 5,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 6
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "optimized",
+        "testing": "tested"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/glassmorphism-examples.tsx",
+      "name": "glassmorphism-examples",
+      "lines": 263,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 3,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 6
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/guides-client.tsx",
+      "name": "guides-client",
+      "lines": 199,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 4,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 6
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/hero-badge.tsx",
+      "name": "hero-badge",
+      "lines": 27,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 1
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/hero-campfire-glow.tsx",
+      "name": "hero-campfire-glow",
+      "lines": 111,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/hero-floating-diamonds.tsx",
+      "name": "hero-floating-diamonds",
+      "lines": 101,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/hero-section.tsx",
+      "name": "hero-section",
+      "lines": 28,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/hover-card.tsx",
+      "name": "hover-card",
+      "lines": 45,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/icon-showcase.tsx",
+      "name": "icon-showcase",
+      "lines": 217,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/index.ts",
+      "name": "index.ts",
+      "lines": 3,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": false,
+        "isFunctional": false,
+        "hasJSXReturn": false,
+        "importsCount": 0
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/info-card.tsx",
+      "name": "info-card",
+      "lines": 35,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/input-otp.tsx",
+      "name": "input-otp",
+      "lines": 78,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 1,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "good",
+        "accessibility": "good",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/input.tsx",
+      "name": "input",
+      "lines": 110,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 1,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/intel-weather-card.tsx",
+      "name": "intel-weather-card",
+      "lines": 170,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/join-movement-cta.tsx",
+      "name": "join-movement-cta",
+      "lines": 146,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/label.tsx",
+      "name": "label",
+      "lines": 25,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/loading-spinner.tsx",
+      "name": "loading-spinner",
+      "lines": 37,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/location-browser.tsx",
+      "name": "location-browser",
+      "lines": 388,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 4,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 7
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/marketplace-deal-card.tsx",
+      "name": "marketplace-deal-card",
+      "lines": 215,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down",
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/mega-hero.tsx",
+      "name": "mega-hero",
+      "lines": 166,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/menubar.tsx",
+      "name": "menubar",
+      "lines": 277,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety",
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/mica-glass-demo.tsx",
+      "name": "mica-glass-demo",
+      "lines": 263,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/micro-animations.tsx",
+      "name": "micro-animations",
+      "lines": 84,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/navigation-fusion.tsx",
+      "name": "navigation-fusion",
+      "lines": 194,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/navigation-menu.tsx",
+      "name": "navigation-menu",
+      "lines": 280,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "good",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety",
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/page-header.tsx",
+      "name": "page-header",
+      "lines": 31,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/page-hero.tsx",
+      "name": "page-hero",
+      "lines": 158,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/page-section.tsx",
+      "name": "page-section",
+      "lines": 89,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/pagination.tsx",
+      "name": "pagination",
+      "lines": 128,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "good",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/particle-system.tsx",
+      "name": "particle-system",
+      "lines": 145,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 8,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/piano-key-navigation.tsx",
+      "name": "piano-key-navigation",
+      "lines": 157,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 3,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 6
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/platform-feature-card.tsx",
+      "name": "platform-feature-card",
+      "lines": 109,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/platform-value-card.tsx",
+      "name": "platform-value-card",
+      "lines": 124,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/popover.tsx",
+      "name": "popover",
+      "lines": 49,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/pricing-table.tsx",
+      "name": "pricing-table",
+      "lines": 479,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 2,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 7
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/product-showcase-card.tsx",
+      "name": "product-showcase-card",
+      "lines": 116,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/progress.tsx",
+      "name": "progress",
+      "lines": 32,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/radio-group.tsx",
+      "name": "radio-group",
+      "lines": 46,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "good",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/resizable-sidebar.tsx",
+      "name": "resizable-sidebar",
+      "lines": 106,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 28,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "optimized",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/resizable.tsx",
+      "name": "resizable",
+      "lines": 74,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/reviews-display.tsx",
+      "name": "reviews-display",
+      "lines": 109,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/revolver-icon.tsx",
+      "name": "revolver-icon",
+      "lines": 107,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/rope-border.tsx",
+      "name": "rope-border",
+      "lines": 121,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/scroll-area.tsx",
+      "name": "scroll-area",
+      "lines": 59,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/search-filter-bar.tsx",
+      "name": "search-filter-bar",
+      "lines": 125,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/section-divider.tsx",
+      "name": "section-divider",
+      "lines": 143,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/select.tsx",
+      "name": "select",
+      "lines": 215,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": false,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/separator.tsx",
+      "name": "separator",
+      "lines": 29,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/sheet.tsx",
+      "name": "sheet",
+      "lines": 140,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/sheriff-star.tsx",
+      "name": "sheriff-star",
+      "lines": 78,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/sidebar.tsx",
+      "name": "sidebar",
+      "lines": 727,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 17,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 12
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "good",
+        "performance": "optimized",
+        "testing": "tested"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety",
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/site-footer.tsx",
+      "name": "site-footer",
+      "lines": 374,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 6,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 8
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/site-header.tsx",
+      "name": "site-header",
+      "lines": 236,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 1,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 7
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety",
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/site-navigation-clean.tsx",
+      "name": "site-navigation-clean",
+      "lines": 216,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 1,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 6
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "good",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/site-navigation.tsx",
+      "name": "site-navigation",
+      "lines": 404,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 10,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 11
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "good",
+        "performance": "optimized",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/skeleton.tsx",
+      "name": "skeleton",
+      "lines": 14,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 1
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/slider.tsx",
+      "name": "slider",
+      "lines": 64,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 1,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "optimized",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/sonner.tsx",
+      "name": "sonner",
+      "lines": 28,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 2,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety",
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/stats-showcase.tsx",
+      "name": "stats-showcase",
+      "lines": 147,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/sticky-search-menu.tsx",
+      "name": "sticky-search-menu",
+      "lines": 93,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 4,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/stripe-style-nav.tsx",
+      "name": "stripe-style-nav",
+      "lines": 1,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": false,
+        "hasJSXReturn": false,
+        "importsCount": 0
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/switch.tsx",
+      "name": "switch",
+      "lines": 47,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": false,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/table.tsx",
+      "name": "table",
+      "lines": 117,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "good",
+        "accessibility": "good",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/tabs.tsx",
+      "name": "tabs",
+      "lines": 67,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/testimonial-carousel.tsx",
+      "name": "testimonial-carousel",
+      "lines": 219,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 5,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 6
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "tested"
+      },
+      "issues": [
+        "Component is very large - consider breaking down",
+        "Uses \"any\" type - consider more specific typing"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/textarea.tsx",
+      "name": "textarea",
+      "lines": 41,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": true,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/theme-provider.tsx",
+      "name": "theme-provider",
+      "lines": 11,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/toggle-group.tsx",
+      "name": "toggle-group",
+      "lines": 74,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 1,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/toggle.tsx",
+      "name": "toggle",
+      "lines": 48,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 4
+      },
+      "quality": {
+        "complexity": "simple",
+        "typesSafety": "good",
+        "accessibility": "good",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/tooltip.tsx",
+      "name": "tooltip",
+      "lines": 62,
+      "patterns": {
+        "hasPropsInterface": false,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": false,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "good",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Consider adding Props interface for type safety"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/trust-indicators.tsx",
+      "name": "trust-indicators",
+      "lines": 64,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 2
+      },
+      "quality": {
+        "complexity": "medium",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/weather-conditions-ticker.tsx",
+      "name": "weather-conditions-ticker",
+      "lines": 140,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 3
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/weather-location-card.tsx",
+      "name": "weather-location-card",
+      "lines": 271,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": false,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 5
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    },
+    {
+      "path": "src/components/ui/zigzag-hero.tsx",
+      "name": "zigzag-hero",
+      "lines": 290,
+      "patterns": {
+        "hasPropsInterface": true,
+        "usesForwardRef": false,
+        "hooksUsed": 0,
+        "hasDefaultExport": true,
+        "hasNamedExports": true,
+        "isTypeScript": true,
+        "isFunctional": true,
+        "hasJSXReturn": true,
+        "importsCount": 6
+      },
+      "quality": {
+        "complexity": "complex",
+        "typesSafety": "excellent",
+        "accessibility": "check",
+        "performance": "standard",
+        "testing": "needs_tests"
+      },
+      "issues": [
+        "Component is very large - consider breaking down"
+      ],
+      "recommendations": []
+    }
+  ],
+  "patterns": {
+    "propsInterfaces": 104,
+    "forwardRefs": 20,
+    "hooks": 291,
+    "exports": 0,
+    "defaultExports": 15,
+    "namedExports": 83,
+    "typeScriptComponents": 152,
+    "functionalComponents": 151,
+    "complexComponents": 91,
+    "simpleComponents": 33,
+    "mediumComponents": 29
+  },
+  "recommendations": [
+    "Consider adding Props interfaces to more components for better type safety",
+    "Consider breaking down complex components (>100 lines) into smaller pieces",
+    "Consider using forwardRef for more UI components to improve composability"
+  ],
+  "quality_metrics": {
+    "typeScriptAdoption": "99.3",
+    "propsInterfaceUsage": "68.0",
+    "forwardRefUsage": "13.1",
+    "averageComplexity": "High",
+    "componentDistribution": {
+      "simple": 33,
+      "medium": 29,
+      "complex": 91
+    }
+  }
+}

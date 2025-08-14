@@ -1,6 +1,7 @@
 'use client'
 
 import { Card, CardContent } from './card'
+import { HiOutlineOfficeBuilding as Building2, HiOutlineLocationMarker as Target, HiOutlineUserGroup as Users, HiOutlineShieldCheck as Shield } from 'react-icons/hi'
 
 interface StatItem {
   icon: React.ComponentType<{ className?: string; weight?: string }>
@@ -22,40 +23,28 @@ export function DirectoryStatsGrid({
   // Default stats if none provided
   const defaultStats = [
     {
-      icon: ({ className, weight }: { className?: string; weight?: string }) => {
-        const { Building2 } = require('@phosphor-icons/react')
-        return <Building2 className={className} weight={weight} />
-      },
+      icon: Building2,
       title: "Gun Stores",
       value: "45+",
       subtitle: "Licensed Dealers",
       color: "text-sagebrush-green"
     },
     {
-      icon: ({ className, weight }: { className?: string; weight?: string }) => {
-        const { Target } = require('@phosphor-icons/react')
-        return <Target className={className} weight={weight} />
-      },
+      icon: Target,
       title: "Ranges", 
       value: "28+",
       subtitle: "Shooting Facilities",
       color: "text-sagebrush-green"
     },
     {
-      icon: ({ className, weight }: { className?: string; weight?: string }) => {
-        const { Shield } = require('@phosphor-icons/react')
-        return <Shield className={className} weight={weight} />
-      },
+      icon: Shield,
       title: "Trainers",
       value: "32+", 
       subtitle: "Certified Instructors",
       color: "text-sagebrush-green"
     },
     {
-      icon: ({ className, weight }: { className?: string; weight?: string }) => {
-        const { Users } = require('@phosphor-icons/react')
-        return <Users className={className} weight={weight} />
-      },
+      icon: Users,
       title: "Services",
       value: "12+",
       subtitle: "Specialized Services", 
@@ -72,8 +61,8 @@ export function DirectoryStatsGrid({
           <CardContent className="p-base text-center">
             <stat.icon className={`h-8 w-8 ${stat.color} mx-auto mb-xs`} weight="bold" />
             <h3 className="font-rajdhani font-bold text-card-foreground mb-xs">{stat.title}</h3>
-            <p className={`text-2xl font-bold ${stat.color} font-rajdhani`}>{stat.value}</p>
-            <p className="text-xs text-muted-foreground">{stat.subtitle}</p>
+            <p className={`text-heading-xl font-bold ${stat.color} font-rajdhani`}>{stat.value}</p>
+            <p className="text-body-xs text-muted-foreground">{stat.subtitle}</p>
           </CardContent>
         </Card>
       ))}

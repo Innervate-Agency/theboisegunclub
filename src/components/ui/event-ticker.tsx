@@ -33,12 +33,12 @@ export function EventTicker({ events }: EventTickerProps) {
                     <span className="font-rajdhani font-bold text-body-sm text-card-foreground">
                       {event.title}
                     </span>
-                    <Badge variant="outline" className="text-xs">
+                    <Badge variant="outline" className="text-body-xs">
                       {event.eventType}
                     </Badge>
                   </div>
                   
-                  <div className="flex items-center gap-base text-xs text-muted-foreground">
+                  <div className="flex items-center gap-base text-body-xs text-muted-foreground">
                     <div className="flex items-center gap-xs">
                       <Calendar className="size-3" />
                       <span>{event.date}</span>

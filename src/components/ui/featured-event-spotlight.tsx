@@ -86,7 +86,7 @@ export function FeaturedEventSpotlight({
                 )}
               </div>
               
-              <h3 className="font-rajdhani font-bold text-2xl md:text-3xl text-card-foreground leading-tight">
+              <h3 className="font-rajdhani font-bold text-heading-xl md:text-heading-2xl text-card-foreground leading-tight">
                 {eventTitle}
               </h3>
             </div>
@@ -96,7 +96,7 @@ export function FeaturedEventSpotlight({
                 {difficulty}
               </Badge>
               {participantCount && maxParticipants && (
-                <p className="text-xs text-muted-foreground">
+                <p className="text-body-xs text-muted-foreground">
                   {participantCount}/{maxParticipants} registered
                 </p>
               )}
@@ -111,22 +111,22 @@ export function FeaturedEventSpotlight({
         {/* Event Details */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-base">
           <div className="space-y-sm">
-            <div className="flex items-center gap-sm text-sm">
+            <div className="flex items-center gap-sm text-body-sm">
               <Calendar className="h-4 w-4 text-rusty-orange" weight="bold" />
               <span className="font-medium text-card-foreground">{date}</span>
             </div>
-            <div className="flex items-center gap-sm text-sm">
+            <div className="flex items-center gap-sm text-body-sm">
               <Clock className="h-4 w-4 text-slate-blue" weight="bold" />
               <span className="text-muted-foreground">{time}</span>
             </div>
           </div>
 
           <div className="space-y-sm">
-            <div className="flex items-center gap-sm text-sm">
+            <div className="flex items-center gap-sm text-body-sm">
               <MapPin className="h-4 w-4 text-sagebrush-green" weight="bold" />
               <span className="font-medium text-card-foreground">{venue}</span>
             </div>
-            <div className="flex items-center gap-sm text-sm">
+            <div className="flex items-center gap-sm text-body-sm">
               <span className="text-muted-foreground ml-6">{location}</span>
             </div>
           </div>
@@ -137,7 +137,7 @@ export function FeaturedEventSpotlight({
           <div className="flex items-center gap-base p-base bg-muted/30 rounded-xs">
             <Users className="h-5 w-5 text-slate-blue" weight="bold" />
             <div className="flex-1">
-              <p className="text-sm font-medium text-card-foreground">
+              <p className="text-body-sm font-medium text-card-foreground">
                 {participantCount} members registered
               </p>
               {maxParticipants && (

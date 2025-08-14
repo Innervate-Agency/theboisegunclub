@@ -62,7 +62,7 @@ export function DirectorySidebar({
           </div>
           <div className="group-data-[collapsible=icon]:hidden">
             <h2 className="text-body-sm font-semibold font-rajdhani">Directory Filters</h2>
-            <p className="text-xs text-muted-foreground">Find local businesses</p>
+            <p className="text-body-xs text-muted-foreground">Find local businesses</p>
           </div>
         </div>
       </SidebarHeader>
@@ -70,7 +70,7 @@ export function DirectorySidebar({
       <SidebarContent className="px-xs py-sm">
         {/* Business Type Filters */}
         <SidebarGroup>
-          <SidebarGroupLabel className="px-micro text-xs font-semibold font-rajdhani text-nav-directory mb-tiny group-data-[collapsible=icon]:hidden">
+          <SidebarGroupLabel className="px-micro text-body-xs font-semibold font-rajdhani text-nav-directory mb-tiny group-data-[collapsible=icon]:hidden">
             BUSINESS TYPE
           </SidebarGroupLabel>
           <SidebarMenu className="space-y-1">
@@ -93,7 +93,7 @@ export function DirectorySidebar({
                   {filter.count && (
                     <Badge 
                       variant={selectedType === filter.id ? "default" : "secondary"} 
-                      className="ml-auto text-xs group-data-[collapsible=icon]:hidden"
+                      className="ml-auto text-body-xs group-data-[collapsible=icon]:hidden"
                     >
                       {filter.count}
                     </Badge>
@@ -106,7 +106,7 @@ export function DirectorySidebar({
 
         {/* Tier Filters */}
         <SidebarGroup className="mt-base">
-          <SidebarGroupLabel className="px-micro text-xs font-semibold font-rajdhani text-nav-directory mb-tiny group-data-[collapsible=icon]:hidden">
+          <SidebarGroupLabel className="px-micro text-body-xs font-semibold font-rajdhani text-nav-directory mb-tiny group-data-[collapsible=icon]:hidden">
             MEMBERSHIP TIER
           </SidebarGroupLabel>
           <SidebarMenu className="space-y-1">
@@ -126,7 +126,7 @@ export function DirectorySidebar({
                   {filter.count && (
                     <Badge 
                       variant={selectedTier === filter.id ? "default" : "secondary"} 
-                      className="ml-auto text-xs group-data-[collapsible=icon]:hidden"
+                      className="ml-auto text-body-xs group-data-[collapsible=icon]:hidden"
                     >
                       {filter.count}
                     </Badge>
@@ -139,17 +139,17 @@ export function DirectorySidebar({
 
         {/* List Your Business CTA */}
         <SidebarGroup className="mt-base">
-          <SidebarGroupLabel className="px-micro text-xs font-semibold font-rajdhani text-muted-foreground mb-tiny group-data-[collapsible=icon]:hidden">
+          <SidebarGroupLabel className="px-micro text-body-xs font-semibold font-rajdhani text-muted-foreground mb-tiny group-data-[collapsible=icon]:hidden">
             JOIN DIRECTORY
           </SidebarGroupLabel>
           <div className="px-micro group-data-[collapsible=icon]:hidden">
             <div className="space-y-base p-sm bg-nav-directory/5 rounded-xs border border-nav-directory/20">
               <div className="space-y-xs text-center">
                 <Target className="size-6 text-nav-directory mx-auto" />
-                <h4 className="font-rajdhani font-bold text-sm text-card-foreground">
+                <h4 className="font-rajdhani font-bold text-body-sm text-card-foreground">
                   List Your Business
                 </h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <p className="text-body-xs text-muted-foreground leading-relaxed">
                   Join Idaho's premier firearms directory and connect with thousands of responsible gun owners.
                 </p>
               </div>
@@ -163,7 +163,7 @@ export function DirectorySidebar({
       </SidebarContent>
 
       <SidebarFooter className="border-t px-sm py-xs group-data-[collapsible=icon]:hidden">
-        <div className="text-xs text-muted-foreground">
+        <div className="text-body-xs text-muted-foreground">
           <div className="flex items-center justify-between">
             <span>{totalBusinesses}+ businesses</span>
             <Badge variant="outline" size="sm">

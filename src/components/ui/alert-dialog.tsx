@@ -41,7 +41,7 @@ const AlertDialogContent = React.forwardRef<
       )}
       {...props}
     >
-      <div className="mica-modal shadow-modal w-full max-w-lg text-popover-foreground p-md grid gap-base rounded-md data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95">
+      <div className="mica-modal shadow-modal w-full max-w-lg text-popover-foreground p-md grid gap-base rounded-xs data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95">
         {children}
       </div>
     </AlertDialogPrimitive.Content>
@@ -80,7 +80,7 @@ const AlertDialogTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AlertDialogPrimitive.Title
     ref={ref}
-    className={cn("text-body-lg font-semibold", className)}
+    className={cn("text-body-lg font-rajdhani font-semibold", className)}
     {...props}
   />
 ))

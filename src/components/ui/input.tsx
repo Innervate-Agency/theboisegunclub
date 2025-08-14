@@ -88,8 +88,8 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
           </label>
         )}
         <div className="relative flex items-center">
-          {icon && <div className="absolute left-3">{icon}</div>}
-          <div className={cn("w-full", icon ? "pl-10" : "")}>{children}</div>
+          {icon && <div className="absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground">{icon}</div>}
+          <div className={cn("w-full", icon ? "pl-9" : "")}>{children}</div>
         </div>
         {description && !error && (
           <p className="text-body-sm text-muted-foreground">{description}</p>

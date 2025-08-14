@@ -100,7 +100,7 @@ function LocationCard({ location }: { location: ShootingLocation }) {
           )}
         </div>
         
-        <CardTitle className="font-rajdhani text-xl font-bold text-card-foreground group-hover:text-rusty-orange transition-colors duration-200 leading-tight">
+        <CardTitle className="font-rajdhani text-body-xl font-bold text-card-foreground group-hover:text-rusty-orange transition-colors duration-200 leading-tight">
           {location.name}
         </CardTitle>
         
@@ -108,7 +108,7 @@ function LocationCard({ location }: { location: ShootingLocation }) {
         <div className="space-y-xs text-body-sm">
           <div className="flex items-center gap-xs text-rusty-orange font-medium">
             <Navigation className="size-4" />
-            <span className="font-mono text-xs">{location.coordinates}</span>
+            <span className="font-mono text-body-xs">{location.coordinates}</span>
           </div>
           <div className="flex items-center gap-xs text-muted-foreground">
             <MapPin className="size-4 text-rusty-orange" />
@@ -134,12 +134,12 @@ function LocationCard({ location }: { location: ShootingLocation }) {
           <h4 className="font-medium text-body-sm">Key Features:</h4>
           <div className="flex flex-wrap gap-xs">
             {location.amenities.slice(0, 4).map((amenity) => (
-              <Badge key={amenity} variant="outline" className="text-xs">
+              <Badge key={amenity} variant="outline" className="text-body-xs">
                 {amenity}
               </Badge>
             ))}
             {location.amenities.length > 4 && (
-              <Badge variant="outline" className="text-xs text-muted-foreground">
+              <Badge variant="outline" className="text-body-xs text-muted-foreground">
                 +{location.amenities.length - 4} more
               </Badge>
             )}
@@ -152,7 +152,7 @@ function LocationCard({ location }: { location: ShootingLocation }) {
               <Info className="size-4 text-safety-red mt-0.5 flex-shrink-0" />
               <div>
                 <h4 className="font-medium text-safety-red text-body-sm">Restrictions:</h4>
-                <p className="text-xs text-safety-red/80">{location.restrictions}</p>
+                <p className="text-body-xs text-safety-red/80">{location.restrictions}</p>
               </div>
             </div>
           </div>
@@ -164,14 +164,14 @@ function LocationCard({ location }: { location: ShootingLocation }) {
             <div className="flex items-start justify-between gap-base mb-base">
               <div className="flex-1">
                 <h4 className="font-rajdhani font-bold text-body-sm text-warning-clay mb-xs">Help Verify This Location</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <p className="text-body-xs text-muted-foreground leading-relaxed">
                   Have you been here? Help the community by verifying access conditions, safety info, and current restrictions.
                 </p>
               </div>
               <Shield className="size-5 text-warning-clay/60 flex-shrink-0 mt-xs" />
             </div>
             <div className="grid grid-cols-2 gap-xs">
-              <Button size="sm" className="bg-warning-clay text-white hover:bg-warning-clay/90 font-rajdhani font-semibold">
+              <Button variant="flat" size="sm" className="bg-warning-clay text-white hover:bg-warning-clay/90 font-rajdhani font-semibold">
                 <Camera className="size-4 mr-xs" />
                 Add Photos
               </Button>
@@ -184,7 +184,7 @@ function LocationCard({ location }: { location: ShootingLocation }) {
         )}
         
         <div className="flex items-center justify-between pt-xs border-t border-border">
-          <div className="flex items-center gap-base text-xs text-muted-foreground">
+          <div className="flex items-center gap-base text-body-xs text-muted-foreground">
             <div className="flex items-center gap-xs">
               <Star className="size-3 fill-rusty-orange text-rusty-orange" />
               <span>{location.rating}</span>
@@ -342,7 +342,7 @@ export function LocationBrowser({ locations, locationTypes, difficultyLevels }: 
         <div className="container mx-auto max-w-site px-md">
           <div className="space-y-xl">
             <div className="flex items-center justify-between">
-              <h2 className="font-rajdhani text-3xl font-bold text-card-foreground">
+              <h2 className="font-rajdhani text-heading-2xl font-bold text-card-foreground">
                 Shooting Locations
               </h2>
               <div className="text-muted-foreground">
@@ -359,8 +359,8 @@ export function LocationBrowser({ locations, locationTypes, difficultyLevels }: 
             {sortedLocations.length === 0 && (
               <div className="text-center py-6xl">
                 <div className="space-y-base">
-                  <div className="text-6xl">🗺️</div>
-                  <h3 className="font-rajdhani text-2xl font-bold text-card-foreground">
+                  <div className="text-display-lg">🗺️</div>
+                  <h3 className="font-rajdhani text-heading-xl font-bold text-card-foreground">
                     No locations found
                   </h3>
                   <p className="text-muted-foreground max-w-md mx-auto">
