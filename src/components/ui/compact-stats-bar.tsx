@@ -10,7 +10,6 @@ interface CompactStatsBarProps {
     totalLocations: number
     verifiedLocations: number
     publicAreas: number
-    avgRating: number
     milesOfLand?: number
     publicClubs?: number
     privateClubs?: number
@@ -23,7 +22,6 @@ export function CompactStatsBar({ stats, className }: CompactStatsBarProps) {
     totalLocations,
     verifiedLocations,
     publicAreas,
-    avgRating,
     milesOfLand,
     publicClubs,
     privateClubs
@@ -55,11 +53,6 @@ export function CompactStatsBar({ stats, className }: CompactStatsBarProps) {
             <span className="text-xs text-muted-foreground">Public Areas</span>
           </div>
           
-          <div className="flex items-center gap-tiny">
-            <Star className="size-3 text-warning-clay fill-current" />
-            <span className="text-body-sm font-medium text-card-foreground">{avgRating.toFixed(1)}</span>
-            <span className="text-xs text-muted-foreground">Avg Rating</span>
-          </div>
         </div>
 
         {/* Secondary Stats - Optional */}

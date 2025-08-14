@@ -133,7 +133,7 @@ export function VendorCard({
           
           <div className="space-y-micro flex-1">
             <div className="flex items-center gap-xs mb-xs">
-              <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground leading-tight transition-colors duration-200 group-hover:text-rusty-orange">
+              <h3 className="font-rajdhani font-bold text-2xl md:text-3xl text-card-foreground leading-tight transition-colors duration-200 group-hover:text-rusty-orange">
                 {businessName}
               </h3>
               <Badge 
@@ -210,24 +210,11 @@ export function VendorCard({
         )}
       </div>
 
-      {/* Rating */}
-      {rating && reviewCount && (
+      {/* Reviews placeholder - Google Reviews coming soon */}
+      {!rating && !reviewCount && (
         <div className="flex items-center gap-xs mb-md">
-          <div className="flex items-center">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <Star
-                key={star}
-                className={cn(
-                  "w-icon-sm h-icon-sm",
-                  star <= rating 
-                    ? "fill-rusty-orange text-rusty-orange" 
-                    : "text-muted-foreground"
-                )}
-              />
-            ))}
-          </div>
-          <span className="text-body-sm text-muted-foreground">
-            {rating} ({reviewCount} reviews)
+          <span className="text-sm text-muted-foreground italic">
+            Reviews coming soon • Be the first to review!
           </span>
         </div>
       )}

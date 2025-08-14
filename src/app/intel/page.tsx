@@ -34,8 +34,8 @@ const shootingLocations = [
     restrictions: "Mandatory safety briefing for first-time visitors. No steel targets during high fire danger. Lead ammunition restrictions.",
     amenities: ["100-yard rifle range", "200-yard rifle range", "25-yard pistol range", "Shotgun pattern board", "Restrooms", "Parking for 50+ vehicles", "Covered shooting benches", "Target stands provided"],
     distanceFromBoise: 18.5,
-    rating: 4.8,
-    reviews: 342,
+
+
     difficulty: "Easy",
     category: "Public Range",
     verified: true,
@@ -57,8 +57,8 @@ const shootingLocations = [
     restrictions: "Eye and ear protection required. Range ammunition only. No steel-core or armor-piercing. Age restrictions for unsupervised minors.",
     amenities: ["25-yard climate-controlled lanes", "Advanced ventilation system", "Target systems", "Rental firearms available", "Pro shop", "Gunsmith services", "Training classes", "Private instruction"],
     distanceFromBoise: 3.2,
-    rating: 4.6,
-    reviews: 189,
+
+
     difficulty: "Easy", 
     category: "Indoor Range",
     verified: true,
@@ -80,8 +80,8 @@ const shootingLocations = [
     restrictions: "Boise city limits. Safety rules strictly enforced. No rapid fire. Supervised ranges only.",
     amenities: ["50-yard rifle range", "25-yard pistol range", "Benches and target stands", "Parking", "Restrooms nearby", "Regular safety officers"],
     distanceFromBoise: 5.8,
-    rating: 4.3,
-    reviews: 94,
+
+
     difficulty: "Easy",
     category: "Municipal Range", 
     verified: true,
@@ -104,8 +104,8 @@ const shootingLocations = [
     restrictions: "Wildlife closure Feb 1 - July 31 in nesting areas. Fire restrictions May-October. Pack out all trash. No glass targets. 150-yard minimum from roads.",
     amenities: ["Natural rock backstops", "Multiple shooting positions", "Varied distances", "Desert environment", "Established access roads", "Popular with local clubs"],
     distanceFromBoise: 28.3,
-    rating: 4.2,
-    reviews: 237,
+
+
     difficulty: "Moderate",
     category: "BLM Land",
     verified: true,
@@ -127,8 +127,8 @@ const shootingLocations = [
     restrictions: "Respect private property boundaries. Fire restrictions apply. No shooting within 150 yards of roads or trails. Pack out all trash.",
     amenities: ["Natural hillside backstops", "Multiple positions", "Easy 2WD access", "Scenic mountain views", "Close to Boise", "Popular area"],
     distanceFromBoise: 12.1,
-    rating: 4.0,
-    reviews: 158,
+
+
     difficulty: "Easy",
     category: "BLM Land",
     verified: true,
@@ -150,8 +150,8 @@ const shootingLocations = [
     restrictions: "Forest Service regulations. Fire restrictions May-September. No target shooting within 150 yards of water. Seasonal wildlife closures possible.",
     amenities: ["Mountain backstops", "Cooler temperatures", "Less crowded", "Forest setting", "Multiple positions", "Good for long-range"],
     distanceFromBoise: 16.7,
-    rating: 4.5,
-    reviews: 76,
+
+
     difficulty: "Moderate",
     category: "Forest Service",
     verified: true,
@@ -173,8 +173,8 @@ const shootingLocations = [
     restrictions: "BLM regulations apply. Fire restrictions in summer. Pack out trash. No glass targets. Be aware of private property boundaries.",
     amenities: ["Natural backstops", "Less crowded", "Good access road", "Multiple positions", "Varied terrain", "Northern valley views"],
     distanceFromBoise: 32.5,
-    rating: 4.1,
-    reviews: 43,
+
+
     difficulty: "Easy",
     category: "BLM Land",
     verified: false,
@@ -198,8 +198,8 @@ const shootingLocations = [
     restrictions: "4WD vehicle required. Inform others of plans. Carry emergency supplies. Fire restrictions critical. Remote area - no services.",
     amenities: ["Excellent long-range backstops", "Minimal crowds", "High-desert environment", "Multiple canyons", "Advanced shooting opportunities"],
     distanceFromBoise: 67.2,
-    rating: 4.7,
-    reviews: 29,
+
+
     difficulty: "Difficult", 
     category: "Remote/4WD",
     verified: false,
@@ -222,8 +222,8 @@ const shootingLocations = [
     restrictions: "BLM regulations. Seasonal fire restrictions. Water safety regulations near reservoir. Pack out all trash.",
     amenities: ["Natural backstops", "Water access nearby", "Camping opportunities", "Less crowded", "Good for extended trips"],
     distanceFromBoise: 89.4,
-    rating: 3.9,
-    reviews: 38,
+
+
     difficulty: "Moderate",
     category: "BLM Land",
     verified: false,
@@ -247,8 +247,8 @@ const shootingLocations = [
     restrictions: "Forest Service regulations. Seasonal road closures Nov-May. Fire restrictions summer. No target shooting within 150 yards of roads/trails/water.",
     amenities: ["Mountain environment", "Cooler temperatures", "Forest setting", "Good backstops", "Less crowded", "Scenic area"],
     distanceFromBoise: 52.3,
-    rating: 4.4,
-    reviews: 31,
+
+
     difficulty: "Moderate",
     category: "Forest Service",
     verified: false,
@@ -271,8 +271,8 @@ const shootingLocations = [
     restrictions: "BLM regulations. Respect wildlife refuge boundaries. Fire restrictions apply. No shooting near water areas.",
     amenities: ["Established positions", "Good access road", "Western valley location", "Less pressure than eastern areas"],
     distanceFromBoise: 28.9,
-    rating: 3.7,
-    reviews: 22,
+
+
     difficulty: "Easy",
     category: "BLM Land",
     verified: false,
@@ -296,8 +296,8 @@ const shootingLocations = [
     restrictions: "Mountain road access. Seasonal snow closures. Forest Service regulations. Fire restrictions critical. High elevation conditions.",
     amenities: ["High elevation", "Cooler conditions", "Long-range opportunities", "Mountain scenery", "Advanced terrain", "Less accessible"],
     distanceFromBoise: 78.6,
-    rating: 4.2,
-    reviews: 18,
+
+
     difficulty: "Difficult",
     category: "Forest Service",
     verified: false,
@@ -339,7 +339,6 @@ export default async function MapPage() {
     totalLocations: shootingLocations.length,
     verifiedLocations: shootingLocations.filter(l => l.verified).length, // Will be 0 until verified
     publicAreas: shootingLocations.filter(l => l.category.includes("Public") || l.category.includes("BLM")).length,
-    avgRating: shootingLocations.reduce((acc, loc) => acc + loc.rating, 0) / shootingLocations.length,
     milesOfLand: 850, // Estimated acres of shooting land in Idaho (BLM + Forest Service)
     publicClubs: shootingLocations.filter(l => l.category === "Public Range").length,
     privateClubs: shootingLocations.filter(l => l.category === "Private Club").length
@@ -534,7 +533,7 @@ export default async function MapPage() {
               <div className="h-4 w-px bg-nav-intel/30 mx-xs" />
               <Button variant="ghost" size="sm" className="gap-xs text-nav-intel hover:bg-nav-intel/10 transition-all duration-200">
                 <TrendingUp className="h-3 w-3" />
-                Sort: Rating
+                Sort: Distance
               </Button>
             </div>
           </div>
@@ -580,8 +579,12 @@ export default async function MapPage() {
                         {location.type}
                       </Badge>
                       <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                        <Star className="h-3 w-3 fill-warning-clay text-warning-clay" />
-                        <span className="font-medium">{location.rating}</span>
+                        {location.verified && (
+                          <>
+                            <Shield className="h-3 w-3 text-nav-intel" />
+                            <span className="font-medium">Verified</span>
+                          </>
+                        )}
                       </div>
                     </div>
                     <h3 className="font-rajdhani font-bold text-xl leading-tight text-card-foreground">{location.name}</h3>

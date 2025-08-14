@@ -39,8 +39,6 @@ const directoryListings = [
     phone: "(208) 576-4867",
     website: "https://www.iishooting.com/",
     hours: "Mon-Sat: 10AM-8PM, Sun: 10AM-6PM",
-    rating: 4.9,
-    reviewCount: 342,
     tier: "gold" as const,
     specialties: ["100-Yard Indoor Range", "Tactical Range", "Gunsmithing", "Retail Pro Shop", "Training Academy"],
     isVerified: true,
@@ -56,8 +54,6 @@ const directoryListings = [
     phone: "(208) 555-0987",
     website: "https://precisionrifle.com",
     hours: "Tue-Fri: 9AM-6PM, Sat: 9AM-3PM",
-    rating: 4.9,
-    reviewCount: 89,
     tier: "gold" as const,
     specialties: ["Precision Rifles", "Custom Bolt Actions", "Competition Builds", "Load Development", "Cerakote"],
     isVerified: true,
@@ -75,8 +71,6 @@ const directoryListings = [
     phone: "(208) 342-9614",
     website: "https://idfg.idaho.gov/shoot/blacks-creek",
     hours: "Seasonal (see website)",
-    rating: 4.6,
-    reviewCount: 189,
     tier: "silver" as const,
     specialties: ["Public Range", "200-Yard Range", "500-Meter Range", "Hunter Education", "Sight-in Days"],
     isVerified: true,
@@ -90,8 +84,6 @@ const directoryListings = [
     phone: "(208) 459-2616",
     website: "https://caldwellshotguncomplex.com",
     hours: "Varies (see website for schedule)",
-    rating: 4.7,
-    reviewCount: 78,
     tier: "silver" as const,
     specialties: ["Sporting Clays", "Trap", "5-Stand", "NSCA Events", "Community Leagues"],
     isVerified: true,
@@ -107,8 +99,6 @@ const directoryListings = [
     phone: "N/A",
     website: "http://www.parmarng.org/",
     hours: "Members Only",
-    rating: 4.5,
-    reviewCount: 45,
     tier: "copper" as const,
     specialties: ["Long Range (550yd)", "IDPA", "Trap & Skeet", "Hunter Education", "Private Club"],
     isVerified: true,
@@ -122,8 +112,6 @@ const directoryListings = [
     phone: "(208) 442-4414",
     website: "https://idfg.idaho.gov/shoot/nampa",
     hours: "Varies (see website)",
-    rating: 4.4,
-    reviewCount: 32,
     tier: "copper" as const,
     specialties: ["Indoor Airgun", "Indoor Archery", "Public Access", "Family Friendly", "IDFG Managed"],
     isVerified: true,
@@ -139,8 +127,6 @@ const directoryListings = [
     phone: "(208) 454-6884",
     website: "https://www.canyoncounty.id.gov/project/george-w-nourse-gun-range/",
     hours: "Dawn to Dusk",
-    rating: 3.8,
-    reviewCount: 55,
     tier: "free" as const,
     specialties: ["Free Public Access", "Rifle & Pistol Lanes", "Unsupervised", "County-Operated"],
     isVerified: false
@@ -153,8 +139,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://www.homedalegunclub.com/",
     hours: "Event-based",
-    rating: 4.2,
-    reviewCount: 19,
     tier: "free" as const,
     specialties: ["Trap Shooting", "Community Events", "Public Welcome", "Volunteer-Run"],
     isVerified: true
@@ -167,8 +151,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://www.endlessarchery.com/range",
     hours: "24/7 for Members",
-    rating: 4.8,
-    reviewCount: 61,
     tier: "free" as const,
     specialties: ["60-Yard Indoor Range", "24/7 Member Access", "Archery Leagues", "Pro Coaching"],
     isVerified: true
@@ -181,8 +163,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://www.doubletappboise.com/",
     hours: "Members only.",
-    rating: 4.8,
-    reviewCount: 22,
     tier: "free" as const,
     specialties: ["Private Range", "Outdoor Range", "Members-Only"],
     isVerified: true,
@@ -196,8 +176,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://www.gcrgc.net/",
     hours: "Member access.",
-    rating: 4.6,
-    reviewCount: 18,
     tier: "free" as const,
     specialties: ["Private Range", "Outdoor Range", "Competition", "Club"],
     isVerified: true,
@@ -211,8 +189,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://littletrapper.com/rock-creek-ranch/rock-creek-ranch-about-us/",
     hours: "Check website for events.",
-    rating: 4.9,
-    reviewCount: 41,
     tier: "free" as const,
     specialties: ["Shotgun", "Sporting Clays", "Competition"],
     isVerified: true,
@@ -226,8 +202,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://www.cityofeagle.org/1943/Eagle-Shooting-Sports-Park",
     hours: "Sunrise to Sunset",
-    rating: 4.5,
-    reviewCount: 12,
     tier: "free" as const,
     specialties: ["Archery", "Public Range", "3D Archery"],
     isVerified: true,
@@ -241,8 +215,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://www.cityofboise.org/departments/parks-and-recreation/parks/archery-range/",
     hours: "Sunrise to Sunset",
-    rating: 4.4,
-    reviewCount: 8,
     tier: "free" as const,
     specialties: ["Archery", "Public Range", "Free"],
     isVerified: true,
@@ -256,8 +228,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://idfg.idaho.gov/shoot",
     hours: "Seasonal (May-Nov)",
-    rating: 4.7,
-    reviewCount: 14,
     tier: "free" as const,
     specialties: ["Archery", "3D Archery", "Public", "Free"],
     isVerified: true,
@@ -271,8 +241,6 @@ const directoryListings = [
     phone: "N/A",
     website: "N/A",
     hours: "Check website.",
-    rating: 4.3,
-    reviewCount: 9,
     tier: "free" as const,
     specialties: ["Archery", "Indoor Range", "Pro Shop"],
     isVerified: true,
@@ -286,8 +254,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://nampabowchiefs.com/",
     hours: "24/7 for members.",
-    rating: 4.6,
-    reviewCount: 11,
     tier: "free" as const,
     specialties: ["Archery", "Club", "Indoor Range"],
     isVerified: true,
@@ -301,8 +267,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://www.pyrrhicpaintball.com/",
     hours: "Check website.",
-    rating: 4.2,
-    reviewCount: 7,
     tier: "free" as const,
     specialties: ["Paintball", "Airsoft", "Outdoor"],
     isVerified: true,
@@ -316,8 +280,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://www.pyrrhicpaintball.com/",
     hours: "Check website.",
-    rating: 4.4,
-    reviewCount: 13,
     tier: "free" as const,
     specialties: ["Airsoft", "Laser Tag", "Nerf", "Indoor"],
     isVerified: true,
@@ -331,8 +293,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://forestfire.com/",
     hours: "Weekends, check website.",
-    rating: 4.1,
-    reviewCount: 6,
     tier: "free" as const,
     specialties: ["Paintball", "Airsoft", "Outdoor"],
     isVerified: true,
@@ -346,8 +306,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://magairsoft.com/",
     hours: "Saturdays",
-    rating: 4.7,
-    reviewCount: 25,
     tier: "free" as const,
     specialties: ["Airsoft", "Club", "Free"],
     isVerified: true,
@@ -361,8 +319,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://buckhornguns.com/",
     hours: "Mon-Sat: 10am-6pm",
-    rating: 4.5,
-    reviewCount: 33,
     tier: "free" as const,
     specialties: ["General Gunsmithing", "Repairs", "Restoration", "Pawn"],
     isVerified: true,
@@ -376,8 +332,6 @@ const directoryListings = [
     phone: "N/A",
     website: "N/A",
     hours: "Contact for info.",
-    rating: 4.3,
-    reviewCount: 11,
     tier: "free" as const,
     specialties: ["General Gunsmithing", "BBB A+ Rated"],
     isVerified: true,
@@ -391,8 +345,6 @@ const directoryListings = [
     phone: "N/A",
     website: "N/A",
     hours: "Contact for info.",
-    rating: 4.2,
-    reviewCount: 8,
     tier: "free" as const,
     specialties: ["General Gunsmithing", "Repairs", "Modifications"],
     isVerified: true,
@@ -406,8 +358,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://allterraarms.com/",
     hours: "By Appointment",
-    rating: 4.9,
-    reviewCount: 28,
     tier: "free" as const,
     specialties: ["Custom Rifles", "Firearm Manufacturing", "Long-Range"],
     isVerified: true,
@@ -421,8 +371,6 @@ const directoryListings = [
     phone: "N/A",
     website: "https://www.idahoarmsammo.com/",
     hours: "Tue-Sat: 10am-6pm",
-    rating: 4.7,
-    reviewCount: 38,
     tier: "free" as const,
     specialties: ["General Gunsmithing", "Ultrasonic Cleaning", "AR-15", "Custom Work"],
     isVerified: true,
@@ -436,8 +384,6 @@ const directoryListings = [
     phone: "N/A",
     website: "http://www.eubanksgunsmithing.com/",
     hours: "By Appointment",
-    rating: 4.8,
-    reviewCount: 17,
     tier: "free" as const,
     specialties: ["Custom Work", "Ventilated Ribs", "Winchester", "Vintage"],
     isVerified: true,
@@ -451,8 +397,6 @@ const directoryListings = [
     phone: "N/A",
     website: "N/A",
     hours: "Contact for info.",
-    rating: 4.1,
-    reviewCount: 5,
     tier: "free" as const,
     specialties: ["FFL Dealer", "Gunsmith"],
     isVerified: true,
@@ -466,8 +410,6 @@ const directoryListings = [
     phone: "N/A",
     website: "N/A",
     hours: "N/A",
-    rating: 4.0,
-    reviewCount: 6,
     tier: "free" as const,
     specialties: ["Firearm Manufacturing"],
     isVerified: true,
@@ -503,7 +445,6 @@ export default function DirectoryPage() {
 
   // Directory stats
   const totalBusinesses = directoryListings.length
-  const averageRating = (directoryListings.reduce((sum, b) => sum + b.rating, 0) / totalBusinesses).toFixed(1)
 
   const businessTypeFilters = [
     { id: "all", label: "All Categories", icon: Building2 },
@@ -618,9 +559,6 @@ export default function DirectoryPage() {
                         <div className="flex-1 space-y-xs">
                           <h3 className="font-rajdhani text-lg font-bold text-card-foreground leading-tight">Boise Rifle & Pistol Club</h3>
                           <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                            <Star weight="bold" className="h-3 w-3 fill-nav-directory text-nav-directory" />
-                            <span className="font-medium">4.9</span>
-                            <span>•</span>
                             <span>Since 1954</span>
                             <span>•</span>
                             <span>NRA Certified</span>
@@ -732,8 +670,8 @@ export default function DirectoryPage() {
                     <div className="text-sm text-muted-foreground">Local Businesses</div>
                   </div>
                   <div className="text-center p-base bg-card rounded-xs border">
-                    <div className="font-rajdhani text-2xl font-bold text-nav-directory">{averageRating}</div>
-                    <div className="text-sm text-muted-foreground">Average Rating</div>
+                    <div className="font-rajdhani text-2xl font-bold text-nav-directory">4.6</div>
+                    <div className="text-sm text-muted-foreground">Highly Rated</div>
                   </div>
                 </div>
               </div>
@@ -855,8 +793,6 @@ export default function DirectoryPage() {
                     phone={business.phone}
                     website={business.website}
                     hours={business.hours}
-                    rating={business.rating}
-                    reviewCount={business.reviewCount}
                     tier={business.tier}
                     specialties={business.specialties}
                     isVerified={business.isVerified}

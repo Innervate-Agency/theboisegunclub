@@ -149,8 +149,12 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
             </Badge>
           </div>
           <div className="flex items-center gap-xs text-xs text-muted-foreground">
-            <Star className="h-3 w-3 fill-warning-clay text-warning-clay" />
-            <span className="font-medium">{location.rating}</span>
+            {location.verified && (
+              <>
+                <Shield className="h-3 w-3 text-nav-intel" />
+                <span className="font-medium">Verified</span>
+              </>
+            )}
           </div>
         </div>
         
