@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import { AuthButton } from '@/components/auth/auth-button'
+import { useAuth } from '@/components/auth/auth-context'
 import { 
   Diamond, 
   Ticket,
@@ -58,7 +60,7 @@ const navigationItems = [
   { label: "Armory", icon: Shield, href: "/the-armory", color: "nav-armory" },
   { label: "Intel", icon: MapTrifold, href: "/intel", color: "nav-intel" },
   { label: "Marketplace", icon: Storefront, href: "/marketplace", color: "nav-marketplace" },
-  { label: "Forums", icon: Users, href: "https://boisegunclub.com/forums/", color: "nav-forums" }
+  { label: "Forums", icon: Users, href: "/forums", color: "nav-forums", isForumLink: true }
 ]
 
 export interface SiteNavigationProps 
@@ -80,6 +82,7 @@ export function SiteNavigation({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const [hoveredPath, setHoveredPath] = React.useState<string | null>(null)
   const pathname = usePathname()
+  const { getForumUrl, isAuthenticated } = useAuth()
 
   // Get current page color based on pathname
   const getCurrentPageColor = () => {
@@ -126,6 +129,36 @@ export function SiteNavigation({
 
   // Helper function to render navigation link
   const renderNavLink = (item: typeof navigationItems[0], className: string, children: React.ReactNode) => {
+    // Special handling for forum links
+    if (item.isForumLink) {
+      const handleForumClick = async (e: React.MouseEvent) => {
+        e.preventDefault()
+        
+        if (isAuthenticated) {
+          // Get authenticated forum URL
+          const forumUrl = await getForumUrl()
+          if (forumUrl) {
+            window.open(forumUrl, '_blank')
+          } else {
+            // Fallback to regular forum URL
+            window.open('https://boisegunclub.com/forums/', '_blank')
+          }
+        } else {
+          // Open forum as guest
+          window.open('https://boisegunclub.com/forums/', '_blank')
+        }
+      }
+
+      return (
+        <button 
+          onClick={handleForumClick}
+          className={className}
+        >
+          {children}
+        </button>
+      )
+    }
+
     const isExternal = isExternalUrl(item.href)
     
     if (isExternal) {
@@ -303,14 +336,7 @@ export function SiteNavigation({
           {/* Custom Content / Auth Buttons */}
           <div className="hidden md:flex items-center gap-base">
             {customContent || (
-              <>
-                <Button variant="ghost" size="sm" className="shadow-none">
-                  Sign In
-                </Button>
-                <Button variant="ghost" size="sm" className="bg-rusty-orange/10 text-rusty-orange hover:bg-rusty-orange/20 shadow-none border border-rusty-orange/30 text-xs">
-                  60-Day Free Trial
-                </Button>
-              </>
+              <AuthButton variant="forum-aware" showTrialButton={false} />
             )}
           </div>
 
@@ -355,12 +381,7 @@ export function SiteNavigation({
             
             <div className="pt-base mt-base relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
               <div className="flex flex-col gap-xs">
-                <Button variant="ghost" size="sm" className="justify-start shadow-none">
-                  Sign In
-                </Button>
-                <Button variant="ghost" size="sm" className="justify-start bg-rusty-orange/10 text-rusty-orange hover:bg-rusty-orange/20 shadow-none border border-rusty-orange/30 text-xs">
-                  60-Day Free Trial
-                </Button>
+                <AuthButton variant="default" showTrialButton={false} className="flex-col items-stretch" />
               </div>
             </div>
           </div>

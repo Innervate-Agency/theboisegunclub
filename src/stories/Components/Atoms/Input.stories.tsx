@@ -62,7 +62,7 @@ export const Glass: Story = {
       default: 'gradient',
       values: [{
         name: 'gradient',
-        value: 'linear-gradient(135deg, hsl(var(--slate-blue)) 0%, hsl(var(--ayu-purple)) 100%)',
+        value: 'linear-gradient(135deg, var(--color-slate-blue) 0%, var(--color-foothills-purple) 100%)',
       }],
     },
   },

@@ -386,9 +386,9 @@ export default function HomePage() {
           {/* Container wrapper for centering */}
           <div className="container mx-auto max-w-site px-md lg:px-0 relative">
             {/* Rounded Content Container - max-width with responsive behavior */}
-            <div className="bg-[#F9FAFB] dark:bg-[#1a0f0d] rounded-t-none lg:rounded-t-md relative">
+            <div className="bg-light-peachy dark:bg-dark-chocolate rounded-t-none lg:rounded-t-md relative">
               {/* Solid background fill for the overhang area */}
-              <div className="absolute inset-0 bg-[#F9FAFB] dark:bg-[#1a0f0d] rounded-t-none lg:rounded-t-md" />
+              <div className="absolute inset-0 bg-light-peachy dark:bg-dark-chocolate rounded-t-none lg:rounded-t-md" />
               
               {/* Piano Key Navigation - At TOP of overhang */}
               <div className="relative z-10">
@@ -536,7 +536,7 @@ export default function HomePage() {
                       <Button 
                         variant="outline" 
                         size="lg" 
-                        className="border-slate-blue/30 text-slate-blue hover:bg-slate-blue hover:text-white font-rajdhani font-bold"
+                        className="border-slate-blue/30 text-slate-blue hover:bg-slate-blue hover:text-card-foreground font-rajdhani font-bold"
                       >
                         <MapPin className="h-4 w-4 mr-xs" />
                         View All Locations
@@ -617,7 +617,7 @@ export default function HomePage() {
                                 <span>(208) 555-0321</span>
                               </div>
                             </div>
-                            <Button className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-white hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold text-xs" size="sm">
+                            <Button className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold text-xs" size="sm">
                               VIEW DEAL
                               <ExternalLink className="h-3 w-3 ml-xs" />
                             </Button>
@@ -653,7 +653,7 @@ export default function HomePage() {
                       <Button 
                         variant="outline" 
                         size="lg" 
-                        className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-white font-rajdhani font-bold"
+                        className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-card-foreground font-rajdhani font-bold"
                       >
                         <DollarSign className="h-4 w-4 mr-xs" />
                         Browse All Deals
@@ -696,7 +696,7 @@ export default function HomePage() {
                       </div>
                       <Button 
                         size="lg" 
-                        className="bg-sagebrush-green text-white hover:bg-sagebrush-green/90 font-rajdhani font-bold"
+                        className="bg-sagebrush-green text-dark-chocolate hover:bg-sagebrush-green/90 font-rajdhani font-bold"
                       >
                         <Search className="h-4 w-4 mr-xs" />
                         Explore Directory
@@ -804,7 +804,7 @@ export default function HomePage() {
                       <Button 
                         variant="outline" 
                         size="lg" 
-                        className="border-slate-blue/30 text-slate-blue hover:bg-slate-blue hover:text-white font-rajdhani font-bold"
+                        className="border-slate-blue/30 text-slate-blue hover:bg-slate-blue hover:text-card-foreground font-rajdhani font-bold"
                       >
                         <MessageSquare className="h-4 w-4 mr-xs" />
                         Join the Forums
@@ -1112,7 +1112,7 @@ export default function HomePage() {
                       </p>
                       <Button 
                         size="xl" 
-                        className="bg-slate-blue text-white hover:bg-slate-blue/90 font-rajdhani font-bold"
+                        className="bg-slate-blue text-crisp-off-white hover:bg-slate-blue/90 font-rajdhani font-bold"
                       >
                         <MessageSquare className="h-4 w-4 mr-xs" />
                         Join the Forums Today

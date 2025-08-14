@@ -61,6 +61,7 @@ export interface VendorCardProps
   rating?: number | undefined;
   reviewCount?: number | undefined;
   isVerified?: boolean | undefined;
+  verificationStatus?: string | undefined;
   
   // Tier-Specific Features
   tier: 'free' | 'copper' | 'silver' | 'gold';
@@ -91,6 +92,7 @@ export function VendorCard({
   rating,
   reviewCount,
   isVerified,
+  verificationStatus,
   tier,
   specialties = [],
   isSponsored,

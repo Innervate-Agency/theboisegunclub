@@ -539,25 +539,25 @@ export default function EventsPage() {
               {/* Content - Left side */}
               <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
                 <div className="flex items-center gap-base">
-                  <div className="bg-white/10 p-base rounded-xs border border-white/20">
+                  <div className="bg-card/10 p-base rounded-xs border border-border">
                     <Calendar weight="bold" className="h-8 w-8 text-white" />
                   </div>
                   <div className="space-y-base">
                     <div className="flex items-center gap-xs text-sm text-white/60">
                       <span>Home</span>
-                      <ChevronRight className="h-4 w-4" />
+                      <ChevronRight weight="bold" className="h-4 w-4" />
                       <span className="text-white font-medium">Events</span>
                     </div>
                     <div className="flex flex-wrap gap-xs">
-                      <Badge className="bg-white/10 text-white border-white/20 rounded-xs">
+                      <Badge className="bg-card/10 text-white border-border rounded-xs">
                         <Trophy weight="bold" className="h-4 w-4 mr-xs" />
                         Competitions
                       </Badge>
-                      <Badge className="bg-white/10 text-white border-white/20 rounded-xs">
+                      <Badge className="bg-card/10 text-white border-border rounded-xs">
                         <Target weight="bold" className="h-4 w-4 mr-xs" />
                         Training
                       </Badge>
-                      <Badge className="bg-white/10 text-white border-white/20 rounded-xs">
+                      <Badge className="bg-card/10 text-white border-border rounded-xs">
                         <Users weight="bold" className="h-4 w-4 mr-xs" />
                         Community
                       </Badge>
@@ -580,7 +580,7 @@ export default function EventsPage() {
                     <Plus weight="bold" className="h-4 w-4 mr-xs" />
                     Submit Event
                   </Button>
-                  <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white hover:text-nav-events">
+                  <Button variant="outline" size="lg" className="border-border text-white hover:bg-white hover:text-nav-events">
                     View Calendar
                   </Button>
                 </div>
@@ -631,7 +631,7 @@ export default function EventsPage() {
                                       </div>
                                   </div>
                               </div>
-                              <Button className="w-full bg-gradient-to-r from-nav-events to-nav-events text-white hover:from-nav-events hover:to-nav-events font-rajdhani font-bold text-xs" size="sm">
+                              <Button className="w-full bg-gradient-to-r from-nav-events to-nav-events text-dark-chocolate hover:from-nav-events hover:to-nav-events font-rajdhani font-bold text-xs" size="sm">
                                   REGISTER NOW
                                   <ArrowRight weight="bold" className="h-3 w-3 ml-xs" />
                               </Button>
@@ -660,19 +660,19 @@ export default function EventsPage() {
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-base">
                     <div className="flex flex-wrap items-center gap-xs">
                         <span className="text-sm font-medium text-nav-events mr-base">Quick Filters:</span>
-                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white transition-all duration-200">
+                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200">
                             <Trophy weight="bold" className="h-3 w-3" />
                             Competitions
                         </Button>
-                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white transition-all duration-200">
+                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200">
                             <Target weight="bold" className="h-3 w-3" />
                             Training
                         </Button>
-                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white transition-all duration-200">
+                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200">
                             <Sparkles weight="bold" className="h-3 w-3" />
                             Expos
                         </Button>
-                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white transition-all duration-200">
+                        <Button variant="outline" size="sm" className="gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200">
                             <Users weight="bold" className="h-3 w-3" />
                             Social
                         </Button>
@@ -739,7 +739,7 @@ export default function EventsPage() {
                                         "shadow-none transition-all duration-300",
                                         selectedCategory === category.value
                                             ? 'bg-nav-events text-white'
-                                            : 'border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white'
+                                            : 'border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate'
                                     )}
                                 >
                                     {category.label}
@@ -952,15 +952,15 @@ export default function EventsPage() {
                                 Contribute
                             </h3>
                             <div className="space-y-xs">
-                                <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white transition-all duration-200">
+                                <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200">
                                     <Plus weight="bold" className="h-4 w-4" />
                                     Submit an Event
                                 </Button>
-                                <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white transition-all duration-200">
+                                <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200">
                                     <MessageSquare weight="bold" className="h-4 w-4" />
                                     Review an Event
                                 </Button>
-                                <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white transition-all duration-200">
+                                <Button variant="outline" size="sm" className="w-full justify-start gap-xs border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-dark-chocolate transition-all duration-200">
                                     <AlertTriangle weight="bold" className="h-4 w-4" />
                                     Report an Issue
                                 </Button>

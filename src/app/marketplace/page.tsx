@@ -438,7 +438,7 @@ export default function MarketplacePage() {
             <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
               {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
               <div className="flex items-center gap-base">
-                <div className="bg-white/10 p-base rounded-sm border border-white/20">
+                <div className="bg-card/10 p-base rounded-sm border border-border">
                   <ShoppingCart className="h-8 w-8 text-white" />
                 </div>
                 <div className="space-y-base">
@@ -451,15 +451,15 @@ export default function MarketplacePage() {
                   
                   {/* Badges */}
                   <div className="flex flex-wrap gap-xs">
-                    <Badge className="bg-white/10 text-white border-white/20">
+                    <Badge className="bg-card/10 text-white border-border">
                       <ShoppingCart className="h-4 w-4 mr-xs" />
                       Local Dealers
                     </Badge>
-                    <Badge className="bg-white/10 text-white border-white/20">
+                    <Badge className="bg-card/10 text-white border-border">
                       <Package className="h-4 w-4 mr-xs" />
                       Live Inventory
                     </Badge>
-                    <Badge className="bg-white/10 text-white border-white/20">
+                    <Badge className="bg-card/10 text-white border-border">
                       <Shield className="h-4 w-4 mr-xs" />
                       FFL Compliant
                     </Badge>

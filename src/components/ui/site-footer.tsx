@@ -1,15 +1,15 @@
 'use client'
 
 import * as React from 'react'
+import { usePathname } from 'next/navigation'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { HoverArrow } from "@/components/ui/micro-animations"
 import { 
-  MapPin, Phone, Envelope, Globe, FacebookLogo, InstagramLogo,
-  XLogo, YoutubeLogo, CrosshairSimple, Shield, Users, Calendar,
-  CaretUp, DiscordLogo, Question, Heart
+  MapPin, Phone, Envelope, Globe, CrosshairSimple, Shield, Users, Calendar,
+  CaretUp, Question, Heart, Diamond, Ticket, AddressBook, MapTrifold, Storefront
 } from '@phosphor-icons/react'
 
 const siteFooterVariants = cva(
@@ -32,7 +32,6 @@ export interface SiteFooterProps
   extends React.ComponentProps<"footer">,
     VariantProps<typeof siteFooterVariants> {
   showNewsletter?: boolean
-  showSocial?: boolean
   currentPage?: 'home' | 'events' | 'directory' | 'armory' | 'intel' | 'marketplace' | 'forums'
 }
 
@@ -40,13 +39,13 @@ export function SiteFooter({
   className,
   variant,
   showNewsletter = true,
-  showSocial = true,
   currentPage = 'home',
   ...props
 }: SiteFooterProps) {
   const [newsletterEmail, setNewsletterEmail] = React.useState("")
   const [isSubscribing, setIsSubscribing] = React.useState(false)
   const [showBackToTop, setShowBackToTop] = React.useState(false)
+  const pathname = usePathname()
   
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -71,6 +70,30 @@ export function SiteFooter({
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+  
+  // Get current page icon component based on pathname (matches navbar logic)
+  const getCurrentPageIcon = () => {
+    if (pathname === '/') return Diamond
+    if (pathname.startsWith('/events')) return Ticket
+    if (pathname.startsWith('/directory')) return AddressBook
+    if (pathname.startsWith('/the-armory')) return Shield
+    if (pathname.startsWith('/intel')) return MapTrifold
+    if (pathname.startsWith('/marketplace')) return Storefront
+    if (pathname.startsWith('/forums')) return Users
+    return Diamond // fallback
+  }
+  
+  // Get current page color based on pathname (matches navbar logic)
+  const getCurrentPageColor = () => {
+    if (pathname === '/') return 'text-nav-home'
+    if (pathname.startsWith('/events')) return 'text-nav-events'
+    if (pathname.startsWith('/directory')) return 'text-nav-directory'
+    if (pathname.startsWith('/the-armory')) return 'text-nav-armory'
+    if (pathname.startsWith('/intel')) return 'text-nav-intel'
+    if (pathname.startsWith('/marketplace')) return 'text-nav-marketplace'
+    if (pathname.startsWith('/forums')) return 'text-nav-forums'
+    return 'text-nav-home' // fallback
+  }
   
   // Page-specific accent colors
   const getAccentColor = () => {
@@ -122,7 +145,7 @@ export function SiteFooter({
                     disabled={isSubscribing}
                     className={cn(
                       "font-rajdhani font-semibold group whitespace-nowrap",
-                      isDark ? "bg-rusty-orange text-shared-dark hover:bg-ember-glow" : "bg-slate-blue text-white hover:bg-slate-blue/90"
+                      isDark ? "bg-rusty-orange text-shared-dark hover:bg-ember-glow" : "bg-slate-blue text-crisp-off-white hover:bg-slate-blue/90"
                     )}
                   >
                     {isSubscribing ? "Subscribing..." : "Subscribe"}
@@ -149,29 +172,35 @@ export function SiteFooter({
           
           {/* Main Footer Content */}
           <div className="py-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
               {/* Brand & Contact */}
               <div className="lg:col-span-1">
-                <div className="flex items-center gap-2 mb-4">
-                  <CrosshairSimple weight="bold" className={cn("h-8 w-8", isDark ? "text-sandy-ochre" : "text-slate-blue")} />
-                  <h3 className={cn("text-xl font-rajdhani font-bold", textColor)}>
-                    BGC
-                  </h3>
+                <div className="mb-6">
+                  {React.createElement(getCurrentPageIcon(), { 
+                    className: `size-12 ${getCurrentPageColor()} -rotate-[28deg] mb-4`, 
+                    weight: "bold" 
+                  })}
+                  <div className="text-2xl font-rajdhani text-card-foreground leading-none uppercase">
+                    <span className="font-[800]">The Boise</span> <span className="font-[300]">Gun Club</span>
+                  </div>
+                  <p className="text-base font-rajdhani font-[400] text-muted-foreground leading-none lowercase tracking-wider">
+                    Treasure Valley Collective
+                  </p>
                 </div>
-                <p className={cn("text-sm leading-relaxed mb-6 font-rajdhani", mutedColor)}>
+                <p className={cn("text-base leading-relaxed mb-6 font-rajdhani", mutedColor)}>
                   Treasure Valley's premier firearms community hub. Connecting enthusiasts, businesses, and ranges across the region.
                 </p>
                 <div className="space-y-3">
-                  <a href="tel:+12085556867" className={cn("flex items-center gap-3 text-sm transition-colors font-rajdhani", mutedColor, linkHoverColor)}>
-                    <Phone weight="bold" className="h-4 w-4" />
+                  <a href="tel:+12085556867" className={cn("flex items-center gap-3 text-base transition-colors font-rajdhani", mutedColor, linkHoverColor)}>
+                    <Phone weight="bold" className="h-5 w-5" />
                     <span>(208) 555-GUNS</span>
                   </a>
-                  <a href="mailto:info@boiseguncollective.com" className={cn("flex items-center gap-3 text-sm transition-colors font-rajdhani", mutedColor, linkHoverColor)}>
-                    <Envelope weight="bold" className="h-4 w-4" />
+                  <a href="mailto:info@boiseguncollective.com" className={cn("flex items-center gap-3 text-base transition-colors font-rajdhani", mutedColor, linkHoverColor)}>
+                    <Envelope weight="bold" className="h-5 w-5" />
                     <span>info@boiseguncollective.com</span>
                   </a>
-                  <div className={cn("flex items-center gap-3 text-sm font-rajdhani", mutedColor)}>
-                    <MapPin weight="bold" className="h-4 w-4" />
+                  <div className={cn("flex items-center gap-3 text-base font-rajdhani", mutedColor)}>
+                    <MapPin weight="bold" className="h-5 w-5" />
                     <span>Boise, Idaho</span>
                   </div>
                 </div>
@@ -179,40 +208,51 @@ export function SiteFooter({
               
               {/* Quick Links */}
               <div>
-                <h4 className={cn("text-base font-rajdhani font-bold mb-4", textColor)}>
+                <h4 className={cn("text-lg font-rajdhani font-bold mb-4", textColor)}>
                   Quick Links
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {[
-                    { name: "Business Directory", href: "/directory" },
-                    { name: "Events Calendar", href: "/events" },
-                    { name: "Marketplace", href: "/marketplace" },
-                    { name: "The Armory", href: "/the-armory" },
-                    { name: "Training Hub", href: "/training" },
-                    { name: "Intel Center", href: "/intel" }
-                  ].map((link) => (
-                    <li key={link.name}>
-                      <a 
-                        href={link.href}
-                        className={cn(
-                          "text-sm transition-colors duration-200 font-rajdhani", 
-                          mutedColor,
-                          linkHoverColor
-                        )}
-                      >
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
+                    { name: "Business Directory", href: "/directory", icon: AddressBook, color: "hover:text-nav-directory" },
+                    { name: "Events Calendar", href: "/events", icon: Ticket, color: "hover:text-nav-events" },
+                    { name: "Marketplace", href: "/marketplace", icon: Storefront, color: "hover:text-nav-marketplace" },
+                    { name: "The Armory", href: "/the-armory", icon: Shield, color: "hover:text-nav-armory" },
+                    { name: "Training Hub", href: "/training", icon: Shield, color: "hover:text-nav-armory" },
+                    { name: "Intel Center", href: "/intel", icon: MapTrifold, color: "hover:text-nav-intel" }
+                  ].map((link) => {
+                    const Icon = link.icon
+                    return (
+                      <li key={link.name}>
+                        <a 
+                          href={link.href}
+                          className={cn(
+                            "flex items-center gap-3 text-base transition-all duration-300 font-rajdhani group", 
+                            mutedColor,
+                            link.color
+                          )}
+                        >
+                          <Icon 
+                            weight="bold" 
+                            className={cn(
+                              "h-5 w-5 transition-all duration-300",
+                              mutedColor,
+                              link.color
+                            )} 
+                          />
+                          <span>{link.name}</span>
+                        </a>
+                      </li>
+                    )
+                  })}
                 </ul>
               </div>
               
               {/* Resources */}
               <div>
-                <h4 className={cn("text-base font-rajdhani font-bold mb-4", textColor)}>
+                <h4 className={cn("text-lg font-rajdhani font-bold mb-4", textColor)}>
                   Resources
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {[
                     { name: "Firearms Training", href: "/training", icon: Shield },
                     { name: "Safety Courses", href: "/training?type=safety", icon: CrosshairSimple },
@@ -227,47 +267,13 @@ export function SiteFooter({
                         <a 
                           href={resource.href}
                           className={cn(
-                            "flex items-center gap-2 text-sm transition-colors duration-200 group font-rajdhani", 
+                            "flex items-center gap-2 text-base transition-colors duration-200 group font-rajdhani", 
                             mutedColor,
                             linkHoverColor
                           )}
                         >
-                          <Icon weight="bold" className="h-4 w-4 transition-transform group-hover:scale-110" />
+                          <Icon weight="bold" className="h-5 w-5 transition-transform group-hover:scale-110" />
                           <span>{resource.name}</span>
-                        </a>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
-              
-              {/* Community */}
-              <div>
-                <h4 className={cn("text-base font-rajdhani font-bold mb-4", textColor)}>
-                  Community
-                </h4>
-                <ul className="space-y-2">
-                  {[
-                    { name: "Forums", href: "/forums", icon: Users },
-                    { name: "Discord Server", href: "#", icon: DiscordLogo },
-                    { name: "Events Calendar", href: "/events", icon: Calendar },
-                    { name: "Member Directory", href: "/directory?type=members", icon: Users },
-                    { name: "Competitions", href: "/events?type=competition", icon: CrosshairSimple },
-                    { name: "Partnerships", href: "/partnerships", icon: Heart }
-                  ].map((community) => {
-                    const Icon = community.icon
-                    return (
-                      <li key={community.name}>
-                        <a 
-                          href={community.href}
-                          className={cn(
-                            "flex items-center gap-2 text-sm transition-colors duration-200 group font-rajdhani", 
-                            mutedColor,
-                            linkHoverColor
-                          )}
-                        >
-                          <Icon weight="bold" className="h-4 w-4 transition-transform group-hover:scale-110" />
-                          <span>{community.name}</span>
                         </a>
                       </li>
                     )
@@ -277,10 +283,10 @@ export function SiteFooter({
               
               {/* Support */}
               <div>
-                <h4 className={cn("text-base font-rajdhani font-bold mb-4", textColor)}>
+                <h4 className={cn("text-lg font-rajdhani font-bold mb-4", textColor)}>
                   Support
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {[
                     { name: "Help Center", href: "/help", icon: Question },
                     { name: "Contact Us", href: "/contact", icon: Envelope },
@@ -295,12 +301,12 @@ export function SiteFooter({
                         <a 
                           href={support.href}
                           className={cn(
-                            "flex items-center gap-2 text-sm transition-colors duration-200 group font-rajdhani", 
+                            "flex items-center gap-2 text-base transition-colors duration-200 group font-rajdhani", 
                             mutedColor,
                             linkHoverColor
                           )}
                         >
-                          <Icon weight="bold" className="h-4 w-4 transition-transform group-hover:scale-110" />
+                          <Icon weight="bold" className="h-5 w-5 transition-transform group-hover:scale-110" />
                           <span>{support.name}</span>
                         </a>
                       </li>
@@ -315,42 +321,12 @@ export function SiteFooter({
           <div className="border-t border-border py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
               {/* Copyright */}
-              <div className={cn("text-sm font-rajdhani font-medium", mutedColor)}>
+              <div className={cn("text-base font-rajdhani font-medium", mutedColor)}>
                 Copyright © 2025 - Boise Gun Collective, LLC - All rights reserved
               </div>
               
-              {/* Social Links */}
-              {showSocial && (
-                <div className="flex items-center gap-4">
-                  {[
-                    { icon: FacebookLogo, label: "Facebook", href: "#" },
-                    { icon: InstagramLogo, label: "Instagram", href: "#" },
-                    { icon: XLogo, label: "X (Twitter)", href: "#" },
-                    { icon: YoutubeLogo, label: "YouTube", href: "#" },
-                    { icon: DiscordLogo, label: "Discord", href: "#" }
-                  ].map((social) => {
-                    const Icon = social.icon
-                    return (
-                      <a
-                        key={social.label}
-                        href={social.href}
-                        className={cn(
-                          "p-2 rounded-sm transition-all duration-200 hover:scale-110 group",
-                          mutedColor,
-                          linkHoverColor,
-                          "hover:bg-muted/50"
-                        )}
-                        title={social.label}
-                      >
-                        <Icon weight="bold" className="h-5 w-5 transition-transform group-hover:rotate-6" />
-                      </a>
-                    )
-                  })}
-                </div>
-              )}
-              
               {/* Legal Links */}
-              <div className="flex items-center gap-4 text-xs font-rajdhani">
+              <div className="flex items-center gap-4 text-sm font-rajdhani">
                 {[
                   { name: "Privacy", href: "/privacy" },
                   { name: "Terms", href: "/terms" },
@@ -385,7 +361,7 @@ export function SiteFooter({
             "hover:shadow-hero hover:scale-110 group",
             isDark 
               ? "bg-rusty-orange text-shared-dark hover:bg-ember-glow" 
-              : "bg-slate-blue text-white hover:bg-slate-blue/90"
+              : "bg-slate-blue text-crisp-off-white hover:bg-slate-blue/90"
           )}
           title="Back to top"
         >

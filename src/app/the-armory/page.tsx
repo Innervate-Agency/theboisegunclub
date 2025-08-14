@@ -481,7 +481,7 @@ export default function ArmoryPage() {
             <div className="flex flex-col sm:flex-row gap-base justify-center max-w-md mx-auto">
               <Input 
                 placeholder="Enter your email" 
-                className="bg-white/10 border-page-primary/30 text-crisp-off-white placeholder:text-crisp-off-white/60"
+                className="bg-card/10 border-page-primary/30 text-crisp-off-white placeholder:text-crisp-off-white/60"
               />
               <Button 
                 size="lg" 

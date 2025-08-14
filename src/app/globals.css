@@ -75,6 +75,18 @@
   --color-canyon-clay: #B85450;        /* Red Rock: Terracotta canyon walls, warm grounded feeling */
   --color-high-desert-sage: #9CAF88;   /* Desert Sage: Silvery-green high desert plants, education/calm */
 
+  /* =================== VINTAGE WESTERN ADDITIONS =================== */
+  --color-aged-paper: #F4F1E8;         /* Old wanted poster background */
+  --color-gunmetal: #2C3539;           /* Dark iron and steel */
+  --color-brass: #B5A642;              /* Brass fittings and bullets */
+  --color-saloon-wood: #8B4513;        /* Rich mahogany bar wood */
+  --color-leather-brown: #964B00;      /* Worn leather holsters */
+  --color-iron-rust: #B7410E;          /* Weathered metal patina */
+  --color-parchment: #F1E9D2;          /* Aged document color */
+  --color-sepia-dark: #704214;         /* Deep sepia tones */
+  --color-weathered-gold: #D4AF37;     /* Tarnished gold accents */
+  --color-dust-brown: #996633;         /* Trail dust and dirt */
+
   /* =================== GRUVBOX-INSPIRED EYE COMFORT SYSTEM =================== */
   /* Night Ops Mode - Gruvbox-inspired colors for extended reading comfort */
   --gruvbox-bg-dark: #282828;          /* Main background - warmer than pure dark */
@@ -99,21 +111,21 @@
 
   /* =================== REFINED 7-COLOR NAVIGATION SYSTEM =================== */
   /* Light Theme Navigation Colors - FINAL REFINED PALETTE */
-  --nav-home-light: #eb7d01;           /* Warm Orange - Perfect home welcome energy */
-  --nav-events-light: #D51F00;         /* Red - High energy, attention-grabbing for events */
-  --nav-directory-light: #2ebfe6;      /* Bright Cyan - Professional, modern directory */
-  --nav-armory-light: #8B7AA8;         /* Purple-Gray - Tactical sophistication */
-  --nav-intel-light: #ffbc20;          /* Golden Yellow - Intelligence/reconnaissance */
-  --nav-marketplace-light: #C9C301;    /* Bright Yellow-Green - Commerce energy, vibrant */
-  --nav-forums-light: #6B7280;         /* Darker Gray for light theme - better visibility */
+  --nav-home-light: #ffbc20;           /* Golden Yellow - Warm, welcoming home energy */
+  --nav-events-light: #eb7d01;         /* Warm Orange - High energy, action-packed events */
+  --nav-directory-light: #2ebfe6;      /* Bright Cyan - Professional, organized directory */
+  --nav-armory-light: #B7410E;         /* Iron Rust Red - Tactical, military precision */
+  --nav-intel-light: #8B7AA8;          /* Purple-Gray - Premium intelligence sophistication */
+  --nav-marketplace-light: #798046;    /* Moss Green - Natural commerce, earthy trading */
+  --nav-forums-light: #6B7280;         /* Gray - Neutral community discussion */
 
   /* Dark Theme Navigation Colors - Same vibrant palette for dark backgrounds */
-  --nav-home-dark: #eb7d01;            /* Warm Orange - Glows perfectly on dark */
-  --nav-events-dark: #FF4444;          /* Brightened Red - More visible on dark without being harsh */
-  --nav-directory-dark: #2ebfe6;       /* Bright Cyan - Pops beautifully on dark */
-  --nav-armory-dark: #A98FBC;          /* Lighter Purple-Gray - Maintains sophistication */
-  --nav-intel-dark: #ffbc20;           /* Golden Yellow - Perfect visibility on dark */
-  --nav-marketplace-dark: #C9C301;     /* Bright Yellow-Green - Pops on dark backgrounds */
+  --nav-home-dark: #ffd43b;            /* Brighter Golden Yellow - Perfect glow on dark */
+  --nav-events-dark: #ff8c42;          /* Brighter Warm Orange - High visibility, energetic */
+  --nav-directory-dark: #42d4f5;       /* Brighter Cyan - Professional pop on dark */
+  --nav-armory-dark: #fb4934;          /* Gruvbox Red - Tactical glow, military precision */
+  --nav-intel-dark: #b99fdc;           /* Brighter Purple - Premium intelligence on dark */
+  --nav-marketplace-dark: #9fb36b;     /* Brighter Moss Green - Natural commerce visibility */
   --nav-forums-dark: #9CA3AF;          /* Medium Gray - Perfect visibility for dark themes */
 
   /* Theme-aware navigation color system - automatically switches based on theme */
@@ -289,7 +301,7 @@
   --gradient-home-hero: linear-gradient(to bottom right, var(--nav-home), var(--color-rusty-orange));
   --gradient-events-hero: linear-gradient(to bottom right, var(--nav-events), var(--color-canyon-clay));
   --gradient-directory-hero: linear-gradient(to bottom right, var(--nav-directory), var(--color-info-river));
-  --gradient-armory-hero: linear-gradient(to bottom right, var(--nav-armory), var(--color-slate-blue));
+  --gradient-armory-hero: linear-gradient(to bottom right, var(--nav-armory), var(--color-iron-rust));
   --gradient-intel-hero: linear-gradient(to bottom right, var(--nav-intel), var(--color-sunrise-amber));
   --gradient-marketplace-hero: linear-gradient(to bottom right, var(--nav-marketplace), var(--color-sagebrush-green));
 
@@ -449,6 +461,16 @@
   --theme-input: var(--color-rich-loam);
   --theme-ring: var(--color-rusty-orange);
   
+  /* 🌑 Dark Theme Shadow System - Subtle contrast like light mode but for dark backgrounds */
+  --shadow-ghost: 0 1px 1px 0 rgba(0, 0, 0, 0.20), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --shadow-whisper: 0 1px 3px 0 rgba(0, 0, 0, 0.25), 0 1px 2px 0 rgba(255, 255, 255, 0.08);
+  --shadow-present: 0 4px 6px -1px rgba(0, 0, 0, 0.30), 0 2px 4px -1px rgba(255, 255, 255, 0.10);
+  --shadow-elevated: 0 10px 15px -3px rgba(0, 0, 0, 0.35), 0 4px 6px -2px rgba(255, 255, 255, 0.12);
+  --shadow-prominent: 0 20px 25px -5px rgba(0, 0, 0, 0.40), 0 10px 10px -5px rgba(255, 255, 255, 0.15);
+  --shadow-commanding: 0 25px 50px -12px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-hero: 0 32px 80px -12px rgba(0, 0, 0, 0.50), 0 0 0 1px rgba(255, 255, 255, 0.10);
+  --shadow-modal: 0 50px 100px -20px rgba(0, 0, 0, 0.55), 0 30px 60px -30px rgba(255, 255, 255, 0.12);
+  
   /* 🎯 1970s Navigation Dark Theme Overrides - Soft glow for 2am comfort */
   --nav-home: var(--nav-home-dark);
   --nav-events: var(--nav-events-dark);
@@ -481,14 +503,24 @@
   --theme-input: var(--gruvbox-bg-surface);
   --theme-ring: var(--gruvbox-orange);
   
-  /* 🎯 Gruvbox Navigation Colors - Softer variants for eye comfort */
-  --nav-home: var(--gruvbox-yellow);      /* Warm butter yellow */
-  --nav-events: var(--gruvbox-orange);    /* Softer orange-red */
-  --nav-directory: #7c6f64;              /* Gruvbox brown variant */
-  --nav-armory: var(--gruvbox-aqua);      /* That sick aqua/teal! */
-  --nav-intel: #504945;                   /* Gruvbox dark brown */
-  --nav-marketplace: var(--gruvbox-yellow); /* Golden commerce */
-  --nav-forums: var(--gruvbox-green);     /* Community green */
+  /* 🌙 Gruvbox Shadow System - Neutral shadows with minimal warm undertone */
+  --shadow-ghost: 0 1px 1px 0 rgba(29, 32, 33, 0.20), 0 0 0 1px rgba(168, 153, 132, 0.08);
+  --shadow-whisper: 0 1px 3px 0 rgba(29, 32, 33, 0.25), 0 1px 2px 0 rgba(168, 153, 132, 0.10);
+  --shadow-present: 0 4px 6px -1px rgba(29, 32, 33, 0.30), 0 2px 4px -1px rgba(168, 153, 132, 0.12);
+  --shadow-elevated: 0 10px 15px -3px rgba(29, 32, 33, 0.35), 0 4px 6px -2px rgba(168, 153, 132, 0.15);
+  --shadow-prominent: 0 20px 25px -5px rgba(29, 32, 33, 0.40), 0 10px 10px -5px rgba(168, 153, 132, 0.18);
+  --shadow-commanding: 0 25px 50px -12px rgba(29, 32, 33, 0.45), 0 0 0 1px rgba(168, 153, 132, 0.10);
+  --shadow-hero: 0 32px 80px -12px rgba(29, 32, 33, 0.50), 0 0 0 1px rgba(168, 153, 132, 0.12);
+  --shadow-modal: 0 50px 100px -20px rgba(29, 32, 33, 0.55), 0 30px 60px -30px rgba(168, 153, 132, 0.15);
+  
+  /* 🎯 Gruvbox Navigation Colors - Harmonized while keeping Gruvbox soul */
+  --nav-home: var(--gruvbox-yellow);      /* Warm butter yellow - perfect for home */
+  --nav-events: var(--gruvbox-orange);    /* Gruvbox orange - energy and action */
+  --nav-directory: var(--gruvbox-blue);   /* Gruvbox blue - professional, organized */
+  --nav-armory: var(--gruvbox-aqua);      /* That sick aqua/teal - tactical! */
+  --nav-intel: var(--gruvbox-purple);     /* Gruvbox purple - premium intelligence */
+  --nav-marketplace: var(--gruvbox-green); /* Gruvbox green - commerce/money */
+  --nav-forums: #a89984;                 /* Gruvbox muted - community discussion */
   }
 }
 
@@ -945,6 +977,29 @@
   .border-nav-marketplace { border-color: var(--nav-marketplace); }
   .border-nav-forums { border-color: var(--nav-forums); }
 
+  /* ================== VINTAGE WESTERN UTILITY CLASSES ================== */
+  .text-aged-paper { color: var(--color-aged-paper); }
+  .text-gunmetal { color: var(--color-gunmetal); }
+  .text-brass { color: var(--color-brass); }
+  .text-saloon-wood { color: var(--color-saloon-wood); }
+  .text-leather-brown { color: var(--color-leather-brown); }
+  .text-iron-rust { color: var(--color-iron-rust); }
+  .text-parchment { color: var(--color-parchment); }
+  .text-sepia-dark { color: var(--color-sepia-dark); }
+  .text-weathered-gold { color: var(--color-weathered-gold); }
+  .text-dust-brown { color: var(--color-dust-brown); }
+
+  .bg-aged-paper { background-color: var(--color-aged-paper); }
+  .bg-gunmetal { background-color: var(--color-gunmetal); }
+  .bg-brass { background-color: var(--color-brass); }
+  .bg-saloon-wood { background-color: var(--color-saloon-wood); }
+  .bg-leather-brown { background-color: var(--color-leather-brown); }
+  .bg-iron-rust { background-color: var(--color-iron-rust); }
+  .bg-parchment { background-color: var(--color-parchment); }
+  .bg-sepia-dark { background-color: var(--color-sepia-dark); }
+  .bg-weathered-gold { background-color: var(--color-weathered-gold); }
+  .bg-dust-brown { background-color: var(--color-dust-brown); }
+
   /* ================== GRUVBOX UTILITIES ================== */
   /* Night Ops theme colors for eye-friendly reading */
   .text-gruvbox-cream { color: var(--gruvbox-fg-cream); }
@@ -1376,6 +1431,113 @@
    * 
    */
 
+  /* ================== GRUVBOX GLASSMORPHISM VARIANTS ================== */
+  
+  .gruvbox .mica {
+    /* GRUVBOX STANDARD GLASSMORPHISM: Warm earth tone mica */
+    background: 
+      /* Gruvbox mica noise texture */
+      radial-gradient(circle at 25% 25%, rgba(251, 241, 199, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(40, 40, 40, 0.015) 0%, transparent 50%),
+      /* Gruvbox enhanced saturation overlay */
+      linear-gradient(135deg, rgba(254, 128, 25, 0.03) 0%, rgba(250, 189, 47, 0.02) 50%, rgba(168, 153, 132, 0.025) 100%),
+      /* Gruvbox semi-transparent base */
+      rgba(50, 48, 47, 0.78);
+    backdrop-filter: blur(16px) saturate(1.8) contrast(1.1);
+    -webkit-backdrop-filter: blur(16px) saturate(1.8) contrast(1.1);
+    border: 1px solid rgba(168, 153, 132, 0.15);
+    box-shadow:
+      0 8px 32px rgba(29, 32, 33, 0.15),
+      0 2px 8px rgba(29, 32, 33, 0.08),
+      inset 0 1px 0 rgba(251, 241, 199, 0.1),
+      inset 0 -1px 0 rgba(251, 241, 199, 0.05);
+  }
+
+  .gruvbox .mica-card {
+    /* GRUVBOX CARD GLASSMORPHISM: Content focused gruvbox glass */
+    background: 
+      /* Gruvbox card noise texture */
+      radial-gradient(circle at 20% 20%, rgba(251, 241, 199, 0.015) 0%, transparent 60%),
+      radial-gradient(circle at 80% 80%, rgba(40, 40, 40, 0.01) 0%, transparent 60%),
+      /* Gruvbox card saturation */
+      linear-gradient(135deg, rgba(254, 128, 25, 0.025) 0%, rgba(168, 153, 132, 0.02) 50%, rgba(60, 56, 54, 0.015) 100%),
+      /* Gruvbox card transparency */
+      rgba(60, 56, 54, 0.75);
+    backdrop-filter: blur(12px) saturate(1.6) contrast(1.08);
+    -webkit-backdrop-filter: blur(12px) saturate(1.6) contrast(1.08);
+    border: 1px solid rgba(168, 153, 132, 0.12);
+    box-shadow:
+      0 6px 24px rgba(29, 32, 33, 0.12),
+      0 2px 6px rgba(29, 32, 33, 0.06),
+      inset 0 1px 0 rgba(251, 241, 199, 0.08);
+  }
+
+  .gruvbox .mica-popover {
+    /* GRUVBOX POPOVER GLASSMORPHISM: Floating gruvbox glass */
+    background: 
+      /* Enhanced gruvbox popover noise */
+      radial-gradient(circle at 30% 30%, rgba(251, 241, 199, 0.03) 0%, transparent 40%),
+      radial-gradient(circle at 70% 70%, rgba(40, 40, 40, 0.02) 0%, transparent 40%),
+      /* Gruvbox popover saturation */
+      linear-gradient(135deg, rgba(254, 128, 25, 0.04) 0%, rgba(250, 189, 47, 0.025) 50%, rgba(168, 153, 132, 0.03) 100%),
+      /* Gruvbox elevated transparency */
+      rgba(50, 48, 47, 0.82);
+    backdrop-filter: blur(20px) saturate(2.0) contrast(1.12);
+    -webkit-backdrop-filter: blur(20px) saturate(2.0) contrast(1.12);
+    border: 1px solid rgba(168, 153, 132, 0.18);
+    box-shadow:
+      0 12px 40px rgba(29, 32, 33, 0.18),
+      0 4px 12px rgba(29, 32, 33, 0.10),
+      inset 0 1px 0 rgba(251, 241, 199, 0.12),
+      inset 0 -1px 0 rgba(251, 241, 199, 0.06);
+  }
+
+  /* Enhanced gradient variants for light theme */
+  .light .mica {
+    background: 
+      /* Light mica noise texture */
+      radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(0, 0, 0, 0.015) 0%, transparent 50%),
+      /* Light theme gradient overlay - warm Boise tones */
+      linear-gradient(135deg, rgba(217, 134, 59, 0.04) 0%, rgba(184, 149, 107, 0.02) 50%, rgba(139, 131, 134, 0.025) 100%),
+      /* Light semi-transparent base */
+      rgba(248, 246, 241, 0.78);
+  }
+
+  .light .mica-card {
+    background: 
+      /* Light card noise texture */
+      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.025) 0%, transparent 60%),
+      radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.01) 0%, transparent 60%),
+      /* Light card gradient overlay */
+      linear-gradient(135deg, rgba(217, 134, 59, 0.03) 0%, rgba(184, 149, 107, 0.015) 50%, rgba(139, 131, 134, 0.02) 100%),
+      /* Light card transparency */
+      rgba(250, 248, 245, 0.75);
+  }
+
+  /* Enhanced gradient variants for dark theme */
+  .dark .mica {
+    background: 
+      /* Dark mica noise texture */
+      radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
+      /* Dark theme gradient overlay - cool night tones with warm accents */
+      linear-gradient(135deg, rgba(217, 134, 59, 0.06) 0%, rgba(59, 82, 107, 0.03) 50%, rgba(139, 131, 134, 0.04) 100%),
+      /* Dark semi-transparent base */
+      rgba(24, 29, 35, 0.82);
+  }
+
+  .dark .mica-card {
+    background: 
+      /* Dark card noise texture */
+      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.015) 0%, transparent 60%),
+      radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.02) 0%, transparent 60%),
+      /* Dark card gradient overlay */
+      linear-gradient(135deg, rgba(217, 134, 59, 0.05) 0%, rgba(59, 82, 107, 0.025) 50%, rgba(139, 131, 134, 0.03) 100%),
+      /* Dark card transparency */
+      rgba(18, 24, 32, 0.78);
+  }
+
   /* ================== ANIMATION KEYFRAMES ================== */
   @keyframes shimmer {
     0% {
@@ -1510,91 +1672,7 @@
   }
 
   /* ================== PIANO KEY NAVIGATION ================== */
-  /* Base piano key styling */
-  .piano-key {
-    position: relative;
-    overflow: hidden;
-    padding: 2rem 0.75rem;
-    font-family: var(--font-rajdhani);
-    font-size: 1.125rem;
-    font-weight: 700;
-    transition: all 300ms ease-out;
-    background: linear-gradient(180deg, #FAFBFC 0%, #F9FAFB 50%, #F5F7FA 100%);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -1px 0 rgba(0,0,0,0.05);
-  }
-
-  /* Base piano text styling */
-  .piano-text {
-    position: relative;
-    z-index: 10;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    background-size: 100% 200%;
-    background-position: 0 100%;
-    transition: all 300ms ease-out;
-  }
-
-  /* Events - Red */
-  .piano-text-events {
-    background: linear-gradient(to top, #D51F00 0%, #D51F00 0%, rgba(107, 114, 128, 0.4) 0%, rgba(107, 114, 128, 0.4) 100%);
-    color: rgba(107, 114, 128, 0.4);
-  }
-  .piano-key-events:hover .piano-text-events {
-    background: linear-gradient(to top, #D51F00 0%, #D51F00 100%, transparent 100%, transparent 100%);
-    background-position: 0 0%;
-  }
-
-  /* Directory - Cyan */
-  .piano-text-directory {
-    background: linear-gradient(to top, #2ebfe6 0%, #2ebfe6 0%, rgba(107, 114, 128, 0.4) 0%, rgba(107, 114, 128, 0.4) 100%);
-    color: rgba(107, 114, 128, 0.4);
-  }
-  .piano-key-directory:hover .piano-text-directory {
-    background: linear-gradient(to top, #2ebfe6 0%, #2ebfe6 100%, transparent 100%, transparent 100%);
-    background-position: 0 0%;
-  }
-
-  /* Armory - Purple */
-  .piano-text-armory {
-    background: linear-gradient(to top, #8B7AA8 0%, #8B7AA8 0%, rgba(107, 114, 128, 0.4) 0%, rgba(107, 114, 128, 0.4) 100%);
-    color: rgba(107, 114, 128, 0.4);
-  }
-  .piano-key-armory:hover .piano-text-armory {
-    background: linear-gradient(to top, #8B7AA8 0%, #8B7AA8 100%, transparent 100%, transparent 100%);
-    background-position: 0 0%;
-  }
-
-  /* Intel - Yellow */
-  .piano-text-intel {
-    background: linear-gradient(to top, #ffbc20 0%, #ffbc20 0%, rgba(107, 114, 128, 0.4) 0%, rgba(107, 114, 128, 0.4) 100%);
-    color: rgba(107, 114, 128, 0.4);
-  }
-  .piano-key-intel:hover .piano-text-intel {
-    background: linear-gradient(to top, #ffbc20 0%, #ffbc20 100%, transparent 100%, transparent 100%);
-    background-position: 0 0%;
-  }
-
-  /* Marketplace - Lime */
-  .piano-text-marketplace {
-    background: linear-gradient(to top, #C9C301 0%, #C9C301 0%, rgba(107, 114, 128, 0.4) 0%, rgba(107, 114, 128, 0.4) 100%);
-    color: rgba(107, 114, 128, 0.4);
-  }
-  .piano-key-marketplace:hover .piano-text-marketplace {
-    background: linear-gradient(to top, #C9C301 0%, #C9C301 100%, transparent 100%, transparent 100%);
-    background-position: 0 0%;
-  }
-
-  /* Forums - Gray */
-  .piano-text-forums {
-    background: linear-gradient(to top, #6B7280 0%, #6B7280 0%, rgba(107, 114, 128, 0.4) 0%, rgba(107, 114, 128, 0.4) 100%);
-    color: rgba(107, 114, 128, 0.4);
-  }
-  .piano-key-forums:hover .piano-text-forums {
-    background: linear-gradient(to top, #6B7280 0%, #6B7280 100%, transparent 100%, transparent 100%);
-    background-position: 0 0%;
-  }
-
+  /* Now handled by PianoKeyNavigation component in src/components/ui/piano-key-navigation.tsx */
   /* Animation Utility Classes */
   .animate-shimmer {
     position: relative;
@@ -1733,48 +1811,33 @@
     box-shadow: var(--shadow-xs);
   }
 
-  .btn-glass {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--foreground);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-/* NUKED BACKDROP-FILTER */
-/* NUKED BACKDROP-FILTER */
-    transition: all 150ms var(--ease-stripe);
+  /* ================== VINTAGE WESTERN TYPOGRAPHY EFFECTS ================== */
+  /* Distressed Typography Effects - Keep as utility classes */
+  .text-distressed {
+    position: relative;
+    text-shadow: 1px 1px 0px var(--color-sepia-dark), 
+                 2px 2px 0px rgba(0,0,0,0.1),
+                 3px 3px 5px rgba(0,0,0,0.2);
   }
 
-  .btn-glass:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: var(--shadow-glass);
+  .text-wanted-poster {
+    font-family: var(--font-rajdhani);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
   }
 
-  .btn-hover-lift {
-    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  .btn-hover-lift:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  }
-
-  .btn-hover-lift:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-
-  .btn-hover-lift:focus {
-    outline: none;
-    box-shadow: var(--shadow-focus-primary);
-  }
-
-  .btn-hover-lift:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    box-shadow: none;
-  }
-
-  .btn-hover-lift:disabled:hover {
-    transform: none;
+  .text-wanted-poster::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 48%, rgba(0,0,0,0.1) 49%, rgba(0,0,0,0.1) 51%, transparent 52%);
+    pointer-events: none;
   }
 
   /* ================== CARD STATES ================== */
@@ -1901,6 +1964,112 @@
   .text-responsive-lg { font-size: 1.125rem; line-height: 1.5; }
   .text-responsive-xl { font-size: 1.25rem; line-height: 1.5; }
   .text-responsive-2xl { font-size: 1.5rem; line-height: 1.375; }
+  
+  /* ================== PREMIUM HOME PAGE ANIMATIONS ================== */
+  @keyframes ember-rise {
+    0% {
+      transform: translateY(0) translateX(0) scale(0);
+      opacity: 0;
+    }
+    10% {
+      transform: translateY(-20px) translateX(5px) scale(1.2);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(-200px) translateX(15px) scale(1);
+      opacity: 0.8;
+    }
+    90% {
+      transform: translateY(-380px) translateX(25px) scale(0.5);
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateY(-400px) translateX(30px) scale(0.3);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes glow-pulse-intense {
+    0%, 100% {
+      opacity: 0.8;
+      filter: blur(40px) brightness(1);
+    }
+    50% {
+      opacity: 1;
+      filter: blur(50px) brightness(1.2);
+    }
+  }
+  
+  @keyframes letter-expand {
+    from {
+      letter-spacing: 0.5em;
+      opacity: 0;
+    }
+    to {
+      letter-spacing: 0.08em;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes magnetic-drift {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(2px) translateY(-1px);
+    }
+  }
+  
+  @keyframes tactical-scan {
+    0% {
+      transform: rotate(0deg) scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: rotate(180deg) scale(1.1);
+      opacity: 0.5;
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+      opacity: 0.3;
+    }
+  }
+  
+  @keyframes counter-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Utility classes for new animations */
+  .animate-ember-rise {
+    animation: ember-rise 5s ease-out infinite;
+  }
+  
+  .animate-glow-pulse-intense {
+    animation: glow-pulse-intense 3s ease-in-out infinite;
+  }
+  
+  .animate-letter-expand {
+    animation: letter-expand 1s ease-out forwards;
+  }
+  
+  .animate-magnetic-drift {
+    animation: magnetic-drift 2s ease-in-out infinite;
+  }
+  
+  .animate-tactical-scan {
+    animation: tactical-scan 8s linear infinite;
+  }
+  
+  .animate-counter-up {
+    animation: counter-up 0.6s ease-out forwards;
+  }
   .text-responsive-3xl { font-size: 1.875rem; line-height: 1.25; }
   .text-responsive-4xl { font-size: 2.25rem; line-height: 1.125; }
 
@@ -1968,13 +2137,13 @@
   }
 
   html[data-accessibility-contrast="high"] {
-    --background: #000000;
-    --foreground: #ffffff;
-    --card: #000000;
-    --card-foreground: #ffffff;
-    --border: #ffffff;
-    --muted: #333333;
-    --muted-foreground: #cccccc;
+    --background: var(--color-shared-dark);
+    --foreground: var(--color-crisp-off-white);
+    --card: var(--color-shared-dark);
+    --card-foreground: var(--color-crisp-off-white);
+    --border: var(--color-crisp-off-white);
+    --muted: var(--color-dark-chocolate);
+    --muted-foreground: var(--color-warm-stone);
     filter: contrast(var(--accessibility-contrast));
   }
 

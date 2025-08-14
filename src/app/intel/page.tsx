@@ -365,7 +365,7 @@ export default async function MapPage() {
             <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-xl py-lg">
               {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
               <div className="flex items-center gap-base">
-                <div className="bg-white/10 p-base rounded-sm border border-white/20">
+                <div className="bg-card/10 p-base rounded-sm border border-border">
                   <Compass className="h-8 w-8 text-white" />
                 </div>
                 <div className="space-y-base">
@@ -378,13 +378,13 @@ export default async function MapPage() {
                   
                   {/* Badges */}
                   <div className="flex flex-wrap gap-xs">
-                    <Badge variant="intel-location" className="bg-white/10 text-white border-white/20">
+                    <Badge variant="intel-location" className="bg-card/10 text-white border-border">
                       Shooting Locations
                     </Badge>
-                    <Badge variant="intel-verified" className="bg-white/10 text-white border-white/20">
+                    <Badge variant="intel-verified" className="bg-card/10 text-white border-border">
                       Verified Areas
                     </Badge>
-                    <Badge variant="intel-access" className="bg-white/10 text-white border-white/20">
+                    <Badge variant="intel-access" className="bg-card/10 text-white border-border">
                       BLM & Forest Service
                     </Badge>
                   </div>
@@ -419,7 +419,7 @@ export default async function MapPage() {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-white/30 text-white hover:bg-white hover:text-nav-intel"
+                  className="border-border text-white hover:bg-white hover:text-nav-intel"
                                   >
                   View Interactive Map
                 </Button>
@@ -503,19 +503,19 @@ export default async function MapPage() {
             {/* Quick Filters */}
             <div className="flex flex-wrap items-center gap-xs">
               <span className="text-sm font-medium text-nav-intel mr-base">Quick Access:</span>
-              <Button variant="outline" size="sm" className="gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white transition-all duration-200">
+              <Button variant="outline" size="sm" className="gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-dark-chocolate transition-all duration-200">
                 <Target className="h-3 w-3" />
                 Near Me
               </Button>
-              <Button variant="outline" size="sm" className="gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white transition-all duration-200">
+              <Button variant="outline" size="sm" className="gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-dark-chocolate transition-all duration-200">
                 <Shield className="h-3 w-3" />
                 Verified Only
               </Button>
-              <Button variant="outline" size="sm" className="gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white transition-all duration-200">
+              <Button variant="outline" size="sm" className="gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-dark-chocolate transition-all duration-200">
                 <Mountain className="h-3 w-3" />
                 BLM Land
               </Button>
-              <Button variant="outline" size="sm" className="gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white transition-all duration-200">
+              <Button variant="outline" size="sm" className="gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-dark-chocolate transition-all duration-200">
                 <Navigation className="h-3 w-3" />
                 Public Ranges
               </Button>
@@ -527,7 +527,7 @@ export default async function MapPage() {
                 <BarChart3 className="h-3 w-3" />
                 List View
               </Button>
-              <Button variant="outline" size="sm" className="gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white transition-all duration-200">
+              <Button variant="outline" size="sm" className="gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-dark-chocolate transition-all duration-200">
                 <MapPin className="h-3 w-3" />
                 Map View
               </Button>
@@ -564,7 +564,7 @@ export default async function MapPage() {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white font-rajdhani font-bold"
+                className="border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-dark-chocolate font-rajdhani font-bold"
                               >
                 View All {shootingLocations.length} Locations
               </Button>
@@ -707,19 +707,19 @@ export default async function MapPage() {
               
               {/* Contribute Buttons */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-xs mt-base">
-                <Button variant="outline" size="sm" className="text-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white">
+                <Button variant="outline" size="sm" className="text-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-dark-chocolate">
                   <Plus className="h-3 w-3 mr-xs" />
                   Submit
                 </Button>
-                <Button variant="outline" size="sm" className="text-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white">
+                <Button variant="outline" size="sm" className="text-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-dark-chocolate">
                   <Camera className="h-3 w-3 mr-xs" />
                   Photos
                 </Button>
-                <Button variant="outline" size="sm" className="text-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white">
+                <Button variant="outline" size="sm" className="text-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-dark-chocolate">
                   <MessageSquare className="h-3 w-3 mr-xs" />
                   Review
                 </Button>
-                <Button variant="outline" size="sm" className="text-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white">
+                <Button variant="outline" size="sm" className="text-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-dark-chocolate">
                   <AlertTriangle className="h-3 w-3 mr-xs" />
                   Report
                 </Button>

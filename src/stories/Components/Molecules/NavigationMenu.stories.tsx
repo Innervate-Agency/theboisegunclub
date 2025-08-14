@@ -227,7 +227,7 @@ export const Premium: Story = {
 
 export const Glass: Story = {
   render: () => (
-    <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-lg rounded-xs">
+    <div className="bg-gradient-to-br from-dark-chocolate to-rich-loam p-lg rounded-xs">
       <NavigationMenu variant="glass">
         <NavigationMenuList variant="glass">
           <NavigationMenuItem>
@@ -327,7 +327,7 @@ export const Glass: Story = {
 
 export const Tournament: Story = {
   render: () => (
-    <div className="bg-gradient-to-br from-slate-900 to-slate-700 p-lg rounded-xs">
+    <div className="bg-gradient-to-br from-dark-chocolate to-warm-stone p-lg rounded-xs">
       <NavigationMenu variant="tournament">
         <NavigationMenuList variant="tournament">
           <NavigationMenuItem>
@@ -340,7 +340,7 @@ export const Tournament: Story = {
                 <div className="row-span-3">
                   <NavigationMenuLink
                     variant="tournament"
-                    className="flex h-full w-full select-none flex-col justify-end rounded-input bg-gradient-to-b from-slate-800/90 to-slate-700/90 p-md no-underline outline-none focus:shadow-elevated border border-sandy-ochre/30"
+                    className="flex h-full w-full select-none flex-col justify-end rounded-input bg-gradient-to-b from-rich-loam/90 to-warm-stone/90 p-md no-underline outline-none focus:shadow-elevated border border-sandy-ochre/30"
                     href="/"
                   >
                     <Trophy className="h-6 w-6 text-sandy-ochre" />
@@ -507,7 +507,7 @@ export const SiteNavigationPreset: Story = {
         </SiteNavigation>
       </div>
       
-      <div className="bg-gradient-to-br from-slate-900 to-slate-700 p-md rounded-xs">
+      <div className="bg-gradient-to-br from-dark-chocolate to-warm-stone p-md rounded-xs">
         <h3 className="font-semibold mb-base text-range-white">Admin Navigation</h3>
         <SiteNavigation section="admin">
           <NavigationMenuList variant="tournament">
