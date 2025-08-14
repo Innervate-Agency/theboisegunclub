@@ -10,7 +10,16 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { EventTicker } from '@/components/ui/event-ticker'
+import { EmptyState } from '@/components/ui/empty-state'
+import { PageSection } from '@/components/ui/page-section'
+import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
 import { cn } from '@/lib/utils'
+// Import Phosphor icons for activity feed
+import { 
+  CheckCircle as PhosphorCheckCircle,
+  Plus as PhosphorPlus, 
+  Warning as PhosphorWarning 
+} from '@phosphor-icons/react'
 // Temporary: Using Lucide React until Phosphor icons are fixed
 import {
   Calendar,
@@ -816,29 +825,18 @@ export default function EventsPage() {
                     )}
 
                     {filteredEvents.length === 0 && (
-                        <div className="text-center py-6xl col-span-full">
-                            <div className="space-y-base">
-                                <div className="mx-auto w-fit rounded-full bg-nav-events/10 p-lg">
-                                    <Target className="h-12 w-12 text-nav-events" />
-                                </div>
-                                <h3 className="font-rajdhani text-2xl font-bold text-card-foreground">
-                                    No Events Found
-                                </h3>
-                                <p className="text-muted-foreground max-w-md mx-auto">
-                                    Your search and filter combination yielded no results. Try a different search or broaden your category selection.
-                                </p>
-                                <Button
-                                    onClick={() => {
-                                        setSelectedCategory("all")
-                                        setSearchQuery("")
-                                    }}
-                                    className="bg-nav-events text-white hover:bg-nav-events/90 shadow-elevated hover:shadow-hero"
-                                    animationType="x-o"
-                                >
-                                    Clear Filters & Show All
-                                </Button>
-                            </div>
-                        </div>
+                        <EmptyState
+                            icon={Target}
+                            title="No Events Found"
+                            description="Your search and filter combination yielded no results. Try a different search or broaden your category selection."
+                            actionText="Clear Filters & Show All"
+                            onAction={() => {
+                                setSelectedCategory("all")
+                                setSearchQuery("")
+                            }}
+                            iconColor="text-nav-events"
+                            actionColor="bg-nav-events text-white hover:bg-nav-events/90"
+                        />
                     )}
                 </div>
             </div>
@@ -859,60 +857,30 @@ export default function EventsPage() {
                             </Button>
                         </div>
                         <div className="space-y-base">
-                            <Card variant="interactive" className="shadow-present hover:shadow-elevated transition-all duration-200">
-                                <div className="flex items-start gap-base p-base">
-                                    <div className="w-8 h-8 rounded-full bg-sagebrush-green/20 flex items-center justify-center flex-shrink-0">
-                                        <CheckCircle className="h-4 w-4 text-sagebrush-green" />
-                                    </div>
-                                    <div className="flex-1 space-y-xs">
-                                        <div className="flex items-center justify-between">
-                                            <p className="font-medium text-card-foreground">
-                                                USPSA Match registration is now open.
-                                            </p>
-                                            <span className="text-xs text-muted-foreground">1h ago</span>
-                                        </div>
-                                        <p className="text-sm text-muted-foreground">
-                                            Slots are filling up fast for the upcoming competition. Secure your spot today!
-                                        </p>
-                                    </div>
-                                </div>
-                            </Card>
-                            <Card variant="interactive" className="shadow-present hover:shadow-elevated transition-all duration-200">
-                                <div className="flex items-start gap-base p-base">
-                                    <div className="w-8 h-8 rounded-full bg-nav-events/20 flex items-center justify-center flex-shrink-0">
-                                        <Plus className="h-4 w-4 text-nav-events" />
-                                    </div>
-                                    <div className="flex-1 space-y-xs">
-                                        <div className="flex items-center justify-between">
-                                            <p className="font-medium text-card-foreground">
-                                                New Event: Defensive Pistol Advanced
-                                            </p>
-                                            <span className="text-xs text-muted-foreground">3h ago</span>
-                                        </div>
-                                        <p className="text-sm text-muted-foreground">
-                                            A new advanced training course has been added for September.
-                                        </p>
-                                    </div>
-                                </div>
-                            </Card>
-                            <Card variant="interactive" className="shadow-present hover:shadow-elevated transition-all duration-200">
-                                <div className="flex items-start gap-base p-base">
-                                    <div className="w-8 h-8 rounded-full bg-warning-clay/20 flex items-center justify-center flex-shrink-0">
-                                        <AlertTriangle className="h-4 w-4 text-warning-clay" />
-                                    </div>
-                                    <div className="flex-1 space-y-xs">
-                                        <div className="flex items-center justify-between">
-                                            <p className="font-medium text-card-foreground">
-                                                Location Change: Hunter Safety Course
-                                            </p>
-                                            <span className="text-xs text-muted-foreground">1d ago</span>
-                                        </div>
-                                        <p className="text-sm text-muted-foreground">
-                                            The August 23-24 course has been moved to the Boise location.
-                                        </p>
-                                    </div>
-                                </div>
-                            </Card>
+                            <ActivityFeedCard
+                                icon={PhosphorCheckCircle}
+                                iconColor="text-sagebrush-green"
+                                iconBgColor="bg-sagebrush-green/20"
+                                title="USPSA Match registration is now open."
+                                description="Slots are filling up fast for the upcoming competition. Secure your spot today!"
+                                timeAgo="1h ago"
+                            />
+                            <ActivityFeedCard
+                                icon={PhosphorPlus}
+                                iconColor="text-nav-events"
+                                iconBgColor="bg-nav-events/20"
+                                title="New Event: Defensive Pistol Advanced"
+                                description="A new advanced training course has been added for September."
+                                timeAgo="3h ago"
+                            />
+                            <ActivityFeedCard
+                                icon={PhosphorWarning}
+                                iconColor="text-warning-clay"
+                                iconBgColor="bg-warning-clay/20"
+                                title="Location Change: Hunter Safety Course"
+                                description="The August 23-24 course has been moved to the Boise location."
+                                timeAgo="1d ago"
+                            />
                         </div>
                     </div>
                     <div className="lg:col-span-1 space-y-xl">

@@ -12,7 +12,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
+import { FormSection } from '@/components/ui/form-section'
 
 const navItems = [
   { label: 'Home', href: '/', icon: <Target className="h-4 w-4" /> },
@@ -210,56 +210,45 @@ export default function TrainingPage() {
           </div>
 
           {/* Instructor Signup Form */}
-          <div id="instructor-signup" className="bg-gradient-hero-warm rounded-md border border-sandy-ochre/20 p-(--spacing-xl)">
-            <div className="text-center mb-(--spacing-lg)">
-              <h3 className="text-2xl font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">
-                Join Our Training Directory
-              </h3>
-              <p className="text-lg text-warning-amber font-noto-sans max-w-2xl mx-auto">
-                Connect with students across Treasure Valley. List your training programs and certifications at no cost during our launch phase.
-              </p>
-            </div>
-            
-            <div className="max-w-2xl mx-auto space-y-(--spacing-base)">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-(--spacing-base)">
-                <Input placeholder="Instructor/Organization Name" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
-                <Input placeholder="Contact Name" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-(--spacing-base)">
-                <Input placeholder="Phone Number" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
-                <Input placeholder="Email Address" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
-              </div>
-              <Input placeholder="Primary Training Location" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-(--spacing-base)">
-                <select className="px-(--spacing-base) py-(--spacing-xs) border border-sandy-ochre/30 rounded-md bg-white text-sm font-noto-sans">
-                  <option>Primary Training Type</option>
-                  <option>Basic Safety / NRA Courses</option>
-                  <option>CCW / Enhanced CCW</option>
-                  <option>Defensive Pistol</option>
-                  <option>Tactical Carbine</option>
-                  <option>Competition Training</option>
-                  <option>Youth Programs</option>
-                  <option>Women's Programs</option>
-                  <option>Law Enforcement</option>
-                  <option>Other</option>
-                </select>
-                <Input placeholder="Website (if applicable)" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
-              </div>
-              <Input placeholder="Certifications (NRA, USCCA, etc.)" className="bg-white border-sandy-ochre/30 focus:border-sandy-ochre" />
-              <textarea 
-                placeholder="Describe your training programs, experience, and qualifications..."
-                className="w-full px-(--spacing-base) py-(--spacing-xs) border border-sandy-ochre/30 rounded-md bg-white text-sm font-noto-sans min-h-[100px] focus:border-sandy-ochre focus:outline-none"
-              />
-              
-              <div className="text-center pt-(--spacing-base)">
-                <Button size="lg" className="bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange font-rajdhani font-semibold">
-                  Join Training Directory
-                </Button>
-                <p className="text-sm text-warning-amber mt-(--spacing-xs)">
-                  We'll review and contact you within 48 hours
-                </p>
-              </div>
-            </div>
+          <div id="instructor-signup">
+            <FormSection
+              title="Join Our Training Directory"
+              description="Connect with students across Treasure Valley. List your training programs and certifications at no cost during our launch phase."
+              submitText="Join Training Directory"
+              submitNote="We'll review and contact you within 48 hours"
+              fields={[
+                { type: 'input', name: 'instructorName-grid-2', placeholder: 'Instructor/Organization Name', required: true },
+                { type: 'input', name: 'contactName-grid-2', placeholder: 'Contact Name', required: true },
+                { type: 'input', name: 'phone-grid-2', placeholder: 'Phone Number', required: true },
+                { type: 'input', name: 'email-grid-2', placeholder: 'Email Address', required: true },
+                { type: 'input', name: 'location', placeholder: 'Primary Training Location', required: true },
+                { 
+                  type: 'select', 
+                  name: 'trainingType-grid-2', 
+                  placeholder: 'Primary Training Type',
+                  options: [
+                    'Basic Safety / NRA Courses',
+                    'CCW / Enhanced CCW',
+                    'Defensive Pistol',
+                    'Tactical Carbine',
+                    'Competition Training',
+                    'Youth Programs',
+                    "Women's Programs",
+                    'Law Enforcement',
+                    'Other'
+                  ],
+                  required: true
+                },
+                { type: 'input', name: 'website-grid-2', placeholder: 'Website (if applicable)' },
+                { type: 'input', name: 'certifications', placeholder: 'Certifications (NRA, USCCA, etc.)', required: true },
+                { 
+                  type: 'textarea', 
+                  name: 'description', 
+                  placeholder: 'Describe your training programs, experience, and qualifications...', 
+                  required: true 
+                }
+              ]}
+            />
           </div>
         </div>
       </section>

@@ -3,7 +3,7 @@
 import React from 'react'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
-import { HeroFloatingDiamonds } from '@/components/ui/hero-floating-diamonds'
+import { FloatingDiamonds } from '@/components/ui/hero-floating-diamonds'
 import { HeroCampfireGlow } from '@/components/ui/hero-campfire-glow'
 import { HeroBadge } from '@/components/ui/hero-badge'
 import { TrustIndicators } from '@/components/ui/trust-indicators'
@@ -109,7 +109,7 @@ export default function HomePage() {
             <HeroCampfireGlow />
             
             {/* Floating Diamonds */}
-            <HeroFloatingDiamonds />
+            <FloatingDiamonds />
             
             {/* Subtle noise texture */}
             <div className="absolute inset-0 opacity-10"

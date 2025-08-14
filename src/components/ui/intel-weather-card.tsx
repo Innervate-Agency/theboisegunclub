@@ -10,10 +10,9 @@ import {
   Eye,
   Gauge,
   MapPin,
-  Clock,
-  TrendingUp,
-  AlertTriangle
+  Clock
 } from '@phosphor-icons/react'
+import { TrendingUp, AlertTriangle } from 'react-icons/lu'
 
 interface WeatherCondition {
   location: string

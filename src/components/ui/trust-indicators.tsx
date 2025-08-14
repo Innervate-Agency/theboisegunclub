@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { MapPin, Building2, Users } from '@phosphor-icons/react'
+import { MapPin, Buildings as Building2, Users } from '@phosphor-icons/react'
 
 interface TrustIndicator {
   icon: React.ComponentType<{ className?: string; weight?: string }>

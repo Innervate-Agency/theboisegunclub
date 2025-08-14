@@ -4,6 +4,7 @@ import React from 'react'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { InfoCard } from '@/components/ui/info-card'
 import { CheckCircle, Shield, FileText, AlertTriangle, XCircle } from 'lucide-react'
 
 export default function VerificationPage() {
@@ -36,69 +37,49 @@ export default function VerificationPage() {
             </Card>
 
             <div className="grid md:grid-cols-2 gap-lg">
-              <Card className="mica shadow-present rounded-xs">
-                <CardHeader>
-                  <CardTitle className="font-rajdhani text-xl flex items-center gap-sm">
-                    <FileText className="text-nav-directory" />
-                    Federal & State Records
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-sm">
-                  <p>We start with the official list of Federal Firearms Licensees from the ATF. Then, we verify that the business is also registered and in good standing with the Idaho Secretary of State. This two-step process ensures that every FFL listed is not only federally licensed but also legally recognized to operate in Idaho.</p>
-                </CardContent>
-              </Card>
-              <Card className="mica shadow-present rounded-xs">
-                <CardHeader>
-                  <CardTitle className="font-rajdhani text-xl flex items-center gap-sm">
-                    <CheckCircle className="text-sagebrush-green" />
-                    Verification Levels
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-sm">
-                  <p>We use a clear and transparent system to show you our confidence in each listing. From 'Fully Verified' to 'ATF Record Only', we provide the information you need to make an informed decision. We believe in transparency, and our verification levels reflect that commitment.</p>
-                </CardContent>
-              </Card>
+              <InfoCard
+                icon={FileText}
+                iconColor="text-nav-directory"
+                title="Federal & State Records"
+                description="We start with the official list of Federal Firearms Licensees from the ATF. Then, we verify that the business is also registered and in good standing with the Idaho Secretary of State. This two-step process ensures that every FFL listed is not only federally licensed but also legally recognized to operate in Idaho."
+                layout="vertical"
+              />
+              <InfoCard
+                icon={CheckCircle}
+                iconColor="text-sagebrush-green"
+                title="Verification Levels"
+                description="We use a clear and transparent system to show you our confidence in each listing. From 'Fully Verified' to 'ATF Record Only', we provide the information you need to make an informed decision. We believe in transparency, and our verification levels reflect that commitment."
+                layout="vertical"
+              />
             </div>
 
             <div>
               <h2 className="font-rajdhani text-3xl font-bold text-center mb-lg">Our Verification Tiers</h2>
               <div className="space-y-md">
-                <Card className="mica shadow-present rounded-xs">
-                  <CardContent className="pt-base flex items-start gap-base">
-                    <CheckCircle className="h-8 w-8 text-sagebrush-green flex-shrink-0 mt-xs" />
-                    <div>
-                      <h3 className="font-rajdhani font-bold text-xl">Fully Verified</h3>
-                      <p className="text-muted-foreground">These businesses have an active ATF license, an active registration with the Idaho Secretary of State, and a verifiable public presence like a storefront or an active website. This is our highest level of confidence.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className="mica shadow-present rounded-xs">
-                  <CardContent className="pt-base flex items-start gap-base">
-                    <Shield className="h-8 w-8 text-slate-blue flex-shrink-0 mt-xs" />
-                    <div>
-                      <h3 className="font-rajdhani font-bold text-xl">ATF/SOS Verified</h3>
-                      <p className="text-muted-foreground">These businesses have an active ATF license and an active registration with the Idaho Secretary of State, but may not have a significant public presence. This is common for home-based FFLs or specialized manufacturers.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className="mica shadow-present rounded-xs">
-                  <CardContent className="pt-base flex items-start gap-base">
-                    <AlertTriangle className="h-8 w-8 text-warning-amber flex-shrink-0 mt-xs" />
-                    <div>
-                      <h3 className="font-rajdhani font-bold text-xl">ATF Record Only - Unverified</h3>
-                      <p className="text-muted-foreground">These businesses appear on the ATF list but lack a corresponding active registration with the Idaho Secretary of State. This is a red flag, and we recommend further due diligence before engaging with these businesses.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className="mica shadow-present rounded-xs">
-                  <CardContent className="pt-base flex items-start gap-base">
-                    <XCircle className="h-8 w-8 text-canyon-clay flex-shrink-0 mt-xs" />
-                    <div>
-                      <h3 className="font-rajdhani font-bold text-xl">Inactive/Closed</h3>
-                      <p className="text-muted-foreground">These businesses have an expired FFL and/or a dissolved state business registration. They are confirmed to be non-operational as FFLs.</p>
-                    </div>
-                  </CardContent>
-                </Card>
+                <InfoCard
+                  icon={CheckCircle}
+                  iconColor="text-sagebrush-green"
+                  title="Fully Verified"
+                  description="These businesses have an active ATF license, an active registration with the Idaho Secretary of State, and a verifiable public presence like a storefront or an active website. This is our highest level of confidence."
+                />
+                <InfoCard
+                  icon={Shield}
+                  iconColor="text-slate-blue"
+                  title="ATF/SOS Verified"
+                  description="These businesses have an active ATF license and an active registration with the Idaho Secretary of State, but may not have a significant public presence. This is common for home-based FFLs or specialized manufacturers."
+                />
+                <InfoCard
+                  icon={AlertTriangle}
+                  iconColor="text-warning-amber"
+                  title="ATF Record Only - Unverified"
+                  description="These businesses appear on the ATF list but lack a corresponding active registration with the Idaho Secretary of State. This is a red flag, and we recommend further due diligence before engaging with these businesses."
+                />
+                <InfoCard
+                  icon={XCircle}
+                  iconColor="text-canyon-clay"
+                  title="Inactive/Closed"
+                  description="These businesses have an expired FFL and/or a dissolved state business registration. They are confirmed to be non-operational as FFLs."
+                />
               </div>
             </div>
           </div>

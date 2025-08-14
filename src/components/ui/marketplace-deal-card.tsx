@@ -6,13 +6,12 @@ import { Badge } from './badge'
 import { 
   Tag,
   Storefront,
-  Clock,
-  TrendingDown,
   MapPin,
   Star,
   Phone,
   Calendar
 } from '@phosphor-icons/react'
+import { TrendingDown, Clock } from 'react-icons/lu'
 
 interface MarketplaceDeal {
   title: string

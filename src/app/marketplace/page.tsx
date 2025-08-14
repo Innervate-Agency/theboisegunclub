@@ -9,10 +9,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { cn } from '@/lib/utils'
+import { SearchFilterBar } from '@/components/ui/search-filter-bar'
+import { EmptyState } from '@/components/ui/empty-state'
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb'
 import { 
   Search, ShoppingCart, Filter, ExternalLink, ArrowRight, 
   Store, DollarSign, Package, Star, Eye, Building2, 
-  MapPin, Phone, Clock, Shield, TrendingUp, Zap, ChevronRight, CheckCircle
+  MapPin, Phone, Clock, Shield, TrendingUp, Zap, CheckCircle, ChevronRight
 } from 'lucide-react'
 
 // Marketplace inventory aggregation from local dealers
@@ -443,11 +446,23 @@ export default function MarketplacePage() {
                 </div>
                 <div className="space-y-base">
                   {/* Breadcrumbs */}
-                  <div className="flex items-center gap-xs text-sm text-white/60">
-                    <span>Home</span>
-                    <ChevronRight className="h-4 w-4" />
-                    <span className="text-white font-medium">Marketplace</span>
-                  </div>
+                  <Breadcrumb>
+                    <BreadcrumbList className="text-white/60">
+                      <BreadcrumbItem>
+                        <BreadcrumbLink href="/" className="text-white/60 hover:text-white">
+                          Home
+                        </BreadcrumbLink>
+                      </BreadcrumbItem>
+                      <BreadcrumbSeparator>
+                        <ChevronRight className="h-4 w-4" weight="bold" />
+                      </BreadcrumbSeparator>
+                      <BreadcrumbItem>
+                        <BreadcrumbPage className="text-white font-medium">
+                          Marketplace
+                        </BreadcrumbPage>
+                      </BreadcrumbItem>
+                    </BreadcrumbList>
+                  </Breadcrumb>
                   
                   {/* Badges */}
                   <div className="flex flex-wrap gap-xs">
@@ -627,80 +642,37 @@ export default function MarketplacePage() {
       <section className="py-4xl">
         <div className="container mx-auto max-w-site px-md">
           <div className="space-y-xl">
-            {/* Search Bar */}
-            <div className="flex flex-col md:flex-row gap-base">
-              <div className="flex-1 relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <Input
-                  placeholder="Search by brand, model, caliber, or dealer..."
-                  className="pl-10"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-              </div>
-              <div className="flex gap-xs">
-                <Button variant="outline" className="gap-xs">
-                  <MapPin className="h-4 w-4" />
-                  Near Me
-                </Button>
-                <Button variant="outline" className="gap-xs">
-                  <Filter className="h-4 w-4" />
-                  Advanced
-                </Button>
-              </div>
-            </div>
-
-            {/* Category Filters */}
-            <div className="space-y-base">
-              <h3 className="font-rajdhani text-lg font-bold text-card-foreground">
-                Browse by Category
-              </h3>
-              <div className="flex flex-wrap gap-xs">
-                {categories.map((category) => (
-                  <Button
-                    key={category.value}
-                    variant={selectedCategory === category.value ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedCategory(category.value)}
-                    className={selectedCategory === category.value ? 
-                      "bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange" : 
-                      "border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
-                    }
-                  >
-                    {category.label}
-                    <Badge variant="secondary" className="ml-xs">
-                      {category.count}
-                    </Badge>
+            <SearchFilterBar
+              searchQuery={searchQuery}
+              onSearchChange={setSearchQuery}
+              placeholder="Search by brand, model, caliber, or dealer..."
+              filters={[
+                {
+                  label: "Browse by Category",
+                  options: categories,
+                  activeValue: selectedCategory,
+                  onChange: setSelectedCategory
+                },
+                {
+                  label: "Filter by Price Range",
+                  options: priceRanges,
+                  activeValue: selectedPriceRange,
+                  onChange: setSelectedPriceRange
+                }
+              ]}
+              additionalActions={
+                <div className="flex gap-xs">
+                  <Button variant="outline" className="gap-xs">
+                    <MapPin className="h-4 w-4" />
+                    Near Me
                   </Button>
-                ))}
-              </div>
-            </div>
-
-            {/* Price Range Filters */}
-            <div className="space-y-base">
-              <h3 className="font-rajdhani text-lg font-bold text-card-foreground">
-                Filter by Price Range
-              </h3>
-              <div className="flex flex-wrap gap-xs">
-                {priceRanges.map((range) => (
-                  <Button
-                    key={range.value}
-                    variant={selectedPriceRange === range.value ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedPriceRange(range.value)}
-                    className={selectedPriceRange === range.value ? 
-                      "bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange" : 
-                      "border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-dark-chocolate"
-                    }
-                  >
-                    {range.label}
-                    <Badge variant="secondary" className="ml-xs">
-                      {range.count}
-                    </Badge>
+                  <Button variant="outline" className="gap-xs">
+                    <Filter className="h-4 w-4" />
+                    Advanced
                   </Button>
-                ))}
-              </div>
-            </div>
+                </div>
+              }
+            />
           </div>
         </div>
       </section>
@@ -725,27 +697,19 @@ export default function MarketplacePage() {
             </div>
 
             {sortedItems.length === 0 && (
-              <div className="text-center py-6xl">
-                <div className="space-y-base">
-                  <div className="text-6xl">🛒</div>
-                  <h3 className="font-rajdhani text-2xl font-bold text-card-foreground">
-                    No items found
-                  </h3>
-                  <p className="text-muted-foreground max-w-md mx-auto">
-                    Try adjusting your search criteria or browse all categories to discover great deals from local dealers.
-                  </p>
-                  <Button 
-                    onClick={() => {
-                      setSelectedCategory("all")
-                      setSelectedPriceRange("all")
-                      setSearchQuery("")
-                    }}
-                    className="bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange"
-                  >
-                    Show All Items
-                  </Button>
-                </div>
-              </div>
+              <EmptyState
+                icon={ShoppingCart}
+                title="No items found"
+                description="Try adjusting your search criteria or browse all categories to discover great deals from local dealers."
+                actionText="Show All Items"
+                onAction={() => {
+                  setSelectedCategory("all")
+                  setSelectedPriceRange("all")
+                  setSearchQuery("")
+                }}
+                actionColor="bg-rusty-orange text-dark-chocolate hover:bg-rusty-orange"
+                className="py-6xl"
+              />
             )}
           </div>
         </div>
