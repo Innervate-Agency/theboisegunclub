@@ -9,14 +9,14 @@ const cardVariants = cva(
     variants: {
       variant: {
         // SEMANTIC SHADOW HIERARCHY: Stripe-inspired depth system for content cards
-        // Default: Present - established baseline for content visibility
-        default: "shadow-present hover:shadow-elevated",
+        // Default: Present - established baseline for content visibility (static cards)
+        default: "shadow-present",
         
-        // Elevated: Enhanced presence for important content
-        elevated: "shadow-elevated hover:shadow-prominent",
+        // Elevated: Enhanced presence for clickable important content
+        elevated: "shadow-elevated hover:shadow-hero cursor-pointer transition-all duration-200 hover:-translate-y-1 active:translate-y-0 active:shadow-prominent",
         
-        // Interactive: Clear clickable affordance with tactical feedback
-        interactive: "shadow-present hover:shadow-elevated cursor-pointer hover:bg-card/95",
+        // Interactive: Clear clickable affordance with dramatic lift effect
+        interactive: "shadow-elevated hover:shadow-hero cursor-pointer hover:bg-card/95 transition-all duration-200 hover:-translate-y-1 active:translate-y-0 active:shadow-prominent",
         
         // Premium: Prominent depth with strategic copper-brass accent
         premium: "shadow-prominent hover:shadow-commanding relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-gradient-to-r after:from-rusty-orange/50 after:to-sandy-ochre/50",
