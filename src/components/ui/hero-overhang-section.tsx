@@ -18,7 +18,7 @@ const heroOverhangVariants = cva(
   {
     variants: {
       variant: {
-        default: "max-w-[1440px]",
+        default: "max-w-[1200px]",
         wide: "max-w-7xl",
         full: "max-w-none"
       }
@@ -110,7 +110,7 @@ export function HeroOverhangSection({
           <div className="h-1 bg-gradient-to-r from-transparent via-sandy-ochre/50 to-transparent" />
           
           {/* Navigation Buttons */}
-          <div className="grid grid-cols-6 h-32">
+          <div className="grid grid-cols-6 h-26">
             {navigationItems.map((item, index) => (
               <Link
                 key={index}
@@ -141,7 +141,7 @@ export function HeroOverhangSection({
                   }}
                 />
                 
-                <div className="relative z-10 flex flex-col items-center justify-center h-full py-4 px-3 transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-[0.98]">
+                <div className="relative z-10 flex flex-col items-center justify-center h-full py-2 px-2 transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-[0.98]">
                   {/* Icon */}
                   <div 
                     className="transition-all duration-300 delay-75 text-muted-foreground/70 group-hover:scale-110 mb-1"

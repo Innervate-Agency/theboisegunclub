@@ -251,10 +251,10 @@ export function SiteNavigation({
                     weight: "bold" 
                   })}
                   <div>
-                    <div className="text-heading-xl font-rajdhani text-card-foreground leading-none uppercase">
+                    <div className="text-heading-lg font-rajdhani text-card-foreground leading-none uppercase">
                       <span className="font-[800]">The Boise</span> <span className="font-[300]">Gun Club</span>
                     </div>
-                    <p className="text-body-base font-rajdhani font-[500] text-muted-foreground leading-none lowercase tracking-wider text-center">
+                    <p className="text-heading-xs font-rajdhani font-[500] text-muted-foreground leading-[0.8] lowercase tracking-wider text-center -mt-1">
                       {currentPageSubtitle}
                     </p>
                   </div>
