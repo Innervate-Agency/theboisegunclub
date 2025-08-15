@@ -101,7 +101,7 @@ export default function HomePage() {
         {/* Hero Section */}
         <section className="relative overflow-visible">
           {/* Hero Background */}
-          <div className="absolute inset-0 bg-rusty-orange" 
+          <div className="absolute inset-0 bg-gradient-home-hero" 
                style={{ 
                  minHeight: '750px',
                  height: 'auto',

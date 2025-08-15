@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Button } from './button'
 import { Badge } from './badge'
@@ -102,22 +103,26 @@ export function JoinMovementCTA({
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-base"
         >
-          <Button 
-            size="xl"
-            className="bg-rusty-orange hover:bg-rusty-orange/90 text-crisp-off-white font-rajdhani font-bold shadow-present hover:shadow-elevated"
-            animationType="arrow"
-          >
-            {primaryActionText}
-            <ArrowRight className="ml-sm h-5 w-5" weight="bold" />
-          </Button>
-          <Button 
-            variant="outline" 
-            size="xl"
-            className="font-rajdhani font-bold border-2"
-            animationType="arrow"
-          >
-            {secondaryActionText}
-          </Button>
+          <Link href="mailto:info@boiseguncollective.com?subject=Join The Community&body=I'm interested in joining The Boise Gun Club community.%0A%0AName:%0ALocation:%0AInterests:%0AHow can I contribute?">
+            <Button 
+              size="xl"
+              className="bg-rusty-orange hover:bg-rusty-orange/90 text-crisp-off-white font-rajdhani font-bold shadow-present hover:shadow-elevated"
+              animationType="arrow"
+            >
+              {primaryActionText}
+              <ArrowRight className="ml-sm h-5 w-5" weight="bold" />
+            </Button>
+          </Link>
+          <Link href="/about">
+            <Button 
+              variant="outline" 
+              size="xl"
+              className="font-rajdhani font-bold border-2"
+              animationType="arrow"
+            >
+              {secondaryActionText}
+            </Button>
+          </Link>
         </motion.div>
 
         {/* Trust Indicators */}

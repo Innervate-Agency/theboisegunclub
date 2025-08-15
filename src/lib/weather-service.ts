@@ -28,17 +28,70 @@ interface ProcessedWeatherData {
   lastUpdated: string
 }
 
+import { promises as fs } from 'fs'
+import path from 'path'
+
 const API_KEY = '664292cdddfd62b0af8ffb50d2dd9c60'
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather'
-const CACHE_DURATION = 30 * 60 * 1000 // 30 minutes in milliseconds
+const CACHE_DURATION = 30 * 60 * 1000 // 30 minutes in milliseconds (weather changes frequently)
+const CACHE_DIR = path.join(process.cwd(), '.cache', 'weather')
 
-// In-memory cache for weather data
+// Persistent file-based cache for weather data
 interface CachedWeatherData {
   data: ProcessedWeatherData
   timestamp: number
+  version: string // For cache invalidation if data structure changes
 }
 
+// In-memory cache for this session (faster than file reads)
 const weatherCache = new Map<string, CachedWeatherData>()
+
+// Ensure cache directory exists
+async function ensureCacheDir(): Promise<void> {
+  try {
+    await fs.mkdir(CACHE_DIR, { recursive: true })
+  } catch (error) {
+    console.warn('Failed to create weather cache directory:', error)
+  }
+}
+
+// Get cache file path for coordinates
+function getCacheFilePath(lat: number, lon: number): string {
+  return path.join(CACHE_DIR, `${lat}_${lon}.json`.replace(/\./g, '_'))
+}
+
+// Load cache from disk
+async function loadCacheFromDisk(lat: number, lon: number): Promise<CachedWeatherData | null> {
+  try {
+    const cacheFilePath = getCacheFilePath(lat, lon)
+    const cacheData = await fs.readFile(cacheFilePath, 'utf-8')
+    const parsed: CachedWeatherData = JSON.parse(cacheData)
+    
+    // Validate cache version and expiry
+    if (parsed.version === '1.0' && isCacheValid(parsed.timestamp)) {
+      return parsed
+    } else {
+      // Cache expired or version mismatch, delete the file
+      await fs.unlink(cacheFilePath).catch(() => {}) // Ignore errors
+      return null
+    }
+  } catch (error) {
+    // File doesn't exist or is corrupted, return null
+    return null
+  }
+}
+
+// Save cache to disk
+async function saveCacheToDisk(lat: number, lon: number, cachedData: CachedWeatherData): Promise<void> {
+  try {
+    await ensureCacheDir()
+    const cacheFilePath = getCacheFilePath(lat, lon)
+    await fs.writeFile(cacheFilePath, JSON.stringify(cachedData, null, 2), 'utf-8')
+    console.log(`🌤️ Weather cached to disk for ${cachedData.data.locationName}`)
+  } catch (error) {
+    console.warn('Failed to save weather cache to disk:', error)
+  }
+}
 
 // Convert wind degrees to cardinal direction
 function degreesToCardinal(degrees: number): string {
@@ -181,11 +234,22 @@ function getFallbackWeatherData(locationName: string): ProcessedWeatherData {
 export async function fetchWeatherForLocation(lat: number, lon: number, locationName: string): Promise<ProcessedWeatherData> {
   const cacheKey = getCacheKey(lat, lon)
   
-  // Check cache first
-  const cached = weatherCache.get(cacheKey)
-  if (cached && isCacheValid(cached.timestamp)) {
-    console.log(`Using cached weather data for ${locationName}`)
-    return cached.data
+  // Check in-memory cache first (fastest)
+  const memoryCache = weatherCache.get(cacheKey)
+  if (memoryCache && isCacheValid(memoryCache.timestamp)) {
+    console.log(`🌡️ Using in-memory cached weather for ${locationName}`)
+    return memoryCache.data
+  }
+  
+  // Check disk cache (persistent across restarts)
+  const diskCache = await loadCacheFromDisk(lat, lon)
+  if (diskCache && isCacheValid(diskCache.timestamp)) {
+    const ageMinutes = Math.round((Date.now() - diskCache.timestamp) / (1000 * 60))
+    console.log(`💾 Using disk-cached weather for ${locationName} (${ageMinutes} min old)`)
+    
+    // Load into memory for faster subsequent access
+    weatherCache.set(cacheKey, diskCache)
+    return diskCache.data
   }
   
   try {
@@ -228,11 +292,17 @@ export async function fetchWeatherForLocation(lat: number, lon: number, location
       })
     }
     
-    // Cache the successful response
-    weatherCache.set(cacheKey, {
+    // Cache the successful response both in memory and on disk
+    const cachedData: CachedWeatherData = {
       data: processedData,
-      timestamp: Date.now()
-    })
+      timestamp: Date.now(),
+      version: '1.0'
+    }
+    
+    weatherCache.set(cacheKey, cachedData)
+    await saveCacheToDisk(lat, lon, cachedData)
+    
+    console.log(`🌤️ Fresh weather fetched and cached for ${locationName} (valid for 30 min)`)
     
     return processedData
     
@@ -244,10 +314,14 @@ export async function fetchWeatherForLocation(lat: number, lon: number, location
     const fallbackData = getFallbackWeatherData(locationName)
     
     // Cache fallback data for shorter duration (5 minutes) to retry sooner
-    weatherCache.set(cacheKey, {
+    const fallbackCache: CachedWeatherData = {
       data: fallbackData,
-      timestamp: Date.now() - CACHE_DURATION + (5 * 60 * 1000) // Expires in 5 minutes
-    })
+      timestamp: Date.now() - CACHE_DURATION + (5 * 60 * 1000), // Expires in 5 minutes
+      version: '1.0'
+    }
+    
+    weatherCache.set(cacheKey, fallbackCache)
+    // Don't save fallback data to disk - let it retry on restart
     
     return fallbackData
   }

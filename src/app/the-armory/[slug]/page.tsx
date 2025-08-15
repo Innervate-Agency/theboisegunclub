@@ -1,8 +1,5 @@
 import { getArmoryItem, getAllArmoryItems } from '@/lib/the-armory';
-import MdxContent from '@/components/molecules/MdxContent';
-import SiteNavigation from '@/components/organisms/SiteNavigation';
-import { SiteFooter } from '@/components/ui/site-footer';
-import PageHero from '@/components/organisms/PageHero';
+import ArticlePageTemplate from '@/components/ui/article-page-template';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
@@ -41,17 +38,27 @@ export default async function ArmoryItemPage({ params }: Props) {
   }
 
   return (
-    <>
-      <SiteNavigation />
-      <PageHero title={item.frontmatter.title} />
-      <main className="bg-peachy-white">
-        <div className="container mx-auto max-w-site py-xl px-md">
-          <article className="prose dark:prose-invert prose-lg">
-            <MdxContent source={item.content} />
-          </article>
-        </div>
-      </main>
-      <SiteFooter />
-    </>
+    <ArticlePageTemplate
+      title={item.frontmatter.title}
+      excerpt={item.frontmatter.description}
+      content={item.content}
+      author={{
+        name: item.frontmatter.author || "Technical Team",
+        title: "Firearms Expert",
+        bio: "Specialized in tactical equipment and firearm reviews"
+      }}
+      publishDate={item.frontmatter.publishDate || item.frontmatter.date}
+      readTime={item.frontmatter.readTime || 8}
+      category={item.frontmatter.category || "Equipment Review"}
+      sectionName="Armory"
+      sectionPath="/the-armory"
+      sectionColor="nav-armory"
+      tags={item.frontmatter.tags || ["Equipment", "Review"]}
+      views={item.frontmatter.views || 1200}
+      likes={item.frontmatter.likes || 65}
+      comments={item.frontmatter.comments || 12}
+      featured={item.frontmatter.featured}
+      image={item.frontmatter.image}
+    />
   );
 }

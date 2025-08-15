@@ -90,7 +90,47 @@ This file provides guidance to Claude Code when working with this repository.
 - **If errors occur**: Run `npm run storybook:reset` to clear cache
 - **Framework**: Ensure `.storybook/main.ts` uses `@storybook/nextjs-vite`
 
+## Navigation Architecture
+
+### Template System (Critical - Use These Patterns)
+- **ArticlePageTemplate**: Unified template for articles, events, guides with breadcrumbs, author info, and section-specific theming
+- **BusinessDetailTemplate**: Comprehensive business profiles with reviews, contact info, and verification badges
+- **MarketplaceProductTemplate**: Product detail pages with specifications, vendor info, and related products
+
+### Dynamic Routing Patterns
+- **Events**: `/events/[slug]` - Article-style event details using ArticlePageTemplate
+- **Directory**: `/directory/[slug]` - Business profiles using BusinessDetailTemplate  
+- **Armory**: `/the-armory/[slug]` - Equipment reviews using ArticlePageTemplate
+- **Guides**: `/guides/[slug]` - Legal/safety guides using ArticlePageTemplate
+- **Marketplace**: `/marketplace/[id]` - Product details using MarketplaceProductTemplate
+
+### Card-to-Detail Navigation
+- **EventCard**: `href` prop → `/events/[slug]` with auto-slug generation
+- **VendorCard**: `href` prop → `/directory/[slug]` with proper click handling
+- **BlogCard**: `sectionPath` prop for multi-section use (Armory, Guides)
+- **ProductCard**: Link navigation → `/marketplace/[id]` for product details
+
+### Breadcrumb Implementation
+- **Consistent Components**: Always use shadcn/ui Breadcrumb, BreadcrumbList, BreadcrumbItem
+- **Template Integration**: All detail templates include proper breadcrumb navigation
+- **Section Theming**: Breadcrumbs use section-specific color classes (nav-events, nav-armory, etc.)
+
+### CTA Functionality Standards
+- **Suggest Article**: `mailto:content@boiseguncollective.com` with structured templates
+- **List Items/Training**: `mailto:marketplace@boiseguncollective.com` for business applications
+- **Contact Support**: `mailto:support@boiseguncollective.com` for user assistance
+- **Join Community**: `mailto:info@boiseguncollective.com` for community onboarding
+
 ## Key Recent Achievements
+
+### Comprehensive Navigation System Implementation (2025-08-15)
+- **Complete Platform Connectivity**: Every card component now links to detailed pages
+- **Template Architecture**: Unified ArticlePageTemplate, BusinessDetailTemplate, MarketplaceProductTemplate system
+- **Dynamic Routing**: [slug]/[id] patterns across all major sections (Events, Directory, Armory, Guides, Marketplace)
+- **Breadcrumb Standardization**: shadcn/ui Breadcrumb components throughout platform
+- **CTA Functionality**: Converted all placeholder buttons to functional mailto engagement
+- **SEO Enhancement**: Individual pages for all content with proper metadata and routing
+- **Type Safety**: Full TypeScript implementation with proper navigation prop interfaces
 
 ### Modern Footer Redesign & LLC Integration (2025-08-14)
 - **Multi-Tier "Fat Footer"**: Complete redesign following 2024-2025 modern patterns with newsletter CTA, 5-column architecture, and comprehensive navigation
@@ -128,10 +168,27 @@ This file provides guidance to Claude Code when working with this repository.
 
 ## Key Reference Files
 
+### Core Platform & Design
 - `src/app/page.tsx` - **Home page with authentic community messaging and 7-pillar platform structure**
 - `src/app/globals.css` - Complete 26-color Boise landscape palette and design tokens
 - `_resources/docs/AI Persona & Writing Guidelines_ _The Idaho Steward_.md` - Community voice and messaging guidelines
 - `_resources/docs/Idaho Shooting and Sporting Venues.md` - Local venue data and community statistics
+
+### Navigation Templates & Routing (New Architecture)
+- `src/components/ui/article-page-template.tsx` - **Unified template for events, guides, armory articles**
+- `src/components/ui/business-detail-template.tsx` - **Business profile template with reviews and verification**
+- `src/components/ui/marketplace-product-template.tsx` - **Product detail template with specifications**
+- `src/app/events/[slug]/page.tsx` - **Dynamic event routing using ArticlePageTemplate**
+- `src/app/directory/[slug]/page.tsx` - **Business profile routing using BusinessDetailTemplate**
+- `src/app/guides/[slug]/page.tsx` - **Guide article routing using ArticlePageTemplate**
+- `src/app/marketplace/[id]/page.tsx` - **Product detail routing using MarketplaceProductTemplate**
+
+### Enhanced Card Components
+- `src/components/ui/EventCard.tsx` - **Event cards with Link navigation and slug generation**
+- `src/components/ui/VendorCard.tsx` - **Business cards with profile linking and click handling**
+- `src/components/ui/blog-article.tsx` - **BlogCard with sectionPath support for Armory/Guides**
+
+### UI System & Animations
 - `src/components/ui/button.tsx` - Enhanced with micro-animation system and animationType props
 - `src/components/ui/micro-animations.tsx` - HoverArrow, PlusMinusToggle, XOToggle, ChevronRotate components
 - `src/components/ui/site-navigation.tsx` - Magic Line navigation with Framer Motion spring physics
@@ -158,3 +215,12 @@ This file provides guidance to Claude Code when working with this repository.
 - **Typography**: Rajdhani font weights 300-800 for display, perfect kerning and letter-spacing
 - **Home Page**: Mission-driven content structure with trust indicators (8 locations, 150+ businesses, 5K+ members)
 - **Development**: Kill dev server before restarting, run in background
+
+### Navigation System Memory (Critical Implementation)
+- **Template Architecture**: ALWAYS use ArticlePageTemplate for articles/events/guides, BusinessDetailTemplate for business profiles, MarketplaceProductTemplate for products
+- **Card Navigation**: ALL card components must have Link navigation to detail pages - EventCard→/events/[slug], VendorCard→/directory/[slug], BlogCard with sectionPath support
+- **Breadcrumb Standards**: Use shadcn/ui Breadcrumb components throughout, section-specific theming (nav-events, nav-armory colors)
+- **Dynamic Routing**: [slug]/[id] patterns across all major sections with proper generateStaticParams and metadata
+- **CTA Functionality**: NO placeholder buttons - all CTAs use structured mailto links (content@, marketplace@, support@, info@boiseguncollective.com)
+- **Link Implementation**: Next.js Link components with proper event handling (preventDefault/stopPropagation for nested interactions)
+- **Slug Generation**: Automatic URL-friendly slug creation with fallback patterns for all content types

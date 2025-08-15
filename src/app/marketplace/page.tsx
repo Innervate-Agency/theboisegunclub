@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -275,7 +276,8 @@ function ProductCard({ item }: { item: typeof marketplaceListings[0] }) {
   const savingsPercent = Math.round((savings / item.originalPrice) * 100)
 
   return (
-    <Card className={cn("group hover:shadow-elevated transition-all duration-300", item.featured && "ring-2 ring-rusty-orange/30 bg-rusty-orange/5")}>
+    <Link href={`/marketplace/${item.id}`} className="block">
+      <Card className={cn("group hover:shadow-elevated transition-all duration-300", item.featured && "ring-2 ring-rusty-orange/30 bg-rusty-orange/5")}>
       <CardHeader className="pb-base">
         <div className="flex items-start justify-between gap-base mb-xs">
           <div className="flex gap-xs">
@@ -383,16 +385,31 @@ function ProductCard({ item }: { item: typeof marketplaceListings[0] }) {
           <Button 
             className="flex-1 bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
             size="sm"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              window.open(`tel:${item.vendorPhone}`)
+            }}
           >
             <Phone className="h-4 w-4 mr-xs" />
             Contact Dealer
           </Button>
-          <Button variant="outline" size="sm" className="flex-shrink-0">
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="flex-shrink-0"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              // Could open vendor website or contact form
+            }}
+          >
             <ExternalLink className="h-4 w-4" />
           </Button>
         </div>
       </CardContent>
-    </Card>
+      </Card>
+    </Link>
   )
 }
 
@@ -441,7 +458,7 @@ export default function MarketplacePage() {
             <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
               {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
               <div className="flex items-center gap-base">
-                <div className="bg-card/10 p-base rounded-sm border border-border">
+                <div className="bg-card/10 p-base rounded-xs border border-border">
                   <ShoppingCart className="h-8 w-8 text-white" />
                 </div>
                 <div className="space-y-base">
@@ -466,15 +483,15 @@ export default function MarketplacePage() {
                   
                   {/* Badges */}
                   <div className="flex flex-wrap gap-xs">
-                    <Badge className="bg-card/10 text-white border-border">
+                    <Badge className="bg-card/10 text-white border-border rounded-xs">
                       <ShoppingCart className="h-4 w-4 mr-xs" />
                       Local Dealers
                     </Badge>
-                    <Badge className="bg-card/10 text-white border-border">
+                    <Badge className="bg-card/10 text-white border-border rounded-xs">
                       <Package className="h-4 w-4 mr-xs" />
                       Live Inventory
                     </Badge>
-                    <Badge className="bg-card/10 text-white border-border">
+                    <Badge className="bg-card/10 text-white border-border rounded-xs">
                       <Shield className="h-4 w-4 mr-xs" />
                       FFL Compliant
                     </Badge>
@@ -493,26 +510,30 @@ export default function MarketplacePage() {
               </div>
               
               {/* Chunky Description */}
-              <p className="text-body-lg text-destructive-foreground/70 max-w-2xl leading-relaxed">
-                Browse real-time inventory from licensed dealers across the Treasure Valley. Find firearms, ammo, optics, and accessories with FFL-compliant transactions and proper background checks.
+              <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
+                Browse real-time inventory from licensed dealers across the Treasure Valley. Find firearms, ammo, optics, and accessories with FFL-compliant transactions.
               </p>
               
               {/* Buttons */}
               <div className="flex gap-base">
-                <Button 
-                  size="lg" 
-                  className="bg-nav-marketplace text-gruvbox-bg-dark hover:bg-nav-marketplace/90 font-rajdhani font-bold"
-                >
-                  <Store className="h-4 w-4 mr-xs" />
-                  List Your Items
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="border-destructive-foreground/30 text-destructive-foreground hover:bg-nav-marketplace hover:text-gruvbox-bg-dark"
-                >
-                  Dealer Information
-                </Button>
+                <Link href="mailto:marketplace@boiseguncollective.com?subject=Dealer Application&body=I'm interested in listing items on The Boise Gun Club Marketplace.%0A%0ABusiness Name:%0AFFL License Number:%0AContact Information:%0ATypes of items to list:%0A%0APlease provide information about joining as a dealer partner.">
+                  <Button 
+                    size="lg" 
+                    className="bg-nav-marketplace text-gruvbox-bg-dark hover:bg-nav-marketplace/90 font-rajdhani font-bold"
+                  >
+                    <Store className="h-4 w-4 mr-xs" />
+                    List Your Items
+                  </Button>
+                </Link>
+                <Link href="#dealer-info">
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="border-border text-white hover:bg-white hover:text-nav-marketplace"
+                  >
+                    Dealer Information
+                  </Button>
+                </Link>
               </div>
             </div>
             
@@ -530,7 +551,7 @@ export default function MarketplacePage() {
                   {/* Dealer Branding Header */}
                   <CardHeader className="pb-sm space-y-xs">
                     <div className="flex items-start gap-sm">
-                      <div className="bg-nav-marketplace/10 p-sm rounded-sm border border-nav-marketplace/20">
+                      <div className="bg-nav-marketplace/10 p-sm rounded-xs border border-nav-marketplace/20">
                         <Building2 className="h-8 w-8 text-nav-marketplace" />
                       </div>
                       <div className="flex-1 space-y-xs">
@@ -716,7 +737,7 @@ export default function MarketplacePage() {
       </section>
 
       {/* Legal Notice */}
-      <section className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90">
+      <section id="dealer-info" className="py-6xl bg-gradient-to-br from-dark-chocolate/95 to-warm-stone/90">
         <div className="container mx-auto max-w-site px-md text-center">
           <div className="space-y-lg">
             <Badge className="bg-scale-blue/20 text-scale-blue border-scale-blue/30">
@@ -749,13 +770,15 @@ export default function MarketplacePage() {
             <p className="text-xs text-crisp-off-white/60 max-w-2xl mx-auto">
               The Boise Gun Club Marketplace facilitates connections between buyers and licensed dealers. All transactions must comply with applicable federal, state, and local firearms laws. We do not process payments or handle transfers directly.
             </p>
-            <Button 
-              size="xl" 
-              className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
-            >
-              Contact Support
-              <ArrowRight className="h-5 w-5 ml-xs" />
-            </Button>
+            <Link href="mailto:support@boiseguncollective.com?subject=Marketplace Support&body=I need assistance with the marketplace platform.%0A%0AIssue:%0ADetails:%0AContact Information:">
+              <Button 
+                size="xl" 
+                className="bg-gradient-to-r from-rusty-orange to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-rusty-orange font-rajdhani font-bold"
+              >
+                Contact Support
+                <ArrowRight className="h-5 w-5 ml-xs" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

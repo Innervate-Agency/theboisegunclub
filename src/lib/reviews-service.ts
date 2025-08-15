@@ -50,17 +50,70 @@ interface ProcessedReviewData {
   lastUpdated: string
 }
 
+import { promises as fs } from 'fs'
+import path from 'path'
+
 const SERPAPI_KEY = process.env.SERPAPI_KEY
 const BASE_URL = 'https://serpapi.com/search.json'
-const CACHE_DURATION = 24 * 60 * 60 * 1000 // 24 hours in milliseconds
+const CACHE_DURATION = 7 * 24 * 60 * 60 * 1000 // 7 days in milliseconds (weekly refresh)
+const CACHE_DIR = path.join(process.cwd(), '.cache', 'reviews')
 
-// In-memory cache for reviews data
+// Persistent file-based cache for reviews data
 interface CachedReviewData {
   data: ProcessedReviewData
   timestamp: number
+  version: string // For cache invalidation if data structure changes
 }
 
+// In-memory cache for this session (faster than file reads)
 const reviewsCache = new Map<string, CachedReviewData>()
+
+// Ensure cache directory exists
+async function ensureCacheDir(): Promise<void> {
+  try {
+    await fs.mkdir(CACHE_DIR, { recursive: true })
+  } catch (error) {
+    console.warn('Failed to create cache directory:', error)
+  }
+}
+
+// Get cache file path for a place ID
+function getCacheFilePath(placeId: string): string {
+  return path.join(CACHE_DIR, `${placeId.replace(/[^a-zA-Z0-9]/g, '_')}.json`)
+}
+
+// Load cache from disk
+async function loadCacheFromDisk(placeId: string): Promise<CachedReviewData | null> {
+  try {
+    const cacheFilePath = getCacheFilePath(placeId)
+    const cacheData = await fs.readFile(cacheFilePath, 'utf-8')
+    const parsed: CachedReviewData = JSON.parse(cacheData)
+    
+    // Validate cache version and expiry
+    if (parsed.version === '1.0' && isCacheValid(parsed.timestamp)) {
+      return parsed
+    } else {
+      // Cache expired or version mismatch, delete the file
+      await fs.unlink(cacheFilePath).catch(() => {}) // Ignore errors
+      return null
+    }
+  } catch (error) {
+    // File doesn't exist or is corrupted, return null
+    return null
+  }
+}
+
+// Save cache to disk
+async function saveCacheToDisk(placeId: string, cachedData: CachedReviewData): Promise<void> {
+  try {
+    await ensureCacheDir()
+    const cacheFilePath = getCacheFilePath(placeId)
+    await fs.writeFile(cacheFilePath, JSON.stringify(cachedData, null, 2), 'utf-8')
+    console.log(`✅ Reviews cached to disk for ${cachedData.data.businessName}`)
+  } catch (error) {
+    console.warn('Failed to save cache to disk:', error)
+  }
+}
 
 // Generate cache key for place ID
 function getCacheKey(placeId: string): string {
@@ -122,11 +175,21 @@ function getFallbackReviewData(businessName: string, placeId: string): Processed
 export async function fetchReviewsForBusiness(placeId: string, businessName: string): Promise<ProcessedReviewData> {
   const cacheKey = getCacheKey(placeId)
   
-  // Check cache first
-  const cached = reviewsCache.get(cacheKey)
-  if (cached && isCacheValid(cached.timestamp)) {
-    console.log(`Using cached reviews for ${businessName}`)
-    return cached.data
+  // Check in-memory cache first (fastest)
+  const memoryCache = reviewsCache.get(cacheKey)
+  if (memoryCache && isCacheValid(memoryCache.timestamp)) {
+    console.log(`📋 Using in-memory cached reviews for ${businessName}`)
+    return memoryCache.data
+  }
+  
+  // Check disk cache (persistent across restarts)
+  const diskCache = await loadCacheFromDisk(placeId)
+  if (diskCache && isCacheValid(diskCache.timestamp)) {
+    console.log(`💾 Using disk-cached reviews for ${businessName} (${Math.round((Date.now() - diskCache.timestamp) / (1000 * 60 * 60 * 24))} days old)`)
+    
+    // Load into memory for faster subsequent access
+    reviewsCache.set(cacheKey, diskCache)
+    return diskCache.data
   }
   
   // Return demo data if no API key configured
@@ -178,11 +241,17 @@ export async function fetchReviewsForBusiness(placeId: string, businessName: str
       })
     }
     
-    // Cache the successful response
-    reviewsCache.set(cacheKey, {
+    // Cache the successful response both in memory and on disk
+    const cachedData: CachedReviewData = {
       data: processedData,
-      timestamp: Date.now()
-    })
+      timestamp: Date.now(),
+      version: '1.0'
+    }
+    
+    reviewsCache.set(cacheKey, cachedData)
+    await saveCacheToDisk(placeId, cachedData)
+    
+    console.log(`🔄 Fresh reviews fetched and cached for ${businessName} (valid for 7 days)`)
     
     return processedData
     
@@ -194,10 +263,14 @@ export async function fetchReviewsForBusiness(placeId: string, businessName: str
     const fallbackData = getFallbackReviewData(businessName, placeId)
     
     // Cache fallback data for shorter duration (1 hour) to retry sooner
-    reviewsCache.set(cacheKey, {
+    const fallbackCache: CachedReviewData = {
       data: fallbackData,
-      timestamp: Date.now() - CACHE_DURATION + (60 * 60 * 1000) // Expires in 1 hour
-    })
+      timestamp: Date.now() - CACHE_DURATION + (60 * 60 * 1000), // Expires in 1 hour
+      version: '1.0'
+    }
+    
+    reviewsCache.set(cacheKey, fallbackCache)
+    // Don't save fallback data to disk - let it retry on restart
     
     return fallbackData
   }

@@ -1,12 +1,13 @@
 'use client'
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 import { Badge } from './badge';
 import { Button } from './button';
 import Image from 'next/image';
-import { MapPin, Phone, Clock, Star, Globe, TrendUpIcon as TrendingUp, Shield, ChatsCircle} from '@phosphor-icons/react';
+import { MapPin, Phone, Clock, Star, Globe, Shield, ChatsCircle} from '@phosphor-icons/react';
 import { Avatar, AvatarImage, AvatarFallback } from './avatar';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './tooltip';
 import { ReviewsDisplay } from './reviews-display';
@@ -69,7 +70,10 @@ export interface VendorCardProps
   tier: 'free' | 'copper' | 'silver' | 'gold';
   specialties?: string[] | undefined;
   isSponsored?: boolean | undefined;
-  monthlyLeads?: number | undefined;
+  
+  // Navigation
+  slug?: string | undefined;
+  href?: string | undefined;
 }
 
 // Map business types to badge variants
@@ -99,9 +103,10 @@ export function VendorCard({
   tier,
   specialties = [],
   isSponsored,
-  monthlyLeads,
   size,
   className,
+  slug,
+  href,
   ...props
 }: VendorCardProps) {
   const [imgError, setImgError] = useState(false)
@@ -134,16 +139,27 @@ export function VendorCard({
     }
   }
 
+  // Generate slug from business name if not provided
+  const generateSlug = (name: string): string => {
+    return name.toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .trim()
+  }
+  
+  // Use provided href or generate from slug
+  const businessHref = href || `/directory/${slug || generateSlug(businessName)}`
+
   // Strategic tier-based features
   const showSponsored = tier === 'gold' && isSponsored;
-  const showLeads = tier === 'gold' && monthlyLeads;
   const showEnhancedFeatures = tier === 'silver' || tier === 'gold';
 
   return (
-    <div 
-      className={cn(vendorCardVariants({ tier, size }), className)}
-      {...props}
-    >
+    <Link href={businessHref} className="block">
+      <div 
+        className={cn(vendorCardVariants({ tier, size }), className)}
+        {...props}
+      >
       {/* Header with business info */}
       <div className="mb-md">
         <div className="flex items-center gap-sm mb-xs">
@@ -295,15 +311,6 @@ export function VendorCard({
         </div>
       )}
 
-      {/* Enhanced features for Silver/Gold tiers */}
-      {showLeads && (
-        <div className="flex items-center gap-xs mb-md p-xs bg-rifling-green/10 rounded-xs">
-          <TrendingUp className="w-icon-sm h-icon-sm text-rifling-green" weight="bold" />
-          <span className="text-body-sm text-rifling-green font-medium">
-            {monthlyLeads} leads this month
-          </span>
-        </div>
-      )}
 
       {/* Action buttons - flat inside card container */}
       <div className="flex gap-xs pt-sm">
@@ -320,20 +327,19 @@ export function VendorCard({
             size="sm" 
             variant="ghost"
             className="flex-shrink-0 text-muted-foreground hover:text-card-foreground"
-            asChild
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              window.open(website, '_blank', 'noopener,noreferrer')
+            }}
+            title={`Visit ${businessName}'s website (opens in new tab)`}
           >
-            <a 
-              href={website} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              title={`Visit ${businessName}'s website (opens in new tab)`}
-            >
-              <Globe className="w-icon-sm h-icon-sm" weight="bold" />
-            </a>
+            <Globe className="w-icon-sm h-icon-sm" weight="bold" />
           </Button>
         )}
       </div>
-    </div>
+      </div>
+    </Link>
   );
 }
 

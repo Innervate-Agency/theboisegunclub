@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { AuthButton } from '@/components/auth/auth-button'
 import { useAuth } from '@/components/auth/auth-context'
@@ -17,11 +17,7 @@ import {
   Shield,
   MapTrifold,
   Storefront,
-  Users,
-  Crosshair,
-  Sword,
-  ShoppingBag,
-  Package
+  Users
 } from '@phosphor-icons/react'
 
 const siteNavigationVariants = cva(
@@ -206,19 +202,6 @@ export function SiteNavigation({
       default: return 'hover:text-nav-home'
     }
   }
-  
-  const getColorBarClass = (color: string) => {
-    switch(color) {
-      case 'nav-home': return 'bg-nav-home'
-      case 'nav-events': return 'bg-nav-events'
-      case 'nav-directory': return 'bg-nav-directory'
-      case 'nav-armory': return 'bg-nav-armory'
-      case 'nav-intel': return 'bg-nav-intel'
-      case 'nav-marketplace': return 'bg-nav-marketplace'
-      case 'nav-forums': return 'bg-nav-forums'
-      default: return 'bg-nav-home'
-    }
-  }
 
   const getActiveTextClass = (color: string) => {
     switch(color) {
@@ -235,7 +218,7 @@ export function SiteNavigation({
 
   return (
     <nav
-      className={cn(siteNavigationVariants({ variant, layout, sticky }), className)}
+      className={cn(siteNavigationVariants({ variant, layout, sticky }), "site-navigation", className)}
       {...props}
     >
       <div className="w-full max-w-site mx-auto px-md">

@@ -1,8 +1,5 @@
 import { getGuideData, getAllGuides } from '@/lib/guides';
-import { SiteNavigation } from '@/components/ui/site-navigation';
-import { SiteFooter } from '@/components/ui/site-footer';
-import { BreadcrumbHero } from '@/components/ui/breadcrumb-hero';
-import MdxContent from '@/components/molecules/MdxContent';
+import ArticlePageTemplate from '@/components/ui/article-page-template';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
@@ -40,24 +37,26 @@ export default async function GuidePage({ params }: Props) {
   }
 
   return (
-    <>
-      <SiteNavigation />
-      <BreadcrumbHero
-        title={guide.frontmatter.title}
-        breadcrumbs={[
-          { label: 'Home', href: '/' },
-          { label: 'Guides', href: '/guides' },
-          { label: guide.frontmatter.title, href: `/guides/${guide.slug}` },
-        ]}
-      />
-      <main className="py-xl">
-        <div className="max-w-site mx-auto px-md">
-          <article className="prose dark:prose-invert prose-lg">
-            <MdxContent source={guide.content} />
-          </article>
-        </div>
-      </main>
-      <SiteFooter />
-    </>
+    <ArticlePageTemplate
+      title={guide.frontmatter.title}
+      excerpt={guide.frontmatter.description}
+      content={guide.content}
+      author={{
+        name: guide.frontmatter.author,
+        title: "Legal Expert",
+        bio: "Specialized in Idaho firearms law and constitutional rights"
+      }}
+      publishDate={guide.frontmatter.publishDate || guide.frontmatter.date}
+      readTime={12}
+      category="Legal Guide"
+      sectionName="Guides"
+      sectionPath="/guides"
+      sectionColor="nav-guides"
+      tags={guide.frontmatter.tags || ["Idaho Law", "Legal Guide"]}
+      views={2840}
+      likes={127}
+      comments={23}
+      featured={guide.frontmatter.featured}
+    />
   );
 }

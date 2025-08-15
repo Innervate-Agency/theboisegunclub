@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Card } from "./card"
@@ -38,6 +39,8 @@ export interface EventCardProps
   registrationUrl?: string
   price?: string
   featured?: boolean
+  slug?: string
+  href?: string
 }
 
 export function EventCard({
@@ -53,9 +56,27 @@ export function EventCard({
   registrationUrl,
   price,
   featured = false,
+  slug,
+  href,
   ...props
 }: EventCardProps) {
   const spotsLeft = capacity && registeredCount ? capacity - registeredCount : null
+  
+  // Generate slug from title if not provided
+  const generateSlug = (title: string, date: string): string => {
+    const dateSlug = new Date(date).toLocaleDateString('en-US', { 
+      month: 'long', 
+      year: 'numeric' 
+    }).toLowerCase().replace(' ', '-')
+    
+    return title.toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .trim() + '-' + dateSlug.split('-')[0]
+  }
+  
+  // Use provided href or generate from slug
+  const eventHref = href || `/events/${slug || generateSlug(title, date)}`
 
   const getEventBadgeVariant = (type: string): VariantProps<typeof Badge>["variant"] => {
     switch (type) {
@@ -72,11 +93,12 @@ export function EventCard({
   const badgeVariant = getEventBadgeVariant(eventType)
 
   return (
-    <Card
-      variant="interactive"
-      className={cn(eventCardVariants({ featured }), className)}
-      {...props}
-    >
+    <Link href={eventHref} className="block">
+      <Card
+        variant="interactive"
+        className={cn(eventCardVariants({ featured }), className)}
+        {...props}
+      >
       {featured && (
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/50" />
       )}
@@ -158,13 +180,18 @@ export function EventCard({
               size="sm"
               className="w-full" 
               animationType="arrow"
-              onClick={() => window.open(registrationUrl, '_blank')}
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                window.open(registrationUrl, '_blank')
+              }}
             >
               Register Now
             </Button>
           </div>
         )}
       </div>
-    </Card>
+      </Card>
+    </Link>
   )
 }

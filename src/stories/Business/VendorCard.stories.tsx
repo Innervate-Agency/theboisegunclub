@@ -111,8 +111,7 @@ export const FreeTier: Story = {
     ...sampleBusinesses.gunShop,
     tier: 'free',
     isVerified: false,
-    specialties: [], // No specialties shown on free tier
-    monthlyLeads: undefined
+    specialties: [] // No specialties shown on free tier
   }
 }
 
@@ -120,8 +119,7 @@ export const CopperTier: Story = {
   args: {
     ...sampleBusinesses.range,
     tier: 'copper', 
-    isVerified: true,
-    monthlyLeads: undefined
+    isVerified: true
   }
 }
 
@@ -139,7 +137,6 @@ export const GoldTier: Story = {
     tier: 'gold',
     isVerified: true,
     isSponsored: true,
-    monthlyLeads: 42,
     specialties: ["Premium Builds", "NFA Specialist", "Law Enforcement", "Training"]
   }
 }
@@ -184,8 +181,6 @@ export const AllTiers: Story = {
           tier="gold"
           isVerified={true}
           isSponsored={true}
-          
-          monthlyLeads={42}
           specialties={["Premium Builds", "NFA Specialist", "Law Enforcement", "Training"]}
         />
       </div>
@@ -232,7 +227,6 @@ export const TrainingAcademy: Story = {
     reviewCount: 203,
     isVerified: true,
     isSponsored: true,
-    monthlyLeads: 67,
     specialties: ["CCW Classes", "Advanced Tactical", "NRA Certified", "Corporate Training"]
   }
 }
@@ -242,14 +236,14 @@ export const ResponsiveGrid: Story = {
     <div className="space-y-lg">
       {/* Mobile: Single column */}
       <div className="md:hidden space-y-base">
-        <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true}  monthlyLeads={42} />
+        <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true} />
         <VendorCard {...sampleBusinesses.range} tier="silver" isVerified={true} />
         <VendorCard {...sampleBusinesses.gunsmith} tier="copper" isVerified={true} />
       </div>
       
       {/* Tablet: 2 columns */}
       <div className="hidden md:grid lg:hidden grid-cols-2 gap-lg">
-        <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true}  monthlyLeads={42} />
+        <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true} />
         <VendorCard {...sampleBusinesses.range} tier="silver" isVerified={true} />
         <VendorCard {...sampleBusinesses.gunsmith} tier="copper" isVerified={true} />
         <VendorCard {...sampleBusinesses.gunShop} tier="free" isVerified={false} specialties={[]} />
@@ -257,7 +251,7 @@ export const ResponsiveGrid: Story = {
       
       {/* Desktop: 3 columns */} 
       <div className="hidden lg:grid grid-cols-3 gap-lg">
-        <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true}  monthlyLeads={42} />
+        <VendorCard {...sampleBusinesses.gunShop} tier="gold" isSponsored={true} />
         <VendorCard {...sampleBusinesses.range} tier="silver" isVerified={true}  />
         <VendorCard {...sampleBusinesses.gunsmith} tier="copper" isVerified={true} />
         <VendorCard {...sampleBusinesses.gunShop} tier="free" isVerified={false} specialties={[]} />
@@ -363,8 +357,6 @@ export const StrategicTierProgression: Story = {
             tier="gold"
             isVerified={true}
             isSponsored={true}
-            
-            monthlyLeads={42}
             specialties={["Custom Rifles", "Competition Arms", "Collector Items", "VIP Service"]}
           />
         </div>

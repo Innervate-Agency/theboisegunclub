@@ -136,7 +136,7 @@ export default function TrainingPage() {
       />
 
       {/* Training Features */}
-      <section className="px-(--spacing-md) py-(--spacing-xl) bg-gradient-hero-warm">
+      <section className="px-(--spacing-md) py-(--spacing-xl) bg-gradient-training-hero">
         <div className="max-w-site mx-auto">
           <div className="text-center mb-(--spacing-xl)">
             <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">

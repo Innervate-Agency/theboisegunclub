@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from './card'
 import { HiOutlineOfficeBuilding as Building2, HiOutlineLocationMarker as Target, HiOutlineUserGroup as Users, HiOutlineShieldCheck as Shield } from 'react-icons/hi'
+import { useDirectoryStats } from '@/hooks/useRealStats'
 
 interface StatItem {
   icon: React.ComponentType<{ className?: string; weight?: string }>
@@ -20,39 +21,17 @@ export function DirectoryStatsGrid({
   stats,
   className 
 }: DirectoryStatsGridProps) {
-  // Default stats if none provided
-  const defaultStats = [
-    {
-      icon: Building2,
-      title: "Gun Stores",
-      value: "45+",
-      subtitle: "Licensed Dealers",
-      color: "text-sagebrush-green"
-    },
-    {
-      icon: Target,
-      title: "Ranges", 
-      value: "28+",
-      subtitle: "Shooting Facilities",
-      color: "text-sagebrush-green"
-    },
-    {
-      icon: Shield,
-      title: "Trainers",
-      value: "32+", 
-      subtitle: "Certified Instructors",
-      color: "text-sagebrush-green"
-    },
-    {
-      icon: Users,
-      title: "Services",
-      value: "12+",
-      subtitle: "Specialized Services", 
-      color: "text-sagebrush-green"
-    }
-  ]
-
-  const statsToRender = stats || defaultStats
+  // Use real directory stats if none provided
+  const realDirectoryStats = useDirectoryStats()
+  
+  // Default icons that pair with real stats
+  const defaultIcons = [Building2, Target, Shield, Users]
+  
+  // Combine real stats with icons
+  const statsToRender = stats || realDirectoryStats.map((stat, index) => ({
+    icon: defaultIcons[index],
+    ...stat
+  }))
 
   return (
     <div className={`grid grid-cols-2 gap-base ${className}`}>

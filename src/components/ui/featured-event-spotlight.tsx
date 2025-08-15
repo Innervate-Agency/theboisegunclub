@@ -55,6 +55,7 @@ export function FeaturedEventSpotlight({
   }
 
   const getEventTypeBadgeVariant = (eventType: string) => {
+    if (!eventType) return 'default'
     if (eventType.includes('Competition')) return 'rusty-orange'
     if (eventType.includes('Training')) return 'slate-blue'
     if (eventType.includes('Social')) return 'sagebrush-green'

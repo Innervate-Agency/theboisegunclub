@@ -6,8 +6,6 @@ import { Button } from './button'
 import { Input } from './input'
 import { VendorCard } from './VendorCard'
 import { Card, CardContent, CardHeader, CardTitle } from './card'
-import { DirectorySidebar } from './directory-sidebar'
-import { SidebarProvider, SidebarTrigger, SidebarInset } from './sidebar'
 import { 
   DropdownMenu, 
   DropdownMenuContent, 
@@ -49,6 +47,12 @@ import {
   CaretDown as ChevronDown
 } from '@phosphor-icons/react'
 
+// Enhanced CTA Components from homepage
+import { TrustIndicators } from './trust-indicators'
+import { DirectoryStatsGrid } from './directory-stats-grid'
+import { PlatformValueCard, platformValueCards } from './platform-value-card'
+import { JoinMovementCTA } from './join-movement-cta'
+
 // Treasure Valley firearms business directory with tier-based listings
 const directoryListings = [
   // Gold Tier - Premium Partners
@@ -64,9 +68,8 @@ const directoryListings = [
     specialties: ["100-Yard Indoor Range", "Tactical Range", "Gunsmithing", "Retail Pro Shop", "Training Academy"],
     isVerified: true,
     isSponsored: true,
-    monthlyLeads: 312,
     imageUrl: "/images/vendors/independence-indoor.jpg",
-    googlePlaceId: "ChIJqbS4k1J4o1QRV7q0K7N7zJ8" // Demo place ID for testing
+    slug: "independence-indoor-shooting"
   },
   {
     businessName: "Precision Rifle Works",
@@ -80,9 +83,23 @@ const directoryListings = [
     specialties: ["Precision Rifles", "Custom Bolt Actions", "Competition Builds", "Load Development", "Cerakote"],
     isVerified: true,
     isSponsored: true,
-    monthlyLeads: 156,
     imageUrl: "/images/vendors/precision-rifle.jpg",
-    googlePlaceId: "ChIJaXcKk2L4p1QRX9m1M8Q6wK2" // Demo place ID for testing
+    slug: "precision-rifle-works"
+  },
+  {
+    businessName: "Nampa Rod & Gun Club",
+    businessType: "Private Shooting Club",
+    description: "Idaho's premier private shooting club with 100+ year history serving the Treasure Valley firearms community. Multiple ranges, competitions, and training programs.",
+    address: "7990 Bennet Road, Nampa, ID 83687",
+    phone: "(208) 466-3647",
+    website: "https://nampagunclub.org",
+    hours: "Wednesday-Sunday: 9AM-6PM, Monday-Tuesday: Closed",
+    tier: "gold" as const,
+    specialties: ["USPSA Competition", "Precision Rifle Training", "Trap & Skeet Leagues", "Youth Development", "Hunter Safety Education"],
+    isVerified: true,
+    isSponsored: true,
+    imageUrl: "/images/vendors/nampa-gun-club.jpg",
+    slug: "nampa-rod-gun-club"
   },
 
   // Silver Tier - Enhanced Listings
@@ -110,7 +127,6 @@ const directoryListings = [
     tier: "silver" as const,
     specialties: ["Tactical Training", "Defensive Pistol", "Carbine Training", "Tactical Gear", "Night Vision"],
     isVerified: true,
-    monthlyLeads: 87,
     imageUrl: "/images/vendors/tv-tactical.jpg"
   },
 
@@ -196,7 +212,7 @@ export function DirectoryPageComponent() {
           const tierOrder = { 'gold': 0, 'silver': 1, 'copper': 2, 'free': 3 }
           return tierOrder[a.tier] - tierOrder[b.tier]
         case 'newest':
-          // Mock newest sort - in reality this would be based on dateAdded
+          // Placeholder sorting by name reverse order - would use dateAdded field when available
           return b.businessName.localeCompare(a.businessName)
         default:
           return 0
@@ -240,74 +256,77 @@ export function DirectoryPageComponent() {
   const getGridClassName = () => {
     switch (viewMode) {
       case 'grid':
-        return "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-lg"
+        return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-lg"
       case 'card':
-        return "grid grid-cols-1 lg:grid-cols-2 gap-lg"
+        return "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-lg"
       case 'list':
         return "grid gap-sm"
       default:
-        return "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-lg"
+        return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-lg"
     }
   }
 
   return (
-    <SidebarProvider>
-      <div className="flex min-h-screen w-full">
-        <DirectorySidebar
-          selectedType={selectedType}
-          selectedTier={selectedTier}
-          onTypeChange={setSelectedType}
-          onTierChange={setSelectedTier}
-          businessTypeFilters={businessTypeFilters}
-          tierFilters={tierFilters}
-          totalBusinesses={totalBusinesses}
-        />
-        
-        <SidebarInset className="flex-1">
+    <div className="min-h-screen bg-background">
+      <div className="w-full">
           {/* Hero Section */}
-          <section className="relative overflow-hidden bg-gradient-directory-hero px-md py-xl">
+          <section className="relative overflow-hidden bg-gradient-directory-hero px-md py-lg">
             <div className="container mx-auto max-w-site relative z-10">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
                 {/* Content - Left side */}
                 <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
-                  <div className="space-y-base">
-                    <div className="flex items-center gap-base">
-                      <SidebarTrigger />
-                      <Badge variant="nav-directory" className="font-rajdhani">
-                        <Building2 weight="bold" className="h-4 w-4 mr-xs" />
-                        Business Directory
-                      </Badge>
+                  <div className="flex items-center gap-base">
+                    <div className="bg-card/10 p-base rounded-xs border border-border">
+                      <Building2 weight="bold" className="h-8 w-8 text-white" />
                     </div>
-                    <h1 className="font-rajdhani text-heading-3xl lg:text-heading-4xl font-bold text-foreground leading-none">
-                      Find Local Firearms
-                      <br />
-                      <span className="text-nav-directory">Businesses</span>
-                    </h1>
-                    <p className="text-body-lg text-muted-foreground leading-relaxed">
-                      Connect with Idaho's premier firearms community. From FFLs to ranges, training to gunsmithing — find trusted professionals in the Treasure Valley.
-                    </p>
+                    <div className="space-y-base">
+                      <div className="flex items-center gap-xs text-sm text-white/60">
+                        <span>Home</span>
+                        <ChevronRight className="h-4 w-4" />
+                        <span className="text-white font-medium">Directory</span>
+                      </div>
+                      <div className="flex flex-wrap gap-xs">
+                        <Badge className="bg-card/10 text-white border-border rounded-xs">
+                          <Shield weight="bold" className="h-4 w-4 mr-xs" />
+                          FFLs & Dealers
+                        </Badge>
+                        <Badge className="bg-card/10 text-white border-border rounded-xs">
+                          <Target weight="bold" className="h-4 w-4 mr-xs" />
+                          Ranges
+                        </Badge>
+                        <Badge className="bg-card/10 text-white border-border rounded-xs">
+                          <Award weight="bold" className="h-4 w-4 mr-xs" />
+                          Training
+                        </Badge>
+                      </div>
+                    </div>
                   </div>
+                  <div className="space-y-xs">
+                    <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
+                      Idaho Firearms Businesses & Services
+                    </h1>
+                    <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
+                      Your hub for Treasure Valley FFLs, ranges, training, and gunsmiths.
+                    </h2>
+                  </div>
+                  <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
+                    Connect with Idaho's premier firearms community. Find trusted FFLs, ranges, training facilities, and gunsmiths in the Treasure Valley.
+                  </p>
                   
-                  {/* Search Bar */}
-                  <div className="flex flex-col sm:flex-row gap-base max-w-2xl">
-                    <div className="flex-1 relative">
-                      <Search weight="bold" className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                      <Input
-                        placeholder="Search businesses, services, or locations..."
-                        className="pl-10 h-12 text-body-base shadow-elevated"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                      />
-                    </div>
-                    <Button variant="flat" size="lg" className=" hover:shadow-prominent">
-                      <Search weight="bold" className="h-4 w-4 mr-xs" />
-                      Search
+                  {/* Action Buttons */}
+                  <div className="flex gap-base">
+                    <Button size="lg" className="bg-white text-nav-directory hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
+                      <Plus className="h-4 w-4 mr-xs" />
+                      List Business
+                    </Button>
+                    <Button variant="outline" size="lg" className="border-border text-white hover:bg-white hover:text-nav-directory" animationType="arrow">
+                      View Map
                     </Button>
                   </div>
                 </div>
 
                 {/* Featured Business - Right side */}
-                <div className="flex items-center justify-center">
+                <div className="lg:col-span-1 py-md min-h-[400px]">
                   <Card variant="fire" className="w-full max-w-sm shadow-hero">
                     <CardContent className="p-base">
                       <div className="space-y-base text-center">
@@ -360,10 +379,91 @@ export function DirectoryPageComponent() {
             </div>
           </section>
 
-          {/* Main Content */}
-          <div className="max-w-site mx-auto px-md py-2xl">
-            {/* Results Header with Controls */}
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-base mb-xl">
+          {/* Filter Controls - Now as page background section */}
+          <section className="py-lg section-bg-directory-neutral border-b border-border/50">
+            <div className="container mx-auto max-w-site px-md">
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-lg">
+                
+                {/* Business Type Filters */}
+                <div className="lg:col-span-2">
+                  <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground mb-sm">
+                    Business Categories
+                  </h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-xs">
+                    {businessTypeFilters.map((filter) => (
+                      <Button
+                        key={filter.id}
+                        variant={selectedType === filter.id ? "default" : "outline"}
+                        size="sm"
+                        onClick={() => setSelectedType(filter.id)}
+                        className="justify-start gap-xs text-body-xs font-rajdhani shadow-none rounded-xs"
+                      >
+                        {React.createElement(filter.icon, { 
+                          weight: "bold", 
+                          className: "size-3" 
+                        })}
+                        <span className="hidden sm:inline">{filter.label}</span>
+                        <Badge variant="secondary" size="sm" className="ml-auto">
+                          {filter.count}
+                        </Badge>
+                      </Button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Tier Filters */}
+                <div>
+                  <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground mb-sm">
+                    Membership Tiers
+                  </h3>
+                  <div className="space-y-xs">
+                    {tierFilters.map((filter) => (
+                      <Button
+                        key={filter.id}
+                        variant={selectedTier === filter.id ? "default" : "outline"}
+                        size="sm"
+                        onClick={() => setSelectedTier(filter.id)}
+                        className="w-full justify-between text-body-xs font-rajdhani shadow-none rounded-xs"
+                      >
+                        <span>{filter.label}</span>
+                        <Badge variant="secondary" size="sm">
+                          {filter.count}
+                        </Badge>
+                      </Button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* List Business CTA */}
+                <div className="space-y-sm">
+                  <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground">
+                    Join Directory
+                  </h3>
+                  <div className="p-sm bg-nav-directory/5 rounded-xs border border-nav-directory/20">
+                    <div className="space-y-xs text-center">
+                      <Target weight="bold" className="size-5 text-nav-directory mx-auto" />
+                      <h4 className="font-rajdhani font-bold text-body-sm text-card-foreground">
+                        List Your Business
+                      </h4>
+                      <p className="text-body-xs text-muted-foreground leading-relaxed">
+                        Join Idaho's premier firearms directory.
+                      </p>
+                      <Button size="sm" className="w-full shadow-none">
+                        <Plus weight="bold" className="size-3 mr-xs" />
+                        Get Listed
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Main Content - Full Width with Enhanced Spacing */}
+          <div className="w-full py-4xl">
+            <div className="container mx-auto max-w-site px-md">
+              {/* Results Header with Controls */}
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-lg mb-2xl">
               <div>
                 <h2 className="font-rajdhani text-heading-xl font-bold text-card-foreground">
                   {sortedBusinesses.length} {sortedBusinesses.length === 1 ? 'Business' : 'Businesses'} Found
@@ -438,8 +538,8 @@ export function DirectoryPageComponent() {
               </div>
             </div>
 
-            {/* Business Grid */}
-            <div className={getGridClassName()}>
+              {/* Business Grid - Full Width Responsive */}
+              <div className={getGridClassName()}>
               {paginatedBusinesses.length > 0 ? (
                 paginatedBusinesses.map((business, index) => (
                   <VendorCard
@@ -456,7 +556,6 @@ export function DirectoryPageComponent() {
                     isVerified={business.isVerified}
                     verificationStatus={business.isVerified ? 'Fully Verified' : 'ATF Record Only - Unverified'}
                     isSponsored={business.isSponsored}
-                    monthlyLeads={business.monthlyLeads}
                     imageUrl={business.imageUrl}
                     googlePlaceId={business.googlePlaceId}
                     className="mica shadow-present hover:shadow-prominent transition-all duration-300 rounded-xs"
@@ -485,13 +584,14 @@ export function DirectoryPageComponent() {
                       </div>
                     </CardContent>
                   </Card>
-                </div>
-              )}
+                  </div>
+                )
+              }
             </div>
 
-            {/* Pagination */}
-            {totalPages > 1 && (
-              <div className="flex justify-center mt-2xl">
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex justify-center mt-4xl">
                 <Pagination>
                   <PaginationContent>
                     <PaginationItem>
@@ -535,10 +635,66 @@ export function DirectoryPageComponent() {
                   </PaginationContent>
                 </Pagination>
               </div>
-            )}
+              )}
+            </div>
           </div>
-        </SidebarInset>
+        </div>
+
+    {/* Trust Indicators - Real Stats Section */}
+    <section className="py-xl section-bg-directory-cool section-skew-subtle">
+      <div className="container mx-auto max-w-site px-md text-center">
+        <h2 className="text-heading-xl font-rajdhani font-bold text-card-foreground mb-base">
+          Treasure Valley's Trusted Business Network
+        </h2>
+        <TrustIndicators className="mb-lg" />
+        <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
+          Connect with verified firearms businesses across the Treasure Valley. From FFLs to training facilities, find trusted partners in Idaho's shooting sports community.
+        </p>
       </div>
-    </SidebarProvider>
+    </section>
+
+    {/* Directory Stats Grid Section */}
+    <section className="py-xl section-bg-directory-neutral section-skew-down">
+      <div className="container mx-auto max-w-site px-md">
+        <div className="text-center mb-xl">
+          <h2 className="text-heading-2xl font-rajdhani font-bold text-card-foreground mb-base">
+            By the Numbers
+          </h2>
+          <p className="text-body-lg text-muted-foreground">
+            Real businesses serving the Idaho firearms community
+          </p>
+        </div>
+        <div className="max-w-2xl mx-auto">
+          <DirectoryStatsGrid />
+        </div>
+      </div>
+    </section>
+
+    {/* Platform Value Cards Section */}
+    <section className="py-4xl section-bg-directory-cool section-skew-up">
+      <div className="container mx-auto max-w-site px-md">
+        <div className="text-center mb-xl">
+          <h2 className="text-heading-2xl font-rajdhani font-bold text-card-foreground mb-base">
+            Why Choose Local
+          </h2>
+          <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
+            Support Idaho businesses that understand our community values and provide personalized service you can trust.
+          </p>
+        </div>
+        <div className="grid gap-lg md:grid-cols-2 lg:grid-cols-3">
+          {platformValueCards.slice(0, 3).map((card, index) => (
+            <PlatformValueCard key={index} {...card} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Join Movement CTA */}
+    <section className="py-4xl section-bg-sharp">
+      <div className="container mx-auto max-w-site px-md">
+        <JoinMovementCTA />
+      </div>
+    </section>
+    </div>
   )
 }

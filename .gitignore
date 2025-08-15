@@ -60,3 +60,6 @@ _backup/
 *.log
 dist/
 coverage/
+
+# Reviews cache directory (persistent week-long cache)
+.cache/

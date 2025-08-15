@@ -298,12 +298,51 @@
   --gradient-success: linear-gradient(to right, var(--color-lodgepole-green), var(--color-sagebrush-green));
   
   /* Strategic Color Flow Gradients - Each page flows toward next page's energy */
-  --gradient-home-hero: linear-gradient(to bottom right, var(--nav-home), var(--color-rusty-orange));
-  --gradient-events-hero: linear-gradient(to bottom right, var(--nav-events), var(--color-canyon-clay));
-  --gradient-directory-hero: linear-gradient(to bottom right, var(--nav-directory), var(--color-info-river));
-  --gradient-armory-hero: linear-gradient(to bottom right, var(--nav-armory), var(--color-iron-rust));
-  --gradient-intel-hero: linear-gradient(to bottom right, var(--nav-intel), var(--color-sunrise-amber));
-  --gradient-marketplace-hero: linear-gradient(to bottom right, var(--nav-marketplace), var(--color-sagebrush-green));
+  /* PAGE-HARMONIOUS HERO GRADIENTS - No muddy cross-page mixing */
+  --gradient-home-hero: linear-gradient(135deg, var(--nav-home) 0%, var(--color-weathered-gold) 100%);
+  --gradient-events-hero: linear-gradient(135deg, var(--nav-events) 0%, var(--color-canyon-clay) 100%);
+  --gradient-directory-hero: linear-gradient(135deg, var(--nav-directory) 0%, var(--color-info-river) 100%);
+  --gradient-armory-hero: linear-gradient(135deg, var(--nav-armory) 0%, var(--color-iron-rust) 100%);
+  --gradient-intel-hero: linear-gradient(135deg, var(--nav-intel) 0%, var(--color-foothills-purple) 100%);
+  --gradient-marketplace-hero: linear-gradient(135deg, var(--nav-marketplace) 0%, var(--color-high-desert-sage) 100%);
+  --gradient-guides-hero: linear-gradient(135deg, var(--nav-guides) 0%, var(--color-slate-blue) 100%);
+  --gradient-training-hero: linear-gradient(135deg, var(--nav-training) 0%, var(--color-tactical-khaki) 100%);
+  --gradient-forums-hero: linear-gradient(135deg, var(--nav-forums) 0%, var(--color-foothills-purple) 100%);
+
+  /* PAGE-SPECIFIC SECTION GRADIENTS - Theme-aware and contrast-safe */
+  /* Each page gets harmonious gradients within its color family */
+  
+  /* HOME PAGE */
+  --gradient-home-section-warm: linear-gradient(135deg, var(--nav-home)/8 0%, var(--color-weathered-gold)/5 100%);
+  --gradient-home-section-neutral: linear-gradient(135deg, var(--color-aged-paper)/6 0%, var(--nav-home)/4 100%);
+  
+  /* EVENTS PAGE */
+  --gradient-events-section-warm: linear-gradient(135deg, var(--nav-events)/8 0%, var(--color-canyon-clay)/5 100%);
+  --gradient-events-section-neutral: linear-gradient(135deg, var(--color-parchment)/6 0%, var(--nav-events)/4 100%);
+  
+  /* DIRECTORY PAGE */  
+  --gradient-directory-section-cool: linear-gradient(135deg, var(--nav-directory)/8 0%, var(--color-info-river)/5 100%);
+  --gradient-directory-section-neutral: linear-gradient(135deg, var(--color-pale-stone)/6 0%, var(--nav-directory)/4 100%);
+  
+  /* ARMORY PAGE */
+  --gradient-armory-section-tactical: linear-gradient(135deg, var(--nav-armory)/8 0%, var(--color-iron-rust)/5 100%);
+  --gradient-armory-section-neutral: linear-gradient(135deg, var(--color-gunmetal)/6 0%, var(--nav-armory)/4 100%);
+  
+  /* INTEL PAGE */
+  --gradient-intel-section-premium: linear-gradient(135deg, var(--nav-intel)/8 0%, var(--color-foothills-purple)/5 100%);
+  --gradient-intel-section-neutral: linear-gradient(135deg, var(--color-volcanic-ash)/6 0%, var(--nav-intel)/4 100%);
+  
+  /* MARKETPLACE PAGE */
+  --gradient-marketplace-section-natural: linear-gradient(135deg, var(--nav-marketplace)/8 0%, var(--color-high-desert-sage)/5 100%);
+  --gradient-marketplace-section-neutral: linear-gradient(135deg, var(--color-dried-clay)/6 0%, var(--nav-marketplace)/4 100%);
+  
+  /* GUIDES PAGE */
+  --gradient-guides-section-info: linear-gradient(135deg, var(--nav-guides)/8 0%, var(--color-slate-blue)/5 100%);
+  --gradient-guides-section-neutral: linear-gradient(135deg, var(--color-scope-blue)/6 0%, var(--nav-guides)/4 100%);
+  
+  /* TRAINING PAGE */
+  --gradient-training-section-tactical: linear-gradient(135deg, var(--nav-training)/8 0%, var(--color-tactical-khaki)/5 100%);
+  --gradient-training-section-neutral: linear-gradient(135deg, var(--color-walnut-stock)/6 0%, var(--nav-training)/4 100%);
 
   /* Subtle Background Gradients (5-8% opacity) */
   --gradient-brand-warm: linear-gradient(135deg, rgba(217, 134, 59, 0.06) 0%, rgba(217, 159, 93, 0.04) 100%);
@@ -891,6 +930,9 @@
   .bg-gradient-armory-hero { background: var(--gradient-armory-hero); }
   .bg-gradient-intel-hero { background: var(--gradient-intel-hero); }
   .bg-gradient-marketplace-hero { background: var(--gradient-marketplace-hero); }
+  .bg-gradient-guides-hero { background: var(--gradient-guides-hero); }
+  .bg-gradient-training-hero { background: var(--gradient-training-hero); }
+  .bg-gradient-forums-hero { background: var(--gradient-forums-hero); }
 
   /* ================== SITE LAYOUT UTILITIES ================== */
   .max-w-site { max-width: 1440px; }
@@ -1122,6 +1164,7 @@
   .hover\\:bg-page-primary:hover { background-color: var(--page-primary); }
   .hover\\:text-page-primary:hover { color: var(--page-primary); }
   .border-page-primary-30 { border-color: color-mix(in srgb, var(--page-primary) 30%, transparent); }
+
 
   /* ================== 20-COLOR SYSTEM UTILITIES ================== */
   /* Dark Theme: Bogus Basin Colors */
@@ -1652,7 +1695,104 @@
    * 3. NOISE TEXTURE - Subtle radial gradients simulating mica grain
    * 4. BACKDROP-FILTER - Real blur/saturate/contrast of content behind
    * 
-   * Performance Features:
+   * =================== SUBTLE ANGULAR SECTION BACKGROUNDS ===================
+   * Modern 2025 trend: 25-degree subtle angles for "sharp" tactical appearance
+   * Uses transform: skewY() for subtle geometric enhancement without disruption
+   * 
+   * IMPLEMENTATION NOTES:
+   * - Very subtle angles (1deg) for professional appearance
+   * - transform-origin: top left for consistent skewing
+   * - Overflow hidden to prevent layout shifts
+   * - Optional ::before pseudo-elements for more dramatic effects
+   * - Color combinations use existing 92-color Boise landscape palette
+   * ===================================================================== */
+
+  /* SUBTLE ANGULAR SECTION UTILITIES */
+  .section-bg-sharp {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* BACKGROUND-ONLY SKEW: Only the background is angled, content stays straight */
+  .section-skew-up::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5%;
+    width: 110%;
+    height: 100%;
+    background: inherit;
+    transform: skewY(-1deg);
+    transform-origin: top left;
+    z-index: -1;
+  }
+  
+  .section-skew-down::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5%;
+    width: 110%;
+    height: 100%;
+    background: inherit;
+    transform: skewY(1deg);
+    transform-origin: top left;
+    z-index: -1;
+  }
+  
+  /* Make sure content containers are positioned above the angled background */
+  .section-skew-up,
+  .section-skew-down {
+    position: relative;
+    overflow: hidden;
+    background: transparent; /* Background is handled by ::before pseudo-element */
+  }
+  
+  .section-skew-subtle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5%;
+    width: 110%;
+    height: 100%;
+    background: inherit;
+    transform: skewY(-0.8deg);
+    transform-origin: top left;
+    z-index: -1;
+  }
+  
+  /* PAGE-HARMONIOUS ANGULAR BACKGROUND COMBINATIONS */
+  /* Use these classes: section-bg-[page]-[variant] for consistent theming */
+  
+  /* HOME PAGE VARIANTS */
+  .section-bg-home-warm { background: var(--gradient-home-section-warm); }
+  .section-bg-home-neutral { background: var(--gradient-home-section-neutral); }
+  
+  /* EVENTS PAGE VARIANTS */ 
+  .section-bg-events-warm { background: var(--gradient-events-section-warm); }
+  .section-bg-events-neutral { background: var(--gradient-events-section-neutral); }
+  
+  /* DIRECTORY PAGE VARIANTS */
+  .section-bg-directory-cool { background: var(--gradient-directory-section-cool); }
+  .section-bg-directory-neutral { background: var(--gradient-directory-section-neutral); }
+  
+  /* ARMORY PAGE VARIANTS */
+  .section-bg-armory-tactical { background: var(--gradient-armory-section-tactical); }
+  .section-bg-armory-neutral { background: var(--gradient-armory-section-neutral); }
+  
+  /* INTEL PAGE VARIANTS */
+  .section-bg-intel-premium { background: var(--gradient-intel-section-premium); }
+  .section-bg-intel-neutral { background: var(--gradient-intel-section-neutral); }
+  
+  /* MARKETPLACE PAGE VARIANTS */
+  .section-bg-marketplace-natural { background: var(--gradient-marketplace-section-natural); }
+  .section-bg-marketplace-neutral { background: var(--gradient-marketplace-section-neutral); }
+  
+  /* UNIVERSAL VARIANTS (work on any page) */
+  .section-bg-glass { background: var(--gradient-glass); }
+  .section-bg-card { background: var(--gradient-card-warm); }
+
+   /* Performance Features:
    * - Optimized blur levels (8px-32px) for smooth performance
    * - Hardware-accelerated backdrop-filter with -webkit- fallbacks
    * - Isolation stacking contexts for proper layering
@@ -2483,5 +2623,23 @@
       background: white !important;
       color: black !important;
     }
+  }
+
+  /* =================== NAVIGATION FONT FIXES =================== */
+  /* Force Rajdhani on navigation - override body text classes */
+  .font-rajdhani.text-body-base,
+  .font-rajdhani.text-body-sm,
+  .font-rajdhani.text-body-lg,
+  nav .font-rajdhani,
+  nav .text-body-base,
+  nav .text-body-sm,
+  nav .text-body-lg,
+  .site-navigation .font-rajdhani,
+  .site-navigation .text-body-base,
+  .site-navigation .text-body-sm,
+  .site-navigation .text-body-lg,
+  .site-navigation a,
+  .site-navigation button {
+    font-family: var(--font-rajdhani) !important;
   }
 }

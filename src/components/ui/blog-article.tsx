@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -32,6 +33,9 @@ interface BlogArticle {
   tags?: string[]
   category: string
   featured?: boolean
+  slug?: string
+  href?: string
+  sectionPath?: string
 }
 
 const blogCardVariants = cva(
@@ -77,6 +81,11 @@ export function BlogCard({
   const [isLiked, setIsLiked] = React.useState(false)
   const [isBookmarked, setIsBookmarked] = React.useState(false)
   
+  // Generate href for article linking
+  const sectionPath = article.sectionPath || "/the-armory"
+  const slug = article.slug || article.id
+  const articleHref = article.href || `${sectionPath}/${slug}`
+  
   const handleLike = (e: React.MouseEvent) => {
     e.preventDefault()
     e.stopPropagation()
@@ -100,7 +109,8 @@ export function BlogCard({
   const imageSize = variant === "compact" ? "w-32 h-24" : "aspect-video"
   
   return (
-    <article className={cn(blogCardVariants({ variant }), className)} {...props}>
+    <Link href={articleHref} className="block">
+      <article className={cn(blogCardVariants({ variant }), className)} {...props}>
       {/* Featured Badge */}
       {article.featured && variant === "featured" && (
         <div className="absolute top-sm left-4 z-10">
@@ -208,7 +218,11 @@ export function BlogCard({
               <Button
                 variant="micro"
                 size="sm"
-                onClick={handleLike}
+                onClick={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  handleLike(e)
+                }}
                 className={cn(
                   "h-8 px-xs text-caption",
                   isLiked && "text-safety-red bg-safety-red/10"
@@ -221,7 +235,11 @@ export function BlogCard({
               <Button
                 variant="micro"
                 size="sm"
-                onClick={handleBookmark}
+                onClick={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  handleBookmark(e)
+                }}
                 className={cn(
                   "h-8 px-xs text-caption",
                   isBookmarked && "text-rusty-orange bg-rusty-orange/10"
@@ -233,7 +251,11 @@ export function BlogCard({
               <Button
                 variant="micro"
                 size="sm"
-                onClick={handleShare}
+                onClick={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  handleShare(e)
+                }}
                 className="h-8 px-xs text-caption"
                 animationType="arrow"
               >
@@ -261,7 +283,8 @@ export function BlogCard({
           )}
         </div>
       </div>
-    </article>
+      </article>
+    </Link>
   )
 }
 

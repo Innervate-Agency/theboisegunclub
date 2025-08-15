@@ -1,24 +1,20 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import StatCard from '@/components/ui/StatCard'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { EventTicker } from '@/components/ui/event-ticker'
-import { BlogList, BlogCard } from '@/components/ui/blog-article'
-import { ArmorySidebar } from '@/components/ui/armory-sidebar'
+import { BlogList } from '@/components/ui/blog-article'
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb'
 import { 
-  SidebarProvider, 
-  SidebarInset, 
-  SidebarTrigger
-} from '@/components/ui/sidebar'
-import { cn } from '@/lib/utils'
-import { 
-  Shield, BookOpen, Target, Star, ChevronRight, Plus, ArrowRight, User, Eye
+  Shield, BookOpen, Target, Star, ChevronRight, Plus, ArrowRight, User, Eye,
+  Scale, FileText, MapPin, Globe, Users, Wrench
 } from 'lucide-react'
 
 // Blog articles for The Armory - Idaho firearms content
@@ -260,21 +256,7 @@ export default function ArmoryPage() {
   return (
     <div className="theme-armory min-h-screen">
       <SiteNavigation />
-      <SidebarProvider>
-        <ArmorySidebar />
-        <SidebarInset className="flex-1">
-          {/* Header with Sidebar Trigger */}
-          <header className="flex h-16 shrink-0 items-center gap-xs border-b px-base">
-            <SidebarTrigger className="-ml-1" />
-            <div className="flex items-center gap-xs text-body-sm ml-2">
-              <Shield className="size-4 text-foothills-purple" />
-              <span className="font-semibold font-rajdhani">The Armory</span>
-              <span className="text-muted-foreground">|</span>
-              <span className="text-muted-foreground">Firearms Information Hub</span>
-            </div>
-          </header>
-          
-          <div className="flex-1 overflow-auto">{/* Main content wrapper */}
+      <div className="w-full">{/* Main content wrapper */}
       {/* Armory Hero - Content Left, Card Right (Layout 3) */}
       <section className="relative overflow-hidden bg-gradient-armory-hero px-md py-lg">
         <div className="absolute inset-0 bg-gradient-to-br from-gruvbox-bg-dark/20 via-transparent to-gruvbox-bg-dark/10 pointer-events-none"></div>
@@ -284,28 +266,40 @@ export default function ArmoryPage() {
             <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
               {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
               <div className="flex items-center gap-base">
-                <div className="bg-nav-armory/20 p-base rounded-sm border border-nav-armory/30">
-                  <BookOpen className="h-8 w-8 text-nav-armory" />
+                <div className="bg-card/10 p-base rounded-xs border border-border">
+                  <BookOpen className="h-8 w-8 text-white" />
                 </div>
                 <div className="space-y-base">
                   {/* Breadcrumbs */}
-                  <div className="flex items-center gap-xs text-sm text-destructive-foreground/60">
-                    <span>Home</span>
-                    <ChevronRight className="h-4 w-4" />
-                    <span className="text-nav-armory font-medium">Armory</span>
-                  </div>
+                  <Breadcrumb>
+                    <BreadcrumbList className="text-white/60">
+                      <BreadcrumbItem>
+                        <BreadcrumbLink href="/" className="text-white/60 hover:text-white">
+                          Home
+                        </BreadcrumbLink>
+                      </BreadcrumbItem>
+                      <BreadcrumbSeparator>
+                        <ChevronRight className="h-4 w-4" />
+                      </BreadcrumbSeparator>
+                      <BreadcrumbItem>
+                        <BreadcrumbPage className="text-white font-medium">
+                          Armory
+                        </BreadcrumbPage>
+                      </BreadcrumbItem>
+                    </BreadcrumbList>
+                  </Breadcrumb>
                   
                   {/* Badges */}
                   <div className="flex flex-wrap gap-xs">
-                    <Badge className="bg-nav-armory/20 text-nav-armory border-nav-armory/30">
+                    <Badge className="bg-card/10 text-white border-border rounded-xs">
                       <BookOpen className="h-4 w-4 mr-xs" />
                       Expert Knowledge
                     </Badge>
-                    <Badge className="bg-nav-armory/20 text-nav-armory border-nav-armory/30">
+                    <Badge className="bg-card/10 text-white border-border rounded-xs">
                       <Star className="h-4 w-4 mr-xs" />
                       Equipment Reviews
                     </Badge>
-                    <Badge className="bg-nav-armory/20 text-nav-armory border-nav-armory/30">
+                    <Badge className="bg-card/10 text-white border-border rounded-xs">
                       <Target className="h-4 w-4 mr-xs" />
                       Tactical Guides
                     </Badge>
@@ -315,35 +309,39 @@ export default function ArmoryPage() {
 
               {/* Titles - H1 & H2 Butt Buddies */}
               <div className="space-y-xs">
-                <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-destructive-foreground leading-tight">
-                  Idaho Gun Reviews & <span className="text-nav-armory">Firearms Guides</span>
+                <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
+                  Idaho Gun Reviews & <span className="text-white">Firearms Guides</span>
                 </h1>
-                <h2 className="font-rajdhani text-lg md:text-xl font-medium text-destructive-foreground/80 leading-snug">
+                <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
                   Expert Equipment Reviews & Tactical Knowledge Base
                 </h2>
               </div>
               
               {/* Chunky Description */}
-              <p className="text-body-lg text-destructive-foreground/70 max-w-2xl leading-relaxed">
-                Dive deep into expert knowledge, comprehensive equipment reviews, and tactical insights from Idaho's most experienced firearms professionals. From precision rifle builds and optics selection to holster reviews and gear comparisons, The Armory provides the technical expertise you need to make informed decisions. Whether you're building your first AR-15, selecting duty gear, or researching competition equipment, our community-driven content ensures you get real-world performance data.
+              <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
+                Expert equipment reviews and tactical insights from Idaho's firearms professionals. From precision rifles to duty gear, get real-world performance data for informed decisions.
               </p>
               
               {/* Buttons */}
               <div className="flex gap-base">
-                <Button 
-                  size="lg" 
-                  className="bg-nav-armory text-gruvbox-bg-dark hover:bg-nav-armory/90 font-rajdhani font-bold"
-                >
-                  <Plus className="h-4 w-4 mr-xs" />
-                  Suggest Article
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="border-destructive-foreground/30 text-destructive-foreground hover:bg-nav-armory hover:text-gruvbox-bg-dark"
-                >
-                  View Categories
-                </Button>
+                <Link href="mailto:content@boiseguncollective.com?subject=Armory Article Suggestion&body=I'd like to suggest an article topic for The Boise Gun Club Armory section:%0A%0ATopic:%0ADescription:%0AWhy this would be valuable:">
+                  <Button 
+                    size="lg" 
+                    className="bg-white text-nav-armory hover:bg-crisp-off-white font-rajdhani font-bold"
+                  >
+                    <Plus className="h-4 w-4 mr-xs" />
+                    Suggest Article
+                  </Button>
+                </Link>
+                <Link href="#latest-articles">
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className="border-border text-white hover:bg-white hover:text-nav-armory"
+                  >
+                    View Categories
+                  </Button>
+                </Link>
               </div>
             </div>
             
@@ -401,6 +399,90 @@ export default function ArmoryPage() {
         </div>
       </section>
 
+      {/* Navigation/Filter Controls - Now as page background section */}
+      <section className="py-lg section-bg-armory-neutral border-b border-border/50">
+        <div className="container mx-auto max-w-site px-md">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-lg">
+            
+            {/* Idaho Content Filters */}
+            <div className="lg:col-span-2">
+              <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground mb-sm">
+                Idaho Content
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-xs">
+                <Button variant="outline" size="sm" className="justify-start gap-xs text-body-xs font-rajdhani shadow-none rounded-xs">
+                  <Scale weight="bold" className="size-3" />
+                  <span>Idaho Laws</span>
+                  <Badge variant="secondary" size="sm" className="ml-auto">12</Badge>
+                </Button>
+                <Button variant="outline" size="sm" className="justify-start gap-xs text-body-xs font-rajdhani shadow-none rounded-xs">
+                  <FileText weight="bold" className="size-3" />
+                  <span>Buying Guides</span>
+                  <Badge variant="secondary" size="sm" className="ml-auto">8</Badge>
+                </Button>
+                <Button variant="outline" size="sm" className="justify-start gap-xs text-body-xs font-rajdhani shadow-none rounded-xs">
+                  <Shield weight="bold" className="size-3" />
+                  <span>Safety Training</span>
+                  <Badge variant="secondary" size="sm" className="ml-auto">15</Badge>
+                </Button>
+              </div>
+            </div>
+
+            {/* Local Resources */}
+            <div>
+              <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground mb-sm">
+                Local Resources
+              </h3>
+              <div className="space-y-xs">
+                <Button variant="outline" size="sm" className="w-full justify-between text-body-xs font-rajdhani shadow-none rounded-xs">
+                  <div className="flex items-center gap-xs">
+                    <MapPin weight="bold" className="size-3" />
+                    <span>Shooting Ranges</span>
+                  </div>
+                  <Badge variant="secondary" size="sm">18</Badge>
+                </Button>
+                <Button variant="outline" size="sm" className="w-full justify-between text-body-xs font-rajdhani shadow-none rounded-xs">
+                  <div className="flex items-center gap-xs">
+                    <Target weight="bold" className="size-3" />
+                    <span>Training Facilities</span>
+                  </div>
+                  <Badge variant="secondary" size="sm">12</Badge>
+                </Button>
+                <Button variant="outline" size="sm" className="w-full justify-between text-body-xs font-rajdhani shadow-none rounded-xs">
+                  <div className="flex items-center gap-xs">
+                    <Users weight="bold" className="size-3" />
+                    <span>Local FFLs</span>
+                  </div>
+                  <Badge variant="secondary" size="sm">34</Badge>
+                </Button>
+              </div>
+            </div>
+
+            {/* Coming Soon Preview */}
+            <div className="space-y-sm">
+              <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground">
+                Coming Soon
+              </h3>
+              <div className="p-sm bg-nav-armory/5 rounded-xs border border-nav-armory/20">
+                <div className="space-y-xs text-center">
+                  <Globe weight="bold" className="size-5 text-nav-armory mx-auto" />
+                  <h4 className="font-rajdhani font-bold text-body-sm text-card-foreground">
+                    Firearm Database
+                  </h4>
+                  <p className="text-body-xs text-muted-foreground leading-relaxed">
+                    12K+ firearms with specs & reviews.
+                  </p>
+                  <Button size="sm" disabled className="w-full shadow-none opacity-50">
+                    <Wrench weight="bold" className="size-3 mr-xs" />
+                    Coming Soon
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Event Ticker */}
       <EventTicker 
         events={upcomingEvents.map(event => ({
@@ -413,10 +495,18 @@ export default function ArmoryPage() {
         }))}
       />
 
-      {/* Stats Section */}
-      <section className="py-4xl bg-muted/50">
-        <div className="container mx-auto max-w-site px-md">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-xl">
+      {/* Stats Section - Enhanced with More Breathing Room */}
+      <section className="py-6xl bg-muted/50">
+        <div className="container mx-auto max-w-7xl px-md">
+          <div className="text-center mb-4xl">
+            <h2 className="font-rajdhani text-heading-2xl font-bold text-card-foreground mb-base">
+              The Armory by the Numbers
+            </h2>
+            <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
+              Real engagement metrics from Idaho's firearms knowledge community
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl">
             <StatCard
               title="Total Articles"
               value={armoryArticles.length.toString()}
@@ -454,15 +544,27 @@ export default function ArmoryPage() {
 
       {/* Search section removed - now handled by BlogList component */}
 
-      {/* Blog Content Section */}
-      <BlogList 
-        articles={armoryArticles}
-        variant="grid"
-        showFilters={false}
-        title="Latest Articles"
-        subtitle="Expert Knowledge"
-        className="pb-6xl"
-      />
+      {/* Blog Content Section - Full Width with Enhanced Spacing */}
+      <section id="latest-articles" className="py-6xl">
+        <div className="container mx-auto max-w-7xl px-md">
+          <div className="text-center mb-4xl">
+            <h2 className="font-rajdhani text-heading-2xl font-bold text-card-foreground mb-base">
+              Latest Expert Articles
+            </h2>
+            <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
+              In-depth guides and reviews from Idaho's firearms community experts
+            </p>
+          </div>
+          <BlogList 
+            articles={armoryArticles}
+            variant="grid"
+            showFilters={false}
+            title=""
+            subtitle=""
+            className="pb-0"
+          />
+        </div>
+      </section>
 
       {/* Newsletter CTA */}
       <section className="py-6xl bg-page-gradient">
@@ -498,9 +600,7 @@ export default function ArmoryPage() {
       </section>
 
       <SiteFooter currentPage="armory" />
-          </div>{/* End main content wrapper */}
-        </SidebarInset>
-      </SidebarProvider>
+      </div>{/* End main content wrapper */}
     </div>
   )
 }

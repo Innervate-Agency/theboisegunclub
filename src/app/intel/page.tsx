@@ -1,21 +1,23 @@
 import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { CompactStatsBar } from '@/components/ui/compact-stats-bar'
 import { SectionDivider } from '@/components/ui/section-divider'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { WeatherConditionsTicker } from '@/components/ui/weather-conditions-ticker'
 import { EnhancedLocationBrowser } from '@/components/ui/enhanced-location-browser'
+import { TrustIndicators } from '@/components/ui/trust-indicators'
+import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { fetchWeatherForMultipleLocations } from '@/lib/weather-service'
 import { 
-  Plus, ArrowRight, Mountain, Shield, 
-  Compass, ChevronRight, Star, MapPin, Phone, Navigation,
-  Camera, MessageSquare, AlertTriangle, CheckCircle,
-  TrendingUp, Users, Calendar, Activity, 
-  Target, Crosshair, Zap, FileImage,
-  BarChart3, Clock, ExternalLink
+  Plus, Mountain, Shield, 
+  Compass, ChevronRight, Star, MapPin, Navigation,
+  Camera, MessageSquare, AlertTriangle,
+  TrendingUp, 
+  Target,
+  BarChart3
 } from 'lucide-react'
 
 // Comprehensive Idaho shooting locations database with detailed metadata
@@ -351,7 +353,7 @@ export default async function MapPage() {
       <SiteNavigation variant="premium" sticky={true} />
       <div className="min-h-screen bg-background theme-intel">
       {/* Map Hero - Content Left, Card Right (Layout 1) */}
-      <section className="relative overflow-hidden bg-gradient-intel-hero px-md py-xl">
+      <section className="relative overflow-hidden bg-gradient-intel-hero px-md py-lg">
         {/* Topographic Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
@@ -361,12 +363,12 @@ export default async function MapPage() {
           }}
         ></div>
         <div className="container mx-auto max-w-site relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-lg min-h-[400px]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
             {/* Content - Left side */}
-            <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-xl py-lg">
+            <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
               {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
               <div className="flex items-center gap-base">
-                <div className="bg-card/10 p-base rounded-sm border border-border">
+                <div className="bg-card/10 p-base rounded-xs border border-border">
                   <Compass className="h-8 w-8 text-white" />
                 </div>
                 <div className="space-y-base">
@@ -379,13 +381,16 @@ export default async function MapPage() {
                   
                   {/* Badges */}
                   <div className="flex flex-wrap gap-xs">
-                    <Badge variant="intel-location" className="bg-card/10 text-white border-border">
+                    <Badge className="bg-card/10 text-white border-border rounded-xs">
+                      <MapPin className="h-4 w-4 mr-xs" />
                       Shooting Locations
                     </Badge>
-                    <Badge variant="intel-verified" className="bg-card/10 text-white border-border">
+                    <Badge className="bg-card/10 text-white border-border rounded-xs">
+                      <Shield className="h-4 w-4 mr-xs" />
                       Verified Areas
                     </Badge>
-                    <Badge variant="intel-access" className="bg-card/10 text-white border-border">
+                    <Badge className="bg-card/10 text-white border-border rounded-xs">
+                      <Mountain className="h-4 w-4 mr-xs" />
                       BLM & Forest Service
                     </Badge>
                   </div>
@@ -404,7 +409,7 @@ export default async function MapPage() {
               
               {/* Chunky Description */}
               <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
-                Find legal shooting locations across Idaho including BLM land, Forest Service areas, and designated ranges. Community-verified locations with access requirements, restrictions, and safety information.
+                Find legal shooting locations across Idaho including BLM land, Forest Service areas, and designated ranges. Community-verified locations with access requirements and safety information.
               </p>
               
               {/* Buttons */}
@@ -428,7 +433,7 @@ export default async function MapPage() {
             </div>
             
             {/* Featured Location Card - Right side */}
-            <div className="lg:col-span-1 py-lg min-h-[400px]">
+            <div className="lg:col-span-1 py-md min-h-[400px]">
               <div className="relative h-full">
                 <Card className="mica border-nav-intel/30 shadow-present hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
                   {/* Hero Image Background */}
@@ -573,7 +578,7 @@ export default async function MapPage() {
             
             {/* Featured Cards - Right side - 2x3 Grid */}
             <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-lg">
-              {shootingLocations.slice(0, 6).map((location, index) => (
+              {shootingLocations.slice(0, 6).map((location, _index) => (
                 <Card key={location.name} className="shadow-whisper hover:shadow-present transition-all duration-300 overflow-hidden">
                   <CardHeader className="pb-lg">
                     <div className="flex items-center justify-between mb-md">
@@ -775,6 +780,26 @@ export default async function MapPage() {
           </div>
         </div>
       </section>
+
+        {/* Trust Indicators - Real Location Data */}
+        <section className="py-xl section-bg-intel-premium section-skew-subtle">
+          <div className="container mx-auto max-w-site px-md text-center">
+            <h2 className="text-heading-xl font-rajdhani font-bold text-card-foreground mb-base">
+              Idaho's Premier Shooting Intelligence Hub
+            </h2>
+            <TrustIndicators className="mb-lg" />
+            <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
+              Real-time conditions, verified locations, and community-contributed intel for safe and responsible shooting across Idaho's public lands.
+            </p>
+          </div>
+        </section>
+
+        {/* Community Contribution CTA */}
+        <section className="py-4xl section-bg-sharp">
+          <div className="container mx-auto max-w-site px-md">
+            <ContributionCTA />
+          </div>
+        </section>
       </div>
       <SiteFooter currentPage="intel" />
     </>
