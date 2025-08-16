@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -10,7 +8,7 @@ import {
   Calendar, Clock, Eye, Heart, MessageCircle, User, Tag,
   MapPin, Phone, Globe, Mail, CheckCircle, Star, Shield,
   Award, Target, Users, CreditCard, DollarSign,
-  Package, Truck, FileText, Warning
+  Package, Truck, FileText, AlertTriangle as Warning
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'

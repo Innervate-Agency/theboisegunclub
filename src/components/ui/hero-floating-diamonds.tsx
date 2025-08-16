@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { MotionDiv } from '@/components/ui/optimized-motion'
 import { Diamond } from '@phosphor-icons/react'
 
 interface FloatingDiamondsProps {
@@ -74,7 +74,7 @@ export function FloatingDiamonds({ className }: FloatingDiamondsProps) {
   return (
     <div className={className}>
       {diamonds.map((diamond) => (
-        <motion.div
+        <MotionDiv
           key={diamond.id}
           initial={{ opacity: 0, rotate: -28, ...diamond.motion }}
           animate={{ 
@@ -94,7 +94,7 @@ export function FloatingDiamonds({ className }: FloatingDiamondsProps) {
             className={`${diamond.size} text-crisp-off-white/60 shadow-elevated`} 
             weight="bold" 
           />
-        </motion.div>
+        </MotionDiv>
       ))}
     </div>
   )

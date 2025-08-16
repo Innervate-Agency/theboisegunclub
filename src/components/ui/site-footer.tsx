@@ -143,13 +143,13 @@ export function SiteFooter({
                   <Button 
                     type="submit" 
                     disabled={isSubscribing}
+                    animationType={isSubscribing ? "none" : "arrow"}
                     className={cn(
                       "font-rajdhani font-semibold group whitespace-nowrap",
                       isDark ? "bg-rusty-orange text-shared-dark hover:bg-ember-glow" : "bg-slate-blue text-crisp-off-white hover:bg-slate-blue/90"
                     )}
                   >
                     {isSubscribing ? "Subscribing..." : "Subscribe"}
-                    {!isSubscribing && <HoverArrow className="ml-2 group-hover:translate-x-1 transition-transform" />}
                   </Button>
                 </form>
                 <div className="flex items-center justify-center gap-lg mt-lg text-body-sm text-muted-foreground font-rajdhani">

@@ -7,6 +7,12 @@ import { Button } from "./button"
 import { Badge } from "./badge"
 import { motion } from "framer-motion"
 
+// Create properly typed motion components
+const MotionDiv = motion.div
+const MotionNav = motion.nav
+const MotionP = motion.p
+const MotionH1 = motion.h1
+
 const zigzagHeroVariants = cva(
   "relative w-full min-h-[600px] overflow-hidden",
   {
@@ -106,7 +112,7 @@ export function ZigzagHero({
       <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 via-foreground/20 to-foreground/60" />
       
       {/* Animated Background Pattern */}
-      <motion.div 
+      <MotionDiv 
         className="absolute inset-0 opacity-10"
         animate={{
           backgroundPosition: ["0% 0%", "100% 100%"],
@@ -130,7 +136,7 @@ export function ZigzagHero({
         )}>
           
           {/* Content Section */}
-          <motion.div 
+          <MotionDiv 
             className={cn(
               "space-y-lg",
               isRightLayout ? "lg:order-2 text-right" : "lg:order-1 text-left"
@@ -141,7 +147,7 @@ export function ZigzagHero({
           >
             {/* Breadcrumbs */}
             {breadcrumbs && (
-              <motion.nav 
+              <MotionNav 
                 variants={itemVariants}
                 className={cn("flex items-center gap-tiny text-body-sm", isRightLayout ? "justify-end" : "justify-start")}
               >
@@ -161,12 +167,12 @@ export function ZigzagHero({
                     )}
                   </React.Fragment>
                 ))}
-              </motion.nav>
+              </MotionNav>
             )}
             
             {/* Badges */}
             {badges && (
-              <motion.div 
+              <MotionDiv 
                 variants={itemVariants}
                 className={cn("flex flex-wrap gap-xs", isRightLayout ? "justify-end" : "justify-start")}
               >
@@ -179,38 +185,38 @@ export function ZigzagHero({
                     {badge.label}
                   </Badge>
                 ))}
-              </motion.div>
+              </MotionDiv>
             )}
             
             {/* Subtitle */}
             {subtitle && (
-              <motion.p 
+              <MotionP 
                 variants={itemVariants}
               className="text-primary-foreground/90 font-rajdhani font-medium text-heading-lg tracking-wide"
               >
                 {subtitle}
-              </motion.p>
+              </MotionP>
             )}
             
             {/* Title */}
-            <motion.h1 
+            <MotionH1 
               variants={itemVariants}
               className="font-rajdhani font-bold text-heading-4xl md:text-display-lg lg:text-7xl text-primary-foreground leading-tight tracking-tight"
             >
               {title}
-            </motion.h1>
+            </MotionH1>
             
             {/* Description */}
-            <motion.p 
+            <MotionP 
               variants={itemVariants}
               className="text-body-xl text-primary-foreground/90 leading-relaxed max-w-2xl"
             >
               {description}
-            </motion.p>
+            </MotionP>
             
             {/* Action Buttons */}
             {(primaryAction || secondaryAction) && (
-              <motion.div 
+              <MotionDiv 
                 variants={itemVariants}
                 className={cn("flex flex-wrap gap-sm", isRightLayout ? "justify-end" : "justify-start")}
               >
@@ -234,12 +240,12 @@ export function ZigzagHero({
                     {secondaryAction.label}
                   </Button>
                 )}
-              </motion.div>
+              </MotionDiv>
             )}
             
             {/* Stats */}
             {stats && (
-              <motion.div 
+              <MotionDiv 
                 variants={itemVariants}
                 className={cn("grid grid-cols-3 gap-lg pt-8", isRightLayout ? "text-right" : "text-left")}
               >
@@ -256,13 +262,13 @@ export function ZigzagHero({
                     </div>
                   </div>
                 ))}
-              </motion.div>
+              </MotionDiv>
             )}
-          </motion.div>
+          </MotionDiv>
           
           {/* Featured Card Section */}
           {featuredCard && (
-            <motion.div 
+            <MotionDiv 
               className={cn(
                 "flex justify-center items-center",
                 isRightLayout ? "lg:order-1" : "lg:order-2"
@@ -271,14 +277,14 @@ export function ZigzagHero({
               initial="hidden"
               animate="visible"
             >
-              <motion.div
+              <MotionDiv
                 whileHover={{ scale: 1.02, rotateY: 5 }}
                 transition={{ duration: 0.3 }}
                 className="w-full max-w-md"
               >
                 {featuredCard}
-              </motion.div>
-            </motion.div>
+              </MotionDiv>
+            </MotionDiv>
           )}
         </div>
       </div>

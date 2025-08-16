@@ -12,10 +12,11 @@ import { SiteFooter } from '@/components/ui/site-footer'
 import { EventTicker } from '@/components/ui/event-ticker'
 import { BlogList } from '@/components/ui/blog-article'
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb'
+import { ChevronRight } from 'lucide-react'
 import { 
-  Shield, BookOpen, Target, Star, ChevronRight, Plus, ArrowRight, User, Eye,
-  Scale, FileText, MapPin, Globe, Users, Wrench
-} from 'lucide-react'
+  Shield, BookOpen, Target, Star, Plus, ArrowRight, User, Eye,
+  Scales, FileText, MapPin, Globe, Users, Wrench
+} from '@phosphor-icons/react'
 
 // Blog articles for The Armory - Idaho firearms content
 const armoryArticles = [
@@ -411,19 +412,19 @@ export default function ArmoryPage() {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-xs">
                 <Button variant="outline" size="sm" className="justify-start gap-xs text-body-xs font-rajdhani shadow-none rounded-xs">
-                  <Scale weight="bold" className="size-3" />
+                  <Scales weight="bold" className="size-3" />
                   <span>Idaho Laws</span>
-                  <Badge variant="secondary" size="sm" className="ml-auto">12</Badge>
+                  <Badge variant="outline" size="sm" className="ml-auto">12</Badge>
                 </Button>
                 <Button variant="outline" size="sm" className="justify-start gap-xs text-body-xs font-rajdhani shadow-none rounded-xs">
                   <FileText weight="bold" className="size-3" />
                   <span>Buying Guides</span>
-                  <Badge variant="secondary" size="sm" className="ml-auto">8</Badge>
+                  <Badge variant="outline" size="sm" className="ml-auto">8</Badge>
                 </Button>
                 <Button variant="outline" size="sm" className="justify-start gap-xs text-body-xs font-rajdhani shadow-none rounded-xs">
                   <Shield weight="bold" className="size-3" />
                   <span>Safety Training</span>
-                  <Badge variant="secondary" size="sm" className="ml-auto">15</Badge>
+                  <Badge variant="outline" size="sm" className="ml-auto">15</Badge>
                 </Button>
               </div>
             </div>
@@ -439,21 +440,21 @@ export default function ArmoryPage() {
                     <MapPin weight="bold" className="size-3" />
                     <span>Shooting Ranges</span>
                   </div>
-                  <Badge variant="secondary" size="sm">18</Badge>
+                  <Badge variant="outline" size="sm">18</Badge>
                 </Button>
                 <Button variant="outline" size="sm" className="w-full justify-between text-body-xs font-rajdhani shadow-none rounded-xs">
                   <div className="flex items-center gap-xs">
                     <Target weight="bold" className="size-3" />
                     <span>Training Facilities</span>
                   </div>
-                  <Badge variant="secondary" size="sm">12</Badge>
+                  <Badge variant="outline" size="sm">12</Badge>
                 </Button>
                 <Button variant="outline" size="sm" className="w-full justify-between text-body-xs font-rajdhani shadow-none rounded-xs">
                   <div className="flex items-center gap-xs">
                     <Users weight="bold" className="size-3" />
                     <span>Local FFLs</span>
                   </div>
-                  <Badge variant="secondary" size="sm">34</Badge>
+                  <Badge variant="outline" size="sm">34</Badge>
                 </Button>
               </div>
             </div>
@@ -562,6 +563,7 @@ export default function ArmoryPage() {
             title=""
             subtitle=""
             className="pb-0"
+            sectionPath="/armory"
           />
         </div>
       </section>

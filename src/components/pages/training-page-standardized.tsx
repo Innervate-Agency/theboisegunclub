@@ -7,6 +7,8 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { CardPageLayout } from '@/components/ui/card-page-layout'
 import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
+import { DirectoryStatsGrid } from '@/components/ui/directory-stats-grid'
+import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
 import { useCardPageFilters } from '@/hooks/useCardPageFilters'
 import { EmptyState } from '@/components/ui/empty-state'
 import { 
@@ -263,6 +265,52 @@ function TrainingCard({ training, className = '' }: { training: TrainingData, cl
   )
 }
 
+// Training category statistics for the stats grid
+const trainingCategoryStats = [
+  { icon: Shield, title: "Basic Safety", value: "12", subtitle: "Beginner courses", color: "text-nav-training" },
+  { icon: CheckCircle, title: "CCW", value: "8", subtitle: "Concealed carry", color: "text-nav-training" },
+  { icon: Target, title: "Defensive", value: "6", subtitle: "Pistol training", color: "text-nav-training" },
+  { icon: Trophy, title: "Tactical", value: "4", subtitle: "Carbine courses", color: "text-nav-training" },
+  { icon: Users, title: "Specialized", value: "8", subtitle: "Custom programs", color: "text-nav-training" },
+  { icon: GraduationCap, title: "Instructors", value: "15", subtitle: "Certified trainers", color: "text-nav-training" }
+]
+
+// Training activity feed data
+const trainingActivityFeedData = [
+  {
+    type: 'new_course',
+    title: 'New Advanced Tactical Carbine Course Added',
+    description: 'Three-day intensive tactical carbine training now available at Black Sheep Warrior Ranch.',
+    timestamp: '2 hours ago',
+    icon: Trophy,
+    color: 'text-nav-training'
+  },
+  {
+    type: 'instructor_spotlight',
+    title: 'Instructor Mike Johnson Certified in Force-on-Force Training',
+    description: 'Our lead instructor now offers realistic scenario-based defensive training.',
+    timestamp: '1 day ago',
+    icon: Users,
+    color: 'text-nav-training'
+  },
+  {
+    type: 'achievement',
+    title: '50+ Students Completed CCW Training This Month',
+    description: 'Record number of concealed carry permits earned through our certified programs.',
+    timestamp: '3 days ago',
+    icon: CheckCircle,
+    color: 'text-nav-training'
+  },
+  {
+    type: 'update',
+    title: 'New Women-Only Basic Safety Course Schedule Released',
+    description: 'Monthly women-only courses now available with female instructor Sarah Martinez.',
+    timestamp: '1 week ago',
+    icon: Shield,
+    color: 'text-nav-training'
+  }
+]
+
 export function TrainingPageStandardized() {
   // Filter configuration
   const filters = useCardPageFilters({
@@ -483,8 +531,57 @@ export function TrainingPageStandardized() {
       totalResults={filters.totalResults}
       filteredResults={filters.filteredResults}
       
-      statsSection={<TrustIndicators />}
-      ctaSection={<ContributionCTA />}
+      statsSection={
+        <>
+          <TrustIndicators />
+          <div className="mt-4xl">
+            <h3 className="font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center">Training by Category</h3>
+            <DirectoryStatsGrid stats={trainingCategoryStats} />
+          </div>
+        </>
+      }
+      ctaSection={
+        <div className="space-y-4xl">
+          {/* Activity Feed Section */}
+          <div className="section-skew-up bg-card/50 py-3xl">
+            <div className="max-w-4xl mx-auto">
+              <h3 className="font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center">Recent Training Updates</h3>
+              <div className="space-y-base">
+                {trainingActivityFeedData.map((activity, index) => (
+                  <ActivityFeedCard key={index} {...activity} />
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* CTA Section */}
+          <ContributionCTA />
+          
+          {/* Instructor Spotlight */}
+          <div className="section-skew-down bg-gradient-to-br from-nav-training/10 to-nav-training/5 py-3xl">
+            <div className="text-center space-y-base">
+              <Badge className="bg-nav-training/20 text-nav-training border-nav-training/30">
+                <GraduationCap weight="bold" className="h-4 w-4 mr-xs" />
+                Instructor Spotlight
+              </Badge>
+              <h3 className="font-rajdhani font-bold text-heading-lg text-card-foreground">
+                Certified Idaho Instructors
+              </h3>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                All training programs are led by certified instructors with years of experience. 
+                From basic safety to advanced tactical training, learn from the best in Idaho.
+              </p>
+              <Button 
+                className="bg-nav-training text-white hover:bg-nav-training/90 font-rajdhani font-bold"
+                animationType="arrow"
+              >
+                <Users weight="bold" className="h-4 w-4 mr-xs" />
+                Meet Our Instructors
+              </Button>
+            </div>
+          </div>
+        </div>
+      }
     >
       <div className={filters.getGridClassName()}>
         {filters.paginatedItems.length > 0 ? (

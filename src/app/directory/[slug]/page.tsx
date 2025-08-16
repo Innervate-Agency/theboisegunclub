@@ -410,7 +410,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${business.businessName} - Idaho Firearms Business`,
       description: business.description,
-      type: 'business.business',
+      type: 'website',
       images: business.images.length > 0 ? [business.images[0]] : undefined
     }
   }
@@ -427,7 +427,7 @@ export async function generateStaticParams() {
   ]
 }
 
-export default async function BusinessDetailPage({ params }: Props) {
+export default async function DirectoryDetailPage({ params }: Props) {
   const { slug } = await params
   const business = getBusinessData(slug)
 

@@ -17,7 +17,7 @@ import {
 } from './select'
 import {
   Calendar, MapPin, Trophy, Users, Target,
-  Upload, Plus, Minus, Database, AlertCircle,
+  Upload, Plus, Minus, Database, Warning,
   CheckCircle, Clock
 } from '@phosphor-icons/react'
 import { cn } from '@/lib/utils'
@@ -632,7 +632,7 @@ export function ResultsSubmissionForm() {
         
         <div className="mt-base max-w-md mx-auto">
           <div className="flex items-start gap-xs p-sm bg-muted/50 rounded-xs">
-            <AlertCircle weight="bold" className="size-4 text-muted-foreground mt-micro flex-shrink-0" />
+            <Warning weight="bold" className="size-4 text-muted-foreground mt-micro flex-shrink-0" />
             <p className="text-body-xs text-muted-foreground">
               Your submission will be reviewed within 2-3 business days. 
               You'll receive an email confirmation once it's been added to the archive.

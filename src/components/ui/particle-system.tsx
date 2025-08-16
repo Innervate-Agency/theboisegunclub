@@ -1,7 +1,8 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { MotionDiv, MotionSection, MotionSpan, MotionButton, MotionH1, MotionP, MotionMain, MotionAside } from '@/components/ui/optimized-motion'
+import { useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 interface Particle {
@@ -44,7 +45,7 @@ export function ParticleSystem({ count = 25, className }: ParticleSystemProps) {
     <div className={cn("absolute inset-0 overflow-hidden pointer-events-none", className)}>
       <AnimatePresence>
         {particles.map((particle) => (
-          <motion.div
+          <MotionDiv
             key={particle.id}
             className="absolute bottom-0"
             style={{
@@ -77,7 +78,7 @@ export function ParticleSystem({ count = 25, className }: ParticleSystemProps) {
                 boxShadow: '0 0 8px rgba(235, 125, 1, 0.5)',
               }}
             />
-          </motion.div>
+          </MotionDiv>
         ))}
       </AnimatePresence>
     </div>
@@ -110,7 +111,7 @@ export function FireflyParticles({ count = 15, className }: ParticleSystemProps)
     <div className={cn("absolute inset-0 overflow-hidden pointer-events-none", className)}>
       <AnimatePresence>
         {particles.map((particle) => (
-          <motion.div
+          <MotionDiv
             key={particle.id}
             className="absolute bottom-10"
             style={{
@@ -137,7 +138,7 @@ export function FireflyParticles({ count = 15, className }: ParticleSystemProps)
                 filter: 'blur(0.5px)',
               }}
             />
-          </motion.div>
+          </MotionDiv>
         ))}
       </AnimatePresence>
     </div>

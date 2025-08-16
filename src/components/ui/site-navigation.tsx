@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
-import { motion } from 'framer-motion'
+import { MotionDiv } from '@/components/ui/optimized-motion'
 import { Menu, X } from 'lucide-react'
 import { AuthButton } from '@/components/auth/auth-button'
 import { useAuth } from '@/components/auth/auth-context'
@@ -229,7 +229,7 @@ export function SiteNavigation({
             <div className="flex items-center">
               <Link href="/" className="flex items-center gap-xs sm:gap-sm">
                 <div className="flex items-center gap-xs sm:gap-sm">
-                  <motion.div
+                  <MotionDiv
                     key={pathname} // This triggers re-render on route change
                     className={getCurrentPageColor()}
                     initial={{ 
@@ -254,7 +254,7 @@ export function SiteNavigation({
                       className: "size-6 sm:size-8", 
                       weight: "bold" 
                     })}
-                  </motion.div>
+                  </MotionDiv>
                   <div className="hidden sm:block">
                     <div className="text-heading-base sm:text-heading-lg font-rajdhani text-card-foreground leading-none uppercase">
                       <span className="font-[800]">The Boise</span> <span className="font-[300]">Gun Club</span>
@@ -290,7 +290,7 @@ export function SiteNavigation({
                   >
                     {/* Magic Line - Individual per item but shared layoutId */}
                     {shouldShowLine && (
-                      <motion.div
+                      <MotionDiv
                         layoutId="navbar-magic-line"
                         className={`absolute bottom-0 left-0 right-0 h-1 rounded-full ${getMagicLineColor(item.color)}`}
                         initial={{ opacity: 0 }}
@@ -308,7 +308,7 @@ export function SiteNavigation({
                     
                     {/* Icon Glow Effect */}
                     {isHovered && (
-                      <motion.div
+                      <MotionDiv
                         className={`absolute inset-0 rounded-sm ${getMagicLineColor(item.color)}/20 blur-md -z-10`}
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1.3, opacity: 1 }}
@@ -326,21 +326,21 @@ export function SiteNavigation({
                             ? getActiveTextClass(item.color)
                             : `text-muted-foreground ${getHoverClasses(item.color)}`
                       }`,
-                      <motion.div 
+                      <MotionDiv 
                         className="flex items-center gap-xs"
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <motion.div
+                        <MotionDiv
                           whileHover={{ 
                             rotate: [0, -5, 5, 0],
                             transition: { duration: 0.3 }
                           }}
                         >
                           <item.icon className="size-4" weight="bold" />
-                        </motion.div>
+                        </MotionDiv>
                         {item.label}
-                      </motion.div>
+                      </MotionDiv>
                     )}
                   </div>
                   
@@ -382,7 +382,7 @@ export function SiteNavigation({
 
         {/* Mobile Menu - Enhanced for touch */}
         {isMobileMenuOpen && (
-          <motion.div 
+          <MotionDiv 
             className="md:hidden py-lg relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
@@ -423,7 +423,7 @@ export function SiteNavigation({
                 <AuthButton variant="default" showTrialButton={false} className="flex-col items-stretch min-h-[44px]" />
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
         )}
       </div>
     </nav>

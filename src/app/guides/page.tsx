@@ -271,6 +271,7 @@ export default async function GuidesPage() {
         title="Expert Guides & Resources"
         subtitle="Idaho Firearms Knowledge"
         className="pb-6xl"
+        sectionPath="/guides"
       />
 
       {/* Newsletter CTA */}

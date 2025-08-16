@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { MotionDiv, fadeInUp } from '@/components/ui/optimized-motion'
 
 interface HeroBadgeProps {
   text?: string
@@ -12,7 +12,7 @@ export function HeroBadge({
   className 
 }: HeroBadgeProps) {
   return (
-    <motion.div
+    <MotionDiv
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -22,6 +22,6 @@ export function HeroBadge({
         <span className="size-2 bg-rusty-orange rounded-full animate-pulse" />
         {text}
       </span>
-    </motion.div>
+    </MotionDiv>
   )
 }

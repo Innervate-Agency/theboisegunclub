@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { MotionDiv, viewportAnimation } from '@/components/ui/optimized-motion'
 import { Button } from './button'
 import { Badge } from './badge'
 import { 
@@ -57,7 +57,7 @@ export function JoinMovementCTA({
       <div className="relative z-10 px-lg py-2xl text-center space-y-xl max-w-4xl mx-auto">
         {/* Badge */}
         {showBadge && (
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -67,11 +67,11 @@ export function JoinMovementCTA({
               <Handshake className="h-4 w-4 mr-xs" weight="bold" />
               {badgeText}
             </Badge>
-          </motion.div>
+          </MotionDiv>
         )}
 
         {/* Title */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -83,10 +83,10 @@ export function JoinMovementCTA({
           <p className="font-rajdhani font-medium text-body-xl md:text-heading-xl text-rusty-orange">
             {subtitle}
           </p>
-        </motion.div>
+        </MotionDiv>
 
         {/* Description */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
@@ -94,10 +94,10 @@ export function JoinMovementCTA({
           <p className="text-body-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             {description}
           </p>
-        </motion.div>
+        </MotionDiv>
 
         {/* Action Buttons */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
@@ -123,10 +123,10 @@ export function JoinMovementCTA({
               {secondaryActionText}
             </Button>
           </Link>
-        </motion.div>
+        </MotionDiv>
 
         {/* Trust Indicators */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
@@ -144,7 +144,7 @@ export function JoinMovementCTA({
             <Shield className="h-4 w-4" weight="bold" />
             <span>100% Idaho Owned</span>
           </div>
-        </motion.div>
+        </MotionDiv>
       </div>
     </div>
   )

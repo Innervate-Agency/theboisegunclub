@@ -10,7 +10,7 @@ import {
 import { 
   Sun as PhosphorSun, CloudRain as PhosphorCloudRain, 
   CloudSnow as PhosphorCloudSnow, Lightning as PhosphorLightning,
-  Clouds as PhosphorClouds
+  Cloud as PhosphorCloud
 } from '@phosphor-icons/react'
 
 interface WeatherCondition {
@@ -59,7 +59,7 @@ export function WeatherConditionsTicker({ conditions }: WeatherConditionsTickerP
       case 'partly-cloudy':
         return <Cloud className="size-5 text-slate-blue/80" />
       case 'cloudy':
-        return <PhosphorClouds weight="fill" className="size-5 text-slate-blue" />
+        return <PhosphorCloud weight="fill" className="size-5 text-slate-blue" />
       case 'rain':
         return <PhosphorCloudRain weight="fill" className="size-5 text-nav-intel" />
       case 'snow':

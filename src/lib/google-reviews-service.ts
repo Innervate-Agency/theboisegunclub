@@ -22,7 +22,7 @@ interface GoogleReviewResponse {
   }
 }
 
-interface ProcessedReviewData {
+export interface ProcessedReviewData {
   businessName: string
   placeId: string
   overallRating: number

@@ -8,7 +8,7 @@ import { Avatar, AvatarImage, AvatarFallback } from './avatar'
 import { cn } from '@/lib/utils'
 import {
   Trophy, Target, Calendar, Medal, ChartLine,
-  MapPin, Clock, Star, TrendUp, Award,
+  MapPin, Clock, Star, TrendUp, Medal as Award,
   User, Shield, Ranking
 } from '@phosphor-icons/react'
 

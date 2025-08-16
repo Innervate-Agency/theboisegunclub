@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { MotionDiv, fadeInUp, viewportAnimation } from '@/components/ui/optimized-motion'
 import { MapPin, Buildings as Building2, Users } from '@phosphor-icons/react'
 import { useTrustIndicators } from '@/hooks/useRealStats'
 
@@ -32,28 +32,26 @@ export function TrustIndicators({
     label: stat.label
   }))
   return (
-    <motion.div 
+    <MotionDiv 
       className={`flex flex-wrap justify-center gap-md text-dark-chocolate/60 text-body-sm font-rajdhani ${className}`}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+      {...viewportAnimation}
     >
       {finalIndicators.map((indicator, index) => {
         const Icon = indicator.icon
         return (
-          <motion.div
+          <MotionDiv
             key={index}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 + (index * 0.1) }}
+            transition={{ duration: 0.5, delay: 0.1 + (index * 0.1) }}
             className="flex items-center gap-xs"
           >
             <Icon className="h-4 w-4" weight="bold" />
             <span className="font-rajdhani font-bold">{indicator.value}</span>
             <span>{indicator.label}</span>
-          </motion.div>
+          </MotionDiv>
         )
       })}
-    </motion.div>
+    </MotionDiv>
   )
 }

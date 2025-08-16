@@ -6,7 +6,7 @@ interface WeatherResponse {
   }
   wind: {
     speed: number
-    deg: number
+    deg?: number
   }
   weather: [{
     main: string
@@ -31,7 +31,7 @@ interface ProcessedWeatherData {
 import { promises as fs } from 'fs'
 import path from 'path'
 
-const API_KEY = process.env.OPENWEATHERMAP_API_KEY || '664292cdddfd62b0af8ffb50d2dd9c60'
+const API_KEY: string = process.env.OPENWEATHERMAP_API_KEY || '664292cdddfd62b0af8ffb50d2dd9c60'
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather'
 const CACHE_DURATION = 30 * 60 * 1000 // 30 minutes in milliseconds (weather changes frequently)
 const CACHE_DIR = path.join(process.cwd(), '.cache', 'weather')
@@ -161,7 +161,7 @@ function getFallbackWeatherData(locationName: string): ProcessedWeatherData {
       windDirection: "SW",
       fireDanger: "Low",
       accessStatus: "Open",
-      weatherIcon: "⛅",
+      weatherIcon: "partly-cloudy",
       lastUpdated: "Cached data"
     },
     "Snake River BOP Area": {
@@ -182,7 +182,7 @@ function getFallbackWeatherData(locationName: string): ProcessedWeatherData {
       windDirection: "NW", 
       fireDanger: "Low",
       accessStatus: "Open",
-      weatherIcon: "⛅",
+      weatherIcon: "partly-cloudy",
       lastUpdated: "Cached data"
     },
     "Table Rock Area": {
@@ -226,7 +226,7 @@ function getFallbackWeatherData(locationName: string): ProcessedWeatherData {
     windDirection: "SW",
     fireDanger: "Low",
     accessStatus: "Open", 
-    weatherIcon: "⛅",
+    weatherIcon: "partly-cloudy",
     lastUpdated: "Cached data"
   }
 }
@@ -270,7 +270,7 @@ export async function fetchWeatherForLocation(lat: number, lon: number, location
     
     const temperature = Math.round(data.main.temp)
     const windSpeed = Math.round(data.wind.speed)
-    const windDirection = degreesToCardinal(data.wind.deg)
+    const windDirection = degreesToCardinal(data.wind.deg || 0)
     const fireDanger = calculateFireDanger(temperature, data.main.humidity, windSpeed)
     const accessStatus = determineAccessStatus(temperature, windSpeed, fireDanger)
     const weatherIcon = weatherIconToType(data.weather[0].icon, data.weather[0].main)

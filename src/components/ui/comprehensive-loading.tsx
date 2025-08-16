@@ -1,7 +1,8 @@
 'use client'
 
 import * as React from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
+import { MotionDiv } from '@/components/ui/optimized-motion'
 import { cn } from '@/lib/utils'
 import { 
   PageLoadingTumbleweed, 
@@ -25,7 +26,7 @@ export function PageLoadingOverlay({
   return (
     <AnimatePresence>
       {isLoading && (
-        <motion.div
+        <MotionDiv
           className={cn(
             "fixed inset-0 z-50 flex items-center justify-center",
             "bg-background/80 backdrop-blur-sm",
@@ -36,7 +37,7 @@ export function PageLoadingOverlay({
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <motion.div
+          <MotionDiv
             className="flex flex-col items-center gap-base"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -47,8 +48,8 @@ export function PageLoadingOverlay({
             <p className="text-sm text-muted-foreground font-rajdhani font-medium">
               {message}
             </p>
-          </motion.div>
-        </motion.div>
+          </MotionDiv>
+        </MotionDiv>
       )}
     </AnimatePresence>
   )
@@ -67,7 +68,7 @@ export function FormSubmissionLoading({
   return (
     <AnimatePresence>
       {isSubmitting && (
-        <motion.div
+        <MotionDiv
           className={cn(
             "absolute inset-0 flex items-center justify-center",
             "bg-background/90 backdrop-blur-sm rounded-xs z-10",
@@ -84,7 +85,7 @@ export function FormSubmissionLoading({
               {message}
             </span>
           </div>
-        </motion.div>
+        </MotionDiv>
       )}
     </AnimatePresence>
   )
@@ -111,7 +112,7 @@ export function FileTransferLoading({
   return (
     <AnimatePresence>
       {isTransferring && (
-        <motion.div
+        <MotionDiv
           className={cn(
             "flex items-center gap-sm p-sm rounded-xs",
             "bg-muted/50 border border-border",
@@ -132,7 +133,7 @@ export function FileTransferLoading({
             </p>
             {progress !== undefined && (
               <div className="w-full bg-muted rounded-full h-1 mt-xs">
-                <motion.div
+                <MotionDiv
                   className="bg-rusty-orange h-1 rounded-full"
                   initial={{ width: 0 }}
                   animate={{ width: `${progress}%` }}
@@ -141,7 +142,7 @@ export function FileTransferLoading({
               </div>
             )}
           </div>
-        </motion.div>
+        </MotionDiv>
       )}
     </AnimatePresence>
   )
@@ -158,7 +159,7 @@ export function SearchLoading({
   return (
     <AnimatePresence>
       {isSearching && (
-        <motion.div
+        <MotionDiv
           className={cn("flex items-center gap-xs", className)}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -169,7 +170,7 @@ export function SearchLoading({
           <span className="text-xs text-muted-foreground font-rajdhani">
             Searching...
           </span>
-        </motion.div>
+        </MotionDiv>
       )}
     </AnimatePresence>
   )
@@ -190,7 +191,7 @@ export function ImageLoadingPlaceholder({
   return (
     <AnimatePresence>
       {isLoading && (
-        <motion.div
+        <MotionDiv
           className={cn(
             "flex items-center justify-center",
             "bg-muted/30 border border-border/50 rounded-xs",
@@ -203,7 +204,7 @@ export function ImageLoadingPlaceholder({
           transition={{ duration: 0.3 }}
         >
           <ImageLoadingTumbleweed />
-        </motion.div>
+        </MotionDiv>
       )}
     </AnimatePresence>
   )
@@ -232,7 +233,7 @@ export function LoadingState({
   return (
     <AnimatePresence>
       {isLoading && (
-        <motion.div
+        <MotionDiv
           className={cn(
             "flex items-center gap-xs",
             size === "large" && "flex-col gap-base",
@@ -252,7 +253,7 @@ export function LoadingState({
               {message}
             </span>
           )}
-        </motion.div>
+        </MotionDiv>
       )}
     </AnimatePresence>
   )
@@ -273,7 +274,7 @@ export function ContentLoadingSkeleton({
   return (
     <AnimatePresence>
       {isLoading && (
-        <motion.div
+        <MotionDiv
           className={cn("space-y-sm", className)}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -290,7 +291,7 @@ export function ContentLoadingSkeleton({
           )}
           <div className="space-y-xs">
             {Array.from({ length: lines }).map((_, i) => (
-              <motion.div
+              <MotionDiv
                 key={i}
                 className="h-3 bg-muted/50 rounded-xs"
                 style={{ width: `${90 - i * 15}%` }}
@@ -304,7 +305,7 @@ export function ContentLoadingSkeleton({
               />
             ))}
           </div>
-        </motion.div>
+        </MotionDiv>
       )}
     </AnimatePresence>
   )

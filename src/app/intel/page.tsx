@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
@@ -578,8 +579,11 @@ export default async function MapPage() {
             
             {/* Featured Cards - Right side - 2x3 Grid */}
             <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-lg">
-              {shootingLocations.slice(0, 6).map((location, _index) => (
-                <Card key={location.name} className="shadow-whisper hover:shadow-present transition-all duration-300 overflow-hidden">
+              {shootingLocations.slice(0, 6).map((location, _index) => {
+                const locationSlug = location.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').trim().replace(/^-|-$/g, '')
+                return (
+                <Link key={location.name} href={`/intel/locations/${locationSlug}`} className="block">
+                  <Card className="shadow-whisper hover:shadow-present transition-all duration-300 overflow-hidden hover:scale-[1.02] cursor-pointer">
                   <CardHeader className="pb-lg">
                     <div className="flex items-center justify-between mb-md">
                       <Badge variant="intel-location" size="xs">
@@ -609,13 +613,19 @@ export default async function MapPage() {
                         variant="solid-primary"
                         size="sm" 
                         className="bg-nav-intel text-white hover:bg-nav-intel/90 font-rajdhani font-bold"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          e.stopPropagation()
+                        }}
                       >
                         Details
                       </Button>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                  </Card>
+                </Link>
+                )
+              })}
             </div>
           </div>
         </div>

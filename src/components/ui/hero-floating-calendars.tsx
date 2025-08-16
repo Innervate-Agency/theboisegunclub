@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { MotionDiv } from '@/components/ui/optimized-motion'
 import { Calendar } from '@phosphor-icons/react'
 
 interface FloatingCalendarsProps {
@@ -64,7 +64,7 @@ export function FloatingCalendars({ className }: FloatingCalendarsProps) {
   return (
     <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>
       {calendars.map(calendar => (
-        <motion.div
+        <MotionDiv
           key={calendar.id}
           className={`absolute ${calendar.position} ${calendar.size} text-rusty-orange/40`}
           initial={{ opacity: 0, scale: 0.5 }}
@@ -82,7 +82,7 @@ export function FloatingCalendars({ className }: FloatingCalendarsProps) {
           }}
         >
           <Calendar weight="bold" className="w-full h-full" />
-        </motion.div>
+        </MotionDiv>
       ))}
     </div>
   )

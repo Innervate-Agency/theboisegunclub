@@ -2,7 +2,8 @@
 
 import * as React from 'react'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
+import { MotionDiv } from '@/components/ui/optimized-motion'
 import { cn } from '@/lib/utils'
 import { Card, CardContent, CardHeader } from './card'
 import { Badge } from './badge'
@@ -213,7 +214,7 @@ export function TacticalMegamenu({
       {isOpen && (
         <>
           {/* Backdrop */}
-          <motion.div
+          <MotionDiv
             className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -223,7 +224,7 @@ export function TacticalMegamenu({
           />
           
           {/* Megamenu Content */}
-          <motion.div
+          <MotionDiv
             className={cn(
               "absolute top-full left-0 right-0 z-50",
               "bg-card border-b border-border shadow-modal",
@@ -264,7 +265,7 @@ export function TacticalMegamenu({
                 <div className="flex-1 p-base">
                   <AnimatePresence mode="wait">
                     {currentSection && (
-                      <motion.div
+                      <MotionDiv
                         key={currentSection.id}
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -389,13 +390,13 @@ export function TacticalMegamenu({
                             </Card>
                           </div>
                         )}
-                      </motion.div>
+                      </MotionDiv>
                     )}
                   </AnimatePresence>
                 </div>
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
         </>
       )}
     </AnimatePresence>

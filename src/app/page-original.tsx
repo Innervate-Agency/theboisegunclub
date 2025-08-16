@@ -3,7 +3,7 @@
 import React from 'react';
 import { Building2, Calendar, Target, Search, MessageSquare, ShieldCheck, Star, Store, MapPin, Trophy, DollarSign, Users, Activity, Eye, Phone, ExternalLink, Crosshair, Shield, CheckCircle, Camera } from 'lucide-react';
 import { Diamond } from '@phosphor-icons/react';
-import { motion } from 'framer-motion';
+import { MotionDiv, MotionSpan, MotionButton, MotionH1, MotionP } from '@/components/ui/optimized-motion';
 
 // Adjusted paths to match project structure
 import { SiteNavigation } from '@/components/ui/site-navigation';
@@ -52,7 +52,7 @@ export default function HomePage() {
                  }} />
             
             {/* Floating Diamonds Around Text Area */}
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, rotate: -28, y: 20 }}
               animate={{ 
                 opacity: [0.2, 0.3, 0.2], 
@@ -68,8 +68,8 @@ export default function HomePage() {
               className="absolute left-[20%] top-[20%]"
             >
               <Diamond className="w-8 h-8 text-crisp-off-white/60 drop-shadow-lg" weight="bold" />
-            </motion.div>
-            <motion.div
+            </MotionDiv>
+            <MotionDiv
               initial={{ opacity: 0, rotate: -28, x: -10 }}
               animate={{ 
                 opacity: [0.15, 0.25, 0.15], 
@@ -85,8 +85,8 @@ export default function HomePage() {
               className="absolute right-[20%] top-[18%]"
             >
               <Diamond className="w-6 h-6 text-crisp-off-white/50 drop-shadow-md" weight="bold" />
-            </motion.div>
-            <motion.div
+            </MotionDiv>
+            <MotionDiv
               initial={{ opacity: 0, rotate: -28, scale: 0.8 }}
               animate={{ 
                 opacity: [0.1, 0.2, 0.1], 
@@ -102,8 +102,8 @@ export default function HomePage() {
               className="absolute left-[15%] top-[45%]"
             >
               <Diamond className="w-5 h-5 text-crisp-off-white/40 drop-shadow" weight="bold" />
-            </motion.div>
-            <motion.div
+            </MotionDiv>
+            <MotionDiv
               initial={{ opacity: 0, rotate: -28, y: -15 }}
               animate={{ 
                 opacity: [0.25, 0.35, 0.25], 
@@ -119,8 +119,8 @@ export default function HomePage() {
               className="absolute right-[18%] top-[50%]"
             >
               <Diamond className="w-7 h-7 text-crisp-off-white/55 drop-shadow-lg" weight="bold" />
-            </motion.div>
-            <motion.div
+            </MotionDiv>
+            <MotionDiv
               initial={{ opacity: 0, rotate: -28 }}
               animate={{ 
                 opacity: [0.08, 0.15, 0.08], 
@@ -137,8 +137,8 @@ export default function HomePage() {
               className="absolute left-[35%] top-[35%]"
             >
               <Diamond className="w-4 h-4 text-crisp-off-white/45 drop-shadow-sm" weight="bold" />
-            </motion.div>
-            <motion.div
+            </MotionDiv>
+            <MotionDiv
               initial={{ opacity: 0, rotate: -28 }}
               animate={{ 
                 opacity: [0.12, 0.2, 0.12], 
@@ -155,12 +155,12 @@ export default function HomePage() {
               className="absolute right-[32%] top-[32%]"
             >
               <Diamond className="w-6 h-6 text-crisp-off-white/50 drop-shadow" weight="bold" />
-            </motion.div>
+            </MotionDiv>
             
             {/* Enhanced Asymmetrical campfire glow with particle system */}
             <div className="absolute bottom-0 left-0 right-0 h-96 overflow-hidden">
               {/* Layer 1: Deep base glow */}
-              <motion.div 
+              <MotionDiv 
                 className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120%] h-80"
                 animate={{
                   scale: [1, 1.1, 1],
@@ -178,7 +178,7 @@ export default function HomePage() {
               />
               
               {/* Layer 2: Main asymmetrical glow - offset to the right */}
-              <motion.div 
+              <MotionDiv 
                 className="absolute bottom-0 left-[45%] -translate-x-1/2 w-[90%] h-64"
                 animate={{
                   scale: [1.3, 1.35, 1.3],
@@ -197,7 +197,7 @@ export default function HomePage() {
               />
               
               {/* Layer 3: Secondary glow with flicker */}
-              <motion.div 
+              <MotionDiv 
                 className="absolute bottom-0 left-[30%] w-[50%] h-48"
                 animate={{
                   opacity: [0.6, 0.8, 0.5, 0.7, 0.6],
@@ -215,7 +215,7 @@ export default function HomePage() {
               />
               
               {/* Layer 4: Accent flare with rotation */}
-              <motion.div 
+              <MotionDiv 
                 className="absolute bottom-0 right-[15%] w-64 h-56"
                 animate={{
                   rotate: [-10, -5, -10],
@@ -233,7 +233,7 @@ export default function HomePage() {
               />
               
               {/* Layer 5: Intense core glow */}
-              <motion.div 
+              <MotionDiv 
                 className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-32"
                 animate={{
                   opacity: [0.4, 0.6, 0.3, 0.5, 0.4],
@@ -262,7 +262,7 @@ export default function HomePage() {
           <div className="relative z-10 px-md pt-[50px] pb-[200px] text-center">
             <div className="container mx-auto max-w-4xl space-y-lg">
               {/* Revolutionary Badge */}
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -272,16 +272,16 @@ export default function HomePage() {
                   <span className="size-2 bg-rusty-orange rounded-full animate-pulse" />
                   Revolutionary Platform
                 </span>
-              </motion.div>
+              </MotionDiv>
               
               {/* Dynamic Typography - Not H1 anymore, decorative */}
-              <motion.div 
+              <MotionDiv 
                 className="font-rajdhani text-dark-chocolate relative"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
               >
-                <motion.div 
+                <MotionDiv 
                   className="tracking-tight leading-none"
                   initial={{ letterSpacing: "0.5em", opacity: 0 }}
                   animate={{ letterSpacing: "0.02em", opacity: 1 }}
@@ -289,21 +289,21 @@ export default function HomePage() {
                 >
                   <div className="font-[800] text-6xl md:text-7xl lg:text-8xl">THE BOISE</div>
                   <div className="font-[300] text-5xl md:text-6xl lg:text-7xl -mt-4">GUN CLUB</div>
-                </motion.div>
-              </motion.div>
+                </MotionDiv>
+              </MotionDiv>
               
               {/* Enhanced Tagline */}
-              <motion.p 
+              <MotionP 
                 className="text-xl md:text-2xl font-rajdhani text-dark-chocolate/80 font-[400] lowercase tracking-wider"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.7 }}
               >
                 Built by Idaho Gun Owners, For Idaho Gun Owners
-              </motion.p>
+              </MotionP>
               
               {/* Trust Indicators */}
-              <motion.div 
+              <MotionDiv 
                 className="flex flex-wrap justify-center gap-md text-dark-chocolate/60 text-sm font-rajdhani"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -311,44 +311,44 @@ export default function HomePage() {
               >
                 <span className="flex items-center gap-xs">
                   <MapPin className="w-4 h-4" />
-                  <motion.span
+                  <MotionSpan
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 1.2 }}
                   >
                     8 Shooting Locations
-                  </motion.span>
+                  </MotionSpan>
                 </span>
                 <span className="flex items-center gap-xs">
                   <Building2 className="w-4 h-4" />
-                  <motion.span
+                  <MotionSpan
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 1.3 }}
                   >
                     150+ Local Businesses
-                  </motion.span>
+                  </MotionSpan>
                 </span>
                 <span className="flex items-center gap-xs">
                   <Users className="w-4 h-4" />
-                  <motion.span
+                  <MotionSpan
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 1.4 }}
                   >
                     5,000+ Community Members
-                  </motion.span>
+                  </MotionSpan>
                 </span>
-              </motion.div>
+              </MotionDiv>
               
               {/* Enhanced CTAs with Tactical Styling */}
-              <motion.div 
+              <MotionDiv 
                 className="pt-lg flex flex-col sm:flex-row gap-sm justify-center"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 1.1 }}
               >
-                <motion.button 
+                <MotionButton 
                   className="group relative px-xl py-sm bg-dark-chocolate text-crisp-off-white font-rajdhani text-lg font-bold uppercase tracking-wider rounded-xs transition-all shadow-elevated hover:shadow-hero transform hover:-translate-y-1 overflow-hidden"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
@@ -356,17 +356,17 @@ export default function HomePage() {
                   <span className="absolute inset-0 bg-gradient-to-r from-rusty-orange/0 via-rusty-orange/20 to-rusty-orange/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                   <span className="relative flex items-center justify-center gap-xs">
                     Join the Community
-                    <motion.span
+                    <MotionSpan
                       className="inline-block"
                       animate={{ x: [0, 3, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                     >
                       →
-                    </motion.span>
+                    </MotionSpan>
                   </span>
-                </motion.button>
+                </MotionButton>
                 
-                <motion.button 
+                <MotionButton 
                   className="group relative px-xl py-sm bg-crisp-off-white/90 text-dark-chocolate font-rajdhani text-lg font-bold uppercase tracking-wider rounded-xs transition-all shadow-elevated hover:shadow-prominent transform hover:-translate-y-1 border border-dark-chocolate/10"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
@@ -375,8 +375,8 @@ export default function HomePage() {
                     <Search className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
                     Explore Resources
                   </span>
-                </motion.button>
-              </motion.div>
+                </MotionButton>
+              </MotionDiv>
             </div>
           </div>
         </section>
@@ -402,22 +402,22 @@ export default function HomePage() {
                 
                 {/* SEO-Optimized H1 - The real H1 for the page */}
                 <section className="px-md lg:px-xl pb-lg">
-                  <motion.h1 
+                  <MotionH1 
                     className="text-center font-rajdhani text-3xl md:text-4xl lg:text-5xl font-bold text-card-foreground"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                   >
                     Idaho's Premier Firearms Directory & Community Hub
-                  </motion.h1>
-                  <motion.p 
+                  </MotionH1>
+                  <MotionP 
                     className="text-center text-lg text-muted-foreground mt-sm max-w-3xl mx-auto"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                   >
                     Connect with local gun stores, shooting ranges, trainers, and 5,000+ firearm enthusiasts across the Treasure Valley
-                  </motion.p>
+                  </MotionP>
                 </section>
 
                 {/* Community Mission Statement - Idaho Steward Voice */}
@@ -427,7 +427,7 @@ export default function HomePage() {
                       <Users className="h-4 w-4 mr-xs" />
                       Community Message
                     </Badge>
-                    <motion.div
+                    <MotionDiv
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
@@ -445,7 +445,7 @@ export default function HomePage() {
                       <p className="text-base text-card-foreground font-medium font-rajdhani">
                         Built by gun owners who understand that knowledge shared is liberty preserved.
                       </p>
-                    </motion.div>
+                    </MotionDiv>
                   </div>
                 </section>
 

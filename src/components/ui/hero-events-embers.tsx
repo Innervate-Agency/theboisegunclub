@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { MotionDiv } from '@/components/ui/optimized-motion'
 import { useEffect, useState } from 'react'
 
 interface EventsEmbersProps {
@@ -33,7 +33,7 @@ export function EventsEmbers({ className }: EventsEmbersProps) {
   return (
     <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>
       {embers.map(ember => (
-        <motion.div
+        <MotionDiv
           key={ember.id}
           className="absolute rounded-full opacity-60"
           style={{
@@ -66,7 +66,7 @@ export function EventsEmbers({ className }: EventsEmbersProps) {
       
       {/* Additional floating particles for depth */}
       {Array.from({ length: 8 }).map((_, i) => (
-        <motion.div
+        <MotionDiv
           key={`particle-${i}`}
           className="absolute w-1 h-1 rounded-full bg-rusty-orange/30"
           style={{

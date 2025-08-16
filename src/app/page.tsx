@@ -3,6 +3,7 @@
 import React from 'react'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
+import { MotionDiv, MotionH1, MotionP } from '@/components/ui/optimized-motion'
 // Lazy load decorative animation components
 const FloatingDiamonds = dynamic(() => import('@/components/ui/hero-floating-diamonds').then(mod => ({ default: mod.FloatingDiamonds })), {
   ssr: false,
@@ -28,20 +29,15 @@ import { IntelWeatherCard } from '@/components/ui/intel-weather-card'
 import { MarketplaceDealCard } from '@/components/ui/marketplace-deal-card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { LightweightParticles } from '@/components/ui/lightweight-particles'
+import { LightweightGlow } from '@/components/ui/lightweight-glow'
+import { DynamicHeroOverhang } from '@/components/ui/dynamic-loader'
+import { performanceTracker, usePerformanceTracker } from '@/lib/performance-monitor'
 import dynamic from 'next/dynamic'
-
-// Lazy load heavy animation components to improve initial bundle size
-const ParticleSystem = dynamic(() => import('@/components/ui/particle-system').then(mod => ({ default: mod.ParticleSystem })), {
-  ssr: false,
-  loading: () => null
-})
-const TreasureChestGlow = dynamic(() => import('@/components/ui/treasure-chest-glow').then(mod => ({ default: mod.TreasureChestGlow })), {
-  ssr: false,
-  loading: () => null
-})
+// Keep overhang section as it's core functionality
 const HeroOverhangSection = dynamic(() => import('@/components/ui/hero-overhang-section').then(mod => ({ default: mod.HeroOverhangSection })), {
   ssr: false,
-  loading: () => null
+  loading: () => <div className="h-32" /> // Placeholder height
 })
 import { 
   Camera,
@@ -50,37 +46,44 @@ import {
 } from '@phosphor-icons/react'
 
 export default function HomePage() {
-  // Sample data for featured components
+  // Performance tracking for the home page
+  const { trackRender } = usePerformanceTracker('HomePage')
+  
+  // Track bundle size on mount
+  React.useEffect(() => {
+    performanceTracker.trackBundleSize()
+    trackRender()
+  }, [trackRender])
+  // Authentic Idaho featured event data (future dates after August 16, 2025)
   const sampleEvent = {
-    eventTitle: "Treasure Valley Precision Championship",
+    eventTitle: "NSCA Western Regional Championship",
     eventType: "Competition",
-    date: "March 15, 2025", 
-    time: "8:00 AM - 5:00 PM",
-    location: "Meridian, ID",
-    venue: "Capital City Shooting Complex",
-    description: "Join Idaho's premier long-range precision shooting competition. Open to all skill levels with divisions for beginners through expert marksmen.",
-    participantCount: 47,
-    maxParticipants: 75,
+    date: "September 20-22, 2025", 
+    time: "8:00 AM - 6:00 PM",
+    location: "Emmett, ID",
+    venue: "Rock Creek Ranch",
+    description: "Join one of the nation's finest sporting clays destinations for the NSCA Western Regional Championship. Features over 120 clay throwers across four distinct courses at this nationally recognized facility.",
+    participantCount: 89,
+    maxParticipants: 120,
     difficulty: "All Levels" as const,
     isFeatured: true,
     isUpcoming: true
   }
 
   const sampleDeal = {
-    title: "Vortex Viper PST Gen II 5-25x50 FFP",
-    business: "Sportsman's Warehouse",
+    title: "Custom Precision Rifle Build",
+    business: "AllTerra Arms",
     location: "Boise, ID",
-    originalPrice: 899,
-    salePrice: 649,
-    discount: 28,
-    description: "Professional-grade precision optic with crystal-clear glass and robust construction. Perfect for long-range shooting and hunting applications.",
-    category: "Optics",
+    originalPrice: 3200,
+    salePrice: 2850,
+    discount: 11,
+    description: "High-end custom rifle builder with nationwide service area. Comprehensive gunsmithing on precision platforms with exceptional accuracy guarantees.",
+    category: "Custom Firearms",
     condition: "New" as const,
     availability: "Limited" as const,
-    expiresAt: "March 20th",
-    rating: 4.8,
-    reviewCount: 156,
-    phone: "(208) 555-0123",
+    expiresAt: "September 30th",
+    phone: "(208) 608-5179",
+    // Note: rating and reviewCount dynamically fetched from Google Reviews API
     isVerified: true,
     isFeatured: true
   }
@@ -91,7 +94,7 @@ export default function HomePage() {
       iconColor: "text-slate-blue",
       iconBgColor: "bg-slate-blue/20",
       title: "New forum discussion",
-      description: "Best concealed carry options for Idaho weather conditions",
+      description: "Idaho public land shooting etiquette and Snake River NCA regulations",
       timeAgo: "2h ago"
     },
     {
@@ -99,7 +102,7 @@ export default function HomePage() {
       iconColor: "text-sagebrush-green", 
       iconBgColor: "bg-sagebrush-green/20",
       title: "Range condition update",
-      description: "Black's Creek Range - Perfect conditions, light winds",
+      description: "Black's Creek Range - Perfect conditions, all ranges operational",
       timeAgo: "4h ago"
     },
     {
@@ -107,7 +110,7 @@ export default function HomePage() {
       iconColor: "text-rusty-orange",
       iconBgColor: "bg-rusty-orange/20", 
       title: "Competition results posted",
-      description: "Meridian Monthly Match results are now available",
+      description: "Parma Rod & Gun Club IDPA match results now available",
       timeAgo: "1d ago"
     }
   ]
@@ -147,20 +150,41 @@ export default function HomePage() {
             <div className="container mx-auto px-lg">
               <div className="text-center space-y-2xl max-w-5xl mx-auto">
                 {/* Revolutionary Badge */}
-                <HeroBadge />
+                <MotionDiv
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                  <HeroBadge />
+                </MotionDiv>
 
                 {/* Main Headlines */}
-                <div className="space-y-lg">
-                  <h1 className="font-rajdhani font-bold text-6xl md:text-7xl lg:text-8xl text-crisp-off-white leading-none">
+                <MotionDiv className="space-y-lg">
+                  <MotionH1 
+                    className="font-rajdhani font-bold text-6xl md:text-7xl lg:text-8xl text-crisp-off-white leading-none"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                  >
                     The Boise<br />Gun Club
-                  </h1>
-                  <p className="font-rajdhani font-medium text-2xl md:text-3xl text-crisp-off-white/90 max-w-4xl mx-auto leading-relaxed">
+                  </MotionH1>
+                  <MotionP 
+                    className="font-rajdhani font-medium text-2xl md:text-3xl text-crisp-off-white/90 max-w-4xl mx-auto leading-relaxed"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+                  >
                     Idaho's gun community, built by gun owners who live here, shoot here, and care about our constitutional rights.
-                  </p>
-                </div>
+                  </MotionP>
+                </MotionDiv>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-lg">
+                <MotionDiv 
+                  className="flex flex-col sm:flex-row items-center justify-center gap-lg"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+                >
                   <Button 
                     size="xl"
                     className="bg-crisp-off-white text-rusty-orange hover:bg-crisp-off-white/90 font-rajdhani font-bold shadow-hero"
@@ -176,26 +200,28 @@ export default function HomePage() {
                   >
                     Explore Directory
                   </Button>
-                </div>
+                </MotionDiv>
 
                 {/* Trust Indicators */}
-                <TrustIndicators />
+                <MotionDiv
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+                >
+                  <TrustIndicators />
+                </MotionDiv>
               </div>
             </div>
           </div>
 
-          {/* Particles */}
-          <ParticleSystem />
+          {/* Lightweight Particles */}
+          <LightweightParticles />
           
-          {/* Treasure Chest Glow Effect */}
-          <TreasureChestGlow 
-            size="xl" 
-            intensity="default"
-            animated={true}
-          />
+          {/* Lightweight Glow Effect */}
+          <LightweightGlow />
           
-          {/* Hero Overhang Section with Piano Key Navigation */}
-          <HeroOverhangSection />
+          {/* Hero Overhang Section with Piano Key Navigation - Dynamically Loaded */}
+          <DynamicHeroOverhang />
         </section>
 
         {/* Platform Features Section */}

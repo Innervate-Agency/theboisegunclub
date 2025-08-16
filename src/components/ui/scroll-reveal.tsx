@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { useInView } from 'framer-motion'
-import { motion } from 'framer-motion'
+import { MotionDiv } from '@/components/ui/optimized-motion'
 import { cn } from '@/lib/utils'
 
 interface ScrollRevealProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -57,7 +57,7 @@ export function ScrollReveal({
   const variants = directionVariants[direction]
 
   return (
-    <motion.div
+    <MotionDiv
       ref={ref}
       initial={variants.initial}
       animate={isInView ? variants.animate : variants.initial}
@@ -70,7 +70,7 @@ export function ScrollReveal({
       {...props}
     >
       {children}
-    </motion.div>
+    </MotionDiv>
   )
 }
 

@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { motion } from 'framer-motion'
+import { MotionDiv } from '@/components/ui/optimized-motion'
 import { Diamond } from '@phosphor-icons/react'
 import { cn } from '@/lib/utils'
 
@@ -85,7 +85,7 @@ export function IdahoTumbleweed({
   return (
     <div className={cn("relative inline-flex items-center", className)}>
       {/* Main tumbleweed diamond */}
-      <motion.div
+      <MotionDiv
         className="relative"
         variants={tumbleweedVariants}
         animate="rolling"
@@ -99,13 +99,13 @@ export function IdahoTumbleweed({
           weight="fill"
           style={{ color }}
         />
-      </motion.div>
+      </MotionDiv>
 
       {/* Trailing dust particles */}
       {showTrail && !paused && (
         <div className="absolute left-full ml-1 flex items-center gap-1">
           {[0, 0.3, 0.6].map((delay, index) => (
-            <motion.div
+            <MotionDiv
               key={index}
               className="w-1 h-1 rounded-full"
               style={{ 

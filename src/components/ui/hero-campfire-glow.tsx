@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { MotionDiv } from '@/components/ui/optimized-motion'
 import { ParticleSystem, FireflyParticles } from './particle-system'
 
 interface HeroCampfireGlowProps {
@@ -11,7 +11,7 @@ export function HeroCampfireGlow({ className }: HeroCampfireGlowProps) {
   return (
     <div className={`absolute bottom-0 left-0 right-0 h-96 overflow-hidden ${className}`}>
       {/* Layer 1: Deep base glow */}
-      <motion.div 
+      <MotionDiv 
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120%] h-80"
         animate={{
           scale: [1, 1.1, 1],
@@ -29,7 +29,7 @@ export function HeroCampfireGlow({ className }: HeroCampfireGlowProps) {
       />
       
       {/* Layer 2: Main asymmetrical glow - offset to the right */}
-      <motion.div 
+      <MotionDiv 
         className="absolute bottom-0 left-[45%] -translate-x-1/2 w-[90%] h-64"
         animate={{
           scale: [1.3, 1.35, 1.3],
@@ -48,7 +48,7 @@ export function HeroCampfireGlow({ className }: HeroCampfireGlowProps) {
       />
       
       {/* Layer 3: Secondary glow with flicker */}
-      <motion.div 
+      <MotionDiv 
         className="absolute bottom-0 left-[30%] w-[50%] h-48"
         animate={{
           opacity: [0.6, 0.8, 0.5, 0.7, 0.6],
@@ -66,7 +66,7 @@ export function HeroCampfireGlow({ className }: HeroCampfireGlowProps) {
       />
       
       {/* Layer 4: Accent flare with rotation */}
-      <motion.div 
+      <MotionDiv 
         className="absolute bottom-0 right-[15%] w-64 h-56"
         animate={{
           rotate: [-10, -5, -10],
@@ -84,7 +84,7 @@ export function HeroCampfireGlow({ className }: HeroCampfireGlowProps) {
       />
       
       {/* Layer 5: Intense core glow */}
-      <motion.div 
+      <MotionDiv 
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-32"
         animate={{
           opacity: [0.4, 0.6, 0.3, 0.5, 0.4],
