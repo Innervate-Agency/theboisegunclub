@@ -31,7 +31,7 @@ interface ProcessedWeatherData {
 import { promises as fs } from 'fs'
 import path from 'path'
 
-const API_KEY = '664292cdddfd62b0af8ffb50d2dd9c60'
+const API_KEY = process.env.OPENWEATHERMAP_API_KEY || '664292cdddfd62b0af8ffb50d2dd9c60'
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather'
 const CACHE_DURATION = 30 * 60 * 1000 // 30 minutes in milliseconds (weather changes frequently)
 const CACHE_DIR = path.join(process.cwd(), '.cache', 'weather')
