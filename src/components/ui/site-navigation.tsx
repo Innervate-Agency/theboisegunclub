@@ -221,25 +221,53 @@ export function SiteNavigation({
       className={cn(siteNavigationVariants({ variant, layout, sticky }), "site-navigation", className)}
       {...props}
     >
-      <div className="w-full max-w-site mx-auto px-md">
-        <div className="relative flex items-center justify-between h-16">
+      <div className="w-full max-w-site mx-auto px-sm sm:px-md">
+        <div className="relative flex items-center justify-between h-14 sm:h-16">
           
           {/* Logo */}
           {showLogo && (
             <div className="flex items-center">
-              <Link href="/" className="flex items-center gap-sm">
-                <div className="flex items-center gap-sm">
-                  {React.createElement(getCurrentPageIcon(), { 
-                    className: `size-8 ${getCurrentPageColor()} -rotate-[28deg]`, 
-                    weight: "bold" 
-                  })}
-                  <div>
-                    <div className="text-heading-lg font-rajdhani text-card-foreground leading-none uppercase">
+              <Link href="/" className="flex items-center gap-xs sm:gap-sm">
+                <div className="flex items-center gap-xs sm:gap-sm">
+                  <motion.div
+                    key={pathname} // This triggers re-render on route change
+                    className={getCurrentPageColor()}
+                    initial={{ 
+                      rotate: 0,
+                      scale: 1
+                    }}
+                    animate={{ 
+                      rotate: [0, 360], // Full spin maintains original angle
+                      scale: [1, 1.05, 1]
+                    }}
+                    transition={{ 
+                      duration: 0.8,
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                      times: [0, 0.5, 1]
+                    }}
+                    whileHover={{ 
+                      rotate: [0, -10, 10, 0],
+                      transition: { duration: 0.5, ease: "easeInOut" }
+                    }}
+                  >
+                    {React.createElement(getCurrentPageIcon(), { 
+                      className: "size-6 sm:size-8", 
+                      weight: "bold" 
+                    })}
+                  </motion.div>
+                  <div className="hidden sm:block">
+                    <div className="text-heading-base sm:text-heading-lg font-rajdhani text-card-foreground leading-none uppercase">
                       <span className="font-[800]">The Boise</span> <span className="font-[300]">Gun Club</span>
                     </div>
-                    <p className="text-heading-sm font-rajdhani font-[500] text-muted-foreground leading-[0.8] lowercase tracking-wider text-center -mt-3">
+                    <p className="text-heading-xs sm:text-heading-sm font-rajdhani font-[500] text-muted-foreground leading-[0.8] lowercase tracking-wider text-center -mt-2 sm:-mt-3">
                       {currentPageSubtitle}
                     </p>
+                  </div>
+                  {/* Mobile-only abbreviated logo */}
+                  <div className="block sm:hidden">
+                    <div className="text-heading-sm font-rajdhani text-card-foreground leading-none uppercase font-[800]">
+                      BGC
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -352,34 +380,50 @@ export function SiteNavigation({
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Enhanced for touch */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-base relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
-            <div className="space-y-xs">
+          <motion.div 
+            className="md:hidden py-lg relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+          >
+            <div className="space-y-sm">
               {navigationItems.map((item) => (
                 <div key={item.href} onClick={() => setIsMobileMenuOpen(false)}>
                   {renderNavLink(
                     item,
-                    `flex items-center gap-sm px-sm py-sm text-body-sm font-rajdhani font-medium transition-all duration-150 rounded-base ${
+                    `flex items-center gap-sm px-lg py-lg text-body-base font-rajdhani font-medium transition-all duration-150 rounded-xs min-h-[44px] ${
                       pathname === item.href 
-                        ? getActiveTextClass(item.color)
-                        : `text-muted-foreground ${getHoverClasses(item.color)}`
+                        ? `${getActiveTextClass(item.color)} bg-muted/30`
+                        : `text-muted-foreground ${getHoverClasses(item.color)} hover:bg-muted/20`
                     }`,
                     <>
-                      <item.icon className="size-4" weight="bold" />
-                      {item.label}
+                      <item.icon className="size-5" weight="bold" />
+                      <div className="flex flex-col">
+                        <span>{item.label}</span>
+                        <span className="text-xs text-muted-foreground">
+                          {item.label === 'Events' && 'Competitions & Training'}
+                          {item.label === 'Directory' && 'Local Businesses'}
+                          {item.label === 'Armory' && 'Gear Reviews'}
+                          {item.label === 'Intel' && 'Range Conditions'}
+                          {item.label === 'Marketplace' && 'Buy & Sell'}
+                          {item.label === 'Forums' && 'Community Discussion'}
+                        </span>
+                      </div>
                     </>
                   )}
                 </div>
               ))}
             </div>
             
-            <div className="pt-base mt-base relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
-              <div className="flex flex-col gap-xs">
-                <AuthButton variant="default" showTrialButton={false} className="flex-col items-stretch" />
+            <div className="pt-lg mt-lg relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
+              <div className="flex flex-col gap-sm">
+                <AuthButton variant="default" showTrialButton={false} className="flex-col items-stretch min-h-[44px]" />
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
     </nav>

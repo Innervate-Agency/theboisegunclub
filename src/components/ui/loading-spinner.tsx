@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Diamond } from "@phosphor-icons/react"
+import { LoadingTumbleweed } from "./idaho-tumbleweed"
 import { cn } from "@/lib/utils"
 
 export interface LoadingSpinnerProps {
@@ -7,18 +7,19 @@ export interface LoadingSpinnerProps {
   size?: "sm" | "md" | "lg" | "xl"
 }
 
-const sizeClasses = {
-  sm: "size-4",
-  md: "size-6", 
-  lg: "size-8",
-  xl: "h-12 w-12"
+// Map old size props to new tumbleweed sizes
+const sizeMapping = {
+  sm: "micro" as const,
+  md: "default" as const,
+  lg: "large" as const,
+  xl: "hero" as const
 }
 
 export function LoadingSpinner({ className, size = "md" }: LoadingSpinnerProps) {
   return (
-    <Diamond 
-      className={cn("animate-spin text-current", sizeClasses[size], className)} 
-      weight="bold" 
+    <LoadingTumbleweed 
+      className={cn("text-current", className)}
+      size={sizeMapping[size]}
     />
   )
 }

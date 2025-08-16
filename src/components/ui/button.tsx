@@ -2,7 +2,7 @@ import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { Loader2 } from "lucide-react"
+import { ButtonTumbleweed } from "./idaho-tumbleweed"
 import { HoverArrow, PlusMinusToggle, XOToggle, ChevronRotate } from "./micro-animations"
 
 const buttonVariants = cva(
@@ -40,7 +40,7 @@ const buttonVariants = cva(
         "fire-purple": "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-foothills-purple after:to-canyon-clay after:transition-all after:duration-300 hover:after:h-1 text-button-base font-rajdhani",
 
         // Enhanced Variants
-        "glass": "bg-white/10 text-foreground border border-white/20 backdrop-blur-sm hover:bg-white/15 hover:border-white/30 transition-all duration-150 text-button-base font-rajdhani",
+        "glass-enhanced": "bg-white/10 text-foreground border border-white/20 backdrop-blur-sm hover:bg-white/15 hover:border-white/30 transition-all duration-150 text-button-base font-rajdhani",
         "hover-lift": "transition-all duration-200 ease-out hover:transform hover:-translate-y-1 hover:shadow-prominent active:transform active:-translate-y-0.5 active:shadow-elevated focus:outline-none focus:shadow-present disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:transform-none text-button-base font-rajdhani",
       },
       size: {
@@ -125,7 +125,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ) : (
           // Normal button rendering with loading spinner and animations
           <>
-            {loading ? <Loader2 className="mr-tiny size-4 animate-spin" /> : null}
+            {loading ? <ButtonTumbleweed className="mr-tiny" /> : null}
             {children}
             {renderAnimation()}
           </>

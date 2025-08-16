@@ -2,6 +2,32 @@
 
 This file provides guidance to Claude Code when working with this repository.
 
+## 🚨 PRODUCTION DEPLOYMENT NOTICE - GOING LIVE IN 1-2 DAYS! 🚨
+
+### **CRITICAL PRODUCTION UPDATES - 2025-08-16**
+
+#### ✅ **MOBILE/RESPONSIVE DESIGN SYSTEM-WIDE OVERHAUL: Production-Ready**
+- **Hero Overhang**: Responsive scaling while maintaining single row integrity
+- **Site Navigation**: Mobile-first design with 44px touch targets  
+- **Tactical Megamenu**: Foundation component for comprehensive navigation
+- **Card Page Layout**: Simplified responsive padding system
+- **Homepage Grids**: Progressive enhancement from mobile to desktop
+- **Touch-First Interface**: All interactive elements meet accessibility standards
+
+#### ✅ **EPIC INDIVIDUAL CONTENT PAGES: Production-Ready Architecture**
+- **Hybrid Server/Client Architecture** for optimal performance
+- **1440px max-width containers** with intelligent sidebar system  
+- **Parallax hero sections** with Framer Motion animations
+- **Reading progress bars** with section navigation
+- **Smart sticky sidebars** with interactive features
+
+#### ✅ **IDAHO TUMBLEWEED LOADING SYSTEM: Complete**
+- **Comprehensive loading variants** for all scenarios (buttons, pages, forms, files)
+- **Tactical spinning navbar icon** with subtle 360° transition animation
+- **Mobile-optimized animations** that respect accessibility preferences
+
+**DEPLOYMENT STATUS**: All systems are production-ready with comprehensive mobile support!
+
 ## Project Overview
 
 **The Boise Gun Club** - Next.js 15 application serving as a comprehensive digital hub for Treasure Valley firearms communities. Built with React 19, TypeScript, Tailwind CSS v4, and shadcn/ui components.
@@ -65,7 +91,7 @@ This file provides guidance to Claude Code when working with this repository.
 - **Button Animations**: Context-aware micro-animations (arrow, plus-minus, x-o, chevron)
 - **Navigation Effects**: Magic Line sliding with spring physics (bounce: 0.25, stiffness: 130, damping: 9)
 - **Icon Interactions**: Subtle wiggle animations (-5°, 5°, 0°) with glow effects
-- **Loading States**: Branded spinning Diamond (replaces generic spinners)
+- **Loading States**: Idaho Tumbleweed system for all loading scenarios
 - **Performance**: All animations disabled during loading, use currentColor for theming
 
 ### Icon System (Phosphor Primary)
@@ -73,154 +99,80 @@ This file provides guidance to Claude Code when working with this repository.
 - **Fallback Libraries**: Tabler, Heroicons, React Icons for specialized needs
 - **Weight System**: Use "bold" weight for navigation (tactical aesthetic)
 - **Sizing Standard**: h-4 w-4 for most contexts, h-6 w-6 for prominent elements
-- **Tactical Aesthetic**: Angular, geometric icons preferred over rounded alternatives
 
 ## Business Context
-**The Boise Gun Club** is a regional marketplace/directory platform for the entire Treasure Valley firearms community - NOT a single gun club. **Community-focused platform** built by Idaho gun owners, for Idaho gun owners, emphasizing authentic voice over corporate messaging. Design for scalable systems: directory listings, event aggregation, forum categories.
-
-## Storybook Setup
-
-### File Organization
-- **Stories**: `src/stories/*.stories.tsx` - Component stories ONLY
-- **Documentation**: `src/docs/*.mdx` - Safe, curated documentation ONLY  
-- **NEVER**: Put loose `.mdx` files in `src/stories/` (will break build)
-
-### Commands
-- **Before committing**: Run `npm run storybook:fix && npm run storybook`
-- **If errors occur**: Run `npm run storybook:reset` to clear cache
-- **Framework**: Ensure `.storybook/main.ts` uses `@storybook/nextjs-vite`
+**The Boise Gun Club** is a regional marketplace/directory platform for the entire Treasure Valley firearms community - NOT a single gun club. **Community-focused platform** built by Idaho gun owners, for Idaho gun owners, emphasizing authentic voice over corporate messaging.
 
 ## Navigation Architecture
 
 ### Template System (Critical - Use These Patterns)
-- **ArticlePageTemplate**: Unified template for articles, events, guides with breadcrumbs, author info, and section-specific theming
-- **BusinessDetailTemplate**: Comprehensive business profiles with reviews, contact info, and verification badges
-- **MarketplaceProductTemplate**: Product detail pages with specifications, vendor info, and related products
+- **ArticlePageTemplate**: Unified template for articles, events, guides with breadcrumbs
+- **BusinessDetailTemplate**: Comprehensive business profiles with reviews and verification
+- **MarketplaceProductTemplate**: Product detail pages with specifications and vendor info
 
 ### Dynamic Routing Patterns
-- **Events**: `/events/[slug]` - Article-style event details using ArticlePageTemplate
-- **Directory**: `/directory/[slug]` - Business profiles using BusinessDetailTemplate  
-- **Armory**: `/the-armory/[slug]` - Equipment reviews using ArticlePageTemplate
-- **Guides**: `/guides/[slug]` - Legal/safety guides using ArticlePageTemplate
-- **Marketplace**: `/marketplace/[id]` - Product details using MarketplaceProductTemplate
-
-### Card-to-Detail Navigation
-- **EventCard**: `href` prop → `/events/[slug]` with auto-slug generation
-- **VendorCard**: `href` prop → `/directory/[slug]` with proper click handling
-- **BlogCard**: `sectionPath` prop for multi-section use (Armory, Guides)
-- **ProductCard**: Link navigation → `/marketplace/[id]` for product details
-
-### Breadcrumb Implementation
-- **Consistent Components**: Always use shadcn/ui Breadcrumb, BreadcrumbList, BreadcrumbItem
-- **Template Integration**: All detail templates include proper breadcrumb navigation
-- **Section Theming**: Breadcrumbs use section-specific color classes (nav-events, nav-armory, etc.)
+- **Events**: `/events/[slug]` - Article-style event details
+- **Directory**: `/directory/[slug]` - Business profiles  
+- **Armory**: `/the-armory/[slug]` - Equipment reviews
+- **Guides**: `/guides/[slug]` - Legal/safety guides
+- **Marketplace**: `/marketplace/[id]` - Product details
 
 ### CTA Functionality Standards
-- **Suggest Article**: `mailto:content@boiseguncollective.com` with structured templates
-- **List Items/Training**: `mailto:marketplace@boiseguncollective.com` for business applications
-- **Contact Support**: `mailto:support@boiseguncollective.com` for user assistance
-- **Join Community**: `mailto:info@boiseguncollective.com` for community onboarding
+- **Suggest Article**: `mailto:content@boiseguncollective.com`
+- **List Items/Training**: `mailto:marketplace@boiseguncollective.com`
+- **Contact Support**: `mailto:support@boiseguncollective.com`
+- **Join Community**: `mailto:info@boiseguncollective.com`
 
-## Key Recent Achievements
+## Mobile-First Responsive Design
 
-### Comprehensive Navigation System Implementation (2025-08-15)
-- **Complete Platform Connectivity**: Every card component now links to detailed pages
-- **Template Architecture**: Unified ArticlePageTemplate, BusinessDetailTemplate, MarketplaceProductTemplate system
-- **Dynamic Routing**: [slug]/[id] patterns across all major sections (Events, Directory, Armory, Guides, Marketplace)
-- **Breadcrumb Standardization**: shadcn/ui Breadcrumb components throughout platform
-- **CTA Functionality**: Converted all placeholder buttons to functional mailto engagement
-- **SEO Enhancement**: Individual pages for all content with proper metadata and routing
-- **Type Safety**: Full TypeScript implementation with proper navigation prop interfaces
+### Breakpoint Strategy
+- **320px-639px**: Compact mobile layout
+- **640px-767px**: Enhanced mobile with more spacing  
+- **768px-1023px**: Tablet layout with sidebar options
+- **1024px+**: Full desktop experience
 
-### Modern Footer Redesign & LLC Integration (2025-08-14)
-- **Multi-Tier "Fat Footer"**: Complete redesign following 2024-2025 modern patterns with newsletter CTA, 5-column architecture, and comprehensive navigation
-- **LLC Branding Integration**: Updated copyright to "Boise Gun Collective, LLC" with professional contact information (info@boiseguncollective.com)
-- **Phosphor Icon Migration**: Complete footer icon consistency using tactical Phosphor icons with weight="bold"
-- **Page-Specific Accent Bar**: Dynamic colored strip using navigation color system (home=golden, events=orange, directory=cyan, etc.)
-- **Micro-Animation System**: HoverArrow newsletter button, social icon hover effects, back-to-top FAB with smooth scroll
-- **Rajdhani Typography**: Consistent font application throughout entire footer for professional brand cohesion
-- **Tactical Square Aesthetic**: rounded-none containers with shadow-elevated hierarchy maintaining design system integrity
+### Navigation Principles (CRITICAL)
+- **Navigation Integrity**: Navigation components ALWAYS stay single row
+- **Scale, Don't Break**: Reduce button/icon sizes rather than wrapping
+- **Progressive Typography**: Text scales down gracefully on smaller screens
+- **Touch Accessibility**: 44px minimum touch targets maintained
 
-### Authentic Community Home Page Redesign (2025-08-14)
-- **Community-Focused Messaging**: Complete transformation from corporate platform to authentic Idaho gun owner voice
-- **Seven Platform Pillars**: Strategic restructuring around 7 core features (Directory, Forums, Events, Intel, Marketplace, Armory, Training)
-- **Mission-Driven Content**: Emphasis on community benefits, contribution opportunities, and genuine local ownership
-- **Idaho Steward Voice**: Implementation of down-to-earth, anti-corporate messaging that resonates with Treasure Valley gun owners
-- **Community Contribution**: Clear pathways for members to contribute (forum participation, range photos, firearm reviews)
-
-### Magic Line Navigation System (2025-08-12)
-- **Framer Motion Integration**: Professional spring physics with Magic Line sliding indicator
-- **Micro-Animation System**: Context-aware button animations (arrow, x-o, plus-minus, chevron)
-- **Phosphor Icon Migration**: Complete replacement with tactical angular icons
-- **Performance**: Animations disabled during loading, use currentColor for theming
-
-### Design System Implementation
-- **26-Color Boise Landscape Palette**: Complete custom color system in `src/app/globals.css`
-- **8-Level Shadow System**: Semantic depth hierarchy (ghost → whisper → present → elevated → prominent → commanding → hero → modal)
-- **Tactical Square Aesthetic**: Main cards use `rounded-none`, subtle rounding for interactive elements
-- **Page-Specific Theming**: Dynamic CSS custom properties for each navigation page
-
-### Component Architecture
-- **Button System**: CVA-based with intelligent micro-animations and state management
-- **Card Components**: EventCard, VendorCard, ArticleCard with tier-based styling
-- **Accessibility Panel**: Performance-optimized with CSS custom properties and debouncing
-- **Loading States**: Branded Diamond spinner component
+### Loading System
+- **Idaho Tumbleweed**: Use for all loading states (buttons, pages, forms, files)
+- **Variants Available**: ButtonTumbleweed, LoadingTumbleweed, PageLoadingTumbleweed, etc.
+- **Mobile Optimized**: Animations work smoothly across all devices
 
 ## Key Reference Files
 
 ### Core Platform & Design
-- `src/app/page.tsx` - **Home page with authentic community messaging and 7-pillar platform structure**
+- `src/app/page.tsx` - **Home page with authentic community messaging**
 - `src/app/globals.css` - Complete 26-color Boise landscape palette and design tokens
-- `_resources/docs/AI Persona & Writing Guidelines_ _The Idaho Steward_.md` - Community voice and messaging guidelines
-- `_resources/docs/Idaho Shooting and Sporting Venues.md` - Local venue data and community statistics
+- `src/components/ui/site-navigation.tsx` - **Mobile-responsive navigation with tactical megamenu foundation**
+- `src/components/ui/hero-overhang-section.tsx` - **Responsive treasure chest navigation**
 
-### Navigation Templates & Routing (New Architecture)
-- `src/components/ui/article-page-template.tsx` - **Unified template for events, guides, armory articles**
-- `src/components/ui/business-detail-template.tsx` - **Business profile template with reviews and verification**
-- `src/components/ui/marketplace-product-template.tsx` - **Product detail template with specifications**
-- `src/app/events/[slug]/page.tsx` - **Dynamic event routing using ArticlePageTemplate**
-- `src/app/directory/[slug]/page.tsx` - **Business profile routing using BusinessDetailTemplate**
-- `src/app/guides/[slug]/page.tsx` - **Guide article routing using ArticlePageTemplate**
-- `src/app/marketplace/[id]/page.tsx` - **Product detail routing using MarketplaceProductTemplate**
+### Template System
+- `src/components/ui/article-page-template.tsx` - **Unified article template**
+- `src/components/ui/business-detail-template.tsx` - **Business profile template**
+- `src/components/ui/marketplace-product-template.tsx` - **Product detail template**
 
-### Enhanced Card Components
-- `src/components/ui/EventCard.tsx` - **Event cards with Link navigation and slug generation**
-- `src/components/ui/VendorCard.tsx` - **Business cards with profile linking and click handling**
-- `src/components/ui/blog-article.tsx` - **BlogCard with sectionPath support for Armory/Guides**
-
-### UI System & Animations
-- `src/components/ui/button.tsx` - Enhanced with micro-animation system and animationType props
-- `src/components/ui/micro-animations.tsx` - HoverArrow, PlusMinusToggle, XOToggle, ChevronRotate components
-- `src/components/ui/site-navigation.tsx` - Magic Line navigation with Framer Motion spring physics
-- `src/components/ui/hero-overhang-section.tsx` - **Treasure chest opening navigation with dynamic colored shadows**
-- `src/components/ui/treasure-chest-glow.tsx` - **Animated radial gradient with pulsing effects for hero bottom**
-- `src/components/ui/site-footer.tsx` - Modern "fat footer" with LLC branding, Phosphor icons, and micro-animations
-- `src/components/ui/loading-spinner.tsx` - Branded Diamond spinner component
-- `src/components/ui/accessibility-panel.tsx` - Performance-optimized with CSS custom properties
+### Animation & Loading
+- `src/components/ui/idaho-tumbleweed.tsx` - **Complete tumbleweed loading system**
+- `src/components/ui/comprehensive-loading.tsx` - **Loading scenarios for all use cases**
+- `src/components/ui/tactical-megamenu.tsx` - **Foundation megamenu component**
 
 ## Project Memory
 
-- **Community Voice**: Platform messaging emphasizes authentic Idaho gun owner voice - anti-corporate, genuine, down-to-earth
-- **Seven Platform Pillars**: Always reference the 7 core features (Directory, Forums, Events, Intel, Marketplace, Armory, Training)
-- **Community Contribution**: Encourage user participation through forums, range photos, firearm reviews, and local knowledge sharing
+- **Community Voice**: Platform messaging emphasizes authentic Idaho gun owner voice
 - **Colors**: ONLY use custom 26-color Boise landscape palette from `globals.css` - NEVER generic Tailwind
 - **Icons**: Always use Phosphor Icons as primary choice - tactical, angular aesthetic preferred
 - **Aesthetic**: Tactical square components (`rounded-none` for cards, minimal rounding for interactive)
-- **Animation**: Context-aware micro-interactions - arrows for navigation, toggles for state changes
-- **Performance**: All animations disabled during loading, use `currentColor` for theming
-- **Navigation**: Magic Line sliding effect is signature feature - never remove without approval
-- **Homepage Overhang**: Treasure chest opening effect with 6-button navigation, dynamic colored shadows, and wave animations
-- **Color Shadows**: Use diffused shadows (120px spread, 0.15 opacity) - NEVER plastic-y full-color shadows
-- **Piano Key Effect**: Buttons lift up (-translate-y-1) and scale (0.98) with staggered color wave (border→icon→text)
-- **Typography**: Rajdhani font weights 300-800 for display, perfect kerning and letter-spacing
-- **Home Page**: Mission-driven content structure with trust indicators (8 locations, 150+ businesses, 5K+ members)
-- **Development**: Kill dev server before restarting, run in background
+- **Animation**: Idaho Tumbleweed for ALL loading states, context-aware micro-interactions
+- **Mobile-First**: Navigation integrity maintained across all breakpoints, 44px touch targets
+- **Performance**: Animations disabled during loading, lazy-loaded heavy components
 
 ### Navigation System Memory (Critical Implementation)
-- **Template Architecture**: ALWAYS use ArticlePageTemplate for articles/events/guides, BusinessDetailTemplate for business profiles, MarketplaceProductTemplate for products
-- **Card Navigation**: ALL card components must have Link navigation to detail pages - EventCard→/events/[slug], VendorCard→/directory/[slug], BlogCard with sectionPath support
-- **Breadcrumb Standards**: Use shadcn/ui Breadcrumb components throughout, section-specific theming (nav-events, nav-armory colors)
-- **Dynamic Routing**: [slug]/[id] patterns across all major sections with proper generateStaticParams and metadata
-- **CTA Functionality**: NO placeholder buttons - all CTAs use structured mailto links (content@, marketplace@, support@, info@boiseguncollective.com)
-- **Link Implementation**: Next.js Link components with proper event handling (preventDefault/stopPropagation for nested interactions)
-- **Slug Generation**: Automatic URL-friendly slug creation with fallback patterns for all content types
+- **Navigation Integrity**: NEVER break navigation into multiple rows - scale down instead
+- **Template Architecture**: ALWAYS use proper templates for content types
+- **Card Navigation**: ALL card components must have Link navigation to detail pages
+- **Touch-First**: All interactive elements meet 44px minimum touch target requirements
+- **Responsive Scaling**: Icons, text, and spacing scale progressively from mobile to desktop

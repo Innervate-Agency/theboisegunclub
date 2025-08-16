@@ -171,7 +171,7 @@ export function CardPageLayout({
 
       {/* Main Content Area - Full Width Amazon Style */}
       <section className="py-4xl bg-background/50">
-        <div className="w-full px-lg sm:px-xl lg:px-2xl xl:px-3xl 2xl:px-[7.5rem]">
+        <div className="w-full px-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl">
           <div className="flex gap-xl max-w-[1920px] mx-auto">
             
             {/* Left Sidebar - Filters */}
@@ -227,7 +227,7 @@ export function CardPageLayout({
             {/* Main Content */}
             <main className="flex-1 min-w-0">
               {/* Results Header with Controls */}
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-lg mb-2xl">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-sm sm:gap-lg mb-lg sm:mb-xl lg:mb-2xl">
                 <div>
                   <h2 className="font-rajdhani text-heading-xl font-bold text-card-foreground">
                     {filteredResults} {filteredResults === 1 ? 'Result' : 'Results'} Found
@@ -238,10 +238,10 @@ export function CardPageLayout({
                   </p>
                 </div>
                 
-                {/* View Controls */}
-                <div className="flex items-center gap-sm">
-                  {/* View Mode Toggle */}
-                  <div className="flex items-center border rounded-xs">
+                {/* View Controls - Mobile responsive */}
+                <div className="flex items-center gap-xs sm:gap-sm">
+                  {/* View Mode Toggle - Hidden on small mobile */}
+                  <div className="hidden sm:flex items-center border rounded-xs">
                     <Button
                       variant={viewMode === 'dense' ? 'default' : 'ghost'}
                       size="sm"

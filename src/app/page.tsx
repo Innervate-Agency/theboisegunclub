@@ -3,9 +3,19 @@
 import React from 'react'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
-import { FloatingDiamonds } from '@/components/ui/hero-floating-diamonds'
-import { HeroCampfireGlow } from '@/components/ui/hero-campfire-glow'
-import { HeroBadge } from '@/components/ui/hero-badge'
+// Lazy load decorative animation components
+const FloatingDiamonds = dynamic(() => import('@/components/ui/hero-floating-diamonds').then(mod => ({ default: mod.FloatingDiamonds })), {
+  ssr: false,
+  loading: () => null
+})
+const HeroCampfireGlow = dynamic(() => import('@/components/ui/hero-campfire-glow').then(mod => ({ default: mod.HeroCampfireGlow })), {
+  ssr: false,
+  loading: () => null
+})
+const HeroBadge = dynamic(() => import('@/components/ui/hero-badge').then(mod => ({ default: mod.HeroBadge })), {
+  ssr: false,
+  loading: () => null
+})
 import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { PlatformFeatureCard, platformFeatures } from '@/components/ui/platform-feature-card'
 import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
@@ -18,12 +28,22 @@ import { IntelWeatherCard } from '@/components/ui/intel-weather-card'
 import { MarketplaceDealCard } from '@/components/ui/marketplace-deal-card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { ParticleSystem } from '@/components/ui/particle-system'
-import { TreasureChestGlow } from '@/components/ui/treasure-chest-glow'
-import { HeroOverhangSection } from '@/components/ui/hero-overhang-section'
-import { motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
+
+// Lazy load heavy animation components to improve initial bundle size
+const ParticleSystem = dynamic(() => import('@/components/ui/particle-system').then(mod => ({ default: mod.ParticleSystem })), {
+  ssr: false,
+  loading: () => null
+})
+const TreasureChestGlow = dynamic(() => import('@/components/ui/treasure-chest-glow').then(mod => ({ default: mod.TreasureChestGlow })), {
+  ssr: false,
+  loading: () => null
+})
+const HeroOverhangSection = dynamic(() => import('@/components/ui/hero-overhang-section').then(mod => ({ default: mod.HeroOverhangSection })), {
+  ssr: false,
+  loading: () => null
+})
 import { 
-  ArrowRight,
   Camera,
   ChatsCircle,
   Trophy
@@ -130,34 +150,23 @@ export default function HomePage() {
                 <HeroBadge />
 
                 {/* Main Headlines */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                  className="space-y-lg"
-                >
+                <div className="space-y-lg">
                   <h1 className="font-rajdhani font-bold text-6xl md:text-7xl lg:text-8xl text-crisp-off-white leading-none">
                     The Boise<br />Gun Club
                   </h1>
                   <p className="font-rajdhani font-medium text-2xl md:text-3xl text-crisp-off-white/90 max-w-4xl mx-auto leading-relaxed">
                     Idaho's gun community, built by gun owners who live here, shoot here, and care about our constitutional rights.
                   </p>
-                </motion.div>
+                </div>
 
                 {/* Action Buttons */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                  className="flex flex-col sm:flex-row items-center justify-center gap-lg"
-                >
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-lg">
                   <Button 
                     size="xl"
                     className="bg-crisp-off-white text-rusty-orange hover:bg-crisp-off-white/90 font-rajdhani font-bold shadow-hero"
                     animationType="arrow"
                   >
                     Join Our Community
-                    <ArrowRight className="ml-sm h-5 w-5" weight="bold" />
                   </Button>
                   <Button 
                     variant="outline" 
@@ -167,7 +176,7 @@ export default function HomePage() {
                   >
                     Explore Directory
                   </Button>
-                </motion.div>
+                </div>
 
                 {/* Trust Indicators */}
                 <TrustIndicators />
@@ -204,7 +213,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-sm sm:gap-base lg:gap-lg">
               {platformFeatures.map((feature, index) => (
                 <PlatformFeatureCard key={index} {...feature} />
               ))}
@@ -213,11 +222,11 @@ export default function HomePage() {
         </section>
 
         {/* Featured Content Grid */}
-        <section className="py-3xl bg-muted/30">
-          <div className="container mx-auto px-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl">
+        <section className="py-lg sm:py-xl lg:py-3xl bg-muted/30">
+          <div className="container mx-auto px-sm sm:px-md lg:px-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-lg lg:gap-xl">
               {/* Featured Event */}
-              <div className="lg:col-span-2">
+              <div className="lg:col-span-2 order-1 lg:order-none">
                 <h3 className="font-rajdhani font-bold text-2xl text-card-foreground mb-lg">
                   Featured Event
                 </h3>
@@ -225,7 +234,7 @@ export default function HomePage() {
               </div>
 
               {/* Sidebar */}
-              <div className="space-y-xl">
+              <div className="space-y-lg lg:space-y-xl order-2 lg:order-none">
                 {/* Weather Intel */}
                 <div>
                   <h3 className="font-rajdhani font-bold text-xl text-card-foreground mb-base">
@@ -304,7 +313,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-lg">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-sm sm:gap-base lg:gap-lg">
               {platformValueCards.map((card, index) => (
                 <PlatformValueCard key={index} {...card} />
               ))}

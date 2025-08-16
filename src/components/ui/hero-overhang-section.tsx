@@ -109,8 +109,8 @@ export function HeroOverhangSection({
           {/* Optional top accent line */}
           <div className="h-1 bg-gradient-to-r from-transparent via-sandy-ochre/50 to-transparent" />
           
-          {/* Navigation Buttons */}
-          <div className="grid grid-cols-6 h-26">
+          {/* Navigation Buttons - Responsive scaling while maintaining single row */}
+          <div className="grid grid-cols-6 h-16 sm:h-20 md:h-24 lg:h-26">
             {navigationItems.map((item, index) => (
               <Link
                 key={index}
@@ -141,10 +141,10 @@ export function HeroOverhangSection({
                   }}
                 />
                 
-                <div className="relative z-10 flex flex-col items-center justify-center h-full py-2 px-2 transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-[0.98]">
-                  {/* Icon */}
+                <div className="relative z-10 flex flex-col items-center justify-center h-full py-1 px-1 sm:py-2 sm:px-2 transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-[0.98]">
+                  {/* Icon - Responsive sizing */}
                   <div 
-                    className="transition-all duration-300 delay-75 text-muted-foreground/70 group-hover:scale-110 mb-1"
+                    className="transition-all duration-300 delay-75 text-muted-foreground/70 group-hover:scale-110 mb-0.5 sm:mb-1"
                     style={{
                       color: 'inherit'
                     }}
@@ -158,13 +158,13 @@ export function HeroOverhangSection({
                     }}
                   >
                     {React.cloneElement(item.icon as React.ReactElement, {
-                      className: "h-8 w-8 transition-colors duration-300"
+                      className: "h-4 w-4 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 transition-colors duration-300"
                     })}
                   </div>
                   
-                  {/* Text */}
+                  {/* Text - Responsive typography */}
                   <div 
-                    className="text-lg font-rajdhani font-semibold text-card-foreground transition-colors duration-300 delay-100"
+                    className="text-xs sm:text-sm md:text-base lg:text-lg font-rajdhani font-semibold text-card-foreground transition-colors duration-300 delay-100 text-center leading-tight"
                     onMouseEnter={(e) => {
                       setTimeout(() => {
                         e.currentTarget.style.color = `var(--${item.colorClass})`
