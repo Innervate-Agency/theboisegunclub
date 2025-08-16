@@ -1,4 +1,4 @@
-import { getArmoryItem, getAllArmoryItems } from '@/lib/the-armory';
+import { getArmoryItem, getAllArmoryItems } from '@/lib/armory';
 import ArticlePageTemplate from '@/components/ui/article-page-template';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';

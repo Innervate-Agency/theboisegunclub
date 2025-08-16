@@ -36,7 +36,7 @@ interface ArticlePageTemplateProps {
   featured?: boolean
   image?: string
   sectionName: string // "Armory", "Guides", etc.
-  sectionPath: string // "/the-armory", "/guides", etc.
+  sectionPath: string // "/armory", "/guides", etc.
   sectionColor: string // "nav-armory", "nav-guides", etc.
   breadcrumbs?: Array<{ label: string; href: string }>
   relatedArticles?: Array<{

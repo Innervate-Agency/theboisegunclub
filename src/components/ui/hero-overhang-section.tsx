@@ -60,7 +60,7 @@ export function HeroOverhangSection({
       glowColor: "hover:shadow-nav-directory/50"
     },
     { 
-      href: "/the-armory", 
+      href: "/armory", 
       icon: <Shield className="h-8 w-8" weight="bold" />, 
       label: "Armory", 
       colorClass: "nav-armory",

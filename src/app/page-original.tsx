@@ -23,7 +23,7 @@ export default function HomePage() {
   const pianoKeyItems = [
     { href: "/events", icon: <Calendar className="w-6 h-6" />, label: "Events", colorClass: "nav-events" },
     { href: "/directory", icon: <Building2 className="w-6 h-6" />, label: "Directory", colorClass: "nav-directory" },
-    { href: "/the-armory", icon: <ShieldCheck className="w-6 h-6" />, label: "Armory", colorClass: "nav-armory" },
+    { href: "/armory", icon: <ShieldCheck className="w-6 h-6" />, label: "Armory", colorClass: "nav-armory" },
     { href: "/intel", icon: <Target className="w-6 h-6" />, label: "Intel", colorClass: "nav-intel" },
     { href: "/marketplace", icon: <Store className="w-6 h-6" />, label: "Marketplace", colorClass: "nav-marketplace" },
     { href: "https://boisegunclub.com/forums/", icon: <MessageSquare className="w-6 h-6" />, label: "Forums", colorClass: "nav-forums" },
@@ -567,7 +567,7 @@ export default function HomePage() {
                           windDirection: "SW",
                           fireDanger: "Low" as const,
                           accessStatus: "Open" as const,
-                          weatherIcon: "☀️" as const,
+                          weatherIcon: "sun" as const,
                           lastUpdated: "2025-08-14T05:30:00Z"
                         }}
                       />

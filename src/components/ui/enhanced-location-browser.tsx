@@ -16,7 +16,7 @@ interface WeatherData {
   windDirection: string
   fireDanger: 'Low' | 'Moderate' | 'High' | 'Extreme'
   accessStatus: 'Open' | 'Restrictions' | 'Closed'
-  weatherIcon: '☀️' | '⛅' | '☁️' | '🌧️' | '🌨️' | '🌪️'
+  weatherIcon: 'sun' | 'partly-cloudy' | 'cloudy' | 'rain' | 'snow' | 'storm'
   alerts?: string[]
   lastUpdated: string
 }

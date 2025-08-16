@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import ArticlePageTemplate from '@/components/ui/article-page-template'
+import { ArticleDetailPage } from '@/components/ui/detail-page-builder'
 
 // Event data interface matching the existing EventCard structure
 interface EventData {
@@ -506,9 +506,9 @@ export default async function EventDetailPage({ params }: Props) {
   const spotsLeft = event.capacity - event.registeredCount
 
   return (
-    <ArticlePageTemplate
+    <ArticleDetailPage
       title={event.title}
-      excerpt={event.description}
+      description={event.description}
       content={event.fullContent}
       author={{
         name: event.organizer,
@@ -519,13 +519,16 @@ export default async function EventDetailPage({ params }: Props) {
       readTime={8}
       category={`${event.eventType} Event`}
       featured={event.featured}
-      sectionName="Events"
-      sectionPath="/events"
-      sectionColor="nav-events"
+      section={{
+        name: "Events",
+        path: "/events",
+        color: "nav-events"
+      }}
       tags={event.tags}
       views={0}
       likes={0}
       comments={0}
+      heroImage={event.images?.[0]}
       relatedArticles={[
         {
           id: "event-safety-guide",

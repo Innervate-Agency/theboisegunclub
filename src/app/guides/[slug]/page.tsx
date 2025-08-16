@@ -1,5 +1,5 @@
 import { getGuideData, getAllGuides } from '@/lib/guides';
-import ArticlePageTemplate from '@/components/ui/article-page-template';
+import { ArticleDetailPage } from '@/components/ui/detail-page-builder';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
@@ -37,9 +37,9 @@ export default async function GuidePage({ params }: Props) {
   }
 
   return (
-    <ArticlePageTemplate
+    <ArticleDetailPage
       title={guide.frontmatter.title}
-      excerpt={guide.frontmatter.description}
+      description={guide.frontmatter.description}
       content={guide.content}
       author={{
         name: guide.frontmatter.author,
@@ -49,9 +49,11 @@ export default async function GuidePage({ params }: Props) {
       publishDate={guide.frontmatter.publishDate || guide.frontmatter.date}
       readTime={12}
       category="Legal Guide"
-      sectionName="Guides"
-      sectionPath="/guides"
-      sectionColor="nav-guides"
+      section={{
+        name: "Guides",
+        path: "/guides",
+        color: "nav-guides"
+      }}
       tags={guide.frontmatter.tags || ["Idaho Law", "Legal Guide"]}
       views={2840}
       likes={127}

@@ -53,7 +53,7 @@ const navigationItems = [
   { label: "Home", icon: Diamond, href: "/", color: "nav-home" },
   { label: "Events", icon: Ticket, href: "/events", color: "nav-events" },
   { label: "Directory", icon: AddressBook, href: "/directory", color: "nav-directory" },
-  { label: "Armory", icon: Shield, href: "/the-armory", color: "nav-armory" },
+  { label: "Armory", icon: Shield, href: "/armory", color: "nav-armory" },
   { label: "Intel", icon: MapTrifold, href: "/intel", color: "nav-intel" },
   { label: "Marketplace", icon: Storefront, href: "/marketplace", color: "nav-marketplace" },
   { label: "Forums", icon: Users, href: "/forums", color: "nav-forums", isForumLink: true }
@@ -85,7 +85,7 @@ export function SiteNavigation({
     if (pathname === '/') return 'text-nav-home'
     if (pathname.startsWith('/events')) return 'text-nav-events'
     if (pathname.startsWith('/directory')) return 'text-nav-directory'
-    if (pathname.startsWith('/the-armory')) return 'text-nav-armory'
+    if (pathname.startsWith('/armory')) return 'text-nav-armory'
     if (pathname.startsWith('/intel')) return 'text-nav-intel'
     if (pathname.startsWith('/marketplace')) return 'text-nav-marketplace'
     if (pathname.startsWith('/forums')) return 'text-nav-forums'
@@ -97,7 +97,7 @@ export function SiteNavigation({
     if (pathname === '/') return Diamond
     if (pathname.startsWith('/events')) return Ticket
     if (pathname.startsWith('/directory')) return AddressBook
-    if (pathname.startsWith('/the-armory')) return Shield
+    if (pathname.startsWith('/armory')) return Shield
     if (pathname.startsWith('/intel')) return MapTrifold
     if (pathname.startsWith('/marketplace')) return Storefront
     if (pathname.startsWith('/forums')) return Users
@@ -109,7 +109,7 @@ export function SiteNavigation({
     if (pathname === '/') return 'Treasure Valley Collective'
     if (pathname.startsWith('/events')) return 'Your Trusted Event Source'
     if (pathname.startsWith('/directory')) return 'Local Business Network'
-    if (pathname.startsWith('/the-armory')) return 'Gear Reviews & Insights'
+    if (pathname.startsWith('/armory')) return 'Gear Reviews & Insights'
     if (pathname.startsWith('/intel')) return 'Range Conditions & Data'
     if (pathname.startsWith('/marketplace')) return 'Community Commerce Hub'
     if (pathname.startsWith('/forums')) return 'Community Discussion Space'
@@ -237,7 +237,7 @@ export function SiteNavigation({
                     <div className="text-heading-lg font-rajdhani text-card-foreground leading-none uppercase">
                       <span className="font-[800]">The Boise</span> <span className="font-[300]">Gun Club</span>
                     </div>
-                    <p className="text-heading-xs font-rajdhani font-[500] text-muted-foreground leading-[0.8] lowercase tracking-wider text-center -mt-1">
+                    <p className="text-heading-sm font-rajdhani font-[500] text-muted-foreground leading-[0.8] lowercase tracking-wider text-center -mt-3">
                       {currentPageSubtitle}
                     </p>
                   </div>

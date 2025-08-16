@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import LocationDetailTemplate from '@/components/ui/location-detail-template'
+import { LocationDetailPage } from '@/components/ui/detail-page-builder'
 
 // Mock location data service - in production, this would fetch from a database
 const getLocationData = (slug: string) => {
@@ -284,5 +284,35 @@ export default async function LocationDetailPage({ params }: Props) {
     notFound()
   }
 
-  return <LocationDetailTemplate {...location} />
+  // Transform location data to match LocationDetailPage props
+  const transformedLocation = {
+    ...location,
+    fullContent: `# ${location.name}
+
+${location.description}
+
+## Access Information
+- **Type**: ${location.type}
+- **Address**: ${location.address}
+- **Coordinates**: ${location.coordinates}
+- **Distance from Boise**: ${location.distanceFromBoise} miles
+- **Elevation**: ${location.elevation} feet
+
+## Access & Hours
+${location.access}
+${location.hours}
+
+${location.restrictions ? `## Restrictions
+${location.restrictions}` : ''}
+
+## Best Conditions
+${location.bestWindConditions}
+
+## What to Expect
+This location offers ${location.amenities.length} different amenities and features for shooters.
+`,
+    tags: [location.type, location.category, location.difficulty]
+  }
+
+  return <LocationDetailPage {...transformedLocation} />
 }

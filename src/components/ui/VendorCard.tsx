@@ -2,12 +2,12 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 import { Badge } from './badge';
 import { Button } from './button';
-import Image from 'next/image';
-import { MapPin, Phone, Clock, Star, Globe, Shield, ChatsCircle} from '@phosphor-icons/react';
+import { MapPin, Phone, Clock, Star, Globe, Shield, ChatsCircle, Storefront, Wrench, Target, GraduationCap, ShoppingBag, Users} from '@phosphor-icons/react';
 import { Avatar, AvatarImage, AvatarFallback } from './avatar';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './tooltip';
 import { ReviewsDisplay } from './reviews-display';
@@ -15,7 +15,7 @@ import { ReviewsDisplay } from './reviews-display';
 // TBGC Business-Specific VendorCard - Strategic Restraint Implementation
 const vendorCardVariants = cva(
   // BASE: Clean professional foundation for all tiers
-  "relative overflow-hidden transition-all duration-300 bg-card text-card-foreground rounded-(--radius-lg) group",
+  "relative overflow-hidden transition-all duration-300 bg-card text-card-foreground rounded-(--radius-lg) group hover:scale-[1.02] cursor-pointer h-full flex flex-col",
   {
     variants: {
       tier: {
@@ -29,7 +29,7 @@ const vendorCardVariants = cva(
         silver: "relative shadow-present hover:shadow-hero bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-none before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-warm-stone after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-sm",
         
         // GOLD: Hero-level commanding presence with premium tactical depth
-        gold: "relative shadow-present hover:shadow-hero mica-card before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/10 before:via-transparent before:to-rusty-orange/8 dark:before:from-rusty-orange/14 dark:before:to-rusty-orange/12 before:rounded-none before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-rusty-orange after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-sm"
+        gold: "relative shadow-present hover:shadow-hero bg-card border border-rusty-orange/20 before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/8 before:via-transparent before:to-rusty-orange/6 dark:before:from-rusty-orange/12 dark:before:to-rusty-orange/10 before:rounded-none before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-rusty-orange after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-sm"
       },
       size: {
         sm: "p-base",           // 16px - compact cards
@@ -74,6 +74,27 @@ export interface VendorCardProps
   // Navigation
   slug?: string | undefined;
   href?: string | undefined;
+}
+
+// Get business type gradient for hero section
+const getBusinessTypeGradient = (businessType: string) => {
+  if (businessType.includes('Range') || businessType.includes('Club')) return 'card-gradient-range'
+  if (businessType.includes('Gunsmith') || businessType.includes('Custom')) return 'card-gradient-gunsmith'
+  if (businessType.includes('Training') || businessType.includes('Academy')) return 'card-gradient-training-biz'
+  if (businessType.includes('FFL') || businessType.includes('Dealer') || businessType.includes('Retail')) return 'card-gradient-retail'
+  if (businessType.includes('Gun Club') || businessType.includes('Shooting Club')) return 'card-gradient-club'
+  return 'card-gradient-directory'
+}
+
+// Get small business type icon for gradient overlay
+const getBusinessTypeIcon = (businessType: string) => {
+  const iconClass = "size-6 text-white/80"
+  if (businessType.includes('Range') || businessType.includes('Club')) return <Target weight="bold" className={iconClass} />
+  if (businessType.includes('Gunsmith') || businessType.includes('Custom')) return <Wrench weight="bold" className={iconClass} />
+  if (businessType.includes('Training') || businessType.includes('Academy')) return <GraduationCap weight="bold" className={iconClass} />
+  if (businessType.includes('FFL') || businessType.includes('Dealer') || businessType.includes('Retail')) return <ShoppingBag weight="bold" className={iconClass} />
+  if (businessType.includes('Gun Club') || businessType.includes('Shooting Club')) return <Users weight="bold" className={iconClass} />
+  return <Storefront weight="bold" className={iconClass} />
 }
 
 // Map business types to badge variants
@@ -160,47 +181,150 @@ export function VendorCard({
         className={cn(vendorCardVariants({ tier, size }), className)}
         {...props}
       >
-      {/* Header with business info */}
-      <div className="mb-md">
-        <div className="flex items-center gap-sm mb-xs">
-          {/* Business logo/image */}
-          <Avatar className="h-[var(--icon-3xl)] w-[var(--icon-3xl)] rounded-sm flex-shrink-0">
-            {imageUrl && !imgError ? (
-              <AvatarImage
-                src={imageUrl}
-                alt={businessName}
-                className="object-cover"
-                onError={() => setImgError(true)}
-              />
-            ) : null}
-            <AvatarFallback className="rounded-sm bg-muted font-rajdhani font-bold text-heading-sm text-muted-foreground">
+      {/* Quick Actions Overlay - Appears on Hover */}
+      <div className="absolute top-sm right-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
+        <div className="flex gap-xs">
+          <Button 
+            size="sm" 
+            variant="outline"
+            className="bg-card/90 backdrop-blur-sm border-border/50"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              // Compare functionality
+            }}
+            title="Compare business"
+          >
+            📊
+          </Button>
+          <Button 
+            size="sm" 
+            variant="outline"
+            className="bg-card/90 backdrop-blur-sm border-border/50"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              // Contact/call functionality
+              if (phone) {
+                window.open(`tel:${phone}`, '_self')
+              }
+            }}
+            title="Call business"
+          >
+            <Phone weight="bold" className="h-3 w-3" />
+          </Button>
+        </div>
+      </div>
+      
+      {/* Enhanced Header with Larger Business Photo */}
+      <div className="mb-lg">
+        {/* Boise Landscape Gradient Business Hero Section */}
+        <div className={cn(
+          "relative mb-sm -m-lg mt-[-24px] mx-[-24px] h-24 overflow-hidden",
+          imageUrl && !imgError ? "" : getBusinessTypeGradient(businessType)
+        )}>
+          {imageUrl && !imgError ? (
+            <Image
+              src={imageUrl}
+              alt={businessName}
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              onError={() => setImgError(true)}
+            />
+          ) : (
+            <>
+              {/* Subtle overlay for gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+              
+              {/* Small contextual icon - bottom right */}
+              <div className="absolute bottom-xs right-xs">
+                {getBusinessTypeIcon(businessType)}
+              </div>
+              
+              {/* Subtle texture particles */}
+              <div className="absolute top-1 right-4 w-0.5 h-0.5 bg-white/25 rounded-full animate-pulse"></div>
+              <div className="absolute bottom-2 left-4 w-0.5 h-0.5 bg-white/20 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+              <div className="absolute top-3 right-8 w-0.5 h-0.5 bg-white/30 rounded-full animate-pulse" style={{animationDelay: '2.5s'}}></div>
+            </>
+          )}
+          
+          {/* Enhanced tier badge overlay */}
+          {tier !== 'free' && (
+            <div className="absolute top-sm right-sm">
+              <Badge 
+                variant={tier === 'gold' ? 'elite' : tier === 'silver' ? 'nav-directory' : 'default'}
+                size="sm"
+                className="font-rajdhani font-bold text-xs bg-black/40 backdrop-blur-sm border-white/20 text-white"
+              >
+                {tier.toUpperCase()}
+              </Badge>
+            </div>
+          )}
+        </div>
+        
+        <div className="flex items-start gap-sm">
+          {/* Compact Avatar for Fallback */}
+          <Avatar className="h-12 w-12 rounded-sm flex-shrink-0">
+            <AvatarFallback className="rounded-sm bg-nav-directory/10 border border-nav-directory/20 font-rajdhani font-bold text-lg text-nav-directory">
               {businessName.charAt(0).toUpperCase()}
             </AvatarFallback>
           </Avatar>
           
-          <div className="space-y-micro flex-1">
-            <div className="flex items-center gap-xs mb-xs">
-              <h3 className="font-rajdhani font-bold text-heading-xl md:text-heading-2xl text-card-foreground leading-tight transition-colors duration-200 group-hover:text-rusty-orange">
-                {businessName}
-              </h3>
-              <Badge 
-                variant={getBusinessBadgeVariant(businessType)}
-                size="sm"
-              >
-                {businessType.includes('Range') ? 'Range' :
-                 businessType.includes('Gunsmith') || businessType.includes('Custom') ? 'Gunsmith' :
-                 businessType.includes('Training') || businessType.includes('Academy') ? 'Training' :
-                 businessType.includes('FFL') || businessType.includes('Dealer') ? 'FFL' :
-                 businessType.includes('Gun Club') ? 'Club' : 'Business'}
-              </Badge>
+          <div className="space-y-xs flex-1">
+            <div className="space-y-xs">
+              <div className="flex items-center gap-xs">
+                <h3 className="font-rajdhani font-bold text-xl text-card-foreground leading-tight transition-colors duration-200 group-hover:text-nav-directory">
+                  {businessName}
+                </h3>
+                <Badge 
+                  variant={getBusinessBadgeVariant(businessType)}
+                  size="sm"
+                >
+                  {businessType.includes('Range') ? 'Range' :
+                   businessType.includes('Gunsmith') || businessType.includes('Custom') ? 'Gunsmith' :
+                   businessType.includes('Training') || businessType.includes('Academy') ? 'Training' :
+                   businessType.includes('FFL') || businessType.includes('Dealer') ? 'FFL' :
+                   businessType.includes('Gun Club') ? 'Club' : 'Business'}
+                </Badge>
+              </div>
+              <p className="text-sm text-muted-foreground leading-tight">{businessType}</p>
+              
+              {/* Enhanced Rating Display - Prominent Position */}
+              {(rating || reviewCount) && (
+                <div className="flex items-center gap-sm">
+                  <div className="flex items-center gap-xs">
+                    {rating && (
+                      <>
+                        <div className="flex items-center">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              weight={i < Math.floor(rating) ? 'fill' : 'regular'}
+                              className={cn(
+                                "size-4",
+                                i < Math.floor(rating) ? "text-nav-directory fill-nav-directory" : "text-muted-foreground"
+                              )}
+                            />
+                          ))}
+                        </div>
+                        <span className="font-rajdhani font-bold text-lg text-nav-directory">
+                          {rating.toFixed(1)}
+                        </span>
+                      </>
+                    )}
+                    {reviewCount && (
+                      <span className="text-sm text-muted-foreground">({reviewCount} reviews)</span>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
-            <p className="text-body-sm text-muted-foreground leading-tight">{businessType}</p>
           </div>
         </div>
 
         {/* Tier-specific badges - now below name block */}
         {(isVerified || showSponsored) && (
-          <div className="flex gap-sm ml-[calc(4rem+0.75rem)]">
+          <div className="flex gap-sm mt-sm">
             {isVerified && (
               <TooltipProvider>
                 <Tooltip>
@@ -214,13 +338,14 @@ export function VendorCard({
                     </Badge>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>{verificationStatus}</p>
+                    <p>{verificationStatus || 'Verified Idaho firearms business'}</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             )}
             {showSponsored && (
               <Badge variant={tier === 'gold' ? 'elite' : 'default'} size="sm">
+                <Star weight="fill" className="w-icon-xs h-icon-xs mr-xs" />
                 Sponsored
               </Badge>
             )}
@@ -228,60 +353,60 @@ export function VendorCard({
         )}
       </div>
 
-      {/* Description */}
+      {/* Enhanced Description */}
       {description && (
-        <p className="text-body-sm text-muted-foreground mb-md line-clamp-tiny">
+        <p className="text-sm text-muted-foreground mb-lg line-clamp-3 leading-relaxed">
           {description}
         </p>
       )}
 
-      {/* Contact Information */}
-      <div className="space-y-xs mb-md">
+      {/* Enhanced Contact Information */}
+      <div className="space-y-sm mb-lg bg-muted/30 p-sm rounded-xs">
         {address && (
-          <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-            <MapPin className="w-icon-sm h-icon-sm flex-shrink-0" weight="bold" />
-            <span className="truncate">{address}</span>
+          <div className="flex items-start gap-sm text-sm">
+            <MapPin className="size-4 flex-shrink-0 text-nav-directory mt-0.5" weight="bold" />
+            <span className="text-muted-foreground leading-tight">{address}</span>
           </div>
         )}
         {phone && (
-          <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-            <Phone className="w-icon-sm h-icon-sm flex-shrink-0" weight="bold" />
-            <span>{phone}</span>
+          <div className="flex items-center gap-sm text-sm">
+            <Phone className="size-4 flex-shrink-0 text-nav-directory" weight="bold" />
+            <span className="font-medium text-card-foreground">{phone}</span>
           </div>
         )}
         {hours && (
-          <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-            <Clock className="w-icon-sm h-icon-sm flex-shrink-0" weight="bold" />
-            <span>{hours}</span>
+          <div className="flex items-center gap-sm text-sm">
+            <Clock className="size-4 flex-shrink-0 text-nav-directory" weight="bold" />
+            <span className="text-muted-foreground">{hours}</span>
           </div>
         )}
       </div>
 
-      {/* Reviews section */}
-      <div className="mb-md">
+      {/* Enhanced Reviews Section */}
+      <div className="mb-lg">
         {reviewsData ? (
           <ReviewsDisplay 
             reviewsData={reviewsData}
             showHeader={false}
-            variant="default"
+            variant="compact"
             autoPlay={false}
           />
         ) : googlePlaceId ? (
-          <div className="flex items-center gap-xs">
+          <div className="bg-card border border-border/50 p-sm rounded-xs">
             <Button
               variant="ghost"
               size="sm"
               onClick={loadReviews}
               disabled={loadingReviews}
-              className="p-0 h-auto font-normal text-muted-foreground hover:text-card-foreground"
+              className="p-0 h-auto font-normal text-muted-foreground hover:text-nav-directory transition-colors"
             >
-              <ChatsCircle className="size-4 mr-xs" weight="bold" />
+              <ChatsCircle className="size-4 mr-xs text-nav-directory" weight="bold" />
               {loadingReviews ? 'Loading reviews...' : 'View customer reviews'}
             </Button>
           </div>
         ) : (
-          <div className="flex items-center gap-xs">
-            <span className="text-body-sm text-muted-foreground italic">
+          <div className="bg-muted/20 p-sm rounded-xs border border-dashed border-muted-foreground/20">
+            <span className="text-sm text-muted-foreground italic">
               Reviews coming soon • Be the first to review!
             </span>
           </div>
@@ -312,21 +437,21 @@ export function VendorCard({
       )}
 
 
-      {/* Action buttons - flat inside card container */}
+      {/* Enhanced Action Buttons */}
       <div className="flex gap-xs pt-sm">
         <Button 
           size="sm" 
-          variant="micro"
+          variant="outline"
+          className="flex-1 border-nav-directory/30 text-nav-directory hover:bg-nav-directory hover:text-white hover:border-nav-directory font-rajdhani font-bold transition-all duration-300"
           animationType="arrow"
-          className="flex-1"
         >
           View Details
         </Button>
         {showEnhancedFeatures && website && (
           <Button 
             size="sm" 
-            variant="ghost"
-            className="flex-shrink-0 text-muted-foreground hover:text-card-foreground"
+            variant="outline"
+            className="flex-shrink-0 border-nav-directory/30 text-nav-directory hover:bg-nav-directory hover:text-white hover:border-nav-directory transition-all duration-300"
             onClick={(e) => {
               e.preventDefault()
               e.stopPropagation()
@@ -334,7 +459,7 @@ export function VendorCard({
             }}
             title={`Visit ${businessName}'s website (opens in new tab)`}
           >
-            <Globe className="w-icon-sm h-icon-sm" weight="bold" />
+            <Globe className="size-4" weight="bold" />
           </Button>
         )}
       </div>

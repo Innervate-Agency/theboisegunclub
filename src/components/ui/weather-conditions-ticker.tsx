@@ -4,8 +4,14 @@ import React from 'react'
 import { Badge } from './badge'
 import { 
   Thermometer, Wind, Flame, Shield, AlertTriangle, 
-  CheckCircle, XCircle, Mountain, Navigation
+  CheckCircle, XCircle, Mountain, Navigation,
+  Sun, Cloud, CloudRain, CloudSnow, Zap
 } from 'lucide-react'
+import { 
+  Sun as PhosphorSun, CloudRain as PhosphorCloudRain, 
+  CloudSnow as PhosphorCloudSnow, Lightning as PhosphorLightning,
+  Clouds as PhosphorClouds
+} from '@phosphor-icons/react'
 
 interface WeatherCondition {
   locationName: string
@@ -14,7 +20,7 @@ interface WeatherCondition {
   windDirection: string
   fireDanger: 'Low' | 'Moderate' | 'High' | 'Extreme'
   accessStatus: 'Open' | 'Restrictions' | 'Closed'
-  weatherIcon: '☀️' | '⛅' | '☁️' | '🌧️' | '🌨️' | '🌪️'
+  weatherIcon: 'sun' | 'partly-cloudy' | 'cloudy' | 'rain' | 'snow' | 'storm'
   alerts?: string[]
   lastUpdated?: string
 }
@@ -46,12 +52,31 @@ export function WeatherConditionsTicker({ conditions }: WeatherConditionsTickerP
     }
   }
 
-  const getWindDirectionArrow = (direction: string) => {
-    const directions: { [key: string]: string } = {
-      'N': '↓', 'NE': '↙️', 'E': '←', 'SE': '↖️',
-      'S': '↑', 'SW': '↗️', 'W': '→', 'NW': '↘️'
+  const getWeatherIcon = (weatherType: string) => {
+    switch (weatherType) {
+      case 'sun': 
+        return <PhosphorSun weight="fill" className="size-5 text-sandy-ochre" />
+      case 'partly-cloudy':
+        return <Cloud className="size-5 text-slate-blue/80" />
+      case 'cloudy':
+        return <PhosphorClouds weight="fill" className="size-5 text-slate-blue" />
+      case 'rain':
+        return <PhosphorCloudRain weight="fill" className="size-5 text-nav-intel" />
+      case 'snow':
+        return <PhosphorCloudSnow weight="fill" className="size-5 text-white/90" />
+      case 'storm':
+        return <PhosphorLightning weight="fill" className="size-5 text-rusty-orange" />
+      default:
+        return <Sun className="size-5 text-sandy-ochre" />
     }
-    return directions[direction] || '•'
+  }
+
+  const getWindDirectionRotation = (direction: string) => {
+    const rotations: { [key: string]: number } = {
+      'N': 0, 'NE': 45, 'E': 90, 'SE': 135,
+      'S': 180, 'SW': 225, 'W': 270, 'NW': 315
+    }
+    return rotations[direction] || 0
   }
 
   return (
@@ -75,7 +100,7 @@ export function WeatherConditionsTicker({ conditions }: WeatherConditionsTickerP
                     <span className="font-rajdhani font-bold text-body-sm text-card-foreground">
                       {condition.locationName}
                     </span>
-                    <span className="text-heading-lg">{condition.weatherIcon}</span>
+                    {getWeatherIcon(condition.weatherIcon)}
                   </div>
                   
                   <div className="flex items-center gap-base text-body-xs text-muted-foreground">
@@ -89,8 +114,14 @@ export function WeatherConditionsTicker({ conditions }: WeatherConditionsTickerP
                     <div className="flex items-center gap-xs">
                       <Wind className="size-3 text-nav-intel" />
                       <span className="font-medium">
-                        {condition.windSpeed}mph {getWindDirectionArrow(condition.windDirection)}
+                        {condition.windSpeed}mph
                       </span>
+                      <div 
+                        className="transition-transform duration-300"
+                        style={{ transform: `rotate(${getWindDirectionRotation(condition.windDirection)}deg)` }}
+                      >
+                        <Navigation className="size-3 text-nav-intel" />
+                      </div>
                     </div>
                     
                     {/* Fire Danger */}

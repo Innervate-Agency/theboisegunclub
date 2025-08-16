@@ -108,7 +108,7 @@ export default function NotFound() {
             </Link>
             
             {/* Armory */}
-            <Link href="/the-armory">
+            <Link href="/armory">
               <Card className="group hover:shadow-elevated transition-all duration-300 cursor-pointer border-nav-armory/30">
                 <CardContent className="p-lg text-center space-y-base">
                   <div className="bg-nav-armory/20 p-base rounded-xs w-fit mx-auto">

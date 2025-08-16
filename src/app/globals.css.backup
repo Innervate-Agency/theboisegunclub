@@ -2697,17 +2697,266 @@
   .card-gradient-charity { background: var(--gradient-marketplace-hero); }
   .card-gradient-social { background: var(--gradient-guides-hero); }
 
-  /* Directory/Business */
-  .card-gradient-directory { background: var(--gradient-directory-hero); }
-  .card-gradient-range { background: var(--gradient-marketplace-hero); }
-  .card-gradient-gunsmith { background: var(--gradient-armory-hero); }
-  .card-gradient-training-biz { background: var(--gradient-training-hero); }
-  .card-gradient-retail { background: var(--gradient-directory-hero); }
-  .card-gradient-club { background: var(--gradient-guides-hero); }
+  /* DIRECTORY PAGE GRADIENTS */
+  .gradient-directory-hero {
+    background: linear-gradient(135deg, 
+      var(--color-slate-blue) 0%, 
+      var(--color-info-river) 40%, 
+      var(--color-slate-blue) 100%
+    );
+  }
 
-  /* Marketplace/Products */
-  .card-gradient-marketplace { background: var(--gradient-marketplace-hero); }
-  .card-gradient-firearms { background: var(--gradient-armory-hero); }
-  .card-gradient-ammunition { background: var(--gradient-events-hero); }
-  .card-gradient-optics { background: var(--gradient-intel-hero); }
-  .card-gradient-accessories { background: var(--gradient-marketplace-hero); }}
+  .gradient-directory-cool {
+    background: linear-gradient(135deg, 
+      var(--color-slate-blue) 0%, 
+      var(--color-info-river) 50%, 
+      var(--color-pale-stone) 100%
+    );
+  }
+
+  .gradient-directory-tactical {
+    background: 
+      /* Business pattern overlay */
+      radial-gradient(circle at 25% 25%, rgba(58, 80, 99, 0.1) 0%, transparent 45%),
+      radial-gradient(circle at 75% 75%, rgba(90, 125, 138, 0.08) 0%, transparent 45%),
+      /* Main gradient */
+      linear-gradient(145deg, 
+        var(--color-slate-blue) 0%, 
+        var(--color-info-river) 35%, 
+        var(--color-sagebrush-green) 100%
+      );
+  }
+
+  /* MARKETPLACE PAGE GRADIENTS */
+  .gradient-marketplace-hero {
+    background: linear-gradient(135deg, 
+      var(--color-sagebrush-green) 0%, 
+      var(--color-high-desert-sage) 40%, 
+      var(--color-lodgepole-green) 100%
+    );
+  }
+
+  .gradient-marketplace-natural {
+    background: linear-gradient(135deg, 
+      var(--color-sagebrush-green) 0%, 
+      var(--color-high-desert-sage) 50%, 
+      var(--color-sandy-ochre) 100%
+    );
+  }
+
+  .gradient-marketplace-tactical {
+    background: 
+      /* Product pattern overlay */
+      radial-gradient(circle at 30% 20%, rgba(121, 130, 70, 0.1) 0%, transparent 40%),
+      radial-gradient(circle at 70% 80%, rgba(156, 175, 136, 0.08) 0%, transparent 40%),
+      /* Main gradient */
+      linear-gradient(145deg, 
+        var(--color-sagebrush-green) 0%, 
+        var(--color-high-desert-sage) 35%, 
+        var(--color-lodgepole-green) 100%
+      );
+  }
+
+  /* ARMORY PAGE GRADIENTS */
+  .gradient-armory-hero {
+    background: linear-gradient(135deg, 
+      var(--color-warm-stone) 0%, 
+      var(--color-canyon-clay) 40%, 
+      var(--color-dried-clay) 100%
+    );
+  }
+
+  .gradient-armory-tactical {
+    background: 
+      /* Gear pattern overlay */
+      radial-gradient(circle at 15% 40%, rgba(166, 146, 135, 0.1) 0%, transparent 35%),
+      radial-gradient(circle at 85% 60%, rgba(184, 84, 80, 0.08) 0%, transparent 35%),
+      /* Main gradient */
+      linear-gradient(145deg, 
+        var(--color-warm-stone) 0%, 
+        var(--color-canyon-clay) 35%, 
+        var(--color-dried-clay) 100%
+      );
+  }
+
+  /* GUIDES PAGE GRADIENTS */
+  .gradient-guides-hero {
+    background: linear-gradient(135deg, 
+      var(--color-foothills-purple) 0%, 
+      var(--color-warm-stone) 40%, 
+      var(--color-dried-clay) 100%
+    );
+  }
+
+  .gradient-guides-tactical {
+    background: 
+      /* Knowledge pattern overlay */
+      radial-gradient(circle at 40% 30%, rgba(139, 122, 168, 0.1) 0%, transparent 40%),
+      radial-gradient(circle at 60% 70%, rgba(166, 146, 135, 0.08) 0%, transparent 40%),
+      /* Main gradient */
+      linear-gradient(145deg, 
+        var(--color-foothills-purple) 0%, 
+        var(--color-warm-stone) 35%, 
+        var(--color-dried-clay) 100%
+      );
+  }
+
+  /* CATEGORY-SPECIFIC GRADIENT PATTERNS */
+  
+  /* Competition Events */
+  .gradient-competition {
+    background: 
+      radial-gradient(circle at 20% 20%, rgba(217, 134, 59, 0.15) 0%, transparent 40%),
+      linear-gradient(135deg, 
+        var(--color-rusty-orange) 0%, 
+        var(--color-warning-amber) 100%
+      );
+  }
+
+  /* Training Events */
+  .gradient-training {
+    background: 
+      radial-gradient(circle at 80% 20%, rgba(58, 80, 99, 0.12) 0%, transparent 40%),
+      linear-gradient(135deg, 
+        var(--color-slate-blue) 0%, 
+        var(--color-info-river) 100%
+      );
+  }
+
+  /* Social/Charity Events */
+  .gradient-social {
+    background: 
+      radial-gradient(circle at 50% 50%, rgba(121, 130, 70, 0.12) 0%, transparent 45%),
+      linear-gradient(135deg, 
+        var(--color-sagebrush-green) 0%, 
+        var(--color-high-desert-sage) 100%
+      );
+  }
+
+  /* Business Types - Directory */
+  .gradient-range {
+    background: 
+      radial-gradient(circle at 30% 70%, rgba(121, 130, 70, 0.1) 0%, transparent 40%),
+      linear-gradient(135deg, 
+        var(--color-sagebrush-green) 0%, 
+        var(--color-lodgepole-green) 100%
+      );
+  }
+
+  .gradient-gunsmith {
+    background: 
+      radial-gradient(circle at 70% 30%, rgba(166, 146, 135, 0.12) 0%, transparent 40%),
+      linear-gradient(135deg, 
+        var(--color-warm-stone) 0%, 
+        var(--color-dried-clay) 100%
+      );
+  }
+
+  .gradient-retail {
+    background: 
+      radial-gradient(circle at 40% 60%, rgba(58, 80, 99, 0.1) 0%, transparent 40%),
+      linear-gradient(135deg, 
+        var(--color-slate-blue) 0%, 
+        var(--color-info-river) 100%
+      );
+  }
+
+  /* Product Categories - Marketplace */
+  .gradient-firearms {
+    background: 
+      radial-gradient(circle at 25% 75%, rgba(139, 122, 168, 0.1) 0%, transparent 40%),
+      linear-gradient(135deg, 
+        var(--color-foothills-purple) 0%, 
+        var(--color-canyon-clay) 100%
+      );
+  }
+
+  .gradient-ammunition {
+    background: 
+      radial-gradient(circle at 75% 25%, rgba(217, 134, 59, 0.12) 0%, transparent 40%),
+      linear-gradient(135deg, 
+        var(--color-rusty-orange) 0%, 
+        var(--color-ember-glow) 100%
+      );
+  }
+
+  .gradient-optics {
+    background: 
+      radial-gradient(circle at 60% 40%, rgba(58, 80, 99, 0.1) 0%, transparent 40%),
+      linear-gradient(135deg, 
+        var(--color-slate-blue) 0%, 
+        var(--color-info-river) 100%
+      );
+  }
+
+  .gradient-accessories {
+    background: 
+      radial-gradient(circle at 45% 55%, rgba(121, 130, 70, 0.1) 0%, transparent 40%),
+      linear-gradient(135deg, 
+        var(--color-sagebrush-green) 0%, 
+        var(--color-high-desert-sage) 100%
+      );
+  }
+
+  /* MICRO-TEXTURE OVERLAYS for Enhanced Tactical Feel */
+  .gradient-with-noise {
+    position: relative;
+  }
+
+  .gradient-with-noise::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.02) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(0, 0, 0, 0.015) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  /* RESPONSIVE GRADIENT UTILITIES */
+  @media (min-width: 768px) {
+    .md\\:gradient-enhanced .gradient-events-tactical,
+    .md\\:gradient-enhanced .gradient-directory-tactical,
+    .md\\:gradient-enhanced .gradient-marketplace-tactical {
+      background-size: 200% 200%;
+      animation: gradient-shift 8s ease-in-out infinite;
+    }
+  }
+
+  /* DARK THEME GRADIENT ADAPTATIONS */
+  .dark .gradient-events-tactical {
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(217, 134, 59, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(230, 165, 98, 0.1) 0%, transparent 40%),
+      linear-gradient(145deg, 
+        var(--color-rusty-orange) 0%, 
+        var(--color-ember-glow) 35%, 
+        var(--color-dark-chocolate) 100%
+      );
+  }
+
+  .dark .gradient-directory-tactical {
+    background: 
+      radial-gradient(circle at 25% 25%, rgba(58, 80, 99, 0.15) 0%, transparent 45%),
+      radial-gradient(circle at 75% 75%, rgba(90, 125, 138, 0.1) 0%, transparent 45%),
+      linear-gradient(145deg, 
+        var(--color-slate-blue) 0%, 
+        var(--color-info-river) 35%, 
+        var(--color-rich-loam) 100%
+      );
+  }
+
+  .dark .gradient-marketplace-tactical {
+    background: 
+      radial-gradient(circle at 30% 20%, rgba(121, 130, 70, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 70% 80%, rgba(156, 175, 136, 0.1) 0%, transparent 40%),
+      linear-gradient(145deg, 
+        var(--color-sagebrush-green) 0%, 
+        var(--color-high-desert-sage) 35%, 
+        var(--color-deep-earth) 100%
+      );
+  }
+}

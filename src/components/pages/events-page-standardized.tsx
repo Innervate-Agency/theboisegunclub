@@ -9,10 +9,15 @@ import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { useCardPageFilters } from '@/hooks/useCardPageFilters'
 import { EmptyState } from '@/components/ui/empty-state'
+import { FloatingCalendars } from '@/components/ui/hero-floating-calendars'
+import { EventsEmbers } from '@/components/ui/hero-events-embers'
+import { DirectoryStatsGrid } from '@/components/ui/directory-stats-grid'
+import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
+import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
 import { 
   Ticket, Trophy, Target, Users, Calendar, Plus, ArrowRight, 
-  ChevronRight, Award, MessageSquare, Crown, MapPin, Clock,
-  DollarSign, Medal
+  CaretRight, Crown, MapPin, Clock,
+  CurrencyDollar, Medal
 } from '@phosphor-icons/react'
 
 // Event data type
@@ -106,6 +111,44 @@ const upcomingEvents: EventData[] = [
 ]
 
 export function EventsPageStandardized() {
+  // Activity feed data for events
+  const activityFeedData = [
+    {
+      icon: Trophy,
+      iconColor: "text-nav-events",
+      iconBgColor: "bg-nav-events/20",
+      title: "USPSA Match Results Posted",
+      description: "February monthly match winners and scores are now available",
+      timeAgo: "3h ago"
+    },
+    {
+      icon: Ticket,
+      iconColor: "text-rusty-orange",
+      iconBgColor: "bg-rusty-orange/20",
+      title: "New Event Added",
+      description: "Idaho State 3-Gun Championship registration now open",
+      timeAgo: "5h ago"
+    },
+    {
+      icon: Users,
+      iconColor: "text-sagebrush-green",
+      iconBgColor: "bg-sagebrush-green/20",
+      title: "Community Meetup",
+      description: "Monthly social gathering moved to larger venue due to demand",
+      timeAgo: "1d ago"
+    }
+  ]
+
+  // Events category stats for directory grid
+  const eventCategoryStats = [
+    { icon: Trophy, title: "Competitions", value: "24", subtitle: "This month", color: "text-nav-events" },
+    { icon: Target, title: "Training Classes", value: "18", subtitle: "Scheduled", color: "text-nav-events" },
+    { icon: Crown, title: "Gun Shows", value: "6", subtitle: "Upcoming", color: "text-nav-events" },
+    { icon: Users, title: "Social Events", value: "12", subtitle: "This quarter", color: "text-nav-events" },
+    { icon: Medal, title: "Charity Shoots", value: "8", subtitle: "Planned", color: "text-nav-events" },
+    { icon: Calendar, title: "Demo Days", value: "5", subtitle: "Available", color: "text-nav-events" }
+  ]
+
   // Filter configuration
   const filters = useCardPageFilters({
     items: upcomingEvents,
@@ -174,68 +217,79 @@ export function EventsPageStandardized() {
 
   // Hero content
   const heroContent = (
-    <div className="container mx-auto max-w-site relative z-10">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
-        {/* Content - Left side */}
-        <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
-          <div className="flex items-center gap-base">
-            <div className="bg-card/10 p-base rounded-xs border border-border">
-              <Ticket weight="bold" className="h-8 w-8 text-white" />
-            </div>
-            <div className="space-y-base">
-              <div className="flex items-center gap-xs text-sm text-white/60">
-                <span>Home</span>
-                <ChevronRight className="h-4 w-4" />
-                <span className="text-white font-medium">Events</span>
+    <div className="relative">
+      {/* Floating Calendar Icons */}
+      <FloatingCalendars />
+      
+      {/* Events Embers */}
+      <EventsEmbers />
+      
+      <div className="container mx-auto max-w-site relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
+          
+          {/* Content - Left side */}
+          <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
+            <div className="flex items-center gap-base">
+              <div className="bg-card/10 p-base rounded-xs border border-border">
+                <Calendar weight="bold" className="h-8 w-8 text-white" />
               </div>
-              <div className="flex flex-wrap gap-xs">
-                <Badge className="bg-card/10 text-white border-border rounded-xs">
-                  <Trophy weight="bold" className="h-4 w-4 mr-xs" />
-                  Competitions
-                </Badge>
-                <Badge className="bg-card/10 text-white border-border rounded-xs">
-                  <Award weight="bold" className="h-4 w-4 mr-xs" />
-                  Training
-                </Badge>
-                <Badge className="bg-card/10 text-white border-border rounded-xs">
-                  <Users weight="bold" className="h-4 w-4 mr-xs" />
-                  Community
-                </Badge>
+              <div className="space-y-base">
+                <div className="flex items-center gap-xs text-sm text-white/60">
+                  <span>Home</span>
+                  <CaretRight className="h-4 w-4" />
+                  <span className="text-white font-medium">Events</span>
+                </div>
+                <div className="flex flex-wrap gap-xs">
+                  <Badge className="bg-card/10 text-white border-border rounded-xs">
+                    <Trophy weight="bold" className="h-4 w-4 mr-xs" />
+                    Competitions
+                  </Badge>
+                  <Badge className="bg-card/10 text-white border-border rounded-xs">
+                    <Target weight="bold" className="h-4 w-4 mr-xs" />
+                    Training
+                  </Badge>
+                  <Badge className="bg-card/10 text-white border-border rounded-xs">
+                    <Users weight="bold" className="h-4 w-4 mr-xs" />
+                    Community
+                  </Badge>
+                </div>
               </div>
             </div>
+            
+            <div className="space-y-xs">
+              <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
+                Idaho Firearms Events & Training
+              </h1>
+              <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
+                Competitions, Training, and Community Events in the Treasure Valley
+              </h2>
+            </div>
+            
+            <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
+              Discover competitions, training opportunities, and community events across Idaho's firearms scene. From USPSA matches to charity shoots, find your next adventure in the shooting sports.
+            </p>
+            
+            <div className="flex gap-base">
+              <Button size="lg" className="bg-white text-nav-events hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
+                <Plus className="h-4 w-4 mr-xs" />
+                Submit Event
+              </Button>
+              <Button variant="outline" size="lg" className="border-border text-white hover:bg-white hover:text-nav-events" animationType="arrow">
+                View Calendar
+              </Button>
+            </div>
           </div>
-          <div className="space-y-xs">
-            <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
-              Idaho Firearms Events & Training
-            </h1>
-            <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
-              Competitions, Training, and Community Events in the Treasure Valley
-            </h2>
-          </div>
-          <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
-            Discover competitions, training opportunities, and community events across Idaho's firearms scene. From USPSA matches to charity shoots, find your next adventure in the shooting sports.
-          </p>
-          <div className="flex gap-base">
-            <Button size="lg" className="bg-white text-nav-events hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
-              <Plus className="h-4 w-4 mr-xs" />
-              Submit Event
-            </Button>
-            <Button variant="outline" size="lg" className="border-border text-white hover:bg-white hover:text-nav-events" animationType="arrow">
-              View Calendar
-            </Button>
-          </div>
-        </div>
 
-        {/* Featured Event Card - Right side */}
-        <div className="lg:col-span-1 py-md min-h-[400px]">
-          <div className="relative h-full">
-            {upcomingEvents.find(e => e.featured) && (
-              <EventCard
-                {...upcomingEvents.find(e => e.featured)!}
-                variant="featured"
-                className="h-full"
-              />
-            )}
+          {/* Featured Event Card - Right side */}
+          <div className="lg:col-span-1 py-md min-h-[400px]">
+            <div className="relative h-full">
+              {upcomingEvents.find(e => e.featured) && (
+                <EventCard
+                  {...upcomingEvents.find(e => e.featured)!}
+                  className="h-full"
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -281,10 +335,10 @@ export function EventsPageStandardized() {
         {
           title: 'Price Range',
           filters: [
-            { id: 'free', label: 'Free', icon: DollarSign, count: upcomingEvents.filter(e => e.price.toLowerCase() === 'free').length },
-            { id: 'under25', label: 'Under $25', icon: DollarSign, count: upcomingEvents.filter(e => e.price.includes('$') && parseInt(e.price.replace(/[^0-9]/g, '')) < 25).length },
-            { id: 'under100', label: 'Under $100', icon: DollarSign, count: upcomingEvents.filter(e => e.price.includes('$') && parseInt(e.price.replace(/[^0-9]/g, '')) < 100).length },
-            { id: 'over100', label: '$100+', icon: DollarSign, count: upcomingEvents.filter(e => e.price.includes('$') && parseInt(e.price.replace(/[^0-9]/g, '')) >= 100).length }
+            { id: 'free', label: 'Free', icon: CurrencyDollar, count: upcomingEvents.filter(e => e.price.toLowerCase() === 'free').length },
+            { id: 'under25', label: 'Under $25', icon: CurrencyDollar, count: upcomingEvents.filter(e => e.price.includes('$') && parseInt(e.price.replace(/[^0-9]/g, '')) < 25).length },
+            { id: 'under100', label: 'Under $100', icon: CurrencyDollar, count: upcomingEvents.filter(e => e.price.includes('$') && parseInt(e.price.replace(/[^0-9]/g, '')) < 100).length },
+            { id: 'over100', label: '$100+', icon: CurrencyDollar, count: upcomingEvents.filter(e => e.price.includes('$') && parseInt(e.price.replace(/[^0-9]/g, '')) >= 100).length }
           ],
           selectedFilters: filters.selectedFilters.price || [],
           onFilterChange: (filterId) => filters.updateFilters('price', filterId),
@@ -308,7 +362,7 @@ export function EventsPageStandardized() {
       sortOptions={[
         { id: 'date', label: 'Date', icon: Calendar },
         { id: 'popularity', label: 'Popularity', icon: Users },
-        { id: 'price', label: 'Price', icon: DollarSign },
+        { id: 'price', label: 'Price', icon: CurrencyDollar },
         { id: 'capacity', label: 'Capacity', icon: MapPin },
         { id: 'alphabetical', label: 'Name', icon: Target }
       ]}
@@ -318,8 +372,38 @@ export function EventsPageStandardized() {
       totalResults={filters.totalResults}
       filteredResults={filters.filteredResults}
       
-      statsSection={<TrustIndicators />}
-      ctaSection={<ContributionCTA />}
+      statsSection={
+        <>
+          <TrustIndicators />
+          <div className="mt-4xl">
+            <h3 className="font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center">Events by Category</h3>
+            <DirectoryStatsGrid stats={eventCategoryStats} />
+          </div>
+        </>
+      }
+      ctaSection={
+        <div className="space-y-4xl">
+          {/* Activity Feed Section */}
+          <div className="section-skew-up bg-card/50 py-3xl">
+            <div className="max-w-4xl mx-auto">
+              <h3 className="font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center">Recent Event Updates</h3>
+              <div className="space-y-base">
+                {activityFeedData.map((activity, index) => (
+                  <ActivityFeedCard key={index} {...activity} />
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* CTA Section */}
+          <ContributionCTA />
+          
+          {/* Join Movement CTA */}
+          <div className="section-skew-down bg-gradient-to-br from-nav-events/10 to-nav-events/5 py-3xl">
+            <JoinMovementCTA />
+          </div>
+        </div>
+      }
     >
       <div className={filters.getGridClassName()}>
         {filters.paginatedItems.length > 0 ? (
@@ -327,7 +411,7 @@ export function EventsPageStandardized() {
             <EventCard
               key={`${event.title}-${index}`}
               {...event}
-              className="mica shadow-present hover:shadow-prominent transition-all duration-300 rounded-xs"
+              className="mica transition-all duration-300 rounded-xs"
             />
           ))
         ) : (

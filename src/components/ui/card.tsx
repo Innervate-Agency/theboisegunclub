@@ -22,7 +22,7 @@ const cardVariants = cva(
         premium: "shadow-prominent hover:shadow-commanding relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-gradient-to-r after:from-rusty-orange/50 after:to-sandy-ochre/50",
         
         // Glass: Elevated glassmorphism for modern content display
-        glass: "mica-card shadow-elevated hover:shadow-prominent",
+        glass: "bg-card border border-border/30 shadow-elevated hover:shadow-prominent",
         
         // Outlined: Exception - minimal whisper shadow for outlined variants
         outlined: "bg-transparent border border-border hover:bg-card/50 hover:shadow-whisper",

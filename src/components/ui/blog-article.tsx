@@ -82,7 +82,7 @@ export function BlogCard({
   const [isBookmarked, setIsBookmarked] = React.useState(false)
   
   // Generate href for article linking
-  const sectionPath = article.sectionPath || "/the-armory"
+  const sectionPath = article.sectionPath || "/armory"
   const slug = article.slug || article.id
   const articleHref = article.href || `${sectionPath}/${slug}`
   

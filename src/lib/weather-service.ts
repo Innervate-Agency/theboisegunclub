@@ -23,7 +23,7 @@ interface ProcessedWeatherData {
   windDirection: string
   fireDanger: 'Low' | 'Moderate' | 'High' | 'Extreme'
   accessStatus: 'Open' | 'Restrictions' | 'Closed'
-  weatherIcon: '☀️' | '⛅' | '☁️' | '🌧️' | '🌨️' | '🌪️'
+  weatherIcon: 'sun' | 'partly-cloudy' | 'cloudy' | 'rain' | 'snow' | 'storm'
   alerts?: string[]
   lastUpdated: string
 }
@@ -111,13 +111,13 @@ function calculateFireDanger(temp: number, humidity: number, windSpeed: number):
 }
 
 // Convert OpenWeatherMap icon to emoji
-function weatherIconToEmoji(icon: string, main: string): '☀️' | '⛅' | '☁️' | '🌧️' | '🌨️' | '🌪️' {
-  if (main.includes('Rain')) return '🌧️'
-  if (main.includes('Snow')) return '🌨️'
-  if (main.includes('Thunderstorm')) return '🌪️'
-  if (main.includes('Clear')) return '☀️'
-  if (main.includes('Clouds')) return icon.includes('few') ? '⛅' : '☁️'
-  return '⛅'
+function weatherIconToType(icon: string, main: string): 'sun' | 'partly-cloudy' | 'cloudy' | 'rain' | 'snow' | 'storm' {
+  if (main.includes('Rain')) return 'rain'
+  if (main.includes('Snow')) return 'snow'
+  if (main.includes('Thunderstorm')) return 'storm'
+  if (main.includes('Clear')) return 'sun'
+  if (main.includes('Clouds')) return icon.includes('few') ? 'partly-cloudy' : 'cloudy'
+  return 'partly-cloudy'
 }
 
 // Determine access status based on weather conditions and time of year
@@ -171,7 +171,7 @@ function getFallbackWeatherData(locationName: string): ProcessedWeatherData {
       windDirection: "W",
       fireDanger: "Low",
       accessStatus: "Restrictions",
-      weatherIcon: "☀️",
+      weatherIcon: "sun",
       alerts: ["Seasonal wildlife closures in effect"],
       lastUpdated: "Cached data"
     },
@@ -192,7 +192,7 @@ function getFallbackWeatherData(locationName: string): ProcessedWeatherData {
       windDirection: "N",
       fireDanger: "Low", 
       accessStatus: "Open",
-      weatherIcon: "☁️",
+      weatherIcon: "cloudy",
       lastUpdated: "Cached data"
     },
     "Garden Valley Range": {
@@ -202,7 +202,7 @@ function getFallbackWeatherData(locationName: string): ProcessedWeatherData {
       windDirection: "E",
       fireDanger: "Low",
       accessStatus: "Restrictions",
-      weatherIcon: "🌨️",
+      weatherIcon: "snow",
       alerts: ["Snow possible - check road conditions"],
       lastUpdated: "Cached data"
     },
@@ -213,7 +213,7 @@ function getFallbackWeatherData(locationName: string): ProcessedWeatherData {
       windDirection: "W",
       fireDanger: "Low",
       accessStatus: "Restrictions", 
-      weatherIcon: "🌪️",
+      weatherIcon: "storm",
       alerts: ["High winds - 4WD recommended"],
       lastUpdated: "Cached data"
     }
@@ -273,7 +273,7 @@ export async function fetchWeatherForLocation(lat: number, lon: number, location
     const windDirection = degreesToCardinal(data.wind.deg)
     const fireDanger = calculateFireDanger(temperature, data.main.humidity, windSpeed)
     const accessStatus = determineAccessStatus(temperature, windSpeed, fireDanger)
-    const weatherIcon = weatherIconToEmoji(data.weather[0].icon, data.weather[0].main)
+    const weatherIcon = weatherIconToType(data.weather[0].icon, data.weather[0].main)
     const alerts = generateAlerts(temperature, windSpeed, fireDanger, data.main.humidity)
     
     const processedData: ProcessedWeatherData = {

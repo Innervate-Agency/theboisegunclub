@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import MarketplaceProductTemplate from '@/components/ui/marketplace-product-template'
+import { ProductDetailPage } from '@/components/ui/detail-page-builder'
 
 // Mock data service - in production, this would fetch from a database or API
 const getMarketplaceProduct = (id: string) => {
@@ -167,10 +167,13 @@ export default async function MarketplaceProductPage({ params }: Props) {
 
   const relatedProducts = getRelatedProducts(id, product.category)
 
+  // Transform product data to match ProductDetailPage props
+  const transformedProduct = {
+    ...product,
+    tags: product.tags || [product.category, product.brand, product.condition]
+  }
+
   return (
-    <MarketplaceProductTemplate
-      {...product}
-      relatedProducts={relatedProducts}
-    />
+    <ProductDetailPage {...transformedProduct} />
   )
 }

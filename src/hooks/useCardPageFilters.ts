@@ -120,7 +120,7 @@ export function useCardPageFilters<T>({
 
   // Apply all filters and sorting
   const filteredItems = useMemo(() => {
-    let filtered = [...items]
+    let filtered = [...items].filter(item => item != null)
 
     // Apply search filter
     if (filterState.searchQuery.trim()) {
@@ -160,13 +160,15 @@ export function useCardPageFilters<T>({
   const getGridClassName = useCallback(() => {
     switch (filterState.viewMode) {
       case 'grid':
-        return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-lg"
+        return "grid-auto-fill-320" // Modern responsive grid, 320px min width
+      case 'dense':
+        return "grid-dense-md" // Dense grid for maximum content visibility  
       case 'card':
-        return "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-lg"
+        return "grid-auto-fill-350" // Large cards with enhanced content
       case 'list':
-        return "grid gap-sm"
+        return "flex flex-col gap-base" // Single column list view
       default:
-        return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-lg"
+        return "grid-auto-fill-320"
     }
   }, [filterState.viewMode])
 

@@ -76,7 +76,7 @@ export function SiteFooter({
     if (pathname === '/') return Diamond
     if (pathname.startsWith('/events')) return Ticket
     if (pathname.startsWith('/directory')) return AddressBook
-    if (pathname.startsWith('/the-armory')) return Shield
+    if (pathname.startsWith('/armory')) return Shield
     if (pathname.startsWith('/intel')) return MapTrifold
     if (pathname.startsWith('/marketplace')) return Storefront
     if (pathname.startsWith('/forums')) return Users
@@ -88,7 +88,7 @@ export function SiteFooter({
     if (pathname === '/') return 'text-nav-home'
     if (pathname.startsWith('/events')) return 'text-nav-events'
     if (pathname.startsWith('/directory')) return 'text-nav-directory'
-    if (pathname.startsWith('/the-armory')) return 'text-nav-armory'
+    if (pathname.startsWith('/armory')) return 'text-nav-armory'
     if (pathname.startsWith('/intel')) return 'text-nav-intel'
     if (pathname.startsWith('/marketplace')) return 'text-nav-marketplace'
     if (pathname.startsWith('/forums')) return 'text-nav-forums'
@@ -216,7 +216,7 @@ export function SiteFooter({
                     { name: "Business Directory", href: "/directory", icon: AddressBook, color: "hover:text-nav-directory" },
                     { name: "Events Calendar", href: "/events", icon: Ticket, color: "hover:text-nav-events" },
                     { name: "Marketplace", href: "/marketplace", icon: Storefront, color: "hover:text-nav-marketplace" },
-                    { name: "The Armory", href: "/the-armory", icon: Shield, color: "hover:text-nav-armory" },
+                    { name: "The Armory", href: "/armory", icon: Shield, color: "hover:text-nav-armory" },
                     { name: "Training Hub", href: "/training", icon: Shield, color: "hover:text-nav-armory" },
                     { name: "Intel Center", href: "/intel", icon: MapTrifold, color: "hover:text-nav-intel" }
                   ].map((link) => {
@@ -259,7 +259,7 @@ export function SiteFooter({
                     { name: "Range Directory", href: "/directory?type=ranges", icon: MapPin },
                     { name: "Guides & Articles", href: "/guides", icon: Globe },
                     { name: "Legal Resources", href: "/intel", icon: Shield },
-                    { name: "Equipment Reviews", href: "/the-armory", icon: Users }
+                    { name: "Equipment Reviews", href: "/armory", icon: Users }
                   ].map((resource) => {
                     const Icon = resource.icon
                     return (

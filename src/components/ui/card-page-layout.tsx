@@ -13,11 +13,12 @@ import {
 } from './dropdown-menu'
 import { cn } from '@/lib/utils'
 import { 
-  Search, 
-  Filter,
-  Grid3X3 as Grid,
+  MagnifyingGlass as Search, 
+  Funnel as Filter,
+  GridNine as Grid,
   List,
   SquaresFour as CardView,
+  GridFour as DenseView,
   SortAscending as SortAsc,
   CaretDown as ChevronDown
 } from '@phosphor-icons/react'
@@ -168,10 +169,10 @@ export function CardPageLayout({
         </div>
       </section>
 
-      {/* Main Content Area */}
-      <section className="py-4xl">
-        <div className="container mx-auto max-w-7xl px-md">
-          <div className="flex gap-xl">
+      {/* Main Content Area - Full Width Amazon Style */}
+      <section className="py-4xl bg-background/50">
+        <div className="w-full px-lg sm:px-xl lg:px-2xl xl:px-3xl 2xl:px-[7.5rem]">
+          <div className="flex gap-xl max-w-[1920px] mx-auto">
             
             {/* Left Sidebar - Filters */}
             <aside className="w-80 flex-shrink-0 hidden lg:block">
@@ -242,10 +243,20 @@ export function CardPageLayout({
                   {/* View Mode Toggle */}
                   <div className="flex items-center border rounded-xs">
                     <Button
+                      variant={viewMode === 'dense' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => onViewModeChange('dense')}
+                      className="rounded-none border-none shadow-none"
+                      title="Dense Grid - Maximum items"
+                    >
+                      <DenseView weight="bold" className="size-4" />
+                    </Button>
+                    <Button
                       variant={viewMode === 'grid' ? 'default' : 'ghost'}
                       size="sm"
                       onClick={() => onViewModeChange('grid')}
                       className="rounded-none border-none shadow-none"
+                      title="Standard Grid"
                     >
                       <Grid weight="bold" className="size-4" />
                     </Button>
@@ -254,6 +265,7 @@ export function CardPageLayout({
                       size="sm"
                       onClick={() => onViewModeChange('card')}
                       className="rounded-none border-none shadow-none"
+                      title="Large Cards"
                     >
                       <CardView weight="bold" className="size-4" />
                     </Button>
@@ -262,6 +274,7 @@ export function CardPageLayout({
                       size="sm"
                       onClick={() => onViewModeChange('list')}
                       className="rounded-none border-none shadow-none"
+                      title="List View"
                     >
                       <List weight="bold" className="size-4" />
                     </Button>

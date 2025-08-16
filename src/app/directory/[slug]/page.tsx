@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import { BusinessDetailTemplate } from '@/components/ui/business-detail-template'
+import { BusinessDetailPage } from '@/components/ui/detail-page-builder'
 
 // Business data interface
 interface BusinessData {
@@ -435,5 +435,5 @@ export default async function BusinessDetailPage({ params }: Props) {
     notFound()
   }
 
-  return <BusinessDetailTemplate {...business} />
+  return <BusinessDetailPage {...business} />
 }

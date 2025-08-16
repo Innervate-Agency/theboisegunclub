@@ -2,6 +2,7 @@ import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { WeatherIcon } from '@/components/ui/weather-icon'
 import { 
   MapPin, Navigation, Wind, Thermometer, Droplets,
   AlertTriangle, CheckCircle, XCircle, Star,
@@ -15,7 +16,7 @@ interface WeatherData {
   windDirection: string
   fireDanger: 'Low' | 'Moderate' | 'High' | 'Extreme'
   accessStatus: 'Open' | 'Restrictions' | 'Closed'
-  weatherIcon: '☀️' | '⛅' | '☁️' | '🌧️' | '🌨️' | '🌪️'
+  weatherIcon: 'sun' | 'partly-cloudy' | 'cloudy' | 'rain' | 'snow' | 'storm'
   alerts?: string[]
   lastUpdated: string
 }

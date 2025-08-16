@@ -21,7 +21,7 @@ import {
 const armoryArticles = [
   // Legal & Compliance
   {
-    id: 'idaho-gun-laws-2025',
+    id: 'idaho-gun-laws-complete-2025-guide',
     title: "Idaho Gun Laws: Complete 2025 Guide",
     excerpt: "Comprehensive overview of Idaho's firearms laws, including constitutional carry, concealed carry permits, prohibited locations, and recent legislative updates for Idaho residents.",
     category: "Legal",
@@ -40,7 +40,7 @@ const armoryArticles = [
     image: "/images/Fractal/25.webp"
   },
   {
-    id: 'federal-vs-state-laws',
+    id: 'federal-vs-state-gun-laws-in-idaho',
     title: "Federal vs. State Gun Laws in Idaho",
     excerpt: "Understanding the interaction between federal firearms regulations and Idaho state law, including areas where federal law takes precedence.",
     category: "Legal",
@@ -59,7 +59,7 @@ const armoryArticles = [
     image: "/images/Smoke/Background_08.webp"
   },
   {
-    id: 'nfa-items-idaho',
+    id: 'nfa-items-in-idaho-suppressors-sbrs-and-more',
     title: "NFA Items in Idaho: Suppressors, SBRs, and More",
     excerpt: "Complete guide to owning NFA regulated items in Idaho, including the application process, wait times, and legal considerations for Idaho gun owners.",
     category: "Legal",
@@ -80,7 +80,7 @@ const armoryArticles = [
 
   // Buying Guides
   {
-    id: 'first-time-buyer-idaho',
+    id: 'first-time-gun-buyers-guide-idaho-edition',
     title: "First-Time Gun Buyer's Guide: Idaho Edition",
     excerpt: "Step-by-step guide for purchasing your first firearm in Idaho, covering background checks, FFL dealers, and what to expect at the gun store.",
     category: "Buying Guide",
@@ -120,7 +120,7 @@ const armoryArticles = [
 
   // Safety & Training
   {
-    id: 'firearm-safety-fundamentals',
+    id: 'firearm-safety-the-four-fundamental-rules',
     title: "Firearm Safety: The Four Fundamental Rules",
     excerpt: "Essential firearm safety rules that every gun owner must know and practice, with practical examples and real-world applications for safe firearms handling.",
     category: "Safety",
@@ -139,7 +139,7 @@ const armoryArticles = [
     image: "/images/Smoke/Background_08.webp"
   },
   {
-    id: 'safe-firearms-storage',
+    id: 'safe-storage-protecting-your-family-and-firearms',
     title: "Safe Storage: Protecting Your Family and Firearms",
     excerpt: "Best practices for firearm storage in the home, including safes, locks, and balancing security with accessibility for Idaho gun owners.",
     category: "Safety",

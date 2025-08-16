@@ -359,7 +359,9 @@ export function LocationBrowser({ locations, locationTypes, difficultyLevels }: 
             {sortedLocations.length === 0 && (
               <div className="text-center py-6xl">
                 <div className="space-y-base">
-                  <div className="text-display-lg">🗺️</div>
+                  <div className="text-display-lg flex justify-center">
+                    <MapPin className="h-16 w-16 text-muted-foreground" />
+                  </div>
                   <h3 className="font-rajdhani text-heading-xl font-bold text-card-foreground">
                     No locations found
                   </h3>
