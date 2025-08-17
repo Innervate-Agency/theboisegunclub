@@ -97,7 +97,7 @@ export function useTacticalTracker() {
       if (prevStats.sectionsVisited.includes(section)) return prevStats
       
       const updatedSections = [...prevStats.sectionsVisited, section]
-      let newAchievements = [...prevStats.achievements]
+      const newAchievements = [...prevStats.achievements]
       
       // Check for achievements
       if (updatedSections.length === SECTIONS.length && !prevStats.achievements.includes('explorer')) {

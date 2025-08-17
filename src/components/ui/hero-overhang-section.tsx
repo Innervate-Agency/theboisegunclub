@@ -119,14 +119,14 @@ export function HeroOverhangSection({
                 onMouseEnter={(e) => {
                   // Set the dynamic shadow color for the big container - subtle and diffused
                   const container = e.currentTarget.closest('[style*="--dynamic-shadow"]') as HTMLElement
-                  if (container) {
+                  if (container && container.style) {
                     container.style.setProperty('--dynamic-shadow', `0 50px 120px -40px rgba(var(--${item.colorClass}-rgb), 0.15)`)
                   }
                 }}
                 onMouseLeave={(e) => {
                   // Reset to default shadow
                   const container = e.currentTarget.closest('[style*="--dynamic-shadow"]') as HTMLElement
-                  if (container) {
+                  if (container && container.style) {
                     container.style.setProperty('--dynamic-shadow', '0 50px 100px -20px rgba(0, 0, 0, 0.25)')
                   }
                 }}
@@ -150,11 +150,15 @@ export function HeroOverhangSection({
                     }}
                     onMouseEnter={(e) => {
                       setTimeout(() => {
-                        e.currentTarget.style.color = `var(--${item.colorClass})`
+                        if (e.currentTarget && e.currentTarget.style) {
+                          e.currentTarget.style.color = `var(--${item.colorClass})`
+                        }
                       }, 150)
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = ''
+                      if (e.currentTarget && e.currentTarget.style) {
+                        e.currentTarget.style.color = ''
+                      }
                     }}
                   >
                     {React.cloneElement(item.icon as React.ReactElement, {
@@ -167,11 +171,15 @@ export function HeroOverhangSection({
                     className="text-xs sm:text-sm md:text-base lg:text-lg font-rajdhani font-semibold text-card-foreground transition-colors duration-300 delay-100 text-center leading-tight"
                     onMouseEnter={(e) => {
                       setTimeout(() => {
-                        e.currentTarget.style.color = `var(--${item.colorClass})`
+                        if (e.currentTarget && e.currentTarget.style) {
+                          e.currentTarget.style.color = `var(--${item.colorClass})`
+                        }
                       }, 200)
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = ''
+                      if (e.currentTarget && e.currentTarget.style) {
+                        e.currentTarget.style.color = ''
+                      }
                     }}
                   >
                     {item.label.toUpperCase()}
