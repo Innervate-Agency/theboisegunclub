@@ -3,7 +3,7 @@
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 import { Badge } from './badge';
-import { TacticalCase } from './tactical-case';
+import { Card } from './card';
 import Image from 'next/image';
 import React, { useState } from 'react';
 

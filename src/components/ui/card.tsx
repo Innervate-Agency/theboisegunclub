@@ -1,6 +1,7 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
+import { CategoryIcon, type CategoryIconComponentProps } from "@/components/ui/category-icons"
 
 const cardVariants = cva(
   // TBGC Design System: Square tactical aesthetic with dramatic shadow hierarchy
@@ -43,7 +44,10 @@ const cardVariants = cva(
         "fire-red": "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-canyon-clay after:to-rusty-orange after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
 
         // Fire Purple: Commanding with purple tactical gradients
-        "fire-purple": "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-foothills-purple after:to-canyon-clay after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out"
+        "fire-purple": "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-foothills-purple after:to-canyon-clay after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
+        
+        // Tactical: No shadows, tactical case borders with corner brackets (themed)
+        tactical: "border-2 border-border/40 bg-card hover:border-opacity-70 group relative overflow-visible"
       },
       size: {
         sm: "p-sm",
@@ -60,16 +64,89 @@ const cardVariants = cva(
 
 export interface CardProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof cardVariants> {}
+    VariantProps<typeof cardVariants> {
+  // Tactical card props
+  tacticalTheme?: 'home' | 'events' | 'directory' | 'armory' | 'intel' | 'marketplace' | 'forums' | 'default'
+  showCategoryIcon?: boolean
+  category?: string
+  type?: string
+  content?: string
+}
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, variant, size, ...props }, ref) => {
+  ({ className, variant, size, tacticalTheme = 'default', showCategoryIcon = false, category, type, content, ...props }, ref) => {
+    const isTactical = variant === 'tactical'
+    
+    // Get theme color for tactical borders
+    const getThemeColor = (theme: string) => {
+      const colorMap = {
+        home: 'nav-home',
+        events: 'nav-events', 
+        directory: 'nav-directory',
+        armory: 'nav-armory',
+        intel: 'nav-intel',
+        marketplace: 'nav-marketplace',
+        forums: 'nav-forums',
+        default: 'border'
+      }
+      return colorMap[theme as keyof typeof colorMap] || 'border'
+    }
+
+    const themeColor = getThemeColor(tacticalTheme)
+    
     return (
       <div
         ref={ref}
-        className={cn(cardVariants({ variant, size }), className)}
+        className={cn(
+          cardVariants({ variant, size }),
+          isTactical && `hover:border-${themeColor}/50`,
+          className
+        )}
         {...props}
-      />
+      >
+        {/* Tactical Border Elements (only for tactical variant) */}
+        {isTactical && (
+          <>
+            {/* Corner brackets - larger than navbar version */}
+            <div className={`absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 border-${themeColor}/60 opacity-0 group-hover:opacity-90 transition-all duration-200`} />
+            <div className={`absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 border-${themeColor}/60 opacity-0 group-hover:opacity-90 transition-all duration-200`} />
+            <div className={`absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 border-${themeColor}/60 opacity-0 group-hover:opacity-90 transition-all duration-200`} />
+            
+            {/* Bottom-right corner with document cutout */}
+            <div className={`absolute bottom-0 right-0 w-3 h-3 opacity-0 group-hover:opacity-90 transition-all duration-200`}>
+              <div 
+                className={`w-full h-full border-2 border-${themeColor}/60`}
+                style={{
+                  clipPath: 'polygon(0 0, 60% 0, 100% 40%, 100% 100%, 0 100%)'
+                }}
+              />
+            </div>
+            
+            {/* Tactical latches/clasps */}
+            <div className={`absolute top-1 right-1 w-1.5 h-1.5 bg-${themeColor}/40 rounded-full opacity-0 group-hover:opacity-70 transition-all duration-200`} />
+            <div className={`absolute bottom-1 left-1 w-1.5 h-1.5 bg-${themeColor}/40 rounded-full opacity-0 group-hover:opacity-70 transition-all duration-200`} />
+          </>
+        )}
+        
+        {/* Category Icon (top-right corner) */}
+        {isTactical && showCategoryIcon && (
+          <div className="absolute top-2 right-2 z-10">
+            <CategoryIcon
+              category={category}
+              type={type}
+              content={content}
+              size="md"
+              opacity={0.4}
+              className={`text-${themeColor} group-hover:opacity-70 transition-opacity duration-200`}
+            />
+          </div>
+        )}
+        
+        {/* Card content wrapper */}
+        <div className={cn(isTactical && "relative z-10")}>
+          {props.children}
+        </div>
+      </div>
     )
   }
 )

@@ -1,9 +1,11 @@
 'use client'
 
 import React from 'react'
+import dynamic from 'next/dynamic'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { MotionDiv, MotionH1, MotionP } from '@/components/ui/optimized-motion'
+
 // Lazy load decorative animation components
 const FloatingDiamonds = dynamic(() => import('@/components/ui/hero-floating-diamonds').then(mod => ({ default: mod.FloatingDiamonds })), {
   ssr: false,
@@ -33,7 +35,6 @@ import { LightweightParticles } from '@/components/ui/lightweight-particles'
 import { LightweightGlow } from '@/components/ui/lightweight-glow'
 import { DynamicHeroOverhang } from '@/components/ui/dynamic-loader'
 import { performanceTracker, usePerformanceTracker } from '@/lib/performance-monitor'
-import dynamic from 'next/dynamic'
 // Keep overhang section as it's core functionality
 const HeroOverhangSection = dynamic(() => import('@/components/ui/hero-overhang-section').then(mod => ({ default: mod.HeroOverhangSection })), {
   ssr: false,

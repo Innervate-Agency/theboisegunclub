@@ -47,7 +47,7 @@ const siteNavigationVariants = cva(
     defaultVariants: {
       variant: "default",
       layout: "horizontal",
-      sticky: false
+      sticky: true
     }
   }
 )
@@ -308,16 +308,16 @@ export function SiteNavigation({
                       scale: 1
                     }}
                     animate={{ 
-                      rotate: [0, 360], // Full spin maintains original angle
+                      rotate: [0, 360, 30], // Full spin then settles at 30-degree tilt
                       scale: [1, 1.05, 1]
                     }}
                     transition={{ 
                       duration: 0.8,
                       ease: [0.25, 0.46, 0.45, 0.94],
-                      times: [0, 0.5, 1]
+                      times: [0, 0.7, 1]
                     }}
                     whileHover={{ 
-                      rotate: [0, -10, 10, 0],
+                      rotate: [30, 20, 40, 30], // Hover wiggle from tilted position
                       transition: { duration: 0.5, ease: "easeInOut" }
                     }}
                   >
