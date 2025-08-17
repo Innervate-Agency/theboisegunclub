@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 import { Card } from "./card"
 import { Badge } from "./badge"
 import { Button } from "./button"
+import { TacticalCase } from "./tactical-case"
 // Phosphor Icons - Primary choice for tactical aesthetic
 import { 
   Calendar, MapPin, Clock, Users, Image as ImageIcon, Star, 
@@ -178,9 +179,19 @@ export function EventCard({
 
   return (
     <Link href={eventHref} className="block">
-      <Card
+      <TacticalCase
         variant="interactive"
-        className={cn(eventCardVariants({ featured, size }), className)}
+        theme="events"
+        size="lg"
+        showCornerBrackets={true}
+        showLatches={true}
+        showGridPattern={false}
+        caseLabel={featured ? "⭐ FEATURED EVENT" : "EVENT BRIEFING"}
+        className={cn("min-w-[320px]", className)}
+      >
+      <Card
+        variant="ghost"
+        className={cn(eventCardVariants({ featured, size }), "border-none bg-transparent shadow-none")}
         {...props}
       >
       {featured && (
@@ -367,6 +378,7 @@ export function EventCard({
         )}
       </div>
       </Card>
+      </TacticalCase>
     </Link>
   )
 }

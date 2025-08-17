@@ -3,6 +3,7 @@
 import { Card, CardContent } from './card'
 import { Button } from './button'
 import { Badge } from './badge'
+import { TacticalCase } from './tactical-case'
 import Image from 'next/image'
 import Link from 'next/link'
 import { cva, type VariantProps } from 'class-variance-authority'
@@ -154,7 +155,17 @@ export function MarketplaceDealCard({
 
   return (
     <Link href={productHref} className="block">
-      <Card className={cn(marketplaceDealCardVariants({ featured: deal.isFeatured || featured, size }), className)} {...props}>
+      <TacticalCase
+        variant="interactive"
+        theme="marketplace"
+        size="lg"
+        showCornerBrackets={true}
+        showLatches={true}
+        showGridPattern={false}
+        caseLabel={deal.isFeatured || featured ? "🔥 HOT DEAL" : "MARKET ITEM"}
+        className={cn("min-w-[320px]", className)}
+      >
+      <Card className={cn(marketplaceDealCardVariants({ featured: deal.isFeatured || featured, size }), "border-none bg-transparent shadow-none")} {...props}>
         <CardContent className="p-0 space-y-0">
         {/* Boise Landscape Gradient Product Hero Section */}
         <div className={cn(
@@ -355,6 +366,7 @@ export function MarketplaceDealCard({
         </div>
       </CardContent>
     </Card>
+    </TacticalCase>
     </Link>
   )
 }

@@ -3,6 +3,7 @@
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 import { Badge } from './badge';
+import { TacticalCase } from './tactical-case';
 import Image from 'next/image';
 import React, { useState } from 'react';
 
@@ -56,7 +57,19 @@ export function DirectoryCard({
 }: DirectoryCardProps) {
   const [imgError, setImgError] = useState(false);
   return (
-    <div className={cn(directoryCardVariants({ variant, size }), className)} {...props}>
+    <TacticalCase
+      variant="interactive"
+      theme="directory"
+      size="md"
+      showCornerBrackets={true}
+      showLatches={true}
+      showGridPattern={variant === 'elite'}
+      showRopeBinding={variant === 'premium'}
+      caseLabel={variant === 'elite' ? "🏆 ELITE PARTNER" : variant === 'premium' ? "⭐ PREMIUM" : "DIRECTORY ENTRY"}
+      className={cn("cursor-pointer", className)}
+      {...props}
+    >
+    <div className={cn(directoryCardVariants({ variant, size }), "border-none bg-transparent shadow-none")}>
       <div className="flex items-center gap-base mb-sm">
         {imageUrl && !imgError ? (
           <div className="relative h-14 w-14 rounded-xs overflow-hidden bg-card-surface">
@@ -87,6 +100,7 @@ export function DirectoryCard({
         <div className="mt-xs text-body-xs text-warning-amber font-noto-sans truncate">{contact}</div>
       )}
     </div>
+    </TacticalCase>
   );
 }
 

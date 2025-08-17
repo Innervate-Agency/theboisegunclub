@@ -10,6 +10,9 @@ import { MotionDiv } from '@/components/ui/optimized-motion'
 import { Menu, X } from 'lucide-react'
 import { AuthButton } from '@/components/auth/auth-button'
 import { useAuth } from '@/components/auth/auth-context'
+import { useTacticalTracker } from '@/hooks/useTacticalTracker'
+import { useKonamiCode } from '@/hooks/useKonamiCode'
+import { useNightOpsTheme } from '@/hooks/useNightOpsTheme'
 import { 
   Diamond, 
   Ticket,
@@ -77,8 +80,66 @@ export function SiteNavigation({
 }: SiteNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const [hoveredPath, setHoveredPath] = React.useState<string | null>(null)
+  const [logoClickCount, setLogoClickCount] = React.useState(0)
+  const [showIdahoFacts, setShowIdahoFacts] = React.useState(false)
+  const [showKonamiNotification, setShowKonamiNotification] = React.useState(false)
   const pathname = usePathname()
   const { getForumUrl, isAuthenticated } = useAuth()
+  const { fireBrass, visitSection } = useTacticalTracker()
+  const { isNightOps, activateNightOps, toggleNightOps } = useNightOpsTheme()
+  
+  // Konami code easter egg
+  const { isActivated, progress, totalSteps, reset } = useKonamiCode({
+    onComplete: () => {
+      activateNightOps()
+      setShowKonamiNotification(true)
+      // Hide notification after 5 seconds
+      setTimeout(() => setShowKonamiNotification(false), 5000)
+    },
+    resetOnComplete: true
+  })
+
+  // Track section visits and fire brass on navigation
+  React.useEffect(() => {
+    // Only fire brass and track section on pathname changes, not on every render
+    // Determine current section and track visit
+    let currentSection = 'home'
+    if (pathname.startsWith('/events')) currentSection = 'events'
+    else if (pathname.startsWith('/directory')) currentSection = 'directory'
+    else if (pathname.startsWith('/armory')) currentSection = 'armory'
+    else if (pathname.startsWith('/intel')) currentSection = 'intel'
+    else if (pathname.startsWith('/marketplace')) currentSection = 'marketplace'
+    else if (pathname.startsWith('/forums')) currentSection = 'forums'
+    
+    // Fire brass for page navigation
+    fireBrass()
+    
+    // Track section visit
+    visitSection(currentSection)
+  }, [pathname]) // Only depend on pathname, not the functions
+
+  // Idaho facts easter egg
+  const idahoFacts = [
+    "Idaho produces 1/3 of all potatoes grown in the US",
+    "Hell's Canyon is the deepest river gorge in North America",
+    "Idaho has over 3,100 miles of fishable streams and rivers",
+    "The state motto is 'Esto Perpetua' - Let it be perpetual",
+    "Idaho has 63 shooting ranges and firearms training facilities",
+    "Boise is known as the 'City of Trees' with over 180,000 trees",
+    "Idaho leads the nation in trout production"
+  ]
+
+  const handleLogoClick = () => {
+    const newCount = logoClickCount + 1
+    setLogoClickCount(newCount)
+    
+    if (newCount === 7) {
+      setShowIdahoFacts(true)
+      setLogoClickCount(0)
+      // Hide after 5 seconds
+      setTimeout(() => setShowIdahoFacts(false), 5000)
+    }
+  }
 
   // Get current page color based on pathname
   const getCurrentPageColor = () => {
@@ -118,16 +179,22 @@ export function SiteNavigation({
 
   // Get background color for magic line based on hovered/active path
   const getMagicLineColor = (itemColor: string) => {
-    switch(itemColor) {
-      case 'nav-home': return 'bg-nav-home'
-      case 'nav-events': return 'bg-nav-events'
-      case 'nav-directory': return 'bg-nav-directory'
-      case 'nav-armory': return 'bg-nav-armory'
-      case 'nav-intel': return 'bg-nav-intel'
-      case 'nav-marketplace': return 'bg-nav-marketplace'
-      case 'nav-forums': return 'bg-nav-forums'
-      default: return 'bg-rusty-orange'
+    const colorMap = {
+      'nav-home': 'bg-nav-home',
+      'nav-events': 'bg-nav-events',
+      'nav-directory': 'bg-nav-directory',
+      'nav-armory': 'bg-nav-armory',
+      'nav-intel': 'bg-nav-intel',
+      'nav-marketplace': 'bg-nav-marketplace',
+      'nav-forums': 'bg-nav-forums'
     }
+    
+    const result = colorMap[itemColor as keyof typeof colorMap] || 'bg-rusty-orange'
+    // Debug log for development
+    if (process.env.NODE_ENV === 'development') {
+      console.log(`Magic line color for ${itemColor}: ${result}`)
+    }
+    return result
   }
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -226,8 +293,12 @@ export function SiteNavigation({
           
           {/* Logo */}
           {showLogo && (
-            <div className="flex items-center">
-              <Link href="/" className="flex items-center gap-xs sm:gap-sm">
+            <div className="flex items-center relative">
+              <div 
+                onClick={handleLogoClick}
+                className="flex items-center gap-xs sm:gap-sm cursor-pointer"
+                title={logoClickCount > 0 ? `${7 - logoClickCount} clicks to Idaho facts` : 'Click 7 times for Idaho facts'}
+              >
                 <div className="flex items-center gap-xs sm:gap-sm">
                   <MotionDiv
                     key={pathname} // This triggers re-render on route change
@@ -270,7 +341,53 @@ export function SiteNavigation({
                     </div>
                   </div>
                 </div>
-              </Link>
+              </div>
+              
+              {/* Idaho Facts Easter Egg */}
+              {showIdahoFacts && (
+                <MotionDiv
+                  className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-card border border-nav-home p-lg rounded-xs shadow-prominent z-50 max-w-md"
+                  initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                  <div className="text-center space-y-sm">
+                    <div className="text-nav-home font-rajdhani font-bold text-lg">
+                      🏔️ Idaho Facts
+                    </div>
+                    <div className="text-sm text-muted-foreground leading-relaxed">
+                      {idahoFacts[Math.floor(Math.random() * idahoFacts.length)]}
+                    </div>
+                    <div className="text-xs text-muted-foreground/70">
+                      Click the logo 7 times again for another fact!
+                    </div>
+                  </div>
+                </MotionDiv>
+              )}
+              
+              {/* Konami Code Night Ops Notification */}
+              {showKonamiNotification && (
+                <MotionDiv
+                  className="absolute top-full right-0 mt-2 bg-card border border-secondary p-lg rounded-xs shadow-commanding z-50 max-w-sm"
+                  initial={{ opacity: 0, x: 20, scale: 0.95 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  exit={{ opacity: 0, x: 20, scale: 0.95 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                >
+                  <div className="text-center space-y-sm">
+                    <div className="text-secondary font-rajdhani font-bold text-lg">
+                      🌙 NIGHT OPS ACTIVATED
+                    </div>
+                    <div className="text-sm text-muted-foreground leading-relaxed">
+                      Konami Code detected! Night vision tactical theme engaged.
+                    </div>
+                    <div className="text-xs text-secondary/70">
+                      Toggle with the button in the navigation bar
+                    </div>
+                  </div>
+                </MotionDiv>
+              )}
             </div>
           )}
 
@@ -292,10 +409,15 @@ export function SiteNavigation({
                     {shouldShowLine && (
                       <MotionDiv
                         layoutId="navbar-magic-line"
-                        className={`absolute bottom-0 left-0 right-0 h-1 rounded-full ${getMagicLineColor(item.color)}`}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
+                        className={`absolute bottom-0 left-0 right-0 h-1 rounded-full ${getMagicLineColor(item.color)} shadow-sm`}
+                        style={{
+                          // Fallback inline styles to ensure visibility
+                          backgroundColor: `var(--${item.color})`,
+                          minHeight: '4px' // Ensure minimum visibility
+                        }}
+                        initial={{ opacity: 0, scaleX: 0 }}
+                        animate={{ opacity: 1, scaleX: 1 }}
+                        exit={{ opacity: 0, scaleX: 0 }}
                         transition={{
                           type: "spring",
                           bounce: 0.25,
@@ -306,15 +428,42 @@ export function SiteNavigation({
                       />
                     )}
                     
-                    {/* Icon Glow Effect */}
+                    {/* Tactical Equipment Case Highlight */}
                     {isHovered && (
                       <MotionDiv
-                        className={`absolute inset-0 rounded-sm ${getMagicLineColor(item.color)}/20 blur-md -z-10`}
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ scale: 1.3, opacity: 1 }}
-                        exit={{ scale: 0.8, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                      />
+                        className="absolute inset-0"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ duration: 0.15, ease: "easeOut" }}
+                      >
+                        {/* Main case border - thinner for navbar */}
+                        <div className={`absolute inset-0 rounded-sm border ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-70`} />
+                        
+                        {/* Tactical corner brackets - thinner for navbar */}
+                        <div className={`absolute top-0 left-0 w-2 h-2 border-l border-t ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
+                        <div className={`absolute top-0 right-0 w-2 h-2 border-r border-t ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
+                        <div className={`absolute bottom-0 left-0 w-2 h-2 border-l border-b ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
+                        
+                        {/* Bottom-right corner with document cutout */}
+                        <div className={`absolute bottom-0 right-0 w-2 h-2 opacity-90`}>
+                          <div 
+                            className={`w-full h-full border ${getMagicLineColor(item.color).replace('bg-', 'border-')}`}
+                            style={{
+                              clipPath: 'polygon(0 0, 60% 0, 100% 40%, 100% 100%, 0 100%)'
+                            }}
+                          />
+                        </div>
+                        
+                        {/* Tactical latches/clasps */}
+                        <div className={`absolute top-1 right-1 w-1 h-1 ${getMagicLineColor(item.color)} rounded-full opacity-80`} />
+                        <div className={`absolute bottom-1 left-1 w-1 h-1 ${getMagicLineColor(item.color)} rounded-full opacity-80`} />
+                        
+                        {/* Western document texture - subtle paper grain effect */}
+                        <div className="absolute inset-1 opacity-10">
+                          <div className="w-full h-full bg-gradient-to-br from-transparent via-current/5 to-transparent" />
+                        </div>
+                      </MotionDiv>
                     )}
                     
                     {renderNavLink(
@@ -333,8 +482,12 @@ export function SiteNavigation({
                       >
                         <MotionDiv
                           whileHover={{ 
-                            rotate: [0, -5, 5, 0],
-                            transition: { duration: 0.3 }
+                            y: [-1, 0],
+                            transition: { duration: 0.2, ease: "easeOut" }
+                          }}
+                          whileTap={{ 
+                            scale: 0.95,
+                            transition: { duration: 0.1 }
                           }}
                         >
                           <item.icon className="size-4" weight="bold" />
@@ -358,6 +511,19 @@ export function SiteNavigation({
 
           {/* Custom Content / Auth Buttons */}
           <div className="hidden md:flex items-center gap-base">
+            {/* Night Ops Toggle (only show if activated) */}
+            {isNightOps && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleNightOps}
+                className="text-xs font-rajdhani font-bold tracking-wider"
+                title="Toggle Night Ops Mode (Konami Code Unlocked)"
+              >
+                🌙 NIGHT OPS
+              </Button>
+            )}
+            
             {customContent || (
               <AuthButton variant="forum-aware" showTrialButton={false} />
             )}

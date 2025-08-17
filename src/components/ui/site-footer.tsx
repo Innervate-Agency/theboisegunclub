@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { HoverArrow } from "@/components/ui/micro-animations"
+import { BrassCounter } from "@/components/ui/brass-counter"
+import { TacticalCase } from "@/components/ui/tactical-case"
 import { 
   MapPin, Phone, Envelope, Globe, CrosshairSimple, Shield, Users, Calendar,
   CaretUp, Question, Heart, Diamond, Ticket, AddressBook, MapTrifold, Storefront
@@ -51,9 +53,17 @@ export function SiteFooter({
     e.preventDefault()
     setIsSubscribing(true)
     
-    // Simulate newsletter signup
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    // Real newsletter signup - send to community email
+    const subject = encodeURIComponent('Newsletter Subscription Request')
+    const body = encodeURIComponent(
+      `I would like to subscribe to The Boise Gun Club newsletter.\n\nEmail: ${newsletterEmail}\n\nThank you!`
+    )
+    const mailtoUrl = `mailto:info@boiseguncollective.com?subject=${subject}&body=${body}`
     
+    // Open mailto link
+    window.location.href = mailtoUrl
+    
+    // Clear form and show success
     setNewsletterEmail("")
     setIsSubscribing(false)
   }
@@ -114,16 +124,82 @@ export function SiteFooter({
   const mutedColor = "text-muted-foreground"
   const linkHoverColor = isDark ? "hover:text-rusty-orange" : "hover:text-slate-blue"
   
+  // 1980s Retro Western SVG Background Component
+  const RetroWesternBackground = () => (
+    <div className="absolute inset-0 overflow-hidden opacity-5">
+      <svg 
+        viewBox="0 0 1200 400" 
+        className="w-full h-full object-cover"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        {/* Mesa/Mountain Silhouettes */}
+        <path
+          d="M0,200 L200,150 L350,180 L500,140 L650,160 L800,130 L950,170 L1200,150 L1200,400 L0,400 Z"
+          fill="currentColor"
+          opacity="0.3"
+        />
+        <path
+          d="M0,250 L150,220 L300,240 L450,210 L600,230 L750,200 L900,220 L1200,210 L1200,400 L0,400 Z"
+          fill="currentColor"
+          opacity="0.2"
+        />
+        
+        {/* Distant Mountains */}
+        <path
+          d="M0,180 L100,160 L200,170 L300,150 L400,165 L500,145 L600,160 L700,140 L800,155 L900,135 L1000,150 L1100,130 L1200,140 L1200,400 L0,400 Z"
+          fill="currentColor"
+          opacity="0.15"
+        />
+        
+        {/* Horizon Line */}
+        <line
+          x1="0"
+          y1="120"
+          x2="1200"
+          y2="110"
+          stroke="currentColor"
+          strokeWidth="1"
+          opacity="0.1"
+        />
+        
+        {/* Scattered Stars/Points */}
+        <circle cx="150" cy="80" r="1" fill="currentColor" opacity="0.2" />
+        <circle cx="400" cy="60" r="1" fill="currentColor" opacity="0.15" />
+        <circle cx="700" cy="90" r="1" fill="currentColor" opacity="0.25" />
+        <circle cx="950" cy="70" r="1" fill="currentColor" opacity="0.2" />
+        
+        {/* Subtle Wind Lines */}
+        <path
+          d="M100,100 Q150,95 200,100"
+          stroke="currentColor"
+          strokeWidth="0.5"
+          fill="none"
+          opacity="0.1"
+        />
+        <path
+          d="M500,85 Q550,80 600,85"
+          stroke="currentColor"
+          strokeWidth="0.5"
+          fill="none"
+          opacity="0.1"
+        />
+      </svg>
+    </div>
+  )
+  
   return (
     <>
-      <footer className={cn(siteFooterVariants({ variant }), className)} {...props}>
-        {/* Page-specific accent bar */}
-        <div className={cn("h-1", getAccentColor())} />
+      <footer className={cn(siteFooterVariants({ variant }), "relative overflow-hidden", className)} {...props}>
+        {/* Retro Western Background - Full Width */}
+        <RetroWesternBackground />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Page-specific accent bar */}
+        <div className={cn("h-1 relative z-10", getAccentColor())} />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Newsletter CTA Section */}
           {showNewsletter && (
-            <div className="py-12 border-b border-border text-center">
+            <div className="py-12 border-b border-border text-center relative z-10">
               <div className="max-w-2xl mx-auto">
                 <h2 className={cn("text-heading-xl font-rajdhani font-bold mb-2", textColor)}>
                   Stay on Target
@@ -171,10 +247,20 @@ export function SiteFooter({
           )}
           
           {/* Main Footer Content */}
-          <div className="py-16">
+          <div className="py-16 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-              {/* Brand & Contact */}
-              <div className="lg:col-span-1">
+              {/* Brand & Contact - Heritage Document Folder */}
+              <TacticalCase
+                variant="elevated"
+                theme="home"
+                size="lg"
+                showCornerBrackets={true}
+                showLatches={true}
+                showGridPattern={false}
+                showRopeBinding={false}
+                caseLabel="HEADQUARTERS REGISTRY"
+                className="lg:col-span-1"
+              >
                 <div className="mb-6">
                   {React.createElement(getCurrentPageIcon(), { 
                     className: `size-12 ${getCurrentPageColor()} -rotate-[28deg] mb-4`, 
@@ -204,10 +290,20 @@ export function SiteFooter({
                     <span>Boise, Idaho</span>
                   </div>
                 </div>
-              </div>
+              </TacticalCase>
               
-              {/* Quick Links */}
-              <div>
+              {/* Quick Links - Western Rope Bound */}
+              <TacticalCase
+                variant="elevated"
+                theme="directory"
+                size="lg"
+                showCornerBrackets={true}
+                showLatches={true}
+                showGridPattern={false}
+                showRopeBinding={true}
+                caseLabel="NAVIGATION INDEX"
+                className=""
+              >
                 <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Quick Links
                 </h4>
@@ -245,10 +341,20 @@ export function SiteFooter({
                     )
                   })}
                 </ul>
-              </div>
+              </TacticalCase>
               
-              {/* Resources */}
-              <div>
+              {/* Resources - Heritage Paper Texture */}
+              <TacticalCase
+                variant="elevated"
+                theme="armory"
+                size="lg"
+                showCornerBrackets={true}
+                showLatches={true}
+                showGridPattern={true}
+                showRopeBinding={false}
+                caseLabel="RESOURCES ARCHIVE"
+                className=""
+              >
                 <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Resources
                 </h4>
@@ -279,10 +385,20 @@ export function SiteFooter({
                     )
                   })}
                 </ul>
-              </div>
+              </TacticalCase>
               
-              {/* Support */}
-              <div>
+              {/* Support - Standard Heritage */}
+              <TacticalCase
+                variant="elevated"
+                theme="intel"
+                size="lg"
+                showCornerBrackets={true}
+                showLatches={true}
+                showGridPattern={false}
+                showRopeBinding={false}
+                caseLabel="SUPPORT BUREAU"
+                className=""
+              >
                 <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Support
                 </h4>
@@ -313,16 +429,19 @@ export function SiteFooter({
                     )
                   })}
                 </ul>
-              </div>
+              </TacticalCase>
             </div>
           </div>
           
           {/* Bottom Bar */}
           <div className="border-t border-border py-lg">
             <div className="flex flex-col md:flex-row justify-between items-center gap-lg">
-              {/* Copyright */}
-              <div className={cn("text-body-base font-rajdhani font-medium", mutedColor)}>
-                Copyright © 2025 - Boise Gun Collective, LLC - All rights reserved
+              {/* Copyright with Brass Counter */}
+              <div className="flex flex-col sm:flex-row items-center gap-sm">
+                <div className={cn("text-body-base font-rajdhani font-medium", mutedColor)}>
+                  Copyright © 2025 - Boise Gun Collective, LLC - All rights reserved
+                </div>
+                <BrassCounter />
               </div>
               
               {/* Legal Links */}
