@@ -22,7 +22,7 @@ const buttonVariants = cva(
 
         // Tactical Variants - All use Rajdhani font
         "tactical-primary": "bg-dark-chocolate text-crisp-off-white text-button-base font-rajdhani font-bold uppercase tracking-wider shadow-elevated hover:shadow-hero transform hover:-translate-y-0.5 relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-rusty-orange after:transform after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300",
-        "tactical-secondary": "bg-transparent text-dark-chocolate text-button-base font-rajdhani font-bold uppercase tracking-wider border-2 border-dark-chocolate/30 hover:border-dark-chocolate hover:bg-dark-chocolate/5 transform hover:-translate-y-0.5 transition-all",
+        "tactical-secondary": "bg-transparent text-foreground text-button-base font-rajdhani font-bold uppercase tracking-wider border-2 border-foreground/30 hover:border-foreground hover:bg-foreground/5 transform hover:-translate-y-0.5 transition-all",
         "tactical-glass": "bg-card/10 backdrop-blur-md text-foreground text-button-base font-rajdhani font-bold uppercase tracking-wider border border-border/30 shadow-present hover:shadow-elevated hover:bg-card/20 transform hover:-translate-y-0.5",
         "tactical-accent": "bg-rusty-orange text-crisp-off-white text-button-base font-rajdhani font-bold uppercase tracking-wider shadow-elevated hover:shadow-prominent transform hover:-translate-y-0.5 hover:bg-rusty-orange/90",
 

@@ -13,12 +13,15 @@ const directoryCardVariants = cva(
     variants: {
       variant: {
         default: 'bg-card text-card-foreground shadow-present hover:shadow-elevated',
-        premium: 'bg-card text-card-foreground shadow-elevated hover:shadow-prominent relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-xs before:pointer-events-none',
-        elite: 'bg-card text-card-foreground shadow-elevated hover:shadow-commanding relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/6 before:via-transparent before:to-sandy-ochre/4 before:rounded-xs before:pointer-events-none',
-        glass: 'bg-card border border-border/30 text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm',
-        fire: 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:rounded-b-sm after:transition-all after:duration-300 after:ease-out hover:after:w-full',
+        premium: 'bg-card text-card-foreground shadow-elevated hover:shadow-prominent relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-fire after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-sandy-ochre/4 before:via-transparent before:to-rusty-orange/3 before:rounded-xs before:pointer-events-none',
+        elite: 'bg-card text-card-foreground shadow-elevated hover:shadow-commanding relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-fire after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/6 before:via-transparent before:to-sandy-ochre/4 before:rounded-xs before:pointer-events-none',
+        glass: 'bg-card border border-border/30 text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-fire after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm',
+        fire: 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-fire after:rounded-b-sm after:transition-all after:duration-300 after:ease-out hover:after:w-full',
+        // FLAG: from-slate-blue to-info-river needs bg-gradient-info or bg-gradient-river
         'fire-blue': 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-info-river after:rounded-b-sm after:transition-all after:duration-300 after:ease-out hover:after:w-full',
+        // FLAG: from-foothills-purple to-slate-blue needs bg-gradient-intel or similar
         'fire-purple': 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-foothills-purple after:to-slate-blue after:rounded-b-sm after:transition-all after:duration-300 after:ease-out hover:after:w-full',
+        // FLAG: from-sagebrush-green to-lodgepole-green needs bg-gradient-nature-dark
         'fire-green': 'bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sagebrush-green after:to-lodgepole-green after:rounded-b-sm after:transition-all after:duration-300 after:ease-out hover:after:w-full',
       },
       size: {
@@ -84,18 +87,20 @@ export function DirectoryCard({
             />
           </div>
         ) : (
-          <div className="h-14 w-14 rounded-xs bg-sandy-ochre/10 flex items-center justify-center font-bold text-heading-lg text-dark-chocolate">
+          <div className="h-14 w-14 rounded-xs bg-primary/10 flex items-center justify-center font-bold text-heading-lg text-foreground">
             {name.charAt(0)}
           </div>
         )}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-xs">
-            <span className="font-rajdhani font-bold text-heading-lg truncate text-dark-chocolate">{name}</span>
+            <span className="font-rajdhani font-bold text-heading-lg truncate text-foreground">{name}</span>
             {status && <Badge variant={badgeVariant} size="sm">{status}</Badge>}
           </div>
+          {/* FLAG: text-warning-amber is not a design token. Use text-secondary or text-accent instead. */}
           <span className="text-body-sm text-warning-amber font-noto-sans">{type}</span>
         </div>
       </div>
+      {/* FLAG: text-warning-amber is not a design token. Use text-secondary or text-accent instead. */}
       {contact && (
         <div className="mt-xs text-body-xs text-warning-amber font-noto-sans truncate">{contact}</div>
       )}

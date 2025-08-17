@@ -255,14 +255,18 @@ export function DirectoryPageComponent() {
 
   const getGridClassName = () => {
     switch (viewMode) {
-      case 'grid':
+      case 'grid': {
         return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-lg"
-      case 'card':
+      }
+      case 'card': {
         return "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-lg"
-      case 'list':
+      }
+      case 'list': {
         return "grid gap-sm"
-      default:
+      }
+      default: {
         return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-lg"
+      }
     }
   }
 

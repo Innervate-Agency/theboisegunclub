@@ -15,15 +15,15 @@ import {
 } from "@/components/ui/navigation-menu"
 import { 
   Calendar, 
-  Building2, 
+  Building, 
   BookOpen, 
   MapPin, 
   ShoppingCart, 
   Users, 
-  LogIn,
-  Menu,
+  SignIn,
+  List,
   X
-} from "lucide-react"
+} from "@phosphor-icons/react"
 import { cn } from "@/lib/utils"
 
 export function SiteHeader() {
@@ -36,12 +36,12 @@ export function SiteHeader() {
           {/* Logo */}
           <div className="flex items-center gap-base">
             <Link href="/" className="flex items-center gap-xs">
-              <div className="size-8 rounded-sm bg-gradient-to-br from-sandy-ochre to-rusty-orange flex items-center justify-center">
+              <div className="size-8 rounded-sm bg-gradient-logo flex items-center justify-center">
                 <span className="text-dark-chocolate font-rajdhani font-bold text-body-sm">TBG</span>
               </div>
               <div className="hidden sm:block">
                 <span className="font-rajdhani font-bold text-heading-lg text-card-foreground">THE BOISE</span>
-                <span className="font-rajdhani font-bold text-heading-lg text-sandy-ochre ml-xs">GUN CLUB</span>
+                <span className="font-rajdhani font-bold text-heading-lg text-primary ml-xs">GUN CLUB</span>
               </div>
             </Link>
             <Badge variant="default" className="hidden md:block text-body-xs text-muted-foreground">
@@ -85,7 +85,7 @@ export function SiteHeader() {
               {/* Directory */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="gap-xs">
-                  <Building2 className="size-4" />
+                  <Building className="size-4" />
                   Directory
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -171,10 +171,11 @@ export function SiteHeader() {
           {/* Action Buttons */}
           <div className="flex items-center gap-base">
             <Button variant="outline" size="sm" className="hidden md:flex gap-xs">
-              <LogIn className="size-4" />
+              <SignIn className="size-4" />
               Sign In
             </Button>
-            <Button size="sm" className="hidden md:block bg-gradient-to-r from-sandy-ochre to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-sandy-ochre font-rajdhani font-bold">
+            {/* FLAG: No hover state for bg-gradient-fire is defined. */}
+            <Button size="sm" className="hidden md:block bg-gradient-fire text-primary-foreground font-rajdhani font-bold">
               Join TBGC
             </Button>
             
@@ -185,7 +186,7 @@ export function SiteHeader() {
               className="lg:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+              {isMenuOpen ? <X className="size-5" /> : <List className="size-5" />}
             </Button>
           </div>
         </div>
@@ -199,7 +200,7 @@ export function SiteHeader() {
                 Events
               </Link>
               <Link href="/directory" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
-                <Building2 className="size-4" />
+                <Building className="size-4" />
                 Directory
               </Link>
               <Link href="/guides" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
@@ -220,10 +221,11 @@ export function SiteHeader() {
               </Link>
               <div className="pt-base border-t border-border/40 flex flex-col gap-xs">
                 <Button variant="outline" size="sm" className="justify-start gap-xs">
-                  <LogIn className="size-4" />
+                  <SignIn className="size-4" />
                   Sign In
                 </Button>
-                <Button size="sm" className="justify-start bg-gradient-to-r from-sandy-ochre to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-sandy-ochre font-rajdhani font-bold">
+                {/* FLAG: No hover state for bg-gradient-fire is defined. */}
+                <Button size="sm" className="justify-start bg-gradient-fire text-primary-foreground font-rajdhani font-bold">
                   Join TBGC
                 </Button>
               </div>

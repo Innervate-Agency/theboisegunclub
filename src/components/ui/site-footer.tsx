@@ -6,11 +6,10 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { HoverArrow } from "@/components/ui/micro-animations"
 import { BrassCounter } from "@/components/ui/brass-counter"
-import { TacticalCase } from "@/components/ui/tactical-case"
+import { Card } from "@/components/ui/card"
 import { 
-  MapPin, Phone, Envelope, Globe, CrosshairSimple, Shield, Users, Calendar,
+  MapPin, Phone, Envelope, Globe, CrosshairSimple, Shield, Users,
   CaretUp, Question, Heart, Diamond, Ticket, AddressBook, MapTrifold, Storefront
 } from '@phosphor-icons/react'
 
@@ -20,7 +19,7 @@ const siteFooterVariants = cva(
     variants: {
       variant: {
         default: "bg-card text-card-foreground border-t border-border",
-        dark: "bg-dark-chocolate text-crisp-off-white border-t border-border-bark",
+        dark: "bg-background text-foreground border-t border-border",
         minimal: "bg-card text-card-foreground border-t border-border"
       }
     },
@@ -80,49 +79,23 @@ export function SiteFooter({
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-  
-  // Get current page icon component based on pathname (matches navbar logic)
-  const getCurrentPageIcon = () => {
-    if (pathname === '/') return Diamond
-    if (pathname.startsWith('/events')) return Ticket
-    if (pathname.startsWith('/directory')) return AddressBook
-    if (pathname.startsWith('/armory')) return Shield
-    if (pathname.startsWith('/intel')) return MapTrifold
-    if (pathname.startsWith('/marketplace')) return Storefront
-    if (pathname.startsWith('/forums')) return Users
-    return Diamond // fallback
+
+  const pageThemeMap = {
+    '/': { icon: Diamond, color: 'text-nav-home', accent: 'bg-nav-home' },
+    '/events': { icon: Ticket, color: 'text-nav-events', accent: 'bg-nav-events' },
+    '/directory': { icon: AddressBook, color: 'text-nav-directory', accent: 'bg-nav-directory' },
+    '/armory': { icon: Shield, color: 'text-nav-armory', accent: 'bg-nav-armory' },
+    '/intel': { icon: MapTrifold, color: 'text-nav-intel', accent: 'bg-nav-intel' },
+    '/marketplace': { icon: Storefront, color: 'text-nav-marketplace', accent: 'bg-nav-marketplace' },
+    '/forums': { icon: Users, color: 'text-nav-forums', accent: 'bg-nav-forums' },
   }
-  
-  // Get current page color based on pathname (matches navbar logic)
-  const getCurrentPageColor = () => {
-    if (pathname === '/') return 'text-nav-home'
-    if (pathname.startsWith('/events')) return 'text-nav-events'
-    if (pathname.startsWith('/directory')) return 'text-nav-directory'
-    if (pathname.startsWith('/armory')) return 'text-nav-armory'
-    if (pathname.startsWith('/intel')) return 'text-nav-intel'
-    if (pathname.startsWith('/marketplace')) return 'text-nav-marketplace'
-    if (pathname.startsWith('/forums')) return 'text-nav-forums'
-    return 'text-nav-home' // fallback
-  }
-  
-  // Page-specific accent colors
-  const getAccentColor = () => {
-    const colorMap = {
-      home: 'bg-[var(--nav-home)]',
-      events: 'bg-[var(--nav-events)]', 
-      directory: 'bg-[var(--nav-directory)]',
-      armory: 'bg-[var(--nav-armory)]',
-      intel: 'bg-[var(--nav-intel)]',
-      marketplace: 'bg-[var(--nav-marketplace)]',
-      forums: 'bg-[var(--nav-forums)]'
-    }
-    return colorMap[currentPage] || colorMap.home
-  }
+
+  const currentPageTheme = pageThemeMap[pathname as keyof typeof pageThemeMap] || pageThemeMap['/']
   
   const isDark = variant === "dark"
   const textColor = "text-foreground"
   const mutedColor = "text-muted-foreground"
-  const linkHoverColor = isDark ? "hover:text-rusty-orange" : "hover:text-slate-blue"
+  const linkHoverColor = "hover:text-primary"
   
   // 1980s Retro Western SVG Background Component
   const RetroWesternBackground = () => (
@@ -194,7 +167,7 @@ export function SiteFooter({
         <RetroWesternBackground />
         
         {/* Page-specific accent bar */}
-        <div className={cn("h-1 relative z-10", getAccentColor())} />
+        <div className={cn("h-1 relative z-10", currentPageTheme.accent)} />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Newsletter CTA Section */}
@@ -222,7 +195,7 @@ export function SiteFooter({
                     animationType={isSubscribing ? "none" : "arrow"}
                     className={cn(
                       "font-rajdhani font-semibold group whitespace-nowrap",
-                      isDark ? "bg-rusty-orange text-shared-dark hover:bg-ember-glow" : "bg-slate-blue text-crisp-off-white hover:bg-slate-blue/90"
+                      isDark ? "bg-primary text-primary-foreground hover:bg-primary/90" : "bg-primary text-primary-foreground hover:bg-primary/90"
                     )}
                   >
                     {isSubscribing ? "Subscribing..." : "Subscribe"}
@@ -249,21 +222,19 @@ export function SiteFooter({
           {/* Main Footer Content */}
           <div className="py-16 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-              {/* Brand & Contact - Heritage Document Folder */}
-              <TacticalCase
-                variant="elevated"
-                theme="home"
-                size="lg"
-                showCornerBrackets={true}
-                showLatches={true}
-                showGridPattern={false}
-                showRopeBinding={false}
-                caseLabel="HEADQUARTERS REGISTRY"
-                className="lg:col-span-1"
+              {/* Brand & Contact */}
+              <Card
+                variant="tactical"
+                tacticalTheme="home"
+                showCategoryIcon={true}
+                category="contact"
+                type="headquarters"
+                content="business contact information"
+                className="lg:col-span-1 p-lg"
               >
                 <div className="mb-6">
-                  {React.createElement(getCurrentPageIcon(), { 
-                    className: `size-12 ${getCurrentPageColor()} -rotate-[28deg] mb-4`, 
+                  {React.createElement(currentPageTheme.icon, { 
+                    className: `size-12 ${currentPageTheme.color} -rotate-[28deg] mb-4`, 
                     weight: "bold" 
                   })}
                   <div className="text-heading-xl font-rajdhani text-card-foreground leading-none uppercase">
@@ -290,19 +261,17 @@ export function SiteFooter({
                     <span>Boise, Idaho</span>
                   </div>
                 </div>
-              </TacticalCase>
+              </Card>
               
-              {/* Quick Links - Western Rope Bound */}
-              <TacticalCase
-                variant="elevated"
-                theme="directory"
-                size="lg"
-                showCornerBrackets={true}
-                showLatches={true}
-                showGridPattern={false}
-                showRopeBinding={true}
-                caseLabel="NAVIGATION INDEX"
-                className=""
+              {/* Quick Links */}
+              <Card
+                variant="tactical"
+                tacticalTheme="directory"
+                showCategoryIcon={true}
+                category="navigation"
+                type="links"
+                content="site navigation menu"
+                className="p-lg"
               >
                 <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Quick Links
@@ -341,19 +310,17 @@ export function SiteFooter({
                     )
                   })}
                 </ul>
-              </TacticalCase>
+              </Card>
               
-              {/* Resources - Heritage Paper Texture */}
-              <TacticalCase
-                variant="elevated"
-                theme="armory"
-                size="lg"
-                showCornerBrackets={true}
-                showLatches={true}
-                showGridPattern={true}
-                showRopeBinding={false}
-                caseLabel="RESOURCES ARCHIVE"
-                className=""
+              {/* Resources */}
+              <Card
+                variant="tactical"
+                tacticalTheme="armory"
+                showCategoryIcon={true}
+                category="training"
+                type="resources"
+                content="educational materials and guides"
+                className="p-lg"
               >
                 <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Resources
@@ -385,19 +352,17 @@ export function SiteFooter({
                     )
                   })}
                 </ul>
-              </TacticalCase>
+              </Card>
               
-              {/* Support - Standard Heritage */}
-              <TacticalCase
-                variant="elevated"
-                theme="intel"
-                size="lg"
-                showCornerBrackets={true}
-                showLatches={true}
-                showGridPattern={false}
-                showRopeBinding={false}
-                caseLabel="SUPPORT BUREAU"
-                className=""
+              {/* Support */}
+              <Card
+                variant="tactical"
+                tacticalTheme="intel"
+                showCategoryIcon={true}
+                category="support"
+                type="help"
+                content="customer support and assistance"
+                className="p-lg"
               >
                 <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Support
@@ -429,7 +394,7 @@ export function SiteFooter({
                     )
                   })}
                 </ul>
-              </TacticalCase>
+              </Card>
             </div>
           </div>
           
@@ -479,8 +444,8 @@ export function SiteFooter({
             "fixed bottom-6 right-6 z-50 p-3 rounded-full shadow-commanding transition-all duration-300",
             "hover:shadow-hero hover:scale-110 group",
             isDark 
-              ? "bg-rusty-orange text-shared-dark hover:bg-ember-glow" 
-              : "bg-slate-blue text-crisp-off-white hover:bg-slate-blue/90"
+              ? "bg-primary text-primary-foreground hover:bg-primary/90" 
+              : "bg-primary text-primary-foreground hover:bg-primary/90"
           )}
           title="Back to top"
         >

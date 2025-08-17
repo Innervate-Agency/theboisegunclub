@@ -14,8 +14,8 @@ import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
 import { FeaturedEventSpotlight } from '@/components/ui/featured-event-spotlight'
 import { 
   AddressBook, Shield, Target, Users, MapPin, Star, 
-  Phone, CheckCircle, Plus, ArrowRight, CaretRight,
-  Trophy, Lightning as Zap, ChatCircle, Wrench, ShoppingBag,
+  CheckCircle, Plus, CaretRight,
+  Trophy, Wrench, ShoppingBag,
   GraduationCap, Crown, Medal
 } from '@phosphor-icons/react'
 
@@ -554,29 +554,30 @@ export function DirectoryPageStandardized() {
   // Hero content
   const heroContent = (
     <div className="container mx-auto max-w-site relative z-10">
+      {/* TODO: Extract this grid to a utility class if reused elsewhere */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
         {/* Content - Left side */}
         <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
           <div className="flex items-center gap-base">
             <div className="bg-card/10 p-base rounded-xs border border-border">
-              <AddressBook weight="bold" className="h-8 w-8 text-white" />
+              <AddressBook weight="bold" className="h-8 w-8 text-primary-foreground" />
             </div>
             <div className="space-y-base">
-              <div className="flex items-center gap-xs text-sm text-white/60">
+              <div className="flex items-center gap-xs text-sm text-primary-foreground/60">
                 <span>Home</span>
                 <CaretRight className="h-4 w-4" />
-                <span className="text-white font-medium">Directory</span>
+                <span className="text-primary-foreground font-medium">Directory</span>
               </div>
               <div className="flex flex-wrap gap-xs">
-                <Badge className="bg-card/10 text-white border-border rounded-xs">
+                <Badge className="bg-card/10 text-primary-foreground border-border rounded-xs">
                   <Shield weight="bold" className="h-4 w-4 mr-xs" />
                   Verified
                 </Badge>
-                <Badge className="bg-card/10 text-white border-border rounded-xs">
+                <Badge className="bg-card/10 text-primary-foreground border-border rounded-xs">
                   <Target weight="bold" className="h-4 w-4 mr-xs" />
                   Ranges
                 </Badge>
-                <Badge className="bg-card/10 text-white border-border rounded-xs">
+                <Badge className="bg-card/10 text-primary-foreground border-border rounded-xs">
                   <Wrench weight="bold" className="h-4 w-4 mr-xs" />
                   Services
                 </Badge>
@@ -584,22 +585,22 @@ export function DirectoryPageStandardized() {
             </div>
           </div>
           <div className="space-y-xs">
-            <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
+            <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-primary-foreground leading-tight">
               Idaho Firearms Directory
             </h1>
-            <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
+            <h2 className="font-rajdhani text-lg md:text-xl font-medium text-primary-foreground/80 leading-snug">
               Comprehensive Guide to Idaho's Shooting Sports Community
             </h2>
           </div>
-          <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
+          <p className="text-body-lg text-primary-foreground/70 max-w-2xl leading-relaxed">
             From Treasure Valley's premier indoor facilities to specialized gunsmiths across the Gem State, discover verified businesses serving Idaho's firearms community.
           </p>
           <div className="flex gap-base">
-            <Button size="lg" className="bg-white text-nav-directory hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
+            <Button size="lg" className="bg-primary-foreground text-nav-directory hover:bg-primary-foreground/90 font-rajdhani font-bold" animationType="plus-minus">
               <Plus className="h-4 w-4 mr-xs" />
               List Business
             </Button>
-            <Button variant="outline" size="lg" className="border-border text-white hover:bg-white hover:text-nav-directory" animationType="arrow">
+            <Button variant="outline" size="lg" className="border-border text-primary-foreground hover:bg-primary-foreground hover:text-nav-directory" animationType="arrow">
               View Map
             </Button>
           </div>

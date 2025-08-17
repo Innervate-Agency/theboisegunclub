@@ -46,8 +46,8 @@ const cardVariants = cva(
         // Fire Purple: Commanding with purple tactical gradients
         "fire-purple": "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-foothills-purple after:to-canyon-clay after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
         
-        // Tactical: No shadows, tactical case borders with corner brackets (themed)
-        tactical: "border-2 border-border/40 bg-card hover:border-opacity-70 group relative overflow-visible"
+        // Tactical: Ghost state with invisible borders that appear on interaction
+        tactical: "border-2 border-transparent bg-card group relative overflow-visible transition-all duration-300 ease-out"
       },
       size: {
         sm: "p-sm",
@@ -77,29 +77,74 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant, size, tacticalTheme = 'default', showCategoryIcon = false, category, type, content, ...props }, ref) => {
     const isTactical = variant === 'tactical'
     
-    // Get theme color for tactical borders
-    const getThemeColor = (theme: string) => {
-      const colorMap = {
-        home: 'nav-home',
-        events: 'nav-events', 
-        directory: 'nav-directory',
-        armory: 'nav-armory',
-        intel: 'nav-intel',
-        marketplace: 'nav-marketplace',
-        forums: 'nav-forums',
-        default: 'border'
-      }
-      return colorMap[theme as keyof typeof colorMap] || 'border'
+    const themeColorMap = {
+      home: {
+        border: 'border-nav-home',
+        hoverBorder: 'hover:border-nav-home/50',
+        text: 'text-nav-home',
+        bg: 'bg-nav-home/40',
+      },
+      events: {
+        border: 'border-nav-events',
+        hoverBorder: 'hover:border-nav-events/50',
+        text: 'text-nav-events',
+        bg: 'bg-nav-events/40',
+      },
+      directory: {
+        border: 'border-nav-directory',
+        hoverBorder: 'hover:border-nav-directory/50',
+        text: 'text-nav-directory',
+        bg: 'bg-nav-directory/40',
+      },
+      armory: {
+        border: 'border-nav-armory',
+        hoverBorder: 'hover:border-nav-armory/50',
+        text: 'text-nav-armory',
+        bg: 'bg-nav-armory/40',
+      },
+      intel: {
+        border: 'border-nav-intel',
+        hoverBorder: 'hover:border-nav-intel/50',
+        text: 'text-nav-intel',
+        bg: 'bg-nav-intel/40',
+      },
+      marketplace: {
+        border: 'border-nav-marketplace',
+        hoverBorder: 'hover:border-nav-marketplace/50',
+        text: 'text-nav-marketplace',
+        bg: 'bg-nav-marketplace/40',
+      },
+      forums: {
+        border: 'border-nav-forums',
+        hoverBorder: 'hover:border-nav-forums/50',
+        text: 'text-nav-forums',
+        bg: 'bg-nav-forums/40',
+      },
+      default: {
+        border: 'border-border',
+        hoverBorder: 'hover:border-border/50',
+        text: 'text-border',
+        bg: 'bg-border/40',
+      },
     }
 
-    const themeColor = getThemeColor(tacticalTheme)
+    const themeClasses = themeColorMap[tacticalTheme] || themeColorMap.default
     
     return (
       <div
         ref={ref}
         className={cn(
           cardVariants({ variant, size }),
-          isTactical && `hover:border-${themeColor}/50`,
+          isTactical && [
+            // Progressive enhancement classes
+            'tactical-card-mobile tactical-card-hover tactical-haptic',
+            // Theme-based hover states
+            themeClasses.hoverBorder,
+            // Focus states for accessibility
+            'focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-ring',
+            // Smooth transitions (will be disabled on reduced motion)
+            'transition-all duration-300 ease-out'
+          ],
           className
         )}
         {...props}
@@ -108,14 +153,14 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         {isTactical && (
           <>
             {/* Corner brackets - larger than navbar version */}
-            <div className={`absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 border-${themeColor}/60 opacity-0 group-hover:opacity-90 transition-all duration-200`} />
-            <div className={`absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 border-${themeColor}/60 opacity-0 group-hover:opacity-90 transition-all duration-200`} />
-            <div className={`absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 border-${themeColor}/60 opacity-0 group-hover:opacity-90 transition-all duration-200`} />
+            <div className={cn('absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 opacity-0 group-hover:opacity-90 transition-all duration-200', themeClasses.border)} />
+            <div className={cn('absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 opacity-0 group-hover:opacity-90 transition-all duration-200', themeClasses.border)} />
+            <div className={cn('absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 opacity-0 group-hover:opacity-90 transition-all duration-200', themeClasses.border)} />
             
             {/* Bottom-right corner with document cutout */}
-            <div className={`absolute bottom-0 right-0 w-3 h-3 opacity-0 group-hover:opacity-90 transition-all duration-200`}>
+            <div className={'absolute bottom-0 right-0 w-3 h-3 opacity-0 group-hover:opacity-90 transition-all duration-200'}>
               <div 
-                className={`w-full h-full border-2 border-${themeColor}/60`}
+                className={cn('w-full h-full border-2', themeClasses.border)}
                 style={{
                   clipPath: 'polygon(0 0, 60% 0, 100% 40%, 100% 100%, 0 100%)'
                 }}
@@ -123,8 +168,8 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
             </div>
             
             {/* Tactical latches/clasps */}
-            <div className={`absolute top-1 right-1 w-1.5 h-1.5 bg-${themeColor}/40 rounded-full opacity-0 group-hover:opacity-70 transition-all duration-200`} />
-            <div className={`absolute bottom-1 left-1 w-1.5 h-1.5 bg-${themeColor}/40 rounded-full opacity-0 group-hover:opacity-70 transition-all duration-200`} />
+            <div className={cn('absolute top-1 right-1 w-1.5 h-1.5 rounded-full opacity-0 group-hover:opacity-70 transition-all duration-200', themeClasses.bg)} />
+            <div className={cn('absolute bottom-1 left-1 w-1.5 h-1.5 rounded-full opacity-0 group-hover:opacity-70 transition-all duration-200', themeClasses.bg)} />
           </>
         )}
         
@@ -137,7 +182,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
               content={content}
               size="md"
               opacity={0.4}
-              className={`text-${themeColor} group-hover:opacity-70 transition-opacity duration-200`}
+              className={cn(themeClasses.text, 'group-hover:opacity-70 transition-opacity duration-200')}
             />
           </div>
         )}
