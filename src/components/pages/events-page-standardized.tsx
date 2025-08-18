@@ -18,11 +18,13 @@ import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
 import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { 
-  Ticket, Trophy, Target, Users, Calendar, Plus, ArrowRight, 
-  CaretRight, Crown, MapPin, Clock, CheckCircle, Star,
-  CurrencyDollar, Medal, MagnifyingGlass as Search, 
-  Funnel as Filter
-} from '@phosphor-icons/react'
+  TicketIcon as Ticket, TrophyIcon as Trophy, BullseyeIcon as Target, UsersIcon as Users, 
+  CalendarIcon as Calendar, PlusIcon as Plus, ArrowRightIcon as ArrowRight, 
+  ChevronRightIcon as CaretRight, SparklesIcon as Crown, MapPinIcon as MapPin, 
+  ClockIcon as Clock, CheckCircleIcon as CheckCircle, StarIcon as Star,
+  CurrencyDollarIcon as CurrencyDollar, StarIcon as Medal, MagnifyingGlassIcon as Search, 
+  FunnelIcon as Filter
+} from '@heroicons/react/24/outline'
 
 // Event data type
 interface EventData {

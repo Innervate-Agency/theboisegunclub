@@ -6,19 +6,19 @@ import { Badge } from '@/components/ui/badge'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import {
-  Filter,
-  Trophy,
-  Target,
-  Crown,
-  Medal,
-  Users,
-  CurrencyDollar,
-  Clock,
-  ChevronDown,
-  ChevronUp,
-  X,
-  RotateCw
-} from '@phosphor-icons/react'
+  FunnelIcon as Filter,
+  TrophyIcon as Trophy,
+  BullseyeIcon as Target,
+  SparklesIcon as Crown,
+  StarIcon as Medal,
+  UsersIcon as Users,
+  CurrencyDollarIcon as CurrencyDollar,
+  ClockIcon as Clock,
+  ChevronDownIcon as ChevronDown,
+  ChevronUpIcon as ChevronUp,
+  XMarkIcon as X,
+  ArrowPathIcon as RotateCw
+} from '@heroicons/react/24/outline'
 
 // Note: Since this component receives icon components as props,
 // we don't need to import all possible icons here.
