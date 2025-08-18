@@ -7,6 +7,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 🚨 **PRODUCTION DEPLOYMENT - READY FOR GO-LIVE!** 🚨
 
+## [2025-08-18] - HERO LAYOUT FIXES & COMPONENT RESTORATION
+
+### 🎯 **CRITICAL HERO SECTION FIXES**
+- **CSS Layout Constraints Resolved**: Fixed hero height conflicts across all pages
+  - Removed `max-height: 420px` constraint from `.hero-grid-layout` 
+  - Removed `max-height: 300px` and `overflow: hidden` from `.hero-card`
+  - Hero sections now properly accommodate content without cutoff
+- **Hero Button Visibility Fixed**: All primary hero buttons now visible and functional
+  - Fixed invisible buttons using `bg-card` on dark backgrounds
+  - Implemented consistent hover pattern: page color → white background with page color text
+  - Applied across 7 pages: Events, Intel, Marketplace, Directory, Armory, Training, Guides
+- **Events Page Compact Hero Card**: Created streamlined hero card variation
+  - Removed tall hero gradient section, detailed info grid, and action overlays
+  - 60% height reduction while maintaining essential information and visual consistency
+  - Focuses on title, date, brief description, location, and price only
+
+### 🔧 **COMPONENT ARCHITECTURE RESTORATION**
+- **Events Ticker Restored**: Re-added proper `EventTicker` component with scrolling animations
+  - Displays 8 upcoming events with continuous horizontal scroll
+  - 30-second animation cycle with hover pause functionality
+  - Shows title, type, date, location, and pricing for each event
+- **Filter Sidebar System Restored**: Fixed missing left-hand filter functionality
+  - **Events Page**: Added Event Type, Price Range, and Availability filters
+  - **Directory Page**: Corrected CardPageLayout usage with proper hero content props
+  - Includes results header with filtering controls and sort dropdown
+- **Badge Icon Cleanup**: Removed unwanted auto-generated exclamation mark icons
+  - Added `hideIcon={true}` to all hero badges across 7 pages
+  - Preserved explicit icons (Trophy, Shield, MapPin, etc.) while removing default Info icons
+  - Maintains clean visual hierarchy without redundant auto-generated symbols
+
+### 🎨 **USER EXPERIENCE ENHANCEMENTS**
+- **Enhanced View Calendar Button**: Events page secondary button improvements
+  - Removed border styling for cleaner appearance
+  - Changed to `animationType="chevron"` for `>` to `=>` arrow expansion
+  - Applied subtle background hover effect
+- **Consistent Navigation**: All hero sections maintain proper visual hierarchy and functionality
+- **Mobile Responsive**: All fixes maintain mobile-first responsive design principles
+
 ## [2025-08-18] - MICRO-ANIMATION SYSTEM IMPLEMENTATION
 
 ### 🎯 **TACTICAL MICRO-ANIMATIONS: Site-Wide Button Feedback System**

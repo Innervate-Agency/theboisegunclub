@@ -551,96 +551,181 @@ export function DirectoryPageStandardized() {
     }
   })
 
-  // Hero content
+  // Hero content - working direct implementation like intel page
   const heroContent = (
-    <div className="container mx-auto max-w-site relative z-10">
-      <div className="hero-grid-layout">
-        {/* Content - Left side */}
-        <div className="lg:col-span-2 hero-content flex flex-col justify-center space-y-base">
-          <div className="flex items-center gap-sm">
-            <div className="bg-card/10 p-sm rounded-xs border border-border">
-              <AddressBook weight="bold" className="h-6 w-6 text-primary-foreground" />
-            </div>
-            <div className="space-y-base">
-              <div className="flex items-center gap-xs text-sm text-primary-foreground/60">
-                <span>Home</span>
-                <CaretRight className="h-4 w-4" />
-                <span className="text-primary-foreground font-medium">Directory</span>
+    <section className="relative overflow-hidden bg-gradient-directory-hero px-md py-lg">
+      <div className="container mx-auto max-w-site relative z-10">
+        <div className="hero-grid-layout">
+          {/* Content - Left side */}
+          <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
+            <div className="flex items-center gap-base">
+              <div className="bg-card/10 p-base rounded-xs border border-border">
+                <AddressBook weight="bold" className="h-8 w-8 text-white" />
               </div>
-              <div className="flex flex-wrap gap-xs">
-                <Badge className="bg-card/10 text-primary-foreground border-border rounded-xs">
-                  <Shield weight="bold" className="h-4 w-4 mr-xs" />
-                  Verified
-                </Badge>
-                <Badge className="bg-card/10 text-primary-foreground border-border rounded-xs">
-                  <Target weight="bold" className="h-4 w-4 mr-xs" />
-                  Ranges
-                </Badge>
-                <Badge className="bg-card/10 text-primary-foreground border-border rounded-xs">
-                  <Wrench weight="bold" className="h-4 w-4 mr-xs" />
-                  Services
-                </Badge>
+              <div className="space-y-base">
+                <div className="flex items-center gap-xs text-sm text-white/60">
+                  <span>Home</span>
+                  <CaretRight className="h-4 w-4" />
+                  <span className="text-white font-medium">Directory</span>
+                </div>
+                <div className="flex flex-wrap gap-xs">
+                  <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+                    <Shield weight="bold" className="h-4 w-4 mr-xs" />
+                    Verified
+                  </Badge>
+                  <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+                    <Target weight="bold" className="h-4 w-4 mr-xs" />
+                    Ranges
+                  </Badge>
+                  <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+                    <Wrench weight="bold" className="h-4 w-4 mr-xs" />
+                    Services
+                  </Badge>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="space-y-xs">
-            <h1 className="font-rajdhani text-2xl md:text-4xl font-bold text-primary-foreground leading-tight">
-              Idaho Firearms Directory
-            </h1>
-            <h2 className="font-rajdhani text-base md:text-lg font-medium text-primary-foreground/80 leading-snug">
-              Comprehensive Guide to Idaho's Shooting Sports Community
-            </h2>
-          </div>
-          <p className="text-body-base text-primary-foreground/70 max-w-2xl leading-relaxed">
-            From Treasure Valley's premier indoor facilities to specialized gunsmiths across the Gem State, discover verified businesses serving Idaho's firearms community.
-          </p>
-          <div className="flex gap-base">
-            <Button size="lg" className="bg-primary-foreground text-nav-directory hover:bg-primary-foreground/90 font-rajdhani font-bold" animationType="plus-minus">
-              <Plus className="h-4 w-4 mr-xs" />
-              List Business
-            </Button>
-            <Button variant="outline" size="lg" className="border-border text-primary-foreground hover:bg-primary-foreground hover:text-nav-directory" animationType="arrow">
-              View Map
-            </Button>
-          </div>
-        </div>
 
-        {/* Featured Business Card - Right side */}
-        <div className="lg:col-span-1 hero-card">
-          <div className="relative h-full">
-            {directoryListings.find(b => b.featured) && (
-              <VendorCard
-                businessName={directoryListings.find(b => b.featured)!.businessName}
-                businessType={directoryListings.find(b => b.featured)!.businessType}
-                description={directoryListings.find(b => b.featured)!.description}
-                address={directoryListings.find(b => b.featured)!.address}
-                phone={directoryListings.find(b => b.featured)!.phone}
-                website={directoryListings.find(b => b.featured)!.website}
-                hours={directoryListings.find(b => b.featured)!.hours}
-                tier={directoryListings.find(b => b.featured)!.tier}
-                specialties={directoryListings.find(b => b.featured)!.specialties}
-                isVerified={directoryListings.find(b => b.featured)!.isVerified}
-                isSponsored={directoryListings.find(b => b.featured)!.isSponsored}
-                href={`/directory/${directoryListings.find(b => b.featured)!.slug}`}
-                className="h-full"
-              />
-            )}
+            <div className="space-y-xs">
+              <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
+                Idaho Firearms Directory
+              </h1>
+              <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
+                Comprehensive Guide to Idaho's Shooting Sports Community
+              </h2>
+            </div>
+            
+            <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
+              From Treasure Valley's premier indoor facilities to specialized gunsmiths across the Gem State, discover verified businesses serving Idaho's firearms community.
+            </p>
+            
+            <div className="flex gap-base">
+              <Button size="lg" className="bg-nav-directory text-white hover:bg-white hover:text-nav-directory font-rajdhani font-bold" animationType="plus-minus">
+                <Plus className="h-4 w-4 mr-xs" />
+                List Business
+              </Button>
+              <Button variant="outline" size="lg" className="border-border text-white hover:bg-card hover:text-nav-directory" animationType="arrow">
+                View Map
+              </Button>
+            </div>
+          </div>
+          
+          {/* Featured Business Card - Right side */}
+          <div className="lg:col-span-1 py-md min-h-[400px]">
+            <div className="relative h-full">
+              {directoryListings.find(b => b.featured) && (
+                <VendorCard
+                  businessName={directoryListings.find(b => b.featured)!.businessName}
+                  businessType={directoryListings.find(b => b.featured)!.businessType}
+                  description={directoryListings.find(b => b.featured)!.description}
+                  address={directoryListings.find(b => b.featured)!.address}
+                  phone={directoryListings.find(b => b.featured)!.phone}
+                  website={directoryListings.find(b => b.featured)!.website}
+                  hours={directoryListings.find(b => b.featured)!.hours}
+                  tier={directoryListings.find(b => b.featured)!.tier}
+                  specialties={directoryListings.find(b => b.featured)!.specialties}
+                  isVerified={directoryListings.find(b => b.featured)!.isVerified}
+                  isSponsored={directoryListings.find(b => b.featured)!.isSponsored}
+                  href={`/directory/${directoryListings.find(b => b.featured)!.slug}`}
+                  className="h-full"
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+  )
+
+  // Temporarily removed - using CardPageLayout below for proper sidebar
+
+  // Hero content sections for CardPageLayout
+  const heroLeftContent = (
+    <>
+      <div className="flex items-center gap-base">
+        <div className="bg-card/10 p-base rounded-xs border border-border">
+          <AddressBook weight="bold" className="h-8 w-8 text-white" />
+        </div>
+        <div className="space-y-base">
+          <div className="flex items-center gap-xs text-sm text-white/60">
+            <span>Home</span>
+            <CaretRight className="h-4 w-4" />
+            <span className="text-white font-medium">Directory</span>
+          </div>
+          
+          <div className="flex flex-wrap gap-xs">
+            <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+              <Shield className="h-4 w-4 mr-xs" />
+              Verified Businesses
+            </Badge>
+            <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+              <CheckCircle className="h-4 w-4 mr-xs" />
+              Licensed FFLs
+            </Badge>
+            <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+              <Crown className="h-4 w-4 mr-xs" />
+              Premium Partners
+            </Badge>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-xs">
+        <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
+          Idaho Firearms Business Directory
+        </h1>
+        <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
+          Verified Gun Shops, Ranges, and Services in the Treasure Valley
+        </h2>
+      </div>
+      
+      <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
+        Connect with Idaho's premier firearms businesses. From FFL dealers to custom gunsmiths, find trusted professionals verified by our community.
+      </p>
+      
+      <div className="flex gap-base">
+        <Button size="lg" className="bg-nav-directory text-white hover:bg-white hover:text-nav-directory font-rajdhani font-bold" animationType="plus-minus">
+          <Plus className="h-4 w-4 mr-xs" />
+          List Business
+        </Button>
+        <Button variant="outline" size="lg" className="border-border text-white hover:bg-card hover:text-nav-directory" animationType="arrow">
+          View Map
+        </Button>
+      </div>
+    </>
+  )
+
+  const heroRightContent = (
+    <>
+      {directoryListings.find(b => b.featured) && (
+        <VendorCard
+          businessName={directoryListings.find(b => b.featured)!.businessName}
+          businessType={directoryListings.find(b => b.featured)!.businessType}
+          description={directoryListings.find(b => b.featured)!.description}
+          address={directoryListings.find(b => b.featured)!.address}
+          phone={directoryListings.find(b => b.featured)!.phone}
+          website={directoryListings.find(b => b.featured)!.website}
+          hours={directoryListings.find(b => b.featured)!.hours}
+          tier={directoryListings.find(b => b.featured)!.tier}
+          specialties={directoryListings.find(b => b.featured)!.specialties}
+          isVerified={directoryListings.find(b => b.featured)!.isVerified}
+          isSponsored={directoryListings.find(b => b.featured)!.isSponsored}
+          href={`/directory/${directoryListings.find(b => b.featured)!.slug}`}
+          className="h-full"
+        />
+      )}
+    </>
   )
 
   return (
     <CardPageLayout
       pageTitle="Directory"
-      pageSubtitle="Treasure Valley Firearms Directory"
+      pageSubtitle="Idaho Firearms Business Directory"
       pageColor="directory"
-      heroContent={heroContent}
+      heroLeftContent={heroLeftContent}
+      heroRightContent={heroRightContent}
       searchQuery={filters.searchQuery}
       onSearchChange={filters.setSearchQuery}
       searchPlaceholder="Search businesses, services, or locations..."
-      
       quickTabs={[
         { id: 'all', label: 'All Businesses', count: directoryListings.length, icon: AddressBook },
         { id: 'ranges', label: 'Ranges', count: directoryListings.filter(b => b.category === 'Range').length, icon: Target },
@@ -767,7 +852,7 @@ export function DirectoryPageStandardized() {
       }
     >
       {/* Fixed column layout: max 3 columns instead of 5 */}
-      <div className={`grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-lg`}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-xl">
         {filters.paginatedItems.length > 0 ? (
           filters.paginatedItems.map((business, index) => (
             <VendorCard

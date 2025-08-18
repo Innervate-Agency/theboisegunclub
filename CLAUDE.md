@@ -35,7 +35,14 @@ This file provides guidance to Claude Code when working with this repository.
 - **Interactive Card System**: Ghost state implementation with tactical theme adaptation
 - **Optimized CSS**: 1,081-line globals.css with 62% size reduction maintaining functionality
 
-**DEPLOYMENT STATUS**: Database integration complete, 281 business pages generated, production-ready!
+#### 🛠️ **HERO LAYOUT SYSTEM STABILIZED** ✅ PRODUCTION-READY
+- **CSS Height Constraints Fixed**: Removed conflicting `max-height` constraints from hero sections
+- **Button Visibility Restored**: All 7 page hero buttons now properly visible with consistent hover states
+- **Component Architecture Cleaned**: Events ticker restored, filter sidebars functional, badge icons optimized
+- **Responsive Hero Cards**: Compact hero card variations maintain content hierarchy without overflow
+- **Cross-Page Consistency**: Unified hero button styling and interaction patterns across all sections
+
+**DEPLOYMENT STATUS**: Database integration complete, 281 business pages generated, hero layouts stabilized, production-ready!
 
 ---
 
@@ -243,3 +250,11 @@ Regional marketplace/directory platform for the entire Treasure Valley firearms 
 - **Touch-First**: All interactive elements meet 44px minimum touch target requirements
 - **Responsive Scaling**: Icons, text, and spacing scale progressively from mobile to desktop
 - **Error Handling**: ALL DOM style access must include null safety checks
+
+### Hero Layout System Memory (Critical Fixes Applied)
+- **CSS Height Constraints**: NEVER use `max-height` on `.hero-grid-layout` - causes content overflow
+- **Hero Button Visibility**: ALWAYS use `bg-nav-[page] text-white hover:bg-white hover:text-nav-[page]` pattern
+- **Badge Icon Management**: ALWAYS use `hideIcon={true}` on hero badges to prevent auto-generated icons
+- **Filter Sidebar Architecture**: Events page uses direct implementation, Directory uses CardPageLayout
+- **Component Consistency**: EventTicker displays 8 events with 30s scroll cycle and hover pause
+- **Hero Card Variants**: Use compact versions in hero sections - remove tall gradient sections and info grids

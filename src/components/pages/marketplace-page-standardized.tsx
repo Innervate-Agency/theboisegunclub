@@ -426,144 +426,130 @@ export function MarketplacePageStandardized() {
   // Sample deal for featured card
   const featuredDeal = marketplaceDeals.find(deal => deal.isFeatured) || marketplaceDeals[0]
 
-  // Hero content with marketplace theming - standardized layout
-  const heroContent = (
-    <div className="relative">
-      {/* Floating marketplace elements */}
+  // Hero content sections - clean separation of concerns
+  const heroBackgroundElements = (
+    <>
       <div className="absolute top-8 right-12 w-3 h-3 bg-card/30 rounded-full animate-pulse"></div>
       <div className="absolute bottom-12 left-16 w-2 h-2 bg-card/20 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
       <div className="absolute top-16 right-20 w-1 h-1 bg-card/25 rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
+    </>
+  )
 
-      <div className="container mx-auto max-w-site relative z-10">
-        <div className="hero-grid-layout">
-          
-          {/* Content - Left side */}
-          <div className="lg:col-span-2 hero-content flex flex-col justify-center space-y-base">
-            {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
-            <div className="flex items-center gap-sm">
-              <div className="bg-card/10 p-base rounded-xs border border-border">
-                <ShoppingCart className="h-8 w-8 text-white" />
-              </div>
-              <div className="space-y-base">
-                {/* Breadcrumbs */}
-                <div className="flex items-center gap-xs text-sm text-white/60">
-                  <span>Home</span>
-                  <CaretRight className="h-4 w-4" />
-                  <span className="text-white font-medium">Marketplace</span>
-                </div>
-                
-                {/* Badges */}
-                <div className="flex flex-wrap gap-xs">
-                  <Badge className="bg-card/10 text-white border-border rounded-xs">
-                    <Storefront className="h-4 w-4 mr-xs" />
-                    Local Dealers
-                  </Badge>
-                  <Badge className="bg-card/10 text-white border-border rounded-xs">
-                    <Shield className="h-4 w-4 mr-xs" />
-                    FFL Compliant
-                  </Badge>
-                  <Badge className="bg-card/10 text-white border-border rounded-xs">
-                    <Star className="h-4 w-4 mr-xs" />
-                    Verified Vendors
-                  </Badge>
-                </div>
-              </div>
-            </div>
-
-            {/* Titles - H1 & H2 Butt Buddies */}
-            <div className="space-y-xs">
-              <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
-                Idaho Firearms & <span className="text-white">Ammo Marketplace</span>
-              </h1>
-              <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
-                Buy from Verified Local Dealers in the Treasure Valley
-              </h2>
-            </div>
-            
-            {/* Chunky Description */}
-            <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
-              Browse real-time inventory from licensed dealers across the Treasure Valley. All transactions are FFL-compliant with verified vendor partners.
-            </p>
-            
-            {/* Buttons */}
-            <div className="flex gap-base">
-              <Link href="mailto:marketplace@boiseguncollective.com?subject=List Items in Marketplace&body=I'd like to list items in The Boise Gun Club marketplace:%0A%0AItem details:%0ABusiness information:%0AContact information:">
-                <Button 
-                  size="lg" 
-                  className="bg-card text-nav-marketplace hover:bg-crisp-off-white font-rajdhani font-bold"
-                  animationType="plus-minus"
-                >
-                  <Storefront className="h-4 w-4 mr-xs" />
-                  List Your Items
-                </Button>
-              </Link>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-border text-white hover:bg-card hover:text-nav-marketplace"
-                animationType="arrow"
-              >
-                View All Deals
-              </Button>
-            </div>
+  const heroLeftContent = (
+    <>
+      <div className="flex items-center gap-sm">
+        <div className="bg-card/10 p-base rounded-xs border border-border">
+          <ShoppingCart className="h-8 w-8 text-white" />
+        </div>
+        <div className="space-y-base">
+          <div className="flex items-center gap-xs text-sm text-white/60">
+            <span>Home</span>
+            <CaretRight className="h-4 w-4" />
+            <span className="text-white font-medium">Marketplace</span>
           </div>
           
-          {/* Featured Deal Card - Right side */}
-          <div className="lg:col-span-1 py-md min-h-[400px]">
-            <div className="relative h-full">
-              <Card className="mica border-nav-marketplace/30 hover:shadow-elevated transition-all duration-300 overflow-hidden h-full flex flex-col justify-between">
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-marketplace/20 to-nav-marketplace/10 rounded-bl-full"></div>
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-marketplace to-nav-marketplace"></div>
-                
-                <CardHeader className="pb-xs relative z-10">
-                  <div className="flex items-center justify-between mb-xs">
-                    <Badge className="bg-nav-marketplace/20 text-nav-marketplace border-nav-marketplace/30 font-rajdhani font-bold text-[10px]">
-                      <Star className="h-3 w-3 mr-xs" />
-                      FEATURED DEAL
-                    </Badge>
-                    <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                      <CheckCircle className="h-3 w-3 text-nav-marketplace" />
-                      <span>Verified</span>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-xs">
-                    <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">{featuredDeal.title}</h3>
-                    <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                      <Storefront className="h-3 w-3 text-nav-marketplace" />
-                      <span>{featuredDeal.business} • {featuredDeal.condition}</span>
-                    </div>
-                  </div>
-                </CardHeader>
-                
-                <CardContent className="space-y-base relative z-10">
-                  <p className="text-sm text-muted-foreground line-clamp-3">
-                    {featuredDeal.description}
-                  </p>
-                  
-                  <div className="flex items-center justify-between">
-                    <div className="space-y-xs">
-                      <div className="flex items-center gap-xs">
-                        <span className="text-2xl font-bold text-nav-marketplace font-rajdhani">${featuredDeal.salePrice}</span>
-                        <span className="text-sm text-muted-foreground line-through">${featuredDeal.originalPrice}</span>
-                      </div>
-                      <div className="text-xs text-nav-marketplace font-medium">{featuredDeal.discount}% OFF</div>
-                    </div>
-                    <Button 
-                      className="bg-gradient-to-r from-nav-marketplace to-nav-marketplace text-gruvbox-bg-dark hover:from-nav-marketplace hover:to-nav-marketplace font-rajdhani font-bold text-xs"
-                      size="sm"
-                    >
-                      VIEW DEAL
-                      <ArrowRight className="h-3 w-3 ml-xs" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+          <div className="flex flex-wrap gap-xs">
+            <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+              <Storefront className="h-4 w-4 mr-xs" />
+              Local Dealers
+            </Badge>
+            <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+              <Shield className="h-4 w-4 mr-xs" />
+              FFL Compliant
+            </Badge>
+            <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+              <Star className="h-4 w-4 mr-xs" />
+              Verified Vendors
+            </Badge>
           </div>
         </div>
       </div>
-    </div>
+
+      <div className="space-y-xs">
+        <h1 className="font-rajdhani text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+          Idaho Firearms & <span className="text-white">Ammo Marketplace</span>
+        </h1>
+        <h2 className="font-rajdhani text-base md:text-lg lg:text-xl font-medium text-white/80 leading-snug">
+          Buy from Verified Local Dealers in the Treasure Valley
+        </h2>
+      </div>
+      
+      <p className="text-body text-white/70 max-w-xl lg:max-w-2xl leading-relaxed">
+        Browse real-time inventory from licensed dealers across the Treasure Valley. All transactions are FFL-compliant with verified vendor partners.
+      </p>
+      
+      <div className="flex flex-col sm:flex-row gap-base">
+        <Link href="mailto:marketplace@boiseguncollective.com?subject=List Items in Marketplace&body=I'd like to list items in The Boise Gun Club marketplace:%0A%0AItem details:%0ABusiness information:%0AContact information:">
+          <Button 
+            size="lg" 
+            className="bg-nav-marketplace text-white hover:bg-white hover:text-nav-marketplace font-rajdhani font-bold"
+            animationType="plus-minus"
+          >
+            <Storefront className="h-4 w-4 mr-xs" />
+            List Your Items
+          </Button>
+        </Link>
+        <Button 
+          variant="outline" 
+          size="lg"
+          className="border-border text-white hover:bg-card hover:text-nav-marketplace"
+          animationType="arrow"
+        >
+          View All Deals
+        </Button>
+      </div>
+    </>
+  )
+
+  const heroRightContent = (
+    <Card className="mica border-nav-marketplace/30 hover:shadow-elevated transition-all duration-300 overflow-hidden flex flex-col justify-between">
+      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-marketplace/20 to-nav-marketplace/10 rounded-bl-full"></div>
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-marketplace to-nav-marketplace"></div>
+      
+      <CardHeader className="pb-xs relative z-10">
+        <div className="flex items-center justify-between mb-xs">
+          <Badge className="bg-nav-marketplace/20 text-nav-marketplace border-nav-marketplace/30 font-rajdhani font-bold text-[10px]">
+            <Star className="h-3 w-3 mr-xs" />
+            FEATURED DEAL
+          </Badge>
+          <div className="flex items-center gap-xs text-xs text-muted-foreground">
+            <CheckCircle className="h-3 w-3 text-nav-marketplace" />
+            <span>Verified</span>
+          </div>
+        </div>
+        
+        <div className="space-y-xs">
+          <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">{featuredDeal.title}</h3>
+          <div className="flex items-center gap-xs text-xs text-muted-foreground">
+            <Storefront className="h-3 w-3 text-nav-marketplace" />
+            <span>{featuredDeal.business} • {featuredDeal.condition}</span>
+          </div>
+        </div>
+      </CardHeader>
+      
+      <CardContent className="space-y-base relative z-10">
+        <p className="text-sm text-muted-foreground line-clamp-3">
+          {featuredDeal.description}
+        </p>
+        
+        <div className="flex items-center justify-between">
+          <div className="space-y-xs">
+            <div className="flex items-center gap-xs">
+              <span className="text-2xl font-bold text-nav-marketplace font-rajdhani">${featuredDeal.salePrice}</span>
+              <span className="text-sm text-muted-foreground line-through">${featuredDeal.originalPrice}</span>
+            </div>
+            <div className="text-xs text-nav-marketplace font-medium">{featuredDeal.discount}% OFF</div>
+          </div>
+          <Button 
+            className="bg-gradient-to-r from-nav-marketplace to-nav-marketplace text-gruvbox-bg-dark hover:from-nav-marketplace hover:to-nav-marketplace font-rajdhani font-bold text-xs"
+            size="sm"
+          >
+            VIEW DEAL
+            <ArrowRight className="h-3 w-3 ml-xs" />
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
   )
 
   return (
@@ -571,7 +557,9 @@ export function MarketplacePageStandardized() {
       pageTitle="Marketplace"
       pageSubtitle="Idaho Firearms & Ammo Marketplace"
       pageColor="marketplace"
-      heroContent={heroContent}
+      heroLeftContent={heroLeftContent}
+      heroRightContent={heroRightContent}
+      heroBackgroundElements={heroBackgroundElements}
       searchQuery={filters.searchQuery}
       onSearchChange={filters.setSearchQuery}
       searchPlaceholder="Search firearms, ammo, optics, or dealers..."

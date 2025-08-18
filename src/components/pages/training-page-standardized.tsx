@@ -378,73 +378,66 @@ export function TrainingPageStandardized() {
     }
   })
 
-  // Hero content
-  const heroContent = (
-    <div className="container mx-auto max-w-site relative z-10">
-      <div className="hero-grid-layout">
-        {/* Content - Left side */}
-        <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
-          <div className="flex items-center gap-base">
-            <div className="bg-card/10 p-base rounded-xs border border-border">
-              <GraduationCap weight="bold" className="h-8 w-8 text-white" />
-            </div>
-            <div className="space-y-base">
-              <div className="flex items-center gap-xs text-sm text-white/60">
-                <span>Home</span>
-                <CaretRight className="h-4 w-4" />
-                <span className="text-white font-medium">Training</span>
-              </div>
-              <div className="flex flex-wrap gap-xs">
-                <Badge className="bg-card/10 text-white border-border rounded-xs">
-                  <Shield weight="bold" className="h-4 w-4 mr-xs" />
-                  Basic Safety
-                </Badge>
-                <Badge className="bg-card/10 text-white border-border rounded-xs">
-                  <Target weight="bold" className="h-4 w-4 mr-xs" />
-                  Advanced
-                </Badge>
-                <Badge className="bg-card/10 text-white border-border rounded-xs">
-                  <Medal weight="bold" className="h-4 w-4 mr-xs" />
-                  Certified
-                </Badge>
-              </div>
-            </div>
-          </div>
-          <div className="space-y-xs">
-            <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
-              Treasure Valley Firearms Training
-            </h1>
-            <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
-              Professional Instruction from Veterans & Law Enforcement
-            </h2>
-          </div>
-          <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
-            Connect with certified instructors and training programs across the Treasure Valley. From basic safety to advanced tactical skills, find the right training for your needs.
-          </p>
-          <div className="flex gap-base">
-            <Button size="lg" className="bg-card text-nav-training hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
-              <Plus className="h-4 w-4 mr-xs" />
-              List Training
-            </Button>
-            <Button variant="outline" size="lg" className="border-border text-white hover:bg-card hover:text-nav-training" animationType="arrow">
-              View Calendar
-            </Button>
-          </div>
+  // Hero content sections - clean separation of concerns
+  const heroLeftContent = (
+    <>
+      <div className="flex items-center gap-base">
+        <div className="bg-card/10 p-base rounded-xs border border-border">
+          <GraduationCap weight="bold" className="h-8 w-8 text-white" />
         </div>
-
-        {/* Featured Training Card - Right side */}
-        <div className="lg:col-span-1 py-md min-h-[400px]">
-          <div className="relative h-full">
-            {trainingPrograms.find(t => t.featured) && (
-              <TrainingCard
-                training={trainingPrograms.find(t => t.featured)!}
-                className="h-full"
-              />
-            )}
+        <div className="space-y-base">
+          <div className="flex items-center gap-xs text-sm text-white/60">
+            <span>Home</span>
+            <CaretRight className="h-4 w-4" />
+            <span className="text-white font-medium">Training</span>
+          </div>
+          <div className="flex flex-wrap gap-xs">
+            <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+              <Shield weight="bold" className="h-4 w-4 mr-xs" />
+              Basic Safety
+            </Badge>
+            <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+              <Target weight="bold" className="h-4 w-4 mr-xs" />
+              Advanced
+            </Badge>
+            <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+              <Medal weight="bold" className="h-4 w-4 mr-xs" />
+              Certified
+            </Badge>
           </div>
         </div>
       </div>
-    </div>
+      
+      <div className="space-y-xs">
+        <h1 className="font-rajdhani text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+          Treasure Valley Firearms Training
+        </h1>
+        <h2 className="font-rajdhani text-base md:text-lg lg:text-xl font-medium text-white/80 leading-snug">
+          Professional Instruction from Veterans & Law Enforcement
+        </h2>
+      </div>
+      
+      <p className="text-body text-white/70 max-w-xl lg:max-w-2xl leading-relaxed">
+        Connect with certified instructors and training programs across the Treasure Valley. From basic safety to advanced tactical skills, find the right training for your needs.
+      </p>
+      
+      <div className="flex flex-col sm:flex-row gap-base">
+        <Button size="lg" className="bg-nav-training text-white hover:bg-white hover:text-nav-training font-rajdhani font-bold" animationType="plus-minus">
+          <Plus className="h-4 w-4 mr-xs" />
+          List Training
+        </Button>
+        <Button variant="outline" size="lg" className="border-border text-white hover:bg-card hover:text-nav-training" animationType="arrow">
+          View Calendar
+        </Button>
+      </div>
+    </>
+  )
+
+  const heroRightContent = trainingPrograms.find(t => t.featured) && (
+    <TrainingCard
+      training={trainingPrograms.find(t => t.featured)!}
+      className="h-auto min-h-[280px] lg:min-h-[320px]"
+    />
   )
 
   return (
@@ -452,7 +445,8 @@ export function TrainingPageStandardized() {
       pageTitle="Training"
       pageSubtitle="Treasure Valley Firearms Training"
       pageColor="training"
-      heroContent={heroContent}
+      heroLeftContent={heroLeftContent}
+      heroRightContent={heroRightContent}
       searchQuery={filters.searchQuery}
       onSearchChange={filters.setSearchQuery}
       searchPlaceholder="Search training programs, instructors, or locations..."

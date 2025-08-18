@@ -98,15 +98,15 @@ export async function GuidesPageStandardized() {
                   <span className="text-white font-medium">Guides</span>
                 </div>
                 <div className="flex flex-wrap gap-xs">
-                  <Badge className="bg-card/10 text-white border-border rounded-xs">
+                  <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
                     <Scales weight="bold" className="h-4 w-4 mr-xs" />
                     Legal Resources
                   </Badge>
-                  <Badge className="bg-card/10 text-white border-border rounded-xs">
+                  <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
                     <Shield weight="bold" className="h-4 w-4 mr-xs" />
                     Safety Guides
                   </Badge>
-                  <Badge className="bg-card/10 text-white border-border rounded-xs">
+                  <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
                     <Target weight="bold" className="h-4 w-4 mr-xs" />
                     Training Tips
                   </Badge>
@@ -128,7 +128,7 @@ export async function GuidesPageStandardized() {
             </p>
             
             <div className="flex gap-base">
-              <Button size="lg" className="bg-card text-nav-guides hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
+              <Button size="lg" className="bg-nav-guides text-white hover:bg-white hover:text-nav-guides font-rajdhani font-bold" animationType="plus-minus">
                 <Plus className="h-4 w-4 mr-xs" />
                 Submit Guide
               </Button>

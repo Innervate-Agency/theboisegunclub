@@ -60,15 +60,15 @@ export function IntelPageContent({ liveWeatherConditions, allWeatherData }: Inte
                   
                   {/* Badges */}
                   <div className="flex flex-wrap gap-xs">
-                    <Badge className="bg-card/10 text-white border-border rounded-xs">
+                    <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
                       <MapPin className="h-4 w-4 mr-xs" />
                       Shooting Locations
                     </Badge>
-                    <Badge className="bg-card/10 text-white border-border rounded-xs">
+                    <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
                       <Shield className="h-4 w-4 mr-xs" />
                       Verified Areas
                     </Badge>
-                    <Badge className="bg-card/10 text-white border-border rounded-xs">
+                    <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
                       <MapPin className="h-4 w-4 mr-xs" />
                       BLM & Forest Service
                     </Badge>
@@ -96,7 +96,7 @@ export function IntelPageContent({ liveWeatherConditions, allWeatherData }: Inte
                 <Button 
                   variant="solid-primary"
                   size="lg" 
-                  className="bg-card text-nav-intel hover:bg-card/90 font-rajdhani font-bold"
+                  className="bg-nav-intel text-white hover:bg-white hover:text-nav-intel font-rajdhani font-bold"
                 >
                   <Plus className="h-4 w-4 mr-xs" />
                   Submit Location

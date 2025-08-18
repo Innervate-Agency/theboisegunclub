@@ -805,43 +805,43 @@
 @utility grid-auto-fill-320 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: var(--spacing-lg);
+  gap: 2.66rem;
 }
 
 @utility grid-auto-fill-350 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: var(--spacing-lg);
+  gap: 2.66rem;
 }
 
 @utility grid-auto-fill-300 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--spacing-lg);
+  gap: 2.66rem;
 }
 
 @utility grid-auto-fill-280 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--spacing-lg);
+  gap: 2.66rem;
 }
 
 @utility grid-dense-sm {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: var(--spacing-sm);
+  gap: 1rem;
 }
 
 @utility grid-dense-md {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: var(--spacing-base);
+  gap: 1.33rem;
 }
 
 @utility grid-dense-lg {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: var(--spacing-lg);
+  gap: 2.66rem;
 }
 
 /* Transition utilities */
@@ -1102,32 +1102,31 @@
   .hero-grid-layout {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-lg);
+    gap: var(--spacing-lg);
     align-items: center;
-    padding-top: var(--space-sm);
-    padding-bottom: var(--space-sm);
+    padding-top: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
     min-height: 320px;
-    max-height: 420px;
   }
 
   @media (min-width: 1024px) {
     .hero-grid-layout {
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-xl);
-      padding-top: var(--space-base);
-      padding-bottom: var(--space-base);
+      gap: var(--spacing-xl);
+      padding-top: var(--spacing-base);
+      padding-bottom: var(--spacing-base);
       min-height: 380px;
     }
   }
 
   /* Hero Content Utilities */
   .hero-content {
-    padding: var(--space-base);
+    padding: var(--spacing-base);
   }
 
   @media (min-width: 1024px) {
     .hero-content {
-      padding: var(--space-lg);
+      padding: var(--spacing-lg);
     }
   }
 
@@ -1135,8 +1134,6 @@
   .hero-card {
     padding: var(--space-sm) var(--space-base);
     height: fit-content;
-    max-height: 300px;
-    overflow: hidden;
   }
 
   @media (min-width: 1024px) {
