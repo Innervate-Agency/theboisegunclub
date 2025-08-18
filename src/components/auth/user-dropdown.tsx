@@ -55,11 +55,11 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
   const getRoleBadgeStyle = (role: User['role']) => {
     switch (role) {
       case 'admin':
-        return 'bg-canyon-clay text-crisp-off-white border-canyon-clay'
+        return 'bg-destructive text-destructive-foreground border-destructive'
       case 'moderator':
-        return 'bg-foothills-purple text-crisp-off-white border-foothills-purple'
+        return 'bg-primary text-primary-foreground border-primary'
       case 'member':
-        return 'bg-sagebrush-green text-crisp-off-white border-sagebrush-green'
+        return 'bg-accent text-accent-foreground border-accent'
       default:
         return 'bg-muted text-muted-foreground border-border'
     }
@@ -83,7 +83,7 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
         >
           <Avatar className="size-7">
             <AvatarImage src={user.avatar} alt={user.username} />
-            <AvatarFallback className="text-xs font-medium bg-rusty-orange/10 text-rusty-orange">
+            <AvatarFallback className="text-xs font-medium bg-primary/10 text-primary">
               {getUserInitials(user.username)}
             </AvatarFallback>
           </Avatar>
@@ -103,7 +103,7 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
           <div className="flex items-center gap-sm">
             <Avatar className="size-10">
               <AvatarImage src={user.avatar} alt={user.username} />
-              <AvatarFallback className="bg-rusty-orange/10 text-rusty-orange font-medium">
+              <AvatarFallback className="bg-primary/10 text-primary font-medium">
                 {getUserInitials(user.username)}
               </AvatarFallback>
             </Avatar>
@@ -186,7 +186,7 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
         {/* Logout */}
         <div className="p-xs">
           <DropdownMenuItem 
-            className="cursor-pointer text-canyon-clay focus:bg-canyon-clay/10 focus:text-canyon-clay"
+            className="cursor-pointer text-destructive focus:bg-destructive/10 focus:text-destructive"
             onClick={handleLogout}
           >
             <SignOut className="size-4 mr-sm" weight="bold" />

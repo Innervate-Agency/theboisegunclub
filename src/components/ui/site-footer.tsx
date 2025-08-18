@@ -12,6 +12,10 @@ import {
   MapPin, Phone, Envelope, Globe, CrosshairSimple, Shield, Users,
   CaretUp, Question, Heart, Diamond, Ticket, AddressBook, MapTrifold, Storefront
 } from '@phosphor-icons/react'
+import { 
+  DesertMesaSVG, BoiseFoothillsSVG, SouthBoiseDesertSVG, MountainPineSVG,
+  HellsCanyonSVG, SnakeRiverCanyonSVG, CascadeSawtoothsSVG
+} from '@/components/ui/idaho-landscapes'
 
 const siteFooterVariants = cva(
   "w-full mt-auto rounded-none shadow-elevated",
@@ -33,7 +37,7 @@ export interface SiteFooterProps
   extends React.ComponentProps<"footer">,
     VariantProps<typeof siteFooterVariants> {
   showNewsletter?: boolean
-  currentPage?: 'home' | 'events' | 'directory' | 'armory' | 'intel' | 'marketplace' | 'forums'
+  currentPage?: 'home' | 'events' | 'directory' | 'armory' | 'intel' | 'marketplace' | 'forums' | 'training' | 'guides'
 }
 
 export function SiteFooter({
@@ -97,74 +101,27 @@ export function SiteFooter({
   const mutedColor = "text-muted-foreground"
   const linkHoverColor = "hover:text-primary"
   
-  // 1980s Retro Western SVG Background Component
-  const RetroWesternBackground = () => (
-    <div className="absolute inset-0 overflow-hidden opacity-5">
-      <svg 
-        viewBox="0 0 1200 400" 
-        className="w-full h-full object-cover"
-        preserveAspectRatio="xMidYMid slice"
-      >
-        {/* Mesa/Mountain Silhouettes */}
-        <path
-          d="M0,200 L200,150 L350,180 L500,140 L650,160 L800,130 L950,170 L1200,150 L1200,400 L0,400 Z"
-          fill="currentColor"
-          opacity="0.3"
-        />
-        <path
-          d="M0,250 L150,220 L300,240 L450,210 L600,230 L750,200 L900,220 L1200,210 L1200,400 L0,400 Z"
-          fill="currentColor"
-          opacity="0.2"
-        />
-        
-        {/* Distant Mountains */}
-        <path
-          d="M0,180 L100,160 L200,170 L300,150 L400,165 L500,145 L600,160 L700,140 L800,155 L900,135 L1000,150 L1100,130 L1200,140 L1200,400 L0,400 Z"
-          fill="currentColor"
-          opacity="0.15"
-        />
-        
-        {/* Horizon Line */}
-        <line
-          x1="0"
-          y1="120"
-          x2="1200"
-          y2="110"
-          stroke="currentColor"
-          strokeWidth="1"
-          opacity="0.1"
-        />
-        
-        {/* Scattered Stars/Points */}
-        <circle cx="150" cy="80" r="1" fill="currentColor" opacity="0.2" />
-        <circle cx="400" cy="60" r="1" fill="currentColor" opacity="0.15" />
-        <circle cx="700" cy="90" r="1" fill="currentColor" opacity="0.25" />
-        <circle cx="950" cy="70" r="1" fill="currentColor" opacity="0.2" />
-        
-        {/* Subtle Wind Lines */}
-        <path
-          d="M100,100 Q150,95 200,100"
-          stroke="currentColor"
-          strokeWidth="0.5"
-          fill="none"
-          opacity="0.1"
-        />
-        <path
-          d="M500,85 Q550,80 600,85"
-          stroke="currentColor"
-          strokeWidth="0.5"
-          fill="none"
-          opacity="0.1"
-        />
-      </svg>
-    </div>
-  )
+  // Page-specific Idaho landscape mapping
+  const pageLandscapeMap = {
+    'home': BoiseFoothillsSVG,
+    'events': SnakeRiverCanyonSVG,
+    'directory': SouthBoiseDesertSVG,
+    'armory': CascadeSawtoothsSVG,
+    'intel': HellsCanyonSVG,
+    'marketplace': DesertMesaSVG,
+    'forums': MountainPineSVG,
+    'training': MountainPineSVG,
+    'guides': BoiseFoothillsSVG
+  }
+  
+  // Get the appropriate landscape component for current page
+  const LandscapeComponent = pageLandscapeMap[currentPage] || BoiseFoothillsSVG
   
   return (
     <>
       <footer className={cn(siteFooterVariants({ variant }), "relative overflow-hidden", className)} {...props}>
-        {/* Retro Western Background - Full Width */}
-        <RetroWesternBackground />
+        {/* Dynamic Idaho Landscape Background */}
+        <LandscapeComponent opacity={0.05} animated={true} />
         
         {/* Page-specific accent bar */}
         <div className={cn("h-1 relative z-10", currentPageTheme.accent)} />
@@ -265,7 +222,7 @@ export function SiteFooter({
               
               {/* Quick Links */}
               <Card
-                variant="tactical"
+                variant="tactical" tacticalTheme="home"
                 tacticalTheme="directory"
                 showCategoryIcon={true}
                 category="navigation"
@@ -314,7 +271,7 @@ export function SiteFooter({
               
               {/* Resources */}
               <Card
-                variant="tactical"
+                variant="tactical" tacticalTheme="home"
                 tacticalTheme="armory"
                 showCategoryIcon={true}
                 category="training"
@@ -356,7 +313,7 @@ export function SiteFooter({
               
               {/* Support */}
               <Card
-                variant="tactical"
+                variant="tactical" tacticalTheme="home"
                 tacticalTheme="intel"
                 showCategoryIcon={true}
                 category="support"

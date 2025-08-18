@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { cva, VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
 import { Badge } from './badge';
 import { Button } from './button';
+import { UnifiedArchiveCard } from './unified-archive-card';
+import { cn } from '@/lib/utils';
+import { cva, type VariantProps } from 'class-variance-authority';
 import { MapPin, Phone, Clock, Star, Globe, Shield, ChatsCircle, Storefront, Wrench, Target, GraduationCap, ShoppingBag, Users} from '@phosphor-icons/react';
 import { Avatar, AvatarImage, AvatarFallback } from './avatar';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './tooltip';
@@ -242,9 +242,9 @@ export function VendorCard({
               </div>
               
               {/* Subtle texture particles */}
-              <div className="absolute top-1 right-4 w-0.5 h-0.5 bg-white/25 rounded-full animate-pulse"></div>
-              <div className="absolute bottom-2 left-4 w-0.5 h-0.5 bg-white/20 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
-              <div className="absolute top-3 right-8 w-0.5 h-0.5 bg-white/30 rounded-full animate-pulse" style={{animationDelay: '2.5s'}}></div>
+              <div className="absolute top-1 right-4 w-0.5 h-0.5 bg-card/25 rounded-full animate-pulse"></div>
+              <div className="absolute bottom-2 left-4 w-0.5 h-0.5 bg-card/20 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+              <div className="absolute top-3 right-8 w-0.5 h-0.5 bg-card/30 rounded-full animate-pulse" style={{animationDelay: '2.5s'}}></div>
             </>
           )}
           

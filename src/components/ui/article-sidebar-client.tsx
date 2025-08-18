@@ -153,7 +153,7 @@ export function ArticleSidebarClient({
               className="justify-start gap-xs"
               onClick={handleLike}
             >
-              <Heart className={`h-4 w-4 ${isLiked ? 'fill-current text-red-500' : ''}`} />
+              <Heart className={`h-4 w-4 ${isLiked ? 'fill-current text-destructive' : ''}`} />
               Like ({currentLikes})
             </Button>
           </div>

@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
+import { Card, CardHeader, CardContent } from '@/components/ui/card'
 import { MarketplaceDealCard } from '@/components/ui/marketplace-deal-card'
 import { CardPageLayout } from '@/components/ui/card-page-layout'
 import { TrustIndicators } from '@/components/ui/trust-indicators'
@@ -430,17 +430,17 @@ export function MarketplacePageStandardized() {
   const heroContent = (
     <div className="relative">
       {/* Floating marketplace elements */}
-      <div className="absolute top-8 right-12 w-3 h-3 bg-white/30 rounded-full animate-pulse"></div>
-      <div className="absolute bottom-12 left-16 w-2 h-2 bg-white/20 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
-      <div className="absolute top-16 right-20 w-1 h-1 bg-white/25 rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
+      <div className="absolute top-8 right-12 w-3 h-3 bg-card/30 rounded-full animate-pulse"></div>
+      <div className="absolute bottom-12 left-16 w-2 h-2 bg-card/20 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+      <div className="absolute top-16 right-20 w-1 h-1 bg-card/25 rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
 
       <div className="container mx-auto max-w-site relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
+        <div className="hero-grid-layout">
           
           {/* Content - Left side */}
-          <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
+          <div className="lg:col-span-2 hero-content flex flex-col justify-center space-y-base">
             {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
-            <div className="flex items-center gap-base">
+            <div className="flex items-center gap-sm">
               <div className="bg-card/10 p-base rounded-xs border border-border">
                 <ShoppingCart className="h-8 w-8 text-white" />
               </div>
@@ -490,7 +490,7 @@ export function MarketplacePageStandardized() {
               <Link href="mailto:marketplace@boiseguncollective.com?subject=List Items in Marketplace&body=I'd like to list items in The Boise Gun Club marketplace:%0A%0AItem details:%0ABusiness information:%0AContact information:">
                 <Button 
                   size="lg" 
-                  className="bg-white text-nav-marketplace hover:bg-crisp-off-white font-rajdhani font-bold"
+                  className="bg-card text-nav-marketplace hover:bg-crisp-off-white font-rajdhani font-bold"
                   animationType="plus-minus"
                 >
                   <Storefront className="h-4 w-4 mr-xs" />
@@ -500,7 +500,7 @@ export function MarketplacePageStandardized() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-border text-white hover:bg-white hover:text-nav-marketplace"
+                className="border-border text-white hover:bg-card hover:text-nav-marketplace"
                 animationType="arrow"
               >
                 View All Deals

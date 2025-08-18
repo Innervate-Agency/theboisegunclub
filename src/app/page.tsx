@@ -117,9 +117,9 @@ export default function HomePage() {
   ]
 
   return (
-    <div className="theme-home flex flex-col min-h-screen bg-background">
+    <div className="theme-home min-h-screen">
       {/* Navigation */}
-      <SiteNavigation variant="premium" sticky={true} />
+      <SiteNavigation />
 
       <main className="flex-grow relative">
         {/* Hero Section */}
@@ -364,7 +364,7 @@ export default function HomePage() {
       </main>
 
       {/* Footer */}
-      <SiteFooter />
+      <SiteFooter currentPage="home" />
     </div>
   )
 }

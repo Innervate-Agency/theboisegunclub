@@ -554,13 +554,12 @@ export function DirectoryPageStandardized() {
   // Hero content
   const heroContent = (
     <div className="container mx-auto max-w-site relative z-10">
-      {/* TODO: Extract this grid to a utility class if reused elsewhere */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
+      <div className="hero-grid-layout">
         {/* Content - Left side */}
-        <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
-          <div className="flex items-center gap-base">
-            <div className="bg-card/10 p-base rounded-xs border border-border">
-              <AddressBook weight="bold" className="h-8 w-8 text-primary-foreground" />
+        <div className="lg:col-span-2 hero-content flex flex-col justify-center space-y-base">
+          <div className="flex items-center gap-sm">
+            <div className="bg-card/10 p-sm rounded-xs border border-border">
+              <AddressBook weight="bold" className="h-6 w-6 text-primary-foreground" />
             </div>
             <div className="space-y-base">
               <div className="flex items-center gap-xs text-sm text-primary-foreground/60">
@@ -585,14 +584,14 @@ export function DirectoryPageStandardized() {
             </div>
           </div>
           <div className="space-y-xs">
-            <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-primary-foreground leading-tight">
+            <h1 className="font-rajdhani text-2xl md:text-4xl font-bold text-primary-foreground leading-tight">
               Idaho Firearms Directory
             </h1>
-            <h2 className="font-rajdhani text-lg md:text-xl font-medium text-primary-foreground/80 leading-snug">
+            <h2 className="font-rajdhani text-base md:text-lg font-medium text-primary-foreground/80 leading-snug">
               Comprehensive Guide to Idaho's Shooting Sports Community
             </h2>
           </div>
-          <p className="text-body-lg text-primary-foreground/70 max-w-2xl leading-relaxed">
+          <p className="text-body-base text-primary-foreground/70 max-w-2xl leading-relaxed">
             From Treasure Valley's premier indoor facilities to specialized gunsmiths across the Gem State, discover verified businesses serving Idaho's firearms community.
           </p>
           <div className="flex gap-base">
@@ -607,7 +606,7 @@ export function DirectoryPageStandardized() {
         </div>
 
         {/* Featured Business Card - Right side */}
-        <div className="lg:col-span-1 py-md min-h-[400px]">
+        <div className="lg:col-span-1 hero-card">
           <div className="relative h-full">
             {directoryListings.find(b => b.featured) && (
               <VendorCard

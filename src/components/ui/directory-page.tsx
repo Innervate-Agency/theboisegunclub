@@ -319,11 +319,11 @@ export function DirectoryPageComponent() {
                   
                   {/* Action Buttons */}
                   <div className="flex gap-base">
-                    <Button size="lg" className="bg-white text-nav-directory hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
+                    <Button size="lg" className="bg-card text-nav-directory hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
                       <Plus className="h-4 w-4 mr-xs" />
                       List Business
                     </Button>
-                    <Button variant="outline" size="lg" className="border-border text-white hover:bg-white hover:text-nav-directory" animationType="arrow">
+                    <Button variant="outline" size="lg" className="border-border text-white hover:bg-card hover:text-nav-directory" animationType="arrow">
                       View Map
                     </Button>
                   </div>

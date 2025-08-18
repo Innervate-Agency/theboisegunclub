@@ -71,7 +71,7 @@ export default function NotFound() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
             {/* Intel */}
             <Link href="/intel">
-              <Card className="group hover:shadow-elevated transition-all duration-300 cursor-pointer border-nav-intel/30">
+              <Card variant="tactical" tacticalTheme="default" className="tactical-card-mobile tactical-card-hover group  border-nav-intel/30">
                 <CardContent className="p-lg text-center space-y-base">
                   <div className="bg-nav-intel/20 p-base rounded-xs w-fit mx-auto">
                     <Map className="h-8 w-8 text-nav-intel" />
@@ -90,7 +90,7 @@ export default function NotFound() {
             
             {/* Guides */}
             <Link href="/guides">
-              <Card className="group hover:shadow-elevated transition-all duration-300 cursor-pointer border-nav-guides/30">
+              <Card variant="tactical" tacticalTheme="default" className="tactical-card-mobile tactical-card-hover group  border-nav-guides/30">
                 <CardContent className="p-lg text-center space-y-base">
                   <div className="bg-nav-guides/20 p-base rounded-xs w-fit mx-auto">
                     <BookOpen className="h-8 w-8 text-nav-guides" />
@@ -109,7 +109,7 @@ export default function NotFound() {
             
             {/* Armory */}
             <Link href="/armory">
-              <Card className="group hover:shadow-elevated transition-all duration-300 cursor-pointer border-nav-armory/30">
+              <Card variant="tactical" tacticalTheme="default" className="tactical-card-mobile tactical-card-hover group  border-nav-armory/30">
                 <CardContent className="p-lg text-center space-y-base">
                   <div className="bg-nav-armory/20 p-base rounded-xs w-fit mx-auto">
                     <Shield className="h-8 w-8 text-nav-armory" />
@@ -128,7 +128,7 @@ export default function NotFound() {
             
             {/* Directory */}
             <Link href="/directory">
-              <Card className="group hover:shadow-elevated transition-all duration-300 cursor-pointer border-nav-directory/30">
+              <Card variant="tactical" tacticalTheme="default" className="tactical-card-mobile tactical-card-hover group  border-nav-directory/30">
                 <CardContent className="p-lg text-center space-y-base">
                   <div className="bg-nav-directory/20 p-base rounded-xs w-fit mx-auto">
                     <Compass className="h-8 w-8 text-nav-directory" />

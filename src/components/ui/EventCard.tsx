@@ -212,10 +212,10 @@ export function EventCard({
         </div>
         
         {/* Subtle texture particles for tactical feel */}
-        <div className="absolute top-2 right-6 w-0.5 h-0.5 bg-white/30 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-4 left-8 w-0.5 h-0.5 bg-white/20 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-6 right-12 w-0.5 h-0.5 bg-white/25 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-2 left-12 w-0.5 h-0.5 bg-white/15 rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
+        <div className="absolute top-2 right-6 w-0.5 h-0.5 bg-card/30 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-4 left-8 w-0.5 h-0.5 bg-card/20 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-6 right-12 w-0.5 h-0.5 bg-card/25 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-2 left-12 w-0.5 h-0.5 bg-card/15 rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
         
         {/* Enhanced Date Badge with gradient background */}
         <div className="absolute top-sm left-sm">

@@ -402,13 +402,13 @@ export function EventsPageStandardized() {
       <EventsEmbers />
       
       <div className="container mx-auto max-w-site relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
+        <div className="hero-grid-layout">
           
           {/* Content - Left side */}
-          <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
-            <div className="flex items-center gap-base">
-              <div className="bg-card/10 p-base rounded-xs border border-border">
-                <Calendar weight="bold" className="h-8 w-8 text-white" />
+          <div className="lg:col-span-2 hero-content flex flex-col justify-center space-y-base">
+            <div className="flex items-center gap-sm">
+              <div className="bg-card/10 p-sm rounded-xs border border-border">
+                <Calendar weight="bold" className="h-6 w-6 text-white" />
               </div>
               <div className="space-y-base">
                 <div className="flex items-center gap-xs text-sm text-white/60">
@@ -447,11 +447,11 @@ export function EventsPageStandardized() {
             </p>
             
             <div className="flex gap-base">
-              <Button size="lg" className="bg-white text-nav-events hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
+              <Button size="lg" className="bg-card text-nav-events hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
                 <Plus className="h-4 w-4 mr-xs" />
                 Submit Event
               </Button>
-              <Button variant="outline" size="lg" className="border-border text-white hover:bg-white hover:text-nav-events" animationType="arrow">
+              <Button variant="outline" size="lg" className="border-border text-white hover:bg-card hover:text-nav-events" animationType="arrow">
                 View Calendar
               </Button>
             </div>

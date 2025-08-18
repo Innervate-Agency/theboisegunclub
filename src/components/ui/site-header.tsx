@@ -174,8 +174,7 @@ export function SiteHeader() {
               <SignIn className="size-4" />
               Sign In
             </Button>
-            {/* FLAG: No hover state for bg-gradient-fire is defined. */}
-            <Button size="sm" className="hidden md:block bg-gradient-fire text-primary-foreground font-rajdhani font-bold">
+            <Button size="sm" className="hidden md:block bg-gradient-fire hover:bg-gradient-logo text-primary-foreground font-rajdhani font-bold transition-all duration-300">
               Join TBGC
             </Button>
             
@@ -224,8 +223,7 @@ export function SiteHeader() {
                   <SignIn className="size-4" />
                   Sign In
                 </Button>
-                {/* FLAG: No hover state for bg-gradient-fire is defined. */}
-                <Button size="sm" className="justify-start bg-gradient-fire text-primary-foreground font-rajdhani font-bold">
+                <Button size="sm" className="justify-start bg-gradient-fire hover:bg-gradient-logo text-primary-foreground font-rajdhani font-bold transition-all duration-300">
                   Join TBGC
                 </Button>
               </div>

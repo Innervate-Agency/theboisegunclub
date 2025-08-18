@@ -159,9 +159,9 @@ export function TacticalHero({
           )}
           
           {/* Subtle Particles */}
-          <div className="absolute top-4 right-8 w-1 h-1 bg-white/30 rounded-full animate-pulse" />
-          <div className="absolute bottom-8 left-12 w-1 h-1 bg-white/20 rounded-full animate-pulse" style={{animationDelay: '1s'}} />
-          <div className="absolute top-12 right-20 w-1 h-1 bg-white/25 rounded-full animate-pulse" style={{animationDelay: '2s'}} />
+          <div className="absolute top-4 right-8 w-1 h-1 bg-card/30 rounded-full animate-pulse" />
+          <div className="absolute bottom-8 left-12 w-1 h-1 bg-card/20 rounded-full animate-pulse" style={{animationDelay: '1s'}} />
+          <div className="absolute top-12 right-20 w-1 h-1 bg-card/25 rounded-full animate-pulse" style={{animationDelay: '2s'}} />
         </div>
       )}
 
@@ -276,7 +276,7 @@ export function TacticalHero({
                   <Button
                     variant={secondaryCTA.variant || "outline"}
                     size="lg"
-                    className="border-white/30 text-white hover:bg-white/10 font-rajdhani font-medium"
+                    className="border-white/30 text-white hover:bg-card/10 font-rajdhani font-medium"
                     onClick={secondaryCTA.onClick}
                   >
                     {secondaryCTA.label}

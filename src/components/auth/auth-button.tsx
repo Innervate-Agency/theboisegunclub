@@ -45,7 +45,7 @@ export function AuthButton({
           <Button
             variant="ghost"
             size={size}
-            className="text-nav-forums hover:text-nav-forums/80 border border-nav-forums/30 bg-nav-forums/10 hover:bg-nav-forums/20 font-rajdhani font-medium group relative overflow-hidden rounded-xs"
+            className="text-[var(--nav-forums)] hover:text-[var(--nav-forums)]/80 border border-[var(--nav-forums)]/30 bg-[var(--nav-forums)]/10 hover:bg-[var(--nav-forums)]/20 font-rajdhani font-medium group relative overflow-hidden rounded-xs"
             onClick={async () => {
               const { getForumUrl } = useAuth()
               const forumUrl = await getForumUrl()
@@ -78,7 +78,7 @@ export function AuthButton({
             setShowAuthModal(true)
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-blue/0 via-slate-blue/10 to-slate-blue/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-blue/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
           <SignIn className="size-4 mr-xs transition-transform duration-200 group-hover:scale-110" weight="bold" />
           <span className="relative">Sign In</span>
         </Button>
@@ -87,7 +87,7 @@ export function AuthButton({
           <Button
             variant="ghost"
             size={size}
-            className="bg-rusty-orange/10 text-rusty-orange hover:bg-rusty-orange/20 shadow-none border border-rusty-orange/30 text-xs"
+            className="bg-secondary/10 text-secondary hover:bg-secondary/20 shadow-none border border-secondary/30 text-xs"
             onClick={() => {
               setAuthMode('register')
               setShowAuthModal(true)
@@ -101,13 +101,13 @@ export function AuthButton({
           <Button
             variant="ghost" 
             size={size}
-            className="text-muted-foreground hover:text-rusty-orange border border-border/50 bg-muted/5 hover:bg-rusty-orange/10 font-rajdhani font-medium group relative overflow-hidden rounded-xs"
+            className="text-muted-foreground hover:text-secondary border border-border/50 bg-muted/5 hover:bg-secondary/10 font-rajdhani font-medium group relative overflow-hidden rounded-xs"
             onClick={() => {
               // For now, just alert - will eventually route to /dashboard
               alert('Dashboard coming soon! This will be your personalized gaming/activity hub.')
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-rusty-orange/0 via-rusty-orange/8 to-rusty-orange/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-rusty-orange/8 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
             <Monitor className="size-4 mr-xs transition-all duration-200 group-hover:scale-110 group-hover:rotate-12" weight="bold" />
             <span className="relative">Dashboard</span>
           </Button>

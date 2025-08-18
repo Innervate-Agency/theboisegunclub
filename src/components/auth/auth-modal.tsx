@@ -126,10 +126,10 @@ export function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthModalProp
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md fixed inset-y-0 right-0 left-auto w-full sm:w-96 max-w-none rounded-none rounded-l-xs mica shadow-modal transform-none data-[state=open]:slide-in-from-right data-[state=closed]:slide-out-to-right">
+      <DialogContent className="sm:max-w-md fixed inset-y-0 right-0 left-auto w-full sm:w-96 max-w-none rounded-none rounded-l-xs mica shadow-modal transform-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-300 data-[state=open]:slide-in-from-right-full data-[state=closed]:slide-out-to-right-full">
         <DialogHeader className="text-center space-y-xs">
           <DialogTitle className="text-2xl font-rajdhani font-[600] text-card-foreground flex items-center justify-center gap-sm">
-            <Shield className="size-6 text-rusty-orange" weight="bold" />
+                        <Shield className="size-6 text-primary" weight="bold" />
             {mode === 'login' ? 'Welcome Back' : 'Join The Club'}
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">
@@ -155,12 +155,12 @@ export function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthModalProp
                   placeholder="gunsmith_mike"
                   value={formData.username}
                   onChange={(e) => handleInputChange('username', e.target.value)}
-                  className={cn("pl-lg", errors.username && "border-canyon-clay")}
+                  className={cn("pl-lg", errors.username && "border-destructive")}
                   disabled={isSubmitting}
                 />
               </div>
               {errors.username && (
-                <p className="text-xs text-canyon-clay">{errors.username}</p>
+                <p className="text-xs text-destructive">{errors.username}</p>
               )}
             </div>
           )}
@@ -178,12 +178,12 @@ export function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthModalProp
                 placeholder="your.email@example.com"
                 value={formData.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
-                className={cn("pl-lg", errors.email && "border-canyon-clay")}
+                className={cn("pl-lg", errors.email && "border-destructive")}
                 disabled={isSubmitting}
               />
             </div>
             {errors.email && (
-              <p className="text-xs text-canyon-clay">{errors.email}</p>
+              <p className="text-xs text-destructive">{errors.email}</p>
             )}
           </div>
 
@@ -200,7 +200,7 @@ export function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthModalProp
                 placeholder="Enter your password"
                 value={formData.password}
                 onChange={(e) => handleInputChange('password', e.target.value)}
-                className={cn("pl-lg pr-lg", errors.password && "border-canyon-clay")}
+                className={cn("pl-lg pr-lg", errors.password && "border-destructive")}
                 disabled={isSubmitting}
               />
               <Button
@@ -219,7 +219,7 @@ export function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthModalProp
               </Button>
             </div>
             {errors.password && (
-              <p className="text-xs text-canyon-clay">{errors.password}</p>
+              <p className="text-xs text-destructive">{errors.password}</p>
             )}
           </div>
 
@@ -237,12 +237,12 @@ export function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthModalProp
                   placeholder="Confirm your password"
                   value={formData.confirmPassword}
                   onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
-                  className={cn("pl-lg", errors.confirmPassword && "border-canyon-clay")}
+                  className={cn("pl-lg", errors.confirmPassword && "border-destructive")}
                   disabled={isSubmitting}
                 />
               </div>
               {errors.confirmPassword && (
-                <p className="text-xs text-canyon-clay">{errors.confirmPassword}</p>
+                <p className="text-xs text-destructive">{errors.confirmPassword}</p>
               )}
             </div>
           )}
@@ -250,7 +250,7 @@ export function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthModalProp
           {/* Submit Error */}
           {errors.submit && (
             <div className="text-center">
-              <p className="text-sm text-canyon-clay">{errors.submit}</p>
+              <p className="text-sm text-destructive">{errors.submit}</p>
             </div>
           )}
 
@@ -275,7 +275,7 @@ export function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthModalProp
             <Button
               type="button"
               variant="link"
-              className="text-rusty-orange hover:text-rusty-orange/80 p-0 h-auto font-medium shadow-none rounded-xs"
+              className="text-primary hover:text-primary/80 p-0 h-auto font-medium shadow-none rounded-xs"
               onClick={() => onModeChange(mode === 'login' ? 'register' : 'login')}
               disabled={isSubmitting}
             >

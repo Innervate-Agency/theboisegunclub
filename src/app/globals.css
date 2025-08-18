@@ -1098,6 +1098,54 @@
     }
   }
 
+  /* Hero Layout Utilities */
+  .hero-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-sm);
+    min-height: 320px;
+    max-height: 420px;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid-layout {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+      padding-top: var(--space-base);
+      padding-bottom: var(--space-base);
+      min-height: 380px;
+    }
+  }
+
+  /* Hero Content Utilities */
+  .hero-content {
+    padding: var(--space-base);
+  }
+
+  @media (min-width: 1024px) {
+    .hero-content {
+      padding: var(--space-lg);
+    }
+  }
+
+  /* Hero Card Utilities - More rectangular appearance */
+  .hero-card {
+    padding: var(--space-sm) var(--space-base);
+    height: fit-content;
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-card {
+      padding: var(--space-base) var(--space-lg);
+      max-height: 320px;
+    }
+  }
+
   /* Haptic Feedback Support (where available) */
   .tactical-haptic {
     cursor: pointer;

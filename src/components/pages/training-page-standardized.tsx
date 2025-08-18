@@ -381,7 +381,7 @@ export function TrainingPageStandardized() {
   // Hero content
   const heroContent = (
     <div className="container mx-auto max-w-site relative z-10">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
+      <div className="hero-grid-layout">
         {/* Content - Left side */}
         <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
           <div className="flex items-center gap-base">
@@ -422,11 +422,11 @@ export function TrainingPageStandardized() {
             Connect with certified instructors and training programs across the Treasure Valley. From basic safety to advanced tactical skills, find the right training for your needs.
           </p>
           <div className="flex gap-base">
-            <Button size="lg" className="bg-white text-nav-training hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
+            <Button size="lg" className="bg-card text-nav-training hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
               <Plus className="h-4 w-4 mr-xs" />
               List Training
             </Button>
-            <Button variant="outline" size="lg" className="border-border text-white hover:bg-white hover:text-nav-training" animationType="arrow">
+            <Button variant="outline" size="lg" className="border-border text-white hover:bg-card hover:text-nav-training" animationType="arrow">
               View Calendar
             </Button>
           </div>

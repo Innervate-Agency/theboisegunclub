@@ -102,7 +102,7 @@ export const FireGradientCardGrid: Story = {
             <p className="text-body-sm opacity-90 mb-base">
               Continuously animated fire gradient that pulses across the background.
             </p>
-            <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-white/20">
+            <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-card/20">
               Learn More <ChevronRight className="ml-xs h-4 w-4" />
             </Button>
           </CardContent>
@@ -118,7 +118,7 @@ export const FireGradientCardGrid: Story = {
             <p className="text-body-sm opacity-90 mb-base">
               Fire gradient with a pulsing glow shadow effect for extra emphasis.
             </p>
-            <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-white/20">
+            <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-card/20">
               View Details <ChevronRight className="ml-xs h-4 w-4" />
             </Button>
           </CardContent>
@@ -134,7 +134,7 @@ export const FireGradientCardGrid: Story = {
             <p className="text-body-sm opacity-90 mb-base">
               Cool blue fire gradient using slate-blue to ayu-green transition.
             </p>
-            <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-white/20">
+            <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-card/20">
               Explore <ChevronRight className="ml-xs h-4 w-4" />
             </Button>
           </CardContent>
@@ -150,7 +150,7 @@ export const FireGradientCardGrid: Story = {
             <p className="text-body-sm opacity-90 mb-base">
               Elegant purple fire gradient from ayu-purple to ayu-cobalt.
             </p>
-            <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-white/20">
+            <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-card/20">
               Discover <ChevronRight className="ml-xs h-4 w-4" />
             </Button>
           </CardContent>
@@ -166,7 +166,7 @@ export const FireGradientCardGrid: Story = {
             <p className="text-body-sm opacity-90 mb-base">
               Natural green fire gradient perfect for success states and growth.
             </p>
-            <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-white/20">
+            <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-card/20">
               Get Started <ChevronRight className="ml-xs h-4 w-4" />
             </Button>
           </CardContent>

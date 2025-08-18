@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { X } from "@phosphor-icons/react"
@@ -10,12 +12,12 @@ const alertVariants = cva(
     variants: {
       variant: {
         default: "bg-background text-foreground",
-        destructive: "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive",
-        success: "border-success/50 text-success dark:border-success [&>svg]:text-success",
-        warning: "border-warning/50 text-warning dark:border-warning [&>svg]:text-warning",
-        info: "border-info/50 text-info dark:border-info [&>svg]:text-info",
-        premium: "border-premium/50 text-premium dark:border-premium [&>svg]:text-premium bg-gradient-to-r from-rusty-orange/10 to-sandy-ochre/10",
-        elite: "border-elite/50 text-elite dark:border-elite [&>svg]:text-elite bg-gradient-to-r from-foothills-purple/10 to-canyon-clay/10",
+        destructive: "border-destructive text-destructive [&>svg]:text-destructive",
+        success: "border-accent text-accent [&>svg]:text-accent",
+        warning: "border-secondary text-secondary [&>svg]:text-secondary",
+        info: "border-primary text-primary [&>svg]:text-primary",
+        premium: "border-primary text-primary [&>svg]:text-primary relative before:absolute before:inset-0 before:bg-gradient-logo before:opacity-10 before:rounded before:pointer-events-none",
+        elite: "border-primary text-primary [&>svg]:text-primary relative before:absolute before:inset-0 before:bg-gradient-intel-hero before:opacity-10 before:rounded before:pointer-events-none",
       },
       size: {
         sm: "px-xs py-tiny text-body-xs",

@@ -13,7 +13,7 @@ import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { fetchWeatherForMultipleLocations } from '@/lib/weather-service'
 import { 
-  Plus, Mountain, Shield, 
+  Plus, Shield, 
   Compass, ChevronRight, Star, MapPin, Navigation,
   Camera, MessageSquare, AlertTriangle,
   TrendingUp, 
@@ -350,9 +350,9 @@ export default async function MapPage() {
   }
 
   return (
-    <>
-      <SiteNavigation variant="premium" sticky={true} />
-      <div className="min-h-screen bg-background theme-intel">
+    <div className="theme-intel min-h-screen">
+      <SiteNavigation />
+      <div className="min-h-screen bg-background">
       {/* Map Hero - Content Left, Card Right (Layout 1) */}
       <section className="relative overflow-hidden bg-gradient-intel-hero px-md py-lg">
         {/* Topographic Background Image */}
@@ -364,7 +364,7 @@ export default async function MapPage() {
           }}
         ></div>
         <div className="container mx-auto max-w-site relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl items-stretch py-md min-h-[400px]">
+          <div className="hero-grid-layout">
             {/* Content - Left side */}
             <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
               {/* Top Header - Icon, Breadcrumbs & Badges Chunk */}
@@ -391,7 +391,7 @@ export default async function MapPage() {
                       Verified Areas
                     </Badge>
                     <Badge className="bg-card/10 text-white border-border rounded-xs">
-                      <Mountain className="h-4 w-4 mr-xs" />
+                      <MapPin className="h-4 w-4 mr-xs" />
                       BLM & Forest Service
                     </Badge>
                   </div>
@@ -418,7 +418,7 @@ export default async function MapPage() {
                 <Button 
                   variant="solid-primary"
                   size="lg" 
-                  className="bg-white text-nav-intel hover:bg-white/90 font-rajdhani font-bold"
+                  className="bg-card text-nav-intel hover:bg-card/90 font-rajdhani font-bold"
                                   >
                   <Plus className="h-4 w-4 mr-xs" />
                   Submit Location
@@ -426,7 +426,7 @@ export default async function MapPage() {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-border text-white hover:bg-white hover:text-nav-intel"
+                  className="border-border text-white hover:bg-card hover:text-nav-intel"
                                   >
                   View Interactive Map
                 </Button>
@@ -519,7 +519,7 @@ export default async function MapPage() {
                 Verified Only
               </Button>
               <Button variant="outline" size="sm" className="gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-dark-chocolate transition-all duration-200">
-                <Mountain className="h-3 w-3" />
+                <MapPin className="h-3 w-3" />
                 BLM Land
               </Button>
               <Button variant="outline" size="sm" className="gap-xs border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-dark-chocolate transition-all duration-200">
@@ -583,7 +583,7 @@ export default async function MapPage() {
                 const locationSlug = location.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').trim().replace(/^-|-$/g, '')
                 return (
                 <Link key={location.name} href={`/intel/locations/${locationSlug}`} className="block">
-                  <Card className="shadow-whisper hover:shadow-present transition-all duration-300 overflow-hidden hover:scale-[1.02] cursor-pointer">
+                  <Card variant="tactical" tacticalTheme="intel" className="tactical-card-mobile tactical-card-hover shadow-whisper ">
                   <CardHeader className="pb-lg">
                     <div className="flex items-center justify-between mb-md">
                       <Badge variant="intel-location" size="xs">
@@ -613,10 +613,6 @@ export default async function MapPage() {
                         variant="solid-primary"
                         size="sm" 
                         className="bg-nav-intel text-white hover:bg-nav-intel/90 font-rajdhani font-bold"
-                        onClick={(e) => {
-                          e.preventDefault()
-                          e.stopPropagation()
-                        }}
                       >
                         Details
                       </Button>
@@ -812,6 +808,6 @@ export default async function MapPage() {
         </section>
       </div>
       <SiteFooter currentPage="intel" />
-    </>
+    </div>
   )
 }

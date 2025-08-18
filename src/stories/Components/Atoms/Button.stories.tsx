@@ -668,7 +668,7 @@ export const GlassmorphismShowcase: Story = {
             </Button>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-overlay p-lg space-y-base mica-glass">
+          <div className="bg-card/10 backdrop-blur-md border border-white/20 rounded-overlay p-lg space-y-base mica-glass">
             <h3 className="text-display-sm font-rajdhani font-semibold text-nickel-white">
               Glass Card Example
             </h3>

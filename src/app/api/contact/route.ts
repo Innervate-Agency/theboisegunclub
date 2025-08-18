@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
       tls: {
         rejectUnauthorized: false, // For self-signed certs
       },
-      debug: true, // Enable debugging for troubleshooting
+      debug: process.env.NODE_ENV === 'development', // Enable debugging only in development
     });
 
     // Email content
