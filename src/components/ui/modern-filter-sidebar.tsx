@@ -114,7 +114,7 @@ export function ModernFilterSidebar({
                 {/* Mobile Header */}
                 <div className="flex items-center justify-between border-b border-border pb-base">
                   <div className="flex items-center gap-xs">
-                    <Filter weight="bold" className="size-5 text-muted-foreground" />
+                    <Filter className="size-5 text-muted-foreground" />
                     <h3 className="font-rajdhani font-bold text-heading-base text-card-foreground">
                       Filters
                     </h3>
@@ -130,7 +130,7 @@ export function ModernFilterSidebar({
                     onClick={onClose}
                     className="p-xs text-muted-foreground hover:text-card-foreground"
                   >
-                    <X weight="bold" className="size-5" />
+                    <X className="size-5" />
                   </Button>
                 </div>
                 
@@ -162,7 +162,7 @@ export function ModernFilterSidebar({
           <div className="space-y-base">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-xs">
-                <Filter weight="bold" className="size-5 text-muted-foreground" />
+                <Filter className="size-5 text-muted-foreground" />
                 <h3 className="font-rajdhani font-bold text-heading-base text-card-foreground">
                   Filters
                 </h3>
@@ -179,7 +179,7 @@ export function ModernFilterSidebar({
                   onClick={onClearAll}
                   className="gap-xs text-muted-foreground hover:text-nav-events font-rajdhani text-xs p-xs"
                 >
-                  <RotateCw weight="bold" className="size-3" />
+                  <RotateCw className="size-3" />
                   Clear All
                 </Button>
               )}
@@ -207,7 +207,7 @@ export function ModernFilterSidebar({
             onClick={onClearAll}
             className="w-full gap-xs font-rajdhani text-sm"
           >
-            <RotateCw weight="bold" className="size-4" />
+            <RotateCw className="size-4" />
             Clear All Filters ({activeFilterCount})
           </Button>
         )}
@@ -254,7 +254,7 @@ export function ModernFilterSidebar({
                         onClick={() => onClearSection?.(section.id)}
                         className="p-0 h-auto text-muted-foreground hover:text-nav-events"
                       >
-                        <X weight="bold" className="size-3" />
+                        <X className="size-3" />
                       </Button>
                     )}
                     {section.collapsible && (
@@ -265,9 +265,9 @@ export function ModernFilterSidebar({
                         className="p-0 h-auto text-muted-foreground hover:text-card-foreground"
                       >
                         {isExpanded ? (
-                          <ChevronUp weight="bold" className="size-3" />
+                          <ChevronUp className="size-3" />
                         ) : (
-                          <ChevronDown weight="bold" className="size-3" />
+                          <ChevronDown className="size-3" />
                         )}
                       </Button>
                     )}
@@ -308,7 +308,6 @@ export function ModernFilterSidebar({
                               >
                                 <div className="flex items-center gap-xs">
                                   <Icon 
-                                    weight="bold" 
                                     className={cn(
                                       "size-3 transition-colors duration-200",
                                       isActive ? "text-nav-events" : "text-muted-foreground",
@@ -348,12 +347,12 @@ export function ModernFilterSidebar({
                           >
                             {showAll ? (
                               <>
-                                <ChevronUp weight="bold" className="size-3" />
+                                <ChevronUp className="size-3" />
                                 Show Less
                               </>
                             ) : (
                               <>
-                                <ChevronDown weight="bold" className="size-3" />
+                                <ChevronDown className="size-3" />
                                 Show {section.options.length - maxVisible} More
                               </>
                             )}
