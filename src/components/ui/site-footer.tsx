@@ -8,10 +8,11 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { BrassCounter } from "@/components/ui/brass-counter"
 import { Card } from "@/components/ui/card"
-import { 
-  MapPin, Phone, Envelope, Globe, CrosshairSimple, Shield, Users,
-  CaretUp, Question, Heart, Diamond, Ticket, AddressBook, MapTrifold, Storefront
-} from '@phosphor-icons/react'
+import {
+  MapPinIcon, PhoneIcon, EnvelopeIcon, GlobeAltIcon, ViewfinderCircleIcon, 
+  ShieldCheckIcon, UsersIcon, ChevronUpIcon, QuestionMarkCircleIcon, 
+  HeartIcon, CubeTransparentIcon, TicketIcon, BookOpenIcon, MapIcon, BuildingStorefrontIcon
+} from '@heroicons/react/24/outline'
 import { 
   DesertMesaSVG, BoiseFoothillsSVG, SouthBoiseDesertSVG, MountainPineSVG,
   HellsCanyonSVG, SnakeRiverCanyonSVG, CascadeSawtoothsSVG
@@ -85,13 +86,13 @@ export function SiteFooter({
   }, [])
 
   const pageThemeMap = {
-    '/': { icon: Diamond, color: 'text-nav-home', accent: 'bg-nav-home' },
-    '/events': { icon: Ticket, color: 'text-nav-events', accent: 'bg-nav-events' },
-    '/directory': { icon: AddressBook, color: 'text-nav-directory', accent: 'bg-nav-directory' },
-    '/armory': { icon: Shield, color: 'text-nav-armory', accent: 'bg-nav-armory' },
-    '/intel': { icon: MapTrifold, color: 'text-nav-intel', accent: 'bg-nav-intel' },
-    '/marketplace': { icon: Storefront, color: 'text-nav-marketplace', accent: 'bg-nav-marketplace' },
-    '/forums': { icon: Users, color: 'text-nav-forums', accent: 'bg-nav-forums' },
+    '/': { icon: CubeTransparentIcon, color: 'text-nav-home', accent: 'bg-nav-home' },
+    '/events': { icon: TicketIcon, color: 'text-nav-events', accent: 'bg-nav-events' },
+    '/directory': { icon: BookOpenIcon, color: 'text-nav-directory', accent: 'bg-nav-directory' },
+    '/armory': { icon: ShieldCheckIcon, color: 'text-nav-armory', accent: 'bg-nav-armory' },
+    '/intel': { icon: MapIcon, color: 'text-nav-intel', accent: 'bg-nav-intel' },
+    '/marketplace': { icon: BuildingStorefrontIcon, color: 'text-nav-marketplace', accent: 'bg-nav-marketplace' },
+    '/forums': { icon: UsersIcon, color: 'text-nav-forums', accent: 'bg-nav-forums' },
   }
 
   const currentPageTheme = pageThemeMap[pathname as keyof typeof pageThemeMap] || pageThemeMap['/']
@@ -120,13 +121,14 @@ export function SiteFooter({
   return (
     <>
       <footer className={cn(siteFooterVariants({ variant }), "relative overflow-hidden", className)} {...props}>
-        {/* Dynamic Idaho Landscape Background */}
-        <LandscapeComponent opacity={0.05} animated={true} />
-        
-        {/* Page-specific accent bar */}
-        <div className={cn("h-1 relative z-10", currentPageTheme.accent)} />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-[1440px] mx-auto">
+          {/* Dynamic Idaho Landscape Background */}
+          <LandscapeComponent opacity={0.05} animated={true} />
+          
+          {/* Page-specific accent bar */}
+          <div className={cn("h-1 relative z-10", currentPageTheme.accent)} />
+          
+          <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Newsletter CTA Section */}
           {showNewsletter && (
             <div className="py-12 border-b border-border text-center relative z-10">
@@ -161,15 +163,15 @@ export function SiteFooter({
                 </form>
                 <div className="flex items-center justify-center gap-lg mt-lg text-body-sm text-muted-foreground font-rajdhani">
                   <span className="flex items-center gap-1">
-                    <Users weight="bold" className="h-4 w-4" />
+                    <UsersIcon className="h-4 w-4" />
                     5,000+ Members
                   </span>
                   <span className="flex items-center gap-1">
-                    <Shield weight="bold" className="h-4 w-4" />
+                    <ShieldCheckIcon className="h-4 w-4" />
                     100+ Local Partners  
                   </span>
                   <span className="flex items-center gap-1">
-                    <Heart weight="bold" className="h-4 w-4" />
+                    <HeartIcon className="h-4 w-4" />
                     Est. 2017
                   </span>
                 </div>
@@ -179,7 +181,7 @@ export function SiteFooter({
           
           {/* Main Footer Content */}
           <div className="py-16 relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {/* Brand & Contact */}
               <Card
                 variant="tactical"
@@ -188,12 +190,11 @@ export function SiteFooter({
                 category="contact"
                 type="headquarters"
                 content="business contact information"
-                className="lg:col-span-1 p-lg"
+                className="lg:col-span-1 p-md group tactical-dirt"
               >
                 <div className="mb-6">
                   {React.createElement(currentPageTheme.icon, { 
-                    className: `size-12 ${currentPageTheme.color} -rotate-[28deg] mb-4`, 
-                    weight: "bold" 
+                    className: `size-12 ${currentPageTheme.color} -rotate-[28deg] mb-4`
                   })}
                   <div className="text-heading-xl font-rajdhani text-card-foreground leading-none uppercase">
                     <span className="font-[800]">The Boise</span> <span className="font-[300]">Gun Club</span>
@@ -207,15 +208,15 @@ export function SiteFooter({
                 </p>
                 <div className="space-y-3">
                   <a href="tel:+12085556867" className={cn("flex items-center gap-3 text-body-base transition-colors font-rajdhani", mutedColor, linkHoverColor)}>
-                    <Phone weight="bold" className="h-5 w-5" />
+                    <PhoneIcon className="h-5 w-5" />
                     <span>(208) 555-GUNS</span>
                   </a>
                   <a href="mailto:info@boiseguncollective.com" className={cn("flex items-center gap-3 text-body-base transition-colors font-rajdhani", mutedColor, linkHoverColor)}>
-                    <Envelope weight="bold" className="h-5 w-5" />
+                    <EnvelopeIcon className="h-5 w-5" />
                     <span>info@boiseguncollective.com</span>
                   </a>
                   <div className={cn("flex items-center gap-3 text-body-base font-rajdhani", mutedColor)}>
-                    <MapPin weight="bold" className="h-5 w-5" />
+                    <MapPinIcon className="h-5 w-5" />
                     <span>Boise, Idaho</span>
                   </div>
                 </div>
@@ -223,25 +224,25 @@ export function SiteFooter({
               
               {/* Quick Links */}
               <Card
-                variant="tactical" tacticalTheme="home"
+                variant="tactical"
                 tacticalTheme="directory"
                 showCategoryIcon={true}
                 category="navigation"
                 type="links"
                 content="site navigation menu"
-                className="p-lg"
+                className="p-md group tactical-scratches"
               >
                 <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Quick Links
                 </h4>
                 <ul className="space-y-0">
                   {[
-                    { name: "Business Directory", href: "/directory", icon: AddressBook, color: "hover:text-nav-directory" },
-                    { name: "Events Calendar", href: "/events", icon: Ticket, color: "hover:text-nav-events" },
-                    { name: "Marketplace", href: "/marketplace", icon: Storefront, color: "hover:text-nav-marketplace" },
-                    { name: "The Armory", href: "/armory", icon: Shield, color: "hover:text-nav-armory" },
-                    { name: "Training Hub", href: "/training", icon: Shield, color: "hover:text-nav-armory" },
-                    { name: "Intel Center", href: "/intel", icon: MapTrifold, color: "hover:text-nav-intel" }
+                    { name: "Business Directory", href: "/directory", icon: BookOpenIcon, color: "hover:text-nav-directory" },
+                    { name: "Events Calendar", href: "/events", icon: TicketIcon, color: "hover:text-nav-events" },
+                    { name: "Marketplace", href: "/marketplace", icon: BuildingStorefrontIcon, color: "hover:text-nav-marketplace" },
+                    { name: "The Armory", href: "/armory", icon: ShieldCheckIcon, color: "hover:text-nav-armory" },
+                    { name: "Training Hub", href: "/training", icon: ShieldCheckIcon, color: "hover:text-nav-armory" },
+                    { name: "Intel Center", href: "/intel", icon: MapIcon, color: "hover:text-nav-intel" }
                   ].map((link, index, array) => {
                     const Icon = link.icon
                     return (
@@ -256,7 +257,6 @@ export function SiteFooter({
                             )}
                           >
                             <Icon 
-                              weight="bold" 
                               className={cn(
                                 "h-5 w-5 transition-all duration-300",
                                 mutedColor,
@@ -284,25 +284,25 @@ export function SiteFooter({
               
               {/* Resources */}
               <Card
-                variant="tactical" tacticalTheme="home"
+                variant="tactical"
                 tacticalTheme="armory"
                 showCategoryIcon={true}
                 category="training"
                 type="resources"
                 content="educational materials and guides"
-                className="p-lg"
+                className="p-md group tactical-worn"
               >
                 <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Resources
                 </h4>
                 <ul className="space-y-0">
                   {[
-                    { name: "Firearms Training", href: "/training", icon: Shield, color: "hover:text-nav-armory" },
-                    { name: "Safety Courses", href: "/training?type=safety", icon: CrosshairSimple, color: "hover:text-nav-armory" },
-                    { name: "Range Directory", href: "/directory?type=ranges", icon: MapPin, color: "hover:text-nav-directory" },
-                    { name: "Guides & Articles", href: "/guides", icon: Globe, color: "hover:text-nav-intel" },
-                    { name: "Legal Resources", href: "/intel", icon: Shield, color: "hover:text-nav-intel" },
-                    { name: "Equipment Reviews", href: "/armory", icon: Users, color: "hover:text-nav-armory" }
+                    { name: "Firearms Training", href: "/training", icon: ShieldCheckIcon, color: "hover:text-nav-armory" },
+                    { name: "Safety Courses", href: "/training?type=safety", icon: ViewfinderCircleIcon, color: "hover:text-nav-armory" },
+                    { name: "Range Directory", href: "/directory?type=ranges", icon: MapPinIcon, color: "hover:text-nav-directory" },
+                    { name: "Guides & Articles", href: "/guides", icon: GlobeAltIcon, color: "hover:text-nav-intel" },
+                    { name: "Legal Resources", href: "/intel", icon: ShieldCheckIcon, color: "hover:text-nav-intel" },
+                    { name: "Equipment Reviews", href: "/armory", icon: UsersIcon, color: "hover:text-nav-armory" }
                   ].map((resource, index, array) => {
                     const Icon = resource.icon
                     return (
@@ -317,7 +317,6 @@ export function SiteFooter({
                             )}
                           >
                             <Icon 
-                              weight="bold" 
                               className={cn(
                                 "h-5 w-5 transition-all duration-300",
                                 mutedColor,
@@ -345,25 +344,25 @@ export function SiteFooter({
               
               {/* Support */}
               <Card
-                variant="tactical" tacticalTheme="home"
+                variant="tactical"
                 tacticalTheme="intel"
                 showCategoryIcon={true}
                 category="support"
                 type="help"
                 content="customer support and assistance"
-                className="p-lg"
+                className="p-md group tactical-dirt tactical-scratches"
               >
                 <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Support
                 </h4>
                 <ul className="space-y-0">
                   {[
-                    { name: "Help Center", href: "/help", icon: Question, color: "hover:text-nav-intel" },
-                    { name: "Contact Us", href: "/contact", icon: Envelope, color: "hover:text-nav-home" },
-                    { name: "Privacy Policy", href: "/privacy", icon: Shield, color: "hover:text-nav-intel" },
-                    { name: "Terms of Service", href: "/terms", icon: Globe, color: "hover:text-nav-intel" },
-                    { name: "Cookie Policy", href: "/cookies", icon: Shield, color: "hover:text-nav-intel" },
-                    { name: "Accessibility", href: "/accessibility", icon: Heart, color: "hover:text-nav-home" }
+                    { name: "Help Center", href: "/help", icon: QuestionMarkCircleIcon, color: "hover:text-nav-intel" },
+                    { name: "Contact Us", href: "/contact", icon: EnvelopeIcon, color: "hover:text-nav-home" },
+                    { name: "Privacy Policy", href: "/privacy", icon: ShieldCheckIcon, color: "hover:text-nav-intel" },
+                    { name: "Terms of Service", href: "/terms", icon: GlobeAltIcon, color: "hover:text-nav-intel" },
+                    { name: "Cookie Policy", href: "/cookies", icon: ShieldCheckIcon, color: "hover:text-nav-intel" },
+                    { name: "Accessibility", href: "/accessibility", icon: HeartIcon, color: "hover:text-nav-home" }
                   ].map((support, index, array) => {
                     const Icon = support.icon
                     return (
@@ -378,7 +377,6 @@ export function SiteFooter({
                             )}
                           >
                             <Icon 
-                              weight="bold" 
                               className={cn(
                                 "h-5 w-5 transition-all duration-300",
                                 mutedColor,
@@ -442,6 +440,7 @@ export function SiteFooter({
             </div>
           </div>
         </div>
+        </div>
       </footer>
       
       {/* Back to Top FAB */}
@@ -457,7 +456,7 @@ export function SiteFooter({
           )}
           title="Back to top"
         >
-          <CaretUp weight="bold" className="h-5 w-5 transition-transform group-hover:-translate-y-1" />
+          <ChevronUpIcon className="h-5 w-5 transition-transform group-hover:-translate-y-1" />
         </button>
       )}
     </>

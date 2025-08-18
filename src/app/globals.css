@@ -369,9 +369,9 @@
       radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
       radial-gradient(circle at 75% 75%, rgba(0, 0, 0, 0.015) 0%, transparent 50%),
       linear-gradient(135deg, rgba(217, 134, 59, 0.04) 0%, rgba(184, 147, 100, 0.025) 50%, rgba(139, 131, 134, 0.03) 100%),
-      rgba(248, 246, 241, 0.825); /* Optimal 82.5% opacity for visibility and glassmorphism */
-    backdrop-filter: blur(18px) saturate(1.9) contrast(1.15);
-    -webkit-backdrop-filter: blur(18px) saturate(1.9) contrast(1.15);
+      rgba(248, 246, 241, 0.9); /* Enhanced 90% opacity for more solid tactical feel */
+    backdrop-filter: blur(18px) saturate(2.3) contrast(1.2);
+    -webkit-backdrop-filter: blur(18px) saturate(2.3) contrast(1.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
   }
@@ -497,6 +497,10 @@
 /* ===============================================================================
    CUSTOM UTILITIES
    =============================================================================== */
+
+@utility font-body {
+  font-family: var(--font-noto-sans);
+}
 
 @utility gpu-accelerated {
   transform: translateZ(0);
@@ -945,6 +949,59 @@
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
   }
 
+  /* Subtle tactical weathering effects using SVG noise */
+  .tactical-grain {
+    position: relative;
+  }
+
+  .tactical-grain::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='grain'><feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23grain)' opacity='0.1'/></svg>");
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+
+  .tactical-paper {
+    position: relative;
+  }
+
+  .tactical-paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,<svg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'><filter id='paper'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23paper)' opacity='0.05'/></svg>");
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: soft-light;
+  }
+
+  .tactical-worn {
+    position: relative;
+  }
+
+  .tactical-worn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,<svg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'><filter id='worn'><feTurbulence type='turbulence' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23worn)' opacity='0.08'/></svg>");
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+  }
+
+
   .bg-gradient-glass-dark {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
   }
@@ -1083,7 +1140,7 @@
   /* Progressive Enhancement - Hover only when available */
   @media (hover: hover) and (pointer: fine) {
     .tactical-card-hover:hover {
-      border-color: currentColor;
+      /* border-color: currentColor; -- Disabled to use corner brackets only */
       box-shadow: var(--shadow-whisper);
     }
   }

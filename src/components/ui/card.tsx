@@ -138,8 +138,6 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           isTactical && [
             // Progressive enhancement classes
             'tactical-card-mobile tactical-card-hover tactical-haptic',
-            // Theme-based hover states
-            themeClasses.hoverBorder,
             // Focus states for accessibility
             'focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-ring',
             // Smooth transitions (will be disabled on reduced motion)
@@ -153,12 +151,12 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         {isTactical && (
           <>
             {/* Corner brackets - larger than navbar version */}
-            <div className={cn('absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 opacity-0 group-hover:opacity-25 transition-all duration-200', themeClasses.border)} />
-            <div className={cn('absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 opacity-0 group-hover:opacity-25 transition-all duration-200', themeClasses.border)} />
-            <div className={cn('absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 opacity-0 group-hover:opacity-25 transition-all duration-200', themeClasses.border)} />
+            <div className={cn('absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 opacity-0 group-hover:opacity-100 transition-all duration-200', themeClasses.border)} />
+            <div className={cn('absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 opacity-0 group-hover:opacity-100 transition-all duration-200', themeClasses.border)} />
+            <div className={cn('absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 opacity-0 group-hover:opacity-100 transition-all duration-200', themeClasses.border)} />
             
             {/* Bottom-right corner with document cutout */}
-            <div className={'absolute bottom-0 right-0 w-3 h-3 opacity-0 group-hover:opacity-25 transition-all duration-200'}>
+            <div className={'absolute bottom-0 right-0 w-3 h-3 opacity-0 group-hover:opacity-100 transition-all duration-200'}>
               <div 
                 className={cn('w-full h-full border-2', themeClasses.border)}
                 style={{

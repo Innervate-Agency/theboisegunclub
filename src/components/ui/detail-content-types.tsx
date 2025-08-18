@@ -408,21 +408,21 @@ export function BusinessContent({
       {/* Comprehensive SEO-Rich Business Description */}
       <div className="prose prose-lg dark:prose-invert max-w-none space-y-xl">
         {/* Paragraph 1: Business Overview & Expertise */}
-        <div className="text-body-lg leading-relaxed space-y-base">
+        <div className="font-body text-body-lg leading-loose space-y-base">
           <p>
             <strong className="font-rajdhani text-xl font-bold text-nav-directory">{businessName}</strong> stands as a cornerstone of the {city} firearms community, representing the kind of professional, knowledgeable {businessType.toLowerCase()} service that serious shooters and collectors depend on. Located in the heart of {city}, {state}, this {yearEstablished ? `well-established business has been serving local gun enthusiasts since ${yearEstablished}` : 'trusted establishment has built a reputation for excellence'}, developing deep expertise in {businessType.toLowerCase()} operations that reflects the unique needs of Idaho's diverse shooting community. Whether you're a competitive shooter preparing for your next match, a hunting enthusiast getting ready for elk season, or a collector seeking specialized services, {businessName} brings the kind of focused attention and technical knowledge that can only come from {yearEstablished ? `${new Date().getFullYear() - yearEstablished} years` : 'extensive experience'} of dedicated service to the Treasure Valley's firearms community.
           </p>
         </div>
 
         {/* Paragraph 2: Services & Community Impact */}
-        <div className="text-body-lg leading-relaxed space-y-base">
+        <div className="font-body text-body-lg leading-loose space-y-base">
           <p>
             The comprehensive range of services offered by {businessName} reflects the evolving needs of Idaho's responsible gun owners, from basic {businessType.toLowerCase()} operations to specialized technical work that requires both precision and deep understanding of firearms regulations. With {services.length} distinct service offerings, the business has positioned itself as a true one-stop resource for {businessType === 'FFL Dealer' ? 'firearm transfers, sales, and compliance services' : businessType === 'Gunsmith' ? 'custom builds, repairs, and precision modifications' : businessType === 'Training Facility' ? 'education, safety courses, and skills development' : 'professional firearms services'}. The team's commitment to staying current with both state and federal regulations ensures that every transaction and service meets the highest standards of legal compliance, while their focus on customer education helps build a more informed and responsible shooting community throughout the Treasure Valley region.
           </p>
         </div>
 
         {/* Paragraph 3: Local Connection & Quality Standards */}
-        <div className="text-body-lg leading-relaxed space-y-base">
+        <div className="font-body text-body-lg leading-loose space-y-base">
           <p>
             What truly sets {businessName} apart in the competitive {city} market is their genuine connection to the local firearms community and unwavering commitment to quality service standards. As {isVerified ? 'a verified business' : 'a trusted member'} of the Treasure Valley firearms network, they understand that reputation is built one satisfied customer at a time, whether that's ensuring a flawless FFL transfer, delivering precision work on a custom build, or providing the kind of knowledgeable advice that helps shooters make informed decisions about their equipment and training. Their location in {city} provides convenient access for customers throughout {serviceArea.length > 0 ? serviceArea.join(', ') + ' and surrounding areas' : 'the greater Boise area'}, with {hours.toLowerCase().includes('appointment') || hours.toLowerCase().includes('call') ? 'flexible scheduling options' : 'convenient business hours'} designed to accommodate the busy schedules of working professionals who are serious about their shooting sports and Second Amendment rights.
           </p>
@@ -436,7 +436,7 @@ export function BusinessContent({
           <div className="prose prose-lg dark:prose-invert max-w-none
             prose-headings:font-rajdhani prose-headings:font-bold
             prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
-            prose-p:text-body-base prose-p:leading-relaxed
+            prose-p:font-body prose-p:text-body-base prose-p:leading-loose
             prose-a:text-nav-directory prose-a:no-underline hover:prose-a:underline
             prose-strong:text-foreground prose-strong:font-semibold
             prose-blockquote:border-l-4 prose-blockquote:border-nav-directory/30
