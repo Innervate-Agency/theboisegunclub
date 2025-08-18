@@ -28,8 +28,13 @@ const nextConfig = {
       'recharts'
     ],
     // Server actions for React 19
-    serverActions: true
+    serverActions: {
+      bodySizeLimit: '2mb',
+    }
   },
+  
+  // Enable standalone output for Docker deployment
+  output: 'standalone',
 
   // Performance optimizations (swcMinify is default in Next.js 15)
   compress: true,

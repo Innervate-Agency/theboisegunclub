@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { BusinessDetailPage } from '@/components/ui/detail-page-builder'
+import { allFFLs, type FFLBusiness } from '@/lib/generated-ffl-data'
 
 // Business data interface
 interface BusinessData {
@@ -53,8 +54,54 @@ interface BusinessData {
   }>
 }
 
-// Business data service - this would come from a database in production
-const getBusinessData = (slug: string): BusinessData | null => {
+// Business data service - tries database first, then fallback to hardcoded
+const getBusinessData = async (slug: string): Promise<BusinessData | null> => {
+  // Try database first if available
+  try {
+    const { db } = await import('@/lib/database')
+    const dbBusiness = await db.getBusinessBySlug(slug)
+    
+    if (dbBusiness) {
+      // Convert database business to our interface
+      return {
+        slug: dbBusiness.slug,
+        businessName: dbBusiness.display_name,
+        businessType: dbBusiness.business_type,
+        description: dbBusiness.description,
+        fullDescription: `# ${dbBusiness.display_name}\n\n${dbBusiness.description}\n\n## Services\n\n${dbBusiness.services.join(', ')}\n\n## Specialties\n\n${dbBusiness.specialties.join(', ')}`,
+        address: dbBusiness.premise_street || '',
+        city: dbBusiness.premise_city || '',
+        state: dbBusiness.premise_state,
+        zip: dbBusiness.premise_zip_code || '',
+        phone: dbBusiness.voice_phone || '',
+        website: dbBusiness.website,
+        email: dbBusiness.email,
+        hours: typeof dbBusiness.hours === "object" && dbBusiness.hours ? 
+          Object.entries(dbBusiness.hours).map(([day, time]) => `${day}: ${time}`).join(", ") : 
+          (typeof dbBusiness.hours === "string" ? dbBusiness.hours : "Hours not available"),
+        isVerified: dbBusiness.is_verified,
+        verificationStatus: dbBusiness.verification_status || 'Verified FFL Dealer',
+        rating: dbBusiness.current_rating || 0,
+        reviewCount: dbBusiness.review_count || 0,
+        services: dbBusiness.services || [],
+        specialties: dbBusiness.specialties || [],
+        certifications: dbBusiness.certifications || [],
+        tier: dbBusiness.tier,
+        isSponsored: dbBusiness.is_sponsored,
+        yearEstablished: dbBusiness.year_established,
+        employeeCount: dbBusiness.employee_count,
+        serviceArea: dbBusiness.service_area || [],
+        paymentMethods: dbBusiness.payment_methods || ['Cash', 'Credit Card'],
+        logo: dbBusiness.logo_url,
+        images: dbBusiness.images || [],
+        relatedBusinesses: [] // TODO: Implement related businesses query
+      }
+    }
+  } catch (error) {
+    console.log('Database not available, using fallback data:', error.message)
+  }
+  
+  // Fallback to hardcoded examples for development or if database fails
   const businesses: BusinessData[] = [
     {
       slug: 'nampa-rod-gun-club',
@@ -395,7 +442,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const business = getBusinessData(slug)
+  const business = await getBusinessData(slug)
 
   if (!business) {
     return {
@@ -417,19 +464,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  // In production, this would fetch all business slugs from your data source
-  return [
-    { slug: 'nampa-rod-gun-club' },
-    { slug: 'independence-indoor-shooting' },
-    { slug: 'caldwell-gun-club' },
-    { slug: 'sportsmans-warehouse-meridian' },
-    { slug: 'trigger-time-gun-range' }
-  ]
+  // For development, use hardcoded examples
+  if (process.env.NODE_ENV === 'development') {
+    return [
+      { slug: 'nampa-rod-gun-club' },
+      { slug: 'independence-indoor-shooting' },
+      { slug: 'caldwell-gun-club' },
+      { slug: 'sportsmans-warehouse-meridian' },
+      { slug: 'trigger-time-gun-range' }
+    ]
+  }
+  
+  // In production, generate all business pages from database
+  try {
+    const { db } = await import('@/lib/database')
+    const slugs = await db.getAllBusinessSlugs()
+    console.log(`🏗️  Generating ${slugs.length} business pages`)
+    return slugs.map(slug => ({ slug }))
+  } catch (error) {
+    console.error('Failed to get business slugs from database:', error)
+    // Fallback to FFL data if database is not available
+    const { allFFLs } = await import('@/lib/generated-ffl-data')
+    return allFFLs.slice(0, 50).map(business => ({ slug: business.slug }))
+  }
 }
 
 export default async function DirectoryDetailPage({ params }: Props) {
   const { slug } = await params
-  const business = getBusinessData(slug)
+  const business = await getBusinessData(slug)
 
   if (!business) {
     notFound()

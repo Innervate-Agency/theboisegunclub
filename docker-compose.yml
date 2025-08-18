@@ -1,0 +1,94 @@
+# =====================================================
+# The Boise Gun Club - Production-Ready Docker Compose
+# Identical to Coolify deployment environment
+# =====================================================
+
+version: '3.8'
+
+services:
+  # Next.js Application
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://bgc_user:bgc_secure_password@postgres:5432/boise_gun_club
+      - SERPAPI_KEY=${SERPAPI_KEY:-your_serpapi_key_here}
+      - OPENWEATHER_API_KEY=${OPENWEATHER_API_KEY:-your_openweather_key_here}
+      - NEXT_PUBLIC_SITE_URL=https://boisegunclub.com
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - bgc_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # PostgreSQL Database  
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=boise_gun_club
+      - POSTGRES_USER=bgc_user
+      - POSTGRES_PASSWORD=bgc_secure_password
+      - POSTGRES_INITDB_ARGS=--encoding=UTF-8 --lc-collate=C --lc-ctype=C
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database-init:/docker-entrypoint-initdb.d:ro
+    ports:
+      - "5432:5432"  # For local development access
+    networks:
+      - bgc_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bgc_user -d boise_gun_club"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: >
+      postgres 
+      -c shared_preload_libraries=pg_stat_statements
+      -c max_connections=200
+      -c shared_buffers=256MB
+      -c effective_cache_size=1GB
+      -c maintenance_work_mem=64MB
+      -c checkpoint_completion_target=0.9
+      -c wal_buffers=16MB
+      -c default_statistics_target=100
+      -c random_page_cost=1.1
+      -c effective_io_concurrency=200
+
+  # Redis for caching (optional but recommended for production)
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - bgc_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    command: redis-server --appendonly yes --maxmemory 128mb --maxmemory-policy allkeys-lru
+
+networks:
+  bgc_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
