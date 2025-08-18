@@ -20,6 +20,10 @@ import {
   RotateCw
 } from '@phosphor-icons/react'
 
+// Note: Since this component receives icon components as props,
+// we don't need to import all possible icons here.
+// The icons are passed from the parent component.
+
 interface FilterOption {
   id: string
   label: string
@@ -289,6 +293,12 @@ export function ModernFilterSidebar({
                         {visibleOptions.map((option) => {
                           const isActive = isFilterActive(section.id, option.id)
                           const Icon = option.icon
+
+                          // Debug log to see what's undefined
+                          if (!Icon) {
+                            console.error('Icon is undefined for option:', option)
+                            return null
+                          }
 
                           return (
                             <motion.div
