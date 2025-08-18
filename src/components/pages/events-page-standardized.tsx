@@ -16,6 +16,7 @@ import { EventsEmbers } from '@/components/ui/hero-events-embers'
 import { DirectoryStatsGrid } from '@/components/ui/directory-stats-grid'
 import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
 import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
+import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { 
   Ticket, Trophy, Target, Users, Calendar, Plus, ArrowRight, 
   CaretRight, Crown, MapPin, Clock, CheckCircle, Star,
@@ -291,6 +292,7 @@ const upcomingEvents: EventData[] = [
 ]
 
 export function EventsPageStandardized() {
+  const [mobileFiltersOpen, setMobileFiltersOpen] = React.useState(false)
   // Activity feed data for events based on real almanac data
   const activityFeedData = [
     {
@@ -363,21 +365,30 @@ export function EventsPageStandardized() {
     
     // Custom filters
     customFilters: {
-      eventType: (event, selectedTypes) => selectedTypes.includes(event.eventType.toLowerCase()),
+      eventType: (event, selectedTypes) => {
+        if (selectedTypes.length === 0) return true
+        return selectedTypes.includes(event.eventType.toLowerCase())
+      },
       price: (event, selectedPrices) => {
+        if (selectedPrices.length === 0) return true
         const price = event.price.toLowerCase()
-        if (selectedPrices.includes('free')) return price === 'free'
-        if (selectedPrices.includes('under25')) return price.includes('$') && parseInt(price.replace(/[^0-9]/g, '')) < 25
-        if (selectedPrices.includes('under100')) return price.includes('$') && parseInt(price.replace(/[^0-9]/g, '')) < 100
-        if (selectedPrices.includes('over100')) return price.includes('$') && parseInt(price.replace(/[^0-9]/g, '')) >= 100
-        return true
+        return selectedPrices.some(priceRange => {
+          if (priceRange === 'free') return price === 'free'
+          if (priceRange === 'under25') return price.includes('$') && parseInt(price.replace(/[^0-9]/g, '')) < 25
+          if (priceRange === 'under100') return price.includes('$') && parseInt(price.replace(/[^0-9]/g, '')) < 100
+          if (priceRange === 'over100') return price.includes('$') && parseInt(price.replace(/[^0-9]/g, '')) >= 100
+          return false
+        })
       },
       availability: (event, selectedOptions) => {
+        if (selectedOptions.length === 0) return true
         const spotsLeft = event.capacity - event.registeredCount
-        if (selectedOptions.includes('available')) return spotsLeft > 0
-        if (selectedOptions.includes('filling-fast')) return spotsLeft > 0 && spotsLeft <= 10
-        if (selectedOptions.includes('waitlist')) return spotsLeft <= 0
-        return true
+        return selectedOptions.some(option => {
+          if (option === 'available') return spotsLeft > 0
+          if (option === 'filling-fast') return spotsLeft > 0 && spotsLeft <= 10
+          if (option === 'waitlist') return spotsLeft <= 0
+          return false
+        })
       }
     },
     
@@ -394,6 +405,62 @@ export function EventsPageStandardized() {
       alphabetical: (a, b) => a.title.localeCompare(b.title)
     }
   })
+
+  // Modern filter sidebar configuration
+  const filterSections = [
+    {
+      id: 'eventType',
+      title: 'Event Type',
+      maxVisible: 5,
+      collapsible: false,
+      options: [
+        { id: 'competition', label: 'Competitions', icon: Trophy, count: upcomingEvents.filter(e => e.eventType === 'Competition').length, color: 'text-nav-events' },
+        { id: 'training', label: 'Training', icon: Target, count: upcomingEvents.filter(e => e.eventType === 'Training').length, color: 'text-nav-armory' },
+        { id: 'expo', label: 'Gun Shows', icon: Crown, count: upcomingEvents.filter(e => e.eventType === 'Expo').length, color: 'text-nav-marketplace' },
+        { id: 'charity', label: 'Charity Events', icon: Medal, count: upcomingEvents.filter(e => e.eventType === 'Charity').length, color: 'text-sagebrush-green' },
+        { id: 'social', label: 'Social Events', icon: Users, count: upcomingEvents.filter(e => e.eventType === 'Social').length, color: 'text-nav-forums' }
+      ]
+    },
+    {
+      id: 'price',
+      title: 'Price Range',
+      maxVisible: 4,
+      collapsible: false,
+      options: [
+        { id: 'free', label: 'Free', icon: CurrencyDollar, count: upcomingEvents.filter(e => e.price.toLowerCase() === 'free').length },
+        { id: 'under25', label: 'Under $25', icon: CurrencyDollar, count: upcomingEvents.filter(e => e.price.includes('$') && parseInt(e.price.replace(/[^0-9]/g, '')) < 25).length },
+        { id: 'under100', label: 'Under $100', icon: CurrencyDollar, count: upcomingEvents.filter(e => e.price.includes('$') && parseInt(e.price.replace(/[^0-9]/g, '')) < 100).length },
+        { id: 'over100', label: '$100+', icon: CurrencyDollar, count: upcomingEvents.filter(e => e.price.includes('$') && parseInt(e.price.replace(/[^0-9]/g, '')) >= 100).length }
+      ]
+    },
+    {
+      id: 'availability',
+      title: 'Availability',
+      maxVisible: 3,
+      collapsible: false,
+      options: [
+        { id: 'available', label: 'Spots Available', icon: Clock, count: upcomingEvents.filter(e => (e.capacity - e.registeredCount) > 0).length, color: 'text-sagebrush-green' },
+        { id: 'filling-fast', label: 'Filling Fast', icon: Clock, count: upcomingEvents.filter(e => (e.capacity - e.registeredCount) > 0 && (e.capacity - e.registeredCount) <= 10).length, color: 'text-sandy-ochre' },
+        { id: 'waitlist', label: 'Waitlist Only', icon: Clock, count: upcomingEvents.filter(e => (e.capacity - e.registeredCount) <= 0).length, color: 'text-rusty-orange' }
+      ]
+    }
+  ]
+
+  const handleFilterChange = (sectionId: string, optionId: string) => {
+    filters.updateFilters(sectionId, optionId)
+  }
+
+  const handleClearSection = (sectionId: string) => {
+    filters.clearFilterSection(sectionId)
+  }
+
+  const handleClearAll = () => {
+    filters.clearAllFilters()
+  }
+
+  const getActiveFilterCount = () => {
+    return Object.values(filters.selectedFilters).reduce((count, filterArray) => count + filterArray.length, 0)
+  }
 
   // Hero content - working direct implementation like intel page
   const heroContent = (
@@ -589,116 +656,32 @@ export function EventsPageStandardized() {
         <div className="w-full px-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl">
           <div className="flex gap-2xl max-w-[1920px] mx-auto">
             
-            {/* Left Sidebar - Filters */}
-            <aside className="w-80 flex-shrink-0 hidden lg:block">
-              <div className="sticky top-4 space-y-lg">
-                <Card className="mica shadow-present rounded-xs">
-                  <CardContent className="p-lg">
-                    <div className="space-y-lg">
-                      <div className="flex items-center gap-xs">
-                        <Filter weight="bold" className="size-4 text-muted-foreground" />
-                        <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground">
-                          Filters
-                        </h3>
-                      </div>
-
-                      {/* Event Type Filters */}
-                      <div className="space-y-sm">
-                        <h4 className="font-rajdhani font-semibold text-body-sm text-card-foreground uppercase tracking-wider">
-                          Event Type
-                        </h4>
-                        <div className="space-y-xs">
-                          {[
-                            { id: 'Competition', label: 'Competitions', icon: Trophy, count: upcomingEvents.filter(e => e.eventType === 'Competition').length },
-                            { id: 'Training', label: 'Training', icon: Target, count: upcomingEvents.filter(e => e.eventType === 'Training').length },
-                            { id: 'Expo', label: 'Gun Shows', icon: Crown, count: upcomingEvents.filter(e => e.eventType === 'Expo').length },
-                            { id: 'Charity', label: 'Charity Events', icon: Medal, count: upcomingEvents.filter(e => e.eventType === 'Charity').length },
-                            { id: 'Social', label: 'Social Events', icon: Users, count: upcomingEvents.filter(e => e.eventType === 'Social').length }
-                          ].map((eventType) => (
-                            <Button
-                              key={eventType.id}
-                              variant={filters.selectedFilters.eventType?.includes(eventType.id.toLowerCase()) ? "default" : "ghost"}
-                              size="sm"
-                              onClick={() => filters.updateFilters('eventType', eventType.id.toLowerCase())}
-                              className="w-full justify-between text-body-xs font-rajdhani shadow-none rounded-xs h-8"
-                            >
-                              <div className="flex items-center gap-xs">
-                                <eventType.icon weight="bold" className="size-3" />
-                                {eventType.label}
-                              </div>
-                              <Badge variant="secondary" size="sm">
-                                {eventType.count}
-                              </Badge>
-                            </Button>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Price Range Filters */}
-                      <div className="space-y-sm">
-                        <h4 className="font-rajdhani font-semibold text-body-sm text-card-foreground uppercase tracking-wider">
-                          Price Range
-                        </h4>
-                        <div className="space-y-xs">
-                          {[
-                            { id: 'free', label: 'Free', count: upcomingEvents.filter(e => e.price === 'Free').length },
-                            { id: 'under25', label: 'Under $25', count: upcomingEvents.filter(e => e.price.includes('$') && parseInt(e.price.replace(/[^0-9]/g, '')) < 25).length },
-                            { id: 'under100', label: 'Under $100', count: upcomingEvents.filter(e => e.price.includes('$') && parseInt(e.price.replace(/[^0-9]/g, '')) < 100).length },
-                            { id: 'over100', label: '$100+', count: upcomingEvents.filter(e => e.price.includes('$') && parseInt(e.price.replace(/[^0-9]/g, '')) >= 100).length }
-                          ].map((priceRange) => (
-                            <Button
-                              key={priceRange.id}
-                              variant={filters.selectedFilters.price?.includes(priceRange.id) ? "default" : "ghost"}
-                              size="sm"
-                              onClick={() => filters.updateFilters('price', priceRange.id)}
-                              className="w-full justify-between text-body-xs font-rajdhani shadow-none rounded-xs h-8"
-                            >
-                              <div className="flex items-center gap-xs">
-                                <CurrencyDollar weight="bold" className="size-3" />
-                                {priceRange.label}
-                              </div>
-                              <Badge variant="secondary" size="sm">
-                                {priceRange.count}
-                              </Badge>
-                            </Button>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Availability Filters */}
-                      <div className="space-y-sm">
-                        <h4 className="font-rajdhani font-semibold text-body-sm text-card-foreground uppercase tracking-wider">
-                          Availability
-                        </h4>
-                        <div className="space-y-xs">
-                          {[
-                            { id: 'available', label: 'Spots Available', count: upcomingEvents.filter(e => (e.capacity - e.registeredCount) > 0).length },
-                            { id: 'filling-fast', label: 'Filling Fast', count: upcomingEvents.filter(e => (e.capacity - e.registeredCount) > 0 && (e.capacity - e.registeredCount) <= 10).length },
-                            { id: 'waitlist', label: 'Waitlist Only', count: upcomingEvents.filter(e => (e.capacity - e.registeredCount) <= 0).length }
-                          ].map((availability) => (
-                            <Button
-                              key={availability.id}
-                              variant={filters.selectedFilters.availability?.includes(availability.id) ? "default" : "ghost"}
-                              size="sm"
-                              onClick={() => filters.updateFilters('availability', availability.id)}
-                              className="w-full justify-between text-body-xs font-rajdhani shadow-none rounded-xs h-8"
-                            >
-                              <div className="flex items-center gap-xs">
-                                <Clock weight="bold" className="size-3" />
-                                {availability.label}
-                              </div>
-                              <Badge variant="secondary" size="sm">
-                                {availability.count}
-                              </Badge>
-                            </Button>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+            {/* Left Sidebar - Modern Filters (Desktop) */}
+            <aside className="hidden lg:block">
+              <ModernFilterSidebar
+                sections={filterSections}
+                selectedFilters={filters.selectedFilters}
+                onFilterChange={handleFilterChange}
+                onClearSection={handleClearSection}
+                onClearAll={handleClearAll}
+                totalResults={filters.totalResults}
+                filteredResults={filters.filteredResults}
+              />
             </aside>
+
+            {/* Mobile Filter Sidebar */}
+            <ModernFilterSidebar
+              sections={filterSections}
+              selectedFilters={filters.selectedFilters}
+              onFilterChange={handleFilterChange}
+              onClearSection={handleClearSection}
+              onClearAll={handleClearAll}
+              totalResults={filters.totalResults}
+              filteredResults={filters.filteredResults}
+              isMobile={true}
+              isOpen={mobileFiltersOpen}
+              onClose={() => setMobileFiltersOpen(false)}
+            />
             
             {/* Main Content */}
             <main className="flex-1 min-w-0">
@@ -716,6 +699,22 @@ export function EventsPageStandardized() {
                 
                 {/* View Controls */}
                 <div className="flex items-center gap-sm sm:gap-base">
+                  {/* Mobile Filter Button */}
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setMobileFiltersOpen(true)}
+                    className="gap-xs font-rajdhani lg:hidden"
+                  >
+                    <Filter weight="bold" className="size-4" />
+                    Filters
+                    {getActiveFilterCount() > 0 && (
+                      <Badge variant="secondary" className="ml-xs bg-nav-events/20 text-nav-events border-nav-events/30 text-xs">
+                        {getActiveFilterCount()}
+                      </Badge>
+                    )}
+                  </Button>
+                  
                   {/* Sort Dropdown */}
                   <select
                     value={filters.sortBy}

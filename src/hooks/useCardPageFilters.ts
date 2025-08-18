@@ -107,6 +107,18 @@ export function useCardPageFilters<T>({
     setFilterState(prev => ({ ...prev, currentPage: page }))
   }, [])
 
+  // Clear filters for a specific category
+  const clearFilterSection = useCallback((category: string) => {
+    setFilterState(prev => ({
+      ...prev,
+      selectedFilters: {
+        ...prev.selectedFilters,
+        [category]: []
+      },
+      currentPage: 1
+    }))
+  }, [])
+
   // Clear all filters
   const clearAllFilters = useCallback(() => {
     setFilterState(prev => ({
@@ -188,6 +200,7 @@ export function useCardPageFilters<T>({
     setViewMode,
     setSortBy,
     setCurrentPage,
+    clearFilterSection,
     clearAllFilters,
     
     // Results
