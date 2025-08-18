@@ -188,16 +188,16 @@ export default function HomePage() {
                 >
                   <Button 
                     size="xl"
-                    className="bg-crisp-off-white text-rusty-orange hover:bg-crisp-off-white/90 font-rajdhani font-bold shadow-hero"
                     animationType="arrow"
+                    className="bg-crisp-off-white text-rusty-orange hover:bg-crisp-off-white/90 font-rajdhani font-bold shadow-hero"
                   >
                     Join Our Community
                   </Button>
                   <Button 
                     variant="outline" 
                     size="xl"
-                    className="border-crisp-off-white text-crisp-off-white hover:bg-crisp-off-white/10 font-rajdhani font-bold border-2"
                     animationType="arrow"
+                    className="border-crisp-off-white text-crisp-off-white hover:bg-crisp-off-white/10 font-rajdhani font-bold border-2"
                   >
                     Explore Directory
                   </Button>
@@ -240,7 +240,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-sm sm:gap-base lg:gap-lg">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-base sm:gap-lg lg:gap-xl">
               {platformFeatures.map((feature, index) => (
                 <PlatformFeatureCard key={index} {...feature} />
               ))}
@@ -251,7 +251,7 @@ export default function HomePage() {
         {/* Featured Content Grid */}
         <section className="py-lg sm:py-xl lg:py-3xl bg-muted/30">
           <div className="container mx-auto px-sm sm:px-md lg:px-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-lg lg:gap-xl">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl lg:gap-2xl">
               {/* Featured Event */}
               <div className="lg:col-span-2 order-1 lg:order-none">
                 <h3 className="font-rajdhani font-bold text-2xl text-card-foreground mb-lg">
@@ -340,7 +340,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-sm sm:gap-base lg:gap-lg">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-base sm:gap-lg lg:gap-xl">
               {platformValueCards.map((card, index) => (
                 <PlatformValueCard key={index} {...card} />
               ))}

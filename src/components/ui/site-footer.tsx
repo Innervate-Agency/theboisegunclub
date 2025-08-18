@@ -150,6 +150,7 @@ export function SiteFooter({
                     type="submit" 
                     disabled={isSubscribing}
                     animationType={isSubscribing ? "none" : "arrow"}
+                    loading={isSubscribing}
                     className={cn(
                       "font-rajdhani font-semibold group whitespace-nowrap",
                       isDark ? "bg-primary text-primary-foreground hover:bg-primary/90" : "bg-primary text-primary-foreground hover:bg-primary/90"
