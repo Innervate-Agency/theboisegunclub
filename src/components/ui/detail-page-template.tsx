@@ -7,9 +7,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { 
-  ChevronRight, ArrowLeft, Share2, Bookmark
+  ChevronRight, ArrowLeft, Share2, Bookmark, Target
 } from 'lucide-react'
 import Link from 'next/link'
+import { VerificationStatus } from '@/components/ui/verification-status'
 
 // Base interfaces for all detail page types
 interface DetailPageSection {
@@ -66,6 +67,13 @@ interface DetailPageTemplateProps {
   heroImage?: string
   heroContent?: React.ReactNode
   className?: string
+  // Verification props for business pages
+  verification?: {
+    isVerified: boolean
+    verificationStatus?: string
+  }
+  // Reviews section for business pages
+  reviewsSection?: React.ReactNode
 }
 
 export default function DetailPageTemplate({
@@ -74,7 +82,9 @@ export default function DetailPageTemplate({
   sidebar,
   heroImage,
   heroContent,
-  className = ''
+  className = '',
+  verification,
+  reviewsSection
 }: DetailPageTemplateProps) {
   const { meta, section, breadcrumbs = [], actions = [] } = header
   const { title, description, featured, tags = [], badges = [] } = meta
@@ -83,154 +93,142 @@ export default function DetailPageTemplate({
     <div className={`theme-${section.name.toLowerCase()} min-h-screen ${className}`}>
       <SiteNavigation />
       
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-card to-muted/50 px-md py-xl">
-        <div className="container mx-auto max-w-site relative z-10">
-          {/* Breadcrumb Navigation */}
-          <div className="flex items-center gap-xs text-sm text-muted-foreground mb-lg">
-            <Link href="/" className="hover:text-foreground transition-colors">
-              Home
-            </Link>
-            <ChevronRight className="h-4 w-4" />
-            <Link href={section.path} className={`hover:text-${section.color} transition-colors`}>
-              {section.name}
-            </Link>
-            {breadcrumbs.map((crumb, index) => (
-              <React.Fragment key={index}>
-                <ChevronRight className="h-4 w-4" />
-                <Link href={crumb.href} className={`hover:text-${section.color} transition-colors`}>
-                  {crumb.label}
-                </Link>
-              </React.Fragment>
-            ))}
-            <ChevronRight className="h-4 w-4" />
-            <span className={`text-${section.color} font-medium`}>{title}</span>
-          </div>
+      {/* Hero Section with Full-Width Background */}
+      <section className="relative overflow-hidden">
+        {/* Hero Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-card via-muted/30 to-background" 
+             style={{ 
+               minHeight: '500px',
+               height: 'auto'
+             }}>
+          {/* Subtle texture overlay with fade */}
+          <div 
+            className="absolute inset-0" 
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000' fill-opacity='1'%3E%3Cpath d='M20 20c0 0 0-8 0-8s8 0 8 0 0 8 0 8-8 0-8 0zM0 0c0 0 0-8 0-8s8 0 8 0 0 8 0 8-8 0-8 0z'/%3E%3C/g%3E%3C/svg%3E")`,
+              maskImage: 'radial-gradient(circle at center, black 0%, black 40%, transparent 80%)',
+              WebkitMaskImage: 'radial-gradient(circle at center, black 0%, black 40%, transparent 80%)',
+              opacity: 0.02
+            }}
+          />
           
-          {/* Back Button */}
-          <div className="mb-lg">
-            <Link href={section.path}>
-              <Button variant="ghost" className="gap-xs">
-                <ArrowLeft className="h-4 w-4" />
-                Back to {section.name}
-              </Button>
-            </Link>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl">
-            {/* Header Content - Left Side */}
-            <div className="lg:col-span-2 space-y-lg">
-              {/* Badges */}
-              {badges.length > 0 && (
-                <div className="flex items-center gap-base flex-wrap">
-                  {badges.map((badge, index) => (
-                    <Badge 
-                      key={index} 
-                      className={badge.className || `bg-${section.color}/20 text-${section.color} border-${section.color}/30`}
-                    >
-                      {badge.label}
-                    </Badge>
-                  ))}
-                  {featured && (
-                    <Badge variant="outline" className="border-rusty-orange/50 text-rusty-orange">
-                      Featured
-                    </Badge>
+          {/* Gradient overlays for depth */}
+          <div className="absolute inset-0"
+               style={{ 
+                 background: `radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                              radial-gradient(circle at 40% 90%, rgba(255,255,255,0.03) 0%, transparent 50%)`
+               }} />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-20 pt-xl pb-2xl">
+          <div className="container mx-auto max-w-7xl px-lg">
+            <div className="space-y-2xl">
+              
+              {/* Title and Subtitle - Very Close Together */}
+              <div className="text-left">
+                {/* Verification Status - Above title */}
+                {verification && (
+                  <div className="mb-xs">
+                    <VerificationStatus 
+                      isVerified={verification.isVerified}
+                      verificationStatus={verification.verificationStatus}
+                    />
+                  </div>
+                )}
+                
+                <h1 className="font-rajdhani text-5xl md:text-7xl font-bold text-foreground leading-none">
+                  {title}
+                </h1>
+                {/* Hero Content Contains Subtitle - rendered here for tight spacing */}
+                {heroContent}
+              </div>
+              
+              {/* Navigation, Icon & Badges Row - Below Title */}
+              <div className="flex flex-col lg:flex-row lg:items-start gap-lg">
+                {/* Left: Business Icon */}
+                <div className="flex-shrink-0">
+                  <div className="w-24 h-24 rounded-none overflow-hidden bg-card border-2 border-border shadow-elevated">
+                    <div className="w-full h-full flex items-center justify-center bg-muted">
+                      <Target className="h-12 w-12 text-nav-directory" />
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Right: Navigation & Badges */}
+                <div className="flex-1 space-y-base">
+                  {/* Breadcrumb Navigation */}
+                  <div className="flex items-center gap-xs text-sm text-muted-foreground">
+                    <Link href="/" className="hover:text-foreground transition-colors">
+                      Home
+                    </Link>
+                    <ChevronRight className="h-4 w-4" />
+                    <Link href={section.path} className={`hover:text-${section.color} transition-colors`}>
+                      {section.name}
+                    </Link>
+                    {breadcrumbs.map((crumb, index) => (
+                      <React.Fragment key={index}>
+                        <ChevronRight className="h-4 w-4" />
+                        <Link href={crumb.href} className={`hover:text-${section.color} transition-colors`}>
+                          {crumb.label}
+                        </Link>
+                      </React.Fragment>
+                    ))}
+                    <ChevronRight className="h-4 w-4" />
+                    <span className={`text-${section.color} font-medium`}>{title}</span>
+                  </div>
+                  
+                  {/* Back Button */}
+                  <div>
+                    <Link href={section.path}>
+                      <Button variant="ghost" size="sm" className="gap-xs">
+                        <ArrowLeft className="h-4 w-4" />
+                        Back to {section.name}
+                      </Button>
+                    </Link>
+                  </div>
+                  
+                  {badges.length > 0 && (
+                    <div className="flex items-center gap-base flex-wrap">
+                      {badges.map((badge, index) => (
+                        <Badge 
+                          key={index} 
+                          className={badge.className || `bg-${section.color}/20 text-${section.color} border-${section.color}/30`}
+                        >
+                          {badge.label}
+                        </Badge>
+                      ))}
+                      {featured && (
+                        <Badge variant="outline" className="border-rusty-orange/50 text-rusty-orange">
+                          Featured
+                        </Badge>
+                      )}
+                    </div>
                   )}
                 </div>
-              )}
-              
-              {/* Title */}
-              <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-foreground leading-tight">
-                {title}
-              </h1>
-              
-              {/* Description */}
-              {description && (
-                <p className="text-body-lg text-muted-foreground max-w-3xl leading-relaxed">
-                  {description}
-                </p>
-              )}
-              
-              {/* Hero Content - Custom content for each type */}
-              {heroContent}
-              
-              {/* Action Buttons */}
-              {actions.length > 0 && (
-                <div className="flex items-center gap-base flex-wrap">
-                  {actions.map((action, index) => {
-                    const ActionIcon = action.icon
-                    const buttonContent = (
-                      <>
-                        {ActionIcon && <ActionIcon className="h-4 w-4" />}
-                        {action.label}
-                      </>
-                    )
-                    
-                    if (action.href) {
-                      return (
-                        <Button
-                          key={index}
-                          variant={action.variant as any || "outline"}
-                          size={action.size as any || "sm"}
-                          className={`gap-xs ${action.className || ''}`}
-                          asChild
-                        >
-                          <Link href={action.href}>
-                            {buttonContent}
-                          </Link>
-                        </Button>
-                      )
-                    }
-                    
-                    return (
-                      <Button
-                        key={index}
-                        variant={action.variant as any || "outline"}
-                        size={action.size as any || "sm"}
-                        className={`gap-xs ${action.className || ''}`}
-                        onClick={action.onClick}
-                      >
-                        {buttonContent}
-                      </Button>
-                    )
-                  })}
-                  
-                  {/* Default Share and Save buttons for all types */}
-                  <Button variant="outline" size="sm" className="gap-xs">
-                    <Share2 className="h-4 w-4" />
-                    Share
-                  </Button>
-                  <Button variant="outline" size="sm" className="gap-xs">
-                    <Bookmark className="h-4 w-4" />
-                    Save
-                  </Button>
-                </div>
-              )}
-            </div>
-            
-            {/* Hero Image/Card - Right Side */}
-            {heroImage && (
-              <div className="lg:col-span-1">
-                <div className="relative overflow-hidden rounded-xs">
-                  <img
-                    src={heroImage}
-                    alt={title}
-                    className="w-full h-[300px] object-cover"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t from-${section.color}/20 to-transparent`}></div>
-                </div>
               </div>
-            )}
+              
+            </div>
           </div>
         </div>
       </section>
       
-      {/* Main Content */}
-      <main className="py-xl">
-        <div className="container mx-auto max-w-site px-md">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-xl">
+      {/* Reviews Section - Between Hero and Main Content */}
+      {reviewsSection && (
+        <section className="py-xl bg-muted/30 border-y border-border/20">
+          <div className="container mx-auto max-w-7xl px-lg">
+            {reviewsSection}
+          </div>
+        </section>
+      )}
+      
+      {/* Main Content with Right Sidebar */}
+      <main className="py-xl bg-background">
+        <div className="container mx-auto max-w-site px-lg">
+          <div className="flex gap-2xl">
             {/* Main Content Area */}
-            <div className={content.type === 'article' ? 'lg:col-span-3' : 'lg:col-span-2'}>
+            <div className="flex-1 max-w-4xl">
               {content.content}
               
               {/* Tags */}
@@ -250,24 +248,46 @@ export default function DetailPageTemplate({
               )}
             </div>
             
-            {/* Sidebar */}
-            <aside className={content.type === 'article' ? 'lg:col-span-1' : 'lg:col-span-1'}>
-              <div className="space-y-lg">
+            {/* Floating Right Sidebar - Sticky */}
+            {sidebar.sections.length > 0 && (
+              <div className="hidden lg:block w-80">
+                <div className="sticky top-24 space-y-lg max-h-[calc(100vh-6rem)] overflow-y-auto">
+                  {sidebar.sections.map((sidebarSection) => (
+                    <Card key={sidebarSection.id} className={`shadow-none border-0 bg-transparent ${sidebarSection.className || ''}`}>
+                      <CardHeader className="pb-base px-0">
+                        <CardTitle className="font-rajdhani text-heading-sm text-nav-directory">
+                          {sidebarSection.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="pt-0 px-0">
+                        {sidebarSection.content}
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          
+          {/* Mobile Sidebar - Below Content */}
+          {sidebar.sections.length > 0 && (
+            <div className="lg:hidden mt-2xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
                 {sidebar.sections.map((sidebarSection) => (
-                  <Card key={sidebarSection.id} className={`shadow-present ${sidebarSection.className || ''}`}>
-                    <CardHeader>
+                  <Card key={`mobile-${sidebarSection.id}`} className={`shadow-none border-0 bg-transparent ${sidebarSection.className || ''}`}>
+                    <CardHeader className="px-0">
                       <CardTitle className="font-rajdhani text-heading-sm">
                         {sidebarSection.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="px-0">
                       {sidebarSection.content}
                     </CardContent>
                   </Card>
                 ))}
               </div>
-            </aside>
-          </div>
+            </div>
+          )}
         </div>
       </main>
       

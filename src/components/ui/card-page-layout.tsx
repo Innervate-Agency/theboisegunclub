@@ -51,8 +51,11 @@ export interface CardPageLayoutProps {
   pageSubtitle: string
   pageColor: string // CSS class for theme color (e.g., 'nav-events', 'nav-directory')
   
-  // Hero section
-  heroContent: ReactNode
+  // Hero section - accept structured content instead of pre-wrapped
+  heroContent?: ReactNode // For backward compatibility
+  heroLeftContent?: ReactNode // Left side content (text, CTAs)
+  heroRightContent?: ReactNode // Right side content (featured card)
+  heroBackgroundElements?: ReactNode // Floating elements, embers, etc.
   
   // Search and filtering
   searchQuery: string
@@ -100,6 +103,9 @@ export function CardPageLayout({
   pageSubtitle,
   pageColor,
   heroContent,
+  heroLeftContent,
+  heroRightContent,
+  heroBackgroundElements,
   searchQuery,
   onSearchChange,
   searchPlaceholder = "Search...",
@@ -123,8 +129,36 @@ export function CardPageLayout({
   return (
     <div className={cn("min-h-screen bg-background", className)}>
       {/* Hero Section */}
-      <section className={`relative overflow-hidden bg-gradient-${pageColor}-hero px-md py-lg`}>
-        {heroContent}
+      <section className={`relative overflow-hidden bg-gradient-${pageColor}-hero`}>
+        {/* Render new structured hero if provided, otherwise fall back to legacy heroContent */}
+        {heroLeftContent || heroRightContent || heroBackgroundElements ? (
+          <div className="relative">
+            {/* Background Elements */}
+            {heroBackgroundElements}
+            
+            <div className="container mx-auto max-w-site relative z-10 px-md py-lg">
+              <div className="hero-grid-layout">
+                {/* Left Content */}
+                {heroLeftContent && (
+                  <div className="lg:col-span-2 hero-content flex flex-col justify-center space-y-base">
+                    {heroLeftContent}
+                  </div>
+                )}
+                
+                {/* Right Content */}
+                {heroRightContent && (
+                  <div className="lg:col-span-1 flex items-center justify-center">
+                    <div className="w-full max-w-sm">
+                      {heroRightContent}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ) : (
+          heroContent
+        )}
       </section>
 
       {/* Search and Quick Tabs Section */}
@@ -172,7 +206,7 @@ export function CardPageLayout({
       {/* Main Content Area - Full Width Amazon Style */}
       <section className="py-4xl bg-background/50">
         <div className="w-full px-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl">
-          <div className="flex gap-xl max-w-[1920px] mx-auto">
+          <div className="flex gap-2xl max-w-[1920px] mx-auto">
             
             {/* Left Sidebar - Filters */}
             <aside className="w-80 flex-shrink-0 hidden lg:block">
@@ -227,7 +261,7 @@ export function CardPageLayout({
             {/* Main Content */}
             <main className="flex-1 min-w-0">
               {/* Results Header with Controls */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-sm sm:gap-lg mb-lg sm:mb-xl lg:mb-2xl">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base sm:gap-xl mb-xl sm:mb-2xl lg:mb-3xl">
                 <div>
                   <h2 className="font-rajdhani text-heading-xl font-bold text-card-foreground">
                     {filteredResults} {filteredResults === 1 ? 'Result' : 'Results'} Found
@@ -239,7 +273,7 @@ export function CardPageLayout({
                 </div>
                 
                 {/* View Controls - Mobile responsive */}
-                <div className="flex items-center gap-xs sm:gap-sm">
+                <div className="flex items-center gap-sm sm:gap-base">
                   {/* View Mode Toggle - Hidden on small mobile */}
                   <div className="hidden sm:flex items-center border rounded-xs">
                     <Button

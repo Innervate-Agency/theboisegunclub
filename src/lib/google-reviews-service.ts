@@ -45,13 +45,20 @@ export interface ProcessedReviewData {
   cacheExpiry: number
 }
 
-import { promises as fs } from 'fs'
-import path from 'path'
+// Conditional imports for Node.js modules
+const isServer = typeof window === 'undefined'
+let fs: any = null
+let path: any = null
+
+if (isServer) {
+  fs = require('fs').promises
+  path = require('path')
+}
 
 const SERPAPI_KEY = process.env.SERPAPI_KEY || process.env.NEXT_PUBLIC_SERPAPI_KEY || ''
 const BASE_URL = 'https://serpapi.com/search'
 const CACHE_DURATION = 7 * 24 * 60 * 60 * 1000 // 7 days in milliseconds
-const CACHE_DIR = path.join(process.cwd(), '.cache', 'reviews')
+const CACHE_DIR = isServer && path ? path.join(process.cwd(), '.cache', 'reviews') : null
 
 // Persistent file-based cache for review data
 interface CachedReviewData {
@@ -65,6 +72,7 @@ const reviewsCache = new Map<string, CachedReviewData>()
 
 // Ensure cache directory exists
 async function ensureCacheDir(): Promise<void> {
+  if (!isServer || !fs || !CACHE_DIR) return
   try {
     await fs.mkdir(CACHE_DIR, { recursive: true })
   } catch (error) {
@@ -74,14 +82,17 @@ async function ensureCacheDir(): Promise<void> {
 
 // Get cache file path for business
 function getCacheFilePath(businessName: string): string {
+  if (!isServer || !path || !CACHE_DIR) return ''
   const safeName = businessName.toLowerCase().replace(/[^a-z0-9]/g, '_')
   return path.join(CACHE_DIR, `${safeName}_reviews.json`)
 }
 
 // Load cache from disk
 async function loadCacheFromDisk(businessName: string): Promise<CachedReviewData | null> {
+  if (!isServer || !fs) return null
   try {
     const cacheFilePath = getCacheFilePath(businessName)
+    if (!cacheFilePath) return null
     const cacheData = await fs.readFile(cacheFilePath, 'utf-8')
     const parsed: CachedReviewData = JSON.parse(cacheData)
     
@@ -100,9 +111,11 @@ async function loadCacheFromDisk(businessName: string): Promise<CachedReviewData
 
 // Save cache to disk
 async function saveCacheToDisk(businessName: string, cachedData: CachedReviewData): Promise<void> {
+  if (!isServer || !fs) return
   try {
     await ensureCacheDir()
     const cacheFilePath = getCacheFilePath(businessName)
+    if (!cacheFilePath) return
     await fs.writeFile(cacheFilePath, JSON.stringify(cachedData, null, 2), 'utf-8')
     console.log(`📊 Reviews cached to disk for ${cachedData.data.businessName}`)
   } catch (error) {

@@ -101,7 +101,45 @@ const getBusinessData = async (slug: string): Promise<BusinessData | null> => {
     console.log('Database not available, using fallback data:', error.message)
   }
   
-  // Fallback to hardcoded examples for development or if database fails
+  // Fallback to generated FFL data if database fails
+  try {
+    const { allFFLs } = await import('@/lib/generated-ffl-data')
+    const fflBusiness = allFFLs.find(business => business.slug === slug)
+    
+    if (fflBusiness) {
+      return {
+        slug: fflBusiness.slug,
+        businessName: fflBusiness.businessName,
+        businessType: fflBusiness.businessType,
+        description: fflBusiness.description,
+        fullDescription: `# ${fflBusiness.businessName}\n\n${fflBusiness.description}\n\n## Services\n\n${fflBusiness.services.join(', ')}\n\n## Specialties\n\n${fflBusiness.specialties.join(', ')}`,
+        address: fflBusiness.address,
+        city: fflBusiness.city,
+        state: fflBusiness.state,
+        zip: fflBusiness.zip,
+        phone: fflBusiness.phone,
+        website: fflBusiness.website,
+        hours: fflBusiness.hours,
+        isVerified: fflBusiness.isVerified,
+        verificationStatus: fflBusiness.verificationStatus,
+        rating: 0, // Default until we have reviews
+        reviewCount: 0,
+        services: fflBusiness.services,
+        specialties: fflBusiness.specialties,
+        certifications: fflBusiness.certifications,
+        tier: fflBusiness.tier,
+        isSponsored: fflBusiness.isSponsored,
+        serviceArea: fflBusiness.serviceArea,
+        paymentMethods: fflBusiness.paymentMethods,
+        images: fflBusiness.images,
+        relatedBusinesses: [] // TODO: Implement related businesses
+      }
+    }
+  } catch (fflError) {
+    console.log('FFL data not available, using hardcoded examples:', fflError.message)
+  }
+  
+  // Final fallback to hardcoded examples for development testing
   const businesses: BusinessData[] = [
     {
       slug: 'nampa-rod-gun-club',
@@ -485,7 +523,8 @@ export async function generateStaticParams() {
     console.error('Failed to get business slugs from database:', error)
     // Fallback to FFL data if database is not available
     const { allFFLs } = await import('@/lib/generated-ffl-data')
-    return allFFLs.slice(0, 50).map(business => ({ slug: business.slug }))
+    console.log(`🏗️  Fallback: Generating ${allFFLs.length} business pages from FFL data`)
+    return allFFLs.map(business => ({ slug: business.slug }))
   }
 }
 

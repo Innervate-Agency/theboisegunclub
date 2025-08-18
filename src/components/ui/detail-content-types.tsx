@@ -8,10 +8,127 @@ import {
   Calendar, Clock, Eye, Heart, MessageCircle, User, Tag,
   MapPin, Phone, Globe, Mail, CheckCircle, Star, Shield,
   Award, Target, Users, CreditCard, DollarSign,
-  Package, Truck, FileText, AlertTriangle as Warning
+  Package, Truck, FileText, AlertTriangle as Warning,
+  Crown, Medal, Clock4, Wrench, ShoppingCart, Zap,
+  Settings, Car, BookOpen, GraduationCap, UserCheck
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+
+// Service Icon Mapping
+const getServiceIcon = (service: string) => {
+  const serviceLower = service.toLowerCase()
+  
+  if (serviceLower.includes('gunsmith') || serviceLower.includes('repair') || serviceLower.includes('custom')) {
+    return Wrench
+  }
+  if (serviceLower.includes('sales') || serviceLower.includes('retail') || serviceLower.includes('purchase')) {
+    return ShoppingCart
+  }
+  if (serviceLower.includes('training') || serviceLower.includes('instruction') || serviceLower.includes('class')) {
+    return GraduationCap
+  }
+  if (serviceLower.includes('tactical') || serviceLower.includes('competition') || serviceLower.includes('shooting')) {
+    return Target
+  }
+  if (serviceLower.includes('transfer') || serviceLower.includes('ffl') || serviceLower.includes('background')) {
+    return FileText
+  }
+  if (serviceLower.includes('consultation') || serviceLower.includes('advice') || serviceLower.includes('expert')) {
+    return UserCheck
+  }
+  if (serviceLower.includes('maintenance') || serviceLower.includes('cleaning') || serviceLower.includes('service')) {
+    return Settings
+  }
+  if (serviceLower.includes('installation') || serviceLower.includes('mount') || serviceLower.includes('upgrade')) {
+    return Zap
+  }
+  if (serviceLower.includes('delivery') || serviceLower.includes('pickup') || serviceLower.includes('mobile')) {
+    return Car
+  }
+  if (serviceLower.includes('education') || serviceLower.includes('safety') || serviceLower.includes('course')) {
+    return BookOpen
+  }
+  
+  // Default icon
+  return CheckCircle
+}
+
+// Business Hours Widget Component
+function BusinessHoursWidget({ hours }: { hours: string }) {
+  const [isOpen, setIsOpen] = React.useState(false)
+  const [currentStatus, setCurrentStatus] = React.useState('')
+  const [nextChange, setNextChange] = React.useState('')
+
+  React.useEffect(() => {
+    // Simple hours parsing - in a real app this would be more sophisticated
+    const now = new Date()
+    const currentDay = now.getDay() // 0 = Sunday, 1 = Monday, etc.
+    const currentHour = now.getHours()
+    const currentMinute = now.getMinutes()
+    const currentTime = currentHour * 60 + currentMinute
+    
+    // Basic business hours logic (assuming typical gun shop hours)
+    // Monday-Friday: 9 AM - 6 PM, Saturday: 9 AM - 5 PM, Sunday: 10 AM - 4 PM
+    let openTime = 540 // 9:00 AM in minutes
+    let closeTime = 1080 // 6:00 PM in minutes
+    
+    if (currentDay === 0) { // Sunday
+      openTime = 600 // 10:00 AM
+      closeTime = 960 // 4:00 PM
+    } else if (currentDay === 6) { // Saturday
+      openTime = 540 // 9:00 AM
+      closeTime = 1020 // 5:00 PM
+    }
+    
+    const isCurrentlyOpen = currentTime >= openTime && currentTime < closeTime
+    setIsOpen(isCurrentlyOpen)
+    
+    if (isCurrentlyOpen) {
+      const minutesUntilClose = closeTime - currentTime
+      const hoursUntilClose = Math.floor(minutesUntilClose / 60)
+      const minsUntilClose = minutesUntilClose % 60
+      if (hoursUntilClose > 0) {
+        setCurrentStatus(`Open • Closes in ${hoursUntilClose}h ${minsUntilClose}m`)
+      } else {
+        setCurrentStatus(`Open • Closes in ${minsUntilClose}m`)
+      }
+      setNextChange('Today')
+    } else {
+      setCurrentStatus('Closed')
+      // Calculate when they open next
+      if (currentTime < openTime) {
+        const minutesUntilOpen = openTime - currentTime
+        const hoursUntilOpen = Math.floor(minutesUntilOpen / 60)
+        const minsUntilOpen = minutesUntilOpen % 60
+        if (hoursUntilOpen > 0) {
+          setNextChange(`Opens in ${hoursUntilOpen}h ${minsUntilOpen}m`)
+        } else {
+          setNextChange(`Opens in ${minsUntilOpen}m`)
+        }
+      } else {
+        setNextChange('Opens tomorrow')
+      }
+    }
+  }, [hours])
+
+  return (
+    <div className={`flex items-center justify-between p-base bg-card border rounded-none shadow-present ${
+      isOpen ? 'border-sagebrush-green/30' : 'border-border'
+    }`}>
+      <div className="flex items-center gap-xs">
+        <Clock4 className={`h-5 w-5 ${isOpen ? 'text-sagebrush-green' : 'text-muted-foreground'}`} />
+        <div>
+          <div className={`text-body-sm font-medium ${isOpen ? 'text-sagebrush-green' : 'text-foreground'}`}>
+            {currentStatus}
+          </div>
+          <div className="text-xs text-muted-foreground">{nextChange}</div>
+        </div>
+      </div>
+      <div className={`w-2 h-2 rounded-full ${isOpen ? 'bg-sagebrush-green animate-pulse' : 'bg-muted'}`} />
+    </div>
+  )
+}
 
 // ===== ARTICLE CONTENT =====
 interface ArticleAuthor {
@@ -244,76 +361,78 @@ export function BusinessContent({
   googlePlaceId,
   relatedBusinesses = []
 }: BusinessContentProps) {
-  const [reviewsData, setReviewsData] = React.useState<any>(null)
-  const [loadingReviews, setLoadingReviews] = React.useState(false)
+  // No longer fetch reviews directly in this component
+  // Reviews will be handled by a separate client component
 
   const fullAddress = `${address}, ${city}, ${state} ${zip}`
 
   const heroContent = (
-    <>
-      {/* Business Logo and Details */}
-      <div className="flex items-start gap-base">
-        {logo && (
-          <div className="w-16 h-16 rounded-xs overflow-hidden flex-shrink-0 bg-muted">
-            <Image
-              src={logo}
-              alt={`${businessName} logo`}
-              width={64}
-              height={64}
-              className="w-full h-full object-cover"
-            />
-          </div>
+    <div className="space-y-2xl">
+      {/* H2 Subtitle - Very close to title, standard body color */}
+      <h2 className="font-rajdhani text-2xl md:text-3xl font-medium text-muted-foreground leading-tight -mt-sm">
+        {city}, {state} • {businessType}
+      </h2>
+      
+      {/* Primary Contact CTAs */}
+      <div className="flex flex-wrap items-center gap-lg">
+        <Button 
+          size="xl" 
+          className="bg-nav-directory hover:bg-nav-directory/90 text-nav-directory-foreground font-rajdhani font-bold shadow-elevated hover:shadow-commanding transition-all duration-200"
+          asChild
+        >
+          <a href={`tel:${phone}`}>
+            <Phone className="h-5 w-5 mr-xs" />
+            Call {phone}
+          </a>
+        </Button>
+        
+        {website && (
+          <Button 
+            variant="outline" 
+            size="xl"
+            className="font-rajdhani font-bold border-2 hover:bg-nav-directory/10"
+            asChild
+          >
+            <a href={website} target="_blank" rel="noopener noreferrer">
+              <Globe className="h-5 w-5 mr-xs" />
+              Visit Website
+            </a>
+          </Button>
         )}
-        <div className="flex-1">
-          <p className="text-body-lg text-nav-directory font-medium">
-            {businessType}
-          </p>
-          {yearEstablished && (
-            <p className="text-body-sm text-muted-foreground mt-xs">
-              Established {yearEstablished}
-            </p>
-          )}
-        </div>
       </div>
-
-      {/* Quick Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-base">
-        {rating && (
-          <div className="text-center p-base bg-muted/50 rounded-xs">
-            <Star className="h-5 w-5 text-nav-directory mx-auto mb-xs" />
-            <div className="text-body-sm font-medium">{rating.toFixed(1)}</div>
-            <div className="text-xs text-muted-foreground">Rating</div>
-          </div>
-        )}
-        {reviewCount && (
-          <div className="text-center p-base bg-muted/50 rounded-xs">
-            <Users className="h-5 w-5 text-nav-directory mx-auto mb-xs" />
-            <div className="text-body-sm font-medium">{reviewCount}</div>
-            <div className="text-xs text-muted-foreground">Reviews</div>
-          </div>
-        )}
-        <div className="text-center p-base bg-muted/50 rounded-xs">
-          <Target className="h-5 w-5 text-nav-directory mx-auto mb-xs" />
-          <div className="text-body-sm font-medium">{services.length}</div>
-          <div className="text-xs text-muted-foreground">Services</div>
-        </div>
-        <div className="text-center p-base bg-muted/50 rounded-xs">
-          <CheckCircle className="h-5 w-5 text-nav-directory mx-auto mb-xs" />
-          <div className="text-body-sm font-medium">{certifications.length}</div>
-          <div className="text-xs text-muted-foreground">Certifications</div>
-        </div>
-      </div>
-    </>
+    </div>
   )
 
   const mainContent = (
-    <div className="space-y-xl">
-      {/* Full Description */}
-      <Card className="shadow-present">
-        <CardHeader>
-          <CardTitle className="font-rajdhani">About {businessName}</CardTitle>
-        </CardHeader>
-        <CardContent>
+    <div className="space-y-2xl">
+      {/* Comprehensive SEO-Rich Business Description */}
+      <div className="prose prose-lg dark:prose-invert max-w-none space-y-xl">
+        {/* Paragraph 1: Business Overview & Expertise */}
+        <div className="text-body-lg leading-relaxed space-y-base">
+          <p>
+            <strong className="font-rajdhani text-xl font-bold text-nav-directory">{businessName}</strong> stands as a cornerstone of the {city} firearms community, representing the kind of professional, knowledgeable {businessType.toLowerCase()} service that serious shooters and collectors depend on. Located in the heart of {city}, {state}, this {yearEstablished ? `well-established business has been serving local gun enthusiasts since ${yearEstablished}` : 'trusted establishment has built a reputation for excellence'}, developing deep expertise in {businessType.toLowerCase()} operations that reflects the unique needs of Idaho's diverse shooting community. Whether you're a competitive shooter preparing for your next match, a hunting enthusiast getting ready for elk season, or a collector seeking specialized services, {businessName} brings the kind of focused attention and technical knowledge that can only come from {yearEstablished ? `${new Date().getFullYear() - yearEstablished} years` : 'extensive experience'} of dedicated service to the Treasure Valley's firearms community.
+          </p>
+        </div>
+
+        {/* Paragraph 2: Services & Community Impact */}
+        <div className="text-body-lg leading-relaxed space-y-base">
+          <p>
+            The comprehensive range of services offered by {businessName} reflects the evolving needs of Idaho's responsible gun owners, from basic {businessType.toLowerCase()} operations to specialized technical work that requires both precision and deep understanding of firearms regulations. With {services.length} distinct service offerings, the business has positioned itself as a true one-stop resource for {businessType === 'FFL Dealer' ? 'firearm transfers, sales, and compliance services' : businessType === 'Gunsmith' ? 'custom builds, repairs, and precision modifications' : businessType === 'Training Facility' ? 'education, safety courses, and skills development' : 'professional firearms services'}. The team's commitment to staying current with both state and federal regulations ensures that every transaction and service meets the highest standards of legal compliance, while their focus on customer education helps build a more informed and responsible shooting community throughout the Treasure Valley region.
+          </p>
+        </div>
+
+        {/* Paragraph 3: Local Connection & Quality Standards */}
+        <div className="text-body-lg leading-relaxed space-y-base">
+          <p>
+            What truly sets {businessName} apart in the competitive {city} market is their genuine connection to the local firearms community and unwavering commitment to quality service standards. As {isVerified ? 'a verified business' : 'a trusted member'} of the Treasure Valley firearms network, they understand that reputation is built one satisfied customer at a time, whether that's ensuring a flawless FFL transfer, delivering precision work on a custom build, or providing the kind of knowledgeable advice that helps shooters make informed decisions about their equipment and training. Their location in {city} provides convenient access for customers throughout {serviceArea.length > 0 ? serviceArea.join(', ') + ' and surrounding areas' : 'the greater Boise area'}, with {hours.toLowerCase().includes('appointment') || hours.toLowerCase().includes('call') ? 'flexible scheduling options' : 'convenient business hours'} designed to accommodate the busy schedules of working professionals who are serious about their shooting sports and Second Amendment rights.
+          </p>
+        </div>
+      </div>
+
+      {/* Original Description (if it exists and is different) - Flat */}
+      {fullDescription && fullDescription.length > 200 && (
+        <div className="bg-card p-base">
+          <h3 className="font-rajdhani text-xl font-bold text-nav-directory mb-base">About {businessName}</h3>
           <div className="prose prose-lg dark:prose-invert max-w-none
             prose-headings:font-rajdhani prose-headings:font-bold
             prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
@@ -325,81 +444,224 @@ export function BusinessContent({
             prose-ul:text-body-base prose-li:text-body-base">
             <MdxContent source={fullDescription} />
           </div>
-        </CardContent>
-      </Card>
-      
-      {/* Services */}
-      <Card className="shadow-present">
-        <CardHeader>
-          <CardTitle className="font-rajdhani">Services Offered</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-xs">
-            {services.map((service, index) => (
-              <div key={index} className="flex items-center gap-xs py-xs">
-                <CheckCircle className="h-4 w-4 text-sagebrush-green flex-shrink-0" />
-                <span className="text-body-sm">{service}</span>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
+        </div>
+      )}
     </div>
   )
 
   const sidebarSections = [
     {
       id: 'contact',
-      title: 'Contact Information',
+      title: 'Contact & Location',
       content: (
         <div className="space-y-base">
-          <div className="flex items-start gap-base">
-            <MapPin className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
-            <div>
-              <div className="font-medium text-body-sm">Address</div>
-              <div className="text-body-sm text-muted-foreground">{fullAddress}</div>
-            </div>
-          </div>
-          <div className="flex items-start gap-base">
-            <Phone className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
-            <div>
-              <div className="font-medium text-body-sm">Phone</div>
-              <div className="text-body-sm text-muted-foreground">{phone}</div>
-            </div>
-          </div>
-          <div className="flex items-start gap-base">
-            <Clock className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
-            <div>
-              <div className="font-medium text-body-sm">Hours</div>
-              <div className="text-body-sm text-muted-foreground">{hours}</div>
-            </div>
-          </div>
-          {employeeCount && (
+          {/* Business Hours */}
+          <BusinessHoursWidget hours={hours} />
+          
+          {/* Contact Information */}
+          <div className="space-y-base">
             <div className="flex items-start gap-base">
-              <Users className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
+              <MapPin className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
+              <div className="flex-1">
+                <div className="font-medium text-body-sm">Address</div>
+                <div className="text-body-sm text-muted-foreground">{fullAddress}</div>
+                <a 
+                  href={`https://maps.google.com/?q=${encodeURIComponent(fullAddress)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-nav-directory hover:underline mt-xs inline-block"
+                >
+                  View on Google Maps →
+                </a>
+              </div>
+            </div>
+            
+            <div className="flex items-start gap-base">
+              <Phone className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
               <div>
-                <div className="font-medium text-body-sm">Team Size</div>
-                <div className="text-body-sm text-muted-foreground">{employeeCount} employees</div>
+                <div className="font-medium text-body-sm">Phone</div>
+                <div className="text-body-sm text-muted-foreground">
+                  <a href={`tel:${phone}`} className="hover:text-nav-directory transition-colors">
+                    {phone}
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            {email && (
+              <div className="flex items-start gap-base">
+                <Mail className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
+                <div>
+                  <div className="font-medium text-body-sm">Email</div>
+                  <div className="text-body-sm text-muted-foreground">
+                    <a href={`mailto:${email}`} className="hover:text-nav-directory transition-colors">
+                      {email}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            )}
+            
+            {website && (
+              <div className="flex items-start gap-base">
+                <Globe className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
+                <div>
+                  <div className="font-medium text-body-sm">Website</div>
+                  <div className="text-body-sm text-muted-foreground">
+                    <a href={website} target="_blank" rel="noopener noreferrer" className="hover:text-nav-directory transition-colors">
+                      Visit Website
+                    </a>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Google Maps Embed */}
+          <div className="mt-base">
+            <div className="w-full h-48 bg-muted rounded-none overflow-hidden border border-border/30">
+              <iframe
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(fullAddress)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={`Map showing location of ${businessName}`}
+              />
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'services',
+      title: 'Services & Specialties',
+      content: (
+        <div className="space-y-base">
+          {/* Services */}
+          <div className="space-y-xs">
+            {services.map((service, index) => {
+              const ServiceIcon = getServiceIcon(service)
+              return (
+                <div key={index} className="flex items-center gap-xs p-xs">
+                  <ServiceIcon className="h-4 w-4 text-nav-directory flex-shrink-0" />
+                  <span className="text-body-sm">{service}</span>
+                </div>
+              )
+            })}
+          </div>
+
+          {/* Specialties */}
+          {specialties.length > 0 && (
+            <div className="space-y-xs">
+              <div className="font-medium text-body-sm text-foreground">Specialties</div>
+              {specialties.map((specialty, index) => (
+                <div key={index} className="flex items-center gap-xs py-xs">
+                  <Star className="h-4 w-4 text-rusty-orange flex-shrink-0" />
+                  <span className="text-body-sm text-muted-foreground">{specialty}</span>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Service Area */}
+          {serviceArea.length > 0 && (
+            <div className="space-y-xs">
+              <div className="font-medium text-body-sm text-foreground">Service Area</div>
+              <div className="flex flex-wrap gap-xs">
+                {serviceArea.map((area, index) => (
+                  <span key={index} className="text-xs bg-muted text-muted-foreground px-xs py-micro rounded-xs">
+                    {area}
+                  </span>
+                ))}
               </div>
             </div>
           )}
+
+          {/* Payment Methods */}
+          {paymentMethods.length > 0 && (
+            <div className="space-y-xs">
+              <div className="font-medium text-body-sm text-foreground">Payment Options</div>
+              <div className="flex flex-wrap gap-xs">
+                {paymentMethods.map((method, index) => (
+                  <div key={index} className="flex items-center gap-xs text-body-sm text-muted-foreground">
+                    <CreditCard className="h-3 w-3 text-nav-directory" />
+                    <span>{method}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="mt-base pt-base border-t border-border/30">
+            <div className="flex items-center gap-xs text-sm text-nav-directory">
+              <Target className="h-4 w-4" />
+              <span className="font-medium">{services.length} total services</span>
+            </div>
+          </div>
         </div>
       )
     }
   ]
 
   // Add conditional sidebar sections
-  if (specialties.length > 0) {
+  
+  // Business Information section
+  const businessInfoItems = []
+  if (yearEstablished) {
+    businessInfoItems.push({
+      icon: Clock4,
+      label: 'Established',
+      value: yearEstablished.toString()
+    })
+  }
+  if (employeeCount) {
+    businessInfoItems.push({
+      icon: Users,
+      label: 'Team Size',
+      value: employeeCount
+    })
+  }
+  if (tier !== 'free') {
+    businessInfoItems.push({
+      icon: Crown,
+      label: 'Membership',
+      value: `${tier.charAt(0).toUpperCase() + tier.slice(1)} Tier`
+    })
+  }
+
+  if (businessInfoItems.length > 0) {
     sidebarSections.push({
-      id: 'specialties',
-      title: 'Specialties',
+      id: 'business-info',
+      title: 'Business Information',
       content: (
-        <div className="space-y-xs">
-          {specialties.map((specialty, index) => (
-            <Badge key={index} variant="outline" className="mr-xs mb-xs">
-              {specialty}
-            </Badge>
-          ))}
+        <div className="space-y-base">
+          {businessInfoItems.map((item, index) => {
+            const IconComponent = item.icon
+            return (
+              <div key={index} className="flex items-center gap-base">
+                <IconComponent className="h-4 w-4 text-nav-directory flex-shrink-0" />
+                <div>
+                  <div className="font-medium text-body-sm">{item.label}</div>
+                  <div className="text-body-sm text-muted-foreground">{item.value}</div>
+                </div>
+              </div>
+            )
+          })}
+          
+          {/* Tier Benefits */}
+          {tier !== 'free' && (
+            <div className="mt-base pt-base border-t border-border/30">
+              <div className="text-xs text-muted-foreground">
+                {tier === 'gold' && '✦ Premium listing with enhanced features'}
+                {tier === 'silver' && '✦ Enhanced business listing'}
+                {tier === 'copper' && '✦ Standard business listing'}
+              </div>
+            </div>
+          )}
         </div>
       )
     })
@@ -422,7 +684,56 @@ export function BusinessContent({
     })
   }
 
-  return { heroContent, mainContent, sidebarSections }
+  // Import the client component dynamically to avoid SSR issues
+  const BusinessReviewsSection = React.lazy(() =>
+    import('@/components/ui/business-reviews-section').then(module => ({
+      default: module.BusinessReviewsSection
+    }))
+  )
+
+  const reviewsSection = (
+    <React.Suspense fallback={
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2xl">
+        <div className="space-y-base">
+          <h3 className="font-rajdhani text-2xl font-bold text-foreground">Customer Reviews</h3>
+          <div className="space-y-base">
+            {[...Array(3)].map((_, i) => (
+              <div key={i} className="bg-card p-base rounded-none border border-border/30 animate-pulse">
+                <div className="space-y-sm">
+                  <div className="flex items-center gap-base">
+                    <div className="w-8 h-8 bg-muted rounded-full"></div>
+                    <div className="flex-1">
+                      <div className="w-24 h-4 bg-muted rounded mb-xs"></div>
+                      <div className="w-16 h-3 bg-muted rounded"></div>
+                    </div>
+                  </div>
+                  <div className="space-y-xs">
+                    <div className="w-full h-3 bg-muted rounded"></div>
+                    <div className="w-3/4 h-3 bg-muted rounded"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="space-y-base">
+          <h3 className="font-rajdhani text-2xl font-bold text-foreground">Community Insights</h3>
+          <div className="bg-card p-base rounded-none border border-border/30">
+            <div className="w-full h-3 bg-muted rounded mb-xs"></div>
+            <div className="w-3/4 h-3 bg-muted rounded"></div>
+          </div>
+        </div>
+      </div>
+    }>
+      <BusinessReviewsSection 
+        businessName={businessName}
+        city={city}
+        state={state}
+      />
+    </React.Suspense>
+  )
+
+  return { heroContent, mainContent, sidebarSections, reviewsSection }
 }
 
 // ===== LOCATION CONTENT =====

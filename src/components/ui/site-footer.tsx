@@ -234,7 +234,7 @@ export function SiteFooter({
                 <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Quick Links
                 </h4>
-                <ul className="space-y-3">
+                <ul className="space-y-0">
                   {[
                     { name: "Business Directory", href: "/directory", icon: AddressBook, color: "hover:text-nav-directory" },
                     { name: "Events Calendar", href: "/events", icon: Ticket, color: "hover:text-nav-events" },
@@ -242,29 +242,41 @@ export function SiteFooter({
                     { name: "The Armory", href: "/armory", icon: Shield, color: "hover:text-nav-armory" },
                     { name: "Training Hub", href: "/training", icon: Shield, color: "hover:text-nav-armory" },
                     { name: "Intel Center", href: "/intel", icon: MapTrifold, color: "hover:text-nav-intel" }
-                  ].map((link) => {
+                  ].map((link, index, array) => {
                     const Icon = link.icon
                     return (
-                      <li key={link.name}>
-                        <a 
-                          href={link.href}
-                          className={cn(
-                            "flex items-center gap-3 text-body-base transition-all duration-300 font-rajdhani group", 
-                            mutedColor,
-                            link.color
-                          )}
-                        >
-                          <Icon 
-                            weight="bold" 
+                      <React.Fragment key={link.name}>
+                        <li>
+                          <a 
+                            href={link.href}
                             className={cn(
-                              "h-5 w-5 transition-all duration-300",
+                              "flex items-center gap-3 text-body-base transition-all duration-300 font-rajdhani group py-2", 
                               mutedColor,
                               link.color
-                            )} 
-                          />
-                          <span>{link.name}</span>
-                        </a>
-                      </li>
+                            )}
+                          >
+                            <Icon 
+                              weight="bold" 
+                              className={cn(
+                                "h-5 w-5 transition-all duration-300",
+                                mutedColor,
+                                link.color
+                              )} 
+                            />
+                            <span>{link.name}</span>
+                          </a>
+                        </li>
+                        
+                        {/* Elegant divider between items (same as navbar) */}
+                        {index < array.length - 1 && (
+                          <li className="flex justify-center py-1">
+                            <div className="w-4 h-px mx-xs relative">
+                              <div className="absolute inset-0 h-px bg-muted-foreground/20" />
+                              <div className="absolute inset-0 h-px bg-card/30 translate-y-px" />
+                            </div>
+                          </li>
+                        )}
+                      </React.Fragment>
                     )
                   })}
                 </ul>
@@ -283,30 +295,49 @@ export function SiteFooter({
                 <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Resources
                 </h4>
-                <ul className="space-y-3">
+                <ul className="space-y-0">
                   {[
-                    { name: "Firearms Training", href: "/training", icon: Shield },
-                    { name: "Safety Courses", href: "/training?type=safety", icon: CrosshairSimple },
-                    { name: "Range Directory", href: "/directory?type=ranges", icon: MapPin },
-                    { name: "Guides & Articles", href: "/guides", icon: Globe },
-                    { name: "Legal Resources", href: "/intel", icon: Shield },
-                    { name: "Equipment Reviews", href: "/armory", icon: Users }
-                  ].map((resource) => {
+                    { name: "Firearms Training", href: "/training", icon: Shield, color: "hover:text-nav-armory" },
+                    { name: "Safety Courses", href: "/training?type=safety", icon: CrosshairSimple, color: "hover:text-nav-armory" },
+                    { name: "Range Directory", href: "/directory?type=ranges", icon: MapPin, color: "hover:text-nav-directory" },
+                    { name: "Guides & Articles", href: "/guides", icon: Globe, color: "hover:text-nav-intel" },
+                    { name: "Legal Resources", href: "/intel", icon: Shield, color: "hover:text-nav-intel" },
+                    { name: "Equipment Reviews", href: "/armory", icon: Users, color: "hover:text-nav-armory" }
+                  ].map((resource, index, array) => {
                     const Icon = resource.icon
                     return (
-                      <li key={resource.name}>
-                        <a 
-                          href={resource.href}
-                          className={cn(
-                            "flex items-center gap-2 text-body-base transition-colors duration-200 group font-rajdhani", 
-                            mutedColor,
-                            linkHoverColor
-                          )}
-                        >
-                          <Icon weight="bold" className="h-5 w-5 transition-transform group-hover:scale-110" />
-                          <span>{resource.name}</span>
-                        </a>
-                      </li>
+                      <React.Fragment key={resource.name}>
+                        <li>
+                          <a 
+                            href={resource.href}
+                            className={cn(
+                              "flex items-center gap-3 text-body-base transition-all duration-300 font-rajdhani group py-2", 
+                              mutedColor,
+                              resource.color
+                            )}
+                          >
+                            <Icon 
+                              weight="bold" 
+                              className={cn(
+                                "h-5 w-5 transition-all duration-300",
+                                mutedColor,
+                                resource.color
+                              )} 
+                            />
+                            <span>{resource.name}</span>
+                          </a>
+                        </li>
+                        
+                        {/* Elegant divider between items (same as navbar) */}
+                        {index < array.length - 1 && (
+                          <li className="flex justify-center py-1">
+                            <div className="w-4 h-px mx-xs relative">
+                              <div className="absolute inset-0 h-px bg-muted-foreground/20" />
+                              <div className="absolute inset-0 h-px bg-card/30 translate-y-px" />
+                            </div>
+                          </li>
+                        )}
+                      </React.Fragment>
                     )
                   })}
                 </ul>
@@ -325,30 +356,49 @@ export function SiteFooter({
                 <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Support
                 </h4>
-                <ul className="space-y-3">
+                <ul className="space-y-0">
                   {[
-                    { name: "Help Center", href: "/help", icon: Question },
-                    { name: "Contact Us", href: "/contact", icon: Envelope },
-                    { name: "Privacy Policy", href: "/privacy", icon: Shield },
-                    { name: "Terms of Service", href: "/terms", icon: Globe },
-                    { name: "Cookie Policy", href: "/cookies", icon: Shield },
-                    { name: "Accessibility", href: "/accessibility", icon: Heart }
-                  ].map((support) => {
+                    { name: "Help Center", href: "/help", icon: Question, color: "hover:text-nav-intel" },
+                    { name: "Contact Us", href: "/contact", icon: Envelope, color: "hover:text-nav-home" },
+                    { name: "Privacy Policy", href: "/privacy", icon: Shield, color: "hover:text-nav-intel" },
+                    { name: "Terms of Service", href: "/terms", icon: Globe, color: "hover:text-nav-intel" },
+                    { name: "Cookie Policy", href: "/cookies", icon: Shield, color: "hover:text-nav-intel" },
+                    { name: "Accessibility", href: "/accessibility", icon: Heart, color: "hover:text-nav-home" }
+                  ].map((support, index, array) => {
                     const Icon = support.icon
                     return (
-                      <li key={support.name}>
-                        <a 
-                          href={support.href}
-                          className={cn(
-                            "flex items-center gap-2 text-body-base transition-colors duration-200 group font-rajdhani", 
-                            mutedColor,
-                            linkHoverColor
-                          )}
-                        >
-                          <Icon weight="bold" className="h-5 w-5 transition-transform group-hover:scale-110" />
-                          <span>{support.name}</span>
-                        </a>
-                      </li>
+                      <React.Fragment key={support.name}>
+                        <li>
+                          <a 
+                            href={support.href}
+                            className={cn(
+                              "flex items-center gap-3 text-body-base transition-all duration-300 font-rajdhani group py-2", 
+                              mutedColor,
+                              support.color
+                            )}
+                          >
+                            <Icon 
+                              weight="bold" 
+                              className={cn(
+                                "h-5 w-5 transition-all duration-300",
+                                mutedColor,
+                                support.color
+                              )} 
+                            />
+                            <span>{support.name}</span>
+                          </a>
+                        </li>
+                        
+                        {/* Elegant divider between items (same as navbar) */}
+                        {index < array.length - 1 && (
+                          <li className="flex justify-center py-1">
+                            <div className="w-4 h-px mx-xs relative">
+                              <div className="absolute inset-0 h-px bg-muted-foreground/20" />
+                              <div className="absolute inset-0 h-px bg-card/30 translate-y-px" />
+                            </div>
+                          </li>
+                        )}
+                      </React.Fragment>
                     )
                   })}
                 </ul>

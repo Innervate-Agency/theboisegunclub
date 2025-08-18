@@ -151,6 +151,7 @@ export function BusinessDetailPage(props: BusinessPageProps) {
     email,
     phone,
     isVerified,
+    verificationStatus,
     tier,
     isSponsored,
     logo,
@@ -169,12 +170,7 @@ export function BusinessDetailPage(props: BusinessPageProps) {
     { label: businessType, className: 'bg-nav-directory/20 text-nav-directory border-nav-directory/30' }
   ]
 
-  if (isVerified) {
-    badges.push({
-      label: '✓ Verified',
-      className: 'bg-sagebrush-green/20 text-sagebrush-green border-sagebrush-green/30'
-    })
-  }
+  // Note: Verified badge removed - now handled by verification status component above title
 
   if (tier !== 'free') {
     badges.push({
@@ -243,6 +239,11 @@ export function BusinessDetailPage(props: BusinessPageProps) {
       }}
       heroImage={images[0]}
       heroContent={businessContent.heroContent}
+      verification={{
+        isVerified,
+        verificationStatus
+      }}
+      reviewsSection={businessContent.reviewsSection}
     />
   )
 }

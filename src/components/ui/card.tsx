@@ -153,12 +153,12 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         {isTactical && (
           <>
             {/* Corner brackets - larger than navbar version */}
-            <div className={cn('absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 opacity-0 group-hover:opacity-90 transition-all duration-200', themeClasses.border)} />
-            <div className={cn('absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 opacity-0 group-hover:opacity-90 transition-all duration-200', themeClasses.border)} />
-            <div className={cn('absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 opacity-0 group-hover:opacity-90 transition-all duration-200', themeClasses.border)} />
+            <div className={cn('absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 opacity-0 group-hover:opacity-25 transition-all duration-200', themeClasses.border)} />
+            <div className={cn('absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 opacity-0 group-hover:opacity-25 transition-all duration-200', themeClasses.border)} />
+            <div className={cn('absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 opacity-0 group-hover:opacity-25 transition-all duration-200', themeClasses.border)} />
             
             {/* Bottom-right corner with document cutout */}
-            <div className={'absolute bottom-0 right-0 w-3 h-3 opacity-0 group-hover:opacity-90 transition-all duration-200'}>
+            <div className={'absolute bottom-0 right-0 w-3 h-3 opacity-0 group-hover:opacity-25 transition-all duration-200'}>
               <div 
                 className={cn('w-full h-full border-2', themeClasses.border)}
                 style={{
@@ -168,8 +168,8 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
             </div>
             
             {/* Tactical latches/clasps */}
-            <div className={cn('absolute top-1 right-1 w-1.5 h-1.5 rounded-full opacity-0 group-hover:opacity-70 transition-all duration-200', themeClasses.bg)} />
-            <div className={cn('absolute bottom-1 left-1 w-1.5 h-1.5 rounded-full opacity-0 group-hover:opacity-70 transition-all duration-200', themeClasses.bg)} />
+            <div className={cn('absolute top-1 right-1 w-1.5 h-1.5 rounded-full opacity-0 group-hover:opacity-20 transition-all duration-200', themeClasses.bg)} />
+            <div className={cn('absolute bottom-1 left-1 w-1.5 h-1.5 rounded-full opacity-0 group-hover:opacity-20 transition-all duration-200', themeClasses.bg)} />
           </>
         )}
         

@@ -7,11 +7,10 @@ import { cn } from "@/lib/utils"
 import { Card } from "./card"
 import { Badge } from "./badge"
 import { Button } from "./button"
-import { TacticalCase } from "./tactical-case"
 // Phosphor Icons - Primary choice for tactical aesthetic
 import { 
   Calendar, MapPin, Clock, Users, Image as ImageIcon, Star, 
-  Trophy, Target, Medal, Crown, Ticket, Lightning as Zap
+  Trophy, Target, Medal, Crown, Ticket, Lightning as Zap, Share, ChartBar
 } from '@phosphor-icons/react'
 import Image from 'next/image'
 
@@ -81,7 +80,6 @@ export function EventCard({
   size = "standard",
   ...props
 }: EventCardProps) {
-  const spotsLeft = capacity && registeredCount ? capacity - registeredCount : null
   
   // Generate slug from title if not provided
   const generateSlug = (title: string, date: string): string => {
@@ -179,19 +177,10 @@ export function EventCard({
 
   return (
     <Link href={eventHref} className="block">
-      <TacticalCase
-        variant="interactive"
-        theme="events"
-        size="lg"
-        showCornerBrackets={true}
-        showLatches={true}
-        showGridPattern={false}
-        caseLabel={featured ? "⭐ FEATURED EVENT" : "EVENT BRIEFING"}
-        className={cn("min-w-[320px]", className)}
-      >
       <Card
-        variant="ghost"
-        className={cn(eventCardVariants({ featured, size }), "border-none bg-transparent shadow-none")}
+        variant="tactical"
+        tacticalTheme="events"
+        className={cn(eventCardVariants({ featured, size }), "min-w-[320px] tactical-card-mobile tactical-card-hover", className)}
         {...props}
       >
       {featured && (
@@ -206,9 +195,22 @@ export function EventCard({
         {/* Subtle overlay with contextual icon */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
         
-        {/* Small contextual icon - bottom right */}
-        <div className="absolute bottom-sm right-sm">
-          {getEventTypeIcon(eventType)}
+        {/* Event Badges - top right */}
+        <div className="absolute top-sm right-sm flex flex-col gap-xs">
+          <Badge 
+            variant={badgeVariant}
+            size="sm"
+            className="bg-black/40 backdrop-blur-sm border-white/20"
+          >
+            {eventType}
+          </Badge>
+          <Badge 
+            variant={featured ? "events-featured" : "secondary"}
+            size="sm"
+            className="bg-black/40 backdrop-blur-sm border-white/20"
+          >
+            {featured ? "Featured" : time.includes("AM") || time.includes("PM") ? "Day Event" : "Multi-Day"}
+          </Badge>
         </div>
         
         {/* Subtle texture particles for tactical feel */}
@@ -256,7 +258,7 @@ export function EventCard({
               }}
               title="Share event"
             >
-              📤
+              <Share weight="bold" className="h-3 w-3" />
             </Button>
             <Button 
               size="sm" 
@@ -269,7 +271,7 @@ export function EventCard({
               }}
               title="View event archive"
             >
-              📊
+              <ChartBar weight="bold" className="h-3 w-3" />
             </Button>
           </div>
         </div>
@@ -278,33 +280,25 @@ export function EventCard({
       <div className="space-y-md">
         {/* Enhanced Header with Better Typography Hierarchy */}
         <div className="space-y-sm">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-xs">
-              <Badge 
-                variant={badgeVariant}
-                size="sm"
-              >
-                {eventType}
-              </Badge>
-              {featured && (
-                <Badge variant="events-featured" size="sm">
-                  ⭐ Featured
-                </Badge>
-              )}
-            </div>
-            
-            {price && (
-              <div className="text-right">
-                <div className="font-rajdhani font-bold text-xl text-nav-events">
+          {/* Price Badge */}
+          {price && (
+            <div className="flex justify-start">
+              <div className="inline-flex items-center px-sm py-xs bg-nav-events/10 border border-nav-events/20 rounded-xs">
+                <span className="font-rajdhani font-bold text-sm text-nav-events">
                   {price}
-                </div>
+                </span>
               </div>
-            )}
-          </div>
+            </div>
+          )}
           
-          <h3 className="font-rajdhani font-bold text-xl text-card-foreground leading-tight line-clamp-2 group-hover:text-nav-events transition-colors duration-200">
-            {title}
-          </h3>
+          <div className="space-y-0">
+            <h2 className="font-rajdhani font-bold text-2xl text-card-foreground leading-tight line-clamp-2 group-hover:text-nav-events transition-colors duration-200">
+              {title}
+            </h2>
+            <h3 className="font-noto-serif text-base text-muted-foreground leading-tight">
+              {eventType} • {location.split(',')[0]}
+            </h3>
+          </div>
         </div>
 
         {/* Enhanced Description with Better Line Height */}
@@ -328,28 +322,6 @@ export function EventCard({
           </div>
         </div>
 
-        {/* Enhanced Capacity Display */}
-        {capacity && (
-          <div className="bg-card border border-border/50 px-sm py-sm rounded-xs">
-            <div className="flex items-center justify-between text-sm">
-              <div className="flex items-center gap-xs text-muted-foreground">
-                <Users weight="bold" className="size-4 text-nav-events" />
-                <span className="font-medium">Capacity: {capacity}</span>
-              </div>
-              <div className={cn(
-                "font-bold",
-                spotsLeft && spotsLeft <= 10 ? "text-destructive" : spotsLeft && spotsLeft <= 20 ? "text-warning" : "text-nav-events"
-              )}>
-                {registeredCount || 0} registered
-                {spotsLeft && spotsLeft <= 10 && (
-                  <span className="text-destructive ml-xs">
-                    • Only {spotsLeft} left!
-                  </span>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
 
         {/* Enhanced CTA Button */}
         {registrationUrl && (
@@ -357,7 +329,7 @@ export function EventCard({
             <Button 
               size="sm"
               variant="outline"
-              className="w-full border-nav-events/30 text-nav-events hover:bg-nav-events hover:text-white hover:border-nav-events transition-all duration-300 font-rajdhani font-bold" 
+              className="w-full border-nav-events/30 text-nav-events group-hover:bg-nav-events group-hover:text-white group-hover:border-nav-events transition-all duration-300 font-rajdhani font-bold" 
               animationType="arrow"
               onClick={(e) => {
                 e.preventDefault()
@@ -365,20 +337,12 @@ export function EventCard({
                 window.open(registrationUrl, '_blank')
               }}
             >
-              {spotsLeft && spotsLeft <= 10 ? (
-                <>
-                  <Zap weight="bold" className="h-3 w-3 mr-xs" />
-                  Register Now - Almost Full!
-                </>
-              ) : (
-                'Register Now'
-              )}
+              Learn More
             </Button>
           </div>
         )}
       </div>
       </Card>
-      </TacticalCase>
     </Link>
   )
 }
