@@ -121,12 +121,12 @@ export function SiteFooter({
   return (
     <>
       <footer className={cn(siteFooterVariants({ variant }), "relative overflow-hidden", className)} {...props}>
+        {/* Page-specific accent bar - Full width */}
+        <div className={cn("h-1 w-full relative z-10", currentPageTheme.accent)} />
+        
         <div className="max-w-[1440px] mx-auto">
           {/* Dynamic Idaho Landscape Background */}
           <LandscapeComponent opacity={0.05} animated={true} />
-          
-          {/* Page-specific accent bar */}
-          <div className={cn("h-1 relative z-10", currentPageTheme.accent)} />
           
           <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Newsletter CTA Section */}
@@ -190,7 +190,7 @@ export function SiteFooter({
                 category="contact"
                 type="headquarters"
                 content="business contact information"
-                className="lg:col-span-1 p-md group surface-base"
+                className="lg:col-span-1 p-md group"
               >
                 <div className="mb-6">
                   {React.createElement(currentPageTheme.icon, { 

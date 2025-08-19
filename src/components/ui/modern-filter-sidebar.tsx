@@ -3,12 +3,12 @@
 import React, { useState, useCallback } from 'react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { motion, AnimatePresence } from 'framer-motion'
+import { m, AnimatePresence, LazyMotion, domAnimation } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import {
   FunnelIcon as Filter,
   TrophyIcon as Trophy,
-  BullseyeIcon as Target,
+  CursorArrowRaysIcon as Target,  // No BullseyeIcon in Heroicons
   SparklesIcon as Crown,
   StarIcon as Medal,
   UsersIcon as Users,
@@ -117,9 +117,9 @@ export function ModernFilterSidebar({
                 variant="ghost"
                 size="sm"
                 onClick={onClearAll}
-                className="gap-xs text-muted-foreground hover:text-nav-events font-rajdhani text-xs p-xs"
+                className="gap-xs text-muted-foreground hover:text-rusty-orange font-rajdhani text-base p-xs"
               >
-                <RotateCw className="size-3" />
+                <RotateCw className="size-4" />
                 Clear All
               </Button>
             )}
@@ -127,14 +127,14 @@ export function ModernFilterSidebar({
 
           {/* Results Summary */}
           {filteredResults !== totalResults && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="text-xs text-muted-foreground font-rajdhani border-l-2 border-nav-events/30 pl-sm"
+              className="text-base text-muted-foreground font-rajdhani border-l-2 border-nav-events/30 pl-sm"
             >
               Showing {filteredResults.toLocaleString()} of {totalResults.toLocaleString()} events
-            </motion.div>
+            </m.div>
           )}
         </div>
       )}
@@ -145,7 +145,7 @@ export function ModernFilterSidebar({
           variant="outline"
           size="sm"
           onClick={onClearAll}
-          className="w-full gap-xs font-rajdhani text-sm"
+          className="w-full gap-xs font-rajdhani text-lg"
         >
           <RotateCw className="size-4" />
           Clear All Filters ({activeFilterCount})
@@ -154,7 +154,7 @@ export function ModernFilterSidebar({
 
       {/* Results Summary for Mobile */}
       {isMobile && filteredResults !== totalResults && (
-        <div className="text-sm text-muted-foreground font-rajdhani text-center p-base bg-muted/50 rounded-xs">
+        <div className="text-lg text-muted-foreground font-rajdhani text-center p-base bg-muted/50 rounded-xs">
           Showing {filteredResults.toLocaleString()} of {totalResults.toLocaleString()} events
         </div>
       )}
@@ -170,7 +170,7 @@ export function ModernFilterSidebar({
           const sectionActiveCount = selectedFilters[section.id]?.length || 0
 
           return (
-            <motion.div
+            <m.div
               key={section.id}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -178,10 +178,10 @@ export function ModernFilterSidebar({
             >
               {/* Section Header */}
               <div className="flex items-center justify-between">
-                <h4 className="font-rajdhani font-semibold text-body-sm text-card-foreground uppercase tracking-wider">
+                <h4 className="font-rajdhani font-semibold text-body-lg text-card-foreground uppercase tracking-wider">
                   {section.title}
                   {sectionActiveCount > 0 && (
-                    <Badge variant="secondary" className="ml-xs bg-nav-events/10 text-nav-events text-[10px] px-1 py-0">
+                    <Badge variant="secondary" className="ml-xs bg-nav-events/10 text-nav-events text-sm px-2 py-0.5">
                       {sectionActiveCount}
                     </Badge>
                   )}
@@ -192,9 +192,9 @@ export function ModernFilterSidebar({
                       variant="ghost"
                       size="sm"
                       onClick={() => onClearSection?.(section.id)}
-                      className="p-0 h-auto text-muted-foreground hover:text-nav-events"
+                      className="p-0 h-auto text-muted-foreground hover:text-rusty-orange"
                     >
-                      <X className="size-3" />
+                      <X className="size-4" />
                     </Button>
                   )}
                   {section.collapsible && (
@@ -205,9 +205,9 @@ export function ModernFilterSidebar({
                       className="p-0 h-auto text-muted-foreground hover:text-card-foreground"
                     >
                       {isExpanded ? (
-                        <ChevronUp className="size-3" />
+                        <ChevronUp className="size-4" />
                       ) : (
-                        <ChevronDown className="size-3" />
+                        <ChevronDown className="size-4" />
                       )}
                     </Button>
                   )}
@@ -217,7 +217,7 @@ export function ModernFilterSidebar({
               {/* Section Content */}
               <AnimatePresence initial={false}>
                 {isExpanded && (
-                  <motion.div
+                  <m.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
@@ -236,7 +236,7 @@ export function ModernFilterSidebar({
                         }
 
                         return (
-                          <motion.div
+                          <m.div
                             key={option.id}
                             whileHover={{ x: 2 }}
                             whileTap={{ scale: 0.98 }}
@@ -246,8 +246,8 @@ export function ModernFilterSidebar({
                               size="sm"
                               onClick={() => onFilterChange(section.id, option.id)}
                               className={cn(
-                                "w-full justify-between text-body-xs font-rajdhani shadow-none rounded-xs h-8 transition-all duration-200",
-                                isActive && "bg-nav-events/20 text-nav-events hover:bg-nav-events/30 border border-nav-events/30",
+                                "w-full justify-between text-body-base font-rajdhani shadow-none rounded-xs h-10 transition-all duration-200 hover:text-rusty-orange",
+                                isActive && "bg-rusty-orange/20 text-rusty-orange hover:bg-rusty-orange/30 border border-rusty-orange/30",
                                 !isActive && "hover:bg-muted/50 hover:translate-x-1"
                               )}
                             >
@@ -266,20 +266,20 @@ export function ModernFilterSidebar({
                                 size="sm"
                                 className={cn(
                                   "text-[10px] px-1.5 py-0.5 min-w-[20px] transition-colors duration-200",
-                                  isActive ? "bg-nav-events text-white" : "bg-muted text-muted-foreground"
+                                  isActive ? "bg-rusty-orange text-white" : "bg-muted text-muted-foreground"
                                 )}
                               >
                                 {option.count}
                               </Badge>
                             </Button>
-                          </motion.div>
+                          </m.div>
                         )
                       })}
                     </div>
 
                     {/* Show More/Less Toggle */}
                     {hasMoreOptions && (
-                      <motion.div
+                      <m.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         className="pt-xs"
@@ -288,26 +288,26 @@ export function ModernFilterSidebar({
                           variant="ghost"
                           size="sm"
                           onClick={() => toggleShowAll(section.id)}
-                          className="w-full gap-xs text-muted-foreground hover:text-card-foreground font-rajdhani text-xs h-6"
+                          className="w-full gap-xs text-muted-foreground hover:text-rusty-orange font-rajdhani text-base h-8"
                         >
                           {showAll ? (
                             <>
-                              <ChevronUp className="size-3" />
+                              <ChevronUp className="size-4" />
                               Show Less
                             </>
                           ) : (
                             <>
-                              <ChevronDown className="size-3" />
+                              <ChevronDown className="size-4" />
                               Show {section.options.length - maxVisible} More
                             </>
                           )}
                         </Button>
-                      </motion.div>
+                      </m.div>
                     )}
-                  </motion.div>
+                  </m.div>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </m.div>
           )
         })}
       </div>
@@ -319,14 +319,14 @@ export function ModernFilterSidebar({
     return (
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm lg:hidden"
             onClick={onClose}
           >
-            <motion.div
+            <m.div
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
@@ -361,8 +361,8 @@ export function ModernFilterSidebar({
                 {/* Filter Content */}
                 {renderFilterContent()}
               </div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         )}
       </AnimatePresence>
     )

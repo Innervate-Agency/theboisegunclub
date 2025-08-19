@@ -19,8 +19,8 @@ const eventCardVariants = cva(
   {
     variants: {
       featured: {
-        true: "border-primary/20 bg-gradient-to-br from-card to-primary/5 shadow-elevated hover:shadow-commanding",
-        false: "shadow-present hover:shadow-prominent hover:border-primary/20"
+        true: "border-primary/20 bg-gradient-to-br from-card to-primary/5 shadow-ghost hover:shadow-present",
+        false: "shadow-ghost hover:shadow-present hover:border-primary/20"
       },
       size: {
         compact: "p-md",
@@ -236,13 +236,24 @@ export function EventCard({
           </div>
         </div>
         
-        {/* Quick Actions Overlay - Repositioned */}
-        <div className="absolute top-xs right-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          <div className="flex gap-xs">
-            <Button 
-              size="sm" 
-              variant="outline"
-              className="bg-card/90 backdrop-blur-sm border-border/50 h-6 w-6 p-0"
+      </div>
+      
+      <div className="space-y-md">
+        {/* Enhanced Header with Better Typography Hierarchy */}
+        <div className="space-y-sm">
+          {/* Price Badge with Quick Actions */}
+          <div className="flex items-center gap-xs">
+            {price && (
+              <div className="inline-flex items-center px-sm py-xs bg-nav-events/10 border border-nav-events/20 rounded-xs">
+                <span className="font-rajdhani font-bold text-sm text-nav-events">
+                  {price}
+                </span>
+              </div>
+            )}
+            
+            {/* Badge-style Action Buttons */}
+            <button
+              className="inline-flex items-center px-sm py-xs bg-muted/50 hover:bg-rusty-orange/10 border border-border/50 hover:border-rusty-orange/30 rounded-xs transition-all duration-200 group/share"
               onClick={(e) => {
                 e.preventDefault()
                 e.stopPropagation()
@@ -258,12 +269,12 @@ export function EventCard({
               }}
               title="Share event"
             >
-              <Share weight="bold" className="h-3 w-3" />
-            </Button>
-            <Button 
-              size="sm" 
-              variant="outline"
-              className="bg-card/90 backdrop-blur-sm border-border/50 h-6 w-6 p-0"
+              <Share weight="bold" className="h-3.5 w-3.5 text-muted-foreground group-hover/share:text-rusty-orange" />
+              <span className="ml-xs text-xs font-rajdhani font-semibold text-muted-foreground group-hover/share:text-rusty-orange">Share</span>
+            </button>
+            
+            <button
+              className="inline-flex items-center px-sm py-xs bg-muted/50 hover:bg-rusty-orange/10 border border-border/50 hover:border-rusty-orange/30 rounded-xs transition-all duration-200 group/archive"
               onClick={(e) => {
                 e.preventDefault()
                 e.stopPropagation()
@@ -271,25 +282,10 @@ export function EventCard({
               }}
               title="View event archive"
             >
-              <ChartBar weight="bold" className="h-3 w-3" />
-            </Button>
+              <ChartBar weight="bold" className="h-3.5 w-3.5 text-muted-foreground group-hover/archive:text-rusty-orange" />
+              <span className="ml-xs text-xs font-rajdhani font-semibold text-muted-foreground group-hover/archive:text-rusty-orange">Archive</span>
+            </button>
           </div>
-        </div>
-      </div>
-      
-      <div className="space-y-md">
-        {/* Enhanced Header with Better Typography Hierarchy */}
-        <div className="space-y-sm">
-          {/* Price Badge */}
-          {price && (
-            <div className="flex justify-start">
-              <div className="inline-flex items-center px-sm py-xs bg-nav-events/10 border border-nav-events/20 rounded-xs">
-                <span className="font-rajdhani font-bold text-sm text-nav-events">
-                  {price}
-                </span>
-              </div>
-            </div>
-          )}
           
           <div className="space-y-0">
             <h2 className="font-rajdhani font-bold text-2xl text-card-foreground leading-tight line-clamp-2 group-hover:text-nav-events transition-colors duration-200">

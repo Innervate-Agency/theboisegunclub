@@ -1167,8 +1167,19 @@
   /* Progressive Enhancement - Hover only when available */
   @media (hover: hover) and (pointer: fine) {
     .tactical-card-hover:hover {
-      /* border-color: currentColor; -- Disabled to use corner brackets only */
-      box-shadow: var(--shadow-whisper);
+      /* Enhanced tactical corner brackets with subtle orange glow */
+      border-color: color-mix(in srgb, var(--color-rusty-orange) 40%, transparent);
+      
+      /* Match the card shadow progression - whisper to hero */
+      box-shadow: var(--shadow-hero);
+    }
+    
+    /* Enhanced corner bracket effect */
+    .tactical-card-hover:hover::before,
+    .tactical-card-hover:hover::after {
+      opacity: 0.9;
+      border-color: color-mix(in srgb, var(--color-rusty-orange) 60%, transparent);
+      box-shadow: 0 0 8px color-mix(in srgb, var(--color-rusty-orange) 30%, transparent);
     }
   }
 

@@ -1,106 +1,47 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code when working with this repository.
+## 🚀 PRODUCTION STATUS: LAUNCH-READY
 
-## 🚀 PRODUCTION DEPLOYMENT STATUS - READY FOR GO-LIVE! 🚀
+### **DATABASE & INFRASTRUCTURE COMPLETE**
+- **PostgreSQL Backend**: 281 verified Idaho firearms businesses
+- **Serper API**: Real-time Google Reviews with 7-day caching
+- **Dynamic Pages**: All business pages at `/directory/[slug]`
+- **Production Ready**: Docker + Next.js 15 + React 19
 
-### **DATABASE INTEGRATION COMPLETE - 2025-08-18**
+### **DESIGN SYSTEM UNIFIED**
+- **Heroicons Migration**: Complete icon system standardization
+- **Shadow Progression**: whisper → hero (levels 1-7)
+- **Tactical Aesthetic**: Square components, orange hover states
+- **Mobile-First**: 60% traffic optimization
 
-#### 🎯 **DATABASE INTEGRATION COMPLETE** ✅ PRODUCTION-READY
-- **PostgreSQL Backend**: 281 verified Idaho firearms businesses with complete data pipeline
-- **Hybrid Architecture**: 90% static generation + 10% dynamic content (reviews, real-time stats)
-- **Real Business Data**: Authentic FFL dealers, gun shops, ranges, gunsmiths across Treasure Valley
-- **Dynamic Page Generation**: All 281 business pages accessible at `/directory/[slug]`
-- **Google Reviews Integration**: SerpAPI with 7-day caching for authentic customer feedback
-- **Docker Deployment Ready**: Production-ready containerization with multi-stage builds
+## Tech Stack
+- **Next.js 15** + React 19 + TypeScript + Tailwind CSS v4
+- **Icons**: Heroicons (cube-transparent, ticket, identification, plus-circle, map, banknotes, chat-bubble-bottom-center-text)
+- **Database**: PostgreSQL with 281 Idaho businesses
 
-#### 🏗️ **SCALABLE INFRASTRUCTURE** ✅ PRODUCTION-GRADE
-- **Database Schema**: Comprehensive PostgreSQL with full-text search, advanced indexing
-- **API Service Layer**: Type-safe database access with static/dynamic data separation
-- **CSV Import Pipeline**: Automated processing from 6 data sources (FFL retail, county directories)
-- **Health Monitoring**: Complete system health checks for production validation
-- **Performance Optimization**: Next.js standalone builds, React 19 compiler, bundle optimization
+## Commands
+- `npm run dev` - Development server
+- `npm run build` - Production build
+- `npm run lint` - Code quality check
 
-#### 📊 **VERIFIED PRODUCTION DATA** ✅ COMPLETE
-- **281 Total Businesses**: Real Idaho firearms community directory
-- **Geographic Coverage**: Treasure Valley (Boise 51, Nampa 43, Meridian 23) + statewide
-- **Business Categories**: FFL Dealers (220), Tactical/Training (19), Gunsmiths (18), others
-- **Data Quality**: Verified addresses, phone numbers, services, specialties
-- **SEO Ready**: Individual metadata and structured data for all business pages
+## Design System Rules
+- **Colors**: Only Boise landscape palette from `globals.css` (26-color system)
+- **Shadows**: Use shadow-whisper → shadow-hero progression (levels 1-7)
+- **Components**: Square tactical aesthetic, rounded-none for cards
+- **Icons**: Heroicons ONLY - no Phosphor, Lucide, or other libraries
 
-#### 🎨 **DESIGN SYSTEM MATURITY** ✅ STABLE
-- **26-Color Idaho Landscape Palette**: Zero tolerance enforcement with Design Bible documentation
-- **8-Level Shadow Hierarchy**: Semantic progression with tactical square aesthetic
-- **Mobile-First Responsive**: 60% mobile traffic optimization with progressive enhancement
-- **Interactive Card System**: Ghost state implementation with tactical theme adaptation
-- **Optimized CSS**: 1,081-line globals.css with 62% size reduction maintaining functionality
+## Key Files
+- `src/app/page.tsx` - Home page (16-line pattern)
+- `src/app/globals.css` - 26-color Boise palette + shadow system
+- `src/components/ui/site-navigation.tsx` - Main nav with Heroicons
+- `src/components/pages/*` - Page components (directory, events, etc.)
 
-#### 🛠️ **HERO LAYOUT SYSTEM STABILIZED** ✅ PRODUCTION-READY
-- **CSS Height Constraints Fixed**: Removed conflicting `max-height` constraints from hero sections
-- **Button Visibility Restored**: All 7 page hero buttons now properly visible with consistent hover states
-- **Component Architecture Cleaned**: Events ticker restored, filter sidebars functional, badge icons optimized
-- **Responsive Hero Cards**: Compact hero card variations maintain content hierarchy without overflow
-- **Cross-Page Consistency**: Unified hero button styling and interaction patterns across all sections
-
-**DEPLOYMENT STATUS**: Database integration complete, 281 business pages generated, hero layouts stabilized, production-ready!
-
----
-
-## Project Overview
-
-**The Boise Gun Club** - Next.js 15 application serving as a comprehensive digital hub for Treasure Valley firearms communities. Built with React 19, TypeScript, Tailwind CSS v4, and shadcn/ui components.
-
-### Business Context
-Regional marketplace/directory platform for the entire Treasure Valley firearms community - NOT a single gun club. **Community-focused platform** built by Idaho gun owners, for Idaho gun owners, emphasizing authentic voice over corporate messaging.
-
----
-
-## Development Commands
-
-### Essential Commands
-- `npm run dev` - Development server (Next.js 15)
-- `npm run build` - Production build  
-- `npm run lint` - ESLint code quality check
-- `npm run health` - Project health check
-- `npm run storybook` - Component development (port 6006)
-
-### Testing & Quality
-- **Testing**: Vitest with Storybook integration (auto-runs via `npm run storybook`)
-- **Browser Testing**: Playwright + Chromium
-- **Specs**: Additional tests in `/specs/*.spec.ts`
-
----
-
-## Architecture
-
-### Core Stack
-- **Next.js 15** (App Router, TypeScript)
-- **React 19** (Server Components)  
-- **Tailwind CSS v4** (CSS-based config)
-- **shadcn/ui** ("new-york" style)
-- **Framer Motion** (Magic Line navigation, micro-animations)
-- **Phosphor Icons** (Primary icon system with tactical aesthetic)
-
-### Path Aliases
-- `@/components` → `src/components`
-- `@/lib` → `src/lib`
-- `@/ui` → `src/components/ui`
-
----
-
-## Design System (CRITICAL - ZERO TOLERANCE)
-
-**📚 Complete Reference**: See **[Design Bible](docs/DESIGN_BIBLE.md)** for comprehensive implementation guide with citations and examples.
-
-### Color System
-- **ONLY** use Boise landscape colors from `src/app/globals.css` (26-color system)
-- **FORBIDDEN**: Generic Tailwind (`text-gray-500`), hex codes (`bg-[#F2CB05]`)
-- **REQUIRED**: Semantic names (`bg-rusty-orange`, `text-slate-blue`)
-- **Theme Classes**: Always use `bg-card`, `text-card-foreground`, `border-border` (never `bg-white`)
-
-### Shadow System (8-Level Semantic)
-- **Progression**: `shadow-ghost` → `shadow-whisper` → `shadow-present` → `shadow-elevated` → `shadow-prominent` → `shadow-commanding` → `shadow-hero` → `shadow-modal`
-- **Interactive**: Shadows step up on hover (present→elevated, prominent→commanding)
+## Project Memory
+- **Authentic Data**: 100% verified Idaho businesses - NEVER use placeholder data
+- **API Integration**: Always use Google Reviews API via Serper - NEVER hardcode reviews
+- **Community Voice**: Platform built by Idaho gun owners, for Idaho gun owners
+- **Mobile-First**: Navigation integrity maintained across breakpoints
+- **Shadow Progression**: Cards use shadow-whisper → shadow-hero on hover
 
 ### Tactical Square Aesthetic
 - **Main Cards**: `rounded-none` (square tactical)

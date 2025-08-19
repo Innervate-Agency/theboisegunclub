@@ -18,11 +18,21 @@ import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
 import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { 
-  TicketIcon as Ticket, TrophyIcon as Trophy, BullseyeIcon as Target, UsersIcon as Users, 
-  CalendarIcon as Calendar, PlusIcon as Plus, ArrowRightIcon as ArrowRight, 
-  ChevronRightIcon as CaretRight, SparklesIcon as Crown, MapPinIcon as MapPin, 
-  ClockIcon as Clock, CheckCircleIcon as CheckCircle, StarIcon as Star,
-  CurrencyDollarIcon as CurrencyDollar, StarIcon as Medal, MagnifyingGlassIcon as Search, 
+  TicketIcon as Ticket, 
+  TrophyIcon as Trophy, 
+  CursorArrowRaysIcon as Target,  // Using cursor-arrow-rays as target substitute
+  UsersIcon as Users, 
+  CalendarIcon as Calendar, 
+  PlusIcon as Plus, 
+  ArrowRightIcon as ArrowRight, 
+  ChevronRightIcon as CaretRight, 
+  SparklesIcon as Crown, 
+  MapPinIcon as MapPin, 
+  ClockIcon as Clock, 
+  CheckCircleIcon as CheckCircle, 
+  StarIcon as Star,
+  CurrencyDollarIcon as CurrencyDollar, 
+  MagnifyingGlassIcon as Search, 
   FunnelIcon as Filter
 } from '@heroicons/react/24/outline'
 
@@ -329,7 +339,7 @@ export function EventsPageStandardized() {
     { icon: Target, title: "Competitions", value: upcomingEvents.filter(e => e.eventType === 'Competition').length.toString(), subtitle: "Scheduled matches", color: "text-nav-events" },
     { icon: Crown, title: "Gun Shows", value: upcomingEvents.filter(e => e.eventType === 'Expo').length.toString(), subtitle: "Trade events", color: "text-nav-events" },
     { icon: Users, title: "Training Events", value: upcomingEvents.filter(e => e.eventType === 'Training').length.toString(), subtitle: "Education programs", color: "text-nav-events" },
-    { icon: Medal, title: "Charity Events", value: upcomingEvents.filter(e => e.eventType === 'Charity').length.toString(), subtitle: "Fundraising", color: "text-nav-events" },
+    { icon: Star, title: "Charity Events", value: upcomingEvents.filter(e => e.eventType === 'Charity').length.toString(), subtitle: "Fundraising", color: "text-nav-events" },
     { icon: Calendar, title: "Total Events", value: upcomingEvents.length.toString(), subtitle: "Through 2026", color: "text-nav-events" }
   ]
 
@@ -419,7 +429,7 @@ export function EventsPageStandardized() {
         { id: 'competition', label: 'Competitions', icon: Trophy, count: upcomingEvents.filter(e => e.eventType === 'Competition').length, color: 'text-nav-events' },
         { id: 'training', label: 'Training', icon: Target, count: upcomingEvents.filter(e => e.eventType === 'Training').length, color: 'text-nav-armory' },
         { id: 'expo', label: 'Gun Shows', icon: Crown, count: upcomingEvents.filter(e => e.eventType === 'Expo').length, color: 'text-nav-marketplace' },
-        { id: 'charity', label: 'Charity Events', icon: Medal, count: upcomingEvents.filter(e => e.eventType === 'Charity').length, color: 'text-sagebrush-green' },
+        { id: 'charity', label: 'Charity Events', icon: Star, count: upcomingEvents.filter(e => e.eventType === 'Charity').length, color: 'text-sagebrush-green' },
         { id: 'social', label: 'Social Events', icon: Users, count: upcomingEvents.filter(e => e.eventType === 'Social').length, color: 'text-nav-forums' }
       ]
     },
@@ -477,7 +487,7 @@ export function EventsPageStandardized() {
           <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
             <div className="flex items-center gap-base">
               <div className="bg-card/10 p-base rounded-xs border border-border">
-                <Calendar weight="bold" className="h-8 w-8 text-white" />
+                <Calendar className="h-8 w-8 text-white" />
               </div>
               <div className="space-y-base">
                 <div className="flex items-center gap-xs text-sm text-white/60">
@@ -487,15 +497,15 @@ export function EventsPageStandardized() {
                 </div>
                 <div className="flex flex-wrap gap-xs">
                   <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-                    <Trophy weight="bold" className="h-4 w-4 mr-xs" />
+                    <Trophy className="h-4 w-4 mr-xs" />
                     Competitions
                   </Badge>
                   <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-                    <Target weight="bold" className="h-4 w-4 mr-xs" />
+                    <Target className="h-4 w-4 mr-xs" />
                     Training
                   </Badge>
                   <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-                    <Users weight="bold" className="h-4 w-4 mr-xs" />
+                    <Users className="h-4 w-4 mr-xs" />
                     Community
                   </Badge>
                 </div>
@@ -609,7 +619,7 @@ export function EventsPageStandardized() {
           {/* Search Bar */}
           <div className="mb-lg">
             <div className="relative max-w-2xl">
-              <Search weight="bold" className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder="Search events, locations, or organizers..."
                 className="pl-10 h-12 text-body-base shadow-elevated"
@@ -626,7 +636,7 @@ export function EventsPageStandardized() {
               { id: 'competitions', label: 'Competitions', count: upcomingEvents.filter(e => e.eventType === 'Competition').length, icon: Trophy },
               { id: 'training', label: 'Training', count: upcomingEvents.filter(e => e.eventType === 'Training').length, icon: Target },
               { id: 'expos', label: 'Expos', count: upcomingEvents.filter(e => e.eventType === 'Expo').length, icon: Crown },
-              { id: 'charity', label: 'Charity', count: upcomingEvents.filter(e => e.eventType === 'Charity').length, icon: Medal },
+              { id: 'charity', label: 'Charity', count: upcomingEvents.filter(e => e.eventType === 'Charity').length, icon: Star },
               { id: 'social', label: 'Social', count: upcomingEvents.filter(e => e.eventType === 'Social').length, icon: Users },
               { id: 'featured', label: 'Featured', count: upcomingEvents.filter(e => e.featured).length }
             ].map((tab) => (
@@ -708,7 +718,7 @@ export function EventsPageStandardized() {
                     onClick={() => setMobileFiltersOpen(true)}
                     className="gap-xs font-rajdhani lg:hidden"
                   >
-                    <Filter weight="bold" className="size-4" />
+                    <Filter className="size-4" />
                     Filters
                     {getActiveFilterCount() > 0 && (
                       <Badge variant="secondary" className="ml-xs bg-nav-events/20 text-nav-events border-nav-events/30 text-xs">

@@ -14,21 +14,21 @@ import { useTacticalTracker } from '@/hooks/useTacticalTracker'
 import { useKonamiCode } from '@/hooks/useKonamiCode'
 import { useNightOpsTheme } from '@/hooks/useNightOpsTheme'
 import { 
-  Diamond, 
-  Ticket,
-  AddressBook,
-  Shield,
-  MapTrifold,
-  Storefront,
-  Users
-} from '@phosphor-icons/react'
+  CubeTransparentIcon as Diamond, 
+  TicketIcon as Ticket,
+  IdentificationIcon as AddressBook,
+  PlusCircleIcon as Shield,
+  MapIcon as MapTrifold,
+  BanknotesIcon as Storefront,
+  ChatBubbleBottomCenterTextIcon as Users
+} from '@heroicons/react/24/outline'
 
 const siteNavigationVariants = cva(
   "w-full transition-all duration-200 ease-out",
   {
     variants: {
       variant: {
-        default: "mica-navbar shadow-whisper surface-worn",
+        default: "mica-navbar shadow-whisper",
         premium: "mica-navbar shadow-present",
         elite: "mica-modal shadow-prominent after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warning-amber/50 after:to-transparent",
         glass: "mica-card shadow-elevated",
@@ -308,7 +308,7 @@ export function SiteNavigation({
                       scale: 1
                     }}
                     animate={{ 
-                      rotate: [0, 360, 30], // Full spin then settles at 30-degree tilt
+                      rotate: 332, // Single spin landing at ~28 degrees off-kilter (360-28=332)
                       scale: [1, 1.05, 1]
                     }}
                     transition={{ 
@@ -317,13 +317,12 @@ export function SiteNavigation({
                       times: [0, 0.7, 1]
                     }}
                     whileHover={{ 
-                      rotate: [30, 20, 40, 30], // Hover wiggle from tilted position
+                      rotate: [332, 325, 340, 332], // Hover wiggle from tilted position
                       transition: { duration: 0.5, ease: "easeInOut" }
                     }}
                   >
                     {React.createElement(getCurrentPageIcon(), { 
-                      className: "size-6 sm:size-8", 
-                      weight: "bold" 
+                      className: "size-6 sm:size-8"
                     })}
                   </MotionDiv>
                   <div className="hidden sm:block">
