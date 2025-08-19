@@ -949,56 +949,83 @@
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
   }
 
-  /* Subtle tactical weathering effects using SVG noise */
-  .tactical-grain {
+  /* ==========================================
+     TACTICAL WEATHERING SYSTEM
+     Based on real-world usage patterns
+     ========================================== */
+
+  /* LEVEL 1: Base texture for all surfaces */
+  .surface-base {
     position: relative;
   }
 
-  .tactical-grain::before {
+  .surface-base::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("data:image/svg+xml,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='grain'><feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23grain)' opacity='0.1'/></svg>");
+    background-image: url("data:image/svg+xml,<svg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'><filter id='base'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23base)' opacity='0.02'/></svg>");
     pointer-events: none;
     z-index: 1;
     mix-blend-mode: multiply;
   }
 
-  .tactical-paper {
+  /* LEVEL 2: Interactive surfaces (navigation, buttons) */
+  .surface-handled {
     position: relative;
   }
 
-  .tactical-paper::before {
+  .surface-handled::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("data:image/svg+xml,<svg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'><filter id='paper'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23paper)' opacity='0.05'/></svg>");
+    background-image: url("data:image/svg+xml,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='handled'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23handled)' opacity='0.04'/></svg>");
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+  }
+
+  /* LEVEL 3: Heavy use areas (main navigation) */
+  .surface-worn {
+    position: relative;
+  }
+
+  .surface-worn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(ellipse at 25% 25%, rgba(0,0,0,0.015) 40%, transparent 45%),
+      radial-gradient(ellipse at 75% 70%, rgba(0,0,0,0.02) 35%, transparent 40%);
     pointer-events: none;
     z-index: 1;
     mix-blend-mode: soft-light;
   }
 
-  .tactical-worn {
+  /* SPECIAL: Field-tested equipment (call-to-action elements) */
+  .field-tested {
     position: relative;
   }
 
-  .tactical-worn::before {
+  .field-tested::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("data:image/svg+xml,<svg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'><filter id='worn'><feTurbulence type='turbulence' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23worn)' opacity='0.08'/></svg>");
+    background-image: url("data:image/svg+xml,<svg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'><filter id='field'><feTurbulence type='turbulence' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23field)' opacity='0.03'/></svg>");
     pointer-events: none;
     z-index: 1;
-    mix-blend-mode: overlay;
+    mix-blend-mode: multiply;
   }
 
 

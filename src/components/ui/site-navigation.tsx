@@ -28,7 +28,7 @@ const siteNavigationVariants = cva(
   {
     variants: {
       variant: {
-        default: "mica-navbar shadow-whisper",
+        default: "mica-navbar shadow-whisper surface-worn",
         premium: "mica-navbar shadow-present",
         elite: "mica-modal shadow-prominent after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warning-amber/50 after:to-transparent",
         glass: "mica-card shadow-elevated",

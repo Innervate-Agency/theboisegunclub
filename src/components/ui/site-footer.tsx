@@ -190,7 +190,7 @@ export function SiteFooter({
                 category="contact"
                 type="headquarters"
                 content="business contact information"
-                className="lg:col-span-1 p-md group tactical-dirt"
+                className="lg:col-span-1 p-md group surface-base"
               >
                 <div className="mb-6">
                   {React.createElement(currentPageTheme.icon, { 
@@ -230,7 +230,7 @@ export function SiteFooter({
                 category="navigation"
                 type="links"
                 content="site navigation menu"
-                className="p-md group tactical-scratches"
+                className="p-md group surface-handled"
               >
                 <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Quick Links
@@ -350,7 +350,7 @@ export function SiteFooter({
                 category="support"
                 type="help"
                 content="customer support and assistance"
-                className="p-md group tactical-dirt tactical-scratches"
+                className="p-md group surface-base"
               >
                 <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
                   Support
