@@ -11,7 +11,7 @@ import {
   MapIcon as Map, 
   BookOpenIcon as BookOpen, 
   ShieldCheckIcon as Shield, 
-  TargetIcon as Target, 
+  PlusCircleIcon as Target, 
   ExclamationTriangleIcon as AlertTriangle, 
   CompassIcon as Compass
 } from '@heroicons/react/24/outline'
@@ -70,7 +70,7 @@ export function NotFoundPage() {
                 </h1>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="bg-rusty-orange/10 p-content-md rounded-full border-2 border-rusty-orange/20">
-                    <Target className="h-16 w-16 text-rusty-orange" />
+                    <Target className="h-16 w-16 text-rusty-orange rotate-45" />
                   </div>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export function NotFoundPage() {
                   <Card 
                     variant="tactical" 
                     tacticalTheme="default" 
-                    className={`tactical-card-mobile tactical-card-hover group border-nav-${card.theme}/30`}
+                    className={`group border-nav-${card.theme}/30`}
                   >
                     <CardContent className="p-content-lg text-center space-y-content-base">
                       <div className={`bg-nav-${card.theme}/20 p-content-base rounded-xs w-fit mx-auto`}>

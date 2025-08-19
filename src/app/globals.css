@@ -1124,75 +1124,6 @@
     box-shadow: 0 4px 6px -1px rgba(50, 50, 93, 0.11);
   }
 
-  /* Mobile Touch Interactions */
-  @media (hover: none) and (pointer: coarse) {
-    .tactical-card-mobile {
-      -webkit-tap-highlight-color: transparent;
-      touch-action: manipulation;
-    }
-
-    .tactical-card-mobile:active {
-      transform: scale(0.98);
-      transition: transform 150ms ease-out;
-    }
-
-    /* Ripple effect for touch feedback */
-    .tactical-card-mobile {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .tactical-card-mobile::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: currentColor;
-      opacity: 0;
-      transform: translate(-50%, -50%);
-      transition: width 600ms, height 600ms, opacity 300ms;
-      pointer-events: none;
-    }
-
-    .tactical-card-mobile:active::after {
-      width: 300px;
-      height: 300px;
-      opacity: 0.1;
-    }
-  }
-
-  /* Progressive Enhancement - Hover only when available */
-  @media (hover: hover) and (pointer: fine) {
-    .tactical-card-hover:hover {
-      /* Enhanced tactical corner brackets with subtle orange glow */
-      border-color: color-mix(in srgb, var(--color-rusty-orange) 40%, transparent);
-      
-      /* Match the card shadow progression - whisper to hero */
-      box-shadow: var(--shadow-hero);
-    }
-    
-    /* Enhanced corner bracket effect */
-    .tactical-card-hover:hover::before,
-    .tactical-card-hover:hover::after {
-      opacity: 0.9;
-      border-color: color-mix(in srgb, var(--color-rusty-orange) 60%, transparent);
-      box-shadow: 0 0 8px color-mix(in srgb, var(--color-rusty-orange) 30%, transparent);
-    }
-  }
-
-  /* Reduced Motion Support */
-  @media (prefers-reduced-motion: reduce) {
-    .tactical-card-mobile,
-    .tactical-card-mobile::after,
-    .tactical-card-hover {
-      transition: none !important;
-      animation: none !important;
-    }
-  }
-
   /* Hero Layout Utilities */
   .hero-grid-layout {
     display: grid;
@@ -1238,16 +1169,6 @@
     }
   }
 
-  /* Haptic Feedback Support (where available) */
-  .tactical-haptic {
-    cursor: pointer;
-  }
-
-  .tactical-haptic:active {
-    /* Browser will trigger haptic feedback on supported devices */
-    -webkit-user-select: none;
-    user-select: none;
-  }
 }
 
 /* ===============================================================================

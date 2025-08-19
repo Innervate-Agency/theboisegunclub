@@ -7,20 +7,32 @@ import { cn } from "@/lib/utils"
 import { Card } from "./card"
 import { Badge } from "./badge"
 import { Button } from "./button"
-// Phosphor Icons - Primary choice for tactical aesthetic
+// Heroicons - Updated from Phosphor for consistency
 import { 
-  Calendar, MapPin, Clock, Users, Image as ImageIcon, Star, 
-  Trophy, Target, Medal, Crown, Ticket, Lightning as Zap, Share, ChartBar
-} from '@phosphor-icons/react'
+  CalendarIcon as Calendar, 
+  MapPinIcon as MapPin, 
+  ClockIcon as Clock, 
+  UsersIcon as Users, 
+  PhotoIcon as ImageIcon, 
+  StarIcon as Star,
+  TrophyIcon as Trophy, 
+  PlusCircleIcon as Target, 
+  StarIcon as Medal, 
+  TrophyIcon as Crown, 
+  TicketIcon as Ticket, 
+  BoltIcon as Zap, 
+  ShareIcon as Share, 
+  ChartBarIcon as ChartBar
+} from '@heroicons/react/24/outline'
 import Image from 'next/image'
 
 const eventCardVariants = cva(
-  "p-lg transition-all duration-300 group relative overflow-hidden hover:scale-[1.02] cursor-pointer min-w-[320px]",
+  "transition-all duration-300 group relative overflow-hidden cursor-pointer min-w-[320px] active:scale-[0.98] hover:scale-[1.01] focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-nav-events/50",
   {
     variants: {
       featured: {
-        true: "border-primary/20 bg-gradient-to-br from-card to-primary/5 shadow-ghost hover:shadow-present",
-        false: "shadow-ghost hover:shadow-present hover:border-primary/20"
+        true: "border-2 border-primary/20 bg-gradient-to-br from-card to-primary/5 shadow-ghost hover:shadow-present hover:border-primary/30",
+        false: "border-2 border-transparent shadow-ghost hover:shadow-present hover:border-rusty-orange/30"
       },
       size: {
         compact: "p-md",
@@ -145,19 +157,19 @@ export function EventCard({
     const iconClass = "size-8 text-white/80 relative z-10"
     switch (type) {
       case 'Competition': 
-        return <Trophy weight="bold" className={iconClass} />
+        return <Trophy className={iconClass} />
       case 'Training': 
-        return <Target weight="bold" className={iconClass} />
+        return <Target className={iconClass} />
       case 'Expo': 
-        return <Crown weight="bold" className={iconClass} />
+        return <Crown className={iconClass} />
       case 'Charity': 
-        return <Medal weight="bold" className={iconClass} />
+        return <Medal className={iconClass} />
       case 'Social': 
-        return <Users weight="bold" className={iconClass} />
+        return <Users className={iconClass} />
       case 'Demo': 
-        return <Zap weight="bold" className={iconClass} />
+        return <Zap className={iconClass} />
       default: 
-        return <Calendar weight="bold" className={iconClass} />
+        return <Calendar className={iconClass} />
     }
   }
 
@@ -178,11 +190,28 @@ export function EventCard({
   return (
     <Link href={eventHref} className="block">
       <Card
-        variant="tactical"
-        tacticalTheme="events"
-        className={cn(eventCardVariants({ featured, size }), "min-w-[320px] tactical-card-mobile tactical-card-hover", className)}
+        className={cn(eventCardVariants({ featured, size }), "rounded-xs", className)}
         {...props}
       >
+      {/* Tactical Corner Brackets - appear on hover */}
+      <div className="absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 border-nav-events opacity-0 group-hover:opacity-100 transition-all duration-200" />
+      <div className="absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 border-nav-events opacity-0 group-hover:opacity-100 transition-all duration-200" />
+      <div className="absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 border-nav-events opacity-0 group-hover:opacity-100 transition-all duration-200" />
+      
+      {/* Bottom-right corner with document cutout */}
+      <div className="absolute bottom-0 right-0 w-3 h-3 opacity-0 group-hover:opacity-100 transition-all duration-200">
+        <div 
+          className="w-full h-full border-2 border-nav-events"
+          style={{
+            clipPath: 'polygon(0 0, 60% 0, 100% 40%, 100% 100%, 0 100%)'
+          }}
+        />
+      </div>
+      
+      {/* Tactical latches/clasps */}
+      <div className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-nav-events/40 opacity-0 group-hover:opacity-20 transition-all duration-200" />
+      <div className="absolute bottom-1 left-1 w-1.5 h-1.5 rounded-full bg-nav-events/40 opacity-0 group-hover:opacity-20 transition-all duration-200" />
+
       {featured && (
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/50" />
       )}
@@ -269,7 +298,7 @@ export function EventCard({
               }}
               title="Share event"
             >
-              <Share weight="bold" className="h-3.5 w-3.5 text-muted-foreground group-hover/share:text-rusty-orange" />
+              <Share className="h-3.5 w-3.5 text-muted-foreground group-hover/share:text-rusty-orange" />
               <span className="ml-xs text-xs font-rajdhani font-semibold text-muted-foreground group-hover/share:text-rusty-orange">Share</span>
             </button>
             
@@ -282,7 +311,7 @@ export function EventCard({
               }}
               title="View event archive"
             >
-              <ChartBar weight="bold" className="h-3.5 w-3.5 text-muted-foreground group-hover/archive:text-rusty-orange" />
+              <ChartBar className="h-3.5 w-3.5 text-muted-foreground group-hover/archive:text-rusty-orange" />
               <span className="ml-xs text-xs font-rajdhani font-semibold text-muted-foreground group-hover/archive:text-rusty-orange">Archive</span>
             </button>
           </div>
@@ -305,15 +334,15 @@ export function EventCard({
         {/* Redesigned Info Grid with Better Spacing */}
         <div className="space-y-sm bg-muted/30 p-sm rounded-xs">
           <div className="flex items-center gap-sm text-sm">
-            <Calendar weight="bold" className="size-4 flex-shrink-0 text-nav-events" />
+            <Calendar className="size-4 flex-shrink-0 text-nav-events" />
             <span className="font-medium text-card-foreground">{date}</span>
           </div>
           <div className="flex items-center gap-sm text-sm">
-            <Clock weight="bold" className="size-4 flex-shrink-0 text-nav-events" />
+            <Clock className="size-4 flex-shrink-0 text-nav-events" />
             <span className="text-muted-foreground">{time}</span>
           </div>
           <div className="flex items-start gap-sm text-sm">
-            <MapPin weight="bold" className="size-4 flex-shrink-0 text-nav-events mt-0.5" />
+            <MapPin className="size-4 flex-shrink-0 text-nav-events mt-0.5" />
             <span className="text-muted-foreground leading-tight">{location}</span>
           </div>
         </div>

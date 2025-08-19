@@ -261,7 +261,7 @@ export function IntelPageContent({ liveWeatherConditions, allWeatherData }: Inte
                 const locationSlug = location.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').trim().replace(/^-|-$/g, '')
                 return (
                 <Link key={location.name} href={`/intel/locations/${locationSlug}`} className="block">
-                  <Card variant="tactical" tacticalTheme="intel" className="tactical-card-mobile tactical-card-hover shadow-whisper">
+                  <Card variant="tactical" tacticalTheme="intel" className="shadow-ghost hover:shadow-present">
                   <CardHeader className="pb-lg">
                     <div className="flex items-center justify-between mb-md">
                       <Badge variant="intel-location" size="xs">

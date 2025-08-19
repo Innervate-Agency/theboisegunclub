@@ -136,12 +136,12 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         className={cn(
           cardVariants({ variant, size }),
           isTactical && [
-            // Progressive enhancement classes
-            'tactical-card-mobile tactical-card-hover tactical-haptic',
             // Focus states for accessibility
             'focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-ring',
             // Smooth transitions (will be disabled on reduced motion)
-            'transition-all duration-300 ease-out'
+            'transition-all duration-300 ease-out',
+            // Tactical interactions
+            'cursor-pointer active:scale-[0.98] hover:scale-[1.01]'
           ],
           className
         )}

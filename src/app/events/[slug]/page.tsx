@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { ArticleDetailPage } from '@/components/ui/detail-page-builder'
+import { getEventBySlug, getAllEventSlugs, type EventData as ComprehensiveEventData } from '@/lib/comprehensive-events-data'
 
 // Event data interface matching the existing EventCard structure
 interface EventData {
@@ -35,8 +36,46 @@ interface EventData {
   images?: string[]
 }
 
-// Event data service - this would come from a database in production
+// Event data service - now uses comprehensive verified data
 const getEventData = (slug: string): EventData | null => {
+  // First try to get from comprehensive dataset
+  const comprehensiveEvent = getEventBySlug(slug)
+  if (comprehensiveEvent) {
+    // Convert comprehensive event to detail page format
+    return {
+      slug: comprehensiveEvent.slug,
+      title: comprehensiveEvent.title,
+      description: comprehensiveEvent.description,
+      date: comprehensiveEvent.date,
+      time: comprehensiveEvent.time,
+      location: comprehensiveEvent.location,
+      eventType: comprehensiveEvent.eventType,
+      capacity: comprehensiveEvent.capacity,
+      registeredCount: comprehensiveEvent.registeredCount,
+      registrationUrl: comprehensiveEvent.registrationUrl,
+      price: comprehensiveEvent.price,
+      featured: comprehensiveEvent.featured,
+      // Generate content for events that don't have full content
+      fullContent: generateEventContent(comprehensiveEvent),
+      organizer: comprehensiveEvent.organizer || "Event Organizer",
+      contactEmail: comprehensiveEvent.website ? `info@${comprehensiveEvent.website.replace(/^https?:\/\//, '').replace(/^www\./, '')}` : undefined,
+      contactPhone: comprehensiveEvent.phone,
+      difficulty: getEventDifficulty(comprehensiveEvent.eventType),
+      equipment: getEventEquipment(comprehensiveEvent.eventType),
+      rules: getEventRules(comprehensiveEvent.eventType),
+      prizes: comprehensiveEvent.eventType === 'Competition' ? ["Prizes awarded to top finishers"] : undefined,
+      venue: {
+        name: comprehensiveEvent.venue || comprehensiveEvent.location.split(',')[0],
+        address: comprehensiveEvent.location,
+        website: comprehensiveEvent.website,
+        facilities: ["Event facilities available"]
+      },
+      tags: generateEventTags(comprehensiveEvent),
+      images: []
+    }
+  }
+  
+  // Fallback to hardcoded examples for specific events that have full content
   const events: EventData[] = [
     {
       slug: 'uspsa-monthly-match-august',
@@ -441,17 +480,76 @@ This show directly supports Idaho's firearms industry and outdoor recreation eco
   return events.find(event => event.slug === slug) || null
 }
 
-// Generate slug from event title
-const generateSlug = (title: string, date: string): string => {
-  const dateSlug = new Date(date).toLocaleDateString('en-US', { 
-    month: 'long', 
-    year: 'numeric' 
-  }).toLowerCase().replace(' ', '-')
-  
-  return title.toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .trim() + '-' + dateSlug.split('-')[0]
+// Helper functions for generating event details
+const generateEventContent = (event: ComprehensiveEventData): string => {
+  return `# ${event.title}
+
+${event.description}
+
+## Event Details
+
+**Date:** ${event.date}
+**Time:** ${event.time}
+**Location:** ${event.location}
+**Price:** ${event.price}
+
+${event.organizer ? `**Organizer:** ${event.organizer}` : ''}
+${event.phone ? `**Phone:** ${event.phone}` : ''}
+${event.website ? `**Website:** ${event.website}` : ''}
+
+## Registration
+
+${event.registrationUrl ? `[Register for this event](${event.registrationUrl})` : 'Registration information available soon.'}
+
+${event.frequency ? `This is a ${event.frequency.toLowerCase()} event.` : ''}
+
+For more information, please contact the event organizer.`
+}
+
+const getEventDifficulty = (eventType: string): string => {
+  switch (eventType) {
+    case 'Training': return 'Beginner Friendly'
+    case 'Competition': return 'All Skill Levels'
+    case 'Championship': return 'Advanced'
+    case 'Youth Competition': return 'Youth Only'
+    default: return 'All Welcome'
+  }
+}
+
+const getEventEquipment = (eventType: string): string[] => {
+  switch (eventType) {
+    case 'Competition':
+    case 'Championship':
+      return ['Appropriate firearm for division', 'Eye and ear protection', 'Holster and magazines', 'Ammunition']
+    case 'Training':
+      return ['Eye and ear protection', 'Note-taking materials', 'Comfortable clothing']
+    case 'Expo':
+      return ['Valid ID required', 'Comfortable walking shoes']
+    default:
+      return ['Check event details for specific requirements']
+  }
+}
+
+const getEventRules = (eventType: string): string[] => {
+  switch (eventType) {
+    case 'Competition':
+    case 'Championship':
+      return ['Follow all range safety rules', 'Eye and ear protection mandatory', 'Follow Range Officer commands', 'Sportsmanlike conduct required']
+    case 'Training':
+      return ['Arrive 15 minutes early', 'Follow instructor guidance', 'Safety equipment required']
+    case 'Expo':
+      return ['All firearms must be unloaded', 'Background checks required for purchases', 'Follow venue security procedures']
+    default:
+      return ['Follow all safety guidelines', 'Respect venue rules']
+  }
+}
+
+const generateEventTags = (event: ComprehensiveEventData): string[] => {
+  const tags = [event.eventType]
+  if (event.frequency) tags.push(event.frequency)
+  if (event.organizer) tags.push(event.organizer)
+  if (event.featured) tags.push('Featured')
+  return tags
 }
 
 type Props = {
@@ -484,14 +582,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  // In production, this would fetch all event slugs from your data source
-  return [
-    { slug: 'uspsa-monthly-match-august' },
-    { slug: 'idaho-state-camo-shoot-2025' },
-    { slug: 'great-idaho-gun-show-september' },
-    { slug: 'steel-challenge-weekly' },
-    { slug: 'monthly-club-social' }
-  ]
+  // Generate static params for all events in comprehensive dataset
+  const allSlugs = getAllEventSlugs()
+  console.log(`🎯 Generating ${allSlugs.length} event detail pages`)
+  
+  return allSlugs.map(slug => ({ slug }))
 }
 
 export default async function EventDetailPage({ params }: Props) {

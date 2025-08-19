@@ -489,7 +489,7 @@ export function SiteNavigation({
                             transition: { duration: 0.1 }
                           }}
                         >
-                          <item.icon className="size-4" weight="bold" />
+                          <item.icon className="size-4" />
                         </MotionDiv>
                         {item.label}
                       </MotionDiv>
@@ -565,7 +565,7 @@ export function SiteNavigation({
                         : `text-muted-foreground ${getHoverClasses(item.color)} hover:bg-muted/20`
                     }`,
                     <>
-                      <item.icon className="size-5" weight="bold" />
+                      <item.icon className="size-5" />
                       <div className="flex flex-col">
                         <span>{item.label}</span>
                         <span className="text-xs text-muted-foreground">
