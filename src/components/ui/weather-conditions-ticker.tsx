@@ -3,15 +3,21 @@
 import React, { useState, useEffect } from 'react'
 import { Badge } from './badge'
 import { 
-  Thermometer, Wind, Flame, Shield, AlertTriangle, 
-  CheckCircle, XCircle, Mountain, Navigation,
-  Sun, Cloud, CloudRain, CloudSnow, Zap, Warning
-} from 'lucide-react'
-import { 
-  Sun as PhosphorSun, CloudRain as PhosphorCloudRain, 
-  CloudSnow as PhosphorCloudSnow, Lightning as PhosphorLightning,
-  Cloud as PhosphorCloud
-} from '@phosphor-icons/react'
+  SunIcon as Sun, 
+  CloudIcon as Cloud, 
+  CloudArrowDownIcon as CloudRain, 
+  CloudIcon as CloudSnow, 
+  BoltIcon as Lightning,
+  FireIcon as Flame,
+  ShieldCheckIcon as Shield,
+  ExclamationTriangleIcon as AlertTriangle,
+  CheckCircleIcon as CheckCircle,
+  XCircleIcon as XCircle,
+  MapIcon as Mountain,
+  ArrowUpIcon as Navigation,
+  FireIcon as Thermometer,
+  ArrowRightIcon as Wind
+} from '@heroicons/react/24/outline'
 
 interface WeatherCondition {
   locationName: string
@@ -103,17 +109,17 @@ export function WeatherConditionsTicker({
   const getWeatherIcon = (weatherType: string) => {
     switch (weatherType) {
       case 'sun': 
-        return <PhosphorSun weight="fill" className="size-5 text-sandy-ochre" />
+        return <Sun className="size-5 text-sandy-ochre" />
       case 'partly-cloudy':
         return <Cloud className="size-5 text-slate-blue/80" />
       case 'cloudy':
-        return <PhosphorCloud weight="fill" className="size-5 text-slate-blue" />
+        return <Cloud className="size-5 text-slate-blue" />
       case 'rain':
-        return <PhosphorCloudRain weight="fill" className="size-5 text-nav-intel" />
+        return <CloudRain className="size-5 text-nav-intel" />
       case 'snow':
-        return <PhosphorCloudSnow weight="fill" className="size-5 text-white/90" />
+        return <CloudSnow className="size-5 text-white/90" />
       case 'storm':
-        return <PhosphorLightning weight="fill" className="size-5 text-rusty-orange" />
+        return <Lightning className="size-5 text-rusty-orange" />
       default:
         return <Sun className="size-5 text-sandy-ochre" />
     }
@@ -128,112 +134,116 @@ export function WeatherConditionsTicker({
   }
 
   return (
-    <div className="bg-gradient-to-r from-nav-intel/5 to-nav-intel/10 border-b border-border/20 overflow-hidden">
-      <div className="relative">
-        {/* Header Label */}
-        <div className="absolute left-0 top-0 bottom-0 bg-gradient-to-r from-nav-intel/20 to-transparent z-10 flex items-center px-lg">
-          <div className="flex items-center gap-xs text-body-sm font-rajdhani font-bold text-nav-intel">
-            <Mountain className="size-4" />
-            <span>LIVE CONDITIONS</span>
+    <div className="relative -mt-lg z-20">
+      <div className="w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile">
+        <div className="mica-card relative overflow-hidden shadow-present rounded-xs">
+          <div className="absolute inset-0 bg-gradient-to-r from-nav-intel/5 via-transparent to-nav-intel/10 pointer-events-none" />
+          
+          <div className="absolute left-base top-base bottom-base bg-gradient-to-r from-nav-intel/20 to-transparent z-10 flex items-center px-lg rounded-l-xs">
+            <div className="flex items-center gap-sm text-body-sm font-rajdhani font-bold text-nav-intel">
+              <Mountain className="size-4" />
+              <span>LIVE CONDITIONS</span>
+              
+              {autoRefresh && (
+                <div className="flex items-center gap-xs ml-base pl-base border-l border-nav-intel/30">
+                  <div className={`w-2.5 h-2.5 rounded-full ${
+                    isLoading ? 'bg-sandy-ochre animate-pulse' : 
+                    error ? 'bg-rusty-orange' : 
+                    'bg-sagebrush-green animate-pulse'
+                  }`} />
+                  <span className={`text-sm font-semibold tracking-wide ${
+                    isLoading ? 'text-sandy-ochre' : 
+                    error ? 'text-rusty-orange' : 
+                    'text-sagebrush-green'
+                  }`}>
+                    {isLoading ? 'UPDATING' : error ? 'ERROR' : 'LIVE'}
+                  </span>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
 
-        {/* Status indicator for live data */}
-        {autoRefresh && (
-          <div className="absolute right-sm top-2 z-20 flex items-center gap-xs">
-            <div className={`w-2 h-2 rounded-full ${isLoading ? 'bg-sandy-ochre animate-pulse' : error ? 'bg-rusty-orange' : 'bg-sagebrush-green'}`} />
-            <span className="text-xs text-muted-foreground font-medium">
-              {isLoading ? 'Updating...' : error ? 'Error' : 'Live'}
-            </span>
-          </div>
-        )}
-
-        <div className="flex animate-scroll whitespace-nowrap py-base pl-48">
-          {extendedConditions.length > 0 ? extendedConditions.map((condition, index) => (
-            <div key={index} className="flex items-center gap-base px-xl flex-shrink-0">
-              <div className="flex items-center gap-base">
-                {/* Location & Weather */}
-                <div className="space-y-xs">
-                  <div className="flex items-center gap-xs">
-                    <span className="font-rajdhani font-bold text-body-sm text-card-foreground">
-                      {condition.locationName}
-                    </span>
-                    {getWeatherIcon(condition.weatherIcon)}
-                  </div>
-                  
-                  <div className="flex items-center gap-base text-body-xs text-muted-foreground">
-                    {/* Temperature */}
+          <div className="flex animate-scroll whitespace-nowrap py-lg px-base pl-64">
+            {extendedConditions.length > 0 ? extendedConditions.map((condition, index) => (
+              <div key={index} className="flex items-center gap-lg px-xl flex-shrink-0">
+                <div className="flex items-center gap-base">
+                  <div className="space-y-xs">
                     <div className="flex items-center gap-xs">
-                      <Thermometer className="size-3 text-nav-intel" />
-                      <span className="font-medium">{condition.temperature}°F</span>
-                    </div>
-                    
-                    {/* Wind */}
-                    <div className="flex items-center gap-xs">
-                      <Wind className="size-3 text-nav-intel" />
-                      <span className="font-medium">
-                        {condition.windSpeed}mph
+                      <span className="font-rajdhani font-bold text-body-sm text-card-foreground">
+                        {condition.locationName}
                       </span>
-                      <div 
-                        className="transition-transform duration-300"
-                        style={{ transform: `rotate(${getWindDirectionRotation(condition.windDirection)}deg)` }}
-                      >
-                        <Navigation className="size-3 text-nav-intel" />
+                      {getWeatherIcon(condition.weatherIcon)}
+                    </div>
+                    
+                    <div className="flex items-center gap-lg text-body-xs text-muted-foreground">
+                      <div className="flex items-center gap-xs">
+                        <Thermometer className="size-3 text-nav-intel" />
+                        <span className="font-medium">{condition.temperature}°F</span>
                       </div>
-                    </div>
-                    
-                    {/* Fire Danger */}
-                    <div className="flex items-center gap-xs">
-                      <Flame className="size-3 text-nav-intel" />
-                      <Badge className={getFireDangerColor(condition.fireDanger)}>
-                        {condition.fireDanger}
-                      </Badge>
-                    </div>
-                    
-                    {/* Access Status */}
-                    <div className="flex items-center gap-xs">
-                      {getAccessStatusIcon(condition.accessStatus)}
-                      <span className="font-medium">{condition.accessStatus}</span>
+                      
+                      <div className="flex items-center gap-xs">
+                        <Wind className="size-3 text-nav-intel" />
+                        <span className="font-medium">
+                          {condition.windSpeed}mph
+                        </span>
+                        <div 
+                          className="transition-transform duration-300"
+                          style={{ transform: `rotate(${getWindDirectionRotation(condition.windDirection)}deg)` }}
+                        >
+                          <Navigation className="size-3 text-nav-intel" />
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center gap-xs">
+                        <Flame className="size-3 text-nav-intel" />
+                        <Badge className={`${getFireDangerColor(condition.fireDanger)} rounded-xs`}>
+                          {condition.fireDanger}
+                        </Badge>
+                      </div>
+                      
+                      <div className="flex items-center gap-xs">
+                        {getAccessStatusIcon(condition.accessStatus)}
+                        <span className="font-medium">{condition.accessStatus}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
+                
+                <div className="h-10 w-px bg-gradient-to-b from-transparent via-border/40 to-transparent" />
               </div>
-              
-              {/* Separator */}
-              <div className="h-8 w-px bg-border/30" />
-            </div>
-          )) : (
-            <div className="flex items-center justify-center w-full py-lg pl-48">
-              <div className="text-center">
-                <Warning className="h-6 w-6 text-muted-foreground mx-auto mb-sm" />
-                <span className="text-muted-foreground">Weather conditions unavailable</span>
-                {error && (
-                  <div className="text-xs text-destructive mt-xs">{error}</div>
-                )}
+            )) : (
+              <div className="flex items-center justify-center w-full py-lg pl-64">
+                <div className="text-center">
+                  <AlertTriangle className="h-6 w-6 text-muted-foreground mx-auto mb-sm" />
+                  <span className="text-muted-foreground">Weather conditions unavailable</span>
+                  {error && (
+                    <div className="text-xs text-destructive mt-xs">{error}</div>
+                  )}
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
+          
+          <style jsx>{`
+            @keyframes scroll {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-33.333%);
+              }
+            }
+            
+            .animate-scroll {
+              animation: scroll 45s linear infinite;
+            }
+            
+            .animate-scroll:hover {
+              animation-play-state: paused;
+            }
+          `}</style>
         </div>
       </div>
-      
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-33.333%);
-          }
-        }
-        
-        .animate-scroll {
-          animation: scroll 45s linear infinite;
-        }
-        
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </div>
   )
 }

@@ -57,12 +57,12 @@ export const Default: Story = {
               Make changes to your account here. Click save when you&apos;re done.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-(--spacing-xs)">
-            <div className="space-y-(--spacing-micro)">
+          <CardContent className="space-y-4">
+            <div className="space-y-4">
               <Label htmlFor="name">Name</Label>
               <Input id="name" defaultValue="Pedro Duarte" />
             </div>
-            <div className="space-y-(--spacing-micro)">
+            <div className="space-y-4">
               <Label htmlFor="username">Username</Label>
               <Input id="username" defaultValue="@peduarte" />
             </div>
@@ -80,12 +80,12 @@ export const Default: Story = {
               Change your password here. After saving, you&apos;ll be logged out.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-(--spacing-xs)">
-            <div className="space-y-(--spacing-micro)">
+          <CardContent className="space-y-4">
+            <div className="space-y-4">
               <Label htmlFor="current">Current password</Label>
               <Input id="current" type="password" />
             </div>
-            <div className="space-y-(--spacing-micro)">
+            <div className="space-y-4">
               <Label htmlFor="new">New password</Label>
               <Input id="new" type="password" />
             </div>

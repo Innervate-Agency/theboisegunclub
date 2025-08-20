@@ -9,10 +9,10 @@ import { SiteFooter } from '@/components/ui/site-footer'
 import { ReviewsDisplay } from '@/components/ui/reviews-display'
 import MdxContent from '@/components/molecules/MdxContent'
 import { 
-  ChevronRight, ArrowLeft, MapPin, Clock, Phone, ExternalLink,
-  Star, Shield, CheckCircle, Globe, Mail, Calendar, Users,
-  Award, Target, Storefront, Tools, CreditCard, Tag
-} from '@phosphor-icons/react'
+  ChevronRightIcon, ArrowLeftIcon, MapPinIcon, ClockIcon, PhoneIcon, ExternalLinkIcon,
+  StarIcon, ShieldCheckIcon, CheckCircleIcon, GlobeAltIcon, EnvelopeIcon, CalendarIcon, UserGroupIcon,
+  AcademicCapIcon, TargetIcon, BuildingStorefrontIcon, WrenchScrewdriverIcon, CreditCardIcon, TagIcon
+} from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -158,18 +158,18 @@ export function BusinessDetailTemplate({
       <SiteNavigation />
       
       {/* Business Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-card to-muted/50 px-md py-lg">
+      <section className="relative overflow-hidden bg-gradient-to-br from-card to-muted/50 px-md pt-mobile-2xl sm:pt-3xl pb-mobile-lg sm:pb-lg">
         <div className="container mx-auto max-w-site relative z-10">
           {/* Breadcrumb Navigation */}
           <div className="flex items-center gap-xs text-sm text-muted-foreground mb-base">
             <Link href="/" className="hover:text-foreground transition-colors">
               Home
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRightIcon className="h-4 w-4" />
             <Link href="/directory" className="hover:text-nav-directory transition-colors">
               Directory
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRightIcon className="h-4 w-4" />
             <span className="text-nav-directory font-medium">{businessName}</span>
           </div>
           
@@ -177,7 +177,7 @@ export function BusinessDetailTemplate({
           <div className="mb-lg">
             <Link href="/directory">
               <Button variant="ghost" className="gap-xs">
-                <ArrowLeft className="h-4 w-4" />
+                <ArrowLeftIcon className="h-4 w-4" />
                 Back to Directory
               </Button>
             </Link>
@@ -200,7 +200,7 @@ export function BusinessDetailTemplate({
                   </div>
                 )}
                 <div className="flex-1">
-                  <h1 className="font-rajdhani text-3xl md:text-4xl font-bold text-foreground leading-tight">
+                  <h1 className="font-rajdhani text-xl md:text-2xl font-bold text-foreground leading-tight">
                     {businessName}
                   </h1>
                   <p className="text-body-lg text-nav-directory mt-xs font-medium">
@@ -221,19 +221,19 @@ export function BusinessDetailTemplate({
                 </Badge>
                 {isVerified && (
                   <Badge className="bg-sagebrush-green/20 text-sagebrush-green border-sagebrush-green/30">
-                    <Shield className="h-3 w-3 mr-xs" />
+                    <ShieldCheckIcon className="h-3 w-3 mr-xs" />
                     Verified
                   </Badge>
                 )}
                 {tier !== 'free' && (
                   <Badge variant={getTierBadgeVariant(tier)} className="capitalize">
-                    <Award className="h-3 w-3 mr-xs" />
+                    <AcademicCapIcon className="h-3 w-3 mr-xs" />
                     {tier} Member
                   </Badge>
                 )}
                 {isSponsored && (
                   <Badge variant="elite">
-                    <Star className="h-3 w-3 mr-xs" />
+                    <StarIcon className="h-3 w-3 mr-xs" />
                     Sponsored
                   </Badge>
                 )}
@@ -248,25 +248,25 @@ export function BusinessDetailTemplate({
               <div className="grid grid-cols-2 md:grid-cols-4 gap-base">
                 {rating && (
                   <div className="text-center p-base bg-muted/50 rounded-xs">
-                    <Star className="h-5 w-5 text-nav-directory mx-auto mb-xs" />
+                    <StarIcon className="h-5 w-5 text-nav-directory mx-auto mb-xs" />
                     <div className="text-body-sm font-medium">{rating.toFixed(1)}</div>
                     <div className="text-xs text-muted-foreground">Rating</div>
                   </div>
                 )}
                 {reviewCount && (
                   <div className="text-center p-base bg-muted/50 rounded-xs">
-                    <Users className="h-5 w-5 text-nav-directory mx-auto mb-xs" />
+                    <UserGroupIcon className="h-5 w-5 text-nav-directory mx-auto mb-xs" />
                     <div className="text-body-sm font-medium">{reviewCount}</div>
                     <div className="text-xs text-muted-foreground">Reviews</div>
                   </div>
                 )}
                 <div className="text-center p-base bg-muted/50 rounded-xs">
-                  <Target className="h-5 w-5 text-nav-directory mx-auto mb-xs" />
+                  <TargetIcon className="h-5 w-5 text-nav-directory mx-auto mb-xs" />
                   <div className="text-body-sm font-medium">{services.length}</div>
                   <div className="text-xs text-muted-foreground">Services</div>
                 </div>
                 <div className="text-center p-base bg-muted/50 rounded-xs">
-                  <CheckCircle className="h-5 w-5 text-nav-directory mx-auto mb-xs" />
+                  <CheckCircleIcon className="h-5 w-5 text-nav-directory mx-auto mb-xs" />
                   <div className="text-body-sm font-medium">{certifications.length}</div>
                   <div className="text-xs text-muted-foreground">Certifications</div>
                 </div>
@@ -281,21 +281,21 @@ export function BusinessDetailTemplate({
                     asChild
                   >
                     <a href={website} target="_blank" rel="noopener noreferrer">
-                      <Globe className="h-4 w-4" />
+                      <GlobeAltIcon className="h-4 w-4" />
                       Visit Website
                     </a>
                   </Button>
                 )}
                 <Button variant="outline" size="lg" className="gap-xs" asChild>
                   <a href={`tel:${phone}`}>
-                    <Phone className="h-4 w-4" />
+                    <PhoneIcon className="h-4 w-4" />
                     Call
                   </a>
                 </Button>
                 {email && (
                   <Button variant="outline" size="lg" className="gap-xs" asChild>
                     <a href={`mailto:${email}`}>
-                      <Mail className="h-4 w-4" />
+                      <EnvelopeIcon className="h-4 w-4" />
                       Email
                     </a>
                   </Button>
@@ -311,21 +311,21 @@ export function BusinessDetailTemplate({
                 </CardHeader>
                 <CardContent className="space-y-base">
                   <div className="flex items-start gap-base">
-                    <MapPin className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
+                    <MapPinIcon className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
                     <div>
                       <div className="font-medium text-body-sm">Address</div>
                       <div className="text-body-sm text-muted-foreground">{fullAddress}</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-base">
-                    <Phone className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
+                    <PhoneIcon className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
                     <div>
                       <div className="font-medium text-body-sm">Phone</div>
                       <div className="text-body-sm text-muted-foreground">{phone}</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-base">
-                    <Clock className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
+                    <ClockIcon className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
                     <div>
                       <div className="font-medium text-body-sm">Hours</div>
                       <div className="text-body-sm text-muted-foreground">{hours}</div>
@@ -333,7 +333,7 @@ export function BusinessDetailTemplate({
                   </div>
                   {employeeCount && (
                     <div className="flex items-start gap-base">
-                      <Users className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
+                      <UserGroupIcon className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
                       <div>
                         <div className="font-medium text-body-sm">Team Size</div>
                         <div className="text-body-sm text-muted-foreground">{employeeCount} employees</div>
@@ -382,7 +382,7 @@ export function BusinessDetailTemplate({
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-xs">
                     {services.map((service, index) => (
                       <div key={index} className="flex items-center gap-xs py-xs">
-                        <CheckCircle className="h-4 w-4 text-sagebrush-green flex-shrink-0" />
+                        <CheckCircleIcon className="h-4 w-4 text-sagebrush-green flex-shrink-0" />
                         <span className="text-body-sm">{service}</span>
                       </div>
                     ))}
@@ -451,7 +451,7 @@ export function BusinessDetailTemplate({
                   <CardContent className="space-y-xs">
                     {certifications.map((cert, index) => (
                       <div key={index} className="flex items-center gap-xs py-xs">
-                        <Award className="h-4 w-4 text-nav-directory flex-shrink-0" />
+                        <AcademicCapIcon className="h-4 w-4 text-nav-directory flex-shrink-0" />
                         <span className="text-body-sm">{cert}</span>
                       </div>
                     ))}
@@ -468,7 +468,7 @@ export function BusinessDetailTemplate({
                   <CardContent className="space-y-xs">
                     {serviceArea.map((area, index) => (
                       <div key={index} className="flex items-center gap-xs py-xs">
-                        <MapPin className="h-4 w-4 text-nav-directory flex-shrink-0" />
+                        <MapPinIcon className="h-4 w-4 text-nav-directory flex-shrink-0" />
                         <span className="text-body-sm">{area}</span>
                       </div>
                     ))}
@@ -485,7 +485,7 @@ export function BusinessDetailTemplate({
                   <CardContent className="space-y-xs">
                     {paymentMethods.map((method, index) => (
                       <div key={index} className="flex items-center gap-xs py-xs">
-                        <CreditCard className="h-4 w-4 text-nav-directory flex-shrink-0" />
+                        <CreditCardIcon className="h-4 w-4 text-nav-directory flex-shrink-0" />
                         <span className="text-body-sm">{method}</span>
                       </div>
                     ))}

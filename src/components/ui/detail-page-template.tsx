@@ -122,7 +122,7 @@ export default function DetailPageTemplate({
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-20 pt-xl pb-2xl">
+        <div className="relative z-20 pt-mobile-2xl sm:pt-3xl pb-mobile-xl sm:pb-2xl">
           <div className="container mx-auto max-w-7xl px-lg">
             <div className="space-y-2xl">
               
@@ -138,7 +138,7 @@ export default function DetailPageTemplate({
                   </div>
                 )}
                 
-                <h1 className="font-rajdhani text-5xl md:text-7xl font-bold text-foreground leading-none">
+                <h1 className="font-rajdhani text-2xl md:text-4xl font-bold text-foreground leading-none">
                   {title}
                 </h1>
                 {/* Hero Content Contains Subtitle - rendered here for tight spacing */}

@@ -87,7 +87,7 @@ export type EnhancedCardHeaderProps = React.HTMLAttributes<HTMLDivElement>
 export function EnhancedCardHeader({ className, children, ...props }: EnhancedCardHeaderProps) {
   return (
     <div 
-      className={cn("space-y-(--spacing-xs) mb-(--spacing-md)", className)} // Using spacing system
+      className={cn("space-y-4 mb-4", className)} // Using spacing system
       {...props}
     >
       {children}

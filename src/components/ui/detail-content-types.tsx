@@ -256,78 +256,88 @@ export function ArticleContent({
         </div>
       </article>
       
-      {/* Event Preparation Section */}
-      {eventPreparation && (
-        <EventPreparationSection
-          agenda={eventPreparation.agenda}
-          whatToBring={eventPreparation.whatToBring}
-          requirements={eventPreparation.requirements}
-          tags={eventPreparation.tags}
-        />
+      {/* Event Registration Widget - moved from sidebar to main content */}
+      {eventEngagement && (
+        <div className="mt-2xl">
+          <EventEngagementWidget
+            eventId={eventEngagement.eventId}
+            eventTitle={eventEngagement.eventTitle}
+            eventDate={eventEngagement.eventDate}
+            eventLocation={eventEngagement.eventLocation}
+            eventUrl={eventEngagement.eventUrl}
+            registrationUrl={eventEngagement.registrationUrl}
+            capacity={eventEngagement.capacity}
+            registeredCount={eventEngagement.registeredCount}
+            price={eventEngagement.price}
+            featured={eventEngagement.featured}
+            eventType={eventEngagement.eventType}
+          />
+        </div>
       )}
     </div>
   )
 
   const sidebarSections = []
 
-  // Add event engagement widget for events
-  if (eventEngagement) {
-    sidebarSections.push({
-      id: 'event-engagement',
-      title: 'Event Registration',
-      content: (
-        <EventEngagementWidget
-          eventId={eventEngagement.eventId}
-          eventTitle={eventEngagement.eventTitle}
-          eventDate={eventEngagement.eventDate}
-          eventLocation={eventEngagement.eventLocation}
-          eventUrl={eventEngagement.eventUrl}
-          registrationUrl={eventEngagement.registrationUrl}
-          capacity={eventEngagement.capacity}
-          registeredCount={eventEngagement.registeredCount}
-          price={eventEngagement.price}
-          featured={eventEngagement.featured}
-          eventType={eventEngagement.eventType}
-          className="shadow-none border-0 bg-transparent"
-        />
-      ),
-      className: 'p-0' // Remove padding from the card wrapper
-    })
+  // Add event preparation sections for events (moved from main content)
+  if (eventPreparation) {
+    // What to Bring section
+    if (eventPreparation.whatToBring && eventPreparation.whatToBring.length > 0) {
+      sidebarSections.push({
+        id: 'what-to-bring',
+        title: 'What to Bring',
+        content: (
+          <div className="space-y-sm">
+            {eventPreparation.whatToBring.map((item, index) => (
+              <div key={index} className="flex items-start gap-xs">
+                <span className="w-2 h-2 bg-nav-events rounded-full flex-shrink-0 mt-xs" />
+                <span className="text-body-sm text-muted-foreground">{item}</span>
+              </div>
+            ))}
+          </div>
+        )
+      })
+    }
+
+    // Event Schedule section  
+    if (eventPreparation.agenda && eventPreparation.agenda.length > 0) {
+      sidebarSections.push({
+        id: 'event-schedule',
+        title: 'Event Schedule',
+        content: (
+          <div className="space-y-sm">
+            {eventPreparation.agenda.map((item, index) => (
+              <div key={index} className="flex items-start gap-xs">
+                <span className="w-2 h-2 bg-nav-events rounded-full flex-shrink-0 mt-xs" />
+                <span className="text-body-sm text-muted-foreground">{item}</span>
+              </div>
+            ))}
+          </div>
+        )
+      })
+    }
+
+    // Requirements section
+    if (eventPreparation.requirements && eventPreparation.requirements.length > 0) {
+      sidebarSections.push({
+        id: 'requirements',
+        title: 'Requirements',
+        content: (
+          <div className="space-y-sm">
+            {eventPreparation.requirements.map((requirement, index) => (
+              <div key={index} className="flex items-start gap-xs">
+                <span className="w-2 h-2 bg-warning-clay rounded-full flex-shrink-0 mt-xs" />
+                <span className="text-body-sm text-muted-foreground">{requirement}</span>
+              </div>
+            ))}
+          </div>
+        )
+      })
+    }
+
   }
 
-  // Add author section
-  sidebarSections.push({
-    id: 'author',
-    title: 'About the Author',
-    content: (
-      <div className="space-y-base">
-        <div className="flex items-center gap-base">
-          {author.avatar ? (
-            <Image
-              src={author.avatar}
-              alt={author.name}
-              width={48}
-              height={48}
-              className="rounded-full"
-            />
-          ) : (
-            <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
-              <User className="h-6 w-6 text-muted-foreground" />
-            </div>
-          )}
-          <div>
-            <div className="font-medium text-body-sm">{author.name}</div>
-            {author.title && (
-              <div className="text-xs text-muted-foreground">{author.title}</div>
-            )}
-          </div>
-        </div>
-        {author.bio && (
-          <p className="text-body-sm text-muted-foreground">{author.bio}</p>
-        )}
-      </div>
-    )
-  })
+  // Note: Author and Event Categories sections moved to EventInfoBar header
 
   if (relatedArticles.length > 0) {
     sidebarSections.push({

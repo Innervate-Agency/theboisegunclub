@@ -107,8 +107,8 @@ export function BrandCarousel({
         <div className="grid lg:grid-cols-4 gap-(--spacing-2xl) items-center">
           
           {/* Left stats panel - OUTSIDE the card, changes with carousel */}
-          <div className="lg:col-span-1 space-y-(--spacing-lg)">
-            <div className="space-y-(--spacing-sm)">
+          <div className="lg:col-span-1 space-y-4">
+            <div className="space-y-4">
               {currentShowcase.stats.map((stat, index) => (
                 <div key={index} className={cn(
                   "border-l-2 pl-4 transition-colors duration-500",
@@ -126,10 +126,10 @@ export function BrandCarousel({
             
             {currentShowcase.productsUsed && (
               <div className="pt-(--spacing-sm)">
-                <div className="text-body-sm font-medium text-muted-foreground mb-(--spacing-xs)">
+                <div className="text-body-sm font-medium text-muted-foreground mb-4">
                   Products used
                 </div>
-                <div className="space-y-(--spacing-xs)">
+                <div className="space-y-4">
                   {currentShowcase.productsUsed.map((product, index) => (
                     <div key={index} className="flex items-center gap-(--spacing-xs)">
                       <div className={cn("p-micro rounded", product.color)}>
@@ -204,7 +204,7 @@ export function BrandCarousel({
       
       {/* Partner logos strip - clickable with large icons */}
       <div className="mt-(--spacing-4xl) text-center">
-        <p className="text-body-sm text-muted-foreground mb-(--spacing-2xl)">
+        <p className="text-body-sm text-muted-foreground mb-4">
           Trusted by industry leaders
         </p>
         <div className="flex items-center justify-center gap-lg opacity-80 hover:opacity-100 transition-opacity">

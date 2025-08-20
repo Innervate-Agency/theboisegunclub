@@ -16,177 +16,187 @@
    =============================================================================== */
 
 @theme {
-    /* =================== COLOR SYSTEM =================== */
+  /* =================== COLOR SYSTEM =================== */
+  /* 10-Color Core Palette - Semantic naming for maintainability */
 
-    /* Core Brand Colors */
-    --color-dark-chocolate: #1a0f0d;
-    --color-rusty-orange: #D9863B;
-    --color-crisp-off-white: #F2F2F2;
-    --color-rich-loam: #2d201d;
-    --color-warm-stone: #A69287;
-    --color-lodgepole-green: #7D6702;
-    --color-deep-earth: #1A0C05;
-    --color-ember-glow: #E6A562;
-    --color-warning-amber: #D4A574;
-    --color-border-bark: #4A3429;
+  /* Dark Theme: Bogus Basin */
+  --color-dark-chocolate: #1a0f0d;
+  --color-rusty-orange: #D9863B;
+  --color-crisp-off-white: #F2F2F2;
+  --color-rich-loam: #2d201d;
+  --color-warm-stone: #A69287;
+  --color-lodgepole-green: #7D6702;
+  --color-deep-earth: #1A0C05;
+  --color-ember-glow: #E6A562;
+  --color-warning-amber: #D4A574;
+  --color-border-bark: #4A3429;
 
-    /* Light Theme Colors */
-    --color-light-peachy: #F9FAFB;
-    --color-slate-blue: #3A5063;
-    --color-shared-dark: #260F07;
-    --color-sandy-ochre: #D99F5D;
-    --color-dried-clay: #A69287;
-    --color-pale-stone: #E5E7EB;
-    --color-sagebrush-green: #798246;
-    --color-card-surface: #F3F4F6;
-    --color-warning-clay: #B8956B;
-    --color-info-river: #5A7D8A;
+  /* Light Theme: River/Sagebrush */
+  --color-light-peachy: #F9FAFB;
+  --color-slate-blue: #3A5063;
+  --color-shared-dark: #260F07;
+  --color-sandy-ochre: #D99F5D;
+  --color-dried-clay: #A69287;
+  --color-pale-stone: #E5E7EB;
+  --color-sagebrush-green: #798246;
+  --color-card-surface: #F3F4F6;
+  --color-warning-clay: #B8956B;
+  --color-info-river: #5A7D8A;
 
-    /* Boise Landscape */
-    --color-foothills-purple: #8B7AA8;
-    --color-canyon-clay: #B85450;
-    --color-high-desert-sage: #9CAF88;
+  /* Boise Landscape Additions */
+  --color-foothills-purple: #8B7AA8;
+  --color-canyon-clay: #B85450;
+  --color-high-desert-sage: #9CAF88;
 
-    /* Vintage Western */
-    --color-aged-paper: #F4F1E8;
-    --color-gunmetal: #2C3539;
-    --color-brass: #B5A642;
-    --color-saloon-wood: #8B4513;
-    --color-leather-brown: #964B00;
-    --color-iron-rust: #B7410E;
-    --color-parchment: #F1E9D2;
-    --color-sepia-dark: #704214;
-    --color-weathered-gold: #D4AF37;
-    --color-dust-brown: #996633;
+  /* Vintage Western Palette */
+  --color-aged-paper: #F4F1E8;
+  --color-gunmetal: #2C3539;
+  --color-brass: #B5A642;
+  --color-saloon-wood: #8B4513;
+  --color-leather-brown: #964B00;
+  --color-iron-rust: #B7410E;
+  --color-parchment: #F1E9D2;
+  --color-sepia-dark: #704214;
+  --color-weathered-gold: #D4AF37;
+  --color-dust-brown: #996633;
 
-    /* Gruvbox Night Ops */
-    --color-gruvbox-bg-dark: #282828;
-    --color-gruvbox-bg-soft: #32302f;
-    --color-gruvbox-bg-surface: #3c3836;
-    --color-gruvbox-fg-cream: #fbf1c7;
-    --color-gruvbox-fg-soft: #ebdbb2;
-    --color-gruvbox-fg-muted: #a89984;
-    --color-gruvbox-orange: #fe8019;
-    --color-gruvbox-yellow: #fabd2f;
-    --color-gruvbox-green: #b8bb26;
-    --color-gruvbox-blue: #83a598;
-    --color-gruvbox-purple: #d3869b;
-    --color-gruvbox-aqua: #8ec07c;
-    --color-gruvbox-red: #fb4934;
+  /* Gruvbox Night Ops Mode */
+  --color-gruvbox-bg-dark: #282828;
+  --color-gruvbox-bg-soft: #32302f;
+  --color-gruvbox-bg-surface: #3c3836;
+  --color-gruvbox-fg-cream: #fbf1c7;
+  --color-gruvbox-fg-soft: #ebdbb2;
+  --color-gruvbox-fg-muted: #a89984;
+  --color-gruvbox-orange: #fe8019;
+  --color-gruvbox-yellow: #fabd2f;
+  --color-gruvbox-green: #b8bb26;
+  --color-gruvbox-blue: #83a598;
+  --color-gruvbox-purple: #d3869b;
+  --color-gruvbox-aqua: #8ec07c;
+  --color-gruvbox-red: #fb4934;
 
-    /* Navigation Colors */
-    --color-nav-home-light: #ffbc20;
-    --color-nav-events-light: #eb7d01;
-    --color-nav-directory-light: #2ebfe6;
-    --color-nav-armory-light: #B7410E;
-    --color-nav-intel-light: #8B7AA8;
-    --color-nav-marketplace-light: #798246;
-    --color-nav-forums-light: #6B7280;
+  /* Navigation Colors - Theme-aware */
+  --color-nav-home-light: #ffbc20;
+  --color-nav-events-light: #eb7d01;
+  --color-nav-directory-light: #2ebfe6;
+  --color-nav-armory-light: #B7410E;
+  --color-nav-intel-light: #8B7AA8;
+  --color-nav-marketplace-light: #798046;
+  --color-nav-forums-light: #6B7280;
 
-    --color-nav-home-dark: #ffd43b;
-    --color-nav-events-dark: #ff8c42;
-    --color-nav-directory-dark: #42d4f5;
-    --color-nav-armory-dark: #fb4934;
-    --color-nav-intel-dark: #b99fdc;
-    --color-nav-marketplace-dark: #9fb36b;
-    --color-nav-forums-dark: #9CA3AF;
+  --color-nav-home-dark: #ffd43b;
+  --color-nav-events-dark: #ff8c42;
+  --color-nav-directory-dark: #42d4f5;
+  --color-nav-armory-dark: #fb4934;
+  --color-nav-intel-dark: #b99fdc;
+  --color-nav-marketplace-dark: #9fb36b;
+  --color-nav-forums-dark: #9CA3AF;
 
-    /* =================== TYPOGRAPHY =================== */
-    --font-rajdhani: "Rajdhani", "Inter", system-ui, sans-serif;
-    --font-noto-sans: "Noto Sans", "Inter", system-ui, sans-serif;
-    --font-serif: "Noto Serif", Georgia, serif;
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  /* =================== TYPOGRAPHY =================== */
+  --font-rajdhani: "Rajdhani", "Inter", "system-ui", sans-serif;
+  --font-noto-sans: "Noto Sans", "Inter", "system-ui", sans-serif;
+  --font-serif: "Noto Serif", "Georgia", "Times New Roman", serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
 
-    /* Fluid Typography */
-    --text-3xs: 0.5rem;
-    --text-2xs: 0.625rem;
-    --text-xs: 0.75rem;
-    --text-sm: 0.875rem;
-    --text-base: 1rem;
-    --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
-    --text-xl: clamp(1.25rem, 1.125rem + 0.625vw, 1.5rem);
-    --text-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
-    --text-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.5rem);
-    --text-4xl: clamp(2.25rem, 1.875rem + 1.875vw, 3rem);
-    --text-5xl: clamp(3rem, 2.25rem + 3.75vw, 4rem);
-    --text-6xl: clamp(3.75rem, 2.75rem + 5vw, 5rem);
-    --text-7xl: clamp(4.5rem, 3.25rem + 6.25vw, 6rem);
-    --text-8xl: clamp(6rem, 4rem + 10vw, 8rem);
-    --text-9xl: clamp(8rem, 5rem + 15vw, 12rem);
+  /* Fluid responsive typography - mobile-first with clamp() */
+  --text-3xs: 0.5rem;                                    /* 8px - static micro text */
+  --text-2xs: 0.625rem;                                  /* 10px - static small text */
+  --text-xs: 0.75rem;                                    /* 12px - static body small */
+  --text-sm: 0.875rem;                                   /* 14px - static body default */
+  --text-base: 1rem;                                     /* 16px - base font size */
+  --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);    /* 18px - 20px fluid */
+  --text-xl: clamp(1.25rem, 1.125rem + 0.625vw, 1.5rem); /* 20px - 24px fluid */
+  --text-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);    /* 24px - 32px fluid */
+  --text-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.5rem); /* 30px - 40px fluid */
+  --text-4xl: clamp(2.25rem, 1.875rem + 1.875vw, 3rem); /* 36px - 48px fluid */
+  --text-5xl: clamp(3rem, 2.25rem + 3.75vw, 4rem);      /* 48px - 64px fluid */
+  --text-6xl: clamp(3.75rem, 2.75rem + 5vw, 5rem);      /* 60px - 80px fluid */
+  --text-7xl: clamp(4.5rem, 3.25rem + 6.25vw, 6rem);    /* 72px - 96px fluid */
+  --text-8xl: clamp(6rem, 4rem + 10vw, 8rem);           /* 96px - 128px fluid */
+  --text-9xl: clamp(8rem, 5rem + 15vw, 12rem);          /* 128px - 192px fluid */
 
-    /* Mobile-specific sizes */
-    --text-base-mobile: 0.875rem;
-    --text-lg-mobile: 1rem;
-    --text-xl-mobile: 1.125rem;
-    --text-2xl-mobile: 1.25rem;
-    --text-3xl-mobile: 1.5rem;
+  /* Mobile-specific font sizes for tight control */
+  --text-base-mobile: 0.875rem;  /* 14px base on mobile */
+  --text-lg-mobile: 1rem;        /* 16px large on mobile */
+  --text-xl-mobile: 1.125rem;    /* 18px xl on mobile */
+  --text-2xl-mobile: 1.25rem;    /* 20px 2xl on mobile */
+  --text-3xl-mobile: 1.5rem;     /* 24px 3xl on mobile */
 
-    /* Line Heights */
-    --leading-none: 1;
-    --leading-tight: 1.25;
-    --leading-snug: 1.375;
-    --leading-normal: 1.5;
-    --leading-relaxed: 1.625;
-    --leading-loose: 2;
+  /* Line heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
 
-    /* =================== SPACING =================== */
-    --spacing-micro: 0.125rem;
-    --spacing-tiny: 0.25rem;
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 0.75rem;
-    --spacing-base: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-    --spacing-2xl: 4rem;
-    --spacing-3xl: 6rem;
-    --spacing-4xl: 8rem;
+  /* =================== RESPONSIVE SPACING =================== */
+  /* Mobile-first spacing system - rem units with responsive scaling */
+  --spacing-micro: 0.125rem;   /* 2px */
+  --spacing-tiny: 0.25rem;     /* 4px */
+  --spacing-xs: 0.5rem;        /* 8px */
+  --spacing-sm: 0.75rem;       /* 12px */
+  --spacing-base: 1rem;        /* 16px */
+  --spacing-md: 1.5rem;        /* 24px */
+  --spacing-lg: 2rem;          /* 32px */
+  --spacing-xl: 3rem;          /* 48px */
+  --spacing-2xl: 4rem;         /* 64px */
+  --spacing-3xl: 6rem;         /* 96px */
+  --spacing-4xl: 8rem;         /* 128px */
 
-    /* Mobile spacing */
-    --spacing-sm-mobile: 0.5rem;
-    --spacing-base-mobile: 0.75rem;
-    --spacing-md-mobile: 1rem;
-    --spacing-lg-mobile: 1.5rem;
+  /* Mobile-responsive spacing variants */
+  --spacing-sm-mobile: 0.5rem;    /* 8px on mobile */
+  --spacing-md-mobile: 1rem;      /* 16px on mobile */
+  --spacing-lg-mobile: 1.5rem;    /* 24px on mobile */
+  --spacing-xl-mobile: 2rem;      /* 32px on mobile */
+  --spacing-2xl-mobile: 2.5rem;   /* 40px on mobile */
+  --spacing-3xl-mobile: 3rem;     /* 48px on mobile */
+  --spacing-4xl-mobile: 4rem;     /* 64px on mobile */
 
-    /* =================== BORDERS & RADIUS =================== */
-    --radius-none: 0;
-    --radius-xs: 0.25rem;
-    --radius-sm: 0.375rem;
-    --radius-md: 0.5rem;
-    --radius-lg: 0.75rem;
-    --radius-xl: 1rem;
-    --radius-full: 9999px;
+  /* =================== MOBILE-FIRST BREAKPOINTS =================== */
+  /* Mobile-first progressive enhancement strategy */
+  --breakpoint-xs: 320px;    /* Small mobile phones */
+  --breakpoint-sm: 640px;    /* Large mobile phones */  
+  --breakpoint-md: 768px;    /* Tablets */
+  --breakpoint-lg: 1024px;   /* Small laptops */
+  --breakpoint-xl: 1280px;   /* Large laptops */
+  --breakpoint-2xl: 1536px;  /* Desktops */
+  --breakpoint-3xl: 1920px;  /* Large displays */
 
-    /* =================== Z-INDEX =================== */
-    --z-behind: -1;
-    --z-base: 0;
-    --z-elevated: 10;
-    --z-dropdown: 20;
-    --z-sticky: 30;
-    --z-popover: 40;
-    --z-overlay: 50;
-    --z-modal: 60;
-    --z-toast: 70;
-    --z-tooltip: 80;
-    --z-maximum: 999;
+  /* Touch-friendly sizing standards */
+  --touch-target-min: 44px;    /* WCAG 2.1 AA minimum touch target */
+  --touch-target-optimal: 48px; /* Optimal touch target size */
+  --touch-spacing-min: 8px;     /* Minimum spacing between touch targets */
 
-    /* =================== ANIMATION =================== */
-    --timing-fast: 150ms;
-    --timing-normal: 250ms;
-    --timing-slow: 350ms;
-    --ease-stripe: cubic-bezier(0.215, 0.61, 0.355, 1);
-    --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  /* =================== BORDER RADIUS =================== */
+  --radius-none: 0;
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
 
-    /* =================== SHADOWS =================== */
-    --shadow-none: none;
-    --shadow-whisper: 0 1px 3px 0 rgba(50, 50, 93, 0.09);
-    --shadow-present: 0 4px 12px 0 rgba(50, 50, 93, 0.15);
-    --shadow-elevated: 0 8px 24px 0 rgba(50, 50, 93, 0.20);
-    --shadow-prominent: 0 12px 32px 0 rgba(50, 50, 93, 0.25);
-    --shadow-commanding: 0 16px 40px 0 rgba(50, 50, 93, 0.30);
-    --shadow-hero: 0 24px 60px 0 rgba(50, 50, 93, 0.35);
-    --shadow-modal: 0 32px 80px 0 rgba(50, 50, 93, 0.40);
+  /* =================== Z-INDEX =================== */
+  --z-behind: -1;
+  --z-base: 0;
+  --z-elevated: 10;
+  --z-dropdown: 20;
+  --z-sticky: 30;
+  --z-popover: 40;
+  --z-overlay: 50;
+  --z-modal: 60;
+  --z-toast: 70;
+  --z-tooltip: 80;
+  --z-maximum: 999;
+
+  /* =================== ANIMATION TIMING =================== */
+  --timing-fast: 150ms;
+  --timing-normal: 250ms;
+  --timing-slow: 350ms;
+  --ease-stripe: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ===============================================================================
@@ -289,6 +299,16 @@
     --nav-marketplace: var(--color-gruvbox-green);
     --nav-forums: var(--color-gruvbox-fg-muted);
 
+    /* =================== SHADOW SYSTEM =================== */
+    /* 8-Level Stripe-inspired Shadow Hierarchy for Depth and Elevation */
+    --shadow-none: none;
+    --shadow-whisper: 0 1px 3px 0 rgba(50, 50, 93, 0.09);
+    --shadow-present: 0 4px 12px 0 rgba(50, 50, 93, 0.15);
+    --shadow-elevated: 0 8px 24px 0 rgba(50, 50, 93, 0.20);
+    --shadow-prominent: 0 12px 32px 0 rgba(50, 50, 93, 0.25);
+    --shadow-commanding: 0 16px 40px 0 rgba(50, 50, 93, 0.30);
+    --shadow-hero: 0 24px 60px 0 rgba(50, 50, 93, 0.35);
+    --shadow-modal: 0 32px 80px 0 rgba(50, 50, 93, 0.40);
   }
 }
 
@@ -1379,7 +1399,7 @@
   .hero-grid-layout {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-xs);
+    gap: var(--spacing-lg);
     align-items: center;
     padding-top: var(--spacing-sm);
     padding-bottom: var(--spacing-sm);
@@ -1388,8 +1408,8 @@
 
   @media (min-width: 1024px) {
     .hero-grid-layout {
-      grid-template-columns: 3fr 1fr;
-      gap: 0;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-xl);
       padding-top: var(--spacing-base);
       padding-bottom: var(--spacing-base);
       min-height: 380px;

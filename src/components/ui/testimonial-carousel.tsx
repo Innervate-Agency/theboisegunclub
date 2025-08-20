@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react'
 
 const testimonialCarouselVariants = cva(
-  "w-full py-(--spacing-2xl)",
+  "w-full py-16",
   {
     variants: {
       variant: {
@@ -96,9 +96,9 @@ export function TestimonialCarousel({
       <div className="max-w-site mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
-          <div className="text-center mb-(--spacing-xl)">
+          <div className="text-center mb-4">
             {subtitle && (
-              <p className="text-body-sm font-rajdhani font-semibold text-rusty-orange mb-(--spacing-xs) tracking-wide uppercase">
+              <p className="text-body-sm font-rajdhani font-semibold text-rusty-orange mb-4 tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
@@ -122,7 +122,7 @@ export function TestimonialCarousel({
             
             {/* Rating */}
             {currentTestimonial.rating && (
-              <div className="flex items-center gap-xs mb-(--spacing-md) justify-center">
+              <div className="flex items-center gap-xs mb-4 justify-center">
                 {Array.from({ length: 5 }, (_, i) => (
                   <Star
                     key={i}
@@ -138,7 +138,7 @@ export function TestimonialCarousel({
             )}
             
             {/* Content */}
-            <blockquote className="text-center mb-(--spacing-lg)">
+            <blockquote className="text-center mb-4">
               <p className="text-responsive-lg md:text-responsive-xl text-foreground font-noto-sans leading-relaxed italic">
                 "{currentTestimonial.content}"
               </p>

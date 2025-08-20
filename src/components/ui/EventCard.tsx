@@ -8,6 +8,7 @@ import { Card } from "./card"
 import { Badge } from "./badge"
 import { Button } from "./button"
 import { SmartEventBadges } from "./smart-event-badges"
+import { EventCardTexture, CompetitionCardTexture, TexturedBackground } from "./textured-background"
 // Heroicons - Updated from Phosphor for consistency
 import { 
   CalendarIcon as Calendar, 
@@ -28,17 +29,17 @@ import {
 import Image from 'next/image'
 
 const eventCardVariants = cva(
-  "transition-all duration-300 group relative overflow-hidden cursor-pointer min-w-[320px] active:scale-[0.98] hover:scale-[1.01] focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-nav-events/50",
+  "transition-all duration-300 group relative overflow-hidden cursor-pointer card-mobile touch-target active:scale-[0.98] hover:scale-[1.01] focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-nav-events/50",
   {
     variants: {
       featured: {
-        true: "border-2 border-primary/20 bg-gradient-to-br from-card to-primary/5 shadow-ghost hover:shadow-present hover:border-primary/30",
-        false: "border-2 border-transparent shadow-ghost hover:shadow-present hover:border-rusty-orange/30"
+        true: "bg-gradient-to-br from-card to-primary/5",
+        false: ""
       },
       size: {
-        compact: "p-md",
-        standard: "p-lg", 
-        spacious: "p-xl"
+        compact: "p-mobile-sm sm:p-md",
+        standard: "p-mobile-md sm:p-lg", 
+        spacious: "p-mobile-lg sm:p-xl"
       }
     },
     defaultVariants: {
@@ -188,36 +189,31 @@ export function EventCard({
 
   const badgeVariant = getEventBadgeVariant(eventType)
 
+  // Remove textures from cards - keeping them only for footer and detail pages
+  const getEventTexture = () => {
+    return null
+  }
+
   return (
     <Link href={eventHref} className="block">
       <Card
+        variant="tactical-events"
+        tacticalTheme="events"
+        showCategoryIcon={true}
+        category={eventType}
         className={cn(
           eventCardVariants({ featured, size }), 
           "rounded-xs",
           // Tactical animated underline gradient
           "tactical-underline-base tactical-underline-events",
+          // 8-Level Shadow System - using bgc-shadow prefix to avoid Tailwind conflicts
+          "bgc-shadow-whisper hover:bgc-shadow-present transition-all duration-300",
           className
         )}
         {...props}
       >
-      {/* Tactical Corner Brackets - appear on hover */}
-      <div className="absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 border-nav-events opacity-0 group-hover:opacity-100 transition-all duration-200" />
-      <div className="absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 border-nav-events opacity-0 group-hover:opacity-100 transition-all duration-200" />
-      <div className="absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 border-nav-events opacity-0 group-hover:opacity-100 transition-all duration-200" />
-      
-      {/* Bottom-right corner with document cutout */}
-      <div className="absolute bottom-0 right-0 w-3 h-3 opacity-0 group-hover:opacity-100 transition-all duration-200">
-        <div 
-          className="w-full h-full border-2 border-nav-events"
-          style={{
-            clipPath: 'polygon(0 0, 60% 0, 100% 40%, 100% 100%, 0 100%)'
-          }}
-        />
-      </div>
-      
-      {/* Tactical latches/clasps */}
-      <div className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-nav-events/40 opacity-0 group-hover:opacity-20 transition-all duration-200" />
-      <div className="absolute bottom-1 left-1 w-1.5 h-1.5 rounded-full bg-nav-events/40 opacity-0 group-hover:opacity-20 transition-all duration-200" />
+      {/* Context-aware tactical texture overlay */}
+      {getEventTexture()}
 
       {featured && (
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/50" />
@@ -297,7 +293,7 @@ export function EventCard({
           {/* Enhanced Price Display - top left */}
           {price && (
             <div className="flex justify-start">
-              <span className="font-rajdhani font-bold text-2xl text-rusty-orange">
+              <span className="font-rajdhani font-bold text-lg text-rusty-orange">
                 {price}
                 <span className="text-sm text-muted-foreground ml-1">
                   {price.includes('$') && (eventType === 'Training' ? '/day' : 
@@ -310,7 +306,7 @@ export function EventCard({
           )}
           
           <div className="space-y-0">
-            <h2 className="font-rajdhani font-bold text-2xl text-card-foreground leading-tight line-clamp-2 group-hover:text-nav-events transition-colors duration-200">
+            <h2 className="font-rajdhani font-bold text-xl text-card-foreground leading-tight line-clamp-2 group-hover:text-nav-events transition-colors duration-200">
               {title}
             </h2>
             <h3 className="font-noto-serif text-base text-muted-foreground leading-tight">

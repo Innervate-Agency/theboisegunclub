@@ -13,7 +13,8 @@ import {
   SunIcon,
   CloudIcon,
   TagIcon,
-  BanknotesIcon
+  BanknotesIcon,
+  UserIcon
 } from '@heroicons/react/24/outline'
 
 interface EventInfoBarProps {
@@ -39,6 +40,14 @@ interface EventInfoBarProps {
   requirements?: string[]
   tags?: string[]
   
+  // Author information for two-column header
+  author?: {
+    name: string
+    avatar?: string
+    bio?: string
+    title?: string
+  }
+  
   className?: string
 }
 
@@ -55,6 +64,7 @@ export function EventInfoBar({
   whatToBring = [],
   requirements = [],
   tags = [],
+  author,
   className
 }: EventInfoBarProps) {
   const WeatherIcon = weather?.icon === 'sun' ? SunIcon : weather?.icon === 'cloud' ? CloudIcon : SunIcon
@@ -62,9 +72,58 @@ export function EventInfoBar({
   return (
     <section className={cn("py-xl bg-muted/30 border-y border-border/20", className)}>
       <div className="container mx-auto max-w-7xl px-lg">
-        {/* Single Horizontal Row - Event Essentials */}
+        {/* Two-column Header - Author and Event Categories */}
         <div className="space-y-base">
-          <h3 className="font-rajdhani text-2xl font-bold text-foreground text-center">Event Essentials</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-xl mb-xl">
+            {/* About the Author */}
+            {author && (
+              <div className="bg-card p-lg rounded-none border border-border/30">
+                <h3 className="font-rajdhani text-xl font-bold text-foreground mb-base">About the Author</h3>
+                <div className="space-y-base">
+                  <div className="flex items-center gap-base">
+                    {author.avatar ? (
+                      <img
+                        src={author.avatar}
+                        alt={author.name}
+                        className="w-12 h-12 rounded-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
+                        <UserIcon className="h-6 w-6 text-muted-foreground" />
+                      </div>
+                    )}
+                    <div>
+                      <div className="font-medium text-body-sm">{author.name}</div>
+                      {author.title && (
+                        <div className="text-xs text-muted-foreground">{author.title}</div>
+                      )}
+                    </div>
+                  </div>
+                  {author.bio && (
+                    <p className="text-body-sm text-muted-foreground">{author.bio}</p>
+                  )}
+                </div>
+              </div>
+            )}
+            
+            {/* Event Categories */}
+            {tags.length > 0 && (
+              <div className="bg-card p-lg rounded-none border border-border/30">
+                <h3 className="font-rajdhani text-xl font-bold text-foreground mb-base">Event Categories</h3>
+                <div className="flex flex-wrap gap-sm">
+                  {tags.map((tag, index) => (
+                    <Badge 
+                      key={index}
+                      variant="outline" 
+                      className="text-sm bg-nav-events/10 text-nav-events border-nav-events/30 px-base py-sm"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
           
           <div className="bg-card p-lg rounded-none border border-border/30">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-lg">

@@ -6,13 +6,13 @@ import { cn } from "@/lib/utils"
 
 // Phosphor Icons - Primary choice for tactical aesthetic
 import {
-  MapPin, Sun, ShieldCheck, Shield, Lightning, LockOpen, Warning, Lock, NavigationArrow,
-  Building, CheckCircle, Crown, Medal, Trophy, Tag, Certificate, Target, Student, Wrench,
-  Star, Book, Users, User, House, XCircle, X, Calendar, Coin,
-  Diamond, Truck, CurrencyDollar, Package,
-  Flag, Bell, TrendUp, SpeakerHigh,
-  Clock, WarningCircle, Check, Info, CloudRain, Fire
-} from "@phosphor-icons/react"
+  MapPinIcon, SunIcon, ShieldCheckIcon, ShieldExclamationIcon, BoltIcon, LockOpenIcon, ExclamationTriangleIcon, LockClosedIcon, ArrowLongRightIcon,
+  BuildingOfficeIcon, CheckCircleIcon, TrophyIcon, StarIcon, TagIcon, DocumentCheckIcon, ViewfinderCircleIcon, AcademicCapIcon, WrenchScrewdriverIcon,
+  StarIcon as StarFillIcon, BookOpenIcon, UserGroupIcon, UserIcon, HomeIcon, XCircleIcon, XMarkIcon, CalendarIcon, CurrencyDollarIcon,
+  GemIcon, TruckIcon, BanknotesIcon, ArchiveBoxIcon,
+  FlagIcon, BellIcon, TrendingUpIcon, SpeakerWaveIcon,
+  ClockIcon, ExclamationCircleIcon, CheckIcon, InformationCircleIcon, CloudIcon, FireIcon
+} from "@heroicons/react/24/outline"
 
 const badgeVariants = cva(
   "inline-flex items-center gap-xs font-rajdhani font-semibold text-button-xs border transition-colors focus:outline-none",
@@ -114,82 +114,82 @@ const badgeVariants = cva(
 // Page-specific icon mappings using Phosphor icons
 const pageIcons = {
   // Intel Page Icons
-  "intel-location": MapPin,
-  "intel-weather": Sun, 
-  "intel-verified": ShieldCheck,
-  "intel-unverified": Shield,
-  "intel-priority": Lightning,
-  "intel-access": LockOpen,
-  "intel-restricted": Warning,
-  "intel-closed": Lock,
-  "intel-distance": NavigationArrow,
-  "intel-elevation": Target,
+  "intel-location": MapPinIcon,
+  "intel-weather": SunIcon, 
+  "intel-verified": ShieldCheckIcon,
+  "intel-unverified": ShieldExclamationIcon,
+  "intel-priority": BoltIcon,
+  "intel-access": LockOpenIcon,
+  "intel-restricted": ExclamationTriangleIcon,
+  "intel-closed": LockClosedIcon,
+  "intel-distance": ArrowLongRightIcon,
+  "intel-elevation": ViewfinderCircleIcon,
 
   // Directory Page Icons  
-  "directory-business": Building,
-  "directory-verified": CheckCircle,
-  "directory-gold": Crown,
-  "directory-silver": Medal,
-  "directory-copper": Trophy, 
-  "directory-free": Tag,
-  "directory-ffl": Certificate,
-  "directory-range": Target,
-  "directory-training": Student,
-  "directory-gunsmith": Wrench,
+  "directory-business": BuildingOfficeIcon,
+  "directory-verified": CheckCircleIcon,
+  "directory-gold": TrophyIcon,
+  "directory-silver": StarIcon,
+  "directory-copper": StarFillIcon, 
+  "directory-free": TagIcon,
+  "directory-ffl": DocumentCheckIcon,
+  "directory-range": ViewfinderCircleIcon,
+  "directory-training": AcademicCapIcon,
+  "directory-gunsmith": WrenchScrewdriverIcon,
 
   // Events Page Icons
-  "events-featured": Star,
-  "events-competition": Trophy,
-  "events-training": Book,
-  "events-social": Users,
-  "events-members": User,
-  "events-public": House,
-  "events-cancelled": XCircle,
-  "events-soldout": X,
-  "events-registration": Calendar,
-  "events-free": Coin,
+  "events-featured": StarIcon,
+  "events-competition": TrophyIcon,
+  "events-training": BookOpenIcon,
+  "events-social": UserGroupIcon,
+  "events-members": UserIcon,
+  "events-public": HomeIcon,
+  "events-cancelled": XCircleIcon,
+  "events-soldout": XMarkIcon,
+  "events-registration": CalendarIcon,
+  "events-free": CurrencyDollarIcon,
 
   // Marketplace Page Icons
-  "marketplace-featured": Star,
-  "marketplace-new": Lightning,
-  "marketplace-sale": Tag,
-  "marketplace-sold": CheckCircle,
-  "marketplace-verified": ShieldCheck,
-  "marketplace-premium": Diamond,
-  "marketplace-local": MapPin,
-  "marketplace-shipping": Truck,
-  "marketplace-cash": CurrencyDollar,
-  "marketplace-trade": Package,
+  "marketplace-featured": StarIcon,
+  "marketplace-new": BoltIcon,
+  "marketplace-sale": TagIcon,
+  "marketplace-sold": CheckCircleIcon,
+  "marketplace-verified": ShieldCheckIcon,
+  "marketplace-premium": GemIcon,
+  "marketplace-local": MapPinIcon,
+  "marketplace-shipping": TruckIcon,
+  "marketplace-cash": BanknotesIcon,
+  "marketplace-trade": ArchiveBoxIcon,
 
   // Home Page Icons
-  "home-hero": Flag,
-  "home-community": Users,
-  "home-featured": Star,
-  "home-news": Bell,
-  "home-update": TrendUp,
-  "home-announcement": SpeakerHigh,
+  "home-hero": FlagIcon,
+  "home-community": UserGroupIcon,
+  "home-featured": StarIcon,
+  "home-news": BellIcon,
+  "home-update": TrendingUpIcon,
+  "home-announcement": SpeakerWaveIcon,
 
   // General Status Icons
-  "status-active": CheckCircle,
-  "status-inactive": XCircle, 
-  "status-pending": Clock,
-  "status-error": WarningCircle,
-  "status-success": Check,
-  "status-warning": Warning,
-  "status-info": Info,
+  "status-active": CheckCircleIcon,
+  "status-inactive": XCircleIcon, 
+  "status-pending": ClockIcon,
+  "status-error": ExclamationCircleIcon,
+  "status-success": CheckIcon,
+  "status-warning": ExclamationTriangleIcon,
+  "status-info": InformationCircleIcon,
 
   // Weather Status Icons
-  "weather-excellent": Sun,
-  "weather-good": CheckCircle,
-  "weather-caution": Warning,
-  "weather-poor": CloudRain,
-  "weather-extreme": WarningCircle,
+  "weather-excellent": SunIcon,
+  "weather-good": CheckCircleIcon,
+  "weather-caution": ExclamationTriangleIcon,
+  "weather-poor": CloudIcon,
+  "weather-extreme": ExclamationCircleIcon,
 
   // Fire Danger Icons
-  "fire-low": MapPin,
-  "fire-moderate": Fire,
-  "fire-high": Fire,
-  "fire-extreme": WarningCircle
+  "fire-low": MapPinIcon,
+  "fire-moderate": FireIcon,
+  "fire-high": FireIcon,
+  "fire-extreme": ExclamationCircleIcon
 }
 
 export interface BadgeProps
@@ -200,7 +200,7 @@ export interface BadgeProps
 }
 
 function Badge({ className, variant, size, icon, hideIcon = false, children, ...props }: BadgeProps) {
-  const IconComponent = variant ? pageIcons[variant] : Info
+  const IconComponent = variant ? pageIcons[variant] : InformationCircleIcon
   
   return (
     <div className={cn(badgeVariants({ variant, size }), className)} {...props}>

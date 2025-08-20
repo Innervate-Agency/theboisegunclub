@@ -13,9 +13,9 @@ const faqAccordionVariants = cva(
   {
     variants: {
       variant: {
-        default: "space-y-(--spacing-xs)",
-        compact: "space-y-(--spacing-micro)",
-        card: "space-y-(--spacing-base)"
+        default: "space-y-4",
+        compact: "space-y-4",
+        card: "space-y-4"
       }
     },
     defaultVariants: {
@@ -78,14 +78,14 @@ export default function FAQAccordion({
   return (
     <div className={cn(faqAccordionVariants({ variant }), className)} {...props}>
       {/* Header */}
-      <div className="text-center mb-(--spacing-lg)">
-        <div className="flex justify-center mb-(--spacing-base)">
+      <div className="text-center mb-4">
+        <div className="flex justify-center mb-4">
           <div className="p-sm bg-sandy-ochre/10 rounded-full border border-sandy-ochre/20">
             <HelpCircle className="size-6 text-sandy-ochre" />
           </div>
         </div>
         
-        <h2 className="text-heading-md md:text-heading-lg font-rajdhani font-bold text-dark-chocolate mb-(--spacing-xs)">
+        <h2 className="text-heading-md md:text-heading-lg font-rajdhani font-bold text-dark-chocolate mb-4">
           {title}
         </h2>
         
@@ -98,7 +98,7 @@ export default function FAQAccordion({
 
       {/* Search */}
       {showSearch && (
-        <div className="mb-(--spacing-md)">
+        <div className="mb-4">
           <div className="relative">
             <Search className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-warning-amber" />
             <Input
@@ -114,7 +114,7 @@ export default function FAQAccordion({
 
       {/* Category Filters */}
       {showCategories && categories.length > 0 && (
-        <div className="flex flex-wrap gap-xs mb-(--spacing-md)">
+        <div className="flex flex-wrap gap-xs mb-4">
           <button
             onClick={() => setSelectedCategory(null)}
             className={cn(
@@ -178,11 +178,11 @@ export default function FAQAccordion({
           ))}
         </Accordion>
       ) : (
-        <div className="text-center py-(--spacing-xl)">
-          <div className="p-sm bg-muted rounded-full w-fit mx-auto mb-(--spacing-base)">
+        <div className="text-center py-16">
+          <div className="p-sm bg-muted rounded-full w-fit mx-auto mb-4">
             <Search className="size-6 text-warning-amber" />
           </div>
-          <h3 className="font-rajdhani font-semibold text-dark-chocolate mb-(--spacing-xs)">
+          <h3 className="font-rajdhani font-semibold text-dark-chocolate mb-4">
             No FAQs Found
           </h3>
           <p className="text-warning-amber">

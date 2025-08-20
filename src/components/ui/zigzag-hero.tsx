@@ -5,13 +5,13 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { Badge } from "./badge"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 
-// Create properly typed motion components
-const MotionDiv = motion.div
-const MotionNav = motion.nav
-const MotionP = motion.p
-const MotionH1 = motion.h1
+// Create properly typed motion components using LazyMotion-compatible m
+const MotionDiv = m.div
+const MotionNav = m.nav
+const MotionP = m.p
+const MotionH1 = m.h1
 
 const zigzagHeroVariants = cva(
   "relative w-full min-h-[600px] overflow-hidden",

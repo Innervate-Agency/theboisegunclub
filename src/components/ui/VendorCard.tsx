@@ -7,15 +7,15 @@ import { Button } from './button';
 import { UnifiedArchiveCard } from './unified-archive-card';
 import { cn } from '@/lib/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { MapPin, Phone, Clock, Star, Globe, Shield, ChatsCircle, Storefront, Wrench, Target, GraduationCap, ShoppingBag, Users} from '@phosphor-icons/react';
+import { MapPinIcon, PhoneIcon, ClockIcon, StarIcon, GlobeAltIcon, ShieldCheckIcon, ChatBubbleBottomCenterTextIcon, BuildingStorefrontIcon, WrenchScrewdriverIcon, ViewfinderCircleIcon, AcademicCapIcon, ShoppingBagIcon, UserGroupIcon } from '@heroicons/react/24/outline';
 import { Avatar, AvatarImage, AvatarFallback } from './avatar';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './tooltip';
 import { ReviewsDisplay } from './reviews-display';
 
 // TBGC Business-Specific VendorCard - Strategic Restraint Implementation
 const vendorCardVariants = cva(
-  // BASE: Clean professional foundation for all tiers
-  "relative overflow-hidden transition-all duration-300 bg-card text-card-foreground rounded-(--radius-lg) group hover:scale-[1.02] cursor-pointer h-full flex flex-col",
+  // BASE: Clean professional foundation for all tiers - mobile-optimized
+  "relative overflow-hidden transition-all duration-300 bg-card text-card-foreground rounded-(--radius-lg) group hover:scale-[1.02] cursor-pointer h-full flex flex-col card-mobile touch-target",
   {
     variants: {
       tier: {
@@ -32,9 +32,9 @@ const vendorCardVariants = cva(
         gold: "relative shadow-present hover:shadow-hero bg-card border border-rusty-orange/20 before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/8 before:via-transparent before:to-rusty-orange/6 dark:before:from-rusty-orange/12 dark:before:to-rusty-orange/10 before:rounded-none before:pointer-events-none tactical-underline-base tactical-underline-premium"
       },
       size: {
-        sm: "p-base",           // 16px - compact cards
-        md: "p-md",         // 24px - Stripe-standard card padding
-        lg: "p-lg"              // 32px - spacious cards
+        sm: "p-mobile-sm sm:p-base",           // Mobile-first responsive padding
+        md: "p-mobile-md sm:p-md",             // Mobile-first responsive padding
+        lg: "p-mobile-lg sm:p-lg"              // Mobile-first responsive padding
       }
     },
     defaultVariants: {
@@ -89,12 +89,12 @@ const getBusinessTypeGradient = (businessType: string) => {
 // Get small business type icon for gradient overlay
 const getBusinessTypeIcon = (businessType: string) => {
   const iconClass = "size-6 text-white/80"
-  if (businessType.includes('Range') || businessType.includes('Club')) return <Target weight="bold" className={iconClass} />
-  if (businessType.includes('Gunsmith') || businessType.includes('Custom')) return <Wrench weight="bold" className={iconClass} />
-  if (businessType.includes('Training') || businessType.includes('Academy')) return <GraduationCap weight="bold" className={iconClass} />
-  if (businessType.includes('FFL') || businessType.includes('Dealer') || businessType.includes('Retail')) return <ShoppingBag weight="bold" className={iconClass} />
-  if (businessType.includes('Gun Club') || businessType.includes('Shooting Club')) return <Users weight="bold" className={iconClass} />
-  return <Storefront weight="bold" className={iconClass} />
+  if (businessType.includes('Range') || businessType.includes('Club')) return <ViewfinderCircleIcon className={iconClass} />
+  if (businessType.includes('Gunsmith') || businessType.includes('Custom')) return <WrenchScrewdriverIcon className={iconClass} />
+  if (businessType.includes('Training') || businessType.includes('Academy')) return <AcademicCapIcon className={iconClass} />
+  if (businessType.includes('FFL') || businessType.includes('Dealer') || businessType.includes('Retail')) return <ShoppingBagIcon className={iconClass} />
+  if (businessType.includes('Gun Club') || businessType.includes('Shooting Club')) return <UserGroupIcon className={iconClass} />
+  return <BuildingStorefrontIcon className={iconClass} />
 }
 
 // Map business types to badge variants
@@ -211,7 +211,7 @@ export function VendorCard({
             }}
             title="Call business"
           >
-            <Phone weight="bold" className="h-3 w-3" />
+            <PhoneIcon className="h-3 w-3" />
           </Button>
         </div>
       </div>
@@ -297,9 +297,8 @@ export function VendorCard({
                       <>
                         <div className="flex items-center">
                           {[...Array(5)].map((_, i) => (
-                            <Star
+                            <StarIcon
                               key={i}
-                              weight={i < Math.floor(rating) ? 'fill' : 'regular'}
                               className={cn(
                                 "size-4",
                                 i < Math.floor(rating) ? "text-nav-directory fill-nav-directory" : "text-muted-foreground"
@@ -333,7 +332,7 @@ export function VendorCard({
                       variant={tier === 'gold' ? 'elite' : 'default'}
                       size="sm"
                     >
-                      <Shield className="w-icon-xs h-icon-xs mr-xs" weight="bold" />
+                      <ShieldCheckIcon className="w-icon-xs h-icon-xs mr-xs" />
                       Verified
                     </Badge>
                   </TooltipTrigger>
@@ -345,7 +344,7 @@ export function VendorCard({
             )}
             {showSponsored && (
               <Badge variant={tier === 'gold' ? 'elite' : 'default'} size="sm">
-                <Star weight="fill" className="w-icon-xs h-icon-xs mr-xs" />
+                <StarIcon className="w-icon-xs h-icon-xs mr-xs" />
                 Sponsored
               </Badge>
             )}
@@ -364,19 +363,19 @@ export function VendorCard({
       <div className="space-y-sm mb-lg bg-muted/30 p-sm rounded-xs">
         {address && (
           <div className="flex items-start gap-sm text-sm">
-            <MapPin className="size-4 flex-shrink-0 text-nav-directory mt-0.5" weight="bold" />
+            <MapPinIcon className="size-4 flex-shrink-0 text-nav-directory mt-0.5" />
             <span className="text-muted-foreground leading-tight">{address}</span>
           </div>
         )}
         {phone && (
           <div className="flex items-center gap-sm text-sm">
-            <Phone className="size-4 flex-shrink-0 text-nav-directory" weight="bold" />
+            <PhoneIcon className="size-4 flex-shrink-0 text-nav-directory" />
             <span className="font-medium text-card-foreground">{phone}</span>
           </div>
         )}
         {hours && (
           <div className="flex items-center gap-sm text-sm">
-            <Clock className="size-4 flex-shrink-0 text-nav-directory" weight="bold" />
+            <ClockIcon className="size-4 flex-shrink-0 text-nav-directory" />
             <span className="text-muted-foreground">{hours}</span>
           </div>
         )}
@@ -400,7 +399,7 @@ export function VendorCard({
               disabled={loadingReviews}
               className="p-0 h-auto font-normal text-muted-foreground hover:text-nav-directory transition-colors"
             >
-              <ChatsCircle className="size-4 mr-xs text-nav-directory" weight="bold" />
+              <ChatBubbleBottomCenterTextIcon className="size-4 mr-xs text-nav-directory" />
               {loadingReviews ? 'Loading reviews...' : 'View customer reviews'}
             </Button>
           </div>
@@ -459,7 +458,7 @@ export function VendorCard({
             }}
             title={`Visit ${businessName}'s website (opens in new tab)`}
           >
-            <Globe className="size-4" weight="bold" />
+            <GlobeAltIcon className="size-4" />
           </Button>
         )}
       </div>

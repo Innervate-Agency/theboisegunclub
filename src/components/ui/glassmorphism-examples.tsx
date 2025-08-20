@@ -21,7 +21,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
       
       {/* Hero Section with Background for Glass Effects */}
       <div 
-        className="relative p-micro2 rounded-overlay overflow-hidden mb-(--spacing-xl)"
+        className="relative p-micro2 rounded-overlay overflow-hidden mb-4"
         style={{
           background: `
             url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F2CB05' fill-opacity='0.15'%3E%3Cpath d='M20 20m-lg 0a8,8 0 1,1 16,0a8,8 0 1,1 -16,0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
@@ -33,7 +33,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
           `
         }}
       >
-        <div className="text-center space-y-(--spacing-md)">
+        <div className="text-center space-y-4">
           <h1 className="text-heading-xl font-rajdhani font-bold text-dark-chocolate">
             Real-World Glassmorphism Examples
           </h1>
@@ -55,7 +55,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
               {/* Dropdown with Mica Glass */}
               {showDropdown && (
                 <div className="absolute top-full mt-(--spacing-xs) right-0 w-64 mica-dropdown rounded-sm shadow-elevated border border-sandy-ochre/20 z-50">
-                  <div className="p-base space-y-(--spacing-sm)">
+                  <div className="p-base space-y-4">
                     <div className="flex items-center gap-sm pb-(--spacing-xs) border-b border-border">
                       <div className="size-8 bg-sandy-ochre/20 rounded-full flex items-center justify-center">
                         <User className="size-4 text-sandy-ochre" />
@@ -130,7 +130,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
               `
             }}
           />
-          <div className="relative p-md space-y-(--spacing-base)">
+          <div className="relative p-md space-y-4">
             <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate">
               Glass Search Component
             </h3>
@@ -161,12 +161,12 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
               `
             }}
           />
-          <div className="relative p-md space-y-(--spacing-base)">
+          <div className="relative p-md space-y-4">
             <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate">
               Glass Notification Cards
             </h3>
             
-            <div className="space-y-(--spacing-sm)">
+            <div className="space-y-4">
               <div className="mica-toast p-base rounded-sm border border-card/20">
                 <div className="flex items-start gap-sm">
                   <div className="size-2 bg-rifling-green rounded-full mt-(--spacing-xs)" />
@@ -210,7 +210,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
           
           {/* Modal */}
           <Card className="mica-modal relative z-10 w-full max-w-md shadow-elite">
-            <CardContent className="p-md space-y-(--spacing-base)">
+            <CardContent className="p-md space-y-4">
               <h3 className="text-heading-sm font-rajdhani font-bold text-foreground">
                 Glass Modal Example
               </h3>

@@ -11,10 +11,10 @@ const pageHeroVariants = cva(
   {
     variants: {
       size: {
-        sm: "py-(--spacing-xl)",
-        md: "py-(--spacing-2xl)", 
-        lg: "py-(--spacing-3xl)",
-        xl: "py-(--spacing-4xl)"
+        sm: "py-16",
+        md: "py-16", 
+        lg: "py-16",
+        xl: "py-16"
       },
       backgroundPreset: {
         warm: "bg-gradient-to-br from-sandy-ochre/5 via-rusty-orange/5 to-walnut-stock/5",
@@ -78,7 +78,7 @@ export function PageHero({
       <div className="absolute inset-0 bg-gradient-mesh-warm opacity-20" />
       
       <div className="relative z-10 w-full max-w-site mx-auto px-md">
-        <div className="text-center space-y-(--spacing-lg)">
+        <div className="text-center space-y-4">
           
           {/* Icon */}
           {Icon && (
@@ -90,7 +90,7 @@ export function PageHero({
           )}
 
           {/* Main content */}
-          <div className="space-y-(--spacing-md)">
+          <div className="space-y-4">
             {badge && (
               <div className="flex justify-center">
                 <div className="px-base py-xs bg-sandy-ochre/10 border border-sandy-ochre/20 rounded-full text-body-sm font-medium text-sandy-ochre">

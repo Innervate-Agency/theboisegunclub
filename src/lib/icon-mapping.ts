@@ -21,7 +21,7 @@ import {
   HomeIcon,
   BuildingStorefrontIcon,
   UsersIcon,
-  UsersIcon,
+  UserIcon,
   UserCircleIcon,
   PhoneIcon,
   EnvelopeIcon,
@@ -46,7 +46,6 @@ import {
   InformationCircleIcon,
   CheckCircleIcon,
   XCircleIcon,
-  QuestionMarkCircleIcon,
   CloudIcon,
   BoltIcon,
   FireIcon,
@@ -54,12 +53,8 @@ import {
   LockClosedIcon,
   LockOpenIcon,
   KeyIcon,
-  QuestionMarkCircleIcon,
   CogIcon,
-  QuestionMarkCircleIcon,
   AcademicCapIcon,
-  QuestionMarkCircleIcon,
-  QuestionMarkCircleIcon,
   ArrowTrendingUpIcon,
   SpeakerWaveIcon,
   MagnifyingGlassIcon,
@@ -68,8 +63,21 @@ import {
   TagIcon,
   Squares2X2Icon as GridIcon,
   ListBulletIcon,
-  AdjustmentsHorizontalIcon as FilterIcon
+  AdjustmentsHorizontalIcon as FilterIcon,
+  WrenchScrewdriverIcon,
+  TrophyIcon,
+  TruckIcon,
+  FlagIcon,
+  SunIcon,
+  ShoppingCartIcon
 } from "@heroicons/react/24/outline"
+
+// Import tactical icons for specialized firearms categories
+import { 
+  tacticalIconMapping, 
+  getTacticalIcon,
+  type TacticalIconName 
+} from './tactical-icons';
 
 // Complete mapping from Phosphor names to Heroicons
 export const iconMapping = {
@@ -182,12 +190,59 @@ export const iconMapping = {
   
   // Special cases that need aliases
   'AddressBook': BookOpenIcon,
+  
+  // ============================================================================
+  // TACTICAL & FIREARMS SPECIFIC ICONS
+  // Specialized icons for authentic firearms business categorization
+  // ============================================================================
+  
+  // Business Category Icons
+  'ShootingRange': tacticalIconMapping.ShootingRange,
+  'Gunsmith': tacticalIconMapping.Gunsmith,
+  'Training': tacticalIconMapping.Training,
+  'TacticalRetail': tacticalIconMapping.TacticalRetail,
+  'Retail': tacticalIconMapping.TacticalRetail, // Alias for retail
+  'Club': tacticalIconMapping.Club,
+  'TacticalServices': tacticalIconMapping.TacticalServices,
+  'Services': tacticalIconMapping.TacticalServices, // Alias for services
+  
+  // Membership Tier Icons  
+  'GoldPartner': tacticalIconMapping.GoldPartner,
+  'SilverMember': tacticalIconMapping.SilverMember,
+  'CopperMember': tacticalIconMapping.CopperMember,
+  'StandardMember': tacticalIconMapping.StandardMember,
+  'Standard': tacticalIconMapping.StandardMember, // Alias for standard
+  
+  // Sports Category Icons
+  'RifleSports': tacticalIconMapping.RifleSports,
+  'PistolSports': tacticalIconMapping.PistolSports,
+  'ShotgunSports': tacticalIconMapping.ShotgunSports,
+  'Archery': tacticalIconMapping.Archery,
+  'Paintball': tacticalIconMapping.Paintball,
+  'Airsoft': tacticalIconMapping.Airsoft,
+  
+  // Enhanced Target/Crosshair replacements with tactical icons
+  'Target': tacticalIconMapping.ShootingRange, // Better than MapPin
+  'Crosshair': tacticalIconMapping.ShootingRange, // Better than MapPin
 } as const
 
-// Type for icon names
+// Combined type for all icon names (Heroicons + Tactical)
 export type IconName = keyof typeof iconMapping
+export type AllIconNames = IconName | TacticalIconName
 
-// Helper function to get icon component
+// Enhanced helper function to get icon component (supports both libraries)
 export const getIcon = (iconName: string) => {
-  return iconMapping[iconName as IconName] || InformationCircleIcon // Default fallback
+  // First try the combined mapping
+  const combinedIcon = iconMapping[iconName as IconName];
+  if (combinedIcon) return combinedIcon;
+  
+  // Then try tactical icons directly
+  const tacticalIcon = getTacticalIcon(iconName);
+  if (tacticalIcon) return tacticalIcon;
+  
+  // Default fallback
+  return InformationCircleIcon;
 }
+
+// Helper specifically for tactical icons
+export const getTacticalIconComponent = getTacticalIcon;

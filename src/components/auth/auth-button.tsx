@@ -6,7 +6,9 @@ import { useAuth } from './auth-context'
 import { AuthModal } from './auth-modal'
 import { UserDropdown } from './user-dropdown'
 import { LoadingSpinner } from '@/components/ui/loading-spinner'
-import { UserCircle, SignIn, Users, Monitor } from '@phosphor-icons/react'
+import { UserCircleIcon } from '@heroicons/react/24/outline'
+import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline'
+import { UserGroupIcon } from '@heroicons/react/24/outline'
 import { cn } from '@/lib/utils'
 
 interface AuthButtonProps {
@@ -57,7 +59,7 @@ export function AuthButton({
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-nav-forums/0 via-nav-forums/15 to-nav-forums/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600 ease-out" />
-            <Users className="size-4 mr-xs transition-all duration-200 group-hover:scale-110 group-hover:-rotate-6" />
+            <UserGroupIcon className="size-4 mr-xs transition-all duration-200 group-hover:scale-110 group-hover:-rotate-6" />
             <span className="relative">Forums</span>
           </Button>
         )}
@@ -79,8 +81,8 @@ export function AuthButton({
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-blue/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
-          <SignIn className="size-4 mr-xs transition-transform duration-200 group-hover:scale-110" />
-          <span className="relative">Sign In</span>
+          <ArrowRightOnRectangleIcon className="size-4 mr-xs transition-transform duration-200 group-hover:scale-110" />
+          <span className="relative">Login/Dashboard</span>
         </Button>
 
         {showTrialButton && (
@@ -97,21 +99,6 @@ export function AuthButton({
           </Button>
         )}
 
-        {variant === 'forum-aware' && (
-          <Button
-            variant="ghost" 
-            size={size}
-            className="text-muted-foreground hover:text-secondary border border-border/50 bg-muted/5 hover:bg-secondary/10 font-rajdhani font-medium group relative overflow-hidden rounded-xs"
-            onClick={() => {
-              // For now, just alert - will eventually route to /dashboard
-              alert('Dashboard coming soon! This will be your personalized gaming/activity hub.')
-            }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-rusty-orange/8 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
-            <Monitor className="size-4 mr-xs transition-all duration-200 group-hover:scale-110 group-hover:rotate-12" />
-            <span className="relative">Dashboard</span>
-          </Button>
-        )}
       </div>
 
       {/* Auth Modal */}

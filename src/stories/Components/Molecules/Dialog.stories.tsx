@@ -57,7 +57,7 @@ export const Default: Story = {
             Make changes to your profile here. Click save when you're done.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-(--spacing-base) py-(--spacing-base)">
+        <div className="grid gap-(--spacing-base) py-16">
           <div className="grid grid-cols-4 items-center gap-(--spacing-base)">
             <Label htmlFor="name" className="text-right">
               Name

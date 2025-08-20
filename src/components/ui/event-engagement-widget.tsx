@@ -12,7 +12,10 @@ import {
   UsersIcon as Users,
   ExclamationTriangleIcon as Warning,
   CheckCircleIcon as CheckCircle,
-  ClockIcon as Clock
+  ClockIcon as Clock,
+  EnvelopeIcon as Envelope,
+  UserIcon as User,
+  PhoneIcon as Phone
 } from '@heroicons/react/24/outline'
 import {
   HeartIcon as HeartFilled,
@@ -51,6 +54,17 @@ export function EventEngagementWidget({
   const [isInterested, setIsInterested] = useState(false)
   const [interestedCount, setInterestedCount] = useState(Math.floor(Math.random() * 15) + 5) // Mock initial count
   const [showShareMenu, setShowShareMenu] = useState(false)
+  
+  // Universal registration form state
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false)
+  const [registrationData, setRegistrationData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    additionalInfo: ''
+  })
+  const [isSubmittingRegistration, setIsSubmittingRegistration] = useState(false)
+  const [registrationSubmitted, setRegistrationSubmitted] = useState(false)
 
   const spotsRemaining = capacity - registeredCount
   const isSoldOut = spotsRemaining <= 0
@@ -109,6 +123,67 @@ END:VCALENDAR`
     }
     
     setShowShareMenu(false)
+  }
+
+  // Universal registration form handlers
+  const handleRegistrationSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmittingRegistration(true)
+    
+    try {
+      const response = await fetch('/api/event-registration', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...registrationData,
+          eventId,
+          eventTitle,
+          eventDate,
+          eventLocation,
+          eventType,
+          price,
+          registrationUrl
+        }),
+      })
+      
+      if (response.ok) {
+        setRegistrationSubmitted(true)
+        setShowRegistrationForm(false)
+        // Reset form
+        setRegistrationData({
+          name: '',
+          email: '',
+          phone: '',
+          additionalInfo: ''
+        })
+      } else {
+        // Handle error - could add toast notification
+        console.error('Registration submission failed')
+      }
+    } catch (error) {
+      console.error('Registration submission error:', error)
+    } finally {
+      setIsSubmittingRegistration(false)
+    }
+  }
+
+  const handleRegistrationInputChange = (field: string, value: string) => {
+    setRegistrationData(prev => ({
+      ...prev,
+      [field]: value
+    }))
+  }
+
+  const handleRegistrationClick = () => {
+    if (registrationUrl) {
+      // If there's a direct registration URL, open it
+      window.open(registrationUrl, '_blank')
+    } else {
+      // Otherwise, show our universal registration form
+      setShowRegistrationForm(true)
+    }
   }
 
   const calendarUrls = generateCalendarUrls()
@@ -187,7 +262,7 @@ END:VCALENDAR`
 
         {/* Registration Button */}
         <div className="space-y-sm">
-          {registrationUrl ? (
+          {!registrationSubmitted ? (
             <Button 
               size="lg"
               className={cn(
@@ -197,21 +272,124 @@ END:VCALENDAR`
                   : "bg-nav-events text-white hover:bg-nav-events/90"
               )}
               disabled={isSoldOut}
-              onClick={() => registrationUrl && window.open(registrationUrl, '_blank')}
+              onClick={handleRegistrationClick}
             >
-              {isSoldOut ? 'Sold Out' : isLowAvailability ? '🔥 Register Now - Limited Spots!' : 'Register for Event'}
+              {isSoldOut ? 'Sold Out' : isLowAvailability ? '🔥 Register Now - Limited Spots!' : registrationUrl ? 'Register for Event' : 'Express Interest & Register'}
             </Button>
           ) : (
-            <Button 
-              variant="outline"
-              size="lg"
-              className="w-full font-rajdhani font-bold text-lg h-12 border-nav-events text-nav-events hover:bg-nav-events hover:text-white"
-            >
-              <Clock className="h-5 w-5 mr-xs" />
-              Registration Opens Soon
-            </Button>
+            <div className="bg-sagebrush-green/10 border border-sagebrush-green/30 rounded-xs p-lg text-center">
+              <CheckCircle className="h-8 w-8 text-sagebrush-green mx-auto mb-base" />
+              <div className="font-rajdhani font-bold text-lg text-sagebrush-green mb-xs">Registration Submitted!</div>
+              <div className="text-sm text-muted-foreground">
+                {registrationUrl 
+                  ? "You've been directed to the event's registration page."
+                  : "Your interest has been sent to the event organizer. They'll contact you directly with registration details."
+                }
+              </div>
+              <div className="text-xs text-muted-foreground mt-base p-xs bg-card rounded-xs">
+                🎯 <em>Event registration powered by Boise Gun Collective</em>
+              </div>
+            </div>
           )}
         </div>
+
+        {/* Universal Registration Form Modal */}
+        {showRegistrationForm && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-lg z-50">
+            <div className="bg-card p-xl rounded-xs max-w-md w-full max-h-[90vh] overflow-y-auto">
+              <div className="space-y-lg">
+                <div className="text-center">
+                  <h3 className="font-rajdhani font-bold text-xl text-foreground mb-xs">Register Your Interest</h3>
+                  <p className="text-sm text-muted-foreground">
+                    We'll send your registration details to the event organizer who will contact you directly.
+                  </p>
+                </div>
+                
+                <form onSubmit={handleRegistrationSubmit} className="space-y-base">
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-xs">
+                      <User className="h-4 w-4 inline mr-xs" />
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      className="w-full p-sm border border-border rounded-xs bg-background text-foreground"
+                      placeholder="Your full name"
+                      value={registrationData.name}
+                      onChange={(e) => handleRegistrationInputChange('name', e.target.value)}
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-xs">
+                      <Envelope className="h-4 w-4 inline mr-xs" />
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      className="w-full p-sm border border-border rounded-xs bg-background text-foreground"
+                      placeholder="your.email@example.com"
+                      value={registrationData.email}
+                      onChange={(e) => handleRegistrationInputChange('email', e.target.value)}
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-xs">
+                      <Phone className="h-4 w-4 inline mr-xs" />
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      className="w-full p-sm border border-border rounded-xs bg-background text-foreground"
+                      placeholder="(208) 555-0123"
+                      value={registrationData.phone}
+                      onChange={(e) => handleRegistrationInputChange('phone', e.target.value)}
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-xs">
+                      Additional Information
+                    </label>
+                    <textarea
+                      className="w-full p-sm border border-border rounded-xs bg-background text-foreground h-20 resize-none"
+                      placeholder="Any questions or special requirements..."
+                      value={registrationData.additionalInfo}
+                      onChange={(e) => handleRegistrationInputChange('additionalInfo', e.target.value)}
+                    />
+                  </div>
+                  
+                  <div className="flex gap-base">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      className="flex-1"
+                      onClick={() => setShowRegistrationForm(false)}
+                      disabled={isSubmittingRegistration}
+                    >
+                      Cancel
+                    </Button>
+                    <Button
+                      type="submit"
+                      className="flex-1 bg-nav-events text-white hover:bg-nav-events/90"
+                      disabled={isSubmittingRegistration}
+                    >
+                      {isSubmittingRegistration ? 'Submitting...' : 'Submit Registration'}
+                    </Button>
+                  </div>
+                  
+                  <div className="text-xs text-muted-foreground text-center p-xs bg-muted/50 rounded-xs">
+                    🎯 <em>By submitting, you agree to receive event-related communications. 
+                    Registration powered by <span className="font-medium text-nav-events">Boise Gun Collective</span>.</em>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Interest Tracking */}
         <div className="border-t border-border pt-lg space-y-sm">

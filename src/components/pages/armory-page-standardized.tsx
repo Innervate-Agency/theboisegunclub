@@ -281,40 +281,39 @@ export function ArmoryPageStandardized() {
   // Hero content sections - clean separation of concerns
   const heroLeftContent = (
     <>
-      <div className="flex items-center gap-base">
-        <div className="bg-card/10 p-base rounded-xs border border-border">
-          <Shield className="h-8 w-8 text-white" />
-        </div>
-        <div className="space-y-base">
-          <div className="flex items-center gap-xs text-sm text-white/60">
-            <span>Home</span>
-            <CaretRight className="h-4 w-4" />
-            <span className="text-white font-medium">The Armory</span>
-          </div>
-          <div className="flex flex-wrap gap-xs">
-            <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-              <Scales className="h-4 w-4 mr-xs" />
-              Legal Guides
-            </Badge>
-            <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-              <Shield className="h-4 w-4 mr-xs" />
-              Equipment Reviews
-            </Badge>
-            <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-              <BookOpen className="h-4 w-4 mr-xs" />
-              Technical Guides
-            </Badge>
-          </div>
+      {/* Breadcrumbs - more breathing room */}
+      <div className="mb-lg">
+        <div className="flex items-center gap-xs text-sm text-white/60">
+          <span>Home</span>
+          <CaretRight className="h-4 w-4" />
+          <span className="text-white font-medium">The Armory</span>
         </div>
       </div>
-      
-      <div className="space-y-xs">
-        <h1 className="font-rajdhani text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-          The Armory: Idaho Firearms Knowledge Hub
+
+      {/* Title and Subtitle - very tight spacing */}
+      <div className="space-y-0">
+        <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-none">
+          THE ARMORY: IDAHO FIREARMS KNOWLEDGE HUB
         </h1>
-        <h2 className="font-rajdhani text-base md:text-lg lg:text-xl font-medium text-white/80 leading-snug">
-          Equipment Reviews, Legal Guides & Technical Resources
+        <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-none mt-1">
+          equipment reviews, legal guides & technical resources
         </h2>
+      </div>
+
+      {/* Badges below title/subtitle */}
+      <div className="flex flex-wrap gap-xs">
+        <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+          <Scales className="h-4 w-4 mr-xs" />
+          Legal Guides
+        </Badge>
+        <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+          <Shield className="h-4 w-4 mr-xs" />
+          Equipment Reviews
+        </Badge>
+        <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+          <BookOpen className="h-4 w-4 mr-xs" />
+          Technical Guides
+        </Badge>
       </div>
       
       <p className="text-body text-white/70 max-w-xl lg:max-w-2xl leading-relaxed">
@@ -378,12 +377,12 @@ export function ArmoryPageStandardized() {
           <div className="max-w-6xl mx-auto">
             <div className="hero-grid-layout">
               {/* Hero Left Content */}
-              <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
+              <div className="h-full flex flex-col justify-center space-y-lg py-md">
                 {heroLeftContent}
               </div>
               
               {/* Hero Right Content */}
-              <div className="lg:col-span-1 h-full flex flex-col justify-center">
+              <div className="h-full flex flex-col justify-center">
                 {heroRightContent}
               </div>
             </div>

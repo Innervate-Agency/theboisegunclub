@@ -226,6 +226,7 @@ export function ArticleDetailPage({
         whatToBring={eventContent.whatToBring}
         requirements={eventContent.requirements}
         tags={eventContent.tags}
+        author={author}
       />
     )
   }

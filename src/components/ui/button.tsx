@@ -21,10 +21,10 @@ const buttonVariants = cva(
         flat: "bg-transparent text-foreground hover:bg-muted/50 text-button-base font-rajdhani",
 
         // Tactical Variants - All use Rajdhani font
-        "tactical-primary": "bg-dark-chocolate text-crisp-off-white text-button-base font-rajdhani font-bold uppercase tracking-wider shadow-elevated hover:shadow-hero transform hover:-translate-y-0.5 relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-rusty-orange after:transform after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300",
+        "tactical-primary": "bg-dark-chocolate text-crisp-off-white text-button-base font-rajdhani font-bold uppercase tracking-wider border-2 border-dark-chocolate transform hover:-translate-y-0.5 hover:bg-dark-chocolate/90 relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-rusty-orange after:transform after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300",
         "tactical-secondary": "bg-transparent text-foreground text-button-base font-rajdhani font-bold uppercase tracking-wider border-2 border-foreground/30 hover:border-foreground hover:bg-foreground/5 transform hover:-translate-y-0.5 transition-all",
-        "tactical-glass": "bg-card/10 backdrop-blur-md text-foreground text-button-base font-rajdhani font-bold uppercase tracking-wider border border-border/30 shadow-present hover:shadow-elevated hover:bg-card/20 transform hover:-translate-y-0.5",
-        "tactical-accent": "bg-rusty-orange text-crisp-off-white text-button-base font-rajdhani font-bold uppercase tracking-wider shadow-elevated hover:shadow-prominent transform hover:-translate-y-0.5 hover:bg-rusty-orange/90",
+        "tactical-glass": "bg-card/10 backdrop-blur-md text-foreground text-button-base font-rajdhani font-bold uppercase tracking-wider border border-border/30 hover:border-border/50 hover:bg-card/20 transform hover:-translate-y-0.5",
+        "tactical-accent": "bg-rusty-orange text-crisp-off-white text-button-base font-rajdhani font-bold uppercase tracking-wider border-2 border-rusty-orange transform hover:-translate-y-0.5 hover:bg-rusty-orange/90 hover:border-rusty-orange/80",
 
         // Solid Variants
         "solid-primary": "bg-slate-blue text-white hover:bg-slate-blue/90 text-button-base font-rajdhani",
@@ -41,14 +41,14 @@ const buttonVariants = cva(
 
         // Enhanced Variants
         "glass-enhanced": "bg-card/10 text-foreground border border-white/20 backdrop-blur-sm hover:bg-card/15 hover:border-white/30 transition-all duration-150 text-button-base font-rajdhani",
-        "hover-lift": "transition-all duration-200 ease-out hover:transform hover:-translate-y-1 hover:shadow-prominent active:transform active:-translate-y-0.5 active:shadow-elevated focus:outline-none focus:shadow-present disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:transform-none text-button-base font-rajdhani",
+        "hover-lift": "transition-all duration-200 ease-out hover:transform hover:-translate-y-1 border border-border/20 hover:border-border/40 active:transform active:-translate-y-0.5 focus:outline-none focus:border-ring/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:transform-none text-button-base font-rajdhani",
       },
       size: {
-        default: "h-10 px-sm py-tiny rounded-xs text-button-base",
-        sm: "h-9 rounded-xs px-xs text-button-sm",
-        lg: "h-11 rounded-xs px-lg text-button-base",
-        xl: "h-12 rounded-xs px-xl text-button-lg",
-        icon: "h-10 w-10 rounded-full",
+        default: "h-11 px-base py-tiny rounded-xs text-button-base touch-target", // 44px height minimum
+        sm: "h-11 rounded-xs px-xs text-button-sm touch-target",                  // 44px height minimum
+        lg: "h-12 rounded-xs px-lg text-button-base touch-target-optimal",       // 48px optimal
+        xl: "h-14 rounded-xs px-xl text-button-lg touch-target-optimal",         // 56px for large touch
+        icon: "h-11 w-11 rounded-full touch-target",                             // 44px square minimum
       },
     },
     defaultVariants: {

@@ -42,8 +42,8 @@ export function CalloutCard({
 }: CalloutCardProps) {
   return (
     <div className={cn(calloutCardVariants({ variant }), className)} {...props}>
-      <div className="relative space-y-(--spacing-sm)">
-        <div className="space-y-(--spacing-xs)">
+      <div className="relative space-y-4">
+        <div className="space-y-4">
           <div>
             <h3 className="text-body-lg font-rajdhani font-bold text-foreground leading-tight">
               {title}
@@ -87,14 +87,14 @@ export function ImportantCallout({
       {/* Pulsing accent for important notices */}
       <div className="absolute -left-1 top-sm size-2 bg-safety-red rounded-full animate-pulse" />
       
-      <div className="space-y-(--spacing-sm)">
+      <div className="space-y-4">
         <div className="flex items-start gap-sm">
           <div className="flex-shrink-0 mt-(--spacing-tiny)">
             <div className="size-6 bg-safety-red/10 rounded-full flex items-center justify-center">
               <div className="size-2 bg-safety-red rounded-full" />
             </div>
           </div>
-          <div className="flex-1 space-y-(--spacing-xs)">
+          <div className="flex-1 space-y-4">
             <h3 className="text-body-lg font-rajdhani font-bold text-foreground leading-tight">
               {title}
             </h3>
@@ -134,8 +134,8 @@ export function SubtleCallout({
       )} 
       {...props}
     >
-      <div className="space-y-(--spacing-sm)">
-        <div className="space-y-(--spacing-xs)">
+      <div className="space-y-4">
+        <div className="space-y-4">
           <h3 className="text-body font-rajdhani font-semibold text-foreground leading-tight">
             {title}
           </h3>

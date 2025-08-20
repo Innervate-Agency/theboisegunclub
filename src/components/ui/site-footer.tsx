@@ -8,6 +8,7 @@ import { FooterSearchSubscribe } from "@/components/ui/footer-search-subscribe"
 import { FooterUserProfile } from "@/components/ui/footer-user-profile"
 import { BrassCounter } from "@/components/ui/brass-counter"
 import { Card } from "@/components/ui/card"
+import { FooterTexture } from "@/components/ui/textured-background"
 import {
   MapPinIcon, PhoneIcon, EnvelopeIcon, GlobeAltIcon, ViewfinderCircleIcon, 
   ShieldCheckIcon, ChevronUpIcon, QuestionMarkCircleIcon, 
@@ -115,6 +116,9 @@ export function SiteFooter({
         <div className="max-w-[1440px] mx-auto">
           {/* Dynamic Idaho Landscape Background */}
           <LandscapeComponent opacity={0.05} animated={true} />
+          
+          {/* Tactical Cube-Transparent Texture Overlay */}
+          <FooterTexture />
           
           <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Search and Subscribe Section */}

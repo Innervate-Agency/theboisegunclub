@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 
 const megaHeroVariants = cva(
-  "relative w-full flex items-center justify-center overflow-hidden py-(--spacing-3xl)",
+  "relative w-full flex items-center justify-center overflow-hidden py-16",
   {
     variants: {
       height: {
@@ -76,9 +76,9 @@ export function MegaHero({
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-mesh-warm opacity-30" />
       
-      <div className="relative z-10 w-full max-w-site mx-auto px-(--spacing-md) py-(--spacing-2xl)">
+      <div className="relative z-10 w-full max-w-site mx-auto px-4 py-16">
         <div className={cn(
-          "space-y-(--spacing-lg)",
+          "space-y-4",
           centerContent && "text-center"
         )}>
           
@@ -93,7 +93,7 @@ export function MegaHero({
           )}
 
           {/* Main content */}
-          <div className="space-y-(--spacing-md)">
+          <div className="space-y-4">
             {subtitle && (
               <p className="text-body-sm uppercase tracking-wider font-medium text-(--color-crisp-off-white)">
                 {subtitle}
@@ -120,7 +120,7 @@ export function MegaHero({
               {badges.map((badge, index) => (
                 <div
                   key={index}
-                  className="px-(--spacing-base) py-(--spacing-xs) bg-(var(--color-crisp-off-white))/20 backdrop-blur-sm border border-(var(--color-crisp-off-white))/30 rounded-(--radius-base) text-body-sm font-medium text-(--color-crisp-off-white) shadow-(--shadow-xs)"
+                  className="px-4 py-16 bg-(var(--color-crisp-off-white))/20 backdrop-blur-sm border border-(var(--color-crisp-off-white))/30 rounded-(--radius-base) text-body-sm font-medium text-(--color-crisp-off-white) shadow-(--shadow-xs)"
                 >
                   {badge}
                 </div>

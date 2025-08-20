@@ -10,6 +10,7 @@ import { MotionDiv } from '@/components/ui/optimized-motion'
 import { Menu, X } from 'lucide-react'
 import { AuthButton } from '@/components/auth/auth-button'
 import { NavbarWeatherWidget } from './navbar-weather-widget'
+import { NavigationTexture } from './textured-background'
 import { useAuth } from '@/components/auth/auth-context'
 import { useTacticalTracker } from '@/hooks/useTacticalTracker'
 import { useKonamiCode } from '@/hooks/useKonamiCode'
@@ -289,8 +290,9 @@ export function SiteNavigation({
       className={cn(siteNavigationVariants({ variant, layout, sticky }), "site-navigation", className)}
       {...props}
     >
-      <div className="w-full max-w-site mx-auto px-sm sm:px-md">
-        <div className="relative flex items-center justify-between h-14 sm:h-16">
+      
+      <div className="w-full max-w-site mx-auto px-mobile-sm sm:px-md container-mobile">
+        <div className="relative flex items-center justify-between h-14 sm:h-16 touch-target">
           
           {/* Logo */}
           {showLogo && (
@@ -551,7 +553,7 @@ export function SiteNavigation({
         {/* Mobile Menu - Enhanced for touch */}
         {isMobileMenuOpen && (
           <MotionDiv 
-            className="md:hidden py-lg relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent"
+            className="md:hidden py-mobile-lg sm:py-lg relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -562,7 +564,7 @@ export function SiteNavigation({
                 <div key={item.href} onClick={() => setIsMobileMenuOpen(false)}>
                   {renderNavLink(
                     item,
-                    `flex items-center gap-sm px-lg py-lg text-body-base font-rajdhani font-medium transition-all duration-150 rounded-xs min-h-[44px] ${
+                    `flex items-center gap-sm px-mobile-md sm:px-lg py-mobile-md sm:py-lg text-body-base font-rajdhani font-medium transition-all duration-150 rounded-xs touch-target ${
                       pathname === item.href 
                         ? `${getActiveTextClass(item.color)} bg-muted/30`
                         : `text-muted-foreground ${getHoverClasses(item.color)} hover:bg-muted/20`
@@ -586,10 +588,10 @@ export function SiteNavigation({
               ))}
             </div>
             
-            <div className="pt-lg mt-lg relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
+            <div className="pt-mobile-lg sm:pt-lg mt-mobile-lg sm:mt-lg relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
               <div className="flex flex-col gap-sm">
                 <NavbarWeatherWidget />
-                <AuthButton variant="default" showTrialButton={false} className="flex-col items-stretch min-h-[44px]" />
+                <AuthButton variant="default" showTrialButton={false} className="flex-col items-stretch touch-target" />
               </div>
             </div>
           </MotionDiv>

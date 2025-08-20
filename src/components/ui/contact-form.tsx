@@ -74,7 +74,7 @@ export function ContactForm({
     const baseFields = (
       <>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-(--spacing-base)">
-          <div className="space-y-(--spacing-xs)">
+          <div className="space-y-4">
             <Label htmlFor="firstName">First Name *</Label>
             <Input
               id="firstName"
@@ -83,7 +83,7 @@ export function ContactForm({
               required
             />
           </div>
-          <div className="space-y-(--spacing-xs)">
+          <div className="space-y-4">
             <Label htmlFor="lastName">Last Name *</Label>
             <Input
               id="lastName"
@@ -94,7 +94,7 @@ export function ContactForm({
           </div>
         </div>
 
-        <div className="space-y-(--spacing-xs)">
+        <div className="space-y-4">
           <Label htmlFor="email">Email Address *</Label>
           <div className="relative">
             <Mail className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-warning-amber" />
@@ -109,7 +109,7 @@ export function ContactForm({
           </div>
         </div>
 
-        <div className="space-y-(--spacing-xs)">
+        <div className="space-y-4">
           <Label htmlFor="phone">Phone Number</Label>
           <div className="relative">
             <Phone className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-warning-amber" />
@@ -130,7 +130,7 @@ export function ContactForm({
         return (
           <>
             {baseFields}
-            <div className="space-y-(--spacing-xs)">
+            <div className="space-y-4">
               <Label htmlFor="businessName">Business Name *</Label>
               <Input
                 id="businessName"
@@ -139,7 +139,7 @@ export function ContactForm({
                 required
               />
             </div>
-            <div className="space-y-(--spacing-xs)">
+            <div className="space-y-4">
               <Label htmlFor="businessType">Business Type *</Label>
               <Select name="businessType" required>
                 <SelectTrigger>
@@ -155,7 +155,7 @@ export function ContactForm({
                 </SelectContent>
               </Select>
             </div>
-            <div className="space-y-(--spacing-xs)">
+            <div className="space-y-4">
               <Label htmlFor="message">Tell us about your business *</Label>
               <Textarea
                 id="message"
@@ -172,7 +172,7 @@ export function ContactForm({
         return (
           <>
             {baseFields}
-            <div className="space-y-(--spacing-xs)">
+            <div className="space-y-4">
               <Label htmlFor="eventName">Event Name *</Label>
               <Input
                 id="eventName"
@@ -182,7 +182,7 @@ export function ContactForm({
               />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-(--spacing-base)">
-              <div className="space-y-(--spacing-xs)">
+              <div className="space-y-4">
                 <Label htmlFor="eventDate">Event Date *</Label>
                 <Input
                   id="eventDate"
@@ -191,7 +191,7 @@ export function ContactForm({
                   required
                 />
               </div>
-              <div className="space-y-(--spacing-xs)">
+              <div className="space-y-4">
                 <Label htmlFor="eventTime">Event Time</Label>
                 <Input
                   id="eventTime"
@@ -200,7 +200,7 @@ export function ContactForm({
                 />
               </div>
             </div>
-            <div className="space-y-(--spacing-xs)">
+            <div className="space-y-4">
               <Label htmlFor="eventLocation">Location *</Label>
               <Input
                 id="eventLocation"
@@ -209,7 +209,7 @@ export function ContactForm({
                 required
               />
             </div>
-            <div className="space-y-(--spacing-xs)">
+            <div className="space-y-4">
               <Label htmlFor="message">Event Description *</Label>
               <Textarea
                 id="message"
@@ -227,7 +227,7 @@ export function ContactForm({
         return (
           <>
             {baseFields}
-            <div className="space-y-(--spacing-xs)">
+            <div className="space-y-4">
               <Label htmlFor="experience">Experience Level</Label>
               <Select name="experience">
                 <SelectTrigger>
@@ -241,7 +241,7 @@ export function ContactForm({
                 </SelectContent>
               </Select>
             </div>
-            <div className="space-y-(--spacing-xs)">
+            <div className="space-y-4">
               <Label htmlFor="interests">Areas of Interest</Label>
               <Textarea
                 id="interests"
@@ -250,7 +250,7 @@ export function ContactForm({
                 rows={3}
               />
             </div>
-            <div className="space-y-(--spacing-xs)">
+            <div className="space-y-4">
               <Label htmlFor="message">Additional Information</Label>
               <Textarea
                 id="message"
@@ -266,7 +266,7 @@ export function ContactForm({
         return (
           <>
             {baseFields}
-            <div className="space-y-(--spacing-xs)">
+            <div className="space-y-4">
               <Label htmlFor="subject">Subject</Label>
               <Input
                 id="subject"
@@ -274,7 +274,7 @@ export function ContactForm({
                 placeholder="What's this regarding?"
               />
             </div>
-            <div className="space-y-(--spacing-xs)">
+            <div className="space-y-4">
               <Label htmlFor="message">Message *</Label>
               <Textarea
                 id="message"
@@ -325,8 +325,8 @@ export function ContactForm({
           )}
         </CardHeader>
 
-        <CardContent className="space-y-(--spacing-md)">
-          <form onSubmit={handleSubmit} className="space-y-(--spacing-md)">
+        <CardContent className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             {getFormFields()}
 
             <Button
@@ -352,7 +352,7 @@ export function ContactForm({
 
           {showContactInfo && (
             <div className="border-t border-border pt-(--spacing-md)">
-              <h3 className="font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">
+              <h3 className="font-rajdhani font-bold text-dark-chocolate mb-4">
                 Contact Information
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-(--spacing-base) text-body-sm">

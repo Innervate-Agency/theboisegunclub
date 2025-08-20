@@ -91,18 +91,18 @@ export function GalleryGrid({
   }
   
   return (
-    <div className={cn(galleryGridVariants({ variant }), "py-(--spacing-xl)", className)} {...props}>
+    <div className={cn(galleryGridVariants({ variant }), "py-16", className)} {...props}>
       <div className="max-w-site mx-auto px-md">
         {/* Header */}
         {(title || subtitle) && (
-          <div className="text-center mb-(--spacing-lg)">
+          <div className="text-center mb-4">
             {subtitle && (
-              <p className="text-body-sm font-rajdhani font-semibold text-rusty-orange mb-(--spacing-xs) tracking-wide uppercase">
+              <p className="text-body-sm font-rajdhani font-semibold text-rusty-orange mb-4 tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
             {title && (
-              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-foreground mb-(--spacing-base)">
+              <h2 className="text-responsive-3xl md:text-responsive-4xl font-rajdhani font-bold text-foreground mb-4">
                 {title}
               </h2>
             )}
@@ -111,7 +111,7 @@ export function GalleryGrid({
         
         {/* Filters & View Controls */}
         {showFilters && (
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-base mb-(--spacing-lg)">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-base mb-4">
             {/* Category Filters */}
             <div className="flex flex-wrap gap-xs">
               {categories.map((category) => (
@@ -169,7 +169,7 @@ export function GalleryGrid({
                 key={image.id}
                 className={cn(
                   "group relative bg-card text-card-foreground border-border rounded-sm overflow-hidden shadow-flat hover:shadow-present transition-all duration-200 cursor-pointer",
-                  viewMode === 'masonry' && "break-inside-avoid mb-(--spacing-md)",
+                  viewMode === 'masonry' && "break-inside-avoid mb-4",
                   viewMode === 'list' && "flex gap-base p-base",
                   isFeatured && "ring-2 ring-rusty-orange/50"
                 )}
@@ -233,7 +233,7 @@ export function GalleryGrid({
                   "p-base",
                   viewMode === 'list' && "flex-1"
                 )}>
-                  <div className="space-y-(--spacing-xs)">
+                  <div className="space-y-4">
                     <h3 className="font-rajdhani font-semibold text-card-foreground group-hover:text-rusty-orange transition-colors duration-200">
                       {image.alt}
                     </h3>
@@ -270,9 +270,9 @@ export function GalleryGrid({
         
         {/* Empty State */}
         {filteredImages.length === 0 && (
-          <div className="text-center py-(--spacing-xl)">
-            <Filter className="icon-2xl icon-muted mx-auto mb-(--spacing-base)" />
-            <h3 className="text-body-lg font-rajdhani font-bold text-card-foreground mb-(--spacing-xs)">
+          <div className="text-center py-16">
+            <Filter className="icon-2xl icon-muted mx-auto mb-4" />
+            <h3 className="text-body-lg font-rajdhani font-bold text-card-foreground mb-4">
               No images found
             </h3>
             <p className="text-muted-foreground font-noto-sans">

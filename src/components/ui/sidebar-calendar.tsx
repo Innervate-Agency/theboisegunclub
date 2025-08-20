@@ -1,8 +1,6 @@
 'use client'
 
 import * as React from 'react'
-import { Calendar } from '@/components/ui/calendar'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { 
@@ -21,6 +19,7 @@ interface SidebarCalendarEvent {
 interface SidebarCalendarProps {
   events: SidebarCalendarEvent[]
   className?: string
+  onDateSelect?: (date: Date | undefined) => void
 }
 
 const eventTypeColors = {
@@ -32,9 +31,64 @@ const eventTypeColors = {
   Demo: 'bg-rusty-orange'
 }
 
-export function SidebarCalendar({ events, className }: SidebarCalendarProps) {
+export function SidebarCalendar({ events, className, onDateSelect }: SidebarCalendarProps) {
   const [selectedDate, setSelectedDate] = React.useState<Date | undefined>(new Date())
   const [currentMonth, setCurrentMonth] = React.useState<Date>(new Date())
+
+  // Navigation functions with proper date handling
+  const goToPreviousMonth = () => {
+    setCurrentMonth(prev => {
+      const newDate = new Date(prev)
+      newDate.setMonth(newDate.getMonth() - 1)
+      return newDate
+    })
+  }
+
+  const goToNextMonth = () => {
+    setCurrentMonth(prev => {
+      const newDate = new Date(prev)
+      newDate.setMonth(newDate.getMonth() + 1)
+      return newDate
+    })
+  }
+
+  const goToToday = () => {
+    const today = new Date()
+    setCurrentMonth(today)
+    setSelectedDate(today)
+    onDateSelect?.(today)
+  }
+
+  // Handle date selection with callback
+  const handleDateSelect = (date: Date) => {
+    setSelectedDate(date)
+    onDateSelect?.(date)
+  }
+
+  // Keyboard navigation
+  React.useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.target && (event.target as HTMLElement).closest('.sidebar-calendar')) {
+        switch (event.key) {
+          case 'ArrowLeft':
+            event.preventDefault()
+            goToPreviousMonth()
+            break
+          case 'ArrowRight':
+            event.preventDefault()
+            goToNextMonth()
+            break
+          case 'Home':
+            event.preventDefault()
+            goToToday()
+            break
+        }
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [])  
 
   // Group events by date
   const eventsByDate = React.useMemo(() => {
@@ -54,112 +108,144 @@ export function SidebarCalendar({ events, className }: SidebarCalendarProps) {
   const selectedDateEvents = selectedDate ? eventsByDate.get(selectedDate.toDateString()) || [] : []
 
   return (
-    <Card className={cn("w-full", className)}>
-      <CardHeader className="pb-4">
-        <div className="flex items-center justify-between">
-          <CardTitle className="text-lg font-rajdhani font-bold flex items-center gap-2">
-            <CalendarIcon className="h-5 w-5" />
-            Event Calendar
-          </CardTitle>
-          <div className="flex items-center gap-1">
+    <div className={cn("w-80 flex-shrink-0 sidebar-calendar", className)} tabIndex={0}>
+      <div className="sticky top-4 space-y-lg">
+        {/* Calendar Header */}
+        <div className="space-y-base">
+          <div className="flex items-center gap-xs">
+            <CalendarIcon className="size-5 text-muted-foreground" />
+            <h3 className="font-rajdhani font-bold text-heading-base text-card-foreground">Event Calendar</h3>
+          </div>
+        </div>
+
+        {/* Calendar Content */}
+        <div className="space-y-lg">
+          {/* Month/Year Display with Navigation */}
+          <div className="flex items-center justify-between">
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => setCurrentMonth(new Date(currentMonth.setMonth(currentMonth.getMonth() - 1)))}
-              className="h-8 w-8 p-0"
+              onClick={goToPreviousMonth}
+              className="h-8 w-8 p-0 hover:bg-accent/50"
+              title="Previous month"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
+            
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => setCurrentMonth(new Date(currentMonth.setMonth(currentMonth.getMonth() + 1)))}
-              className="h-8 w-8 p-0"
+              onClick={goToToday}
+              className="text-base font-rajdhani font-semibold text-card-foreground hover:bg-accent/50 h-8 px-3"
+              title="Go to today"
+            >
+              {currentMonth.toLocaleDateString('en-US', { 
+                month: 'long', 
+                year: 'numeric' 
+              })}
+            </Button>
+            
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={goToNextMonth}
+              className="h-8 w-8 p-0 hover:bg-accent/50"
+              title="Next month"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
-        </div>
-      </CardHeader>
-      
-      <CardContent>
-        {/* Compact Calendar */}
-        <Calendar
-          mode="single"
-          selected={selectedDate}
-          onSelect={setSelectedDate}
-          month={currentMonth}
-          onMonthChange={setCurrentMonth}
-          className="w-full"
-          classNames={{
-            months: "flex flex-col w-full",
-            month: "w-full space-y-4",
-            caption: "hidden", // We have custom header
-            table: "w-full table-fixed border-separate border-spacing-0",
-            head_row: "flex w-full",
-            head_cell: "text-muted-foreground font-medium text-xs h-8 text-center flex-1 flex items-center justify-center",
-            row: "flex w-full",
-            cell: "relative flex-1 h-10 border border-border/20",
-            day: "w-full h-full hover:bg-accent/30 transition-colors flex flex-col items-center justify-center text-sm cursor-pointer",
-            day_selected: "bg-rusty-orange/20 text-rusty-orange font-bold",
-            day_today: "bg-slate-blue/20 text-slate-blue font-bold",
-            day_outside: "text-muted-foreground/30",
-            day_disabled: "text-muted-foreground/20 cursor-not-allowed"
-          }}
-          components={{
-            Day: ({ day }) => {
-              const date = day.date
-              const dateStr = date.toDateString()
-              const dayEvents = eventsByDate.get(dateStr) || []
-              const isSelected = selectedDate?.toDateString() === dateStr
-              const isToday = new Date().toDateString() === dateStr
 
-              return (
-                <div className="w-full h-full flex flex-col items-center justify-center relative p-1">
-                  <span className={cn(
-                    "text-sm leading-none",
-                    isSelected && "text-rusty-orange font-bold",
-                    isToday && "text-slate-blue font-bold"
-                  )}>
-                    {date.getDate()}
-                  </span>
-                  
-                  {/* Event indicators */}
-                  {dayEvents.length > 0 && (
-                    <div className="flex gap-0.5 mt-1">
-                      {dayEvents.slice(0, 3).map((event, idx) => {
-                        const color = eventTypeColors[event.eventType as keyof typeof eventTypeColors] || 'bg-muted'
-                        return (
-                          <div
-                            key={idx}
-                            className={`w-1 h-1 rounded-full ${color}`}
-                            title={event.title}
-                          />
-                        )
-                      })}
-                      {dayEvents.length > 3 && (
-                        <div className="w-1 h-1 rounded-full bg-muted-foreground/50" />
-                      )}
-                    </div>
-                  )}
+          {/* Calendar Grid */}
+          <div className="space-y-sm">
+            {/* Weekday Headers */}
+            <div className="grid grid-cols-7 gap-0 text-muted-foreground font-medium text-xs">
+              {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map((day) => (
+                <div key={day} className="h-8 flex items-center justify-center">
+                  {day}
                 </div>
-              )
-            }
-          }}
-        />
+              ))}
+            </div>
+            
+            {/* Calendar Days */}
+            <div className="grid grid-cols-7 gap-0 border border-border/20 rounded-sm">
+              {(() => {
+                const year = currentMonth.getFullYear()
+                const month = currentMonth.getMonth()
+                const firstDay = new Date(year, month, 1)
+                const lastDay = new Date(year, month + 1, 0)
+                const startDate = new Date(firstDay)
+                startDate.setDate(startDate.getDate() - firstDay.getDay())
+                
+                const days = []
+                for (let i = 0; i < 42; i++) {
+                  const currentDate = new Date(startDate)
+                  currentDate.setDate(startDate.getDate() + i)
+                  days.push(currentDate)
+                }
+                
+                return days.map((date, index) => {
+                  const dateStr = date.toDateString()
+                  const dayEvents = eventsByDate.get(dateStr) || []
+                  const isSelected = selectedDate?.toDateString() === dateStr
+                  const isToday = new Date().toDateString() === dateStr
+                  const isCurrentMonth = date.getMonth() === month
+                  
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => handleDateSelect(date)}
+                      className={cn(
+                        "relative h-10 border-r border-b border-border/20 flex flex-col items-center justify-center text-sm cursor-pointer transition-colors hover:bg-accent/30",
+                        "last:border-r-0 [&:nth-child(7n)]:border-r-0",
+                        "[&:nth-last-child(-n+7)]:border-b-0",
+                        isSelected && "bg-rusty-orange/20 text-rusty-orange font-bold",
+                        isToday && !isSelected && "bg-slate-blue/20 text-slate-blue font-bold",
+                        !isCurrentMonth && "text-muted-foreground/30"
+                      )}
+                    >
+                      <span className="text-xs leading-none">
+                        {date.getDate()}
+                      </span>
+                      
+                      {/* Event indicators - larger and more visible */}
+                      {dayEvents.length > 0 && (
+                        <div className="flex gap-0.5 mt-1">
+                          {dayEvents.slice(0, 3).map((event, idx) => {
+                            const color = eventTypeColors[event.eventType as keyof typeof eventTypeColors] || 'bg-muted'
+                            return (
+                              <div
+                                key={idx}
+                                className={`w-1.5 h-1.5 rounded-full ${color}`}
+                                title={event.title}
+                              />
+                            )
+                          })}
+                          {dayEvents.length > 3 && (
+                            <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground/70" />
+                          )}
+                        </div>
+                      )}
+                    </button>
+                  )
+                })
+              })()}
+            </div>
+          </div>
+        </div>
 
         {/* Selected Date Events */}
         {selectedDate && selectedDateEvents.length > 0 && (
-          <div className="mt-4 space-y-2">
+          <div className="space-y-sm">
             <div className="text-sm font-medium text-card-foreground">
               {selectedDate.toLocaleDateString('en-US', { 
                 month: 'short', 
                 day: 'numeric'
               })} Events
             </div>
-            <div className="space-y-2 max-h-32 overflow-y-auto">
+            <div className="space-y-xs max-h-32 overflow-y-auto">
               {selectedDateEvents.slice(0, 3).map((event, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-xs">
+                <div key={idx} className="flex items-center gap-xs text-xs">
                   <div className={`w-2 h-2 rounded-full flex-shrink-0 ${eventTypeColors[event.eventType as keyof typeof eventTypeColors] || 'bg-muted'}`} />
                   <span className="text-muted-foreground truncate">{event.title}</span>
                   {event.featured && (
@@ -177,8 +263,8 @@ export function SidebarCalendar({ events, className }: SidebarCalendarProps) {
         )}
 
         {/* Quick stats */}
-        <div className="mt-4 pt-3 border-t border-border">
-          <div className="grid grid-cols-2 gap-2 text-xs">
+        <div className="pt-base border-t border-border">
+          <div className="grid grid-cols-2 gap-base text-xs">
             <div className="text-center">
               <div className="font-bold text-card-foreground">{events.length}</div>
               <div className="text-muted-foreground">Total Events</div>
@@ -189,7 +275,7 @@ export function SidebarCalendar({ events, className }: SidebarCalendarProps) {
             </div>
           </div>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   )
 }

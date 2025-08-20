@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from 'lucide-react'
 
 const featureGridVariants = cva(
-  "w-full py-(--spacing-2xl)",
+  "w-full py-16",
   {
     variants: {
       variant: {
@@ -16,8 +16,8 @@ const featureGridVariants = cva(
         glass: "mica-overlay"
       },
       spacing: {
-        comfortable: "py-(--spacing-2xl)",
-        compact: "py-(--spacing-xl)",
+        comfortable: "py-16",
+        compact: "py-16",
         minimal: "py-lg"
       }
     },
@@ -89,14 +89,14 @@ export function FeatureGrid({
       <div className="max-w-site mx-auto px-md">
         {/* Header */}
         {(title || subtitle || description) && (
-          <div className="text-center mb-(--spacing-xl)">
+          <div className="text-center mb-4">
             {subtitle && (
-              <p className="text-body-sm font-rajdhani font-semibold text-rusty-orange mb-(--spacing-xs) tracking-wide uppercase">
+              <p className="text-body-sm font-rajdhani font-semibold text-rusty-orange mb-4 tracking-wide uppercase">
                 {subtitle}
               </p>
             )}
             {title && (
-              <h2 className="text-heading-lg md:text-heading-xl font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">
+              <h2 className="text-heading-lg md:text-heading-xl font-rajdhani font-bold text-dark-chocolate mb-4">
                 {title}
               </h2>
             )}
@@ -117,7 +117,7 @@ export function FeatureGrid({
                 key={index}
                 className={cn(featureCardVariants({ cardVariant }))}
               >
-                <div className="space-y-(--spacing-base)">
+                <div className="space-y-4">
                   {/* Icon */}
                   {feature.icon && (
                     <div className="flex items-center justify-center w-12 h-12 bg-sandy-ochre/10 rounded-sm group-hover:bg-sandy-ochre/20 transition-colors duration-200">
@@ -126,7 +126,7 @@ export function FeatureGrid({
                   )}
                   
                   {/* Content */}
-                  <div className="space-y-(--spacing-sm)">
+                  <div className="space-y-4">
                     <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate group-hover:text-sandy-ochre transition-colors duration-200">
                       {feature.title}
                     </h3>

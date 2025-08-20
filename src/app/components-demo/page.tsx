@@ -61,13 +61,13 @@ export default function ComponentsDemoPage() {
       />
 
       {/* Demo Section */}
-      <section id="demo" className="py-(--spacing-2xl)">
-        <div className="max-w-site mx-auto px-(--spacing-md)">
+      <section id="demo" className="py-16">
+        <div className="max-w-site mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
             
             {/* Dialog Demo */}
             <Card className="p-md">
-              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">Dialog</h3>
+              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-4">Dialog</h3>
               <Dialog>
                 <DialogTrigger asChild>
                   <Button className="w-full bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange">
@@ -81,7 +81,7 @@ export default function ComponentsDemoPage() {
                       This dialog should have a solid white background with proper text contrast.
                     </DialogDescription>
                   </DialogHeader>
-                  <div className="py-(--spacing-base)">
+                  <div className="py-16">
                     <p className="text-sm text-warning-amber font-noto-sans">
                       Content goes here. The background should be completely opaque and readable.
                     </p>
@@ -96,7 +96,7 @@ export default function ComponentsDemoPage() {
 
             {/* Dropdown Menu Demo */}
             <Card className="p-md">
-              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">Dropdown Menu</h3>
+              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-4">Dropdown Menu</h3>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="secondary" className="w-full">
@@ -124,7 +124,7 @@ export default function ComponentsDemoPage() {
 
             {/* Select Demo */}
             <Card className="p-md">
-              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">Select</h3>
+              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-4">Select</h3>
               <Select value={selectedValue} onValueChange={setSelectedValue}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select an option" />
@@ -140,7 +140,7 @@ export default function ComponentsDemoPage() {
 
             {/* Popover Demo */}
             <Card className="p-md">
-              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">Popover</h3>
+              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-4">Popover</h3>
               <Popover>
                 <PopoverTrigger asChild>
                   <Button variant="secondary" className="w-full">
@@ -148,7 +148,7 @@ export default function ComponentsDemoPage() {
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent>
-                  <div className="space-y-(--spacing-xs)">
+                  <div className="space-y-4">
                     <h4 className="font-rajdhani font-semibold">Popover Content</h4>
                     <p className="text-sm text-warning-amber font-noto-sans">
                       This popover should have a solid background and be clearly readable.
@@ -163,7 +163,7 @@ export default function ComponentsDemoPage() {
 
             {/* Tooltip Demo */}
             <Card className="p-md">
-              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">Tooltip</h3>
+              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-4">Tooltip</h3>
               <div className="flex justify-center">
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -181,7 +181,7 @@ export default function ComponentsDemoPage() {
 
             {/* Sheet Demo */}
             <Card className="p-md">
-              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">Sheet</h3>
+              <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-4">Sheet</h3>
               <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="secondary" className="w-full">
@@ -196,7 +196,7 @@ export default function ComponentsDemoPage() {
                       This sheet should have a solid background.
                     </SheetDescription>
                   </SheetHeader>
-                  <div className="py-(--spacing-base) space-y-(--spacing-base)">
+                  <div className="py-16 space-y-4">
                     <Button className="w-full bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange">
                       Primary Action
                     </Button>
@@ -212,11 +212,11 @@ export default function ComponentsDemoPage() {
 
           {/* Status Section */}
           <div className="mt-(--spacing-2xl) p-(--spacing-lg) bg-gradient-card-warm rounded-md border border-sandy-ochre/20">
-            <h3 className="text-xl font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">
+            <h3 className="text-xl font-rajdhani font-bold text-dark-chocolate mb-4">
               Component Status
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-(--spacing-base) text-sm font-noto-sans">
-              <div className="space-y-(--spacing-xs)">
+              <div className="space-y-4">
                 <div className="flex items-center gap-(--spacing-xs)">
                   <div className="w-3 h-3 bg-rifling-green rounded-full"></div>
                   <span>Dialog - Fixed solid backgrounds</span>
@@ -230,7 +230,7 @@ export default function ComponentsDemoPage() {
                   <span>Select - Fixed transparent backgrounds</span>
                 </div>
               </div>
-              <div className="space-y-(--spacing-xs)">
+              <div className="space-y-4">
                 <div className="flex items-center gap-(--spacing-xs)">
                   <div className="w-3 h-3 bg-rifling-green rounded-full"></div>
                   <span>Popover - Solid white background</span>

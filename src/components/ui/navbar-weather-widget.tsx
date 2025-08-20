@@ -101,14 +101,16 @@ export function NavbarWeatherWidget() {
         <Button
           variant="ghost"
           size="sm"
-          className="gap-xs text-foreground hover:bg-accent hover:text-accent-foreground"
+          className="gap-xs text-foreground hover:bg-accent hover:text-accent-foreground relative flex-col py-1"
           title={`${weatherData.locationName}: ${weatherData.temperature}°F, ${weatherData.shortForecast}`}
         >
-          <WeatherIcon type={weatherData.weatherIcon} />
-          <span className="font-rajdhani font-bold">
-            {weatherData.temperature}°F
-          </span>
-          <span className="hidden lg:inline text-muted-foreground">
+          <div className="flex items-center gap-xs">
+            <WeatherIcon type={weatherData.weatherIcon} />
+            <span className="font-rajdhani font-bold">
+              {weatherData.temperature}°F
+            </span>
+          </div>
+          <span className="text-[10px] text-muted-foreground/70 leading-none -mt-0.5 uppercase tracking-wide font-medium">
             {location.city || weatherData.locationName.split(',')[0]}
           </span>
         </Button>

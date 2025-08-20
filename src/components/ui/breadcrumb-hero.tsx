@@ -13,8 +13,8 @@ const breadcrumbHeroVariants = cva(
     variants: {
       size: {
         sm: "py-lg",
-        md: "py-(--spacing-xl)", 
-        lg: "py-(--spacing-2xl)"
+        md: "py-16", 
+        lg: "py-16"
       },
       backgroundPreset: {
         warm: "bg-gradient-to-br from-range-white via-rusty-orange/15 to-card-surface",
@@ -74,7 +74,7 @@ export function BreadcrumbHero({
       <div className="absolute inset-0 bg-gradient-mesh-warm opacity-20" />
       
       <div className="relative z-10 w-full max-w-site mx-auto px-md">
-        <div className="space-y-(--spacing-md)">
+        <div className="space-y-4">
           
           {/* Back Link */}
           {backLink && (
@@ -125,7 +125,7 @@ export function BreadcrumbHero({
           </nav>
 
           {/* Hero Content */}
-          <div className="space-y-(--spacing-base)">
+          <div className="space-y-4">
             <div className="flex items-start gap-base">
               {/* Icon */}
               {Icon && (

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 
 interface WeatherData {
   locationName: string
@@ -35,6 +35,25 @@ interface LocationState {
   permission: 'granted' | 'denied' | 'prompt' | 'unavailable'
 }
 
+// Cache keys for localStorage persistence
+const LOCATION_CACHE_KEY = 'boisegunclub_user_location'
+const LOCATION_PERMISSION_KEY = 'boisegunclub_location_permission'
+const WEATHER_CACHE_KEY = 'boisegunclub_weather_data'
+
+interface CachedLocation {
+  lat: number
+  lng: number
+  city: string | null
+  state: string | null
+  timestamp: number
+  permission: 'granted' | 'denied' | 'prompt' | 'unavailable'
+}
+
+interface CachedWeather {
+  data: WeatherData
+  timestamp: number
+}
+
 export function useUserWeather(options: UseUserWeatherOptions = {}) {
   const {
     autoRefresh = true,
@@ -42,6 +61,7 @@ export function useUserWeather(options: UseUserWeatherOptions = {}) {
     fallbackLocation = { lat: 43.6150, lng: -116.2023, name: 'Boise, ID' } // Boise as fallback
   } = options
 
+  const isMountedRef = useRef(true)
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null)
   const [location, setLocation] = useState<LocationState>({
     lat: null,
@@ -55,15 +75,136 @@ export function useUserWeather(options: UseUserWeatherOptions = {}) {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  // Get user's current location
-  const getCurrentLocation = useCallback(async () => {
+  // Cache location data to localStorage
+  const cacheLocation = (locationData: LocationState) => {
+    if (typeof window === 'undefined') return
+    
+    const cacheData: CachedLocation = {
+      lat: locationData.lat || 0,
+      lng: locationData.lng || 0,
+      city: locationData.city,
+      state: locationData.state,
+      timestamp: Date.now(),
+      permission: locationData.permission
+    }
+    
+    try {
+      localStorage.setItem(LOCATION_CACHE_KEY, JSON.stringify(cacheData))
+      localStorage.setItem(LOCATION_PERMISSION_KEY, locationData.permission)
+    } catch (err) {
+      console.warn('Failed to cache location:', err)
+    }
+  }
+
+  // Load cached location data
+  const loadCachedLocation = (): LocationState | null => {
+    if (typeof window === 'undefined') return null
+    
+    try {
+      const cachedData = localStorage.getItem(LOCATION_CACHE_KEY)
+      const cachedPermission = localStorage.getItem(LOCATION_PERMISSION_KEY)
+      
+      if (cachedData) {
+        const parsed: CachedLocation = JSON.parse(cachedData)
+        const age = Date.now() - parsed.timestamp
+        
+        // Cache valid for 24 hours for granted permission, 7 days for denied/unavailable
+        const maxAge = parsed.permission === 'granted' ? 24 * 60 * 60 * 1000 : 7 * 24 * 60 * 60 * 1000
+        
+        // Validate cached coordinates
+        const validCoords = parsed.lat !== null && parsed.lng !== null && 
+                           !isNaN(parsed.lat) && !isNaN(parsed.lng) &&
+                           parsed.lat >= -90 && parsed.lat <= 90 &&
+                           parsed.lng >= -180 && parsed.lng <= 180
+        
+        if (age < maxAge && (parsed.permission !== 'granted' || validCoords)) {
+          return {
+            lat: parsed.lat,
+            lng: parsed.lng,
+            city: parsed.city,
+            state: parsed.state,
+            error: null,
+            loading: false,
+            permission: parsed.permission
+          }
+        } else if (parsed.permission === 'granted' && !validCoords) {
+          console.warn('Cached location has invalid coordinates, clearing cache:', parsed)
+        }
+      }
+    } catch (err) {
+      console.warn('Failed to load cached location:', err)
+    }
+    
+    return null
+  }
+
+  // Cache weather data
+  const cacheWeatherData = (data: WeatherData) => {
+    if (typeof window === 'undefined') return
+    
+    const cacheData: CachedWeather = {
+      data,
+      timestamp: Date.now()
+    }
+    
+    try {
+      localStorage.setItem(WEATHER_CACHE_KEY, JSON.stringify(cacheData))
+    } catch (err) {
+      console.warn('Failed to cache weather data:', err)
+    }
+  }
+
+  // Load cached weather data
+  const loadCachedWeatherData = (): WeatherData | null => {
+    if (typeof window === 'undefined') return null
+    
+    try {
+      const cachedData = localStorage.getItem(WEATHER_CACHE_KEY)
+      if (cachedData) {
+        const parsed: CachedWeather = JSON.parse(cachedData)
+        const age = Date.now() - parsed.timestamp
+        
+        // Weather cache valid for 15 minutes
+        if (age < 15 * 60 * 1000) {
+          return parsed.data
+        }
+      }
+    } catch (err) {
+      console.warn('Failed to load cached weather:', err)
+    }
+    
+    return null
+  }
+
+  // Get user's current location with caching
+  const getCurrentLocation = useCallback(async (): Promise<{ lat: number; lng: number; name: string }> => {
+    // Check cache first
+    const cachedLocation = loadCachedLocation()
+    if (cachedLocation && cachedLocation.lat && cachedLocation.lng) {
+      if (isMountedRef.current) {
+        setLocation(cachedLocation)
+      }
+      const name = cachedLocation.city && cachedLocation.state 
+        ? `${cachedLocation.city}, ${cachedLocation.state}` 
+        : 'Your Location'
+      return { lat: cachedLocation.lat, lng: cachedLocation.lng, name }
+    }
+
     if (!navigator.geolocation) {
-      setLocation(prev => ({
-        ...prev,
+      const unavailableState = {
+        lat: null,
+        lng: null,
+        city: null,
+        state: null,
         loading: false,
-        permission: 'unavailable',
+        permission: 'unavailable' as const,
         error: 'Geolocation not supported'
-      }))
+      }
+      
+      if (isMountedRef.current) {
+        setLocation(unavailableState)
+        cacheLocation(unavailableState)
+      }
       return fallbackLocation
     }
 
@@ -88,15 +229,20 @@ export function useUserWeather(options: UseUserWeatherOptions = {}) {
               const city = data.properties?.relativeLocation?.properties?.city || 'Unknown'
               const state = data.properties?.relativeLocation?.properties?.state || 'ID'
               
-              setLocation({
+              const locationData = {
                 lat: latitude,
                 lng: longitude,
                 city,
                 state,
                 error: null,
                 loading: false,
-                permission: 'granted'
-              })
+                permission: 'granted' as const
+              }
+              
+              if (isMountedRef.current) {
+                setLocation(locationData)
+                cacheLocation(locationData)
+              }
               
               resolve({ lat: latitude, lng: longitude, name: `${city}, ${state}` })
             } else {
@@ -104,27 +250,40 @@ export function useUserWeather(options: UseUserWeatherOptions = {}) {
             }
           } catch (err) {
             // Still use coordinates even if reverse geocoding fails
-            setLocation({
+            const locationData = {
               lat: latitude,
               lng: longitude,
               city: 'Unknown',
               state: 'ID',
               error: null,
               loading: false,
-              permission: 'granted'
-            })
+              permission: 'granted' as const
+            }
+            
+            if (isMountedRef.current) {
+              setLocation(locationData)
+              cacheLocation(locationData)
+            }
             
             resolve({ lat: latitude, lng: longitude, name: 'Your Location' })
           }
         },
         (error) => {
           console.warn('Geolocation error:', error.message)
-          setLocation(prev => ({
-            ...prev,
+          const deniedState = {
+            lat: null,
+            lng: null,
+            city: null,
+            state: null,
             loading: false,
-            permission: 'denied',
+            permission: 'denied' as const,
             error: error.message
-          }))
+          }
+          
+          if (isMountedRef.current) {
+            setLocation(deniedState)
+            cacheLocation(deniedState)
+          }
           
           // Use fallback location
           resolve(fallbackLocation)
@@ -132,14 +291,26 @@ export function useUserWeather(options: UseUserWeatherOptions = {}) {
         {
           timeout: 10000,
           enableHighAccuracy: false,
-          maximumAge: 300000 // 5 minutes
+          maximumAge: 24 * 60 * 60 * 1000 // 24 hours - much longer since we have our own cache
         }
       )
     })
-  }, [fallbackLocation])
+  }, [fallbackLocation, loadCachedLocation, cacheLocation])
 
-  // Fetch weather data for a specific location
+  // Fetch weather data for a specific location with caching
   const fetchWeatherData = useCallback(async (targetLocation?: { lat: number; lng: number; name: string }) => {
+    if (!isMountedRef.current) return
+    
+    // Check weather cache first
+    const cachedWeather = loadCachedWeatherData()
+    if (cachedWeather) {
+      if (isMountedRef.current) {
+        setWeatherData(cachedWeather)
+        setError(null)
+      }
+      return // Use cached data, no need to fetch
+    }
+    
     setIsLoading(true)
     setError(null)
 
@@ -159,43 +330,94 @@ export function useUserWeather(options: UseUserWeatherOptions = {}) {
       const result = await response.json()
       
       if (result.success && result.data) {
-        setWeatherData({
+        const weatherData = {
           ...result.data,
           lat: locationToUse.lat,
           lng: locationToUse.lng
-        })
+        }
+        
+        if (isMountedRef.current) {
+          setWeatherData(weatherData)
+          cacheWeatherData(weatherData)
+        }
+      } else if (result.data) {
+        // Handle fallback data from API error responses
+        console.warn('Weather API returned fallback data:', result.error)
+        const weatherData = {
+          ...result.data,
+          lat: locationToUse.lat,
+          lng: locationToUse.lng
+        }
+        
+        if (isMountedRef.current) {
+          setWeatherData(weatherData)
+          // Don't cache fallback data - try fresh next time
+        }
       } else {
         throw new Error(result.error || 'Invalid weather response')
       }
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Failed to fetch weather data'
       console.error('Weather fetch error:', errorMessage)
-      setError(errorMessage)
-      
-      // DO NOT set fallback data - show error state instead
-      setWeatherData(null)
+      if (isMountedRef.current) {
+        setError(errorMessage)
+        // Show error state properly - don't mask with fake data
+        setWeatherData(null)
+      }
     } finally {
-      setIsLoading(false)
+      if (isMountedRef.current) {
+        setIsLoading(false)
+      }
     }
-  }, [getCurrentLocation, fallbackLocation])
+  }, [getCurrentLocation, loadCachedWeatherData, cacheWeatherData])
 
   // Refresh weather data
   const refreshWeather = useCallback(() => {
     return fetchWeatherData()
   }, [fetchWeatherData])
 
-  // Initial fetch and auto-refresh setup
+  // Initial setup with cache loading
   useEffect(() => {
-    fetchWeatherData()
-
-    if (autoRefresh) {
-      const interval = setInterval(() => {
-        fetchWeatherData()
-      }, refreshInterval)
-
-      return () => clearInterval(interval)
+    isMountedRef.current = true
+    
+    // Load cached data immediately to prevent flash of empty state
+    const cachedLocation = loadCachedLocation()
+    const cachedWeather = loadCachedWeatherData()
+    
+    if (cachedLocation && isMountedRef.current) {
+      setLocation(cachedLocation)
     }
-  }, [fetchWeatherData, autoRefresh, refreshInterval])
+    
+    if (cachedWeather && isMountedRef.current) {
+      setWeatherData(cachedWeather)
+    }
+    
+    // Only fetch if we don't have cached data or it's expired
+    if (!cachedWeather) {
+      fetchWeatherData()
+    }
+
+    let interval: NodeJS.Timeout | null = null
+    if (autoRefresh) {
+      interval = setInterval(() => {
+        if (isMountedRef.current) {
+          // Force fetch (bypass cache) for periodic updates
+          const cachedWeather = loadCachedWeatherData()
+          if (!cachedWeather) {
+            fetchWeatherData()
+          }
+        }
+      }, refreshInterval)
+    }
+
+    return () => {
+      isMountedRef.current = false
+      if (interval) {
+        clearInterval(interval)
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoRefresh, refreshInterval]) // Remove fetchWeatherData from dependencies to prevent loop
 
   return {
     weatherData,

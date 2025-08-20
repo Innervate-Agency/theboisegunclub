@@ -11,10 +11,24 @@ import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
 import { BlogList } from '@/components/ui/blog-article'
 import { contentService } from '@/lib/content-service'
 import { 
-  BookOpen, Shield, Target, Star, Plus, ArrowRight, 
-  CaretRight, Eye, FileText, Scales, Heart, Trophy,
-  Clock, Users, TrendUp, Info, CheckCircle
-} from '@phosphor-icons/react'
+  BookOpenIcon as BookOpen,
+  ShieldCheckIcon as Shield,
+  CursorArrowRaysIcon as Target,
+  StarIcon as Star,
+  PlusIcon as Plus,
+  ArrowRightIcon as ArrowRight,
+  ChevronRightIcon as CaretRight,
+  EyeIcon as Eye,
+  DocumentTextIcon as FileText,
+  ScaleIcon as Scales,
+  HeartIcon as Heart,
+  TrophyIcon as Trophy,
+  ClockIcon as Clock,
+  UsersIcon as Users,
+  ArrowTrendingUpIcon as TrendUp,
+  InformationCircleIcon as Info,
+  CheckCircleIcon as CheckCircle
+} from '@heroicons/react/24/outline'
 
 // Server component for guides page
 export async function GuidesPageStandardized() {
@@ -86,41 +100,40 @@ export async function GuidesPageStandardized() {
       <div className="container mx-auto max-w-site relative z-10">
         <div className="hero-grid-layout">
           {/* Content - Left side */}
-          <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
-            <div className="flex items-center gap-base">
-              <div className="bg-card/10 p-base rounded-xs border border-border">
-                <BookOpen weight="bold" className="h-8 w-8 text-white" />
-              </div>
-              <div className="space-y-base">
-                <div className="flex items-center gap-xs text-sm text-white/60">
-                  <span>Home</span>
-                  <CaretRight className="h-4 w-4" />
-                  <span className="text-white font-medium">Guides</span>
-                </div>
-                <div className="flex flex-wrap gap-xs">
-                  <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-                    <Scales weight="bold" className="h-4 w-4 mr-xs" />
-                    Legal Resources
-                  </Badge>
-                  <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-                    <Shield weight="bold" className="h-4 w-4 mr-xs" />
-                    Safety Guides
-                  </Badge>
-                  <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-                    <Target weight="bold" className="h-4 w-4 mr-xs" />
-                    Training Tips
-                  </Badge>
-                </div>
+          <div className="h-full flex flex-col justify-center space-y-lg py-md">
+            {/* Breadcrumbs - more breathing room */}
+            <div className="mb-lg">
+              <div className="flex items-center gap-xs text-sm text-white/60">
+                <span>Home</span>
+                <CaretRight className="h-4 w-4" />
+                <span className="text-white font-medium">Guides</span>
               </div>
             </div>
-            
-            <div className="space-y-xs">
-              <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
-                Idaho Firearms Guides & Resources
+
+            {/* Title and Subtitle - very tight spacing */}
+            <div className="space-y-0">
+              <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-none">
+                IDAHO FIREARMS GUIDES & RESOURCES
               </h1>
-              <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
-                Legal Information, Safety Protocols & Training Resources
+              <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-none mt-1">
+                legal information, safety protocols & training resources
               </h2>
+            </div>
+
+            {/* Badges below title/subtitle */}
+            <div className="flex flex-wrap gap-xs">
+              <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+                <Scales className="h-4 w-4 mr-xs" />
+                Legal Resources
+              </Badge>
+              <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+                <Shield className="h-4 w-4 mr-xs" />
+                Safety Guides
+              </Badge>
+              <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+                <Target className="h-4 w-4 mr-xs" />
+                Training Tips
+              </Badge>
             </div>
             
             <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
@@ -139,26 +152,26 @@ export async function GuidesPageStandardized() {
           </div>
 
           {/* Featured Guide Card - Right side */}
-          <div className="lg:col-span-1 py-md min-h-[400px]">
+          <div className="py-md">
             <div className="relative h-full">
               {blogArticles.find(a => a.featured) && (
                 <Card className="mica shadow-present hover:shadow-elevated transition-all duration-300 h-full">
-                  <CardHeader>
+                  <CardHeader className="p-sm">
                     <Badge className="bg-nav-guides/20 text-nav-guides border-nav-guides/30 mb-sm">
-                      <Star weight="fill" className="h-3 w-3 mr-xs" />
+                      <Star className="h-3 w-3 mr-xs" />
                       Featured Guide
                     </Badge>
                     <h3 className="font-rajdhani font-bold text-heading-sm text-card-foreground line-clamp-2">
                       {blogArticles.find(a => a.featured)?.title}
                     </h3>
                     <div className="flex items-center gap-sm text-body-xs text-muted-foreground">
-                      <Clock weight="bold" className="h-3 w-3" />
+                      <Clock className="h-3 w-3" />
                       <span>{blogArticles.find(a => a.featured)?.readTime} min read</span>
-                      <Eye weight="bold" className="h-3 w-3" />
+                      <Eye className="h-3 w-3" />
                       <span>{blogArticles.find(a => a.featured)?.views.toLocaleString()} views</span>
                     </div>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="p-sm pt-0">
                     <p className="text-body-sm text-muted-foreground line-clamp-3 mb-base">
                       {blogArticles.find(a => a.featured)?.excerpt}
                     </p>
@@ -239,7 +252,7 @@ export async function GuidesPageStandardized() {
         <div className="mt-4xl section-skew-down bg-gradient-to-br from-nav-guides/10 to-nav-guides/5 py-3xl -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-base">
             <Badge className="bg-nav-guides/20 text-nav-guides border-nav-guides/30">
-              <Info weight="bold" className="h-4 w-4 mr-xs" />
+              <Info className="h-4 w-4 mr-xs" />
               Share Knowledge
             </Badge>
             <h3 className="font-rajdhani font-bold text-heading-lg text-card-foreground">

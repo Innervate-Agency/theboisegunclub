@@ -19,14 +19,26 @@ import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { EventTicker } from '@/components/ui/event-ticker'
 import { DirectoryTicker } from '@/components/ui/directory-ticker'
 import { 
-  BuildingStorefrontIcon as Storefront, ShieldCheckIcon as Shield, AdjustmentsHorizontalIcon as Target, 
+  BuildingStorefrontIcon as Storefront, ShieldCheckIcon as Shield, 
   UsersIcon as Users, MapPinIcon as MapPin, StarIcon as Star, 
   CheckCircleIcon as CheckCircle, PlusIcon as Plus, ArrowRightIcon as ArrowRight, 
-  ChevronRightIcon as CaretRight, SparklesIcon as Crown, WrenchScrewdriverIcon as Wrench,
-  ShoppingBagIcon as ShoppingBag, AcademicCapIcon as GraduationCap, TrophyIcon as Trophy,
-  ClockIcon as Clock, CurrencyDollarIcon as CurrencyDollar, MagnifyingGlassIcon as Search,
-  FunnelIcon as Filter
+  ChevronRightIcon as CaretRight, ClockIcon as Clock, CurrencyDollarIcon as CurrencyDollar, 
+  MagnifyingGlassIcon as Search, FunnelIcon as Filter
 } from '@heroicons/react/24/outline'
+
+// Import tactical icons for authentic firearms business categorization
+import {
+  ShootingRangeIcon,
+  GunsmithIcon,
+  TrainingIcon,
+  TacticalRetailIcon,
+  ClubIcon,
+  TacticalServicesIcon,
+  GoldPartnerIcon,
+  SilverMemberIcon,
+  CopperMemberIcon,
+  StandardMemberIcon
+} from '@/lib/tactical-icons'
 
 // Business data type
 interface BusinessData {
@@ -546,45 +558,45 @@ export function DirectoryPageStandardized() {
       
       <div className="container mx-auto max-w-site relative z-10">
         <div className="hero-grid-layout">
-          {/* Content - Left side */}
-          <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
-            <div className="flex items-center gap-base">
-              <div className="bg-card/10 p-base rounded-xs border border-border">
-                <Storefront className="h-8 w-8 text-white" />
-              </div>
-              <div className="space-y-base">
-                <div className="flex items-center gap-xs text-sm text-white/60">
-                  <span>Home</span>
-                  <CaretRight className="h-4 w-4" />
-                  <span className="text-white font-medium">Directory</span>
-                </div>
-                <div className="flex flex-wrap gap-xs">
-                  <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-                    <Target className="h-4 w-4 mr-xs" />
-                    Ranges
-                  </Badge>
-                  <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-                    <Wrench className="h-4 w-4 mr-xs" />
-                    Gunsmiths
-                  </Badge>
-                  <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-                    <ShoppingBag className="h-4 w-4 mr-xs" />
-                    Retail
-                  </Badge>
-                </div>
+          {/* Content - Left side - 2/3 width */}
+          <div className="h-full flex flex-col justify-center space-y-mobile-lg sm:space-y-lg py-mobile-md sm:py-md">
+            {/* Breadcrumbs - more breathing room */}
+            <div className="mb-lg">
+              <div className="flex items-center gap-xs text-sm text-white/60">
+                <span>Home</span>
+                <CaretRight className="h-4 w-4" />
+                <span className="text-white font-medium">Directory</span>
               </div>
             </div>
 
-            <div className="space-y-xs">
-              <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-tight">
-                Idaho Firearms Business Directory
+            {/* Title and Subtitle - very tight spacing */}
+            <div className="space-y-0">
+              <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-none">
+                IDAHO FIREARMS BUSINESS DIRECTORY
               </h1>
-              <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-snug">
-                Treasure Valley's Complete Gun Shop, Range & Service Guide
+              <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-none mt-1">
+                treasure valley's complete gun shop, range & service guide
               </h2>
             </div>
+
+            {/* Badges below title/subtitle */}
+            <div className="flex flex-wrap gap-xs">
+              <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+                <Target className="h-4 w-4 mr-xs" />
+                Ranges
+              </Badge>
+              <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+                <Wrench className="h-4 w-4 mr-xs" />
+                Gunsmiths
+              </Badge>
+              <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+                <ShoppingBag className="h-4 w-4 mr-xs" />
+                Retail
+              </Badge>
+            </div>
             
-            <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed">
+            {/* Paragraph moved closer to badges */}
+            <p className="text-body-lg text-white/70 max-w-2xl leading-relaxed mt-base">
               Find verified shooting ranges, gun stores, gunsmiths, and training centers across Idaho. Real businesses, real reviews, community-verified information.
             </p>
             
@@ -600,7 +612,7 @@ export function DirectoryPageStandardized() {
           </div>
           
           {/* Featured Business Card - Right side - Compact Hero Version */}
-          <div className="lg:col-span-1 py-md">
+          <div className="py-md">
             <div className="relative">
               {directoryListings.find(b => b.featured) && (() => {
                 const featuredBusiness = directoryListings.find(b => b.featured)!
@@ -609,7 +621,7 @@ export function DirectoryPageStandardized() {
                     <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-directory/20 to-nav-directory/10 rounded-bl-full"></div>
                     <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-directory to-nav-directory"></div>
                     
-                    <CardContent className="p-lg relative z-10">
+                    <CardContent className="p-sm relative z-10">
                       <div className="flex items-center justify-between mb-base">
                         <Badge className="bg-nav-directory/20 text-nav-directory border-nav-directory/30 font-rajdhani font-bold text-[10px]">
                           <Crown className="h-3 w-3 mr-xs" />
@@ -736,9 +748,9 @@ export function DirectoryPageStandardized() {
       </section>
 
       {/* Main Content Area */}
-      <section className="py-4xl bg-background/50">
-        <div className="w-full px-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl">
-          <div className="flex gap-2xl max-w-[1920px] mx-auto">
+      <section className="py-mobile-2xl sm:py-4xl bg-background/50">
+        <div className="w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile">
+          <div className="flex flex-col lg:flex-row gap-mobile-lg sm:gap-2xl max-w-[1920px] mx-auto">
             
             {/* Left Sidebar - Modern Filters (Desktop) */}
             <aside className="hidden lg:block">

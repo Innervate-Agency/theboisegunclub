@@ -15,19 +15,41 @@ export function EventsEmbers({ className }: EventsEmbersProps) {
     size: number
     duration: number
     delay: number
+    xMovement: number
+    xMovement2: number
+  }>>([])
+  
+  const [particles, setParticles] = useState<Array<{
+    id: number
+    x: number
+    y: number
+    duration: number
+    delay: number
   }>>([])
 
   useEffect(() => {
-    // Generate random ember positions and properties
+    // Generate consistent ember positions and properties
     const emberArray = Array.from({ length: 12 }, (_, i) => ({
       id: i,
       x: Math.random() * 100, // Random x position (0-100%)
       y: Math.random() * 100, // Random y position (0-100%)
       size: Math.random() * 3 + 2, // Size between 2-5px
       duration: Math.random() * 3 + 2, // Duration between 2-5 seconds
-      delay: Math.random() * 2 // Delay between 0-2 seconds
+      delay: Math.random() * 2, // Delay between 0-2 seconds
+      xMovement: Math.random() * 20 - 10, // Random x movement for animation
+      xMovement2: Math.random() * 15 - 7.5 // Second x movement for animation
     }))
     setEmbers(emberArray)
+    
+    // Generate consistent particle positions
+    const particleArray = Array.from({ length: 8 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      duration: Math.random() * 4 + 3,
+      delay: Math.random() * 3
+    }))
+    setParticles(particleArray)
   }, [])
 
   return (
@@ -52,7 +74,7 @@ export function EventsEmbers({ className }: EventsEmbersProps) {
             opacity: [0, 0.6, 0.4, 0],
             scale: [0, 1, 0.8, 0],
             y: [-10, -40, -60, -80],
-            x: [0, Math.random() * 20 - 10, Math.random() * 15 - 7.5, 0]
+            x: [0, ember.xMovement, ember.xMovement2, 0]
           }}
           transition={{
             duration: ember.duration,
@@ -65,13 +87,13 @@ export function EventsEmbers({ className }: EventsEmbersProps) {
       ))}
       
       {/* Additional floating particles for depth */}
-      {Array.from({ length: 8 }).map((_, i) => (
+      {particles.map(particle => (
         <MotionDiv
-          key={`particle-${i}`}
+          key={`particle-${particle.id}`}
           className="absolute w-1 h-1 rounded-full bg-rusty-orange/30"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`
+            left: `${particle.x}%`,
+            top: `${particle.y}%`
           }}
           animate={{
             y: [0, -30, -50],
@@ -79,8 +101,8 @@ export function EventsEmbers({ className }: EventsEmbersProps) {
             scale: [0.5, 1, 0.5]
           }}
           transition={{
-            duration: Math.random() * 4 + 3,
-            delay: Math.random() * 3,
+            duration: particle.duration,
+            delay: particle.delay,
             repeat: Infinity,
             ease: "easeOut"
           }}

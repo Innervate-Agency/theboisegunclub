@@ -82,13 +82,13 @@ export default function TrainingPage() {
       />
 
       {/* Popular Courses */}
-      <section className="py-(--spacing-2xl) bg-gradient-hero-warm">
-        <div className="max-w-site mx-auto px-(--spacing-md)">
-          <div className="text-center mb-(--spacing-xl)">
-            <p className="text-sm font-rajdhani font-semibold text-rusty-orange mb-(--spacing-xs) tracking-wide uppercase">
+      <section className="py-16 bg-gradient-hero-warm">
+        <div className="max-w-site mx-auto px-4">
+          <div className="text-center mb-4">
+            <p className="text-sm font-rajdhani font-semibold text-rusty-orange mb-4 tracking-wide uppercase">
               Popular Courses
             </p>
-            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-dark-chocolate mb-(--spacing-base)">
+            <h2 className="text-3xl md:text-4xl font-rajdhani font-bold text-dark-chocolate mb-4">
               Featured Training Programs
             </h2>
             <p className="text-lg text-warning-amber font-noto-sans max-w-3xl mx-auto">
@@ -100,9 +100,9 @@ export default function TrainingPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-lg">
               {trainingPrograms.map((program) => (
                 <Card key={program.id} className="group hover:shadow-elevated transition-all duration-200 overflow-hidden">
-                  <div className="p-md space-y-(--spacing-base)">
+                  <div className="p-md space-y-4">
                     <div>
-                      <h3 className="text-xl font-rajdhani font-bold text-primary group-hover:text-accent transition-colors duration-200 mb-(--spacing-xs)">
+                      <h3 className="text-xl font-rajdhani font-bold text-primary group-hover:text-accent transition-colors duration-200 mb-4">
                         {program.title}
                       </h3>
                       <p className="text-sm text-muted-foreground font-noto-sans">

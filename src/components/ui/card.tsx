@@ -10,44 +10,60 @@ const cardVariants = cva(
     variants: {
       variant: {
         // SEMANTIC SHADOW HIERARCHY: Stripe-inspired depth system for content cards
-        // Default: Present - established baseline for content visibility (static cards)
-        default: "shadow-present",
+        // Default: Clean baseline
+        default: "",
         
-        // Elevated: Enhanced presence for clickable important content
-        elevated: "shadow-elevated hover:shadow-hero cursor-pointer transition-all duration-200 hover:-translate-y-1 active:translate-y-0 active:shadow-prominent",
+        // Elevated: Enhanced presence for clickable important content  
+        elevated: "cursor-pointer transition-all duration-200 hover:-translate-y-1 active:translate-y-0",
         
-        // Interactive: Clear clickable affordance with dramatic lift effect
-        interactive: "shadow-elevated hover:shadow-hero cursor-pointer hover:bg-card/95 transition-all duration-200 hover:-translate-y-1 active:translate-y-0 active:shadow-prominent",
+        // Interactive: Clear clickable affordance with lift effect
+        interactive: "cursor-pointer hover:bg-card/95 transition-all duration-200 hover:-translate-y-1 active:translate-y-0",
         
-        // Premium: Prominent depth with strategic copper-brass accent
-        premium: "shadow-prominent hover:shadow-commanding relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-gradient-to-r after:from-rusty-orange/50 after:to-sandy-ochre/50",
+        // Premium: Strategic copper-brass accent
+        premium: "relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-gradient-to-r after:from-rusty-orange/50 after:to-sandy-ochre/50",
         
-        // Glass: Elevated glassmorphism for modern content display
-        glass: "bg-card border border-border/30 shadow-elevated hover:shadow-prominent",
+        // Glass: Glassmorphism for modern content display
+        glass: "bg-card border border-border/30",
         
-        // Outlined: Exception - minimal whisper shadow for outlined variants
-        outlined: "bg-transparent border border-border hover:bg-card/50 hover:shadow-whisper",
+        // Outlined: Minimal outlined variant
+        outlined: "bg-transparent border border-border hover:bg-card/50",
         
         // Subtle: Ghost-level subtle presence for secondary content
-        subtle: "bg-muted/50 shadow-ghost hover:shadow-whisper hover:bg-muted",
+        subtle: "bg-muted/50 hover:bg-muted",
         
-        // Fire: Commanding presence with premium tactical gradient
-        fire: "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
+        // Fire: Premium tactical gradient
+        fire: "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
         
-        // Fire Blue: Commanding with cool tactical gradients
-        "fire-blue": "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-slate-blue after:to-info-river after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
+        // Fire Blue: Cool tactical gradients
+        "fire-blue": "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-slate-blue after:to-info-river after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
         
-        // Fire Green: Commanding with green tactical gradients
-        "fire-green": "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-sagebrush-green after:to-lodgepole-green after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
+        // Fire Green: Green tactical gradients
+        "fire-green": "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-sagebrush-green after:to-lodgepole-green after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
         
-        // Fire Red: Commanding with red tactical gradients  
-        "fire-red": "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-canyon-clay after:to-rusty-orange after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
+        // Fire Red: Red tactical gradients  
+        "fire-red": "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-canyon-clay after:to-rusty-orange after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
 
-        // Fire Purple: Commanding with purple tactical gradients
-        "fire-purple": "shadow-commanding hover:shadow-hero relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-foothills-purple after:to-canyon-clay after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
+        // Fire Purple: Purple tactical gradients
+        "fire-purple": "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-foothills-purple after:to-canyon-clay after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
         
         // Tactical: Ghost state with invisible borders that appear on interaction
-        tactical: "border-2 border-transparent bg-card group relative overflow-visible transition-all duration-300 ease-out"
+        tactical: "border-2 border-transparent bg-card group relative overflow-visible transition-all duration-300 ease-out",
+        
+        // Tactical + Surface combinations for events  
+        "tactical-events": "bg-nav-events/5 group relative overflow-visible transition-all duration-300 ease-out",
+        
+        // Semantic Surface Backgrounds - using rich Boise color palette (no shadows)
+        "surface-light": "bg-aged-paper/80 border border-aged-paper hover:bg-aged-paper",
+        "surface-warm": "bg-parchment/70 border border-parchment/50 hover:bg-parchment/90", 
+        "surface-cool": "bg-card-surface/80 border border-card-surface/50 hover:bg-card-surface",
+        "surface-muted": "bg-muted/60 border border-muted hover:bg-muted/80",
+        "surface-tactical": "bg-gruvbox-bg-dark/90 border border-gruvbox-bg-dark hover:bg-gruvbox-bg-dark",
+        
+        // Context-aware semantic surfaces (no shadows)
+        "surface-events": "bg-nav-events/5 border border-nav-events/20 hover:bg-nav-events/10",
+        "surface-directory": "bg-nav-directory/5 border border-nav-directory/20 hover:bg-nav-directory/10",
+        "surface-armory": "bg-nav-armory/5 border border-nav-armory/20 hover:bg-nav-armory/10",
+        "surface-marketplace": "bg-nav-marketplace/5 border border-nav-marketplace/20 hover:bg-nav-marketplace/10"
       },
       size: {
         sm: "p-sm",
@@ -75,7 +91,7 @@ export interface CardProps
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant, size, tacticalTheme = 'default', showCategoryIcon = false, category, type, content, ...props }, ref) => {
-    const isTactical = variant === 'tactical'
+    const isTactical = variant === 'tactical' || variant?.startsWith('tactical-')
     
     const themeColorMap = {
       home: {

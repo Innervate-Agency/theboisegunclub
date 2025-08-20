@@ -41,10 +41,10 @@ const HeroOverhangSection = dynamic(() => import('@/components/ui/hero-overhang-
   loading: () => <div className="h-32" /> // Placeholder height
 })
 import { 
-  Camera,
-  ChatsCircle,
-  Trophy
-} from '@phosphor-icons/react'
+  CameraIcon,
+  ChatBubbleBottomCenterTextIcon,
+  TrophyIcon
+} from '@heroicons/react/24/outline'
 
 export default function HomePage() {
   // Performance tracking for the home page
@@ -91,7 +91,7 @@ export default function HomePage() {
 
   const activityFeedData = [
     {
-      icon: ChatsCircle,
+      icon: ChatBubbleBottomCenterTextIcon,
       iconColor: "text-slate-blue",
       iconBgColor: "bg-slate-blue/20",
       title: "New forum discussion",
@@ -99,7 +99,7 @@ export default function HomePage() {
       timeAgo: "2h ago"
     },
     {
-      icon: Camera,
+      icon: CameraIcon,
       iconColor: "text-sagebrush-green", 
       iconBgColor: "bg-sagebrush-green/20",
       title: "Range condition update",
@@ -107,7 +107,7 @@ export default function HomePage() {
       timeAgo: "4h ago"
     },
     {
-      icon: Trophy,
+      icon: TrophyIcon,
       iconColor: "text-rusty-orange",
       iconBgColor: "bg-rusty-orange/20", 
       title: "Competition results posted",
@@ -127,9 +127,9 @@ export default function HomePage() {
           {/* Hero Background */}
           <div className="absolute inset-0 bg-gradient-home-hero" 
                style={{ 
-                 minHeight: '750px',
+                 minHeight: 'calc(100vh - 4rem)',
                  height: 'auto',
-                 paddingBottom: '200px'
+                 paddingBottom: 'clamp(3rem, 10vw, 12rem)'
                }}>
             {/* Campfire Glow Effect */}
             <HeroCampfireGlow />
@@ -147,9 +147,9 @@ export default function HomePage() {
           </div>
 
           {/* Hero Content */}
-          <div className="relative z-20 pt-2xl pb-3xl">
-            <div className="container mx-auto px-lg">
-              <div className="text-center space-y-2xl max-w-5xl mx-auto">
+          <div className="relative z-20 pt-mobile-xl sm:pt-2xl pb-mobile-2xl sm:pb-3xl">
+            <div className="container mx-auto px-mobile-sm sm:px-lg container-mobile">
+              <div className="text-center space-y-mobile-lg sm:space-y-2xl max-w-5xl mx-auto">
                 {/* Revolutionary Badge */}
                 <MotionDiv
                   initial={{ opacity: 0, y: -20 }}
@@ -162,7 +162,7 @@ export default function HomePage() {
                 {/* Main Headlines */}
                 <MotionDiv className="space-y-lg">
                   <MotionH1 
-                    className="font-rajdhani font-bold text-6xl md:text-7xl lg:text-8xl text-crisp-off-white leading-none"
+                    className="font-rajdhani font-bold text-mobile-3xl sm:text-6xl md:text-7xl lg:text-8xl text-crisp-off-white leading-none"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}

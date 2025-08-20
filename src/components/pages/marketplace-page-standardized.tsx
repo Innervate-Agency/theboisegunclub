@@ -490,41 +490,39 @@ export function MarketplacePageStandardized() {
 
   const heroLeftContent = (
     <>
-      <div className="flex items-center gap-sm">
-        <div className="bg-card/10 p-base rounded-xs border border-border">
-          <ShoppingCart className="h-8 w-8 text-white" />
-        </div>
-        <div className="space-y-base">
-          <div className="flex items-center gap-xs text-sm text-white/60">
-            <span>Home</span>
-            <CaretRight className="h-4 w-4" />
-            <span className="text-white font-medium">Marketplace</span>
-          </div>
-          
-          <div className="flex flex-wrap gap-xs">
-            <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-              <Storefront className="h-4 w-4 mr-xs" />
-              Local Dealers
-            </Badge>
-            <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-              <Shield className="h-4 w-4 mr-xs" />
-              FFL Compliant
-            </Badge>
-            <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-              <Star className="h-4 w-4 mr-xs" />
-              Verified Vendors
-            </Badge>
-          </div>
+      {/* Breadcrumbs - more breathing room */}
+      <div className="mb-lg">
+        <div className="flex items-center gap-xs text-sm text-white/60">
+          <span>Home</span>
+          <CaretRight className="h-4 w-4" />
+          <span className="text-white font-medium">Marketplace</span>
         </div>
       </div>
 
-      <div className="space-y-xs">
-        <h1 className="font-rajdhani text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-          Idaho Firearms & <span className="text-white">Ammo Marketplace</span>
+      {/* Title and Subtitle - very tight spacing */}
+      <div className="space-y-0">
+        <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-none">
+          IDAHO FIREARMS & AMMO MARKETPLACE
         </h1>
-        <h2 className="font-rajdhani text-base md:text-lg lg:text-xl font-medium text-white/80 leading-snug">
-          Buy from Verified Local Dealers in the Treasure Valley
+        <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-none mt-1">
+          buy from verified local dealers in the treasure valley
         </h2>
+      </div>
+
+      {/* Badges below title/subtitle */}
+      <div className="flex flex-wrap gap-xs">
+        <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+          <Storefront className="h-4 w-4 mr-xs" />
+          Local Dealers
+        </Badge>
+        <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+          <Shield className="h-4 w-4 mr-xs" />
+          FFL Compliant
+        </Badge>
+        <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
+          <Star className="h-4 w-4 mr-xs" />
+          Verified Vendors
+        </Badge>
       </div>
       
       <p className="text-body text-white/70 max-w-xl lg:max-w-2xl leading-relaxed">
@@ -555,7 +553,7 @@ export function MarketplacePageStandardized() {
       <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-marketplace/20 to-nav-marketplace/10 rounded-bl-full"></div>
       <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-marketplace to-nav-marketplace"></div>
       
-      <CardHeader className="pb-xs relative z-10">
+      <CardHeader className="pb-xs relative z-10 p-sm">
         <div className="flex items-center justify-between mb-xs">
           <Badge className="bg-nav-marketplace/20 text-nav-marketplace border-nav-marketplace/30 font-rajdhani font-bold text-[10px]">
             <Star className="h-3 w-3 mr-xs" />
@@ -576,7 +574,7 @@ export function MarketplacePageStandardized() {
         </div>
       </CardHeader>
       
-      <CardContent className="space-y-base relative z-10">
+      <CardContent className="space-y-base relative z-10 p-sm pt-0">
         <p className="text-sm text-muted-foreground line-clamp-3">
           {featuredDeal.description}
         </p>
@@ -612,12 +610,12 @@ export function MarketplacePageStandardized() {
           <div className="max-w-6xl mx-auto">
             <div className="hero-grid-layout">
               {/* Hero Left Content */}
-              <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
+              <div className="h-full flex flex-col justify-center space-y-lg py-md">
                 {heroLeftContent}
               </div>
               
               {/* Hero Right Content */}
-              <div className="lg:col-span-1 h-full flex flex-col justify-center">
+              <div className="h-full flex flex-col justify-center">
                 {heroRightContent}
               </div>
             </div>

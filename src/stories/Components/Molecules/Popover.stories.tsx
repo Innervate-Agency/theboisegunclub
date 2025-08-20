@@ -29,7 +29,7 @@ export const Default: Story = {
       </PopoverTrigger>
       <PopoverContent className="w-80">
         <div className="grid gap-(--spacing-base)">
-          <div className="space-y-(--spacing-xs)">
+          <div className="space-y-4">
             <h4 className="font-medium leading-none">Dimensions</h4>
             <p className="text-body-sm text-muted-foreground">
               Set the dimensions for the layer.
