@@ -131,23 +131,8 @@ async function fetchLocationWeather(lat: number, lng: number, locationName: stri
   } catch (error) {
     console.error(`NWS API error for ${locationName}:`, error)
     
-    // Fallback to reasonable defaults if NWS API fails
-    return {
-      locationName,
-      temperature: 72,
-      windSpeed: 5,
-      windDirection: 'W',
-      fireDanger: 'Moderate' as const,
-      accessStatus: 'Open' as const,
-      weatherIcon: 'partly-cloudy' as const,
-      lastUpdated: new Date().toISOString(),
-      alerts: ['Weather data temporarily unavailable'],
-      shortForecast: 'Conditions unavailable',
-      detailedForecast: 'Unable to fetch current weather conditions',
-      shootingConditions: 'Unknown - Check Local Conditions',
-      lat,
-      lng
-    }
+    // DO NOT return fake data - let the API call fail properly
+    throw error
   }
 }
 

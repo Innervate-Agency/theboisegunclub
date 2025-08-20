@@ -5,7 +5,7 @@ import { Badge } from './badge'
 import { 
   Thermometer, Wind, Flame, Shield, AlertTriangle, 
   CheckCircle, XCircle, Mountain, Navigation,
-  Sun, Cloud, CloudRain, CloudSnow, Zap
+  Sun, Cloud, CloudRain, CloudSnow, Zap, Warning
 } from 'lucide-react'
 import { 
   Sun as PhosphorSun, CloudRain as PhosphorCloudRain, 
@@ -149,7 +149,7 @@ export function WeatherConditionsTicker({
         )}
 
         <div className="flex animate-scroll whitespace-nowrap py-base pl-48">
-          {extendedConditions.map((condition, index) => (
+          {extendedConditions.length > 0 ? extendedConditions.map((condition, index) => (
             <div key={index} className="flex items-center gap-base px-xl flex-shrink-0">
               <div className="flex items-center gap-base">
                 {/* Location & Weather */}
@@ -202,7 +202,17 @@ export function WeatherConditionsTicker({
               {/* Separator */}
               <div className="h-8 w-px bg-border/30" />
             </div>
-          ))}
+          )) : (
+            <div className="flex items-center justify-center w-full py-lg pl-48">
+              <div className="text-center">
+                <Warning className="h-6 w-6 text-muted-foreground mx-auto mb-sm" />
+                <span className="text-muted-foreground">Weather conditions unavailable</span>
+                {error && (
+                  <div className="text-xs text-destructive mt-xs">{error}</div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
       </div>
       

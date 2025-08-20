@@ -1,0 +1,272 @@
+{
+  "fix_timestamp": "2025-08-20T00:00:00.000Z",
+  "original_count": 643,
+  "after_deduplication": 630,
+  "final_count": 594,
+  "duplicates_removed": 13,
+  "residential_filtered": 36,
+  "statistics": {
+    "categories": {
+      "retail": 568,
+      "services": 3,
+      "training": 10,
+      "ranges": 13
+    },
+    "counties": {
+      "Ada": 281,
+      "Canyon": 194,
+      "Payette": 26,
+      "Unknown": 36,
+      "Gem": 44,
+      "Owyhee": 12,
+      "Kootenai": 1
+    },
+    "business_types": {
+      "Gun Store, FFL Dealer": 135,
+      "FFL Dealer": 183,
+      "Gun Store, Online Retailer": 2,
+      "Gun Store": 2,
+      "Gun Services, Custom Engraving": 1,
+      "Gun Manufacturer": 134,
+      "Gunsmith, FFL Dealer": 4,
+      "Gun Store, Gunsmith, FFL Dealer": 35,
+      "Archery Event": 1,
+      "Gun Store, Manufacturer": 1,
+      "Gun Manufacturer, Importer": 1,
+      "Pawn Shop, Gun Store, FFL Dealer": 1,
+      "Gun Importer": 3,
+      "Gun Store, Ammunition, Importer": 1,
+      "Gunsmith": 3,
+      "Gun Store, Gunsmith, FFL Dealer, Training": 1,
+      "Gun Manufacturer, Custom Services": 1,
+      "Gun Store, Gunsmith": 2,
+      "Pawn Shop, Firearms": 9,
+      "Gun Store, Sporting Goods": 13,
+      "Gun Store, Pawn Shop, FFL Dealer": 1,
+      "Public Shooting Range": 3,
+      "Shooting Club": 4,
+      "Gun Store, Gunsmith, Pawn, FFL Dealer": 1,
+      "Shooting Club, Public Range": 2,
+      "Gun Store, Training Supplies": 1,
+      "Government Training Program": 1,
+      "Gun Manufacturer, FFL": 2,
+      "Gun Store, Sporting Goods, FFL Dealer": 5,
+      "Gun Store, Private Range, FFL Dealer": 1,
+      "Private Shooting Range, Training": 1,
+      "Gun Store, Manufacturer, FFL Dealer": 1,
+      "Ammunition Manufacturer": 3,
+      "Gun Manufacturer, Destructive Device Manufacturer": 1,
+      "Event Venue": 1,
+      "Shooting Club, Range": 1,
+      "Firearms Training": 3,
+      "Gun Manufacturer, Suppressor Specialist": 1,
+      "Air Gun Store, Specialty Firearms": 1,
+      "Firearm Training School": 2,
+      "Training School": 1,
+      "Sporting Goods, Clay Shooting": 1,
+      "Gun Store, Indoor Range, FFL Dealer": 1,
+      "Gun Store, Indoor Range, Gunsmith, Training": 1,
+      "Gunsmith, Gun Store": 1,
+      "Gun Store, Pawn, Sporting Goods": 1,
+      "Youth Shooting Club": 1,
+      "Gun Importer, FFL Dealer": 1,
+      "Gun Store, Ammunition, FFL Dealer": 1,
+      "Gun Manufacturer, FFL Dealer": 2,
+      "Gun Store, Manufacturer, AK Specialist": 1,
+      "Pawn Shop, Firearms, FFL Dealer": 1,
+      "Shooting Event": 1,
+      "Firearms Training, CCW Class": 1,
+      "Shooting Range/Event Location": 1,
+      "Training School, Shooting Range, Firearm Classes": 1,
+      "Gunsmith, Gun Store, FFL Dealer": 1,
+      "Gun Store, Grocery Store": 2,
+      "Private Training Range": 1,
+      "Gun Store, Pawn": 1,
+      "Gun Store, FFL Dealer, Auction House": 1,
+      "Gun Manufacturer, Gun Store": 1,
+      "Gun Store, Gunsmith, Manufacturer": 1
+    }
+  },
+  "filtered_examples": [
+    {
+      "name": "6B Enterprises",
+      "address": "15 Janet Dr, Boise, ID 83716",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "ATS SALES",
+      "address": "3374 S ASHBURY PL, BOISE, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "ATS Sales",
+      "address": "3374 S Ashbury Pl, Boise, ID 83706",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "Alexander, Elden Lane Sr & Jr",
+      "address": "2121 Misty Lane, Emmett, ID 83617",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "C W ENTERPRISES SPORTS",
+      "address": "22812 LANSING LANE, MIDDLETON, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "C W Enterprises Sports",
+      "address": "22812 Lansing Lane, Middleton, ID 83644",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "CREATIVE CARNAGE",
+      "address": "2115 N FAIRMEADOW DR, BOISE, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "D&B SUPPLY",
+      "address": "3913 MULLER DRIVE, CALDWELL, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "D&B Supply Muller",
+      "address": "3913 Muller Drive, Caldwell, ID 83605",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "FIREARM TRAINING INSTITUTE",
+      "address": "22142 DUFF LANE, MIDDLETON, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "FORWARD MOVEMENT TRAINING",
+      "address": "5848 E WOODCROSS DR, BOISE, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "Firearm Training Institute",
+      "address": "22142 Duff Lane, Middleton, ID 83644",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "HAPPY TRIGGER",
+      "address": "12166 W TOUCHROCK LN, KUNA, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "HEDRICK, WALLACE EDWARD",
+      "address": "5543 N HONDO LANE, EAGLE, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "IDAHO MUNITIONS",
+      "address": "11158 W MOSSYWOOD DR, BOISE, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "IDAHO SELF PROTECTION",
+      "address": "9513 W RAMSGATE DR, BOISE, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "INDEPENDENCE INDOOR SHOOTING",
+      "address": "2749 E GALA CT, MERIDIAN, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "Independence Indoor Shooting",
+      "address": "2749 E Gala Ct, Meridian, ID 83642",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "JAKES HARDWARE",
+      "address": "1876 N AZURITE DR, KUNA, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "KODA DEFENSE & ARMS",
+      "address": "1033 W FAIRWOOD CT, MERIDIAN, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "Koda Defense & Arms",
+      "address": "1033 W Fairwood Ct, Meridian, ID 83646",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "PISTOLGEARCOM",
+      "address": "137 W BACALL DR, MERIDIAN, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "PRO ORDNANCE",
+      "address": "3624 W MUIRFIELD DR, MERIDIAN, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "RANDAL BAILEY ARMS",
+      "address": "3705 NORMANDIE DR, BOISE, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "ROYAL RIFLES",
+      "address": "10430 RANDAL LANE, CALDWELL, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "Robertson Firearm Services",
+      "address": "5909 W Poplar Cir, Boise, ID 83704",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "Royal Rifles",
+      "address": "10430 Randal Lane, Caldwell, ID 83607",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "SHOOTERS BEST BUY",
+      "address": "6009 S LATIGO DR, BOISE, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "SMITH, ANTHONY",
+      "address": "3711 E SAGE CT, NAMPA, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "SMITH, JOSEPH RALPH JR",
+      "address": "24436 HAWK LANE, MIDDLETON, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "SNT SALES",
+      "address": "1099 E ANDES DR, KUNA, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "SPORTSMAN'S WAREHOUSE #224",
+      "address": "16865 N MARKET PLACE BLVD, NAMPA, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "Sportsman's Warehouse #224",
+      "address": "16865 N Market Place Blvd, Nampa, ID 83687",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "TUALATIN VALLEY ARMS",
+      "address": "11026 W OLIANA DR, BOISE, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "VIPER WEAPONS",
+      "address": "2330 E CHEMISE DR, MERIDIAN, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    },
+    {
+      "name": "WILSON, TOMMY V",
+      "address": "21205 ROSEWOOD PL, GREENLEAF, ID",
+      "reason": "Residential address pattern without strong business indicators"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "statistics": {
+    "total_processed": 148,
+    "commercial_kept": 148,
+    "residential_filtered": 0,
+    "no_presence_filtered": 0,
+    "individual_filtered": 0
+  },
+  "filtered_examples": [],
+  "commercial_examples": [
+    {
+      "license_name": "1199 TACTICAL LLC",
+      "business_name": "",
+      "premise_street": "2825 S FOX TROOP PLACE",
+      "premise_city": "EAGLE",
+      "premise_state": "ID",
+      "premise_zip_code": "83616",
+      "voice_phone": "2088061478"
+    },
+    {
+      "license_name": "20 / 20 SPORTING SERVICES",
+      "business_name": "",
+      "premise_street": "1175 W BOISE AVENUE SUITE A",
+      "premise_city": "BOISE",
+      "premise_state": "ID",
+      "premise_zip_code": "83706",
+      "voice_phone": "2088664870"
+    },
+    {
+      "license_name": "3S GUN SALES, LLC",
+      "business_name": "3S GUN SALES",
+      "premise_street": "5131 N FOX RUN WAY",
+      "premise_city": "MERIDIAN",
+      "premise_state": "ID",
+      "premise_zip_code": "83646",
+      "voice_phone": "2083394907"
+    },
+    {
+      "license_name": "43RD STATE ARMORY LLC",
+      "business_name": "",
+      "premise_street": "21361 SHADY RIVER LN",
+      "premise_city": "CALDWELL",
+      "premise_state": "ID",
+      "premise_zip_code": "83607",
+      "voice_phone": "2086141910"
+    },
+    {
+      "license_name": "6B SOLUTIONS LLC",
+      "business_name": "RIFLE GURU",
+      "premise_street": "5282 W WHITE HILLS DR",
+      "premise_city": "BOISE",
+      "premise_state": "ID",
+      "premise_zip_code": "83714",
+      "voice_phone": "2084841791"
+    },
+    {
+      "license_name": "6B SOLUTIONS LLC",
+      "business_name": "RIFLE GURU",
+      "premise_street": "5282 W WHITE HILLS DR",
+      "premise_city": "BOISE",
+      "premise_state": "ID",
+      "premise_zip_code": "83714",
+      "voice_phone": "2084841791"
+    },
+    {
+      "license_name": "ACCURA BULLETS LLC",
+      "business_name": "ACCURA OUTDOORS",
+      "premise_street": "2316 E RAILROAD ST",
+      "premise_city": "NAMPA",
+      "premise_state": "ID",
+      "premise_zip_code": "83687",
+      "voice_phone": "2084669975"
+    },
+    {
+      "license_name": "ADAPTIVE TACTICAL LLC",
+      "business_name": "ADTAC",
+      "premise_street": "2102 NORTH DEVLIN WAY",
+      "premise_city": "NAMPA",
+      "premise_state": "ID",
+      "premise_zip_code": "83687",
+      "voice_phone": "2084428000"
+    },
+    {
+      "license_name": "AEVERMANN, NICHOLAS SCOTT",
+      "business_name": "OWYHEE SHOOTERS SUPPLY",
+      "premise_street": "3822  PRESTON AVE",
+      "premise_city": "CALDWELL",
+      "premise_state": "ID",
+      "premise_zip_code": "83605",
+      "voice_phone": "2083188292"
+    },
+    {
+      "license_name": "AFSHARI GROUP LLC",
+      "business_name": "LOST COAST TACTICAL",
+      "premise_street": "1945 W HENDRICKS CT",
+      "premise_city": "MERIDIAN",
+      "premise_state": "ID",
+      "premise_zip_code": "83646",
+      "voice_phone": "4254639339"
+    }
+  ]
+}

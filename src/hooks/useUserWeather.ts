@@ -172,22 +172,8 @@ export function useUserWeather(options: UseUserWeatherOptions = {}) {
       console.error('Weather fetch error:', errorMessage)
       setError(errorMessage)
       
-      // Set fallback weather data
-      if (fallbackLocation) {
-        setWeatherData({
-          locationName: fallbackLocation.name,
-          temperature: 72,
-          windSpeed: 5,
-          windDirection: 'W',
-          fireDanger: 'Moderate',
-          accessStatus: 'Open',
-          weatherIcon: 'partly-cloudy',
-          lastUpdated: new Date().toISOString(),
-          alerts: ['Weather data temporarily unavailable'],
-          lat: fallbackLocation.lat,
-          lng: fallbackLocation.lng
-        })
-      }
+      // DO NOT set fallback data - show error state instead
+      setWeatherData(null)
     } finally {
       setIsLoading(false)
     }

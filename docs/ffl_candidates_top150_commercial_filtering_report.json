@@ -1,0 +1,102 @@
+{
+  "statistics": {
+    "total_processed": 150,
+    "commercial_kept": 150,
+    "residential_filtered": 0,
+    "no_presence_filtered": 0,
+    "individual_filtered": 0
+  },
+  "filtered_examples": [],
+  "commercial_examples": [
+    {
+      "license_name": "1199 TACTICAL LLC",
+      "business_name": "",
+      "premise_street": "2825 S FOX TROOP PLACE",
+      "premise_city": "EAGLE",
+      "premise_state": "ID",
+      "premise_zip_code": "83616",
+      "voice_phone": "2088061478"
+    },
+    {
+      "license_name": "1ST CLASS BUSINESS SOLUTIONS CORP",
+      "business_name": "ARMA15",
+      "premise_street": "801 LOS LUCEROS DR",
+      "premise_city": "EAGLE",
+      "premise_state": "ID",
+      "premise_zip_code": "83616",
+      "voice_phone": "2103879797"
+    },
+    {
+      "license_name": "20 / 20 SPORTING SERVICES",
+      "business_name": "",
+      "premise_street": "1175 W BOISE AVENUE SUITE A",
+      "premise_city": "BOISE",
+      "premise_state": "ID",
+      "premise_zip_code": "83706",
+      "voice_phone": "2088664870"
+    },
+    {
+      "license_name": "208 LASER ENGRAVING LLC",
+      "business_name": "208 LASER ENGRAVING",
+      "premise_street": "77 S INVERNESS DR",
+      "premise_city": "NAMPA",
+      "premise_state": "ID",
+      "premise_zip_code": "83651",
+      "voice_phone": "4256983961"
+    },
+    {
+      "license_name": "2ND C LLC",
+      "business_name": "KEEK'S SUPPLY",
+      "premise_street": "4910 JAKE AVE",
+      "premise_city": "CHUBBUCK",
+      "premise_state": "ID",
+      "premise_zip_code": "83202",
+      "voice_phone": "2083808399"
+    },
+    {
+      "license_name": "3S GUN SALES, LLC",
+      "business_name": "3S GUN SALES",
+      "premise_street": "5131 N FOX RUN WAY",
+      "premise_city": "MERIDIAN",
+      "premise_state": "ID",
+      "premise_zip_code": "83646",
+      "voice_phone": "2083394907"
+    },
+    {
+      "license_name": "406 GUN LOCKER",
+      "business_name": "BLACK CANYON PRECISION ",
+      "premise_street": "780 CLIFFORD DR",
+      "premise_city": "EMMETT",
+      "premise_state": "ID",
+      "premise_zip_code": "83617",
+      "voice_phone": "2089630429"
+    },
+    {
+      "license_name": "43RD STATE ARMORY LLC",
+      "business_name": "",
+      "premise_street": "21361 SHADY RIVER LN",
+      "premise_city": "CALDWELL",
+      "premise_state": "ID",
+      "premise_zip_code": "83607",
+      "voice_phone": "2086141910"
+    },
+    {
+      "license_name": "5 RULES LLC",
+      "business_name": "EVERYDAY ARMIS",
+      "premise_street": "1666 WEST TOPANGA DRIVE",
+      "premise_city": "KUNA",
+      "premise_state": "ID",
+      "premise_zip_code": "83634",
+      "voice_phone": "5307399694"
+    },
+    {
+      "license_name": "6B SOLUTIONS LLC",
+      "business_name": "RIFLE GURU",
+      "premise_street": "5282 W WHITE HILLS DR",
+      "premise_city": "BOISE",
+      "premise_state": "ID",
+      "premise_zip_code": "83714",
+      "voice_phone": "2084841791"
+    }
+  ]
+}

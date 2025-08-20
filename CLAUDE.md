@@ -3,10 +3,11 @@
 ## 🚀 PRODUCTION STATUS: LAUNCH-READY
 
 ### **DATABASE & INFRASTRUCTURE COMPLETE**
-- **PostgreSQL Backend**: 281 verified Idaho firearms businesses
+- **PostgreSQL Backend**: 594 privacy-filtered Idaho firearms businesses
 - **Serper API**: Real-time Google Reviews with 7-day caching
 - **Dynamic Pages**: All business pages at `/directory/[slug]`
 - **Production Ready**: Docker + Next.js 15 + React 19
+- **Privacy Compliance**: Home-based FFLs without advertising protected
 
 ### **DESIGN SYSTEM UNIFIED**
 - **Heroicons Migration**: Complete icon system standardization
@@ -17,12 +18,19 @@
 ## Tech Stack
 - **Next.js 15** + React 19 + TypeScript + Tailwind CSS v4
 - **Icons**: Heroicons (cube-transparent, ticket, identification, plus-circle, map, banknotes, chat-bubble-bottom-center-text)
-- **Database**: PostgreSQL with 281 Idaho businesses
+- **Database**: PostgreSQL with 594 privacy-filtered Idaho businesses
 
 ## Commands
 - `npm run dev` - Development server
 - `npm run build` - Production build
 - `npm run lint` - Code quality check
+
+## Data Processing Scripts
+- `scripts/filter-commercial-ffls.py` - Privacy-focused FFL filtering (residential vs commercial)
+- `scripts/audit-commercial-filtering.py` - Data quality audit and validation tool
+- `scripts/fix-directory-issues.py` - Duplicate removal and cleanup script
+- `scripts/create-final-commercial-directory.py` - Directory merger and deduplication
+- `scripts/generate-ffl-data.js` - FFL database import and processing
 
 ## Design System Rules
 - **Colors**: Only Boise landscape palette from `globals.css` (26-color system)
@@ -147,8 +155,8 @@
 - `src/components/ui/hero-overhang-section.tsx` - **Responsive treasure chest navigation (FIXED: null safety)**
 
 ### Authentic Data Pages
-- `src/components/pages/directory-page-standardized.tsx` - **84 verified Idaho businesses**
-- `src/components/pages/events-page-standardized.tsx` - **18+ authentic Idaho events through 2026**
+- `src/components/pages/directory-page-standardized.tsx` - **594 privacy-filtered Idaho businesses**
+- `src/components/pages/events-page-standardized.tsx` - **130+ authentic Idaho events through 2026**
 - `src/components/pages/marketplace-page-standardized.tsx` - **Real Idaho dealers and products**
 - `src/hooks/useRealStats.ts` - **Updated statistics with verified data counts**
 

@@ -1,0 +1,244 @@
+{
+  "audit_timestamp": "2025-08-20T00:00:00.000Z",
+  "statistics": {
+    "total_commercial": 643,
+    "filtered_out": 22,
+    "false_positives_found": 0,
+    "suspicious_commercial": 21,
+    "duplicate_names": 127,
+    "duplicate_addresses": 27
+  },
+  "findings": {
+    "false_positives": [],
+    "suspicious_commercial": [
+      {
+        "name": "208 LASER ENGRAVING",
+        "address": "77 S INVERNESS DR, NAMPA, ID",
+        "indicators": {
+          "drive": true,
+          "lane": false,
+          "place": false,
+          "way": false,
+          "court": false,
+          "circle": false
+        }
+      },
+      {
+        "name": "208 Laser Engraving",
+        "address": "77 S Inverness Dr, Nampa, ID 83651",
+        "indicators": {
+          "drive": true,
+          "lane": false,
+          "place": false,
+          "way": false,
+          "court": false,
+          "circle": false
+        }
+      },
+      {
+        "name": "208 PRECISION",
+        "address": "9019 N BROADWOOD LANE, EAGLE, ID",
+        "indicators": {
+          "drive": false,
+          "lane": true,
+          "place": false,
+          "way": false,
+          "court": false,
+          "circle": false
+        }
+      },
+      {
+        "name": "208 Precision",
+        "address": "9019 N Broadwood Ln, Eagle, ID 83616",
+        "indicators": {
+          "drive": false,
+          "lane": true,
+          "place": false,
+          "way": false,
+          "court": false,
+          "circle": false
+        }
+      },
+      {
+        "name": "2C GUNSMITHING LLC",
+        "address": "20816 WHITTIER DRIVE, GREENLEAF, ID",
+        "indicators": {
+          "drive": true,
+          "lane": false,
+          "place": false,
+          "way": false,
+          "court": false,
+          "circle": false
+        }
+      },
+      {
+        "name": "66 PRODUCTIONS LLC",
+        "address": "5034 N BAYLOR LANE, MERIDIAN, ID",
+        "indicators": {
+          "drive": false,
+          "lane": true,
+          "place": false,
+          "way": false,
+          "court": false,
+          "circle": false
+        }
+      },
+      {
+        "name": "66 Productions LLC",
+        "address": "5034 N Baylor Lane, Meridian, ID 83646",
+        "indicators": {
+          "drive": false,
+          "lane": true,
+          "place": false,
+          "way": false,
+          "court": false,
+          "circle": false
+        }
+      },
+      {
+        "name": "6B Enterprises",
+        "address": "15 Janet Dr, Boise, ID 83716",
+        "indicators": {
+          "drive": true,
+          "lane": false,
+          "place": false,
+          "way": false,
+          "court": false,
+          "circle": false
+        }
+      },
+      {
+        "name": "ADTAC",
+        "address": "2102 NORTH DEVLIN WAY, NAMPA, ID",
+        "indicators": {
+          "drive": false,
+          "lane": false,
+          "place": false,
+          "way": true,
+          "court": false,
+          "circle": false
+        }
+      },
+      {
+        "name": "AMMOSMITH, LLC",
+        "address": "3515 E CONGRESSIONAL DR, MERIDIAN, ID",
+        "indicators": {
+          "drive": true,
+          "lane": false,
+          "place": false,
+          "way": false,
+          "court": false,
+          "circle": false
+        }
+      }
+    ],
+    "duplicates": [
+      {
+        "name": "1791 PRECISION ARMORY",
+        "address": "18232 N CAMAS CREEK AVE, NAMPA, ID",
+        "name_count": 2,
+        "address_count": 2
+      },
+      {
+        "name": "1791 PRECISION ARMORY",
+        "address": "18232 N CAMAS CREEK AVE, NAMPA, ID",
+        "name_count": 2,
+        "address_count": 2
+      },
+      {
+        "name": "208 Gun Shop",
+        "address": "Idaho Operations",
+        "name_count": 2,
+        "address_count": 1
+      },
+      {
+        "name": "208 Gun Shop",
+        "address": "Nampa, ID",
+        "name_count": 2,
+        "address_count": 4
+      },
+      {
+        "name": "208 LASER ENGRAVING",
+        "address": "77 S INVERNESS DR, NAMPA, ID",
+        "name_count": 2,
+        "address_count": 1
+      },
+      {
+        "name": "208 Laser Engraving",
+        "address": "77 S Inverness Dr, Nampa, ID 83651",
+        "name_count": 2,
+        "address_count": 1
+      },
+      {
+        "name": "208 PRECISION",
+        "address": "9019 N BROADWOOD LANE, EAGLE, ID",
+        "name_count": 2,
+        "address_count": 1
+      },
+      {
+        "name": "208 Precision",
+        "address": "9019 N Broadwood Ln, Eagle, ID 83616",
+        "name_count": 2,
+        "address_count": 1
+      },
+      {
+        "name": "2A ARMAMENT",
+        "address": "7545 S EISENMAN RD, BOISE, ID",
+        "name_count": 2,
+        "address_count": 1
+      },
+      {
+        "name": "2A Armament",
+        "address": "7545 S Eisenman Rd, Boise, ID 83716",
+        "name_count": 2,
+        "address_count": 1
+      }
+    ],
+    "name_analysis": {
+      "total_names": 643,
+      "potentially_individual": 33,
+      "clearly_commercial": 341,
+      "ambiguous": 269,
+      "individual_examples": [
+        "Accura Outdoors",
+        "Ada Armaments",
+        "Allterra Arms",
+        "Armageddon Armory",
+        "Blazzard Firearms",
+        "Boise Pawn",
+        "Carter, Jon",
+        "Eubanks Gunsmithing",
+        "Heida Firearms",
+        "Highlight Technologies"
+      ],
+      "commercial_examples": [
+        "1199 TACTICAL LLC",
+        "1791 PRECISION ARMORY",
+        "1791 PRECISION ARMORY",
+        "20 / 20 SPORTING SERVICES",
+        "20/20 Sporting Services",
+        "208 Gun Shop",
+        "208 Gun Shop",
+        "2C GUNSMITHING LLC",
+        "3S GUN SALES",
+        "3S Gun Sales"
+      ],
+      "ambiguous_examples": [
+        "208 LASER ENGRAVING",
+        "208 Laser Engraving",
+        "208 PRECISION",
+        "208 Precision",
+        "2A ARMAMENT",
+        "2A Armament",
+        "4-H Archery Indoor Buckle Up Shoot",
+        "4R CUSTOM WELDING & REPAIR",
+        "A PHILS REPAIR SERVICE",
+        "ACCURA OUTDOORS"
+      ]
+    }
+  },
+  "recommendations": [
+    "Verify residential-looking addresses are actually commercial",
+    "Deduplicate business entries"
+  ]
+}

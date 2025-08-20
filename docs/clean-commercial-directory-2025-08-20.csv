@@ -1,0 +1,595 @@
+id,name,type,category,phone,address,city,county,website,verified,events,tier,refresh_frequency,source_file,last_updated
+322f18f3,1199 TACTICAL LLC,"Gun Store, FFL Dealer",retail,2088061478,"2825 S FOX TROOP PLACE, EAGLE, ID",EAGLE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+24c920f6,1791 PRECISION ARMORY,"Gun Store, FFL Dealer",retail,2094434027,"18232 N CAMAS CREEK AVE, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c3cfa2a4,20 / 20 SPORTING SERVICES,FFL Dealer,retail,2088664870,"1175 W BOISE AVENUE SUITE A, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+2d3e421d,20/20 Sporting Services,"Gun Store, FFL Dealer",retail,208-866-4870,"1175 W Boise Ave Suite A, Boise, ID 83706",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.153Z
+f0b587e4,208 Gun Shop,"Gun Store, Online Retailer",retail,N/A,Idaho Operations,Idaho,Ada,208gunshop.com,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.158Z
+6932cc65,208 Gun Shop,Gun Store,retail,N/A,"Nampa, ID",Nampa,Canyon,208gunshop.com,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+256b7299,208 LASER ENGRAVING,FFL Dealer,retail,4256983961,"77 S INVERNESS DR, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+70cb93a1,208 Laser Engraving,"Gun Services, Custom Engraving",retail,N/A,"77 S Inverness Dr, Nampa, ID 83651",Nampa,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+cffd03a1,208 PRECISION,Gun Manufacturer,retail,2085712243,"9019 N BROADWOOD LANE, EAGLE, ID",EAGLE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+174397e2,208 Precision,"Gunsmith, FFL Dealer",retail,208-571-2243,"9019 N Broadwood Ln, Eagle, ID 83616",Eagle,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.158Z
+3ce41e78,2A ARMAMENT,Gun Manufacturer,retail,2084611213,"7545 S EISENMAN RD, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+5c7c524b,2A Armament,"Gun Store, FFL Dealer",retail,208-461-1213,"7545 S Eisenman Rd, Boise, ID 83716",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+179a8c55,2C GUNSMITHING LLC,"Gun Store, Gunsmith, FFL Dealer",retail,2089717000,"20816 WHITTIER DRIVE, GREENLEAF, ID",GREENLEAF,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+31618e9a,3S GUN SALES,"Gun Store, FFL Dealer",retail,2083394907,"5131 N FOX RUN WAY, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+ddbd6b12,3S Gun Sales,"Gun Store, FFL Dealer",retail,N/A,"5131 N Fox Run Way, Meridian, ID 83646",Meridian,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+722c6e61,4-H Archery Indoor Buckle Up Shoot,Archery Event,retail,N/A,Payette County,Payette,Payette,uidaho.edu,false,,2,weekly,docs/payette_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.163Z
+9d800d6f,43RD STATE ARMORY LLC,"Gun Store, FFL Dealer",retail,2086141910,"21361 SHADY RIVER LN, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+89ac1d89,43rd State Armory LLC,Gun Manufacturer,retail,N/A,"21361 Shady River Ln, Caldwell, ID 83607",Caldwell,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+7e6298c9,4R CUSTOM WELDING & REPAIR,FFL Dealer,retail,2088800107,"2626 OLD DUMP RD, HOMEDALE, ID",HOMEDALE,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+77f873ff,52 TACTICAL LLC,"Gun Store, FFL Dealer",retail,2085155011,"8192 FOUNTAIN BROOK ST, MIDDLETON, ID",MIDDLETON,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+ccf6332b,52 Tactical LLC,"Gun Store, FFL Dealer",retail,N/A,"8192 Fountain Brook St, Middleton, ID 83644",Middleton,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+df2d321e,66 PRODUCTIONS LLC,Gun Manufacturer,retail,2086310415,"5034 N BAYLOR LANE, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a86d639b,66 Productions LLC,Gun Manufacturer,retail,N/A,"5034 N Baylor Lane, Meridian, ID 83646",Meridian,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+87142e17,A PHILS REPAIR SERVICE,FFL Dealer,retail,2816307398,"8729 HWY 44, MIDDLETON, ID",MIDDLETON,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+d7d7e648,ACCURA OUTDOORS,Gun Manufacturer,retail,2084669975,"2316 E RAILROAD ST, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+09521ec2,ACM ENTERPRISES LLC,Gun Manufacturer,retail,2088450830,"507 E 47TH ST SUITE 100, GARDEN CITY, ID",GARDEN CITY,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+dd7e10f0,ADA ARMAMENTS,Gun Manufacturer,retail,2088636869,"7305 S GLENRIDGE VIEW DR, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+0e2892a5,ADTAC,Gun Manufacturer,retail,2084428000,"2102 NORTH DEVLIN WAY, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+56c20a11,AGENCY ARMS LLC,Gun Manufacturer,retail,8054824414,"4006 E LINDEN ST, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+7f6c99a3,AJK INDUSTRIES LLC,Gun Manufacturer,retail,2085048130,"22470 BIG LOON WAY, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+316899b7,AL'S SPORTING GOODS,FFL Dealer,retail,2088017494,"1301 N MILWAUKEE ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+4848ac18,ALL IN ONE HOLDINGS LLC,FFL Dealer,retail,2083532104,"2298 N HOSE GULCH AVE, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b8a36ba9,ALLAN'S AUTOMOTIVE,FFL Dealer,retail,2083453421,"211 W 40TH STREET, GARDEN CITY, ID",GARDEN CITY,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+80999f09,ALLTERRA ARMS / ALLTERRA,Gun Manufacturer,retail,2086085179,"6898 SUPPLY WAY STE 100, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+62516ff9,ALPHA OMEGA SERVICES LLC,FFL Dealer,retail,2084653577,"2809 GARRITY BLVD, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c0df41f8,ALS PAWN AND GUN INC,"Gun Store, FFL Dealer",retail,2084548038,"5602 CLEVELAND BLVD, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+4b41ae5d,AMERICAN RESERVE MUNITIONS LLC,Gun Manufacturer,retail,2089173045,"3601 W CHINDEN BLVD, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+1d4a0c84,AMERICAN UPLAND/AUI,FFL Dealer,retail,6052164880,"2837 NW 11TH AVE, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+1ce56f32,AMERICAN X AMMUNITION INC,FFL Dealer,retail,2089495036,"29758 MARKET RD, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+7bb82fba,"AMMOSMITH, LLC",FFL Dealer,retail,2083196598,"3515 E CONGRESSIONAL DR, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+d7543cd3,AMMOSQUARED INC,FFL Dealer,retail,2089960450,"3630 E COMSTOCK AVE, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a306259f,"APEX PRECISION, LLC",Gun Manufacturer,retail,5628226400,"565 LOS LUCEROS DR, EAGLE, ID",EAGLE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b5789081,ARCAN CONSULTING GROUP LLC,FFL Dealer,retail,7148580517,"1672 E FATHOM ST, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+45360208,ARMA15,Gun Manufacturer,retail,2103879797,"801 LOS LUCEROS DR, EAGLE, ID",EAGLE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+22b13d3f,ATI-ADAPTIVE TECHNOLOGIES INCORPORATED,Gun Manufacturer,retail,2084671000,"1910 E KARCHER RD, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+bc0a682c,ATI-Adaptive Technologies Inc,Gun Manufacturer,retail,N/A,"1910 E Karcher Rd, Nampa, ID 83687",Nampa,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+f30c32f1,AUTOMATIC WEAPONS COMPANY,Gun Manufacturer,retail,2089382173,"15005 N MCFARLAND CREEK RD #B, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+830101ad,"AVERETT, BRIAN C",FFL Dealer,retail,2084677788,"408 1/2 E CAROL ST, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a2a1df14,AVIATION SPECIALTIES UNLIMITED INC,FFL Dealer,retail,2084268117,"4632 WEST AERONCA ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+3c636707,Accura Outdoors,"Gun Store, Manufacturer",retail,N/A,"2316 E Railroad St, Nampa, ID 83687",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+44183124,Activity Investments LLC,Gun Manufacturer,retail,N/A,"10183 West Wyatt Earp Drive, Star, ID 83669",Star,Ada,,true,,3,monthly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+30bd9d70,Ada Armaments,Gun Manufacturer,retail,N/A,"7305 S Glenridge View Dr, Boise, ID 83709",Boise,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.153Z
+81bac359,Agency Arms LLC,"Gun Manufacturer, Importer",retail,N/A,"4006 E Linden St, Caldwell, ID 83605",Caldwell,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+ae0c70fb,Al's Pawn & Gun Inc,"Pawn Shop, Gun Store, FFL Dealer",retail,208-454-8038,"5602 Cleveland Blvd, Caldwell, ID 83607",Caldwell,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+1857dd5b,Al's Sporting Goods,"Gun Store, FFL Dealer",retail,208-801-7494,"1301 N Milwaukee St, Boise, ID 83704",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.153Z
+34f3440e,Allterra Arms,"Gun Store, Gunsmith, FFL Dealer",retail,208-608-5179,"6898 Supply Way Ste 100, Boise, ID 83716",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+a80f03b8,Alpha Omega Services LLC,"Gun Store, FFL Dealer",retail,208-465-3577,"2809 Garrity Blvd, Nampa, ID 83687",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+7e4534fc,Altanova Manufacturing Inc,Gun Manufacturer,retail,N/A,"530 N Broadmore Way, Nampa, ID 83687",Nampa,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+4824a48d,American Reserve Munitions LLC,Gun Manufacturer,retail,N/A,"3601 W Chinden Blvd, Boise, ID 83714",Boise,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.153Z
+5fc90a95,American Upland/AUI,Gun Importer,retail,N/A,"2837 NW 11th Ave, Meridian, ID 83646",Meridian,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+d5da4271,AmmoSquared Inc,"Gun Store, Ammunition, Importer",retail,N/A,"3630 E Comstock Ave, Nampa, ID 83687",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+dc441e27,Arctic Summit Gunsmithing,Gunsmith,services,702-353-3928,"4323 S Chariot Way, Boise, ID 83709",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+0a13eeb0,Armageddon Armory,"Gun Store, Gunsmith, FFL Dealer, Training",training,208-465-3577,"2809 Garrity Blvd, Nampa, ID 83687",Nampa,Canyon,armageddonarmory.com,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+4cd86a24,Ashment Custom Coatings LLC,"Gun Manufacturer, Custom Services",retail,N/A,"614 N 39th St, Nampa, ID 83686",Nampa,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+c53a7e9b,Automatic Weapons Company,Gun Manufacturer,retail,208-938-2173,"15005 N McFarland Creek Rd #B, Boise, ID 83714",Boise,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.154Z
+4f1bc467,"Averett, Brian C (Old Farts Gun Shop)","Gun Store, FFL Dealer",retail,208-467-7788,"408 1/2 E Carol St, Nampa, ID 83687",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+b5a0bca1,Aviation Specialties Unlimited Inc,"Gun Store, FFL Dealer",retail,208-426-8117,"4632 West Aeronca St, Boise, ID 83705",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+c5967519,Axial Precision LLC,"Gun Store, Gunsmith",retail,208-608-5179,"Boise, ID",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+2f990959,B D M,Gun Manufacturer,retail,2084651940,"21793 HIGHWAY 20/26, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a9b5bd03,B H GUNS,"Gun Store, FFL Dealer",retail,2088635059,"6128 W FAIRVIEW AVE UNIT 1M-6, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e7c7e9f9,BADLANDS RIFLE COMPANY LLC,Gun Manufacturer,retail,5416403052,"291 E SHORE DR SUITE 120, EAGLE, ID",EAGLE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b004f72a,BARRELS O' FUN,FFL Dealer,retail,3605201668,"17463 N FLAGSTAFF WAY, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+2b444795,BARTON'S CUSTOM SHOP LLC,FFL Dealer,retail,2089394478,"10300 JANIE PL BLDG B, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+aebbf2bc,BEAR CREEK FIREARMS LLC,"Gun Store, FFL Dealer",retail,2088718435,"13445 W WITTENBURG ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+34877bf7,"BEEZERS, LLC",FFL Dealer,retail,2088679635,"3000 W STATE ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+9fac9361,BENFIELD PRECISION LLC,Gun Manufacturer,retail,2084502665,"2120 JUBILEE LN, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c780509f,BENNETT MOUNTAIN OUTFITTERS,FFL Dealer,retail,2083520058,"1645 N CLARENDON WAY, EAGLE, ID",EAGLE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+7d20ee04,BERESHITH COMPANY,FFL Dealer,retail,2087246114,"27730 CEMETERY RD, MIDDLETON, ID",MIDDLETON,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+0f4e0dca,BGW LLC,"Gunsmith, FFL Dealer",retail,951-445-9819,"2228 Cortland Place, Nampa, ID 83687",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+40cc18e7,BI MART #614,FFL Dealer,retail,5413340681,"425 N 10TH AVE, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+03de8284,BI MART #688,FFL Dealer,retail,2082878986,"1277 E DEER FLAT RD, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+ec91e607,BI-MART #628,FFL Dealer,retail,5413340681,"407 12TH AVENUE, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+7888e508,BI-MART #681,FFL Dealer,retail,2084775270,"179 WEST HIGHWAY 52, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+fb3dbc94,BIG 5 SPORTING GOODS #279,FFL Dealer,retail,3105360611,"101 NORTH MILWAUKEE STREET, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+f7819889,BIG 5 SPORTING GOODS #308,FFL Dealer,retail,3105360611,"1601 CALDWELL BLVD, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+21056e60,BIG 5 SPORTING GOODS #391,FFL Dealer,retail,3105360611,"6762 NORTH GLENWOOD ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+263789f1,"BIG SKY INDUSTRIES, LLC",FFL Dealer,retail,8183128251,"12871 QUAIL RUN LN, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+81be518d,BIG VALLEY GUN AND PAWN LLC,"Gun Store, FFL Dealer",retail,2089416354,"7 W COLORADO AVE, HOMEDALE, ID",HOMEDALE,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b2434a9c,BIGHORN GUNSMITHING,"Gun Store, Gunsmith, FFL Dealer",retail,2082781159,"4110 HWY 30 W, NEW PLYMOUTH, ID",NEW PLYMOUTH,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+9f2d4a19,BIMART #689,FFL Dealer,retail,2089725178,"11347 W STATE ST, STAR, ID",STAR,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+f807aa02,BISHOP DEFENSE LLC,Gun Manufacturer,retail,4086918312,"113 E IDAHO AVE, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+4179213c,BJORALT FIREARMS,"Gun Store, FFL Dealer",retail,2085765534,"6489 E MONROE ST, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+cf5194af,BLAC-RAC MANUFACTURING INC,Gun Manufacturer,retail,2088559388,"274 N MAPLE GROVE RD, UNIT #104, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e80ef7dc,BLACK CANYON PRECISION,FFL Dealer,retail,2089630429,"780 CLIFFORD DR, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+aeb04803,BLACK DOG SPORTS USA,FFL Dealer,retail,2085710179,"367 N SHADY GROVE CT, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+84c91a4f,BLACK LABEL PRECISION,Gun Manufacturer,retail,5188608250,"10451 W  DAYLILY CT, STAR, ID",STAR,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b03049ed,BLAZZARD FIREARMS,"Gun Store, FFL Dealer",retail,2087896430,"1208 E PENNSYLVANIA PL, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+75b38583,BLUE FALCON TACTICAL LLC,"Gun Store, FFL Dealer",retail,2084619387,"9393 WEST KUNA RD, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+f785a28f,BOISE BLACK RIFLE INC,Gun Manufacturer,retail,2084503044,"1580 N STONEHENGE WAY # 102, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+9e759a39,BOISE PAWN LLC,FFL Dealer,retail,8332647296,"6465 W FAIRVIEW AVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+ff25d453,BOISE RIVER SALES LLC,FFL Dealer,retail,2089890008,"1346 N HICKORY, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+cf1ab3e0,BOISE RIVER SALES LLC,FFL Dealer,retail,2084667400,"1110 E KARCHER RD, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e0bceeb0,BOISE TACTICAL,"Gun Store, FFL Dealer",retail,2088602890,"440 N FIVE MILE RD, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+5651d5ec,BOOMSTICK DEFENSE,FFL Dealer,retail,2088607824,"1858 W HAM RAPIDS ST, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+2f7276e4,BOOTLEG INC,Gun Manufacturer,retail,2179797730,"1336 S CROOKED FENCE LANE, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a4d417db,BROOKSRIVER LLC,FFL Dealer,retail,2085857761,"2719 S CULPEPER AVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+ef2c6e65,"BROWN DOGG, LLC",Gun Manufacturer,retail,2083223351,"11319 W. HOLLANDALE DR, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+1e970e82,BUCKHORN GUN SHOP / BGS GUNS,"Gun Store, FFL Dealer",retail,2083772535,"6601 W USTICK RD, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+3bffe6d8,BUL ARMS LLC,FFL Dealer,retail,2088699639,"409 S 8TH ST SUITE 211, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+fa4bd4fe,"BULLOCK, WILLIAM",FFL Dealer,retail,2088667957,"30 N SUNSET ST, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+9cc92045,BURNING BULLET,FFL Dealer,retail,2086962171,"1890 SOUTH STONE RIDGE WAY, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+53769903,BURNS CUSTOM PISTOLS,FFL Dealer,retail,2086165418,"5377 SOUTH TEN MILE ROAD, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+09a9d679,BY DESIGN LLC,Gun Manufacturer,retail,2084477511,"13227 W PICADILLY ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+7f94df03,Barton's Custom Shop,Gunsmith,services,208-939-4478,"10300 Janie Pl Bldg B, Boise, ID 83714",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+cd5794f4,Bear Creek Firearms,"Gun Store, FFL Dealer",retail,208-871-8435,"9684 W Shelborne Dr, Boise, ID 83709",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+b7d81d0c,Bear Mountain Gun & Tool,"Gun Store, Gunsmith",retail,N/A,"120 S Plymouth Ave, New Plymouth, ID 83655",New Plymouth,Payette,,true,,2,weekly,docs/payette_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+85aebf43,Benfield Precision LLC,Gun Manufacturer,retail,N/A,"2120 Jubilee Ln, Emmett, ID 83617",Emmett,Gem,,true,,3,monthly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+7d8566cc,Benny's Pawn Inc,"Pawn Shop, Firearms",retail,208-846-9027,"Meridian, ID",Meridian,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+3fe4b17f,Bi-Mart #614,"Gun Store, Sporting Goods",retail,N/A,"425 N 10th Ave, Caldwell, ID 83605",Caldwell,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+c49b9a81,Bi-Mart #681,"Gun Store, Sporting Goods",retail,208-477-5270,"179 West Highway 52, Emmett, ID 83617",Emmett,Gem,,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+86b36e52,Bi-Mart #689,"Gun Store, Sporting Goods",retail,N/A,"11347 W State St, Star, ID 83669",Star,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+e1eaab44,Big 5 Sporting Goods #279,"Gun Store, Sporting Goods",retail,310-536-0611,"101 N Milwaukee St, Boise, ID 83704",Boise,Ada,big5sportinggoods.com,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.156Z
+9ee0ad1b,Big 5 Sporting Goods #308,"Gun Store, Sporting Goods",retail,310-536-0611,"1601 Caldwell Blvd, Nampa, ID 83651",Nampa,Canyon,big5sportinggoods.com,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+f3270cef,Big 5 Sporting Goods #391,"Gun Store, Sporting Goods",retail,310-536-0611,"6762 N Glenwood St, Boise, ID 83714",Boise,Ada,big5sportinggoods.com,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.156Z
+43b3f310,Big Sky Industries LLC,"Gun Store, FFL Dealer",retail,N/A,"12871 Quail Run Ln, Caldwell, ID 83607",Caldwell,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+8dcebbb7,Big Valley Gun and Pawn LLC,"Gun Store, Pawn Shop, FFL Dealer",retail,N/A,"7 W Colorado Ave, Homedale, ID 83628",Homedale,Owyhee,,true,,2,weekly,docs/owyhee_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+0fa49e68,"Bighorn Gunsmithing, LLC","Gun Store, Gunsmith, FFL Dealer",retail,N/A,"4110 Hwy 30 W, New Plymouth, ID 83655",New Plymouth,Payette,,true,,2,weekly,docs/payette_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+9c170821,Blac-Rac Manufacturing,Gun Manufacturer,retail,208-855-9388,"274 N Maple Grove Rd #104, Boise, ID 83704",Boise,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+c485b453,Black Canyon Precision,"Gun Store, Gunsmith, FFL Dealer",retail,N/A,"780 Clifford Dr, Emmett, ID 83617",Emmett,Gem,,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+d71c2f85,Black Label Precision,Gun Manufacturer,retail,N/A,"10451 W Daylily Ct, Star, ID 83669",Star,Ada,,true,,3,monthly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+5745721c,Black's Creek Public Shooting Range,Public Shooting Range,ranges,208-342-9614,"2420 E Kuna Mora Rd, Kuna, ID 83634",Kuna,Ada,idfg.idaho.gov/shoot/blacks-creek,false,"Long Range Match, Youth Shoots, Benchrest Matches",1,daily,docs/ada_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+ce7fac1e,Blazzard Firearms,"Gun Store, FFL Dealer",retail,208-789-6430,"1208 E Pennsylvania Pl, Nampa, ID 83686",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+7547ba02,Blue Line Guns,"Gun Store, FFL Dealer",retail,208-639-1653,"Boise, ID",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+7d134bfc,Boise Gun Company Inc,"Gun Store, Gunsmith, FFL Dealer",retail,208-376-4440,"4105 Adams St, Garden City, ID 83714",Garden City,Ada,boisegun.com,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+d69450e3,Boise Pawn,"Pawn Shop, Firearms",retail,833-264-7296,"6465 W Fairview Ave, Boise, ID 83704",Boise,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.156Z
+a8a2d8ac,Boise Police Revolver League,Shooting Club,retail,208-344-6274,"Boise, ID",Boise,Ada,,false,Weekly Practice Matches,2,weekly,docs/ada_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+966cdb17,Brown Dogg LLC,"Gun Store, FFL Dealer",retail,N/A,"11319 W Hollandale Dr, Boise, ID 83709",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+26490010,Buckhorn Gun & Pawn,"Gun Store, Gunsmith, Pawn, FFL Dealer",retail,208-377-2535,"6601 W Ustick Rd, Boise, ID 83704",Boise,Ada,buckhornguns.com,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.152Z
+9c7c9348,Burns Custom Pistols,"Gun Store, Gunsmith, FFL Dealer",retail,N/A,"5377 South Ten Mile Road, Meridian, ID 83642",Meridian,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+588b5907,Burr International Inc,"Gun Store, FFL Dealer",retail,N/A,"1455 Star Ln, Emmett, ID 83617",Emmett,Gem,,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+f3a7e181,CA LEGAL MAGS,Gun Manufacturer,retail,9493576311,"6128 W FAIRVIEW AVE UNIT 1M-4, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+3fe7cacc,CABELA'S 419,FFL Dealer,retail,2086727900,"8109 W FRANKLIN ROAD, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+5a7843b0,CAMBRIDGE DISTRIBUTING LLC,FFL Dealer,retail,5412122882,"8156 N PENNSYLVANIA AVENUE, FRUITLAND, ID",FRUITLAND,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+5862f5bc,CANYON COUNTY COIN LLC,FFL Dealer,retail,2084681007,"1200 1ST S, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e8eacd59,"CANYON COUNTY PRECISIONS, LLC",FFL Dealer,retail,2086976167,"647 TETON DR, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+bb2060a5,CARACAL USA,Gun Manufacturer,retail,2083238727,"8600 BIRCH LANE SUITE 100, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e1a799e2,"CARTER, JON",FFL Dealer,retail,2088882829,"1065 W RIVER HEIGHTS DR, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+edab4eb2,CHARTERS MTN GUN SHOP,"Gun Store, FFL Dealer",retail,2084590978,"19300 MARSING RD, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+d730adb9,"CLARK, WAYNE GARY",FFL Dealer,retail,2083371070,"3734 HIGHWAY 95, PARMA, ID",PARMA,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+be8aff8d,CLC CUSTOM GUNS & GUNSMITHING,"Gun Store, Gunsmith, FFL Dealer",retail,2082497458,"5040 SAGE RD, HOMEDALE, ID",HOMEDALE,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+dab1ecb4,CLC Custom Guns & Gunsmithing,"Gun Store, Gunsmith, FFL Dealer",retail,N/A,"5040 Sage Rd, Homedale, ID 83628",Homedale,Owyhee,,true,,2,weekly,docs/owyhee_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+614f3081,"CLIFFS GUNS, SAFES, RELOADING","Gun Store, FFL Dealer",retail,2083758694,"11505 W FAIRVIEW AVE, SUITE 101, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+9663a663,COMPOUND COATINGS LLC,Gun Manufacturer,retail,2089064174,"7750 S HIDDEN VALLEY RD, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+59df53bd,CORBETT AUCTIONS & APPRAISALS INC,FFL Dealer,retail,2088889563,"547 E. STAGECOACH, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+28045af3,CROSSFIRE METAL WORKS / CROSSFIRE,Gun Manufacturer,retail,2086424259,"303 2ND AVE N, PAYETTE, ID",PAYETTE,Payette,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+1460d0b8,CT BRIAN,FFL Dealer,retail,2088880957,"1468 W JULEP ST, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a7f24d9b,Cabela's Boise,"Gun Store, Sporting Goods",retail,208-672-7900,"8109 W Franklin Rd, Boise, ID 83709",Boise,Ada,stores.cabelas.com,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.156Z
+19a8bf67,Caldwell Gun Club,"Shooting Club, Public Range",ranges,208-459-2616,"21840 Pond Ln, Caldwell, ID 83607",Caldwell,Canyon,caldwellshotguncomplex.com,false,"Trap, 5-Stand, Sporting Clays, weekly practice, tournaments",2,weekly,docs/canyon_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+8c32da02,Caldwell Shooting Supplies,"Gun Store, Training Supplies",training,208-899-2920,"5247 S 10th Ave, Caldwell, ID 83607",Caldwell,Canyon,caldwellshooting.com,false,Ammo and shooting accessories,1,daily,docs/canyon_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+ab8176ae,Cambridge Distributing LLC,"Gun Store, FFL Dealer",retail,N/A,"8156 N Pennsylvania Avenue, Fruitland, ID 83619",Fruitland,Payette,,true,,2,weekly,docs/payette_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+5c51461b,Canyon County Concealed Weapons Program,Government Training Program,training,208-454-6909,"1115 Blaine St, Caldwell, ID 83605",Caldwell,Canyon,canyoncounty.id.gov/sheriff/concealed-weapons-permit/,false,CCW licensing & training,2,weekly,docs/canyon_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+0f648720,Canyon County Precisions LLC,"Gun Store, FFL Dealer",retail,208-697-6167,"647 Teton Dr, Nampa, ID 83686",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+02ee946f,Caracal USA,Gun Manufacturer,retail,208-323-8727,"Boise, ID",Boise,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+1c268a9b,Caracal USA,Gun Manufacturer,retail,N/A,"8600 Birch Lane Suite 100, Nampa, ID 83687",Nampa,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+3d146ea2,"Carter, Jon","Gun Store, FFL Dealer",retail,N/A,"1065 W River Heights Dr, Meridian, ID 83646",Meridian,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+2bf32145,Charters Mtn Gun Shop,"Gun Store, FFL Dealer",retail,208-901-4972,"19300 Marsing Rd, Caldwell, ID 83607",Near Marsing,Owyhee,,true,,2,weekly,docs/owyhee_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+070d9776,Cliff's Guns Safes & Reloading,"Gun Store, Gunsmith, FFL Dealer",retail,208-375-8694,"11505 W Fairview Ave #101, Boise, ID 83713",Boise,Ada,gunsamerica.com/Search/Lister/193/Cliffs_Guns_Safes_Reloading,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.153Z
+0071026e,Combat Sport Supply,"Gun Store, Sporting Goods",retail,208-336-1927,"208 E 37th St #10, Garden City, ID 83714",Garden City,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+f28e89b1,Crossfire Elite LLC,"Gun Store, FFL Dealer",retail,208-461-8888,"Meridian, ID",Meridian,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+b018ebd5,Crossfire Metal Works / Crossfire,"Gun Manufacturer, FFL",retail,N/A,"303 2nd Ave N, Payette, ID 83661",Payette,Payette,,true,,3,monthly,docs/payette_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+e78618f3,D & B SPORTING ARMS,FFL Dealer,retail,2083424920,"1419 NORTH 23RD, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+dc1ae22e,D&B SUPPLY,FFL Dealer,retail,2084597446,"620 SMEED PARKWAY, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+bb96df31,D&B SUPPLY,FFL Dealer,retail,2084597446,"111 HWY 16, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+28d0e0ff,D&B SUPPLY,FFL Dealer,retail,2088017500,"1845 E DEER FLAT ROAD, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+2ecf00bc,D&B SUPPLY,FFL Dealer,retail,2088870949,"1725 E FAIRVIEW AVE, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+02f460ca,D&B SUPPLY,FFL Dealer,retail,2084597446,"3200 12TH AVE RD, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+98695a7f,D&B SUPPLY,FFL Dealer,retail,2084597446,"6945 OVERLAND ROAD, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+5b383386,D&B Supply,"Gun Store, Sporting Goods, FFL Dealer",retail,N/A,"3200 12th Ave Rd, Nampa, ID 83686",Nampa,Canyon,dbsupply.com,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+b86a139c,D&B Supply Emmett,"Gun Store, Sporting Goods, FFL Dealer",retail,208-963-7040,"111 ID-16, Emmett, ID 83617",Emmett,Gem,dbsupply.com,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+bca4cde4,D&B Supply Smeed,"Gun Store, Sporting Goods, FFL Dealer",retail,N/A,"620 Smeed Parkway, Caldwell, ID 83605",Caldwell,Canyon,dbsupply.com,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+626b9dbe,DING GO AUTOBODY & PAINT LLC,FFL Dealer,retail,2089480066,"120 E 41 STE #3, GARDEN CITY, ID",GARDEN CITY,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+7521a325,DISRUPTIVE MACHINE,Gun Manufacturer,retail,2089082477,"1807 N HIGHWOOD AVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b43819b9,"DORAMUS, CLINTON M",FFL Dealer,retail,2083713704,"23680 BOISE RIVER RD, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+0d64aa9b,DOUBLE TAPP,FFL Dealer,retail,2085593337,"14000 E DOUBLE TAPP LANE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+dc68295b,"DUNDAS WORKS, LLC",FFL Dealer,retail,2084599194,"5305 BLACK CANYON RD, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+4d0b2d04,DVN,Gun Manufacturer,retail,2083365525,"6128 W FAIRVIEW AVE UNIT 1M-2, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+ba146906,DWTX SALES,FFL Dealer,retail,2085598175,"6128 W FAIRVIEW AVE, UNIT 1M-3, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e5577592,Defense Materials Company LLC,"Gunsmith, FFL Dealer",retail,208-546-9463,"4910 W Denton St, Boise, ID 83704",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+c2e4ea4c,Desert West Arms,"Gun Store, FFL Dealer",retail,N/A,Owyhee County Area,Rural Owyhee,Owyhee,,true,,2,weekly,docs/owyhee_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+3f0cd9f4,Double Tapp LLC,"Gun Store, Private Range, FFL Dealer",ranges,208-559-3337,"10512 W Treeline St, Boise, ID 83704",Boise,Ada,doubletappboise.com,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+49a2051b,Double Tapp Range,"Private Shooting Range, Training",ranges,208-559-3337,"16 miles East of Boise, ID",Boise,Ada,doubletappboise.com,false,"Membership Only, Tactical Shooting Events",1,daily,docs/ada_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+9a723029,Dundas Works LLC,"Gun Store, Gunsmith, FFL Dealer",retail,N/A,"5305 Black Canyon Rd, Caldwell, ID 83607",Caldwell,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+d185f6e4,EAGLE EYE ARMORY,"Gun Store, FFL Dealer",retail,2088257374,"18125 N CINCH WAY, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+56a3c166,EAGLE FIREARMS,"Gun Store, FFL Dealer",retail,4803230466,"939 S LAKE POINTE WAY, EAGLE, ID",EAGLE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+5bfc5881,EAGLE GUN COMPANY,"Gun Store, FFL Dealer",retail,2089173560,"10539 W THIMBLEBERRY DR, STAR, ID",STAR,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+4477bf61,EAGLE PRECISION LLC,Gun Manufacturer,retail,6054303027,"10324 W COLTON LN, EAGLE, ID",EAGLE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+7c9acf57,EBERLE PRECISION LLC,Gun Manufacturer,retail,2084245081,"2900 W MAIN ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+2b2fa55a,"ECHELON RIFLES, LLC",Gun Manufacturer,retail,2083203299,"2106 PRIMROSE LN, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+4e206905,"ELITE FIREARM SOLUTIONS, LLC",Gun Manufacturer,retail,9168498736,"110 E 43RD STREET SUITE 100, GARDEN CITY, ID",GARDEN CITY,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+03ee3d25,ELITE RIFLE WORKS LLP,FFL Dealer,retail,2084658039,"6045 DEER FLAT ROAD, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+52b53ce3,EMMETT GUN STORE,"Gun Store, FFL Dealer",retail,2088702020,"2119 SOUTH MILL RD, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b61c98e2,ENVISIONED EVENTS,FFL Dealer,retail,2088714384,"2201 N HOSE GULCH AVE, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+6df5c258,ERG,Gun Manufacturer,retail,2089180328,"693 N KAYDEN WAY, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+53745e32,EUBANKS GUNSMITHING,"Gun Store, Gunsmith, FFL Dealer",retail,2083374212,"3686 RIVER RD, HOMEDALE, ID",HOMEDALE,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+250d915a,EVANS GUN REPAIR,"Gun Store, FFL Dealer",retail,2084525958,"5200 HWY 95, FRUITLAND, ID",FRUITLAND,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+182b64c7,EVERYDAY ARMIS,FFL Dealer,retail,5307399694,"1666 WEST TOPANGA DRIVE, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e130ad38,EVO TRADES LLC,Gun Manufacturer,retail,2088996278,"1804 E CELBRIDGE ST, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b4bfbbda,Eagle Gun Company,"Gun Store, FFL Dealer",retail,N/A,"10539 W Thimbleberry Dr, Star, ID 83669",Star,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.158Z
+1e1a5de6,Elite Rifle Works LLP,"Gun Store, Gunsmith, FFL Dealer",retail,208-465-8039,"6045 Deer Flat Road, Nampa, ID 83686",Nampa,Canyon,eliterifleworks.com,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+a35e6de4,Emmett Gun Store,"Gun Store, Manufacturer, FFL Dealer",retail,208-870-2020,"2119 South Mill Rd, Emmett, ID 83617",Emmett,Gem,,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+be95edba,Eubanks Gunsmithing,"Gun Store, Gunsmith, FFL Dealer",retail,208-337-4212,"3686 River Rd, Homedale, ID 83628",Homedale,Owyhee,eubanksgunsmithing.com,true,,2,weekly,docs/owyhee_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+a39eb47a,Evans Gun Repair,"Gun Store, Gunsmith, FFL Dealer",retail,208-452-5958,"5200 Hwy 95, Fruitland, ID 83619",Fruitland,Payette,,true,,2,weekly,docs/payette_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+295cb4c6,FAITH OUTDOORS LLC,FFL Dealer,retail,2086868986,"2200 CORTLAND PL, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c328e138,FEDERATED ORDNANCE LLC,Ammunition Manufacturer,retail,2084025652,"1906 S SMEED PKWY SUITE 102, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+81c76302,FERGUSON AND SONS CONSTRUCTION LLC,FFL Dealer,retail,2089412069,"5225 BUTTE RD, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+bb1c4923,FIREFLY SHOOTING ACADEMY,Gun Manufacturer,retail,2089540368,"516 W HIGHLAND ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a315db2d,FLINT'N FRIZZEN,FFL Dealer,retail,2083869349,"3867 E SHADY GLEN DR, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+81192447,FM MFG INC,Gun Manufacturer,retail,2083789770,"9700 BETHEL COURT, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+61b3121c,FM PRODUCTS INC,Gun Manufacturer,retail,4088492163,"9700 W BETHEL COURT, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+454cb09f,FM- PRODUCTS INC,FFL Dealer,retail,4088492163,"9700 BETHEL COURT, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+5402bfb0,"FORT BOISE ARMS, FBA",Gun Manufacturer,retail,2082507619,"6128 W FAIRVIEW AVE UNIT 1M-8, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+49028c04,FORTRESS CERAKOTE LLC,Gun Manufacturer,retail,2086155933,"1030 CRUSE LANE, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+71d8adac,FOUNDING FATHERS ARMORY,"Gun Store, FFL Dealer",retail,2086155542,"1310 N 63RD ST, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+21e20ad1,FREE STATE GUNSMITHING LLC,"Gun Store, Gunsmith, FFL Dealer",retail,2089076461,"16089 N FRANKLIN STE 4, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+9d582c62,Faith Outdoors LLC,"Gun Store, FFL Dealer",retail,N/A,"2200 Cortland Pl, Nampa, ID 83687",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+e95edf88,Fall River Arms,"Gun Store, FFL Dealer",retail,208-629-3910,"Boise, ID",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+36edd760,Federated Ordnance LLC,"Gun Manufacturer, Destructive Device Manufacturer",retail,N/A,"1906 S Smeed Pkwy Suite 102, Caldwell, ID 83605",Caldwell,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+314d42e4,Ferguson and Sons Construction LLC,Gun Importer,retail,N/A,"5225 Butte Rd, Emmett, ID 83617",Emmett,Gem,,true,,3,monthly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+1963ac67,G ZERO,Gun Manufacturer,retail,2088871839,"1100 W TAYLOR AVE STE 100, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+134d91c3,GARDNER ARSENAL LLC,Gun Manufacturer,retail,2084122087,"3711 WEST IDAHO BLVD, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+05e0164c,GEM STATE ARMS,FFL Dealer,retail,2084670010,"223 E ROOSEVELT AVE, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a47aeae6,GEM STATE PAWN,FFL Dealer,retail,2084527296,"1205 N WHITLEY DRIVE #4, FRUITLAND, ID",FRUITLAND,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+90c58a22,GIBRALTAR ARMS /  PURPLE SAGE INTERNATIONAL,FFL Dealer,retail,2089213232,"13557 SIGNORELLO ST, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+814c32fa,GIBSON FIREARMS LLC,"Gun Store, FFL Dealer",retail,2088679298,"7127 W WAVERLY CT, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+1df1aa91,GOLD SILVER VAULT,Gun Manufacturer,retail,2084683600,"2245 NORTH SAMANTHA COURT, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+dd3db692,GRYPHON WERKS,Gun Manufacturer,retail,2084660945,"1923 2ND ST S, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c280c919,GUARDIAN CERAKOTE,Gun Manufacturer,retail,2083309541,"6144 S CUBOLA WAY, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+9a28b4f2,"GUNSBAY, LLC","Gun Store, FFL Dealer",retail,9862134380,"913 S LATAH STREET, SUITE D, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+d1a983b0,Gardner Arsenal LLC,Gun Manufacturer,retail,N/A,"3711 West Idaho Blvd, Emmett, ID 83617",Emmett,Gem,,true,,3,monthly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+fc4477cf,Gem County Fairgrounds,Event Venue,retail,208-365-4550,"453 S 18th St, Emmett, ID 83617",Emmett,Gem,gemcountyfairgrounds.com,false,"Gem/Boise County Fair, PRCA Black Canyon Rodeo",2,weekly,docs/gem_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+30af32a2,Gem County Rod & Gun Club,"Shooting Club, Range",ranges,208-365-4551,"3600 E Main St, Emmett, ID 83617",Emmett,Gem,gcrgc.net,false,"CMP Matches, Cowboy Action Shooters, USPSA Matches, Steel Challenge",2,weekly,docs/gem_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+2e493857,Gem State Firearms Training,Firearms Training,training,N/A,"Post Falls, ID",Post Falls,Kootenai,gemstateft.com,false,Concealed Carry && Safety Classes,2,weekly,docs/gem_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+c72e7ea8,Gem State Guns LLC,"Gun Store, FFL Dealer",retail,208-724-1851,"Boise, ID 83705",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+168f5fe1,Gem State Pawn,"Pawn Shop, Firearms",retail,N/A,"1205 N Whitley Drive #4, Fruitland, ID 83619",Fruitland,Payette,,true,,3,monthly,docs/payette_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+1622a5fe,Gemtech,"Gun Manufacturer, Suppressor Specialist",retail,208-939-7222,"3750 E Pewter Falls St #100, Meridian, ID 83642",Meridian,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+06f33879,George W. Nourse Gun Range at Jubilee Park,Public Shooting Range,ranges,208-454-6884,"16802 Nash Rd, Nampa, ID 83686",Nampa,Canyon,canyoncounty.id.gov/project/george-w-nourse-gun-range/,false,Range maintenance & public use,1,daily,docs/canyon_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+94adee66,Gibraltar Arms / Purple Sage International,"Gun Store, FFL Dealer",retail,N/A,"13557 Signorello St, Caldwell, ID 83607",Caldwell,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+f9f6ea5e,Gunrunner,"Gun Store, FFL Dealer",retail,N/A,"841 Howard Ln, Fruitland, ID 83619",Fruitland,Payette,veriforcetactical.com/ffl-store-locator/gunrunner-fruitland/,true,,2,weekly,docs/payette_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+d0352c70,H M PRAETORIAN LLC,FFL Dealer,retail,2085302094,"7868 OPEN SKY RD, MIDDLETON, ID",MIDDLETON,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+15b55c63,H M Praetorian LLC,"Gun Store, FFL Dealer",retail,N/A,"7868 Open Sky Rd, Middleton, ID 83644",Middleton,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+40cf3b02,HAPPY TIME FIREARMS,"Gun Store, FFL Dealer",retail,2089949946,"19137 S PLEASANT VALLEY RD, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+cfb1e01b,HARGAN PRECISION RIFLEWORKS LLC,Gun Manufacturer,retail,2088704968,"3822 SOUTH SUMTER WAY, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+4bae586b,"HAWKTECH ARMS, INC",FFL Dealer,retail,2088985848,"1994 E FRANKLIN RD SUITE 110, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+d3621da5,HEIDA FIREARMS,"Gun Store, FFL Dealer",retail,2086141874,"17281 USTICK RD, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a95ea71d,HENDRICKSON'S FINE JEWELRY,Gun Manufacturer,retail,2088531615,"5685 N GLENWOOD ST, GARDEN CITY, ID",GARDEN CITY,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+815df3be,HIGH BORN TACTICAL,"Gun Store, FFL Dealer",retail,2083781884,"400 N FIVE MILE RD, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+8f0fe54a,HIGH DEF ARMS,Gun Manufacturer,retail,2082580614,"1307 N 39TH ST #102, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+864e30b9,HIGH DESERT ARMAMENTS,Gun Manufacturer,retail,2089711917,"374 W SNOWY OWL ST, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+271a92c1,HIGH DESERT LOGISTICS,FFL Dealer,retail,5092702125,"2307 W JEFFERSON STREET, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+656d9c40,HIGHLIGHT TECHNOLOGIES,FFL Dealer,retail,2084420755,"2650 NW 3RD AVE, FRUITLAND, ID",FRUITLAND,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+12149961,"HOWELL, MERIDETH ANN & WEEK, BRIAN ANDREW",FFL Dealer,retail,2089212876,"688 E OLD MESQUITE ST, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+dbf24b59,"HUDDLESTON, JOHN R",FFL Dealer,retail,2088592525,"6513 W CONTRACTORS, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e957a0c5,HUDSON ARMS,FFL Dealer,retail,2086916452,"3560 BISHOP ROAD, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+0b0ac181,"HURRICANE BUTTERFLY LAW ENFORCEMENT, LLC",Ammunition Manufacturer,retail,2089601880,"6201 JOE LANE, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+090d005e,HawkTech Arms,"Gun Store, Gunsmith, FFL Dealer",retail,208-898-5848,"3131 E Lanark St, Meridian, ID 83642",Meridian,Ada,hawktecharms.com,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+839c9426,Heida Firearms,Gun Manufacturer,retail,N/A,"17281 Ustick Rd, Caldwell, ID 83607",Caldwell,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+0d2d3469,High Born Tactical,Gun Manufacturer,retail,N/A,"400 N Five Mile Rd, Boise, ID 83713",Boise,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.154Z
+0a5b7261,Highland Munitions LLC,"Gun Store, FFL Dealer",retail,N/A,"7676 S Mistyglen Ave, Boise, ID 83709",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.156Z
+50166c8e,Highlight Technologies,"Gun Store, FFL Dealer",retail,N/A,"2650 NW 3rd Ave, Fruitland, ID 83619",Fruitland,Payette,,true,,2,weekly,docs/payette_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+9dbcae04,Hudson Arms,"Gun Store, Gunsmith, FFL Dealer",retail,208-691-6452,"3560 Bishop Road, Emmett, ID 83617",Emmett,Gem,hudsonarms.net,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+303faa4e,I GUNS,"Gun Store, FFL Dealer",retail,2083186272,"419 FLETCHER DR, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+282f30f7,I2AT,Gun Manufacturer,retail,N/A,"5202 N Morninggale Way, Boise, ID 83713",Boise,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+b593789b,I2AT,Gun Manufacturer,retail,2082987916,"5202 N MORNINGGALE WAY, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+8fb332f3,IDAHO ARMS & AMMO,Gun Manufacturer,retail,2088090939,"519 E FAIRVIEW AVE STE 300, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+267ed4e3,IDAHO ARMS AND AMMO LLC,FFL Dealer,retail,2088090939,"519 E FAIRVIEW AVE STE 300, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+1fe5c084,IDAHO CUSTOM ARMS,Gun Manufacturer,retail,2088615425,"300 N 16TH ST  UNIT C, PAYETTE, ID",PAYETTE,Payette,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+30b130f7,IDAHO DISTRIBUTION LLC,FFL Dealer,retail,2085460100,"16188 N MERCHANT WAY, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+f1397e6d,IDAHO GUN & OUTDOORS,"Gun Store, FFL Dealer",retail,2085460100,"16188 N MERCHANT WAY, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c48910a5,IDAHO GUN & OUTDOORS,"Gun Store, FFL Dealer",retail,2083781600,"8600 W FRANKLIN RD, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+8e09b744,IDAHO INDUSTRIES LLC,Gun Manufacturer,retail,2087818254,"12650 W GINGER CREEK DR, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+9590788c,IDAHO PAWN & GOLD,FFL Dealer,retail,2084878003,"615 WEST CALDWELL BLVD, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+208e492e,"IDAHO PAWN & GOLD, SAM'S LOCKER",FFL Dealer,retail,2084878003,"451 N MAIN ST, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+cdc8e870,"IDAHOME LOANS, LLC",Gun Manufacturer,retail,2088676422,"2504 N SNOW GOOSE WAY, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+4f1e412f,IMPACT GUNS,"Gun Store, FFL Dealer",retail,2083211288,"11655 WEST EXECUTIVE DR, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+9cdde249,"INTERMOUNTAIN IMPORTS, LLC",FFL Dealer,retail,2534146066,"6201 JOE LANE, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+166b083a,"INTERMOUNTAIN LOGISTICS, LLC",Ammunition Manufacturer,retail,2534146066,"6201 JOE LANE, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+7f5919d3,Idaho Air Gun,"Air Gun Store, Specialty Firearms",retail,N/A,"Nampa, ID",Nampa,Canyon,idahoairgun.com,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+4a9c54c9,Idaho Arms & Ammo,"Gun Store, Gunsmith, FFL Dealer",retail,208-809-0939,"519 E Fairview Ave #300, Meridian, ID 83642",Meridian,Ada,idahoarmsammo.com,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+7bd84032,Idaho Automatic Weapons Collectors Association Inc,Shooting Club,retail,208-465-0970,"Boise, ID",Boise,Ada,,false,"Gun Shows, Monthly Meetings",2,weekly,docs/ada_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+4e0cd45c,Idaho Custom Arms,"Gun Store, Gunsmith, FFL Dealer",retail,208-861-5425,"300 N 16th St Unit C, Payette, ID 83661",Payette,Payette,,true,,2,weekly,docs/payette_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+6cfc5777,Idaho Firearms Classes,Firearm Training School,training,208-938-6090,"Boise, ID",Boise,Ada,idahofirearmsclasses.com,false,"Basic to Advanced Firearms Training, CCW Classes",1,daily,docs/ada_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+0a8b9a41,Idaho Firearms Classes,Firearms Training,training,208-938-6090,Boise/Eagle,Boise,Ada,idahofirearmsclasses.com,false,"Basic to advanced training, CCW",2,weekly,docs/canyon_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+64c38bc8,Idaho Firearms Classes,Firearm Training School,training,N/A,Boise Area,Boise,Ada,idahofirearmsclasses.com,false,"Basic & Advanced Training, CCW Classes",1,daily,docs/gem_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+cc2c0b06,Idaho Gun & Outdoors,"Gun Store, FFL Dealer",retail,N/A,"16188 N Merchant Way, Nampa, ID 83687",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+30cec950,Idaho Gun School,Training School,training,208-939-8224,"Nampa, ID",Nampa,Canyon,idahogunschool.com,false,"Safe gun handling, defensive use courses",2,weekly,docs/canyon_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+d51d261c,Idaho Guns,"Gun Store, FFL Dealer",retail,208-378-1600,"8600 W Franklin Rd, Boise, ID 83709",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+88f53e37,"Idaho Pawn & Gold, Sam's Locker","Pawn Shop, Firearms",retail,N/A,"451 N Main St, Meridian, ID 83642",Meridian,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+82d33af9,Idaho Police Revolver League,Shooting Club,retail,208-344-6274,"Boise, ID",Boise,Ada,,false,Weekly Practice Matches,2,weekly,docs/ada_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+6c3ec200,Idaho Sporting Clays & Hunting Club,"Sporting Goods, Clay Shooting",retail,N/A,Near Homedale,Homedale,Owyhee,,true,,3,monthly,docs/owyhee_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+6a19ccd6,Idaho Surplus Sales,"Gun Store, FFL Dealer",retail,N/A,"Boise, ID 83709",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+9a5b8f7e,Impact Guns,"Gun Store, Indoor Range, FFL Dealer",ranges,208-321-1288,"11655 W Executive Dr, Boise, ID 83713",Boise,Ada,impactguns.com,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.153Z
+342b38d1,Independence Indoor Shooting,"Gun Store, Indoor Range, Gunsmith, Training",ranges,208-576-4867,"2749 E Gala St, Meridian, ID 83642",Meridian,Ada,iishooting.com,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+bd916660,J L PALMER,FFL Dealer,retail,2089656669,"104 S ROBINSON BLVD, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+d5c4ec9f,J ROSE GUNS,"Gun Store, FFL Dealer",retail,2085904100,"1153 E INSIGNIA DR, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e3e18ed7,JACKS AMMO LLC,FFL Dealer,retail,8474819779,"12780 ASHFIELD ST, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+3b4b20d6,JACKSON GUNWORKS LLC,"Gun Store, FFL Dealer",retail,2088809250,"4412 GUNSMOKE LANE, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+d86d6e29,"JENKINS, KENNETH LEE JR",Gun Manufacturer,retail,2083857053,"4125 S GEKELER LN UNIT 409, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e9198390,JON'S GUNS,"Gun Store, FFL Dealer",retail,2086391234,"936 N GLEN ASPEN WAY, STAR, ID",STAR,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+d918a990,Jerry Harshbarger Gunsmith,"Gunsmith, Gun Store",retail,N/A,"2838 East Black Canyon Hwy, Emmett, ID 83617",Emmett,Gem,,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+95cd11d6,Jon's Guns,"Gun Store, FFL Dealer",retail,N/A,"936 N Glen Aspen Way, Star, ID 83669",Star,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+bea3a5ee,K & L SPORT,FFL Dealer,retail,2082501209,"789 CANYON RD, MELBA, ID",MELBA,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+1a25aa13,KARI-ASHI FAMILY FARM,FFL Dealer,retail,2088591113,"28111 CEMETERY ROAD, MIDDLETON, ID",MIDDLETON,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+662d69bb,KEN'S PAWN AND JEWELRY,FFL Dealer,retail,2084669647,"608 12TH AVE S, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+5b02c546,KERBEROS INDUSTRIES LLC,FFL Dealer,retail,2082525418,"97 N VENICE ST, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+4c79212c,"KIDNEY, CALVIN E",FFL Dealer,retail,2089549395,"4519 YORGASON WAY, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+bc6585ef,KINCH ARMS,FFL Dealer,retail,2088995514,"20875 BLOSSOM HEIGHTS LANE, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+2845d08b,KINGFISHER SPORTING GOODS,FFL Dealer,retail,2083654889,"143 WEST MAIN ST, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+ed75770b,"KIT GROUP, LLC",Gun Manufacturer,retail,2089181401,"3210 EAST CHINDEN BLVD STE 128, EAGLE, ID",EAGLE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+559087e1,KODIAK FIREARMS,"Gun Store, FFL Dealer",retail,2089854911,"1910 W LOTUS PONDS CT, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+fc05b795,KRYPTEK OUTDOOR GROUP,FFL Dealer,retail,2089382266,"291 E SHORE DR, SUITE 150, EAGLE, ID",EAGLE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b2f2b59c,KUNA CERAKOTE AND LASER,Gun Manufacturer,retail,2068198640,"1189 W NANNYBERRY ST, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c12bd6df,Ken's Pawn & Jewelry,"Pawn Shop, Firearms",retail,N/A,"608 12th Ave S, Nampa, ID 83651",Nampa,Canyon,kenspawn.com,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+a8453833,Kinch Arms,"Gun Store, FFL Dealer",retail,N/A,"20875 Blossom Heights Lane, Caldwell, ID 83607",Caldwell,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+fbdc2054,Kingfisher Sporting Goods & Pawn,"Gun Store, Pawn, Sporting Goods",retail,208-365-9881,"143 West Main St, Emmett, ID 83617",Emmett,Gem,kingfishersportinggoods.com,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+a6ffdf72,LARRY'S SPORTING GOODS INC,FFL Dealer,retail,2084679201,"704 2ND ST S, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+7fb53c9e,LARRY'S SPORTS,FFL Dealer,retail,2085905328,"2139 N PLAZA RD., EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+911f8823,LASER BLADE ENGRAVING,Gun Manufacturer,retail,2089171776,"244 E WHITBECK STREET, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+1d90dabe,LICHTNING ARMS LLC,FFL Dealer,retail,2083371005,"26369 RIVERVIEW RD, WILDER, ID",WILDER,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+35a527b6,LIONS DEN LOCK & GUN,"Gun Store, FFL Dealer",retail,2089362713,"511 SOUTH VALLEY DR, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+20481388,LITTLE TRAPPER IDAHO INC,FFL Dealer,retail,2089963555,"11300 PEARL ROAD, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+cf687ee6,LITTLE TRAPPER INC,FFL Dealer,retail,2089963555,"11300 PEARL RD, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+ca8fec57,LONG RANGE OUTFITTERS,Gun Manufacturer,retail,2533631987,"17443 N FLAGSTAFF WAY, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c6bfe3eb,LONGBOW TACTICAL LLC,"Gun Store, FFL Dealer",retail,2087240595,"111 PILGRIM WAY, MIDDLETON, ID",MIDDLETON,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b28e7606,LORD ROCKWELL LLC,Gun Manufacturer,retail,6613940548,"1672 N WATERSHED AVE, STAR, ID",STAR,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a55b3b56,LOST COAST TACTICAL,"Gun Store, FFL Dealer",retail,4254639339,"1945 W HENDRICKS CT, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+af51be75,LOW MOUNTAIN,FFL Dealer,retail,2083719524,"1333 WEST HIGHWAY 52, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+aef453d2,LUCKY SHOT AMMUNITION & GUNS LLC,"Gun Store, FFL Dealer",retail,9518580597,"801 W PEIRSOL ST, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c54a3850,Larry's Sporting Goods,"Gun Store, Sporting Goods, FFL Dealer",retail,208-467-9201,"704 2nd St S, Nampa, ID 83651",Nampa,Canyon,larryssg.com,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+c2632b94,Larry's Sports,"Gun Store, Sporting Goods, FFL Dealer",retail,N/A,"2139 N Plaza Rd, Emmett, ID 83617",Emmett,Gem,,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+998c4f36,Legal Heat Concealed Carry Classes,Firearms Training,training,N/A,"Black's Creek Public Shooting Range, Kuna, ID",Kuna,Ada,legalheat.com,false,ID Enhanced License to Carry Concealed Weapons classes,2,weekly,docs/canyon_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+4afa8b90,Little Explorers 4-H Shooting Sports,Youth Shooting Club,retail,208-642-6036,"Boise, ID",Boise,Ada,uidaho.edu/extension/county/ada/4-h,false,"Youth Shooting Sports Competitions, Archery",2,weekly,docs/ada_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+2925441e,Little Trapper Idaho Inc,"Gun Importer, FFL Dealer",retail,N/A,"11300 Pearl Road, Emmett, ID 83617",Emmett,Gem,,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+e30a5d1a,Little Trapper Inc,"Gun Store, FFL Dealer",retail,208-996-3555,"11300 Pearl Road, Emmett, ID 83617",Emmett,Gem,littletrapper.com,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+36bd2e09,Longbow Tactical LLC,"Gun Store, FFL Dealer",retail,N/A,"111 Pilgrim Way, Middleton, ID 83644",Middleton,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+92c07278,Lord Rockwell LLC,Gun Manufacturer,retail,N/A,"1672 N Watershed Ave, Star, ID 83669",Star,Ada,,true,,3,monthly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.158Z
+7c608f7e,Lost Coast Tactical,Gun Manufacturer,retail,N/A,"1945 W Hendricks Ct, Meridian, ID 83646",Meridian,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+34e1cdcc,Low Mountain,"Gun Store, FFL Dealer",retail,N/A,"1333 West Highway 52, Emmett, ID 83617",Emmett,Gem,,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+c44ca422,Lucky Shot Ammunition & Guns LLC,"Gun Store, Ammunition, FFL Dealer",retail,N/A,"801 W Peirsol St, Nampa, ID 83686",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+78036f84,MAIN AUCTION,FFL Dealer,retail,2083448314,"2912 W MAIN ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+8cb007e6,MALKEV INDUSTRIES INC,Gun Manufacturer,retail,2088009550,"706 MEGAN COURT, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+662e5f59,"MCCRAY, JOHN CALVIN",FFL Dealer,retail,5412494565,"124 WEST IDAHO AVE, HOMEDALE, ID",HOMEDALE,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+658a4ed9,MCGRATH GUNSMITH SERVICES,"Gun Store, Gunsmith, FFL Dealer",retail,2087612335,"2736 MCKINNEY ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+1901f3da,MCM FIREARMS DELTA S,"Gun Store, FFL Dealer",retail,2084056000,"1251 N MIDLAND BLVD, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+6777eaea,"MELE, GERALD ANTHONY",FFL Dealer,retail,2082712527,"4549 W CEDAR GROVE DR, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+0aaeb254,MERIDIAN OPTIMIST JUNIOR RIFLE CLUB,FFL Dealer,retail,2089493763,"2093 N DUCK HAWK AVE, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+08dd1a57,MID STAR FIREARMS LLC,"Gun Store, FFL Dealer",retail,2085859922,"8390 HWY 44, MIDDLETON, ID",MIDDLETON,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a525f63d,MILLER FIREARMS,"Gun Store, FFL Dealer",retail,2088596591,"7419 GREEN ACRES DR, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a5d47e1d,MINTURN AND CO LLC,FFL Dealer,retail,2084404379,"6380 SOUTH PEPPERTREE AVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+ddf4e0d0,MIZZ BEE HAVEN,FFL Dealer,retail,2084195003,"1305 2ND ST S SUITE 140, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+1d72bd01,"MODERN MINUTEMAN DEFENSE, LLC",Gun Manufacturer,retail,8882232646,"6154 N MEEKER PLACE SUITE 125, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+833bd062,"MOMENTOUS ARMORY, LLC","Gun Store, FFL Dealer",retail,2088007413,"5953 N MITCHUM AVE, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+7e559af0,"MOORE, KENNETH RAY, JR",FFL Dealer,retail,2086304949,"41 S BALTIC PLACE #100, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+29dd2bf5,MRM LLC,Gun Importer,retail,N/A,"12525 Aliso Creek St, Star, ID 83669",Star,Ada,,true,,3,monthly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.158Z
+deb6965c,"MRM, LLC",FFL Dealer,retail,2089956888,"12525 ALISO CREEK ST, STAR, ID",STAR,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+4105d003,MT ARARAT DESIGN INC,FFL Dealer,retail,4062533134,"2614 W JAYTON DR, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+49b33541,MUDU SPORTS,FFL Dealer,retail,7143257120,"2715 ASPEN FALLS AVE, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+419baacf,MURPHYS LAW GUNS & AMMO LLC,"Gun Store, FFL Dealer",retail,2089014169,"16950 RIMROCK LN, MURPHY, ID",MURPHY,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+3e335d9d,"McCray, John Calvin","Gun Store, FFL Dealer",retail,N/A,"124 West Idaho Ave, Homedale, ID 83628",Homedale,Owyhee,,true,,2,weekly,docs/owyhee_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+8d5b25d4,Midstar Firearms LLC,"Gun Store, Gunsmith, FFL Dealer",retail,208-585-9922,"8390 Highway 44, Middleton, ID 83644",Middleton,Canyon,midstar-firearms.com,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+7e7a472b,Mudu Sports,"Gun Store, FFL Dealer",retail,N/A,"2715 Aspen Falls Ave, Caldwell, ID 83605",Caldwell,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+33becedb,Murphys Law Guns & Ammo LLC,"Gun Store, FFL Dealer",retail,208-901-4169,"16950 Rimrock Ln, Murphy, ID 83650",Murphy,Owyhee,,true,,2,weekly,docs/owyhee_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+65fc82e8,NAMASTE ARMS LLC,Gun Manufacturer,retail,2089493058,"6510 W FAIRVIEW AVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+f6e320ab,NELSON GUNSMITHING,"Gun Store, Gunsmith, FFL Dealer",retail,9864004867,"1830 AIRPORT WAY, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+21102ba7,NEMO ARMS,Gun Manufacturer,retail,2084611213,"1906 SMEED PKWY, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+7df51434,NEMO ARMS INC,FFL Dealer,retail,2084611213,"1906 SMEED PKWY, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+63145bba,NORTH WEST PRECISION RIFLES,FFL Dealer,retail,2088991424,"2215 WYOMING AVE, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+958eb365,NORTHWEST CONCEALED CARRY OUTFITTERS,FFL Dealer,retail,2089493763,"2093 N DUCK HAWK AVE, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+f3cc4c27,NORTHWEST GUN SUPPLY,"Gun Store, FFL Dealer",retail,2085050130,"12338 RANCHVIEW DR, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+040e4b0b,"NORTHWEST GUN SUPPLY, NGS","Gun Store, FFL Dealer",retail,2085050130,"12338 RANCHVIEW DR, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+2d3c98de,Nampa Public Shooting Range,Public Shooting Range,ranges,208-465-8400,"222 W Railroad St, Nampa, ID 83651",Nampa,Canyon,idfg.idaho.gov/shoot/nampa,false,"Open year round, diverse shooting sports",1,daily,docs/canyon_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+a6ca438a,Nampa Rod & Gun Club,"Shooting Club, Public Range",ranges,N/A,"15053 Bennett Rd, Nampa, ID 83687",Nampa,Canyon,nragc.com,false,"Annual range cleanup, general shooting",2,weekly,docs/canyon_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+8c408faa,Nemo Arms,"Gun Manufacturer, FFL Dealer",retail,208-442-4308,"1906 Smeed Pkwy, Caldwell, ID 83605",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+e4208d47,Nemo Arms Inc,"Gun Manufacturer, FFL Dealer",retail,208-467-6366,"1906 Smeed Pkwy, Caldwell, ID 83605",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+e993bd44,North West Precision Rifles,"Gun Store, Gunsmith, FFL Dealer",retail,N/A,"2215 Wyoming Ave, Caldwell, ID 83605",Caldwell,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+1ba70a12,Northwest Gun Supply,"Gun Store, Manufacturer, AK Specialist",retail,208-505-0130,"12338 Ranchview Dr, Nampa, ID 83686",Nampa,Canyon,northwestgunsupply.com,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+d106e32e,OLD ARMS OF IDAHO LLC,FFL Dealer,retail,2086026027,"6128 W FAIRVIEW AVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+9f369fbe,OMG TACTICAL ARMORY,"Gun Store, FFL Dealer",retail,8053047931,"11674 W COLLINA VISTA DRIVE, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+fb50afc8,ONWARD CONSULTING CORP,Gun Manufacturer,retail,7342444149,"7225 BUTTE RD, SWEET, ID",SWEET,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+85aff004,OPS ALLIANCE,FFL Dealer,retail,8772239065,"200 N 23RD STREET, SUITE 201, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+848314c0,OUTERIMPACT INC,Gun Manufacturer,retail,2089491122,"107 E 46TH ST SUITE 112 AND 113, GARDEN CITY, ID",GARDEN CITY,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+00859acc,OUTLET ARMS LLC,FFL Dealer,retail,2088990150,"5165 HOWARTH LN, MARSING, ID",MARSING,Owyhee,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+24b84d9b,OVERLAND ARMAMENT INC,Gun Manufacturer,retail,2086720558,"7103 W OVERLAND RD, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+3485edfa,OWYHEE SHOOTERS SUPPLY,FFL Dealer,retail,2083188292,"3822  PRESTON AVE, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+65d9aded,Old Arms of Idaho,"Gun Store, Gunsmith, FFL Dealer",retail,208-602-6027,"6128 Fairview Ave, Boise, ID 83704",Boise,Ada,oldarmsofidaho.com,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+28aaf37a,Orion Armament,"Gun Store, Gunsmith, FFL Dealer",retail,208-369-9671,"247 N Kay Ave, Kuna, ID 83634",Kuna,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.158Z
+77d61430,Overland Armament Inc,"Gun Store, FFL Dealer",retail,208-672-0558,"7103 W Overland Rd, Boise, ID 83709",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+e874255e,Owyhee Shooters Supply,"Gun Store, FFL Dealer",retail,N/A,"3822 Preston Ave, Caldwell, ID 83605",Caldwell,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+201f60a8,P2P FFL LLC,FFL Dealer,retail,2089181608,"16970 MEADOW LN, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+37451e40,PATRIOT PAWN & GUN LLC,"Gun Store, FFL Dealer",retail,2082867300,"1977 N WILLOW GLEN PLACE, STAR, ID",STAR,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b7104f2b,PAWN 1,FFL Dealer,retail,2084887319,"3393 N TEN MILE ROAD, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+99c79ac5,PAWN 1,FFL Dealer,retail,2083180088,"724 12TH AVE S, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+fb4b5a40,PAWN 1,FFL Dealer,retail,2082588900,"1450 S MAPLE GROVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+21cbbc66,PAWN 1,FFL Dealer,retail,2083197296,"11405 W FAIRVIEW, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+40c78bc6,PAWN 1 INC,FFL Dealer,retail,2086580472,"919 N ORCHARD ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+51203644,PAWN 1 INCORPORATED,FFL Dealer,retail,2087955255,"5724  CLEVELAND BLVD, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e7bc22d4,PEW BUYERS CLUB,Gun Manufacturer,retail,2083330591,"507 E 47TH SUITE 100-2A, GARDEN CITY, ID",GARDEN CITY,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+cdd89be3,PICKETT AUCTION SERVICE LLC,FFL Dealer,retail,2084551419,"20217 HWY 95, WILDER, ID",WILDER,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+0e6668a8,POA PRECISION RIFLES,Gun Manufacturer,retail,2083372328,"24891 HOSKINS RD, WILDER, ID",WILDER,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+be614349,POLLOCK HIGHLAND SOURCE,FFL Dealer,retail,2088309760,"7676 S MISTYGLEN AVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+9884100b,PORTER GUNSHOP,"Gun Store, FFL Dealer",retail,9862704495,"7959 OWYHEE VIEW LN, MELBA, ID",MELBA,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+04fc1b5e,PRACTICAL SHOOTERS SRVC,FFL Dealer,retail,2084663017,"6918 CENTER LANE, BUILDING B, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+21f0a5f5,PRECISION ENTERPRISE LLC,FFL Dealer,retail,2089416613,"4616 N JENNIFER ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+f3c686aa,"PREH, INC",FFL Dealer,retail,2084620123,"2733 WARM SPRINGS AVENUE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c30cf44f,"PRIMARY WEAPONS SYSTEMS, PWS",Gun Manufacturer,retail,2083445217,"255 N STEELHEAD WAY, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+7237c071,PROJECT 47 ARMS,Gun Manufacturer,retail,2082843305,"1604 E PLAZA LOOP, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b43d92e7,Parma Rod & Gun Club,Shooting Club,retail,+1-208-850-7097,"1420 Boehm Ln, Parma, ID 83660",Parma,Payette,parmarng.org,false,,2,weekly,docs/payette_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+d660f877,Patriot Pawn & Gun LLC,"Pawn Shop, Firearms, FFL Dealer",retail,208-286-7300,"1977 N Willow Glen Place, Star, ID 83669",Star,Ada,patriotpawnandgun.com,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.158Z
+ef4f3926,Pawn 1 Inc,"Pawn Shop, Firearms",retail,509-487-8888,"11405 W Fairview, Boise, ID 83713",Boise,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.156Z
+69fd55b3,Pawn 1 Incorporated,"Pawn Shop, Firearms",retail,N/A,"5724 Cleveland Blvd, Caldwell, ID 83605",Caldwell,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+6c95b5c7,Payette Clay Shoot Competition,Shooting Event,retail,N/A,"Payette River Ranch, 3700 Highway 52, Payette, ID 83661",Payette,Payette,allevents.in,false,,2,weekly,docs/payette_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.163Z
+eefd8a2f,Payette County Courthouse Concealed Weapons Class,"Firearms Training, CCW Class",training,208-642-6006,"1130 3rd Avenue North, Payette, ID 83661",Payette,Payette,payettecounty.org,false,,2,weekly,docs/payette_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.163Z
+da47a911,Payette River Ranch,Shooting Range/Event Location,ranges,N/A,"3700 Highway 52, Payette, ID 83661",Payette,Payette,,false,,3,monthly,docs/payette_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+5d07b722,Ponderosa Sports & Mercantile,"Gun Store, Sporting Goods",retail,208-793-3121,"6854 Highway 55, Horseshoe Bend, ID 83629",Horseshoe Bend,Payette,ponderosasports.com,true,,2,weekly,docs/payette_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+4063018f,Primary Weapons Systems,Gun Manufacturer,retail,208-344-5217,"255 N Steelhead Way, Boise, ID 83704",Boise,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+760a1594,Prism Ranch,"Training School, Shooting Range, Firearm Classes",ranges,208-514-9503,"5150 SE 2nd Avenue, New Plymouth, ID 83655",New Plymouth,Payette,prismprotectionservices.com,false,,2,weekly,docs/payette_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+84b21920,Q's Combat & Tactical LLC,"Gun Store, FFL Dealer",retail,702-332-7261,"14 S Main St #102, Payette, ID 83661",Payette,Payette,,true,,2,weekly,docs/payette_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+93d28bb0,QPR PRECISION GUNSMITHING LLC,"Gun Store, Gunsmith, FFL Dealer",retail,2084650071,"311 2ND ST S STE B, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+5f715c94,QUANTUM TACTICAL,"Gun Store, FFL Dealer",retail,2088598001,"3107 CRESCENT RIM DR., BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+9b19c502,R K GUNSMITHING,"Gun Store, Gunsmith, FFL Dealer",retail,2086024076,"16089 N FRANKLIN BLVD UNIT #4, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+06e849c7,R2ARM,"Gun Store, FFL Dealer",retail,N/A,"16760 Idaho Center Blvd, Nampa, ID 83687",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+53013800,R2ARM,FFL Dealer,retail,2088692925,"16760 IDAHO CENTER BLVD, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b8350070,RAINWATER SPORTING ARMS,FFL Dealer,retail,6616994950,"145 SO MARKO LANE, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b9866f9f,RAYS GUNS & AMMO,"Gun Store, FFL Dealer",retail,2088701712,"1969 W RED FEATHER WAY, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+2a468f2c,RED DAWN RESISTANCE/METAL GEAR SILENT,Gun Manufacturer,retail,9869106421,"36 N ECHOHAWK #102, EAGLE, ID",EAGLE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+5b1185c0,RED STATE GUNSMITHING,"Gun Store, Gunsmith, FFL Dealer",retail,6083060593,"11600 E GATFIELD ROAD, MONTOUR, ID",MONTOUR,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c76293a3,REFLEX TACTICAL IDAHO LLC,"Gun Store, FFL Dealer",retail,2084638584,"824 12TH AVENUE SOUTH, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+968baf82,RESOLUTION ARMS LLC,Gun Manufacturer,retail,2083405866,"3718 E NEWBY ST #110, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+147f3251,"RIDENER, JEREMY",Gun Manufacturer,retail,2089410600,"13405 WILLIS RD, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+3d955741,RIDLEY'S FAMILY MARKETS,FFL Dealer,retail,2083244633,"145 SO PLUMMER WAY, STAR, ID",STAR,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a57ff79d,RIDLEY'S FAMILY MARKETS,FFL Dealer,retail,2089225586,"1403 NORTH MERIDIAN RD, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+58368016,RIDLEYS FAMILY MARKETS,FFL Dealer,retail,2085853043,"430 EAST MAIN ST, MIDDLETON, ID",MIDDLETON,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c01811dc,RIFLE GURU,FFL Dealer,retail,2084841791,"5282 W WHITE HILLS DR, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+513ddbe4,RIFLECRAFTERS,FFL Dealer,retail,2088889454,"227 E FAIRVIEW AVE, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+70d0a0af,RK Gunsmithing,"Gunsmith, Gun Store, FFL Dealer",retail,208-467-3075,"201 N Kings Rd Ste 101, Nampa, ID 83687",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+53a032a6,RM FIREARMS,"Gun Store, FFL Dealer",retail,2085502123,"7555 PLEASANT VIEW DR, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+dfa04afc,RM Firearms,"Gun Store, FFL Dealer",retail,N/A,"7555 Pleasant View Dr, Caldwell, ID 83607",Caldwell,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+178f9d9f,ROBERTSON FIREARM SERVICES,FFL Dealer,retail,2088590756,"5909 W. POPLAR CIR, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+0e63bc8b,ROCKY MOUNTAIN TRUE VALUE,FFL Dealer,retail,2083653135,"132 SOUTH WASHINGTON AVE, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+6a19e309,ROD FIVECOAT AUCTIONS,FFL Dealer,retail,2083377856,"3523 US-95, HOMEDALE, ID",HOMEDALE,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+28211a95,ROHNERTS,FFL Dealer,retail,2084826717,"19618 FISH RD, WILDER, ID",WILDER,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+6d0bf1a4,ROWLEY ENTERPRISES,FFL Dealer,retail,5035694417,"3108 LAUREL WAY, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+faee2e61,RVSM LLC,FFL Dealer,retail,9165480607,"9988 W SANDY RIVER DR, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+de97ba2f,Rays Guns & Ammo,"Gun Store, FFL Dealer",retail,N/A,"1969 W Red Feather Way, Meridian, ID 83646",Meridian,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+8b4c4927,Reflex Tactical Idaho,Gun Store,retail,N/A,"824 12th Ave S, Nampa, ID 83651",Nampa,Canyon,reflextacticalidaho.com,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+2b45fab2,Ridley's Family Markets,"Gun Store, Grocery Store",retail,N/A,"145 So Plummer Way, Star, ID 83669",Star,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.158Z
+93cdbe35,Ridley's Family Markets,"Gun Store, Grocery Store",retail,N/A,"430 East Main St, Middleton, ID 83644",Middleton,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+fe60c638,Rifle Guru,"Gun Store, Gunsmith, FFL Dealer",retail,N/A,"5282 W White Hills Dr, Boise, ID 83714",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.153Z
+1e25253e,Rock Creek Ranch,Private Training Range,ranges,208-996-3555,"11300 Pearl Rd, Emmett, ID 83617",Emmett,Gem,littletrapper.com/rock-creek-ranch,false,Private Training Events,2,weekly,docs/gem_county_clubs_ranges_schools_events.csv,2025-08-18T23:40:42.162Z
+1fc99006,Rocky Mountain Gun N Pawn,"Gun Store, Pawn",retail,208-365-4044,"829 S Washington Ave, Emmett, ID 83617",Emmett,Gem,,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+e264ab79,Rocky Mountain True Value,"Gun Store, FFL Dealer",retail,N/A,"132 South Washington Ave, Emmett, ID 83617",Emmett,Gem,,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+2e1c6249,Rod Fivecoat Auctions,"Gun Store, FFL Dealer, Auction House",retail,N/A,"3523 US-95, Homedale, ID 83628",Homedale,Owyhee,,true,,2,weekly,docs/owyhee_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+2bdf36d2,Rowley Enterprises,"Gun Store, FFL Dealer",retail,N/A,"3108 Laurel Way, Emmett, ID 83617",Emmett,Gem,,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+b0fc959c,S R M PERFORMANCE PRODUCTS,FFL Dealer,retail,2088879395,"4375 A WEST MCMILLAN, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+511ce346,SADAN ENTERPRISES,Gun Manufacturer,retail,2089894036,"5210 OASIS ROAD, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e929cd9a,SAMS LOCKER,FFL Dealer,retail,2084878003,"10250 W FAIRVIEW AVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c6045b72,SAO,Gun Manufacturer,retail,2088665711,"4100 DEARBORN STREET, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+7024133a,SAPPHIRE METAL FINISHING INC,Gun Manufacturer,retail,2086144050,"4115 CHALLENGER WAY, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+d06f9893,SAWTOOTH MUNITIONS,Gun Manufacturer,retail,2083711519,"14130 BLACK HAWK LANE, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+13eda3a7,SAWTOOTH SHOOTING SUPPLY LLC,FFL Dealer,retail,2087811411,"7880 SWEET-OLA HWY, SWEET, ID",SWEET,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+51d64e50,"SCAPEGOAT INDUSTRIES, SGI",Gun Manufacturer,retail,2088697259,"2512 EAST SADIE DRIVE, EAGLE, ID",EAGLE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+ef1e9a4a,SCHAFFERS CORNER,FFL Dealer,retail,2084959093,"16900 ROPING HORSE LANE, MURPHY, ID",MURPHY,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+65bbb082,SCHEELS ALL SPORTS INC,FFL Dealer,retail,2083477005,"700 S WAYFINDER AVE, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c9660c2e,SCS ARMS,Gun Manufacturer,retail,2089944867,"1551 HEARTHSTONE AVE, MIDDLETON, ID",MIDDLETON,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a7cdc329,SCS Arms,Gun Manufacturer,retail,N/A,"1551 Hearthstone Ave, Middleton, ID 83644",Middleton,Canyon,,true,,3,monthly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+357836d0,SEMPER FIREARMS,"Gun Store, FFL Dealer",retail,2088919489,"1005 CENTER AVE, PAYETTE, ID",PAYETTE,Payette,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+3c633963,"SIDE PIECE ARMS, LLC",FFL Dealer,retail,5204884161,"201 W ASH ST, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+aaa50723,SIERRA TACTICAL & GUNSMITHING,"Gun Store, Gunsmith, FFL Dealer",retail,2086974454,"2624 E LAWTON DRIVE, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+58225fb8,SILENCER CENTRAL,FFL Dealer,retail,8887818778,"327 W LIL ROBERT CT, KUNA, ID",KUNA,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a10984f1,SILVERLINE FILMS LLC,FFL Dealer,retail,2084814710,"3978W ASPEN CREEK CT, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+57741902,SMITTY ARMS,Gun Manufacturer,retail,2083188340,"2712 SPARKS AVENUE, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+793f7fda,SMOKEYS SHOP,FFL Dealer,retail,2083420626,"371 RIM VIEW DR, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b91b695c,SNAKE RIVER GUNWORKS,"Gun Store, FFL Dealer",retail,2082214528,"8537 WEST SMALL CREEK DRIVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+df2e848b,SNAKE RIVER PRECISION LLC,FFL Dealer,retail,2084126470,"14377 W BATTENBERG DR, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a08c6141,SNAKE RIVER RIFLEWORKS,Gun Manufacturer,retail,2084210648,"13930 S PIANO AVE, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+03633189,SO SIMPLY EDGY,FFL Dealer,retail,2082503664,"17633 N SCOUT AVE, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+54593392,SOLAR TACTICAL,"Gun Store, FFL Dealer",retail,5105515070,"7396 HIGHWAY 44, STAR, ID",STAR,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+21c0e595,"SPAR TACTICAL, LLC","Gun Store, FFL Dealer",retail,2089419477,"1811 E SPINNAKER CT, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+06385adf,SPARTAN PRECISION RIFLES,Gun Manufacturer,retail,4084519850,"4018 E LINDEN ST # 103, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+102ba6fd,SPORTSMAN'S WAREHOUSE 104,FFL Dealer,retail,2088843000,"3797 EAST FAIRVIEW AVE, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+f16a64b9,SRG ARMAMENT,Gun Manufacturer,retail,2082015679,"106 HAWTHORNE AVE, NEW PLYMOUTH, ID",NEW PLYMOUTH,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+0e59005e,SRG Armament,"Gun Manufacturer, FFL",retail,N/A,"106 Hawthorne Ave, New Plymouth, ID 83655",New Plymouth,Payette,,true,,3,monthly,docs/payette_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+55fb474a,SRM ARMS,Gun Manufacturer,retail,2088879395,"4375-A WEST MCMILLAN, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+17a16bab,STEVE'S SHOOTIN' SHACK,FFL Dealer,retail,2087613031,"201 5TH ST, WILDER, ID",WILDER,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+3a7bc83e,STIGLITZ FIREARMS LLC,"Gun Store, FFL Dealer",retail,6023014482,"5109 DANVILLE ST, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+1c820aee,STINGER-DEFENSE,Gun Manufacturer,retail,2089953208,"1320 SMITH AVE, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+64e8f059,STINGERWORX,Gun Manufacturer,retail,2087131154,"6924 W PETRIE ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+cf012c9c,STOCKPILE DEFENSE LLC,Gun Manufacturer,retail,2088073877,"10178 W FAIRVIEW AVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+08ebe39a,SURESHOT PRECISION RIFLES LLC,FFL Dealer,retail,2088304844,"1710 S CURTIS RD, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+3f571d75,SURPLUS DEFENSE LLC,FFL Dealer,retail,2082192920,"1305 W TACOLA ST, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+183585a6,"SVOBODA, WILLIAM LOUIS",FFL Dealer,retail,2094046835,"18289 N PHLOX WAY, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+deebea2a,SWIFT FIREARMS,"Gun Store, FFL Dealer",retail,2088632284,"7500 S HIDDEN VALLEY DRIVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+f6915f30,Sawtooth Munitions,Gun Manufacturer,retail,N/A,"14130 Black Hawk Lane, Caldwell, ID 83607",Caldwell,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+0fc5628e,Schaffers Corner,"Gun Store, FFL Dealer",retail,N/A,"16900 Roping Horse Lane, Murphy, ID 83650",Murphy,Owyhee,,true,,2,weekly,docs/owyhee_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+ba876446,Scheels All Sports Inc,"Gun Store, Sporting Goods",retail,N/A,"700 S Wayfinder Ave, Meridian, ID 83642",Meridian,Ada,scheels.com,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+98cb4a9d,Semper Firearms,"Gun Store, FFL Dealer",retail,208-891-9489,"1005 Center Ave, Payette, ID 83661",Payette,Payette,veriforcetactical.com/ffl-store-locator/semper-firearms-payette/,true,,2,weekly,docs/payette_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+cebeedba,Shop Black Rifle,"Gun Store, Online Retailer",retail,208-450-3044,Boise Area,Boise,Ada,shopblackrifle.com,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+efcb3fff,Sierra Tactical & Gunsmithing,"Gun Store, Gunsmith, FFL Dealer",retail,N/A,"2624 E Lawton Drive, Meridian, ID 83642",Meridian,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+67b3bf5f,Silverline Films LLC,"Gun Store, FFL Dealer",retail,N/A,"3978 W Aspen Creek Ct, Meridian, ID 83642",Meridian,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+ed44414b,Snake River Rifleworks,"Gun Store, Gunsmith, FFL Dealer",retail,N/A,"13930 S Piano Ave, Nampa, ID 83651",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+7a669933,Solar Tactical,Gun Manufacturer,retail,N/A,"7396 Highway 44, Star, ID 83669",Star,Ada,,true,,3,monthly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.158Z
+23449312,Sportsman's Warehouse #103,"Gun Store, Sporting Goods",retail,208-672-7900,"8109 W Franklin Rd, Boise, ID 83709",Boise,Ada,sportsmans.com,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.156Z
+735ebf52,Sportsman's Warehouse #104,"Gun Store, Sporting Goods",retail,208-884-3000,"3797 E Fairview Ave, Meridian, ID 83642",Meridian,Ada,sportsmans.com,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+498fda7c,Stiglitz Firearms LLC,Gun Manufacturer,retail,N/A,"5109 Danville St, Caldwell, ID 83605",Caldwell,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+8aefb03d,Stinger-Defense,Gun Manufacturer,retail,N/A,"1320 Smith Ave, Nampa, ID 83651",Nampa,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+ca07002e,Stockpile Defense LLC,"Gun Store, Gunsmith, FFL Dealer",retail,208-322-4867,"10178 W Fairview Ave, Boise, ID 83704",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.156Z
+b99dca91,TACTICAL SOLUTIONS,"Gun Store, FFL Dealer",retail,2083339901,"2772 S VICTORY VIEW WAY, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+3f7d2fda,TALON CERAKOTE LLC,Gun Manufacturer,retail,2084014245,"6038 S BINKY PL, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+068956eb,TERMINATOR,Gun Manufacturer,retail,2094043825,"15076 PLUM RD, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+49224444,THE BAGMAKER,FFL Dealer,retail,2089386086,"1075 S ANCONA AVE, EAGLE, ID",EAGLE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e7b4e9fe,THE BLACK POWDER HUNTER,FFL Dealer,retail,2088660325,"6323 WEST BARON LN, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+72857990,THE DEPOT,Gun Manufacturer,retail,2089656666,"19180 HWY 78, MURPHY, ID",MURPHY,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+343d19ac,THE FOOT SOLDIER MILITARY ANTIQUES,FFL Dealer,retail,2088534381,"597 E RIVERCHASE WAY, EAGLE, ID",EAGLE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+4f3d9260,THE GUN TAILOR LLC,"Gun Store, FFL Dealer",retail,2082842986,"1994 E FRANKLIN, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+d468c82e,THE OUTDOORSMAN,FFL Dealer,retail,5418893135,"739 S 12TH ST, PAYETTE, ID",PAYETTE,Payette,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+3674cd3c,"THE TARLETON GROUP, LLC",Gun Manufacturer,retail,4102519143,"7821 W MCMULLEN ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+4cce1adb,TIBERIUS SUPPLY GROUP LLC,FFL Dealer,retail,2083712190,"2648 E LAWTON DR, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+69ba5e8c,TIFFANY ENTERPRISE,Gun Manufacturer,retail,2086314953,"4100 DEARBORN STREET, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+f74a6979,"TIFFANY, SEAN",FFL Dealer,retail,2086314953,"4100 DEERBORN ST, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e973abcd,"TISM TACTICAL INDUSTRIES, LLC","Gun Store, FFL Dealer",retail,2085198650,"6715 W YOKE ST, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+06c40ab7,TRADITIONAL GUNSMITHING BY CA WINKLE LLC,"Gun Store, Gunsmith, FFL Dealer",retail,2084771839,"25250 LANSING LN, MIDDLETON, ID",MIDDLETON,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+cc016e1d,TREASURE VALLEY PAWN LLC,FFL Dealer,retail,2087896550,"6513 CLEVELAND BIRD STE 101, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+7c946bc8,TRIGGERMAN SPORTS LLC,FFL Dealer,retail,2088708847,"10490 W POPPY ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+587026cf,Tactical Solutions Inc,"Gun Manufacturer, Gun Store",retail,208-333-9901,"2181 Commerce Ave, Boise, ID 83705",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+cca1d2ab,Terminator,Gun Manufacturer,retail,N/A,"15076 Plum Rd, Caldwell, ID 83607",Caldwell,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+2b8309ba,The Outdoorsman,"Gun Store, FFL Dealer",retail,541-889-3135,"739 S 12th St, Payette, ID 83661",Payette,Payette,,true,,2,weekly,docs/payette_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+44079554,Tiffany Enterprise,Gun Manufacturer,retail,N/A,"4100 Dearborn Street, Caldwell, ID 83605",Caldwell,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+b903f802,Tiffany Guns Zebra 12,"Gun Store, FFL Dealer",retail,208-461-6911,"Nampa, ID",Nampa,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+3af62c18,Tiger Defense,"Gun Store, FFL Dealer",retail,N/A,"36 Echohawk Ln, Suite 102, Eagle, ID 83616",Eagle,Ada,tigerdefenseinc.com,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.158Z
+d489476a,Traditional Gunsmithing by CA Winkle LLC,"Gunsmith, FFL Dealer",retail,N/A,"25250 Lansing Ln, Middleton, ID 83644",Middleton,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+8ccc6b5d,Treasure Valley Pawn LLC,"Pawn Shop, Firearms",retail,N/A,"6513 Cleveland Blvd Ste 101, Caldwell, ID 83607",Caldwell,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+a2de0d96,UNDERGROUND GUNS,"Gun Store, FFL Dealer",retail,2087245577,"6126 W STATE ST #308, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e87c68fc,UP IN ARMS ARMORY,"Gun Store, FFL Dealer",retail,2089573818,"1997 WEST IDAHO BLVD, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+68f90472,Up In Arms Armory,Gun Manufacturer,retail,N/A,"1997 West Idaho Blvd, Emmett, ID 83617",Emmett,Gem,,true,,3,monthly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+aa5c2f4d,VELOCITY GUN SALES,"Gun Store, FFL Dealer",retail,2088903715,"6128 W FAIRVIEW AVE UNIT 1M-1, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+793e9bb2,VENOM TACTICAL,"Gun Store, FFL Dealer",retail,2089943858,"1728 E DEERHILL ST, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+eae1049b,VERIFORCE TACTICAL,"Gun Store, FFL Dealer",retail,8889126486,"3315 KINGS LN #1, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+9ca79bfe,VETERANS FIREARMS,"Gun Store, FFL Dealer",retail,2085906341,"533 W PALMER DR, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+7b13f80d,VINTOVKA USA LLC,Gun Manufacturer,retail,2083405422,"6128 W FAIRVIEW AVE UNIT 1M-7, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+6b0090cf,VISTA PAWN,FFL Dealer,retail,2083423352,"503 S VISTA AVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+076b7b67,VISTA PAWN STATE ST,FFL Dealer,retail,2083784920,"6961 W STATE ST, GARDEN CITY, ID",GARDEN CITY,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+2a12eeea,VLADIMIR ARMS LLC,Gun Manufacturer,retail,7605331720,"2219 NORTH CURTIS ROAD, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+ce3ec34a,Venom Tactical LLC,Gunsmith,services,N/A,"1728 E Deerhill Dr, Meridian, ID 83642",Meridian,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.157Z
+c0a60f57,Veriforce Tactical,Gun Manufacturer,retail,N/A,"3315 Kings Ln #1, Emmett, ID 83617",Emmett,Gem,,true,,3,monthly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+4eacbc37,Vigilante Guns and Ammo,"Gun Store, FFL Dealer",retail,208-495-9855,"Melba, ID",Melba,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+41c29eb0,Vista Pawn Nampa,"Pawn Shop, Firearms",retail,N/A,"130 Caldwell Blvd, Nampa, ID 83651",Nampa,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.158Z
+bd01e232,"WALKER TACTICAL FIREARMS, LLC","Gun Store, FFL Dealer",retail,2088691508,"1547 S BOULDER VIEW LANE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b0edab57,WALKER WINCHESTERS,Gun Manufacturer,retail,2083659439,"506 N WASHINGTON AVE, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+9e250ed9,WALMART #2508,FFL Dealer,retail,2083219077,"8300 WEST OVERLAND RD, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c2032d43,WALMART #2780,FFL Dealer,retail,2084550066,"5108 EAST CLEVELAND BLVD, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+770fb7bf,WALMART #2781,FFL Dealer,retail,2084675047,"2100 12TH AVE RD, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a97125a5,WALMART #2862,FFL Dealer,retail,2083737908,"4051 EAST FAIRVIEW AVE, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+05af0d0f,WALMART #3093,FFL Dealer,retail,2089176902,"795 W OVERLAND RD, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+48fc14a8,WALMART #3739,FFL Dealer,retail,2084616481,"5875 E FRANKLIN RD, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+e303967e,WALMART #5841,FFL Dealer,retail,2089823045,"5001 N TEN MILE RD, MERIDIAN, ID",MERIDIAN,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+befb964c,"WATCHDOG ARMORY, LLC","Gun Store, FFL Dealer",retail,2087414040,"10201 PAYETTE HEIGHTS RD, PAYETTE, ID",PAYETTE,Payette,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+4a9ef242,"WEAVER, JAMES A",Gun Manufacturer,retail,2088591140,"2102 S HERVEY ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+b3f6f10f,"WEEKS, LINDA MARIE",FFL Dealer,retail,2084846787,"6004 S PIERRE WAY, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a87801c9,WESTBOUND CUSTOM FIREARMS,"Gun Store, FFL Dealer",retail,2087613683,"11939 MUSKET DRIVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+038d1a45,WHITE DOG ARMS / WHITE DOG AMMO,Gun Manufacturer,retail,2089184647,"2899 S CHARLOTTE AVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+67a94292,WILD THANG FARMS,FFL Dealer,retail,2088691616,"3150 FULLER RD, EMMETT, ID",EMMETT,Gem,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+d8bf7dd1,WILDCAT OUTFITTERS,FFL Dealer,retail,2087819034,"8571 QUAIL HOLLOW DRIVE, MIDDLETON, ID",MIDDLETON,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+06da9236,WILKINSON ARMS,Gun Manufacturer,retail,2084954958,"14754 MURPHY FLAT ROAD, MURPHY, ID",MURPHY,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+18a82b2e,"WILLIAM ROGERS, NP-C",FFL Dealer,retail,2088714548,"1148 S BLANCA AVE, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a362df98,"WILSON, MATTHEW LEE",FFL Dealer,retail,2082723627,"1598 CANYON RD S, MELBA, ID",MELBA,Unknown,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+cbb3aae1,WMD TECH LLC,FFL Dealer,retail,8669638324,"5116 W EMERALD ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a37e017f,"WOLF, ALEC DANIEL",FFL Dealer,retail,3102799939,"13684 N SAGE GROUSE PL, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+68f473b3,"WORKLAND, PAUL E",FFL Dealer,retail,2088700015,"2810 W IDAHO, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+1f82c18c,WORKMAN OUTFITTERS,FFL Dealer,retail,2083425479,"1008 VISTA, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+ed3ade5e,Walker Tactical Firearms LLC,"Gun Store, FFL Dealer",retail,208-869-1508,"1547 S Boulder View Ln, Boise, ID 83712",Boise,Ada,,true,,1,daily,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.155Z
+33246a09,Walker Winchesters,Gun Manufacturer,retail,N/A,"506 N Washington Ave, Emmett, ID 83617",Emmett,Gem,,true,,3,monthly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+780b0068,Walmart #2780,"Gun Store, Sporting Goods",retail,N/A,"5108 East Cleveland Blvd, Caldwell, ID 83605",Caldwell,Canyon,walmart.com,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+50117c4d,"Watchdog Armory, LLC","Gun Store, Gunsmith, Manufacturer",retail,208-741-4040,"10201 Payette Heights Rd, Payette, ID 83661",Payette,Payette,watchdogarmory.net,true,,2,weekly,docs/payette_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+5b286f72,Wild Bills Sporting LLC,"Gun Store, FFL Dealer",retail,N/A,"2020 Blaine Street, Caldwell, ID 83605",Caldwell,Canyon,,true,,1,daily,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+bbae2bda,Wild Thang Farms,"Gun Store, FFL Dealer",retail,N/A,"3150 Fuller Rd, Emmett, ID 83617",Emmett,Gem,,true,,2,weekly,docs/gem_county_gun_stores_only.csv,2025-08-18T23:40:42.160Z
+55ae0e22,Wildcat Outfitters,"Gun Store, FFL Dealer",retail,N/A,"8571 Quail Hollow Drive, Middleton, ID 83644",Middleton,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+78311aaa,Wilkinson Arms LLC,"Gun Store, FFL Dealer",retail,N/A,"14754 Murphy Flat Road, Murphy, ID 83650",Murphy,Owyhee,,true,,2,weekly,docs/owyhee_county_gun_stores_only.csv,2025-08-18T23:40:42.161Z
+de1399a7,X COUNT FIREARMS & AMMUNITION,"Gun Store, FFL Dealer",retail,2086826887,"6224 W DONATELLA STREET, EAGLE, ID",EAGLE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+c23e1089,X RING ARMORY,"Gun Store, FFL Dealer",retail,2084844099,"17169 N FRANKLIN BLVD, NAMPA, ID",NAMPA,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+2d7d6c8b,X2 DEV GROUP,Gun Manufacturer,retail,3853871102,"420 N FIVE MILE RD, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+a3010ede,YANKTON BROTHERS LLC,Gun Manufacturer,retail,2086304455,"14010 GOODSON RD, CALDWELL, ID",CALDWELL,Canyon,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+0f665769,YEE BROS,FFL Dealer,retail,2083625238,"6756 W WRIGHT ST, BOISE, ID",BOISE,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+187c859f,YOUNGS FIREARMS,"Gun Store, FFL Dealer",retail,2089852995,"324 S WINSLOW BAY WAY, STAR, ID",STAR,Ada,,True,,2,weekly,commercial_ffls_treasure_valley.csv,2025-08-20T00:00:00.000Z
+172ad18a,Yankton Brothers LLC,Gun Manufacturer,retail,N/A,"14010 Goodson Rd, Caldwell, ID 83607",Caldwell,Canyon,,true,,2,weekly,docs/canyon_county_gun_stores_only.csv,2025-08-18T23:40:42.159Z
+b5787b96,Youngs Firearms,"Gun Store, FFL Dealer",retail,N/A,"324 S Winslow Bay Way, Star, ID 83669",Star,Ada,,true,,2,weekly,docs/ada_county_gun_stores_comprehensive.csv,2025-08-18T23:40:42.158Z

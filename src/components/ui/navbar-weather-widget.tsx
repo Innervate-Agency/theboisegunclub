@@ -47,28 +47,27 @@ export function NavbarWeatherWidget() {
   })
   const [isOpen, setIsOpen] = useState(false)
 
-  // Don't render if no data and still loading initially
+  // Don't render anything during initial loading
   if (!weatherData && isLoading) {
     return null
   }
 
-  // Simple error state
-  if (error && !weatherData) {
+  // Show error state if we have an error or no data
+  if (error || !weatherData) {
     return (
       <Button
         variant="ghost"
         size="sm"
         className="gap-xs text-muted-foreground hover:text-foreground"
         onClick={refreshWeather}
+        disabled={isLoading}
         title="Weather unavailable - Click to retry"
       >
-        <Warning className="h-4 w-4" />
-        <span className="hidden md:inline">Weather</span>
+        <Warning className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
+        <span className="hidden md:inline text-xs">Weather Error</span>
       </Button>
     )
   }
-
-  if (!weatherData) return null
 
   const getFireDangerColor = (level: string) => {
     switch (level) {

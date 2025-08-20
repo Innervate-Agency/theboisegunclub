@@ -101,20 +101,8 @@ async function fetchNWSWeatherData(location: any) {
   } catch (error) {
     console.error(`NWS API error for ${location.name}:`, error)
     
-    // Fallback to reasonable defaults if NWS API fails
-    return {
-      locationName: location.name,
-      temperature: 72,
-      windSpeed: 5,
-      windDirection: 'W',
-      fireDanger: 'Moderate' as const,
-      accessStatus: 'Open' as const,
-      weatherIcon: 'partly-cloudy' as const,
-      lastUpdated: new Date().toISOString(),
-      alerts: ['Weather data temporarily unavailable'],
-      shortForecast: 'Conditions unavailable',
-      detailedForecast: 'Unable to fetch current weather conditions'
-    }
+    // DO NOT return fake data - return null to indicate failure
+    return null
   }
 }
 
@@ -131,9 +119,12 @@ export async function GET(request: NextRequest) {
     console.log(`Fetching NWS weather data for ${priorityLocations.length} locations...`)
     
     // Fetch live weather data from NWS API for each location
-    const weatherConditions = await Promise.all(
+    const weatherResults = await Promise.all(
       priorityLocations.map(location => fetchNWSWeatherData(location))
     )
+    
+    // Filter out null results (failed API calls)
+    const weatherConditions = weatherResults.filter(result => result !== null)
     
     return NextResponse.json({
       success: true,

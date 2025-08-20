@@ -71,14 +71,16 @@ export function WeatherHeroCard({
     )
   }
 
-  // Show error state with retry option
-  if (error && !weatherData) {
+  // Show error state with retry option for any error or missing data
+  if (error || !weatherData) {
     return (
       <Card className={`mica-card border-destructive/30 ${className}`}>
-        <CardContent className="p-lg text-center">
+        <CardContent className={`${compact ? "p-base" : "p-lg"} text-center`}>
           <Warning className="h-8 w-8 text-destructive mx-auto mb-sm" />
           <h3 className="font-rajdhani font-bold text-lg text-destructive mb-xs">Weather Unavailable</h3>
-          <p className="text-sm text-muted-foreground mb-base">Unable to fetch weather conditions</p>
+          <p className="text-sm text-muted-foreground mb-base">
+            {error || "Unable to fetch weather conditions"}
+          </p>
           <Button 
             size="sm" 
             variant="outline"
@@ -92,8 +94,6 @@ export function WeatherHeroCard({
       </Card>
     )
   }
-
-  if (!weatherData) return null
 
   const getFireDangerColor = (level: string) => {
     switch (level) {
