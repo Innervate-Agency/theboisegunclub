@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 import { Card } from "./card"
 import { Badge } from "./badge"
 import { Button } from "./button"
+import { SmartEventBadges } from "./smart-event-badges"
 // Heroicons - Updated from Phosphor for consistency
 import { 
   CalendarIcon as Calendar, 
@@ -17,8 +18,8 @@ import {
   StarIcon as Star,
   TrophyIcon as Trophy, 
   PlusCircleIcon as Target, 
-  StarIcon as Medal, 
-  TrophyIcon as Crown, 
+  SparklesIcon as Medal, 
+  GiftIcon as Crown, 
   TicketIcon as Ticket, 
   BoltIcon as Zap, 
   ShareIcon as Share, 
@@ -290,35 +291,23 @@ export function EventCard({
         
       </div>
       
-      {/* Tactical Price Badge - top right of main card (below hero) */}
-      {price && (
-        <div className="absolute top-36 right-sm z-20">
-          <div className="bg-nav-events text-white px-sm py-xs rounded-none border border-nav-events/30 shadow-sm">
-            <span className="font-rajdhani font-bold text-lg">
-              {price}
-            </span>
-          </div>
-        </div>
-      )}
-
       <div className="space-y-md">
         {/* Enhanced Header with Better Typography Hierarchy */}
         <div className="space-y-sm">
-          {/* Event Badges - at the top */}
-          <div className="flex flex-wrap gap-xs">
-            <Badge 
-              variant={badgeVariant}
-              size="sm"
-            >
-              {eventType}
-            </Badge>
-            <Badge 
-              variant={featured ? "events-featured" : "secondary"}
-              size="sm"
-            >
-              {featured ? "Featured" : time.includes("AM") || time.includes("PM") ? "Day Event" : "Multi-Day"}
-            </Badge>
-          </div>
+          {/* Enhanced Price Display - top left */}
+          {price && (
+            <div className="flex justify-start">
+              <span className="font-rajdhani font-bold text-2xl text-rusty-orange">
+                {price}
+                <span className="text-sm text-muted-foreground ml-1">
+                  {price.includes('$') && (eventType === 'Training' ? '/day' : 
+                   eventType === 'Competition' ? '/entry' : 
+                   eventType === 'Expo' ? '/ticket' : 
+                   '/event')}
+                </span>
+              </span>
+            </div>
+          )}
           
           <div className="space-y-0">
             <h2 className="font-rajdhani font-bold text-2xl text-card-foreground leading-tight line-clamp-2 group-hover:text-nav-events transition-colors duration-200">
@@ -334,6 +323,18 @@ export function EventCard({
         <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
           {description}
         </p>
+
+        {/* Smart Event Badges - below description */}
+        <SmartEventBadges
+          title={title}
+          eventType={eventType}
+          difficulty={difficulty}
+          featured={featured}
+          venue={venue}
+          price={price}
+          organizer={organizer}
+          description={description}
+        />
 
         {/* Redesigned Info Grid with Better Spacing */}
         <div className="space-y-sm bg-muted/30 p-sm rounded-xs">

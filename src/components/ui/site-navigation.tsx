@@ -9,6 +9,7 @@ import { Button } from "./button"
 import { MotionDiv } from '@/components/ui/optimized-motion'
 import { Menu, X } from 'lucide-react'
 import { AuthButton } from '@/components/auth/auth-button'
+import { NavbarWeatherWidget } from './navbar-weather-widget'
 import { useAuth } from '@/components/auth/auth-context'
 import { useTacticalTracker } from '@/hooks/useTacticalTracker'
 import { useKonamiCode } from '@/hooks/useKonamiCode'
@@ -523,6 +524,8 @@ export function SiteNavigation({
               </Button>
             )}
             
+            <NavbarWeatherWidget />
+            
             {customContent || (
               <AuthButton variant="forum-aware" showTrialButton={false} />
             )}
@@ -585,6 +588,7 @@ export function SiteNavigation({
             
             <div className="pt-lg mt-lg relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
               <div className="flex flex-col gap-sm">
+                <NavbarWeatherWidget />
                 <AuthButton variant="default" showTrialButton={false} className="flex-col items-stretch min-h-[44px]" />
               </div>
             </div>

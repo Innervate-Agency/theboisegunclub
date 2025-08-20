@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Badge } from './badge'
 import { 
   Thermometer, Wind, Flame, Shield, AlertTriangle, 
@@ -26,10 +26,58 @@ interface WeatherCondition {
 }
 
 interface WeatherConditionsTickerProps {
-  conditions: WeatherCondition[]
+  conditions?: WeatherCondition[]  // Made optional for backward compatibility
+  autoRefresh?: boolean   // Auto-refresh from API
+  refreshInterval?: number // Refresh interval in milliseconds
 }
 
-export function WeatherConditionsTicker({ conditions }: WeatherConditionsTickerProps) {
+export function WeatherConditionsTicker({ 
+  conditions: staticConditions, 
+  autoRefresh = true,
+  refreshInterval = 900000 // 15 minutes default (weather updates less frequently)
+}: WeatherConditionsTickerProps) {
+  const [liveConditions, setLiveConditions] = useState<WeatherCondition[]>(staticConditions || [])
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  // Fetch live weather conditions from API
+  const fetchLiveWeather = async () => {
+    if (!autoRefresh) return
+    
+    setIsLoading(true)
+    setError(null)
+    
+    try {
+      const response = await fetch('/api/tickers/weather?limit=6')
+      if (!response.ok) throw new Error('Failed to fetch weather conditions')
+      
+      const result = await response.json()
+      if (result.success && result.data) {
+        setLiveConditions(result.data)
+      } else {
+        throw new Error(result.error || 'Invalid response format')
+      }
+    } catch (err) {
+      console.error('WeatherConditionsTicker API error:', err)
+      setError(err instanceof Error ? err.message : 'Failed to load weather data')
+      // Keep existing conditions on error
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  // Initial fetch and auto-refresh setup
+  useEffect(() => {
+    if (autoRefresh) {
+      fetchLiveWeather()
+      const interval = setInterval(fetchLiveWeather, refreshInterval)
+      return () => clearInterval(interval)
+    }
+  }, [autoRefresh, refreshInterval])
+
+  // Use live conditions if available, fallback to static conditions
+  const conditions = liveConditions.length > 0 ? liveConditions : (staticConditions || [])
+  
   // Create extended array for continuous scroll
   const extendedConditions = [...conditions, ...conditions, ...conditions]
   
@@ -89,6 +137,16 @@ export function WeatherConditionsTicker({ conditions }: WeatherConditionsTickerP
             <span>LIVE CONDITIONS</span>
           </div>
         </div>
+
+        {/* Status indicator for live data */}
+        {autoRefresh && (
+          <div className="absolute right-sm top-2 z-20 flex items-center gap-xs">
+            <div className={`w-2 h-2 rounded-full ${isLoading ? 'bg-sandy-ochre animate-pulse' : error ? 'bg-rusty-orange' : 'bg-sagebrush-green'}`} />
+            <span className="text-xs text-muted-foreground font-medium">
+              {isLoading ? 'Updating...' : error ? 'Error' : 'Live'}
+            </span>
+          </div>
+        )}
 
         <div className="flex animate-scroll whitespace-nowrap py-base pl-48">
           {extendedConditions.map((condition, index) => (

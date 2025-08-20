@@ -17,6 +17,7 @@ import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
 import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { EventTicker } from '@/components/ui/event-ticker'
+import { DirectoryTicker } from '@/components/ui/directory-ticker'
 import { 
   BuildingStorefrontIcon as Storefront, ShieldCheckIcon as Shield, AdjustmentsHorizontalIcon as Target, 
   UsersIcon as Users, MapPinIcon as MapPin, StarIcon as Star, 
@@ -681,8 +682,8 @@ export function DirectoryPageStandardized() {
     <div className="min-h-screen bg-background">
       {heroContent}
       
-      {/* Events Ticker - Cross-promotion */}
-      <EventTicker events={tickerEvents} />
+      {/* Directory Ticker - Business Updates */}
+      <DirectoryTicker />
       
       {/* Search and Quick Tabs Section */}
       <section className="py-lg section-bg-directory-neutral border-b border-border/50">

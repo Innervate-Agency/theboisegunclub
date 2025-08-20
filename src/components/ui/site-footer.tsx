@@ -4,14 +4,23 @@ import * as React from 'react'
 import { usePathname } from 'next/navigation'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { FooterStats } from "@/components/ui/footer-stats"
-import { FooterNewsletter } from "@/components/ui/footer-newsletter"
+import { FooterSearchSubscribe } from "@/components/ui/footer-search-subscribe"
+import { FooterUserProfile } from "@/components/ui/footer-user-profile"
 import { BrassCounter } from "@/components/ui/brass-counter"
 import { Card } from "@/components/ui/card"
 import {
   MapPinIcon, PhoneIcon, EnvelopeIcon, GlobeAltIcon, ViewfinderCircleIcon, 
-  ShieldCheckIcon, UsersIcon, ChevronUpIcon, QuestionMarkCircleIcon, 
-  HeartIcon, CubeTransparentIcon, TicketIcon, BookOpenIcon, MapIcon, BuildingStorefrontIcon
+  ShieldCheckIcon, ChevronUpIcon, QuestionMarkCircleIcon, 
+  HeartIcon
+} from '@heroicons/react/24/outline'
+import { 
+  CubeTransparentIcon as Diamond, 
+  TicketIcon as Ticket,
+  IdentificationIcon as AddressBook,
+  PlusCircleIcon as Shield,
+  MapIcon as MapTrifold,
+  BanknotesIcon as Storefront,
+  ChatBubbleBottomCenterTextIcon as ForumUsers
 } from '@heroicons/react/24/outline'
 import { 
   DesertMesaSVG, BoiseFoothillsSVG, SouthBoiseDesertSVG, MountainPineSVG,
@@ -65,13 +74,13 @@ export function SiteFooter({
   }, [])
 
   const pageThemeMap = {
-    '/': { icon: CubeTransparentIcon, color: 'text-nav-home', accent: 'bg-nav-home' },
-    '/events': { icon: TicketIcon, color: 'text-nav-events', accent: 'bg-nav-events' },
-    '/directory': { icon: BookOpenIcon, color: 'text-nav-directory', accent: 'bg-nav-directory' },
-    '/armory': { icon: ShieldCheckIcon, color: 'text-nav-armory', accent: 'bg-nav-armory' },
-    '/intel': { icon: MapIcon, color: 'text-nav-intel', accent: 'bg-nav-intel' },
-    '/marketplace': { icon: BuildingStorefrontIcon, color: 'text-nav-marketplace', accent: 'bg-nav-marketplace' },
-    '/forums': { icon: UsersIcon, color: 'text-nav-forums', accent: 'bg-nav-forums' },
+    '/': { icon: Diamond, color: 'text-nav-home', accent: 'bg-nav-home' },
+    '/events': { icon: Ticket, color: 'text-nav-events', accent: 'bg-nav-events' },
+    '/directory': { icon: AddressBook, color: 'text-nav-directory', accent: 'bg-nav-directory' },
+    '/armory': { icon: Shield, color: 'text-nav-armory', accent: 'bg-nav-armory' },
+    '/intel': { icon: MapTrifold, color: 'text-nav-intel', accent: 'bg-nav-intel' },
+    '/marketplace': { icon: Storefront, color: 'text-nav-marketplace', accent: 'bg-nav-marketplace' },
+    '/forums': { icon: ForumUsers, color: 'text-nav-forums', accent: 'bg-nav-forums' },
   }
 
   const currentPageTheme = pageThemeMap[pathname as keyof typeof pageThemeMap] || pageThemeMap['/']
@@ -108,22 +117,10 @@ export function SiteFooter({
           <LandscapeComponent opacity={0.05} animated={true} />
           
           <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Newsletter and Navigation Section */}
+          {/* Search and Subscribe Section */}
           {showNewsletter && (
             <div className="py-20 border-b border-border relative z-10">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                
-                {/* Left Column: Stats */}
-                <div>
-                  <FooterStats />
-                </div>
-                
-                {/* Right Column: Newsletter and Search */}
-                <div>
-                  <FooterNewsletter />
-                </div>
-                
-              </div>
+              <FooterSearchSubscribe />
             </div>
           )}
           
@@ -185,12 +182,12 @@ export function SiteFooter({
                 </h4>
                 <ul className="space-y-0">
                   {[
-                    { name: "Business Directory", href: "/directory", icon: BookOpenIcon, color: "hover:text-nav-directory" },
-                    { name: "Events Calendar", href: "/events", icon: TicketIcon, color: "hover:text-nav-events" },
-                    { name: "Marketplace", href: "/marketplace", icon: BuildingStorefrontIcon, color: "hover:text-nav-marketplace" },
-                    { name: "The Armory", href: "/armory", icon: ShieldCheckIcon, color: "hover:text-nav-armory" },
-                    { name: "Training Hub", href: "/training", icon: ShieldCheckIcon, color: "hover:text-nav-armory" },
-                    { name: "Intel Center", href: "/intel", icon: MapIcon, color: "hover:text-nav-intel" }
+                    { name: "Business Directory", href: "/directory", icon: AddressBook, color: "hover:text-nav-directory" },
+                    { name: "Events Calendar", href: "/events", icon: Ticket, color: "hover:text-nav-events" },
+                    { name: "The Armory", href: "/armory", icon: Shield, color: "hover:text-nav-armory" },
+                    { name: "Intel Center", href: "/intel", icon: MapTrifold, color: "hover:text-nav-intel" },
+                    { name: "Marketplace", href: "/marketplace", icon: Storefront, color: "hover:text-nav-marketplace" },
+                    { name: "Forums", href: "/forums", icon: ForumUsers, color: "hover:text-nav-forums" }
                   ].map((link, index, array) => {
                     const Icon = link.icon
                     return (
@@ -212,66 +209,6 @@ export function SiteFooter({
                               )} 
                             />
                             <span>{link.name}</span>
-                          </a>
-                        </li>
-                        
-                        {/* Elegant divider between items (same as navbar) */}
-                        {index < array.length - 1 && (
-                          <li className="flex justify-center py-1">
-                            <div className="w-4 h-px mx-xs relative">
-                              <div className="absolute inset-0 h-px bg-muted-foreground/20" />
-                              <div className="absolute inset-0 h-px bg-card/30 translate-y-px" />
-                            </div>
-                          </li>
-                        )}
-                      </React.Fragment>
-                    )
-                  })}
-                </ul>
-              </Card>
-              
-              {/* Resources */}
-              <Card
-                variant="tactical"
-                tacticalTheme="armory"
-                showCategoryIcon={true}
-                category="training"
-                type="resources"
-                content="educational materials and guides"
-                className="p-md group tactical-worn"
-              >
-                <h4 className={cn("text-body-lg font-rajdhani font-bold mb-4", textColor)}>
-                  Resources
-                </h4>
-                <ul className="space-y-0">
-                  {[
-                    { name: "Firearms Training", href: "/training", icon: ShieldCheckIcon, color: "hover:text-nav-armory" },
-                    { name: "Safety Courses", href: "/training?type=safety", icon: ViewfinderCircleIcon, color: "hover:text-nav-armory" },
-                    { name: "Range Directory", href: "/directory?type=ranges", icon: MapPinIcon, color: "hover:text-nav-directory" },
-                    { name: "Guides & Articles", href: "/guides", icon: GlobeAltIcon, color: "hover:text-nav-intel" },
-                    { name: "Legal Resources", href: "/intel", icon: ShieldCheckIcon, color: "hover:text-nav-intel" },
-                    { name: "Equipment Reviews", href: "/armory", icon: UsersIcon, color: "hover:text-nav-armory" }
-                  ].map((resource, index, array) => {
-                    const Icon = resource.icon
-                    return (
-                      <React.Fragment key={resource.name}>
-                        <li>
-                          <a 
-                            href={resource.href}
-                            className={cn(
-                              "flex items-center gap-3 text-body-base transition-all duration-300 font-rajdhani group py-2", 
-                              mutedColor,
-                              resource.color
-                            )}
-                          >
-                            <Icon 
-                              className={cn(
-                                "h-5 w-5 transition-all duration-300",
-                                mutedColor,
-                                resource.color
-                              )} 
-                            />
-                            <span>{resource.name}</span>
                           </a>
                         </li>
                         
@@ -349,18 +286,28 @@ export function SiteFooter({
                   })}
                 </ul>
               </Card>
+              
+              {/* User Profile and Community */}
+              <Card
+                variant="tactical"
+                tacticalTheme="intel"
+                showCategoryIcon={true}
+                category="profile"
+                type="user"
+                content="user profile and community stats"
+                className="p-md group surface-base"
+              >
+                <FooterUserProfile />
+              </Card>
             </div>
           </div>
           
           {/* Bottom Bar */}
           <div className="border-t border-border py-lg">
             <div className="flex flex-col md:flex-row justify-between items-center gap-lg">
-              {/* Copyright with Brass Counter */}
-              <div className="flex flex-col sm:flex-row items-center gap-sm">
-                <div className={cn("text-body-base font-rajdhani font-medium", mutedColor)}>
-                  Copyright © 2025 - Boise Gun Collective, LLC - All rights reserved
-                </div>
-                <BrassCounter />
+              {/* Copyright */}
+              <div className={cn("text-body-base font-rajdhani font-medium", mutedColor)}>
+                Copyright © 2025 - Boise Gun Collective, LLC - All rights reserved
               </div>
               
               {/* Legal Links */}
@@ -368,7 +315,9 @@ export function SiteFooter({
                 {[
                   { name: "Privacy", href: "/privacy" },
                   { name: "Terms", href: "/terms" },
-                  { name: "Help", href: "/help" }
+                  { name: "Help", href: "/help" },
+                  { name: "Contact", href: "/contact" },
+                  { name: "Support", href: "/help" }
                 ].map((link, index) => (
                   <React.Fragment key={link.name}>
                     <a 
@@ -381,7 +330,7 @@ export function SiteFooter({
                     >
                       {link.name}
                     </a>
-                    {index < 2 && <span className="text-muted-foreground">•</span>}
+                    {index < 4 && <span className="text-muted-foreground">•</span>}
                   </React.Fragment>
                 ))}
               </div>

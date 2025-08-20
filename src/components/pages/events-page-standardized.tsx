@@ -16,6 +16,7 @@ import { EventsEmbers } from '@/components/ui/hero-events-embers'
 import { DirectoryStatsGrid } from '@/components/ui/directory-stats-grid'
 import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
 import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
+import { SidebarCalendar } from '@/components/ui/sidebar-calendar'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { 
   TicketIcon as Ticket, 
@@ -343,82 +344,39 @@ export function EventsPageStandardized() {
     <div className="min-h-screen bg-background">
       {heroContent}
       
-      {/* Events Ticker - Scrolling upcoming events */}
-      <EventTicker events={upcomingEvents.slice(0, 8).map(event => ({
-        title: event.title,
-        date: event.date,
-        location: event.location,
-        eventType: event.eventType,
-        price: event.price,
-        featured: event.featured
-      }))} />
+      {/* Events Ticker - Live upcoming events */}
+      <EventTicker />
       
-      {/* Search and Quick Tabs Section */}
-      <section className="py-lg section-bg-events-neutral border-b border-border/50">
-        <div className="container mx-auto max-w-site px-md">
-          {/* Search Bar */}
-          <div className="mb-lg">
-            <div className="relative max-w-2xl">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input
-                placeholder="Search events, locations, or organizers..."
-                className="pl-10 h-12 text-body-base shadow-elevated"
-                value={filters.searchQuery}
-                onChange={(e) => filters.setSearchQuery(e.target.value)}
-              />
-            </div>
-          </div>
-
-          {/* Quick Filter Tabs */}
-          <div className="flex flex-wrap gap-xs">
-            {[
-              { id: 'all', label: 'All Events', count: upcomingEvents.length, icon: Calendar },
-              { id: 'competitions', label: 'Competitions', count: upcomingEvents.filter(e => e.eventType === 'Competition').length, icon: Trophy },
-              { id: 'training', label: 'Training', count: upcomingEvents.filter(e => e.eventType === 'Training').length, icon: Target },
-              { id: 'expos', label: 'Expos', count: upcomingEvents.filter(e => e.eventType === 'Expo').length, icon: Crown },
-              { id: 'charity', label: 'Charity', count: upcomingEvents.filter(e => e.eventType === 'Charity').length, icon: Star },
-              { id: 'social', label: 'Social', count: upcomingEvents.filter(e => e.eventType === 'Social').length, icon: Users },
-              { id: 'featured', label: 'Featured', count: upcomingEvents.filter(e => e.featured).length }
-            ].map((tab) => (
-              <Button
-                key={tab.id}
-                variant={filters.activeTab === tab.id ? "default" : "outline"}
-                size="sm"
-                onClick={() => filters.setActiveTab(tab.id)}
-                className="gap-xs font-rajdhani shadow-none rounded-xs"
-              >
-                {tab.icon && React.createElement(tab.icon, { 
-                  weight: "bold", 
-                  className: "size-3" 
-                })}
-                {tab.label}
-                {tab.count && (
-                  <Badge variant="secondary" size="sm" className="ml-xs">
-                    {tab.count}
-                  </Badge>
-                )}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Main Content Area */}
       <section className="py-4xl bg-background/50">
         <div className="w-full px-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl">
           <div className="flex gap-2xl max-w-[1920px] mx-auto">
             
-            {/* Left Sidebar - Modern Filters (Desktop) */}
+            {/* Left Sidebar - Filters and Calendar (Desktop) */}
             <aside className="hidden lg:block">
-              <ModernFilterSidebar
-                sections={filterSections}
-                selectedFilters={filters.selectedFilters}
-                onFilterChange={handleFilterChange}
-                onClearSection={handleClearSection}
-                onClearAll={handleClearAll}
-                totalResults={filters.totalResults}
-                filteredResults={filters.filteredResults}
-              />
+              <div className="space-y-6">
+                {/* Modern Filter Sidebar */}
+                <ModernFilterSidebar
+                  sections={filterSections}
+                  selectedFilters={filters.selectedFilters}
+                  onFilterChange={handleFilterChange}
+                  onClearSection={handleClearSection}
+                  onClearAll={handleClearAll}
+                  totalResults={filters.totalResults}
+                  filteredResults={filters.filteredResults}
+                />
+                
+                {/* Compact Sidebar Calendar */}
+                <SidebarCalendar 
+                  events={upcomingEvents.map(event => ({
+                    title: event.title,
+                    date: event.date,
+                    eventType: event.eventType,
+                    featured: event.featured
+                  }))}
+                />
+              </div>
             </aside>
 
             {/* Mobile Filter Sidebar */}
@@ -437,6 +395,52 @@ export function EventsPageStandardized() {
             
             {/* Main Content */}
             <main className="flex-1 min-w-0">
+              {/* Search and Category Controls */}
+              <div className="mb-xl space-y-lg">
+                {/* Search Bar */}
+                <div className="relative max-w-2xl">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    placeholder="Search events, locations, or organizers..."
+                    className="pl-10 h-12 text-body-base shadow-none"
+                    value={filters.searchQuery}
+                    onChange={(e) => filters.setSearchQuery(e.target.value)}
+                  />
+                </div>
+
+                {/* Quick Filter Tabs */}
+                <div className="flex flex-wrap gap-xs">
+                  {[
+                    { id: 'all', label: 'All Events', count: upcomingEvents.length, icon: Calendar },
+                    { id: 'competitions', label: 'Competitions', count: upcomingEvents.filter(e => e.eventType === 'Competition').length, icon: Trophy },
+                    { id: 'training', label: 'Training', count: upcomingEvents.filter(e => e.eventType === 'Training').length, icon: Target },
+                    { id: 'expos', label: 'Expos', count: upcomingEvents.filter(e => e.eventType === 'Expo').length, icon: Crown },
+                    { id: 'charity', label: 'Charity', count: upcomingEvents.filter(e => e.eventType === 'Charity').length, icon: Star },
+                    { id: 'social', label: 'Social', count: upcomingEvents.filter(e => e.eventType === 'Social').length, icon: Users },
+                    { id: 'featured', label: 'Featured', count: upcomingEvents.filter(e => e.featured).length }
+                  ].map((tab) => (
+                    <Button
+                      key={tab.id}
+                      variant={filters.activeTab === tab.id ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => filters.setActiveTab(tab.id)}
+                      className="gap-xs font-rajdhani shadow-none rounded-xs"
+                    >
+                      {tab.icon && React.createElement(tab.icon, { 
+                        weight: "bold", 
+                        className: "size-3" 
+                      })}
+                      {tab.label}
+                      {tab.count && (
+                        <Badge variant="secondary" size="sm" className="ml-xs">
+                          {tab.count}
+                        </Badge>
+                      )}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+
               {/* Results Header with Controls */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base sm:gap-xl mb-xl sm:mb-2xl lg:mb-3xl">
                 <div>
