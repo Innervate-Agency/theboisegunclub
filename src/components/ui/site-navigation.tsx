@@ -403,35 +403,12 @@ export function SiteNavigation({
               return (
                 <React.Fragment key={item.href}>
                   <div 
-                    className="relative px-micro py-micro"
+                    className="relative px-micro py-0"
                     onMouseEnter={() => setHoveredPath(item.href)}
                     onMouseLeave={() => setHoveredPath(pathname)}
                   >
-                    {/* Magic Line - Individual per item but shared layoutId */}
-                    {shouldShowLine && (
-                      <MotionDiv
-                        layoutId="navbar-magic-line"
-                        className={`absolute bottom-0 left-0 right-0 h-1 rounded-full ${getMagicLineColor(item.color)} shadow-sm`}
-                        style={{
-                          // Fallback inline styles to ensure visibility
-                          backgroundColor: `var(--${item.color})`,
-                          minHeight: '4px' // Ensure minimum visibility
-                        }}
-                        initial={{ opacity: 0, scaleX: 0 }}
-                        animate={{ opacity: 1, scaleX: 1 }}
-                        exit={{ opacity: 0, scaleX: 0 }}
-                        transition={{
-                          type: "spring",
-                          bounce: 0.25,
-                          stiffness: 130,
-                          damping: 9,
-                          duration: 0.3,
-                        }}
-                      />
-                    )}
-                    
-                    {/* Tactical Equipment Case Highlight */}
-                    {isHovered && (
+                    {/* Tactical Equipment Case Highlight - Always visible on hover/active */}
+                    {(isHovered || isActive) && (
                       <MotionDiv
                         className="absolute inset-0"
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -439,32 +416,21 @@ export function SiteNavigation({
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.15, ease: "easeOut" }}
                       >
-                        {/* Main case border - thinner for navbar */}
-                        <div className={`absolute inset-0 rounded-sm border ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-70`} />
-                        
-                        {/* Tactical corner brackets - thinner for navbar */}
+                        {/* Document-style Tactical Brackets */}
+                        {/* Top Left - Standard square bracket */}
                         <div className={`absolute top-0 left-0 w-2 h-2 border-l border-t ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
+                        
+                        {/* Top Right - Standard bracket with filled square accent */}
                         <div className={`absolute top-0 right-0 w-2 h-2 border-r border-t ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
+                        
+                        {/* Filled square accent in top-right corner */}
+                        <div className={`absolute top-0.5 right-0.5 w-1 h-1 ${getMagicLineColor(item.color)} opacity-80`} />
+                        
+                        {/* Bottom Left - Standard square bracket */}
                         <div className={`absolute bottom-0 left-0 w-2 h-2 border-l border-b ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
                         
-                        {/* Bottom-right corner with document cutout */}
-                        <div className={`absolute bottom-0 right-0 w-2 h-2 opacity-90`}>
-                          <div 
-                            className={`w-full h-full border ${getMagicLineColor(item.color).replace('bg-', 'border-')}`}
-                            style={{
-                              clipPath: 'polygon(0 0, 60% 0, 100% 40%, 100% 100%, 0 100%)'
-                            }}
-                          />
-                        </div>
-                        
-                        {/* Tactical latches/clasps */}
-                        <div className={`absolute top-1 right-1 w-1 h-1 ${getMagicLineColor(item.color)} rounded-full opacity-80`} />
-                        <div className={`absolute bottom-1 left-1 w-1 h-1 ${getMagicLineColor(item.color)} rounded-full opacity-80`} />
-                        
-                        {/* Western document texture - subtle paper grain effect */}
-                        <div className="absolute inset-1 opacity-10">
-                          <div className="w-full h-full bg-gradient-to-br from-transparent via-current/5 to-transparent" />
-                        </div>
+                        {/* Bottom Right - Standard square bracket */}
+                        <div className={`absolute bottom-0 right-0 w-2 h-2 border-r border-b ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
                       </MotionDiv>
                     )}
                     

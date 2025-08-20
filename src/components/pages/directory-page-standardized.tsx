@@ -480,7 +480,7 @@ export function DirectoryPageStandardized() {
     }
   })
 
-  // Modern filter sidebar configuration
+  // Modern filter sidebar configuration - Updated with tactical icons
   const filterSections = [
     {
       id: 'category',
@@ -488,12 +488,12 @@ export function DirectoryPageStandardized() {
       maxVisible: 6,
       collapsible: false,
       options: [
-        { id: 'range', label: 'Shooting Ranges', icon: Target, count: directoryListings.filter(b => b.category === 'Range').length, color: 'text-nav-directory' },
-        { id: 'gunsmith', label: 'Gunsmiths', icon: Wrench, count: directoryListings.filter(b => b.category === 'Gunsmith').length, color: 'text-nav-armory' },
-        { id: 'training', label: 'Training', icon: GraduationCap, count: directoryListings.filter(b => b.category === 'Training').length, color: 'text-nav-training' },
-        { id: 'retail', label: 'Retail', icon: ShoppingBag, count: directoryListings.filter(b => b.category === 'Retail').length, color: 'text-nav-marketplace' },
-        { id: 'club', label: 'Clubs', icon: Users, count: directoryListings.filter(b => b.category === 'Club').length, color: 'text-nav-forums' },
-        { id: 'service', label: 'Services', icon: Shield, count: directoryListings.filter(b => b.category === 'Service').length, color: 'text-sagebrush-green' }
+        { id: 'range', label: 'Shooting Ranges', icon: ShootingRangeIcon, count: directoryListings.filter(b => b.category === 'Range').length, color: 'text-nav-armory' },
+        { id: 'gunsmith', label: 'Gunsmiths', icon: GunsmithIcon, count: directoryListings.filter(b => b.category === 'Gunsmith').length, color: 'text-nav-intel' },
+        { id: 'training', label: 'Training', icon: TrainingIcon, count: directoryListings.filter(b => b.category === 'Training').length, color: 'text-nav-events' },
+        { id: 'retail', label: 'Retail', icon: TacticalRetailIcon, count: directoryListings.filter(b => b.category === 'Retail').length, color: 'text-nav-marketplace' },
+        { id: 'club', label: 'Clubs', icon: ClubIcon, count: directoryListings.filter(b => b.category === 'Club').length, color: 'text-nav-forums' },
+        { id: 'service', label: 'Services', icon: TacticalServicesIcon, count: directoryListings.filter(b => b.category === 'Service').length, color: 'text-nav-directory' }
       ]
     },
     {
@@ -502,10 +502,10 @@ export function DirectoryPageStandardized() {
       maxVisible: 4,
       collapsible: false,
       options: [
-        { id: 'gold', label: 'Gold Partners', icon: Crown, count: directoryListings.filter(b => b.tier === 'gold').length, color: 'text-sandy-ochre' },
-        { id: 'silver', label: 'Silver Members', icon: Star, count: directoryListings.filter(b => b.tier === 'silver').length, color: 'text-slate-gray' },
-        { id: 'bronze', label: 'Bronze Members', icon: Trophy, count: directoryListings.filter(b => b.tier === 'bronze').length, color: 'text-rusty-orange' },
-        { id: 'standard', label: 'Standard', icon: CheckCircle, count: directoryListings.filter(b => b.tier === 'standard').length }
+        { id: 'gold', label: 'Gold Partners', icon: GoldPartnerIcon, count: directoryListings.filter(b => b.tier === 'gold').length, color: 'text-weathered-gold' },
+        { id: 'silver', label: 'Silver Members', icon: SilverMemberIcon, count: directoryListings.filter(b => b.tier === 'silver').length, color: 'text-warm-stone' },
+        { id: 'bronze', label: 'Bronze Members', icon: CopperMemberIcon, count: directoryListings.filter(b => b.tier === 'bronze').length, color: 'text-sandy-ochre' },
+        { id: 'standard', label: 'Standard', icon: StandardMemberIcon, count: directoryListings.filter(b => b.tier === 'standard').length, color: 'text-slate-blue' }
       ]
     },
     {
@@ -582,15 +582,15 @@ export function DirectoryPageStandardized() {
             {/* Badges below title/subtitle */}
             <div className="flex flex-wrap gap-xs">
               <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-                <Target className="h-4 w-4 mr-xs" />
+                <ShootingRangeIcon className="h-4 w-4 mr-xs" />
                 Ranges
               </Badge>
               <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-                <Wrench className="h-4 w-4 mr-xs" />
+                <GunsmithIcon className="h-4 w-4 mr-xs" />
                 Gunsmiths
               </Badge>
               <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-                <ShoppingBag className="h-4 w-4 mr-xs" />
+                <TacticalRetailIcon className="h-4 w-4 mr-xs" />
                 Retail
               </Badge>
             </div>
@@ -623,8 +623,8 @@ export function DirectoryPageStandardized() {
                     
                     <CardContent className="p-sm relative z-10">
                       <div className="flex items-center justify-between mb-base">
-                        <Badge className="bg-nav-directory/20 text-nav-directory border-nav-directory/30 font-rajdhani font-bold text-[10px]">
-                          <Crown className="h-3 w-3 mr-xs" />
+                        <Badge className="bg-weathered-gold/20 text-weathered-gold border-weathered-gold/30 font-rajdhani font-bold text-[10px]">
+                          <GoldPartnerIcon className="h-3 w-3 mr-xs" />
                           GOLD PARTNER
                         </Badge>
                         <div className="flex items-center gap-xs text-xs text-muted-foreground">
@@ -717,11 +717,11 @@ export function DirectoryPageStandardized() {
           <div className="flex flex-wrap gap-xs">
             {[
               { id: 'all', label: 'All Businesses', count: directoryListings.length, icon: Storefront },
-              { id: 'ranges', label: 'Ranges', count: directoryListings.filter(b => b.category === 'Range').length, icon: Target },
-              { id: 'gunsmiths', label: 'Gunsmiths', count: directoryListings.filter(b => b.category === 'Gunsmith').length, icon: Wrench },
-              { id: 'training', label: 'Training', count: directoryListings.filter(b => b.category === 'Training').length, icon: GraduationCap },
-              { id: 'retail', label: 'Retail', count: directoryListings.filter(b => b.category === 'Retail').length, icon: ShoppingBag },
-              { id: 'clubs', label: 'Clubs', count: directoryListings.filter(b => b.category === 'Club').length, icon: Users },
+              { id: 'ranges', label: 'Ranges', count: directoryListings.filter(b => b.category === 'Range').length, icon: ShootingRangeIcon },
+              { id: 'gunsmiths', label: 'Gunsmiths', count: directoryListings.filter(b => b.category === 'Gunsmith').length, icon: GunsmithIcon },
+              { id: 'training', label: 'Training', count: directoryListings.filter(b => b.category === 'Training').length, icon: TrainingIcon },
+              { id: 'retail', label: 'Retail', count: directoryListings.filter(b => b.category === 'Retail').length, icon: TacticalRetailIcon },
+              { id: 'clubs', label: 'Clubs', count: directoryListings.filter(b => b.category === 'Club').length, icon: ClubIcon },
               { id: 'verified', label: 'Verified', count: directoryListings.filter(b => b.isVerified).length, icon: CheckCircle },
               { id: 'featured', label: 'Featured', count: directoryListings.filter(b => b.featured).length }
             ].map((tab) => (
