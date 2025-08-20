@@ -394,13 +394,13 @@ export function DirectoryPageStandardized() {
     }
   ]
 
-  // Directory category stats
+  // Directory category stats - Updated with tactical icons
   const directoryCategoryStats = [
-    { icon: Target, title: "Shooting Ranges", value: directoryListings.filter(b => b.category === 'Range').length.toString(), subtitle: "Indoor & outdoor", color: "text-nav-directory" },
-    { icon: Wrench, title: "Gunsmiths", value: directoryListings.filter(b => b.category === 'Gunsmith').length.toString(), subtitle: "Custom & repair", color: "text-nav-directory" },
-    { icon: ShoppingBag, title: "Retail Stores", value: directoryListings.filter(b => b.category === 'Retail').length.toString(), subtitle: "FFLs & dealers", color: "text-nav-directory" },
-    { icon: GraduationCap, title: "Training Centers", value: directoryListings.filter(b => b.category === 'Training').length.toString(), subtitle: "Classes & courses", color: "text-nav-directory" },
-    { icon: Users, title: "Clubs & Orgs", value: directoryListings.filter(b => b.category === 'Club').length.toString(), subtitle: "Competition teams", color: "text-nav-directory" },
+    { icon: ShootingRangeIcon, title: "Shooting Ranges", value: directoryListings.filter(b => b.category === 'Range').length.toString(), subtitle: "Indoor & outdoor", color: "text-nav-armory" },
+    { icon: GunsmithIcon, title: "Gunsmiths", value: directoryListings.filter(b => b.category === 'Gunsmith').length.toString(), subtitle: "Custom & repair", color: "text-nav-intel" },
+    { icon: TacticalRetailIcon, title: "Retail Stores", value: directoryListings.filter(b => b.category === 'Retail').length.toString(), subtitle: "FFLs & dealers", color: "text-nav-marketplace" },
+    { icon: TrainingIcon, title: "Training Centers", value: directoryListings.filter(b => b.category === 'Training').length.toString(), subtitle: "Classes & courses", color: "text-nav-events" },
+    { icon: ClubIcon, title: "Clubs & Orgs", value: directoryListings.filter(b => b.category === 'Club').length.toString(), subtitle: "Competition teams", color: "text-nav-forums" },
     { icon: Storefront, title: "Total Businesses", value: directoryListings.length.toString(), subtitle: "Verified listings", color: "text-nav-directory" }
   ]
 
