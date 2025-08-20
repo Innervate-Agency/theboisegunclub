@@ -3,6 +3,8 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ReviewsDisplay } from '@/components/ui/reviews-display'
+import { EventEngagementWidget } from '@/components/ui/event-engagement-widget'
+import { EventPreparationSection } from '@/components/ui/event-preparation-section'
 import MdxContent from '@/components/molecules/MdxContent'
 import { 
   Calendar, Clock, Eye, Heart, MessageCircle, User, Tag,
@@ -153,6 +155,25 @@ interface ArticleContentProps {
     readTime: number
     category: string
   }>
+  eventEngagement?: {
+    eventId: string
+    eventTitle: string
+    eventDate: string
+    eventLocation: string
+    eventUrl: string
+    registrationUrl?: string
+    capacity: number
+    registeredCount: number
+    price: string
+    featured?: boolean
+    eventType: string
+  }
+  eventPreparation?: {
+    agenda: string[]
+    whatToBring: string[]
+    requirements: string[]
+    tags: string[]
+  }
 }
 
 export function ArticleContent({ 
@@ -163,7 +184,9 @@ export function ArticleContent({
   views = 0, 
   likes = 0, 
   comments = 0,
-  relatedArticles = []
+  relatedArticles = [],
+  eventEngagement,
+  eventPreparation
 }: ArticleContentProps) {
   const heroContent = (
     <>
@@ -215,58 +238,96 @@ export function ArticleContent({
   )
 
   const mainContent = (
-    <article>
-      <div className="prose prose-lg dark:prose-invert max-w-none
-        prose-headings:font-rajdhani prose-headings:font-bold
-        prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
-        prose-p:text-body-base prose-p:leading-relaxed
-        prose-a:text-rusty-orange prose-a:no-underline hover:prose-a:underline
-        prose-strong:text-foreground prose-strong:font-semibold
-        prose-blockquote:border-l-4 prose-blockquote:border-rusty-orange/30
-        prose-blockquote:bg-muted/50 prose-blockquote:px-base prose-blockquote:py-sm
-        prose-code:bg-muted prose-code:px-xs prose-code:py-micro prose-code:rounded-xs
-        prose-table:border-collapse prose-th:border prose-th:border-border
-        prose-td:border prose-td:border-border prose-th:bg-muted/50
-        prose-th:px-base prose-th:py-sm prose-td:px-base prose-td:py-sm">
-        <MdxContent source={content} />
-      </div>
-    </article>
+    <div className="space-y-2xl">
+      <article>
+        <div className="prose prose-lg dark:prose-invert max-w-none
+          prose-headings:font-rajdhani prose-headings:font-bold
+          prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
+          prose-p:text-body-base prose-p:leading-relaxed
+          prose-a:text-rusty-orange prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-foreground prose-strong:font-semibold
+          prose-blockquote:border-l-4 prose-blockquote:border-rusty-orange/30
+          prose-blockquote:bg-muted/50 prose-blockquote:px-base prose-blockquote:py-sm
+          prose-code:bg-muted prose-code:px-xs prose-code:py-micro prose-code:rounded-xs
+          prose-table:border-collapse prose-th:border prose-th:border-border
+          prose-td:border prose-td:border-border prose-th:bg-muted/50
+          prose-th:px-base prose-th:py-sm prose-td:px-base prose-td:py-sm">
+          <MdxContent source={content} />
+        </div>
+      </article>
+      
+      {/* Event Preparation Section */}
+      {eventPreparation && (
+        <EventPreparationSection
+          agenda={eventPreparation.agenda}
+          whatToBring={eventPreparation.whatToBring}
+          requirements={eventPreparation.requirements}
+          tags={eventPreparation.tags}
+        />
+      )}
+    </div>
   )
 
-  const sidebarSections = [
-    {
-      id: 'author',
-      title: 'About the Author',
+  const sidebarSections = []
+
+  // Add event engagement widget for events
+  if (eventEngagement) {
+    sidebarSections.push({
+      id: 'event-engagement',
+      title: 'Event Registration',
       content: (
-        <div className="space-y-base">
-          <div className="flex items-center gap-base">
-            {author.avatar ? (
-              <Image
-                src={author.avatar}
-                alt={author.name}
-                width={48}
-                height={48}
-                className="rounded-full"
-              />
-            ) : (
-              <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
-                <User className="h-6 w-6 text-muted-foreground" />
-              </div>
-            )}
-            <div>
-              <div className="font-medium text-body-sm">{author.name}</div>
-              {author.title && (
-                <div className="text-xs text-muted-foreground">{author.title}</div>
-              )}
+        <EventEngagementWidget
+          eventId={eventEngagement.eventId}
+          eventTitle={eventEngagement.eventTitle}
+          eventDate={eventEngagement.eventDate}
+          eventLocation={eventEngagement.eventLocation}
+          eventUrl={eventEngagement.eventUrl}
+          registrationUrl={eventEngagement.registrationUrl}
+          capacity={eventEngagement.capacity}
+          registeredCount={eventEngagement.registeredCount}
+          price={eventEngagement.price}
+          featured={eventEngagement.featured}
+          eventType={eventEngagement.eventType}
+          className="shadow-none border-0 bg-transparent"
+        />
+      ),
+      className: 'p-0' // Remove padding from the card wrapper
+    })
+  }
+
+  // Add author section
+  sidebarSections.push({
+    id: 'author',
+    title: 'About the Author',
+    content: (
+      <div className="space-y-base">
+        <div className="flex items-center gap-base">
+          {author.avatar ? (
+            <Image
+              src={author.avatar}
+              alt={author.name}
+              width={48}
+              height={48}
+              className="rounded-full"
+            />
+          ) : (
+            <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
+              <User className="h-6 w-6 text-muted-foreground" />
             </div>
-          </div>
-          {author.bio && (
-            <p className="text-body-sm text-muted-foreground">{author.bio}</p>
           )}
+          <div>
+            <div className="font-medium text-body-sm">{author.name}</div>
+            {author.title && (
+              <div className="text-xs text-muted-foreground">{author.title}</div>
+            )}
+          </div>
         </div>
-      )
-    }
-  ]
+        {author.bio && (
+          <p className="text-body-sm text-muted-foreground">{author.bio}</p>
+        )}
+      </div>
+    )
+  })
 
   if (relatedArticles.length > 0) {
     sidebarSections.push({

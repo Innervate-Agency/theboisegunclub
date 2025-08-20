@@ -48,12 +48,12 @@ export function BrassCounter({ className, showProgress = false }: BrassCounterPr
             )}
             {stats.achievements.includes('marksman') && (
               <div title="Marksman - 50+ page visits">
-                <Target className="size-3 text-rusty-orange" weight="bold" />
+                <Target className="size-3 text-rusty-orange" />
               </div>
             )}
             {stats.achievements.includes('regular') && (
               <div title="Range Regular - 10+ sessions">
-                <Star className="size-3 text-slate-blue" weight="fill" />
+                <Star className="size-3 text-slate-blue" />
               </div>
             )}
           </div>

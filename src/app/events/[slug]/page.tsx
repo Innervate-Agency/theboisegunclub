@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { ArticleDetailPage } from '@/components/ui/detail-page-builder'
+import { EventEngagementWidget } from '@/components/ui/event-engagement-widget'
 import { getEventBySlug, getAllEventSlugs, type EventData as ComprehensiveEventData } from '@/lib/comprehensive-events-data'
 
 // Event data interface matching the existing EventCard structure
@@ -647,6 +648,19 @@ export default async function EventDetailPage({ params }: Props) {
           category: "Venues"
         }
       ]}
+      eventEngagement={{
+        eventId: event.slug,
+        eventTitle: event.title,
+        eventDate: event.date,
+        eventLocation: event.location,
+        eventUrl: `${process.env.NODE_ENV === 'production' ? 'https://theboisegunclub.com' : 'http://localhost:3000'}/events/${event.slug}`,
+        registrationUrl: event.registrationUrl,
+        capacity: event.capacity,
+        registeredCount: event.registeredCount,
+        price: event.price,
+        featured: event.featured,
+        eventType: event.eventType
+      }}
     />
   )
 }

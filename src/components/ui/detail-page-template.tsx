@@ -225,7 +225,7 @@ export default function DetailPageTemplate({
       
       {/* Main Content with Right Sidebar */}
       <main className="py-xl bg-background">
-        <div className="container mx-auto max-w-site px-lg">
+        <div className="container mx-auto max-w-[1440px] px-lg">
           <div className="flex gap-2xl">
             {/* Main Content Area */}
             <div className="flex-1 max-w-4xl">
@@ -248,10 +248,10 @@ export default function DetailPageTemplate({
               )}
             </div>
             
-            {/* Floating Right Sidebar - Sticky */}
+            {/* Right Sidebar - Integrated into background */}
             {sidebar.sections.length > 0 && (
-              <div className="hidden lg:block w-80">
-                <div className="sticky top-24 space-y-lg max-h-[calc(100vh-6rem)] overflow-y-auto">
+              <div className="hidden lg:block w-96">
+                <div className="space-y-lg">
                   {sidebar.sections.map((sidebarSection) => (
                     <Card key={sidebarSection.id} className={`shadow-none border-0 bg-transparent ${sidebarSection.className || ''}`}>
                       <CardHeader className="pb-base px-0">

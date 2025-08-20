@@ -44,17 +44,22 @@ export function FloatingBackground({
   particleCount = 20,
   ...props
 }: FloatingBackgroundProps) {
-  // Generate floating particles
+  // Generate deterministic floating particles to prevent hydration mismatch
   const particles = React.useMemo(() => {
-    return Array.from({ length: particleCount }, (_, i) => ({
-      id: i,
-      size: Math.random() * 4 + 2, // 2-6px
-      x: Math.random() * 100, // 0-100%
-      y: Math.random() * 100, // 0-100%
-      duration: Math.random() * 20 + 10, // 10-30s
-      delay: Math.random() * 5, // 0-5s delay
-      opacity: Math.random() * 0.3 + 0.1 // 0.1-0.4 opacity
-    }))
+    // Use deterministic values based on index to prevent server/client mismatch
+    return Array.from({ length: particleCount }, (_, i) => {
+      // Create pseudo-random but deterministic values using index
+      const seed = i * 7919 // Large prime for distribution
+      return {
+        id: i,
+        size: 2 + ((seed % 4) + 1), // 2-6px deterministic
+        x: (seed * 37) % 100, // 0-100% deterministic
+        y: (seed * 41) % 100, // 0-100% deterministic  
+        duration: 10 + ((seed * 13) % 20), // 10-30s deterministic
+        delay: (seed * 17) % 5, // 0-5s delay deterministic
+        opacity: 0.1 + ((seed % 30) / 100) // 0.1-0.4 opacity deterministic
+      }
+    })
   }, [particleCount])
   
   return (
@@ -98,18 +103,6 @@ export function FloatingBackground({
       <div className="relative z-10">
         {children}
       </div>
-      
-      {/* CSS Animation Keyframes */}
-      <style jsx>{`
-        @keyframes float {
-          0% {
-            transform: translateY(100vh) rotate(0deg);
-          }
-          100% {
-            transform: translateY(-100vh) rotate(360deg);
-          }
-        }
-      `}</style>
     </div>
   )
 }

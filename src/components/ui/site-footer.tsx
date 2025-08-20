@@ -4,8 +4,8 @@ import * as React from 'react'
 import { usePathname } from 'next/navigation'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { FooterStats } from "@/components/ui/footer-stats"
+import { FooterNewsletter } from "@/components/ui/footer-newsletter"
 import { BrassCounter } from "@/components/ui/brass-counter"
 import { Card } from "@/components/ui/card"
 import {
@@ -48,29 +48,8 @@ export function SiteFooter({
   currentPage = 'home',
   ...props
 }: SiteFooterProps) {
-  const [newsletterEmail, setNewsletterEmail] = React.useState("")
-  const [isSubscribing, setIsSubscribing] = React.useState(false)
   const [showBackToTop, setShowBackToTop] = React.useState(false)
   const pathname = usePathname()
-  
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubscribing(true)
-    
-    // Real newsletter signup - send to community email
-    const subject = encodeURIComponent('Newsletter Subscription Request')
-    const body = encodeURIComponent(
-      `I would like to subscribe to The Boise Gun Club newsletter.\n\nEmail: ${newsletterEmail}\n\nThank you!`
-    )
-    const mailtoUrl = `mailto:info@boiseguncollective.com?subject=${subject}&body=${body}`
-    
-    // Open mailto link
-    window.location.href = mailtoUrl
-    
-    // Clear form and show success
-    setNewsletterEmail("")
-    setIsSubscribing(false)
-  }
   
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -129,58 +108,27 @@ export function SiteFooter({
           <LandscapeComponent opacity={0.05} animated={true} />
           
           <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Newsletter CTA Section */}
+          {/* Newsletter and Navigation Section */}
           {showNewsletter && (
-            <div className="py-12 border-b border-border text-center relative z-10">
-              <div className="max-w-2xl mx-auto">
-                <h2 className={cn("text-heading-xl font-rajdhani font-bold mb-2", textColor)}>
-                  Stay on Target
-                </h2>
-                <p className={cn("text-body-lg mb-6 font-rajdhani", mutedColor)}>
-                  Join 5,000+ members for exclusive updates, events, and insights from the Treasure Valley firearms community.
-                </p>
-                <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email address"
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                    required
-                    className="flex-1"
-                  />
-                  <Button 
-                    type="submit" 
-                    disabled={isSubscribing}
-                    animationType={isSubscribing ? "none" : "arrow"}
-                    loading={isSubscribing}
-                    className={cn(
-                      "font-rajdhani font-semibold group whitespace-nowrap",
-                      isDark ? "bg-primary text-primary-foreground hover:bg-primary/90" : "bg-primary text-primary-foreground hover:bg-primary/90"
-                    )}
-                  >
-                    {isSubscribing ? "Subscribing..." : "Subscribe"}
-                  </Button>
-                </form>
-                <div className="flex items-center justify-center gap-lg mt-lg text-body-sm text-muted-foreground font-rajdhani">
-                  <span className="flex items-center gap-1">
-                    <UsersIcon className="h-4 w-4" />
-                    5,000+ Members
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <ShieldCheckIcon className="h-4 w-4" />
-                    100+ Local Partners  
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <HeartIcon className="h-4 w-4" />
-                    Est. 2017
-                  </span>
+            <div className="py-20 border-b border-border relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                {/* Left Column: Stats */}
+                <div>
+                  <FooterStats />
                 </div>
+                
+                {/* Right Column: Newsletter and Search */}
+                <div>
+                  <FooterNewsletter />
+                </div>
+                
               </div>
             </div>
           )}
           
           {/* Main Footer Content */}
-          <div className="py-16 relative z-10">
+          <div className="py-20 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {/* Brand & Contact */}
               <Card

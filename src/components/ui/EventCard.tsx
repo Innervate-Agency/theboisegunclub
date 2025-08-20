@@ -22,7 +22,7 @@ import {
   TicketIcon as Ticket, 
   BoltIcon as Zap, 
   ShareIcon as Share, 
-  ChartBarIcon as ChartBar
+  ArchiveBoxIcon as Archive
 } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 
@@ -190,7 +190,13 @@ export function EventCard({
   return (
     <Link href={eventHref} className="block">
       <Card
-        className={cn(eventCardVariants({ featured, size }), "rounded-xs", className)}
+        className={cn(
+          eventCardVariants({ featured, size }), 
+          "rounded-xs",
+          // Tactical animated underline gradient
+          "tactical-underline-base tactical-underline-events",
+          className
+        )}
         {...props}
       >
       {/* Tactical Corner Brackets - appear on hover */}
@@ -224,22 +230,39 @@ export function EventCard({
         {/* Subtle overlay with contextual icon */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
         
-        {/* Event Badges - top right */}
-        <div className="absolute top-sm right-sm flex flex-col gap-xs">
-          <Badge 
-            variant={badgeVariant}
-            size="sm"
-            className="bg-black/40 backdrop-blur-sm border-white/20"
+        {/* Tactical Action Buttons - top right */}
+        <div className="absolute top-sm right-sm flex gap-xs">
+          <button
+            className="w-8 h-8 bg-black/60 backdrop-blur-sm border border-white/20 rounded-none flex items-center justify-center hover:bg-nav-events hover:border-nav-events transition-all duration-200 group/share"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              if (navigator.share) {
+                navigator.share({
+                  title: title,
+                  text: `Check out this ${eventType.toLowerCase()} event: ${title}`,
+                  url: window.location.origin + eventHref
+                })
+              } else {
+                navigator.clipboard.writeText(window.location.origin + eventHref)
+              }
+            }}
+            title="Share event"
           >
-            {eventType}
-          </Badge>
-          <Badge 
-            variant={featured ? "events-featured" : "secondary"}
-            size="sm"
-            className="bg-black/40 backdrop-blur-sm border-white/20"
+            <Share className="h-4 w-4 text-white group-hover/share:text-white" />
+          </button>
+          
+          <button
+            className="w-8 h-8 bg-black/60 backdrop-blur-sm border border-white/20 rounded-none flex items-center justify-center hover:bg-nav-events hover:border-nav-events transition-all duration-200 group/archive"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              window.open('/events/archive', '_blank')
+            }}
+            title="View event archive"
           >
-            {featured ? "Featured" : time.includes("AM") || time.includes("PM") ? "Day Event" : "Multi-Day"}
-          </Badge>
+            <Archive className="h-4 w-4 text-white group-hover/archive:text-white" />
+          </button>
         </div>
         
         {/* Subtle texture particles for tactical feel */}
@@ -267,53 +290,34 @@ export function EventCard({
         
       </div>
       
+      {/* Tactical Price Badge - top right of main card (below hero) */}
+      {price && (
+        <div className="absolute top-36 right-sm z-20">
+          <div className="bg-nav-events text-white px-sm py-xs rounded-none border border-nav-events/30 shadow-sm">
+            <span className="font-rajdhani font-bold text-lg">
+              {price}
+            </span>
+          </div>
+        </div>
+      )}
+
       <div className="space-y-md">
         {/* Enhanced Header with Better Typography Hierarchy */}
         <div className="space-y-sm">
-          {/* Price Badge with Quick Actions */}
-          <div className="flex items-center gap-xs">
-            {price && (
-              <div className="inline-flex items-center px-sm py-xs bg-nav-events/10 border border-nav-events/20 rounded-xs">
-                <span className="font-rajdhani font-bold text-sm text-nav-events">
-                  {price}
-                </span>
-              </div>
-            )}
-            
-            {/* Badge-style Action Buttons */}
-            <button
-              className="inline-flex items-center px-sm py-xs bg-muted/50 hover:bg-rusty-orange/10 border border-border/50 hover:border-rusty-orange/30 rounded-xs transition-all duration-200 group/share"
-              onClick={(e) => {
-                e.preventDefault()
-                e.stopPropagation()
-                if (navigator.share) {
-                  navigator.share({
-                    title: title,
-                    text: `Check out this ${eventType.toLowerCase()} event: ${title}`,
-                    url: window.location.origin + eventHref
-                  })
-                } else {
-                  navigator.clipboard.writeText(window.location.origin + eventHref)
-                }
-              }}
-              title="Share event"
+          {/* Event Badges - at the top */}
+          <div className="flex flex-wrap gap-xs">
+            <Badge 
+              variant={badgeVariant}
+              size="sm"
             >
-              <Share className="h-3.5 w-3.5 text-muted-foreground group-hover/share:text-rusty-orange" />
-              <span className="ml-xs text-xs font-rajdhani font-semibold text-muted-foreground group-hover/share:text-rusty-orange">Share</span>
-            </button>
-            
-            <button
-              className="inline-flex items-center px-sm py-xs bg-muted/50 hover:bg-rusty-orange/10 border border-border/50 hover:border-rusty-orange/30 rounded-xs transition-all duration-200 group/archive"
-              onClick={(e) => {
-                e.preventDefault()
-                e.stopPropagation()
-                window.open('/events/archive', '_blank')
-              }}
-              title="View event archive"
+              {eventType}
+            </Badge>
+            <Badge 
+              variant={featured ? "events-featured" : "secondary"}
+              size="sm"
             >
-              <ChartBar className="h-3.5 w-3.5 text-muted-foreground group-hover/archive:text-rusty-orange" />
-              <span className="ml-xs text-xs font-rajdhani font-semibold text-muted-foreground group-hover/archive:text-rusty-orange">Archive</span>
-            </button>
+              {featured ? "Featured" : time.includes("AM") || time.includes("PM") ? "Day Event" : "Multi-Day"}
+            </Badge>
           </div>
           
           <div className="space-y-0">

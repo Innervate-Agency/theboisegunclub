@@ -49,6 +49,7 @@ interface MarketplaceDealCardProps extends React.HTMLAttributes<HTMLDivElement> 
   showContact?: boolean
   featured?: boolean
   size?: 'compact' | 'standard' | 'spacious'
+  viewMode?: string // Accept but don't pass to DOM
 }
 
 export function MarketplaceDealCard({
@@ -57,6 +58,7 @@ export function MarketplaceDealCard({
   featured = false,
   size = "standard",
   className,
+  viewMode, // Destructure viewMode so it doesn't get passed to DOM
   ...props
 }: MarketplaceDealCardProps) {
   const getCategoryBadgeVariant = (category: string) => {
@@ -125,7 +127,7 @@ export function MarketplaceDealCard({
       </Badge>
       {deal.isFeatured && (
         <Badge variant="elite" size="sm">
-          <Star className="size-3 mr-xs" weight="fill" />
+          <Star className="size-3 mr-xs" />
           Featured
         </Badge>
       )}
@@ -138,7 +140,7 @@ export function MarketplaceDealCard({
       {discountPercentage > 0 && (
         <div className="absolute top-sm left-sm">
           <div className="bg-black/60 backdrop-blur-sm text-white px-sm py-xs rounded-xs font-rajdhani font-bold text-sm flex items-center gap-xs border border-white/20">
-            <TrendingDown className="size-3" weight="bold" />
+            <TrendingDown className="size-3" />
             {discountPercentage}% OFF
           </div>
         </div>
@@ -146,12 +148,12 @@ export function MarketplaceDealCard({
       
       {/* Category icon overlay */}
       <div className="absolute bottom-sm right-sm">
-        {deal.category.includes('Firearms') && <Target weight="bold" className="size-6 text-white/80" />}
-        {deal.category.includes('Ammunition') && <Package weight="bold" className="size-6 text-white/80" />}
-        {deal.category.includes('Optics') && <Binoculars weight="bold" className="size-6 text-white/80" />}
-        {deal.category.includes('Accessories') && <Crosshair weight="bold" className="size-6 text-white/80" />}
+        {deal.category.includes('Firearms') && <Target className="size-6 text-white/80" />}
+        {deal.category.includes('Ammunition') && <Package className="size-6 text-white/80" />}
+        {deal.category.includes('Optics') && <Binoculars className="size-6 text-white/80" />}
+        {deal.category.includes('Accessories') && <Crosshair className="size-6 text-white/80" />}
         {!deal.category.includes('Firearms') && !deal.category.includes('Ammunition') && !deal.category.includes('Optics') && !deal.category.includes('Accessories') && (
-          <ShoppingBag weight="bold" className="size-6 text-white/80" />
+          <ShoppingBag className="size-6 text-white/80" />
         )}
       </div>
     </>
@@ -193,7 +195,7 @@ export function MarketplaceDealCard({
     // Business info
     <div className="space-y-sm bg-muted/30 p-sm rounded-xs">
       <div className="flex items-center gap-sm">
-        <Storefront className="size-4 text-nav-marketplace" weight="bold" />
+        <Storefront className="size-4 text-nav-marketplace" />
         <span className="font-medium text-card-foreground">{deal.business}</span>
         {deal.isVerified && (
           <Badge variant="nav-marketplace" size="sm">
@@ -203,7 +205,7 @@ export function MarketplaceDealCard({
       </div>
       
       <div className="flex items-center gap-sm text-sm">
-        <MapPin className="size-4 text-nav-marketplace" weight="bold" />
+        <MapPin className="size-4 text-nav-marketplace" />
         <span className="text-muted-foreground">{deal.location}</span>
       </div>
 
@@ -213,7 +215,6 @@ export function MarketplaceDealCard({
             {[...Array(5)].map((_, i) => (
               <Star
                 key={i}
-                weight={i < Math.floor(deal.rating!) ? 'fill' : 'regular'}
                 className={cn(
                   "size-3",
                   i < Math.floor(deal.rating!) ? "text-nav-marketplace fill-nav-marketplace" : "text-muted-foreground"
@@ -231,7 +232,7 @@ export function MarketplaceDealCard({
   // Footer content for expiration
   const footerContent = deal.expiresAt && (
     <div className="flex items-center gap-sm p-sm bg-destructive/10 border border-destructive/20 rounded-xs">
-      <Calendar className="size-4 text-destructive" weight="bold" />
+      <Calendar className="size-4 text-destructive" />
       <span className="text-sm text-destructive font-medium">
         🔥 Deal expires {deal.expiresAt}
       </span>

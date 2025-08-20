@@ -167,7 +167,7 @@ export function ResultsSubmissionForm() {
         <CardContent className="p-4xl">
           <div className="space-y-lg">
             <div className="inline-flex items-center justify-center w-20 h-20 bg-success/10 rounded-full mb-lg">
-              <CheckCircle weight="bold" className="size-10 text-success" />
+              <CheckCircle className="size-10 text-success" />
             </div>
             <h2 className="font-rajdhani text-heading-2xl font-bold text-card-foreground">
               Results Submitted Successfully!
@@ -204,7 +204,7 @@ export function ResultsSubmissionForm() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-xs font-rajdhani">
-            <Calendar weight="bold" className="size-5 text-rusty-orange" />
+            <Calendar className="size-5 text-rusty-orange" />
             Event Information
           </CardTitle>
         </CardHeader>
@@ -292,7 +292,7 @@ export function ResultsSubmissionForm() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-xs font-rajdhani">
-            <Target weight="bold" className="size-5 text-rusty-orange" />
+            <Target className="size-5 text-rusty-orange" />
             Match Details
           </CardTitle>
         </CardHeader>
@@ -348,7 +348,7 @@ export function ResultsSubmissionForm() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-xs font-rajdhani">
-            <Trophy weight="bold" className="size-5 text-rusty-orange" />
+            <Trophy className="size-5 text-rusty-orange" />
             Participants & Results
           </CardTitle>
           <p className="text-body-sm text-muted-foreground">
@@ -371,7 +371,7 @@ export function ResultsSubmissionForm() {
                       onClick={() => removeParticipant(index)}
                       className="text-destructive hover:text-destructive"
                     >
-                      <Minus weight="bold" className="size-4" />
+                      <Minus className="size-4" />
                     </Button>
                   )}
                 </div>
@@ -480,7 +480,7 @@ export function ResultsSubmissionForm() {
               onClick={addParticipant}
               className="w-full gap-sm"
             >
-              <Plus weight="bold" className="size-4" />
+              <Plus className="size-4" />
               Add Another Participant
             </Button>
           </div>
@@ -491,7 +491,7 @@ export function ResultsSubmissionForm() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-xs font-rajdhani">
-            <Users weight="bold" className="size-5 text-rusty-orange" />
+            <Users className="size-5 text-rusty-orange" />
             Your Information
           </CardTitle>
         </CardHeader>
@@ -554,7 +554,7 @@ export function ResultsSubmissionForm() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-xs font-rajdhani">
-            <Database weight="bold" className="size-5 text-rusty-orange" />
+            <Database className="size-5 text-rusty-orange" />
             Additional Information
           </CardTitle>
         </CardHeader>
@@ -619,12 +619,12 @@ export function ResultsSubmissionForm() {
         >
           {submitStatus === 'submitting' ? (
             <>
-              <Clock weight="bold" className="size-4" />
+              <Clock className="size-4" />
               Submitting Results...
             </>
           ) : (
             <>
-              <Upload weight="bold" className="size-4" />
+              <Upload className="size-4" />
               Submit Event Results
             </>
           )}
@@ -632,7 +632,7 @@ export function ResultsSubmissionForm() {
         
         <div className="mt-base max-w-md mx-auto">
           <div className="flex items-start gap-xs p-sm bg-muted/50 rounded-xs">
-            <Warning weight="bold" className="size-4 text-muted-foreground mt-micro flex-shrink-0" />
+            <Warning className="size-4 text-muted-foreground mt-micro flex-shrink-0" />
             <p className="text-body-xs text-muted-foreground">
               Your submission will be reviewed within 2-3 business days. 
               You'll receive an email confirmation once it's been added to the archive.

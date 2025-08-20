@@ -57,7 +57,7 @@ export function AuthButton({
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-nav-forums/0 via-nav-forums/15 to-nav-forums/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600 ease-out" />
-            <Users className="size-4 mr-xs transition-all duration-200 group-hover:scale-110 group-hover:-rotate-6" weight="bold" />
+            <Users className="size-4 mr-xs transition-all duration-200 group-hover:scale-110 group-hover:-rotate-6" />
             <span className="relative">Forums</span>
           </Button>
         )}
@@ -79,7 +79,7 @@ export function AuthButton({
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-blue/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
-          <SignIn className="size-4 mr-xs transition-transform duration-200 group-hover:scale-110" weight="bold" />
+          <SignIn className="size-4 mr-xs transition-transform duration-200 group-hover:scale-110" />
           <span className="relative">Sign In</span>
         </Button>
 
@@ -108,7 +108,7 @@ export function AuthButton({
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-rusty-orange/8 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
-            <Monitor className="size-4 mr-xs transition-all duration-200 group-hover:scale-110 group-hover:rotate-12" weight="bold" />
+            <Monitor className="size-4 mr-xs transition-all duration-200 group-hover:scale-110 group-hover:rotate-12" />
             <span className="relative">Dashboard</span>
           </Button>
         )}

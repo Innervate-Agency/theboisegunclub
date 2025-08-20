@@ -805,6 +805,143 @@
   border-color: var(--nav-forums);
 }
 
+/* Gradient utilities for nav colors */
+@utility from-nav-armory {
+  --tw-gradient-from: var(--nav-armory);
+  --tw-gradient-to: rgb(from var(--nav-armory) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+@utility via-nav-armory {
+  --tw-gradient-to: rgb(from var(--nav-armory) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--nav-armory), var(--tw-gradient-to);
+}
+
+@utility to-nav-armory {
+  --tw-gradient-to: var(--nav-armory);
+}
+
+/* Opacity variants for nav-armory gradients */
+@utility via-nav-armory-90 {
+  --tw-gradient-to: rgb(from var(--nav-armory) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(from var(--nav-armory) r g b / 0.9), var(--tw-gradient-to);
+}
+
+@utility to-nav-armory-80 {
+  --tw-gradient-to: rgb(from var(--nav-armory) r g b / 0.8);
+}
+
+@utility to-nav-armory-90 {
+  --tw-gradient-to: rgb(from var(--nav-armory) r g b / 0.9);
+}
+
+@utility from-nav-armory-10 {
+  --tw-gradient-from: rgb(from var(--nav-armory) r g b / 0.1);
+  --tw-gradient-to: rgb(from var(--nav-armory) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+@utility to-nav-armory-5 {
+  --tw-gradient-to: rgb(from var(--nav-armory) r g b / 0.05);
+}
+
+@utility from-nav-events {
+  --tw-gradient-from: var(--nav-events);
+  --tw-gradient-to: rgb(from var(--nav-events) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+@utility via-nav-events {
+  --tw-gradient-to: rgb(from var(--nav-events) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--nav-events), var(--tw-gradient-to);
+}
+
+@utility to-nav-events {
+  --tw-gradient-to: var(--nav-events);
+}
+
+/* Opacity variants for nav-events gradients */
+@utility from-nav-events-20 {
+  --tw-gradient-from: rgb(from var(--nav-events) r g b / 0.2);
+  --tw-gradient-to: rgb(from var(--nav-events) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+@utility to-nav-events-10 {
+  --tw-gradient-to: rgb(from var(--nav-events) r g b / 0.1);
+}
+
+@utility from-nav-directory {
+  --tw-gradient-from: var(--nav-directory);
+  --tw-gradient-to: rgb(from var(--nav-directory) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+@utility via-nav-directory {
+  --tw-gradient-to: rgb(from var(--nav-directory) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--nav-directory), var(--tw-gradient-to);
+}
+
+@utility to-nav-directory {
+  --tw-gradient-to: var(--nav-directory);
+}
+
+/* Opacity variants for nav-directory gradients */
+@utility from-nav-directory-20 {
+  --tw-gradient-from: rgb(from var(--nav-directory) r g b / 0.2);
+  --tw-gradient-to: rgb(from var(--nav-directory) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+@utility to-nav-directory-10 {
+  --tw-gradient-to: rgb(from var(--nav-directory) r g b / 0.1);
+}
+
+@utility from-nav-intel {
+  --tw-gradient-from: var(--nav-intel);
+  --tw-gradient-to: rgb(from var(--nav-intel) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+@utility via-nav-intel {
+  --tw-gradient-to: rgb(from var(--nav-intel) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--nav-intel), var(--tw-gradient-to);
+}
+
+@utility to-nav-intel {
+  --tw-gradient-to: var(--nav-intel);
+}
+
+@utility from-nav-marketplace {
+  --tw-gradient-from: var(--nav-marketplace);
+  --tw-gradient-to: rgb(from var(--nav-marketplace) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+@utility via-nav-marketplace {
+  --tw-gradient-to: rgb(from var(--nav-marketplace) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--nav-marketplace), var(--tw-gradient-to);
+}
+
+@utility to-nav-marketplace {
+  --tw-gradient-to: var(--nav-marketplace);
+}
+
+@utility from-nav-forums {
+  --tw-gradient-from: var(--nav-forums);
+  --tw-gradient-to: rgb(from var(--nav-forums) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+@utility via-nav-forums {
+  --tw-gradient-to: rgb(from var(--nav-forums) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--nav-forums), var(--tw-gradient-to);
+}
+
+@utility to-nav-forums {
+  --tw-gradient-to: var(--nav-forums);
+}
+
 /* Grid utilities */
 @utility grid-auto-fill-320 {
   display: grid;
@@ -1313,3 +1450,112 @@
   .max-w-full { max-width: 100%; }
   .max-w-none { max-width: none; }
 }
+
+/* ===============================================================================
+   TACTICAL ANIMATED UNDERLINE GRADIENTS
+   Reusable animated underline effects for different page themes
+   =============================================================================== */
+
+@layer utilities {
+  /* Base animated underline effect */
+  .tactical-underline-base {
+    position: relative;
+  }
+
+  .tactical-underline-base::after {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    border-radius: 2px;
+    z-index: 10;
+  }
+
+  .tactical-underline-base:hover::after {
+    width: 100%;
+  }
+
+  /* Page-specific underline gradients */
+  .tactical-underline-events::after {
+    background: linear-gradient(to right, var(--nav-events), var(--color-canyon-clay));
+  }
+
+  .tactical-underline-directory::after {
+    background: linear-gradient(to right, var(--nav-directory), var(--color-info-river));
+  }
+
+  .tactical-underline-armory::after {
+    background: linear-gradient(to right, var(--nav-armory), var(--color-iron-rust));
+  }
+
+  .tactical-underline-marketplace::after {
+    background: linear-gradient(to right, var(--nav-marketplace), var(--color-high-desert-sage));
+  }
+
+  .tactical-underline-intel::after {
+    background: linear-gradient(to right, var(--nav-intel), var(--color-foothills-purple));
+  }
+
+  .tactical-underline-forums::after {
+    background: linear-gradient(to right, var(--nav-forums), var(--color-warm-stone));
+  }
+
+  /* Tactical variations */
+  .tactical-underline-fire::after {
+    background: linear-gradient(to right, var(--color-rusty-orange), var(--color-sandy-ochre));
+  }
+
+  .tactical-underline-nature::after {
+    background: linear-gradient(to right, var(--color-slate-blue), var(--color-lodgepole-green));
+  }
+
+  .tactical-underline-premium::after {
+    background: linear-gradient(to right, var(--color-weathered-gold), var(--color-brass));
+    height: 2px;
+  }
+
+  /* Enhanced thickness for premium cards */
+  .tactical-underline-premium::after {
+    height: 2px;
+  }
+}
+
+/* ===============================================================================
+   FLOATING BACKGROUND ANIMATIONS
+   Deterministic animations for floating particles and event ticker
+   =============================================================================== */
+
+@layer utilities {
+  /* Floating particles animation */
+  @keyframes float {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+    }
+    100% {
+      transform: translateY(-100vh) rotate(360deg);
+    }
+  }
+
+  /* Event ticker scroll animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.333%);
+    }
+  }
+  
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+  
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+}
+

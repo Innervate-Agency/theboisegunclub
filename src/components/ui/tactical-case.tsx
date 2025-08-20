@@ -49,6 +49,7 @@ export interface TacticalCaseProps
   showRopeBinding?: boolean
   caseLabel?: string
   children: React.ReactNode
+  viewMode?: string // Accept but don't pass to DOM
 }
 
 export function TacticalCase({
@@ -62,6 +63,7 @@ export function TacticalCase({
   showRopeBinding = false,
   caseLabel,
   children,
+  viewMode, // Destructure viewMode so it doesn't get passed to DOM
   ...props
 }: TacticalCaseProps) {
   

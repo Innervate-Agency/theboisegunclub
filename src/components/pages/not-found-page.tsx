@@ -13,8 +13,12 @@ import {
   ShieldCheckIcon as Shield, 
   PlusCircleIcon as Target, 
   ExclamationTriangleIcon as AlertTriangle, 
-  CompassIcon as Compass
+  MapPinIcon as Compass,
+  TicketIcon as Ticket,
+  BanknotesIcon as Storefront,
+  ChatBubbleBottomCenterTextIcon as Users
 } from '@heroicons/react/24/outline'
+import { SiteSearch } from '@/components/ui/site-search'
 
 interface QuickNavCard {
   href: string
@@ -26,32 +30,46 @@ interface QuickNavCard {
 
 const quickNavCards: QuickNavCard[] = [
   {
-    href: '/intel',
-    icon: Map,
-    title: 'Range Intel',
-    description: 'Find shooting locations and range conditions',
-    theme: 'intel'
+    href: '/events',
+    icon: Ticket,
+    title: 'Events',
+    description: 'Competitions & Training',
+    theme: 'events'
   },
   {
-    href: '/guides',
-    icon: BookOpen,
-    title: 'Knowledge Base',
-    description: 'Idaho gun laws and safety guides',
-    theme: 'guides'
+    href: '/directory',
+    icon: Compass,
+    title: 'Directory',
+    description: 'Local Dealers & Services',
+    theme: 'directory'
   },
   {
     href: '/armory',
     icon: Shield,
     title: 'The Armory',
-    description: 'Equipment reviews and tactical guides',
+    description: 'Equipment & Reviews',
     theme: 'armory'
   },
   {
-    href: '/directory',
-    icon: Compass,
-    title: 'Business Directory',
-    description: 'Find verified Idaho firearms dealers',
-    theme: 'directory'
+    href: '/intel',
+    icon: Map,
+    title: 'Intel',
+    description: 'Range Conditions & Weather',
+    theme: 'intel'
+  },
+  {
+    href: '/marketplace',
+    icon: Storefront,
+    title: 'Marketplace',
+    description: 'Buy & Sell Gear',
+    theme: 'marketplace'
+  },
+  {
+    href: '/forums',
+    icon: Users,
+    title: 'Forums',
+    description: 'Community Discussion',
+    theme: 'forums'
   }
 ]
 
@@ -59,11 +77,11 @@ export function NotFoundPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-card to-muted/50">
       {/* 404 Hero Section */}
-      <section className="relative overflow-hidden px-container py-section-2xl">
-        <div className="container mx-auto max-w-site relative z-10">
-          <div className="text-center space-y-section-lg">
+      <section className="relative overflow-hidden px-6 py-16">
+        <div className="container mx-auto max-w-[1440px] relative z-10">
+          <div className="text-center space-y-12">
             {/* 404 Display */}
-            <div className="space-y-content-lg">
+            <div className="space-y-8">
               <div className="relative">
                 <h1 className="font-rajdhani text-9xl md:text-[12rem] font-black text-muted-foreground/20 select-none">
                   404
@@ -75,9 +93,9 @@ export function NotFoundPage() {
                 </div>
               </div>
               
-              <div className="space-y-content-base">
+              <div className="space-y-4">
                 <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
-                  <AlertTriangle className="h-4 w-4 mr-xs" />
+                  <AlertTriangle className="h-4 w-4 mr-2" />
                   Target Not Found
                 </Badge>
                 <h2 className="font-rajdhani text-3xl md:text-5xl font-bold text-card-foreground">
@@ -91,15 +109,15 @@ export function NotFoundPage() {
             </div>
             
             {/* Quick Actions */}
-            <div className="flex flex-col sm:flex-row gap-content-base justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/">
-                <Button size="lg" className="bg-nav-home text-white hover:bg-nav-home/90 font-rajdhani font-bold gap-xs">
+                <Button size="lg" className="bg-rusty-orange text-white hover:bg-rusty-orange/90 font-rajdhani font-bold gap-2">
                   <Home className="h-4 w-4" />
                   Back to Home Base
                 </Button>
               </Link>
               <Link href="/directory">
-                <Button variant="outline" size="lg" className="gap-xs">
+                <Button variant="outline" size="lg" className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-white gap-2">
                   <Search className="h-4 w-4" />
                   Find Dealers
                 </Button>
@@ -109,36 +127,56 @@ export function NotFoundPage() {
         </div>
       </section>
       
-      {/* Quick Navigation Cards */}
-      <section className="px-container pb-section-2xl">
-        <div className="container mx-auto max-w-site">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-grid-base">
-            {quickNavCards.map((card) => {
-              const Icon = card.icon
-              return (
-                <Link key={card.href} href={card.href}>
-                  <Card 
-                    variant="tactical" 
-                    tacticalTheme="default" 
-                    className={`group border-nav-${card.theme}/30`}
-                  >
-                    <CardContent className="p-content-lg text-center space-y-content-base">
-                      <div className={`bg-nav-${card.theme}/20 p-content-base rounded-xs w-fit mx-auto`}>
-                        <Icon className={`h-8 w-8 text-nav-${card.theme}`} />
-                      </div>
-                      <div>
-                        <h3 className={`font-rajdhani font-bold text-heading-sm text-nav-${card.theme} group-hover:text-nav-${card.theme}/80 transition-colors`}>
-                          {card.title}
-                        </h3>
-                        <p className="text-body-sm text-muted-foreground">
-                          {card.description}
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              )
-            })}
+      {/* Navigation and Search Section */}
+      <section className="px-6 pb-16">
+        <div className="container mx-auto max-w-[1440px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            {/* Navigation Links Column */}
+            <div className="space-y-4">
+              <h3 className="font-rajdhani font-bold text-xl text-card-foreground mb-6">
+                Explore Our Community
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {quickNavCards.map((card) => {
+                  const Icon = card.icon
+                  return (
+                    <Link key={card.href} href={card.href}>
+                      <Card 
+                        variant="tactical" 
+                        tacticalTheme="default" 
+                        className={`group border-nav-${card.theme}/30 hover:border-nav-${card.theme}/50 transition-colors`}
+                      >
+                        <CardContent className="p-4 space-y-3">
+                          <div className="flex items-center gap-3">
+                            <div className={`bg-nav-${card.theme}/20 p-2 rounded-sm group-hover:bg-nav-${card.theme}/30 transition-colors`}>
+                              <Icon className={`h-5 w-5 text-nav-${card.theme}`} />
+                            </div>
+                            <div>
+                              <h4 className={`font-rajdhani font-bold text-nav-${card.theme} group-hover:text-nav-${card.theme}/80 transition-colors`}>
+                                {card.title}
+                              </h4>
+                              <p className="text-xs text-muted-foreground">
+                                {card.description}
+                              </p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  )
+                })}
+              </div>
+            </div>
+
+            {/* Search Component Column */}
+            <div className="space-y-4">
+              <h3 className="font-rajdhani font-bold text-xl text-card-foreground mb-6">
+                Find What You Need
+              </h3>
+              <SiteSearch />
+            </div>
+
           </div>
         </div>
       </section>

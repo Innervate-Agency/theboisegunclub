@@ -295,6 +295,7 @@ export interface BlogListProps extends React.ComponentProps<"section"> {
   showFilters?: boolean
   title?: string
   subtitle?: string
+  viewMode?: string // Accept but don't pass to DOM (deprecated - use variant instead)
 }
 
 export function BlogList({
@@ -304,6 +305,7 @@ export function BlogList({
   showFilters = true,
   title,
   subtitle,
+  viewMode: externalViewMode, // Destructure to prevent passing to DOM
   ...props
 }: BlogListProps) {
   const [activeFilter, setActiveFilter] = React.useState<string>('all')

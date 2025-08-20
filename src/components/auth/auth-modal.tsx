@@ -129,7 +129,7 @@ export function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthModalProp
       <DialogContent className="sm:max-w-md fixed inset-y-0 right-0 left-auto w-full sm:w-96 max-w-none rounded-none rounded-l-xs mica shadow-modal transform-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-300 data-[state=open]:slide-in-from-right-full data-[state=closed]:slide-out-to-right-full">
         <DialogHeader className="text-center space-y-xs">
           <DialogTitle className="text-2xl font-rajdhani font-[600] text-card-foreground flex items-center justify-center gap-sm">
-                        <Shield className="size-6 text-primary" weight="bold" />
+                        <Shield className="size-6 text-primary" />
             {mode === 'login' ? 'Welcome Back' : 'Join The Club'}
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">
@@ -148,7 +148,7 @@ export function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthModalProp
                 Username
               </Label>
               <div className="relative">
-                <User className="absolute left-xs top-1/2 -translate-y-1/2 size-4 text-muted-foreground" weight="bold" />
+                <User className="absolute left-xs top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
                 <Input
                   id="username"
                   type="text"
@@ -171,7 +171,7 @@ export function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthModalProp
               Email Address
             </Label>
             <div className="relative">
-              <EnvelopeSimple className="absolute left-xs top-1/2 -translate-y-1/2 size-4 text-muted-foreground" weight="bold" />
+              <EnvelopeSimple className="absolute left-xs top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
               <Input
                 id="email"
                 type="email"
@@ -193,7 +193,7 @@ export function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthModalProp
               Password
             </Label>
             <div className="relative">
-              <Lock className="absolute left-xs top-1/2 -translate-y-1/2 size-4 text-muted-foreground" weight="bold" />
+              <Lock className="absolute left-xs top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
               <Input
                 id="password"
                 type={showPassword ? 'text' : 'password'}
@@ -212,9 +212,9 @@ export function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthModalProp
                 disabled={isSubmitting}
               >
                 {showPassword ? (
-                  <EyeSlash className="size-4 text-muted-foreground" weight="bold" />
+                  <EyeSlash className="size-4 text-muted-foreground" />
                 ) : (
-                  <Eye className="size-4 text-muted-foreground" weight="bold" />
+                  <Eye className="size-4 text-muted-foreground" />
                 )}
               </Button>
             </div>
@@ -230,7 +230,7 @@ export function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthModalProp
                 Confirm Password
               </Label>
               <div className="relative">
-                <Lock className="absolute left-xs top-1/2 -translate-y-1/2 size-4 text-muted-foreground" weight="bold" />
+                <Lock className="absolute left-xs top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
                 <Input
                   id="confirmPassword"
                   type={showPassword ? 'text' : 'password'}

@@ -92,7 +92,6 @@ export function FloatingDiamonds({ className }: FloatingDiamondsProps) {
         >
           <Diamond 
             className={`${diamond.size} text-crisp-off-white/60 shadow-elevated`} 
-            weight="bold" 
           />
         </MotionDiv>
       ))}

@@ -118,7 +118,7 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
                 variant="outline" 
                 className={cn("text-xs mt-micro", getRoleBadgeStyle(user.role))}
               >
-                {user.role === 'admin' && <Shield className="size-3 mr-micro" weight="bold" />}
+                {user.role === 'admin' && <Shield className="size-3 mr-micro" />}
                 {user.role}
               </Badge>
             </div>
@@ -133,17 +133,17 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
             className="cursor-pointer focus:bg-muted/50"
             onClick={handleForumAccess}
           >
-            <Users className="size-4 mr-sm" weight="bold" />
+            <Users className="size-4 mr-sm" />
             <span>Access Forums</span>
           </DropdownMenuItem>
 
           <DropdownMenuItem className="cursor-pointer focus:bg-muted/50">
-            <Calendar className="size-4 mr-sm" weight="bold" />
+            <Calendar className="size-4 mr-sm" />
             <span>My Events</span>
           </DropdownMenuItem>
 
           <DropdownMenuItem className="cursor-pointer focus:bg-muted/50">
-            <Bell className="size-4 mr-sm" weight="bold" />
+            <Bell className="size-4 mr-sm" />
             <span>Notifications</span>
           </DropdownMenuItem>
         </div>
@@ -153,17 +153,17 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
         {/* Main Navigation */}
         <div className="p-xs space-y-micro">
           <DropdownMenuItem className="cursor-pointer focus:bg-muted/50">
-            <UserIcon className="size-4 mr-sm" weight="bold" />
+            <UserIcon className="size-4 mr-sm" />
             <span>Profile Settings</span>
           </DropdownMenuItem>
 
           <DropdownMenuItem className="cursor-pointer focus:bg-muted/50">
-            <AddressBook className="size-4 mr-sm" weight="bold" />
+            <AddressBook className="size-4 mr-sm" />
             <span>My Directory</span>
           </DropdownMenuItem>
 
           <DropdownMenuItem className="cursor-pointer focus:bg-muted/50">
-            <Storefront className="size-4 mr-sm" weight="bold" />
+            <Storefront className="size-4 mr-sm" />
             <span>My Listings</span>
           </DropdownMenuItem>
 
@@ -172,7 +172,7 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
             <>
               <DropdownMenuSeparator />
               <DropdownMenuItem className="cursor-pointer focus:bg-muted/50">
-                <Gear className="size-4 mr-sm" weight="bold" />
+                <Gear className="size-4 mr-sm" />
                 <span>
                   {user.role === 'admin' ? 'Admin Panel' : 'Moderation'}
                 </span>
@@ -189,7 +189,7 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
             className="cursor-pointer text-destructive focus:bg-destructive/10 focus:text-destructive"
             onClick={handleLogout}
           >
-            <SignOut className="size-4 mr-sm" weight="bold" />
+            <SignOut className="size-4 mr-sm" />
             <span>Sign Out</span>
           </DropdownMenuItem>
         </div>

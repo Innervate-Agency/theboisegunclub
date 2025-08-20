@@ -34,7 +34,7 @@ export function PlatformValueCard({
         <div className="space-y-base">
           <div className="flex items-center gap-base">
             <div className={`w-12 h-12 ${iconBgColor} rounded-xs flex items-center justify-center flex-shrink-0`}>
-              <Icon className={`h-6 w-6 ${iconColor}`} weight="bold" />
+              <Icon className={`h-6 w-6 ${iconColor}`} />
             </div>
             {badgeText && (
               <Badge variant={badgeVariant} size="sm">

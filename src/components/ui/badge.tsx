@@ -206,7 +206,7 @@ function Badge({ className, variant, size, icon, hideIcon = false, children, ...
     <div className={cn(badgeVariants({ variant, size }), className)} {...props}>
       {!hideIcon && (
         <>
-          {icon ? icon : IconComponent && <IconComponent className="h-3 w-3" weight="bold" />}
+          {icon ? icon : IconComponent && <IconComponent className="h-3 w-3" />}
         </>
       )}
       {children}

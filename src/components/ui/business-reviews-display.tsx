@@ -69,7 +69,6 @@ export function BusinessReviewsDisplay({
                       ? 'text-warning-amber fill-warning-amber'
                       : 'text-muted-foreground'
                   }`}
-                  weight="fill"
                 />
               ))}
             </div>
@@ -123,7 +122,6 @@ function ReviewCard({ review, compact }: ReviewCardProps) {
                       ? 'text-warning-amber fill-warning-amber'
                       : 'text-muted-foreground'
                   }`}
-                  weight="fill"
                 />
               ))}
             </div>
@@ -164,8 +162,7 @@ function ReviewCard({ review, compact }: ReviewCardProps) {
                         ? 'text-warning-amber fill-warning-amber'
                         : 'text-muted-foreground'
                     }`}
-                    weight="fill"
-                  />
+                    />
                 ))}
               </div>
             </div>

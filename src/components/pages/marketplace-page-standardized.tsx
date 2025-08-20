@@ -5,19 +5,38 @@ import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardContent } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
 import { MarketplaceDealCard } from '@/components/ui/marketplace-deal-card'
-import { CardPageLayout } from '@/components/ui/card-page-layout'
+import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { DirectoryStatsGrid } from '@/components/ui/directory-stats-grid'
 import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
-import { useCardPageFilters } from '@/hooks/useCardPageFilters'
+import { usePageFilters } from '@/hooks/usePageFilters'
 import { EmptyState } from '@/components/ui/empty-state'
 import { 
-  ShoppingCart, CurrencyDollar, Package, Star, Target, 
-  Shield, Storefront, MapPin, Phone, CheckCircle, Crown,
-  TrendUp, Lightning, Buildings, CaretRight, ArrowRight
-} from '@phosphor-icons/react'
+  ShoppingCartIcon as ShoppingCart,
+  CurrencyDollarIcon as CurrencyDollar,
+  ArchiveBoxIcon as Package,
+  StarIcon as Star,
+  CursorArrowRaysIcon as Target, 
+  ShieldCheckIcon as Shield,
+  BuildingStorefrontIcon as Storefront,
+  MapPinIcon as MapPin,
+  PhoneIcon as Phone,
+  CheckCircleIcon as CheckCircle,
+  SparklesIcon as Crown,
+  ArrowTrendingUpIcon as TrendUp,
+  BoltIcon as Lightning,
+  BuildingOfficeIcon as Buildings,
+  ChevronRightIcon as CaretRight,
+  ArrowRightIcon as ArrowRight,
+  PlusIcon as Plus,
+  MagnifyingGlassIcon as Search,
+  FunnelIcon as Filter,
+  ClockIcon as Clock,
+  FireIcon as Fire
+} from '@heroicons/react/24/outline'
 
 // Marketplace deal data type
 interface MarketplaceDeal {
@@ -316,6 +335,61 @@ const marketplaceDeals: MarketplaceDeal[] = [
 ]
 
 export function MarketplacePageStandardized() {
+  const [mobileFiltersOpen, setMobileFiltersOpen] = React.useState(false)
+
+  // Modern filter system
+  const {
+    filters,
+    filteredItems,
+    searchQuery,
+    setSearchQuery,
+    sortBy,
+    setSortBy,
+    handleFilterChange,
+    handleClearSection,
+    handleClearAll
+  } = usePageFilters({
+    items: marketplaceDeals,
+    searchFilter: (deal, query) => {
+      const searchTerms = query.toLowerCase()
+      return (
+        deal.title.toLowerCase().includes(searchTerms) ||
+        deal.description.toLowerCase().includes(searchTerms) ||
+        deal.business.toLowerCase().includes(searchTerms) ||
+        deal.category.toLowerCase().includes(searchTerms) ||
+        (deal.manufacturer && deal.manufacturer.toLowerCase().includes(searchTerms)) ||
+        (deal.model && deal.model.toLowerCase().includes(searchTerms))
+      )
+    },
+    categoryFilters: {
+      category: (deal, selectedCategories) => 
+        selectedCategories.includes(deal.category.toLowerCase()),
+      condition: (deal, selectedConditions) => 
+        selectedConditions.includes(deal.condition.toLowerCase()),
+      price: (deal, selectedPrices) => {
+        if (selectedPrices.includes('under50')) return deal.salePrice < 50
+        if (selectedPrices.includes('50-200')) return deal.salePrice >= 50 && deal.salePrice <= 200
+        if (selectedPrices.includes('200-500')) return deal.salePrice >= 200 && deal.salePrice <= 500
+        if (selectedPrices.includes('over500')) return deal.salePrice > 500
+        return true
+      },
+      featured: (deal, selectedValues) => 
+        selectedValues.includes('featured') ? deal.isFeatured : true
+    },
+    sortFunctions: {
+      featured: (a, b) => {
+        const aFeatured = a.isFeatured ? 1 : 0
+        const bFeatured = b.isFeatured ? 1 : 0
+        if (bFeatured !== aFeatured) return bFeatured - aFeatured
+        return (b.discount || 0) - (a.discount || 0)
+      },
+      price: (a, b) => a.salePrice - b.salePrice,
+      discount: (a, b) => b.discount - a.discount,
+      alphabetical: (a, b) => a.title.localeCompare(b.title)
+    },
+    initialSortBy: 'featured'
+  })
+
   // Activity feed data for marketplace based on authentic data
   const activityFeedData = [
     {
@@ -354,74 +428,53 @@ export function MarketplacePageStandardized() {
     { icon: CheckCircle, title: "Total Listings", value: marketplaceDeals.length.toString(), subtitle: "Active offers", color: "text-nav-marketplace" }
   ]
 
-  // Filter configuration
-  const filters = useCardPageFilters({
-    items: marketplaceDeals,
-    initialTab: 'all',
-    initialSortBy: 'featured',
-    initialViewMode: 'grid',
-    itemsPerPage: 12,
-    
-    searchFilter: (deal, query) => {
-      if (!deal) return false
-      const searchTerms = query.toLowerCase()
-      return (
-        deal.title?.toLowerCase().includes(searchTerms) ||
-        deal.description?.toLowerCase().includes(searchTerms) ||
-        deal.business?.toLowerCase().includes(searchTerms) ||
-        deal.category?.toLowerCase().includes(searchTerms) ||
-        deal.manufacturer?.toLowerCase().includes(searchTerms) ||
-        deal.model?.toLowerCase().includes(searchTerms)
-      )
+  // Modern filter sidebar configuration
+  const filterSections = [
+    {
+      id: 'category',
+      title: 'Category',
+      maxVisible: 6,
+      collapsible: false,
+      options: [
+        { id: 'firearms', label: 'Firearms', icon: Target, count: marketplaceDeals.filter(d => d.category === 'Firearms').length, color: 'text-nav-marketplace' },
+        { id: 'services', label: 'Services', icon: Shield, count: marketplaceDeals.filter(d => d.category === 'Services').length, color: 'text-nav-marketplace' },
+        { id: 'equipment', label: 'Equipment', icon: Package, count: marketplaceDeals.filter(d => d.category === 'Equipment').length, color: 'text-nav-marketplace' },
+        { id: 'custom firearms', label: 'Custom Firearms', icon: Crown, count: marketplaceDeals.filter(d => d.category === 'Custom Firearms').length, color: 'text-nav-marketplace' }
+      ]
     },
-    
-    tabFilter: (deal, activeTab) => {
-      if (!deal) return false
-      switch (activeTab) {
-        case 'firearms': return deal.category === 'Firearms'
-        case 'ammunition': return deal.category === 'Ammunition'
-        case 'optics': return deal.category === 'Optics'
-        case 'accessories': return deal.category === 'Accessories'
-        case 'featured': return deal.isFeatured || false
-        default: return true
-      }
+    {
+      id: 'condition',
+      title: 'Condition',
+      maxVisible: 3,
+      collapsible: false,
+      options: [
+        { id: 'new', label: 'New', icon: Star, count: marketplaceDeals.filter(d => d.condition === 'New').length },
+        { id: 'used', label: 'Used', icon: Clock, count: marketplaceDeals.filter(d => d.condition === 'Used').length },
+        { id: 'refurbished', label: 'Refurbished', icon: Fire, count: marketplaceDeals.filter(d => d.condition === 'Refurbished').length }
+      ]
     },
-    
-    customFilters: {
-      category: (deal, selectedCategories) => deal && selectedCategories.includes(deal.category?.toLowerCase()),
-      condition: (deal, selectedConditions) => deal && selectedConditions.includes(deal.condition?.toLowerCase()),
-      price: (deal, selectedPrices) => {
-        if (!deal || !deal.salePrice) return false
-        if (selectedPrices.includes('under50')) return deal.salePrice < 50
-        if (selectedPrices.includes('50-200')) return deal.salePrice >= 50 && deal.salePrice <= 200  
-        if (selectedPrices.includes('200-500')) return deal.salePrice >= 200 && deal.salePrice <= 500
-        if (selectedPrices.includes('over500')) return deal.salePrice > 500
-        return true
-      }
+    {
+      id: 'price',
+      title: 'Price Range',
+      maxVisible: 4,
+      collapsible: false,
+      options: [
+        { id: 'under50', label: 'Under $50', icon: CurrencyDollar, count: marketplaceDeals.filter(d => d.salePrice < 50).length },
+        { id: '50-200', label: '$50 - $200', icon: CurrencyDollar, count: marketplaceDeals.filter(d => d.salePrice >= 50 && d.salePrice <= 200).length },
+        { id: '200-500', label: '$200 - $500', icon: CurrencyDollar, count: marketplaceDeals.filter(d => d.salePrice >= 200 && d.salePrice <= 500).length },
+        { id: 'over500', label: '$500+', icon: CurrencyDollar, count: marketplaceDeals.filter(d => d.salePrice > 500).length }
+      ]
     },
-    
-    // Sort functions
-    sortFunctions: {
-      featured: (a, b) => {
-        // Sort by featured status first, then by discount
-        const aFeatured = a.isFeatured ? 1 : 0
-        const bFeatured = b.isFeatured ? 1 : 0
-        if (bFeatured !== aFeatured) return bFeatured - aFeatured
-        return (b.discount || 0) - (a.discount || 0)
-      },
-      price: (a, b) => (a.salePrice || 0) - (b.salePrice || 0),
-      discount: (a, b) => (b.discount || 0) - (a.discount || 0),
-      rating: (a, b) => (b.rating || 0) - (a.rating || 0),
-      alphabetical: (a, b) => a.title.localeCompare(b.title),
-      newest: (a, b) => {
-        // For now, sort by featured then by discount as a proxy for "newest"
-        const aFeatured = a.isFeatured ? 1 : 0
-        const bFeatured = b.isFeatured ? 1 : 0
-        if (bFeatured !== aFeatured) return bFeatured - aFeatured
-        return (b.discount || 0) - (a.discount || 0)
-      }
+    {
+      id: 'featured',
+      title: 'Content Type',
+      maxVisible: 2,
+      collapsible: false,
+      options: [
+        { id: 'featured', label: 'Featured Deals', icon: Star, count: marketplaceDeals.filter(d => d.isFeatured).length, color: 'text-rusty-orange' }
+      ]
     }
-  })
+  ]
 
   // Sample deal for featured card
   const featuredDeal = marketplaceDeals.find(deal => deal.isFeatured) || marketplaceDeals[0]
@@ -479,21 +532,17 @@ export function MarketplacePageStandardized() {
       </p>
       
       <div className="flex flex-col sm:flex-row gap-base">
-        <Link href="mailto:marketplace@boiseguncollective.com?subject=List Items in Marketplace&body=I'd like to list items in The Boise Gun Club marketplace:%0A%0AItem details:%0ABusiness information:%0AContact information:">
-          <Button 
-            size="lg" 
-            className="bg-nav-marketplace text-white hover:bg-white hover:text-nav-marketplace font-rajdhani font-bold"
-            animationType="plus-minus"
-          >
-            <Storefront className="h-4 w-4 mr-xs" />
-            List Your Items
-          </Button>
-        </Link>
+        <Button 
+          size="lg" 
+          className="bg-nav-marketplace text-white hover:bg-white hover:text-nav-marketplace font-rajdhani font-bold"
+        >
+          <Plus className="h-4 w-4 mr-xs" />
+          List Your Items
+        </Button>
         <Button 
           variant="outline" 
           size="lg"
           className="border-border text-white hover:bg-card hover:text-nav-marketplace"
-          animationType="arrow"
         >
           View All Deals
         </Button>
@@ -502,7 +551,7 @@ export function MarketplacePageStandardized() {
   )
 
   const heroRightContent = (
-    <Card className="mica border-nav-marketplace/30 hover:shadow-elevated transition-all duration-300 overflow-hidden flex flex-col justify-between">
+    <Card className="mica-card shadow-present hover:shadow-elevated transition-all duration-300 h-auto min-h-[280px] lg:min-h-[320px]">
       <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-marketplace/20 to-nav-marketplace/10 rounded-bl-full"></div>
       <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-marketplace to-nav-marketplace"></div>
       
@@ -553,94 +602,148 @@ export function MarketplacePageStandardized() {
   )
 
   return (
-    <CardPageLayout
-      pageTitle="Marketplace"
-      pageSubtitle="Idaho Firearms & Ammo Marketplace"
-      pageColor="marketplace"
-      heroLeftContent={heroLeftContent}
-      heroRightContent={heroRightContent}
-      heroBackgroundElements={heroBackgroundElements}
-      searchQuery={filters.searchQuery}
-      onSearchChange={filters.setSearchQuery}
-      searchPlaceholder="Search firearms, ammo, optics, or dealers..."
-      
-      quickTabs={[
-        { id: 'all', label: 'All Items', count: marketplaceDeals.length, icon: ShoppingCart },
-        { id: 'firearms', label: 'Firearms', count: marketplaceDeals.filter(d => d.category === 'Firearms').length, icon: Target },
-        { id: 'ammunition', label: 'Ammunition', count: marketplaceDeals.filter(d => d.category === 'Ammunition').length, icon: Package },
-        { id: 'optics', label: 'Optics', count: marketplaceDeals.filter(d => d.category === 'Optics').length, icon: Crown },
-        { id: 'accessories', label: 'Accessories', count: marketplaceDeals.filter(d => d.category === 'Accessories').length, icon: Shield },
-        { id: 'featured', label: 'Featured', count: marketplaceDeals.filter(d => d && d.isFeatured).length }
-      ]}
-      activeTab={filters.activeTab}
-      onTabChange={filters.setActiveTab}
-      
-      filterSections={[
-        {
-          title: 'Category',
-          filters: [
-            { id: 'firearms', label: 'Firearms', icon: Target, count: marketplaceDeals.filter(d => d.category === 'Firearms').length },
-            { id: 'ammunition', label: 'Ammunition', icon: Package, count: marketplaceDeals.filter(d => d.category === 'Ammunition').length },
-            { id: 'optics', label: 'Optics', icon: Crown, count: marketplaceDeals.filter(d => d.category === 'Optics').length },
-            { id: 'accessories', label: 'Accessories', icon: Shield, count: marketplaceDeals.filter(d => d.category === 'Accessories').length }
-          ],
-          selectedFilters: filters.selectedFilters.category || [],
-          onFilterChange: (filterId) => filters.updateFilters('category', filterId),
-          multiSelect: true
-        },
-        {
-          title: 'Condition',
-          filters: [
-            { id: 'new', label: 'New', count: marketplaceDeals.filter(d => d.condition === 'New').length },
-            { id: 'used', label: 'Used', count: marketplaceDeals.filter(d => d.condition === 'Used').length },
-            { id: 'refurbished', label: 'Refurbished', count: marketplaceDeals.filter(d => d.condition === 'Refurbished').length }
-          ],
-          selectedFilters: filters.selectedFilters.condition || [],
-          onFilterChange: (filterId) => filters.updateFilters('condition', filterId),
-          multiSelect: true
-        },
-        {
-          title: 'Price Range',
-          filters: [
-            { id: 'under50', label: 'Under $50', icon: CurrencyDollar, count: marketplaceDeals.filter(d => d.salePrice < 50).length },
-            { id: '50-200', label: '$50 - $200', icon: CurrencyDollar, count: marketplaceDeals.filter(d => d.salePrice >= 50 && d.salePrice <= 200).length },
-            { id: '200-500', label: '$200 - $500', icon: CurrencyDollar, count: marketplaceDeals.filter(d => d.salePrice >= 200 && d.salePrice <= 500).length },
-            { id: 'over500', label: '$500+', icon: CurrencyDollar, count: marketplaceDeals.filter(d => d.salePrice > 500).length }
-          ],
-          selectedFilters: filters.selectedFilters.price || [],
-          onFilterChange: (filterId) => filters.updateFilters('price', filterId),
-          multiSelect: true
-        }
-      ]}
-      
-      viewMode={filters.viewMode}
-      onViewModeChange={filters.setViewMode}
-      sortOptions={[
-        { id: 'featured', label: 'Featured First', icon: Star },
-        { id: 'price-low', label: 'Price: Low to High', icon: CurrencyDollar },
-        { id: 'price-high', label: 'Price: High to Low', icon: CurrencyDollar },
-        { id: 'newest', label: 'Newest First', icon: Package },
-        { id: 'discount', label: 'Best Deals', icon: TrendUp }
-      ]}
-      activeSortId={filters.sortBy}
-      onSortChange={filters.setSortBy}
-      
-      totalResults={filters.totalResults}
-      filteredResults={filters.filteredResults}
-      
-      statsSection={
-        <>
-          <TrustIndicators />
-          <div className="mt-4xl">
-            <h3 className="font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center">Marketplace Categories</h3>
-            <DirectoryStatsGrid stats={marketplaceCategoryStats} />
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-br from-nav-marketplace via-nav-marketplace/90 to-nav-marketplace/80 text-white">
+        {/* Background Elements */}
+        {heroBackgroundElements}
+        
+        <div className="container mx-auto px-4 py-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="hero-grid-layout">
+              {/* Hero Left Content */}
+              <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
+                {heroLeftContent}
+              </div>
+              
+              {/* Hero Right Content */}
+              <div className="lg:col-span-1 h-full flex flex-col justify-center">
+                {heroRightContent}
+              </div>
+            </div>
           </div>
-        </>
-      }
-      ctaSection={
-        <div className="space-y-4xl">
-          {/* Activity Feed Section */}
-          <div className="section-skew-up bg-card/50 py-3xl">
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-8">
+        <div className="w-full px-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl">
+          <div className="flex gap-2xl max-w-[1920px] mx-auto">
+            
+            {/* Left Sidebar - Modern Filters (Desktop) */}
+            <aside className="hidden lg:block">
+              <ModernFilterSidebar
+                sections={filterSections}
+                selectedFilters={filters.selectedFilters}
+                onFilterChange={handleFilterChange}
+                onClearSection={handleClearSection}
+                onClearAll={handleClearAll}
+                totalResults={filters.totalResults}
+                filteredResults={filters.filteredResults}
+              />
+            </aside>
+
+            {/* Mobile Filter Sidebar */}
+            <ModernFilterSidebar
+              sections={filterSections}
+              selectedFilters={filters.selectedFilters}
+              onFilterChange={handleFilterChange}
+              onClearSection={handleClearSection}
+              onClearAll={handleClearAll}
+              totalResults={filters.totalResults}
+              filteredResults={filters.filteredResults}
+              isMobile={true}
+              isOpen={mobileFiltersOpen}
+              onClose={() => setMobileFiltersOpen(false)}
+            />
+            
+            {/* Main Content */}
+            <main className="flex-1 min-w-0">
+              {/* Results Header with Controls */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base sm:gap-xl mb-xl sm:mb-2xl lg:mb-3xl">
+                <div>
+                  <h2 className="font-rajdhani text-heading-xl font-bold text-card-foreground">
+                    {filters.filteredResults} {filters.filteredResults === 1 ? 'Deal' : 'Deals'} Found
+                  </h2>
+                  <p className="text-muted-foreground">
+                    Idaho marketplace from verified dealers
+                  </p>
+                </div>
+                
+                {/* Search and Filter Controls */}
+                <div className="flex flex-col sm:flex-row gap-base sm:gap-base">
+                  {/* Search Bar */}
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    <Input
+                      placeholder="Search firearms, ammo, optics, or dealers..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="pl-10 w-full sm:w-80"
+                    />
+                  </div>
+                  
+                  {/* Mobile Filter Toggle */}
+                  <Button
+                    variant="outline"
+                    size="default"
+                    onClick={() => setMobileFiltersOpen(true)}
+                    className="lg:hidden flex items-center gap-2"
+                  >
+                    <Filter className="h-4 w-4" />
+                    Filters
+                    {Object.values(filters.selectedFilters).flat().length > 0 && (
+                      <Badge variant="secondary" className="ml-1 bg-nav-marketplace/20 text-nav-marketplace">
+                        {Object.values(filters.selectedFilters).flat().length}
+                      </Badge>
+                    )}
+                  </Button>
+                </div>
+              </div>
+
+              {/* Deal Grid */}
+              <div className="space-y-xl">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+                  {filteredItems.length > 0 ? (
+                    filteredItems.map((deal, index) => (
+                      <MarketplaceDealCard
+                        key={`${deal.title}-${index}`}
+                        deal={deal}
+                        className="transition-all duration-300 rounded-xs"
+                      />
+                    ))
+                  ) : (
+                    <div className="col-span-full">
+                      <EmptyState 
+                        title="No Deals Found"
+                        description="Try adjusting your search terms or filters to find great deals."
+                        action={
+                          <Button onClick={handleClearAll}>
+                            Clear All Filters
+                          </Button>
+                        }
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Sections */}
+      <div className="space-y-4xl mt-4xl">
+        {/* Stats Section */}
+        <TrustIndicators />
+        <div className="container mx-auto px-4">
+          <h3 className="font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center">Marketplace Categories</h3>
+          <DirectoryStatsGrid stats={marketplaceCategoryStats} />
+        </div>
+
+        {/* Activity Feed Section */}
+        <div className="section-skew-up bg-card/50 py-3xl">
+          <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h3 className="font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center">Recent Marketplace Activity</h3>
               <div className="space-y-base">
@@ -650,15 +753,17 @@ export function MarketplacePageStandardized() {
               </div>
             </div>
           </div>
-          
-          {/* CTA Section */}
-          <ContributionCTA />
-          
-          {/* Legal notice */}
-          <div className="section-skew-down bg-gradient-to-br from-nav-marketplace/10 to-nav-marketplace/5 py-3xl">
+        </div>
+        
+        {/* CTA Section */}
+        <ContributionCTA />
+        
+        {/* Legal notice */}
+        <div className="section-skew-down bg-gradient-to-br from-nav-marketplace/10 to-nav-marketplace/5 py-3xl">
+          <div className="container mx-auto px-4">
             <div className="text-center space-y-base">
               <Badge className="bg-slate-blue/20 text-slate-blue border-slate-blue/30">
-                <Shield weight="bold" className="h-4 w-4 mr-xs" />
+                <Shield className="h-4 w-4 mr-xs" />
                 Legal Notice
               </Badge>
               <h3 className="font-rajdhani font-bold text-heading-lg text-card-foreground">
@@ -671,31 +776,7 @@ export function MarketplacePageStandardized() {
             </div>
           </div>
         </div>
-      }
-    >
-      <div className={filters.getGridClassName()}>
-        {filters.paginatedItems.length > 0 ? (
-          filters.paginatedItems.map((deal, index) => (
-            <MarketplaceDealCard
-              key={`${deal.title}-${index}`}
-              deal={deal}
-              className="transition-all duration-300 rounded-xs"
-            />
-          ))
-        ) : (
-          <div className="col-span-full">
-            <EmptyState 
-              title="No Items Found"
-              description="Try adjusting your search terms or filters to find great deals."
-              action={
-                <Button onClick={filters.clearAllFilters}>
-                  Clear All Filters
-                </Button>
-              }
-            />
-          </div>
-        )}
       </div>
-    </CardPageLayout>
+    </div>
   )
 }

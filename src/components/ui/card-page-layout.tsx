@@ -167,7 +167,7 @@ export function CardPageLayout({
           {/* Search Bar */}
           <div className="mb-lg">
             <div className="relative max-w-2xl">
-              <Search weight="bold" className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder={searchPlaceholder}
                 className="pl-10 h-12 text-body-base shadow-elevated"
@@ -215,7 +215,7 @@ export function CardPageLayout({
                   <CardContent className="p-lg">
                     <div className="space-y-lg">
                       <div className="flex items-center gap-xs">
-                        <Filter weight="bold" className="size-4 text-muted-foreground" />
+                        <Filter className="size-4 text-muted-foreground" />
                         <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground">
                           Filters
                         </h3>
@@ -283,7 +283,7 @@ export function CardPageLayout({
                       className="rounded-none border-none shadow-none"
                       title="Dense Grid - Maximum items"
                     >
-                      <DenseView weight="bold" className="size-4" />
+                      <DenseView className="size-4" />
                     </Button>
                     <Button
                       variant={viewMode === 'grid' ? 'default' : 'ghost'}
@@ -292,7 +292,7 @@ export function CardPageLayout({
                       className="rounded-none border-none shadow-none"
                       title="Standard Grid"
                     >
-                      <Grid weight="bold" className="size-4" />
+                      <Grid className="size-4" />
                     </Button>
                     <Button
                       variant={viewMode === 'card' ? 'default' : 'ghost'}
@@ -301,7 +301,7 @@ export function CardPageLayout({
                       className="rounded-none border-none shadow-none"
                       title="Large Cards"
                     >
-                      <CardView weight="bold" className="size-4" />
+                      <CardView className="size-4" />
                     </Button>
                     <Button
                       variant={viewMode === 'list' ? 'default' : 'ghost'}
@@ -310,7 +310,7 @@ export function CardPageLayout({
                       className="rounded-none border-none shadow-none"
                       title="List View"
                     >
-                      <List weight="bold" className="size-4" />
+                      <List className="size-4" />
                     </Button>
                   </div>
 
@@ -318,9 +318,9 @@ export function CardPageLayout({
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="outline" className="gap-xs shadow-none rounded-xs">
-                        <SortAsc weight="bold" className="size-4" />
+                        <SortAsc className="size-4" />
                         Sort by {sortOptions.find(s => s.id === activeSortId)?.label || 'Default'}
-                        <ChevronDown weight="bold" className="size-3" />
+                        <ChevronDown className="size-3" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">

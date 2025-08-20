@@ -29,7 +29,7 @@ import {
   WrenchScrewdriverIcon as Wrench, 
   TrophyIcon as Trophy,
   HeartIcon as Heart, 
-  ArrowTrendingUpIcon as TrendUp, 
+  TrendingUpIcon as TrendUp, 
   ClockIcon as Clock, 
   UsersIcon as Users,
   MagnifyingGlassIcon as Search,
@@ -283,7 +283,7 @@ export function ArmoryPageStandardized() {
     <>
       <div className="flex items-center gap-base">
         <div className="bg-card/10 p-base rounded-xs border border-border">
-          <Shield className="h-8 w-8 text-white" />
+          <Shield weight="bold" className="h-8 w-8 text-white" />
         </div>
         <div className="space-y-base">
           <div className="flex items-center gap-xs text-sm text-white/60">
@@ -293,15 +293,15 @@ export function ArmoryPageStandardized() {
           </div>
           <div className="flex flex-wrap gap-xs">
             <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-              <Scales className="h-4 w-4 mr-xs" />
+              <Scales weight="bold" className="h-4 w-4 mr-xs" />
               Legal Guides
             </Badge>
             <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-              <Shield className="h-4 w-4 mr-xs" />
+              <Shield weight="bold" className="h-4 w-4 mr-xs" />
               Equipment Reviews
             </Badge>
             <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-              <BookOpen className="h-4 w-4 mr-xs" />
+              <BookOpen weight="bold" className="h-4 w-4 mr-xs" />
               Technical Guides
             </Badge>
           </div>
@@ -322,11 +322,11 @@ export function ArmoryPageStandardized() {
       </p>
       
       <div className="flex flex-col sm:flex-row gap-base">
-        <Button size="lg" className="bg-nav-armory text-white hover:bg-white hover:text-nav-armory font-rajdhani font-bold">
+        <Button size="lg" className="bg-nav-armory text-white hover:bg-white hover:text-nav-armory font-rajdhani font-bold" animationType="plus-minus">
           <Plus className="h-4 w-4 mr-xs" />
           Submit Article
         </Button>
-        <Button variant="outline" size="lg" className="border-border text-white hover:bg-card hover:text-nav-armory">
+        <Button variant="outline" size="lg" className="border-border text-white hover:bg-card hover:text-nav-armory" animationType="arrow">
           Browse Guides
         </Button>
       </div>
@@ -334,19 +334,19 @@ export function ArmoryPageStandardized() {
   )
 
   const heroRightContent = armoryArticles.find(a => a.featured) && (
-    <Card className="mica-card shadow-present hover:shadow-elevated transition-all duration-300 h-auto min-h-[280px] lg:min-h-[320px]">
+    <Card className="mica shadow-present hover:shadow-elevated transition-all duration-300 h-auto min-h-[280px] lg:min-h-[320px]">
       <CardHeader>
         <Badge className="bg-nav-armory/20 text-nav-armory border-nav-armory/30 mb-sm">
-          <Star className="h-3 w-3 mr-xs" />
+          <Star weight="fill" className="h-3 w-3 mr-xs" />
           Featured
         </Badge>
         <h3 className="font-rajdhani font-bold text-heading-sm text-card-foreground line-clamp-2">
           {armoryArticles[0].title}
         </h3>
         <div className="flex items-center gap-sm text-body-xs text-muted-foreground">
-          <Clock className="h-3 w-3" />
+          <Clock weight="bold" className="h-3 w-3" />
           <span>{armoryArticles[0].readTime} min read</span>
-          <Eye className="h-3 w-3" />
+          <Eye weight="bold" className="h-3 w-3" />
           <span>{armoryArticles[0].views.toLocaleString()} views</span>
         </div>
       </CardHeader>
@@ -363,6 +363,7 @@ export function ArmoryPageStandardized() {
         </div>
         <Button 
           className="w-full bg-nav-armory text-white hover:bg-nav-armory/90 font-rajdhani font-bold"
+          animationType="arrow"
         >
           Read Article
         </Button>
@@ -474,7 +475,7 @@ export function ArmoryPageStandardized() {
                     ...article,
                     sectionPath: "/armory"
                   }))}
-                  variant="grid"
+                  viewMode="grid"
                 />
               </div>
             </main>

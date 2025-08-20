@@ -20,16 +20,16 @@ const vendorCardVariants = cva(
     variants: {
       tier: {
         // FREE: Clean baseline - foundational presence
-        free: "shadow-present hover:shadow-hero",
+        free: "shadow-present hover:shadow-hero tactical-underline-base tactical-underline-directory",
         
         // COPPER: Enhanced copper presence - premium depth with tactical warmth
-        copper: "shadow-present hover:shadow-hero bg-rusty-orange/[0.02] hover:bg-rusty-orange/[0.03] relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-walnut-stock after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm",
+        copper: "shadow-present hover:shadow-hero bg-rusty-orange/[0.02] hover:bg-rusty-orange/[0.03] tactical-underline-base tactical-underline-fire",
         
         // SILVER: Professional prominence with sophisticated glassmorphism
-        silver: "relative shadow-present hover:shadow-hero bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-none before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-warm-stone after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-sm",
+        silver: "relative shadow-present hover:shadow-hero bg-gradient-to-br from-card/98 via-card/95 to-card/98 before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-blue/6 before:via-transparent before:to-scope-blue/4 dark:before:from-slate-blue/8 dark:before:to-scope-blue/6 before:rounded-none before:pointer-events-none tactical-underline-base tactical-underline-directory",
         
         // GOLD: Hero-level commanding presence with premium tactical depth
-        gold: "relative shadow-present hover:shadow-hero bg-card border border-rusty-orange/20 before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/8 before:via-transparent before:to-rusty-orange/6 dark:before:from-rusty-orange/12 dark:before:to-rusty-orange/10 before:rounded-none before:pointer-events-none after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-rusty-orange after:transition-all after:duration-300 after:ease-out after:z-10 hover:after:w-full after:rounded-b-sm"
+        gold: "relative shadow-present hover:shadow-hero bg-card border border-rusty-orange/20 before:absolute before:inset-0 before:bg-gradient-to-br before:from-rusty-orange/8 before:via-transparent before:to-rusty-orange/6 dark:before:from-rusty-orange/12 dark:before:to-rusty-orange/10 before:rounded-none before:pointer-events-none tactical-underline-base tactical-underline-premium"
       },
       size: {
         sm: "p-base",           // 16px - compact cards
