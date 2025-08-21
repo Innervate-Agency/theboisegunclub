@@ -414,29 +414,27 @@ export function SiteNavigation({
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 0.15, ease: "easeOut" }}
+                        transition={{ duration: 0.1, ease: "easeOut" }}
                       >
                         {/* Document-style Tactical Brackets */}
                         {/* Top Left - Standard square bracket */}
-                        <div className={`absolute top-0 left-0 w-2 h-2 border-l border-t ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
+                        <div className={`absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
                         
                         {/* Top Right - Standard bracket with filled square accent */}
-                        <div className={`absolute top-0 right-0 w-2 h-2 border-r border-t ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
+                        <div className={`absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
                         
-                        {/* Filled square accent in top-right corner */}
-                        <div className={`absolute top-0.5 right-0.5 w-1 h-1 ${getMagicLineColor(item.color)} opacity-80`} />
                         
                         {/* Bottom Left - Standard square bracket */}
-                        <div className={`absolute bottom-0 left-0 w-2 h-2 border-l border-b ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
+                        <div className={`absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
                         
                         {/* Bottom Right - Standard square bracket */}
-                        <div className={`absolute bottom-0 right-0 w-2 h-2 border-r border-b ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
+                        <div className={`absolute bottom-0 right-0 w-3 h-3 border-r-2 border-b-2 ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
                       </MotionDiv>
                     )}
                     
                     {renderNavLink(
                       item,
-                      `relative z-10 flex items-center gap-xs px-xs py-xs text-body-base font-rajdhani font-medium transition-all duration-200 ${
+                      `relative z-10 flex items-center gap-xs px-xs py-xs text-body-base font-rajdhani font-semibold transition-all duration-200 ${
                         isActive
                           ? getActiveTextClass(item.color)
                           : isHovered 
@@ -445,22 +443,22 @@ export function SiteNavigation({
                       }`,
                       <MotionDiv 
                         className="flex items-center gap-xs"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.2 }}
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.15, ease: "easeOut" }}
                       >
                         <MotionDiv
                           whileHover={{ 
-                            y: [-1, 0],
-                            transition: { duration: 0.2, ease: "easeOut" }
+                            scale: 1.05,
+                            transition: { duration: 0.12, ease: "easeOut" }
                           }}
                           whileTap={{ 
-                            scale: 0.95,
-                            transition: { duration: 0.1 }
+                            scale: 0.98,
+                            transition: { duration: 0.08 }
                           }}
                         >
                           <item.icon className="size-4" />
                         </MotionDiv>
-                        {item.label}
+                        {item.label.toUpperCase()}
                       </MotionDiv>
                     )}
                   </div>
@@ -530,7 +528,7 @@ export function SiteNavigation({
                 <div key={item.href} onClick={() => setIsMobileMenuOpen(false)}>
                   {renderNavLink(
                     item,
-                    `flex items-center gap-sm px-mobile-md sm:px-lg py-mobile-md sm:py-lg text-body-base font-rajdhani font-medium transition-all duration-150 rounded-xs touch-target ${
+                    `flex items-center gap-sm px-mobile-md sm:px-lg py-mobile-md sm:py-lg text-body-base font-rajdhani font-semibold transition-all duration-150 rounded-xs touch-target ${
                       pathname === item.href 
                         ? `${getActiveTextClass(item.color)} bg-muted/30`
                         : `text-muted-foreground ${getHoverClasses(item.color)} hover:bg-muted/20`
@@ -538,7 +536,7 @@ export function SiteNavigation({
                     <>
                       <item.icon className="size-5" />
                       <div className="flex flex-col">
-                        <span>{item.label}</span>
+                        <span>{item.label.toUpperCase()}</span>
                         <span className="text-xs text-muted-foreground">
                           {item.label === 'Events' && 'Competitions & Training'}
                           {item.label === 'Directory' && 'Local Businesses'}

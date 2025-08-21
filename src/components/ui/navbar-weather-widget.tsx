@@ -101,7 +101,7 @@ export function NavbarWeatherWidget() {
         <Button
           variant="ghost"
           size="sm"
-          className="gap-xs text-foreground hover:bg-accent hover:text-accent-foreground relative flex-col py-1"
+          className="gap-xs text-foreground hover:bg-accent hover:text-accent-foreground relative"
           title={`${weatherData.locationName}: ${weatherData.temperature}°F, ${weatherData.shortForecast}`}
         >
           <div className="flex items-center gap-xs">
@@ -110,9 +110,6 @@ export function NavbarWeatherWidget() {
               {weatherData.temperature}°F
             </span>
           </div>
-          <span className="text-[10px] text-muted-foreground/70 leading-none -mt-0.5 uppercase tracking-wide font-medium">
-            {location.city || weatherData.locationName.split(',')[0]}
-          </span>
         </Button>
       </PopoverTrigger>
       
@@ -166,8 +163,8 @@ export function NavbarWeatherWidget() {
               <div className="flex items-center gap-xs">
                 <Wind className="h-4 w-4 text-nav-intel" />
                 <div>
-                  <div className="text-sm font-medium">{weatherData.windDirection}</div>
-                  <div className="text-xs text-muted-foreground">{weatherData.windSpeed} mph</div>
+                  <div className="text-sm font-medium">{weatherData.windSpeed} mph</div>
+                  <div className="text-xs text-muted-foreground">{weatherData.windDirection}</div>
                 </div>
               </div>
 
@@ -241,7 +238,7 @@ export function NavbarWeatherWidget() {
           {/* Footer */}
           <div className="p-base bg-muted/30 border-t border-border">
             <div className="flex items-center justify-between text-xs text-muted-foreground">
-              <span>National Weather Service</span>
+              <span>OpenWeatherMap</span>
               <span>Updated {formatTime(weatherData.lastUpdated)}</span>
             </div>
           </div>

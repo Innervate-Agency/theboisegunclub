@@ -14,7 +14,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 const heroOverhangVariants = cva(
-  "absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full pointer-events-none z-30",
+  "relative mx-auto w-full",
   {
     variants: {
       variant: {
@@ -101,13 +101,10 @@ export function HeroOverhangSection({
       <div>
         {/* Piano Key Navigation Container */}
         <div 
-          className="mica bg-card rounded-md overflow-hidden pointer-events-auto transition-all duration-500"
-          style={{
-            boxShadow: 'var(--dynamic-shadow, 0 50px 100px -20px rgba(0, 0, 0, 0.25))'
-          } as React.CSSProperties}
+          className="overflow-hidden transition-all duration-500"
         >
-          {/* Optional top accent line */}
-          <div className="h-1 bg-gradient-to-r from-transparent via-sandy-ochre/50 to-transparent" />
+          {/* Top accent line for paper effect */}
+          <div className="h-1 bg-gradient-to-r from-transparent via-sandy-ochre/30 to-transparent" />
           
           {/* Navigation Buttons - Responsive scaling while maintaining single row */}
           <div className="grid grid-cols-6 h-16 sm:h-20 md:h-24 lg:h-26">
@@ -116,20 +113,6 @@ export function HeroOverhangSection({
                 key={index}
                 href={item.href}
                 className="relative overflow-hidden bg-card border-r border-border/10 last:border-r-0 group transition-all duration-500 hover:shadow-inset hover:bg-muted/30 active:scale-95"
-                onMouseEnter={(e) => {
-                  // Set the dynamic shadow color for the big container - subtle and diffused
-                  const container = e.currentTarget.closest('[style*="--dynamic-shadow"]') as HTMLElement
-                  if (container && container.style) {
-                    container.style.setProperty('--dynamic-shadow', `0 50px 120px -40px rgba(var(--${item.colorClass}-rgb), 0.15)`)
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  // Reset to default shadow
-                  const container = e.currentTarget.closest('[style*="--dynamic-shadow"]') as HTMLElement
-                  if (container && container.style) {
-                    container.style.setProperty('--dynamic-shadow', '0 50px 100px -20px rgba(0, 0, 0, 0.25)')
-                  }
-                }}
               >
                 {/* Colored bottom border on hover */}
                 <div 
@@ -189,8 +172,7 @@ export function HeroOverhangSection({
             ))}
           </div>
           
-          {/* Optional bottom accent line */}
-          <div className="h-0.5 bg-gradient-to-r from-transparent via-border/30 to-transparent" />
+          {/* Removed bottom accent for inverted U effect */}
         </div>
       </div>
       

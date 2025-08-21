@@ -1,5 +1,74 @@
 # Changelog
 
+## [Pre-Launch] - 2025-08-21 (Latest)
+
+### 🏠 **HOMEPAGE ARCHITECTURE & NAVIGATION OVERHAUL**
+
+#### 📐 Component Architecture Refactor
+- **Clean Homepage Structure**: Reduced from 200+ lines to 16-line component-based architecture
+- **Section Components**: Created 5 specialized section components (Platform Features, Featured Content, Directory Stats, Marketplace Deals, Platform Values)
+- **Proper Next.js Patterns**: Pure component imports with no inline JSX for maintainable codebase
+- **Design Token Usage**: All components use globals.css tokens exclusively - no hardcoded colors
+
+#### 🎨 Hero & Overhang Navigation System  
+- **Inverted U-Shape Design**: Overhang navigation styled as "paper curling up" from content section into hero
+- **Theme-Aware Hero Gradient**: Light theme uses #bd8511 → #ca9122 gradient, dark/gruvbox keep vibrant yellows
+- **Typography Hierarchy**: "THE BOISE" (700 weight) + "GUN CLUB" (300 weight) on single line with animations
+- **Subtitle Refinement**: Dark chocolate lowercase Rajdhani for understated tactical aesthetic
+- **Proper Positioning**: Overhang sits at hero bottom with -mt-24 negative margin, extends into pillars section
+- **Background Consistency**: Uses bg-light-peachy (#F9FAFB) design token instead of hardcoded white
+
+#### 🌤️ Weather Widget Enhancement
+- **Cleaner Navbar Display**: Removed location text, shows only icon + temperature (e.g., "☀️ 76°F")
+- **Rich Tooltip Details**: Location, conditions, wind, humidity, fire danger, range access in hover popup
+- **OpenWeatherMap Integration**: Properly configured with API compliance and attribution
+- **Smart Caching**: 30-minute cache duration for API efficiency
+
+#### 🐛 Critical Bug Fixes
+- **Intel Page Navigation Crash**: Fixed server/client boundary issue by moving data fetching to client-side
+- **API Route Creation**: Added /api/weather/multiple endpoint for safe client-side weather fetching
+- **Loading States**: Implemented proper loading management for async data operations
+
+#### 🎯 Navigation Polish
+- **All Caps Navigation**: Main nav links now display in uppercase for tactical authority
+- **Button Color Refinement**: Sandy-ochre buttons with dark-chocolate text for better readability
+- **Consistent Theming**: All CTAs use proper design tokens from the Boise landscape palette
+
+## [Pre-Launch] - 2025-08-21 (Earlier)
+
+### 🎯 **TACTICAL FILTER SYSTEM & SMART BADGE OVERHAUL**
+
+#### ⚡ Comprehensive Tactical Icon System
+- **Shooting Sports Iconography**: Replaced generic trophy/star icons with meaningful tactical representations
+- **Multi-Library Integration**: Combined Game-icons.net, Lucide React, Tabler Icons, and Heroicons for comprehensive coverage
+- **7-Category Discipline System**: Organized shooting sports into logical hierarchies (Pistol/Rifle, 3-Gun, Trap, Skeet, Sporting Clays, Cowboy Action, Leagues/Misc)
+- **25+ Sub-Discipline Icons**: Specific icons for USPSA, IDPA, PRS, Steel Challenge, ATA/PITA Trap, NSCA Sporting Clays, SASS, etc.
+- **Progressive Skill Indicators**: Visual hierarchy from beginner (check) → intermediate (dot) → advanced (bullseye)
+- **Equipment Type Geometry**: Circles for pistol, extended lines for rifle, octagons for shotgun, stacked elements for multi-gun
+- **Authority Level Symbols**: Circle → Square → Hexagon → Octagon progression for club → state → regional → national matches
+
+#### 🔧 Filter System Architecture
+- **Nested Category Support**: Collapsible main sections with expandable sub-categories for better organization
+- **Calendar-First Layout**: Moved sidebar calendar to top for immediate date filtering access
+- **Icon Normalization**: Standardized 16px icon containers to eliminate size inconsistencies across libraries
+- **Improved Typography**: Increased nested text from 12px to 14px for better readability
+- **Smart Fallbacks**: Robust error handling with console warnings for missing icons
+- **Touch-Friendly Design**: Proper button heights and spacing for mobile accessibility
+
+#### 🏆 MVP-Focused Smart Badge System
+- **Truth-Based Badges**: Only shows verifiable information from actual event data
+- **8 Badge Categories**: Event Format, Equipment Requirements, Registration Status, Skill Level, Location Type, Time-Based, Cost, Special Considerations
+- **Real Data Parsing**: Analyzes event descriptions for BYOA, gear availability, skill levels, indoor/outdoor venues
+- **No Fake Premium Features**: Eliminated "featured", "verified", "sponsored" badges for honest MVP approach
+- **Registration Intelligence**: Shows "Pre-Registration" vs "Walk-ins Welcome" based on actual registration URLs
+- **Time-Sensitive Alerts**: "Closing Soon" badges for events within 7 days
+
+#### 🎨 Professional Visual Language
+- **Geometric Consistency**: Bullseyes for precision, triangles for trajectories, crosshairs for intersecting paths
+- **Color-Coded Categories**: Discipline-specific colors (events orange for 3-gun, marketplace colors for clay sports)
+- **Meaningful Symbols**: Diamond shapes for precision events, stacked elements for multi-gun, circles for basic categories
+- **Trust-Building Design**: Every visual element represents verifiable, helpful information
+
 ## [Pre-Launch] - 2025-08-20
 
 ### ⚡ **TACTICAL NAVIGATION ENHANCEMENT & BRACKET SYSTEM**

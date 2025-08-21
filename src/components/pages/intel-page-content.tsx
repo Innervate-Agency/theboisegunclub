@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -11,7 +11,7 @@ import { WeatherConditionsTicker } from '@/components/ui/weather-conditions-tick
 import { EnhancedLocationBrowser } from '@/components/ui/enhanced-location-browser'
 import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
-import { shootingLocations, getLocationStats } from '@/lib/intel-locations-data'
+import { shootingLocations, getLocationStats, featuredWeatherLocations } from '@/lib/intel-locations-data'
 import { 
   Plus, Shield, 
   Compass, ChevronRight, Star, MapPin, Navigation,
@@ -26,8 +26,39 @@ interface IntelPageContentProps {
   allWeatherData: any[]
 }
 
-export function IntelPageContent({ liveWeatherConditions, allWeatherData }: IntelPageContentProps) {
+export function IntelPageContent({ liveWeatherConditions: initialLive, allWeatherData: initialAll }: IntelPageContentProps) {
   const locationStats = getLocationStats()
+  const [liveWeatherConditions, setLiveWeatherConditions] = useState(initialLive)
+  const [allWeatherData, setAllWeatherData] = useState(initialAll)
+  const [isLoadingWeather, setIsLoadingWeather] = useState(false)
+
+  useEffect(() => {
+    // Fetch weather data client-side
+    const fetchWeatherData = async () => {
+      if (liveWeatherConditions.length > 0) return // Skip if we already have data
+      
+      setIsLoadingWeather(true)
+      try {
+        // Fetch weather for featured locations (for the ticker)
+        const response = await fetch('/api/weather/multiple', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ locations: featuredWeatherLocations })
+        })
+        
+        if (response.ok) {
+          const data = await response.json()
+          setLiveWeatherConditions(data.weather || [])
+        }
+      } catch (error) {
+        console.error('Failed to fetch weather data:', error)
+      } finally {
+        setIsLoadingWeather(false)
+      }
+    }
+
+    fetchWeatherData()
+  }, [])
 
   return (
     <div className="min-h-screen bg-background">
