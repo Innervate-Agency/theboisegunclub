@@ -72,11 +72,12 @@
 - **Loading States**: Idaho Tumbleweed system for all loading scenarios
 - **Performance**: All animations disabled during loading, use currentColor for theming
 
-### Icon System (Phosphor Primary)
-- **Primary Library**: Phosphor Icons (@phosphor-icons/react)
-- **Fallback Libraries**: Tabler, Heroicons, React Icons for specialized needs
-- **Weight System**: Use "bold" weight for navigation (tactical aesthetic)
-- **Sizing Standard**: h-4 w-4 for most contexts, h-6 w-6 for prominent elements
+### Tactical Icon System (Multi-Library Integration)
+- **Primary Libraries**: Game-icons.net, Lucide React, Tabler Icons, Heroicons
+- **Tactical Filter Icons**: `/src/lib/tactical-filter-icons.tsx` - Comprehensive shooting sports iconography
+- **Icon Normalization**: 16px standardized containers for consistent sizing across libraries
+- **Geometric Language**: Meaningful shapes (bullseyes for precision, triangles for trajectories, crosshairs for intersections)
+- **Fallback System**: Smart error handling with console warnings for missing icons
 
 ---
 
@@ -153,6 +154,12 @@
 - `src/app/globals.css` - **Optimized 26-color Boise landscape palette (1,081 lines, 62% reduction)**
 - `src/components/ui/site-navigation.tsx` - **Mobile-responsive navigation with tactical megamenu foundation**
 - `src/components/ui/hero-overhang-section.tsx` - **Responsive treasure chest navigation (FIXED: null safety)**
+
+### Tactical Filter & Badge System
+- `src/lib/tactical-filter-icons.tsx` - **Comprehensive shooting sports icon system with 7 categories, 25+ sub-disciplines**
+- `src/components/ui/smart-event-badges.tsx` - **MVP-focused truth-based badge system (8 categories, no fake premium features)**
+- `src/components/ui/modern-filter-sidebar.tsx` - **Nested collapsible filter system with calendar-first layout**
+- `src/components/pages/events-page-standardized.tsx` - **Events page with tactical filters and realistic badges**
 
 ### Authentic Data Pages
 - `src/components/pages/directory-page-standardized.tsx` - **594 privacy-filtered Idaho businesses**
