@@ -4,10 +4,7 @@ import React, { useState, useMemo } from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { WeatherLocationCard } from '@/components/ui/weather-location-card'
-import { 
-  Filter, ChevronLeft, ChevronRight, MapPin, Mountain, 
-  Target, Navigation, Compass, TrendingUp, Star, Clock
-} from 'lucide-react'
+import { ChevronLeftIcon, ChevronRightIcon, CursorArrowRaysIcon, GlobeAltIcon, MapPinIcon, ArrowUpIcon } from '@heroicons/react/24/outline';
 
 interface WeatherData {
   locationName: string
@@ -136,7 +133,7 @@ export function EnhancedLocationBrowser({ locations, weatherData }: EnhancedLoca
         {/* Section Header */}
         <div className="space-y-xl mb-4xl">
           <div className="text-center space-y-base">
-            <Badge variant="intel-location" size="md">
+            <Badge variant="outline" size="default">
               Enhanced Location Browser
             </Badge>
             <h2 className="font-rajdhani text-heading-4xl font-bold text-card-foreground leading-tight">
@@ -250,7 +247,7 @@ export function EnhancedLocationBrowser({ locations, weatherData }: EnhancedLoca
                 disabled={currentPage === 1}
                 className="gap-xs"
               >
-                <ChevronLeft className="h-4 w-4" />
+                <ChevronLeftIcon className="h-4 w-4" />
                 Previous
               </Button>
 
@@ -276,7 +273,7 @@ export function EnhancedLocationBrowser({ locations, weatherData }: EnhancedLoca
                 className="gap-xs"
               >
                 Next
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRightIcon className="h-4 w-4" />
               </Button>
             </div>
           )}
@@ -285,7 +282,7 @@ export function EnhancedLocationBrowser({ locations, weatherData }: EnhancedLoca
           {currentLocations.length === 0 && (
             <div className="text-center py-4xl">
               <div className="space-y-base">
-                <Target className="h-12 w-12 text-muted-foreground mx-auto" />
+                <CursorArrowRaysIcon className="h-12 w-12 text-muted-foreground mx-auto" />
                 <h3 className="font-rajdhani text-body-xl font-bold text-card-foreground">
                   No locations found
                 </h3>

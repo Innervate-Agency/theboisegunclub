@@ -4,7 +4,7 @@ import * as React from 'react'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { Heart, Download, Filter, Grid3X3, List } from 'lucide-react'
+import { ArrowDownTrayIcon, FunnelIcon, HeartIcon, ListBulletIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image'
 
 const galleryGridVariants = cva(
@@ -148,7 +148,7 @@ export function GalleryGrid({
                 onClick={() => setViewMode('list')}
                 className="border-rusty-orange/30"
               >
-                <List className="icon-sm" />
+                <ListBulletIcon className="icon-sm" />
               </Button>
             </div>
           </div>
@@ -201,7 +201,7 @@ export function GalleryGrid({
                   <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-xs">
                     <Button
                       size="sm"
-                      variant="secondary"
+                      variant="outline"
                       onClick={(e) => {
                         e.stopPropagation()
                         handleLike(image.id)
@@ -211,19 +211,19 @@ export function GalleryGrid({
                         isLiked && "bg-rusty-orange text-card-foreground"
                       )}
                     >
-                      <Heart className={cn("icon-sm", isLiked && "fill-current")} />
+                      <HeartIcon className={cn("icon-sm", isLiked && "fill-current")} />
                     </Button>
                     
                     <Button
                       size="sm"
-                      variant="secondary"
+                      variant="outline"
                       onClick={(e) => {
                         e.stopPropagation()
                         onDownload?.(image.id)
                       }}
                       className="bg-card/90 border-0 shadow-flat"
                     >
-                      <Download className="icon-sm" />
+                      <ArrowDownTrayIcon className="icon-sm" />
                     </Button>
                   </div>
                 </div>
@@ -249,13 +249,13 @@ export function GalleryGrid({
                       <div className="flex items-center gap-base text-caption text-muted-foreground">
                         {image.likes !== undefined && (
                           <div className="flex items-center gap-xs">
-                            <Heart className="icon-xs" />
+                            <HeartIcon className="icon-xs" />
                             <span>{image.likes}</span>
                           </div>
                         )}
                         {image.downloads !== undefined && (
                           <div className="flex items-center gap-xs">
-                            <Download className="icon-xs" />
+                            <ArrowDownTrayIcon className="icon-xs" />
                             <span>{image.downloads}</span>
                           </div>
                         )}
@@ -271,7 +271,7 @@ export function GalleryGrid({
         {/* Empty State */}
         {filteredImages.length === 0 && (
           <div className="text-center py-16">
-            <Filter className="icon-2xl icon-muted mx-auto mb-4" />
+            <FunnelIcon className="icon-2xl icon-muted mx-auto mb-4" />
             <h3 className="text-body-lg font-rajdhani font-bold text-card-foreground mb-4">
               No images found
             </h3>

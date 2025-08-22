@@ -8,15 +8,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { AuthButton } from '@/components/auth/auth-button'
 import { useAuth } from '@/components/auth/auth-context'
-import { 
-  Diamond, 
-  Ticket,
-  AddressBook,
-  Shield,
-  MapTrifold,
-  Storefront,
-  Users
-} from '@phosphor-icons/react'
+import { BookOpenIcon, BuildingStorefrontIcon, MapIcon, ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const navigationVariants = cva(
   "w-full transition-all duration-200 ease-out",
@@ -108,7 +100,7 @@ export function SimpleNavigation() {
               className="lg:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              <Users weight="bold" className="size-5" />
+              <UsersIcon weight="bold" className="size-5" />
             </Button>
           </div>
         </div>

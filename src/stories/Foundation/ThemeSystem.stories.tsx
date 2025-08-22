@@ -62,7 +62,7 @@ export const ThemeContrastTest: Story = {
               <span className="text-body-sm">Accent Color:</span>
               <div className="w-8 h-8 bg-accent rounded"></div>
             </div>
-            <Button variant="accent" className="w-full">Accent Button</Button>
+            <Button variant="default" className="w-full">Accent Button</Button>
           </div>
         </Card>
 
@@ -94,15 +94,15 @@ export const ThemeContrastTest: Story = {
           Interactive Elements
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-base">
-          <Button variant="primary">Primary</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="accent">Accent</Button>
+          <Button variant="default">Primary</Button>
+          <Button variant="outline">Secondary</Button>
+          <Button variant="default">Accent</Button>
           <Button variant="destructive">Destructive</Button>
         </div>
         
         <div className="mt-base flex flex-wrap gap-xs">
-          <Badge variant="default">Default Badge</Badge>
-          <Badge variant="secondary">Secondary Badge</Badge>
+          <Badge variant="outline">Default Badge</Badge>
+          <Badge variant="outline">Secondary Badge</Badge>
           <Badge variant="destructive">Destructive Badge</Badge>
         </div>
       </Card>

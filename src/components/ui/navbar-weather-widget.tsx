@@ -5,26 +5,12 @@ import { Badge } from './badge'
 import { Button } from './button'
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
 import { useUserWeather } from '@/hooks/useUserWeather'
-import { 
-  SunIcon as Sun, 
-  CloudIcon as Cloud, 
-  CloudRainIcon as CloudRain, 
-  CloudSnowIcon as CloudSnow, 
-  ZapIcon as Storm,
-  MapPinIcon as MapPin,
-  ThermometerIcon as Thermometer,
-  WindIcon as Wind,
-  FlameIcon as Flame,
-  RefreshCwIcon as Refresh,
-  AlertTriangleIcon as Warning,
-  CheckCircleIcon as CheckCircle,
-  XCircleIcon as XCircle
-} from 'lucide-react'
+import { AccessStatusIcon, CheckCircleIcon, CloudIcon, CloudRainIcon, CloudSnowIcon, ExclamationTriangleIcon, FireIcon, FlameIcon, MapPinIcon, RefreshCwIcon, SunIcon, ThermometerIcon, WeatherIcon, WindIcon, XCircleIcon, ZapIcon } from '@heroicons/react/24/outline';
 
 const WeatherIcon = ({ type, className = "h-4 w-4" }: { type: string; className?: string }) => {
   switch (type) {
     case 'sun':
-      return <Sun className={`${className} text-yellow-500`} />
+      return <SunIcon className={`${className} text-yellow-500`} />
     case 'partly-cloudy':
       return <Cloud className={`${className} text-blue-400`} />
     case 'cloudy':
@@ -36,7 +22,7 @@ const WeatherIcon = ({ type, className = "h-4 w-4" }: { type: string; className?
     case 'storm':
       return <Storm className={`${className} text-purple-600`} />
     default:
-      return <Sun className={`${className} text-yellow-500`} />
+      return <SunIcon className={`${className} text-yellow-500`} />
   }
 }
 
@@ -63,7 +49,7 @@ export function NavbarWeatherWidget() {
         disabled={isLoading}
         title="Weather unavailable - Click to retry"
       >
-        <Warning className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
+        <ExclamationTriangleIcon className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
         <span className="hidden md:inline text-xs">Weather Error</span>
       </Button>
     )
@@ -81,10 +67,10 @@ export function NavbarWeatherWidget() {
 
   const getAccessStatusIcon = (status: string) => {
     switch (status) {
-      case 'Open': return <CheckCircle className="h-3 w-3 text-sagebrush-green" />
-      case 'Restrictions': return <Warning className="h-3 w-3 text-sandy-ochre" />
-      case 'Closed': return <XCircle className="h-3 w-3 text-rusty-orange" />
-      default: return <CheckCircle className="h-3 w-3 text-sagebrush-green" />
+      case 'Open': return <CheckCircleIcon className="h-3 w-3 text-sagebrush-green" />
+      case 'Restrictions': return <ExclamationTriangleIcon className="h-3 w-3 text-sandy-ochre" />
+      case 'Closed': return <XCircleIcon className="h-3 w-3 text-rusty-orange" />
+      default: return <CheckCircleIcon className="h-3 w-3 text-sagebrush-green" />
     }
   }
 
@@ -145,11 +131,11 @@ export function NavbarWeatherWidget() {
           {/* Location */}
           <div className="p-base border-b border-border">
             <div className="flex items-center gap-xs text-sm">
-              <MapPin className="h-3 w-3 text-nav-intel" />
+              <MapPinIcon className="h-3 w-3 text-nav-intel" />
               <span className="font-medium">{weatherData.locationName}</span>
               {location.permission === 'granted' && (
                 <Badge variant="status-success" size="sm" className="ml-auto">
-                  <CheckCircle className="h-3 w-3 mr-xs" />
+                  <CheckCircleIcon className="h-3 w-3 mr-xs" />
                   Live Location
                 </Badge>
               )}
@@ -195,7 +181,7 @@ export function NavbarWeatherWidget() {
               <div className="space-y-xs">
                 <div className="text-xs text-muted-foreground">Fire Danger</div>
                 <Badge variant={getFireDangerColor(weatherData.fireDanger)} size="sm">
-                  <Flame className="h-3 w-3 mr-xs" />
+                  <FireIcon className="h-3 w-3 mr-xs" />
                   {weatherData.fireDanger}
                 </Badge>
               </div>
@@ -223,7 +209,7 @@ export function NavbarWeatherWidget() {
             {weatherData.alerts && weatherData.alerts.length > 0 && (
               <div className="space-y-xs">
                 <h4 className="text-sm font-medium text-foreground flex items-center gap-xs">
-                  <Warning className="h-4 w-4 text-rusty-orange" />
+                  <ExclamationTriangleIcon className="h-4 w-4 text-rusty-orange" />
                   Weather Alerts
                 </h4>
                 {weatherData.alerts.map((alert, index) => (

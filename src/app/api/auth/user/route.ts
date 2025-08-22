@@ -88,7 +88,6 @@ export async function GET(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('User info endpoint error:', error)
     return NextResponse.json(
       { error: 'server_error', error_description: 'Internal server error' },
       { status: 500 }
@@ -152,7 +151,6 @@ export async function PATCH(request: NextRequest) {
 
     // Update user data (simplified for demo)
     // In production, you'd update the database
-    console.log(`User ${tokenData.sub} profile update:`, { avatar, last_active })
 
     return NextResponse.json({
       success: true,
@@ -160,7 +158,6 @@ export async function PATCH(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('User update error:', error)
     return NextResponse.json(
       { error: 'server_error' },
       { status: 500 }

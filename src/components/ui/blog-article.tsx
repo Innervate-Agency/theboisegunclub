@@ -7,9 +7,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
-import { 
-  Calendar, Clock, Eye, Heart, MessageCircle, User, Tag,
-  Filter, Grid3X3, List, Share2, Bookmark} from 'lucide-react'
+import { CalendarDaysIcon, CategoryIcon, ClockIcon, EyeIcon, FunnelIcon, ListBulletIcon, ShareIcon, TagIcon, UserIcon } from '@heroicons/react/24/outline';
 
 interface BlogAuthor {
   name: string
@@ -108,179 +106,166 @@ export function BlogCard({
   
   const imageSize = variant === "compact" ? "w-32 h-24" : "aspect-video"
   
+  // Get category-specific gradient for hero section
+  const getCategoryGradient = (category: string) => {
+    switch (category) {
+      case 'Legal': return 'card-gradient-legal'
+      case 'Reviews': return 'card-gradient-reviews'
+      case 'Gear': return 'card-gradient-gear'
+      case 'Training': return 'card-gradient-training'
+      case 'Safety': return 'card-gradient-safety'
+      default: return 'card-gradient-armory'
+    }
+  }
+
+  // Get category icon
+  const getCategoryIcon = (category: string) => {
+    const iconClass = "size-8 text-white/80 relative z-10"
+    switch (category) {
+      case 'Legal': return <TagIcon className={iconClass} />
+      case 'Reviews': return <EyeIcon className={iconClass} />
+      case 'Gear': return <Grid3X3 className={iconClass} />
+      case 'Training': return <UserIcon className={iconClass} />
+      case 'Safety': return <FunnelIcon className={iconClass} />
+      default: return <MessageCircle className={iconClass} />
+    }
+  }
+
   return (
     <Link href={articleHref} className="block">
-      <article className={cn(blogCardVariants({ variant }), className)} {...props}>
-      {/* Featured Badge */}
-      {article.featured && variant === "featured" && (
-        <div className="absolute top-sm left-4 z-10">
-          <Badge variant="featured" className="font-rajdhani font-bold">
-            Featured
-          </Badge>
-        </div>
-      )}
+      <article 
+        className={cn(
+          "transition-all duration-300 group relative overflow-hidden cursor-pointer rounded-xs",
+          "bg-card text-card-foreground border border-border",
+          "shadow-ghost hover:shadow-present",
+          "tactical-underline-base tactical-underline-armory",
+          className
+        )} 
+        {...props}
+      >
       
-      {/* Image */}
-      {showImage && article.image && (
-        <div className={cn(
-          "relative overflow-hidden bg-muted",
-          imageSize,
-          variant === "compact" && "flex-shrink-0"
-        )}>
-          <Image
-            src={article.image}
-            alt={article.title}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-            sizes={variant === "compact" ? "128px" : "(max-width: 768px) 100vw, 50vw"}
-          />
+      {/* Tactical Hero Section - Matching EventCard */}
+      <div className={cn(
+        "relative mb-lg -m-lg mt-[-24px] mx-[-24px] h-32 overflow-hidden border-b border-white/10",
+        getCategoryGradient(article.category)
+      )}>
+        {/* Subtle overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+        
+        {/* Tactical Action Buttons - top right */}
+        <div className="absolute top-sm right-sm flex gap-xs">
+          <button
+            className="w-8 h-8 bg-black/60 backdrop-blur-sm border border-white/20 rounded-none flex items-center justify-center hover:bg-nav-armory hover:border-nav-armory transition-all duration-200"
+            onClick={handleShare}
+            title="Share article"
+          >
+            <ShareIcon className="h-4 w-4 text-white" />
+          </button>
           
-          {/* Category Badge */}
-          <div className="absolute top-xs right-3">
-            <Badge variant="default" className="bg-card/90 text-card-foreground text-caption">
-              {article.category}
-            </Badge>
-          </div>
+          <button
+            className="w-8 h-8 bg-black/60 backdrop-blur-sm border border-white/20 rounded-none flex items-center justify-center hover:bg-nav-armory hover:border-nav-armory transition-all duration-200"
+            onClick={handleBookmark}
+            title="Bookmark article"
+          >
+            <Bookmark className={cn("h-4 w-4 text-white", isBookmarked && "fill-current")} />
+          </button>
         </div>
-      )}
-      
-      {/* Content */}
-      <div className="flex-1 p-md">
-        <div className="space-y-sm">
-          {/* Title */}
-          <h3 className={cn(
-            "font-rajdhani font-bold text-card-foreground group-hover:text-rusty-orange transition-colors duration-200 line-clamp-tiny",
-            variant === "featured" ? "text-heading-sm" : "text-body-lg"
-          )}>
-            {article.title}
-          </h3>
-          
-          {/* Excerpt */}
-          <p className="text-body-sm text-muted-foreground font-noto-sans line-clamp-xs leading-relaxed">
-            {article.excerpt}
-          </p>
-          
-          {/* Tags */}
-          {article.tags && article.tags.length > 0 && (
-            <div className="flex flex-wrap gap-xs">
-              {article.tags.slice(0, 3).map((tag) => (
-                <Badge key={tag} variant="outline" className="text-caption">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          )}
-          
-          {/* Meta Info */}
-          <div className="flex items-center justify-between pt-xs">
-            {/* Author & Date */}
-            <div className="flex items-center gap-sm">
-              {showAuthor && (
-                <div className="flex items-center gap-xs">
-                  {article.author.avatar ? (
-                    <div className="size-8 rounded-full overflow-hidden bg-muted">
-                      <Image
-                        src={article.author.avatar}
-                        alt={article.author.name}
-                        width={32}
-                        height={32}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  ) : (
-                    <div className="size-8 rounded-pill bg-rusty-orange/20 flex items-center justify-center">
-                      <User className="icon-xs text-rusty-orange" />
-                    </div>
-                  )}
-                  <div className="text-caption text-muted-foreground">
-                    <div className="font-rajdhani font-semibold">{article.author.name}</div>
-                    {article.author.title && (
-                      <div className="text-caption text-muted-foreground/75">{article.author.title}</div>
-                    )}
-                  </div>
-                </div>
-              )}
-              
-              <div className="text-caption text-muted-foreground flex items-center gap-sm">
-                <div className="flex items-center gap-xs">
-                  <Calendar className="icon-xs" />
-                  <span>{new Date(article.publishDate).toLocaleDateString()}</span>
-                </div>
-                <div className="flex items-center gap-xs">
-                  <Clock className="icon-xs" />
-                  <span>{article.readTime} min</span>
-                </div>
+        
+        {/* Author/Date badge overlay */}
+        <div className="absolute top-sm left-sm">
+          <div className="bg-black/40 backdrop-blur-sm rounded-xs p-sm border border-white/20">
+            <div className="text-center">
+              <div className="font-rajdhani font-bold text-xs text-white uppercase tracking-wide">
+                {new Date(article.publishDate).toLocaleDateString('en-US', { month: 'short' })}
+              </div>
+              <div className="font-rajdhani font-black text-lg text-white leading-none">
+                {new Date(article.publishDate).getDate()}
+              </div>
+              <div className="text-[10px] text-white/80 font-medium uppercase tracking-wider">
+                {article.readTime}min
               </div>
             </div>
-            
-            {/* Action Buttons */}
-            <div className="flex items-center gap-xs">
-              <Button
-                variant="micro"
-                size="sm"
-                onClick={(e) => {
-                  e.preventDefault()
-                  e.stopPropagation()
-                  handleLike(e)
-                }}
-                className={cn(
-                  "h-8 px-xs text-caption",
-                  isLiked && "text-safety-red bg-safety-red/10"
-                )}
-              >
-                <Heart className={cn("icon-xs mr-xs", isLiked && "fill-current")} />
-                {showStats && article.likes && <span>{article.likes}</span>}
-              </Button>
-              
-              <Button
-                variant="micro"
-                size="sm"
-                onClick={(e) => {
-                  e.preventDefault()
-                  e.stopPropagation()
-                  handleBookmark(e)
-                }}
-                className={cn(
-                  "h-8 px-xs text-caption",
-                  isBookmarked && "text-rusty-orange bg-rusty-orange/10"
-                )}
-              >
-                <Bookmark className={cn("icon-xs", isBookmarked && "fill-current")} />
-              </Button>
-              
-              <Button
-                variant="micro"
-                size="sm"
-                onClick={(e) => {
-                  e.preventDefault()
-                  e.stopPropagation()
-                  handleShare(e)
-                }}
-                className="h-8 px-xs text-caption"
-                animationType="arrow"
-              >
-                <Share2 className="icon-xs" />
-              </Button>
-            </div>
           </div>
-          
-          {/* Stats Row */}
-          {showStats && (article.views || article.comments) && (
-            <div className="flex items-center gap-base pt-xs text-caption text-muted-foreground border-t border-border">
-              {article.views && (
-                <div className="flex items-center gap-xs">
-                  <Eye className="icon-xs" />
-                  <span>{article.views.toLocaleString()} views</span>
-                </div>
-              )}
-              {article.comments && (
-                <div className="flex items-center gap-xs">
-                  <MessageCircle className="icon-xs" />
-                  <span>{article.comments} comments</span>
-                </div>
-              )}
+        </div>
+        
+        {/* Category icon */}
+        <div className="absolute bottom-xs right-xs">
+          {getCategoryIcon(article.category)}
+        </div>
+        
+        {/* Subtle texture particles */}
+        <div className="absolute top-2 right-6 w-0.5 h-0.5 bg-card/30 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-4 left-8 w-0.5 h-0.5 bg-card/20 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-6 right-12 w-0.5 h-0.5 bg-card/25 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+      </div>
+      
+      <div className="space-y-md">
+        {/* Header - Matching EventCard Typography */}
+        <div className="space-y-sm">
+          <div className="space-y-0">
+            <h2 className="font-rajdhani font-bold text-xl text-card-foreground leading-tight line-clamp-2 group-hover:text-nav-armory transition-colors duration-200">
+              {article.title}
+            </h2>
+            <h3 className="font-noto-serif text-base text-muted-foreground leading-tight">
+              {article.category} • {article.author.name}
+            </h3>
+          </div>
+        </div>
+
+        {/* Description */}
+        <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
+          {article.excerpt}
+        </p>
+
+        {/* Smart Badges - Tags and Featured */}
+        <div className="flex flex-wrap gap-xs">
+          {article.featured && (
+            <Badge variant="default" size="sm">
+              <TagIcon className="w-3 h-3 mr-xs" />
+              Featured
+            </Badge>
+          )}
+          {article.tags?.slice(0, 2).map((tag) => (
+            <Badge key={tag} variant="outline" size="sm">
+              {tag}
+            </Badge>
+          ))}
+        </div>
+
+        {/* Info Grid - Matching EventCard */}
+        <div className="space-y-sm bg-muted/30 p-sm rounded-xs">
+          <div className="flex items-center gap-sm text-sm">
+            <CalendarDaysIcon className="size-4 flex-shrink-0 text-nav-armory" />
+            <span className="font-medium text-card-foreground">{new Date(article.publishDate).toLocaleDateString()}</span>
+          </div>
+          <div className="flex items-center gap-sm text-sm">
+            <ClockIcon className="size-4 flex-shrink-0 text-nav-armory" />
+            <span className="text-muted-foreground">{article.readTime} min read</span>
+          </div>
+          <div className="flex items-center gap-sm text-sm">
+            <UserIcon className="size-4 flex-shrink-0 text-nav-armory" />
+            <span className="text-muted-foreground">{article.author.name}</span>
+          </div>
+          {showStats && (article.views || article.likes) && (
+            <div className="flex items-center gap-sm text-sm">
+              <EyeIcon className="size-4 flex-shrink-0 text-nav-armory" />
+              <span className="text-muted-foreground">
+                {article.views || 0} views {article.likes && `• ${article.likes} likes`}
+              </span>
             </div>
           )}
+        </div>
+
+        {/* CTA Button - Matching EventCard */}
+        <div className="pt-sm">
+          <Button 
+            size="sm"
+            variant="outline"
+            className="w-full border-nav-armory/30 text-nav-armory group-hover:bg-nav-armory group-hover:text-white group-hover:border-nav-armory transition-all duration-300 font-rajdhani font-bold" 
+            animationType="arrow"
+          >
+            Read Article
+          </Button>
         </div>
       </div>
       </article>
@@ -379,7 +364,7 @@ export function BlogList({
                 size="icon"
                 onClick={() => setViewMode('list')}
               >
-                <List className="icon-sm" />
+                <ListBulletIcon className="icon-sm" />
               </Button>
             </div>
           </div>
@@ -403,7 +388,7 @@ export function BlogList({
         {/* Empty State */}
         {filteredArticles.length === 0 && (
           <div className="text-center py-xl">
-            <Filter className="icon-2xl text-muted-foreground mx-auto mb-base" />
+            <FunnelIcon className="icon-2xl text-muted-foreground mx-auto mb-base" />
             <h3 className="text-body-lg font-rajdhani font-bold text-card-foreground mb-xs">
               No articles found
             </h3>
@@ -444,16 +429,16 @@ export function BlogDetail({
             <div className="space-y-md mb-lg">
               {/* Category & Meta */}
               <div className="flex items-center gap-base">
-                <Badge variant="default" className="font-rajdhani font-bold">
+                <Badge variant="outline" className="font-rajdhani font-bold">
                   {article.category}
                 </Badge>
                 <div className="flex items-center gap-base text-body-sm text-muted-foreground">
                   <div className="flex items-center gap-xs">
-                    <Calendar className="icon-xs" />
+                    <CalendarDaysIcon className="icon-xs" />
                     <span>{new Date(article.publishDate).toLocaleDateString()}</span>
                   </div>
                   <div className="flex items-center gap-xs">
-                    <Clock className="icon-xs" />
+                    <ClockIcon className="icon-xs" />
                     <span>{article.readTime} min read</span>
                   </div>
                 </div>
@@ -479,7 +464,7 @@ export function BlogDetail({
                     </div>
                   ) : (
                     <div className="w-12 h-12 rounded-pill bg-rusty-orange/20 flex items-center justify-center">
-                      <User className="icon-lg text-rusty-orange" />
+                      <UserIcon className="icon-lg text-rusty-orange" />
                     </div>
                   )}
                   <div>
@@ -523,7 +508,7 @@ export function BlogDetail({
             {/* Tags */}
             {article.tags && article.tags.length > 0 && (
               <div className="flex flex-wrap gap-xs pt-lg border-t border-border mt-lg">
-                <Tag className="icon-sm text-muted-foreground mr-xs" />
+                <TagIcon className="icon-sm text-muted-foreground mr-xs" />
                 {article.tags.map((tag) => (
                   <Badge key={tag} variant="outline">
                     {tag}

@@ -52,17 +52,13 @@ export function TacticalHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
             >
-              <Button 
-                size="lg"
-                animationType="arrow"
+              <Button animationType="arrow"
                 className="bg-sandy-ochre text-dark-chocolate hover:bg-sandy-ochre/90 font-rajdhani font-bold shadow-elevated"
               >
                 JOIN COMMUNITY
               </Button>
               <Button 
-                variant="outline" 
-                size="lg"
-                animationType="arrow"
+                variant="outline" animationType="arrow"
                 className="border-crisp-off-white text-crisp-off-white hover:bg-crisp-off-white/10 font-rajdhani font-bold tactical-border"
               >
                 BROWSE DIRECTORY

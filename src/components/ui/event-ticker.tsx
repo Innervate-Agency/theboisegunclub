@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { Badge } from './badge'
-import { Calendar, MapPin, Clock, Star, Trophy, Target } from 'lucide-react'
+import { CalendarDaysIcon, ClockIcon, MapPinIcon, StarIcon } from '@heroicons/react/24/outline';
 
 interface TickerEvent {
   title: string
@@ -53,7 +53,6 @@ export function EventTicker({
           return // Skip API call
         }
       } catch (err) {
-        console.warn('Failed to parse cached events data:', err)
       }
     }
     
@@ -75,13 +74,11 @@ export function EventTicker({
             timestamp: Date.now()
           }))
         } catch (err) {
-          console.warn('Failed to cache events data:', err)
         }
       } else {
         throw new Error(result.error || 'Invalid response format')
       }
     } catch (err) {
-      console.error('EventTicker API error:', err)
       setError(err instanceof Error ? err.message : 'Failed to load events')
       // Keep existing events on error
     } finally {
@@ -128,20 +125,26 @@ export function EventTicker({
   
   return (
     <div className="relative -mt-lg z-20">
+      {autoRefresh && (
+        <div className="absolute -top-base right-base sm:right-md md:right-lg lg:right-xl xl:right-2xl z-30">
+          <div className={`inline-flex items-center gap-xs px-sm py-xs rounded-sm text-xs font-medium shadow-present border ${
+            isLoading 
+              ? 'bg-sandy-ochre/95 text-white border-sandy-ochre/40' 
+              : error 
+                ? 'bg-rusty-orange/95 text-white border-rusty-orange/40' 
+                : 'bg-sagebrush-green/95 text-white border-sagebrush-green/40'
+          }`}>
+            <div className={`w-1.5 h-1.5 rounded-full ${isLoading ? 'bg-white animate-pulse' : 'bg-white'}`} />
+            <span>{isLoading ? 'Updating...' : error ? 'Error' : 'Live'}</span>
+          </div>
+        </div>
+      )}
+      
       <div className="w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile">
         <div className="mica-card relative overflow-hidden shadow-present rounded-xs">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-blue/5 via-transparent to-ayu-cobalt/5 pointer-events-none" />
           
-          {autoRefresh && (
-            <div className="absolute right-base top-base z-20 flex items-center gap-xs">
-              <div className={`w-2 h-2 rounded-full ${isLoading ? 'bg-sandy-ochre animate-pulse' : error ? 'bg-rusty-orange' : 'bg-sagebrush-green'}`} />
-              <span className="text-xs text-muted-foreground font-medium">
-                {isLoading ? 'Updating...' : error ? 'Error' : 'Live'}
-              </span>
-            </div>
-          )}
-          
-          <div className="flex animate-scroll whitespace-nowrap py-lg px-base">
+          <div className="flex animate-scroll whitespace-nowrap py-base px-base">
             {isInitialLoad && events.length === 0 ? (
               <>
                 {Array.from({ length: 3 }, (_, index) => (
@@ -161,7 +164,7 @@ export function EventTicker({
                       </Badge>
                       {event.featured && (
                         <Badge variant="events-featured" size="sm" className="text-body-xs rounded-xs">
-                          <Star className="size-3 mr-xs" />
+                          <StarIcon className="size-3 mr-xs" />
                           Featured
                         </Badge>
                       )}
@@ -169,11 +172,11 @@ export function EventTicker({
                     
                     <div className="flex items-center gap-lg text-body-xs text-muted-foreground">
                       <div className="flex items-center gap-xs">
-                        <Calendar className="size-3" />
+                        <CalendarDaysIcon className="size-3" />
                         <span>{event.date}</span>
                       </div>
                       <div className="flex items-center gap-xs">
-                        <MapPin className="size-3" />
+                        <MapPinIcon className="size-3" />
                         <span>{event.location.split(',')[0]}</span>
                       </div>
                       <div className="flex items-center gap-xs">
@@ -186,7 +189,7 @@ export function EventTicker({
                 <div className="h-10 w-px bg-gradient-to-b from-transparent via-border/40 to-transparent" />
               </div>
             )) : (
-              <div className="flex items-center justify-center w-full py-lg">
+              <div className="flex items-center justify-center w-full py-base">
                 <span className="text-muted-foreground">No events available</span>
               </div>
             )}

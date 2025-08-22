@@ -14,7 +14,7 @@ const meta: Meta<typeof Progress> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const DefaultProgressComponent = (args: any) => {
+const DefaultProgressComponent = (args: Record<string, unknown>) => {
   const [progress, setProgress] = React.useState(13);
 
   React.useEffect(() => {

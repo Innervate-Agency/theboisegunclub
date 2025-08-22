@@ -1,0 +1,316 @@
+[
+  {
+    "businessName": "Al's Sporting Goods",
+    "city": "Caldwell",
+    "state": "ID",
+    "website": "https://www.als.com/?srsltid=AfmBOorVZ5mGc83Jr0-sE8LBFW1NMFMv2G1Mk662SlK8QL5FNrJyowk0",
+    "firearmsInfo": {
+      "services": [
+        "range",
+        "retail"
+      ],
+      "specialties": [
+        "hunting"
+      ],
+      "hours": "Mon-Sat | 9am-9pm MT",
+      "phone": "3517137281",
+      "email": null,
+      "ffl": false,
+      "training": false,
+      "range": true
+    },
+    "communityAlignment": {
+      "score": 3,
+      "reasons": [
+        "✓ community focus",
+        "✓ service focus",
+        "✓ values focus",
+        "✓ contact focus",
+        "⚠ corporate concerns",
+        "✓ Idaho connection"
+      ],
+      "approved": true
+    },
+    "contentLength": 223740,
+    "categorization": {
+      "category": "Retail Store",
+      "confidence": 1,
+      "serviceCount": 2
+    },
+    "events": [
+      {
+        "type": "classes",
+        "detected": true,
+        "source": "website_content"
+      },
+      {
+        "type": "competitions",
+        "detected": true,
+        "source": "website_content"
+      },
+      {
+        "type": "events",
+        "detected": true,
+        "source": "website_content"
+      }
+    ]
+  },
+  {
+    "businessName": "Rifle Guru",
+    "city": "Nampa",
+    "state": "ID",
+    "website": "https://www.rifleguru.net/about/",
+    "firearmsInfo": {
+      "services": [
+        "training",
+        "range",
+        "retail",
+        "transfers"
+      ],
+      "specialties": [
+        "tactical",
+        "hunting",
+        "competition"
+      ],
+      "hours": "by appointment.  Visit our online store 24/7 for rifles, scopes, ammunition, sho",
+      "phone": "2084841791",
+      "email": "jeff@rifleguru.net",
+      "ffl": false,
+      "training": true,
+      "range": true
+    },
+    "communityAlignment": {
+      "score": 6,
+      "reasons": [
+        "✓ community focus",
+        "✓ education focus",
+        "✓ service focus",
+        "✓ values focus",
+        "✓ contact focus",
+        "✓ Idaho connection"
+      ],
+      "approved": true
+    },
+    "contentLength": 96650,
+    "categorization": {
+      "category": "Multi-Service",
+      "confidence": 1,
+      "serviceCount": 4
+    },
+    "events": [
+      {
+        "type": "classes",
+        "detected": true,
+        "source": "website_content"
+      },
+      {
+        "type": "competitions",
+        "detected": true,
+        "source": "website_content"
+      },
+      {
+        "type": "events",
+        "detected": true,
+        "source": "website_content"
+      },
+      {
+        "type": "specialty",
+        "detected": true,
+        "source": "website_content"
+      }
+    ]
+  },
+  {
+    "businessName": "Homestead Firearms",
+    "city": "Meridian",
+    "state": "ID",
+    "website": "https://homesteadparts.com/shop/meriden-model-10-rifle-c-256_257.html",
+    "firearmsInfo": {
+      "services": [
+        "ffl",
+        "gunsmith",
+        "retail"
+      ],
+      "specialties": [
+        "collecting"
+      ],
+      "hours": null,
+      "phone": null,
+      "email": null,
+      "ffl": true,
+      "training": false,
+      "range": false
+    },
+    "communityAlignment": {
+      "score": 3,
+      "reasons": [
+        "✓ community focus",
+        "✓ service focus",
+        "✓ contact focus"
+      ],
+      "approved": true
+    },
+    "contentLength": 81848,
+    "categorization": {
+      "category": "Retail Store",
+      "confidence": 1,
+      "serviceCount": 3
+    },
+    "events": [
+      {
+        "type": "classes",
+        "detected": true,
+        "source": "website_content"
+      },
+      {
+        "type": "events",
+        "detected": true,
+        "source": "website_content"
+      }
+    ]
+  },
+  {
+    "businessName": "Impact Guns",
+    "city": "Boise",
+    "state": "ID",
+    "website": "https://www.impactguns.com/",
+    "firearmsInfo": {
+      "services": [
+        "ffl",
+        "gunsmith",
+        "training",
+        "range",
+        "retail",
+        "transfers"
+      ],
+      "specialties": [
+        "tactical",
+        "hunting",
+        "competition",
+        "defense"
+      ],
+      "hours": "ingHoursSpecification\": {",
+      "phone": "586464457",
+      "email": "support@impactguns8091.zendesk.com",
+      "ffl": true,
+      "training": true,
+      "range": true
+    },
+    "communityAlignment": {
+      "score": 6,
+      "reasons": [
+        "✓ community focus",
+        "✓ education focus",
+        "✓ service focus",
+        "✓ values focus",
+        "✓ contact focus",
+        "✓ Idaho connection"
+      ],
+      "approved": true
+    },
+    "contentLength": 553829,
+    "categorization": {
+      "category": "Retail Store",
+      "confidence": 1,
+      "serviceCount": 6
+    },
+    "events": [
+      {
+        "type": "classes",
+        "detected": true,
+        "source": "website_content"
+      },
+      {
+        "type": "competitions",
+        "detected": true,
+        "source": "website_content"
+      },
+      {
+        "type": "events",
+        "detected": true,
+        "source": "website_content"
+      },
+      {
+        "type": "safety",
+        "detected": true,
+        "source": "website_content"
+      },
+      {
+        "type": "specialty",
+        "detected": true,
+        "source": "website_content"
+      }
+    ]
+  },
+  {
+    "businessName": "Tactical Solutions",
+    "city": "Boise",
+    "state": "ID",
+    "website": "https://tac-skills.com/training/",
+    "firearmsInfo": {
+      "services": [
+        "training",
+        "range",
+        "retail"
+      ],
+      "specialties": [
+        "tactical",
+        "hunting",
+        "competition",
+        "defense"
+      ],
+      "hours": "}}\\n                ",
+      "phone": "755735953",
+      "email": "cropped-Best-Tac-Skills-White@3x.png",
+      "ffl": false,
+      "training": true,
+      "range": true
+    },
+    "communityAlignment": {
+      "score": 4,
+      "reasons": [
+        "✓ community focus",
+        "✓ education focus",
+        "✓ service focus",
+        "✓ values focus",
+        "✓ contact focus",
+        "⚠ controversy concerns",
+        "✓ Idaho connection"
+      ],
+      "approved": true
+    },
+    "contentLength": 250592,
+    "categorization": {
+      "category": "Multi-Service",
+      "confidence": 1,
+      "serviceCount": 3
+    },
+    "events": [
+      {
+        "type": "classes",
+        "detected": true,
+        "source": "website_content"
+      },
+      {
+        "type": "competitions",
+        "detected": true,
+        "source": "website_content"
+      },
+      {
+        "type": "events",
+        "detected": true,
+        "source": "website_content"
+      },
+      {
+        "type": "safety",
+        "detected": true,
+        "source": "website_content"
+      },
+      {
+        "type": "specialty",
+        "detected": true,
+        "source": "website_content"
+      }
+    ]
+  }
+]

@@ -5,18 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
-import {
-  HeartIcon as Heart,
-  ShareIcon as Share,
-  CalendarIcon as Calendar,
-  UsersIcon as Users,
-  ExclamationTriangleIcon as Warning,
-  CheckCircleIcon as CheckCircle,
-  ClockIcon as Clock,
-  EnvelopeIcon as Envelope,
-  UserIcon as User,
-  PhoneIcon as Phone
-} from '@heroicons/react/24/outline'
+import { CalendarDaysIcon, CheckCircleIcon, ClockIcon, EnvelopeIcon, ExclamationTriangleIcon, HeartIcon, PhoneIcon, ShareIcon, UserIcon, UsersIcon } from '@heroicons/react/24/outline';
 import {
   HeartIcon as HeartFilled,
   ShareIcon as ShareFilled
@@ -160,10 +149,8 @@ END:VCALENDAR`
         })
       } else {
         // Handle error - could add toast notification
-        console.error('Registration submission failed')
       }
     } catch (error) {
-      console.error('Registration submission error:', error)
     } finally {
       setIsSubmittingRegistration(false)
     }
@@ -230,19 +217,19 @@ END:VCALENDAR`
             <div className="flex items-center gap-xs">
               {isSoldOut ? (
                 <>
-                  <Warning className="h-4 w-4 text-destructive" />
+                  <ExclamationTriangleIcon className="h-4 w-4 text-destructive" />
                   <span className="text-sm font-medium text-destructive">Sold Out</span>
                 </>
               ) : isLowAvailability ? (
                 <>
-                  <Warning className="h-4 w-4 text-warning-clay" />
+                  <ExclamationTriangleIcon className="h-4 w-4 text-warning-clay" />
                   <span className="text-sm font-medium text-warning-clay">
                     Only {spotsRemaining} spots left!
                   </span>
                 </>
               ) : (
                 <>
-                  <CheckCircle className="h-4 w-4 text-sagebrush-green" />
+                  <CheckCircleIcon className="h-4 w-4 text-sagebrush-green" />
                   <span className="text-sm font-medium text-sagebrush-green">
                     {spotsRemaining} spots available
                   </span>
@@ -263,9 +250,7 @@ END:VCALENDAR`
         {/* Registration Button */}
         <div className="space-y-sm">
           {!registrationSubmitted ? (
-            <Button 
-              size="lg"
-              className={cn(
+            <Button className={cn(
                 "w-full font-rajdhani font-bold text-lg h-12",
                 isSoldOut 
                   ? "bg-muted text-muted-foreground cursor-not-allowed" 
@@ -278,7 +263,7 @@ END:VCALENDAR`
             </Button>
           ) : (
             <div className="bg-sagebrush-green/10 border border-sagebrush-green/30 rounded-xs p-lg text-center">
-              <CheckCircle className="h-8 w-8 text-sagebrush-green mx-auto mb-base" />
+              <CheckCircleIcon className="h-8 w-8 text-sagebrush-green mx-auto mb-base" />
               <div className="font-rajdhani font-bold text-lg text-sagebrush-green mb-xs">Registration Submitted!</div>
               <div className="text-sm text-muted-foreground">
                 {registrationUrl 
@@ -308,7 +293,7 @@ END:VCALENDAR`
                 <form onSubmit={handleRegistrationSubmit} className="space-y-base">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-xs">
-                      <User className="h-4 w-4 inline mr-xs" />
+                      <UserIcon className="h-4 w-4 inline mr-xs" />
                       Full Name *
                     </label>
                     <input
@@ -323,7 +308,7 @@ END:VCALENDAR`
                   
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-xs">
-                      <Envelope className="h-4 w-4 inline mr-xs" />
+                      <EnvelopeIcon className="h-4 w-4 inline mr-xs" />
                       Email Address *
                     </label>
                     <input
@@ -338,7 +323,7 @@ END:VCALENDAR`
                   
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-xs">
-                      <Phone className="h-4 w-4 inline mr-xs" />
+                      <PhoneIcon className="h-4 w-4 inline mr-xs" />
                       Phone Number
                     </label>
                     <input
@@ -394,9 +379,7 @@ END:VCALENDAR`
         {/* Interest Tracking */}
         <div className="border-t border-border pt-lg space-y-sm">
           <Button
-            variant={isInterested ? "default" : "outline"}
-            size="lg"
-            onClick={handleInterestToggle}
+            variant={isInterested ? "default" : "outline"} onClick={handleInterestToggle}
             className={cn(
               "w-full gap-xs font-rajdhani font-bold text-base h-11",
               isInterested 
@@ -404,12 +387,12 @@ END:VCALENDAR`
                 : "border-rusty-orange text-rusty-orange hover:bg-rusty-orange hover:text-white"
             )}
           >
-            {isInterested ? <HeartFilled className="h-5 w-5" /> : <Heart className="h-5 w-5" />}
+            {isInterested ? <HeartFilled className="h-5 w-5" /> : <HeartIcon className="h-5 w-5" />}
             {isInterested ? 'Interested!' : 'I\'m Interested'}
           </Button>
           
           <div className="flex items-center justify-center gap-xs text-sm text-muted-foreground">
-            <Users className="h-4 w-4" />
+            <UsersIcon className="h-4 w-4" />
             <span>{interestedCount} people interested</span>
           </div>
         </div>
@@ -424,7 +407,7 @@ END:VCALENDAR`
               onClick={() => window.open(calendarUrls.google, '_blank')}
               className="text-xs font-rajdhani"
             >
-              <Calendar className="h-3 w-3 mr-xs" />
+              <CalendarDaysIcon className="h-3 w-3 mr-xs" />
               Google
             </Button>
             <Button
@@ -433,7 +416,7 @@ END:VCALENDAR`
               onClick={() => window.open(calendarUrls.outlook, '_blank')}
               className="text-xs font-rajdhani"
             >
-              <Calendar className="h-3 w-3 mr-xs" />
+              <CalendarDaysIcon className="h-3 w-3 mr-xs" />
               Outlook
             </Button>
             <Button
@@ -447,7 +430,7 @@ END:VCALENDAR`
               }}
               className="text-xs font-rajdhani"
             >
-              <Calendar className="h-3 w-3 mr-xs" />
+              <CalendarDaysIcon className="h-3 w-3 mr-xs" />
               Apple
             </Button>
           </div>
@@ -463,7 +446,7 @@ END:VCALENDAR`
               onClick={() => setShowShareMenu(!showShareMenu)}
               className="gap-xs text-muted-foreground hover:text-card-foreground"
             >
-              <Share className="h-4 w-4" />
+              <ShareIcon className="h-4 w-4" />
               Share
             </Button>
           </div>

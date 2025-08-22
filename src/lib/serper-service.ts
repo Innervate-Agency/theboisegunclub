@@ -91,14 +91,12 @@ export class SerperService {
       });
 
       if (!response.ok) {
-        console.error(`Serper API error: ${response.status} ${response.statusText}`);
         return null;
       }
 
       const data: SerperResponse = await response.json();
       
       if (!data.places || data.places.length === 0) {
-        console.log(`No Serper results found for: ${businessName} in ${city}`);
         return null;
       }
 
@@ -114,7 +112,6 @@ export class SerperService {
       };
 
     } catch (error) {
-      console.error('Serper API search error:', error);
       return null;
     }
   }

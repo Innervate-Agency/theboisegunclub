@@ -14,18 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { useAuth } from './auth-context'
 import { User } from '@/lib/auth'
-import { 
-  User as UserIcon, 
-  Users, 
-  Gear, 
-  SignOut, 
-  Shield, 
-  Calendar,
-  MapTrifold,
-  Storefront,
-  AddressBook,
-  Bell
-} from '@phosphor-icons/react'
+import { ArrowRightOnRectangleIcon, BellIcon, BookOpenIcon, BuildingStorefrontIcon, CalendarDaysIcon, Cog6ToothIcon, MapIcon, ShieldCheckIcon, ToothIcon, UserIcon, UsersIcon } from '@heroicons/react/24/outline';
 import { cn } from '@/lib/utils'
 
 interface UserDropdownProps {
@@ -118,7 +107,7 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
                 variant="outline" 
                 className={cn("text-xs mt-micro", getRoleBadgeStyle(user.role))}
               >
-                {user.role === 'admin' && <Shield className="size-3 mr-micro" />}
+                {user.role === 'admin' && <ShieldCheckIcon className="size-3 mr-micro" />}
                 {user.role}
               </Badge>
             </div>
@@ -133,17 +122,17 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
             className="cursor-pointer focus:bg-muted/50"
             onClick={handleForumAccess}
           >
-            <Users className="size-4 mr-sm" />
+            <UsersIcon className="size-4 mr-sm" />
             <span>Access Forums</span>
           </DropdownMenuItem>
 
           <DropdownMenuItem className="cursor-pointer focus:bg-muted/50">
-            <Calendar className="size-4 mr-sm" />
+            <CalendarDaysIcon className="size-4 mr-sm" />
             <span>My Events</span>
           </DropdownMenuItem>
 
           <DropdownMenuItem className="cursor-pointer focus:bg-muted/50">
-            <Bell className="size-4 mr-sm" />
+            <BellIcon className="size-4 mr-sm" />
             <span>Notifications</span>
           </DropdownMenuItem>
         </div>
@@ -158,12 +147,12 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
           </DropdownMenuItem>
 
           <DropdownMenuItem className="cursor-pointer focus:bg-muted/50">
-            <AddressBook className="size-4 mr-sm" />
+            <BookOpenIcon className="size-4 mr-sm" />
             <span>My Directory</span>
           </DropdownMenuItem>
 
           <DropdownMenuItem className="cursor-pointer focus:bg-muted/50">
-            <Storefront className="size-4 mr-sm" />
+            <BuildingStorefrontIcon className="size-4 mr-sm" />
             <span>My Listings</span>
           </DropdownMenuItem>
 
@@ -172,7 +161,7 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
             <>
               <DropdownMenuSeparator />
               <DropdownMenuItem className="cursor-pointer focus:bg-muted/50">
-                <Gear className="size-4 mr-sm" />
+                <Cog6ToothIcon className="size-4 mr-sm" />
                 <span>
                   {user.role === 'admin' ? 'Admin Panel' : 'Moderation'}
                 </span>
@@ -189,7 +178,7 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
             className="cursor-pointer text-destructive focus:bg-destructive/10 focus:text-destructive"
             onClick={handleLogout}
           >
-            <SignOut className="size-4 mr-sm" />
+            <ArrowRightOnRectangleIcon className="size-4 mr-sm" />
             <span>Sign Out</span>
           </DropdownMenuItem>
         </div>

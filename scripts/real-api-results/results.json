@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "al-s-sporting-goods",
+    "businessName": "Al's Sporting Goods",
+    "city": "Boise",
+    "businessType": "Sporting Goods",
+    "website": "",
+    "discovered_website": "https://www.als.com/?srsltid=AfmBOopd4j_u2gPIFd03VKFS_C5Dc2COZBCGw0r_JRkOHcD25CLPYjp9",
+    "discovery_status": "found"
+  },
+  {
+    "slug": "20-20-sporting-services",
+    "businessName": "20/20 Sporting Services",
+    "city": "Boise",
+    "businessType": "Sporting Goods",
+    "website": "",
+    "discovered_website": null,
+    "discovery_status": "not_found"
+  },
+  {
+    "slug": "rifle-guru",
+    "businessName": "Rifle Guru",
+    "city": "Boise",
+    "businessType": "Gunsmith",
+    "website": "",
+    "discovered_website": "https://www.rifleguru.net/",
+    "discovery_status": "found"
+  }
+]

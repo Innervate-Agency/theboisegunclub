@@ -25,7 +25,6 @@ export function useBusinessReviews(businessName: string, location: string = "Ida
       setReviews(reviewData)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to fetch reviews')
-      console.error(`Failed to fetch reviews for ${businessName}:`, err)
     } finally {
       setLoading(false)
     }
@@ -74,7 +73,6 @@ export function useMultipleBusinessReviews(
       setReviewsMap(newMap)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to fetch reviews')
-      console.error('Failed to fetch multiple business reviews:', err)
     } finally {
       setLoading(false)
     }

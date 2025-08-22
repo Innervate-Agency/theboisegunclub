@@ -23,29 +23,7 @@ import {
 } from './pagination'
 
 // Phosphor Icons - Primary choice for tactical aesthetic
-import { 
-  MagnifyingGlass as Search, 
-  MapPin, 
-  Funnel as Filter, 
-  Plus, 
-  Buildings as Building2,
-  Target, 
-  Shield, 
-  ArrowRight, 
-  Phone,
-  CaretRight as ChevronRight, 
-  Eye, 
-  Medal as Award, 
-  CheckCircle, 
-  Lightning as Zap, 
-  ChatCircle as MessageSquare,
-  List,
-  GridFour as Grid,
-  SquaresFour as CardView,
-  SortAscending as SortAsc,
-  SortDescending as SortDesc,
-  CaretDown as ChevronDown
-} from '@phosphor-icons/react'
+import { ArrowRightIcon, ChevronDownIcon, ChevronRightIcon, CursorArrowRaysIcon, EyeIcon, ListBulletIcon, MapPinIcon, PhoneIcon, PlusIcon, RectangleGroupIcon, ShieldCheckIcon, TrophyIcon } from '@heroicons/react/24/outline';
 
 // Enhanced CTA Components from homepage
 import { TrustIndicators } from './trust-indicators'
@@ -281,25 +259,25 @@ export function DirectoryPageComponent() {
                 <div className="lg:col-span-2 h-full flex flex-col justify-center space-y-lg py-md">
                   <div className="flex items-center gap-base">
                     <div className="bg-card/10 p-base rounded-xs border border-border">
-                      <Building2 weight="bold" className="h-8 w-8 text-white" />
+                      <BuildingOffice2Icon weight="bold" className="h-8 w-8 text-white" />
                     </div>
                     <div className="space-y-base">
                       <div className="flex items-center gap-xs text-sm text-white/60">
                         <span>Home</span>
-                        <ChevronRight className="h-4 w-4" />
+                        <ChevronRightIcon className="h-4 w-4" />
                         <span className="text-white font-medium">Directory</span>
                       </div>
                       <div className="flex flex-wrap gap-xs">
                         <Badge className="bg-card/10 text-white border-border rounded-xs">
-                          <Shield weight="bold" className="h-4 w-4 mr-xs" />
+                          <ShieldCheckIcon weight="bold" className="h-4 w-4 mr-xs" />
                           FFLs & Dealers
                         </Badge>
                         <Badge className="bg-card/10 text-white border-border rounded-xs">
-                          <Target weight="bold" className="h-4 w-4 mr-xs" />
+                          <CursorArrowRaysIcon weight="bold" className="h-4 w-4 mr-xs" />
                           Ranges
                         </Badge>
                         <Badge className="bg-card/10 text-white border-border rounded-xs">
-                          <Award weight="bold" className="h-4 w-4 mr-xs" />
+                          <TrophyIcon weight="bold" className="h-4 w-4 mr-xs" />
                           Training
                         </Badge>
                       </div>
@@ -319,11 +297,11 @@ export function DirectoryPageComponent() {
                   
                   {/* Action Buttons */}
                   <div className="flex gap-base">
-                    <Button size="lg" className="bg-card text-nav-directory hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
-                      <Plus className="h-4 w-4 mr-xs" />
+                    <Button className="bg-card text-nav-directory hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
+                      <PlusIcon className="h-4 w-4 mr-xs" />
                       List Business
                     </Button>
-                    <Button variant="outline" size="lg" className="border-border text-white hover:bg-card hover:text-nav-directory" animationType="arrow">
+                    <Button variant="outline" className="border-border text-white hover:bg-card hover:text-nav-directory" animationType="arrow">
                       View Map
                     </Button>
                   </div>
@@ -331,12 +309,12 @@ export function DirectoryPageComponent() {
 
                 {/* Featured Business - Right side */}
                 <div className="lg:col-span-1 py-md min-h-[400px]">
-                  <Card variant="fire" className="w-full max-w-sm shadow-hero">
+                  <Card variant="destructive" className="w-full max-w-sm shadow-hero">
                     <CardContent className="p-base">
                       <div className="space-y-base text-center">
                         <div className="space-y-xs">
                           <Badge variant="nav-directory" size="sm">
-                            <Shield weight="bold" className="h-3 w-3 mr-xs" />
+                            <ShieldCheckIcon weight="bold" className="h-3 w-3 mr-xs" />
                             Featured Gold Partner
                           </Badge>
                           <h3 className="font-rajdhani font-bold text-body-xl text-card-foreground">
@@ -355,11 +333,11 @@ export function DirectoryPageComponent() {
                         {/* Contact Info */}
                         <div className="space-y-xs pt-xs border-t border-border/50">
                           <div className="flex items-center gap-xs text-body-xs text-muted-foreground">
-                            <MapPin weight="bold" className="h-3 w-3 text-nav-directory" />
+                            <MapPinIcon weight="bold" className="h-3 w-3 text-nav-directory" />
                             <span>2749 E Gala Ct, Meridian, ID</span>
                           </div>
                           <div className="flex items-center gap-xs text-body-xs text-muted-foreground">
-                            <Phone weight="bold" className="h-3 w-3 text-nav-directory" />
+                            <PhoneIcon weight="bold" className="h-3 w-3 text-nav-directory" />
                             <span>(208) 576-4867</span>
                           </div>
                         </div>
@@ -369,7 +347,7 @@ export function DirectoryPageComponent() {
                           className="w-full bg-gradient-to-r from-nav-directory to-nav-directory text-gruvbox-bg-dark hover:from-nav-directory/90 hover:to-nav-directory/90 font-rajdhani font-bold"
                           size="sm"
                         >
-                          <ArrowRight weight="bold" className="h-4 w-4 mr-xs" />
+                          <ArrowRightIcon weight="bold" className="h-4 w-4 mr-xs" />
                           VIEW BUSINESS
                         </Button>
                       </div>
@@ -407,7 +385,7 @@ export function DirectoryPageComponent() {
                           className: "size-3" 
                         })}
                         <span className="hidden sm:inline">{filter.label}</span>
-                        <Badge variant="secondary" size="sm" className="ml-auto">
+                        <Badge variant="outline" size="sm" className="ml-auto">
                           {filter.count}
                         </Badge>
                       </Button>
@@ -430,7 +408,7 @@ export function DirectoryPageComponent() {
                         className="w-full justify-between text-body-xs font-rajdhani shadow-none rounded-xs"
                       >
                         <span>{filter.label}</span>
-                        <Badge variant="secondary" size="sm">
+                        <Badge variant="outline" size="sm">
                           {filter.count}
                         </Badge>
                       </Button>
@@ -445,7 +423,7 @@ export function DirectoryPageComponent() {
                   </h3>
                   <div className="p-sm bg-nav-directory/5 rounded-xs border border-nav-directory/20">
                     <div className="space-y-xs text-center">
-                      <Target weight="bold" className="size-5 text-nav-directory mx-auto" />
+                      <CursorArrowRaysIcon weight="bold" className="size-5 text-nav-directory mx-auto" />
                       <h4 className="font-rajdhani font-bold text-body-sm text-card-foreground">
                         List Your Business
                       </h4>
@@ -453,7 +431,7 @@ export function DirectoryPageComponent() {
                         Join Idaho's premier firearms directory.
                       </p>
                       <Button size="sm" className="w-full shadow-none">
-                        <Plus weight="bold" className="size-3 mr-xs" />
+                        <PlusIcon weight="bold" className="size-3 mr-xs" />
                         Get Listed
                       </Button>
                     </div>
@@ -489,7 +467,7 @@ export function DirectoryPageComponent() {
                     onClick={() => setViewMode('grid')}
                     className="rounded-none border-none shadow-none"
                   >
-                    <Grid weight="bold" className="size-4" />
+                    <Squares2X2Icon weight="bold" className="size-4" />
                   </Button>
                   <Button
                     variant={viewMode === 'card' ? 'default' : 'ghost'}
@@ -497,7 +475,7 @@ export function DirectoryPageComponent() {
                     onClick={() => setViewMode('card')}
                     className="rounded-none border-none shadow-none"
                   >
-                    <CardView weight="bold" className="size-4" />
+                    <RectangleGroupIcon weight="bold" className="size-4" />
                   </Button>
                   <Button
                     variant={viewMode === 'list' ? 'default' : 'ghost'}
@@ -505,7 +483,7 @@ export function DirectoryPageComponent() {
                     onClick={() => setViewMode('list')}
                     className="rounded-none border-none shadow-none"
                   >
-                    <List weight="bold" className="size-4" />
+                    <ListBulletIcon weight="bold" className="size-4" />
                   </Button>
                 </div>
 
@@ -515,12 +493,12 @@ export function DirectoryPageComponent() {
                     <Button variant="outline" className="gap-xs shadow-none rounded-xs">
                       <SortAsc weight="bold" className="size-4" />
                       Sort by {sortBy === 'tier' ? 'Tier' : sortBy === 'name' ? 'Name' : 'Newest'}
-                      <ChevronDown weight="bold" className="size-3" />
+                      <ChevronDownIcon weight="bold" className="size-3" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
                     <DropdownMenuItem onClick={() => setSortBy('tier')}>
-                      <Award className="size-4 mr-xs" />
+                      <TrophyIcon className="size-4 mr-xs" />
                       Sort by Tier
                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={() => setSortBy('name')}>
@@ -536,7 +514,7 @@ export function DirectoryPageComponent() {
 
                 {/* Map View Button */}
                 <Button variant="outline" className="gap-xs shadow-none rounded-xs">
-                  <MapPin weight="bold" className="size-4" />
+                  <MapPinIcon weight="bold" className="size-4" />
                   Map View
                 </Button>
               </div>
@@ -567,10 +545,10 @@ export function DirectoryPageComponent() {
                 ))
               ) : (
                 <div className="col-span-full">
-                  <Card variant="default" className="mica rounded-xs">
+                  <Card variant="outline" className="mica rounded-xs">
                     <CardContent className="py-2xl text-center">
                       <div className="space-y-base">
-                        <Eye weight="bold" className="size-12 text-muted-foreground mx-auto" />
+                        <EyeIcon weight="bold" className="size-12 text-muted-foreground mx-auto" />
                         <div className="space-y-xs">
                           <h3 className="font-rajdhani text-body-xl font-bold text-card-foreground">No Businesses Found</h3>
                           <p className="text-muted-foreground">Try adjusting your search terms or filters to find what you're looking for.</p>

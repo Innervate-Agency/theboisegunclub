@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import StatCard from '@/components/ui/StatCard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Users, Target, Trophy, TrendingUp, ArrowRight, ChevronRight } from 'lucide-react';
+import { ArrowRightIcon, ArrowTrendingUpIcon, ChevronRightIcon, CursorArrowRaysIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta = {
   title: 'Patterns/Component Combinations',
@@ -33,34 +33,34 @@ export const StatsGrid: Story = {
         <StatCard
           value="1,247"
           label="Active Members"
-          variant="premium"
+          variant="default"
           trend="up"
           trendValue="+12%"
-          icon={<Users className="h-6 w-6" />}
+          icon={<UsersIcon className="h-6 w-6" />}
         />
         <StatCard
           value="98.5%"
           label="Safety Rating"
-          variant="elite"
+          variant="default"
           trend="up"
           trendValue="+2.3%"
-          icon={<Target className="h-6 w-6" />}
+          icon={<CursorArrowRaysIcon className="h-6 w-6" />}
         />
         <StatCard
           value="127"
           label="Competitions Won"
-          variant="premium"
+          variant="default"
           trend="up"
           trendValue="+15"
-          icon={<Trophy className="h-6 w-6" />}
+          icon={<TrophyIcon className="h-6 w-6" />}
         />
         <StatCard
           value="89%"
           label="Member Satisfaction"
-          variant="glass"
+          variant="secondary"
           trend="up"
           trendValue="+7%"
-          icon={<TrendingUp className="h-6 w-6" />}
+          icon={<ArrowTrendingUpIcon className="h-6 w-6" />}
         />
       </div>
     </div>
@@ -87,7 +87,7 @@ export const FireGradientCardGrid: Story = {
               The gradient unfurls from the left like a proper flame effect when you hover.
             </p>
             <Button variant="ghost" size="sm" className="relative z-10">
-              Experience Effect <ChevronRight className="ml-xs h-4 w-4" />
+              Experience Effect <ChevronRightIcon className="ml-xs h-4 w-4" />
             </Button>
           </CardContent>
         </Card>
@@ -95,7 +95,7 @@ export const FireGradientCardGrid: Story = {
         {/* Pulsing Fire Card */}
         <Card className="animate-fire-pulse text-white">
           <CardHeader>
-            <Badge variant="secondary" className="w-fit mb-xs bg-black/20">Continuous</Badge>
+            <Badge variant="outline" className="w-fit mb-xs bg-black/20">Continuous</Badge>
             <CardTitle>Pulsing Fire</CardTitle>
           </CardHeader>
           <CardContent>
@@ -103,7 +103,7 @@ export const FireGradientCardGrid: Story = {
               Continuously animated fire gradient that pulses across the background.
             </p>
             <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-card/20">
-              Learn More <ChevronRight className="ml-xs h-4 w-4" />
+              Learn More <ChevronRightIcon className="ml-xs h-4 w-4" />
             </Button>
           </CardContent>
         </Card>
@@ -111,7 +111,7 @@ export const FireGradientCardGrid: Story = {
         {/* Glowing Fire Card */}
         <Card className="bg-fire-orange animate-fire-glow text-white">
           <CardHeader>
-            <Badge variant="secondary" className="w-fit mb-xs bg-black/20">Glow Effect</Badge>
+            <Badge variant="outline" className="w-fit mb-xs bg-black/20">Glow Effect</Badge>
             <CardTitle>Fire Glow</CardTitle>
           </CardHeader>
           <CardContent>
@@ -119,7 +119,7 @@ export const FireGradientCardGrid: Story = {
               Fire gradient with a pulsing glow shadow effect for extra emphasis.
             </p>
             <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-card/20">
-              View Details <ChevronRight className="ml-xs h-4 w-4" />
+              View Details <ChevronRightIcon className="ml-xs h-4 w-4" />
             </Button>
           </CardContent>
         </Card>
@@ -127,7 +127,7 @@ export const FireGradientCardGrid: Story = {
         {/* Blue Fire Variant */}
         <Card className="bg-fire-blue text-white">
           <CardHeader>
-            <Badge variant="secondary" className="w-fit mb-xs bg-black/20">Cool Fire</Badge>
+            <Badge variant="outline" className="w-fit mb-xs bg-black/20">Cool Fire</Badge>
             <CardTitle>Blue Flames</CardTitle>
           </CardHeader>
           <CardContent>
@@ -135,7 +135,7 @@ export const FireGradientCardGrid: Story = {
               Cool blue fire gradient using slate-blue to ayu-green transition.
             </p>
             <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-card/20">
-              Explore <ChevronRight className="ml-xs h-4 w-4" />
+              Explore <ChevronRightIcon className="ml-xs h-4 w-4" />
             </Button>
           </CardContent>
         </Card>
@@ -143,7 +143,7 @@ export const FireGradientCardGrid: Story = {
         {/* Purple Fire Variant */}
         <Card className="bg-fire-purple text-white">
           <CardHeader>
-            <Badge variant="secondary" className="w-fit mb-xs bg-black/20">Royal Fire</Badge>
+            <Badge variant="outline" className="w-fit mb-xs bg-black/20">Royal Fire</Badge>
             <CardTitle>Purple Flames</CardTitle>
           </CardHeader>
           <CardContent>
@@ -151,7 +151,7 @@ export const FireGradientCardGrid: Story = {
               Elegant purple fire gradient from ayu-purple to ayu-cobalt.
             </p>
             <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-card/20">
-              Discover <ChevronRight className="ml-xs h-4 w-4" />
+              Discover <ChevronRightIcon className="ml-xs h-4 w-4" />
             </Button>
           </CardContent>
         </Card>
@@ -159,7 +159,7 @@ export const FireGradientCardGrid: Story = {
         {/* Green Fire Variant */}
         <Card className="bg-fire-green text-white">
           <CardHeader>
-            <Badge variant="secondary" className="w-fit mb-xs bg-black/20">Natural Fire</Badge>
+            <Badge variant="outline" className="w-fit mb-xs bg-black/20">Natural Fire</Badge>
             <CardTitle>Green Flames</CardTitle>
           </CardHeader>
           <CardContent>
@@ -167,7 +167,7 @@ export const FireGradientCardGrid: Story = {
               Natural green fire gradient perfect for success states and growth.
             </p>
             <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-card/20">
-              Get Started <ChevronRight className="ml-xs h-4 w-4" />
+              Get Started <ChevronRightIcon className="ml-xs h-4 w-4" />
             </Button>
           </CardContent>
         </Card>
@@ -197,13 +197,13 @@ export const CallToActionSection: Story = {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-base justify-center">
-            <Button size="lg" variant="premium" className="animate-fire-unfurl">
-              Become a Member <ArrowRight className="ml-xs h-5 w-5" />
+            <Button variant="default" className="animate-fire-unfurl">
+              Become a Member <ArrowRightIcon className="ml-xs h-5 w-5" />
             </Button>
-            <Button size="lg" variant="elite">
+            <Button variant="default">
               Schedule a Visit
             </Button>
-            <Button size="lg" variant="outline">
+            <Button variant="outline">
               Learn More
             </Button>
           </div>
@@ -269,8 +269,8 @@ export const FeatureHighlight: Story = {
             </li>
           </ul>
           
-          <Button variant="premium" className="animate-fire-unfurl">
-            Experience the Effect <ArrowRight className="ml-xs h-5 w-5" />
+          <Button variant="default" className="animate-fire-unfurl">
+            Experience the Effect <ArrowRightIcon className="ml-xs h-5 w-5" />
           </Button>
         </div>
         
@@ -278,7 +278,7 @@ export const FeatureHighlight: Story = {
           <Card className="animate-fire-unfurl cursor-pointer">
             <CardContent className="p-md">
               <div className="relative z-10 text-center">
-                <Target className="h-8 w-8 mx-auto mb-xs text-sandy-ochre" />
+                <CursorArrowRaysIcon className="h-8 w-8 mx-auto mb-xs text-sandy-ochre" />
                 <h4 className="font-bold">Hover Effect</h4>
               </div>
             </CardContent>
@@ -286,21 +286,21 @@ export const FeatureHighlight: Story = {
           
           <Card className="animate-fire-pulse text-white">
             <CardContent className="p-md text-center">
-              <TrendingUp className="h-8 w-8 mx-auto mb-xs" />
+              <ArrowTrendingUpIcon className="h-8 w-8 mx-auto mb-xs" />
               <h4 className="font-bold">Pulse Effect</h4>
             </CardContent>
           </Card>
           
           <Card className="bg-fire-blue text-white">
             <CardContent className="p-md text-center">
-              <Users className="h-8 w-8 mx-auto mb-xs" />
+              <UsersIcon className="h-8 w-8 mx-auto mb-xs" />
               <h4 className="font-bold">Blue Fire</h4>
             </CardContent>
           </Card>
           
           <Card className="bg-fire-purple text-white">
             <CardContent className="p-md text-center">
-              <Trophy className="h-8 w-8 mx-auto mb-xs" />
+              <TrophyIcon className="h-8 w-8 mx-auto mb-xs" />
               <h4 className="font-bold">Purple Fire</h4>
             </CardContent>
           </Card>

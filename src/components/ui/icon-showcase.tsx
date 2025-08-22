@@ -5,29 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 // Import commonly used Lucide icons for firearms/outdoor/business context
-import {
-  // Core Business Icons
-  Building2, MapPin, Phone, Mail, Globe, Clock, Users, Star,
-  
-  // Firearms/Outdoor Related
-  Target, Crosshair, Shield, Award, Trophy, Compass, Map,
-  
-  // Navigation & UI
-  Home, Menu, Search, Filter, ChevronDown, ChevronRight, ArrowRight, ArrowLeft,
-  Plus, Minus, X, Check, Info, AlertTriangle, AlertCircle,
-  
-  // Social & Communication
-  MessageCircle, Heart, Bookmark, ThumbsUp, Eye,
-  
-  // Business & Shopping
-  ShoppingCart, CreditCard, DollarSign, Package, Truck, Calendar,
-  
-  // Technical
-  Settings, Edit, Trash2, Download, Upload, Copy,
-  
-  // Weather & Environment
-  Sun, Moon, Cloud, CloudRain, Wind, Mountain, Trees
-} from 'lucide-react'
+import { CalendarDaysIcon, CursorArrowRaysIcon, GlobeAltIcon, MapPinIcon, ShieldCheckIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const iconShowcaseVariants = cva(
   "flex items-center justify-center rounded-sm border transition-all duration-200 ease-out",
@@ -187,7 +165,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
             <div className="space-y-4">
               <h4 className="font-rajdhani font-semibold text-dark-chocolate">Primary Actions</h4>
               <div className="flex items-center gap-sm p-sm bg-card rounded border">
-                <Target className="icon-lg icon-primary" />
+                <CursorArrowRaysIcon className="icon-lg icon-primary" />
                 <span className="text-body-sm font-noto-sans">Professional line icons</span>
               </div>
             </div>
@@ -196,7 +174,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
             <div className="space-y-4">
               <h4 className="font-rajdhani font-semibold text-dark-chocolate">Secondary Actions</h4>
               <div className="flex items-center gap-sm p-sm bg-card rounded border">
-                <Users className="icon-lg icon-secondary" />
+                <UsersIcon className="icon-lg icon-secondary" />
                 <span className="text-body-sm font-noto-sans">Clean, consistent design</span>
               </div>
             </div>
@@ -205,7 +183,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
             <div className="space-y-4">
               <h4 className="font-rajdhani font-semibold text-dark-chocolate">Accent Elements</h4>
               <div className="flex items-center gap-sm p-sm bg-card rounded border">
-                <Award className="icon-lg icon-accent" />
+                <TrophyIcon className="icon-lg icon-accent" />
                 <span className="text-body-sm font-noto-sans">Idaho Firearms Heritage</span>
               </div>
             </div>

@@ -1,0 +1,31 @@
+{
+  "searches_completed": {
+    "gun store_boise": {
+      "term": "gun store",
+      "location": "Boise",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:50:26.012946"
+    },
+    "shooting range_boise": {
+      "term": "shooting range",
+      "location": "Boise",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:50:29.767171"
+    }
+  },
+  "websites_scraped": {},
+  "businesses_generated": {},
+  "api_usage": {
+    "serper_requests_today": 2,
+    "last_request_date": "2025-08-21",
+    "total_requests": 2
+  },
+  "stats": {
+    "duplicates_prevented": 0,
+    "validation_failures": 0,
+    "successful_generations": 0
+  },
+  "last_backup": null,
+  "created": "2025-08-21T16:50:22.704513",
+  "last_updated": "2025-08-21T16:50:29.767191"
+}

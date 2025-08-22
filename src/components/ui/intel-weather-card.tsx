@@ -3,16 +3,7 @@
 import { Card, CardContent } from './card'
 import { Button } from './button'
 import { Badge } from './badge'
-import { 
-  CloudSun,
-  Thermometer,
-  Wind,
-  Eye,
-  Gauge,
-  MapPin,
-  Clock
-} from '@phosphor-icons/react'
-import { FiTrendingUp as TrendingUp, FiAlertTriangle as AlertTriangle } from 'react-icons/fi'
+import { ArrowTrendingUpIcon, ClockIcon, ConditionsIcon, ExclamationTriangleIcon, EyeIcon, MapPinIcon } from '@heroicons/react/24/outline'
 
 interface WeatherCondition {
   location: string
@@ -65,10 +56,10 @@ export function IntelWeatherCard({
 
   const getConditionsIcon = (conditions: string) => {
     switch (conditions) {
-      case 'Excellent': return <TrendingUp className="h-3 w-3" weight="bold" />
-      case 'Good': return <TrendingUp className="h-3 w-3" weight="bold" />
+      case 'Excellent': return <ArrowTrendingUpIcon className="h-3 w-3" weight="bold" />
+      case 'Good': return <ArrowTrendingUpIcon className="h-3 w-3" weight="bold" />
       case 'Fair': return <Gauge className="h-3 w-3" weight="bold" />
-      case 'Poor': return <AlertTriangle className="h-3 w-3" weight="bold" />
+      case 'Poor': return <ExclamationTriangleIcon className="h-3 w-3" weight="bold" />
       default: return <Gauge className="h-3 w-3" weight="bold" />
     }
   }
@@ -80,7 +71,7 @@ export function IntelWeatherCard({
         <div className="flex items-center justify-between">
           <div className="space-y-xs">
             <div className="flex items-center gap-sm">
-              <MapPin className="h-4 w-4 text-canyon-clay" weight="bold" />
+              <MapPinIcon className="h-4 w-4 text-canyon-clay" weight="bold" />
               <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground">
                 {weather.locationShort}
               </h3>
@@ -120,7 +111,7 @@ export function IntelWeatherCard({
 
           {/* Visibility */}
           <div className="text-center space-y-xs">
-            <Eye className="h-6 w-6 text-sagebrush-green mx-auto" weight="bold" />
+            <EyeIcon className="h-6 w-6 text-sagebrush-green mx-auto" weight="bold" />
             <p className="font-rajdhani font-bold text-body-lg text-card-foreground">
               {weather.visibility} mi
             </p>
@@ -136,7 +127,7 @@ export function IntelWeatherCard({
             <span className="font-medium text-card-foreground">{weather.humidity}%</span>
           </div>
           <div className="flex items-center gap-sm">
-            <Clock className="h-4 w-4 text-muted-foreground" weight="bold" />
+            <ClockIcon className="h-4 w-4 text-muted-foreground" weight="bold" />
             <span className="text-body-xs text-muted-foreground">Updated {weather.lastUpdated}</span>
           </div>
         </div>
@@ -146,7 +137,7 @@ export function IntelWeatherCard({
           <div className="space-y-xs">
             {weather.alerts.map((alert, index) => (
               <div key={index} className="flex items-start gap-sm p-sm bg-sagebrush-green/10 rounded-xs">
-                <TrendingUp className="h-4 w-4 text-sagebrush-green mt-0.5 flex-shrink-0" weight="bold" />
+                <ArrowTrendingUpIcon className="h-4 w-4 text-sagebrush-green mt-0.5 flex-shrink-0" weight="bold" />
                 <p className="text-body-sm text-sagebrush-green">{alert}</p>
               </div>
             ))}

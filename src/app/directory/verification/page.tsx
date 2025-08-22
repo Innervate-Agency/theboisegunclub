@@ -5,17 +5,17 @@ import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { InfoCard } from '@/components/ui/info-card'
-import { CheckCircle, Shield, FileText, AlertTriangle, XCircle } from 'lucide-react'
+import { CheckCircleIcon, DocumentTextIcon, ExclamationTriangleIcon, ShieldCheckIcon, XCircleIcon } from '@heroicons/react/24/outline';
 
 export default function VerificationPage() {
   return (
     <>
-      <SiteNavigation variant="premium" sticky={true} />
+      <SiteNavigation variant="default" sticky={true} />
       <div className="min-h-screen bg-background theme-directory">
         <div className="container mx-auto max-w-4xl py-2xl px-md">
           <div className="space-y-lg">
             <div className="text-center">
-              <Shield className="mx-auto h-12 w-12 text-nav-directory" />
+              <ShieldCheckIcon className="mx-auto h-12 w-12 text-nav-directory" />
               <h1 className="font-rajdhani text-4xl font-bold mt-base">Our Verification Process</h1>
               <p className="text-lg text-muted-foreground mt-sm">
                 Building a trusted community of firearms professionals in the Treasure Valley.
@@ -38,14 +38,14 @@ export default function VerificationPage() {
 
             <div className="grid md:grid-cols-2 gap-lg">
               <InfoCard
-                icon={FileText}
+                icon={DocumentTextIcon}
                 iconColor="text-nav-directory"
                 title="Federal & State Records"
                 description="We start with the official list of Federal Firearms Licensees from the ATF. Then, we verify that the business is also registered and in good standing with the Idaho Secretary of State. This two-step process ensures that every FFL listed is not only federally licensed but also legally recognized to operate in Idaho."
                 layout="vertical"
               />
               <InfoCard
-                icon={CheckCircle}
+                icon={CheckCircleIcon}
                 iconColor="text-sagebrush-green"
                 title="Verification Levels"
                 description="We use a clear and transparent system to show you our confidence in each listing. From 'Fully Verified' to 'ATF Record Only', we provide the information you need to make an informed decision. We believe in transparency, and our verification levels reflect that commitment."
@@ -57,25 +57,25 @@ export default function VerificationPage() {
               <h2 className="font-rajdhani text-3xl font-bold text-center mb-lg">Our Verification Tiers</h2>
               <div className="space-y-md">
                 <InfoCard
-                  icon={CheckCircle}
+                  icon={CheckCircleIcon}
                   iconColor="text-sagebrush-green"
                   title="Fully Verified"
                   description="These businesses have an active ATF license, an active registration with the Idaho Secretary of State, and a verifiable public presence like a storefront or an active website. This is our highest level of confidence."
                 />
                 <InfoCard
-                  icon={Shield}
+                  icon={ShieldCheckIcon}
                   iconColor="text-slate-blue"
                   title="ATF/SOS Verified"
                   description="These businesses have an active ATF license and an active registration with the Idaho Secretary of State, but may not have a significant public presence. This is common for home-based FFLs or specialized manufacturers."
                 />
                 <InfoCard
-                  icon={AlertTriangle}
+                  icon={ExclamationTriangleIcon}
                   iconColor="text-warning-amber"
                   title="ATF Record Only - Unverified"
                   description="These businesses appear on the ATF list but lack a corresponding active registration with the Idaho Secretary of State. This is a red flag, and we recommend further due diligence before engaging with these businesses."
                 />
                 <InfoCard
-                  icon={XCircle}
+                  icon={XCircleIcon}
                   iconColor="text-canyon-clay"
                   title="Inactive/Closed"
                   description="These businesses have an expired FFL and/or a dissolved state business registration. They are confirmed to be non-operational as FFLs."

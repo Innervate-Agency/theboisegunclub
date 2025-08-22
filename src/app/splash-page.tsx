@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import AltchaWidget, { AltchaWidgetRef } from '@/components/ui/altcha-widget';
-import { Search, Calendar, ShoppingCart, Share2, Bell, Building2, ArrowRight, MapPin, Users, Trophy, Target, AlertTriangle, Users2, MessageSquare, Database, Shield, Megaphone, CheckCircle, Zap, Star, TrendingUp, Mail, Bookmark, FileText } from 'lucide-react';
+import { ArrowRightIcon, ArrowTrendingUpIcon, BellIcon, BoltIcon, BookmarkIcon, BuildingOffice2Icon, CalendarDaysIcon, ChatBubbleBottomCenterTextIcon, ChatBubbleLeftRightIcon, CheckCircleIcon, CircleStackIcon, CursorArrowRaysIcon, DocumentTextIcon, EnvelopeIcon, ExclamationTriangleIcon, MagnifyingGlassIcon, MapPinIcon, ShareIcon, ShieldCheckIcon, ShoppingCartIcon, SpeakerWaveIcon, StarIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 export default function HomePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -45,11 +45,8 @@ export default function HomePage() {
         body: JSON.stringify(data),
       });
 
-      console.log('Response status:', response.status);
-      console.log('Response ok:', response.ok);
 
       const responseData = await response.json();
-      console.log('Response data:', responseData);
 
       if (response.ok) {
         setSubmitStatus('success');
@@ -57,11 +54,9 @@ export default function HomePage() {
         altchaRef.current?.reset();
         setAltchaPayload(null);
       } else {
-        console.error('API Error Details:', responseData);
         setSubmitStatus('error');
       }
     } catch (error) {
-      console.error('Fetch error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -76,8 +71,8 @@ export default function HomePage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
             <div className="space-y-8">
               <div className="space-y-4">
-                <Badge className="bg-sandy-ochre text-dark-chocolate shadow-sm">
-                  <Target className="h-4 w-4 mr-2" />
+                <Badge className="bg-sandy-ochre text-dark-chocolate shadow-sm" hideIcon={true}>
+                  <CursorArrowRaysIcon className="h-4 w-4 mr-2" />
                   Regional Platform
                 </Badge>
                 <h1 className="font-rajdhani text-responsive-4xl leading-none text-foreground tracking-tight">
@@ -88,19 +83,19 @@ export default function HomePage() {
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Shield className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
+                    <ShieldCheckIcon className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>Safety-first community focused on responsible firearms education</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Star className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
+                    <StarIcon className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>Preserving Idaho's rich firearms heritage and outdoor traditions</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Users className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
+                    <UsersIcon className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>Connecting 250K+ gun owners across the Treasure Valley region</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <TrendingUp className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
+                    <ArrowTrendingUpIcon className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>4-tier subscription model supporting local businesses</span>
                   </div>
                 </div>
@@ -112,26 +107,26 @@ export default function HomePage() {
               <StatCard
                 value="Directory"
                 label="Local gun shops, ranges & trainers"
-                variant="default"
-                icon={<div className="w-12 h-12 rounded-lg bg-sandy-ochre/20 border-2 border-sandy-ochre/30 flex items-center justify-center"><Building2 className="h-6 w-6 text-sandy-ochre" /></div>}
+                variant="outline"
+                icon={<div className="w-12 h-12 rounded-lg bg-sandy-ochre/20 border-2 border-sandy-ochre/30 flex items-center justify-center"><BuildingOffice2Icon className="h-6 w-6 text-sandy-ochre" /></div>}
               />
               <StatCard
                 value="Events"
                 label="Unified calendar from all clubs"
-                variant="default"
-                icon={<div className="w-12 h-12 rounded-lg bg-slate-blue/20 border-2 border-slate-blue/30 flex items-center justify-center"><Calendar className="h-6 w-6 text-slate-blue" /></div>}
+                variant="outline"
+                icon={<div className="w-12 h-12 rounded-lg bg-slate-blue/20 border-2 border-slate-blue/30 flex items-center justify-center"><CalendarDaysIcon className="h-6 w-6 text-slate-blue" /></div>}
               />
               <StatCard
                 value="Forum"
                 label="Community discussion & trading"
-                variant="default"
-                icon={<div className="w-12 h-12 rounded-lg bg-sagebrush-green/20 border-2 border-sagebrush-green/30 flex items-center justify-center"><Share2 className="h-6 w-6 text-sagebrush-green" /></div>}
+                variant="outline"
+                icon={<div className="w-12 h-12 rounded-lg bg-sagebrush-green/20 border-2 border-sagebrush-green/30 flex items-center justify-center"><ShareIcon className="h-6 w-6 text-sagebrush-green" /></div>}
               />
               <StatCard
                 value="Resources"
                 label="Idaho laws, safety & training info"
-                variant="default"
-                icon={<div className="w-12 h-12 rounded-lg bg-info-river/20 border-2 border-info-river/30 flex items-center justify-center"><Bell className="h-6 w-6 text-info-river" /></div>}
+                variant="outline"
+                icon={<div className="w-12 h-12 rounded-lg bg-info-river/20 border-2 border-info-river/30 flex items-center justify-center"><BellIcon className="h-6 w-6 text-info-river" /></div>}
               />
             </div>
           </div>
@@ -152,9 +147,9 @@ export default function HomePage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader className="space-y-3">
-                <Search className="h-8 w-8 text-sandy-ochre group-hover:text-rusty-orange transition-colors" />
+                <MagnifyingGlassIcon className="h-8 w-8 text-sandy-ochre group-hover:text-rusty-orange transition-colors" />
                 <CardTitle className="flex items-center gap-2">
-                  <Building2 className="h-5 w-5" />
+                  <BuildingOffice2Icon className="h-5 w-5" />
                   Business Directory
                 </CardTitle>
               </CardHeader>
@@ -167,9 +162,9 @@ export default function HomePage() {
             
             <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sandy-ochre after:to-rusty-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader className="space-y-3">
-                <Calendar className="h-8 w-8 text-sandy-ochre group-hover:text-rusty-orange transition-colors" />
+                <CalendarDaysIcon className="h-8 w-8 text-sandy-ochre group-hover:text-rusty-orange transition-colors" />
                 <CardTitle className="flex items-center gap-2">
-                  <Users2 className="h-5 w-5" />
+                  <UsersIcon className="h-5 w-5" />
                   Unified Events
                 </CardTitle>
               </CardHeader>
@@ -182,9 +177,9 @@ export default function HomePage() {
             
             <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sandy-ochre after:to-rusty-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader className="space-y-3">
-                <Share2 className="h-8 w-8 text-sandy-ochre group-hover:text-rusty-orange transition-colors" />
+                <ShareIcon className="h-8 w-8 text-sandy-ochre group-hover:text-rusty-orange transition-colors" />
                 <CardTitle className="flex items-center gap-2">
-                  <MessageSquare className="h-5 w-5" />
+                  <ChatBubbleLeftRightIcon className="h-5 w-5" />
                   Community Hub
                 </CardTitle>
               </CardHeader>
@@ -197,9 +192,9 @@ export default function HomePage() {
             
             <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader className="space-y-3">
-                <ShoppingCart className="h-8 w-8 text-sandy-ochre group-hover:text-rusty-orange transition-colors" />
+                <ShoppingCartIcon className="h-8 w-8 text-sandy-ochre group-hover:text-rusty-orange transition-colors" />
                 <CardTitle className="flex items-center gap-2">
-                  <Zap className="h-5 w-5" />
+                  <BoltIcon className="h-5 w-5" />
                   Service Marketplace
                 </CardTitle>
               </CardHeader>
@@ -222,12 +217,12 @@ export default function HomePage() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-canyon-clay after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader className="space-y-4">
-                <Badge className="w-fit bg-canyon-clay/20 text-canyon-clay">
-                  <AlertTriangle className="h-3 w-3 mr-1" />
+                <Badge className="w-fit bg-canyon-clay/20 text-canyon-clay" hideIcon={true}>
+                  <ExclamationTriangleIcon className="h-3 w-3 mr-1" />
                   Fragmentation
                 </Badge>
                 <CardTitle className="flex items-center gap-2">
-                  <Search className="h-5 w-5 text-canyon-clay" />
+                  <MagnifyingGlassIcon className="h-5 w-5 text-canyon-clay" />
                   Information Scattered Everywhere
                 </CardTitle>
               </CardHeader>
@@ -240,12 +235,12 @@ export default function HomePage() {
             
             <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-info-river after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader className="space-y-4">
-                <Badge className="w-fit bg-slate-blue/20 text-slate-blue">
-                  <AlertTriangle className="h-3 w-3 mr-1" />
+                <Badge className="w-fit bg-slate-blue/20 text-slate-blue" hideIcon={true}>
+                  <ExclamationTriangleIcon className="h-3 w-3 mr-1" />
                   Isolation
                 </Badge>
                 <CardTitle className="flex items-center gap-2">
-                  <Building2 className="h-5 w-5 text-slate-blue" />
+                  <BuildingOffice2Icon className="h-5 w-5 text-slate-blue" />
                   Clubs Operating in Silos
                 </CardTitle>
               </CardHeader>
@@ -258,12 +253,12 @@ export default function HomePage() {
             
             <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sagebrush-green after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader className="space-y-4">
-                <Badge className="w-fit bg-sagebrush-green/20 text-sagebrush-green">
-                  <AlertTriangle className="h-3 w-3 mr-1" />
+                <Badge className="w-fit bg-sagebrush-green/20 text-sagebrush-green" hideIcon={true}>
+                  <ExclamationTriangleIcon className="h-3 w-3 mr-1" />
                   Discovery
                 </Badge>
                 <CardTitle className="flex items-center gap-2">
-                  <TrendingUp className="h-5 w-5 text-sagebrush-green" />
+                  <ArrowTrendingUpIcon className="h-5 w-5 text-sagebrush-green" />
                   Businesses Struggle for Visibility
                 </CardTitle>
               </CardHeader>
@@ -276,12 +271,12 @@ export default function HomePage() {
             
             <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-foothills-purple after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader className="space-y-4">
-                <Badge className="w-fit bg-slate-blue/20 text-slate-blue">
-                  <AlertTriangle className="h-3 w-3 mr-1" />
+                <Badge className="w-fit bg-slate-blue/20 text-slate-blue" hideIcon={true}>
+                  <ExclamationTriangleIcon className="h-3 w-3 mr-1" />
                   Education
                 </Badge>
                 <CardTitle className="flex items-center gap-2">
-                  <Shield className="h-5 w-5 text-slate-blue" />
+                  <ShieldCheckIcon className="h-5 w-5 text-slate-blue" />
                   Safety Education Gaps
                 </CardTitle>
               </CardHeader>
@@ -294,12 +289,12 @@ export default function HomePage() {
             
             <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-foothills-purple after:to-canyon-clay after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader className="space-y-4">
-                <Badge className="w-fit bg-foothills-purple/20 text-foothills-purple">
-                  <AlertTriangle className="h-3 w-3 mr-1" />
+                <Badge className="w-fit bg-foothills-purple/20 text-foothills-purple" hideIcon={true}>
+                  <ExclamationTriangleIcon className="h-3 w-3 mr-1" />
                   Reviews
                 </Badge>
                 <CardTitle className="flex items-center gap-2">
-                  <Database className="h-5 w-5 text-foothills-purple" />
+                  <CircleStackIcon className="h-5 w-5 text-foothills-purple" />
                   Community Firearm Reviews
                 </CardTitle>
               </CardHeader>
@@ -312,12 +307,12 @@ export default function HomePage() {
             
             <Card className="card-hover shadow-sm transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sandy-ochre after:to-slate-blue after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader className="space-y-4">
-                <Badge className="w-fit bg-sandy-ochre/20 text-sandy-ochre">
-                  <AlertTriangle className="h-3 w-3 mr-1" />
+                <Badge className="w-fit bg-sandy-ochre/20 text-sandy-ochre" hideIcon={true}>
+                  <ExclamationTriangleIcon className="h-3 w-3 mr-1" />
                   Advocacy
                 </Badge>
                 <CardTitle className="flex items-center gap-2">
-                  <Megaphone className="h-5 w-5 text-sandy-ochre" />
+                  <SpeakerWaveIcon className="h-5 w-5 text-sandy-ochre" />
                   No Community Voice
                 </CardTitle>
               </CardHeader>
@@ -337,17 +332,17 @@ export default function HomePage() {
           <div className="text-center">
             <div className="bg-card rounded-lg p-12 shadow-sm max-w-4xl mx-auto relative overflow-hidden group after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-sagebrush-green after:to-sandy-ochre after:transition-all after:duration-500 after:ease-out hover:after:w-full after:rounded-b-lg">
               <div>
-                <Badge className="mb-4 bg-sagebrush-green/20 text-sagebrush-green">
-                  <CheckCircle className="h-3 w-3 mr-1" />
+                <Badge className="mb-4 bg-sagebrush-green/20 text-sagebrush-green" hideIcon={true}>
+                  <CheckCircleIcon className="h-3 w-3 mr-1" />
                   Our Solution
                 </Badge>
                 <h3 className="font-rajdhani text-3xl font-bold text-card-foreground mb-4 flex items-center gap-2">
-                  <Star className="h-6 w-6 text-sandy-ochre" />
+                  <StarIcon className="h-6 w-6 text-sandy-ochre" />
                   One Platform to Unite Treasure Valley's Firearms Community
                 </h3>
                 <div className="grid gap-4 md:grid-cols-2 text-left">
                   <div className="flex items-start gap-2">
-                    <Search className="h-5 w-5 text-sagebrush-green mt-1 flex-shrink-0" />
+                    <MagnifyingGlassIcon className="h-5 w-5 text-sagebrush-green mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-rajdhani font-bold text-card-foreground mb-1">Verified Business Network</h4>
                       <p className="text-sm text-muted-foreground">
@@ -356,7 +351,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Calendar className="h-5 w-5 text-sagebrush-green mt-1 flex-shrink-0" />
+                    <CalendarDaysIcon className="h-5 w-5 text-sagebrush-green mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-rajdhani font-bold text-card-foreground mb-1">Smart Event Coordination</h4>
                       <p className="text-sm text-muted-foreground">
@@ -365,7 +360,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
-                    <MessageSquare className="h-5 w-5 text-sagebrush-green mt-1 flex-shrink-0" />
+                    <ChatBubbleLeftRightIcon className="h-5 w-5 text-sagebrush-green mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-rajdhani font-bold text-card-foreground mb-1">Firearm Review Database</h4>
                       <p className="text-sm text-muted-foreground">
@@ -374,7 +369,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
-                    <FileText className="h-5 w-5 text-sagebrush-green mt-1 flex-shrink-0" />
+                    <DocumentTextIcon className="h-5 w-5 text-sagebrush-green mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-rajdhani font-bold text-card-foreground mb-1">Premium Business Tools</h4>
                       <p className="text-sm text-muted-foreground">
@@ -398,8 +393,8 @@ export default function HomePage() {
             {/* Left Side - Compelling Content */}
             <div className="text-center lg:text-left space-y-8">
               <div className="space-y-4">
-                <Badge className="bg-sandy-ochre/20 text-sandy-ochre border-sandy-ochre/30">
-                  <MessageSquare className="h-4 w-4 mr-2" />
+                <Badge className="bg-sandy-ochre/20 text-sandy-ochre border-sandy-ochre/30" hideIcon={true}>
+                  <ChatBubbleLeftRightIcon className="h-4 w-4 mr-2" />
                   Get In Touch
                 </Badge>
                 <h2 className="font-rajdhani text-responsive-4xl font-bold text-crisp-off-white leading-tight">
@@ -412,14 +407,14 @@ export default function HomePage() {
               
               <div className="grid gap-sm sm:grid-cols-2 max-w-lg lg:max-w-none">
                 <div className="flex items-start gap-4">
-                  <Building2 className="h-5 w-5 text-sandy-ochre mt-1 flex-shrink-0" />
+                  <BuildingOffice2Icon className="h-5 w-5 text-sandy-ochre mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-rajdhani font-bold text-crisp-off-white">Business Partnerships</h4>
                     <p className="text-sm text-crisp-off-white/70">Join our growing network of vendors</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Users className="h-5 w-5 text-sandy-ochre mt-1 flex-shrink-0" />
+                  <UsersIcon className="h-5 w-5 text-sandy-ochre mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-rajdhani font-bold text-crisp-off-white">General Inquiries</h4>
                     <p className="text-sm text-crisp-off-white/70">Questions about the platform</p>
@@ -437,7 +432,7 @@ export default function HomePage() {
                 <div className="relative space-y-8">
                   <div className="text-left">
                     <h3 className="font-rajdhani text-responsive-2xl font-bold text-card-foreground mb-1 flex items-center gap-2">
-                      <Mail className="h-6 w-6 text-sandy-ochre" />
+                      <EnvelopeIcon className="h-6 w-6 text-sandy-ochre" />
                       Contact Us
                     </h3>
                     <p className="text-sm text-muted-foreground">
@@ -448,13 +443,13 @@ export default function HomePage() {
                   <form onSubmit={handleContactSubmit} className="space-y-4">
                     {submitStatus === 'success' && (
                       <div className="p-4 rounded-lg bg-sagebrush-green/10 border border-sagebrush-green/20 text-sagebrush-green">
-                        <CheckCircle className="h-4 w-4 inline mr-2" />
+                        <CheckCircleIcon className="h-4 w-4 inline mr-2" />
                         Message sent successfully! We'll get back to you within 24 hours.
                       </div>
                     )}
                     {submitStatus === 'error' && (
                       <div className="p-4 rounded-lg bg-canyon-clay/10 border border-canyon-clay/20 text-canyon-clay">
-                        <AlertTriangle className="h-4 w-4 inline mr-2" />
+                        <ExclamationTriangleIcon className="h-4 w-4 inline mr-2" />
                         Failed to send message. Please try again or email us directly at business@boisegunclub.com
                       </div>
                     )}
@@ -464,18 +459,14 @@ export default function HomePage() {
                         type="text"
                         name="name"
                         placeholder="Your name"
-                        variant="default"
-                        size="lg"
-                        required
+                        variant="outline" required
                         disabled={isSubmitting}
                       />
                       <Input 
                         type="email"
                         name="email"
                         placeholder="Email address"
-                        variant="default"
-                        size="lg"
-                        required
+                        variant="outline" required
                         disabled={isSubmitting}
                       />
                     </div>
@@ -483,9 +474,7 @@ export default function HomePage() {
                       type="text"
                       name="subject"
                       placeholder="Subject"
-                      variant="default"
-                      size="lg"
-                      required
+                      variant="outline" required
                       disabled={isSubmitting}
                     />
                     <div className="relative">
@@ -519,7 +508,7 @@ export default function HomePage() {
                       className="w-full bg-gradient-fire text-dark-chocolate hover:from-rusty-orange hover:to-sandy-ochre font-rajdhani font-bold text-lg shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                       disabled={isSubmitting}
                     >
-                      <Mail className="h-5 w-5 mr-2" />
+                      <EnvelopeIcon className="h-5 w-5 mr-2" />
                       {isSubmitting ? 'Sending...' : 'Send Message'}
                     </Button>
                   </form>

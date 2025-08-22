@@ -8,27 +8,7 @@ import { cn } from '@/lib/utils'
 import { Card, CardContent, CardHeader } from './card'
 import { Badge } from './badge'
 import { Button } from './button'
-import { 
-  Ticket,
-  AddressBook, 
-  Shield,
-  MapTrifold,
-  Storefront,
-  Users,
-  Diamond,
-  ArrowRight,
-  Star,
-  Calendar,
-  MapPin,
-  Phone,
-  CheckCircle,
-  Clock,
-  Eye,
-  ShoppingCart,
-  Target,
-  BookOpen,
-  GraduationCap
-} from '@phosphor-icons/react'
+import { ArrowRightIcon, BookOpenIcon, BuildingStorefrontIcon, CalendarDaysIcon, MapIcon, MapPinIcon, ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 // Megamenu section configuration
 interface MegamenuSection {
@@ -311,7 +291,7 @@ export function TacticalMegamenu({
                                     </p>
                                   )}
                                 </div>
-                                <ArrowRight className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-all duration-200 group-hover:translate-x-0.5" />
+                                <ArrowRightIcon className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-all duration-200 group-hover:translate-x-0.5" />
                               </Link>
                             ))}
                           </div>
@@ -383,7 +363,7 @@ export function TacticalMegamenu({
                                 >
                                   <Link href={currentSection.featured.href}>
                                     View Details
-                                    <ArrowRight className="h-4 w-4" />
+                                    <ArrowRightIcon className="h-4 w-4" />
                                   </Link>
                                 </Button>
                               </CardContent>

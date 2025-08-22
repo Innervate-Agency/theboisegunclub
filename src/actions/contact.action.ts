@@ -45,7 +45,6 @@ export async function submitContactForm(
     }
 
     // Simulate email sending
-    console.log('📧 Contact form submitted:', parsed.data)
     await new Promise(resolve => setTimeout(resolve, 1000))
 
     return {
@@ -56,7 +55,6 @@ export async function submitContactForm(
     }
 
   } catch (error) {
-    console.error('Contact form error:', error)
     const formValues = Object.fromEntries(formData)
     return {
       success: false,

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { ProductShowcaseCard } from '@/components/ui/product-showcase-card'
-import { Target, Shield, Zap, Users } from 'lucide-react'
+import { BoltIcon, CursorArrowRaysIcon, ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof ProductShowcaseCard> = {
   title: 'Design System/Atoms/ProductShowcaseCard',
@@ -41,7 +41,7 @@ export const Default: Story = {
     ],
     imageSlot: (
       <div className="w-16 h-16 rounded-sm bg-primary/10 flex items-center justify-center">
-        <Target className="w-8 h-8 text-primary" />
+        <CursorArrowRaysIcon className="w-8 h-8 text-primary" />
       </div>
     )
   }
@@ -58,7 +58,7 @@ export const Premium: Story = {
     ],
     imageSlot: (
       <div className="w-16 h-16 rounded-sm bg-rusty-orange/10 flex items-center justify-center">
-        <Shield className="w-8 h-8 text-rusty-orange" />
+        <ShieldCheckIcon className="w-8 h-8 text-rusty-orange" />
       </div>
     )
   }
@@ -75,7 +75,7 @@ export const Elite: Story = {
     ],
     imageSlot: (
       <div className="w-16 h-16 rounded-sm bg-slate-blue/10 flex items-center justify-center">
-        <Zap className="w-8 h-8 text-slate-blue" />
+        <BoltIcon className="w-8 h-8 text-slate-blue" />
       </div>
     )
   }
@@ -92,7 +92,7 @@ export const Success: Story = {
     ],
     imageSlot: (
       <div className="w-16 h-16 rounded-sm bg-rifling-green/10 flex items-center justify-center">
-        <Users className="w-8 h-8 text-rifling-green" />
+        <UsersIcon className="w-8 h-8 text-rifling-green" />
       </div>
     )
   }
@@ -105,14 +105,14 @@ export const GridShowcase: Story = {
       <ProductShowcaseCard
         title="Range Management"
         description="Comprehensive range management tools for scheduling, member check-ins, and safety protocols."
-        variant="default"
+        variant="outline"
         stats={[
           { label: 'Active Ranges', value: '12' },
           { label: 'Members', value: '500+' }
         ]}
         imageSlot={
           <div className="w-16 h-16 rounded-sm bg-primary/10 flex items-center justify-center">
-            <Target className="w-8 h-8 text-primary" />
+            <CursorArrowRaysIcon className="w-8 h-8 text-primary" />
           </div>
         }
       />
@@ -120,14 +120,14 @@ export const GridShowcase: Story = {
       <ProductShowcaseCard
         title="Safety Training"
         description="Advanced safety training modules with certification tracking and compliance monitoring."
-        variant="premium"
+        variant="default"
         stats={[
           { label: 'Certifications', value: '1,200+' },
           { label: 'Pass Rate', value: '98%' }
         ]}
         imageSlot={
           <div className="w-16 h-16 rounded-sm bg-rusty-orange/10 flex items-center justify-center">
-            <Shield className="w-8 h-8 text-rusty-orange" />
+            <ShieldCheckIcon className="w-8 h-8 text-rusty-orange" />
           </div>
         }
       />
@@ -135,14 +135,14 @@ export const GridShowcase: Story = {
       <ProductShowcaseCard
         title="Performance Analytics"
         description="Real-time performance tracking with detailed analytics and improvement recommendations."
-        variant="elite"
+        variant="default"
         stats={[
           { label: 'Data Points', value: '50M+' },
           { label: 'Accuracy', value: '99.9%' }
         ]}
         imageSlot={
           <div className="w-16 h-16 rounded-sm bg-slate-blue/10 flex items-center justify-center">
-            <Zap className="w-8 h-8 text-slate-blue" />
+            <BoltIcon className="w-8 h-8 text-slate-blue" />
           </div>
         }
       />
@@ -170,7 +170,7 @@ export const AnimationDemo: Story = {
         <ProductShowcaseCard
           title="Validate your idea"
           description="Test your product idea by launching payments with little to no code."
-          variant="elite"
+          variant="default"
           ctaText="Try Payment Links"
           imageSlot={
             <div className="w-16 h-16 rounded-sm bg-gradient-to-br from-slate-blue/20 to-ayu-purple/20 flex items-center justify-center border border-slate-blue/30">
@@ -182,7 +182,7 @@ export const AnimationDemo: Story = {
         <ProductShowcaseCard
           title="Incorporate your company"
           description="Form a legal entity, issue stock, and start accepting payments."
-          variant="premium"
+          variant="default"
           ctaText="Learn about Atlas"
           imageSlot={
             <div className="w-16 h-16 rounded-sm bg-gradient-to-br from-rusty-orange/20 to-sandy-ochre/20 flex items-center justify-center border border-rusty-orange/30">

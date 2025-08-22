@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Input, InputGroup } from '@/components/ui/input';
-import { Search, Mail, Lock, Eye, EyeOff, User, Phone } from 'lucide-react';
+import { EnvelopeIcon, EyeIcon, LockClosedIcon, MagnifyingGlassIcon, PhoneIcon, UserIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 
 const meta: Meta<typeof Input> = {
@@ -74,7 +74,7 @@ export const SizeVariants: Story = {
     <div className="space-y-base w-80">
       <Input size="sm" placeholder="Small input" />
       <Input size="default" placeholder="Default input" />
-      <Input size="lg" placeholder="Large input" />
+      <Input placeholder="Large input" />
     </div>
   ),
 };
@@ -100,7 +100,7 @@ export const WithIcons: Story = {
       <div className="space-y-md w-80">
         {/* Search input */}
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
+          <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
           <Input
             className="pl-xl"
             placeholder="Search firearms..."
@@ -110,7 +110,7 @@ export const WithIcons: Story = {
 
         {/* Email input */}
         <div className="relative">
-          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
+          <EnvelopeIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
           <Input
             style={{paddingLeft: '48px'}}
             placeholder="your@email.com"
@@ -120,7 +120,7 @@ export const WithIcons: Story = {
 
         {/* Password input with toggle */}
         <div className="relative">
-          <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
+          <LockClosedIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
           <Input
             className="pr-2xl"
             style={{paddingLeft: '48px'}}
@@ -132,7 +132,7 @@ export const WithIcons: Story = {
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-warning-amber hover:text-blued-steel transition-colors"
           >
-            {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+            {showPassword ? <EyeOff className="h-4 w-4" /> : <EyeIcon className="h-4 w-4" />}
           </button>
         </div>
       </div>
@@ -158,7 +158,7 @@ export const InputGroups: Story = {
         required
       >
         <div className="relative">
-          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
+          <EnvelopeIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
           <Input className="pl-(--spacing-xl)" placeholder="your@email.com" type="email" />
         </div>
       </InputGroup>
@@ -168,7 +168,7 @@ export const InputGroups: Story = {
         error="Please enter a valid phone number"
       >
         <div className="relative">
-          <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
+          <PhoneIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
                       <Input 
             className="pl-(--spacing-xl)" 
             placeholder="(555) 123-4567" 
@@ -209,14 +209,14 @@ export const FirearmsFormExamples: Story = {
           required
         >
           <div className="relative">
-            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
+            <EnvelopeIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
             <Input style={{paddingLeft: '48px'}} placeholder="john@example.com" type="email" />
           </div>
         </InputGroup>
 
         <InputGroup label="Phone Number">
           <div className="relative">
-            <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
+            <PhoneIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
             <Input style={{paddingLeft: '48px'}} placeholder="(208) 555-0123" type="tel" />
           </div>
         </InputGroup>
@@ -261,7 +261,7 @@ export const DesignSystemShowcase: Story = {
             </div>
             <div className="space-y-sm">
               <label className="text-body-sm font-medium text-blued-steel">Filled</label>
-              <Input variant="filled" placeholder="Subtle background fill" />
+              <Input variant="default" placeholder="Subtle background fill" />
             </div>
             <div className="space-y-sm">
               <label className="text-body-sm font-medium text-blued-steel">Ghost</label>
@@ -269,7 +269,7 @@ export const DesignSystemShowcase: Story = {
             </div>
             <div className="space-y-sm">
               <label className="text-body-sm font-medium text-blued-steel">Glass</label>
-              <Input variant="glass" placeholder="Glassmorphism effect" />
+              <Input variant="secondary" placeholder="Glassmorphism effect" />
             </div>
           </div>
         </div>

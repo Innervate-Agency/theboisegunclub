@@ -55,7 +55,6 @@ export function useGoogleReviews(
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Failed to fetch reviews'
       setError(errorMessage)
-      console.error('Failed to fetch Google reviews:', err)
     } finally {
       setLoading(false)
     }

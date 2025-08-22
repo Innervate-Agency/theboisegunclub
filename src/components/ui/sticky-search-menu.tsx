@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { Button } from './button'
 import { Input } from './input'
 import { Badge } from './badge'
-import { Search, Filter } from 'lucide-react'
+import { FunnelIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 interface StickySearchMenuProps {
   categories: Array<{
@@ -63,7 +63,7 @@ export function StickySearchMenu({
                 }
               >
                 {category.label}
-                <Badge variant="secondary" className="ml-xs">
+                <Badge variant="outline" className="ml-xs">
                   {category.count}
                 </Badge>
               </Button>
@@ -73,7 +73,7 @@ export function StickySearchMenu({
           {/* Search */}
           <div className="flex gap-xs">
             <div className="relative min-w-[300px]">
-              <Search className="absolute left-3 top-micro/2 -translate-y-1/2 size-4 text-muted-foreground" />
+              <MagnifyingGlassIcon className="absolute left-3 top-micro/2 -translate-y-1/2 size-4 text-muted-foreground" />
               <Input
                 placeholder="Search events..."
                 className="pl-10"
@@ -82,7 +82,7 @@ export function StickySearchMenu({
               />
             </div>
             <Button variant="outline" size="sm" className="gap-xs">
-              <Filter className="size-4" />
+              <FunnelIcon className="size-4" />
               Filters
             </Button>
           </div>

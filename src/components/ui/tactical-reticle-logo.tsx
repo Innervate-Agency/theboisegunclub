@@ -1,3 +1,4 @@
+import { TrophyIcon } from '@heroicons/react/24/outline'
 import * as React from 'react'
 import { cn } from '@/lib/utils'
 

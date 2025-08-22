@@ -1,7 +1,7 @@
 'use client'
 
 import { MotionDiv } from '@/components/ui/optimized-motion'
-import { Calendar } from '@phosphor-icons/react'
+import { CalendarDaysIcon } from '@heroicons/react/24/outline';
 
 interface FloatingCalendarsProps {
   className?: string
@@ -81,7 +81,7 @@ export function FloatingCalendars({ className }: FloatingCalendarsProps) {
             ease: "easeInOut"
           }}
         >
-          <Calendar weight="bold" className="w-full h-full" />
+          <CalendarDaysIcon weight="bold" className="w-full h-full" />
         </MotionDiv>
       ))}
     </div>

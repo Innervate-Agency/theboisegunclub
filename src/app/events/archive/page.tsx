@@ -3,12 +3,7 @@ import { getCompletedEvents, type EventData } from '@/lib/comprehensive-events-d
 import { EventCard } from '@/components/ui/EventCard'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { 
-  ArchiveBoxIcon as Archive,
-  CalendarDaysIcon as Calendar,
-  TrophyIcon as Trophy,
-  ChartBarIcon as Stats
-} from '@heroicons/react/24/outline'
+import { ArchiveBoxIcon, CalendarDaysIcon, ChartBarIcon, TrophyIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -45,7 +40,7 @@ export default function EventArchivePage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-6">
               <div className="p-4 bg-white/10 rounded-xs">
-                <Archive className="h-12 w-12" />
+                <ArchiveBoxIcon className="h-12 w-12" />
               </div>
             </div>
             <h1 className="font-rajdhani font-bold text-4xl md:text-6xl mb-6">
@@ -87,7 +82,7 @@ export default function EventArchivePage() {
             <Card className="mica-card border-nav-events/30">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5 text-nav-events" />
+                  <CalendarDaysIcon className="h-5 w-5 text-nav-events" />
                   Browse Archive
                 </CardTitle>
               </CardHeader>
@@ -95,25 +90,25 @@ export default function EventArchivePage() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <Link href="/events" className="block">
                     <div className="p-4 bg-nav-events/5 hover:bg-nav-events/10 border border-nav-events/20 hover:border-nav-events/30 rounded-xs transition-all duration-200 text-center">
-                      <Calendar className="h-6 w-6 text-nav-events mx-auto mb-2" />
+                      <CalendarDaysIcon className="h-6 w-6 text-nav-events mx-auto mb-2" />
                       <div className="font-medium">Upcoming Events</div>
                     </div>
                   </Link>
                   
                   <div className="p-4 bg-rusty-orange/5 border border-rusty-orange/20 rounded-xs text-center opacity-60">
-                    <Trophy className="h-6 w-6 text-rusty-orange mx-auto mb-2" />
+                    <TrophyIcon className="h-6 w-6 text-rusty-orange mx-auto mb-2" />
                     <div className="font-medium">Results & Scores</div>
                     <div className="text-xs text-muted-foreground mt-1">Coming Soon</div>
                   </div>
                   
                   <div className="p-4 bg-sagebrush-green/5 border border-sagebrush-green/20 rounded-xs text-center opacity-60">
-                    <Stats className="h-6 w-6 text-sagebrush-green mx-auto mb-2" />
+                    <ChartBarIcon className="h-6 w-6 text-sagebrush-green mx-auto mb-2" />
                     <div className="font-medium">Statistics</div>
                     <div className="text-xs text-muted-foreground mt-1">Coming Soon</div>
                   </div>
                   
                   <div className="p-4 bg-slate-blue/5 border border-slate-blue/20 rounded-xs text-center opacity-60">
-                    <Archive className="h-6 w-6 text-slate-blue mx-auto mb-2" />
+                    <ArchiveBoxIcon className="h-6 w-6 text-slate-blue mx-auto mb-2" />
                     <div className="font-medium">Photos & Media</div>
                     <div className="text-xs text-muted-foreground mt-1">Coming Soon</div>
                   </div>
@@ -126,7 +121,7 @@ export default function EventArchivePage() {
           {Object.keys(eventsByYear).length === 0 ? (
             <Card className="mica-card text-center py-12">
               <CardContent>
-                <Archive className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+                <ArchiveBoxIcon className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">No Archived Events Yet</h3>
                 <p className="text-muted-foreground">
                   As events are completed, they will appear here with results and historical data.
@@ -163,7 +158,7 @@ export default function EventArchivePage() {
                           {/* Archive Badge */}
                           <div className="absolute top-2 left-2 z-10">
                             <Badge 
-                              variant="secondary" 
+                              variant="outline" 
                               className="bg-muted/80 text-muted-foreground border-0 text-xs"
                             >
                               Completed
@@ -182,7 +177,7 @@ export default function EventArchivePage() {
             <Card className="mica-card opacity-60">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
-                  <Trophy className="h-5 w-5 text-rusty-orange" />
+                  <TrophyIcon className="h-5 w-5 text-rusty-orange" />
                   Results & Scores
                 </CardTitle>
               </CardHeader>
@@ -197,7 +192,7 @@ export default function EventArchivePage() {
             <Card className="mica-card opacity-60">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
-                  <Stats className="h-5 w-5 text-sagebrush-green" />
+                  <ChartBarIcon className="h-5 w-5 text-sagebrush-green" />
                   Personal Stats
                 </CardTitle>
               </CardHeader>
@@ -212,7 +207,7 @@ export default function EventArchivePage() {
             <Card className="mica-card opacity-60">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
-                  <Archive className="h-5 w-5 text-slate-blue" />
+                  <ArchiveBoxIcon className="h-5 w-5 text-slate-blue" />
                   Event Media
                 </CardTitle>
               </CardHeader>

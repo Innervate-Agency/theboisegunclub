@@ -12,16 +12,7 @@ import {
   DropdownMenuTrigger 
 } from './dropdown-menu'
 import { cn } from '@/lib/utils'
-import { 
-  MagnifyingGlass as Search, 
-  Funnel as Filter,
-  GridNine as Grid,
-  List,
-  SquaresFour as CardView,
-  GridFour as DenseView,
-  SortAscending as SortAsc,
-  CaretDown as ChevronDown
-} from '@phosphor-icons/react'
+import { ChevronDownIcon, FunnelIcon, ListBulletIcon, MagnifyingGlassIcon, RectangleGroupIcon, RectangleStackIcon, Squares2X2Icon, TableCellsIcon } from '@heroicons/react/24/outline';
 
 export interface FilterOption {
   id: string
@@ -43,7 +34,7 @@ export interface SortOption {
   icon?: React.ComponentType<{ className?: string; weight?: string }>
 }
 
-export type ViewMode = 'grid' | 'list' | 'card'
+export type ViewMode = 'grid' | 'list' | 'card' | 'dense' | 'masonry' | 'compact' | 'magazine' | 'table'
 
 export interface CardPageLayoutProps {
   // Page identity
@@ -167,7 +158,7 @@ export function CardPageLayout({
           {/* Search Bar */}
           <div className="mb-lg">
             <div className="relative max-w-2xl">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder={searchPlaceholder}
                 className="pl-10 h-12 text-body-base shadow-elevated"
@@ -193,7 +184,7 @@ export function CardPageLayout({
                 })}
                 {tab.label}
                 {tab.count && (
-                  <Badge variant="secondary" size="sm" className="ml-xs">
+                  <Badge variant="outline" size="sm" className="ml-xs">
                     {tab.count}
                   </Badge>
                 )}
@@ -215,7 +206,7 @@ export function CardPageLayout({
                   <CardContent className="p-lg">
                     <div className="space-y-lg">
                       <div className="flex items-center gap-xs">
-                        <Filter className="size-4 text-muted-foreground" />
+                        <FunnelIcon className="size-4 text-muted-foreground" />
                         <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground">
                           Filters
                         </h3>
@@ -243,7 +234,7 @@ export function CardPageLayout({
                                   {filter.label}
                                 </div>
                                 {filter.count && (
-                                  <Badge variant="secondary" size="sm">
+                                  <Badge variant="outline" size="sm">
                                     {filter.count}
                                   </Badge>
                                 )}
@@ -274,8 +265,17 @@ export function CardPageLayout({
                 
                 {/* View Controls - Mobile responsive */}
                 <div className="flex items-center gap-sm sm:gap-base">
-                  {/* View Mode Toggle - Hidden on small mobile */}
-                  <div className="hidden sm:flex items-center border rounded-xs">
+                  {/* Enhanced View Mode Toggle - Multiple Layouts */}
+                  <div className="hidden sm:flex items-center border rounded-xs overflow-x-auto">
+                    <Button
+                      variant={viewMode === 'compact' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => onViewModeChange('compact')}
+                      className="rounded-none border-none shadow-none"
+                      title="Compact - 4-6 items per row"
+                    >
+                      <Squares2X2Icon className="size-4" />
+                    </Button>
                     <Button
                       variant={viewMode === 'dense' ? 'default' : 'ghost'}
                       size="sm"
@@ -283,7 +283,7 @@ export function CardPageLayout({
                       className="rounded-none border-none shadow-none"
                       title="Dense Grid - Maximum items"
                     >
-                      <DenseView className="size-4" />
+                      <ListBulletIcon className="size-4" />
                     </Button>
                     <Button
                       variant={viewMode === 'grid' ? 'default' : 'ghost'}
@@ -292,7 +292,7 @@ export function CardPageLayout({
                       className="rounded-none border-none shadow-none"
                       title="Standard Grid"
                     >
-                      <Grid className="size-4" />
+                      <Squares2X2Icon className="size-4" />
                     </Button>
                     <Button
                       variant={viewMode === 'card' ? 'default' : 'ghost'}
@@ -301,7 +301,34 @@ export function CardPageLayout({
                       className="rounded-none border-none shadow-none"
                       title="Large Cards"
                     >
-                      <CardView className="size-4" />
+                      <RectangleGroupIcon className="size-4" />
+                    </Button>
+                    <Button
+                      variant={viewMode === 'masonry' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => onViewModeChange('masonry')}
+                      className="rounded-none border-none shadow-none"
+                      title="Masonry - Pinterest style"
+                    >
+                      <RectangleStackIcon className="size-4" />
+                    </Button>
+                    <Button
+                      variant={viewMode === 'magazine' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => onViewModeChange('magazine')}
+                      className="rounded-none border-none shadow-none"
+                      title="Magazine - Mixed sizes"
+                    >
+                      <MagazineView className="size-4" />
+                    </Button>
+                    <Button
+                      variant={viewMode === 'table' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => onViewModeChange('table')}
+                      className="rounded-none border-none shadow-none"
+                      title="Table - Detailed list"
+                    >
+                      <TableCellsIcon className="size-4" />
                     </Button>
                     <Button
                       variant={viewMode === 'list' ? 'default' : 'ghost'}
@@ -310,7 +337,7 @@ export function CardPageLayout({
                       className="rounded-none border-none shadow-none"
                       title="List View"
                     >
-                      <List className="size-4" />
+                      <ListBulletIcon className="size-4" />
                     </Button>
                   </div>
 
@@ -320,7 +347,7 @@ export function CardPageLayout({
                       <Button variant="outline" className="gap-xs shadow-none rounded-xs">
                         <SortAsc className="size-4" />
                         Sort by {sortOptions.find(s => s.id === activeSortId)?.label || 'Default'}
-                        <ChevronDown className="size-3" />
+                        <ChevronDownIcon className="size-3" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">

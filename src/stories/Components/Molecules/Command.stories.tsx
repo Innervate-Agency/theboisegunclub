@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import { CalendarDaysIcon, CalendarIcon, EnvelopeClosedIcon, FaceIcon, GearIcon, PersonIcon, RocketIcon } from '@heroicons/react/24/outline';
 import {
   Command,
   CommandDialog,
@@ -39,7 +40,7 @@ export const Default: Story = {
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
           <CommandItem>
-            <CalendarIcon className="mr-xs h-4 w-4" />
+            <CalendarDaysIcon className="mr-xs h-4 w-4" />
             <span>Calendar</span>
           </CommandItem>
           <CommandItem>

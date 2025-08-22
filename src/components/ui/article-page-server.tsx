@@ -7,10 +7,7 @@ import { SiteFooter } from '@/components/ui/site-footer'
 import MdxContent from '@/components/molecules/MdxContent'
 import { ArticleHeroClient } from './article-hero-client'
 import { ArticleSidebarClient } from './article-sidebar-client'
-import { 
-  ChevronRight, Calendar, Clock, Eye, Heart, MessageCircle, 
-  User, Share2, Bookmark, ArrowLeft, Tag, BookOpen, MoreHorizontal
-} from 'lucide-react'
+import { CalendarDaysIcon, TagIcon, UserIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -126,7 +123,7 @@ export default function ArticlePageTemplate({
               <div className="mt-xl pt-lg border-t border-border">
                 <div className="flex items-center gap-base flex-wrap">
                   <div className="flex items-center gap-xs text-sm font-medium text-muted-foreground">
-                    <Tag className="h-4 w-4" />
+                    <TagIcon className="h-4 w-4" />
                     Tags:
                   </div>
                   {tags.map((tag) => (

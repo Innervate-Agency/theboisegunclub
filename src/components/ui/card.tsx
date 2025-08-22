@@ -1,4 +1,5 @@
 import * as React from "react"
+import { CategoryIcon } from '@heroicons/react/24/outline';
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { CategoryIcon, type CategoryIconComponentProps } from "@/components/ui/category-icons"
@@ -194,7 +195,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
               category={category}
               type={type}
               content={content}
-              size="md"
+              size="default"
               opacity={0.4}
               className={cn(themeClasses.text, 'group-hover:opacity-70 transition-opacity duration-200')}
             />

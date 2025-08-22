@@ -3,7 +3,7 @@ import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { GuidesPageStandardized } from '@/components/pages/guides-page-standardized'
 
-export default async function GuidesPage() {
+export default function GuidesPage() {
   return (
     <div className="theme-guides min-h-screen">
       <SiteNavigation />

@@ -6,11 +6,7 @@ import { Badge } from './badge'
 import { Button } from './button'
 import { Avatar, AvatarImage, AvatarFallback } from './avatar'
 import { cn } from '@/lib/utils'
-import {
-  Trophy, Target, Calendar, Medal, ChartLine,
-  MapPin, Clock, Star, TrendUp, Medal as Award,
-  User, Shield, Ranking
-} from '@phosphor-icons/react'
+import { AchievementIcon, CalendarDaysIcon, CursorArrowRaysIcon, MapPinIcon, ShieldCheckIcon, TrophyIcon, UserIcon } from '@heroicons/react/24/outline';
 
 export interface ShooterProfile {
   id: string
@@ -124,7 +120,7 @@ export function ShooterProfileTemplate({
                   </h1>
                   {isPublic && (
                     <Badge variant="outline" size="sm">
-                      <Shield weight="bold" className="size-3 mr-xs" />
+                      <ShieldCheckIcon weight="bold" className="size-3 mr-xs" />
                       Public Profile
                     </Badge>
                   )}
@@ -132,15 +128,15 @@ export function ShooterProfileTemplate({
                 
                 <div className="flex flex-wrap items-center gap-base text-body-base text-muted-foreground">
                   <div className="flex items-center gap-xs">
-                    <MapPin weight="bold" className="size-4" />
+                    <MapPinIcon weight="bold" className="size-4" />
                     <span>{profile.location}</span>
                   </div>
                   <div className="flex items-center gap-xs">
-                    <Calendar weight="bold" className="size-4" />
+                    <CalendarDaysIcon weight="bold" className="size-4" />
                     <span>{profile.yearsActive} years competing</span>
                   </div>
                   <div className="flex items-center gap-xs">
-                    <Target weight="bold" className="size-4" />
+                    <CursorArrowRaysIcon weight="bold" className="size-4" />
                     <span>{profile.preferences.primaryDivision}</span>
                   </div>
                 </div>
@@ -202,7 +198,7 @@ export function ShooterProfileTemplate({
           {isOwner && (
             <div className="flex gap-sm mt-lg">
               <Button variant="outline" size="sm" className="gap-xs">
-                <User weight="bold" className="size-4" />
+                <UserIcon weight="bold" className="size-4" />
                 Edit Profile
               </Button>
               <Button variant="outline" size="sm" className="gap-xs">
@@ -236,11 +232,11 @@ export function ShooterProfileTemplate({
                           </h3>
                           <div className="flex flex-wrap items-center gap-base text-body-sm text-muted-foreground">
                             <div className="flex items-center gap-xs">
-                              <Calendar weight="bold" className="size-4" />
+                              <CalendarDaysIcon weight="bold" className="size-4" />
                               <span>{new Date(event.date).toLocaleDateString()}</span>
                             </div>
                             <div className="flex items-center gap-xs">
-                              <Target weight="bold" className="size-4" />
+                              <CursorArrowRaysIcon weight="bold" className="size-4" />
                               <span>{event.division}</span>
                             </div>
                             {event.score && (
@@ -294,7 +290,7 @@ export function ShooterProfileTemplate({
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-xs font-rajdhani">
-                    <Trophy weight="bold" className="size-5 text-rusty-orange" />
+                    <TrophyIcon weight="bold" className="size-5 text-rusty-orange" />
                     Recent Achievements
                   </CardTitle>
                 </CardHeader>
@@ -331,7 +327,7 @@ export function ShooterProfileTemplate({
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-xs font-rajdhani">
-                    <Target weight="bold" className="size-5 text-rusty-orange" />
+                    <CursorArrowRaysIcon weight="bold" className="size-5 text-rusty-orange" />
                     Shooting Profile
                   </CardTitle>
                 </CardHeader>
@@ -341,14 +337,14 @@ export function ShooterProfileTemplate({
                       <div className="text-body-sm font-medium text-card-foreground mb-xs">
                         Primary Division
                       </div>
-                      <Badge variant="success">{profile.preferences.primaryDivision}</Badge>
+                      <Badge variant="secondary">{profile.preferences.primaryDivision}</Badge>
                     </div>
                     {profile.preferences.secondaryDivision && (
                       <div>
                         <div className="text-body-sm font-medium text-card-foreground mb-xs">
                           Secondary Division
                         </div>
-                        <Badge variant="default">{profile.preferences.secondaryDivision}</Badge>
+                        <Badge variant="outline">{profile.preferences.secondaryDivision}</Badge>
                       </div>
                     )}
                     <div>

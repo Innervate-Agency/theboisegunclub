@@ -149,7 +149,7 @@ async def main():
     # Configuration
     API_KEY = "bc341f5691b1e804cde34a277937ec69c46261c7"
     CSV_FILE = "docs/final-commercial-directory-2025-08-20.csv"
-    MAX_SEARCHES = 50  # Start with 50 to test
+    MAX_SEARCHES = 100  # Full batch run
     
     print("🎯 TREASURE VALLEY WEBSITE DISCOVERY")
     print("=" * 40)

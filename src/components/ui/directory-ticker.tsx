@@ -2,15 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { Badge } from './badge'
-import { 
-  CheckCircleIcon as CheckCircle, 
-  BuildingStorefrontIcon as Storefront, 
-  SparklesIcon as Sparkles, 
-  ClockIcon as Clock,
-  MapPinIcon as MapPin,
-  TrophyIcon as Trophy,
-  ShieldCheckIcon as Shield
-} from '@heroicons/react/24/outline'
+import { AnnouncementIcon, BuildingStorefrontIcon, CheckCircleIcon, ClockIcon, MapPinIcon, ShieldCheckIcon, SparklesIcon, TrophyIcon } from '@heroicons/react/24/outline';
 
 interface DirectoryAnnouncement {
   type: 'verification' | 'new_listing' | 'service_highlight'
@@ -61,7 +53,6 @@ export function DirectoryTicker({
           return // Skip API call
         }
       } catch (err) {
-        console.warn('Failed to parse cached directory data:', err)
       }
     }
     
@@ -83,13 +74,11 @@ export function DirectoryTicker({
             timestamp: Date.now()
           }))
         } catch (err) {
-          console.warn('Failed to cache directory data:', err)
         }
       } else {
         throw new Error(result.error || 'Invalid response format')
       }
     } catch (err) {
-      console.error('DirectoryTicker API error:', err)
       setError(err instanceof Error ? err.message : 'Failed to load directory updates')
       // Keep existing announcements on error
     } finally {
@@ -118,13 +107,13 @@ export function DirectoryTicker({
     const iconClass = "size-4"
     switch (type) {
       case 'verification':
-        return <Shield className={`${iconClass} text-sagebrush-green`} />
+        return <ShieldCheckIcon className={`${iconClass} text-sagebrush-green`} />
       case 'new_listing':
         return <Sparkles className={`${iconClass} text-nav-directory`} />
       case 'service_highlight':
-        return <Trophy className={`${iconClass} text-rusty-orange`} />
+        return <TrophyIcon className={`${iconClass} text-rusty-orange`} />
       default:
-        return <Storefront className={`${iconClass} text-nav-directory`} />
+        return <BuildingStorefrontIcon className={`${iconClass} text-nav-directory`} />
     }
   }
 
@@ -172,27 +161,33 @@ export function DirectoryTicker({
 
   return (
     <div className="relative -mt-lg z-20">
+      {autoRefresh && (
+        <div className="absolute -top-base right-base sm:right-md md:right-lg lg:right-xl xl:right-2xl z-30">
+          <div className={`inline-flex items-center gap-xs px-sm py-xs rounded-sm text-xs font-medium shadow-present border ${
+            isLoading 
+              ? 'bg-sandy-ochre/95 text-white border-sandy-ochre/40' 
+              : error 
+                ? 'bg-rusty-orange/95 text-white border-rusty-orange/40' 
+                : 'bg-sagebrush-green/95 text-white border-sagebrush-green/40'
+          }`}>
+            <div className={`w-1.5 h-1.5 rounded-full ${isLoading ? 'bg-white animate-pulse' : 'bg-white'}`} />
+            <span>{isLoading ? 'Updating...' : error ? 'Error' : 'Live'}</span>
+          </div>
+        </div>
+      )}
+      
       <div className="w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile">
         <div className="mica-card relative overflow-hidden shadow-present rounded-xs">
           <div className="absolute inset-0 bg-gradient-to-r from-nav-directory/5 via-transparent to-nav-directory/10 pointer-events-none" />
           
           <div className="absolute left-base top-base bottom-base bg-gradient-to-r from-nav-directory/20 to-transparent z-10 flex items-center px-lg rounded-l-xs">
             <div className="flex items-center gap-xs text-body-sm font-rajdhani font-bold text-nav-directory">
-              <Storefront className="size-4" />
+              <BuildingStorefrontIcon className="size-4" />
               <span>DIRECTORY UPDATES</span>
             </div>
           </div>
-
-          {autoRefresh && (
-            <div className="absolute right-base top-base z-20 flex items-center gap-xs">
-              <div className={`w-2 h-2 rounded-full ${isLoading ? 'bg-sandy-ochre animate-pulse' : error ? 'bg-rusty-orange' : 'bg-sagebrush-green'}`} />
-              <span className="text-xs text-muted-foreground font-medium">
-                {isLoading ? 'Updating...' : error ? 'Error' : 'Live'}
-              </span>
-            </div>
-          )}
           
-          <div className="flex animate-scroll whitespace-nowrap py-lg px-base pl-56">
+          <div className="flex animate-scroll whitespace-nowrap py-base px-base pl-56">
             {isInitialLoad && announcements.length === 0 ? (
               <>
                 {Array.from({ length: 3 }, (_, index) => (
@@ -224,12 +219,12 @@ export function DirectoryTicker({
                       </div>
                       
                       <div className="flex items-center gap-xs">
-                        <MapPin className="size-3 text-nav-directory" />
+                        <MapPinIcon className="size-3 text-nav-directory" />
                         <span>{announcement.location}</span>
                       </div>
                       
                       <div className="flex items-center gap-xs">
-                        <Clock className="size-3 text-nav-directory" />
+                        <ClockIcon className="size-3 text-nav-directory" />
                         <span className="font-medium">{formatTimeAgo(announcement.timestamp)}</span>
                       </div>
                     </div>
@@ -239,7 +234,7 @@ export function DirectoryTicker({
                 <div className="h-10 w-px bg-gradient-to-b from-transparent via-border/40 to-transparent" />
               </div>
             )) : (
-              <div className="flex items-center justify-center w-full py-lg pl-56">
+              <div className="flex items-center justify-center w-full py-base pl-56">
                 <span className="text-muted-foreground">No directory updates available</span>
               </div>
             )}

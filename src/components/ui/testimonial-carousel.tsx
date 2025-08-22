@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import Image from 'next/image'
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react'
+import { ChevronLeftIcon, ChevronRightIcon, StarIcon } from '@heroicons/react/24/outline';
 
 const testimonialCarouselVariants = cva(
   "w-full py-16",
@@ -124,7 +124,7 @@ export function TestimonialCarousel({
             {currentTestimonial.rating && (
               <div className="flex items-center gap-xs mb-4 justify-center">
                 {Array.from({ length: 5 }, (_, i) => (
-                  <Star
+                  <StarIcon
                     key={i}
                     className={cn(
                       "icon-sm",
@@ -175,21 +175,21 @@ export function TestimonialCarousel({
           {testimonials.length > 1 && (
             <>
               <Button
-                variant="secondary"
+                variant="outline"
                 size="icon"
                 className="absolute left-4 top-micro/2 -translate-y-1/2 bg-card hover:bg-sandy-ochre shadow-none"
                 onClick={goToPrevious}
               >
-                <ChevronLeft className="icon-sm" />
+                <ChevronLeftIcon className="icon-sm" />
               </Button>
               
               <Button
-                variant="secondary"
+                variant="outline"
                 size="icon"
                 className="absolute right-4 top-micro/2 -translate-y-1/2 bg-card hover:bg-sandy-ochre shadow-none"
                 onClick={goToNext}
               >
-                <ChevronRight className="icon-sm" />
+                <ChevronRightIcon className="icon-sm" />
               </Button>
             </>
           )}

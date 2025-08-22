@@ -3,7 +3,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 import { cn } from "@/lib/utils"
-import { ImageIcon } from 'lucide-react'
+import { ImageIcon } from '@heroicons/react/24/outline';
 
 interface BaseImageProps {
   alt: string

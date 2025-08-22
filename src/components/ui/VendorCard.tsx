@@ -7,7 +7,7 @@ import { Button } from './button';
 import { UnifiedArchiveCard } from './unified-archive-card';
 import { cn } from '@/lib/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { MapPinIcon, PhoneIcon, ClockIcon, StarIcon, GlobeAltIcon, ShieldCheckIcon, ChatBubbleBottomCenterTextIcon, BuildingStorefrontIcon, WrenchScrewdriverIcon, ViewfinderCircleIcon, AcademicCapIcon, ShoppingBagIcon, UserGroupIcon } from '@heroicons/react/24/outline';
+import { AcademicCapIcon, BuildingStorefrontIcon, BusinessTypeIcon, ChatBubbleBottomCenterTextIcon, ClockIcon, GlobeAltIcon, MapPinIcon, PhoneIcon, ShieldCheckIcon, ShoppingBagIcon, StarIcon, UserGroupIcon, ViewfinderCircleIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
 import { Avatar, AvatarImage, AvatarFallback } from './avatar';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './tooltip';
 import { ReviewsDisplay } from './reviews-display';
@@ -130,36 +130,6 @@ export function VendorCard({
   href,
   ...props
 }: VendorCardProps) {
-  const [imgError, setImgError] = useState(false)
-  const [reviewsData, setReviewsData] = useState<any>(null)
-  const [loadingReviews, setLoadingReviews] = useState(false)
-  
-  // Load reviews function
-  const loadReviews = async () => {
-    if (!googlePlaceId || loadingReviews) return
-    
-    setLoadingReviews(true)
-    try {
-      const response = await fetch('/api/reviews', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          placeId: googlePlaceId, 
-          businessName 
-        })
-      })
-      
-      if (response.ok) {
-        const data = await response.json()
-        setReviewsData(data)
-      }
-    } catch (error) {
-      console.error('Failed to load reviews:', error)
-    } finally {
-      setLoadingReviews(false)
-    }
-  }
-
   // Generate slug from business name if not provided
   const generateSlug = (name: string): string => {
     return name.toLowerCase()
@@ -171,296 +141,166 @@ export function VendorCard({
   // Use provided href or generate from slug
   const businessHref = href || `/directory/${slug || generateSlug(businessName)}`
 
-  // Strategic tier-based features
-  const showSponsored = tier === 'gold' && isSponsored;
-  const showEnhancedFeatures = tier === 'silver' || tier === 'gold';
-
   return (
     <Link href={businessHref} className="block">
       <div 
-        className={cn(vendorCardVariants({ tier, size }), className)}
+        className={cn(
+          "transition-all duration-300 group relative overflow-hidden cursor-pointer rounded-xs",
+          "bg-card text-card-foreground border border-border",
+          "shadow-ghost hover:shadow-present",
+          "tactical-underline-base tactical-underline-directory",
+          className
+        )}
         {...props}
       >
-      {/* Quick Actions Overlay - Appears on Hover */}
-      <div className="absolute top-sm right-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
-        <div className="flex gap-xs">
-          <Button 
-            size="sm" 
-            variant="outline"
-            className="bg-card/90 backdrop-blur-sm border-border/50"
+      
+      {/* Tactical Hero Section - Matching EventCard */}
+      <div className={cn(
+        "relative mb-lg -m-lg mt-[-24px] mx-[-24px] h-32 overflow-hidden border-b border-white/10",
+        getBusinessTypeGradient(businessType)
+      )}>
+        {/* Subtle overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+        
+        {/* Tactical Action Buttons - top right */}
+        <div className="absolute top-sm right-sm flex gap-xs">
+          <button
+            className="w-8 h-8 bg-black/60 backdrop-blur-sm border border-white/20 rounded-none flex items-center justify-center hover:bg-nav-directory hover:border-nav-directory transition-all duration-200"
             onClick={(e) => {
               e.preventDefault()
               e.stopPropagation()
-              // Compare functionality
-            }}
-            title="Compare business"
-          >
-            📊
-          </Button>
-          <Button 
-            size="sm" 
-            variant="outline"
-            className="bg-card/90 backdrop-blur-sm border-border/50"
-            onClick={(e) => {
-              e.preventDefault()
-              e.stopPropagation()
-              // Contact/call functionality
               if (phone) {
                 window.open(`tel:${phone}`, '_self')
               }
             }}
             title="Call business"
           >
-            <PhoneIcon className="h-3 w-3" />
-          </Button>
-        </div>
-      </div>
-      
-      {/* Enhanced Header with Larger Business Photo */}
-      <div className="mb-lg">
-        {/* Boise Landscape Gradient Business Hero Section */}
-        <div className={cn(
-          "relative mb-sm -m-lg mt-[-24px] mx-[-24px] h-24 overflow-hidden",
-          imageUrl && !imgError ? "" : getBusinessTypeGradient(businessType)
-        )}>
-          {imageUrl && !imgError ? (
-            <Image
-              src={imageUrl}
-              alt={businessName}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-              onError={() => setImgError(true)}
-            />
-          ) : (
-            <>
-              {/* Subtle overlay for gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-              
-              {/* Small contextual icon - bottom right */}
-              <div className="absolute bottom-xs right-xs">
-                {getBusinessTypeIcon(businessType)}
-              </div>
-              
-              {/* Subtle texture particles */}
-              <div className="absolute top-1 right-4 w-0.5 h-0.5 bg-card/25 rounded-full animate-pulse"></div>
-              <div className="absolute bottom-2 left-4 w-0.5 h-0.5 bg-card/20 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
-              <div className="absolute top-3 right-8 w-0.5 h-0.5 bg-card/30 rounded-full animate-pulse" style={{animationDelay: '2.5s'}}></div>
-            </>
-          )}
+            <PhoneIcon className="h-4 w-4 text-white" />
+          </button>
           
-          {/* Enhanced tier badge overlay */}
-          {tier !== 'free' && (
-            <div className="absolute top-sm right-sm">
-              <Badge 
-                variant={tier === 'gold' ? 'elite' : tier === 'silver' ? 'nav-directory' : 'default'}
-                size="sm"
-                className="font-rajdhani font-bold text-xs bg-black/40 backdrop-blur-sm border-white/20 text-white"
-              >
-                {tier.toUpperCase()}
-              </Badge>
-            </div>
+          {website && (
+            <button
+              className="w-8 h-8 bg-black/60 backdrop-blur-sm border border-white/20 rounded-none flex items-center justify-center hover:bg-nav-directory hover:border-nav-directory transition-all duration-200"
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                window.open(website, '_blank', 'noopener,noreferrer')
+              }}
+              title="Visit website"
+            >
+              <GlobeAltIcon className="h-4 w-4 text-white" />
+            </button>
           )}
         </div>
         
-        <div className="flex items-start gap-sm">
-          {/* Compact Avatar for Fallback */}
-          <Avatar className="h-12 w-12 rounded-sm flex-shrink-0">
-            <AvatarFallback className="rounded-sm bg-nav-directory/10 border border-nav-directory/20 font-rajdhani font-bold text-lg text-nav-directory">
-              {businessName.charAt(0).toUpperCase()}
-            </AvatarFallback>
-          </Avatar>
-          
-          <div className="space-y-xs flex-1">
-            <div className="space-y-xs">
-              <div className="flex items-center gap-xs">
-                <h3 className="font-rajdhani font-bold text-xl text-card-foreground leading-tight transition-colors duration-200 group-hover:text-nav-directory">
-                  {businessName}
-                </h3>
-                <Badge 
-                  variant={getBusinessBadgeVariant(businessType)}
-                  size="sm"
-                >
-                  {businessType.includes('Range') ? 'Range' :
-                   businessType.includes('Gunsmith') || businessType.includes('Custom') ? 'Gunsmith' :
-                   businessType.includes('Training') || businessType.includes('Academy') ? 'Training' :
-                   businessType.includes('FFL') || businessType.includes('Dealer') ? 'FFL' :
-                   businessType.includes('Gun Club') ? 'Club' : 'Business'}
-                </Badge>
-              </div>
-              <p className="text-sm text-muted-foreground leading-tight">{businessType}</p>
-              
-              {/* Enhanced Rating Display - Prominent Position */}
-              {(rating || reviewCount) && (
-                <div className="flex items-center gap-sm">
-                  <div className="flex items-center gap-xs">
-                    {rating && (
-                      <>
-                        <div className="flex items-center">
-                          {[...Array(5)].map((_, i) => (
-                            <StarIcon
-                              key={i}
-                              className={cn(
-                                "size-4",
-                                i < Math.floor(rating) ? "text-nav-directory fill-nav-directory" : "text-muted-foreground"
-                              )}
-                            />
-                          ))}
-                        </div>
-                        <span className="font-rajdhani font-bold text-lg text-nav-directory">
-                          {rating.toFixed(1)}
-                        </span>
-                      </>
-                    )}
-                    {reviewCount && (
-                      <span className="text-sm text-muted-foreground">({reviewCount} reviews)</span>
-                    )}
-                  </div>
+        {/* Tier badge overlay */}
+        {tier !== 'free' && (
+          <div className="absolute top-sm left-sm">
+            <div className="bg-black/40 backdrop-blur-sm rounded-xs p-sm border border-white/20">
+              <div className="text-center">
+                <div className="font-rajdhani font-bold text-xs text-white uppercase tracking-wide">
+                  {tier}
                 </div>
-              )}
+                <div className="text-[10px] text-white/80 font-medium uppercase tracking-wider">
+                  Member
+                </div>
+              </div>
             </div>
+          </div>
+        )}
+        
+        {/* Small contextual icon */}
+        <div className="absolute bottom-xs right-xs">
+          {getBusinessTypeIcon(businessType)}
+        </div>
+        
+        {/* Subtle texture particles */}
+        <div className="absolute top-2 right-6 w-0.5 h-0.5 bg-card/30 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-4 left-8 w-0.5 h-0.5 bg-card/20 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-6 right-12 w-0.5 h-0.5 bg-card/25 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+      </div>
+      
+      <div className="space-y-md">
+        {/* Header - Matching EventCard Typography */}
+        <div className="space-y-sm">
+          <div className="space-y-0">
+            <h2 className="font-rajdhani font-bold text-xl text-card-foreground leading-tight line-clamp-2 group-hover:text-nav-directory transition-colors duration-200">
+              {businessName}
+            </h2>
+            <h3 className="font-noto-serif text-base text-muted-foreground leading-tight">
+              {businessType} • {address?.split(',')[0] || 'Idaho'}
+            </h3>
           </div>
         </div>
 
-        {/* Tier-specific badges - now below name block */}
-        {(isVerified || showSponsored) && (
-          <div className="flex gap-sm mt-sm">
-            {isVerified && (
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <Badge 
-                      variant={tier === 'gold' ? 'elite' : 'default'}
-                      size="sm"
-                    >
-                      <ShieldCheckIcon className="w-icon-xs h-icon-xs mr-xs" />
-                      Verified
-                    </Badge>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>{verificationStatus || 'Verified Idaho firearms business'}</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            )}
-            {showSponsored && (
-              <Badge variant={tier === 'gold' ? 'elite' : 'default'} size="sm">
-                <StarIcon className="w-icon-xs h-icon-xs mr-xs" />
-                Sponsored
-              </Badge>
-            )}
-          </div>
-        )}
-      </div>
-
-      {/* Enhanced Description */}
-      {description && (
-        <p className="text-sm text-muted-foreground mb-lg line-clamp-3 leading-relaxed">
-          {description}
+        {/* Description */}
+        <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
+          {description || `Professional ${businessType.toLowerCase()} serving the Idaho firearms community.`}
         </p>
-      )}
 
-      {/* Enhanced Contact Information */}
-      <div className="space-y-sm mb-lg bg-muted/30 p-sm rounded-xs">
-        {address && (
-          <div className="flex items-start gap-sm text-sm">
-            <MapPinIcon className="size-4 flex-shrink-0 text-nav-directory mt-0.5" />
-            <span className="text-muted-foreground leading-tight">{address}</span>
-          </div>
-        )}
-        {phone && (
-          <div className="flex items-center gap-sm text-sm">
-            <PhoneIcon className="size-4 flex-shrink-0 text-nav-directory" />
-            <span className="font-medium text-card-foreground">{phone}</span>
-          </div>
-        )}
-        {hours && (
-          <div className="flex items-center gap-sm text-sm">
-            <ClockIcon className="size-4 flex-shrink-0 text-nav-directory" />
-            <span className="text-muted-foreground">{hours}</span>
-          </div>
-        )}
-      </div>
-
-      {/* Enhanced Reviews Section */}
-      <div className="mb-lg">
-        {reviewsData ? (
-          <ReviewsDisplay 
-            reviewsData={reviewsData}
-            showHeader={false}
-            variant="compact"
-            autoPlay={false}
-          />
-        ) : googlePlaceId ? (
-          <div className="bg-card border border-border/50 p-sm rounded-xs">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={loadReviews}
-              disabled={loadingReviews}
-              className="p-0 h-auto font-normal text-muted-foreground hover:text-nav-directory transition-colors"
-            >
-              <ChatBubbleBottomCenterTextIcon className="size-4 mr-xs text-nav-directory" />
-              {loadingReviews ? 'Loading reviews...' : 'View customer reviews'}
-            </Button>
-          </div>
-        ) : (
-          <div className="bg-muted/20 p-sm rounded-xs border border-dashed border-muted-foreground/20">
-            <span className="text-sm text-muted-foreground italic">
-              Reviews coming soon • Be the first to review!
-            </span>
-          </div>
-        )}
-      </div>
-
-      {/* Specialties */}
-      {specialties.length > 0 && (
-        <div className="flex flex-wrap gap-tiny mb-md">
-          {specialties.slice(0, 3).map((specialty, index) => (
-            <Badge 
-              key={index} 
-              variant={tier === 'gold' ? 'foothills-purple' : tier === 'silver' ? 'info-river' : 'default'} 
-              size="sm"
-            >
+        {/* Smart Badges - Verification and Specialties */}
+        <div className="flex flex-wrap gap-xs">
+          {isVerified && (
+            <Badge variant="outline" size="sm">
+              <ShieldCheckIcon className="w-3 h-3 mr-xs" />
+              Verified
+            </Badge>
+          )}
+          {tier === 'gold' && isSponsored && (
+            <Badge variant="default" size="sm">
+              <StarIcon className="w-3 h-3 mr-xs" />
+              Sponsored
+            </Badge>
+          )}
+          {specialties.slice(0, 2).map((specialty, index) => (
+            <Badge key={index} variant="outline" size="sm">
               {specialty}
             </Badge>
           ))}
-          {specialties.length > 3 && (
-            <Badge 
-              variant={tier === 'gold' ? 'foothills-purple' : tier === 'silver' ? 'info-river' : 'default'} 
-              size="sm"
-            >
-              +{specialties.length - 3} more
-            </Badge>
+        </div>
+
+        {/* Info Grid - Matching EventCard */}
+        <div className="space-y-sm bg-muted/30 p-sm rounded-xs">
+          {address && (
+            <div className="flex items-start gap-sm text-sm">
+              <MapPinIcon className="size-4 flex-shrink-0 text-nav-directory mt-0.5" />
+              <span className="text-muted-foreground leading-tight">{address}</span>
+            </div>
+          )}
+          {phone && (
+            <div className="flex items-center gap-sm text-sm">
+              <PhoneIcon className="size-4 flex-shrink-0 text-nav-directory" />
+              <span className="font-medium text-card-foreground">{phone}</span>
+            </div>
+          )}
+          {hours && (
+            <div className="flex items-center gap-sm text-sm">
+              <ClockIcon className="size-4 flex-shrink-0 text-nav-directory" />
+              <span className="text-muted-foreground">{hours}</span>
+            </div>
+          )}
+          {(rating || reviewCount) && (
+            <div className="flex items-center gap-sm text-sm">
+              <StarIcon className="size-4 flex-shrink-0 text-nav-directory" />
+              <span className="font-medium text-card-foreground">
+                {rating ? `${rating.toFixed(1)} stars` : 'Not rated'}
+                {reviewCount && ` (${reviewCount} reviews)`}
+              </span>
+            </div>
           )}
         </div>
-      )}
 
-
-      {/* Enhanced Action Buttons */}
-      <div className="flex gap-xs pt-sm">
-        <Button 
-          size="sm" 
-          variant="outline"
-          className="flex-1 border-nav-directory/30 text-nav-directory hover:bg-nav-directory hover:text-white hover:border-nav-directory font-rajdhani font-bold transition-all duration-300"
-          animationType="arrow"
-        >
-          View Details
-        </Button>
-        {showEnhancedFeatures && website && (
+        {/* CTA Button - Matching EventCard */}
+        <div className="pt-sm">
           <Button 
-            size="sm" 
+            size="sm"
             variant="outline"
-            className="flex-shrink-0 border-nav-directory/30 text-nav-directory hover:bg-nav-directory hover:text-white hover:border-nav-directory transition-all duration-300"
-            onClick={(e) => {
-              e.preventDefault()
-              e.stopPropagation()
-              window.open(website, '_blank', 'noopener,noreferrer')
-            }}
-            title={`Visit ${businessName}'s website (opens in new tab)`}
+            className="w-full border-nav-directory/30 text-nav-directory group-hover:bg-nav-directory group-hover:text-white group-hover:border-nav-directory transition-all duration-300 font-rajdhani font-bold" 
+            animationType="arrow"
           >
-            <GlobeAltIcon className="size-4" />
+            View Details
           </Button>
-        )}
+        </div>
       </div>
       </div>
     </Link>

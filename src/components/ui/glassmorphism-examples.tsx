@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
-import { ChevronDown, Settings, User, LogOut, Bell, Search } from 'lucide-react'
+import { ArrowRightOnRectangleIcon, BellIcon, ChevronDownIcon, Cog6ToothIcon, MagnifyingGlassIcon, ToothIcon, UserIcon } from '@heroicons/react/24/outline';
 
 interface GlassmorphismExamplesProps {
   className?: string
@@ -49,7 +49,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
                 onClick={() => setShowDropdown(!showDropdown)}
                 className="gap-xs"
               >
-                User Menu <ChevronDown className="size-4" />
+                User Menu <ChevronDownIcon className="size-4" />
               </Button>
               
               {/* Dropdown with Mica Glass */}
@@ -58,7 +58,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
                   <div className="p-base space-y-4">
                     <div className="flex items-center gap-sm pb-(--spacing-xs) border-b border-border">
                       <div className="size-8 bg-sandy-ochre/20 rounded-full flex items-center justify-center">
-                        <User className="size-4 text-sandy-ochre" />
+                        <UserIcon className="size-4 text-sandy-ochre" />
                       </div>
                       <div>
                         <p className="font-medium text-foreground">John Doe</p>
@@ -67,17 +67,17 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
                     </div>
                     
                     <button className="w-full flex items-center gap-sm p-xs rounded-input hover:bg-card/20 text-left">
-                      <Settings className="size-4 text-muted-foreground" />
+                      <Cog6ToothIcon className="size-4 text-muted-foreground" />
                       <span className="text-body-sm">Account Settings</span>
                     </button>
                     
                     <button className="w-full flex items-center gap-sm p-xs rounded-input hover:bg-card/20 text-left">
-                      <Bell className="size-4 text-muted-foreground" />
+                      <BellIcon className="size-4 text-muted-foreground" />
                       <span className="text-body-sm">Notifications</span>
                     </button>
                     
                     <button className="w-full flex items-center gap-sm p-xs rounded-input hover:bg-card/20 text-left text-safety-red">
-                      <LogOut className="size-4" />
+                      <ArrowRightOnRectangleIcon className="size-4" />
                       <span className="text-body-sm">Sign Out</span>
                     </button>
                   </div>
@@ -87,14 +87,14 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
             
             <Button 
               onClick={() => setShowModal(true)}
-              variant="secondary"
+              variant="outline"
             >
               Open Modal
             </Button>
             
             <Button 
               onClick={() => setShowToast(true)}
-              variant="secondary"
+              variant="outline"
             >
               Show Toast
             </Button>
@@ -137,12 +137,12 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
             
             <div className="mica-overlay p-base rounded-sm border border-card/20">
               <div className="flex items-center gap-sm">
-                <Search className="size-5 text-muted-foreground" />
+                <MagnifyingGlassIcon className="size-5 text-muted-foreground" />
                 <input 
                   placeholder="Search firearms, ranges, events..."
                   className="flex-1 bg-transparent border-none outline-none text-foreground placeholder:text-muted-foreground"
                 />
-                <Badge variant="default" className="text-caption">⌘K</Badge>
+                <Badge variant="outline" className="text-caption">⌘K</Badge>
               </div>
             </div>
           </div>
@@ -222,7 +222,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
                 <Button variant="flat" size="sm" className="flex-1">Confirm</Button>
                 <Button 
                   size="sm" 
-                  variant="secondary"
+                  variant="outline"
                   onClick={() => setShowModal(false)}
                 >
                   Cancel

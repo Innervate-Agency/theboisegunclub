@@ -51,7 +51,6 @@ async function ensureCacheDir(): Promise<void> {
   try {
     await fs.mkdir(CACHE_DIR, { recursive: true })
   } catch (error) {
-    console.warn('Failed to create weather cache directory:', error)
   }
 }
 
@@ -87,9 +86,7 @@ async function saveCacheToDisk(lat: number, lon: number, cachedData: CachedWeath
     await ensureCacheDir()
     const cacheFilePath = getCacheFilePath(lat, lon)
     await fs.writeFile(cacheFilePath, JSON.stringify(cachedData, null, 2), 'utf-8')
-    console.log(`🌤️ Weather cached to disk for ${cachedData.data.locationName}`)
   } catch (error) {
-    console.warn('Failed to save weather cache to disk:', error)
   }
 }
 
@@ -237,7 +234,6 @@ export async function fetchWeatherForLocation(lat: number, lon: number, location
   // Check in-memory cache first (fastest)
   const memoryCache = weatherCache.get(cacheKey)
   if (memoryCache && isCacheValid(memoryCache.timestamp)) {
-    console.log(`🌡️ Using in-memory cached weather for ${locationName}`)
     return memoryCache.data
   }
   
@@ -245,7 +241,6 @@ export async function fetchWeatherForLocation(lat: number, lon: number, location
   const diskCache = await loadCacheFromDisk(lat, lon)
   if (diskCache && isCacheValid(diskCache.timestamp)) {
     const ageMinutes = Math.round((Date.now() - diskCache.timestamp) / (1000 * 60))
-    console.log(`💾 Using disk-cached weather for ${locationName} (${ageMinutes} min old)`)
     
     // Load into memory for faster subsequent access
     weatherCache.set(cacheKey, diskCache)
@@ -253,7 +248,6 @@ export async function fetchWeatherForLocation(lat: number, lon: number, location
   }
   
   try {
-    console.log(`Fetching fresh weather data for ${locationName}`)
     const response = await fetch(
       `${BASE_URL}?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=imperial`,
       { 
@@ -302,13 +296,10 @@ export async function fetchWeatherForLocation(lat: number, lon: number, location
     weatherCache.set(cacheKey, cachedData)
     await saveCacheToDisk(lat, lon, cachedData)
     
-    console.log(`🌤️ Fresh weather fetched and cached for ${locationName} (valid for 30 min)`)
     
     return processedData
     
   } catch (error) {
-    console.error(`Failed to fetch weather for ${locationName}:`, error)
-    console.log(`Using fallback data for ${locationName}`)
     
     // Return realistic fallback data if API fails
     const fallbackData = getFallbackWeatherData(locationName)
@@ -328,7 +319,6 @@ export async function fetchWeatherForLocation(lat: number, lon: number, location
 }
 
 export async function fetchWeatherForMultipleLocations(locations: Array<{name: string, lat: number, lng: number}>): Promise<ProcessedWeatherData[]> {
-  console.log(`Fetching weather for ${locations.length} locations`)
   
   // Add small delays between requests to avoid rate limiting
   const results: ProcessedWeatherData[] = []
@@ -343,20 +333,17 @@ export async function fetchWeatherForMultipleLocations(locations: Array<{name: s
         await new Promise(resolve => setTimeout(resolve, 100))
       }
     } catch (error) {
-      console.error(`Weather fetch failed for ${location.name}:`, error)
       // Use fallback data for failed requests
       results.push(getFallbackWeatherData(location.name))
     }
   }
   
-  console.log(`Successfully fetched/cached weather for ${results.length} locations`)
   return results
 }
 
 // Helper function to clear cache (useful for debugging)
 export function clearWeatherCache(): void {
   weatherCache.clear()
-  console.log('Weather cache cleared')
 }
 
 // Helper function to get cache status

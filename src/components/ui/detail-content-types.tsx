@@ -6,14 +6,7 @@ import { ReviewsDisplay } from '@/components/ui/reviews-display'
 import { EventEngagementWidget } from '@/components/ui/event-engagement-widget'
 import { EventPreparationSection } from '@/components/ui/event-preparation-section'
 import MdxContent from '@/components/molecules/MdxContent'
-import { 
-  Calendar, Clock, Eye, Heart, MessageCircle, User, Tag,
-  MapPin, Phone, Globe, Mail, CheckCircle, Star, Shield,
-  Award, Target, Users, CreditCard, DollarSign,
-  Package, Truck, FileText, AlertTriangle as Warning,
-  Crown, Medal, Clock4, Wrench, ShoppingCart, Zap,
-  Settings, Car, BookOpen, GraduationCap, UserCheck
-} from 'lucide-react'
+import { CalendarDaysIcon, CheckCircleIcon, ClockIcon, CursorArrowRaysIcon, EnvelopeIcon, ExclamationTriangleIcon, EyeIcon, GlobeAltIcon, HeartIcon, MapPinIcon, PhoneIcon, ServiceIcon, ShieldCheckIcon, StarIcon, TrophyIcon, UserIcon, UsersIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -193,12 +186,12 @@ export function ArticleContent({
       {/* Author and Meta */}
       <div className="flex flex-wrap items-center gap-base text-sm text-muted-foreground">
         <div className="flex items-center gap-xs">
-          <User className="h-4 w-4" />
+          <UserIcon className="h-4 w-4" />
           <span className="font-medium">{author.name}</span>
           {author.title && <span>• {author.title}</span>}
         </div>
         <div className="flex items-center gap-xs">
-          <Calendar className="h-4 w-4" />
+          <CalendarDaysIcon className="h-4 w-4" />
           <span>{new Date(publishDate).toLocaleDateString('en-US', { 
             year: 'numeric', 
             month: 'long', 
@@ -206,12 +199,12 @@ export function ArticleContent({
           })}</span>
         </div>
         <div className="flex items-center gap-xs">
-          <Clock className="h-4 w-4" />
+          <ClockIcon className="h-4 w-4" />
           <span>{readTime} min read</span>
         </div>
         {views > 0 && (
           <div className="flex items-center gap-xs">
-            <Eye className="h-4 w-4" />
+            <EyeIcon className="h-4 w-4" />
             <span>{views.toLocaleString()} views</span>
           </div>
         )}
@@ -222,7 +215,7 @@ export function ArticleContent({
         <div className="flex items-center gap-base">
           {likes > 0 && (
             <div className="flex items-center gap-xs text-sm text-muted-foreground">
-              <Heart className="h-4 w-4" />
+              <HeartIcon className="h-4 w-4" />
               <span>{likes}</span>
             </div>
           )}
@@ -452,7 +445,7 @@ export function BusinessContent({
           asChild
         >
           <a href={`tel:${phone}`}>
-            <Phone className="h-5 w-5 mr-xs" />
+            <PhoneIcon className="h-5 w-5 mr-xs" />
             Call {phone}
           </a>
         </Button>
@@ -465,7 +458,7 @@ export function BusinessContent({
             asChild
           >
             <a href={website} target="_blank" rel="noopener noreferrer">
-              <Globe className="h-5 w-5 mr-xs" />
+              <GlobeAltIcon className="h-5 w-5 mr-xs" />
               Visit Website
             </a>
           </Button>
@@ -532,7 +525,7 @@ export function BusinessContent({
           {/* Contact Information */}
           <div className="space-y-base">
             <div className="flex items-start gap-base">
-              <MapPin className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
+              <MapPinIcon className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
               <div className="flex-1">
                 <div className="font-medium text-body-sm">Address</div>
                 <div className="text-body-sm text-muted-foreground">{fullAddress}</div>
@@ -548,7 +541,7 @@ export function BusinessContent({
             </div>
             
             <div className="flex items-start gap-base">
-              <Phone className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
+              <PhoneIcon className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
               <div>
                 <div className="font-medium text-body-sm">Phone</div>
                 <div className="text-body-sm text-muted-foreground">
@@ -561,7 +554,7 @@ export function BusinessContent({
             
             {email && (
               <div className="flex items-start gap-base">
-                <Mail className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
+                <EnvelopeIcon className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
                 <div>
                   <div className="font-medium text-body-sm">Email</div>
                   <div className="text-body-sm text-muted-foreground">
@@ -575,7 +568,7 @@ export function BusinessContent({
             
             {website && (
               <div className="flex items-start gap-base">
-                <Globe className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
+                <GlobeAltIcon className="h-5 w-5 text-nav-directory mt-xs flex-shrink-0" />
                 <div>
                   <div className="font-medium text-body-sm">Website</div>
                   <div className="text-body-sm text-muted-foreground">
@@ -631,7 +624,7 @@ export function BusinessContent({
               <div className="font-medium text-body-sm text-foreground">Specialties</div>
               {specialties.map((specialty, index) => (
                 <div key={index} className="flex items-center gap-xs py-xs">
-                  <Star className="h-4 w-4 text-rusty-orange flex-shrink-0" />
+                  <StarIcon className="h-4 w-4 text-rusty-orange flex-shrink-0" />
                   <span className="text-body-sm text-muted-foreground">{specialty}</span>
                 </div>
               ))}
@@ -669,7 +662,7 @@ export function BusinessContent({
 
           <div className="mt-base pt-base border-t border-border/30">
             <div className="flex items-center gap-xs text-sm text-nav-directory">
-              <Target className="h-4 w-4" />
+              <CursorArrowRaysIcon className="h-4 w-4" />
               <span className="font-medium">{services.length} total services</span>
             </div>
           </div>
@@ -746,7 +739,7 @@ export function BusinessContent({
         <div className="space-y-xs">
           {certifications.map((cert, index) => (
             <div key={index} className="flex items-center gap-xs py-xs">
-              <Award className="h-4 w-4 text-nav-directory flex-shrink-0" />
+              <TrophyIcon className="h-4 w-4 text-nav-directory flex-shrink-0" />
               <span className="text-body-sm">{cert}</span>
             </div>
           ))}
@@ -861,22 +854,22 @@ export function LocationContent({
       {/* Location Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-base">
         <div className="text-center p-base bg-muted/50 rounded-xs">
-          <MapPin className="h-5 w-5 text-nav-intel mx-auto mb-xs" />
+          <MapPinIcon className="h-5 w-5 text-nav-intel mx-auto mb-xs" />
           <div className="text-body-sm font-medium">{distanceFromBoise} mi</div>
           <div className="text-xs text-muted-foreground">From Boise</div>
         </div>
         <div className="text-center p-base bg-muted/50 rounded-xs">
-          <Target className="h-5 w-5 text-nav-intel mx-auto mb-xs" />
+          <CursorArrowRaysIcon className="h-5 w-5 text-nav-intel mx-auto mb-xs" />
           <div className="text-body-sm font-medium">{difficulty}</div>
           <div className="text-xs text-muted-foreground">Difficulty</div>
         </div>
         <div className="text-center p-base bg-muted/50 rounded-xs">
-          <Warning className="h-5 w-5 text-nav-intel mx-auto mb-xs" />
+          <ExclamationTriangleIcon className="h-5 w-5 text-nav-intel mx-auto mb-xs" />
           <div className="text-body-sm font-medium">{elevation} ft</div>
           <div className="text-xs text-muted-foreground">Elevation</div>
         </div>
         <div className="text-center p-base bg-muted/50 rounded-xs">
-          <CheckCircle className="h-5 w-5 text-nav-intel mx-auto mb-xs" />
+          <CheckCircleIcon className="h-5 w-5 text-nav-intel mx-auto mb-xs" />
           <div className="text-body-sm font-medium">{amenities.length}</div>
           <div className="text-xs text-muted-foreground">Amenities</div>
         </div>
@@ -909,7 +902,7 @@ export function LocationContent({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-xs">
             {amenities.map((amenity, index) => (
               <div key={index} className="flex items-center gap-xs py-xs">
-                <CheckCircle className="h-4 w-4 text-sagebrush-green flex-shrink-0" />
+                <CheckCircleIcon className="h-4 w-4 text-sagebrush-green flex-shrink-0" />
                 <span className="text-body-sm">{amenity}</span>
               </div>
             ))}
@@ -1082,7 +1075,7 @@ export function ProductContent({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-xs">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center gap-xs py-xs">
-                  <CheckCircle className="h-4 w-4 text-sagebrush-green flex-shrink-0" />
+                  <CheckCircleIcon className="h-4 w-4 text-sagebrush-green flex-shrink-0" />
                   <span className="text-body-sm">{feature}</span>
                 </div>
               ))}
@@ -1106,14 +1099,14 @@ export function ProductContent({
             </div>
             {vendor.verified && (
               <Badge variant="outline" className="text-xs">
-                <Shield className="h-3 w-3 mr-xs" />
+                <ShieldCheckIcon className="h-3 w-3 mr-xs" />
                 Verified
               </Badge>
             )}
           </div>
           
           <div className="flex items-center gap-xs">
-            <Star className="h-4 w-4 text-nav-marketplace" />
+            <StarIcon className="h-4 w-4 text-nav-marketplace" />
             <span className="text-body-sm font-medium">{vendor.rating}</span>
             <span className="text-xs text-muted-foreground">rating</span>
           </div>
@@ -1126,7 +1119,7 @@ export function ProductContent({
               Contact Seller
             </Button>
             <Button variant="outline" size="sm" className="w-full">
-              <Phone className="h-4 w-4 mr-xs" />
+              <PhoneIcon className="h-4 w-4 mr-xs" />
               {vendor.phone}
             </Button>
           </div>

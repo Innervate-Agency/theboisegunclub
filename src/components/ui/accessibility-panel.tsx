@@ -7,19 +7,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { Card, CardContent, CardHeader, CardTitle } from './card'
 import { Badge } from './badge'
-import { 
-  Settings, 
-  Sun, 
-  Moon, 
-  Monitor, 
-  Type, 
-  Contrast, 
-  Eye,
-  MessageCircle,
-  X,
-  Minus,
-  Plus
-} from 'lucide-react'
+import { Cog6ToothIcon, EyeIcon, MinusIcon, MoonIcon, PlusIcon, SunIcon, ThemeIcon, ToothIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 // Debounce hook for performance optimization
 function useDebounce<T>(value: T, delay: number): T {
@@ -146,7 +134,6 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
   const handleOpenPanel = React.useCallback(() => setIsOpen(true), [])
   const handleClosePanel = React.useCallback(() => setIsOpen(false), [])
   const handleChatClick = React.useCallback(() => {
-    console.log('Chat clicked - replace with self-hosted solution')
   }, [])
   
   const handleThemeChange = React.useCallback((newTheme: string) => {
@@ -190,7 +177,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
         onClick={handleOpenPanel}
         aria-label="Open accessibility panel"
       >
-        <Settings className="size-6" />
+        <Cog6ToothIcon className="size-6" />
       </Button>
 
       {/* Floating Chat Button - Bottom Right */}
@@ -209,7 +196,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
             <div className="flex flex-row items-center justify-between p-md pb-4">
               <div className="flex items-center gap-sm">
                 <div className="bg-muted p-tiny rounded-xs border border-border">
-                  <Settings className="size-5 text-card-foreground" />
+                  <Cog6ToothIcon className="size-5 text-card-foreground" />
                 </div>
                 <h2 className="text-heading-lg font-rajdhani font-bold text-card-foreground">Accessibility</h2>
               </div>
@@ -219,7 +206,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                 onClick={handleClosePanel}
                 aria-label="Close accessibility panel"
               >
-                <X className="size-4" />
+                <XMarkIcon className="size-4" />
               </Button>
             </div>
 
@@ -236,7 +223,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     animationType="x-o"
                     animationState={theme === 'light'}
                   >
-                    <Sun className="size-4" />
+                    <SunIcon className="size-4" />
                     Light
                   </Button>
                   <Button
@@ -247,7 +234,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     animationType="x-o"
                     animationState={theme === 'dark'}
                   >
-                    <Moon className="size-4" />
+                    <MoonIcon className="size-4" />
                     Dark
                   </Button>
                   <Button
@@ -275,7 +262,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     disabled={fontSize === 'small'}
                     animationType="none"
                   >
-                    <Minus className="size-4" />
+                    <MinusIcon className="size-4" />
                   </Button>
                   <div className="flex-1 text-center">
                     <Badge variant="flat" className="capitalize">
@@ -289,7 +276,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     disabled={fontSize === 'large'}
                     animationType="none"
                   >
-                    <Plus className="size-4" />
+                    <PlusIcon className="size-4" />
                   </Button>
                 </div>
               </div>
@@ -328,7 +315,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     onClick={() => handleColorBlindFilterChange('none')}
                     className="gap-xs"
                   >
-                    <Eye className="size-4" />
+                    <EyeIcon className="size-4" />
                     Normal
                   </Button>
                   <Button

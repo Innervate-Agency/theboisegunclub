@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { Badge } from "./badge"
-import { ChevronRight, ArrowLeft, Home } from 'lucide-react'
+import { ArrowLeftIcon, ChevronRightIcon, HomeIcon } from '@heroicons/react/24/outline';
 
 const breadcrumbHeroVariants = cva(
   "relative w-full overflow-hidden",
@@ -85,7 +85,7 @@ export function BreadcrumbHero({
                 className="shadow-flat -ml-(--spacing-xs) text-warning-amber hover:text-dark-chocolate"
                 onClick={() => window.location.href = backLink.href}
               >
-                <ArrowLeft className="size-4 mr-(--spacing-xs)" />
+                <ArrowLeftIcon className="size-4 mr-(--spacing-xs)" />
                 {backLink.label}
               </Button>
             </div>
@@ -100,12 +100,12 @@ export function BreadcrumbHero({
                     href={item.href}
                     className="flex items-center text-warning-amber hover:text-dark-chocolate transition-colors duration-150"
                   >
-                    <Home className="size-4 mr-(--spacing-xs)" />
+                    <HomeIcon className="size-4 mr-(--spacing-xs)" />
                     {item.label}
                   </a>
                 ) : (
                   <>
-                    <ChevronRight className="size-4 text-warning-amber/60" />
+                    <ChevronRightIcon className="size-4 text-warning-amber/60" />
                     {index === breadcrumbs.length - 1 ? (
                       <span className="text-dark-chocolate font-medium">
                         {item.label}
@@ -156,7 +156,7 @@ export function BreadcrumbHero({
                 {badges.map((badge, index) => (
                   <Badge
                     key={index}
-                    variant="default"
+                    variant="outline"
                     className="bg-card/80 text-blued-steel border border-sandy-ochre/20 shadow-flat"
                   >
                     {badge}

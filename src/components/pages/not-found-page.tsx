@@ -4,20 +4,7 @@ import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { 
-  ArrowLeftIcon as ArrowLeft, 
-  HomeIcon as Home, 
-  MagnifyingGlassIcon as Search, 
-  MapIcon as Map, 
-  BookOpenIcon as BookOpen, 
-  ShieldCheckIcon as Shield, 
-  PlusCircleIcon as Target, 
-  ExclamationTriangleIcon as AlertTriangle, 
-  MapPinIcon as Compass,
-  TicketIcon as Ticket,
-  BanknotesIcon as Storefront,
-  ChatBubbleBottomCenterTextIcon as Users
-} from '@heroicons/react/24/outline'
+import { ArrowLeftIcon, BanknotesIcon, BookOpenIcon, ChatBubbleBottomCenterTextIcon, CursorArrowRaysIcon, ExclamationTriangleIcon, HomeIcon, MagnifyingGlassIcon, MapIcon, MapPinIcon, PlusCircleIcon, ShieldCheckIcon, TicketIcon } from '@heroicons/react/24/outline';
 import { SiteSearch } from '@/components/ui/site-search'
 
 interface QuickNavCard {
@@ -88,14 +75,14 @@ export function NotFoundPage() {
                 </h1>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="bg-rusty-orange/10 p-content-md rounded-full border-2 border-rusty-orange/20">
-                    <Target className="h-16 w-16 text-rusty-orange rotate-45" />
+                    <CursorArrowRaysIcon className="h-16 w-16 text-rusty-orange rotate-45" />
                   </div>
                 </div>
               </div>
               
               <div className="space-y-4">
                 <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
-                  <AlertTriangle className="h-4 w-4 mr-2" />
+                  <ExclamationTriangleIcon className="h-4 w-4 mr-2" />
                   Target Not Found
                 </Badge>
                 <h2 className="font-rajdhani text-3xl md:text-5xl font-bold text-card-foreground">
@@ -111,14 +98,14 @@ export function NotFoundPage() {
             {/* Quick Actions */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/">
-                <Button size="lg" className="bg-rusty-orange text-white hover:bg-rusty-orange/90 font-rajdhani font-bold gap-2">
-                  <Home className="h-4 w-4" />
+                <Button className="bg-rusty-orange text-white hover:bg-rusty-orange/90 font-rajdhani font-bold gap-2">
+                  <HomeIcon className="h-4 w-4" />
                   Back to Home Base
                 </Button>
               </Link>
               <Link href="/directory">
-                <Button variant="outline" size="lg" className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-white gap-2">
-                  <Search className="h-4 w-4" />
+                <Button variant="outline" className="border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-white gap-2">
+                  <MagnifyingGlassIcon className="h-4 w-4" />
                   Find Dealers
                 </Button>
               </Link>

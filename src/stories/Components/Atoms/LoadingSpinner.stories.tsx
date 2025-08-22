@@ -56,11 +56,11 @@ export const Sizes: Story = {
         <span className="text-body-sm text-desert-cliff-brown">Small</span>
       </div>
       <div className="flex flex-col items-center gap-xs">
-        <LoadingSpinner size="md" text="Medium" />
+        <LoadingSpinner size="default" text="Medium" />
         <span className="text-body-sm text-desert-cliff-brown">Medium</span>
       </div>
       <div className="flex flex-col items-center gap-xs">
-        <LoadingSpinner size="lg" text="Large" />
+        <LoadingSpinner text="Large" />
         <span className="text-body-sm text-desert-cliff-brown">Large</span>
       </div>
     </div>
@@ -71,15 +71,15 @@ export const GunClubContexts: Story = {
   render: () => (
     <div className="grid grid-cols-1 gap-md">
       <div className="flex flex-col items-center gap-xs">
-        <LoadingSpinner size="md" text="Loading competition results..." />
+        <LoadingSpinner size="default" text="Loading competition results..." />
         <span className="text-body-sm text-desert-cliff-brown">Competition Results</span>
       </div>
       <div className="flex flex-col items-center gap-xs">
-        <LoadingSpinner size="md" text="Processing membership renewal..." />
+        <LoadingSpinner size="default" text="Processing membership renewal..." />
         <span className="text-body-sm text-desert-cliff-brown">Membership Processing</span>
       </div>
       <div className="flex flex-col items-center gap-xs">
-        <LoadingSpinner size="md" text="Uploading range photos..." />
+        <LoadingSpinner size="default" text="Uploading range photos..." />
         <span className="text-body-sm text-desert-cliff-brown">File Upload</span>
       </div>
     </div>

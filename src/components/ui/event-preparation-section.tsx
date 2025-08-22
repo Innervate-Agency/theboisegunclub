@@ -3,12 +3,7 @@
 import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
-import {
-  WrenchScrewdriverIcon,
-  ExclamationTriangleIcon,
-  ClockIcon,
-  TagIcon
-} from '@heroicons/react/24/outline'
+import { ClockIcon, ExclamationTriangleIcon, TagIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
 
 interface EventPreparationSectionProps {
   agenda?: string[]

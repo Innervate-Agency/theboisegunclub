@@ -46,7 +46,6 @@ export function useTacticalTracker() {
         setStats(updatedStats)
         localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedStats))
       } catch (error) {
-        console.warn('Could not parse tactical stats:', error)
       }
     } else {
       // First time visitor

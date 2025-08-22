@@ -4,7 +4,7 @@ import * as React from 'react'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
-import { ChevronDown } from "lucide-react"
+import { ChevronDownIcon } from "@heroicons/react/24/outline"
 
 const pageHeroVariants = cva(
   "relative w-full overflow-hidden",
@@ -121,9 +121,7 @@ export function PageHero({
             <div className="flex gap-base justify-center flex-wrap">
               {primaryAction && (
                 <Button
-                  variant="flat"
-                  size="lg"
-                  className="shadow-flat"
+                  variant="flat" className="shadow-flat"
                   onClick={() => window.location.href = primaryAction.href}
                 >
                   {primaryAction.text}
@@ -132,9 +130,7 @@ export function PageHero({
               
               {secondaryAction && (
                 <Button
-                  variant="ghost"
-                  size="lg"
-                  className="shadow-flat"
+                  variant="ghost" className="shadow-flat"
                   onClick={() => window.location.href = secondaryAction.href}
                 >
                   {secondaryAction.text}
@@ -147,7 +143,7 @@ export function PageHero({
           {showScrollIndicator && (
             <div className="flex justify-center pt-(--spacing-lg)">
               <div className="animate-bounce">
-                <ChevronDown className="size-6 text-warning-amber/60" />
+                <ChevronDownIcon className="size-6 text-warning-amber/60" />
               </div>
             </div>
           )}

@@ -98,7 +98,6 @@ const getBusinessData = async (slug: string): Promise<BusinessData | null> => {
       }
     }
   } catch (error) {
-    console.log('Database not available, using fallback data:', error.message)
   }
   
   // Fallback to generated FFL data if database fails
@@ -136,7 +135,6 @@ const getBusinessData = async (slug: string): Promise<BusinessData | null> => {
       }
     }
   } catch (fflError) {
-    console.log('FFL data not available, using hardcoded examples:', fflError.message)
   }
   
   // Final fallback to hardcoded examples for development testing
@@ -496,7 +494,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${business.businessName} - Idaho Firearms Business`,
       description: business.description,
       type: 'website',
-      images: business.images.length > 0 ? [business.images[0]] : undefined
+      images: business.images.length > 0 ? business.images[0] ? [{ url: business.images[0] }] : undefined : undefined
     }
   }
 }
@@ -517,13 +515,10 @@ export async function generateStaticParams() {
   try {
     const { db } = await import('@/lib/database')
     const slugs = await db.getAllBusinessSlugs()
-    console.log(`🏗️  Generating ${slugs.length} business pages`)
     return slugs.map(slug => ({ slug }))
   } catch (error) {
-    console.error('Failed to get business slugs from database:', error)
     // Fallback to FFL data if database is not available
     const { allFFLs } = await import('@/lib/generated-ffl-data')
-    console.log(`🏗️  Fallback: Generating ${allFFLs.length} business pages from FFL data`)
     return allFFLs.map(business => ({ slug: business.slug }))
   }
 }

@@ -1,14 +1,7 @@
 'use client'
 
 import React from 'react'
-import { 
-  Sun, 
-  Cloud, 
-  CloudRain, 
-  CloudSnow, 
-  Lightning,
-  CloudSun
-} from '@phosphor-icons/react'
+import { SunIcon, WeatherIcon } from '@heroicons/react/24/outline';
 
 interface WeatherIconProps {
   type: 'sun' | 'partly-cloudy' | 'cloudy' | 'rain' | 'snow' | 'storm'
@@ -31,7 +24,7 @@ export function WeatherIcon({
 
   switch (type) {
     case 'sun':
-      return <Sun {...iconProps} />
+      return <SunIcon {...iconProps} />
     case 'partly-cloudy':
       return <CloudSun {...iconProps} />
     case 'cloudy':
@@ -43,6 +36,6 @@ export function WeatherIcon({
     case 'storm':
       return <Lightning {...iconProps} />
     default:
-      return <Sun {...iconProps} />
+      return <SunIcon {...iconProps} />
   }
 }

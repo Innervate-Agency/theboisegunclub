@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { Badge } from "./badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./card"
-import { Check, X, Minus, Star, Target } from 'lucide-react'
+import { CheckIcon, MinusIcon, StarIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const pricingCardVariants = cva(
   // BASE: Clean professional foundation for all tiers - LITERAL COPY from VendorCard
@@ -94,10 +94,10 @@ export function PricingCard({
 
   const renderFeatureValue = (feature: PricingFeature) => {
     if (feature.included === true) {
-      return <Check className="size-4 text-rifling-green" />
+      return <CheckIcon className="size-4 text-rifling-green" />
     }
     if (feature.included === false) {
-      return <X className="size-4 text-warning-amber" />
+      return <XMarkIcon className="size-4 text-warning-amber" />
     }
     if (typeof feature.included === 'number') {
       return <span className="text-body-sm font-medium text-dark-chocolate">{feature.included}</span>
@@ -106,7 +106,7 @@ export function PricingCard({
       return <span className="text-body-sm font-medium text-rusty-orange">∞</span>
     }
     if (feature.included === 'limited') {
-      return <Minus className="size-4 text-sight-gold" />
+      return <MinusIcon className="size-4 text-sight-gold" />
     }
     return <span className="text-caption text-warning-amber">{feature.included}</span>
   }
@@ -120,8 +120,8 @@ export function PricingCard({
         {/* Popular badge */}
         {plan.popular && plan.badge && (
           <div className="absolute -top-xs left-1/2 transform -translate-x-1/2 z-20">
-            <Badge variant="default" className="bg-rusty-orange text-nickel-white font-medium px-md py-sm text-caption">
-              <Star className="size-3 mr-xs" />
+            <Badge variant="outline" className="bg-rusty-orange text-nickel-white font-medium px-md py-sm text-caption">
+              <StarIcon className="size-3 mr-xs" />
               {plan.badge}
             </Badge>
           </div>
@@ -317,13 +317,13 @@ export function PricingTable({
   )
 
   function renderFeatureValue(feature?: PricingFeature) {
-    if (!feature) return <X className="size-4 text-muted-foreground mx-auto" />
+    if (!feature) return <XMarkIcon className="size-4 text-muted-foreground mx-auto" />
     
     if (feature.included === true) {
-      return <Check className="size-4 text-bore-sight-green mx-auto" />
+      return <CheckIcon className="size-4 text-bore-sight-green mx-auto" />
     }
     if (feature.included === false) {
-      return <X className="size-4 text-muted-foreground mx-auto" />
+      return <XMarkIcon className="size-4 text-muted-foreground mx-auto" />
     }
     if (typeof feature.included === 'number') {
       return <span className="text-body-sm font-medium text-dark-chocolate">{feature.included}</span>
@@ -332,7 +332,7 @@ export function PricingTable({
       return <span className="text-body-sm font-medium text-rusty-orange">∞</span>
     }
     if (feature.included === 'limited') {
-      return <Minus className="size-4 text-rusty-orange mx-auto" />
+      return <MinusIcon className="size-4 text-rusty-orange mx-auto" />
     }
     return <span className="text-caption text-warning-amber">{feature.included}</span>
   }
@@ -456,13 +456,13 @@ export function PricingFusion({
   )
 
   function renderFeatureValueFusion(feature?: PricingFeature) {
-    if (!feature) return <X className="size-4 text-muted-foreground mx-auto" />
+    if (!feature) return <XMarkIcon className="size-4 text-muted-foreground mx-auto" />
     
     if (feature.included === true) {
-      return <Check className="size-4 text-bore-sight-green mx-auto" />
+      return <CheckIcon className="size-4 text-bore-sight-green mx-auto" />
     }
     if (feature.included === false) {
-      return <X className="size-4 text-muted-foreground mx-auto" />
+      return <XMarkIcon className="size-4 text-muted-foreground mx-auto" />
     }
     if (typeof feature.included === 'number') {
       return <span className="text-body-sm font-medium text-dark-chocolate">{feature.included}</span>
@@ -471,7 +471,7 @@ export function PricingFusion({
       return <span className="text-body-sm font-medium text-rusty-orange">∞</span>
     }
     if (feature.included === 'limited') {
-      return <Minus className="size-4 text-rusty-orange mx-auto" />
+      return <MinusIcon className="size-4 text-rusty-orange mx-auto" />
     }
     return <span className="text-caption text-warning-amber">{feature.included}</span>
   }

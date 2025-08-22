@@ -51,7 +51,7 @@ export const ThemeContrastTest: Story = {
             <Button className="w-full">
               Primary Button
             </Button>
-            <Button variant="secondary" className="w-full">
+            <Button variant="outline" className="w-full">
               Secondary Button
             </Button>
             <div className="p-sm rounded-sm bg-accent/10 border border-accent/20">

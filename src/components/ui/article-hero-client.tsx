@@ -6,9 +6,7 @@ import { MotionDiv, MotionSection, MotionH1, MotionP } from '@/components/ui/opt
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ScrollProgressBar } from './scroll-progress-bar'
-import { 
-  CaretRight, Calendar, Clock, Eye, User, ArrowLeft, Tag
-} from '@phosphor-icons/react'
+import { ArrowLeftIcon, CalendarDaysIcon, ClockIcon, EyeIcon, TagIcon, UserIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -106,7 +104,7 @@ export function ArticleHeroClient({
           >
             <Link href={sectionPath}>
               <Button variant="ghost" className="gap-xs hover:gap-sm transition-all">
-                <ArrowLeft className="h-4 w-4" />
+                <ArrowLeftIcon className="h-4 w-4" />
                 Back to {sectionName}
               </Button>
             </Link>
@@ -171,19 +169,19 @@ export function ArticleHeroClient({
               transition={{ delay: 1, duration: 0.6 }}
             >
               <div className="flex items-center gap-xs">
-                <User className="h-4 w-4" />
+                <UserIcon className="h-4 w-4" />
                 <span>{author.name}</span>
               </div>
               <div className="flex items-center gap-xs">
-                <Calendar className="h-4 w-4" />
+                <CalendarDaysIcon className="h-4 w-4" />
                 <span>{publishDate}</span>
               </div>
               <div className="flex items-center gap-xs">
-                <Clock className="h-4 w-4" />
+                <ClockIcon className="h-4 w-4" />
                 <span>{readTime} min read</span>
               </div>
               <div className="flex items-center gap-xs">
-                <Eye className="h-4 w-4" />
+                <EyeIcon className="h-4 w-4" />
                 <span>{views.toLocaleString()} views</span>
               </div>
             </MotionDiv>
@@ -205,7 +203,7 @@ export function ArticleHeroClient({
                     whileHover={{ scale: 1.05 }}
                   >
                     <Badge variant="outline" className="text-xs">
-                      <Tag className="h-3 w-3 mr-xs" />
+                      <TagIcon className="h-3 w-3 mr-xs" />
                       {tag}
                     </Badge>
                   </MotionDiv>

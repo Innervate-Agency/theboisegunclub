@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { PageHero } from '@/components/ui/page-hero';
-import { Target, Trophy, Users, Calendar, Shield, Star, MapPin, Clock } from 'lucide-react';
+import { CalendarDaysIcon, MapPinIcon, ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof PageHero> = {
   title: 'Design System/Organisms/Page Hero',

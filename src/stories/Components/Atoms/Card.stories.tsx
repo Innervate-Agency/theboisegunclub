@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Target, Shield, Zap, Award, Clock, Star, CheckCircle, AlertCircle } from 'lucide-react';
+import { BoltIcon, CheckCircleIcon, ClockIcon, CursorArrowRaysIcon, ShieldCheckIcon, StarIcon, TrophyIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof Card> = {
   title: 'Design System/Atoms/Card',
@@ -76,7 +76,7 @@ export const SemanticShadowHierarchy: Story = {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
-        <Card variant="subtle" className="w-full">
+        <Card variant="ghost" className="w-full">
           <CardHeader>
             <CardTitle className="text-body-lg">Ghost → Whisper</CardTitle>
             <CardDescription>
@@ -91,7 +91,7 @@ export const SemanticShadowHierarchy: Story = {
           </CardContent>
         </Card>
 
-        <Card variant="default" className="w-full">
+        <Card variant="outline" className="w-full">
           <CardHeader>
             <CardTitle className="text-body-lg">Present → Elevated</CardTitle>
             <CardDescription>
@@ -99,14 +99,14 @@ export const SemanticShadowHierarchy: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Badge variant="default" className="mb-xs">Default</Badge>
+            <Badge variant="outline" className="mb-xs">Default</Badge>
             <p className="text-body-sm">
               The foundation for most content cards with established presence.
             </p>
           </CardContent>
         </Card>
 
-        <Card variant="premium" className="w-full">
+        <Card variant="default" className="w-full">
           <CardHeader>
             <CardTitle className="text-body-lg">Prominent → Commanding</CardTitle>
             <CardDescription>
@@ -114,14 +114,14 @@ export const SemanticShadowHierarchy: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Badge variant="premium" className="mb-xs">Premium</Badge>
+            <Badge variant="default" className="mb-xs">Premium</Badge>
             <p className="text-body-sm">
               Enhanced cards with tactical copper accents and strategic depth.
             </p>
           </CardContent>
         </Card>
 
-        <Card variant="fire" className="w-full">
+        <Card variant="destructive" className="w-full">
           <CardHeader>
             <CardTitle className="text-body-lg">Commanding → Hero</CardTitle>
             <CardDescription>
@@ -129,7 +129,7 @@ export const SemanticShadowHierarchy: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Badge variant="elite" className="mb-xs">Fire</Badge>
+            <Badge variant="default" className="mb-xs">Fire</Badge>
             <p className="text-body-sm">
               Hero-level presence with tactical gradient animations.
             </p>
@@ -216,10 +216,10 @@ export const FireVariants: Story = {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
-        <Card variant="fire" className="w-full">
+        <Card variant="destructive" className="w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-xs">
-              <Target className="w-4 h-4" />
+              <CursorArrowRaysIcon className="w-4 h-4" />
               Fire Orange
             </CardTitle>
             <CardDescription>
@@ -227,17 +227,17 @@ export const FireVariants: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Badge variant="premium" className="mb-xs">Premium</Badge>
+            <Badge variant="default" className="mb-xs">Premium</Badge>
             <p >
               Copper to brass gradient animation
             </p>
           </CardContent>
         </Card>
 
-        <Card variant="fire-blue" className="w-full">
+        <Card variant="default" className="w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-xs">
-              <Shield className="w-4 h-4" />
+              <ShieldCheckIcon className="w-4 h-4" />
               Fire Blue
             </CardTitle>
             <CardDescription>
@@ -245,7 +245,7 @@ export const FireVariants: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Badge variant="info" className="mb-xs">Tactical</Badge>
+            <Badge variant="secondary" className="mb-xs">Tactical</Badge>
             <p >
               Blue to green gradient animation
             </p>
@@ -255,7 +255,7 @@ export const FireVariants: Story = {
         <Card variant="fire-red" className="w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-xs">
-              <Zap className="w-4 h-4" />
+              <BoltIcon className="w-4 h-4" />
               Fire Purple
             </CardTitle>
             <CardDescription>
@@ -263,17 +263,17 @@ export const FireVariants: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Badge variant="elite" className="mb-xs">Elite</Badge>
+            <Badge variant="default" className="mb-xs">Elite</Badge>
             <p >
               Purple to cobalt gradient animation
             </p>
           </CardContent>
         </Card>
 
-        <Card variant="fire-green" className="w-full">
+        <Card variant="secondary" className="w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-xs">
-              <Award className="w-4 h-4" />
+              <TrophyIcon className="w-4 h-4" />
               Fire Green
             </CardTitle>
             <CardDescription>
@@ -281,7 +281,7 @@ export const FireVariants: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Badge variant="success" className="mb-xs">Achievement</Badge>
+            <Badge variant="secondary" className="mb-xs">Achievement</Badge>
             <p >
               Green variants gradient animation
             </p>
@@ -306,10 +306,10 @@ export const AdvancedVariants: Story = {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
-        <Card variant="premium" className="w-full">
+        <Card variant="default" className="w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-xs">
-              <Star className="w-4 h-4" />
+              <StarIcon className="w-4 h-4" />
               Premium Card
             </CardTitle>
             <CardDescription>
@@ -318,7 +318,7 @@ export const AdvancedVariants: Story = {
           </CardHeader>
           <CardContent>
             <div className="space-y-xs">
-              <Badge variant="premium" shimmer>Premium Member</Badge>
+              <Badge variant="default" shimmer>Premium Member</Badge>
               <p >
                 Features subtle brand gradient overlay and bottom accent bar.
               </p>
@@ -329,10 +329,10 @@ export const AdvancedVariants: Story = {
           </CardFooter>
         </Card>
 
-        <Card variant="glass" className="w-full">
+        <Card variant="secondary" className="w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-xs">
-              <Zap className="w-4 h-4" />
+              <BoltIcon className="w-4 h-4" />
               Glass Card
             </CardTitle>
             <CardDescription>
@@ -341,7 +341,7 @@ export const AdvancedVariants: Story = {
           </CardHeader>
           <CardContent>
             <div className="space-y-xs">
-              <Badge variant="glass">Mica Effect</Badge>
+              <Badge variant="secondary">Mica Effect</Badge>
               <p >
                 Windows 11-inspired mica glass with backdrop blur.
               </p>
@@ -355,7 +355,7 @@ export const AdvancedVariants: Story = {
         <Card variant="elevated" className="w-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-xs">
-              <CheckCircle className="w-4 h-4" />
+              <CheckCircleIcon className="w-4 h-4" />
               Elevated Card
             </CardTitle>
             <CardDescription>
@@ -364,7 +364,7 @@ export const AdvancedVariants: Story = {
           </CardHeader>
           <CardContent>
             <div className="space-y-xs">
-              <Badge variant="success">Available</Badge>
+              <Badge variant="secondary">Available</Badge>
               <p >
                 Lifts up on hover for prominent interactive feedback.
               </p>
@@ -393,7 +393,7 @@ export const TBGCBusinessCards: Story = {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-        <Card variant="fire" className="w-full">
+        <Card variant="destructive" className="w-full">
           <CardHeader>
             <CardTitle>Boise Firearms Depot</CardTitle>
             <CardDescription>
@@ -403,8 +403,8 @@ export const TBGCBusinessCards: Story = {
           <CardContent>
             <div className="space-y-sm">
               <div className="flex flex-wrap gap-xs">
-                <Badge variant="premium" shimmer>Gold Member</Badge>
-                <Badge variant="success" icon={<CheckCircle className="w-3 h-3" />}>Verified</Badge>
+                <Badge variant="default" shimmer>Gold Member</Badge>
+                <Badge variant="secondary" icon={<CheckCircleIcon className="w-3 h-3" />}>Verified</Badge>
               </div>
               <p >
                 Specializing in tactical gear, custom builds, and professional gunsmithing services.
@@ -421,7 +421,7 @@ export const TBGCBusinessCards: Story = {
           </CardFooter>
         </Card>
 
-        <Card variant="fire-blue" className="w-full">
+        <Card variant="default" className="w-full">
           <CardHeader>
             <CardTitle>Eagle Eye Range</CardTitle>
             <CardDescription>
@@ -431,8 +431,8 @@ export const TBGCBusinessCards: Story = {
           <CardContent>
             <div className="space-y-sm">
               <div className="flex flex-wrap gap-xs">
-                <Badge variant="info" icon={<Shield className="w-3 h-3" />}>Silver Member</Badge>
-                <Badge variant="success">Open Today</Badge>
+                <Badge variant="secondary" icon={<ShieldCheckIcon className="w-3 h-3" />}>Silver Member</Badge>
+                <Badge variant="secondary">Open Today</Badge>
               </div>
               <p >
                 25-lane climate-controlled range with tactical training courses.
@@ -449,7 +449,7 @@ export const TBGCBusinessCards: Story = {
           </CardFooter>
         </Card>
 
-        <Card variant="default" className="w-full">
+        <Card variant="outline" className="w-full">
           <CardHeader>
             <CardTitle>Twin Falls Tactical</CardTitle>
             <CardDescription>
@@ -460,7 +460,7 @@ export const TBGCBusinessCards: Story = {
             <div className="space-y-sm">
               <div className="flex flex-wrap gap-xs">
                 <Badge variant="outline">Free Listing</Badge>
-                <Badge variant="warning" icon={<Clock className="w-3 h-3" />}>Updating Hours</Badge>
+                <Badge variant="destructive" icon={<ClockIcon className="w-3 h-3" />}>Updating Hours</Badge>
               </div>
               <p >
                 Professional tactical training and equipment for law enforcement.

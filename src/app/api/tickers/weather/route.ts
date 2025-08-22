@@ -1,3 +1,4 @@
+import { WeatherIcon } from '@heroicons/react/24/outline'
 import { NextRequest, NextResponse } from 'next/server'
 import { shootingLocations } from '@/lib/intel-locations-data'
 
@@ -99,7 +100,6 @@ async function fetchNWSWeatherData(location: any) {
     }
     
   } catch (error) {
-    console.error(`NWS API error for ${location.name}:`, error)
     
     // DO NOT return fake data - return null to indicate failure
     return null
@@ -116,7 +116,6 @@ export async function GET(request: NextRequest) {
       .filter(location => location.lat && location.lng && (location.weatherPriority === 'high' || !location.weatherPriority))
       .slice(0, limit)
     
-    console.log(`Fetching NWS weather data for ${priorityLocations.length} locations...`)
     
     // Fetch live weather data from NWS API for each location
     const weatherResults = await Promise.all(
@@ -141,7 +140,6 @@ export async function GET(request: NextRequest) {
     })
     
   } catch (error) {
-    console.error('Weather ticker API error:', error)
     return NextResponse.json(
       { 
         success: false, 

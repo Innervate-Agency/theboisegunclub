@@ -1,3 +1,5 @@
+import { UserIcon } from '@heroicons/react/24/outline';
+
 /**
  * Authentication utilities for Boise Gun Club
  * Handles JWT tokens, user sessions, and forum integration
@@ -76,7 +78,7 @@ export const authAPI = {
   },
 
   // Get current user from token
-  async getCurrentUser(token: string): Promise<User | null> {
+  async getCurrentUser(token: string): Promise<UserIcon | null> {
     try {
       // In real implementation, verify JWT token
       const decoded = decodeMockJWT(token)

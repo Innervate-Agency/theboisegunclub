@@ -1,5 +1,5 @@
 import * as React from "react"
-import { ArrowRight, Plus, Minus, X, Circle, ChevronUp, ChevronDown, ChevronLeft, ChevronRight, Play, Pause, Eye, EyeOff, Check } from "lucide-react"
+import { ArrowRightIcon, CheckIcon, ChevronDownIcon, ChevronIcon, ChevronLeftIcon, ChevronRightIcon, ChevronUpIcon, EllipsisHorizontalIcon, EyeIcon, EyeSlashIcon, MinusIcon, PauseIcon, PlayIcon, PlusIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { cn } from "@/lib/utils"
 
 export interface AnimationProps {
@@ -12,7 +12,7 @@ export interface AnimationProps {
 // Stripe-style arrow for navigation/actions
 export function HoverArrow({ className, isActive = false }: AnimationProps) {
   return (
-    <ArrowRight 
+    <ArrowRightIcon 
       className={cn(
         "size-4 transition-transform duration-300",
         isActive && "translate-x-1",
@@ -26,13 +26,13 @@ export function HoverArrow({ className, isActive = false }: AnimationProps) {
 export function PlusMinusToggle({ className, isActive = false }: AnimationProps) {
   return (
     <div className={cn("relative size-4", className)}>
-      <Plus 
+      <PlusIcon 
         className={cn(
           "absolute inset-0 size-4 transition-all duration-300",
           isActive ? "rotate-45 opacity-0" : "rotate-0 opacity-100"
         )} 
       />
-      <Minus 
+      <MinusIcon 
         className={cn(
           "absolute inset-0 size-4 transition-all duration-300",
           isActive ? "rotate-0 opacity-100" : "rotate-45 opacity-0"
@@ -46,13 +46,13 @@ export function PlusMinusToggle({ className, isActive = false }: AnimationProps)
 export function XOToggle({ className, isActive = false }: AnimationProps) {
   return (
     <div className={cn("relative size-4", className)}>
-      <X 
+      <XMarkIcon 
         className={cn(
           "absolute inset-0 size-4 transition-all duration-300",
           isActive ? "rotate-0 opacity-100" : "rotate-90 opacity-0"
         )} 
       />
-      <Circle 
+      <EllipsisHorizontalIcon 
         className={cn(
           "absolute inset-0 size-4 transition-all duration-300",
           isActive ? "scale-75 opacity-0" : "scale-100 opacity-100"
@@ -88,13 +88,13 @@ export function ChevronRotate({ className, isActive = false, direction = 'up' }:
 export function ArrowToDoubleArrow({ className, isActive = false }: AnimationProps) {
   return (
     <div className={cn("relative size-4", className)}>
-      <ArrowRight 
+      <ArrowRightIcon 
         className={cn(
           "absolute inset-0 size-4 transition-all duration-300",
           isActive ? "translate-x-1 opacity-60" : "translate-x-0 opacity-100"
         )} 
       />
-      <ArrowRight 
+      <ArrowRightIcon 
         className={cn(
           "absolute inset-0 size-4 transition-all duration-300",
           isActive ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
@@ -108,13 +108,13 @@ export function ArrowToDoubleArrow({ className, isActive = false }: AnimationPro
 export function ZeroToX({ className, isActive = false }: AnimationProps) {
   return (
     <div className={cn("relative size-4", className)}>
-      <Circle 
+      <EllipsisHorizontalIcon 
         className={cn(
           "absolute inset-0 size-4 transition-all duration-300",
           isActive ? "rotate-90 opacity-0 scale-75" : "rotate-0 opacity-100 scale-100"
         )} 
       />
-      <X 
+      <XMarkIcon 
         className={cn(
           "absolute inset-0 size-4 transition-all duration-300",
           isActive ? "rotate-0 opacity-100 scale-100" : "rotate-90 opacity-0 scale-75"
@@ -128,13 +128,13 @@ export function ZeroToX({ className, isActive = false }: AnimationProps) {
 export function PlayPauseToggle({ className, isActive = false }: AnimationProps) {
   return (
     <div className={cn("relative size-4", className)}>
-      <Play 
+      <PlayIcon 
         className={cn(
           "absolute inset-0 size-4 fill-current transition-all duration-300",
           isActive ? "opacity-0 scale-75" : "opacity-100 scale-100"
         )} 
       />
-      <Pause 
+      <PauseIcon 
         className={cn(
           "absolute inset-0 size-4 fill-current transition-all duration-300",
           isActive ? "opacity-100 scale-100" : "opacity-0 scale-75"
@@ -148,13 +148,13 @@ export function PlayPauseToggle({ className, isActive = false }: AnimationProps)
 export function EyeToggle({ className, isActive = false }: AnimationProps) {
   return (
     <div className={cn("relative size-4", className)}>
-      <Eye 
+      <EyeIcon 
         className={cn(
           "absolute inset-0 size-4 transition-all duration-300",
           isActive ? "opacity-100 scale-100" : "opacity-0 scale-75"
         )} 
       />
-      <EyeOff 
+      <EyeSlashIcon 
         className={cn(
           "absolute inset-0 size-4 transition-all duration-300",
           isActive ? "opacity-0 scale-75" : "opacity-100 scale-100"
@@ -173,7 +173,7 @@ export function CheckTransition({ className, isActive = false }: AnimationProps)
         isActive ? "opacity-100 scale-100" : "opacity-0 scale-75"
       )}>
         <div className="size-4 rounded-sm bg-sagebrush-green flex items-center justify-center">
-          <Check className="size-3 text-white" strokeWidth={3} />
+          <CheckIcon className="size-3 text-white" strokeWidth={3} />
         </div>
       </div>
       <div className={cn(

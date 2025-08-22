@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from './card'
 import { Badge } from './badge'
-import { Shield, Lightning, Users, MapTrifold } from '@phosphor-icons/react'
+import { MapIcon, ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 interface PlatformValueCardProps {
   icon: React.ComponentType<{ className?: string; weight?: string }>

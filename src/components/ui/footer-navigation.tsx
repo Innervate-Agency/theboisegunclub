@@ -2,14 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import {
-  TicketIcon as Ticket,
-  MapPinIcon as Directory,
-  ShieldCheckIcon as Shield,
-  MapIcon as Map,
-  BuildingStorefrontIcon as Storefront,
-  ChatBubbleBottomCenterTextIcon as Users
-} from '@heroicons/react/24/outline'
+import { BuildingStorefrontIcon, ChatBubbleBottomCenterTextIcon, MapIcon, MapPinIcon, ShieldCheckIcon, TicketIcon } from '@heroicons/react/24/outline';
 
 interface FooterNavigationProps {
   className?: string

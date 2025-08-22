@@ -208,7 +208,6 @@ export class DatabaseService {
     const duration = Date.now() - start
     
     if (process.env.NODE_ENV === 'development') {
-      console.log('Database query:', { text, duration, rows: res.rowCount })
     }
     
     return res
@@ -495,7 +494,6 @@ export async function withDatabase<T>(
   try {
     return await callback(db)
   } catch (error) {
-    console.error('Database operation failed:', error)
     throw error
   }
 }
@@ -506,7 +504,6 @@ export async function checkDatabaseHealth(): Promise<boolean> {
     await db.query('SELECT 1')
     return true
   } catch (error) {
-    console.error('Database health check failed:', error)
     return false
   }
 }

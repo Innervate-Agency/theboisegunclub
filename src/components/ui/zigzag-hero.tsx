@@ -221,9 +221,7 @@ export function ZigzagHero({
                 className={cn("flex flex-wrap gap-sm", isRightLayout ? "justify-end" : "justify-start")}
               >
                 {primaryAction && (
-                  <Button 
-                    size="lg" 
-                    variant="default"
+                  <Button variant="outline"
                     className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90 font-semibold px-lg py-base text-heading-lg shadow-commanding"
                     onClick={primaryAction.onClick}
                   >
@@ -231,9 +229,7 @@ export function ZigzagHero({
                   </Button>
                 )}
                 {secondaryAction && (
-                  <Button 
-                    size="lg" 
-                    variant="outline"
+                  <Button variant="outline"
                     className="border-border/50 text-foreground hover:bg-accent/10 font-semibold px-lg py-base text-heading-lg"
                     onClick={secondaryAction.onClick}
                   >

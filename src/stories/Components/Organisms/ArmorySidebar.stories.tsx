@@ -9,17 +9,7 @@ import { ArmorySidebar } from '@/components/ui/armory-sidebar'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { 
-  TrendingUp, 
-  Users, 
-  Target, 
-  MapPin,
-  Shield,
-  Building2,
-  BookOpen,
-  Scale,
-  Star
-} from 'lucide-react'
+import { ArrowTrendingUpIcon, BookOpenIcon, CursorArrowRaysIcon, MapPinIcon, ShieldCheckIcon, StarIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof ArmorySidebar> = {
   title: 'Design System/Organisms/ArmorySidebar',
@@ -46,14 +36,14 @@ const ArmoryContent = () => (
       <Card className="bg-gradient-to-br from-slate-blue/5 to-slate-blue/10">
         <CardHeader className="pb-2">
           <CardTitle className="flex items-center gap-2 text-slate-blue">
-            <TrendingUp className="size-5" />
+            <ArrowTrendingUpIcon className="size-5" />
             Gun Ownership Rate
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="text-3xl font-bold font-rajdhani text-slate-blue">60.1%</div>
           <p className="text-sm text-muted-foreground">4th highest nationally</p>
-          <Badge variant="success" size="sm" className="mt-2">
+          <Badge variant="secondary" size="sm" className="mt-2">
             Treasure Valley
           </Badge>
         </CardContent>
@@ -62,14 +52,14 @@ const ArmoryContent = () => (
       <Card className="bg-gradient-to-br from-sagebrush-green/5 to-sagebrush-green/10">
         <CardHeader className="pb-2">
           <CardTitle className="flex items-center gap-2 text-sagebrush-green">
-            <Users className="size-5" />
+            <UsersIcon className="size-5" />
             Firearm Owners
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="text-3xl font-bold font-rajdhani text-sagebrush-green">540K+</div>
           <p className="text-sm text-muted-foreground">~900K total population</p>
-          <Badge variant="success" size="sm" className="mt-2">
+          <Badge variant="secondary" size="sm" className="mt-2">
             Local Estimate
           </Badge>
         </CardContent>
@@ -78,14 +68,14 @@ const ArmoryContent = () => (
       <Card className="bg-gradient-to-br from-rusty-orange/5 to-rusty-orange/10">
         <CardHeader className="pb-2">
           <CardTitle className="flex items-center gap-2 text-rusty-orange">
-            <Target className="size-5" />
+            <CursorArrowRaysIcon className="size-5" />
             Licensed Dealers
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="text-3xl font-bold font-rajdhani text-rusty-orange">127</div>
           <p className="text-sm text-muted-foreground">FFLs & retailers</p>
-          <Badge variant="info" size="sm" className="mt-2">
+          <Badge variant="secondary" size="sm" className="mt-2">
             Verified
           </Badge>
         </CardContent>
@@ -94,14 +84,14 @@ const ArmoryContent = () => (
       <Card className="bg-gradient-to-br from-foothills-purple/5 to-foothills-purple/10">
         <CardHeader className="pb-2">
           <CardTitle className="flex items-center gap-2 text-foothills-purple">
-            <Shield className="size-5" />
+            <ShieldCheckIcon className="size-5" />
             Database Entries
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="text-3xl font-bold font-rajdhani text-foothills-purple">12K+</div>
           <p className="text-sm text-muted-foreground">Community verified</p>
-          <Badge variant="premium" size="sm" className="mt-2">
+          <Badge variant="default" size="sm" className="mt-2">
             Growing Daily
           </Badge>
         </CardContent>
@@ -115,10 +105,10 @@ const ArmoryContent = () => (
         <CardHeader>
           <div className="flex items-center justify-between">
             <CardTitle className="flex items-center gap-2">
-              <MapPin className="size-5 text-slate-blue" />
+              <MapPinIcon className="size-5 text-slate-blue" />
               Treasure Valley Spotlight
             </CardTitle>
-            <Badge variant="info">Local</Badge>
+            <Badge variant="secondary">Local</Badge>
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -149,7 +139,7 @@ const ArmoryContent = () => (
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Building2 className="size-5 text-foothills-purple" />
+            <BuildingOffice2Icon className="size-5 text-foothills-purple" />
             Featured Manufacturer
           </CardTitle>
         </CardHeader>
@@ -157,7 +147,7 @@ const ArmoryContent = () => (
           <div className="flex items-center gap-2">
             <div className="text-2xl font-bold font-rajdhani">Glock</div>
             <div className="flex items-center gap-1">
-              <Star className="size-4 fill-rusty-orange text-rusty-orange" />
+              <StarIcon className="size-4 fill-rusty-orange text-rusty-orange" />
               <span className="text-sm font-medium">4.7</span>
             </div>
           </div>
@@ -204,7 +194,7 @@ const ArmoryContent = () => (
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <BookOpen className="size-5 text-sagebrush-green" />
+            <BookOpenIcon className="size-5 text-sagebrush-green" />
             Latest Guides
           </CardTitle>
         </CardHeader>
@@ -241,7 +231,7 @@ const ArmoryDemo = ({ defaultOpen = true }) => (
           <SidebarTrigger className="-ml-xs" />
           <div className="mx-2 h-4 w-px bg-border" />
           <div className="flex items-center gap-xs text-body-sm">
-            <Shield className="size-4 text-foothills-purple" />
+            <ShieldCheckIcon className="size-4 text-foothills-purple" />
             <span className="font-semibold">The Armory</span>
             <span className="text-muted-foreground">|</span>
             <span className="text-muted-foreground">Firearms Information Hub</span>
@@ -272,16 +262,16 @@ export const TreasureValleyFocus: Story = {
             <SidebarTrigger className="-ml-xs" />
             <div className="mx-2 h-4 w-px bg-border" />
             <div className="flex items-center gap-xs text-body-sm">
-              <MapPin className="size-4 text-slate-blue" />
+              <MapPinIcon className="size-4 text-slate-blue" />
               <span className="font-semibold">Treasure Valley Hub</span>
-              <Badge variant="info" size="sm">60.1% Ownership</Badge>
+              <Badge variant="secondary" size="sm">60.1% Ownership</Badge>
             </div>
           </header>
           <div className="flex flex-1 flex-col gap-base p-base">
             <Card className="bg-gradient-to-br from-slate-blue/5 via-transparent to-sagebrush-green/5">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <TrendingUp className="size-5 text-slate-blue" />
+                  <ArrowTrendingUpIcon className="size-5 text-slate-blue" />
                   Treasure Valley Firearms Demographics
                 </CardTitle>
               </CardHeader>
@@ -290,19 +280,19 @@ export const TreasureValleyFocus: Story = {
                   <div className="space-y-2">
                     <div className="text-2xl font-bold font-rajdhani text-slate-blue">60.1%</div>
                     <div className="text-sm text-muted-foreground">Household gun ownership rate</div>
-                    <Badge variant="success" size="sm">4th highest nationally</Badge>
+                    <Badge variant="secondary" size="sm">4th highest nationally</Badge>
                   </div>
                   <div className="space-y-2">
                     <div className="text-2xl font-bold font-rajdhani text-sagebrush-green">540,000+</div>
                     <div className="text-sm text-muted-foreground">Estimated firearm owners</div>
-                    <Badge variant="info" size="sm">40% of Idaho population</Badge>
+                    <Badge variant="secondary" size="sm">40% of Idaho population</Badge>
                   </div>
                 </div>
               </CardContent>
             </Card>
             <div className="min-h-[60vh] rounded-xs bg-muted/20 flex items-center justify-center">
               <div className="text-center text-muted-foreground">
-                <Shield className="size-12 mx-auto mb-4 text-foothills-purple" />
+                <ShieldCheckIcon className="size-12 mx-auto mb-4 text-foothills-purple" />
                 <h3 className="font-semibold mb-2">Local Content Coming Soon</h3>
                 <p className="text-sm">Interactive maps, dealer listings, and community resources</p>
               </div>

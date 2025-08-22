@@ -14,16 +14,7 @@ import {
 import { cn } from '@/lib/utils'
 import { TrustIndicators } from './trust-indicators'
 import { DirectoryStatsGrid } from './directory-stats-grid'
-import {
-  MagnifyingGlassIcon as MagnifyingGlassIcon,
-  FunnelIcon as FunnelIcon,
-  QuestionMarkCheckCheckCircleIconIcon as Grid,
-  ListBulletIconBulletIcon,
-  Squares2X2Icon as CardView,
-  Squares2X2Icon as DenseView,
-  ArrowUpIcon as SortAsc,
-  ChevronDownIconIcon as ChevronDownIcon
-} from "@heroicons/react/24/outline"
+import { ArrowUpIcon, ArrowUpIcon as SortAsc, ChevronDownIcon, ChevronDownIconIcon, ChevronDownIconIcon as ChevronDownIcon, FunnelIcon, FunnelIcon as FunnelIcon, ListBulletIcon, ListBulletIconBulletIcon, MagnifyingGlassIcon, MagnifyingGlassIcon as MagnifyingGlassIcon, QuestionMarkCheckCheckCircleIconIcon, QuestionMarkCheckCheckCircleIconIcon as Grid, RectangleGroupIcon, Squares2X2Icon as CardView, Squares2X2Icon as DenseView } from '@heroicons/react/24/outline'
 
 export interface QuickTab {
   id: string
@@ -196,7 +187,7 @@ export function UnifiedPageTemplate({
                 })}
                 {tab.label}
                 {tab.count && (
-                  <Badge variant="secondary" size="sm" className="ml-xs">
+                  <Badge variant="outline" size="sm" className="ml-xs">
                     {tab.count}
                   </Badge>
                 )}
@@ -245,7 +236,7 @@ export function UnifiedPageTemplate({
                                   <span>{filter.label}</span>
                                 </div>
                                 {filter.count && (
-                                  <Badge variant="secondary" size="sm">
+                                  <Badge variant="outline" size="sm">
                                     {filter.count}
                                   </Badge>
                                 )}
@@ -283,7 +274,7 @@ export function UnifiedPageTemplate({
                           className="rounded-none border-none shadow-none"
                           title="Dense Grid - Maximum items"
                         >
-                          <DenseView  className="size-4" />
+                          <ListBulletIcon  className="size-4" />
                         </Button>
                         <Button
                           variant={viewMode === 'grid' ? 'default' : 'ghost'}
@@ -292,7 +283,7 @@ export function UnifiedPageTemplate({
                           className="rounded-none border-none shadow-none"
                           title="Standard Grid"
                         >
-                          <Grid  className="size-4" />
+                          <Squares2X2Icon  className="size-4" />
                         </Button>
                         <Button
                           variant={viewMode === 'card' ? 'default' : 'ghost'}
@@ -301,7 +292,7 @@ export function UnifiedPageTemplate({
                           className="rounded-none border-none shadow-none"
                           title="Large Cards"
                         >
-                          <CardView  className="size-4" />
+                          <RectangleGroupIcon  className="size-4" />
                         </Button>
                         <Button
                           variant={viewMode === 'list' ? 'default' : 'ghost'}

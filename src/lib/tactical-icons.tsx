@@ -4,6 +4,7 @@
  * Integrates with existing Heroicons system while providing authentic firearm-specific iconography
  */
 
+import { AirsoftIcon, ArcheryIcon, ClubIcon, CopperMemberIcon, GoldPartnerIcon, GunsmithIcon, PaintballIcon, PistolSportsIcon, RifleSportsIcon, ShootingRangeIcon, ShotgunSportsIcon, SilverMemberIcon, StandardMemberIcon, TacticalIcon, TacticalRetailIcon, TacticalServicesIcon, TrainingIcon } from '@heroicons/react/24/outline'
 import React from 'react';
 
 // Base icon props interface matching Heroicons pattern

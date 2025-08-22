@@ -8,17 +8,7 @@ import { TacticalTypography } from './tactical-typography'
 import { Button } from './button'
 import { Badge } from './badge'
 import { MotionDiv } from './optimized-motion'
-import { 
-  ArrowRight, 
-  Calendar, 
-  MapPin, 
-  Users, 
-  Trophy,
-  Target,
-  Shield,
-  Storefront,
-  AddressBook
-} from '@phosphor-icons/react'
+import { ArrowRightIcon, BookOpenIcon, BuildingStorefrontIcon, CalendarDaysIcon, MapPinIcon, ShieldCheckIcon, ThemeIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const tacticalHeroVariants = cva(
   "relative w-full overflow-hidden",
@@ -173,7 +163,7 @@ export function TacticalHero({
               {breadcrumbs.map((crumb, index) => (
                 <li key={index} className="flex items-center gap-xs">
                   {index > 0 && (
-                    <ArrowRight className="size-3 text-white/60" weight="bold" />
+                    <ArrowRightIcon className="size-3 text-white/60" weight="bold" />
                   )}
                   {crumb.href ? (
                     <a href={crumb.href} className="text-white/80 hover:text-white transition-colors">
@@ -258,9 +248,7 @@ export function TacticalHero({
                 layout === "centered" ? "justify-center" : "justify-start"
               )}>
                 {primaryCTA && (
-                  <Button
-                    size="lg"
-                    className={`bg-${themeColor} text-white hover:bg-${themeColor}/90 font-rajdhani font-bold`}
+                  <Button className={`bg-${themeColor} text-white hover:bg-${themeColor}/90 font-rajdhani font-bold`}
                     onClick={primaryCTA.onClick}
                     animationType="arrow"
                   >
@@ -274,9 +262,7 @@ export function TacticalHero({
                 
                 {secondaryCTA && (
                   <Button
-                    variant={secondaryCTA.variant || "outline"}
-                    size="lg"
-                    className="border-white/30 text-white hover:bg-card/10 font-rajdhani font-medium"
+                    variant={secondaryCTA.variant || "outline"} className="border-white/30 text-white hover:bg-card/10 font-rajdhani font-medium"
                     onClick={secondaryCTA.onClick}
                   >
                     {secondaryCTA.label}

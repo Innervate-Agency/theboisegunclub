@@ -14,16 +14,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from './sidebar'
-import {
-  Target,
-  Building2,
-  MapPin,
-  Filter,
-  Award,
-  Plus,
-  Shield,
-  Zap
-} from 'lucide-react'
+import { CursorArrowRaysIcon, MapPinIcon, PlusIcon, ShieldCheckIcon, TrophyIcon } from '@heroicons/react/24/outline';
 
 interface DirectorySidebarProps {
   selectedType: string
@@ -33,7 +24,7 @@ interface DirectorySidebarProps {
   businessTypeFilters: Array<{
     id: string
     label: string
-    icon: any
+    icon: React.ComponentType<{ className?: string }>
     count?: number
   }>
   tierFilters: Array<{
@@ -58,7 +49,7 @@ export function DirectorySidebar({
       <SidebarHeader className="border-b px-sm py-xs">
         <div className="flex items-center space-x-3">
           <div className="flex size-8 items-center justify-center rounded-xs bg-nav-directory">
-            <Building2 className="size-4 text-primary-foreground" />
+            <BuildingOffice2Icon className="size-4 text-primary-foreground" />
           </div>
           <div className="group-data-[collapsible=icon]:hidden">
             <h2 className="text-body-sm font-semibold font-rajdhani">Directory Filters</h2>
@@ -121,7 +112,7 @@ export function DirectorySidebar({
                   onClick={() => onTierChange(filter.id)}
                   tooltip={filter.label}
                 >
-                  <Award className="mr-xs size-4" />
+                  <TrophyIcon className="mr-xs size-4" />
                   <span className="group-data-[collapsible=icon]:hidden">{filter.label}</span>
                   {filter.count && (
                     <Badge 
@@ -145,7 +136,7 @@ export function DirectorySidebar({
           <div className="px-micro group-data-[collapsible=icon]:hidden">
             <div className="space-y-base p-sm bg-nav-directory/5 rounded-xs border border-nav-directory/20">
               <div className="space-y-xs text-center">
-                <Target className="size-6 text-nav-directory mx-auto" />
+                <CursorArrowRaysIcon className="size-6 text-nav-directory mx-auto" />
                 <h4 className="font-rajdhani font-bold text-body-sm text-card-foreground">
                   List Your Business
                 </h4>
@@ -154,7 +145,7 @@ export function DirectorySidebar({
                 </p>
               </div>
               <Button size="sm" className="w-full shadow-none">
-                <Plus className="size-3 mr-xs" />
+                <PlusIcon className="size-3 mr-xs" />
                 Get Listed
               </Button>
             </div>
@@ -167,7 +158,7 @@ export function DirectorySidebar({
           <div className="flex items-center justify-between">
             <span>{totalBusinesses}+ businesses</span>
             <Badge variant="outline" size="sm">
-              <Shield className="size-2 mr-micro" />
+              <ShieldCheckIcon className="size-2 mr-micro" />
               Verified
             </Badge>
           </div>

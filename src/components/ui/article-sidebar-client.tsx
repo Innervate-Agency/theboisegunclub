@@ -4,10 +4,7 @@ import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { 
-  Clock, Eye, Calendar, BookOpen, ShareNetwork, Bookmark, Heart, 
-  DotsThree, User
-} from '@phosphor-icons/react'
+import { BookOpenIcon, CalendarDaysIcon, ClockIcon, EyeIcon, HeartIcon, UserIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image'
 
 interface ArticleSidebarClientProps {
@@ -75,21 +72,21 @@ export function ArticleSidebarClient({
       <Card className="mica border-border/50">
         <CardHeader className="pb-sm">
           <div className="flex items-center gap-xs">
-            <BookOpen className="h-4 w-4 text-muted-foreground" />
+            <BookOpenIcon className="h-4 w-4 text-muted-foreground" />
             <span className="text-sm font-medium text-muted-foreground">Article Info</span>
           </div>
         </CardHeader>
         <CardContent className="space-y-sm">
           <div className="flex items-center gap-xs text-sm">
-            <Clock className="h-4 w-4 text-muted-foreground" />
+            <ClockIcon className="h-4 w-4 text-muted-foreground" />
             <span>{readTime} min read</span>
           </div>
           <div className="flex items-center gap-xs text-sm">
-            <Eye className="h-4 w-4 text-muted-foreground" />
+            <EyeIcon className="h-4 w-4 text-muted-foreground" />
             <span>{views.toLocaleString()} views</span>
           </div>
           <div className="flex items-center gap-xs text-sm">
-            <Calendar className="h-4 w-4 text-muted-foreground" />
+            <CalendarDaysIcon className="h-4 w-4 text-muted-foreground" />
             <span>{publishDate}</span>
           </div>
         </CardContent>
@@ -109,7 +106,7 @@ export function ArticleSidebarClient({
               />
             ) : (
               <div className="w-10 h-10 bg-muted rounded-full flex items-center justify-center">
-                <User className="h-5 w-5 text-muted-foreground" />
+                <UserIcon className="h-5 w-5 text-muted-foreground" />
               </div>
             )}
             <div>
@@ -153,7 +150,7 @@ export function ArticleSidebarClient({
               className="justify-start gap-xs"
               onClick={handleLike}
             >
-              <Heart className={`h-4 w-4 ${isLiked ? 'fill-current text-destructive' : ''}`} />
+              <HeartIcon className={`h-4 w-4 ${isLiked ? 'fill-current text-destructive' : ''}`} />
               Like ({currentLikes})
             </Button>
           </div>

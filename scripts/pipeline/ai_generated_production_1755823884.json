@@ -1,0 +1,142 @@
+[
+  {
+    "id": "serper_gun store_Boise_10",
+    "name": "Rifle Guru",
+    "address": "5282 W White Hills Dr, Boise, ID 83714",
+    "city": "Boise",
+    "phone": "(208) 460-9600",
+    "website": "https://rifleguru.net/",
+    "rating": 5,
+    "category": "Gun shop",
+    "search_term": "gun store",
+    "discovered_at": "2025-08-21T16:50:24.009586",
+    "scraped_content": {
+      "page_title": "Gun Shops in Boise, Idaho | Firearms & Long-Range Training",
+      "meta_description": "Find premier gun shops in Boise, Idaho at Rifle Guru. Explore our selection of quality firearms & enroll in our long-range shooting school!",
+      "main_text": "Gun Shops in Boise, Idaho | Firearms & Long-Range Training Seekins Precision ELEMENT HUNTER and PH3 in 6.5 PRC, 7 PRC and 300 PRC in stock 208-460-9600 5282 West White Hills Drive, Boise, Idaho 83714 LOAD DEVELOPMENT CUSTOM AMMUNITION CLICK HERE TO VIEW OUR SERVICE RIFLES, SCOPES AMMUNITION ACCESSORIES CLICK HERE TO VISIT OUR ONLINE STORE Rifle Guru is your local Boise gun shop. We are NOT a big-box store and specialize in personalized customer service. Conveniently located just 10 minutes north of Eagle, Idaho, on Hwy 55, we are open Monday through Saturday, 10 AM to 6 PM, after hours by appointment. Or visit our online store 24 hours a day for a large selection of custom rifles, scopes, ammunition, and accessories. LONG RANGE RIFLES ALLTERRA ARMS RIFLES GUNWERKS RIFLE SYSTEMS HORIZON FIREARMS TENACITY FIREARMS SNOWY MOUNTAIN RIFLES FIERCE FIREARMS RIFLES SEEKINS PRECISION RIFLES CUSTOM RIFLE BUILDS PRE-OWNED FIREARMS VIEW ALL OUR PRODUCTS ABOUT US MY PASSION FOR PRECISION Welcome to Rifle Guru Long Range Shooting, a patriotic and proud 2A company. I am a native Idahoan, Army veteran, and former police officer. I take pride in helping people with their rifle and shooting needs. We specialize in long-range rifles, load development, custom ammunition, and offer professional rifle setup and shooting training. READ MORE ABOUT ME Call 24/7 for Appointment 208-460-9600 Open Monday through Saturday, 10 AM to 6 PM, after hours by appointment. Visit our online store 24 hours a day for rifles, scopes, ammunition, shooting accessories, and reloading supplies. We also offer professional installation on all the products we carry. 208-460-9600 PRECISION SHOOTING SERVICES BARREL BREAKIN-RIFLE ZERO New rifle barrels require proper break-in. They often have burrs, imperfections, sharp edges, and high spots left from the manufacturing process. Read More VELOCITY VALIDATION You may find printed drop data on boxes of factory-loaded ammunition or published on the internet, but it may not match Read More FACTORY LOAD COMPARISION Quality ammunition is expensive, especially Match Ammunition. Generally speaking, you choose ammunition based on Read More CUSTOM LOAD DEVELOPMENT Using only high quality brass, select components and our 10 step brass prep process, you will not find more precise Read More CUSTOM AMMUNITION Achieve the most Precision from your rifle, with Custom Load Development regardless of whether you have a custom Read More RELOADING CLASSES Instruction is customized to each your skill level and specific goals. Classes are for the new to advanced level reloader Read More SHOOTING SCHOOL Join us at our PRECISION HUNTER I and LONG RANGE HUNTER II shooting school. Read More Testimonial Our Blog Latest News 23 May Long Range Shooting School By Admin Reload Smarter, Shoot Straighter: The Importance of Brass Prep and Bullet Seating Read More 23 May Long Range Shooting School By Admin Which Features Make the Gunwerks Nexus a Top Choice for Precision Shooting? Read More 23 May Long Range Shooting School By Admin Why is the GUNWERKS Elevate 2.0 Bipod a must-have for Long Range Precision Shooters? Read More Please verify your age to enter this site. By entering this website you are agreeing to our items of use and privacy policy. Are you over 18 years of age? NO YES Remember me",
+      "contact_info": {
+        "phones": [
+          "2084609600"
+        ]
+      },
+      "services": [
+        "firearms",
+        "shooting",
+        "training",
+        "gunsmith",
+        "ammunition",
+        "hunting",
+        "accessories"
+      ],
+      "business_description": "We are NOT a big-box store and specialize in personalized customer service. Conveniently located just 10 minutes north of Eagle, Idaho, on Hwy 55, we are open Monday through Saturday, 10 AM to 6 PM, after hours by appointment. Or visit our online store 24 hours a day for a large selection of custom rifles, scopes, ammunition, and accessories. Welcome to Rifle Guru Long Range Shooting, a patriotic and proud 2A company. I am a native Idahoan, Army veteran, and former police officer. I take pride in helping people with their rifle and shooting needs. We specialize in long-range rifles, load development, custom ammunition, and offer professional rifle setup and shooting training. 208-460-9600",
+      "hours": "by appointment. or visit our online store 24 hours a day for a large selection of custom rifles, scopes, ammunition, and accessories.",
+      "content_length": 4756
+    },
+    "scraping_success": true,
+    "scraped_at": "2025-08-21T17:15:00.773751",
+    "ai_content": {
+      "description": "Rifle Guru is your trusted destination for all things firearms and outdoor sports in Idaho's Treasure Valley. Conveniently located just 10 minutes north of Eagle, on Hwy 55, we specialize in personalized customer service that sets us apart from big-box stores. Our owner, a native Idahoan and former Army veteran turned police officer, brings a unique blend of expertise to our gunsmithing services and hunting advice.\n\nAt Rifle Guru Long Range Shooting, you'll find a wide selection of custom rifles, scopes, ammunition, and accessories tailored to meet your specific needs. Whether you're a seasoned hunter or an avid shooter looking to improve your skills, our staff will work closely with you to ensure the right fit for your next adventure. We pride ourselves on being a locally-owned business deeply rooted in the Idaho community, committed to upholding 2A values and promoting responsible firearms ownership.\n\nWith hours by appointment Monday through Saturday from 10 AM to 6 PM (or visit our online store 24/7), we make it easy to explore our inventory and receive expert advice on everything from hunting season prep to long-range shooting techniques. Trust Rifle Guru for exceptional service, knowledge, and products that embody the authentic spirit of Idaho's outdoor enthusiasts.",
+      "word_count": 203,
+      "char_count": 1291,
+      "validation": {
+        "is_valid": true,
+        "issues": [],
+        "score": 80,
+        "word_count": 203
+      },
+      "generated_at": "2025-08-21T18:51:06.322231"
+    },
+    "ai_generation_success": true
+  },
+  {
+    "id": "serper_shooting range_Boise_1",
+    "name": "Independence Indoor Shooting",
+    "address": "2749 E Gala Ct, Meridian, ID 83642",
+    "city": "Boise",
+    "phone": "(208) 576-4867",
+    "website": "http://www.iishooting.com/",
+    "rating": 4.8,
+    "category": "Shooting range",
+    "search_term": "shooting range",
+    "discovered_at": "2025-08-21T16:50:27.765869",
+    "scraped_content": {
+      "page_title": "Independence Indoor Shooting | Indoor Shooting Range | 2749 East Gala Court, Meridian, ID, USA",
+      "meta_description": "Independence Indoor Shooting is your home for freedom, firearms, and fun! Shooting indoors at Independence is an unforgettable experience for the entire family. Choose from three indoor ranges, one at 100 yards. Shop at the best firearms proshop in the valley, learn from experienced professionals in our academy, and get your custom work done with our gunsmiths.   ",
+      "main_text": "Independence Indoor Shooting | Indoor Shooting Range | 2749 East Gala Court, Meridian, ID, USA top of pageMENU @ONLINE PROSHOP CALENDAR IDAHO'S PREMIER INDOOR SHOOTING RANGE RANGE WAIVER MEMBERSHIP FIRST TIME SHOP ONLINEThe Most Fun You'll Have Indoors Independence Indoor Shooting is your home for freedom, firearms, and fun! Shooting indoors at Independence is an unforgettable experience for the entire family. Choose from three indoor ranges, one at 100 yards. Shop at the best firearms proshop in the valley, learn from experienced professionals in our academy, and get your custom work done with our gunsmiths. WelcomeTHE FULL AUTO EXPERIENCE AT INDEPENDENCE Feel the rush of every BANG! FIREARMS TRAINING EVERYTHING AT INDEPENDENCE GUNSMITHINGINDOOR RANGES LASER ENGRAVING100 YD RANGE VR SHOOTINGPRO SHOPMACHINE GUNSSAFESNFA SALES RENTAL GUNSMEMBERSHIPSCERAKOTEEXPERT HELP CONCEALED HANDGUN PERMIT COMPETITIONSTRANSFERSAMMUNITIONEVENTS Going to a gun store or an indoor shooting range can be intimidating. Independence is not like other shops. We are here to help everyone have a positive and fun experience. We have services and the expertise to help the first time customer or keep up with shooting experts. Come have a blast with us on the range. FOR EVERYONEbottom of page",
+      "contact_info": {},
+      "services": [
+        "firearms",
+        "shooting",
+        "training",
+        "gunsmith",
+        "ammunition"
+      ],
+      "business_description": "Independence Indoor Shooting is your home for freedom, firearms, and fun! Shooting indoors at Independence is an unforgettable experience for the entire family. Choose from three indoor ranges, one at 100 yards. Shop at the best firearms proshop in the valley, learn from experienced professionals in our academy, and get your custom work done with our gunsmiths. THE FULL AUTO EXPERIENCE AT INDEPENDENCE Going to a gun store or an indoor shooting range can be intimidating. Independence is not like other shops. We are here to help everyone have a positive and fun experience. We have services and the expertise to help the first time customer or keep up with shooting experts. Come have a blast with us on the range.",
+      "hours": "",
+      "content_length": 1573
+    },
+    "scraping_success": true,
+    "scraped_at": "2025-08-21T17:15:04.674642",
+    "ai_content": {
+      "description": "In the heart of Meridian, Idaho, Independence Indoor Shooting offers an unparalleled experience for firearms enthusiasts and families alike. As you step into our state-of-the-art facility, you'll discover three indoor ranges catering to various needs, including one impressive 100-yard range that's sure to test your skills. Our pro shop boasts an extensive selection of ammunition, optics, and accessories from top brands.\n\nBeyond just shooting facilities, Independence is also home to a renowned academy where experienced professionals guide newcomers through gun safety and handling courses. For those seeking custom work, our skilled gunsmiths are equipped with cutting-edge tools to precision-craft or modify your firearm to meet your specific requirements. Whether you're a seasoned hunter or a newcomer to the world of firearms, we're committed to providing expert advice in a welcoming environment.\n\nLocated on East Gala Court in Meridian, Idaho, Independence Indoor Shooting embodies the spirit of community involvement and responsible firearms ownership. By focusing on exceptional service, industry knowledge, and accessibility, we strive to make every visit an enjoyable experience for both new and returning customers. As you explore our website and facilities, discover why Independence is the go-to destination for shooting enthusiasts across the Treasure Valley region.",
+      "word_count": 198,
+      "char_count": 1385,
+      "validation": {
+        "is_valid": true,
+        "issues": [],
+        "score": 80,
+        "word_count": 198
+      },
+      "generated_at": "2025-08-21T18:51:15.147567"
+    },
+    "ai_generation_success": true
+  },
+  {
+    "id": "serper_shooting range_Boise_3",
+    "name": "Black's Creek Public Shooting Range",
+    "address": "2420 E Kuna Mora Rd, Kuna, ID 83634",
+    "city": "Boise",
+    "phone": "(208) 342-9614",
+    "website": "https://idfg.idaho.gov/bcr",
+    "rating": 4.5,
+    "category": "Shooting range",
+    "search_term": "shooting range",
+    "discovered_at": "2025-08-21T16:50:27.765922",
+    "scraped_content": {
+      "page_title": "Black's Creek Public Shooting Range | Idaho Fish and Game",
+      "meta_description": "All the latest news from Black's Creek Public Shooting Range (BCR)",
+      "main_text": "Black's Creek Public Shooting Range | Idaho Fish and Game Skip to main content Search Idaho Fish and Game Black's Creek Public Shooting Range Black's Creek Public Shooting Range (BCR), located just southeast of Boise, is the largest and most visited shooting range in Idaho, providing a safe place to shoot for more than 14,000 hunters and sport shooters each year. BCR is one of four Idaho shooting ranges owned by the Idaho Department of Fish and Game. The non-profit shooting club, the EE-DA-HOW Long Rifle & Pistol Club is responsible for day to day operation of BCR. HoursBCR may close due to inclement weather and road conditions. Check the Facebook page @Black's Creek Public Shooting Range for up to date range information.PLEASE NOTE:Black's Creek Upcoming Range Closures (Summer 2025)Friday, June 13 and Sunday, June 15, 2025: 500M range closed for Idaho State BPCR Silhouette ChampionshipsAside from the above closure dates, the 500M range is open Fridays and Sundays, and the main range is open for summer hours June 1 - Oct 31 Thursday through Sunday from 8am - 6pm. November 1 - May 31Main Range: 10 a.m. to 5 p.m., Friday through Sunday500M Range: 10 a.m. to 5 p.m. on Fridays and SundaysLast admission time is one hour prior to scheduled closing.June 1 - October 31Main Range: 8 a.m. to 6 p.m., Thursday through Sunday500M Range: 8 a.m. to 6 p.m. on Fridays and SundaysLast admission time is one hour prior to scheduled closing.*Note: Black’s Creek will be closed to the public on Easter Sunday, Thanksgiving Day, Christmas Eve, Christmas Day, New Years Eve, and New Years Day.Our Monthly Calendar is up to date on our Facebook page:Follow us on Facebook - @BlacksCreekRangeFEE SCHEDULE Things to know:With 36 shooting benches, the main range accommodates shooting distances from 5 to 200 yards.There are no restrictions on the number of firearms a person may use on the range during a shooting session; however, only one firearm is permitted at the shooting bench at a time.Approved firearms include air rifle, centerfire, rimfire and black powder rifles and pistols.Ammunition restrictions: Armor piercing, incendiary, tracer, steel core and steel/bi-metal jacket ammunition are prohibited.Exploding targets not permitted.BCR does not provide gun rentals.Both the range and the on-site restrooms are accessible to physically-challenged shooters.See a map of the 500m Range Distances and Targets Events and AlertsSee the events list for specialized shooting opportunities.Please contact the range for any unlisted range closures. Listen to the recorded message at 208-342-9614 or call the Fish and Game Nampa office at 208-465-8465. Skip the line! Print out and sign the rules and liability form ahead of time and present it when you check in. Resource Blacks Creek Range Rules and Liability Form - 2025 – Full other, 1-3 Page(s) [PDF, 0.18 MB] Download Document Black's Creek Public Shooting Range2420 E. Kuna-Mora RoadKuna, ID 83634 Hunting Hunting in Idaho Seasons and Rules Big Game Seasons and Rules Moose, Bighorn Sheep and Mountain Goat Migratory Birds Upland Game, Furbearer and Turkey Big Game Hunting Harvest Statistics Drawing Odds Controlled Hunt Drawing Results State of Deer and Elk Monitoring For Chronic Wasting Disease Super Hunt Program Mandatory Hunter Report Bear Identification and Test Requirement Migratory Hunting Duck Hunting Swan Hunting Goose Hunting Upland Bird Hunting Pheasant Hunting Sage-grouse Hunting Wild Turkey Hunting Upland Game Hunting Trapping Hunter Education Access and Maps Access Yes! Fire Info in Idaho Motorized Vehicles and Hunting Shooting Preserves Game Species Information Weapons Equipment for Muzzleloader-ONLY Hunts Harvest Quotas River Otter Public Shooting Ranges Hunt Planner Fishing Fishing in Idaho Seasons and Rules Wild Salmon and Steelhead Report Tagged Fish Chinook Fishing Chinook Seasons and Rules Chinook Harvest Report Dam Counts What is a Chinook? Hatchery Returns Steelhead Fishing Steelhead Seasons and Rules Harvest Report Dam Counts What is a Steelhead? Hatchery Returns Coho Fishing Coho Seasons and Rules Fisheries Management Plans and Programs Lake Pend Oreille Fisheries Priest River Fisheries South Fork Snake River Fishery Hatcheries Fish Stocking Fish Tournaments Family Fishing Waters Ice Fishing Learn to Fish Fishing Etiquette Family Fishing Waters Take Me Fishing Trailer Angler Guide Alpine Lake Fishing Record Fish Apply for a Record Fish in Idaho Record Catch-and-Release Fish Record Certified Weight Fish Applications and Forms Tournaments Private Ponds Fishing Planner Licenses Licenses, Tags, and Permits Buying Options Online Fish and Game Offices Resident License Fees Tag Fees Permit Fees Residency Requirements Lifetime Licenses / Certificates General Season (OTC) Tag Information Resident Capped Elk Zones Nonresident License Fees Tag Fees Permit Fees General Season Deer and Elk Tags General Season (OTC) Tag Information Hound Hunter Information and Application Controlled Hunt Information Drawing Odds Drawing Results Application Information Harvest Statistics Unclaimed / Leftover Controlled Hunt Tags Special Items Hunting Passport 3-Year Licenses Second Tags Salmon/Steelhead E-tagging Disabled Veterans Programs Disabled / Special Needs Forms Disabled Hunter Companion Rules Active Military Options Returned Sold-Out Tags Applications / Forms Wildlife Wildlife Management Areas Wildlife Management Plans Wildlife Conservation and Management Wildlife Diversity Program Windows to Wildlife Newsletter State Wildlife Action Plan Idaho Birding Trail Grizzly Bear Sage-grouse Wild Turkey Wolf Predator Management Wolf Management Recovery-Reintroduction Landowner Habitat Enhancement Program Big Game Damage Prevention Wildlife Health Chronic Wasting Disease Winter Feeding Policy Statement Advisory Committees How Feeding Works Challenges with Feeding Private Feeding Accessible Idaho Highway Wildlife Collisions Report Roadkill and Salvage Engineering for Fish and Wildlife Education Educational Sites and Resources Hunter Education Volunteer Hunter Education Instructor Trapper and Wolf Trapper Education Wildlife Express Newsletter for Kids Waterlife Discovery Center MK Nature Center Lewiston Wildlife Habitat Area Science Idaho Fish and Wildlife Information System Maps and Data Report Roadkill / Wildlife Salvage Science and Research Wildlife Observations Technical Reports Natural Heritage Program Technical Reports Enforcement Wildlife Law Enforcement Citizens Against Poaching How to Be A Good Witness Become a Conservation Officer About About Fish and Game Directory Employment Media - News and Publications Fish and Game Commission Commission Members Commission Meeting Schedule Rulemaking Offices / Regions Panhandle Region Clearwater Region Magic Valley Region Southeast Region Southwest Region/McCall Subregion Upper Snake Region Salmon Region Open Meeting Notices Public Comment Opportunities Advisory Groups, Working Groups, and Committees Volunteer Master Naturalists Applications and Forms Agency Guidance Documents History / Funding / Direction Annual Direction Documents Performance Measurement Reports Strategic Plan",
+      "contact_info": {
+        "phones": [
+          "2083429614",
+          "2084658465"
+        ]
+      },
+      "services": [
+        "firearms",
+        "shooting",
+        "ammunition",
+        "hunting",
+        "pawn"
+      ],
+      "business_description": "BCR is one of four Idaho shooting ranges owned by the Idaho Department of Fish and Game. The non-profit shooting club, the EE-DA-HOW Long Rifle & Pistol Club is responsible for day to day operation of BCR. Hours BCR may close due to inclement weather and road conditions. Check the Facebook page @Black's Creek Public Shooting Range for up to date range information.",
+      "hours": "bcr may close due to inclement weather and road conditions. check the facebook page @black's creek public shooting range for up to date range information.please note:black's creek upcoming range closu",
+      "content_length": 7860
+    },
+    "scraping_success": true,
+    "scraped_at": "2025-08-21T17:15:11.035354",
+    "ai_content": {
+      "description": "In the heart of Kuna, just off Highway 69, lies Black's Creek Public Shooting Range - one of four esteemed ranges owned by the Idaho Department of Fish and Game. This non-profit gem is operated in partnership with the EE-DA-HOW Long Rifle & Pistol Club, ensuring top-notch facilities for firearms enthusiasts.\n\nBCR offers an expansive outdoor shooting complex where folks can hone their marksmanship skills, regardless of experience level. With a focus on safety and accessibility, this range caters to hunting aficionados and recreational shooters alike, providing ample opportunities for practice and training. From gun storage services to ammunition sales, BCR has got you covered - making it your go-to destination for all things firearms and hunting in Idaho's Treasure Valley region.\n\nWhether you're preparing for deer season or simply looking to improve your aim, Black's Creek Public Shooting Range is the perfect spot to \"draw tags\" with confidence. As one of the most trusted public ranges in the Gem State, BCR prides itself on its commitment to community engagement and outdoor education, ensuring that each visit is both enjoyable and informative.",
+      "word_count": 182,
+      "char_count": 1160,
+      "validation": {
+        "is_valid": true,
+        "issues": [],
+        "score": 80,
+        "word_count": 182
+      },
+      "generated_at": "2025-08-21T18:51:24.355933"
+    },
+    "ai_generation_success": true
+  }
+]

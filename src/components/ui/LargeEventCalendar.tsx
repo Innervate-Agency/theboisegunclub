@@ -5,10 +5,7 @@ import { Calendar } from '@/components/ui/calendar'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { 
-  ChevronLeft, ChevronRight, Calendar as CalendarIcon, 
-  MapPin, Clock, Users, Trophy, Target, Eye, Heart, Zap
-} from 'lucide-react'
+import { CalendarDaysIcon, ChevronLeftIcon, ChevronRightIcon, ClockIcon, MapPinIcon, UsersIcon } from '@heroicons/react/24/outline';
 import { cn } from '@/lib/utils'
 
 interface CalendarEvent {
@@ -101,7 +98,7 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
                   size="xl"
                   onClick={() => setCurrentMonth(new Date(currentMonth.setMonth(currentMonth.getMonth() - 1)))}
                 >
-                  <ChevronLeft className="size-6" />
+                  <ChevronLeftIcon className="size-6" />
                 </Button>
                 <Button
                   variant="outline"
@@ -116,14 +113,14 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
                   size="xl"
                   onClick={() => setCurrentMonth(new Date(currentMonth.setMonth(currentMonth.getMonth() + 1)))}
                 >
-                  <ChevronRight className="size-6" />
+                  <ChevronRightIcon className="size-6" />
                 </Button>
               </div>
             </div>
 
             {/* Massive Calendar */}
             <div className="bg-card rounded-xs p-tinyxl shadow-present">
-              <Calendar
+              <CalendarDaysIcon
                 mode="single"
                 selected={selectedDate}
                 onSelect={setSelectedDate}
@@ -250,16 +247,16 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
 
                           <div className="space-y-xs">
                             <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                              <Clock className="size-4" />
+                              <ClockIcon className="size-4" />
                               <span>{event.time.split(' - ')[0]}</span>
                             </div>
                             <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                              <MapPin className="size-4" />
+                              <MapPinIcon className="size-4" />
                               <span>{event.location.split(',')[0]}</span>
                             </div>
                             {event.capacity && event.registeredCount && (
                               <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                                <Users className="size-4" />
+                                <UsersIcon className="size-4" />
                                 <span>{event.registeredCount}/{event.capacity}</span>
                               </div>
                             )}
@@ -284,7 +281,7 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
             {/* No Events Selected State */}
             {selectedDate && selectedDateEvents.length === 0 && (
               <div className="text-center py-3xl">
-                <CalendarIcon className="h-16 w-16 text-muted-foreground/50 mx-auto mb-lg" />
+                <CalendarDaysIcon className="h-16 w-16 text-muted-foreground/50 mx-auto mb-lg" />
                 <h3 className="font-rajdhani text-heading-xl font-bold text-card-foreground mb-base">
                   No Events Scheduled
                 </h3>

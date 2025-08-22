@@ -1,0 +1,116 @@
+[
+  {
+    "slug": "al-s-sporting-goods",
+    "businessName": "Al's Sporting Goods",
+    "city": "Boise",
+    "businessType": "Sporting Goods",
+    "website": "",
+    "discovered_website": "https://impactguns.com",
+    "discovered_phone": "800-917-7137",
+    "discovered_email": "support@impactguns8091.zendesk.com",
+    "enhanced_description": "We’re the original online gun dealer. Find thousands of guns for sale at low prices. Buy your guns, ammo, and gun accessories with confidence at Impact Guns.",
+    "discovered_services": [
+      "Concealed carry",
+      "Training",
+      "Classes",
+      "Cerakote",
+      "Mounting",
+      "Sales"
+    ],
+    "discovery_status": "enhanced",
+    "discovery_errors": []
+  },
+  {
+    "slug": "20-20-sporting-services",
+    "businessName": "20/20 Sporting Services",
+    "city": "Boise",
+    "businessType": "Sporting Goods",
+    "website": "",
+    "discovered_website": "https://impactguns.com",
+    "discovered_phone": "800-917-7137",
+    "discovered_email": "support@impactguns8091.zendesk.com",
+    "enhanced_description": "We’re the original online gun dealer. Find thousands of guns for sale at low prices. Buy your guns, ammo, and gun accessories with confidence at Impact Guns.",
+    "discovered_services": [
+      "Concealed carry",
+      "Training",
+      "Classes",
+      "Cerakote",
+      "Mounting",
+      "Sales"
+    ],
+    "discovery_status": "enhanced",
+    "discovery_errors": []
+  },
+  {
+    "slug": "rifle-guru",
+    "businessName": "Rifle Guru",
+    "city": "Boise",
+    "businessType": "Gunsmith",
+    "website": "",
+    "discovered_website": "https://www.sportsmanswarehouse.com",
+    "discovered_phone": null,
+    "discovered_email": null,
+    "enhanced_description": "Rifle Guru is a Gunsmith serving Boise, Idaho and the surrounding area.",
+    "discovered_services": [],
+    "discovery_status": "enhanced",
+    "discovery_errors": []
+  },
+  {
+    "slug": "ada-armaments",
+    "businessName": "Ada Armaments",
+    "city": "Boise",
+    "businessType": "Gun Manufacturer",
+    "website": "",
+    "discovered_website": "https://www.sportsmanswarehouse.com",
+    "discovered_phone": null,
+    "discovered_email": null,
+    "enhanced_description": "Ada Armaments is a Gun Manufacturer serving Boise, Idaho and the surrounding area.",
+    "discovered_services": [],
+    "discovery_status": "enhanced",
+    "discovery_errors": []
+  },
+  {
+    "slug": "american-reserve-munitions-llc",
+    "businessName": "American Reserve Munitions LLC",
+    "city": "Boise",
+    "businessType": "Gun Manufacturer",
+    "website": "",
+    "discovered_website": "https://www.sportsmanswarehouse.com",
+    "discovered_phone": null,
+    "discovered_email": null,
+    "enhanced_description": "American Reserve Munitions LLC is a Gun Manufacturer serving Boise, Idaho and the surrounding area.",
+    "discovered_services": [
+      "Ccw"
+    ],
+    "discovery_status": "enhanced",
+    "discovery_errors": []
+  },
+  {
+    "slug": "high-born-tactical",
+    "businessName": "High Born Tactical",
+    "city": "Boise",
+    "businessType": "Tactical/Training",
+    "website": "",
+    "discovered_website": null,
+    "discovered_phone": null,
+    "discovered_email": null,
+    "enhanced_description": null,
+    "discovered_services": [],
+    "discovery_status": "no_data",
+    "discovery_errors": []
+  },
+  {
+    "slug": "automatic-weapons-company",
+    "businessName": "Automatic Weapons Company",
+    "city": "Boise",
+    "businessType": "Gun Manufacturer",
+    "website": "",
+    "discovered_website": "https://www.sportsmanswarehouse.com",
+    "discovered_phone": null,
+    "discovered_email": null,
+    "enhanced_description": "Automatic Weapons Company is a Gun Manufacturer serving Boise, Idaho and the surrounding area.",
+    "discovered_services": [],
+    "discovery_status": "enhanced",
+    "discovery_errors": []
+  }
+]

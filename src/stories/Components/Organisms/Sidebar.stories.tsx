@@ -26,21 +26,7 @@ import {
 } from '@/components/ui/sidebar'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import {
-  Home,
-  Inbox,
-  Calendar,
-  Search,
-  Settings,
-  User2,
-  MoreHorizontal,
-  Plus,
-  ChevronRight,
-  Target,
-  Shield,
-  Users,
-  MapPin
-} from 'lucide-react'
+import { CalendarDaysIcon, ChevronRightIcon, Cog6ToothIcon, CursorArrowRaysIcon, EllipsisHorizontalIcon, HomeIcon, MagnifyingGlassIcon, MapPinIcon, PlusIcon, ShieldCheckIcon, ToothIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof Sidebar> = {
   title: 'Design System/Organisms/Sidebar',
@@ -64,7 +50,7 @@ const AppSidebar = () => (
     <SidebarHeader>
       <div className="flex items-center gap-xs px-xs py-xs">
         <div className="flex aspect-square size-8 items-center justify-center rounded-sm bg-rusty-orange text-white">
-          <Target className="size-4" />
+          <CursorArrowRaysIcon className="size-4" />
         </div>
         <div className="grid flex-1 text-left text-body-sm leading-tight">
           <span className="truncate font-semibold">Boise Gun Club</span>
@@ -79,24 +65,24 @@ const AppSidebar = () => (
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton tooltip="Dashboard">
-              <Home />
+              <HomeIcon />
               <span>Dashboard</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton tooltip="Directory">
-              <MapPin />
+              <MapPinIcon />
               <span>Directory</span>
               <SidebarMenuBadge>24</SidebarMenuBadge>
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton tooltip="Communities">
-              <Users />
+              <UsersIcon />
               <span>Communities</span>
             </SidebarMenuButton>
             <SidebarMenuAction showOnHover>
-              <Plus />
+              <PlusIcon />
               <span className="sr-only">Add Community</span>
             </SidebarMenuAction>
           </SidebarMenuItem>
@@ -107,16 +93,16 @@ const AppSidebar = () => (
         <SidebarGroupLabel>
           Ranges & Clubs
           <SidebarGroupAction title="Add Range">
-            <Plus />
+            <PlusIcon />
             <span className="sr-only">Add Range</span>
           </SidebarGroupAction>
         </SidebarGroupLabel>
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton>
-              <Shield />
+              <ShieldCheckIcon />
               <span>Meridian Gun Club</span>
-              <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+              <ChevronRightIcon className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
             </SidebarMenuButton>
             <SidebarMenuSub>
               <SidebarMenuSubItem>
@@ -138,7 +124,7 @@ const AppSidebar = () => (
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton>
-              <Target />
+              <CursorArrowRaysIcon />
               <span>Capital City Guns</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -162,7 +148,7 @@ const AppSidebar = () => (
             <span>Account</span>
           </SidebarMenuButton>
           <SidebarMenuAction showOnHover>
-            <MoreHorizontal />
+            <EllipsisHorizontalIcon />
             <span className="sr-only">More</span>
           </SidebarMenuAction>
         </SidebarMenuItem>
@@ -214,7 +200,7 @@ export const FloatingVariant: Story = {
           <SidebarHeader>
             <div className="flex items-center gap-xs px-xs py-xs">
               <div className="flex aspect-square size-8 items-center justify-center rounded-sm bg-sandy-ochre text-dark-chocolate">
-                <Target className="size-4" />
+                <CursorArrowRaysIcon className="size-4" />
               </div>
               <span className="font-semibold">Floating Sidebar</span>
             </div>
@@ -224,19 +210,19 @@ export const FloatingVariant: Story = {
               <SidebarMenu>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
-                    <Home />
+                    <HomeIcon />
                     <span>Home</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
-                    <Search />
+                    <MagnifyingGlassIcon />
                     <span>Search</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
-                    <Settings />
+                    <Cog6ToothIcon />
                     <span>Settings</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -265,7 +251,7 @@ export const InsetVariant: Story = {
           <SidebarHeader>
             <div className="flex items-center gap-xs px-xs py-xs">
               <div className="flex aspect-square size-8 items-center justify-center rounded-sm bg-rusty-orange text-white">
-                <Shield className="size-4" />
+                <ShieldCheckIcon className="size-4" />
               </div>
               <span className="font-semibold">Inset Sidebar</span>
             </div>
@@ -283,7 +269,7 @@ export const InsetVariant: Story = {
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
-                    <Calendar />
+                    <CalendarDaysIcon />
                     <span>Events</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

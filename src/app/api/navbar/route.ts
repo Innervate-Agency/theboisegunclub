@@ -390,7 +390,6 @@ function getJSResponse() {
               mainContent.style.marginTop = '4rem';
             }
           })
-          .catch(error => console.warn('Failed to load Boise Gun Club navbar:', error));
       }
       
       // Initialize when DOM is ready

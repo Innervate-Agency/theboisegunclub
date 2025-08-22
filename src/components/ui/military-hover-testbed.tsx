@@ -5,15 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { MotionDiv, MotionPath, MotionSVG } from '@/components/ui/optimized-motion'
-import { 
-  Envelope, 
-  Package,
-  Medal,
-  Target,
-  Settings,
-  Play,
-  Pause
-} from '@phosphor-icons/react'
+import { Cog6ToothIcon, CursorArrowRaysIcon, PauseIcon, PlayIcon, ToothIcon } from '@heroicons/react/24/outline';
 
 interface TestCardProps {
   title: string
@@ -43,7 +35,7 @@ function TestCard({ title, description, children, isActive = false, onToggle }: 
             className="font-rajdhani font-bold"
             animationType="arrow"
           >
-            {isActive ? <Pause className="h-4 w-4" weight="bold" /> : <Play className="h-4 w-4" weight="bold" />}
+            {isActive ? <PauseIcon className="h-4 w-4" weight="bold" /> : <PlayIcon className="h-4 w-4" weight="bold" />}
             {isActive ? 'Reset' : 'Test'}
           </Button>
         </div>
@@ -239,7 +231,7 @@ function MilitaryBadgeHover() {
           transition={{ duration: 0.6, ease: "easeInOut" }}
           style={{ transformStyle: "preserve-3d" }}
         >
-          <Target className="h-8 w-8 text-crisp-off-white" weight="bold" />
+          <CursorArrowRaysIcon className="h-8 w-8 text-crisp-off-white" weight="bold" />
         </MotionDiv>
         
         {/* Ribbon Reveal */}
@@ -388,8 +380,8 @@ export function MilitaryHoverTestBed() {
       <div className="max-w-7xl mx-auto px-lg">
         {/* Header */}
         <div className="text-center space-y-lg mb-2xl">
-          <Badge variant="rusty-orange" size="lg" className="font-rajdhani font-bold">
-            <Settings className="size-4 mr-xs" weight="bold" />
+          <Badge variant="rusty-orange" className="font-rajdhani font-bold">
+            <Cog6ToothIcon className="size-4 mr-xs" weight="bold" />
             Navigation Concept Lab
           </Badge>
           <h2 className="font-rajdhani font-bold text-4xl text-card-foreground">

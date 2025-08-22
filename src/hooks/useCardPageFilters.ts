@@ -10,6 +10,8 @@ export interface FilterState {
   viewMode: ViewMode
   sortBy: string
   currentPage: number
+  itemsPerPage: number
+  isLoading: boolean
 }
 
 export interface UseCardPageFiltersProps<T> {
@@ -17,13 +19,19 @@ export interface UseCardPageFiltersProps<T> {
   initialTab?: string
   initialSortBy?: string
   initialViewMode?: ViewMode
-  itemsPerPage?: number
+  initialItemsPerPage?: number
+  perPageOptions?: number[]
+  enableInfiniteScroll?: boolean
   
   // Filter functions
   searchFilter: (item: T, query: string) => boolean
   tabFilter: (item: T, activeTab: string) => boolean
   customFilters: Record<string, (item: T, selectedValues: string[]) => boolean>
   sortFunctions: Record<string, (a: T, b: T) => number>
+  
+  // Advanced features
+  onLoadMore?: () => Promise<void>
+  enableVirtualScrolling?: boolean
 }
 
 export function useCardPageFilters<T>({
@@ -31,11 +39,15 @@ export function useCardPageFilters<T>({
   initialTab = 'all',
   initialSortBy = 'default',
   initialViewMode = 'grid',
-  itemsPerPage = 12,
+  initialItemsPerPage = 12,
+  perPageOptions = [12, 24, 48, 96],
+  enableInfiniteScroll = false,
   searchFilter,
   tabFilter,
   customFilters,
-  sortFunctions
+  sortFunctions,
+  onLoadMore,
+  enableVirtualScrolling = false
 }: UseCardPageFiltersProps<T>) {
   
   const [filterState, setFilterState] = useState<FilterState>({
@@ -44,7 +56,9 @@ export function useCardPageFilters<T>({
     selectedFilters: {},
     viewMode: initialViewMode,
     sortBy: initialSortBy,
-    currentPage: 1
+    currentPage: 1,
+    itemsPerPage: initialItemsPerPage,
+    isLoading: false
   })
 
   // Update search query
@@ -107,6 +121,33 @@ export function useCardPageFilters<T>({
     setFilterState(prev => ({ ...prev, currentPage: page }))
   }, [])
 
+  // Update items per page
+  const setItemsPerPage = useCallback((count: number) => {
+    setFilterState(prev => ({ 
+      ...prev, 
+      itemsPerPage: count,
+      currentPage: 1 // Reset to first page when changing page size
+    }))
+  }, [])
+
+  // Set loading state
+  const setIsLoading = useCallback((loading: boolean) => {
+    setFilterState(prev => ({ ...prev, isLoading: loading }))
+  }, [])
+
+  // Load more for infinite scroll
+  const loadMore = useCallback(async () => {
+    if (!onLoadMore || filterState.isLoading) return
+    
+    setIsLoading(true)
+    try {
+      await onLoadMore()
+    } catch (error) {
+    } finally {
+      setIsLoading(false)
+    }
+  }, [onLoadMore, filterState.isLoading])
+
   // Clear filters for a specific category
   const clearFilterSection = useCallback((category: string) => {
     setFilterState(prev => ({
@@ -161,12 +202,20 @@ export function useCardPageFilters<T>({
 
   // Paginated items
   const paginatedItems = useMemo(() => {
-    const startIndex = (filterState.currentPage - 1) * itemsPerPage
-    return filteredItems.slice(startIndex, startIndex + itemsPerPage)
-  }, [filteredItems, filterState.currentPage, itemsPerPage])
+    if (enableInfiniteScroll) {
+      // For infinite scroll, return all items up to current page
+      const itemCount = filterState.currentPage * filterState.itemsPerPage
+      return filteredItems.slice(0, itemCount)
+    } else {
+      // Standard pagination
+      const startIndex = (filterState.currentPage - 1) * filterState.itemsPerPage
+      return filteredItems.slice(startIndex, startIndex + filterState.itemsPerPage)
+    }
+  }, [filteredItems, filterState.currentPage, filterState.itemsPerPage, enableInfiniteScroll])
 
   // Pagination info
-  const totalPages = Math.ceil(filteredItems.length / itemsPerPage)
+  const totalPages = Math.ceil(filteredItems.length / filterState.itemsPerPage)
+  const hasMoreItems = enableInfiniteScroll && paginatedItems.length < filteredItems.length
 
   // Grid class name based on view mode
   const getGridClassName = useCallback(() => {
@@ -177,6 +226,14 @@ export function useCardPageFilters<T>({
         return "grid-dense-md" // Dense grid for maximum content visibility  
       case 'card':
         return "grid-auto-fill-350" // Large cards with enhanced content
+      case 'compact':
+        return "grid-compact" // 4-6 items per row, minimal spacing
+      case 'masonry':
+        return "grid-masonry" // CSS masonry with columns
+      case 'magazine':
+        return "grid-magazine" // Mixed sizes like Pinterest/Behance
+      case 'table':
+        return "grid-table" // Horizontal detailed list
       case 'list':
         return "flex flex-col gap-base" // Single column list view
       default:
@@ -192,6 +249,8 @@ export function useCardPageFilters<T>({
     viewMode: filterState.viewMode,
     sortBy: filterState.sortBy,
     currentPage: filterState.currentPage,
+    itemsPerPage: filterState.itemsPerPage,
+    isLoading: filterState.isLoading,
     
     // Actions
     setSearchQuery,
@@ -200,6 +259,9 @@ export function useCardPageFilters<T>({
     setViewMode,
     setSortBy,
     setCurrentPage,
+    setItemsPerPage,
+    setIsLoading,
+    loadMore,
     clearFilterSection,
     clearAllFilters,
     
@@ -209,6 +271,12 @@ export function useCardPageFilters<T>({
     totalPages,
     totalResults: items.length,
     filteredResults: filteredItems.length,
+    hasMoreItems,
+    
+    // Configuration
+    perPageOptions,
+    enableInfiniteScroll,
+    enableVirtualScrolling,
     
     // Utilities
     getGridClassName

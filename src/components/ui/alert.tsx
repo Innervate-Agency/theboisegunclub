@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
-import { X } from "@phosphor-icons/react"
+import { XMarkIcon } from "@heroicons/react/24/outline"
 
 import { cn } from "@/lib/utils"
 
@@ -67,7 +67,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
             onClick={handleDismiss}
             className="absolute top-tiny right-2 p-micro rounded-xs hover:bg-muted/50"
           >
-            <X className="size-4" />
+            <XMarkIcon className="size-4" />
           </button>
         )}
       </div>

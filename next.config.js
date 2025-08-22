@@ -6,7 +6,7 @@ const nextConfig = {
     reactCompiler: true,
     // Enable other Next.js 15 performance features
     optimizePackageImports: [
-      '@phosphor-icons/react',
+      '@heroicons/react',
       '@radix-ui/react-accordion',
       '@radix-ui/react-alert-dialog',
       '@radix-ui/react-avatar',

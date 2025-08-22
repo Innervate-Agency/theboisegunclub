@@ -92,7 +92,6 @@ export function useUserWeather(options: UseUserWeatherOptions = {}) {
       localStorage.setItem(LOCATION_CACHE_KEY, JSON.stringify(cacheData))
       localStorage.setItem(LOCATION_PERMISSION_KEY, locationData.permission)
     } catch (err) {
-      console.warn('Failed to cache location:', err)
     }
   }
 
@@ -128,11 +127,9 @@ export function useUserWeather(options: UseUserWeatherOptions = {}) {
             permission: parsed.permission
           }
         } else if (parsed.permission === 'granted' && !validCoords) {
-          console.warn('Cached location has invalid coordinates, clearing cache:', parsed)
         }
       }
     } catch (err) {
-      console.warn('Failed to load cached location:', err)
     }
     
     return null
@@ -150,7 +147,6 @@ export function useUserWeather(options: UseUserWeatherOptions = {}) {
     try {
       localStorage.setItem(WEATHER_CACHE_KEY, JSON.stringify(cacheData))
     } catch (err) {
-      console.warn('Failed to cache weather data:', err)
     }
   }
 
@@ -170,7 +166,6 @@ export function useUserWeather(options: UseUserWeatherOptions = {}) {
         }
       }
     } catch (err) {
-      console.warn('Failed to load cached weather:', err)
     }
     
     return null
@@ -269,7 +264,6 @@ export function useUserWeather(options: UseUserWeatherOptions = {}) {
           }
         },
         (error) => {
-          console.warn('Geolocation error:', error.message)
           const deniedState = {
             lat: null,
             lng: null,
@@ -342,7 +336,6 @@ export function useUserWeather(options: UseUserWeatherOptions = {}) {
         }
       } else if (result.data) {
         // Handle fallback data from API error responses
-        console.warn('Weather API returned fallback data:', result.error)
         const weatherData = {
           ...result.data,
           lat: locationToUse.lat,
@@ -358,7 +351,6 @@ export function useUserWeather(options: UseUserWeatherOptions = {}) {
       }
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Failed to fetch weather data'
-      console.error('Weather fetch error:', errorMessage)
       if (isMountedRef.current) {
         setError(errorMessage)
         // Show error state properly - don't mask with fake data

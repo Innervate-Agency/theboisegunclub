@@ -4,6 +4,7 @@
  * Integrates with the existing Boise Gun Club design system
  */
 
+import { AirsoftIcon, ArcheryIcon, ClubIcon, CopperMemberIcon, GoldPartnerIcon, GunsmithIcon, PaintballIcon, PistolSportsIcon, RifleSportsIcon, ShootingRangeIcon, ShotgunSportsIcon, SilverMemberIcon, StandardMemberIcon, TacticalRetailIcon, TacticalServicesIcon, TrainingIcon } from '@heroicons/react/24/outline'
 import { getIcon } from './icon-mapping';
 import { 
   ShootingRangeIcon,

@@ -76,7 +76,6 @@ async function ensureCacheDir(): Promise<void> {
   try {
     await fs.mkdir(CACHE_DIR, { recursive: true })
   } catch (error) {
-    console.warn('Failed to create reviews cache directory:', error)
   }
 }
 
@@ -117,9 +116,7 @@ async function saveCacheToDisk(businessName: string, cachedData: CachedReviewDat
     const cacheFilePath = getCacheFilePath(businessName)
     if (!cacheFilePath) return
     await fs.writeFile(cacheFilePath, JSON.stringify(cachedData, null, 2), 'utf-8')
-    console.log(`📊 Reviews cached to disk for ${cachedData.data.businessName}`)
   } catch (error) {
-    console.warn('Failed to save reviews cache to disk:', error)
   }
 }
 
@@ -253,7 +250,6 @@ function getFallbackReviewData(businessName: string): ProcessedReviewData {
 
 export async function fetchGoogleReviews(businessName: string, location: string = "Idaho"): Promise<ProcessedReviewData> {
   if (!SERPAPI_KEY) {
-    console.warn('SERPAPI_KEY not found in environment variables, using fallback data')
     return getFallbackReviewData(businessName)
   }
 
@@ -262,7 +258,6 @@ export async function fetchGoogleReviews(businessName: string, location: string 
   // Check in-memory cache first
   const memoryCache = reviewsCache.get(cacheKey)
   if (memoryCache && isCacheValid(memoryCache.timestamp)) {
-    console.log(`📊 Using in-memory cached reviews for ${businessName}`)
     return memoryCache.data
   }
   
@@ -270,7 +265,6 @@ export async function fetchGoogleReviews(businessName: string, location: string 
   const diskCache = await loadCacheFromDisk(businessName)
   if (diskCache && isCacheValid(diskCache.timestamp)) {
     const ageDays = Math.round((Date.now() - diskCache.timestamp) / (1000 * 60 * 60 * 24))
-    console.log(`💾 Using disk-cached reviews for ${businessName} (${ageDays} days old)`)
     
     // Load into memory for faster subsequent access
     reviewsCache.set(cacheKey, diskCache)
@@ -278,7 +272,6 @@ export async function fetchGoogleReviews(businessName: string, location: string 
   }
   
   try {
-    console.log(`Fetching fresh Google reviews for ${businessName}`)
     
     const searchQuery = `${businessName} ${location} reviews`
     const response = await fetch(
@@ -340,13 +333,10 @@ export async function fetchGoogleReviews(businessName: string, location: string 
     reviewsCache.set(cacheKey, cachedData)
     await saveCacheToDisk(businessName, cachedData)
     
-    console.log(`📊 Fresh reviews fetched and cached for ${businessName} (valid for 7 days)`)
     
     return processedData
     
   } catch (error) {
-    console.error(`Failed to fetch reviews for ${businessName}:`, error)
-    console.log(`Using fallback data for ${businessName}`)
     
     // Return realistic fallback data if API fails
     const fallbackData = getFallbackReviewData(businessName)
@@ -366,7 +356,6 @@ export async function fetchGoogleReviews(businessName: string, location: string 
 }
 
 export async function fetchMultipleBusinessReviews(businesses: Array<{name: string, location?: string}>): Promise<ProcessedReviewData[]> {
-  console.log(`Fetching reviews for ${businesses.length} businesses`)
   
   const results: ProcessedReviewData[] = []
   
@@ -380,19 +369,16 @@ export async function fetchMultipleBusinessReviews(businesses: Array<{name: stri
         await new Promise(resolve => setTimeout(resolve, 2000))
       }
     } catch (error) {
-      console.error(`Review fetch failed for ${business.name}:`, error)
       results.push(getFallbackReviewData(business.name))
     }
   }
   
-  console.log(`Successfully fetched/cached reviews for ${results.length} businesses`)
   return results
 }
 
 // Helper function to clear cache
 export function clearReviewsCache(): void {
   reviewsCache.clear()
-  console.log('Reviews cache cleared')
 }
 
 // Helper function to get cache status

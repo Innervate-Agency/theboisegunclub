@@ -4,7 +4,7 @@ import * as React from 'react'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from 'lucide-react'
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 const featureGridVariants = cva(
   "w-full py-16",
@@ -146,7 +146,7 @@ export function FeatureGrid({
                         onClick={feature.link.onClick}
                       >
                         {feature.link.text}
-                        <ArrowRight className="ml-(--spacing-xs) icon-sm group-hover/btn:translate-x-0.5 transition-transform duration-200" />
+                        <ArrowRightIcon className="ml-(--spacing-xs) icon-sm group-hover/btn:translate-x-0.5 transition-transform duration-200" />
                       </Button>
                     </div>
                   )}

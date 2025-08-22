@@ -6,11 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
-import { 
-  ChevronRight, Star, Eye, Heart, Share2, ArrowLeft, 
-  MapPin, Phone, Clock, Shield, ExternalLink, MessageCircle,
-  Building2, CheckCircle, AlertTriangle, Package, Truck
-} from 'lucide-react'
+import { ArrowLeftIcon, CheckCircleIcon, ChevronRightIcon, ClockIcon, ExclamationTriangleIcon, EyeIcon, HeartIcon, MapPinIcon, PhoneIcon, ShareIcon, ShieldCheckIcon, StarIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -95,15 +91,15 @@ export default function MarketplaceProductTemplate({
             <Link href="/" className="hover:text-foreground transition-colors">
               Home
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRightIcon className="h-4 w-4" />
             <Link href="/marketplace" className="hover:text-nav-marketplace transition-colors">
               Marketplace
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRightIcon className="h-4 w-4" />
             <Link href={`/marketplace?category=${category}`} className="hover:text-nav-marketplace transition-colors">
               {category}
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRightIcon className="h-4 w-4" />
             <span className="text-nav-marketplace font-medium">{title}</span>
           </div>
           
@@ -111,7 +107,7 @@ export default function MarketplaceProductTemplate({
           <div className="mb-base">
             <Link href="/marketplace">
               <Button variant="ghost" className="gap-xs">
-                <ArrowLeft className="h-4 w-4" />
+                <ArrowLeftIcon className="h-4 w-4" />
                 Back to Marketplace
               </Button>
             </Link>
@@ -219,9 +215,9 @@ export default function MarketplaceProductTemplate({
                 <div className="flex items-center gap-base">
                   <div className={`flex items-center gap-xs ${inStock ? 'text-sagebrush-green' : 'text-rusty-orange'}`}>
                     {inStock ? (
-                      <CheckCircle className="h-4 w-4" />
+                      <CheckCircleIcon className="h-4 w-4" />
                     ) : (
-                      <AlertTriangle className="h-4 w-4" />
+                      <ExclamationTriangleIcon className="h-4 w-4" />
                     )}
                     <span className="font-medium">
                       {inStock ? `In Stock${quantity > 1 ? ` (${quantity} available)` : ''}` : 'Out of Stock'}
@@ -248,7 +244,7 @@ export default function MarketplaceProductTemplate({
                   <ul className="space-y-xs">
                     {features.map((feature, index) => (
                       <li key={index} className="flex items-center gap-xs text-body-sm">
-                        <CheckCircle className="h-4 w-4 text-sagebrush-green flex-shrink-0" />
+                        <CheckCircleIcon className="h-4 w-4 text-sagebrush-green flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
@@ -259,20 +255,18 @@ export default function MarketplaceProductTemplate({
               {/* Action Buttons */}
               <div className="space-y-base">
                 <div className="flex gap-base">
-                  <Button 
-                    size="lg" 
-                    className="flex-1 bg-nav-marketplace text-gruvbox-bg-dark hover:bg-nav-marketplace/90 font-rajdhani font-bold"
+                  <Button className="flex-1 bg-nav-marketplace text-gruvbox-bg-dark hover:bg-nav-marketplace/90 font-rajdhani font-bold"
                     disabled={!inStock}
                   >
                     <MessageCircle className="h-4 w-4 mr-xs" />
                     Contact Seller
                   </Button>
-                  <Button variant="outline" size="lg" className="gap-xs">
-                    <Heart className="h-4 w-4" />
+                  <Button variant="outline" className="gap-xs">
+                    <HeartIcon className="h-4 w-4" />
                     Save
                   </Button>
-                  <Button variant="outline" size="lg" className="gap-xs">
-                    <Share2 className="h-4 w-4" />
+                  <Button variant="outline" className="gap-xs">
+                    <ShareIcon className="h-4 w-4" />
                     Share
                   </Button>
                 </div>
@@ -281,7 +275,7 @@ export default function MarketplaceProductTemplate({
                 <div className="flex items-center gap-base text-sm text-muted-foreground">
                   {views > 0 && (
                     <div className="flex items-center gap-xs">
-                      <Eye className="h-4 w-4" />
+                      <EyeIcon className="h-4 w-4" />
                       <span>{views} views</span>
                     </div>
                   )}
@@ -292,7 +286,7 @@ export default function MarketplaceProductTemplate({
                     </div>
                   )}
                   <div className="flex items-center gap-xs">
-                    <Clock className="h-4 w-4" />
+                    <ClockIcon className="h-4 w-4" />
                     <span>Updated {new Date(lastUpdated).toLocaleDateString()}</span>
                   </div>
                 </div>
@@ -329,14 +323,14 @@ export default function MarketplaceProductTemplate({
               <CardContent className="space-y-base">
                 <div className="flex items-start gap-base">
                   <div className="w-12 h-12 bg-nav-marketplace/20 rounded-xs flex items-center justify-center">
-                    <Building2 className="h-6 w-6 text-nav-marketplace" />
+                    <BuildingOffice2Icon className="h-6 w-6 text-nav-marketplace" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-base mb-xs">
                       <h4 className="font-rajdhani font-bold text-heading-sm">{vendor.name}</h4>
                       {vendor.verified && (
                         <Badge className="bg-sagebrush-green/20 text-sagebrush-green border-sagebrush-green/30 text-xs">
-                          <Shield className="h-3 w-3 mr-xs" />
+                          <ShieldCheckIcon className="h-3 w-3 mr-xs" />
                           Verified
                         </Badge>
                       )}
@@ -344,7 +338,7 @@ export default function MarketplaceProductTemplate({
                     <div className="flex items-center gap-xs mb-xs">
                       <div className="flex items-center">
                         {[...Array(5)].map((_, i) => (
-                          <Star
+                          <StarIcon
                             key={i}
                             className={`h-4 w-4 ${
                               i < Math.floor(vendor.rating)
@@ -360,16 +354,16 @@ export default function MarketplaceProductTemplate({
                     </div>
                     <div className="space-y-xs text-sm text-muted-foreground">
                       <div className="flex items-center gap-xs">
-                        <MapPin className="h-4 w-4" />
+                        <MapPinIcon className="h-4 w-4" />
                         <span>{vendor.address}</span>
                       </div>
                       <div className="flex items-center gap-xs">
-                        <Phone className="h-4 w-4" />
+                        <PhoneIcon className="h-4 w-4" />
                         <span>{vendor.phone}</span>
                       </div>
                       {vendor.responseTime && (
                         <div className="flex items-center gap-xs">
-                          <Clock className="h-4 w-4" />
+                          <ClockIcon className="h-4 w-4" />
                           <span>Responds within {vendor.responseTime}</span>
                         </div>
                       )}

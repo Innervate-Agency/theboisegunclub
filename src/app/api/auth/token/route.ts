@@ -110,7 +110,6 @@ export async function POST(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Token endpoint error:', error)
     return NextResponse.json(
       { error: 'server_error', error_description: 'Internal server error' },
       { status: 500 }

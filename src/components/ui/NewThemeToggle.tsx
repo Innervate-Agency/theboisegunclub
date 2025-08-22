@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { useTheme } from 'next-themes'
 import { Button } from "@/components/ui/button"
-import { Sun, Moon, Monitor } from 'lucide-react'
+import { CurrentIcon, SunIcon } from '@heroicons/react/24/outline';
 import { cn } from "@/lib/utils"
 
 const themes = [
@@ -38,12 +38,12 @@ export function NewThemeToggle({
         className
       )}>
         <Button
-          variant="secondary"
+          variant="outline"
           size="icon"
           className="bg-card border-border shadow-none"
           disabled
         >
-          <Sun className="icon-sm" />
+          <SunIcon className="icon-sm" />
         </Button>
       </div>
     )
@@ -74,7 +74,7 @@ export function NewThemeToggle({
       {...props}
     >
       <Button
-        variant="secondary"
+        variant="outline"
         size={showLabel ? "default" : "icon"}
         onClick={handleToggle}
         className={cn(

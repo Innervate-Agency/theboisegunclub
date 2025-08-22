@@ -46,7 +46,7 @@ const DarkModeTest = () => {
         <CalloutCard
           title="Safety Notice"
           description="Always follow range safety protocols"
-          variant="default"
+          variant="outline"
         />
 
         <Card>
@@ -56,13 +56,13 @@ const DarkModeTest = () => {
           <CardContent className="space-y-base">
             <Input placeholder="Test input field" />
             <div className="flex gap-xs">
-              <Button variant="default">Default</Button>
-              <Button variant="secondary">Secondary</Button>
+              <Button variant="outline">Default</Button>
+              <Button variant="outline">Secondary</Button>
               <Button variant="destructive">Destructive</Button>
             </div>
             <div className="flex gap-xs">
-              <Badge variant="default">Default Badge</Badge>
-              <Badge variant="secondary">Secondary Badge</Badge>
+              <Badge variant="outline">Default Badge</Badge>
+              <Badge variant="outline">Secondary Badge</Badge>
               <Badge variant="destructive">Destructive Badge</Badge>
             </div>
           </CardContent>

@@ -8,18 +8,16 @@ import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { ReviewsDisplay } from '@/components/ui/reviews-display'
 import MdxContent from '@/components/molecules/MdxContent'
-import { 
-  ChevronRightIcon, ArrowLeftIcon, MapPinIcon, ClockIcon, PhoneIcon, ExternalLinkIcon,
-  StarIcon, ShieldCheckIcon, CheckCircleIcon, GlobeAltIcon, EnvelopeIcon, CalendarIcon, UserGroupIcon,
-  AcademicCapIcon, TargetIcon, BuildingStorefrontIcon, WrenchScrewdriverIcon, CreditCardIcon, TagIcon
-} from '@heroicons/react/24/outline'
+import { AcademicCapIcon, ArrowLeftIcon, BuildingStorefrontIcon, CalendarDaysIcon, CheckCircleIcon, ChevronRightIcon, ClockIcon, CreditCardIcon, EnvelopeIcon, ExternalLinkIcon, GlobeAltIcon, MapPinIcon, PhoneIcon, ShieldCheckIcon, StarIcon, TagIcon, TargetIcon, UserGroupIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image'
 import Link from 'next/link'
+import { GameIconLogo } from '@/lib/game-icons-logos'
 
 interface BusinessDetailTemplateProps {
   slug: string
   businessName: string
   businessType: string
+  category?: string
   description: string
   fullDescription: string
   address: string
@@ -69,6 +67,7 @@ interface BusinessDetailTemplateProps {
 export function BusinessDetailTemplate({
   businessName,
   businessType,
+  category,
   description,
   fullDescription,
   address,
@@ -120,7 +119,6 @@ export function BusinessDetailTemplate({
         setReviewsData(data)
       }
     } catch (error) {
-      console.error('Failed to load reviews:', error)
     } finally {
       setLoadingReviews(false)
     }
@@ -188,7 +186,7 @@ export function BusinessDetailTemplate({
             <div className="lg:col-span-2 space-y-lg">
               {/* Business Logo and Name */}
               <div className="flex items-start gap-base">
-                {logo && (
+                {logo ? (
                   <div className="w-16 h-16 rounded-xs overflow-hidden flex-shrink-0 bg-muted">
                     <Image
                       src={logo}
@@ -198,6 +196,13 @@ export function BusinessDetailTemplate({
                       className="w-full h-full object-cover"
                     />
                   </div>
+                ) : (
+                  <GameIconLogo 
+                    category={category}
+                    businessType={businessType}
+                    businessName={businessName}
+                    className="w-16 h-16 flex-shrink-0"
+                  />
                 )}
                 <div className="flex-1">
                   <h1 className="font-rajdhani text-xl md:text-2xl font-bold text-foreground leading-tight">
@@ -232,7 +237,7 @@ export function BusinessDetailTemplate({
                   </Badge>
                 )}
                 {isSponsored && (
-                  <Badge variant="elite">
+                  <Badge variant="default">
                     <StarIcon className="h-3 w-3 mr-xs" />
                     Sponsored
                   </Badge>
@@ -275,9 +280,7 @@ export function BusinessDetailTemplate({
               {/* Action Buttons */}
               <div className="flex gap-base flex-wrap">
                 {website && (
-                  <Button 
-                    size="lg" 
-                    className="bg-nav-directory text-gruvbox-bg-dark hover:bg-nav-directory/90 font-rajdhani font-bold gap-xs"
+                  <Button className="bg-nav-directory text-gruvbox-bg-dark hover:bg-nav-directory/90 font-rajdhani font-bold gap-xs"
                     asChild
                   >
                     <a href={website} target="_blank" rel="noopener noreferrer">
@@ -286,14 +289,14 @@ export function BusinessDetailTemplate({
                     </a>
                   </Button>
                 )}
-                <Button variant="outline" size="lg" className="gap-xs" asChild>
+                <Button variant="outline" className="gap-xs" asChild>
                   <a href={`tel:${phone}`}>
                     <PhoneIcon className="h-4 w-4" />
                     Call
                   </a>
                 </Button>
                 {email && (
-                  <Button variant="outline" size="lg" className="gap-xs" asChild>
+                  <Button variant="outline" className="gap-xs" asChild>
                     <a href={`mailto:${email}`}>
                       <EnvelopeIcon className="h-4 w-4" />
                       Email
@@ -400,7 +403,7 @@ export function BusinessDetailTemplate({
                     <ReviewsDisplay 
                       reviewsData={reviewsData}
                       showHeader={false}
-                      variant="default"
+                      variant="outline"
                       autoPlay={false}
                     />
                   </CardContent>

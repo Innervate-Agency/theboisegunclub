@@ -3,12 +3,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { 
-  ArrowRight, Plus, Minus, X, Circle, Check, 
-  ChevronUp, ChevronDown, ChevronLeft, ChevronRight,
-  Play, Pause, Heart, Star, Eye, EyeOff,
-  Download, Upload, Search, Filter, Menu, MoreHorizontal
-} from 'lucide-react'
+import { ArrowRightIcon, CheckIcon, ChevronUpIcon, EyeIcon, HeartIcon, StarIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta = {
   title: 'Foundation/Button Micro-Animations',
@@ -27,12 +22,12 @@ type Story = StoryObj
 // Micro-animation components inspired by Stripe's design system
 const HoverArrow = ({ isHovered }: { isHovered: boolean }) => (
   <div className="relative overflow-hidden">
-    <ArrowRight 
+    <ArrowRightIcon 
       className={`h-4 w-4 transition-transform duration-300 ${
         isHovered ? 'translate-x-1' : 'translate-x-0'
       }`} 
     />
-    <ArrowRight 
+    <ArrowRightIcon 
       className={`h-4 w-4 absolute top-0 left-0 transition-transform duration-300 ${
         isHovered ? 'translate-x-0' : '-translate-x-full'
       }`} 
@@ -72,7 +67,7 @@ const ChevronRotate = ({ direction }: { direction: 'up' | 'down' | 'left' | 'rig
   }
   
   return (
-    <ChevronUp className={`h-4 w-4 transition-transform duration-300 ${rotationMap[direction]}`} />
+    <ChevronUpIcon className={`h-4 w-4 transition-transform duration-300 ${rotationMap[direction]}`} />
   )
 }
 
@@ -91,20 +86,20 @@ const PlayPauseToggle = ({ isPlaying }: { isPlaying: boolean }) => (
 
 const HeartFill = ({ isFavorited }: { isFavorited: boolean }) => (
   <div className="relative">
-    <Heart className={`h-4 w-4 transition-all duration-300 ${isFavorited ? 'fill-current scale-110' : 'fill-none scale-100'}`} />
+    <HeartIcon className={`h-4 w-4 transition-all duration-300 ${isFavorited ? 'fill-current scale-110' : 'fill-none scale-100'}`} />
   </div>
 )
 
 const StarFill = ({ isStarred }: { isStarred: boolean }) => (
   <div className="relative">
-    <Star className={`h-4 w-4 transition-all duration-300 ${isStarred ? 'fill-current scale-110 text-rusty-orange' : 'fill-none scale-100'}`} />
+    <StarIcon className={`h-4 w-4 transition-all duration-300 ${isStarred ? 'fill-current scale-110 text-rusty-orange' : 'fill-none scale-100'}`} />
   </div>
 )
 
 const EyeToggle = ({ isVisible }: { isVisible: boolean }) => (
   <div className="relative w-4 h-4">
     <div className={`absolute inset-0 transition-all duration-300 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
-      <Eye className="w-4 h-4" />
+      <EyeIcon className="w-4 h-4" />
     </div>
     <div className={`absolute inset-0 transition-all duration-300 ${isVisible ? 'opacity-0 scale-75' : 'opacity-100 scale-100'}`}>
       <EyeOff className="w-4 h-4" />
@@ -116,7 +111,7 @@ const CheckTransition = ({ isChecked }: { isChecked: boolean }) => (
   <div className="relative w-4 h-4">
     <div className={`absolute inset-0 transition-all duration-300 ${isChecked ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
       <div className="w-4 h-4 rounded-pill bg-sage-green flex items-center justify-center">
-        <Check className="w-3 h-3 text-white" strokeWidth={3} />
+        <CheckIcon className="w-3 h-3 text-white" strokeWidth={3} />
       </div>
     </div>
     <div className={`absolute inset-0 transition-all duration-300 ${isChecked ? 'opacity-0 scale-75' : 'opacity-100 scale-100'}`}>

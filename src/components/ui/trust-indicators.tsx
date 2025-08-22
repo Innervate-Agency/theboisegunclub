@@ -1,7 +1,7 @@
 'use client'
 
 import { MotionDiv, fadeInUp, viewportAnimation } from '@/components/ui/optimized-motion'
-import { MapPin, Buildings as Building2, Users } from '@phosphor-icons/react'
+import { MapPinIcon, UsersIcon } from '@heroicons/react/24/outline';
 import { useTrustIndicators } from '@/hooks/useRealStats'
 
 interface TrustIndicator {

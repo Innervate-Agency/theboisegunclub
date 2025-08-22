@@ -1,7 +1,7 @@
 'use client'
 
 import { Card, CardContent } from './card'
-import { HiOutlineOfficeBuilding as Building2, HiOutlineLocationMarker as Target, HiOutlineUserGroup as Users, HiOutlineShieldCheck as Shield } from 'react-icons/hi'
+import { BuildingOfficeIcon, MapPinIcon, ShieldCheckIcon, UserGroupIcon } from '@heroicons/react/24/outline';
 import { useDirectoryStats } from '@/hooks/useRealStats'
 
 interface StatItem {

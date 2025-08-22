@@ -1,7 +1,7 @@
 'use client'
 
 import { MotionDiv } from '@/components/ui/optimized-motion'
-import { Diamond } from '@phosphor-icons/react'
+import { Diamond } from '@heroicons/react/24/outline'
 
 interface FloatingDiamondsProps {
   className?: string

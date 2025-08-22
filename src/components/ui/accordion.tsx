@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { CaretDown } from "@phosphor-icons/react"
+import { CaretDown } from "@heroicons/react/24/outline"
 
 import { cn } from "@/lib/utils"
 

@@ -60,7 +60,7 @@ export function DirectoryCard({
     <TacticalCase
       variant="interactive"
       theme="directory"
-      size="md"
+      size="default"
       showCornerBrackets={true}
       showLatches={true}
       showGridPattern={variant === 'elite'}

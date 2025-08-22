@@ -119,7 +119,6 @@ export class TumbleweedErrorBoundary extends React.Component<
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     this.props.onError?.(error, errorInfo)
-    console.error('TumbleweedErrorBoundary caught an error:', error, errorInfo)
   }
 
   retry = () => {

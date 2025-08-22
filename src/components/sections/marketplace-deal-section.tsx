@@ -3,11 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { 
-  BanknotesIcon,
-  BuildingStorefrontIcon,
-  TagIcon
-} from '@heroicons/react/24/outline'
+import { BanknotesIcon, BuildingStorefrontIcon, TagIcon } from '@heroicons/react/24/outline';
 
 export function MarketplaceDealSection() {
   const featuredDeals = [
@@ -101,10 +97,10 @@ export function MarketplaceDealSection() {
             All deals verified by community members and business owners
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-base">
-            <Button size="lg" className="font-rajdhani font-semibold bg-warm-stone text-crisp-off-white hover:bg-warm-stone/90">
+            <Button className="font-rajdhani font-semibold bg-warm-stone text-crisp-off-white hover:bg-warm-stone/90">
               View All Deals
             </Button>
-            <Button variant="outline" size="lg" className="font-rajdhani font-semibold">
+            <Button variant="outline" className="font-rajdhani font-semibold">
               Submit a Deal
             </Button>
           </div>

@@ -10,7 +10,7 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer';
 import { Button } from '@/components/ui/button';
-import { MinusIcon, PlusIcon } from 'lucide-react';
+import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof Drawer> = {
   title: 'Design System/Molecules/Drawer',

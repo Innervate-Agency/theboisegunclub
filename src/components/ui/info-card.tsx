@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Card, CardContent } from './card'
-import { LucideIcon } from 'lucide-react'
+import { LucideIcon } from '@heroicons/react/24/outline';
 
 interface InfoCardProps {
   icon: LucideIcon

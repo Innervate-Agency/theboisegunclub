@@ -5,7 +5,7 @@ import {
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
 import { Button } from '@/components/ui/button';
-import { ChevronsUpDown } from 'lucide-react';
+import { ChevronsUpDown } from '@heroicons/react/24/outline';
 import * as React from 'react';
 
 const meta: Meta<typeof Collapsible> = {
@@ -20,7 +20,7 @@ const meta: Meta<typeof Collapsible> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const DefaultCollapsibleComponent = (args: any) => {
+const DefaultCollapsibleComponent = (args: Record<string, unknown>) => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <Collapsible

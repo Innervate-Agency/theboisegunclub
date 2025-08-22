@@ -5,14 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 // Phosphor Icons - Primary choice for tactical aesthetic
-import {
-  MapPinIcon, SunIcon, ShieldCheckIcon, ShieldExclamationIcon, BoltIcon, LockOpenIcon, ExclamationTriangleIcon, LockClosedIcon, ArrowLongRightIcon,
-  BuildingOfficeIcon, CheckCircleIcon, TrophyIcon, StarIcon, TagIcon, DocumentCheckIcon, ViewfinderCircleIcon, AcademicCapIcon, WrenchScrewdriverIcon,
-  StarIcon as StarFillIcon, BookOpenIcon, UserGroupIcon, UserIcon, HomeIcon, XCircleIcon, XMarkIcon, CalendarIcon, CurrencyDollarIcon,
-  GemIcon, TruckIcon, BanknotesIcon, ArchiveBoxIcon,
-  FlagIcon, BellIcon, TrendingUpIcon, SpeakerWaveIcon,
-  ClockIcon, ExclamationCircleIcon, CheckIcon, InformationCircleIcon, CloudIcon, FireIcon
-} from "@heroicons/react/24/outline"
+import { AcademicCapIcon, ArchiveBoxIcon, ArrowLongRightIcon, ArrowTrendingUpIcon, BanknotesIcon, BellIcon, BoltIcon, BookOpenIcon, BuildingOfficeIcon, CalendarIcon, CheckCircleIcon, CheckIcon, ClockIcon, CloudIcon, CurrencyDollarIcon, DocumentCheckIcon, ExclamationCircleIcon, ExclamationTriangleIcon, FireIcon, FlagIcon, HomeIcon, InformationCircleIcon, LockClosedIcon, LockOpenIcon, MapPinIcon, ShieldCheckIcon, ShieldExclamationIcon, SparklesIcon, SpeakerWaveIcon, StarFillIcon, StarIcon, StarIcon as StarFillIcon, SunIcon, TagIcon, TrophyIcon, TruckIcon, UserGroupIcon, UserIcon, ViewfinderCircleIcon, WrenchScrewdriverIcon, XCircleIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const badgeVariants = cva(
   "inline-flex items-center gap-xs font-rajdhani font-semibold text-button-xs border transition-colors focus:outline-none",
@@ -155,7 +148,7 @@ const pageIcons = {
   "marketplace-sale": TagIcon,
   "marketplace-sold": CheckCircleIcon,
   "marketplace-verified": ShieldCheckIcon,
-  "marketplace-premium": GemIcon,
+  "marketplace-premium": SparklesIcon,
   "marketplace-local": MapPinIcon,
   "marketplace-shipping": TruckIcon,
   "marketplace-cash": BanknotesIcon,
@@ -166,7 +159,7 @@ const pageIcons = {
   "home-community": UserGroupIcon,
   "home-featured": StarIcon,
   "home-news": BellIcon,
-  "home-update": TrendingUpIcon,
+  "home-update": ArrowTrendingUpIcon,
   "home-announcement": SpeakerWaveIcon,
 
   // General Status Icons

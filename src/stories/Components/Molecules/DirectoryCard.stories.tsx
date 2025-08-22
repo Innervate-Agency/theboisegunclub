@@ -42,7 +42,7 @@ export const AllVariants: Story = {
         imageUrl="/images/Dust/VintageDust (7).webp"
         status="Active"
         badgeVariant="success"
-        variant="default"
+        variant="outline"
       />
       <DirectoryCard
         name="Eagle Firearms"
@@ -51,7 +51,7 @@ export const AllVariants: Story = {
         imageUrl="/images/Fractal/29.webp"
         status="Premium"
         badgeVariant="premium"
-        variant="premium"
+        variant="default"
       />
       <DirectoryCard
         name="Snake River Shooters"
@@ -60,7 +60,7 @@ export const AllVariants: Story = {
         imageUrl="/images/PixelHeat/halfton-heat-FLAT-12.webp"
         status="Elite"
         badgeVariant="elite"
-        variant="elite"
+        variant="default"
       />
       <DirectoryCard
         name="Glass Range"
@@ -68,7 +68,7 @@ export const AllVariants: Story = {
         contact="glass@range.com"
         status="Open"
         badgeVariant="info"
-        variant="glass"
+        variant="secondary"
       />
     </div>
   ),
@@ -91,16 +91,14 @@ export const Sizes: Story = {
         contact="shop@nampagun.com"
         status="Premium"
         badgeVariant="premium"
-        size="md"
+        size="default"
       />
       <DirectoryCard
         name="Treasure Valley Instructors"
         type="Instructor"
         contact="tv.instructors@gmail.com"
         status="Elite"
-        badgeVariant="elite"
-        size="lg"
-      />
+        badgeVariant="elite" />
     </div>
   ),
 };

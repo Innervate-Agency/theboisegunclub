@@ -4,20 +4,12 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { cn } from '@/lib/utils'
-import { 
-  AlertTriangle, 
-  Info, 
-  Shield, 
-  CheckCircle,
-  Scale,
-  Target,
-  BookOpen
-} from 'lucide-react'
+import { CheckCircleIcon, ExclamationTriangleIcon, InformationCircleIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
 
 // Custom components for MDX content
 function LegalDisclaimer({ children }: { children: React.ReactNode }) {
   return (
-    <Alert variant="warning" className="my-base">
+    <Alert variant="destructive" className="my-base">
       <Scale className="h-4 w-4" />
       <AlertTitle className="font-rajdhani font-bold">Legal Disclaimer</AlertTitle>
       <AlertDescription>
@@ -30,7 +22,7 @@ function LegalDisclaimer({ children }: { children: React.ReactNode }) {
 function SafetyWarning({ children }: { children: React.ReactNode }) {
   return (
     <Alert variant="destructive" className="my-base">
-      <AlertTriangle className="h-4 w-4" />
+      <ExclamationTriangleIcon className="h-4 w-4" />
       <AlertTitle className="font-rajdhani font-bold">Safety Warning</AlertTitle>
       <AlertDescription>
         {children}
@@ -41,8 +33,8 @@ function SafetyWarning({ children }: { children: React.ReactNode }) {
 
 function InfoBox({ children }: { children: React.ReactNode }) {
   return (
-    <Alert variant="info" className="my-base">
-      <Info className="h-4 w-4" />
+    <Alert variant="secondary" className="my-base">
+      <InformationCircleIcon className="h-4 w-4" />
       <AlertTitle className="font-rajdhani font-bold">Information</AlertTitle>
       <AlertDescription>
         {children}
@@ -53,8 +45,8 @@ function InfoBox({ children }: { children: React.ReactNode }) {
 
 function ProTip({ children }: { children: React.ReactNode }) {
   return (
-    <Alert variant="success" className="my-base">
-      <CheckCircle className="h-4 w-4" />
+    <Alert variant="secondary" className="my-base">
+      <CheckCircleIcon className="h-4 w-4" />
       <AlertTitle className="font-rajdhani font-bold">Pro Tip</AlertTitle>
       <AlertDescription>
         {children}
@@ -68,9 +60,7 @@ function CallToAction({ text, href }: { text: string; href?: string }) {
     <div className="my-lg p-base bg-gradient-to-r from-primary/10 to-secondary/10 rounded-sm border border-primary/20">
       <div className="text-center">
         <Button 
-          asChild={!!href}
-          size="lg" 
-          className="font-rajdhani font-bold"
+          asChild={!!href} className="font-rajdhani font-bold"
         >
           {href ? <a href={href}>{text}</a> : <span>{text}</span>}
         </Button>

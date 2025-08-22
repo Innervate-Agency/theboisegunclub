@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Search, Calendar, ShoppingCart, Users, Info, Building } from "lucide-react"
+import { BuildingOfficeIcon, CalendarDaysIcon, InformationCircleIcon, MagnifyingGlassIcon, ShoppingCartIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const services = [
   {

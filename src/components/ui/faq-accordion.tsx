@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./accordion"
 import { Badge } from "./badge"
 import { Input } from "./input"
-import { Search, HelpCircle } from "lucide-react"
+import { MagnifyingGlassIcon, HelpCircle } from "@heroicons/react/24/outline"
 
 const faqAccordionVariants = cva(
   "w-full",
@@ -100,7 +100,7 @@ export default function FAQAccordion({
       {showSearch && (
         <div className="mb-4">
           <div className="relative">
-            <Search className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-warning-amber" />
+            <MagnifyingGlassIcon className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-warning-amber" />
             <Input
               type="text"
               placeholder="Search questions..."
@@ -162,7 +162,7 @@ export default function FAQAccordion({
                     </h3>
                     {faq.category && showCategories && (
                       <Badge 
-                        variant="default" 
+                        variant="outline" 
                         className="mt-(--spacing-xs) bg-sandy-ochre/10 text-sandy-ochre border-sandy-ochre/20"
                       >
                         {faq.category}
@@ -180,7 +180,7 @@ export default function FAQAccordion({
       ) : (
         <div className="text-center py-16">
           <div className="p-sm bg-muted rounded-full w-fit mx-auto mb-4">
-            <Search className="size-6 text-warning-amber" />
+            <MagnifyingGlassIcon className="size-6 text-warning-amber" />
           </div>
           <h3 className="font-rajdhani font-semibold text-dark-chocolate mb-4">
             No FAQs Found

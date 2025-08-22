@@ -2,12 +2,7 @@
 
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { 
-  BuildingStorefrontIcon,
-  AcademicCapIcon,
-  MapPinIcon,
-  UsersIcon
-} from '@heroicons/react/24/outline'
+import { AcademicCapIcon, BuildingStorefrontIcon, MapPinIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 export function DirectoryStatsSection() {
   const stats = [
@@ -83,7 +78,7 @@ export function DirectoryStatsSection() {
           <p className="text-muted-foreground">
             All businesses verified for privacy compliance and commercial operation status
           </p>
-          <Button size="lg" className="font-rajdhani font-semibold bg-sandy-ochre text-dark-chocolate hover:bg-sandy-ochre/90">
+          <Button className="font-rajdhani font-semibold bg-sandy-ochre text-dark-chocolate hover:bg-sandy-ochre/90">
             Browse Directory
           </Button>
         </div>

@@ -585,7 +585,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export async function generateStaticParams() {
   // Generate static params for all events in comprehensive dataset
   const allSlugs = getAllEventSlugs()
-  console.log(`🎯 Generating ${allSlugs.length} event detail pages`)
   
   return allSlugs.map(slug => ({ slug }))
 }

@@ -9,20 +9,7 @@ import { FooterUserProfile } from "@/components/ui/footer-user-profile"
 import { BrassCounter } from "@/components/ui/brass-counter"
 import { Card } from "@/components/ui/card"
 import { FooterTexture } from "@/components/ui/textured-background"
-import {
-  MapPinIcon, PhoneIcon, EnvelopeIcon, GlobeAltIcon, ViewfinderCircleIcon, 
-  ShieldCheckIcon, ChevronUpIcon, QuestionMarkCircleIcon, 
-  HeartIcon
-} from '@heroicons/react/24/outline'
-import { 
-  CubeTransparentIcon as Diamond, 
-  TicketIcon as Ticket,
-  IdentificationIcon as AddressBook,
-  PlusCircleIcon as Shield,
-  MapIcon as MapTrifold,
-  BanknotesIcon as Storefront,
-  ChatBubbleBottomCenterTextIcon as ForumUsers
-} from '@heroicons/react/24/outline'
+import { BanknotesIcon, CategoryIcon, ChatBubbleBottomCenterTextIcon, ChevronUpIcon, CubeTransparentIcon, EnvelopeIcon, GlobeAltIcon, HeartIcon, IdentificationIcon, MapIcon, MapPinIcon, PhoneIcon, PlusCircleIcon, QuestionMarkCircleIcon, ShieldCheckIcon, TicketIcon, ViewfinderCircleIcon } from '@heroicons/react/24/outline'
 import { 
   DesertMesaSVG, BoiseFoothillsSVG, SouthBoiseDesertSVG, MountainPineSVG,
   HellsCanyonSVG, SnakeRiverCanyonSVG, CascadeSawtoothsSVG

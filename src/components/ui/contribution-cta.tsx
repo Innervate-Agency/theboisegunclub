@@ -3,14 +3,7 @@
 import { Card, CardContent } from './card'
 import { Button } from './button'
 import { Badge } from './badge'
-import { 
-  Handshake, 
-  Users, 
-  ChatsCircle, 
-  StarFour,
-  Camera,
-  PencilSimple
-} from '@phosphor-icons/react'
+import { CameraIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 interface ContributionItem {
   icon: React.ComponentType<{ className?: string; weight?: string }>
@@ -121,13 +114,11 @@ export function ContributionCTA({
         {/* Community Call-to-Action */}
         <div className="text-center pt-base border-t border-border">
           <div className="flex items-center justify-center gap-xs mb-sm">
-            <Users className="h-4 w-4 text-muted-foreground" weight="bold" />
+            <UsersIcon className="h-4 w-4 text-muted-foreground" weight="bold" />
             <span className="text-body-sm text-muted-foreground">Built by Idaho gun owners, for Idaho gun owners</span>
           </div>
           <Button 
-            variant="outline" 
-            size="lg"
-            animationType="arrow"
+            variant="outline" animationType="arrow"
             className="font-rajdhani font-bold"
           >
             Join the Community

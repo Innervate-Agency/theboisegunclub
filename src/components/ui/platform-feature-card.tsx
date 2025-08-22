@@ -1,14 +1,7 @@
 'use client'
 
 import { Card, CardContent } from './card'
-import { 
-  Calendar, 
-  AddressBook, 
-  Shield, 
-  MapTrifold, 
-  Storefront, 
-  Users 
-} from '@phosphor-icons/react'
+import { BookOpenIcon, BuildingStorefrontIcon, CalendarDaysIcon, MapIcon, ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 interface PlatformFeatureCardProps {
   icon: React.ComponentType<{ className?: string; weight?: string }>

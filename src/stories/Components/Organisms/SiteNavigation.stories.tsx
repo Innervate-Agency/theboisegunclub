@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { SiteNavigation } from '@/components/ui/site-navigation';
-import { Home, Users, Calendar, Target, Trophy, Settings, Shield } from 'lucide-react';
+import { CalendarDaysIcon, ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof SiteNavigation> = {
   title: 'Design System/Organisms/SiteNavigation',
@@ -103,17 +103,17 @@ export const NavigationVariants: Story = {
     <div className="space-y-lg">
       <div>
         <h3 className="text-body-lg font-rajdhani font-bold text-blued-steel mb-base">Default Navigation</h3>
-        <SiteNavigation variant="default" layout="horizontal" showLogo={true} />
+        <SiteNavigation variant="outline" layout="horizontal" showLogo={true} />
       </div>
       
       <div>
         <h3 className="text-body-lg font-rajdhani font-bold text-blued-steel mb-base">Premium Navigation</h3>
-        <SiteNavigation variant="premium" layout="horizontal" showLogo={true} />
+        <SiteNavigation variant="default" layout="horizontal" showLogo={true} />
       </div>
       
       <div>
         <h3 className="text-body-lg font-rajdhani font-bold text-blued-steel mb-base">Elite Navigation</h3>
-        <SiteNavigation variant="elite" layout="horizontal" showLogo={true} />
+        <SiteNavigation variant="default" layout="horizontal" showLogo={true} />
       </div>
       
       <div>
@@ -130,14 +130,14 @@ export const ResponsiveDesign: Story = {
       <div>
         <h3 className="text-body-lg font-rajdhani font-bold text-blued-steel mb-base">Desktop View</h3>
         <div className="border border-warm-stone rounded-sm overflow-hidden">
-          <SiteNavigation variant="premium" layout="horizontal" showLogo={true} />
+          <SiteNavigation variant="default" layout="horizontal" showLogo={true} />
         </div>
       </div>
       
       <div>
         <h3 className="text-body-lg font-rajdhani font-bold text-blued-steel mb-base">Mobile View</h3>
         <div className="max-w-sm border border-warm-stone rounded-sm overflow-hidden">
-          <SiteNavigation variant="premium" layout="horizontal" showLogo={true} />
+          <SiteNavigation variant="default" layout="horizontal" showLogo={true} />
         </div>
       </div>
     </div>
@@ -148,7 +148,7 @@ export const WithCustomContent: Story = {
   render: () => (
     <div className="space-y-lg">
       <SiteNavigation 
-        variant="premium" 
+        variant="default" 
         layout="horizontal" 
         showLogo={true}
         customContent={
@@ -170,7 +170,7 @@ export const DarkModeExample: Story = {
   render: () => (
     <div className="dark">
       <div className="bg-kent-slate-gray min-h-screen">
-        <SiteNavigation variant="premium" layout="horizontal" showLogo={true} />
+        <SiteNavigation variant="default" layout="horizontal" showLogo={true} />
         <div className="p-lg">
           <h2 className="text-display-sm font-rajdhani font-bold text-chester-white mb-base">Dark Mode Navigation</h2>
           <p className="text-don-gray">
@@ -185,7 +185,7 @@ export const DarkModeExample: Story = {
 export const AccessibilityFeatures: Story = {
   render: () => (
     <div className="space-y-md">
-      <SiteNavigation variant="premium" layout="horizontal" showLogo={true} />
+      <SiteNavigation variant="default" layout="horizontal" showLogo={true} />
       <div className="p-md bg-range-white rounded-sm">
         <h3 className="text-body-lg font-rajdhani font-bold text-blued-steel mb-base">Accessibility Features</h3>
         <ul className="space-y-xs text-desert-cliff-brown">

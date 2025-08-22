@@ -3,19 +3,7 @@
 import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
-import {
-  CalendarIcon,
-  ClockIcon,
-  MapPinIcon,
-  UsersIcon,
-  WrenchScrewdriverIcon,
-  ExclamationTriangleIcon,
-  SunIcon,
-  CloudIcon,
-  TagIcon,
-  BanknotesIcon,
-  UserIcon
-} from '@heroicons/react/24/outline'
+import { BanknotesIcon, CalendarDaysIcon, ClockIcon, CloudIcon, ExclamationTriangleIcon, MapPinIcon, SunIcon, TagIcon, UserIcon, UsersIcon, WeatherIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
 
 interface EventInfoBarProps {
   // Event data
@@ -129,7 +117,7 @@ export function EventInfoBar({
             <div className="grid grid-cols-2 md:grid-cols-5 gap-lg">
               {/* Date */}
               <div className="flex flex-col items-center text-center">
-                <CalendarIcon className="h-6 w-6 text-nav-events mb-xs" />
+                <CalendarDaysIcon className="h-6 w-6 text-nav-events mb-xs" />
                 <div className="text-body-sm font-medium text-foreground">Date</div>
                 <div className="text-xs text-muted-foreground mt-xs">{eventDate}</div>
               </div>

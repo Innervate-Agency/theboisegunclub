@@ -1,5 +1,7 @@
 'use client'
 
+
+import { CalendarIcon, ChartBarIcon, DocumentTextIcon, HomeIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import React, { ReactNode } from 'react'
 import { UnifiedPageTemplate, UnifiedPageTemplateProps, QuickTab, FunnelIconSection, SortOption, StatItem } from './unified-page-template'
 import { TrustIndicators } from './trust-indicators'
@@ -29,7 +31,7 @@ interface DirectoryPageVariantProps extends PageVariantBaseProps {
   activeSortId?: string
   onSortChange?: (sortId: string) => void
   stats?: StatItem[]
-  activityFeed?: any[]
+  activityFeed?: Array<{ id: string; type: string; content: string; timestamp: string }>
 }
 
 export function DirectoryPageVariant({
@@ -113,7 +115,7 @@ interface EventsPageVariantProps extends PageVariantBaseProps {
   activeSortId?: string
   onSortChange?: (sortId: string) => void
   stats?: StatItem[]
-  activityFeed?: any[]
+  activityFeed?: Array<{ id: string; type: string; content: string; timestamp: string }>
 }
 
 export function EventsPageVariant({
@@ -194,7 +196,7 @@ interface TrainingPageVariantProps extends PageVariantBaseProps {
   activeSortId?: string
   onSortChange?: (sortId: string) => void
   stats?: StatItem[]
-  activityFeed?: any[]
+  activityFeed?: Array<{ id: string; type: string; content: string; timestamp: string }>
 }
 
 export function TrainingPageVariant({
@@ -287,7 +289,7 @@ interface ArmoryPageVariantProps extends PageVariantBaseProps {
   activeSortId?: string
   onSortChange?: (sortId: string) => void
   stats?: StatItem[]
-  activityFeed?: any[]
+  activityFeed?: Array<{ id: string; type: string; content: string; timestamp: string }>
 }
 
 export function ArmoryPageVariant({
@@ -380,7 +382,7 @@ interface MarketplacePageVariantProps extends PageVariantBaseProps {
   activeSortId?: string
   onSortChange?: (sortId: string) => void
   stats?: StatItem[]
-  activityFeed?: any[]
+  activityFeed?: Array<{ id: string; type: string; content: string; timestamp: string }>
 }
 
 export function MarketplacePageVariant({
@@ -461,7 +463,7 @@ interface GuidesPageVariantProps extends PageVariantBaseProps {
   activeSortId?: string
   onSortChange?: (sortId: string) => void
   stats?: StatItem[]
-  activityFeed?: any[]
+  activityFeed?: Array<{ id: string; type: string; content: string; timestamp: string }>
 }
 
 export function GuidesPageVariant({

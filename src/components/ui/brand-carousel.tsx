@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
-import { ChevronLeft, ChevronRight, Target, Shield, Settings, Award, Zap, Users } from 'lucide-react'
+import { ChevronLeftIcon, ChevronRightIcon, Cog6ToothIcon, ShieldCheckIcon, ToothIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const brandShowcaseVariants = cva(
   "relative w-full",

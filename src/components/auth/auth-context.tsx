@@ -57,7 +57,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
         }
       }
     } catch (error) {
-      console.error('Auth initialization error:', error)
       tokenStorage.remove()
     } finally {
       setAuthState(prev => ({ ...prev, isLoading: false }))
@@ -83,7 +82,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
       setAuthState(prev => ({ ...prev, isLoading: false }))
       return false
     } catch (error) {
-      console.error('Login error:', error)
       setAuthState(prev => ({ ...prev, isLoading: false }))
       return false
     }
@@ -108,7 +106,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
       setAuthState(prev => ({ ...prev, isLoading: false }))
       return false
     } catch (error) {
-      console.error('Registration error:', error)
       setAuthState(prev => ({ ...prev, isLoading: false }))
       return false
     }
@@ -121,7 +118,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
         await authAPI.logout(token)
       }
     } catch (error) {
-      console.error('Logout error:', error)
     } finally {
       tokenStorage.remove()
       setAuthState({
@@ -142,7 +138,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
           setAuthState(prev => ({ ...prev, user }))
         }
       } catch (error) {
-        console.error('User refresh error:', error)
       }
     }
   }

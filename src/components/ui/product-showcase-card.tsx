@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { ArrowRight } from "lucide-react"
+import { ArrowRightIcon } from "@heroicons/react/24/outline"
 
 const productShowcaseCardVariants = cva(
   // TBGC Design System: Strategic restraint with sophisticated animations
@@ -102,7 +102,7 @@ const ProductShowcaseCard = React.forwardRef<HTMLDivElement, ProductShowcaseCard
           <div className="transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out delay-75">
             <div className="flex items-center gap-xs text-body-sm font-medium text-rusty-orange hover:text-rusty-orange/80 transition-colors cursor-pointer">
               <span>{ctaText}</span>
-              <ArrowRight className="size-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowRightIcon className="size-4 transform group-hover:translate-x-1 transition-transform duration-300" />
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ import StatCard from '@/components/ui/StatCard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { Search, Calendar, ShoppingCart, Share2, Bell, Building2, ArrowRight, MapPin, Users, Trophy, Target, AlertTriangle, Users2, MessageSquare, BookOpen, Shield, Megaphone, CheckCircle, Zap, Star, TrendingUp, Mail } from 'lucide-react';
+import { ArrowTrendingUpIcon, BellIcon, BoltIcon, BookOpenIcon, CalendarDaysIcon, ChatBubbleLeftRightIcon, CheckCircleIcon, CursorArrowRaysIcon, EnvelopeIcon, ExclamationTriangleIcon, MagnifyingGlassIcon, MapPinIcon, ShareIcon, ShieldCheckIcon, ShoppingCartIcon, SpeakerWaveIcon, StarIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta = {
   title: 'Design System/Pages/LandingPage',
@@ -33,7 +33,7 @@ export const Complete: Story = {
             <div className="space-y-lg">
               <div className="space-y-base">
                 <Badge className="bg-sandy-ochre text-dark-chocolate shadow-sm">
-                  <Target className="h-4 w-4 mr-xs" />
+                  <CursorArrowRaysIcon className="h-4 w-4 mr-xs" />
                   Regional Platform
                 </Badge>
                 <h1 className="font-rajdhani text-6xl md:text-8xl leading-none text-foreground tracking-tight">
@@ -44,19 +44,19 @@ export const Complete: Story = {
                 </p>
                 <div className="space-y-sm">
                   <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                    <Shield className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
+                    <ShieldCheckIcon className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>Safety-first community focused on responsible firearms education</span>
                   </div>
                   <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                    <Star className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
+                    <StarIcon className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>Preserving Idaho's rich firearms heritage and outdoor traditions</span>
                   </div>
                   <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                    <Users className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
+                    <UsersIcon className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>Connecting 250K+ gun owners across the Treasure Valley region</span>
                   </div>
                   <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                    <TrendingUp className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
+                    <ArrowTrendingUpIcon className="h-4 w-4 text-sandy-ochre flex-shrink-0" />
                     <span>4-tier subscription model supporting local businesses</span>
                   </div>
                 </div>
@@ -68,26 +68,26 @@ export const Complete: Story = {
               <StatCard
                 value="Directory"
                 label="Local Gun Shops, Ranges & Trainers"
-                variant="default"
-                icon={<Building2 className="h-6 w-6" />}
+                variant="outline"
+                icon={<BuildingOffice2Icon className="h-6 w-6" />}
               />
               <StatCard
                 value="Events"
                 label="Unified Calendar from All Clubs"
-                variant="default"
-                icon={<Calendar className="h-6 w-6" />}
+                variant="outline"
+                icon={<CalendarDaysIcon className="h-6 w-6" />}
               />
               <StatCard
                 value="Forum"
                 label="Community Discussion & Trading"
-                variant="default"
-                icon={<Share2 className="h-6 w-6" />}
+                variant="outline"
+                icon={<ShareIcon className="h-6 w-6" />}
               />
               <StatCard
                 value="Resources"
                 label="Idaho Laws, Safety & Training Info"
-                variant="default"
-                icon={<Bell className="h-6 w-6" />}
+                variant="outline"
+                icon={<BellIcon className="h-6 w-6" />}
               />
             </div>
           </div>
@@ -108,9 +108,9 @@ export const Complete: Story = {
           <div className="grid gap-md md:grid-cols-2 lg:grid-cols-4">
             <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
-                <Search className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
+                <MagnifyingGlassIcon className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
                 <CardTitle className="flex items-center gap-xs">
-                  <Building2 className="h-5 w-5" />
+                  <BuildingOffice2Icon className="h-5 w-5" />
                   Business Directory
                 </CardTitle>
               </CardHeader>
@@ -123,9 +123,9 @@ export const Complete: Story = {
             
             <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sandy-ochre after:to-rusty-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
-                <Calendar className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
+                <CalendarDaysIcon className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
                 <CardTitle className="flex items-center gap-xs">
-                  <Users2 className="h-5 w-5" />
+                  <UsersIcon className="h-5 w-5" />
                   Unified Events
                 </CardTitle>
               </CardHeader>
@@ -138,9 +138,9 @@ export const Complete: Story = {
             
             <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sandy-ochre after:to-rusty-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
-                <Share2 className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
+                <ShareIcon className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
                 <CardTitle className="flex items-center gap-xs">
-                  <MessageSquare className="h-5 w-5" />
+                  <ChatBubbleLeftRightIcon className="h-5 w-5" />
                   Community Hub
                 </CardTitle>
               </CardHeader>
@@ -153,9 +153,9 @@ export const Complete: Story = {
             
             <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
-                <ShoppingCart className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
+                <ShoppingCartIcon className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
                 <CardTitle className="flex items-center gap-xs">
-                  <Zap className="h-5 w-5" />
+                  <BoltIcon className="h-5 w-5" />
                   Service Marketplace
                 </CardTitle>
               </CardHeader>
@@ -179,11 +179,11 @@ export const Complete: Story = {
             <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-red after:to-ayu-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
                 <Badge className="w-fit mb-xs bg-ayu-red/20 text-ayu-red">
-                  <AlertTriangle className="h-3 w-3 mr-1" />
+                  <ExclamationTriangleIcon className="h-3 w-3 mr-1" />
                   Fragmentation
                 </Badge>
                 <CardTitle className="flex items-center gap-xs">
-                  <Search className="h-5 w-5 text-ayu-red" />
+                  <MagnifyingGlassIcon className="h-5 w-5 text-ayu-red" />
                   Information Scattered Everywhere
                 </CardTitle>
               </CardHeader>
@@ -197,11 +197,11 @@ export const Complete: Story = {
             <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-teal after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
                 <Badge className="w-fit mb-xs bg-slate-blue/20 text-slate-blue">
-                  <AlertTriangle className="h-3 w-3 mr-1" />
+                  <ExclamationTriangleIcon className="h-3 w-3 mr-1" />
                   Isolation
                 </Badge>
                 <CardTitle className="flex items-center gap-xs">
-                  <Building2 className="h-5 w-5 text-slate-blue" />
+                  <BuildingOffice2Icon className="h-5 w-5 text-slate-blue" />
                   Clubs Operating in Silos
                 </CardTitle>
               </CardHeader>
@@ -215,11 +215,11 @@ export const Complete: Story = {
             <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-ayu-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
                 <Badge className="w-fit mb-xs bg-ayu-green/20 text-ayu-green">
-                  <AlertTriangle className="h-3 w-3 mr-1" />
+                  <ExclamationTriangleIcon className="h-3 w-3 mr-1" />
                   Discovery
                 </Badge>
                 <CardTitle className="flex items-center gap-xs">
-                  <TrendingUp className="h-5 w-5 text-ayu-green" />
+                  <ArrowTrendingUpIcon className="h-5 w-5 text-ayu-green" />
                   Businesses Struggle for Visibility
                 </CardTitle>
               </CardHeader>
@@ -233,11 +233,11 @@ export const Complete: Story = {
             <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-cobalt after:to-ayu-purple after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
                 <Badge className="w-fit mb-xs bg-ayu-cobalt/20 text-ayu-cobalt">
-                  <AlertTriangle className="h-3 w-3 mr-1" />
+                  <ExclamationTriangleIcon className="h-3 w-3 mr-1" />
                   Education
                 </Badge>
                 <CardTitle className="flex items-center gap-xs">
-                  <Shield className="h-5 w-5 text-ayu-cobalt" />
+                  <ShieldCheckIcon className="h-5 w-5 text-ayu-cobalt" />
                   Safety Education Gaps
                 </CardTitle>
               </CardHeader>
@@ -251,11 +251,11 @@ export const Complete: Story = {
             <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-red after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
                 <Badge className="w-fit mb-xs bg-ayu-purple/20 text-ayu-purple">
-                  <AlertTriangle className="h-3 w-3 mr-1" />
+                  <ExclamationTriangleIcon className="h-3 w-3 mr-1" />
                   Heritage
                 </Badge>
                 <CardTitle className="flex items-center gap-xs">
-                  <BookOpen className="h-5 w-5 text-ayu-purple" />
+                  <BookOpenIcon className="h-5 w-5 text-ayu-purple" />
                   Heritage Being Lost
                 </CardTitle>
               </CardHeader>
@@ -269,11 +269,11 @@ export const Complete: Story = {
             <Card className="shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-yellow after:to-slate-blue after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg">
               <CardHeader>
                 <Badge className="w-fit mb-xs bg-ayu-yellow/20 text-ayu-yellow">
-                  <AlertTriangle className="h-3 w-3 mr-1" />
+                  <ExclamationTriangleIcon className="h-3 w-3 mr-1" />
                   Advocacy
                 </Badge>
                 <CardTitle className="flex items-center gap-xs">
-                  <Megaphone className="h-5 w-5 text-ayu-yellow" />
+                  <SpeakerWaveIcon className="h-5 w-5 text-ayu-yellow" />
                   No Community Voice
                 </CardTitle>
               </CardHeader>
@@ -294,16 +294,16 @@ export const Complete: Story = {
             <div className="bg-card rounded-xs p-xl shadow-sm max-w-4xl mx-auto relative overflow-hidden group after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-sagebrush-green after:to-sandy-ochre after:transition-all after:duration-500 after:ease-out hover:after:w-full after:rounded-b-lg">
               <div>
                 <Badge className="mb-base bg-sagebrush-green/20 text-sagebrush-green">
-                  <CheckCircle className="h-3 w-3 mr-1" />
+                  <CheckCircleIcon className="h-3 w-3 mr-1" />
                   Our Solution
                 </Badge>
                 <h3 className="font-rajdhani text-heading-lg font-bold text-card-foreground mb-base flex items-center gap-xs">
-                  <Star className="h-6 w-6 text-sandy-ochre" />
+                  <StarIcon className="h-6 w-6 text-sandy-ochre" />
                   One Platform to Unite Treasure Valley's Firearms Community
                 </h3>
                 <div className="grid gap-base md:grid-cols-2 text-left">
                   <div className="flex items-start gap-xs">
-                    <Search className="h-5 w-5 text-sagebrush-green mt-xs flex-shrink-0" />
+                    <MagnifyingGlassIcon className="h-5 w-5 text-sagebrush-green mt-xs flex-shrink-0" />
                     <div>
                       <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Verified Business Network</h4>
                       <p className="text-body-sm text-muted-foreground">
@@ -312,7 +312,7 @@ export const Complete: Story = {
                     </div>
                   </div>
                   <div className="flex items-start gap-xs">
-                    <Calendar className="h-5 w-5 text-sagebrush-green mt-xs flex-shrink-0" />
+                    <CalendarDaysIcon className="h-5 w-5 text-sagebrush-green mt-xs flex-shrink-0" />
                     <div>
                       <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Smart Event Coordination</h4>
                       <p className="text-body-sm text-muted-foreground">
@@ -321,7 +321,7 @@ export const Complete: Story = {
                     </div>
                   </div>
                   <div className="flex items-start gap-xs">
-                    <MessageSquare className="h-5 w-5 text-sagebrush-green mt-xs flex-shrink-0" />
+                    <ChatBubbleLeftRightIcon className="h-5 w-5 text-sagebrush-green mt-xs flex-shrink-0" />
                     <div>
                       <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Heritage & Education Center</h4>
                       <p className="text-body-sm text-muted-foreground">
@@ -330,7 +330,7 @@ export const Complete: Story = {
                     </div>
                   </div>
                   <div className="flex items-start gap-xs">
-                    <BookOpen className="h-5 w-5 text-sagebrush-green mt-xs flex-shrink-0" />
+                    <BookOpenIcon className="h-5 w-5 text-sagebrush-green mt-xs flex-shrink-0" />
                     <div>
                       <h4 className="font-rajdhani font-bold text-card-foreground mb-xs">Premium Business Tools</h4>
                       <p className="text-body-sm text-muted-foreground">
@@ -355,7 +355,7 @@ export const Complete: Story = {
             <div className="text-center lg:text-left space-y-lg">
               <div className="space-y-base">
                 <Badge className="bg-sandy-ochre/20 text-sandy-ochre border-sandy-ochre/30">
-                  <MessageSquare className="h-4 w-4 mr-xs" />
+                  <ChatBubbleLeftRightIcon className="h-4 w-4 mr-xs" />
                   Get In Touch
                 </Badge>
                 <h2 className="font-rajdhani text-5xl md:text-6xl font-bold text-range-white leading-tight">
@@ -368,14 +368,14 @@ export const Complete: Story = {
               
               <div className="grid gap-sm sm:grid-cols-2 max-w-lg lg:max-w-none">
                 <div className="flex items-start gap-base">
-                  <Building2 className="h-5 w-5 text-sandy-ochre mt-xs flex-shrink-0" />
+                  <BuildingOffice2Icon className="h-5 w-5 text-sandy-ochre mt-xs flex-shrink-0" />
                   <div>
                     <h4 className="font-rajdhani font-bold text-range-white">Business Partnerships</h4>
                     <p className="text-body-sm text-range-white/70">Join our growing network of vendors</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-base">
-                  <Users className="h-5 w-5 text-sandy-ochre mt-xs flex-shrink-0" />
+                  <UsersIcon className="h-5 w-5 text-sandy-ochre mt-xs flex-shrink-0" />
                   <div>
                     <h4 className="font-rajdhani font-bold text-range-white">General Inquiries</h4>
                     <p className="text-body-sm text-range-white/70">Questions about the platform</p>
@@ -393,7 +393,7 @@ export const Complete: Story = {
                 <div className="relative space-y-lg">
                   <div className="text-left">
                     <h3 className="font-rajdhani text-2xl font-bold text-card-foreground mb-xs flex items-center gap-xs">
-                      <Mail className="h-6 w-6 text-sandy-ochre" />
+                      <EnvelopeIcon className="h-6 w-6 text-sandy-ochre" />
                       Contact Us
                     </h3>
                     <p className="text-body-sm text-muted-foreground">
@@ -407,26 +407,20 @@ export const Complete: Story = {
                         type="text"
                         name="name"
                         placeholder="Your name"
-                        variant="default"
-                        size="lg"
-                        required
+                        variant="outline" required
                       />
                       <Input 
                         type="email"
                         name="email"
                         placeholder="Email address"
-                        variant="default"
-                        size="lg"
-                        required
+                        variant="outline" required
                       />
                     </div>
                     <Input 
                       type="text"
                       name="subject"
                       placeholder="Subject"
-                      variant="default"
-                      size="lg"
-                      required
+                      variant="outline" required
                     />
                     <div className="relative">
                       <textarea 
@@ -438,7 +432,7 @@ export const Complete: Story = {
                       />
                     </div>
                     <Button type="submit" size="xl" className="w-full bg-gradient-to-r from-sandy-ochre to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-sandy-ochre font-rajdhani font-bold text-lg shadow-elevated transition-all duration-300">
-                      <Mail className="h-5 w-5 mr-xs" />
+                      <EnvelopeIcon className="h-5 w-5 mr-xs" />
                       Send Message
                     </Button>
                   </form>

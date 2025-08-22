@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { TrendingUp, TrendingDown } from 'lucide-react'
+import { ArrowTrendingUpIcon } from '@heroicons/react/24/outline';
 
 const statsShowcaseVariants = cva(
   "w-full",
@@ -99,7 +99,7 @@ export function StatsShowcase({
                     {stat.change && (
                       <div className="flex items-center gap-xs text-caption">
                         {stat.change.trend === 'up' && (
-                          <TrendingUp className="size-3 text-rifling-green" />
+                          <ArrowTrendingUpIcon className="size-3 text-rifling-green" />
                         )}
                         {stat.change.trend === 'down' && (
                           <TrendingDown className="size-3 text-rusty-orange" />

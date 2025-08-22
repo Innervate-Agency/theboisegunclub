@@ -7,36 +7,20 @@ import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { MarketplaceDealCard } from '@/components/ui/marketplace-deal-card'
+import { MarketplaceTicker } from '@/components/ui/marketplace-ticker'
+import { MarketplaceContentSection } from '@/components/ui/marketplace-content-section'
+import { MarketplaceDiamonds } from '@/components/ui/hero-marketplace-diamonds'
+import { MarketplaceEmbers } from '@/components/ui/hero-marketplace-embers'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { DirectoryStatsGrid } from '@/components/ui/directory-stats-grid'
 import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
-import { usePageFilters } from '@/hooks/usePageFilters'
+import { useCardPageFilters } from '@/hooks/useCardPageFilters'
 import { EmptyState } from '@/components/ui/empty-state'
-import { 
-  ShoppingCartIcon as ShoppingCart,
-  CurrencyDollarIcon as CurrencyDollar,
-  ArchiveBoxIcon as Package,
-  StarIcon as Star,
-  CursorArrowRaysIcon as Target, 
-  ShieldCheckIcon as Shield,
-  BuildingStorefrontIcon as Storefront,
-  MapPinIcon as MapPin,
-  PhoneIcon as Phone,
-  CheckCircleIcon as CheckCircle,
-  SparklesIcon as Crown,
-  ArrowTrendingUpIcon as TrendUp,
-  BoltIcon as Lightning,
-  BuildingOfficeIcon as Buildings,
-  ChevronRightIcon as CaretRight,
-  ArrowRightIcon as ArrowRight,
-  PlusIcon as Plus,
-  MagnifyingGlassIcon as Search,
-  FunnelIcon as Filter,
-  ClockIcon as Clock,
-  FireIcon as Fire
-} from '@heroicons/react/24/outline'
+import { EnhancedPagination } from '@/components/ui/enhanced-pagination'
+import { CardSkeleton } from '@/components/ui/card-skeleton'
+import { ArchiveBoxIcon, ArrowRightIcon, ArrowTrendingUpIcon, BoltIcon, BuildingOfficeIcon, BuildingStorefrontIcon, CheckCircleIcon, ChevronRightIcon, ClockIcon, CurrencyDollarIcon, CursorArrowRaysIcon, FireIcon, FunnelIcon, ListBulletIcon, MagnifyingGlassIcon, MapPinIcon, PhoneIcon, PlusIcon, RectangleGroupIcon, ShieldCheckIcon, ShoppingCartIcon, SparklesIcon, Squares2X2Icon, StarIcon, ViewColumnsIcon, WindowIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 // Marketplace deal data type
 interface MarketplaceDeal {
@@ -337,19 +321,17 @@ const marketplaceDeals: MarketplaceDeal[] = [
 export function MarketplacePageStandardized() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = React.useState(false)
 
-  // Modern filter system
-  const {
-    filters,
-    filteredItems,
-    searchQuery,
-    setSearchQuery,
-    sortBy,
-    setSortBy,
-    handleFilterChange,
-    handleClearSection,
-    handleClearAll
-  } = usePageFilters({
+  // Filter configuration using Events page pattern
+  const filters = useCardPageFilters({
     items: marketplaceDeals,
+    initialTab: 'all',
+    initialSortBy: 'featured',
+    initialViewMode: 'grid',
+    initialItemsPerPage: 12,
+    perPageOptions: [8, 12, 24, 48],
+    enableInfiniteScroll: false,
+    
+    // Search filter function
     searchFilter: (deal, query) => {
       const searchTerms = query.toLowerCase()
       return (
@@ -361,21 +343,44 @@ export function MarketplacePageStandardized() {
         (deal.model && deal.model.toLowerCase().includes(searchTerms))
       )
     },
-    categoryFilters: {
-      category: (deal, selectedCategories) => 
-        selectedCategories.includes(deal.category.toLowerCase()),
-      condition: (deal, selectedConditions) => 
-        selectedConditions.includes(deal.condition.toLowerCase()),
+    
+    // Tab filter function
+    tabFilter: (deal, activeTab) => {
+      switch (activeTab) {
+        case 'firearms': return deal.category === 'Firearms'
+        case 'services': return deal.category === 'Services'
+        case 'equipment': return deal.category === 'Equipment'
+        case 'custom': return deal.category === 'Custom Firearms'
+        case 'featured': return deal.isFeatured
+        default: return true
+      }
+    },
+    
+    // Custom filters
+    customFilters: {
+      category: (deal, selectedCategories) => {
+        if (selectedCategories.length === 0) return true
+        return selectedCategories.includes(deal.category.toLowerCase())
+      },
+      condition: (deal, selectedConditions) => {
+        if (selectedConditions.length === 0) return true
+        return selectedConditions.includes(deal.condition.toLowerCase())
+      },
       price: (deal, selectedPrices) => {
+        if (selectedPrices.length === 0) return true
         if (selectedPrices.includes('under50')) return deal.salePrice < 50
         if (selectedPrices.includes('50-200')) return deal.salePrice >= 50 && deal.salePrice <= 200
         if (selectedPrices.includes('200-500')) return deal.salePrice >= 200 && deal.salePrice <= 500
         if (selectedPrices.includes('over500')) return deal.salePrice > 500
         return true
       },
-      featured: (deal, selectedValues) => 
-        selectedValues.includes('featured') ? deal.isFeatured : true
+      featured: (deal, selectedValues) => {
+        if (selectedValues.length === 0) return true
+        return selectedValues.includes('featured') ? deal.isFeatured : true
+      }
     },
+    
+    // Sort functions
     sortFunctions: {
       featured: (a, b) => {
         const aFeatured = a.isFeatured ? 1 : 0
@@ -386,9 +391,24 @@ export function MarketplacePageStandardized() {
       price: (a, b) => a.salePrice - b.salePrice,
       discount: (a, b) => b.discount - a.discount,
       alphabetical: (a, b) => a.title.localeCompare(b.title)
-    },
-    initialSortBy: 'featured'
+    }
   })
+
+  const handleFilterChange = (sectionId: string, optionId: string) => {
+    filters.updateFilters(sectionId, optionId)
+  }
+
+  const handleClearSection = (sectionId: string) => {
+    filters.clearFilterSection(sectionId)
+  }
+
+  const handleClearAll = () => {
+    filters.clearAllFilters()
+  }
+
+  const getActiveFilterCount = () => {
+    return Object.values(filters.selectedFilters).reduce((count, filterArray) => count + filterArray.length, 0)
+  }
 
   // Activity feed data for marketplace based on authentic data
   const activityFeedData = [
@@ -482,9 +502,8 @@ export function MarketplacePageStandardized() {
   // Hero content sections - clean separation of concerns
   const heroBackgroundElements = (
     <>
-      <div className="absolute top-8 right-12 w-3 h-3 bg-card/30 rounded-full animate-pulse"></div>
-      <div className="absolute bottom-12 left-16 w-2 h-2 bg-card/20 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
-      <div className="absolute top-16 right-20 w-1 h-1 bg-card/25 rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
+      <MarketplaceDiamonds />
+      <MarketplaceEmbers />
     </>
   )
 
@@ -512,15 +531,15 @@ export function MarketplacePageStandardized() {
       {/* Badges below title/subtitle */}
       <div className="flex flex-wrap gap-xs">
         <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-          <Storefront className="h-4 w-4 mr-xs" />
+          <BuildingStorefrontIcon className="h-4 w-4 mr-xs" />
           Local Dealers
         </Badge>
         <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-          <Shield className="h-4 w-4 mr-xs" />
+          <ShieldCheckIcon className="h-4 w-4 mr-xs" />
           FFL Compliant
         </Badge>
         <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-          <Star className="h-4 w-4 mr-xs" />
+          <StarIcon className="h-4 w-4 mr-xs" />
           Verified Vendors
         </Badge>
       </div>
@@ -530,17 +549,13 @@ export function MarketplacePageStandardized() {
       </p>
       
       <div className="flex flex-col sm:flex-row gap-base">
-        <Button 
-          size="lg" 
-          className="bg-nav-marketplace text-white hover:bg-white hover:text-nav-marketplace font-rajdhani font-bold"
+        <Button className="bg-nav-marketplace text-white hover:bg-white hover:text-nav-marketplace font-rajdhani font-bold"
         >
-          <Plus className="h-4 w-4 mr-xs" />
+          <PlusIcon className="h-4 w-4 mr-xs" />
           List Your Items
         </Button>
         <Button 
-          variant="outline" 
-          size="lg"
-          className="border-border text-white hover:bg-card hover:text-nav-marketplace"
+          variant="outline" className="border-border text-white hover:bg-card hover:text-nav-marketplace"
         >
           View All Deals
         </Button>
@@ -556,11 +571,11 @@ export function MarketplacePageStandardized() {
       <CardHeader className="pb-xs relative z-10 p-sm">
         <div className="flex items-center justify-between mb-xs">
           <Badge className="bg-nav-marketplace/20 text-nav-marketplace border-nav-marketplace/30 font-rajdhani font-bold text-[10px]">
-            <Star className="h-3 w-3 mr-xs" />
+            <StarIcon className="h-3 w-3 mr-xs" />
             FEATURED DEAL
           </Badge>
           <div className="flex items-center gap-xs text-xs text-muted-foreground">
-            <CheckCircle className="h-3 w-3 text-nav-marketplace" />
+            <CheckCircleIcon className="h-3 w-3 text-nav-marketplace" />
             <span>Verified</span>
           </div>
         </div>
@@ -568,7 +583,7 @@ export function MarketplacePageStandardized() {
         <div className="space-y-xs">
           <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">{featuredDeal.title}</h3>
           <div className="flex items-center gap-xs text-xs text-muted-foreground">
-            <Storefront className="h-3 w-3 text-nav-marketplace" />
+            <BuildingStorefrontIcon className="h-3 w-3 text-nav-marketplace" />
             <span>{featuredDeal.business} • {featuredDeal.condition}</span>
           </div>
         </div>
@@ -592,53 +607,64 @@ export function MarketplacePageStandardized() {
             size="sm"
           >
             VIEW DEAL
-            <ArrowRight className="h-3 w-3 ml-xs" />
+            <ArrowRightIcon className="h-3 w-3 ml-xs" />
           </Button>
         </div>
       </CardContent>
     </Card>
   )
 
-  return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-nav-marketplace via-nav-marketplace/90 to-nav-marketplace/80 text-white">
-        {/* Background Elements */}
-        {heroBackgroundElements}
-        
-        <div className="container mx-auto px-4 py-12">
-          <div className="max-w-6xl mx-auto">
-            <div className="hero-grid-layout">
-              {/* Hero Left Content */}
-              <div className="h-full flex flex-col justify-center space-y-lg py-md">
-                {heroLeftContent}
-              </div>
-              
-              {/* Hero Right Content */}
-              <div className="h-full flex flex-col justify-center">
-                {heroRightContent}
-              </div>
+  // Hero content - using Events page pattern
+  const heroContent = (
+    <section className="relative overflow-hidden bg-gradient-marketplace-hero px-md py-lg">
+      {heroBackgroundElements}
+      
+      <div className="container mx-auto max-w-site relative z-10">
+        <div className="hero-grid-layout">
+          {/* Content - Left side - 2/3 width */}
+          <div className="h-full flex flex-col justify-center space-y-mobile-lg sm:space-y-lg py-mobile-md sm:py-md">
+            {heroLeftContent}
+          </div>
+          
+          {/* Featured Deal Card - Right side */}
+          <div className="py-mobile-md sm:py-md">
+            <div className="relative">
+              {heroRightContent}
             </div>
           </div>
         </div>
       </div>
+    </section>
+  )
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="w-full px-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl">
-          <div className="flex gap-2xl max-w-[1920px] mx-auto">
+  return (
+    <div className="min-h-screen bg-background">
+      {heroContent}
+      
+      {/* Marketplace Ticker - Live deals */}
+      <MarketplaceTicker />
+      
+      {/* Marketplace Content Section - Trust and Categories */}
+      <MarketplaceContentSection />
+
+      {/* Main Content Area */}
+      <section className="py-mobile-2xl sm:py-4xl bg-background/50">
+        <div className="w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile">
+          <div className="flex flex-col lg:flex-row gap-mobile-lg sm:gap-2xl max-w-[1920px] mx-auto">
             
             {/* Left Sidebar - Modern Filters (Desktop) */}
             <aside className="hidden lg:block">
-              <ModernFilterSidebar
-                sections={filterSections}
-                selectedFilters={filters.selectedFilters}
-                onFilterChange={handleFilterChange}
-                onClearSection={handleClearSection}
-                onClearAll={handleClearAll}
-                totalResults={filters.totalResults}
-                filteredResults={filters.filteredResults}
-              />
+              <div className="space-y-6">
+                <ModernFilterSidebar
+                  sections={filterSections}
+                  selectedFilters={filters.selectedFilters}
+                  onFilterChange={handleFilterChange}
+                  onClearSection={handleClearSection}
+                  onClearAll={handleClearAll}
+                  totalResults={filters.totalResults}
+                  filteredResults={filters.filteredResults}
+                />
+              </div>
             </aside>
 
             {/* Mobile Filter Sidebar */}
@@ -657,6 +683,50 @@ export function MarketplacePageStandardized() {
             
             {/* Main Content */}
             <main className="flex-1 min-w-0">
+              {/* Search and Category Controls */}
+              <div className="mb-xl space-y-lg">
+                {/* Search Bar */}
+                <div className="relative max-w-2xl">
+                  <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    placeholder="Search firearms, gear, services, or dealers..."
+                    className="pl-10 h-12 text-body-base shadow-none"
+                    value={filters.searchQuery}
+                    onChange={(e) => filters.setSearchQuery(e.target.value)}
+                  />
+                </div>
+
+                {/* Quick Filter Tabs */}
+                <div className="flex flex-wrap gap-xs">
+                  {[
+                    { id: 'all', label: 'All Deals', count: marketplaceDeals.length, icon: Package },
+                    { id: 'firearms', label: 'Firearms', count: marketplaceDeals.filter(d => d.category === 'Firearms').length, icon: Target },
+                    { id: 'services', label: 'Services', count: marketplaceDeals.filter(d => d.category === 'Services').length, icon: Shield },
+                    { id: 'equipment', label: 'Equipment', count: marketplaceDeals.filter(d => d.category === 'Equipment').length, icon: Package },
+                    { id: 'custom', label: 'Custom', count: marketplaceDeals.filter(d => d.category === 'Custom Firearms').length, icon: Crown },
+                    { id: 'featured', label: 'Featured', count: marketplaceDeals.filter(d => d.isFeatured).length }
+                  ].map((tab) => (
+                    <Button
+                      key={tab.id}
+                      variant={filters.activeTab === tab.id ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => filters.setActiveTab(tab.id)}
+                      className="gap-xs font-rajdhani shadow-none rounded-xs"
+                    >
+                      {tab.icon && React.createElement(tab.icon, { 
+                        className: "size-3" 
+                      })}
+                      {tab.label}
+                      {tab.count && (
+                        <Badge variant="outline" size="sm" className="ml-xs">
+                          {tab.count}
+                        </Badge>
+                      )}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+
               {/* Results Header with Controls */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base sm:gap-xl mb-xl sm:mb-2xl lg:mb-3xl">
                 <div>
@@ -664,71 +734,146 @@ export function MarketplacePageStandardized() {
                     {filters.filteredResults} {filters.filteredResults === 1 ? 'Deal' : 'Deals'} Found
                   </h2>
                   <p className="text-muted-foreground">
-                    Idaho marketplace from verified dealers
+                    {filters.filteredResults !== filters.totalResults && `Filtered from ${filters.totalResults} total • `}
+                    {filters.searchQuery && `Search: "${filters.searchQuery}"`}
                   </p>
                 </div>
                 
-                {/* Search and Filter Controls */}
-                <div className="flex flex-col sm:flex-row gap-base sm:gap-base">
-                  {/* Search Bar */}
-                  <div className="relative">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      placeholder="Search firearms, ammo, optics, or dealers..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="pl-10 w-full sm:w-80"
-                    />
+                {/* View Controls - Mobile responsive */}
+                <div className="flex items-center gap-sm sm:gap-base">
+                  {/* Enhanced View Mode Toggle - Multiple Layouts */}
+                  <div className="hidden sm:flex items-center border rounded-xs overflow-x-auto">
+                    <Button
+                      variant={filters.viewMode === 'compact' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => filters.setViewMode('compact')}
+                      className="rounded-none border-none shadow-none"
+                      title="Compact - 4-6 items per row"
+                    >
+                      <Squares2X2Icon className="size-4" />
+                    </Button>
+                    <Button
+                      variant={filters.viewMode === 'dense' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => filters.setViewMode('dense')}
+                      className="rounded-none border-none shadow-none"
+                      title="Dense Grid - Maximum items"
+                    >
+                      <ListBulletIcon className="size-4" />
+                    </Button>
+                    <Button
+                      variant={filters.viewMode === 'grid' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => filters.setViewMode('grid')}
+                      className="rounded-none border-none shadow-none"
+                      title="Standard Grid"
+                    >
+                      <Squares2X2Icon className="size-4" />
+                    </Button>
+                    <Button
+                      variant={filters.viewMode === 'card' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => filters.setViewMode('card')}
+                      className="rounded-none border-none shadow-none"
+                      title="Large Cards"
+                    >
+                      <RectangleGroupIcon className="size-4" />
+                    </Button>
+                    <Button
+                      variant={filters.viewMode === 'list' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => filters.setViewMode('list')}
+                      className="rounded-none border-none shadow-none"
+                      title="List View"
+                    >
+                      <ListView className="size-4" />
+                    </Button>
                   </div>
                   
-                  {/* Mobile Filter Toggle */}
+                  {/* Mobile Filter Button */}
                   <Button
                     variant="outline"
-                    size="default"
+                    size="sm"
                     onClick={() => setMobileFiltersOpen(true)}
-                    className="lg:hidden flex items-center gap-2"
+                    className="gap-xs font-rajdhani lg:hidden"
                   >
-                    <Filter className="h-4 w-4" />
+                    <FunnelIcon className="size-4" />
                     Filters
-                    {Object.values(filters.selectedFilters).flat().length > 0 && (
-                      <Badge variant="secondary" className="ml-1 bg-nav-marketplace/20 text-nav-marketplace">
-                        {Object.values(filters.selectedFilters).flat().length}
+                    {getActiveFilterCount() > 0 && (
+                      <Badge variant="outline" className="ml-xs bg-nav-marketplace/20 text-nav-marketplace border-nav-marketplace/30 text-xs">
+                        {getActiveFilterCount()}
                       </Badge>
                     )}
                   </Button>
+                  
+                  {/* Sort Dropdown */}
+                  <select
+                    value={filters.sortBy}
+                    onChange={(e) => filters.setSortBy(e.target.value)}
+                    className="bg-background border border-border rounded-xs px-base py-xs text-sm font-rajdhani"
+                  >
+                    <option value="featured">Sort by Featured</option>
+                    <option value="price">Sort by Price</option>
+                    <option value="discount">Sort by Discount</option>
+                    <option value="alphabetical">Sort A-Z</option>
+                  </select>
                 </div>
               </div>
 
-              {/* Deal Grid */}
-              <div className="space-y-xl">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-                  {filteredItems.length > 0 ? (
-                    filteredItems.map((deal, index) => (
-                      <MarketplaceDealCard
-                        key={`${deal.title}-${index}`}
-                        deal={deal}
-                        className="transition-all duration-300 rounded-xs"
-                      />
-                    ))
-                  ) : (
-                    <div className="col-span-full">
-                      <EmptyState 
-                        title="No Deals Found"
-                        description="Try adjusting your search terms or filters to find great deals."
-                        action={
-                          <Button onClick={handleClearAll}>
-                            Clear All Filters
-                          </Button>
-                        }
-                      />
-                    </div>
-                  )}
-                </div>
+              {/* Card Grid/List Content with Loading State */}
+              <div className="mb-4xl">
+                {filters.isLoading ? (
+                  <CardSkeleton 
+                    viewMode={filters.viewMode} 
+                    count={filters.itemsPerPage} 
+                    className={filters.getGridClassName()}
+                  />
+                ) : (
+                  <div className={filters.getGridClassName()}>
+                    {filters.paginatedItems.length > 0 ? (
+                      filters.paginatedItems.map((deal, index) => (
+                        <MarketplaceDealCard
+                          key={`${deal.title}-${index}`}
+                          deal={deal}
+                          className="transition-all duration-300 rounded-xs"
+                        />
+                      ))
+                    ) : (
+                      <div className="col-span-full">
+                        <EmptyState 
+                          title="No Deals Found"
+                          description="Try adjusting your search terms or filters to find great deals."
+                          onAction={
+                            <Button onClick={handleClearAll}>
+                              Clear All Filters
+                            </Button>
+                          }
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
+              
+              {/* Enhanced Pagination */}
+              <EnhancedPagination
+                currentPage={filters.currentPage}
+                totalPages={filters.totalPages}
+                onPageChange={filters.setCurrentPage}
+                totalItems={filters.totalResults}
+                itemsPerPage={filters.itemsPerPage}
+                filteredItems={filters.filteredResults}
+                variant="full"
+                showItemsInfo={true}
+                perPageOptions={filters.perPageOptions}
+                onPerPageChange={filters.setItemsPerPage}
+                isLoading={filters.isLoading}
+                enableKeyboardNavigation={true}
+              />
             </main>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Bottom Sections */}
       <div className="space-y-4xl mt-4xl">
@@ -761,7 +906,7 @@ export function MarketplacePageStandardized() {
           <div className="container mx-auto px-4">
             <div className="text-center space-y-base">
               <Badge className="bg-slate-blue/20 text-slate-blue border-slate-blue/30">
-                <Shield className="h-4 w-4 mr-xs" />
+                <ShieldCheckIcon className="h-4 w-4 mr-xs" />
                 Legal Notice
               </Badge>
               <h3 className="font-rajdhani font-bold text-heading-lg text-card-foreground">

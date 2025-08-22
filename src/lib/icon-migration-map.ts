@@ -86,14 +86,14 @@ export const ICON_MIGRATION_MAP = {
 
 export const IMPORT_REPLACEMENTS = {
   // Phosphor imports to Heroicons imports
-  "import { Diamond } from '@phosphor-icons/react'": 
+  "import { AcademicCapIcon, ArrowRightIcon, ArrowRightOnRectangleIcon, ArrowTrendingUpIcon, BanknotesIcon, BoltIcon, BookOpenIcon, BuildingStorefrontIcon, BullseyeIcon, CalendarDaysIcon, CameraIcon, ChartBarIcon, ChatBubbleLeftEllipsisIcon, CheckCircleIcon, CheckIcon, ChevronRightIcon, ClockIcon, CogIcon, CompassIcon, ComputerDesktopIcon, CreditCardIcon, CursorArrowRaysIcon, Diamond, DocumentTextIcon, EnvelopeIcon, ExclamationTriangleIcon, EyeIcon, EyeSlashIcon, FireIcon, GlobeAltIcon, HeartIcon, InformationCircleIcon, LockClosedIcon, MapIcon, MapPinIcon, MinusIcon, PauseIcon, PhoneIcon, PhotoIcon, PlayIcon, PlusIcon, ReceiptRefundIcon, ScaleIcon, ShieldCheckIcon, ShoppingBagIcon, StarIcon, TrophyIcon, UserCircleIcon, UserGroupIcon, UserIcon, WrenchScrewdriverIcon, XMarkIcon } from '@heroicons/react/24/outline'": 
     "import { TacticalReticleLogo } from '@/components/ui/tactical-reticle-logo'",
   
-  "from '@phosphor-icons/react'": 
+  "from '@heroicons/react/24/outline'": 
     "from '@heroicons/react/24/outline'",
     
   // Handle solid variants
-  "from '@phosphor-icons/react/solid'": 
+  "from '@heroicons/react/24/outline/solid'": 
     "from '@heroicons/react/24/solid'",
 }
 

@@ -60,7 +60,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
                 <p className="text-body-sm text-muted-foreground mb-4">
                   Notice how the background shapes are blurred behind this card.
                 </p>
-                <Button size="sm" variant="secondary">Glassmorphism</Button>
+                <Button size="sm" variant="outline">Glassmorphism</Button>
               </CardContent>
             </Card>
 
@@ -75,7 +75,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
                 <p className="text-body-sm text-muted-foreground mb-4">
                   Enhanced blur with subtle brass/copper glow effect.
                 </p>
-                <Button size="sm" variant="default">See Effect</Button>
+                <Button size="sm" variant="outline">See Effect</Button>
               </CardContent>
             </Card>
 
@@ -85,7 +85,7 @@ export function MicaGlassDemo({ className }: MicaDemoProps) {
               <p className="text-body-sm text-muted-foreground mb-4">
                 Perfect for dropdowns, modals, and floating UI elements.
               </p>
-              <Button variant="glass" size="sm" className="w-full">
+              <Button variant="secondary" size="sm" className="w-full">
                 Glass Button
               </Button>
             </div>

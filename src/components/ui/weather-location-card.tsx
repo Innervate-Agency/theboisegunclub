@@ -3,11 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { WeatherIcon } from '@/components/ui/weather-icon'
-import { 
-  MapPin, Navigation, Wind, Thermometer, Droplets,
-  AlertTriangle, CheckCircle, XCircle, Star,
-  ArrowRight, Mountain, Target, Shield
-} from 'lucide-react'
+import { ArrowRightIcon, ArrowUpIcon, CheckCircleIcon, CursorArrowRaysIcon, ExclamationTriangleIcon, MapPinIcon, ShieldCheckIcon, WeatherIcon, XCircleIcon } from '@heroicons/react/24/outline';
 
 interface WeatherData {
   locationName: string
@@ -57,7 +53,7 @@ function getShootingStatus(weatherData?: WeatherData): {
       status: 'caution',
       color: 'text-warning-clay',
       bgColor: 'bg-warning-clay/10',
-      icon: <AlertTriangle className="h-4 w-4" />,
+      icon: <ExclamationTriangleIcon className="h-4 w-4" />,
       message: 'Weather data unavailable'
     }
   }
@@ -70,7 +66,7 @@ function getShootingStatus(weatherData?: WeatherData): {
       status: 'no-go',
       color: 'text-destructive',
       bgColor: 'bg-destructive/10',
-      icon: <XCircle className="h-4 w-4" />,
+      icon: <XCircleIcon className="h-4 w-4" />,
       message: accessStatus === 'Closed' ? 'Area closed' : 
                fireDanger === 'Extreme' ? 'Extreme fire danger' : 
                'High winds unsafe'
@@ -83,7 +79,7 @@ function getShootingStatus(weatherData?: WeatherData): {
       status: 'caution',
       color: 'text-warning-clay',
       bgColor: 'bg-warning-clay/10',
-      icon: <AlertTriangle className="h-4 w-4" />,
+      icon: <ExclamationTriangleIcon className="h-4 w-4" />,
       message: fireDanger === 'High' ? 'Fire restrictions' : 'Windy conditions'
     }
   }
@@ -93,7 +89,7 @@ function getShootingStatus(weatherData?: WeatherData): {
     status: 'go',
     color: 'text-sagebrush-green',
     bgColor: 'bg-sagebrush-green/10',
-    icon: <CheckCircle className="h-4 w-4" />,
+    icon: <CheckCircleIcon className="h-4 w-4" />,
     message: 'Good conditions'
   }
 }
@@ -113,7 +109,7 @@ function WindDirectionArrow({ direction, speed }: { direction: string, speed: nu
         className="transition-transform duration-300"
         style={{ transform: `rotate(${rotation}deg)` }}
       >
-        <Navigation className="h-4 w-4 text-nav-intel" />
+        <ArrowUpIcon className="h-4 w-4 text-nav-intel" />
       </div>
       <div className="text-body-sm">
         <span className="font-bold text-card-foreground">{speed}</span>
@@ -152,7 +148,7 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
           <div className="flex items-center gap-xs text-body-xs text-muted-foreground">
             {location.verified && (
               <>
-                <Shield className="h-3 w-3 text-nav-intel" />
+                <ShieldCheckIcon className="h-3 w-3 text-nav-intel" />
                 <span className="font-medium">Verified</span>
               </>
             )}
@@ -164,7 +160,7 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
             {location.name}
           </CardTitle>
           <div className="flex items-center gap-xs text-body-xs text-muted-foreground">
-            <MapPin className="h-3 w-3 text-nav-intel" />
+            <MapPinIcon className="h-3 w-3 text-nav-intel" />
             <span>{location.distanceFromBoise} miles from Boise</span>
             <span>•</span>
             <span className="capitalize">{location.difficulty}</span>
@@ -219,7 +215,7 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
               <div className="mt-sm pt-sm border-t border-nav-intel/20">
                 {weatherData.alerts.slice(0, 1).map((alert, index) => (
                   <div key={index} className="flex items-start gap-xs">
-                    <AlertTriangle className="h-3 w-3 text-warning-clay mt-px flex-shrink-0" />
+                    <ExclamationTriangleIcon className="h-3 w-3 text-warning-clay mt-px flex-shrink-0" />
                     <span className="text-body-xs text-card-foreground">{alert}</span>
                   </div>
                 ))}
@@ -252,7 +248,7 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
         {/* Best Shooting Conditions */}
         <div className="bg-card/50 p-xs rounded-sm">
           <div className="flex items-center gap-xs text-body-xs text-muted-foreground mb-xs">
-            <Target className="h-3 w-3 text-nav-intel" />
+            <CursorArrowRaysIcon className="h-3 w-3 text-nav-intel" />
             <span className="font-medium">Best Conditions:</span>
           </div>
           <span className="text-body-xs text-card-foreground">{location.bestWindConditions}</span>
@@ -263,7 +259,7 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
           className="w-full bg-nav-intel text-white hover:bg-nav-intel/90 font-rajdhani font-bold"
           size="sm"
         >
-          <ArrowRight className="h-4 w-4 mr-xs" />
+          <ArrowRightIcon className="h-4 w-4 mr-xs" />
           VIEW DETAILS
         </Button>
       </CardContent>

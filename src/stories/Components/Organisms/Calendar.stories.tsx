@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import { CalendarDaysIcon } from '@heroicons/react/24/outline';
 import { Calendar } from '@/components/ui/calendar';
 import React from 'react';
 
@@ -14,10 +15,10 @@ const meta: Meta<typeof Calendar> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const DefaultCalendarComponent = (args: any) => {
+const DefaultCalendarComponent = (args: Record<string, unknown>) => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
   return (
-    <Calendar
+    <CalendarDaysIcon
       mode="single"
       selected={date}
       onSelect={setDate}

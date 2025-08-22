@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { CalloutCard, ImportantCallout, SubtleCallout } from '@/components/ui/callout-card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { AlertCircle, Shield, Target, Trophy, Users, Calendar, Info } from 'lucide-react';
+import { CalendarDaysIcon, CursorArrowRaysIcon, InformationCircleIcon, ShieldCheckIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof CalloutCard> = {
   title: 'Design System/Components/Molecules/Callout Card',
@@ -35,7 +35,7 @@ export const Default: Story = {
     variant: 'default',
     children: (
       <div className="flex items-center gap-xs mt-base">
-        <Shield className="h-4 w-4 text-rusty-orange" />
+        <ShieldCheckIcon className="h-4 w-4 text-rusty-orange" />
         <span className="text-body-sm font-medium">Safety First</span>
       </div>
     )
@@ -71,11 +71,11 @@ export const EventAnnouncement: Story = {
     children: (
       <div className="space-y-sm">
         <div className="flex items-center gap-xs">
-          <Calendar className="h-4 w-4 text-scope-blue" />
+          <CalendarDaysIcon className="h-4 w-4 text-scope-blue" />
           <span className="text-body-sm">March 15th, 2024</span>
         </div>
         <div className="flex gap-xs">
-          <Button size="sm" variant="accent">
+          <Button size="sm" variant="default">
             Register Now
           </Button>
           <Button size="sm" variant="outline">
@@ -96,13 +96,13 @@ export const NewMemberWelcome: Story = {
     children: (
       <div className="space-y-sm">
         <div className="flex items-center gap-xs">
-          <Users className="h-4 w-4 text-rifling-green" />
-          <Badge variant="success">
+          <UsersIcon className="h-4 w-4 text-rifling-green" />
+          <Badge variant="secondary">
             New Member
           </Badge>
         </div>
         <div className="flex gap-xs">
-          <Button size="sm" variant="success">
+          <Button size="sm" variant="secondary">
             Start Orientation
           </Button>
           <Button size="sm" variant="outline">
@@ -123,7 +123,7 @@ export const CompetitionResults: Story = {
     children: (
       <div className="space-y-sm">
         <div className="flex items-center gap-xs">
-          <Trophy className="h-4 w-4 text-sight-gold" />
+          <TrophyIcon className="h-4 w-4 text-sight-gold" />
           <span className="text-body-sm font-semibold">Results Posted</span>
         </div>
         <div className="space-y-xs">
@@ -156,7 +156,7 @@ export const ImportantCalloutVariant: StoryObj<typeof ImportantCallout> = {
     children: (
       <div className="space-y-sm">
         <div className="flex items-center gap-xs">
-          <Info className="h-4 w-4 text-scope-blue" />
+          <InformationCircleIcon className="h-4 w-4 text-scope-blue" />
           <span className="text-body-sm font-semibold">March 18-19, 2024</span>
         </div>
         <p className="text-body-sm text-muted-foreground">
@@ -178,15 +178,15 @@ export const SubtleCalloutVariant: StoryObj<typeof SubtleCallout> = {
     children: (
       <div className="space-y-sm">
         <div className="flex items-center gap-xs">
-          <Target className="h-4 w-4 text-warning-amber" />
-          <Badge variant="info">
+          <CursorArrowRaysIcon className="h-4 w-4 text-warning-amber" />
+          <Badge variant="secondary">
             Limited Time
           </Badge>
         </div>
         <p className="text-body-sm text-muted-foreground">
           Valid through March 31st, 2024
         </p>
-        <Button size="sm" variant="accent">
+        <Button size="sm" variant="default">
           Shop Now
         </Button>
       </div>
@@ -203,8 +203,8 @@ export const TrainingProgram: Story = {
     children: (
       <div className="space-y-sm">
         <div className="flex items-center gap-xs">
-          <Target className="h-4 w-4 text-rusty-orange" />
-          <Badge variant="warning">
+          <CursorArrowRaysIcon className="h-4 w-4 text-rusty-orange" />
+          <Badge variant="destructive">
             8 Week Course
           </Badge>
         </div>
@@ -235,7 +235,7 @@ export const MembershipRenewal: Story = {
     children: (
       <div className="space-y-sm">
         <div className="flex items-center gap-xs">
-          <Calendar className="h-4 w-4 text-sight-gold" />
+          <CalendarDaysIcon className="h-4 w-4 text-sight-gold" />
           <span className="text-body-sm font-semibold">Expires: March 31, 2024</span>
         </div>
         <div className="flex gap-xs">

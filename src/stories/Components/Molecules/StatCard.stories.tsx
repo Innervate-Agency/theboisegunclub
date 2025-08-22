@@ -85,7 +85,7 @@ export const GunClubStats: Story = {
         <StatCard
           value="89%"
           label="Competition Average"
-          variant="premium"
+          variant="default"
           trend="up"
           trendValue="+3%"
           description="Club championship performance"
@@ -93,7 +93,7 @@ export const GunClubStats: Story = {
         <StatCard
           value="150+"
           label="Trap Competitions"
-          variant="elite"
+          variant="default"
           description="Annual tournament schedule"
         />
         <StatCard

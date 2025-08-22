@@ -13,17 +13,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle 
 } from "@/components/ui/navigation-menu"
-import { 
-  Calendar, 
-  Building, 
-  BookOpen, 
-  MapPin, 
-  ShoppingCart, 
-  Users, 
-  SignIn,
-  List,
-  X
-} from "@phosphor-icons/react"
+import { BookOpen, BookOpenIcon, Building, BuildingOfficeIcon, Calendar, CalendarDaysIcon, List, ListBulletIcon, MapPin, MapPinIcon, ShoppingCart, ShoppingCartIcon, SignIn, Users, UsersIcon, X, XMarkIcon } from '@heroicons/react/24/outline'
 import { cn } from "@/lib/utils"
 
 export function SiteHeader() {
@@ -44,7 +34,7 @@ export function SiteHeader() {
                 <span className="font-rajdhani font-bold text-heading-lg text-primary ml-xs">GUN CLUB</span>
               </div>
             </Link>
-            <Badge variant="default" className="hidden md:block text-body-xs text-muted-foreground">
+            <Badge variant="outline" className="hidden md:block text-body-xs text-muted-foreground">
               Community Platform
             </Badge>
           </div>
@@ -55,7 +45,7 @@ export function SiteHeader() {
               {/* Events */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="gap-xs">
-                  <Calendar className="size-4" />
+                  <CalendarDaysIcon className="size-4" />
                   Events
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -85,7 +75,7 @@ export function SiteHeader() {
               {/* Directory */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="gap-xs">
-                  <Building className="size-4" />
+                  <BuildingOfficeIcon className="size-4" />
                   Directory
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -115,7 +105,7 @@ export function SiteHeader() {
               {/* Guides */}
               <NavigationMenuItem>
                 <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "gap-xs")} href="/guides">
-                  <BookOpen className="size-4" />
+                  <BookOpenIcon className="size-4" />
                   Guides
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -123,7 +113,7 @@ export function SiteHeader() {
               {/* Map */}
               <NavigationMenuItem>
                 <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "gap-xs")} href="/intel">
-                  <MapPin className="size-4" />
+                  <MapPinIcon className="size-4" />
                   Map
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -131,7 +121,7 @@ export function SiteHeader() {
               {/* Marketplace */}
               <NavigationMenuItem>
                 <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "gap-xs")} href="/marketplace">
-                  <ShoppingCart className="size-4" />
+                  <ShoppingCartIcon className="size-4" />
                   Marketplace
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -139,7 +129,7 @@ export function SiteHeader() {
               {/* Community */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="gap-xs">
-                  <Users className="size-4" />
+                  <UsersIcon className="size-4" />
                   Community
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -185,7 +175,7 @@ export function SiteHeader() {
               className="lg:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="size-5" /> : <List className="size-5" />}
+              {isMenuOpen ? <XMarkIcon className="size-5" /> : <ListBulletIcon className="size-5" />}
             </Button>
           </div>
         </div>
@@ -195,27 +185,27 @@ export function SiteHeader() {
           <div className="lg:hidden py-base border-t border-border/40">
             <nav className="space-y-base">
               <Link href="/events" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
-                <Calendar className="size-4" />
+                <CalendarDaysIcon className="size-4" />
                 Events
               </Link>
               <Link href="/directory" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
-                <Building className="size-4" />
+                <BuildingOfficeIcon className="size-4" />
                 Directory
               </Link>
               <Link href="/guides" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
-                <BookOpen className="size-4" />
+                <BookOpenIcon className="size-4" />
                 Guides
               </Link>
               <Link href="/intel" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
-                <MapPin className="size-4" />
+                <MapPinIcon className="size-4" />
                 Map
               </Link>
               <Link href="/marketplace" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
-                <ShoppingCart className="size-4" />
+                <ShoppingCartIcon className="size-4" />
                 Marketplace
               </Link>
               <Link href="/forums" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
-                <Users className="size-4" />
+                <UsersIcon className="size-4" />
                 Forums
               </Link>
               <div className="pt-base border-t border-border/40 flex flex-col gap-xs">

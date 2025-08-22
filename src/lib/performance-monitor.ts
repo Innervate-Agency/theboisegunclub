@@ -53,7 +53,6 @@ class PerformanceTracker {
       observer.observe({ entryTypes: ['largest-contentful-paint'] })
       this.observers.push(observer)
     } catch (e) {
-      console.warn('LCP tracking not supported')
     }
   }
 
@@ -70,7 +69,6 @@ class PerformanceTracker {
       observer.observe({ entryTypes: ['first-input'] })
       this.observers.push(observer)
     } catch (e) {
-      console.warn('FID tracking not supported')
     }
   }
 
@@ -89,7 +87,6 @@ class PerformanceTracker {
       observer.observe({ entryTypes: ['layout-shift'] })
       this.observers.push(observer)
     } catch (e) {
-      console.warn('CLS tracking not supported')
     }
   }
 
@@ -107,7 +104,6 @@ class PerformanceTracker {
   private sendMetrics(name: string, value: number) {
     // Development logging
     if (process.env.NODE_ENV === 'development') {
-      console.log(`📊 Performance Metric: ${name} = ${Math.round(value)}ms`)
     }
 
     // Send to analytics in production
@@ -143,7 +139,6 @@ class PerformanceTracker {
       this.metrics.cssSize = cssSize
       this.metrics.totalSize = jsSize + cssSize
       
-      console.log(`📦 Bundle Sizes: JS=${Math.round(jsSize/1024)}KB, CSS=${Math.round(cssSize/1024)}KB`)
     }
   }
 
@@ -153,7 +148,6 @@ class PerformanceTracker {
     this.metrics.componentCount = (this.metrics.componentCount || 0) + 1
     
     if (renderTime > 16) { // Slower than 60fps
-      console.warn(`🐌 Slow component render: ${componentName} took ${renderTime}ms`)
     }
   }
 

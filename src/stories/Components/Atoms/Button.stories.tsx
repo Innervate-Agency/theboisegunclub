@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Button } from '@/components/ui/button';
-import { Plus, Download, ArrowRight, Settings, Check, X, Search, User, Target, Shield, Zap, Users, MessageSquare } from 'lucide-react';
+import { ArrowDownTrayIcon, ArrowRightIcon, BoltIcon, ChatBubbleLeftRightIcon, CheckIcon, Cog6ToothIcon, CursorArrowRaysIcon, MagnifyingGlassIcon, PlusIcon, ShieldCheckIcon, ToothIcon, UserIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof Button> = {
   title: 'Design System/Atoms/Button',
@@ -164,15 +164,15 @@ export const StripeHierarchy: Story = {
         </h2>
         <p className="text-body-sm text-warning-amber">Heavy shadows, no borders - these grab attention on the page</p>
         <div className="flex gap-base flex-wrap">
-          <Button variant="primary" size="lg">
-            <Plus className="mr-xs h-4 w-4" />
+          <Button variant="default" >
+            <PlusIcon className="mr-xs h-4 w-4" />
             Create Account
           </Button>
-          <Button variant="default">
+          <Button variant="outline">
             Browse Training
           </Button>
-          <Button variant="secondary">
-            <Download className="mr-xs h-4 w-4" />
+          <Button variant="outline">
+            <ArrowDownTrayIcon className="mr-xs h-4 w-4" />
             Download Guide
           </Button>
         </div>
@@ -214,7 +214,7 @@ export const StripeHierarchy: Story = {
             </p>
             <div className="flex gap-sm">
               <Button variant="flat" size="sm">
-                <Check className="mr-xs h-4 w-4" />
+                <CheckIcon className="mr-xs h-4 w-4" />
                 Join Today
               </Button>
               <Button variant="link" size="sm">
@@ -276,16 +276,16 @@ export const StripeHierarchy: Story = {
         </h2>
         <p className="text-body-sm text-warning-amber">Borders only for special occasions - warnings, confirmations, key actions</p>
         <div className="flex gap-base flex-wrap">
-          <Button variant="accent">
-            <ArrowRight className="mr-xs h-4 w-4" />
+          <Button variant="default">
+            <ArrowRightIcon className="mr-xs h-4 w-4" />
             Get Started
           </Button>
-          <Button variant="success">
-            <Check className="mr-xs h-4 w-4" />
+          <Button variant="secondary">
+            <CheckIcon className="mr-xs h-4 w-4" />
             Approve Application
           </Button>
           <Button variant="destructive">
-            <X className="mr-xs h-4 w-4" />
+            <XMarkIcon className="mr-xs h-4 w-4" />
             Reject Application
           </Button>
         </div>
@@ -312,20 +312,20 @@ export const FireGradientSystem: Story = {
           Fire Button Variants
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-base">
-          <Button variant="fire" size="lg">
-            <Target className="mr-xs h-4 w-4" />
+          <Button variant="destructive" >
+            <CursorArrowRaysIcon className="mr-xs h-4 w-4" />
             Fire Orange
           </Button>
-          <Button variant="fire-blue" size="lg">
-            <Shield className="mr-xs h-4 w-4" />
+          <Button variant="default" >
+            <ShieldCheckIcon className="mr-xs h-4 w-4" />
             Fire Blue
           </Button>
-          <Button variant="fire-purple" size="lg">
-            <Zap className="mr-xs h-4 w-4" />
+          <Button variant="secondary" >
+            <BoltIcon className="mr-xs h-4 w-4" />
             Fire Purple  
           </Button>
-          <Button variant="fire-green" size="lg">
-            <Check className="mr-xs h-4 w-4" />
+          <Button variant="secondary" >
+            <CheckIcon className="mr-xs h-4 w-4" />
             Fire Green
           </Button>
         </div>
@@ -344,8 +344,8 @@ export const FireGradientSystem: Story = {
             <p className="text-muted-foreground mb-base text-body-sm">
               Gun shops, ranges, instructors across the Treasure Valley
             </p>
-            <Button variant="fire" size="sm" className="w-full">
-              <Users className="mr-xs h-4 w-4" />
+            <Button variant="destructive" size="sm" className="w-full">
+              <UsersIcon className="mr-xs h-4 w-4" />
               Browse Directory
             </Button>
             <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre mt-base rounded-full transition-all duration-300 ease-out"></div>
@@ -358,8 +358,8 @@ export const FireGradientSystem: Story = {
             <p className="text-muted-foreground mb-base text-body-sm">
               Connect with fellow enthusiasts and competitors
             </p>
-            <Button variant="fire-blue" size="sm" className="w-full">
-              <MessageSquare className="mr-xs h-4 w-4" />
+            <Button variant="default" size="sm" className="w-full">
+              <ChatBubbleLeftRightIcon className="mr-xs h-4 w-4" />
               Join Discussions
             </Button>
             <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-slate-blue to-ayu-green mt-base rounded-full transition-all duration-300 ease-out"></div>
@@ -447,16 +447,16 @@ export const CleanShowcase: Story = {
       <div className="space-y-lg">
         <h2 className="text-display-md font-rajdhani font-semibold text-blued-steel text-center">Primary Actions</h2>
         <div className="flex items-center justify-center gap-base flex-wrap">
-          <Button variant="primary" size="lg">
-            <Plus className="mr-xs h-5 w-5" />
+          <Button variant="default" >
+            <PlusIcon className="mr-xs h-5 w-5" />
             Create Project
           </Button>
-          <Button variant="accent" size="lg">
+          <Button variant="default" >
             Get Started
-            <ArrowRight className="ml-xs h-5 w-5" />
+            <ArrowRightIcon className="ml-xs h-5 w-5" />
           </Button>
-          <Button variant="success" size="lg">
-            <Check className="mr-xs h-5 w-5" />
+          <Button variant="secondary" >
+            <CheckIcon className="mr-xs h-5 w-5" />
             Confirm
           </Button>
         </div>
@@ -466,13 +466,13 @@ export const CleanShowcase: Story = {
       <div className="space-y-lg">
         <h2 className="text-display-md font-rajdhani font-semibold text-blued-steel text-center">Size Variants</h2>
         <div className="flex items-center justify-center gap-base flex-wrap">
-          <Button variant="default" size="xs">Extra Small</Button>
-          <Button variant="default" size="sm">Small</Button>
-          <Button variant="default" size="default">Default</Button>
-          <Button variant="default" size="lg">Large</Button>
-          <Button variant="default" size="xl">Extra Large</Button>
-          <Button variant="default" size="icon">
-            <Settings className="h-4 w-4" />
+          <Button variant="outline" size="xs">Extra Small</Button>
+          <Button variant="outline" size="sm">Small</Button>
+          <Button variant="outline" size="default">Default</Button>
+          <Button variant="outline" >Large</Button>
+          <Button variant="outline" size="xl">Extra Large</Button>
+          <Button variant="outline" size="icon">
+            <Cog6ToothIcon className="h-4 w-4" />
           </Button>
         </div>
       </div>
@@ -484,26 +484,26 @@ export const CleanShowcase: Story = {
           <div className="space-y-base">
             <h3 className="text-body-lg font-noto-sans font-medium text-warning-amber">Normal States</h3>
             <div className="space-y-sm">
-              <Button variant="default" className="w-full">Default</Button>
-              <Button variant="primary" className="w-full">Primary</Button>
-              <Button variant="secondary" className="w-full">Secondary</Button>
+              <Button variant="outline" className="w-full">Default</Button>
+              <Button variant="default" className="w-full">Primary</Button>
+              <Button variant="outline" className="w-full">Secondary</Button>
             </div>
           </div>
           
           <div className="space-y-base">
             <h3 className="text-body-lg font-noto-sans font-medium text-warning-amber">Loading States</h3>
             <div className="space-y-sm">
-              <Button variant="default" className="w-full" loading>Loading...</Button>
-              <Button variant="primary" className="w-full" loading>Processing...</Button>
-              <Button variant="accent" className="w-full" loading>Saving...</Button>
+              <Button variant="outline" className="w-full" loading>Loading...</Button>
+              <Button variant="default" className="w-full" loading>Processing...</Button>
+              <Button variant="default" className="w-full" loading>Saving...</Button>
             </div>
           </div>
           
           <div className="space-y-base">
             <h3 className="text-body-lg font-noto-sans font-medium text-warning-amber">Disabled States</h3>
             <div className="space-y-sm">
+              <Button variant="outline" className="w-full" disabled>Disabled</Button>
               <Button variant="default" className="w-full" disabled>Disabled</Button>
-              <Button variant="primary" className="w-full" disabled>Disabled</Button>
               <Button variant="destructive" className="w-full" disabled>Disabled</Button>
             </div>
           </div>
@@ -519,7 +519,7 @@ export const CleanShowcase: Story = {
             <h3 className="text-body-lg font-noto-sans font-medium text-blued-steel mb-base">Form Actions</h3>
             <div className="space-y-base">
               <div className="flex gap-sm">
-                <Button variant="primary" className="flex-1">
+                <Button variant="default" className="flex-1">
                   Save Changes
                 </Button>
                 <Button variant="ghost">
@@ -528,11 +528,11 @@ export const CleanShowcase: Story = {
               </div>
               <div className="flex gap-sm">
                 <Button variant="destructive" size="sm">
-                  <X className="mr-xs h-4 w-4" />
+                  <XMarkIcon className="mr-xs h-4 w-4" />
                   Delete
                 </Button>
-                <Button variant="secondary" size="sm">
-                  <Download className="mr-xs h-4 w-4" />
+                <Button variant="outline" size="sm">
+                  <ArrowDownTrayIcon className="mr-xs h-4 w-4" />
                   Export
                 </Button>
               </div>
@@ -545,11 +545,11 @@ export const CleanShowcase: Story = {
             <div className="space-y-base">
               <div className="flex gap-sm">
                 <Button variant="ghost">
-                  <User className="mr-xs h-4 w-4" />
+                  <UserIcon className="mr-xs h-4 w-4" />
                   Profile
                 </Button>
                 <Button variant="ghost">
-                  <Settings className="mr-xs h-4 w-4" />
+                  <Cog6ToothIcon className="mr-xs h-4 w-4" />
                   Settings
                 </Button>
               </div>
@@ -565,11 +565,11 @@ export const CleanShowcase: Story = {
       <div className="space-y-lg">
         <h2 className="text-display-md font-rajdhani font-semibold text-blued-steel text-center">Border Radius Options</h2>
         <div className="flex items-center justify-center gap-base flex-wrap">
-          <Button variant="accent" rounded="none">None</Button>
-          <Button variant="accent" rounded="sm">Small</Button>
-          <Button variant="accent" rounded="default">Default</Button>
-          <Button variant="accent" rounded="lg">Large</Button>
-          <Button variant="accent" rounded="full">Full</Button>
+          <Button variant="default" rounded="none">None</Button>
+          <Button variant="default" rounded="sm">Small</Button>
+          <Button variant="default" rounded="default">Default</Button>
+          <Button variant="default" rounded="lg">Large</Button>
+          <Button variant="default" rounded="full">Full</Button>
         </div>
       </div>
     </div>
@@ -597,16 +597,16 @@ export const StripeStyleAnimations: Story = {
         <div className="space-y-md">
           <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel">Interactive Arrows</h3>
           <div className="space-y-base">
-            <Button variant="solid-accent" size="lg" className="w-full">
+            <Button variant="solid-accent" className="w-full">
               Get Premium Membership
             </Button>
-            <Button variant="solid-success" size="lg" className="w-full">
+            <Button variant="solid-success" className="w-full">
               Complete Training Course
             </Button>
-            <Button variant="solid-destructive" size="lg" className="w-full">
+            <Button variant="solid-destructive" className="w-full">
               Cancel Membership
             </Button>
-            <Button variant="solid-primary" size="lg" className="w-full">
+            <Button variant="solid-primary" className="w-full">
               Learn Safety Protocols
             </Button>
           </div>
@@ -657,13 +657,13 @@ export const GlassmorphismShowcase: Story = {
 
         <div className="flex flex-col items-center space-y-lg">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <Button variant="glass" size="lg" className="backdrop-blur-xl">
+            <Button variant="secondary" className="backdrop-blur-xl">
               Premium Glass Effect
             </Button>
-            <Button variant="glass" size="lg" rounded="full" className="backdrop-blur-xl">
+            <Button variant="secondary" rounded="full" className="backdrop-blur-xl">
               Rounded Glassmorphism
             </Button>
-            <Button variant="glass" size="xl" className="backdrop-blur-xl px-xl">
+            <Button variant="secondary" size="xl" className="backdrop-blur-xl px-xl">
               Extra Large Glass
             </Button>
           </div>
@@ -676,8 +676,8 @@ export const GlassmorphismShowcase: Story = {
               Notice the subtle noise texture and multi-layered glass effect
             </p>
             <div className="flex gap-base">
-              <Button variant="glass">Learn More</Button>
-              <Button variant="glass" size="sm">Details</Button>
+              <Button variant="secondary">Learn More</Button>
+              <Button variant="secondary" size="sm">Details</Button>
             </div>
           </div>
         </div>
@@ -794,21 +794,15 @@ export const HeritageColorCombinations: Story = {
           Sophisticated Gradients
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-          <Button 
-            size="lg" 
-            className="bg-gradient-to-r from-sandy-ochre to-sight-gold text-dark-chocolate hover:shadow-elevated transition-all"
+          <Button className="bg-gradient-to-r from-sandy-ochre to-sight-gold text-dark-chocolate hover:shadow-elevated transition-all"
           >
             Gold Harmony
           </Button>
-          <Button 
-            size="lg"
-            className="bg-gradient-to-r from-rusty-orange to-walnut-stock text-range-white hover:shadow-elevated transition-all"
+          <Button className="bg-gradient-to-r from-rusty-orange to-walnut-stock text-range-white hover:shadow-elevated transition-all"
           >
             Warm Heritage
           </Button>
-          <Button 
-            size="lg"
-            className="bg-gradient-to-r from-dark-chocolate to-blued-steel text-range-white hover:shadow-elevated transition-all"
+          <Button className="bg-gradient-to-r from-dark-chocolate to-blued-steel text-range-white hover:shadow-elevated transition-all"
           >
             Steel Elegance
           </Button>
@@ -950,9 +944,9 @@ export const BusinessCard: Story = {
       </div>
       
       <div className="space-y-sm">
-        <Button variant="accent" size="lg" className="w-full">
+        <Button variant="default" className="w-full">
           Upgrade to Premium
-          <ArrowRight className="ml-xs h-5 w-5" />
+          <ArrowRightIcon className="ml-xs h-5 w-5" />
         </Button>
         
         <Button variant="ghost" className="w-full">
@@ -971,7 +965,7 @@ export const SearchInterface: Story = {
     <div className="bg-range-white p-md rounded-xs border border-warning-amber/20 max-w-lg space-y-base">
       <div className="flex gap-xs">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
+          <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
           <input
             type="text"
             placeholder="Search members..."
@@ -979,13 +973,13 @@ export const SearchInterface: Story = {
             style={{paddingLeft: '48px'}}
           />
         </div>
-        <Button variant="accent">
+        <Button variant="default">
           Search
         </Button>
       </div>
       
       <div className="flex gap-xs">
-        <Button variant="secondary" size="sm">Recent</Button>
+        <Button variant="outline" size="sm">Recent</Button>
         <Button variant="ghost" size="sm">Popular</Button>
         <Button variant="ghost" size="sm">Active</Button>
       </div>
@@ -1020,9 +1014,9 @@ export const ProfessionalShowcase: Story = {
           <div className="bg-card-surface p-md rounded-overlay border border-warning-amber/20 space-y-base">
             <h3 className="text-body-lg font-rajdhani font-semibold text-blued-steel">Clean & Professional</h3>
             <div className="space-y-sm">
-              <Button variant="default" className="w-full">Default</Button>
-              <Button variant="primary" className="w-full">Primary</Button>
-              <Button variant="secondary" className="w-full">Secondary</Button>
+              <Button variant="outline" className="w-full">Default</Button>
+              <Button variant="default" className="w-full">Primary</Button>
+              <Button variant="outline" className="w-full">Secondary</Button>
             </div>
           </div>
 
@@ -1030,8 +1024,8 @@ export const ProfessionalShowcase: Story = {
           <div className="bg-card-surface p-md rounded-overlay border border-warning-amber/20 space-y-base">
             <h3 className="text-body-lg font-rajdhani font-semibold text-blued-steel">Heritage Accents</h3>
             <div className="space-y-sm">
-              <Button variant="accent" className="w-full">Brass Accent</Button>
-              <Button variant="success" className="w-full">Success State</Button>
+              <Button variant="default" className="w-full">Brass Accent</Button>
+              <Button variant="secondary" className="w-full">Success State</Button>
               <Button variant="destructive" className="w-full">Destructive</Button>
             </div>
           </div>
@@ -1050,9 +1044,9 @@ export const ProfessionalShowcase: Story = {
           <div className="bg-gradient-to-br from-sandy-ochre/20 via-rusty-orange/20 to-dark-chocolate/20 p-md rounded-overlay border border-white/30 space-y-base backdrop-blur-sm">
             <h3 className="text-body-lg font-rajdhani font-semibold text-dark-chocolate">Glassmorphism</h3>
             <div className="space-y-sm">
-              <Button variant="glass" className="w-full">Glass Effect</Button>
-              <Button variant="glass" size="sm" className="w-full">Small Glass</Button>
-              <Button variant="glass" rounded="full" className="w-full">Round Glass</Button>
+              <Button variant="secondary" className="w-full">Glass Effect</Button>
+              <Button variant="secondary" size="sm" className="w-full">Small Glass</Button>
+              <Button variant="secondary" rounded="full" className="w-full">Round Glass</Button>
             </div>
           </div>
 
@@ -1070,12 +1064,12 @@ export const ProfessionalShowcase: Story = {
           <div className="bg-card-surface p-md rounded-overlay border border-warning-amber/20 space-y-base">
             <h3 className="text-body-lg font-rajdhani font-semibold text-blued-steel">Size Spectrum</h3>
             <div className="space-y-sm flex flex-col items-center">
-              <Button variant="accent" size="xs">Extra Small</Button>
-              <Button variant="accent" size="sm">Small</Button>
-              <Button variant="accent" size="default">Default</Button>
-              <Button variant="accent" size="lg">Large</Button>
-              <Button variant="accent" size="icon">
-                <Settings className="h-4 w-4" />
+              <Button variant="default" size="xs">Extra Small</Button>
+              <Button variant="default" size="sm">Small</Button>
+              <Button variant="default" size="default">Default</Button>
+              <Button variant="default" >Large</Button>
+              <Button variant="default" size="icon">
+                <Cog6ToothIcon className="h-4 w-4" />
               </Button>
             </div>
           </div>
@@ -1093,8 +1087,8 @@ export const ProfessionalShowcase: Story = {
           <div className="space-y-md">
             <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel">Loading States</h3>
             <div className="space-y-base">
-              <Button variant="primary" loading className="w-full">Processing...</Button>
-              <Button variant="accent" loading className="w-full">Saving...</Button>
+              <Button variant="default" loading className="w-full">Processing...</Button>
+              <Button variant="default" loading className="w-full">Saving...</Button>
               <Button variant="solid-success" loading className="w-full">Completing...</Button>
             </div>
           </div>
@@ -1103,8 +1097,8 @@ export const ProfessionalShowcase: Story = {
           <div className="space-y-md">
             <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel">Disabled States</h3>
             <div className="space-y-base">
-              <Button variant="primary" disabled className="w-full">Unavailable</Button>
-              <Button variant="accent" disabled className="w-full">Coming Soon</Button>
+              <Button variant="default" disabled className="w-full">Unavailable</Button>
+              <Button variant="default" disabled className="w-full">Coming Soon</Button>
               <Button variant="solid-destructive" disabled className="w-full">Restricted</Button>
             </div>
           </div>
@@ -1113,16 +1107,16 @@ export const ProfessionalShowcase: Story = {
           <div className="space-y-md">
             <h3 className="text-display-sm font-rajdhani font-semibold text-blued-steel">With Icons</h3>
             <div className="space-y-base">
-              <Button variant="primary" className="w-full">
-                <Plus className="mr-xs h-4 w-4" />
+              <Button variant="default" className="w-full">
+                <PlusIcon className="mr-xs h-4 w-4" />
                 Add Member
               </Button>
-              <Button variant="accent" className="w-full">
-                <Download className="mr-xs h-4 w-4" />
+              <Button variant="default" className="w-full">
+                <ArrowDownTrayIcon className="mr-xs h-4 w-4" />
                 Export Data
               </Button>
               <Button variant="solid-success" className="w-full">
-                <Check className="mr-xs h-4 w-4" />
+                <CheckIcon className="mr-xs h-4 w-4" />
                 Complete
               </Button>
             </div>

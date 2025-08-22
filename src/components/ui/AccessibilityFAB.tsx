@@ -4,19 +4,7 @@ import * as React from "react"
 import { useTheme } from "next-themes"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { 
-  Accessibility, 
-  Type, 
-  Eye, 
-  Settings, 
-  X, 
-  Sun, 
-  Moon, 
-  Monitor, 
-  Contrast,
-  Minus,
-  Plus
-} from "lucide-react"
+import { Cog6ToothIcon as Settings, ComputerDesktopIcon, ComputerDesktopIcon as Monitor, DocumentTextIcon, DocumentTextIcon as Type, EyeIcon, EyeIcon as Eye, MinusIcon, MinusIcon as Minus, MoonIcon, MoonIcon as Moon, PlusIcon, PlusIcon as Plus, SunIcon, SunIcon as Sun, SwatchIcon, SwatchIcon as Contrast, ThemeIcon, ToothIcon, UserIcon, UserIcon as Accessibility, XMarkIcon, XMarkIcon as X } from '@heroicons/react/24/outline'
 import { Button } from "./button"
 import { Badge } from "./badge"
 import { useAccessibility } from "@/hooks/use-accessibility"
@@ -128,7 +116,7 @@ export default function AccessibilityFAB({
         {...props}
       >
         {isOpen ? (
-          <X className="size-6 text-card-foreground mx-auto" />
+          <XMarkIcon className="size-6 text-card-foreground mx-auto" />
         ) : (
           <Accessibility className="size-6 text-card-foreground mx-auto" />
         )}
@@ -144,7 +132,7 @@ export default function AccessibilityFAB({
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-xs">
               <div className="bg-muted p-tiny rounded-xs border border-border">
-                <Settings className="size-5 text-card-foreground" />
+                <Cog6ToothIcon className="size-5 text-card-foreground" />
               </div>
               <h2 className="text-heading-lg font-rajdhani font-bold text-card-foreground">Accessibility</h2>
             </div>
@@ -166,8 +154,8 @@ export default function AccessibilityFAB({
                     : "text-card-foreground"
                 )}
               >
-                <Sun className="size-4" />
-                Light
+                <SunIcon className="size-4" />
+                Day Light
               </Button>
               <Button
                 variant="flat"
@@ -182,8 +170,8 @@ export default function AccessibilityFAB({
                     : "text-card-foreground"
                 )}
               >
-                <Moon className="size-4" />
-                Fire Mode
+                <MoonIcon className="size-4" />
+                Camp Fire
               </Button>
               <Button
                 variant="flat"
@@ -214,7 +202,7 @@ export default function AccessibilityFAB({
                     : "text-card-foreground"
                 )}
               >
-                <Eye className="size-4" />
+                <EyeIcon className="size-4" />
                 Night Ops
               </Button>
             </div>
@@ -233,7 +221,7 @@ export default function AccessibilityFAB({
                 onClick={handleFontSizeDecrease}
                 disabled={fontSize === "small"}
               >
-                <Minus className="size-4" />
+                <MinusIcon className="size-4" />
               </Button>
               <div className="flex-1 text-center">
                 <Badge variant="outline" className="capitalize">
@@ -247,7 +235,7 @@ export default function AccessibilityFAB({
                 onClick={handleFontSizeIncrease}
                 disabled={fontSize === "large"}
               >
-                <Plus className="size-4" />
+                <PlusIcon className="size-4" />
               </Button>
             </div>
           </div>
@@ -305,7 +293,7 @@ export default function AccessibilityFAB({
                     : "text-card-foreground"
                 )}
               >
-                <Eye className="size-4" />
+                <EyeIcon className="size-4" />
                 Normal
               </Button>
               <Button
@@ -358,7 +346,7 @@ export default function AccessibilityFAB({
               onClick={handleResetAll}
               className="w-full gap-tiny"
             >
-              <Settings className="size-4" />
+              <Cog6ToothIcon className="size-4" />
               Reset to Defaults
             </Button>
           </div>

@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { MagnifyingGlassIcon as Search, EnvelopeIcon as Mail } from '@heroicons/react/24/outline'
+import { EnvelopeIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 interface FooterSearchSubscribeProps {
   className?: string
@@ -54,7 +54,7 @@ export function FooterSearchSubscribe({ className }: FooterSearchSubscribeProps)
       {/* Newsletter Subscription */}
       <div className="space-y-4">
         <div className="flex items-center gap-3">
-          <Mail className="h-6 w-6 text-rusty-orange" />
+          <EnvelopeIcon className="h-6 w-6 text-rusty-orange" />
           <h3 className="font-rajdhani font-bold text-xl text-card-foreground">
             Stay Connected
           </h3>
@@ -83,7 +83,7 @@ export function FooterSearchSubscribe({ className }: FooterSearchSubscribeProps)
               </div>
             ) : (
               <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4" />
+                <EnvelopeIcon className="h-4 w-4" />
                 Subscribe to Newsletter
               </div>
             )}
@@ -94,7 +94,7 @@ export function FooterSearchSubscribe({ className }: FooterSearchSubscribeProps)
       {/* Site Search */}
       <div className="space-y-4">
         <div className="flex items-center gap-3">
-          <Search className="h-6 w-6 text-rusty-orange" />
+          <MagnifyingGlassIcon className="h-6 w-6 text-rusty-orange" />
           <h3 className="font-rajdhani font-bold text-xl text-card-foreground">
             Quick Search
           </h3>
@@ -123,7 +123,7 @@ export function FooterSearchSubscribe({ className }: FooterSearchSubscribeProps)
               </div>
             ) : (
               <div className="flex items-center gap-2">
-                <Search className="h-4 w-4" />
+                <MagnifyingGlassIcon className="h-4 w-4" />
                 Search Community
               </div>
             )}

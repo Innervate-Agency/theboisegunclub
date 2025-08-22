@@ -5,11 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
-import { 
-  Search, BookOpen, Filter, Clock, User, ArrowRight, 
-  Shield, Scale, GraduationCap, Wrench, Target, FileText,
-  Star, Eye, MessageSquare, Calendar, ChevronRight, Plus
-} from 'lucide-react'
+import { BookOpenIcon, CalendarDaysIcon, ChatBubbleLeftRightIcon, FunnelIcon, MagnifyingGlassIcon, ShieldCheckIcon, UserIcon } from '@heroicons/react/24/outline';
 
 type Guide = {
   slug: string
@@ -84,7 +80,7 @@ export function GuidesClient({ articles, categories, difficultyLevels }: GuidesC
             {/* Search Bar */}
             <div className="flex flex-col md:flex-row gap-base">
               <div className="flex-1 relative">
-                <Search className="absolute left-3 top-micro/2 -translate-y-1/2 size-4 text-muted-foreground" />
+                <MagnifyingGlassIcon className="absolute left-3 top-micro/2 -translate-y-1/2 size-4 text-muted-foreground" />
                 <Input
                   placeholder="Search articles, topics, or keywords..."
                   className="pl-10"
@@ -94,7 +90,7 @@ export function GuidesClient({ articles, categories, difficultyLevels }: GuidesC
               </div>
               <div className="flex gap-xs">
                 <Button variant="outline" className="gap-xs">
-                  <Filter className="size-4" />
+                  <FunnelIcon className="size-4" />
                   Advanced Search
                 </Button>
               </div>
@@ -119,7 +115,7 @@ export function GuidesClient({ articles, categories, difficultyLevels }: GuidesC
                   >
                     {category.icon}
                     <span className="ml-xs">{category.label}</span>
-                    <Badge variant="secondary" className="ml-xs">
+                    <Badge variant="outline" className="ml-xs">
                       {category.count}
                     </Badge>
                   </Button>
@@ -145,7 +141,7 @@ export function GuidesClient({ articles, categories, difficultyLevels }: GuidesC
                     }
                   >
                     {level.label}
-                    <Badge variant="secondary" className="ml-xs">
+                    <Badge variant="outline" className="ml-xs">
                       {level.count}
                     </Badge>
                   </Button>
@@ -173,7 +169,7 @@ export function GuidesClient({ articles, categories, difficultyLevels }: GuidesC
             <div className="text-center py-6xl">
               <div className="space-y-base">
                 <div className="text-display-lg flex justify-center">
-                  <BookOpen className="h-16 w-16 text-muted-foreground" />
+                  <BookOpenIcon className="h-16 w-16 text-muted-foreground" />
                 </div>
                 <h3 className="font-rajdhani text-heading-xl font-bold text-card-foreground">
                   No articles found

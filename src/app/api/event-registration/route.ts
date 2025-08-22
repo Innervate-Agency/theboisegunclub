@@ -32,13 +32,13 @@ export async function POST(request: NextRequest) {
     // Try to extract email from website/registration URL patterns
     if (data.registrationUrl) {
       // Common patterns for event emails
-      const domain = data.registrationUrl.replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0]
+      const domain = data.registrationUrl?.replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0]
       
-      if (domain.includes('practiscore.com')) {
+      if (domain && domain.includes('practiscore.com')) {
         organizerEmail = 'info@idahouspa.org'
-      } else if (domain.includes('ducks.org') || domain.includes('ducksunlimited')) {
+      } else if (domain && (domain.includes('ducks.org') || domain.includes('ducksunlimited'))) {
         organizerEmail = 'idaho@ducks.org'
-      } else if (domain.includes('lewisclarktrader.com')) {
+      } else if (domain && domain.includes('lewisclarktrader.com')) {
         organizerEmail = 'info@lewisclarktrader.com'
       } else {
         // Generate likely organizer email based on domain
@@ -172,15 +172,6 @@ export async function POST(request: NextRequest) {
 
     // In a real implementation, you would send emails here
     // For now, we'll log the content and return success
-    console.log('📧 Event Registration Submitted:', {
-      eventTitle: data.eventTitle,
-      registrantName: data.name,
-      registrantEmail: data.email,
-      organizerEmail,
-      timestamp: new Date().toISOString()
-    })
-
-    // Here you would integrate with your email service (SendGrid, Nodemailer, etc.)
     /*
     await sendEmail({
       to: organizerEmail,
@@ -208,7 +199,6 @@ export async function POST(request: NextRequest) {
       additionalInfo: data.additionalInfo
     }
     
-    console.log('📈 Lead Captured:', leadData)
 
     return NextResponse.json({
       success: true,
@@ -218,7 +208,6 @@ export async function POST(request: NextRequest) {
     })
     
   } catch (error) {
-    console.error('Event registration error:', error)
     return NextResponse.json(
       { error: 'Failed to process registration' },
       { status: 500 }

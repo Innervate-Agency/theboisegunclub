@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Star } from 'lucide-react'
+import { StarIcon } from '@heroicons/react/24/outline';
 import { useGoogleReviews } from '@/hooks/useGoogleReviews'
 
 interface BusinessReviewsSectionProps {
@@ -26,7 +26,7 @@ export function BusinessReviewsSection({ businessName, city, state }: BusinessRe
             <div className="flex items-center gap-xs">
               <div className="flex items-center gap-xs">
                 {[...Array(5)].map((_, i) => (
-                  <Star
+                  <StarIcon
                     key={i}
                     className={`h-4 w-4 ${
                       i < Math.floor(reviewsData.overallRating)
@@ -70,7 +70,7 @@ export function BusinessReviewsSection({ businessName, city, state }: BusinessRe
           </div>
         ) : reviewsData && reviewsData.recentReviews.length > 0 ? (
           <div className="space-y-base">
-            {reviewsData.recentReviews.slice(0, 4).map((review: any, index: number) => (
+            {reviewsData.recentReviews.slice(0, 4).map((review: { author: string; rating: number; text: string; date: string }, index: number) => (
               <div key={index} className="bg-card p-base rounded-none border border-border/30 shadow-whisper">
                 <div className="space-y-sm">
                   {/* Review Header */}
@@ -83,7 +83,7 @@ export function BusinessReviewsSection({ businessName, city, state }: BusinessRe
                       <div className="flex items-center gap-xs">
                         <div className="flex items-center">
                           {[...Array(5)].map((_, i) => (
-                            <Star
+                            <StarIcon
                               key={i}
                               className={`h-3 w-3 ${
                                 i < review.rating

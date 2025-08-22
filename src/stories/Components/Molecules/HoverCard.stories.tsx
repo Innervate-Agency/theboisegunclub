@@ -6,7 +6,7 @@ import {
 } from '@/components/ui/hover-card';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { CalendarIcon } from 'lucide-react';
+import { CalendarDaysIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof HoverCard> = {
   title: 'Design System/Molecules/HoverCard',
@@ -38,7 +38,7 @@ export const Default: Story = {
               The React Framework – created and maintained by @vercel.
             </p>
             <div className="flex items-center pt-xs">
-              <CalendarIcon className="mr-xs h-4 w-4 opacity-70" />{' '}
+              <CalendarDaysIcon className="mr-xs h-4 w-4 opacity-70" />{' '}
               <span className="text-caption text-muted-foreground">
                 Joined December 2021
               </span>

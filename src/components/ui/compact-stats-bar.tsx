@@ -3,7 +3,7 @@
 import React from 'react'
 import { Badge } from './badge'
 import { cn } from '@/lib/utils'
-import { TrendingUp, MapPin, Shield, Target, Star } from 'lucide-react'
+import { ArrowTrendingUpIcon, CursorArrowRaysIcon, MapPinIcon, ShieldCheckIcon, StarIcon } from '@heroicons/react/24/outline';
 
 interface CompactStatsBarProps {
   stats: {
@@ -42,13 +42,13 @@ export function CompactStatsBar({ stats, className }: CompactStatsBarProps) {
           </div>
           
           <div className="flex items-center gap-tiny">
-            <Shield className="size-3 text-sagebrush-green" />
+            <ShieldCheckIcon className="size-3 text-sagebrush-green" />
             <span className="text-body-sm font-medium text-card-foreground">{verifiedLocations}</span>
             <span className="text-body-xs text-muted-foreground">Verified</span>
           </div>
           
           <div className="flex items-center gap-tiny">
-            <MapPin className="size-3 text-info-river" />
+            <MapPinIcon className="size-3 text-info-river" />
             <span className="text-body-sm font-medium text-card-foreground">{publicAreas}</span>
             <span className="text-body-xs text-muted-foreground">Public Areas</span>
           </div>
@@ -60,7 +60,7 @@ export function CompactStatsBar({ stats, className }: CompactStatsBarProps) {
           <div className="flex items-center gap-sm text-body-xs text-muted-foreground">
             {milesOfLand && (
               <div className="flex items-center gap-micro">
-                <Target className="size-3" />
+                <CursorArrowRaysIcon className="size-3" />
                 <span>{milesOfLand}K+ acres</span>
               </div>
             )}
@@ -75,8 +75,8 @@ export function CompactStatsBar({ stats, className }: CompactStatsBarProps) {
         )}
 
         {/* Trend Indicator */}
-        <Badge variant="secondary" className="text-body-xs">
-          <TrendingUp className="size-3 mr-micro" />
+        <Badge variant="outline" className="text-body-xs">
+          <ArrowTrendingUpIcon className="size-3 mr-micro" />
           Updated daily
         </Badge>
       </div>

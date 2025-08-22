@@ -1,0 +1,72 @@
+{
+  "local_001": {
+    "business_name": "Boise Gun Exchange",
+    "city": "Boise",
+    "category": "Local Gun Store",
+    "services": "New and used firearms, gunsmithing, FFL transfers, accessories",
+    "description": "Boise Gun Exchange - Your Local Firearms Experts in the Heart of Boise.\n\nAs a local who's spent years exploring the Treasure Valley, I can confidently say that Boise Gun Exchange is the go-to destination for folks looking for trusted advice on firearms. Located conveniently near downtown Boise, this family-owned business has been serving our community since 2006. You'll find an extensive selection of new and used firearms from top manufacturers, as well as expert gunsmithing services to keep your gear in top condition.\n\nWhether you're a seasoned hunter or just starting out, the knowledgeable staff at Boise Gun Exchange will take the time to understand your needs and preferences. They offer FFL transfers for easy buying and selling, plus an impressive array of accessories to enhance your shooting experience. In the summer months, head on over after a morning hike in the nearby foothills - they'll even give you expert tips on how to clean and maintain your firearms.\n\nWhen you walk into Boise Gun Exchange, you're not just buying a gun - you're joining a community that values personal service and expertise. Folks like me rely on this local business for all our firearms needs. Stop by today and experience it for yourself! Contact us at (208) 123-4567 or visit our website to learn more about what we have to offer.",
+    "word_count": 223,
+    "variation_used": "Begin with local expertise and regional knowledge",
+    "confidence": 0.8,
+    "model": "idaho-business-writer",
+    "generation_time": 14.51655387878418,
+    "generated_at": "2025-08-21T16:00:20.603785",
+    "business_type": "local_independent"
+  },
+  "local_002": {
+    "business_name": "Snake River Sporting Goods",
+    "city": "Nampa",
+    "category": "Local Gun Shop",
+    "services": "Custom firearms, reloading supplies, gunsmithing, hunting licenses",
+    "description": "**Snake River Sporting Goods**\n\nAs summer fades into fall, Treasure Valley folks are gearing up for hunting season. If you're like me, there's no better feeling than hitting the trails with a well-stocked rifle and a keen eye for deer. That's where Snake River Sporting Goods comes in – your trusted local source for all things firearms and outdoor gear.\n\nYou'll find us on the outskirts of Nampa, nestled between the rolling hills of the Treasure Valley and the majestic Sawtooth Mountains. Our shop has been serving this community for years, offering custom firearms tailored to each customer's needs, reloading supplies, gunsmithing services, and even hunting licenses.\n\nOur team is made up of local folks who understand the importance of getting out into nature. We're not just salesmen – we're hunters, shooters, and outdoor enthusiasts who genuinely care about what we do. When you walk through our doors, you'll get personalized service from people who know this region like the back of their hand.\n\nDrop by Snake River Sporting Goods to see why we're the go-to destination for Treasure Valley outdoorsmen. Whether you're a seasoned pro or just starting out, we've got the expertise and equipment to help you succeed in the field. Give us a call at 208- [insert phone number] or swing by our shop to meet our team!",
+    "word_count": 221,
+    "variation_used": "Open with seasonal relevance and Idaho outdoor lifestyle",
+    "confidence": 0.8,
+    "model": "idaho-business-writer",
+    "generation_time": 7.948495149612427,
+    "generated_at": "2025-08-21T16:00:30.552573",
+    "business_type": "local_independent"
+  },
+  "local_003": {
+    "business_name": "Mountain West Outfitters",
+    "city": "Kuna",
+    "category": "Hunting Outfitter",
+    "services": "Guided hunting, archery equipment, trophy processing, outdoor gear",
+    "description": "Mountain West Outfitters in Kuna, Idaho offers expert guided hunting experiences for folks seeking adventure in the Treasure Valley region. You'll find our outfitters have a deep understanding of the local terrain, having spent years navigating the Snake River and surrounding mountains.\n\nThis works best when we tailor our services to individual needs – whether it's archery gear or trophy processing, we've got you covered. Our team is committed to providing top-notch service that's second to none in these parts. We're not some big-box operation; we're a local outfit with boots-on-the-ground knowledge of the area.\n\nAs summer winds down and fall hunting seasons kick into high gear, Mountain West Outfitters is your go-to resource for everything from scouting trips to trophy preparation. Our folks are passionate about preserving Idaho's rich outdoors heritage – that's why we prioritize supporting local conservation efforts and fostering strong community ties.\n\nIf you're new to the area or just looking for a reliable outfitter, give us a call. We'll hook you up with the gear and expertise you need to tackle whatever challenge comes your way. Visit our website or stop by our shop in Kuna – we can't wait to meet you! (208) 555-OUTFIT",
+    "word_count": 200,
+    "variation_used": "Focus on problem-solving and personal service quality",
+    "confidence": 0.95,
+    "model": "idaho-business-writer",
+    "generation_time": 6.799634695053101,
+    "generated_at": "2025-08-21T16:00:39.352506",
+    "business_type": "local_independent"
+  },
+  "local_004": {
+    "business_name": "Treasure Valley Tactical",
+    "city": "Eagle",
+    "category": "Tactical Training",
+    "services": "Tactical training, law enforcement courses, defensive shooting instruction",
+    "description": "Treasure Valley Tactical - Your Local Resource for Practical Defense Skills\n\nYou'll find Treasure Valley Tactical nestled in Eagle, Idaho, where we're proud to serve our neighbors. Our owners are lifelong residents of the Treasure Valley and understand the importance of community. That's why we focus on providing personalized tactical training that prepares you for real-life situations.\n\nOur instructors have years of experience in law enforcement and defensive shooting instruction, ensuring you receive hands-on guidance tailored to your needs. We cater to individuals, law enforcement agencies, and families seeking confidence in their self-defense skills. Whether it's a summer evening spent at the Boise Foothills or a crisp winter morning on the slopes, we believe everyone deserves the freedom to enjoy Idaho's great outdoors without worry.\n\nAt Treasure Valley Tactical, folks can expect problem-solving approaches to training that emphasize adaptability and critical thinking. Our classes are kept small to ensure each participant receives personalized attention from our experienced instructors. We're not just a business - we're your neighbors who care about keeping our community safe. Visit us at 12345 W. State St., Eagle, ID 83704. Call (208) 555-TRAIN for more information and schedule your training today!",
+    "word_count": 195,
+    "variation_used": "Focus on problem-solving and personal service quality",
+    "confidence": 0.95,
+    "model": "idaho-business-writer",
+    "generation_time": 6.6525959968566895,
+    "generated_at": "2025-08-21T16:00:48.005329",
+    "business_type": "local_independent"
+  },
+  "local_005": {
+    "business_name": "Meridian Gun Range",
+    "city": "Meridian",
+    "category": "Indoor Shooting Range",
+    "services": "Indoor shooting range, firearm rentals, safety training, concealed carry classes",
+    "description": "Meridian Gun Range - Your Home for Safe Shooting in the Treasure Valley\n\nYou'll find folks from all over the region heading to Meridian Gun Range for a safe, controlled environment to hone their shooting skills. As an indoor shooting range, we cater to both beginners and seasoned shooters looking for a place to practice year-round, rain or shine. Our location on Eagle Road makes it easy to swing by after work or on a day off.\n\nWe understand that Treasure Valley folks value independence and self-reliance, which is why our focus is on providing top-notch service with a personal touch. Whether you're looking for firearm rentals, safety training, or concealed carry classes, our expert staff will guide you every step of the way. We also offer private instruction for those who prefer one-on-one coaching.\n\nOur goal at Meridian Gun Range is to foster a sense of community among shooters while maintaining a safe and welcoming environment. If you're new to shooting or just need some practice time before hitting the trails, we've got you covered. Come on down and experience the difference local, independent ownership makes. Call us today to schedule your visit: (208) 555-1234.",
+    "word_count": 196,
+    "variation_used": "Lead with customer needs and practical Idaho solutions",
+    "confidence": 0.95,
+    "model": "idaho-business-writer",
+    "generation_time": 6.645270109176636,
+    "generated_at": "2025-08-21T16:00:56.650862",
+    "business_type": "local_independent"
+  }
+}

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { Home, Trophy, Calendar, Target, Users, Shield, Settings, FileText, Mail, Phone } from 'lucide-react'
+import { CalendarDaysIcon, Cog6ToothIcon, CursorArrowRaysIcon, DocumentTextIcon, HomeIcon, ShieldCheckIcon, ToothIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 import { 
   NavigationMenu,
@@ -52,7 +52,7 @@ export const Default: Story = {
                   className="flex h-full w-full select-none flex-col justify-end rounded-input bg-gradient-to-b from-muted/50 to-muted p-md no-underline outline-none focus:shadow-elevated"
                   href="/"
                 >
-                  <Home className="h-6 w-6" />
+                  <HomeIcon className="h-6 w-6" />
                   <div className="mb-xs mt-base text-body-lg font-medium">
                     Gun Club Portal
                   </div>
@@ -87,28 +87,28 @@ export const Default: Story = {
           <NavigationMenuContent>
             <div className="grid w-[400px] gap-sm p-base md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               <div className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                <Trophy className="h-4 w-4 mb-xs" />
+                <TrophyIcon className="h-4 w-4 mb-xs" />
                 <div className="text-body-sm font-medium leading-none">Tournaments</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   Competitive shooting tournaments and championships.
                 </p>
               </div>
               <div className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                <Calendar className="h-4 w-4 mb-xs" />
+                <CalendarDaysIcon className="h-4 w-4 mb-xs" />
                 <div className="text-body-sm font-medium leading-none">Schedule</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   View upcoming events and practice sessions.
                 </p>
               </div>
               <div className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                <Users className="h-4 w-4 mb-xs" />
+                <UsersIcon className="h-4 w-4 mb-xs" />
                 <div className="text-body-sm font-medium leading-none">Leagues</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   Join competitive leagues and team events.
                 </p>
               </div>
               <div className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                <Target className="h-4 w-4 mb-xs" />
+                <CursorArrowRaysIcon className="h-4 w-4 mb-xs" />
                 <div className="text-body-sm font-medium leading-none">Practice</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   Open practice sessions and training opportunities.
@@ -129,22 +129,22 @@ export const Default: Story = {
 
 export const Premium: Story = {
   render: () => (
-    <NavigationMenu variant="premium">
-      <NavigationMenuList variant="premium">
+    <NavigationMenu variant="default">
+      <NavigationMenuList variant="default">
         <NavigationMenuItem>
-          <NavigationMenuTrigger variant="premium">
-            <Trophy className="size-4 mr-xs" />
+          <NavigationMenuTrigger variant="default">
+            <TrophyIcon className="size-4 mr-xs" />
             Tournaments
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <div className="grid gap-sm p-md md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <div className="row-span-3">
                 <NavigationMenuLink
-                  variant="premium"
+                  variant="default"
                   className="flex h-full w-full select-none flex-col justify-end rounded-input bg-gradient-to-b from-sandy-ochre/20 to-rusty-orange/20 p-md no-underline outline-none focus:shadow-elevated"
                   href="/"
                 >
-                  <Trophy className="h-6 w-6 text-sandy-ochre" />
+                  <TrophyIcon className="h-6 w-6 text-sandy-ochre" />
                   <div className="mb-xs mt-base text-body-lg font-medium text-sandy-ochre">
                     Elite Championships
                   </div>
@@ -153,19 +153,19 @@ export const Premium: Story = {
                   </p>
                 </NavigationMenuLink>
               </div>
-              <NavigationMenuLink variant="premium" href="/tournaments/elite" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
+              <NavigationMenuLink variant="default" href="/tournaments/elite" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
                 <div className="text-body-sm font-medium leading-none">Elite Series</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   High-level competitive tournaments with prizes.
                 </p>
               </NavigationMenuLink>
-              <NavigationMenuLink variant="premium" href="/tournaments/championship" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
+              <NavigationMenuLink variant="default" href="/tournaments/championship" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
                 <div className="text-body-sm font-medium leading-none">Championships</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   Annual championship events and qualifiers.
                 </p>
               </NavigationMenuLink>
-              <NavigationMenuLink variant="premium" href="/tournaments/results" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
+              <NavigationMenuLink variant="default" href="/tournaments/results" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
                 <div className="text-body-sm font-medium leading-none">Live Results</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   Real-time scoring and tournament standings.
@@ -176,35 +176,35 @@ export const Premium: Story = {
         </NavigationMenuItem>
         
         <NavigationMenuItem>
-          <NavigationMenuTrigger variant="premium">
-            <Calendar className="size-4 mr-xs" />
+          <NavigationMenuTrigger variant="default">
+            <CalendarDaysIcon className="size-4 mr-xs" />
             Events & Schedule
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <div className="grid w-[400px] gap-sm p-base md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              <NavigationMenuLink variant="premium" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
-                <Calendar className="h-4 w-4 mb-xs text-sandy-ochre" />
+              <NavigationMenuLink variant="default" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
+                <CalendarDaysIcon className="h-4 w-4 mb-xs text-sandy-ochre" />
                 <div className="text-body-sm font-medium leading-none">Event Calendar</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   Complete calendar of tournaments and events.
                 </p>
               </NavigationMenuLink>
-              <NavigationMenuLink variant="premium" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
-                <Users className="h-4 w-4 mb-xs text-sandy-ochre" />
+              <NavigationMenuLink variant="default" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
+                <UsersIcon className="h-4 w-4 mb-xs text-sandy-ochre" />
                 <div className="text-body-sm font-medium leading-none">Registration</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   Event registration and payment processing.
                 </p>
               </NavigationMenuLink>
-              <NavigationMenuLink variant="premium" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
-                <Target className="h-4 w-4 mb-xs text-sandy-ochre" />
+              <NavigationMenuLink variant="default" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
+                <CursorArrowRaysIcon className="h-4 w-4 mb-xs text-sandy-ochre" />
                 <div className="text-body-sm font-medium leading-none">Range Schedule</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   Range availability and booking system.
                 </p>
               </NavigationMenuLink>
-              <NavigationMenuLink variant="premium" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
-                <Settings className="h-4 w-4 mb-xs text-sandy-ochre" />
+              <NavigationMenuLink variant="default" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
+                <Cog6ToothIcon className="h-4 w-4 mb-xs text-sandy-ochre" />
                 <div className="text-body-sm font-medium leading-none">My Schedule</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   Personal event schedule and reminders.
@@ -215,8 +215,8 @@ export const Premium: Story = {
         </NavigationMenuItem>
         
         <NavigationMenuItem>
-          <NavigationMenuLink variant="premium" href="/membership" className="group inline-flex h-10 w-max items-center justify-center rounded-sm px-lg py-xs text-body-sm font-semibold">
-            <Users className="size-4 mr-xs" />
+          <NavigationMenuLink variant="default" href="/membership" className="group inline-flex h-10 w-max items-center justify-center rounded-sm px-lg py-xs text-body-sm font-semibold">
+            <UsersIcon className="size-4 mr-xs" />
             Membership
           </NavigationMenuLink>
         </NavigationMenuItem>
@@ -228,22 +228,22 @@ export const Premium: Story = {
 export const Glass: Story = {
   render: () => (
     <div className="bg-gradient-to-br from-dark-chocolate to-rich-loam p-lg rounded-xs">
-      <NavigationMenu variant="glass">
-        <NavigationMenuList variant="glass">
+      <NavigationMenu variant="secondary">
+        <NavigationMenuList variant="secondary">
           <NavigationMenuItem>
-            <NavigationMenuTrigger variant="glass">
-              <Target className="size-4 mr-xs" />
+            <NavigationMenuTrigger variant="secondary">
+              <CursorArrowRaysIcon className="size-4 mr-xs" />
               Live Range
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <div className="grid gap-sm p-md md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 <div className="row-span-3">
                   <NavigationMenuLink
-                    variant="glass"
+                    variant="secondary"
                     className="flex h-full w-full select-none flex-col justify-end rounded-input bg-range-white/10 backdrop-blur-sm p-md no-underline outline-none focus:shadow-elevated"
                     href="/"
                   >
-                    <Target className="h-6 w-6 text-range-white" />
+                    <CursorArrowRaysIcon className="h-6 w-6 text-range-white" />
                     <div className="mb-xs mt-base text-body-lg font-medium text-range-white">
                       Range Control Center
                     </div>
@@ -252,19 +252,19 @@ export const Glass: Story = {
                     </p>
                   </NavigationMenuLink>
                 </div>
-                <NavigationMenuLink variant="glass" href="/range/status" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
+                <NavigationMenuLink variant="secondary" href="/range/status" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
                   <div className="text-body-sm font-medium leading-none">Range Status</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-range-white/70">
                     Live status of all shooting ranges.
                   </p>
                 </NavigationMenuLink>
-                <NavigationMenuLink variant="glass" href="/range/safety" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
+                <NavigationMenuLink variant="secondary" href="/range/safety" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
                   <div className="text-body-sm font-medium leading-none">Safety Monitor</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-range-white/70">
                     Real-time safety monitoring system.
                   </p>
                 </NavigationMenuLink>
-                <NavigationMenuLink variant="glass" href="/range/equipment" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
+                <NavigationMenuLink variant="secondary" href="/range/equipment" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
                   <div className="text-body-sm font-medium leading-none">Equipment</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-range-white/70">
                     Equipment status and availability.
@@ -275,35 +275,35 @@ export const Glass: Story = {
           </NavigationMenuItem>
           
           <NavigationMenuItem>
-            <NavigationMenuTrigger variant="glass">
-              <Settings className="size-4 mr-xs" />
+            <NavigationMenuTrigger variant="secondary">
+              <Cog6ToothIcon className="size-4 mr-xs" />
               Control Panel
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <div className="grid w-[400px] gap-sm p-base md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                <NavigationMenuLink variant="glass" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
-                  <Settings className="h-4 w-4 mb-xs text-range-white" />
+                <NavigationMenuLink variant="secondary" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
+                  <Cog6ToothIcon className="h-4 w-4 mb-xs text-range-white" />
                   <div className="text-body-sm font-medium leading-none">System Settings</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-range-white/70">
                     Configure range operation parameters.
                   </p>
                 </NavigationMenuLink>
-                <NavigationMenuLink variant="glass" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
-                  <Shield className="h-4 w-4 mb-xs text-range-white" />
+                <NavigationMenuLink variant="secondary" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
+                  <ShieldCheckIcon className="h-4 w-4 mb-xs text-range-white" />
                   <div className="text-body-sm font-medium leading-none">Safety Controls</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-range-white/70">
                     Emergency controls and safety systems.
                   </p>
                 </NavigationMenuLink>
-                <NavigationMenuLink variant="glass" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
-                  <Users className="h-4 w-4 mb-xs text-range-white" />
+                <NavigationMenuLink variant="secondary" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
+                  <UsersIcon className="h-4 w-4 mb-xs text-range-white" />
                   <div className="text-body-sm font-medium leading-none">User Management</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-range-white/70">
                     Manage user access and permissions.
                   </p>
                 </NavigationMenuLink>
-                <NavigationMenuLink variant="glass" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
-                  <FileText className="h-4 w-4 mb-xs text-range-white" />
+                <NavigationMenuLink variant="secondary" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
+                  <DocumentTextIcon className="h-4 w-4 mb-xs text-range-white" />
                   <div className="text-body-sm font-medium leading-none">Reports</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-range-white/70">
                     Generate system and usage reports.
@@ -314,8 +314,8 @@ export const Glass: Story = {
           </NavigationMenuItem>
           
           <NavigationMenuItem>
-            <NavigationMenuLink variant="glass" href="/emergency" className="group inline-flex h-10 w-max items-center justify-center rounded-sm px-lg py-xs text-body-sm font-medium text-range-white">
-              <Shield className="size-4 mr-xs" />
+            <NavigationMenuLink variant="secondary" href="/emergency" className="group inline-flex h-10 w-max items-center justify-center rounded-sm px-lg py-xs text-body-sm font-medium text-range-white">
+              <ShieldCheckIcon className="size-4 mr-xs" />
               Emergency
             </NavigationMenuLink>
           </NavigationMenuItem>
@@ -332,7 +332,7 @@ export const Tournament: Story = {
         <NavigationMenuList variant="tournament">
           <NavigationMenuItem>
             <NavigationMenuTrigger variant="tournament">
-              <Trophy className="size-5 mr-xs" />
+              <TrophyIcon className="size-5 mr-xs" />
               Championship Control
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -343,7 +343,7 @@ export const Tournament: Story = {
                     className="flex h-full w-full select-none flex-col justify-end rounded-input bg-gradient-to-b from-rich-loam/90 to-warm-stone/90 p-md no-underline outline-none focus:shadow-elevated border border-sandy-ochre/30"
                     href="/"
                   >
-                    <Trophy className="h-6 w-6 text-sandy-ochre" />
+                    <TrophyIcon className="h-6 w-6 text-sandy-ochre" />
                     <div className="mb-xs mt-base text-body-lg font-medium text-sandy-ochre">
                       Elite Tournament System
                     </div>
@@ -376,34 +376,34 @@ export const Tournament: Story = {
           
           <NavigationMenuItem>
             <NavigationMenuTrigger variant="tournament">
-              <Users className="size-5 mr-xs" />
+              <UsersIcon className="size-5 mr-xs" />
               Competitor Hub
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <div className="grid w-[400px] gap-sm p-base md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 <NavigationMenuLink variant="tournament" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
-                  <Users className="h-4 w-4 mb-xs text-sandy-ochre" />
+                  <UsersIcon className="h-4 w-4 mb-xs text-sandy-ochre" />
                   <div className="text-body-sm font-medium leading-none">Registration</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-stainless-steel">
                     Elite competitor registration system.
                   </p>
                 </NavigationMenuLink>
                 <NavigationMenuLink variant="tournament" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
-                  <Target className="h-4 w-4 mb-xs text-sandy-ochre" />
+                  <CursorArrowRaysIcon className="h-4 w-4 mb-xs text-sandy-ochre" />
                   <div className="text-body-sm font-medium leading-none">Squad Assignments</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-stainless-steel">
                     Professional squad management system.
                   </p>
                 </NavigationMenuLink>
                 <NavigationMenuLink variant="tournament" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
-                  <FileText className="h-4 w-4 mb-xs text-sandy-ochre" />
+                  <DocumentTextIcon className="h-4 w-4 mb-xs text-sandy-ochre" />
                   <div className="text-body-sm font-medium leading-none">Score Cards</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-stainless-steel">
                     Digital scorecards and results tracking.
                   </p>
                 </NavigationMenuLink>
                 <NavigationMenuLink variant="tournament" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
-                  <Trophy className="h-4 w-4 mb-xs text-sandy-ochre" />
+                  <TrophyIcon className="h-4 w-4 mb-xs text-sandy-ochre" />
                   <div className="text-body-sm font-medium leading-none">Awards</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-stainless-steel">
                     Championship awards and recognition.
@@ -415,7 +415,7 @@ export const Tournament: Story = {
           
           <NavigationMenuItem>
             <NavigationMenuLink variant="tournament" href="/tournament/master-control" className="group inline-flex h-12 w-max items-center justify-center rounded-sm px-md py-sm text-body-sm font-bold text-range-white">
-              <Settings className="size-5 mr-xs" />
+              <Cog6ToothIcon className="size-5 mr-xs" />
               Master Control
             </NavigationMenuLink>
           </NavigationMenuItem>
@@ -513,7 +513,7 @@ export const SiteNavigationPreset: Story = {
           <NavigationMenuList variant="tournament">
             <NavigationMenuItem>
               <NavigationMenuTrigger variant="tournament">
-                <Settings className="size-4 mr-xs" />
+                <Cog6ToothIcon className="size-4 mr-xs" />
                 Admin Panel
               </NavigationMenuTrigger>
             </NavigationMenuItem>

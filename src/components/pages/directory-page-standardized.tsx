@@ -10,21 +10,16 @@ import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { useCardPageFilters } from '@/hooks/useCardPageFilters'
 import { EmptyState } from '@/components/ui/empty-state'
+import { EnhancedPagination } from '@/components/ui/enhanced-pagination'
+import { CardSkeleton } from '@/components/ui/card-skeleton'
 import { DirectoryFloatingBadges } from '@/components/ui/hero-floating-badges'
 import { DirectoryEmbers } from '@/components/ui/hero-directory-embers'
 import { DirectoryStatsGrid } from '@/components/ui/directory-stats-grid'
 import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
 import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
-import { EventTicker } from '@/components/ui/event-ticker'
 import { DirectoryTicker } from '@/components/ui/directory-ticker'
-import { 
-  BuildingStorefrontIcon as Storefront, ShieldCheckIcon as Shield, 
-  UsersIcon as Users, MapPinIcon as MapPin, StarIcon as Star, 
-  CheckCircleIcon as CheckCircle, PlusIcon as Plus, ArrowRightIcon as ArrowRight, 
-  ChevronRightIcon as CaretRight, ClockIcon as Clock, CurrencyDollarIcon as CurrencyDollar, 
-  MagnifyingGlassIcon as Search, FunnelIcon as Filter
-} from '@heroicons/react/24/outline'
+import { ArrowRightIcon, BuildingStorefrontIcon, CheckCircleIcon, ChevronRightIcon, ClockIcon, ClubIcon, CopperMemberIcon, CurrencyDollarIcon, FunnelIcon, GoldPartnerIcon, GunsmithIcon, MagnifyingGlassIcon, MapPinIcon, PlusIcon, ShieldCheckIcon, ShootingRangeIcon, SilverMemberIcon, StandardMemberIcon, StarIcon, TacticalRetailIcon, TacticalServicesIcon, TrainingIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 // Import tactical icons for authentic firearms business categorization
 import {
@@ -78,7 +73,7 @@ const directoryListings: BusinessData[] = [
     imageUrl: "/images/vendors/independence-indoor-shooting.jpg",
     slug: "independence-indoor-shooting",
     category: "Range",
-    featured: true
+    featured: false
   },
   {
     businessName: "Black's Creek Public Shooting Range",
@@ -95,7 +90,7 @@ const directoryListings: BusinessData[] = [
     imageUrl: "/images/vendors/blacks-creek.jpg",
     slug: "blacks-creek-public-shooting-range",
     category: "Range",
-    featured: true
+    featured: false
   },
   {
     businessName: "Rock Creek Ranch",
@@ -112,7 +107,7 @@ const directoryListings: BusinessData[] = [
     imageUrl: "/images/vendors/rock-creek-ranch.jpg",
     slug: "rock-creek-ranch",
     category: "Range",
-    featured: true
+    featured: false
   },
   {
     businessName: "Double Tapp Range",
@@ -148,7 +143,7 @@ const directoryListings: BusinessData[] = [
     imageUrl: "/images/vendors/impact-guns.jpg",
     slug: "impact-guns",
     category: "Retail",
-    featured: true
+    featured: false
   },
   {
     businessName: "Sportsman's Warehouse",
@@ -201,7 +196,7 @@ const directoryListings: BusinessData[] = [
     imageUrl: "/images/vendors/kodiak-precision.jpg",
     slug: "kodiak-precision",
     category: "Gunsmith",
-    featured: true
+    featured: false
   },
   {
     businessName: "Buckhorn Gun & Pawn",
@@ -237,7 +232,7 @@ const directoryListings: BusinessData[] = [
     imageUrl: "/images/vendors/defensive-tactics.jpg",
     slug: "defensive-tactics-idaho",
     category: "Training",
-    featured: true
+    featured: false
   },
   {
     businessName: "Snake River Shooting Products",
@@ -410,7 +405,9 @@ export function DirectoryPageStandardized() {
     initialTab: 'all',
     initialSortBy: 'featured',
     initialViewMode: 'grid',
-    itemsPerPage: 12,
+    initialItemsPerPage: 12,
+    perPageOptions: [8, 12, 24, 48],
+    enableInfiniteScroll: false,
     
     // Search filter function
     searchFilter: (business, query) => {
@@ -601,23 +598,23 @@ export function DirectoryPageStandardized() {
             </p>
             
             <div className="flex gap-base">
-              <Button size="lg" className="bg-nav-directory text-white hover:bg-white hover:text-nav-directory font-rajdhani font-bold" animationType="plus-minus">
-                <Plus className="h-4 w-4 mr-xs" />
+              <Button className="bg-nav-directory text-white hover:bg-white hover:text-nav-directory font-rajdhani font-bold" animationType="plus-minus">
+                <PlusIcon className="h-4 w-4 mr-xs" />
                 List Your Business
               </Button>
-              <Button variant="ghost" size="lg" className="text-white hover:bg-white/10 font-rajdhani font-bold" animationType="chevron">
+              <Button variant="ghost" className="text-white hover:bg-white/10 font-rajdhani font-bold" animationType="chevron">
                 View Map
               </Button>
             </div>
           </div>
           
           {/* Featured Business Card - Right side - Compact Hero Version */}
-          <div className="py-md">
+          <div className="py-mobile-md sm:py-md">
             <div className="relative">
               {directoryListings.find(b => b.featured) && (() => {
                 const featuredBusiness = directoryListings.find(b => b.featured)!
                 return (
-                  <Card className="mica border-nav-directory/30 hover:shadow-elevated transition-all duration-300 overflow-hidden">
+                  <Card className="mica-card border-nav-directory/30 shadow-present hover:shadow-elevated transition-all duration-300 overflow-hidden">
                     <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-directory/20 to-nav-directory/10 rounded-bl-full"></div>
                     <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-directory to-nav-directory"></div>
                     
@@ -628,7 +625,7 @@ export function DirectoryPageStandardized() {
                           GOLD PARTNER
                         </Badge>
                         <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                          <CheckCircle className="h-3 w-3 text-nav-directory" />
+                          <CheckCircleIcon className="h-3 w-3 text-nav-directory" />
                           <span>Verified</span>
                         </div>
                       </div>
@@ -637,7 +634,7 @@ export function DirectoryPageStandardized() {
                         <div>
                           <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight mb-xs">{featuredBusiness.businessName}</h3>
                           <div className="flex items-center gap-xs text-xs text-muted-foreground">
-                            <MapPin className="h-3 w-3 text-nav-directory" />
+                            <MapPinIcon className="h-3 w-3 text-nav-directory" />
                             <span>{featuredBusiness.address.split(',')[0]}</span>
                           </div>
                         </div>
@@ -649,11 +646,11 @@ export function DirectoryPageStandardized() {
                         <div className="flex items-center justify-between pt-base border-t border-border">
                           <div className="space-y-xs">
                             <div className="flex items-center gap-xs">
-                              <Clock className="h-3 w-3 text-nav-directory" />
+                              <ClockIcon className="h-3 w-3 text-nav-directory" />
                               <span className="text-xs text-muted-foreground">Open Now</span>
                             </div>
                             <div className="flex items-center gap-xs">
-                              <Star className="h-3 w-3 fill-sandy-ochre text-sandy-ochre" />
+                              <StarIcon className="h-3 w-3 fill-sandy-ochre text-sandy-ochre" />
                               <span className="text-xs font-bold">4.8</span>
                               <span className="text-xs text-muted-foreground">(127)</span>
                             </div>
@@ -663,7 +660,7 @@ export function DirectoryPageStandardized() {
                             size="sm"
                           >
                             VIEW DETAILS
-                            <ArrowRight className="h-3 w-3 ml-xs" />
+                            <ArrowRightIcon className="h-3 w-3 ml-xs" />
                           </Button>
                         </div>
                       </div>
@@ -680,89 +677,42 @@ export function DirectoryPageStandardized() {
 
   // Event ticker for cross-promotion
   const tickerEvents = [
-    { title: "Range Day at Independence Indoor", date: "March 22", location: "Meridian", eventType: "Demo Day" as const, price: "Free", featured: true },
+    { title: "Range Day at Independence Indoor", date: "March 22", location: "Meridian", eventType: "Demo Day" as const, price: "Free", featured: false },
     { title: "CCW Class at Snake River", date: "March 15", location: "Eagle", eventType: "Training" as const, price: "$65", featured: false },
     { title: "USPSA Match at ISPS", date: "March 29", location: "Nampa", eventType: "Competition" as const, price: "$25", featured: false },
     { title: "Ladies Night at Impact Guns", date: "March 18", location: "Boise", eventType: "Social" as const, price: "Free", featured: false },
     { title: "Gunsmith Workshop", date: "April 5", location: "Boise", eventType: "Training" as const, price: "$45", featured: false },
     { title: "3-Gun Competition", date: "April 12", location: "Kuna", eventType: "Competition" as const, price: "$35", featured: false },
     { title: "Youth Safety Course", date: "April 8", location: "Meridian", eventType: "Training" as const, price: "$20", featured: false },
-    { title: "Suppressor Demo Day", date: "April 15", location: "Boise", eventType: "Expo" as const, price: "Free", featured: true }
+    { title: "Suppressor Demo Day", date: "April 15", location: "Boise", eventType: "Expo" as const, price: "Free", featured: false }
   ]
 
   return (
     <div className="min-h-screen bg-background">
       {heroContent}
       
-      {/* Directory Ticker - Business Updates */}
+      {/* Events Ticker - Live upcoming events */}
       <DirectoryTicker />
       
-      {/* Search and Quick Tabs Section */}
-      <section className="py-lg section-bg-directory-neutral border-b border-border/50">
-        <div className="container mx-auto max-w-site px-md">
-          {/* Search Bar */}
-          <div className="mb-lg">
-            <div className="relative max-w-2xl">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input
-                placeholder="Search businesses, services, or locations..."
-                className="pl-10 h-12 text-body-base shadow-elevated"
-                value={filters.searchQuery}
-                onChange={(e) => filters.setSearchQuery(e.target.value)}
-              />
-            </div>
-          </div>
-
-          {/* Quick Filter Tabs */}
-          <div className="flex flex-wrap gap-xs">
-            {[
-              { id: 'all', label: 'All Businesses', count: directoryListings.length, icon: Storefront },
-              { id: 'ranges', label: 'Ranges', count: directoryListings.filter(b => b.category === 'Range').length, icon: ShootingRangeIcon },
-              { id: 'gunsmiths', label: 'Gunsmiths', count: directoryListings.filter(b => b.category === 'Gunsmith').length, icon: GunsmithIcon },
-              { id: 'training', label: 'Training', count: directoryListings.filter(b => b.category === 'Training').length, icon: TrainingIcon },
-              { id: 'retail', label: 'Retail', count: directoryListings.filter(b => b.category === 'Retail').length, icon: TacticalRetailIcon },
-              { id: 'clubs', label: 'Clubs', count: directoryListings.filter(b => b.category === 'Club').length, icon: ClubIcon },
-              { id: 'verified', label: 'Verified', count: directoryListings.filter(b => b.isVerified).length, icon: CheckCircle },
-              { id: 'featured', label: 'Featured', count: directoryListings.filter(b => b.featured).length }
-            ].map((tab) => (
-              <Button
-                key={tab.id}
-                variant={filters.activeTab === tab.id ? "default" : "outline"}
-                size="sm"
-                onClick={() => filters.setActiveTab(tab.id)}
-                className="gap-xs font-rajdhani shadow-none rounded-xs"
-              >
-                {tab.icon && React.createElement(tab.icon, { 
-                  className: "size-3" 
-                })}
-                {tab.label}
-                {tab.count && (
-                  <Badge variant="secondary" size="sm" className="ml-xs">
-                    {tab.count}
-                  </Badge>
-                )}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Main Content Area */}
       <section className="py-mobile-2xl sm:py-4xl bg-background/50">
         <div className="w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile">
           <div className="flex flex-col lg:flex-row gap-mobile-lg sm:gap-2xl max-w-[1920px] mx-auto">
             
-            {/* Left Sidebar - Modern Filters (Desktop) */}
+            {/* Left Sidebar - Filters (Desktop) */}
             <aside className="hidden lg:block">
-              <ModernFilterSidebar
-                sections={filterSections}
-                selectedFilters={filters.selectedFilters}
-                onFilterChange={handleFilterChange}
-                onClearSection={handleClearSection}
-                onClearAll={handleClearAll}
-                totalResults={filters.totalResults}
-                filteredResults={filters.filteredResults}
-              />
+              <div className="space-y-6">
+                {/* Modern Filter Sidebar - Now fully collapsible */}
+                <ModernFilterSidebar
+                  sections={filterSections}
+                  selectedFilters={filters.selectedFilters}
+                  onFilterChange={handleFilterChange}
+                  onClearSection={handleClearSection}
+                  onClearAll={handleClearAll}
+                  totalResults={filters.totalResults}
+                  filteredResults={filters.filteredResults}
+                />
+              </div>
             </aside>
 
             {/* Mobile Filter Sidebar */}
@@ -781,6 +731,52 @@ export function DirectoryPageStandardized() {
             
             {/* Main Content */}
             <main className="flex-1 min-w-0">
+              {/* Search and Category Controls */}
+              <div className="mb-xl space-y-lg">
+                {/* Search Bar */}
+                <div className="relative max-w-2xl">
+                  <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    placeholder="Search businesses, services, or locations..."
+                    className="pl-10 h-12 text-body-base shadow-none"
+                    value={filters.searchQuery}
+                    onChange={(e) => filters.setSearchQuery(e.target.value)}
+                  />
+                </div>
+
+                {/* Quick Filter Tabs */}
+                <div className="flex flex-wrap gap-xs">
+                  {[
+                    { id: 'all', label: 'All Businesses', count: directoryListings.length, icon: Storefront },
+                    { id: 'ranges', label: 'Ranges', count: directoryListings.filter(b => b.category === 'Range').length, icon: ShootingRangeIcon },
+                    { id: 'gunsmiths', label: 'Gunsmiths', count: directoryListings.filter(b => b.category === 'Gunsmith').length, icon: GunsmithIcon },
+                    { id: 'training', label: 'Training', count: directoryListings.filter(b => b.category === 'Training').length, icon: TrainingIcon },
+                    { id: 'retail', label: 'Retail', count: directoryListings.filter(b => b.category === 'Retail').length, icon: TacticalRetailIcon },
+                    { id: 'clubs', label: 'Clubs', count: directoryListings.filter(b => b.category === 'Club').length, icon: ClubIcon },
+                    { id: 'verified', label: 'Verified', count: directoryListings.filter(b => b.isVerified).length, icon: CheckCircle },
+                    { id: 'featured', label: 'Featured', count: directoryListings.filter(b => b.featured).length }
+                  ].map((tab) => (
+                    <Button
+                      key={tab.id}
+                      variant={filters.activeTab === tab.id ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => filters.setActiveTab(tab.id)}
+                      className="gap-xs font-rajdhani shadow-none rounded-xs"
+                    >
+                      {tab.icon && React.createElement(tab.icon, { 
+                        className: "size-3" 
+                      })}
+                      {tab.label}
+                      {tab.count && (
+                        <Badge variant="outline" size="sm" className="ml-xs">
+                          {tab.count}
+                        </Badge>
+                      )}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+
               {/* Results Header with Controls */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base sm:gap-xl mb-xl sm:mb-2xl lg:mb-3xl">
                 <div>
@@ -802,10 +798,10 @@ export function DirectoryPageStandardized() {
                     onClick={() => setMobileFiltersOpen(true)}
                     className="gap-xs font-rajdhani lg:hidden"
                   >
-                    <Filter className="size-4" />
+                    <FunnelIcon className="size-4" />
                     Filters
                     {getActiveFilterCount() > 0 && (
-                      <Badge variant="secondary" className="ml-xs bg-nav-directory/20 text-nav-directory border-nav-directory/30 text-xs">
+                      <Badge variant="outline" className="ml-xs bg-nav-directory/20 text-nav-directory border-nav-directory/30 text-xs">
                         {getActiveFilterCount()}
                       </Badge>
                     )}
@@ -825,40 +821,67 @@ export function DirectoryPageStandardized() {
                 </div>
               </div>
 
-              <div className={filters.getGridClassName()}>
-                {filters.paginatedItems.length > 0 ? (
-                  filters.paginatedItems.map((business, index) => (
-                    <VendorCard
-                      key={`${business.businessName}-${index}`}
-                      businessName={business.businessName}
-                      businessType={business.businessType}
-                      description={business.description}
-                      address={business.address}
-                      phone={business.phone}
-                      website={business.website}
-                      hours={business.hours}
-                      tier={business.tier}
-                      specialties={business.specialties}
-                      isVerified={business.isVerified}
-                      isSponsored={business.isSponsored}
-                      href={`/directory/${business.slug}`}
-                      className="mica transition-all duration-300 rounded-xs"
-                    />
-                  ))
+              {/* Card Grid/List Content with Loading State */}
+              <div className="mb-4xl">
+                {filters.isLoading ? (
+                  <CardSkeleton 
+                    viewMode={filters.viewMode} 
+                    count={filters.itemsPerPage} 
+                    className={filters.getGridClassName()}
+                  />
                 ) : (
-                  <div className="col-span-full">
-                    <EmptyState 
-                      title="No Businesses Found"
-                      description="Try adjusting your search terms or filters to find businesses."
-                      action={
-                        <Button onClick={filters.clearAllFilters}>
-                          Clear All Filters
-                        </Button>
-                      }
-                    />
+                  <div className={filters.getGridClassName()}>
+                    {filters.paginatedItems.length > 0 ? (
+                      filters.paginatedItems.map((business, index) => (
+                        <VendorCard
+                          key={`${business.businessName}-${index}`}
+                          businessName={business.businessName}
+                          businessType={business.businessType}
+                          description={business.description}
+                          address={business.address}
+                          phone={business.phone}
+                          website={business.website}
+                          hours={business.hours}
+                          tier={business.tier}
+                          specialties={business.specialties}
+                          isVerified={business.isVerified}
+                          isSponsored={business.isSponsored}
+                          href={`/directory/${business.slug}`}
+                          className="mica transition-all duration-300 rounded-xs"
+                        />
+                      ))
+                    ) : (
+                      <div className="col-span-full">
+                        <EmptyState 
+                          title="No Businesses Found"
+                          description="Try adjusting your search terms or filters to find businesses."
+                          onAction={
+                            <Button onClick={filters.clearAllFilters}>
+                              Clear All Filters
+                            </Button>
+                          }
+                        />
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
+
+              {/* Enhanced Pagination */}
+              <EnhancedPagination
+                currentPage={filters.currentPage}
+                totalPages={filters.totalPages}
+                onPageChange={filters.setCurrentPage}
+                totalItems={filters.totalResults}
+                itemsPerPage={filters.itemsPerPage}
+                filteredItems={filters.filteredResults}
+                variant="full"
+                showItemsInfo={true}
+                perPageOptions={filters.perPageOptions}
+                onPerPageChange={filters.setItemsPerPage}
+                isLoading={filters.isLoading}
+                enableKeyboardNavigation={true}
+              />
             </main>
           </div>
         </div>

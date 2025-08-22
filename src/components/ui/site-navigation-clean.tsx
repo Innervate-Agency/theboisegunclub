@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
-import { Home, Users, Calendar, Target, Trophy, Settings, Shield, Menu, X } from 'lucide-react'
+import { Bars3Icon, CalendarDaysIcon, Cog6ToothIcon, HomeIcon, ShieldCheckIcon, ToothIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const siteNavigationVariants = cva(
   "w-full transition-all duration-200 ease-out",
@@ -173,9 +173,9 @@ export function SiteNavigation({
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className="h-icon-base w-icon-base" />
+                <XMarkIcon className="h-icon-base w-icon-base" />
               ) : (
-                <Menu className="h-icon-base w-icon-base" />
+                <Bars3Icon className="h-icon-base w-icon-base" />
               )}
             </Button>
           </div>

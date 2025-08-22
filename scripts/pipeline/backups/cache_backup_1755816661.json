@@ -1,0 +1,79 @@
+{
+  "searches_completed": {
+    "gun store_boise": {
+      "term": "gun store",
+      "location": "Boise",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:50:26.012946"
+    },
+    "shooting range_boise": {
+      "term": "shooting range",
+      "location": "Boise",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:50:29.767171"
+    },
+    "gunsmith_boise": {
+      "term": "gunsmith",
+      "location": "Boise",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:50:33.043873"
+    },
+    "firearms dealer_boise": {
+      "term": "firearms dealer",
+      "location": "Boise",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:50:36.339587"
+    },
+    "hunting outfitter_boise": {
+      "term": "hunting outfitter",
+      "location": "Boise",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:50:39.625704"
+    },
+    "gun store_meridian": {
+      "term": "gun store",
+      "location": "Meridian",
+      "businesses_found": 9,
+      "completed_at": "2025-08-21T16:50:42.969554"
+    },
+    "shooting range_meridian": {
+      "term": "shooting range",
+      "location": "Meridian",
+      "businesses_found": 1,
+      "completed_at": "2025-08-21T16:50:47.370209"
+    },
+    "gunsmith_meridian": {
+      "term": "gunsmith",
+      "location": "Meridian",
+      "businesses_found": 9,
+      "completed_at": "2025-08-21T16:50:50.767017"
+    },
+    "firearms dealer_meridian": {
+      "term": "firearms dealer",
+      "location": "Meridian",
+      "businesses_found": 9,
+      "completed_at": "2025-08-21T16:50:54.254580"
+    },
+    "hunting outfitter_meridian": {
+      "term": "hunting outfitter",
+      "location": "Meridian",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:50:58.004347"
+    }
+  },
+  "websites_scraped": {},
+  "businesses_generated": {},
+  "api_usage": {
+    "serper_requests_today": 10,
+    "last_request_date": "2025-08-21",
+    "total_requests": 10
+  },
+  "stats": {
+    "duplicates_prevented": 0,
+    "validation_failures": 0,
+    "successful_generations": 0
+  },
+  "last_backup": null,
+  "created": "2025-08-21T16:50:22.704513",
+  "last_updated": "2025-08-21T16:50:58.004365"
+}

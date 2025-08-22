@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { Badge } from "./badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./card"
-import { ExternalLink, MapPin, Clock, Phone, Star, Users, Shield } from "lucide-react"
+import { ArrowTopRightOnSquareIcon, BusinessTypeIcon, ClockIcon, ExternalLink, MapPin, MapPinIcon, PhoneIcon, ShieldCheckIcon, StarIcon, Users, UsersIcon } from '@heroicons/react/24/outline'
 
 const facilityCardVariants = cva(
   "group relative overflow-hidden transition-all duration-300 ease-out",
@@ -85,15 +85,15 @@ export default function FacilityCard({
     switch (type?.toLowerCase()) {
       case 'gun shop':
       case 'gunshop':
-        return <Shield className="size-4" />
+        return <ShieldCheckIcon className="size-4" />
       case 'shooting range':
       case 'range':
-        return <Users className="size-4" />
+        return <UsersIcon className="size-4" />
       case 'instructor':
       case 'training':
-        return <Star className="size-4" />
+        return <StarIcon className="size-4" />
       default:
-        return <MapPin className="size-4" />
+        return <MapPinIcon className="size-4" />
     }
   }
 
@@ -107,7 +107,7 @@ export default function FacilityCard({
     >
       {isFeatured && (
         <div className="absolute top-sm right-4 z-10">
-          <Badge variant="premium">
+          <Badge variant="default">
             Featured
           </Badge>
         </div>
@@ -115,8 +115,8 @@ export default function FacilityCard({
 
       {isVerified && (
         <div className="absolute top-sm left-4 z-10">
-          <Badge variant="success">
-            <Shield className="size-3 mr-xs" />
+          <Badge variant="secondary">
+            <ShieldCheckIcon className="size-3 mr-xs" />
             Verified
           </Badge>
         </div>
@@ -159,7 +159,7 @@ export default function FacilityCard({
               <div className="flex items-center gap-xs mt-xs">
                 <div className="flex items-center">
                   {[...Array(5)].map((_, i) => (
-                    <Star
+                    <StarIcon
                       key={i}
                       className={cn(
                         "size-4",
@@ -186,19 +186,19 @@ export default function FacilityCard({
           <div className="space-y-xs text-body-sm">
             {location && (
               <div className="flex items-center gap-xs text-muted-foreground">
-                <MapPin className="size-4 text-primary" />
+                <MapPinIcon className="size-4 text-primary" />
                 <span>{location}</span>
               </div>
             )}
             {hours && (
               <div className="flex items-center gap-xs text-muted-foreground">
-                <Clock className="size-4 text-primary" />
+                <ClockIcon className="size-4 text-primary" />
                 <span>{hours}</span>
               </div>
             )}
             {phone && (
               <div className="flex items-center gap-xs text-muted-foreground">
-                <Phone className="size-4 text-primary" />
+                <PhoneIcon className="size-4 text-primary" />
                 <span>{phone}</span>
               </div>
             )}
@@ -210,7 +210,7 @@ export default function FacilityCard({
             {badges.map((badge, index) => (
               <Badge 
                 key={index} 
-                variant="info" 
+                variant="secondary" 
                 className="text-body-xs"
               >
                 {badge}
@@ -221,13 +221,13 @@ export default function FacilityCard({
 
         <div className="pt-xs">
           <Button
-            variant="secondary"
+            variant="outline"
             size="sm"
             className="w-full group-hover:bg-primary/10 group-hover:border-primary/50 transition-colors"
             onClick={handleClick}
           >
             {linkText}
-            <ExternalLink className="size-4 ml-xs" />
+            <ArrowTopRightOnSquareIcon className="size-4 ml-xs" />
           </Button>
         </div>
       </CardContent>

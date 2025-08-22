@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { User, Target, Trophy, Calendar, Users, Shield, MapPin } from 'lucide-react'
+import { CalendarDaysIcon, CursorArrowRaysIcon, MapPinIcon, ShieldCheckIcon, TrophyIcon, UserIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 import { 
   Select,
@@ -56,7 +56,7 @@ export const Premium: Story = {
   render: () => (
     <div className="bg-gradient-to-br from-sandy-ochre/5 to-rusty-orange/5 p-md rounded-xs">
       <Select>
-        <SelectTrigger variant="premium" className="w-[250px]">
+        <SelectTrigger variant="default" className="w-[250px]">
           <SelectValue placeholder="Premium selection..." />
         </SelectTrigger>
         <SelectContent>
@@ -76,7 +76,7 @@ export const Glass: Story = {
   render: () => (
     <div className="bg-gradient-to-br from-night-sight to-warm-stone p-lg rounded-xs">
       <Select>
-        <SelectTrigger variant="glass" className="w-[250px]">
+        <SelectTrigger variant="secondary" className="w-[250px]">
           <SelectValue placeholder="Glass selection..." />
         </SelectTrigger>
         <SelectContent>
@@ -96,24 +96,24 @@ export const WithIcons: Story = {
   render: () => (
     <div className="space-y-base max-w-md">
       <Select>
-        <SelectTrigger leftIcon={<User className="h-4 w-4" />}>
+        <SelectTrigger leftIcon={<UserIcon className="h-4 w-4" />}>
           <SelectValue placeholder="Select member type..." />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="individual" icon={<User className="h-4 w-4" />}>Individual</SelectItem>
-          <SelectItem value="family" icon={<Users className="h-4 w-4" />}>Family</SelectItem>
-          <SelectItem value="corporate" icon={<Shield className="h-4 w-4" />}>Corporate</SelectItem>
+          <SelectItem value="individual" icon={<UserIcon className="h-4 w-4" />}>Individual</SelectItem>
+          <SelectItem value="family" icon={<UsersIcon className="h-4 w-4" />}>Family</SelectItem>
+          <SelectItem value="corporate" icon={<ShieldCheckIcon className="h-4 w-4" />}>Corporate</SelectItem>
         </SelectContent>
       </Select>
 
       <Select>
-        <SelectTrigger variant="premium" leftIcon={<Target className="h-4 w-4" />}>
+        <SelectTrigger variant="default" leftIcon={<CursorArrowRaysIcon className="h-4 w-4" />}>
           <SelectValue placeholder="Select discipline..." />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="trap" icon={<Target className="h-4 w-4" />}>Trap Shooting</SelectItem>
-          <SelectItem value="skeet" icon={<Target className="h-4 w-4" />}>Skeet Shooting</SelectItem>
-          <SelectItem value="sporting" icon={<Trophy className="h-4 w-4" />}>Sporting Clays</SelectItem>
+          <SelectItem value="trap" icon={<CursorArrowRaysIcon className="h-4 w-4" />}>Trap Shooting</SelectItem>
+          <SelectItem value="skeet" icon={<CursorArrowRaysIcon className="h-4 w-4" />}>Skeet Shooting</SelectItem>
+          <SelectItem value="sporting" icon={<TrophyIcon className="h-4 w-4" />}>Sporting Clays</SelectItem>
         </SelectContent>
       </Select>
     </div>
@@ -144,7 +144,7 @@ export const Sizes: Story = {
       </Select>
 
       <Select>
-        <SelectTrigger size="lg" className="w-[220px]">
+        <SelectTrigger className="w-[220px]">
           <SelectValue placeholder="Large select..." />
         </SelectTrigger>
         <SelectContent>
@@ -205,7 +205,7 @@ export const AllVariants: Story = {
       <div className="space-y-base">
         <h3 className="font-semibold text-body-lg">Premium</h3>
         <Select>
-          <SelectTrigger variant="premium">
+          <SelectTrigger variant="default">
             <SelectValue placeholder="Premium variant..." />
           </SelectTrigger>
           <SelectContent>
@@ -218,7 +218,7 @@ export const AllVariants: Story = {
       <div className="space-y-base">
         <h3 className="font-semibold text-body-lg">Glass</h3>
         <Select>
-          <SelectTrigger variant="glass">
+          <SelectTrigger variant="secondary">
             <SelectValue placeholder="Glass variant..." />
           </SelectTrigger>
           <SelectContent>
@@ -244,7 +244,7 @@ export const AllVariants: Story = {
       <div className="space-y-base">
         <h3 className="font-semibold text-body-lg">Filled</h3>
         <Select>
-          <SelectTrigger variant="filled">
+          <SelectTrigger variant="default">
             <SelectValue placeholder="Filled variant..." />
           </SelectTrigger>
           <SelectContent>
@@ -273,27 +273,27 @@ export const GunClubPresets: Story = {
 
       <div className="space-y-sm">
         <h3 className="font-rajdhani font-semibold text-body-lg text-card-foreground">Tournament Registration</h3>
-        <Select variant="premium">
-          <SelectTrigger leftIcon={<Trophy className="h-4 w-4" />}>
+        <Select variant="default">
+          <SelectTrigger leftIcon={<TrophyIcon className="h-4 w-4" />}>
             <SelectValue placeholder="Select tournament..." />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
               <SelectLabel>Upcoming Tournaments</SelectLabel>
-              <SelectItem value="elite-championship" icon={<Trophy className="h-4 w-4" />}>
+              <SelectItem value="elite-championship" icon={<TrophyIcon className="h-4 w-4" />}>
                 Elite Championship
               </SelectItem>
-              <SelectItem value="monthly-shoot" icon={<Calendar className="h-4 w-4" />}>
+              <SelectItem value="monthly-shoot" icon={<CalendarDaysIcon className="h-4 w-4" />}>
                 Monthly Club Shoot
               </SelectItem>
-              <SelectItem value="league-night" icon={<Users className="h-4 w-4" />}>
+              <SelectItem value="league-night" icon={<UsersIcon className="h-4 w-4" />}>
                 Wednesday League
               </SelectItem>
             </SelectGroup>
             <SelectSeparator />
             <SelectGroup>
               <SelectLabel>Practice Sessions</SelectLabel>
-              <SelectItem value="practice-session" icon={<Target className="h-4 w-4" />}>
+              <SelectItem value="practice-session" icon={<CursorArrowRaysIcon className="h-4 w-4" />}>
                 Open Practice
               </SelectItem>
             </SelectGroup>
@@ -315,18 +315,18 @@ export const MembershipForm: Story = {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-base">
         <div className="space-y-xs">
           <label className="text-body-sm font-medium text-card-foreground">Membership Type</label>
-          <Select variant="premium">
-            <SelectTrigger leftIcon={<User className="h-4 w-4" />}>
+          <Select variant="default">
+            <SelectTrigger leftIcon={<UserIcon className="h-4 w-4" />}>
               <SelectValue placeholder="Select membership..." />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="individual" icon={<User className="h-4 w-4" />}>
+              <SelectItem value="individual" icon={<UserIcon className="h-4 w-4" />}>
                 Individual - $150/year
               </SelectItem>
-              <SelectItem value="family" icon={<Users className="h-4 w-4" />}>
+              <SelectItem value="family" icon={<UsersIcon className="h-4 w-4" />}>
                 Family - $250/year
               </SelectItem>
-              <SelectItem value="corporate" icon={<Shield className="h-4 w-4" />}>
+              <SelectItem value="corporate" icon={<ShieldCheckIcon className="h-4 w-4" />}>
                 Corporate - $500/year
               </SelectItem>
             </SelectContent>
@@ -341,20 +341,20 @@ export const MembershipForm: Story = {
         <div className="space-y-xs">
           <label className="text-body-sm font-medium text-card-foreground">Primary Discipline</label>
           <Select>
-            <SelectTrigger leftIcon={<Target className="h-4 w-4" />}>
+            <SelectTrigger leftIcon={<CursorArrowRaysIcon className="h-4 w-4" />}>
               <SelectValue placeholder="Select discipline..." />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="trap" icon={<Target className="h-4 w-4" />}>
+              <SelectItem value="trap" icon={<CursorArrowRaysIcon className="h-4 w-4" />}>
                 Trap Shooting
               </SelectItem>
-              <SelectItem value="skeet" icon={<Target className="h-4 w-4" />}>
+              <SelectItem value="skeet" icon={<CursorArrowRaysIcon className="h-4 w-4" />}>
                 Skeet Shooting
               </SelectItem>
-              <SelectItem value="sporting" icon={<Trophy className="h-4 w-4" />}>
+              <SelectItem value="sporting" icon={<TrophyIcon className="h-4 w-4" />}>
                 Sporting Clays
               </SelectItem>
-              <SelectItem value="multi" icon={<Users className="h-4 w-4" />}>
+              <SelectItem value="multi" icon={<UsersIcon className="h-4 w-4" />}>
                 Multiple Disciplines
               </SelectItem>
             </SelectContent>
@@ -364,20 +364,20 @@ export const MembershipForm: Story = {
         <div className="space-y-xs">
           <label className="text-body-sm font-medium text-card-foreground">Location</label>
           <Select variant="outline">
-            <SelectTrigger leftIcon={<MapPin className="h-4 w-4" />}>
+            <SelectTrigger leftIcon={<MapPinIcon className="h-4 w-4" />}>
               <SelectValue placeholder="Select location..." />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="boise" icon={<MapPin className="h-4 w-4" />}>
+              <SelectItem value="boise" icon={<MapPinIcon className="h-4 w-4" />}>
                 Boise, ID
               </SelectItem>
-              <SelectItem value="meridian" icon={<MapPin className="h-4 w-4" />}>
+              <SelectItem value="meridian" icon={<MapPinIcon className="h-4 w-4" />}>
                 Meridian, ID
               </SelectItem>
-              <SelectItem value="eagle" icon={<MapPin className="h-4 w-4" />}>
+              <SelectItem value="eagle" icon={<MapPinIcon className="h-4 w-4" />}>
                 Eagle, ID
               </SelectItem>
-              <SelectItem value="other" icon={<MapPin className="h-4 w-4" />}>
+              <SelectItem value="other" icon={<MapPinIcon className="h-4 w-4" />}>
                 Other
               </SelectItem>
             </SelectContent>

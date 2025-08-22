@@ -134,7 +134,7 @@ export const CTAButton = React.forwardRef<HTMLButtonElement, Omit<ButtonWithAnim
     <ButtonWithAnimation 
       ref={ref}
       animation="hover-arrow" 
-      variant="primary"
+      variant="default"
       showAnimation={false} // Don't show separate animation icon for CTAs
       {...props} 
     />
@@ -157,7 +157,7 @@ export const ProcessButton = React.forwardRef<HTMLButtonElement, Omit<ButtonWith
     <ButtonWithAnimation 
       ref={ref}
       animation="arrow-double" 
-      variant="primary" 
+      variant="default" 
       {...props} 
     />
   )

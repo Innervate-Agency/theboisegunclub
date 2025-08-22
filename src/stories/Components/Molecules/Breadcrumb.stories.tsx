@@ -7,7 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-import { Home, Users, Calendar, Target, Settings } from 'lucide-react';
+import { CalendarDaysIcon, CursorArrowRaysIcon, HomeIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof Breadcrumb> = {
   title: 'Design System/Molecules/Breadcrumb',
@@ -58,25 +58,25 @@ export const Default: Story = {
 
 export const WithIcons: Story = {
   render: () => (
-    <Breadcrumb variant="premium">
+    <Breadcrumb variant="default">
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink href="/" className="flex items-center gap-xs">
-            <Home className="w-4 h-4" />
+            <HomeIcon className="w-4 h-4" />
             Home
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
           <BreadcrumbLink href="/schedule" className="flex items-center gap-xs">
-            <Calendar className="w-4 h-4" />
+            <CalendarDaysIcon className="w-4 h-4" />
             Schedule
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
           <BreadcrumbPage className="flex items-center gap-xs">
-            <Target className="w-4 h-4" />
+            <CursorArrowRaysIcon className="w-4 h-4" />
             Competitions
           </BreadcrumbPage>
         </BreadcrumbItem>
@@ -104,7 +104,7 @@ export const GunClubNavigation: Story = {
         </BreadcrumbList>
       </Breadcrumb>
       
-      <Breadcrumb variant="premium">
+      <Breadcrumb variant="default">
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">Home</BreadcrumbLink>
@@ -132,7 +132,7 @@ export const Variants: Story = {
     <div className="space-y-md">
       <div>
         <h3 className="text-body-sm font-medium text-blued-steel mb-xs">Default</h3>
-        <Breadcrumb variant="default">
+        <Breadcrumb variant="outline">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/">Home</BreadcrumbLink>
@@ -151,7 +151,7 @@ export const Variants: Story = {
       
       <div>
         <h3 className="text-body-sm font-medium text-blued-steel mb-xs">Premium</h3>
-        <Breadcrumb variant="premium">
+        <Breadcrumb variant="default">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/">Home</BreadcrumbLink>
@@ -233,7 +233,7 @@ export const Sizes: Story = {
       
       <div>
         <h3 className="text-body-sm font-medium text-blued-steel mb-xs">Medium</h3>
-        <Breadcrumb size="md">
+        <Breadcrumb size="default">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/">Home</BreadcrumbLink>
@@ -252,7 +252,7 @@ export const Sizes: Story = {
       
       <div>
         <h3 className="text-body-sm font-medium text-blued-steel mb-xs">Large</h3>
-        <Breadcrumb size="lg">
+        <Breadcrumb >
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/">Home</BreadcrumbLink>
@@ -274,7 +274,7 @@ export const Sizes: Story = {
 
 export const DeepNavigation: Story = {
   render: () => (
-    <Breadcrumb variant="premium">
+    <Breadcrumb variant="default">
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink href="/">Home</BreadcrumbLink>

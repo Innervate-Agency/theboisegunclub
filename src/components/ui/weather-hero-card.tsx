@@ -5,27 +5,12 @@ import { Card, CardContent } from './card'
 import { Badge } from './badge'
 import { Button } from './button'
 import { useUserWeather } from '@/hooks/useUserWeather'
-import { 
-  SunIcon as Sun, 
-  CloudIcon as Cloud, 
-  CloudRainIcon as CloudRain, 
-  CloudSnowIcon as CloudSnow, 
-  ZapIcon as Storm,
-  MapPinIcon as MapPin,
-  ThermometerIcon as Thermometer,
-  WindIcon as Wind,
-  FlameIcon as Flame,
-  RefreshCwIcon as Refresh,
-  ArrowRightIcon as ArrowRight,
-  CheckCircleIcon as CheckCircle,
-  AlertTriangleIcon as Warning,
-  XCircleIcon as XCircle
-} from 'lucide-react'
+import { AccessStatusIcon, AlertTriangleIcon, ArrowRightIcon, CheckCircleIcon, CloudIcon, CloudRainIcon, CloudSnowIcon, ExclamationTriangleIcon, FireIcon, FlameIcon, MapPinIcon, RefreshCwIcon, SunIcon, ThermometerIcon, WeatherIcon, WindIcon, XCircleIcon, ZapIcon } from '@heroicons/react/24/outline';
 
 const WeatherIcon = ({ type, className = "h-6 w-6" }: { type: string; className?: string }) => {
   switch (type) {
     case 'sun':
-      return <Sun className={`${className} text-yellow-500`} />
+      return <SunIcon className={`${className} text-yellow-500`} />
     case 'partly-cloudy':
       return <Cloud className={`${className} text-blue-400`} />
     case 'cloudy':
@@ -37,7 +22,7 @@ const WeatherIcon = ({ type, className = "h-6 w-6" }: { type: string; className?
     case 'storm':
       return <Storm className={`${className} text-purple-600`} />
     default:
-      return <Sun className={`${className} text-yellow-500`} />
+      return <SunIcon className={`${className} text-yellow-500`} />
   }
 }
 
@@ -76,7 +61,7 @@ export function WeatherHeroCard({
     return (
       <Card className={`mica-card border-destructive/30 ${className}`}>
         <CardContent className={`${compact ? "p-base" : "p-lg"} text-center`}>
-          <Warning className="h-8 w-8 text-destructive mx-auto mb-sm" />
+          <ExclamationTriangleIcon className="h-8 w-8 text-destructive mx-auto mb-sm" />
           <h3 className="font-rajdhani font-bold text-lg text-destructive mb-xs">Weather Unavailable</h3>
           <p className="text-sm text-muted-foreground mb-base">
             {error || "Unable to fetch weather conditions"}
@@ -114,10 +99,10 @@ export function WeatherHeroCard({
 
   const getAccessStatusIcon = (status: string) => {
     switch (status) {
-      case 'Open': return <CheckCircle className="h-4 w-4 text-sagebrush-green" />
-      case 'Restrictions': return <Warning className="h-4 w-4 text-sandy-ochre" />
-      case 'Closed': return <XCircle className="h-4 w-4 text-rusty-orange" />
-      default: return <CheckCircle className="h-4 w-4 text-sagebrush-green" />
+      case 'Open': return <CheckCircleIcon className="h-4 w-4 text-sagebrush-green" />
+      case 'Restrictions': return <ExclamationTriangleIcon className="h-4 w-4 text-sandy-ochre" />
+      case 'Closed': return <XCircleIcon className="h-4 w-4 text-rusty-orange" />
+      default: return <CheckCircleIcon className="h-4 w-4 text-sagebrush-green" />
     }
   }
 
@@ -140,7 +125,7 @@ export function WeatherHeroCard({
                 </h3>
                 {location.city && (
                   <div className="flex items-center gap-xs text-sm text-muted-foreground">
-                    <MapPin className="h-3 w-3" />
+                    <MapPinIcon className="h-3 w-3" />
                     <span>{location.city}, {location.state || 'ID'}</span>
                   </div>
                 )}
@@ -207,7 +192,7 @@ export function WeatherHeroCard({
             <div className="space-y-xs">
               <div className="text-xs text-muted-foreground">Fire Danger</div>
               <Badge variant={getFireDangerColor(weatherData.fireDanger)} size="sm">
-                <Flame className="h-3 w-3 mr-xs" />
+                <FireIcon className="h-3 w-3 mr-xs" />
                 {weatherData.fireDanger}
               </Badge>
             </div>
@@ -219,7 +204,7 @@ export function WeatherHeroCard({
               onClick={() => window.location.href = '/intel'}
             >
               View Intel
-              <ArrowRight className="h-3 w-3 ml-xs" />
+              <ArrowRightIcon className="h-3 w-3 ml-xs" />
             </Button>
           </div>
 
@@ -237,7 +222,7 @@ export function WeatherHeroCard({
           {weatherData.alerts && weatherData.alerts.length > 0 && (
             <div className="bg-rusty-orange/10 border border-rusty-orange/30 rounded-xs p-sm">
               <div className="flex items-start gap-xs">
-                <Warning className="h-4 w-4 text-rusty-orange mt-0.5 flex-shrink-0" />
+                <ExclamationTriangleIcon className="h-4 w-4 text-rusty-orange mt-0.5 flex-shrink-0" />
                 <div className="space-y-xs">
                   <h4 className="text-sm font-medium text-rusty-orange">Weather Alert</h4>
                   {weatherData.alerts.map((alert, index) => (

@@ -2,17 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { 
-  Target, 
-  Users, 
-  MapPin, 
-  Calendar, 
-  ShoppingCart, 
-  MessageSquare,
-  Star,
-  Shield,
-  Zap
-} from 'lucide-react'
+import { BoltIcon, CalendarDaysIcon, ChatBubbleLeftRightIcon, CursorArrowRaysIcon, MapPinIcon, ShieldCheckIcon, ShoppingCartIcon, StarIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta = {
   title: 'Design System/Templates/BusinessContext',
@@ -86,7 +76,7 @@ const BusinessShowcase = () => (
       <div className="container mx-auto px-md py-2xl">
         <div className="text-center space-y-md">
           <div className="inline-flex items-center gap-xs px-base py-xs bg-card rounded-full shadow-flat">
-            <Target className="w-5 h-5 text-rusty-orange" />
+            <CursorArrowRaysIcon className="w-5 h-5 text-rusty-orange" />
             <span className="text-body-sm font-medium text-muted-foreground">
               Treasure Valley's Premier Firearms Hub
             </span>
@@ -105,11 +95,11 @@ const BusinessShowcase = () => (
           
           <div className="flex gap-base justify-center pt-base">
             <Button className="bg-gradient-to-r from-rusty-orange to-sandy-ochre text-white hover:shadow-copper transition-all">
-              <Users className="w-4 h-4 mr-xs" />
+              <UsersIcon className="w-4 h-4 mr-xs" />
               Join Community
             </Button>
             <Button variant="outline" className="border-rusty-orange text-rusty-orange hover:bg-rusty-orange hover:text-white">
-              <MapPin className="w-4 h-4 mr-xs" />
+              <MapPinIcon className="w-4 h-4 mr-xs" />
               Browse Directory
             </Button>
           </div>
@@ -174,7 +164,7 @@ const BusinessShowcase = () => (
           <Card className="hover:shadow-elevated transition-shadow duration-300 group">
             <CardHeader className="text-center">
               <div className="w-12 h-12 bg-gradient-to-r from-rusty-orange to-sandy-ochre rounded-sm flex items-center justify-center mx-auto mb-base">
-                <MapPin className="w-6 h-6 text-white" />
+                <MapPinIcon className="w-6 h-6 text-white" />
               </div>
               <CardTitle className="text-rusty-orange">Directory & Marketplace</CardTitle>
             </CardHeader>
@@ -189,7 +179,7 @@ const BusinessShowcase = () => (
           <Card className="hover:shadow-elevated transition-shadow duration-300 group">
             <CardHeader className="text-center">
               <div className="w-12 h-12 bg-gradient-to-r from-slate-blue to-ayu-teal rounded-sm flex items-center justify-center mx-auto mb-base">
-                <Zap className="w-6 h-6 text-white" />
+                <BoltIcon className="w-6 h-6 text-white" />
               </div>
               <CardTitle className="text-slate-blue">Content Engine</CardTitle>
             </CardHeader>
@@ -204,7 +194,7 @@ const BusinessShowcase = () => (
           <Card className="hover:shadow-elevated transition-shadow duration-300 group">
             <CardHeader className="text-center">
               <div className="w-12 h-12 bg-gradient-to-r from-ayu-green to-sagebrush-green rounded-sm flex items-center justify-center mx-auto mb-base">
-                <MessageSquare className="w-6 h-6 text-white" />
+                <ChatBubbleLeftRightIcon className="w-6 h-6 text-white" />
               </div>
               <CardTitle className="text-ayu-green">Community Forum</CardTitle>
             </CardHeader>
@@ -219,7 +209,7 @@ const BusinessShowcase = () => (
           <Card className="hover:shadow-elevated transition-shadow duration-300 group">
             <CardHeader className="text-center">
               <div className="w-12 h-12 bg-gradient-to-r from-ayu-purple to-ayu-yellow rounded-sm flex items-center justify-center mx-auto mb-base">
-                <ShoppingCart className="w-6 h-6 text-white" />
+                <ShoppingCartIcon className="w-6 h-6 text-white" />
               </div>
               <CardTitle className="text-ayu-purple">Merchandise</CardTitle>
             </CardHeader>
@@ -245,7 +235,7 @@ const BusinessShowcase = () => (
           <div className="space-y-md">
             <div className="text-center">
               <div className="w-16 h-16 bg-rusty-orange rounded-full flex items-center justify-center mx-auto mb-base">
-                <Shield className="w-8 h-8 text-white" />
+                <ShieldCheckIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-display-sm font-bold text-rusty-orange mb-xs">Vendor Partners</h3>
               <p className="text-muted-foreground">Gun shops, ranges, instructors, gunsmiths</p>
@@ -254,14 +244,14 @@ const BusinessShowcase = () => (
               <CardHeader>
                 <div className="flex items-center gap-sm">
                   <div className="w-12 h-12 bg-rusty-orange rounded-sm flex items-center justify-center">
-                    <Target className="w-6 h-6 text-white" />
+                    <CursorArrowRaysIcon className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <CardTitle className="text-base">Capital City Guns</CardTitle>
                     <CardDescription>Gun Store • Boise, ID</CardDescription>
                   </div>
                   <Badge className="ml-auto bg-sagebrush-green text-white">
-                    <Shield className="w-3 h-3 mr-xs" />
+                    <ShieldCheckIcon className="w-3 h-3 mr-xs" />
                     Verified
                   </Badge>
                 </div>
@@ -270,15 +260,15 @@ const BusinessShowcase = () => (
                 <div className="flex items-center gap-xs mb-sm">
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="w-4 h-4 fill-sandy-ochre text-sandy-ochre" />
+                      <StarIcon key={star} className="w-4 h-4 fill-sandy-ochre text-sandy-ochre" />
                     ))}
                   </div>
                   <span className="text-body-sm text-muted-foreground">4.8 (124 reviews)</span>
                 </div>
                 <div className="flex flex-wrap gap-xs">
-                  <Badge variant="secondary">FFL Transfers</Badge>
-                  <Badge variant="secondary">Gunsmithing</Badge>
-                  <Badge variant="secondary">Training Classes</Badge>
+                  <Badge variant="outline">FFL Transfers</Badge>
+                  <Badge variant="outline">Gunsmithing</Badge>
+                  <Badge variant="outline">Training Classes</Badge>
                 </div>
                 <div className="w-full h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre mt-base rounded-full"></div>
               </CardContent>
@@ -289,7 +279,7 @@ const BusinessShowcase = () => (
           <div className="space-y-md">
             <div className="text-center">
               <div className="w-16 h-16 bg-sandy-ochre rounded-full flex items-center justify-center mx-auto mb-base">
-                <Users className="w-8 h-8 text-dark-chocolate" />
+                <UsersIcon className="w-8 h-8 text-dark-chocolate" />
               </div>
               <h3 className="text-display-sm font-bold text-sandy-ochre mb-xs">Community Members</h3>
               <p className="text-muted-foreground">Active enthusiasts and competitors</p>
@@ -305,7 +295,7 @@ const BusinessShowcase = () => (
                     <CardDescription>Competition Shooter</CardDescription>
                   </div>
                   <Badge className="ml-auto bg-sagebrush-green text-white">
-                    <Star className="w-3 h-3 mr-xs" />
+                    <StarIcon className="w-3 h-3 mr-xs" />
                     Expert
                   </Badge>
                 </div>
@@ -324,7 +314,7 @@ const BusinessShowcase = () => (
           <div className="space-y-md">
             <div className="text-center">
               <div className="w-16 h-16 bg-slate-blue rounded-full flex items-center justify-center mx-auto mb-base">
-                <MapPin className="w-8 h-8 text-white" />
+                <MapPinIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-display-sm font-bold text-slate-blue mb-xs">Visitors</h3>
               <p className="text-muted-foreground">Directory browsers and newcomers</p>
@@ -333,7 +323,7 @@ const BusinessShowcase = () => (
               <CardHeader>
                 <div className="flex items-center gap-sm">
                   <div className="w-12 h-12 bg-slate-blue rounded-sm flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-white" />
+                    <MapPinIcon className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <CardTitle className="text-base">Treasure Valley Ranges</CardTitle>
@@ -364,12 +354,12 @@ const BusinessShowcase = () => (
           community to enhance your firearms experience.
         </p>
         <div className="flex gap-base justify-center">
-          <Button variant="secondary" size="lg" className="bg-card text-rusty-orange hover:bg-muted">
-            <Users className="w-5 h-5 mr-xs" />
+          <Button variant="outline" className="bg-card text-rusty-orange hover:bg-muted">
+            <UsersIcon className="w-5 h-5 mr-xs" />
             Get Started Today
           </Button>
-          <Button variant="outline" size="lg" className="border-nickel-white text-nickel-white hover:bg-nickel-white hover:text-rusty-orange">
-            <Calendar className="w-5 h-5 mr-xs" />
+          <Button variant="outline" className="border-nickel-white text-nickel-white hover:bg-nickel-white hover:text-rusty-orange">
+            <CalendarDaysIcon className="w-5 h-5 mr-xs" />
             View Events
           </Button>
         </div>
@@ -455,14 +445,14 @@ export const VendorFocused: Story = {
           <CardHeader>
             <div className="flex items-center gap-sm">
               <div className="w-12 h-12 bg-rusty-orange rounded-sm flex items-center justify-center">
-                <Shield className="w-6 h-6 text-white" />
+                <ShieldCheckIcon className="w-6 h-6 text-white" />
               </div>
               <div>
                 <CardTitle className="text-base">Your Business Listing</CardTitle>
                 <CardDescription>Premium Vendor • Boise, ID</CardDescription>
               </div>
               <Badge className="ml-auto bg-sagebrush-green text-white">
-                <Shield className="w-3 h-3 mr-xs" />
+                <ShieldCheckIcon className="w-3 h-3 mr-xs" />
                 Verified
               </Badge>
             </div>
@@ -471,15 +461,15 @@ export const VendorFocused: Story = {
             <div className="flex items-center gap-xs mb-sm">
               <div className="flex">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="w-4 h-4 fill-sandy-ochre text-sandy-ochre" />
+                  <StarIcon key={star} className="w-4 h-4 fill-sandy-ochre text-sandy-ochre" />
                 ))}
               </div>
               <span className="text-body-sm text-muted-foreground">4.9 (87 reviews)</span>
             </div>
             <div className="flex flex-wrap gap-xs">
-              <Badge variant="secondary">Priority Listing</Badge>
-              <Badge variant="secondary">Advanced Analytics</Badge>
-              <Badge variant="secondary">Direct Booking</Badge>
+              <Badge variant="outline">Priority Listing</Badge>
+              <Badge variant="outline">Advanced Analytics</Badge>
+              <Badge variant="outline">Direct Booking</Badge>
             </div>
             <div className="w-full h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre mt-base rounded-full"></div>
           </CardContent>
@@ -512,7 +502,7 @@ export const CommunityFocused: Story = {
           <Card className="group hover:shadow-elevated transition-shadow">
             <CardHeader>
               <div className="flex items-center gap-sm">
-                <MessageSquare className="w-6 h-6 text-slate-blue" />
+                <ChatBubbleLeftRightIcon className="w-6 h-6 text-slate-blue" />
                 <CardTitle>Latest Discussions</CardTitle>
               </div>
             </CardHeader>
@@ -544,7 +534,7 @@ export const CommunityFocused: Story = {
           <Card className="group hover:shadow-elevated transition-shadow">
             <CardHeader>
               <div className="flex items-center gap-sm">
-                <Calendar className="w-6 h-6 text-ayu-green" />
+                <CalendarDaysIcon className="w-6 h-6 text-ayu-green" />
                 <CardTitle>Upcoming Events</CardTitle>
               </div>
             </CardHeader>
@@ -552,7 +542,7 @@ export const CommunityFocused: Story = {
               <div className="space-y-sm">
                 <div className="flex items-center gap-sm p-sm bg-muted/50 rounded-sm">
                   <div className="w-8 h-8 bg-ayu-green rounded-full flex items-center justify-center">
-                    <Target className="w-4 h-4 text-white" />
+                    <CursorArrowRaysIcon className="w-4 h-4 text-white" />
                   </div>
                   <div className="flex-1">
                     <p className="text-body-sm font-medium">IDPA Match</p>
@@ -561,7 +551,7 @@ export const CommunityFocused: Story = {
                 </div>
                 <div className="flex items-center gap-sm p-sm bg-muted/50 rounded-sm">
                   <div className="w-8 h-8 bg-slate-blue rounded-full flex items-center justify-center">
-                    <Shield className="w-4 h-4 text-white" />
+                    <ShieldCheckIcon className="w-4 h-4 text-white" />
                   </div>
                   <div className="flex-1">
                     <p className="text-body-sm font-medium">CCW Class</p>

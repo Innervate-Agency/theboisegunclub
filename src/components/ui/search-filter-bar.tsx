@@ -4,7 +4,7 @@ import React from 'react'
 import { Button } from './button'
 import { Input } from './input'
 import { Badge } from './badge'
-import { Search } from 'lucide-react'
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 interface FilterOption {
   value: string
@@ -51,7 +51,7 @@ export function SearchFilterBar({
       {showSearch && (
         <div className="flex flex-col md:flex-row gap-base">
           <div className="flex-1 relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder={placeholder}
               className="pl-10"
@@ -86,7 +86,7 @@ export function SearchFilterBar({
                       }
                     >
                       {option.label}
-                      <Badge variant="secondary" className="ml-xs">
+                      <Badge variant="outline" className="ml-xs">
                         {option.count}
                       </Badge>
                     </Button>

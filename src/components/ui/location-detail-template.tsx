@@ -7,13 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { WeatherLocationCard } from '@/components/ui/weather-location-card'
-import { 
-  ChevronRight, ArrowLeft, MapPin, Clock, Phone, ExternalLink,
-  Mountain, Shield, AlertTriangle, CheckCircle, Eye, Star,
-  Navigation, Compass, Users, Calendar, Camera, MessageCircle,
-  Target, Crosshair, Car, TreePine, Thermometer, Wind,
-  Info, DollarSign, Ruler, Activity, Map
-} from 'lucide-react'
+import { ArrowLeftIcon, ArrowTopRightOnSquareIcon, ArrowUpIcon, CalendarDaysIcon, CameraIcon, CheckCircleIcon, ChevronRightIcon, ClockIcon, CursorArrowRaysIcon, DifficultyIcon, ExclamationTriangleIcon, GlobeAltIcon, InformationCircleIcon, MapPinIcon, PhoneIcon, ShieldCheckIcon, StarIcon, UsersIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link'
 
 interface LocationAmenity {
@@ -121,11 +115,11 @@ export default function LocationDetailTemplate({
             <Link href="/" className="hover:text-foreground transition-colors">
               Home
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRightIcon className="h-4 w-4" />
             <Link href="/intel" className="hover:text-nav-intel transition-colors">
               Intel
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRightIcon className="h-4 w-4" />
             <span className="text-nav-intel font-medium">{name}</span>
           </div>
           
@@ -133,7 +127,7 @@ export default function LocationDetailTemplate({
           <div className="mb-lg">
             <Link href="/intel">
               <Button variant="ghost" className="gap-xs">
-                <ArrowLeft className="h-4 w-4" />
+                <ArrowLeftIcon className="h-4 w-4" />
                 Back to Intel Map
               </Button>
             </Link>
@@ -153,7 +147,7 @@ export default function LocationDetailTemplate({
                 </Badge>
                 {verified && (
                   <Badge className="bg-sagebrush-green/20 text-sagebrush-green border-sagebrush-green/30">
-                    <Shield className="h-3 w-3 mr-xs" />
+                    <ShieldCheckIcon className="h-3 w-3 mr-xs" />
                     Verified
                   </Badge>
                 )}
@@ -187,12 +181,12 @@ export default function LocationDetailTemplate({
                   <div className="text-xs text-muted-foreground">From Boise</div>
                 </div>
                 <div className="text-center p-base bg-muted/50 rounded-xs">
-                  <Target className="h-5 w-5 text-nav-intel mx-auto mb-xs" />
+                  <CursorArrowRaysIcon className="h-5 w-5 text-nav-intel mx-auto mb-xs" />
                   <div className="text-body-sm font-medium">{amenities.length}</div>
                   <div className="text-xs text-muted-foreground">Amenities</div>
                 </div>
                 <div className="text-center p-base bg-muted/50 rounded-xs">
-                  <Star className="h-5 w-5 text-nav-intel mx-auto mb-xs" />
+                  <StarIcon className="h-5 w-5 text-nav-intel mx-auto mb-xs" />
                   <div className="text-body-sm font-medium">{reviews.length > 0 ? (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1) : 'N/A'}</div>
                   <div className="text-xs text-muted-foreground">Rating</div>
                 </div>
@@ -200,22 +194,20 @@ export default function LocationDetailTemplate({
               
               {/* Action Buttons */}
               <div className="flex gap-base flex-wrap">
-                <Button 
-                  size="lg" 
-                  className="bg-nav-intel text-gruvbox-bg-dark hover:bg-nav-intel/90 font-rajdhani font-bold gap-xs"
+                <Button className="bg-nav-intel text-gruvbox-bg-dark hover:bg-nav-intel/90 font-rajdhani font-bold gap-xs"
                 >
-                  <Navigation className="h-4 w-4" />
+                  <ArrowUpIcon className="h-4 w-4" />
                   Get Directions
                 </Button>
                 {phone && (
-                  <Button variant="outline" size="lg" className="gap-xs">
-                    <Phone className="h-4 w-4" />
+                  <Button variant="outline" className="gap-xs">
+                    <PhoneIcon className="h-4 w-4" />
                     Call
                   </Button>
                 )}
                 {website && (
-                  <Button variant="outline" size="lg" className="gap-xs">
-                    <ExternalLink className="h-4 w-4" />
+                  <Button variant="outline" className="gap-xs">
+                    <ArrowTopRightOnSquareIcon className="h-4 w-4" />
                     Website
                   </Button>
                 )}
@@ -251,7 +243,7 @@ export default function LocationDetailTemplate({
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-base">
                     <div className="space-y-base">
                       <div className="flex items-start gap-base">
-                        <MapPin className="h-5 w-5 text-nav-intel mt-xs flex-shrink-0" />
+                        <MapPinIcon className="h-5 w-5 text-nav-intel mt-xs flex-shrink-0" />
                         <div>
                           <div className="font-medium text-body-sm">Address</div>
                           <div className="text-body-sm text-muted-foreground">{address}</div>
@@ -259,7 +251,7 @@ export default function LocationDetailTemplate({
                         </div>
                       </div>
                       <div className="flex items-start gap-base">
-                        <Clock className="h-5 w-5 text-nav-intel mt-xs flex-shrink-0" />
+                        <ClockIcon className="h-5 w-5 text-nav-intel mt-xs flex-shrink-0" />
                         <div>
                           <div className="font-medium text-body-sm">Hours</div>
                           <div className="text-body-sm text-muted-foreground">{hours}</div>
@@ -287,7 +279,7 @@ export default function LocationDetailTemplate({
                   {restrictions && (
                     <div className="p-base bg-rusty-orange/10 border border-rusty-orange/20 rounded-xs">
                       <div className="flex items-start gap-base">
-                        <AlertTriangle className="h-5 w-5 text-rusty-orange mt-xs flex-shrink-0" />
+                        <ExclamationTriangleIcon className="h-5 w-5 text-rusty-orange mt-xs flex-shrink-0" />
                         <div>
                           <div className="font-medium text-body-sm text-rusty-orange">Important Restrictions</div>
                           <div className="text-body-sm text-foreground mt-xs">{restrictions}</div>
@@ -307,7 +299,7 @@ export default function LocationDetailTemplate({
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-xs">
                     {amenities.map((amenity, index) => (
                       <div key={index} className="flex items-center gap-xs py-xs">
-                        <CheckCircle className="h-4 w-4 text-sagebrush-green flex-shrink-0" />
+                        <CheckCircleIcon className="h-4 w-4 text-sagebrush-green flex-shrink-0" />
                         <span className="text-body-sm">{amenity}</span>
                       </div>
                     ))}
@@ -325,7 +317,7 @@ export default function LocationDetailTemplate({
                     <ul className="space-y-base">
                       {tips.map((tip, index) => (
                         <li key={index} className="flex items-start gap-base">
-                          <Target className="h-4 w-4 text-nav-intel mt-xs flex-shrink-0" />
+                          <CursorArrowRaysIcon className="h-4 w-4 text-nav-intel mt-xs flex-shrink-0" />
                           <span className="text-body-sm">{tip}</span>
                         </li>
                       ))}
@@ -348,7 +340,7 @@ export default function LocationDetailTemplate({
                           <div className="flex items-center gap-xs">
                             <div className="flex items-center">
                               {[...Array(5)].map((_, i) => (
-                                <Star
+                                <StarIcon
                                   key={i}
                                   className={`h-3 w-3 ${
                                     i < review.rating
@@ -378,7 +370,7 @@ export default function LocationDetailTemplate({
                 </CardHeader>
                 <CardContent className="space-y-base">
                   <Button variant="outline" className="w-full justify-start gap-xs">
-                    <Camera className="h-4 w-4" />
+                    <CameraIcon className="h-4 w-4" />
                     Submit Photos
                   </Button>
                   <Button variant="outline" className="w-full justify-start gap-xs">
@@ -386,11 +378,11 @@ export default function LocationDetailTemplate({
                     Leave Review
                   </Button>
                   <Button variant="outline" className="w-full justify-start gap-xs">
-                    <AlertTriangle className="h-4 w-4" />
+                    <ExclamationTriangleIcon className="h-4 w-4" />
                     Report Issue
                   </Button>
                   <Button variant="outline" className="w-full justify-start gap-xs">
-                    <Info className="h-4 w-4" />
+                    <InformationCircleIcon className="h-4 w-4" />
                     Update Info
                   </Button>
                 </CardContent>

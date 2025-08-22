@@ -10,7 +10,7 @@ import { Textarea } from "./textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./select"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./card"
 import { Badge } from "./badge"
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react'
+import { ClockIcon, EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline';
 
 const contactFormVariants = cva(
   "w-full max-w-2xl",
@@ -64,7 +64,6 @@ export function ContactForm({
     if (onSubmit) {
       onSubmit(formData)
     } else {
-      console.log('Form submitted:', Object.fromEntries(formData))
     }
     
     setIsSubmitting(false)
@@ -97,7 +96,7 @@ export function ContactForm({
         <div className="space-y-4">
           <Label htmlFor="email">Email Address *</Label>
           <div className="relative">
-            <Mail className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-warning-amber" />
+            <EnvelopeIcon className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-warning-amber" />
             <Input
               id="email"
               name="email"
@@ -112,7 +111,7 @@ export function ContactForm({
         <div className="space-y-4">
           <Label htmlFor="phone">Phone Number</Label>
           <div className="relative">
-            <Phone className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-warning-amber" />
+            <PhoneIcon className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-warning-amber" />
             <Input
               id="phone"
               name="phone"
@@ -332,9 +331,7 @@ export function ContactForm({
             <Button
               type="submit"
               className="w-full"
-              variant="flat"
-              size="lg"
-              disabled={isSubmitting}
+              variant="flat" disabled={isSubmitting}
             >
               {isSubmitting ? (
                 <>
@@ -358,7 +355,7 @@ export function ContactForm({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-(--spacing-base) text-body-sm">
                 <div className="flex items-center gap-(--spacing-sm)">
                   <div className="p-(--spacing-xs) bg-sandy-ochre/10 rounded-(--radius-base)">
-                    <Phone className="size-4 text-sandy-ochre" />
+                    <PhoneIcon className="size-4 text-sandy-ochre" />
                   </div>
                   <div>
                     <p className="font-medium text-dark-chocolate">Phone</p>
@@ -368,7 +365,7 @@ export function ContactForm({
                 
                 <div className="flex items-center gap-(--spacing-sm)">
                   <div className="p-(--spacing-xs) bg-sandy-ochre/10 rounded-(--radius-base)">
-                    <Mail className="size-4 text-sandy-ochre" />
+                    <EnvelopeIcon className="size-4 text-sandy-ochre" />
                   </div>
                   <div>
                     <p className="font-medium text-dark-chocolate">Email</p>
@@ -378,7 +375,7 @@ export function ContactForm({
                 
                 <div className="flex items-center gap-(--spacing-sm)">
                   <div className="p-(--spacing-xs) bg-sandy-ochre/10 rounded-(--radius-base)">
-                    <MapPin className="size-4 text-sandy-ochre" />
+                    <MapPinIcon className="size-4 text-sandy-ochre" />
                   </div>
                   <div>
                     <p className="font-medium text-dark-chocolate">Location</p>
@@ -388,7 +385,7 @@ export function ContactForm({
                 
                 <div className="flex items-center gap-(--spacing-sm)">
                   <div className="p-(--spacing-xs) bg-sandy-ochre/10 rounded-(--radius-base)">
-                    <Clock className="size-4 text-sandy-ochre" />
+                    <ClockIcon className="size-4 text-sandy-ochre" />
                   </div>
                   <div>
                     <p className="font-medium text-dark-chocolate">Response Time</p>

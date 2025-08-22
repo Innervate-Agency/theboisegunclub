@@ -148,7 +148,7 @@ export function FormSection({
         })}
         
         <div className="text-center pt-base">
-          <Button variant="flat" size="lg" className="bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange font-rajdhani font-semibold">
+          <Button variant="flat" className="bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange font-rajdhani font-semibold">
             {submitText}
           </Button>
           {submitNote && (

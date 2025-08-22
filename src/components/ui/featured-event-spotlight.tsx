@@ -3,14 +3,7 @@
 import { Card, CardContent } from './card'
 import { Button } from './button'
 import { Badge } from './badge'
-import { 
-  Calendar,
-  MapPin,
-  Clock,
-  Users,
-  Star,
-  ArrowRight
-} from '@phosphor-icons/react'
+import { ArrowRightIcon, CalendarDaysIcon, ClockIcon, MapPinIcon, StarIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 interface FeaturedEventSpotlightProps {
   eventTitle: string
@@ -75,8 +68,8 @@ export function FeaturedEventSpotlight({
                   {eventType}
                 </Badge>
                 {isFeatured && (
-                  <Badge variant="elite" size="sm">
-                    <Star className="h-3 w-3 mr-xs" weight="bold" />
+                  <Badge variant="default" size="sm">
+                    <StarIcon className="h-3 w-3 mr-xs" weight="bold" />
                     Featured
                   </Badge>
                 )}
@@ -113,18 +106,18 @@ export function FeaturedEventSpotlight({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-base">
           <div className="space-y-sm">
             <div className="flex items-center gap-sm text-body-sm">
-              <Calendar className="h-4 w-4 text-rusty-orange" weight="bold" />
+              <CalendarDaysIcon className="h-4 w-4 text-rusty-orange" weight="bold" />
               <span className="font-medium text-card-foreground">{date}</span>
             </div>
             <div className="flex items-center gap-sm text-body-sm">
-              <Clock className="h-4 w-4 text-slate-blue" weight="bold" />
+              <ClockIcon className="h-4 w-4 text-slate-blue" weight="bold" />
               <span className="text-muted-foreground">{time}</span>
             </div>
           </div>
 
           <div className="space-y-sm">
             <div className="flex items-center gap-sm text-body-sm">
-              <MapPin className="h-4 w-4 text-sagebrush-green" weight="bold" />
+              <MapPinIcon className="h-4 w-4 text-sagebrush-green" weight="bold" />
               <span className="font-medium text-card-foreground">{venue}</span>
             </div>
             <div className="flex items-center gap-sm text-body-sm">
@@ -136,7 +129,7 @@ export function FeaturedEventSpotlight({
         {/* Participation Info */}
         {participantCount && (
           <div className="flex items-center gap-base p-base bg-muted/30 rounded-xs">
-            <Users className="h-5 w-5 text-slate-blue" weight="bold" />
+            <UsersIcon className="h-5 w-5 text-slate-blue" weight="bold" />
             <div className="flex-1">
               <p className="text-body-sm font-medium text-card-foreground">
                 {participantCount} members registered
@@ -157,16 +150,12 @@ export function FeaturedEventSpotlight({
         <div className="flex flex-col sm:flex-row gap-sm pt-base border-t border-border">
           <Button 
             className="flex-1 bg-rusty-orange hover:bg-rusty-orange/90 text-crisp-off-white font-rajdhani font-bold"
-            animationType="arrow"
-            size="lg"
-          >
+            animationType="arrow" >
             Register Now
-            <ArrowRight className="ml-sm h-4 w-4" weight="bold" />
+            <ArrowRightIcon className="ml-sm h-4 w-4" weight="bold" />
           </Button>
           <Button 
-            variant="outline" 
-            size="lg"
-            className="font-rajdhani font-bold"
+            variant="outline" className="font-rajdhani font-bold"
             animationType="arrow"
           >
             Learn More

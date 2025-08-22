@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Button } from './button'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 interface PageSectionProps {
   title?: string
@@ -75,7 +75,7 @@ export function PageSection({
                 onClick={onAction}
               >
                 {actionText}
-                <ArrowRight className="h-3 w-3 ml-xs" />
+                <ArrowRightIcon className="h-3 w-3 ml-xs" />
               </Button>
             )}
           </div>

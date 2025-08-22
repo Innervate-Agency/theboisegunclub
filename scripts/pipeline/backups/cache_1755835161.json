@@ -1,0 +1,2531 @@
+{
+  "searches_completed": {
+    "gun store_boise": {
+      "term": "gun store",
+      "location": "Boise",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:50:26.012946"
+    },
+    "shooting range_boise": {
+      "term": "shooting range",
+      "location": "Boise",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:50:29.767171"
+    },
+    "gunsmith_boise": {
+      "term": "gunsmith",
+      "location": "Boise",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:50:33.043873"
+    },
+    "firearms dealer_boise": {
+      "term": "firearms dealer",
+      "location": "Boise",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:50:36.339587"
+    },
+    "hunting outfitter_boise": {
+      "term": "hunting outfitter",
+      "location": "Boise",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:50:39.625704"
+    },
+    "gun store_meridian": {
+      "term": "gun store",
+      "location": "Meridian",
+      "businesses_found": 9,
+      "completed_at": "2025-08-21T16:50:42.969554"
+    },
+    "shooting range_meridian": {
+      "term": "shooting range",
+      "location": "Meridian",
+      "businesses_found": 1,
+      "completed_at": "2025-08-21T16:50:47.370209"
+    },
+    "gunsmith_meridian": {
+      "term": "gunsmith",
+      "location": "Meridian",
+      "businesses_found": 9,
+      "completed_at": "2025-08-21T16:50:50.767017"
+    },
+    "firearms dealer_meridian": {
+      "term": "firearms dealer",
+      "location": "Meridian",
+      "businesses_found": 9,
+      "completed_at": "2025-08-21T16:50:54.254580"
+    },
+    "hunting outfitter_meridian": {
+      "term": "hunting outfitter",
+      "location": "Meridian",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:50:58.004347"
+    },
+    "gun store_nampa": {
+      "term": "gun store",
+      "location": "Nampa",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:51:01.373800"
+    },
+    "shooting range_nampa": {
+      "term": "shooting range",
+      "location": "Nampa",
+      "businesses_found": 9,
+      "completed_at": "2025-08-21T16:51:04.986238"
+    },
+    "gunsmith_nampa": {
+      "term": "gunsmith",
+      "location": "Nampa",
+      "businesses_found": 9,
+      "completed_at": "2025-08-21T16:51:08.014073"
+    },
+    "firearms dealer_nampa": {
+      "term": "firearms dealer",
+      "location": "Nampa",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:51:11.253195"
+    },
+    "hunting outfitter_nampa": {
+      "term": "hunting outfitter",
+      "location": "Nampa",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:51:14.507084"
+    },
+    "gun store_eagle": {
+      "term": "gun store",
+      "location": "Eagle",
+      "businesses_found": 8,
+      "completed_at": "2025-08-21T16:51:17.749265"
+    },
+    "shooting range_eagle": {
+      "term": "shooting range",
+      "location": "Eagle",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:51:21.039071"
+    },
+    "gunsmith_eagle": {
+      "term": "gunsmith",
+      "location": "Eagle",
+      "businesses_found": 8,
+      "completed_at": "2025-08-21T16:51:24.545628"
+    },
+    "firearms dealer_eagle": {
+      "term": "firearms dealer",
+      "location": "Eagle",
+      "businesses_found": 8,
+      "completed_at": "2025-08-21T16:51:28.431644"
+    },
+    "hunting outfitter_eagle": {
+      "term": "hunting outfitter",
+      "location": "Eagle",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:51:31.791381"
+    },
+    "gun store_kuna": {
+      "term": "gun store",
+      "location": "Kuna",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:51:35.044510"
+    },
+    "shooting range_kuna": {
+      "term": "shooting range",
+      "location": "Kuna",
+      "businesses_found": 5,
+      "completed_at": "2025-08-21T16:51:38.107767"
+    },
+    "gunsmith_kuna": {
+      "term": "gunsmith",
+      "location": "Kuna",
+      "businesses_found": 10,
+      "completed_at": "2025-08-21T16:51:41.257071"
+    },
+    "firearms dealer_kuna": {
+      "term": "firearms dealer",
+      "location": "Kuna",
+      "businesses_found": 6,
+      "completed_at": "2025-08-21T16:51:44.621713"
+    },
+    "hunting outfitter_kuna": {
+      "term": "hunting outfitter",
+      "location": "Kuna",
+      "businesses_found": 9,
+      "completed_at": "2025-08-21T16:51:47.895696"
+    },
+    "gun store|boise": {
+      "completed_at": "2025-08-21T21:29:56.482387",
+      "results_count": 10
+    },
+    "gun store|meridian": {
+      "completed_at": "2025-08-21T21:29:59.266047",
+      "results_count": 10
+    },
+    "gun store|nampa": {
+      "completed_at": "2025-08-21T21:30:02.240246",
+      "results_count": 10
+    },
+    "gun store|eagle": {
+      "completed_at": "2025-08-21T21:30:05.223649",
+      "results_count": 10
+    },
+    "gun store|kuna": {
+      "completed_at": "2025-08-21T21:30:08.416803",
+      "results_count": 10
+    },
+    "gun store|caldwell": {
+      "completed_at": "2025-08-21T21:30:11.524626",
+      "results_count": 10
+    },
+    "gun store|idaho falls": {
+      "completed_at": "2025-08-21T21:30:14.405989",
+      "results_count": 10
+    },
+    "gun store|pocatello": {
+      "completed_at": "2025-08-21T21:30:18.477730",
+      "results_count": 10
+    },
+    "gun store|coeur d'alene": {
+      "completed_at": "2025-08-21T21:30:21.372193",
+      "results_count": 10
+    },
+    "gun store|twin falls": {
+      "completed_at": "2025-08-21T21:30:24.400965",
+      "results_count": 10
+    },
+    "gun store|lewiston": {
+      "completed_at": "2025-08-21T21:30:27.334742",
+      "results_count": 10
+    },
+    "gun store|post falls": {
+      "completed_at": "2025-08-21T21:30:30.438931",
+      "results_count": 10
+    },
+    "gun store|mccall": {
+      "completed_at": "2025-08-21T21:30:33.256064",
+      "results_count": 10
+    },
+    "gun store|sun valley": {
+      "completed_at": "2025-08-21T21:30:36.378897",
+      "results_count": 10
+    },
+    "gun store|sandpoint": {
+      "completed_at": "2025-08-21T21:30:39.327539",
+      "results_count": 10
+    },
+    "gun store|rexburg": {
+      "completed_at": "2025-08-21T21:31:08.835888",
+      "results_count": 10
+    },
+    "gun store|moscow": {
+      "completed_at": "2025-08-21T21:31:11.846761",
+      "results_count": 10
+    },
+    "gun store|blackfoot": {
+      "completed_at": "2025-08-21T21:31:14.824548",
+      "results_count": 10
+    },
+    "gun store|burley": {
+      "completed_at": "2025-08-21T21:31:17.737959",
+      "results_count": 10
+    },
+    "gun shop|boise": {
+      "completed_at": "2025-08-21T21:31:20.729591",
+      "results_count": 10
+    },
+    "gun shop|meridian": {
+      "completed_at": "2025-08-21T21:31:24.991717",
+      "results_count": 10
+    },
+    "gun shop|nampa": {
+      "completed_at": "2025-08-21T21:31:28.400784",
+      "results_count": 10
+    },
+    "gun shop|eagle": {
+      "completed_at": "2025-08-21T21:31:31.658575",
+      "results_count": 10
+    },
+    "gun shop|kuna": {
+      "completed_at": "2025-08-21T21:31:34.645771",
+      "results_count": 10
+    },
+    "gun shop|caldwell": {
+      "completed_at": "2025-08-21T21:31:37.798068",
+      "results_count": 10
+    },
+    "gun shop|idaho falls": {
+      "completed_at": "2025-08-21T21:31:40.535943",
+      "results_count": 10
+    },
+    "gun shop|pocatello": {
+      "completed_at": "2025-08-21T21:31:43.490770",
+      "results_count": 10
+    },
+    "gun shop|coeur d'alene": {
+      "completed_at": "2025-08-21T21:31:46.380582",
+      "results_count": 10
+    },
+    "gun shop|twin falls": {
+      "completed_at": "2025-08-21T21:31:49.464029",
+      "results_count": 10
+    },
+    "gun shop|lewiston": {
+      "completed_at": "2025-08-21T21:31:52.390696",
+      "results_count": 10
+    },
+    "gun shop|post falls": {
+      "completed_at": "2025-08-21T21:31:56.215101",
+      "results_count": 10
+    },
+    "gun shop|mccall": {
+      "completed_at": "2025-08-21T21:31:59.240804",
+      "results_count": 10
+    },
+    "gun shop|sun valley": {
+      "completed_at": "2025-08-21T21:32:02.333070",
+      "results_count": 10
+    },
+    "gun shop|sandpoint": {
+      "completed_at": "2025-08-21T21:32:05.148662",
+      "results_count": 10
+    },
+    "gun shop|rexburg": {
+      "completed_at": "2025-08-21T21:32:07.886804",
+      "results_count": 10
+    },
+    "gun shop|moscow": {
+      "completed_at": "2025-08-21T21:32:10.641873",
+      "results_count": 10
+    },
+    "gun shop|blackfoot": {
+      "completed_at": "2025-08-21T21:32:13.586131",
+      "results_count": 10
+    },
+    "gun shop|burley": {
+      "completed_at": "2025-08-21T21:32:17.325907",
+      "results_count": 10
+    },
+    "firearms dealer|boise": {
+      "completed_at": "2025-08-21T21:32:20.120356",
+      "results_count": 10
+    },
+    "firearms dealer|meridian": {
+      "completed_at": "2025-08-21T21:32:23.106593",
+      "results_count": 10
+    },
+    "firearms dealer|nampa": {
+      "completed_at": "2025-08-21T21:32:26.539563",
+      "results_count": 10
+    },
+    "firearms dealer|eagle": {
+      "completed_at": "2025-08-21T21:32:30.461651",
+      "results_count": 10
+    },
+    "firearms dealer|kuna": {
+      "completed_at": "2025-08-21T21:32:34.113614",
+      "results_count": 10
+    },
+    "firearms dealer|caldwell": {
+      "completed_at": "2025-08-21T21:32:37.202421",
+      "results_count": 10
+    },
+    "firearms dealer|idaho falls": {
+      "completed_at": "2025-08-21T21:32:40.745722",
+      "results_count": 10
+    },
+    "firearms dealer|pocatello": {
+      "completed_at": "2025-08-21T21:32:43.886787",
+      "results_count": 10
+    },
+    "firearms dealer|coeur d'alene": {
+      "completed_at": "2025-08-21T21:32:47.051326",
+      "results_count": 10
+    },
+    "firearms dealer|twin falls": {
+      "completed_at": "2025-08-21T21:32:49.834308",
+      "results_count": 10
+    },
+    "firearms dealer|lewiston": {
+      "completed_at": "2025-08-21T21:32:52.906198",
+      "results_count": 10
+    },
+    "firearms dealer|post falls": {
+      "completed_at": "2025-08-21T21:32:56.365174",
+      "results_count": 10
+    },
+    "firearms dealer|mccall": {
+      "completed_at": "2025-08-21T21:32:59.393319",
+      "results_count": 10
+    },
+    "firearms dealer|sun valley": {
+      "completed_at": "2025-08-21T21:33:03.253263",
+      "results_count": 10
+    },
+    "firearms dealer|sandpoint": {
+      "completed_at": "2025-08-21T21:33:06.396552",
+      "results_count": 10
+    },
+    "firearms dealer|rexburg": {
+      "completed_at": "2025-08-21T21:33:09.344990",
+      "results_count": 10
+    },
+    "firearms dealer|moscow": {
+      "completed_at": "2025-08-21T21:33:12.442076",
+      "results_count": 10
+    },
+    "firearms dealer|blackfoot": {
+      "completed_at": "2025-08-21T21:33:15.333580",
+      "results_count": 10
+    },
+    "firearms dealer|burley": {
+      "completed_at": "2025-08-21T21:33:18.300170",
+      "results_count": 10
+    },
+    "firearms store|boise": {
+      "completed_at": "2025-08-21T21:33:21.060254",
+      "results_count": 10
+    },
+    "firearms store|meridian": {
+      "completed_at": "2025-08-21T21:33:24.282307",
+      "results_count": 10
+    },
+    "firearms store|nampa": {
+      "completed_at": "2025-08-21T21:33:27.556196",
+      "results_count": 10
+    },
+    "firearms store|eagle": {
+      "completed_at": "2025-08-21T21:33:30.935022",
+      "results_count": 10
+    },
+    "firearms store|kuna": {
+      "completed_at": "2025-08-21T21:33:33.724228",
+      "results_count": 10
+    },
+    "firearms store|caldwell": {
+      "completed_at": "2025-08-21T21:33:37.706945",
+      "results_count": 10
+    },
+    "firearms store|idaho falls": {
+      "completed_at": "2025-08-21T21:33:40.734987",
+      "results_count": 10
+    },
+    "firearms store|pocatello": {
+      "completed_at": "2025-08-21T21:33:43.687274",
+      "results_count": 10
+    },
+    "firearms store|coeur d'alene": {
+      "completed_at": "2025-08-21T21:33:46.805400",
+      "results_count": 10
+    },
+    "firearms store|twin falls": {
+      "completed_at": "2025-08-21T21:33:49.789489",
+      "results_count": 10
+    },
+    "firearms store|lewiston": {
+      "completed_at": "2025-08-21T21:33:52.733345",
+      "results_count": 10
+    },
+    "firearms store|post falls": {
+      "completed_at": "2025-08-21T21:33:55.583317",
+      "results_count": 10
+    },
+    "firearms store|mccall": {
+      "completed_at": "2025-08-21T21:33:58.478588",
+      "results_count": 10
+    },
+    "firearms store|sun valley": {
+      "completed_at": "2025-08-21T21:34:01.452392",
+      "results_count": 10
+    },
+    "firearms store|sandpoint": {
+      "completed_at": "2025-08-21T21:34:04.673664",
+      "results_count": 10
+    },
+    "firearms store|rexburg": {
+      "completed_at": "2025-08-21T21:34:08.693748",
+      "results_count": 10
+    },
+    "firearms store|moscow": {
+      "completed_at": "2025-08-21T21:34:11.682688",
+      "results_count": 10
+    },
+    "firearms store|blackfoot": {
+      "completed_at": "2025-08-21T21:34:14.683472",
+      "results_count": 10
+    },
+    "firearms store|burley": {
+      "completed_at": "2025-08-21T21:34:18.135604",
+      "results_count": 10
+    },
+    "gunsmith|boise": {
+      "completed_at": "2025-08-21T21:34:20.970747",
+      "results_count": 10
+    },
+    "gunsmith|meridian": {
+      "completed_at": "2025-08-21T21:34:24.705136",
+      "results_count": 10
+    },
+    "gunsmith|nampa": {
+      "completed_at": "2025-08-21T21:34:28.404579",
+      "results_count": 10
+    },
+    "gunsmith|eagle": {
+      "completed_at": "2025-08-21T21:34:31.901392",
+      "results_count": 10
+    },
+    "gunsmith|kuna": {
+      "completed_at": "2025-08-21T21:34:34.797698",
+      "results_count": 10
+    },
+    "gunsmith|caldwell": {
+      "completed_at": "2025-08-21T21:34:37.949247",
+      "results_count": 10
+    },
+    "gunsmith|idaho falls": {
+      "completed_at": "2025-08-21T21:34:41.922509",
+      "results_count": 10
+    },
+    "gunsmith|pocatello": {
+      "completed_at": "2025-08-21T21:34:44.865427",
+      "results_count": 10
+    },
+    "gunsmith|coeur d'alene": {
+      "completed_at": "2025-08-21T21:34:49.040401",
+      "results_count": 10
+    },
+    "gunsmith|twin falls": {
+      "completed_at": "2025-08-21T21:34:52.252354",
+      "results_count": 10
+    },
+    "gunsmith|lewiston": {
+      "completed_at": "2025-08-21T21:34:55.624588",
+      "results_count": 10
+    },
+    "gunsmith|post falls": {
+      "completed_at": "2025-08-21T21:34:58.621049",
+      "results_count": 10
+    },
+    "gunsmith|mccall": {
+      "completed_at": "2025-08-21T21:35:01.606097",
+      "results_count": 10
+    },
+    "gunsmith|sun valley": {
+      "completed_at": "2025-08-21T21:35:04.847288",
+      "results_count": 10
+    },
+    "gunsmith|sandpoint": {
+      "completed_at": "2025-08-21T21:35:07.713182",
+      "results_count": 10
+    },
+    "gunsmith|rexburg": {
+      "completed_at": "2025-08-21T21:35:10.547964",
+      "results_count": 10
+    },
+    "gunsmith|moscow": {
+      "completed_at": "2025-08-21T21:35:13.431897",
+      "results_count": 10
+    },
+    "gunsmith|blackfoot": {
+      "completed_at": "2025-08-21T21:35:17.130629",
+      "results_count": 10
+    },
+    "gunsmith|burley": {
+      "completed_at": "2025-08-21T21:35:20.527462",
+      "results_count": 10
+    },
+    "gun repair|boise": {
+      "completed_at": "2025-08-21T21:35:23.630268",
+      "results_count": 10
+    },
+    "gun repair|meridian": {
+      "completed_at": "2025-08-21T21:35:26.785641",
+      "results_count": 10
+    },
+    "gun repair|nampa": {
+      "completed_at": "2025-08-21T21:35:29.697713",
+      "results_count": 10
+    },
+    "gun repair|eagle": {
+      "completed_at": "2025-08-21T21:35:32.686056",
+      "results_count": 10
+    },
+    "gun repair|kuna": {
+      "completed_at": "2025-08-21T21:35:35.612410",
+      "results_count": 10
+    },
+    "gun repair|caldwell": {
+      "completed_at": "2025-08-21T21:35:38.716322",
+      "results_count": 10
+    },
+    "gun repair|idaho falls": {
+      "completed_at": "2025-08-21T21:35:41.894691",
+      "results_count": 10
+    },
+    "gun repair|pocatello": {
+      "completed_at": "2025-08-21T21:35:45.049530",
+      "results_count": 10
+    },
+    "gun repair|coeur d'alene": {
+      "completed_at": "2025-08-21T21:35:49.221437",
+      "results_count": 10
+    },
+    "gun repair|twin falls": {
+      "completed_at": "2025-08-21T21:35:52.340615",
+      "results_count": 10
+    },
+    "gun repair|lewiston": {
+      "completed_at": "2025-08-21T21:35:55.354619",
+      "results_count": 10
+    },
+    "gun repair|post falls": {
+      "completed_at": "2025-08-21T21:35:58.424848",
+      "results_count": 10
+    },
+    "gun repair|mccall": {
+      "completed_at": "2025-08-21T21:36:01.518980",
+      "results_count": 10
+    },
+    "gun repair|sun valley": {
+      "completed_at": "2025-08-21T21:36:04.561541",
+      "results_count": 10
+    },
+    "gun repair|sandpoint": {
+      "completed_at": "2025-08-21T21:36:07.468355",
+      "results_count": 10
+    },
+    "gun repair|rexburg": {
+      "completed_at": "2025-08-21T21:36:10.274080",
+      "results_count": 10
+    },
+    "gun repair|moscow": {
+      "completed_at": "2025-08-21T21:36:13.366216",
+      "results_count": 10
+    },
+    "gun repair|blackfoot": {
+      "completed_at": "2025-08-21T21:36:16.261576",
+      "results_count": 10
+    },
+    "gun repair|burley": {
+      "completed_at": "2025-08-21T21:36:19.078592",
+      "results_count": 10
+    },
+    "custom guns|boise": {
+      "completed_at": "2025-08-21T21:36:22.950225",
+      "results_count": 10
+    },
+    "custom guns|meridian": {
+      "completed_at": "2025-08-21T21:36:25.859458",
+      "results_count": 10
+    },
+    "custom guns|nampa": {
+      "completed_at": "2025-08-21T21:36:29.154843",
+      "results_count": 10
+    },
+    "custom guns|eagle": {
+      "completed_at": "2025-08-21T21:36:32.083275",
+      "results_count": 10
+    },
+    "custom guns|kuna": {
+      "completed_at": "2025-08-21T21:36:35.434048",
+      "results_count": 10
+    },
+    "custom guns|caldwell": {
+      "completed_at": "2025-08-21T21:36:38.874215",
+      "results_count": 10
+    },
+    "custom guns|idaho falls": {
+      "completed_at": "2025-08-21T21:36:41.825588",
+      "results_count": 10
+    },
+    "custom guns|pocatello": {
+      "completed_at": "2025-08-21T21:36:44.817987",
+      "results_count": 10
+    },
+    "custom guns|coeur d'alene": {
+      "completed_at": "2025-08-21T21:36:47.858271",
+      "results_count": 10
+    },
+    "custom guns|twin falls": {
+      "completed_at": "2025-08-21T21:36:50.867601",
+      "results_count": 10
+    },
+    "custom guns|lewiston": {
+      "completed_at": "2025-08-21T21:36:54.872723",
+      "results_count": 10
+    },
+    "custom guns|post falls": {
+      "completed_at": "2025-08-21T21:36:57.802591",
+      "results_count": 10
+    },
+    "custom guns|mccall": {
+      "completed_at": "2025-08-21T21:37:01.074363",
+      "results_count": 10
+    },
+    "custom guns|sun valley": {
+      "completed_at": "2025-08-21T21:37:04.510322",
+      "results_count": 10
+    },
+    "custom guns|sandpoint": {
+      "completed_at": "2025-08-21T21:37:07.544564",
+      "results_count": 10
+    },
+    "custom guns|rexburg": {
+      "completed_at": "2025-08-21T21:37:10.518019",
+      "results_count": 10
+    },
+    "custom guns|moscow": {
+      "completed_at": "2025-08-21T21:37:13.630432",
+      "results_count": 10
+    },
+    "custom guns|blackfoot": {
+      "completed_at": "2025-08-21T21:37:16.630190",
+      "results_count": 10
+    },
+    "custom guns|burley": {
+      "completed_at": "2025-08-21T21:37:19.560366",
+      "results_count": 10
+    },
+    "shooting range|boise": {
+      "completed_at": "2025-08-21T21:37:22.263955",
+      "results_count": 10
+    },
+    "shooting range|meridian": {
+      "completed_at": "2025-08-21T21:37:25.079255",
+      "results_count": 10
+    },
+    "shooting range|nampa": {
+      "completed_at": "2025-08-21T21:37:28.733970",
+      "results_count": 10
+    },
+    "shooting range|eagle": {
+      "completed_at": "2025-08-21T21:37:31.762922",
+      "results_count": 10
+    },
+    "shooting range|kuna": {
+      "completed_at": "2025-08-21T21:37:34.962121",
+      "results_count": 10
+    },
+    "shooting range|caldwell": {
+      "completed_at": "2025-08-21T21:37:37.810949",
+      "results_count": 10
+    },
+    "shooting range|idaho falls": {
+      "completed_at": "2025-08-21T21:37:40.734999",
+      "results_count": 10
+    },
+    "shooting range|pocatello": {
+      "completed_at": "2025-08-21T21:37:43.843575",
+      "results_count": 10
+    },
+    "shooting range|coeur d'alene": {
+      "completed_at": "2025-08-21T21:37:46.784652",
+      "results_count": 10
+    },
+    "shooting range|twin falls": {
+      "completed_at": "2025-08-21T21:37:49.630474",
+      "results_count": 10
+    },
+    "shooting range|lewiston": {
+      "completed_at": "2025-08-21T21:37:52.951412",
+      "results_count": 10
+    },
+    "shooting range|post falls": {
+      "completed_at": "2025-08-21T21:37:55.795423",
+      "results_count": 10
+    },
+    "shooting range|mccall": {
+      "completed_at": "2025-08-21T21:37:58.621501",
+      "results_count": 10
+    },
+    "shooting range|sun valley": {
+      "completed_at": "2025-08-21T21:38:02.326171",
+      "results_count": 10
+    },
+    "shooting range|sandpoint": {
+      "completed_at": "2025-08-21T21:38:05.274430",
+      "results_count": 10
+    },
+    "shooting range|rexburg": {
+      "completed_at": "2025-08-21T21:38:08.238120",
+      "results_count": 10
+    },
+    "shooting range|moscow": {
+      "completed_at": "2025-08-21T21:38:11.349148",
+      "results_count": 10
+    },
+    "shooting range|blackfoot": {
+      "completed_at": "2025-08-21T21:38:14.870021",
+      "results_count": 10
+    },
+    "shooting range|burley": {
+      "completed_at": "2025-08-21T21:38:18.232916",
+      "results_count": 9
+    },
+    "indoor range|boise": {
+      "completed_at": "2025-08-21T21:38:21.369332",
+      "results_count": 10
+    },
+    "indoor range|meridian": {
+      "completed_at": "2025-08-21T21:38:24.532075",
+      "results_count": 10
+    },
+    "indoor range|nampa": {
+      "completed_at": "2025-08-21T21:38:27.480723",
+      "results_count": 10
+    },
+    "indoor range|eagle": {
+      "completed_at": "2025-08-21T21:38:30.538499",
+      "results_count": 10
+    },
+    "indoor range|kuna": {
+      "completed_at": "2025-08-21T21:38:34.343340",
+      "results_count": 10
+    },
+    "indoor range|caldwell": {
+      "completed_at": "2025-08-21T21:38:37.086364",
+      "results_count": 10
+    },
+    "indoor range|idaho falls": {
+      "completed_at": "2025-08-21T21:38:40.026166",
+      "results_count": 10
+    },
+    "indoor range|pocatello": {
+      "completed_at": "2025-08-21T21:38:42.949300",
+      "results_count": 10
+    },
+    "indoor range|coeur d'alene": {
+      "completed_at": "2025-08-21T21:38:46.106677",
+      "results_count": 10
+    },
+    "indoor range|twin falls": {
+      "completed_at": "2025-08-21T21:38:49.456941",
+      "results_count": 10
+    },
+    "indoor range|lewiston": {
+      "completed_at": "2025-08-21T21:38:52.963502",
+      "results_count": 10
+    },
+    "indoor range|post falls": {
+      "completed_at": "2025-08-21T21:38:55.920165",
+      "results_count": 10
+    },
+    "indoor range|mccall": {
+      "completed_at": "2025-08-21T21:38:58.725406",
+      "results_count": 10
+    },
+    "indoor range|sun valley": {
+      "completed_at": "2025-08-21T21:39:01.580626",
+      "results_count": 10
+    },
+    "indoor range|sandpoint": {
+      "completed_at": "2025-08-21T21:39:04.549424",
+      "results_count": 10
+    },
+    "indoor range|rexburg": {
+      "completed_at": "2025-08-21T21:39:08.353341",
+      "results_count": 10
+    },
+    "indoor range|moscow": {
+      "completed_at": "2025-08-21T21:39:11.745569",
+      "results_count": 10
+    },
+    "indoor range|blackfoot": {
+      "completed_at": "2025-08-21T21:39:14.781712",
+      "results_count": 10
+    },
+    "indoor range|burley": {
+      "completed_at": "2025-08-21T21:39:17.755336",
+      "results_count": 10
+    },
+    "outdoor range|boise": {
+      "completed_at": "2025-08-21T21:39:21.214907",
+      "results_count": 10
+    },
+    "outdoor range|meridian": {
+      "completed_at": "2025-08-21T21:39:24.125996",
+      "results_count": 10
+    },
+    "outdoor range|nampa": {
+      "completed_at": "2025-08-21T21:39:26.964184",
+      "results_count": 10
+    },
+    "outdoor range|eagle": {
+      "completed_at": "2025-08-21T21:39:30.118883",
+      "results_count": 10
+    },
+    "outdoor range|kuna": {
+      "completed_at": "2025-08-21T21:39:33.279705",
+      "results_count": 10
+    },
+    "outdoor range|caldwell": {
+      "completed_at": "2025-08-21T21:39:36.116613",
+      "results_count": 10
+    },
+    "outdoor range|idaho falls": {
+      "completed_at": "2025-08-21T21:39:38.999004",
+      "results_count": 10
+    },
+    "outdoor range|pocatello": {
+      "completed_at": "2025-08-21T21:39:42.544610",
+      "results_count": 10
+    },
+    "outdoor range|coeur d'alene": {
+      "completed_at": "2025-08-21T21:39:45.615643",
+      "results_count": 10
+    },
+    "outdoor range|twin falls": {
+      "completed_at": "2025-08-21T21:39:48.530856",
+      "results_count": 10
+    },
+    "outdoor range|lewiston": {
+      "completed_at": "2025-08-21T21:39:51.472737",
+      "results_count": 10
+    },
+    "outdoor range|post falls": {
+      "completed_at": "2025-08-21T21:39:54.339414",
+      "results_count": 10
+    },
+    "outdoor range|mccall": {
+      "completed_at": "2025-08-21T21:39:57.252985",
+      "results_count": 10
+    },
+    "outdoor range|sun valley": {
+      "completed_at": "2025-08-21T21:40:00.159016",
+      "results_count": 10
+    },
+    "outdoor range|sandpoint": {
+      "completed_at": "2025-08-21T21:40:03.197808",
+      "results_count": 10
+    },
+    "outdoor range|rexburg": {
+      "completed_at": "2025-08-21T21:40:06.145729",
+      "results_count": 10
+    },
+    "outdoor range|moscow": {
+      "completed_at": "2025-08-21T21:40:09.294664",
+      "results_count": 10
+    },
+    "outdoor range|blackfoot": {
+      "completed_at": "2025-08-21T21:40:13.520861",
+      "results_count": 10
+    },
+    "outdoor range|burley": {
+      "completed_at": "2025-08-21T21:40:16.501442",
+      "results_count": 9
+    },
+    "gun range|boise": {
+      "completed_at": "2025-08-21T21:40:19.321526",
+      "results_count": 10
+    },
+    "gun range|meridian": {
+      "completed_at": "2025-08-21T21:40:22.340967",
+      "results_count": 10
+    },
+    "gun range|nampa": {
+      "completed_at": "2025-08-21T21:40:25.112248",
+      "results_count": 10
+    },
+    "gun range|eagle": {
+      "completed_at": "2025-08-21T21:40:27.962496",
+      "results_count": 10
+    },
+    "gun range|kuna": {
+      "completed_at": "2025-08-21T21:40:31.329030",
+      "results_count": 10
+    },
+    "gun range|caldwell": {
+      "completed_at": "2025-08-21T21:40:34.190563",
+      "results_count": 10
+    },
+    "gun range|idaho falls": {
+      "completed_at": "2025-08-21T21:40:37.263475",
+      "results_count": 10
+    },
+    "gun range|pocatello": {
+      "completed_at": "2025-08-21T21:40:40.450060",
+      "results_count": 10
+    },
+    "gun range|coeur d'alene": {
+      "completed_at": "2025-08-21T21:40:43.549750",
+      "results_count": 10
+    },
+    "gun range|twin falls": {
+      "completed_at": "2025-08-21T21:40:47.587927",
+      "results_count": 10
+    },
+    "gun range|lewiston": {
+      "completed_at": "2025-08-21T21:40:50.937277",
+      "results_count": 10
+    },
+    "gun range|post falls": {
+      "completed_at": "2025-08-21T21:40:54.464270",
+      "results_count": 10
+    },
+    "gun range|mccall": {
+      "completed_at": "2025-08-21T21:40:57.378503",
+      "results_count": 10
+    },
+    "gun range|sun valley": {
+      "completed_at": "2025-08-21T21:41:00.270911",
+      "results_count": 10
+    },
+    "gun range|sandpoint": {
+      "completed_at": "2025-08-21T21:41:03.720996",
+      "results_count": 10
+    },
+    "gun range|rexburg": {
+      "completed_at": "2025-08-21T21:41:06.861197",
+      "results_count": 10
+    },
+    "gun range|moscow": {
+      "completed_at": "2025-08-21T21:41:09.715543",
+      "results_count": 10
+    },
+    "gun range|blackfoot": {
+      "completed_at": "2025-08-21T21:41:12.507391",
+      "results_count": 10
+    },
+    "gun range|burley": {
+      "completed_at": "2025-08-21T21:41:15.504514",
+      "results_count": 10
+    },
+    "firing range|boise": {
+      "completed_at": "2025-08-21T21:41:18.450576",
+      "results_count": 10
+    },
+    "firing range|meridian": {
+      "completed_at": "2025-08-21T21:41:22.706595",
+      "results_count": 10
+    },
+    "firing range|nampa": {
+      "completed_at": "2025-08-21T21:41:26.077069",
+      "results_count": 10
+    },
+    "firing range|eagle": {
+      "completed_at": "2025-08-21T21:41:28.892686",
+      "results_count": 10
+    },
+    "firing range|kuna": {
+      "completed_at": "2025-08-21T21:41:32.024751",
+      "results_count": 10
+    },
+    "firing range|caldwell": {
+      "completed_at": "2025-08-21T21:41:34.775701",
+      "results_count": 10
+    },
+    "firing range|idaho falls": {
+      "completed_at": "2025-08-21T21:41:38.370185",
+      "results_count": 10
+    },
+    "firing range|pocatello": {
+      "completed_at": "2025-08-21T21:41:41.364406",
+      "results_count": 10
+    },
+    "firing range|coeur d'alene": {
+      "completed_at": "2025-08-21T21:41:44.974519",
+      "results_count": 10
+    },
+    "firing range|twin falls": {
+      "completed_at": "2025-08-21T21:41:48.192365",
+      "results_count": 10
+    },
+    "firing range|lewiston": {
+      "completed_at": "2025-08-21T21:41:52.895484",
+      "results_count": 10
+    },
+    "firing range|post falls": {
+      "completed_at": "2025-08-21T21:41:56.275009",
+      "results_count": 10
+    },
+    "firing range|mccall": {
+      "completed_at": "2025-08-21T21:41:59.155400",
+      "results_count": 10
+    },
+    "firing range|sun valley": {
+      "completed_at": "2025-08-21T21:42:02.453485",
+      "results_count": 10
+    },
+    "firing range|sandpoint": {
+      "completed_at": "2025-08-21T21:42:05.315985",
+      "results_count": 10
+    },
+    "firing range|rexburg": {
+      "completed_at": "2025-08-21T21:42:08.395911",
+      "results_count": 10
+    },
+    "firing range|moscow": {
+      "completed_at": "2025-08-21T21:42:11.181035",
+      "results_count": 9
+    },
+    "firing range|blackfoot": {
+      "completed_at": "2025-08-21T21:42:14.211161",
+      "results_count": 10
+    },
+    "firing range|burley": {
+      "completed_at": "2025-08-21T21:42:17.419332",
+      "results_count": 10
+    },
+    "shooting club|boise": {
+      "completed_at": "2025-08-21T21:42:20.225767",
+      "results_count": 10
+    },
+    "shooting club|meridian": {
+      "completed_at": "2025-08-21T21:42:23.158865",
+      "results_count": 10
+    },
+    "shooting club|nampa": {
+      "completed_at": "2025-08-21T21:42:27.451750",
+      "results_count": 10
+    },
+    "shooting club|eagle": {
+      "completed_at": "2025-08-21T21:42:30.317783",
+      "results_count": 10
+    },
+    "shooting club|kuna": {
+      "completed_at": "2025-08-21T21:42:33.178883",
+      "results_count": 10
+    },
+    "shooting club|caldwell": {
+      "completed_at": "2025-08-21T21:42:36.256746",
+      "results_count": 10
+    },
+    "shooting club|idaho falls": {
+      "completed_at": "2025-08-21T21:42:39.148508",
+      "results_count": 10
+    },
+    "shooting club|pocatello": {
+      "completed_at": "2025-08-21T21:42:42.109629",
+      "results_count": 10
+    },
+    "shooting club|coeur d'alene": {
+      "completed_at": "2025-08-21T21:42:45.407773",
+      "results_count": 10
+    },
+    "shooting club|twin falls": {
+      "completed_at": "2025-08-21T21:42:48.349364",
+      "results_count": 10
+    },
+    "shooting club|lewiston": {
+      "completed_at": "2025-08-21T21:42:51.111689",
+      "results_count": 10
+    },
+    "shooting club|post falls": {
+      "completed_at": "2025-08-21T21:42:54.268603",
+      "results_count": 10
+    },
+    "shooting club|mccall": {
+      "completed_at": "2025-08-21T21:42:57.129923",
+      "results_count": 10
+    },
+    "shooting club|sun valley": {
+      "completed_at": "2025-08-21T21:43:00.967104",
+      "results_count": 10
+    },
+    "shooting club|sandpoint": {
+      "completed_at": "2025-08-21T21:43:03.755675",
+      "results_count": 10
+    },
+    "shooting club|rexburg": {
+      "completed_at": "2025-08-21T21:43:06.796867",
+      "results_count": 10
+    },
+    "shooting club|moscow": {
+      "completed_at": "2025-08-21T21:43:09.595384",
+      "results_count": 10
+    },
+    "shooting club|blackfoot": {
+      "completed_at": "2025-08-21T21:43:12.393228",
+      "results_count": 10
+    },
+    "shooting club|burley": {
+      "completed_at": "2025-08-21T21:43:15.621192",
+      "results_count": 10
+    },
+    "hunting outfitter|boise": {
+      "completed_at": "2025-08-21T21:43:18.518192",
+      "results_count": 10
+    },
+    "hunting outfitter|meridian": {
+      "completed_at": "2025-08-21T21:43:22.523898",
+      "results_count": 10
+    },
+    "hunting outfitter|nampa": {
+      "completed_at": "2025-08-21T21:43:25.466508",
+      "results_count": 10
+    },
+    "hunting outfitter|eagle": {
+      "completed_at": "2025-08-21T21:43:28.396315",
+      "results_count": 10
+    },
+    "hunting outfitter|kuna": {
+      "completed_at": "2025-08-21T21:43:31.289720",
+      "results_count": 10
+    },
+    "hunting outfitter|caldwell": {
+      "completed_at": "2025-08-21T21:43:35.414155",
+      "results_count": 10
+    },
+    "hunting outfitter|idaho falls": {
+      "completed_at": "2025-08-21T21:43:38.259002",
+      "results_count": 10
+    },
+    "hunting outfitter|pocatello": {
+      "completed_at": "2025-08-21T21:43:41.322306",
+      "results_count": 10
+    },
+    "hunting outfitter|coeur d'alene": {
+      "completed_at": "2025-08-21T21:43:44.085228",
+      "results_count": 10
+    },
+    "hunting outfitter|twin falls": {
+      "completed_at": "2025-08-21T21:43:47.121415",
+      "results_count": 10
+    },
+    "hunting outfitter|lewiston": {
+      "completed_at": "2025-08-21T21:43:50.233796",
+      "results_count": 10
+    },
+    "hunting outfitter|post falls": {
+      "completed_at": "2025-08-21T21:43:53.245771",
+      "results_count": 10
+    },
+    "hunting outfitter|mccall": {
+      "completed_at": "2025-08-21T21:43:57.388658",
+      "results_count": 10
+    },
+    "hunting outfitter|sun valley": {
+      "completed_at": "2025-08-21T21:44:00.319818",
+      "results_count": 10
+    },
+    "hunting outfitter|sandpoint": {
+      "completed_at": "2025-08-21T21:44:03.304467",
+      "results_count": 10
+    },
+    "hunting outfitter|rexburg": {
+      "completed_at": "2025-08-21T21:44:07.018527",
+      "results_count": 10
+    },
+    "hunting outfitter|moscow": {
+      "completed_at": "2025-08-21T21:44:09.958327",
+      "results_count": 10
+    },
+    "hunting outfitter|blackfoot": {
+      "completed_at": "2025-08-21T21:44:12.743858",
+      "results_count": 10
+    },
+    "hunting outfitter|burley": {
+      "completed_at": "2025-08-21T21:44:15.726729",
+      "results_count": 10
+    },
+    "hunting guide|boise": {
+      "completed_at": "2025-08-21T21:44:18.622356",
+      "results_count": 10
+    },
+    "hunting guide|meridian": {
+      "completed_at": "2025-08-21T21:44:21.539421",
+      "results_count": 10
+    },
+    "hunting guide|nampa": {
+      "completed_at": "2025-08-21T21:44:24.478388",
+      "results_count": 10
+    },
+    "hunting guide|eagle": {
+      "completed_at": "2025-08-21T21:44:27.528296",
+      "results_count": 10
+    },
+    "hunting guide|kuna": {
+      "completed_at": "2025-08-21T21:44:30.744574",
+      "results_count": 10
+    },
+    "hunting guide|caldwell": {
+      "completed_at": "2025-08-21T21:44:33.742929",
+      "results_count": 10
+    },
+    "hunting guide|idaho falls": {
+      "completed_at": "2025-08-21T21:44:36.803228",
+      "results_count": 10
+    },
+    "hunting guide|pocatello": {
+      "completed_at": "2025-08-21T21:44:40.913238",
+      "results_count": 10
+    },
+    "hunting guide|coeur d'alene": {
+      "completed_at": "2025-08-21T21:44:44.044836",
+      "results_count": 10
+    },
+    "hunting guide|twin falls": {
+      "completed_at": "2025-08-21T21:44:46.948250",
+      "results_count": 10
+    },
+    "hunting guide|lewiston": {
+      "completed_at": "2025-08-21T21:44:50.136760",
+      "results_count": 10
+    },
+    "hunting guide|post falls": {
+      "completed_at": "2025-08-21T21:44:53.165500",
+      "results_count": 10
+    },
+    "hunting guide|mccall": {
+      "completed_at": "2025-08-21T21:44:55.959071",
+      "results_count": 10
+    },
+    "hunting guide|sun valley": {
+      "completed_at": "2025-08-21T21:44:59.019537",
+      "results_count": 10
+    },
+    "hunting guide|sandpoint": {
+      "completed_at": "2025-08-21T21:45:02.060914",
+      "results_count": 10
+    },
+    "hunting guide|rexburg": {
+      "completed_at": "2025-08-21T21:45:05.481086",
+      "results_count": 10
+    },
+    "hunting guide|moscow": {
+      "completed_at": "2025-08-21T21:45:08.401431",
+      "results_count": 10
+    },
+    "hunting guide|blackfoot": {
+      "completed_at": "2025-08-21T21:45:11.992342",
+      "results_count": 10
+    },
+    "hunting guide|burley": {
+      "completed_at": "2025-08-21T21:45:15.185114",
+      "results_count": 10
+    },
+    "hunting supplies|boise": {
+      "completed_at": "2025-08-21T21:45:18.097512",
+      "results_count": 10
+    },
+    "hunting supplies|meridian": {
+      "completed_at": "2025-08-21T21:45:21.154022",
+      "results_count": 10
+    },
+    "hunting supplies|nampa": {
+      "completed_at": "2025-08-21T21:45:24.115984",
+      "results_count": 10
+    },
+    "hunting supplies|eagle": {
+      "completed_at": "2025-08-21T21:45:27.119703",
+      "results_count": 10
+    },
+    "hunting supplies|kuna": {
+      "completed_at": "2025-08-21T21:45:30.134918",
+      "results_count": 10
+    },
+    "hunting supplies|caldwell": {
+      "completed_at": "2025-08-21T21:45:32.977339",
+      "results_count": 10
+    },
+    "hunting supplies|idaho falls": {
+      "completed_at": "2025-08-21T21:45:36.672130",
+      "results_count": 10
+    },
+    "hunting supplies|pocatello": {
+      "completed_at": "2025-08-21T21:45:39.920747",
+      "results_count": 10
+    },
+    "hunting supplies|coeur d'alene": {
+      "completed_at": "2025-08-21T21:45:42.887115",
+      "results_count": 10
+    },
+    "hunting supplies|twin falls": {
+      "completed_at": "2025-08-21T21:45:46.694407",
+      "results_count": 10
+    },
+    "hunting supplies|lewiston": {
+      "completed_at": "2025-08-21T21:45:50.071950",
+      "results_count": 10
+    },
+    "hunting supplies|post falls": {
+      "completed_at": "2025-08-21T21:45:53.226653",
+      "results_count": 10
+    },
+    "hunting supplies|mccall": {
+      "completed_at": "2025-08-21T21:45:56.473185",
+      "results_count": 10
+    },
+    "hunting supplies|sun valley": {
+      "completed_at": "2025-08-21T21:45:59.531253",
+      "results_count": 10
+    },
+    "hunting supplies|sandpoint": {
+      "completed_at": "2025-08-21T21:46:02.460390",
+      "results_count": 10
+    },
+    "hunting supplies|rexburg": {
+      "completed_at": "2025-08-21T21:46:05.370278",
+      "results_count": 10
+    },
+    "hunting supplies|moscow": {
+      "completed_at": "2025-08-21T21:46:08.387276",
+      "results_count": 10
+    },
+    "hunting supplies|blackfoot": {
+      "completed_at": "2025-08-21T21:46:11.304204",
+      "results_count": 10
+    },
+    "hunting supplies|burley": {
+      "completed_at": "2025-08-21T21:46:14.426110",
+      "results_count": 10
+    },
+    "outdoor gear|boise": {
+      "completed_at": "2025-08-21T21:46:18.163960",
+      "results_count": 10
+    },
+    "outdoor gear|meridian": {
+      "completed_at": "2025-08-21T21:46:21.444990",
+      "results_count": 10
+    },
+    "outdoor gear|nampa": {
+      "completed_at": "2025-08-21T21:46:24.312655",
+      "results_count": 10
+    },
+    "outdoor gear|eagle": {
+      "completed_at": "2025-08-21T21:46:27.257119",
+      "results_count": 9
+    },
+    "outdoor gear|kuna": {
+      "completed_at": "2025-08-21T21:46:30.311364",
+      "results_count": 10
+    },
+    "outdoor gear|caldwell": {
+      "completed_at": "2025-08-21T21:46:33.314878",
+      "results_count": 10
+    },
+    "outdoor gear|idaho falls": {
+      "completed_at": "2025-08-21T21:46:36.637334",
+      "results_count": 10
+    },
+    "outdoor gear|pocatello": {
+      "completed_at": "2025-08-21T21:46:39.463442",
+      "results_count": 10
+    },
+    "outdoor gear|coeur d'alene": {
+      "completed_at": "2025-08-21T21:46:42.373887",
+      "results_count": 10
+    },
+    "outdoor gear|twin falls": {
+      "completed_at": "2025-08-21T21:46:45.796614",
+      "results_count": 10
+    },
+    "outdoor gear|lewiston": {
+      "completed_at": "2025-08-21T21:46:49.153976",
+      "results_count": 10
+    },
+    "outdoor gear|post falls": {
+      "completed_at": "2025-08-21T21:46:53.147654",
+      "results_count": 10
+    },
+    "outdoor gear|mccall": {
+      "completed_at": "2025-08-21T21:46:56.160980",
+      "results_count": 10
+    },
+    "outdoor gear|sun valley": {
+      "completed_at": "2025-08-21T21:46:59.271836",
+      "results_count": 10
+    },
+    "outdoor gear|sandpoint": {
+      "completed_at": "2025-08-21T21:47:02.644284",
+      "results_count": 10
+    },
+    "outdoor gear|rexburg": {
+      "completed_at": "2025-08-21T21:47:05.505171",
+      "results_count": 10
+    },
+    "outdoor gear|moscow": {
+      "completed_at": "2025-08-21T21:47:08.515765",
+      "results_count": 10
+    },
+    "outdoor gear|blackfoot": {
+      "completed_at": "2025-08-21T21:47:11.601826",
+      "results_count": 10
+    },
+    "outdoor gear|burley": {
+      "completed_at": "2025-08-21T21:47:14.430549",
+      "results_count": 10
+    },
+    "sporting goods|boise": {
+      "completed_at": "2025-08-21T21:47:17.311565",
+      "results_count": 10
+    },
+    "sporting goods|meridian": {
+      "completed_at": "2025-08-21T21:47:20.783107",
+      "results_count": 10
+    },
+    "sporting goods|nampa": {
+      "completed_at": "2025-08-21T21:47:24.465633",
+      "results_count": 10
+    },
+    "sporting goods|eagle": {
+      "completed_at": "2025-08-21T21:47:27.633143",
+      "results_count": 10
+    },
+    "sporting goods|kuna": {
+      "completed_at": "2025-08-21T21:47:30.831457",
+      "results_count": 10
+    },
+    "sporting goods|caldwell": {
+      "completed_at": "2025-08-21T21:47:34.035978",
+      "results_count": 10
+    },
+    "sporting goods|idaho falls": {
+      "completed_at": "2025-08-21T21:47:37.103745",
+      "results_count": 10
+    },
+    "sporting goods|pocatello": {
+      "completed_at": "2025-08-21T21:47:40.089844",
+      "results_count": 10
+    },
+    "sporting goods|coeur d'alene": {
+      "completed_at": "2025-08-21T21:47:43.039138",
+      "results_count": 10
+    },
+    "sporting goods|twin falls": {
+      "completed_at": "2025-08-21T21:47:46.025167",
+      "results_count": 10
+    },
+    "sporting goods|lewiston": {
+      "completed_at": "2025-08-21T21:47:48.804906",
+      "results_count": 10
+    },
+    "sporting goods|post falls": {
+      "completed_at": "2025-08-21T21:47:51.774942",
+      "results_count": 10
+    },
+    "sporting goods|mccall": {
+      "completed_at": "2025-08-21T21:47:55.020470",
+      "results_count": 10
+    },
+    "sporting goods|sun valley": {
+      "completed_at": "2025-08-21T21:47:58.813576",
+      "results_count": 10
+    },
+    "sporting goods|sandpoint": {
+      "completed_at": "2025-08-21T21:48:01.931763",
+      "results_count": 10
+    },
+    "sporting goods|rexburg": {
+      "completed_at": "2025-08-21T21:48:04.973042",
+      "results_count": 10
+    },
+    "sporting goods|moscow": {
+      "completed_at": "2025-08-21T21:48:08.226585",
+      "results_count": 10
+    },
+    "sporting goods|blackfoot": {
+      "completed_at": "2025-08-21T21:48:11.372250",
+      "results_count": 10
+    },
+    "sporting goods|burley": {
+      "completed_at": "2025-08-21T21:48:14.802908",
+      "results_count": 10
+    },
+    "archery shop|boise": {
+      "completed_at": "2025-08-21T21:48:17.649799",
+      "results_count": 10
+    },
+    "archery shop|meridian": {
+      "completed_at": "2025-08-21T21:48:20.772644",
+      "results_count": 10
+    },
+    "archery shop|nampa": {
+      "completed_at": "2025-08-21T21:48:23.855120",
+      "results_count": 10
+    },
+    "archery shop|eagle": {
+      "completed_at": "2025-08-21T21:48:26.705810",
+      "results_count": 10
+    },
+    "archery shop|kuna": {
+      "completed_at": "2025-08-21T21:48:31.195134",
+      "results_count": 10
+    },
+    "archery shop|caldwell": {
+      "completed_at": "2025-08-21T21:48:34.541109",
+      "results_count": 10
+    },
+    "archery shop|idaho falls": {
+      "completed_at": "2025-08-21T21:48:37.574385",
+      "results_count": 10
+    },
+    "archery shop|pocatello": {
+      "completed_at": "2025-08-21T21:48:40.483776",
+      "results_count": 10
+    },
+    "archery shop|coeur d'alene": {
+      "completed_at": "2025-08-21T21:48:43.451091",
+      "results_count": 10
+    },
+    "archery shop|twin falls": {
+      "completed_at": "2025-08-21T21:48:46.253440",
+      "results_count": 10
+    },
+    "archery shop|lewiston": {
+      "completed_at": "2025-08-21T21:48:49.341166",
+      "results_count": 10
+    },
+    "archery shop|post falls": {
+      "completed_at": "2025-08-21T21:48:52.337174",
+      "results_count": 10
+    },
+    "archery shop|mccall": {
+      "completed_at": "2025-08-21T21:48:55.183061",
+      "results_count": 10
+    },
+    "archery shop|sun valley": {
+      "completed_at": "2025-08-21T21:48:58.357779",
+      "results_count": 10
+    },
+    "archery shop|sandpoint": {
+      "completed_at": "2025-08-21T21:49:03.006045",
+      "results_count": 10
+    },
+    "archery shop|rexburg": {
+      "completed_at": "2025-08-21T21:49:06.090915",
+      "results_count": 10
+    },
+    "archery shop|moscow": {
+      "completed_at": "2025-08-21T21:49:09.038975",
+      "results_count": 10
+    },
+    "archery shop|blackfoot": {
+      "completed_at": "2025-08-21T21:49:13.424671",
+      "results_count": 10
+    },
+    "archery shop|burley": {
+      "completed_at": "2025-08-21T21:49:16.383670",
+      "results_count": 10
+    },
+    "firearm training|boise": {
+      "completed_at": "2025-08-21T21:49:19.465382",
+      "results_count": 10
+    },
+    "firearm training|meridian": {
+      "completed_at": "2025-08-21T21:49:22.493187",
+      "results_count": 10
+    },
+    "firearm training|nampa": {
+      "completed_at": "2025-08-21T21:49:25.349975",
+      "results_count": 10
+    },
+    "firearm training|eagle": {
+      "completed_at": "2025-08-21T21:49:28.355969",
+      "results_count": 10
+    },
+    "firearm training|kuna": {
+      "completed_at": "2025-08-21T21:49:32.160876",
+      "results_count": 10
+    },
+    "firearm training|caldwell": {
+      "completed_at": "2025-08-21T21:49:36.056920",
+      "results_count": 10
+    },
+    "firearm training|idaho falls": {
+      "completed_at": "2025-08-21T21:49:38.918554",
+      "results_count": 10
+    },
+    "firearm training|pocatello": {
+      "completed_at": "2025-08-21T21:49:41.851677",
+      "results_count": 10
+    },
+    "firearm training|coeur d'alene": {
+      "completed_at": "2025-08-21T21:49:44.815415",
+      "results_count": 10
+    },
+    "firearm training|twin falls": {
+      "completed_at": "2025-08-21T21:49:47.798433",
+      "results_count": 10
+    },
+    "firearm training|lewiston": {
+      "completed_at": "2025-08-21T21:49:50.657447",
+      "results_count": 10
+    },
+    "firearm training|post falls": {
+      "completed_at": "2025-08-21T21:49:53.744364",
+      "results_count": 10
+    },
+    "firearm training|mccall": {
+      "completed_at": "2025-08-21T21:49:56.676567",
+      "results_count": 10
+    },
+    "firearm training|sun valley": {
+      "completed_at": "2025-08-21T21:49:59.766318",
+      "results_count": 10
+    },
+    "firearm training|sandpoint": {
+      "completed_at": "2025-08-21T21:50:02.629231",
+      "results_count": 10
+    },
+    "firearm training|rexburg": {
+      "completed_at": "2025-08-21T21:50:05.648962",
+      "results_count": 10
+    },
+    "firearm training|moscow": {
+      "completed_at": "2025-08-21T21:50:09.474940",
+      "results_count": 10
+    },
+    "firearm training|blackfoot": {
+      "completed_at": "2025-08-21T21:50:12.616022",
+      "results_count": 10
+    },
+    "firearm training|burley": {
+      "completed_at": "2025-08-21T21:50:16.678811",
+      "results_count": 10
+    },
+    "gun safety|boise": {
+      "completed_at": "2025-08-21T21:50:19.672854",
+      "results_count": 10
+    },
+    "gun safety|meridian": {
+      "completed_at": "2025-08-21T21:50:22.537458",
+      "results_count": 10
+    },
+    "gun safety|nampa": {
+      "completed_at": "2025-08-21T21:50:25.535351",
+      "results_count": 10
+    },
+    "gun safety|eagle": {
+      "completed_at": "2025-08-21T21:50:28.390917",
+      "results_count": 9
+    },
+    "gun safety|kuna": {
+      "completed_at": "2025-08-21T21:50:31.449871",
+      "results_count": 10
+    },
+    "gun safety|caldwell": {
+      "completed_at": "2025-08-21T21:50:34.361895",
+      "results_count": 9
+    },
+    "gun safety|idaho falls": {
+      "completed_at": "2025-08-21T21:50:37.409304",
+      "results_count": 10
+    },
+    "gun safety|pocatello": {
+      "completed_at": "2025-08-21T21:50:40.418040",
+      "results_count": 10
+    },
+    "gun safety|coeur d'alene": {
+      "completed_at": "2025-08-21T21:50:44.392873",
+      "results_count": 10
+    },
+    "gun safety|twin falls": {
+      "completed_at": "2025-08-21T21:50:47.418966",
+      "results_count": 10
+    },
+    "gun safety|lewiston": {
+      "completed_at": "2025-08-21T21:50:50.414276",
+      "results_count": 10
+    },
+    "gun safety|post falls": {
+      "completed_at": "2025-08-21T21:50:53.636669",
+      "results_count": 10
+    },
+    "gun safety|mccall": {
+      "completed_at": "2025-08-21T21:50:56.789869",
+      "results_count": 9
+    },
+    "gun safety|sun valley": {
+      "completed_at": "2025-08-21T21:51:00.252322",
+      "results_count": 10
+    },
+    "gun safety|sandpoint": {
+      "completed_at": "2025-08-21T21:51:03.319701",
+      "results_count": 10
+    },
+    "gun safety|rexburg": {
+      "completed_at": "2025-08-21T21:51:06.788407",
+      "results_count": 10
+    },
+    "gun safety|moscow": {
+      "completed_at": "2025-08-21T21:51:09.829880",
+      "results_count": 10
+    },
+    "gun safety|blackfoot": {
+      "completed_at": "2025-08-21T21:51:12.651174",
+      "results_count": 10
+    },
+    "gun safety|burley": {
+      "completed_at": "2025-08-21T21:51:16.447460",
+      "results_count": 10
+    },
+    "concealed carry|boise": {
+      "completed_at": "2025-08-21T21:51:19.502156",
+      "results_count": 10
+    },
+    "concealed carry|meridian": {
+      "completed_at": "2025-08-21T21:51:22.467233",
+      "results_count": 10
+    },
+    "concealed carry|nampa": {
+      "completed_at": "2025-08-21T21:51:25.852265",
+      "results_count": 10
+    },
+    "concealed carry|eagle": {
+      "completed_at": "2025-08-21T21:51:28.678394",
+      "results_count": 10
+    },
+    "concealed carry|kuna": {
+      "completed_at": "2025-08-21T21:51:31.520584",
+      "results_count": 10
+    },
+    "concealed carry|caldwell": {
+      "completed_at": "2025-08-21T21:51:34.257401",
+      "results_count": 10
+    },
+    "concealed carry|idaho falls": {
+      "completed_at": "2025-08-21T21:51:37.463318",
+      "results_count": 10
+    },
+    "concealed carry|pocatello": {
+      "completed_at": "2025-08-21T21:51:40.515628",
+      "results_count": 10
+    },
+    "concealed carry|coeur d'alene": {
+      "completed_at": "2025-08-21T21:51:43.398673",
+      "results_count": 10
+    },
+    "concealed carry|twin falls": {
+      "completed_at": "2025-08-21T21:51:46.359859",
+      "results_count": 10
+    },
+    "concealed carry|lewiston": {
+      "completed_at": "2025-08-21T21:51:50.144777",
+      "results_count": 10
+    },
+    "concealed carry|post falls": {
+      "completed_at": "2025-08-21T21:51:53.163222",
+      "results_count": 10
+    },
+    "concealed carry|mccall": {
+      "completed_at": "2025-08-21T21:51:56.259442",
+      "results_count": 9
+    },
+    "concealed carry|sun valley": {
+      "completed_at": "2025-08-21T21:51:59.434980",
+      "results_count": 10
+    },
+    "concealed carry|sandpoint": {
+      "completed_at": "2025-08-21T21:52:02.310199",
+      "results_count": 10
+    },
+    "concealed carry|rexburg": {
+      "completed_at": "2025-08-21T21:52:05.135715",
+      "results_count": 10
+    },
+    "concealed carry|moscow": {
+      "completed_at": "2025-08-21T21:52:07.936798",
+      "results_count": 10
+    },
+    "concealed carry|blackfoot": {
+      "completed_at": "2025-08-21T21:52:10.976666",
+      "results_count": 10
+    },
+    "concealed carry|burley": {
+      "completed_at": "2025-08-21T21:52:13.892965",
+      "results_count": 9
+    },
+    "shooting instructor|boise": {
+      "completed_at": "2025-08-21T21:52:16.808527",
+      "results_count": 10
+    },
+    "shooting instructor|meridian": {
+      "completed_at": "2025-08-21T21:52:19.722303",
+      "results_count": 10
+    },
+    "shooting instructor|nampa": {
+      "completed_at": "2025-08-21T21:52:23.562871",
+      "results_count": 10
+    },
+    "shooting instructor|eagle": {
+      "completed_at": "2025-08-21T21:52:26.544381",
+      "results_count": 10
+    },
+    "shooting instructor|kuna": {
+      "completed_at": "2025-08-21T21:52:29.649574",
+      "results_count": 10
+    },
+    "shooting instructor|caldwell": {
+      "completed_at": "2025-08-21T21:52:32.728679",
+      "results_count": 10
+    },
+    "shooting instructor|idaho falls": {
+      "completed_at": "2025-08-21T21:52:35.649176",
+      "results_count": 10
+    },
+    "shooting instructor|pocatello": {
+      "completed_at": "2025-08-21T21:52:39.732680",
+      "results_count": 10
+    },
+    "shooting instructor|coeur d'alene": {
+      "completed_at": "2025-08-21T21:52:42.504734",
+      "results_count": 10
+    },
+    "shooting instructor|twin falls": {
+      "completed_at": "2025-08-21T21:52:45.348728",
+      "results_count": 10
+    },
+    "shooting instructor|lewiston": {
+      "completed_at": "2025-08-21T21:52:48.319926",
+      "results_count": 10
+    },
+    "shooting instructor|post falls": {
+      "completed_at": "2025-08-21T21:52:51.492854",
+      "results_count": 10
+    },
+    "shooting instructor|mccall": {
+      "completed_at": "2025-08-21T21:52:55.314295",
+      "results_count": 10
+    },
+    "shooting instructor|sun valley": {
+      "completed_at": "2025-08-21T21:52:58.348293",
+      "results_count": 10
+    },
+    "shooting instructor|sandpoint": {
+      "completed_at": "2025-08-21T21:53:01.231620",
+      "results_count": 10
+    },
+    "shooting instructor|rexburg": {
+      "completed_at": "2025-08-21T21:53:03.978621",
+      "results_count": 10
+    },
+    "shooting instructor|moscow": {
+      "completed_at": "2025-08-21T21:53:06.854129",
+      "results_count": 10
+    },
+    "shooting instructor|blackfoot": {
+      "completed_at": "2025-08-21T21:53:09.656723",
+      "results_count": 10
+    },
+    "shooting instructor|burley": {
+      "completed_at": "2025-08-21T21:53:12.806438",
+      "results_count": 10
+    },
+    "nra instructor|boise": {
+      "completed_at": "2025-08-21T21:53:15.689733",
+      "results_count": 10
+    },
+    "nra instructor|meridian": {
+      "completed_at": "2025-08-21T21:53:19.201944",
+      "results_count": 10
+    },
+    "nra instructor|nampa": {
+      "completed_at": "2025-08-21T21:53:22.208604",
+      "results_count": 10
+    },
+    "nra instructor|eagle": {
+      "completed_at": "2025-08-21T21:53:24.979609",
+      "results_count": 10
+    },
+    "nra instructor|kuna": {
+      "completed_at": "2025-08-21T21:53:28.627460",
+      "results_count": 9
+    },
+    "nra instructor|caldwell": {
+      "completed_at": "2025-08-21T21:53:31.621604",
+      "results_count": 10
+    },
+    "nra instructor|idaho falls": {
+      "completed_at": "2025-08-21T21:53:34.912455",
+      "results_count": 10
+    },
+    "nra instructor|pocatello": {
+      "completed_at": "2025-08-21T21:53:37.793685",
+      "results_count": 10
+    },
+    "nra instructor|coeur d'alene": {
+      "completed_at": "2025-08-21T21:53:40.794985",
+      "results_count": 10
+    },
+    "nra instructor|twin falls": {
+      "completed_at": "2025-08-21T21:53:43.801052",
+      "results_count": 10
+    },
+    "nra instructor|lewiston": {
+      "completed_at": "2025-08-21T21:53:46.816599",
+      "results_count": 10
+    },
+    "nra instructor|post falls": {
+      "completed_at": "2025-08-21T21:53:49.827177",
+      "results_count": 10
+    },
+    "nra instructor|mccall": {
+      "completed_at": "2025-08-21T21:53:53.077028",
+      "results_count": 10
+    },
+    "nra instructor|sun valley": {
+      "completed_at": "2025-08-21T21:53:56.258655",
+      "results_count": 10
+    },
+    "nra instructor|sandpoint": {
+      "completed_at": "2025-08-21T21:54:00.433660",
+      "results_count": 10
+    },
+    "nra instructor|rexburg": {
+      "completed_at": "2025-08-21T21:54:03.597429",
+      "results_count": 10
+    },
+    "nra instructor|moscow": {
+      "completed_at": "2025-08-21T21:54:07.002478",
+      "results_count": 10
+    },
+    "nra instructor|blackfoot": {
+      "completed_at": "2025-08-21T21:54:10.154574",
+      "results_count": 10
+    },
+    "nra instructor|burley": {
+      "completed_at": "2025-08-21T21:54:13.149165",
+      "results_count": 10
+    },
+    "tactical gear|boise": {
+      "completed_at": "2025-08-21T21:54:16.136517",
+      "results_count": 10
+    },
+    "tactical gear|meridian": {
+      "completed_at": "2025-08-21T21:54:19.251775",
+      "results_count": 10
+    },
+    "tactical gear|nampa": {
+      "completed_at": "2025-08-21T21:54:22.918867",
+      "results_count": 10
+    },
+    "tactical gear|eagle": {
+      "completed_at": "2025-08-21T21:54:26.033943",
+      "results_count": 10
+    },
+    "tactical gear|kuna": {
+      "completed_at": "2025-08-21T21:54:28.904074",
+      "results_count": 10
+    },
+    "tactical gear|caldwell": {
+      "completed_at": "2025-08-21T21:54:31.898525",
+      "results_count": 10
+    },
+    "tactical gear|idaho falls": {
+      "completed_at": "2025-08-21T21:54:35.536434",
+      "results_count": 10
+    },
+    "tactical gear|pocatello": {
+      "completed_at": "2025-08-21T21:54:38.775647",
+      "results_count": 10
+    },
+    "tactical gear|coeur d'alene": {
+      "completed_at": "2025-08-21T21:54:41.763252",
+      "results_count": 10
+    },
+    "tactical gear|twin falls": {
+      "completed_at": "2025-08-21T21:54:44.822167",
+      "results_count": 10
+    },
+    "tactical gear|lewiston": {
+      "completed_at": "2025-08-21T21:54:48.380754",
+      "results_count": 10
+    },
+    "tactical gear|post falls": {
+      "completed_at": "2025-08-21T21:54:51.370472",
+      "results_count": 10
+    },
+    "tactical gear|mccall": {
+      "completed_at": "2025-08-21T21:54:54.446695",
+      "results_count": 10
+    },
+    "tactical gear|sun valley": {
+      "completed_at": "2025-08-21T21:54:57.759828",
+      "results_count": 10
+    },
+    "tactical gear|sandpoint": {
+      "completed_at": "2025-08-21T21:55:00.917547",
+      "results_count": 10
+    },
+    "tactical gear|rexburg": {
+      "completed_at": "2025-08-21T21:55:03.889894",
+      "results_count": 10
+    },
+    "tactical gear|moscow": {
+      "completed_at": "2025-08-21T21:55:07.529056",
+      "results_count": 10
+    },
+    "tactical gear|blackfoot": {
+      "completed_at": "2025-08-21T21:55:10.555102",
+      "results_count": 10
+    },
+    "tactical gear|burley": {
+      "completed_at": "2025-08-21T21:55:13.369790",
+      "results_count": 10
+    },
+    "military surplus|boise": {
+      "completed_at": "2025-08-21T21:55:16.381294",
+      "results_count": 10
+    },
+    "military surplus|meridian": {
+      "completed_at": "2025-08-21T21:55:19.365680",
+      "results_count": 10
+    },
+    "military surplus|nampa": {
+      "completed_at": "2025-08-21T21:55:22.359004",
+      "results_count": 10
+    },
+    "military surplus|eagle": {
+      "completed_at": "2025-08-21T21:55:25.386391",
+      "results_count": 10
+    },
+    "military surplus|kuna": {
+      "completed_at": "2025-08-21T21:55:28.245911",
+      "results_count": 10
+    },
+    "military surplus|caldwell": {
+      "completed_at": "2025-08-21T21:55:31.207822",
+      "results_count": 10
+    },
+    "military surplus|idaho falls": {
+      "completed_at": "2025-08-21T21:55:34.079922",
+      "results_count": 10
+    },
+    "military surplus|pocatello": {
+      "completed_at": "2025-08-21T21:55:36.936656",
+      "results_count": 10
+    },
+    "military surplus|coeur d'alene": {
+      "completed_at": "2025-08-21T21:55:40.957825",
+      "results_count": 10
+    },
+    "military surplus|twin falls": {
+      "completed_at": "2025-08-21T21:55:43.878987",
+      "results_count": 10
+    },
+    "military surplus|lewiston": {
+      "completed_at": "2025-08-21T21:55:46.741307",
+      "results_count": 10
+    },
+    "military surplus|post falls": {
+      "completed_at": "2025-08-21T21:55:49.646924",
+      "results_count": 10
+    },
+    "military surplus|mccall": {
+      "completed_at": "2025-08-21T21:55:53.511837",
+      "results_count": 9
+    },
+    "military surplus|sun valley": {
+      "completed_at": "2025-08-21T21:55:56.295894",
+      "results_count": 10
+    },
+    "military surplus|sandpoint": {
+      "completed_at": "2025-08-21T21:55:59.407209",
+      "results_count": 10
+    },
+    "military surplus|rexburg": {
+      "completed_at": "2025-08-21T21:56:02.316063",
+      "results_count": 10
+    },
+    "military surplus|moscow": {
+      "completed_at": "2025-08-21T21:56:05.547788",
+      "results_count": 10
+    },
+    "military surplus|blackfoot": {
+      "completed_at": "2025-08-21T21:56:08.320011",
+      "results_count": 10
+    },
+    "military surplus|burley": {
+      "completed_at": "2025-08-21T21:56:11.462820",
+      "results_count": 10
+    },
+    "pawn shop guns|boise": {
+      "completed_at": "2025-08-21T21:56:15.216423",
+      "results_count": 10
+    },
+    "pawn shop guns|meridian": {
+      "completed_at": "2025-08-21T21:56:18.331034",
+      "results_count": 10
+    },
+    "pawn shop guns|nampa": {
+      "completed_at": "2025-08-21T21:56:21.284254",
+      "results_count": 10
+    },
+    "pawn shop guns|eagle": {
+      "completed_at": "2025-08-21T21:56:24.286941",
+      "results_count": 10
+    },
+    "pawn shop guns|kuna": {
+      "completed_at": "2025-08-21T21:56:27.199832",
+      "results_count": 10
+    },
+    "pawn shop guns|caldwell": {
+      "completed_at": "2025-08-21T21:56:30.090011",
+      "results_count": 10
+    },
+    "pawn shop guns|idaho falls": {
+      "completed_at": "2025-08-21T21:56:33.139604",
+      "results_count": 10
+    },
+    "pawn shop guns|pocatello": {
+      "completed_at": "2025-08-21T21:56:36.183751",
+      "results_count": 10
+    },
+    "pawn shop guns|coeur d'alene": {
+      "completed_at": "2025-08-21T21:56:39.587500",
+      "results_count": 10
+    },
+    "pawn shop guns|twin falls": {
+      "completed_at": "2025-08-21T21:56:42.581473",
+      "results_count": 10
+    },
+    "pawn shop guns|lewiston": {
+      "completed_at": "2025-08-21T21:56:47.904339",
+      "results_count": 10
+    },
+    "pawn shop guns|post falls": {
+      "completed_at": "2025-08-21T21:56:51.002178",
+      "results_count": 10
+    },
+    "pawn shop guns|mccall": {
+      "completed_at": "2025-08-21T21:56:54.031773",
+      "results_count": 10
+    },
+    "pawn shop guns|sun valley": {
+      "completed_at": "2025-08-21T21:56:57.047015",
+      "results_count": 10
+    },
+    "pawn shop guns|sandpoint": {
+      "completed_at": "2025-08-21T21:56:59.961744",
+      "results_count": 10
+    },
+    "pawn shop guns|rexburg": {
+      "completed_at": "2025-08-21T21:57:03.234419",
+      "results_count": 10
+    },
+    "pawn shop guns|moscow": {
+      "completed_at": "2025-08-21T21:57:06.219963",
+      "results_count": 10
+    },
+    "pawn shop guns|blackfoot": {
+      "completed_at": "2025-08-21T21:57:09.209180",
+      "results_count": 10
+    },
+    "pawn shop guns|burley": {
+      "completed_at": "2025-08-21T21:57:12.280417",
+      "results_count": 10
+    },
+    "gun shows|boise": {
+      "completed_at": "2025-08-21T21:57:15.083230",
+      "results_count": 10
+    },
+    "gun shows|meridian": {
+      "completed_at": "2025-08-21T21:57:18.601152",
+      "results_count": 9
+    },
+    "gun shows|nampa": {
+      "completed_at": "2025-08-21T21:57:21.476041",
+      "results_count": 10
+    },
+    "gun shows|eagle": {
+      "completed_at": "2025-08-21T21:57:24.392055",
+      "results_count": 9
+    },
+    "gun shows|kuna": {
+      "completed_at": "2025-08-21T21:57:27.192979",
+      "results_count": 10
+    },
+    "gun shows|caldwell": {
+      "completed_at": "2025-08-21T21:57:30.453389",
+      "results_count": 10
+    },
+    "gun shows|idaho falls": {
+      "completed_at": "2025-08-21T21:57:33.388329",
+      "results_count": 10
+    },
+    "gun shows|pocatello": {
+      "completed_at": "2025-08-21T21:57:36.421502",
+      "results_count": 10
+    },
+    "gun shows|coeur d'alene": {
+      "completed_at": "2025-08-21T21:57:39.309422",
+      "results_count": 10
+    },
+    "gun shows|twin falls": {
+      "completed_at": "2025-08-21T21:57:42.490009",
+      "results_count": 10
+    },
+    "gun shows|lewiston": {
+      "completed_at": "2025-08-21T21:57:45.290527",
+      "results_count": 10
+    },
+    "gun shows|post falls": {
+      "completed_at": "2025-08-21T21:57:48.375581",
+      "results_count": 10
+    },
+    "gun shows|mccall": {
+      "completed_at": "2025-08-21T21:57:52.062388",
+      "results_count": 9
+    },
+    "gun shows|sun valley": {
+      "completed_at": "2025-08-21T21:57:55.070676",
+      "results_count": 10
+    },
+    "gun shows|sandpoint": {
+      "completed_at": "2025-08-21T21:57:58.114552",
+      "results_count": 10
+    },
+    "gun shows|rexburg": {
+      "completed_at": "2025-08-21T21:58:01.247840",
+      "results_count": 10
+    },
+    "gun shows|moscow": {
+      "completed_at": "2025-08-21T21:58:04.936314",
+      "results_count": 10
+    },
+    "gun shows|blackfoot": {
+      "completed_at": "2025-08-21T21:58:07.982776",
+      "results_count": 10
+    },
+    "gun shows|burley": {
+      "completed_at": "2025-08-21T21:58:11.081188",
+      "results_count": 9
+    },
+    "ammunition store|boise": {
+      "completed_at": "2025-08-21T21:58:14.156938",
+      "results_count": 10
+    },
+    "ammunition store|meridian": {
+      "completed_at": "2025-08-21T21:58:16.900158",
+      "results_count": 10
+    },
+    "ammunition store|nampa": {
+      "completed_at": "2025-08-21T21:58:20.075941",
+      "results_count": 10
+    },
+    "ammunition store|eagle": {
+      "completed_at": "2025-08-21T21:58:23.018500",
+      "results_count": 10
+    },
+    "ammunition store|kuna": {
+      "completed_at": "2025-08-21T21:58:26.769950",
+      "results_count": 10
+    },
+    "ammunition store|caldwell": {
+      "completed_at": "2025-08-21T21:58:29.781774",
+      "results_count": 10
+    },
+    "ammunition store|idaho falls": {
+      "completed_at": "2025-08-21T21:58:32.712877",
+      "results_count": 10
+    },
+    "ammunition store|pocatello": {
+      "completed_at": "2025-08-21T21:58:35.387668",
+      "results_count": 10
+    },
+    "ammunition store|coeur d'alene": {
+      "completed_at": "2025-08-21T21:58:38.664073",
+      "results_count": 10
+    },
+    "ammunition store|twin falls": {
+      "completed_at": "2025-08-21T21:58:41.470008",
+      "results_count": 10
+    },
+    "ammunition store|lewiston": {
+      "completed_at": "2025-08-21T21:58:44.620203",
+      "results_count": 10
+    },
+    "ammunition store|post falls": {
+      "completed_at": "2025-08-21T21:58:48.059328",
+      "results_count": 10
+    },
+    "ammunition store|mccall": {
+      "completed_at": "2025-08-21T21:58:51.117087",
+      "results_count": 10
+    },
+    "ammunition store|sun valley": {
+      "completed_at": "2025-08-21T21:58:54.098105",
+      "results_count": 10
+    },
+    "ammunition store|sandpoint": {
+      "completed_at": "2025-08-21T21:58:57.962088",
+      "results_count": 10
+    },
+    "ammunition store|rexburg": {
+      "completed_at": "2025-08-21T21:59:01.093252",
+      "results_count": 10
+    },
+    "ammunition store|moscow": {
+      "completed_at": "2025-08-21T21:59:04.221704",
+      "results_count": 10
+    },
+    "ammunition store|blackfoot": {
+      "completed_at": "2025-08-21T21:59:07.076308",
+      "results_count": 10
+    }
+  },
+  "websites_scraped": {
+    "http://www.idahogunstore.com/": {
+      "scraped_at": "2025-08-21T17:14:26.044077",
+      "success": false,
+      "content_length": 0
+    },
+    "http://www.impactguns.com/": {
+      "scraped_at": "2025-08-21T17:14:30.205373",
+      "success": true,
+      "content_length": 11156
+    },
+    "http://buckhornguns.com/": {
+      "scraped_at": "2025-08-21T17:14:33.943058",
+      "success": true,
+      "content_length": 3480
+    },
+    "https://www.overland-armament.com/": {
+      "scraped_at": "2025-08-21T17:14:37.404345",
+      "success": true,
+      "content_length": 38
+    },
+    "https://www.idahoarmsammo.com/": {
+      "scraped_at": "2025-08-21T17:14:40.727515",
+      "success": true,
+      "content_length": 2926
+    },
+    "https://www.facebook.com/profile.php?id=100064083733400&mibextid=kFxxJD": {
+      "scraped_at": "2025-08-21T17:14:46.127395",
+      "success": false,
+      "content_length": 0
+    },
+    "http://combatsportsupply.com/": {
+      "scraped_at": "2025-08-21T17:14:49.857099",
+      "success": true,
+      "content_length": 5228
+    },
+    "https://oldarmsofidaho.com/": {
+      "scraped_at": "2025-08-21T17:14:55.585709",
+      "success": false,
+      "content_length": 0
+    },
+    "https://rifleguru.net/": {
+      "scraped_at": "2025-08-21T17:15:00.773764",
+      "success": true,
+      "content_length": 4756
+    },
+    "http://www.iishooting.com/": {
+      "scraped_at": "2025-08-21T17:15:04.674656",
+      "success": true,
+      "content_length": 1573
+    },
+    "https://idfg.idaho.gov/bcr": {
+      "scraped_at": "2025-08-21T17:15:11.035367",
+      "success": true,
+      "content_length": 7860
+    },
+    "http://www.doubletappboise.com/": {
+      "scraped_at": "2025-08-21T17:15:14.965131",
+      "success": true,
+      "content_length": 4657
+    },
+    "http://boisegunclub.info/": {
+      "scraped_at": "2025-08-21T17:15:18.420925",
+      "success": true,
+      "content_length": 3381
+    },
+    "http://www.shopblackrifle.com/": {
+      "scraped_at": "2025-08-21T17:15:22.392858",
+      "success": true,
+      "content_length": 1511
+    },
+    "http://www.simshotmeridian.com/": {
+      "scraped_at": "2025-08-21T17:15:26.119545",
+      "success": true,
+      "content_length": 4428
+    },
+    "https://www.caldwellshotguncomplex.com/": {
+      "scraped_at": "2025-08-21T17:15:29.613497",
+      "success": true,
+      "content_length": 4215
+    },
+    "http://www.shadowdawg.org/contact.html": {
+      "scraped_at": "2025-08-21T17:15:37.584352",
+      "success": true,
+      "content_length": 5783
+    },
+    "http://www.combatabsolute.com/": {
+      "scraped_at": "2025-08-21T17:15:41.479873",
+      "success": true,
+      "content_length": 1590
+    }
+  },
+  "businesses_generated": {
+    "Impact Guns Boise|http://www.impactguns.com/": {
+      "generated_at": "2025-08-21T18:39:16.892330",
+      "success": true,
+      "description_length": 1338
+    },
+    "Buckhorn Gun & Pawn|http://buckhornguns.com/": {
+      "generated_at": "2025-08-21T18:39:25.580913",
+      "success": true,
+      "description_length": 1165
+    },
+    "Overland Armament|https://www.overland-armament.com/": {
+      "generated_at": "2025-08-21T18:39:33.785771",
+      "success": true,
+      "description_length": 1226
+    },
+    "Idaho Arms & Ammo|https://www.idahoarmsammo.com/": {
+      "generated_at": "2025-08-21T18:39:41.406840",
+      "success": true,
+      "description_length": 1132
+    },
+    "Combat Sport Supply|http://combatsportsupply.com/": {
+      "generated_at": "2025-08-21T18:39:50.021223",
+      "success": true,
+      "description_length": 1087
+    },
+    "Rifle Guru|https://rifleguru.net/": {
+      "generated_at": "2025-08-21T18:51:06.322260",
+      "success": true,
+      "description_length": 1291
+    },
+    "Independence Indoor Shooting|http://www.iishooting.com/": {
+      "generated_at": "2025-08-21T18:51:15.147578",
+      "success": true,
+      "description_length": 1385
+    },
+    "Black's Creek Public Shooting Range|https://idfg.idaho.gov/bcr": {
+      "generated_at": "2025-08-21T18:51:24.355943",
+      "success": true,
+      "description_length": 1160
+    },
+    "Double Tapp, LLC Range and Firearms Training|http://www.doubletappboise.com/": {
+      "generated_at": "2025-08-21T18:52:27.790085",
+      "success": true,
+      "description_length": 1450
+    },
+    "Boise Gun Club|http://boisegunclub.info/": {
+      "generated_at": "2025-08-21T18:52:35.700977",
+      "success": true,
+      "description_length": 968
+    },
+    "Boise Black Rifle|http://www.shopblackrifle.com/": {
+      "generated_at": "2025-08-21T18:55:22.532712",
+      "success": true,
+      "description_length": 1166
+    },
+    "Simshot|http://www.simshotmeridian.com/": {
+      "generated_at": "2025-08-21T18:55:32.720542",
+      "success": true,
+      "description_length": 1625
+    },
+    "Caldwell Gun Club Shotgun Complex|https://www.caldwellshotguncomplex.com/": {
+      "generated_at": "2025-08-21T18:57:27.081267",
+      "success": true,
+      "description_length": 1121
+    },
+    "Shadow Dawg Firearms Academy|http://www.shadowdawg.org/contact.html": {
+      "generated_at": "2025-08-21T21:00:52.464561",
+      "success": true,
+      "description_length": 1080
+    }
+  },
+  "api_usage": {
+    "serper_requests_today": 575,
+    "last_request_date": "2025-08-21",
+    "total_requests": 575
+  },
+  "stats": {
+    "duplicates_prevented": 2,
+    "validation_failures": 0,
+    "successful_generations": 0
+  },
+  "last_backup": null,
+  "created": "2025-08-21T16:50:22.704513",
+  "last_updated": "2025-08-21T21:59:07.076318"
+}

@@ -79,7 +79,7 @@
     --color-nav-events-light: #eb7d01;
     --color-nav-directory-light: #2ebfe6;
     --color-nav-armory-light: #B7410E;
-    --color-nav-intel-light: #8B7AA8;
+    --color-nav-intel-light: #7c42cf;
     --color-nav-marketplace-light: #798246;
     --color-nav-forums-light: #6B7280;
 
@@ -87,7 +87,7 @@
     --color-nav-events-dark: #ff8c42;
     --color-nav-directory-dark: #42d4f5;
     --color-nav-armory-dark: #fb4934;
-    --color-nav-intel-dark: #b99fdc;
+    --color-nav-intel-dark: #9b5fe8;
     --color-nav-marketplace-dark: #9fb36b;
     --color-nav-forums-dark: #9CA3AF;
 
@@ -1068,27 +1068,55 @@
 @utility grid-auto-fill-320 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-lg-mobile);
+  gap: 1rem; /* 16px - comfortable mobile spacing */
 }
 
 @media (min-width: 640px) {
   .grid-auto-fill-320 {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-xl);
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem; /* 20px - standard gallery spacing */
   }
 }
 
 @media (min-width: 1024px) {
   .grid-auto-fill-320 {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: var(--spacing-2xl);
+    gap: 1.5rem; /* 24px - comfortable browsing */
+  }
+}
+
+@media (min-width: 1536px) {
+  .grid-auto-fill-320 {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem; /* 32px - premium spacing on large screens */
   }
 }
 
 @utility grid-auto-fill-350 {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2.66rem;
+  grid-template-columns: 1fr;
+  gap: 1.25rem; /* 20px - premium mobile spacing */
+}
+
+@media (min-width: 640px) {
+  .grid-auto-fill-350 {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem; /* 24px - comfortable card spacing */
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-auto-fill-350 {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem; /* 32px - luxury spacing */
+  }
+}
+
+@media (min-width: 1536px) {
+  .grid-auto-fill-350 {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2.5rem; /* 40px - maximum breathing room */
+  }
 }
 
 @utility grid-auto-fill-300 {
@@ -1112,20 +1140,27 @@
 @utility grid-dense-md {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-base);
+  gap: 0.5rem; /* 8px - tightest spacing for dense layout */
 }
 
 @media (min-width: 640px) {
   .grid-dense-md {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.5rem; /* 8px - maintain tight spacing */
   }
 }
 
 @media (min-width: 1024px) {
   .grid-dense-md {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: var(--spacing-lg);
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0.75rem; /* 12px - slightly more breathing room */
+  }
+}
+
+@media (min-width: 1536px) {
+  .grid-dense-md {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem; /* 16px - comfortable dense spacing on large screens */
   }
 }
 
@@ -1133,6 +1168,126 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 2.66rem;
+}
+
+/* Advanced Grid Layouts for 2025 - Fire Gallery System */
+@utility grid-compact {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem; /* 12px - balanced compact spacing */
+}
+@media (min-width: 640px) {
+  .grid-compact {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem; /* 16px - friend-level relationship spacing */
+  }
+}
+@media (min-width: 1024px) {
+  .grid-compact {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem; /* 20px - standard gallery spacing */
+  }
+}
+@media (min-width: 1536px) {
+  .grid-compact {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem; /* 24px - comfortable compact on large screens */
+  }
+}
+
+@utility grid-masonry {
+  columns: 1;
+  column-gap: var(--spacing-lg);
+  break-inside: avoid;
+}
+@media (min-width: 640px) {
+  .grid-masonry {
+    columns: 2;
+    column-gap: var(--spacing-xl);
+  }
+}
+@media (min-width: 1024px) {
+  .grid-masonry {
+    columns: 3;
+    column-gap: var(--spacing-2xl);
+  }
+}
+@media (min-width: 1536px) {
+  .grid-masonry {
+    columns: 4;
+  }
+}
+
+@utility grid-magazine {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(120px, auto);
+  gap: var(--spacing-md);
+}
+@media (min-width: 640px) {
+  .grid-magazine {
+    gap: var(--spacing-lg);
+  }
+}
+@media (min-width: 1024px) {
+  .grid-magazine {
+    gap: var(--spacing-xl);
+  }
+}
+
+@utility grid-table {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* Masonry item utilities */
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: var(--spacing-lg);
+  display: inline-block;
+  width: 100%;
+}
+
+/* Magazine layout variants */
+.magazine-item-small {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+.magazine-item-medium {
+  grid-column: span 4;
+  grid-row: span 3;
+}
+.magazine-item-large {
+  grid-column: span 6;
+  grid-row: span 4;
+}
+.magazine-item-hero {
+  grid-column: span 8;
+  grid-row: span 5;
+}
+@media (max-width: 640px) {
+  .magazine-item-small,
+  .magazine-item-medium,
+  .magazine-item-large,
+  .magazine-item-hero {
+    grid-column: span 12;
+    grid-row: span 2;
+  }
+}
+
+/* Table view utilities */
+.table-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.2s ease;
+}
+.table-item:hover {
+  background-color: var(--muted);
 }
 
 /* Transition utilities */
@@ -1235,6 +1390,31 @@
   .bg-gradient-forums-hero {
     background: linear-gradient(135deg, var(--nav-forums) 0%, var(--color-foothills-purple) 100%);
   }
+
+/* Event Card Gradient Sections */
+.card-gradient-competition {
+  background: linear-gradient(135deg, var(--nav-events) 0%, var(--color-canyon-clay) 100%);
+}
+
+.card-gradient-training {
+  background: linear-gradient(135deg, var(--nav-training, var(--nav-events)) 0%, var(--color-sagebrush-green) 100%);
+}
+
+.card-gradient-expo {
+  background: linear-gradient(135deg, var(--nav-marketplace) 0%, var(--color-high-desert-sage) 100%);
+}
+
+.card-gradient-charity {
+  background: linear-gradient(135deg, var(--color-rusty-orange) 0%, var(--color-weathered-gold) 100%);
+}
+
+.card-gradient-social {
+  background: linear-gradient(135deg, var(--nav-forums) 0%, var(--color-foothills-purple) 100%);
+}
+
+.card-gradient-events {
+  background: linear-gradient(135deg, var(--nav-events) 0%, var(--color-canyon-clay) 100%);
+}
 
   /* Glass gradients */
   .bg-gradient-glass {
@@ -1659,6 +1839,30 @@
     background: linear-gradient(to right, var(--nav-forums), var(--color-warm-stone));
   }
 
+  /* ===============================================================================
+     INTEL CARD GRADIENTS - Colorful tops for different location types
+     =============================================================================== */
+
+  .card-gradient-public {
+    background: linear-gradient(135deg, var(--color-sagebrush-green), var(--color-lodgepole-green));
+  }
+
+  .card-gradient-blm {
+    background: linear-gradient(135deg, var(--color-sunset-amber), var(--color-rusty-orange));
+  }
+
+  .card-gradient-indoor {
+    background: linear-gradient(135deg, var(--nav-intel), var(--color-foothills-purple));
+  }
+
+  .card-gradient-municipal {
+    background: linear-gradient(135deg, var(--color-nav-directory-light), var(--color-glacier-blue));
+  }
+
+  .card-gradient-intel {
+    background: linear-gradient(135deg, var(--nav-intel), var(--color-sunset-amber));
+  }
+
   /* Tactical variations */
   .tactical-underline-fire::after {
     background: linear-gradient(to right, var(--color-rusty-orange), var(--color-sandy-ochre));
@@ -1839,6 +2043,262 @@
 
   .tactical-border {
     border-width: 2px;
+  }
+
+  /* ===============================================================================
+     ADVANCED CSS ARCHITECTURE - August 2025
+     Modern CSS layers, mathematical spacing, and cutting-edge layout foundations
+     =============================================================================== */
+
+  /* CSS Layers for organized component architecture */
+  @layer reset, base, components, patterns, utilities;
+  
+  @layer base {
+    /* Mathematical spacing system using CSS functions */
+    :root {
+      /* Dynamic spacing using mathematical functions */
+      --spacing-unit: 0.25rem; /* 4px base */
+      --spacing-ratio: 1.618; /* Golden ratio */
+      
+      /* Mathematical progression using round() and mod() when supported */
+      --spacing-xs: calc(var(--spacing-unit) * 1);     /* 4px */
+      --spacing-sm: calc(var(--spacing-unit) * 2);     /* 8px */
+      --spacing-base: calc(var(--spacing-unit) * 4);   /* 16px */
+      --spacing-lg: calc(var(--spacing-unit) * 6);     /* 24px */
+      --spacing-xl: calc(var(--spacing-unit) * 8);     /* 32px */
+      --spacing-2xl: calc(var(--spacing-unit) * 12);   /* 48px */
+      --spacing-3xl: calc(var(--spacing-unit) * 16);   /* 64px */
+      --spacing-4xl: calc(var(--spacing-unit) * 24);   /* 96px */
+      
+      /* Fluid spacing using clamp() for responsive scaling */
+      --spacing-fluid-sm: clamp(0.5rem, 2vw, 1rem);
+      --spacing-fluid-md: clamp(1rem, 4vw, 2rem);
+      --spacing-fluid-lg: clamp(2rem, 6vw, 4rem);
+      --spacing-fluid-xl: clamp(3rem, 8vw, 6rem);
+      
+      /* Color mixing variables for dynamic themes */
+      --color-mix-base: var(--color-crisp-off-white);
+      --color-mix-accent: var(--color-rusty-orange);
+      
+      /* Scroll-driven animation support variables */
+      --scroll-progress: 0;
+      --viewport-progress: 0;
+      
+      /* Container query breakpoints */
+      --container-xs: 20rem;   /* 320px */
+      --container-sm: 24rem;   /* 384px */
+      --container-md: 28rem;   /* 448px */
+      --container-lg: 32rem;   /* 512px */
+      --container-xl: 36rem;   /* 576px */
+      --container-2xl: 42rem;  /* 672px */
+    }
+    
+    /* Chunky typography system */
+    .chunky-header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xs); /* Minimal gap between H2 and H3 */
+    }
+    
+    .chunky-h2 {
+      font-family: var(--font-rajdhani);
+      font-weight: 700;
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      line-height: 1.1;
+      color: var(--color-card-foreground);
+      letter-spacing: -0.02em;
+    }
+    
+    .chunky-h3 {
+      font-family: var(--font-noto-serif);
+      font-weight: 400;
+      font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+      line-height: 1.3;
+      color: var(--color-muted-foreground);
+      margin-top: 0;
+    }
+  }
+  
+  @layer components {
+    /* Performance optimizations */
+    .content-visibility-auto {
+      content-visibility: auto;
+      contain-intrinsic-size: 0 500px;
+    }
+    
+    /* Container query utilities */
+    .container-query-component {
+      container-type: inline-size;
+      container-name: component;
+    }
+    
+    /* Scroll-driven animation base */
+    .scroll-reveal {
+      animation-timeline: scroll();
+      animation-range: entry 0% cover 30%;
+    }
+    
+    /* Advanced grid systems */
+    .masonry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(var(--container-sm), 1fr));
+      grid-template-rows: masonry; /* CSS Grid Level 3 */
+      gap: var(--spacing-lg);
+    }
+    
+    /* Fallback for browsers without masonry support */
+    @supports not (grid-template-rows: masonry) {
+      .masonry-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--container-sm), 1fr));
+        gap: var(--spacing-lg);
+      }
+    }
+  }
+  
+  @layer patterns {
+    /* Layout Pattern 1: Scroll-Driven Reveal Theater */
+    .layout-scroll-theater {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .scroll-reveal-content {
+      transform: translateX(-100px);
+      opacity: 0;
+      animation: scroll-reveal-in both linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 50%;
+    }
+    
+    @keyframes scroll-reveal-in {
+      from {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    /* Layout Pattern 2: Anchor-Tethered Hub */
+    .layout-anchor-hub {
+      position: relative;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--spacing-2xl);
+      align-items: start;
+    }
+    
+    .anchor-target {
+      anchor-name: --anchor-point;
+    }
+    
+    .anchor-positioned {
+      position: absolute;
+      position-anchor: --anchor-point;
+      top: anchor(bottom);
+      left: anchor(left);
+      position-fallback: --fallback-positions;
+    }
+    
+    @position-fallback --fallback-positions {
+      @try {
+        top: anchor(top);
+        left: anchor(right);
+      }
+      @try {
+        bottom: anchor(top);
+        left: anchor(left);
+      }
+    }
+    
+    /* Layout Pattern 3: Container-Responsive Components */
+    .layout-container-adaptive {
+      container-type: inline-size;
+      container-name: adaptive-layout;
+    }
+    
+    @container adaptive-layout (max-width: 400px) {
+      .adaptive-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+      }
+    }
+    
+    @container adaptive-layout (min-width: 401px) and (max-width: 800px) {
+      .adaptive-content {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-md);
+      }
+    }
+    
+    @container adaptive-layout (min-width: 801px) {
+      .adaptive-content {
+        grid-template-columns: 2fr 1fr;
+        gap: var(--spacing-lg);
+      }
+    }
+  }
+  
+  @layer utilities {
+    /* Progressive enhancement utilities */
+    .supports-anchor-positioning {
+      display: none;
+    }
+    
+    @supports (anchor-name: --test) {
+      .supports-anchor-positioning {
+        display: block;
+      }
+      .no-anchor-positioning {
+        display: none;
+      }
+    }
+    
+    .supports-masonry {
+      display: none;
+    }
+    
+    @supports (grid-template-rows: masonry) {
+      .supports-masonry {
+        display: block;
+      }
+      .no-masonry {
+        display: none;
+      }
+    }
+    
+    .supports-container-queries {
+      display: none;
+    }
+    
+    @supports (container-type: inline-size) {
+      .supports-container-queries {
+        display: block;
+      }
+      .no-container-queries {
+        display: none;
+      }
+    }
+    
+    /* Mathematical spacing utilities */
+    .gap-golden {
+      gap: calc(var(--spacing-base) * var(--spacing-ratio));
+    }
+    
+    .margin-golden {
+      margin: calc(var(--spacing-base) * var(--spacing-ratio));
+    }
+    
+    .padding-golden {
+      padding: calc(var(--spacing-base) * var(--spacing-ratio));
+    }
   }
 }
 

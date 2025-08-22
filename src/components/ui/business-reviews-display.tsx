@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { Star, Quote, Clock } from '@phosphor-icons/react'
+import { ClockIcon, StarIcon } from '@heroicons/react/24/outline';
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { useBusinessReviews } from '@/hooks/useBusinessReviews'
@@ -62,7 +62,7 @@ export function BusinessReviewsDisplay({
           <div className="flex items-center gap-xs">
             <div className="flex items-center">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star
+                <StarIcon
                   key={i}
                   className={`h-4 w-4 ${
                     i < Math.floor(reviews.overallRating)
@@ -94,7 +94,7 @@ export function BusinessReviewsDisplay({
       
       {reviews.lastUpdated && (
         <p className="text-xs text-muted-foreground">
-          <Clock className="inline h-3 w-3 mr-xs" />
+          <ClockIcon className="inline h-3 w-3 mr-xs" />
           Last updated: {reviews.lastUpdated}
         </p>
       )}
@@ -115,7 +115,7 @@ function ReviewCard({ review, compact }: ReviewCardProps) {
           <div className="flex items-center gap-xs flex-shrink-0">
             <div className="flex items-center">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star
+                <StarIcon
                   key={i}
                   className={`h-3 w-3 ${
                     i < review.rating
@@ -155,7 +155,7 @@ function ReviewCard({ review, compact }: ReviewCardProps) {
               </span>
               <div className="flex items-center">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star
+                  <StarIcon
                     key={i}
                     className={`h-3 w-3 ${
                       i < review.rating
@@ -229,7 +229,7 @@ export function BusinessRatingBadge({
     <div className={`flex items-center gap-xs ${className}`}>
       <div className="flex items-center">
         {Array.from({ length: 5 }).map((_, i) => (
-          <Star
+          <StarIcon
             key={i}
             className={`h-3 w-3 ${
               i < Math.floor(reviews.overallRating)

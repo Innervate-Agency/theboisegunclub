@@ -3,7 +3,7 @@
 import React from 'react'
 import { MotionDiv } from '@/components/ui/optimized-motion'
 import { useTacticalTracker } from '@/hooks/useTacticalTracker'
-import { Trophy, Target, Star } from '@phosphor-icons/react'
+import { CursorArrowRaysIcon, StarIcon } from '@heroicons/react/24/outline';
 
 interface BrassCounterProps {
   className?: string
@@ -48,12 +48,12 @@ export function BrassCounter({ className, showProgress = false }: BrassCounterPr
             )}
             {stats.achievements.includes('marksman') && (
               <div title="Marksman - 50+ page visits">
-                <Target className="size-3 text-rusty-orange" />
+                <CursorArrowRaysIcon className="size-3 text-rusty-orange" />
               </div>
             )}
             {stats.achievements.includes('regular') && (
               <div title="Range Regular - 10+ sessions">
-                <Star className="size-3 text-slate-blue" />
+                <StarIcon className="size-3 text-slate-blue" />
               </div>
             )}
           </div>

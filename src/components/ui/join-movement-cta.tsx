@@ -4,13 +4,7 @@ import Link from 'next/link'
 import { MotionDiv, viewportAnimation } from '@/components/ui/optimized-motion'
 import { Button } from './button'
 import { Badge } from './badge'
-import { 
-  ArrowRight,
-  Shield, 
-  Users,
-  MapPin,
-  Handshake
-} from '@phosphor-icons/react'
+import { ArrowRightIcon, MapPinIcon, ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 interface JoinMovementCTAProps {
   title?: string
@@ -44,13 +38,13 @@ export function JoinMovementCTA({
 
       {/* Floating Elements */}
       <div className="absolute top-8 left-8 opacity-10">
-        <Shield className="h-16 w-16 text-slate-blue" weight="bold" />
+        <ShieldCheckIcon className="h-16 w-16 text-slate-blue" weight="bold" />
       </div>
       <div className="absolute bottom-8 right-8 opacity-10">
-        <Users className="h-12 w-12 text-sagebrush-green" weight="bold" />
+        <UsersIcon className="h-12 w-12 text-sagebrush-green" weight="bold" />
       </div>
       <div className="absolute top-1/2 right-16 opacity-5">
-        <MapPin className="h-20 w-20 text-canyon-clay" weight="bold" />
+        <MapPinIcon className="h-20 w-20 text-canyon-clay" weight="bold" />
       </div>
 
       {/* Content */}
@@ -63,7 +57,7 @@ export function JoinMovementCTA({
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex justify-center"
           >
-            <Badge variant="slate-blue" size="lg" className="font-rajdhani font-bold">
+            <Badge variant="slate-blue" className="font-rajdhani font-bold">
               <Handshake className="h-4 w-4 mr-xs" weight="bold" />
               {badgeText}
             </Badge>
@@ -110,7 +104,7 @@ export function JoinMovementCTA({
               animationType="arrow"
             >
               {primaryActionText}
-              <ArrowRight className="ml-sm h-5 w-5" weight="bold" />
+              <ArrowRightIcon className="ml-sm h-5 w-5" weight="bold" />
             </Button>
           </Link>
           <Link href="/about">
@@ -133,15 +127,15 @@ export function JoinMovementCTA({
           className="flex flex-wrap justify-center gap-lg text-body-sm text-muted-foreground font-rajdhani"
         >
           <div className="flex items-center gap-xs">
-            <MapPin className="h-4 w-4" weight="bold" />
+            <MapPinIcon className="h-4 w-4" weight="bold" />
             <span>8 Treasure Valley Locations</span>
           </div>
           <div className="flex items-center gap-xs">
-            <Users className="h-4 w-4" weight="bold" />
+            <UsersIcon className="h-4 w-4" weight="bold" />
             <span>5,000+ Community Members</span>
           </div>
           <div className="flex items-center gap-xs">
-            <Shield className="h-4 w-4" weight="bold" />
+            <ShieldCheckIcon className="h-4 w-4" weight="bold" />
             <span>100% Idaho Owned</span>
           </div>
         </MotionDiv>

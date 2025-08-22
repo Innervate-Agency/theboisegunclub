@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { MagnifyingGlassIcon as Search, XMarkIcon as X } from '@heroicons/react/24/outline'
+import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
@@ -44,7 +44,7 @@ export function SiteSearch({ className }: SiteSearchProps) {
     <Card className={`border-rusty-orange/20 ${className}`}>
       <CardHeader className="pb-4">
         <CardTitle className="font-rajdhani font-bold text-xl text-rusty-orange flex items-center gap-2">
-          <Search className="h-5 w-5" />
+          <MagnifyingGlassIcon className="h-5 w-5" />
           Search Our Community
         </CardTitle>
       </CardHeader>
@@ -65,7 +65,7 @@ export function SiteSearch({ className }: SiteSearchProps) {
                 onClick={clearSearch}
                 className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-rusty-orange transition-colors"
               >
-                <X className="h-4 w-4" />
+                <XMarkIcon className="h-4 w-4" />
               </button>
             )}
           </div>
@@ -82,7 +82,7 @@ export function SiteSearch({ className }: SiteSearchProps) {
               </div>
             ) : (
               <div className="flex items-center gap-2">
-                <Search className="h-4 w-4" />
+                <MagnifyingGlassIcon className="h-4 w-4" />
                 Search Community
               </div>
             )}

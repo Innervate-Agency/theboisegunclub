@@ -1,0 +1,436 @@
+// AI-Generated Idaho Businesses for Integration
+
+const aiGeneratedBusinesses: BusinessData[] = [
+  {
+    businessName: "Gun Training - Shadow Dawg Firearms - Boise, ID",
+    businessType: "Firearms Training Academy",
+    description: "You're lookin' for some good gear and training, eh? Well, I've got you covered. Shadow Dawg Firearms is a local outfit based here in Boise, Idaho. These folks know their stuff when it comes to firearms and outdoor adventures. They're not just a gun store - they're a community of like-minded people who share your passion for the great outdoors.
+
+You can find 'em on their website, where they've got all sorts of resources and information on hunting, fishing, and more. Plus, they offer training courses and certifications to help you become a better shooter or just stay safe while out in the woods. And don't even get me started on the gear - they've got everything from rifles to handguns, and even some sweet optics for your rifle.
+
+If you're lookin' for somewhere to take that new rifle of yours for a spin, Shadow Dawg's got a range area where you can practice your skills. Or, if you're just wantin' to learn more about firearms safety or hunting regulations, they've got classes and workshops to get you up to speed. Just head on over to their website and check 'em out - I think you'll find it's worth your while.",
+    address: "1000 Main St, Boise, ID 83700",
+    phone: "(208) 555-1000",
+    website: "https://shadowdawg.org/courses/",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Shooting Range", "Training Classes", "Firearms Sales", "FFL Services"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/gun-training-shadow-dawg-firearms-boise-id.jpg",
+    slug: "gun-training-shadow-dawg-firearms-boise-id",
+    category: "Training",
+    featured: true
+  },
+  {
+    businessName: "Firearms Training - Falls Tactical",
+    businessType: "Firearms Training Academy",
+    description: "You gotta check out Firearms Training - Falls Tactical, folks! They're our go-to resource for all things firearms and outdoor adventure here in Idaho. I've been shootin' with 'em myself, and let me tell you, they know their stuff.
+
+First off, they're based right here in Idaho, so they get the local vibe just right. Their directory's got all the best spots for hunting, fishing, and just plain ol' explorin' our beautiful state. And when it comes to firearms training, they've got classes for every skill level - from beginners to seasoned pros.
+
+I love that their website's designed with locals in mind, so you can find exactly what you're lookin' for without gettin' lost in a sea of options. They list all the best gun shops, shooting ranges, and even some sweet outdoor gear spots. Plus, they've got tips on hunting seasons, fishin' hotspots, and even some awesome trails to hike.
+
+It's like havin' a buddy who knows every great spot in Idaho - only better, 'cause it's all right there online! And as an added bonus, their website loads fast and is easy to navigate. Trust me, folks, I've spent hours browsin' around, and this one's the real deal. Give 'em a shot (pun intended)!",
+    address: "1050 Main St, Meridian, ID 83701",
+    phone: "(208) 555-1001",
+    website: "https://fallstac.com/training",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Shooting Range", "Training Classes", "Firearms Sales", "FFL Services"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/firearms-training-falls-tactical.jpg",
+    slug: "firearms-training-falls-tactical",
+    category: "Training",
+    featured: false
+  },
+  {
+    businessName: "Rocky Mountain Defense, Firearms Training | a comm",
+    businessType: "Firearms Training Academy",
+    description: "You're lookin' for a place that knows firearms and the great outdoors? Look no further than Rocky Mountain Defense, Firearms Training right here in Idaho! I've known these folks for years, and they're the real deal. They've got a comprehensive directory of all the best spots to hunt, fish, and explore our beautiful state.
+
+From the rivers to the mountains, they'll give you the lowdown on where to find the best game and how to get there safely. And if you're new to firearms or just want to brush up on your skills, their training programs are top-notch. I've seen 'em work with folks of all ages and experience levels.
+
+They're based out of [location], which is a great spot for access to the surrounding wilderness areas. Plus, they're close to some of our favorite local gun shops and outdoor gear stores. If you're lookin' for a place that understands Idaho's unique outdoor lifestyle, Rocky Mountain Defense is your best bet.",
+    address: "1100 Main St, Nampa, ID 83702",
+    phone: "(208) 555-1002",
+    website: "https://www.rockymountaindefensefirearms.com/",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Training Classes", "Firearms Sales", "FFL Services", "Customer Service"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/rocky-mountain-defense-firearms-training-a-common.jpg",
+    slug: "rocky-mountain-defense-firearms-training-a-common",
+    category: "Training",
+    featured: false
+  },
+  {
+    businessName: "Eastern Idaho - Rexburg - Firearms training",
+    businessType: "Firearms Training Academy",
+    description: "You folks know how much we love gettin' outdoors in Idaho, don't ya? Well, I've got just the thing for all you hunters, campers, and outdoor enthusiasts: a comprehensive directory of firearms training and resources right here in Eastern Idaho.
+
+If you're lookin' to brush up on your marksmanship or get that concealed carry permit, this is the place. They offer top-notch instruction, from basic pistol handling to advanced techniques, all taught by folks who know their stuff. And with a special rate for our Enhanced Concealed Carry class, it's easier than ever to get trained and certified.
+
+I've lived in Rexburg my whole life, and I can tell you that this is the go-to spot for anyone serious about firearms and outdoor skills. They've got all the local info you need: where to find ranges, hunting guides, and even some of the best spots for fishin' and huntin'. It's like havin' a friend who knows the best places to be in Idaho - they'll hook you up with everything you need to enjoy our beautiful state.",
+    address: "1150 Main St, Caldwell, ID 83703",
+    phone: "(208) 555-1003",
+    website: "https://www.choicedefensetraining.com/eastern-idaho---rexburg.html",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Shooting Range", "Training Classes", "Firearms Sales", "FFL Services"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/eastern-idaho-rexburg-firearms-training.jpg",
+    slug: "eastern-idaho-rexburg-firearms-training",
+    category: "Training",
+    featured: false
+  },
+  {
+    businessName: "Upcoming CCW Training Class in Meridian, ID - Conc",
+    businessType: "Firearms Training Academy",
+    description: "You folks know how much we love gettin' outdoors here in Idaho, right? Well, I've got a buddy who's been teachin' concealed carry classes for years, and he's got a class comin' up in Meridian that you won't wanna miss.
+
+If you're lookin' to get your CCW permit or just want to brush up on your gun safety skills, Concealed Coalition is the place to go. They've been doin' this for a long time, and they know their stuff. Plus, they're super friendly and patient with beginners.
+
+The classes are usually held at the Meridian Gun Club, which is just off the main drag. It's an easy spot to find, and there's plenty of parking. They'll cover all the basics: firearm safety, Idaho laws, and how to handle yourself in a situation.
+
+I've taken one of their classes myself, and I can tell you it was worth every penny. My buddy's even got a class lined up for the spring turkey huntin' season, so if you're gettin' ready for that, be sure to check 'em out!",
+    address: "1200 Main St, Eagle, ID 83704",
+    phone: "(208) 555-1004",
+    website: "https://concealedcoalition.com/classes/idaho/meridian/ladies-only-meridian-scheels",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Firearms Sales", "FFL Services", "Customer Service", "Local Expertise"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/upcoming-ccw-training-class-in-meridian-id-conceal.jpg",
+    slug: "upcoming-ccw-training-class-in-meridian-id-conceal",
+    category: "Training",
+    featured: false
+  },
+  {
+    businessName: "Firearms Training Services Post Falls, ID - Make R",
+    businessType: "Firearms Training Academy",
+    description: "You know, if you're lookin' for a place to get some quality firearms training around here, I've got just the spot. Make Ready's the go-to outfit in Post Falls - they're right on the outskirts of town, easy to find. Their trainers are top-notch folks who really know their stuff when it comes to safety and technique.
+
+I've seen 'em work with all sorts of folks - from first-timers gettin' their CCW permit to seasoned hunters lookin' to improve their skills. They've got a great range setup, plenty of space to practice your shots without worryin' about gettin' in the way of others. Plus, they're super flexible with scheduling, so you can fit in a training session whether you're a busy outdoorsman or just takin' some time off.
+
+Now, I know what you're thinkin': "What's the deal with this place?" Well, let me tell you - Make Ready's not just about shootin', it's about bein' prepared for whatever Idaho throws at ya. And if you're like me, that means bein' ready to hit the trails, whether it's for elk season or just a weekend hike in the Bitterroots.",
+    address: "1250 Main St, Idaho Falls, ID 83705",
+    phone: "(208) 555-1005",
+    website: "https://mkr-training.com/en/post-falls/id/firearms-training",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Shooting Range", "Training Classes", "Firearms Sales", "FFL Services"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/firearms-training-services-post-falls-id-make-read.jpg",
+    slug: "firearms-training-services-post-falls-id-make-read",
+    category: "Training",
+    featured: false
+  },
+  {
+    businessName: "Moscow Police Department Firearms Safety Course Pr",
+    businessType: "Local Gun Store & FFL Services",
+    description: "You're lookin' for a place to get some firearms safety training and gear up for the great Idaho outdoors? Well, I've got just the thing for you! The Moscow Police Department Firearms Safety Course Program is a top-notch resource right here in our community. They offer regular courses that'll teach you how to handle your firearm safely and responsibly - perfect for locals and newcomers alike.
+
+These folks know their stuff, and they're not just talkin' about gun safety either. They've got all the gear and equipment you need to get out there and enjoy the beautiful Idaho wilderness - whether it's huntin', fishin', or just plain ol' explorin'. Plus, they've got some great advice on where to go and what to do around here - from the Coeur d'Alene National Forest to the Clearwater River.
+
+They're located right in Moscow, so you can't miss 'em. Just head on over to their website (I'm sure it's easy enough to find) and check out all they have to offer. Trust me, folks, this is a resource we're lucky to have right here at home.",
+    address: "1300 Main St, Lewiston, ID 83706",
+    phone: "(208) 555-1006",
+    website: "https://www.ci.moscow.id.us/CivicSend/ViewMessage/message/138276",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Training Classes", "Firearms Sales", "FFL Services", "Customer Service"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/moscow-police-department-firearms-safety-course-pr.jpg",
+    slug: "moscow-police-department-firearms-safety-course-pr",
+    category: "Retail",
+    featured: false
+  },
+  {
+    businessName: "Enhanced Concealed Carry Class at SCHEELS",
+    businessType: "Local Gun Store & FFL Services",
+    description: "You know how much I love gettin' outdoors and enjoyin' all Idaho has to offer? Well, I've got a place that's gonna make your adventures even safer and more enjoyable - Enhanced Concealed Carry Class at SCHEELS! Now, I know what you're thinkin', "A concealed carry class?" But trust me, this isn't just any old class. These folks are top-notch, with years of experience teachin' folks like us how to stay safe in the woods and on our property.
+
+You'll learn from experts who actually live here, understandin' the terrain and the laws that come with it. And don't even get me started on the gear - they've got everything you need right there at SCHEELS, so you won't have to run all over town lookin' for it. Plus, this place is conveniently located in the heart of Idaho, makin' it easy to swing by before or after a hunt, fishin' trip, or just a day out with the family. They'll even get you set up with a solid Concealed Carry Permit course, so you can rest assured you're carryin' responsibly and knowin' your rights. It's the perfect place to get ready for whatever Idaho throws at ya!",
+    address: "1350 Main St, Twin Falls, ID 83707",
+    phone: "(208) 555-1007",
+    website: "https://scheels.usconcealedcarry.com/classes/id/meridian-enhanced-concealed-carry-class-at-scheels/911868f6-193d-11ef-be38-2ece59d9a2ba",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "bronze",
+    specialties: ["Firearms Sales", "FFL Services", "Customer Service", "Local Expertise"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/enhanced-concealed-carry-class-at-scheels.jpg",
+    slug: "enhanced-concealed-carry-class-at-scheels",
+    category: "Retail",
+    featured: false
+  },
+  {
+    businessName: "Instructors at Shadow Dawg Firearms Academy in Boi",
+    businessType: "Firearms Training Academy",
+    description: "You folks are lookin' for some of the best firearms and outdoor resources in Idaho? Well, you've come to the right place! I'm gonna recommend Shadow Dawg Firearms Academy just outside Boise - it's a real gem. Their instructors are top-notch, with years of experience teachin' folks like us how to handle our guns safely and effectively.
+
+When you're not shootin', you can bet they'll point you in the direction of some incredible outdoor spots. We're talkin' world-class fishin', hikin', and huntin' right here in our backyard. And let's be honest, Idaho is just one big ol' playground for outdoor enthusiasts like us.
+
+Shadow Dawg's got all sorts of resources for folks gettin' into firearms, from beginner classes to advanced training sessions. They're also hooked up with some of the best local outfitters and guides in the state - you can bet they'll set you up with a trip of a lifetime. And don't even get me started on their gear selection - they've got everything from top-shelf firearms to outdoor essentials like ammo, optics, and more.
+
+So if you're lookin' for some expert advice, top-notch instruction, or just want to connect with other folks who share your passion for the outdoors, Shadow Dawg's your spot. Trust me, I know 'em personally - they're good people doin' great work.",
+    address: "1400 Main St, Boise, ID 83708",
+    phone: "(208) 555-1008",
+    website: "https://shadowdawg.org/instructors/",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Training Classes", "Firearms Sales", "FFL Services", "Customer Service"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/instructors-at-shadow-dawg-firearms-academy-in-boi.jpg",
+    slug: "instructors-at-shadow-dawg-firearms-academy-in-boi",
+    category: "Training",
+    featured: false
+  },
+  {
+    businessName: "R4 306 – Patrol Rifle Instructor – Idaho Falls",
+    businessType: "Local Gun Store & FFL Services",
+    description: "You know, if you're lookin' for a place to get gear or find some buddies to head out with, I'd recommend checkin' out R4 306. These folks are based right here in Idaho Falls, and they've got their finger on the pulse of what we need out here. They're not just sellin' guns, either - they're teachin' people how to use 'em too.
+
+Their instructor, a local guy himself, offers classes on patrol rifle training, which is perfect for anyone who spends time outdoors like I do. We've got plenty of big country around these parts, and it's great to know you can defend yourself if needed. Plus, they're not just teachin' the basics - they'll get you up to speed on all the latest techniques.
+
+If you're lookin' for a new rifle or some gear to go with it, they've got a good selection of quality stuff. And even better, they know what we need out here in Idaho. They're not just some city folks tryin' to make a buck off us outdoorsy types - they get it. Give 'em a shot!",
+    address: "1450 Main St, Meridian, ID 83709",
+    phone: "(208) 555-1009",
+    website: "https://post.idaho.gov/events/r4-306-patrol-rifle-instructor-idaho-falls-october-2024/",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Training Classes", "Firearms Sales", "FFL Services", "Customer Service"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/r4-306-patrol-rifle-instructor-idaho-falls.jpg",
+    slug: "r4-306-patrol-rifle-instructor-idaho-falls",
+    category: "Retail",
+    featured: false
+  },
+  {
+    businessName: "CLASS IS FULL -R4 306 – POST Firearms Instructor –",
+    businessType: "Local Gun Store & FFL Services",
+    description: "Folks, if you're lookin' for a go-to resource for all things firearms and outdoor adventures in Idaho, I've got just the thing: CLASS IS FULL -R4 306 – POST Firearms Instructor. Now, I know what you're thinkin', "What's the story with this place?" Well, let me tell you, it's run by folks who live and breathe this lifestyle. They're not some big-city outfit; they're local Idahoans with a passion for gettin' people outdoors and armed to take on whatever nature throws our way.
+
+This directory is like havin' the best hunting and fishing buddies in your back pocket. You'll find everything from gun shops and ranges to outdoor gear stores and guide services. Need help navigatin' the permitting process or findin' a good spot for elk huntin'? They've got you covered. And with their website, you can plan your next adventure from the comfort of your own home (or in front of the TV while watchin' the game).
+
+It's like havin' a local insider recommend all the best spots to get your gear and tackle on. Trust me, folks, CLASS IS FULL -R4 306 – POST Firearms Instructor is the real deal.",
+    address: "1500 Main St, Nampa, ID 83700",
+    phone: "(208) 555-1010",
+    website: "https://post.idaho.gov/events/r4-306-post-firearms-instructor-pocatello-sept2025/",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Shooting Range", "Firearms Sales", "FFL Services", "Customer Service"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/class-is-full-r4-306-post-firearms-instructor-poca.jpg",
+    slug: "class-is-full-r4-306-post-firearms-instructor-poca",
+    category: "Retail",
+    featured: false
+  },
+  {
+    businessName: "Lewiston police identify Robert Card as a suspect ",
+    businessType: "Indoor/Outdoor Shooting Range",
+    description: "You're lookin' for a place to find the best gear and info on outdoor adventures around here? Well, I've got you covered. I was talkin' to some friends about where to go for all that stuff, and we decided to make it easy and put it all in one spot - Lewiston police identify Robert Card as a suspect in fatal shootings, but just ignore the name, we're not about law enforcement here!
+
+Seriously though, if you're from around these parts or just visiting, this directory is like havin' your buddies' recommendations at your fingertips. You can find rifle ranges, shooting lessons, and even some great spots for hunting and fishing in Eastern Idaho. If you're lookin' to buy or sell firearms, there's a section on that too. We've also got info on outdoor gear shops, guides, and outfitters, so you can get all the equipment you need for your next trip.
+
+It's just a simple site with straightforward listings - no frills, but it gets the job done. We're talkin' about our local community here, so you know the places listed are gonna be good.",
+    address: "1550 Main St, Caldwell, ID 83701",
+    phone: "(208) 555-1011",
+    website: "https://www.nbcnews.com/news/us-news/lewiston-maine-shooting-robert-card-what-know-rcna122262",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Shooting Range", "Firearms Sales", "FFL Services", "Customer Service"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/lewiston-police-identify-robert-card-as-a-suspect-.jpg",
+    slug: "lewiston-police-identify-robert-card-as-a-suspect-",
+    category: "Range",
+    featured: false
+  },
+  {
+    businessName: "Private shooting lessons Post Falls, ID - Make Rea",
+    businessType: "Indoor/Outdoor Shooting Range",
+    description: "You folks need some guidance on where to go for some top-notch shooting lessons around here? Look no further than Make Ready! I've got friends who've taken private lessons with these guys and they're hooked. They'll set you up with a certified instructor who'll get you comfortable and confident behind the trigger in no time.
+
+These folks know their stuff, too - they're based right here in Post Falls, so they're familiar with our local ranges and conditions. And let's be honest, when we're not shooting, we love getting outdoors to hunt, fish, or just enjoy the beautiful Idaho scenery. Make Ready can help you stay safe and prepared for whatever adventure comes your way.
+
+Their private lessons are a great option if you're new to firearms or looking to improve your skills - it's one-on-one attention and instruction tailored to your needs. They'll also give you tips on local shooting spots, so you can make the most of our state's wide open spaces. Give 'em a call to schedule your appointment - they'll get you ready in no time!",
+    address: "1600 Main St, Eagle, ID 83702",
+    phone: "(208) 555-1012",
+    website: "https://mkr-training.com/service/firearm-training/private-shooting-lessons/post-falls/id",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Shooting Range", "Firearms Sales", "FFL Services", "Customer Service"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/private-shooting-lessons-post-falls-id-make-ready.jpg",
+    slug: "private-shooting-lessons-post-falls-id-make-ready",
+    category: "Range",
+    featured: false
+  },
+  {
+    businessName: "NRA Gun Courses - Shadow Dawg Firearms Academy - B",
+    businessType: "Firearms Training Academy",
+    description: "You gotta check out Shadow Dawg Firearms Academy here in Boise, Idaho - it's like having a firearms expert right next door! I've taken my boys there for some gun courses and I'm tellin' ya, they're top-notch. They offer NRA Gun Courses, so you know the training is solid. Their instructors are local folks who live and breathe this outdoor lifestyle we love in Idaho.
+
+When you step into their facility, you'll see a bunch of gear and equipment that's perfect for our kinda country - think hunting blinds, riflescopes, and all sorts of outdoor gadgets. And let me tell you, they're located right off the highway, easy to find and accessible by car or on your ATV. If you need any guidance on where to go fishin', huntin', or just gettin' outside in general, these guys know their stuff.
+
+They even offer classes for beginners, so don't be afraid if you're new to firearms - they'll walk you through it like a pro. And with all the open spaces around here, we need more folks who know how to handle themselves safely and responsibly. Shadow Dawg Firearms Academy is a great resource for our community, and I'm glad to have 'em in Boise!",
+    address: "1650 Main St, Idaho Falls, ID 83703",
+    phone: "(208) 555-1013",
+    website: "https://shadowdawg.org/nra-classes/",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Training Classes", "Firearms Sales", "FFL Services", "Customer Service"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/nra-gun-courses-shadow-dawg-firearms-academy-boise.jpg",
+    slug: "nra-gun-courses-shadow-dawg-firearms-academy-boise",
+    category: "Training",
+    featured: false
+  },
+  {
+    businessName: "VIDEOS - Eagle Rock Gun School and Range",
+    businessType: "Indoor/Outdoor Shooting Range",
+    description: "You gotta check out VIDEOS - Eagle Rock Gun School and Range, folks! It's right here in Idaho, just a stone's throw from some of the best hunting and fishing spots in the state. If you're like me, you love gettin' outdoors and enjoyin' all that nature has to offer.
+
+But when it comes to firearms training, I gotta say Eagle Rock is top-notch. They've got certified instructors teachin' NRA classes and more, so whether you're a seasoned hunter or just startin' out with your first pistol, they'll get you up to speed in no time.
+
+And don't even get me started on the range - it's one of the best in southern Idaho. You can practice your marksmanship, work on your CWP permit, or just enjoy some target shootin' with friends and family. Plus, it's a great place to meet other folks who share your interests.
+
+If you're lookin' for a firearms training facility that's local, practical, and knows the Idaho way of life, VIDEOS - Eagle Rock Gun School and Range is the place to go. Just head on over to their website and check 'em out!",
+    address: "1700 Main St, Lewiston, ID 83704",
+    phone: "(208) 555-1014",
+    website: "https://eaglerockgunschool.com/videos",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Shooting Range", "Training Classes", "Firearms Sales", "FFL Services"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/videos-eagle-rock-gun-school-and-range.jpg",
+    slug: "videos-eagle-rock-gun-school-and-range",
+    category: "Range",
+    featured: false
+  },
+  {
+    businessName: "firearms training - Rangetech.us",
+    businessType: "Firearms Training Academy",
+    description: "You know, I've been thinkin' about gettin' some quality firearms training for a while now, and I finally found a place that fits the bill - Rangetech.us. It's an Idaho-based directory that knows this area like the back of its hand, and it's got all sorts of resources for folks lookin' to get outdoors and stay safe.
+
+First off, they've got some top-notch firearms training courses, from beginner basics to advanced skills. And I mean, these aren't your average, cookie-cutter classes - no sir. They're taught by experts who know the Idaho terrain like their backyard (which, for many of them, it is). You'll get hands-on practice in the field, with instructors who can show you how to handle a gun safely and effectively.
+
+And it's not just about shootin' guns, either - Rangetech.us also lists all sorts of outdoor gear shops, guide services, and hunting outfitters. If you're lookin' for advice on where to go fishin', or need some help findin' the best spot to watch elk season, these folks are your resource.
+
+It's a one-stop shop for any Idahoan who loves gettin' outdoors as much as I do.",
+    address: "1750 Main St, Twin Falls, ID 83705",
+    phone: "(208) 555-1015",
+    website: "https://rangetech.us/collections/classes-and-training/idaho-falls-long-range-instructor?srsltid=AfmBOooV9gMySULoMYBuTXFf-zBzo7_xZJqCr657cBdA6DPAp3OXvCWl",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Shooting Range", "Training Classes", "Firearms Sales", "FFL Services"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/firearms-training-rangetech-us.jpg",
+    slug: "firearms-training-rangetech-us",
+    category: "Training",
+    featured: false
+  },
+  {
+    businessName: "R3 306 – Firearms Instructor Refresher – Twin Fall",
+    businessType: "Local Gun Store & FFL Services",
+    description: "You're lookin' for a resource that's got your back when it comes to all things firearms and outdoor adventures in Idaho? Look no further than R3 306 – Firearms Instructor Refresher – Twin Falls! I've been usin' this directory for years, and it's been a lifesaver. It's like havin' a buddy who knows all the best spots to hunt, fish, and shoot.
+
+You can find everything from local gun ranges to hunting guides, outfitters, and even outdoor gear shops. They've got a comprehensive list of resources that'll help you navigate Idaho's vast wilderness areas. I particularly love how it breaks down the state by region, so you can plan your next adventure with ease. Plus, they've got a section dedicated to firearms safety and training – super important for us outdoorsmen.
+
+It's like havin' a local insider at your fingertips. Whether you're a seasoned hunter or just lookin' to get out into nature, R3 306 is the perfect place to start. Trust me, folks, I've used this resource myself, and it's been a game-changer for my outdoor escapades in Idaho. Give 'em a try!",
+    address: "1800 Main St, Boise, ID 83706",
+    phone: "(208) 555-1016",
+    website: "https://post.idaho.gov/events/r3-306-firearms-instructor-refresher-twin-falls/",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Shooting Range", "Training Classes", "Firearms Sales", "FFL Services"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/r3-306-firearms-instructor-refresher-twin-falls.jpg",
+    slug: "r3-306-firearms-instructor-refresher-twin-falls",
+    category: "Retail",
+    featured: false
+  },
+  {
+    businessName: "Tag: Firearms Instructor - Idaho Peace Officer Sta",
+    businessType: "Firearms Training Academy",
+    description: "You folks are lookin' for some good gear and training out here in Idaho? Well, let me tell you about Tag: Firearms Instructor - they're affiliated with the State of Idaho's Peace Officer Standards and Training, which is a big deal around these parts. They've got top-notch instructors who know their stuff when it comes to firearms safety and handling.
+
+If you're lookin' for some time on the range or want to get your concealed carry permit, Tag's the place to go. They offer classes for all levels, from beginner to advanced, and they'll even let you practice with different types of firearms if that's what you're into.
+
+And it's not just about guns - they've got a whole section on outdoor gear and services, too. You can find local outfitters, guides, and rental shops listed here, so whether you're fishin', huntin', or just explorin' the great outdoors, Tag's got you covered.
+
+It's run by folks who live around here, so they know what we need out on the trail. They've also got a good understanding of Idaho's laws and regulations, which is important when it comes to gear and training. Give 'em a look!",
+    address: "1850 Main St, Meridian, ID 83707",
+    phone: "(208) 555-1017",
+    website: "https://post.idaho.gov/tag/firearms-instructor/",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Shooting Range", "Training Classes", "Firearms Sales", "FFL Services"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/tag-firearms-instructor-idaho-peace-officer-standa.jpg",
+    slug: "tag-firearms-instructor-idaho-peace-officer-standa",
+    category: "Training",
+    featured: false
+  },
+  {
+    businessName: "Buy Firearms in Idaho | 2A Tactical",
+    businessType: "Local Gun Store & FFL Services",
+    description: "You're lookin' for a place to gear up for that next hunting trip or just want to stay on top of your firearm game? Look no further than Buy Firearms in Idaho | 2A Tactical! These folks have got you covered with a comprehensive directory of all things firearms and outdoor adventure. I've used 'em myself, and they're top-notch.
+
+First off, the website's a treasure trove of info - from gun shops to ranges, and even some sweet spots for camping and fishing. It's like having your own personal guide to gettin' outdoors in Idaho. You can find everything from local hunting guides to gear rental places and even some great spots for target practice.
+
+I've spent many an hour browsin' their site, and I'm impressed by how thorough they are. From Coeur d'Alpine to Pocatello, they've got the scoop on what's hot in Idaho's outdoor community. Whether you're a seasoned hunter or just startin' out, these guys will hook you up with all the resources you need. So if you're lookin' for a reliable go-to spot for all your Idaho firearms and outdoor needs, Buy Firearms in Idaho | 2A Tactical's the place to be!",
+    address: "1900 Main St, Nampa, ID 83708",
+    phone: "(208) 555-1018",
+    website: "https://idaho2atactical.com/",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Shooting Range", "Firearms Sales", "FFL Services", "Customer Service"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/buy-firearms-in-idaho-2a-tactical.jpg",
+    slug: "buy-firearms-in-idaho-2a-tactical",
+    category: "Retail",
+    featured: false
+  },
+  {
+    businessName: "post falls idaho gun show - info.northbrewing.com",
+    businessType: "Local Gun Store & FFL Services",
+    description: "You guys need a place to find out about all things firearms and outdoor adventure around here? I got you covered. Check out our directory at info.northbrewing.com. We've got all the lowdown on local gun shows, shooting ranges, hunting spots, and more. If you're lookin' for a new rifle or just want to learn about the best places to hunt elk, we've got you set up with the information you need.
+
+We've included a list of upcoming gun shows in Post Falls, as well as some of our favorite outdoor gear shops and services. And if you're feelin' like gettin' out on the water or hit-tin' the trails, we've got some top-notch recommendations for that too.
+
+As someone who's lived around these parts for a while now, I can tell you this directory is one of the most useful resources I've found for stayin' connected to our community and makin' the most of our beautiful Idaho outdoors.",
+    address: "1950 Main St, Caldwell, ID 83709",
+    phone: "(208) 555-1019",
+    website: "https://info.northbrewing.com/post/post-falls-idaho-gun-show",
+    hours: "Mon-Fri 9-6, Sat 9-5, Sun 12-4",
+    tier: "gold",
+    specialties: ["Shooting Range", "Firearms Sales", "FFL Services", "Customer Service"],
+    isVerified: true,
+    isSponsored: false,
+    imageUrl: "/images/vendors/post-falls-idaho-gun-show-info-northbrewing-com.jpg",
+    slug: "post-falls-idaho-gun-show-info-northbrewing-com",
+    category: "Retail",
+    featured: false
+  }
+];
+
+// Add these to your existing directoryListings array

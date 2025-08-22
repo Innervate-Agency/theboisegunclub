@@ -136,9 +136,7 @@ export function MegaHero({
             )}>
               {primaryCTA && (
                 <Button
-                  variant="accent"
-                  size="lg"
-                  onClick={primaryCTA.onClick}
+                  variant="default" onClick={primaryCTA.onClick}
                   className="shadow-present hover:shadow-elevated transition-all duration-150"
                 >
                   {primaryCTA.icon}
@@ -148,9 +146,7 @@ export function MegaHero({
               
               {secondaryCTA && (
                 <Button
-                  variant="secondary"
-                  size="lg"
-                  onClick={secondaryCTA.onClick}
+                  variant="outline" onClick={secondaryCTA.onClick}
                   className="shadow-flat hover:shadow-present transition-all duration-150"
                 >
                   {secondaryCTA.icon}

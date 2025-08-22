@@ -3,7 +3,7 @@
 import React from 'react'
 import { TestimonialCarousel, type TestimonialCarouselProps } from './testimonial-carousel'
 import { Badge } from './badge'
-import { Shield } from 'lucide-react'
+import { ShieldCheckIcon } from '@heroicons/react/24/outline';
 
 interface GoogleReview {
   id: string
@@ -87,8 +87,8 @@ export function ReviewsDisplay({
           </div>
           
           <div className="flex items-center justify-center gap-xs">
-            <Badge variant="secondary" size="sm">
-              <Shield className="size-3 mr-xs" />
+            <Badge variant="outline" size="sm">
+              <ShieldCheckIcon className="size-3 mr-xs" />
               Verified Google Reviews
             </Badge>
             <span className="text-body-xs text-muted-foreground">

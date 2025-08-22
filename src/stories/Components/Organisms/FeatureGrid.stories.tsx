@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { FeatureGrid } from '@/components/ui/feature-grid';
-import { Target, Shield, Users } from 'lucide-react';
+import { ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof FeatureGrid> = {
   title: 'Design System/Organisms/FeatureGrid',

@@ -41,8 +41,8 @@ const ThemeDemo = () => (
           </CardHeader>
           <CardContent className="space-y-base">
             <div className="flex gap-xs">
-              <Badge variant="default">Primary</Badge>
-              <Badge variant="secondary">Secondary</Badge>
+              <Badge variant="outline">Primary</Badge>
+              <Badge variant="outline">Secondary</Badge>
             </div>
             <Button className="w-full">Copper Orange Button</Button>
           </CardContent>

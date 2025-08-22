@@ -3,9 +3,7 @@
 import * as React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { 
-  ChevronLeft, ChevronRight, Calendar as CalendarIcon
-} from 'lucide-react'
+import { CalendarDaysIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { cn } from '@/lib/utils'
 
 // Event type for the sidebar calendar
@@ -113,7 +111,7 @@ export function SidebarCalendar({ events, className, onDateSelect }: SidebarCale
         {/* Calendar Header */}
         <div className="space-y-base">
           <div className="flex items-center gap-xs">
-            <CalendarIcon className="size-5 text-muted-foreground" />
+            <CalendarDaysIcon className="size-5 text-muted-foreground" />
             <h3 className="font-rajdhani font-bold text-heading-base text-card-foreground">Event Calendar</h3>
           </div>
         </div>
@@ -129,7 +127,7 @@ export function SidebarCalendar({ events, className, onDateSelect }: SidebarCale
               className="h-8 w-8 p-0 hover:bg-accent/50"
               title="Previous month"
             >
-              <ChevronLeft className="h-4 w-4" />
+              <ChevronLeftIcon className="h-4 w-4" />
             </Button>
             
             <Button
@@ -152,7 +150,7 @@ export function SidebarCalendar({ events, className, onDateSelect }: SidebarCale
               className="h-8 w-8 p-0 hover:bg-accent/50"
               title="Next month"
             >
-              <ChevronRight className="h-4 w-4" />
+              <ChevronRightIcon className="h-4 w-4" />
             </Button>
           </div>
 
@@ -249,7 +247,7 @@ export function SidebarCalendar({ events, className, onDateSelect }: SidebarCale
                   <div className={`w-2 h-2 rounded-full flex-shrink-0 ${eventTypeColors[event.eventType as keyof typeof eventTypeColors] || 'bg-muted'}`} />
                   <span className="text-muted-foreground truncate">{event.title}</span>
                   {event.featured && (
-                    <Badge variant="secondary" className="text-xs">Featured</Badge>
+                    <Badge variant="outline" className="text-xs">Featured</Badge>
                   )}
                 </div>
               ))}

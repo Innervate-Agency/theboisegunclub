@@ -10,22 +10,7 @@ import { Button } from "./button"
 import { SmartEventBadges } from "./smart-event-badges"
 import { EventCardTexture, CompetitionCardTexture, TexturedBackground } from "./textured-background"
 // Heroicons - Updated from Phosphor for consistency
-import { 
-  CalendarIcon as Calendar, 
-  MapPinIcon as MapPin, 
-  ClockIcon as Clock, 
-  UsersIcon as Users, 
-  PhotoIcon as ImageIcon, 
-  StarIcon as Star,
-  TrophyIcon as Trophy, 
-  PlusCircleIcon as Target, 
-  SparklesIcon as Medal, 
-  GiftIcon as Crown, 
-  TicketIcon as Ticket, 
-  BoltIcon as Zap, 
-  ShareIcon as Share, 
-  ArchiveBoxIcon as Archive
-} from '@heroicons/react/24/outline'
+import { ArchiveBoxIcon, BoltIcon, CalendarDaysIcon, CategoryIcon, ClockIcon, CursorArrowRaysIcon, EventTypeIcon, GiftIcon, MapPinIcon, PhotoIcon, PlusCircleIcon, ShareIcon, SparklesIcon, StarIcon, TicketIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image'
 
 const eventCardVariants = cva(
@@ -159,19 +144,19 @@ export function EventCard({
     const iconClass = "size-8 text-white/80 relative z-10"
     switch (type) {
       case 'Competition': 
-        return <Trophy className={iconClass} />
+        return <TrophyIcon className={iconClass} />
       case 'Training': 
-        return <Target className={iconClass} />
+        return <CursorArrowRaysIcon className={iconClass} />
       case 'Expo': 
         return <Crown className={iconClass} />
       case 'Charity': 
         return <Medal className={iconClass} />
       case 'Social': 
-        return <Users className={iconClass} />
+        return <UsersIcon className={iconClass} />
       case 'Demo': 
-        return <Zap className={iconClass} />
+        return <BoltIcon className={iconClass} />
       default: 
-        return <Calendar className={iconClass} />
+        return <CalendarDaysIcon className={iconClass} />
     }
   }
 
@@ -246,7 +231,7 @@ export function EventCard({
             }}
             title="Share event"
           >
-            <Share className="h-4 w-4 text-white group-hover/share:text-white" />
+            <ShareIcon className="h-4 w-4 text-white group-hover/share:text-white" />
           </button>
           
           <button
@@ -258,7 +243,7 @@ export function EventCard({
             }}
             title="View event archive"
           >
-            <Archive className="h-4 w-4 text-white group-hover/archive:text-white" />
+            <ArchiveBoxIcon className="h-4 w-4 text-white group-hover/archive:text-white" />
           </button>
         </div>
         
@@ -290,21 +275,6 @@ export function EventCard({
       <div className="space-y-md">
         {/* Enhanced Header with Better Typography Hierarchy */}
         <div className="space-y-sm">
-          {/* Enhanced Price Display - top left */}
-          {price && (
-            <div className="flex justify-start">
-              <span className="font-rajdhani font-bold text-lg text-rusty-orange">
-                {price}
-                <span className="text-sm text-muted-foreground ml-1">
-                  {price.includes('$') && (eventType === 'Training' ? '/day' : 
-                   eventType === 'Competition' ? '/entry' : 
-                   eventType === 'Expo' ? '/ticket' : 
-                   '/event')}
-                </span>
-              </span>
-            </div>
-          )}
-          
           <div className="space-y-0">
             <h2 className="font-rajdhani font-bold text-xl text-card-foreground leading-tight line-clamp-2 group-hover:text-nav-events transition-colors duration-200">
               {title}
@@ -324,26 +294,26 @@ export function EventCard({
         <SmartEventBadges
           title={title}
           eventType={eventType}
-          difficulty={difficulty}
-          featured={featured}
-          venue={venue}
-          price={price}
-          organizer={organizer}
+          date={date}
+          time={time}
           description={description}
+          price={price}
+          registrationUrl={registrationUrl}
+          venue={venue}
         />
 
         {/* Redesigned Info Grid with Better Spacing */}
         <div className="space-y-sm bg-muted/30 p-sm rounded-xs">
           <div className="flex items-center gap-sm text-sm">
-            <Calendar className="size-4 flex-shrink-0 text-nav-events" />
+            <CalendarDaysIcon className="size-4 flex-shrink-0 text-nav-events" />
             <span className="font-medium text-card-foreground">{date}</span>
           </div>
           <div className="flex items-center gap-sm text-sm">
-            <Clock className="size-4 flex-shrink-0 text-nav-events" />
+            <ClockIcon className="size-4 flex-shrink-0 text-nav-events" />
             <span className="text-muted-foreground">{time}</span>
           </div>
           <div className="flex items-start gap-sm text-sm">
-            <MapPin className="size-4 flex-shrink-0 text-nav-events mt-0.5" />
+            <MapPinIcon className="size-4 flex-shrink-0 text-nav-events mt-0.5" />
             <span className="text-muted-foreground leading-tight">{location}</span>
           </div>
         </div>

@@ -3,13 +3,7 @@
 import React from 'react'
 import { useRealStats } from '@/hooks/useRealStats'
 import { BrassCounter } from '@/components/ui/brass-counter'
-import { 
-  UserIcon, 
-  BuildingStorefrontIcon, 
-  CalendarIcon, 
-  MapPinIcon,
-  ShieldCheckIcon
-} from '@heroicons/react/24/outline'
+import { BuildingStorefrontIcon, CalendarDaysIcon, CalendarIcon, MapPinIcon, ShieldCheckIcon, UserIcon } from '@heroicons/react/24/outline';
 
 interface FooterUserProfileProps {
   className?: string

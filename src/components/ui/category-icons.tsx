@@ -1,5 +1,7 @@
 'use client'
 
+
+import { AirsoftBBIcon, ArcheryArrowIcon, CategoryIcon, PaintballIcon, PistolCalibersIcon, RifleCartridgesIcon, ShotgunShellIcon, TacticalCaseIcon } from '@heroicons/react/24/outline';
 import * as React from 'react'
 import { cn } from "@/lib/utils"
 

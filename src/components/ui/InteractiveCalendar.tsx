@@ -6,11 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { 
-  ChevronLeft, ChevronRight, Calendar as CalendarIcon, 
-  MapPin, Clock, Users, Search, Filter, X,
-  Zap, Trophy, Target, GraduationCap, Heart, Eye
-} from 'lucide-react'
+import { CalendarDaysIcon, ChevronLeftIcon, ChevronRightIcon, ClockIcon, MagnifyingGlassIcon, MapPinIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { cn } from '@/lib/utils'
 
 // Event type for better type safety
@@ -119,7 +115,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
           <div className="flex flex-col sm:flex-row gap-base flex-1">
             {/* Search */}
             <div className="relative min-w-64">
-              <Search className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-muted-foreground" />
+              <MagnifyingGlassIcon className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-muted-foreground" />
               <Input
                 placeholder="Search events..."
                 value={searchQuery}
@@ -133,7 +129,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                   className="absolute right-1 top-micro/2 transform -translate-y-1/2 size-6 p-0"
                   onClick={() => setSearchQuery('')}
                 >
-                  <X className="size-3" />
+                  <XMarkIcon className="size-3" />
                 </Button>
               )}
             </div>
@@ -190,7 +186,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                 size="xl"
                 onClick={() => setCurrentMonth(new Date(currentMonth.setMonth(currentMonth.getMonth() - 1)))}
               >
-                <ChevronLeft className="size-6" />
+                <ChevronLeftIcon className="size-6" />
               </Button>
               <Button
                 variant="outline"
@@ -205,13 +201,13 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                 size="xl"
                 onClick={() => setCurrentMonth(new Date(currentMonth.setMonth(currentMonth.getMonth() + 1)))}
               >
-                <ChevronRight className="size-6" />
+                <ChevronRightIcon className="size-6" />
               </Button>
             </div>
           </div>
 
           {/* Truly Massive Calendar Grid */}
-          <Calendar
+          <CalendarDaysIcon
             mode="single"
             selected={selectedDate}
             onSelect={setSelectedDate}
@@ -291,7 +287,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                 {/* Selected Date Header */}
                 <div className="text-center space-y-xs">
                   <div className="flex items-center justify-center gap-xs text-muted-foreground">
-                    <CalendarIcon className="size-5" />
+                    <CalendarDaysIcon className="size-5" />
                     <span className="text-heading-lg">
                       {selectedDate.toLocaleDateString('en-US', { 
                         weekday: 'long', 
@@ -349,16 +345,16 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
 
                             <div className="space-y-xs">
                               <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                                <Clock className="size-4" />
+                                <ClockIcon className="size-4" />
                                 <span>{formatEventTime(event.time)}</span>
                               </div>
                               <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                                <MapPin className="size-4" />
+                                <MapPinIcon className="size-4" />
                                 <span>{event.location.split(',')[0]}</span>
                               </div>
                               {event.capacity && event.registeredCount && (
                                 <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                                  <Users className="size-4" />
+                                  <UsersIcon className="size-4" />
                                   <span>{event.registeredCount}/{event.capacity}</span>
                                 </div>
                               )}

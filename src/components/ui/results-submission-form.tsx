@@ -15,11 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from './select'
-import {
-  Calendar, MapPin, Trophy, Users, Target,
-  Upload, Plus, Minus, Database, Warning,
-  CheckCircle, Clock
-} from '@phosphor-icons/react'
+import { ArrowUpTrayIcon, CalendarDaysIcon, CheckCircleIcon, CircleStackIcon, ClockIcon, CursorArrowRaysIcon, ExclamationTriangleIcon, MapPinIcon, MinusIcon, PlusIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
 import { cn } from '@/lib/utils'
 
 interface ParticipantResult {
@@ -167,7 +163,7 @@ export function ResultsSubmissionForm() {
         <CardContent className="p-4xl">
           <div className="space-y-lg">
             <div className="inline-flex items-center justify-center w-20 h-20 bg-success/10 rounded-full mb-lg">
-              <CheckCircle className="size-10 text-success" />
+              <CheckCircleIcon className="size-10 text-success" />
             </div>
             <h2 className="font-rajdhani text-heading-2xl font-bold text-card-foreground">
               Results Submitted Successfully!
@@ -177,7 +173,7 @@ export function ResultsSubmissionForm() {
               Your submission will be reviewed and added to the database within 2-3 business days.
             </p>
             <div className="space-y-sm">
-              <Badge variant="success" size="sm">
+              <Badge variant="secondary" size="sm">
                 Submission ID: #ASA-{Date.now().toString().slice(-6)}
               </Badge>
               <p className="text-body-xs text-muted-foreground">
@@ -204,7 +200,7 @@ export function ResultsSubmissionForm() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-xs font-rajdhani">
-            <Calendar className="size-5 text-rusty-orange" />
+            <CalendarDaysIcon className="size-5 text-rusty-orange" />
             Event Information
           </CardTitle>
         </CardHeader>
@@ -292,7 +288,7 @@ export function ResultsSubmissionForm() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-xs font-rajdhani">
-            <Target className="size-5 text-rusty-orange" />
+            <CursorArrowRaysIcon className="size-5 text-rusty-orange" />
             Match Details
           </CardTitle>
         </CardHeader>
@@ -348,7 +344,7 @@ export function ResultsSubmissionForm() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-xs font-rajdhani">
-            <Trophy className="size-5 text-rusty-orange" />
+            <TrophyIcon className="size-5 text-rusty-orange" />
             Participants & Results
           </CardTitle>
           <p className="text-body-sm text-muted-foreground">
@@ -371,7 +367,7 @@ export function ResultsSubmissionForm() {
                       onClick={() => removeParticipant(index)}
                       className="text-destructive hover:text-destructive"
                     >
-                      <Minus className="size-4" />
+                      <MinusIcon className="size-4" />
                     </Button>
                   )}
                 </div>
@@ -480,7 +476,7 @@ export function ResultsSubmissionForm() {
               onClick={addParticipant}
               className="w-full gap-sm"
             >
-              <Plus className="size-4" />
+              <PlusIcon className="size-4" />
               Add Another Participant
             </Button>
           </div>
@@ -491,7 +487,7 @@ export function ResultsSubmissionForm() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-xs font-rajdhani">
-            <Users className="size-5 text-rusty-orange" />
+            <UsersIcon className="size-5 text-rusty-orange" />
             Your Information
           </CardTitle>
         </CardHeader>
@@ -554,7 +550,7 @@ export function ResultsSubmissionForm() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-xs font-rajdhani">
-            <Database className="size-5 text-rusty-orange" />
+            <CircleStackIcon className="size-5 text-rusty-orange" />
             Additional Information
           </CardTitle>
         </CardHeader>
@@ -611,20 +607,18 @@ export function ResultsSubmissionForm() {
       {/* Submit Button */}
       <div className="text-center">
         <Button 
-          type="submit" 
-          size="lg" 
-          className="gap-sm px-xl"
+          type="submit" className="gap-sm px-xl"
           disabled={submitStatus === 'submitting' || !formData.dataAccuracy}
           animationType="arrow"
         >
           {submitStatus === 'submitting' ? (
             <>
-              <Clock className="size-4" />
+              <ClockIcon className="size-4" />
               Submitting Results...
             </>
           ) : (
             <>
-              <Upload className="size-4" />
+              <ArrowUpTrayIcon className="size-4" />
               Submit Event Results
             </>
           )}
@@ -632,7 +626,7 @@ export function ResultsSubmissionForm() {
         
         <div className="mt-base max-w-md mx-auto">
           <div className="flex items-start gap-xs p-sm bg-muted/50 rounded-xs">
-            <Warning className="size-4 text-muted-foreground mt-micro flex-shrink-0" />
+            <ExclamationTriangleIcon className="size-4 text-muted-foreground mt-micro flex-shrink-0" />
             <p className="text-body-xs text-muted-foreground">
               Your submission will be reviewed within 2-3 business days. 
               You'll receive an email confirmation once it's been added to the archive.

@@ -1,0 +1,135 @@
+[
+  {
+    "business_id": "6d8b2187",
+    "business_name": "Alexander, Elden Lane Sr & Jr",
+    "city": "Emmett",
+    "filter_reason": "Home-based indicator in name: \\b(mr|mrs|ms|dr|sr|jr)\\b",
+    "filtered_at": "2025-08-21T10:55:59.993787"
+  },
+  {
+    "business_id": "4f1bc467",
+    "business_name": "Averett, Brian C (Old Farts Gun Shop)",
+    "city": "Nampa",
+    "filter_reason": "No website found - cannot verify commercial status",
+    "filtered_at": "2025-08-21T10:56:05.152951"
+  },
+  {
+    "business_id": "2f990959",
+    "business_name": "B D M",
+    "city": "CALDWELL",
+    "filter_reason": "Home-based indicator in name: ^[a-z]+\\s+[a-z]+\\s+[a-z]+$",
+    "filtered_at": "2025-08-21T10:56:05.153205"
+  },
+  {
+    "business_id": "a4d417db",
+    "business_name": "BROOKSRIVER LLC",
+    "city": "BOISE",
+    "filter_reason": "No website found - cannot verify commercial status",
+    "filtered_at": "2025-08-21T10:56:08.406710"
+  },
+  {
+    "business_id": "b7d81d0c",
+    "business_name": "Bear Mountain Gun & Tool",
+    "city": "New Plymouth",
+    "filter_reason": "Website filtered: Social media/directory site: yelp.com",
+    "filtered_at": "2025-08-21T10:56:11.294483"
+  },
+  {
+    "business_id": "86b36e52",
+    "business_name": "Bi-Mart #689",
+    "city": "Star",
+    "filter_reason": "No website found - cannot verify commercial status",
+    "filtered_at": "2025-08-21T10:56:14.408946"
+  },
+  {
+    "business_id": "a8a2d8ac",
+    "business_name": "Boise Police Revolver League",
+    "city": "Boise",
+    "filter_reason": "No website found - cannot verify commercial status",
+    "filtered_at": "2025-08-21T10:56:17.467709"
+  },
+  {
+    "business_id": "9663a663",
+    "business_name": "COMPOUND COATINGS LLC",
+    "city": "BOISE",
+    "filter_reason": "Home-based indicator in name: ^[a-z]+\\s+[a-z]+\\s+[a-z]+$",
+    "filtered_at": "2025-08-21T10:56:34.198691"
+  },
+  {
+    "business_id": "59df53bd",
+    "business_name": "CORBETT AUCTIONS & APPRAISALS INC",
+    "city": "KUNA",
+    "filter_reason": "Low confidence match: 0.45",
+    "filtered_at": "2025-08-21T10:56:37.083312"
+  },
+  {
+    "business_id": "00c371aa",
+    "business_name": "CREATIVE CARNAGE",
+    "city": "BOISE",
+    "filter_reason": "Residential address indicator: \\bdr\\b",
+    "filtered_at": "2025-08-21T10:56:37.083732"
+  },
+  {
+    "business_id": "1460d0b8",
+    "business_name": "CT BRIAN",
+    "city": "MERIDIAN",
+    "filter_reason": "Individual person name pattern: ct brian",
+    "filtered_at": "2025-08-21T10:56:43.127152"
+  },
+  {
+    "business_id": "ab8176ae",
+    "business_name": "Cambridge Distributing LLC",
+    "city": "Fruitland",
+    "filter_reason": "Home-based indicator in name: ^[a-z]+\\s+[a-z]+\\s+[a-z]+$",
+    "filtered_at": "2025-08-21T10:56:43.127944"
+  },
+  {
+    "business_id": "0f648720",
+    "business_name": "Canyon County Precisions LLC",
+    "city": "Nampa",
+    "filter_reason": "Residential address indicator: \\bdr\\b",
+    "filtered_at": "2025-08-21T10:56:43.130245"
+  },
+  {
+    "business_id": "02ee946f",
+    "business_name": "Caracal USA",
+    "city": "Boise",
+    "filter_reason": "Website filtered: Unclear commercial status (score: 1)",
+    "filtered_at": "2025-08-21T10:56:47.579139"
+  },
+  {
+    "business_id": "1c268a9b",
+    "business_name": "Caracal USA",
+    "city": "Nampa",
+    "filter_reason": "Residential address indicator: \\blane\\b",
+    "filtered_at": "2025-08-21T10:56:47.579563"
+  },
+  {
+    "business_id": "3d146ea2",
+    "business_name": "Carter, Jon",
+    "city": "Meridian",
+    "filter_reason": "Residential address indicator: \\bdr\\b",
+    "filtered_at": "2025-08-21T10:56:47.581852"
+  },
+  {
+    "business_id": "2bf32145",
+    "business_name": "Charters Mtn Gun Shop",
+    "city": "Near Marsing",
+    "filter_reason": "No website found - cannot verify commercial status",
+    "filtered_at": "2025-08-21T10:56:50.483677"
+  },
+  {
+    "business_id": "0071026e",
+    "business_name": "Combat Sport Supply",
+    "city": "Garden City",
+    "filter_reason": "Home-based indicator in name: ^[a-z]+\\s+[a-z]+\\s+[a-z]+$",
+    "filtered_at": "2025-08-21T10:56:50.484009"
+  },
+  {
+    "business_id": "f28e89b1",
+    "business_name": "Crossfire Elite LLC",
+    "city": "Meridian",
+    "filter_reason": "Home-based indicator in name: ^[a-z]+\\s+[a-z]+\\s+[a-z]+$",
+    "filtered_at": "2025-08-21T10:56:50.486500"
+  }
+]

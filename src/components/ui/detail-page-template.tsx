@@ -6,9 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
-import { 
-  ChevronRight, ArrowLeft, Share2, Bookmark, Target
-} from 'lucide-react'
+import { ArrowLeftIcon, ChevronRightIcon, CursorArrowRaysIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link'
 import { VerificationStatus } from '@/components/ui/verification-status'
 
@@ -151,7 +149,7 @@ export default function DetailPageTemplate({
                 <div className="flex-shrink-0">
                   <div className="w-24 h-24 rounded-none overflow-hidden bg-card border-2 border-border shadow-elevated">
                     <div className="w-full h-full flex items-center justify-center bg-muted">
-                      <Target className="h-12 w-12 text-nav-directory" />
+                      <CursorArrowRaysIcon className="h-12 w-12 text-nav-directory" />
                     </div>
                   </div>
                 </div>
@@ -163,19 +161,19 @@ export default function DetailPageTemplate({
                     <Link href="/" className="hover:text-foreground transition-colors">
                       Home
                     </Link>
-                    <ChevronRight className="h-4 w-4" />
+                    <ChevronRightIcon className="h-4 w-4" />
                     <Link href={section.path} className={`hover:text-${section.color} transition-colors`}>
                       {section.name}
                     </Link>
                     {breadcrumbs.map((crumb, index) => (
                       <React.Fragment key={index}>
-                        <ChevronRight className="h-4 w-4" />
+                        <ChevronRightIcon className="h-4 w-4" />
                         <Link href={crumb.href} className={`hover:text-${section.color} transition-colors`}>
                           {crumb.label}
                         </Link>
                       </React.Fragment>
                     ))}
-                    <ChevronRight className="h-4 w-4" />
+                    <ChevronRightIcon className="h-4 w-4" />
                     <span className={`text-${section.color} font-medium`}>{title}</span>
                   </div>
                   
@@ -183,7 +181,7 @@ export default function DetailPageTemplate({
                   <div>
                     <Link href={section.path}>
                       <Button variant="ghost" size="sm" className="gap-xs">
-                        <ArrowLeft className="h-4 w-4" />
+                        <ArrowLeftIcon className="h-4 w-4" />
                         Back to {section.name}
                       </Button>
                     </Link>

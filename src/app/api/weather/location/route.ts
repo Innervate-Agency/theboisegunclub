@@ -29,7 +29,6 @@ async function fetchLocationWeather(lat: number, lng: number, locationName: stri
     }
     
   } catch (error) {
-    console.error(`OpenWeatherMap API error for ${locationName}:`, error)
     throw error
   }
 }
@@ -55,11 +54,9 @@ export async function GET(request: NextRequest) {
     const lng = parseFloat(searchParams.get('lng') || '-116.2023')
     const name = searchParams.get('name') || 'Boise, ID'
     
-    console.log(`Weather API called with: lat=${lat}, lng=${lng}, name=${name}`)
     
     // Validate coordinates more strictly
     if (isNaN(lat) || isNaN(lng) || lat < -90 || lat > 90 || lng < -180 || lng > 180) {
-      console.error(`Invalid coordinates: lat=${lat}, lng=${lng}`)
       return NextResponse.json(
         { 
           success: false, 
@@ -72,10 +69,8 @@ export async function GET(request: NextRequest) {
     
     // Additional validation for reasonable coordinates (continental US focus)
     if (lat < 20 || lat > 70 || lng < -180 || lng > -60) {
-      console.warn(`Coordinates outside typical US range: ${lat}, ${lng} - proceeding anyway`)
     }
     
-    console.log(`Fetching OpenWeatherMap data for ${name} (${lat}, ${lng})...`)
     
     // Fetch weather data from OpenWeatherMap API with timeout
     const weatherData = await Promise.race([
@@ -99,12 +94,7 @@ export async function GET(request: NextRequest) {
     
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error'
-    console.error('Location weather API error:', {
-      message: errorMessage,
-      stack: error instanceof Error ? error.stack : undefined,
-      timestamp: new Date().toISOString()
-    })
-    
+        return NextResponse.json({ error: errorMessage }, { status: 500 });
     // Provide fallback weather data for critical errors
     const fallbackData = {
       locationName: 'Boise, ID',

@@ -90,14 +90,14 @@ export const AllVariants: Story = {
   render: () => (
     <div className="flex flex-wrap gap-2">
       <Badge>Default</Badge>
-      <Badge variant="secondary">Secondary</Badge>
+      <Badge variant="outline">Secondary</Badge>
       <Badge variant="destructive">Destructive</Badge>
       <Badge variant="outline">Outline</Badge>
-      <Badge variant="success">Success</Badge>
-      <Badge variant="warning">Warning</Badge>
-      <Badge variant="info">Info</Badge>
-      <Badge variant="premium">Premium</Badge>
-      <Badge variant="elite">Elite</Badge>
+      <Badge variant="secondary">Success</Badge>
+      <Badge variant="destructive">Warning</Badge>
+      <Badge variant="secondary">Info</Badge>
+      <Badge variant="default">Premium</Badge>
+      <Badge variant="default">Elite</Badge>
     </div>
   ),
 };
@@ -106,9 +106,9 @@ export const AllVariants: Story = {
 export const Sizes: Story = {
   render: () => (
     <div className="flex items-center gap-4">
-      <Badge size="sm" variant="premium">Small</Badge>
-      <Badge size="default" variant="premium">Default</Badge>
-      <Badge size="lg" variant="premium">Large</Badge>
+      <Badge size="sm" variant="default">Small</Badge>
+      <Badge size="default" variant="default">Default</Badge>
+      <Badge variant="default">Large</Badge>
     </div>
   ),
 };

@@ -4,14 +4,7 @@ import * as React from 'react'
 import Link from 'next/link'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { 
-  TicketIcon as Ticket,
-  IdentificationIcon as AddressBook,
-  PlusCircleIcon as Shield,
-  MapIcon as MapTrifold,
-  BanknotesIcon as Storefront,
-  ChatBubbleBottomCenterTextIcon as Users
-} from '@heroicons/react/24/outline'
+import { BanknotesIcon, BookOpenIcon, BuildingStorefrontIcon, ChatBubbleBottomCenterTextIcon, IdentificationIcon, MapIcon, PlusCircleIcon, ShieldCheckIcon, TicketIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const heroOverhangVariants = cva(
   "relative mx-auto w-full",
@@ -53,7 +46,7 @@ export function HeroOverhangSection({
     },
     { 
       href: "/directory", 
-      icon: <AddressBook className="h-8 w-8" />, 
+      icon: <BookOpenIcon className="h-8 w-8" />, 
       label: "Directory", 
       colorClass: "nav-directory",
       hoverColor: "hover:text-nav-directory",
@@ -61,7 +54,7 @@ export function HeroOverhangSection({
     },
     { 
       href: "/armory", 
-      icon: <Shield className="h-8 w-8" />, 
+      icon: <ShieldCheckIcon className="h-8 w-8" />, 
       label: "Armory", 
       colorClass: "nav-armory",
       hoverColor: "hover:text-nav-armory",
@@ -69,7 +62,7 @@ export function HeroOverhangSection({
     },
     { 
       href: "/intel", 
-      icon: <MapTrifold className="h-8 w-8" />, 
+      icon: <MapIcon className="h-8 w-8" />, 
       label: "Intel", 
       colorClass: "nav-intel",
       hoverColor: "hover:text-nav-intel",
@@ -77,7 +70,7 @@ export function HeroOverhangSection({
     },
     { 
       href: "/marketplace", 
-      icon: <Storefront className="h-8 w-8" />, 
+      icon: <BuildingStorefrontIcon className="h-8 w-8" />, 
       label: "Marketplace", 
       colorClass: "nav-marketplace",
       hoverColor: "hover:text-nav-marketplace",
@@ -85,7 +78,7 @@ export function HeroOverhangSection({
     },
     { 
       href: "/forums", 
-      icon: <Users className="h-8 w-8" />, 
+      icon: <UsersIcon className="h-8 w-8" />, 
       label: "Forums", 
       colorClass: "nav-forums",
       hoverColor: "hover:text-nav-forums",

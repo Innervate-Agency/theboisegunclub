@@ -1,0 +1,102 @@
+[
+  {
+    "slug": "al-s-sporting-goods",
+    "businessName": "Al's Sporting Goods",
+    "city": "Boise",
+    "businessType": "Sporting Goods",
+    "website": "",
+    "discovered_website": null,
+    "discovered_phone": null,
+    "discovered_email": null,
+    "enhanced_description": null,
+    "discovered_services": [],
+    "discovery_status": "no_website_found",
+    "discovery_errors": []
+  },
+  {
+    "slug": "20-20-sporting-services",
+    "businessName": "20/20 Sporting Services",
+    "city": "Boise",
+    "businessType": "Sporting Goods",
+    "website": "",
+    "discovered_website": null,
+    "discovered_phone": null,
+    "discovered_email": null,
+    "enhanced_description": null,
+    "discovered_services": [],
+    "discovery_status": "no_website_found",
+    "discovery_errors": []
+  },
+  {
+    "slug": "rifle-guru",
+    "businessName": "Rifle Guru",
+    "city": "Boise",
+    "businessType": "Gunsmith",
+    "website": "",
+    "discovered_website": null,
+    "discovered_phone": null,
+    "discovered_email": null,
+    "enhanced_description": null,
+    "discovered_services": [],
+    "discovery_status": "no_website_found",
+    "discovery_errors": []
+  },
+  {
+    "slug": "ada-armaments",
+    "businessName": "Ada Armaments",
+    "city": "Boise",
+    "businessType": "Gun Manufacturer",
+    "website": "",
+    "discovered_website": null,
+    "discovered_phone": null,
+    "discovered_email": null,
+    "enhanced_description": null,
+    "discovered_services": [],
+    "discovery_status": "no_website_found",
+    "discovery_errors": []
+  },
+  {
+    "slug": "american-reserve-munitions-llc",
+    "businessName": "American Reserve Munitions LLC",
+    "city": "Boise",
+    "businessType": "Gun Manufacturer",
+    "website": "",
+    "discovered_website": null,
+    "discovered_phone": null,
+    "discovered_email": null,
+    "enhanced_description": null,
+    "discovered_services": [],
+    "discovery_status": "no_website_found",
+    "discovery_errors": []
+  },
+  {
+    "slug": "high-born-tactical",
+    "businessName": "High Born Tactical",
+    "city": "Boise",
+    "businessType": "Tactical/Training",
+    "website": "",
+    "discovered_website": null,
+    "discovered_phone": null,
+    "discovered_email": null,
+    "enhanced_description": null,
+    "discovered_services": [],
+    "discovery_status": "error",
+    "discovery_errors": [
+      "getaddrinfo ENOTFOUND highborntactical.com"
+    ]
+  },
+  {
+    "slug": "automatic-weapons-company",
+    "businessName": "Automatic Weapons Company",
+    "city": "Boise",
+    "businessType": "Gun Manufacturer",
+    "website": "",
+    "discovered_website": null,
+    "discovered_phone": null,
+    "discovered_email": null,
+    "enhanced_description": null,
+    "discovered_services": [],
+    "discovery_status": "no_website_found",
+    "discovery_errors": []
+  }
+]

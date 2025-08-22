@@ -3,11 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { 
-  CalendarIcon, 
-  DocumentTextIcon, 
-  AcademicCapIcon 
-} from '@heroicons/react/24/outline'
+import { AcademicCapIcon, CalendarDaysIcon, CalendarIcon, DocumentTextIcon } from '@heroicons/react/24/outline';
 
 export function FeaturedContentSection() {
   const featuredContent = [
@@ -87,7 +83,7 @@ export function FeaturedContentSection() {
         </div>
 
         <div className="text-center">
-          <Button variant="outline" size="lg" className="font-rajdhani font-semibold">
+          <Button variant="outline" className="font-rajdhani font-semibold">
             View All Content
           </Button>
         </div>

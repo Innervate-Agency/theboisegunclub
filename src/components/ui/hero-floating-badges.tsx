@@ -1,13 +1,7 @@
 'use client'
 
 import { MotionDiv } from '@/components/ui/optimized-motion'
-import { 
-  ShieldCheckIcon as Shield,
-  BuildingStorefrontIcon as Storefront,
-  StarIcon as Star,
-  TrophyIcon as Trophy,
-  UsersIcon as Users
-} from '@heroicons/react/24/outline'
+import { BuildingStorefrontIcon, ShieldCheckIcon, StarIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 interface DirectoryFloatingBadgesProps {
   className?: string

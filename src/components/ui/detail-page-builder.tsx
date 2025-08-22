@@ -9,7 +9,7 @@ import {
   ProductContent 
 } from './detail-content-types'
 import { EventInfoBar } from './event-info-bar'
-import { Globe, Mail, Phone } from 'lucide-react'
+import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 
 // Helper functions to build detail pages for each content type
 

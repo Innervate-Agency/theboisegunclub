@@ -17,7 +17,6 @@ export async function GET() {
     
     return NextResponse.json(challenge);
   } catch (error) {
-    console.error('Altcha challenge generation error:', error);
     return NextResponse.json(
       { error: 'Failed to generate challenge' },
       { status: 500 }

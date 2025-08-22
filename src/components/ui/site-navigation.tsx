@@ -7,7 +7,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { MotionDiv } from '@/components/ui/optimized-motion'
-import { Menu, X } from 'lucide-react'
+import { BanknotesIcon, Bars3Icon, ChatBubbleBottomCenterTextIcon, CubeTransparentIcon, CurrentPageIcon, IdentificationIcon, MapIcon, PlusCircleIcon, TicketIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { AuthButton } from '@/components/auth/auth-button'
 import { NavbarWeatherWidget } from './navbar-weather-widget'
 import { NavigationTexture } from './textured-background'
@@ -15,15 +15,6 @@ import { useAuth } from '@/components/auth/auth-context'
 import { useTacticalTracker } from '@/hooks/useTacticalTracker'
 import { useKonamiCode } from '@/hooks/useKonamiCode'
 import { useNightOpsTheme } from '@/hooks/useNightOpsTheme'
-import { 
-  CubeTransparentIcon as Diamond, 
-  TicketIcon as Ticket,
-  IdentificationIcon as AddressBook,
-  PlusCircleIcon as Shield,
-  MapIcon as MapTrifold,
-  BanknotesIcon as Storefront,
-  ChatBubbleBottomCenterTextIcon as Users
-} from '@heroicons/react/24/outline'
 
 const siteNavigationVariants = cva(
   "w-full transition-all duration-200 ease-out",
@@ -194,7 +185,6 @@ export function SiteNavigation({
     const result = colorMap[itemColor as keyof typeof colorMap] || 'bg-rusty-orange'
     // Debug log for development
     if (process.env.NODE_ENV === 'development') {
-      console.log(`Magic line color for ${itemColor}: ${result}`)
     }
     return result
   }
@@ -403,7 +393,7 @@ export function SiteNavigation({
               return (
                 <React.Fragment key={item.href}>
                   <div 
-                    className="relative px-micro py-0"
+                    className="relative px-sm py-0"
                     onMouseEnter={() => setHoveredPath(item.href)}
                     onMouseLeave={() => setHoveredPath(pathname)}
                   >
@@ -506,9 +496,9 @@ export function SiteNavigation({
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className="h-[var(--icon-base)] w-[var(--icon-base)]" />
+                <XMarkIcon className="h-[var(--icon-base)] w-[var(--icon-base)]" />
               ) : (
-                <Menu className="h-[var(--icon-base)] w-[var(--icon-base)]" />
+                <Bars3Icon className="h-[var(--icon-base)] w-[var(--icon-base)]" />
               )}
             </Button>
           </div>
@@ -555,7 +545,7 @@ export function SiteNavigation({
             <div className="pt-mobile-lg sm:pt-lg mt-mobile-lg sm:mt-lg relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
               <div className="flex flex-col gap-sm">
                 <NavbarWeatherWidget />
-                <AuthButton variant="default" showTrialButton={false} className="flex-col items-stretch touch-target" />
+                <AuthButton variant="outline" showTrialButton={false} className="flex-col items-stretch touch-target" />
               </div>
             </div>
           </MotionDiv>

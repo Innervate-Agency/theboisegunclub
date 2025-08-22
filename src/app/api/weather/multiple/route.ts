@@ -19,7 +19,6 @@ export async function POST(request: NextRequest) {
       timestamp: new Date().toISOString()
     })
   } catch (error) {
-    console.error('Weather API error:', error)
     return NextResponse.json(
       { error: 'Failed to fetch weather data' },
       { status: 500 }

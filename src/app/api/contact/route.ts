@@ -29,7 +29,6 @@ export async function POST(request: NextRequest) {
       const altchaLib = await import('altcha-lib');
       verifySolution = altchaLib.verifySolution;
     } catch (importError) {
-      console.error('Failed to import altcha-lib:', importError);
       return NextResponse.json(
         { error: 'CAPTCHA service unavailable' },
         { status: 500 }
@@ -47,7 +46,6 @@ export async function POST(request: NextRequest) {
         );
       }
     } catch (verifyError) {
-      console.error('ALTCHA verification error:', verifyError);
       return NextResponse.json(
         { error: 'CAPTCHA verification failed' },
         { status: 400 }
@@ -117,9 +115,7 @@ Reply directly to this email to respond to ${name}
     };
 
     // Send email
-    console.log('Attempting to send email to:', 'business@boisegunclub.com');
     const result = await transporter.sendMail(mailOptions);
-    console.log('Email sent successfully:', result.messageId);
 
     return NextResponse.json(
       { message: 'Email sent successfully' },
@@ -132,15 +128,6 @@ Reply directly to this email to respond to ${name}
     const errorCode = error && typeof error === 'object' && 'code' in error ? String(error.code) : undefined;
     const errorResponse = error && typeof error === 'object' && 'response' in error ? String(error.response) : undefined;
     
-    console.error('Contact form error details:', {
-      message: errorMessage,
-      code: errorCode,
-      response: errorResponse,
-      stack: errorStack
-    });
-    return NextResponse.json(
-      { error: 'Failed to send email', details: errorMessage },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
-}
+  }

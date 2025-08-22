@@ -6,10 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
-import { 
-  ChevronRight, ArrowLeft, Scale, Shield, FileText, 
-  Clock, Mail, Phone, ExternalLink
-} from 'lucide-react'
+import { ArrowLeftIcon, ChevronRightIcon, ClockIcon, DocumentTextIcon, EnvelopeIcon, PhoneIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link'
 
 interface LegalPageTemplateProps {
@@ -49,11 +46,11 @@ export default function LegalPageTemplate({
             <Link href="/" className="hover:text-foreground transition-colors">
               Home
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRightIcon className="h-4 w-4" />
             <Link href="/legal" className="hover:text-foreground transition-colors">
               Legal
             </Link>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRightIcon className="h-4 w-4" />
             <span className="text-foreground font-medium">{title}</span>
           </div>
           
@@ -61,7 +58,7 @@ export default function LegalPageTemplate({
           <div className="mb-lg">
             <Link href="/">
               <Button variant="ghost" className="gap-xs">
-                <ArrowLeft className="h-4 w-4" />
+                <ArrowLeftIcon className="h-4 w-4" />
                 Back to Home
               </Button>
             </Link>
@@ -94,14 +91,14 @@ export default function LegalPageTemplate({
               {/* Legal Metadata */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-base p-base bg-muted/50 rounded-xs border">
                 <div className="flex items-center gap-xs">
-                  <Clock className="h-4 w-4 text-slate-blue" />
+                  <ClockIcon className="h-4 w-4 text-slate-blue" />
                   <div className="text-body-sm">
                     <span className="text-muted-foreground">Effective Date:</span>
                     <span className="ml-xs font-medium">{effectiveDate}</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-xs">
-                  <FileText className="h-4 w-4 text-slate-blue" />
+                  <DocumentTextIcon className="h-4 w-4 text-slate-blue" />
                   <div className="text-body-sm">
                     <span className="text-muted-foreground">Last Updated:</span>
                     <span className="ml-xs font-medium">{lastUpdated}</span>
@@ -115,7 +112,7 @@ export default function LegalPageTemplate({
               <Card className="shadow-present">
                 <CardHeader>
                   <CardTitle className="font-rajdhani text-heading-sm flex items-center gap-xs">
-                    <Shield className="h-5 w-5 text-slate-blue" />
+                    <ShieldCheckIcon className="h-5 w-5 text-slate-blue" />
                     Legal Questions?
                   </CardTitle>
                 </CardHeader>
@@ -125,7 +122,7 @@ export default function LegalPageTemplate({
                   </p>
                   <div className="space-y-base">
                     <div className="flex items-center gap-xs">
-                      <Mail className="h-4 w-4 text-slate-blue" />
+                      <EnvelopeIcon className="h-4 w-4 text-slate-blue" />
                       <a 
                         href={`mailto:${contactEmail}`}
                         className="text-body-sm text-slate-blue hover:underline"
@@ -135,7 +132,7 @@ export default function LegalPageTemplate({
                     </div>
                     {contactPhone && (
                       <div className="flex items-center gap-xs">
-                        <Phone className="h-4 w-4 text-slate-blue" />
+                        <PhoneIcon className="h-4 w-4 text-slate-blue" />
                         <a 
                           href={`tel:${contactPhone}`}
                           className="text-body-sm text-slate-blue hover:underline"

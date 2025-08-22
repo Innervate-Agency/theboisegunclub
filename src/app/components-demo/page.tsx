@@ -26,13 +26,13 @@ import {
 import { 
   Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger 
 } from '@/components/ui/sheet'
-import { Home, Settings, User, Target, Calendar, Menu, ChevronDown, Info } from 'lucide-react'
+import { Bars3Icon, CalendarDaysIcon, ChevronDownIcon, Cog6ToothIcon, CursorArrowRaysIcon, HomeIcon, InformationCircleIcon, ToothIcon, UserIcon } from '@heroicons/react/24/outline';
 
 const navItems = [
-  { label: 'Home', href: '/', icon: <Home className="h-4 w-4" /> },
-  { label: 'Demo', href: '/components-demo', icon: <Target className="h-4 w-4" />, active: true },
-  { label: 'Directory', href: '/directory', icon: <User className="h-4 w-4" /> },
-  { label: 'Events', href: '/events', icon: <Calendar className="h-4 w-4" /> }
+  { label: 'Home', href: '/', icon: <HomeIcon className="h-4 w-4" /> },
+  { label: 'Demo', href: '/components-demo', icon: <CursorArrowRaysIcon className="h-4 w-4" />, active: true },
+  { label: 'Directory', href: '/directory', icon: <UserIcon className="h-4 w-4" /> },
+  { label: 'Events', href: '/events', icon: <CalendarDaysIcon className="h-4 w-4" /> }
 ]
 
 export default function ComponentsDemoPage() {
@@ -44,7 +44,7 @@ export default function ComponentsDemoPage() {
       <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
         <NavigationFusion 
           items={navItems}
-          variant="glass"
+          variant="secondary"
           orientation="horizontal"
         />
       </div>
@@ -87,7 +87,7 @@ export default function ComponentsDemoPage() {
                     </p>
                   </div>
                   <DialogFooter>
-                    <Button variant="secondary">Cancel</Button>
+                    <Button variant="outline">Cancel</Button>
                     <Button className="bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange">Save</Button>
                   </DialogFooter>
                 </DialogContent>
@@ -99,19 +99,19 @@ export default function ComponentsDemoPage() {
               <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-4">Dropdown Menu</h3>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="secondary" className="w-full">
-                    Options <ChevronDown className="ml-(--spacing-xs) h-4 w-4" />
+                  <Button variant="outline" className="w-full">
+                    Options <ChevronDownIcon className="ml-(--spacing-xs) h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56">
                   <DropdownMenuLabel className="font-rajdhani">My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
-                    <User className="mr-(--spacing-xs) h-4 w-4" />
+                    <UserIcon className="mr-(--spacing-xs) h-4 w-4" />
                     <span>Profile</span>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <Settings className="mr-(--spacing-xs) h-4 w-4" />
+                    <Cog6ToothIcon className="mr-(--spacing-xs) h-4 w-4" />
                     <span>Settings</span>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
@@ -143,7 +143,7 @@ export default function ComponentsDemoPage() {
               <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-4">Popover</h3>
               <Popover>
                 <PopoverTrigger asChild>
-                  <Button variant="secondary" className="w-full">
+                  <Button variant="outline" className="w-full">
                     Open Popover
                   </Button>
                 </PopoverTrigger>
@@ -167,8 +167,8 @@ export default function ComponentsDemoPage() {
               <div className="flex justify-center">
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="secondary">
-                      <Info className="h-4 w-4" />
+                    <Button variant="outline">
+                      <InformationCircleIcon className="h-4 w-4" />
                       Hover me
                     </Button>
                   </TooltipTrigger>
@@ -184,8 +184,8 @@ export default function ComponentsDemoPage() {
               <h3 className="text-lg font-rajdhani font-bold text-dark-chocolate mb-4">Sheet</h3>
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="secondary" className="w-full">
-                    <Menu className="mr-(--spacing-xs) h-4 w-4" />
+                  <Button variant="outline" className="w-full">
+                    <Bars3Icon className="mr-(--spacing-xs) h-4 w-4" />
                     Open Sheet
                   </Button>
                 </SheetTrigger>
@@ -200,7 +200,7 @@ export default function ComponentsDemoPage() {
                     <Button className="w-full bg-sandy-ochre text-dark-chocolate hover:bg-rusty-orange">
                       Primary Action
                     </Button>
-                    <Button variant="secondary" className="w-full">
+                    <Button variant="outline" className="w-full">
                       Secondary Action
                     </Button>
                   </div>

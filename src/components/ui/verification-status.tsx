@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { CheckCircle } from 'lucide-react'
+import { CheckCircleIcon } from '@heroicons/react/24/outline';
 import { cn } from '@/lib/utils'
 
 interface VerificationStatusProps {
@@ -22,7 +22,7 @@ export function VerificationStatus({
       "inline-flex items-center gap-xs text-sagebrush-green font-rajdhani font-semibold text-sm",
       className
     )}>
-      <CheckCircle className="h-4 w-4" />
+      <CheckCircleIcon className="h-4 w-4" />
       <span>✓ {verificationStatus}</span>
     </div>
   )
