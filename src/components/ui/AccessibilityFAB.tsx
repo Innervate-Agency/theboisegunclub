@@ -118,7 +118,7 @@ export default function AccessibilityFAB({
         {isOpen ? (
           <XMarkIcon className="size-6 text-card-foreground mx-auto" />
         ) : (
-          <Cog6ToothIcon className="size-6 text-card-foreground mx-auto" />
+          <Settings className="size-6 text-card-foreground mx-auto" />
         )}
       </button>
 
@@ -132,7 +132,7 @@ export default function AccessibilityFAB({
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-xs">
               <div className="bg-muted p-tiny rounded-xs border border-border">
-                <Cog6ToothIcon className="size-5 text-card-foreground" />
+                <Settings className="size-5 text-card-foreground" />
               </div>
               <h2 className="text-heading-lg font-rajdhani font-bold text-card-foreground">Accessibility</h2>
             </div>
@@ -346,7 +346,7 @@ export default function AccessibilityFAB({
               onClick={handleResetAll}
               className="w-full gap-tiny"
             >
-              <Cog6ToothIcon className="size-4" />
+              <Settings className="size-4" />
               Reset to Defaults
             </Button>
           </div>
