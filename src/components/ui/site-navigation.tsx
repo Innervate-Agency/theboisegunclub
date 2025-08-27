@@ -7,7 +7,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { MotionDiv } from '@/components/ui/optimized-motion'
-import { BanknotesIcon, Bars3Icon, BookOpenIcon, BuildingStorefrontIcon, ChatBubbleBottomCenterTextIcon, ChatBubbleLeftRightIcon, CubeTransparentIcon, CurrentPageIcon, IdentificationIcon, MapIcon, MapPinIcon, PlusCircleIcon, ShieldCheckIcon, SparklesIcon, TicketIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { BanknotesIcon, Bars3Icon, BookOpenIcon, BuildingStorefrontIcon, ChatBubbleBottomCenterTextIcon, ChatBubbleLeftRightIcon, CubeTransparentIcon, IdentificationIcon, MapIcon, MapPinIcon, PlusCircleIcon, ShieldCheckIcon, SparklesIcon, TicketIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { AuthButton } from '@/components/auth/auth-button'
 import { NavbarWeatherWidget } from './navbar-weather-widget'
 import { NavigationTexture } from './textured-background'
@@ -532,7 +532,7 @@ export function SiteNavigation({
                           {item.label === 'Directory' && 'Local Businesses'}
                           {item.label === 'Armory' && 'Gear Reviews'}
                           {item.label === 'Intel' && 'Range Conditions'}
-                          {item.label === 'Marketplace' && 'Buy & Sell'}
+                          {item.label === 'Buy & Sell' && 'Community Commerce'}
                           {item.label === 'Forums' && 'Community Discussion'}
                         </span>
                       </div>

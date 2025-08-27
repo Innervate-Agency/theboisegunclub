@@ -121,7 +121,7 @@ export function EventsContentSectionAdvanced() {
                           </div>
                           <div className="min-w-0 flex-1">
                             <h4 className="font-rajdhani font-semibold text-body-lg text-card-foreground mb-xs">
-                              ListBulletIcon Your Business
+                              List Your Business
                             </h4>
                             <p className="text-sm text-muted-foreground leading-relaxed">
                               Register your range, shop, or training facility with our community

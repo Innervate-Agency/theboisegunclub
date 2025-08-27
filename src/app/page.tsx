@@ -4,7 +4,7 @@ import { TacticalHero } from '@/components/ui/tactical-hero'
 import { PlatformFeaturesSection } from '@/components/sections/platform-features-section'
 import { FeaturedContentSection } from '@/components/sections/featured-content-section'
 import { DirectoryStatsSection } from '@/components/sections/directory-stats-section'
-import { MarketplaceDealSection } from '@/components/sections/buysell-deal-section'
+import { BuySellDealSection } from '@/components/sections/buysell-deal-section'
 import { PlatformValuesSection } from '@/components/sections/platform-values-section'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
@@ -48,7 +48,7 @@ export default function HomePage() {
               }}
             >
               <div className="container mx-auto px-lg">
-                <MarketplaceDealSection />
+                <BuySellDealSection />
               </div>
             </div>
           }

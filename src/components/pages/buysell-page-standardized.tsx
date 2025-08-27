@@ -552,7 +552,7 @@ export function BuySellPageStandardized() {
         <Button className="bg-nav-buysell text-white hover:bg-white hover:text-nav-buysell font-rajdhani font-bold"
         >
           <PlusIcon className="h-4 w-4 mr-xs" />
-          ListBulletIcon Your Items
+          List Your Items
         </Button>
         <Button 
           variant="outline" className="border-border text-white hover:bg-card hover:text-nav-buysell"

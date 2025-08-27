@@ -425,7 +425,7 @@ export function DirectoryPageComponent() {
                     <div className="space-y-xs text-center">
                       <CursorArrowRaysIcon weight="bold" className="size-5 text-nav-directory mx-auto" />
                       <h4 className="font-rajdhani font-bold text-body-sm text-card-foreground">
-                        ListBulletIcon Your Business
+                        List Your Business
                       </h4>
                       <p className="text-body-xs text-muted-foreground leading-relaxed">
                         Join Idaho's premier firearms directory.

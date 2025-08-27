@@ -94,7 +94,7 @@ export const DirectoryPage: Story = {
       href: '/directory'
     },
     secondaryAction: {
-      text: 'ListBulletIcon Your Business',
+      text: 'List Your Business',
       href: '/directory/add'
     },
     icon: UsersIcon,

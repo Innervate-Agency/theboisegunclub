@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { ProductDetailPage } from '@/components/ui/detail-page-builder'
 
 // Mock data service - in production, this would fetch from a database or API
-const getMarketplaceProduct = (id: string) => {
+const getBuySellProduct = (id: string) => {
   // Sample buysell listings data
   const products = [
     {
@@ -129,7 +129,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params
-  const product = getMarketplaceProduct(id)
+  const product = getBuySellProduct(id)
 
   if (!product) {
     return {
@@ -157,9 +157,9 @@ export async function generateStaticParams() {
   ]
 }
 
-export default async function MarketplaceProductPage({ params }: Props) {
+export default async function BuySellProductPage({ params }: Props) {
   const { id } = await params
-  const product = getMarketplaceProduct(id)
+  const product = getBuySellProduct(id)
 
   if (!product) {
     notFound()

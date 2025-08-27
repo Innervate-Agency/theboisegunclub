@@ -56,7 +56,7 @@ const sections: Section[] = [
   },
   {
     id: 'buysell-deals',
-    title: 'Marketplace',
+    title: 'Buy & Sell',
     subtitle: 'Deals and opportunities',
     icon: ShoppingBagIcon,
     color: 'text-nav-buysell',

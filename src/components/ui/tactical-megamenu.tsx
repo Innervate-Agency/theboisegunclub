@@ -164,7 +164,7 @@ const megamenuSections: MegamenuSection[] = [
       ]
     },
     quickActions: [
-      { href: '/buysell/sell', label: 'ListBulletIcon Item', icon: BuildingStorefrontIcon, colorClass: 'nav-buysell' },
+      { href: '/buysell/sell', label: 'List Item', icon: BuildingStorefrontIcon, colorClass: 'nav-buysell' },
       { href: '/buysell/watchlist', label: 'Watchlist', icon: EyeIcon, colorClass: 'nav-buysell' }
     ]
   }

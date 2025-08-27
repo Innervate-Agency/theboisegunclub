@@ -585,7 +585,7 @@ export function DirectoryPageStandardized() {
             <div className="flex gap-base">
               <Button className="bg-nav-directory text-white hover:bg-white hover:text-nav-directory font-rajdhani font-bold" animationType="plus-minus">
                 <PlusIcon className="h-4 w-4 mr-xs" />
-                ListBulletIcon Your Business
+                List Your Business
               </Button>
               <Button variant="ghost" className="text-white hover:bg-white/10 font-rajdhani font-bold" animationType="chevron">
                 View Map

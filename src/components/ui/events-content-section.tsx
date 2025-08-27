@@ -53,7 +53,7 @@ export function EventsContentSection() {
                     <BuildingOfficeIcon className="h-5 w-5 text-sandy-ochre" />
                   </div>
                   <div>
-                    <h4 className="font-rajdhani font-semibold text-sm text-card-foreground">ListBulletIcon Your Business</h4>
+                    <h4 className="font-rajdhani font-semibold text-sm text-card-foreground">List Your Business</h4>
                     <p className="text-xs text-muted-foreground leading-tight">
                       Register your range, shop, or training facility
                     </p>

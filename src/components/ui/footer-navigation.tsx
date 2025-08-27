@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { BuildingStorefrontIcon, ChatBubbleBottomCenterTextIcon, MapIcon, MapPinIcon, ShieldCheckIcon, TicketIcon } from '@heroicons/react/24/outline';
+import { BuildingStorefrontIcon, ChatBubbleBottomCenterTextIcon, IdentificationIcon, MapIcon, MapPinIcon, ShieldCheckIcon, TicketIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 interface FooterNavigationProps {
   className?: string
@@ -18,7 +18,7 @@ const navigationLinks = [
   },
   {
     href: '/directory',
-    icon: Directory,
+    icon: IdentificationIcon,
     title: 'Directory',
     description: 'Local Dealers & Services',
     theme: 'directory'
@@ -32,7 +32,7 @@ const navigationLinks = [
   },
   {
     href: '/intel',
-    icon: Map,
+    icon: MapIcon,
     title: 'Intel',
     description: 'Range Conditions & Weather',
     theme: 'intel'
@@ -40,7 +40,7 @@ const navigationLinks = [
   {
     href: '/buysell',
     icon: BuildingStorefrontIcon,
-    title: 'Marketplace',
+    title: 'Buy & Sell',
     description: 'Buy & Sell Gear',
     theme: 'buysell'
   },

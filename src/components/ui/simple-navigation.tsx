@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { AuthButton } from '@/components/auth/auth-button'
 import { useAuth } from '@/components/auth/auth-context'
-import { BanknotesIcon, CubeTransparentIcon, IdentificationIcon, MapPinIcon, PlusCircleIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { BanknotesIcon, CubeTransparentIcon, IdentificationIcon, MapPinIcon, PlusCircleIcon, ShieldCheckIcon, TicketIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const navigationVariants = cva(
   "w-full transition-all duration-200 ease-out",
@@ -31,7 +31,7 @@ const navItems = [
   { name: 'Directory', href: '/directory', icon: IdentificationIcon },
   { name: 'Training', href: '/training', icon: ShieldCheckIcon },
   { name: 'Intel', href: '/intel', icon: MapPinIcon },
-  { name: 'Marketplace', href: '/buysell', icon: BanknotesIcon },
+  { name: 'Buy & Sell', href: '/buysell', icon: BanknotesIcon },
   { name: 'Community', href: '/forums', icon: UsersIcon },
 ]
 

@@ -118,11 +118,11 @@ export function SiteHeader() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
-              {/* Marketplace */}
+              {/* Buy & Sell */}
               <NavigationMenuItem>
                 <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "gap-xs")} href="/buysell">
                   <ShoppingCartIcon className="size-4" />
-                  Marketplace
+                  Buy & Sell
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
@@ -202,7 +202,7 @@ export function SiteHeader() {
               </Link>
               <Link href="/buysell" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
                 <ShoppingCartIcon className="size-4" />
-                Marketplace
+                Buy & Sell
               </Link>
               <Link href="/forums" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
                 <UsersIcon className="size-4" />
