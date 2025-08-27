@@ -4,6 +4,7 @@ import React from 'react'
 import { Button } from './button'
 import { TrustIndicators } from './trust-indicators'
 import { MotionDiv, MotionH1, MotionP } from './optimized-motion'
+import { DynamicHeroOverhang } from './dynamic-loader'
 
 export function TacticalHero() {
   return (
@@ -74,6 +75,15 @@ export function TacticalHero() {
             >
               <TrustIndicators />
             </MotionDiv>
+          </div>
+        </div>
+      </div>
+
+      {/* Overhang Navigation - positioned at bottom center of hero */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-30">
+        <div className="w-[1200px] px-lg">
+          <div className="bg-light-peachy dark:bg-rich-loam rounded-t-3xl pb-8" style={{borderTopLeftRadius: '24px', borderTopRightRadius: '24px'}}>
+            <DynamicHeroOverhang />
           </div>
         </div>
       </div>

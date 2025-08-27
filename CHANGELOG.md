@@ -1,6 +1,43 @@
 # Changelog
 
-## [Pre-Launch] - 2025-08-21 (Latest)
+## [Pre-Launch] - 2025-08-27 (Latest)
+
+### 🧹 **PROJECT STRUCTURE CLEANUP & ORGANIZATION**
+
+#### 📁 Documentation Overhaul
+- **Organized /docs/ folder**: Created logical structure with `/data/`, `/research/`, `/technical/`, `/content/`, `/archive/` subdirectories
+- **Eliminated duplicates**: Removed 20+ Zone.Identifier Windows files and consolidated duplicate documents
+- **Professional structure**: 60+ scattered files now properly categorized for easy content management
+
+#### 🗂️ Full Project Reorganization
+- **Scripts organization**: Categorized scripts into `/crawler/`, `/content/`, `/data-processing/` subdirectories
+- **Data consolidation**: CSV files, JSON data, and SQL scripts moved to appropriate locations
+- **Root cleanup**: Removed test files and temporary scripts from root directory
+- **Preserved functionality**: All critical app files untouched, dev server running perfectly
+
+### 🎨 **UI/UX IMPROVEMENTS**
+
+#### 🔧 Hero Overhang Navigation Fix
+- **Resolved positioning issues**: Overhang now properly positioned at bottom of hero container
+- **Seamless visual flow**: Extended overhang background (pb-8) to bridge gap with main content
+- **Clean structure**: Moved overhang inside TacticalHero component for proper containment
+- **Background harmony**: Using bg-light-peachy dark:bg-rich-loam for proper visual separation
+
+#### 🐛 Bug Fixes
+- **Fixed horizontal scrollbar**: Added `overflow-x: hidden` to html/body to prevent viewport overflow
+- **Icon reference errors**: Resolved Cog6ToothIcon undefined errors in accessibility components
+- **Theme color updates**: Updated intel page purple to #8963bb for better visual appeal
+
+### 📚 **DOCUMENTATION IMPROVEMENTS**
+
+#### 📝 CLAUDE.md Enhancement
+- **Added essential commands**: Included npm run lint:fix, bundle:analyze, and database scripts
+- **Architecture clarity**: Documented 90% static / 10% dynamic data flow architecture
+- **Database setup**: Added PostgreSQL connection pooling configuration details
+- **Icon system correction**: Updated documentation to reflect Heroicons as primary (not Phosphor)
+- **Streamlined content**: Reduced from 200+ to 110 lines for better developer experience
+
+## [Pre-Launch] - 2025-08-21 (Earlier)
 
 ### 🏠 **HOMEPAGE ARCHITECTURE & NAVIGATION OVERHAUL**
 

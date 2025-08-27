@@ -1,7 +1,6 @@
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { TacticalHero } from '@/components/ui/tactical-hero'
-import { DynamicHeroOverhang } from '@/components/ui/dynamic-loader'
 import { PlatformFeaturesSection } from '@/components/sections/platform-features-section'
 import { FeaturedContentSection } from '@/components/sections/featured-content-section'
 import { DirectoryStatsSection } from '@/components/sections/directory-stats-section'
