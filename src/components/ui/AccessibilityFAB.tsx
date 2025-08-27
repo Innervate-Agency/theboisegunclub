@@ -4,7 +4,7 @@ import * as React from "react"
 import { useTheme } from "next-themes"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { Cog6ToothIcon as Settings, ComputerDesktopIcon, DocumentTextIcon, EyeIcon, MinusIcon, MoonIcon, PlusIcon, SunIcon, SwatchIcon, ThemeIcon, Cog6ToothIcon, UserIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Cog6ToothIcon as Settings, ComputerDesktopIcon, DocumentTextIcon, EyeIcon, MinusIcon, MoonIcon, PlusIcon, SunIcon, SwatchIcon, AdjustmentsHorizontalIcon, UserIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Button } from "./button"
 import { Badge } from "./badge"
 import { useAccessibility } from "@/hooks/use-accessibility"
@@ -271,7 +271,7 @@ export default function AccessibilityFAB({
                     : "text-card-foreground"
                 )}
               >
-                <Contrast className="size-4" />
+                <AdjustmentsHorizontalIcon className="size-4" />
                 High
               </Button>
             </div>

@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { Card, CardContent, CardHeader, CardTitle } from './card'
 import { Badge } from './badge'
-import { Cog6ToothIcon, EyeIcon, MinusIcon, MoonIcon, PlusIcon, SunIcon, ThemeIcon, Cog6ToothIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Cog6ToothIcon, EyeIcon, MinusIcon, MoonIcon, PlusIcon, SunIcon, AdjustmentsHorizontalIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 // Debounce hook for performance optimization
 function useDebounce<T>(value: T, delay: number): T {
@@ -299,7 +299,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     onClick={() => handleContrastChange('high')}
                     className="flex-1 gap-xs"
                   >
-                    <Contrast className="size-4" />
+                    <AdjustmentsHorizontalIcon className="size-4" />
                     High
                   </Button>
                 </div>
