@@ -48,7 +48,7 @@ const badgeVariants = cva(
         "events-registration": "bg-info-river/10 text-info-river border-info-river/30 rounded-xs",
         "events-free": "bg-[var(--accent)] bg-opacity-10 text-[var(--accent)] border-[var(--accent)] border-opacity-30 rounded-xs",
 
-        // Marketplace Page Badges - Theme-adaptive
+        // Buy & Sell Page Badges - Theme-adaptive
         "buysell-featured": "bg-[var(--nav-buysell)] bg-opacity-10 text-[var(--nav-buysell)] border-[var(--nav-buysell)] border-opacity-30 rounded-xs",
         "buysell-new": "bg-rusty-orange/10 text-rusty-orange border-rusty-orange/30 rounded-xs",
         "buysell-sale": "bg-[var(--primary)] bg-opacity-10 text-[var(--primary)] border-[var(--primary)] border-opacity-30 rounded-xs",
@@ -142,7 +142,7 @@ const pageIcons = {
   "events-registration": CalendarIcon,
   "events-free": CurrencyDollarIcon,
 
-  // Marketplace Page Icons
+  // Buy & Sell Page Icons
   "buysell-featured": StarIcon,
   "buysell-new": BoltIcon,
   "buysell-sale": TagIcon,

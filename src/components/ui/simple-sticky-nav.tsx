@@ -17,7 +17,7 @@ export function SimpleStickyNav({ className }: SimpleStickyNavProps) {
     { id: 'platform-features', label: 'Features', color: 'nav-directory' },
     { id: 'featured-content', label: 'Content', color: 'nav-intel' },
     { id: 'directory-stats', label: 'Directory', color: 'nav-directory' },
-    { id: 'buysell-deals', label: 'Marketplace', color: 'nav-buysell' },
+    { id: 'buysell-deals', label: 'Buy & Sell', color: 'nav-buysell' },
     { id: 'platform-values', label: 'Values', color: 'nav-armory' },
     { id: 'join-movement', label: 'Join', color: 'nav-home' }
   ]

@@ -81,7 +81,7 @@ export const CommunitySpotlight: Story = {
         { icon: <LockClosedIcon />,
  text: 'Secure, Private Discussion Forums' },
         { icon: <Store />,
- text: 'Verified Member Marketplace' },
+ text: 'Verified Member Buy & Sell' },
         { icon: <StarIcon />,
  text: 'Idaho-Specific Legal & News Updates' },
       ],

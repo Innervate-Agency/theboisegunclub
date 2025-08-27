@@ -3,7 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-export function MarketplaceEmbers() {
+export function BuySellEmbers() {
   const embers = Array.from({ length: 20 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,

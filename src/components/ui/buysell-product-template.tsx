@@ -19,7 +19,7 @@ interface ProductVendor {
   responseTime?: string
 }
 
-interface MarketplaceProductTemplateProps {
+interface BuySellProductTemplateProps {
   id: string | number
   title: string
   description: string
@@ -51,7 +51,7 @@ interface MarketplaceProductTemplateProps {
   }>
 }
 
-export default function MarketplaceProductTemplate({
+export default function BuySellProductTemplate({
   id,
   title,
   description,
@@ -75,7 +75,7 @@ export default function MarketplaceProductTemplate({
   featured = false,
   specifications = {},
   relatedProducts = []
-}: MarketplaceProductTemplateProps) {
+}: BuySellProductTemplateProps) {
   const [selectedImageIndex, setSelectedImageIndex] = React.useState(0)
   const discount = originalPrice ? Math.round(((originalPrice - price) / originalPrice) * 100) : 0
 
@@ -93,7 +93,7 @@ export default function MarketplaceProductTemplate({
             </Link>
             <ChevronRightIcon className="h-4 w-4" />
             <Link href="/buysell" className="hover:text-nav-buysell transition-colors">
-              Marketplace
+              Buy & Sell
             </Link>
             <ChevronRightIcon className="h-4 w-4" />
             <Link href={`/buysell?category=${category}`} className="hover:text-nav-buysell transition-colors">
@@ -108,7 +108,7 @@ export default function MarketplaceProductTemplate({
             <Link href="/buysell">
               <Button variant="ghost" className="gap-xs">
                 <ArrowLeftIcon className="h-4 w-4" />
-                Back to Marketplace
+                Back to Buy & Sell
               </Button>
             </Link>
           </div>

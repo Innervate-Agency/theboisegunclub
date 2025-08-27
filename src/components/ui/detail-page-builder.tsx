@@ -537,7 +537,7 @@ export function ProductDetailPage(props: ProductPageProps) {
   const { title, description, category, images, tags = [] } = props
 
   const section: DetailPageSection = {
-    name: 'Marketplace',
+    name: 'Buy & Sell',
     path: '/buysell',
     color: 'nav-buysell'
   }

@@ -156,7 +156,7 @@ export const Complete: Story = {
                 <ShoppingCartIcon className="h-8 w-8 text-sandy-ochre mb-base group-hover:text-rusty-orange transition-colors" />
                 <CardTitle className="flex items-center gap-xs">
                   <BoltIcon className="h-5 w-5" />
-                  Service Marketplace
+                  Service Buy & Sell
                 </CardTitle>
               </CardHeader>
               <CardContent>

@@ -19,7 +19,7 @@ const services = [
   },
   {
     icon: ShoppingCartIcon,
-    title: "Service Marketplace",
+    title: "Service Buy & Sell",
     description: "Book range time, training sessions, and services from local businesses",
     borderColor: "border-l-rusty-orange"
   },

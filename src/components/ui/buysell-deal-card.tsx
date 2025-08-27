@@ -7,7 +7,7 @@ import { Button } from './button'
 import { cn } from '@/lib/utils'
 import { BuildingStorefrontIcon, CalendarDaysIcon, CategoryIcon, CursorArrowRaysIcon, MapPinIcon, PhoneIcon, ArrowTrendingDownIcon, ShoppingBagIcon, StarIcon } from '@heroicons/react/24/outline';
 
-interface MarketplaceDeal {
+interface BuySellDeal {
   title: string
   business: string
   location: string
@@ -33,15 +33,15 @@ interface MarketplaceDeal {
 
 // Removed: Using unified card variants instead
 
-interface MarketplaceDealCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  deal: MarketplaceDeal
+interface BuySellDealCardProps extends React.HTMLAttributes<HTMLDivElement> {
+  deal: BuySellDeal
   showContact?: boolean
   featured?: boolean
   size?: 'compact' | 'standard' | 'spacious'
   viewMode?: string // Accept but don't pass to DOM
 }
 
-export function MarketplaceDealCard({
+export function BuySellDealCard({
   deal,
   showContact = true,
   featured = false,
@@ -49,7 +49,7 @@ export function MarketplaceDealCard({
   className,
   viewMode, // Destructure viewMode so it doesn't get passed to DOM
   ...props
-}: MarketplaceDealCardProps) {
+}: BuySellDealCardProps) {
   const getCategoryBadgeVariant = (category: string) => {
     if (category.includes('Ammunition')) return 'rusty-orange'
     if (category.includes('Firearms')) return 'slate-blue'

@@ -6,11 +6,11 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import { MarketplaceDealCard } from '@/components/ui/buysell-deal-card'
-import { MarketplaceTicker } from '@/components/ui/buysell-ticker'
-import { MarketplaceContentSection } from '@/components/ui/buysell-content-section'
-import { MarketplaceSparklesIcons } from '@/components/ui/hero-buysell-diamonds'
-import { MarketplaceEmbers } from '@/components/ui/hero-buysell-embers'
+import { BuySellDealCard } from '@/components/ui/buysell-deal-card'
+import { BuySellTicker } from '@/components/ui/buysell-ticker'
+import { BuySellContentSection } from '@/components/ui/buysell-content-section'
+import { BuySellSparklesIcons } from '@/components/ui/hero-buysell-diamonds'
+import { BuySellEmbers } from '@/components/ui/hero-buysell-embers'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
@@ -22,8 +22,8 @@ import { EnhancedPagination } from '@/components/ui/enhanced-pagination'
 import { CardSkeleton } from '@/components/ui/card-skeleton'
 import { ArchiveBoxIcon, ArrowRightIcon, ArrowTrendingUpIcon, BoltIcon, BuildingOfficeIcon, BuildingStorefrontIcon, CheckCircleIcon, ChevronRightIcon, ClockIcon, CurrencyDollarIcon, CursorArrowRaysIcon, FireIcon, FunnelIcon, ListBulletIcon, MagnifyingGlassIcon, MapPinIcon, PhoneIcon, PlusIcon, RectangleGroupIcon, ShieldCheckIcon, ShoppingCartIcon, SparklesIcon, Squares2X2Icon, StarIcon, ViewColumnsIcon, WindowIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
-// Marketplace deal data type
-interface MarketplaceDeal {
+// Buy & Sell deal data type
+interface BuySellDeal {
   title: string
   business: string
   location: string
@@ -47,7 +47,7 @@ interface MarketplaceDeal {
 }
 
 // Comprehensive Idaho buysell from verified FFL dealers and service providers
-const buysellDeals: MarketplaceDeal[] = [
+const buysellDeals: BuySellDeal[] = [
   // Premium Custom Services
   {
     title: "Custom Precision Rifle Build",
@@ -438,7 +438,7 @@ export function BuySellPageStandardized() {
     }
   ]
 
-  // Marketplace category stats based on actual verified data
+  // Buy & Sell category stats based on actual verified data
   const buysellCategoryStats = [
     { icon: CursorArrowRaysIcon, title: "Custom Services", value: buysellDeals.filter(d => d.category === 'Custom Firearms' || d.category === 'Services').length.toString(), subtitle: "Available now", color: "text-nav-buysell" },
     { icon: ArchiveBoxIcon, title: "Equipment", value: buysellDeals.filter(d => d.category === 'Equipment').length.toString(), subtitle: "In stock", color: "text-nav-buysell" },
@@ -502,8 +502,8 @@ export function BuySellPageStandardized() {
   // Hero content sections - clean separation of concerns
   const heroBackgroundElements = (
     <>
-      <MarketplaceSparklesIcons />
-      <MarketplaceEmbers />
+      <BuySellSparklesIcons />
+      <BuySellEmbers />
     </>
   )
 
@@ -514,7 +514,7 @@ export function BuySellPageStandardized() {
         <div className="flex items-center gap-xs text-sm text-white/60">
           <span>Home</span>
           <ChevronRightIcon className="h-4 w-4" />
-          <span className="text-white font-medium">Marketplace</span>
+          <span className="text-white font-medium">Buy & Sell</span>
         </div>
       </div>
 
@@ -641,11 +641,11 @@ export function BuySellPageStandardized() {
     <div className="min-h-screen bg-background">
       {heroContent}
       
-      {/* Marketplace Ticker - Live deals */}
-      <MarketplaceTicker />
+      {/* Buy & Sell Ticker - Live deals */}
+      <BuySellTicker />
       
-      {/* Marketplace Content Section - Trust and Categories */}
-      <MarketplaceContentSection />
+      {/* Buy & Sell Content Section - Trust and Categories */}
+      <BuySellContentSection />
 
       {/* Main Content Area */}
       <section className="py-mobile-2xl sm:py-4xl bg-background/50">
@@ -832,7 +832,7 @@ export function BuySellPageStandardized() {
                   <div className={filters.getGridClassName()}>
                     {filters.paginatedItems.length > 0 ? (
                       filters.paginatedItems.map((deal, index) => (
-                        <MarketplaceDealCard
+                        <BuySellDealCard
                           key={`${deal.title}-${index}`}
                           deal={deal}
                           className="transition-all duration-300 rounded-xs"
@@ -880,7 +880,7 @@ export function BuySellPageStandardized() {
         {/* Stats Section */}
         <TrustIndicators />
         <div className="container mx-auto px-4">
-          <h3 className="font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center">Marketplace Categories</h3>
+          <h3 className="font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center">Buy & Sell Categories</h3>
           <DirectoryStatsGrid stats={buysellCategoryStats} />
         </div>
 
@@ -888,7 +888,7 @@ export function BuySellPageStandardized() {
         <div className="section-skew-up bg-card/50 py-3xl">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h3 className="font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center">Recent Marketplace Activity</h3>
+              <h3 className="font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center">Recent Buy & Sell Activity</h3>
               <div className="space-y-base">
                 {activityFeedData.map((activity, index) => (
                   <ActivityFeedCard key={index} {...activity} />

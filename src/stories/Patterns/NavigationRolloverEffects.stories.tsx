@@ -23,7 +23,7 @@ const navigationItems = [
   { label: "Directory", icon: UsersIcon, color: "ayu-green" },
   { label: "Guides", icon: CursorArrowRaysIcon, color: "ayu-purple" },
   { label: "Map", icon: ShieldCheckIcon, color: "ayu-red" },
-  { label: "Marketplace", icon: TrophyIcon, color: "ayu-teal" }
+  { label: "Buy & Sell", icon: TrophyIcon, color: "ayu-teal" }
 ]
 
 export const StripeStyleCenterOut: Story = {

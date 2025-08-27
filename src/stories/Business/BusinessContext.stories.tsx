@@ -22,7 +22,7 @@ This is **NOT** a gun club website - this is a regional firearms buysell, direct
 
 ## 🏢 THE FOUR PILLARS
 
-### 1. Directory & Marketplace
+### 1. Directory & Buy & Sell
 - Gun shops, ranges, gunsmiths, instructors
 - Service booking system  
 - Aggregated accessory store (gear/ammo only)
@@ -166,7 +166,7 @@ const BusinessShowcase = () => (
               <div className="w-12 h-12 bg-gradient-to-r from-rusty-orange to-sandy-ochre rounded-sm flex items-center justify-center mx-auto mb-base">
                 <MapPinIcon className="w-6 h-6 text-white" />
               </div>
-              <CardTitle className="text-rusty-orange">Directory & Marketplace</CardTitle>
+              <CardTitle className="text-rusty-orange">Directory & Buy & Sell</CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription className="text-center">

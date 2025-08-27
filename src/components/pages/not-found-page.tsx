@@ -47,7 +47,7 @@ const quickNavCards: QuickNavCard[] = [
   {
     href: '/buysell',
     icon: BuildingStorefrontIcon,
-    title: 'Marketplace',
+    title: 'Buy & Sell',
     description: 'Buy & Sell Gear',
     theme: 'buysell'
   },

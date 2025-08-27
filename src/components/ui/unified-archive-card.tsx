@@ -12,7 +12,7 @@ import { Button } from './button'
  * Unified Archive Card Component
  * 
  * This component replaces the nested card structures found in:
- * - MarketplaceDealCard (Card inside TacticalCase)
+ * - BuySellDealCard (Card inside TacticalCase)
  * - VendorCard (custom variants with conflicting tokens)
  * - EventCard (Card inside TacticalCase)
  * 

@@ -140,7 +140,7 @@ const megamenuSections: MegamenuSection[] = [
   },
   {
     id: 'buysell',
-    title: 'Marketplace',
+    title: 'Buy & Sell',
     description: 'Buy, sell, and trade firearms & gear',
     icon: BuildingStorefrontIcon,
     colorClass: 'nav-buysell',

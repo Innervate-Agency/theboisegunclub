@@ -372,8 +372,8 @@ export function ArmoryPageVariant({
   )
 }
 
-// Marketplace Page Variant
-interface MarketplacePageVariantProps extends PageVariantBaseProps {
+// Buy & Sell Page Variant
+interface BuySellPageVariantProps extends PageVariantBaseProps {
   heroContent: ReactNode
   filterSections?: FunnelIconSection[]
   viewMode?: 'grid' | 'list' | 'card' | 'dense'
@@ -385,7 +385,7 @@ interface MarketplacePageVariantProps extends PageVariantBaseProps {
   activityFeed?: Array<{ id: string; type: string; content: string; timestamp: string }>
 }
 
-export function MarketplacePageVariant({
+export function BuySellPageVariant({
   heroContent,
   searchQuery,
   onMagnifyingGlassIconChange,
@@ -403,14 +403,14 @@ export function MarketplacePageVariant({
   totalResults,
   filteredResults,
   activityFeed = []
-}: MarketplacePageVariantProps) {
+}: BuySellPageVariantProps) {
   const bottomCTA = (
     <div className="space-y-4xl">
       {/* ChartBarIcon Feed Section */}
       {activityFeed.length > 0 && (
         <div className="section-skew-up bg-card/50 py-3xl">
           <div className="max-w-4xl mx-auto">
-            <h3 className="font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center">Recent Marketplace Updates</h3>
+            <h3 className="font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center">Recent Buy & Sell Updates</h3>
             <div className="space-y-base">
               {activityFeed.map((activity, index) => (
                 <ChartBarIconFeedCard key={index} {...activity} />
@@ -428,7 +428,7 @@ export function MarketplacePageVariant({
   return (
     <UnifiedPageTemplate
       pageTitle="Buy & Sell"
-      pageSubtitle="Idaho Firearms Marketplace"
+      pageSubtitle="Idaho Firearms Buy & Sell"
       pageColor="nav-buysell"
       heroContent={heroContent}
       searchQuery={searchQuery}

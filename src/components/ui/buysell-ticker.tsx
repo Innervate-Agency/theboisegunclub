@@ -23,7 +23,7 @@ const dealAlerts: DealAlert[] = [
   { title: "Custom Build", business: "AllTerra Arms", discount: "$300 OFF", timeAgo: "35 min ago", type: "featured" }
 ]
 
-export function MarketplaceTicker() {
+export function BuySellTicker() {
   const [currentIndex, setCurrentIndex] = React.useState(0)
   const [isPaused, setIsPaused] = React.useState(false)
 

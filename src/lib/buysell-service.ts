@@ -1,4 +1,4 @@
-export interface MarketplaceVendor {
+export interface BuySellVendor {
   name: string
   rating: number
   address: string
@@ -7,7 +7,7 @@ export interface MarketplaceVendor {
   responseTime?: string
 }
 
-export interface MarketplaceProduct {
+export interface BuySellProduct {
   id: string | number
   title: string
   description: string
@@ -19,7 +19,7 @@ export interface MarketplaceProduct {
   caliber?: string
   brand: string
   model: string
-  vendor: MarketplaceVendor
+  vendor: BuySellVendor
   inStock: boolean
   quantity?: number
   lastUpdated: string
@@ -33,7 +33,7 @@ export interface MarketplaceProduct {
 }
 
 // Mock data - in production this would be database queries
-const buysellProducts: MarketplaceProduct[] = [
+const buysellProducts: BuySellProduct[] = [
   {
     id: '1',
     title: "Glock 19 Gen 5",
@@ -162,20 +162,20 @@ const buysellProducts: MarketplaceProduct[] = [
   }
 ]
 
-export class MarketplaceService {
-  static async getAllProducts(): Promise<MarketplaceProduct[]> {
+export class BuySellService {
+  static async getAllProducts(): Promise<BuySellProduct[]> {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100))
     return buysellProducts
   }
 
-  static async getProductById(id: string): Promise<MarketplaceProduct | null> {
+  static async getProductById(id: string): Promise<BuySellProduct | null> {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100))
     return buysellProducts.find(product => product.id.toString() === id) || null
   }
 
-  static async getProductsByCategory(category: string): Promise<MarketplaceProduct[]> {
+  static async getProductsByCategory(category: string): Promise<BuySellProduct[]> {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100))
     return buysellProducts.filter(product => 
@@ -183,13 +183,13 @@ export class MarketplaceService {
     )
   }
 
-  static async getFeaturedProducts(): Promise<MarketplaceProduct[]> {
+  static async getFeaturedProducts(): Promise<BuySellProduct[]> {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100))
     return buysellProducts.filter(product => product.featured)
   }
 
-  static async getRelatedProducts(productId: string, category: string): Promise<MarketplaceProduct[]> {
+  static async getRelatedProducts(productId: string, category: string): Promise<BuySellProduct[]> {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100))
     return buysellProducts
@@ -200,7 +200,7 @@ export class MarketplaceService {
       .slice(0, 3)
   }
 
-  static async searchProducts(query: string): Promise<MarketplaceProduct[]> {
+  static async searchProducts(query: string): Promise<BuySellProduct[]> {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100))
     const searchTerm = query.toLowerCase()
@@ -243,4 +243,4 @@ export class MarketplaceService {
   }
 }
 
-export const buysellService = MarketplaceService
+export const buysellService = BuySellService

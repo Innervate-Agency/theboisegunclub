@@ -195,7 +195,7 @@ export default function HomePage() {
                 <ShoppingCartIcon className="h-8 w-8 text-sandy-ochre group-hover:text-rusty-orange transition-colors" />
                 <CardTitle className="flex items-center gap-2">
                   <BoltIcon className="h-5 w-5" />
-                  Service Marketplace
+                  Service Buy & Sell
                 </CardTitle>
               </CardHeader>
               <CardContent>

@@ -60,7 +60,7 @@ export const communityData = {
   description: "A secure, private, and Idaho-focused space for discussion, trading, and connecting with fellow enthusiasts. No more Facebook bullshit.",
   features: [
     { icon: <LockClosedIcon />, text: 'Secure, Private Discussion Forums' },
-    { icon: <Store />, text: 'Verified Member Marketplace' },
+    { icon: <Store />, text: 'Verified Member Buy & Sell' },
     { icon: <StarIcon />, text: 'Idaho-Specific Legal & News Updates' },
   ],
   imageSrc: '/images/Fractal/3.webp',

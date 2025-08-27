@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ArrowPathIcon, CheckBadgeIcon, ClockIcon, CreditCardIcon, ShieldCheckIcon, SparklesIcon, TruckIcon, UserGroupIcon } from '@heroicons/react/24/outline';
 
-export function MarketplaceContentSection() {
+export function BuySellContentSection() {
   const benefits = [
     {
       icon: ShieldCheckIcon,
@@ -51,7 +51,7 @@ export function MarketplaceContentSection() {
               <div className="flex items-center gap-sm mb-lg">
                 <UserGroupIcon className="h-5 w-5 text-nav-buysell" />
                 <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">
-                  Why Shop The Idaho Marketplace
+                  Why Shop The Idaho Buy & Sell
                 </h2>
               </div>
               <p className="text-muted-foreground mb-xl leading-relaxed">

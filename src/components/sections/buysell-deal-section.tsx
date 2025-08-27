@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { BanknotesIcon, BuildingStorefrontIcon, TagIcon } from '@heroicons/react/24/outline';
 
-export function MarketplaceDealSection() {
+export function BuySellDealSection() {
   const featuredDeals = [
     {
       business: 'Meridian Pawn & Gun',
@@ -38,7 +38,7 @@ export function MarketplaceDealSection() {
       <div className="container mx-auto px-lg">
         <div className="text-center space-y-xl mb-2xl">
           <h2 className="font-rajdhani font-bold text-3xl sm:text-4xl text-foreground">
-            Local Marketplace Deals
+            Local Buy & Sell Deals
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Exclusive deals from trusted Idaho firearms businesses. No corporate middleman, just direct connections with local dealers.

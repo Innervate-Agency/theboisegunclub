@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { BoltIcon, CurrencyDollarIcon, FireIcon, GiftIcon, ReceiptPercentIcon, ShoppingCartIcon, SparklesIcon, TagIcon } from '@heroicons/react/24/outline';
 
-export function MarketplaceSparklesIcons() {
+export function BuySellSparklesIcons() {
   const diamonds = [
     { icon: TagIcon, size: 48, x: '10%', y: '15%', duration: 22, delay: 0 },
     { icon: CurrencyDollarIcon, size: 36, x: '85%', y: '20%', duration: 28, delay: 2 },
