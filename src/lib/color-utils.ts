@@ -35,12 +35,12 @@ export function getNavigationColor(section: string, alpha: number = 1): string {
 export function getFallbackColor(section: string, alpha: number = 1): string {
   const fallbackColors: { [key: string]: string } = {
     'nav-home': '#964B00',
-    'nav-events': '#eb7d01', 
-    'nav-directory': '#2ebfe6',
+    'nav-events': '#D4912A', 
+    'nav-directory': '#4A7C59',
     'nav-armory': '#B7410E',
-    'nav-intel': '#8963bb',
-    'nav-marketplace': '#798246',
-    'nav-forums': '#6B7280'
+    'nav-intel': '#8B4A6B',
+    'nav-marketplace': '#6B7A3C',
+    'nav-forums': '#8B7355'
   }
   
   const color = fallbackColors[section] || fallbackColors['nav-home']
