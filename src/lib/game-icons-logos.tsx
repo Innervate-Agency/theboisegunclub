@@ -178,9 +178,9 @@ export const GameIconLogo: React.FC<GameIconLogoProps> = ({
         };
       case 'Retail':
         return {
-          bg: 'bg-gradient-to-br from-nav-marketplace/20 to-nav-marketplace/40',
-          icon: 'text-nav-marketplace',
-          border: 'border-nav-marketplace/30'
+          bg: 'bg-gradient-to-br from-nav-buysell/20 to-nav-buysell/40',
+          icon: 'text-nav-buysell',
+          border: 'border-nav-buysell/30'
         };
       case 'Club':
         return {

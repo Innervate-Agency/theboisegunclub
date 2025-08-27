@@ -1013,7 +1013,7 @@ export function ProductContent({
       {/* Product InformationCircleIcon */}
       <div className="space-y-base">
         <div className="flex items-center gap-base">
-          <Badge className="bg-nav-marketplace/20 text-nav-marketplace border-nav-marketplace/30">
+          <Badge className="bg-nav-buysell/20 text-nav-buysell border-nav-buysell/30">
             {category}
           </Badge>
           <Badge variant="outline">{condition}</Badge>
@@ -1023,7 +1023,7 @@ export function ProductContent({
         </div>
         
         <div className="flex items-baseline gap-base">
-          <span className="text-3xl font-rajdhani font-bold text-nav-marketplace">
+          <span className="text-3xl font-rajdhani font-bold text-nav-buysell">
             ${price.toLocaleString()}
           </span>
           {originalPrice && originalPrice > price && (
@@ -1106,7 +1106,7 @@ export function ProductContent({
           </div>
           
           <div className="flex items-center gap-xs">
-            <StarIcon className="h-4 w-4 text-nav-marketplace" />
+            <StarIcon className="h-4 w-4 text-nav-buysell" />
             <span className="text-body-sm font-medium">{vendor.rating}</span>
             <span className="text-xs text-muted-foreground">rating</span>
           </div>
@@ -1114,7 +1114,7 @@ export function ProductContent({
           <div className="space-y-xs">
             <Button 
               size="sm" 
-              className="w-full bg-nav-marketplace text-white hover:bg-nav-marketplace/90"
+              className="w-full bg-nav-buysell text-white hover:bg-nav-buysell/90"
             >
               Contact Seller
             </Button>

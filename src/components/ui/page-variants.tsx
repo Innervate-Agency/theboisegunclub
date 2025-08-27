@@ -429,7 +429,7 @@ export function MarketplacePageVariant({
     <UnifiedPageTemplate
       pageTitle="Marketplace"
       pageSubtitle="Idaho Firearms Marketplace"
-      pageColor="nav-marketplace"
+      pageColor="nav-buysell"
       heroContent={heroContent}
       searchQuery={searchQuery}
       onMagnifyingGlassIconChange={onMagnifyingGlassIconChange}

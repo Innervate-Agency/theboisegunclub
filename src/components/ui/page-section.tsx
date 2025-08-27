@@ -1,32 +1,27 @@
 'use client'
 
 import React from 'react'
-import { Button } from './button'
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { cn } from '@/lib/utils'
+import { getBackgroundStyle, getGradientStyle } from '@/lib/theme-utils'
 
 interface PageSectionProps {
-  title?: string
-  subtitle?: string
-  actionText?: string
-  onAction?: () => void
-  background?: 'default' | 'muted' | 'gradient'
+  id: string
+  children: React.ReactNode
+  variant?: 'default' | 'muted' | 'accent' | 'card' | 'primary' | 'gradient'
+  gradientFrom?: string
+  gradientTo?: string
   spacing?: 'sm' | 'md' | 'lg' | 'xl'
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | 'site'
-  children: React.ReactNode
   className?: string
-}
-
-const backgroundClasses = {
-  default: '',
-  muted: 'bg-muted/30',
-  gradient: 'bg-gradient-to-br from-current/5 to-current/10'
+  as?: 'section' | 'article' | 'aside' | 'div'
+  'data-section'?: string
 }
 
 const spacingClasses = {
-  sm: 'py-lg',
-  md: 'py-xl', 
-  lg: 'py-2xl',
-  xl: 'py-6xl'
+  sm: 'py-8',
+  md: 'py-12', 
+  lg: 'py-16',
+  xl: 'py-24'
 }
 
 const maxWidthClasses = {
@@ -38,52 +33,68 @@ const maxWidthClasses = {
 }
 
 export function PageSection({
-  title,
-  subtitle,
-  actionText,
-  onAction,
-  background = 'default',
+  id,
+  children,
+  variant = 'default',
+  gradientFrom = 'background',
+  gradientTo = 'muted',
   spacing = 'lg',
   maxWidth = 'site',
-  children,
-  className = ""
+  className = '',
+  as: Component = 'section',
+  'data-section': dataSection,
+  ...props
 }: PageSectionProps) {
-  return (
-    <section className={`${backgroundClasses[background]} ${spacingClasses[spacing]} ${className}`}>
-      <div className={`container mx-auto ${maxWidthClasses[maxWidth]} px-md`}>
-        {/* Section Header */}
-        {(title || actionText) && (
-          <div className="flex items-center justify-between mb-xl">
-            <div className="space-y-sm">
-              {title && (
-                <h2 className="font-rajdhani text-heading-2xl font-bold text-card-foreground">
-                  {title}
-                </h2>
-              )}
-              {subtitle && (
-                <p className="text-muted-foreground max-w-3xl">
-                  {subtitle}
-                </p>
-              )}
-            </div>
-            {actionText && onAction && (
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className="text-current hover:bg-current/10 shadow-none hover:shadow-whisper" 
-                animationType="arrow"
-                onClick={onAction}
-              >
-                {actionText}
-                <ArrowRightIcon className="h-3 w-3 ml-xs" />
-              </Button>
-            )}
-          </div>
-        )}
+  
+  // Get the appropriate background style using theme utilities
+  const getStyle = () => {
+    if (variant === 'gradient') {
+      return {
+        ...getGradientStyle(gradientFrom, gradientTo),
+        color: 'var(--foreground)'
+      }
+    }
+    return getBackgroundStyle(variant)
+  }
 
-        {/* Section Content */}
+  return (
+    <Component
+      id={id}
+      data-section={dataSection || id}
+      className={cn(
+        'relative w-full transition-colors duration-200',
+        spacingClasses[spacing],
+        className
+      )}
+      style={getStyle()}
+      {...props}
+    >
+      <div className={cn('container mx-auto px-lg', maxWidthClasses[maxWidth])}>
         {children}
       </div>
-    </section>
+    </Component>
+  )
+}
+
+// Preset section configurations for common use cases
+export const PageSections = {
+  Hero: (props: Omit<PageSectionProps, 'variant' | 'spacing'>) => (
+    <PageSection variant="default" spacing="xl" {...props} />
+  ),
+  
+  Content: (props: Omit<PageSectionProps, 'variant'>) => (
+    <PageSection variant="default" spacing="lg" {...props} />
+  ),
+  
+  Feature: (props: Omit<PageSectionProps, 'variant'>) => (
+    <PageSection variant="muted" spacing="lg" {...props} />
+  ),
+  
+  Highlight: (props: Omit<PageSectionProps, 'variant'>) => (
+    <PageSection variant="accent" spacing="lg" {...props} />
+  ),
+  
+  CTA: (props: Omit<PageSectionProps, 'variant'>) => (
+    <PageSection variant="primary" spacing="lg" {...props} />
   )
 }

@@ -80,7 +80,7 @@ export default function MarketplaceProductTemplate({
   const discount = originalPrice ? Math.round(((originalPrice - price) / originalPrice) * 100) : 0
 
   return (
-    <div className="theme-marketplace min-h-screen">
+    <div className="theme-buysell min-h-screen">
       <SiteNavigation />
       
       {/* Product Hero Section */}
@@ -92,20 +92,20 @@ export default function MarketplaceProductTemplate({
               Home
             </Link>
             <ChevronRightIcon className="h-4 w-4" />
-            <Link href="/marketplace" className="hover:text-nav-marketplace transition-colors">
+            <Link href="/buysell" className="hover:text-nav-buysell transition-colors">
               Marketplace
             </Link>
             <ChevronRightIcon className="h-4 w-4" />
-            <Link href={`/marketplace?category=${category}`} className="hover:text-nav-marketplace transition-colors">
+            <Link href={`/buysell?category=${category}`} className="hover:text-nav-buysell transition-colors">
               {category}
             </Link>
             <ChevronRightIcon className="h-4 w-4" />
-            <span className="text-nav-marketplace font-medium">{title}</span>
+            <span className="text-nav-buysell font-medium">{title}</span>
           </div>
           
           {/* Back Button */}
           <div className="mb-base">
-            <Link href="/marketplace">
+            <Link href="/buysell">
               <Button variant="ghost" className="gap-xs">
                 <ArrowLeftIcon className="h-4 w-4" />
                 Back to Marketplace
@@ -124,7 +124,7 @@ export default function MarketplaceProductTemplate({
               {/* Main Image */}
               <div className="relative overflow-hidden rounded-xs bg-muted">
                 <Image
-                  src={images[selectedImageIndex] || '/images/marketplace/placeholder.jpg'}
+                  src={images[selectedImageIndex] || '/images/buysell/placeholder.jpg'}
                   alt={title}
                   width={600}
                   height={400}
@@ -151,8 +151,8 @@ export default function MarketplaceProductTemplate({
                       onClick={() => setSelectedImageIndex(index)}
                       className={`flex-shrink-0 w-20 h-20 rounded-xs overflow-hidden border-2 transition-colors ${
                         selectedImageIndex === index 
-                          ? 'border-nav-marketplace' 
-                          : 'border-border hover:border-nav-marketplace/50'
+                          ? 'border-nav-buysell' 
+                          : 'border-border hover:border-nav-buysell/50'
                       }`}
                     >
                       <Image
@@ -174,7 +174,7 @@ export default function MarketplaceProductTemplate({
               <div className="space-y-base">
                 {/* Category and Tags */}
                 <div className="flex items-center gap-base flex-wrap">
-                  <Badge className="bg-nav-marketplace/20 text-nav-marketplace border-nav-marketplace/30">
+                  <Badge className="bg-nav-buysell/20 text-nav-buysell border-nav-buysell/30">
                     {category}
                   </Badge>
                   {subcategory && (
@@ -201,7 +201,7 @@ export default function MarketplaceProductTemplate({
                 
                 {/* Price */}
                 <div className="flex items-baseline gap-base">
-                  <span className="font-rajdhani text-3xl font-bold text-nav-marketplace">
+                  <span className="font-rajdhani text-3xl font-bold text-nav-buysell">
                     ${price.toLocaleString()}
                   </span>
                   {originalPrice && originalPrice > price && (
@@ -255,7 +255,7 @@ export default function MarketplaceProductTemplate({
               {/* Action Buttons */}
               <div className="space-y-base">
                 <div className="flex gap-base">
-                  <Button className="flex-1 bg-nav-marketplace text-gruvbox-bg-dark hover:bg-nav-marketplace/90 font-rajdhani font-bold"
+                  <Button className="flex-1 bg-nav-buysell text-gruvbox-bg-dark hover:bg-nav-buysell/90 font-rajdhani font-bold"
                     disabled={!inStock}
                   >
                     <ChatBubbleBottomCenterTextIcon className="h-4 w-4 mr-xs" />
@@ -322,8 +322,8 @@ export default function MarketplaceProductTemplate({
               </CardHeader>
               <CardContent className="space-y-base">
                 <div className="flex items-start gap-base">
-                  <div className="w-12 h-12 bg-nav-marketplace/20 rounded-xs flex items-center justify-center">
-                    <BuildingOffice2Icon className="h-6 w-6 text-nav-marketplace" />
+                  <div className="w-12 h-12 bg-nav-buysell/20 rounded-xs flex items-center justify-center">
+                    <BuildingOffice2Icon className="h-6 w-6 text-nav-buysell" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-base mb-xs">
@@ -397,7 +397,7 @@ export default function MarketplaceProductTemplate({
                           )}
                           <h5 className="font-medium text-body-sm line-clamp-2">{product.title}</h5>
                           <div className="flex items-center justify-between">
-                            <span className="font-rajdhani font-bold text-nav-marketplace">
+                            <span className="font-rajdhani font-bold text-nav-buysell">
                               ${product.price.toLocaleString()}
                             </span>
                             <span className="text-xs text-muted-foreground">{product.vendor}</span>
@@ -413,7 +413,7 @@ export default function MarketplaceProductTemplate({
         </div>
       </main>
       
-      <SiteFooter currentPage="marketplace" />
+      <SiteFooter currentPage="buysell" />
     </div>
   )
 }

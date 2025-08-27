@@ -87,7 +87,7 @@ html, body {
     --color-nav-directory-light: #4A7C59;   /* Desert sage green */
     --color-nav-armory-light: #B7410E;      /* Canyon terracotta red */
     --color-nav-intel-light: #8B4A6B;       /* Wildflower plum purple */
-    --color-nav-marketplace-light: #6B7A3C; /* Sagebrush olive */
+    --color-nav-buysell-light: #B8860B; /* Dark goldenrod - commerce/money feel */
     --color-nav-forums-light: #8B7355;      /* Canyon stone gray */
 
     /* 🍂 Dark Theme: "Idaho Fall Morning" - Autumn Foliage */
@@ -96,7 +96,7 @@ html, body {
     --color-nav-directory-dark: #5B9BD5;    /* Mountain lake blue */
     --color-nav-armory-dark: #DC143C;       /* Maple scarlet red */
     --color-nav-intel-dark: #9966CC;        /* Fall amethyst purple */
-    --color-nav-marketplace-dark: #355E3B;  /* Pine forest green */
+    --color-nav-buysell-dark: #FFD700;  /* Bright gold - money/commerce */
     --color-nav-forums-dark: #B8B8B8;       /* Morning mist gray */
 
     /* =================== TYPOGRAPHY =================== */
@@ -230,7 +230,7 @@ html, body {
     --nav-directory: var(--color-nav-directory-light);
     --nav-armory: var(--color-nav-armory-light);
     --nav-intel: var(--color-nav-intel-light);
-    --nav-marketplace: var(--color-nav-marketplace-light);
+    --nav-buysell: var(--color-nav-buysell-light);
     --nav-forums: var(--color-nav-forums-light);
   }
 
@@ -262,7 +262,7 @@ html, body {
     --nav-directory: var(--color-nav-directory-dark);
     --nav-armory: var(--color-nav-armory-dark);
     --nav-intel: var(--color-nav-intel-dark);
-    --nav-marketplace: var(--color-nav-marketplace-dark);
+    --nav-buysell: var(--color-nav-buysell-dark);
     --nav-forums: var(--color-nav-forums-dark);
   }
 
@@ -294,7 +294,7 @@ html, body {
     --nav-directory: var(--color-gruvbox-blue);
     --nav-armory: var(--color-gruvbox-aqua);
     --nav-intel: var(--color-gruvbox-purple);
-    --nav-marketplace: var(--color-gruvbox-green);
+    --nav-buysell: var(--color-gruvbox-green);
     --nav-forums: var(--color-gruvbox-fg-muted);
 
   }
@@ -869,8 +869,8 @@ html, body {
   color: var(--nav-intel);
 }
 
-@utility text-nav-marketplace {
-  color: var(--nav-marketplace);
+@utility text-nav-buysell {
+  color: var(--nav-buysell);
 }
 
 @utility text-nav-forums {
@@ -898,8 +898,8 @@ html, body {
   background-color: var(--nav-intel);
 }
 
-@utility bg-nav-marketplace {
-  background-color: var(--nav-marketplace);
+@utility bg-nav-buysell {
+  background-color: var(--nav-buysell);
 }
 
 @utility bg-nav-forums {
@@ -927,8 +927,8 @@ html, body {
   border-color: var(--nav-intel);
 }
 
-@utility border-nav-marketplace {
-  border-color: var(--nav-marketplace);
+@utility border-nav-buysell {
+  border-color: var(--nav-buysell);
 }
 
 @utility border-nav-forums {
@@ -1042,19 +1042,19 @@ html, body {
   --tw-gradient-to: var(--nav-intel);
 }
 
-@utility from-nav-marketplace {
-  --tw-gradient-from: var(--nav-marketplace);
-  --tw-gradient-to: rgb(from var(--nav-marketplace) r g b / 0);
+@utility from-nav-buysell {
+  --tw-gradient-from: var(--nav-buysell);
+  --tw-gradient-to: rgb(from var(--nav-buysell) r g b / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-@utility via-nav-marketplace {
-  --tw-gradient-to: rgb(from var(--nav-marketplace) r g b / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--nav-marketplace), var(--tw-gradient-to);
+@utility via-nav-buysell {
+  --tw-gradient-to: rgb(from var(--nav-buysell) r g b / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--nav-buysell), var(--tw-gradient-to);
 }
 
-@utility to-nav-marketplace {
-  --tw-gradient-to: var(--nav-marketplace);
+@utility to-nav-buysell {
+  --tw-gradient-to: var(--nav-buysell);
 }
 
 @utility from-nav-forums {
@@ -1391,8 +1391,8 @@ html, body {
     background: linear-gradient(135deg, var(--nav-intel) 0%, var(--color-foothills-purple) 100%);
   }
 
-  .bg-gradient-marketplace-hero {
-    background: linear-gradient(135deg, var(--nav-marketplace) 0%, var(--color-high-desert-sage) 100%);
+  .bg-gradient-buysell-hero {
+    background: linear-gradient(135deg, var(--nav-buysell) 0%, var(--color-high-desert-sage) 100%);
   }
 
   .bg-gradient-forums-hero {
@@ -1409,7 +1409,7 @@ html, body {
 }
 
 .card-gradient-expo {
-  background: linear-gradient(135deg, var(--nav-marketplace) 0%, var(--color-high-desert-sage) 100%);
+  background: linear-gradient(135deg, var(--nav-buysell) 0%, var(--color-high-desert-sage) 100%);
 }
 
 .card-gradient-charity {
@@ -1835,8 +1835,8 @@ html, body {
     background: linear-gradient(to right, var(--nav-armory), var(--color-iron-rust));
   }
 
-  .tactical-underline-marketplace::after {
-    background: linear-gradient(to right, var(--nav-marketplace), var(--color-high-desert-sage));
+  .tactical-underline-buysell::after {
+    background: linear-gradient(to right, var(--nav-buysell), var(--color-high-desert-sage));
   }
 
   .tactical-underline-intel::after {

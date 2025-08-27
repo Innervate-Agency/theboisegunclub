@@ -379,7 +379,7 @@ export function DirectoryPageStandardized() {
   const directoryCategoryStats = [
     { icon: MapPinIcon, title: "Shooting Ranges", value: directoryListings.filter(b => b.category === 'Range').length.toString(), subtitle: "Indoor & outdoor", color: "text-nav-armory" },
     { icon: WrenchScrewdriverIcon, title: "Gunsmiths", value: directoryListings.filter(b => b.category === 'Gunsmith').length.toString(), subtitle: "Custom & repair", color: "text-nav-intel" },
-    { icon: BuildingStorefrontIcon, title: "Retail Stores", value: directoryListings.filter(b => b.category === 'Retail').length.toString(), subtitle: "FFLs & dealers", color: "text-nav-marketplace" },
+    { icon: BuildingStorefrontIcon, title: "Retail Stores", value: directoryListings.filter(b => b.category === 'Retail').length.toString(), subtitle: "FFLs & dealers", color: "text-nav-buysell" },
     { icon: AcademicCapIcon, title: "Training Centers", value: directoryListings.filter(b => b.category === 'Training').length.toString(), subtitle: "Classes & courses", color: "text-nav-events" },
     { icon: CubeIcon, title: "Clubs & Orgs", value: directoryListings.filter(b => b.category === 'Club').length.toString(), subtitle: "Competition teams", color: "text-nav-forums" },
     { icon: BuildingStorefrontIcon, title: "Total Businesses", value: directoryListings.length.toString(), subtitle: "Verified listings", color: "text-nav-directory" }
@@ -474,7 +474,7 @@ export function DirectoryPageStandardized() {
         { id: 'range', label: 'Shooting Ranges', icon: MapPinIcon, count: directoryListings.filter(b => b.category === 'Range').length, color: 'text-nav-armory' },
         { id: 'gunsmith', label: 'Gunsmiths', icon: WrenchScrewdriverIcon, count: directoryListings.filter(b => b.category === 'Gunsmith').length, color: 'text-nav-intel' },
         { id: 'training', label: 'Training', icon: AcademicCapIcon, count: directoryListings.filter(b => b.category === 'Training').length, color: 'text-nav-events' },
-        { id: 'retail', label: 'Retail', icon: BuildingStorefrontIcon, count: directoryListings.filter(b => b.category === 'Retail').length, color: 'text-nav-marketplace' },
+        { id: 'retail', label: 'Retail', icon: BuildingStorefrontIcon, count: directoryListings.filter(b => b.category === 'Retail').length, color: 'text-nav-buysell' },
         { id: 'club', label: 'Clubs', icon: CubeIcon, count: directoryListings.filter(b => b.category === 'Club').length, color: 'text-nav-forums' },
         { id: 'service', label: 'Services', icon: Cog6ToothIcon, count: directoryListings.filter(b => b.category === 'Service').length, color: 'text-nav-directory' }
       ]

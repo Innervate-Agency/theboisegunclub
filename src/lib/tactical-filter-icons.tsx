@@ -200,7 +200,7 @@ export const getIconColor = (
         return 'text-rusty-orange';
       }
       if (type.includes('trap') || type.includes('skeet') || type.includes('sporting')) {
-        return 'text-nav-marketplace';
+        return 'text-nav-buysell';
       }
       if (type.includes('cowboy') || type.includes('sass')) {
         return 'text-sandy-ochre';

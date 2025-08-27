@@ -21,7 +21,7 @@ const defaultStats: TacticalStats = {
 }
 
 const STORAGE_KEY = 'boise-gun-club-tactical-stats'
-const SECTIONS = ['home', 'events', 'directory', 'armory', 'intel', 'marketplace', 'forums']
+const SECTIONS = ['home', 'events', 'directory', 'armory', 'intel', 'buysell', 'forums']
 
 export function useTacticalTracker() {
   const [stats, setStats] = useState<TacticalStats>(defaultStats)

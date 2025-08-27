@@ -31,7 +31,7 @@ const navItems = [
   { name: 'Directory', href: '/directory', icon: IdentificationIcon },
   { name: 'Training', href: '/training', icon: ShieldCheckIcon },
   { name: 'Intel', href: '/intel', icon: MapPinIcon },
-  { name: 'Marketplace', href: '/marketplace', icon: BanknotesIcon },
+  { name: 'Marketplace', href: '/buysell', icon: BanknotesIcon },
   { name: 'Community', href: '/forums', icon: UsersIcon },
 ]
 
@@ -46,7 +46,7 @@ export function SimpleNavigation() {
     if (pathname.startsWith('/directory')) return 'nav-directory'
     if (pathname.startsWith('/training')) return 'nav-training'
     if (pathname.startsWith('/intel')) return 'nav-intel'
-    if (pathname.startsWith('/marketplace')) return 'nav-marketplace'
+    if (pathname.startsWith('/buysell')) return 'nav-buysell'
     if (pathname.startsWith('/forums')) return 'nav-community'
     return 'nav-default'
   }

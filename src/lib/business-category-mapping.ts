@@ -116,8 +116,8 @@ export const businessCategories: Record<string, BusinessCategory> = {
     name: 'Retail Stores',
     description: 'Licensed firearms dealers and sporting goods retailers',
     icon: TacticalRetailIcon,
-    colorClass: 'text-nav-marketplace',
-    bgClass: 'bg-nav-marketplace/10 border-nav-marketplace/20',
+    colorClass: 'text-nav-buysell',
+    bgClass: 'bg-nav-buysell/10 border-nav-buysell/20',
     examples: [
       'Gun stores',
       'Sporting goods stores',
@@ -271,8 +271,8 @@ export const sportsCategories: Record<string, SportsCategory> = {
     name: 'Shotgun Sports',
     description: 'Clay target sports and wingshooter competitions',
     icon: ShotgunSportsIcon,
-    colorClass: 'text-nav-marketplace',
-    bgClass: 'bg-nav-marketplace/10 border-nav-marketplace/20',
+    colorClass: 'text-nav-buysell',
+    bgClass: 'bg-nav-buysell/10 border-nav-buysell/20',
     disciplines: [
       'Trap shooting',
       'Skeet competition',

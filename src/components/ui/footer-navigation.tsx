@@ -38,11 +38,11 @@ const navigationLinks = [
     theme: 'intel'
   },
   {
-    href: '/marketplace',
+    href: '/buysell',
     icon: BuildingStorefrontIcon,
     title: 'Marketplace',
     description: 'Buy & Sell Gear',
-    theme: 'marketplace'
+    theme: 'buysell'
   },
   {
     href: '/forums',

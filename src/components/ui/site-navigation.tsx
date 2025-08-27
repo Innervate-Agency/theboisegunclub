@@ -51,7 +51,7 @@ const navigationItems = [
   { label: "Directory", icon: IdentificationIcon, href: "/directory", color: "nav-directory" },
   { label: "Armory", icon: PlusCircleIcon, href: "/armory", color: "nav-armory" },
   { label: "Intel", icon: MapPinIcon, href: "/intel", color: "nav-intel" },
-  { label: "Marketplace", icon: BanknotesIcon, href: "/marketplace", color: "nav-marketplace" },
+  { label: "Marketplace", icon: BanknotesIcon, href: "/buysell", color: "nav-buysell" },
   { label: "Forums", icon: ChatBubbleLeftRightIcon, href: "/forums", color: "nav-forums", isForumLink: true }
 ]
 
@@ -101,7 +101,7 @@ export function SiteNavigation({
     else if (pathname.startsWith('/directory')) currentSection = 'directory'
     else if (pathname.startsWith('/armory')) currentSection = 'armory'
     else if (pathname.startsWith('/intel')) currentSection = 'intel'
-    else if (pathname.startsWith('/marketplace')) currentSection = 'marketplace'
+    else if (pathname.startsWith('/buysell')) currentSection = 'buysell'
     else if (pathname.startsWith('/forums')) currentSection = 'forums'
     
     // FireIcon brass for page navigation
@@ -141,7 +141,7 @@ export function SiteNavigation({
     if (pathname.startsWith('/directory')) return 'text-nav-directory'
     if (pathname.startsWith('/armory')) return 'text-nav-armory'
     if (pathname.startsWith('/intel')) return 'text-nav-intel'
-    if (pathname.startsWith('/marketplace')) return 'text-nav-marketplace'
+    if (pathname.startsWith('/buysell')) return 'text-nav-buysell'
     if (pathname.startsWith('/forums')) return 'text-nav-forums'
     return 'text-rusty-orange' // fallback
   }
@@ -153,7 +153,7 @@ export function SiteNavigation({
     if (pathname.startsWith('/directory')) return IdentificationIcon
     if (pathname.startsWith('/armory')) return PlusCircleIcon
     if (pathname.startsWith('/intel')) return MapPinIcon
-    if (pathname.startsWith('/marketplace')) return BanknotesIcon
+    if (pathname.startsWith('/buysell')) return BanknotesIcon
     if (pathname.startsWith('/forums')) return ChatBubbleLeftRightIcon
     return CubeTransparentIcon // fallback
   }
@@ -165,7 +165,7 @@ export function SiteNavigation({
     if (pathname.startsWith('/directory')) return 'Local Business Network'
     if (pathname.startsWith('/armory')) return 'Gear Reviews & Insights'
     if (pathname.startsWith('/intel')) return 'Range Conditions & Data'
-    if (pathname.startsWith('/marketplace')) return 'Community Commerce Hub'
+    if (pathname.startsWith('/buysell')) return 'Community Commerce Hub'
     if (pathname.startsWith('/forums')) return 'Community Discussion Space'
     return 'Treasure Valley Collective' // fallback
   }, [pathname])
@@ -178,7 +178,7 @@ export function SiteNavigation({
       'nav-directory': 'bg-nav-directory',
       'nav-armory': 'bg-nav-armory',
       'nav-intel': 'bg-nav-intel',
-      'nav-marketplace': 'bg-nav-marketplace',
+      'nav-buysell': 'bg-nav-buysell',
       'nav-forums': 'bg-nav-forums'
     }
     
@@ -256,7 +256,7 @@ export function SiteNavigation({
       case 'nav-directory': return 'hover:text-nav-directory'
       case 'nav-armory': return 'hover:text-nav-armory'
       case 'nav-intel': return 'hover:text-nav-intel'
-      case 'nav-marketplace': return 'hover:text-nav-marketplace'
+      case 'nav-buysell': return 'hover:text-nav-buysell'
       case 'nav-forums': return 'hover:text-nav-forums'
       default: return 'hover:text-nav-home'
     }
@@ -269,7 +269,7 @@ export function SiteNavigation({
       case 'nav-directory': return 'text-nav-directory'
       case 'nav-armory': return 'text-nav-armory'
       case 'nav-intel': return 'text-nav-intel'
-      case 'nav-marketplace': return 'text-nav-marketplace'
+      case 'nav-buysell': return 'text-nav-buysell'
       case 'nav-forums': return 'text-nav-forums'
       default: return 'text-nav-home'
     }

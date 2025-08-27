@@ -4,7 +4,7 @@ import { ProductDetailPage } from '@/components/ui/detail-page-builder'
 
 // Mock data service - in production, this would fetch from a database or API
 const getMarketplaceProduct = (id: string) => {
-  // Sample marketplace listings data
+  // Sample buysell listings data
   const products = [
     {
       id: '1',
@@ -29,7 +29,7 @@ const getMarketplaceProduct = (id: string) => {
       inStock: true,
       quantity: 2,
       lastUpdated: "2025-01-15",
-      images: ["/images/marketplace/glock19.jpg", "/images/marketplace/glock19-2.jpg"],
+      images: ["/images/buysell/glock19.jpg", "/images/buysell/glock19-2.jpg"],
       features: ["Night Sights", "3 Magazines", "Case Included", "Original Documentation"],
       tags: ["Popular", "Concealed Carry", "Reliable"],
       views: 340,
@@ -72,7 +72,7 @@ const getMarketplaceProduct = (id: string) => {
       inStock: true,
       quantity: 1,
       lastUpdated: "2025-01-14",
-      images: ["/images/marketplace/mp15.jpg"],
+      images: ["/images/buysell/mp15.jpg"],
       features: ["16-inch Barrel", "30-round Magazine", "Armornite Barrel Coating", "Adjustable Stock"],
       tags: ["AR-15", "CursorArrowRaysIcon Shooting", "Home Defense"],
       views: 285,
@@ -103,21 +103,21 @@ const getRelatedProducts = (productId: string, category: string) => {
       id: '3',
       title: "Glock 17 Gen 5",
       price: 589,
-      image: "/images/marketplace/glock17.jpg",
+      image: "/images/buysell/glock17.jpg",
       vendor: "Idaho Arms Co."
     },
     {
       id: '4', 
       title: "SIG Sauer P320",
       price: 649,
-      image: "/images/marketplace/sig320.jpg",
+      image: "/images/buysell/sig320.jpg",
       vendor: "Mountain West Firearms"
     },
     {
       id: '5',
       title: "Springfield XD-M",
       price: 599,
-      image: "/images/marketplace/xdmotion.jpg", 
+      image: "/images/buysell/xdmotion.jpg", 
       vendor: "Valley Gun & Pawn"
     }
   ]

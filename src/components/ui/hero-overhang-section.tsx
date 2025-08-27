@@ -69,12 +69,12 @@ export function HeroOverhangSection({
       glowColor: "hover:shadow-nav-intel/50"
     },
     { 
-      href: "/marketplace", 
+      href: "/buysell", 
       icon: <BuildingStorefrontIcon className="h-8 w-8" />, 
-      label: "Marketplace", 
-      colorClass: "nav-marketplace",
-      hoverColor: "hover:text-nav-marketplace",
-      glowColor: "hover:shadow-nav-marketplace/50"
+      label: "Buy & Sell", 
+      colorClass: "nav-buysell",
+      hoverColor: "hover:text-nav-buysell",
+      glowColor: "hover:shadow-nav-buysell/50"
     },
     { 
       href: "/forums", 

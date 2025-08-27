@@ -20,7 +20,7 @@ const tacticalHeroVariants = cva(
         directory: "card-gradient-directory",
         armory: "card-gradient-armory",
         intel: "card-gradient-intel",
-        marketplace: "card-gradient-marketplace",
+        buysell: "card-gradient-buysell",
         forums: "card-gradient-forums"
       },
       size: {
@@ -98,7 +98,7 @@ export function TacticalHero({
       directory: BookOpenIcon,
       armory: ShieldCheckIcon,
       intel: CursorArrowRaysIcon,
-      marketplace: BuildingStorefrontIcon,
+      buysell: BuildingStorefrontIcon,
       forums: UsersIcon
     }
     return iconMap[theme as keyof typeof iconMap] || TrophyIcon
@@ -114,7 +114,7 @@ export function TacticalHero({
       directory: 'nav-directory', 
       armory: 'nav-armory',
       intel: 'nav-intel',
-      marketplace: 'nav-marketplace',
+      buysell: 'nav-buysell',
       forums: 'nav-forums'
     }
     return colorMap[theme as keyof typeof colorMap] || 'nav-home'

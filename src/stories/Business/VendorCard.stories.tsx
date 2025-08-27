@@ -12,7 +12,7 @@ const meta: Meta<typeof VendorCard> = {
         component: `
 # VendorCard - TBGC Business Directory Component
 
-The **VendorCard** component showcases the complete TBGC design system with strategic tier progression for vendor subscriptions. Built specifically for the Treasure Valley firearms marketplace.
+The **VendorCard** component showcases the complete TBGC design system with strategic tier progression for vendor subscriptions. Built specifically for the Treasure Valley firearms buysell.
 
 ## Strategic Pricing Tiers
 - **FREE** ($0): Clean minimalism - content focused

@@ -47,7 +47,7 @@ export function MarketplaceSparklesIcons() {
       
       {/* Subtle gradient orbs */}
       <motion.div
-        className="absolute w-96 h-96 -top-48 -right-48 bg-nav-marketplace/5 rounded-full blur-3xl"
+        className="absolute w-96 h-96 -top-48 -right-48 bg-nav-buysell/5 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],

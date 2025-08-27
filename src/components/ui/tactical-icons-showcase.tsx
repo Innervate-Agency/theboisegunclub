@@ -145,7 +145,7 @@ export const TacticalIconsShowcase: React.FC = () => {
       {/* Sports Categories Section */}
       <section className="space-y-6">
         <div className="text-center">
-          <h2 className="text-heading-xl font-rajdhani font-bold text-nav-marketplace mb-2">
+          <h2 className="text-heading-xl font-rajdhani font-bold text-nav-buysell mb-2">
             Sports Categories
           </h2>
           <p className="text-body-base text-muted-foreground">
@@ -204,7 +204,7 @@ export const TacticalIconsShowcase: React.FC = () => {
           <div className="p-6 bg-card rounded-none bgc-shadow-hero">
             <div className="flex items-center gap-3 mb-3">
               {React.createElement(sportsCategories[0].icon, { 
-                className: "h-5 w-5 text-nav-marketplace" 
+                className: "h-5 w-5 text-nav-buysell" 
               })}
               <span className="text-button-sm">Shadow Hero</span>
             </div>

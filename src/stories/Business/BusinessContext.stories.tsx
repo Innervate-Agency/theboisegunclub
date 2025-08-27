@@ -18,7 +18,7 @@ const meta: Meta = {
 **FROM**: Single gun club website  
 **TO**: Comprehensive firearms ecosystem for entire Treasure Valley
 
-This is **NOT** a gun club website - this is a regional firearms marketplace, directory, and community platform serving gun shops, ranges, instructors, and enthusiasts across the Treasure Valley.
+This is **NOT** a gun club website - this is a regional firearms buysell, directory, and community platform serving gun shops, ranges, instructors, and enthusiasts across the Treasure Valley.
 
 ## 🏢 THE FOUR PILLARS
 
@@ -376,7 +376,7 @@ export const TreasureValleyHub: Story = {
         story: `
 ## Treasure Valley Firearms Collective
 
-This story demonstrates the complete business context and vision for The Boise Gun Club as a regional firearms marketplace and community platformotion.
+This story demonstrates the complete business context and vision for The Boise Gun Club as a regional firearms buysell and community platformotion.
 
 ### Key Features Showcased:
 - **Multi-user design**: Vendors, enthusiasts, and visitors

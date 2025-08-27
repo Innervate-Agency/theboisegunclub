@@ -95,7 +95,7 @@ export function MarketplaceDealCard({
       .trim()
   }
   
-  const productHref = deal.href || `/marketplace/${deal.slug || generateSlug(deal.title, deal.manufacturer)}`
+  const productHref = deal.href || `/buysell/${deal.slug || generateSlug(deal.title, deal.manufacturer)}`
   
   const discountPercentage = Math.round(deal.discount)
 
@@ -152,7 +152,7 @@ export function MarketplaceDealCard({
   const contentSections = [
     // Manufacturer info
     deal.manufacturer && (
-      <p className="text-sm text-nav-marketplace font-medium uppercase tracking-wide">
+      <p className="text-sm text-nav-buysell font-medium uppercase tracking-wide">
         {deal.manufacturer}
       </p>
     ),
@@ -161,7 +161,7 @@ export function MarketplaceDealCard({
     <div className="bg-muted/30 p-sm rounded-xs">
       <div className="flex items-center justify-between">
         <div className="space-y-xs">
-          <p className="font-rajdhani font-bold text-2xl text-nav-marketplace">
+          <p className="font-rajdhani font-bold text-2xl text-nav-buysell">
             {formatPrice(deal.salePrice)}
           </p>
           {deal.originalPrice > deal.salePrice && (
@@ -184,17 +184,17 @@ export function MarketplaceDealCard({
     // Business info
     <div className="space-y-sm bg-muted/30 p-sm rounded-xs">
       <div className="flex items-center gap-sm">
-        <BuildingStorefrontIcon className="size-4 text-nav-marketplace" />
+        <BuildingStorefrontIcon className="size-4 text-nav-buysell" />
         <span className="font-medium text-card-foreground">{deal.business}</span>
         {deal.isVerified && (
-          <Badge variant="nav-marketplace" size="sm">
+          <Badge variant="nav-buysell" size="sm">
             ✓ Verified
           </Badge>
         )}
       </div>
       
       <div className="flex items-center gap-sm text-sm">
-        <MapPinIcon className="size-4 text-nav-marketplace" />
+        <MapPinIcon className="size-4 text-nav-buysell" />
         <span className="text-muted-foreground">{deal.location}</span>
       </div>
 
@@ -206,12 +206,12 @@ export function MarketplaceDealCard({
                 key={i}
                 className={cn(
                   "size-3",
-                  i < Math.floor(deal.rating!) ? "text-nav-marketplace fill-nav-marketplace" : "text-muted-foreground"
+                  i < Math.floor(deal.rating!) ? "text-nav-buysell fill-nav-buysell" : "text-muted-foreground"
                 )}
               />
             ))}
           </div>
-          <span className="font-medium text-nav-marketplace">{deal.rating}</span>
+          <span className="font-medium text-nav-buysell">{deal.rating}</span>
           <span className="text-muted-foreground">({deal.reviewCount})</span>
         </div>
       )}
@@ -234,7 +234,7 @@ export function MarketplaceDealCard({
     if (category.includes('Ammunition')) return 'card-gradient-ammo'
     if (category.includes('Optics')) return 'card-gradient-optics'
     if (category.includes('Accessories')) return 'card-gradient-accessories'
-    return 'card-gradient-marketplace'
+    return 'card-gradient-buysell'
   }
 
   // Get category icon
@@ -254,7 +254,7 @@ export function MarketplaceDealCard({
           "transition-all duration-300 group relative overflow-hidden cursor-pointer rounded-xs",
           "bg-card text-card-foreground border border-border",
           "shadow-ghost hover:shadow-present",
-          "tactical-underline-base tactical-underline-marketplace",
+          "tactical-underline-base tactical-underline-buysell",
           className
         )}
         {...props}
@@ -272,7 +272,7 @@ export function MarketplaceDealCard({
         <div className="absolute top-sm right-sm flex gap-xs">
           {deal.phone && (
             <button
-              className="w-8 h-8 bg-black/60 backdrop-blur-sm border border-white/20 rounded-none flex items-center justify-center hover:bg-nav-marketplace hover:border-nav-marketplace transition-all duration-200"
+              className="w-8 h-8 bg-black/60 backdrop-blur-sm border border-white/20 rounded-none flex items-center justify-center hover:bg-nav-buysell hover:border-nav-buysell transition-all duration-200"
               onClick={(e) => {
                 e.preventDefault()
                 e.stopPropagation()
@@ -285,7 +285,7 @@ export function MarketplaceDealCard({
           )}
           
           <button
-            className="w-8 h-8 bg-black/60 backdrop-blur-sm border border-white/20 rounded-none flex items-center justify-center hover:bg-nav-marketplace hover:border-nav-marketplace transition-all duration-200"
+            className="w-8 h-8 bg-black/60 backdrop-blur-sm border border-white/20 rounded-none flex items-center justify-center hover:bg-nav-buysell hover:border-nav-buysell transition-all duration-200"
             onClick={(e) => {
               e.preventDefault()
               e.stopPropagation()
@@ -331,7 +331,7 @@ export function MarketplaceDealCard({
         {/* Header - Matching EventCard Typography */}
         <div className="space-y-sm">
           <div className="space-y-0">
-            <h2 className="font-rajdhani font-bold text-xl text-card-foreground leading-tight line-clamp-2 group-hover:text-nav-marketplace transition-colors duration-200">
+            <h2 className="font-rajdhani font-bold text-xl text-card-foreground leading-tight line-clamp-2 group-hover:text-nav-buysell transition-colors duration-200">
               {deal.title}
             </h2>
             <h3 className="font-noto-serif text-base text-muted-foreground leading-tight">
@@ -362,10 +362,10 @@ export function MarketplaceDealCard({
         </div>
 
         {/* Price Section */}
-        <div className="bg-nav-marketplace/10 p-sm rounded-xs border border-nav-marketplace/20">
+        <div className="bg-nav-buysell/10 p-sm rounded-xs border border-nav-buysell/20">
           <div className="flex items-center justify-between">
             <div className="space-y-xs">
-              <p className="font-rajdhani font-bold text-2xl text-nav-marketplace">
+              <p className="font-rajdhani font-bold text-2xl text-nav-buysell">
                 {formatPrice(deal.salePrice)}
               </p>
               {deal.originalPrice > deal.salePrice && (
@@ -388,27 +388,27 @@ export function MarketplaceDealCard({
         {/* InformationCircleIcon Grid - Matching EventCard */}
         <div className="space-y-sm bg-muted/30 p-sm rounded-xs">
           <div className="flex items-center gap-sm text-sm">
-            <BuildingStorefrontIcon className="size-4 flex-shrink-0 text-nav-marketplace" />
+            <BuildingStorefrontIcon className="size-4 flex-shrink-0 text-nav-buysell" />
             <span className="font-medium text-card-foreground">{deal.business}</span>
             {deal.isVerified && (
-              <Badge variant="nav-marketplace" size="sm">
+              <Badge variant="nav-buysell" size="sm">
                 ✓ Verified
               </Badge>
             )}
           </div>
           <div className="flex items-center gap-sm text-sm">
-            <MapPinIcon className="size-4 flex-shrink-0 text-nav-marketplace" />
+            <MapPinIcon className="size-4 flex-shrink-0 text-nav-buysell" />
             <span className="text-muted-foreground">{deal.location}</span>
           </div>
           {deal.phone && (
             <div className="flex items-center gap-sm text-sm">
-              <PhoneIcon className="size-4 flex-shrink-0 text-nav-marketplace" />
+              <PhoneIcon className="size-4 flex-shrink-0 text-nav-buysell" />
               <span className="text-muted-foreground">{deal.phone}</span>
             </div>
           )}
           {deal.rating && deal.reviewCount && (
             <div className="flex items-center gap-sm text-sm">
-              <StarIcon className="size-4 flex-shrink-0 text-nav-marketplace" />
+              <StarIcon className="size-4 flex-shrink-0 text-nav-buysell" />
               <span className="font-medium text-card-foreground">
                 {deal.rating} stars ({deal.reviewCount} reviews)
               </span>
@@ -431,7 +431,7 @@ export function MarketplaceDealCard({
           <Button 
             size="sm"
             variant="outline"
-            className="w-full border-nav-marketplace/30 text-nav-marketplace group-hover:bg-nav-marketplace group-hover:text-white group-hover:border-nav-marketplace transition-all duration-300 font-rajdhani font-bold" 
+            className="w-full border-nav-buysell/30 text-nav-buysell group-hover:bg-nav-buysell group-hover:text-white group-hover:border-nav-buysell transition-all duration-300 font-rajdhani font-bold" 
             animationType="arrow"
           >
             {deal.availability === 'Last Few' ? '🔥 Buy Now - Last Few!' : 'View Deal'}

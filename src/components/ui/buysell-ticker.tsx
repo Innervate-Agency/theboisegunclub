@@ -52,7 +52,7 @@ export function MarketplaceTicker() {
       case 'hot': return 'text-rusty-orange border-rusty-orange/30 bg-rusty-orange/10'
       case 'new': return 'text-sagebrush-green border-sagebrush-green/30 bg-sagebrush-green/10'
       case 'ending': return 'text-sandy-ochre border-sandy-ochre/30 bg-sandy-ochre/10'
-      case 'featured': return 'text-nav-marketplace border-nav-marketplace/30 bg-nav-marketplace/10'
+      case 'featured': return 'text-nav-buysell border-nav-buysell/30 bg-nav-buysell/10'
       default: return 'text-muted-foreground border-border bg-muted/10'
     }
   }
@@ -70,15 +70,15 @@ export function MarketplaceTicker() {
 
   return (
     <div 
-      className="bg-gradient-to-r from-nav-marketplace/5 via-background to-nav-marketplace/5 border-y border-border/50 py-sm"
+      className="bg-gradient-to-r from-nav-buysell/5 via-background to-nav-buysell/5 border-y border-border/50 py-sm"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
       <div className="container mx-auto max-w-site px-mobile-sm sm:px-md">
         <div className="flex items-center gap-base">
           <div className="flex items-center gap-xs shrink-0">
-            <BoltIcon className="h-4 w-4 text-nav-marketplace animate-pulse" />
-            <span className="text-xs font-rajdhani font-bold uppercase text-nav-marketplace">Live Deals</span>
+            <BoltIcon className="h-4 w-4 text-nav-buysell animate-pulse" />
+            <span className="text-xs font-rajdhani font-bold uppercase text-nav-buysell">Live Deals</span>
           </div>
           
           <div className="flex-1 overflow-hidden">
@@ -105,7 +105,7 @@ export function MarketplaceTicker() {
                       <div className="flex items-center gap-xs">
                         <span className="text-sm font-medium text-card-foreground">{deal.title}</span>
                         <span className="text-xs text-muted-foreground">@{deal.business}</span>
-                        <span className="text-sm font-bold text-nav-marketplace">{deal.discount}</span>
+                        <span className="text-sm font-bold text-nav-buysell">{deal.discount}</span>
                         <span className="text-xs text-muted-foreground">•</span>
                         <span className="text-xs text-muted-foreground">{deal.timeAgo}</span>
                       </div>

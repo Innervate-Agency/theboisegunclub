@@ -124,13 +124,13 @@ export const MIGRATION_PRIORITY = [
   // Recently unified components 
   'src/components/pages/directory-page-standardized.tsx',
   'src/components/pages/events-page-standardized.tsx', 
-  'src/components/pages/marketplace-page-standardized.tsx',
+  'src/components/pages/buysell-page-standardized.tsx',
   'src/components/pages/guides-page-standardized.tsx',
   'src/components/pages/armory-page-standardized.tsx',
   
   // Core UI components
   'src/components/ui/VendorCard.tsx',
-  'src/components/ui/marketplace-deal-card.tsx',
+  'src/components/ui/buysell-deal-card.tsx',
   'src/components/ui/EventCard.tsx',
   'src/components/ui/button.tsx',
   'src/components/ui/badge.tsx',

@@ -18,11 +18,11 @@ const zigzagHeroVariants = cva(
   {
     variants: {
       gradient: {
-        events: "bg-gradient-to-br from-nav-events via-nav-marketplace to-nav-home", // FireIcon gradient
+        events: "bg-gradient-to-br from-nav-events via-nav-buysell to-nav-home", // FireIcon gradient
         directory: "bg-gradient-to-br from-nav-directory via-nav-forums to-nav-home", // Professional earth
         armory: "bg-gradient-to-br from-nav-armory via-nav-intel to-nav-events", // Teal to orange fire
         intel: "bg-gradient-to-br from-nav-intel via-nav-directory to-nav-armory", // Military analytical 
-        marketplace: "bg-gradient-to-br from-nav-marketplace via-nav-home to-nav-events", // Golden commerce energy
+        buysell: "bg-gradient-to-br from-nav-buysell via-nav-home to-nav-events", // Golden commerce energy
       },
       layout: {
         left: "text-left",

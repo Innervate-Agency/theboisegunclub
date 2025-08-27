@@ -28,12 +28,12 @@ const unifiedArchiveCardVariants = cva(
   "relative overflow-hidden transition-all duration-300 group cursor-pointer min-w-[320px] flex flex-col h-full",
   {
     variants: {
-      // Theme determines color context (marketplace, directory, events)
+      // Theme determines color context (buysell, directory, events)
       theme: {
-        marketplace: [
+        buysell: [
           "mica", // Uses unified mica glassmorphism
-          "border border-nav-marketplace/20",
-          "hover:border-nav-marketplace/40",
+          "border border-nav-buysell/20",
+          "hover:border-nav-buysell/40",
           "hover:shadow-elevated", // Semantic shadow progression
           "bg-card text-card-foreground"
         ],
@@ -70,7 +70,7 @@ const unifiedArchiveCardVariants = cva(
       }
     },
     defaultVariants: {
-      theme: "marketplace",
+      theme: "buysell",
       size: "standard", 
       featured: false,
       interactive: true
@@ -80,12 +80,12 @@ const unifiedArchiveCardVariants = cva(
 
 // Hero section gradient mappings using existing globals.css tokens
 const getHeroGradient = (theme: string, category?: string) => {
-  if (theme === 'marketplace') {
+  if (theme === 'buysell') {
     if (category?.includes('Firearms')) return 'card-gradient-firearms'
     if (category?.includes('Ammunition')) return 'card-gradient-ammunition'
     if (category?.includes('Optics')) return 'card-gradient-optics'
     if (category?.includes('Accessories')) return 'card-gradient-accessories'
-    return 'card-gradient-marketplace'
+    return 'card-gradient-buysell'
   }
   
   if (theme === 'directory') {
@@ -105,18 +105,18 @@ const getHeroGradient = (theme: string, category?: string) => {
     return 'card-gradient-events'
   }
   
-  return 'card-gradient-marketplace'
+  return 'card-gradient-buysell'
 }
 
 // Theme color mappings
 const getThemeColors = (theme: string) => {
   switch (theme) {
-    case 'marketplace':
+    case 'buysell':
       return {
-        primary: 'text-nav-marketplace',
-        primaryBg: 'bg-nav-marketplace',
-        primaryHover: 'hover:bg-nav-marketplace',
-        primaryBorder: 'border-nav-marketplace'
+        primary: 'text-nav-buysell',
+        primaryBg: 'bg-nav-buysell',
+        primaryHover: 'hover:bg-nav-buysell',
+        primaryBorder: 'border-nav-buysell'
       }
     case 'directory':
       return {
@@ -176,7 +176,7 @@ export interface UnifiedArchiveCardProps
   }
   
   // Styling
-  theme?: 'marketplace' | 'directory' | 'events'
+  theme?: 'buysell' | 'directory' | 'events'
   featured?: boolean
   interactive?: boolean
 }
@@ -195,7 +195,7 @@ export function UnifiedArchiveCard({
   footerContent,
   primaryAction,
   secondaryAction,
-  theme = 'marketplace',
+  theme = 'buysell',
   size = 'standard',
   featured = false,
   interactive = true,
@@ -361,8 +361,8 @@ export function UnifiedArchiveCard({
         {featured && (
           <div className={cn(
             "absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r",
-            `from-${theme === 'marketplace' ? 'nav-marketplace' : theme === 'directory' ? 'nav-directory' : 'nav-events'}`,
-            `to-${theme === 'marketplace' ? 'nav-marketplace' : theme === 'directory' ? 'nav-directory' : 'nav-events'}/50`
+            `from-${theme === 'buysell' ? 'nav-buysell' : theme === 'directory' ? 'nav-directory' : 'nav-events'}`,
+            `to-${theme === 'buysell' ? 'nav-buysell' : theme === 'directory' ? 'nav-directory' : 'nav-events'}/50`
           )} />
         )}
       </div>

@@ -42,7 +42,7 @@ export function useNightOpsTheme() {
     root.style.setProperty('--nav-directory', '#00CCFF') // Tactical cyan
     root.style.setProperty('--nav-armory', '#FF6600') // Tactical orange
     root.style.setProperty('--nav-intel', '#CC00FF') // Tactical purple
-    root.style.setProperty('--nav-marketplace', '#FF0066') // Tactical pink
+    root.style.setProperty('--nav-buysell', '#FF0066') // Tactical pink
     root.style.setProperty('--nav-forums', '#66FF00') // Tactical lime
     
     // Add night ops class to body
@@ -59,7 +59,7 @@ export function useNightOpsTheme() {
       '--muted', '--muted-foreground', '--border', '--input',
       '--primary', '--primary-foreground', '--secondary', '--secondary-foreground',
       '--nav-home', '--nav-events', '--nav-directory', '--nav-armory',
-      '--nav-intel', '--nav-marketplace', '--nav-forums'
+      '--nav-intel', '--nav-buysell', '--nav-forums'
     ]
     
     properties.forEach(prop => {

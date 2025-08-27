@@ -6,11 +6,11 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import { MarketplaceDealCard } from '@/components/ui/marketplace-deal-card'
-import { MarketplaceTicker } from '@/components/ui/marketplace-ticker'
-import { MarketplaceContentSection } from '@/components/ui/marketplace-content-section'
-import { MarketplaceSparklesIcons } from '@/components/ui/hero-marketplace-diamonds'
-import { MarketplaceEmbers } from '@/components/ui/hero-marketplace-embers'
+import { MarketplaceDealCard } from '@/components/ui/buysell-deal-card'
+import { MarketplaceTicker } from '@/components/ui/buysell-ticker'
+import { MarketplaceContentSection } from '@/components/ui/buysell-content-section'
+import { MarketplaceSparklesIcons } from '@/components/ui/hero-buysell-diamonds'
+import { MarketplaceEmbers } from '@/components/ui/hero-buysell-embers'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
@@ -46,8 +46,8 @@ interface MarketplaceDeal {
   model?: string
 }
 
-// Comprehensive Idaho marketplace from verified FFL dealers and service providers
-const marketplaceDeals: MarketplaceDeal[] = [
+// Comprehensive Idaho buysell from verified FFL dealers and service providers
+const buysellDeals: MarketplaceDeal[] = [
   // Premium Custom Services
   {
     title: "Custom Precision Rifle Build",
@@ -318,12 +318,12 @@ const marketplaceDeals: MarketplaceDeal[] = [
   }
 ]
 
-export function MarketplacePageStandardized() {
+export function BuySellPageStandardized() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = React.useState(false)
 
   // Filter configuration using Events page pattern
   const filters = useCardPageFilters({
-    items: marketplaceDeals,
+    items: buysellDeals,
     initialTab: 'all',
     initialSortBy: 'featured',
     initialViewMode: 'grid',
@@ -410,12 +410,12 @@ export function MarketplacePageStandardized() {
     return Object.values(filters.selectedFilters).reduce((count, filterArray) => count + filterArray.length, 0)
   }
 
-  // Activity feed data for marketplace based on authentic data
+  // Activity feed data for buysell based on authentic data
   const activityFeedData = [
     {
       icon: CurrencyDollarIcon,
-      iconColor: "text-nav-marketplace",
-      iconBgColor: "bg-nav-marketplace/20",
+      iconColor: "text-nav-buysell",
+      iconBgColor: "bg-nav-buysell/20",
       title: "Special Pricing",
       description: "AllTerra Arms custom builds now available with financing",
       timeAgo: "2h ago"
@@ -439,13 +439,13 @@ export function MarketplacePageStandardized() {
   ]
 
   // Marketplace category stats based on actual verified data
-  const marketplaceCategoryStats = [
-    { icon: CursorArrowRaysIcon, title: "Custom Services", value: marketplaceDeals.filter(d => d.category === 'Custom Firearms' || d.category === 'Services').length.toString(), subtitle: "Available now", color: "text-nav-marketplace" },
-    { icon: ArchiveBoxIcon, title: "Equipment", value: marketplaceDeals.filter(d => d.category === 'Equipment').length.toString(), subtitle: "In stock", color: "text-nav-marketplace" },
-    { icon: StarIcon, title: "Firearms", value: marketplaceDeals.filter(d => d.category === 'Firearms').length.toString(), subtitle: "FFL dealers", color: "text-nav-marketplace" },
-    { icon: ShieldCheckIcon, title: "Range Access", value: marketplaceDeals.filter(d => d.title.includes('Range') || d.title.includes('Clays')).length.toString(), subtitle: "Live venues", color: "text-nav-marketplace" },
-    { icon: BuildingStorefrontIcon, title: "Verified Dealers", value: new Set(marketplaceDeals.map(d => d.business)).size.toString(), subtitle: "ATF licensed", color: "text-nav-marketplace" },
-    { icon: CheckCircleIcon, title: "Total Listings", value: marketplaceDeals.length.toString(), subtitle: "Active offers", color: "text-nav-marketplace" }
+  const buysellCategoryStats = [
+    { icon: CursorArrowRaysIcon, title: "Custom Services", value: buysellDeals.filter(d => d.category === 'Custom Firearms' || d.category === 'Services').length.toString(), subtitle: "Available now", color: "text-nav-buysell" },
+    { icon: ArchiveBoxIcon, title: "Equipment", value: buysellDeals.filter(d => d.category === 'Equipment').length.toString(), subtitle: "In stock", color: "text-nav-buysell" },
+    { icon: StarIcon, title: "Firearms", value: buysellDeals.filter(d => d.category === 'Firearms').length.toString(), subtitle: "FFL dealers", color: "text-nav-buysell" },
+    { icon: ShieldCheckIcon, title: "Range Access", value: buysellDeals.filter(d => d.title.includes('Range') || d.title.includes('Clays')).length.toString(), subtitle: "Live venues", color: "text-nav-buysell" },
+    { icon: BuildingStorefrontIcon, title: "Verified Dealers", value: new Set(buysellDeals.map(d => d.business)).size.toString(), subtitle: "ATF licensed", color: "text-nav-buysell" },
+    { icon: CheckCircleIcon, title: "Total Listings", value: buysellDeals.length.toString(), subtitle: "Active offers", color: "text-nav-buysell" }
   ]
 
   // Modern filter sidebar configuration
@@ -456,10 +456,10 @@ export function MarketplacePageStandardized() {
       maxVisible: 6,
       collapsible: false,
       options: [
-        { id: 'firearms', label: 'Firearms', icon: CursorArrowRaysIcon, count: marketplaceDeals.filter(d => d.category === 'Firearms').length, color: 'text-nav-marketplace' },
-        { id: 'services', label: 'Services', icon: ShieldCheckIcon, count: marketplaceDeals.filter(d => d.category === 'Services').length, color: 'text-nav-marketplace' },
-        { id: 'equipment', label: 'Equipment', icon: ArchiveBoxIcon, count: marketplaceDeals.filter(d => d.category === 'Equipment').length, color: 'text-nav-marketplace' },
-        { id: 'custom firearms', label: 'Custom Firearms', icon: StarIcon, count: marketplaceDeals.filter(d => d.category === 'Custom Firearms').length, color: 'text-nav-marketplace' }
+        { id: 'firearms', label: 'Firearms', icon: CursorArrowRaysIcon, count: buysellDeals.filter(d => d.category === 'Firearms').length, color: 'text-nav-buysell' },
+        { id: 'services', label: 'Services', icon: ShieldCheckIcon, count: buysellDeals.filter(d => d.category === 'Services').length, color: 'text-nav-buysell' },
+        { id: 'equipment', label: 'Equipment', icon: ArchiveBoxIcon, count: buysellDeals.filter(d => d.category === 'Equipment').length, color: 'text-nav-buysell' },
+        { id: 'custom firearms', label: 'Custom Firearms', icon: StarIcon, count: buysellDeals.filter(d => d.category === 'Custom Firearms').length, color: 'text-nav-buysell' }
       ]
     },
     {
@@ -468,9 +468,9 @@ export function MarketplacePageStandardized() {
       maxVisible: 3,
       collapsible: false,
       options: [
-        { id: 'new', label: 'New', icon: StarIcon, count: marketplaceDeals.filter(d => d.condition === 'New').length },
-        { id: 'used', label: 'Used', icon: ClockIcon, count: marketplaceDeals.filter(d => d.condition === 'Used').length },
-        { id: 'refurbished', label: 'Refurbished', icon: FireIcon, count: marketplaceDeals.filter(d => d.condition === 'Refurbished').length }
+        { id: 'new', label: 'New', icon: StarIcon, count: buysellDeals.filter(d => d.condition === 'New').length },
+        { id: 'used', label: 'Used', icon: ClockIcon, count: buysellDeals.filter(d => d.condition === 'Used').length },
+        { id: 'refurbished', label: 'Refurbished', icon: FireIcon, count: buysellDeals.filter(d => d.condition === 'Refurbished').length }
       ]
     },
     {
@@ -479,10 +479,10 @@ export function MarketplacePageStandardized() {
       maxVisible: 4,
       collapsible: false,
       options: [
-        { id: 'under50', label: 'Under $50', icon: CurrencyDollarIcon, count: marketplaceDeals.filter(d => d.salePrice < 50).length },
-        { id: '50-200', label: '$50 - $200', icon: CurrencyDollarIcon, count: marketplaceDeals.filter(d => d.salePrice >= 50 && d.salePrice <= 200).length },
-        { id: '200-500', label: '$200 - $500', icon: CurrencyDollarIcon, count: marketplaceDeals.filter(d => d.salePrice >= 200 && d.salePrice <= 500).length },
-        { id: 'over500', label: '$500+', icon: CurrencyDollarIcon, count: marketplaceDeals.filter(d => d.salePrice > 500).length }
+        { id: 'under50', label: 'Under $50', icon: CurrencyDollarIcon, count: buysellDeals.filter(d => d.salePrice < 50).length },
+        { id: '50-200', label: '$50 - $200', icon: CurrencyDollarIcon, count: buysellDeals.filter(d => d.salePrice >= 50 && d.salePrice <= 200).length },
+        { id: '200-500', label: '$200 - $500', icon: CurrencyDollarIcon, count: buysellDeals.filter(d => d.salePrice >= 200 && d.salePrice <= 500).length },
+        { id: 'over500', label: '$500+', icon: CurrencyDollarIcon, count: buysellDeals.filter(d => d.salePrice > 500).length }
       ]
     },
     {
@@ -491,13 +491,13 @@ export function MarketplacePageStandardized() {
       maxVisible: 2,
       collapsible: false,
       options: [
-        { id: 'featured', label: 'Featured Deals', icon: StarIcon, count: marketplaceDeals.filter(d => d.isFeatured).length, color: 'text-rusty-orange' }
+        { id: 'featured', label: 'Featured Deals', icon: StarIcon, count: buysellDeals.filter(d => d.isFeatured).length, color: 'text-rusty-orange' }
       ]
     }
   ]
 
   // Sample deal for featured card
-  const featuredDeal = marketplaceDeals.find(deal => deal.isFeatured) || marketplaceDeals[0]
+  const featuredDeal = buysellDeals.find(deal => deal.isFeatured) || buysellDeals[0]
 
   // Hero content sections - clean separation of concerns
   const heroBackgroundElements = (
@@ -549,13 +549,13 @@ export function MarketplacePageStandardized() {
       </p>
       
       <div className="flex flex-col sm:flex-row gap-base">
-        <Button className="bg-nav-marketplace text-white hover:bg-white hover:text-nav-marketplace font-rajdhani font-bold"
+        <Button className="bg-nav-buysell text-white hover:bg-white hover:text-nav-buysell font-rajdhani font-bold"
         >
           <PlusIcon className="h-4 w-4 mr-xs" />
           ListBulletIcon Your Items
         </Button>
         <Button 
-          variant="outline" className="border-border text-white hover:bg-card hover:text-nav-marketplace"
+          variant="outline" className="border-border text-white hover:bg-card hover:text-nav-buysell"
         >
           View All Deals
         </Button>
@@ -565,17 +565,17 @@ export function MarketplacePageStandardized() {
 
   const heroRightContent = (
     <Card className="mica-card shadow-present hover:shadow-elevated transition-all duration-300 h-auto min-h-[280px] lg:min-h-[320px]">
-      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-marketplace/20 to-nav-marketplace/10 rounded-bl-full"></div>
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-marketplace to-nav-marketplace"></div>
+      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-buysell/20 to-nav-buysell/10 rounded-bl-full"></div>
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-buysell to-nav-buysell"></div>
       
       <CardHeader className="pb-xs relative z-10 p-sm">
         <div className="flex items-center justify-between mb-xs">
-          <Badge className="bg-nav-marketplace/20 text-nav-marketplace border-nav-marketplace/30 font-rajdhani font-bold text-[10px]">
+          <Badge className="bg-nav-buysell/20 text-nav-buysell border-nav-buysell/30 font-rajdhani font-bold text-[10px]">
             <StarIcon className="h-3 w-3 mr-xs" />
             FEATURED DEAL
           </Badge>
           <div className="flex items-center gap-xs text-xs text-muted-foreground">
-            <CheckCircleIcon className="h-3 w-3 text-nav-marketplace" />
+            <CheckCircleIcon className="h-3 w-3 text-nav-buysell" />
             <span>Verified</span>
           </div>
         </div>
@@ -583,7 +583,7 @@ export function MarketplacePageStandardized() {
         <div className="space-y-xs">
           <h3 className="font-rajdhani font-bold text-card-foreground text-xl leading-tight">{featuredDeal.title}</h3>
           <div className="flex items-center gap-xs text-xs text-muted-foreground">
-            <BuildingStorefrontIcon className="h-3 w-3 text-nav-marketplace" />
+            <BuildingStorefrontIcon className="h-3 w-3 text-nav-buysell" />
             <span>{featuredDeal.business} • {featuredDeal.condition}</span>
           </div>
         </div>
@@ -597,13 +597,13 @@ export function MarketplacePageStandardized() {
         <div className="flex items-center justify-between">
           <div className="space-y-xs">
             <div className="flex items-center gap-xs">
-              <span className="text-2xl font-bold text-nav-marketplace font-rajdhani">${featuredDeal.salePrice}</span>
+              <span className="text-2xl font-bold text-nav-buysell font-rajdhani">${featuredDeal.salePrice}</span>
               <span className="text-sm text-muted-foreground line-through">${featuredDeal.originalPrice}</span>
             </div>
-            <div className="text-xs text-nav-marketplace font-medium">{featuredDeal.discount}% OFF</div>
+            <div className="text-xs text-nav-buysell font-medium">{featuredDeal.discount}% OFF</div>
           </div>
           <Button 
-            className="bg-gradient-to-r from-nav-marketplace to-nav-marketplace text-gruvbox-bg-dark hover:from-nav-marketplace hover:to-nav-marketplace font-rajdhani font-bold text-xs"
+            className="bg-gradient-to-r from-nav-buysell to-nav-buysell text-gruvbox-bg-dark hover:from-nav-buysell hover:to-nav-buysell font-rajdhani font-bold text-xs"
             size="sm"
           >
             VIEW DEAL
@@ -616,7 +616,7 @@ export function MarketplacePageStandardized() {
 
   // Hero content - using Events page pattern
   const heroContent = (
-    <section className="relative overflow-hidden bg-gradient-marketplace-hero px-md py-lg">
+    <section className="relative overflow-hidden bg-gradient-buysell-hero px-md py-lg">
       {heroBackgroundElements}
       
       <div className="container mx-auto max-w-site relative z-10">
@@ -699,12 +699,12 @@ export function MarketplacePageStandardized() {
                 {/* Quick Filter Tabs */}
                 <div className="flex flex-wrap gap-xs">
                   {[
-                    { id: 'all', label: 'All Deals', count: marketplaceDeals.length, icon: ArchiveBoxIcon },
-                    { id: 'firearms', label: 'Firearms', count: marketplaceDeals.filter(d => d.category === 'Firearms').length, icon: CursorArrowRaysIcon },
-                    { id: 'services', label: 'Services', count: marketplaceDeals.filter(d => d.category === 'Services').length, icon: ShieldCheckIcon },
-                    { id: 'equipment', label: 'Equipment', count: marketplaceDeals.filter(d => d.category === 'Equipment').length, icon: ArchiveBoxIcon },
-                    { id: 'custom', label: 'Custom', count: marketplaceDeals.filter(d => d.category === 'Custom Firearms').length, icon: StarIcon },
-                    { id: 'featured', label: 'Featured', count: marketplaceDeals.filter(d => d.isFeatured).length }
+                    { id: 'all', label: 'All Deals', count: buysellDeals.length, icon: ArchiveBoxIcon },
+                    { id: 'firearms', label: 'Firearms', count: buysellDeals.filter(d => d.category === 'Firearms').length, icon: CursorArrowRaysIcon },
+                    { id: 'services', label: 'Services', count: buysellDeals.filter(d => d.category === 'Services').length, icon: ShieldCheckIcon },
+                    { id: 'equipment', label: 'Equipment', count: buysellDeals.filter(d => d.category === 'Equipment').length, icon: ArchiveBoxIcon },
+                    { id: 'custom', label: 'Custom', count: buysellDeals.filter(d => d.category === 'Custom Firearms').length, icon: StarIcon },
+                    { id: 'featured', label: 'Featured', count: buysellDeals.filter(d => d.isFeatured).length }
                   ].map((tab) => (
                     <Button
                       key={tab.id}
@@ -800,7 +800,7 @@ export function MarketplacePageStandardized() {
                     <FunnelIcon className="size-4" />
                     Filters
                     {getActiveFilterCount() > 0 && (
-                      <Badge variant="outline" className="ml-xs bg-nav-marketplace/20 text-nav-marketplace border-nav-marketplace/30 text-xs">
+                      <Badge variant="outline" className="ml-xs bg-nav-buysell/20 text-nav-buysell border-nav-buysell/30 text-xs">
                         {getActiveFilterCount()}
                       </Badge>
                     )}
@@ -881,7 +881,7 @@ export function MarketplacePageStandardized() {
         <TrustIndicators />
         <div className="container mx-auto px-4">
           <h3 className="font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center">Marketplace Categories</h3>
-          <DirectoryStatsGrid stats={marketplaceCategoryStats} />
+          <DirectoryStatsGrid stats={buysellCategoryStats} />
         </div>
 
         {/* Activity Feed Section */}
@@ -902,7 +902,7 @@ export function MarketplacePageStandardized() {
         <ContributionCTA />
         
         {/* Legal notice */}
-        <div className="section-skew-down bg-gradient-to-br from-nav-marketplace/10 to-nav-marketplace/5 py-3xl">
+        <div className="section-skew-down bg-gradient-to-br from-nav-buysell/10 to-nav-buysell/5 py-3xl">
           <div className="container mx-auto px-4">
             <div className="text-center space-y-base">
               <Badge className="bg-slate-blue/20 text-slate-blue border-slate-blue/30">

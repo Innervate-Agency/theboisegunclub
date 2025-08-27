@@ -30,7 +30,7 @@ const getFilterColor = (category: string, type: string): string => {
       // Use shooting sport specific colors
       if (type.includes('pistol') || type.includes('uspsa') || type.includes('idpa')) return 'bg-nav-events'
       if (type.includes('3gun') || type.includes('multigun')) return 'bg-rusty-orange'
-      if (type.includes('trap') || type.includes('skeet') || type.includes('sporting')) return 'bg-nav-marketplace'
+      if (type.includes('trap') || type.includes('skeet') || type.includes('sporting')) return 'bg-nav-buysell'
       if (type.includes('cowboy') || type.includes('sass') || type.includes('western')) return 'bg-sandy-ochre'
       if (type.includes('league') || type.includes('training') || type.includes('expo') || type.includes('charity')) return 'bg-nav-forums'
       return 'bg-nav-events'
@@ -614,7 +614,7 @@ export function EventsPageStandardized() {
                     { id: 'all', label: 'All Events', count: upcomingEvents.length, color: 'bg-muted' },
                     { id: 'competitions', label: 'Competitions', count: upcomingEvents.filter(e => e.eventType === 'Competition').length, color: 'bg-nav-events' },
                     { id: 'training', label: 'Training', count: upcomingEvents.filter(e => e.eventType === 'Training').length, color: 'bg-sagebrush-green' },
-                    { id: 'expos', label: 'Expos', count: upcomingEvents.filter(e => e.eventType === 'Expo').length, color: 'bg-nav-marketplace' },
+                    { id: 'expos', label: 'Expos', count: upcomingEvents.filter(e => e.eventType === 'Expo').length, color: 'bg-nav-buysell' },
                     { id: 'charity', label: 'Charity', count: upcomingEvents.filter(e => e.eventType === 'Charity').length, color: 'bg-rusty-orange' },
                     { id: 'social', label: 'Social', count: upcomingEvents.filter(e => e.eventType === 'Social').length, color: 'bg-nav-forums' },
                     { id: 'featured', label: 'Featured', count: upcomingEvents.filter(e => e.featured).length, color: 'bg-weathered-gold' }

@@ -35,7 +35,7 @@ export interface SiteFooterProps
   extends React.ComponentProps<"footer">,
     VariantProps<typeof siteFooterVariants> {
   showNewsletter?: boolean
-  currentPage?: 'home' | 'events' | 'directory' | 'armory' | 'intel' | 'marketplace' | 'forums' | 'training' | 'guides'
+  currentPage?: 'home' | 'events' | 'directory' | 'armory' | 'intel' | 'buysell' | 'forums' | 'training' | 'guides'
 }
 
 export function SiteFooter({
@@ -67,7 +67,7 @@ export function SiteFooter({
     '/directory': { icon: IdentificationIcon, color: 'text-nav-directory', accent: 'bg-nav-directory' },
     '/armory': { icon: PlusCircleIcon, color: 'text-nav-armory', accent: 'bg-nav-armory' },
     '/intel': { icon: MapPinIcon, color: 'text-nav-intel', accent: 'bg-nav-intel' },
-    '/marketplace': { icon: BanknotesIcon, color: 'text-nav-marketplace', accent: 'bg-nav-marketplace' },
+    '/buysell': { icon: BanknotesIcon, color: 'text-nav-buysell', accent: 'bg-nav-buysell' },
     '/forums': { icon: UsersIcon, color: 'text-nav-forums', accent: 'bg-nav-forums' },
   }
 
@@ -85,7 +85,7 @@ export function SiteFooter({
     'directory': SouthBoiseDesertSVG,
     'armory': CascadeSawtoothsSVG,
     'intel': HellsCanyonSVG,
-    'marketplace': DesertMesaSVG,
+    'buysell': DesertMesaSVG,
     'forums': MountainPineSVG,
     'training': MountainPineSVG,
     'guides': BoiseFoothillsSVG
@@ -177,7 +177,7 @@ export function SiteFooter({
                     { name: "Events CalendarDaysIcon", href: "/events", icon: TicketIcon, color: "hover:text-nav-events" },
                     { name: "The Armory", href: "/armory", icon: ShieldCheckIcon, color: "hover:text-nav-armory" },
                     { name: "Intel Center", href: "/intel", icon: MapPinIcon, color: "hover:text-nav-intel" },
-                    { name: "Marketplace", href: "/marketplace", icon: BanknotesIcon, color: "hover:text-nav-marketplace" },
+                    { name: "Marketplace", href: "/buysell", icon: BanknotesIcon, color: "hover:text-nav-buysell" },
                     { name: "Forums", href: "/forums", icon: UsersIcon, color: "hover:text-nav-forums" }
                   ].map((link, index, array) => {
                     const Icon = link.icon

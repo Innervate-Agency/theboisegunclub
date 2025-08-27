@@ -49,14 +49,14 @@ export function MarketplaceContentSection() {
             {/* Why Shop Local */}
             <div>
               <div className="flex items-center gap-sm mb-lg">
-                <UserGroupIcon className="h-5 w-5 text-nav-marketplace" />
+                <UserGroupIcon className="h-5 w-5 text-nav-buysell" />
                 <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">
                   Why Shop The Idaho Marketplace
                 </h2>
               </div>
               <p className="text-muted-foreground mb-xl leading-relaxed">
                 Connect directly with Idaho's premier firearms dealers, custom builders, and service providers. 
-                Our marketplace features exclusive deals from 470+ verified FFLs across the Treasure Valley, 
+                Our buysell features exclusive deals from 470+ verified FFLs across the Treasure Valley, 
                 offering everything from custom builds to bulk ammunition with local pickup options.
               </p>
               
@@ -65,8 +65,8 @@ export function MarketplaceContentSection() {
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex gap-base">
                     <div className="shrink-0">
-                      <div className="w-10 h-10 rounded-xs bg-nav-marketplace/10 flex items-center justify-center">
-                        <benefit.icon className="h-5 w-5 text-nav-marketplace" />
+                      <div className="w-10 h-10 rounded-xs bg-nav-buysell/10 flex items-center justify-center">
+                        <benefit.icon className="h-5 w-5 text-nav-buysell" />
                       </div>
                     </div>
                     <div>
@@ -81,7 +81,7 @@ export function MarketplaceContentSection() {
             {/* Featured Categories */}
             <div>
               <div className="flex items-center gap-sm mb-lg">
-                <CheckBadgeIcon className="h-5 w-5 text-nav-marketplace" />
+                <CheckBadgeIcon className="h-5 w-5 text-nav-buysell" />
                 <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">
                   Popular Categories
                 </h2>
@@ -91,14 +91,14 @@ export function MarketplaceContentSection() {
                   <Card key={index} className="mica-card hover:shadow-elevated transition-all duration-300 cursor-pointer group">
                     <CardContent className="p-base">
                       <div className="flex items-center justify-between mb-xs">
-                        <span className="text-sm font-medium text-card-foreground group-hover:text-nav-marketplace transition-colors">
+                        <span className="text-sm font-medium text-card-foreground group-hover:text-nav-buysell transition-colors">
                           {category.name}
                         </span>
                         <Badge className="bg-sagebrush-green/10 text-sagebrush-green border-sagebrush-green/20 text-[10px]">
                           {category.trend}
                         </Badge>
                       </div>
-                      <span className="text-xl font-rajdhani font-bold text-nav-marketplace">
+                      <span className="text-xl font-rajdhani font-bold text-nav-buysell">
                         {category.count}
                       </span>
                       <span className="text-xs text-muted-foreground ml-xs">items</span>
@@ -111,19 +111,19 @@ export function MarketplaceContentSection() {
             {/* Trust Indicators */}
             <div className="flex flex-wrap gap-base pt-xl border-t border-border">
               <div className="flex items-center gap-xs">
-                <CheckBadgeIcon className="h-4 w-4 text-nav-marketplace" />
+                <CheckBadgeIcon className="h-4 w-4 text-nav-buysell" />
                 <span className="text-sm text-muted-foreground">
                   <span className="font-bold text-card-foreground">100%</span> Verified Sellers
                 </span>
               </div>
               <div className="flex items-center gap-xs">
-                <TruckIcon className="h-4 w-4 text-nav-marketplace" />
+                <TruckIcon className="h-4 w-4 text-nav-buysell" />
                 <span className="text-sm text-muted-foreground">
                   <span className="font-bold text-card-foreground">2-Day</span> Average Shipping
                 </span>
               </div>
               <div className="flex items-center gap-xs">
-                <ShieldCheckIcon className="h-4 w-4 text-nav-marketplace" />
+                <ShieldCheckIcon className="h-4 w-4 text-nav-buysell" />
                 <span className="text-sm text-muted-foreground">
                   <span className="font-bold text-card-foreground">30-Day</span> Buyer Protection
                 </span>
@@ -134,8 +134,8 @@ export function MarketplaceContentSection() {
           {/* Sidebar */}
           <div className="space-y-xl">
             {/* Seller CTA */}
-            <Card className="mica-card border-nav-marketplace/30 overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-nav-marketplace/20 to-nav-marketplace/10 rounded-bl-full"></div>
+            <Card className="mica-card border-nav-buysell/30 overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-nav-buysell/20 to-nav-buysell/10 rounded-bl-full"></div>
               <CardContent className="p-lg relative z-10">
                 <h3 className="font-rajdhani text-xl font-bold text-card-foreground mb-sm">
                   Become a Seller
@@ -145,19 +145,19 @@ export function MarketplaceContentSection() {
                 </p>
                 <div className="space-y-xs mb-lg">
                   <div className="flex items-center gap-xs text-sm">
-                    <CheckBadgeIcon className="h-4 w-4 text-nav-marketplace" />
+                    <CheckBadgeIcon className="h-4 w-4 text-nav-buysell" />
                     <span>Free basic listings</span>
                   </div>
                   <div className="flex items-center gap-xs text-sm">
-                    <CheckBadgeIcon className="h-4 w-4 text-nav-marketplace" />
+                    <CheckBadgeIcon className="h-4 w-4 text-nav-buysell" />
                     <span>Featured placement options</span>
                   </div>
                   <div className="flex items-center gap-xs text-sm">
-                    <CheckBadgeIcon className="h-4 w-4 text-nav-marketplace" />
+                    <CheckBadgeIcon className="h-4 w-4 text-nav-buysell" />
                     <span>Direct customer contact</span>
                   </div>
                 </div>
-                <Button className="w-full bg-nav-marketplace hover:bg-nav-marketplace/90 text-white font-rajdhani font-bold">
+                <Button className="w-full bg-nav-buysell hover:bg-nav-buysell/90 text-white font-rajdhani font-bold">
                   Start Selling
                 </Button>
               </CardContent>
@@ -172,7 +172,7 @@ export function MarketplaceContentSection() {
                 <div className="space-y-base">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground">New Listings</span>
-                    <span className="font-rajdhani font-bold text-nav-marketplace">47</span>
+                    <span className="font-rajdhani font-bold text-nav-buysell">47</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground">Active Deals</span>

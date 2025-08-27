@@ -63,7 +63,7 @@ const cardVariants = cva(
         "surface-events": "bg-nav-events/5 border border-nav-events/20 hover:bg-nav-events/10",
         "surface-directory": "bg-nav-directory/5 border border-nav-directory/20 hover:bg-nav-directory/10",
         "surface-armory": "bg-nav-armory/5 border border-nav-armory/20 hover:bg-nav-armory/10",
-        "surface-marketplace": "bg-nav-marketplace/5 border border-nav-marketplace/20 hover:bg-nav-marketplace/10"
+        "surface-buysell": "bg-nav-buysell/5 border border-nav-buysell/20 hover:bg-nav-buysell/10"
       },
       size: {
         sm: "p-sm",
@@ -82,7 +82,7 @@ export interface CardProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof cardVariants> {
   // Tactical card props
-  tacticalTheme?: 'home' | 'events' | 'directory' | 'armory' | 'intel' | 'marketplace' | 'forums' | 'default'
+  tacticalTheme?: 'home' | 'events' | 'directory' | 'armory' | 'intel' | 'buysell' | 'forums' | 'default'
   showCategoryIcon?: boolean
   category?: string
   type?: string
@@ -124,11 +124,11 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         text: 'text-nav-intel',
         bg: 'bg-nav-intel/40',
       },
-      marketplace: {
-        border: 'border-nav-marketplace',
-        hoverBorder: 'hover:border-nav-marketplace/50',
-        text: 'text-nav-marketplace',
-        bg: 'bg-nav-marketplace/40',
+      buysell: {
+        border: 'border-nav-buysell',
+        hoverBorder: 'hover:border-nav-buysell/50',
+        text: 'text-nav-buysell',
+        bg: 'bg-nav-buysell/40',
       },
       forums: {
         border: 'border-nav-forums',

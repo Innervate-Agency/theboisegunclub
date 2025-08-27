@@ -45,7 +45,7 @@ function getHTMLResponse(theme: string) {
           --color-nav-directory: var(--nav-directory);
           --color-nav-armory: var(--nav-armory);
           --color-nav-intel: var(--nav-intel);
-          --color-nav-marketplace: var(--nav-marketplace);
+          --color-nav-buysell: var(--nav-buysell);
           --color-nav-forums: var(--nav-forums);
           
           /* Typography */
@@ -175,7 +175,7 @@ function getHTMLResponse(theme: string) {
         .boise-navbar-item-directory:hover { color: var(--color-nav-directory); }
         .boise-navbar-item-armory:hover { color: var(--color-nav-armory); }
         .boise-navbar-item-intel:hover { color: var(--color-nav-intel); }
-        .boise-navbar-item-marketplace:hover { color: var(--color-nav-marketplace); }
+        .boise-navbar-item-buysell:hover { color: var(--color-nav-buysell); }
         .boise-navbar-item-forums:hover { color: var(--color-nav-forums); }
         
         .boise-navbar-item-active {

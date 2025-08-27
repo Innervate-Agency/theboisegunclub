@@ -4,7 +4,7 @@ import { TacticalHero } from '@/components/ui/tactical-hero'
 import { PlatformFeaturesSection } from '@/components/sections/platform-features-section'
 import { FeaturedContentSection } from '@/components/sections/featured-content-section'
 import { DirectoryStatsSection } from '@/components/sections/directory-stats-section'
-import { MarketplaceDealSection } from '@/components/sections/marketplace-deal-section'
+import { MarketplaceDealSection } from '@/components/sections/buysell-deal-section'
 import { PlatformValuesSection } from '@/components/sections/platform-values-section'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
@@ -43,7 +43,7 @@ export default function HomePage() {
           bottomSection={
             <div 
               style={{
-                background: 'linear-gradient(135deg, var(--nav-marketplace) 0%, var(--nav-events) 100%)',
+                background: 'linear-gradient(135deg, var(--nav-buysell) 0%, var(--nav-events) 100%)',
                 color: 'var(--foreground)'
               }}
             >
@@ -53,7 +53,7 @@ export default function HomePage() {
             </div>
           }
           topSectionId="directory-stats"
-          bottomSectionId="marketplace-deals"
+          bottomSectionId="buysell-deals"
           cutoutVariant="zigzag"
           topBgColor="bg-background"
           bottomBgColor=""

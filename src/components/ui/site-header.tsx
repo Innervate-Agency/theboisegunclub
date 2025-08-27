@@ -120,7 +120,7 @@ export function SiteHeader() {
 
               {/* Marketplace */}
               <NavigationMenuItem>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "gap-xs")} href="/marketplace">
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "gap-xs")} href="/buysell">
                   <ShoppingCartIcon className="size-4" />
                   Marketplace
                 </NavigationMenuLink>
@@ -200,7 +200,7 @@ export function SiteHeader() {
                 <MapPinIcon className="size-4" />
                 Map
               </Link>
-              <Link href="/marketplace" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
+              <Link href="/buysell" className="flex items-center gap-xs p-xs rounded-sm hover:bg-accent text-card-foreground">
                 <ShoppingCartIcon className="size-4" />
                 Marketplace
               </Link>

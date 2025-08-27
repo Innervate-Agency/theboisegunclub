@@ -49,16 +49,16 @@ const badgeVariants = cva(
         "events-free": "bg-[var(--accent)] bg-opacity-10 text-[var(--accent)] border-[var(--accent)] border-opacity-30 rounded-xs",
 
         // Marketplace Page Badges - Theme-adaptive
-        "marketplace-featured": "bg-[var(--nav-marketplace)] bg-opacity-10 text-[var(--nav-marketplace)] border-[var(--nav-marketplace)] border-opacity-30 rounded-xs",
-        "marketplace-new": "bg-rusty-orange/10 text-rusty-orange border-rusty-orange/30 rounded-xs",
-        "marketplace-sale": "bg-[var(--primary)] bg-opacity-10 text-[var(--primary)] border-[var(--primary)] border-opacity-30 rounded-xs",
-        "marketplace-sold": "bg-[var(--muted)] bg-opacity-20 text-[var(--muted-foreground)] border-[var(--muted)] border-opacity-40 rounded-xs",
-        "marketplace-verified": "bg-[var(--accent)] bg-opacity-10 text-[var(--accent)] border-[var(--accent)] border-opacity-30 rounded-xs",
-        "marketplace-premium": "bg-weathered-gold/10 text-weathered-gold border-weathered-gold/30 rounded-xs",
-        "marketplace-local": "bg-info-river/10 text-info-river border-info-river/30 rounded-xs",
-        "marketplace-shipping": "bg-primary/10 text-primary border-primary/30 rounded-xs",
-        "marketplace-cash": "bg-[var(--secondary)] bg-opacity-10 text-[var(--secondary)] border-[var(--secondary)] border-opacity-30 rounded-xs",
-        "marketplace-trade": "bg-canyon-clay/10 text-canyon-clay border-canyon-clay/30 rounded-xs",
+        "buysell-featured": "bg-[var(--nav-buysell)] bg-opacity-10 text-[var(--nav-buysell)] border-[var(--nav-buysell)] border-opacity-30 rounded-xs",
+        "buysell-new": "bg-rusty-orange/10 text-rusty-orange border-rusty-orange/30 rounded-xs",
+        "buysell-sale": "bg-[var(--primary)] bg-opacity-10 text-[var(--primary)] border-[var(--primary)] border-opacity-30 rounded-xs",
+        "buysell-sold": "bg-[var(--muted)] bg-opacity-20 text-[var(--muted-foreground)] border-[var(--muted)] border-opacity-40 rounded-xs",
+        "buysell-verified": "bg-[var(--accent)] bg-opacity-10 text-[var(--accent)] border-[var(--accent)] border-opacity-30 rounded-xs",
+        "buysell-premium": "bg-weathered-gold/10 text-weathered-gold border-weathered-gold/30 rounded-xs",
+        "buysell-local": "bg-info-river/10 text-info-river border-info-river/30 rounded-xs",
+        "buysell-shipping": "bg-primary/10 text-primary border-primary/30 rounded-xs",
+        "buysell-cash": "bg-[var(--secondary)] bg-opacity-10 text-[var(--secondary)] border-[var(--secondary)] border-opacity-30 rounded-xs",
+        "buysell-trade": "bg-canyon-clay/10 text-canyon-clay border-canyon-clay/30 rounded-xs",
 
         // Home Page Badges - Theme-adaptive
         "home-hero": "bg-[var(--primary)] bg-opacity-10 text-[var(--primary)] border-[var(--primary)] border-opacity-30 rounded-xs",
@@ -143,16 +143,16 @@ const pageIcons = {
   "events-free": CurrencyDollarIcon,
 
   // Marketplace Page Icons
-  "marketplace-featured": StarIcon,
-  "marketplace-new": BoltIcon,
-  "marketplace-sale": TagIcon,
-  "marketplace-sold": CheckCircleIcon,
-  "marketplace-verified": ShieldCheckIcon,
-  "marketplace-premium": SparklesIcon,
-  "marketplace-local": MapPinIcon,
-  "marketplace-shipping": TruckIcon,
-  "marketplace-cash": BanknotesIcon,
-  "marketplace-trade": ArchiveBoxIcon,
+  "buysell-featured": StarIcon,
+  "buysell-new": BoltIcon,
+  "buysell-sale": TagIcon,
+  "buysell-sold": CheckCircleIcon,
+  "buysell-verified": ShieldCheckIcon,
+  "buysell-premium": SparklesIcon,
+  "buysell-local": MapPinIcon,
+  "buysell-shipping": TruckIcon,
+  "buysell-cash": BanknotesIcon,
+  "buysell-trade": ArchiveBoxIcon,
 
   // Home Page Icons
   "home-hero": FlagIcon,

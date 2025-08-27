@@ -27,7 +27,7 @@ const tacticalCaseVariants = cva(
         directory: "group-hover:border-nav-directory/40 group-hover:bg-card/70",
         armory: "group-hover:border-nav-armory/40 group-hover:bg-card/70",
         intel: "group-hover:border-nav-intel/40 group-hover:bg-card/70",
-        marketplace: "group-hover:border-nav-marketplace/40 group-hover:bg-card/70",
+        buysell: "group-hover:border-nav-buysell/40 group-hover:bg-card/70",
         forums: "group-hover:border-nav-forums/40 group-hover:bg-card/70",
         default: "group-hover:border-border/50 group-hover:bg-card/70"
       }
@@ -75,7 +75,7 @@ export function TacticalCase({
       directory: 'nav-directory',
       armory: 'nav-armory',
       intel: 'nav-intel',
-      marketplace: 'nav-marketplace',
+      buysell: 'nav-buysell',
       forums: 'nav-forums',
       default: 'border'
     }

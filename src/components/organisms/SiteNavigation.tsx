@@ -11,7 +11,7 @@ const SiteNavigation = () => {
           <Link href="/directory" className="px-4">Directory</Link>
           <Link href="/events" className="px-4">Events</Link>
           <Link href="/intel" className="px-4">Intel</Link>
-          <Link href="/marketplace" className="px-4">Marketplace</Link>
+          <Link href="/buysell" className="px-4">Marketplace</Link>
           <Link href="/training" className="px-4">Training</Link>
         </div>
       </nav>

@@ -22,7 +22,7 @@ const megaHeroVariants = cva(
         directory: "bg-gradient-directory-hero",
         guides: "bg-gradient-to-br from-(--color-info-river) to-[color-mix(in_srgb,var(--color-info-river)_80%,var(--color-warning-clay))]",
         map: "bg-gradient-intel-hero",
-        marketplace: "bg-gradient-marketplace-hero",
+        buysell: "bg-gradient-buysell-hero",
         armory: "bg-gradient-armory-hero",
         community: "bg-gradient-to-br from-(--color-ember-glow) to-[color-mix(in_srgb,var(--color-ember-glow)_80%,var(--color-rusty-orange))]",
         gunclub: "bg-gradient-to-br from-(--color-light-peachy) via-(--color-crisp-off-white) to-(--color-light-peachy)"

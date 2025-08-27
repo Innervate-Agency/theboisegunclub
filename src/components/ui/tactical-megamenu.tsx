@@ -139,23 +139,23 @@ const megamenuSections: MegamenuSection[] = [
     ]
   },
   {
-    id: 'marketplace',
+    id: 'buysell',
     title: 'Marketplace',
     description: 'Buy, sell, and trade firearms & gear',
     icon: BuildingStorefrontIcon,
-    colorClass: 'nav-marketplace',
+    colorClass: 'nav-buysell',
     items: [
-      { href: '/marketplace', label: 'All Listings', description: 'Browse everything', icon: ShoppingCartIcon },
-      { href: '/marketplace/firearms', label: 'Firearms', description: 'Licensed sales only', badge: 'Verified' },
-      { href: '/marketplace/optics', label: 'Optics & Scopes', description: 'Precision equipment' },
-      { href: '/marketplace/gear', label: 'Gear & Accessories', description: 'All other equipment' },
-      { href: '/marketplace/deals', label: 'Hot Deals', description: 'Limited time offers', isNew: true },
-      { href: '/marketplace/wanted', label: 'Wanted Ads', description: 'Looking to buy' },
+      { href: '/buysell', label: 'All Listings', description: 'Browse everything', icon: ShoppingCartIcon },
+      { href: '/buysell/firearms', label: 'Firearms', description: 'Licensed sales only', badge: 'Verified' },
+      { href: '/buysell/optics', label: 'Optics & Scopes', description: 'Precision equipment' },
+      { href: '/buysell/gear', label: 'Gear & Accessories', description: 'All other equipment' },
+      { href: '/buysell/deals', label: 'Hot Deals', description: 'Limited time offers', isNew: true },
+      { href: '/buysell/wanted', label: 'Wanted Ads', description: 'Looking to buy' },
     ],
     featured: {
       title: 'Glock 19 Gen 5 - Like New',
       description: '9mm, 15+1 capacity, night sights, three magazines included',
-      href: '/marketplace/glock-19-gen-5',
+      href: '/buysell/glock-19-gen-5',
       badge: 'Hot Deal',
       stats: [
         { label: 'Price', value: '$549' },
@@ -164,8 +164,8 @@ const megamenuSections: MegamenuSection[] = [
       ]
     },
     quickActions: [
-      { href: '/marketplace/sell', label: 'ListBulletIcon Item', icon: BuildingStorefrontIcon, colorClass: 'nav-marketplace' },
-      { href: '/marketplace/watchlist', label: 'Watchlist', icon: EyeIcon, colorClass: 'nav-marketplace' }
+      { href: '/buysell/sell', label: 'ListBulletIcon Item', icon: BuildingStorefrontIcon, colorClass: 'nav-buysell' },
+      { href: '/buysell/watchlist', label: 'Watchlist', icon: EyeIcon, colorClass: 'nav-buysell' }
     ]
   }
 ]
@@ -326,7 +326,7 @@ export function TacticalMegamenu({
                         {/* Featured Content */}
                         {currentSection.featured && (
                           <div className="lg:col-span-1">
-                            <Card className="h-full border-nav-marketplace/20 hover:shadow-elevated transition-all duration-300">
+                            <Card className="h-full border-nav-buysell/20 hover:shadow-elevated transition-all duration-300">
                               <CardHeader className="pb-sm">
                                 <div className="flex items-center gap-xs mb-xs">
                                   <Badge className={`bg-${currentSection.colorClass}/20 text-${currentSection.colorClass} border-${currentSection.colorClass}/30`}>

@@ -33,7 +33,7 @@ export interface MarketplaceProduct {
 }
 
 // Mock data - in production this would be database queries
-const marketplaceProducts: MarketplaceProduct[] = [
+const buysellProducts: MarketplaceProduct[] = [
   {
     id: '1',
     title: "Glock 19 Gen 5",
@@ -57,7 +57,7 @@ const marketplaceProducts: MarketplaceProduct[] = [
     inStock: true,
     quantity: 2,
     lastUpdated: "2025-01-15",
-    images: ["/images/marketplace/glock19.jpg", "/images/marketplace/glock19-2.jpg"],
+    images: ["/images/buysell/glock19.jpg", "/images/buysell/glock19-2.jpg"],
     features: ["Night Sights", "3 Magazines", "Case Included", "Original Documentation"],
     tags: ["Popular", "Concealed Carry", "Reliable"],
     views: 340,
@@ -100,7 +100,7 @@ const marketplaceProducts: MarketplaceProduct[] = [
     inStock: true,
     quantity: 1,
     lastUpdated: "2025-01-14",
-    images: ["/images/marketplace/mp15.jpg"],
+    images: ["/images/buysell/mp15.jpg"],
     features: ["16-inch Barrel", "30-round Magazine", "Armornite Barrel Coating", "Adjustable Stock"],
     tags: ["AR-15", "CursorArrowRaysIcon Shooting", "Home Defense"],
     views: 285,
@@ -141,7 +141,7 @@ const marketplaceProducts: MarketplaceProduct[] = [
     inStock: true,
     quantity: 3,
     lastUpdated: "2025-01-13",
-    images: ["/images/marketplace/ruger1022.jpg"],
+    images: ["/images/buysell/ruger1022.jpg"],
     features: ["10-round Magazine", "18.5-inch Barrel", "Hardwood Stock", "Cross-bolt Safety"],
     tags: ["Training", "CursorArrowRaysIcon Shooting", "Beginner Friendly"],
     views: 198,
@@ -166,19 +166,19 @@ export class MarketplaceService {
   static async getAllProducts(): Promise<MarketplaceProduct[]> {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100))
-    return marketplaceProducts
+    return buysellProducts
   }
 
   static async getProductById(id: string): Promise<MarketplaceProduct | null> {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100))
-    return marketplaceProducts.find(product => product.id.toString() === id) || null
+    return buysellProducts.find(product => product.id.toString() === id) || null
   }
 
   static async getProductsByCategory(category: string): Promise<MarketplaceProduct[]> {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100))
-    return marketplaceProducts.filter(product => 
+    return buysellProducts.filter(product => 
       product.category.toLowerCase() === category.toLowerCase()
     )
   }
@@ -186,13 +186,13 @@ export class MarketplaceService {
   static async getFeaturedProducts(): Promise<MarketplaceProduct[]> {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100))
-    return marketplaceProducts.filter(product => product.featured)
+    return buysellProducts.filter(product => product.featured)
   }
 
   static async getRelatedProducts(productId: string, category: string): Promise<MarketplaceProduct[]> {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100))
-    return marketplaceProducts
+    return buysellProducts
       .filter(product => 
         product.id.toString() !== productId && 
         product.category.toLowerCase() === category.toLowerCase()
@@ -204,7 +204,7 @@ export class MarketplaceService {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100))
     const searchTerm = query.toLowerCase()
-    return marketplaceProducts.filter(product =>
+    return buysellProducts.filter(product =>
       product.title.toLowerCase().includes(searchTerm) ||
       product.description.toLowerCase().includes(searchTerm) ||
       product.brand.toLowerCase().includes(searchTerm) ||
@@ -215,22 +215,22 @@ export class MarketplaceService {
   }
 
   static getCategories(): string[] {
-    const categories = [...new Set(marketplaceProducts.map(product => product.category))]
+    const categories = [...new Set(buysellProducts.map(product => product.category))]
     return categories.sort()
   }
 
   static getBrands(): string[] {
-    const brands = [...new Set(marketplaceProducts.map(product => product.brand))]
+    const brands = [...new Set(buysellProducts.map(product => product.brand))]
     return brands.sort()
   }
 
   static getMarketplaceStats() {
-    const totalProducts = marketplaceProducts.length
-    const totalVendors = [...new Set(marketplaceProducts.map(product => product.vendor.name))].length
+    const totalProducts = buysellProducts.length
+    const totalVendors = [...new Set(buysellProducts.map(product => product.vendor.name))].length
     const avgPrice = Math.round(
-      marketplaceProducts.reduce((sum, product) => sum + product.price, 0) / totalProducts
+      buysellProducts.reduce((sum, product) => sum + product.price, 0) / totalProducts
     )
-    const totalViews = marketplaceProducts.reduce((sum, product) => sum + (product.views || 0), 0)
+    const totalViews = buysellProducts.reduce((sum, product) => sum + (product.views || 0), 0)
 
     return {
       totalProducts,
@@ -238,9 +238,9 @@ export class MarketplaceService {
       avgPrice,
       totalViews,
       categories: this.getCategories().length,
-      inStockItems: marketplaceProducts.filter(product => product.inStock).length
+      inStockItems: buysellProducts.filter(product => product.inStock).length
     }
   }
 }
 
-export const marketplaceService = MarketplaceService
+export const buysellService = MarketplaceService

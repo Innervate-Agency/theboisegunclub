@@ -46,7 +46,7 @@ const tacticalTypographyVariants = cva(
         intel: "text-nav-intel",
         events: "text-nav-events",
         directory: "text-nav-directory",
-        marketplace: "text-nav-marketplace",
+        buysell: "text-nav-buysell",
         forums: "text-nav-forums",
         home: "text-nav-home"
       },

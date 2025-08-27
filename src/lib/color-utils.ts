@@ -23,7 +23,7 @@ export function getNavigationColor(section: string, alpha: number = 1): string {
     directory: 'var(--nav-directory)',
     armory: 'var(--nav-armory)',
     intel: 'var(--nav-intel)',
-    marketplace: 'var(--nav-marketplace)',
+    buysell: 'var(--nav-buysell)',
     forums: 'var(--nav-forums)'
   }
   
@@ -39,7 +39,7 @@ export function getFallbackColor(section: string, alpha: number = 1): string {
     'nav-directory': '#4A7C59',
     'nav-armory': '#B7410E',
     'nav-intel': '#8B4A6B',
-    'nav-marketplace': '#6B7A3C',
+    'nav-buysell': '#B8860B',
     'nav-forums': '#8B7355'
   }
   

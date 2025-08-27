@@ -538,8 +538,8 @@ export function ProductDetailPage(props: ProductPageProps) {
 
   const section: DetailPageSection = {
     name: 'Marketplace',
-    path: '/marketplace',
-    color: 'nav-marketplace'
+    path: '/buysell',
+    color: 'nav-buysell'
   }
 
   const productContent = ProductContent(props)
@@ -552,7 +552,7 @@ export function ProductDetailPage(props: ProductPageProps) {
           description,
           tags,
           badges: [
-            { label: category, className: 'bg-nav-marketplace/20 text-nav-marketplace border-nav-marketplace/30' }
+            { label: category, className: 'bg-nav-buysell/20 text-nav-buysell border-nav-buysell/30' }
           ]
         },
         section,

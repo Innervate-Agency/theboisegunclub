@@ -65,7 +65,7 @@ const PianoKey = React.forwardRef<HTMLButtonElement, PianoKeyProps>(
         'nav-directory': 'var(--nav-directory)',
         'nav-armory': 'var(--nav-armory)',
         'nav-intel': 'var(--nav-intel)',
-        'nav-marketplace': 'var(--nav-marketplace)',
+        'nav-buysell': 'var(--nav-buysell)',
         'nav-forums': 'var(--nav-forums)'
       }
       return colorMap[colorClass] || 'var(--primary)'

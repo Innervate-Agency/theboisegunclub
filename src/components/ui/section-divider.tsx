@@ -1,143 +1,142 @@
 "use client"
 
 import React from 'react'
-import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
-const sectionDividerVariants = cva(
-  "relative w-full overflow-hidden",
-  {
-    variants: {
-      variant: {
-        // Rifling grooves - spiral pattern like barrel rifling
-        rifling: "h-16 bg-gradient-to-r from-background via-muted/30 to-background",
-        
-        // Crosshair - clean geometric crosshair pattern
-        crosshair: "h-12 bg-gradient-to-r from-background via-muted/20 to-background",
-        
-        // Sight alignment - three-dot pattern
-        sights: "h-8 bg-gradient-to-r from-background via-muted/10 to-background",
-        
-        // Range target - concentric pattern
-        target: "h-20 bg-gradient-to-r from-background via-muted/30 to-background",
-        
-        // Muzzle break - angular geometric cuts
-        muzzle: "h-14 bg-gradient-to-r from-background via-muted/25 to-background",
-        
-        // Simple clean divider
-        clean: "h-px bg-border"
-      },
-      spacing: {
-        none: "my-none",
-        sm: "my-lg",
-        md: "my-16", 
-        lg: "my-24",
-        xl: "my-32"
-      }
-    },
-    defaultVariants: {
-      variant: "crosshair",
-      spacing: "md"
-    }
+interface SectionDividerProps {
+  variant?: 'line' | 'gradient' | 'wave' | 'angle' | 'dots'
+  height?: 'sm' | 'md' | 'lg'
+  spacing?: 'none' | 'sm' | 'md' | 'lg'
+  className?: string
+}
+
+const heightClasses = {
+  sm: 'h-px',
+  md: 'h-0.5', 
+  lg: 'h-1'
+}
+
+const spacingClasses = {
+  none: 'my-0',
+  sm: 'my-4',
+  md: 'my-8', 
+  lg: 'my-12'
+}
+
+export function SectionDivider({ 
+  variant = 'line',
+  height = 'sm',
+  spacing = 'md',
+  className,
+  ...props 
+}: SectionDividerProps) {
+  
+  const baseClasses = cn(
+    'w-full relative',
+    spacingClasses[spacing],
+    className
+  )
+
+  // Simple line divider using CSS variables
+  if (variant === 'line') {
+    return (
+      <div className={baseClasses} {...props}>
+        <div 
+          className={heightClasses[height]}
+          style={{ backgroundColor: 'var(--muted-foreground)' }}
+        />
+      </div>
+    )
   }
-)
 
-export interface SectionDividerProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof sectionDividerVariants> {}
+  // Gradient divider
+  if (variant === 'gradient') {
+    return (
+      <div className={baseClasses} {...props}>
+        <div 
+          className={heightClasses[height]}
+          style={{
+            background: 'linear-gradient(90deg, transparent, var(--muted-foreground), transparent)'
+          }}
+        />
+      </div>
+    )
+  }
 
-export function SectionDivider({ className, variant, spacing, ...props }: SectionDividerProps) {
-  return (
-    <div className={cn(sectionDividerVariants({ variant, spacing }), className)} {...props}>
-      {/* Rifling Grooves Pattern */}
-      {variant === "rifling" && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-full h-full relative overflow-hidden">
-            {/* Spiral groove lines */}
-            <div className="absolute inset-0 opacity-30">
-              {[...Array(5)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute h-px bg-gradient-to-r from-transparent via-muted-foreground/40 to-transparent transform rotate-12 origin-center"
-                  style={{
-                    top: `${20 + i * 15}%`,
-                    left: `-${10 + i * 5}%`,
-                    right: `-${10 + i * 5}%`,
-                    transform: `rotate(${2 + i * 1.5}deg)`
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-      
-      {/* Crosshair Pattern */}
-      {variant === "crosshair" && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          {/* Horizontal line */}
-          <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-muted-foreground/30 to-transparent" />
-          {/* Vertical line */}
-          <div className="absolute h-full w-px bg-gradient-to-b from-transparent via-muted-foreground/30 to-transparent" />
-          {/* Center dot */}
-          <div className="w-1 h-1 rounded-pill bg-muted-foreground/40" />
-        </div>
-      )}
-      
-      {/* Three-Dot Sights Pattern */}
-      {variant === "sights" && (
-        <div className="absolute inset-0 flex items-center justify-center gap-(--spacing-5xl)">
-          <div className="size-2 rounded-pill bg-muted-foreground/40" />
-          <div className="size-3 rounded-pill bg-primary/60" />
-          <div className="size-2 rounded-pill bg-muted-foreground/40" />
-        </div>
-      )}
-      
-      {/* CursorArrowRaysIcon Pattern */}
-      {variant === "target" && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative">
-            {[...Array(4)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute rounded-full border border-muted-foreground/20"
-                style={{
-                  width: `${(i + 1) * 20}px`,
-                  height: `${(i + 1) * 20}px`,
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)'
-                }}
-              />
-            ))}
-            <div className="size-2 rounded-pill bg-primary/60 absolute top-micro/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-          </div>
-        </div>
-      )}
-      
-      {/* Muzzle Break Pattern */}
-      {variant === "muzzle" && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-full h-full relative">
-            {/* Angular cuts */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-muted-foreground/10 to-transparent clip-path-muzzle" />
-            <svg
-              className="absolute inset-0 w-full h-full opacity-20"
-              viewBox="0 0 400 56"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0 28 L50 8 L100 28 L150 8 L200 28 L250 8 L300 28 L350 8 L400 28 L350 48 L300 28 L250 48 L200 28 L150 48 L100 28 L50 48 L0 28 Z"
-                stroke="currentColor"
-                strokeWidth="1"
-                fill="none"
-                className="text-muted-foreground/30"
-              />
-            </svg>
-          </div>
-        </div>
-      )}
-    </div>
+  // Wave pattern using CSS clip-path
+  if (variant === 'wave') {
+    return (
+      <div className={cn(baseClasses, 'h-4')} {...props}>
+        <div 
+          className="w-full h-full"
+          style={{
+            backgroundColor: 'var(--muted-foreground)',
+            opacity: 0.3,
+            clipPath: 'polygon(0 50%, 25% 0%, 50% 50%, 75% 0%, 100% 50%, 100% 100%, 0% 100%)'
+          }}
+        />
+      </div>
+    )
+  }
+
+  // Angled divider using CSS clip-path
+  if (variant === 'angle') {
+    return (
+      <div className={cn(baseClasses, 'h-6')} {...props}>
+        <div 
+          className="w-full h-full"
+          style={{
+            backgroundColor: 'var(--muted-foreground)',
+            opacity: 0.2,
+            clipPath: 'polygon(0 0, 100% 0, 95% 100%, 5% 100%)'
+          }}
+        />
+      </div>
+    )
+  }
+
+  // Three dots pattern
+  if (variant === 'dots') {
+    return (
+      <div className={cn(baseClasses, 'h-2 flex items-center justify-center gap-2')} {...props}>
+        <div 
+          className="w-1 h-1 rounded-full" 
+          style={{ backgroundColor: 'var(--muted-foreground)' }}
+        />
+        <div 
+          className="w-1.5 h-1.5 rounded-full" 
+          style={{ backgroundColor: 'var(--accent)' }}
+        />
+        <div 
+          className="w-1 h-1 rounded-full" 
+          style={{ backgroundColor: 'var(--muted-foreground)' }}
+        />
+      </div>
+    )
+  }
+
+  return null
+}
+
+// Preset divider configurations
+export const SectionDividers = {
+  Subtle: (props?: Partial<SectionDividerProps>) => (
+    <SectionDivider variant="gradient" height="sm" spacing="sm" {...props} />
+  ),
+  
+  Standard: (props?: Partial<SectionDividerProps>) => (
+    <SectionDivider variant="line" height="md" spacing="md" {...props} />
+  ),
+  
+  Accent: (props?: Partial<SectionDividerProps>) => (
+    <SectionDivider variant="dots" spacing="md" {...props} />
+  ),
+  
+  Wave: (props?: Partial<SectionDividerProps>) => (
+    <SectionDivider variant="wave" spacing="lg" {...props} />
+  ),
+  
+  Angle: (props?: Partial<SectionDividerProps>) => (
+    <SectionDivider variant="angle" spacing="md" {...props} />
   )
 }
