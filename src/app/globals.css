@@ -64,7 +64,7 @@ html, body {
     --color-weathered-gold: #D4AF37;
     --color-dust-brown: #996633;
 
-    /* Gruvbox Night Ops */
+    /* Authentic Gruvbox Colors - Restored */
     --color-gruvbox-bg-dark: #282828;
     --color-gruvbox-bg-soft: #32302f;
     --color-gruvbox-bg-surface: #3c3836;
@@ -75,26 +75,29 @@ html, body {
     --color-gruvbox-yellow: #fabd2f;
     --color-gruvbox-green: #b8bb26;
     --color-gruvbox-blue: #83a598;
-    --color-gruvbox-purple: #8963bb;
+    --color-gruvbox-purple: #d3869b;
     --color-gruvbox-aqua: #8ec07c;
     --color-gruvbox-red: #fb4934;
 
-    /* Navigation Colors */
-    --color-nav-home-light: #bd8511;
-    --color-nav-events-light: #eb7d01;
-    --color-nav-directory-light: #2ebfe6;
-    --color-nav-armory-light: #B7410E;
-    --color-nav-intel-light: #8963bb;
-    --color-nav-marketplace-light: #798246;
-    --color-nav-forums-light: #6B7280;
+    /* Navigation Colors - Theme-Specific Optimized */
+    
+    /* Light Theme: Rich, earthy, sophisticated colors */
+    --color-nav-home-light: #964B00;        /* Rich leather brown ✓ */
+    --color-nav-events-light: #eb7d01;      /* Vibrant orange ✓ */
+    --color-nav-directory-light: #1e40af;   /* Deep royal blue (was too light cyan) */
+    --color-nav-armory-light: #B7410E;      /* Deep iron red ✓ */
+    --color-nav-intel-light: #6d28d9;       /* Deep violet (was wrong purple) */
+    --color-nav-marketplace-light: #15803d; /* Rich forest green */
+    --color-nav-forums-light: #374151;      /* Charcoal gray */
 
-    --color-nav-home-dark: #ffd43b;
-    --color-nav-events-dark: #ff8c42;
-    --color-nav-directory-dark: #42d4f5;
-    --color-nav-armory-dark: #fb4934;
-    --color-nav-intel-dark: #8963bb;
-    --color-nav-marketplace-dark: #9fb36b;
-    --color-nav-forums-dark: #9CA3AF;
+    /* Dark Theme: Lighter, more vibrant, high contrast */
+    --color-nav-home-dark: #fbf1c7;         /* Warm cream ✓ */
+    --color-nav-events-dark: #ff8c42;       /* Bright coral ✓ */
+    --color-nav-directory-dark: #60a5fa;    /* Bright sky blue */
+    --color-nav-armory-dark: #fb4934;       /* Bright red ✓ */
+    --color-nav-intel-dark: #a78bfa;        /* Bright lavender */
+    --color-nav-marketplace-dark: #4ade80;  /* Bright green */
+    --color-nav-forums-dark: #d1d5db;       /* Light gray */
 
     /* =================== TYPOGRAPHY =================== */
     --font-rajdhani: "Rajdhani", "Inter", system-ui, sans-serif;
@@ -1369,7 +1372,7 @@ html, body {
   
   /* Light theme override for home hero */
   .theme-light .bg-gradient-home-hero {
-    background: linear-gradient(135deg, #bd8511 0%, #ca9122 100%);
+    background: linear-gradient(135deg, #964B00 0%, #D99F5D 100%);
   }
 
   .bg-gradient-events-hero {
