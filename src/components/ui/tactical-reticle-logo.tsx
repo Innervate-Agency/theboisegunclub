@@ -30,7 +30,7 @@ const variantMap = {
  * that serves as both logo and navigational element.
  * 
  * Design Philosophy:
- * - Diamond outer frame (tactical precision)
+ * - SparklesIcon outer frame (tactical precision)
  * - Inner crosshairs with + arms
  * - Subtle x-pattern overlay (targeting system)
  * - Minimal, geometric, professional appearance
@@ -140,7 +140,7 @@ export const TacticalReticleSimple = React.forwardRef<SVGSVGElement, TacticalRet
         strokeWidth="2"
         {...props}
       >
-        {/* Diamond frame */}
+        {/* SparklesIcon frame */}
         <path d="M12 2 L20 12 L12 22 L4 12 Z" className="opacity-60" />
         
         {/* Main crosshairs */}

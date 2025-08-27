@@ -90,7 +90,7 @@ export function PricingCard({
   const monthlyPrice = isAnnual ? plan.price.annually / 12 : plan.price.monthly
   const savings = isAnnual ? (plan.price.monthly * 12) - plan.price.annually : 0
 
-  const Icon = plan.icon || Target
+  const Icon = plan.icon || CursorArrowRaysIcon
 
   const renderFeatureValue = (feature: PricingFeature) => {
     if (feature.included === true) {

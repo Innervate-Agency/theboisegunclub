@@ -111,7 +111,7 @@ export const TypeScale: Story = {
                 Static: The quick brown fox jumps over the lazy dog
               </div>
               <div className={`${type.responsive} font-noto-sans mt-xs text-muted-foreground`}>
-                Responsive: Scales on mobile, tablet, desktop
+                Responsive: ScaleIcon on mobile, tablet, desktop
               </div>
             </div>
           ))}
@@ -210,7 +210,7 @@ font-size: var(--text-display-sm);
 font-size: var(--card-title-size);
 
 /* Responsive Classes */
-className="text-responsive-xl"  // Scales across breakpoints
+className="text-responsive-xl"  // ScaleIcon across breakpoints
 className="card-title"          // Component-specific size
 
 /* Static Classes */

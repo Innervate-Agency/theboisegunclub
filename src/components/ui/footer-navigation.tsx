@@ -11,7 +11,7 @@ interface FooterNavigationProps {
 const navigationLinks = [
   {
     href: '/events',
-    icon: Ticket,
+    icon: TicketIcon,
     title: 'Events',
     description: 'Competitions & Training',
     theme: 'events'
@@ -25,7 +25,7 @@ const navigationLinks = [
   },
   {
     href: '/armory',
-    icon: Shield,
+    icon: ShieldCheckIcon,
     title: 'The Armory',
     description: 'Equipment & Reviews',
     theme: 'armory'
@@ -39,14 +39,14 @@ const navigationLinks = [
   },
   {
     href: '/marketplace',
-    icon: Storefront,
+    icon: BuildingStorefrontIcon,
     title: 'Marketplace',
     description: 'Buy & Sell Gear',
     theme: 'marketplace'
   },
   {
     href: '/forums',
-    icon: Users,
+    icon: UsersIcon,
     title: 'Forums',
     description: 'Community Discussion',
     theme: 'forums'

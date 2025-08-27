@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Calendar } from '@/components/ui/calendar'
+import { CalendarDaysIcon } from '@/components/ui/calendar'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -27,11 +27,11 @@ interface LargeEventCalendarProps {
 }
 
 const eventTypeConfig = {
-  Competition: { color: 'rusty-orange', icon: Trophy },
-  Training: { color: 'sage-green', icon: Target },
-  Charity: { color: 'slate-blue', icon: Heart },
-  Expo: { color: 'slate-blue', icon: Eye },
-  Social: { color: 'slate-blue', icon: Users },
+  Competition: { color: 'rusty-orange', icon: TrophyIcon },
+  Training: { color: 'sage-green', icon: CursorArrowRaysIcon },
+  Charity: { color: 'slate-blue', icon: HeartIcon },
+  Expo: { color: 'slate-blue', icon: EyeIcon },
+  Social: { color: 'slate-blue', icon: UsersIcon },
   Demo: { color: 'rusty-orange', icon: Zap }
 }
 
@@ -75,19 +75,19 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
       {/* Hero Header */}
       <div className="bg-gradient-to-r from-slate-blue to-slate-blue text-primary-foreground py-3xl">
         <div className="container mx-auto max-w-site px-lg text-center">
-          <h1 className="font-rajdhani text-display-lg font-bold mb-base">Event Calendar</h1>
+          <h1 className="font-rajdhani text-display-lg font-bold mb-base">Event CalendarDaysIcon</h1>
           <p className="text-body-xl text-primary-foreground/80 max-w-2xl mx-auto">
             Discover upcoming firearms events across the Treasure Valley. Click any date to see events.
           </p>
         </div>
       </div>
 
-      {/* Main Calendar Section */}
+      {/* Main CalendarDaysIcon Section */}
       <div className="py-3xl bg-background">
         <div className="container mx-auto max-w-site px-lg">
           <div className="space-y-2xl">
             
-            {/* Calendar Header */}
+            {/* CalendarDaysIcon Header */}
             <div className="flex items-center justify-between">
               <h2 className="font-rajdhani text-heading-4xl font-bold text-card-foreground">
                 {currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
@@ -118,7 +118,7 @@ export function LargeEventCalendar({ events, className }: LargeEventCalendarProp
               </div>
             </div>
 
-            {/* Massive Calendar */}
+            {/* Massive CalendarDaysIcon */}
             <div className="bg-card rounded-xs p-tinyxl shadow-present">
               <CalendarDaysIcon
                 mode="single"

@@ -7,7 +7,7 @@ const meta: Meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Comprehensive showcase of site-wide gradient system for TBGC platform. Used for backgrounds, buttons, accents, and premium features.'
+        component: 'Comprehensive showcase of site-wide gradient system for TBGC platformotion. Used for backgrounds, buttons, accents, and premium features.'
       }
     }
   },
@@ -18,7 +18,7 @@ type Story = StoryObj
 
 const gradients = [
   {
-    name: 'Fire Gradient',
+    name: 'FireIcon Gradient',
     description: 'Primary brand gradient for CTAs and premium features',
     classes: 'from-rusty-orange to-sandy-ochre',
     usage: 'Buttons, hover effects, fire animations, premium accents'
@@ -162,7 +162,7 @@ export const Default: Story = {
         </CardHeader>
         <CardContent className="space-y-base">
           <div>
-            <h4 className="font-medium mb-xs">Fire Gradient (Primary)</h4>
+            <h4 className="font-medium mb-xs">FireIcon Gradient (Primary)</h4>
             <p className="text-sm text-muted-foreground">
               Use for primary CTAs, premium features, and the main fire animation accent bars. 
               This is the signature TBGC gradient representing the copper and brass materials of firearms.

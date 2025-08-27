@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Calendar } from '@/components/ui/calendar'
+import { CalendarDaysIcon } from '@/components/ui/calendar'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -30,11 +30,11 @@ interface InteractiveCalendarProps {
 }
 
 const eventTypeConfig = {
-  Competition: { color: 'rusty-orange', icon: Trophy },
-  Training: { color: 'sage-green', icon: Target },
-  Charity: { color: 'slate-blue', icon: Heart },
-  Expo: { color: 'slate-blue', icon: Eye },
-  Social: { color: 'slate-blue', icon: Users },
+  Competition: { color: 'rusty-orange', icon: TrophyIcon },
+  Training: { color: 'sage-green', icon: CursorArrowRaysIcon },
+  Charity: { color: 'slate-blue', icon: HeartIcon },
+  Expo: { color: 'slate-blue', icon: EyeIcon },
+  Social: { color: 'slate-blue', icon: UsersIcon },
   Demo: { color: 'rusty-orange', icon: Zap }
 }
 
@@ -109,15 +109,15 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
 
   return (
     <div className={cn("w-full", className)}>
-      {/* Search and Filters */}
+      {/* MagnifyingGlassIcon and Filters */}
       <div className="bg-card px-lg py-base">
         <div className="flex flex-col sm:flex-row gap-base items-start sm:items-center justify-between">
           <div className="flex flex-col sm:flex-row gap-base flex-1">
-            {/* Search */}
+            {/* MagnifyingGlassIcon */}
             <div className="relative min-w-64">
               <MagnifyingGlassIcon className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-muted-foreground" />
               <Input
-                placeholder="Search events..."
+                placeholder="MagnifyingGlassIcon events..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
@@ -171,11 +171,11 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
         </div>
       </div>
 
-      {/* Main Calendar Layout - Single Column, Truly Massive */}
+      {/* Main CalendarDaysIcon Layout - Single Column, Truly Massive */}
       <div className="bg-background p-tinyxl">
         <div className="max-w-none space-y-2xl">
           
-          {/* Calendar Header */}
+          {/* CalendarDaysIcon Header */}
           <div className="flex items-center justify-between">
             <h2 className="font-rajdhani text-heading-4xl font-bold text-card-foreground">
               {currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
@@ -206,7 +206,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
             </div>
           </div>
 
-          {/* Truly Massive Calendar Grid */}
+          {/* Truly Massive CalendarDaysIcon Grid */}
           <CalendarDaysIcon
             mode="single"
             selected={selectedDate}
@@ -280,7 +280,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
             }}
           />
 
-          {/* Selected Date Events - Below Calendar */}
+          {/* Selected Date Events - Below CalendarDaysIcon */}
           {selectedDate && (
             <div className="bg-muted/30 rounded-sm p-lg">
               <div className="space-y-base">

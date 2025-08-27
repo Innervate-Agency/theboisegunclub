@@ -7,7 +7,7 @@ const meta: Meta = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Different rollover effect options for navigation items using TBGC color system.'
+        component: 'Different rollover effect options for navigation items using TBGC color systemotion.'
       }
     }
   },
@@ -19,11 +19,11 @@ type Story = StoryObj
 
 const navigationItems = [
   { label: "Home", icon: Home, color: "rusty-orange" },
-  { label: "Events", icon: Calendar, color: "slate-blue" },
-  { label: "Directory", icon: Users, color: "ayu-green" },
-  { label: "Guides", icon: Target, color: "ayu-purple" },
-  { label: "Map", icon: Shield, color: "ayu-red" },
-  { label: "Marketplace", icon: Trophy, color: "ayu-teal" }
+  { label: "Events", icon: CalendarDaysIcon, color: "slate-blue" },
+  { label: "Directory", icon: UsersIcon, color: "ayu-green" },
+  { label: "Guides", icon: CursorArrowRaysIcon, color: "ayu-purple" },
+  { label: "Map", icon: ShieldCheckIcon, color: "ayu-red" },
+  { label: "Marketplace", icon: TrophyIcon, color: "ayu-teal" }
 ]
 
 export const StripeStyleCenterOut: Story = {
@@ -141,7 +141,7 @@ export const BonusFireGradient: Story = {
   render: () => (
     <div className="bg-card p-8">
       <h2 className="text-2xl font-rajdhani font-bold mb-6 text-card-foreground">
-        Bonus: Fire Gradient Underline (TBGC Special)
+        Bonus: FireIcon Gradient Underline (TBGC Special)
       </h2>
       <div className="bg-muted p-6 rounded-sm">
         <div className="flex items-center gap-8">
@@ -154,7 +154,7 @@ export const BonusFireGradient: Story = {
               <item.icon className="h-4 w-4" />
               {item.label}
               
-              {/* Fire gradient underline that grows from center */}
+              {/* FireIcon gradient underline that grows from center */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre scale-x-0 origin-center group-hover:scale-x-100 transition-transform duration-300" />
             </a>
           ))}
@@ -230,9 +230,9 @@ export const AllEffectsComparison: Story = {
         </div>
       </div>
 
-      {/* Effect 4 - Fire Gradient */}
+      {/* Effect 4 - FireIcon Gradient */}
       <div className="space-y-4">
-        <h3 className="text-lg font-semibold text-card-foreground">4. Fire Gradient (TBGC Special)</h3>
+        <h3 className="text-lg font-semibold text-card-foreground">4. FireIcon Gradient (TBGC Special)</h3>
         <div className="bg-muted p-4 rounded-sm">
           <div className="flex items-center gap-6">
             {navigationItems.slice(0, 3).map((item) => (

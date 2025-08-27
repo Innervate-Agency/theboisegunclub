@@ -14,7 +14,7 @@ import {
 import { cn } from '@/lib/utils'
 import { TrustIndicators } from './trust-indicators'
 import { DirectoryStatsGrid } from './directory-stats-grid'
-import { ArrowUpIcon, ArrowUpIcon as SortAsc, ChevronDownIcon, ChevronDownIconIcon, ChevronDownIconIcon as ChevronDownIcon, FunnelIcon, FunnelIcon as FunnelIcon, ListBulletIcon, ListBulletIconBulletIcon, MagnifyingGlassIcon, MagnifyingGlassIcon as MagnifyingGlassIcon, QuestionMarkCheckCheckCircleIconIcon, QuestionMarkCheckCheckCircleIconIcon as Grid, RectangleGroupIcon, Squares2X2Icon as CardView, Squares2X2Icon as DenseView } from '@heroicons/react/24/outline'
+import { ArrowUpIcon, ArrowUpIcon as SortAsc, ChevronDownIcon, ChevronDownIcon as ChevronDownIcon, FunnelIcon, FunnelIcon as FunnelIcon, ListBulletIcon, ListBulletIconBulletIcon, MagnifyingGlassIcon, MagnifyingGlassIcon as MagnifyingGlassIcon, QuestionMarkCheckCheckCircleIcon, QuestionMarkCheckCheckCircleIcon as Grid, RectangleGroupIcon, Squares2X2Icon as CardView, Squares2X2Icon as DenseView } from '@heroicons/react/24/outline'
 
 export interface QuickTab {
   id: string

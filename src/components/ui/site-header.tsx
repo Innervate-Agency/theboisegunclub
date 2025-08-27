@@ -13,7 +13,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle 
 } from "@/components/ui/navigation-menu"
-import { BookOpen, BookOpenIcon, Building, BuildingOfficeIcon, Calendar, CalendarDaysIcon, List, ListBulletIcon, MapPin, MapPinIcon, ShoppingCart, ShoppingCartIcon, SignIn, Users, UsersIcon, X, XMarkIcon } from '@heroicons/react/24/outline'
+import { BookOpenIcon, BookOpenIcon, BuildingOfficeIcon, BuildingOfficeIcon, CalendarDaysIcon, CalendarDaysIcon, ListBulletIcon, ListBulletIcon, MapPinIcon, MapPinIcon, ShoppingCartIcon, ShoppingCartIcon, ArrowRightOnRectangleIcon, UsersIcon, UsersIcon, X, XMarkIcon } from '@heroicons/react/24/outline'
 import { cn } from "@/lib/utils"
 
 export function SiteHeader() {
@@ -161,7 +161,7 @@ export function SiteHeader() {
           {/* Action Buttons */}
           <div className="flex items-center gap-base">
             <Button variant="outline" size="sm" className="hidden md:flex gap-xs">
-              <SignIn className="size-4" />
+              <ArrowRightOnRectangleIcon className="size-4" />
               Sign In
             </Button>
             <Button size="sm" className="hidden md:block bg-gradient-fire hover:bg-gradient-logo text-primary-foreground font-rajdhani font-bold transition-all duration-300">
@@ -210,7 +210,7 @@ export function SiteHeader() {
               </Link>
               <div className="pt-base border-t border-border/40 flex flex-col gap-xs">
                 <Button variant="outline" size="sm" className="justify-start gap-xs">
-                  <SignIn className="size-4" />
+                  <ArrowRightOnRectangleIcon className="size-4" />
                   Sign In
                 </Button>
                 <Button size="sm" className="justify-start bg-gradient-fire hover:bg-gradient-logo text-primary-foreground font-rajdhani font-bold transition-all duration-300">

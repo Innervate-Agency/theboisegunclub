@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-08-18T16-05-27",
+  "totalChecks": 2,
+  "passed": 2,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Dependency Analysis",
+      "status": "success",
+      "duration": 823,
+      "outputFile": "security-audit.txt"
+    },
+    {
+      "name": "Package Size Analysis",
+      "status": "success",
+      "duration": 235,
+      "outputFile": "package-sizes.txt"
+    }
+  ]
+}

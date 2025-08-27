@@ -9,7 +9,7 @@ import { FooterUserProfile } from "@/components/ui/footer-user-profile"
 import { BrassCounter } from "@/components/ui/brass-counter"
 import { Card } from "@/components/ui/card"
 import { FooterTexture } from "@/components/ui/textured-background"
-import { BanknotesIcon, CategoryIcon, ChatBubbleBottomCenterTextIcon, ChevronUpIcon, CubeTransparentIcon, EnvelopeIcon, GlobeAltIcon, HeartIcon, IdentificationIcon, MapIcon, MapPinIcon, PhoneIcon, PlusCircleIcon, QuestionMarkCircleIcon, ShieldCheckIcon, TicketIcon, ViewfinderCircleIcon } from '@heroicons/react/24/outline'
+import { BanknotesIcon, BookOpenIcon, BuildingStorefrontIcon, CategoryIcon, ChatBubbleBottomCenterTextIcon, ChevronUpIcon, CubeTransparentIcon, EnvelopeIcon, GlobeAltIcon, HeartIcon, IdentificationIcon, MapIcon, MapPinIcon, PhoneIcon, PlusCircleIcon, QuestionMarkCircleIcon, ShieldCheckIcon, SparklesIcon, TicketIcon, UsersIcon, ViewfinderCircleIcon } from '@heroicons/react/24/outline'
 import { 
   DesertMesaSVG, BoiseFoothillsSVG, SouthBoiseDesertSVG, MountainPineSVG,
   HellsCanyonSVG, SnakeRiverCanyonSVG, CascadeSawtoothsSVG
@@ -62,13 +62,13 @@ export function SiteFooter({
   }, [])
 
   const pageThemeMap = {
-    '/': { icon: Diamond, color: 'text-nav-home', accent: 'bg-nav-home' },
-    '/events': { icon: Ticket, color: 'text-nav-events', accent: 'bg-nav-events' },
-    '/directory': { icon: AddressBook, color: 'text-nav-directory', accent: 'bg-nav-directory' },
-    '/armory': { icon: Shield, color: 'text-nav-armory', accent: 'bg-nav-armory' },
-    '/intel': { icon: MapTrifold, color: 'text-nav-intel', accent: 'bg-nav-intel' },
-    '/marketplace': { icon: Storefront, color: 'text-nav-marketplace', accent: 'bg-nav-marketplace' },
-    '/forums': { icon: ForumUsers, color: 'text-nav-forums', accent: 'bg-nav-forums' },
+    '/': { icon: CubeTransparentIcon, color: 'text-nav-home', accent: 'bg-nav-home' },
+    '/events': { icon: TicketIcon, color: 'text-nav-events', accent: 'bg-nav-events' },
+    '/directory': { icon: IdentificationIcon, color: 'text-nav-directory', accent: 'bg-nav-directory' },
+    '/armory': { icon: PlusCircleIcon, color: 'text-nav-armory', accent: 'bg-nav-armory' },
+    '/intel': { icon: MapPinIcon, color: 'text-nav-intel', accent: 'bg-nav-intel' },
+    '/marketplace': { icon: BanknotesIcon, color: 'text-nav-marketplace', accent: 'bg-nav-marketplace' },
+    '/forums': { icon: UsersIcon, color: 'text-nav-forums', accent: 'bg-nav-forums' },
   }
 
   const currentPageTheme = pageThemeMap[pathname as keyof typeof pageThemeMap] || pageThemeMap['/']
@@ -108,7 +108,7 @@ export function SiteFooter({
           <FooterTexture />
           
           <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Search and Subscribe Section */}
+          {/* MagnifyingGlassIcon and Subscribe Section */}
           {showNewsletter && (
             <div className="py-20 border-b border-border relative z-10">
               <FooterSearchSubscribe />
@@ -173,12 +173,12 @@ export function SiteFooter({
                 </h4>
                 <ul className="space-y-0">
                   {[
-                    { name: "Business Directory", href: "/directory", icon: AddressBook, color: "hover:text-nav-directory" },
-                    { name: "Events Calendar", href: "/events", icon: Ticket, color: "hover:text-nav-events" },
-                    { name: "The Armory", href: "/armory", icon: Shield, color: "hover:text-nav-armory" },
-                    { name: "Intel Center", href: "/intel", icon: MapTrifold, color: "hover:text-nav-intel" },
-                    { name: "Marketplace", href: "/marketplace", icon: Storefront, color: "hover:text-nav-marketplace" },
-                    { name: "Forums", href: "/forums", icon: ForumUsers, color: "hover:text-nav-forums" }
+                    { name: "Business Directory", href: "/directory", icon: BookOpenIcon, color: "hover:text-nav-directory" },
+                    { name: "Events CalendarDaysIcon", href: "/events", icon: TicketIcon, color: "hover:text-nav-events" },
+                    { name: "The Armory", href: "/armory", icon: ShieldCheckIcon, color: "hover:text-nav-armory" },
+                    { name: "Intel Center", href: "/intel", icon: MapPinIcon, color: "hover:text-nav-intel" },
+                    { name: "Marketplace", href: "/marketplace", icon: BanknotesIcon, color: "hover:text-nav-marketplace" },
+                    { name: "Forums", href: "/forums", icon: UsersIcon, color: "hover:text-nav-forums" }
                   ].map((link, index, array) => {
                     const Icon = link.icon
                     return (

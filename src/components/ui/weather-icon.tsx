@@ -1,21 +1,21 @@
 'use client'
 
 import React from 'react'
-import { SunIcon, WeatherIcon } from '@heroicons/react/24/outline';
+import { SunIcon, CloudIcon } from '@heroicons/react/24/outline';
 
-interface WeatherIconProps {
+interface CloudIconProps {
   type: 'sun' | 'partly-cloudy' | 'cloudy' | 'rain' | 'snow' | 'storm'
   className?: string
   size?: number
   weight?: 'light' | 'regular' | 'bold' | 'fill'
 }
 
-export function WeatherIcon({ 
+export function CloudIcon({ 
   type, 
   className = '', 
   size = 24, 
   weight = 'regular' 
-}: WeatherIconProps) {
+}: CloudIconProps) {
   const iconProps = {
     className,
     size,

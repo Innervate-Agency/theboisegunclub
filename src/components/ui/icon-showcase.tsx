@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 // Import commonly used Lucide icons for firearms/outdoor/business context
-import { CalendarDaysIcon, CursorArrowRaysIcon, GlobeAltIcon, MapPinIcon, ShieldCheckIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, CurrencyDollarIcon, CursorArrowRaysIcon, GlobeAltIcon, MapPinIcon, ShieldCheckIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const iconShowcaseVariants = cva(
   "flex items-center justify-center rounded-sm border transition-all duration-200 ease-out",
@@ -62,24 +62,24 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
       name: "Core Business",
       icons: [
         { icon: Building2, name: "Building2", category: "business" },
-        { icon: MapPin, name: "MapPin", category: "location" },
+        { icon: MapPinIcon, name: "MapPinIcon", category: "location" },
         { icon: Phone, name: "Phone", category: "contact" },
         { icon: Mail, name: "Mail", category: "contact" },
         { icon: Globe, name: "Globe", category: "web" },
-        { icon: Clock, name: "Clock", category: "time" },
-        { icon: Users, name: "Users", category: "people" },
-        { icon: Star, name: "Star", category: "rating" }
+        { icon: ClockIcon, name: "ClockIcon", category: "time" },
+        { icon: UsersIcon, name: "UsersIcon", category: "people" },
+        { icon: StarIcon, name: "StarIcon", category: "rating" }
       ]
     },
     {
       name: "Firearms & Outdoor",
       icons: [
-        { icon: Target, name: "Target", category: "shooting" },
+        { icon: CursorArrowRaysIcon, name: "CursorArrowRaysIcon", category: "shooting" },
         { icon: Crosshair, name: "Crosshair", category: "shooting" },
-        { icon: Shield, name: "Shield", category: "safety" },
+        { icon: ShieldCheckIcon, name: "ShieldCheckIcon", category: "safety" },
         { icon: Award, name: "Award", category: "achievement" },
-        { icon: Trophy, name: "Trophy", category: "competition" },
-        { icon: Compass, name: "Compass", category: "navigation" },
+        { icon: TrophyIcon, name: "TrophyIcon", category: "competition" },
+        { icon: MapIcon, name: "MapIcon", category: "navigation" },
         { icon: Map, name: "Map", category: "location" },
         { icon: Mountain, name: "Mountain", category: "outdoor" }
       ]
@@ -89,7 +89,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
       icons: [
         { icon: Home, name: "Home", category: "navigation" },
         { icon: Menu, name: "Menu", category: "interface" },
-        { icon: Search, name: "Search", category: "action" },
+        { icon: MagnifyingGlassIcon, name: "MagnifyingGlassIcon", category: "action" },
         { icon: Filter, name: "Filter", category: "action" },
         { icon: ChevronDown, name: "ChevronDown", category: "direction" },
         { icon: ChevronRight, name: "ChevronRight", category: "direction" },
@@ -100,12 +100,12 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
     {
       name: "Business & Shopping",
       icons: [
-        { icon: ShoppingCart, name: "ShoppingCart", category: "commerce" },
+        { icon: ShoppingCartIcon, name: "ShoppingCartIcon", category: "commerce" },
         { icon: CreditCard, name: "CreditCard", category: "payment" },
-        { icon: DollarSign, name: "DollarSign", category: "money" },
-        { icon: Package, name: "Package", category: "shipping" },
+        { icon: CurrencyDollarIcon, name: "CurrencyDollarIcon", category: "money" },
+        { icon: ArchiveBoxIcon, name: "ArchiveBoxIcon", category: "shipping" },
         { icon: Truck, name: "Truck", category: "delivery" },
-        { icon: Calendar, name: "Calendar", category: "time" },
+        { icon: CalendarDaysIcon, name: "CalendarDaysIcon", category: "time" },
         { icon: Settings, name: "Settings", category: "admin" },
         { icon: Edit, name: "Edit", category: "action" }
       ]
@@ -143,9 +143,9 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
                 {category.icons.map((iconItem, iconIndex) => (
                   <IconShowcaseItem
                     key={iconIndex}
-                    icon={iconItem.icon}
-                    name={iconItem.name}
-                    category={iconItem.category}
+                    icon={iconItemotion.icon}
+                    name={iconItemotion.name}
+                    category={iconItemotion.category}
                     variant={categoryIndex % 2 === 0 ? "default" : "primary"}
                   />
                 ))}

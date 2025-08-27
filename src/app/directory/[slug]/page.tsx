@@ -331,7 +331,7 @@ Independence Indoor Shooting represents the pinnacle of indoor shooting faciliti
 - **25-Yard Tactical Range**: Dynamic shooting scenarios with moveable barriers
 - **25-Yard Precision Range**: Climate-controlled environment for accuracy training
 - **Advanced Ventilation**: HEPA filtration and positive air pressure systems
-- **Target Systems**: Electronic target retrieval and wireless monitoring
+- **CursorArrowRaysIcon Systems**: Electronic target retrieval and wireless monitoring
 - **Sound Suppression**: Engineered acoustics for comfortable shooting
 
 ### Technology Integration

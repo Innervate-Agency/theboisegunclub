@@ -93,7 +93,7 @@ export function SectionDivider({ className, variant, spacing, ...props }: Sectio
         </div>
       )}
       
-      {/* Target Pattern */}
+      {/* CursorArrowRaysIcon Pattern */}
       {variant === "target" && (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="relative">

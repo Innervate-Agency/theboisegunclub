@@ -7,9 +7,9 @@ import { CurrentIcon, SunIcon } from '@heroicons/react/24/outline';
 import { cn } from "@/lib/utils"
 
 const themes = [
-  { name: 'light', icon: Sun, label: 'Light' },
-  { name: 'dark', icon: Moon, label: 'Dark' },
-  { name: 'system', icon: Monitor, label: 'System' }
+  { name: 'light', icon: SunIcon, label: 'Light' },
+  { name: 'dark', icon: MoonIcon, label: 'Dark' },
+  { name: 'system', icon: ComputerDesktopIcon, label: 'System' }
 ] as const
 
 export interface NewThemeToggleProps extends React.ComponentProps<"div"> {

@@ -73,7 +73,7 @@ export function ArticleSidebarClient({
         <CardHeader className="pb-sm">
           <div className="flex items-center gap-xs">
             <BookOpenIcon className="h-4 w-4 text-muted-foreground" />
-            <span className="text-sm font-medium text-muted-foreground">Article Info</span>
+            <span className="text-sm font-medium text-muted-foreground">Article InformationCircleIcon</span>
           </div>
         </CardHeader>
         <CardContent className="space-y-sm">
@@ -141,7 +141,7 @@ export function ArticleSidebarClient({
               className="justify-start gap-xs"
               onClick={handleBookmark}
             >
-              <Bookmark className={`h-4 w-4 ${isBookmarked ? 'fill-current' : ''}`} />
+              <BookmarkIcon className={`h-4 w-4 ${isBookmarked ? 'fill-current' : ''}`} />
               {isBookmarked ? 'Bookmarked' : 'Save for Later'}
             </Button>
             <Button 

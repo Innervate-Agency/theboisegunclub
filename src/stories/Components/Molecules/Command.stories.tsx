@@ -41,11 +41,11 @@ export const Default: Story = {
         <CommandGroup heading="Suggestions">
           <CommandItem>
             <CalendarDaysIcon className="mr-xs h-4 w-4" />
-            <span>Calendar</span>
+            <span>CalendarDaysIcon</span>
           </CommandItem>
           <CommandItem>
             <FaceIcon className="mr-xs h-4 w-4" />
-            <span>Search Emoji</span>
+            <span>MagnifyingGlassIcon Emoji</span>
           </CommandItem>
           <CommandItem>
             <RocketIcon className="mr-xs h-4 w-4" />

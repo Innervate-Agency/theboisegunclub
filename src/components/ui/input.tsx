@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { EyeIcon, EyeSlashIcon, AlertCircle } from "@heroicons/react/24/outline"
+import { EyeIcon, EyeSlashIcon, ExclamationTriangleIcon } from "@heroicons/react/24/outline"
 
 const inputVariants = cva(
   "flex h-button-lg w-full rounded-xs border border-input bg-background px-xs py-tiny text-body-sm ring-offset-background file:border-0 file:bg-transparent file:text-body-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
@@ -96,7 +96,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
         )}
         {error && (
           <p className="text-body-sm text-destructive flex items-center">
-            <AlertCircle className="size-4 mr-tiny" />
+            <ExclamationTriangleIcon className="size-4 mr-tiny" />
             {error}
           </p>
         )}

@@ -179,7 +179,7 @@ export const Presets: Story = {
         </div>
         <div className="text-center space-y-xs p-base border rounded-xs">
           <SearchLoadingTumbleweed />
-          <p className="text-xs text-muted-foreground font-medium">Search</p>
+          <p className="text-xs text-muted-foreground font-medium">MagnifyingGlassIcon</p>
           <p className="text-xs text-muted-foreground">Micro, normal, subtle</p>
         </div>
         <div className="text-center space-y-xs p-base border rounded-xs">
@@ -290,7 +290,7 @@ export const ComprehensiveLoadingScenarios: Story = {
             Simulate File Transfer
           </Button>
           <Button size="sm" onClick={() => setSearching(!searching)}>
-            Toggle Search
+            Toggle MagnifyingGlassIcon
           </Button>
           <Button size="sm" onClick={() => setImageLoading(!imageLoading)}>
             Toggle Image Loading
@@ -321,11 +321,11 @@ export const ComprehensiveLoadingScenarios: Story = {
             />
           </div>
 
-          {/* Search loading */}
+          {/* MagnifyingGlassIcon loading */}
           <div className="border rounded-xs p-base">
-            <h4 className="font-rajdhani font-medium mb-sm">Search</h4>
+            <h4 className="font-rajdhani font-medium mb-sm">MagnifyingGlassIcon</h4>
             <div className="flex items-center gap-xs">
-              <input className="flex-1 p-xs border rounded-xs" placeholder="Search..." />
+              <input className="flex-1 p-xs border rounded-xs" placeholder="MagnifyingGlassIcon..." />
               <SearchLoading isSearching={searching} />
             </div>
           </div>

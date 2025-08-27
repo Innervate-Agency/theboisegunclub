@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Calendar } from '@/components/ui/calendar'
+import { CalendarDaysIcon } from '@/components/ui/calendar'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -43,7 +43,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
             <div className="relative min-w-64">
               <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 size-4 text-muted-foreground" />
               <Input
-                placeholder="Search events..."
+                placeholder="MagnifyingGlassIcon events..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"

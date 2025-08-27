@@ -157,7 +157,7 @@ export async function POST(request: NextRequest) {
     <ul>
       <li>📧 Subscribe to our event newsletter</li>
       <li>🎯 Join the Boise Gun Collective directory</li>
-      <li>📱 Bookmark our events page for regular updates</li>
+      <li>📱 BookmarkIcon our events page for regular updates</li>
     </ul>
   </div>
   

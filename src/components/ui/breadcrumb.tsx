@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
-import { CaretRight, DotsThree, EllipsisHorizontalIcon } from '@heroicons/react/24/outline'
+import { ChevronRightIcon, DotsThree, EllipsisHorizontalIcon } from '@heroicons/react/24/outline'
 
 import { cn } from "@/lib/utils"
 
@@ -75,7 +75,7 @@ function BreadcrumbSeparator({
       className={cn("[&>svg]:size-3.5", className)}
       {...props}
     >
-      {children ?? <CaretRight />}
+      {children ?? <ChevronRightIcon />}
     </li>
   )
 }

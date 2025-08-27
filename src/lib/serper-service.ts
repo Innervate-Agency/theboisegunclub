@@ -62,7 +62,7 @@ export class SerperService {
   }
 
   /**
-   * Search for business information using smart queries
+   * MagnifyingGlassIcon for business information using smart queries
    */
   async searchBusiness(
     businessName: string, 

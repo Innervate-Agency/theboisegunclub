@@ -13,7 +13,7 @@ const samplePlans = [
       annually: 0,
       setup: 0
     },
-    icon: Target,
+    icon: CursorArrowRaysIcon,
     features: [
       { name: 'Basic Directory Listing', included: true, description: 'Name, address, phone, hours' },
       { name: 'Business Category', included: true, description: 'Searchable business type' },
@@ -33,7 +33,7 @@ const samplePlans = [
       annually: 499,
       setup: 0
     },
-    icon: Trophy,
+    icon: TrophyIcon,
     features: [
       { name: 'Enhanced Directory Profile', included: true, description: 'Detailed business description' },
       { name: 'Photo Gallery', included: 10, description: 'Up to 10 business photos' },
@@ -56,7 +56,7 @@ const samplePlans = [
       annually: 999,
       setup: 0
     },
-    icon: Crown,
+    icon: StarIcon,
     features: [
       { name: 'Featured Directory Placement', included: true, description: 'Top placement in search results' },
       { name: 'Unlimited Photos & Videos', included: true, description: 'Showcase your business fully' },
@@ -79,7 +79,7 @@ const samplePlans = [
       annually: 1999,
       setup: 0
     },
-    icon: Star,
+    icon: StarIcon,
     features: [
       { name: 'Premium Directory Placement', included: true, description: 'Top tier search placement' },
       { name: 'Multi-Location Support', included: true, description: 'Manage multiple locations' },
@@ -229,7 +229,7 @@ export const PlatinumProfile: Story = {
         annually: 1999,
         setup: 0
       },
-      icon: Users,
+      icon: UsersIcon,
       features: [
         { name: 'Premium Directory Placement', included: true, description: 'Top tier search placement' },
         { name: 'Multi-Location Support', included: true, description: 'Manage multiple locations' },
@@ -260,7 +260,7 @@ export const LawEnforcementMembership: Story = {
         annually: 650,
         setup: 0
       },
-      icon: Shield,
+      icon: ShieldCheckIcon,
       features: [
         { name: 'Range Access', included: true, description: 'Priority access to all ranges' },
         { name: 'Monthly Guest Passes', included: 3, description: 'Bring colleagues for training' },

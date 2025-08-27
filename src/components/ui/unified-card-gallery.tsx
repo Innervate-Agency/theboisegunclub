@@ -33,7 +33,7 @@ interface UnifiedCardGalleryProps<T> {
   mobileFiltersOpen?: boolean
   setMobileFiltersOpen?: (open: boolean) => void
   
-  // Search
+  // MagnifyingGlassIcon
   searchValue: string
   onSearchChange: (value: string) => void
   searchPlaceholder?: string
@@ -68,7 +68,7 @@ export function UnifiedCardGallery<T>({
   setMobileFiltersOpen,
   searchValue,
   onSearchChange,
-  searchPlaceholder = "Search...",
+  searchPlaceholder = "MagnifyingGlassIcon...",
   emptyTitle = "No Results Found",
   emptyDescription = "Try adjusting your search terms or filters.",
   showViewToggle = true,
@@ -81,10 +81,10 @@ export function UnifiedCardGallery<T>({
       <div className="w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile">
         <div className="flex flex-col lg:flex-row gap-mobile-lg sm:gap-2xl max-w-[1920px] mx-auto">
           
-          {/* Left Sidebar - Calendar and Filters (Desktop) */}
+          {/* Left Sidebar - CalendarDaysIcon and Filters (Desktop) */}
           <aside className="hidden lg:block">
             <div className="space-y-6">
-              {/* Optional Calendar */}
+              {/* Optional CalendarDaysIcon */}
               {showCalendar && calendarEvents && onDateSelect && (
                 <SidebarCalendar 
                   events={calendarEvents}
@@ -121,10 +121,10 @@ export function UnifiedCardGallery<T>({
 
           {/* Main Content */}
           <main className="flex-1 min-w-0">
-            {/* Search and Controls Bar */}
+            {/* MagnifyingGlassIcon and Controls Bar */}
             <div className="space-y-lg mb-mobile-xl sm:mb-2xl">
               <div className="flex flex-col sm:flex-row gap-base">
-                {/* Search */}
+                {/* MagnifyingGlassIcon */}
                 <div className="relative flex-1">
                   <MagnifyingGlassIcon className="absolute left-base top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground pointer-events-none" />
                   <Input

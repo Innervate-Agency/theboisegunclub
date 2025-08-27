@@ -5,20 +5,20 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { Badge } from "./badge"
-import { m } from "framer-motion"
+import { motion } from "framer-motion"
 
 // Create properly typed motion components using LazyMotion-compatible m
-const MotionDiv = m.div
-const MotionNav = m.nav
-const MotionP = m.p
-const MotionH1 = m.h1
+const MotionDiv = motion.div
+const MotionNav = motion.nav
+const MotionP = motion.p
+const MotionH1 = motion.h1
 
 const zigzagHeroVariants = cva(
   "relative w-full min-h-[600px] overflow-hidden",
   {
     variants: {
       gradient: {
-        events: "bg-gradient-to-br from-nav-events via-nav-marketplace to-nav-home", // Fire gradient
+        events: "bg-gradient-to-br from-nav-events via-nav-marketplace to-nav-home", // FireIcon gradient
         directory: "bg-gradient-to-br from-nav-directory via-nav-forums to-nav-home", // Professional earth
         armory: "bg-gradient-to-br from-nav-armory via-nav-intel to-nav-events", // Teal to orange fire
         intel: "bg-gradient-to-br from-nav-intel via-nav-directory to-nav-armory", // Military analytical 

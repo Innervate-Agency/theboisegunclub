@@ -6,7 +6,7 @@ const meta: Meta = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'The complete TBGC design system tokens: 26 colors, fire gradients, typography, spacing, and animation system. This is the foundation for all components.',
+        component: 'The complete TBGC design system tokens: 26 colors, fire gradients, typography, spacing, and animation systemotion. This is the foundation for all components.',
       },
     },
     designToken: {
@@ -109,51 +109,51 @@ export const FireGradients: Story = {
   render: () => (
     <div className="p-lg space-y-lg">
       <div>
-        <h1 className="text-4xl font-rajdhani font-bold mb-xs">Fire Gradient System</h1>
+        <h1 className="text-4xl font-rajdhani font-bold mb-xs">FireIcon Gradient System</h1>
         <p className="text-body-lg text-muted-foreground mb-lg">Animated gradients that "unfurl" from the left like proper fire effects</p>
       </div>
 
-      {/* Static Fire Gradients */}
+      {/* Static FireIcon Gradients */}
       <section>
-        <h2 className="text-display-md font-rajdhani font-bold mb-base">Static Fire Gradients</h2>
+        <h2 className="text-display-md font-rajdhani font-bold mb-base">Static FireIcon Gradients</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
           <div className="bg-fire-orange p-lg rounded-sm text-white">
-            <div className="font-bold text-display-sm">Fire Orange</div>
+            <div className="font-bold text-display-sm">FireIcon Orange</div>
             <div className="text-body-sm opacity-80">Copper Orange → Brass Yellow</div>
           </div>
           <div className="bg-fire-blue p-lg rounded-sm text-white">
-            <div className="font-bold text-display-sm">Fire Blue</div>
+            <div className="font-bold text-display-sm">FireIcon Blue</div>
             <div className="text-body-sm opacity-80">Ayu Blue → Ayu Green</div>
           </div>
           <div className="bg-fire-purple p-lg rounded-sm text-white">
-            <div className="font-bold text-display-sm">Fire Purple</div>
+            <div className="font-bold text-display-sm">FireIcon Purple</div>
             <div className="text-body-sm opacity-80">Ayu Purple → Ayu Cobalt</div>
           </div>
           <div className="bg-fire-green p-lg rounded-sm text-white">
-            <div className="font-bold text-display-sm">Fire Green</div>
+            <div className="font-bold text-display-sm">FireIcon Green</div>
             <div className="text-body-sm opacity-80">Ayu Green → Bore Sight Green</div>
           </div>
         </div>
       </section>
 
-      {/* Animated Fire Gradients */}
+      {/* Animated FireIcon Gradients */}
       <section>
-        <h2 className="text-display-md font-rajdhani font-bold mb-base">Animated Fire Effects</h2>
+        <h2 className="text-display-md font-rajdhani font-bold mb-base">Animated FireIcon Effects</h2>
         <div className="space-y-md">
           <div className="relative bg-card p-lg rounded-sm border overflow-hidden cursor-pointer animate-fire-unfurl">
             <div className="relative z-10">
-              <div className="font-bold text-display-sm">Fire Unfurl Effect</div>
+              <div className="font-bold text-display-sm">FireIcon Unfurl Effect</div>
               <div className="text-body-sm text-muted-foreground">Hover to see gradient unfurl from left</div>
             </div>
           </div>
           
           <div className="animate-fire-pulse p-lg rounded-sm text-white">
-            <div className="font-bold text-display-sm">Fire Pulse Animation</div>
+            <div className="font-bold text-display-sm">FireIcon Pulse Animation</div>
             <div className="text-body-sm opacity-80">Continuous background animation</div>
           </div>
           
           <div className="bg-fire-orange animate-fire-glow p-lg rounded-sm text-white">
-            <div className="font-bold text-display-sm">Fire Glow Effect</div>
+            <div className="font-bold text-display-sm">FireIcon Glow Effect</div>
             <div className="text-body-sm opacity-80">Pulsing glow shadow</div>
           </div>
         </div>

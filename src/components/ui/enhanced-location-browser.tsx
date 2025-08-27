@@ -45,11 +45,11 @@ interface EnhancedLocationBrowserProps {
 const ITEMS_PER_PAGE = 9
 
 const categoryFilters = [
-  { id: 'all', label: 'All Categories', icon: Target },
-  { id: 'Public Range', label: 'Public Ranges', icon: Target },
+  { id: 'all', label: 'All Categories', icon: CursorArrowRaysIcon },
+  { id: 'Public Range', label: 'Public Ranges', icon: CursorArrowRaysIcon },
   { id: 'Indoor Range', label: 'Indoor Facilities', icon: Navigation },
   { id: 'BLM Land', label: 'BLM Dispersed', icon: Mountain },
-  { id: 'Forest Service', label: 'Forest Service', icon: Compass },
+  { id: 'Forest Service', label: 'Forest Service', icon: MapIcon },
   { id: 'Remote/4WD', label: 'Remote/4WD', icon: Mountain }
 ]
 
@@ -61,8 +61,8 @@ const difficultyFilters = [
 ]
 
 const sortOptions = [
-  { id: 'distance', label: 'Distance from Boise', icon: MapPin },
-  { id: 'rating', label: 'Highest Rated', icon: Star },
+  { id: 'distance', label: 'Distance from Boise', icon: MapPinIcon },
+  { id: 'rating', label: 'Highest Rated', icon: StarIcon },
   { id: 'weather-priority', label: 'Weather Priority', icon: TrendingUp },
   { id: 'name', label: 'Alphabetical', icon: Filter }
 ]
@@ -278,7 +278,7 @@ export function EnhancedLocationBrowser({ locations, weatherData }: EnhancedLoca
             </div>
           )}
 
-          {/* No Results Message */}
+          {/* No Results ChatBubbleBottomCenterTextIcon */}
           {currentLocations.length === 0 && (
             <div className="text-center py-4xl">
               <div className="space-y-base">

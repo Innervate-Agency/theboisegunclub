@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { ArrowLeftIcon, BanknotesIcon, BookOpenIcon, ChatBubbleBottomCenterTextIcon, CursorArrowRaysIcon, ExclamationTriangleIcon, HomeIcon, MagnifyingGlassIcon, MapIcon, MapPinIcon, PlusCircleIcon, ShieldCheckIcon, TicketIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftIcon, BanknotesIcon, BookOpenIcon, BuildingStorefrontIcon, ChatBubbleBottomCenterTextIcon, CursorArrowRaysIcon, ExclamationTriangleIcon, HomeIcon, MagnifyingGlassIcon, MapIcon, MapPinIcon, PlusCircleIcon, ShieldCheckIcon, TicketIcon, UsersIcon } from '@heroicons/react/24/outline';
 import { SiteSearch } from '@/components/ui/site-search'
 
 interface QuickNavCard {
@@ -18,21 +18,21 @@ interface QuickNavCard {
 const quickNavCards: QuickNavCard[] = [
   {
     href: '/events',
-    icon: Ticket,
+    icon: TicketIcon,
     title: 'Events',
     description: 'Competitions & Training',
     theme: 'events'
   },
   {
     href: '/directory',
-    icon: Compass,
+    icon: MapIcon,
     title: 'Directory',
     description: 'Local Dealers & Services',
     theme: 'directory'
   },
   {
     href: '/armory',
-    icon: Shield,
+    icon: ShieldCheckIcon,
     title: 'The Armory',
     description: 'Equipment & Reviews',
     theme: 'armory'
@@ -46,14 +46,14 @@ const quickNavCards: QuickNavCard[] = [
   },
   {
     href: '/marketplace',
-    icon: Storefront,
+    icon: BuildingStorefrontIcon,
     title: 'Marketplace',
     description: 'Buy & Sell Gear',
     theme: 'marketplace'
   },
   {
     href: '/forums',
-    icon: Users,
+    icon: UsersIcon,
     title: 'Forums',
     description: 'Community Discussion',
     theme: 'forums'
@@ -83,10 +83,10 @@ export function NotFoundPage() {
               <div className="space-y-4">
                 <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
                   <ExclamationTriangleIcon className="h-4 w-4 mr-2" />
-                  Target Not Found
+                  CursorArrowRaysIcon Not Found
                 </Badge>
                 <h2 className="font-rajdhani text-3xl md:text-5xl font-bold text-card-foreground">
-                  Off Target, Partner
+                  Off CursorArrowRaysIcon, Partner
                 </h2>
                 <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                   Looks like you've wandered into uncharted territory. The page you're looking for has gone missing from our digital range. 
@@ -114,7 +114,7 @@ export function NotFoundPage() {
         </div>
       </section>
       
-      {/* Navigation and Search Section */}
+      {/* Navigation and MagnifyingGlassIcon Section */}
       <section className="px-6 pb-16">
         <div className="container mx-auto max-w-[1440px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -156,7 +156,7 @@ export function NotFoundPage() {
               </div>
             </div>
 
-            {/* Search Component Column */}
+            {/* MagnifyingGlassIcon Component Column */}
             <div className="space-y-4">
               <h3 className="font-rajdhani font-bold text-xl text-card-foreground mb-6">
                 Find What You Need

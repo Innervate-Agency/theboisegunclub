@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { CalendarDaysIcon, Cog6ToothIcon, CursorArrowRaysIcon, DocumentTextIcon, HomeIcon, ShieldCheckIcon, ToothIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, Cog6ToothIcon, CursorArrowRaysIcon, DocumentTextIcon, HomeIcon, ShieldCheckIcon, Cog6ToothIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 import { 
   NavigationMenu,
@@ -184,7 +184,7 @@ export const Premium: Story = {
             <div className="grid w-[400px] gap-sm p-base md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               <NavigationMenuLink variant="default" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
                 <CalendarDaysIcon className="h-4 w-4 mb-xs text-sandy-ochre" />
-                <div className="text-body-sm font-medium leading-none">Event Calendar</div>
+                <div className="text-body-sm font-medium leading-none">Event CalendarDaysIcon</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
                   Complete calendar of tournaments and events.
                 </p>
@@ -200,7 +200,7 @@ export const Premium: Story = {
                 <CursorArrowRaysIcon className="h-4 w-4 mb-xs text-sandy-ochre" />
                 <div className="text-body-sm font-medium leading-none">Range Schedule</div>
                 <p className="line-clamp-2 text-body-sm leading-snug text-muted-foreground">
-                  Range availability and booking system.
+                  Range availability and booking systemotion.
                 </p>
               </NavigationMenuLink>
               <NavigationMenuLink variant="default" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none">
@@ -248,7 +248,7 @@ export const Glass: Story = {
                       Range Control Center
                     </div>
                     <p className="text-body-sm leading-tight text-range-white/80">
-                      Real-time range monitoring and control system.
+                      Real-time range monitoring and control systemotion.
                     </p>
                   </NavigationMenuLink>
                 </div>
@@ -259,9 +259,9 @@ export const Glass: Story = {
                   </p>
                 </NavigationMenuLink>
                 <NavigationMenuLink variant="secondary" href="/range/safety" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
-                  <div className="text-body-sm font-medium leading-none">Safety Monitor</div>
+                  <div className="text-body-sm font-medium leading-none">Safety ComputerDesktopIcon</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-range-white/70">
-                    Real-time safety monitoring system.
+                    Real-time safety monitoring systemotion.
                   </p>
                 </NavigationMenuLink>
                 <NavigationMenuLink variant="secondary" href="/range/equipment" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
@@ -385,14 +385,14 @@ export const Tournament: Story = {
                   <UsersIcon className="h-4 w-4 mb-xs text-sandy-ochre" />
                   <div className="text-body-sm font-medium leading-none">Registration</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-stainless-steel">
-                    Elite competitor registration system.
+                    Elite competitor registration systemotion.
                   </p>
                 </NavigationMenuLink>
                 <NavigationMenuLink variant="tournament" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">
                   <CursorArrowRaysIcon className="h-4 w-4 mb-xs text-sandy-ochre" />
                   <div className="text-body-sm font-medium leading-none">Squad Assignments</div>
                   <p className="line-clamp-2 text-body-sm leading-snug text-stainless-steel">
-                    Professional squad management system.
+                    Professional squad management systemotion.
                   </p>
                 </NavigationMenuLink>
                 <NavigationMenuLink variant="tournament" className="block select-none space-y-micro rounded-input p-sm leading-none no-underline outline-none text-range-white">

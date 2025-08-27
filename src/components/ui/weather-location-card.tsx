@@ -2,8 +2,8 @@ import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { WeatherIcon } from '@/components/ui/weather-icon'
-import { ArrowRightIcon, ArrowUpIcon, CheckCircleIcon, CursorArrowRaysIcon, ExclamationTriangleIcon, MapPinIcon, ShieldCheckIcon, WeatherIcon, XCircleIcon } from '@heroicons/react/24/outline';
+import { CloudIcon } from '@/components/ui/weather-icon'
+import { ArrowRightIcon, ArrowUpIcon, CheckCircleIcon, CursorArrowRaysIcon, ExclamationTriangleIcon, MapPinIcon, ShieldCheckIcon, CloudIcon, XCircleIcon } from '@heroicons/react/24/outline';
 
 interface WeatherData {
   locationName: string
@@ -80,7 +80,7 @@ function getShootingStatus(weatherData?: WeatherData): {
       color: 'text-warning-clay',
       bgColor: 'bg-warning-clay/10',
       icon: <ExclamationTriangleIcon className="h-4 w-4" />,
-      message: fireDanger === 'High' ? 'Fire restrictions' : 'Windy conditions'
+      message: fireDanger === 'High' ? 'FireIcon restrictions' : 'Windy conditions'
     }
   }
 
@@ -94,7 +94,7 @@ function getShootingStatus(weatherData?: WeatherData): {
   }
 }
 
-// Wind direction arrow component
+// WindIcon direction arrow component
 function WindDirectionArrow({ direction, speed }: { direction: string, speed: number }) {
   const rotations = {
     'N': 0, 'NE': 45, 'E': 90, 'SE': 135,
@@ -173,10 +173,10 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
         {weatherData && (
           <div className="bg-nav-intel/5 p-sm rounded-sm border border-nav-intel/20">
             <div className="grid grid-cols-2 gap-base mb-sm">
-              {/* Wind - Primary Focus */}
+              {/* WindIcon - Primary Focus */}
               <div className="space-y-xs">
                 <div className="flex items-center gap-xs text-body-xs text-nav-intel font-rajdhani font-semibold">
-                  <Wind className="h-3 w-3" />
+                  <WindIcon className="h-3 w-3" />
                   WIND
                 </div>
                 <WindDirectionArrow direction={weatherData.windDirection} speed={weatherData.windSpeed} />
@@ -185,7 +185,7 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
               {/* Temperature */}
               <div className="space-y-xs">
                 <div className="flex items-center gap-xs text-body-xs text-nav-intel font-rajdhani font-semibold">
-                  <Thermometer className="h-3 w-3" />
+                  <ThermometerIcon className="h-3 w-3" />
                   TEMP
                 </div>
                 <div className="text-body-lg font-bold text-card-foreground">
@@ -194,10 +194,10 @@ export function WeatherLocationCard({ location, weatherData, className = "" }: W
               </div>
             </div>
             
-            {/* Fire Danger & Alerts */}
+            {/* FireIcon Danger & Alerts */}
             <div className="flex items-center justify-between text-body-xs">
               <div className="flex items-center gap-xs">
-                <span className="text-muted-foreground">Fire Danger:</span>
+                <span className="text-muted-foreground">FireIcon Danger:</span>
                 <Badge 
                   variant={weatherData.fireDanger === 'Low' ? 'fire-low' :
                           weatherData.fireDanger === 'Moderate' ? 'fire-moderate' :

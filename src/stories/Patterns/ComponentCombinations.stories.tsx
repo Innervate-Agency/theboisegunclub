@@ -71,7 +71,7 @@ export const FireGradientCardGrid: Story = {
   render: () => (
     <div className="max-w-5xl space-y-md">
       <div className="text-center space-y-xs">
-        <h2 className="font-rajdhani text-3xl font-bold">Fire Gradient Card Pattern</h2>
+        <h2 className="font-rajdhani text-3xl font-bold">FireIcon Gradient Card Pattern</h2>
         <p className="text-muted-foreground">Interactive cards with different fire gradient effects</p>
       </div>
       
@@ -92,11 +92,11 @@ export const FireGradientCardGrid: Story = {
           </CardContent>
         </Card>
 
-        {/* Pulsing Fire Card */}
+        {/* Pulsing FireIcon Card */}
         <Card className="animate-fire-pulse text-white">
           <CardHeader>
             <Badge variant="outline" className="w-fit mb-xs bg-black/20">Continuous</Badge>
-            <CardTitle>Pulsing Fire</CardTitle>
+            <CardTitle>Pulsing FireIcon</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-body-sm opacity-90 mb-base">
@@ -108,15 +108,15 @@ export const FireGradientCardGrid: Story = {
           </CardContent>
         </Card>
 
-        {/* Glowing Fire Card */}
+        {/* Glowing FireIcon Card */}
         <Card className="bg-fire-orange animate-fire-glow text-white">
           <CardHeader>
             <Badge variant="outline" className="w-fit mb-xs bg-black/20">Glow Effect</Badge>
-            <CardTitle>Fire Glow</CardTitle>
+            <CardTitle>FireIcon Glow</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-body-sm opacity-90 mb-base">
-              Fire gradient with a pulsing glow shadow effect for extra emphasis.
+              FireIcon gradient with a pulsing glow shadow effect for extra emphasis.
             </p>
             <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-card/20">
               View Details <ChevronRightIcon className="ml-xs h-4 w-4" />
@@ -124,10 +124,10 @@ export const FireGradientCardGrid: Story = {
           </CardContent>
         </Card>
 
-        {/* Blue Fire Variant */}
+        {/* Blue FireIcon Variant */}
         <Card className="bg-fire-blue text-white">
           <CardHeader>
-            <Badge variant="outline" className="w-fit mb-xs bg-black/20">Cool Fire</Badge>
+            <Badge variant="outline" className="w-fit mb-xs bg-black/20">Cool FireIcon</Badge>
             <CardTitle>Blue Flames</CardTitle>
           </CardHeader>
           <CardContent>
@@ -140,10 +140,10 @@ export const FireGradientCardGrid: Story = {
           </CardContent>
         </Card>
 
-        {/* Purple Fire Variant */}
+        {/* Purple FireIcon Variant */}
         <Card className="bg-fire-purple text-white">
           <CardHeader>
-            <Badge variant="outline" className="w-fit mb-xs bg-black/20">Royal Fire</Badge>
+            <Badge variant="outline" className="w-fit mb-xs bg-black/20">Royal FireIcon</Badge>
             <CardTitle>Purple Flames</CardTitle>
           </CardHeader>
           <CardContent>
@@ -156,10 +156,10 @@ export const FireGradientCardGrid: Story = {
           </CardContent>
         </Card>
 
-        {/* Green Fire Variant */}
+        {/* Green FireIcon Variant */}
         <Card className="bg-fire-green text-white">
           <CardHeader>
-            <Badge variant="outline" className="w-fit mb-xs bg-black/20">Natural Fire</Badge>
+            <Badge variant="outline" className="w-fit mb-xs bg-black/20">Natural FireIcon</Badge>
             <CardTitle>Green Flames</CardTitle>
           </CardHeader>
           <CardContent>
@@ -241,7 +241,7 @@ export const FeatureHighlight: Story = {
           <div className="space-y-base">
             <Badge className="bg-fire-blue text-white">Enhanced</Badge>
             <h3 className="font-rajdhani text-3xl font-bold">
-              Fire Gradient Animation System
+              FireIcon Gradient Animation System
             </h3>
             <p className="text-body-lg text-muted-foreground">
               Our enhanced gradient system fixes the positioning issue - gradients now "unfurl" from the left like proper fire effects, creating beautiful animated interactions.
@@ -294,14 +294,14 @@ export const FeatureHighlight: Story = {
           <Card className="bg-fire-blue text-white">
             <CardContent className="p-md text-center">
               <UsersIcon className="h-8 w-8 mx-auto mb-xs" />
-              <h4 className="font-bold">Blue Fire</h4>
+              <h4 className="font-bold">Blue FireIcon</h4>
             </CardContent>
           </Card>
           
           <Card className="bg-fire-purple text-white">
             <CardContent className="p-md text-center">
               <TrophyIcon className="h-8 w-8 mx-auto mb-xs" />
-              <h4 className="font-bold">Purple Fire</h4>
+              <h4 className="font-bold">Purple FireIcon</h4>
             </CardContent>
           </Card>
         </div>

@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "The Boise Gun Club - Treasure Valley Firearms Directory & Community",
-  description: "Treasure Valley's comprehensive firearms community platform. Directory of 100+ local gun shops, ranges, and trainers. Unified events calendar from all clubs. Community forum connecting Idaho firearms enthusiasts, families, and professionals.",
+  description: "Treasure Valley's comprehensive firearms community platformotion. Directory of 100+ local gun shops, ranges, and trainers. Unified events calendar from all clubs. Community forum connecting Idaho firearms enthusiasts, families, and professionals.",
   keywords: "Treasure Valley firearms, Idaho gun shops, Boise shooting ranges, firearms training, gun clubs Idaho, firearms directory, shooting events, gun community",
   authors: [{ name: "Boise Gun Collective, LLC" }],
   creator: "Boise Gun Collective, LLC",

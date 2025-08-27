@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { Badge } from "./badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./card"
-import { ArrowTopRightOnSquareIcon, BusinessTypeIcon, ClockIcon, ExternalLink, MapPin, MapPinIcon, PhoneIcon, ShieldCheckIcon, StarIcon, Users, UsersIcon } from '@heroicons/react/24/outline'
+import { ArrowTopRightOnSquareIcon, BusinessTypeIcon, ClockIcon, ExternalLink, MapPinIcon, MapPinIcon, PhoneIcon, ShieldCheckIcon, StarIcon, UsersIcon, UsersIcon } from '@heroicons/react/24/outline'
 
 const facilityCardVariants = cva(
   "group relative overflow-hidden transition-all duration-300 ease-out",

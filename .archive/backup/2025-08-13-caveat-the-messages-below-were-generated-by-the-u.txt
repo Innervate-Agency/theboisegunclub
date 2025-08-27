@@ -1,0 +1,15 @@
+╭──────────────────────────────────────────────────────────────────────╮
+│ ✻ Welcome to Claude Code!                                            │
+│                                                                      │
+│   /help for help, /status for your current setup                     │
+│                                                                      │
+│   cwd: /home/sdusk/dev/repositories/client-projects/theboisegunclub  │
+╰──────────────────────────────────────────────────────────────────────╯
+
+> /clear 
+  ⎿  (no content)
+
+> /config 
+  ⎿  Set model to opusplan (claude-opus-4-1-20250805)
+     Enabled auto-connect to IDE
+

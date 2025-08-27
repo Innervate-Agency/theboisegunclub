@@ -7,7 +7,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { MotionDiv } from '@/components/ui/optimized-motion'
-import { BanknotesIcon, Bars3Icon, ChatBubbleBottomCenterTextIcon, CubeTransparentIcon, CurrentPageIcon, IdentificationIcon, MapIcon, PlusCircleIcon, TicketIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { BanknotesIcon, Bars3Icon, BookOpenIcon, BuildingStorefrontIcon, ChatBubbleBottomCenterTextIcon, ChatBubbleLeftRightIcon, CubeTransparentIcon, CurrentPageIcon, IdentificationIcon, MapIcon, MapPinIcon, PlusCircleIcon, ShieldCheckIcon, SparklesIcon, TicketIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { AuthButton } from '@/components/auth/auth-button'
 import { NavbarWeatherWidget } from './navbar-weather-widget'
 import { NavigationTexture } from './textured-background'
@@ -46,13 +46,13 @@ const siteNavigationVariants = cva(
 )
 
 const navigationItems = [
-  { label: "Home", icon: Diamond, href: "/", color: "nav-home" },
-  { label: "Events", icon: Ticket, href: "/events", color: "nav-events" },
-  { label: "Directory", icon: AddressBook, href: "/directory", color: "nav-directory" },
-  { label: "Armory", icon: Shield, href: "/armory", color: "nav-armory" },
-  { label: "Intel", icon: MapTrifold, href: "/intel", color: "nav-intel" },
-  { label: "Marketplace", icon: Storefront, href: "/marketplace", color: "nav-marketplace" },
-  { label: "Forums", icon: Users, href: "/forums", color: "nav-forums", isForumLink: true }
+  { label: "Home", icon: CubeTransparentIcon, href: "/", color: "nav-home" },
+  { label: "Events", icon: TicketIcon, href: "/events", color: "nav-events" },
+  { label: "Directory", icon: IdentificationIcon, href: "/directory", color: "nav-directory" },
+  { label: "Armory", icon: PlusCircleIcon, href: "/armory", color: "nav-armory" },
+  { label: "Intel", icon: MapPinIcon, href: "/intel", color: "nav-intel" },
+  { label: "Marketplace", icon: BanknotesIcon, href: "/marketplace", color: "nav-marketplace" },
+  { label: "Forums", icon: ChatBubbleLeftRightIcon, href: "/forums", color: "nav-forums", isForumLink: true }
 ]
 
 export interface SiteNavigationProps 
@@ -104,7 +104,7 @@ export function SiteNavigation({
     else if (pathname.startsWith('/marketplace')) currentSection = 'marketplace'
     else if (pathname.startsWith('/forums')) currentSection = 'forums'
     
-    // Fire brass for page navigation
+    // FireIcon brass for page navigation
     fireBrass()
     
     // Track section visit
@@ -148,14 +148,14 @@ export function SiteNavigation({
 
   // Get current page icon component based on pathname
   const getCurrentPageIcon = () => {
-    if (pathname === '/') return Diamond
-    if (pathname.startsWith('/events')) return Ticket
-    if (pathname.startsWith('/directory')) return AddressBook
-    if (pathname.startsWith('/armory')) return Shield
-    if (pathname.startsWith('/intel')) return MapTrifold
-    if (pathname.startsWith('/marketplace')) return Storefront
-    if (pathname.startsWith('/forums')) return Users
-    return Diamond // fallback
+    if (pathname === '/') return CubeTransparentIcon
+    if (pathname.startsWith('/events')) return TicketIcon
+    if (pathname.startsWith('/directory')) return IdentificationIcon
+    if (pathname.startsWith('/armory')) return PlusCircleIcon
+    if (pathname.startsWith('/intel')) return MapPinIcon
+    if (pathname.startsWith('/marketplace')) return BanknotesIcon
+    if (pathname.startsWith('/forums')) return ChatBubbleLeftRightIcon
+    return CubeTransparentIcon // fallback
   }
 
   // Get current page subtitle based on pathname (memoized for performance)

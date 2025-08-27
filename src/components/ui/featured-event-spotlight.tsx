@@ -126,7 +126,7 @@ export function FeaturedEventSpotlight({
           </div>
         </div>
 
-        {/* Participation Info */}
+        {/* Participation InformationCircleIcon */}
         {participantCount && (
           <div className="flex items-center gap-base p-base bg-muted/30 rounded-xs">
             <UsersIcon className="h-5 w-5 text-slate-blue" weight="bold" />

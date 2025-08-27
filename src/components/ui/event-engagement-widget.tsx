@@ -397,9 +397,9 @@ END:VCALENDAR`
           </div>
         </div>
 
-        {/* Calendar Integration */}
+        {/* CalendarDaysIcon Integration */}
         <div className="border-t border-border pt-base space-y-sm">
-          <p className="text-sm font-medium text-card-foreground">Add to Calendar</p>
+          <p className="text-sm font-medium text-card-foreground">Add to CalendarDaysIcon</p>
           <div className="grid grid-cols-3 gap-xs">
             <Button
               variant="outline"

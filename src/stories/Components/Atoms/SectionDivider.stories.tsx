@@ -57,7 +57,7 @@ export const Sights: Story = {
   },
 }
 
-export const Target: Story = {
+export const CursorArrowRaysIcon: Story = {
   args: {
     variant: 'target',
     spacing: 'md',

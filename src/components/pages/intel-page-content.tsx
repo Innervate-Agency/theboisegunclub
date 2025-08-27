@@ -94,7 +94,7 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
     perPageOptions: [8, 12, 24, 48],
     enableInfiniteScroll: false,
     
-    // Search filter function
+    // MagnifyingGlassIcon filter function
     searchFilter: (location, query) => {
       const searchTerms = query.toLowerCase()
       return (
@@ -500,14 +500,14 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
             
             {/* Main Content */}
             <main className="flex-1 min-w-0">
-              {/* Search and Category Controls */}
+              {/* MagnifyingGlassIcon and Category Controls */}
               <div className="mb-xl space-y-lg">
-                {/* Search Bar with Mobile Filter Toggle */}
+                {/* MagnifyingGlassIcon Bar with Mobile Filter Toggle */}
                 <div className="flex gap-base">
                   <div className="relative flex-1 max-w-2xl">
                     <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <input
-                      placeholder="Search locations, access types, or amenities..."
+                      placeholder="MagnifyingGlassIcon locations, access types, or amenities..."
                       className="w-full pl-10 h-12 text-body-base bg-background border border-border rounded-xs px-base focus:outline-none focus:ring-2 focus:ring-nav-intel/50"
                       value={filters.searchQuery}
                       onChange={(e) => filters.setSearchQuery(e.target.value)}
@@ -679,9 +679,9 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                             onClick={(e) => {
                               e.preventDefault()
                               e.stopPropagation()
-                              // Bookmark location
+                              // BookmarkIcon location
                             }}
-                            title="Bookmark location"
+                            title="BookmarkIcon location"
                           >
                             <StarIcon className="h-4 w-4 text-white" />
                           </button>
@@ -745,7 +745,7 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                           </Badge>
                         </div>
 
-                        {/* Info Grid - Matching EventCard */}
+                        {/* InformationCircleIcon Grid - Matching EventCard */}
                         <div className="space-y-sm bg-muted/30 p-sm rounded-xs">
                           <div className="flex items-center gap-sm text-sm">
                             <MapPinIcon className="size-4 flex-shrink-0 text-nav-intel" />
@@ -783,7 +783,7 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                 })
               ) : (
                 <EmptyState
-                  icon={MapPin}
+                  icon={MapPinIcon}
                   title="No locations found"
                   description="Try adjusting your filters or search terms"
                   onAction={

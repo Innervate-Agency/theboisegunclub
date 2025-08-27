@@ -53,7 +53,7 @@ export function EventsContentSection() {
                     <BuildingOfficeIcon className="h-5 w-5 text-sandy-ochre" />
                   </div>
                   <div>
-                    <h4 className="font-rajdhani font-semibold text-sm text-card-foreground">List Your Business</h4>
+                    <h4 className="font-rajdhani font-semibold text-sm text-card-foreground">ListBulletIcon Your Business</h4>
                     <p className="text-xs text-muted-foreground leading-tight">
                       Register your range, shop, or training facility
                     </p>
@@ -65,7 +65,7 @@ export function EventsContentSection() {
               <div className="group p-base bg-card rounded-xs border border-border/50 hover:border-rusty-orange/30 transition-all duration-200 hover:shadow-whisper">
                 <div className="flex flex-col items-center text-center space-y-sm">
                   <div className="w-10 h-10 bg-rusty-orange/10 rounded-full flex items-center justify-center group-hover:bg-rusty-orange/20 transition-colors duration-200">
-                    <Message className="h-5 w-5 text-rusty-orange" />
+                    <ChatBubbleBottomCenterTextIcon className="h-5 w-5 text-rusty-orange" />
                   </div>
                   <div>
                     <h4 className="font-rajdhani font-semibold text-sm text-card-foreground">Report Issues</h4>
@@ -100,7 +100,7 @@ export function EventsContentSection() {
                 about skill requirements, equipment needs, and registration details.
               </p>
 
-              {/* Community Engagement Message */}
+              {/* Community Engagement ChatBubbleBottomCenterTextIcon */}
               <div className="pt-base">
                 <p className="text-sm text-muted-foreground/80 font-medium">
                   Built by Idaho gun owners, for Idaho gun owners. Help us grow the community.

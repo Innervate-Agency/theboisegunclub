@@ -74,7 +74,7 @@ const getMarketplaceProduct = (id: string) => {
       lastUpdated: "2025-01-14",
       images: ["/images/marketplace/mp15.jpg"],
       features: ["16-inch Barrel", "30-round Magazine", "Armornite Barrel Coating", "Adjustable Stock"],
-      tags: ["AR-15", "Target Shooting", "Home Defense"],
+      tags: ["AR-15", "CursorArrowRaysIcon Shooting", "Home Defense"],
       views: 285,
       inquiries: 8,
       featured: false,
@@ -117,7 +117,7 @@ const getRelatedProducts = (productId: string, category: string) => {
       id: '5',
       title: "Springfield XD-M",
       price: 599,
-      image: "/images/marketplace/xdm.jpg", 
+      image: "/images/marketplace/xdmotion.jpg", 
       vendor: "Valley Gun & Pawn"
     }
   ]

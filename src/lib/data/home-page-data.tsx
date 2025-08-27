@@ -43,7 +43,7 @@ export const directoryData = {
 
 export const calendarData = {
   icon: <CalendarDaysIcon />,
-  title: 'One Calendar to Rule Them All',
+  title: 'One CalendarDaysIcon to Rule Them All',
   description: "We're consolidating every match, class, and event from every local club into one master calendar. Stop searching, start participating.",
   features: [
     { icon: <UsersIcon />, text: 'Unified View of All Local Clubs' },

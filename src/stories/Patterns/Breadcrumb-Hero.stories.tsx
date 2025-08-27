@@ -28,7 +28,7 @@ export const Default: Story = {
     ],
     title: 'Safety Training',
     description: 'Comprehensive firearms safety training for all skill levels',
-    icon: Shield,
+    icon: ShieldCheckIcon,
     backgroundPreset: 'premium',
     badges: ['NRA Certified', 'Required for All Members'],
     backLink: {
@@ -47,7 +47,7 @@ export const CompetitionResults: Story = {
     ],
     title: 'March Results',
     description: 'Monthly trap shooting competition results and standings',
-    icon: Trophy,
+    icon: TrophyIcon,
     backgroundPreset: 'mesh',
     badges: ['Competition', 'March 2024'],
     backLink: {
@@ -66,7 +66,7 @@ export const EventRegistration: Story = {
     ],
     title: 'Annual Championship',
     description: 'Register for our biggest competition of the year',
-    icon: Calendar,
+    icon: CalendarDaysIcon,
     backgroundPreset: 'cool',
     badges: ['Annual Event', 'July 15-17', 'Registration Open'],
     backLink: {
@@ -85,7 +85,7 @@ export const MembershipApplication: Story = {
     ],
     title: 'Join Our Community',
     description: 'Complete your membership application and become part of our family',
-    icon: Users,
+    icon: UsersIcon,
     backgroundPreset: 'cool',
     badges: ['Membership', 'New Member Welcome'],
     backLink: {
@@ -105,7 +105,7 @@ export const FacilitiesTour: Story = {
     ],
     title: 'Virtual Tour',
     description: 'Explore our state-of-the-art shooting facilities and amenities',
-    icon: MapPin,
+    icon: MapPinIcon,
     backgroundPreset: 'subtle',
     badges: ['Facilities', 'Virtual Tour', 'Interactive'],
     backLink: {
@@ -125,7 +125,7 @@ export const TrainingProgramDetail: Story = {
     ],
     title: 'Advanced Marksmanship',
     description: 'Precision shooting techniques for competitive and recreational shooters',
-    icon: Target,
+    icon: CursorArrowRaysIcon,
     backgroundPreset: 'cool',
     badges: ['8 Week Course', 'Advanced Level', 'Competition Prep'],
     backLink: {
@@ -144,7 +144,7 @@ export const ClubRules: Story = {
     ],
     title: 'Club Rules & Guidelines',
     description: 'Important safety rules and guidelines for all members and visitors',
-    icon: BookOpen,
+    icon: BookOpenIcon,
     backgroundPreset: 'warm',
     badges: ['Safety', 'Required Reading', 'Updated 2024'],
     backLink: {
@@ -182,7 +182,7 @@ export const Gallery: Story = {
     ],
     title: 'Photo Gallery',
     description: 'Memories from our events, competitions, and daily activities',
-    icon: Star,
+    icon: StarIcon,
     backgroundPreset: 'warm',
     badges: ['Photo Gallery', 'Community', 'Memories'],
     backLink: {
@@ -201,7 +201,7 @@ export const WithoutBackLink: Story = {
     ],
     title: 'Contact Us',
     description: 'Get in touch with our friendly team for any questions or assistance',
-    icon: Shield,
+    icon: ShieldCheckIcon,
     backgroundPreset: 'warm',
     badges: ['Contact', 'Support']
   }
@@ -218,7 +218,7 @@ export const DeepNavigation: Story = {
     ],
     title: 'Junior Shooters Program',
     description: 'Safe and fun introduction to shooting sports for young people aged 12-17',
-    icon: Users,
+    icon: UsersIcon,
     backgroundPreset: 'warm',
     badges: ['Youth Program', 'Ages 12-17', 'Parent Required'],
     backLink: {

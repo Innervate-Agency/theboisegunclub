@@ -71,10 +71,10 @@ export const DynamicCharts = dynamic(
 export const DynamicFloatingElements = dynamic(
   () => Promise.all([
     import('@/components/ui/hero-floating-calendars').then(mod => mod.FloatingCalendars),
-    import('@/components/ui/hero-floating-diamonds').then(mod => mod.FloatingDiamonds)
-  ]).then(([Calendars, Diamonds]) => ({ 
+    import('@/components/ui/hero-floating-diamonds').then(mod => mod.FloatingSparklesIcons)
+  ]).then(([Calendars, SparklesIcons]) => ({ 
     default: ({ type }: { type: 'calendars' | 'diamonds' }) => 
-      type === 'calendars' ? <Calendars /> : <Diamonds />
+      type === 'calendars' ? <Calendars /> : <SparklesIcons />
   })),
   {
     ssr: false,

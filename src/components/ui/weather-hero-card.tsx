@@ -5,7 +5,7 @@ import { Card, CardContent } from './card'
 import { Badge } from './badge'
 import { Button } from './button'
 import { useUserWeather } from '@/hooks/useUserWeather'
-import { AccessStatusIcon, AlertTriangleIcon, ArrowRightIcon, CheckCircleIcon, CloudIcon, CloudRainIcon, CloudSnowIcon, ExclamationTriangleIcon, FireIcon, FlameIcon, MapPinIcon, RefreshCwIcon, SunIcon, ThermometerIcon, WeatherIcon, WindIcon, XCircleIcon, ZapIcon } from '@heroicons/react/24/outline';
+import { AccessStatusIcon, AlertTriangleIcon, ArrowPathIcon, ArrowRightIcon, CheckCircleIcon, CloudIcon, CloudRainIcon, CloudSnowIcon, ExclamationTriangleIcon, FireIcon, FlameIcon, MapPinIcon, RefreshCwIcon, SunIcon, ThermometerIcon, WindIcon, XCircleIcon, ZapIcon } from '@heroicons/react/24/outline';
 
 const WeatherIcon = ({ type, className = "h-6 w-6" }: { type: string; className?: string }) => {
   switch (type) {
@@ -72,7 +72,7 @@ export function WeatherHeroCard({
             onClick={refreshWeather}
             disabled={isLoading}
           >
-            <Refresh className={`h-4 w-4 mr-xs ${isLoading ? 'animate-spin' : ''}`} />
+            <ArrowPathIcon className={`h-4 w-4 mr-xs ${isLoading ? 'animate-spin' : ''}`} />
             Try Again
           </Button>
         </CardContent>
@@ -137,9 +137,9 @@ export function WeatherHeroCard({
               onClick={refreshWeather}
               disabled={isLoading}
               className="h-8 w-8 p-0"
-              title="Refresh weather"
+              title="ArrowPathIcon weather"
             >
-              <Refresh className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
+              <ArrowPathIcon className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
             </Button>
           </div>
 
@@ -147,7 +147,7 @@ export function WeatherHeroCard({
           <div className="grid grid-cols-2 gap-base">
             <div className="space-y-xs">
               <div className="flex items-center gap-xs">
-                <Thermometer className="h-4 w-4 text-nav-intel" />
+                <ThermometerIcon className="h-4 w-4 text-nav-intel" />
                 <span className={`font-rajdhani font-bold text-foreground ${compact ? 'text-xl' : 'text-2xl'}`}>
                   {weatherData.temperature}°F
                 </span>
@@ -159,7 +159,7 @@ export function WeatherHeroCard({
 
             <div className="space-y-xs">
               <div className="flex items-center gap-xs">
-                <Wind className="h-4 w-4 text-nav-intel" />
+                <WindIcon className="h-4 w-4 text-nav-intel" />
                 <span className="text-sm font-medium">
                   {weatherData.windDirection} {weatherData.windSpeed} mph
                 </span>
@@ -187,10 +187,10 @@ export function WeatherHeroCard({
             </div>
           )}
 
-          {/* Fire Danger */}
+          {/* FireIcon Danger */}
           <div className="flex items-center justify-between">
             <div className="space-y-xs">
-              <div className="text-xs text-muted-foreground">Fire Danger</div>
+              <div className="text-xs text-muted-foreground">FireIcon Danger</div>
               <Badge variant={getFireDangerColor(weatherData.fireDanger)} size="sm">
                 <FireIcon className="h-3 w-3 mr-xs" />
                 {weatherData.fireDanger}

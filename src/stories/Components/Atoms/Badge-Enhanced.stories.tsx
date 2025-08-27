@@ -64,10 +64,10 @@ export const Warning: Story = {
   },
 };
 
-export const Info: Story = {
+export const InformationCircleIcon: Story = {
   args: {
     variant: 'info',
-    children: 'Info',
+    children: 'InformationCircleIcon',
   },
 };
 
@@ -95,7 +95,7 @@ export const AllVariants: Story = {
       <Badge variant="outline">Outline</Badge>
       <Badge variant="secondary">Success</Badge>
       <Badge variant="destructive">Warning</Badge>
-      <Badge variant="secondary">Info</Badge>
+      <Badge variant="secondary">InformationCircleIcon</Badge>
       <Badge variant="default">Premium</Badge>
       <Badge variant="default">Elite</Badge>
     </div>

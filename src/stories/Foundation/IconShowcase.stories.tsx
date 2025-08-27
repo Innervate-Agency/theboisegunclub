@@ -8,7 +8,7 @@ const meta: Meta<typeof IconShowcase> = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Comprehensive showcase of professional Lucide React icons integrated with the TBGC Design System. Features clean line icons organized by category with consistent sizing and coloring tokens.'
+        component: 'Comprehensive showcase of professional Lucide React icons integrated with the TBGC Design Systemotion. Features clean line icons organized by category with consistent sizing and coloring tokens.'
       }
     }
   },

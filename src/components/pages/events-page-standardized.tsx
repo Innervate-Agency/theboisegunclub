@@ -74,7 +74,7 @@ export function EventsPageStandardized() {
   // Activity feed data for events based on real almanac data
   const activityFeedData = [
     {
-      icon: Trophy,
+      icon: TrophyIcon,
       iconColor: "text-nav-events",
       iconBgColor: "bg-nav-events/20",
       title: "State Championship Added",
@@ -82,15 +82,15 @@ export function EventsPageStandardized() {
       timeAgo: "2h ago"
     },
     {
-      icon: Ticket,
+      icon: TicketIcon,
       iconColor: "text-rusty-orange",
       iconBgColor: "bg-rusty-orange/20",
-      title: "Event Calendar Updated",
+      title: "Event CalendarDaysIcon Updated",
       description: "18 new verified events added through 2026 from official almanac",
       timeAgo: "4h ago"
     },
     {
-      icon: Users,
+      icon: UsersIcon,
       iconColor: "text-sagebrush-green",
       iconBgColor: "bg-sagebrush-green/20",
       title: "Venue Partnerships",
@@ -101,12 +101,12 @@ export function EventsPageStandardized() {
 
   // Events category stats based on actual almanac data
   const eventCategoryStats = [
-    { icon: Trophy, title: "State Championships", value: upcomingEvents.filter(e => e.title.includes('State') || e.title.includes('Championship')).length.toString(), subtitle: "Major competitions", color: "text-nav-events" },
-    { icon: Target, title: "Competitions", value: upcomingEvents.filter(e => e.eventType === 'Competition').length.toString(), subtitle: "Scheduled matches", color: "text-nav-events" },
-    { icon: Crown, title: "Gun Shows", value: upcomingEvents.filter(e => e.eventType === 'Expo').length.toString(), subtitle: "Trade events", color: "text-nav-events" },
-    { icon: Users, title: "Training Events", value: upcomingEvents.filter(e => e.eventType === 'Training').length.toString(), subtitle: "Education programs", color: "text-nav-events" },
-    { icon: Star, title: "Charity Events", value: upcomingEvents.filter(e => e.eventType === 'Charity').length.toString(), subtitle: "Fundraising", color: "text-nav-events" },
-    { icon: Calendar, title: "Total Events", value: upcomingEvents.length.toString(), subtitle: "Through 2026", color: "text-nav-events" }
+    { icon: TrophyIcon, title: "State Championships", value: upcomingEvents.filter(e => e.title.includes('State') || e.title.includes('Championship')).length.toString(), subtitle: "Major competitions", color: "text-nav-events" },
+    { icon: CursorArrowRaysIcon, title: "Competitions", value: upcomingEvents.filter(e => e.eventType === 'Competition').length.toString(), subtitle: "Scheduled matches", color: "text-nav-events" },
+    { icon: StarIcon, title: "Gun Shows", value: upcomingEvents.filter(e => e.eventType === 'Expo').length.toString(), subtitle: "Trade events", color: "text-nav-events" },
+    { icon: UsersIcon, title: "Training Events", value: upcomingEvents.filter(e => e.eventType === 'Training').length.toString(), subtitle: "Education programs", color: "text-nav-events" },
+    { icon: StarIcon, title: "Charity Events", value: upcomingEvents.filter(e => e.eventType === 'Charity').length.toString(), subtitle: "Fundraising", color: "text-nav-events" },
+    { icon: CalendarDaysIcon, title: "Total Events", value: upcomingEvents.length.toString(), subtitle: "Through 2026", color: "text-nav-events" }
   ]
 
   // Apply calendar date filter before passing to main filters
@@ -130,7 +130,7 @@ export function EventsPageStandardized() {
     perPageOptions: [8, 12, 24, 48],
     enableInfiniteScroll: false,
     
-    // Search filter function
+    // MagnifyingGlassIcon filter function
     searchFilter: (event, query) => {
       const searchTerms = query.toLowerCase()
       return (
@@ -428,7 +428,7 @@ export function EventsPageStandardized() {
             <div className="mb-lg">
               <div className="flex items-center gap-xs text-sm text-white/60">
                 <span>Home</span>
-                <CaretRight className="h-4 w-4" />
+                <ChevronRightIcon className="h-4 w-4" />
                 <span className="text-white font-medium">Events</span>
               </div>
             </div>
@@ -470,7 +470,7 @@ export function EventsPageStandardized() {
                 Submit Event
               </Button>
               <Button variant="ghost" className="text-white hover:bg-white/10 font-rajdhani font-bold" animationType="chevron">
-                View Calendar
+                View CalendarDaysIcon
               </Button>
             </div>
           </div>
@@ -552,10 +552,10 @@ export function EventsPageStandardized() {
         <div className="w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile">
           <div className="flex flex-col lg:flex-row gap-mobile-lg sm:gap-2xl max-w-[1920px] mx-auto">
             
-            {/* Left Sidebar - Calendar and Filters (Desktop) */}
+            {/* Left Sidebar - CalendarDaysIcon and Filters (Desktop) */}
             <aside className="hidden lg:block">
               <div className="space-y-6">
-                {/* Compact Sidebar Calendar - Moved to top for better visibility */}
+                {/* Compact Sidebar CalendarDaysIcon - Moved to top for better visibility */}
                 <SidebarCalendar 
                   events={upcomingEvents.map(event => ({
                     title: event.title,
@@ -595,13 +595,13 @@ export function EventsPageStandardized() {
             
             {/* Main Content */}
             <main className="flex-1 min-w-0">
-              {/* Search and Category Controls */}
+              {/* MagnifyingGlassIcon and Category Controls */}
               <div className="mb-xl space-y-lg">
-                {/* Search Bar */}
+                {/* MagnifyingGlassIcon Bar */}
                 <div className="relative max-w-2xl">
                   <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
-                    placeholder="Search events, locations, or organizers..."
+                    placeholder="MagnifyingGlassIcon events, locations, or organizers..."
                     className="pl-10 h-12 text-body-base shadow-none"
                     value={filters.searchQuery}
                     onChange={(e) => filters.setSearchQuery(e.target.value)}
@@ -646,7 +646,7 @@ export function EventsPageStandardized() {
                   </h2>
                   <p className="text-muted-foreground">
                     {filters.filteredResults !== filters.totalResults && `Filtered from ${filters.totalResults} total • `}
-                    {filters.searchQuery && `Search: "${filters.searchQuery}" • `}
+                    {filters.searchQuery && `MagnifyingGlassIcon: "${filters.searchQuery}" • `}
                     {selectedCalendarDate && `Date: ${selectedCalendarDate.toLocaleDateString('en-US', { 
                       weekday: 'long', 
                       month: 'long', 
@@ -701,9 +701,9 @@ export function EventsPageStandardized() {
                       size="sm"
                       onClick={() => filters.setViewMode('list')}
                       className="rounded-none border-none shadow-none"
-                      title="List View"
+                      title="ListBulletIcon View"
                     >
-                      <ListView className="size-4" />
+                      <ListBulletIcon className="size-4" />
                     </Button>
                   </div>
                   {/* Clear Date Filter Button */}
@@ -749,7 +749,7 @@ export function EventsPageStandardized() {
                 </div>
               </div>
 
-              {/* Card Grid/List Content with Loading State */}
+              {/* Card Grid/ListBulletIcon Content with Loading State */}
               <div className="mb-4xl">
                 {filters.isLoading ? (
                   <CardSkeleton 

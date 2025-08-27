@@ -363,7 +363,7 @@ export function useUserWeather(options: UseUserWeatherOptions = {}) {
     }
   }, [getCurrentLocation, loadCachedWeatherData, cacheWeatherData])
 
-  // Refresh weather data
+  // ArrowPathIcon weather data
   const refreshWeather = useCallback(() => {
     return fetchWeatherData()
   }, [fetchWeatherData])

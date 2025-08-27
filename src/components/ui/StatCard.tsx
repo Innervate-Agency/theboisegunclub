@@ -23,16 +23,16 @@ const statCardVariants = cva(
         // Glass: Elevated with glassmorphism - modern metrics display
         glass: "bg-card border border-border/30 text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-sm",
         
-        // Fire: Prominent - dynamic stats with tactical gradient accents
+        // FireIcon: Prominent - dynamic stats with tactical gradient accents
         fire: "bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:rounded-b-sm after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
-        // Fire Blue: Prominent with cool tactical gradients
+        // FireIcon Blue: Prominent with cool tactical gradients
         'fire-blue': "bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:rounded-b-sm after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
-        // Fire Purple: Prominent with purple tactical gradients
+        // FireIcon Purple: Prominent with purple tactical gradients
         'fire-purple': "bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-slate-blue after:rounded-b-sm after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
-        // Fire Green: Prominent with green tactical gradients
+        // FireIcon Green: Prominent with green tactical gradients
         'fire-green': "bg-card text-card-foreground shadow-present hover:shadow-elevated relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-sagebrush-green after:rounded-b-sm after:transition-all after:duration-300 after:ease-out hover:after:w-full"
       },
       size: {

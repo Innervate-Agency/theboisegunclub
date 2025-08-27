@@ -41,7 +41,7 @@ const directoryListings = [
     address: "2749 E Gala Ct, Meridian, ID 83642",
     phone: "(208) 576-4867",
     website: "https://www.iishooting.com/",
-    hours: "Mon-Sat: 10AM-8PM, Sun: 10AM-6PM",
+    hours: "Mon-Sat: 10AM-8PM, SunIcon: 10AM-6PM",
     tier: "gold" as const,
     specialties: ["100-Yard Indoor Range", "Tactical Range", "Gunsmithing", "Retail Pro Shop", "Training Academy"],
     isVerified: true,
@@ -88,7 +88,7 @@ const directoryListings = [
     address: "4465 Blacks Creek Road, Meridian, ID 83642",
     phone: "(208) 334-3736",
     website: "https://idfg.idaho.gov/shooting-ranges",
-    hours: "Wed-Sun: 9AM-5PM (Closed Mon-Tue)",
+    hours: "Wed-SunIcon: 9AM-5PM (Closed Mon-Tue)",
     tier: "silver" as const,
     specialties: ["100-Yard Range", "200-Yard Range", "Pistol Range", "Shotgun Pattern Board", "Free Public Access"],
     isVerified: true,
@@ -116,7 +116,7 @@ const directoryListings = [
     address: "321 Gun Store Way, Boise, ID 83704",
     phone: "(208) 555-0789",
     website: "https://boisegunexchange.com",
-    hours: "Mon-Sat: 9AM-7PM, Sun: 10AM-5PM",
+    hours: "Mon-Sat: 9AM-7PM, SunIcon: 10AM-5PM",
     tier: "copper" as const,
     specialties: ["New Firearms", "Used Firearms", "FFL Transfers", "Ammunition", "Basic Gunsmithing"],
     isVerified: true,
@@ -216,8 +216,8 @@ export function DirectoryPageComponent() {
 
   const businessTypeFilters = [
     { id: "all", label: "All Categories", icon: Building2, count: directoryListings.length },
-    { id: "dealer", label: "Dealers & FFLs", icon: Shield, count: directoryListings.filter(b => b.businessType.toLowerCase().includes("dealer") || b.businessType.toLowerCase().includes("gun") || b.businessType.toLowerCase().includes("ffl")).length },
-    { id: "range", label: "Shooting Ranges", icon: Target, count: directoryListings.filter(b => b.businessType.toLowerCase().includes("range") || b.businessType.toLowerCase().includes("shooting")).length },
+    { id: "dealer", label: "Dealers & FFLs", icon: ShieldCheckIcon, count: directoryListings.filter(b => b.businessType.toLowerCase().includes("dealer") || b.businessType.toLowerCase().includes("gun") || b.businessType.toLowerCase().includes("ffl")).length },
+    { id: "range", label: "Shooting Ranges", icon: CursorArrowRaysIcon, count: directoryListings.filter(b => b.businessType.toLowerCase().includes("range") || b.businessType.toLowerCase().includes("shooting")).length },
     { id: "training", label: "Training & Education", icon: Award, count: directoryListings.filter(b => b.businessType.toLowerCase().includes("training") || b.businessType.toLowerCase().includes("academy") || b.businessType.toLowerCase().includes("education")).length },
     { id: "gunsmith", label: "Gunsmiths", icon: Zap, count: directoryListings.filter(b => b.businessType.toLowerCase().includes("gunsmith") || b.businessType.toLowerCase().includes("custom")).length },
     { id: "tactical", label: "Tactical & Gear", icon: MessageSquare, count: directoryListings.filter(b => b.businessType.toLowerCase().includes("tactical") || b.businessType.toLowerCase().includes("gear")).length }
@@ -299,7 +299,7 @@ export function DirectoryPageComponent() {
                   <div className="flex gap-base">
                     <Button className="bg-card text-nav-directory hover:bg-crisp-off-white font-rajdhani font-bold" animationType="plus-minus">
                       <PlusIcon className="h-4 w-4 mr-xs" />
-                      List Business
+                      ListBulletIcon Business
                     </Button>
                     <Button variant="outline" className="border-border text-white hover:bg-card hover:text-nav-directory" animationType="arrow">
                       View Map
@@ -330,7 +330,7 @@ export function DirectoryPageComponent() {
                           </div>
                         </div>
                         
-                        {/* Contact Info */}
+                        {/* Contact InformationCircleIcon */}
                         <div className="space-y-xs pt-xs border-t border-border/50">
                           <div className="flex items-center gap-xs text-body-xs text-muted-foreground">
                             <MapPinIcon weight="bold" className="h-3 w-3 text-nav-directory" />
@@ -416,7 +416,7 @@ export function DirectoryPageComponent() {
                   </div>
                 </div>
 
-                {/* List Business CTA */}
+                {/* ListBulletIcon Business CTA */}
                 <div className="space-y-sm">
                   <h3 className="font-rajdhani font-bold text-body-lg text-card-foreground">
                     Join Directory
@@ -425,7 +425,7 @@ export function DirectoryPageComponent() {
                     <div className="space-y-xs text-center">
                       <CursorArrowRaysIcon weight="bold" className="size-5 text-nav-directory mx-auto" />
                       <h4 className="font-rajdhani font-bold text-body-sm text-card-foreground">
-                        List Your Business
+                        ListBulletIcon Your Business
                       </h4>
                       <p className="text-body-xs text-muted-foreground leading-relaxed">
                         Join Idaho's premier firearms directory.
@@ -453,7 +453,7 @@ export function DirectoryPageComponent() {
                 <p className="text-muted-foreground">
                   {selectedType !== "all" && `Filtered by: ${businessTypeFilters.find(f => f.id === selectedType)?.label}`}
                   {selectedTier !== "all" && ` • ${tierFilters.find(f => f.id === selectedTier)?.label}`}
-                  {searchQuery && ` • Search: "${searchQuery}"`}
+                  {searchQuery && ` • MagnifyingGlassIcon: "${searchQuery}"`}
                 </p>
               </div>
               

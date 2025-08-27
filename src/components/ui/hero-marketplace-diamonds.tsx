@@ -4,16 +4,16 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { BoltIcon, CurrencyDollarIcon, FireIcon, GiftIcon, ReceiptPercentIcon, ShoppingCartIcon, SparklesIcon, TagIcon } from '@heroicons/react/24/outline';
 
-export function MarketplaceDiamonds() {
+export function MarketplaceSparklesIcons() {
   const diamonds = [
-    { icon: Tag, size: 48, x: '10%', y: '15%', duration: 22, delay: 0 },
-    { icon: Dollar, size: 36, x: '85%', y: '20%', duration: 28, delay: 2 },
-    { icon: Cart, size: 42, x: '75%', y: '75%', duration: 25, delay: 1 },
-    { icon: Sparkle, size: 32, x: '15%', y: '65%', duration: 30, delay: 3 },
-    { icon: Lightning, size: 38, x: '90%', y: '55%', duration: 26, delay: 1.5 },
-    { icon: Percent, size: 44, x: '25%', y: '35%', duration: 24, delay: 2.5 },
-    { icon: Gift, size: 35, x: '60%', y: '80%', duration: 27, delay: 0.5 },
-    { icon: Fire, size: 40, x: '45%', y: '10%', duration: 23, delay: 1.8 }
+    { icon: TagIcon, size: 48, x: '10%', y: '15%', duration: 22, delay: 0 },
+    { icon: CurrencyDollarIcon, size: 36, x: '85%', y: '20%', duration: 28, delay: 2 },
+    { icon: ShoppingCartIcon, size: 42, x: '75%', y: '75%', duration: 25, delay: 1 },
+    { icon: SparklesIcon, size: 32, x: '15%', y: '65%', duration: 30, delay: 3 },
+    { icon: BoltIcon, size: 38, x: '90%', y: '55%', duration: 26, delay: 1.5 },
+    { icon: ReceiptPercentIcon, size: 44, x: '25%', y: '35%', duration: 24, delay: 2.5 },
+    { icon: GiftIcon, size: 35, x: '60%', y: '80%', duration: 27, delay: 0.5 },
+    { icon: FireIcon, size: 40, x: '45%', y: '10%', duration: 23, delay: 1.8 }
   ]
 
   return (

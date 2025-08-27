@@ -39,7 +39,7 @@ const EventCardSkeleton = () => (
         <SkeletonBox className="h-5 w-20" />
       </div>
       
-      {/* Info grid */}
+      {/* InformationCircleIcon grid */}
       <div className="space-y-sm bg-muted/30 p-sm rounded-xs">
         <SkeletonBox className="h-4 w-3/4" />
         <SkeletonBox className="h-4 w-1/2" />

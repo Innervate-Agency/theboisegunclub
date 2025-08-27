@@ -148,7 +148,7 @@ export function EventCard({
       case 'Training': 
         return <CursorArrowRaysIcon className={iconClass} />
       case 'Expo': 
-        return <Crown className={iconClass} />
+        return <StarIcon className={iconClass} />
       case 'Charity': 
         return <Medal className={iconClass} />
       case 'Social': 
@@ -302,7 +302,7 @@ export function EventCard({
           venue={venue}
         />
 
-        {/* Redesigned Info Grid with Better Spacing */}
+        {/* Redesigned InformationCircleIcon Grid with Better Spacing */}
         <div className="space-y-sm bg-muted/30 p-sm rounded-xs">
           <div className="flex items-center gap-sm text-sm">
             <CalendarDaysIcon className="size-4 flex-shrink-0 text-nav-events" />

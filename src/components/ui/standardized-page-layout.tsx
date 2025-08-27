@@ -20,7 +20,7 @@ interface StandardizedPageLayoutProps<T> {
   // Filter configuration
   filterSections: any[]
   
-  // Search configuration
+  // MagnifyingGlassIcon configuration
   searchPlaceholder?: string
   searchFunction: (item: T, searchTerm: string) => boolean
   
@@ -34,7 +34,7 @@ interface StandardizedPageLayoutProps<T> {
   // Sort functions
   sortFunctions?: Record<string, (a: T, b: T) => number>
   
-  // Calendar configuration (optional)
+  // CalendarDaysIcon configuration (optional)
   showCalendar?: boolean
   calendarEvents?: Array<{ date: string; title: string; id: string }>
   
@@ -55,7 +55,7 @@ export function StandardizedPageLayout<T>({
   items,
   renderCard,
   filterSections,
-  searchPlaceholder = "Search...",
+  searchPlaceholder = "MagnifyingGlassIcon...",
   searchFunction,
   tabs,
   tabFilter,
@@ -89,7 +89,7 @@ export function StandardizedPageLayout<T>({
     initialViewMode: 'grid',
     itemsPerPage: 12,
     
-    // Search filter
+    // MagnifyingGlassIcon filter
     searchFilter: searchFunction,
     
     // Tab filter (if provided)

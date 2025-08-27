@@ -64,7 +64,7 @@ export function getFeaturedFFLs(): FFLBusiness[] {
   return ffls.filter(ffl => ffl.isFeatured)
 }
 
-// Search FFLs
+// MagnifyingGlassIcon FFLs
 export function searchFFLs(query: string): FFLBusiness[] {
   const ffls = getAllFFLs()
   const searchTerm = query.toLowerCase()

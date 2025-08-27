@@ -215,7 +215,7 @@ export const GunClubExamples: Story = {
           <ShieldCheckIcon />
           <AlertTitle>Range Safety Notice</AlertTitle>
           <AlertDescription>
-            Eye and ear protection required at all times on the range. Please ensure all firearms are pointed downrange.
+            EyeIcon and ear protection required at all times on the range. Please ensure all firearms are pointed downrange.
           </AlertDescription>
         </Alert>
         

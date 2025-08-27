@@ -1,5 +1,5 @@
 /**
- * Master Calendar of Firearms Events in Treasure Valley, Idaho
+ * Master CalendarDaysIcon of Firearms Events in Treasure Valley, Idaho
  * Comprehensive event listings from August 17, 2025 - December 31, 2026
  * All dates verified and sourced from official venue calendars
  */

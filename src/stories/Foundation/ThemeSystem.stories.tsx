@@ -17,7 +17,7 @@ type Story = StoryObj
 export const ThemeContrastTest: Story = {
   render: () => (
     <div className="space-y-lg p-md">
-      {/* Theme Info Display */}
+      {/* Theme InformationCircleIcon Display */}
       <div className="mb-lg">
         <h1 className="text-3xl font-rajdhani font-bold text-primary mb-xs">
           TBGC Theme System Test

@@ -91,12 +91,12 @@ export function FooterSearchSubscribe({ className }: FooterSearchSubscribeProps)
         </form>
       </div>
 
-      {/* Site Search */}
+      {/* Site MagnifyingGlassIcon */}
       <div className="space-y-4">
         <div className="flex items-center gap-3">
           <MagnifyingGlassIcon className="h-6 w-6 text-rusty-orange" />
           <h3 className="font-rajdhani font-bold text-xl text-card-foreground">
-            Quick Search
+            Quick MagnifyingGlassIcon
           </h3>
         </div>
         <p className="text-base text-muted-foreground leading-relaxed">
@@ -105,7 +105,7 @@ export function FooterSearchSubscribe({ className }: FooterSearchSubscribeProps)
         <form onSubmit={handleSearch} className="space-y-3">
           <Input
             type="text"
-            placeholder="Search dealers, events, guides..."
+            placeholder="MagnifyingGlassIcon dealers, events, guides..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full"
@@ -124,7 +124,7 @@ export function FooterSearchSubscribe({ className }: FooterSearchSubscribeProps)
             ) : (
               <div className="flex items-center gap-2">
                 <MagnifyingGlassIcon className="h-4 w-4" />
-                Search Community
+                MagnifyingGlassIcon Community
               </div>
             )}
           </Button>

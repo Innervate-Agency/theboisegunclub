@@ -1,5 +1,5 @@
 import React from 'react';
-import { BoltIcon, Cog6ToothIcon, CursorArrowRaysIcon, ShieldCheckIcon, ToothIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { BoltIcon, Cog6ToothIcon, CursorArrowRaysIcon, ShieldCheckIcon, Cog6ToothIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 export const defaultShowcases = [
   {
@@ -107,10 +107,10 @@ export const defaultShowcases = [
 ]
 
 export const defaultPartnerLogos = [
-  { name: "Glock", icon: Target, gradientColor: 'blue' as const },
-  { name: "Smith & Wesson", icon: Shield, gradientColor: 'teal' as const },
+  { name: "Glock", icon: CursorArrowRaysIcon, gradientColor: 'blue' as const },
+  { name: "Smith & Wesson", icon: ShieldCheckIcon, gradientColor: 'teal' as const },
   { name: "Ruger", icon: Award, gradientColor: 'green' as const },
   { name: "Daniel Defense", icon: Settings, gradientColor: 'purple' as const },
   { name: "Leupold", icon: Zap, gradientColor: 'red' as const },
-  { name: "Sig Sauer", icon: Users, gradientColor: 'yellow' as const }
+  { name: "Sig Sauer", icon: UsersIcon, gradientColor: 'yellow' as const }
 ]

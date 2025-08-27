@@ -20,7 +20,7 @@ interface JoinMovementCTAProps {
 export function JoinMovementCTA({
   title = "Join the Movement",
   subtitle = "Be Part of Idaho's Gun Community Revolution",
-  description = "No corporate agenda. No coastal politics. Just Idaho gun owners building something better together. Your voice, your community, your platform.",
+  description = "No corporate agenda. No coastal politics. Just Idaho gun owners building something better together. Your voice, your community, your platformotion.",
   primaryActionText = "Get Started Today",
   secondaryActionText = "Learn More",
   showBadge = true,
@@ -58,7 +58,7 @@ export function JoinMovementCTA({
             className="flex justify-center"
           >
             <Badge variant="slate-blue" className="font-rajdhani font-bold">
-              <Handshake className="h-4 w-4 mr-xs" weight="bold" />
+              <UsersIcon className="h-4 w-4 mr-xs" weight="bold" />
               {badgeText}
             </Badge>
           </MotionDiv>

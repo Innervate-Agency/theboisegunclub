@@ -9,22 +9,22 @@ import { ArrowPathIcon, CheckBadgeIcon, ClockIcon, CreditCardIcon, ShieldCheckIc
 export function MarketplaceContentSection() {
   const benefits = [
     {
-      icon: Shield,
+      icon: ShieldCheckIcon,
       title: "Verified Dealers",
       description: "All sellers are licensed Idaho FFLs with verified credentials"
     },
     {
-      icon: Truck,
+      icon: TruckIcon,
       title: "Local Pickup",
       description: "Save on shipping with in-store pickup at 470+ locations"
     },
     {
-      icon: CreditCard,
+      icon: CreditCardIcon,
       title: "Secure Payments",
       description: "Protected transactions with buyer guarantee program"
     },
     {
-      icon: Returns,
+      icon: ArrowPathIcon,
       title: "Easy Returns",
       description: "30-day return policy on eligible items"
     }
@@ -49,7 +49,7 @@ export function MarketplaceContentSection() {
             {/* Why Shop Local */}
             <div>
               <div className="flex items-center gap-sm mb-lg">
-                <Community className="h-5 w-5 text-nav-marketplace" />
+                <UserGroupIcon className="h-5 w-5 text-nav-marketplace" />
                 <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">
                   Why Shop The Idaho Marketplace
                 </h2>
@@ -81,7 +81,7 @@ export function MarketplaceContentSection() {
             {/* Featured Categories */}
             <div>
               <div className="flex items-center gap-sm mb-lg">
-                <Quality className="h-5 w-5 text-nav-marketplace" />
+                <CheckBadgeIcon className="h-5 w-5 text-nav-marketplace" />
                 <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">
                   Popular Categories
                 </h2>
@@ -111,13 +111,13 @@ export function MarketplaceContentSection() {
             {/* Trust Indicators */}
             <div className="flex flex-wrap gap-base pt-xl border-t border-border">
               <div className="flex items-center gap-xs">
-                <Verified className="h-4 w-4 text-nav-marketplace" />
+                <CheckBadgeIcon className="h-4 w-4 text-nav-marketplace" />
                 <span className="text-sm text-muted-foreground">
                   <span className="font-bold text-card-foreground">100%</span> Verified Sellers
                 </span>
               </div>
               <div className="flex items-center gap-xs">
-                <FastShipping className="h-4 w-4 text-nav-marketplace" />
+                <TruckIcon className="h-4 w-4 text-nav-marketplace" />
                 <span className="text-sm text-muted-foreground">
                   <span className="font-bold text-card-foreground">2-Day</span> Average Shipping
                 </span>
@@ -141,7 +141,7 @@ export function MarketplaceContentSection() {
                   Become a Seller
                 </h3>
                 <p className="text-sm text-muted-foreground mb-lg">
-                  List your products and services to reach thousands of Idaho gun owners.
+                  ListBulletIcon your products and services to reach thousands of Idaho gun owners.
                 </p>
                 <div className="space-y-xs mb-lg">
                   <div className="flex items-center gap-xs text-sm">

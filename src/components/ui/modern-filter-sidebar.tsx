@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { m, AnimatePresence, LazyMotion, domAnimation } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { // No BullseyeIcon in Heroicons
-  SparklesIcon, ArrowPathIcon, BullseyeIcon, CategoryIcon, ChevronDownIcon, ChevronUpIcon, ClockIcon, CurrencyDollarIcon, CursorArrowRaysIcon, FunnelIcon, SparklesIcon, StarIcon, TrophyIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline';
+  SparklesIcon, ArrowPathIcon, BullseyeIcon, CategoryIcon, ChevronDownIcon, ChevronUpIcon, ClockIcon, CurrencyDollarIcon, CursorArrowRaysIcon, FunnelIcon, StarIcon, TrophyIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 // Note: Since this component receives icon components as props,
 // we don't need to import all possible icons here.

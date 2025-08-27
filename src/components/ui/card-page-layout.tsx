@@ -48,7 +48,7 @@ export interface CardPageLayoutProps {
   heroRightContent?: ReactNode // Right side content (featured card)
   heroBackgroundElements?: ReactNode // Floating elements, embers, etc.
   
-  // Search and filtering
+  // MagnifyingGlassIcon and filtering
   searchQuery: string
   onSearchChange: (query: string) => void
   searchPlaceholder?: string
@@ -99,7 +99,7 @@ export function CardPageLayout({
   heroBackgroundElements,
   searchQuery,
   onSearchChange,
-  searchPlaceholder = "Search...",
+  searchPlaceholder = "MagnifyingGlassIcon...",
   quickTabs,
   activeTab,
   onTabChange,
@@ -152,10 +152,10 @@ export function CardPageLayout({
         )}
       </section>
 
-      {/* Search and Quick Tabs Section */}
+      {/* MagnifyingGlassIcon and Quick Tabs Section */}
       <section className={`py-lg section-bg-${pageColor}-neutral border-b border-border/50`}>
         <div className="container mx-auto max-w-site px-md">
-          {/* Search Bar */}
+          {/* MagnifyingGlassIcon Bar */}
           <div className="mb-lg">
             <div className="relative max-w-2xl">
               <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -259,7 +259,7 @@ export function CardPageLayout({
                   </h2>
                   <p className="text-muted-foreground">
                     {filteredResults !== totalResults && `Filtered from ${totalResults} total • `}
-                    {searchQuery && `Search: "${searchQuery}"`}
+                    {searchQuery && `MagnifyingGlassIcon: "${searchQuery}"`}
                   </p>
                 </div>
                 
@@ -335,7 +335,7 @@ export function CardPageLayout({
                       size="sm"
                       onClick={() => onViewModeChange('list')}
                       className="rounded-none border-none shadow-none"
-                      title="List View"
+                      title="ListBulletIcon View"
                     >
                       <ListBulletIcon className="size-4" />
                     </Button>
@@ -362,7 +362,7 @@ export function CardPageLayout({
                 </div>
               </div>
 
-              {/* Card Grid/List Content */}
+              {/* Card Grid/ListBulletIcon Content */}
               <div className="mb-4xl">
                 {children}
               </div>

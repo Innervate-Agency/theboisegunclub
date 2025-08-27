@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { BrandCarousel } from '@/components/ui/brand-carousel'
-import { BoltIcon, Cog6ToothIcon, CursorArrowRaysIcon, ShieldCheckIcon, ToothIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { BoltIcon, Cog6ToothIcon, CursorArrowRaysIcon, ShieldCheckIcon, Cog6ToothIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof BrandCarousel> = {
   title: 'Design System/Organisms/BrandCarousel',
@@ -157,12 +157,12 @@ export const CustomShowcase: Story = {
       }
     ],
     partnerLogos: [
-      { name: "Glock", icon: Target, gradientColor: 'blue' as const },
-      { name: "Sig Sauer", icon: Shield, gradientColor: 'teal' as const },
+      { name: "Glock", icon: CursorArrowRaysIcon, gradientColor: 'blue' as const },
+      { name: "Sig Sauer", icon: ShieldCheckIcon, gradientColor: 'teal' as const },
       { name: "Smith & Wesson", icon: Award, gradientColor: 'green' as const },
       { name: "Ruger", icon: Settings, gradientColor: 'purple' as const },
       { name: "Daniel Defense", icon: Zap, gradientColor: 'red' as const },
-      { name: "Leupold", icon: Users, gradientColor: 'yellow' as const }
+      { name: "Leupold", icon: UsersIcon, gradientColor: 'yellow' as const }
     ]
   },
 }
@@ -201,8 +201,8 @@ export const LaunchPhase: Story = {
       }
     ],
     partnerLogos: [
-      { name: "Local Partners", icon: Users, gradientColor: 'blue' as const },
-      { name: "Training Orgs", icon: Shield, gradientColor: 'teal' as const },
+      { name: "Local Partners", icon: UsersIcon, gradientColor: 'blue' as const },
+      { name: "Training Orgs", icon: ShieldCheckIcon, gradientColor: 'teal' as const },
       { name: "Gun Stores", icon: Award, gradientColor: 'green' as const },
       { name: "Ranges", icon: Settings, gradientColor: 'purple' as const },
       { name: "Your Logo", icon: Zap, gradientColor: 'red' as const }

@@ -21,7 +21,7 @@ export function MotionProvider({ children }: MotionProviderProps) {
   return (
     <LazyMotion 
       features={domAnimation}
-      strict // Prevents accidentally loading full motion features
+      strict={false} // Temporarily disabled to allow motion components
     >
       <MotionConfig
         // Global settings for optimal performance

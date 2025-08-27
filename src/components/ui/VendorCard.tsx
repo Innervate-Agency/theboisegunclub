@@ -259,7 +259,7 @@ export function VendorCard({
           ))}
         </div>
 
-        {/* Info Grid - Matching EventCard */}
+        {/* InformationCircleIcon Grid - Matching EventCard */}
         <div className="space-y-sm bg-muted/30 p-sm rounded-xs">
           {address && (
             <div className="flex items-start gap-sm text-sm">

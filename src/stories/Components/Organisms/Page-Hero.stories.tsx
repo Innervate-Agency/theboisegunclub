@@ -51,7 +51,7 @@ export const Default: Story = {
       text: 'Join Community',
       href: '/community'
     },
-    icon: Users,
+    icon: UsersIcon,
     backgroundPreset: 'gunclub',
     intensity: 'premium',
     size: 'lg',
@@ -74,7 +74,7 @@ export const EventsPage: Story = {
       text: 'Add Your Event',
       href: '/events/submit'
     },
-    icon: Calendar,
+    icon: CalendarDaysIcon,
     backgroundPreset: 'warm',
     intensity: 'medium',
     size: 'md',
@@ -94,10 +94,10 @@ export const DirectoryPage: Story = {
       href: '/directory'
     },
     secondaryAction: {
-      text: 'List Your Business',
+      text: 'ListBulletIcon Your Business',
       href: '/directory/add'
     },
-    icon: Users,
+    icon: UsersIcon,
     backgroundPreset: 'mixed',
     intensity: 'premium',
     size: 'lg',
@@ -120,7 +120,7 @@ export const TrainingPage: Story = {
       text: 'Become Instructor',
       href: '/directory/instructors/join'
     },
-    icon: Target,
+    icon: CursorArrowRaysIcon,
     backgroundPreset: 'cool',
     intensity: 'medium',
     size: 'lg',
@@ -143,7 +143,7 @@ export const CompetitionPage: Story = {
       text: 'Join Team',
       href: '/competition/join'
     },
-    icon: Trophy,
+    icon: TrophyIcon,
     backgroundPreset: 'gunclub',
     intensity: 'premium',
     size: 'xl',
@@ -166,7 +166,7 @@ export const FacilitiesPage: Story = {
       text: 'Schedule Visit',
       href: '/facilities/visit'
     },
-    icon: MapPin,
+    icon: MapPinIcon,
     backgroundPreset: 'warm',
     intensity: 'medium',
     size: 'md',
@@ -179,17 +179,17 @@ export const ContactPage: Story = {
   args: {
     title: 'Get in Touch',
     subtitle: 'We&apos;re Here to Help',
-    description: 'Have questions about membership, training, or events? Contact our friendly team.',
+    description: 'Have questions about membership, training, or events? Contact our friendly teamotion.',
     badge: 'Contact',
     primaryAction: {
-      text: 'Send Message',
+      text: 'Send ChatBubbleBottomCenterTextIcon',
       href: '/contact/form'
     },
     secondaryAction: {
       text: 'Call Us',
       href: 'tel:208-555-0123'
     },
-    icon: Clock,
+    icon: ClockIcon,
     backgroundPreset: 'warm',
     intensity: 'subtle',
     size: 'sm',
@@ -212,7 +212,7 @@ export const RulesPage: Story = {
       text: 'Safety Course',
       href: '/training/safety'
     },
-    icon: Shield,
+    icon: ShieldCheckIcon,
     backgroundPreset: 'cool',
     intensity: 'medium',
     size: 'md',
@@ -235,7 +235,7 @@ export const GalleryPage: Story = {
       text: 'Submit Photo',
       href: '/gallery/submit'
     },
-    icon: Star,
+    icon: StarIcon,
     backgroundPreset: 'mixed',
     intensity: 'medium',
     size: 'lg',
@@ -246,15 +246,15 @@ export const GalleryPage: Story = {
 // Small hero variant
 export const SmallHero: Story = {
   args: {
-    title: 'Quick Info',
+    title: 'Quick InformationCircleIcon',
     subtitle: 'Range Hours',
     description: 'Check our current operating hours and availability.',
-    badge: 'Info',
+    badge: 'InformationCircleIcon',
     primaryAction: {
       text: 'View Hours',
       href: '/hours'
     },
-    icon: Clock,
+    icon: ClockIcon,
     backgroundPreset: 'warm',
     intensity: 'subtle',
     size: 'sm',

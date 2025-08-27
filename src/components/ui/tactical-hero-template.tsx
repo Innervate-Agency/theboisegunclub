@@ -93,15 +93,15 @@ export function TacticalHero({
   // Get theme icon
   const getThemeIcon = (theme: string) => {
     const iconMap = {
-      home: Trophy,
-      events: Calendar,
-      directory: AddressBook,
-      armory: Shield,
-      intel: Target,
-      marketplace: Storefront,
-      forums: Users
+      home: TrophyIcon,
+      events: CalendarDaysIcon,
+      directory: BookOpenIcon,
+      armory: ShieldCheckIcon,
+      intel: CursorArrowRaysIcon,
+      marketplace: BuildingStorefrontIcon,
+      forums: UsersIcon
     }
-    return iconMap[theme as keyof typeof iconMap] || Trophy
+    return iconMap[theme as keyof typeof iconMap] || TrophyIcon
   }
 
   const ThemeIcon = getThemeIcon(theme || 'home')

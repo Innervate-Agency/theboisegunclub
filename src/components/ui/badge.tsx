@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 // Phosphor Icons - Primary choice for tactical aesthetic
-import { AcademicCapIcon, ArchiveBoxIcon, ArrowLongRightIcon, ArrowTrendingUpIcon, BanknotesIcon, BellIcon, BoltIcon, BookOpenIcon, BuildingOfficeIcon, CalendarIcon, CheckCircleIcon, CheckIcon, ClockIcon, CloudIcon, CurrencyDollarIcon, DocumentCheckIcon, ExclamationCircleIcon, ExclamationTriangleIcon, FireIcon, FlagIcon, HomeIcon, InformationCircleIcon, LockClosedIcon, LockOpenIcon, MapPinIcon, ShieldCheckIcon, ShieldExclamationIcon, SparklesIcon, SpeakerWaveIcon, StarFillIcon, StarIcon, StarIcon as StarFillIcon, SunIcon, TagIcon, TrophyIcon, TruckIcon, UserGroupIcon, UserIcon, ViewfinderCircleIcon, WrenchScrewdriverIcon, XCircleIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { AcademicCapIcon, ArchiveBoxIcon, ArrowLongRightIcon, ArrowTrendingUpIcon, BanknotesIcon, BellIcon, BoltIcon, BookOpenIcon, BuildingOfficeIcon, CalendarIcon, CheckCircleIcon, CheckIcon, ClockIcon, CloudIcon, CurrencyDollarIcon, DocumentCheckIcon, EllipsisHorizontalIcon, ExclamationCircleIcon, ExclamationTriangleIcon, FireIcon, FlagIcon, HomeIcon, InformationCircleIcon, LockClosedIcon, LockOpenIcon, MapPinIcon, ShieldCheckIcon, ShieldExclamationIcon, SparklesIcon, SpeakerWaveIcon, StarIcon, SunIcon, TagIcon, TrophyIcon, TruckIcon, UserGroupIcon, UserIcon, ViewfinderCircleIcon, WrenchScrewdriverIcon, XCircleIcon, XMarkIcon } from "@heroicons/react/24/outline"
 
 const badgeVariants = cva(
   "inline-flex items-center gap-xs font-rajdhani font-semibold text-button-xs border transition-colors focus:outline-none",
@@ -84,7 +84,7 @@ const badgeVariants = cva(
         "weather-poor": "bg-destructive/10 text-destructive border-destructive/30 rounded-xs",
         "weather-extreme": "bg-[var(--destructive)] bg-opacity-10 text-[var(--destructive)] border-[var(--destructive)] border-opacity-30 rounded-xs",
 
-        // Fire Danger Badges - Theme-adaptive
+        // FireIcon Danger Badges - Theme-adaptive
         "fire-low": "bg-[var(--accent)] bg-opacity-10 text-[var(--accent)] border-[var(--accent)] border-opacity-30 rounded-xs",
         "fire-moderate": "bg-warning-clay/10 text-warning-clay border-warning-clay/30 rounded-xs",
         "fire-high": "bg-[var(--primary)] bg-opacity-10 text-[var(--primary)] border-[var(--primary)] border-opacity-30 rounded-xs",
@@ -123,7 +123,7 @@ const pageIcons = {
   "directory-verified": CheckCircleIcon,
   "directory-gold": TrophyIcon,
   "directory-silver": StarIcon,
-  "directory-copper": StarFillIcon, 
+  "directory-copper": StarIcon, 
   "directory-free": TagIcon,
   "directory-ffl": DocumentCheckIcon,
   "directory-range": ViewfinderCircleIcon,
@@ -178,7 +178,7 @@ const pageIcons = {
   "weather-poor": CloudIcon,
   "weather-extreme": ExclamationCircleIcon,
 
-  // Fire Danger Icons
+  // FireIcon Danger Icons
   "fire-low": MapPinIcon,
   "fire-moderate": FireIcon,
   "fire-high": FireIcon,

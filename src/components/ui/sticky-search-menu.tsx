@@ -70,12 +70,12 @@ export function StickySearchMenu({
             ))}
           </div>
 
-          {/* Search */}
+          {/* MagnifyingGlassIcon */}
           <div className="flex gap-xs">
             <div className="relative min-w-[300px]">
               <MagnifyingGlassIcon className="absolute left-3 top-micro/2 -translate-y-1/2 size-4 text-muted-foreground" />
               <Input
-                placeholder="Search events..."
+                placeholder="MagnifyingGlassIcon events..."
                 className="pl-10"
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}

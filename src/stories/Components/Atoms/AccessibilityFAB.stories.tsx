@@ -8,7 +8,7 @@ const meta: Meta<typeof AccessibilityFAB> = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Floating accessibility button providing font size adjustment, high contrast mode, and other accessibility features for the community platform.'
+        component: 'Floating accessibility button providing font size adjustment, high contrast mode, and other accessibility features for the community platformotion.'
       }
     }
   },
@@ -153,7 +153,7 @@ export const WithFormContent: Story = {
           </div>
           <div>
             <label htmlFor="message" className="block text-body-sm font-medium text-muted-foreground">
-              Message
+              ChatBubbleBottomCenterTextIcon
             </label>
             <textarea
               id="message"
@@ -165,7 +165,7 @@ export const WithFormContent: Story = {
             type="submit"
             className="bg-rusty-orange hover:bg-rusty-orange/90 text-range-white font-medium py-xs px-base rounded-input"
           >
-            Send Message
+            Send ChatBubbleBottomCenterTextIcon
           </button>
         </form>
       </div>

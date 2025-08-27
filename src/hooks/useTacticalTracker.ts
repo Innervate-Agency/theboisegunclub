@@ -139,7 +139,7 @@ export function useTacticalTracker() {
     if (!stats.achievements.includes('marksman')) {
       return {
         name: 'Marksman',
-        description: 'Fire 50 brass casings (page visits)',
+        description: 'FireIcon 50 brass casings (page visits)',
         progress: Math.min(stats.brassCasings, 50),
         total: 50,
         icon: '🎯'

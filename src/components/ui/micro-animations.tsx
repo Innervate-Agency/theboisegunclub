@@ -1,5 +1,5 @@
 import * as React from "react"
-import { ArrowRightIcon, CheckIcon, ChevronDownIcon, ChevronIcon, ChevronLeftIcon, ChevronRightIcon, ChevronUpIcon, EllipsisHorizontalIcon, EyeIcon, EyeSlashIcon, MinusIcon, PauseIcon, PlayIcon, PlusIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { ArrowRightIcon, CheckIcon, ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, ChevronUpIcon, EllipsisHorizontalIcon, EyeIcon, EyeSlashIcon, MinusIcon, PauseIcon, PlayIcon, PlusIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { cn } from "@/lib/utils"
 
 export interface AnimationProps {
@@ -66,7 +66,7 @@ export function XOToggle({ className, isActive = false }: AnimationProps) {
 export function ChevronRotate({ className, isActive = false, direction = 'up' }: AnimationProps) {
   const ChevronIcon = direction === 'up' ? ChevronUp : 
                      direction === 'down' ? ChevronDown :
-                     direction === 'left' ? ChevronLeft : ChevronRight
+                     direction === 'left' ? ChevronLeftIcon : ChevronRightIcon
 
   return (
     <ChevronIcon 
@@ -144,8 +144,8 @@ export function PlayPauseToggle({ className, isActive = false }: AnimationProps)
   )
 }
 
-// Eye visibility toggle
-export function EyeToggle({ className, isActive = false }: AnimationProps) {
+// EyeIcon visibility toggle
+export function EyeIconToggle({ className, isActive = false }: AnimationProps) {
   return (
     <div className={cn("relative size-4", className)}>
       <EyeIcon 

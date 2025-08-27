@@ -27,7 +27,7 @@ The **Card** component is a foundational element of the TBGC design system, feat
 ## Key Features
 - **Semantic Shadow Hierarchy** - 8-level Stripe-inspired depth system (ghost → whisper → present → elevated → prominent → commanding → hero → modal)
 - **Interactive Progressions** - each shadow level steps up logically on hover for clear affordance
-- **Fire gradient animations** (copper/brass, blue, green, red variants using Idaho palette)
+- **FireIcon gradient animations** (copper/brass, blue, green, red variants using Idaho palette)
 - **Windows 11 Mica glass effects** with backdrop blur and elevated shadows
 - **Theme-aware styling** for light/dark modes with tactical undertones
 
@@ -129,7 +129,7 @@ export const SemanticShadowHierarchy: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Badge variant="default" className="mb-xs">Fire</Badge>
+            <Badge variant="default" className="mb-xs">FireIcon</Badge>
             <p className="text-body-sm">
               Hero-level presence with tactical gradient animations.
             </p>
@@ -205,11 +205,11 @@ export const Interactive: Story = {
 // ================== FIRE GRADIENT VARIANTS ==================
 
 export const FireVariants: Story = {
-  name: "Fire Gradient Animations",
+  name: "FireIcon Gradient Animations",
   render: () => (
     <div className="w-full max-w-5xl space-y-lg">
       <div className="space-y-base">
-        <h2 className="text-display-md font-rajdhani font-bold text-card-foreground">Fire Gradient System</h2>
+        <h2 className="text-display-md font-rajdhani font-bold text-card-foreground">FireIcon Gradient System</h2>
         <p >
           Sophisticated gradient animations that "unfurl" on hover. Use sparingly for premium features.
         </p>
@@ -220,7 +220,7 @@ export const FireVariants: Story = {
           <CardHeader>
             <CardTitle className="flex items-center gap-xs">
               <CursorArrowRaysIcon className="w-4 h-4" />
-              Fire Orange
+              FireIcon Orange
             </CardTitle>
             <CardDescription>
               Classic TBGC brand gradient
@@ -238,7 +238,7 @@ export const FireVariants: Story = {
           <CardHeader>
             <CardTitle className="flex items-center gap-xs">
               <ShieldCheckIcon className="w-4 h-4" />
-              Fire Blue
+              FireIcon Blue
             </CardTitle>
             <CardDescription>
               Cool tactical theme
@@ -256,7 +256,7 @@ export const FireVariants: Story = {
           <CardHeader>
             <CardTitle className="flex items-center gap-xs">
               <BoltIcon className="w-4 h-4" />
-              Fire Purple
+              FireIcon Purple
             </CardTitle>
             <CardDescription>
               Elite membership tier
@@ -274,7 +274,7 @@ export const FireVariants: Story = {
           <CardHeader>
             <CardTitle className="flex items-center gap-xs">
               <TrophyIcon className="w-4 h-4" />
-              Fire Green
+              FireIcon Green
             </CardTitle>
             <CardDescription>
               Success and achievement
@@ -423,7 +423,7 @@ export const TBGCBusinessCards: Story = {
 
         <Card variant="default" className="w-full">
           <CardHeader>
-            <CardTitle>Eagle Eye Range</CardTitle>
+            <CardTitle>Eagle EyeIcon Range</CardTitle>
             <CardDescription>
               State-of-the-art indoor shooting facility
             </CardDescription>
@@ -473,7 +473,7 @@ export const TBGCBusinessCards: Story = {
           </CardContent>
           <CardFooter>
             <Button size="sm" variant="flat">Contact</Button>
-            <Button size="sm" variant="ghost">Info</Button>
+            <Button size="sm" variant="ghost">InformationCircleIcon</Button>
           </CardFooter>
         </Card>
       </div>

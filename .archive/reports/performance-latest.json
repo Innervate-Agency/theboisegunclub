@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-08-16T03:52:17.111Z",
+  "metrics": [
+    {
+      "metric": "Build Time",
+      "value": "Failed",
+      "status": "failed"
+    },
+    {
+      "metric": "Bundle Size",
+      "value": "857M",
+      "status": "success"
+    },
+    {
+      "metric": "Dependencies Size",
+      "value": "1.4G",
+      "status": "info"
+    },
+    {
+      "metric": "TypeScript Check",
+      "value": "Has errors",
+      "status": "warning"
+    }
+  ]
+}

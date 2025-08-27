@@ -1,6 +1,6 @@
 'use client'
 
-import { m } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 /**
  * Optimized Motion Components - 2025 Performance Edition
@@ -35,18 +35,18 @@ export const scaleIn = {
 }
 
 // Optimized motion components with GPU acceleration
-export const MotionDiv = m.div
-export const MotionSection = m.section
-export const MotionSpan = m.span
-export const MotionButton = m.button
-export const MotionH1 = m.h1
-export const MotionP = m.p
-export const MotionMain = m.main
-export const MotionAside = m.aside
-export const MotionNav = m.nav
+export const MotionDiv = motion.div
+export const MotionSection = motion.section
+export const MotionSpan = motion.span
+export const MotionButton = motion.button
+export const MotionH1 = motion.h1
+export const MotionP = motion.p
+export const MotionMain = motion.main
+export const MotionAside = motion.aside
+export const MotionNav = motion.nav
 
 // Performance-optimized layout motion (use sparingly)
-export const MotionLayout = m.div
+export const MotionLayout = motion.div
 
 // Utility for viewport-based animations with reduced motion support
 export const viewportAnimation = {

@@ -507,7 +507,7 @@ export function GuidesPageVariant({
       <div className="section-skew-down bg-gradient-to-br from-nav-guides/10 to-nav-guides/5 py-3xl">
         <div className="text-center space-y-base">
           <h3 className="font-rajdhani font-bold text-heading-lg text-card-foreground">
-            Legal InformationCheckCheckCircleIconIconrmation
+            Legal InformationCheckCheckCircleIconrmation
           </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             All legal guides are for informational purposes only and do not constitute legal advice. 

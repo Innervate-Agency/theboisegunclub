@@ -1,13 +1,13 @@
 'use client'
 
 import { MotionDiv } from '@/components/ui/optimized-motion'
-import { Diamond } from '@heroicons/react/24/outline'
+import { SparklesIcon } from '@heroicons/react/24/outline'
 
-interface FloatingDiamondsProps {
+interface FloatingSparklesIconsProps {
   className?: string
 }
 
-export function FloatingDiamonds({ className }: FloatingDiamondsProps) {
+export function FloatingSparklesIcons({ className }: FloatingSparklesIconsProps) {
   const diamonds = [
     {
       id: 1,
@@ -90,7 +90,7 @@ export function FloatingDiamonds({ className }: FloatingDiamondsProps) {
           }}
           className={`absolute ${diamond.position}`}
         >
-          <Diamond 
+          <SparklesIcon 
             className={`${diamond.size} text-crisp-off-white/60 shadow-elevated`} 
           />
         </MotionDiv>

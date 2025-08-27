@@ -50,7 +50,7 @@ export function ResultsSubmissionForm() {
     submitterEmail: '',
     submitterRole: '',
     
-    // Additional Info
+    // Additional InformationCircleIcon
     practiscoreId: '',
     websiteUrl: '',
     photographyPermission: false,

@@ -17,7 +17,7 @@ const dealAlerts: DealAlert[] = [
   { title: "AR-15 Build Kit", business: "Idaho Arms", discount: "$200 OFF", timeAgo: "5 min ago", type: "new" },
   { title: "Cerakote Service", business: "Independence Indoor", discount: "20% OFF", timeAgo: "10 min ago", type: "featured" },
   { title: "Sig Sauer P365", business: "Sportsman's", discount: "$75 OFF", timeAgo: "15 min ago", type: "hot" },
-  { title: "Training Package", business: "Snake River", discount: "Buy 2 Get 1", timeAgo: "20 min ago", type: "ending" },
+  { title: "Training ArchiveBoxIcon", business: "Snake River", discount: "Buy 2 Get 1", timeAgo: "20 min ago", type: "ending" },
   { title: "Optics Sale", business: "D&B Supply", discount: "Up to 30%", timeAgo: "25 min ago", type: "new" },
   { title: "Ammo Bulk Deal", business: "Impact Guns", discount: "Free Shipping", timeAgo: "30 min ago", type: "hot" },
   { title: "Custom Build", business: "AllTerra Arms", discount: "$300 OFF", timeAgo: "35 min ago", type: "featured" }
@@ -39,11 +39,11 @@ export function MarketplaceTicker() {
 
   const getIcon = (type: string) => {
     switch (type) {
-      case 'hot': return Fire
-      case 'new': return Sparkle
-      case 'ending': return Clock
-      case 'featured': return Trophy
-      default: return Tag
+      case 'hot': return FireIcon
+      case 'new': return SparklesIcon
+      case 'ending': return ClockIcon
+      case 'featured': return TrophyIcon
+      default: return TagIcon
     }
   }
 
@@ -77,7 +77,7 @@ export function MarketplaceTicker() {
       <div className="container mx-auto max-w-site px-mobile-sm sm:px-md">
         <div className="flex items-center gap-base">
           <div className="flex items-center gap-xs shrink-0">
-            <Lightning className="h-4 w-4 text-nav-marketplace animate-pulse" />
+            <BoltIcon className="h-4 w-4 text-nav-marketplace animate-pulse" />
             <span className="text-xs font-rajdhani font-bold uppercase text-nav-marketplace">Live Deals</span>
           </div>
           

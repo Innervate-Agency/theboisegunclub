@@ -46,7 +46,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 377-2535",
     "businessType": "Gunsmith",
     "description": "Buckhorn Gun & Pawn is a professional gunsmith and firearms service provider serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -97,7 +97,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 375-8694",
     "businessType": "Gunsmith",
     "description": "Cliff's Guns Safes & Reloading is a professional gunsmith and firearms service provider serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -134,7 +134,7 @@ export const allFFLs: FFLBusiness[] = [
     "images": [
       "/images/businesses/placeholder-gunsmith.jpg"
     ],
-    "website": "gunsamerica.com/Search/Lister/193/Cliffs_Guns_Safes_Reloading"
+    "website": "gunsamerica.com/MagnifyingGlassIcon/Lister/193/Cliffs_Guns_Safes_Reloading"
   },
   {
     "slug": "impact-guns",
@@ -148,12 +148,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 321-1288",
     "businessType": "Shooting Range",
     "description": "Impact Guns is a shooting range facility serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -198,7 +198,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 801-7494",
     "businessType": "Sporting Goods",
     "description": "Al's Sporting Goods is a sporting goods retailer with firearms department serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -247,7 +247,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 866-4870",
     "businessType": "Sporting Goods",
     "description": "20/20 Sporting Services is a sporting goods retailer with firearms department serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -296,7 +296,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "Rifle Guru is a professional gunsmith and firearms service provider serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -347,7 +347,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "Ada Armaments is a firearms manufacturing company serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -396,7 +396,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "American Reserve Munitions LLC is a firearms manufacturing company serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -445,7 +445,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Tactical/Training",
     "description": "High Born Tactical is a tactical training and firearms instruction facility serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -496,7 +496,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 938-2173",
     "businessType": "Gun Manufacturer",
     "description": "Automatic Weapons Company is a firearms manufacturing company serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -545,7 +545,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "I2AT is a firearms manufacturing company serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -594,7 +594,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 426-8117",
     "businessType": "FFL Dealer",
     "description": "Aviation Specialties Unlimited Inc is a licensed Federal Firearms License dealer serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -643,7 +643,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 608-5179",
     "businessType": "Gunsmith",
     "description": "Allterra Arms is a professional gunsmith and firearms service provider serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -694,7 +694,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 608-5179",
     "businessType": "Gunsmith",
     "description": "Axial Precision LLC is a professional gunsmith and firearms service provider serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -746,7 +746,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 639-1653",
     "businessType": "FFL Dealer",
     "description": "Blue Line Guns is a licensed Federal Firearms License dealer serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -795,7 +795,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 323-8727",
     "businessType": "Gun Manufacturer",
     "description": "Caracal USA is a firearms manufacturing company serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -844,7 +844,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 629-3910",
     "businessType": "FFL Dealer",
     "description": "Fall River Arms is a licensed Federal Firearms License dealer serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -893,7 +893,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 378-1600",
     "businessType": "FFL Dealer",
     "description": "Idaho Guns is a licensed Federal Firearms License dealer serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -942,7 +942,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 376-4440",
     "businessType": "Gunsmith",
     "description": "Boise Gun Company Inc is a professional gunsmith and firearms service provider serving Garden City and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -993,7 +993,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 336-1927",
     "businessType": "Sporting Goods",
     "description": "Combat Sport Supply is a sporting goods retailer with firearms department serving Garden City and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -1042,7 +1042,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 724-1851",
     "businessType": "FFL Dealer",
     "description": "Gem State Guns LLC is a licensed Federal Firearms License dealer serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -1091,7 +1091,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 869-1508",
     "businessType": "Tactical/Training",
     "description": "Walker Tactical Firearms LLC is a tactical training and firearms instruction facility serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -1142,7 +1142,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Idaho Surplus Sales is a licensed Federal Firearms License dealer serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -1192,7 +1192,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 333-9901",
     "businessType": "Tactical/Training",
     "description": "Tactical Solutions Inc is a tactical training and firearms instruction facility serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -1243,7 +1243,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 672-0558",
     "businessType": "FFL Dealer",
     "description": "Overland Armament Inc is a licensed Federal Firearms License dealer serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -1292,7 +1292,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 344-5217",
     "businessType": "Gun Manufacturer",
     "description": "Primary Weapons Systems is a firearms manufacturing company serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -1341,12 +1341,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 559-3337",
     "businessType": "Shooting Range",
     "description": "Double Tapp LLC is a shooting range facility serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -1391,7 +1391,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 322-4867",
     "businessType": "Gunsmith",
     "description": "Stockpile Defense LLC is a professional gunsmith and firearms service provider serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -1442,7 +1442,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Highland Munitions LLC is a licensed Federal Firearms License dealer serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -1491,7 +1491,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 672-7900",
     "businessType": "Sporting Goods",
     "description": "Cabela's Boise is a sporting goods retailer with firearms department serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -1540,7 +1540,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 672-7900",
     "businessType": "Sporting Goods",
     "description": "Sportsman's Warehouse #103 is a sporting goods retailer with firearms department serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -1589,7 +1589,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(310) 536-0611",
     "businessType": "Sporting Goods",
     "description": "Big 5 Sporting Goods #279 is a sporting goods retailer with firearms department serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -1638,7 +1638,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(310) 536-0611",
     "businessType": "Sporting Goods",
     "description": "Big 5 Sporting Goods #391 is a sporting goods retailer with firearms department serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -1687,7 +1687,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(509) 487-8888",
     "businessType": "Pawn Shop",
     "description": "Pawn 1 Inc is a pawn shop with firearms sales serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -1736,7 +1736,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(833) 264-7296",
     "businessType": "Pawn Shop",
     "description": "Boise Pawn is a pawn shop with firearms sales serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -1785,7 +1785,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 859-0756",
     "businessType": "Gunsmith",
     "description": "Robertson Firearm Services is a professional gunsmith and firearms service provider serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -1836,7 +1836,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 546-9463",
     "businessType": "Gunsmith",
     "description": "Defense Materials Company LLC is a professional gunsmith and firearms service provider serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -1887,7 +1887,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 939-4478",
     "businessType": "Gunsmith",
     "description": "Barton's Custom Shop is a professional gunsmith and firearms service provider serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -1939,7 +1939,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 871-8435",
     "businessType": "FFL Dealer",
     "description": "Bear Creek Firearms is a licensed Federal Firearms License dealer serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -1988,7 +1988,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 602-6027",
     "businessType": "Gunsmith",
     "description": "Old Arms of Idaho is a professional gunsmith and firearms service provider serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -2039,7 +2039,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 286-2013",
     "businessType": "FFL Dealer",
     "description": "ATS Sales is a licensed Federal Firearms License dealer serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -2088,7 +2088,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(702) 353-3928",
     "businessType": "Gunsmith",
     "description": "Arctic Summit Gunsmithing is a professional gunsmith and firearms service provider serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -2139,7 +2139,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 461-1213",
     "businessType": "FFL Dealer",
     "description": "2A Armament is a licensed Federal Firearms License dealer serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -2188,7 +2188,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 515-4848",
     "businessType": "FFL Dealer",
     "description": "6B Enterprises is a licensed Federal Firearms License dealer serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -2237,7 +2237,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 855-9388",
     "businessType": "Gun Manufacturer",
     "description": "Blac-Rac Manufacturing is a firearms manufacturing company serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -2286,7 +2286,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Brown Dogg LLC is a licensed Federal Firearms License dealer serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -2335,7 +2335,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 450-3044",
     "businessType": "FFL Dealer",
     "description": "Shop Black Rifle is a licensed Federal Firearms License dealer serving Boise and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -2384,12 +2384,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 576-4867",
     "businessType": "Shooting Range",
     "description": "Independence Indoor Shooting is a shooting range facility serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -2434,7 +2434,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 884-3000",
     "businessType": "Sporting Goods",
     "description": "Sportsman's Warehouse #104 is a sporting goods retailer with firearms department serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -2483,7 +2483,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 898-5848",
     "businessType": "Gunsmith",
     "description": "HawkTech Arms is a professional gunsmith and firearms service provider serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -2534,7 +2534,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 809-0939",
     "businessType": "Gunsmith",
     "description": "Idaho Arms & Ammo is a professional gunsmith and firearms service provider serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -2585,7 +2585,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "3S Gun Sales is a licensed Federal Firearms License dealer serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -2634,7 +2634,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "66 Productions LLC is a firearms manufacturing company serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -2683,7 +2683,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Tactical/Training",
     "description": "Lost Coast Tactical is a tactical training and firearms instruction facility serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -2734,7 +2734,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "American Upland/AUI is a licensed Federal Firearms License dealer serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -2783,7 +2783,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Ammunition/Supplies",
     "description": "Rays Guns & Ammo is a ammunition and firearms supply retailer serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Ammunition Sales",
       "Reloading Supplies",
@@ -2831,7 +2831,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Tactical/Training",
     "description": "Koda Defense & Arms is a tactical training and firearms instruction facility serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -2881,7 +2881,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Pawn Shop",
     "description": "Idaho Pawn & Gold, Sam's Locker is a pawn shop with firearms sales serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -2930,7 +2930,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "Burns Custom Pistols is a professional gunsmith and firearms service provider serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -2982,7 +2982,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Carter, Jon is a licensed Federal Firearms License dealer serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -3031,7 +3031,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Sporting Goods",
     "description": "Scheels All Sports Inc is a sporting goods retailer with firearms department serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -3080,7 +3080,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "Sierra Tactical & Gunsmithing is a professional gunsmith and firearms service provider serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -3132,7 +3132,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Silverline Films LLC is a licensed Federal Firearms License dealer serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -3181,7 +3181,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 939-7222",
     "businessType": "Gun Manufacturer",
     "description": "Gemtech is a firearms manufacturing company serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -3230,7 +3230,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 846-9027",
     "businessType": "Pawn Shop",
     "description": "Benny's Pawn Inc is a pawn shop with firearms sales serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -3279,7 +3279,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 461-8888",
     "businessType": "FFL Dealer",
     "description": "Crossfire Elite LLC is a licensed Federal Firearms License dealer serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -3328,7 +3328,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "Venom Tactical LLC is a professional gunsmith and firearms service provider serving Meridian and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -3373,14 +3373,14 @@ export const allFFLs: FFLBusiness[] = [
     "businessName": "Activity Investments LLC",
     "licenseName": "",
     "address": "10183 West Wyatt Earp Drive",
-    "city": "Star",
+    "city": "StarIcon",
     "state": "ID",
     "zip": "83669",
-    "fullAddress": "10183 West Wyatt Earp Drive, Star, ID 83669",
+    "fullAddress": "10183 West Wyatt Earp Drive, StarIcon, ID 83669",
     "phone": "",
     "businessType": "Gun Manufacturer",
-    "description": "Activity Investments LLC is a firearms manufacturing company serving Star and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "description": "Activity Investments LLC is a firearms manufacturing company serving StarIcon and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -3403,7 +3403,7 @@ export const allFFLs: FFLBusiness[] = [
     "isFeatured": false,
     "dataSource": "ada_county_gun_stores_comprehensive",
     "serviceArea": [
-      "Star",
+      "StarIcon",
       "Treasure Valley",
       "Southwest Idaho"
     ],
@@ -3422,14 +3422,14 @@ export const allFFLs: FFLBusiness[] = [
     "businessName": "Bi-Mart #689",
     "licenseName": "",
     "address": "11347 W State St",
-    "city": "Star",
+    "city": "StarIcon",
     "state": "ID",
     "zip": "83669",
-    "fullAddress": "11347 W State St, Star, ID 83669",
+    "fullAddress": "11347 W State St, StarIcon, ID 83669",
     "phone": "",
     "businessType": "Sporting Goods",
-    "description": "Bi-Mart #689 is a sporting goods retailer with firearms department serving Star and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "description": "Bi-Mart #689 is a sporting goods retailer with firearms department serving StarIcon and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -3452,7 +3452,7 @@ export const allFFLs: FFLBusiness[] = [
     "isFeatured": false,
     "dataSource": "ada_county_gun_stores_comprehensive",
     "serviceArea": [
-      "Star",
+      "StarIcon",
       "Treasure Valley",
       "Southwest Idaho"
     ],
@@ -3471,14 +3471,14 @@ export const allFFLs: FFLBusiness[] = [
     "businessName": "Black Label Precision",
     "licenseName": "",
     "address": "10451 W Daylily Ct",
-    "city": "Star",
+    "city": "StarIcon",
     "state": "ID",
     "zip": "83669",
-    "fullAddress": "10451 W Daylily Ct, Star, ID 83669",
+    "fullAddress": "10451 W Daylily Ct, StarIcon, ID 83669",
     "phone": "",
     "businessType": "Gun Manufacturer",
-    "description": "Black Label Precision is a firearms manufacturing company serving Star and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "description": "Black Label Precision is a firearms manufacturing company serving StarIcon and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -3502,7 +3502,7 @@ export const allFFLs: FFLBusiness[] = [
     "isFeatured": false,
     "dataSource": "ada_county_gun_stores_comprehensive",
     "serviceArea": [
-      "Star",
+      "StarIcon",
       "Treasure Valley",
       "Southwest Idaho"
     ],
@@ -3521,14 +3521,14 @@ export const allFFLs: FFLBusiness[] = [
     "businessName": "Jon's Guns",
     "licenseName": "",
     "address": "936 N Glen Aspen Way",
-    "city": "Star",
+    "city": "StarIcon",
     "state": "ID",
     "zip": "83669",
-    "fullAddress": "936 N Glen Aspen Way, Star, ID 83669",
+    "fullAddress": "936 N Glen Aspen Way, StarIcon, ID 83669",
     "phone": "",
     "businessType": "FFL Dealer",
-    "description": "Jon's Guns is a licensed Federal Firearms License dealer serving Star and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "description": "Jon's Guns is a licensed Federal Firearms License dealer serving StarIcon and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -3551,7 +3551,7 @@ export const allFFLs: FFLBusiness[] = [
     "isFeatured": false,
     "dataSource": "ada_county_gun_stores_comprehensive",
     "serviceArea": [
-      "Star",
+      "StarIcon",
       "Treasure Valley",
       "Southwest Idaho"
     ],
@@ -3570,14 +3570,14 @@ export const allFFLs: FFLBusiness[] = [
     "businessName": "Eagle Gun Company",
     "licenseName": "",
     "address": "10539 W Thimbleberry Dr",
-    "city": "Star",
+    "city": "StarIcon",
     "state": "ID",
     "zip": "83669",
-    "fullAddress": "10539 W Thimbleberry Dr, Star, ID 83669",
+    "fullAddress": "10539 W Thimbleberry Dr, StarIcon, ID 83669",
     "phone": "",
     "businessType": "FFL Dealer",
-    "description": "Eagle Gun Company is a licensed Federal Firearms License dealer serving Star and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "description": "Eagle Gun Company is a licensed Federal Firearms License dealer serving StarIcon and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -3600,7 +3600,7 @@ export const allFFLs: FFLBusiness[] = [
     "isFeatured": false,
     "dataSource": "ada_county_gun_stores_comprehensive",
     "serviceArea": [
-      "Star",
+      "StarIcon",
       "Treasure Valley",
       "Southwest Idaho"
     ],
@@ -3619,14 +3619,14 @@ export const allFFLs: FFLBusiness[] = [
     "businessName": "Lord Rockwell LLC",
     "licenseName": "",
     "address": "1672 N Watershed Ave",
-    "city": "Star",
+    "city": "StarIcon",
     "state": "ID",
     "zip": "83669",
-    "fullAddress": "1672 N Watershed Ave, Star, ID 83669",
+    "fullAddress": "1672 N Watershed Ave, StarIcon, ID 83669",
     "phone": "",
     "businessType": "Gun Manufacturer",
-    "description": "Lord Rockwell LLC is a firearms manufacturing company serving Star and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "description": "Lord Rockwell LLC is a firearms manufacturing company serving StarIcon and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -3649,7 +3649,7 @@ export const allFFLs: FFLBusiness[] = [
     "isFeatured": false,
     "dataSource": "ada_county_gun_stores_comprehensive",
     "serviceArea": [
-      "Star",
+      "StarIcon",
       "Treasure Valley",
       "Southwest Idaho"
     ],
@@ -3668,14 +3668,14 @@ export const allFFLs: FFLBusiness[] = [
     "businessName": "MRM LLC",
     "licenseName": "",
     "address": "12525 Aliso Creek St",
-    "city": "Star",
+    "city": "StarIcon",
     "state": "ID",
     "zip": "83669",
-    "fullAddress": "12525 Aliso Creek St, Star, ID 83669",
+    "fullAddress": "12525 Aliso Creek St, StarIcon, ID 83669",
     "phone": "",
     "businessType": "FFL Dealer",
-    "description": "MRM LLC is a licensed Federal Firearms License dealer serving Star and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "description": "MRM LLC is a licensed Federal Firearms License dealer serving StarIcon and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -3698,7 +3698,7 @@ export const allFFLs: FFLBusiness[] = [
     "isFeatured": false,
     "dataSource": "ada_county_gun_stores_comprehensive",
     "serviceArea": [
-      "Star",
+      "StarIcon",
       "Treasure Valley",
       "Southwest Idaho"
     ],
@@ -3717,14 +3717,14 @@ export const allFFLs: FFLBusiness[] = [
     "businessName": "Patriot Pawn & Gun LLC",
     "licenseName": "",
     "address": "1977 N Willow Glen Place",
-    "city": "Star",
+    "city": "StarIcon",
     "state": "ID",
     "zip": "83669",
-    "fullAddress": "1977 N Willow Glen Place, Star, ID 83669",
+    "fullAddress": "1977 N Willow Glen Place, StarIcon, ID 83669",
     "phone": "(208) 286-7300",
     "businessType": "Pawn Shop",
-    "description": "Patriot Pawn & Gun LLC is a pawn shop with firearms sales serving Star and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "description": "Patriot Pawn & Gun LLC is a pawn shop with firearms sales serving StarIcon and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -3747,7 +3747,7 @@ export const allFFLs: FFLBusiness[] = [
     "isFeatured": false,
     "dataSource": "ada_county_gun_stores_comprehensive",
     "serviceArea": [
-      "Star",
+      "StarIcon",
       "Treasure Valley",
       "Southwest Idaho"
     ],
@@ -3766,14 +3766,14 @@ export const allFFLs: FFLBusiness[] = [
     "businessName": "Ridley's Family Markets",
     "licenseName": "",
     "address": "145 So Plummer Way",
-    "city": "Star",
+    "city": "StarIcon",
     "state": "ID",
     "zip": "83669",
-    "fullAddress": "145 So Plummer Way, Star, ID 83669",
+    "fullAddress": "145 So Plummer Way, StarIcon, ID 83669",
     "phone": "",
     "businessType": "FFL Dealer",
-    "description": "Ridley's Family Markets is a licensed Federal Firearms License dealer serving Star and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "description": "Ridley's Family Markets is a licensed Federal Firearms License dealer serving StarIcon and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -3796,7 +3796,7 @@ export const allFFLs: FFLBusiness[] = [
     "isFeatured": false,
     "dataSource": "ada_county_gun_stores_comprehensive",
     "serviceArea": [
-      "Star",
+      "StarIcon",
       "Treasure Valley",
       "Southwest Idaho"
     ],
@@ -3815,14 +3815,14 @@ export const allFFLs: FFLBusiness[] = [
     "businessName": "Solar Tactical",
     "licenseName": "",
     "address": "7396 Highway 44",
-    "city": "Star",
+    "city": "StarIcon",
     "state": "ID",
     "zip": "83669",
-    "fullAddress": "7396 Highway 44, Star, ID 83669",
+    "fullAddress": "7396 Highway 44, StarIcon, ID 83669",
     "phone": "",
     "businessType": "Tactical/Training",
-    "description": "Solar Tactical is a tactical training and firearms instruction facility serving Star and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "description": "Solar Tactical is a tactical training and firearms instruction facility serving StarIcon and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -3847,7 +3847,7 @@ export const allFFLs: FFLBusiness[] = [
     "isFeatured": false,
     "dataSource": "ada_county_gun_stores_comprehensive",
     "serviceArea": [
-      "Star",
+      "StarIcon",
       "Treasure Valley",
       "Southwest Idaho"
     ],
@@ -3866,14 +3866,14 @@ export const allFFLs: FFLBusiness[] = [
     "businessName": "Youngs Firearms",
     "licenseName": "",
     "address": "324 S Winslow Bay Way",
-    "city": "Star",
+    "city": "StarIcon",
     "state": "ID",
     "zip": "83669",
-    "fullAddress": "324 S Winslow Bay Way, Star, ID 83669",
+    "fullAddress": "324 S Winslow Bay Way, StarIcon, ID 83669",
     "phone": "",
     "businessType": "FFL Dealer",
-    "description": "Youngs Firearms is a licensed Federal Firearms License dealer serving Star and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "description": "Youngs Firearms is a licensed Federal Firearms License dealer serving StarIcon and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -3896,7 +3896,7 @@ export const allFFLs: FFLBusiness[] = [
     "isFeatured": false,
     "dataSource": "ada_county_gun_stores_comprehensive",
     "serviceArea": [
-      "Star",
+      "StarIcon",
       "Treasure Valley",
       "Southwest Idaho"
     ],
@@ -3922,7 +3922,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 571-2243",
     "businessType": "Gunsmith",
     "description": "208 Precision is a professional gunsmith and firearms service provider serving Eagle and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -3974,7 +3974,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Tactical/Training",
     "description": "Tiger Defense is a tactical training and firearms instruction facility serving Eagle and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -4024,7 +4024,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 369-9671",
     "businessType": "Gunsmith",
     "description": "Orion Armament is a professional gunsmith and firearms service provider serving Kuna and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -4075,7 +4075,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "208 Gun Shop is a licensed Federal Firearms License dealer serving Idaho and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -4124,7 +4124,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 465-3577",
     "businessType": "Gunsmith",
     "description": "Armageddon Armory is a professional gunsmith and firearms service provider serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -4175,7 +4175,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 465-3577",
     "businessType": "FFL Dealer",
     "description": "Alpha Omega Services LLC is a licensed Federal Firearms License dealer serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -4224,7 +4224,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 465-8039",
     "businessType": "Gunsmith",
     "description": "Elite Rifle Works LLP is a professional gunsmith and firearms service provider serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -4275,7 +4275,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 467-9201",
     "businessType": "Sporting Goods",
     "description": "Larry's Sporting Goods is a sporting goods retailer with firearms department serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -4324,7 +4324,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 442-4308",
     "businessType": "Gun Manufacturer",
     "description": "Nemo Arms is a firearms manufacturing company serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -4373,7 +4373,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 467-3075",
     "businessType": "Gunsmith",
     "description": "RK Gunsmithing is a professional gunsmith and firearms service provider serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -4424,7 +4424,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 461-6911",
     "businessType": "FFL Dealer",
     "description": "Tiffany Guns Zebra 12 is a licensed Federal Firearms License dealer serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -4473,7 +4473,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 468-7600",
     "businessType": "Gunsmith",
     "description": "Sportsman's Warehouse is a professional gunsmith and firearms service provider serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -4524,7 +4524,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Tactical/Training",
     "description": "Reflex Tactical Idaho is a tactical training and firearms instruction facility serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -4575,7 +4575,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Pawn Shop",
     "description": "Ken's Pawn & Jewelry is a pawn shop with firearms sales serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -4624,7 +4624,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "BGW Gunsmithing is a professional gunsmith and firearms service provider serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -4675,12 +4675,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Shooting Range",
     "description": "Nampa Public Shooting Range is a shooting range facility serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -4725,7 +4725,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "Dundas Works LLC is a professional gunsmith and firearms service provider serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -4776,7 +4776,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Ammunition/Supplies",
     "description": "Owyhee Shooters Supply is a ammunition and firearms supply retailer serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Ammunition Sales",
       "Reloading Supplies",
@@ -4824,7 +4824,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Pawn Shop",
     "description": "Treasure Valley Pawn LLC is a pawn shop with firearms sales serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -4873,7 +4873,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Sporting Goods",
     "description": "Wild Bills Sporting LLC is a sporting goods retailer with firearms department serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -4922,7 +4922,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "D&B Supply is a professional gunsmith and firearms service provider serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -4973,7 +4973,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "D&B Supply Smeed Parkway is a professional gunsmith and firearms service provider serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -5024,12 +5024,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Shooting Range",
     "description": "George W. Nourse Gun Range is a shooting range facility serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -5074,12 +5074,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Shooting Range",
     "description": "Caldwell Gun Club is a shooting range facility serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -5124,7 +5124,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 585-9922",
     "businessType": "Gunsmith",
     "description": "Midstar Firearms is a professional gunsmith and firearms service provider serving Middleton and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -5175,7 +5175,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 495-9855",
     "businessType": "Ammunition/Supplies",
     "description": "Vigilante Guns and Ammo is a ammunition and firearms supply retailer serving Melba and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Ammunition Sales",
       "Reloading Supplies",
@@ -5223,7 +5223,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 468-7600",
     "businessType": "Sporting Goods",
     "description": "Sportsman's Warehouse #224 is a sporting goods retailer with firearms department serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -5272,7 +5272,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(310) 536-0611",
     "businessType": "Sporting Goods",
     "description": "Big 5 Sporting Goods #308 is a sporting goods retailer with firearms department serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -5321,7 +5321,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Sporting Goods",
     "description": "Faith Outdoors LLC is a sporting goods retailer with firearms department serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -5370,7 +5370,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Sporting Goods",
     "description": "Idaho Gun & Outdoors is a sporting goods retailer with firearms department serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -5419,7 +5419,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Sporting Goods",
     "description": "Accura Outdoors is a sporting goods retailer with firearms department serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -5468,7 +5468,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Pawn Shop",
     "description": "Vista Pawn Nampa is a pawn shop with firearms sales serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -5517,7 +5517,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "Snake River Rifleworks is a professional gunsmith and firearms service provider serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -5568,7 +5568,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Ammunition/Supplies",
     "description": "Lucky Shot Ammunition & Guns LLC is a ammunition and firearms supply retailer serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Ammunition Sales",
       "Reloading Supplies",
@@ -5616,7 +5616,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 505-0130",
     "businessType": "Ammunition/Supplies",
     "description": "Northwest Gun Supply is a ammunition and firearms supply retailer serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Ammunition Sales",
       "Reloading Supplies",
@@ -5664,7 +5664,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 789-6430",
     "businessType": "FFL Dealer",
     "description": "Blazzard Firearms is a licensed Federal Firearms License dealer serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -5713,7 +5713,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 697-6167",
     "businessType": "FFL Dealer",
     "description": "Canyon County Precisions LLC is a licensed Federal Firearms License dealer serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -5763,7 +5763,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "R2ARM is a licensed Federal Firearms License dealer serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -5812,7 +5812,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Idaho Air Gun is a licensed Federal Firearms License dealer serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -5861,7 +5861,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(951) 445-9819",
     "businessType": "Gunsmith",
     "description": "BGW LLC is a professional gunsmith and firearms service provider serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -5912,7 +5912,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "ATI-Adaptive Technologies Inc is a firearms manufacturing company serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -5961,7 +5961,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "Ashment Custom Coatings LLC is a professional gunsmith and firearms service provider serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -6013,7 +6013,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "Altanova Manufacturing Inc is a firearms manufacturing company serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -6062,7 +6062,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Ammunition/Supplies",
     "description": "AmmoSquared Inc is a ammunition and firearms supply retailer serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Ammunition Sales",
       "Reloading Supplies",
@@ -6110,7 +6110,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Tactical/Training",
     "description": "Stinger-Defense is a tactical training and firearms instruction facility serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -6160,7 +6160,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 467-7788",
     "businessType": "FFL Dealer",
     "description": "Averett, Brian C (Old Farts Gun Shop) is a licensed Federal Firearms License dealer serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -6209,7 +6209,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "208 Laser Engraving is a professional gunsmith and firearms service provider serving Nampa and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -6260,7 +6260,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 454-8038",
     "businessType": "Pawn Shop",
     "description": "Al's Pawn & Gun Inc is a pawn shop with firearms sales serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -6309,7 +6309,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Sporting Goods",
     "description": "D&B Supply Muller is a sporting goods retailer with firearms department serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -6358,7 +6358,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Sporting Goods",
     "description": "D&B Supply Smeed is a sporting goods retailer with firearms department serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -6407,7 +6407,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Sporting Goods",
     "description": "Bi-Mart #614 is a sporting goods retailer with firearms department serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -6456,7 +6456,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Pawn Shop",
     "description": "Pawn 1 Incorporated is a pawn shop with firearms sales serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -6505,7 +6505,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Sporting Goods",
     "description": "Walmart #2780 is a sporting goods retailer with firearms department serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -6554,7 +6554,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "Agency Arms LLC is a firearms manufacturing company serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -6603,7 +6603,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Store",
     "description": "43rd State Armory LLC is a full-service firearms retailer serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "New Firearms",
       "Used Firearms",
@@ -6653,7 +6653,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Big Sky Industries LLC is a licensed Federal Firearms License dealer serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -6702,7 +6702,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 901-4972",
     "businessType": "FFL Dealer",
     "description": "Charters Mtn Gun Shop is a licensed Federal Firearms License dealer serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -6751,7 +6751,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "North West Precision Rifles is a professional gunsmith and firearms service provider serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -6803,7 +6803,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "Heida Firearms is a firearms manufacturing company serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -6852,7 +6852,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Kinch Arms is a licensed Federal Firearms License dealer serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -6901,7 +6901,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Mudu Sports is a licensed Federal Firearms License dealer serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -6950,7 +6950,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "Sawtooth Munitions is a firearms manufacturing company serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -6999,7 +6999,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "Royal Rifles is a firearms manufacturing company serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -7048,7 +7048,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "RM Firearms is a licensed Federal Firearms License dealer serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -7097,7 +7097,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "Terminator is a firearms manufacturing company serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -7146,7 +7146,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Gibraltar Arms / Purple Sage International is a licensed Federal Firearms License dealer serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -7195,7 +7195,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "Stiglitz Firearms LLC is a firearms manufacturing company serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -7244,7 +7244,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "Tiffany Enterprise is a firearms manufacturing company serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -7293,7 +7293,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "Yankton Brothers LLC is a firearms manufacturing company serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -7342,7 +7342,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "Federated Ordnance LLC is a firearms manufacturing company serving Caldwell and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -7391,7 +7391,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Tactical/Training",
     "description": "52 Tactical LLC is a tactical training and firearms instruction facility serving Middleton and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -7442,7 +7442,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "H M Praetorian LLC is a licensed Federal Firearms License dealer serving Middleton and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -7491,7 +7491,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Tactical/Training",
     "description": "Longbow Tactical LLC is a tactical training and firearms instruction facility serving Middleton and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -7542,7 +7542,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Tactical/Training",
     "description": "Firearm Training Institute is a tactical training and firearms instruction facility serving Middleton and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -7592,7 +7592,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Wildcat Outfitters is a licensed Federal Firearms License dealer serving Middleton and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -7641,7 +7641,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "SCS Arms is a firearms manufacturing company serving Middleton and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -7690,7 +7690,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "Traditional Gunsmithing by CA Winkle LLC is a professional gunsmith and firearms service provider serving Middleton and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -7741,7 +7741,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "C W Enterprises Sports is a firearms manufacturing company serving Middleton and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -7790,7 +7790,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 442-8000",
     "businessType": "FFL Dealer",
     "description": "ADTAC is a licensed Federal Firearms License dealer serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -7839,7 +7839,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 333-0591",
     "businessType": "Gun Club",
     "description": "PEW BUYERS CLUB is a shooting club and community organization serving GARDEN CITY and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Membership",
       "Club Events",
@@ -7888,7 +7888,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 352-0058",
     "businessType": "FFL Dealer",
     "description": "BENNETT MOUNTAIN OUTFITTERS is a licensed Federal Firearms License dealer serving EAGLE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -7937,7 +7937,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 576-5534",
     "businessType": "FFL Dealer",
     "description": "BJORALT FIREARMS is a licensed Federal Firearms License dealer serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -7986,7 +7986,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 860-2890",
     "businessType": "Tactical/Training",
     "description": "BOISE TACTICAL is a tactical training and firearms instruction facility serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -8037,7 +8037,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 221-4528",
     "businessType": "FFL Dealer",
     "description": "SNAKE RIVER GUNWORKS is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -8086,7 +8086,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 487-8003",
     "businessType": "Pawn Shop",
     "description": "IDAHO PAWN & GOLD is a pawn shop with firearms sales serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -8135,7 +8135,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 342-4920",
     "businessType": "Sporting Goods",
     "description": "D & B SPORTING ARMS is a sporting goods retailer with firearms department serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -8184,7 +8184,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 342-5479",
     "businessType": "FFL Dealer",
     "description": "WORKMAN OUTFITTERS is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -8233,7 +8233,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(480) 323-0466",
     "businessType": "FFL Dealer",
     "description": "EAGLE FIREARMS is a licensed Federal Firearms License dealer serving EAGLE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -8282,7 +8282,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 863-5059",
     "businessType": "FFL Dealer",
     "description": "B H GUNS is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -8331,7 +8331,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 921-5860",
     "businessType": "FFL Dealer",
     "description": "SHOOTERS BEST BUY is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -8380,7 +8380,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(805) 304-7931",
     "businessType": "Tactical/Training",
     "description": "OMG TACTICAL ARMORY is a tactical training and firearms instruction facility serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -8431,7 +8431,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 994-9946",
     "businessType": "FFL Dealer",
     "description": "HAPPY TIME FIREARMS is a licensed Federal Firearms License dealer serving KUNA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -8480,7 +8480,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 590-6341",
     "businessType": "FFL Dealer",
     "description": "VETERANS FIREARMS is a licensed Federal Firearms License dealer serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -8529,7 +8529,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(334) 425-9379",
     "businessType": "FFL Dealer",
     "description": "JAKES HARDWARE is a licensed Federal Firearms License dealer serving KUNA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -8578,7 +8578,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 466-9647",
     "businessType": "Pawn Shop",
     "description": "KEN'S PAWN AND JEWELRY is a pawn shop with firearms sales serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -8627,7 +8627,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 985-4911",
     "businessType": "FFL Dealer",
     "description": "KODIAK FIREARMS is a licensed Federal Firearms License dealer serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -8676,7 +8676,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 936-2713",
     "businessType": "FFL Dealer",
     "description": "LIONS DEN LOCK & GUN is a licensed Federal Firearms License dealer serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -8725,7 +8725,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 344-8314",
     "businessType": "FFL Dealer",
     "description": "MAIN AUCTION is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -8774,7 +8774,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 761-2335",
     "businessType": "Gunsmith",
     "description": "MCGRATH GUNSMITH SERVICES is a professional gunsmith and firearms service provider serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -8825,7 +8825,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 949-3763",
     "businessType": "Gun Club",
     "description": "MERIDIAN OPTIMIST JUNIOR RIFLE CLUB is a shooting club and community organization serving KUNA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Membership",
       "Club Events",
@@ -8874,7 +8874,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 405-6000",
     "businessType": "FFL Dealer",
     "description": "MCM FIREARMS DELTA S is a licensed Federal Firearms License dealer serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -8923,7 +8923,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 949-3763",
     "businessType": "FFL Dealer",
     "description": "NORTHWEST CONCEALED CARRY OUTFITTERS is a licensed Federal Firearms License dealer serving KUNA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -8972,12 +8972,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 954-0368",
     "businessType": "Shooting Range",
     "description": "FIREFLY SHOOTING ACADEMY is a shooting range facility serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -9022,7 +9022,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(986) 400-4867",
     "businessType": "Gunsmith",
     "description": "NELSON GUNSMITHING is a professional gunsmith and firearms service provider serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -9073,7 +9073,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 761-3683",
     "businessType": "Gunsmith",
     "description": "WESTBOUND CUSTOM FIREARMS is a professional gunsmith and firearms service provider serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -9125,7 +9125,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 615-5542",
     "businessType": "Gun Store",
     "description": "FOUNDING FATHERS ARMORY is a full-service firearms retailer serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "New Firearms",
       "Used Firearms",
@@ -9175,7 +9175,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 342-3352",
     "businessType": "Pawn Shop",
     "description": "VISTA PAWN is a pawn shop with firearms sales serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -9224,7 +9224,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 378-4920",
     "businessType": "Pawn Shop",
     "description": "VISTA PAWN STATE ST is a pawn shop with firearms sales serving GARDEN CITY and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -9273,7 +9273,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 859-8001",
     "businessType": "Tactical/Training",
     "description": "QUANTUM TACTICAL is a tactical training and firearms instruction facility serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -9324,7 +9324,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(661) 699-4950",
     "businessType": "Sporting Goods",
     "description": "RAINWATER SPORTING ARMS is a sporting goods retailer with firearms department serving KUNA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -9373,7 +9373,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(209) 443-4027",
     "businessType": "Gun Store",
     "description": "1791 PRECISION ARMORY is a full-service firearms retailer serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "New Firearms",
       "Used Firearms",
@@ -9422,7 +9422,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 724-5577",
     "businessType": "FFL Dealer",
     "description": "UNDERGROUND GUNS is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -9471,7 +9471,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 571-0179",
     "businessType": "FFL Dealer",
     "description": "BLACK DOG SPORTS USA is a licensed Federal Firearms License dealer serving KUNA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -9520,7 +9520,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 888-9454",
     "businessType": "FFL Dealer",
     "description": "RIFLECRAFTERS is a licensed Federal Firearms License dealer serving MERIDIAN and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -9569,7 +9569,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 590-4100",
     "businessType": "FFL Dealer",
     "description": "J ROSE GUNS is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -9618,7 +9618,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 825-7374",
     "businessType": "Gun Store",
     "description": "EAGLE EYE ARMORY is a full-service firearms retailer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "New Firearms",
       "Used Firearms",
@@ -9668,7 +9668,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 466-3017",
     "businessType": "FFL Dealer",
     "description": "PRACTICAL SHOOTERS SRVC is a licensed Federal Firearms License dealer serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -9717,7 +9717,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 890-3715",
     "businessType": "FFL Dealer",
     "description": "VELOCITY GUN SALES is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -9766,7 +9766,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(408) 451-9850",
     "businessType": "FFL Dealer",
     "description": "SPARTAN PRECISION RIFLES is a licensed Federal Firearms License dealer serving CALDWELL and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -9816,7 +9816,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 863-2284",
     "businessType": "FFL Dealer",
     "description": "SWIFT FIREARMS is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -9865,7 +9865,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 682-6887",
     "businessType": "Ammunition/Supplies",
     "description": "X COUNT FIREARMS & AMMUNITION is a ammunition and firearms supply retailer serving EAGLE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Ammunition Sales",
       "Reloading Supplies",
@@ -9913,7 +9913,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 377-2535",
     "businessType": "FFL Dealer",
     "description": "BUCKHORN GUN SHOP / BGS GUNS is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -9962,12 +9962,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(253) 363-1987",
     "businessType": "Shooting Range",
     "description": "LONG RANGE OUTFITTERS is a shooting range facility serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -10012,7 +10012,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 318-6272",
     "businessType": "FFL Dealer",
     "description": "I GUNS is a licensed Federal Firearms License dealer serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -10061,7 +10061,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 505-0130",
     "businessType": "Ammunition/Supplies",
     "description": "NORTHWEST GUN SUPPLY, NGS is a ammunition and firearms supply retailer serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Ammunition Sales",
       "Reloading Supplies",
@@ -10109,7 +10109,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 918-4647",
     "businessType": "Ammunition/Supplies",
     "description": "WHITE DOG ARMS / WHITE DOG AMMO is a ammunition and firearms supply retailer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Ammunition Sales",
       "Reloading Supplies",
@@ -10157,7 +10157,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 859-6591",
     "businessType": "FFL Dealer",
     "description": "MILLER FIREARMS is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -10206,7 +10206,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 484-4099",
     "businessType": "Gun Store",
     "description": "X RING ARMORY is a full-service firearms retailer serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "New Firearms",
       "Used Firearms",
@@ -10256,7 +10256,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(210) 387-9797",
     "businessType": "FFL Dealer",
     "description": "ARMA15 is a licensed Federal Firearms License dealer serving EAGLE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -10305,7 +10305,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 380-8399",
     "businessType": "Ammunition/Supplies",
     "description": "KEEK'S SUPPLY is a ammunition and firearms supply retailer serving CHUBBUCK and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Ammunition Sales",
       "Reloading Supplies",
@@ -10353,7 +10353,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 963-0429",
     "businessType": "FFL Dealer",
     "description": "BLACK CANYON PRECISION is a licensed Federal Firearms License dealer serving EMMETT and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -10403,7 +10403,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(530) 739-9694",
     "businessType": "FFL Dealer",
     "description": "EVERYDAY ARMIS is a licensed Federal Firearms License dealer serving KUNA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -10452,7 +10452,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 360-6338",
     "businessType": "FFL Dealer",
     "description": "SUGAR GUN RUNNERS is a licensed Federal Firearms License dealer serving SUGAR CITY and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -10501,7 +10501,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 790-2437",
     "businessType": "FFL Dealer",
     "description": "ACES AUCTIONS is a licensed Federal Firearms License dealer serving LEWISTON and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -10550,7 +10550,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 756-4980",
     "businessType": "FFL Dealer",
     "description": "ACKS AUCTION & TRADING POST is a licensed Federal Firearms License dealer serving SALMON and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -10599,7 +10599,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 345-3421",
     "businessType": "FFL Dealer",
     "description": "ALLAN'S AUTOMOTIVE is a licensed Federal Firearms License dealer serving GARDEN CITY and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -10648,7 +10648,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 859-2725",
     "businessType": "FFL Dealer",
     "description": "OUTFITTER TRADING POST is a licensed Federal Firearms License dealer serving GARDEN VALLEY and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -10697,7 +10697,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 677-2743",
     "businessType": "Pawn Shop",
     "description": "QUICK PAWN is a pawn shop with firearms sales serving BURLEY and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -10746,7 +10746,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(916) 203-7376",
     "businessType": "FFL Dealer",
     "description": "MB GUNS is a licensed Federal Firearms License dealer serving IDAHO CITY and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -10795,7 +10795,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 946-8340",
     "businessType": "Gunsmith",
     "description": "JUSTIN ANDERSON GUNSMITHING is a professional gunsmith and firearms service provider serving BLANCHARD and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -10846,7 +10846,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 527-3900",
     "businessType": "FFL Dealer",
     "description": "ANDY'S GUN SHOP is a licensed Federal Firearms License dealer serving ARCO and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -10895,7 +10895,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 671-2567",
     "businessType": "Gun Store",
     "description": "ARMORY 47 is a full-service firearms retailer serving POST FALLS and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "New Firearms",
       "Used Firearms",
@@ -10945,7 +10945,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 430-5544",
     "businessType": "Tactical/Training",
     "description": "BLACK DESERT TACTICAL is a tactical training and firearms instruction facility serving HEYBURN and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -10996,7 +10996,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 556-0821",
     "businessType": "FFL Dealer",
     "description": "ATWELL GUN WORKS is a licensed Federal Firearms License dealer serving OSBURN and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -11045,7 +11045,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 608-5179",
     "businessType": "FFL Dealer",
     "description": "ALLTERRA ARMS / ALLTERRA is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -11094,7 +11094,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 821-8483",
     "businessType": "Gunsmith",
     "description": "UPPER LEVEL GUNSMITHING is a professional gunsmith and firearms service provider serving AMMON and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -11145,7 +11145,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 652-7221",
     "businessType": "Gunsmith",
     "description": "DEREKS GUNSMITHING is a professional gunsmith and firearms service provider serving ASHTON and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -11196,7 +11196,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 631-1287",
     "businessType": "FFL Dealer",
     "description": "RANDAL BAILEY ARMS is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -11245,7 +11245,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 452-5958",
     "businessType": "FFL Dealer",
     "description": "EVANS GUN REPAIR is a licensed Federal Firearms License dealer serving FRUITLAND and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -11294,7 +11294,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 436-8894",
     "businessType": "Pawn Shop",
     "description": "GOODDAY PAWN & AUTO is a pawn shop with firearms sales serving RUPERT and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -11343,7 +11343,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 709-4881",
     "businessType": "Sporting Goods",
     "description": "EAGLE ROCK SPORTING GOODS is a sporting goods retailer with firearms department serving IDAHO FALLS and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -11392,7 +11392,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 672-7900",
     "businessType": "FFL Dealer",
     "description": "CABELA'S 419 is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -11441,12 +11441,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 301-8677",
     "businessType": "Shooting Range",
     "description": "SHOOTING SPORTS SPECIALTIES is a shooting range facility serving NEW MEADOWS and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -11491,7 +11491,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 678-1573",
     "businessType": "FFL Dealer",
     "description": "PAULS SPORT SHOP is a licensed Federal Firearms License dealer serving BURLEY and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -11540,7 +11540,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 689-3464",
     "businessType": "Ammunition/Supplies",
     "description": "BLACKROCK GUNS & AMMO is a ammunition and firearms supply retailer serving CATALDO and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Ammunition Sales",
       "Reloading Supplies",
@@ -11588,7 +11588,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(509) 595-7468",
     "businessType": "Gunsmith",
     "description": "CLIFFS GUNSMITHING is a professional gunsmith and firearms service provider serving MOSCOW and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -11639,7 +11639,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(714) 943-8133",
     "businessType": "Gun Manufacturer",
     "description": "NORTH REACH MANUFACTURING is a firearms manufacturing company serving MENAN and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -11688,7 +11688,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 228-3732",
     "businessType": "FFL Dealer",
     "description": "US GUN REPAIR is a licensed Federal Firearms License dealer serving ROBERTS and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -11737,7 +11737,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 791-5011",
     "businessType": "FFL Dealer",
     "description": "BEYOND PRIMAL FIREARMS is a licensed Federal Firearms License dealer serving LEWISTON and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -11786,7 +11786,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 287-8986",
     "businessType": "FFL Dealer",
     "description": "BI MART #688 is a licensed Federal Firearms License dealer serving KUNA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -11835,7 +11835,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(310) 536-0611",
     "businessType": "Sporting Goods",
     "description": "BIG 5 SPORTING GOODS #266 is a sporting goods retailer with firearms department serving POCATELLO and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -11884,7 +11884,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(310) 536-0611",
     "businessType": "Sporting Goods",
     "description": "BIG 5 SPORTING GOODS #248 is a sporting goods retailer with firearms department serving TWIN FALLS and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -11933,7 +11933,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(310) 536-0611",
     "businessType": "Sporting Goods",
     "description": "BIG 5 SPORTING GOODS #240 is a sporting goods retailer with firearms department serving IDAHO FALLS and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -11982,7 +11982,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(310) 536-0611",
     "businessType": "Sporting Goods",
     "description": "BIG 5 SPORTING GOODS #183 is a sporting goods retailer with firearms department serving COEUR D ALENE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -12031,7 +12031,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(310) 536-0611",
     "businessType": "Sporting Goods",
     "description": "BIG 5 SPORTING GOODS #410 is a sporting goods retailer with firearms department serving SANDPOINT and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -12080,7 +12080,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 695-6423",
     "businessType": "Gun Store",
     "description": "BIG CREEK ARMORY is a full-service firearms retailer serving CASCADE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "New Firearms",
       "Used Firearms",
@@ -12130,7 +12130,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 278-1159",
     "businessType": "Gunsmith",
     "description": "BIGHORN GUNSMITHING is a professional gunsmith and firearms service provider serving NEW PLYMOUTH and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -12181,7 +12181,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(541) 334-0681",
     "businessType": "FFL Dealer",
     "description": "BI-MART #628 is a licensed Federal Firearms License dealer serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -12230,7 +12230,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 233-3912",
     "businessType": "Ammunition/Supplies",
     "description": "BISHOP AMMUNITION AND FIREARMS is a ammunition and firearms supply retailer serving POCATELLO and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Ammunition Sales",
       "Reloading Supplies",
@@ -12278,7 +12278,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 465-1940",
     "businessType": "FFL Dealer",
     "description": "B D M is a licensed Federal Firearms License dealer serving CALDWELL and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -12327,7 +12327,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 946-7225",
     "businessType": "Gun Store",
     "description": "BLACKTAIL ARMORY is a full-service firearms retailer serving SAGLE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "New Firearms",
       "Used Firearms",
@@ -12377,7 +12377,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(888) 781-8778",
     "businessType": "FFL Dealer",
     "description": "SILENCER CENTRAL is a licensed Federal Firearms License dealer serving KUNA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -12426,7 +12426,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(217) 979-7730",
     "businessType": "FFL Dealer",
     "description": "BOOTLEG INC is a licensed Federal Firearms License dealer serving KUNA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -12475,7 +12475,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 521-7068",
     "businessType": "Gunsmith",
     "description": "PREMIER GUNSMITHING & COATINGS is a professional gunsmith and firearms service provider serving IDAHO FALLS and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -12526,7 +12526,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 597-6446",
     "businessType": "FFL Dealer",
     "description": "WHOLESALE SHOOTERS SUPPLIES is a licensed Federal Firearms License dealer serving PONDERAY and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -12575,7 +12575,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 879-2755",
     "businessType": "FFL Dealer",
     "description": "LONE PINE RIFLEWORKS is a licensed Federal Firearms License dealer serving CHALLIS and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -12624,7 +12624,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 888-0957",
     "businessType": "FFL Dealer",
     "description": "CT BRIAN is a licensed Federal Firearms License dealer serving MERIDIAN and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -12673,7 +12673,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 920-1981",
     "businessType": "Gunsmith",
     "description": "KENS CUSTOM GUNS is a professional gunsmith and firearms service provider serving BONNERS FERRY and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -12725,7 +12725,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 358-3920",
     "businessType": "FFL Dealer",
     "description": "BROCKMANS RIFLES is a licensed Federal Firearms License dealer serving GOODING and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -12774,7 +12774,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 354-2344",
     "businessType": "FFL Dealer",
     "description": "TETON ACE HARDWARE is a licensed Federal Firearms License dealer serving DRIGGS and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -12823,7 +12823,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 386-9349",
     "businessType": "FFL Dealer",
     "description": "FLINT'N FRIZZEN is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -12872,7 +12872,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 308-9518",
     "businessType": "FFL Dealer",
     "description": "MCB SPORTS is a licensed Federal Firearms License dealer serving TWIN FALLS and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -12921,7 +12921,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 487-8003",
     "businessType": "FFL Dealer",
     "description": "SAMS LOCKER is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -12970,12 +12970,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 798-7468",
     "businessType": "Shooting Range",
     "description": "DIAMONDBACK SHOOTING RANGE is a shooting range facility serving LEWISTON and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -13020,7 +13020,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 696-2171",
     "businessType": "FFL Dealer",
     "description": "BURNING BULLET is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -13069,7 +13069,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 656-5824",
     "businessType": "FFL Dealer",
     "description": "EXPEDITION FIREARMS, BARREL BOSS is a licensed Federal Firearms License dealer serving IDAHO FALLS and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -13118,7 +13118,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 467-0010",
     "businessType": "FFL Dealer",
     "description": "GEM STATE ARMS is a licensed Federal Firearms License dealer serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -13167,7 +13167,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 241-6931",
     "businessType": "Ammunition/Supplies",
     "description": "BERNIES GUNS  &  AMMO is a ammunition and firearms supply retailer serving POCATELLO and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Ammunition Sales",
       "Reloading Supplies",
@@ -13215,7 +13215,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 957-4511",
     "businessType": "FFL Dealer",
     "description": "CREATIVE CARNAGE is a licensed Federal Firearms License dealer serving BOISE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -13264,7 +13264,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 250-3664",
     "businessType": "FFL Dealer",
     "description": "SO SIMPLY EDGY is a licensed Federal Firearms License dealer serving NAMPA and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -13313,7 +13313,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 462-3814",
     "businessType": "FFL Dealer",
     "description": "CALLAWAY'S GUNS is a licensed Federal Firearms License dealer serving GARDEN VALLEY and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -13362,7 +13362,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(253) 208-5826",
     "businessType": "FFL Dealer",
     "description": "CAMAS PRAIRIE FIREARMS is a licensed Federal Firearms License dealer serving GRANGEVILLE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -13411,7 +13411,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 746-2217",
     "businessType": "FFL Dealer",
     "description": "BOBS GUNS is a licensed Federal Firearms License dealer serving LEWISTON and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -13460,7 +13460,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 664-1913",
     "businessType": "Pawn Shop",
     "description": "CDA PAWN BROS is a pawn shop with firearms sales serving COEUR D ALENE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -13509,7 +13509,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 773-2331",
     "businessType": "FFL Dealer",
     "description": "CENTER TARGET SPORTS is a licensed Federal Firearms License dealer serving POST FALLS and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -13558,7 +13558,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 720-5949",
     "businessType": "Pawn Shop",
     "description": "GUFFY'S GUN AND PAWN is a pawn shop with firearms sales serving HAILEY and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -13607,7 +13607,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 413-8549",
     "businessType": "FFL Dealer",
     "description": "HELLS CANYON MOUNTAIN SPORTS is a licensed Federal Firearms License dealer serving LEWISTON and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -13656,7 +13656,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 755-1401",
     "businessType": "FFL Dealer",
     "description": "IDAHO FIREARMS COMPANY is a licensed Federal Firearms License dealer serving PLUMMER and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -13705,7 +13705,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 771-0922",
     "businessType": "FFL Dealer",
     "description": "RENEGADE RIFLES is a licensed Federal Firearms License dealer serving HAYDEN and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -13754,7 +13754,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 233-3912",
     "businessType": "FFL Dealer",
     "description": "BISHOP'S GUN BARN is a licensed Federal Firearms License dealer serving POCATELLO and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -13803,7 +13803,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 308-3978",
     "businessType": "FFL Dealer",
     "description": "QUICK RESPONSE FIREARMS is a licensed Federal Firearms License dealer serving TWIN FALLS and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -13852,7 +13852,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 891-9489",
     "businessType": "FFL Dealer",
     "description": "SEMPER FIREARMS is a licensed Federal Firearms License dealer serving PAYETTE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -13901,7 +13901,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 309-2334",
     "businessType": "Gun Store",
     "description": "LUKE 22 ARMORY is a full-service firearms retailer serving HAILEY and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "New Firearms",
       "Used Firearms",
@@ -13951,7 +13951,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 627-7022",
     "businessType": "FFL Dealer",
     "description": "NORTH IDAHO GUNWORKS is a licensed Federal Firearms License dealer serving PORTHILL and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -14000,7 +14000,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 920-0985",
     "businessType": "Gunsmith",
     "description": "CREWSCUSTOMCOM is a professional gunsmith and firearms service provider serving SAGLE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -14052,7 +14052,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 882-4555",
     "businessType": "FFL Dealer",
     "description": "TRI STATE OUTFITTERS is a licensed Federal Firearms License dealer serving MOSCOW and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -14101,7 +14101,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 356-5797",
     "businessType": "FFL Dealer",
     "description": "HUSKY OUTFITTERS is a licensed Federal Firearms License dealer serving REXBURG and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -14150,7 +14150,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 746-1368",
     "businessType": "FFL Dealer",
     "description": "NORTH 40 OUTFITTERS is a licensed Federal Firearms License dealer serving LEWISTON and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -14199,7 +14199,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 209-2323",
     "businessType": "Gun Store",
     "description": "FILIKOS ARMORY is a full-service firearms retailer serving COEUR D ALENE and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "New Firearms",
       "Used Firearms",
@@ -14249,7 +14249,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 539-6767",
     "businessType": "FFL Dealer",
     "description": "DAVE'S GUN CLEANING & REPAIR is a licensed Federal Firearms License dealer serving HAGERMAN and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -14298,7 +14298,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "Alexander, Elden Lane Sr & Jr is a professional gunsmith and firearms service provider serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -14349,7 +14349,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Rocky Mountain True Value is a licensed Federal Firearms License dealer serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -14398,7 +14398,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "Benfield Precision LLC is a firearms manufacturing company serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -14448,7 +14448,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 477-5270",
     "businessType": "FFL Dealer",
     "description": "Bi-Mart #681 is a licensed Federal Firearms License dealer serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -14489,15 +14489,15 @@ export const allFFLs: FFLBusiness[] = [
     "slug": "burr-international-inc",
     "businessName": "Burr International Inc",
     "licenseName": "",
-    "address": "1455 Star Ln",
+    "address": "1455 StarIcon Ln",
     "city": "Emmett",
     "state": "ID",
     "zip": "83617",
-    "fullAddress": "1455 Star Ln, Emmett, ID 83617",
+    "fullAddress": "1455 StarIcon Ln, Emmett, ID 83617",
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Burr International Inc is a licensed Federal Firearms License dealer serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -14546,7 +14546,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "Emmett Gun Store is a firearms manufacturing company serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -14595,7 +14595,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Ferguson and Sons Construction LLC is a licensed Federal Firearms License dealer serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -14644,7 +14644,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Store",
     "description": "Gardner Arsenal LLC is a full-service firearms retailer serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "New Firearms",
       "Used Firearms",
@@ -14694,7 +14694,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Pawn Shop",
     "description": "Kingfisher Sporting Goods & Pawn is a pawn shop with firearms sales serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -14743,7 +14743,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 691-6452",
     "businessType": "Gunsmith",
     "description": "Hudson Arms is a professional gunsmith and firearms service provider serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -14794,7 +14794,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Little Trapper Idaho Inc is a licensed Federal Firearms License dealer serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -14843,12 +14843,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 365-4551",
     "businessType": "Shooting Range",
     "description": "Gem County Rod & Gun Club is a shooting range facility serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -14893,12 +14893,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Shooting Range",
     "description": "Kingfisher Archery is a shooting range facility serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -14943,7 +14943,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 963-7040",
     "businessType": "Sporting Goods",
     "description": "D&B Supply Emmett is a sporting goods retailer with firearms department serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -14992,7 +14992,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 365-4044",
     "businessType": "Pawn Shop",
     "description": "Rocky Mountain Gun N Pawn is a pawn shop with firearms sales serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -15041,7 +15041,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Sporting Goods",
     "description": "Larry's Sports is a sporting goods retailer with firearms department serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -15090,7 +15090,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 996-3555",
     "businessType": "FFL Dealer",
     "description": "Little Trapper Inc is a licensed Federal Firearms License dealer serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -15139,7 +15139,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Low Mountain is a licensed Federal Firearms License dealer serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -15188,7 +15188,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Rowley Enterprises is a licensed Federal Firearms License dealer serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -15237,7 +15237,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Wild Thang Farms is a licensed Federal Firearms License dealer serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -15286,7 +15286,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "Jerry Harshbarger Gunsmith is a professional gunsmith and firearms service provider serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -15337,7 +15337,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Store",
     "description": "Up In Arms Armory is a full-service firearms retailer serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "New Firearms",
       "Used Firearms",
@@ -15387,7 +15387,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Tactical/Training",
     "description": "Veriforce Tactical is a tactical training and firearms instruction facility serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -15438,7 +15438,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "Walker Winchesters is a firearms manufacturing company serving Emmett and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -15487,7 +15487,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "Eubanks Gunsmithing is a professional gunsmith and firearms service provider serving Owyhee County and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -15538,12 +15538,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Shooting Range",
     "description": "Homedale Gun Club is a shooting range facility serving Marsing and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -15588,12 +15588,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 459-2256",
     "businessType": "Shooting Range",
     "description": "Homedale Rod & Gun Club is a shooting range facility serving Marsing and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -15638,7 +15638,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Tactical/Training",
     "description": "I Am Focused Firearms Training is a tactical training and firearms instruction facility serving Marsing and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -15688,7 +15688,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 229-4677",
     "businessType": "Tactical/Training",
     "description": "American Firearms Academy is a tactical training and firearms instruction facility serving Murphy and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -15738,7 +15738,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 495-1154",
     "businessType": "FFL Dealer",
     "description": "Owyhee County Sheriff's Office - CCW Permits is a licensed Federal Firearms License dealer serving Murphy and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -15787,7 +15787,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Amoureux Homedale Gun Show is a licensed Federal Firearms License dealer serving Homedale and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -15836,7 +15836,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Owyhee County Fairgrounds is a licensed Federal Firearms License dealer serving Homedale and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -15885,12 +15885,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Shooting Range",
     "description": "BLM Snake River Birds of Prey NCA is a shooting range facility serving Murphy and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -15935,7 +15935,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Pawn Shop",
     "description": "Big Valley Gun and Pawn LLC is a pawn shop with firearms sales serving Homedale and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -15984,7 +15984,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "CLC Custom Guns & Gunsmithing is a professional gunsmith and firearms service provider serving Homedale and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -16036,7 +16036,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Rod Fivecoat Auctions is a licensed Federal Firearms License dealer serving Homedale and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -16085,7 +16085,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "McCray, John Calvin is a licensed Federal Firearms License dealer serving Homedale and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -16134,7 +16134,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Schaffers Corner is a licensed Federal Firearms License dealer serving Murphy and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -16183,7 +16183,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Wilkinson Arms LLC is a licensed Federal Firearms License dealer serving Murphy and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -16232,7 +16232,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 901-4169",
     "businessType": "Ammunition/Supplies",
     "description": "Murphys Law Guns & Ammo LLC is a ammunition and firearms supply retailer serving Murphy and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Ammunition Sales",
       "Reloading Supplies",
@@ -16280,7 +16280,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Desert West Arms is a licensed Federal Firearms License dealer serving Rural Owyhee and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -16329,12 +16329,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Shooting Range",
     "description": "Idaho Sporting Clays & Hunting Club is a shooting range facility serving Homedale and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -16379,7 +16379,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(541) 889-3135",
     "businessType": "Sporting Goods",
     "description": "The Outdoorsman is a sporting goods retailer with firearms department serving Payette and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",
@@ -16428,7 +16428,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "Crossfire Metal Works / Crossfire is a firearms manufacturing company serving Payette and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -16477,7 +16477,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 741-4040",
     "businessType": "Gun Store",
     "description": "Watchdog Armory, LLC is a full-service firearms retailer serving Payette and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "New Firearms",
       "Used Firearms",
@@ -16527,7 +16527,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 861-5425",
     "businessType": "Gunsmith",
     "description": "Idaho Custom Arms is a professional gunsmith and firearms service provider serving Payette and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -16579,7 +16579,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(702) 332-7261",
     "businessType": "Tactical/Training",
     "description": "Q's Combat & Tactical LLC is a tactical training and firearms instruction facility serving Payette and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -16630,7 +16630,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gunsmith",
     "description": "Bear Mountain Gun & Tool is a professional gunsmith and firearms service provider serving New Plymouth and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Firearm Repair",
       "Custom Work",
@@ -16681,12 +16681,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 514-9503",
     "businessType": "Shooting Range",
     "description": "Prism Protection Services / Prism Ranch is a shooting range facility serving New Plymouth and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -16731,12 +16731,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Shooting Range",
     "description": "Snake River Sportsman Shotgun is a shooting range facility serving Fruitland and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -16781,7 +16781,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(541) 212-2882",
     "businessType": "Tactical/Training",
     "description": "Neil Goodfellow Firearms Training is a tactical training and firearms instruction facility serving Fruitland and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Training Courses",
       "CCW Classes",
@@ -16831,7 +16831,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 514-9503",
     "businessType": "FFL Dealer",
     "description": "Prism Ranch (Mark Clark) is a licensed Federal Firearms License dealer serving New Plymouth and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -16880,12 +16880,12 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Shooting Range",
     "description": "Payette County Archers is a shooting range facility serving Payette and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Range Rental",
       "Safety Courses",
       "Equipment Rental",
-      "Target Sales",
+      "CursorArrowRaysIcon Sales",
       "Training Classes"
     ],
     "specialties": [
@@ -16930,7 +16930,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Softball Complex - Fruitland is a licensed Federal Firearms License dealer serving Fruitland and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -16979,7 +16979,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Gun Manufacturer",
     "description": "SRG Armament is a firearms manufacturing company serving New Plymouth and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Custom Manufacturing",
       "OEM Services",
@@ -17028,7 +17028,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Gunrunner is a licensed Federal Firearms License dealer serving Fruitland and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -17077,7 +17077,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Cambridge Distributing LLC is a licensed Federal Firearms License dealer serving Fruitland and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -17126,7 +17126,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "Pawn Shop",
     "description": "Gem State Pawn is a pawn shop with firearms sales serving Fruitland and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Pawn Services",
       "Firearm Sales",
@@ -17175,7 +17175,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "",
     "businessType": "FFL Dealer",
     "description": "Highlight Technologies is a licensed Federal Firearms License dealer serving Fruitland and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "FFL Transfers",
       "Background Checks",
@@ -17224,7 +17224,7 @@ export const allFFLs: FFLBusiness[] = [
     "phone": "(208) 793-3121",
     "businessType": "Sporting Goods",
     "description": "Ponderosa Sports & Mercantile is a sporting goods retailer with firearms department serving Horseshoe Bend and the surrounding Treasure Valley area. We provide professional firearms sales, transfers, and related services to the Idaho shooting community.",
-    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, Sun: Closed",
+    "hours": "Mon-Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 5:00 PM, SunIcon: Closed",
     "services": [
       "Hunting Supplies",
       "Outdoor Gear",

@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
-import { CircleIcon } from "@heroicons/react/24/outline"
+import { EllipsisHorizontalIcon } from "@heroicons/react/24/outline"
 
 import { cn } from "@/lib/utils"
 
@@ -36,7 +36,7 @@ function RadioGroupItem({
         data-slot="radio-group-indicator"
         className="relative flex items-center justify-center"
       >
-        <CircleIcon className="fill-primary absolute top-micro/2 left-1/2 h-icon-xs w-icon-xs -translate-x-1/2 -translate-y-1/2" />
+        <EllipsisHorizontalIcon className="fill-primary absolute top-micro/2 left-1/2 h-icon-xs w-icon-xs -translate-x-1/2 -translate-y-1/2" />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   )

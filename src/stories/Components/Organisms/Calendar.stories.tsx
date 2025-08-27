@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { CalendarDaysIcon } from '@heroicons/react/24/outline';
-import { Calendar } from '@/components/ui/calendar';
+import { CalendarDaysIcon } from '@/components/ui/calendar';
 import React from 'react';
 
-const meta: Meta<typeof Calendar> = {
-  title: 'Design System/Organisms/Calendar',
-  component: Calendar,
+const meta: Meta<typeof CalendarDaysIcon> = {
+  title: 'Design System/Organisms/CalendarDaysIcon',
+  component: CalendarDaysIcon,
   parameters: {
     layout: 'centered',
   },

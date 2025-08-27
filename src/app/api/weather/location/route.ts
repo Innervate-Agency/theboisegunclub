@@ -20,7 +20,7 @@ async function fetchLocationWeather(lat: number, lng: number, locationName: stri
       alerts: weatherData.alerts || [],
       // Additional data for enhanced UI
       shortForecast: `${weatherData.temperature}°F, ${weatherData.windDirection} wind ${weatherData.windSpeed}mph`,
-      detailedForecast: `Current conditions: ${weatherData.temperature}°F with ${weatherData.windDirection} winds at ${weatherData.windSpeed}mph. Fire danger: ${weatherData.fireDanger}. Range status: ${weatherData.accessStatus}.`,
+      detailedForecast: `Current conditions: ${weatherData.temperature}°F with ${weatherData.windDirection} winds at ${weatherData.windSpeed}mph. FireIcon danger: ${weatherData.fireDanger}. Range status: ${weatherData.accessStatus}.`,
       humidity: 25, // OpenWeatherMap provides this but our service doesn't expose it
       shootingConditions: determineShootingConditions(weatherData.temperature, weatherData.windSpeed, weatherData.weatherIcon),
       // Raw coordinates

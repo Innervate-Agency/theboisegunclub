@@ -13,27 +13,13 @@ import { EmptyState } from '@/components/ui/empty-state'
 import { EnhancedPagination } from '@/components/ui/enhanced-pagination'
 import { CardSkeleton } from '@/components/ui/card-skeleton'
 import { DirectoryFloatingBadges } from '@/components/ui/hero-floating-badges'
-import { DirectoryEmbers } from '@/components/ui/hero-directory-embers'
 import { DirectoryStatsGrid } from '@/components/ui/directory-stats-grid'
 import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
 import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { DirectoryTicker } from '@/components/ui/directory-ticker'
-import { ArrowRightIcon, BuildingStorefrontIcon, CheckCircleIcon, ChevronRightIcon, ClockIcon, ClubIcon, CopperMemberIcon, CurrencyDollarIcon, FunnelIcon, GoldPartnerIcon, GunsmithIcon, MagnifyingGlassIcon, MapPinIcon, PlusIcon, ShieldCheckIcon, ShootingRangeIcon, SilverMemberIcon, StandardMemberIcon, StarIcon, TacticalRetailIcon, TacticalServicesIcon, TrainingIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { AcademicCapIcon, ArrowRightIcon, BuildingStorefrontIcon, CheckCircleIcon, ChevronRightIcon, ClockIcon, Cog6ToothIcon, CubeIcon, CurrencyDollarIcon, FunnelIcon, MagnifyingGlassIcon, MapPinIcon, PlusIcon, ShieldCheckIcon, StarIcon, UserIcon, UsersIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
 
-// Import tactical icons for authentic firearms business categorization
-import {
-  ShootingRangeIcon,
-  GunsmithIcon,
-  TrainingIcon,
-  TacticalRetailIcon,
-  ClubIcon,
-  TacticalServicesIcon,
-  GoldPartnerIcon,
-  SilverMemberIcon,
-  CopperMemberIcon,
-  StandardMemberIcon
-} from '@/lib/tactical-icons'
 
 // Business data type
 interface BusinessData {
@@ -152,7 +138,7 @@ const directoryListings: BusinessData[] = [
     address: "7681 W Overland Rd, Boise, ID 83709",
     phone: "(208) 373-9300",
     website: "https://www.sportsmans.com",
-    hours: "Mon-Sat 9-9, Sun 10-7",
+    hours: "Mon-Sat 9-9, SunIcon 10-7",
     tier: "silver",
     specialties: ["Wide Selection", "Hunting Gear", "Ammunition", "Optics", "Outdoor Equipment"],
     isVerified: true,
@@ -169,7 +155,7 @@ const directoryListings: BusinessData[] = [
     address: "Multiple locations in Treasure Valley",
     phone: "(208) 375-3435",
     website: "https://www.dbs.com",
-    hours: "Mon-Fri 7:30-8, Sat 8-6, Sun 9-5",
+    hours: "Mon-Fri 7:30-8, Sat 8-6, SunIcon 9-5",
     tier: "silver",
     specialties: ["Firearms", "Ammunition", "Ranch Supplies", "Local Chain", "Hunting Licenses"],
     isVerified: true,
@@ -205,7 +191,7 @@ const directoryListings: BusinessData[] = [
     address: "10512 W Fairview Ave, Boise, ID 83713",
     phone: "(208) 322-5650",
     website: "https://www.buckhorngunandpawn.com",
-    hours: "Mon-Sat 10-7, Sun 11-5",
+    hours: "Mon-Sat 10-7, SunIcon 11-5",
     tier: "bronze",
     specialties: ["Gunsmithing", "Pawn Services", "Used Guns", "Repairs", "FFL Transfers"],
     isVerified: true,
@@ -241,7 +227,7 @@ const directoryListings: BusinessData[] = [
     address: "449 S Fitness Pl, Eagle, ID 83616",
     phone: "(208) 938-4098",
     website: "https://www.snakerivershootingproducts.com",
-    hours: "Mon-Sat 10-7, Sun 12-5",
+    hours: "Mon-Sat 10-7, SunIcon 12-5",
     tier: "silver",
     specialties: ["Training Courses", "CCW", "Youth Programs", "Pro Shop", "Range Access"],
     isVerified: true,
@@ -364,7 +350,7 @@ export function DirectoryPageStandardized() {
   // Activity feed data for directory
   const activityFeedData = [
     {
-      icon: Shield,
+      icon: ShieldCheckIcon,
       iconColor: "text-nav-directory",
       iconBgColor: "bg-nav-directory/20",
       title: "New Business Verified",
@@ -372,7 +358,7 @@ export function DirectoryPageStandardized() {
       timeAgo: "3h ago"
     },
     {
-      icon: Star,
+      icon: StarIcon,
       iconColor: "text-rusty-orange",
       iconBgColor: "bg-rusty-orange/20",
       title: "Reviews Updated",
@@ -380,7 +366,7 @@ export function DirectoryPageStandardized() {
       timeAgo: "5h ago"
     },
     {
-      icon: Users,
+      icon: UsersIcon,
       iconColor: "text-sagebrush-green",
       iconBgColor: "bg-sagebrush-green/20",
       title: "Community Growth",
@@ -391,12 +377,12 @@ export function DirectoryPageStandardized() {
 
   // Directory category stats - Updated with tactical icons
   const directoryCategoryStats = [
-    { icon: ShootingRangeIcon, title: "Shooting Ranges", value: directoryListings.filter(b => b.category === 'Range').length.toString(), subtitle: "Indoor & outdoor", color: "text-nav-armory" },
-    { icon: GunsmithIcon, title: "Gunsmiths", value: directoryListings.filter(b => b.category === 'Gunsmith').length.toString(), subtitle: "Custom & repair", color: "text-nav-intel" },
-    { icon: TacticalRetailIcon, title: "Retail Stores", value: directoryListings.filter(b => b.category === 'Retail').length.toString(), subtitle: "FFLs & dealers", color: "text-nav-marketplace" },
-    { icon: TrainingIcon, title: "Training Centers", value: directoryListings.filter(b => b.category === 'Training').length.toString(), subtitle: "Classes & courses", color: "text-nav-events" },
-    { icon: ClubIcon, title: "Clubs & Orgs", value: directoryListings.filter(b => b.category === 'Club').length.toString(), subtitle: "Competition teams", color: "text-nav-forums" },
-    { icon: Storefront, title: "Total Businesses", value: directoryListings.length.toString(), subtitle: "Verified listings", color: "text-nav-directory" }
+    { icon: MapPinIcon, title: "Shooting Ranges", value: directoryListings.filter(b => b.category === 'Range').length.toString(), subtitle: "Indoor & outdoor", color: "text-nav-armory" },
+    { icon: WrenchScrewdriverIcon, title: "Gunsmiths", value: directoryListings.filter(b => b.category === 'Gunsmith').length.toString(), subtitle: "Custom & repair", color: "text-nav-intel" },
+    { icon: BuildingStorefrontIcon, title: "Retail Stores", value: directoryListings.filter(b => b.category === 'Retail').length.toString(), subtitle: "FFLs & dealers", color: "text-nav-marketplace" },
+    { icon: AcademicCapIcon, title: "Training Centers", value: directoryListings.filter(b => b.category === 'Training').length.toString(), subtitle: "Classes & courses", color: "text-nav-events" },
+    { icon: CubeIcon, title: "Clubs & Orgs", value: directoryListings.filter(b => b.category === 'Club').length.toString(), subtitle: "Competition teams", color: "text-nav-forums" },
+    { icon: BuildingStorefrontIcon, title: "Total Businesses", value: directoryListings.length.toString(), subtitle: "Verified listings", color: "text-nav-directory" }
   ]
 
   // Filter configuration
@@ -409,7 +395,7 @@ export function DirectoryPageStandardized() {
     perPageOptions: [8, 12, 24, 48],
     enableInfiniteScroll: false,
     
-    // Search filter function
+    // MagnifyingGlassIcon filter function
     searchFilter: (business, query) => {
       const searchTerms = query.toLowerCase()
       return (
@@ -485,12 +471,12 @@ export function DirectoryPageStandardized() {
       maxVisible: 6,
       collapsible: false,
       options: [
-        { id: 'range', label: 'Shooting Ranges', icon: ShootingRangeIcon, count: directoryListings.filter(b => b.category === 'Range').length, color: 'text-nav-armory' },
-        { id: 'gunsmith', label: 'Gunsmiths', icon: GunsmithIcon, count: directoryListings.filter(b => b.category === 'Gunsmith').length, color: 'text-nav-intel' },
-        { id: 'training', label: 'Training', icon: TrainingIcon, count: directoryListings.filter(b => b.category === 'Training').length, color: 'text-nav-events' },
-        { id: 'retail', label: 'Retail', icon: TacticalRetailIcon, count: directoryListings.filter(b => b.category === 'Retail').length, color: 'text-nav-marketplace' },
-        { id: 'club', label: 'Clubs', icon: ClubIcon, count: directoryListings.filter(b => b.category === 'Club').length, color: 'text-nav-forums' },
-        { id: 'service', label: 'Services', icon: TacticalServicesIcon, count: directoryListings.filter(b => b.category === 'Service').length, color: 'text-nav-directory' }
+        { id: 'range', label: 'Shooting Ranges', icon: MapPinIcon, count: directoryListings.filter(b => b.category === 'Range').length, color: 'text-nav-armory' },
+        { id: 'gunsmith', label: 'Gunsmiths', icon: WrenchScrewdriverIcon, count: directoryListings.filter(b => b.category === 'Gunsmith').length, color: 'text-nav-intel' },
+        { id: 'training', label: 'Training', icon: AcademicCapIcon, count: directoryListings.filter(b => b.category === 'Training').length, color: 'text-nav-events' },
+        { id: 'retail', label: 'Retail', icon: BuildingStorefrontIcon, count: directoryListings.filter(b => b.category === 'Retail').length, color: 'text-nav-marketplace' },
+        { id: 'club', label: 'Clubs', icon: CubeIcon, count: directoryListings.filter(b => b.category === 'Club').length, color: 'text-nav-forums' },
+        { id: 'service', label: 'Services', icon: Cog6ToothIcon, count: directoryListings.filter(b => b.category === 'Service').length, color: 'text-nav-directory' }
       ]
     },
     {
@@ -499,10 +485,10 @@ export function DirectoryPageStandardized() {
       maxVisible: 4,
       collapsible: false,
       options: [
-        { id: 'gold', label: 'Gold Partners', icon: GoldPartnerIcon, count: directoryListings.filter(b => b.tier === 'gold').length, color: 'text-weathered-gold' },
-        { id: 'silver', label: 'Silver Members', icon: SilverMemberIcon, count: directoryListings.filter(b => b.tier === 'silver').length, color: 'text-warm-stone' },
-        { id: 'bronze', label: 'Bronze Members', icon: CopperMemberIcon, count: directoryListings.filter(b => b.tier === 'bronze').length, color: 'text-sandy-ochre' },
-        { id: 'standard', label: 'Standard', icon: StandardMemberIcon, count: directoryListings.filter(b => b.tier === 'standard').length, color: 'text-slate-blue' }
+        { id: 'gold', label: 'Gold Partners', icon: StarIcon, count: directoryListings.filter(b => b.tier === 'gold').length, color: 'text-weathered-gold' },
+        { id: 'silver', label: 'Silver Members', icon: UserIcon, count: directoryListings.filter(b => b.tier === 'silver').length, color: 'text-warm-stone' },
+        { id: 'bronze', label: 'Bronze Members', icon: UserIcon, count: directoryListings.filter(b => b.tier === 'bronze').length, color: 'text-sandy-ochre' },
+        { id: 'standard', label: 'Standard', icon: UserIcon, count: directoryListings.filter(b => b.tier === 'standard').length, color: 'text-slate-blue' }
       ]
     },
     {
@@ -511,11 +497,11 @@ export function DirectoryPageStandardized() {
       maxVisible: 5,
       collapsible: true,
       options: [
-        { id: 'boise', label: 'Boise', icon: MapPin, count: directoryListings.filter(b => b.address.toLowerCase().includes('boise')).length },
-        { id: 'meridian', label: 'Meridian', icon: MapPin, count: directoryListings.filter(b => b.address.toLowerCase().includes('meridian')).length },
-        { id: 'nampa', label: 'Nampa', icon: MapPin, count: directoryListings.filter(b => b.address.toLowerCase().includes('nampa')).length },
-        { id: 'caldwell', label: 'Caldwell', icon: MapPin, count: directoryListings.filter(b => b.address.toLowerCase().includes('caldwell')).length },
-        { id: 'eagle', label: 'Eagle', icon: MapPin, count: directoryListings.filter(b => b.address.toLowerCase().includes('eagle')).length }
+        { id: 'boise', label: 'Boise', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('boise')).length },
+        { id: 'meridian', label: 'Meridian', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('meridian')).length },
+        { id: 'nampa', label: 'Nampa', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('nampa')).length },
+        { id: 'caldwell', label: 'Caldwell', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('caldwell')).length },
+        { id: 'eagle', label: 'Eagle', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('eagle')).length }
       ]
     },
     {
@@ -524,8 +510,8 @@ export function DirectoryPageStandardized() {
       maxVisible: 2,
       collapsible: false,
       options: [
-        { id: 'verified', label: 'Verified Business', icon: CheckCircle, count: directoryListings.filter(b => b.isVerified).length, color: 'text-sagebrush-green' },
-        { id: 'sponsored', label: 'Sponsored', icon: Star, count: directoryListings.filter(b => b.isSponsored).length, color: 'text-nav-directory' }
+        { id: 'verified', label: 'Verified Business', icon: CheckCircleIcon, count: directoryListings.filter(b => b.isVerified).length, color: 'text-sagebrush-green' },
+        { id: 'sponsored', label: 'Sponsored', icon: StarIcon, count: directoryListings.filter(b => b.isSponsored).length, color: 'text-nav-directory' }
       ]
     }
   ]
@@ -551,7 +537,6 @@ export function DirectoryPageStandardized() {
     <section className="relative overflow-hidden bg-gradient-directory-hero px-md py-lg">
       {/* Background Elements */}
       <DirectoryFloatingBadges />
-      <DirectoryEmbers />
       
       <div className="container mx-auto max-w-site relative z-10">
         <div className="hero-grid-layout">
@@ -561,7 +546,7 @@ export function DirectoryPageStandardized() {
             <div className="mb-lg">
               <div className="flex items-center gap-xs text-sm text-white/60">
                 <span>Home</span>
-                <CaretRight className="h-4 w-4" />
+                <ChevronRightIcon className="h-4 w-4" />
                 <span className="text-white font-medium">Directory</span>
               </div>
             </div>
@@ -579,15 +564,15 @@ export function DirectoryPageStandardized() {
             {/* Badges below title/subtitle */}
             <div className="flex flex-wrap gap-xs">
               <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-                <ShootingRangeIcon className="h-4 w-4 mr-xs" />
+                <MapPinIcon className="h-4 w-4 mr-xs" />
                 Ranges
               </Badge>
               <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-                <GunsmithIcon className="h-4 w-4 mr-xs" />
+                <WrenchScrewdriverIcon className="h-4 w-4 mr-xs" />
                 Gunsmiths
               </Badge>
               <Badge className="bg-card/10 text-white border-border rounded-xs" hideIcon={true}>
-                <TacticalRetailIcon className="h-4 w-4 mr-xs" />
+                <BuildingStorefrontIcon className="h-4 w-4 mr-xs" />
                 Retail
               </Badge>
             </div>
@@ -600,7 +585,7 @@ export function DirectoryPageStandardized() {
             <div className="flex gap-base">
               <Button className="bg-nav-directory text-white hover:bg-white hover:text-nav-directory font-rajdhani font-bold" animationType="plus-minus">
                 <PlusIcon className="h-4 w-4 mr-xs" />
-                List Your Business
+                ListBulletIcon Your Business
               </Button>
               <Button variant="ghost" className="text-white hover:bg-white/10 font-rajdhani font-bold" animationType="chevron">
                 View Map
@@ -621,7 +606,7 @@ export function DirectoryPageStandardized() {
                     <CardContent className="p-sm relative z-10">
                       <div className="flex items-center justify-between mb-base">
                         <Badge className="bg-weathered-gold/20 text-weathered-gold border-weathered-gold/30 font-rajdhani font-bold text-[10px]">
-                          <GoldPartnerIcon className="h-3 w-3 mr-xs" />
+                          <StarIcon className="h-3 w-3 mr-xs" />
                           GOLD PARTNER
                         </Badge>
                         <div className="flex items-center gap-xs text-xs text-muted-foreground">
@@ -731,13 +716,13 @@ export function DirectoryPageStandardized() {
             
             {/* Main Content */}
             <main className="flex-1 min-w-0">
-              {/* Search and Category Controls */}
+              {/* MagnifyingGlassIcon and Category Controls */}
               <div className="mb-xl space-y-lg">
-                {/* Search Bar */}
+                {/* MagnifyingGlassIcon Bar */}
                 <div className="relative max-w-2xl">
                   <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
-                    placeholder="Search businesses, services, or locations..."
+                    placeholder="MagnifyingGlassIcon businesses, services, or locations..."
                     className="pl-10 h-12 text-body-base shadow-none"
                     value={filters.searchQuery}
                     onChange={(e) => filters.setSearchQuery(e.target.value)}
@@ -747,13 +732,13 @@ export function DirectoryPageStandardized() {
                 {/* Quick Filter Tabs */}
                 <div className="flex flex-wrap gap-xs">
                   {[
-                    { id: 'all', label: 'All Businesses', count: directoryListings.length, icon: Storefront },
-                    { id: 'ranges', label: 'Ranges', count: directoryListings.filter(b => b.category === 'Range').length, icon: ShootingRangeIcon },
-                    { id: 'gunsmiths', label: 'Gunsmiths', count: directoryListings.filter(b => b.category === 'Gunsmith').length, icon: GunsmithIcon },
-                    { id: 'training', label: 'Training', count: directoryListings.filter(b => b.category === 'Training').length, icon: TrainingIcon },
-                    { id: 'retail', label: 'Retail', count: directoryListings.filter(b => b.category === 'Retail').length, icon: TacticalRetailIcon },
-                    { id: 'clubs', label: 'Clubs', count: directoryListings.filter(b => b.category === 'Club').length, icon: ClubIcon },
-                    { id: 'verified', label: 'Verified', count: directoryListings.filter(b => b.isVerified).length, icon: CheckCircle },
+                    { id: 'all', label: 'All Businesses', count: directoryListings.length, icon: BuildingStorefrontIcon },
+                    { id: 'ranges', label: 'Ranges', count: directoryListings.filter(b => b.category === 'Range').length, icon: MapPinIcon },
+                    { id: 'gunsmiths', label: 'Gunsmiths', count: directoryListings.filter(b => b.category === 'Gunsmith').length, icon: WrenchScrewdriverIcon },
+                    { id: 'training', label: 'Training', count: directoryListings.filter(b => b.category === 'Training').length, icon: AcademicCapIcon },
+                    { id: 'retail', label: 'Retail', count: directoryListings.filter(b => b.category === 'Retail').length, icon: BuildingStorefrontIcon },
+                    { id: 'clubs', label: 'Clubs', count: directoryListings.filter(b => b.category === 'Club').length, icon: CubeIcon },
+                    { id: 'verified', label: 'Verified', count: directoryListings.filter(b => b.isVerified).length, icon: CheckCircleIcon },
                     { id: 'featured', label: 'Featured', count: directoryListings.filter(b => b.featured).length }
                   ].map((tab) => (
                     <Button
@@ -785,7 +770,7 @@ export function DirectoryPageStandardized() {
                   </h2>
                   <p className="text-muted-foreground">
                     {filters.filteredResults !== filters.totalResults && `Filtered from ${filters.totalResults} total • `}
-                    {filters.searchQuery && `Search: "${filters.searchQuery}"`}
+                    {filters.searchQuery && `MagnifyingGlassIcon: "${filters.searchQuery}"`}
                   </p>
                 </div>
                 
@@ -821,7 +806,7 @@ export function DirectoryPageStandardized() {
                 </div>
               </div>
 
-              {/* Card Grid/List Content with Loading State */}
+              {/* Card Grid/ListBulletIcon Content with Loading State */}
               <div className="mb-4xl">
                 {filters.isLoading ? (
                   <CardSkeleton 

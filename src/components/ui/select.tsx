@@ -116,7 +116,7 @@ const SelectItem = React.forwardRef<
     </div>
   </SelectPrimitive.Item>
 ))
-SelectItem.displayName = SelectPrimitive.Item.displayName
+SelectItemotion.displayName = SelectPrimitive.Itemotion.displayName
 
 const SelectSeparator = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Separator>,

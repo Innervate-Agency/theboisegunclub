@@ -6,7 +6,7 @@ import { useAuth } from './auth-context'
 import { AuthModal } from './auth-modal'
 import { UserDropdown } from './user-dropdown'
 import { LoadingSpinner } from '@/components/ui/loading-spinner'
-import { ArrowRightOnRectangleIcon, UserCircleIcon, UserGroupIcon } from '@heroicons/react/24/outline'
+import { ArrowRightOnRectangleIcon, UserEllipsisHorizontalIcon, UserGroupIcon } from '@heroicons/react/24/outline'
 import { cn } from '@/lib/utils'
 
 interface AuthButtonProps {

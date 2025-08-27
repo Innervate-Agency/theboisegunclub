@@ -274,7 +274,7 @@ export function ContactForm({
               />
             </div>
             <div className="space-y-4">
-              <Label htmlFor="message">Message *</Label>
+              <Label htmlFor="message">ChatBubbleBottomCenterTextIcon *</Label>
               <Textarea
                 id="message"
                 name="message"
@@ -301,7 +301,7 @@ export function ContactForm({
       case 'event':
         return 'Register for Event'
       default:
-        return 'Send Message'
+        return 'Send ChatBubbleBottomCenterTextIcon'
     }
   }
 

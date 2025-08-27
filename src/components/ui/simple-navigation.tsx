@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { AuthButton } from '@/components/auth/auth-button'
 import { useAuth } from '@/components/auth/auth-context'
-import { BookOpenIcon, BuildingStorefrontIcon, MapIcon, ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { BanknotesIcon, CubeTransparentIcon, IdentificationIcon, MapPinIcon, PlusCircleIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const navigationVariants = cva(
   "w-full transition-all duration-200 ease-out",
@@ -26,13 +26,13 @@ const navigationVariants = cva(
 )
 
 const navItems = [
-  { name: 'Home', href: '/', icon: Diamond },
-  { name: 'Events', href: '/events', icon: Ticket },
-  { name: 'Directory', href: '/directory', icon: AddressBook },
-  { name: 'Training', href: '/training', icon: Shield },
-  { name: 'Intel', href: '/intel', icon: MapTrifold },
-  { name: 'Marketplace', href: '/marketplace', icon: Storefront },
-  { name: 'Community', href: '/forums', icon: Users },
+  { name: 'Home', href: '/', icon: CubeTransparentIcon },
+  { name: 'Events', href: '/events', icon: TicketIcon },
+  { name: 'Directory', href: '/directory', icon: IdentificationIcon },
+  { name: 'Training', href: '/training', icon: ShieldCheckIcon },
+  { name: 'Intel', href: '/intel', icon: MapPinIcon },
+  { name: 'Marketplace', href: '/marketplace', icon: BanknotesIcon },
+  { name: 'Community', href: '/forums', icon: UsersIcon },
 ]
 
 export function SimpleNavigation() {
@@ -60,7 +60,7 @@ export function SimpleNavigation() {
             href="/" 
             className="flex items-center gap-sm font-rajdhani font-bold text-xl text-card-foreground hover:text-rusty-orange transition-colors"
           >
-            <Diamond weight="bold" className="size-6 text-rusty-orange" />
+            <SparklesIcon weight="bold" className="size-6 text-rusty-orange" />
             <span className="hidden sm:inline">The Boise Gun Club</span>
             <span className="sm:hidden">TBGC</span>
           </Link>

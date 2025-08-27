@@ -1,0 +1,52 @@
+{
+  "timestamp": "2025-08-18T17:09:50.484Z",
+  "summary": {
+    "passed": 6,
+    "failed": 1,
+    "total": 7
+  },
+  "results": [
+    {
+      "name": "Security Audit",
+      "status": "success",
+      "duration": 1480,
+      "command": "node scripts/security-audit.js"
+    },
+    {
+      "name": "Configuration Optimization",
+      "status": "success",
+      "duration": 21,
+      "command": "node scripts/optimize-configs.js"
+    },
+    {
+      "name": "Build Analysis",
+      "status": "success",
+      "duration": 1011,
+      "command": "node scripts/analyze-build.js"
+    },
+    {
+      "name": "Performance Monitor",
+      "status": "success",
+      "duration": 32,
+      "command": "node scripts/performance-monitor.js"
+    },
+    {
+      "name": "Storybook Validation",
+      "status": "success",
+      "duration": 26,
+      "command": "node scripts/validate-stories.js"
+    },
+    {
+      "name": "FFL Data Test",
+      "status": "success",
+      "duration": 24,
+      "command": "node scripts/test-ffl-import.js"
+    },
+    {
+      "name": "Icon Migration Validation",
+      "status": "failed",
+      "error": "Command failed: python3 scripts/fix_icons.py",
+      "command": "python3 scripts/fix_icons.py"
+    }
+  ]
+}

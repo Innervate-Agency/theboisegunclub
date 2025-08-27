@@ -11,7 +11,7 @@ export function DirectoryFloatingBadges({ className }: DirectoryFloatingBadgesPr
   const badges = [
     {
       id: 1,
-      icon: Shield,
+      icon: ShieldCheckIcon,
       position: "left-[18%] top-[22%]",
       size: "w-8 h-8",
       opacity: [0.2, 0.35, 0.2],
@@ -23,7 +23,7 @@ export function DirectoryFloatingBadges({ className }: DirectoryFloatingBadgesPr
     },
     {
       id: 2,
-      icon: Storefront,
+      icon: BuildingStorefrontIcon,
       position: "right-[14%] top-[28%]",
       size: "w-7 h-7",
       opacity: [0.18, 0.28, 0.18],
@@ -35,7 +35,7 @@ export function DirectoryFloatingBadges({ className }: DirectoryFloatingBadgesPr
     },
     {
       id: 3,
-      icon: Star,
+      icon: StarIcon,
       position: "left-[15%] top-[52%]",
       size: "w-6 h-6",
       opacity: [0.15, 0.25, 0.15],
@@ -47,7 +47,7 @@ export function DirectoryFloatingBadges({ className }: DirectoryFloatingBadgesPr
     },
     {
       id: 4,
-      icon: Trophy,
+      icon: TrophyIcon,
       position: "right-[20%] top-[58%]",
       size: "w-8 h-8",
       opacity: [0.22, 0.32, 0.22],
@@ -59,7 +59,7 @@ export function DirectoryFloatingBadges({ className }: DirectoryFloatingBadgesPr
     },
     {
       id: 5,
-      icon: Users,
+      icon: UsersIcon,
       position: "left-[22%] top-[78%]",
       size: "w-5 h-5",
       opacity: [0.12, 0.22, 0.12],

@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Terms of Service - The Boise Gun Club',
-  description: 'Terms of service for The Boise Gun Club platform, outlining the rules and guidelines for using our community platform.',
+  description: 'Terms of service for The Boise Gun Club platform, outlining the rules and guidelines for using our community platformotion.',
 }
 
 export default function TermsOfServicePage() {
@@ -118,7 +118,7 @@ export default function TermsOfServicePage() {
         <li>Follow our Community Guidelines</li>
       </ul>
 
-      <h3>Content Monitoring</h3>
+      <h3>Content ComputerDesktopIconing</h3>
       <p>
         We reserve the right, but have no obligation, to monitor, review, and remove User Content 
         that violates these Terms or is otherwise objectionable.
@@ -135,7 +135,7 @@ export default function TermsOfServicePage() {
 
       <h3>Legal Compliance</h3>
       <p>
-        Users are solely responsible for ensuring their compliance with all applicable federal, state, 
+        UsersIcon are solely responsible for ensuring their compliance with all applicable federal, state, 
         and local laws regarding firearms ownership, possession, and transfer. Laws vary by jurisdiction 
         and can change frequently.
       </p>
@@ -143,7 +143,7 @@ export default function TermsOfServicePage() {
       <h3>No Facilitation of Transactions</h3>
       <p>
         This platform does not facilitate firearms transactions or transfers. Any business listings 
-        or information provided are for informational purposes only. Users must conduct their own 
+        or information provided are for informational purposes only. UsersIcon must conduct their own 
         due diligence and comply with all applicable laws when engaging with listed businesses.
       </p>
 
@@ -152,7 +152,7 @@ export default function TermsOfServicePage() {
       <h3>Listing Accuracy</h3>
       <p>
         While we strive to provide accurate business information, we cannot guarantee the accuracy, 
-        completeness, or currency of all directory listings. Users should verify information directly 
+        completeness, or currency of all directory listings. UsersIcon should verify information directly 
         with businesses.
       </p>
 

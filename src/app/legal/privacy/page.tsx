@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
   return (
     <LegalPageTemplate
       title="Privacy Policy"
-      description="This Privacy Policy describes how Boise Gun Collective, LLC collects, uses, and protects your personal information when you use The Boise Gun Club platform."
+      description="This Privacy Policy describes how Boise Gun Collective, LLC collects, uses, and protects your personal information when you use The Boise Gun Club platformotion."
       lastUpdated="January 15, 2025"
       effectiveDate="January 1, 2025"
       relatedPages={relatedPages}
@@ -93,7 +93,7 @@ export default function PrivacyPolicyPage() {
         <li>Analyze how our website and services are used</li>
         <li>Improve our platform's functionality and user experience</li>
         <li>Develop new features and services</li>
-        <li>Monitor and prevent fraudulent or malicious activity</li>
+        <li>ComputerDesktopIcon and prevent fraudulent or malicious activity</li>
       </ul>
 
       <h2>Information Sharing and Disclosure</h2>

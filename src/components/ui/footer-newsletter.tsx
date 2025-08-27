@@ -91,18 +91,18 @@ export function FooterNewsletter({ className }: FooterNewsletterProps) {
         </form>
       </div>
 
-      {/* Site Search */}
+      {/* Site MagnifyingGlassIcon */}
       <div className="space-y-4 pt-6 border-t border-border">
         <div className="flex items-center gap-3">
           <MagnifyingGlassIcon className="h-6 w-6 text-rusty-orange" />
           <h3 className="font-rajdhani font-bold text-xl text-card-foreground">
-            Quick Search
+            Quick MagnifyingGlassIcon
           </h3>
         </div>
         <form onSubmit={handleSearch} className="space-y-4">
           <Input
             type="text"
-            placeholder="Search dealers, events, guides..."
+            placeholder="MagnifyingGlassIcon dealers, events, guides..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full"
@@ -121,7 +121,7 @@ export function FooterNewsletter({ className }: FooterNewsletterProps) {
             ) : (
               <div className="flex items-center gap-2">
                 <MagnifyingGlassIcon className="h-4 w-4" />
-                Search Community
+                MagnifyingGlassIcon Community
               </div>
             )}
           </Button>

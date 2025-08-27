@@ -28,10 +28,10 @@ const enhancedButtonVariants = cva(
         // Glass: Mica effect with consistent shadows - no borders
         glass: "mica-overlay text-foreground shadow-flat hover:shadow-present backdrop-blur-sm",
         
-        // Fire: Center-positioned gradient accent like VendorCard
+        // FireIcon: Center-positioned gradient accent like VendorCard
         fire: "bg-card text-card-foreground shadow-flat hover:shadow-present  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
-        // Fire Blue: Center-positioned cool gradient
+        // FireIcon Blue: Center-positioned cool gradient
         "fire-blue": "bg-card text-card-foreground shadow-flat hover:shadow-present  relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:rounded-b-lg after:transition-all after:duration-300 after:ease-out hover:after:w-full",
         
         // Destructive: Shadow-first with enhanced depth

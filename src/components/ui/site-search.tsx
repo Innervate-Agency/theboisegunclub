@@ -45,7 +45,7 @@ export function SiteSearch({ className }: SiteSearchProps) {
       <CardHeader className="pb-4">
         <CardTitle className="font-rajdhani font-bold text-xl text-rusty-orange flex items-center gap-2">
           <MagnifyingGlassIcon className="h-5 w-5" />
-          Search Our Community
+          MagnifyingGlassIcon Our Community
         </CardTitle>
       </CardHeader>
       
@@ -56,7 +56,7 @@ export function SiteSearch({ className }: SiteSearchProps) {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search dealers, events, guides..."
+              placeholder="MagnifyingGlassIcon dealers, events, guides..."
               className="w-full pl-4 pr-10 py-3 border border-border rounded-sm bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-rusty-orange/50 focus:border-rusty-orange transition-colors"
             />
             {searchQuery && (
@@ -83,7 +83,7 @@ export function SiteSearch({ className }: SiteSearchProps) {
             ) : (
               <div className="flex items-center gap-2">
                 <MagnifyingGlassIcon className="h-4 w-4" />
-                Search Community
+                MagnifyingGlassIcon Community
               </div>
             )}
           </Button>

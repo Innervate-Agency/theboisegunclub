@@ -5,22 +5,22 @@ import { Badge } from './badge'
 import { Button } from './button'
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
 import { useUserWeather } from '@/hooks/useUserWeather'
-import { AccessStatusIcon, CheckCircleIcon, CloudIcon, CloudRainIcon, CloudSnowIcon, ExclamationTriangleIcon, FireIcon, FlameIcon, MapPinIcon, RefreshCwIcon, SunIcon, ThermometerIcon, WeatherIcon, WindIcon, XCircleIcon, ZapIcon } from '@heroicons/react/24/outline';
+import { AccessStatusIcon, BoltIcon, CheckCircleIcon, CloudIcon, CloudRainIcon, CloudSnowIcon, ExclamationTriangleIcon, FireIcon, FlameIcon, MapPinIcon, RefreshCwIcon, SunIcon, ThermometerIcon, WindIcon, XCircleIcon, ZapIcon } from '@heroicons/react/24/outline';
 
 const WeatherIcon = ({ type, className = "h-4 w-4" }: { type: string; className?: string }) => {
   switch (type) {
     case 'sun':
       return <SunIcon className={`${className} text-yellow-500`} />
     case 'partly-cloudy':
-      return <Cloud className={`${className} text-blue-400`} />
+      return <CloudIcon className={`${className} text-blue-400`} />
     case 'cloudy':
-      return <Cloud className={`${className} text-gray-500`} />
+      return <CloudIcon className={`${className} text-gray-500`} />
     case 'rain':
       return <CloudRain className={`${className} text-blue-600`} />
     case 'snow':
       return <CloudSnow className={`${className} text-blue-200`} />
     case 'storm':
-      return <Storm className={`${className} text-purple-600`} />
+      return <BoltIcon className={`${className} text-purple-600`} />
     default:
       return <SunIcon className={`${className} text-yellow-500`} />
   }
@@ -121,9 +121,9 @@ export function NavbarWeatherWidget() {
                 onClick={refreshWeather}
                 disabled={isLoading}
                 className="h-8 w-8 p-0"
-                title="Refresh weather"
+                title="ArrowPathIcon weather"
               >
-                <Refresh className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
+                <RefreshCwIcon className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
               </Button>
             </div>
           </div>
@@ -145,9 +145,9 @@ export function NavbarWeatherWidget() {
           {/* Current Conditions */}
           <div className="p-lg space-y-base">
             <div className="grid grid-cols-2 gap-base">
-              {/* Wind */}
+              {/* WindIcon */}
               <div className="flex items-center gap-xs">
-                <Wind className="h-4 w-4 text-nav-intel" />
+                <WindIcon className="h-4 w-4 text-nav-intel" />
                 <div>
                   <div className="text-sm font-medium">{weatherData.windSpeed} mph</div>
                   <div className="text-xs text-muted-foreground">{weatherData.windDirection}</div>
@@ -157,7 +157,7 @@ export function NavbarWeatherWidget() {
               {/* Humidity */}
               {weatherData.humidity && (
                 <div className="flex items-center gap-xs">
-                  <Thermometer className="h-4 w-4 text-nav-intel" />
+                  <ThermometerIcon className="h-4 w-4 text-nav-intel" />
                   <div>
                     <div className="text-sm font-medium">{weatherData.humidity}%</div>
                     <div className="text-xs text-muted-foreground">Humidity</div>
@@ -176,10 +176,10 @@ export function NavbarWeatherWidget() {
               </div>
             )}
 
-            {/* Fire Danger & Access Status */}
+            {/* FireIcon Danger & Access Status */}
             <div className="grid grid-cols-2 gap-base">
               <div className="space-y-xs">
-                <div className="text-xs text-muted-foreground">Fire Danger</div>
+                <div className="text-xs text-muted-foreground">FireIcon Danger</div>
                 <Badge variant={getFireDangerColor(weatherData.fireDanger)} size="sm">
                   <FireIcon className="h-3 w-3 mr-xs" />
                   {weatherData.fireDanger}

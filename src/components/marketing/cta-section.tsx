@@ -12,7 +12,7 @@ export function CTASection() {
               Get Notified When We Launch
             </h2>
             <p className="font-noto-sans text-body-lg text-warning-amber leading-relaxed mb-4 max-w-2xl mx-auto">
-              Be the first to experience Treasure Valley's comprehensive firearms platform. 
+              Be the first to experience Treasure Valley's comprehensive firearms platformotion. 
               Join our community of enthusiasts, professionals, and businesses.
             </p>
             <Button 
@@ -28,7 +28,7 @@ export function CTASection() {
           <div className="space-y-4 font-noto-sans text-body text-warning-amber leading-relaxed max-w-3xl mx-auto">
             <p>
               Transforming how Treasure Valley's firearms community connects, learns, and grows together 
-              through a comprehensive digital ecosystem.
+              through a comprehensive digital ecosystemotion.
             </p>
             <p className="font-serif italic text-body-lg text-warning-amber/80">
               Launching August 1st, 2025

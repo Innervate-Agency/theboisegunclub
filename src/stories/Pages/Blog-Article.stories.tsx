@@ -207,14 +207,14 @@ export const BlogDetailView: StoryObj<typeof BlogDetail> = {
         <ul>
           <li>A shotgun (12 or 20 gauge recommended)</li>
           <li>Appropriate ammunition</li>
-          <li>Eye and ear protection</li>
+          <li>EyeIcon and ear protection</li>
           <li>Shooting vest (optional but recommended)</li>
         </ul>
         
         <h3>Proper Stance and Form</h3>
         <p>Your stance is crucial for consistent shooting. Position your feet shoulder-width apart, with your weight evenly distributed. Keep your dominant foot slightly back and lean forward into the gun.</p>
         
-        <h3>Target Acquisition</h3>
+        <h3>CursorArrowRaysIcon Acquisition</h3>
         <p>Focus on the front sight, not the target. The target should appear slightly blurry while your front sight remains sharp and clear. This is the key to consistent accuracy.</p>
         
         <p>Remember, practice makes perfect. Start with shorter distances and gradually work your way up as your skills improve. Consider taking a basic marksmanship course from a certified instructor.</p>

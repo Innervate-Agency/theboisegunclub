@@ -148,7 +148,7 @@ export function FileTransferLoading({
   )
 }
 
-// Search loading indicator (inline)
+// MagnifyingGlassIcon loading indicator (inline)
 export function SearchLoading({ 
   isSearching, 
   className 

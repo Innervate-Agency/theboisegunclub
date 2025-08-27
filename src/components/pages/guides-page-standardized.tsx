@@ -277,7 +277,7 @@ export function GuidesPageStandardized() {
   // Activity feed data for guides based on real guide data
   const activityFeedData = [
     {
-      icon: BookOpen,
+      icon: BookOpenIcon,
       iconColor: "text-nav-intel",
       iconBgColor: "bg-nav-intel/20",
       title: "New Guide Published",
@@ -285,7 +285,7 @@ export function GuidesPageStandardized() {
       timeAgo: "2h ago"
     },
     {
-      icon: CheckCircle,
+      icon: CheckCircleIcon,
       iconColor: "text-sagebrush-green",
       iconBgColor: "bg-sagebrush-green/20",
       title: "Guide Updated",
@@ -293,7 +293,7 @@ export function GuidesPageStandardized() {
       timeAgo: "4h ago"
     },
     {
-      icon: Users,
+      icon: UsersIcon,
       iconColor: "text-rusty-orange",
       iconBgColor: "bg-rusty-orange/20",
       title: "Community Verified",
@@ -304,12 +304,12 @@ export function GuidesPageStandardized() {
 
   // Guides category stats based on actual guide data
   const guideCategoryStats = [
-    { icon: Scales, title: "Legal Guides", value: guidesData.filter(g => g.category === 'Legal').length.toString(), subtitle: "Idaho laws", color: "text-nav-intel" },
-    { icon: Shield, title: "Safety Guides", value: guidesData.filter(g => g.category === 'Safety').length.toString(), subtitle: "Best practices", color: "text-nav-intel" },
-    { icon: Target, title: "Training Guides", value: guidesData.filter(g => g.category === 'Training').length.toString(), subtitle: "Skill development", color: "text-nav-intel" },
-    { icon: Trophy, title: "Competition Guides", value: guidesData.filter(g => g.category === 'Competition').length.toString(), subtitle: "Match prep", color: "text-nav-intel" },
-    { icon: Eye, title: "Total Views", value: `${Math.round(guidesData.reduce((sum, g) => sum + g.views, 0) / 1000)}K`, subtitle: "Active readers", color: "text-nav-intel" },
-    { icon: Heart, title: "Total Guides", value: guidesData.length.toString(), subtitle: "Comprehensive library", color: "text-nav-intel" }
+    { icon: ScaleIcon, title: "Legal Guides", value: guidesData.filter(g => g.category === 'Legal').length.toString(), subtitle: "Idaho laws", color: "text-nav-intel" },
+    { icon: ShieldCheckIcon, title: "Safety Guides", value: guidesData.filter(g => g.category === 'Safety').length.toString(), subtitle: "Best practices", color: "text-nav-intel" },
+    { icon: CursorArrowRaysIcon, title: "Training Guides", value: guidesData.filter(g => g.category === 'Training').length.toString(), subtitle: "Skill development", color: "text-nav-intel" },
+    { icon: TrophyIcon, title: "Competition Guides", value: guidesData.filter(g => g.category === 'Competition').length.toString(), subtitle: "Match prep", color: "text-nav-intel" },
+    { icon: EyeIcon, title: "Total Views", value: `${Math.round(guidesData.reduce((sum, g) => sum + g.views, 0) / 1000)}K`, subtitle: "Active readers", color: "text-nav-intel" },
+    { icon: HeartIcon, title: "Total Guides", value: guidesData.length.toString(), subtitle: "Comprehensive library", color: "text-nav-intel" }
   ]
 
   // Filter configuration
@@ -322,7 +322,7 @@ export function GuidesPageStandardized() {
     perPageOptions: [8, 12, 24, 48],
     enableInfiniteScroll: false,
     
-    // Search filter function
+    // MagnifyingGlassIcon filter function
     searchFilter: (guide, query) => {
       const searchTerms = query.toLowerCase()
       return (
@@ -479,7 +479,7 @@ export function GuidesPageStandardized() {
             <div className="mb-lg">
               <div className="flex items-center gap-xs text-sm text-white/60">
                 <span>Home</span>
-                <CaretRight className="h-4 w-4" />
+                <ChevronRightIcon className="h-4 w-4" />
                 <span className="text-white font-medium">Guides</span>
               </div>
             </div>
@@ -658,13 +658,13 @@ export function GuidesPageStandardized() {
             
             {/* Main Content */}
             <main className="flex-1 min-w-0">
-              {/* Search and Category Controls */}
+              {/* MagnifyingGlassIcon and Category Controls */}
               <div className="mb-xl space-y-lg">
-                {/* Search Bar */}
+                {/* MagnifyingGlassIcon Bar */}
                 <div className="relative max-w-2xl">
                   <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
-                    placeholder="Search guides, topics, or categories..."
+                    placeholder="MagnifyingGlassIcon guides, topics, or categories..."
                     className="pl-10 h-12 text-body-base shadow-none"
                     value={filters.searchQuery}
                     onChange={(e) => filters.setSearchQuery(e.target.value)}
@@ -674,12 +674,12 @@ export function GuidesPageStandardized() {
                 {/* Quick Filter Tabs */}
                 <div className="flex flex-wrap gap-xs">
                   {[
-                    { id: 'all', label: 'All Guides', count: guidesData.length, icon: BookOpen },
-                    { id: 'legal', label: 'Legal', count: guidesData.filter(g => g.category === 'Legal').length, icon: Scales },
-                    { id: 'safety', label: 'Safety', count: guidesData.filter(g => g.category === 'Safety').length, icon: Shield },
-                    { id: 'training', label: 'Training', count: guidesData.filter(g => g.category === 'Training').length, icon: Target },
-                    { id: 'competition', label: 'Competition', count: guidesData.filter(g => g.category === 'Competition').length, icon: Trophy },
-                    { id: 'equipment', label: 'Equipment', count: guidesData.filter(g => g.category === 'Equipment').length, icon: Star },
+                    { id: 'all', label: 'All Guides', count: guidesData.length, icon: BookOpenIcon },
+                    { id: 'legal', label: 'Legal', count: guidesData.filter(g => g.category === 'Legal').length, icon: ScaleIcon },
+                    { id: 'safety', label: 'Safety', count: guidesData.filter(g => g.category === 'Safety').length, icon: ShieldCheckIcon },
+                    { id: 'training', label: 'Training', count: guidesData.filter(g => g.category === 'Training').length, icon: CursorArrowRaysIcon },
+                    { id: 'competition', label: 'Competition', count: guidesData.filter(g => g.category === 'Competition').length, icon: TrophyIcon },
+                    { id: 'equipment', label: 'Equipment', count: guidesData.filter(g => g.category === 'Equipment').length, icon: StarIcon },
                     { id: 'featured', label: 'Featured', count: guidesData.filter(g => g.featured).length }
                   ].map((tab) => (
                     <Button
@@ -712,7 +712,7 @@ export function GuidesPageStandardized() {
                   </h2>
                   <p className="text-muted-foreground">
                     {filters.filteredResults !== filters.totalResults && `Filtered from ${filters.totalResults} total • `}
-                    {filters.searchQuery && `Search: "${filters.searchQuery}"`}
+                    {filters.searchQuery && `MagnifyingGlassIcon: "${filters.searchQuery}"`}
                   </p>
                 </div>
                 
@@ -761,9 +761,9 @@ export function GuidesPageStandardized() {
                       size="sm"
                       onClick={() => filters.setViewMode('list')}
                       className="rounded-none border-none shadow-none"
-                      title="List View"
+                      title="ListBulletIcon View"
                     >
-                      <ListView className="size-4" />
+                      <ListBulletIcon className="size-4" />
                     </Button>
                   </div>
 
@@ -797,7 +797,7 @@ export function GuidesPageStandardized() {
                 </div>
               </div>
 
-              {/* Card Grid/List Content with Loading State */}
+              {/* Card Grid/ListBulletIcon Content with Loading State */}
               <div className="mb-4xl">
                 {filters.isLoading ? (
                   <CardSkeleton 

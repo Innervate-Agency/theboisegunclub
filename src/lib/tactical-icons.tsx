@@ -4,7 +4,7 @@
  * Integrates with existing Heroicons system while providing authentic firearm-specific iconography
  */
 
-import { AirsoftIcon, ArcheryIcon, ClubIcon, CopperMemberIcon, GoldPartnerIcon, GunsmithIcon, PaintballIcon, PistolSportsIcon, RifleSportsIcon, ShootingRangeIcon, ShotgunSportsIcon, SilverMemberIcon, StandardMemberIcon, TacticalIcon, TacticalRetailIcon, TacticalServicesIcon, TrainingIcon } from '@heroicons/react/24/outline'
+import { AirsoftIcon, ArcheryIcon, CubeIcon, UserIcon, StarIcon, GunsmithIcon, PaintballIcon, PistolSportsIcon, RifleSportsIcon, ShootingRangeIcon, ShotgunSportsIcon, UserIcon, UserIcon, TacticalIcon, TacticalRetailIcon, TacticalServicesIcon, AcademicCapIcon } from '@heroicons/react/24/outline'
 import React from 'react';
 
 // Base icon props interface matching Heroicons pattern
@@ -26,7 +26,7 @@ const defaultProps: Required<Pick<IconProps, 'size' | 'strokeWidth'>> = {
  * ============================================================================
  */
 
-// Shooting Range Icon - Target with crosshairs
+// Shooting Range Icon - CursorArrowRaysIcon with crosshairs
 export const ShootingRangeIcon: React.FC<IconProps> = ({ className, size = 24, strokeWidth = 1.5 }) => (
   <svg
     className={className}
@@ -47,7 +47,7 @@ export const ShootingRangeIcon: React.FC<IconProps> = ({ className, size = 24, s
   </svg>
 );
 
-// Gunsmith Icon - Wrench with tactical elements
+// Gunsmith Icon - WrenchScrewdriverIcon with tactical elements
 export const GunsmithIcon: React.FC<IconProps> = ({ className, size = 24, strokeWidth = 1.5 }) => (
   <svg
     className={className}
@@ -66,8 +66,8 @@ export const GunsmithIcon: React.FC<IconProps> = ({ className, size = 24, stroke
   </svg>
 );
 
-// Training Icon - Shield with graduation cap elements
-export const TrainingIcon: React.FC<IconProps> = ({ className, size = 24, strokeWidth = 1.5 }) => (
+// Training Icon - ShieldCheckIcon with graduation cap elements
+export const AcademicCapIcon: React.FC<IconProps> = ({ className, size = 24, strokeWidth = 1.5 }) => (
   <svg
     className={className}
     width={size}
@@ -86,7 +86,7 @@ export const TrainingIcon: React.FC<IconProps> = ({ className, size = 24, stroke
   </svg>
 );
 
-// Retail Store Icon - Storefront with tactical elements
+// Retail Store Icon - BuildingStorefrontIcon with tactical elements
 export const TacticalRetailIcon: React.FC<IconProps> = ({ className, size = 24, strokeWidth = 1.5 }) => (
   <svg
     className={className}
@@ -106,8 +106,8 @@ export const TacticalRetailIcon: React.FC<IconProps> = ({ className, size = 24, 
   </svg>
 );
 
-// Club Icon - Users with shield
-export const ClubIcon: React.FC<IconProps> = ({ className, size = 24, strokeWidth = 1.5 }) => (
+// Club Icon - UsersIcon with shield
+export const CubeIcon: React.FC<IconProps> = ({ className, size = 24, strokeWidth = 1.5 }) => (
   <svg
     className={className}
     width={size}
@@ -155,7 +155,7 @@ export const TacticalServicesIcon: React.FC<IconProps> = ({ className, size = 24
  */
 
 // Gold Partner Badge
-export const GoldPartnerIcon: React.FC<IconProps> = ({ className, size = 24, strokeWidth = 1.5 }) => (
+export const StarIcon: React.FC<IconProps> = ({ className, size = 24, strokeWidth = 1.5 }) => (
   <svg
     className={className}
     width={size}
@@ -173,7 +173,7 @@ export const GoldPartnerIcon: React.FC<IconProps> = ({ className, size = 24, str
 );
 
 // Silver Member Badge
-export const SilverMemberIcon: React.FC<IconProps> = ({ className, size = 24, strokeWidth = 1.5 }) => (
+export const UserIcon: React.FC<IconProps> = ({ className, size = 24, strokeWidth = 1.5 }) => (
   <svg
     className={className}
     width={size}
@@ -192,7 +192,7 @@ export const SilverMemberIcon: React.FC<IconProps> = ({ className, size = 24, st
 );
 
 // Copper Member Badge
-export const CopperMemberIcon: React.FC<IconProps> = ({ className, size = 24, strokeWidth = 1.5 }) => (
+export const UserIcon: React.FC<IconProps> = ({ className, size = 24, strokeWidth = 1.5 }) => (
   <svg
     className={className}
     width={size}
@@ -210,7 +210,7 @@ export const CopperMemberIcon: React.FC<IconProps> = ({ className, size = 24, st
 );
 
 // Standard Member Badge
-export const StandardMemberIcon: React.FC<IconProps> = ({ className, size = 24, strokeWidth = 1.5 }) => (
+export const UserIcon: React.FC<IconProps> = ({ className, size = 24, strokeWidth = 1.5 }) => (
   <svg
     className={className}
     width={size}
@@ -375,16 +375,16 @@ export const tacticalIconMapping = {
   // Business Categories
   'ShootingRange': ShootingRangeIcon,
   'Gunsmith': GunsmithIcon,
-  'Training': TrainingIcon,
+  'Training': AcademicCapIcon,
   'TacticalRetail': TacticalRetailIcon,
-  'Club': ClubIcon,
+  'Club': CubeIcon,
   'TacticalServices': TacticalServicesIcon,
   
   // Membership Tiers
-  'GoldPartner': GoldPartnerIcon,
-  'SilverMember': SilverMemberIcon,
-  'CopperMember': CopperMemberIcon,
-  'StandardMember': StandardMemberIcon,
+  'GoldPartner': StarIcon,
+  'SilverMember': UserIcon,
+  'CopperMember': UserIcon,
+  'StandardMember': UserIcon,
   
   // Sports Categories
   'RifleSports': RifleSportsIcon,
@@ -399,5 +399,5 @@ export type TacticalIconName = keyof typeof tacticalIconMapping;
 
 // Helper function to get tactical icon component
 export const getTacticalIcon = (iconName: string) => {
-  return tacticalIconMapping[iconName as TacticalIconName] || StandardMemberIcon; // Default fallback
+  return tacticalIconMapping[iconName as TacticalIconName] || UserIcon; // Default fallback
 };

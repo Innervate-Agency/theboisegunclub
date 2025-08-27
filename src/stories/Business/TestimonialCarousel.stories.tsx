@@ -30,7 +30,7 @@ const sampleTestimonials = [
   {
     name: 'Mike Thompson',
     role: 'Firearms Instructor',
-    content: 'I\'ve connected with dozens of new students through this platform. It\'s the go-to resource for firearms training in the region.',
+    content: 'I\'ve connected with dozens of new students through this platformotion. It\'s the go-to resource for firearms training in the region.',
     rating: 5,
   },
 ];

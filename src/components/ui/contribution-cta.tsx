@@ -3,7 +3,7 @@
 import { Card, CardContent } from './card'
 import { Button } from './button'
 import { Badge } from './badge'
-import { CameraIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { CameraIcon, ChatBubbleBottomCenterTextIcon, PencilIcon, StarIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 interface ContributionItem {
   icon: React.ComponentType<{ className?: string; weight?: string }>
@@ -23,7 +23,7 @@ interface ContributionCTAProps {
 
 const defaultContributions: ContributionItem[] = [
   {
-    icon: ChatsCircle,
+    icon: ChatBubbleBottomCenterTextIcon,
     title: "Share Your Experience",
     description: "Post in our community forums about local ranges, events, or firearm experiences.",
     actionText: "Join Forums",
@@ -31,7 +31,7 @@ const defaultContributions: ContributionItem[] = [
     iconBgColor: "bg-slate-blue/20"
   },
   {
-    icon: Camera,
+    icon: CameraIcon,
     title: "Submit Range Photos",
     description: "Help others with real-time conditions at Black's Creek, Morley Nelson, and local ranges.",
     actionText: "Upload Photos",
@@ -39,7 +39,7 @@ const defaultContributions: ContributionItem[] = [
     iconBgColor: "bg-sagebrush-green/20"
   },
   {
-    icon: PencilSimple,
+    icon: PencilIcon,
     title: "Write Reviews",
     description: "Review local FFLs, trainers, and services to help fellow gun owners make informed choices.",
     actionText: "Write Review",
@@ -47,7 +47,7 @@ const defaultContributions: ContributionItem[] = [
     iconBgColor: "bg-canyon-clay/20"
   },
   {
-    icon: StarFour,
+    icon: StarIcon,
     title: "Recommend Businesses",
     description: "Know a great gunsmith or training instructor? Help us build the most complete directory.",
     actionText: "Suggest Business",
@@ -68,7 +68,7 @@ export function ContributionCTA({
         {/* Header */}
         <div className="text-center space-y-base">
           <div className="flex items-center justify-center gap-xs mb-base">
-            <Handshake className="h-6 w-6 text-rusty-orange" weight="bold" />
+            <UsersIcon className="h-6 w-6 text-rusty-orange" weight="bold" />
             <Badge variant="rusty-orange" size="sm">Community Built</Badge>
           </div>
           <h2 className="font-rajdhani font-bold text-heading-2xl text-card-foreground">

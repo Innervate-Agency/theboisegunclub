@@ -108,15 +108,15 @@ export function SidebarCalendar({ events, className, onDateSelect }: SidebarCale
   return (
     <div className={cn("w-80 flex-shrink-0 sidebar-calendar", className)} tabIndex={0}>
       <div className="sticky top-4 space-y-lg">
-        {/* Calendar Header */}
+        {/* CalendarDaysIcon Header */}
         <div className="space-y-base">
           <div className="flex items-center gap-xs">
             <CalendarDaysIcon className="size-5 text-muted-foreground" />
-            <h3 className="font-rajdhani font-bold text-heading-base text-card-foreground">Event Calendar</h3>
+            <h3 className="font-rajdhani font-bold text-heading-base text-card-foreground">Event CalendarDaysIcon</h3>
           </div>
         </div>
 
-        {/* Calendar Content */}
+        {/* CalendarDaysIcon Content */}
         <div className="space-y-lg">
           {/* Month/Year Display with Navigation */}
           <div className="flex items-center justify-between">
@@ -154,7 +154,7 @@ export function SidebarCalendar({ events, className, onDateSelect }: SidebarCale
             </Button>
           </div>
 
-          {/* Calendar Grid */}
+          {/* CalendarDaysIcon Grid */}
           <div className="space-y-sm">
             {/* Weekday Headers */}
             <div className="grid grid-cols-7 gap-0 text-muted-foreground font-medium text-xs">
@@ -165,7 +165,7 @@ export function SidebarCalendar({ events, className, onDateSelect }: SidebarCale
               ))}
             </div>
             
-            {/* Calendar Days */}
+            {/* CalendarDaysIcon Days */}
             <div className="grid grid-cols-7 gap-0 border border-border/20 rounded-sm">
               {(() => {
                 const year = currentMonth.getFullYear()

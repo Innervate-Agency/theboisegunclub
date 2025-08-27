@@ -13,7 +13,7 @@ import {
   PaginationPrevious,
 } from './pagination'
 import { cn } from '@/lib/utils'
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 export type PaginationVariant = 'full' | 'minimal' | 'compact' | 'infinite'
 
@@ -304,7 +304,7 @@ export function EnhancedPagination({
               className="gap-xs"
               title="First page (Home)"
             >
-              <ChevronsLeft className="h-4 w-4" />
+              <ChevronDoubleLeftIcon className="h-4 w-4" />
               <span className="hidden md:inline">First</span>
             </Button>
           </PaginationItem>
@@ -359,7 +359,7 @@ export function EnhancedPagination({
               title="Last page (End)"
             >
               <span className="hidden md:inline">Last</span>
-              <ChevronsRight className="h-4 w-4" />
+              <ChevronDoubleRightIcon className="h-4 w-4" />
             </Button>
           </PaginationItem>
         </PaginationContent>

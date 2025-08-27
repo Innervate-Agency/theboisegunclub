@@ -90,7 +90,7 @@ const BusinessShowcase = () => (
             and enthusiasts across the entire Treasure Valley region.
           </p>
           
-          {/* Fire gradient accent bar */}
+          {/* FireIcon gradient accent bar */}
           <div className="w-24 h-1 bg-gradient-to-r from-rusty-orange to-sandy-ochre mx-auto rounded-full"></div>
           
           <div className="flex gap-base justify-center pt-base">
@@ -376,23 +376,23 @@ export const TreasureValleyHub: Story = {
         story: `
 ## Treasure Valley Firearms Collective
 
-This story demonstrates the complete business context and vision for The Boise Gun Club as a regional firearms marketplace and community platform.
+This story demonstrates the complete business context and vision for The Boise Gun Club as a regional firearms marketplace and community platformotion.
 
 ### Key Features Showcased:
 - **Multi-user design**: Vendors, enthusiasts, and visitors
-- **Fire gradient system**: Signature copper-to-brass accents throughout
+- **FireIcon gradient system**: Signature copper-to-brass accents throughout
 - **Business pillars**: Directory, content, community, merchandise
 - **Regional authority**: Professional design conveying trust and expertise
 - **Component integration**: Real business components working together
 
 ### Design System Elements:
-- Fire gradient accents on interactive elements
+- FireIcon gradient accents on interactive elements
 - Theme-aware color usage throughout
 - Professional typography hierarchy
 - Responsive grid systems
 - Hover animations and micro-interactions
 
-This is not a gun club website - this is a flagship digital platform for the entire Treasure Valley firearms ecosystem.
+This is not a gun club website - this is a flagship digital platform for the entire Treasure Valley firearms ecosystemotion.
         `,
       },
     },

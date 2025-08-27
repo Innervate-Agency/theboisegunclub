@@ -139,7 +139,7 @@ const armoryArticles = [
 // Activity feed data for armory
 const armoryActivityFeedData = [
   {
-    icon: FileText,
+    icon: DocumentTextIcon,
     iconColor: "text-nav-armory",
     iconBgColor: "bg-nav-armory/20",
     title: "New Legal Guide Published",
@@ -147,7 +147,7 @@ const armoryActivityFeedData = [
     timeAgo: "2h ago"
   },
   {
-    icon: Shield,
+    icon: ShieldCheckIcon,
     iconColor: "text-rusty-orange",
     iconBgColor: "bg-rusty-orange/20",
     title: "Equipment Review Updated",
@@ -155,7 +155,7 @@ const armoryActivityFeedData = [
     timeAgo: "4h ago"
   },
   {
-    icon: Users,
+    icon: UsersIcon,
     iconColor: "text-sagebrush-green",
     iconBgColor: "bg-sagebrush-green/20",
     title: "Community Contribution",
@@ -166,12 +166,12 @@ const armoryActivityFeedData = [
 
 // Armory category stats
 const armoryCategoryStats = [
-  { icon: Scales, title: "Legal Guides", value: "24", subtitle: "Idaho laws", color: "text-nav-armory" },
-  { icon: Shield, title: "Equipment Reviews", value: "156", subtitle: "Tested gear", color: "text-nav-armory" },
-  { icon: BookOpen, title: "Technical Guides", value: "89", subtitle: "How-to articles", color: "text-nav-armory" },
-  { icon: Trophy, title: "Buyer's Guides", value: "45", subtitle: "Purchase advice", color: "text-nav-armory" },
-  { icon: Users, title: "User Reviews", value: "1,234", subtitle: "Community input", color: "text-nav-armory" },
-  { icon: TrendUp, title: "Monthly Views", value: "45K", subtitle: "Growing readership", color: "text-nav-armory" }
+  { icon: ScaleIcon, title: "Legal Guides", value: "24", subtitle: "Idaho laws", color: "text-nav-armory" },
+  { icon: ShieldCheckIcon, title: "Equipment Reviews", value: "156", subtitle: "Tested gear", color: "text-nav-armory" },
+  { icon: BookOpenIcon, title: "Technical Guides", value: "89", subtitle: "How-to articles", color: "text-nav-armory" },
+  { icon: TrophyIcon, title: "Buyer's Guides", value: "45", subtitle: "Purchase advice", color: "text-nav-armory" },
+  { icon: UsersIcon, title: "User Reviews", value: "1,234", subtitle: "Community input", color: "text-nav-armory" },
+  { icon: ArrowTrendingUpIcon, title: "Monthly Views", value: "45K", subtitle: "Growing readership", color: "text-nav-armory" }
 ]
 
 export function ArmoryPageStandardized() {
@@ -187,7 +187,7 @@ export function ArmoryPageStandardized() {
     perPageOptions: [8, 12, 24, 48],
     enableInfiniteScroll: false,
     
-    // Search filter function
+    // MagnifyingGlassIcon filter function
     searchFilter: (article, query) => {
       const searchTerms = query.toLowerCase()
       return (
@@ -261,11 +261,11 @@ export function ArmoryPageStandardized() {
       maxVisible: 6,
       collapsible: false,
       options: [
-        { id: 'legal', label: 'Legal & Compliance', icon: Scales, count: armoryArticles.filter(a => a.category === 'Legal').length, color: 'text-nav-armory' },
-        { id: 'reviews', label: 'Equipment Reviews', icon: Shield, count: armoryArticles.filter(a => a.category === 'Reviews').length, color: 'text-nav-armory' },
-        { id: 'technical', label: 'Technical Guides', icon: Wrench, count: armoryArticles.filter(a => a.category === 'Technical').length, color: 'text-nav-armory' },
-        { id: 'safety', label: 'Safety Training', icon: Target, count: armoryArticles.filter(a => a.category === 'Safety').length, color: 'text-nav-armory' },
-        { id: 'maintenance', label: 'Maintenance', icon: Wrench, count: armoryArticles.filter(a => a.category === 'Maintenance').length, color: 'text-nav-armory' }
+        { id: 'legal', label: 'Legal & Compliance', icon: ScaleIcon, count: armoryArticles.filter(a => a.category === 'Legal').length, color: 'text-nav-armory' },
+        { id: 'reviews', label: 'Equipment Reviews', icon: ShieldCheckIcon, count: armoryArticles.filter(a => a.category === 'Reviews').length, color: 'text-nav-armory' },
+        { id: 'technical', label: 'Technical Guides', icon: WrenchScrewdriverIcon, count: armoryArticles.filter(a => a.category === 'Technical').length, color: 'text-nav-armory' },
+        { id: 'safety', label: 'Safety Training', icon: CursorArrowRaysIcon, count: armoryArticles.filter(a => a.category === 'Safety').length, color: 'text-nav-armory' },
+        { id: 'maintenance', label: 'Maintenance', icon: WrenchScrewdriverIcon, count: armoryArticles.filter(a => a.category === 'Maintenance').length, color: 'text-nav-armory' }
       ]
     },
     {
@@ -274,9 +274,9 @@ export function ArmoryPageStandardized() {
       maxVisible: 3,
       collapsible: false,
       options: [
-        { id: 'quick', label: '5 min or less', icon: Clock, count: armoryArticles.filter(a => a.readTime <= 5).length },
-        { id: 'medium', label: '6-10 minutes', icon: Clock, count: armoryArticles.filter(a => a.readTime > 5 && a.readTime <= 10).length },
-        { id: 'long', label: '10+ minutes', icon: Clock, count: armoryArticles.filter(a => a.readTime > 10).length }
+        { id: 'quick', label: '5 min or less', icon: ClockIcon, count: armoryArticles.filter(a => a.readTime <= 5).length },
+        { id: 'medium', label: '6-10 minutes', icon: ClockIcon, count: armoryArticles.filter(a => a.readTime > 5 && a.readTime <= 10).length },
+        { id: 'long', label: '10+ minutes', icon: ClockIcon, count: armoryArticles.filter(a => a.readTime > 10).length }
       ]
     },
     {
@@ -285,7 +285,7 @@ export function ArmoryPageStandardized() {
       maxVisible: 2,
       collapsible: false,
       options: [
-        { id: 'featured', label: 'Featured Articles', icon: Star, count: armoryArticles.filter(a => a.featured).length, color: 'text-rusty-orange' }
+        { id: 'featured', label: 'Featured Articles', icon: StarIcon, count: armoryArticles.filter(a => a.featured).length, color: 'text-rusty-orange' }
       ]
     }
   ]
@@ -297,7 +297,7 @@ export function ArmoryPageStandardized() {
       <div className="mb-lg">
         <div className="flex items-center gap-xs text-sm text-white/60">
           <span>Home</span>
-          <CaretRight className="h-4 w-4" />
+          <ChevronRightIcon className="h-4 w-4" />
           <span className="text-white font-medium">The Armory</span>
         </div>
       </div>
@@ -465,13 +465,13 @@ export function ArmoryPageStandardized() {
             
             {/* Main Content */}
             <main className="flex-1 min-w-0">
-              {/* Search and Category Controls */}
+              {/* MagnifyingGlassIcon and Category Controls */}
               <div className="mb-xl space-y-lg">
-                {/* Search Bar */}
+                {/* MagnifyingGlassIcon Bar */}
                 <div className="relative max-w-2xl">
                   <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
-                    placeholder="Search articles, guides, and reviews..."
+                    placeholder="MagnifyingGlassIcon articles, guides, and reviews..."
                     className="pl-10 h-12 text-body-base shadow-none"
                     value={filters.searchQuery}
                     onChange={(e) => filters.setSearchQuery(e.target.value)}
@@ -481,10 +481,10 @@ export function ArmoryPageStandardized() {
                 {/* Quick Filter Tabs */}
                 <div className="flex flex-wrap gap-xs">
                   {[
-                    { id: 'all', label: 'All Articles', count: armoryArticles.length, icon: BookOpen },
-                    { id: 'legal', label: 'Legal', count: armoryArticles.filter(a => a.category === 'Legal').length, icon: Scales },
-                    { id: 'reviews', label: 'Reviews', count: armoryArticles.filter(a => a.category === 'Reviews').length, icon: Shield },
-                    { id: 'technical', label: 'Technical', count: armoryArticles.filter(a => a.category === 'Technical').length, icon: Wrench },
+                    { id: 'all', label: 'All Articles', count: armoryArticles.length, icon: BookOpenIcon },
+                    { id: 'legal', label: 'Legal', count: armoryArticles.filter(a => a.category === 'Legal').length, icon: ScaleIcon },
+                    { id: 'reviews', label: 'Reviews', count: armoryArticles.filter(a => a.category === 'Reviews').length, icon: ShieldCheckIcon },
+                    { id: 'technical', label: 'Technical', count: armoryArticles.filter(a => a.category === 'Technical').length, icon: WrenchScrewdriverIcon },
                     { id: 'featured', label: 'Featured', count: armoryArticles.filter(a => a.featured).length }
                   ].map((tab) => (
                     <Button
@@ -516,7 +516,7 @@ export function ArmoryPageStandardized() {
                   </h2>
                   <p className="text-muted-foreground">
                     {filters.filteredResults !== filters.totalResults && `Filtered from ${filters.totalResults} total • `}
-                    {filters.searchQuery && `Search: "${filters.searchQuery}"`}
+                    {filters.searchQuery && `MagnifyingGlassIcon: "${filters.searchQuery}"`}
                   </p>
                 </div>
                 
@@ -552,7 +552,7 @@ export function ArmoryPageStandardized() {
                 </div>
               </div>
 
-              {/* Card Grid/List Content with Loading State */}
+              {/* Card Grid/ListBulletIcon Content with Loading State */}
               <div className="mb-4xl">
                 {filters.isLoading ? (
                   <CardSkeleton 

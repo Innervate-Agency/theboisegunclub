@@ -18,25 +18,25 @@ const sampleStats = [
   {
     label: 'Listed Businesses',
     value: '500+',
-    icon: Users,
+    icon: UsersIcon,
     change: { value: '+12% this month', trend: 'up' },
   },
   {
     label: 'Community Members',
     value: '15k+',
-    icon: Target,
+    icon: CursorArrowRaysIcon,
     description: 'Active users across the platform',
   },
   {
     label: 'Regional Events',
     value: 85,
-    icon: Trophy,
+    icon: TrophyIcon,
     change: { value: '+15 from last year', trend: 'up' },
   },
   {
     label: 'Monthly Listings',
     value: 250,
-    icon: Calendar,
+    icon: CalendarDaysIcon,
     description: 'New business and event submissions',
   },
 ];

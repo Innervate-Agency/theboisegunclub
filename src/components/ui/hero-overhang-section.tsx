@@ -38,7 +38,7 @@ export function HeroOverhangSection({
   const navigationItems = [
     { 
       href: "/events", 
-      icon: <Ticket className="h-8 w-8" />, 
+      icon: <TicketIcon className="h-8 w-8" />, 
       label: "Events", 
       colorClass: "nav-events",
       hoverColor: "hover:text-nav-events",

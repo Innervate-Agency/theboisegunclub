@@ -15,19 +15,19 @@ const getServiceIcon = (service: string) => {
   const serviceLower = service.toLowerCase()
   
   if (serviceLower.includes('gunsmith') || serviceLower.includes('repair') || serviceLower.includes('custom')) {
-    return Wrench
+    return WrenchScrewdriverIcon
   }
   if (serviceLower.includes('sales') || serviceLower.includes('retail') || serviceLower.includes('purchase')) {
-    return ShoppingCart
+    return ShoppingCartIcon
   }
   if (serviceLower.includes('training') || serviceLower.includes('instruction') || serviceLower.includes('class')) {
     return GraduationCap
   }
   if (serviceLower.includes('tactical') || serviceLower.includes('competition') || serviceLower.includes('shooting')) {
-    return Target
+    return CursorArrowRaysIcon
   }
   if (serviceLower.includes('transfer') || serviceLower.includes('ffl') || serviceLower.includes('background')) {
-    return FileText
+    return DocumentTextIcon
   }
   if (serviceLower.includes('consultation') || serviceLower.includes('advice') || serviceLower.includes('expert')) {
     return UserCheck
@@ -42,11 +42,11 @@ const getServiceIcon = (service: string) => {
     return Car
   }
   if (serviceLower.includes('education') || serviceLower.includes('safety') || serviceLower.includes('course')) {
-    return BookOpen
+    return BookOpenIcon
   }
   
   // Default icon
-  return CheckCircle
+  return CheckCircleIcon
 }
 
 // Business Hours Widget Component
@@ -221,7 +221,7 @@ export function ArticleContent({
           )}
           {comments > 0 && (
             <div className="flex items-center gap-xs text-sm text-muted-foreground">
-              <MessageCircle className="h-4 w-4" />
+              <ChatBubbleBottomCenterTextIcon className="h-4 w-4" />
               <span>{comments}</span>
             </div>
           )}
@@ -684,14 +684,14 @@ export function BusinessContent({
   }
   if (employeeCount) {
     businessInfoItems.push({
-      icon: Users,
+      icon: UsersIcon,
       label: 'Team Size',
       value: employeeCount
     })
   }
   if (tier !== 'free') {
     businessInfoItems.push({
-      icon: Crown,
+      icon: StarIcon,
       label: 'Membership',
       value: `${tier.charAt(0).toUpperCase() + tier.slice(1)} Tier`
     })
@@ -1010,7 +1010,7 @@ export function ProductContent({
 }: ProductContentProps) {
   const heroContent = (
     <>
-      {/* Product Info */}
+      {/* Product InformationCircleIcon */}
       <div className="space-y-base">
         <div className="flex items-center gap-base">
           <Badge className="bg-nav-marketplace/20 text-nav-marketplace border-nav-marketplace/30">

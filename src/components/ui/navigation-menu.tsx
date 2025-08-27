@@ -32,9 +32,9 @@ function NavigationMenu({
 function NavigationMenuList({
   className,
   ...props
-}: React.ComponentProps<typeof NavigationMenuPrimitive.List>) {
+}: React.ComponentProps<typeof NavigationMenuPrimitive.ListBulletIcon>) {
   return (
-    <NavigationMenuPrimitive.List
+    <NavigationMenuPrimitive.ListBulletIcon
       data-slot="navigation-menu-list"
       className={cn(
         "group flex flex-1 list-none items-center justify-center gap-xs",
@@ -239,7 +239,7 @@ function RangeNavigationItem() {
       <NavigationMenuTrigger>Range</NavigationMenuTrigger>
       <NavigationMenuContent>
         <div className="grid gap-sm p-base md:w-[400px]">
-          <NavigationMenuLink href="/range">Range Info</NavigationMenuLink>
+          <NavigationMenuLink href="/range">Range InformationCircleIcon</NavigationMenuLink>
           <NavigationMenuLink href="/range/hours">Hours</NavigationMenuLink>
           <NavigationMenuLink href="/range/rates">Rates</NavigationMenuLink>
         </div>

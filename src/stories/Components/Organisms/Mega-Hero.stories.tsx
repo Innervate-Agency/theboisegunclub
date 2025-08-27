@@ -127,7 +127,7 @@ export const EventAnnouncement: Story = {
       icon: <CalendarDaysIcon className="h-4 w-4" />
     },
     secondaryCTA: {
-      text: 'Vendor Info',
+      text: 'Vendor InformationCircleIcon',
     },
     badges: ['200+ Vendors', 'Educational Seminars', 'Regional Event'],
     backgroundPreset: 'gunclub',

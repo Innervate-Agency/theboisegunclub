@@ -3,7 +3,7 @@
 import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
-import { BanknotesIcon, CalendarDaysIcon, ClockIcon, CloudIcon, ExclamationTriangleIcon, MapPinIcon, SunIcon, TagIcon, UserIcon, UsersIcon, WeatherIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
+import { BanknotesIcon, CalendarDaysIcon, ClockIcon, CloudIcon, ExclamationTriangleIcon, MapPinIcon, SunIcon, TagIcon, UserIcon, UsersIcon, CloudIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
 
 interface EventInfoBarProps {
   // Event data
@@ -55,7 +55,7 @@ export function EventInfoBar({
   author,
   className
 }: EventInfoBarProps) {
-  const WeatherIcon = weather?.icon === 'sun' ? SunIcon : weather?.icon === 'cloud' ? CloudIcon : SunIcon
+  const WeatherIconComponent = weather?.icon === 'sun' ? SunIcon : weather?.icon === 'cloud' ? CloudIcon : SunIcon
   
   return (
     <section className={cn("py-xl bg-muted/30 border-y border-border/20", className)}>
@@ -164,7 +164,7 @@ export function EventInfoBar({
           {weather && (
             <div className="bg-card p-base rounded-none border border-border/30">
               <div className="flex items-center justify-center gap-lg">
-                <WeatherIcon className="h-5 w-5 text-nav-events flex-shrink-0" />
+                <WeatherIconComponent className="h-5 w-5 text-nav-events flex-shrink-0" />
                 <div className="text-center">
                   <div className="text-body-sm font-medium text-foreground">Weather Forecast</div>
                   <div className="text-xs text-muted-foreground">

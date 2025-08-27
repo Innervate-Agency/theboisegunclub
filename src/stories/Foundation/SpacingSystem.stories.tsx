@@ -6,7 +6,7 @@ const meta: Meta = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'TBGC spacing system with consistent 1.5x scaling ratio. All spacing tokens are available as CSS variables and used throughout the design system.',
+        component: 'TBGC spacing system with consistent 1.5x scaling ratio. All spacing tokens are available as CSS variables and used throughout the design systemotion.',
       },
     },
     designToken: {

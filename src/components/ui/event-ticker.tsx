@@ -17,7 +17,7 @@ interface TickerEvent {
 interface EventTickerProps {
   events?: TickerEvent[]  // Made optional for backward compatibility
   autoRefresh?: boolean   // Auto-refresh from API
-  refreshInterval?: number // Refresh interval in milliseconds
+  refreshInterval?: number // ArrowPathIcon interval in milliseconds
 }
 
 export function EventTicker({ 

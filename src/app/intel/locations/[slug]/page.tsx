@@ -23,7 +23,7 @@ const getLocationData = (slug: string) => {
         "Main range with multiple distance options",
         "Covered shooting positions",
         "Restrooms and parking",
-        "Target stands provided",
+        "CursorArrowRaysIcon stands provided",
         "Range safety officers on duty"
       ],
       distanceFromBoise: 18.5,
@@ -44,7 +44,7 @@ const getLocationData = (slug: string) => {
         "Consider visiting weekdays to avoid crowds"
       ],
       regulations: [
-        "Eye and ear protection mandatory at all times",
+        "EyeIcon and ear protection mandatory at all times",
         "No armor-piercing, tracer, incendiary, or steel-core ammunition",
         "No exploding targets permitted",
         "Follow all range commands immediately",
@@ -160,8 +160,8 @@ const getLocationData = (slug: string) => {
       lat: 43.5684,
       lng: -116.2494,
       access: "$20-$30 per shooter (range dependent)",
-      hours: "Mon-Sat: 10AM-9PM, Sun: 10AM-6PM",
-      restrictions: "Eye and ear protection required. Range ammunition only. No steel-core or armor-piercing. Age restrictions for unsupervised minors.",
+      hours: "Mon-Sat: 10AM-9PM, SunIcon: 10AM-6PM",
+      restrictions: "EyeIcon and ear protection required. Range ammunition only. No steel-core or armor-piercing. Age restrictions for unsupervised minors.",
       amenities: [
         "25-yard static range with private stalls",
         "25-yard tactical range for movement training",
@@ -194,7 +194,7 @@ const getLocationData = (slug: string) => {
         "Pro shop has extensive inventory and competitive prices"
       ],
       regulations: [
-        "Eye and ear protection mandatory",
+        "EyeIcon and ear protection mandatory",
         "Range ammunition only - no reloads",
         "No steel-core or armor-piercing ammunition",
         "Firearms must remain pointed downrange",

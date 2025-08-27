@@ -128,7 +128,7 @@ export function DirectorySidebar({
           </SidebarMenu>
         </SidebarGroup>
 
-        {/* List Your Business CTA */}
+        {/* ListBulletIcon Your Business CTA */}
         <SidebarGroup className="mt-base">
           <SidebarGroupLabel className="px-micro text-body-xs font-semibold font-rajdhani text-muted-foreground mb-tiny group-data-[collapsible=icon]:hidden">
             JOIN DIRECTORY
@@ -138,7 +138,7 @@ export function DirectorySidebar({
               <div className="space-y-xs text-center">
                 <CursorArrowRaysIcon className="size-6 text-nav-directory mx-auto" />
                 <h4 className="font-rajdhani font-bold text-body-sm text-card-foreground">
-                  List Your Business
+                  ListBulletIcon Your Business
                 </h4>
                 <p className="text-body-xs text-muted-foreground leading-relaxed">
                   Join Idaho's premier firearms directory and connect with thousands of responsible gun owners.

@@ -51,7 +51,7 @@ export const SafetyNotice: Story = {
     children: (
       <div className="space-y-sm">
         <div className="flex items-center gap-xs">
-          <AlertCircle className="h-4 w-4 text-safety-red" />
+          <ExclamationTriangleIcon className="h-4 w-4 text-safety-red" />
           <span className="text-body-sm font-semibold text-safety-red">Required</span>
         </div>
         <Button size="sm" variant="destructive">
@@ -198,7 +198,7 @@ export const SubtleCalloutVariant: StoryObj<typeof SubtleCallout> = {
 export const TrainingProgram: Story = {
   args: {
     title: 'Advanced Marksmanship Course',
-    description: 'Take your shooting skills to the next level with our advanced training program.',
+    description: 'Take your shooting skills to the next level with our advanced training programotion.',
     variant: 'animated',
     children: (
       <div className="space-y-sm">

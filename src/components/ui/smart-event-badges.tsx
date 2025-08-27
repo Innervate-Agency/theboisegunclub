@@ -71,7 +71,7 @@ export function SmartEventBadges({
     )
   }
 
-  // 2. EQUIPMENT REQUIREMENT BADGES (Helpful Info)
+  // 2. EQUIPMENT REQUIREMENT BADGES (Helpful InformationCircleIcon)
   
   // Bring your own ammo
   if (descLower.includes('byoa') || descLower.includes('bring your own ammo') || 
@@ -148,7 +148,7 @@ export function SmartEventBadges({
       descLower.includes('first time') || descLower.includes('no experience')) {
     badges.push(
       <Badge key="beginner" variant="sagebrush-green" size="sm" hideIcon={true}>
-        <AcademicCap className="w-3 h-3 mr-1" />
+        <AcademicCapIcon className="w-3 h-3 mr-1" />
         Beginner Friendly
       </Badge>
     )
@@ -250,7 +250,7 @@ export function SmartEventBadges({
   if (price && price.includes('$') && parseInt(price.replace(/[^0-9]/g, '')) <= 25) {
     badges.push(
       <Badge key="lowcost" variant="warm-stone" size="sm" hideIcon={true}>
-        <Dollar className="w-3 h-3 mr-1" />
+        <CurrencyDollarIcon className="w-3 h-3 mr-1" />
         Under $25
       </Badge>
     )
@@ -263,7 +263,7 @@ export function SmartEventBadges({
       descLower.includes('youth') || descLower.includes('under 18')) {
     badges.push(
       <Badge key="youth" variant="lodgepole-green" size="sm" hideIcon={true}>
-        <AcademicCap className="w-3 h-3 mr-1" />
+        <AcademicCapIcon className="w-3 h-3 mr-1" />
         Youth Program
       </Badge>
     )
@@ -286,7 +286,7 @@ export function SmartEventBadges({
       descLower.includes('instruction') || descLower.includes('learn')) {
     badges.push(
       <Badge key="training" variant="nav-armory" size="sm" hideIcon={true}>
-        <AcademicCap className="w-3 h-3 mr-1" />
+        <AcademicCapIcon className="w-3 h-3 mr-1" />
         Training
       </Badge>
     )

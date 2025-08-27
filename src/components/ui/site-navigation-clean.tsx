@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
-import { Bars3Icon, CalendarDaysIcon, Cog6ToothIcon, HomeIcon, ShieldCheckIcon, ToothIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, CalendarDaysIcon, Cog6ToothIcon, HomeIcon, ShieldCheckIcon, Cog6ToothIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const siteNavigationVariants = cva(
   "w-full transition-all duration-200 ease-out",
@@ -38,11 +38,11 @@ const siteNavigationVariants = cva(
 
 const navigationItems = [
   { label: "Home", icon: Home, href: "/", color: "rusty-orange" },
-  { label: "Events", icon: Calendar, href: "/events", color: "slate-blue" },
-  { label: "Directory", icon: Users, href: "/directory", color: "ayu-green" },
-  { label: "Guides", icon: Target, href: "/guides", color: "ayu-purple" },
-  { label: "Intel", icon: Shield, href: "/intel", color: "ayu-red" },
-  { label: "Marketplace", icon: Trophy, href: "/marketplace", color: "ayu-teal" },
+  { label: "Events", icon: CalendarDaysIcon, href: "/events", color: "slate-blue" },
+  { label: "Directory", icon: UsersIcon, href: "/directory", color: "ayu-green" },
+  { label: "Guides", icon: CursorArrowRaysIcon, href: "/guides", color: "ayu-purple" },
+  { label: "Intel", icon: ShieldCheckIcon, href: "/intel", color: "ayu-red" },
+  { label: "Marketplace", icon: TrophyIcon, href: "/marketplace", color: "ayu-teal" },
   { label: "Community", icon: Settings, href: "/community", color: "ayu-teal" }
 ]
 

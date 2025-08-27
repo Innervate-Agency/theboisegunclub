@@ -1,7 +1,7 @@
 'use client'
 
 
-import { AccessStatusIcon, ArrowUpIcon, BoltIcon, CheckCircleIcon, CloudArrowDownIcon, CloudIcon, ExclamationTriangleIcon, FireIcon, MapIcon, ShieldCheckIcon, SunIcon, WeatherIcon, XCircleIcon } from '@heroicons/react/24/outline';
+import { AccessStatusIcon, ArrowUpIcon, BoltIcon, CheckCircleIcon, CloudArrowDownIcon, CloudIcon, ExclamationTriangleIcon, FireIcon, MapIcon, ShieldCheckIcon, SunIcon, XCircleIcon } from '@heroicons/react/24/outline';
 import React, { useState, useEffect } from 'react'
 import { Badge } from './badge'
 
@@ -88,18 +88,18 @@ export function WeatherConditionsTicker({
     }
   }
 
-  const getWeatherIcon = (weatherType: string) => {
+  const getCloudIcon = (weatherType: string) => {
     switch (weatherType) {
       case 'sun': 
         return <SunIcon className="h-4 w-4 text-sandy-ochre" />
       case 'partly-cloudy':
-        return <Cloud className="h-4 w-4 text-slate-blue/80" />
+        return <CloudIcon className="h-4 w-4 text-slate-blue/80" />
       case 'cloudy':
-        return <Cloud className="h-4 w-4 text-slate-blue" />
+        return <CloudIcon className="h-4 w-4 text-slate-blue" />
       case 'rain':
-        return <CloudRain className="h-4 w-4 text-nav-intel" />
+        return <CloudArrowDownIcon className="h-4 w-4 text-nav-intel" />
       case 'snow':
-        return <Cloud className="h-4 w-4 text-white/90" />
+        return <CloudIcon className="h-4 w-4 text-white/90" />
       case 'storm':
         return <Lightning className="h-4 w-4 text-rusty-orange" />
       default:
@@ -145,17 +145,17 @@ export function WeatherConditionsTicker({
                       <span className="font-rajdhani font-bold text-body-sm text-card-foreground">
                         {condition.locationName}
                       </span>
-                      {getWeatherIcon(condition.weatherIcon)}
+                      {getCloudIcon(condition.weatherIcon)}
                     </div>
                     
                     <div className="flex items-center gap-lg text-body-xs text-muted-foreground">
                       <div className="flex items-center gap-xs">
-                        <Thermometer className="size-3 text-nav-intel" />
+                        <FireIcon className="size-3 text-nav-intel" />
                         <span className="font-medium">{condition.temperature}°F</span>
                       </div>
                       
                       <div className="flex items-center gap-xs">
-                        <Wind className="size-3 text-nav-intel" />
+                        <ArrowUpIcon className="size-3 text-nav-intel" />
                         <span className="font-medium">
                           {condition.windSpeed}mph
                         </span>
@@ -170,7 +170,7 @@ export function WeatherConditionsTicker({
                       <div className="flex items-center gap-xs">
                         <FireIcon className="size-3" />
                         <span className={`font-medium ${getFireDangerColor(condition.fireDanger)}`}>
-                          Fire: {condition.fireDanger}
+                          FireIcon: {condition.fireDanger}
                         </span>
                       </div>
                       

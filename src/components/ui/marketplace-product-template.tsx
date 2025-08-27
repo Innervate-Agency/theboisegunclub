@@ -258,7 +258,7 @@ export default function MarketplaceProductTemplate({
                   <Button className="flex-1 bg-nav-marketplace text-gruvbox-bg-dark hover:bg-nav-marketplace/90 font-rajdhani font-bold"
                     disabled={!inStock}
                   >
-                    <MessageCircle className="h-4 w-4 mr-xs" />
+                    <ChatBubbleBottomCenterTextIcon className="h-4 w-4 mr-xs" />
                     Contact Seller
                   </Button>
                   <Button variant="outline" className="gap-xs">
@@ -281,7 +281,7 @@ export default function MarketplaceProductTemplate({
                   )}
                   {inquiries > 0 && (
                     <div className="flex items-center gap-xs">
-                      <MessageCircle className="h-4 w-4" />
+                      <ChatBubbleBottomCenterTextIcon className="h-4 w-4" />
                       <span>{inquiries} inquiries</span>
                     </div>
                   )}

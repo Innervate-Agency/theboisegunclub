@@ -1,4 +1,4 @@
-import { WeatherIcon } from '@heroicons/react/24/outline'
+import { CloudIcon } from '@heroicons/react/24/outline'
 import { NextRequest, NextResponse } from 'next/server'
 import { shootingLocations } from '@/lib/intel-locations-data'
 
@@ -53,7 +53,7 @@ async function fetchNWSWeatherData(location: any) {
     const windSpeed = parseInt(windSpeedMatch[1]) || 0
     
     // Map NWS conditions to our weather icons
-    const mapWeatherIcon = (shortForecast: string): string => {
+    const mapCloudIcon = (shortForecast: string): string => {
       const forecast = shortForecast.toLowerCase()
       if (forecast.includes('sunny') || forecast.includes('clear')) return 'sun'
       if (forecast.includes('partly') || forecast.includes('mostly sunny')) return 'partly-cloudy'
@@ -90,7 +90,7 @@ async function fetchNWSWeatherData(location: any) {
       windDirection: windMatch,
       fireDanger: determineFireDanger(temperature, windSpeed, humidity),
       accessStatus: determineAccessStatus(current.shortForecast || '', windSpeed),
-      weatherIcon: mapWeatherIcon(current.shortForecast || 'Clear'),
+      weatherIcon: mapCloudIcon(current.shortForecast || 'Clear'),
       lastUpdated: new Date().toISOString(),
       alerts: [], // Could integrate NWS alerts API here
       // Additional NWS data

@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
-import { CalendarDaysIcon, CategoryIcon, ClockIcon, EyeIcon, FunnelIcon, ListBulletIcon, ShareIcon, TagIcon, UserIcon } from '@heroicons/react/24/outline';
+import { BookmarkIcon, CalendarDaysIcon, CategoryIcon, ChatBubbleBottomCenterTextIcon, ClockIcon, EyeIcon, FunnelIcon, ListBulletIcon, ShareIcon, Squares2X2Icon, TagIcon, UserIcon } from '@heroicons/react/24/outline';
 
 interface BlogAuthor {
   name: string
@@ -124,10 +124,10 @@ export function BlogCard({
     switch (category) {
       case 'Legal': return <TagIcon className={iconClass} />
       case 'Reviews': return <EyeIcon className={iconClass} />
-      case 'Gear': return <Grid3X3 className={iconClass} />
+      case 'Gear': return <Squares2X2Icon className={iconClass} />
       case 'Training': return <UserIcon className={iconClass} />
       case 'Safety': return <FunnelIcon className={iconClass} />
-      default: return <MessageCircle className={iconClass} />
+      default: return <ChatBubbleBottomCenterTextIcon className={iconClass} />
     }
   }
 
@@ -165,9 +165,9 @@ export function BlogCard({
           <button
             className="w-8 h-8 bg-black/60 backdrop-blur-sm border border-white/20 rounded-none flex items-center justify-center hover:bg-nav-armory hover:border-nav-armory transition-all duration-200"
             onClick={handleBookmark}
-            title="Bookmark article"
+            title="BookmarkIcon article"
           >
-            <Bookmark className={cn("h-4 w-4 text-white", isBookmarked && "fill-current")} />
+            <BookmarkIcon className={cn("h-4 w-4 text-white", isBookmarked && "fill-current")} />
           </button>
         </div>
         
@@ -232,7 +232,7 @@ export function BlogCard({
           ))}
         </div>
 
-        {/* Info Grid - Matching EventCard */}
+        {/* InformationCircleIcon Grid - Matching EventCard */}
         <div className="space-y-sm bg-muted/30 p-sm rounded-xs">
           <div className="flex items-center gap-sm text-sm">
             <CalendarDaysIcon className="size-4 flex-shrink-0 text-nav-armory" />
@@ -273,7 +273,7 @@ export function BlogCard({
   )
 }
 
-// Blog List Component
+// Blog ListBulletIcon Component
 export interface BlogListProps extends React.ComponentProps<"section"> {
   articles: BlogArticle[]
   variant?: "grid" | "list"
@@ -357,7 +357,7 @@ export function BlogList({
                 size="icon"
                 onClick={() => setViewMode('grid')}
               >
-                <Grid3X3 className="icon-sm" />
+                <Squares2X2Icon className="icon-sm" />
               </Button>
               <Button
                 variant={viewMode === 'list' ? 'default' : 'secondary'}
@@ -370,7 +370,7 @@ export function BlogList({
           </div>
         )}
         
-        {/* Articles Grid/List */}
+        {/* Articles Grid/ListBulletIcon */}
         <div className={cn(
           viewMode === 'grid' 
             ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md"

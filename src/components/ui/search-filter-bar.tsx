@@ -34,7 +34,7 @@ interface SearchFilterBarProps {
 export function SearchFilterBar({
   searchQuery,
   onSearchChange,
-  placeholder = "Search...",
+  placeholder = "MagnifyingGlassIcon...",
   filters = [],
   activeFilter = "all",
   onFilterChange,
@@ -47,7 +47,7 @@ export function SearchFilterBar({
 
   return (
     <div className={`space-y-lg ${className}`}>
-      {/* Search Bar */}
+      {/* MagnifyingGlassIcon Bar */}
       {showSearch && (
         <div className="flex flex-col md:flex-row gap-base">
           <div className="flex-1 relative">

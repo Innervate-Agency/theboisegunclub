@@ -6,37 +6,37 @@ import { BuildingOfficeIcon, CalendarDaysIcon, InformationCircleIcon, Magnifying
 
 const services = [
   {
-    icon: Search,
+    icon: MagnifyingGlassIcon,
     title: "Find Local Experts",
     description: "Directory of gun shops, ranges, gunsmiths, and instructors across Treasure Valley",
     borderColor: "border-l-scope-blue"
   },
   {
-    icon: Calendar,
+    icon: CalendarDaysIcon,
     title: "Unified Events",
     description: "Comprehensive calendar of competitions, training, and community gatherings",
     borderColor: "border-l-sandy-ochre"
   },
   {
-    icon: ShoppingCart,
+    icon: ShoppingCartIcon,
     title: "Service Marketplace",
     description: "Book range time, training sessions, and services from local businesses",
     borderColor: "border-l-rusty-orange"
   },
   {
-    icon: Users,
+    icon: UsersIcon,
     title: "Community Forum",
     description: "Connect and discuss with fellow enthusiasts across Treasure Valley",
     borderColor: "border-l-rifling-green"
   },
   {
-    icon: Info,
+    icon: InformationCircleIcon,
     title: "Content Engine",
     description: "Educational resources, news, and safety information for the community",
     borderColor: "border-l-walnut-stock"
   },
   {
-    icon: Building,
+    icon: BuildingOfficeIcon,
     title: "Brand & Apparel",
     description: "Official club merchandise and branded apparel for members",
     borderColor: "border-l-warning-amber"

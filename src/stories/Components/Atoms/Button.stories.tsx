@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Button } from '@/components/ui/button';
-import { ArrowDownTrayIcon, ArrowRightIcon, BoltIcon, ChatBubbleLeftRightIcon, CheckIcon, Cog6ToothIcon, CursorArrowRaysIcon, MagnifyingGlassIcon, PlusIcon, ShieldCheckIcon, ToothIcon, UserIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { ArrowDownTrayIcon, ArrowRightIcon, BoltIcon, ChatBubbleLeftRightIcon, CheckIcon, Cog6ToothIcon, CursorArrowRaysIcon, MagnifyingGlassIcon, PlusIcon, ShieldCheckIcon, UserIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof Button> = {
   title: 'Design System/Atoms/Button',
@@ -299,34 +299,34 @@ export const FireGradientSystem: Story = {
     <div className="max-w-4xl mx-auto space-y-lg p-md">
       <div className="text-center space-y-base">
         <h1 className="text-3xl font-rajdhani font-bold text-foreground">
-          🔥 Fire Gradient System
+          🔥 FireIcon Gradient System
         </h1>
         <p className="text-muted-foreground">
           Color-coordinated fire gradients that unfurl from left on hover
         </p>
       </div>
 
-      {/* Fire Gradient Buttons */}
+      {/* FireIcon Gradient Buttons */}
       <div className="space-y-md">
         <h2 className="text-display-sm font-rajdhani font-semibold text-rusty-orange">
-          Fire Button Variants
+          FireIcon Button Variants
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-base">
           <Button variant="destructive" >
             <CursorArrowRaysIcon className="mr-xs h-4 w-4" />
-            Fire Orange
+            FireIcon Orange
           </Button>
           <Button variant="default" >
             <ShieldCheckIcon className="mr-xs h-4 w-4" />
-            Fire Blue
+            FireIcon Blue
           </Button>
           <Button variant="secondary" >
             <BoltIcon className="mr-xs h-4 w-4" />
-            Fire Purple  
+            FireIcon Purple  
           </Button>
           <Button variant="secondary" >
             <CheckIcon className="mr-xs h-4 w-4" />
-            Fire Green
+            FireIcon Green
           </Button>
         </div>
       </div>
@@ -334,7 +334,7 @@ export const FireGradientSystem: Story = {
       {/* Demo Cards */}
       <div className="space-y-md">
         <h2 className="text-display-sm font-rajdhani font-semibold text-slate-blue">
-          Interactive Fire Cards
+          Interactive FireIcon Cards
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
           <div className="bg-card p-md rounded-sm shadow-elevated hover:shadow-elevated transition-shadow group">
@@ -374,25 +374,25 @@ export const FireGradientSystem: Story = {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
           <div className="bg-muted p-base rounded-sm">
-            <h4 className="font-medium text-foreground mb-sm">🔥 Fire (Orange/Yellow)</h4>
+            <h4 className="font-medium text-foreground mb-sm">🔥 FireIcon (Orange/Yellow)</h4>
             <div className="h-3 bg-gradient-to-r from-rusty-orange to-sandy-ochre rounded-full mb-xs"></div>
             <p className="text-caption text-muted-foreground">Primary accent • Call-to-action • Success states</p>
           </div>
           
           <div className="bg-muted p-base rounded-sm">
-            <h4 className="font-medium text-foreground mb-sm">💧 Fire Blue (Blue/Green)</h4>
+            <h4 className="font-medium text-foreground mb-sm">💧 FireIcon Blue (Blue/Green)</h4>
             <div className="h-3 bg-gradient-to-r from-slate-blue to-ayu-green rounded-full mb-xs"></div>
             <p className="text-caption text-muted-foreground">Navigation • Community features • Information</p>
           </div>
           
           <div className="bg-muted p-base rounded-sm">
-            <h4 className="font-medium text-foreground mb-sm">⚡ Fire Purple (Purple/Cobalt)</h4>
+            <h4 className="font-medium text-foreground mb-sm">⚡ FireIcon Purple (Purple/Cobalt)</h4>
             <div className="h-3 bg-gradient-to-r from-ayu-purple to-slate-blue rounded-full mb-xs"></div>
             <p className="text-caption text-muted-foreground">Premium features • Special actions • Highlights</p>
           </div>
           
           <div className="bg-muted p-base rounded-sm">
-            <h4 className="font-medium text-foreground mb-sm">🌿 Fire Green (Green variants)</h4>
+            <h4 className="font-medium text-foreground mb-sm">🌿 FireIcon Green (Green variants)</h4>
             <div className="h-3 bg-gradient-to-r from-ayu-green to-sagebrush-green rounded-full mb-xs"></div>
             <p className="text-caption text-muted-foreground">Success • Verification • Positive states</p>
           </div>
@@ -404,7 +404,7 @@ export const FireGradientSystem: Story = {
     docs: {
       description: {
         story: `
-## Fire Gradient System
+## FireIcon Gradient System
 
 The TBGC fire gradient system provides color-coordinated animation effects that "unfurl" from left to right on hover. Each gradient combination serves specific UI purposes:
 
@@ -415,10 +415,10 @@ The TBGC fire gradient system provides color-coordinated animation effects that 
 - **Height**: 1px default, grows to 2px on hover for buttons
 
 ### Color Combinations
-- **Fire**: Orange to Yellow - Primary actions and success states
-- **Fire Blue**: Blue to Green - Navigation and community features  
-- **Fire Purple**: Purple to Cobalt - Premium features and highlights
-- **Fire Green**: Green variants - Verification and positive feedback
+- **FireIcon**: Orange to Yellow - Primary actions and success states
+- **FireIcon Blue**: Blue to Green - Navigation and community features  
+- **FireIcon Purple**: Purple to Cobalt - Premium features and highlights
+- **FireIcon Green**: Green variants - Verification and positive feedback
 
 ### Usage Guidelines
 Apply gradients that match the semantic meaning of your component's primary color or context.
@@ -828,10 +828,10 @@ export const HeritageColorCombinations: Story = {
           <div className="space-y-sm">
             <h4 className="font-noto-sans font-medium text-blued-steel">Information</h4>
             <Button className="bg-scope-blue text-range-white hover:bg-scope-blue/90 w-full">
-              Info Action
+              InformationCircleIcon Action
             </Button>
             <Button className="bg-range-white text-scope-blue border-2 border-scope-blue hover:bg-scope-blue/5 w-full">
-              Info Outline
+              InformationCircleIcon Outline
             </Button>
           </div>
           
@@ -968,13 +968,13 @@ export const SearchInterface: Story = {
           <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
           <input
             type="text"
-            placeholder="Search members..."
+            placeholder="MagnifyingGlassIcon members..."
             className="w-full pr-base py-xs border border-warning-amber/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-sandy-ochre/50 focus:border-sandy-ochre bg-card-surface text-blued-steel placeholder-warning-amber"
             style={{paddingLeft: '48px'}}
           />
         </div>
         <Button variant="default">
-          Search
+          MagnifyingGlassIcon
         </Button>
       </div>
       

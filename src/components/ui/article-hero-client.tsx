@@ -87,11 +87,11 @@ export function ArticleHeroClient({
             <Link href="/" className="hover:text-foreground transition-colors">
               Home
             </Link>
-            <CaretRight className="h-4 w-4" />
+            <ChevronRightIcon className="h-4 w-4" />
             <Link href={sectionPath} className={`hover:text-${sectionColor} transition-colors`}>
               {sectionName}
             </Link>
-            <CaretRight className="h-4 w-4" />
+            <ChevronRightIcon className="h-4 w-4" />
             <span className={`text-${sectionColor} font-medium`}>{title}</span>
           </MotionDiv>
           

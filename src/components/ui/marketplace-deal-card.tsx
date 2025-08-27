@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Badge } from './badge'
 import { Button } from './button'
 import { cn } from '@/lib/utils'
-import { BuildingStorefrontIcon, CalendarDaysIcon, CategoryIcon, CursorArrowRaysIcon, MapPinIcon, PhoneIcon, StarIcon } from '@heroicons/react/24/outline';
+import { BuildingStorefrontIcon, CalendarDaysIcon, CategoryIcon, CursorArrowRaysIcon, MapPinIcon, PhoneIcon, ArrowTrendingDownIcon, ShoppingBagIcon, StarIcon } from '@heroicons/react/24/outline';
 
 interface MarketplaceDeal {
   title: string
@@ -129,7 +129,7 @@ export function MarketplaceDealCard({
       {discountPercentage > 0 && (
         <div className="absolute top-sm left-sm">
           <div className="bg-black/60 backdrop-blur-sm text-white px-sm py-xs rounded-xs font-rajdhani font-bold text-sm flex items-center gap-xs border border-white/20">
-            <TrendingDown className="size-3" />
+            <ArrowTrendingDownIcon className="size-3" />
             {discountPercentage}% OFF
           </div>
         </div>
@@ -138,11 +138,11 @@ export function MarketplaceDealCard({
       {/* Category icon overlay */}
       <div className="absolute bottom-sm right-sm">
         {deal.category.includes('Firearms') && <CursorArrowRaysIcon className="size-6 text-white/80" />}
-        {deal.category.includes('Ammunition') && <Package className="size-6 text-white/80" />}
+        {deal.category.includes('Ammunition') && <ArchiveBoxIcon className="size-6 text-white/80" />}
         {deal.category.includes('Optics') && <Binoculars className="size-6 text-white/80" />}
         {deal.category.includes('Accessories') && <CursorArrowRaysIcon className="size-6 text-white/80" />}
         {!deal.category.includes('Firearms') && !deal.category.includes('Ammunition') && !deal.category.includes('Optics') && !deal.category.includes('Accessories') && (
-          <ShoppingBag className="size-6 text-white/80" />
+          <ShoppingBagIcon className="size-6 text-white/80" />
         )}
       </div>
     </>
@@ -241,10 +241,10 @@ export function MarketplaceDealCard({
   const getCategoryIcon = (category: string) => {
     const iconClass = "size-8 text-white/80 relative z-10"
     if (category.includes('Firearms')) return <CursorArrowRaysIcon className={iconClass} />
-    if (category.includes('Ammunition')) return <Package className={iconClass} />
+    if (category.includes('Ammunition')) return <ArchiveBoxIcon className={iconClass} />
     if (category.includes('Optics')) return <Binoculars className={iconClass} />
     if (category.includes('Accessories')) return <CursorArrowRaysIcon className={iconClass} />
-    return <ShoppingBag className={iconClass} />
+    return <ShoppingBagIcon className={iconClass} />
   }
 
   return (
@@ -293,7 +293,7 @@ export function MarketplaceDealCard({
             }}
             title="View deal"
           >
-            <ShoppingBag className="h-4 w-4 text-white" />
+            <ShoppingBagIcon className="h-4 w-4 text-white" />
           </button>
         </div>
         
@@ -385,7 +385,7 @@ export function MarketplaceDealCard({
           </div>
         </div>
 
-        {/* Info Grid - Matching EventCard */}
+        {/* InformationCircleIcon Grid - Matching EventCard */}
         <div className="space-y-sm bg-muted/30 p-sm rounded-xs">
           <div className="flex items-center gap-sm text-sm">
             <BuildingStorefrontIcon className="size-4 flex-shrink-0 text-nav-marketplace" />

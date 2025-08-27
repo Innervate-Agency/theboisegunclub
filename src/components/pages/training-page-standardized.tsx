@@ -73,7 +73,7 @@ const trainingPrograms: TrainingData[] = [
     rating: 4.9,
     students: 234,
     description: 'Professional firearms training covering safety, fundamentals, and marksmanship for new shooters. Led by 17-year law enforcement veteran.',
-    topics: ['Firearm Safety', 'Proper Handling', 'Marksmanship Basics', 'Live Fire Training'],
+    topics: ['Firearm Safety', 'Proper Handling', 'Marksmanship Basics', 'Live FireIcon Training'],
     nextSession: '2025-09-13',
     location: 'Double Tapp Range',
     certificate: true,
@@ -145,7 +145,7 @@ const trainingPrograms: TrainingData[] = [
     rating: 4.8,
     students: 89,
     description: 'Introduction to tactical carbine handling, movement, and engagement techniques for defensive purposes.',
-    topics: ['Carbine Basics', 'Movement Drills', 'Target Engagement', 'Malfunction Clearance'],
+    topics: ['Carbine Basics', 'Movement Drills', 'CursorArrowRaysIcon Engagement', 'Malfunction Clearance'],
     nextSession: '2025-08-24',
     location: 'Double Tapp Range',
     certificate: true,
@@ -290,18 +290,18 @@ function TrainingCard({ training, className = '' }: { training: TrainingData, cl
 
 // Training category statistics for the stats grid based on actual data
 const trainingCategoryStats = [
-  { icon: Shield, title: "Basic Safety", value: trainingPrograms.filter(t => t.trainingType === 'Basic Safety').length.toString(), subtitle: "Beginner courses", color: "text-nav-training" },
-  { icon: CheckCircle, title: "CCW", value: trainingPrograms.filter(t => t.trainingType === 'CCW').length.toString(), subtitle: "Concealed carry", color: "text-nav-training" },
-  { icon: Target, title: "Defensive", value: trainingPrograms.filter(t => t.trainingType === 'Defensive Pistol').length.toString(), subtitle: "Pistol training", color: "text-nav-training" },
-  { icon: Trophy, title: "Tactical", value: trainingPrograms.filter(t => t.trainingType === 'Tactical Carbine').length.toString(), subtitle: "Carbine courses", color: "text-nav-training" },
-  { icon: Users, title: "Specialized", value: trainingPrograms.filter(t => ['Women', 'Youth', 'LEO', 'Specialized'].includes(t.trainingType)).length.toString(), subtitle: "Custom programs", color: "text-nav-training" },
+  { icon: ShieldCheckIcon, title: "Basic Safety", value: trainingPrograms.filter(t => t.trainingType === 'Basic Safety').length.toString(), subtitle: "Beginner courses", color: "text-nav-training" },
+  { icon: CheckCircleIcon, title: "CCW", value: trainingPrograms.filter(t => t.trainingType === 'CCW').length.toString(), subtitle: "Concealed carry", color: "text-nav-training" },
+  { icon: CursorArrowRaysIcon, title: "Defensive", value: trainingPrograms.filter(t => t.trainingType === 'Defensive Pistol').length.toString(), subtitle: "Pistol training", color: "text-nav-training" },
+  { icon: TrophyIcon, title: "Tactical", value: trainingPrograms.filter(t => t.trainingType === 'Tactical Carbine').length.toString(), subtitle: "Carbine courses", color: "text-nav-training" },
+  { icon: UsersIcon, title: "Specialized", value: trainingPrograms.filter(t => ['Women', 'Youth', 'LEO', 'Specialized'].includes(t.trainingType)).length.toString(), subtitle: "Custom programs", color: "text-nav-training" },
   { icon: GraduationCap, title: "Total Training", value: trainingPrograms.length.toString(), subtitle: "Available courses", color: "text-nav-training" }
 ]
 
 // Training activity feed data
 const trainingActivityFeedData = [
   {
-    icon: Trophy,
+    icon: TrophyIcon,
     iconColor: "text-nav-training",
     iconBgColor: "bg-nav-training/20",
     title: "New Tactical Carbine Course",
@@ -309,7 +309,7 @@ const trainingActivityFeedData = [
     timeAgo: "2h ago"
   },
   {
-    icon: Shield,
+    icon: ShieldCheckIcon,
     iconColor: "text-rusty-orange",
     iconBgColor: "bg-rusty-orange/20",
     title: "Instructor Certification",
@@ -317,7 +317,7 @@ const trainingActivityFeedData = [
     timeAgo: "4h ago"
   },
   {
-    icon: Users,
+    icon: UsersIcon,
     iconColor: "text-sagebrush-green",
     iconBgColor: "bg-sagebrush-green/20",
     title: "Record Enrollment",
@@ -339,7 +339,7 @@ export function TrainingPageStandardized() {
     perPageOptions: [8, 12, 24, 48],
     enableInfiniteScroll: false,
     
-    // Search filter function
+    // MagnifyingGlassIcon filter function
     searchFilter: (training, query) => {
       const searchTerms = query.toLowerCase()
       return (
@@ -498,7 +498,7 @@ export function TrainingPageStandardized() {
             <div className="mb-lg">
               <div className="flex items-center gap-xs text-sm text-white/60">
                 <span>Home</span>
-                <CaretRight className="h-4 w-4" />
+                <ChevronRightIcon className="h-4 w-4" />
                 <span className="text-white font-medium">Training</span>
               </div>
             </div>
@@ -537,10 +537,10 @@ export function TrainingPageStandardized() {
             <div className="flex gap-base">
               <Button className="bg-nav-training text-white hover:bg-white hover:text-nav-training font-rajdhani font-bold" animationType="plus-minus">
                 <PlusIcon className="h-4 w-4 mr-xs" />
-                List Training
+                ListBulletIcon Training
               </Button>
               <Button variant="ghost" className="text-white hover:bg-white/10 font-rajdhani font-bold" animationType="chevron">
-                View Calendar
+                View CalendarDaysIcon
               </Button>
             </div>
           </div>
@@ -587,7 +587,7 @@ export function TrainingPageStandardized() {
                               <span className="text-xs text-muted-foreground">{featuredTraining.duration}</span>
                             </div>
                             <div className="flex items-center gap-xs">
-                              <CurrencyDollar className="h-3 w-3 text-nav-training" />
+                              <CurrencyDollarIcon className="h-3 w-3 text-nav-training" />
                               <span className="text-xs font-rajdhani font-bold">${featuredTraining.price}</span>
                             </div>
                           </div>
@@ -652,13 +652,13 @@ export function TrainingPageStandardized() {
             
             {/* Main Content */}
             <main className="flex-1 min-w-0">
-              {/* Search and Category Controls */}
+              {/* MagnifyingGlassIcon and Category Controls */}
               <div className="mb-xl space-y-lg">
-                {/* Search Bar */}
+                {/* MagnifyingGlassIcon Bar */}
                 <div className="relative max-w-2xl">
                   <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
-                    placeholder="Search training programs, instructors, or locations..."
+                    placeholder="MagnifyingGlassIcon training programs, instructors, or locations..."
                     className="pl-10 h-12 text-body-base shadow-none"
                     value={filters.searchQuery}
                     onChange={(e) => filters.setSearchQuery(e.target.value)}
@@ -669,11 +669,11 @@ export function TrainingPageStandardized() {
                 <div className="flex flex-wrap gap-xs">
                   {[
                     { id: 'all', label: 'All Training', count: trainingPrograms.length, icon: GraduationCap },
-                    { id: 'basic', label: 'Basic Safety', count: trainingPrograms.filter(t => t.trainingType === 'Basic Safety').length, icon: Shield },
-                    { id: 'ccw', label: 'CCW', count: trainingPrograms.filter(t => t.trainingType === 'CCW').length, icon: CheckCircle },
-                    { id: 'defensive', label: 'Defensive', count: trainingPrograms.filter(t => t.trainingType === 'Defensive Pistol').length, icon: Target },
-                    { id: 'tactical', label: 'Tactical', count: trainingPrograms.filter(t => t.trainingType === 'Tactical Carbine').length, icon: Trophy },
-                    { id: 'specialized', label: 'Specialized', count: trainingPrograms.filter(t => ['Women', 'Youth', 'LEO', 'Specialized'].includes(t.trainingType)).length, icon: Users },
+                    { id: 'basic', label: 'Basic Safety', count: trainingPrograms.filter(t => t.trainingType === 'Basic Safety').length, icon: ShieldCheckIcon },
+                    { id: 'ccw', label: 'CCW', count: trainingPrograms.filter(t => t.trainingType === 'CCW').length, icon: CheckCircleIcon },
+                    { id: 'defensive', label: 'Defensive', count: trainingPrograms.filter(t => t.trainingType === 'Defensive Pistol').length, icon: CursorArrowRaysIcon },
+                    { id: 'tactical', label: 'Tactical', count: trainingPrograms.filter(t => t.trainingType === 'Tactical Carbine').length, icon: TrophyIcon },
+                    { id: 'specialized', label: 'Specialized', count: trainingPrograms.filter(t => ['Women', 'Youth', 'LEO', 'Specialized'].includes(t.trainingType)).length, icon: UsersIcon },
                     { id: 'featured', label: 'Featured', count: trainingPrograms.filter(t => t.featured).length }
                   ].map((tab) => (
                     <Button
@@ -705,7 +705,7 @@ export function TrainingPageStandardized() {
                   </h2>
                   <p className="text-muted-foreground">
                     {filters.filteredResults !== filters.totalResults && `Filtered from ${filters.totalResults} total • `}
-                    {filters.searchQuery && `Search: "${filters.searchQuery}" • `}
+                    {filters.searchQuery && `MagnifyingGlassIcon: "${filters.searchQuery}" • `}
                     From basic safety to advanced tactical training
                   </p>
                 </div>
@@ -755,9 +755,9 @@ export function TrainingPageStandardized() {
                       size="sm"
                       onClick={() => filters.setViewMode('list')}
                       className="rounded-none border-none shadow-none"
-                      title="List View"
+                      title="ListBulletIcon View"
                     >
-                      <ListView className="size-4" />
+                      <ListBulletIcon className="size-4" />
                     </Button>
                   </div>
 
@@ -792,7 +792,7 @@ export function TrainingPageStandardized() {
                 </div>
               </div>
 
-              {/* Card Grid/List Content with Loading State */}
+              {/* Card Grid/ListBulletIcon Content with Loading State */}
               <div className="mb-4xl">
                 {filters.isLoading ? (
                   <CardSkeleton 

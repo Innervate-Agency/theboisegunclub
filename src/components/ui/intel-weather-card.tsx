@@ -100,9 +100,9 @@ export function IntelWeatherCard({
             <p className="text-body-xs text-muted-foreground">{weather.conditions}</p>
           </div>
 
-          {/* Wind */}
+          {/* WindIcon */}
           <div className="text-center space-y-xs">
-            <Wind className="h-6 w-6 text-slate-blue mx-auto" weight="bold" />
+            <WindIcon className="h-6 w-6 text-slate-blue mx-auto" weight="bold" />
             <p className="font-rajdhani font-bold text-body-lg text-card-foreground">
               {weather.windSpeed} mph
             </p>

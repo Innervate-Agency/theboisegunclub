@@ -52,7 +52,7 @@ export function PlatformValueCard({
           </p>
         </div>
 
-        {/* Benefits List */}
+        {/* Benefits ListBulletIcon */}
         <div className="space-y-sm">
           {benefits.map((benefit, index) => (
             <div key={index} className="flex items-start gap-sm">
@@ -69,7 +69,7 @@ export function PlatformValueCard({
 // Pre-configured value proposition cards
 export const platformValueCards = [
   {
-    icon: Shield,
+    icon: ShieldCheckIcon,
     title: "Community First",
     description: "Built by Idaho gun owners, for Idaho gun owners. No corporate agenda, no coastal politics.",
     benefits: [
@@ -84,7 +84,7 @@ export const platformValueCards = [
     iconBgColor: "bg-slate-blue/20"
   },
   {
-    icon: Users,
+    icon: UsersIcon,
     title: "Authentic Connections",
     description: "Connect with real people in your community. No bots, no fake reviews, just genuine recommendations.",
     benefits: [
@@ -99,7 +99,7 @@ export const platformValueCards = [
     iconBgColor: "bg-sagebrush-green/20"
   },
   {
-    icon: MapTrifold,
+    icon: MapIcon,
     title: "Local Knowledge",
     description: "Real-time intel from people who actually shoot at these ranges and train with these instructors.",
     benefits: [

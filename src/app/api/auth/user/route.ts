@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { authAPI } from '@/lib/auth'
 
 /**
- * OAuth2 User Info Endpoint for NodeBB Integration
+ * OAuth2 User InformationCircleIcon Endpoint for NodeBB Integration
  * Returns user information for authenticated requests
  */
 export async function GET(request: NextRequest) {

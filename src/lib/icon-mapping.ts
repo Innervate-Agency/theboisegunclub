@@ -4,7 +4,7 @@
  */
 
 // Import all commonly used Heroicons
-import { AcademicCapIcon, AdjustmentsHorizontalIcon, AdjustmentsHorizontalIcon as FilterIcon, ArchiveBoxIcon, ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, ArrowRightOnRectangleIcon, ArrowTrendingUpIcon, ArrowUpIcon, BellIcon, BoltIcon, BookOpenIcon, BuildingOfficeIcon, BuildingStorefrontIcon, CalendarIcon, CameraIcon, ChatBubbleLeftIcon, CheckCircleIcon, CheckIcon, ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, ChevronUpIcon, ClockIcon, CloudIcon, CogIcon, CurrencyDollarIcon, DocumentTextIcon, EnvelopeIcon, ExclamationCircleIcon, ExclamationTriangleIcon, FilterIcon, FireIcon, FlagIcon, GridIcon, HandThumbUpIcon, HeartIcon, HomeIcon, InformationCircleIcon, KeyIcon, ListBulletIcon, LockClosedIcon, LockOpenIcon, MagnifyingGlassIcon, MapIcon, MapPinIcon, PhoneIcon, PhotoIcon, PlusIcon, QuestionMarkCircleIcon, ReceiptPercentIcon, ShieldCheckIcon, ShoppingCartIcon, SpeakerWaveIcon, Squares2X2Icon as GridIcon, StarIcon, SunIcon, TacticalIcon, TagIcon, TrendingUpIcon, TrophyIcon, TruckIcon, UserCircleIcon, UserIcon, UsersIcon, VideoCameraIcon, WrenchScrewdriverIcon, XCircleIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { AcademicCapIcon, AdjustmentsHorizontalIcon, AdjustmentsHorizontalIcon as FilterIcon, ArchiveBoxIcon, ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon, ArrowRightOnRectangleIcon, ArrowTrendingUpIcon, ArrowUpIcon, BellIcon, BoltIcon, BookOpenIcon, BuildingOfficeIcon, BuildingStorefrontIcon, CalendarIcon, CameraIcon, ChatBubbleLeftIcon, CheckCircleIcon, CheckIcon, ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, ChevronUpIcon, ClockIcon, CloudIcon, CogIcon, CurrencyDollarIcon, DocumentTextIcon, EnvelopeIcon, ExclamationCircleIcon, ExclamationTriangleIcon, FilterIcon, FireIcon, FlagIcon, GridIcon, HandThumbUpIcon, HeartIcon, HomeIcon, InformationCircleIcon, KeyIcon, ListBulletIcon, LockClosedIcon, LockOpenIcon, MagnifyingGlassIcon, MapIcon, MapPinIcon, PhoneIcon, PhotoIcon, PlusIcon, QuestionMarkCircleIcon, ReceiptPercentIcon, ShieldCheckIcon, ShoppingCartIcon, SpeakerWaveIcon, Squares2X2Icon as GridIcon, StarIcon, SunIcon, TacticalIcon, TagIcon, TrendingUpIcon, TrophyIcon, TruckIcon, UserEllipsisHorizontalIcon, UserIcon, UsersIcon, VideoCameraIcon, WrenchScrewdriverIcon, XCircleIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 // Import tactical icons for specialized firearms categories
 import { 
@@ -16,7 +16,7 @@ import {
 // Complete mapping from Phosphor names to Heroicons
 export const iconMapping = {
   // Navigation & UI Icons
-  'CaretRight': ChevronRightIcon,
+  'ChevronRightIcon': ChevronRightIcon,
   'CaretLeft': ChevronLeftIcon,
   'CaretDown': ChevronDownIcon,
   'CaretUp': ChevronUpIcon,
@@ -28,18 +28,18 @@ export const iconMapping = {
   'X': XMarkIcon,
   'XCircle': XCircleIcon,
   'Check': CheckIcon,
-  'CheckCircle': CheckCircleIcon,
+  'CheckCircleIcon': CheckCircleIcon,
   
   // Business & Location Icons
-  'MapPin': MapPinIcon,
-  'Building': BuildingOfficeIcon,
+  'MapPinIcon': MapPinIcon,
+  'BuildingOfficeIcon': BuildingOfficeIcon,
   'House': HomeIcon,
-  'Storefront': BuildingStorefrontIcon,
+  'BuildingStorefrontIcon': BuildingStorefrontIcon,
   
   // People & Social Icons
   'User': UserIcon,
-  'Users': UsersIcon,
-  'UserCircle': UserCircleIcon,
+  'UsersIcon': UsersIcon,
+  'UserCircle': UserEllipsisHorizontalIcon,
   
   // Communication Icons
   'Phone': PhoneIcon,
@@ -51,54 +51,54 @@ export const iconMapping = {
   'Camera': CameraIcon,
   'Image': PhotoIcon,
   'Video': VideoCameraIcon,
-  'BookOpen': BookOpenIcon,
+  'BookOpenIcon': BookOpenIcon,
   'Book': BookOpenIcon,
   'Article': DocumentTextIcon,
   
   // Shopping & Commerce Icons
-  'ShoppingCart': ShoppingCartIcon,
-  'Package': ArchiveBoxIcon,
-  'Tag': TagIcon,
-  'CurrencyDollar': CurrencyDollarIcon,
+  'ShoppingCartIcon': ShoppingCartIcon,
+  'ArchiveBoxIcon': ArchiveBoxIcon,
+  'TagIcon': TagIcon,
+  'CurrencyDollarIcon': CurrencyDollarIcon,
   'Receipt': ReceiptPercentIcon,
   
-  // Time & Calendar Icons
-  'Calendar': CalendarIcon,
-  'Clock': ClockIcon,
+  // Time & CalendarDaysIcon Icons
+  'CalendarDaysIcon': CalendarIcon,
+  'ClockIcon': ClockIcon,
   'Timer': ClockIcon,
   
   // Status & Feedback Icons
-  'Star': StarIcon,
-  'Heart': HeartIcon,
+  'StarIcon': StarIcon,
+  'HeartIcon': HeartIcon,
   'ThumbsUp': HandThumbUpIcon,
   'Warning': ExclamationTriangleIcon,
   'WarningCircle': ExclamationCircleIcon,
-  'Info': InformationCircleIcon,
+  'InformationCircleIcon': InformationCircleIcon,
   
   // Weather & Environment Icons
-  'Sun': SunIcon,
+  'SunIcon': SunIcon,
   'CloudRain': CloudIcon,
-  'Wind': BoltIcon,
-  'Fire': FireIcon,
+  'WindIcon': BoltIcon,
+  'FireIcon': FireIcon,
   'Lightning': BoltIcon,
   
   // Security & Protection Icons
-  'Shield': ShieldCheckIcon,
+  'ShieldCheckIcon': ShieldCheckIcon,
   'ShieldCheck': ShieldCheckIcon,
   'Lock': LockClosedIcon,
   'LockOpen': LockOpenIcon,
   'Key': KeyIcon,
   
   // Tools & Equipment Icons
-  'Wrench': WrenchScrewdriverIcon,
+  'WrenchScrewdriverIcon': WrenchScrewdriverIcon,
   'Gear': CogIcon,
-  'Target': MapPinIcon, // No direct equivalent, using MapPin
-  'Crosshair': MapPinIcon, // No direct equivalent, using MapPin
+  'CursorArrowRaysIcon': MapPinIcon, // No direct equivalent, using MapPinIcon
+  'Crosshair': MapPinIcon, // No direct equivalent, using MapPinIcon
   
   // Awards & Achievement Icons
   'Trophy': TrophyIcon,
   'Medal': TrophyIcon,
-  'Crown': TrophyIcon,
+  'StarIcon': TrophyIcon,
   'Certificate': AcademicCapIcon,
   'GraduationCap': AcademicCapIcon,
   'Student': AcademicCapIcon,
@@ -109,7 +109,7 @@ export const iconMapping = {
   
   // Miscellaneous Icons
   'Flag': FlagIcon,
-  'TrendUp': TrendingUpIcon,
+  'ArrowTrendingUpIcon': TrendingUpIcon,
   'TrendDown': TrendingUpIcon, // No direct equivalent
   'SpeakerHigh': SpeakerWaveIcon,
   'MagnifyingGlass': MagnifyingGlassIcon,
@@ -119,11 +119,11 @@ export const iconMapping = {
   
   // View mode icons
   'GridFour': GridIcon,
-  'List': ListBulletIcon,
+  'ListBulletIcon': ListBulletIcon,
   'FunnelSimple': FilterIcon,
   
   // Special cases that need aliases
-  'AddressBook': BookOpenIcon,
+  'BookOpenIcon': BookOpenIcon,
   
   // ============================================================================
   // TACTICAL & FIREARMS SPECIFIC ICONS
@@ -155,9 +155,9 @@ export const iconMapping = {
   'Paintball': tacticalIconMapping.Paintball,
   'Airsoft': tacticalIconMapping.Airsoft,
   
-  // Enhanced Target/Crosshair replacements with tactical icons
-  'Target': tacticalIconMapping.ShootingRange, // Better than MapPin
-  'Crosshair': tacticalIconMapping.ShootingRange, // Better than MapPin
+  // Enhanced CursorArrowRaysIcon/Crosshair replacements with tactical icons
+  'CursorArrowRaysIcon': tacticalIconMapping.ShootingRange, // Better than MapPinIcon
+  'Crosshair': tacticalIconMapping.ShootingRange, // Better than MapPinIcon
 } as const
 
 // Combined type for all icon names (Heroicons + Tactical)

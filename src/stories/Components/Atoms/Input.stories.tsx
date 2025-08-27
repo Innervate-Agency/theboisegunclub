@@ -40,7 +40,7 @@ export const Default: Story = {
 export const Filled: Story = {
   args: {
     variant: 'filled',
-    placeholder: 'Search members...',
+    placeholder: 'MagnifyingGlassIcon members...',
     type: 'search',
   },
 };
@@ -98,12 +98,12 @@ export const WithIcons: Story = {
     
     return (
       <div className="space-y-md w-80">
-        {/* Search input */}
+        {/* MagnifyingGlassIcon input */}
         <div className="relative">
           <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-warning-amber" />
           <Input
             className="pl-xl"
-            placeholder="Search firearms..."
+            placeholder="MagnifyingGlassIcon firearms..."
             type="search"
           />
         </div>
@@ -132,7 +132,7 @@ export const WithIcons: Story = {
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-warning-amber hover:text-blued-steel transition-colors"
           >
-            {showPassword ? <EyeOff className="h-4 w-4" /> : <EyeIcon className="h-4 w-4" />}
+            {showPassword ? <EyeIconOff className="h-4 w-4" /> : <EyeIcon className="h-4 w-4" />}
           </button>
         </div>
       </div>

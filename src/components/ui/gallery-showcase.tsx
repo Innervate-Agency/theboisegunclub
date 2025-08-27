@@ -140,7 +140,7 @@ export function GalleryGrid({
                 onClick={() => setViewMode('grid')}
                 className="border-rusty-orange/30"
               >
-                <Grid3X3 className="icon-sm" />
+                <Squares2X2Icon className="icon-sm" />
               </Button>
               <Button
                 variant={viewMode === 'list' ? 'default' : 'secondary'}

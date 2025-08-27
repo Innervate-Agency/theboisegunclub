@@ -1,5 +1,4 @@
 import * as React from "react"
-import { CategoryIcon } from '@heroicons/react/24/outline';
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { CategoryIcon, type CategoryIconComponentProps } from "@/components/ui/category-icons"
@@ -32,19 +31,19 @@ const cardVariants = cva(
         // Subtle: Ghost-level subtle presence for secondary content
         subtle: "bg-muted/50 hover:bg-muted",
         
-        // Fire: Premium tactical gradient
+        // FireIcon: Premium tactical gradient
         fire: "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
         
-        // Fire Blue: Cool tactical gradients
+        // FireIcon Blue: Cool tactical gradients
         "fire-blue": "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-slate-blue after:to-info-river after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
         
-        // Fire Green: Green tactical gradients
+        // FireIcon Green: Green tactical gradients
         "fire-green": "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-sagebrush-green after:to-lodgepole-green after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
         
-        // Fire Red: Red tactical gradients  
+        // FireIcon Red: Red tactical gradients  
         "fire-red": "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-canyon-clay after:to-rusty-orange after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
 
-        // Fire Purple: Purple tactical gradients
+        // FireIcon Purple: Purple tactical gradients
         "fire-purple": "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-foothills-purple after:to-canyon-clay after:opacity-0 hover:opacity-100 after:transition-all after:duration-300 after:ease-out",
         
         // Tactical: Ghost state with invisible borders that appear on interaction

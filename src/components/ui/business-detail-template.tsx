@@ -306,7 +306,7 @@ export function BusinessDetailTemplate({
               </div>
             </div>
             
-            {/* Contact Info Card - Right Side */}
+            {/* Contact InformationCircleIcon Card - Right Side */}
             <div className="lg:col-span-1">
               <Card className="shadow-present h-full">
                 <CardHeader>

@@ -97,7 +97,7 @@ export function ArticleDetailPage({
     // Generate context-aware content based on event type
     const getEventContent = () => {
       const baseContent = {
-        whatToBring: ['Valid ID', 'Eye and ear protection', 'Comfortable clothing'],
+        whatToBring: ['Valid ID', 'EyeIcon and ear protection', 'Comfortable clothing'],
         requirements: ['18+ or parental supervision', 'Basic safety knowledge'],
         tags: [eventEngagement.eventType, 'Idaho Event']
       }
@@ -115,7 +115,7 @@ export function ArticleDetailPage({
             whatToBring: [
               'Competition-legal firearm',
               'Holster and magazines', 
-              'Eye and ear protection',
+              'EyeIcon and ear protection',
               'Ammunition (150+ rounds)',
               'Water and snacks'
             ],
@@ -139,7 +139,7 @@ export function ArticleDetailPage({
             whatToBring: [
               'Comfortable outdoor clothing',
               'Closed-toe shoes',
-              'Eye and ear protection',
+              'EyeIcon and ear protection',
               'Weather-appropriate gear',
               'Team spirit!'
             ],
@@ -184,7 +184,7 @@ export function ArticleDetailPage({
               'Q&A and certification'
             ],
             whatToBring: [
-              'Eye and ear protection',
+              'EyeIcon and ear protection',
               'Note-taking materials',
               'Appropriate firearm (if required)',
               'Comfortable clothing for range'

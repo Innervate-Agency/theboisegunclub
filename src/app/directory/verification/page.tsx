@@ -18,7 +18,7 @@ export default function VerificationPage() {
               <ShieldCheckIcon className="mx-auto h-12 w-12 text-nav-directory" />
               <h1 className="font-rajdhani text-4xl font-bold mt-base">Our Verification Process</h1>
               <p className="text-lg text-muted-foreground mt-sm">
-                Building a trusted community of firearms professionals in the Treasure Valley.
+                BuildingOfficeIcon a trusted community of firearms professionals in the Treasure Valley.
               </p>
             </div>
 

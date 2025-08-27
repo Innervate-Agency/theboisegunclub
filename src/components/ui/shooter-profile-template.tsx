@@ -83,7 +83,7 @@ export function ShooterProfileTemplate({
   const getAchievementIcon = (type: string) => {
     switch (type) {
       case 'win':
-        return Trophy
+        return TrophyIcon
       case 'podium':
         return Medal
       case 'classification':
@@ -91,7 +91,7 @@ export function ShooterProfileTemplate({
       case 'special':
         return Award
       default:
-        return Star
+        return StarIcon
     }
   }
 
@@ -102,7 +102,7 @@ export function ShooterProfileTemplate({
         <div className="container mx-auto max-w-site relative z-10">
           <div className="flex flex-col lg:flex-row items-start gap-xl">
             
-            {/* Profile Info */}
+            {/* Profile InformationCircleIcon */}
             <div className="flex items-center gap-lg flex-1">
               <Avatar className="size-24 rounded-xs">
                 {profile.avatar ? (
@@ -270,7 +270,7 @@ export function ShooterProfileTemplate({
                 <CardContent className="p-xl text-center">
                   <div className="space-y-base">
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-xs mb-base">
-                      <TrendUp weight="bold" className="size-8 text-muted-foreground" />
+                      <ArrowTrendingUpIcon weight="bold" className="size-8 text-muted-foreground" />
                     </div>
                     <h3 className="font-rajdhani font-bold text-heading-lg text-card-foreground">
                       Performance Analytics Coming Soon
@@ -389,7 +389,7 @@ export function ShooterProfileTemplate({
                         Want to compete together or share shooting tips?
                       </p>
                       <Button size="sm" className="w-full" animationType="arrow">
-                        Send Message
+                        Send ChatBubbleBottomCenterTextIcon
                       </Button>
                     </div>
                   </CardContent>

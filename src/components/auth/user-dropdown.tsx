@@ -14,7 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { useAuth } from './auth-context'
 import { User } from '@/lib/auth'
-import { ArrowRightOnRectangleIcon, BellIcon, BookOpenIcon, BuildingStorefrontIcon, CalendarDaysIcon, Cog6ToothIcon, MapIcon, ShieldCheckIcon, ToothIcon, UserIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { ArrowRightOnRectangleIcon, BellIcon, BookOpenIcon, BuildingStorefrontIcon, CalendarDaysIcon, Cog6ToothIcon, MapIcon, ShieldCheckIcon, UserIcon, UsersIcon } from '@heroicons/react/24/outline';
 import { cn } from '@/lib/utils'
 
 interface UserDropdownProps {
@@ -87,7 +87,7 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
         className="w-64 mica shadow-prominent p-xs"
         sideOffset={8}
       >
-        {/* User Info Header */}
+        {/* User InformationCircleIcon Header */}
         <DropdownMenuLabel className="p-sm">
           <div className="flex items-center gap-sm">
             <Avatar className="size-10">
@@ -183,7 +183,7 @@ export function UserDropdown({ user, align = 'end', className }: UserDropdownPro
           </DropdownMenuItem>
         </div>
 
-        {/* Footer Info */}
+        {/* Footer InformationCircleIcon */}
         <div className="px-sm py-xs border-t border-border/50">
           <p className="text-xs text-muted-foreground text-center">
             Last active: {new Date(user.lastActive).toLocaleDateString()}

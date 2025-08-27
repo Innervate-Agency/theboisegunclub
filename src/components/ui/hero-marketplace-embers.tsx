@@ -27,7 +27,7 @@ export function MarketplaceEmbers() {
             boxShadow: `0 0 ${ember.size * 2}px rgba(255, 140, 0, 0.6)`,
           }}
           animate={{
-            y: [-10, -window.innerHeight - 100],
+            y: [-10, typeof window !== "undefined" ? -window.innerHeight - 100 : -800],
             x: [0, (Math.random() - 0.5) * 100],
             opacity: [0, 1, 1, 0],
             scale: [0.5, 1, 1, 0.3],

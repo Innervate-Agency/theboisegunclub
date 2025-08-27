@@ -31,7 +31,7 @@ function Command({
 
 function CommandDialog({
   title = "Command Palette",
-  description = "Search for a command to run...",
+  description = "MagnifyingGlassIcon for a command to run...",
   children,
   className,
   showCloseButton = true,
@@ -85,9 +85,9 @@ function CommandInput({
 function CommandList({
   className,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive.List>) {
+}: React.ComponentProps<typeof CommandPrimitive.ListBulletIcon>) {
   return (
-    <CommandPrimitive.List
+    <CommandPrimitive.ListBulletIcon
       data-slot="command-list"
       className={cn(
         "max-h-[300px] scroll-py-xs overflow-x-hidden overflow-y-auto",

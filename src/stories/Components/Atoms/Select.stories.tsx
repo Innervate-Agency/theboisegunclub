@@ -64,7 +64,7 @@ export const Premium: Story = {
             <SelectLabel>Premium Options</SelectLabel>
             <SelectItem value="elite">Elite Membership</SelectItem>
             <SelectItem value="championship">Championship Access</SelectItem>
-            <SelectItem value="vip">VIP Package</SelectItem>
+            <SelectItem value="vip">VIP ArchiveBoxIcon</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>

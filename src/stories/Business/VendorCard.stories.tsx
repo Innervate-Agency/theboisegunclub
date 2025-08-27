@@ -28,7 +28,7 @@ The **VendorCard** component showcases the complete TBGC design system with stra
 
 ## Design System Features
 - **Semantic Shadow Progression**: Each tier uses purposeful shadow depth that communicates value
-- **Fire gradient animations** on Gold tier ONLY for maximum impact
+- **FireIcon gradient animations** on Gold tier ONLY for maximum impact
 - **Interactive Shadow Feedback**: Sophisticated hover progressions enhance user understanding
 - **TBGC 23-color palette integration** (rusty-orange, slate-blue, sagebrush-green, etc.)
 - **Tactical Design Philosophy**: Stripe-inspired depth system with firearms community aesthetic
@@ -74,13 +74,13 @@ const sampleBusinesses = {
     address: "1234 State Street, Boise, ID 83702",
     phone: "(208) 555-0123",
     website: "https://boisefirearmsdepot.com",
-    hours: "Mon-Sat 9AM-6PM, Sun 10AM-4PM",
+    hours: "Mon-Sat 9AM-6PM, SunIcon 10AM-4PM",
     rating: 4.8,
     reviewCount: 247,
     specialties: ["Custom Builds", "NFA Items", "Gunsmithing", "Tactical Gear"]
   },
   range: {
-    businessName: "Eagle Eye Shooting Range",
+    businessName: "Eagle EyeIcon Shooting Range",
     businessType: "Indoor Shooting Range", 
     description: "State-of-the-art 25-lane indoor range with climate control, advanced ventilation, and tactical training courses.",
     imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop",

@@ -7,21 +7,21 @@
 
 export const ICON_MIGRATION_MAP = {
   // Navigation & Core UI  
-  'AddressBook': 'UserGroupIcon',
-  'Shield': 'ShieldCheckIcon', 
-  'Target': 'MapPinIcon', // No BullseyeIcon in Heroicons, use MapPin as targeting icon
-  'Storefront': 'BuildingStorefrontIcon',
-  'BookOpen': 'BookOpenIcon',
-  'Calendar': 'CalendarDaysIcon',
-  'MapPin': 'MapPinIcon',
+  'BookOpenIcon': 'UserGroupIcon',
+  'ShieldCheckIcon': 'ShieldCheckIcon', 
+  'CursorArrowRaysIcon': 'MapPinIcon', // No BullseyeIcon in Heroicons, use MapPinIcon as targeting icon
+  'BuildingStorefrontIcon': 'BuildingStorefrontIcon',
+  'BookOpenIcon': 'BookOpenIcon',
+  'CalendarDaysIcon': 'CalendarDaysIcon',
+  'MapPinIcon': 'MapPinIcon',
   'Phone': 'PhoneIcon',
   'Globe': 'GlobeAltIcon',
   'Buildings': 'BuildingOffice2Icon',
-  'Users': 'UserGroupIcon',
+  'UsersIcon': 'UserGroupIcon',
   
   // Interactive Elements
   'ArrowRight': 'ArrowRightIcon',
-  'CaretRight': 'ChevronRightIcon',
+  'ChevronRightIcon': 'ChevronRightIcon',
   'ChevronRight': 'ChevronRightIcon',
   'Plus': 'PlusIcon',
   'X': 'XMarkIcon',
@@ -31,23 +31,23 @@ export const ICON_MIGRATION_MAP = {
   // Actions & Interface
   'Eye': 'EyeIcon',
   'EyeSlash': 'EyeSlashIcon',
-  'Heart': 'HeartIcon',
-  'Star': 'StarIcon',
-  'Clock': 'ClockIcon',
+  'HeartIcon': 'HeartIcon',
+  'StarIcon': 'StarIcon',
+  'ClockIcon': 'ClockIcon',
   'Lock': 'LockClosedIcon',
   'EnvelopeSimple': 'EnvelopeIcon',
   'User': 'UserIcon',
-  'UserCircle': 'UserCircleIcon',
+  'UserCircle': 'UserEllipsisHorizontalIcon',
   'SignIn': 'ArrowRightOnRectangleIcon',
   'Monitor': 'ComputerDesktopIcon',
   
   // Content & Communication
-  'FileText': 'DocumentTextIcon',
+  'DocumentTextIcon': 'DocumentTextIcon',
   'Quote': 'ChatBubbleLeftEllipsisIcon',
   'ChatsCircle': 'ChatBubbleLeftEllipsisIcon', // Use standard chat bubble
-  'Info': 'InformationCircleIcon',
+  'InformationCircleIcon': 'InformationCircleIcon',
   'Warning': 'ExclamationTriangleIcon',
-  'CheckCircle': 'CheckCircleIcon',
+  'CheckCircleIcon': 'CheckCircleIcon',
   
   // Business & Commerce
   'ShoppingBag': 'ShoppingBagIcon',
@@ -56,14 +56,14 @@ export const ICON_MIGRATION_MAP = {
   'Receipt': 'ReceiptRefundIcon',
   
   // Tools & Equipment
-  'Wrench': 'WrenchScrewdriverIcon',
+  'WrenchScrewdriverIcon': 'WrenchScrewdriverIcon',
   'Gear': 'CogIcon', 
   'GraduationCap': 'AcademicCapIcon',
   'Lightning': 'BoltIcon',
-  'Fire': 'FireIcon',
+  'FireIcon': 'FireIcon',
   
   // Location & Geography  
-  'MapTrifold': 'MapIcon',
+  'MapIcon': 'MapIcon',
   'Compass': 'CompassIcon',
   'NavigationArrow': 'CursorArrowRaysIcon',
   
@@ -74,10 +74,10 @@ export const ICON_MIGRATION_MAP = {
   'Camera': 'CameraIcon',
   
   // Data & Analytics
-  'TrendUp': 'ArrowTrendingUpIcon',
+  'ArrowTrendingUpIcon': 'ArrowTrendingUpIcon',
   'ChartBar': 'ChartBarIcon',
   'Trophy': 'TrophyIcon',
-  'Scales': 'ScaleIcon',
+  'ScaleIcon': 'ScaleIcon',
   
   // Special Cases - Custom Replacements
   'Diamond': 'TacticalReticleLogo', // Our custom component!
@@ -86,7 +86,7 @@ export const ICON_MIGRATION_MAP = {
 
 export const IMPORT_REPLACEMENTS = {
   // Phosphor imports to Heroicons imports
-  "import { AcademicCapIcon, ArrowRightIcon, ArrowRightOnRectangleIcon, ArrowTrendingUpIcon, BanknotesIcon, BoltIcon, BookOpenIcon, BuildingStorefrontIcon, BullseyeIcon, CalendarDaysIcon, CameraIcon, ChartBarIcon, ChatBubbleLeftEllipsisIcon, CheckCircleIcon, CheckIcon, ChevronRightIcon, ClockIcon, CogIcon, CompassIcon, ComputerDesktopIcon, CreditCardIcon, CursorArrowRaysIcon, Diamond, DocumentTextIcon, EnvelopeIcon, ExclamationTriangleIcon, EyeIcon, EyeSlashIcon, FireIcon, GlobeAltIcon, HeartIcon, InformationCircleIcon, LockClosedIcon, MapIcon, MapPinIcon, MinusIcon, PauseIcon, PhoneIcon, PhotoIcon, PlayIcon, PlusIcon, ReceiptRefundIcon, ScaleIcon, ShieldCheckIcon, ShoppingBagIcon, StarIcon, TrophyIcon, UserCircleIcon, UserGroupIcon, UserIcon, WrenchScrewdriverIcon, XMarkIcon } from '@heroicons/react/24/outline'": 
+  "import { AcademicCapIcon, ArrowRightIcon, ArrowRightOnRectangleIcon, ArrowTrendingUpIcon, BanknotesIcon, BoltIcon, BookOpenIcon, BuildingStorefrontIcon, BullseyeIcon, CalendarDaysIcon, CameraIcon, ChartBarIcon, ChatBubbleLeftEllipsisIcon, CheckCircleIcon, CheckIcon, ChevronRightIcon, ClockIcon, CogIcon, CompassIcon, ComputerDesktopIcon, CreditCardIcon, CursorArrowRaysIcon, Diamond, DocumentTextIcon, EnvelopeIcon, ExclamationTriangleIcon, EyeIcon, EyeSlashIcon, FireIcon, GlobeAltIcon, HeartIcon, InformationCircleIcon, LockClosedIcon, MapIcon, MapPinIcon, MinusIcon, PauseIcon, PhoneIcon, PhotoIcon, PlayIcon, PlusIcon, ReceiptRefundIcon, ScaleIcon, ShieldCheckIcon, ShoppingBagIcon, StarIcon, TrophyIcon, UserEllipsisHorizontalIcon, UserGroupIcon, UserIcon, WrenchScrewdriverIcon, XMarkIcon } from '@heroicons/react/24/outline'": 
     "import { TacticalReticleLogo } from '@/components/ui/tactical-reticle-logo'",
   
   "from '@heroicons/react/24/outline'": 

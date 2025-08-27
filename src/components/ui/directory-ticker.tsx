@@ -17,7 +17,7 @@ interface DirectoryAnnouncement {
 interface DirectoryTickerProps {
   announcements?: DirectoryAnnouncement[]  // Made optional for backward compatibility
   autoRefresh?: boolean   // Auto-refresh from API
-  refreshInterval?: number // Refresh interval in milliseconds
+  refreshInterval?: number // ArrowPathIcon interval in milliseconds
 }
 
 export function DirectoryTicker({ 
@@ -109,7 +109,7 @@ export function DirectoryTicker({
       case 'verification':
         return <ShieldCheckIcon className={`${iconClass} text-sagebrush-green`} />
       case 'new_listing':
-        return <Sparkles className={`${iconClass} text-nav-directory`} />
+        return <SparklesIcon className={`${iconClass} text-nav-directory`} />
       case 'service_highlight':
         return <TrophyIcon className={`${iconClass} text-rusty-orange`} />
       default:

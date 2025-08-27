@@ -209,7 +209,7 @@ export const InteractiveDemo: Story = {
           { title: 'Premium Card', desc: 'Same shadow depth', variant: 'premium' },
           { title: 'Elite Card', desc: 'Consistent elevation', variant: 'elite' },
           { title: 'Glass Card', desc: 'Glassmorphism effect', variant: 'glass' },
-          { title: 'Fire Card', desc: 'With gradient accent', variant: 'fire' },
+          { title: 'FireIcon Card', desc: 'With gradient accent', variant: 'fire' },
           { title: 'Branded Card', desc: 'Premium shadows', variant: 'branded' },
         ].map((card, index) => (
           <div 

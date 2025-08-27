@@ -4,19 +4,19 @@
  * Integrates with the existing Boise Gun Club design system
  */
 
-import { AirsoftIcon, ArcheryIcon, ClubIcon, CopperMemberIcon, GoldPartnerIcon, GunsmithIcon, PaintballIcon, PistolSportsIcon, RifleSportsIcon, ShootingRangeIcon, ShotgunSportsIcon, SilverMemberIcon, StandardMemberIcon, TacticalRetailIcon, TacticalServicesIcon, TrainingIcon } from '@heroicons/react/24/outline'
+import { AirsoftIcon, ArcheryIcon, CubeIcon, UserIcon, StarIcon, GunsmithIcon, PaintballIcon, PistolSportsIcon, RifleSportsIcon, ShootingRangeIcon, ShotgunSportsIcon, UserIcon, UserIcon, TacticalRetailIcon, TacticalServicesIcon, AcademicCapIcon } from '@heroicons/react/24/outline'
 import { getIcon } from './icon-mapping';
 import { 
   ShootingRangeIcon,
   GunsmithIcon,
-  TrainingIcon,
+  AcademicCapIcon,
   TacticalRetailIcon,
-  ClubIcon,
+  CubeIcon,
   TacticalServicesIcon,
-  GoldPartnerIcon,
-  SilverMemberIcon,
-  CopperMemberIcon,
-  StandardMemberIcon,
+  StarIcon,
+  UserIcon,
+  UserIcon,
+  UserIcon,
   RifleSportsIcon,
   PistolSportsIcon,
   ShotgunSportsIcon,
@@ -100,7 +100,7 @@ export const businessCategories: Record<string, BusinessCategory> = {
     id: 'training',
     name: 'Training & Education',
     description: 'Professional firearms training and safety education',
-    icon: TrainingIcon,
+    icon: AcademicCapIcon,
     colorClass: 'text-nav-events',
     bgClass: 'bg-nav-events/10 border-nav-events/20',
     examples: [
@@ -130,7 +130,7 @@ export const businessCategories: Record<string, BusinessCategory> = {
     id: 'club',
     name: 'Clubs & Organizations',
     description: 'Shooting clubs, hunting organizations, and firearms groups',
-    icon: ClubIcon,
+    icon: CubeIcon,
     colorClass: 'text-nav-forums',
     bgClass: 'bg-nav-forums/10 border-nav-forums/20',
     examples: [
@@ -168,7 +168,7 @@ export const membershipTiers: Record<string, MembershipTier> = {
     id: 'gold-partner',
     name: 'Gold Partners',
     description: 'Premium verified businesses with exclusive benefits',
-    icon: GoldPartnerIcon,
+    icon: StarIcon,
     colorClass: 'text-weathered-gold',
     bgClass: 'bg-weathered-gold/10 border-weathered-gold/30',
     priority: 1,
@@ -185,7 +185,7 @@ export const membershipTiers: Record<string, MembershipTier> = {
     id: 'silver-member', 
     name: 'Silver Members',
     description: 'Verified businesses with enhanced visibility',
-    icon: SilverMemberIcon,
+    icon: UserIcon,
     colorClass: 'text-warm-stone',
     bgClass: 'bg-warm-stone/10 border-warm-stone/30',
     priority: 2,
@@ -201,7 +201,7 @@ export const membershipTiers: Record<string, MembershipTier> = {
     id: 'copper-member',
     name: 'Copper Members', 
     description: 'Verified businesses with standard listing benefits',
-    icon: CopperMemberIcon,
+    icon: UserIcon,
     colorClass: 'text-sandy-ochre',
     bgClass: 'bg-sandy-ochre/10 border-sandy-ochre/30',
     priority: 3,
@@ -217,7 +217,7 @@ export const membershipTiers: Record<string, MembershipTier> = {
     id: 'standard',
     name: 'Standard Listings',
     description: 'Basic verified business information',
-    icon: StandardMemberIcon,
+    icon: UserIcon,
     colorClass: 'text-slate-blue',
     bgClass: 'bg-slate-blue/10 border-slate-blue/20',
     priority: 4,
@@ -289,7 +289,7 @@ export const sportsCategories: Record<string, SportsCategory> = {
     colorClass: 'text-nav-intel',
     bgClass: 'bg-nav-intel/10 border-nav-intel/20',
     disciplines: [
-      'Target archery',
+      'CursorArrowRaysIcon archery',
       'Field archery', 
       'Traditional bow hunting',
       '3D archery competitions'
@@ -322,7 +322,7 @@ export const sportsCategories: Record<string, SportsCategory> = {
       'Military simulation (MilSim)',
       'Close quarters battle (CQB)',
       'Tactical team events',
-      'Target shooting'
+      'CursorArrowRaysIcon shooting'
     ]
   }
 };
@@ -361,7 +361,7 @@ export const getAllSportsCategories = (): SportsCategory[] => {
   return Object.values(sportsCategories);
 };
 
-// Search/filter helpers
+// MagnifyingGlassIcon/filter helpers
 export const searchBusinessCategories = (query: string): BusinessCategory[] => {
   const lowercaseQuery = query.toLowerCase();
   return getAllBusinessCategories().filter(category => 

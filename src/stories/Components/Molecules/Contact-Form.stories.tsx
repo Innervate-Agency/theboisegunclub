@@ -47,7 +47,7 @@ export const Default: Story = {
 export const BusinessInquiry: Story = {
   args: {
     title: 'Business Partnership',
-    subtitle: 'List your business with us',
+    subtitle: 'ListBulletIcon your business with us',
     description: 'Join the Treasure Valley\'s premier firearms directory and connect with thousands of potential customers.',
     variant: 'default',
     showContactInfo: true,

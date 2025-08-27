@@ -24,10 +24,10 @@ const enhancedCardVariants = cva(
         // Glass Premium: Enhanced mica with prominent depth
         "glass-premium": "bg-card border border-border/30 text-card-foreground shadow-elevated hover:shadow-prominent relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
-        // Fire: Attention-grabbing with dramatic hover
+        // FireIcon: Attention-grabbing with dramatic hover
         fire: "bg-card text-card-foreground shadow-elevated hover:shadow-commanding relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
-        // Fire Blue: Cool gradient with strong interaction
+        // FireIcon Blue: Cool gradient with strong interaction
         "fire-blue": "bg-card text-card-foreground shadow-elevated hover:shadow-commanding relative after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-green after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg",
         
         // Muted: Subtle floating content

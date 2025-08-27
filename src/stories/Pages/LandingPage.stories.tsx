@@ -13,7 +13,7 @@ const meta: Meta = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Professional "Coming Soon" landing page for The Boise Gun Club - Treasure Valley\'s comprehensive firearms community platform.',
+        component: 'Professional "Coming Soon" landing page for The Boise Gun Club - Treasure Valley\'s comprehensive firearms community platformotion.',
       },
     },
   },
@@ -40,7 +40,7 @@ export const Complete: Story = {
                   <span className="font-extrabold">THE BOISE </span><span className="font-light">GUN CLUB</span>
                 </h1>
                 <p className="text-body-lg text-muted-foreground max-w-2xl">
-                  Building Treasure Valley's first comprehensive firearms community platform. Connecting local businesses, clubs, ranges, and enthusiasts across Idaho's premier firearms region.
+                  BuildingOfficeIcon Treasure Valley's first comprehensive firearms community platformotion. Connecting local businesses, clubs, ranges, and enthusiasts across Idaho's premier firearms region.
                 </p>
                 <div className="space-y-sm">
                   <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
@@ -73,7 +73,7 @@ export const Complete: Story = {
               />
               <StatCard
                 value="Events"
-                label="Unified Calendar from All Clubs"
+                label="Unified CalendarDaysIcon from All Clubs"
                 variant="outline"
                 icon={<CalendarDaysIcon className="h-6 w-6" />}
               />
@@ -85,7 +85,7 @@ export const Complete: Story = {
               />
               <StatCard
                 value="Resources"
-                label="Idaho Laws, Safety & Training Info"
+                label="Idaho Laws, Safety & Training InformationCircleIcon"
                 variant="outline"
                 icon={<BellIcon className="h-6 w-6" />}
               />
@@ -171,7 +171,7 @@ export const Complete: Story = {
           <div className="text-center space-y-base mb-xl mt-3xl">
             <h2 className="font-rajdhani text-4xl font-bold">The Problems We're Solving</h2>
             <p className="text-body-lg text-muted-foreground max-w-4xl mx-auto">
-              Despite having 250K+ gun owners and 117+ businesses, Treasure Valley lacks a unified digital ecosystem. These critical gaps are holding back our entire firearms community.
+              Despite having 250K+ gun owners and 117+ businesses, Treasure Valley lacks a unified digital ecosystemotion. These critical gaps are holding back our entire firearms community.
             </p>
           </div>
           
@@ -433,7 +433,7 @@ export const Complete: Story = {
                     </div>
                     <Button type="submit" size="xl" className="w-full bg-gradient-to-r from-sandy-ochre to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-sandy-ochre font-rajdhani font-bold text-lg shadow-elevated transition-all duration-300">
                       <EnvelopeIcon className="h-5 w-5 mr-xs" />
-                      Send Message
+                      Send ChatBubbleBottomCenterTextIcon
                     </Button>
                   </form>
                 </div>

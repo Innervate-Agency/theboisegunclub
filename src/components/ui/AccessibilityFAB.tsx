@@ -4,7 +4,7 @@ import * as React from "react"
 import { useTheme } from "next-themes"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { Cog6ToothIcon as Settings, ComputerDesktopIcon, ComputerDesktopIcon as Monitor, DocumentTextIcon, DocumentTextIcon as Type, EyeIcon, EyeIcon as Eye, MinusIcon, MinusIcon as Minus, MoonIcon, MoonIcon as Moon, PlusIcon, PlusIcon as Plus, SunIcon, SunIcon as Sun, SwatchIcon, SwatchIcon as Contrast, ThemeIcon, ToothIcon, UserIcon, UserIcon as Accessibility, XMarkIcon, XMarkIcon as X } from '@heroicons/react/24/outline'
+import { Cog6ToothIcon as Settings, ComputerDesktopIcon, DocumentTextIcon, EyeIcon, MinusIcon, MoonIcon, PlusIcon, SunIcon, SwatchIcon, ThemeIcon, Cog6ToothIcon, UserIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Button } from "./button"
 import { Badge } from "./badge"
 import { useAccessibility } from "@/hooks/use-accessibility"
@@ -68,8 +68,8 @@ export default function AccessibilityFAB({
   } = useAccessibility()
 
   const ThemeIcon = React.useMemo(() => {
-    if (!mounted) return Monitor
-    return theme === "light" ? Sun : theme === "dark" ? Moon : Monitor
+    if (!mounted) return ComputerDesktopIcon
+    return theme === "light" ? SunIcon : theme === "dark" ? MoonIcon : ComputerDesktopIcon
   }, [theme, mounted])
 
   const handleTogglePanel = React.useCallback(() => setIsOpen(!isOpen), [isOpen])
@@ -118,7 +118,7 @@ export default function AccessibilityFAB({
         {isOpen ? (
           <XMarkIcon className="size-6 text-card-foreground mx-auto" />
         ) : (
-          <Accessibility className="size-6 text-card-foreground mx-auto" />
+          <Cog6ToothIcon className="size-6 text-card-foreground mx-auto" />
         )}
       </button>
 
@@ -171,7 +171,7 @@ export default function AccessibilityFAB({
                 )}
               >
                 <MoonIcon className="size-4" />
-                Camp Fire
+                Camp FireIcon
               </Button>
               <Button
                 variant="flat"
@@ -186,7 +186,7 @@ export default function AccessibilityFAB({
                     : "text-card-foreground"
                 )}
               >
-                <Monitor className="size-4" />
+                <ComputerDesktopIcon className="size-4" />
                 Auto
               </Button>
               <Button

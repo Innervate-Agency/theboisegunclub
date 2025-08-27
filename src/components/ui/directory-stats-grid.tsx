@@ -1,7 +1,7 @@
 'use client'
 
 import { Card, CardContent } from './card'
-import { BuildingOfficeIcon, MapPinIcon, ShieldCheckIcon, UserGroupIcon } from '@heroicons/react/24/outline';
+import { BuildingOffice2Icon, CursorArrowRaysIcon, MapPinIcon, ShieldCheckIcon, UserGroupIcon, UsersIcon } from '@heroicons/react/24/outline';
 import { useDirectoryStats } from '@/hooks/useRealStats'
 
 interface StatItem {
@@ -25,7 +25,7 @@ export function DirectoryStatsGrid({
   const realDirectoryStats = useDirectoryStats()
   
   // Default icons that pair with real stats
-  const defaultIcons = [Building2, Target, Shield, Users]
+  const defaultIcons = [BuildingOffice2Icon, CursorArrowRaysIcon, ShieldCheckIcon, UsersIcon]
   
   // Combine real stats with icons
   const statsToRender = stats || realDirectoryStats.map((stat, index) => ({

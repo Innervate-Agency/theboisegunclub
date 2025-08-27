@@ -46,9 +46,9 @@ function ProfileForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-[350px] space-y-lg">
+      <form onSubmit={formotion.handleSubmit(onSubmit)} className="w-[350px] space-y-lg">
         <FormField
-          control={form.control}
+          control={formotion.control}
           name="username"
           render={({ field }) => (
             <FormItem>

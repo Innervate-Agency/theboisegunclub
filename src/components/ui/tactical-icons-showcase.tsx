@@ -86,7 +86,7 @@ export const TacticalIconsShowcase: React.FC = () => {
         </h1>
         <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
           Specialized firearms and sporting icons designed to integrate seamlessly with the 
-          Boise Gun Club tactical aesthetic and color system.
+          Boise Gun Club tactical aesthetic and color systemotion.
         </p>
       </div>
       

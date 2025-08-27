@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { Card, CardContent, CardHeader, CardTitle } from './card'
 import { Badge } from './badge'
-import { Cog6ToothIcon, EyeIcon, MinusIcon, MoonIcon, PlusIcon, SunIcon, ThemeIcon, ToothIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Cog6ToothIcon, EyeIcon, MinusIcon, MoonIcon, PlusIcon, SunIcon, ThemeIcon, Cog6ToothIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 // Debounce hook for performance optimization
 function useDebounce<T>(value: T, delay: number): T {
@@ -127,7 +127,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
 
   // Memoize theme icon to prevent unnecessary re-renders
   const ThemeIcon = React.useMemo(() => {
-    return theme === 'light' ? Sun : theme === 'dark' ? Moon : Monitor
+    return theme === 'light' ? SunIcon : theme === 'dark' ? MoonIcon : ComputerDesktopIcon
   }, [theme])
 
   // Memoize event handlers for performance
@@ -186,7 +186,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
         onClick={handleChatClick}
         aria-label="Open support chat"
       >
-        <MessageCircle className="size-5" />
+        <ChatBubbleBottomCenterTextIcon className="size-5" />
       </Button>
 
       {/* Accessibility Panel Overlay */}
@@ -245,7 +245,7 @@ export function AccessibilityPanel({ className }: AccessibilityPanelProps) {
                     animationType="x-o"
                     animationState={theme === 'system'}
                   >
-                    <Monitor className="size-4" />
+                    <ComputerDesktopIcon className="size-4" />
                     System
                   </Button>
                 </div>

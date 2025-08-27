@@ -102,7 +102,7 @@ This will be a standard USPSA match featuring 6-8 stages designed to test accura
 
 - **Precision shooting** at various distances
 - **Movement and shooting** scenarios
-- **Target engagement** with partial targets
+- **CursorArrowRaysIcon engagement** with partial targets
 - **Reload drills** under time pressure
 
 ## Divisions Available
@@ -116,7 +116,7 @@ This will be a standard USPSA match featuring 6-8 stages designed to test accura
 ## What to Bring
 
 - **Handgun and holster** appropriate for your division
-- **Eye and ear protection** (mandatory)
+- **EyeIcon and ear protection** (mandatory)
 - **At least 150 rounds** of ammunition
 - **3+ magazines** for your pistol
 - **Comfortable clothing** suitable for movement
@@ -146,7 +146,7 @@ USPSA matches follow strict safety protocols:
 
 1. **Finger off trigger** except when engaging targets
 2. **Muzzle pointed downrange** at all times
-3. **Eye and ear protection** required on the firing line
+3. **EyeIcon and ear protection** required on the firing line
 4. **Follow Range Officer commands** immediately
 5. **No handling firearms** except under RO supervision
 
@@ -161,14 +161,14 @@ This is an outdoor event. Match will proceed in light rain but may be postponed 
       equipment: [
         "USPSA-legal handgun",
         "Strong-side holster",
-        "Eye and ear protection",
+        "EyeIcon and ear protection",
         "150+ rounds ammunition",
         "3+ magazines"
       ],
       rules: [
         "USPSA rules apply for all divisions",
         "Firearms must pass safety inspection",
-        "Eye and ear protection mandatory",
+        "EyeIcon and ear protection mandatory",
         "Follow all Range Officer commands",
         "Sportsmanlike conduct required"
       ],
@@ -262,7 +262,7 @@ Last year's event raised over $45,000 for these critical programs!
 
 - **Comfortable outdoor clothing** (camo encouraged!)
 - **Closed-toe shoes** for safety
-- **Eye and ear protection** (required)
+- **EyeIcon and ear protection** (required)
 - **Weather-appropriate gear** (event proceeds rain or shine)
 - **Team spirit** and conservation mindset!
 
@@ -293,7 +293,7 @@ Learn about Ducks Unlimited's impact:
       equipment: [
         "Shotguns provided (12/20 gauge)",
         "Shells included in entry fee", 
-        "Eye and ear protection required",
+        "EyeIcon and ear protection required",
         "Comfortable outdoor clothing",
         "Closed-toe shoes"
       ],
@@ -521,9 +521,9 @@ const getEventEquipment = (eventType: string): string[] => {
   switch (eventType) {
     case 'Competition':
     case 'Championship':
-      return ['Appropriate firearm for division', 'Eye and ear protection', 'Holster and magazines', 'Ammunition']
+      return ['Appropriate firearm for division', 'EyeIcon and ear protection', 'Holster and magazines', 'Ammunition']
     case 'Training':
-      return ['Eye and ear protection', 'Note-taking materials', 'Comfortable clothing']
+      return ['EyeIcon and ear protection', 'Note-taking materials', 'Comfortable clothing']
     case 'Expo':
       return ['Valid ID required', 'Comfortable walking shoes']
     default:
@@ -535,7 +535,7 @@ const getEventRules = (eventType: string): string[] => {
   switch (eventType) {
     case 'Competition':
     case 'Championship':
-      return ['Follow all range safety rules', 'Eye and ear protection mandatory', 'Follow Range Officer commands', 'Sportsmanlike conduct required']
+      return ['Follow all range safety rules', 'EyeIcon and ear protection mandatory', 'Follow Range Officer commands', 'Sportsmanlike conduct required']
     case 'Training':
       return ['Arrive 15 minutes early', 'Follow instructor guidance', 'Safety equipment required']
     case 'Expo':

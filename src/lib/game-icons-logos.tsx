@@ -39,7 +39,7 @@ export const GameShopIcon: React.FC<{ className?: string }> = ({ className }) =>
   </svg>
 );
 
-// Shield for training/education
+// ShieldCheckIcon for training/education
 export const GameShieldIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg className={className} viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
     <path fill="currentColor" d="M256 25L64 89v137c0 148 130 234 192 261 62-27 192-113 192-261V89L256 25zm0 46l146 50v115c0 120-100 191-146 211-46-20-146-91-146-211V121l146-50z"/>

@@ -88,7 +88,7 @@ export async function POST(request: NextRequest) {
           </div>
           
           <div style="background: var(--color-card-surface); padding: 20px; border-left: 4px solid var(--color-sandy-ochre); margin: 20px 0;">
-            <h3 style="margin-top: 0; color: var(--color-shared-dark);">Message:</h3>
+            <h3 style="margin-top: 0; color: var(--color-shared-dark);">ChatBubbleBottomCenterTextIcon:</h3>
             <p style="line-height: 1.6; color: var(--color-shared-dark);">${message.replace(/\n/g, '<br>')}</p>
           </div>
           
@@ -105,7 +105,7 @@ Name: ${name}
 Email: ${email}
 Subject: ${subject}
 
-Message:
+ChatBubbleBottomCenterTextIcon:
 ${message}
 
 ---

@@ -86,7 +86,7 @@ export const DisciplineIcons = {
   'league': CalendarIcon, // Scheduled events
   'training': BookOpenIcon, // Education
   'expo': ShoppingCartIcon, // Commercial events
-  'fun-shoots': Users, // Social gatherings
+  'fun-shoots': UsersIcon, // Social gatherings
   'charity': IconStarFilled // Special events
 };
 
@@ -94,7 +94,7 @@ export const DisciplineIcons = {
  * Skill Level Icons - Progressive complexity
  */
 export const SkillLevelIcons = {
-  'beginner': CheckCircle, // Simple check - you can do this
+  'beginner': CheckCircleIcon, // Simple check - you can do this
   'intermediate': IconCircleDot, // Centered dot - focused improvement
   'advanced': IconBullseye, // Bullseye - precision required
   'all-levels': IconCircles, // Multiple levels welcome
@@ -128,9 +128,9 @@ export const MatchLevelIcons = {
  * Registration Status Icons - Clear status indicators
  */
 export const RegistrationIcons = {
-  'open': CheckCircle, // Available - green light
-  'closing': AlertCircle, // Warning - time running out
-  'waitlist': Clock, // Waiting - time/patience needed
+  'open': CheckCircleIcon, // Available - green light
+  'closing': ExclamationTriangleIcon, // Warning - time running out
+  'waitlist': ClockIcon, // Waiting - time/patience needed
   'walkins': Infinity // Always available
 };
 
@@ -168,13 +168,13 @@ export const getFilterIcon = (
       case 'discipline':
         return GameTargetIcon;
       case 'skillLevel':
-        return CheckCircle;
+        return CheckCircleIcon;
       case 'equipment':
         return IconCircle;
       case 'matchLevel':
         return IconCircle;
       case 'registration':
-        return CheckCircle;
+        return CheckCircleIcon;
       default:
         return IconCircle;
     }

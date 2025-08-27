@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { WeatherLocationCard } from '@/components/ui/weather-location-card'
-import { ArrowLeftIcon, ArrowTopRightOnSquareIcon, ArrowUpIcon, CalendarDaysIcon, CameraIcon, CheckCircleIcon, ChevronRightIcon, ClockIcon, CursorArrowRaysIcon, DifficultyIcon, ExclamationTriangleIcon, GlobeAltIcon, InformationCircleIcon, MapPinIcon, PhoneIcon, ShieldCheckIcon, StarIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftIcon, ArrowTopRightOnSquareIcon, ArrowUpIcon, CalendarDaysIcon, CameraIcon, CheckCircleIcon, ChevronRightIcon, ClockIcon, CurrencyDollarIcon, CursorArrowRaysIcon, ExclamationTriangleIcon, GlobeAltIcon, InformationCircleIcon, MapPinIcon, PhoneIcon, ShieldCheckIcon, StarIcon, UsersIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link'
 
 interface LocationAmenity {
@@ -94,10 +94,10 @@ export default function LocationDetailTemplate({
 
   const getDifficultyIcon = (difficulty: string) => {
     switch (difficulty.toLowerCase()) {
-      case 'easy': return CheckCircle
-      case 'moderate': return Activity
-      case 'difficult': return AlertTriangle
-      default: return Info
+      case 'easy': return CheckCircleIcon
+      case 'moderate': return ExclamationTriangleIcon
+      case 'difficult': return ExclamationTriangleIcon
+      default: return InformationCircleIcon
     }
   }
 
@@ -260,14 +260,14 @@ export default function LocationDetailTemplate({
                     </div>
                     <div className="space-y-base">
                       <div className="flex items-start gap-base">
-                        <DollarSign className="h-5 w-5 text-nav-intel mt-xs flex-shrink-0" />
+                        <CurrencyDollarIcon className="h-5 w-5 text-nav-intel mt-xs flex-shrink-0" />
                         <div>
                           <div className="font-medium text-body-sm">Access</div>
                           <div className="text-body-sm text-muted-foreground">{access}</div>
                         </div>
                       </div>
                       <div className="flex items-start gap-base">
-                        <Wind className="h-5 w-5 text-nav-intel mt-xs flex-shrink-0" />
+                        <WindIcon className="h-5 w-5 text-nav-intel mt-xs flex-shrink-0" />
                         <div>
                           <div className="font-medium text-body-sm">Best Conditions</div>
                           <div className="text-body-sm text-muted-foreground">{bestWindConditions}</div>
@@ -374,7 +374,7 @@ export default function LocationDetailTemplate({
                     Submit Photos
                   </Button>
                   <Button variant="outline" className="w-full justify-start gap-xs">
-                    <MessageCircle className="h-4 w-4" />
+                    <ChatBubbleBottomCenterTextIcon className="h-4 w-4" />
                     Leave Review
                   </Button>
                   <Button variant="outline" className="w-full justify-start gap-xs">
@@ -383,7 +383,7 @@ export default function LocationDetailTemplate({
                   </Button>
                   <Button variant="outline" className="w-full justify-start gap-xs">
                     <InformationCircleIcon className="h-4 w-4" />
-                    Update Info
+                    Update InformationCircleIcon
                   </Button>
                 </CardContent>
               </Card>

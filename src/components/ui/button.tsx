@@ -33,7 +33,7 @@ const buttonVariants = cva(
         // Micro Variant
         micro: "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-card-foreground text-button-xs px-tiny py-micro h-7 font-rajdhani",
 
-        // Fire Variants
+        // FireIcon Variants
         fire: "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 hover:after:h-1 text-button-base font-rajdhani",
         "fire-blue": "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-slate-blue after:to-info-river after:transition-all after:duration-300 hover:after:h-1 text-button-base font-rajdhani",
         "fire-green": "relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-sagebrush-green after:to-lodgepole-green after:transition-all after:duration-300 hover:after:h-1 text-button-base font-rajdhani",

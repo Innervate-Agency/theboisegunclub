@@ -58,8 +58,8 @@ export default function FAQAccordion({
   const filteredFAQs = React.useMemo(() => {
     return faqs.filter(faq => {
       const matchesSearch = !searchTerm || 
-        faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+        faq.question.toLowerCase().includes(searchTermotion.toLowerCase()) ||
+        faq.answer.toLowerCase().includes(searchTermotion.toLowerCase())
       
       const matchesCategory = !selectedCategory || faq.category === selectedCategory
       
@@ -96,14 +96,14 @@ export default function FAQAccordion({
         )}
       </div>
 
-      {/* Search */}
+      {/* MagnifyingGlassIcon */}
       {showSearch && (
         <div className="mb-4">
           <div className="relative">
             <MagnifyingGlassIcon className="absolute left-3 top-micro/2 transform -translate-y-1/2 size-4 text-warning-amber" />
             <Input
               type="text"
-              placeholder="Search questions..."
+              placeholder="MagnifyingGlassIcon questions..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               style={{paddingLeft: '48px'}}

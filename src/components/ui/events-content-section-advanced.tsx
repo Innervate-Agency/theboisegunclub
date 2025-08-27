@@ -112,7 +112,7 @@ export function EventsContentSectionAdvanced() {
                       </div>
                     </div>
 
-                    {/* List Business - Scroll Reveal with Stagger */}
+                    {/* ListBulletIcon Business - Scroll Reveal with Stagger */}
                     <div className="scroll-reveal-content group" style={{"--animation-delay": "0.5s"} as React.CSSProperties}>
                       <div className="p-[var(--spacing-lg)] bg-card rounded-xs border border-border/50 hover:border-sandy-ochre/30 transition-all duration-300 hover:shadow-whisper">
                         <div className="flex items-start gap-[var(--spacing-base)]">
@@ -121,7 +121,7 @@ export function EventsContentSectionAdvanced() {
                           </div>
                           <div className="min-w-0 flex-1">
                             <h4 className="font-rajdhani font-semibold text-body-lg text-card-foreground mb-xs">
-                              List Your Business
+                              ListBulletIcon Your Business
                             </h4>
                             <p className="text-sm text-muted-foreground leading-relaxed">
                               Register your range, shop, or training facility with our community
@@ -136,7 +136,7 @@ export function EventsContentSectionAdvanced() {
                       <div className="p-[var(--spacing-lg)] bg-card rounded-xs border border-border/50 hover:border-rusty-orange/30 transition-all duration-300 hover:shadow-whisper">
                         <div className="flex items-start gap-[var(--spacing-base)]">
                           <div className="w-12 h-12 bg-rusty-orange/10 rounded-xs flex items-center justify-center group-hover:bg-rusty-orange/20 transition-colors duration-200 flex-shrink-0">
-                            <Message className="h-5 w-5 text-rusty-orange" />
+                            <ChatBubbleBottomCenterTextIcon className="h-5 w-5 text-rusty-orange" />
                           </div>
                           <div className="min-w-0 flex-1">
                             <h4 className="font-rajdhani font-semibold text-body-lg text-card-foreground mb-xs">

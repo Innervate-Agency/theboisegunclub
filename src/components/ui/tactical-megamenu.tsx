@@ -53,10 +53,10 @@ const megamenuSections: MegamenuSection[] = [
     id: 'events',
     title: 'Events & Training',
     description: 'Live events, competitions, and skill development',
-    icon: Ticket,
+    icon: TicketIcon,
     colorClass: 'nav-events',
     items: [
-      { href: '/events', label: 'All Events', description: 'Browse upcoming events', icon: Calendar },
+      { href: '/events', label: 'All Events', description: 'Browse upcoming events', icon: CalendarDaysIcon },
       { href: '/events/competitions', label: 'Competitions', description: 'Shooting competitions', badge: '12 Active' },
       { href: '/events/training', label: 'Training Classes', description: 'Skill development', isNew: true },
       { href: '/events/social', label: 'Social Events', description: 'Community gatherings' },
@@ -74,18 +74,18 @@ const megamenuSections: MegamenuSection[] = [
       ]
     },
     quickActions: [
-      { href: '/events/submit', label: 'Submit Event', icon: Calendar, colorClass: 'nav-events' },
-      { href: '/events/my-events', label: 'My Events', icon: Star, colorClass: 'nav-events' }
+      { href: '/events/submit', label: 'Submit Event', icon: CalendarDaysIcon, colorClass: 'nav-events' },
+      { href: '/events/my-events', label: 'My Events', icon: StarIcon, colorClass: 'nav-events' }
     ]
   },
   {
     id: 'directory',
     title: 'Business Directory',
     description: 'Local firearms businesses and services',
-    icon: AddressBook,
+    icon: BookOpenIcon,
     colorClass: 'nav-directory',
     items: [
-      { href: '/directory', label: 'All Businesses', description: 'Complete directory', icon: Storefront },
+      { href: '/directory', label: 'All Businesses', description: 'Complete directory', icon: BuildingStorefrontIcon },
       { href: '/directory/gun-stores', label: 'Gun Stores', description: 'Licensed dealers', badge: '45+' },
       { href: '/directory/ranges', label: 'Shooting Ranges', description: 'Practice facilities' },
       { href: '/directory/gunsmiths', label: 'Gunsmiths', description: 'Repair & customization' },
@@ -104,18 +104,18 @@ const megamenuSections: MegamenuSection[] = [
       ]
     },
     quickActions: [
-      { href: '/directory/add-business', label: 'List Business', icon: Storefront, colorClass: 'nav-directory' },
-      { href: '/directory/near-me', label: 'Near Me', icon: MapPin, colorClass: 'nav-directory' }
+      { href: '/directory/add-business', label: 'ListBulletIcon Business', icon: BuildingStorefrontIcon, colorClass: 'nav-directory' },
+      { href: '/directory/near-me', label: 'Near Me', icon: MapPinIcon, colorClass: 'nav-directory' }
     ]
   },
   {
     id: 'armory',
     title: 'The Armory',
     description: 'Gear reviews, builds, and tactical insights',
-    icon: Shield,
+    icon: ShieldCheckIcon,
     colorClass: 'nav-armory',
     items: [
-      { href: '/armory', label: 'All Reviews', description: 'Latest gear reviews', icon: Shield },
+      { href: '/armory', label: 'All Reviews', description: 'Latest gear reviews', icon: ShieldCheckIcon },
       { href: '/armory/firearms', label: 'Firearms', description: 'Rifle & pistol reviews', badge: 'Hot' },
       { href: '/armory/optics', label: 'Optics', description: 'Scopes & sights' },
       { href: '/armory/gear', label: 'Tactical Gear', description: 'Accessories & equipment' },
@@ -134,18 +134,18 @@ const megamenuSections: MegamenuSection[] = [
       ]
     },
     quickActions: [
-      { href: '/armory/submit-review', label: 'Submit Review', icon: Shield, colorClass: 'nav-armory' },
-      { href: '/armory/wishlist', label: 'My Wishlist', icon: Star, colorClass: 'nav-armory' }
+      { href: '/armory/submit-review', label: 'Submit Review', icon: ShieldCheckIcon, colorClass: 'nav-armory' },
+      { href: '/armory/wishlist', label: 'My Wishlist', icon: StarIcon, colorClass: 'nav-armory' }
     ]
   },
   {
     id: 'marketplace',
     title: 'Marketplace',
     description: 'Buy, sell, and trade firearms & gear',
-    icon: Storefront,
+    icon: BuildingStorefrontIcon,
     colorClass: 'nav-marketplace',
     items: [
-      { href: '/marketplace', label: 'All Listings', description: 'Browse everything', icon: ShoppingCart },
+      { href: '/marketplace', label: 'All Listings', description: 'Browse everything', icon: ShoppingCartIcon },
       { href: '/marketplace/firearms', label: 'Firearms', description: 'Licensed sales only', badge: 'Verified' },
       { href: '/marketplace/optics', label: 'Optics & Scopes', description: 'Precision equipment' },
       { href: '/marketplace/gear', label: 'Gear & Accessories', description: 'All other equipment' },
@@ -164,8 +164,8 @@ const megamenuSections: MegamenuSection[] = [
       ]
     },
     quickActions: [
-      { href: '/marketplace/sell', label: 'List Item', icon: Storefront, colorClass: 'nav-marketplace' },
-      { href: '/marketplace/watchlist', label: 'Watchlist', icon: Eye, colorClass: 'nav-marketplace' }
+      { href: '/marketplace/sell', label: 'ListBulletIcon Item', icon: BuildingStorefrontIcon, colorClass: 'nav-marketplace' },
+      { href: '/marketplace/watchlist', label: 'Watchlist', icon: EyeIcon, colorClass: 'nav-marketplace' }
     ]
   }
 ]

@@ -45,7 +45,7 @@ export interface Business {
   service_area: string[]
   payment_methods: string[]
   
-  // FFL Info
+  // FFL InformationCircleIcon
   lic_regn?: string
   lic_dist?: string
   lic_cnty?: string
@@ -413,7 +413,7 @@ export class DatabaseService {
   }
   
   /**
-   * Search businesses (dynamic with caching)
+   * MagnifyingGlassIcon businesses (dynamic with caching)
    */
   async searchBusinesses(query: string, filters: {
     city?: string

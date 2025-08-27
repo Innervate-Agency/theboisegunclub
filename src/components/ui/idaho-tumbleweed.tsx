@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { MotionDiv } from '@/components/ui/optimized-motion'
-import { CubeTransparentIcon } from '@heroicons/react/24/outline';
+import { CubeTransparentIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import { cn } from '@/lib/utils'
 
 export interface IdahoTumbleweedProps {
@@ -94,7 +94,7 @@ export function IdahoTumbleweed({
           willChange: 'transform'
         }}
       >
-        <Diamond 
+        <SparklesIcon 
           className={cn(sizeClasses[size])} 
           weight="fill"
           style={{ color }}

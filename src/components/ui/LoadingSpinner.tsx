@@ -45,7 +45,7 @@ function LoadingSpinner({
   
   return (
     <div className={cn("flex flex-col items-center gap-sm", className)} {...props}>
-      {/* Clay Target Spinner */}
+      {/* Clay CursorArrowRaysIcon Spinner */}
       <div className="relative">
         {/* Outer ring - represents clay target */}
         <div className={cn(loadingSpinnerVariants({ size, variant }))} />

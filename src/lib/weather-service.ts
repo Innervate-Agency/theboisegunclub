@@ -129,7 +129,7 @@ function generateAlerts(temp: number, windSpeed: number, fireDanger: string, hum
   const alerts: string[] = []
   
   if (windSpeed > 25) alerts.push(`High winds ${Math.round(windSpeed)}mph - use caution`)
-  if (fireDanger === 'High') alerts.push('Fire restrictions in effect - no steel targets')
+  if (fireDanger === 'High') alerts.push('FireIcon restrictions in effect - no steel targets')
   if (fireDanger === 'Extreme') alerts.push('EXTREME FIRE DANGER - Area closed to shooting')
   if (temp < 25) alerts.push('Freezing conditions - check road access')
   if (temp < 35 && humidity > 80) alerts.push('Snow/ice possible - 4WD recommended')

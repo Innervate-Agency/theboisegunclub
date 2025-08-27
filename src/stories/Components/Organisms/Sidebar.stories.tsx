@@ -26,7 +26,7 @@ import {
 } from '@/components/ui/sidebar'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { CalendarDaysIcon, ChevronRightIcon, Cog6ToothIcon, CursorArrowRaysIcon, EllipsisHorizontalIcon, HomeIcon, MagnifyingGlassIcon, MapPinIcon, PlusIcon, ShieldCheckIcon, ToothIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, ChevronRightIcon, Cog6ToothIcon, CursorArrowRaysIcon, EllipsisHorizontalIcon, HomeIcon, MagnifyingGlassIcon, MapPinIcon, PlusIcon, ShieldCheckIcon, Cog6ToothIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof Sidebar> = {
   title: 'Design System/Organisms/Sidebar',
@@ -135,8 +135,8 @@ const AppSidebar = () => (
       </SidebarGroup>
 
       <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-        <SidebarGroupLabel>Search</SidebarGroupLabel>
-        <SidebarInput placeholder="Search ranges, events..." />
+        <SidebarGroupLabel>MagnifyingGlassIcon</SidebarGroupLabel>
+        <SidebarInput placeholder="MagnifyingGlassIcon ranges, events..." />
       </SidebarGroup>
     </SidebarContent>
 
@@ -217,7 +217,7 @@ export const FloatingVariant: Story = {
                 <SidebarMenuItem>
                   <SidebarMenuButton>
                     <MagnifyingGlassIcon />
-                    <span>Search</span>
+                    <span>MagnifyingGlassIcon</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>

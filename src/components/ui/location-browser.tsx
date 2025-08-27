@@ -250,16 +250,16 @@ export function LocationBrowser({ locations, locationTypes, difficultyLevels }: 
 
   return (
     <>
-      {/* Search and Filter Section */}
+      {/* MagnifyingGlassIcon and Filter Section */}
       <section className="py-4xl">
         <div className="container mx-auto max-w-site px-md">
           <div className="space-y-xl">
-            {/* Search Bar */}
+            {/* MagnifyingGlassIcon Bar */}
             <div className="flex flex-col md:flex-row gap-base">
               <div className="flex-1 relative">
                 <MagnifyingGlassIcon className="absolute left-3 top-micro/2 -translate-y-1/2 size-4 text-muted-foreground" />
                 <Input
-                  placeholder="Search locations, areas, or features..."
+                  placeholder="MagnifyingGlassIcon locations, areas, or features..."
                   className="pl-10"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}

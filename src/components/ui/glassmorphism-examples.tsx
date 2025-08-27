@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
-import { ArrowRightOnRectangleIcon, BellIcon, ChevronDownIcon, Cog6ToothIcon, MagnifyingGlassIcon, ToothIcon, UserIcon } from '@heroicons/react/24/outline';
+import { ArrowRightOnRectangleIcon, BellIcon, ChevronDownIcon, Cog6ToothIcon, MagnifyingGlassIcon, UserIcon } from '@heroicons/react/24/outline';
 
 interface GlassmorphismExamplesProps {
   className?: string
@@ -117,7 +117,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
       {/* Component Examples Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-lg">
         
-        {/* Search Bar with Glass */}
+        {/* MagnifyingGlassIcon Bar with Glass */}
         <div className="relative">
           <div 
             className="absolute inset-0 rounded-xs opacity-80"
@@ -132,14 +132,14 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
           />
           <div className="relative p-md space-y-4">
             <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate">
-              Glass Search Component
+              Glass MagnifyingGlassIcon Component
             </h3>
             
             <div className="mica-overlay p-base rounded-sm border border-card/20">
               <div className="flex items-center gap-sm">
                 <MagnifyingGlassIcon className="size-5 text-muted-foreground" />
                 <input 
-                  placeholder="Search firearms, ranges, events..."
+                  placeholder="MagnifyingGlassIcon firearms, ranges, events..."
                   className="flex-1 bg-transparent border-none outline-none text-foreground placeholder:text-muted-foreground"
                 />
                 <Badge variant="outline" className="text-caption">⌘K</Badge>

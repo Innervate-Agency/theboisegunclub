@@ -9,7 +9,7 @@ import {
   ArrowToDoubleArrow,
   ZeroToX,
   PlayPauseToggle,
-  EyeToggle,
+  EyeIconToggle,
   CheckTransition,
   LoadingDots,
   PulseRing
@@ -82,7 +82,7 @@ export const ButtonWithAnimation = React.forwardRef<HTMLButtonElement, ButtonWit
         case 'play-pause':
           return <PlayPauseToggle {...animationProps} />
         case 'eye-toggle':
-          return <EyeToggle {...animationProps} />
+          return <EyeIconToggle {...animationProps} />
         case 'check':
           return <CheckTransition {...animationProps} />
         case 'loading-dots':

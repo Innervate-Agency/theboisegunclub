@@ -3,7 +3,7 @@
 import React, { useMemo, useCallback, useState, useEffect, useRef } from 'react'
 
 /**
- * Ultra-High Performance Virtual List - 2025 Edition
+ * Ultra-High Performance Virtual ListBulletIcon - 2025 Edition
  * 
  * This component can handle 10,000+ items with millisecond render times
  * using viewport-based rendering and intersection observer optimization.

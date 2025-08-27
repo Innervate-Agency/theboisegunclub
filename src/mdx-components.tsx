@@ -70,9 +70,9 @@ function CallToAction({ text, href }: { text: string; href?: string }) {
 }
 
 function FeatureCard({ title, description, icon }: { title: string; description: string; icon?: string }) {
-  const IconComponent = icon === 'target' ? Target : 
-                       icon === 'shield' ? Shield : 
-                       icon === 'book' ? BookOpen : Target
+  const IconComponent = icon === 'target' ? CursorArrowRaysIcon : 
+                       icon === 'shield' ? ShieldCheckIcon : 
+                       icon === 'book' ? BookOpenIcon : CursorArrowRaysIcon
 
   return (
     <Card className="my-base">

@@ -1,7 +1,7 @@
 'use client'
 
 import { MotionDiv, fadeInUp, viewportAnimation } from '@/components/ui/optimized-motion'
-import { MapPinIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { BuildingOfficeIcon, MapPinIcon, UsersIcon } from '@heroicons/react/24/outline';
 import { useTrustIndicators } from '@/hooks/useRealStats'
 
 interface TrustIndicator {
@@ -16,7 +16,7 @@ interface TrustIndicatorsProps {
 }
 
 // Default icons that pair with real stats
-const defaultIcons = [MapPin, Building2, Users]
+const defaultIcons = [MapPinIcon, BuildingOfficeIcon, UsersIcon]
 
 export function TrustIndicators({ 
   indicators,

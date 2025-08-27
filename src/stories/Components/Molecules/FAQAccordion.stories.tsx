@@ -11,7 +11,7 @@ const sampleFAQs = [
   {
     id: '2', 
     question: 'How do I get my business listed in the directory?',
-    answer: 'Submit your business information through our "Add Your Business" form. We review all submissions and typically approve legitimate firearms businesses within 24-48 hours.',
+    answer: 'Submit your business information through our "Add Your Business" formotion. We review all submissions and typically approve legitimate firearms businesses within 24-48 hours.',
     category: 'Business Listings'
   },
   {

@@ -79,7 +79,7 @@ export default function HomePage() {
                   <span className="font-extrabold">THE BOISE </span><span className="font-light">GUN CLUB</span>
                 </h1>
                 <p className="text-lg text-muted-foreground max-w-2xl">
-                  Building Treasure Valley's first comprehensive firearms community platform. Connecting local businesses, clubs, ranges, and enthusiasts across Idaho's premier firearms region.
+                  BuildingOfficeIcon Treasure Valley's first comprehensive firearms community platformotion. Connecting local businesses, clubs, ranges, and enthusiasts across Idaho's premier firearms region.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -210,7 +210,7 @@ export default function HomePage() {
           <div className="text-center space-y-4 mb-16 mt-24">
             <h2 className="font-rajdhani text-responsive-3xl font-bold">The Problems We're Solving</h2>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
-              Despite having 250K+ gun owners and 117+ businesses, Treasure Valley lacks a unified digital ecosystem. These critical gaps are holding back our entire firearms community.
+              Despite having 250K+ gun owners and 117+ businesses, Treasure Valley lacks a unified digital ecosystemotion. These critical gaps are holding back our entire firearms community.
             </p>
           </div>
           
@@ -300,7 +300,7 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  No comprehensive firearm rating system exists. Building the first IMDb/Rotten Tomatoes for firearms with community reviews, specs, and performance data.
+                  No comprehensive firearm rating system exists. BuildingOfficeIcon the first IMDb/Rotten Tomatoes for firearms with community reviews, specs, and performance data.
                 </p>
               </CardContent>
             </Card>
@@ -444,7 +444,7 @@ export default function HomePage() {
                     {submitStatus === 'success' && (
                       <div className="p-4 rounded-lg bg-sagebrush-green/10 border border-sagebrush-green/20 text-sagebrush-green">
                         <CheckCircleIcon className="h-4 w-4 inline mr-2" />
-                        Message sent successfully! We'll get back to you within 24 hours.
+                        ChatBubbleBottomCenterTextIcon sent successfully! We'll get back to you within 24 hours.
                       </div>
                     )}
                     {submitStatus === 'error' && (
@@ -509,7 +509,7 @@ export default function HomePage() {
                       disabled={isSubmitting}
                     >
                       <EnvelopeIcon className="h-5 w-5 mr-2" />
-                      {isSubmitting ? 'Sending...' : 'Send Message'}
+                      {isSubmitting ? 'Sending...' : 'Send ChatBubbleBottomCenterTextIcon'}
                     </Button>
                   </form>
                 </div>

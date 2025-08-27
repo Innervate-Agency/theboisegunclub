@@ -96,13 +96,13 @@ const StarFill = ({ isStarred }: { isStarred: boolean }) => (
   </div>
 )
 
-const EyeToggle = ({ isVisible }: { isVisible: boolean }) => (
+const EyeIconToggle = ({ isVisible }: { isVisible: boolean }) => (
   <div className="relative w-4 h-4">
     <div className={`absolute inset-0 transition-all duration-300 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
       <EyeIcon className="w-4 h-4" />
     </div>
     <div className={`absolute inset-0 transition-all duration-300 ${isVisible ? 'opacity-0 scale-75' : 'opacity-100 scale-100'}`}>
-      <EyeOff className="w-4 h-4" />
+      <EyeIconOff className="w-4 h-4" />
     </div>
   </div>
 )
@@ -284,22 +284,22 @@ export const Default: Story = {
             </div>
 
             <div className="space-y-base">
-              <h4 className="font-medium text-sm text-card-foreground">Eye Visibility Toggle</h4>
+              <h4 className="font-medium text-sm text-card-foreground">EyeIcon Visibility Toggle</h4>
               <Button
                 variant="ghost"
                 onClick={() => setStates(s => ({ ...s, visible: !s.visible }))}
                 className="w-full justify-between"
               >
                 {states.visible ? 'Hide' : 'Show'} Content
-                <EyeToggle isVisible={states.visible} />
+                <EyeIconToggle isVisible={states.visible} />
               </Button>
               <p className="text-xs text-muted-foreground">
-                Eye transforms to crossed-out eye for show/hide functionality.
+                EyeIcon transforms to crossed-out eye for show/hide functionality.
               </p>
             </div>
 
             <div className="space-y-base">
-              <h4 className="font-medium text-sm text-card-foreground">Heart Favorite</h4>
+              <h4 className="font-medium text-sm text-card-foreground">HeartIcon Favorite</h4>
               <Button
                 variant="ghost"
                 onClick={() => setStates(s => ({ ...s, favorited: !s.favorited }))}
@@ -309,22 +309,22 @@ export const Default: Story = {
                 <HeartFill isFavorited={states.favorited} />
               </Button>
               <p className="text-xs text-muted-foreground">
-                Heart outline fills with color and scales up when favorited.
+                HeartIcon outline fills with color and scales up when favorited.
               </p>
             </div>
 
             <div className="space-y-base">
-              <h4 className="font-medium text-sm text-card-foreground">Star Rating</h4>
+              <h4 className="font-medium text-sm text-card-foreground">StarIcon Rating</h4>
               <Button
                 variant="ghost"
                 onClick={() => setStates(s => ({ ...s, starred: !s.starred }))}
                 className="w-full justify-between"
               >
-                {states.starred ? 'Unstar' : 'Star'} Item
+                {states.starred ? 'Unstar' : 'StarIcon'} Item
                 <StarFill isStarred={states.starred} />
               </Button>
               <p className="text-xs text-muted-foreground">
-                Star fills with rusty-orange and scales up when starred.
+                StarIcon fills with rusty-orange and scales up when starred.
               </p>
             </div>
           </CardContent>
@@ -445,9 +445,9 @@ export const InteractivePlayground: Story = {
       { id: 'x-o', name: 'X/O Toggle', description: 'On/off state indicator' },
       { id: 'chevron', name: 'Chevron Rotate', description: 'Directional indicator' },
       { id: 'play-pause', name: 'Play/Pause', description: 'Media control toggle' },
-      { id: 'heart', name: 'Heart Fill', description: 'Favorite animation' },
-      { id: 'star', name: 'Star Fill', description: 'Rating indicator' },
-      { id: 'eye', name: 'Eye Toggle', description: 'Visibility control' },
+      { id: 'heart', name: 'HeartIcon Fill', description: 'Favorite animation' },
+      { id: 'star', name: 'StarIcon Fill', description: 'Rating indicator' },
+      { id: 'eye', name: 'EyeIcon Toggle', description: 'Visibility control' },
       { id: 'check', name: 'Check Mark', description: 'Completion indicator' },
       { id: 'pulse', name: 'Pulse Ring', description: 'Active status indicator' }
     ]
@@ -469,7 +469,7 @@ export const InteractivePlayground: Story = {
         case 'star':
           return <StarFill isStarred={animationState} />
         case 'eye':
-          return <EyeToggle isVisible={animationState} />
+          return <EyeIconToggle isVisible={animationState} />
         case 'check':
           return <CheckTransition isChecked={animationState} />
         case 'pulse':
@@ -503,12 +503,12 @@ export const InteractivePlayground: Story = {
               <div className="space-y-xs">
                 {animations.map((anim) => (
                   <Button
-                    key={anim.id}
-                    variant={selectedAnimation === anim.id ? 'solid-accent' : 'ghost'}
-                    onClick={() => setSelectedAnimation(anim.id)}
+                    key={animotion.id}
+                    variant={selectedAnimation === animotion.id ? 'solid-accent' : 'ghost'}
+                    onClick={() => setSelectedAnimation(animotion.id)}
                     className="w-full justify-start"
                   >
-                    {anim.name}
+                    {animotion.name}
                   </Button>
                 ))}
               </div>

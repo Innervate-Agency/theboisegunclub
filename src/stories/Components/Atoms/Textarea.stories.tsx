@@ -36,7 +36,7 @@ export const Premium: Story = {
   },
   render: (args) => (
     <div className="grid w-full max-w-sm gap-md">
-      <Label htmlFor="premium-message">Premium Message</Label>
+      <Label htmlFor="premium-message">Premium ChatBubbleBottomCenterTextIcon</Label>
       <Textarea {...args} />
     </div>
   ),
@@ -50,7 +50,7 @@ export const Glass: Story = {
   render: (args) => (
     <div className="relative w-[400px] p-10 bg-cover bg-center rounded-sm" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')" }}>
       <div className="grid w-full max-w-sm gap-md">
-        <Label htmlFor="glass-message" className="text-range-white">Glass Message</Label>
+        <Label htmlFor="glass-message" className="text-range-white">Glass ChatBubbleBottomCenterTextIcon</Label>
         <Textarea {...args} />
       </div>
     </div>
@@ -64,7 +64,7 @@ export const Filled: Story = {
   },
   render: (args) => (
     <div className="grid w-full max-w-sm gap-md">
-      <Label htmlFor="filled-message">Filled Message</Label>
+      <Label htmlFor="filled-message">Filled ChatBubbleBottomCenterTextIcon</Label>
       <Textarea {...args} />
     </div>
   ),

@@ -46,7 +46,7 @@ export function PlatformFeatureCard({
 // Pre-configured platform feature cards for the 7 pillars
 export const platformFeatures = [
   {
-    icon: Calendar,
+    icon: CalendarDaysIcon,
     title: "Events",
     description: "Your gateway to competitions, training, and community gatherings across Treasure Valley.",
     helpText: "Share events you discover at ranges and clubs",
@@ -55,7 +55,7 @@ export const platformFeatures = [
     iconColor: "text-rusty-orange"
   },
   {
-    icon: AddressBook,
+    icon: BookOpenIcon,
     title: "Directory", 
     description: "Verified local businesses. FFLs, ranges, trainers, and services you can trust.",
     helpText: "Review businesses you've used",
@@ -64,7 +64,7 @@ export const platformFeatures = [
     iconColor: "text-sagebrush-green"
   },
   {
-    icon: Shield,
+    icon: ShieldCheckIcon,
     title: "The Armory",
     description: "Knowledge is power and safety. Training guides, legal updates, and safety resources.",
     helpText: "Share your expertise and submit articles",
@@ -73,7 +73,7 @@ export const platformFeatures = [
     iconColor: "text-slate-blue"
   },
   {
-    icon: MapTrifold,
+    icon: MapIcon,
     title: "Intel",
     description: "Real-time range conditions. Weather data for Black's Creek, Morley Nelson, and more.",
     helpText: "Submit range photos and condition reports",
@@ -82,7 +82,7 @@ export const platformFeatures = [
     iconColor: "text-canyon-clay"
   },
   {
-    icon: Storefront,
+    icon: BuildingStorefrontIcon,
     title: "Marketplace",
     description: "Local deals, no corporate middleman. Direct connections with Treasure Valley dealers.",
     helpText: "Share deals you find at local shops",
@@ -91,7 +91,7 @@ export const platformFeatures = [
     iconColor: "text-warm-stone"
   },
   {
-    icon: Users,
+    icon: UsersIcon,
     title: "Forums",
     description: "Your voice matters. Idaho-focused discussions without coastal politics or corporate agenda.",
     helpText: "Join conversations and share local knowledge",
