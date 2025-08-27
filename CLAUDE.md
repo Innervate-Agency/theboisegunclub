@@ -1,216 +1,110 @@
 # CLAUDE.md
 
-## 🚀 PRODUCTION STATUS: LAUNCH-READY
-
-### **DATABASE & INFRASTRUCTURE COMPLETE**
-- **PostgreSQL Backend**: 594 privacy-filtered Idaho firearms businesses
-- **Serper API**: Real-time Google Reviews with 7-day caching
-- **Dynamic Pages**: All business pages at `/directory/[slug]`
-- **Production Ready**: Docker + Next.js 15 + React 19
-- **Privacy Compliance**: Home-based FFLs without advertising protected
-
-### **DESIGN SYSTEM UNIFIED**
-- **Heroicons Migration**: Complete icon system standardization
-- **Shadow Progression**: whisper → hero (levels 1-7)
-- **Tactical Aesthetic**: Square components, orange hover states
-- **Mobile-First**: 60% traffic optimization
-
-## Tech Stack
-- **Next.js 15** + React 19 + TypeScript + Tailwind CSS v4
-- **Icons**: Heroicons (cube-transparent, ticket, identification, plus-circle, map, banknotes, chat-bubble-bottom-center-text)
-- **Database**: PostgreSQL with 594 privacy-filtered Idaho businesses
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Commands
-- `npm run dev` - Development server
+
+### Development
+- `npm run dev` - Start development server on port 3000
+- `npm run dev:turbo` - Development server with Turbo mode
 - `npm run build` - Production build
-- `npm run lint` - Code quality check
+- `npm run build:strict` - Build with strict TypeScript checking
+- `npm run start` - Start production server
 
-## Data Processing Scripts
-- `scripts/filter-commercial-ffls.py` - Privacy-focused FFL filtering (residential vs commercial)
-- `scripts/audit-commercial-filtering.py` - Data quality audit and validation tool
-- `scripts/fix-directory-issues.py` - Duplicate removal and cleanup script
-- `scripts/create-final-commercial-directory.py` - Directory merger and deduplication
-- `scripts/generate-ffl-data.js` - FFL database import and processing
+### Code Quality
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Auto-fix ESLint issues
+- `npm run strict` - Toggle strict TypeScript mode
 
-## Design System Rules
-- **Colors**: Only Boise landscape palette from `globals.css` (26-color system)
-- **Shadows**: Use shadow-whisper → shadow-hero progression (levels 1-7)
-- **Components**: Square tactical aesthetic, rounded-none for cards
-- **Icons**: Heroicons ONLY - no Phosphor, Lucide, or other libraries
+### Testing & Analysis
+- `npm run health` - Run health check
+- `npm run analyze` - Analyze build output
+- `npm run bundle:analyze` - Detailed bundle analysis
+- `npm run lighthouse` - Generate Lighthouse performance report
 
-## Key Files
-- `src/app/page.tsx` - Home page (16-line pattern)
-- `src/app/globals.css` - 26-color Boise palette + shadow system
-- `src/components/ui/site-navigation.tsx` - Main nav with Heroicons
-- `src/components/pages/*` - Page components (directory, events, etc.)
+### Database & Data Processing
+- PostgreSQL connection via `DATABASE_URL` environment variable
+- Key scripts:
+  - `scripts/generate-ffl-data.js` - Import FFL data to database
+  - `scripts/postgresql-import-businesses.js` - Import business directory
+  - `scripts/test-google-reviews.js` - Test Google Reviews API integration
 
-## Project Memory
-- **Authentic Data**: 100% verified Idaho businesses - NEVER use placeholder data
-- **API Integration**: Always use Google Reviews API via Serper - NEVER hardcode reviews
-- **Community Voice**: Platform built by Idaho gun owners, for Idaho gun owners
-- **Mobile-First**: Navigation integrity maintained across breakpoints
-- **Shadow Progression**: Cards use shadow-whisper → shadow-hero on hover
+## Architecture
 
-### Tactical Square Aesthetic
-- **Main Cards**: `rounded-none` (square tactical)
-- **Interactive**: Minimal rounding (buttons `rounded-xs`, badges `rounded-sm`)
-- **Hierarchy**: Shadow-first, not border-radius
+### Core Stack
+- **Framework**: Next.js 15 with React 19, TypeScript, Tailwind CSS v4
+- **Database**: PostgreSQL with 594 privacy-filtered Idaho firearms businesses
+- **APIs**: 
+  - Serper API for Google Reviews (7-day caching)
+  - OpenWeatherMap for Idaho weather conditions
+- **Icons**: Heroicons (primary), with legacy Phosphor references being migrated
 
-### Primary Accents
-- **Light Theme**: `slate-blue` (CTAs), `sagebrush-green` (success)
-- **Dark Theme**: `rusty-orange` (CTAs), `lodgepole-green` (success)
+### Data Flow Architecture
+1. **Static Data (90%)**: Pre-generated from PostgreSQL at build time
+   - Business directory pages at `/directory/[slug]`
+   - Event pages at `/events/[slug]`
+   - Guide pages at `/guides/[slug]`
 
-### Typography
-- **Display**: Rajdhani (H1-H2, weights 300-800 for site title)
-- **Body**: Noto Sans (H3-H6, body text)
-- **Accent**: Noto Serif (editorial)
+2. **Dynamic Data (10%)**: Runtime API calls
+   - Google Reviews via `src/lib/google-reviews-service.ts`
+   - Weather data via `src/lib/weather-service.ts`
+   - Real-time inventory/availability
 
-### Animation System (Micro-Interactions)
-- **Button Animations**: Context-aware micro-animations (arrow, plus-minus, x-o, chevron)
-- **Navigation Effects**: Magic Line sliding with spring physics (bounce: 0.25, stiffness: 130, damping: 9)
-- **Icon Interactions**: Subtle wiggle animations (-5°, 5°, 0°) with glow effects
-- **Loading States**: Idaho Tumbleweed system for all loading scenarios
-- **Performance**: All animations disabled during loading, use currentColor for theming
+### Component Architecture
+- **Templates**: Unified page templates in `src/components/ui/`
+  - `article-page-template.tsx` - Articles, events, guides
+  - `business-detail-template.tsx` - Business profiles
+  - `marketplace-product-template.tsx` - Product details
 
-### Tactical Icon System (Multi-Library Integration)
-- **Primary Libraries**: Game-icons.net, Lucide React, Tabler Icons, Heroicons
-- **Tactical Filter Icons**: `/src/lib/tactical-filter-icons.tsx` - Comprehensive shooting sports iconography
-- **Icon Normalization**: 16px standardized containers for consistent sizing across libraries
-- **Geometric Language**: Meaningful shapes (bullseyes for precision, triangles for trajectories, crosshairs for intersections)
-- **Fallback System**: Smart error handling with console warnings for missing icons
+- **Design System**: 
+  - 26-color Boise landscape palette (`src/app/globals.css`)
+  - Shadow progression system (whisper → hero, levels 1-7)
+  - Tactical square aesthetic (`rounded-none` for cards)
+  - Mobile-first responsive (60% traffic optimization)
 
----
+### Authentication & Security
+- OAuth2 integration planned (see `.env.local.example`)
+- Environment variables:
+  - `SERPAPI_KEY` - Google Reviews API
+  - `OPENWEATHER_API_KEY` - Weather API
+  - `DATABASE_URL` - PostgreSQL connection
 
-## API Integration System
+## Critical Development Rules
 
-### Authentic Data Integration (CRITICAL)
-- **100% Verified Idaho Businesses**: All directory listings use real, verified Idaho firearms businesses
-- **No Hardcoded Reviews**: ALL rating and review data dynamically fetched from Google Reviews API
-- **Real Event Calendar**: Only authentic Idaho events dated after August 16, 2025
-- **Environment Variables**: All API keys secured in environment variables (SERPAPI_KEY, OPENWEATHER_API_KEY)
+### NEVER Do This
+- **NEVER** use placeholder/sample data - only verified Idaho businesses
+- **NEVER** hardcode reviews/ratings - always fetch from Google Reviews API
+- **NEVER** use generic Tailwind colors - only Boise landscape palette
+- **NEVER** break navigation into multiple rows on mobile - scale down instead
+- **NEVER** commit API keys or secrets
 
-### Google Reviews Service
-- **File**: `src/lib/google-reviews-service.ts`
-- **API**: SerpApi for Google Reviews data
-- **Caching**: 7-day memory cache to minimize API calls
-- **Fallback**: Authentic local data when API unavailable
-- **Usage**: NEVER use hardcoded rating/reviewCount - always call fetchGoogleReviews()
+### ALWAYS Do This
+- **ALWAYS** use Heroicons for new icon implementations
+- **ALWAYS** maintain 44px minimum touch targets for mobile
+- **ALWAYS** use shadow progression for card hover states
+- **ALWAYS** fetch dynamic data through service layers
+- **ALWAYS** preserve tactical square aesthetic for main components
 
-### Weather Service
-- **File**: `src/lib/weather-service.ts` 
-- **API**: OpenWeatherMap for real-time Idaho weather
-- **Security**: Environment variable for API key
-- **Location**: Idaho-specific weather data for range conditions
+## Environment Setup
+1. Copy `.env.local.example` to `.env.local`
+2. Add required API keys:
+   - `SERPAPI_KEY` for Google Reviews
+   - `OPENWEATHER_API_KEY` for weather data
+   - `DATABASE_URL` for PostgreSQL
 
----
+## Database Management
+- Connection pool configured in `src/lib/database/index.ts`
+- Max 20 connections, 30s idle timeout
+- Business data schema includes FFL licensing, services, hours, certifications
 
-## Navigation Architecture
+## Performance Optimizations
+- React Compiler enabled for automatic memoization
+- Optimized package imports for Radix UI and Heroicons
+- Standalone Docker output mode
+- Image formats: AVIF and WebP with 1-year cache
+- Bundle splitting for vendor, framer-motion, and radix-ui chunks
 
-### Template System (Critical - Use These Patterns)
-- **ArticlePageTemplate**: Unified template for articles, events, guides with breadcrumbs
-- **BusinessDetailTemplate**: Comprehensive business profiles with reviews and verification
-- **MarketplaceProductTemplate**: Product detail pages with specifications and vendor info
-
-### Dynamic Routing Patterns
-- **Events**: `/events/[slug]` - Article-style event details
-- **Directory**: `/directory/[slug]` - Business profiles  
-- **Armory**: `/the-armory/[slug]` - Equipment reviews
-- **Guides**: `/guides/[slug]` - Legal/safety guides
-- **Marketplace**: `/marketplace/[id]` - Product details
-
-### CTA Functionality Standards
-- **Suggest Article**: `mailto:content@boiseguncollective.com`
-- **List Items/Training**: `mailto:marketplace@boiseguncollective.com`
-- **Contact Support**: `mailto:support@boiseguncollective.com`
-- **Join Community**: `mailto:info@boiseguncollective.com`
-
----
-
-## Mobile-First Responsive Design
-
-### Breakpoint Strategy
-- **320px-639px**: Compact mobile layout
-- **640px-767px**: Enhanced mobile with more spacing  
-- **768px-1023px**: Tablet layout with sidebar options
-- **1024px+**: Full desktop experience
-
-### Navigation Principles (CRITICAL)
-- **Navigation Integrity**: Navigation components ALWAYS stay single row
-- **Scale, Don't Break**: Reduce button/icon sizes rather than wrapping
-- **Progressive Typography**: Text scales down gracefully on smaller screens
-- **Touch Accessibility**: 44px minimum touch targets maintained
-
-### Loading System
-- **Idaho Tumbleweed**: Use for all loading states (buttons, pages, forms, files)
-- **Variants Available**: ButtonTumbleweed, LoadingTumbleweed, PageLoadingTumbleweed, etc.
-- **Mobile Optimized**: Animations work smoothly across all devices
-
----
-
-## Key Reference Files
-
-### Core Platform & Design
-- `src/app/page.tsx` - **Home page with authentic Idaho community data**
-- `src/app/globals.css` - **Optimized 26-color Boise landscape palette (1,081 lines, 62% reduction)**
-- `src/components/ui/site-navigation.tsx` - **Mobile-responsive navigation with tactical megamenu foundation**
-- `src/components/ui/hero-overhang-section.tsx` - **Responsive treasure chest navigation (FIXED: null safety)**
-
-### Tactical Filter & Badge System
-- `src/lib/tactical-filter-icons.tsx` - **Comprehensive shooting sports icon system with 7 categories, 25+ sub-disciplines**
-- `src/components/ui/smart-event-badges.tsx` - **MVP-focused truth-based badge system (8 categories, no fake premium features)**
-- `src/components/ui/modern-filter-sidebar.tsx` - **Nested collapsible filter system with calendar-first layout**
-- `src/components/pages/events-page-standardized.tsx` - **Events page with tactical filters and realistic badges**
-
-### Authentic Data Pages
-- `src/components/pages/directory-page-standardized.tsx` - **594 privacy-filtered Idaho businesses**
-- `src/components/pages/events-page-standardized.tsx` - **130+ authentic Idaho events through 2026**
-- `src/components/pages/marketplace-page-standardized.tsx` - **Real Idaho dealers and products**
-- `src/hooks/useRealStats.ts` - **Updated statistics with verified data counts**
-
-### API Services
-- `src/lib/google-reviews-service.ts` - **Google Reviews API with 7-day caching**
-- `src/lib/weather-service.ts` - **OpenWeatherMap integration for Idaho weather**
-
-### Template System
-- `src/components/ui/article-page-template.tsx` - **Unified article template**
-- `src/components/ui/business-detail-template.tsx` - **Business profile template**
-- `src/components/ui/marketplace-product-template.tsx` - **Product detail template**
-
-### Animation & Loading
-- `src/components/ui/idaho-tumbleweed.tsx` - **Complete tumbleweed loading system**
-- `src/components/ui/comprehensive-loading.tsx` - **Loading scenarios for all use cases**
-- `src/components/ui/tactical-megamenu.tsx` - **Foundation megamenu component**
-
----
-
-## Project Memory
-
-### Core Principles
-- **Authentic Data**: 100% verified Idaho businesses and events - NEVER use sample/placeholder data
-- **API Integration**: ALWAYS use Google Reviews API for ratings - NEVER hardcode review data  
-- **Community Voice**: Platform messaging emphasizes authentic Idaho gun owner voice
-- **Colors**: ONLY use custom 26-color Boise landscape palette from `globals.css` - NEVER generic Tailwind
-- **Icons**: Always use Phosphor Icons as primary choice - tactical, angular aesthetic preferred
-
-### Technical Standards
-- **Aesthetic**: Tactical square components (`rounded-none` for cards, minimal rounding for interactive)
-- **Animation**: Idaho Tumbleweed for ALL loading states, context-aware micro-interactions
-- **Mobile-First**: Navigation integrity maintained across all breakpoints, 44px touch targets
-- **Performance**: Animations disabled during loading, lazy-loaded heavy components
-- **CSS Architecture**: Optimized globals.css (1,081 lines), unified mica design tokens
-
-### Navigation System Memory (Critical Implementation)
-- **Navigation Integrity**: NEVER break navigation into multiple rows - scale down instead
-- **Template Architecture**: ALWAYS use proper templates for content types
-- **Card Navigation**: ALL card components must have Link navigation to detail pages
-- **Touch-First**: All interactive elements meet 44px minimum touch target requirements
-- **Responsive Scaling**: Icons, text, and spacing scale progressively from mobile to desktop
-- **Error Handling**: ALL DOM style access must include null safety checks
-
-### Hero Layout System Memory (Critical Fixes Applied)
-- **CSS Height Constraints**: NEVER use `max-height` on `.hero-grid-layout` - causes content overflow
-- **Hero Button Visibility**: ALWAYS use `bg-nav-[page] text-white hover:bg-white hover:text-nav-[page]` pattern
-- **Badge Icon Management**: ALWAYS use `hideIcon={true}` on hero badges to prevent auto-generated icons
-- **Filter Sidebar Architecture**: Events page uses direct implementation, Directory uses CardPageLayout
-- **Component Consistency**: EventTicker displays 8 events with 30s scroll cycle and hover pause
-- **Hero Card Variants**: Use compact versions in hero sections - remove tall gradient sections and info grids
+## Loading & Animation
+- Idaho Tumbleweed system for all loading states (`src/components/ui/idaho-tumbleweed.tsx`)
+- Context-aware micro-animations with spring physics
+- Animations disabled during loading for performance
