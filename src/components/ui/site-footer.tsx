@@ -177,7 +177,7 @@ export function SiteFooter({
                     { name: "Events CalendarDaysIcon", href: "/events", icon: TicketIcon, color: "hover:text-nav-events" },
                     { name: "The Armory", href: "/armory", icon: ShieldCheckIcon, color: "hover:text-nav-armory" },
                     { name: "Intel Center", href: "/intel", icon: MapPinIcon, color: "hover:text-nav-intel" },
-                    { name: "Marketplace", href: "/buysell", icon: BanknotesIcon, color: "hover:text-nav-buysell" },
+                    { name: "Buy & Sell", href: "/buysell", icon: BanknotesIcon, color: "hover:text-nav-buysell" },
                     { name: "Forums", href: "/forums", icon: UsersIcon, color: "hover:text-nav-forums" }
                   ].map((link, index, array) => {
                     const Icon = link.icon

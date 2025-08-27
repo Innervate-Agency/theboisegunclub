@@ -427,7 +427,7 @@ export function MarketplacePageVariant({
 
   return (
     <UnifiedPageTemplate
-      pageTitle="Marketplace"
+      pageTitle="Buy & Sell"
       pageSubtitle="Idaho Firearms Marketplace"
       pageColor="nav-buysell"
       heroContent={heroContent}

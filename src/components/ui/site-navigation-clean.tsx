@@ -42,7 +42,7 @@ const navigationItems = [
   { label: "Directory", icon: UsersIcon, href: "/directory", color: "ayu-green" },
   { label: "Guides", icon: CursorArrowRaysIcon, href: "/guides", color: "ayu-purple" },
   { label: "Intel", icon: ShieldCheckIcon, href: "/intel", color: "ayu-red" },
-  { label: "Marketplace", icon: TrophyIcon, href: "/buysell", color: "ayu-teal" },
+  { label: "Buy & Sell", icon: TrophyIcon, href: "/buysell", color: "ayu-teal" },
   { label: "Community", icon: Settings, href: "/community", color: "ayu-teal" }
 ]
 

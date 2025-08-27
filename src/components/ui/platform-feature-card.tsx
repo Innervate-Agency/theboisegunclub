@@ -83,7 +83,7 @@ export const platformFeatures = [
   },
   {
     icon: BuildingStorefrontIcon,
-    title: "Marketplace",
+    title: "Buy & Sell",
     description: "Local deals, no corporate middleman. Direct connections with Treasure Valley dealers.",
     helpText: "Share deals you find at local shops",
     borderColor: "border-warm-stone/20",

@@ -51,7 +51,7 @@ const navigationItems = [
   { label: "Directory", icon: IdentificationIcon, href: "/directory", color: "nav-directory" },
   { label: "Armory", icon: PlusCircleIcon, href: "/armory", color: "nav-armory" },
   { label: "Intel", icon: MapPinIcon, href: "/intel", color: "nav-intel" },
-  { label: "Marketplace", icon: BanknotesIcon, href: "/buysell", color: "nav-buysell" },
+  { label: "Buy & Sell", icon: BanknotesIcon, href: "/buysell", color: "nav-buysell" },
   { label: "Forums", icon: ChatBubbleLeftRightIcon, href: "/forums", color: "nav-forums", isForumLink: true }
 ]
 
