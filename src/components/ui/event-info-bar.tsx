@@ -3,7 +3,7 @@
 import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
-import { BanknotesIcon, CalendarDaysIcon, ClockIcon, CloudIcon, ExclamationTriangleIcon, MapPinIcon, SunIcon, TagIcon, UserIcon, UsersIcon, CloudIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
+import { BanknotesIcon, CalendarDaysIcon, ClockIcon, CloudIcon, ExclamationTriangleIcon, MapPinIcon, SunIcon, TagIcon, UserIcon, UsersIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
 
 interface EventInfoBarProps {
   // Event data
