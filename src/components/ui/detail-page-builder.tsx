@@ -9,7 +9,7 @@ import {
   ProductContent 
 } from './detail-content-types'
 import { EventInfoBar } from './event-info-bar'
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, GlobeAltIcon, PhoneIcon } from '@heroicons/react/24/outline';
 
 // Helper functions to build detail pages for each content type
 
@@ -363,7 +363,7 @@ export function BusinessDetailPage(props: BusinessPageProps) {
   if (website) {
     actions.push({
       label: 'Visit Website',
-      icon: Globe,
+      icon: GlobeAltIcon,
       href: website,
       variant: 'default',
       size: 'lg',
@@ -373,7 +373,7 @@ export function BusinessDetailPage(props: BusinessPageProps) {
 
   actions.push({
     label: 'Call',
-    icon: Phone,
+    icon: PhoneIcon,
     href: `tel:${phone}`,
     variant: 'outline',
     size: 'lg'
@@ -463,7 +463,7 @@ export function LocationDetailPage(props: LocationPageProps) {
   if (website) {
     actions.push({
       label: 'Visit Website',
-      icon: Globe,
+      icon: GlobeAltIcon,
       href: website,
       variant: 'outline',
       size: 'lg'
@@ -473,7 +473,7 @@ export function LocationDetailPage(props: LocationPageProps) {
   if (phone) {
     actions.push({
       label: 'Call',
-      icon: Phone,
+      icon: PhoneIcon,
       href: `tel:${phone}`,
       variant: 'outline',
       size: 'lg'

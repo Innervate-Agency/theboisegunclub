@@ -65,7 +65,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
         { icon: MapPinIcon, name: "MapPinIcon", category: "location" },
         { icon: Phone, name: "Phone", category: "contact" },
         { icon: Mail, name: "Mail", category: "contact" },
-        { icon: Globe, name: "Globe", category: "web" },
+        { icon: GlobeAltIcon, name: "Globe", category: "web" },
         { icon: ClockIcon, name: "ClockIcon", category: "time" },
         { icon: UsersIcon, name: "UsersIcon", category: "people" },
         { icon: StarIcon, name: "StarIcon", category: "rating" }
