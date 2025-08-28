@@ -108,13 +108,6 @@ export function SidebarCalendar({ events, className, onDateSelect }: SidebarCale
   return (
     <div className={cn("w-80 flex-shrink-0 sidebar-calendar", className)} tabIndex={0}>
       <div className="sticky top-4 space-y-lg">
-        {/* CalendarDaysIcon Header */}
-        <div className="space-y-base">
-          <div className="flex items-center gap-xs">
-            <CalendarDaysIcon className="size-5 text-muted-foreground" />
-            <h3 className="font-rajdhani font-bold text-heading-base text-card-foreground">Event CalendarDaysIcon</h3>
-          </div>
-        </div>
 
         {/* CalendarDaysIcon Content */}
         <div className="space-y-lg">
