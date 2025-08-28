@@ -7,8 +7,9 @@ import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { BuySellDealCard } from '@/components/ui/buysell-deal-card'
-import { BuySellTicker } from '@/components/ui/buysell-ticker'
-import { BuySellContentSection } from '@/components/ui/buysell-content-section'
+import { DirectoryTicker } from '@/components/ui/directory-ticker'
+import { ContentBridgeSection } from '@/components/ui/content-bridge-section'
+import { contentBridgeConfigs } from '@/lib/content-bridge-configs'
 import { BuySellSparklesIcons } from '@/components/ui/hero-buysell-diamonds'
 import { BuySellEmbers } from '@/components/ui/hero-buysell-embers'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
@@ -641,11 +642,11 @@ export function BuySellPageStandardized() {
     <div className="min-h-screen bg-background">
       {heroContent}
       
-      {/* Buy & Sell Ticker - Live deals */}
-      <BuySellTicker />
+      {/* Directory Ticker - Real business updates */}
+      <DirectoryTicker />
       
       {/* Buy & Sell Content Section - Trust and Categories */}
-      <BuySellContentSection />
+      <ContentBridgeSection {...contentBridgeConfigs.buysell} />
 
       {/* Main Content Area */}
       <section className="py-mobile-2xl sm:py-4xl bg-background/50">
