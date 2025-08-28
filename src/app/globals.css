@@ -10,8 +10,8 @@
 /* Import Tailwind CSS v4 */
 @import "tailwindcss";
 
-/* Prevent horizontal scrollbar */
-html, body {
+/* Prevent horizontal scrollbar - Applied to body only to preserve sticky positioning */
+body {
   overflow-x: hidden;
 }
 

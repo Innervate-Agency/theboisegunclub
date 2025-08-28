@@ -313,6 +313,10 @@ export function SiteNavigation({
                       rotate: [332, 325, 340, 332], // Hover wiggle from tilted position
                       transition: { duration: 0.5, ease: "easeInOut" }
                     }}
+                    style={{ 
+                      transform: 'translate3d(0,0,0)', // Force GPU acceleration
+                      willChange: 'transform' // Only transform, not auto
+                    }}
                   >
                     {React.createElement(getCurrentPageIcon(), { 
                       className: "size-6 sm:size-8"

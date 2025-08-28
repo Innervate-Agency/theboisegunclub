@@ -13,11 +13,13 @@ import { SimpleStickyNav } from '@/components/ui/simple-sticky-nav'
 
 export default function HomePage() {
   return (
-    <div className="theme-home min-h-screen">
+    <>
       <SiteNavigation />
       
       {/* Simple Sticky Navigation */}
       <SimpleStickyNav />
+      
+      <div className="theme-home min-h-screen">
       
       <main className="flex-grow relative">
         {/* Hero Section - Full width with beautiful gradient */}
@@ -110,6 +112,7 @@ export default function HomePage() {
       </main>
 
       <SiteFooter currentPage="home" />
-    </div>
+      </div>
+    </>
   )
 }
