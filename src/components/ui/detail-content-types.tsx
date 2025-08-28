@@ -6,7 +6,7 @@ import { ReviewsDisplay } from '@/components/ui/reviews-display'
 import { EventEngagementWidget } from '@/components/ui/event-engagement-widget'
 import { EventPreparationSection } from '@/components/ui/event-preparation-section'
 import MdxContent from '@/components/molecules/MdxContent'
-import { BookOpenIcon, CalendarDaysIcon, CheckCircleIcon, ClockIcon, CursorArrowRaysIcon, EnvelopeIcon, ExclamationTriangleIcon, EyeIcon, GlobeAltIcon, HeartIcon, MapPinIcon, PhoneIcon, ServiceIcon, ShieldCheckIcon, StarIcon, TrophyIcon, UserIcon, UsersIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
+import { AcademicCapIcon, BoltIcon, BookOpenIcon, CalendarDaysIcon, ChatBubbleBottomCenterTextIcon, CheckCircleIcon, ClockIcon, Cog6ToothIcon, CreditCardIcon, CursorArrowRaysIcon, DocumentTextIcon, EnvelopeIcon, ExclamationTriangleIcon, EyeIcon, GlobeAltIcon, HeartIcon, MapPinIcon, PhoneIcon, ServiceIcon, ShieldCheckIcon, ShoppingCartIcon, StarIcon, TrophyIcon, TruckIcon, UserCheckIcon, UserIcon, UsersIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -21,7 +21,7 @@ const getServiceIcon = (service: string) => {
     return ShoppingCartIcon
   }
   if (serviceLower.includes('training') || serviceLower.includes('instruction') || serviceLower.includes('class')) {
-    return GraduationCap
+    return AcademicCapIcon
   }
   if (serviceLower.includes('tactical') || serviceLower.includes('competition') || serviceLower.includes('shooting')) {
     return CursorArrowRaysIcon
@@ -30,16 +30,16 @@ const getServiceIcon = (service: string) => {
     return DocumentTextIcon
   }
   if (serviceLower.includes('consultation') || serviceLower.includes('advice') || serviceLower.includes('expert')) {
-    return UserCheck
+    return UserCheckIcon
   }
   if (serviceLower.includes('maintenance') || serviceLower.includes('cleaning') || serviceLower.includes('service')) {
-    return Settings
+    return Cog6ToothIcon
   }
   if (serviceLower.includes('installation') || serviceLower.includes('mount') || serviceLower.includes('upgrade')) {
-    return Zap
+    return BoltIcon
   }
   if (serviceLower.includes('delivery') || serviceLower.includes('pickup') || serviceLower.includes('mobile')) {
-    return Car
+    return TruckIcon
   }
   if (serviceLower.includes('education') || serviceLower.includes('safety') || serviceLower.includes('course')) {
     return BookOpenIcon
@@ -652,7 +652,7 @@ export function BusinessContent({
               <div className="flex flex-wrap gap-xs">
                 {paymentMethods.map((method, index) => (
                   <div key={index} className="flex items-center gap-xs text-body-sm text-muted-foreground">
-                    <CreditCard className="h-3 w-3 text-nav-directory" />
+                    <CreditCardIcon className="h-3 w-3 text-nav-directory" />
                     <span>{method}</span>
                   </div>
                 ))}
