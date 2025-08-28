@@ -474,19 +474,21 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
         <div className="w-full px-lg">
           <div className="flex flex-col lg:flex-row gap-lg max-w-[2400px] mx-auto">
             
-            {/* Left Sidebar - Compact Filter System (Desktop) */}
+            {/* Left Sidebar - Events-Style Filter System (Desktop) */}
             <aside className="hidden lg:block w-64 xl:w-72 flex-shrink-0">
-              <div className="space-y-lg sticky top-20">
+              <div className="space-y-lg sticky top-20 bg-muted/10 p-lg rounded-xs border border-border/50">
                 <div className="space-y-lg">
                   <Badge variant="outline" size="default">
                     Featured Locations
                   </Badge>
-                  <h2 className="font-rajdhani text-2xl xl:text-3xl font-bold text-card-foreground leading-tight">
-                    Shooting <span className="text-nav-intel">Locations</span>
-                  </h2>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {shootingLocations.length} locations across Idaho
-                  </p>
+                  <div>
+                    <h2 className="font-rajdhani text-2xl font-bold text-card-foreground leading-tight">
+                      Shooting <span className="text-nav-intel">Locations</span>
+                    </h2>
+                    <p className="text-sm text-muted-foreground mt-xs">
+                      {shootingLocations.length} locations • {shootingLocations.filter(l => l.verified).length} verified
+                    </p>
+                  </div>
                 </div>
                 
                 {/* Modern Filter Sidebar */}
@@ -594,13 +596,13 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                 </div>
               )}
               
-              {/* Results Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base mb-lg">
+              {/* Events-Style Results Header */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base mb-xl border-b border-border/30 pb-lg">
                 <div>
-                  <h2 className="font-rajdhani text-xl font-bold text-card-foreground">
-                    {filters.filteredItems.length} of {shootingLocations.length} Locations
+                  <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">
+                    {filters.filteredItems.length} Locations Found
                   </h2>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground mt-xs">
                     {filters.activeTab !== 'all' ? 'Filtered results' : 'BLM areas, ranges & clubs across Idaho'}
                   </p>
                 </div>
@@ -719,69 +721,36 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                       <div 
                         className={cn(
                           "transition-all duration-300 group relative overflow-hidden cursor-pointer rounded-xs",
-                          "bg-card text-card-foreground border border-border",
+                          "bg-card text-card-foreground border border-border/50",
                           "shadow-whisper hover:shadow-elevated hover:-translate-y-1",
-                          "tactical-underline-base tactical-underline-intel"
+                          "min-h-[420px] flex flex-col"
                         )}
                       >
                       
-                      {/* Proper Hero Section */}
+                      {/* Events-Style Hero Section - Shorter and Cleaner */}
                       <div className={cn(
-                        "relative h-48 overflow-hidden border-b border-white/10",
+                        "relative h-28 overflow-hidden",
                         getLocationGradient(location.category)
                       )}>
                         {/* Subtle overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                         
-                        {/* Tactical Action Buttons - top right */}
-                        <div className="absolute top-sm right-sm flex gap-xs">
-                          <button
-                            className="w-8 h-8 bg-black/60 backdrop-blur-sm border border-white/20 rounded-none flex items-center justify-center hover:bg-nav-intel hover:border-nav-intel transition-all duration-200"
-                            onClick={(e) => {
-                              e.preventDefault()
-                              e.stopPropagation()
-                              // Share location
-                            }}
-                            title="Share location"
-                          >
-                            <ShareIcon className="h-4 w-4 text-white" />
-                          </button>
-                          
-                          <button
-                            className="w-8 h-8 bg-black/60 backdrop-blur-sm border border-white/20 rounded-none flex items-center justify-center hover:bg-nav-intel hover:border-nav-intel transition-all duration-200"
-                            onClick={(e) => {
-                              e.preventDefault()
-                              e.stopPropagation()
-                              // Bookmark location
-                            }}
-                            title="Bookmark location"
-                          >
-                            <StarIcon className="h-4 w-4 text-white" />
-                          </button>
-                        </div>
                         
-                        {/* Enhanced distance and verification badges */}
-                        <div className="absolute top-sm left-sm flex gap-sm">
-                          <div className="bg-black/60 backdrop-blur-sm rounded-xs p-sm border border-white/20">
-                            <div className="text-center">
-                              <div className="font-rajdhani font-bold text-xs text-white uppercase tracking-wide">
-                                {location.distanceFromBoise}
-                              </div>
-                              <div className="font-rajdhani font-black text-lg text-white leading-none">
-                                MI
-                              </div>
-                              <div className="text-[10px] text-white/80 font-medium uppercase tracking-wider">
-                                Away
-                              </div>
-                            </div>
-                          </div>
-                          {!location.verified && (
-                            <div className="bg-warning-amber/90 backdrop-blur-sm rounded-xs px-sm py-xs border border-white/20">
-                              <div className="flex items-center gap-xs">
-                                <ExclamationTriangleIcon className="h-4 w-4 text-dark-chocolate" />
-                                <span className="text-xs font-bold text-dark-chocolate uppercase">Unverified</span>
-                              </div>
-                            </div>
+                        {/* Events-Style Status Badges - Top Right */}
+                        <div className="absolute top-sm right-sm flex gap-xs">
+                          {location.verified ? (
+                            <Badge className="bg-sagebrush-green text-white font-bold text-xs px-sm py-xs">
+                              VERIFIED
+                            </Badge>
+                          ) : (
+                            <Badge className="bg-warning-amber text-dark-chocolate font-bold text-xs px-sm py-xs">
+                              PHOTOS NEEDED
+                            </Badge>
+                          )}
+                          {location.difficulty === 'Difficult' && (
+                            <Badge className="bg-destructive text-white font-bold text-xs px-sm py-xs">
+                              4WD REQUIRED
+                            </Badge>
                           )}
                         </div>
                         
@@ -792,47 +761,62 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                         <div className="absolute top-6 right-12 w-0.5 h-0.5 bg-card/25 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
                       </div>
                       
-                      <div className="p-lg space-y-md">
-                        {/* Proper Header with Breathing Room */}
+                      <div className="p-lg space-y-md flex flex-col flex-1">
+                        {/* Events-Style Header - Name Prominent */}
                         <div className="space-y-sm">
-                          <h2 className="font-rajdhani font-bold text-xl text-card-foreground leading-tight line-clamp-2 group-hover:text-nav-intel transition-colors duration-200">
+                          <h2 className="font-rajdhani font-bold text-2xl text-card-foreground leading-tight line-clamp-1 group-hover:text-nav-intel transition-colors duration-200">
                             {location.name}
                           </h2>
-                          <div className="flex items-center gap-sm">
-                            <h3 className="font-noto-serif text-base text-muted-foreground leading-tight">
-                              {location.type} • {location.access}
-                            </h3>
-                            {location.lastUpdated && (
-                              <span className="text-xs text-muted-foreground/60">
-                                Updated {new Date(location.lastUpdated).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-                              </span>
+                          
+                          {/* Events-Style Badge Row */}
+                          <div className="flex items-center gap-xs flex-wrap">
+                            <Badge 
+                              variant="outline" 
+                              className={cn(
+                                "font-bold text-xs",
+                                location.category === 'BLM Land' && "border-sandy-ochre text-sandy-ochre",
+                                location.category === 'Public Range' && "border-nav-intel text-nav-intel",
+                                location.category === 'Indoor Range' && "border-slate-blue text-slate-blue",
+                                location.category === 'Private Club' && "border-warm-stone text-warm-stone", 
+                                location.category === 'Shotgun Club' && "border-rusty-orange text-rusty-orange"
+                              )}
+                            >
+                              {location.category}
+                            </Badge>
+                            <Badge variant="outline" className="font-semibold text-xs text-muted-foreground">
+                              {location.distanceFromBoise} mi away
+                            </Badge>
+                            {location.access?.toLowerCase().includes('free') && (
+                              <Badge variant="outline" className="border-sagebrush-green text-sagebrush-green font-semibold text-xs">
+                                FREE ACCESS
+                              </Badge>
                             )}
                           </div>
                         </div>
 
-                        {/* Progressive Disclosure Description */}
-                        {location.description && (
-                          <div className="relative">
-                            <p className={cn(
-                              "text-sm text-muted-foreground leading-relaxed transition-all duration-300",
-                              expandedCards.has(location.name) ? "line-clamp-none" : "line-clamp-3"
-                            )}>
-                              {location.description}
-                            </p>
-                            {location.description.length > 120 && (
-                              <button
-                                className="text-sm text-nav-intel hover:text-nav-intel/80 font-medium mt-xs"
-                                onClick={(e) => {
-                                  e.preventDefault()
-                                  e.stopPropagation()
-                                  toggleCardExpansion(location.name)
-                                }}
-                              >
-                                {expandedCards.has(location.name) ? 'Show less' : 'Show more'}
-                              </button>
+                        {/* Events-Style Key Info */}
+                        <div className="space-y-sm">
+                          <div className="grid grid-cols-2 gap-sm text-sm">
+                            <div className="flex items-center gap-xs">
+                              <ArrowUpIcon className="size-4 text-nav-intel flex-shrink-0" />
+                              <span className="text-muted-foreground truncate">{location.access}</span>
+                            </div>
+                            <div className="flex items-center gap-xs">
+                              <GlobeAltIcon className="size-4 text-nav-intel flex-shrink-0" />
+                              <span className="text-muted-foreground truncate">{location.difficulty}</span>
+                            </div>
+                            <div className="flex items-center gap-xs">
+                              <ArrowTrendingUpIcon className="size-4 text-nav-intel flex-shrink-0" />
+                              <span className="text-muted-foreground truncate">{location.elevation}ft</span>
+                            </div>
+                            {location.rating && location.rating > 0 && (
+                              <div className="flex items-center gap-xs">
+                                <StarIcon className="size-4 text-nav-intel fill-nav-intel flex-shrink-0" />
+                                <span className="text-muted-foreground font-semibold">{location.rating}</span>
+                              </div>
                             )}
                           </div>
-                        )}
+                        </div>
 
                         {/* Smart Badges - Enhanced trust signals */}
                         <div className="flex flex-wrap gap-xs">
@@ -866,66 +850,35 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                           )}
                         </div>
 
-                        {/* Info Grid - Enhanced with better spacing */}
-                        <div className="space-y-sm bg-muted/30 p-md rounded-xs">
-                          <div className="flex items-center gap-sm text-sm">
-                            <MapPinIcon className="size-4 flex-shrink-0 text-nav-intel" />
-                            <span className="font-medium text-card-foreground">{location.distanceFromBoise} mi away</span>
-                          </div>
-                          <div className="flex items-center gap-sm text-sm">
-                            <ArrowUpIcon className="size-4 flex-shrink-0 text-nav-intel" />
-                            <span className="text-muted-foreground">{location.access}</span>
-                          </div>
-                          <div className="flex items-center gap-sm text-sm">
-                            <GlobeAltIcon className="size-4 flex-shrink-0 text-nav-intel" />
-                            <span className="text-muted-foreground">{location.difficulty} difficulty</span>
-                          </div>
-                          <div className="flex items-center gap-sm text-sm">
-                            <ArrowTrendingUpIcon className="size-4 flex-shrink-0 text-nav-intel" />
-                            <span className="text-muted-foreground">{location.elevation}ft elevation</span>
-                          </div>
-                          
-                          {/* Expanded amenities */}
-                          {expandedCards.has(location.name) && location.amenities && location.amenities.length > 0 && (
-                            <div className="pt-sm border-t border-border/50">
-                              <p className="text-sm font-medium text-card-foreground mb-sm">Amenities:</p>
-                              <div className="flex flex-wrap gap-xs">
-                                {location.amenities.slice(0, 6).map((amenity, idx) => (
-                                  <Badge key={idx} variant="outline" size="xs">
-                                    {amenity}
-                                  </Badge>
+                        {/* Events-Style Top Features */}
+                        <div className="flex-1">
+                          {location.amenities && location.amenities.length > 0 && (
+                            <div>
+                              <p className="text-sm font-semibold text-card-foreground mb-xs">Key Features:</p>
+                              <ul className="space-y-xs text-sm text-muted-foreground">
+                                {location.amenities.slice(0, 3).map((amenity, idx) => (
+                                  <li key={idx} className="flex items-center gap-xs">
+                                    <div className="w-1 h-1 bg-nav-intel rounded-full flex-shrink-0 mt-2" />
+                                    <span className="line-clamp-1">{amenity}</span>
+                                  </li>
                                 ))}
-                                {location.amenities.length > 6 && (
-                                  <span className="text-sm text-muted-foreground">+{location.amenities.length - 6} more</span>
+                                {location.amenities.length > 3 && (
+                                  <li className="text-xs text-muted-foreground/70 pl-sm">
+                                    +{location.amenities.length - 3} more features
+                                  </li>
                                 )}
-                              </div>
+                              </ul>
                             </div>
                           )}
                         </div>
 
-                        {/* Enhanced CTA Buttons - Quick actions */}
-                        <div className="flex gap-sm pt-sm">
+                        {/* Events-Style CTA - Pinned to Bottom */}
+                        <div className="mt-auto pt-sm">
                           <Button 
-                            size="sm"
                             variant="outline"
-                            className="flex-1 border-nav-intel/30 text-nav-intel group-hover:bg-nav-intel group-hover:text-white group-hover:border-nav-intel transition-all duration-300 font-rajdhani font-bold" 
-                            animationType="arrow"
+                            className="w-full border-nav-intel/30 text-nav-intel hover:bg-nav-intel hover:text-white hover:border-nav-intel transition-all duration-300 font-rajdhani font-bold" 
                           >
                             View Details
-                          </Button>
-                          <Button
-                            size="sm"
-                            variant="ghost"
-                            className="px-sm text-muted-foreground hover:text-nav-intel"
-                            onClick={(e) => {
-                              e.preventDefault()
-                              e.stopPropagation()
-                              // Open in maps
-                              window.open(`https://maps.google.com/?q=${location.lat},${location.lng}`, '_blank')
-                            }}
-                            title="Get Directions"
-                          >
-                            <MapPinIcon className="h-4 w-4" />
                           </Button>
                         </div>
                       </div>
