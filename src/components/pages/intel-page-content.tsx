@@ -1,7 +1,7 @@
 'use client'
 
 
-import { ArrowTrendingUpIcon, ArrowUpIcon, CameraIcon, ChartBarIcon, ChatBubbleBottomCenterTextIcon, ChatBubbleLeftRightIcon, ChevronRightIcon, CursorArrowRaysIcon, ExclamationTriangleIcon, FunnelIcon, GlobeAltIcon, ListBulletIcon, MagnifyingGlassIcon, MapPinIcon, NewspaperIcon, PlusIcon, RectangleGroupIcon, RectangleStackIcon, ShareIcon, ShieldCheckIcon, Squares2X2Icon, StarIcon, TableCellsIcon, ViewColumnsIcon, WindowIcon } from '@heroicons/react/24/outline';
+import { ArrowTrendingUpIcon, ArrowUpIcon, CameraIcon, ChartBarIcon, ChatBubbleBottomCenterTextIcon, ChatBubbleLeftRightIcon, ChevronDownIcon, ChevronRightIcon, ClockIcon, CursorArrowRaysIcon, ExclamationTriangleIcon, FunnelIcon, GlobeAltIcon, ListBulletIcon, MagnifyingGlassIcon, MapPinIcon, NewspaperIcon, PlusIcon, RectangleGroupIcon, RectangleStackIcon, ShareIcon, ShieldCheckIcon, Squares2X2Icon, StarIcon, TableCellsIcon, ViewColumnsIcon, WindowIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
@@ -31,6 +31,19 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
   const [allWeatherData, setAllWeatherData] = useState(initialAll)
   const [isLoadingWeather, setIsLoadingWeather] = useState(false)
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
+  const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set())
+  
+  const toggleCardExpansion = (locationName: string) => {
+    setExpandedCards(prev => {
+      const newSet = new Set(prev)
+      if (newSet.has(locationName)) {
+        newSet.delete(locationName)
+      } else {
+        newSet.add(locationName)
+      }
+      return newSet
+    })
+  }
 
   useEffect(() => {
     let isMounted = true
@@ -132,8 +145,8 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
             case 'blm': return location.category === 'BLM Land'
             case 'public': return location.category === 'Public Range'
             case 'indoor': return location.category === 'Indoor Range'
-            case 'forest': return location.category === 'Forest Service'
-            case 'municipal': return location.category === 'Municipal Range'
+            case 'private': return location.category === 'Private Club'
+            case 'shotgun': return location.category === 'Shotgun Club'
             default: return false
           }
         })
@@ -186,7 +199,8 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
         if (type === 'blm') return 'bg-sandy-ochre'
         if (type === 'public') return 'bg-nav-intel'
         if (type === 'indoor') return 'bg-slate-blue'
-        if (type === 'forest') return 'bg-sagebrush-green'
+        if (type === 'private') return 'bg-warm-stone'
+        if (type === 'shotgun') return 'bg-rusty-orange'
         return 'bg-muted'
       case 'difficulty':
         if (type === 'easy') return 'bg-sagebrush-green'
@@ -220,9 +234,9 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
         { id: 'blm', label: 'BLM Land', count: shootingLocations.filter(l => l.category === 'BLM Land').length, color: getFilterColor('category', 'blm') },
         { id: 'public', label: 'Public Range', count: shootingLocations.filter(l => l.category === 'Public Range').length, color: getFilterColor('category', 'public') },
         { id: 'indoor', label: 'Indoor Range', count: shootingLocations.filter(l => l.category === 'Indoor Range').length, color: getFilterColor('category', 'indoor') },
-        { id: 'forest', label: 'Forest Service', count: shootingLocations.filter(l => l.category === 'Forest Service').length, color: getFilterColor('category', 'forest') },
-        { id: 'municipal', label: 'Municipal Range', count: shootingLocations.filter(l => l.category === 'Municipal Range').length, color: getFilterColor('category', 'municipal') }
-      ]
+        { id: 'private', label: 'Private Club', count: shootingLocations.filter(l => l.category === 'Private Club').length, color: 'bg-warm-stone' },
+        { id: 'shotgun', label: 'Shotgun Club', count: shootingLocations.filter(l => l.category === 'Shotgun Club').length, color: 'bg-sandy-ochre' }
+      ].filter(opt => opt.count > 0) // Hide zero-count filters
     },
     {
       id: 'difficulty',
@@ -233,7 +247,7 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
         { id: 'Easy', label: 'Easy Access', count: shootingLocations.filter(l => l.difficulty === 'Easy').length, color: getFilterColor('difficulty', 'easy') },
         { id: 'Moderate', label: 'Moderate', count: shootingLocations.filter(l => l.difficulty === 'Moderate').length, color: getFilterColor('difficulty', 'moderate') },
         { id: 'Difficult', label: 'Difficult/4WD', count: shootingLocations.filter(l => l.difficulty === 'Difficult').length, color: getFilterColor('difficulty', 'difficult') }
-      ]
+      ].filter(opt => opt.count > 0)
     },
     {
       id: 'distance',
@@ -245,7 +259,7 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
         { id: '15to30', label: '15-30 miles', count: shootingLocations.filter(l => l.distanceFromBoise > 15 && l.distanceFromBoise <= 30).length, color: getFilterColor('distance', '15to30') },
         { id: '30to60', label: '30-60 miles', count: shootingLocations.filter(l => l.distanceFromBoise > 30 && l.distanceFromBoise <= 60).length, color: getFilterColor('distance', '30to60') },
         { id: 'over60', label: 'Over 60 miles', count: shootingLocations.filter(l => l.distanceFromBoise > 60).length, color: getFilterColor('distance', 'over60') }
-      ]
+      ].filter(opt => opt.count > 0)
     },
     {
       id: 'access',
@@ -254,9 +268,9 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
       collapsible: true,
       options: [
         { id: 'free', label: 'Free Access', count: shootingLocations.filter(l => l.access?.toLowerCase().includes('free')).length, color: getFilterColor('access', 'free') },
-        { id: 'fee', label: 'Fee Required', count: shootingLocations.filter(l => l.access?.toLowerCase().includes('fee')).length, color: getFilterColor('access', 'fee') },
+        { id: 'fee', label: 'Fee Required', count: shootingLocations.filter(l => l.access?.toLowerCase().includes('fee') || l.access?.includes('$')).length, color: getFilterColor('access', 'fee') },
         { id: 'membership', label: 'Membership', count: shootingLocations.filter(l => l.access?.toLowerCase().includes('member')).length, color: getFilterColor('access', 'membership') }
-      ]
+      ].filter(opt => opt.count > 0)
     },
     {
       id: 'verification',
@@ -265,8 +279,8 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
       collapsible: false,
       options: [
         { id: 'verified', label: 'Verified', count: shootingLocations.filter(l => l.verified).length, color: 'bg-sagebrush-green' },
-        { id: 'unverified', label: 'Unverified', count: shootingLocations.filter(l => !l.verified).length, color: 'bg-muted' }
-      ]
+        { id: 'unverified', label: 'Needs Verification', count: shootingLocations.filter(l => !l.verified).length, color: 'bg-warning-amber' }
+      ].filter(opt => opt.count > 0)
     }
   ]
 
@@ -382,8 +396,12 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                   <CardHeader className="pb-xs relative z-10">
                     <div className="flex items-center justify-between mb-xs">
                       <div className="flex items-center gap-xs">
-                        <Badge variant="outline" size="xs">
-                          UNVERIFIED
+                        <Badge 
+                          variant="outline" 
+                          size="xs"
+                          className="border-warning-amber text-warning-amber"
+                        >
+                          NEEDS VERIFICATION
                         </Badge>
                       </div>
                       <div className="flex items-center gap-xs text-xs text-muted-foreground">
@@ -451,23 +469,23 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
 
 
 
-      {/* Shooting Locations Gallery - Unified Filter System */}
-      <section className="py-mobile-2xl sm:py-4xl bg-background/50">
-        <div className="w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile">
-          <div className="flex flex-col lg:flex-row gap-mobile-lg sm:gap-2xl max-w-[1920px] mx-auto">
+      {/* Shooting Locations Gallery - Full Width Amazon Style */}
+      <section className="py-4xl bg-background/50">
+        <div className="w-full px-lg">
+          <div className="flex flex-col lg:flex-row gap-lg max-w-[2400px] mx-auto">
             
-            {/* Left Sidebar - Modern Filter System (Desktop) */}
-            <aside className="hidden lg:block w-80">
-              <div className="space-y-6 sticky top-4">
+            {/* Left Sidebar - Compact Filter System (Desktop) */}
+            <aside className="hidden lg:block w-64 xl:w-72 flex-shrink-0">
+              <div className="space-y-lg sticky top-20">
                 <div className="space-y-lg">
                   <Badge variant="outline" size="default">
                     Featured Locations
                   </Badge>
-                  <h2 className="font-rajdhani text-4xl font-bold text-card-foreground leading-tight">
-                    Idaho Shooting <span className="text-nav-intel">Locations</span>
+                  <h2 className="font-rajdhani text-2xl xl:text-3xl font-bold text-card-foreground leading-tight">
+                    Shooting <span className="text-nav-intel">Locations</span>
                   </h2>
-                  <p className="text-body-lg text-muted-foreground leading-relaxed">
-                    Verified shooting areas across Idaho with detailed access information and community feedback.
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {shootingLocations.length} locations across Idaho
                   </p>
                 </div>
                 
@@ -500,18 +518,26 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
             
             {/* Main Content */}
             <main className="flex-1 min-w-0">
-              {/* MagnifyingGlassIcon and Category Controls */}
-              <div className="mb-xl space-y-lg">
-                {/* MagnifyingGlassIcon Bar with Mobile Filter Toggle */}
+              {/* Full Width Search */}
+              <div className="mb-lg space-y-lg">
+                {/* Search Bar with Mobile Filter Toggle */}
                 <div className="flex gap-base">
-                  <div className="relative flex-1 max-w-2xl">
-                    <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <div className="relative flex-1 group">
+                    <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground group-focus-within:text-nav-intel transition-colors" />
                     <input
-                      placeholder="MagnifyingGlassIcon locations, access types, or amenities..."
-                      className="w-full pl-10 h-12 text-body-base bg-background border border-border rounded-xs px-base focus:outline-none focus:ring-2 focus:ring-nav-intel/50"
+                      placeholder="Search BLM areas, ranges, or locations..."
+                      className="w-full pl-10 pr-4 h-12 text-body-base bg-background border border-border rounded-xs px-base focus:outline-none focus:ring-2 focus:ring-nav-intel/50 focus:border-nav-intel transition-all placeholder:text-muted-foreground/60"
                       value={filters.searchQuery}
                       onChange={(e) => filters.setSearchQuery(e.target.value)}
                     />
+                    {filters.searchQuery && (
+                      <button
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                        onClick={() => filters.setSearchQuery('')}
+                      >
+                        <XMarkIcon className="h-4 w-4" />
+                      </button>
+                    )}
                   </div>
                   {/* Mobile Filter Toggle */}
                   <Button
@@ -532,14 +558,50 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
 
               </div>
 
+              {/* Compact Results Header */}
+              {Object.values(filters.selectedFilters).flat().length > 0 && (
+                <div className="mb-lg">
+                  <div className="flex flex-wrap items-center gap-sm">
+                    <span className="text-sm text-muted-foreground">Active filters:</span>
+                    {Object.entries(filters.selectedFilters).map(([sectionId, selectedIds]) => 
+                      selectedIds.map(id => {
+                        const section = filterSections.find(s => s.id === sectionId)
+                        const option = section?.options.find(o => o.id === id)
+                        if (!option) return null
+                        return (
+                          <Badge 
+                            key={`${sectionId}-${id}`}
+                            variant="outline"
+                            size="sm"
+                            className="cursor-pointer hover:bg-destructive hover:text-destructive-foreground"
+                            onClick={() => handleFilterChange(sectionId, id)}
+                          >
+                            {option.label}
+                            <XMarkIcon className="h-3 w-3 ml-xs" />
+                          </Badge>
+                        )
+                      })
+                    )}
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={handleClearAll}
+                      className="text-xs"
+                    >
+                      Clear all
+                    </Button>
+                  </div>
+                </div>
+              )}
+              
               {/* Results Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base sm:gap-xl mb-xl sm:mb-2xl lg:mb-3xl">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base mb-lg">
                 <div>
-                  <h2 className="font-rajdhani text-heading-xl font-bold text-card-foreground">
-                    {filters.filteredItems.length} Locations Found
+                  <h2 className="font-rajdhani text-xl font-bold text-card-foreground">
+                    {filters.filteredItems.length} of {shootingLocations.length} Locations
                   </h2>
-                  <p className="text-muted-foreground">
-                    {filters.activeTab !== 'all' ? 'Filtered results' : 'All shooting areas across Idaho'}
+                  <p className="text-sm text-muted-foreground">
+                    {filters.activeTab !== 'all' ? 'Filtered results' : 'BLM areas, ranges & clubs across Idaho'}
                   </p>
                 </div>
                 
@@ -618,17 +680,19 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                 </div>
               </div>
 
-              {/* Location Cards Grid - Dynamic Layout Based on View Mode */}
+              {/* Location Cards Grid - Full Width Amazon Style */}
               {filters.isLoading ? (
                 <CardSkeleton 
                   viewMode={filters.viewMode} 
                   count={filters.itemsPerPage} 
-                  className={filters.getGridClassName()}
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-lg"
                 />
               ) : (
-                <div className={filters.getGridClassName()}>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-xl transition-all duration-500">
                   {filters.paginatedItems.length > 0 ? (
                     filters.paginatedItems.map((location, index) => {
+                  // Add staggered animation delays
+                  const animationDelay = index * 50; // 50ms stagger between cards
                   const locationSlug = location.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').trim().replace(/^-|-$/g, '')
                   
                   // Get location type gradient
@@ -636,25 +700,34 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                     if (category.includes('Public')) return 'card-gradient-public'
                     if (category.includes('BLM')) return 'card-gradient-blm'
                     if (category.includes('Indoor')) return 'card-gradient-indoor'
-                    if (category.includes('Municipal')) return 'card-gradient-municipal'
+                    if (category.includes('Private')) return 'card-gradient-private'
+                    if (category.includes('Shotgun')) return 'card-gradient-shotgun'
                     return 'card-gradient-intel'
                   }
                   
                   
                   return (
-                    <Link key={location.name} href={`/intel/locations/${locationSlug}`} className="block">
+                    <Link 
+                      key={location.name} 
+                      href={`/intel/locations/${locationSlug}`} 
+                      className="block opacity-0 animate-fade-in-up"
+                      style={{
+                        animationDelay: `${animationDelay}ms`,
+                        animationFillMode: 'forwards'
+                      }}
+                    >
                       <div 
                         className={cn(
                           "transition-all duration-300 group relative overflow-hidden cursor-pointer rounded-xs",
-                          "bg-card text-card-foreground border border-border p-lg",
-                          "shadow-ghost hover:shadow-present",
+                          "bg-card text-card-foreground border border-border",
+                          "shadow-whisper hover:shadow-elevated hover:-translate-y-1",
                           "tactical-underline-base tactical-underline-intel"
                         )}
                       >
                       
-                      {/* Tactical Hero Section - Matching EventCard */}
+                      {/* Proper Hero Section */}
                       <div className={cn(
-                        "relative mb-lg -m-lg h-32 overflow-hidden border-b border-white/10",
+                        "relative h-48 overflow-hidden border-b border-white/10",
                         getLocationGradient(location.category)
                       )}>
                         {/* Subtle overlay */}
@@ -679,17 +752,17 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                             onClick={(e) => {
                               e.preventDefault()
                               e.stopPropagation()
-                              // BookmarkIcon location
+                              // Bookmark location
                             }}
-                            title="BookmarkIcon location"
+                            title="Bookmark location"
                           >
                             <StarIcon className="h-4 w-4 text-white" />
                           </button>
                         </div>
                         
-                        {/* Distance badge overlay */}
-                        <div className="absolute top-sm left-sm">
-                          <div className="bg-black/40 backdrop-blur-sm rounded-xs p-sm border border-white/20">
+                        {/* Enhanced distance and verification badges */}
+                        <div className="absolute top-sm left-sm flex gap-sm">
+                          <div className="bg-black/60 backdrop-blur-sm rounded-xs p-sm border border-white/20">
                             <div className="text-center">
                               <div className="font-rajdhani font-bold text-xs text-white uppercase tracking-wide">
                                 {location.distanceFromBoise}
@@ -702,6 +775,14 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                               </div>
                             </div>
                           </div>
+                          {!location.verified && (
+                            <div className="bg-warning-amber/90 backdrop-blur-sm rounded-xs px-sm py-xs border border-white/20">
+                              <div className="flex items-center gap-xs">
+                                <ExclamationTriangleIcon className="h-4 w-4 text-dark-chocolate" />
+                                <span className="text-xs font-bold text-dark-chocolate uppercase">Unverified</span>
+                              </div>
+                            </div>
+                          )}
                         </div>
                         
                         
@@ -711,42 +792,82 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                         <div className="absolute top-6 right-12 w-0.5 h-0.5 bg-card/25 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
                       </div>
                       
-                      <div className="space-y-md">
-                        {/* Header - Matching EventCard Typography */}
+                      <div className="p-lg space-y-md">
+                        {/* Proper Header with Breathing Room */}
                         <div className="space-y-sm">
-                          <div className="space-y-0">
-                            <h2 className="font-rajdhani font-bold text-xl text-card-foreground leading-tight line-clamp-2 group-hover:text-nav-intel transition-colors duration-200">
-                              {location.name}
-                            </h2>
+                          <h2 className="font-rajdhani font-bold text-xl text-card-foreground leading-tight line-clamp-2 group-hover:text-nav-intel transition-colors duration-200">
+                            {location.name}
+                          </h2>
+                          <div className="flex items-center gap-sm">
                             <h3 className="font-noto-serif text-base text-muted-foreground leading-tight">
                               {location.type} • {location.access}
                             </h3>
+                            {location.lastUpdated && (
+                              <span className="text-xs text-muted-foreground/60">
+                                Updated {new Date(location.lastUpdated).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                              </span>
+                            )}
                           </div>
                         </div>
 
-                        {/* Description */}
-                        <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
-                          {location.description}
-                        </p>
+                        {/* Progressive Disclosure Description */}
+                        {location.description && (
+                          <div className="relative">
+                            <p className={cn(
+                              "text-sm text-muted-foreground leading-relaxed transition-all duration-300",
+                              expandedCards.has(location.name) ? "line-clamp-none" : "line-clamp-3"
+                            )}>
+                              {location.description}
+                            </p>
+                            {location.description.length > 120 && (
+                              <button
+                                className="text-sm text-nav-intel hover:text-nav-intel/80 font-medium mt-xs"
+                                onClick={(e) => {
+                                  e.preventDefault()
+                                  e.stopPropagation()
+                                  toggleCardExpansion(location.name)
+                                }}
+                              >
+                                {expandedCards.has(location.name) ? 'Show less' : 'Show more'}
+                              </button>
+                            )}
+                          </div>
+                        )}
 
-                        {/* Smart Badges - Verification and Difficulty */}
+                        {/* Smart Badges - Enhanced trust signals */}
                         <div className="flex flex-wrap gap-xs">
-                          {location.verified && (
-                            <Badge variant="outline" size="sm">
+                          {location.verified ? (
+                            <Badge 
+                              variant="outline" 
+                              size="sm"
+                              className="border-sagebrush-green text-sagebrush-green"
+                            >
                               <ShieldCheckIcon className="w-3 h-3 mr-xs" />
                               Verified
+                            </Badge>
+                          ) : (
+                            <Badge 
+                              variant="outline" 
+                              size="sm"
+                              className="border-warning-amber text-warning-amber"
+                            >
+                              <ExclamationTriangleIcon className="w-3 h-3 mr-xs" />
+                              Needs Verification
                             </Badge>
                           )}
                           <Badge variant="outline" size="sm">
                             {location.difficulty}
                           </Badge>
-                          <Badge variant="outline" size="sm">
-                            {location.type}
-                          </Badge>
+                          {location.rating && location.rating > 0 && (
+                            <Badge variant="outline" size="sm">
+                              <StarIcon className="w-3 h-3 mr-xs fill-nav-intel text-nav-intel" />
+                              {location.rating}
+                            </Badge>
+                          )}
                         </div>
 
-                        {/* InformationCircleIcon Grid - Matching EventCard */}
-                        <div className="space-y-sm bg-muted/30 p-sm rounded-xs">
+                        {/* Info Grid - Enhanced with better spacing */}
+                        <div className="space-y-sm bg-muted/30 p-md rounded-xs">
                           <div className="flex items-center gap-sm text-sm">
                             <MapPinIcon className="size-4 flex-shrink-0 text-nav-intel" />
                             <span className="font-medium text-card-foreground">{location.distanceFromBoise} mi away</span>
@@ -763,17 +884,48 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                             <ArrowTrendingUpIcon className="size-4 flex-shrink-0 text-nav-intel" />
                             <span className="text-muted-foreground">{location.elevation}ft elevation</span>
                           </div>
+                          
+                          {/* Expanded amenities */}
+                          {expandedCards.has(location.name) && location.amenities && location.amenities.length > 0 && (
+                            <div className="pt-sm border-t border-border/50">
+                              <p className="text-sm font-medium text-card-foreground mb-sm">Amenities:</p>
+                              <div className="flex flex-wrap gap-xs">
+                                {location.amenities.slice(0, 6).map((amenity, idx) => (
+                                  <Badge key={idx} variant="outline" size="xs">
+                                    {amenity}
+                                  </Badge>
+                                ))}
+                                {location.amenities.length > 6 && (
+                                  <span className="text-sm text-muted-foreground">+{location.amenities.length - 6} more</span>
+                                )}
+                              </div>
+                            </div>
+                          )}
                         </div>
 
-                        {/* CTA Button - Matching EventCard */}
-                        <div className="pt-sm">
+                        {/* Enhanced CTA Buttons - Quick actions */}
+                        <div className="flex gap-sm pt-sm">
                           <Button 
                             size="sm"
                             variant="outline"
-                            className="w-full border-nav-intel/30 text-nav-intel group-hover:bg-nav-intel group-hover:text-white group-hover:border-nav-intel transition-all duration-300 font-rajdhani font-bold" 
+                            className="flex-1 border-nav-intel/30 text-nav-intel group-hover:bg-nav-intel group-hover:text-white group-hover:border-nav-intel transition-all duration-300 font-rajdhani font-bold" 
                             animationType="arrow"
                           >
                             View Details
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="ghost"
+                            className="px-sm text-muted-foreground hover:text-nav-intel"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              e.stopPropagation()
+                              // Open in maps
+                              window.open(`https://maps.google.com/?q=${location.lat},${location.lng}`, '_blank')
+                            }}
+                            title="Get Directions"
+                          >
+                            <MapPinIcon className="h-4 w-4" />
                           </Button>
                         </div>
                       </div>
@@ -837,7 +989,12 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
       <SectionDivider variant="sights" spacing="none" />
 
       {/* Community Activity - Full Width, Left Aligned */}
-      <section className="py-4xl bg-gradient-to-br from-nav-intel/5 to-nav-intel/10">
+      <section className="py-4xl bg-gradient-to-br from-nav-intel/5 to-nav-intel/10 relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-64 h-64 bg-nav-intel/10 rounded-full blur-3xl animate-float" style={{animationDelay: '0s'}}></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-nav-intel/5 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+        </div>
         <div className="container mx-auto max-w-site px-md">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl">
             {/* Content - Left aligned */}
