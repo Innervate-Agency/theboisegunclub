@@ -87,7 +87,7 @@ html, body {
     --color-nav-directory-light: #4A7C59;   /* Desert sage green */
     --color-nav-armory-light: #B7410E;      /* Canyon terracotta red */
     --color-nav-intel-light: #8B4A6B;       /* Wildflower plum purple */
-    --color-nav-buysell-light: #B8860B; /* Dark goldenrod - commerce/money feel */
+    --color-nav-buysell-light: #2C7A7B; /* Deep teal - Boise River commerce */
     --color-nav-forums-light: #8B7355;      /* Canyon stone gray */
 
     /* 🍂 Dark Theme: "Idaho Fall Morning" - Autumn Foliage */
@@ -96,7 +96,7 @@ html, body {
     --color-nav-directory-dark: #5B9BD5;    /* Mountain lake blue */
     --color-nav-armory-dark: #DC143C;       /* Maple scarlet red */
     --color-nav-intel-dark: #9966CC;        /* Fall amethyst purple */
-    --color-nav-buysell-dark: #FFD700;  /* Bright gold - money/commerce */
+    --color-nav-buysell-dark: #4FD1C5;  /* Bright turquoise - river trade */
     --color-nav-forums-dark: #B8B8B8;       /* Morning mist gray */
 
     /* =================== TYPOGRAPHY =================== */
@@ -292,9 +292,9 @@ html, body {
     --nav-home: var(--color-gruvbox-yellow);
     --nav-events: var(--color-gruvbox-orange);
     --nav-directory: var(--color-gruvbox-blue);
-    --nav-armory: var(--color-gruvbox-aqua);
+    --nav-armory: var(--color-gruvbox-red);
     --nav-intel: var(--color-gruvbox-purple);
-    --nav-buysell: var(--color-gruvbox-green);
+    --nav-buysell: var(--color-gruvbox-aqua);
     --nav-forums: var(--color-gruvbox-fg-muted);
 
   }

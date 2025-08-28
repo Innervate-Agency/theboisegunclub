@@ -12,7 +12,7 @@ interface ArticleCardProps {
 export default function ArticleCard({ slug, title, date, author, summary }: ArticleCardProps) {
   return (
     <Link href={`/armory/${slug}`}>
-      <Card className="bg-card h-full flex flex-col group overflow-hidden shadow-elevated transition-all duration-300 ease-out hover:shadow-prominent ">
+      <Card className="h-full flex flex-col group overflow-hidden shadow-elevated transition-all duration-300 ease-out hover:shadow-prominent ">
         <CardHeader>
           <h3 className="font-rajdhani font-bold text-xl">{title}</h3>
         </CardHeader>
