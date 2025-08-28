@@ -6,7 +6,7 @@ import { ReviewsDisplay } from '@/components/ui/reviews-display'
 import { EventEngagementWidget } from '@/components/ui/event-engagement-widget'
 import { EventPreparationSection } from '@/components/ui/event-preparation-section'
 import MdxContent from '@/components/molecules/MdxContent'
-import { CalendarDaysIcon, CheckCircleIcon, ClockIcon, CursorArrowRaysIcon, EnvelopeIcon, ExclamationTriangleIcon, EyeIcon, GlobeAltIcon, HeartIcon, MapPinIcon, PhoneIcon, ServiceIcon, ShieldCheckIcon, StarIcon, TrophyIcon, UserIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { BookOpenIcon, CalendarDaysIcon, CheckCircleIcon, ClockIcon, CursorArrowRaysIcon, EnvelopeIcon, ExclamationTriangleIcon, EyeIcon, GlobeAltIcon, HeartIcon, MapPinIcon, PhoneIcon, ServiceIcon, ShieldCheckIcon, StarIcon, TrophyIcon, UserIcon, UsersIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image'
 import Link from 'next/link'
 
