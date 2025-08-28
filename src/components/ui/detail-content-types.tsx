@@ -112,7 +112,7 @@ function BusinessHoursWidget({ hours }: { hours: string }) {
       isOpen ? 'border-sagebrush-green/30' : 'border-border'
     }`}>
       <div className="flex items-center gap-xs">
-        <Clock4 className={`h-5 w-5 ${isOpen ? 'text-sagebrush-green' : 'text-muted-foreground'}`} />
+        <ClockIcon className={`h-5 w-5 ${isOpen ? 'text-sagebrush-green' : 'text-muted-foreground'}`} />
         <div>
           <div className={`text-body-sm font-medium ${isOpen ? 'text-sagebrush-green' : 'text-foreground'}`}>
             {currentStatus}
@@ -677,7 +677,7 @@ export function BusinessContent({
   const businessInfoItems = []
   if (yearEstablished) {
     businessInfoItems.push({
-      icon: Clock4,
+      icon: ClockIcon,
       label: 'Established',
       value: yearEstablished.toString()
     })
