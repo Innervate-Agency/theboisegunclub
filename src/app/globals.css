@@ -1414,6 +1414,24 @@ body {
     background: linear-gradient(135deg, var(--nav-forums) 0%, var(--color-foothills-purple) 100%);
   }
 
+  /* Section background gradients for homepage */
+  .bg-gradient-buysell-events {
+    background: linear-gradient(135deg, var(--nav-buysell) 0%, var(--nav-events) 100%);
+  }
+
+  .bg-gradient-home-movement {
+    background: linear-gradient(135deg, var(--background) 0%, var(--nav-home) 100%);
+  }
+
+  /* Muted background variations */
+  .bg-muted-subtle {
+    background-color: rgb(from var(--muted) r g b / 0.2);
+  }
+
+  .bg-muted-soft {
+    background-color: rgb(from var(--muted) r g b / 0.3);
+  }
+
 /* Event Card Gradient Sections */
 .card-gradient-competition {
   background: linear-gradient(135deg, var(--nav-events) 0%, var(--color-canyon-clay) 100%);

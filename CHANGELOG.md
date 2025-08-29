@@ -1,6 +1,30 @@
 # Changelog
 
-## [Pre-Launch] - 2025-08-28 (Latest)
+## [Pre-Launch] - 2025-08-29 (Latest)
+
+### 🎨 **DESIGN TOKEN SYSTEM OVERHAUL & RUSSIAN NESTING DOLL ELIMINATION**
+
+#### 🚀 Homepage Design Token Migration
+- **Eliminated ALL inline styling violations**: Removed 5 major `style={{}}` props from page.tsx
+  - Replaced `backgroundColor: rgb(from var(--muted) r g b / 0.2)` with `.bg-muted-subtle` CSS class
+  - Converted inline gradients to proper CSS utilities (`.bg-gradient-buysell-events`, `.bg-gradient-home-movement`)
+  - Fixed WesternSection component to use `bgVariant` prop instead of hardcoded backgrounds
+- **Created proper CSS utilities in globals.css**: 4 new background utility classes for consistent styling
+  - `.bg-muted-subtle` and `.bg-muted-soft` for consistent opacity backgrounds
+  - Gradient utilities matching design token system patterns
+- **Component Architecture Fix**: Updated WesternSection API to accept `bgVariant` prop for proper design token usage
+
+#### 🔧 Critical Bug Fixes
+- **Fixed missing icon imports**: Added MapPinIcon to industry-megamenu.tsx preventing 500 errors
+- **Resolved western divider display**: SVG-based dividers now properly visible on homepage
+- **Component Separation**: Homepage reduced to clean component-based architecture using design tokens
+
+#### 🛡️ Russian Nesting Doll Problem Resolution
+- **Eliminated inline style conflicts**: Components no longer interfere with each other through hardcoded styling
+- **Design token consistency**: All homepage components now use globals.css design system exclusively
+- **Proper styling architecture**: Clear separation between layout logic and visual styling
+
+## [Pre-Launch] - 2025-08-28 (Previous)
 
 ### 🔧 **STICKY NAVBAR POSITIONING FIX**
 

@@ -5,7 +5,7 @@ import { Badge } from './badge'
 import { Button } from './button'
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
 import { useUserWeather } from '@/hooks/useUserWeather'
-import { AccessStatusIcon, BoltIcon, CheckCircleIcon, CloudIcon, CloudRainIcon, CloudSnowIcon, ExclamationTriangleIcon, FireIcon, FlameIcon, MapPinIcon, RefreshCwIcon, SunIcon, ThermometerIcon, WindIcon, XCircleIcon, ZapIcon } from '@heroicons/react/24/outline';
+import { BoltIcon, CheckCircleIcon, CloudIcon, ExclamationTriangleIcon, FireIcon, MapPinIcon, RefreshCwIcon, SunIcon, ThermometerIcon, WindIcon, XCircleIcon } from '@heroicons/react/24/outline';
 
 const WeatherIcon = ({ type, className = "h-4 w-4" }: { type: string; className?: string }) => {
   switch (type) {
@@ -16,9 +16,9 @@ const WeatherIcon = ({ type, className = "h-4 w-4" }: { type: string; className?
     case 'cloudy':
       return <CloudIcon className={`${className} text-gray-500`} />
     case 'rain':
-      return <CloudRain className={`${className} text-blue-600`} />
+      return <CloudIcon className={`${className} text-blue-600`} />
     case 'snow':
-      return <CloudSnow className={`${className} text-blue-200`} />
+      return <CloudIcon className={`${className} text-blue-200`} />
     case 'storm':
       return <BoltIcon className={`${className} text-purple-600`} />
     default:
