@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { MotionDiv } from '@/components/ui/optimized-motion'
 import { BanknotesIcon, Bars3Icon, BookOpenIcon, BuildingStorefrontIcon, ChatBubbleBottomCenterTextIcon, ChatBubbleLeftRightIcon, CubeTransparentIcon, IdentificationIcon, MapIcon, MapPinIcon, PlusCircleIcon, ShieldCheckIcon, SparklesIcon, TicketIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { IndustryMegamenu } from './industry-megamenu'
+import { NavigationDropdown } from './navigation-dropdown'
 import { AuthButton } from '@/components/auth/auth-button'
 import { NavbarWeatherWidget } from './navbar-weather-widget'
 import { NavigationTexture } from './textured-background'
@@ -73,8 +73,7 @@ export function SiteNavigation({
   ...props
 }: SiteNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
-  const [isMegaMenuOpen, setIsMegaMenuOpen] = React.useState(false)
-  const [activeMegaSection, setActiveMegaSection] = React.useState<string>()
+  const [openDropdown, setOpenDropdown] = React.useState<string | null>(null)
   const [hoveredPath, setHoveredPath] = React.useState<string | null>(null)
   const [logoClickCount, setLogoClickCount] = React.useState(0)
   const [showIdahoFacts, setShowIdahoFacts] = React.useState(false)
@@ -161,16 +160,14 @@ export function SiteNavigation({
     return CubeTransparentIcon // fallback
   }
 
-  // Mega menu handlers
-  const handleMegaMenuOpen = (section?: string) => {
-    setActiveMegaSection(section)
-    setIsMegaMenuOpen(true)
+  // Dropdown handlers
+  const handleDropdownToggle = (section: string) => {
+    setOpenDropdown(openDropdown === section ? null : section)
     setIsMobileMenuOpen(false) // Close mobile menu if open
   }
 
-  const handleMegaMenuClose = () => {
-    setIsMegaMenuOpen(false)
-    setActiveMegaSection(undefined)
+  const handleDropdownClose = () => {
+    setOpenDropdown(null)
   }
 
   // Create personalization context
@@ -224,8 +221,8 @@ export function SiteNavigation({
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
-    if (isMegaMenuOpen) {
-      setIsMegaMenuOpen(false)
+    if (openDropdown) {
+      setOpenDropdown(null)
     }
   }
 
@@ -425,12 +422,15 @@ export function SiteNavigation({
             </div>
           )}
 
-          {/* Desktop Navigation - Magic Line Edition */}
+          {/* Desktop Navigation - Individual Dropdowns */}
           <div className="hidden md:flex items-center relative">
             {navigationItems.slice(0, 7).map((item, index) => {
               const isActive = pathname === item.href
               const isHovered = hoveredPath === item.href
               const shouldShowLine = item.href === (hoveredPath || pathname)
+              const sectionKey = item.label.toLowerCase().replace(' & ', '').replace(' ', '') as 'events' | 'directory' | 'armory' | 'intel' | 'buysell' | 'forums'
+              const hasDropdown = ['events', 'directory', 'armory', 'intel', 'buysell', 'forums'].includes(sectionKey)
+              const isDropdownOpen = openDropdown === sectionKey
               
               return (
                 <React.Fragment key={item.href}>
@@ -439,8 +439,8 @@ export function SiteNavigation({
                     onMouseEnter={() => setHoveredPath(item.href)}
                     onMouseLeave={() => setHoveredPath(pathname)}
                   >
-                    {/* Tactical Equipment Case Highlight - Always visible on hover/active */}
-                    {(isHovered || isActive) && (
+                    {/* Tactical Equipment Case Highlight - Always visible on hover/active/dropdown open */}
+                    {(isHovered || isActive || isDropdownOpen) && (
                       <MotionDiv
                         className="absolute inset-0"
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -464,34 +464,78 @@ export function SiteNavigation({
                       </MotionDiv>
                     )}
                     
-                    {renderNavLink(
-                      item,
-                      `relative z-10 flex items-center gap-xs px-xs py-xs text-body-base font-rajdhani font-semibold transition-all duration-200 ${
-                        isActive
-                          ? getActiveTextClass(item.color)
-                          : isHovered 
+                    {hasDropdown ? (
+                      <button
+                        onClick={() => handleDropdownToggle(sectionKey)}
+                        className={`relative z-10 flex items-center gap-xs px-xs py-xs text-body-base font-rajdhani font-semibold transition-all duration-200 ${
+                          isActive || isDropdownOpen
                             ? getActiveTextClass(item.color)
-                            : `text-muted-foreground ${getHoverClasses(item.color)}`
-                      }`,
-                      <MotionDiv 
-                        className="flex items-center gap-xs"
-                        whileHover={{ scale: 1.02 }}
-                        transition={{ duration: 0.15, ease: "easeOut" }}
+                            : isHovered 
+                              ? getActiveTextClass(item.color)
+                              : `text-muted-foreground ${getHoverClasses(item.color)}`
+                        }`}
                       >
-                        <MotionDiv
-                          whileHover={{ 
-                            scale: 1.05,
-                            transition: { duration: 0.12, ease: "easeOut" }
-                          }}
-                          whileTap={{ 
-                            scale: 0.98,
-                            transition: { duration: 0.08 }
-                          }}
+                        <MotionDiv 
+                          className="flex items-center gap-xs"
+                          whileHover={{ scale: 1.02 }}
+                          transition={{ duration: 0.15, ease: "easeOut" }}
                         >
-                          <item.icon className="size-4" />
+                          <MotionDiv
+                            whileHover={{ 
+                              scale: 1.05,
+                              transition: { duration: 0.12, ease: "easeOut" }
+                            }}
+                            whileTap={{ 
+                              scale: 0.98,
+                              transition: { duration: 0.08 }
+                            }}
+                          >
+                            <item.icon className="size-4" />
+                          </MotionDiv>
+                          {item.label.toUpperCase()}
                         </MotionDiv>
-                        {item.label.toUpperCase()}
-                      </MotionDiv>
+                      </button>
+                    ) : (
+                      renderNavLink(
+                        item,
+                        `relative z-10 flex items-center gap-xs px-xs py-xs text-body-base font-rajdhani font-semibold transition-all duration-200 ${
+                          isActive
+                            ? getActiveTextClass(item.color)
+                            : isHovered 
+                              ? getActiveTextClass(item.color)
+                              : `text-muted-foreground ${getHoverClasses(item.color)}`
+                        }`,
+                        <MotionDiv 
+                          className="flex items-center gap-xs"
+                          whileHover={{ scale: 1.02 }}
+                          transition={{ duration: 0.15, ease: "easeOut" }}
+                        >
+                          <MotionDiv
+                            whileHover={{ 
+                              scale: 1.05,
+                              transition: { duration: 0.12, ease: "easeOut" }
+                            }}
+                            whileTap={{ 
+                              scale: 0.98,
+                              transition: { duration: 0.08 }
+                            }}
+                          >
+                            <item.icon className="size-4" />
+                          </MotionDiv>
+                          {item.label.toUpperCase()}
+                        </MotionDiv>
+                      )
+                    )}
+                    
+                    {/* Individual Navigation Dropdowns */}
+                    {hasDropdown && (
+                      <NavigationDropdown
+                        section={sectionKey}
+                        isOpen={isDropdownOpen}
+                        onClose={handleDropdownClose}
+                        onToggle={() => handleDropdownToggle(sectionKey)}
+                        className=""
+                      />
                     )}
                   </div>
                   
@@ -509,23 +553,6 @@ export function SiteNavigation({
 
           {/* Custom Content / Auth Buttons */}
           <div className="hidden md:flex items-center gap-base">
-            {/* Mega Menu Trigger Button */}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => handleMegaMenuOpen()}
-              className={cn(
-                "flex items-center gap-xs px-sm py-xs text-body-base font-rajdhani font-semibold transition-all duration-200",
-                isMegaMenuOpen 
-                  ? "text-primary bg-primary/10" 
-                  : "text-muted-foreground hover:text-primary"
-              )}
-              title="Open comprehensive site menu"
-            >
-              <Bars3Icon className="size-4" />
-              MENU
-            </Button>
-            
             {/* Night Ops Toggle (only show if activated) */}
             {isNightOps && (
               <Button
@@ -539,11 +566,18 @@ export function SiteNavigation({
               </Button>
             )}
             
-            <NavbarWeatherWidget />
-            
-            {customContent || (
-              <AuthButton variant="forum-aware" showTrialButton={false} />
-            )}
+            {/* Combined Weather and Auth Widget */}
+            <div className="mica-subtle border border-border/30 rounded-xs p-1 flex items-center gap-xs">
+              <div className="navbar-widget-item">
+                <NavbarWeatherWidget />
+              </div>
+              <div className="h-4 w-px bg-border/30" />
+              <div className="navbar-widget-item">
+                {customContent || (
+                  <AuthButton variant="forum-aware" showTrialButton={false} />
+                )}
+              </div>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -611,14 +645,6 @@ export function SiteNavigation({
         )}
       </div>
 
-      {/* Industry-Leading Mega Menu */}
-      <IndustryMegamenu
-        isOpen={isMegaMenuOpen}
-        onClose={handleMegaMenuClose}
-        activeSection={activeMegaSection}
-        personalizationContext={personalizationContext}
-        className="relative z-50"
-      />
     </nav>
   )
 }

@@ -535,6 +535,338 @@ body {
   }
 }
 
+/* =================== THEMED MICA BACKGROUNDS =================== */
+
+/* Events - Harvest Gold Tinted Mica */
+.mica-events {
+  background:
+    /* Fine noise texture overlay for tactile feel */
+    radial-gradient(circle at 20% 80%, rgba(212, 145, 42, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.06) 0%, transparent 25%),
+    radial-gradient(circle at 40% 40%, rgba(184, 134, 11, 0.03) 0%, transparent 15%),
+    radial-gradient(circle at 60% 70%, rgba(212, 145, 42, 0.025) 0%, transparent 20%),
+    /* Subtle grain pattern for mica texture */
+    repeating-conic-gradient(from 0deg at 1px 1px, rgba(212, 145, 42, 0.004) 0deg, transparent 90deg),
+    /* Base mica gradients enhanced with events gold */
+    radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(184, 134, 11, 0.025) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(212, 145, 42, 0.06) 0%, rgba(255, 215, 0, 0.035) 50%, rgba(184, 134, 11, 0.04) 100%),
+    rgba(248, 246, 241, 0.92); /* Slightly more opaque for better contrast */
+  backdrop-filter: blur(18px) saturate(2.4) contrast(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(2.4) contrast(1.2);
+  border: 1px solid rgba(212, 145, 42, 0.25);
+  box-shadow: 0 8px 32px rgba(212, 145, 42, 0.15), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Directory - Desert Sage Green Tinted Mica */
+.mica-directory {
+  background:
+    /* Fine noise texture overlay for tactile feel */
+    radial-gradient(circle at 20% 80%, rgba(74, 124, 89, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(34, 139, 34, 0.06) 0%, transparent 25%),
+    radial-gradient(circle at 40% 40%, rgba(46, 125, 50, 0.03) 0%, transparent 15%),
+    radial-gradient(circle at 60% 70%, rgba(74, 124, 89, 0.025) 0%, transparent 20%),
+    /* Subtle grain pattern for mica texture */
+    repeating-conic-gradient(from 0deg at 1px 1px, rgba(74, 124, 89, 0.004) 0deg, transparent 90deg),
+    /* Base mica gradients enhanced with directory green */
+    radial-gradient(circle at 25% 25%, rgba(34, 139, 34, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(46, 125, 50, 0.025) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(74, 124, 89, 0.06) 0%, rgba(34, 139, 34, 0.035) 50%, rgba(46, 125, 50, 0.04) 100%),
+    rgba(248, 246, 241, 0.92);
+  backdrop-filter: blur(18px) saturate(2.4) contrast(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(2.4) contrast(1.2);
+  border: 1px solid rgba(74, 124, 89, 0.25);
+  box-shadow: 0 8px 32px rgba(74, 124, 89, 0.15), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Armory - Canyon Terracotta Red Tinted Mica */
+.mica-armory {
+  background:
+    /* Fine noise texture overlay for tactile feel */
+    radial-gradient(circle at 20% 80%, rgba(183, 65, 14, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(220, 20, 60, 0.06) 0%, transparent 25%),
+    radial-gradient(circle at 40% 40%, rgba(178, 34, 34, 0.03) 0%, transparent 15%),
+    radial-gradient(circle at 60% 70%, rgba(183, 65, 14, 0.025) 0%, transparent 20%),
+    /* Subtle grain pattern for mica texture */
+    repeating-conic-gradient(from 0deg at 1px 1px, rgba(183, 65, 14, 0.004) 0deg, transparent 90deg),
+    /* Base mica gradients enhanced with armory red */
+    radial-gradient(circle at 25% 25%, rgba(220, 20, 60, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(178, 34, 34, 0.025) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(183, 65, 14, 0.06) 0%, rgba(220, 20, 60, 0.035) 50%, rgba(178, 34, 34, 0.04) 100%),
+    rgba(248, 246, 241, 0.92);
+  backdrop-filter: blur(18px) saturate(2.4) contrast(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(2.4) contrast(1.2);
+  border: 1px solid rgba(183, 65, 14, 0.25);
+  box-shadow: 0 8px 32px rgba(183, 65, 14, 0.15), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Intel - Wildflower Plum Purple Tinted Mica */
+.mica-intel {
+  background:
+    /* Fine noise texture overlay for tactile feel */
+    radial-gradient(circle at 20% 80%, rgba(139, 74, 107, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(153, 102, 204, 0.06) 0%, transparent 25%),
+    radial-gradient(circle at 40% 40%, rgba(128, 0, 128, 0.03) 0%, transparent 15%),
+    radial-gradient(circle at 60% 70%, rgba(139, 74, 107, 0.025) 0%, transparent 20%),
+    /* Subtle grain pattern for mica texture */
+    repeating-conic-gradient(from 0deg at 1px 1px, rgba(139, 74, 107, 0.004) 0deg, transparent 90deg),
+    /* Base mica gradients enhanced with intel purple */
+    radial-gradient(circle at 25% 25%, rgba(153, 102, 204, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(128, 0, 128, 0.025) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(139, 74, 107, 0.06) 0%, rgba(153, 102, 204, 0.035) 50%, rgba(128, 0, 128, 0.04) 100%),
+    rgba(248, 246, 241, 0.92);
+  backdrop-filter: blur(18px) saturate(2.4) contrast(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(2.4) contrast(1.2);
+  border: 1px solid rgba(139, 74, 107, 0.25);
+  box-shadow: 0 8px 32px rgba(139, 74, 107, 0.15), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Buy & Sell - Deep Teal Tinted Mica */
+.mica-buysell {
+  background:
+    /* Fine noise texture overlay for tactile feel */
+    radial-gradient(circle at 20% 80%, rgba(44, 122, 123, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(0, 128, 128, 0.06) 0%, transparent 25%),
+    radial-gradient(circle at 40% 40%, rgba(72, 201, 176, 0.03) 0%, transparent 15%),
+    radial-gradient(circle at 60% 70%, rgba(44, 122, 123, 0.025) 0%, transparent 20%),
+    /* Subtle grain pattern for mica texture */
+    repeating-conic-gradient(from 0deg at 1px 1px, rgba(44, 122, 123, 0.004) 0deg, transparent 90deg),
+    /* Base mica gradients enhanced with buysell teal */
+    radial-gradient(circle at 25% 25%, rgba(0, 128, 128, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(72, 201, 176, 0.025) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(44, 122, 123, 0.06) 0%, rgba(0, 128, 128, 0.035) 50%, rgba(72, 201, 176, 0.04) 100%),
+    rgba(248, 246, 241, 0.92);
+  backdrop-filter: blur(18px) saturate(2.4) contrast(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(2.4) contrast(1.2);
+  border: 1px solid rgba(44, 122, 123, 0.25);
+  box-shadow: 0 8px 32px rgba(44, 122, 123, 0.15), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Forums - Canyon Stone Gray Tinted Mica */
+.mica-forums {
+  background:
+    /* Fine noise texture overlay for tactile feel */
+    radial-gradient(circle at 20% 80%, rgba(139, 115, 85, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(128, 128, 128, 0.06) 0%, transparent 25%),
+    radial-gradient(circle at 40% 40%, rgba(105, 105, 105, 0.03) 0%, transparent 15%),
+    radial-gradient(circle at 60% 70%, rgba(139, 115, 85, 0.025) 0%, transparent 20%),
+    /* Subtle grain pattern for mica texture */
+    repeating-conic-gradient(from 0deg at 1px 1px, rgba(139, 115, 85, 0.004) 0deg, transparent 90deg),
+    /* Base mica gradients enhanced with forums gray */
+    radial-gradient(circle at 25% 25%, rgba(128, 128, 128, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(105, 105, 105, 0.025) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(139, 115, 85, 0.06) 0%, rgba(128, 128, 128, 0.035) 50%, rgba(105, 105, 105, 0.04) 100%),
+    rgba(248, 246, 241, 0.92);
+  backdrop-filter: blur(18px) saturate(2.4) contrast(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(2.4) contrast(1.2);
+  border: 1px solid rgba(139, 115, 85, 0.25);
+  box-shadow: 0 8px 32px rgba(139, 115, 85, 0.15), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Subtle Mica for Navigation Widgets */
+.mica-subtle {
+  background:
+    /* Very light noise texture overlay */
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.015) 0%, transparent 25%),
+    radial-gradient(circle at 40% 40%, rgba(0, 0, 0, 0.005) 0%, transparent 15%),
+    /* Minimal mica gradients */
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.015) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 0, 0, 0.008) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(217, 134, 59, 0.02) 0%, rgba(184, 147, 100, 0.015) 50%, rgba(139, 131, 134, 0.018) 100%),
+    rgba(248, 246, 241, 0.6);
+  backdrop-filter: blur(8px) saturate(1.8) contrast(1.1);
+  -webkit-backdrop-filter: blur(8px) saturate(1.8) contrast(1.1);
+}
+
+/* Dark Theme Variants */
+.dark .mica-events {
+  background:
+    radial-gradient(circle at 20% 80%, rgba(255, 179, 71, 0.06) 0%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.04) 0%, transparent 25%),
+    radial-gradient(circle at 40% 40%, rgba(251, 191, 47, 0.02) 0%, transparent 15%),
+    radial-gradient(circle at 60% 70%, rgba(255, 179, 71, 0.015) 0%, transparent 20%),
+    repeating-conic-gradient(from 0deg at 1px 1px, rgba(255, 179, 71, 0.002) 0deg, transparent 90deg),
+    radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.025) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(251, 191, 47, 0.02) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(255, 179, 71, 0.04) 0%, rgba(255, 215, 0, 0.025) 50%, rgba(251, 191, 47, 0.03) 100%),
+    rgba(30, 35, 42, 0.85);
+  border: 1px solid rgba(255, 179, 71, 0.2);
+  box-shadow: 0 8px 32px rgba(255, 179, 71, 0.1), 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.dark .mica-directory {
+  background:
+    radial-gradient(circle at 20% 80%, rgba(91, 155, 213, 0.06) 0%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(34, 139, 34, 0.04) 0%, transparent 25%),
+    radial-gradient(circle at 40% 40%, rgba(46, 125, 50, 0.02) 0%, transparent 15%),
+    radial-gradient(circle at 60% 70%, rgba(91, 155, 213, 0.015) 0%, transparent 20%),
+    repeating-conic-gradient(from 0deg at 1px 1px, rgba(91, 155, 213, 0.002) 0deg, transparent 90deg),
+    radial-gradient(circle at 25% 25%, rgba(34, 139, 34, 0.025) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(46, 125, 50, 0.02) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(91, 155, 213, 0.04) 0%, rgba(34, 139, 34, 0.025) 50%, rgba(46, 125, 50, 0.03) 100%),
+    rgba(30, 35, 42, 0.85);
+  border: 1px solid rgba(91, 155, 213, 0.2);
+  box-shadow: 0 8px 32px rgba(91, 155, 213, 0.1), 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.dark .mica-armory {
+  background:
+    radial-gradient(circle at 20% 80%, rgba(220, 20, 60, 0.06) 0%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(178, 34, 34, 0.04) 0%, transparent 25%),
+    radial-gradient(circle at 40% 40%, rgba(205, 92, 92, 0.02) 0%, transparent 15%),
+    radial-gradient(circle at 60% 70%, rgba(220, 20, 60, 0.015) 0%, transparent 20%),
+    repeating-conic-gradient(from 0deg at 1px 1px, rgba(220, 20, 60, 0.002) 0deg, transparent 90deg),
+    radial-gradient(circle at 25% 25%, rgba(178, 34, 34, 0.025) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(205, 92, 92, 0.02) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(220, 20, 60, 0.04) 0%, rgba(178, 34, 34, 0.025) 50%, rgba(205, 92, 92, 0.03) 100%),
+    rgba(30, 35, 42, 0.85);
+  border: 1px solid rgba(220, 20, 60, 0.2);
+  box-shadow: 0 8px 32px rgba(220, 20, 60, 0.1), 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.dark .mica-intel {
+  background:
+    radial-gradient(circle at 20% 80%, rgba(153, 102, 204, 0.06) 0%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(128, 0, 128, 0.04) 0%, transparent 25%),
+    radial-gradient(circle at 40% 40%, rgba(147, 112, 219, 0.02) 0%, transparent 15%),
+    radial-gradient(circle at 60% 70%, rgba(153, 102, 204, 0.015) 0%, transparent 20%),
+    repeating-conic-gradient(from 0deg at 1px 1px, rgba(153, 102, 204, 0.002) 0deg, transparent 90deg),
+    radial-gradient(circle at 25% 25%, rgba(128, 0, 128, 0.025) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(147, 112, 219, 0.02) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(153, 102, 204, 0.04) 0%, rgba(128, 0, 128, 0.025) 50%, rgba(147, 112, 219, 0.03) 100%),
+    rgba(30, 35, 42, 0.85);
+  border: 1px solid rgba(153, 102, 204, 0.2);
+  box-shadow: 0 8px 32px rgba(153, 102, 204, 0.1), 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.dark .mica-buysell {
+  background:
+    radial-gradient(circle at 20% 80%, rgba(79, 209, 197, 0.06) 0%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(0, 128, 128, 0.04) 0%, transparent 25%),
+    radial-gradient(circle at 40% 40%, rgba(72, 201, 176, 0.02) 0%, transparent 15%),
+    radial-gradient(circle at 60% 70%, rgba(79, 209, 197, 0.015) 0%, transparent 20%),
+    repeating-conic-gradient(from 0deg at 1px 1px, rgba(79, 209, 197, 0.002) 0deg, transparent 90deg),
+    radial-gradient(circle at 25% 25%, rgba(0, 128, 128, 0.025) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(72, 201, 176, 0.02) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(79, 209, 197, 0.04) 0%, rgba(0, 128, 128, 0.025) 50%, rgba(72, 201, 176, 0.03) 100%),
+    rgba(30, 35, 42, 0.85);
+  border: 1px solid rgba(79, 209, 197, 0.2);
+  box-shadow: 0 8px 32px rgba(79, 209, 197, 0.1), 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.dark .mica-forums {
+  background:
+    radial-gradient(circle at 20% 80%, rgba(184, 184, 184, 0.06) 0%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(128, 128, 128, 0.04) 0%, transparent 25%),
+    radial-gradient(circle at 40% 40%, rgba(105, 105, 105, 0.02) 0%, transparent 15%),
+    radial-gradient(circle at 60% 70%, rgba(184, 184, 184, 0.015) 0%, transparent 20%),
+    repeating-conic-gradient(from 0deg at 1px 1px, rgba(184, 184, 184, 0.002) 0deg, transparent 90deg),
+    radial-gradient(circle at 25% 25%, rgba(128, 128, 128, 0.025) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(105, 105, 105, 0.02) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(184, 184, 184, 0.04) 0%, rgba(128, 128, 128, 0.025) 50%, rgba(105, 105, 105, 0.03) 100%),
+    rgba(30, 35, 42, 0.85);
+  border: 1px solid rgba(184, 184, 184, 0.2);
+  box-shadow: 0 8px 32px rgba(184, 184, 184, 0.1), 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.dark .mica-subtle {
+  background:
+    /* Very light noise texture overlay for dark theme */
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.015) 0%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.01) 0%, transparent 25%),
+    radial-gradient(circle at 40% 40%, rgba(0, 0, 0, 0.008) 0%, transparent 15%),
+    /* Minimal mica gradients for dark theme */
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.01) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 0, 0, 0.015) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(217, 134, 59, 0.025) 0%, rgba(139, 131, 134, 0.02) 50%, rgba(59, 82, 107, 0.022) 100%),
+    rgba(30, 35, 42, 0.45);
+  backdrop-filter: blur(8px) saturate(1.6) contrast(1.15);
+  -webkit-backdrop-filter: blur(8px) saturate(1.6) contrast(1.15);
+}
+
+/* Navbar Widget Styling */
+.navbar-widget-item {
+  transition: color 0.2s ease;
+}
+
+/* Page-specific widget color accents */
+.theme-home .navbar-widget-item button,
+.theme-home .navbar-widget-item a {
+  color: var(--color-nav-home-light);
+}
+
+.dark .theme-home .navbar-widget-item button,
+.dark .theme-home .navbar-widget-item a {
+  color: var(--color-nav-home-dark);
+}
+
+/* Events page widget colors */
+body[class*="events"] .navbar-widget-item button,
+body[class*="events"] .navbar-widget-item a {
+  color: var(--color-nav-events-light);
+}
+
+.dark body[class*="events"] .navbar-widget-item button,
+.dark body[class*="events"] .navbar-widget-item a {
+  color: var(--color-nav-events-dark);
+}
+
+/* Directory page widget colors */
+body[class*="directory"] .navbar-widget-item button,
+body[class*="directory"] .navbar-widget-item a {
+  color: var(--color-nav-directory-light);
+}
+
+.dark body[class*="directory"] .navbar-widget-item button,
+.dark body[class*="directory"] .navbar-widget-item a {
+  color: var(--color-nav-directory-dark);
+}
+
+/* Armory page widget colors */
+body[class*="armory"] .navbar-widget-item button,
+body[class*="armory"] .navbar-widget-item a {
+  color: var(--color-nav-armory-light);
+}
+
+.dark body[class*="armory"] .navbar-widget-item button,
+.dark body[class*="armory"] .navbar-widget-item a {
+  color: var(--color-nav-armory-dark);
+}
+
+/* Intel page widget colors */
+body[class*="intel"] .navbar-widget-item button,
+body[class*="intel"] .navbar-widget-item a {
+  color: var(--color-nav-intel-light);
+}
+
+.dark body[class*="intel"] .navbar-widget-item button,
+.dark body[class*="intel"] .navbar-widget-item a {
+  color: var(--color-nav-intel-dark);
+}
+
+/* Buy & Sell page widget colors */
+body[class*="buysell"] .navbar-widget-item button,
+body[class*="buysell"] .navbar-widget-item a {
+  color: var(--color-nav-buysell-light);
+}
+
+.dark body[class*="buysell"] .navbar-widget-item button,
+.dark body[class*="buysell"] .navbar-widget-item a {
+  color: var(--color-nav-buysell-dark);
+}
+
+/* Forums page widget colors */
+body[class*="forums"] .navbar-widget-item button,
+body[class*="forums"] .navbar-widget-item a {
+  color: var(--color-nav-forums-light);
+}
+
+.dark body[class*="forums"] .navbar-widget-item button,
+.dark body[class*="forums"] .navbar-widget-item a {
+  color: var(--color-nav-forums-dark);
+}
+
 /* ===============================================================================
    ANIMATIONS
    =============================================================================== */
@@ -2430,3 +2762,60 @@ body {
   }
 }
 
+
+/* ===============================================================================
+   LAYOUT SYSTEM - THEME-SPECIFIC STYLING ARCHITECTURE
+   Systematic solution to prevent "russian nesting doll" style conflicts
+   =============================================================================== */
+
+/* Theme-specific section styling - Components can't conflict by design */
+.theme-home .section-hero {
+  /* Homepage hero specific styling */
+  --section-theme: var(--nav-home);
+}
+
+.theme-home .section-content {
+  /* Homepage content sections */
+  --section-theme: var(--nav-home);
+}
+
+.theme-home .section-feature {
+  /* Homepage feature sections with enhanced styling */
+  --section-theme: var(--nav-home);
+  position: relative;
+}
+
+.theme-home .section-cta {
+  /* Homepage CTA sections */
+  --section-theme: var(--nav-home);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-home .section-stats {
+  /* Homepage stats/directory sections */
+  --section-theme: var(--nav-home);
+}
+
+/* Layout system utilities - prevent conflicts through systematic approach */
+.layout-container {
+  /* Standard container that works with any theme */
+  container-type: inline-size;
+  max-width: var(--max-width-site);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+}
+
+.layout-section-spacing {
+  /* Consistent section spacing across themes */
+  padding-top: var(--spacing-3xl);
+  padding-bottom: var(--spacing-3xl);
+}
+
+.layout-content-spacing {
+  /* Consistent content spacing within sections */
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
+}
