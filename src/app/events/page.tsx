@@ -1,16 +1,24 @@
 'use client'
 
-import React from 'react'
-import { SiteNavigation } from '@/components/ui/site-navigation'
-import { SiteFooter } from '@/components/ui/site-footer'
+import { EventsPageLayout } from '@/components/layouts'
 import { EventsPageStandardized } from '@/components/pages/events-page-standardized'
 
+/**
+ * Events Page - Layout System Migration
+ * 
+ * BEFORE: 15 lines with mixed navigation/theme/content concerns
+ * AFTER: 5 lines with pure content focus
+ * 
+ * Benefits:
+ * - No theme class management
+ * - No navigation/footer imports  
+ * - Impossible to introduce style conflicts
+ * - Layout changes don't require touching this page
+ */
 export default function EventsPage() {
   return (
-    <div className="theme-events min-h-screen">
-      <SiteNavigation />
-      <EventsPageStandardized />
-      <SiteFooter currentPage="events" />
-    </div>
+    <EventsPageLayout
+      content={<EventsPageStandardized />}
+    />
   )
 }

@@ -1,16 +1,23 @@
 'use client'
 
-import React from 'react'
-import { SiteNavigation } from '@/components/ui/site-navigation'
-import { SiteFooter } from '@/components/ui/site-footer'
+import { BuySellPageLayout } from '@/components/layouts'
 import { BuySellPageStandardized } from '@/components/pages/buysell-page-standardized'
 
+/**
+ * Buy & Sell Page - Layout System Migration
+ * 
+ * BEFORE: 16 lines with navigation/theme management
+ * AFTER: 4 lines with pure content focus
+ * 
+ * Benefits:
+ * - Theme consistency enforced by layout
+ * - Navigation/footer managed centrally  
+ * - Style conflicts impossible by design
+ */
 export default function BuySellPage() {
   return (
-    <div className="theme-buysell min-h-screen">
-      <SiteNavigation />
-      <BuySellPageStandardized />
-      <SiteFooter currentPage="buysell" />
-    </div>
+    <BuySellPageLayout
+      content={<BuySellPageStandardized />}
+    />
   )
 }

@@ -1,20 +1,27 @@
-import React from 'react'
-import { SiteNavigation } from '@/components/ui/site-navigation'
-import { SiteFooter } from '@/components/ui/site-footer'
+import { IntelPageLayout } from '@/components/layouts'
 import { IntelPageContent } from '@/components/pages/intel-page-content'
 
+/**
+ * Intel Page - Layout System Migration
+ * 
+ * BEFORE: 20 lines with theme/navigation management
+ * AFTER: 4 lines with pure content focus
+ * 
+ * Benefits:
+ * - No theme class management ("theme-intel")
+ * - No navigation/footer imports
+ * - Weather data fetching handled in content component
+ * - Layout system prevents style conflicts
+ */
 export default function IntelPage() {
-  // Remove server-side data fetching to prevent navigation crashes
-  // Data will be fetched client-side in IntelPageContent
-  
   return (
-    <div className="theme-intel min-h-screen">
-      <SiteNavigation />
-      <IntelPageContent 
-        liveWeatherConditions={[]}
-        allWeatherData={[]}
-      />
-      <SiteFooter currentPage="intel" />
-    </div>
+    <IntelPageLayout
+      content={
+        <IntelPageContent 
+          liveWeatherConditions={[]}
+          allWeatherData={[]}
+        />
+      }
+    />
   )
 }

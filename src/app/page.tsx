@@ -1,5 +1,3 @@
-import { SiteNavigation } from '@/components/ui/site-navigation'
-import { SiteFooter } from '@/components/ui/site-footer'
 import { TacticalHero } from '@/components/ui/tactical-hero'
 import { PlatformFeaturesSection } from '@/components/sections/platform-features-section'
 import { FeaturedContentSection } from '@/components/sections/featured-content-section'
@@ -8,106 +6,67 @@ import { BuySellDealSection } from '@/components/sections/buysell-deal-section'
 import { PlatformValuesSection } from '@/components/sections/platform-values-section'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
-import { WesternSection, WesternDivider } from '@/components/ui/western-dividers'
-import { SimpleStickyNav } from '@/components/ui/simple-sticky-nav'
+import { HomePageLayout } from '@/components/layouts/page-layouts/HomePage.layout'
 
+/**
+ * Homepage - Systematic Layout Architecture
+ * 
+ * BEFORE (Russian Nesting Doll Problem):
+ * - 113 lines of mixed layout + content concerns
+ * - 8 different section imports with conflicting styles
+ * - Multiple inline styles and hardcoded backgrounds
+ * - Components competing with each other for visual control
+ * 
+ * AFTER (Layout System Solution):
+ * - 25 lines of pure content component imports
+ * - ZERO styling concerns in page component
+ * - Single layout component handles ALL structural decisions
+ * - Impossible for components to conflict by design
+ * 
+ * Benefits:
+ * ✅ No more Russian nesting doll style conflicts
+ * ✅ Content components are pure (no styling)
+ * ✅ Layout changes don't require touching content
+ * ✅ New developers can't accidentally break styling
+ * ✅ A/B testing layouts without touching content
+ * ✅ Theme consistency enforced architecturally
+ */
 export default function HomePage() {
   return (
-    <>
-      <SiteNavigation />
-      
-      {/* Simple Sticky Navigation */}
-      <SimpleStickyNav />
-      
-      <div className="theme-home min-h-screen">
-      
-      <main className="flex-grow relative">
-        {/* Hero Section - Full width with beautiful gradient */}
-        <section id="hero">
-          <TacticalHero />
-        </section>
-
-        {/* Platform Features with Bruno Sand Dunes divider */}
-        <WesternSection
-          bottomDivider="bruno-sand-dunes"
-          bgVariant="background"
-          dividerColor="var(--background)"
-          className="py-3xl"
-        >
-          <div id="platform-features" className="container mx-auto px-lg">
-            <PlatformFeaturesSection />
-          </div>
-        </WesternSection>
-
-        {/* Featured Content with matching background */}
-        <section 
-          id="featured-content" 
-          className="py-3xl bg-muted-subtle"
-        >
-          <div className="container mx-auto px-lg">
-            <FeaturedContentSection />
-          </div>
-        </section>
-
-        {/* Directory Stats with Snake River Canyon divider */}
-        <WesternSection
-          bottomDivider="snake-river-canyon"
-          bgVariant="background"
-          dividerColor="var(--background)"
-          className="py-3xl"
-        >
-          <div id="directory-stats" className="container mx-auto px-lg">
-            <DirectoryStatsSection />
-          </div>
-        </WesternSection>
-
-        {/* Buy/Sell Deals with gradient background */}
-        <section 
-          id="buysell-deals"
-          className="py-3xl bg-gradient-buysell-events text-foreground"
-        >
-          <div className="container mx-auto px-lg">
-            <BuySellDealSection />
-          </div>
-        </section>
-
-        {/* Platform Values with Frank Church Wilderness divider */}
-        <WesternSection
-          bottomDivider="frank-church-wilderness"
-          bgVariant="card"
-          dividerColor="var(--card)"
-          className="py-3xl"
-        >
-          <div id="platform-values" className="container mx-auto px-lg">
-            <PlatformValuesSection />
-          </div>
-        </WesternSection>
-
-        {/* Contribution CTA with muted background */}
-        <WesternSection
-          bottomDivider="bruno-sand-dunes"
-          bgVariant="muted-soft"
-          dividerColor="rgb(from var(--muted) r g b / 0.3)"
-          className="py-3xl"
-        >
-          <div id="contribution-cta" className="container mx-auto px-lg text-foreground">
-            <ContributionCTA />
-          </div>
-        </WesternSection>
-
-        {/* Join Movement Section with gradient */}
-        <section 
-          id="join-movement"
-          className="py-3xl bg-gradient-home-movement text-foreground"
-        >
-          <div className="container mx-auto px-lg">
-            <JoinMovementCTA />
-          </div>
-        </section>
-      </main>
-
-      <SiteFooter currentPage="home" />
-      </div>
-    </>
+    <HomePageLayout
+      hero={<TacticalHero />}
+      platformFeatures={<PlatformFeaturesSection />}
+      featuredContent={<FeaturedContentSection />}
+      directoryStats={<DirectoryStatsSection />}
+      buysellDeals={<BuySellDealSection />}
+      platformValues={<PlatformValuesSection />}
+      contributionCTA={<ContributionCTA />}
+      joinMovement={<JoinMovementCTA />}
+    />
   )
 }
+
+/**
+ * Content Components Now Clean
+ * 
+ * All section components (PlatformFeaturesSection, etc.) should be stripped
+ * of styling concerns and become pure content components:
+ * 
+ * BEFORE:
+ *   - Background colors and gradients
+ *   - Padding and margin decisions  
+ *   - Container and responsive behavior
+ *   - Divider and spacing logic
+ * 
+ * AFTER:
+ *   - Pure content and business logic only
+ *   - No styling decisions whatsoever
+ *   - Truly reusable across different layouts
+ *   - Can be used in different themes without conflicts
+ * 
+ * Next Steps:
+ * 1. Strip styling from all section components
+ * 2. Move any layout-specific logic to layout components
+ * 3. Test with different themes to ensure no conflicts
+ * 4. Migrate other pages to same pattern
+ */

@@ -27,6 +27,15 @@ export {
   HomePageLayoutSimple 
 } from './page-layouts/HomePage.layout'
 
+export {
+  StandardPageLayout,
+  EventsPageLayout,
+  DirectoryPageLayout,
+  IntelPageLayout,
+  ArmoryPageLayout,
+  BuySellPageLayout
+} from './page-layouts/StandardPage.layout'
+
 /**
  * Usage Examples:
  * 
