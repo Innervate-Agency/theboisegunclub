@@ -94,11 +94,7 @@ export function StickyHomepageNavigation({
             {/* Background that morphs based on content */}
             <motion.div
               layout
-              className="absolute inset-0 rounded-2xl border border-border/20 shadow-hero"
-              style={{
-                backgroundColor: 'var(--card)',
-                backdropFilter: 'blur(20px)'
-              }}
+              className="absolute inset-0 rounded-2xl border border-border/20 shadow-hero bg-card backdrop-navigation"
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             />
 

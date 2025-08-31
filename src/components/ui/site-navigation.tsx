@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { MotionDiv } from '@/components/ui/optimized-motion'
 import { BanknotesIcon, Bars3Icon, BookOpenIcon, BuildingStorefrontIcon, ChatBubbleBottomCenterTextIcon, ChatBubbleLeftRightIcon, CubeTransparentIcon, IdentificationIcon, MapIcon, MapPinIcon, PlusCircleIcon, ShieldCheckIcon, SparklesIcon, TicketIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { IndustryMegamenu } from './industry-megamenu'
 import { AuthButton } from '@/components/auth/auth-button'
 import { NavbarWeatherWidget } from './navbar-weather-widget'
 import { NavigationTexture } from './textured-background'
@@ -72,6 +73,8 @@ export function SiteNavigation({
   ...props
 }: SiteNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = React.useState(false)
+  const [activeMegaSection, setActiveMegaSection] = React.useState<string>()
   const [hoveredPath, setHoveredPath] = React.useState<string | null>(null)
   const [logoClickCount, setLogoClickCount] = React.useState(0)
   const [showIdahoFacts, setShowIdahoFacts] = React.useState(false)
@@ -158,6 +161,36 @@ export function SiteNavigation({
     return CubeTransparentIcon // fallback
   }
 
+  // Mega menu handlers
+  const handleMegaMenuOpen = (section?: string) => {
+    setActiveMegaSection(section)
+    setIsMegaMenuOpen(true)
+    setIsMobileMenuOpen(false) // Close mobile menu if open
+  }
+
+  const handleMegaMenuClose = () => {
+    setIsMegaMenuOpen(false)
+    setActiveMegaSection(undefined)
+  }
+
+  // Create personalization context
+  const personalizationContext = React.useMemo(() => ({
+    userId: isAuthenticated ? 'user-123' : undefined, // Replace with actual user ID
+    userType: isAuthenticated ? 'member' : 'visitor' as const,
+    location: {
+      city: 'Boise',
+      state: 'ID'
+    },
+    recentViews: [], // Would come from user data/localStorage
+    preferences: {
+      favoriteCategories: [],
+      notifications: true,
+      darkMode: isNightOps,
+      compactMode: false
+    },
+    bookmarks: [] // Would come from user data
+  }), [isAuthenticated, isNightOps])
+
   // Get current page subtitle based on pathname (memoized for performance)
   const currentPageSubtitle = React.useMemo(() => {
     if (pathname === '/') return 'Treasure Valley Collective'
@@ -189,7 +222,12 @@ export function SiteNavigation({
     return result
   }
 
-  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen)
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+    if (isMegaMenuOpen) {
+      setIsMegaMenuOpen(false)
+    }
+  }
 
   // Helper function to check if URL is external
   const isExternalUrl = (url: string) => url.startsWith('http')
@@ -388,7 +426,7 @@ export function SiteNavigation({
           )}
 
           {/* Desktop Navigation - Magic Line Edition */}
-          <div className="hidden md:flex items-center relative">            
+          <div className="hidden md:flex items-center relative">
             {navigationItems.slice(0, 7).map((item, index) => {
               const isActive = pathname === item.href
               const isHovered = hoveredPath === item.href
@@ -471,6 +509,23 @@ export function SiteNavigation({
 
           {/* Custom Content / Auth Buttons */}
           <div className="hidden md:flex items-center gap-base">
+            {/* Mega Menu Trigger Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => handleMegaMenuOpen()}
+              className={cn(
+                "flex items-center gap-xs px-sm py-xs text-body-base font-rajdhani font-semibold transition-all duration-200",
+                isMegaMenuOpen 
+                  ? "text-primary bg-primary/10" 
+                  : "text-muted-foreground hover:text-primary"
+              )}
+              title="Open comprehensive site menu"
+            >
+              <Bars3Icon className="size-4" />
+              MENU
+            </Button>
+            
             {/* Night Ops Toggle (only show if activated) */}
             {isNightOps && (
               <Button
@@ -555,6 +610,15 @@ export function SiteNavigation({
           </MotionDiv>
         )}
       </div>
+
+      {/* Industry-Leading Mega Menu */}
+      <IndustryMegamenu
+        isOpen={isMegaMenuOpen}
+        onClose={handleMegaMenuClose}
+        activeSection={activeMegaSection}
+        personalizationContext={personalizationContext}
+        className="relative z-50"
+      />
     </nav>
   )
 }

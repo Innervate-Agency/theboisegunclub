@@ -309,11 +309,7 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
       <section className="relative overflow-hidden bg-gradient-intel-hero px-md py-lg">
         {/* Topographic Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
-          style={{
-            backgroundImage: "url('/images/Heroes/tbgc-intel-hero-background.webp')",
-            backgroundPosition: 'center right'
-          }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 bg-intel-hero"
         ></div>
         <div className="container mx-auto max-w-site relative z-10">
           <div className="hero-grid-layout">
@@ -757,8 +753,8 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                         
                         {/* Subtle texture particles */}
                         <div className="absolute top-2 right-6 w-0.5 h-0.5 bg-card/30 rounded-full animate-pulse"></div>
-                        <div className="absolute bottom-4 left-8 w-0.5 h-0.5 bg-card/20 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                        <div className="absolute top-6 right-12 w-0.5 h-0.5 bg-card/25 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+                        <div className="absolute bottom-4 left-8 w-0.5 h-0.5 bg-card/20 rounded-full animate-pulse animate-delay-1s"></div>
+                        <div className="absolute top-6 right-12 w-0.5 h-0.5 bg-card/25 rounded-full animate-pulse animate-delay-2s"></div>
                       </div>
                       
                       <div className="p-lg space-y-md flex flex-col flex-1">
@@ -945,8 +941,8 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
       <section className="py-4xl bg-gradient-to-br from-nav-intel/5 to-nav-intel/10 relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-nav-intel/10 rounded-full blur-3xl animate-float" style={{animationDelay: '0s'}}></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-nav-intel/5 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-20 left-10 w-64 h-64 bg-intel-float-primary animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-intel-float-secondary animate-float animate-delay-2s"></div>
         </div>
         <div className="container mx-auto max-w-site px-md">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl">

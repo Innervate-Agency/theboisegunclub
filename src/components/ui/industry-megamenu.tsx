@@ -207,7 +207,7 @@ const createMenuSections = (context?: PersonalizationContext): MenuSection[] => 
       ],
       quickActions: [
         { id: 'search', label: 'Search All', href: '/search', icon: MagnifyingGlassIcon, colorClass: 'nav-home' },
-        { id: 'nearby', label: 'Near Me', href: '/nearby', icon: UserIcon, colorClass: 'nav-home' },
+        { id: 'nearby', label: 'Near Me', href: '/nearby', icon: MapPinIcon, colorClass: 'nav-home' },
         ...(isAuthenticated ? [
           { id: 'profile', label: 'My Profile', href: '/profile', icon: UserIcon, colorClass: 'nav-home' }
         ] : [
@@ -350,7 +350,7 @@ const createMenuSections = (context?: PersonalizationContext): MenuSection[] => 
       quickActions: [
         { id: 'search', label: 'Search Directory', href: '/directory/search', icon: MagnifyingGlassIcon, colorClass: 'nav-directory' },
         { id: 'add', label: 'Add Business', href: '/directory/add-business', icon: BuildingStorefrontIcon, colorClass: 'nav-directory' },
-        { id: 'nearby', label: 'Near Me', href: '/directory/near-me', icon: UserIcon, colorClass: 'nav-directory' }
+        { id: 'nearby', label: 'Near Me', href: '/directory/near-me', icon: MapPinIcon, colorClass: 'nav-directory' }
       ]
     },
     {
@@ -424,7 +424,7 @@ const createMenuSections = (context?: PersonalizationContext): MenuSection[] => 
       id: 'intel',
       title: 'Intel',
       subtitle: 'Real-time conditions and field intelligence',
-      icon: ShieldCheckIcon,
+      icon: MapIcon,
       colorClass: 'nav-intel',
       description: 'Live conditions, weather, and range status',
       categories: [
@@ -483,8 +483,8 @@ const createMenuSections = (context?: PersonalizationContext): MenuSection[] => 
         }
       ],
       quickActions: [
-        { id: 'conditions', label: 'Live Conditions', href: '/intel/live', icon: ShieldCheckIcon, colorClass: 'nav-intel' },
-        { id: 'submit', label: 'Submit Report', href: '/intel/submit-report', icon: ShieldCheckIcon, colorClass: 'nav-intel' },
+        { id: 'conditions', label: 'Live Conditions', href: '/intel/live', icon: MapIcon, colorClass: 'nav-intel' },
+        { id: 'submit', label: 'Submit Report', href: '/intel/submit-report', icon: MapIcon, colorClass: 'nav-intel' },
         { id: 'alerts', label: 'My Alerts', href: '/intel/my-alerts', icon: BellIcon, colorClass: 'nav-intel', requiresAuth: true }
       ]
     },
@@ -787,29 +787,11 @@ export const IndustryMegamenu = React.memo(function IndustryMegamenu({
   className,
   personalizationContext
 }: IndustryMegamenuProps) {
-  const [hoveredSection, setHoveredSection] = React.useState<string | null>(activeSection || 'test')
-  // const { query, setQuery, results, isSearching } = useSearch()
-  const query = ''
-  const setQuery = () => {}
-  const results: SearchResult[] = []
-  const isSearching = false
+  const [hoveredSection, setHoveredSection] = React.useState<string | null>(activeSection || 'home')
+  const { query, setQuery, results, isSearching } = useSearch()
   const [isSearchFocused, setIsSearchFocused] = React.useState(false)
   
-  const menuSections = React.useMemo(() => [
-    {
-      id: 'test',
-      title: 'Test Section',
-      subtitle: 'Simple test',
-      icon: UserIcon,
-      colorClass: 'nav-home',
-      description: 'Test description',
-      categories: [],
-      featured: [],
-      quickActions: [],
-      recentContent: [],
-      notifications: []
-    }
-  ], [personalizationContext])
+  const menuSections = React.useMemo(() => createMenuSections(personalizationContext), [personalizationContext])
   
   const currentSection = React.useMemo(() => {
     return menuSections.find(section => section.id === (hoveredSection || activeSection))

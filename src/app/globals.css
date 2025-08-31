@@ -690,6 +690,23 @@ body {
   animation: fade-in-up 0.6s ease-out;
 }
 
+/* Animation delay utilities for inline style elimination */
+@utility animate-delay-1s {
+  animation-delay: 1s;
+}
+
+@utility animate-delay-2s {
+  animation-delay: 2s;
+}
+
+@utility animate-delay-3s {
+  animation-delay: 3s;
+}
+
+@utility animate-delay-500ms {
+  animation-delay: 0.5s;
+}
+
 /* Typography utilities */
 @utility text-body-xs {
   font-size: 0.75rem;
@@ -1430,6 +1447,68 @@ body {
 
   .bg-muted-soft {
     background-color: rgb(from var(--muted) r g b / 0.3);
+  }
+
+  /* Intel page floating background utilities */
+  .bg-intel-float-primary {
+    background: linear-gradient(135deg, var(--nav-intel), transparent);
+    opacity: 0.1;
+    border-radius: 50%;
+    filter: blur(3rem);
+  }
+
+  .bg-intel-float-secondary {
+    background: var(--nav-intel);
+    opacity: 0.05;
+    border-radius: 50%;
+    filter: blur(3rem);
+  }
+
+  /* Intel hero background */
+  .bg-intel-hero {
+    background-image: url('/images/Heroes/tbgc-intel-hero-background.webp');
+    background-position: center right;
+  }
+
+  /* Sticky navigation backdrop */
+  .backdrop-navigation {
+    backdrop-filter: blur(20px);
+  }
+
+  /* Treasure chest glow gradients */
+  .bg-treasure-glow-primary {
+    background: radial-gradient(ellipse at center, 
+      rgba(var(--sandy-ochre-rgb), 0.4) 0%, 
+      rgba(var(--sandy-ochre-rgb), 0.2) 30%,
+      rgba(var(--rusty-orange-rgb), 0.1) 60%,
+      transparent 80%
+    );
+    filter: blur(20px);
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+  }
+
+  .bg-treasure-glow-secondary {
+    background: radial-gradient(ellipse at center,
+      rgba(var(--sandy-ochre-rgb), 0.6) 0%,
+      rgba(var(--sandy-ochre-rgb), 0.3) 50%,
+      transparent 80%
+    );
+    filter: blur(8px);
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.5s;
+  }
+
+  .bg-treasure-glow-ring {
+    background: radial-gradient(ellipse at center,
+      transparent 70%,
+      rgba(var(--sandy-ochre-rgb), 0.1) 80%,
+      transparent 90%
+    );
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+    animation-delay: 1s;
   }
 
 /* Event Card Gradient Sections */
