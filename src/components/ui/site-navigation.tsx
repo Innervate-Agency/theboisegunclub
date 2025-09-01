@@ -7,26 +7,37 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { MotionDiv } from '@/components/ui/optimized-motion'
-import { BanknotesIcon, Bars3Icon, BookOpenIcon, BuildingStorefrontIcon, ChatBubbleBottomCenterTextIcon, ChatBubbleLeftRightIcon, CubeTransparentIcon, IdentificationIcon, MapIcon, MapPinIcon, PlusCircleIcon, ShieldCheckIcon, SparklesIcon, TicketIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { NavigationDropdown } from './navigation-dropdown'
+import { 
+  BanknotesIcon, 
+  Bars3Icon, 
+  BookOpenIcon, 
+  BuildingStorefrontIcon, 
+  ChatBubbleLeftRightIcon, 
+  CubeTransparentIcon, 
+  ShieldCheckIcon, 
+  TicketIcon, 
+  XMarkIcon,
+  ArrowRightIcon,
+  MagnifyingGlassIcon,
+  SparklesIcon,
+  FireIcon,
+  LightBulbIcon
+} from '@heroicons/react/24/outline'
 import { AuthButton } from '@/components/auth/auth-button'
 import { NavbarWeatherWidget } from './navbar-weather-widget'
 import { NavigationTexture } from './textured-background'
 import { useAuth } from '@/components/auth/auth-context'
-import { useTacticalTracker } from '@/hooks/useTacticalTracker'
-import { useKonamiCode } from '@/hooks/useKonamiCode'
-import { useNightOpsTheme } from '@/hooks/useNightOpsTheme'
 
 const siteNavigationVariants = cva(
   "w-full transition-all duration-200 ease-out",
   {
     variants: {
       variant: {
-        default: "mica-navbar shadow-whisper",
-        premium: "mica-navbar shadow-present",
-        elite: "mica-modal shadow-prominent after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warning-amber/50 after:to-transparent",
-        glass: "mica-card shadow-elevated",
-        gunclub: "mica shadow-present after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warm-stone/40 after:to-transparent"
+        default: "bg-card shadow-flat",
+        premium: "mica-overlay after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-rusty-orange/40 after:to-transparent",
+        elite: "mica-modal after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warning-amber/50 after:to-transparent",
+        glass: "mica-card",
+        gunclub: "bg-card-surface shadow-flat after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-warm-stone/40 after:to-transparent"
       },
       layout: {
         horizontal: "",
@@ -41,19 +52,105 @@ const siteNavigationVariants = cva(
     defaultVariants: {
       variant: "default",
       layout: "horizontal",
-      sticky: true
+      sticky: false
     }
   }
 )
 
+// Navigation items with enhanced configuration
 const navigationItems = [
-  { label: "Home", icon: CubeTransparentIcon, href: "/", color: "nav-home" },
-  { label: "Events", icon: TicketIcon, href: "/events", color: "nav-events" },
-  { label: "Directory", icon: IdentificationIcon, href: "/directory", color: "nav-directory" },
-  { label: "Armory", icon: PlusCircleIcon, href: "/armory", color: "nav-armory" },
-  { label: "Intel", icon: MapPinIcon, href: "/intel", color: "nav-intel" },
-  { label: "Buy & Sell", icon: BanknotesIcon, href: "/buysell", color: "nav-buysell" },
-  { label: "Forums", icon: ChatBubbleLeftRightIcon, href: "/forums", color: "nav-forums", isForumLink: true }
+  {
+    label: 'Home',
+    href: '/',
+    icon: CubeTransparentIcon,
+    color: 'rusty-orange',
+    description: 'Your community dashboard',
+    dropdownContent: [
+      { label: 'Dashboard', href: '/dashboard', description: 'Personal activity center' },
+      { label: 'Recent Activity', href: '/activity', description: 'Latest community updates' },
+      { label: 'Bookmarks', href: '/bookmarks', description: 'Saved items and favorites' },
+      { label: 'Settings', href: '/settings', description: 'Account preferences' }
+    ]
+  },
+  {
+    label: 'Events',
+    href: '/events', 
+    icon: TicketIcon,
+    color: 'slate-blue',
+    description: 'Competitions & training',
+    dropdownContent: [
+      { label: 'Upcoming Events', href: '/events', description: 'Next training and competitions' },
+      { label: 'Event Calendar', href: '/events/calendar', description: 'Full calendar view' },
+      { label: 'Past Events', href: '/events/archive', description: 'Previous event results' },
+      { label: 'Submit Event', href: '/events/submit', description: 'Add your event' }
+    ]
+  },
+  {
+    label: 'Directory',
+    href: '/directory',
+    icon: BuildingStorefrontIcon,
+    color: 'ayu-green', 
+    description: 'Local gun businesses',
+    dropdownContent: [
+      { label: 'All Businesses', href: '/directory', description: 'Complete business directory' },
+      { label: 'Gun Stores', href: '/directory?category=retail', description: 'Licensed firearms dealers' },
+      { label: 'Ranges', href: '/directory?category=range', description: 'Shooting ranges and facilities' },
+      { label: 'Gunsmiths', href: '/directory?category=gunsmith', description: 'Professional gunsmiths' },
+      { label: 'Training', href: '/directory?category=training', description: 'Certified instructors' }
+    ]
+  },
+  {
+    label: 'Armory',
+    href: '/armory',
+    icon: ShieldCheckIcon,
+    color: 'ayu-purple',
+    description: 'Gear reviews & guides',
+    dropdownContent: [
+      { label: 'Gear Reviews', href: '/armory', description: 'Community gear reviews' },
+      { label: 'Recommendations', href: '/armory/recommendations', description: 'Top-rated equipment' },
+      { label: 'Maintenance Guides', href: '/armory/guides', description: 'Care and maintenance' },
+      { label: 'New Gear', href: '/armory/new', description: 'Latest gear releases' }
+    ]
+  },
+  {
+    label: 'Intel',
+    href: '/intel',
+    icon: BookOpenIcon,
+    color: 'ayu-red',
+    description: 'Knowledge & training',
+    dropdownContent: [
+      { label: 'Training Guides', href: '/intel', description: 'Educational content' },
+      { label: 'Legal Updates', href: '/intel/legal', description: 'Idaho firearms law' },
+      { label: 'Safety Resources', href: '/intel/safety', description: 'Safety best practices' },
+      { label: 'Techniques', href: '/intel/techniques', description: 'Shooting techniques' }
+    ]
+  },
+  {
+    label: 'Buy & Sell',
+    href: '/buysell',
+    icon: BanknotesIcon,
+    color: 'ayu-teal',
+    description: 'Marketplace',
+    dropdownContent: [
+      { label: 'Browse Listings', href: '/buysell', description: 'All marketplace items' },
+      { label: 'Post Listing', href: '/buysell/post', description: 'Sell your items' },
+      { label: 'My Listings', href: '/buysell/my-listings', description: 'Manage your posts' },
+      { label: 'Saved Items', href: '/buysell/saved', description: 'Items you\'re watching' }
+    ]
+  },
+  {
+    label: 'Forums',
+    href: '/forums',
+    icon: ChatBubbleLeftRightIcon,
+    color: 'warm-stone',
+    description: 'Community discussion',
+    dropdownContent: [
+      { label: 'General Discussion', href: '/forums/general', description: 'Open community chat' },
+      { label: 'Technical Q&A', href: '/forums/technical', description: 'Technical questions' },
+      { label: 'Local Events', href: '/forums/events', description: 'Community-organized events' },
+      { label: 'Buy/Sell/Trade', href: '/forums/trade', description: 'Trading discussions' }
+    ]
+  }
 ]
 
 export interface SiteNavigationProps 
@@ -72,402 +169,181 @@ export function SiteNavigation({
   customContent,
   ...props
 }: SiteNavigationProps) {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
-  const [openDropdown, setOpenDropdown] = React.useState<string | null>(null)
-  const [hoveredPath, setHoveredPath] = React.useState<string | null>(null)
-  const [logoClickCount, setLogoClickCount] = React.useState(0)
-  const [showIdahoFacts, setShowIdahoFacts] = React.useState(false)
-  const [showKonamiNotification, setShowKonamiNotification] = React.useState(false)
   const pathname = usePathname()
-  const { getForumUrl, isAuthenticated } = useAuth()
-  const { fireBrass, visitSection } = useTacticalTracker()
-  const { isNightOps, activateNightOps, toggleNightOps } = useNightOpsTheme()
+  const { isAuthenticated } = useAuth()
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+  const [activeDropdown, setActiveDropdown] = React.useState<string | null>(null)
+  const [hoveredPath, setHoveredPath] = React.useState<string | null>(null)
   
-  // Konami code easter egg
-  const { isActivated, progress, totalSteps, reset } = useKonamiCode({
-    onComplete: () => {
-      activateNightOps()
-      setShowKonamiNotification(true)
-      // Hide notification after 5 seconds
-      setTimeout(() => setShowKonamiNotification(false), 5000)
-    },
-    resetOnComplete: true
-  })
+  const timeoutRef = React.useRef<NodeJS.Timeout>()
 
-  // Track section visits and fire brass on navigation
-  React.useEffect(() => {
-    // Only fire brass and track section on pathname changes, not on every render
-    // Determine current section and track visit
-    let currentSection = 'home'
-    if (pathname.startsWith('/events')) currentSection = 'events'
-    else if (pathname.startsWith('/directory')) currentSection = 'directory'
-    else if (pathname.startsWith('/armory')) currentSection = 'armory'
-    else if (pathname.startsWith('/intel')) currentSection = 'intel'
-    else if (pathname.startsWith('/buysell')) currentSection = 'buysell'
-    else if (pathname.startsWith('/forums')) currentSection = 'forums'
-    
-    // FireIcon brass for page navigation
-    fireBrass()
-    
-    // Track section visit
-    visitSection(currentSection)
-  }, [pathname]) // Only depend on pathname, not the functions
-
-  // Idaho facts easter egg
-  const idahoFacts = [
-    "Idaho produces 1/3 of all potatoes grown in the US",
-    "Hell's Canyon is the deepest river gorge in North America",
-    "Idaho has over 3,100 miles of fishable streams and rivers",
-    "The state motto is 'Esto Perpetua' - Let it be perpetual",
-    "Idaho has 63 shooting ranges and firearms training facilities",
-    "Boise is known as the 'City of Trees' with over 180,000 trees",
-    "Idaho leads the nation in trout production"
-  ]
-
-  const handleLogoClick = () => {
-    const newCount = logoClickCount + 1
-    setLogoClickCount(newCount)
-    
-    if (newCount === 7) {
-      setShowIdahoFacts(true)
-      setLogoClickCount(0)
-      // Hide after 5 seconds
-      setTimeout(() => setShowIdahoFacts(false), 5000)
-    }
-  }
-
-  // Get current page color based on pathname
-  const getCurrentPageColor = () => {
-    if (pathname === '/') return 'text-nav-home'
-    if (pathname.startsWith('/events')) return 'text-nav-events'
-    if (pathname.startsWith('/directory')) return 'text-nav-directory'
-    if (pathname.startsWith('/armory')) return 'text-nav-armory'
-    if (pathname.startsWith('/intel')) return 'text-nav-intel'
-    if (pathname.startsWith('/buysell')) return 'text-nav-buysell'
-    if (pathname.startsWith('/forums')) return 'text-nav-forums'
-    return 'text-rusty-orange' // fallback
-  }
-
-  // Get current page icon component based on pathname
-  const getCurrentPageIcon = () => {
-    if (pathname === '/') return CubeTransparentIcon
-    if (pathname.startsWith('/events')) return TicketIcon
-    if (pathname.startsWith('/directory')) return IdentificationIcon
-    if (pathname.startsWith('/armory')) return PlusCircleIcon
-    if (pathname.startsWith('/intel')) return MapPinIcon
-    if (pathname.startsWith('/buysell')) return BanknotesIcon
-    if (pathname.startsWith('/forums')) return ChatBubbleLeftRightIcon
-    return CubeTransparentIcon // fallback
-  }
-
-  // Dropdown handlers
-  const handleDropdownToggle = (section: string) => {
-    setOpenDropdown(openDropdown === section ? null : section)
-    setIsMobileMenuOpen(false) // Close mobile menu if open
-  }
-
-  const handleDropdownClose = () => {
-    setOpenDropdown(null)
-  }
-
-  // Create personalization context
-  const personalizationContext = React.useMemo(() => ({
-    userId: isAuthenticated ? 'user-123' : undefined, // Replace with actual user ID
-    userType: isAuthenticated ? 'member' : 'visitor' as const,
-    location: {
-      city: 'Boise',
-      state: 'ID'
-    },
-    recentViews: [], // Would come from user data/localStorage
-    preferences: {
-      favoriteCategories: [],
-      notifications: true,
-      darkMode: isNightOps,
-      compactMode: false
-    },
-    bookmarks: [] // Would come from user data
-  }), [isAuthenticated, isNightOps])
-
-  // Get current page subtitle based on pathname (memoized for performance)
-  const currentPageSubtitle = React.useMemo(() => {
-    if (pathname === '/') return 'Treasure Valley Collective'
-    if (pathname.startsWith('/events')) return 'Your Trusted Event Source'
-    if (pathname.startsWith('/directory')) return 'Local Business Network'
-    if (pathname.startsWith('/armory')) return 'Gear Reviews & Insights'
-    if (pathname.startsWith('/intel')) return 'Range Conditions & Data'
-    if (pathname.startsWith('/buysell')) return 'Community Commerce Hub'
-    if (pathname.startsWith('/forums')) return 'Community Discussion Space'
-    return 'Treasure Valley Collective' // fallback
-  }, [pathname])
-
-  // Get background color for magic line based on hovered/active path
-  const getMagicLineColor = (itemColor: string) => {
-    const colorMap = {
-      'nav-home': 'bg-nav-home',
-      'nav-events': 'bg-nav-events',
-      'nav-directory': 'bg-nav-directory',
-      'nav-armory': 'bg-nav-armory',
-      'nav-intel': 'bg-nav-intel',
-      'nav-buysell': 'bg-nav-buysell',
-      'nav-forums': 'bg-nav-forums'
-    }
-    
-    const result = colorMap[itemColor as keyof typeof colorMap] || 'bg-rusty-orange'
-    // Debug log for development
-    if (process.env.NODE_ENV === 'development') {
-    }
-    return result
-  }
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-    if (openDropdown) {
-      setOpenDropdown(null)
-    }
-  }
-
-  // Helper function to check if URL is external
-  const isExternalUrl = (url: string) => url.startsWith('http')
-
-  // Helper function to render navigation link
-  const renderNavLink = (item: typeof navigationItems[0], className: string, children: React.ReactNode) => {
-    // Special handling for forum links
-    if (item.isForumLink) {
-      const handleForumClick = async (e: React.MouseEvent) => {
-        e.preventDefault()
-        
-        if (isAuthenticated) {
-          // Get authenticated forum URL
-          const forumUrl = await getForumUrl()
-          if (forumUrl) {
-            window.open(forumUrl, '_blank')
-          } else {
-            // Fallback to regular forum URL
-            window.open('https://boisegunclub.com/forums/', '_blank')
-          }
-        } else {
-          // Open forum as guest
-          window.open('https://boisegunclub.com/forums/', '_blank')
-        }
-      }
-
-      return (
-        <button 
-          onClick={handleForumClick}
-          className={className}
-        >
-          {children}
-        </button>
-      )
-    }
-
-    const isExternal = isExternalUrl(item.href)
-    
-    if (isExternal) {
-      return (
-        <a
-          href={item.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={className}
-        >
-          {children}
-        </a>
-      )
-    }
-    
-    return (
-      <Link href={item.href} className={className}>
-        {children}
-      </Link>
-    )
-  }
-
-  // Get individual hover classes for each nav item - 1970s theme-aware colors
+  // Color utility functions
   const getHoverClasses = (color: string) => {
     switch(color) {
-      case 'nav-home': return 'hover:text-nav-home'
-      case 'nav-events': return 'hover:text-nav-events'
-      case 'nav-directory': return 'hover:text-nav-directory'
-      case 'nav-armory': return 'hover:text-nav-armory'
-      case 'nav-intel': return 'hover:text-nav-intel'
-      case 'nav-buysell': return 'hover:text-nav-buysell'
-      case 'nav-forums': return 'hover:text-nav-forums'
-      default: return 'hover:text-nav-home'
+      case 'rusty-orange': return 'hover:text-rusty-orange hover:bg-rusty-orange/10'
+      case 'slate-blue': return 'hover:text-slate-blue hover:bg-slate-blue/10'
+      case 'ayu-green': return 'hover:text-ayu-green hover:bg-ayu-green/10'
+      case 'ayu-purple': return 'hover:text-ayu-purple hover:bg-ayu-purple/10'
+      case 'ayu-red': return 'hover:text-ayu-red hover:bg-ayu-red/10'
+      case 'ayu-teal': return 'hover:text-ayu-teal hover:bg-ayu-teal/10'
+      default: return 'hover:text-rusty-orange hover:bg-rusty-orange/10'
     }
   }
 
   const getActiveTextClass = (color: string) => {
     switch(color) {
-      case 'nav-home': return 'text-nav-home'
-      case 'nav-events': return 'text-nav-events'
-      case 'nav-directory': return 'text-nav-directory'
-      case 'nav-armory': return 'text-nav-armory'
-      case 'nav-intel': return 'text-nav-intel'
-      case 'nav-buysell': return 'text-nav-buysell'
-      case 'nav-forums': return 'text-nav-forums'
-      default: return 'text-nav-home'
+      case 'rusty-orange': return 'text-rusty-orange'
+      case 'slate-blue': return 'text-slate-blue'
+      case 'ayu-green': return 'text-ayu-green'
+      case 'ayu-purple': return 'text-ayu-purple'
+      case 'ayu-red': return 'text-ayu-red'
+      case 'ayu-teal': return 'text-ayu-teal'
+      case 'warm-stone': return 'text-warm-stone'
+      default: return 'text-rusty-orange'
     }
   }
 
+  const getMagicLineColor = (color: string) => {
+    switch(color) {
+      case 'rusty-orange': return 'bg-rusty-orange'
+      case 'slate-blue': return 'bg-slate-blue'
+      case 'ayu-green': return 'bg-ayu-green'
+      case 'ayu-purple': return 'bg-ayu-purple'
+      case 'ayu-red': return 'bg-ayu-red'
+      case 'ayu-teal': return 'bg-ayu-teal'
+      case 'warm-stone': return 'bg-warm-stone'
+      default: return 'bg-rusty-orange'
+    }
+  }
+
+  const getSectionMicaClass = (color: string) => {
+    switch(color) {
+      case 'rusty-orange': return 'mica-navbar'
+      case 'slate-blue': return 'mica-events'
+      case 'ayu-green': return 'mica-directory'
+      case 'ayu-purple': return 'mica-armory'
+      case 'ayu-red': return 'mica-intel'
+      case 'ayu-teal': return 'mica-buysell'
+      case 'warm-stone': return 'mica-forums'
+      default: return 'mica-navbar'
+    }
+  }
+
+  // Simple hover management - no competing systems
+  const handleNavHover = (sectionKey: string | null) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
+
+    if (sectionKey) {
+      setActiveDropdown(sectionKey)
+    } else {
+      timeoutRef.current = setTimeout(() => {
+        setActiveDropdown(null)
+      }, 150)
+    }
+  }
+
+  // Cleanup on unmount
+  React.useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [])
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+    setActiveDropdown(null)
+  }
+
   return (
-    <nav
-      className={cn(siteNavigationVariants({ variant, layout, sticky }), "site-navigation", className)}
+    <nav 
+      className={cn(
+        siteNavigationVariants({ variant, layout, sticky }),
+        "site-navigation transition-all duration-300 relative z-50 border-b border-border/50",
+        className
+      )}
       {...props}
     >
-      
-      <div className="w-full max-w-site mx-auto px-mobile-sm sm:px-md container-mobile">
-        <div className="relative flex items-center justify-between h-14 sm:h-16 touch-target">
-          
+      {/* Background texture */}
+      <div className="absolute inset-0 -z-10">
+        <NavigationTexture />
+      </div>
+
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           {showLogo && (
-            <div className="flex items-center relative">
-              <div 
-                onClick={handleLogoClick}
-                className="flex items-center gap-xs sm:gap-sm cursor-pointer"
-                title={logoClickCount > 0 ? `${7 - logoClickCount} clicks to Idaho facts` : 'Click 7 times for Idaho facts'}
-              >
-                <div className="flex items-center gap-xs sm:gap-sm">
-                  <MotionDiv
-                    key={pathname} // This triggers re-render on route change
-                    className={getCurrentPageColor()}
-                    initial={{ 
-                      rotate: 0,
-                      scale: 1
-                    }}
-                    animate={{ 
-                      rotate: 332, // Single spin landing at ~28 degrees off-kilter (360-28=332)
-                      scale: [1, 1.05, 1]
-                    }}
-                    transition={{ 
-                      duration: 0.8,
-                      ease: [0.25, 0.46, 0.45, 0.94],
-                      times: [0, 0.7, 1]
-                    }}
-                    whileHover={{ 
-                      rotate: [332, 325, 340, 332], // Hover wiggle from tilted position
-                      transition: { duration: 0.5, ease: "easeInOut" }
-                    }}
-                    style={{ 
-                      transform: 'translate3d(0,0,0)', // Force GPU acceleration
-                      willChange: 'transform' // Only transform, not auto
-                    }}
-                  >
-                    {React.createElement(getCurrentPageIcon(), { 
-                      className: "size-6 sm:size-8"
-                    })}
-                  </MotionDiv>
-                  <div className="hidden sm:block">
-                    <div className="text-heading-base sm:text-heading-lg font-rajdhani text-card-foreground leading-none uppercase">
-                      <span className="font-[800]">The Boise</span> <span className="font-[300]">Gun Club</span>
-                    </div>
-                    <p className="text-heading-xs sm:text-heading-sm font-rajdhani font-[500] text-muted-foreground leading-[0.8] lowercase tracking-wider text-center -mt-2 sm:-mt-3">
-                      {currentPageSubtitle}
-                    </p>
-                  </div>
-                  {/* Mobile-only abbreviated logo */}
-                  <div className="block sm:hidden">
-                    <div className="text-heading-sm font-rajdhani text-card-foreground leading-none uppercase font-[800]">
-                      BGC
-                    </div>
-                  </div>
-                </div>
+            <Link href="/" className="flex items-center space-x-2 z-10">
+              <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
+                <ShieldCheckIcon className="w-5 h-5 text-primary-foreground" />
               </div>
-              
-              {/* Idaho Facts Easter Egg */}
-              {showIdahoFacts && (
-                <MotionDiv
-                  className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-card border border-nav-home p-lg rounded-xs shadow-prominent z-50 max-w-md"
-                  initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                >
-                  <div className="text-center space-y-sm">
-                    <div className="text-nav-home font-rajdhani font-bold text-lg">
-                      🏔️ Idaho Facts
-                    </div>
-                    <div className="text-sm text-muted-foreground leading-relaxed">
-                      {idahoFacts[Math.floor(Math.random() * idahoFacts.length)]}
-                    </div>
-                    <div className="text-xs text-muted-foreground/70">
-                      Click the logo 7 times again for another fact!
-                    </div>
-                  </div>
-                </MotionDiv>
-              )}
-              
-              {/* Konami Code Night Ops Notification */}
-              {showKonamiNotification && (
-                <MotionDiv
-                  className="absolute top-full right-0 mt-2 bg-card border border-secondary p-lg rounded-xs shadow-commanding z-50 max-w-sm"
-                  initial={{ opacity: 0, x: 20, scale: 0.95 }}
-                  animate={{ opacity: 1, x: 0, scale: 1 }}
-                  exit={{ opacity: 0, x: 20, scale: 0.95 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                >
-                  <div className="text-center space-y-sm">
-                    <div className="text-secondary font-rajdhani font-bold text-lg">
-                      🌙 NIGHT OPS ACTIVATED
-                    </div>
-                    <div className="text-sm text-muted-foreground leading-relaxed">
-                      Konami Code detected! Night vision tactical theme engaged.
-                    </div>
-                    <div className="text-xs text-secondary/70">
-                      Toggle with the button in the navigation bar
-                    </div>
-                  </div>
-                </MotionDiv>
-              )}
-            </div>
+              <span className="font-semibold text-lg">Boise Gun Club</span>
+            </Link>
           )}
 
-          {/* Desktop Navigation - Individual Dropdowns */}
-          <div className="hidden md:flex items-center relative">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-0">
             {navigationItems.slice(0, 7).map((item, index) => {
-              const isActive = pathname === item.href
+              const sectionKey = item.label.toLowerCase().replace(' & ', '').replace(' ', '')
+              const isDropdownOpen = activeDropdown === sectionKey
+              const isActive = pathname === item.href || pathname.startsWith(item.href + '/')
               const isHovered = hoveredPath === item.href
-              const shouldShowLine = item.href === (hoveredPath || pathname)
-              const sectionKey = item.label.toLowerCase().replace(' & ', '').replace(' ', '') as 'events' | 'directory' | 'armory' | 'intel' | 'buysell' | 'forums'
-              const hasDropdown = ['events', 'directory', 'armory', 'intel', 'buysell', 'forums'].includes(sectionKey)
-              const isDropdownOpen = openDropdown === sectionKey
-              
+              const Icon = item.icon
+
               return (
                 <React.Fragment key={item.href}>
                   <div 
-                    className="relative px-sm py-0"
-                    onMouseEnter={() => setHoveredPath(item.href)}
-                    onMouseLeave={() => setHoveredPath(pathname)}
+                    className="relative px-0.5 py-0 mx-1"
+                    onMouseEnter={() => {
+                      setHoveredPath(item.href)
+                      handleNavHover(sectionKey)
+                    }}
+                    onMouseLeave={() => {
+                      setHoveredPath(null)
+                      handleNavHover(null)
+                    }}
                   >
-                    {/* Tactical Equipment Case Highlight - Always visible on hover/active/dropdown open */}
+                    {/* Tactical Equipment Case Highlight */}
                     {(isHovered || isActive || isDropdownOpen) && (
                       <MotionDiv
-                        className="absolute inset-0"
+                        className="absolute inset-0 -z-10 rounded"
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.1, ease: "easeOut" }}
                       >
-                        {/* Document-style Tactical Brackets */}
-                        {/* Top Left - Standard square bracket */}
-                        <div className={`absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
+                        {/* Tactical Brackets with Animation */}
+                        <MotionDiv
+                          className="absolute top-0 left-0 flex flex-col justify-between h-full"
+                          animate={{
+                            x: isHovered || isDropdownOpen ? -8 : 0
+                          }}
+                          transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        >
+                          <div className={`w-3 h-3 border-l-2 border-t-2 ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
+                          <div className={`w-3 h-3 border-l-2 border-b-2 ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
+                        </MotionDiv>
                         
-                        {/* Top Right - Standard bracket with filled square accent */}
-                        <div className={`absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
-                        
-                        
-                        {/* Bottom Left - Standard square bracket */}
-                        <div className={`absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
-                        
-                        {/* Bottom Right - Standard square bracket */}
-                        <div className={`absolute bottom-0 right-0 w-3 h-3 border-r-2 border-b-2 ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
+                        <MotionDiv
+                          className="absolute top-0 right-0 flex flex-col justify-between h-full"
+                          animate={{
+                            x: isHovered || isDropdownOpen ? 8 : 0
+                          }}
+                          transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        >
+                          <div className={`w-3 h-3 border-r-2 border-t-2 ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
+                          <div className={`w-3 h-3 border-r-2 border-b-2 ${getMagicLineColor(item.color).replace('bg-', 'border-')} opacity-90`} />
+                        </MotionDiv>
                       </MotionDiv>
                     )}
-                    
-                    {hasDropdown ? (
-                      <button
-                        onClick={() => handleDropdownToggle(sectionKey)}
-                        className={`relative z-10 flex items-center gap-xs px-xs py-xs text-body-base font-rajdhani font-semibold transition-all duration-200 ${
+
+                    <div className="relative z-10">
+                      <Link
+                        href={item.href}
+                        className={`flex items-center justify-between w-full px-xs py-xs text-body-base font-rajdhani font-semibold transition-all duration-300 gap-sm ${
                           isActive || isDropdownOpen
                             ? getActiveTextClass(item.color)
                             : isHovered 
@@ -475,71 +351,115 @@ export function SiteNavigation({
                               : `text-muted-foreground ${getHoverClasses(item.color)}`
                         }`}
                       >
-                        <MotionDiv 
-                          className="flex items-center gap-xs"
-                          whileHover={{ scale: 1.02 }}
-                          transition={{ duration: 0.15, ease: "easeOut" }}
-                        >
+                        <div className="flex items-center gap-sm relative">
+                          <Icon className="w-4 h-4 flex-shrink-0" />
                           <MotionDiv
-                            whileHover={{ 
-                              scale: 1.05,
-                              transition: { duration: 0.12, ease: "easeOut" }
-                            }}
-                            whileTap={{ 
-                              scale: 0.98,
-                              transition: { duration: 0.08 }
-                            }}
+                            animate={{ x: isHovered || isDropdownOpen ? -4 : 0 }}
+                            transition={{ duration: 0.25 }}
+                            className="flex items-center"
                           >
-                            <item.icon className="size-4" />
+                            <span>{item.label}</span>
                           </MotionDiv>
-                          {item.label.toUpperCase()}
-                        </MotionDiv>
-                      </button>
-                    ) : (
-                      renderNavLink(
-                        item,
-                        `relative z-10 flex items-center gap-xs px-xs py-xs text-body-base font-rajdhani font-semibold transition-all duration-200 ${
-                          isActive
-                            ? getActiveTextClass(item.color)
-                            : isHovered 
-                              ? getActiveTextClass(item.color)
-                              : `text-muted-foreground ${getHoverClasses(item.color)}`
-                        }`,
-                        <MotionDiv 
-                          className="flex items-center gap-xs"
-                          whileHover={{ scale: 1.02 }}
-                          transition={{ duration: 0.15, ease: "easeOut" }}
-                        >
+                          
+                          {/* Arrow reveal system */}
                           <MotionDiv
-                            whileHover={{ 
-                              scale: 1.05,
-                              transition: { duration: 0.12, ease: "easeOut" }
+                            className="absolute right-0 flex items-center"
+                            style={{ x: 20 }}
+                            animate={{ 
+                              x: isHovered || isDropdownOpen ? 0 : 20,
+                              opacity: isHovered || isDropdownOpen ? 1 : 0
                             }}
-                            whileTap={{ 
-                              scale: 0.98,
-                              transition: { duration: 0.08 }
-                            }}
+                            transition={{ duration: 0.25 }}
                           >
-                            <item.icon className="size-4" />
+                            <MotionDiv
+                              animate={{ 
+                                rotate: isDropdownOpen ? 90 : 0
+                              }}
+                              transition={{ duration: 0.25 }}
+                            >
+                              <ArrowRightIcon className="w-3 h-3" />
+                            </MotionDiv>
                           </MotionDiv>
-                          {item.label.toUpperCase()}
-                        </MotionDiv>
-                      )
-                    )}
-                    
-                    {/* Individual Navigation Dropdowns */}
-                    {hasDropdown && (
-                      <NavigationDropdown
-                        section={sectionKey}
-                        isOpen={isDropdownOpen}
-                        onClose={handleDropdownClose}
-                        onToggle={() => handleDropdownToggle(sectionKey)}
-                        className=""
-                      />
+                        </div>
+                      </Link>
+                    </div>
+
+                    {/* Simple Dropdown */}
+                    {item.dropdownContent && isDropdownOpen && (
+                      <MotionDiv
+                        className={cn(
+                          "absolute top-full left-0 w-80 z-50 mt-1 rounded-lg border border-border shadow-lg overflow-hidden",
+                          getSectionMicaClass(item.color)
+                        )}
+                        initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                        transition={{ 
+                          duration: 0.2, 
+                          ease: [0.25, 0.46, 0.45, 0.94]
+                        }}
+                      >
+                        <div className="p-4">
+                          {/* Header */}
+                          <div className="mb-4 border-b border-border/50 pb-3">
+                            <div className="flex items-center gap-3">
+                              <div className={cn(
+                                "w-10 h-10 rounded-lg flex items-center justify-center",
+                                `bg-${item.color}/10 text-${item.color}`
+                              )}>
+                                <Icon className="w-5 h-5" />
+                              </div>
+                              <div>
+                                <h3 className="font-semibold text-lg">{item.label}</h3>
+                                <p className="text-sm text-muted-foreground">{item.description}</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Search */}
+                          <div className="mb-4">
+                            <div className="relative">
+                              <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                              <input
+                                type="text"
+                                placeholder={`Search ${item.label.toLowerCase()}...`}
+                                className="w-full pl-10 pr-4 py-2 text-sm bg-muted/50 border border-border/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
+                              />
+                            </div>
+                          </div>
+
+                          {/* Menu Items */}
+                          <div className="space-y-1">
+                            {item.dropdownContent.map((dropdownItem, idx) => (
+                              <Link
+                                key={dropdownItem.href}
+                                href={dropdownItem.href}
+                                className="flex items-start gap-3 p-3 rounded-lg hover:bg-accent/50 transition-colors group"
+                                onClick={() => setActiveDropdown(null)}
+                              >
+                                <div className="flex-shrink-0 mt-0.5">
+                                  {idx === 0 && <SparklesIcon className="w-4 h-4 text-muted-foreground group-hover:text-accent-foreground" />}
+                                  {idx === 1 && <FireIcon className="w-4 h-4 text-muted-foreground group-hover:text-accent-foreground" />}
+                                  {idx === 2 && <LightBulbIcon className="w-4 h-4 text-muted-foreground group-hover:text-accent-foreground" />}
+                                  {idx >= 3 && <ArrowRightIcon className="w-4 h-4 text-muted-foreground group-hover:text-accent-foreground" />}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <div className="font-medium text-sm group-hover:text-accent-foreground">
+                                    {dropdownItem.label}
+                                  </div>
+                                  <div className="text-xs text-muted-foreground mt-0.5">
+                                    {dropdownItem.description}
+                                  </div>
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </MotionDiv>
                     )}
                   </div>
                   
-                  {/* Separator lines between nav items - now with subtle glow */}
+                  {/* Separator lines */}
                   {index < navigationItems.slice(0, 7).length - 1 && (
                     <div className="h-4 w-px mx-xs relative">
                       <div className="absolute inset-0 w-px bg-muted-foreground/20" />
@@ -551,100 +471,70 @@ export function SiteNavigation({
             })}
           </div>
 
-          {/* Custom Content / Auth Buttons */}
-          <div className="hidden md:flex items-center gap-base">
-            {/* Night Ops Toggle (only show if activated) */}
-            {isNightOps && (
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={toggleNightOps}
-                className="text-xs font-rajdhani font-bold tracking-wider"
-                title="Toggle Night Ops Mode (Konami Code Unlocked)"
-              >
-                🌙 NIGHT OPS
-              </Button>
-            )}
+          {/* Right side */}
+          <div className="flex items-center space-x-4">
+            <NavbarWeatherWidget className="hidden lg:block" />
+            <AuthButton />
             
-            {/* Combined Weather and Auth Widget */}
-            <div className="mica-subtle border border-border/30 rounded-xs p-1 flex items-center gap-xs">
-              <div className="navbar-widget-item">
-                <NavbarWeatherWidget />
-              </div>
-              <div className="h-4 w-px bg-border/30" />
-              <div className="navbar-widget-item">
-                {customContent || (
-                  <AuthButton variant="forum-aware" showTrialButton={false} />
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
             <Button
               variant="ghost"
               size="sm"
+              className="lg:hidden"
               onClick={toggleMobileMenu}
-              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <XMarkIcon className="h-[var(--icon-base)] w-[var(--icon-base)]" />
+                <XMarkIcon className="w-5 h-5" />
               ) : (
-                <Bars3Icon className="h-[var(--icon-base)] w-[var(--icon-base)]" />
+                <Bars3Icon className="w-5 h-5" />
               )}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Menu - Enhanced for touch */}
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <MotionDiv 
-            className="md:hidden py-mobile-lg sm:py-lg relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent"
+          <MotionDiv
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
+            animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            className="lg:hidden border-t border-border/50 py-4"
           >
-            <div className="space-y-sm">
-              {navigationItems.map((item) => (
-                <div key={item.href} onClick={() => setIsMobileMenuOpen(false)}>
-                  {renderNavLink(
-                    item,
-                    `flex items-center gap-sm px-mobile-md sm:px-lg py-mobile-md sm:py-lg text-body-base font-rajdhani font-semibold transition-all duration-150 rounded-xs touch-target ${
-                      pathname === item.href 
-                        ? `${getActiveTextClass(item.color)} bg-muted/30`
-                        : `text-muted-foreground ${getHoverClasses(item.color)} hover:bg-muted/20`
-                    }`,
-                    <>
-                      <item.icon className="size-5" />
-                      <div className="flex flex-col">
-                        <span>{item.label.toUpperCase()}</span>
-                        <span className="text-xs text-muted-foreground">
-                          {item.label === 'Events' && 'Competitions & Training'}
-                          {item.label === 'Directory' && 'Local Businesses'}
-                          {item.label === 'Armory' && 'Gear Reviews'}
-                          {item.label === 'Intel' && 'Range Conditions'}
-                          {item.label === 'Buy & Sell' && 'Community Commerce'}
-                          {item.label === 'Forums' && 'Community Discussion'}
-                        </span>
+            <div className="space-y-2">
+              {navigationItems.map((item) => {
+                const isActive = pathname === item.href || pathname.startsWith(item.href + '/')
+                const Icon = item.icon
+
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={cn(
+                      'flex items-center space-x-3 px-3 py-2 rounded-md transition-colors w-full',
+                      'hover:bg-accent hover:text-accent-foreground',
+                      isActive && 'bg-accent text-accent-foreground'
+                    )}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Icon className="w-5 h-5" />
+                    <div className="flex-1">
+                      <div className="font-medium">{item.label}</div>
+                      <div className="text-xs text-muted-foreground">
+                        {item.description}
                       </div>
-                    </>
-                  )}
-                </div>
-              ))}
-            </div>
-            
-            <div className="pt-mobile-lg sm:pt-lg mt-mobile-lg sm:mt-lg relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-rusty-orange/30 before:to-transparent">
-              <div className="flex flex-col gap-sm">
-                <NavbarWeatherWidget />
-                <AuthButton variant="outline" showTrialButton={false} className="flex-col items-stretch touch-target" />
-              </div>
+                    </div>
+                  </Link>
+                )
+              })}
             </div>
           </MotionDiv>
         )}
       </div>
 
+      {customContent && (
+        <div className="border-t border-border/50">
+          {customContent}
+        </div>
+      )}
     </nav>
   )
 }
