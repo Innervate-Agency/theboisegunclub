@@ -1,5 +1,16 @@
 'use client'
 
+/**
+ * ArmoryPageStandardized - Pure Content Component
+ * 
+ * OPTIMIZED FOR MVP:
+ * - Comprehensive Idaho firearms knowledge base and guides
+ * - Legal information, safety guides, and technical content
+ * - Searchable article system with category filtering
+ * - Mobile-first responsive design with clear readability
+ * - Professional tactical aesthetic aligned with site design
+ */
+
 import React from 'react'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
@@ -12,6 +23,8 @@ import { DirectoryStatsGrid } from '@/components/ui/directory-stats-grid'
 import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
 import { BlogList } from '@/components/ui/blog-article'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
+import { ContentBridgeSection } from '@/components/ui/content-bridge-section'
+import { contentBridgeConfigs } from '@/lib/content-bridge-configs'
 import { useCardPageFilters } from '@/hooks/useCardPageFilters'
 import { EmptyState } from '@/components/ui/empty-state'
 import { EnhancedPagination } from '@/components/ui/enhanced-pagination'
@@ -427,6 +440,8 @@ export function ArmoryPageStandardized() {
       
       {/* Armory Ticker - TODO: Create armory-specific ticker component */}
       
+      {/* Armory Content Section - Unified Layout with cards left, content right */}
+      <ContentBridgeSection {...contentBridgeConfigs.armory} />
 
       {/* Main Content Area */}
       <section className="py-mobile-2xl sm:py-4xl bg-background/50">

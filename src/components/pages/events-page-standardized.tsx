@@ -1,5 +1,16 @@
 'use client'
 
+/**
+ * EventsPageStandardized - Pure Content Component
+ * 
+ * OPTIMIZED FOR MVP: 
+ * - Stripped outer layout concerns (min-h-screen, bg-background wrapper)
+ * - Layout component will handle structural decisions
+ * - Comprehensive events filtering and display system
+ * - Mobile-first responsive design with 44px touch targets
+ * - Professional tactical aesthetic
+ */
+
 import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -7,7 +18,8 @@ import { Input } from '@/components/ui/input'
 import { Card, CardContent } from '@/components/ui/card'
 import { EventCard } from '@/components/ui/EventCard'
 import { EventTicker } from '@/components/ui/event-ticker'
-import { EventsContentSection } from '@/components/ui/events-content-section'
+import { ContentBridgeSection } from '@/components/ui/content-bridge-section'
+import { contentBridgeConfigs } from '@/lib/content-bridge-configs'
 import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { useCardPageFilters } from '@/hooks/useCardPageFilters'
@@ -538,14 +550,14 @@ export function EventsPageStandardized() {
   )
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
       {heroContent}
       
       {/* Events Ticker - Live upcoming events */}
       <EventTicker />
       
-      {/* Events Content Section - SEO and Community Engagement */}
-      <EventsContentSection />
+      {/* Events Content Section - Unified Layout with cards left, content right */}
+      <ContentBridgeSection {...contentBridgeConfigs.events} />
 
       {/* Main Content Area */}
       <section className="py-mobile-2xl sm:py-4xl bg-background/50">
@@ -803,6 +815,6 @@ export function EventsPageStandardized() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   )
 }

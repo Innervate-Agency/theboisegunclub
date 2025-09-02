@@ -21,9 +21,9 @@ function Tabs({
 function TabsList({
   className,
   ...props
-}: React.ComponentProps<typeof TabsPrimitive.ListBulletIcon>) {
+}: React.ComponentProps<typeof TabsPrimitive.List>) {
   return (
-    <TabsPrimitive.ListBulletIcon
+    <TabsPrimitive.List
       data-slot="tabs-list"
       className={cn(
         "bg-muted text-muted-foreground inline-flex h-[var(--button-height-sm)] w-fit items-center justify-center rounded-xs p-micro",

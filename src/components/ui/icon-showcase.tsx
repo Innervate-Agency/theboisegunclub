@@ -5,6 +5,32 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 // Import commonly used Lucide icons for firearms/outdoor/business context
+import {
+  Building2,
+  Phone,
+  Mail,
+  Clock as ClockIcon,
+  Star as StarIcon,
+  Crosshair,
+  Award,
+  Map as MapIcon,
+  Map,
+  Mountain,
+  Home,
+  Menu,
+  Search as MagnifyingGlassIcon,
+  Filter,
+  ChevronDown,
+  ChevronRight,
+  ArrowRight,
+  Plus,
+  ShoppingCart as ShoppingCartIcon,
+  CreditCard,
+  Archive as ArchiveBoxIcon,
+  Truck,
+  Settings,
+  Edit,
+} from 'lucide-react';
 import { CalendarDaysIcon, CurrencyDollarIcon, CursorArrowRaysIcon, GlobeAltIcon, MapPinIcon, ShieldCheckIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const iconShowcaseVariants = cva(
@@ -31,10 +57,10 @@ const iconShowcaseVariants = cva(
 )
 
 interface IconShowcaseItemProps extends VariantProps<typeof iconShowcaseVariants> {
-  icon: React.ComponentType<{ className?: string }>
-  name: string
-  category: string
-  className?: string
+  icon: React.ComponentType<{ className?: string }>,
+  name: string,
+  category: string,
+  className?: string,
 }
 
 function IconShowcaseItem({ icon: Icon, name, category, variant, size, className }: IconShowcaseItemProps) {
@@ -52,8 +78,8 @@ function IconShowcaseItem({ icon: Icon, name, category, variant, size, className
 }
 
 export interface IconShowcaseProps extends React.ComponentProps<"div"> {
-  title?: string
-  subtitle?: string
+  title?: string,
+  subtitle?: string,
 }
 
 export function IconShowcase({ className, title, subtitle, ...props }: IconShowcaseProps) {
@@ -135,7 +161,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
         <div className="space-y-xl">
           {iconCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="space-y-4">
-              <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate border-b border-border pb-(--spacing-xs)">
+              <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate border-b border-border pb-2">
                 {category.name}
               </h3>
               
@@ -143,9 +169,9 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
                 {category.icons.map((iconItem, iconIndex) => (
                   <IconShowcaseItem
                     key={iconIndex}
-                    icon={iconItemotion.icon}
-                    name={iconItemotion.name}
-                    category={iconItemotion.category}
+                    icon={iconItem.icon}
+                    name={iconItem.name}
+                    category={iconItem.category}
                     variant={categoryIndex % 2 === 0 ? "default" : "primary"}
                   />
                 ))}
@@ -155,7 +181,7 @@ export function IconShowcase({ className, title, subtitle, ...props }: IconShowc
         </div>
 
         {/* Usage Examples */}
-        <div className="mt-(--spacing-2xl) p-lg bg-gradient-card-warm rounded-sm border border-sandy-ochre/20">
+        <div className="mt-12 p-lg bg-gradient-card-warm rounded-sm border border-sandy-ochre/20">
           <h3 className="text-heading-sm font-rajdhani font-bold text-dark-chocolate mb-4">
             Design System Integration Examples
           </h3>

@@ -25,7 +25,7 @@ const ThemeDemo = () => (
   <div className="min-h-screen bg-background text-foreground p-lg">
     <div className="max-w-4xl mx-auto space-y-lg">
       <div className="text-center space-y-base">
-        <h1 className="text-4xl font-bold text-rusty-orange">Theme System Demo</h1>
+        <h1 className="h1-primary text-rusty-orange">Theme System Demo</h1>
         <p className="text-muted-foreground">
           This demonstrates how the ThemeProvider enables seamless dark/light mode switching
         </p>

@@ -1,5 +1,15 @@
 'use client'
 
+/**
+ * IntelPageContent - Pure Content Component
+ * 
+ * OPTIMIZED FOR MVP:
+ * - Real-time weather data integration for Idaho shooting locations
+ * - Comprehensive location database with range conditions and hours
+ * - Live weather conditions ticker for shooting sports planning
+ * - Mobile-first responsive design with collapsible location cards
+ * - Professional tactical aesthetic with data visualization
+ */
 
 import { ArrowTrendingUpIcon, ArrowUpIcon, CameraIcon, ChartBarIcon, ChatBubbleBottomCenterTextIcon, ChatBubbleLeftRightIcon, ChevronDownIcon, ChevronRightIcon, ClockIcon, CursorArrowRaysIcon, ExclamationTriangleIcon, FunnelIcon, GlobeAltIcon, ListBulletIcon, MagnifyingGlassIcon, MapPinIcon, NewspaperIcon, PlusIcon, RectangleGroupIcon, RectangleStackIcon, ShareIcon, ShieldCheckIcon, Squares2X2Icon, StarIcon, TableCellsIcon, ViewColumnsIcon, WindowIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import React, { useState, useEffect } from 'react'
@@ -9,6 +19,8 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { SectionDivider } from '@/components/ui/section-divider'
 import { WeatherConditionsTicker } from '@/components/ui/weather-conditions-ticker'
+import { ContentBridgeSection } from '@/components/ui/content-bridge-section'
+import { contentBridgeConfigs } from '@/lib/content-bridge-configs'
 import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { EmptyState } from '@/components/ui/empty-state'
@@ -463,7 +475,8 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
         </section>
       )}
 
-
+      {/* Intel Content Section - Unified Layout with cards left, content right */}
+      <ContentBridgeSection {...contentBridgeConfigs.intel} />
 
       {/* Shooting Locations Gallery - Full Width Amazon Style */}
       <section className="py-4xl bg-background/50">
@@ -478,7 +491,7 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                     Featured Locations
                   </Badge>
                   <div>
-                    <h2 className="font-rajdhani text-2xl font-bold text-card-foreground leading-tight">
+                    <h2 className="font-rajdhani h3-subsection text-card-foreground leading-tight">
                       Shooting <span className="text-nav-intel">Locations</span>
                     </h2>
                     <p className="text-sm text-muted-foreground mt-xs">
@@ -595,7 +608,7 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
               {/* Events-Style Results Header */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base mb-xl border-b border-border/30 pb-lg">
                 <div>
-                  <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">
+                  <h2 className="font-rajdhani h3-subsection text-card-foreground">
                     {filters.filteredItems.length} Locations Found
                   </h2>
                   <p className="text-sm text-muted-foreground mt-xs">
@@ -952,7 +965,7 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                 <Badge variant="outline" size="default">
                   Live Updates
                 </Badge>
-                <h2 className="font-rajdhani text-3xl font-bold text-card-foreground mt-base">
+                <h2 className="font-rajdhani h2-section text-card-foreground mt-base">
                   Community <span className="text-nav-intel">Activity</span>
                 </h2>
                 <p className="text-muted-foreground mt-base">
@@ -1061,7 +1074,7 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-lg text-left max-w-3xl mx-auto">
               <div className="space-y-base">
-                <h3 className="font-rajdhani text-xl font-bold text-crisp-off-white">Before You Go:</h3>
+                <h3 className="font-rajdhani h4-component text-crisp-off-white">Before You Go:</h3>
                 <ul className="space-y-xs text-crisp-off-white/80">
                   <li className="flex items-center gap-xs">• Check current fire restrictions</li>
                   <li className="flex items-center gap-xs">• Verify seasonal closures</li>
@@ -1070,7 +1083,7 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                 </ul>
               </div>
               <div className="space-y-base">
-                <h3 className="font-rajdhani text-xl font-bold text-crisp-off-white">Safety Rules:</h3>
+                <h3 className="font-rajdhani h4-component text-crisp-off-white">Safety Rules:</h3>
                 <ul className="space-y-xs text-crisp-off-white/80">
                   <li className="flex items-center gap-xs">• Follow the four fundamental rules</li>
                   <li className="flex items-center gap-xs">• Be aware of your surroundings</li>

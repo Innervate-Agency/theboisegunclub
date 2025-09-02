@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { useTheme } from 'next-themes'
 import { Button } from "@/components/ui/button"
-import { CurrentIcon, SunIcon } from '@heroicons/react/24/outline';
+import { SunIcon, MoonIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline';
 import { cn } from "@/lib/utils"
 
 const themes = [

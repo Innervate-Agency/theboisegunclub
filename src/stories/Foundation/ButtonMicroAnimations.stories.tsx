@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRightIcon, CheckIcon, ChevronUpIcon, EyeIcon, HeartIcon, StarIcon } from '@heroicons/react/24/outline';
+import { Circle, Play, Pause, EyeOff } from 'lucide-react';
 
 const meta: Meta = {
   title: 'Foundation/Button Micro-Animations',
@@ -102,7 +103,7 @@ const EyeIconToggle = ({ isVisible }: { isVisible: boolean }) => (
       <EyeIcon className="w-4 h-4" />
     </div>
     <div className={`absolute inset-0 transition-all duration-300 ${isVisible ? 'opacity-0 scale-75' : 'opacity-100 scale-100'}`}>
-      <EyeIconOff className="w-4 h-4" />
+      <EyeOff className="w-4 h-4" />
     </div>
   </div>
 )
@@ -166,7 +167,7 @@ export const Default: Story = {
           <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
             Micro-Interactions
           </Badge>
-          <h1 className="font-rajdhani text-4xl font-bold text-card-foreground">
+          <h1 className="font-rajdhani h1-primary text-card-foreground">
             Button Micro-Animations
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -485,7 +486,7 @@ export const InteractivePlayground: Story = {
           <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
             Interactive Playground
           </Badge>
-          <h1 className="font-rajdhani text-3xl font-bold text-card-foreground">
+          <h1 className="font-rajdhani h2-section text-card-foreground">
             Test Button Animations
           </h1>
           <p className="text-muted-foreground">
@@ -503,12 +504,12 @@ export const InteractivePlayground: Story = {
               <div className="space-y-xs">
                 {animations.map((anim) => (
                   <Button
-                    key={animotion.id}
-                    variant={selectedAnimation === animotion.id ? 'solid-accent' : 'ghost'}
-                    onClick={() => setSelectedAnimation(animotion.id)}
+                    key={anim.id}
+                    variant={selectedAnimation === anim.id ? 'solid-accent' : 'ghost'}
+                    onClick={() => setSelectedAnimation(anim.id)}
                     className="w-full justify-start"
                   >
-                    {animotion.name}
+                    {anim.name}
                   </Button>
                 ))}
               </div>

@@ -41,7 +41,7 @@ const ArmoryContent = () => (
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-3xl font-bold font-rajdhani text-slate-blue">60.1%</div>
+          <div className="h2-section font-rajdhani text-slate-blue">60.1%</div>
           <p className="text-sm text-muted-foreground">4th highest nationally</p>
           <Badge variant="secondary" size="sm" className="mt-2">
             Treasure Valley
@@ -57,7 +57,7 @@ const ArmoryContent = () => (
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-3xl font-bold font-rajdhani text-sagebrush-green">540K+</div>
+          <div className="h2-section font-rajdhani text-sagebrush-green">540K+</div>
           <p className="text-sm text-muted-foreground">~900K total population</p>
           <Badge variant="secondary" size="sm" className="mt-2">
             Local Estimate
@@ -73,7 +73,7 @@ const ArmoryContent = () => (
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-3xl font-bold font-rajdhani text-rusty-orange">127</div>
+          <div className="h2-section font-rajdhani text-rusty-orange">127</div>
           <p className="text-sm text-muted-foreground">FFLs & retailers</p>
           <Badge variant="secondary" size="sm" className="mt-2">
             Verified
@@ -89,7 +89,7 @@ const ArmoryContent = () => (
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-3xl font-bold font-rajdhani text-foothills-purple">12K+</div>
+          <div className="h2-section font-rajdhani text-foothills-purple">12K+</div>
           <p className="text-sm text-muted-foreground">Community verified</p>
           <Badge variant="default" size="sm" className="mt-2">
             Growing Daily
@@ -145,7 +145,7 @@ const ArmoryContent = () => (
         </CardHeader>
         <CardContent className="space-y-3">
           <div className="flex items-center gap-2">
-            <div className="text-2xl font-bold font-rajdhani">Glock</div>
+            <div className="h3-subsection font-rajdhani">Glock</div>
             <div className="flex items-center gap-1">
               <StarIcon className="size-4 fill-rusty-orange text-rusty-orange" />
               <span className="text-sm font-medium">4.7</span>
@@ -278,12 +278,12 @@ export const TreasureValleyFocus: Story = {
               <CardContent>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="space-y-2">
-                    <div className="text-2xl font-bold font-rajdhani text-slate-blue">60.1%</div>
+                    <div className="h3-subsection font-rajdhani text-slate-blue">60.1%</div>
                     <div className="text-sm text-muted-foreground">Household gun ownership rate</div>
                     <Badge variant="secondary" size="sm">4th highest nationally</Badge>
                   </div>
                   <div className="space-y-2">
-                    <div className="text-2xl font-bold font-rajdhani text-sagebrush-green">540,000+</div>
+                    <div className="h3-subsection font-rajdhani text-sagebrush-green">540,000+</div>
                     <div className="text-sm text-muted-foreground">Estimated firearm owners</div>
                     <Badge variant="secondary" size="sm">40% of Idaho population</Badge>
                   </div>

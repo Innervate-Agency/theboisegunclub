@@ -110,7 +110,7 @@ const BusinessShowcase = () => (
     {/* Stats Showcase */}
     <div className="py-2xl bg-card">
       <div className="container mx-auto px-md">
-        <h2 className="text-3xl font-bold text-center mb-xl text-foreground">
+        <h2 className="h2-section text-center mb-xl text-foreground">
           Regional Impact
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-md">
@@ -157,7 +157,7 @@ const BusinessShowcase = () => (
     {/* Business Pillars */}
     <div className="py-2xl bg-background">
       <div className="container mx-auto px-md">
-        <h2 className="text-3xl font-bold text-center mb-xl text-foreground">
+        <h2 className="h2-section text-center mb-xl text-foreground">
           The Four Pillars
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
@@ -227,7 +227,7 @@ const BusinessShowcase = () => (
     {/* User Types Showcase */}
     <div className="py-2xl bg-muted/50">
       <div className="container mx-auto px-md">
-        <h2 className="text-3xl font-bold text-center mb-xl text-foreground">
+        <h2 className="h2-section text-center mb-xl text-foreground">
           Built for Multiple User Types
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-lg">
@@ -346,7 +346,7 @@ const BusinessShowcase = () => (
     {/* Call to Action */}
     <div className="py-2xl bg-gradient-to-r from-rusty-orange to-sandy-ochre">
       <div className="container mx-auto px-md text-center">
-        <h2 className="text-3xl font-bold text-white mb-base">
+        <h2 className="h2-section text-white mb-base">
           Join the Treasure Valley Firearms Community
         </h2>
         <p className="text-white/90 text-body-lg mb-lg max-w-2xl mx-auto">
@@ -404,7 +404,7 @@ export const VendorFocused: Story = {
     <div className="min-h-screen bg-background p-lg">
       <div className="max-w-4xl mx-auto space-y-lg">
         <div className="text-center space-y-base">
-          <h1 className="text-4xl font-bold text-rusty-orange">Vendor Partner Dashboard</h1>
+          <h1 className="h1-primary text-rusty-orange">Vendor Partner Dashboard</h1>
           <p className="text-muted-foreground">
             Comprehensive business management for Treasure Valley firearms professionals
           </p>
@@ -491,7 +491,7 @@ export const CommunityFocused: Story = {
     <div className="min-h-screen bg-background p-lg">
       <div className="max-w-4xl mx-auto space-y-lg">
         <div className="text-center space-y-base">
-          <h1 className="text-4xl font-bold text-sandy-ochre">Community Hub</h1>
+          <h1 className="h1-primary text-sandy-ochre">Community Hub</h1>
           <p className="text-muted-foreground">
             Connect with fellow enthusiasts across the Treasure Valley
           </p>

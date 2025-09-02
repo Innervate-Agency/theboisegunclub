@@ -4,10 +4,10 @@ import * as React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { SiteNavigation } from '@/components/ui/site-navigation'
-import { SiteFooter } from '@/components/ui/site-footer'
 import { ArrowLeftIcon, ChevronRightIcon, ClockIcon, DocumentTextIcon, EnvelopeIcon, PhoneIcon, ScaleIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link'
+import { SiteNavigation } from '@/components/ui/site-navigation'
+import { SiteFooter } from '@/components/ui/site-footer'
 
 interface LegalPageTemplateProps {
   title: string

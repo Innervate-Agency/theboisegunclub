@@ -205,7 +205,7 @@ export function BusinessDetailTemplate({
                   />
                 )}
                 <div className="flex-1">
-                  <h1 className="font-rajdhani text-xl md:text-2xl font-bold text-foreground leading-tight">
+                  <h1 className="font-rajdhani text-xl md:h3-subsection text-foreground leading-tight">
                     {businessName}
                   </h1>
                   <p className="text-body-lg text-nav-directory mt-xs font-medium">

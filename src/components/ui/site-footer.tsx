@@ -97,8 +97,9 @@ export function SiteFooter({
   return (
     <>
       <footer className={cn(siteFooterVariants({ variant }), "relative overflow-hidden", className)} {...props}>
-        {/* Page-specific accent bar - Full width */}
-        <div className={cn("h-1 w-full relative z-10", currentPageTheme.accent)} />
+        {/* Modern 2025 gradient accent bar with dual-tone effect */}
+        <div className="h-2 w-full relative z-10 bg-gradient-to-r from-rusty-orange via-sandy-ochre to-slate-blue opacity-80" />
+        <div className={cn("h-0.5 w-full relative z-10 -mt-2", currentPageTheme.accent)} />
         
         <div className="max-w-[1440px] mx-auto">
           {/* Dynamic Idaho Landscape Background */}
@@ -108,14 +109,7 @@ export function SiteFooter({
           <FooterTexture />
           
           <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* MagnifyingGlassIcon and Subscribe Section */}
-          {showNewsletter && (
-            <div className="py-20 border-b border-border relative z-10">
-              <FooterSearchSubscribe />
-            </div>
-          )}
-          
-          {/* Main Footer Content */}
+          {/* Main Footer Content - Now at top following 2025 trends */}
           <div className="py-20 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {/* Brand & Contact */}
@@ -293,9 +287,28 @@ export function SiteFooter({
             </div>
           </div>
           
-          {/* Bottom Bar */}
-          <div className="border-t border-border py-lg">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-lg">
+          {/* Modern section divider with gradient accent - 2025 trend */}
+          <div className="relative py-8">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-border"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <div className="bg-card px-6">
+                <div className="w-12 h-0.5 bg-gradient-to-r from-rusty-orange to-slate-blue rounded-full"></div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Search and Subscribe Section - Now in middle following 2025 content hierarchy */}
+          {showNewsletter && (
+            <div className="py-16 relative z-10">
+              <FooterSearchSubscribe />
+            </div>
+          )}
+          
+          {/* Bottom Bar - Enhanced with 2025 generous spacing and subtle background */}
+          <div className="border-t border-border bg-muted/20 py-xl mt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-xl">
               {/* Copyright */}
               <div className={cn("text-body-base font-rajdhani font-medium", mutedColor)}>
                 Copyright © 2025 - Boise Gun Collective, LLC - All rights reserved

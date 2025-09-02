@@ -221,7 +221,7 @@ export const LargeFeatureCard: Story = {
       <div>
         <div className="text-center mb-md">
           <CursorArrowRaysIcon className="mx-auto mb-base icon-2xl icon-secondary" />
-          <h2 className="text-3xl font-bold text-foreground mb-sm">
+          <h2 className="h2-section text-foreground mb-sm">
                        State-of-the-Art Facilities
            </h2>
            <p className="text-muted-foreground mb-base">

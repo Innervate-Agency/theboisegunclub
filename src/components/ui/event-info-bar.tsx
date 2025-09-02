@@ -66,7 +66,7 @@ export function EventInfoBar({
             {/* About the Author */}
             {author && (
               <div className="bg-card p-lg rounded-none border border-border/30">
-                <h3 className="font-rajdhani text-xl font-bold text-foreground mb-base">About the Author</h3>
+                <h3 className="font-rajdhani h4-component text-foreground mb-base">About the Author</h3>
                 <div className="space-y-base">
                   <div className="flex items-center gap-base">
                     {author.avatar ? (
@@ -97,7 +97,7 @@ export function EventInfoBar({
             {/* Event Categories */}
             {tags.length > 0 && (
               <div className="bg-card p-lg rounded-none border border-border/30">
-                <h3 className="font-rajdhani text-xl font-bold text-foreground mb-base">Event Categories</h3>
+                <h3 className="font-rajdhani h4-component text-foreground mb-base">Event Categories</h3>
                 <div className="flex flex-wrap gap-sm">
                   {tags.map((tag, index) => (
                     <Badge 

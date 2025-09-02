@@ -84,13 +84,58 @@ export function ContentBridgeSection({
       <div className="container mx-auto max-w-site px-mobile-sm sm:px-md">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-2xl">
           
-          {/* Main Content */}
-          <div className="lg:col-span-2 space-y-2xl">
+          {/* Sidebar - NOW ON LEFT */}
+          <div className="lg:order-1 space-y-xl">
+            {/* Primary CTA Card */}
+            <Card className={`mica-card border-${accentColor}/30 overflow-hidden bgc-shadow-present hover:bgc-shadow-elevated transition-all duration-300`}>
+              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-${accentColor}/20 to-${accentColor}/10 rounded-bl-full`}></div>
+              <CardContent className="p-lg relative z-10">
+                <h3 className="font-rajdhani h4-component text-card-foreground mb-sm">
+                  {primaryCard.title}
+                </h3>
+                <p className="text-sm text-muted-foreground mb-lg">
+                  {primaryCard.description}
+                </p>
+                <div className="space-y-xs mb-lg">
+                  {primaryCard.features.map((feature, index) => (
+                    <div key={index} className="flex items-center gap-xs text-sm">
+                      <CheckBadgeIcon className={`h-4 w-4 text-${accentColor}`} />
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                <Button className={`w-full bg-${accentColor} hover:bg-${accentColor}/90 text-white font-rajdhani font-bold gap-xs`}>
+                  {primaryCard.buttonText}
+                  <ArrowRightIcon className="h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Stats Card */}
+            <Card className="mica-card bgc-shadow-whisper hover:bgc-shadow-present transition-all duration-300">
+              <CardContent className="p-lg">
+                <h3 className="font-rajdhani text-lg font-bold text-card-foreground mb-base">
+                  {statsCard.title}
+                </h3>
+                <div className="space-y-base">
+                  {statsCard.stats.map((stat, index) => (
+                    <div key={index} className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">{stat.label}</span>
+                      <span className={`font-rajdhani font-bold text-${stat.color}`}>{stat.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Main Content - NOW ON RIGHT */}
+          <div className="lg:col-span-2 lg:order-2 space-y-2xl">
             {/* Section Benefits */}
             <div>
               <div className="flex items-center gap-sm mb-lg">
                 <SectionIcon className={`h-5 w-5 text-${accentColor}`} />
-                <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">
+                <h2 className="font-rajdhani h3-subsection text-card-foreground">
                   {sectionTitle}
                 </h2>
               </div>
@@ -116,19 +161,20 @@ export function ContentBridgeSection({
               </div>
             </div>
 
-            {/* Categories Section */}
+            {/* Categories Section - 4 Boxes in Content Column */}
             <div>
               <div className="flex items-center gap-sm mb-lg">
                 <CategoriesIcon className={`h-5 w-5 text-${accentColor}`} />
-                <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">
+                <h2 className="font-rajdhani h3-subsection text-card-foreground">
                   {categoriesTitle}
                 </h2>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-sm">
-                {categories.map((category, index) => (
+              {/* 4 Boxes Grid - Better balanced in content column */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-base">
+                {categories.slice(0, 4).map((category, index) => (
                   <Card 
                     key={index} 
-                    className="mica-card hover:shadow-elevated transition-all duration-300 cursor-pointer group"
+                    className="mica-card bgc-shadow-whisper hover:bgc-shadow-present transition-all duration-300 cursor-pointer group"
                   >
                     <CardContent className="p-base">
                       <div className="flex items-center justify-between mb-xs">
@@ -164,51 +210,6 @@ export function ContentBridgeSection({
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Sidebar */}
-          <div className="space-y-xl">
-            {/* Primary CTA Card */}
-            <Card className={`mica-card border-${accentColor}/30 overflow-hidden`}>
-              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-${accentColor}/20 to-${accentColor}/10 rounded-bl-full`}></div>
-              <CardContent className="p-lg relative z-10">
-                <h3 className="font-rajdhani text-xl font-bold text-card-foreground mb-sm">
-                  {primaryCard.title}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-lg">
-                  {primaryCard.description}
-                </p>
-                <div className="space-y-xs mb-lg">
-                  {primaryCard.features.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-xs text-sm">
-                      <CheckBadgeIcon className={`h-4 w-4 text-${accentColor}`} />
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                <Button className={`w-full bg-${accentColor} hover:bg-${accentColor}/90 text-white font-rajdhani font-bold gap-xs`}>
-                  {primaryCard.buttonText}
-                  <ArrowRightIcon className="h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Stats Card */}
-            <Card className="mica-card">
-              <CardContent className="p-lg">
-                <h3 className="font-rajdhani text-lg font-bold text-card-foreground mb-base">
-                  {statsCard.title}
-                </h3>
-                <div className="space-y-base">
-                  {statsCard.stats.map((stat, index) => (
-                    <div key={index} className="flex items-center justify-between">
-                      <span className="text-sm text-muted-foreground">{stat.label}</span>
-                      <span className={`font-rajdhani font-bold text-${stat.color}`}>{stat.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>

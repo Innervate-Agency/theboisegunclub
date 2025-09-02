@@ -25,7 +25,7 @@ export const StatsGrid: Story = {
   render: () => (
     <div className="max-w-4xl space-y-md">
       <div className="text-center space-y-xs">
-        <h2 className="font-rajdhani text-3xl font-bold">Statistics Grid Pattern</h2>
+        <h2 className="font-rajdhani h2-section">Statistics Grid Pattern</h2>
         <p className="text-muted-foreground">Four-column stats showcase with fire gradient variants</p>
       </div>
       
@@ -71,7 +71,7 @@ export const FireGradientCardGrid: Story = {
   render: () => (
     <div className="max-w-5xl space-y-md">
       <div className="text-center space-y-xs">
-        <h2 className="font-rajdhani text-3xl font-bold">FireIcon Gradient Card Pattern</h2>
+        <h2 className="font-rajdhani h2-section">FireIcon Gradient Card Pattern</h2>
         <p className="text-muted-foreground">Interactive cards with different fire gradient effects</p>
       </div>
       
@@ -180,7 +180,7 @@ export const CallToActionSection: Story = {
   render: () => (
     <div className="max-w-4xl space-y-lg">
       <div className="text-center space-y-xs">
-        <h2 className="font-rajdhani text-3xl font-bold">Call to Action Pattern</h2>
+        <h2 className="font-rajdhani h2-section">Call to Action Pattern</h2>
         <p className="text-muted-foreground">Standard CTA layout with fire gradient buttons</p>
       </div>
       
@@ -188,7 +188,7 @@ export const CallToActionSection: Story = {
         <CardContent className="space-y-md">
           <div className="space-y-base">
             <Badge className="bg-fire-orange text-white">Limited Time</Badge>
-            <h3 className="font-rajdhani text-4xl font-bold">
+            <h3 className="font-rajdhani h1-primary">
               Join The Boise Gun Club Today
             </h3>
             <p className="text-display-sm text-muted-foreground max-w-2xl mx-auto">
@@ -232,7 +232,7 @@ export const FeatureHighlight: Story = {
   render: () => (
     <div className="max-w-6xl space-y-lg">
       <div className="text-center space-y-xs">
-        <h2 className="font-rajdhani text-3xl font-bold">Feature Highlight Pattern</h2>
+        <h2 className="font-rajdhani h2-section">Feature Highlight Pattern</h2>
         <p className="text-muted-foreground">Alternating content and visual layout</p>
       </div>
       
@@ -240,7 +240,7 @@ export const FeatureHighlight: Story = {
         <div className="space-y-md">
           <div className="space-y-base">
             <Badge className="bg-fire-blue text-white">Enhanced</Badge>
-            <h3 className="font-rajdhani text-3xl font-bold">
+            <h3 className="font-rajdhani h2-section">
               FireIcon Gradient Animation System
             </h3>
             <p className="text-body-lg text-muted-foreground">

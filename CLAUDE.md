@@ -6,68 +6,45 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Development
 - `npm run dev` - Start development server on port 3000
-- `npm run dev:turbo` - Development server with Turbo mode
 - `npm run build` - Production build
-- `npm run build:strict` - Build with strict TypeScript checking
-- `npm run start` - Start production server
-
-### Code Quality
 - `npm run lint` - Run ESLint
-- `npm run lint:fix` - Auto-fix ESLint issues
-- `npm run strict` - Toggle strict TypeScript mode
-
-### Testing & Analysis
-- `npm run health` - Run health check
-- `npm run analyze` - Analyze build output
-- `npm run bundle:analyze` - Detailed bundle analysis
 - `npm run lighthouse` - Generate Lighthouse performance report
 
-### Database & Data Processing
-- PostgreSQL connection via `DATABASE_URL` environment variable
-- Key scripts:
-  - `scripts/generate-ffl-data.js` - Import FFL data to database
-  - `scripts/postgresql-import-businesses.js` - Import business directory
-  - `scripts/test-google-reviews.js` - Test Google Reviews API integration
+### Database
+- `scripts/generate-ffl-data.js` - Import FFL data to PostgreSQL
+- `scripts/test-google-reviews.js` - Test Google Reviews API integration
 
 ## Architecture
 
 ### Core Stack
 - **Framework**: Next.js 15 with React 19, TypeScript, Tailwind CSS v4
 - **Database**: PostgreSQL with 594 privacy-filtered Idaho firearms businesses
-- **APIs**: 
-  - Serper API for Google Reviews (7-day caching)
-  - OpenWeatherMap for Idaho weather conditions
-- **Icons**: Heroicons (primary), with legacy Phosphor references being migrated
+- **APIs**: Serper API (Google Reviews), OpenWeatherMap (weather data)
+- **Icons**: Heroicons (primary)
 
-### Data Flow Architecture
-1. **Static Data (90%)**: Pre-generated from PostgreSQL at build time
-   - Business directory pages at `/directory/[slug]`
-   - Event pages at `/events/[slug]`
-   - Guide pages at `/guides/[slug]`
+### Layout System Architecture
+**Russian Nesting Doll Problem = 100% ELIMINATED**
 
-2. **Dynamic Data (10%)**: Runtime API calls
-   - Google Reviews via `src/lib/google-reviews-service.ts`
-   - Weather data via `src/lib/weather-service.ts`
-   - Real-time inventory/availability
+Layout System Components:
+- **HomePageLayout** - Multi-section homepage with specialized sections
+- **StandardPageLayout** - Generic layout for main pages (Events, Directory, Intel, Armory, BuySell)
+- **ArticlePageLayout** - Articles, guides, blog posts with hero/content/sidebar structure
+- **DetailPageLayout** - Business profiles, locations, products with flexible content areas
+- **PageContainer & SectionContainer** - Compound components handling ALL structural decisions
 
-### Component Architecture
-- **Templates**: Unified page templates in `src/components/ui/`
-  - `article-page-template.tsx` - Articles, events, guides
-  - `business-detail-template.tsx` - Business profiles
-  - `marketplace-product-template.tsx` - Product details
+Key Architectural Principles:
+- **Single Source of Truth**: Layout components handle 100% of structural decisions
+- **Pure Content Components**: Template components contain ZERO styling concerns
+- **Theme Isolation**: `.theme-{page} .section-{type}` prevents style conflicts
+- **Sticky Navigation**: Applied site-wide with `variant="premium"` mica styling
 
-- **Design System**: 
-  - 26-color Boise landscape palette (`src/app/globals.css`)
-  - Shadow progression system (whisper → hero, levels 1-7)
-  - Tactical square aesthetic (`rounded-none` for cards)
-  - Mobile-first responsive (60% traffic optimization)
-
-### Authentication & Security
-- OAuth2 integration planned (see `.env.local.example`)
-- Environment variables:
-  - `SERPAPI_KEY` - Google Reviews API
-  - `OPENWEATHER_API_KEY` - Weather API
-  - `DATABASE_URL` - PostgreSQL connection
+### Design System
+- **26-Color Boise Landscape Palette** - Complete color system (`src/app/globals.css`)
+- **Shadow Progression** - 7-level depth system (whisper → hero)
+- **Typography** - Rajdhani (headings) + Noto Sans (body)
+- **Mica Glassmorphism** - mica-overlay, mica-card, mica-modal variants
+- **Mobile-First** - 60% traffic optimization with 44px touch targets
+- **Tactical Square Aesthetic** - rounded-none for cards, military/tactical feel
 
 ## Critical Development Rules
 
@@ -77,6 +54,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **NEVER** use generic Tailwind colors - only Boise landscape palette
 - **NEVER** break navigation into multiple rows on mobile - scale down instead
 - **NEVER** commit API keys or secrets
+- **NEVER** create files unless absolutely necessary for achieving your goal
+- **NEVER** proactively create documentation files unless explicitly requested
 
 ### ALWAYS Do This
 - **ALWAYS** use Heroicons for new icon implementations
@@ -84,27 +63,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **ALWAYS** use shadow progression for card hover states
 - **ALWAYS** fetch dynamic data through service layers
 - **ALWAYS** preserve tactical square aesthetic for main components
+- **ALWAYS** prefer editing existing files to creating new ones
 
 ## Environment Setup
 1. Copy `.env.local.example` to `.env.local`
-2. Add required API keys:
-   - `SERPAPI_KEY` for Google Reviews
-   - `OPENWEATHER_API_KEY` for weather data
-   - `DATABASE_URL` for PostgreSQL
+2. Add required API keys: `SERPAPI_KEY`, `OPENWEATHER_API_KEY`, `DATABASE_URL`
 
-## Database Management
-- Connection pool configured in `src/lib/database/index.ts`
-- Max 20 connections, 30s idle timeout
-- Business data schema includes FFL licensing, services, hours, certifications
-
-## Performance Optimizations
-- React Compiler enabled for automatic memoization
-- Optimized package imports for Radix UI and Heroicons
-- Standalone Docker output mode
-- Image formats: AVIF and WebP with 1-year cache
-- Bundle splitting for vendor, framer-motion, and radix-ui chunks
-
-## Loading & Animation
-- Idaho Tumbleweed system for all loading states (`src/components/ui/idaho-tumbleweed.tsx`)
-- Context-aware micro-animations with spring physics
-- Animations disabled during loading for performance
+## Development Notes
+- Dev server always running on port 3000 - use curl for testing
+- Don't run builds unless absolutely necessary (waste tokens)
+- User is always watching/debugging live - no need to check if fixes work
+- End completions with "Check to see if this is fixed now, give me any errors you may find"

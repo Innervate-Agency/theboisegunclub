@@ -24,7 +24,7 @@ import {
   NewspaperIcon,
   BookOpenIcon,
   WrenchScrewdriverIcon,
-  TargetIcon,
+  TrophyIcon,
   ClockIcon,
   StarIcon,
   CheckCircleIcon
@@ -59,7 +59,7 @@ const sectionConfigs = {
       },
       {
         title: 'Training Programs',
-        icon: TargetIcon,
+        icon: TrophyIcon,
         items: [
           { name: 'Concealed Carry Course', href: '/events/ccw-course', description: 'Idaho CCW certification' },
           { name: 'Long Range Precision', href: '/events/long-range', description: 'Extended distance shooting' },

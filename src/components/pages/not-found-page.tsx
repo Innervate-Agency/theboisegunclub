@@ -39,7 +39,7 @@ const quickNavCards: QuickNavCard[] = [
   },
   {
     href: '/intel',
-    icon: Map,
+    icon: MapIcon,
     title: 'Intel',
     description: 'Range Conditions & Weather',
     theme: 'intel'

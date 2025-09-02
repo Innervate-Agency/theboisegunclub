@@ -16,6 +16,7 @@
     "build-storybook": "storybook build",
     "storybook:reset": "rm -rf node_modules/.cache/storybook && npm run build-storybook",
     "storybook:check": "storybook dev --smoke-test",
+    "vitest": "vitest",
     "storybook:fix": "node scripts/fix-storybook.js",
     "storybook:validate": "node scripts/validate-stories.js",
     "health": "node scripts/health-check.js",

@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ChevronLeftIcon, ChevronRightIcon, StarIcon } from '@heroicons/react/24/outline';
+import { Quote } from 'lucide-react';
 
 const testimonialCarouselVariants = cva(
   "w-full py-16",

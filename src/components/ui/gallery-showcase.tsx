@@ -4,7 +4,7 @@ import * as React from 'react'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { ArrowDownTrayIcon, FunnelIcon, HeartIcon, ListBulletIcon } from '@heroicons/react/24/outline';
+import { ArrowDownTrayIcon, FunnelIcon, HeartIcon, ListBulletIcon, Squares2X2Icon } from '@heroicons/react/24/outline';
 import Image from 'next/image'
 
 const galleryGridVariants = cva(

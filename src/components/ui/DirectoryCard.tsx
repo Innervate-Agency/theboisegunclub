@@ -6,6 +6,7 @@ import { Badge } from './badge';
 import { Card } from './card';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { TacticalCase } from './tactical-case';
 
 const directoryCardVariants = cva(
   'relative flex flex-col rounded-xs shadow-present transition-all duration-300 ease-out overflow-hidden',

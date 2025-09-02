@@ -28,7 +28,7 @@ export function EventPreparationSection({
   return (
     <div className={cn("space-y-xl", className)}>
       <div className="text-center">
-        <h2 className="font-rajdhani text-3xl font-bold text-foreground mb-base">Event Preparation</h2>
+        <h2 className="font-rajdhani h2-section text-foreground mb-base">Event Preparation</h2>
         <p className="text-muted-foreground">Everything you need to know to make the most of this event</p>
       </div>
       
@@ -42,7 +42,7 @@ export function EventPreparationSection({
               <div className="flex items-start gap-base">
                 <WrenchScrewdriverIcon className="h-6 w-6 text-nav-events flex-shrink-0 mt-xs" />
                 <div className="flex-1">
-                  <h3 className="font-rajdhani text-xl font-bold text-foreground mb-base">What to Bring</h3>
+                  <h3 className="font-rajdhani h4-component text-foreground mb-base">What to Bring</h3>
                   <ul className="space-y-sm">
                     {whatToBring.map((item, index) => (
                       <li key={index} className="text-body-sm text-muted-foreground flex items-start gap-xs">
@@ -62,7 +62,7 @@ export function EventPreparationSection({
               <div className="flex items-start gap-base">
                 <ClockIcon className="h-6 w-6 text-nav-events flex-shrink-0 mt-xs" />
                 <div className="flex-1">
-                  <h3 className="font-rajdhani text-xl font-bold text-foreground mb-base">Event Schedule</h3>
+                  <h3 className="font-rajdhani h4-component text-foreground mb-base">Event Schedule</h3>
                   <ul className="space-y-sm">
                     {agenda.map((item, index) => (
                       <li key={index} className="text-body-sm text-muted-foreground flex items-start gap-xs">
@@ -85,7 +85,7 @@ export function EventPreparationSection({
               <div className="flex items-start gap-base">
                 <ExclamationTriangleIcon className="h-6 w-6 text-warning-clay flex-shrink-0 mt-xs" />
                 <div className="flex-1">
-                  <h3 className="font-rajdhani text-xl font-bold text-foreground mb-base">Requirements</h3>
+                  <h3 className="font-rajdhani h4-component text-foreground mb-base">Requirements</h3>
                   <ul className="space-y-sm">
                     {requirements.map((requirement, index) => (
                       <li key={index} className="text-body-sm text-muted-foreground flex items-start gap-xs">
@@ -105,7 +105,7 @@ export function EventPreparationSection({
               <div className="flex items-start gap-base">
                 <TagIcon className="h-6 w-6 text-nav-events flex-shrink-0 mt-xs" />
                 <div className="flex-1">
-                  <h3 className="font-rajdhani text-xl font-bold text-foreground mb-base">Event Categories</h3>
+                  <h3 className="font-rajdhani h4-component text-foreground mb-base">Event Categories</h3>
                   <div className="flex flex-wrap gap-sm">
                     {tags.map((tag, index) => (
                       <Badge 

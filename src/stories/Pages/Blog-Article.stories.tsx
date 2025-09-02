@@ -199,10 +199,10 @@ export const BlogDetailView: StoryObj<typeof BlogDetail> = {
     article: {
       ...sampleArticles[0],
       content: `
-        <h2>Getting Started with Trap Shooting</h2>
+        <h2 className="h2-section">Getting Started with Trap Shooting</h2>
         <p>Trap shooting is one of the most popular clay target sports, and for good reason. It's accessible to beginners while still offering challenges for experienced shooters.</p>
         
-        <h3>Basic Equipment</h3>
+        <h3 className="h3-subsection">Basic Equipment</h3>
         <p>To get started, you'll need:</p>
         <ul>
           <li>A shotgun (12 or 20 gauge recommended)</li>
@@ -211,10 +211,10 @@ export const BlogDetailView: StoryObj<typeof BlogDetail> = {
           <li>Shooting vest (optional but recommended)</li>
         </ul>
         
-        <h3>Proper Stance and Form</h3>
+        <h3 className="h3-subsection">Proper Stance and Form</h3>
         <p>Your stance is crucial for consistent shooting. Position your feet shoulder-width apart, with your weight evenly distributed. Keep your dominant foot slightly back and lean forward into the gun.</p>
         
-        <h3>CursorArrowRaysIcon Acquisition</h3>
+        <h3 className="h3-subsection">CursorArrowRaysIcon Acquisition</h3>
         <p>Focus on the front sight, not the target. The target should appear slightly blurry while your front sight remains sharp and clear. This is the key to consistent accuracy.</p>
         
         <p>Remember, practice makes perfect. Start with shorter distances and gradually work your way up as your skills improve. Consider taking a basic marksmanship course from a certified instructor.</p>

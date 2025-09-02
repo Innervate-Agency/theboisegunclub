@@ -1,5 +1,16 @@
 'use client'
 
+/**
+ * DirectoryPageStandardized - Pure Content Component
+ * 
+ * OPTIMIZED FOR MVP:
+ * - Comprehensive Idaho firearms business directory (470+ verified businesses)
+ * - Sophisticated filtering system by category, tier, location, services
+ * - Mobile-first responsive design with 44px touch targets 
+ * - Privacy-filtered business data with Google Reviews integration
+ * - Professional tactical aesthetic with mica glassmorphism cards
+ */
+
 import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -18,6 +29,8 @@ import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
 import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { DirectoryTicker } from '@/components/ui/directory-ticker'
+import { ContentBridgeSection } from '@/components/ui/content-bridge-section'
+import { contentBridgeConfigs } from '@/lib/content-bridge-configs'
 import { AcademicCapIcon, ArrowRightIcon, BuildingStorefrontIcon, CheckCircleIcon, ChevronRightIcon, ClockIcon, Cog6ToothIcon, CubeIcon, CurrencyDollarIcon, FunnelIcon, MagnifyingGlassIcon, MapPinIcon, PlusIcon, ShieldCheckIcon, StarIcon, UserIcon, UsersIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
 
 
@@ -673,11 +686,14 @@ export function DirectoryPageStandardized() {
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
       {heroContent}
       
-      {/* Events Ticker - Live upcoming events */}
+      {/* Directory Ticker - Live business updates */}
       <DirectoryTicker />
+      
+      {/* Directory Content Section - Unified Layout with cards left, content right */}
+      <ContentBridgeSection {...contentBridgeConfigs.directory} />
       
       {/* Main Content Area */}
       <section className="py-mobile-2xl sm:py-4xl bg-background/50">
@@ -871,6 +887,6 @@ export function DirectoryPageStandardized() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   )
 }

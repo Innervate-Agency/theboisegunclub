@@ -21,7 +21,7 @@ export function BusinessReviewsSection({ businessName, city, state }: BusinessRe
       {/* Left Column: Google Reviews */}
       <div className="space-y-base">
         <div className="flex items-center gap-base">
-          <h3 className="font-rajdhani text-2xl font-bold text-foreground">Customer Reviews</h3>
+          <h3 className="font-rajdhani h3-subsection text-foreground">Customer Reviews</h3>
           {reviewsData && (
             <div className="flex items-center gap-xs">
               <div className="flex items-center gap-xs">
@@ -135,7 +135,7 @@ export function BusinessReviewsSection({ businessName, city, state }: BusinessRe
 
       {/* Right Column: Empty for now */}
       <div className="space-y-base">
-        <h3 className="font-rajdhani text-2xl font-bold text-foreground">Community Insights</h3>
+        <h3 className="font-rajdhani h3-subsection text-foreground">Community Insights</h3>
         <div className="bg-card p-base rounded-none border border-border/30">
           <p className="text-body-sm text-muted-foreground">
             Community-contributed insights and reviews coming soon. This section will feature verified customer experiences and local community feedback.

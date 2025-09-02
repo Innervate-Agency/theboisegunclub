@@ -191,7 +191,7 @@ export default function BuySellProductTemplate({
                 
                 {/* Title and Brand */}
                 <div>
-                  <h1 className="font-rajdhani text-3xl md:text-4xl font-bold text-foreground leading-tight">
+                  <h1 className="font-rajdhani text-3xl md:h1-primary text-foreground leading-tight">
                     {title}
                   </h1>
                   <p className="text-body-lg text-muted-foreground mt-xs">
@@ -201,7 +201,7 @@ export default function BuySellProductTemplate({
                 
                 {/* Price */}
                 <div className="flex items-baseline gap-base">
-                  <span className="font-rajdhani text-3xl font-bold text-nav-buysell">
+                  <span className="font-rajdhani h2-section text-nav-buysell">
                     ${price.toLocaleString()}
                   </span>
                   {originalPrice && originalPrice > price && (

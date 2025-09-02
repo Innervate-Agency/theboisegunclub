@@ -5,7 +5,7 @@ import StatCard from '@/components/ui/StatCard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { ArrowTrendingUpIcon, BellIcon, BoltIcon, BookOpenIcon, CalendarDaysIcon, ChatBubbleLeftRightIcon, CheckCircleIcon, CursorArrowRaysIcon, EnvelopeIcon, ExclamationTriangleIcon, MagnifyingGlassIcon, MapPinIcon, ShareIcon, ShieldCheckIcon, ShoppingCartIcon, SpeakerWaveIcon, StarIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { ArrowTrendingUpIcon, BellIcon, BoltIcon, BookOpenIcon, BuildingOffice2Icon, CalendarDaysIcon, ChatBubbleBottomCenterTextIcon, ChatBubbleLeftRightIcon, CheckCircleIcon, CursorArrowRaysIcon, EnvelopeIcon, ExclamationTriangleIcon, MagnifyingGlassIcon, MapPinIcon, ShareIcon, ShieldCheckIcon, ShoppingCartIcon, SpeakerWaveIcon, StarIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta = {
   title: 'Design System/Pages/LandingPage',
@@ -13,7 +13,7 @@ const meta: Meta = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Professional "Coming Soon" landing page for The Boise Gun Club - Treasure Valley\'s comprehensive firearms community platformotion.',
+        component: 'Professional "Coming Soon" landing page for The Boise Gun Club - Treasure Valley\'s comprehensive firearms community platform.',
       },
     },
   },
@@ -40,7 +40,7 @@ export const Complete: Story = {
                   <span className="font-extrabold">THE BOISE </span><span className="font-light">GUN CLUB</span>
                 </h1>
                 <p className="text-body-lg text-muted-foreground max-w-2xl">
-                  BuildingOfficeIcon Treasure Valley's first comprehensive firearms community platformotion. Connecting local businesses, clubs, ranges, and enthusiasts across Idaho's premier firearms region.
+                  <BuildingOffice2Icon className="h-6 w-6 inline-block mr-2" /> Treasure Valley's first comprehensive firearms community platform. Connecting local businesses, clubs, ranges, and enthusiasts across Idaho's premier firearms region.
                 </p>
                 <div className="space-y-sm">
                   <div className="flex items-center gap-xs text-body-sm text-muted-foreground">
@@ -73,7 +73,7 @@ export const Complete: Story = {
               />
               <StatCard
                 value="Events"
-                label="Unified CalendarDaysIcon from All Clubs"
+                label="Unified Calendar from All Clubs"
                 variant="outline"
                 icon={<CalendarDaysIcon className="h-6 w-6" />}
               />
@@ -85,7 +85,7 @@ export const Complete: Story = {
               />
               <StatCard
                 value="Resources"
-                label="Idaho Laws, Safety & Training InformationCircleIcon"
+                label="Idaho Laws, Safety & Training Information"
                 variant="outline"
                 icon={<BellIcon className="h-6 w-6" />}
               />
@@ -99,7 +99,7 @@ export const Complete: Story = {
       <section className="px-md py-4xl">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-base mb-xl">
-            <h2 className="font-rajdhani text-4xl font-bold">What Makes TBGC Different</h2>
+            <h2 className="font-rajdhani h1-primary">What Makes TBGC Different</h2>
             <p className="text-body-lg text-muted-foreground">
               Advanced technology and business intelligence designed specifically for Idaho's firearms industry
             </p>
@@ -169,9 +169,9 @@ export const Complete: Story = {
           
           {/* Problems Section */}
           <div className="text-center space-y-base mb-xl mt-3xl">
-            <h2 className="font-rajdhani text-4xl font-bold">The Problems We're Solving</h2>
+            <h2 className="font-rajdhani h1-primary">The Problems We're Solving</h2>
             <p className="text-body-lg text-muted-foreground max-w-4xl mx-auto">
-              Despite having 250K+ gun owners and 117+ businesses, Treasure Valley lacks a unified digital ecosystemotion. These critical gaps are holding back our entire firearms community.
+              Despite having 250K+ gun owners and 117+ businesses, Treasure Valley lacks a unified digital ecosystem. These critical gaps are holding back our entire firearms community.
             </p>
           </div>
           
@@ -392,7 +392,7 @@ export const Complete: Story = {
                 
                 <div className="relative space-y-lg">
                   <div className="text-left">
-                    <h3 className="font-rajdhani text-2xl font-bold text-card-foreground mb-xs flex items-center gap-xs">
+                    <h3 className="font-rajdhani h3-subsection text-card-foreground mb-xs flex items-center gap-xs">
                       <EnvelopeIcon className="h-6 w-6 text-sandy-ochre" />
                       Contact Us
                     </h3>
@@ -433,7 +433,7 @@ export const Complete: Story = {
                     </div>
                     <Button type="submit" size="xl" className="w-full bg-gradient-to-r from-sandy-ochre to-rusty-orange text-dark-chocolate hover:from-rusty-orange hover:to-sandy-ochre font-rajdhani font-bold text-lg shadow-elevated transition-all duration-300">
                       <EnvelopeIcon className="h-5 w-5 mr-xs" />
-                      Send ChatBubbleBottomCenterTextIcon
+                      Send <ChatBubbleBottomCenterTextIcon className="h-5 w-5 ml-xs" />
                     </Button>
                   </form>
                 </div>

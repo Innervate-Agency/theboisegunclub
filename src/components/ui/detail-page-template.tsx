@@ -136,7 +136,7 @@ export default function DetailPageTemplate({
                   </div>
                 )}
                 
-                <h1 className="font-rajdhani text-2xl md:text-4xl font-bold text-foreground leading-none">
+                <h1 className="font-rajdhani text-2xl md:h1-primary text-foreground leading-none">
                   {title}
                 </h1>
                 {/* Hero Content Contains Subtitle - rendered here for tight spacing */}

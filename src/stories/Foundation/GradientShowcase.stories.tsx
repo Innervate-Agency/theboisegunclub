@@ -62,7 +62,7 @@ export const Default: Story = {
         <Badge className="bg-rusty-orange/20 text-rusty-orange border-rusty-orange/30">
           Design System
         </Badge>
-        <h1 className="font-rajdhani text-4xl font-bold text-card-foreground">
+        <h1 className="font-rajdhani h1-primary text-card-foreground">
           TBGC Gradient System
         </h1>
         <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -104,12 +104,12 @@ export const Default: Story = {
 
       {/* Interactive Demo Section */}
       <div className="space-y-xl">
-        <h2 className="font-rajdhani text-2xl font-bold text-card-foreground text-center">
+        <h2 className="font-rajdhani h3-subsection text-card-foreground text-center">
           Interactive Demonstrations
         </h2>
         
         <div className="space-y-base">
-          <h3 className="font-rajdhani text-xl font-bold text-card-foreground">Button Applications</h3>
+          <h3 className="font-rajdhani h4-component text-card-foreground">Button Applications</h3>
           <div className="flex flex-wrap gap-base">
             {gradients.map((gradient, index) => (
               <button
@@ -123,7 +123,7 @@ export const Default: Story = {
         </div>
 
         <div className="space-y-base">
-          <h3 className="font-rajdhani text-xl font-bold text-card-foreground">Background Applications</h3>
+          <h3 className="font-rajdhani h4-component text-card-foreground">Background Applications</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-base">
             {gradients.map((gradient, index) => (
               <div
@@ -140,7 +140,7 @@ export const Default: Story = {
         </div>
 
         <div className="space-y-base">
-          <h3 className="font-rajdhani text-xl font-bold text-card-foreground">Accent Bar Applications</h3>
+          <h3 className="font-rajdhani h4-component text-card-foreground">Accent Bar Applications</h3>
           <div className="space-y-base">
             {gradients.map((gradient, index) => (
               <Card key={index} className="relative overflow-hidden">

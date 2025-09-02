@@ -149,7 +149,7 @@ export default function ArticlePageTemplate({
       {comments > 0 && (
         <section className="py-4xl bg-muted/30">
           <div className="container mx-auto max-w-site px-md">
-            <h2 className="font-rajdhani text-2xl font-bold text-foreground mb-lg">
+            <h2 className="font-rajdhani h3-subsection text-foreground mb-lg">
               Comments ({comments})
             </h2>
             <div className="text-muted-foreground">
@@ -163,7 +163,7 @@ export default function ArticlePageTemplate({
       {relatedArticles.length > 0 && (
         <section className="py-4xl">
           <div className="container mx-auto max-w-site px-md">
-            <h2 className="font-rajdhani text-3xl font-bold text-foreground mb-xl text-center">
+            <h2 className="font-rajdhani h2-section text-foreground mb-xl text-center">
               Related Articles
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">

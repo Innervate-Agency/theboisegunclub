@@ -155,7 +155,7 @@ export default function LocationDetailTemplate({
               
               {/* Title and Type */}
               <div>
-                <h1 className="font-rajdhani text-3xl md:text-4xl font-bold text-foreground leading-tight">
+                <h1 className="font-rajdhani text-3xl md:h1-primary text-foreground leading-tight">
                   {name}
                 </h1>
                 <p className="text-body-lg text-nav-intel mt-xs font-medium">

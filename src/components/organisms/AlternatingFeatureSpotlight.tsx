@@ -63,7 +63,7 @@ const AlternatingFeatureSpotlight = ({
               {React.cloneElement(icon, {
                 className: 'h-8 w-8 text-primary mb-[--spacing-base]',
               })}
-              <h3 className="font-rajdhani text-3xl font-bold text-foreground md:text-4xl">
+              <h3 className="font-rajdhani h2-section text-foreground md:text-4xl">
                 {title}
               </h3>
               <p className="mt-[--spacing-md] text-lg text-muted-foreground max-w-lg">

@@ -46,7 +46,7 @@ export const WithSampleContent: Story = {
     <div className="relative h-screen w-full bg-card">
       <div className="container mx-auto px-base py-lg">
         <header className="mb-lg">
-          <h1 className="text-4xl font-bold text-card-foreground mb-xs">
+          <h1 className="h1-primary text-card-foreground mb-xs">
             The Boise Gun Club
           </h1>
           <p className="text-display-sm text-muted-foreground">

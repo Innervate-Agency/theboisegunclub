@@ -50,7 +50,7 @@ export function BuySellContentSection() {
             <div>
               <div className="flex items-center gap-sm mb-lg">
                 <UserGroupIcon className="h-5 w-5 text-nav-buysell" />
-                <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">
+                <h2 className="font-rajdhani h3-subsection text-card-foreground">
                   Why Shop The Idaho Buy & Sell
                 </h2>
               </div>
@@ -82,7 +82,7 @@ export function BuySellContentSection() {
             <div>
               <div className="flex items-center gap-sm mb-lg">
                 <CheckBadgeIcon className="h-5 w-5 text-nav-buysell" />
-                <h2 className="font-rajdhani text-2xl font-bold text-card-foreground">
+                <h2 className="font-rajdhani h3-subsection text-card-foreground">
                   Popular Categories
                 </h2>
               </div>
@@ -137,7 +137,7 @@ export function BuySellContentSection() {
             <Card className="mica-card border-nav-buysell/30 overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-nav-buysell/20 to-nav-buysell/10 rounded-bl-full"></div>
               <CardContent className="p-lg relative z-10">
-                <h3 className="font-rajdhani text-xl font-bold text-card-foreground mb-sm">
+                <h3 className="font-rajdhani h4-component text-card-foreground mb-sm">
                   Become a Seller
                 </h3>
                 <p className="text-sm text-muted-foreground mb-lg">

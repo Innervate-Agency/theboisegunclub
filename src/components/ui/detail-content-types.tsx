@@ -474,7 +474,7 @@ export function BusinessContent({
         {/* Paragraph 1: Business Overview & Expertise */}
         <div className="font-body text-body-lg leading-loose space-y-base">
           <p>
-            <strong className="font-rajdhani text-xl font-bold text-nav-directory">{businessName}</strong> stands as a cornerstone of the {city} firearms community, representing the kind of professional, knowledgeable {businessType.toLowerCase()} service that serious shooters and collectors depend on. Located in the heart of {city}, {state}, this {yearEstablished ? `well-established business has been serving local gun enthusiasts since ${yearEstablished}` : 'trusted establishment has built a reputation for excellence'}, developing deep expertise in {businessType.toLowerCase()} operations that reflects the unique needs of Idaho's diverse shooting community. Whether you're a competitive shooter preparing for your next match, a hunting enthusiast getting ready for elk season, or a collector seeking specialized services, {businessName} brings the kind of focused attention and technical knowledge that can only come from {yearEstablished ? `${new Date().getFullYear() - yearEstablished} years` : 'extensive experience'} of dedicated service to the Treasure Valley's firearms community.
+            <strong className="font-rajdhani h4-component text-nav-directory">{businessName}</strong> stands as a cornerstone of the {city} firearms community, representing the kind of professional, knowledgeable {businessType.toLowerCase()} service that serious shooters and collectors depend on. Located in the heart of {city}, {state}, this {yearEstablished ? `well-established business has been serving local gun enthusiasts since ${yearEstablished}` : 'trusted establishment has built a reputation for excellence'}, developing deep expertise in {businessType.toLowerCase()} operations that reflects the unique needs of Idaho's diverse shooting community. Whether you're a competitive shooter preparing for your next match, a hunting enthusiast getting ready for elk season, or a collector seeking specialized services, {businessName} brings the kind of focused attention and technical knowledge that can only come from {yearEstablished ? `${new Date().getFullYear() - yearEstablished} years` : 'extensive experience'} of dedicated service to the Treasure Valley's firearms community.
           </p>
         </div>
 
@@ -496,7 +496,7 @@ export function BusinessContent({
       {/* Original Description (if it exists and is different) - Flat */}
       {fullDescription && fullDescription.length > 200 && (
         <div className="bg-card p-base">
-          <h3 className="font-rajdhani text-xl font-bold text-nav-directory mb-base">About {businessName}</h3>
+          <h3 className="font-rajdhani h4-component text-nav-directory mb-base">About {businessName}</h3>
           <div className="prose prose-lg dark:prose-invert max-w-none
             prose-headings:font-rajdhani prose-headings:font-bold
             prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
@@ -759,7 +759,7 @@ export function BusinessContent({
     <React.Suspense fallback={
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-2xl">
         <div className="space-y-base">
-          <h3 className="font-rajdhani text-2xl font-bold text-foreground">Customer Reviews</h3>
+          <h3 className="font-rajdhani h3-subsection text-foreground">Customer Reviews</h3>
           <div className="space-y-base">
             {[...Array(3)].map((_, i) => (
               <div key={i} className="bg-card p-base rounded-none border border-border/30 animate-pulse">
@@ -781,7 +781,7 @@ export function BusinessContent({
           </div>
         </div>
         <div className="space-y-base">
-          <h3 className="font-rajdhani text-2xl font-bold text-foreground">Community Insights</h3>
+          <h3 className="font-rajdhani h3-subsection text-foreground">Community Insights</h3>
           <div className="bg-card p-base rounded-none border border-border/30">
             <div className="w-full h-3 bg-muted rounded mb-xs"></div>
             <div className="w-3/4 h-3 bg-muted rounded"></div>

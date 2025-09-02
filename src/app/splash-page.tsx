@@ -336,7 +336,7 @@ export default function HomePage() {
                   <CheckCircleIcon className="h-3 w-3 mr-1" />
                   Our Solution
                 </Badge>
-                <h3 className="font-rajdhani text-3xl font-bold text-card-foreground mb-4 flex items-center gap-2">
+                <h3 className="font-rajdhani h2-section text-card-foreground mb-4 flex items-center gap-2">
                   <StarIcon className="h-6 w-6 text-sandy-ochre" />
                   One Platform to Unite Treasure Valley's Firearms Community
                 </h3>

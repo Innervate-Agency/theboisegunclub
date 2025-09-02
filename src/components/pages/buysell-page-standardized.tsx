@@ -1,5 +1,16 @@
 'use client'
 
+/**
+ * BuySellPageStandardized - Pure Content Component
+ * 
+ * OPTIMIZED FOR MVP:
+ * - Idaho firearms marketplace with local dealer deals and offers
+ * - Verified business deals with pricing, availability, and contact info
+ * - Advanced filtering by category, price range, location, and dealer tier
+ * - Mobile-first responsive design with clear CTAs and contact methods
+ * - Professional marketplace aesthetic with trust indicators
+ */
+
 import React from 'react'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
@@ -598,7 +609,7 @@ export function BuySellPageStandardized() {
         <div className="flex items-center justify-between">
           <div className="space-y-xs">
             <div className="flex items-center gap-xs">
-              <span className="text-2xl font-bold text-nav-buysell font-rajdhani">${featuredDeal.salePrice}</span>
+              <span className="h3-subsection text-nav-buysell font-rajdhani">${featuredDeal.salePrice}</span>
               <span className="text-sm text-muted-foreground line-through">${featuredDeal.originalPrice}</span>
             </div>
             <div className="text-xs text-nav-buysell font-medium">{featuredDeal.discount}% OFF</div>

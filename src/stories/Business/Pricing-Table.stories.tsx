@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { PricingCard, PricingTable, PricingFusion } from '@/components/ui/pricing-table';
-import { ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { ShieldCheckIcon, UsersIcon, CursorArrowRaysIcon, TrophyIcon, StarIcon } from '@heroicons/react/24/outline';
 
 // TBGC Business Directory Subscription Tiers
 const samplePlans = [

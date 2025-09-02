@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { BrandCarousel } from '@/components/ui/brand-carousel'
-import { BoltIcon, Cog6ToothIcon, CursorArrowRaysIcon, ShieldCheckIcon, Cog6ToothIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { BoltIcon, Cog6ToothIcon, CursorArrowRaysIcon, ShieldCheckIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { Award, Settings, Zap } from 'lucide-react';
 
 const meta: Meta<typeof BrandCarousel> = {
   title: 'Design System/Organisms/BrandCarousel',
