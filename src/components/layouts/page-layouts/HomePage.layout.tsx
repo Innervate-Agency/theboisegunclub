@@ -71,7 +71,7 @@ export function HomePageLayout({
   return (
     <PageContainerWithContext 
       theme="home"
-      navigation={<SiteNavigation />}
+      navigation={<SiteNavigation sticky variant="premium" />}
       footer={<SiteFooter currentPage="home" />}
       className={className}
     >
@@ -175,7 +175,7 @@ export function HomePageLayoutSimple({
   return (
     <PageContainerWithContext 
       theme="home"
-      navigation={<SiteNavigation />}
+      navigation={<SiteNavigation sticky variant="premium" />}
       footer={<SiteFooter currentPage="home" />}
       className={className}
     >

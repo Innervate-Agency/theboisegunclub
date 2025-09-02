@@ -54,19 +54,22 @@ export function PageContainer({
   ...props 
 }: PageContainerProps) {
   return (
-    <div 
-      className={cn(pageContainerVariants({ theme }), className)}
-      data-theme={theme}
-      {...props}
-    >
+    <>
+      {/* Navigation outside of flex container so sticky positioning works */}
       {navigation}
       
-      <main className="flex-grow relative">
-        {children}
-      </main>
-      
-      {footer}
-    </div>
+      <div 
+        className={cn(pageContainerVariants({ theme }), className)}
+        data-theme={theme}
+        {...props}
+      >
+        <main className="flex-grow" style={{ minHeight: 'calc(100vh - 64px)' }}>
+          {children}
+        </main>
+        
+        {footer}
+      </div>
+    </>
   )
 }
 
@@ -109,15 +112,22 @@ export function PageContainerWithContext({
   
   return (
     <PageThemeContext.Provider value={contextValue}>
-      <PageContainer 
-        theme={theme}
-        navigation={navigation}
-        footer={footer}
-        className={className}
-        {...props}
-      >
-        {children}
-      </PageContainer>
+      <>
+        {/* Navigation outside of flex container so sticky positioning works */}
+        {navigation}
+        
+        <div 
+          className={cn(pageContainerVariants({ theme }), className)}
+          data-theme={theme}
+          {...props}
+        >
+          <main className="flex-grow" style={{ minHeight: 'calc(100vh - 64px)' }}>
+            {children}
+          </main>
+          
+          {footer}
+        </div>
+      </>
     </PageThemeContext.Provider>
   )
 }

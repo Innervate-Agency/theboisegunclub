@@ -52,7 +52,7 @@ export function StandardPageLayout({
   return (
     <PageContainerWithContext 
       theme={theme}
-      navigation={<SiteNavigation />}
+      navigation={<SiteNavigation sticky variant="premium" />}
       footer={<SiteFooter currentPage={currentPage} />}
       className={className}
     >

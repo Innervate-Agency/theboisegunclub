@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
-import { ArrowLeftIcon, ChevronRightIcon, ClockIcon, DocumentTextIcon, EnvelopeIcon, PhoneIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftIcon, ChevronRightIcon, ClockIcon, DocumentTextIcon, EnvelopeIcon, PhoneIcon, ScaleIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link'
 
 interface LegalPageTemplateProps {
@@ -36,7 +36,7 @@ export default function LegalPageTemplate({
 }: LegalPageTemplateProps) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-card to-muted/50">
-      <SiteNavigation />
+      <SiteNavigation sticky variant="premium" />
       
       {/* Legal Page Hero */}
       <section className="relative overflow-hidden px-md py-lg border-b border-border">
@@ -70,7 +70,7 @@ export default function LegalPageTemplate({
               {/* Legal Badge */}
               <div className="flex items-center gap-base">
                 <Badge className="bg-slate-blue/20 text-slate-blue border-slate-blue/30">
-                  <Scale className="h-4 w-4 mr-xs" />
+                  <ScaleIcon className="h-4 w-4 mr-xs" />
                   Legal Document
                 </Badge>
                 <Badge variant="outline" className="text-xs">
@@ -80,7 +80,7 @@ export default function LegalPageTemplate({
               
               {/* Title and Description */}
               <div className="space-y-base">
-                <h1 className="font-rajdhani text-3xl md:text-4xl font-bold text-foreground leading-tight">
+                <h1 className="font-rajdhani text-3xl md:h1-primary text-foreground leading-tight">
                   {title}
                 </h1>
                 <p className="text-body-lg text-muted-foreground leading-relaxed">

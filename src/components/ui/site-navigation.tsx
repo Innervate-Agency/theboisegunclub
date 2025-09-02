@@ -21,7 +21,10 @@ import {
   MagnifyingGlassIcon,
   SparklesIcon,
   FireIcon,
-  LightBulbIcon
+  LightBulbIcon,
+  IdentificationIcon,
+  PlusCircleIcon,
+  MapPinIcon
 } from '@heroicons/react/24/outline'
 import { AuthButton } from '@/components/auth/auth-button'
 import { NavbarWeatherWidget } from './navbar-weather-widget'
@@ -52,7 +55,7 @@ const siteNavigationVariants = cva(
     defaultVariants: {
       variant: "default",
       layout: "horizontal",
-      sticky: false
+      sticky: true
     }
   }
 )
@@ -88,7 +91,7 @@ const navigationItems = [
   {
     label: 'Directory',
     href: '/directory',
-    icon: BuildingStorefrontIcon,
+    icon: IdentificationIcon,
     color: 'ayu-green', 
     description: 'Local gun businesses',
     dropdownContent: [
@@ -102,7 +105,7 @@ const navigationItems = [
   {
     label: 'Armory',
     href: '/armory',
-    icon: ShieldCheckIcon,
+    icon: PlusCircleIcon,
     color: 'ayu-purple',
     description: 'Gear reviews & guides',
     dropdownContent: [
@@ -115,7 +118,7 @@ const navigationItems = [
   {
     label: 'Intel',
     href: '/intel',
-    icon: BookOpenIcon,
+    icon: MapPinIcon,
     color: 'ayu-red',
     description: 'Knowledge & training',
     dropdownContent: [
@@ -174,45 +177,121 @@ export function SiteNavigation({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const [activeDropdown, setActiveDropdown] = React.useState<string | null>(null)
   const [hoveredPath, setHoveredPath] = React.useState<string | null>(null)
+  const [logoClickCount, setLogoClickCount] = React.useState(0)
+  const [showIdahoFacts, setShowIdahoFacts] = React.useState(false)
+  const [isStuck, setIsStuck] = React.useState(false)
   
   const timeoutRef = React.useRef<NodeJS.Timeout>()
+  const navRef = React.useRef<HTMLElement>(null)
 
-  // Color utility functions
+  // Simple scroll detection for stuck state
+  React.useEffect(() => {
+    if (!sticky) return
+
+    const handleScroll = () => {
+      setIsStuck(window.scrollY > 10)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [sticky])
+
+  // Idaho facts for logo easter egg
+  const idahoFacts = [
+    "Idaho produces 1/3 of all potatoes grown in the US",
+    "Hell's Canyon is the deepest river gorge in North America",
+    "Idaho has over 3,100 miles of fishable streams and rivers",
+    "The state motto is 'Esto Perpetua' - Let it be perpetual",
+    "Idaho has 63 shooting ranges and firearms training facilities",
+    "Boise is known as the 'City of Trees' with over 180,000 trees",
+    "Idaho leads the nation in trout production"
+  ]
+
+  // Get current page color based on pathname
+  const getCurrentPageColor = () => {
+    if (pathname === '/') return 'text-nav-home'
+    if (pathname.startsWith('/events')) return 'text-nav-events'
+    if (pathname.startsWith('/directory')) return 'text-nav-directory'
+    if (pathname.startsWith('/armory')) return 'text-nav-armory'
+    if (pathname.startsWith('/intel')) return 'text-nav-intel'
+    if (pathname.startsWith('/buysell')) return 'text-nav-buysell'
+    if (pathname.startsWith('/forums')) return 'text-nav-forums'
+    return 'text-nav-home' // fallback
+  }
+
+  // Get current page icon component based on pathname
+  const getCurrentPageIcon = () => {
+    if (pathname === '/') return CubeTransparentIcon
+    if (pathname.startsWith('/events')) return TicketIcon
+    if (pathname.startsWith('/directory')) return IdentificationIcon
+    if (pathname.startsWith('/armory')) return PlusCircleIcon
+    if (pathname.startsWith('/intel')) return MapPinIcon
+    if (pathname.startsWith('/buysell')) return BanknotesIcon
+    if (pathname.startsWith('/forums')) return ChatBubbleLeftRightIcon
+    return CubeTransparentIcon // fallback
+  }
+
+  // Get current page subtitle based on pathname
+  const currentPageSubtitle = React.useMemo(() => {
+    if (pathname === '/') return 'treasure valley collective'
+    if (pathname.startsWith('/events')) return 'your trusted event source'
+    if (pathname.startsWith('/directory')) return 'local business network'
+    if (pathname.startsWith('/armory')) return 'gear reviews & insights'
+    if (pathname.startsWith('/intel')) return 'range conditions & data'
+    if (pathname.startsWith('/buysell')) return 'community commerce hub'
+    if (pathname.startsWith('/forums')) return 'community discussion space'
+    return 'treasure valley collective' // fallback
+  }, [pathname])
+
+  const handleLogoClick = () => {
+    const newCount = logoClickCount + 1
+    setLogoClickCount(newCount)
+    
+    if (newCount === 7) {
+      setShowIdahoFacts(true)
+      setLogoClickCount(0)
+      // Hide after 5 seconds
+      setTimeout(() => setShowIdahoFacts(false), 5000)
+    }
+  }
+
+  // Color utility functions - using proper navigation colors
   const getHoverClasses = (color: string) => {
     switch(color) {
-      case 'rusty-orange': return 'hover:text-rusty-orange hover:bg-rusty-orange/10'
-      case 'slate-blue': return 'hover:text-slate-blue hover:bg-slate-blue/10'
-      case 'ayu-green': return 'hover:text-ayu-green hover:bg-ayu-green/10'
-      case 'ayu-purple': return 'hover:text-ayu-purple hover:bg-ayu-purple/10'
-      case 'ayu-red': return 'hover:text-ayu-red hover:bg-ayu-red/10'
-      case 'ayu-teal': return 'hover:text-ayu-teal hover:bg-ayu-teal/10'
-      default: return 'hover:text-rusty-orange hover:bg-rusty-orange/10'
+      case 'rusty-orange': return 'hover:text-nav-home hover:bg-nav-home/10'
+      case 'slate-blue': return 'hover:text-nav-events hover:bg-nav-events/10'
+      case 'ayu-green': return 'hover:text-nav-directory hover:bg-nav-directory/10'
+      case 'ayu-purple': return 'hover:text-nav-armory hover:bg-nav-armory/10'
+      case 'ayu-red': return 'hover:text-nav-intel hover:bg-nav-intel/10'
+      case 'ayu-teal': return 'hover:text-nav-buysell hover:bg-nav-buysell/10'
+      case 'warm-stone': return 'hover:text-nav-forums hover:bg-nav-forums/10'
+      default: return 'hover:text-nav-home hover:bg-nav-home/10'
     }
   }
 
   const getActiveTextClass = (color: string) => {
     switch(color) {
-      case 'rusty-orange': return 'text-rusty-orange'
-      case 'slate-blue': return 'text-slate-blue'
-      case 'ayu-green': return 'text-ayu-green'
-      case 'ayu-purple': return 'text-ayu-purple'
-      case 'ayu-red': return 'text-ayu-red'
-      case 'ayu-teal': return 'text-ayu-teal'
-      case 'warm-stone': return 'text-warm-stone'
-      default: return 'text-rusty-orange'
+      case 'rusty-orange': return 'text-nav-home'
+      case 'slate-blue': return 'text-nav-events'
+      case 'ayu-green': return 'text-nav-directory'
+      case 'ayu-purple': return 'text-nav-armory'
+      case 'ayu-red': return 'text-nav-intel'
+      case 'ayu-teal': return 'text-nav-buysell'
+      case 'warm-stone': return 'text-nav-forums'
+      default: return 'text-nav-home'
     }
   }
 
   const getMagicLineColor = (color: string) => {
     switch(color) {
-      case 'rusty-orange': return 'bg-rusty-orange'
-      case 'slate-blue': return 'bg-slate-blue'
-      case 'ayu-green': return 'bg-ayu-green'
-      case 'ayu-purple': return 'bg-ayu-purple'
-      case 'ayu-red': return 'bg-ayu-red'
-      case 'ayu-teal': return 'bg-ayu-teal'
-      case 'warm-stone': return 'bg-warm-stone'
-      default: return 'bg-rusty-orange'
+      case 'rusty-orange': return 'bg-nav-home'
+      case 'slate-blue': return 'bg-nav-events'
+      case 'ayu-green': return 'bg-nav-directory'
+      case 'ayu-purple': return 'bg-nav-armory'
+      case 'ayu-red': return 'bg-nav-intel'
+      case 'ayu-teal': return 'bg-nav-buysell'
+      case 'warm-stone': return 'bg-nav-forums'
+      default: return 'bg-nav-home'
     }
   }
 
@@ -260,28 +339,93 @@ export function SiteNavigation({
 
   return (
     <nav 
+      ref={navRef}
       className={cn(
         siteNavigationVariants({ variant, layout, sticky }),
-        "site-navigation transition-all duration-300 relative z-50 border-b border-border/50",
+        "site-navigation transition-all duration-300 border-b border-border/50",
+        sticky ? "sticky top-0 z-50" : "relative", // Force sticky classes
+        isStuck && "shadow-lg", // Add shadow when stuck
         className
       )}
       {...props}
     >
-      {/* Background texture */}
-      <div className="absolute inset-0 -z-10">
-        <NavigationTexture />
-      </div>
+      {/* Clean background - no texture noise */}
 
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Badass Logo with Dynamic Theming */}
           {showLogo && (
-            <Link href="/" className="flex items-center space-x-2 z-10">
-              <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
-                <ShieldCheckIcon className="w-5 h-5 text-primary-foreground" />
+            <div className="flex items-center relative">
+              <div 
+                onClick={handleLogoClick}
+                className="flex items-center gap-xs sm:gap-sm cursor-pointer"
+                title={logoClickCount > 0 ? `${7 - logoClickCount} clicks to Idaho facts` : 'Click 7 times for Idaho facts'}
+              >
+                <div className="flex items-center gap-xs sm:gap-sm">
+                  <MotionDiv
+                    key={pathname} // This triggers re-render on route change for flip animation
+                    className={getCurrentPageColor()}
+                    initial={{ 
+                      rotateY: -90,
+                      scale: 0.8,
+                      rotate: -25
+                    }}
+                    animate={{ 
+                      rotateY: 0,
+                      scale: 1,
+                      rotate: -25
+                    }}
+                    transition={{ 
+                      type: "spring",
+                      stiffness: 260,
+                      damping: 20,
+                      duration: 0.4
+                    }}
+                  >
+                    {React.createElement(getCurrentPageIcon(), { 
+                      className: "size-6 sm:size-8"
+                    })}
+                  </MotionDiv>
+                  <div className="hidden sm:block">
+                    <div className="text-heading-base sm:text-heading-lg font-rajdhani text-card-foreground leading-none uppercase text-left">
+                      <span className="font-[800]">THE BOISE</span> <span className="font-[300]">GUN CLUB</span>
+                    </div>
+                    <p className="text-heading-xs sm:text-heading-sm font-rajdhani font-[500] text-muted-foreground leading-[0.8] lowercase tracking-wider text-left -mt-2 sm:-mt-3">
+                      {currentPageSubtitle}
+                    </p>
+                  </div>
+                  {/* Mobile-only abbreviated logo */}
+                  <div className="block sm:hidden">
+                    <div className="text-heading-sm font-rajdhani text-card-foreground leading-none uppercase font-[800]">
+                      BGC
+                    </div>
+                  </div>
+                </div>
               </div>
-              <span className="font-semibold text-lg">Boise Gun Club</span>
-            </Link>
+              
+              {/* Idaho Facts Easter Egg */}
+              {showIdahoFacts && (
+                <MotionDiv
+                  initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: 10 }}
+                  className="absolute top-full left-0 mt-2 bg-popover border border-border rounded-lg p-4 shadow-lg z-50 w-80"
+                >
+                  <div className="space-y-2">
+                    <div className="font-semibold text-sm text-accent-foreground flex items-center gap-2">
+                      <SparklesIcon className="w-4 h-4" />
+                      Idaho Fact
+                    </div>
+                    <div className="text-sm text-muted-foreground leading-relaxed">
+                      {idahoFacts[Math.floor(Math.random() * idahoFacts.length)]}
+                    </div>
+                    <div className="text-xs text-muted-foreground/70">
+                      Click the logo 7 times again for another fact!
+                    </div>
+                  </div>
+                </MotionDiv>
+              )}
+            </div>
           )}
 
           {/* Desktop Navigation */}
@@ -296,7 +440,7 @@ export function SiteNavigation({
               return (
                 <React.Fragment key={item.href}>
                   <div 
-                    className="relative px-0.5 py-0 mx-1"
+                    className="relative px-0.5 py-0 mx-3"
                     onMouseEnter={() => {
                       setHoveredPath(item.href)
                       handleNavHover(sectionKey)
@@ -319,7 +463,7 @@ export function SiteNavigation({
                         <MotionDiv
                           className="absolute top-0 left-0 flex flex-col justify-between h-full"
                           animate={{
-                            x: isHovered || isDropdownOpen ? -8 : 0
+                            x: isHovered || isDropdownOpen ? -20 : 0
                           }}
                           transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
                         >
@@ -351,46 +495,60 @@ export function SiteNavigation({
                               : `text-muted-foreground ${getHoverClasses(item.color)}`
                         }`}
                       >
-                        <div className="flex items-center gap-sm relative">
-                          <Icon className="w-4 h-4 flex-shrink-0" />
+                        <div className="flex items-center relative">
                           <MotionDiv
-                            animate={{ x: isHovered || isDropdownOpen ? -4 : 0 }}
-                            transition={{ duration: 0.25 }}
-                            className="flex items-center"
-                          >
-                            <span>{item.label}</span>
-                          </MotionDiv>
-                          
-                          {/* Arrow reveal system */}
-                          <MotionDiv
-                            className="absolute right-0 flex items-center"
-                            style={{ x: 20 }}
-                            animate={{ 
-                              x: isHovered || isDropdownOpen ? 0 : 20,
-                              opacity: isHovered || isDropdownOpen ? 1 : 0
+                            className="relative overflow-hidden"
+                            animate={{
+                              paddingLeft: isHovered || isDropdownOpen ? '20px' : '0px',
+                              marginLeft: isHovered || isDropdownOpen ? '-20px' : '0px'
                             }}
                             transition={{ duration: 0.25 }}
                           >
                             <MotionDiv
                               animate={{ 
-                                rotate: isDropdownOpen ? 90 : 0
+                                x: isHovered || isDropdownOpen ? -16 : 0 
+                              }}
+                              transition={{ duration: 0.25 }}
+                              className="flex items-center gap-sm whitespace-nowrap"
+                            >
+                              <Icon className="w-4 h-4 flex-shrink-0" />
+                              <span>{item.label}</span>
+                            </MotionDiv>
+                            
+                            {/* Arrow reveal system - positioned absolutely to slide out from under text */}
+                            <MotionDiv
+                              className="absolute top-1/2 -translate-y-1/2 right-0"
+                              animate={{ 
+                                x: isHovered || isDropdownOpen ? -4 : 16,
+                                opacity: isHovered || isDropdownOpen ? 1 : 0
                               }}
                               transition={{ duration: 0.25 }}
                             >
-                              <ArrowRightIcon className="w-3 h-3" />
+                              <MotionDiv
+                                animate={{ 
+                                  rotate: isDropdownOpen ? 90 : 0
+                                }}
+                                transition={{ duration: 0.25 }}
+                              >
+                                <ArrowRightIcon className="w-3 h-3" />
+                              </MotionDiv>
                             </MotionDiv>
                           </MotionDiv>
                         </div>
                       </Link>
                     </div>
 
-                    {/* Simple Dropdown */}
+                    {/* Enhanced Dropdown with Proper Mica Effect */}
                     {item.dropdownContent && isDropdownOpen && (
                       <MotionDiv
                         className={cn(
-                          "absolute top-full left-0 w-80 z-50 mt-1 rounded-lg border border-border shadow-lg overflow-hidden",
+                          "absolute top-full left-0 w-80 z-50 mt-1 rounded-lg border border-border shadow-lg overflow-hidden backdrop-blur-md",
                           getSectionMicaClass(item.color)
                         )}
+                        style={{
+                          backdropFilter: 'blur(16px) saturate(1.8) contrast(1.05)',
+                          WebkitBackdropFilter: 'blur(16px) saturate(1.8) contrast(1.05)'
+                        }}
                         initial={{ opacity: 0, y: -10, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -10, scale: 0.95 }}
@@ -404,8 +562,8 @@ export function SiteNavigation({
                           <div className="mb-4 border-b border-border/50 pb-3">
                             <div className="flex items-center gap-3">
                               <div className={cn(
-                                "w-10 h-10 rounded-lg flex items-center justify-center",
-                                `bg-${item.color}/10 text-${item.color}`
+                                "w-10 h-10 rounded-lg flex items-center justify-center bg-muted/20",
+                                getActiveTextClass(item.color)
                               )}>
                                 <Icon className="w-5 h-5" />
                               </div>
