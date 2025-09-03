@@ -16,7 +16,7 @@ export async function GET() {
     });
     
     return NextResponse.json(challenge);
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Failed to generate challenge' },
       { status: 500 }

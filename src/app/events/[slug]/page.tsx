@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { ArticleDetailPage } from '@/components/ui/detail-page-builder'
-import { EventEngagementWidget } from '@/components/ui/event-engagement-widget'
 import { getEventBySlug, getAllEventSlugs, type EventData as ComprehensiveEventData } from '@/lib/comprehensive-events-data'
 
 // Event data interface matching the existing EventCard structure
@@ -597,8 +596,7 @@ export default async function EventDetailPage({ params }: Props) {
     notFound()
   }
 
-  // Calculate spots remaining
-  const spotsLeft = event.capacity - event.registeredCount
+  
 
   return (
     <ArticleDetailPage

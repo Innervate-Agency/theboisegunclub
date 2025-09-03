@@ -9,7 +9,6 @@ import {
   QuestionMarkCircleIcon, 
   BookOpenIcon, 
   ChatBubbleBottomCenterTextIcon,
-  PhoneIcon,
   EnvelopeIcon,
   DocumentTextIcon,
   CommandLineIcon,

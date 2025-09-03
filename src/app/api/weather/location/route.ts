@@ -3,7 +3,6 @@ import { fetchWeatherForLocation } from '@/lib/weather-service'
 
 // Location-based weather API using OpenWeatherMap - fallback from blocked NOAA
 async function fetchLocationWeather(lat: number, lng: number, locationName: string) {
-  try {
     // Use OpenWeatherMap service with built-in caching
     const weatherData = await fetchWeatherForLocation(lat, lng, locationName)
     
@@ -27,10 +26,6 @@ async function fetchLocationWeather(lat: number, lng: number, locationName: stri
       lat,
       lng
     }
-    
-  } catch (error) {
-    throw error
-  }
 }
 
 // Determine shooting conditions based on weather
@@ -69,6 +64,7 @@ export async function GET(request: NextRequest) {
     
     // Additional validation for reasonable coordinates (continental US focus)
     if (lat < 20 || lat > 70 || lng < -180 || lng > -60) {
+      // Potentially log this as a suspicious request
     }
     
     

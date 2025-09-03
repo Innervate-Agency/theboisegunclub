@@ -80,7 +80,7 @@ export function AuthButton({
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-blue/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
           <ArrowRightOnRectangleIcon className="size-4 mr-xs transition-transform duration-200 group-hover:scale-110" />
-          <span className="relative">Login/Dashboard</span>
+          <span className="relative">Login / Dashboard</span>
         </Button>
 
         {showTrialButton && (

@@ -20,7 +20,7 @@ import { UnifiedEventCard } from '@/components/ui/unified-event-card'
 import { UnifiedGalleryContainer, useUnifiedGallery } from '@/components/ui/unified-gallery-container'
 import { EventTicker } from '@/components/ui/event-ticker'
 import { ContentBridgeSection } from '@/components/ui/content-bridge-section'
-import { contentBridgeConfigs } from '@/lib/content-bridge-configs'
+import { eventsContentBridge } from '@/lib/content-bridge-events'
 import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { EmptyState } from '@/components/ui/empty-state'
@@ -29,7 +29,6 @@ import { CardSkeleton } from '@/components/ui/card-skeleton'
 import { FloatingCalendars } from '@/components/ui/hero-floating-calendars'
 import { EventsEmbers } from '@/components/ui/hero-events-embers'
 import { DirectoryStatsGrid } from '@/components/ui/directory-stats-grid'
-import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
 import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
 import { SidebarCalendar } from '@/components/ui/sidebar-calendar'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
@@ -83,33 +82,6 @@ const upcomingEvents: EventData[] = getUpcomingEvents()
 export function EventsPageStandardized() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = React.useState(false)
   const [selectedCalendarDate, setSelectedCalendarDate] = React.useState<Date | undefined>(undefined)
-  // Activity feed data for events based on real almanac data
-  const activityFeedData = [
-    {
-      icon: TrophyIcon,
-      iconColor: "text-nav-events",
-      iconBgColor: "bg-nav-events/20",
-      title: "State Championship Added",
-      description: "QRF Idaho State Sectional Championship registration now open",
-      timeAgo: "2h ago"
-    },
-    {
-      icon: TicketIcon,
-      iconColor: "text-rusty-orange",
-      iconBgColor: "bg-rusty-orange/20",
-      title: "Event CalendarDaysIcon Updated",
-      description: "18 new verified events added through 2026 from official almanac",
-      timeAgo: "4h ago"
-    },
-    {
-      icon: UsersIcon,
-      iconColor: "text-sagebrush-green",
-      iconBgColor: "bg-sagebrush-green/20",
-      title: "Venue Partnerships",
-      description: "Rock Creek Ranch confirms hosting 2025 NSCA Western Regional",
-      timeAgo: "6h ago"
-    }
-  ]
 
   // Events category stats based on actual almanac data
   const eventCategoryStats = [
@@ -557,7 +529,9 @@ export function EventsPageStandardized() {
       <EventTicker />
       
       {/* Events Content Section - Unified Layout with cards left, content right */}
-      <ContentBridgeSection {...contentBridgeConfigs.events} />
+      <div className="mt-4xl">
+        <ContentBridgeSection {...eventsContentBridge} />
+      </div>
 
       {/* Main Content Area - Full Width Amazon Style */}
       <section className="py-4xl bg-background/50">

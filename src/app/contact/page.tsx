@@ -7,9 +7,7 @@ import { SiteNavigation } from '@/components/ui/site-navigation'
 import { SiteFooter } from '@/components/ui/site-footer'
 import { 
   EnvelopeIcon, 
-  PhoneIcon, 
   ChatBubbleBottomCenterTextIcon,
-  MapPinIcon,
   ClockIcon,
   ExclamationTriangleIcon,
   InformationCircleIcon,

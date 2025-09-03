@@ -210,7 +210,7 @@ export function ContentBridgeSection({
                   {categories.slice(0, 4).map((category, index) => (
                     <Card 
                       key={index} 
-                      className="mica-card bgc-shadow-whisper hover:bgc-shadow-present transition-all duration-300 cursor-pointer group"
+                      className="bg-card bgc-shadow-whisper hover:bgc-shadow-present transition-all duration-300 cursor-pointer group"
                     >
                       <CardContent className="p-base">
                         <div className="flex items-center justify-between mb-xs">

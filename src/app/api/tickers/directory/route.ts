@@ -71,7 +71,7 @@ export async function GET(request: NextRequest) {
       lastUpdated: new Date().toISOString()
     })
     
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { 
         success: false, 

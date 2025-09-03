@@ -12,38 +12,20 @@ import {
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
+import { StoryPresets } from '@/lib/storybook/templates';
 
-const meta: Meta<typeof Dialog> = {
-  title: 'Design System/Molecules/Dialog',
-  component: Dialog,
-  parameters: {
-    layout: 'centered',
-    docs: {
-      description: {
-        component: `
-# Dialog - TBGC Modal Component
-
-Accessible modal dialogs built with Radix UI and styled with TBGC design system principles.
-
-## Key Features
-- **Mica glassmorphism** - Windows 11 inspired backdrop effects
-- **Strategic restraint** - Clean typography with Rajdhani titles and Noto Sans body text
-- **Proper spacing** - Uses CSS variables for consistent spacing tokens
-- **Accessibility** - Full keyboard navigation and screen reader support
-- **Theme-aware** - Supports both light and dark modes
-
-## Usage
-Use for confirmation dialogs, forms, and other modal interactions that require user focus.
-        `,
-      },
-    },
-  },
-  tags: ['autodocs', 'stable', 'molecule', 'interactive', 'form'],
-};
+/**
+ * Dialog component meta configuration using the template system
+ * This eliminates boilerplate and ensures consistency across stories
+ */
+const meta = StoryPresets.Dialog('Dialog', Dialog);
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * Default dialog story with profile edit form
+ */
 export const Default: Story = {
   render: (args) => (
     <Dialog {...args}>
@@ -73,6 +55,86 @@ export const Default: Story = {
         </div>
         <DialogFooter>
           <Button variant="flat" size="sm" type="submit">Save changes</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  ),
+};
+
+/**
+ * Glass variant with tactical background
+ */
+export const Glass: Story = {
+  parameters: {
+    backgrounds: {
+      default: 'tactical',
+      values: [{
+        name: 'tactical',
+        value: 'url("https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop")'
+      }]
+    }
+  },
+  render: (args) => (
+    <Dialog {...args}>
+      <DialogTrigger asChild>
+        <Button variant="glass">Edit Profile</Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px] bg-card/80 backdrop-blur-xl border-slate-blue/20">
+        <DialogHeader>
+          <DialogTitle>Edit profile</DialogTitle>
+          <DialogDescription>
+            Make changes to your profile here. Click save when you're done.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="grid gap-(--spacing-base) py-16">
+          <div className="grid grid-cols-4 items-center gap-(--spacing-base)">
+            <Label htmlFor="name" className="text-right">
+              Name
+            </Label>
+            <Input id="name" value="Pedro Duarte" className="col-span-3" variant="glass" />
+          </div>
+          <div className="grid grid-cols-4 items-center gap-(--spacing-base)">
+            <Label htmlFor="username" className="text-right">
+              Username
+            </Label>
+            <Input id="username" value="@peduarte" className="col-span-3" variant="glass" />
+          </div>
+        </div>
+        <DialogFooter>
+          <Button variant="glass" size="sm" type="submit">Save changes</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  ),
+};
+
+/**
+ * Destructive action dialog example
+ */
+export const Destructive: Story = {
+  render: (args) => (
+    <Dialog {...args}>
+      <DialogTrigger asChild>
+        <Button variant="destructive">Delete Account</Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Delete Account</DialogTitle>
+          <DialogDescription>
+            This action cannot be undone. This will permanently delete your account and remove your data from our servers.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="grid gap-(--spacing-base) py-16">
+          <div className="grid grid-cols-4 items-center gap-(--spacing-base)">
+            <Label htmlFor="verify" className="text-right">
+              Verify
+            </Label>
+            <Input id="verify" placeholder="Type 'delete' to confirm" className="col-span-3" />
+          </div>
+        </div>
+        <DialogFooter>
+          <Button variant="outline" size="sm">Cancel</Button>
+          <Button variant="destructive" size="sm" type="submit">Delete Account</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

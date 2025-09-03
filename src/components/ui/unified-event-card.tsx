@@ -87,11 +87,11 @@ export function UnifiedEventCard({
     const diffTime = eventDate.getTime() - now.getTime()
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
     
-    if (diffDays === 0) return 'TODAY'
-    if (diffDays === 1) return 'TOMORROW'
-    if (diffDays <= 7) return `${diffDays} DAYS`
-    if (diffDays <= 30) return `${Math.ceil(diffDays / 7)} WEEKS`
-    return `${Math.ceil(diffDays / 30)} MONTHS`
+    if (diffDays === 0) return 'Today'
+    if (diffDays === 1) return 'Tomorrow'
+    if (diffDays <= 7) return `${diffDays} Days`
+    if (diffDays <= 30) return `${Math.ceil(diffDays / 7)} Weeks`
+    return `${Math.ceil(diffDays / 30)} Months`
   }
   
   // Generate subtitle from event data with timing context
@@ -149,11 +149,11 @@ export function UnifiedEventCard({
   
   // Convert timing to contextual phrase
   const getTimingContext = (timing: string) => {
-    if (timing === 'TODAY') return 'Event is today'
-    if (timing === 'TOMORROW') return 'Event is tomorrow'
-    if (timing.includes('DAYS')) return `Event starts in ${timing.toLowerCase()}`
-    if (timing.includes('WEEKS')) return `Event starts in ${timing.toLowerCase()}`
-    if (timing.includes('MONTHS')) return `Event starts in ${timing.toLowerCase()}`
+    if (timing === 'Today') return 'Event is today'
+    if (timing === 'Tomorrow') return 'Event is tomorrow'
+    if (timing.includes('Days')) return `Event starts in ${timing.toLowerCase()}`
+    if (timing.includes('Weeks')) return `Event starts in ${timing.toLowerCase()}`
+    if (timing.includes('Months')) return `Event starts in ${timing.toLowerCase()}`
     return `Event starts ${timing.toLowerCase()}`
   }
   
@@ -166,29 +166,29 @@ export function UnifiedEventCard({
     if (eventType === 'Competition') {
       if (desc.includes('uspsa') || titleLower.includes('uspsa')) return 'USPSA'
       if (desc.includes('idpa') || titleLower.includes('idpa')) return 'IDPA'
-      if (desc.includes('steel challenge') || titleLower.includes('steel challenge')) return 'STEEL CHALLENGE'
-      if (desc.includes('3-gun') || desc.includes('multigun') || titleLower.includes('3-gun')) return '3-GUN'
-      if (desc.includes('sporting clays') || titleLower.includes('sporting clays')) return 'SPORTING CLAYS'
-      if (desc.includes('cowboy') || desc.includes('sass') || titleLower.includes('cowboy')) return 'COWBOY ACTION'
-      if (desc.includes('precision') || titleLower.includes('precision')) return 'PRECISION'
-      if (desc.includes('tactical') || titleLower.includes('tactical')) return 'TACTICAL'
+      if (desc.includes('steel challenge') || titleLower.includes('steel challenge')) return 'Steel Challenge'
+      if (desc.includes('3-gun') || desc.includes('multigun') || titleLower.includes('3-gun')) return '3-Gun'
+      if (desc.includes('sporting clays') || titleLower.includes('sporting clays')) return 'Sporting Clays'
+      if (desc.includes('cowboy') || desc.includes('sass') || titleLower.includes('cowboy')) return 'Cowboy Action'
+      if (desc.includes('precision') || titleLower.includes('precision')) return 'Precision'
+      if (desc.includes('tactical') || titleLower.includes('tactical')) return 'Tactical'
     }
     
     // Training-specific formats
     if (eventType === 'Training') {
       if (desc.includes('ccw') || desc.includes('concealed') || titleLower.includes('ccw')) return 'CCW'
-      if (desc.includes('beginner') || titleLower.includes('beginner')) return 'BEGINNER'
-      if (desc.includes('advanced') || titleLower.includes('advanced')) return 'ADVANCED'
-      if (desc.includes('instructor') || titleLower.includes('instructor')) return 'INSTRUCTOR'
-      if (desc.includes('defensive') || titleLower.includes('defensive')) return 'DEFENSIVE'
-      if (desc.includes('tactical') || titleLower.includes('tactical')) return 'TACTICAL'
+      if (desc.includes('beginner') || titleLower.includes('beginner')) return 'Beginner'
+      if (desc.includes('advanced') || titleLower.includes('advanced')) return 'Advanced'
+      if (desc.includes('instructor') || titleLower.includes('instructor')) return 'Instructor'
+      if (desc.includes('defensive') || titleLower.includes('defensive')) return 'Defensive'
+      if (desc.includes('tactical') || titleLower.includes('tactical')) return 'Tactical'
     }
     
     // General qualifiers
-    if (desc.includes('indoor') || titleLower.includes('indoor')) return 'INDOOR'
-    if (desc.includes('outdoor') || titleLower.includes('outdoor')) return 'OUTDOOR'
-    if (desc.includes('championship') || titleLower.includes('championship')) return 'CHAMPIONSHIP'
-    if (desc.includes('clinic') || titleLower.includes('clinic')) return 'CLINIC'
+    if (desc.includes('indoor') || titleLower.includes('indoor')) return 'Indoor'
+    if (desc.includes('outdoor') || titleLower.includes('outdoor')) return 'Outdoor'
+    if (desc.includes('championship') || titleLower.includes('championship')) return 'Championship'
+    if (desc.includes('clinic') || titleLower.includes('clinic')) return 'Clinic'
     
     return null
   }
@@ -197,7 +197,29 @@ export function UnifiedEventCard({
   
   // Format date for display
   const formatEventDate = (dateString: string) => {
-    const eventDate = new Date(dateString)
+    // Use same parsing logic as getDaysUntilEvent to handle multi-day formats
+    let eventDate: Date
+    
+    // Try to extract a date from various formats
+    if (dateString.includes(',')) {
+      // Handle formats like "Friday-Sunday, August 22-24, 2025"
+      const parts = dateString.split(',')
+      const yearPart = parts[parts.length - 1].trim()
+      const datePart = parts[parts.length - 2].trim()
+      
+      // Extract first date from ranges like "August 22-24"
+      const firstDate = datePart.split('-')[0].trim()
+      eventDate = new Date(`${firstDate}, ${yearPart}`)
+    } else {
+      eventDate = new Date(dateString)
+    }
+    
+    // Handle invalid dates gracefully
+    if (isNaN(eventDate.getTime())) {
+      // Fallback to current date to prevent NaN display
+      eventDate = new Date()
+    }
+    
     const month = eventDate.toLocaleDateString('en-US', { month: 'short' })
     const day = eventDate.getDate()
     const dayOfWeek = eventDate.toLocaleDateString('en-US', { weekday: 'short' })
@@ -219,25 +241,25 @@ export function UnifiedEventCard({
   
   // Registration status based on publicly available info only
   const getRegistrationStatus = () => {
-    if (registrationUrl) return { label: 'REGISTRATION OPEN', color: 'sagebrush-green' }
-    return { label: 'CONTACT ORGANIZER', color: 'slate-blue' }
+    if (registrationUrl) return { label: 'Registration Open', color: 'sagebrush-green' }
+    return { label: 'Contact Organizer', color: 'slate-blue' }
   }
   
   const registrationStatus = getRegistrationStatus()
   
   // Enhanced hero section with registration and timing info
   const heroContent = (
-    <div className="absolute top-lg right-lg">
+    <div className="absolute top-lg left-lg">
       <div className="bg-black/40 backdrop-blur-sm rounded-xs p-sm border border-white/20">
         <div className="text-center space-y-xs">
           <div className="font-rajdhani font-bold text-xs text-white uppercase tracking-wide">
             {dateInfo.month}
           </div>
-          <div className="font-rajdhani font-black text-lg text-white leading-none">
+          <div className="font-rajdhani font-black text-xl text-white leading-none">
             {dateInfo.day}
           </div>
           <div className="text-[10px] text-white/80 font-medium uppercase tracking-wider">
-            {dateInfo.dayOfWeek}
+            {getDaysUntilEvent() || 'Event'}
           </div>
         </div>
       </div>
@@ -257,11 +279,11 @@ export function UnifiedEventCard({
       contentType={eventType}
       badges={[
         { 
-          label: eventType.toUpperCase(), 
+          label: eventType, 
           variant: "outline",
           color: getEventTypeColor(eventType)
         },
-        ...(featured ? [{ label: 'FEATURED', variant: "outline", color: "weathered-gold" }] : []),
+        ...(featured ? [{ label: 'Featured', variant: "outline", color: "weathered-gold" }] : []),
         ...(getSpecificEventType() ? [{ 
           label: getSpecificEventType()!, 
           variant: "outline", 

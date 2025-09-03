@@ -20,7 +20,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { SectionDivider } from '@/components/ui/section-divider'
 import { WeatherConditionsTicker } from '@/components/ui/weather-conditions-ticker'
 import { ContentBridgeSection } from '@/components/ui/content-bridge-section'
-import { contentBridgeConfigs } from '@/lib/content-bridge-configs'
+import { intelContentBridge } from '@/lib/content-bridge-intel'
 import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { EmptyState } from '@/components/ui/empty-state'
@@ -476,7 +476,7 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
       )}
 
       {/* Intel Content Section - Unified Layout with cards left, content right */}
-      <ContentBridgeSection {...contentBridgeConfigs.intel} />
+      <ContentBridgeSection {...intelContentBridge} />
 
       {/* Shooting Locations Gallery - Full Width Amazon Style */}
       <section className="py-4xl bg-background/50">

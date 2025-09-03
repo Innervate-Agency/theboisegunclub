@@ -26,7 +26,7 @@ import {
 import { 
   Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger 
 } from '@/components/ui/sheet'
-import { Bars3Icon, CalendarDaysIcon, ChevronDownIcon, Cog6ToothIcon, CursorArrowRaysIcon, HomeIcon, InformationCircleIcon, Cog6ToothIcon, UserIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, CalendarDaysIcon, ChevronDownIcon, Cog6ToothIcon, CursorArrowRaysIcon, HomeIcon, InformationCircleIcon, UserIcon } from '@heroicons/react/24/outline';
 
 const navItems = [
   { label: 'Home', href: '/', icon: <HomeIcon className="h-4 w-4" /> },

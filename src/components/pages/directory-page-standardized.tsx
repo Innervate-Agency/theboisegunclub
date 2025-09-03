@@ -30,7 +30,7 @@ import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { DirectoryTicker } from '@/components/ui/directory-ticker'
 import { ContentBridgeSection } from '@/components/ui/content-bridge-section'
-import { contentBridgeConfigs } from '@/lib/content-bridge-configs'
+import { directoryContentBridge } from '@/lib/content-bridge-directory'
 import { AcademicCapIcon, ArrowRightIcon, BuildingStorefrontIcon, CheckCircleIcon, ChevronRightIcon, ClockIcon, Cog6ToothIcon, CubeIcon, CurrencyDollarIcon, FunnelIcon, MagnifyingGlassIcon, MapPinIcon, PlusIcon, ShieldCheckIcon, StarIcon, UserIcon, UsersIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
 
 
@@ -880,7 +880,7 @@ export function DirectoryPageStandardized() {
       <DirectoryTicker />
       
       {/* Directory Content Section - Unified Layout with cards left, content right */}
-      <ContentBridgeSection {...contentBridgeConfigs.directory} />
+      <ContentBridgeSection {...directoryContentBridge} />
       
       {/* Main Content Area - Full Width Amazon Style */}
       <section className="py-4xl bg-background/50">

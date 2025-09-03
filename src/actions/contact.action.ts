@@ -54,7 +54,7 @@ export async function submitContactForm(
       values: {}
     }
 
-  } catch (error) {
+  } catch {
     const formValues = Object.fromEntries(formData)
     return {
       success: false,

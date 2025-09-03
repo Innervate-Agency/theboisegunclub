@@ -24,7 +24,7 @@ import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
 import { BlogList } from '@/components/ui/blog-article'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { ContentBridgeSection } from '@/components/ui/content-bridge-section'
-import { contentBridgeConfigs } from '@/lib/content-bridge-configs'
+import { armoryContentBridge } from '@/lib/content-bridge-armory'
 import { useCardPageFilters } from '@/hooks/useCardPageFilters'
 import { EmptyState } from '@/components/ui/empty-state'
 import { EnhancedPagination } from '@/components/ui/enhanced-pagination'
@@ -441,7 +441,7 @@ export function ArmoryPageStandardized() {
       {/* Armory Ticker - TODO: Create armory-specific ticker component */}
       
       {/* Armory Content Section - Unified Layout with cards left, content right */}
-      <ContentBridgeSection {...contentBridgeConfigs.armory} />
+      <ContentBridgeSection {...armoryContentBridge} />
 
       {/* Main Content Area */}
       <section className="py-mobile-2xl sm:py-4xl bg-background/50">

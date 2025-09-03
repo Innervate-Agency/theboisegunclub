@@ -21,7 +21,7 @@ export async function GET() {
       database: 'connected',
       timestamp: new Date().toISOString()
     })
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { 
         status: 'error', 

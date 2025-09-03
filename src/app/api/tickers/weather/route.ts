@@ -1,9 +1,14 @@
-import { CloudIcon } from '@heroicons/react/24/outline'
 import { NextRequest, NextResponse } from 'next/server'
 import { shootingLocations } from '@/lib/intel-locations-data'
 
+interface Location {
+  lat: number;
+  lng: number;
+  name: string;
+}
+
 // National Weather Service API integration - no API key required!
-async function fetchNWSWeatherData(location: any) {
+async function fetchNWSWeatherData(location: Location) {
   const userAgent = 'BoiseGunClub.com Weather v1.0 (theboisegunclub.com, info@theboisegunclub.com)'
   
   try {

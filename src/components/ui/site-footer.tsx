@@ -10,6 +10,7 @@ import { BrassCounter } from "@/components/ui/brass-counter"
 import { Card } from "@/components/ui/card"
 import { FooterTexture } from "@/components/ui/textured-background"
 import { BanknotesIcon, BookOpenIcon, BuildingStorefrontIcon, CategoryIcon, ChatBubbleBottomCenterTextIcon, ChevronUpIcon, CubeTransparentIcon, EnvelopeIcon, GlobeAltIcon, HeartIcon, IdentificationIcon, MapIcon, MapPinIcon, PhoneIcon, PlusCircleIcon, QuestionMarkCircleIcon, ShieldCheckIcon, SparklesIcon, TicketIcon, UsersIcon, ViewfinderCircleIcon } from '@heroicons/react/24/outline'
+import { FloatingUserSystem } from './floating-user-system'
 import { 
   DesertMesaSVG, BoiseFoothillsSVG, SouthBoiseDesertSVG, MountainPineSVG,
   HellsCanyonSVG, SnakeRiverCanyonSVG, CascadeSawtoothsSVG
@@ -344,12 +345,12 @@ export function SiteFooter({
         </div>
       </footer>
       
-      {/* Back to Top FAB */}
+      {/* Back to Top FAB - Moved left to make room for user system */}
       {showBackToTop && (
         <button
           onClick={scrollToTop}
           className={cn(
-            "fixed bottom-6 right-6 z-50 p-3 rounded-full shadow-commanding transition-all duration-300",
+            "fixed bottom-6 right-20 z-50 p-3 rounded-full shadow-commanding transition-all duration-300",
             "hover:shadow-hero hover:scale-110 group",
             isDark 
               ? "bg-primary text-primary-foreground hover:bg-primary/90" 
@@ -360,6 +361,9 @@ export function SiteFooter({
           <ChevronUpIcon className="h-5 w-5 transition-transform group-hover:-translate-y-1" />
         </button>
       )}
+
+      {/* Floating User System */}
+      <FloatingUserSystem />
     </>
   )
 }

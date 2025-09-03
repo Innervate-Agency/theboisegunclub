@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import AltchaWidget, { AltchaWidgetRef } from '@/components/ui/altcha-widget';
-import { ArrowRightIcon, ArrowTrendingUpIcon, BellIcon, BoltIcon, BookmarkIcon, BuildingOffice2Icon, CalendarDaysIcon, ChatBubbleBottomCenterTextIcon, ChatBubbleLeftRightIcon, CheckCircleIcon, CircleStackIcon, CursorArrowRaysIcon, DocumentTextIcon, EnvelopeIcon, ExclamationTriangleIcon, MagnifyingGlassIcon, MapPinIcon, ShareIcon, ShieldCheckIcon, ShoppingCartIcon, SpeakerWaveIcon, StarIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { ArrowTrendingUpIcon, BellIcon, BoltIcon, BuildingOffice2Icon, CalendarDaysIcon, ChatBubbleLeftRightIcon, CheckCircleIcon, CircleStackIcon, CursorArrowRaysIcon, DocumentTextIcon, EnvelopeIcon, ExclamationTriangleIcon, MagnifyingGlassIcon, ShareIcon, ShieldCheckIcon, ShoppingCartIcon, SpeakerWaveIcon, StarIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 export default function HomePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -56,7 +56,7 @@ export default function HomePage() {
       } else {
         setSubmitStatus('error');
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

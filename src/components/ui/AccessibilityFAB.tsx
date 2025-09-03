@@ -10,7 +10,7 @@ import { Badge } from "./badge"
 import { useAccessibility } from "@/hooks/use-accessibility"
 
 const fabVariants = cva(
-  "fixed bottom-6 left-6 z-50 rounded-full shadow-present hover:shadow-elevated hover:bg-accent/10 transition-all duration-200 bg-card border border-border",
+  "fixed bottom-6 left-6 z-50 rounded-full shadow-present hover:shadow-elevated hover:bg-accent/10 transition-all duration-200 mica-card border border-border",
   {
     variants: {
       state: {

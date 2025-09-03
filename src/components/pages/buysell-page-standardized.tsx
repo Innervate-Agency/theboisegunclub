@@ -20,7 +20,7 @@ import { Input } from '@/components/ui/input'
 import { BuySellDealCard } from '@/components/ui/buysell-deal-card'
 import { DirectoryTicker } from '@/components/ui/directory-ticker'
 import { ContentBridgeSection } from '@/components/ui/content-bridge-section'
-import { contentBridgeConfigs } from '@/lib/content-bridge-configs'
+import { buysellContentBridge } from '@/lib/content-bridge-buysell'
 import { BuySellSparklesIcons } from '@/components/ui/hero-buysell-diamonds'
 import { BuySellEmbers } from '@/components/ui/hero-buysell-embers'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
@@ -657,7 +657,7 @@ export function BuySellPageStandardized() {
       <DirectoryTicker />
       
       {/* Buy & Sell Content Section - Trust and Categories */}
-      <ContentBridgeSection {...contentBridgeConfigs.buysell} />
+      <ContentBridgeSection {...buysellContentBridge} />
 
       {/* Main Content Area */}
       <section className="py-mobile-2xl sm:py-4xl bg-background/50">

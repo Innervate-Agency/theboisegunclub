@@ -63,7 +63,7 @@ const siteNavigationVariants = cva(
 // Navigation items with enhanced configuration
 const navigationItems = [
   {
-    label: 'HOME',
+    label: 'Home',
     href: '/',
     icon: CubeTransparentIcon,
     color: 'rusty-orange',
@@ -76,7 +76,7 @@ const navigationItems = [
     ]
   },
   {
-    label: 'EVENTS',
+    label: 'Events',
     href: '/events', 
     icon: TicketIcon,
     color: 'slate-blue',
@@ -89,7 +89,7 @@ const navigationItems = [
     ]
   },
   {
-    label: 'DIRECTORY',
+    label: 'Directory',
     href: '/directory',
     icon: IdentificationIcon,
     color: 'ayu-green', 
@@ -103,7 +103,7 @@ const navigationItems = [
     ]
   },
   {
-    label: 'ARMORY',
+    label: 'Armory',
     href: '/armory',
     icon: PlusCircleIcon,
     color: 'ayu-purple',
@@ -116,7 +116,7 @@ const navigationItems = [
     ]
   },
   {
-    label: 'INTEL',
+    label: 'Intel',
     href: '/intel',
     icon: MapPinIcon,
     color: 'ayu-red',
@@ -129,7 +129,7 @@ const navigationItems = [
     ]
   },
   {
-    label: 'BUY & SELL',
+    label: 'Buy & Sell',
     href: '/buysell',
     icon: BanknotesIcon,
     color: 'ayu-teal',
@@ -142,7 +142,7 @@ const navigationItems = [
     ]
   },
   {
-    label: 'FORUMS',
+    label: 'Forums',
     href: '/forums',
     icon: ChatBubbleLeftRightIcon,
     color: 'warm-stone',
@@ -440,7 +440,7 @@ export function SiteNavigation({
               return (
                 <React.Fragment key={item.href}>
                   <div 
-                    className="relative px-0.5 py-0 mx-3"
+                    className="relative px-0.5 py-0 mx-1"
                     onMouseEnter={() => {
                       setHoveredPath(item.href)
                       handleNavHover(sectionKey)
@@ -487,7 +487,7 @@ export function SiteNavigation({
                     <div className="relative z-10">
                       <Link
                         href={item.href}
-                        className={`flex items-center justify-between w-full pl-sm pr-xs py-xs text-body-base font-rajdhani font-semibold transition-all duration-300 gap-sm ${
+                        className={`flex items-center justify-between w-full px-1 py-0.5 text-body-base font-rajdhani font-semibold transition-all duration-300 gap-sm ${
                           isActive || isDropdownOpen
                             ? getActiveTextClass(item.color)
                             : isHovered 
@@ -497,7 +497,7 @@ export function SiteNavigation({
                       >
                         <div className="flex items-center relative">
                           <MotionDiv
-                            className="relative overflow-hidden"
+                            className="relative"
                             animate={{
                               paddingLeft: isHovered || isDropdownOpen ? '16px' : '0px',
                               marginLeft: isHovered || isDropdownOpen ? '-16px' : '0px'
@@ -541,13 +541,9 @@ export function SiteNavigation({
                     {/* Enhanced Dropdown with Proper Mica Effect */}
                     {item.dropdownContent && isDropdownOpen && (
                       <MotionDiv
-                        className={cn(
-                          "absolute top-full left-0 w-80 z-50 mt-1 rounded-lg border border-border shadow-lg overflow-hidden backdrop-blur-md",
-                          getSectionMicaClass(item.color)
-                        )}
+                        className="absolute top-full left-0 w-80 z-50 mt-1 rounded-lg border border-border shadow-lg"
                         style={{
-                          backdropFilter: 'blur(16px) saturate(1.8) contrast(1.05)',
-                          WebkitBackdropFilter: 'blur(16px) saturate(1.8) contrast(1.05)'
+                          background: 'rgba(248, 246, 241, 0.9)'
                         }}
                         initial={{ opacity: 0, y: -10, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -557,6 +553,14 @@ export function SiteNavigation({
                           ease: [0.25, 0.46, 0.45, 0.94]
                         }}
                       >
+                        {/* Backdrop blur pseudo-element to fix Chrome nested backdrop-filter issue */}
+                        <div 
+                          className="absolute inset-0 -z-10 rounded-lg"
+                          style={{
+                            backdropFilter: 'blur(16px) saturate(1.8)',
+                            WebkitBackdropFilter: 'blur(16px) saturate(1.8)'
+                          }}
+                        />
                         <div className="p-4">
                           {/* Header */}
                           <div className="mb-4 border-b border-border/50 pb-3">
@@ -589,27 +593,25 @@ export function SiteNavigation({
                           {/* Menu Items */}
                           <div className="space-y-1">
                             {item.dropdownContent.map((dropdownItem, idx) => (
-                              <Link
+                              <MotionDiv
                                 key={dropdownItem.href}
-                                href={dropdownItem.href}
-                                className="flex items-start gap-3 p-3 rounded-lg hover:bg-accent/50 transition-colors group"
-                                onClick={() => setActiveDropdown(null)}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: idx * 0.05, duration: 0.2 }}
                               >
-                                <div className="flex-shrink-0 mt-0.5">
-                                  {idx === 0 && <SparklesIcon className="w-4 h-4 text-muted-foreground group-hover:text-accent-foreground" />}
-                                  {idx === 1 && <FireIcon className="w-4 h-4 text-muted-foreground group-hover:text-accent-foreground" />}
-                                  {idx === 2 && <LightBulbIcon className="w-4 h-4 text-muted-foreground group-hover:text-accent-foreground" />}
-                                  {idx >= 3 && <ArrowRightIcon className="w-4 h-4 text-muted-foreground group-hover:text-accent-foreground" />}
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                  <div className="font-medium text-sm group-hover:text-accent-foreground">
+                                <Link
+                                  href={dropdownItem.href}
+                                  className={`block p-3 rounded-lg transition-all duration-200 group hover:translate-x-1 ${getHoverClasses(item.color)}`}
+                                  onClick={() => setActiveDropdown(null)}
+                                >
+                                  <div className={`font-medium text-sm transition-colors group-hover:${getActiveTextClass(item.color).replace('text-', '')}`}>
                                     {dropdownItem.label}
                                   </div>
-                                  <div className="text-xs text-muted-foreground mt-0.5">
+                                  <div className="text-xs text-muted-foreground mt-0.5 group-hover:text-muted-foreground/80 transition-colors">
                                     {dropdownItem.description}
                                   </div>
-                                </div>
-                              </Link>
+                                </Link>
+                              </MotionDiv>
                             ))}
                           </div>
                         </div>
@@ -619,7 +621,7 @@ export function SiteNavigation({
                   
                   {/* Separator lines */}
                   {index < navigationItems.slice(0, 7).length - 1 && (
-                    <div className="h-4 w-px mx-xs relative">
+                    <div className="h-4 w-px mx-1 relative">
                       <div className="absolute inset-0 w-px bg-muted-foreground/20" />
                       <div className="absolute inset-0 w-px bg-card/30 translate-x-px" />
                     </div>

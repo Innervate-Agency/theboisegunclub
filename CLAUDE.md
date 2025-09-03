@@ -74,3 +74,4 @@ Key Architectural Principles:
 - Don't run builds unless absolutely necessary (waste tokens)
 - User is always watching/debugging live - no need to check if fixes work
 - End completions with "Check to see if this is fixed now, give me any errors you may find"
+- please always  review the changelog, latest git commits, claude.md, and put the globals.css 2500 lines into your memory each new session/compaction of this project

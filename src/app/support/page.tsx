@@ -13,8 +13,6 @@ import {
   CheckCircleIcon,
   ClockIcon,
   DocumentTextIcon,
-  ChatBubbleBottomCenterTextIcon,
-  EnvelopeIcon,
   BugAntIcon,
   WrenchScrewdriverIcon,
   QuestionMarkCircleIcon,

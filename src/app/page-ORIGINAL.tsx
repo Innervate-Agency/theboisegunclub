@@ -8,7 +8,7 @@ import { BuySellDealSection } from '@/components/sections/buysell-deal-section'
 import { PlatformValuesSection } from '@/components/sections/platform-values-section'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
-import { WesternSection, WesternDivider } from '@/components/ui/western-dividers'
+import { WesternSection } from '@/components/ui/western-dividers'
 import { SimpleStickyNav } from '@/components/ui/simple-sticky-nav'
 
 export default function HomePage() {

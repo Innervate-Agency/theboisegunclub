@@ -96,7 +96,7 @@ const getBuySellProduct = (id: string) => {
   return products.find(product => product.id === id)
 }
 
-const getRelatedProducts = (productId: string, category: string) => {
+const getRelatedProducts = () => {
   // Mock related products
   return [
     {
@@ -165,7 +165,7 @@ export default async function BuySellProductPage({ params }: Props) {
     notFound()
   }
 
-  const relatedProducts = getRelatedProducts(id, product.category)
+  
 
   // Transform product data to match ProductDetailPage props
   const transformedProduct = {

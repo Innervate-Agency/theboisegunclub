@@ -157,7 +157,7 @@ export async function PATCH(request: NextRequest) {
       message: 'Profile updated'
     })
 
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'server_error' },
       { status: 500 }
