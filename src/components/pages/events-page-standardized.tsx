@@ -16,13 +16,13 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent } from '@/components/ui/card'
-import { EventCard } from '@/components/ui/EventCard'
+import { UnifiedEventCard } from '@/components/ui/unified-event-card'
+import { UnifiedGalleryContainer, useUnifiedGallery } from '@/components/ui/unified-gallery-container'
 import { EventTicker } from '@/components/ui/event-ticker'
 import { ContentBridgeSection } from '@/components/ui/content-bridge-section'
 import { contentBridgeConfigs } from '@/lib/content-bridge-configs'
 import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
-import { useCardPageFilters } from '@/hooks/useCardPageFilters'
 import { EmptyState } from '@/components/ui/empty-state'
 import { EnhancedPagination } from '@/components/ui/enhanced-pagination'
 import { CardSkeleton } from '@/components/ui/card-skeleton'
@@ -133,7 +133,7 @@ export function EventsPageStandardized() {
   }, [selectedCalendarDate])
 
   // Filter configuration
-  const filters = useCardPageFilters({
+  const filters = useUnifiedGallery({
     items: calendarFilteredEvents,
     initialTab: 'all',
     initialSortBy: 'date',
@@ -559,15 +559,29 @@ export function EventsPageStandardized() {
       {/* Events Content Section - Unified Layout with cards left, content right */}
       <ContentBridgeSection {...contentBridgeConfigs.events} />
 
-      {/* Main Content Area */}
-      <section className="py-mobile-2xl sm:py-4xl bg-background/50">
-        <div className="w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile">
-          <div className="flex flex-col lg:flex-row gap-mobile-lg sm:gap-2xl max-w-[1920px] mx-auto">
+      {/* Main Content Area - Full Width Amazon Style */}
+      <section className="py-4xl bg-background/50">
+        <div className="w-full px-lg">
+          <div className="flex flex-col lg:flex-row gap-lg max-w-[2400px] mx-auto">
             
             {/* Left Sidebar - CalendarDaysIcon and Filters (Desktop) */}
-            <aside className="hidden lg:block">
-              <div className="space-y-6">
-                {/* Compact Sidebar CalendarDaysIcon - Moved to top for better visibility */}
+            <aside className="hidden lg:block w-80 xl:w-96 flex-shrink-0">
+              <div className="bg-muted/10 p-lg rounded-xs border border-border/50 space-y-lg">
+                <div className="space-y-lg">
+                  <Badge variant="outline" size="default">
+                    Events Calendar
+                  </Badge>
+                  <div>
+                    <h2 className="font-rajdhani h3-subsection text-card-foreground leading-tight">
+                      Idaho <span className="text-nav-events">Firearms Events</span>
+                    </h2>
+                    <p className="text-sm text-muted-foreground mt-xs">
+                      {upcomingEvents.length} events • {upcomingEvents.filter(e => e.featured).length} featured
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Compact Sidebar CalendarDaysIcon - Proper width */}
                 <SidebarCalendar 
                   events={upcomingEvents.map(event => ({
                     title: event.title,
@@ -578,7 +592,7 @@ export function EventsPageStandardized() {
                   onDateSelect={setSelectedCalendarDate}
                 />
                 
-                {/* Modern Filter Sidebar - Now fully collapsible */}
+                {/* Modern Filter Sidebar */}
                 <ModernFilterSidebar
                   sections={filterSections}
                   selectedFilters={filters.selectedFilters}
@@ -761,39 +775,35 @@ export function EventsPageStandardized() {
                 </div>
               </div>
 
-              {/* Card Grid/ListBulletIcon Content with Loading State */}
+              {/* Unified Gallery Container */}
               <div className="mb-4xl">
-                {filters.isLoading ? (
-                  <CardSkeleton 
-                    viewMode={filters.viewMode} 
-                    count={filters.itemsPerPage} 
-                    className={filters.getGridClassName()}
-                  />
-                ) : (
-                  <div className={filters.getGridClassName()}>
-                    {filters.paginatedItems.length > 0 ? (
-                      filters.paginatedItems.map((event, index) => (
-                        <EventCard
-                          key={`${event.title}-${index}`}
-                          {...event}
-                          className="transition-all duration-300 rounded-xs"
-                        />
-                      ))
-                    ) : (
-                      <div className="col-span-full">
-                        <EmptyState 
-                          title="No Events Found"
-                          description="Try adjusting your search terms or filters to find events."
-                          onAction={
-                            <Button onClick={filters.clearAllFilters}>
-                              Clear All Filters
-                            </Button>
-                          }
-                        />
-                      </div>
-                    )}
-                  </div>
-                )}
+                <UnifiedGalleryContainer
+                  items={upcomingEvents}
+                  filteredItems={filters.paginatedItems}
+                  viewMode={filters.viewMode}
+                  isLoading={filters.isLoading}
+                  section="events"
+                  renderItem={(event, index) => (
+                    <UnifiedEventCard
+                      key={`${event.title}-${index}`}
+                      title={event.title}
+                      date={event.date}
+                      time={event.time}
+                      location={event.location}
+                      description={event.description}
+                      eventType={event.eventType}
+                      registrationUrl={event.registrationUrl}
+                      price={event.price}
+                      slug={event.slug}
+                      viewMode={filters.viewMode}
+                    />
+                  )}
+                  emptyStateMessage="No events found"
+                  emptyStateAction={{
+                    label: "Clear Filters", 
+                    href: "#"
+                  }}
+                />
               </div>
 
               {/* Enhanced Pagination */}

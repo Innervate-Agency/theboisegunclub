@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import AlternatingFeatureSpotlight from '@/components/organisms/AlternatingFeatureSpotlight';
 import { CalendarDaysIcon, ChatBubbleLeftRightIcon, ListBulletIcon, LockClosedIcon, MagnifyingGlassIcon, StarIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { ShieldCheck, Store } from 'lucide-react';
 
 const meta: Meta<typeof AlternatingFeatureSpotlight> = {
   title: 'Design System/Organisms/AlternatingFeatureSpotlight',

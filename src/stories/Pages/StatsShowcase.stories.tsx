@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { StatsShowcase } from '@/components/ui/stats-showcase';
-import { CalendarDaysIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, UsersIcon, CursorArrowRaysIcon, TrophyIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof StatsShowcase> = {
   title: 'Design System/Pages/StatsShowcase',

@@ -3,7 +3,7 @@ import {
   ToggleGroup,
   ToggleGroupItem,
 } from '@/components/ui/toggle-group';
-import { Bold, Italic, Underline } from '@heroicons/react/24/outline';
+import { Bold, Italic, Underline } from 'lucide-react';
 
 const meta: Meta<typeof ToggleGroup> = {
   title: 'Design System/Atoms/ToggleGroup',

@@ -166,9 +166,9 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         {/* Tactical Border Elements (only for tactical variant) */}
         {isTactical && (
           <>
-            {/* Corner brackets - larger than navbar version */}
-            <div className={cn('absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 opacity-0 group-hover:opacity-100 transition-all duration-200', themeClasses.border)} />
-            <div className={cn('absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 opacity-0 group-hover:opacity-100 transition-all duration-200', themeClasses.border)} />
+            {/* Corner brackets - larger than navbar version with higher z-index for hero sections */}
+            <div className={cn('absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 opacity-0 group-hover:opacity-100 transition-all duration-200 z-20', themeClasses.border)} />
+            <div className={cn('absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 opacity-0 group-hover:opacity-100 transition-all duration-200 z-20', themeClasses.border)} />
             <div className={cn('absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 opacity-0 group-hover:opacity-100 transition-all duration-200', themeClasses.border)} />
             
             {/* Bottom-right corner with document cutout */}

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { FeatureGrid } from '@/components/ui/feature-grid';
-import { ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { ShieldCheckIcon, UsersIcon, CursorArrowRaysIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof FeatureGrid> = {
   title: 'Design System/Organisms/FeatureGrid',
@@ -18,19 +18,19 @@ const sampleFeatures = [
   {
     title: 'Comprehensive Directory',
     description: 'Find every gun shop, shooting range, instructor, and gunsmith across the Treasure Valley. All businesses verified and regularly updated.',
-    icon: CursorArrowRaysIcon,
+    icon: <CursorArrowRaysIcon />,
     link: { text: 'Browse Directory' },
   },
   {
     title: 'Trusted Reviews',
     description: 'Read honest reviews from the community to make informed decisions about local businesses and services.',
-    icon: ShieldCheckIcon,
+    icon: <ShieldCheckIcon />,
     link: { text: 'Read Reviews' },
   },
   {
     title: 'Regional Community',
     description: 'Connect with thousands of firearms enthusiasts throughout the Treasure Valley. Share experiences, find shooting partners, and discover local events.',
-    icon: UsersIcon,
+    icon: <UsersIcon />,
     link: { text: 'Join Community' },
   },
 ];
@@ -52,7 +52,7 @@ export const FourColumns: Story = {
       {
         title: 'Expert-Led Training',
         description: 'From beginner lessons to advanced coaching, our certified instructors are here to help you improve your skills and achieve your shooting goals.',
-        icon: CursorArrowRaysIcon,
+        icon: <CursorArrowRaysIcon />,
         link: { text: 'See Training' },
       },
     ],

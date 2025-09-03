@@ -6,7 +6,8 @@ import { cn } from "@/lib/utils"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./accordion"
 import { Badge } from "./badge"
 import { Input } from "./input"
-import { MagnifyingGlassIcon, HelpCircle } from "@heroicons/react/24/outline"
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { HelpCircle } from "lucide-react";
 
 const faqAccordionVariants = cva(
   "w-full",
@@ -58,8 +59,8 @@ export default function FAQAccordion({
   const filteredFAQs = React.useMemo(() => {
     return faqs.filter(faq => {
       const matchesSearch = !searchTerm || 
-        faq.question.toLowerCase().includes(searchTermotion.toLowerCase()) ||
-        faq.answer.toLowerCase().includes(searchTermotion.toLowerCase())
+        faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
       
       const matchesCategory = !selectedCategory || faq.category === selectedCategory
       

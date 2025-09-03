@@ -9,7 +9,8 @@ import { ArmorySidebar } from '@/components/ui/armory-sidebar'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { ArrowTrendingUpIcon, BookOpenIcon, CursorArrowRaysIcon, MapPinIcon, ShieldCheckIcon, StarIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { ArrowTrendingUpIcon, BookOpenIcon, BuildingOffice2Icon, CursorArrowRaysIcon, MapPinIcon, ShieldCheckIcon, StarIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { Scale } from 'lucide-react';
 
 const meta: Meta<typeof ArmorySidebar> = {
   title: 'Design System/Organisms/ArmorySidebar',

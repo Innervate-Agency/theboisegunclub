@@ -1,11 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { SiteNavigation } from '@/components/ui/site-navigation';
+import { AuthProvider } from '@/components/auth/auth-context';
 import { CalendarDaysIcon, ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof SiteNavigation> = {
   title: 'Design System/Organisms/SiteNavigation',
   component: SiteNavigation,
   parameters: {
+    nextjs: {
+      router: {
+        pathname: '/',
+      },
+    },
     layout: 'fullscreen',
     docs: {
       description: {
@@ -30,6 +36,13 @@ const meta: Meta<typeof SiteNavigation> = {
     },
   },
   tags: ['autodocs'],
+  decorators: [
+    (Story) => (
+      <AuthProvider>
+        <Story />
+      </AuthProvider>
+    ),
+  ],
 };
 
 export default meta;
@@ -41,6 +54,13 @@ export const Default: Story = {
     layout: 'horizontal',
     sticky: false,
     showLogo: true,
+  },
+  parameters: {
+    nextjs: {
+      router: {
+        pathname: '/',
+      },
+    },
   },
 };
 

@@ -14,6 +14,7 @@ import {
   SidebarMenuItem,
 } from './sidebar'
 import { CursorArrowRaysIcon, DocumentTextIcon, GlobeAltIcon, MapPinIcon, ShieldCheckIcon, UsersIcon, WrenchIcon } from '@heroicons/react/24/outline';
+import { Scale } from 'lucide-react';
 
 export function ArmorySidebar() {
   return (

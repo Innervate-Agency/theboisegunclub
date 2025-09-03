@@ -16,10 +16,10 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent } from '@/components/ui/card'
-import { VendorCard } from '@/components/ui/VendorCard'
+import { UnifiedDirectoryCard } from '@/components/ui/unified-directory-card'
+import { UnifiedGalleryContainer, useUnifiedGallery } from '@/components/ui/unified-gallery-container'
 import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
-import { useCardPageFilters } from '@/hooks/useCardPageFilters'
 import { EmptyState } from '@/components/ui/empty-state'
 import { EnhancedPagination } from '@/components/ui/enhanced-pagination'
 import { CardSkeleton } from '@/components/ui/card-skeleton'
@@ -398,8 +398,8 @@ export function DirectoryPageStandardized() {
     { icon: BuildingStorefrontIcon, title: "Total Businesses", value: directoryListings.length.toString(), subtitle: "Verified listings", color: "text-nav-directory" }
   ]
 
-  // Filter configuration
-  const filters = useCardPageFilters({
+  // Filter configuration using unified gallery system
+  const filters = useUnifiedGallery({
     items: directoryListings,
     initialTab: 'all',
     initialSortBy: 'featured',
@@ -435,11 +435,75 @@ export function DirectoryPageStandardized() {
       }
     },
     
-    // Custom filters
+    // Enhanced custom filters for comprehensive business directory filtering
     customFilters: {
-      category: (business, selectedCategories) => {
-        if (selectedCategories.length === 0) return true
-        return selectedCategories.includes(business.category.toLowerCase())
+      businessType: (business, selectedTypes) => {
+        if (selectedTypes.length === 0) return true
+        const businessDesc = business.description.toLowerCase()
+        const businessType = business.businessType.toLowerCase()
+        const category = business.category.toLowerCase()
+        const specialties = business.specialties.map(s => s.toLowerCase())
+        
+        return selectedTypes.some(type => {
+          switch (type) {
+            // Range types
+            case 'indoor-range': return businessDesc.includes('indoor') && category === 'range'
+            case 'outdoor-range': return businessDesc.includes('outdoor') && category === 'range'
+            case 'private-range': return businessDesc.includes('private') && category === 'range'
+            case 'sporting-clays': return businessDesc.includes('sporting clays') || businessDesc.includes('clay')
+            case 'long-range': return businessDesc.includes('500') || businessDesc.includes('long range')
+            
+            // Retail types
+            case 'gun-store': return category === 'retail' && !businessDesc.includes('pawn')
+            case 'pawn-shop': return businessDesc.includes('pawn')
+            case 'sporting-goods': return businessDesc.includes('sporting') || businessType.includes('sporting')
+            case 'online-dealer': return businessDesc.includes('online')
+            
+            // Gunsmith types
+            case 'full-service': return category === 'gunsmith' && businessDesc.includes('full')
+            case 'custom-builds': return businessDesc.includes('custom') || specialties.some(s => s.includes('custom'))
+            case 'precision-rifle': return businessDesc.includes('precision') || businessDesc.includes('competition')
+            case 'cerakote': return specialties.some(s => s.includes('cerakote'))
+            
+            // Training types
+            case 'ccw-classes': return category === 'training' && specialties.some(s => s.includes('ccw'))
+            case 'defensive-training': return businessDesc.includes('defensive')
+            case 'marksmanship': return businessDesc.includes('marksmanship') || businessDesc.includes('precision')
+            case 'youth-programs': return businessDesc.includes('youth')
+            
+            // Club types
+            case 'competition-clubs': return category === 'club' && businessDesc.includes('competition')
+            case 'shooting-leagues': return businessDesc.includes('league')
+            case 'collectors-clubs': return businessDesc.includes('collector')
+            
+            // Service types
+            case 'nfa-dealer': return category === 'service' || specialties.some(s => s.includes('nfa') || s.includes('suppress'))
+            case 'ffl-transfers': return specialties.some(s => s.includes('transfer'))
+            case 'appraisals': return businessDesc.includes('appraisal')
+            
+            default: return false
+          }
+        })
+      },
+      services: (business, selectedServices) => {
+        if (selectedServices.length === 0) return true
+        const specialties = business.specialties.map(s => s.toLowerCase())
+        const businessDesc = business.description.toLowerCase()
+        const category = business.category.toLowerCase()
+        
+        return selectedServices.some(service => {
+          switch (service) {
+            case 'ccw-training': return specialties.some(s => s.includes('ccw'))
+            case 'gunsmithing': return specialties.some(s => s.includes('gunsmith') || s.includes('repair')) || category === 'gunsmith'
+            case 'range-access': return category === 'range'
+            case 'nfa-items': return specialties.some(s => s.includes('nfa') || s.includes('suppress'))
+            case 'cerakote-coating': return specialties.some(s => s.includes('cerakote'))
+            case 'competition-support': return specialties.some(s => s.includes('competition'))
+            case 'custom-work': return specialties.some(s => s.includes('custom'))
+            case 'bulk-orders': return specialties.some(s => s.includes('bulk') || s.includes('wholesale'))
+            default: return false
+          }
+        })
       },
       tier: (business, selectedTiers) => {
         if (selectedTiers.length === 0) return true
@@ -448,13 +512,17 @@ export function DirectoryPageStandardized() {
       location: (business, selectedLocations) => {
         if (selectedLocations.length === 0) return true
         const addressLower = business.address.toLowerCase()
-        return selectedLocations.some(loc => addressLower.includes(loc))
+        return selectedLocations.some(loc => {
+          if (loc === 'kuna') return addressLower.includes('kuna') || addressLower.includes('star')
+          return addressLower.includes(loc)
+        })
       },
       verification: (business, selectedOptions) => {
         if (selectedOptions.length === 0) return true
         return selectedOptions.some(option => {
           if (option === 'verified') return business.isVerified
           if (option === 'sponsored') return business.isSponsored
+          if (option === 'community-submitted') return !business.isVerified && !business.isSponsored
           return false
         })
       }
@@ -476,20 +544,137 @@ export function DirectoryPageStandardized() {
     }
   })
 
-  // Modern filter sidebar configuration - Updated with tactical icons
+  // Color mapping for Directory filter categories - Business-focused palette
+  const getFilterColor = (category: string, type: string): string => {
+    switch (category) {
+      case 'businessType':
+        // Business type specific colors using nav colors
+        if (type.includes('range') || type.includes('shooting')) return 'bg-nav-armory'
+        if (type.includes('gunsmith') || type.includes('repair')) return 'bg-nav-intel'
+        if (type.includes('retail') || type.includes('store') || type.includes('dealer')) return 'bg-nav-buysell'
+        if (type.includes('training') || type.includes('education')) return 'bg-nav-events'
+        if (type.includes('club') || type.includes('organization')) return 'bg-nav-forums'
+        if (type.includes('service') || type.includes('nfa') || type.includes('cerakote')) return 'bg-nav-directory'
+        return 'bg-nav-directory'
+      case 'services':
+        // Service-specific color coding
+        if (type.includes('ccw') || type.includes('training')) return 'bg-nav-events'
+        if (type.includes('gunsmith') || type.includes('repair')) return 'bg-canyon-clay'
+        if (type.includes('range') || type.includes('shooting')) return 'bg-rusty-orange'
+        if (type.includes('nfa') || type.includes('suppressor')) return 'bg-slate-blue'
+        if (type.includes('cerakote') || type.includes('coating')) return 'bg-foothills-purple'
+        if (type.includes('competition') || type.includes('match')) return 'bg-sagebrush-green'
+        return 'bg-warm-stone'
+      case 'tier':
+        // Tier colors using metallic palette
+        if (type === 'gold') return 'bg-weathered-gold'
+        if (type === 'silver') return 'bg-warm-stone'
+        if (type === 'bronze') return 'bg-sandy-ochre'
+        if (type === 'standard') return 'bg-slate-blue'
+        return 'bg-nav-directory'
+      case 'location':
+        // Location colors using earthy tones
+        if (type.includes('boise')) return 'bg-lodgepole-green'
+        if (type.includes('meridian')) return 'bg-sagebrush-green'
+        if (type.includes('nampa')) return 'bg-sandy-ochre'
+        if (type.includes('caldwell')) return 'bg-canyon-clay'
+        if (type.includes('eagle')) return 'bg-scope-blue'
+        return 'bg-nav-directory'
+      default:
+        return 'bg-nav-directory'
+    }
+  }
+  
+  // Comprehensive Directory filter sidebar configuration - Business-focused taxonomy
   const filterSections = [
     {
-      id: 'category',
-      title: 'Business Type',
-      maxVisible: 6,
-      collapsible: false,
+      id: 'businessType',
+      title: 'Business Type & Specialty',
+      maxVisible: 8,
+      collapsible: true,
+      isCategory: true,
+      categories: [
+        {
+          id: 'shooting-ranges',
+          title: 'Shooting Ranges',
+          color: getFilterColor('businessType', 'range'),
+          options: [
+            { id: 'indoor-range', label: 'Indoor Ranges', count: directoryListings.filter(b => b.description.toLowerCase().includes('indoor')).length, color: getFilterColor('businessType', 'indoor-range') },
+            { id: 'outdoor-range', label: 'Outdoor Ranges', count: directoryListings.filter(b => b.description.toLowerCase().includes('outdoor')).length, color: getFilterColor('businessType', 'outdoor-range') },
+            { id: 'private-range', label: 'Private Ranges', count: directoryListings.filter(b => b.description.toLowerCase().includes('private')).length, color: getFilterColor('businessType', 'private-range') },
+            { id: 'sporting-clays', label: 'Sporting Clays', count: directoryListings.filter(b => b.description.toLowerCase().includes('sporting clays') || b.description.toLowerCase().includes('clay')).length, color: getFilterColor('businessType', 'sporting-clays') },
+            { id: 'long-range', label: 'Long Range (500+ yds)', count: directoryListings.filter(b => b.description.toLowerCase().includes('500') || b.description.toLowerCase().includes('long range')).length, color: getFilterColor('businessType', 'long-range') }
+          ]
+        },
+        {
+          id: 'retail-dealers',
+          title: 'Retail & Dealers',
+          color: getFilterColor('businessType', 'retail'),
+          options: [
+            { id: 'gun-store', label: 'Gun Stores', count: directoryListings.filter(b => b.category === 'Retail' && !b.description.toLowerCase().includes('pawn')).length, color: getFilterColor('businessType', 'gun-store') },
+            { id: 'pawn-shop', label: 'Pawn Shops', count: directoryListings.filter(b => b.description.toLowerCase().includes('pawn')).length, color: getFilterColor('businessType', 'pawn-shop') },
+            { id: 'sporting-goods', label: 'Sporting Goods', count: directoryListings.filter(b => b.description.toLowerCase().includes('sporting') || b.description.toLowerCase().includes('outdoor')).length, color: getFilterColor('businessType', 'sporting-goods') },
+            { id: 'online-dealer', label: 'Online Dealers', count: directoryListings.filter(b => b.description.toLowerCase().includes('online')).length, color: getFilterColor('businessType', 'online-dealer') }
+          ]
+        },
+        {
+          id: 'gunsmiths',
+          title: 'Gunsmiths & Repair',
+          color: getFilterColor('businessType', 'gunsmith'),
+          options: [
+            { id: 'full-service', label: 'Full Service', count: directoryListings.filter(b => b.category === 'Gunsmith' && b.description.toLowerCase().includes('full')).length, color: getFilterColor('businessType', 'full-service') },
+            { id: 'custom-builds', label: 'Custom Builds', count: directoryListings.filter(b => b.description.toLowerCase().includes('custom')).length, color: getFilterColor('businessType', 'custom-builds') },
+            { id: 'precision-rifle', label: 'Precision/Competition', count: directoryListings.filter(b => b.description.toLowerCase().includes('precision') || b.description.toLowerCase().includes('competition')).length, color: getFilterColor('businessType', 'precision-rifle') },
+            { id: 'cerakote', label: 'Cerakote/Finishing', count: directoryListings.filter(b => b.specialties.some(s => s.toLowerCase().includes('cerakote'))).length, color: getFilterColor('businessType', 'cerakote') }
+          ]
+        },
+        {
+          id: 'training-education',
+          title: 'Training & Education',
+          color: getFilterColor('businessType', 'training'),
+          options: [
+            { id: 'ccw-classes', label: 'CCW Classes', count: directoryListings.filter(b => b.category === 'Training' && b.specialties.some(s => s.toLowerCase().includes('ccw'))).length, color: getFilterColor('businessType', 'ccw-classes') },
+            { id: 'defensive-training', label: 'Defensive Training', count: directoryListings.filter(b => b.description.toLowerCase().includes('defensive')).length, color: getFilterColor('businessType', 'defensive-training') },
+            { id: 'marksmanship', label: 'Marksmanship', count: directoryListings.filter(b => b.description.toLowerCase().includes('marksmanship') || b.description.toLowerCase().includes('precision')).length, color: getFilterColor('businessType', 'marksmanship') },
+            { id: 'youth-programs', label: 'Youth Programs', count: directoryListings.filter(b => b.description.toLowerCase().includes('youth')).length, color: getFilterColor('businessType', 'youth-programs') }
+          ]
+        },
+        {
+          id: 'clubs-organizations',
+          title: 'Clubs & Organizations',
+          color: getFilterColor('businessType', 'club'),
+          options: [
+            { id: 'competition-clubs', label: 'Competition Clubs', count: directoryListings.filter(b => b.category === 'Club' && b.description.toLowerCase().includes('competition')).length, color: getFilterColor('businessType', 'competition-clubs') },
+            { id: 'shooting-leagues', label: 'Shooting Leagues', count: directoryListings.filter(b => b.description.toLowerCase().includes('league')).length, color: getFilterColor('businessType', 'shooting-leagues') },
+            { id: 'collectors-clubs', label: 'Collectors Groups', count: directoryListings.filter(b => b.description.toLowerCase().includes('collector')).length, color: getFilterColor('businessType', 'collectors-clubs') }
+          ]
+        },
+        {
+          id: 'specialty-services',
+          title: 'Specialty Services',
+          color: getFilterColor('businessType', 'service'),
+          options: [
+            { id: 'nfa-dealer', label: 'NFA/Class III', count: directoryListings.filter(b => b.category === 'Service' || b.specialties.some(s => s.toLowerCase().includes('nfa') || s.toLowerCase().includes('suppress'))).length, color: getFilterColor('businessType', 'nfa-dealer') },
+            { id: 'ffl-transfers', label: 'FFL Transfers', count: directoryListings.filter(b => b.specialties.some(s => s.toLowerCase().includes('transfer'))).length, color: getFilterColor('businessType', 'ffl-transfers') },
+            { id: 'appraisals', label: 'Appraisals', count: directoryListings.filter(b => b.description.toLowerCase().includes('appraisal')).length, color: getFilterColor('businessType', 'appraisals') }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'services',
+      title: 'Available Services',
+      maxVisible: 8,
+      collapsible: true,
       options: [
-        { id: 'range', label: 'Shooting Ranges', icon: MapPinIcon, count: directoryListings.filter(b => b.category === 'Range').length, color: 'text-nav-armory' },
-        { id: 'gunsmith', label: 'Gunsmiths', icon: WrenchScrewdriverIcon, count: directoryListings.filter(b => b.category === 'Gunsmith').length, color: 'text-nav-intel' },
-        { id: 'training', label: 'Training', icon: AcademicCapIcon, count: directoryListings.filter(b => b.category === 'Training').length, color: 'text-nav-events' },
-        { id: 'retail', label: 'Retail', icon: BuildingStorefrontIcon, count: directoryListings.filter(b => b.category === 'Retail').length, color: 'text-nav-buysell' },
-        { id: 'club', label: 'Clubs', icon: CubeIcon, count: directoryListings.filter(b => b.category === 'Club').length, color: 'text-nav-forums' },
-        { id: 'service', label: 'Services', icon: Cog6ToothIcon, count: directoryListings.filter(b => b.category === 'Service').length, color: 'text-nav-directory' }
+        { id: 'ccw-training', label: 'CCW Training', count: directoryListings.filter(b => b.specialties.some(s => s.toLowerCase().includes('ccw'))).length, color: getFilterColor('services', 'ccw-training') },
+        { id: 'gunsmithing', label: 'Gunsmithing', count: directoryListings.filter(b => b.specialties.some(s => s.toLowerCase().includes('gunsmith') || s.toLowerCase().includes('repair'))).length, color: getFilterColor('services', 'gunsmithing') },
+        { id: 'range-access', label: 'Range Access', count: directoryListings.filter(b => b.category === 'Range').length, color: getFilterColor('services', 'range-access') },
+        { id: 'nfa-items', label: 'NFA Items', count: directoryListings.filter(b => b.specialties.some(s => s.toLowerCase().includes('nfa') || s.toLowerCase().includes('suppress'))).length, color: getFilterColor('services', 'nfa-items') },
+        { id: 'cerakote-coating', label: 'Cerakote/Coating', count: directoryListings.filter(b => b.specialties.some(s => s.toLowerCase().includes('cerakote'))).length, color: getFilterColor('services', 'cerakote-coating') },
+        { id: 'competition-support', label: 'Competition Support', count: directoryListings.filter(b => b.specialties.some(s => s.toLowerCase().includes('competition'))).length, color: getFilterColor('services', 'competition-support') },
+        { id: 'custom-work', label: 'Custom Work', count: directoryListings.filter(b => b.specialties.some(s => s.toLowerCase().includes('custom'))).length, color: getFilterColor('services', 'custom-work') },
+        { id: 'bulk-orders', label: 'Bulk/Wholesale', count: directoryListings.filter(b => b.specialties.some(s => s.toLowerCase().includes('bulk') || s.toLowerCase().includes('wholesale'))).length, color: getFilterColor('services', 'bulk-orders') }
       ]
     },
     {
@@ -498,33 +683,35 @@ export function DirectoryPageStandardized() {
       maxVisible: 4,
       collapsible: false,
       options: [
-        { id: 'gold', label: 'Gold Partners', icon: StarIcon, count: directoryListings.filter(b => b.tier === 'gold').length, color: 'text-weathered-gold' },
-        { id: 'silver', label: 'Silver Members', icon: UserIcon, count: directoryListings.filter(b => b.tier === 'silver').length, color: 'text-warm-stone' },
-        { id: 'bronze', label: 'Bronze Members', icon: UserIcon, count: directoryListings.filter(b => b.tier === 'bronze').length, color: 'text-sandy-ochre' },
-        { id: 'standard', label: 'Standard', icon: UserIcon, count: directoryListings.filter(b => b.tier === 'standard').length, color: 'text-slate-blue' }
+        { id: 'gold', label: 'Gold Partners', icon: StarIcon, count: directoryListings.filter(b => b.tier === 'gold').length, color: getFilterColor('tier', 'gold') },
+        { id: 'silver', label: 'Silver Members', icon: UserIcon, count: directoryListings.filter(b => b.tier === 'silver').length, color: getFilterColor('tier', 'silver') },
+        { id: 'bronze', label: 'Bronze Members', icon: UserIcon, count: directoryListings.filter(b => b.tier === 'bronze').length, color: getFilterColor('tier', 'bronze') },
+        { id: 'standard', label: 'Standard Listing', icon: UserIcon, count: directoryListings.filter(b => b.tier === 'standard').length, color: getFilterColor('tier', 'standard') }
       ]
     },
     {
       id: 'location',
-      title: 'Location',
-      maxVisible: 5,
+      title: 'Geographic Area',
+      maxVisible: 6,
       collapsible: true,
       options: [
-        { id: 'boise', label: 'Boise', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('boise')).length },
-        { id: 'meridian', label: 'Meridian', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('meridian')).length },
-        { id: 'nampa', label: 'Nampa', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('nampa')).length },
-        { id: 'caldwell', label: 'Caldwell', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('caldwell')).length },
-        { id: 'eagle', label: 'Eagle', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('eagle')).length }
+        { id: 'boise', label: 'Boise', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('boise')).length, color: getFilterColor('location', 'boise') },
+        { id: 'meridian', label: 'Meridian', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('meridian')).length, color: getFilterColor('location', 'meridian') },
+        { id: 'nampa', label: 'Nampa', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('nampa')).length, color: getFilterColor('location', 'nampa') },
+        { id: 'caldwell', label: 'Caldwell', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('caldwell')).length, color: getFilterColor('location', 'caldwell') },
+        { id: 'eagle', label: 'Eagle', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('eagle')).length, color: getFilterColor('location', 'eagle') },
+        { id: 'kuna', label: 'Kuna/Star', icon: MapPinIcon, count: directoryListings.filter(b => b.address.toLowerCase().includes('kuna') || b.address.toLowerCase().includes('star')).length, color: getFilterColor('location', 'kuna') }
       ]
     },
     {
       id: 'verification',
-      title: 'Verification',
-      maxVisible: 2,
+      title: 'Verification Status',
+      maxVisible: 3,
       collapsible: false,
       options: [
-        { id: 'verified', label: 'Verified Business', icon: CheckCircleIcon, count: directoryListings.filter(b => b.isVerified).length, color: 'text-sagebrush-green' },
-        { id: 'sponsored', label: 'Sponsored', icon: StarIcon, count: directoryListings.filter(b => b.isSponsored).length, color: 'text-nav-directory' }
+        { id: 'verified', label: 'Fully Verified', icon: CheckCircleIcon, count: directoryListings.filter(b => b.isVerified).length, color: 'bg-sagebrush-green' },
+        { id: 'sponsored', label: 'Sponsored Partners', icon: StarIcon, count: directoryListings.filter(b => b.isSponsored).length, color: 'bg-nav-directory' },
+        { id: 'community-submitted', label: 'Community Verified', icon: UsersIcon, count: directoryListings.filter(b => !b.isVerified && !b.isSponsored).length, color: 'bg-warm-stone' }
       ]
     }
   ]
@@ -695,15 +882,29 @@ export function DirectoryPageStandardized() {
       {/* Directory Content Section - Unified Layout with cards left, content right */}
       <ContentBridgeSection {...contentBridgeConfigs.directory} />
       
-      {/* Main Content Area */}
-      <section className="py-mobile-2xl sm:py-4xl bg-background/50">
-        <div className="w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile">
-          <div className="flex flex-col lg:flex-row gap-mobile-lg sm:gap-2xl max-w-[1920px] mx-auto">
+      {/* Main Content Area - Full Width Amazon Style */}
+      <section className="py-4xl bg-background/50">
+        <div className="w-full px-lg">
+          <div className="flex flex-col lg:flex-row gap-lg max-w-[2400px] mx-auto">
             
             {/* Left Sidebar - Filters (Desktop) */}
-            <aside className="hidden lg:block">
-              <div className="space-y-6">
-                {/* Modern Filter Sidebar - Now fully collapsible */}
+            <aside className="hidden lg:block w-80 xl:w-96 flex-shrink-0">
+              <div className="bg-muted/10 p-lg rounded-xs border border-border/50 space-y-lg">
+                <div className="space-y-lg">
+                  <Badge variant="outline" size="default">
+                    Business Directory
+                  </Badge>
+                  <div>
+                    <h2 className="font-rajdhani h3-subsection text-card-foreground leading-tight">
+                      Idaho <span className="text-nav-directory">Firearms Businesses</span>
+                    </h2>
+                    <p className="text-sm text-muted-foreground mt-xs">
+                      {directoryListings.length} businesses • {directoryListings.filter(b => b.isVerified).length} verified
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Modern Filter Sidebar */}
                 <ModernFilterSidebar
                   sections={filterSections}
                   selectedFilters={filters.selectedFilters}
@@ -822,50 +1023,36 @@ export function DirectoryPageStandardized() {
                 </div>
               </div>
 
-              {/* Card Grid/ListBulletIcon Content with Loading State */}
+              {/* Unified Gallery Container */}
               <div className="mb-4xl">
-                {filters.isLoading ? (
-                  <CardSkeleton 
-                    viewMode={filters.viewMode} 
-                    count={filters.itemsPerPage} 
-                    className={filters.getGridClassName()}
-                  />
-                ) : (
-                  <div className={filters.getGridClassName()}>
-                    {filters.paginatedItems.length > 0 ? (
-                      filters.paginatedItems.map((business, index) => (
-                        <VendorCard
-                          key={`${business.businessName}-${index}`}
-                          businessName={business.businessName}
-                          businessType={business.businessType}
-                          description={business.description}
-                          address={business.address}
-                          phone={business.phone}
-                          website={business.website}
-                          hours={business.hours}
-                          tier={business.tier}
-                          specialties={business.specialties}
-                          isVerified={business.isVerified}
-                          isSponsored={business.isSponsored}
-                          href={`/directory/${business.slug}`}
-                          className="mica transition-all duration-300 rounded-xs"
-                        />
-                      ))
-                    ) : (
-                      <div className="col-span-full">
-                        <EmptyState 
-                          title="No Businesses Found"
-                          description="Try adjusting your search terms or filters to find businesses."
-                          onAction={
-                            <Button onClick={filters.clearAllFilters}>
-                              Clear All Filters
-                            </Button>
-                          }
-                        />
-                      </div>
-                    )}
-                  </div>
-                )}
+                <UnifiedGalleryContainer
+                  items={directoryListings}
+                  filteredItems={filters.paginatedItems}
+                  viewMode={filters.viewMode}
+                  isLoading={filters.isLoading}
+                  section="directory"
+                  emptyStateMessage="No Businesses Found"
+                  emptyStateAction={{
+                    label: "Clear All Filters",
+                    href: "#"
+                  }}
+                  renderItem={(business, index) => (
+                    <UnifiedDirectoryCard
+                      key={`${business.businessName}-${index}`}
+                      businessName={business.businessName}
+                      businessType={business.businessType}
+                      address={business.address}
+                      phone={business.phone}
+                      description={business.description}
+                      hours={business.hours}
+                      isVerified={business.isVerified}
+                      verificationLevel={business.isVerified ? 'Fully Verified' : 'ATF Record Only'}
+                      services={business.specialties}
+                      href={`/directory/${business.slug}`}
+                      viewMode={filters.viewMode}
+                    />
+                  )}
+                />
               </div>
 
               {/* Enhanced Pagination */}

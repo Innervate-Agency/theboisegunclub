@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
-import { CalendarDaysIcon as CalendarIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon } from '@heroicons/react/24/outline';
 import { CalendarDaysIcon } from '@/components/ui/calendar';
 import React from 'react';
 

@@ -107,7 +107,7 @@ export function SidebarCalendar({ events, className, onDateSelect }: SidebarCale
 
   return (
     <div className={cn("w-80 flex-shrink-0 sidebar-calendar", className)} tabIndex={0}>
-      <div className="sticky top-4 space-y-lg">
+      <div className="space-y-lg">
 
         {/* CalendarDaysIcon Content */}
         <div className="space-y-lg">

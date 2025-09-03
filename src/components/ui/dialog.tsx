@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
-import { XIcon } from "@heroicons/react/24/outline"
+import { X as XIcon } from 'lucide-react';
 
 import { cn } from "@/lib/utils"
 

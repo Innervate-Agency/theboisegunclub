@@ -83,7 +83,7 @@ const FormItem = React.forwardRef<
     </FormItemContext.Provider>
   )
 })
-FormItemotion.displayName = "FormItem"
+FormItem.displayName = "FormItem"
 
 const FormLabel = React.forwardRef<
   React.ElementRef<typeof Label>,

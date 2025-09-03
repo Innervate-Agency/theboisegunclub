@@ -5,7 +5,8 @@ import { Badge } from './badge'
 import { Button } from './button'
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
 import { useUserWeather } from '@/hooks/useUserWeather'
-import { BoltIcon, CheckCircleIcon, CloudIcon, ExclamationTriangleIcon, FireIcon, MapPinIcon, RefreshCwIcon, SunIcon, ThermometerIcon, WindIcon, XCircleIcon } from '@heroicons/react/24/outline';
+import { BoltIcon, CheckCircleIcon, CloudIcon, ExclamationTriangleIcon, FireIcon, MapPinIcon, SunIcon, XCircleIcon } from '@heroicons/react/24/outline';
+import { Wind as WindIcon, Thermometer as ThermometerIcon, RefreshCw as RefreshCwIcon } from 'lucide-react';
 
 const WeatherIcon = ({ type, className = "h-4 w-4" }: { type: string; className?: string }) => {
   switch (type) {
@@ -121,7 +122,7 @@ export function NavbarWeatherWidget() {
                 onClick={refreshWeather}
                 disabled={isLoading}
                 className="h-8 w-8 p-0"
-                title="ArrowPathIcon weather"
+                title="Refresh weather"
               >
                 <RefreshCwIcon className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
               </Button>

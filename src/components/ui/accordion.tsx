@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { CaretDown } from "@heroicons/react/24/outline"
+import { ChevronDown as CaretDown } from 'lucide-react';
 
 import { cn } from "@/lib/utils"
 

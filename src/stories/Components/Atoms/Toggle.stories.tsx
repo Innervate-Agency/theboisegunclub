@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Toggle } from '@/components/ui/toggle';
-import { Bold } from '@heroicons/react/24/outline';
+import { Bold } from 'lucide-react';
 
 const meta: Meta<typeof Toggle> = {
   title: 'Design System/Atoms/Toggle',

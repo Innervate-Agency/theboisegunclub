@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { CalendarDaysIcon, Cog6ToothIcon, CursorArrowRaysIcon, DocumentTextIcon, HomeIcon, ShieldCheckIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, Cog6ToothIcon, CursorArrowRaysIcon, DocumentTextIcon, HomeIcon, ShieldCheckIcon, Cog6ToothIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 import { 
   NavigationMenu,

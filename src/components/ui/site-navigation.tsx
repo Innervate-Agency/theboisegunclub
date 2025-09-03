@@ -63,7 +63,7 @@ const siteNavigationVariants = cva(
 // Navigation items with enhanced configuration
 const navigationItems = [
   {
-    label: 'Home',
+    label: 'HOME',
     href: '/',
     icon: CubeTransparentIcon,
     color: 'rusty-orange',
@@ -76,7 +76,7 @@ const navigationItems = [
     ]
   },
   {
-    label: 'Events',
+    label: 'EVENTS',
     href: '/events', 
     icon: TicketIcon,
     color: 'slate-blue',
@@ -89,7 +89,7 @@ const navigationItems = [
     ]
   },
   {
-    label: 'Directory',
+    label: 'DIRECTORY',
     href: '/directory',
     icon: IdentificationIcon,
     color: 'ayu-green', 
@@ -103,7 +103,7 @@ const navigationItems = [
     ]
   },
   {
-    label: 'Armory',
+    label: 'ARMORY',
     href: '/armory',
     icon: PlusCircleIcon,
     color: 'ayu-purple',
@@ -116,7 +116,7 @@ const navigationItems = [
     ]
   },
   {
-    label: 'Intel',
+    label: 'INTEL',
     href: '/intel',
     icon: MapPinIcon,
     color: 'ayu-red',
@@ -129,7 +129,7 @@ const navigationItems = [
     ]
   },
   {
-    label: 'Buy & Sell',
+    label: 'BUY & SELL',
     href: '/buysell',
     icon: BanknotesIcon,
     color: 'ayu-teal',
@@ -142,7 +142,7 @@ const navigationItems = [
     ]
   },
   {
-    label: 'Forums',
+    label: 'FORUMS',
     href: '/forums',
     icon: ChatBubbleLeftRightIcon,
     color: 'warm-stone',
@@ -463,7 +463,7 @@ export function SiteNavigation({
                         <MotionDiv
                           className="absolute top-0 left-0 flex flex-col justify-between h-full"
                           animate={{
-                            x: isHovered || isDropdownOpen ? -20 : 0
+                            x: isHovered || isDropdownOpen ? -16 : 0
                           }}
                           transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
                         >
@@ -474,7 +474,7 @@ export function SiteNavigation({
                         <MotionDiv
                           className="absolute top-0 right-0 flex flex-col justify-between h-full"
                           animate={{
-                            x: isHovered || isDropdownOpen ? 8 : 0
+                            x: isHovered || isDropdownOpen ? 4 : 0
                           }}
                           transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
                         >
@@ -487,7 +487,7 @@ export function SiteNavigation({
                     <div className="relative z-10">
                       <Link
                         href={item.href}
-                        className={`flex items-center justify-between w-full px-xs py-xs text-body-base font-rajdhani font-semibold transition-all duration-300 gap-sm ${
+                        className={`flex items-center justify-between w-full pl-sm pr-xs py-xs text-body-base font-rajdhani font-semibold transition-all duration-300 gap-sm ${
                           isActive || isDropdownOpen
                             ? getActiveTextClass(item.color)
                             : isHovered 
@@ -499,8 +499,8 @@ export function SiteNavigation({
                           <MotionDiv
                             className="relative overflow-hidden"
                             animate={{
-                              paddingLeft: isHovered || isDropdownOpen ? '20px' : '0px',
-                              marginLeft: isHovered || isDropdownOpen ? '-20px' : '0px'
+                              paddingLeft: isHovered || isDropdownOpen ? '16px' : '0px',
+                              marginLeft: isHovered || isDropdownOpen ? '-16px' : '0px'
                             }}
                             transition={{ duration: 0.25 }}
                           >
@@ -517,7 +517,7 @@ export function SiteNavigation({
                             
                             {/* Arrow reveal system - positioned absolutely to slide out from under text */}
                             <MotionDiv
-                              className="absolute top-1/2 -translate-y-1/2 right-0"
+                              className="absolute top-1/2 -translate-y-1/2 -right-1"
                               animate={{ 
                                 x: isHovered || isDropdownOpen ? -4 : 16,
                                 opacity: isHovered || isDropdownOpen ? 1 : 0
@@ -632,7 +632,7 @@ export function SiteNavigation({
           {/* Right side */}
           <div className="flex items-center space-x-4">
             <NavbarWeatherWidget className="hidden lg:block" />
-            <AuthButton />
+            <AuthButton showTrialButton={false} />
             
             <Button
               variant="ghost"

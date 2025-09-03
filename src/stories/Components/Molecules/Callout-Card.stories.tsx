@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { CalloutCard, ImportantCallout, SubtleCallout } from '@/components/ui/callout-card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { CalendarDaysIcon, CursorArrowRaysIcon, InformationCircleIcon, ShieldCheckIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, CursorArrowRaysIcon, InformationCircleIcon, ShieldCheckIcon, TrophyIcon, UsersIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof CalloutCard> = {
   title: 'Design System/Components/Molecules/Callout Card',

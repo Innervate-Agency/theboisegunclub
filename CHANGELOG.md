@@ -1,6 +1,32 @@
 # Changelog
 
-## [Pre-Launch] - 2025-09-02 (Latest)
+## [Pre-Launch] - 2025-09-03 (Latest)
+
+### 🎯 **UNIFIED GALLERY SYSTEM & DARK THEME POLISH**
+
+#### 🎨 Card Layout & Visual Hierarchy Fixes
+- **Equal Height Cards**: Fixed CSS Grid `auto-rows-fr` invalid Tailwind class - replaced with `[grid-auto-rows:1fr]`
+- **Button Alignment**: Resolved persistent gaps above "Learn More" buttons through proper CSS Grid height inheritance chain
+- **Typography Improvements**: Enhanced title and subtitle line-height with `leading-none` for tighter, professional spacing
+- **Layout Foundation**: Added critical `h-full` class to gallery container wrapper divs for proper grid row height distribution
+
+#### 🌙 Dark Theme Shadow System Enhancement
+- **Theme-Aware Shadows**: Implemented comprehensive dark theme shadow overrides with warm, tactical earth-tone colors
+- **Tactical Aesthetic**: Custom shadow colors using rich loam brown `rgba(101, 67, 33, 0.45)` and weathered gold `rgba(184, 134, 11, 0.15)`
+- **Tailwind Integration**: Direct override of Tailwind shadow classes (`.dark .shadow-whisper`, `.dark .shadow-elevated`) with proper `!important` declarations
+- **Visual Depth Restoration**: Dark theme cards now have proper elevation cues and hover animation visibility
+
+#### 🔧 Architectural Refinements
+- **Grid System Validation**: Corrected invalid CSS Grid properties across all view modes (grid, dense, card, compact)
+- **Height Inheritance Chain**: Fixed complete flow from CSS Grid container → wrapper divs → card components → flexbox content
+- **Shadow Specificity**: Resolved Tailwind CSS variable conflicts through direct class targeting approach
+
+#### 📋 Development Process Improvements
+- **Systematic Debugging**: Top-down analysis approach for identifying root causes vs surface symptoms
+- **Agent-Assisted Investigation**: Leveraged specialized debugging agent for comprehensive DOM structure analysis
+- **Cross-Theme Compatibility**: Ensured all visual systems work seamlessly in both light and dark themes
+
+## [Pre-Launch] - 2025-09-02
 
 ### 🚀 **MVP PAGE OPTIMIZATION COMPLETE - 100% SITE READY**
 

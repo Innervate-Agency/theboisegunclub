@@ -26,7 +26,8 @@ import {
 } from '@/components/ui/sidebar'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { CalendarDaysIcon, ChevronRightIcon, Cog6ToothIcon, CursorArrowRaysIcon, EllipsisHorizontalIcon, HomeIcon, MagnifyingGlassIcon, MapPinIcon, PlusIcon, ShieldCheckIcon, Cog6ToothIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, ChevronRightIcon, Cog6ToothIcon, CursorArrowRaysIcon, EllipsisHorizontalIcon, HomeIcon, MagnifyingGlassIcon, MapPinIcon, PlusIcon, ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { User2, Inbox } from 'lucide-react';
 
 const meta: Meta<typeof Sidebar> = {
   title: 'Design System/Organisms/Sidebar',

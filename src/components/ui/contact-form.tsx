@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./card"
 import { Badge } from "./badge"
 import { ClockIcon, EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline';
+import { Send } from 'lucide-react';
 
 const contactFormVariants = cva(
   "w-full max-w-2xl",
@@ -274,7 +275,7 @@ export function ContactForm({
               />
             </div>
             <div className="space-y-4">
-              <Label htmlFor="message">ChatBubbleBottomCenterTextIcon *</Label>
+              <Label htmlFor="message">Message *</Label>
               <Textarea
                 id="message"
                 name="message"
@@ -301,7 +302,7 @@ export function ContactForm({
       case 'event':
         return 'Register for Event'
       default:
-        return 'Send ChatBubbleBottomCenterTextIcon'
+        return 'Send Message'
     }
   }
 

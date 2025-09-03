@@ -14,7 +14,7 @@ import { ArchiveBoxIcon, BoltIcon, CalendarDaysIcon, CategoryIcon, ClockIcon, Cu
 import Image from 'next/image'
 
 const eventCardVariants = cva(
-  "transition-all duration-300 group relative overflow-hidden cursor-pointer card-mobile touch-target active:scale-[0.98] hover:scale-[1.01] focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-nav-events/50",
+  "group relative overflow-hidden cursor-pointer card-mobile touch-target focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-nav-events/50",
   {
     variants: {
       featured: {
@@ -189,10 +189,10 @@ export function EventCard({
         className={cn(
           eventCardVariants({ featured, size }), 
           "rounded-xs",
-          // Tactical animated underline gradient
-          "tactical-underline-base tactical-underline-events",
-          // 8-Level Shadow System - using bgc-shadow prefix to avoid Tailwind conflicts
-          "bgc-shadow-whisper hover:bgc-shadow-present transition-all duration-300",
+          // 8-Level Shadow System with unified hover animation
+          "bgc-shadow-whisper hover:bgc-shadow-elevated hover:-translate-y-1 hover:scale-[1.01] active:scale-[0.98] transition-all duration-300 ease-out",
+          // Override Card component's tactical animations to prevent conflicts
+          "[&.tactical]:hover:scale-[1.01] [&.tactical]:active:scale-[0.98]",
           className
         )}
         {...props}

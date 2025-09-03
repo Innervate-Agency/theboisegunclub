@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { CalendarDaysIcon, ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, ShieldCheckIcon, UsersIcon, CursorArrowRaysIcon, TrophyIcon } from '@heroicons/react/24/outline';
+import { Home } from 'lucide-react';
 
 const meta: Meta = {
   title: 'Design System/Patterns/Navigation Rollover Effects',

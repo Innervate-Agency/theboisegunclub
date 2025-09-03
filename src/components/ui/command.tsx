@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Command as CommandPrimitive } from "cmdk"
-import { SearchIcon } from "@heroicons/react/24/outline"
+import { Search as SearchIcon } from 'lucide-react';
 
 import { cn } from "@/lib/utils"
 import {
@@ -85,9 +85,9 @@ function CommandInput({
 function CommandList({
   className,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive.ListBulletIcon>) {
+}: React.ComponentProps<typeof CommandPrimitive.List>) {
   return (
-    <CommandPrimitive.ListBulletIcon
+    <CommandPrimitive.List
       data-slot="command-list"
       className={cn(
         "max-h-[300px] scroll-py-xs overflow-x-hidden overflow-y-auto",

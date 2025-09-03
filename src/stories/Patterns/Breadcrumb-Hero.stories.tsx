@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { BreadcrumbHero } from '@/components/ui/breadcrumb-hero';
-import { CalendarDaysIcon, MapPinIcon, ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, MapPinIcon, ShieldCheckIcon, UsersIcon, TrophyIcon, CursorArrowRaysIcon, BookOpenIcon, StarIcon } from '@heroicons/react/24/outline';
+import { Settings } from 'lucide-react';
 
 const meta: Meta<typeof BreadcrumbHero> = {
   title: 'Design System/Templates/BreadcrumbHero',

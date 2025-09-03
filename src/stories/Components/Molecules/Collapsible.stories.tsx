@@ -5,7 +5,7 @@ import {
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
 import { Button } from '@/components/ui/button';
-import { ChevronsUpDown } from '@heroicons/react/24/outline';
+import { ChevronsUpDown } from 'lucide-react';
 import * as React from 'react';
 
 const meta: Meta<typeof Collapsible> = {

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { PageHero } from '@/components/ui/page-hero';
-import { CalendarDaysIcon, MapPinIcon, ShieldCheckIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, MapPinIcon, ShieldCheckIcon, UsersIcon, CursorArrowRaysIcon, TrophyIcon, ClockIcon, StarIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof PageHero> = {
   title: 'Design System/Organisms/Page Hero',
@@ -179,10 +179,10 @@ export const ContactPage: Story = {
   args: {
     title: 'Get in Touch',
     subtitle: 'We&apos;re Here to Help',
-    description: 'Have questions about membership, training, or events? Contact our friendly teamotion.',
+    description: 'Have questions about membership, training, or events? Contact our friendly team.',
     badge: 'Contact',
     primaryAction: {
-      text: 'Send ChatBubbleBottomCenterTextIcon',
+      text: 'Send Message',
       href: '/contact/form'
     },
     secondaryAction: {
@@ -246,10 +246,10 @@ export const GalleryPage: Story = {
 // Small hero variant
 export const SmallHero: Story = {
   args: {
-    title: 'Quick InformationCircleIcon',
+    title: 'Quick Information',
     subtitle: 'Range Hours',
     description: 'Check our current operating hours and availability.',
-    badge: 'InformationCircleIcon',
+    badge: 'Information',
     primaryAction: {
       text: 'View Hours',
       href: '/hours'
