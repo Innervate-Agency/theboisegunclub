@@ -749,46 +749,6 @@ body {
   box-shadow: 0 12px 40px rgba(184, 184, 184, 0.06), 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-/* Fallback for browsers that don't support backdrop-filter */
-@supports not (backdrop-filter: blur(1px)) {
-  .mica,
-  .mica-card,
-  .mica-popover,
-  .mica-modal,
-  .mica-dropdown,
-  .mica-navbar,
-  .mica-toast,
-  .mica-tooltip,
-  .mica-overlay,
-  .mica-events,
-  .mica-directory,
-  .mica-armory,
-  .mica-intel,
-  .mica-buysell,
-  .mica-forums {
-    background: rgba(248, 246, 241, 0.95) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
-  }
-
-  .dark .mica,
-  .dark .mica-card,
-  .dark .mica-popover,
-  .dark .mica-modal,
-  .dark .mica-dropdown,
-  .dark .mica-navbar,
-  .dark .mica-toast,
-  .dark .mica-tooltip,
-  .dark .mica-overlay,
-  .dark .mica-events,
-  .dark .mica-directory,
-  .dark .mica-armory,
-  .dark .mica-intel,
-  .dark .mica-buysell,
-  .dark .mica-forums {
-    background: rgba(30, 35, 42, 0.95) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-  }
-}
 
 /* ===============================================================================
    GRUVBOX NIGHT OPS THEME - Separate section for proper cascade order
@@ -2954,45 +2914,43 @@ body[class*="forums"] .navbar-widget-item a {
   padding-bottom: var(--spacing-xl);
 }
 
-/* Browser fallbacks for mica effects - graceful degradation */
-@supports not (backdrop-filter: blur(1px)) {
-  .mica,
-  .mica-card,
-  .mica-popover,
-  .mica-modal,
-  .mica-dropdown,
-  .mica-navbar,
-  .mica-toast,
-  .mica-tooltip,
-  .mica-overlay,
-  .mica-events,
-  .mica-directory,
-  .mica-armory,
-  .mica-intel,
-  .mica-buysell,
-  .mica-forums {
-    background: rgba(248, 246, 241, 0.95) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
-    border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  }
+/* ===============================================================================
+   CONTENT TYPE COLOR UTILITIES
+   Custom color utilities for dynamic theming system
+   =============================================================================== */
+
+@layer utilities {
+  /* Background colors */
+  .bg-rusty-orange { background-color: var(--color-rusty-orange); }
+  .bg-slate-blue { background-color: var(--color-slate-blue); }
+  .bg-foothills-purple { background-color: var(--color-foothills-purple); }
+  .bg-sagebrush-green { background-color: var(--color-sagebrush-green); }
+  .bg-warm-stone { background-color: var(--color-warm-stone); }
+  .bg-sandy-ochre { background-color: var(--color-sandy-ochre); }
+  .bg-info-river { background-color: var(--color-info-river); }
+  .bg-canyon-clay { background-color: var(--color-canyon-clay); }
+  .bg-lodgepole-green { background-color: var(--color-lodgepole-green); }
+  .bg-aged-paper { background-color: var(--color-aged-paper); }
+  .bg-weathered-gold { background-color: var(--color-weathered-gold); }
+  .bg-nav-directory { background-color: var(--color-nav-directory-light); }
+  .bg-nav-armory { background-color: var(--color-nav-armory-light); }
+  .bg-nav-intel { background-color: var(--color-nav-intel-light); }
+  .bg-nav-forums { background-color: var(--color-nav-forums-light); }
+  .bg-nav-buysell { background-color: var(--color-nav-buysell-light); }
+  .bg-nav-events { background-color: var(--color-nav-events-light); }
   
-  .dark .mica,
-  .dark .mica-card,
-  .dark .mica-popover,
-  .dark .mica-modal,
-  .dark .mica-dropdown,
-  .dark .mica-navbar,
-  .dark .mica-toast,
-  .dark .mica-tooltip,
-  .dark .mica-overlay,
-  .dark .mica-events,
-  .dark .mica-directory,
-  .dark .mica-armory,
-  .dark .mica-intel,
-  .dark .mica-buysell,
-  .dark .mica-forums {
-    background: rgba(30, 35, 42, 0.95) !important;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  }
+  /* Text colors */
+  .text-rusty-orange { color: var(--color-rusty-orange); }
+  .text-slate-blue { color: var(--color-slate-blue); }
+  .text-foothills-purple { color: var(--color-foothills-purple); }
+  .text-sagebrush-green { color: var(--color-sagebrush-green); }
+  .text-warm-stone { color: var(--color-warm-stone); }
+  .text-weathered-gold { color: var(--color-weathered-gold); }
+  
+  /* Border colors */
+  .border-rusty-orange { border-color: var(--color-rusty-orange); }
+  .border-slate-blue { border-color: var(--color-slate-blue); }
+  .border-foothills-purple { border-color: var(--color-foothills-purple); }
+  .border-sagebrush-green { border-color: var(--color-sagebrush-green); }
 }
+

@@ -2,6 +2,7 @@ import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { CategoryIcon, type CategoryIconComponentProps } from "@/components/ui/category-icons"
+import { type ContentSection } from '@/lib/content-type-colors'
 
 const cardVariants = cva(
   // TBGC Design System: Square tactical aesthetic with dramatic shadow hierarchy
@@ -87,10 +88,13 @@ export interface CardProps
   category?: string
   type?: string
   content?: string
+  // Content type color system
+  contentSection?: ContentSection
+  contentType?: string
 }
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, variant, size, tacticalTheme = 'default', showCategoryIcon = false, category, type, content, ...props }, ref) => {
+  ({ className, variant, size, tacticalTheme = 'default', showCategoryIcon = false, category, type, content, contentSection, contentType, ...props }, ref) => {
     const isTactical = variant === 'tactical' || variant?.startsWith('tactical-')
     
     const themeColorMap = {
@@ -163,28 +167,14 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         )}
         {...props}
       >
-        {/* Tactical Border Elements (only for tactical variant) */}
+        {/* Clean Orange Gradient Border (only for tactical variant) */}
         {isTactical && (
-          <>
-            {/* Corner brackets - larger than navbar version with higher z-index for hero sections */}
-            <div className={cn('absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 opacity-0 group-hover:opacity-100 transition-all duration-200 z-20', themeClasses.border)} />
-            <div className={cn('absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 opacity-0 group-hover:opacity-100 transition-all duration-200 z-20', themeClasses.border)} />
-            <div className={cn('absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 opacity-0 group-hover:opacity-100 transition-all duration-200', themeClasses.border)} />
-            
-            {/* Bottom-right corner with document cutout */}
-            <div className={'absolute bottom-0 right-0 w-3 h-3 opacity-0 group-hover:opacity-100 transition-all duration-200'}>
-              <div 
-                className={cn('w-full h-full border-2', themeClasses.border)}
-                style={{
-                  clipPath: 'polygon(0 0, 60% 0, 100% 40%, 100% 100%, 0 100%)'
-                }}
-              />
-            </div>
-            
-            {/* Tactical latches/clasps */}
-            <div className={cn('absolute top-1 right-1 w-1.5 h-1.5 rounded-full opacity-0 group-hover:opacity-20 transition-all duration-200', themeClasses.bg)} />
-            <div className={cn('absolute bottom-1 left-1 w-1.5 h-1.5 rounded-full opacity-0 group-hover:opacity-20 transition-all duration-200', themeClasses.bg)} />
-          </>
+          <div 
+            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 opacity-0 group-hover:opacity-100 group-hover:w-full transition-all duration-150 ease-out z-20"
+            style={{
+              background: 'linear-gradient(90deg, #D97706 0%, #F59E0B 50%, #D97706 100%)'
+            }}
+          />
         )}
         
         {/* Category Icon (top-right corner) */}

@@ -1,6 +1,34 @@
 # Changelog
 
-## [Pre-Launch] - 2025-09-03 (Latest)
+## [Pre-Launch] - 2025-09-03 (Latest Update)
+
+### 🎨 **UNIFIED CONTENT TYPE COLOR SYSTEM & CARD OPTIMIZATION**
+
+#### 🏷️ Content Type Color Intelligence System
+- **Single-Color Recognition**: Implemented unified color mapping for instant content type recognition across all pages
+- **Event Type Colors**: Competition (rusty-orange), Training (slate-blue), Expo (foothills-purple), Charity (sagebrush-green), Social (warm-stone)
+- **Cross-Page Consistency**: Directory, Armory, Intel, Forums, Buy/Sell pages now use same intelligent color system
+- **Power User Experience**: Consistent visual cues enable learned behavior for rapid content type identification
+
+#### 🎯 Card Animation & Visual Refinements
+- **Dynamic Gradient Borders**: Card hover animations now match content type colors with clean orange fallback
+- **Hero Banner Decluttering**: Removed busy timing information from date display, moved to contextual subtitle
+- **Smart Badge System**: Replaced generic badges with intelligent event format detection (USPSA, IDPA, CCW, Steel Challenge)
+- **Information Architecture**: Reorganized card content flow for better scanning and comprehension
+
+#### 🔧 Technical Implementation
+- **Color Utility System**: Created comprehensive content-type-colors.ts with single/dual color mapping
+- **Tailwind Integration**: Added 35+ custom color utilities to globals.css for reliable color rendering
+- **Component Integration**: Updated UnifiedGalleryCard and Card components with dynamic theming support
+- **Performance Optimization**: Simplified gradient border animation, removed complex shadow effects
+
+#### 📋 User Experience Improvements
+- **Contextual Timing**: "2 DAYS" badges replaced with "Event starts in 2 days" subtitle context
+- **Visual Clarity**: Removed muddy shadow effects from card borders for clean, crisp animations
+- **Consistent Branding**: Unified orange gradient animation across all card types
+- **Reduced Cognitive Load**: Simplified badge system focuses on essential event type information
+
+## [Pre-Launch] - 2025-09-03 (Previous)
 
 ### 🎯 **UNIFIED GALLERY SYSTEM & DARK THEME POLISH**
 

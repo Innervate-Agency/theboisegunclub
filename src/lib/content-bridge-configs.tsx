@@ -21,6 +21,7 @@ import {
 
 // Import your real data
 import { shootingLocations } from '@/lib/intel-locations-data'
+import { getUpcomingEvents } from '@/lib/comprehensive-events-data'
 
 interface ContentBridgeConfig {
   sectionTitle: string
@@ -72,6 +73,24 @@ const privateFacilities = shootingLocations.filter(loc =>
   loc.type.includes('Club') || loc.type.includes('Private')
 ).length
 
+// Calculate real events stats from comprehensive events data
+const upcomingEventsData = getUpcomingEvents()
+const totalEvents = upcomingEventsData.length
+const competitionEvents = upcomingEventsData.filter(e => e.eventType === 'Competition').length
+const trainingEvents = upcomingEventsData.filter(e => e.eventType === 'Training').length
+const socialEvents = upcomingEventsData.filter(e => e.eventType === 'Social').length
+const charityEvents = upcomingEventsData.filter(e => e.eventType === 'Charity').length
+const expoEvents = upcomingEventsData.filter(e => e.eventType === 'Expo').length
+
+// Debug: Check what event types exist
+console.log('Total events:', totalEvents)
+console.log('Competition:', competitionEvents, 'Training:', trainingEvents, 'Social:', socialEvents, 'Charity:', charityEvents, 'Expo:', expoEvents)
+console.log('Sum of categories:', competitionEvents + trainingEvents + socialEvents + charityEvents + expoEvents)
+
+// Get all unique event types to see what we might be missing
+const uniqueEventTypes = [...new Set(upcomingEventsData.map(e => e.eventType))]
+console.log('Unique event types:', uniqueEventTypes)
+
 export const contentBridgeConfigs: Record<string, ContentBridgeConfig> = {
   events: {
     sectionTitle: "Why Attend Idaho Events",
@@ -102,10 +121,10 @@ export const contentBridgeConfigs: Record<string, ContentBridgeConfig> = {
     categoriesTitle: "Event Categories",
     categoriesIcon: CheckBadgeIcon,
     categories: [
-      { name: "Matches", count: "85+", trend: "Active" },
-      { name: "Training", count: "32+", trend: "Growing" },
-      { name: "Social", count: "18+", trend: "Popular" },
-      { name: "Clinics", count: "12+", trend: "New" }
+      { name: "Competitions", count: competitionEvents.toString(), trend: "Active" },
+      { name: "Training", count: trainingEvents.toString(), trend: "Growing" },
+      { name: "Expos", count: expoEvents.toString(), trend: "Popular" },
+      { name: "Other", count: (totalEvents - competitionEvents - trainingEvents - expoEvents - socialEvents - charityEvents).toString(), trend: "Various" }
     ],
     trustIndicators: [
       { icon: CheckBadgeIcon, label: "Verified Organizers", value: "100%" },
@@ -124,12 +143,12 @@ export const contentBridgeConfigs: Record<string, ContentBridgeConfig> = {
       buttonText: "Submit Event"
     },
     statsCard: {
-      title: "This Month's Activity",
+      title: "Event Activity",
       stats: [
-        { label: "Upcoming Events", value: "47", color: "nav-events" },
-        { label: "New Listings", value: "12", color: "rusty-orange" },
-        { label: "Popular Venues", value: "8", color: "sagebrush-green" },
-        { label: "Registration Opens", value: "23", color: "weathered-gold" }
+        { label: "Total Events", value: totalEvents.toString(), color: "nav-events" },
+        { label: "Competitions", value: competitionEvents.toString(), color: "rusty-orange" },
+        { label: "Training", value: trainingEvents.toString(), color: "sagebrush-green" },
+        { label: "Monthly New", value: "8-12", color: "weathered-gold" }
       ]
     },
     accentColor: "nav-events"
@@ -186,13 +205,8 @@ export const contentBridgeConfigs: Record<string, ContentBridgeConfig> = {
       buttonText: "List Business"
     },
     statsCard: {
-      title: "Directory Stats",
-      stats: [
-        { label: "Total Businesses", value: "594", color: "nav-directory" },
-        { label: "Ada County", value: "281", color: "rusty-orange" },
-        { label: "Canyon County", value: "194", color: "sagebrush-green" },
-        { label: "Rural Counties", value: "119", color: "weathered-gold" }
-      ]
+      title: "",
+      stats: []
     },
     accentColor: "nav-directory"
   },
@@ -247,13 +261,8 @@ export const contentBridgeConfigs: Record<string, ContentBridgeConfig> = {
       buttonText: "Contribute Info"
     },
     statsCard: {
-      title: "Database Status",
-      stats: [
-        { label: "Total Locations", value: totalLocations.toString(), color: "nav-intel" },
-        { label: "Fully Verified", value: verifiedLocations.toString(), color: "sagebrush-green" },
-        { label: "Need Photos", value: (totalLocations - verifiedLocations).toString(), color: "rusty-orange" },
-        { label: "GPS Mapped", value: totalLocations.toString(), color: "weathered-gold" }
-      ]
+      title: "",
+      stats: []
     },
     accentColor: "nav-intel"
   },
@@ -309,13 +318,8 @@ export const contentBridgeConfigs: Record<string, ContentBridgeConfig> = {
       buttonText: "Join Waitlist"
     },
     statsCard: {
-      title: "Community Status",
-      stats: [
-        { label: "Development", value: "Active", color: "nav-forums" },
-        { label: "Beta Testing", value: "Soon", color: "rusty-orange" },
-        { label: "Public Launch", value: "Q4", color: "sagebrush-green" },
-        { label: "Interest List", value: "Open", color: "weathered-gold" }
-      ]
+      title: "",
+      stats: []
     },
     accentColor: "nav-forums"
   },
@@ -371,13 +375,8 @@ export const contentBridgeConfigs: Record<string, ContentBridgeConfig> = {
       buttonText: "Apply to Sell"
     },
     statsCard: {
-      title: "Current Offerings",
-      stats: [
-        { label: "Active Listings", value: "18", color: "nav-buysell" },
-        { label: "Service Providers", value: "15", color: "rusty-orange" },
-        { label: "Custom Builders", value: "3", color: "sagebrush-green" },
-        { label: "Avg. Response", value: "2hrs", color: "weathered-gold" }
-      ]
+      title: "",
+      stats: []
     },
     accentColor: "nav-buysell"
   },
@@ -433,13 +432,8 @@ export const contentBridgeConfigs: Record<string, ContentBridgeConfig> = {
       buttonText: "Write Review"
     },
     statsCard: {
-      title: "Armory Stats",
-      stats: [
-        { label: "Total Reviews", value: "194", color: "nav-armory" },
-        { label: "Popular Platform", value: "AR-15", color: "rusty-orange" },
-        { label: "Most Reviewed", value: "Pistols", color: "sagebrush-green" },
-        { label: "Expert Contributors", value: "28", color: "weathered-gold" }
-      ]
+      title: "",
+      stats: []
     },
     accentColor: "nav-armory"
   }

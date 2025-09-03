@@ -103,6 +103,9 @@ export interface UnifiedGalleryCardProps
   beforeContent?: React.ReactNode
   afterContent?: React.ReactNode
   sideContent?: React.ReactNode // For compact/list/table modes
+  
+  // Content type for dynamic theming
+  contentType?: string
 }
 
 const UnifiedGalleryCard = React.forwardRef<HTMLDivElement, UnifiedGalleryCardProps>(
@@ -126,6 +129,7 @@ const UnifiedGalleryCard = React.forwardRef<HTMLDivElement, UnifiedGalleryCardPr
     beforeContent,
     afterContent,
     sideContent,
+    contentType,
     ...props 
   }, ref) => {
     
@@ -182,6 +186,8 @@ const UnifiedGalleryCard = React.forwardRef<HTMLDivElement, UnifiedGalleryCardPr
           variant="tactical-events"
           tacticalTheme={section}
           showCategoryIcon={false}
+          contentSection={section as any}
+          contentType={contentType}
           className={cn(
             unifiedGalleryCardVariants({ section, viewMode, tier, size }),
             "rounded-xs h-full",
