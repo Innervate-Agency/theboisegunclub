@@ -159,7 +159,7 @@ export function EventTicker({
                       <span className="font-rajdhani font-bold text-body-sm text-card-foreground">
                         {event.title}
                       </span>
-                      <Badge variant="outline" className="text-body-xs rounded-xs">
+                      <Badge variant="status-info" className="text-body-xs rounded-xs">
                         {event.eventType}
                       </Badge>
                       {event.featured && (

@@ -34,7 +34,7 @@ export function SiteHeader() {
                 <span className="font-rajdhani font-bold text-heading-lg text-primary ml-xs">GUN CLUB</span>
               </div>
             </Link>
-            <Badge variant="outline" className="hidden md:block text-body-xs text-muted-foreground">
+            <Badge variant="status-info" className="hidden md:block text-body-xs text-muted-foreground">
               Community Platform
             </Badge>
           </div>

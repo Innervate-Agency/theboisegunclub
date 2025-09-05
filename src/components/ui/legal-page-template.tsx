@@ -73,7 +73,7 @@ export default function LegalPageTemplate({
                   <ScaleIcon className="h-4 w-4 mr-xs" />
                   Legal Document
                 </Badge>
-                <Badge variant="outline" className="text-xs">
+                <Badge variant="status-info" className="text-xs">
                   Version 1.0
                 </Badge>
               </div>

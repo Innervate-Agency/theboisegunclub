@@ -385,7 +385,7 @@ export function DirectoryPageComponent() {
                           className: "size-3" 
                         })}
                         <span className="hidden sm:inline">{filter.label}</span>
-                        <Badge variant="outline" size="sm" className="ml-auto">
+                        <Badge variant="status-info" size="sm" className="ml-auto">
                           {filter.count}
                         </Badge>
                       </Button>
@@ -408,7 +408,7 @@ export function DirectoryPageComponent() {
                         className="w-full justify-between text-body-xs font-rajdhani shadow-none rounded-xs"
                       >
                         <span>{filter.label}</span>
-                        <Badge variant="outline" size="sm">
+                        <Badge variant="status-info" size="sm">
                           {filter.count}
                         </Badge>
                       </Button>

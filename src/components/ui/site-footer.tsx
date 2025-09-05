@@ -4,13 +4,12 @@ import * as React from 'react'
 import { usePathname } from 'next/navigation'
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { FooterSearchSubscribe } from "@/components/ui/footer-search-subscribe"
+import { FooterUnifiedSection } from "@/components/ui/footer-unified-section"
 import { FooterUserProfile } from "@/components/ui/footer-user-profile"
 import { BrassCounter } from "@/components/ui/brass-counter"
 import { Card } from "@/components/ui/card"
 import { FooterTexture } from "@/components/ui/textured-background"
-import { BanknotesIcon, BookOpenIcon, BuildingStorefrontIcon, CategoryIcon, ChatBubbleBottomCenterTextIcon, ChevronUpIcon, CubeTransparentIcon, EnvelopeIcon, GlobeAltIcon, HeartIcon, IdentificationIcon, MapIcon, MapPinIcon, PhoneIcon, PlusCircleIcon, QuestionMarkCircleIcon, ShieldCheckIcon, SparklesIcon, TicketIcon, UsersIcon, ViewfinderCircleIcon } from '@heroicons/react/24/outline'
-import { FloatingUserSystem } from './floating-user-system'
+import { BanknotesIcon, BookOpenIcon, BuildingStorefrontIcon, CategoryIcon, ChatBubbleBottomCenterTextIcon, CubeTransparentIcon, EnvelopeIcon, GlobeAltIcon, HeartIcon, IdentificationIcon, MapIcon, MapPinIcon, PhoneIcon, PlusCircleIcon, QuestionMarkCircleIcon, ShieldCheckIcon, SparklesIcon, TicketIcon, UsersIcon, ViewfinderCircleIcon } from '@heroicons/react/24/outline'
 import { 
   DesertMesaSVG, BoiseFoothillsSVG, SouthBoiseDesertSVG, MountainPineSVG,
   HellsCanyonSVG, SnakeRiverCanyonSVG, CascadeSawtoothsSVG
@@ -46,21 +45,9 @@ export function SiteFooter({
   currentPage = 'home',
   ...props
 }: SiteFooterProps) {
-  const [showBackToTop, setShowBackToTop] = React.useState(false)
   const pathname = usePathname()
   
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
   
-  // Show back to top when scrolled down
-  React.useEffect(() => {
-    const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 400)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const pageThemeMap = {
     '/': { icon: CubeTransparentIcon, color: 'text-nav-home', accent: 'bg-nav-home' },
@@ -303,7 +290,7 @@ export function SiteFooter({
           {/* Search and Subscribe Section - Now in middle following 2025 content hierarchy */}
           {showNewsletter && (
             <div className="py-16 relative z-10">
-              <FooterSearchSubscribe />
+              <FooterUnifiedSection variant="search-subscribe" />
             </div>
           )}
           
@@ -345,25 +332,7 @@ export function SiteFooter({
         </div>
       </footer>
       
-      {/* Back to Top FAB - Moved left to make room for user system */}
-      {showBackToTop && (
-        <button
-          onClick={scrollToTop}
-          className={cn(
-            "fixed bottom-6 right-20 z-50 p-3 rounded-full shadow-commanding transition-all duration-300",
-            "hover:shadow-hero hover:scale-110 group",
-            isDark 
-              ? "bg-primary text-primary-foreground hover:bg-primary/90" 
-              : "bg-primary text-primary-foreground hover:bg-primary/90"
-          )}
-          title="Back to top"
-        >
-          <ChevronUpIcon className="h-5 w-5 transition-transform group-hover:-translate-y-1" />
-        </button>
-      )}
 
-      {/* Floating User System */}
-      <FloatingUserSystem />
     </>
   )
 }

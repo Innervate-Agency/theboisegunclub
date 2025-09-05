@@ -115,7 +115,7 @@ export function GuidesClient({ articles, categories, difficultyLevels }: GuidesC
                   >
                     {category.icon}
                     <span className="ml-xs">{category.label}</span>
-                    <Badge variant="outline" className="ml-xs">
+                    <Badge variant="status-info" className="ml-xs">
                       {category.count}
                     </Badge>
                   </Button>
@@ -141,7 +141,7 @@ export function GuidesClient({ articles, categories, difficultyLevels }: GuidesC
                     }
                   >
                     {level.label}
-                    <Badge variant="outline" className="ml-xs">
+                    <Badge variant="status-info" className="ml-xs">
                       {level.count}
                     </Badge>
                   </Button>

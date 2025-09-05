@@ -38,7 +38,7 @@ export async function GET(request: NextRequest) {
 
   if (!token) {
     // User not authenticated - redirect to login page with return URL
-    const loginUrl = new URL('/auth/login', request.url)
+    const loginUrl = new URL('/auth/login', request.url.includes('ngrok') ? request.url : 'http://localhost:3000')
     loginUrl.searchParams.set('redirect_uri', redirectUri)
     loginUrl.searchParams.set('state', state || '')
     loginUrl.searchParams.set('client_id', clientId)
@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
   const user = await authAPI.getCurrentUser(token)
   if (!user) {
     // Invalid token - redirect to login
-    const loginUrl = new URL('/auth/login', request.url)
+    const loginUrl = new URL('/auth/login', request.url.includes('ngrok') ? request.url : 'http://localhost:3000')
     loginUrl.searchParams.set('redirect_uri', redirectUri)
     loginUrl.searchParams.set('state', state || '')
     loginUrl.searchParams.set('client_id', clientId)

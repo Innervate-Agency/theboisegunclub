@@ -120,7 +120,7 @@ export function PricingCard({
         {/* Popular badge */}
         {plan.popular && plan.badge && (
           <div className="absolute -top-xs left-1/2 transform -translate-x-1/2 z-20">
-            <Badge variant="outline" className="bg-rusty-orange text-nickel-white font-medium px-md py-sm text-caption">
+            <Badge variant="status-info" className="bg-rusty-orange text-nickel-white font-medium px-md py-sm text-caption">
               <StarIcon className="size-3 mr-xs" />
               {plan.badge}
             </Badge>

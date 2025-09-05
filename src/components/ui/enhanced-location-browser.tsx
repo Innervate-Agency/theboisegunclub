@@ -133,7 +133,7 @@ export function EnhancedLocationBrowser({ locations, weatherData }: EnhancedLoca
         {/* Section Header */}
         <div className="space-y-xl mb-4xl">
           <div className="text-center space-y-base">
-            <Badge variant="outline" size="default">
+            <Badge variant="status-info" size="default">
               Enhanced Location Browser
             </Badge>
             <h2 className="font-rajdhani text-heading-4xl font-bold text-card-foreground leading-tight">

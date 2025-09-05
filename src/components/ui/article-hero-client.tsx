@@ -132,7 +132,7 @@ export function ArticleHeroClient({
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Badge variant="outline" className="border-rusty-orange/50 text-rusty-orange">
+                  <Badge variant="status-info" className="border-rusty-orange/50 text-rusty-orange">
                     Featured
                   </Badge>
                 </MotionDiv>
@@ -202,7 +202,7 @@ export function ArticleHeroClient({
                     transition={{ delay: 1.2 + (index * 0.1), duration: 0.4 }}
                     whileHover={{ scale: 1.05 }}
                   >
-                    <Badge variant="outline" className="text-xs">
+                    <Badge variant="status-info" className="text-xs">
                       <TagIcon className="h-3 w-3 mr-xs" />
                       {tag}
                     </Badge>

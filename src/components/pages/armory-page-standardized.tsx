@@ -287,9 +287,9 @@ export function ArmoryPageStandardized() {
       maxVisible: 3,
       collapsible: false,
       options: [
-        { id: 'quick', label: '5 min or less', icon: ClockIcon, count: armoryArticles.filter(a => a.readTime <= 5).length },
-        { id: 'medium', label: '6-10 minutes', icon: ClockIcon, count: armoryArticles.filter(a => a.readTime > 5 && a.readTime <= 10).length },
-        { id: 'long', label: '10+ minutes', icon: ClockIcon, count: armoryArticles.filter(a => a.readTime > 10).length }
+        { id: 'quick', label: '5 min or less', icon: ClockIcon, count: armoryArticles.filter(a => a.readTime <= 5).length, color: 'text-nav-armory' },
+        { id: 'medium', label: '6-10 minutes', icon: ClockIcon, count: armoryArticles.filter(a => a.readTime > 5 && a.readTime <= 10).length, color: 'text-nav-armory' },
+        { id: 'long', label: '10+ minutes', icon: ClockIcon, count: armoryArticles.filter(a => a.readTime > 10).length, color: 'text-nav-armory' }
       ]
     },
     {
@@ -318,7 +318,7 @@ export function ArmoryPageStandardized() {
       {/* Title and Subtitle - very tight spacing */}
       <div className="space-y-0">
         <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-none">
-          THE ARMORY: IDAHO FIREARMS KNOWLEDGE HUB
+          The Armory: Idaho Firearms Knowledge Hub
         </h1>
         <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-none mt-1">
           equipment reviews, legal guides & technical resources
@@ -514,7 +514,7 @@ export function ArmoryPageStandardized() {
                       })}
                       {tab.label}
                       {tab.count && (
-                        <Badge variant="outline" size="sm" className="ml-xs">
+                        <Badge variant="status-info" size="sm" className="ml-xs">
                           {tab.count}
                         </Badge>
                       )}
@@ -547,7 +547,7 @@ export function ArmoryPageStandardized() {
                     <FunnelIcon className="size-4" />
                     Filters
                     {getActiveFilterCount() > 0 && (
-                      <Badge variant="outline" className="ml-xs bg-nav-armory/20 text-nav-armory border-nav-armory/30 text-xs">
+                      <Badge variant="status-info" className="ml-xs bg-nav-armory/20 text-nav-armory border-nav-armory/30 text-xs">
                         {getActiveFilterCount()}
                       </Badge>
                     )}
@@ -585,19 +585,17 @@ export function ArmoryPageStandardized() {
                             ...article,
                             sectionPath: "/armory"
                           }]}
-                          variant="card"
+                          variant="grid"
                         />
                       ))
                     ) : (
                       <div className="col-span-full">
                         <EmptyState 
+                          icon={BookOpenIcon}
                           title="No Articles Found"
                           description="Try adjusting your search terms or filters to find relevant content."
-                          onAction={
-                            <Button onClick={handleClearAll}>
-                              Clear All Filters
-                            </Button>
-                          }
+                          actionText="Clear All Filters"
+                          onAction={() => filters.clearAllFilters()}
                         />
                       </div>
                     )}

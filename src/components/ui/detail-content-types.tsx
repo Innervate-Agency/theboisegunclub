@@ -347,7 +347,7 @@ export function ArticleContent({
                 {article.excerpt}
               </p>
               <div className="flex items-center gap-base text-xs text-muted-foreground">
-                <Badge variant="outline" className="text-[10px] px-xs py-micro">
+                <Badge variant="status-info" className="text-[10px] px-xs py-micro">
                   {article.category}
                 </Badge>
                 <span>{article.readTime} min</span>
@@ -1016,7 +1016,7 @@ export function ProductContent({
           <Badge className="bg-nav-buysell/20 text-nav-buysell border-nav-buysell/30">
             {category}
           </Badge>
-          <Badge variant="outline">{condition}</Badge>
+          <Badge variant="status-info">{condition}</Badge>
           {!inStock && (
             <Badge variant="destructive">Out of Stock</Badge>
           )}
@@ -1098,7 +1098,7 @@ export function ProductContent({
               <div className="text-body-sm text-muted-foreground">{vendor.address}</div>
             </div>
             {vendor.verified && (
-              <Badge variant="outline" className="text-xs">
+              <Badge variant="status-info" className="text-xs">
                 <ShieldCheckIcon className="h-3 w-3 mr-xs" />
                 Verified
               </Badge>

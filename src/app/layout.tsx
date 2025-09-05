@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Rajdhani, Noto_Sans, Noto_Serif } from "next/font/google";
 import { Providers } from "@/components/providers";
 import AccessibilityFAB from "@/components/ui/AccessibilityFAB";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import { FloatingUserSystem } from "@/components/ui/floating-user-system";
 import "./globals.css";
 
 const rajdhani = Rajdhani({
@@ -56,6 +58,9 @@ export default function RootLayout({
           {children}
           {/* Global accessibility control */}
           <AccessibilityFAB />
+          {/* Global scroll to top and user system */}
+          <ScrollToTop />
+          <FloatingUserSystem />
         </Providers>
       </body>
     </html>

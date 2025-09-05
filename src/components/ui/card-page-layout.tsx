@@ -184,7 +184,7 @@ export function CardPageLayout({
                 })}
                 {tab.label}
                 {tab.count && (
-                  <Badge variant="outline" size="sm" className="ml-xs">
+                  <Badge variant="status-info" size="sm" className="ml-xs">
                     {tab.count}
                   </Badge>
                 )}
@@ -234,7 +234,7 @@ export function CardPageLayout({
                                   {filter.label}
                                 </div>
                                 {filter.count && (
-                                  <Badge variant="outline" size="sm">
+                                  <Badge variant="status-info" size="sm">
                                     {filter.count}
                                   </Badge>
                                 )}

@@ -157,7 +157,7 @@ export function DirectorySidebar({
         <div className="text-body-xs text-muted-foreground">
           <div className="flex items-center justify-between">
             <span>{totalBusinesses}+ businesses</span>
-            <Badge variant="outline" size="sm">
+            <Badge variant="status-info" size="sm">
               <ShieldCheckIcon className="size-2 mr-micro" />
               Verified
             </Badge>

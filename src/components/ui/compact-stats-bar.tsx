@@ -75,7 +75,7 @@ export function CompactStatsBar({ stats, className }: CompactStatsBarProps) {
         )}
 
         {/* Trend Indicator */}
-        <Badge variant="outline" className="text-body-xs">
+        <Badge variant="status-info" className="text-body-xs">
           <ArrowTrendingUpIcon className="size-3 mr-micro" />
           Updated daily
         </Badge>

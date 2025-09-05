@@ -1,0 +1,26 @@
+// Event data service - now uses comprehensive verified data
+const getEventData = (slug: string): EventData | null => {
+  // Map extended event types to basic ones
+  const mapToBasicEventType = (extendedType: string): 'Competition' | 'Charity' | 'Expo' | 'Training' | 'Social' => {
+    if (extendedType === 'Championship' || extendedType === 'Youth Competition' || extendedType === 'Fair Competition') {
+      return 'Competition'
+    }
+    if (extendedType === 'Fundraising') {
+      return 'Charity'
+    }
+    // Default to the original type if it's already valid
+    return extendedType as 'Competition' | 'Charity' | 'Expo' | 'Training' | 'Social'
+  }
+
+  // First try to get from comprehensive dataset
+  const comprehensiveEvent = getEventBySlug(slug)
+  if (comprehensiveEvent) {
+    // Convert comprehensive event to detail page format
+    return {
+      slug: comprehensiveEvent.slug,
+      title: comprehensiveEvent.title,
+      description: comprehensiveEvent.description,
+      date: comprehensiveEvent.date,
+      time: comprehensiveEvent.time,
+      location: comprehensiveEvent.location,
+      eventType: mapToBasicEventType(comprehensiveEvent.eventType),

@@ -48,38 +48,9 @@ export function FloatingUserSystem({ className }: FloatingUserSystemProps) {
   // Don't render during loading
   if (isLoading) return null
 
-  // Unauthenticated state - show login buttons
+  // Unauthenticated state - show scroll to top instead of login buttons
   if (!isAuthenticated || !user) {
-    return (
-      <div className={cn("fixed bottom-6 right-6 z-50 floating-user-system", className)}>
-        <div className="flex flex-col gap-sm">
-          <Button
-            onClick={() => {
-              // Navigate to login page or open login modal
-              window.location.href = '/auth/login'
-            }}
-            className="mica-card shadow-present hover:shadow-elevated transition-all duration-300 font-rajdhani font-bold group"
-            size="lg"
-          >
-            <ArrowRightOnRectangleIcon className="size-5 mr-xs group-hover:scale-110 transition-transform" />
-            Login
-          </Button>
-          
-          <Button
-            variant="outline"
-            onClick={() => {
-              // Navigate to register page
-              window.location.href = '/auth/register'
-            }}
-            className="mica-card shadow-whisper hover:shadow-present transition-all duration-300 font-rajdhani font-medium"
-            size="sm"
-          >
-            <PlusIcon className="size-4 mr-xs" />
-            Sign Up
-          </Button>
-        </div>
-      </div>
-    )
+    return null // Let the ScrollToTop component handle this
   }
 
   // Authenticated state
@@ -87,7 +58,7 @@ export function FloatingUserSystem({ className }: FloatingUserSystemProps) {
     <div className={cn("fixed bottom-6 right-6 z-50 floating-user-system", className)}>
       {/* Chat Interface Overlay */}
       {state === 'chat' && (
-        <div className="absolute bottom-20 right-0 mb-base">
+        <div className="fixed bottom-20 right-2 sm:right-6 z-40">
           <PrivateMessaging
             isOpen={true}
             onClose={() => setState('closed')}
@@ -98,7 +69,7 @@ export function FloatingUserSystem({ className }: FloatingUserSystemProps) {
 
       {/* Dashboard Overlay */}
       {state === 'dashboard' && (
-        <div className="absolute bottom-20 right-0 mb-base">
+        <div className="fixed bottom-20 right-1 sm:right-6 md:right-2 z-40">
           <UserDashboard
             isOpen={true}
             onClose={() => setState('closed')}

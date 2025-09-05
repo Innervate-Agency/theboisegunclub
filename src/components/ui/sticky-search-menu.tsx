@@ -63,7 +63,7 @@ export function StickySearchMenu({
                 }
               >
                 {category.label}
-                <Badge variant="outline" className="ml-xs">
+                <Badge variant="status-info" className="ml-xs">
                   {category.count}
                 </Badge>
               </Button>

@@ -73,7 +73,7 @@ export function LegalIndexContent() {
                 <CardHeader className="pb-base">
                   <div className="flex items-center justify-between mb-sm">
                     <Icon className="h-6 w-6 text-slate-blue group-hover:text-slate-blue/80 transition-colors" />
-                    <Badge variant="outline" className="text-xs">
+                    <Badge variant="status-info" className="text-xs">
                       {doc.category}
                     </Badge>
                   </div>

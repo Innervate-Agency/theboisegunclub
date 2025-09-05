@@ -223,7 +223,7 @@ export function InteractiveCalendar({ events, className }: InteractiveCalendarPr
                           <div className="space-y-xs">
                             <div className="flex items-start justify-between">
                               <div className="flex items-center gap-xs">
-                                <Badge variant="outline" size="sm">
+                                <Badge variant="status-info" size="sm">
                                   {event.eventType.toUpperCase()}
                                 </Badge>
                               </div>

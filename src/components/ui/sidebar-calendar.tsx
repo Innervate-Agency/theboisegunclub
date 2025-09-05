@@ -240,7 +240,7 @@ export function SidebarCalendar({ events, className, onDateSelect }: SidebarCale
                   <div className={`w-2 h-2 rounded-full flex-shrink-0 ${eventTypeColors[event.eventType as keyof typeof eventTypeColors] || 'bg-muted'}`} />
                   <span className="text-muted-foreground truncate">{event.title}</span>
                   {event.featured && (
-                    <Badge variant="outline" className="text-xs">Featured</Badge>
+                    <Badge variant="status-info" className="text-xs">Featured</Badge>
                   )}
                 </div>
               ))}

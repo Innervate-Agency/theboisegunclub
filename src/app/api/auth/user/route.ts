@@ -45,7 +45,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Get current user data (in case anything has changed)
-    const user = await authAPI.getCurrentUser(tokenData.sub)
+    const user = await authAPI.getUserById(tokenData.sub)
     if (!user) {
       return NextResponse.json(
         { error: 'invalid_token', error_description: 'User not found' },

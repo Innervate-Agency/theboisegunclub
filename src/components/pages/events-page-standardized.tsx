@@ -420,7 +420,7 @@ export function EventsPageStandardized() {
             {/* Title and Subtitle - very tight spacing */}
             <div className="space-y-0">
               <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-none">
-                IDAHO FIREARMS EVENTS & TRAINING
+                Idaho Firearms Events & Training
               </h1>
               <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-none mt-1">
                 competitions, training, and community events in the treasure valley
@@ -528,10 +528,6 @@ export function EventsPageStandardized() {
       {/* Events Ticker - Live upcoming events */}
       <EventTicker />
       
-      {/* Events Content Section - Unified Layout with cards left, content right */}
-      <div className="mt-4xl">
-        <ContentBridgeSection {...eventsContentBridge} />
-      </div>
 
       {/* Main Content Area - Full Width Amazon Style */}
       <section className="py-4xl bg-background/50">
@@ -542,7 +538,7 @@ export function EventsPageStandardized() {
             <aside className="hidden lg:block w-80 xl:w-96 flex-shrink-0">
               <div className="bg-muted/10 p-lg rounded-xs border border-border/50 space-y-lg">
                 <div className="space-y-lg">
-                  <Badge variant="outline" size="default">
+                  <Badge variant="events-featured" size="md">
                     Events Calendar
                   </Badge>
                   <div>
@@ -629,7 +625,7 @@ export function EventsPageStandardized() {
                       <div className={`w-3 h-3 rounded-full ${tab.color}`} />
                       {tab.label}
                       {tab.count && (
-                        <Badge variant="outline" size="sm" className="ml-xs">
+                        <Badge variant="events-featured" size="sm" className="ml-xs">
                           {tab.count}
                         </Badge>
                       )}
@@ -729,7 +725,7 @@ export function EventsPageStandardized() {
                     <FunnelIcon className="size-4" />
                     Filters
                     {getActiveFilterCount() > 0 && (
-                      <Badge variant="outline" className="ml-xs bg-nav-events/20 text-nav-events border-nav-events/30 text-xs">
+                      <Badge variant="events-featured" className="ml-xs bg-nav-events/20 text-nav-events border-nav-events/30 text-xs">
                         {getActiveFilterCount()}
                       </Badge>
                     )}
@@ -799,6 +795,11 @@ export function EventsPageStandardized() {
           </div>
         </div>
       </section>
+
+      {/* Events Content Section - Unified Layout with cards left, content right */}
+      <div className="mt-4xl">
+        <ContentBridgeSection {...eventsContentBridge} />
+      </div>
     </>
   )
 }

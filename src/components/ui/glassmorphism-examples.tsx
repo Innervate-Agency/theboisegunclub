@@ -142,7 +142,7 @@ export function GlassmorphismExamples({ className }: GlassmorphismExamplesProps)
                   placeholder="MagnifyingGlassIcon firearms, ranges, events..."
                   className="flex-1 bg-transparent border-none outline-none text-foreground placeholder:text-muted-foreground"
                 />
-                <Badge variant="outline" className="text-caption">⌘K</Badge>
+                <Badge variant="status-info" className="text-caption">⌘K</Badge>
               </div>
             </div>
           </div>

@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Generate access token for the user
-    const user = await authAPI.getCurrentUser(authCodeData.userId)
+    const user = await authAPI.getUserById(authCodeData.userId)
     if (!user) {
       return NextResponse.json(
         { error: 'invalid_grant', error_description: 'User not found' },

@@ -61,7 +61,7 @@ export function DirectoryCard({
     <TacticalCase
       variant="interactive"
       theme="directory"
-      size="default"
+      size="md"
       showCornerBrackets={true}
       showLatches={true}
       showGridPattern={variant === 'elite'}
@@ -92,7 +92,7 @@ export function DirectoryCard({
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-xs">
             <span className="font-rajdhani font-bold text-heading-lg truncate text-foreground">{name}</span>
-            {status && <Badge variant={badgeVariant} size="sm">{status}</Badge>}
+            {status && <Badge variant={badgeVariant as any} size="sm">{status}</Badge>}
           </div>
           <span className="text-body-sm text-secondary font-noto-sans">{type}</span>
         </div>

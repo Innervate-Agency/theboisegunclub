@@ -60,7 +60,7 @@ export function FeaturedContentSection() {
                     <content.icon className="h-5 w-5 text-muted-foreground" />
                     <span className="text-sm font-medium text-muted-foreground">{content.type}</span>
                   </div>
-                  <Badge variant={content.badgeVariant} size="sm">
+                  <Badge variant={content.badgeVariant as any} size="sm">
                     {content.badgeText}
                   </Badge>
                 </div>

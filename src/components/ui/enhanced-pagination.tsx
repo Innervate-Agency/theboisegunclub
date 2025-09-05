@@ -169,7 +169,7 @@ export function EnhancedPagination({
             <ChevronLeftIcon className="h-4 w-4" />
             <span className="hidden sm:inline">Previous</span>
           </Button>
-          <Badge variant="outline" className="font-rajdhani font-bold">
+          <Badge variant="status-info" className="font-rajdhani font-bold">
             {currentPage} of {totalPages}
           </Badge>
           <Button

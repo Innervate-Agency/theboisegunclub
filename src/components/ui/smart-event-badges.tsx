@@ -141,7 +141,7 @@ export function SmartEventBadges({
       
       {/* Show truncation indicator if badges were limited */}
       {maxBadges && totalBadges > maxBadges && (
-        <Badge variant="outline" size="sm" className="text-muted-foreground">
+        <Badge variant="status-info" size="sm" className="text-muted-foreground">
           +{totalBadges - maxBadges} more
         </Badge>
       )}

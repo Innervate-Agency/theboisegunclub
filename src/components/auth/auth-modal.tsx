@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label'
 import { Separator } from '@/components/ui/separator'
 import { useAuth } from './auth-context'
 import { LoadingSpinner } from '@/components/ui/loading-spinner'
-import { EnvelopeIcon, EyeIcon, EyeSlashIcon, LockClosedIcon, ShieldCheckIcon, UserIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, EyeIcon, EyeSlashIcon, LockClosedIcon, CubeTransparentIcon, UserIcon } from '@heroicons/react/24/outline'
 import { cn } from '@/lib/utils'
 
 interface AuthModalProps {
@@ -126,10 +126,13 @@ export function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthModalProp
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md fixed inset-y-0 right-0 left-auto w-full sm:w-96 max-w-none rounded-none rounded-l-xs mica shadow-modal transform-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-300 data-[state=open]:slide-in-from-right-full data-[state=closed]:slide-out-to-right-full">
-        <DialogHeader className="text-center space-y-xs">
-          <DialogTitle className="text-2xl font-rajdhani font-[600] text-card-foreground flex items-center justify-center gap-sm">
-                        <ShieldCheckIcon className="size-6 text-primary" />
+      <DialogContent 
+        className="fixed inset-y-0 right-0 left-auto w-full sm:w-[26rem] md:w-[28rem] max-w-none rounded-none rounded-l-xs mica shadow-modal transform-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-300 data-[state=open]:slide-in-from-right-full data-[state=closed]:slide-out-to-right-full h-full overflow-y-auto p-xl"
+        showCloseButton={false}
+      >
+        <DialogHeader className="text-left space-y-xs mb-lg">
+          <DialogTitle className="text-2xl font-rajdhani font-[600] text-card-foreground flex items-center gap-sm">
+            <CubeTransparentIcon className="size-6 text-primary" />
             {mode === 'login' ? 'Welcome Back' : 'Join The Club'}
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">

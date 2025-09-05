@@ -11,7 +11,15 @@ const config: StorybookConfig = {
 
   addons: [
     '@storybook/addon-docs',
-    '@storybook/addon-a11y'
+    '@storybook/addon-a11y',
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss'),
+        },
+      },
+    },
     // 'storybook-design-token'
   ],
 
@@ -28,7 +36,7 @@ const config: StorybookConfig = {
 
   // Error boundary to prevent build failures
   features: {
-    buildStoriesJson: true,
+    // Modern Storybook features
   },
 
   viteFinal: async (config) => {

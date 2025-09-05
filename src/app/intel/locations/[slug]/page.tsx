@@ -276,7 +276,7 @@ export async function generateStaticParams() {
   ]
 }
 
-export default async function LocationDetailPage({ params }: Props) {
+export default async function LocationDetailPageRoute({ params }: Props) {
   const { slug } = await params
   const location = getLocationData(slug)
 
@@ -314,5 +314,5 @@ This location offers ${location.amenities.length} different amenities and featur
     tags: [location.type, location.category, location.difficulty]
   }
 
-  return <LocationDetailPage {...transformedLocation} />
+  return <LocationDetailPage {...transformedLocation} params={params} />
 }

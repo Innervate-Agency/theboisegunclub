@@ -67,7 +67,7 @@ export function GuideCard({ guide, className }: GuideCardProps) {
                 <span>{guide.readTime} min read</span>
                 <EyeIcon className="h-3 w-3" />
                 <span>{guide.views.toLocaleString()}</span>
-                <Badge variant="outline" className="text-xs">
+                <Badge variant="status-info" className="text-xs">
                   {guide.difficulty}
                 </Badge>
               </div>

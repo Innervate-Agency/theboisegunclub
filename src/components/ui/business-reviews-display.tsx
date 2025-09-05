@@ -76,7 +76,7 @@ export function BusinessReviewsDisplay({
               {reviews.overallRating.toFixed(1)}
             </span>
           </div>
-          <Badge variant="outline" className="text-xs">
+          <Badge variant="status-info" className="text-xs">
             {reviews.totalReviews} reviews
           </Badge>
         </div>

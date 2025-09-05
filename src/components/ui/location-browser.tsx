@@ -134,7 +134,7 @@ function LocationCard({ location }: { location: ShootingLocation }) {
               </Badge>
             ))}
             {location.amenities.length > 4 && (
-              <Badge variant="outline" className="text-body-xs text-muted-foreground">
+              <Badge variant="status-info" className="text-body-xs text-muted-foreground">
                 +{location.amenities.length - 4} more
               </Badge>
             )}
@@ -295,7 +295,7 @@ export function LocationBrowser({ locations, locationTypes, difficultyLevels }: 
                     }
                   >
                     {type.label}
-                    <Badge variant="outline" className="ml-xs">
+                    <Badge variant="status-info" className="ml-xs">
                       {type.count}
                     </Badge>
                   </Button>
@@ -321,7 +321,7 @@ export function LocationBrowser({ locations, locationTypes, difficultyLevels }: 
                     }
                   >
                     {level.label}
-                    <Badge variant="outline" className="ml-xs">
+                    <Badge variant="status-info" className="ml-xs">
                       {level.count}
                     </Badge>
                   </Button>

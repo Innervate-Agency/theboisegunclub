@@ -111,7 +111,7 @@ export function ModernFilterSidebar({
                 Filters
               </h3>
               {activeFilterCount > 0 && (
-                <Badge variant="outline" className="ml-xs bg-nav-events/20 text-nav-events border-nav-events/30">
+                <Badge variant="status-info" className="ml-xs bg-nav-events/20 text-nav-events border-nav-events/30">
                   {activeFilterCount}
                 </Badge>
               )}
@@ -188,7 +188,7 @@ export function ModernFilterSidebar({
                 <h4 className="font-rajdhani font-semibold text-body-lg text-card-foreground uppercase tracking-wider">
                   {section.title}
                   {sectionActiveCount > 0 && (
-                    <Badge variant="outline" className="ml-xs bg-nav-events/10 text-nav-events text-sm px-2 py-0.5">
+                    <Badge variant="status-info" className="ml-xs bg-nav-events/10 text-nav-events text-sm px-2 py-0.5">
                       {sectionActiveCount}
                     </Badge>
                   )}
@@ -432,7 +432,7 @@ export function ModernFilterSidebar({
                       Filters
                     </h3>
                     {activeFilterCount > 0 && (
-                      <Badge variant="outline" className="ml-xs bg-nav-events/20 text-nav-events border-nav-events/30">
+                      <Badge variant="status-info" className="ml-xs bg-nav-events/20 text-nav-events border-nav-events/30">
                         {activeFilterCount}
                       </Badge>
                     )}

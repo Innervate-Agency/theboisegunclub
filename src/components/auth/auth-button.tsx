@@ -6,19 +6,19 @@ import { useAuth } from './auth-context'
 import { AuthModal } from './auth-modal'
 import { UserDropdown } from './user-dropdown'
 import { LoadingSpinner } from '@/components/ui/loading-spinner'
-import { ArrowRightOnRectangleIcon, UserEllipsisHorizontalIcon, UserGroupIcon } from '@heroicons/react/24/outline'
+import { ArrowRightOnRectangleIcon, UserIcon, UserGroupIcon } from '@heroicons/react/24/outline'
 import { cn } from '@/lib/utils'
 
 interface AuthButtonProps {
   variant?: 'default' | 'minimal' | 'forum-aware'
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'sm' | 'default' | 'lg'
   showTrialButton?: boolean
   className?: string
 }
 
 export function AuthButton({ 
   variant = 'default',
-  size = 'sm',
+  size = 'default',
   showTrialButton = true,
   className 
 }: AuthButtonProps) {

@@ -27,6 +27,16 @@ export interface AuthState {
 // Mock user data for development - replace with real API calls
 export const mockUsers: User[] = [
   {
+    id: '0',
+    username: 'admin',
+    email: 'admin@boisegunclub.com',
+    avatar: '/images/avatars/admin.jpg',
+    role: 'admin',
+    forumUserId: 'admin_user',
+    createdAt: '2024-01-01T00:00:00Z',
+    lastActive: new Date().toISOString()
+  },
+  {
     id: '1',
     username: 'gunsmith_mike',
     email: 'mike@example.com',
@@ -52,9 +62,7 @@ export const mockUsers: User[] = [
 export const authAPI = {
   // Login user with credentials
   async login(email: string, password: string): Promise<{ user: User; token: string } | null> {
-    // This will call your VPS OAuth2 endpoint
-    // For now, mock authentication
-    const mockUser = mockUsers.find(u => u.email === email)
+    const mockUser = mockUsers.find(u => u.email === email || u.username === email)
     if (mockUser) {
       const token = generateMockJWT(mockUser)
       return { user: mockUser, token }
@@ -64,7 +72,6 @@ export const authAPI = {
 
   // Register new user
   async register(username: string, email: string, password: string): Promise<{ user: User; token: string } | null> {
-    // This will create user on both main site and NodeBB forum
     const newUser: User = {
       id: Date.now().toString(),
       username,
@@ -78,9 +85,8 @@ export const authAPI = {
   },
 
   // Get current user from token
-  async getCurrentUser(token: string): Promise<UserIcon | null> {
+  async getCurrentUser(token: string): Promise<User | null> {
     try {
-      // In real implementation, verify JWT token
       const decoded = decodeMockJWT(token)
       return mockUsers.find(u => u.id === decoded.userId) || null
     } catch {
@@ -88,9 +94,13 @@ export const authAPI = {
     }
   },
 
+  // Get user by ID (for OAuth2 token exchange)
+  async getUserById(userId: string): Promise<User | null> {
+    return mockUsers.find(u => u.id === userId) || null
+  },
+
   // Logout user
   async logout(token: string): Promise<boolean> {
-    // This will clear sessions on both main site and NodeBB
     return true
   },
 
@@ -98,7 +108,6 @@ export const authAPI = {
   async getForumSessionUrl(token: string): Promise<string | null> {
     const user = await this.getCurrentUser(token)
     if (user?.forumUserId) {
-      // Return URL with auth token for forum login
       return `https://boisegunclub.com/forums/auth/external?token=${token}&redirect=/`
     }
     return null
@@ -107,7 +116,6 @@ export const authAPI = {
 
 // JWT utilities (mock implementation for development)
 function generateMockJWT(user: User): string {
-  // In production, use proper JWT library with your secret
   const payload = {
     userId: user.id,
     username: user.username,

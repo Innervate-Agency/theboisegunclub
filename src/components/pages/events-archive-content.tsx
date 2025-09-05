@@ -143,7 +143,7 @@ export function EventsArchiveContent() {
                     <div className="flex items-center gap-4 mb-6">
                       <h2 className="font-rajdhani font-bold text-3xl text-card-foreground">{year}</h2>
                       <div className="flex-1 h-px bg-border"></div>
-                      <Badge variant="outline" className="px-3 py-1">
+                      <Badge variant="events-featured" className="px-3 py-1">
                         {events.length} events
                       </Badge>
                     </div>
@@ -185,7 +185,7 @@ export function EventsArchiveContent() {
                 <p className="text-sm text-muted-foreground mb-4">
                   View detailed results, scores, and rankings for completed competitions.
                 </p>
-                <Badge variant="outline" className="text-xs">Coming Soon</Badge>
+                <Badge variant="events-featured" className="text-xs">Coming Soon</Badge>
               </CardContent>
             </Card>
             
@@ -200,7 +200,7 @@ export function EventsArchiveContent() {
                 <p className="text-sm text-muted-foreground mb-4">
                   Track your personal performance and progress across events.
                 </p>
-                <Badge variant="outline" className="text-xs">Coming Soon</Badge>
+                <Badge variant="events-featured" className="text-xs">Coming Soon</Badge>
               </CardContent>
             </Card>
             
@@ -215,7 +215,7 @@ export function EventsArchiveContent() {
                 <p className="text-sm text-muted-foreground mb-4">
                   Browse photos, videos, and media from past events.
                 </p>
-                <Badge variant="outline" className="text-xs">Coming Soon</Badge>
+                <Badge variant="events-featured" className="text-xs">Coming Soon</Badge>
               </CardContent>
             </Card>
           </div>

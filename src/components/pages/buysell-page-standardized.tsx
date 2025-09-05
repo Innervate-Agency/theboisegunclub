@@ -480,9 +480,9 @@ export function BuySellPageStandardized() {
       maxVisible: 3,
       collapsible: false,
       options: [
-        { id: 'new', label: 'New', icon: StarIcon, count: buysellDeals.filter(d => d.condition === 'New').length },
-        { id: 'used', label: 'Used', icon: ClockIcon, count: buysellDeals.filter(d => d.condition === 'Used').length },
-        { id: 'refurbished', label: 'Refurbished', icon: FireIcon, count: buysellDeals.filter(d => d.condition === 'Refurbished').length }
+        { id: 'new', label: 'New', icon: StarIcon, count: buysellDeals.filter(d => d.condition === 'New').length, color: 'text-nav-buysell' },
+        { id: 'used', label: 'Used', icon: ClockIcon, count: buysellDeals.filter(d => d.condition === 'Used').length, color: 'text-nav-buysell' },
+        { id: 'refurbished', label: 'Refurbished', icon: FireIcon, count: buysellDeals.filter(d => d.condition === 'Refurbished').length, color: 'text-nav-buysell' }
       ]
     },
     {
@@ -491,10 +491,10 @@ export function BuySellPageStandardized() {
       maxVisible: 4,
       collapsible: false,
       options: [
-        { id: 'under50', label: 'Under $50', icon: CurrencyDollarIcon, count: buysellDeals.filter(d => d.salePrice < 50).length },
-        { id: '50-200', label: '$50 - $200', icon: CurrencyDollarIcon, count: buysellDeals.filter(d => d.salePrice >= 50 && d.salePrice <= 200).length },
-        { id: '200-500', label: '$200 - $500', icon: CurrencyDollarIcon, count: buysellDeals.filter(d => d.salePrice >= 200 && d.salePrice <= 500).length },
-        { id: 'over500', label: '$500+', icon: CurrencyDollarIcon, count: buysellDeals.filter(d => d.salePrice > 500).length }
+        { id: 'under50', label: 'Under $50', icon: CurrencyDollarIcon, count: buysellDeals.filter(d => d.salePrice < 50).length, color: 'text-nav-buysell' },
+        { id: '50-200', label: '$50 - $200', icon: CurrencyDollarIcon, count: buysellDeals.filter(d => d.salePrice >= 50 && d.salePrice <= 200).length, color: 'text-nav-buysell' },
+        { id: '200-500', label: '$200 - $500', icon: CurrencyDollarIcon, count: buysellDeals.filter(d => d.salePrice >= 200 && d.salePrice <= 500).length, color: 'text-nav-buysell' },
+        { id: 'over500', label: '$500+', icon: CurrencyDollarIcon, count: buysellDeals.filter(d => d.salePrice > 500).length, color: 'text-nav-buysell' }
       ]
     },
     {
@@ -533,7 +533,7 @@ export function BuySellPageStandardized() {
       {/* Title and Subtitle - very tight spacing */}
       <div className="space-y-0">
         <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-none">
-          IDAHO FIREARMS & AMMO MARKETPLACE
+          Idaho Firearms & Ammo Marketplace
         </h1>
         <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-none mt-1">
           buy from verified local dealers in the treasure valley
@@ -656,8 +656,7 @@ export function BuySellPageStandardized() {
       {/* Directory Ticker - Real business updates */}
       <DirectoryTicker />
       
-      {/* Buy & Sell Content Section - Trust and Categories */}
-      <ContentBridgeSection {...buysellContentBridge} />
+      
 
       {/* Main Content Area */}
       <section className="py-mobile-2xl sm:py-4xl bg-background/50">
@@ -716,7 +715,7 @@ export function BuySellPageStandardized() {
                     { id: 'services', label: 'Services', count: buysellDeals.filter(d => d.category === 'Services').length, icon: ShieldCheckIcon },
                     { id: 'equipment', label: 'Equipment', count: buysellDeals.filter(d => d.category === 'Equipment').length, icon: ArchiveBoxIcon },
                     { id: 'custom', label: 'Custom', count: buysellDeals.filter(d => d.category === 'Custom Firearms').length, icon: StarIcon },
-                    { id: 'featured', label: 'Featured', count: buysellDeals.filter(d => d.isFeatured).length }
+                    { id: 'featured', label: 'Featured', count: buysellDeals.filter(d => d.isFeatured).length, color: 'text-nav-buysell' }
                   ].map((tab) => (
                     <Button
                       key={tab.id}
@@ -886,6 +885,9 @@ export function BuySellPageStandardized() {
           </div>
         </div>
       </section>
+
+      {/* Buy & Sell Content Section - Trust and Categories */}
+      <ContentBridgeSection {...buysellContentBridge} />
 
       {/* Bottom Sections */}
       <div className="space-y-4xl mt-4xl">

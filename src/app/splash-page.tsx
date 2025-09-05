@@ -107,25 +107,25 @@ export default function HomePage() {
               <StatCard
                 value="Directory"
                 label="Local gun shops, ranges & trainers"
-                variant="outline"
+                variant="glass"
                 icon={<div className="w-12 h-12 rounded-lg bg-sandy-ochre/20 border-2 border-sandy-ochre/30 flex items-center justify-center"><BuildingOffice2Icon className="h-6 w-6 text-sandy-ochre" /></div>}
               />
               <StatCard
                 value="Events"
                 label="Unified calendar from all clubs"
-                variant="outline"
+                variant="glass"
                 icon={<div className="w-12 h-12 rounded-lg bg-slate-blue/20 border-2 border-slate-blue/30 flex items-center justify-center"><CalendarDaysIcon className="h-6 w-6 text-slate-blue" /></div>}
               />
               <StatCard
                 value="Forum"
                 label="Community discussion & trading"
-                variant="outline"
+                variant="glass"
                 icon={<div className="w-12 h-12 rounded-lg bg-sagebrush-green/20 border-2 border-sagebrush-green/30 flex items-center justify-center"><ShareIcon className="h-6 w-6 text-sagebrush-green" /></div>}
               />
               <StatCard
                 value="Resources"
                 label="Idaho laws, safety & training info"
-                variant="outline"
+                variant="glass"
                 icon={<div className="w-12 h-12 rounded-lg bg-info-river/20 border-2 border-info-river/30 flex items-center justify-center"><BellIcon className="h-6 w-6 text-info-river" /></div>}
               />
             </div>
@@ -459,14 +459,14 @@ export default function HomePage() {
                         type="text"
                         name="name"
                         placeholder="Your name"
-                        variant="outline" required
+                        variant="glass" required
                         disabled={isSubmitting}
                       />
                       <Input 
                         type="email"
                         name="email"
                         placeholder="Email address"
-                        variant="outline" required
+                        variant="glass" required
                         disabled={isSubmitting}
                       />
                     </div>
@@ -474,7 +474,7 @@ export default function HomePage() {
                       type="text"
                       name="subject"
                       placeholder="Subject"
-                      variant="outline" required
+                      variant="glass" required
                       disabled={isSubmitting}
                     />
                     <div className="relative">

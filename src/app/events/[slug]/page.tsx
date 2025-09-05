@@ -39,6 +39,17 @@ interface EventData {
 // Event data service - now uses comprehensive verified data
 const getEventData = (slug: string): EventData | null => {
   // First try to get from comprehensive dataset
+    // Map extended event types to basic ones
+    const mapToBasicEventType = (extendedType: string): 'Competition' | 'Charity' | 'Expo' | 'Training' | 'Social' => {
+      if (extendedType === 'Championship' || extendedType === 'Youth Competition' || extendedType === 'Fair Competition') {
+        return 'Competition'
+      }
+      if (extendedType === 'Fundraising') {
+        return 'Charity'
+      }
+      // Default to the original type if it's already valid
+      return extendedType as 'Competition' | 'Charity' | 'Expo' | 'Training' | 'Social'
+    }
   const comprehensiveEvent = getEventBySlug(slug)
   if (comprehensiveEvent) {
     // Convert comprehensive event to detail page format
@@ -49,7 +60,7 @@ const getEventData = (slug: string): EventData | null => {
       date: comprehensiveEvent.date,
       time: comprehensiveEvent.time,
       location: comprehensiveEvent.location,
-      eventType: comprehensiveEvent.eventType,
+      eventType: comprehensiveEvent.eventType as 'Competition' | 'Charity' | 'Expo' | 'Training' | 'Social',
       capacity: comprehensiveEvent.capacity,
       registeredCount: comprehensiveEvent.registeredCount,
       registrationUrl: comprehensiveEvent.registrationUrl,
@@ -58,7 +69,7 @@ const getEventData = (slug: string): EventData | null => {
       // Generate content for events that don't have full content
       fullContent: generateEventContent(comprehensiveEvent),
       organizer: comprehensiveEvent.organizer || "Event Organizer",
-      contactEmail: comprehensiveEvent.website ? `info@${comprehensiveEvent.website.replace(/^https?:\/\//, '').replace(/^www\./, '')}` : undefined,
+      contactEmail: comprehensiveEvent.website ? `info@${comprehensiveEvent.website.replace(/^https?:\/\//, '').replace(/^www\./, '')}` : '',
       contactPhone: comprehensiveEvent.phone,
       difficulty: getEventDifficulty(comprehensiveEvent.eventType),
       equipment: getEventEquipment(comprehensiveEvent.eventType),
@@ -545,10 +556,10 @@ const getEventRules = (eventType: string): string[] => {
 }
 
 const generateEventTags = (event: ComprehensiveEventData): string[] => {
-  const tags = [event.eventType]
-  if (event.frequency) tags.push(event.frequency)
-  if (event.organizer) tags.push(event.organizer)
-  if (event.featured) tags.push('Featured')
+  const tags = [event.eventType as any]
+  if (event.frequency) tags.push(event.frequency as any)
+  if (event.organizer) tags.push(event.organizer as any)
+  if (event.featured) tags.push('Featured' as any)
   return tags
 }
 

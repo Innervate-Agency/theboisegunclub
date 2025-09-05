@@ -178,7 +178,7 @@ export default function BuySellProductTemplate({
                     {category}
                   </Badge>
                   {subcategory && (
-                    <Badge variant="outline">
+                    <Badge variant="status-info">
                       {subcategory}
                     </Badge>
                   )}
@@ -223,7 +223,7 @@ export default function BuySellProductTemplate({
                       {inStock ? `In Stock${quantity > 1 ? ` (${quantity} available)` : ''}` : 'Out of Stock'}
                     </span>
                   </div>
-                  <Badge variant="outline" className="text-xs">
+                  <Badge variant="status-info" className="text-xs">
                     {condition}
                   </Badge>
                 </div>

@@ -103,7 +103,7 @@ export function UserDashboard({
 
   return (
     <Card className={cn(
-      "mica-card shadow-hero w-80 max-h-[32rem] flex flex-col overflow-hidden",
+      "mica-card shadow-hero w-[90vw] max-w-sm sm:w-96 md:w-[28rem] max-h-[36rem] flex flex-col overflow-hidden",
       className
     )}>
       <CardHeader className="pb-sm border-b border-border/50">
@@ -159,7 +159,7 @@ export function UserDashboard({
           </div>
 
           {/* Quick Stats */}
-          <div className="grid grid-cols-2 gap-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-xs">
             <div className="bg-muted/50 rounded-xs p-sm text-center">
               <div className="font-rajdhani font-bold text-lg text-card-foreground">
                 {userStats.forumPosts}

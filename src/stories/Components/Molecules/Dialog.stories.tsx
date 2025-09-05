@@ -12,13 +12,19 @@ import {
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
-import { StoryPresets } from '@/lib/storybook/templates';
+
 
 /**
- * Dialog component meta configuration using the template system
- * This eliminates boilerplate and ensures consistency across stories
+ * Dialog component meta configuration
  */
-const meta = StoryPresets.Dialog('Dialog', Dialog);
+const meta: Meta<typeof Dialog> = {
+  title: 'Components/Molecules/Dialog',
+  component: Dialog,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,0 +1,3281 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Copy/Paste Detector Report</title><link href="styles/tailwind.css" rel="stylesheet"><link href="styles/prism.css" rel="stylesheet"></head><body class="bg-gray-100"><header class="bg-white shadow py-4"><div class="container mx-auto px-4"><h1 class="text-3xl font-semibold text-gray-800">jscpd - copy/paste report</h1></div></header><main class="container mx-auto my-8 p-4 bg-white shadow rounded"><section class="mb-8" id="dashboard"><h2 class="text-2xl font-semibold text-gray-700 mb-4">Dashboard</h2><div class="grid grid-cols-4 gap-4"><div class="bg-blue-200 p-4 rounded text-center"><h3 class="text-lg font-semibold text-blue-800 mb-2">Total Files</h3><span class="text-4xl font-bold text-blue-800">819</span></div><div class="bg-green-200 p-4 rounded text-center"><h3 class="text-lg font-semibold text-green-800 mb-2">Total Lines of Code</h3><span class="text-4xl font-bold text-green-800">120153</span></div><div class="bg-yellow-200 p-4 rounded text-center"><h3 class="text-lg font-semibold text-yellow-800 mb-2">Number of Clones</h3><span class="text-4xl font-bold text-yellow-800">49</span></div><div class="bg-red-200 p-4 rounded text-center"><h3 class="text-lg font-semibold text-red-800 mb-2">Duplicated Lines</h3><span class="text-4xl font-bold text-red-800">3272 (2.72%)</span></div></div></section><section class="mb-8" id="formats"><h2 class="text-2xl font-semibold text-gray-700 mb-4">Formats with Duplications</h2><table class="w-full table-auto"><thead><tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal"><th class="py-3 px-6 text-left">Format</th><th class="py-3 px-6 text-left">Files</th><th class="py-3 px-6 text-left">Lines</th><th class="py-3 px-6 text-left">Clones</th><th class="py-3 px-6 text-left">Duplicated Lines</th><th class="py-3 px-6 text-left">Duplicated Tokens</th></tr></thead><tbody><tr class="bg-white border-b border-gray-200 text-gray-800 text-sm"><td class="py-3 px-6"><a class="text-blue-600 hover:underline" href="#tsx-clones">tsx</a></td><td class="py-3 px-6">427</td><td class="py-3 px-6">77282</td><td class="py-3 px-6">36</td><td class="py-3 px-6">1333</td><td class="py-3 px-6">10199</td></tr><tr class="bg-white border-b border-gray-200 text-gray-800 text-sm"><td class="py-3 px-6"><a class="text-blue-600 hover:underline" href="#typescript-clones">typescript</a></td><td class="py-3 px-6">59</td><td class="py-3 px-6">10774</td><td class="py-3 px-6">0</td><td class="py-3 px-6">0</td><td class="py-3 px-6">0</td></tr><tr class="bg-white border-b border-gray-200 text-gray-800 text-sm"><td class="py-3 px-6"><a class="text-blue-600 hover:underline" href="#javascript-clones">javascript</a></td><td class="py-3 px-6">320</td><td class="py-3 px-6">31269</td><td class="py-3 px-6">13</td><td class="py-3 px-6">1939</td><td class="py-3 px-6">17412</td></tr><tr class="bg-white border-b border-gray-200 text-gray-800 text-sm"><td class="py-3 px-6"><a class="text-blue-600 hover:underline" href="#markdown-clones">markdown</a></td><td class="py-3 px-6">2</td><td class="py-3 px-6">339</td><td class="py-3 px-6">0</td><td class="py-3 px-6">0</td><td class="py-3 px-6">0</td></tr><tr class="bg-white border-b border-gray-200 text-gray-800 text-sm"><td class="py-3 px-6"><a class="text-blue-600 hover:underline" href="#css-clones">css</a></td><td class="py-3 px-6">11</td><td class="py-3 px-6">489</td><td class="py-3 px-6">0</td><td class="py-3 px-6">0</td><td class="py-3 px-6">0</td></tr></tbody></table></section><section class="mb-8" id="txt-clones"><a name="tsx-clones"></a><h2 class="text-2xl font-semibold text-gray-700 mb-4">tsx</h2><div class="divide-y divide-gray-200 border-b-2"><div class="py-4"><p class="text-gray-600">src/stories/Business/BusinessContext.stories.tsx (Line 452:2 - Line 467:4), src/stories/Business/BusinessContext.stories.tsx (Line 251:2 - Line 266:4)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn1" onclick="toggleCodeBlock('cloneGroup1', 'expandBtn1', 'collapseBtn1')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn1" onclick="toggleCodeBlock('cloneGroup1', 'expandBtn1', 'collapseBtn1')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup1"><code class="language-tsx text-sm text-gray-800">• Boise, ID&lt;/CardDescription&gt;
+              &lt;/div&gt;
+              &lt;Badge className=&quot;ml-auto bg-sagebrush-green text-white&quot;&gt;
+                &lt;ShieldCheckIcon className=&quot;w-3 h-3 mr-xs&quot; /&gt;
+                Verified
+              &lt;/Badge&gt;
+            &lt;/div&gt;
+          &lt;/CardHeader&gt;
+          &lt;CardContent&gt;
+            &lt;div className=&quot;flex items-center gap-xs mb-sm&quot;&gt;
+              &lt;div className=&quot;flex&quot;&gt;
+                {[1, 2, 3, 4, 5].map((star) =&gt; (
+                  &lt;StarIcon key={star} className=&quot;w-4 h-4 fill-sandy-ochre text-sandy-ochre&quot; /&gt;
+                ))}
+              &lt;/div&gt;
+              &lt;span className=&quot;text-body-sm text-muted-foreground&quot;&gt;4.9</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/pricing-table.tsx (Line 458:25 - Line 478:2), src/components/ui/pricing-table.tsx (Line 319:19 - Line 339:2)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn2" onclick="toggleCodeBlock('cloneGroup2', 'expandBtn2', 'collapseBtn2')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn2" onclick="toggleCodeBlock('cloneGroup2', 'expandBtn2', 'collapseBtn2')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup2"><code class="language-tsx text-sm text-gray-800">(feature?: PricingFeature) {
+    if (!feature) return &lt;XMarkIcon className=&quot;size-4 text-muted-foreground mx-auto&quot; /&gt;
+    
+    if (feature.included === true) {
+      return &lt;CheckIcon className=&quot;size-4 text-bore-sight-green mx-auto&quot; /&gt;
+    }
+    if (feature.included === false) {
+      return &lt;XMarkIcon className=&quot;size-4 text-muted-foreground mx-auto&quot; /&gt;
+    }
+    if (typeof feature.included === 'number') {
+      return &lt;span className=&quot;text-body-sm font-medium text-dark-chocolate&quot;&gt;{feature.included}&lt;/span&gt;
+    }
+    if (feature.included === 'unlimited') {
+      return &lt;span className=&quot;text-body-sm font-medium text-rusty-orange&quot;&gt;∞&lt;/span&gt;
+    }
+    if (feature.included === 'limited') {
+      return &lt;MinusIcon className=&quot;size-4 text-rusty-orange mx-auto&quot; /&gt;
+    }
+    return &lt;span className=&quot;text-caption text-warning-amber&quot;&gt;{feature.included}&lt;/span&gt;
+  }
+}</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/page-variants.tsx (Line 313:23 - Line 330:2), src/components/ui/page-variants.tsx (Line 55:26 - Line 72:2)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn4" onclick="toggleCodeBlock('cloneGroup4', 'expandBtn4', 'collapseBtn4')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn4" onclick="toggleCodeBlock('cloneGroup4', 'expandBtn4', 'collapseBtn4')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup4"><code class="language-tsx text-sm text-gray-800">) {
+  const bottomCTA = (
+    &lt;div className=&quot;space-y-4xl&quot;&gt;
+      {/* ChartBarIcon Feed Section */}
+      {activityFeed.length &gt; 0 &amp;&amp; (
+        &lt;div className=&quot;section-skew-up bg-card/50 py-3xl&quot;&gt;
+          &lt;div className=&quot;max-w-4xl mx-auto&quot;&gt;
+            &lt;h3 className=&quot;font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center&quot;&gt;Recent Updates&lt;/h3&gt;
+            &lt;div className=&quot;space-y-base&quot;&gt;
+              {activityFeed.map((activity, index) =&gt; (
+                &lt;ChartBarIconFeedCard key={index} {...activity} /&gt;
+              ))}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+      
+      &lt;</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/footer-newsletter.tsx (Line 12:22 - Line 65:10), src/components/ui/footer-search-subscribe.tsx (Line 12:27 - Line 65:10)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn9" onclick="toggleCodeBlock('cloneGroup9', 'expandBtn9', 'collapseBtn9')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn9" onclick="toggleCodeBlock('cloneGroup9', 'expandBtn9', 'collapseBtn9')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup9"><code class="language-tsx text-sm text-gray-800">) {
+  const [newsletterEmail, setNewsletterEmail] = useState('')
+  const [searchQuery, setSearchQuery] = useState('')
+  const [isSubscribing, setIsSubscribing] = useState(false)
+  const [isSearching, setIsSearching] = useState(false)
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) =&gt; {
+    e.preventDefault()
+    if (!newsletterEmail.trim()) return
+
+    setIsSubscribing(true)
+    
+    // Real newsletter signup - send to community email
+    const subject = encodeURIComponent('Newsletter Subscription Request')
+    const body = encodeURIComponent(
+      `I would like to subscribe to The Boise Gun Club newsletter.\n\nEmail: ${newsletterEmail}\n\nThank you!`
+    )
+    const mailtoUrl = `mailto:info@boiseguncollective.com?subject=${subject}&amp;body=${body}`
+    
+    window.open(mailtoUrl, '_blank')
+    
+    setTimeout(() =&gt; {
+      setIsSubscribing(false)
+      setNewsletterEmail('')
+    }, 1000)
+  }
+
+  const handleSearch = async (e: React.FormEvent) =&gt; {
+    e.preventDefault()
+    if (!searchQuery.trim()) return
+    
+    setIsSearching(true)
+    
+    // Navigate to search results page
+    setTimeout(() =&gt; {
+      window.location.href = `/search?q=${encodeURIComponent(searchQuery.trim())}`
+      setIsSearching(false)
+    }, 500)
+  }
+
+  return (
+    &lt;div className={`space-y-8 ${className}`}&gt;
+      {/* Newsletter Subscription */}
+      &lt;div className=&quot;space-y-4&quot;&gt;
+        &lt;div className=&quot;flex items-center gap-3&quot;&gt;
+          &lt;EnvelopeIcon className=&quot;h-6 w-6 text-rusty-orange&quot; /&gt;
+          &lt;h3 className=&quot;font-rajdhani font-bold text-xl text-card-foreground&quot;&gt;
+            Stay Connected
+          &lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;p className=&quot;text-base text-muted-foreground leading-relaxed&quot;&gt;
+          Get updates on new events, dealer reviews, and Idaho firearms community news.
+        &lt;/p&gt;
+        &lt;form onSubmit={handleNewsletterSubmit} className=&quot;space-y-4</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/footer-newsletter.tsx (Line 65:10 - Line 95:38), src/components/ui/footer-search-subscribe.tsx (Line 65:10 - Line 95:10)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn10" onclick="toggleCodeBlock('cloneGroup10', 'expandBtn10', 'collapseBtn10')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn10" onclick="toggleCodeBlock('cloneGroup10', 'expandBtn10', 'collapseBtn10')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup10"><code class="language-tsx text-sm text-gray-800">&quot;&gt;
+          &lt;Input
+            type=&quot;email&quot;
+            placeholder=&quot;Enter your email address&quot;
+            value={newsletterEmail}
+            onChange={(e) =&gt; setNewsletterEmail(e.target.value)}
+            required
+            className=&quot;w-full&quot;
+          /&gt;
+          &lt;Button 
+            type=&quot;submit&quot; 
+            disabled={!newsletterEmail.trim() || isSubscribing}
+            className=&quot;w-full bg-rusty-orange text-white hover:bg-rusty-orange/90 font-rajdhani font-bold&quot;
+          &gt;
+            {isSubscribing ? (
+              &lt;div className=&quot;flex items-center gap-2&quot;&gt;
+                &lt;div className=&quot;w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin&quot; /&gt;
+                Subscribing...
+              &lt;/div&gt;
+            ) : (
+              &lt;div className=&quot;flex items-center gap-2&quot;&gt;
+                &lt;EnvelopeIcon className=&quot;h-4 w-4&quot; /&gt;
+                Subscribe to Newsletter
+              &lt;/div&gt;
+            )}
+          &lt;/Button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+
+      {/* Site MagnifyingGlassIcon */}
+      &lt;div className=&quot;space-y-4 pt-6 border-t border-border</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/footer-newsletter.tsx (Line 102:10 - Line 131:2), src/components/ui/footer-search-subscribe.tsx (Line 105:10 - Line 133:3)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn11" onclick="toggleCodeBlock('cloneGroup11', 'expandBtn11', 'collapseBtn11')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn11" onclick="toggleCodeBlock('cloneGroup11', 'expandBtn11', 'collapseBtn11')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup11"><code class="language-tsx text-sm text-gray-800">&quot;&gt;
+          &lt;Input
+            type=&quot;text&quot;
+            placeholder=&quot;MagnifyingGlassIcon dealers, events, guides...&quot;
+            value={searchQuery}
+            onChange={(e) =&gt; setSearchQuery(e.target.value)}
+            className=&quot;w-full&quot;
+          /&gt;
+          &lt;Button 
+            type=&quot;submit&quot; 
+            variant=&quot;outline&quot;
+            disabled={!searchQuery.trim() || isSearching}
+            className=&quot;w-full border-rusty-orange/30 text-rusty-orange hover:bg-rusty-orange hover:text-white font-rajdhani font-bold&quot;
+          &gt;
+            {isSearching ? (
+              &lt;div className=&quot;flex items-center gap-2&quot;&gt;
+                &lt;div className=&quot;w-4 h-4 border-2 border-rusty-orange/30 border-t-rusty-orange rounded-full animate-spin&quot; /&gt;
+                Searching...
+              &lt;/div&gt;
+            ) : (
+              &lt;div className=&quot;flex items-center gap-2&quot;&gt;
+                &lt;MagnifyingGlassIcon className=&quot;h-4 w-4&quot; /&gt;
+                MagnifyingGlassIcon Community
+              &lt;/div&gt;
+            )}
+          &lt;/Button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+
+      &lt;</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/enhanced-location-browser.tsx (Line 7:2 - Line 36:4), src/components/ui/weather-location-card.tsx (Line 6:2 - Line 35:2)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn12" onclick="toggleCodeBlock('cloneGroup12', 'expandBtn12', 'collapseBtn12')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn12" onclick="toggleCodeBlock('cloneGroup12', 'expandBtn12', 'collapseBtn12')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup12"><code class="language-tsx text-sm text-gray-800">} from '@heroicons/react/24/outline';
+
+interface WeatherData {
+  locationName: string
+  temperature: number
+  windSpeed: number
+  windDirection: string
+  fireDanger: 'Low' | 'Moderate' | 'High' | 'Extreme'
+  accessStatus: 'Open' | 'Restrictions' | 'Closed'
+  weatherIcon: 'sun' | 'partly-cloudy' | 'cloudy' | 'rain' | 'snow' | 'storm'
+  alerts?: string[]
+  lastUpdated: string
+}
+
+interface LocationData {
+  name: string
+  type: string
+  description: string
+  address: string
+  distanceFromBoise: number
+  rating: number
+  reviews: number
+  difficulty: string
+  category: string
+  verified: boolean
+  elevation: number
+  bestWindConditions: string
+  weatherPriority: 'high' | 'medium' | 'low'
+  amenities: string[]
+  lat</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/directory-ticker.tsx (Line 152:46 - Line 181:111), src/components/ui/event-ticker.tsx (Line 116:46 - Line 145:104)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn13" onclick="toggleCodeBlock('cloneGroup13', 'expandBtn13', 'collapseBtn13')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn13" onclick="toggleCodeBlock('cloneGroup13', 'expandBtn13', 'collapseBtn13')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup13"><code class="language-tsx text-sm text-gray-800">&quot; /&gt;
+            &lt;div className=&quot;h-3 w-20 bg-muted/30 rounded-xs animate-pulse&quot; /&gt;
+            &lt;div className=&quot;h-3 w-12 bg-muted/30 rounded-xs animate-pulse&quot; /&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;h-8 w-px bg-border/30&quot; /&gt;
+    &lt;/div&gt;
+  )
+
+  return (
+    &lt;div className=&quot;relative -mt-lg z-20&quot;&gt;
+      {autoRefresh &amp;&amp; (
+        &lt;div className=&quot;absolute -top-base right-base sm:right-md md:right-lg lg:right-xl xl:right-2xl z-30&quot;&gt;
+          &lt;div className={`inline-flex items-center gap-xs px-sm py-xs rounded-sm text-xs font-medium shadow-present border ${
+            isLoading 
+              ? 'bg-sandy-ochre/95 text-white border-sandy-ochre/40' 
+              : error 
+                ? 'bg-rusty-orange/95 text-white border-rusty-orange/40' 
+                : 'bg-sagebrush-green/95 text-white border-sagebrush-green/40'
+          }`}&gt;
+            &lt;div className={`w-1.5 h-1.5 rounded-full ${isLoading ? 'bg-white animate-pulse' : 'bg-white'}`} /&gt;
+            &lt;span&gt;{isLoading ? 'Updating...' : error ? 'Error' : 'Live'}&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+      
+      &lt;div className=&quot;w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile&quot;&gt;
+        &lt;div className=&quot;mica-card relative overflow-hidden shadow-present rounded-xs&quot;&gt;
+          &lt;div className=&quot;absolute inset-0 bg-gradient-to-r from-nav-directory/5 via-transparent to-nav-directory/10 pointer-events-none</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/card-page-layout.tsx (Line 171:24 - Line 197:50), src/components/ui/unified-page-template.tsx (Line 174:28 - Line 200:27)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn15" onclick="toggleCodeBlock('cloneGroup15', 'expandBtn15', 'collapseBtn15')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn15" onclick="toggleCodeBlock('cloneGroup15', 'expandBtn15', 'collapseBtn15')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup15"><code class="language-tsx text-sm text-gray-800">}
+          &lt;div className=&quot;flex flex-wrap gap-xs&quot;&gt;
+            {quickTabs.map((tab) =&gt; (
+              &lt;Button
+                key={tab.id}
+                variant={activeTab === tab.id ? &quot;default&quot; : &quot;outline&quot;}
+                size=&quot;sm&quot;
+                onClick={() =&gt; onTabChange(tab.id)}
+                className=&quot;gap-xs font-rajdhani shadow-none rounded-xs&quot;
+              &gt;
+                {tab.icon &amp;&amp; React.createElement(tab.icon, { 
+                  weight: &quot;bold&quot;, 
+                  className: &quot;size-3&quot; 
+                })}
+                {tab.label}
+                {tab.count &amp;&amp; (
+                  &lt;Badge variant=&quot;outline&quot; size=&quot;sm&quot; className=&quot;ml-xs&quot;&gt;
+                    {tab.count}
+                  &lt;/Badge&gt;
+                )}
+              &lt;/Button&gt;
+            ))}
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      {/* Main Content Area - Full Width Amazon Style */</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/card-page-layout.tsx (Line 212:25 - Line 234:2), src/components/ui/unified-page-template.tsx (Line 215:25 - Line 236:2)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn16" onclick="toggleCodeBlock('cloneGroup16', 'expandBtn16', 'collapseBtn16')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn16" onclick="toggleCodeBlock('cloneGroup16', 'expandBtn16', 'collapseBtn16')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup16"><code class="language-tsx text-sm text-gray-800">&lt;/h3&gt;
+                      &lt;/div&gt;
+
+                      {filterSections.map((section, index) =&gt; (
+                        &lt;div key={index} className=&quot;space-y-sm&quot;&gt;
+                          &lt;h4 className=&quot;font-rajdhani font-semibold text-body-sm text-card-foreground uppercase tracking-wider&quot;&gt;
+                            {section.title}
+                          &lt;/h4&gt;
+                          &lt;div className=&quot;space-y-xs&quot;&gt;
+                            {section.filters.map((filter) =&gt; (
+                              &lt;Button
+                                key={filter.id}
+                                variant={section.selectedFilters.includes(filter.id) ? &quot;default&quot; : &quot;ghost&quot;}
+                                size=&quot;sm&quot;
+                                onClick={() =&gt; section.onFilterChange(filter.id)}
+                                className=&quot;w-full justify-between text-body-xs font-rajdhani shadow-none rounded-xs h-8&quot;
+                              &gt;
+                                &lt;div className=&quot;flex items-center gap-xs&quot;&gt;
+                                  {filter.icon &amp;&amp; React.createElement(filter.icon, { 
+                                    weight: &quot;bold&quot;, 
+                                    className: &quot;size-3&quot; 
+                                  })}
+                                  {</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/buysell-deal-card.tsx (Line 365:63 - Line 388:2), src/components/ui/buysell-deal-card.tsx (Line 161:28 - Line 182:2)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn17" onclick="toggleCodeBlock('cloneGroup17', 'expandBtn17', 'collapseBtn17')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn17" onclick="toggleCodeBlock('cloneGroup17', 'expandBtn17', 'collapseBtn17')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup17"><code class="language-tsx text-sm text-gray-800">&quot;&gt;
+          &lt;div className=&quot;flex items-center justify-between&quot;&gt;
+            &lt;div className=&quot;space-y-xs&quot;&gt;
+              &lt;p className=&quot;font-rajdhani font-bold text-2xl text-nav-buysell&quot;&gt;
+                {formatPrice(deal.salePrice)}
+              &lt;/p&gt;
+              {deal.originalPrice &gt; deal.salePrice &amp;&amp; (
+                &lt;p className=&quot;text-sm text-muted-foreground line-through&quot;&gt;
+                  {formatPrice(deal.originalPrice)}
+                &lt;/p&gt;
+              )}
+            &lt;/div&gt;
+            {deal.originalPrice &gt; deal.salePrice &amp;&amp; (
+              &lt;div className=&quot;text-center px-sm py-xs bg-sagebrush-green/10 rounded-xs border border-sagebrush-green/20&quot;&gt;
+                &lt;p className=&quot;text-xs text-sagebrush-green font-medium uppercase tracking-wide&quot;&gt;You Save&lt;/p&gt;
+                &lt;p className=&quot;font-rajdhani font-bold text-lg text-sagebrush-green&quot;&gt;
+                  {formatPrice(deal.originalPrice - deal.salePrice)}
+                &lt;/p&gt;
+              &lt;/div&gt;
+            )}
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        {</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/business-detail-template.tsx (Line 20:2 - Line 67:7), src/app/directory/[slug]/page.tsx (Line 10:13 - Line 57:76)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn18" onclick="toggleCodeBlock('cloneGroup18', 'expandBtn18', 'collapseBtn18')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn18" onclick="toggleCodeBlock('cloneGroup18', 'expandBtn18', 'collapseBtn18')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup18"><code class="language-tsx text-sm text-gray-800">: string
+  description: string
+  fullDescription: string
+  address: string
+  city: string
+  state: string
+  zip: string
+  phone: string
+  website?: string
+  email?: string
+  hours: string
+  
+  // Social proof &amp; verification
+  isVerified: boolean
+  verificationStatus: string
+  googlePlaceId?: string
+  rating?: number
+  reviewCount?: number
+  
+  // Services &amp; specialties
+  services: string[]
+  specialties: string[]
+  certifications: string[]
+  
+  // Tier information
+  tier: 'free' | 'copper' | 'silver' | 'gold'
+  isSponsored?: boolean
+  
+  // Additional details
+  yearEstablished?: number
+  employeeCount?: string
+  serviceArea: string[]
+  paymentMethods: string[]
+  
+  // Images and gallery
+  logo?: string
+  images: string[]
+  
+  // Related businesses
+  relatedBusinesses?: Array&lt;{
+    businessName: string
+    businessType: string
+    slug: string
+    tier: string
+  }&gt;
+}
+
+export</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/InteractiveCalendar.refactored.tsx (Line 190:17 - Line 208:19), src/components/ui/InteractiveCalendar.tsx (Line 288:17 - Line 306:18)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn19" onclick="toggleCodeBlock('cloneGroup19', 'expandBtn19', 'collapseBtn19')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn19" onclick="toggleCodeBlock('cloneGroup19', 'expandBtn19', 'collapseBtn19')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup19"><code class="language-tsx text-sm text-gray-800">&lt;div className=&quot;text-center space-y-xs&quot;&gt;
+                  &lt;div className=&quot;flex items-center justify-center gap-xs text-muted-foreground&quot;&gt;
+                    &lt;CalendarDaysIcon className=&quot;size-5&quot; /&gt;
+                    &lt;span className=&quot;text-heading-lg&quot;&gt;
+                      {selectedDate.toLocaleDateString('en-US', { 
+                        weekday: 'long', 
+                        month: 'long', 
+                        day: 'numeric' 
+                      })}
+                    &lt;/span&gt;
+                  &lt;/div&gt;
+                  {selectedDateEvents.length &gt; 0 &amp;&amp; (
+                    &lt;h3 className=&quot;font-rajdhani text-heading-xl font-bold text-card-foreground&quot;&gt;
+                      {selectedDateEvents.length} Event{selectedDateEvents.length !== 1 ? 's' : ''}
+                    &lt;/h3&gt;
+                  )}
+                &lt;/div&gt;
+
+                {selectedDateEvents</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/InteractiveCalendar.refactored.tsx (Line 244:2 - Line 258:40), src/components/ui/LargeEventCalendar.tsx (Line 251:2 - Line 265:40)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn20" onclick="toggleCodeBlock('cloneGroup20', 'expandBtn20', 'collapseBtn20')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn20" onclick="toggleCodeBlock('cloneGroup20', 'expandBtn20', 'collapseBtn20')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup20"><code class="language-tsx text-sm text-gray-800">}&lt;/span&gt;
+                              &lt;/div&gt;
+                              &lt;div className=&quot;flex items-center gap-xs text-body-sm text-muted-foreground&quot;&gt;
+                                &lt;MapPinIcon className=&quot;size-4&quot; /&gt;
+                                &lt;span&gt;{event.location.split(',')[0]}&lt;/span&gt;
+                              &lt;/div&gt;
+                              {event.capacity &amp;&amp; event.registeredCount &amp;&amp; (
+                                &lt;div className=&quot;flex items-center gap-xs text-body-sm text-muted-foreground&quot;&gt;
+                                  &lt;UsersIcon className=&quot;size-4&quot; /&gt;
+                                  &lt;span&gt;{event.registeredCount}/{event.capacity}&lt;/span&gt;
+                                &lt;/div&gt;
+                              )}
+                            &lt;/div&gt;
+
+                            &lt;div className=&quot;flex items-center justify-between pt-xs</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/training-page-standardized.tsx (Line 710:19 - Line 758:20), src/components/ui/card-page-layout.tsx (Line 263:19 - Line 311:26)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn21" onclick="toggleCodeBlock('cloneGroup21', 'expandBtn21', 'collapseBtn21')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn21" onclick="toggleCodeBlock('cloneGroup21', 'expandBtn21', 'collapseBtn21')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup21"><code class="language-tsx text-sm text-gray-800">&lt;/p&gt;
+                &lt;/div&gt;
+                
+                {/* View Controls - Mobile responsive */}
+                &lt;div className=&quot;flex items-center gap-sm sm:gap-base&quot;&gt;
+                  {/* Enhanced View Mode Toggle - Multiple Layouts */}
+                  &lt;div className=&quot;hidden sm:flex items-center border rounded-xs overflow-x-auto&quot;&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'compact' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('compact')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Compact - 4-6 items per row&quot;
+                    &gt;
+                      &lt;Squares2X2Icon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'dense' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('dense')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Dense Grid - Maximum items&quot;
+                    &gt;
+                      &lt;ListBulletIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'grid' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('grid')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Standard Grid&quot;
+                    &gt;
+                      &lt;Squares2X2Icon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'card' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('card')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Large Cards&quot;
+                    &gt;
+                      &lt;RectangleGroupIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'list' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('list')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;ListBulletIcon View</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/not-found-page.tsx (Line 28:8 - Line 63:13), src/components/ui/footer-navigation.tsx (Line 21:19 - Line 56:17)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn22" onclick="toggleCodeBlock('cloneGroup22', 'expandBtn22', 'collapseBtn22')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn22" onclick="toggleCodeBlock('cloneGroup22', 'expandBtn22', 'collapseBtn22')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup22"><code class="language-tsx text-sm text-gray-800">,
+    title: 'Directory',
+    description: 'Local Dealers &amp; Services',
+    theme: 'directory'
+  },
+  {
+    href: '/armory',
+    icon: ShieldCheckIcon,
+    title: 'The Armory',
+    description: 'Equipment &amp; Reviews',
+    theme: 'armory'
+  },
+  {
+    href: '/intel',
+    icon: MapIcon,
+    title: 'Intel',
+    description: 'Range Conditions &amp; Weather',
+    theme: 'intel'
+  },
+  {
+    href: '/buysell',
+    icon: BuildingStorefrontIcon,
+    title: 'Buy &amp; Sell',
+    description: 'Buy &amp; Sell Gear',
+    theme: 'buysell'
+  },
+  {
+    href: '/forums',
+    icon: UsersIcon,
+    title: 'Forums',
+    description: 'Community Discussion',
+    theme: 'forums'
+  }
+]
+
+export function NotFoundPage</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/guides-page-standardized.tsx (Line 448:9 - Line 471:88), src/components/pages/training-page-standardized.tsx (Line 469:12 - Line 492:63)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn24" onclick="toggleCodeBlock('cloneGroup24', 'expandBtn24', 'collapseBtn24')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn24" onclick="toggleCodeBlock('cloneGroup24', 'expandBtn24', 'collapseBtn24')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup24"><code class="language-tsx text-sm text-gray-800">) }
+      ]
+    }
+  ]
+
+  const handleFilterChange = (sectionId: string, optionId: string) =&gt; {
+    filters.updateFilters(sectionId, optionId)
+  }
+
+  const handleClearSection = (sectionId: string) =&gt; {
+    filters.clearFilterSection(sectionId)
+  }
+
+  const handleClearAll = () =&gt; {
+    filters.clearAllFilters()
+  }
+
+  const getActiveFilterCount = () =&gt; {
+    return Object.values(filters.selectedFilters).reduce((count, filterArray) =&gt; count + filterArray.length, 0)
+  }
+
+  // Hero content - working direct implementation like events page
+  const heroContent = (
+    &lt;section className=&quot;relative overflow-hidden bg-gradient-to-br from-nav-intel to-dark-chocolate px-md py-lg</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/guides-page-standardized.tsx (Line 582:29 - Line 610:36), src/components/pages/training-page-standardized.tsx (Line 599:29 - Line 626:52)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn25" onclick="toggleCodeBlock('cloneGroup25', 'expandBtn25', 'collapseBtn25')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn25" onclick="toggleCodeBlock('cloneGroup25', 'expandBtn25', 'collapseBtn25')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup25"><code class="language-tsx text-sm text-gray-800">&lt;ArrowRightIcon className=&quot;h-3 w-3 ml-xs&quot; /&gt;
+                          &lt;/Button&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/CardContent&gt;
+                  &lt;/Card&gt;
+                )
+              })()}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+  )
+
+
+  return (
+    &lt;div className=&quot;min-h-screen bg-background&quot;&gt;
+      {heroContent}
+      
+      {/* Main Content Area */}
+      &lt;section className=&quot;py-mobile-2xl sm:py-4xl bg-background/50&quot;&gt;
+        &lt;div className=&quot;w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile&quot;&gt;
+          &lt;div className=&quot;flex flex-col lg:flex-row gap-mobile-lg sm:gap-2xl max-w-[1920px] mx-auto&quot;&gt;
+            
+            {/* Left Sidebar - Filters (Desktop) */}
+            &lt;aside className=&quot;hidden lg:block&quot;&gt;
+              &lt;div className=&quot;space-y-6&quot;&gt;
+                {/* Stats Grid - Moved to sidebar */</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/guides-page-standardized.tsx (Line 632:28 - Line 667:53), src/components/pages/training-page-standardized.tsx (Line 626:52 - Line 661:68)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn26" onclick="toggleCodeBlock('cloneGroup26', 'expandBtn26', 'collapseBtn26')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn26" onclick="toggleCodeBlock('cloneGroup26', 'expandBtn26', 'collapseBtn26')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup26"><code class="language-tsx text-sm text-gray-800">}
+                &lt;ModernFilterSidebar
+                  sections={filterSections}
+                  selectedFilters={filters.selectedFilters}
+                  onFilterChange={handleFilterChange}
+                  onClearSection={handleClearSection}
+                  onClearAll={handleClearAll}
+                  totalResults={filters.totalResults}
+                  filteredResults={filters.filteredResults}
+                /&gt;
+              &lt;/div&gt;
+            &lt;/aside&gt;
+
+            {/* Mobile Filter Sidebar */}
+            &lt;ModernFilterSidebar
+              sections={filterSections}
+              selectedFilters={filters.selectedFilters}
+              onFilterChange={handleFilterChange}
+              onClearSection={handleClearSection}
+              onClearAll={handleClearAll}
+              totalResults={filters.totalResults}
+              filteredResults={filters.filteredResults}
+              isMobile={true}
+              isOpen={mobileFiltersOpen}
+              onClose={() =&gt; setMobileFiltersOpen(false)}
+            /&gt;
+            
+            {/* Main Content */}
+            &lt;main className=&quot;flex-1 min-w-0&quot;&gt;
+              {/* MagnifyingGlassIcon and Category Controls */}
+              &lt;div className=&quot;mb-xl space-y-lg&quot;&gt;
+                {/* MagnifyingGlassIcon Bar */}
+                &lt;div className=&quot;relative max-w-2xl&quot;&gt;
+                  &lt;MagnifyingGlassIcon className=&quot;absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground&quot; /&gt;
+                  &lt;Input
+                    placeholder=&quot;MagnifyingGlassIcon guides, topics, or categories...</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/guides-page-standardized.tsx (Line 715:2 - Line 780:65), src/components/ui/card-page-layout.tsx (Line 262:3 - Line 774:74)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn27" onclick="toggleCodeBlock('cloneGroup27', 'expandBtn27', 'collapseBtn27')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn27" onclick="toggleCodeBlock('cloneGroup27', 'expandBtn27', 'collapseBtn27')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup27"><code class="language-tsx text-sm text-gray-800">searchQuery}&quot;`}
+                  &lt;/p&gt;
+                &lt;/div&gt;
+                
+                {/* View Controls - Mobile responsive */}
+                &lt;div className=&quot;flex items-center gap-sm sm:gap-base&quot;&gt;
+                  {/* Enhanced View Mode Toggle - Multiple Layouts */}
+                  &lt;div className=&quot;hidden sm:flex items-center border rounded-xs overflow-x-auto&quot;&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'compact' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('compact')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Compact - 4-6 items per row&quot;
+                    &gt;
+                      &lt;Squares2X2Icon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'dense' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('dense')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Dense Grid - Maximum items&quot;
+                    &gt;
+                      &lt;ListBulletIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'grid' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('grid')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Standard Grid&quot;
+                    &gt;
+                      &lt;Squares2X2Icon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'card' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('card')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Large Cards&quot;
+                    &gt;
+                      &lt;RectangleGroupIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'list' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('list')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;ListBulletIcon View&quot;
+                    &gt;
+                      &lt;ListBulletIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                  &lt;/div&gt;
+
+                  {/* Mobile Filter Button */}
+                  &lt;Button
+                    variant=&quot;outline&quot;
+                    size=&quot;sm&quot;
+                    onClick={() =&gt; setMobileFiltersOpen(true)}
+                    className=&quot;gap-xs font-rajdhani lg:hidden&quot;
+                  &gt;
+                    &lt;FunnelIcon className=&quot;size-4&quot; /&gt;
+                    Filters
+                    {getActiveFilterCount() &gt; 0 &amp;&amp; (
+                      &lt;Badge variant=&quot;outline&quot; className=&quot;ml-xs bg-nav-intel/20 text-nav-intel border-nav-intel/30 text-xs</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/events-page-standardized.tsx (Line 569:17 - Line 604:56), src/components/pages/guides-page-standardized.tsx (Line 632:17 - Line 661:68)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn30" onclick="toggleCodeBlock('cloneGroup30', 'expandBtn30', 'collapseBtn30')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn30" onclick="toggleCodeBlock('cloneGroup30', 'expandBtn30', 'collapseBtn30')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup30"><code class="language-tsx text-sm text-gray-800">{/* Modern Filter Sidebar */}
+                &lt;ModernFilterSidebar
+                  sections={filterSections}
+                  selectedFilters={filters.selectedFilters}
+                  onFilterChange={handleFilterChange}
+                  onClearSection={handleClearSection}
+                  onClearAll={handleClearAll}
+                  totalResults={filters.totalResults}
+                  filteredResults={filters.filteredResults}
+                /&gt;
+              &lt;/div&gt;
+            &lt;/aside&gt;
+
+            {/* Mobile Filter Sidebar */}
+            &lt;ModernFilterSidebar
+              sections={filterSections}
+              selectedFilters={filters.selectedFilters}
+              onFilterChange={handleFilterChange}
+              onClearSection={handleClearSection}
+              onClearAll={handleClearAll}
+              totalResults={filters.totalResults}
+              filteredResults={filters.filteredResults}
+              isMobile={true}
+              isOpen={mobileFiltersOpen}
+              onClose={() =&gt; setMobileFiltersOpen(false)}
+            /&gt;
+            
+            {/* Main Content */}
+            &lt;main className=&quot;flex-1 min-w-0&quot;&gt;
+              {/* MagnifyingGlassIcon and Category Controls */}
+              &lt;div className=&quot;mb-xl space-y-lg&quot;&gt;
+                {/* MagnifyingGlassIcon Bar */}
+                &lt;div className=&quot;relative max-w-2xl&quot;&gt;
+                  &lt;MagnifyingGlassIcon className=&quot;absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground&quot; /&gt;
+                  &lt;Input
+                    placeholder=&quot;MagnifyingGlassIcon events, locations, or organizers...</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/events-page-standardized.tsx (Line 655:4 - Line 709:31), src/components/ui/card-page-layout.tsx (Line 262:3 - Line 764:27)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn31" onclick="toggleCodeBlock('cloneGroup31', 'expandBtn31', 'collapseBtn31')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn31" onclick="toggleCodeBlock('cloneGroup31', 'expandBtn31', 'collapseBtn31')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup31"><code class="language-tsx text-sm text-gray-800">}
+                  &lt;/p&gt;
+                &lt;/div&gt;
+                
+                {/* View Controls - Mobile responsive */}
+                &lt;div className=&quot;flex items-center gap-sm sm:gap-base&quot;&gt;
+                  {/* Enhanced View Mode Toggle - Multiple Layouts */}
+                  &lt;div className=&quot;hidden sm:flex items-center border rounded-xs overflow-x-auto&quot;&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'compact' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('compact')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Compact - 4-6 items per row&quot;
+                    &gt;
+                      &lt;Squares2X2Icon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'dense' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('dense')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Dense Grid - Maximum items&quot;
+                    &gt;
+                      &lt;ListBulletIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'grid' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('grid')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Standard Grid&quot;
+                    &gt;
+                      &lt;Squares2X2Icon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'card' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('card')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Large Cards&quot;
+                    &gt;
+                      &lt;RectangleGroupIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'list' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('list')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;ListBulletIcon View&quot;
+                    &gt;
+                      &lt;ListBulletIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                  &lt;/div&gt;
+                  {/* Clear Date Filter Button */</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/buysell-page-standardized.tsx (Line 670:17 - Line 704:60), src/components/pages/training-page-standardized.tsx (Line 627:17 - Line 661:68)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn33" onclick="toggleCodeBlock('cloneGroup33', 'expandBtn33', 'collapseBtn33')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn33" onclick="toggleCodeBlock('cloneGroup33', 'expandBtn33', 'collapseBtn33')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup33"><code class="language-tsx text-sm text-gray-800">&lt;ModernFilterSidebar
+                  sections={filterSections}
+                  selectedFilters={filters.selectedFilters}
+                  onFilterChange={handleFilterChange}
+                  onClearSection={handleClearSection}
+                  onClearAll={handleClearAll}
+                  totalResults={filters.totalResults}
+                  filteredResults={filters.filteredResults}
+                /&gt;
+              &lt;/div&gt;
+            &lt;/aside&gt;
+
+            {/* Mobile Filter Sidebar */}
+            &lt;ModernFilterSidebar
+              sections={filterSections}
+              selectedFilters={filters.selectedFilters}
+              onFilterChange={handleFilterChange}
+              onClearSection={handleClearSection}
+              onClearAll={handleClearAll}
+              totalResults={filters.totalResults}
+              filteredResults={filters.filteredResults}
+              isMobile={true}
+              isOpen={mobileFiltersOpen}
+              onClose={() =&gt; setMobileFiltersOpen(false)}
+            /&gt;
+            
+            {/* Main Content */}
+            &lt;main className=&quot;flex-1 min-w-0&quot;&gt;
+              {/* MagnifyingGlassIcon and Category Controls */}
+              &lt;div className=&quot;mb-xl space-y-lg&quot;&gt;
+                {/* MagnifyingGlassIcon Bar */}
+                &lt;div className=&quot;relative max-w-2xl&quot;&gt;
+                  &lt;MagnifyingGlassIcon className=&quot;absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground&quot; /&gt;
+                  &lt;Input
+                    placeholder=&quot;MagnifyingGlassIcon firearms, gear, services, or dealers...</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/buysell-page-standardized.tsx (Line 719:11 - Line 746:7), src/components/pages/training-page-standardized.tsx (Line 677:9 - Line 704:19)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn34" onclick="toggleCodeBlock('cloneGroup34', 'expandBtn34', 'collapseBtn34')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn34" onclick="toggleCodeBlock('cloneGroup34', 'expandBtn34', 'collapseBtn34')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup34"><code class="language-tsx text-sm text-gray-800">).length }
+                  ].map((tab) =&gt; (
+                    &lt;Button
+                      key={tab.id}
+                      variant={filters.activeTab === tab.id ? &quot;default&quot; : &quot;outline&quot;}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setActiveTab(tab.id)}
+                      className=&quot;gap-xs font-rajdhani shadow-none rounded-xs&quot;
+                    &gt;
+                      {tab.icon &amp;&amp; React.createElement(tab.icon, { 
+                        className: &quot;size-3&quot; 
+                      })}
+                      {tab.label}
+                      {tab.count &amp;&amp; (
+                        &lt;Badge variant=&quot;outline&quot; size=&quot;sm&quot; className=&quot;ml-xs&quot;&gt;
+                          {tab.count}
+                        &lt;/Badge&gt;
+                      )}
+                    &lt;/Button&gt;
+                  ))}
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              {/* Results Header with Controls */}
+              &lt;div className=&quot;flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base sm:gap-xl mb-xl sm:mb-2xl lg:mb-3xl&quot;&gt;
+                &lt;div&gt;
+                  &lt;h2 className=&quot;font-rajdhani text-heading-xl font-bold text-card-foreground&quot;&gt;
+                    {filters.filteredResults} {filters.filteredResults === 1 ? 'Deal'</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/buysell-page-standardized.tsx (Line 746:8 - Line 815:71), src/components/pages/guides-page-standardized.tsx (Line 711:9 - Line 774:74)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn35" onclick="toggleCodeBlock('cloneGroup35', 'expandBtn35', 'collapseBtn35')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn35" onclick="toggleCodeBlock('cloneGroup35', 'expandBtn35', 'collapseBtn35')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup35"><code class="language-tsx text-sm text-gray-800">} Found
+                  &lt;/h2&gt;
+                  &lt;p className=&quot;text-muted-foreground&quot;&gt;
+                    {filters.filteredResults !== filters.totalResults &amp;&amp; `Filtered from ${filters.totalResults} total • `}
+                    {filters.searchQuery &amp;&amp; `MagnifyingGlassIcon: &quot;${filters.searchQuery}&quot;`}
+                  &lt;/p&gt;
+                &lt;/div&gt;
+                
+                {/* View Controls - Mobile responsive */}
+                &lt;div className=&quot;flex items-center gap-sm sm:gap-base&quot;&gt;
+                  {/* Enhanced View Mode Toggle - Multiple Layouts */}
+                  &lt;div className=&quot;hidden sm:flex items-center border rounded-xs overflow-x-auto&quot;&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'compact' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('compact')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Compact - 4-6 items per row&quot;
+                    &gt;
+                      &lt;Squares2X2Icon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'dense' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('dense')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Dense Grid - Maximum items&quot;
+                    &gt;
+                      &lt;ListBulletIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'grid' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('grid')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Standard Grid&quot;
+                    &gt;
+                      &lt;Squares2X2Icon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'card' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('card')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Large Cards&quot;
+                    &gt;
+                      &lt;RectangleGroupIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'list' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('list')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;ListBulletIcon View&quot;
+                    &gt;
+                      &lt;ListBulletIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                  &lt;/div&gt;
+                  
+                  {/* Mobile Filter Button */}
+                  &lt;Button
+                    variant=&quot;outline&quot;
+                    size=&quot;sm&quot;
+                    onClick={() =&gt; setMobileFiltersOpen(true)}
+                    className=&quot;gap-xs font-rajdhani lg:hidden&quot;
+                  &gt;
+                    &lt;FunnelIcon className=&quot;size-4&quot; /&gt;
+                    Filters
+                    {getActiveFilterCount() &gt; 0 &amp;&amp; (
+                      &lt;Badge variant=&quot;outline&quot; className=&quot;ml-xs bg-nav-buysell/20 text-nav-buysell border-nav-buysell/30 text-xs</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/armory-page-standardized.tsx (Line 248:2 - Line 269:39), src/components/pages/buysell-page-standardized.tsx (Line 404:9 - Line 425:58)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn37" onclick="toggleCodeBlock('cloneGroup37', 'expandBtn37', 'collapseBtn37')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn37" onclick="toggleCodeBlock('cloneGroup37', 'expandBtn37', 'collapseBtn37')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup37"><code class="language-tsx text-sm text-gray-800">,
+      alphabetical: (a, b) =&gt; a.title.localeCompare(b.title)
+    }
+  })
+
+  const handleFilterChange = (sectionId: string, optionId: string) =&gt; {
+    filters.updateFilters(sectionId, optionId)
+  }
+
+  const handleClearSection = (sectionId: string) =&gt; {
+    filters.clearFilterSection(sectionId)
+  }
+
+  const handleClearAll = () =&gt; {
+    filters.clearAllFilters()
+  }
+
+  const getActiveFilterCount = () =&gt; {
+    return Object.values(filters.selectedFilters).reduce((count, filterArray) =&gt; count + filterArray.length, 0)
+  }
+
+  // Modern filter sidebar configuration</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/armory-page-standardized.tsx (Line 446:7 - Line 489:53), src/components/pages/training-page-standardized.tsx (Line 618:7 - Line 661:68)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn38" onclick="toggleCodeBlock('cloneGroup38', 'expandBtn38', 'collapseBtn38')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn38" onclick="toggleCodeBlock('cloneGroup38', 'expandBtn38', 'collapseBtn38')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup38"><code class="language-tsx text-sm text-gray-800">{/* Main Content Area */}
+      &lt;section className=&quot;py-mobile-2xl sm:py-4xl bg-background/50&quot;&gt;
+        &lt;div className=&quot;w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile&quot;&gt;
+          &lt;div className=&quot;flex flex-col lg:flex-row gap-mobile-lg sm:gap-2xl max-w-[1920px] mx-auto&quot;&gt;
+            
+            {/* Left Sidebar - Filters (Desktop) */}
+            &lt;aside className=&quot;hidden lg:block&quot;&gt;
+              &lt;div className=&quot;space-y-6&quot;&gt;
+                {/* Modern Filter Sidebar - Now fully collapsible */}
+                &lt;ModernFilterSidebar
+                  sections={filterSections}
+                  selectedFilters={filters.selectedFilters}
+                  onFilterChange={handleFilterChange}
+                  onClearSection={handleClearSection}
+                  onClearAll={handleClearAll}
+                  totalResults={filters.totalResults}
+                  filteredResults={filters.filteredResults}
+                /&gt;
+              &lt;/div&gt;
+            &lt;/aside&gt;
+
+            {/* Mobile Filter Sidebar */}
+            &lt;ModernFilterSidebar
+              sections={filterSections}
+              selectedFilters={filters.selectedFilters}
+              onFilterChange={handleFilterChange}
+              onClearSection={handleClearSection}
+              onClearAll={handleClearAll}
+              totalResults={filters.totalResults}
+              filteredResults={filters.filteredResults}
+              isMobile={true}
+              isOpen={mobileFiltersOpen}
+              onClose={() =&gt; setMobileFiltersOpen(false)}
+            /&gt;
+            
+            {/* Main Content */}
+            &lt;main className=&quot;flex-1 min-w-0&quot;&gt;
+              {/* MagnifyingGlassIcon and Category Controls */}
+              &lt;div className=&quot;mb-xl space-y-lg&quot;&gt;
+                {/* MagnifyingGlassIcon Bar */}
+                &lt;div className=&quot;relative max-w-2xl&quot;&gt;
+                  &lt;MagnifyingGlassIcon className=&quot;absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground&quot; /&gt;
+                  &lt;Input
+                    placeholder=&quot;MagnifyingGlassIcon articles, guides, and reviews...</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/armory-page-standardized.tsx (Line 503:2 - Line 530:10), src/components/pages/training-page-standardized.tsx (Line 677:2 - Line 704:19)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn39" onclick="toggleCodeBlock('cloneGroup39', 'expandBtn39', 'collapseBtn39')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn39" onclick="toggleCodeBlock('cloneGroup39', 'expandBtn39', 'collapseBtn39')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup39"><code class="language-tsx text-sm text-gray-800">.featured).length }
+                  ].map((tab) =&gt; (
+                    &lt;Button
+                      key={tab.id}
+                      variant={filters.activeTab === tab.id ? &quot;default&quot; : &quot;outline&quot;}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setActiveTab(tab.id)}
+                      className=&quot;gap-xs font-rajdhani shadow-none rounded-xs&quot;
+                    &gt;
+                      {tab.icon &amp;&amp; React.createElement(tab.icon, { 
+                        className: &quot;size-3&quot; 
+                      })}
+                      {tab.label}
+                      {tab.count &amp;&amp; (
+                        &lt;Badge variant=&quot;outline&quot; size=&quot;sm&quot; className=&quot;ml-xs&quot;&gt;
+                          {tab.count}
+                        &lt;/Badge&gt;
+                      )}
+                    &lt;/Button&gt;
+                  ))}
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              {/* Results Header with Controls */}
+              &lt;div className=&quot;flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base sm:gap-xl mb-xl sm:mb-2xl lg:mb-3xl&quot;&gt;
+                &lt;div&gt;
+                  &lt;h2 className=&quot;font-rajdhani text-heading-xl font-bold text-card-foreground&quot;&gt;
+                    {filters.filteredResults} {filters.filteredResults === 1 ? 'Article'</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/armory-page-standardized.tsx (Line 595:69 - Line 633:8), src/components/pages/buysell-page-standardized.tsx (Line 857:64 - Line 895:4)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn40" onclick="toggleCodeBlock('cloneGroup40', 'expandBtn40', 'collapseBtn40')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn40" onclick="toggleCodeBlock('cloneGroup40', 'expandBtn40', 'collapseBtn40')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup40"><code class="language-tsx text-sm text-gray-800">&quot;
+                          onAction={
+                            &lt;Button onClick={handleClearAll}&gt;
+                              Clear All Filters
+                            &lt;/Button&gt;
+                          }
+                        /&gt;
+                      &lt;/div&gt;
+                    )}
+                  &lt;/div&gt;
+                )}
+              &lt;/div&gt;
+              
+              {/* Enhanced Pagination */}
+              &lt;EnhancedPagination
+                currentPage={filters.currentPage}
+                totalPages={filters.totalPages}
+                onPageChange={filters.setCurrentPage}
+                totalItems={filters.totalResults}
+                itemsPerPage={filters.itemsPerPage}
+                filteredItems={filters.filteredResults}
+                variant=&quot;full&quot;
+                showItemsInfo={true}
+                perPageOptions={filters.perPageOptions}
+                onPerPageChange={filters.setItemsPerPage}
+                isLoading={filters.isLoading}
+                enableKeyboardNavigation={true}
+              /&gt;
+            &lt;/main&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      {/* Bottom Sections */}
+      &lt;div className=&quot;space-y-4xl mt-4xl&quot;&gt;
+        {/* Stats Section */}
+        &lt;TrustIndicators /&gt;
+        &lt;div className=&quot;container mx-auto px-4&quot;&gt;
+          &lt;h3 className=&quot;font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center&quot;&gt;Content</code></pre></div><div class="py-4"><p class="text-gray-600">src/lib/tactical-icons.tsx (Line 320:14 - Line 335:8), src/lib/tactical-icons.tsx (Line 30:18 - Line 45:10)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn42" onclick="toggleCodeBlock('cloneGroup42', 'expandBtn42', 'collapseBtn42')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn42" onclick="toggleCodeBlock('cloneGroup42', 'expandBtn42', 'collapseBtn42')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup42"><code class="language-tsx text-sm text-gray-800">: React.FC&lt;IconProps&gt; = ({ className, size = 24, strokeWidth = 1.5 }) =&gt; (
+  &lt;svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}
+    strokeLinecap=&quot;round&quot;
+    strokeLinejoin=&quot;round&quot;
+  &gt;
+    &lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; /&gt;
+    &lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;6&quot; /&gt;
+    &lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;2&quot; /&gt;
+    &lt;path d=&quot;M12 2v4</code></pre></div><div class="py-4"><p class="text-gray-600">src/lib/content-bridge-configs.tsx (Line 95:2 - Line 146:17), src/lib/content-bridge-events.tsx (Line 22:2 - Line 73:3)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn43" onclick="toggleCodeBlock('cloneGroup43', 'expandBtn43', 'collapseBtn43')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn43" onclick="toggleCodeBlock('cloneGroup43', 'expandBtn43', 'collapseBtn43')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup43"><code class="language-tsx text-sm text-gray-800">{
+    sectionTitle: &quot;Why Attend Idaho Events&quot;,
+    sectionIcon: UserGroupIcon,
+    sectionDescription: &quot;Join Idaho's vibrant shooting sports community with events ranging from competitive matches to educational clinics. Our event calendar features authentic competitions, training courses, and social gatherings hosted by verified Idaho organizations.&quot;,
+    benefits: [
+      {
+        icon: ShieldCheckIcon,
+        title: &quot;Verified Events&quot;,
+        description: &quot;All events are verified with real organizers and authentic competition details&quot;
+      },
+      {
+        icon: MapPinIcon,
+        title: &quot;Local Access&quot;,
+        description: &quot;Events throughout Idaho from Treasure Valley to wilderness locations&quot;
+      },
+      {
+        icon: TicketIcon,
+        title: &quot;Easy Registration&quot;,
+        description: &quot;Direct links to official event registration and contact information&quot;
+      },
+      {
+        icon: AcademicCapIcon,
+        title: &quot;Skill Building&quot;,
+        description: &quot;Training events and clinics for all skill levels from beginner to expert&quot;
+      }
+    ],
+    categoriesTitle: &quot;Event Categories&quot;,
+    categoriesIcon: CheckBadgeIcon,
+    categories: [
+      { name: &quot;Competitions&quot;, count: competitionEvents.toString(), trend: &quot;Active&quot; },
+      { name: &quot;Training&quot;, count: trainingEvents.toString(), trend: &quot;Growing&quot; },
+      { name: &quot;Expos&quot;, count: expoEvents.toString(), trend: &quot;Popular&quot; },
+      { name: &quot;Other&quot;, count: (totalEvents - competitionEvents - trainingEvents - expoEvents - socialEvents - charityEvents).toString(), trend: &quot;Various&quot; }
+    ],
+    trustIndicators: [
+      { icon: CheckBadgeIcon, label: &quot;Verified Organizers&quot;, value: &quot;100%&quot; },
+      { icon: ClockIcon, label: &quot;Average Notice&quot;, value: &quot;30 Days&quot; },
+      { icon: MapPinIcon, label: &quot;Statewide Coverage&quot;, value: &quot;Idaho&quot; }
+    ],
+    primaryCard: {
+      title: &quot;Host an Event&quot;,
+      description: &quot;Share your shooting sports event with Idaho's firearms community.&quot;,
+      features: [
+        &quot;Free event listings&quot;,
+        &quot;Direct participant contact&quot;,
+        &quot;Calendar integration&quot;,
+        &quot;Social media promotion&quot;
+      ],
+      buttonText: &quot;Submit Event&quot;
+    },
+    statsCard: {
+      title: &quot;Event Activity&quot;</code></pre></div><div class="py-4"><p class="text-gray-600">src/lib/content-bridge-configs.tsx (Line 157:2 - Line 212:2), src/lib/content-bridge-directory.tsx (Line 11:2 - Line 66:2)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn44" onclick="toggleCodeBlock('cloneGroup44', 'expandBtn44', 'collapseBtn44')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn44" onclick="toggleCodeBlock('cloneGroup44', 'expandBtn44', 'collapseBtn44')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup44"><code class="language-tsx text-sm text-gray-800">{
+    sectionTitle: &quot;Why Use the Idaho Directory&quot;,
+    sectionIcon: BuildingOfficeIcon,
+    sectionDescription: &quot;Connect with Idaho's trusted firearms community through our comprehensive directory of 594 verified businesses. From licensed FFLs to custom builders, find the local expertise you need across the Treasure Valley and beyond.&quot;,
+    benefits: [
+      {
+        icon: ShieldCheckIcon,
+        title: &quot;ATF Licensed&quot;,
+        description: &quot;All firearms dealers are verified FFLs with current licensing&quot;
+      },
+      {
+        icon: MapPinIcon,
+        title: &quot;Local Businesses&quot;,
+        description: &quot;Support Idaho-based businesses in your community&quot;
+      },
+      {
+        icon: CheckBadgeIcon,
+        title: &quot;Verified Reviews&quot;,
+        description: &quot;Real customer reviews from Google Reviews API integration&quot;
+      },
+      {
+        icon: TruckIcon,
+        title: &quot;Convenient Locations&quot;,
+        description: &quot;Find businesses near you across Idaho's major population centers&quot;
+      }
+    ],
+    categoriesTitle: &quot;Business Types&quot;,
+    categoriesIcon: BuildingStorefrontIcon,
+    categories: [
+      { name: &quot;Gun Stores&quot;, count: &quot;568&quot;, trend: &quot;Verified&quot; },
+      { name: &quot;Ranges&quot;, count: &quot;13&quot;, trend: &quot;Active&quot; },
+      { name: &quot;Training&quot;, count: &quot;10&quot;, trend: &quot;Professional&quot; },
+      { name: &quot;Services&quot;, count: &quot;3&quot;, trend: &quot;Specialists&quot; }
+    ],
+    trustIndicators: [
+      { icon: CheckBadgeIcon, label: &quot;Licensed FFLs&quot;, value: &quot;594&quot; },
+      { icon: BuildingOfficeIcon, label: &quot;Counties Covered&quot;, value: &quot;44&quot; },
+      { icon: GlobeAltIcon, label: &quot;Google Reviews&quot;, value: &quot;Live Data&quot; }
+    ],
+    primaryCard: {
+      title: &quot;Add Your Business&quot;,
+      description: &quot;Get your Idaho firearms business listed in our directory.&quot;,
+      features: [
+        &quot;Free basic listings&quot;,
+        &quot;Google Reviews integration&quot;,
+        &quot;Business profile pages&quot;,
+        &quot;Contact information display&quot;
+      ],
+      buttonText: &quot;List Business&quot;
+    },
+    statsCard: {
+      title: &quot;&quot;,
+      stats: []
+    },
+    accentColor: &quot;nav-directory&quot;
+  }</code></pre></div><div class="py-4"><p class="text-gray-600">src/lib/content-bridge-configs.tsx (Line 214:2 - Line 268:2), src/lib/content-bridge-intel.tsx (Line 21:2 - Line 75:2)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn45" onclick="toggleCodeBlock('cloneGroup45', 'expandBtn45', 'collapseBtn45')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn45" onclick="toggleCodeBlock('cloneGroup45', 'expandBtn45', 'collapseBtn45')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup45"><code class="language-tsx text-sm text-gray-800">{
+    sectionTitle: &quot;Why Use Idaho Intel&quot;,
+    sectionIcon: MagnifyingGlassIcon,
+    sectionDescription: &quot;Discover Idaho's shooting locations with our comprehensive guide to public ranges, BLM areas, and private facilities. All locations feature real GPS coordinates, access requirements, and honest verification status.&quot;,
+    benefits: [
+      {
+        icon: MapPinIcon,
+        title: &quot;Precise Locations&quot;,
+        description: &quot;Real GPS coordinates and detailed access information for every location&quot;
+      },
+      {
+        icon: CheckBadgeIcon,
+        title: &quot;Honest Verification&quot;,
+        description: &quot;Transparent verification status - no false claims about unvisited locations&quot;
+      },
+      {
+        icon: TruckIcon,
+        title: &quot;Access Details&quot;,
+        description: &quot;Clear information about 4WD requirements, permits, and seasonal access&quot;
+      },
+      {
+        icon: ShieldCheckIcon,
+        title: &quot;Safety Information&quot;,
+        description: &quot;Current regulations, fire restrictions, and safety considerations&quot;
+      }
+    ],
+    categoriesTitle: &quot;Location Types&quot;,
+    categoriesIcon: MapPinIcon,
+    categories: [
+      { name: &quot;Public Ranges&quot;, count: publicRanges.toString(), trend: &quot;Verified&quot; },
+      { name: &quot;BLM Areas&quot;, count: (totalLocations - publicRanges - privateFacilities).toString(), trend: &quot;Mapped&quot; },
+      { name: &quot;Private Clubs&quot;, count: privateFacilities.toString(), trend: &quot;Listed&quot; }
+    ],
+    trustIndicators: [
+      { icon: CheckBadgeIcon, label: &quot;Verified Locations&quot;, value: verifiedLocations.toString() },
+      { icon: MapPinIcon, label: &quot;Need Verification&quot;, value: (totalLocations - verifiedLocations).toString() },
+      { icon: TruckIcon, label: &quot;Statewide Coverage&quot;, value: &quot;Idaho&quot; }
+    ],
+    primaryCard: {
+      title: &quot;Share a Location&quot;,
+      description: &quot;Help build Idaho's shooting location database with your local knowledge.&quot;,
+      features: [
+        &quot;GPS coordinates verification&quot;,
+        &quot;Photo contributions welcome&quot;,
+        &quot;Access condition updates&quot;,
+        &quot;Community-driven accuracy&quot;
+      ],
+      buttonText: &quot;Contribute Info&quot;
+    },
+    statsCard: {
+      title: &quot;&quot;,
+      stats: []
+    },
+    accentColor: &quot;nav-intel&quot;
+  }</code></pre></div><div class="py-4"><p class="text-gray-600">src/lib/content-bridge-buysell.tsx (Line 11:2 - Line 66:2), src/lib/content-bridge-configs.tsx (Line 327:2 - Line 382:2)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn46" onclick="toggleCodeBlock('cloneGroup46', 'expandBtn46', 'collapseBtn46')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn46" onclick="toggleCodeBlock('cloneGroup46', 'expandBtn46', 'collapseBtn46')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup46"><code class="language-tsx text-sm text-gray-800">{
+  sectionTitle: &quot;Why Shop Idaho Buy &amp; Sell&quot;,
+  sectionIcon: UserGroupIcon,
+  sectionDescription: &quot;Connect directly with Idaho's verified firearms dealers, custom builders, and service providers. Our marketplace features authentic deals from licensed FFLs across the Treasure Valley with transparent business information.&quot;,
+  benefits: [
+    {
+      icon: ShieldCheckIcon,
+      title: &quot;Licensed Dealers Only&quot;,
+      description: &quot;All sellers are verified Idaho FFLs with current ATF licensing&quot;
+    },
+    {
+      icon: MapPinIcon,
+      title: &quot;Local Pickup Available&quot;,
+      description: &quot;Support local businesses with in-person transactions and pickup&quot;
+    },
+    {
+      icon: CheckBadgeIcon,
+      title: &quot;Verified Information&quot;,
+      description: &quot;Real business details, phone numbers, and authentic service descriptions&quot;
+    },
+    {
+      icon: CreditCardIcon,
+      title: &quot;Direct Contact&quot;,
+      description: &quot;Contact dealers directly - no middleman fees or hidden charges&quot;
+    }
+  ],
+  categoriesTitle: &quot;Available Categories&quot;,
+  categoriesIcon: BuildingStorefrontIcon,
+  categories: [
+    { name: &quot;Custom Work&quot;, count: &quot;8&quot;, trend: &quot;Artisan&quot; },
+    { name: &quot;Services&quot;, count: &quot;10&quot;, trend: &quot;Professional&quot; },
+    { name: &quot;Equipment&quot;, count: &quot;2&quot;, trend: &quot;Quality&quot; },
+    { name: &quot;Experiences&quot;, count: &quot;6&quot;, trend: &quot;Unique&quot; }
+  ],
+  trustIndicators: [
+    { icon: CheckBadgeIcon, label: &quot;Licensed Dealers&quot;, value: &quot;15&quot; },
+    { icon: BuildingOfficeIcon, label: &quot;Service Providers&quot;, value: &quot;All Verified&quot; },
+    { icon: MapPinIcon, label: &quot;Local Focus&quot;, value: &quot;Idaho Only&quot; }
+  ],
+  primaryCard: {
+    title: &quot;List Your Services&quot;,
+    description: &quot;Showcase your firearms business, services, or custom work to Idaho gun owners.&quot;,
+    features: [
+      &quot;FFL verification required&quot;,
+      &quot;Direct customer contact&quot;,
+      &quot;Service showcase pages&quot;,
+      &quot;Local community focus&quot;
+    ],
+    buttonText: &quot;Apply to Sell&quot;
+  },
+  statsCard: {
+    title: &quot;&quot;,
+    stats: []
+  },
+  accentColor: &quot;nav-buysell&quot;
+}</code></pre></div><div class="py-4"><p class="text-gray-600">src/lib/content-bridge-armory.tsx (Line 10:2 - Line 47:23), src/lib/content-bridge-configs.tsx (Line 384:2 - Line 421:19)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn47" onclick="toggleCodeBlock('cloneGroup47', 'expandBtn47', 'collapseBtn47')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn47" onclick="toggleCodeBlock('cloneGroup47', 'expandBtn47', 'collapseBtn47')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup47"><code class="language-tsx text-sm text-gray-800">{
+  sectionTitle: &quot;Why Use Idaho Armory&quot;,
+  sectionIcon: ShieldCheckIcon,
+  sectionDescription: &quot;Access comprehensive firearms reviews, technical guides, and expert insights from Idaho's shooting community. Our armory features verified information on firearms, accessories, and modifications with local dealer connections.&quot;,
+  benefits: [
+    {
+      icon: ShieldCheckIcon,
+      title: &quot;Expert Reviews&quot;,
+      description: &quot;In-depth firearm reviews from experienced Idaho shooters and professionals&quot;
+    },
+    {
+      icon: AcademicCapIcon,
+      title: &quot;Technical Guides&quot;,
+      description: &quot;Detailed technical information and modification guides for various platforms&quot;
+    },
+    {
+      icon: CheckBadgeIcon,
+      title: &quot;Verified Information&quot;,
+      description: &quot;All content verified by knowledgeable community members and experts&quot;
+    },
+    {
+      icon: BuildingStorefrontIcon,
+      title: &quot;Local Availability&quot;,
+      description: &quot;Connect with Idaho dealers who stock reviewed firearms and accessories&quot;
+    }
+  ],
+  categoriesTitle: &quot;Armory Categories&quot;,
+  categoriesIcon: CursorArrowRaysIcon,
+  categories: [
+    { name: &quot;Pistols&quot;, count: &quot;45+&quot;, trend: &quot;Popular&quot; },
+    { name: &quot;Rifles&quot;, count: &quot;38+&quot;, trend: &quot;Active&quot; },
+    { name: &quot;Shotguns&quot;, count: &quot;22+&quot;, trend: &quot;Growing&quot; },
+    { name: &quot;Accessories&quot;, count: &quot;89+&quot;, trend: &quot;Expanding&quot; }
+  ],
+  trustIndicators: [
+    { icon: CheckBadgeIcon, label: &quot;Reviews Published&quot;, value: &quot;194+&quot; },
+    { icon: UserGroupIcon, label: &quot;Contributing Members&quot;, value: &quot;28&quot; },
+    { icon: BuildingStorefrontIcon</code></pre></div><div class="py-4"><p class="text-gray-600">src/app/page-OLD-SYSTEM.tsx (Line 1:1 - Line 113:2), src/app/page-ORIGINAL.tsx (Line 1:1 - Line 113:2)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn48" onclick="toggleCodeBlock('cloneGroup48', 'expandBtn48', 'collapseBtn48')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn48" onclick="toggleCodeBlock('cloneGroup48', 'expandBtn48', 'collapseBtn48')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup48"><code class="language-tsx text-sm text-gray-800">import { SiteNavigation } from '@/components/ui/site-navigation'
+import { SiteFooter } from '@/components/ui/site-footer'
+import { TacticalHero } from '@/components/ui/tactical-hero'
+import { PlatformFeaturesSection } from '@/components/sections/platform-features-section'
+import { FeaturedContentSection } from '@/components/sections/featured-content-section'
+import { DirectoryStatsSection } from '@/components/sections/directory-stats-section'
+import { BuySellDealSection } from '@/components/sections/buysell-deal-section'
+import { PlatformValuesSection } from '@/components/sections/platform-values-section'
+import { ContributionCTA } from '@/components/ui/contribution-cta'
+import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
+import { WesternSection } from '@/components/ui/western-dividers'
+import { SimpleStickyNav } from '@/components/ui/simple-sticky-nav'
+
+export default function HomePage() {
+  return (
+    &lt;&gt;
+      &lt;SiteNavigation /&gt;
+      
+      {/* Simple Sticky Navigation */}
+      &lt;SimpleStickyNav /&gt;
+      
+      &lt;div className=&quot;theme-home min-h-screen&quot;&gt;
+      
+      &lt;main className=&quot;flex-grow relative&quot;&gt;
+        {/* Hero Section - Full width with beautiful gradient */}
+        &lt;section id=&quot;hero&quot;&gt;
+          &lt;TacticalHero /&gt;
+        &lt;/section&gt;
+
+        {/* Platform Features with Bruno Sand Dunes divider */}
+        &lt;WesternSection
+          bottomDivider=&quot;bruno-sand-dunes&quot;
+          bgVariant=&quot;background&quot;
+          dividerColor=&quot;var(--background)&quot;
+          className=&quot;py-3xl&quot;
+        &gt;
+          &lt;div id=&quot;platform-features&quot; className=&quot;container mx-auto px-lg&quot;&gt;
+            &lt;PlatformFeaturesSection /&gt;
+          &lt;/div&gt;
+        &lt;/WesternSection&gt;
+
+        {/* Featured Content with matching background */}
+        &lt;section 
+          id=&quot;featured-content&quot; 
+          className=&quot;py-3xl bg-muted-subtle&quot;
+        &gt;
+          &lt;div className=&quot;container mx-auto px-lg&quot;&gt;
+            &lt;FeaturedContentSection /&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        {/* Directory Stats with Snake River Canyon divider */}
+        &lt;WesternSection
+          bottomDivider=&quot;snake-river-canyon&quot;
+          bgVariant=&quot;background&quot;
+          dividerColor=&quot;var(--background)&quot;
+          className=&quot;py-3xl&quot;
+        &gt;
+          &lt;div id=&quot;directory-stats&quot; className=&quot;container mx-auto px-lg&quot;&gt;
+            &lt;DirectoryStatsSection /&gt;
+          &lt;/div&gt;
+        &lt;/WesternSection&gt;
+
+        {/* Buy/Sell Deals with gradient background */}
+        &lt;section 
+          id=&quot;buysell-deals&quot;
+          className=&quot;py-3xl bg-gradient-buysell-events text-foreground&quot;
+        &gt;
+          &lt;div className=&quot;container mx-auto px-lg&quot;&gt;
+            &lt;BuySellDealSection /&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        {/* Platform Values with Frank Church Wilderness divider */}
+        &lt;WesternSection
+          bottomDivider=&quot;frank-church-wilderness&quot;
+          bgVariant=&quot;card&quot;
+          dividerColor=&quot;var(--card)&quot;
+          className=&quot;py-3xl&quot;
+        &gt;
+          &lt;div id=&quot;platform-values&quot; className=&quot;container mx-auto px-lg&quot;&gt;
+            &lt;PlatformValuesSection /&gt;
+          &lt;/div&gt;
+        &lt;/WesternSection&gt;
+
+        {/* Contribution CTA with muted background */}
+        &lt;WesternSection
+          bottomDivider=&quot;bruno-sand-dunes&quot;
+          bgVariant=&quot;muted-soft&quot;
+          dividerColor=&quot;rgb(from var(--muted) r g b / 0.3)&quot;
+          className=&quot;py-3xl&quot;
+        &gt;
+          &lt;div id=&quot;contribution-cta&quot; className=&quot;container mx-auto px-lg text-foreground&quot;&gt;
+            &lt;ContributionCTA /&gt;
+          &lt;/div&gt;
+        &lt;/WesternSection&gt;
+
+        {/* Join Movement Section with gradient */}
+        &lt;section 
+          id=&quot;join-movement&quot;
+          className=&quot;py-3xl bg-gradient-home-movement text-foreground&quot;
+        &gt;
+          &lt;div className=&quot;container mx-auto px-lg&quot;&gt;
+            &lt;JoinMovementCTA /&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+      &lt;/main&gt;
+
+      &lt;SiteFooter currentPage=&quot;home&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/&gt;
+  )
+}</code></pre></div><!-- Add more clone groups for .txt format as needed         // Add more clone groups for .txt format as needed--></div><a name="typescript-clones"></a><h2 class="text-2xl font-semibold text-gray-700 mb-4">typescript</h2><div class="divide-y divide-gray-200 border-b-2"><!-- Add more clone groups for .txt format as needed         // Add more clone groups for .txt format as needed--></div><a name="javascript-clones"></a><h2 class="text-2xl font-semibold text-gray-700 mb-4">javascript</h2><div class="divide-y divide-gray-200 border-b-2"><div class="py-4"><p class="text-gray-600">src/stories/Components/Atoms/Select.stories.tsx (Line 319:9 - Line 357:10), src/stories/Components/Atoms/Select.stories.tsx (Line 99:9 - Line 277:11)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn0" onclick="toggleCodeBlock('cloneGroup0', 'expandBtn0', 'collapseBtn0')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn0" onclick="toggleCodeBlock('cloneGroup0', 'expandBtn0', 'collapseBtn0')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup0"><code class="language-javascript text-sm text-gray-800">={&lt;UserIcon className=&quot;h-4 w-4&quot; /&gt;}&gt;
+              &lt;SelectValue placeholder=&quot;Select membership...&quot; /&gt;
+            &lt;/SelectTrigger&gt;
+            &lt;SelectContent&gt;
+              &lt;SelectItem value=&quot;individual&quot; icon={&lt;UserIcon className=&quot;h-4 w-4&quot; /&gt;}&gt;
+                Individual - $150/year
+              &lt;/SelectItem&gt;
+              &lt;SelectItem value=&quot;family&quot; icon={&lt;UsersIcon className=&quot;h-4 w-4&quot; /&gt;}&gt;
+                Family - $250/year
+              &lt;/SelectItem&gt;
+              &lt;SelectItem value=&quot;corporate&quot; icon={&lt;ShieldCheckIcon className=&quot;h-4 w-4&quot; /&gt;}&gt;
+                Corporate - $500/year
+              &lt;/SelectItem&gt;
+            &lt;/SelectContent&gt;
+          &lt;/Select&gt;
+        &lt;/div&gt;
+
+        &lt;div className=&quot;space-y-xs&quot;&gt;
+          &lt;label className=&quot;text-body-sm font-medium text-card-foreground&quot;&gt;Current Classification&lt;/label&gt;
+          &lt;ClassificationSelect /&gt;
+        &lt;/div&gt;
+
+        &lt;div className=&quot;space-y-xs&quot;&gt;
+          &lt;label className=&quot;text-body-sm font-medium text-card-foreground&quot;&gt;Primary Discipline&lt;/label&gt;
+          &lt;Select&gt;
+            &lt;SelectTrigger leftIcon={&lt;CursorArrowRaysIcon className=&quot;h-4 w-4&quot; /&gt;}&gt;
+              &lt;SelectValue placeholder=&quot;Select discipline...&quot; /&gt;
+            &lt;/SelectTrigger&gt;
+            &lt;SelectContent&gt;
+              &lt;SelectItem value=&quot;trap&quot; icon={&lt;CursorArrowRaysIcon className=&quot;h-4 w-4&quot; /&gt;}&gt;
+                Trap Shooting
+              &lt;/SelectItem&gt;
+              &lt;SelectItem value=&quot;skeet&quot; icon={&lt;CursorArrowRaysIcon className=&quot;h-4 w-4&quot; /&gt;}&gt;
+                Skeet Shooting
+              &lt;/SelectItem&gt;
+              &lt;SelectItem value=&quot;sporting&quot; icon={&lt;TrophyIcon className=&quot;h-4 w-4&quot; /&gt;}&gt;
+                Sporting Clays
+              &lt;/SelectItem&gt;
+              &lt;SelectItem value=&quot;multi&quot; icon={&lt;UsersIcon</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/page-variants.tsx (Line 149:4 - Line 605:2), src/components/ui/page-variants.tsx (Line 65:4 - Line 230:2)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn3" onclick="toggleCodeBlock('cloneGroup3', 'expandBtn3', 'collapseBtn3')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn3" onclick="toggleCodeBlock('cloneGroup3', 'expandBtn3', 'collapseBtn3')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup3"><code class="language-javascript text-sm text-gray-800">={index} {...activity} /&gt;
+              ))}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+      
+      &lt;ContributionCTA /&gt;
+      &lt;JoinMovementCTA /&gt;
+    &lt;/div&gt;
+  )
+
+  return (
+    &lt;UnifiedPageTemplate
+      pageTitle=&quot;Events CalendarIcon&quot;
+      pageSubtitle=&quot;Idaho Firearms Events &amp; Competitions&quot;
+      pageColor=&quot;nav-events&quot;
+      heroContent={heroContent}
+      searchQuery={searchQuery}
+      onMagnifyingGlassIconChange={onMagnifyingGlassIconChange}
+      searchPlaceholder=&quot;MagnifyingGlassIcon events, venues, or types...&quot;
+      quickTabs={quickTabs}
+      activeTab={activeTab}
+      onTabChange={onTabChange}
+      filterSections={filterSections}
+      viewMode={viewMode}
+      onViewModeChange={onViewModeChange}
+      sortOptions={sortOptions}
+      activeSortId={activeSortId}
+      onSortChange={onSortChange}
+      stats={stats}
+      totalResults={totalResults}
+      filteredResults={filteredResults}
+      bottomCTA={bottomCTA}
+    &gt;
+      {children}
+    &lt;/UnifiedPageTemplate&gt;
+  )
+}
+
+// Training Page Variant
+interface TrainingPageVariantProps extends PageVariantBaseProps {
+  heroContent: ReactNode
+  filterSections?: FunnelIconSection[]
+  viewMode?: 'grid' | 'list' | 'card' | 'dense'
+  onViewModeChange?: (mode: 'grid' | 'list' | 'card' | 'dense') =&gt; void
+  sortOptions?: SortOption[]
+  activeSortId?: string
+  onSortChange?: (sortId: string) =&gt; void
+  stats?: StatItem[]
+  activityFeed?: Array&lt;{ id: string; type: string; content: string; timestamp: string }&gt;
+}
+
+export function TrainingPageVariant({
+  heroContent,
+  searchQuery,
+  onMagnifyingGlassIconChange,
+  quickTabs,
+  activeTab,
+  onTabChange,
+  filterSections = [],
+  viewMode = 'card',
+  onViewModeChange,
+  sortOptions = [],
+  activeSortId,
+  onSortChange,
+  stats = [],
+  children,
+  totalResults,
+  filteredResults,
+  activityFeed = []
+}: TrainingPageVariantProps) {
+  const bottomCTA = (
+    &lt;div className=&quot;space-y-4xl&quot;&gt;
+      {/* ChartBarIcon Feed Section */}
+      {activityFeed.length &gt; 0 &amp;&amp; (
+        &lt;div className=&quot;section-skew-up bg-card/50 py-3xl&quot;&gt;
+          &lt;div className=&quot;max-w-4xl mx-auto&quot;&gt;
+            &lt;h3 className=&quot;font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center&quot;&gt;Recent Training Updates&lt;/h3&gt;
+            &lt;div className=&quot;space-y-base&quot;&gt;
+              {activityFeed.map((activity, index) =&gt; (
+                &lt;ChartBarIconFeedCard key={index} {...activity} /&gt;
+              ))}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+      
+      &lt;ContributionCTA /&gt;
+      
+      {/* Instructor Spotlight */}
+      &lt;div className=&quot;section-skew-down bg-gradient-to-br from-nav-training/10 to-nav-training/5 py-3xl&quot;&gt;
+        &lt;div className=&quot;text-center space-y-base&quot;&gt;
+          &lt;h3 className=&quot;font-rajdhani font-bold text-heading-lg text-card-foreground&quot;&gt;
+            Certified Idaho Instructors
+          &lt;/h3&gt;
+          &lt;p className=&quot;text-muted-foreground max-w-2xl mx-auto&quot;&gt;
+            All training programs are led by certified instructors with years of experience. 
+            From basic safety to advanced tactical training, learn from the best in Idaho.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+
+  return (
+    &lt;UnifiedPageTemplate
+      pageTitle=&quot;Training&quot;
+      pageSubtitle=&quot;Treasure Valley Firearms Training&quot;
+      pageColor=&quot;nav-training&quot;
+      heroContent={heroContent}
+      searchQuery={searchQuery}
+      onMagnifyingGlassIconChange={onMagnifyingGlassIconChange}
+      searchPlaceholder=&quot;MagnifyingGlassIcon training programs, instructors, or locations...&quot;
+      quickTabs={quickTabs}
+      activeTab={activeTab}
+      onTabChange={onTabChange}
+      filterSections={filterSections}
+      viewMode={viewMode}
+      onViewModeChange={onViewModeChange}
+      sortOptions={sortOptions}
+      activeSortId={activeSortId}
+      onSortChange={onSortChange}
+      stats={stats}
+      totalResults={totalResults}
+      filteredResults={filteredResults}
+      bottomCTA={bottomCTA}
+    &gt;
+      {children}
+    &lt;/UnifiedPageTemplate&gt;
+  )
+}
+
+// Armory Page Variant (Blog/DocumentTextIcon style)
+interface ArmoryPageVariantProps extends PageVariantBaseProps {
+  heroContent: ReactNode
+  filterSections?: FunnelIconSection[]
+  viewMode?: 'grid' | 'list' | 'card' | 'dense'
+  onViewModeChange?: (mode: 'grid' | 'list' | 'card' | 'dense') =&gt; void
+  sortOptions?: SortOption[]
+  activeSortId?: string
+  onSortChange?: (sortId: string) =&gt; void
+  stats?: StatItem[]
+  activityFeed?: Array&lt;{ id: string; type: string; content: string; timestamp: string }&gt;
+}
+
+export function ArmoryPageVariant({
+  heroContent,
+  searchQuery,
+  onMagnifyingGlassIconChange,
+  quickTabs,
+  activeTab,
+  onTabChange,
+  filterSections = [],
+  viewMode = 'grid',
+  onViewModeChange,
+  sortOptions = [],
+  activeSortId,
+  onSortChange,
+  stats = [],
+  children,
+  totalResults,
+  filteredResults,
+  activityFeed = []
+}: ArmoryPageVariantProps) {
+  const bottomCTA = (
+    &lt;div className=&quot;space-y-4xl&quot;&gt;
+      {/* ChartBarIcon Feed Section */}
+      {activityFeed.length &gt; 0 &amp;&amp; (
+        &lt;div className=&quot;section-skew-up bg-card/50 py-3xl&quot;&gt;
+          &lt;div className=&quot;max-w-4xl mx-auto&quot;&gt;
+            &lt;h3 className=&quot;font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center&quot;&gt;Recent Updates&lt;/h3&gt;
+            &lt;div className=&quot;space-y-base&quot;&gt;
+              {activityFeed.map((activity, index) =&gt; (
+                &lt;ChartBarIconFeedCard key={index} {...activity} /&gt;
+              ))}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+      
+      &lt;ContributionCTA /&gt;
+      
+      {/* Submit Content CTA */}
+      &lt;div className=&quot;section-skew-down bg-gradient-to-br from-nav-armory/10 to-nav-armory/5 py-3xl&quot;&gt;
+        &lt;div className=&quot;text-center space-y-base&quot;&gt;
+          &lt;h3 className=&quot;font-rajdhani font-bold text-heading-lg text-card-foreground&quot;&gt;
+            Share Your Knowledge
+          &lt;/h3&gt;
+          &lt;p className=&quot;text-muted-foreground max-w-2xl mx-auto&quot;&gt;
+            Have expertise in firearms, equipment, or Idaho gun laws? 
+            Submit your article to help the community.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+
+  return (
+    &lt;UnifiedPageTemplate
+      pageTitle=&quot;The Armory&quot;
+      pageSubtitle=&quot;Idaho Firearms Knowledge Hub&quot;
+      pageColor=&quot;nav-armory&quot;
+      heroContent={heroContent}
+      searchQuery={searchQuery}
+      onMagnifyingGlassIconChange={onMagnifyingGlassIconChange}
+      searchPlaceholder=&quot;MagnifyingGlassIcon articles, guides, or reviews...&quot;
+      quickTabs={quickTabs}
+      activeTab={activeTab}
+      onTabChange={onTabChange}
+      filterSections={filterSections}
+      viewMode={viewMode}
+      onViewModeChange={onViewModeChange}
+      sortOptions={sortOptions}
+      activeSortId={activeSortId}
+      onSortChange={onSortChange}
+      stats={stats}
+      totalResults={totalResults}
+      filteredResults={filteredResults}
+      bottomCTA={bottomCTA}
+    &gt;
+      {children}
+    &lt;/UnifiedPageTemplate&gt;
+  )
+}
+
+// Buy &amp; Sell Page Variant
+interface BuySellPageVariantProps extends PageVariantBaseProps {
+  heroContent: ReactNode
+  filterSections?: FunnelIconSection[]
+  viewMode?: 'grid' | 'list' | 'card' | 'dense'
+  onViewModeChange?: (mode: 'grid' | 'list' | 'card' | 'dense') =&gt; void
+  sortOptions?: SortOption[]
+  activeSortId?: string
+  onSortChange?: (sortId: string) =&gt; void
+  stats?: StatItem[]
+  activityFeed?: Array&lt;{ id: string; type: string; content: string; timestamp: string }&gt;
+}
+
+export function BuySellPageVariant({
+  heroContent,
+  searchQuery,
+  onMagnifyingGlassIconChange,
+  quickTabs,
+  activeTab,
+  onTabChange,
+  filterSections = [],
+  viewMode = 'grid',
+  onViewModeChange,
+  sortOptions = [],
+  activeSortId,
+  onSortChange,
+  stats = [],
+  children,
+  totalResults,
+  filteredResults,
+  activityFeed = []
+}: BuySellPageVariantProps) {
+  const bottomCTA = (
+    &lt;div className=&quot;space-y-4xl&quot;&gt;
+      {/* ChartBarIcon Feed Section */}
+      {activityFeed.length &gt; 0 &amp;&amp; (
+        &lt;div className=&quot;section-skew-up bg-card/50 py-3xl&quot;&gt;
+          &lt;div className=&quot;max-w-4xl mx-auto&quot;&gt;
+            &lt;h3 className=&quot;font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center&quot;&gt;Recent Buy &amp; Sell Updates&lt;/h3&gt;
+            &lt;div className=&quot;space-y-base&quot;&gt;
+              {activityFeed.map((activity, index) =&gt; (
+                &lt;ChartBarIconFeedCard key={index} {...activity} /&gt;
+              ))}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+      
+      &lt;ContributionCTA /&gt;
+      &lt;JoinMovementCTA /&gt;
+    &lt;/div&gt;
+  )
+
+  return (
+    &lt;UnifiedPageTemplate
+      pageTitle=&quot;Buy &amp; Sell&quot;
+      pageSubtitle=&quot;Idaho Firearms Buy &amp; Sell&quot;
+      pageColor=&quot;nav-buysell&quot;
+      heroContent={heroContent}
+      searchQuery={searchQuery}
+      onMagnifyingGlassIconChange={onMagnifyingGlassIconChange}
+      searchPlaceholder=&quot;MagnifyingGlassIcon firearms, accessories, or sellers...&quot;
+      quickTabs={quickTabs}
+      activeTab={activeTab}
+      onTabChange={onTabChange}
+      filterSections={filterSections}
+      viewMode={viewMode}
+      onViewModeChange={onViewModeChange}
+      sortOptions={sortOptions}
+      activeSortId={activeSortId}
+      onSortChange={onSortChange}
+      stats={stats}
+      totalResults={totalResults}
+      filteredResults={filteredResults}
+      bottomCTA={bottomCTA}
+    &gt;
+      {children}
+    &lt;/UnifiedPageTemplate&gt;
+  )
+}
+
+// Guides Page Variant (Legal/Educational)
+interface GuidesPageVariantProps extends PageVariantBaseProps {
+  heroContent: ReactNode
+  filterSections?: FunnelIconSection[]
+  viewMode?: 'grid' | 'list' | 'card' | 'dense'
+  onViewModeChange?: (mode: 'grid' | 'list' | 'card' | 'dense') =&gt; void
+  sortOptions?: SortOption[]
+  activeSortId?: string
+  onSortChange?: (sortId: string) =&gt; void
+  stats?: StatItem[]
+  activityFeed?: Array&lt;{ id: string; type: string; content: string; timestamp: string }&gt;
+}
+
+export function GuidesPageVariant({
+  heroContent,
+  searchQuery,
+  onMagnifyingGlassIconChange,
+  quickTabs,
+  activeTab,
+  onTabChange,
+  filterSections = [],
+  viewMode = 'list',
+  onViewModeChange,
+  sortOptions = [],
+  activeSortId,
+  onSortChange,
+  stats = [],
+  children,
+  totalResults,
+  filteredResults,
+  activityFeed = []
+}: GuidesPageVariantProps) {
+  const bottomCTA = (
+    &lt;div className=&quot;space-y-4xl&quot;&gt;
+      {/* ChartBarIcon Feed Section */}
+      {activityFeed.length &gt; 0 &amp;&amp; (
+        &lt;div className=&quot;section-skew-up bg-card/50 py-3xl&quot;&gt;
+          &lt;div className=&quot;max-w-4xl mx-auto&quot;&gt;
+            &lt;h3 className=&quot;font-rajdhani font-bold text-heading-xl text-card-foreground mb-xl text-center&quot;&gt;Recent Guide Updates&lt;/h3&gt;
+            &lt;div className=&quot;space-y-base&quot;&gt;
+              {activityFeed.map((activity, index) =&gt; (
+                &lt;ChartBarIconFeedCard key={index} {...activity} /&gt;
+              ))}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+      
+      &lt;ContributionCTA /&gt;
+      
+      {/* Legal Disclaimer */}
+      &lt;div className=&quot;section-skew-down bg-gradient-to-br from-nav-guides/10 to-nav-guides/5 py-3xl&quot;&gt;
+        &lt;div className=&quot;text-center space-y-base&quot;&gt;
+          &lt;h3 className=&quot;font-rajdhani font-bold text-heading-lg text-card-foreground&quot;&gt;
+            Legal InformationCheckCheckCircleIconrmation
+          &lt;/h3&gt;
+          &lt;p className=&quot;text-muted-foreground max-w-2xl mx-auto&quot;&gt;
+            All legal guides are for informational purposes only and do not constitute legal advice. 
+            Always consult with a qualified attorney for specific legal questions.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+
+  return (
+    &lt;UnifiedPageTemplate
+      pageTitle=&quot;Guides&quot;
+      pageSubtitle=&quot;Idaho Firearms Legal &amp; Safety Guides&quot;
+      pageColor=&quot;nav-guides&quot;
+      heroContent={heroContent}
+      searchQuery={searchQuery}
+      onMagnifyingGlassIconChange={onMagnifyingGlassIconChange}
+      searchPlaceholder=&quot;MagnifyingGlassIcon legal guides, safety tips, or topics...&quot;
+      quickTabs={quickTabs}
+      activeTab={activeTab}
+      onTabChange={onTabChange}
+      filterSections={filterSections}
+      viewMode={viewMode}
+      onViewModeChange={onViewModeChange}
+      sortOptions={sortOptions}
+      activeSortId={activeSortId}
+      onSortChange={onSortChange}
+      stats={stats}
+      totalResults={totalResults}
+      filteredResults={filteredResults}
+      bottomCTA={bottomCTA}
+    &gt;
+      {children}
+    &lt;/UnifiedPageTemplate&gt;
+  )
+}
+
+// HomeIcon Page Variant (Dashboard style)
+interface HomeIconPageVariantProps {
+  heroContent: ReactNode
+  stats?: StatItem[]
+  featuredContent?: ReactNode
+  recentChartBarIcon?: any[]
+  bottomCTA?: ReactNode
+}
+
+export function HomeIconPageVariant({
+  heroContent,
+  stats = [],
+  featuredContent,
+  recentChartBarIcon = [],
+  bottomCTA
+}: HomeIconPageVariantProps) {
+  return (
+    &lt;div className=&quot;min-h-screen bg-background&quot;&gt;
+      {/* Hero Section */}
+      &lt;section className=&quot;relative overflow-hidden bg-gradient-to-br from-background via-background to-slate-blue/5&quot;&gt;
+        {heroContent}
+      &lt;/section&gt;
+
+      {/* Stats Section */}
+      {stats.length &gt; 0 &amp;&amp; (
+        &lt;section className=&quot;py-lg section-bg-muted border-b border-border/50&quot;&gt;
+          &lt;div className=&quot;container mx-auto max-w-site px-md&quot;&gt;
+            &lt;TrustIndicators /&gt;
+            &lt;div className=&quot;mt-4xl&quot;&gt;
+              &lt;h3 className=&quot;font-rajdhani font-bold text-heading-xl text-foreground mb-xl text-center&quot;&gt;
+                Platform Statistics
+              &lt;/h3&gt;
+              {/* Use DirectoryStatsGrid here but need to import it */}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+      )}
+
+      {/* Featured Content Section */}
+      {featuredContent &amp;&amp; (
+        &lt;section className=&quot;py-xl&quot;&gt;
+          &lt;div className=&quot;container mx-auto max-w-site px-md&quot;&gt;
+            {featuredContent}
+          &lt;/div&gt;
+        &lt;/section&gt;
+      )}
+
+      {/* Recent ChartBarIcon Section */}
+      {recentChartBarIcon.length &gt; 0 &amp;&amp; (
+        &lt;section className=&quot;py-xl bg-muted/30&quot;&gt;
+          &lt;div className=&quot;container mx-auto max-w-site px-md&quot;&gt;
+            &lt;h3 className=&quot;font-rajdhani font-bold text-heading-xl text-foreground mb-xl text-center&quot;&gt;
+              Recent ChartBarIcon
+            &lt;/h3&gt;
+            &lt;div className=&quot;space-y-base&quot;&gt;
+              {recentChartBarIcon.map((activity, index) =&gt; (
+                &lt;ChartBarIconFeedCard key={index}</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/page-divider.tsx (Line 114:2 - Line 148:2), src/components/ui/page-divider.tsx (Line 83:2 - Line 131:15)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn5" onclick="toggleCodeBlock('cloneGroup5', 'expandBtn5', 'collapseBtn5')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn5" onclick="toggleCodeBlock('cloneGroup5', 'expandBtn5', 'collapseBtn5')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup5"><code class="language-javascript text-sm text-gray-800">}
+        /&gt;
+
+        {/* Inner shadow edge for depth */}
+        &lt;motion.path
+          d={getDividerPath()}
+          fill=&quot;none&quot;
+          stroke=&quot;rgba(0,0,0,0.15)&quot;
+          strokeWidth=&quot;0.5&quot;
+          variants={animated ? dividerVariants : undefined}
+          initial={animated ? &quot;hidden&quot; : undefined}
+          whileInView={animated ? &quot;visible&quot; : undefined}
+          viewport={{ once: true, margin: &quot;-100px&quot; }}
+        /&gt;
+
+        {/* Subtle highlight on top edge */}
+        &lt;motion.path
+          d={getDividerPath()}
+          fill=&quot;none&quot;
+          stroke=&quot;rgba(255,255,255,0.08)&quot;
+          strokeWidth=&quot;0.3&quot;
+          transform=&quot;translate(0, -1)&quot;
+          variants={animated ? dividerVariants : undefined}
+          initial={animated ? &quot;hidden&quot; : undefined}
+          whileInView={animated ? &quot;visible&quot; : undefined}
+          viewport={{ once: true, margin: &quot;-100px&quot; }}
+        /&gt;
+      &lt;/svg&gt;
+
+      {/* Floating Tactical Elements */}
+      {animated &amp;&amp; (
+        &lt;&gt;
+          &lt;motion.div
+            className=&quot;absolute top-1/4 left-1/4 w-2 h-2 bg-nav-home rounded-sm opacity-30&quot;
+            animate={{</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/idaho-landscapes.tsx (Line 214:30 - Line 258:34), src/components/ui/idaho-landscapes.tsx (Line 111:30 - Line 174:30)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn6" onclick="toggleCodeBlock('cloneGroup6', 'expandBtn6', 'collapseBtn6')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn6" onclick="toggleCodeBlock('cloneGroup6', 'expandBtn6', 'collapseBtn6')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup6"><code class="language-javascript text-sm text-gray-800"> }} /&gt;
+    &lt;rect x=&quot;400&quot; y=&quot;155&quot; width=&quot;35&quot; height=&quot;30&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-bg)' }} /&gt;
+    &lt;rect x=&quot;900&quot; y=&quot;165&quot; width=&quot;45&quot; height=&quot;20&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-bg)' }} /&gt;
+  &lt;/IdahoLandscapeBase&gt;
+)
+
+// Mountain Pine / Bogus Basin Landscape
+export const MountainPineSVG = ({ opacity = 0.1, animated = false }: Omit&lt;IdahoLandscapeProps, 'children'&gt;) =&gt; (
+  &lt;IdahoLandscapeBase opacity={opacity} animated={animated}&gt;
+    {/* Background mountain ridge */}
+    &lt;path
+      d=&quot;M0,120 L100,90 L180,110 L280,85 L380,105 L480,80 L580,100 L680,75 L780,95 L880,70 L980,90 L1080,65 L1200,85 L1200,400 L0,400 Z&quot;
+      fill=&quot;currentColor&quot;
+      style={{ opacity: 'var(--landscape-opacity-bg)' }}
+    /&gt;
+    
+    {/* Dense forest canopy - background layer */}
+    &lt;path
+      d=&quot;M0,200 Q50,190 100,195 Q150,185 200,190 Q250,180 300,185 Q350,175 400,180 Q450,170 500,175 Q550,165 600,170 Q650,160 700,165 Q750,155 800,160 Q850,150 900,155 Q950,145 1000,150 Q1050,140 1100,145 Q1150,135 1200,140 L1200,400 L0,400 Z&quot;
+      fill=&quot;currentColor&quot;
+      style={{ opacity: 'var(--landscape-opacity-mg)' }}
+    /&gt;
+    
+    {/* Foreground forest with clearings */}
+    &lt;path
+      d=&quot;M0,280 Q80,270 150,275 Q220,265 280,270 Q340,275 400,270 Q460,265 520,270 Q580,275 640,270 Q700,265 760,270 Q820,275 880,270 Q940,265 1000,270 Q1060,275 1120,270 Q1180,265 1200,270 L1200,400 L0,400 Z&quot;
+      fill=&quot;currentColor&quot;
+      style={{ opacity: 'var(--landscape-opacity-fg)' }}
+    /&gt;
+    
+    {/* Individual tall pines */}
+    &lt;path d=&quot;M120,275 L122,240 L124,275&quot; stroke=&quot;currentColor&quot; strokeWidth=&quot;2&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    &lt;path d=&quot;M118,255 L125,245 L132,255&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    
+    &lt;path d=&quot;M300,270 L302,230 L304,270&quot; stroke=&quot;currentColor&quot; strokeWidth=&quot;2&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    &lt;path d=&quot;M296,250 L305,235 L314,250&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    
+    &lt;path d=&quot;M500,275 L502,235 L504,275&quot; stroke=&quot;currentColor&quot; strokeWidth=&quot;2&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    &lt;path d=&quot;M496,255 L505,240 L514,255&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    
+    &lt;path d=&quot;M750,270 L752,225 L754,270&quot; stroke=&quot;currentColor&quot; strokeWidth=&quot;2&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    &lt;path d=&quot;M746,250 L755,230 L764,250&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    
+    &lt;path d=&quot;M950,275 L952,240 L954,275&quot; stroke=&quot;currentColor&quot; strokeWidth=&quot;2&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    &lt;path d=&quot;M946,255 L955,245 L964,255&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-accent)'</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/idaho-landscapes.tsx (Line 245:34 - Line 289:2), src/components/ui/idaho-landscapes.tsx (Line 152:30 - Line 181:8)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn7" onclick="toggleCodeBlock('cloneGroup7', 'expandBtn7', 'collapseBtn7')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn7" onclick="toggleCodeBlock('cloneGroup7', 'expandBtn7', 'collapseBtn7')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup7"><code class="language-javascript text-sm text-gray-800"> }} /&gt;
+    &lt;path d=&quot;M118,255 L125,245 L132,255&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    
+    &lt;path d=&quot;M300,270 L302,230 L304,270&quot; stroke=&quot;currentColor&quot; strokeWidth=&quot;2&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    &lt;path d=&quot;M296,250 L305,235 L314,250&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    
+    &lt;path d=&quot;M500,275 L502,235 L504,275&quot; stroke=&quot;currentColor&quot; strokeWidth=&quot;2&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    &lt;path d=&quot;M496,255 L505,240 L514,255&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    
+    &lt;path d=&quot;M750,270 L752,225 L754,270&quot; stroke=&quot;currentColor&quot; strokeWidth=&quot;2&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    &lt;path d=&quot;M746,250 L755,230 L764,250&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    
+    &lt;path d=&quot;M950,275 L952,240 L954,275&quot; stroke=&quot;currentColor&quot; strokeWidth=&quot;2&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    &lt;path d=&quot;M946,255 L955,245 L964,255&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    
+    {/* Ski run clearings (lighter areas) */}
+    &lt;path
+      d=&quot;M400,260 Q420,250 440,265 Q460,255 480,270 Q500,260 520,275&quot;
+      stroke=&quot;currentColor&quot;
+      strokeWidth=&quot;8&quot;
+      strokeOpacity=&quot;0.03&quot;
+      fill=&quot;none&quot;
+    /&gt;
+    
+    &lt;path
+      d=&quot;M700,250 Q720,240 740,255 Q760,245 780,260 Q800,250 820,265&quot;
+      stroke=&quot;currentColor&quot;
+      strokeWidth=&quot;6&quot;
+      strokeOpacity=&quot;0.02&quot;
+      fill=&quot;none&quot;
+    /&gt;
+    
+    {/* Snow caps on distant peaks */}
+    &lt;path
+      d=&quot;M100,90 Q120,85 140,90 Q160,95 180,110&quot;
+      stroke=&quot;currentColor&quot;
+      strokeWidth=&quot;3&quot;
+      style={{ opacity: 'var(--landscape-opacity-bg)' }}
+      fill=&quot;none&quot;
+    /&gt;
+    &lt;path
+      d=&quot;M280,85 Q300,80 320,85 Q340,90 360,95&quot;
+      stroke=&quot;currentColor&quot;
+      strokeWidth=&quot;2&quot;
+      style={{</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/idaho-landscapes.tsx (Line 379:30 - Line 402:30), src/components/ui/idaho-landscapes.tsx (Line 320:34 - Line 344:30)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn8" onclick="toggleCodeBlock('cloneGroup8', 'expandBtn8', 'collapseBtn8')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn8" onclick="toggleCodeBlock('cloneGroup8', 'expandBtn8', 'collapseBtn8')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup8"><code class="language-javascript text-sm text-gray-800"> }} /&gt;
+    &lt;line x1=&quot;0&quot; y1=&quot;180&quot; x2=&quot;200&quot; y2=&quot;200&quot; stroke=&quot;currentColor&quot; strokeWidth=&quot;2&quot; style={{ opacity: 'var(--landscape-opacity-bg)' }} /&gt;
+    &lt;line x1=&quot;0&quot; y1=&quot;240&quot; x2=&quot;200&quot; y2=&quot;260&quot; stroke=&quot;currentColor&quot; strokeWidth=&quot;2&quot; style={{ opacity: 'var(--landscape-opacity-bg)' }} /&gt;
+    
+    &lt;line x1=&quot;1000&quot; y1=&quot;150&quot; x2=&quot;1200&quot; y2=&quot;130&quot; stroke=&quot;currentColor&quot; strokeWidth=&quot;2&quot; style={{ opacity: 'var(--landscape-opacity-bg)' }} /&gt;
+    &lt;line x1=&quot;1000&quot; y1=&quot;210&quot; x2=&quot;1200&quot; y2=&quot;190&quot; stroke=&quot;currentColor&quot; strokeWidth=&quot;2&quot; style={{ opacity: 'var(--landscape-opacity-bg)' }} /&gt;
+    &lt;line x1=&quot;1000&quot; y1=&quot;270&quot; x2=&quot;1200&quot; y2=&quot;250&quot; stroke=&quot;currentColor&quot; strokeWidth=&quot;2&quot; style={{ opacity: 'var(--landscape-opacity-bg)' }} /&gt;
+    
+    {/* Scattered cliff vegetation */}
+    &lt;circle cx=&quot;80&quot; cy=&quot;160&quot; r=&quot;3&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    &lt;circle cx=&quot;1120&quot; cy=&quot;180&quot; r=&quot;2.5&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    &lt;circle cx=&quot;300&quot; cy=&quot;350&quot; r=&quot;4&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+    &lt;circle cx=&quot;700&quot; cy=&quot;340&quot; r=&quot;3.5&quot; fill=&quot;currentColor&quot; style={{ opacity: 'var(--landscape-opacity-accent)' }} /&gt;
+  &lt;/IdahoLandscapeBase&gt;
+)
+
+// Cascade Sawtooths Landscape
+export const CascadeSawtoothsSVG = ({ opacity = 0.1, animated = false }: Omit&lt;IdahoLandscapeProps, 'children'&gt;) =&gt; (
+  &lt;IdahoLandscapeBase opacity={opacity} animated={animated}&gt;
+    {/* Jagged background peaks */}
+    &lt;path
+      d=&quot;M0,200 L80,120 L120,160 L180,100 L220,140 L280,80 L320,120 L380,60 L420,100 L480,40 L520,80 L580,20 L620,60 L680,0 L720,40 L780,20 L820,60 L880,40 L920,80 L980,60 L1020,100 L1080,80 L1120,120 L1200,100 L1200,400 L0,400 Z&quot;
+      fill=&quot;currentColor&quot;
+      style={{ opacity: 'var(--landscape-opacity-bg)'</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/ui/category-icons.tsx (Line 45:10 - Line 184:2), src/components/ui/category-icons.tsx (Line 24:10 - Line 162:2)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn14" onclick="toggleCodeBlock('cloneGroup14', 'expandBtn14', 'collapseBtn14')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn14" onclick="toggleCodeBlock('cloneGroup14', 'expandBtn14', 'collapseBtn14')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup14"><code class="language-javascript text-sm text-gray-800">={cn(iconSizes[size], className)}
+      style={{ opacity }}
+      fill=&quot;currentColor&quot;
+    &gt;
+      {/* Standing cartridge (.223) */}
+      &lt;g&gt;
+        &lt;rect x=&quot;3&quot; y=&quot;2&quot; width=&quot;2&quot; height=&quot;8&quot; rx=&quot;0.2&quot; fill=&quot;currentColor&quot; opacity=&quot;0.8&quot; /&gt;
+        &lt;rect x=&quot;2.5&quot; y=&quot;9.5&quot; width=&quot;3&quot; height=&quot;2&quot; rx=&quot;0.3&quot; fill=&quot;currentColor&quot; opacity=&quot;0.9&quot; /&gt;
+        &lt;circle cx=&quot;4&quot; cy=&quot;1.5&quot; r=&quot;0.8&quot; fill=&quot;currentColor&quot; opacity=&quot;0.7&quot; /&gt;
+      &lt;/g&gt;
+      
+      {/* Knocked over cartridge (7.62x39) */}
+      &lt;g transform=&quot;rotate(25 8 8)&quot;&gt;
+        &lt;rect x=&quot;8&quot; y=&quot;6&quot; width=&quot;6&quot; height=&quot;1.8&quot; rx=&quot;0.2&quot; fill=&quot;currentColor&quot; opacity=&quot;0.6&quot; /&gt;
+        &lt;rect x=&quot;12.5&quot; y=&quot;5.5&quot; width=&quot;1.5&quot; height=&quot;2.8&quot; rx=&quot;0.3&quot; fill=&quot;currentColor&quot; opacity=&quot;0.7&quot; /&gt;
+        &lt;circle cx=&quot;8.5&quot; cy=&quot;6.9&quot; r=&quot;0.6&quot; fill=&quot;currentColor&quot; opacity=&quot;0.5&quot; /&gt;
+      &lt;/g&gt;
+    &lt;/svg&gt;
+  )
+}
+
+// Pistol Calibers Icon (9mm, .45, .40)
+export function PistolCalibersIcon({ className, size = 'md', opacity = 0.4 }: CategoryIconProps) {
+  return (
+    &lt;svg 
+      viewBox=&quot;0 0 16 16&quot; 
+      className={cn(iconSizes[size], className)}
+      style={{ opacity }}
+      fill=&quot;currentColor&quot;
+    &gt;
+      {/* 9mm cartridge */}
+      &lt;g&gt;
+        &lt;rect x=&quot;2&quot; y=&quot;3&quot; width=&quot;1.5&quot; height=&quot;6&quot; rx=&quot;0.2&quot; fill=&quot;currentColor&quot; opacity=&quot;0.8&quot; /&gt;
+        &lt;rect x=&quot;1.5&quot; y=&quot;8.5&quot; width=&quot;2.5&quot; height=&quot;1.5&quot; rx=&quot;0.2&quot; fill=&quot;currentColor&quot; opacity=&quot;0.9&quot; /&gt;
+        &lt;circle cx=&quot;2.75&quot; cy=&quot;2.5&quot; r=&quot;0.6&quot; fill=&quot;currentColor&quot; opacity=&quot;0.7&quot; /&gt;
+      &lt;/g&gt;
+      
+      {/* .45 cartridge */}
+      &lt;g&gt;
+        &lt;rect x=&quot;6.5&quot; y=&quot;2.5&quot; width=&quot;1.8&quot; height=&quot;7&quot; rx=&quot;0.2&quot; fill=&quot;currentColor&quot; opacity=&quot;0.8&quot; /&gt;
+        &lt;rect x=&quot;6&quot; y=&quot;9&quot; width=&quot;2.8&quot; height=&quot;1.8&quot; rx=&quot;0.3&quot; fill=&quot;currentColor&quot; opacity=&quot;0.9&quot; /&gt;
+        &lt;circle cx=&quot;7.4&quot; cy=&quot;2&quot; r=&quot;0.7&quot; fill=&quot;currentColor&quot; opacity=&quot;0.7&quot; /&gt;
+      &lt;/g&gt;
+      
+      {/* .40 cartridge */}
+      &lt;g&gt;
+        &lt;rect x=&quot;11.5&quot; y=&quot;2.8&quot; width=&quot;1.6&quot; height=&quot;6.5&quot; rx=&quot;0.2&quot; fill=&quot;currentColor&quot; opacity=&quot;0.8&quot; /&gt;
+        &lt;rect x=&quot;11&quot; y=&quot;8.8&quot; width=&quot;2.6&quot; height=&quot;1.7&quot; rx=&quot;0.3&quot; fill=&quot;currentColor&quot; opacity=&quot;0.9&quot; /&gt;
+        &lt;circle cx=&quot;12.3&quot; cy=&quot;2.3&quot; r=&quot;0.65&quot; fill=&quot;currentColor&quot; opacity=&quot;0.7&quot; /&gt;
+      &lt;/g&gt;
+    &lt;/svg&gt;
+  )
+}
+
+// Archery Arrow Icon
+export function ArcheryArrowIcon({ className, size = 'md', opacity = 0.4 }: CategoryIconProps) {
+  return (
+    &lt;svg 
+      viewBox=&quot;0 0 16 16&quot; 
+      className={cn(iconSizes[size], className)}
+      style={{ opacity }}
+      fill=&quot;currentColor&quot;
+    &gt;
+      {/* Arrow shaft */}
+      &lt;rect x=&quot;1&quot; y=&quot;7.5&quot; width=&quot;12&quot; height=&quot;1&quot; fill=&quot;currentColor&quot; opacity=&quot;0.8&quot; /&gt;
+      
+      {/* Broadhead */}
+      &lt;polygon 
+        points=&quot;13,6 15,8 13,10 12,8.5 12,7.5&quot; 
+        fill=&quot;currentColor&quot; 
+        opacity=&quot;0.9&quot; 
+      /&gt;
+      
+      {/* Fletching */}
+      &lt;polygon 
+        points=&quot;1,6.5 3,7 3,8 1,9.5&quot; 
+        fill=&quot;currentColor&quot; 
+        opacity=&quot;0.7&quot; 
+      /&gt;
+      &lt;polygon 
+        points=&quot;1,6.5 3,7.2 3,7.8 1,9.5&quot; 
+        fill=&quot;currentColor&quot; 
+        opacity=&quot;0.6&quot; 
+        transform=&quot;translate(0,0.5)&quot;
+      /&gt;
+    &lt;/svg&gt;
+  )
+}
+
+// Paintball Icon
+export function PaintballIcon({ className, size = 'md', opacity = 0.4 }: CategoryIconProps) {
+  return (
+    &lt;svg 
+      viewBox=&quot;0 0 16 16&quot; 
+      className={cn(iconSizes[size], className)}
+      style={{ opacity }}
+      fill=&quot;currentColor&quot;
+    &gt;
+      {/* Paintball sphere */}
+      &lt;circle cx=&quot;8&quot; cy=&quot;8&quot; r=&quot;5&quot; fill=&quot;currentColor&quot; opacity=&quot;0.6&quot; /&gt;
+      &lt;circle cx=&quot;8&quot; cy=&quot;8&quot; r=&quot;3.5&quot; fill=&quot;currentColor&quot; opacity=&quot;0.4&quot; /&gt;
+      
+      {/* Paint splatter effect */}
+      &lt;circle cx=&quot;6&quot; cy=&quot;6&quot; r=&quot;1&quot; fill=&quot;currentColor&quot; opacity=&quot;0.3&quot; /&gt;
+      &lt;circle cx=&quot;11&quot; cy=&quot;7&quot; r=&quot;0.8&quot; fill=&quot;currentColor&quot; opacity=&quot;0.3&quot; /&gt;
+      &lt;circle cx=&quot;9&quot; cy=&quot;11&quot; r=&quot;0.6&quot; fill=&quot;currentColor&quot; opacity=&quot;0.3&quot; /&gt;
+      &lt;circle cx=&quot;5&quot; cy=&quot;10&quot; r=&quot;0.7&quot; fill=&quot;currentColor&quot; opacity=&quot;0.3&quot; /&gt;
+    &lt;/svg&gt;
+  )
+}
+
+// Airsoft BB Icon
+export function AirsoftBBIcon({ className, size = 'md', opacity = 0.4 }: CategoryIconProps) {
+  return (
+    &lt;svg 
+      viewBox=&quot;0 0 16 16&quot; 
+      className={cn(iconSizes[size], className)}
+      style={{ opacity }}
+      fill=&quot;currentColor&quot;
+    &gt;
+      {/* BB pellets */}
+      &lt;circle cx=&quot;4&quot; cy=&quot;4&quot; r=&quot;1.2&quot; fill=&quot;currentColor&quot; opacity=&quot;0.8&quot; /&gt;
+      &lt;circle cx=&quot;8&quot; cy=&quot;6&quot; r=&quot;1.3&quot; fill=&quot;currentColor&quot; opacity=&quot;0.9&quot; /&gt;
+      &lt;circle cx=&quot;12&quot; cy=&quot;8&quot; r=&quot;1.1&quot; fill=&quot;currentColor&quot; opacity=&quot;0.7&quot; /&gt;
+      &lt;circle cx=&quot;6&quot; cy=&quot;10&quot; r=&quot;1&quot; fill=&quot;currentColor&quot; opacity=&quot;0.6&quot; /&gt;
+      &lt;circle cx=&quot;10&quot; cy=&quot;12&quot; r=&quot;1.2&quot; fill=&quot;currentColor&quot; opacity=&quot;0.8&quot; /&gt;
+      
+      {/* Highlight on main BB */}
+      &lt;circle cx=&quot;8.3&quot; cy=&quot;5.7&quot; r=&quot;0.3&quot; fill=&quot;currentColor&quot; opacity=&quot;0.4&quot; /&gt;
+    &lt;/svg&gt;
+  )
+}
+
+// Generic Tactical Case Icon (fallback)
+export function TacticalCaseIcon({ className, size = 'md', opacity = 0.4 }: CategoryIconProps) {
+  return (
+    &lt;svg 
+      viewBox=&quot;0 0 16 16&quot; 
+      className={cn(iconSizes[size], className)}
+      style={{ opacity }}</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/guides-page-standardized.tsx (Line 619:2 - Line 813:6), src/components/pages/training-page-standardized.tsx (Line 526:5 - Line 808:9)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn23" onclick="toggleCodeBlock('cloneGroup23', 'expandBtn23', 'collapseBtn23')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn23" onclick="toggleCodeBlock('cloneGroup23', 'expandBtn23', 'collapseBtn23')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup23"><code class="language-javascript text-sm text-gray-800">} /&gt;
+                        &lt;/div&gt;
+                        &lt;div className=&quot;text-lg font-rajdhani font-bold text-card-foreground&quot;&gt;
+                          {stat.value}
+                        &lt;/div&gt;
+                        &lt;div className=&quot;text-xs text-muted-foreground&quot;&gt;
+                          {stat.title}
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    ))}
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                
+                {/* Modern Filter Sidebar */}
+                &lt;ModernFilterSidebar
+                  sections={filterSections}
+                  selectedFilters={filters.selectedFilters}
+                  onFilterChange={handleFilterChange}
+                  onClearSection={handleClearSection}
+                  onClearAll={handleClearAll}
+                  totalResults={filters.totalResults}
+                  filteredResults={filters.filteredResults}
+                /&gt;
+              &lt;/div&gt;
+            &lt;/aside&gt;
+
+            {/* Mobile Filter Sidebar */}
+            &lt;ModernFilterSidebar
+              sections={filterSections}
+              selectedFilters={filters.selectedFilters}
+              onFilterChange={handleFilterChange}
+              onClearSection={handleClearSection}
+              onClearAll={handleClearAll}
+              totalResults={filters.totalResults}
+              filteredResults={filters.filteredResults}
+              isMobile={true}
+              isOpen={mobileFiltersOpen}
+              onClose={() =&gt; setMobileFiltersOpen(false)}
+            /&gt;
+            
+            {/* Main Content */}
+            &lt;main className=&quot;flex-1 min-w-0&quot;&gt;
+              {/* MagnifyingGlassIcon and Category Controls */}
+              &lt;div className=&quot;mb-xl space-y-lg&quot;&gt;
+                {/* MagnifyingGlassIcon Bar */}
+                &lt;div className=&quot;relative max-w-2xl&quot;&gt;
+                  &lt;MagnifyingGlassIcon className=&quot;absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground&quot; /&gt;
+                  &lt;Input
+                    placeholder=&quot;MagnifyingGlassIcon guides, topics, or categories...&quot;
+                    className=&quot;pl-10 h-12 text-body-base shadow-none&quot;
+                    value={filters.searchQuery}
+                    onChange={(e) =&gt; filters.setSearchQuery(e.target.value)}
+                  /&gt;
+                &lt;/div&gt;
+
+                {/* Quick Filter Tabs */}
+                &lt;div className=&quot;flex flex-wrap gap-xs&quot;&gt;
+                  {[
+                    { id: 'all', label: 'All Guides', count: guidesData.length, icon: BookOpenIcon },
+                    { id: 'legal', label: 'Legal', count: guidesData.filter(g =&gt; g.category === 'Legal').length, icon: ScaleIcon },
+                    { id: 'safety', label: 'Safety', count: guidesData.filter(g =&gt; g.category === 'Safety').length, icon: ShieldCheckIcon },
+                    { id: 'training', label: 'Training', count: guidesData.filter(g =&gt; g.category === 'Training').length, icon: CursorArrowRaysIcon },
+                    { id: 'competition', label: 'Competition', count: guidesData.filter(g =&gt; g.category === 'Competition').length, icon: TrophyIcon },
+                    { id: 'equipment', label: 'Equipment', count: guidesData.filter(g =&gt; g.category === 'Equipment').length, icon: StarIcon },
+                    { id: 'featured', label: 'Featured', count: guidesData.filter(g =&gt; g.featured).length }
+                  ].map((tab) =&gt; (
+                    &lt;Button
+                      key={tab.id}
+                      variant={filters.activeTab === tab.id ? &quot;default&quot; : &quot;outline&quot;}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setActiveTab(tab.id)}
+                      className=&quot;gap-xs font-rajdhani shadow-none rounded-xs&quot;
+                    &gt;
+                      {tab.icon &amp;&amp; React.createElement(tab.icon, { 
+                        weight: &quot;bold&quot;, 
+                        className: &quot;size-3&quot; 
+                      })}
+                      {tab.label}
+                      {tab.count &amp;&amp; (
+                        &lt;Badge variant=&quot;outline&quot; size=&quot;sm&quot; className=&quot;ml-xs&quot;&gt;
+                          {tab.count}
+                        &lt;/Badge&gt;
+                      )}
+                    &lt;/Button&gt;
+                  ))}
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              {/* Results Header with Controls */}
+              &lt;div className=&quot;flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base sm:gap-xl mb-xl sm:mb-2xl lg:mb-3xl&quot;&gt;
+                &lt;div&gt;
+                  &lt;h2 className=&quot;font-rajdhani text-heading-xl font-bold text-card-foreground&quot;&gt;
+                    {filters.filteredResults} {filters.filteredResults === 1 ? 'Guide' : 'Guides'} Found
+                  &lt;/h2&gt;
+                  &lt;p className=&quot;text-muted-foreground&quot;&gt;
+                    {filters.filteredResults !== filters.totalResults &amp;&amp; `Filtered from ${filters.totalResults} total • `}
+                    {filters.searchQuery &amp;&amp; `MagnifyingGlassIcon: &quot;${filters.searchQuery}&quot;`}
+                  &lt;/p&gt;
+                &lt;/div&gt;
+                
+                {/* View Controls - Mobile responsive */}
+                &lt;div className=&quot;flex items-center gap-sm sm:gap-base&quot;&gt;
+                  {/* Enhanced View Mode Toggle - Multiple Layouts */}
+                  &lt;div className=&quot;hidden sm:flex items-center border rounded-xs overflow-x-auto&quot;&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'compact' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('compact')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Compact - 4-6 items per row&quot;
+                    &gt;
+                      &lt;Squares2X2Icon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'dense' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('dense')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Dense Grid - Maximum items&quot;
+                    &gt;
+                      &lt;ListBulletIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'grid' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('grid')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Standard Grid&quot;
+                    &gt;
+                      &lt;Squares2X2Icon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'card' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('card')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Large Cards&quot;
+                    &gt;
+                      &lt;RectangleGroupIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'list' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('list')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;ListBulletIcon View&quot;
+                    &gt;
+                      &lt;ListBulletIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                  &lt;/div&gt;
+
+                  {/* Mobile Filter Button */}
+                  &lt;Button
+                    variant=&quot;outline&quot;
+                    size=&quot;sm&quot;
+                    onClick={() =&gt; setMobileFiltersOpen(true)}
+                    className=&quot;gap-xs font-rajdhani lg:hidden&quot;
+                  &gt;
+                    &lt;FunnelIcon className=&quot;size-4&quot; /&gt;
+                    Filters
+                    {getActiveFilterCount() &gt; 0 &amp;&amp; (
+                      &lt;Badge variant=&quot;outline&quot; className=&quot;ml-xs bg-nav-intel/20 text-nav-intel border-nav-intel/30 text-xs&quot;&gt;
+                        {getActiveFilterCount()}
+                      &lt;/Badge&gt;
+                    )}
+                  &lt;/Button&gt;
+                  
+                  {/* Sort Dropdown */}
+                  &lt;select
+                    value={filters.sortBy}
+                    onChange={(e) =&gt; filters.setSortBy(e.target.value)}
+                    className=&quot;bg-background border border-border rounded-xs px-base py-xs text-sm font-rajdhani&quot;
+                  &gt;
+                    &lt;option value=&quot;date&quot;&gt;Sort by Date&lt;/option&gt;
+                    &lt;option value=&quot;popularity&quot;&gt;Sort by Popularity&lt;/option&gt;
+                    &lt;option value=&quot;readTime&quot;&gt;Sort by Read Time&lt;/option&gt;
+                    &lt;option value=&quot;alphabetical&quot;&gt;Sort A-Z&lt;/option&gt;
+                  &lt;/select&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              {/* Card Grid/ListBulletIcon Content with Loading State */}
+              &lt;div className=&quot;mb-4xl&quot;&gt;
+                {filters.isLoading ? (
+                  &lt;CardSkeleton 
+                    viewMode={filters.viewMode} 
+                    count={filters.itemsPerPage} 
+                    className={filters.getGridClassName()}
+                  /&gt;
+                ) : (
+                  &lt;div className={filters.getGridClassName()}&gt;
+                    {filters.paginatedItems.length &gt; 0 ? (
+                      filters.paginatedItems.map((guide, index) =&gt; (
+                        &lt;GuideCard
+                          key={`${guide</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/events-page-standardized.tsx (Line 566:24 - Line 629:23), src/components/pages/training-page-standardized.tsx (Line 526:5 - Line 718:8)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn28" onclick="toggleCodeBlock('cloneGroup28', 'expandBtn28', 'collapseBtn28')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn28" onclick="toggleCodeBlock('cloneGroup28', 'expandBtn28', 'collapseBtn28')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup28"><code class="language-javascript text-sm text-gray-800">}
+                /&gt;
+                
+                {/* Modern Filter Sidebar */}
+                &lt;ModernFilterSidebar
+                  sections={filterSections}
+                  selectedFilters={filters.selectedFilters}
+                  onFilterChange={handleFilterChange}
+                  onClearSection={handleClearSection}
+                  onClearAll={handleClearAll}
+                  totalResults={filters.totalResults}
+                  filteredResults={filters.filteredResults}
+                /&gt;
+              &lt;/div&gt;
+            &lt;/aside&gt;
+
+            {/* Mobile Filter Sidebar */}
+            &lt;ModernFilterSidebar
+              sections={filterSections}
+              selectedFilters={filters.selectedFilters}
+              onFilterChange={handleFilterChange}
+              onClearSection={handleClearSection}
+              onClearAll={handleClearAll}
+              totalResults={filters.totalResults}
+              filteredResults={filters.filteredResults}
+              isMobile={true}
+              isOpen={mobileFiltersOpen}
+              onClose={() =&gt; setMobileFiltersOpen(false)}
+            /&gt;
+            
+            {/* Main Content */}
+            &lt;main className=&quot;flex-1 min-w-0&quot;&gt;
+              {/* MagnifyingGlassIcon and Category Controls */}
+              &lt;div className=&quot;mb-xl space-y-lg&quot;&gt;
+                {/* MagnifyingGlassIcon Bar */}
+                &lt;div className=&quot;relative max-w-2xl&quot;&gt;
+                  &lt;MagnifyingGlassIcon className=&quot;absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground&quot; /&gt;
+                  &lt;Input
+                    placeholder=&quot;MagnifyingGlassIcon events, locations, or organizers...&quot;
+                    className=&quot;pl-10 h-12 text-body-base shadow-none&quot;
+                    value={filters.searchQuery}
+                    onChange={(e) =&gt; filters.setSearchQuery(e.target.value)}
+                  /&gt;
+                &lt;/div&gt;
+
+                {/* Quick Filter Tabs */}
+                &lt;div className=&quot;flex flex-wrap gap-xs&quot;&gt;
+                  {[
+                    { id: 'all', label: 'All Events', count: upcomingEvents.length, color: 'bg-muted' },
+                    { id: 'competitions', label: 'Competitions', count: upcomingEvents.filter(e =&gt; e.eventType === 'Competition').length, color: 'bg-nav-events' },
+                    { id: 'training', label: 'Training', count: upcomingEvents.filter(e =&gt; e.eventType === 'Training').length, color: 'bg-sagebrush-green' },
+                    { id: 'expos', label: 'Expos', count: upcomingEvents.filter(e =&gt; e.eventType === 'Expo').length, color: 'bg-nav-buysell' },
+                    { id: 'charity', label: 'Charity', count: upcomingEvents.filter(e =&gt; e.eventType === 'Charity').length, color: 'bg-rusty-orange' },
+                    { id: 'social', label: 'Social', count: upcomingEvents.filter(e =&gt; e.eventType === 'Social').length, color: 'bg-nav-forums' },
+                    { id: 'featured', label: 'Featured', count: upcomingEvents.filter(e =&gt; e.featured).length, color: 'bg-weathered-gold' }
+                  ].map((tab) =&gt; (
+                    &lt;Button
+                      key={tab.id}
+                      variant={filters.activeTab === tab.id ? &quot;default&quot; : &quot;outline&quot;}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setActiveTab(tab.id)}
+                      className=&quot;gap-xs font-rajdhani shadow-none rounded-xs&quot;
+                    &gt;
+                      &lt;div className={`w-3 h-3 rounded-full </code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/events-page-standardized.tsx (Line 629:2 - Line 714:24), src/components/pages/training-page-standardized.tsx (Line 683:2 - Line 768:21)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn29" onclick="toggleCodeBlock('cloneGroup29', 'expandBtn29', 'collapseBtn29')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn29" onclick="toggleCodeBlock('cloneGroup29', 'expandBtn29', 'collapseBtn29')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup29"><code class="language-javascript text-sm text-gray-800">} /&gt;
+                      {tab.label}
+                      {tab.count &amp;&amp; (
+                        &lt;Badge variant=&quot;outline&quot; size=&quot;sm&quot; className=&quot;ml-xs&quot;&gt;
+                          {tab.count}
+                        &lt;/Badge&gt;
+                      )}
+                    &lt;/Button&gt;
+                  ))}
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              {/* Results Header with Controls */}
+              &lt;div className=&quot;flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base sm:gap-xl mb-xl sm:mb-2xl lg:mb-3xl&quot;&gt;
+                &lt;div&gt;
+                  &lt;h2 className=&quot;font-rajdhani text-heading-xl font-bold text-card-foreground&quot;&gt;
+                    {filters.filteredResults} {filters.filteredResults === 1 ? 'Event' : 'Events'} Found
+                  &lt;/h2&gt;
+                  &lt;p className=&quot;text-muted-foreground&quot;&gt;
+                    {filters.filteredResults !== filters.totalResults &amp;&amp; `Filtered from ${filters.totalResults} total • `}
+                    {filters.searchQuery &amp;&amp; `MagnifyingGlassIcon: &quot;${filters.searchQuery}&quot; • `}
+                    {selectedCalendarDate &amp;&amp; `Date: ${selectedCalendarDate.toLocaleDateString('en-US', { 
+                      weekday: 'long', 
+                      month: 'long', 
+                      day: 'numeric', 
+                      year: 'numeric' 
+                    })}`}
+                  &lt;/p&gt;
+                &lt;/div&gt;
+                
+                {/* View Controls - Mobile responsive */}
+                &lt;div className=&quot;flex items-center gap-sm sm:gap-base&quot;&gt;
+                  {/* Enhanced View Mode Toggle - Multiple Layouts */}
+                  &lt;div className=&quot;hidden sm:flex items-center border rounded-xs overflow-x-auto&quot;&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'compact' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('compact')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Compact - 4-6 items per row&quot;
+                    &gt;
+                      &lt;Squares2X2Icon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'dense' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('dense')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Dense Grid - Maximum items&quot;
+                    &gt;
+                      &lt;ListBulletIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'grid' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('grid')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Standard Grid&quot;
+                    &gt;
+                      &lt;Squares2X2Icon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'card' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('card')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Large Cards&quot;
+                    &gt;
+                      &lt;RectangleGroupIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'list' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('list')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;ListBulletIcon View&quot;
+                    &gt;
+                      &lt;ListBulletIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                  &lt;/div&gt;
+                  {/* Clear Date Filter Button */}
+                  {selectedCalendarDate &amp;&amp; (
+                    &lt;Button
+                      variant=&quot;outline&quot;
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; setSelectedCalendarDate</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/buysell-page-standardized.tsx (Line 545:9 - Line 848:5), src/components/pages/training-page-standardized.tsx (Line 518:9 - Line 808:9)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn32" onclick="toggleCodeBlock('cloneGroup32', 'expandBtn32', 'collapseBtn32')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn32" onclick="toggleCodeBlock('cloneGroup32', 'expandBtn32', 'collapseBtn32')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup32"><code class="language-javascript text-sm text-gray-800">={true}&gt;
+          &lt;BuildingStorefrontIcon className=&quot;h-4 w-4 mr-xs&quot; /&gt;
+          Local Dealers
+        &lt;/Badge&gt;
+        &lt;Badge className=&quot;bg-card/10 text-white border-border rounded-xs&quot; hideIcon={true}&gt;
+          &lt;ShieldCheckIcon className=&quot;h-4 w-4 mr-xs&quot; /&gt;
+          FFL Compliant
+        &lt;/Badge&gt;
+        &lt;Badge className=&quot;bg-card/10 text-white border-border rounded-xs&quot; hideIcon={true}&gt;
+          &lt;StarIcon className=&quot;h-4 w-4 mr-xs&quot; /&gt;
+          Verified Vendors
+        &lt;/Badge&gt;
+      &lt;/div&gt;
+      
+      &lt;p className=&quot;text-body text-white/70 max-w-xl lg:max-w-2xl leading-relaxed&quot;&gt;
+        Browse real-time inventory from licensed dealers across the Treasure Valley. All transactions are FFL-compliant with verified vendor partners.
+      &lt;/p&gt;
+      
+      &lt;div className=&quot;flex flex-col sm:flex-row gap-base&quot;&gt;
+        &lt;Button className=&quot;bg-nav-buysell text-white hover:bg-white hover:text-nav-buysell font-rajdhani font-bold&quot;
+        &gt;
+          &lt;PlusIcon className=&quot;h-4 w-4 mr-xs&quot; /&gt;
+          List Your Items
+        &lt;/Button&gt;
+        &lt;Button 
+          variant=&quot;outline&quot; className=&quot;border-border text-white hover:bg-card hover:text-nav-buysell&quot;
+        &gt;
+          View All Deals
+        &lt;/Button&gt;
+      &lt;/div&gt;
+    &lt;/&gt;
+  )
+
+  const heroRightContent = (
+    &lt;Card className=&quot;mica-card shadow-present hover:shadow-elevated transition-all duration-300 h-auto min-h-[280px] lg:min-h-[320px]&quot;&gt;
+      &lt;div className=&quot;absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-buysell/20 to-nav-buysell/10 rounded-bl-full&quot;&gt;&lt;/div&gt;
+      &lt;div className=&quot;absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-buysell to-nav-buysell&quot;&gt;&lt;/div&gt;
+      
+      &lt;CardHeader className=&quot;pb-xs relative z-10 p-sm&quot;&gt;
+        &lt;div className=&quot;flex items-center justify-between mb-xs&quot;&gt;
+          &lt;Badge className=&quot;bg-nav-buysell/20 text-nav-buysell border-nav-buysell/30 font-rajdhani font-bold text-[10px]&quot;&gt;
+            &lt;StarIcon className=&quot;h-3 w-3 mr-xs&quot; /&gt;
+            FEATURED DEAL
+          &lt;/Badge&gt;
+          &lt;div className=&quot;flex items-center gap-xs text-xs text-muted-foreground&quot;&gt;
+            &lt;CheckCircleIcon className=&quot;h-3 w-3 text-nav-buysell&quot; /&gt;
+            &lt;span&gt;Verified&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div className=&quot;space-y-xs&quot;&gt;
+          &lt;h3 className=&quot;font-rajdhani font-bold text-card-foreground text-xl leading-tight&quot;&gt;{featuredDeal.title}&lt;/h3&gt;
+          &lt;div className=&quot;flex items-center gap-xs text-xs text-muted-foreground&quot;&gt;
+            &lt;BuildingStorefrontIcon className=&quot;h-3 w-3 text-nav-buysell&quot; /&gt;
+            &lt;span&gt;{featuredDeal.business} • {featuredDeal.condition}&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/CardHeader&gt;
+      
+      &lt;CardContent className=&quot;space-y-base relative z-10 p-sm pt-0&quot;&gt;
+        &lt;p className=&quot;text-sm text-muted-foreground line-clamp-3&quot;&gt;
+          {featuredDeal.description}
+        &lt;/p&gt;
+        
+        &lt;div className=&quot;flex items-center justify-between&quot;&gt;
+          &lt;div className=&quot;space-y-xs&quot;&gt;
+            &lt;div className=&quot;flex items-center gap-xs&quot;&gt;
+              &lt;span className=&quot;h3-subsection text-nav-buysell font-rajdhani&quot;&gt;${featuredDeal.salePrice}&lt;/span&gt;
+              &lt;span className=&quot;text-sm text-muted-foreground line-through&quot;&gt;${featuredDeal.originalPrice}&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div className=&quot;text-xs text-nav-buysell font-medium&quot;&gt;{featuredDeal.discount}% OFF&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;Button 
+            className=&quot;bg-gradient-to-r from-nav-buysell to-nav-buysell text-gruvbox-bg-dark hover:from-nav-buysell hover:to-nav-buysell font-rajdhani font-bold text-xs&quot;
+            size=&quot;sm&quot;
+          &gt;
+            VIEW DEAL
+            &lt;ArrowRightIcon className=&quot;h-3 w-3 ml-xs&quot; /&gt;
+          &lt;/Button&gt;
+        &lt;/div&gt;
+      &lt;/CardContent&gt;
+    &lt;/Card&gt;
+  )
+
+  // Hero content - using Events page pattern
+  const heroContent = (
+    &lt;section className=&quot;relative overflow-hidden bg-gradient-buysell-hero px-md py-lg&quot;&gt;
+      {heroBackgroundElements}
+      
+      &lt;div className=&quot;container mx-auto max-w-site relative z-10&quot;&gt;
+        &lt;div className=&quot;hero-grid-layout&quot;&gt;
+          {/* Content - Left side - 2/3 width */}
+          &lt;div className=&quot;h-full flex flex-col justify-center space-y-mobile-lg sm:space-y-lg py-mobile-md sm:py-md&quot;&gt;
+            {heroLeftContent}
+          &lt;/div&gt;
+          
+          {/* Featured Deal Card - Right side */}
+          &lt;div className=&quot;py-mobile-md sm:py-md&quot;&gt;
+            &lt;div className=&quot;relative&quot;&gt;
+              {heroRightContent}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+  )
+
+  return (
+    &lt;div className=&quot;min-h-screen bg-background&quot;&gt;
+      {heroContent}
+      
+      {/* Directory Ticker - Real business updates */}
+      &lt;DirectoryTicker /&gt;
+      
+      {/* Buy &amp; Sell Content Section - Trust and Categories */}
+      &lt;ContentBridgeSection {...buysellContentBridge} /&gt;
+
+      {/* Main Content Area */}
+      &lt;section className=&quot;py-mobile-2xl sm:py-4xl bg-background/50&quot;&gt;
+        &lt;div className=&quot;w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile&quot;&gt;
+          &lt;div className=&quot;flex flex-col lg:flex-row gap-mobile-lg sm:gap-2xl max-w-[1920px] mx-auto&quot;&gt;
+            
+            {/* Left Sidebar - Modern Filters (Desktop) */}
+            &lt;aside className=&quot;hidden lg:block&quot;&gt;
+              &lt;div className=&quot;space-y-6&quot;&gt;
+                &lt;ModernFilterSidebar
+                  sections={filterSections}
+                  selectedFilters={filters.selectedFilters}
+                  onFilterChange={handleFilterChange}
+                  onClearSection={handleClearSection}
+                  onClearAll={handleClearAll}
+                  totalResults={filters.totalResults}
+                  filteredResults={filters.filteredResults}
+                /&gt;
+              &lt;/div&gt;
+            &lt;/aside&gt;
+
+            {/* Mobile Filter Sidebar */}
+            &lt;ModernFilterSidebar
+              sections={filterSections}
+              selectedFilters={filters.selectedFilters}
+              onFilterChange={handleFilterChange}
+              onClearSection={handleClearSection}
+              onClearAll={handleClearAll}
+              totalResults={filters.totalResults}
+              filteredResults={filters.filteredResults}
+              isMobile={true}
+              isOpen={mobileFiltersOpen}
+              onClose={() =&gt; setMobileFiltersOpen(false)}
+            /&gt;
+            
+            {/* Main Content */}
+            &lt;main className=&quot;flex-1 min-w-0&quot;&gt;
+              {/* MagnifyingGlassIcon and Category Controls */}
+              &lt;div className=&quot;mb-xl space-y-lg&quot;&gt;
+                {/* MagnifyingGlassIcon Bar */}
+                &lt;div className=&quot;relative max-w-2xl&quot;&gt;
+                  &lt;MagnifyingGlassIcon className=&quot;absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground&quot; /&gt;
+                  &lt;Input
+                    placeholder=&quot;MagnifyingGlassIcon firearms, gear, services, or dealers...&quot;
+                    className=&quot;pl-10 h-12 text-body-base shadow-none&quot;
+                    value={filters.searchQuery}
+                    onChange={(e) =&gt; filters.setSearchQuery(e.target.value)}
+                  /&gt;
+                &lt;/div&gt;
+
+                {/* Quick Filter Tabs */}
+                &lt;div className=&quot;flex flex-wrap gap-xs&quot;&gt;
+                  {[
+                    { id: 'all', label: 'All Deals', count: buysellDeals.length, icon: ArchiveBoxIcon },
+                    { id: 'firearms', label: 'Firearms', count: buysellDeals.filter(d =&gt; d.category === 'Firearms').length, icon: CursorArrowRaysIcon },
+                    { id: 'services', label: 'Services', count: buysellDeals.filter(d =&gt; d.category === 'Services').length, icon: ShieldCheckIcon },
+                    { id: 'equipment', label: 'Equipment', count: buysellDeals.filter(d =&gt; d.category === 'Equipment').length, icon: ArchiveBoxIcon },
+                    { id: 'custom', label: 'Custom', count: buysellDeals.filter(d =&gt; d.category === 'Custom Firearms').length, icon: StarIcon },
+                    { id: 'featured', label: 'Featured', count: buysellDeals.filter(d =&gt; d.isFeatured).length }
+                  ].map((tab) =&gt; (
+                    &lt;Button
+                      key={tab.id}
+                      variant={filters.activeTab === tab.id ? &quot;default&quot; : &quot;outline&quot;}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setActiveTab(tab.id)}
+                      className=&quot;gap-xs font-rajdhani shadow-none rounded-xs&quot;
+                    &gt;
+                      {tab.icon &amp;&amp; React.createElement(tab.icon, { 
+                        className: &quot;size-3&quot; 
+                      })}
+                      {tab.label}
+                      {tab.count &amp;&amp; (
+                        &lt;Badge variant=&quot;outline&quot; size=&quot;sm&quot; className=&quot;ml-xs&quot;&gt;
+                          {tab.count}
+                        &lt;/Badge&gt;
+                      )}
+                    &lt;/Button&gt;
+                  ))}
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              {/* Results Header with Controls */}
+              &lt;div className=&quot;flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base sm:gap-xl mb-xl sm:mb-2xl lg:mb-3xl&quot;&gt;
+                &lt;div&gt;
+                  &lt;h2 className=&quot;font-rajdhani text-heading-xl font-bold text-card-foreground&quot;&gt;
+                    {filters.filteredResults} {filters.filteredResults === 1 ? 'Deal' : 'Deals'} Found
+                  &lt;/h2&gt;
+                  &lt;p className=&quot;text-muted-foreground&quot;&gt;
+                    {filters.filteredResults !== filters.totalResults &amp;&amp; `Filtered from ${filters.totalResults} total • `}
+                    {filters.searchQuery &amp;&amp; `MagnifyingGlassIcon: &quot;${filters.searchQuery}&quot;`}
+                  &lt;/p&gt;
+                &lt;/div&gt;
+                
+                {/* View Controls - Mobile responsive */}
+                &lt;div className=&quot;flex items-center gap-sm sm:gap-base&quot;&gt;
+                  {/* Enhanced View Mode Toggle - Multiple Layouts */}
+                  &lt;div className=&quot;hidden sm:flex items-center border rounded-xs overflow-x-auto&quot;&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'compact' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('compact')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Compact - 4-6 items per row&quot;
+                    &gt;
+                      &lt;Squares2X2Icon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'dense' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('dense')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Dense Grid - Maximum items&quot;
+                    &gt;
+                      &lt;ListBulletIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'grid' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('grid')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Standard Grid&quot;
+                    &gt;
+                      &lt;Squares2X2Icon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'card' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('card')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;Large Cards&quot;
+                    &gt;
+                      &lt;RectangleGroupIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                    &lt;Button
+                      variant={filters.viewMode === 'list' ? 'default' : 'ghost'}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setViewMode('list')}
+                      className=&quot;rounded-none border-none shadow-none&quot;
+                      title=&quot;ListBulletIcon View&quot;
+                    &gt;
+                      &lt;ListBulletIcon className=&quot;size-4&quot; /&gt;
+                    &lt;/Button&gt;
+                  &lt;/div&gt;
+                  
+                  {/* Mobile Filter Button */}
+                  &lt;Button
+                    variant=&quot;outline&quot;
+                    size=&quot;sm&quot;
+                    onClick={() =&gt; setMobileFiltersOpen(true)}
+                    className=&quot;gap-xs font-rajdhani lg:hidden&quot;
+                  &gt;
+                    &lt;FunnelIcon className=&quot;size-4&quot; /&gt;
+                    Filters
+                    {getActiveFilterCount() &gt; 0 &amp;&amp; (
+                      &lt;Badge variant=&quot;outline&quot; className=&quot;ml-xs bg-nav-buysell/20 text-nav-buysell border-nav-buysell/30 text-xs&quot;&gt;
+                        {getActiveFilterCount()}
+                      &lt;/Badge&gt;
+                    )}
+                  &lt;/Button&gt;
+                  
+                  {/* Sort Dropdown */}
+                  &lt;select
+                    value={filters.sortBy}
+                    onChange={(e) =&gt; filters.setSortBy(e.target.value)}
+                    className=&quot;bg-background border border-border rounded-xs px-base py-xs text-sm font-rajdhani&quot;
+                  &gt;
+                    &lt;option value=&quot;featured&quot;&gt;Sort by Featured&lt;/option&gt;
+                    &lt;option value=&quot;price&quot;&gt;Sort by Price&lt;/option&gt;
+                    &lt;option value=&quot;discount&quot;&gt;Sort by Discount&lt;/option&gt;
+                    &lt;option value=&quot;alphabetical&quot;&gt;Sort A-Z&lt;/option&gt;
+                  &lt;/select&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              {/* Card Grid/ListBulletIcon Content with Loading State */}
+              &lt;div className=&quot;mb-4xl&quot;&gt;
+                {filters.isLoading ? (
+                  &lt;CardSkeleton 
+                    viewMode={filters.viewMode} 
+                    count={filters.itemsPerPage} 
+                    className={filters.getGridClassName()}
+                  /&gt;
+                ) : (
+                  &lt;div className={filters.getGridClassName()}&gt;
+                    {filters.paginatedItems.length &gt; 0 ? (
+                      filters.paginatedItems.map((deal, index) =&gt; (
+                        &lt;BuySellDealCard
+                          key={`${deal</code></pre></div><div class="py-4"><p class="text-gray-600">src/components/pages/armory-page-standardized.tsx (Line 330:9 - Line 544:2), src/components/pages/training-page-standardized.tsx (Line 518:9 - Line 718:8)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn36" onclick="toggleCodeBlock('cloneGroup36', 'expandBtn36', 'collapseBtn36')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn36" onclick="toggleCodeBlock('cloneGroup36', 'expandBtn36', 'collapseBtn36')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup36"><code class="language-javascript text-sm text-gray-800">={true}&gt;
+          &lt;ScaleIcon className=&quot;h-4 w-4 mr-xs&quot; /&gt;
+          Legal Guides
+        &lt;/Badge&gt;
+        &lt;Badge className=&quot;bg-card/10 text-white border-border rounded-xs&quot; hideIcon={true}&gt;
+          &lt;ShieldCheckIcon className=&quot;h-4 w-4 mr-xs&quot; /&gt;
+          Equipment Reviews
+        &lt;/Badge&gt;
+        &lt;Badge className=&quot;bg-card/10 text-white border-border rounded-xs&quot; hideIcon={true}&gt;
+          &lt;BookOpenIcon className=&quot;h-4 w-4 mr-xs&quot; /&gt;
+          Technical Guides
+        &lt;/Badge&gt;
+      &lt;/div&gt;
+      
+      {/* Paragraph moved closer to badges */}
+      &lt;p className=&quot;text-body-lg text-white/70 max-w-2xl leading-relaxed mt-base&quot;&gt;
+        Your comprehensive resource for Idaho firearms information. From legal guides and equipment reviews to technical articles and buyer's guides.
+      &lt;/p&gt;
+      
+      &lt;div className=&quot;flex gap-base&quot;&gt;
+        &lt;Button className=&quot;bg-nav-armory text-white hover:bg-white hover:text-nav-armory font-rajdhani font-bold&quot; animationType=&quot;plus-minus&quot;&gt;
+          &lt;PlusIcon className=&quot;h-4 w-4 mr-xs&quot; /&gt;
+          Submit Article
+        &lt;/Button&gt;
+        &lt;Button variant=&quot;ghost&quot; className=&quot;text-white hover:bg-white/10 font-rajdhani font-bold&quot; animationType=&quot;chevron&quot;&gt;
+          Browse Guides
+        &lt;/Button&gt;
+      &lt;/div&gt;
+    &lt;/&gt;
+  )
+
+  const heroRightContent = armoryArticles.find(a =&gt; a.featured) &amp;&amp; (() =&gt; {
+    const featuredArticle = armoryArticles.find(a =&gt; a.featured)!
+    return (
+      &lt;Card className=&quot;mica-card border-nav-armory/30 shadow-present hover:shadow-elevated transition-all duration-300 overflow-hidden&quot;&gt;
+        &lt;div className=&quot;absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-nav-armory/20 to-nav-armory/10 rounded-bl-full&quot;&gt;&lt;/div&gt;
+        &lt;div className=&quot;absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-nav-armory to-nav-armory&quot;&gt;&lt;/div&gt;
+        
+        &lt;CardContent className=&quot;p-sm relative z-10&quot;&gt;
+          &lt;div className=&quot;flex items-center justify-between mb-base&quot;&gt;
+            &lt;Badge className=&quot;bg-nav-armory/20 text-nav-armory border-nav-armory/30 font-rajdhani font-bold text-[10px]&quot;&gt;
+              &lt;StarIcon className=&quot;h-3 w-3 mr-xs&quot; /&gt;
+              FEATURED ARTICLE
+            &lt;/Badge&gt;
+            &lt;div className=&quot;flex items-center gap-xs text-xs text-muted-foreground&quot;&gt;
+              &lt;ShieldCheckIcon className=&quot;h-3 w-3 text-nav-armory&quot; /&gt;
+              &lt;span&gt;Verified&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          
+          &lt;div className=&quot;space-y-base&quot;&gt;
+            &lt;div&gt;
+              &lt;h3 className=&quot;font-rajdhani font-bold text-card-foreground text-xl leading-tight mb-xs&quot;&gt;{featuredArticle.title}&lt;/h3&gt;
+              &lt;div className=&quot;flex items-center gap-xs text-xs text-muted-foreground&quot;&gt;
+                &lt;ClockIcon className=&quot;h-3 w-3 text-nav-armory&quot; /&gt;
+                &lt;span&gt;{featuredArticle.readTime} min read&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;p className=&quot;text-sm text-muted-foreground line-clamp-2&quot;&gt;
+              {featuredArticle.excerpt}
+            &lt;/p&gt;
+            
+            &lt;div className=&quot;flex items-center justify-between pt-base border-t border-border&quot;&gt;
+              &lt;div className=&quot;space-y-xs&quot;&gt;
+                &lt;div className=&quot;flex items-center gap-xs&quot;&gt;
+                  &lt;EyeIcon className=&quot;h-3 w-3 text-nav-armory&quot; /&gt;
+                  &lt;span className=&quot;text-xs text-muted-foreground&quot;&gt;{featuredArticle.views.toLocaleString()} views&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;Button 
+                className=&quot;bg-gradient-to-r from-nav-armory to-nav-armory text-gruvbox-bg-dark hover:from-nav-armory hover:to-nav-armory font-rajdhani font-bold text-xs&quot;
+                size=&quot;sm&quot;
+              &gt;
+                READ ARTICLE
+                &lt;ArrowRightIcon className=&quot;h-3 w-3 ml-xs&quot; /&gt;
+              &lt;/Button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/CardContent&gt;
+      &lt;/Card&gt;
+    )
+  })()
+
+  // Hero content - matching Events page pattern exactly
+  const heroContent = (
+    &lt;section className=&quot;relative overflow-hidden bg-gradient-armory-hero px-md py-lg&quot;&gt;
+      {/* Background Elements - matching Events structure */}
+      
+      &lt;div className=&quot;container mx-auto max-w-site relative z-10&quot;&gt;
+        &lt;div className=&quot;hero-grid-layout&quot;&gt;
+          {/* Content - Left side - 2/3 width */}
+          &lt;div className=&quot;h-full flex flex-col justify-center space-y-mobile-lg sm:space-y-lg py-mobile-md sm:py-md&quot;&gt;
+            {heroLeftContent}
+          &lt;/div&gt;
+          
+          {/* Featured Article Card - Right side - Compact Hero Version */}
+          &lt;div className=&quot;py-mobile-md sm:py-md&quot;&gt;
+            &lt;div className=&quot;relative&quot;&gt;
+              {heroRightContent}
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+  )
+
+  return (
+    &lt;div className=&quot;min-h-screen bg-background&quot;&gt;
+      {heroContent}
+      
+      {/* Armory Ticker - TODO: Create armory-specific ticker component */}
+      
+      {/* Armory Content Section - Unified Layout with cards left, content right */}
+      &lt;ContentBridgeSection {...armoryContentBridge} /&gt;
+
+      {/* Main Content Area */}
+      &lt;section className=&quot;py-mobile-2xl sm:py-4xl bg-background/50&quot;&gt;
+        &lt;div className=&quot;w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile&quot;&gt;
+          &lt;div className=&quot;flex flex-col lg:flex-row gap-mobile-lg sm:gap-2xl max-w-[1920px] mx-auto&quot;&gt;
+            
+            {/* Left Sidebar - Filters (Desktop) */}
+            &lt;aside className=&quot;hidden lg:block&quot;&gt;
+              &lt;div className=&quot;space-y-6&quot;&gt;
+                {/* Modern Filter Sidebar - Now fully collapsible */}
+                &lt;ModernFilterSidebar
+                  sections={filterSections}
+                  selectedFilters={filters.selectedFilters}
+                  onFilterChange={handleFilterChange}
+                  onClearSection={handleClearSection}
+                  onClearAll={handleClearAll}
+                  totalResults={filters.totalResults}
+                  filteredResults={filters.filteredResults}
+                /&gt;
+              &lt;/div&gt;
+            &lt;/aside&gt;
+
+            {/* Mobile Filter Sidebar */}
+            &lt;ModernFilterSidebar
+              sections={filterSections}
+              selectedFilters={filters.selectedFilters}
+              onFilterChange={handleFilterChange}
+              onClearSection={handleClearSection}
+              onClearAll={handleClearAll}
+              totalResults={filters.totalResults}
+              filteredResults={filters.filteredResults}
+              isMobile={true}
+              isOpen={mobileFiltersOpen}
+              onClose={() =&gt; setMobileFiltersOpen(false)}
+            /&gt;
+            
+            {/* Main Content */}
+            &lt;main className=&quot;flex-1 min-w-0&quot;&gt;
+              {/* MagnifyingGlassIcon and Category Controls */}
+              &lt;div className=&quot;mb-xl space-y-lg&quot;&gt;
+                {/* MagnifyingGlassIcon Bar */}
+                &lt;div className=&quot;relative max-w-2xl&quot;&gt;
+                  &lt;MagnifyingGlassIcon className=&quot;absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground&quot; /&gt;
+                  &lt;Input
+                    placeholder=&quot;MagnifyingGlassIcon articles, guides, and reviews...&quot;
+                    className=&quot;pl-10 h-12 text-body-base shadow-none&quot;
+                    value={filters.searchQuery}
+                    onChange={(e) =&gt; filters.setSearchQuery(e.target.value)}
+                  /&gt;
+                &lt;/div&gt;
+
+                {/* Quick Filter Tabs */}
+                &lt;div className=&quot;flex flex-wrap gap-xs&quot;&gt;
+                  {[
+                    { id: 'all', label: 'All Articles', count: armoryArticles.length, icon: BookOpenIcon },
+                    { id: 'legal', label: 'Legal', count: armoryArticles.filter(a =&gt; a.category === 'Legal').length, icon: ScaleIcon },
+                    { id: 'reviews', label: 'Reviews', count: armoryArticles.filter(a =&gt; a.category === 'Reviews').length, icon: ShieldCheckIcon },
+                    { id: 'technical', label: 'Technical', count: armoryArticles.filter(a =&gt; a.category === 'Technical').length, icon: WrenchScrewdriverIcon },
+                    { id: 'featured', label: 'Featured', count: armoryArticles.filter(a =&gt; a.featured).length }
+                  ].map((tab) =&gt; (
+                    &lt;Button
+                      key={tab.id}
+                      variant={filters.activeTab === tab.id ? &quot;default&quot; : &quot;outline&quot;}
+                      size=&quot;sm&quot;
+                      onClick={() =&gt; filters.setActiveTab(tab.id)}
+                      className=&quot;gap-xs font-rajdhani shadow-none rounded-xs&quot;
+                    &gt;
+                      {tab.icon &amp;&amp; React.createElement(tab.icon, { 
+                        className: &quot;size-3&quot; 
+                      })}
+                      {tab.label}
+                      {tab.count &amp;&amp; (
+                        &lt;Badge variant=&quot;outline&quot; size=&quot;sm&quot; className=&quot;ml-xs&quot;&gt;
+                          {tab.count}
+                        &lt;/Badge&gt;
+                      )}
+                    &lt;/Button&gt;
+                  ))}
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              {/* Results Header with Controls */}
+              &lt;div className=&quot;flex flex-col sm:flex-row sm:items-center sm:justify-between gap-base sm:gap-xl mb-xl sm:mb-2xl lg:mb-3xl&quot;&gt;
+                &lt;div&gt;
+                  &lt;h2 className=&quot;font-rajdhani text-heading-xl font-bold text-card-foreground&quot;&gt;
+                    {filters.filteredResults} {filters.filteredResults === 1 ? 'Article' : 'Articles'} Found
+                  &lt;/h2&gt;
+                  &lt;p className=&quot;text-muted-foreground&quot;&gt;
+                    {filters.filteredResults !== filters.totalResults &amp;&amp; `Filtered from ${filters.totalResults} total • `}
+                    {filters.searchQuery &amp;&amp; `MagnifyingGlassIcon: &quot;${filters.searchQuery}&quot;`}
+                  &lt;/p&gt;
+                &lt;/div&gt;
+                
+                {/* View Controls */}
+                &lt;div className=&quot;flex items-center gap-sm sm:gap-base&quot;&gt;
+                  {/* Mobile Filter Button */}
+                  &lt;Button
+                    variant=&quot;outline&quot;
+                    size=&quot;sm&quot;
+                    onClick={(</code></pre></div><div class="py-4"><p class="text-gray-600">src/lib/tactical-icons.tsx (Line 53:10 - Line 355:2), src/lib/tactical-icons.tsx (Line 32:10 - Line 166:2)</p><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2" id="expandBtn41" onclick="toggleCodeBlock('cloneGroup41', 'expandBtn41', 'collapseBtn41')">Show code</button><button class="bg-gray-500 text-white px-1 py-0.5 text-xs rounded focus:outline-none ml-2 hidden" id="collapseBtn41" onclick="toggleCodeBlock('cloneGroup41', 'expandBtn41', 'collapseBtn41')">Hide code</button><pre class="bg-gray-100 border border-gray-200 p-4 rounded mt-2 hidden" id="cloneGroup41"><code class="language-javascript text-sm text-gray-800">={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}
+    strokeLinecap=&quot;round&quot;
+    strokeLinejoin=&quot;round&quot;
+  &gt;
+    &lt;path d=&quot;M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z&quot; /&gt;
+    &lt;path d=&quot;m13 13 1.5 1.5&quot; /&gt;
+    &lt;circle cx=&quot;17&quot; cy=&quot;7&quot; r=&quot;1&quot; /&gt;
+  &lt;/svg&gt;
+);
+
+// Training Icon - ShieldCheckIcon with graduation cap elements
+export const AcademicCapIcon: React.FC&lt;IconProps&gt; = ({ className, size = 24, strokeWidth = 1.5 }) =&gt; (
+  &lt;svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}
+    strokeLinecap=&quot;round&quot;
+    strokeLinejoin=&quot;round&quot;
+  &gt;
+    &lt;path d=&quot;M12 2L2 7l10 5 10-5-10-5z&quot; /&gt;
+    &lt;path d=&quot;m2 17 10 5 10-5&quot; /&gt;
+    &lt;path d=&quot;m6 12 6 3 6-3&quot; /&gt;
+    &lt;path d=&quot;M12 22V12&quot; /&gt;
+  &lt;/svg&gt;
+);
+
+// Retail Store Icon - BuildingStorefrontIcon with tactical elements
+export const TacticalRetailIcon: React.FC&lt;IconProps&gt; = ({ className, size = 24, strokeWidth = 1.5 }) =&gt; (
+  &lt;svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}
+    strokeLinecap=&quot;round&quot;
+    strokeLinejoin=&quot;round&quot;
+  &gt;
+    &lt;path d=&quot;M2 3h20l-1 4H3l-1-4z&quot; /&gt;
+    &lt;path d=&quot;M7 7v11a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V7&quot; /&gt;
+    &lt;path d=&quot;M10 11h4&quot; /&gt;
+    &lt;path d=&quot;M12 9v6&quot; /&gt;
+  &lt;/svg&gt;
+);
+
+// Club Icon - UsersIcon with shield
+export const CubeIcon: React.FC&lt;IconProps&gt; = ({ className, size = 24, strokeWidth = 1.5 }) =&gt; (
+  &lt;svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}
+    strokeLinecap=&quot;round&quot;
+    strokeLinejoin=&quot;round&quot;
+  &gt;
+    &lt;path d=&quot;M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z&quot; /&gt;
+    &lt;path d=&quot;M12 14c-3.5 0-7 1.5-7 4v3h14v-3c0-2.5-3.5-4-7-4z&quot; /&gt;
+    &lt;path d=&quot;M5 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z&quot; /&gt;
+    &lt;path d=&quot;M19 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z&quot; /&gt;
+  &lt;/svg&gt;
+);
+
+// Services Icon - Gear with tactical elements
+export const TacticalServicesIcon: React.FC&lt;IconProps&gt; = ({ className, size = 24, strokeWidth = 1.5 }) =&gt; (
+  &lt;svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}
+    strokeLinecap=&quot;round&quot;
+    strokeLinejoin=&quot;round&quot;
+  &gt;
+    &lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;3&quot; /&gt;
+    &lt;path d=&quot;M12 1v6m0 6v6&quot; /&gt;
+    &lt;path d=&quot;m15.5 4.5-3 3m3 9-3-3&quot; /&gt;
+    &lt;path d=&quot;m19.5 8.5-6 3m-3 3-6-3&quot; /&gt;
+    &lt;path d=&quot;m19.5 15.5-6-3m-3-3-6 3&quot; /&gt;
+    &lt;path d=&quot;m15.5 19.5-3-3m-6-6 3 3&quot; /&gt;
+  &lt;/svg&gt;
+);
+
+/**
+ * ============================================================================
+ * MEMBERSHIP TIER ICONS
+ * ============================================================================
+ */
+
+// Gold Partner Badge
+export const StarIcon: React.FC&lt;IconProps&gt; = ({ className, size = 24, strokeWidth = 1.5 }) =&gt; (
+  &lt;svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}
+    strokeLinecap=&quot;round&quot;
+    strokeLinejoin=&quot;round&quot;
+  &gt;
+    &lt;path d=&quot;M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z&quot; /&gt;
+    &lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;3&quot; /&gt;
+  &lt;/svg&gt;
+);
+
+// Silver Member Badge
+export const UserIcon: React.FC&lt;IconProps&gt; = ({ className, size = 24, strokeWidth = 1.5 }) =&gt; (
+  &lt;svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}
+    strokeLinecap=&quot;round&quot;
+    strokeLinejoin=&quot;round&quot;
+  &gt;
+    &lt;path d=&quot;M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z&quot; /&gt;
+    &lt;path d=&quot;M12 7v10&quot; /&gt;
+    &lt;path d=&quot;M8 12h8&quot; /&gt;
+  &lt;/svg&gt;
+);
+
+// Copper Member Badge
+export const UserIcon: React.FC&lt;IconProps&gt; = ({ className, size = 24, strokeWidth = 1.5 }) =&gt; (
+  &lt;svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}
+    strokeLinecap=&quot;round&quot;
+    strokeLinejoin=&quot;round&quot;
+  &gt;
+    &lt;path d=&quot;M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z&quot; /&gt;
+    &lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;2&quot; /&gt;
+  &lt;/svg&gt;
+);
+
+// Standard Member Badge
+export const UserIcon: React.FC&lt;IconProps&gt; = ({ className, size = 24, strokeWidth = 1.5 }) =&gt; (
+  &lt;svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}
+    strokeLinecap=&quot;round&quot;
+    strokeLinejoin=&quot;round&quot;
+  &gt;
+    &lt;path d=&quot;M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z&quot; /&gt;
+  &lt;/svg&gt;
+);
+
+/**
+ * ============================================================================
+ * SPORTS CATEGORY ICONS
+ * ============================================================================
+ */
+
+// Rifle Sports Icon
+export const RifleSportsIcon: React.FC&lt;IconProps&gt; = ({ className, size = 24, strokeWidth = 1.5 }) =&gt; (
+  &lt;svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}
+    strokeLinecap=&quot;round&quot;
+    strokeLinejoin=&quot;round&quot;
+  &gt;
+    &lt;path d=&quot;M2 12h20&quot; /&gt;
+    &lt;path d=&quot;M19 8v8&quot; /&gt;
+    &lt;path d=&quot;M21 10h2v4h-2&quot; /&gt;
+    &lt;circle cx=&quot;5&quot; cy=&quot;12&quot; r=&quot;2&quot; /&gt;
+    &lt;path d=&quot;M7 10v4&quot; /&gt;
+    &lt;path d=&quot;M15 8v8&quot; /&gt;
+  &lt;/svg&gt;
+);
+
+// Pistol Sports Icon
+export const PistolSportsIcon: React.FC&lt;IconProps&gt; = ({ className, size = 24, strokeWidth = 1.5 }) =&gt; (
+  &lt;svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}
+    strokeLinecap=&quot;round&quot;
+    strokeLinejoin=&quot;round&quot;
+  &gt;
+    &lt;path d=&quot;M3 12h12&quot; /&gt;
+    &lt;path d=&quot;M15 8v8&quot; /&gt;
+    &lt;path d=&quot;M17 9h4v6h-4&quot; /&gt;
+    &lt;circle cx=&quot;6&quot; cy=&quot;12&quot; r=&quot;2&quot; /&gt;
+    &lt;path d=&quot;M8 10v4&quot; /&gt;
+  &lt;/svg&gt;
+);
+
+// Shotgun Sports Icon
+export const ShotgunSportsIcon: React.FC&lt;IconProps&gt; = ({ className, size = 24, strokeWidth = 1.5 }) =&gt; (
+  &lt;svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}
+    strokeLinecap=&quot;round&quot;
+    strokeLinejoin=&quot;round&quot;
+  &gt;
+    &lt;path d=&quot;M2 11h20v2H2z&quot; /&gt;
+    &lt;path d=&quot;M19 7v10&quot; /&gt;
+    &lt;path d=&quot;M21 9h2v6h-2&quot; /&gt;
+    &lt;rect x=&quot;4&quot; y=&quot;10&quot; width=&quot;3&quot; height=&quot;4&quot; /&gt;
+    &lt;path d=&quot;M15 7v10&quot; /&gt;
+  &lt;/svg&gt;
+);
+
+// Archery Icon
+export const ArcheryIcon: React.FC&lt;IconProps&gt; = ({ className, size = 24, strokeWidth = 1.5 }) =&gt; (
+  &lt;svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}
+    strokeLinecap=&quot;round&quot;
+    strokeLinejoin=&quot;round&quot;
+  &gt;
+    &lt;path d=&quot;M2 12h20&quot; /&gt;
+    &lt;path d=&quot;M22 6l-10 6-10-6&quot; /&gt;
+    &lt;path d=&quot;M22 18l-10-6-10 6&quot; /&gt;
+    &lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;2&quot; /&gt;
+  &lt;/svg&gt;
+);
+
+// Paintball Icon
+export const PaintballIcon: React.FC&lt;IconProps&gt; = ({ className, size = 24, strokeWidth = 1.5 }) =&gt; (
+  &lt;svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}
+    strokeLinecap=&quot;round&quot;
+    strokeLinejoin=&quot;round&quot;
+  &gt;
+    &lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; /&gt;
+    &lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;6&quot; /&gt;
+    &lt;circle cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;2&quot; /&gt;
+    &lt;path d=&quot;M12 2v4&quot; /&gt;
+    &lt;path d=&quot;M12 18v4&quot; /&gt;
+    &lt;path d=&quot;M4.93 4.93l2.83 2.83&quot; /&gt;
+    &lt;path d=&quot;M16.24 16.24l2.83 2.83&quot; /&gt;
+    &lt;path d=&quot;M2 12h4&quot; /&gt;
+    &lt;path d=&quot;M18 12h4&quot; /&gt;
+    &lt;path d=&quot;M4.93 19.07l2.83-2.83&quot; /&gt;
+    &lt;path d=&quot;M16.24 7.76l2.83-2.83&quot; /&gt;
+  &lt;/svg&gt;
+);
+
+// Airsoft Icon
+export const AirsoftIcon: React.FC&lt;IconProps&gt; = ({ className, size = 24, strokeWidth = 1.5 }) =&gt; (
+  &lt;svg
+    className={className}
+    width={size}
+    height={size}
+    viewBox=&quot;0 0 24 24&quot;
+    fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot;
+    strokeWidth={strokeWidth}</code></pre></div><!-- Add more clone groups for .txt format as needed         // Add more clone groups for .txt format as needed--></div><a name="markdown-clones"></a><h2 class="text-2xl font-semibold text-gray-700 mb-4">markdown</h2><div class="divide-y divide-gray-200 border-b-2"><!-- Add more clone groups for .txt format as needed         // Add more clone groups for .txt format as needed--></div><a name="css-clones"></a><h2 class="text-2xl font-semibold text-gray-700 mb-4">css</h2><div class="divide-y divide-gray-200 border-b-2"><!-- Add more clone groups for .txt format as needed         // Add more clone groups for .txt format as needed--></div></section><!-- Add more sections for other formats and clone groups as needed--></main><footer class="bg-white shadow mt-8 py-4"><div class="container mx-auto px-4 text-center"><p class="text-sm text-gray-600">This report is generated by jscpd, an open-source copy/paste detector.</p><p class="text-sm text-gray-600">jscpd is licensed under the MIT License.</p><a class="text-blue-500 text-sm" href="https://github.com/kucherenko/jscpd" target="_blank" rel="noopener noreferrer">View jscpd on GitHub</a></div></footer><script src="js/prism.js"></script><script>function toggleCodeBlock(codeBlockId, expandBtnId, collapseBtnId) {
+  const codeBlock = document.getElementById(codeBlockId);
+  const expandBtn = document.getElementById(expandBtnId);
+  const collapseBtn = document.getElementById(collapseBtnId);
+
+  codeBlock.classList.toggle('hidden');
+  expandBtn.classList.toggle('hidden');
+  collapseBtn.classList.toggle('hidden');
+}</script></body></html>

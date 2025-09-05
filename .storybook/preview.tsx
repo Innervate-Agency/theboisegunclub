@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Preview } from '@storybook/nextjs-vite'
 import { Rajdhani, Noto_Sans, Noto_Serif } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
@@ -80,7 +81,9 @@ const preview: Preview = {
 
       return (
         <div className={`${rajdhani.variable} ${notoSans.variable} ${notoSerif.variable} font-noto-sans antialiased ${themeClass}`}>
-          <Story />
+          <div className="min-h-screen bg-background text-foreground">
+            <Story />
+          </div>
         </div>
       );
     },

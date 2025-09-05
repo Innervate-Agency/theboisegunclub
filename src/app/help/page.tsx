@@ -185,7 +185,7 @@ export default function HelpPage() {
                     <CardHeader className="pb-base">
                       <div className="flex items-center justify-between mb-sm">
                         <Icon className="h-6 w-6 text-rusty-orange group-hover:text-rusty-orange/80 transition-colors" />
-                        <Badge variant="outline" className="text-xs">
+                        <Badge variant="status-info" className="text-xs">
                           {category.category}
                         </Badge>
                       </div>

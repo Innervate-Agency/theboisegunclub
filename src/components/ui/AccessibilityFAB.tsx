@@ -224,7 +224,7 @@ export default function AccessibilityFAB({
                 <MinusIcon className="size-4" />
               </Button>
               <div className="flex-1 text-center">
-                <Badge variant="outline" className="capitalize">
+                <Badge variant="status-info" className="capitalize">
                   {fontSize}
                 </Badge>
               </div>

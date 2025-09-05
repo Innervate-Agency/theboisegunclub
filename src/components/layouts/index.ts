@@ -21,7 +21,7 @@ export {
   StatsSection 
 } from './compound-components/SectionContainer'
 
-// Page Layouts
+// Page Layouts (Legacy)
 export { 
   HomePageLayout, 
   HomePageLayoutSimple 
@@ -36,10 +36,49 @@ export {
   BuySellPageLayout
 } from './page-layouts/StandardPage.layout'
 
+// Enhanced Page Templates (v2) - Eliminates 86+ SiteNavigation/SiteFooter imports
+export {
+  PageTemplate,
+  StandardPage,
+  HeroPage,
+  SidebarPage,
+  ArticlePage,
+  DashboardPage,
+  MinimalPage,
+  type PageTheme,
+  type PageLayout,
+  type PageTemplateProps
+} from './templates/PageTemplates'
+
 /**
  * Usage Examples:
  * 
- * // Simple page with layout system
+ * // V2 Enhanced Templates (RECOMMENDED - eliminates nav/footer boilerplate)
+ * import { StandardPage, ArticlePage } from '@/components/layouts'
+ * 
+ * export default function MyPage() {
+ *   return (
+ *     <StandardPage theme="content" currentPage="my-page">
+ *       <MyContentComponent />
+ *     </StandardPage>
+ *   )
+ * }
+ * 
+ * export default function MyArticle() {
+ *   return (
+ *     <ArticlePage 
+ *       theme="content" 
+ *       currentPage="articles"
+ *       title="My Article"
+ *       author="John Doe"
+ *       publishDate="2024-01-01"
+ *     >
+ *       <ArticleContent />
+ *     </ArticlePage>
+ *   )
+ * }
+ * 
+ * // Legacy Layout System (still supported)
  * import { PageContainerWithContext, ContentSection } from '@/components/layouts'
  * 
  * export default function MyPage() {
@@ -52,20 +91,8 @@ export {
  *   )
  * }
  * 
- * // Complex page with dedicated layout
- * import { HomePageLayout } from '@/components/layouts'
- * 
- * export default function HomePage() {
- *   return (
- *     <HomePageLayout
- *       hero={<Hero />}
- *       content={<Content />}
- *       // All styling handled by layout
- *     />
- *   )
- * }
- * 
  * Benefits:
+ * - V2 Templates: Eliminates 86+ duplicate nav/footer imports
  * - Prevents component style conflicts
  * - Enforces consistent theming
  * - Separates content from layout concerns

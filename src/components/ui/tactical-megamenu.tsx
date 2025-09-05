@@ -275,12 +275,12 @@ export function TacticalMegamenu({
                                       {item.label}
                                     </span>
                                     {item.isNew && (
-                                      <Badge variant="outline" className="text-xs bg-nav-events/20 text-nav-events border-nav-events/30">
+                                      <Badge variant="status-info" className="text-xs bg-nav-events/20 text-nav-events border-nav-events/30">
                                         New
                                       </Badge>
                                     )}
                                     {item.badge && !item.isNew && (
-                                      <Badge variant="outline" className="text-xs">
+                                      <Badge variant="status-info" className="text-xs">
                                         {item.badge}
                                       </Badge>
                                     )}

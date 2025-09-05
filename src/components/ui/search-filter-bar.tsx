@@ -86,7 +86,7 @@ export function SearchFilterBar({
                       }
                     >
                       {option.label}
-                      <Badge variant="outline" className="ml-xs">
+                      <Badge variant="status-info" className="ml-xs">
                         {option.count}
                       </Badge>
                     </Button>

@@ -198,7 +198,7 @@ export default function DetailPageTemplate({
                         </Badge>
                       ))}
                       {featured && (
-                        <Badge variant="outline" className="border-rusty-orange/50 text-rusty-orange">
+                        <Badge variant="status-info" className="border-rusty-orange/50 text-rusty-orange">
                           Featured
                         </Badge>
                       )}

@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { Badge } from "./badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./card"
-import { ArrowTopRightOnSquareIcon, BusinessTypeIcon, ClockIcon, ExternalLink, MapPinIcon, MapPinIcon, PhoneIcon, ShieldCheckIcon, StarIcon, UsersIcon, UsersIcon } from '@heroicons/react/24/outline'
+import { ArrowTopRightOnSquareIcon, BuildingOffice2Icon, ClockIcon, ExternalLink, MapPinIcon, MapPinIcon, PhoneIcon, ShieldCheckIcon, StarIcon, UsersIcon, UsersIcon } from '@heroicons/react/24/outline'
 
 const facilityCardVariants = cva(
   "group relative overflow-hidden transition-all duration-300 ease-out",
@@ -81,7 +81,7 @@ export default function FacilityCard({
     }
   }
 
-  const getBusinessTypeIcon = (type?: string) => {
+  const getBuildingOffice2Icon = (type?: string) => {
     switch (type?.toLowerCase()) {
       case 'gun shop':
       case 'gunshop':
@@ -137,7 +137,7 @@ export default function FacilityCard({
               </div>
             ) : (
               <div className="w-12 h-12 bg-primary/10 rounded-sm flex items-center justify-center shadow-present">
-                {getBusinessTypeIcon(businessType)}
+                {getBuildingOffice2Icon(businessType)}
               </div>
             )}
           </div>

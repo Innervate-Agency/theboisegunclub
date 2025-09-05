@@ -429,7 +429,7 @@ export function BlogDetail({
             <div className="space-y-md mb-lg">
               {/* Category & Meta */}
               <div className="flex items-center gap-base">
-                <Badge variant="outline" className="font-rajdhani font-bold">
+                <Badge variant="status-info" className="font-rajdhani font-bold">
                   {article.category}
                 </Badge>
                 <div className="flex items-center gap-base text-body-sm text-muted-foreground">

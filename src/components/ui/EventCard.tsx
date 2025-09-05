@@ -10,7 +10,7 @@ import { Button } from "./button"
 import { SmartEventBadges } from "./smart-event-badges"
 import { EventCardTexture, CompetitionCardTexture, TexturedBackground } from "./textured-background"
 // Heroicons - Updated from Phosphor for consistency
-import { ArchiveBoxIcon, BoltIcon, CalendarDaysIcon, CategoryIcon, ClockIcon, CursorArrowRaysIcon, EventTypeIcon, GiftIcon, MapPinIcon, PhotoIcon, PlusCircleIcon, ShareIcon, SparklesIcon, StarIcon, TicketIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { ArchiveBoxIcon, BoltIcon, CalendarDaysIcon, Squares2X2Icon, ClockIcon, CursorArrowRaysIcon, TagIcon, GiftIcon, MapPinIcon, PhotoIcon, PlusCircleIcon, ShareIcon, SparklesIcon, StarIcon, TicketIcon, TrophyIcon, UsersIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image'
 
 const eventCardVariants = cva(
@@ -140,7 +140,7 @@ export function EventCard({
   }
   
   // Get small contextual icon for gradient overlay
-  const getEventTypeIcon = (type: string) => {
+  const getTagIcon = (type: string) => {
     const iconClass = "size-8 text-white/80 relative z-10"
     switch (type) {
       case 'Competition': 
@@ -150,7 +150,7 @@ export function EventCard({
       case 'Expo': 
         return <StarIcon className={iconClass} />
       case 'Charity': 
-        return <Medal className={iconClass} />
+        return <TrophyIcon className={iconClass} />
       case 'Social': 
         return <UsersIcon className={iconClass} />
       case 'Demo': 
@@ -184,7 +184,7 @@ export function EventCard({
       <Card
         variant="tactical-events"
         tacticalTheme="events"
-        showCategoryIcon={true}
+        showSquares2X2Icon={true}
         category={eventType}
         className={cn(
           eventCardVariants({ featured, size }), 

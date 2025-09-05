@@ -119,7 +119,7 @@ export function ShooterProfileTemplate({
                     {profile.name}
                   </h1>
                   {isPublic && (
-                    <Badge variant="outline" size="sm">
+                    <Badge variant="status-info" size="sm">
                       <ShieldCheckIcon weight="bold" className="size-3 mr-xs" />
                       Public Profile
                     </Badge>
@@ -344,7 +344,7 @@ export function ShooterProfileTemplate({
                         <div className="text-body-sm font-medium text-card-foreground mb-xs">
                           Secondary Division
                         </div>
-                        <Badge variant="outline">{profile.preferences.secondaryDivision}</Badge>
+                        <Badge variant="status-info">{profile.preferences.secondaryDivision}</Badge>
                       </div>
                     )}
                     <div>

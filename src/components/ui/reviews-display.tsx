@@ -87,7 +87,7 @@ export function ReviewsDisplay({
           </div>
           
           <div className="flex items-center justify-center gap-xs">
-            <Badge variant="outline" size="sm">
+            <Badge variant="status-info" size="sm">
               <ShieldCheckIcon className="size-3 mr-xs" />
               Verified Google Reviews
             </Badge>

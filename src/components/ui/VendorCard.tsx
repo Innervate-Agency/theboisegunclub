@@ -241,7 +241,7 @@ export function VendorCard({
         {/* Smart Badges - Verification and Specialties */}
         <div className="flex flex-wrap gap-xs">
           {isVerified && (
-            <Badge variant="outline" size="sm">
+            <Badge variant="status-info" size="sm">
               <ShieldCheckIcon className="w-3 h-3 mr-xs" />
               Verified
             </Badge>

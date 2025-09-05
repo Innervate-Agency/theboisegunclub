@@ -57,12 +57,12 @@ export function BuySellDealSection() {
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-sm">
                   <BanknotesIcon className="h-5 w-5 text-warm-stone" />
-                  <Badge variant="warm-stone" size="sm">
+                  <Badge variant="buysell-featured" size="sm">
                     Deal
                   </Badge>
                 </div>
                 {deal.verified && (
-                  <Badge variant="sagebrush-green" size="sm">
+                  <Badge variant="buysell-sale" size="sm">
                     Verified
                   </Badge>
                 )}

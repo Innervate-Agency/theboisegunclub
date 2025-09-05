@@ -912,7 +912,7 @@ export const IndustryMegamenu = React.memo(function IndustryMegamenu({
                                 {result.title}
                               </span>
                               {result.badge && (
-                                <Badge variant="outline" className="text-xs">
+                                <Badge variant="status-info" className="text-xs">
                                   {result.badge}
                                 </Badge>
                               )}
@@ -1056,7 +1056,7 @@ export const IndustryMegamenu = React.memo(function IndustryMegamenu({
                                       <ArrowRightIcon className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 group-hover:translate-x-0.5" />
                                     </Link>
                                     {category.badge && (
-                                      <Badge variant="outline" className="text-xs">
+                                      <Badge variant="status-info" className="text-xs">
                                         {category.badge}
                                       </Badge>
                                     )}
@@ -1079,12 +1079,12 @@ export const IndustryMegamenu = React.memo(function IndustryMegamenu({
                                               {item.title}
                                             </span>
                                             {item.isNew && (
-                                              <Badge variant="outline" className={`text-xs bg-${currentSection.colorClass}/20 text-${currentSection.colorClass} border-${currentSection.colorClass}/30`}>
+                                              <Badge variant="status-info" className={`text-xs bg-${currentSection.colorClass}/20 text-${currentSection.colorClass} border-${currentSection.colorClass}/30`}>
                                                 New
                                               </Badge>
                                             )}
                                             {item.badge && !item.isNew && (
-                                              <Badge variant="outline" className="text-xs">
+                                              <Badge variant="status-info" className="text-xs">
                                                 {item.badge}
                                               </Badge>
                                             )}

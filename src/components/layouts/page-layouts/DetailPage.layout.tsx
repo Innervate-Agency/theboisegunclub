@@ -64,7 +64,7 @@ export function DetailPageLayout({
     <PageContainerWithContext 
       theme={theme}
       navigation={<SiteNavigation sticky variant="premium" />}
-      footer={<SiteFooter currentPage={currentPage} />}
+      footer={<SiteFooter currentPage={currentPage as 'home' | 'events' | 'directory' | 'armory' | 'intel' | 'buysell' | 'forums' | 'training' | 'guides'} />}
       className={className}
     >
       {/* Detail Hero Section */}

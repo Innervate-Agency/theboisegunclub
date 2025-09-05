@@ -141,7 +141,7 @@ export default function LocationDetailTemplate({
                 <Badge className={`bg-nav-intel/20 text-nav-intel border-nav-intel/30`}>
                   {category}
                 </Badge>
-                <Badge variant="outline" className={getDifficultyColor(difficulty)}>
+                <Badge variant="status-info" className={getDifficultyColor(difficulty)}>
                   <DifficultyIcon className="h-3 w-3 mr-xs" />
                   {difficulty}
                 </Badge>

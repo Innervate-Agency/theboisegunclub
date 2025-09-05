@@ -62,7 +62,7 @@ export function ArticlePageLayout({
     <PageContainerWithContext 
       theme={theme}
       navigation={<SiteNavigation sticky variant="premium" />}
-      footer={<SiteFooter currentPage={sectionPath.replace('/', '')} />}
+      footer={<SiteFooter currentPage={sectionPath.replace('/', '') as 'home' | 'events' | 'directory' | 'armory' | 'intel' | 'buysell' | 'forums' | 'training' | 'guides'} />}
       className={className}
     >
       {/* Article Hero Section */}

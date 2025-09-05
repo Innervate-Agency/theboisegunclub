@@ -754,7 +754,7 @@ export function DirectoryPageStandardized() {
             {/* Title and Subtitle - very tight spacing */}
             <div className="space-y-0">
               <h1 className="font-rajdhani text-3xl md:text-5xl font-bold text-white leading-none">
-                IDAHO FIREARMS BUSINESS DIRECTORY
+                Idaho Firearms Business Directory
               </h1>
               <h2 className="font-rajdhani text-lg md:text-xl font-medium text-white/80 leading-none mt-1">
                 treasure valley's complete gun shop, range & service guide
@@ -879,8 +879,6 @@ export function DirectoryPageStandardized() {
       {/* Directory Ticker - Live business updates */}
       <DirectoryTicker />
       
-      {/* Directory Content Section - Unified Layout with cards left, content right */}
-      <ContentBridgeSection {...directoryContentBridge} />
       
       {/* Main Content Area - Full Width Amazon Style */}
       <section className="py-4xl bg-background/50">
@@ -891,7 +889,7 @@ export function DirectoryPageStandardized() {
             <aside className="hidden lg:block w-80 xl:w-96 flex-shrink-0">
               <div className="bg-muted/10 p-lg rounded-xs border border-border/50 space-y-lg">
                 <div className="space-y-lg">
-                  <Badge variant="outline" size="default">
+                  <Badge size="md">
                     Business Directory
                   </Badge>
                   <div>
@@ -970,7 +968,7 @@ export function DirectoryPageStandardized() {
                       })}
                       {tab.label}
                       {tab.count && (
-                        <Badge variant="outline" size="sm" className="ml-xs">
+                        <Badge variant="directory-business" size="sm" className="ml-xs">
                           {tab.count}
                         </Badge>
                       )}
@@ -1003,7 +1001,7 @@ export function DirectoryPageStandardized() {
                     <FunnelIcon className="size-4" />
                     Filters
                     {getActiveFilterCount() > 0 && (
-                      <Badge variant="outline" className="ml-xs bg-nav-directory/20 text-nav-directory border-nav-directory/30 text-xs">
+                      <Badge variant="directory-business" className="ml-xs bg-nav-directory/20 text-nav-directory border-nav-directory/30 text-xs">
                         {getActiveFilterCount()}
                       </Badge>
                     )}
@@ -1074,6 +1072,9 @@ export function DirectoryPageStandardized() {
           </div>
         </div>
       </section>
+
+      {/* Directory Content Section - Unified Layout with cards left, content right */}
+      <ContentBridgeSection {...directoryContentBridge} />
     </>
   )
 }
