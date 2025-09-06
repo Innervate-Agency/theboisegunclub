@@ -21,7 +21,7 @@ import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { DirectoryStatsGrid } from '@/components/ui/directory-stats-grid'
 import { ActivityFeedCard } from '@/components/ui/activity-feed-card'
-import { BlogList } from '@/components/ui/blog-article'
+import { UnifiedArmoryArticleCard } from '@/components/ui/unified-armory-article-card'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { ContentBridgeSection } from '@/components/ui/content-bridge-section'
 import { armoryContentBridge } from '@/lib/content-bridge-armory'
@@ -195,7 +195,7 @@ export function ArmoryPageStandardized() {
     items: armoryArticles,
     initialTab: 'all',
     initialSortBy: 'date',
-    initialViewMode: 'grid',
+    initialViewMode: 'waterfall',
     initialItemsPerPage: 12,
     perPageOptions: [8, 12, 24, 48],
     enableInfiniteScroll: false,
@@ -440,9 +440,6 @@ export function ArmoryPageStandardized() {
       
       {/* Armory Ticker - TODO: Create armory-specific ticker component */}
       
-      {/* Armory Content Section - Unified Layout with cards left, content right */}
-      <ContentBridgeSection {...armoryContentBridge} />
-
       {/* Main Content Area */}
       <section className="py-mobile-2xl sm:py-4xl bg-background/50">
         <div className="w-full px-mobile-sm sm:px-md md:px-lg lg:px-xl xl:px-2xl container-mobile">
@@ -579,13 +576,10 @@ export function ArmoryPageStandardized() {
                   <div className={filters.getGridClassName()}>
                     {filters.paginatedItems.length > 0 ? (
                       filters.paginatedItems.map((article, index) => (
-                        <BlogList 
+                        <UnifiedArmoryArticleCard 
                           key={`${article.title}-${index}`}
-                          articles={[{
-                            ...article,
-                            sectionPath: "/armory"
-                          }]}
-                          variant="grid"
+                          {...article}
+                          viewMode={filters.viewMode}
                         />
                       ))
                     ) : (
@@ -619,6 +613,52 @@ export function ArmoryPageStandardized() {
                 enableKeyboardNavigation={true}
               />
             </main>
+          </div>
+        </div>
+      </section>
+
+      {/* Armory Content Section - Unified Layout with cards left, content right */}
+      <ContentBridgeSection {...armoryContentBridge} />
+
+      {/* Learn More Section - Bottom CTA */}
+      <section className="py-4xl bg-gradient-to-br from-nav-armory/10 to-nav-armory/5">
+        <div className="container mx-auto max-w-site px-lg text-center">
+          <div className="max-w-2xl mx-auto space-y-lg">
+            <div className="space-y-base">
+              <div className="flex items-center justify-center gap-xs">
+                <ScaleIcon className="h-6 w-6 text-nav-armory" />
+                <h2 className="font-rajdhani text-heading-lg font-bold text-card-foreground">
+                  Master Idaho Firearms Knowledge
+                </h2>
+              </div>
+              <p className="text-body-base text-muted-foreground">
+                From legal compliance to equipment reviews, our comprehensive knowledge base helps you make informed decisions about firearms in Idaho.
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-base justify-center items-center">
+              <Button 
+                size="lg"
+                className="bg-nav-armory hover:bg-nav-armory/90 text-white font-rajdhani font-bold min-w-[200px]"
+              >
+                <BookOpenIcon className="h-5 w-5 mr-xs" />
+                Browse Articles
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-nav-armory text-nav-armory hover:bg-nav-armory hover:text-white font-rajdhani font-bold min-w-[200px]"
+              >
+                <PlusIcon className="h-5 w-5 mr-xs" />
+                Submit Article
+              </Button>
+            </div>
+            
+            <div className="pt-base border-t border-border/50">
+              <p className="text-sm text-muted-foreground">
+                Over <span className="font-bold text-nav-armory">200+ expert articles</span> covering Idaho firearms topics
+              </p>
+            </div>
           </div>
         </div>
       </section>

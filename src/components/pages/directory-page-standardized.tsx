@@ -403,7 +403,7 @@ export function DirectoryPageStandardized() {
     items: directoryListings,
     initialTab: 'all',
     initialSortBy: 'featured',
-    initialViewMode: 'grid',
+    initialViewMode: 'waterfall',
     initialItemsPerPage: 12,
     perPageOptions: [8, 12, 24, 48],
     enableInfiniteScroll: false,
@@ -1075,6 +1075,49 @@ export function DirectoryPageStandardized() {
 
       {/* Directory Content Section - Unified Layout with cards left, content right */}
       <ContentBridgeSection {...directoryContentBridge} />
+
+      {/* Learn More Section - Bottom CTA */}
+      <section className="py-4xl bg-gradient-to-br from-nav-directory/10 to-nav-directory/5">
+        <div className="container mx-auto max-w-site px-lg text-center">
+          <div className="max-w-2xl mx-auto space-y-lg">
+            <div className="space-y-base">
+              <div className="flex items-center justify-center gap-xs">
+                <BuildingStorefrontIcon className="h-6 w-6 text-nav-directory" />
+                <h2 className="font-rajdhani text-heading-lg font-bold text-card-foreground">
+                  Find Your Local FFL
+                </h2>
+              </div>
+              <p className="text-body-base text-muted-foreground">
+                Connect with Idaho's verified firearms dealers, shooting ranges, and gunsmiths. Our directory features real businesses with authentic reviews and verified contact information.
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-base justify-center items-center">
+              <Button 
+                size="lg"
+                className="bg-nav-directory hover:bg-nav-directory/90 text-white font-rajdhani font-bold min-w-[200px]"
+              >
+                <MapPinIcon className="h-5 w-5 mr-xs" />
+                Explore Directory
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-nav-directory text-nav-directory hover:bg-nav-directory hover:text-white font-rajdhani font-bold min-w-[200px]"
+              >
+                <PlusIcon className="h-5 w-5 mr-xs" />
+                List Your Business
+              </Button>
+            </div>
+            
+            <div className="pt-base border-t border-border/50">
+              <p className="text-sm text-muted-foreground">
+                Over <span className="font-bold text-nav-directory">594 verified FFLs</span> across Idaho
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

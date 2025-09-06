@@ -17,32 +17,32 @@ import { CurrencyDollarIcon, MapPinIcon, ClockIcon, TagIcon, ShoppingBagIcon } f
 export interface UnifiedBuySellCardProps {
   title: string
   category: string
-  condition: 'New' | 'Like New' | 'Good' | 'Fair' | 'For Parts'
-  price: number
-  originalPrice?: number
-  seller: string
+  condition: 'New' | 'Used' | 'Refurbished'
+  salePrice: number
+  originalPrice: number
+  business: string
   location: string
-  postedDate: string
-  availability: 'Available' | 'Pending' | 'Sold'
+  expiresAt?: string
+  availability: 'In Stock' | 'Limited' | 'Last Few'
   description?: string
   manufacturer?: string
   model?: string
   expires?: string
   slug?: string
   href?: string
-  viewMode?: 'grid' | 'dense' | 'card' | 'compact' | 'list' | 'table'
+  viewMode?: 'waterfall' | 'grid' | 'list' | 'compact' | 'table'
 }
 
 export function UnifiedBuySellCard({
   title,
   category,
   condition,
-  price,
+  salePrice,
   originalPrice,
-  seller,
+  business,
   location,
-  postedDate,
-  availability = 'Available',
+  expiresAt,
+  availability = 'In Stock',
   description,
   manufacturer,
   model,
@@ -98,8 +98,8 @@ export function UnifiedBuySellCard({
   }
   
   // Calculate discount if original price exists
-  const discount = originalPrice && originalPrice > price 
-    ? Math.round(((originalPrice - price) / originalPrice) * 100)
+  const discount = originalPrice && originalPrice > salePrice 
+    ? Math.round(((originalPrice - salePrice) / originalPrice) * 100)
     : 0
   
   // Price info for hero section
@@ -108,7 +108,7 @@ export function UnifiedBuySellCard({
       <div className="bg-black/40 backdrop-blur-sm rounded-xs p-sm border border-white/20">
         <div className="text-center">
           <div className="font-rajdhani font-bold text-lg text-white leading-none">
-            ${price.toLocaleString()}
+            ${salePrice?.toLocaleString() || '0'}
           </div>
           {discount > 0 && (
             <div className="text-xs text-green-400 font-bold mt-xs">
@@ -117,7 +117,7 @@ export function UnifiedBuySellCard({
           )}
           {originalPrice && discount > 0 && (
             <div className="text-xs text-white/70 line-through">
-              ${originalPrice.toLocaleString()}
+              ${originalPrice?.toLocaleString() || '0'}
             </div>
           )}
           <div className="font-rajdhani text-xs text-white/90 mt-xs">
@@ -128,8 +128,8 @@ export function UnifiedBuySellCard({
     </div>
   )
   
-  // Calculate days since posted
-  const daysSincePosted = Math.floor((Date.now() - new Date(postedDate).getTime()) / (1000 * 60 * 60 * 24))
+  // Get seller/business info
+  const businessName = business || 'Unknown Seller'
   
   return (
     <UnifiedGalleryCard
@@ -160,8 +160,8 @@ export function UnifiedBuySellCard({
       metadata={[
         ...(manufacturer && model ? [{ icon: TagIcon, label: "Model", value: `${manufacturer} ${model}` }] : []),
         { icon: MapPinIcon, label: "Location", value: location },
-        { icon: ClockIcon, label: "Posted", value: `${daysSincePosted} days ago` },
-        { icon: CurrencyDollarIcon, label: "Price", value: `$${price.toLocaleString()}` }
+        { icon: ClockIcon, label: "Seller", value: businessName },
+        { icon: CurrencyDollarIcon, label: "Price", value: `$${salePrice?.toLocaleString() || '0'}` }
       ]}
       primaryAction={{
         label: "View Listing",

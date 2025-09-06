@@ -10,155 +10,25 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { BoltIcon, CheckCircleIcon, ClockIcon, CursorArrowRaysIcon, ShieldCheckIcon, StarIcon, TrophyIcon } from '@heroicons/react/24/outline';
+import { CheckCircleIcon, ClockIcon, StarIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof Card> = {
   title: 'Design System/Atoms/Card',
   component: Card,
   parameters: {
     layout: 'padded',
-    docs: {
-      description: {
-        component: `
-# Card - TBGC Design System Foundation
-
-The **Card** component is a foundational element of the TBGC design system, featuring strategic restraint, fire gradient animations, and comprehensive theming with the Idaho Firearms Heritage palette.
-
-## Key Features
-- **Semantic Shadow Hierarchy** - 8-level Stripe-inspired depth system (ghost → whisper → present → elevated → prominent → commanding → hero → modal)
-- **Interactive Progressions** - each shadow level steps up logically on hover for clear affordance
-- **FireIcon gradient animations** (copper/brass, blue, green, red variants using Idaho palette)
-- **Windows 11 Mica glass effects** with backdrop blur and elevated shadows
-- **Theme-aware styling** for light/dark modes with tactical undertones
-
-## Shadow Philosophy
-- **Present/Elevated**: Standard content baseline (replaces old flat/md shadows)
-- **Prominent/Commanding**: Important content demanding attention (premium/fire variants)
-- **Hero**: Maximum impact for critical elements (fire variants on hover)
-- **Ghost/Whisper**: Minimal presence for secondary content (subtle/outlined variants)
-
-## Semantic Depth System
-Each variant uses purposeful shadow semantics - no more generic "shadow-lg" but contextual "shadow-commanding" that communicates the element's importance and interactive affordance.
-        `
-      }
-    }
   },
-  tags: ['autodocs', 'stable', 'display', 'atom', 'foundation'],
+  tags: ['autodocs'],
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'elevated', 'interactive', 'outlined', 'subtle', 'premium', 'glass', 'fire', 'fire-blue', 'fire-green', 'fire-red'],
-      description: 'Card visual style variant'
-    },
-    size: {
-      control: 'select',
-      options: ['sm', 'default', 'lg'],
-      description: 'Card padding size (handled by subcomponents)'
+      options: ['default', 'elevated', 'interactive', 'outlined', 'subtle', 'glass', 'fire', 'fire-blue'],
     },
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-// ================== SEMANTIC SHADOW SHOWCASE ==================
-
-export const SemanticShadowHierarchy: Story = {
-  name: "Semantic Shadow System",
-  render: () => (
-    <div className="w-full max-w-6xl space-y-lg">
-      <div className="space-y-base">
-        <h2 className="text-display-md font-rajdhani font-bold text-card-foreground">8-Level Semantic Shadow Hierarchy</h2>
-        <p className="text-muted-foreground">
-          Stripe-inspired depth system that communicates importance and interactive affordance through purposeful shadow semantics. 
-          Hover each card to see the sophisticated shadow progressions.
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
-        <Card variant="ghost" className="w-full">
-          <CardHeader>
-            <CardTitle className="text-body-lg">Ghost → Whisper</CardTitle>
-            <CardDescription>
-              Minimal presence for secondary content
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Badge variant="outline" className="mb-xs">Subtle</Badge>
-            <p className="text-body-sm">
-              Used for background elements and secondary information.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card variant="outline" className="w-full">
-          <CardHeader>
-            <CardTitle className="text-body-lg">Present → Elevated</CardTitle>
-            <CardDescription>
-              Standard content baseline
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Badge variant="outline" className="mb-xs">Default</Badge>
-            <p className="text-body-sm">
-              The foundation for most content cards with established presence.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card variant="default" className="w-full">
-          <CardHeader>
-            <CardTitle className="text-body-lg">Prominent → Commanding</CardTitle>
-            <CardDescription>
-              Important content demanding attention
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Badge variant="default" className="mb-xs">Premium</Badge>
-            <p className="text-body-sm">
-              Enhanced cards with tactical copper accents and strategic depth.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card variant="destructive" className="w-full">
-          <CardHeader>
-            <CardTitle className="text-body-lg">Commanding → Hero</CardTitle>
-            <CardDescription>
-              Maximum impact for critical elements
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Badge variant="default" className="mb-xs">FireIcon</Badge>
-            <p className="text-body-sm">
-              Hero-level presence with tactical gradient animations.
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      <div className="space-y-base pt-lg border-t border-border">
-        <h3 className="text-display-sm font-rajdhani font-bold text-card-foreground">Interactive Shadow Progressions</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-          <div className="space-y-xs">
-            <h4 className="font-rajdhani font-semibold text-card-foreground">Baseline Content</h4>
-            <p className="text-caption text-muted-foreground">shadow-present → hover:shadow-elevated</p>
-          </div>
-          <div className="space-y-xs">
-            <h4 className="font-rajdhani font-semibold text-card-foreground">Important Features</h4>
-            <p className="text-caption text-muted-foreground">shadow-prominent → hover:shadow-commanding</p>
-          </div>
-          <div className="space-y-xs">
-            <h4 className="font-rajdhani font-semibold text-card-foreground">Hero Elements</h4>
-            <p className="text-caption text-muted-foreground">shadow-commanding → hover:shadow-hero</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  ),
-};
-
-// ================== BASIC VARIANTS SHOWCASE ==================
+type Story = StoryObj<typeof Card>;
 
 export const Default: Story = {
   args: {
@@ -169,13 +39,33 @@ export const Default: Story = {
       <CardHeader>
         <CardTitle>Default Card</CardTitle>
         <CardDescription>
-          Clean, professional styling with strategic restraint
+          This is a default card with standard styling.
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p>
-          This is the standard card variant for most content. It uses Idaho palette colors with strategic restraint design principles.
-        </p>
+        <p>Card content goes here with any components or text you need.</p>
+      </CardContent>
+    </Card>
+  ),
+};
+
+export const Elevated: Story = {
+  args: {
+    variant: 'elevated',
+  },
+  render: (args) => (
+    <Card {...args} className="w-80">
+      <CardHeader>
+        <CardTitle>Elevated Card</CardTitle>
+        <CardDescription>
+          This card has enhanced visual presence and hover effects.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="flex items-center gap-2">
+          <CheckCircleIcon className="h-4 w-4 text-accent" />
+          <span>Enhanced presence</span>
+        </div>
       </CardContent>
     </Card>
   ),
@@ -190,293 +80,150 @@ export const Interactive: Story = {
       <CardHeader>
         <CardTitle>Interactive Card</CardTitle>
         <CardDescription>
-          Hover me to see the interactive feedback
+          This card provides clear clickable affordance.
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p >
-          Interactive cards provide visual feedback when hovered, perfect for clickable content.
-        </p>
+        <p>Click me to see the interactive hover effects!</p>
+      </CardContent>
+      <CardFooter>
+        <Button variant="default" size="sm">
+          Action Button
+        </Button>
+      </CardFooter>
+    </Card>
+  ),
+};
+
+export const Outlined: Story = {
+  args: {
+    variant: 'outlined',
+  },
+  render: (args) => (
+    <Card {...args} className="w-80">
+      <CardHeader>
+        <CardTitle>Outlined Card</CardTitle>
+        <CardDescription>
+          Minimal outlined variant with subtle styling.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>Clean and minimal design approach.</p>
       </CardContent>
     </Card>
   ),
 };
 
-// ================== FIRE GRADIENT VARIANTS ==================
-
-export const FireVariants: Story = {
-  name: "FireIcon Gradient Animations",
-  render: () => (
-    <div className="w-full max-w-5xl space-y-lg">
-      <div className="space-y-base">
-        <h2 className="text-display-md font-rajdhani font-bold text-card-foreground">FireIcon Gradient System</h2>
-        <p >
-          Sophisticated gradient animations that "unfurl" on hover. Use sparingly for premium features.
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
-        <Card variant="destructive" className="w-full">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-xs">
-              <CursorArrowRaysIcon className="w-4 h-4" />
-              FireIcon Orange
-            </CardTitle>
-            <CardDescription>
-              Classic TBGC brand gradient
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Badge variant="default" className="mb-xs">Premium</Badge>
-            <p >
-              Copper to brass gradient animation
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card variant="default" className="w-full">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-xs">
-              <ShieldCheckIcon className="w-4 h-4" />
-              FireIcon Blue
-            </CardTitle>
-            <CardDescription>
-              Cool tactical theme
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Badge variant="secondary" className="mb-xs">Tactical</Badge>
-            <p >
-              Blue to green gradient animation
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card variant="fire-red" className="w-full">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-xs">
-              <BoltIcon className="w-4 h-4" />
-              FireIcon Purple
-            </CardTitle>
-            <CardDescription>
-              Elite membership tier
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Badge variant="default" className="mb-xs">Elite</Badge>
-            <p >
-              Purple to cobalt gradient animation
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card variant="secondary" className="w-full">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-xs">
-              <TrophyIcon className="w-4 h-4" />
-              FireIcon Green
-            </CardTitle>
-            <CardDescription>
-              Success and achievement
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Badge variant="secondary" className="mb-xs">Achievement</Badge>
-            <p >
-              Green variants gradient animation
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+export const Glass: Story = {
+  args: {
+    variant: 'glass',
+  },
+  render: (args) => (
+    <Card {...args} className="w-80">
+      <CardHeader>
+        <CardTitle>Glass Card</CardTitle>
+        <CardDescription>
+          Modern glassmorphism effect for content display.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-2">
+          <Badge variant="intel-verified">Verified</Badge>
+          <p>Glassmorphism styling with subtle transparency.</p>
+        </div>
+      </CardContent>
+    </Card>
   ),
 };
 
-// ================== SOPHISTICATED VARIANTS ==================
-
-export const AdvancedVariants: Story = {
-  name: "Advanced Card Variants",
-  render: () => (
-    <div className="w-full max-w-5xl space-y-lg">
-      <div className="space-y-base">
-        <h2 className="text-display-md font-rajdhani font-bold text-card-foreground">Advanced Styling Options</h2>
-        <p >
-          Premium, glass, and specialized variants for different use cases.
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
-        <Card variant="default" className="w-full">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-xs">
-              <StarIcon className="w-4 h-4" />
-              Premium Card
-            </CardTitle>
-            <CardDescription>
-              Enhanced with gradient accents
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-xs">
-              <Badge variant="default" shimmer>Premium Member</Badge>
-              <p >
-                Features subtle brand gradient overlay and bottom accent bar.
-              </p>
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button size="sm" variant="flat">Upgrade</Button>
-          </CardFooter>
-        </Card>
-
-        <Card variant="secondary" className="w-full">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-xs">
-              <BoltIcon className="w-4 h-4" />
-              Glass Card
-            </CardTitle>
-            <CardDescription>
-              Modern glassmorphism effect
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-xs">
-              <Badge variant="secondary">Mica Effect</Badge>
-              <p >
-                Windows 11-inspired mica glass with backdrop blur.
-              </p>
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button size="sm" variant="flat">Glass Button</Button>
-          </CardFooter>
-        </Card>
-
-        <Card variant="elevated" className="w-full">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-xs">
-              <CheckCircleIcon className="w-4 h-4" />
-              Elevated Card
-            </CardTitle>
-            <CardDescription>
-              Enhanced hover animations
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-xs">
-              <Badge variant="secondary">Available</Badge>
-              <p >
-                Lifts up on hover for prominent interactive feedback.
-              </p>
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button size="sm" variant="flat">Continue</Button>
-          </CardFooter>
-        </Card>
-      </div>
-    </div>
+export const Fire: Story = {
+  args: {
+    variant: 'fire',
+  },
+  render: (args) => (
+    <Card {...args} className="w-80">
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2">
+          <StarIcon className="h-5 w-5" />
+          Fire Gradient Card
+        </CardTitle>
+        <CardDescription>
+          Premium tactical gradient with copper/brass accent.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>Hover to see the fire gradient animation at the bottom.</p>
+      </CardContent>
+      <CardFooter>
+        <Button variant="fire">
+          Fire Action
+        </Button>
+      </CardFooter>
+    </Card>
   ),
 };
 
-// ================== BUSINESS CONTEXT DEMO ==================
+export const FireBlue: Story = {
+  args: {
+    variant: 'fire-blue',
+  },
+  render: (args) => (
+    <Card {...args} className="w-80">
+      <CardHeader>
+        <CardTitle>Blue Fire Card</CardTitle>
+        <CardDescription>
+          Cool tactical gradient with blue accent.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>Hover to see the blue gradient animation.</p>
+      </CardContent>
+      <CardFooter>
+        <Button variant="fire-blue">
+          Blue Action
+        </Button>
+      </CardFooter>
+    </Card>
+  ),
+};
 
-export const TBGCBusinessCards: Story = {
-  name: "TBGC Business Context",
-  render: () => (
-    <div className="w-full max-w-6xl space-y-lg">
-      <div className="space-y-base">
-        <h2 className="text-display-md font-rajdhani font-bold text-card-foreground">Treasure Valley Firearms Directory</h2>
-        <p >
-          Real-world application of the card component system in TBGC's business context.
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-        <Card variant="destructive" className="w-full">
-          <CardHeader>
-            <CardTitle>Boise Firearms Depot</CardTitle>
+export const WithComplexContent: Story = {
+  args: {
+    variant: 'elevated',
+  },
+  render: (args) => (
+    <Card {...args} className="w-96">
+      <CardHeader>
+        <div className="flex items-start justify-between">
+          <div>
+            <CardTitle>Training Session</CardTitle>
             <CardDescription>
-              Full-service firearms dealer & gunsmith
+              Advanced marksmanship training course
             </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-sm">
-              <div className="flex flex-wrap gap-xs">
-                <Badge variant="default" shimmer>Gold Member</Badge>
-                <Badge variant="secondary" icon={<CheckCircleIcon className="w-3 h-3" />}>Verified</Badge>
-              </div>
-              <p >
-                Specializing in tactical gear, custom builds, and professional gunsmithing services.
-              </p>
-              <div className="text-caption text-muted-foreground">
-                <p>📍 1234 State Street, Boise, ID</p>
-                <p>⭐ 4.8/5 (247 reviews)</p>
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button size="sm" variant="flat">Visit Store</Button>
-            <Button size="sm" variant="ghost">Reviews</Button>
-          </CardFooter>
-        </Card>
-
-        <Card variant="default" className="w-full">
-          <CardHeader>
-            <CardTitle>Eagle EyeIcon Range</CardTitle>
-            <CardDescription>
-              State-of-the-art indoor shooting facility
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-sm">
-              <div className="flex flex-wrap gap-xs">
-                <Badge variant="secondary" icon={<ShieldCheckIcon className="w-3 h-3" />}>Silver Member</Badge>
-                <Badge variant="secondary">Open Today</Badge>
-              </div>
-              <p >
-                25-lane climate-controlled range with tactical training courses.
-              </p>
-              <div className="text-caption text-muted-foreground">
-                <p>📍 5678 Eagle Road, Meridian, ID</p>
-                <p>🕒 Mon-Sat 9AM-9PM</p>
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button size="sm" variant="flat">Book Lane</Button>
-            <Button size="sm" variant="ghost">Classes</Button>
-          </CardFooter>
-        </Card>
-
-        <Card variant="outline" className="w-full">
-          <CardHeader>
-            <CardTitle>Twin Falls Tactical</CardTitle>
-            <CardDescription>
-              Training & equipment specialists
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-sm">
-              <div className="flex flex-wrap gap-xs">
-                <Badge variant="outline">Free Listing</Badge>
-                <Badge variant="destructive" icon={<ClockIcon className="w-3 h-3" />}>Updating Hours</Badge>
-              </div>
-              <p >
-                Professional tactical training and equipment for law enforcement.
-              </p>
-              <div className="text-caption text-muted-foreground">
-                <p>📍 Twin Falls, ID</p>
-                <p>📞 Contact for current hours</p>
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button size="sm" variant="flat">Contact</Button>
-            <Button size="sm" variant="ghost">InformationCircleIcon</Button>
-          </CardFooter>
-        </Card>
-      </div>
-    </div>
+          </div>
+          <Badge variant="events-training">Training</Badge>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-4">
+          <div className="flex items-center gap-2">
+            <ClockIcon className="h-4 w-4" />
+            <span className="text-sm">2 hours duration</span>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Comprehensive training covering safety protocols, accuracy improvement, 
+            and advanced shooting techniques.
+          </p>
+        </div>
+      </CardContent>
+      <CardFooter className="flex gap-2">
+        <Button variant="default" size="sm">
+          Register
+        </Button>
+        <Button variant="ghost" size="sm">
+          Learn More
+        </Button>
+      </CardFooter>
+    </Card>
   ),
 };

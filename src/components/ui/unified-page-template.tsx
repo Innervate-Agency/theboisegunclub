@@ -44,7 +44,7 @@ export interface SortOption {
   icon?: React.ComponentType<{ className?: string; weight?: string }>
 }
 
-export type ViewMode = 'grid' | 'list' | 'card' | 'dense'
+export type ViewMode = 'waterfall' | 'grid' | 'list' | 'compact' | 'table'
 
 export interface StatItem {
   icon: React.ComponentType<{ className?: string; weight?: string }>

@@ -32,9 +32,8 @@ const unifiedGalleryCardVariants = cva(
         forums: "bg-nav-forums/5 hover:bg-nav-forums/8"
       },
       viewMode: {
+        waterfall: "flex flex-col h-auto min-h-0 mb-lg break-inside-avoid",
         grid: "flex flex-col h-full min-h-full",
-        dense: "flex flex-col h-full min-h-full",
-        card: "flex flex-col h-full min-h-full",
         compact: "flex flex-row items-center gap-md p-md h-auto",
         list: "flex flex-row items-center gap-lg p-lg h-auto",
         table: "flex flex-row items-center gap-xl p-base h-auto"

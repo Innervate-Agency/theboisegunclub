@@ -17,7 +17,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import { BuySellDealCard } from '@/components/ui/buysell-deal-card'
+import { UnifiedBuySellCard } from '@/components/ui/unified-buysell-card'
 import { DirectoryTicker } from '@/components/ui/directory-ticker'
 import { ContentBridgeSection } from '@/components/ui/content-bridge-section'
 import { buysellContentBridge } from '@/lib/content-bridge-buysell'
@@ -338,7 +338,7 @@ export function BuySellPageStandardized() {
     items: buysellDeals,
     initialTab: 'all',
     initialSortBy: 'featured',
-    initialViewMode: 'grid',
+    initialViewMode: 'waterfall',
     initialItemsPerPage: 12,
     perPageOptions: [8, 12, 24, 48],
     enableInfiniteScroll: false,
@@ -843,10 +843,10 @@ export function BuySellPageStandardized() {
                   <div className={filters.getGridClassName()}>
                     {filters.paginatedItems.length > 0 ? (
                       filters.paginatedItems.map((deal, index) => (
-                        <BuySellDealCard
+                        <UnifiedBuySellCard
                           key={`${deal.title}-${index}`}
-                          deal={deal}
-                          className="transition-all duration-300 rounded-xs"
+                          {...deal}
+                          viewMode={filters.viewMode}
                         />
                       ))
                     ) : (
@@ -888,6 +888,49 @@ export function BuySellPageStandardized() {
 
       {/* Buy & Sell Content Section - Trust and Categories */}
       <ContentBridgeSection {...buysellContentBridge} />
+
+      {/* Learn More Section - Bottom CTA */}
+      <section className="py-4xl bg-gradient-to-br from-nav-buysell/10 to-nav-buysell/5">
+        <div className="container mx-auto max-w-site px-lg text-center">
+          <div className="max-w-2xl mx-auto space-y-lg">
+            <div className="space-y-base">
+              <div className="flex items-center justify-center gap-xs">
+                <ShoppingCartIcon className="h-6 w-6 text-nav-buysell" />
+                <h2 className="font-rajdhani text-heading-lg font-bold text-card-foreground">
+                  Ready to Buy or Sell?
+                </h2>
+              </div>
+              <p className="text-body-base text-muted-foreground">
+                Connect with Idaho's firearms community for safe, legal transactions. Find great deals on firearms, ammunition, and accessories from verified sellers.
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-base justify-center items-center">
+              <Button 
+                size="lg"
+                className="bg-nav-buysell hover:bg-nav-buysell/90 text-white font-rajdhani font-bold min-w-[200px]"
+              >
+                <MagnifyingGlassIcon className="h-5 w-5 mr-xs" />
+                Browse Deals
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-nav-buysell text-nav-buysell hover:bg-nav-buysell hover:text-white font-rajdhani font-bold min-w-[200px]"
+              >
+                <PlusIcon className="h-5 w-5 mr-xs" />
+                Post Listing
+              </Button>
+            </div>
+            
+            <div className="pt-base border-t border-border/50">
+              <p className="text-sm text-muted-foreground">
+                All transactions must comply with federal, state, and local laws
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Bottom Sections */}
       <div className="space-y-4xl mt-4xl">

@@ -12,7 +12,7 @@ import {
   DropdownMenuTrigger 
 } from './dropdown-menu'
 import { cn } from '@/lib/utils'
-import { ChevronDownIcon, FunnelIcon, ListBulletIcon, MagnifyingGlassIcon, RectangleGroupIcon, RectangleStackIcon, Squares2X2Icon, TableCellsIcon } from '@heroicons/react/24/outline';
+import { ArrowsUpDownIcon, ChevronDownIcon, FunnelIcon, ListBulletIcon, MagnifyingGlassIcon, RectangleGroupIcon, RectangleStackIcon, Squares2X2Icon, TableCellsIcon } from '@heroicons/react/24/outline';
 
 export interface FilterOption {
   id: string
@@ -34,7 +34,7 @@ export interface SortOption {
   icon?: React.ComponentType<{ className?: string; weight?: string }>
 }
 
-export type ViewMode = 'grid' | 'list' | 'card' | 'dense' | 'masonry' | 'compact' | 'magazine' | 'table'
+export type ViewMode = 'waterfall' | 'grid' | 'list' | 'compact' | 'table'
 
 export interface CardPageLayoutProps {
   // Page identity
@@ -268,76 +268,49 @@ export function CardPageLayout({
                   {/* Enhanced View Mode Toggle - Multiple Layouts */}
                   <div className="hidden sm:flex items-center border rounded-xs overflow-x-auto">
                     <Button
-                      variant={viewMode === 'compact' ? 'default' : 'ghost'}
+                      variant={viewMode === 'waterfall' ? 'default' : 'ghost'}
                       size="sm"
-                      onClick={() => onViewModeChange('compact')}
+                      onClick={() => onViewModeChange('waterfall')}
                       className="rounded-none border-none shadow-none"
-                      title="Compact - 4-6 items per row"
+                      title="Waterfall - Natural flow layout"
                     >
-                      <Squares2X2Icon className="size-4" />
-                    </Button>
-                    <Button
-                      variant={viewMode === 'dense' ? 'default' : 'ghost'}
-                      size="sm"
-                      onClick={() => onViewModeChange('dense')}
-                      className="rounded-none border-none shadow-none"
-                      title="Dense Grid - Maximum items"
-                    >
-                      <ListBulletIcon className="size-4" />
+                      <RectangleStackIcon className="size-4" />
                     </Button>
                     <Button
                       variant={viewMode === 'grid' ? 'default' : 'ghost'}
                       size="sm"
                       onClick={() => onViewModeChange('grid')}
                       className="rounded-none border-none shadow-none"
-                      title="Standard Grid"
+                      title="Grid - Equal height cards"
                     >
                       <Squares2X2Icon className="size-4" />
-                    </Button>
-                    <Button
-                      variant={viewMode === 'card' ? 'default' : 'ghost'}
-                      size="sm"
-                      onClick={() => onViewModeChange('card')}
-                      className="rounded-none border-none shadow-none"
-                      title="Large Cards"
-                    >
-                      <RectangleGroupIcon className="size-4" />
-                    </Button>
-                    <Button
-                      variant={viewMode === 'masonry' ? 'default' : 'ghost'}
-                      size="sm"
-                      onClick={() => onViewModeChange('masonry')}
-                      className="rounded-none border-none shadow-none"
-                      title="Masonry - Pinterest style"
-                    >
-                      <RectangleStackIcon className="size-4" />
-                    </Button>
-                    <Button
-                      variant={viewMode === 'magazine' ? 'default' : 'ghost'}
-                      size="sm"
-                      onClick={() => onViewModeChange('magazine')}
-                      className="rounded-none border-none shadow-none"
-                      title="Magazine - Mixed sizes"
-                    >
-                      <MagazineView className="size-4" />
-                    </Button>
-                    <Button
-                      variant={viewMode === 'table' ? 'default' : 'ghost'}
-                      size="sm"
-                      onClick={() => onViewModeChange('table')}
-                      className="rounded-none border-none shadow-none"
-                      title="Table - Detailed list"
-                    >
-                      <TableCellsIcon className="size-4" />
                     </Button>
                     <Button
                       variant={viewMode === 'list' ? 'default' : 'ghost'}
                       size="sm"
                       onClick={() => onViewModeChange('list')}
                       className="rounded-none border-none shadow-none"
-                      title="ListBulletIcon View"
+                      title="List - Compact rows"
                     >
                       <ListBulletIcon className="size-4" />
+                    </Button>
+                    <Button
+                      variant={viewMode === 'compact' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => onViewModeChange('compact')}
+                      className="rounded-none border-none shadow-none"
+                      title="Compact - Dense information"
+                    >
+                      <RectangleGroupIcon className="size-4" />
+                    </Button>
+                    <Button
+                      variant={viewMode === 'table' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => onViewModeChange('table')}
+                      className="rounded-none border-none shadow-none"
+                      title="Table - Data view"
+                    >
+                      <TableCellsIcon className="size-4" />
                     </Button>
                   </div>
 
@@ -345,7 +318,7 @@ export function CardPageLayout({
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="outline" className="gap-xs shadow-none rounded-xs">
-                        <SortAsc className="size-4" />
+                        <ArrowsUpDownIcon className="size-4" />
                         Sort by {sortOptions.find(s => s.id === activeSortId)?.label || 'Default'}
                         <ChevronDownIcon className="size-3" />
                       </Button>

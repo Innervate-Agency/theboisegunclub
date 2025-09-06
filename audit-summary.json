@@ -1,0 +1,941 @@
+{
+  "totalStories": 94,
+  "violations": [
+    {
+      "file": "Foundation/SpacingSystem.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 37,
+            "violation": "2px",
+            "text": "{ name: 'Micro', value: '--spacing-micro', px: '2px', usage: 'Fine details, border thickness' },"
+          },
+          {
+            "line": 38,
+            "violation": "8px",
+            "text": "{ name: 'XS', value: '--spacing-xs', px: '8px', usage: 'Small gaps, compact layouts' },"
+          },
+          {
+            "line": 39,
+            "violation": "12px",
+            "text": "{ name: 'SM', value: '--spacing-sm', px: '12px', usage: 'Default gaps, form spacing' },"
+          },
+          {
+            "line": 40,
+            "violation": "16px",
+            "text": "{ name: 'Base', value: '--spacing-base', px: '16px', usage: 'Card padding, button padding' },"
+          },
+          {
+            "line": 41,
+            "violation": "24px",
+            "text": "{ name: 'MD', value: '--spacing-md', px: '24px', usage: 'Section spacing, large gaps' },"
+          },
+          {
+            "line": 42,
+            "violation": "32px",
+            "text": "{ name: 'LG', value: '--spacing-lg', px: '32px', usage: 'Component separation' },"
+          },
+          {
+            "line": 43,
+            "violation": "48px",
+            "text": "{ name: 'XL', value: '--spacing-xl', px: '48px', usage: 'Major section spacing' },"
+          },
+          {
+            "line": 44,
+            "violation": "64px",
+            "text": "{ name: '2XL', value: '--spacing-2xl', px: '64px', usage: 'Hero section spacing' },"
+          },
+          {
+            "line": 45,
+            "violation": "96px",
+            "text": "{ name: '3XL', value: '--spacing-3xl', px: '96px', usage: 'Large hero spacing' },"
+          },
+          {
+            "line": 46,
+            "violation": "128px",
+            "text": "{ name: '4XL', value: '--spacing-4xl', px: '128px', usage: 'Maximum section spacing' },"
+          },
+          {
+            "line": 55,
+            "violation": "24px",
+            "text": "height: '24px',"
+          },
+          {
+            "line": 56,
+            "violation": "2px",
+            "text": "minWidth: '2px'"
+          }
+        ],
+        "themeViolations": [
+          {
+            "line": 76,
+            "violation": "inline styles",
+            "text": "<div className=\"bg-card border rounded-sm\" style={{ padding: 'var(--card-padding)' }}>"
+          },
+          {
+            "line": 137,
+            "violation": "inline styles",
+            "text": "style={{ height: 'var(--button-height-base)' }}`}"
+          }
+        ]
+      },
+      "violationCount": 14
+    },
+    {
+      "file": "Foundation/TypographyScale.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 94,
+            "violation": "12px",
+            "text": "{ name: 'XS', size: 'text-caption', responsive: 'text-responsive-xs', css: '--text-caption', px: '12px', usage: 'Captions, fine print' },"
+          },
+          {
+            "line": 95,
+            "violation": "14px",
+            "text": "{ name: 'SM', size: 'text-body-sm', responsive: 'text-responsive-sm', css: '--text-body-sm', px: '14px', usage: 'Small text, labels' },"
+          },
+          {
+            "line": 96,
+            "violation": "16px",
+            "text": "{ name: 'Base', size: 'text-base', responsive: 'text-responsive-base', css: '--text-base', px: '16px', usage: 'Body text, default' },"
+          },
+          {
+            "line": 97,
+            "violation": "18px",
+            "text": "{ name: 'LG', size: 'text-body-lg', responsive: 'text-responsive-lg', css: '--text-body-lg', px: '18px', usage: 'Large body text' },"
+          },
+          {
+            "line": 98,
+            "violation": "20px",
+            "text": "{ name: 'XL', size: 'text-display-sm', responsive: 'text-responsive-xl', css: '--text-display-sm', px: '20px', usage: 'Subheadings' },"
+          },
+          {
+            "line": 99,
+            "violation": "24px",
+            "text": "{ name: '2XL', size: 'text-display-md', responsive: 'text-responsive-2xl', css: '--text-display-md', px: '24px', usage: 'Section headings' },"
+          },
+          {
+            "line": 100,
+            "violation": "30px",
+            "text": "{ name: '3XL', size: 'text-3xl', responsive: 'text-responsive-3xl', css: '--text-3xl', px: '30px', usage: 'Page headings' },"
+          },
+          {
+            "line": 101,
+            "violation": "36px",
+            "text": "{ name: '4XL', size: 'text-4xl', responsive: 'text-responsive-4xl', css: '--text-4xl', px: '36px', usage: 'Hero headings' },"
+          },
+          {
+            "line": 153,
+            "violation": "12px",
+            "text": "<div>Small: --button-text-body-sm (12px)</div>"
+          },
+          {
+            "line": 154,
+            "violation": "14px",
+            "text": "<div>Default: --button-text-base (14px)</div>"
+          },
+          {
+            "line": 155,
+            "violation": "16px",
+            "text": "<div>Large: --button-text-body-lg (16px)</div>"
+          },
+          {
+            "line": 180,
+            "violation": "36px",
+            "text": "Uses <code>text-responsive-4xl</code> - scales from 36px mobile → 44px tablet → 48px desktop → 56px large desktop"
+          },
+          {
+            "line": 189,
+            "violation": "24px",
+            "text": "Uses <code>text-responsive-2xl</code> - scales from 24px mobile → 28px tablet → 32px desktop → 36px large desktop"
+          },
+          {
+            "line": 198,
+            "violation": "20px",
+            "text": "Uses <code>text-responsive-xl</code> - scales from 20px mobile → 22px tablet → 24px desktop → 26px large desktop"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 14
+    },
+    {
+      "file": "Foundation/DesignTokens.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 225,
+            "violation": "2px",
+            "text": "{ name: 'Micro', value: '2px', class: 'space-micro' },"
+          },
+          {
+            "line": 226,
+            "violation": "4px",
+            "text": "{ name: 'Tiny', value: '4px', class: 'space-tiny' },"
+          },
+          {
+            "line": 227,
+            "violation": "8px",
+            "text": "{ name: 'XS', value: '8px', class: 'space-xs' },"
+          },
+          {
+            "line": 228,
+            "violation": "12px",
+            "text": "{ name: 'SM', value: '12px', class: 'space-sm' },"
+          },
+          {
+            "line": 229,
+            "violation": "16px",
+            "text": "{ name: 'Base', value: '16px', class: 'space-base' },"
+          },
+          {
+            "line": 230,
+            "violation": "24px",
+            "text": "{ name: 'MD', value: '24px', class: 'space-md' },"
+          },
+          {
+            "line": 231,
+            "violation": "32px",
+            "text": "{ name: 'LG', value: '32px', class: 'space-lg' },"
+          },
+          {
+            "line": 232,
+            "violation": "48px",
+            "text": "{ name: 'XL', value: '48px', class: 'space-xl' },"
+          },
+          {
+            "line": 233,
+            "violation": "64px",
+            "text": "{ name: '2XL', value: '64px', class: 'space-2xl' },"
+          },
+          {
+            "line": 234,
+            "violation": "96px",
+            "text": "{ name: '3XL', value: '96px', class: 'space-3xl' },"
+          },
+          {
+            "line": 235,
+            "violation": "128px",
+            "text": "{ name: '4XL', value: '128px', class: 'space-4xl' },"
+          }
+        ],
+        "themeViolations": [
+          {
+            "line": 240,
+            "violation": "inline styles",
+            "text": "<div className={`bg-sandy-ochre h-5`} style={{ width: space.value }}></div>"
+          }
+        ]
+      },
+      "violationCount": 12
+    },
+    {
+      "file": "Pages/LandingPage.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 109,
+            "violation": "1px",
+            "text": "<Card className=\"shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg\">"
+          },
+          {
+            "line": 124,
+            "violation": "1px",
+            "text": "<Card className=\"shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sandy-ochre after:to-rusty-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg\">"
+          },
+          {
+            "line": 139,
+            "violation": "1px",
+            "text": "<Card className=\"shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-sandy-ochre after:to-rusty-orange after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg\">"
+          },
+          {
+            "line": 154,
+            "violation": "1px",
+            "text": "<Card className=\"shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-rusty-orange after:to-sandy-ochre after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg\">"
+          },
+          {
+            "line": 179,
+            "violation": "1px",
+            "text": "<Card className=\"shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-red after:to-ayu-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg\">"
+          },
+          {
+            "line": 197,
+            "violation": "1px",
+            "text": "<Card className=\"shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-slate-blue after:to-ayu-teal after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg\">"
+          },
+          {
+            "line": 215,
+            "violation": "1px",
+            "text": "<Card className=\"shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-green after:to-ayu-yellow after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg\">"
+          },
+          {
+            "line": 233,
+            "violation": "1px",
+            "text": "<Card className=\"shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-cobalt after:to-ayu-purple after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg\">"
+          },
+          {
+            "line": 251,
+            "violation": "1px",
+            "text": "<Card className=\"shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-purple after:to-ayu-red after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg\">"
+          },
+          {
+            "line": 269,
+            "violation": "1px",
+            "text": "<Card className=\"shadow-flat hover:shadow-elevated transition-stripe-normal group relative overflow-hidden after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-ayu-yellow after:to-slate-blue after:transition-all after:duration-300 after:ease-out hover:after:w-full after:rounded-b-lg\">"
+          },
+          {
+            "line": 294,
+            "violation": "1px",
+            "text": "<div className=\"bg-card rounded-xs p-xl shadow-sm max-w-4xl mx-auto relative overflow-hidden group after:absolute after:bottom-[-1px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-2 after:bg-gradient-to-r after:from-sagebrush-green after:to-sandy-ochre after:transition-all after:duration-500 after:ease-out hover:after:w-full after:rounded-b-lg\">"
+          },
+          {
+            "line": 391,
+            "violation": "1px",
+            "text": "<div className=\"absolute bottom-[-1px] left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-sandy-ochre to-rusty-orange transition-all duration-500 ease-out group-hover:w-full rounded-b-xl\"></div>"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 12
+    },
+    {
+      "file": "Components/Molecules/NavigationMenu.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 49,
+            "violation": "400px",
+            "text": "<div className=\"grid gap-sm p-md md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]\">"
+          },
+          {
+            "line": 88,
+            "violation": "400px",
+            "text": "<div className=\"grid w-[400px] gap-sm p-base md:w-[500px] md:grid-cols-2 lg:w-[600px]\">"
+          },
+          {
+            "line": 140,
+            "violation": "400px",
+            "text": "<div className=\"grid gap-sm p-md md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]\">"
+          },
+          {
+            "line": 184,
+            "violation": "400px",
+            "text": "<div className=\"grid w-[400px] gap-sm p-base md:w-[500px] md:grid-cols-2 lg:w-[600px]\">"
+          },
+          {
+            "line": 239,
+            "violation": "400px",
+            "text": "<div className=\"grid gap-sm p-md md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]\">"
+          },
+          {
+            "line": 283,
+            "violation": "400px",
+            "text": "<div className=\"grid w-[400px] gap-sm p-base md:w-[500px] md:grid-cols-2 lg:w-[600px]\">"
+          },
+          {
+            "line": 339,
+            "violation": "400px",
+            "text": "<div className=\"grid gap-sm p-md md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]\">"
+          },
+          {
+            "line": 383,
+            "violation": "400px",
+            "text": "<div className=\"grid w-[400px] gap-sm p-base md:w-[500px] md:grid-cols-2 lg:w-[600px]\">"
+          },
+          {
+            "line": 435,
+            "violation": "400px",
+            "text": "<div className=\"grid gap-sm p-base md:w-[400px] lg:w-[500px]\">"
+          },
+          {
+            "line": 491,
+            "violation": "400px",
+            "text": "<div className=\"grid gap-sm p-base md:w-[400px] lg:w-[500px]\">"
+          },
+          {
+            "line": 552,
+            "violation": "400px",
+            "text": "<div className=\"grid gap-sm p-base md:w-[400px] lg:w-[500px] lg:grid-cols-2\">"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 11
+    },
+    {
+      "file": "Components/Atoms/Input.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 115,
+            "violation": "48px",
+            "text": "style={{paddingLeft: '48px'}}"
+          },
+          {
+            "line": 126,
+            "violation": "48px",
+            "text": "style={{paddingLeft: '48px'}}"
+          },
+          {
+            "line": 213,
+            "violation": "48px",
+            "text": "<Input style={{paddingLeft: '48px'}} placeholder=\"john@example.com\" type=\"email\" />"
+          },
+          {
+            "line": 220,
+            "violation": "48px",
+            "text": "<Input style={{paddingLeft: '48px'}} placeholder=\"(208) 555-0123\" type=\"tel\" />"
+          }
+        ],
+        "themeViolations": [
+          {
+            "line": 115,
+            "violation": "inline styles",
+            "text": "style={{paddingLeft: '48px'}}"
+          },
+          {
+            "line": 126,
+            "violation": "inline styles",
+            "text": "style={{paddingLeft: '48px'}}"
+          },
+          {
+            "line": 213,
+            "violation": "inline styles",
+            "text": "<Input style={{paddingLeft: '48px'}} placeholder=\"john@example.com\" type=\"email\" />"
+          },
+          {
+            "line": 220,
+            "violation": "inline styles",
+            "text": "<Input style={{paddingLeft: '48px'}} placeholder=\"(208) 555-0123\" type=\"tel\" />"
+          }
+        ]
+      },
+      "violationCount": 8
+    },
+    {
+      "file": "Components/Atoms/Select.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 43,
+            "violation": "200px",
+            "text": "<SelectTrigger className=\"w-[200px]\">"
+          },
+          {
+            "line": 59,
+            "violation": "250px",
+            "text": "<SelectTrigger variant=\"default\" className=\"w-[250px]\">"
+          },
+          {
+            "line": 79,
+            "violation": "250px",
+            "text": "<SelectTrigger variant=\"secondary\" className=\"w-[250px]\">"
+          },
+          {
+            "line": 127,
+            "violation": "180px",
+            "text": "<SelectTrigger size=\"sm\" className=\"w-[180px]\">"
+          },
+          {
+            "line": 137,
+            "violation": "200px",
+            "text": "<SelectTrigger size=\"default\" className=\"w-[200px]\">"
+          },
+          {
+            "line": 147,
+            "violation": "220px",
+            "text": "<SelectTrigger className=\"w-[220px]\">"
+          },
+          {
+            "line": 162,
+            "violation": "250px",
+            "text": "<SelectTrigger className=\"w-[250px]\">"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 7
+    },
+    {
+      "file": "Components/Atoms/IdahoTumbleweed.stories.tsx",
+      "violations": {
+        "hardcodedColors": [
+          {
+            "line": 199,
+            "violation": "#F2CB05",
+            "text": "<IdahoTumbleweed color=\"#F2CB05\" />"
+          },
+          {
+            "line": 203,
+            "violation": "#D2691E",
+            "text": "<IdahoTumbleweed color=\"#D2691E\" />"
+          },
+          {
+            "line": 207,
+            "violation": "#6B8E3D",
+            "text": "<IdahoTumbleweed color=\"#6B8E3D\" />"
+          },
+          {
+            "line": 211,
+            "violation": "#4682B4",
+            "text": "<IdahoTumbleweed color=\"#4682B4\" />"
+          }
+        ],
+        "incorrectSpacing": [
+          {
+            "line": 339,
+            "violation": "120px",
+            "text": "height=\"120px\""
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 5
+    },
+    {
+      "file": "Patterns/MicaGlassSystem.stories.tsx",
+      "violations": {
+        "hardcodedColors": [
+          {
+            "line": 35,
+            "violation": "rgba(242, 203, 5, 0.08)",
+            "text": "radial-gradient(circle at 25% 25%, rgba(242, 203, 5, 0.08) 0%, transparent 40%),"
+          },
+          {
+            "line": 36,
+            "violation": "rgba(242, 135, 5, 0.06)",
+            "text": "radial-gradient(circle at 75% 75%, rgba(242, 135, 5, 0.06) 0%, transparent 40%),"
+          },
+          {
+            "line": 37,
+            "violation": "rgba(81, 152, 205, 0.04)",
+            "text": "radial-gradient(circle at 50% 50%, rgba(81, 152, 205, 0.04) 0%, transparent 40%),"
+          },
+          {
+            "line": 73,
+            "violation": "rgba(242, 203, 5, 0.06)",
+            "text": "radial-gradient(circle at 25% 25%, rgba(242, 203, 5, 0.06) 0%, transparent 35%),"
+          },
+          {
+            "line": 74,
+            "violation": "rgba(242, 135, 5, 0.04)",
+            "text": "radial-gradient(circle at 75% 75%, rgba(242, 135, 5, 0.04) 0%, transparent 35%),"
+          }
+        ],
+        "incorrectSpacing": [],
+        "themeViolations": []
+      },
+      "violationCount": 5
+    },
+    {
+      "file": "Components/Atoms/Button.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 418,
+            "violation": "1px",
+            "text": "- **Height**: 1px default, grows to 2px on hover for buttons"
+          },
+          {
+            "line": 642,
+            "violation": "600px",
+            "text": "<div className=\"relative min-h-[600px] p-12 overflow-hidden\">"
+          },
+          {
+            "line": 976,
+            "violation": "48px",
+            "text": "style={{paddingLeft: '48px'}}"
+          }
+        ],
+        "themeViolations": [
+          {
+            "line": 976,
+            "violation": "inline styles",
+            "text": "style={{paddingLeft: '48px'}}"
+          }
+        ]
+      },
+      "violationCount": 4
+    },
+    {
+      "file": "Components/Organisms/FacilityCard.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 30,
+            "violation": "400px",
+            "text": "<div className=\"w-[400px]\">"
+          },
+          {
+            "line": 45,
+            "violation": "400px",
+            "text": "<div className=\"w-[400px]\">"
+          },
+          {
+            "line": 60,
+            "violation": "400px",
+            "text": "<div className=\"w-[400px]\">"
+          },
+          {
+            "line": 75,
+            "violation": "400px",
+            "text": "<div className=\"w-[400px]\">"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 4
+    },
+    {
+      "file": "Patterns/NavigationRolloverEffects.stories.tsx",
+      "violations": {
+        "hardcodedColors": [
+          {
+            "line": 94,
+            "violation": "rgba(242,135,5,0.4)",
+            "text": "'rusty-orange': 'hover:drop-shadow-[0_0_8px_rgba(242,135,5,0.4)]',"
+          },
+          {
+            "line": 95,
+            "violation": "rgba(0,159,237,0.4)",
+            "text": "'slate-blue': 'hover:drop-shadow-[0_0_8px_rgba(0,159,237,0.4)]',"
+          },
+          {
+            "line": 96,
+            "violation": "rgba(117,183,0,0.4)",
+            "text": "'ayu-green': 'hover:drop-shadow-[0_0_8px_rgba(117,183,0,0.4)]',"
+          },
+          {
+            "line": 97,
+            "violation": "rgba(110,80,131,0.4)",
+            "text": "'ayu-purple': 'hover:drop-shadow-[0_0_8px_rgba(110,80,131,0.4)]'"
+          }
+        ],
+        "incorrectSpacing": [],
+        "themeViolations": []
+      },
+      "violationCount": 4
+    },
+    {
+      "file": "Components/Molecules/Dialog.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 41,
+            "violation": "425px",
+            "text": "<DialogContent className=\"sm:max-w-[425px]\">"
+          },
+          {
+            "line": 88,
+            "violation": "425px",
+            "text": "<DialogContent className=\"sm:max-w-[425px] bg-card/80 backdrop-blur-xl border-slate-blue/20\">"
+          },
+          {
+            "line": 126,
+            "violation": "425px",
+            "text": "<DialogContent className=\"sm:max-w-[425px]\">"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 3
+    },
+    {
+      "file": "Components/Atoms/Skeleton.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 21,
+            "violation": "250px",
+            "text": "<Skeleton className=\"h-4 w-[250px]\" {...args} />"
+          },
+          {
+            "line": 22,
+            "violation": "200px",
+            "text": "<Skeleton className=\"h-4 w-[200px]\" {...args} />"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 2
+    },
+    {
+      "file": "Components/Atoms/Textarea.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 51,
+            "violation": "400px",
+            "text": "<div className=\"relative w-[400px] p-10 bg-cover bg-center rounded-sm\" style={{ backgroundImage: \"url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')\" }}>"
+          }
+        ],
+        "themeViolations": [
+          {
+            "line": 51,
+            "violation": "inline styles",
+            "text": "<div className=\"relative w-[400px] p-10 bg-cover bg-center rounded-sm\" style={{ backgroundImage: \"url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')\" }}>"
+          }
+        ]
+      },
+      "violationCount": 2
+    },
+    {
+      "file": "Components/Molecules/Popover.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 51,
+            "violation": "300px",
+            "text": "defaultValue=\"300px\""
+          },
+          {
+            "line": 59,
+            "violation": "25px",
+            "text": "defaultValue=\"25px\""
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 2
+    },
+    {
+      "file": "Components/Atoms/AspectRatio.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 19,
+            "violation": "450px",
+            "text": "<div className=\"w-[450px]\">"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 1
+    },
+    {
+      "file": "Components/Atoms/Checkbox.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [],
+        "themeViolations": [
+          {
+            "line": 49,
+            "violation": "inline styles",
+            "text": "<div className=\"relative p-10 bg-cover bg-center rounded-sm\" style={{ backgroundImage: \"url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')\" }}>"
+          }
+        ]
+      },
+      "violationCount": 1
+    },
+    {
+      "file": "Components/Atoms/ProductShowcaseCard.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 199,
+            "violation": "12px",
+            "text": "<p>• Text content slides up 12px</p>"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 1
+    },
+    {
+      "file": "Components/Atoms/RadioGroup.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [],
+        "themeViolations": [
+          {
+            "line": 67,
+            "violation": "inline styles",
+            "text": "<div className=\"relative p-10 bg-cover bg-center rounded-sm\" style={{ backgroundImage: \"url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')\" }}>"
+          }
+        ]
+      },
+      "violationCount": 1
+    },
+    {
+      "file": "Components/Atoms/Resizable.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 28,
+            "violation": "200px",
+            "text": "<div className=\"flex h-[200px] items-center justify-center p-md\">"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 1
+    },
+    {
+      "file": "Components/Atoms/Switch.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [],
+        "themeViolations": [
+          {
+            "line": 49,
+            "violation": "inline styles",
+            "text": "<div className=\"relative p-10 bg-cover bg-center rounded-sm\" style={{ backgroundImage: \"url('https://images.unsplash.com/photo-1587174486073-ae5e3c2e6a04?q=80&w=2070&auto=format&fit=crop')\" }}>"
+          }
+        ]
+      },
+      "violationCount": 1
+    },
+    {
+      "file": "Components/Molecules/Accordion.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 25,
+            "violation": "450px",
+            "text": "<Accordion type=\"single\" collapsible className=\"w-[450px]\" {...args}>"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 1
+    },
+    {
+      "file": "Components/Molecules/Chart.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 39,
+            "violation": "200px",
+            "text": "<ChartContainer config={chartConfig} className=\"min-h-[200px] w-full max-w-sm\">"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 1
+    },
+    {
+      "file": "Components/Molecules/Collapsible.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 29,
+            "violation": "350px",
+            "text": "className=\"w-[350px] space-y-xs\""
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 1
+    },
+    {
+      "file": "Components/Molecules/Command.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 29,
+            "violation": "450px",
+            "text": "<Command className=\"rounded-sm border shadow-elevated w-[450px]\" {...args}>"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 1
+    },
+    {
+      "file": "Components/Molecules/ContextMenu.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 32,
+            "violation": "150px",
+            "text": "<ContextMenuTrigger className=\"flex h-[150px] w-[300px] items-center justify-center rounded-input border border-dashed text-body-sm\">"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 1
+    },
+    {
+      "file": "Components/Molecules/Form.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 49,
+            "violation": "350px",
+            "text": "<form onSubmit={form.handleSubmit(onSubmit)} className=\"w-[350px] space-y-lg\">"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 1
+    },
+    {
+      "file": "Components/Molecules/Table.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 51,
+            "violation": "100px",
+            "text": "<TableHead className=\"w-[100px]\">Invoice</TableHead>"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 1
+    },
+    {
+      "file": "Components/Molecules/Tabs.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [
+          {
+            "line": 47,
+            "violation": "400px",
+            "text": "<Tabs defaultValue=\"account\" className=\"w-[400px]\" {...args}>"
+          }
+        ],
+        "themeViolations": []
+      },
+      "violationCount": 1
+    },
+    {
+      "file": "Components/Organisms/FeatureGrid.stories.tsx",
+      "violations": {
+        "hardcodedColors": [],
+        "incorrectSpacing": [],
+        "themeViolations": [
+          {
+            "line": 71,
+            "violation": "inline styles",
+            "text": "<div className=\"bg-cover bg-center p-10\" style={{ backgroundImage: \"url('/images/Smoke/Background_06.webp')\" }}>"
+          }
+        ]
+      },
+      "violationCount": 1
+    }
+  ]
+}

@@ -180,8 +180,9 @@ export function SiteNavigation({
   const [logoClickCount, setLogoClickCount] = React.useState(0)
   const [showIdahoFacts, setShowIdahoFacts] = React.useState(false)
   const [isStuck, setIsStuck] = React.useState(false)
+  const [dropdownPosition, setDropdownPosition] = React.useState<{ top: number; left: number } | null>(null)
   
-  const timeoutRef = React.useRef<NodeJS.Timeout>()
+  const timeoutRef = React.useRef<NodeJS.Timeout | null>(null)
   const navRef = React.useRef<HTMLElement>(null)
 
   // Simple scroll detection for stuck state
@@ -309,16 +310,31 @@ export function SiteNavigation({
   }
 
   // Simple hover management - no competing systems
-  const handleNavHover = (sectionKey: string | null) => {
+  // Calculate dropdown position outside the navbar
+  const calculateDropdownPosition = (triggerElement: HTMLElement) => {
+    const rect = triggerElement.getBoundingClientRect()
+    return {
+      top: rect.bottom + 4, // 4px gap like mt-1
+      left: rect.left
+    }
+  }
+
+  const handleNavHover = (sectionKey: string | null, triggerElement?: HTMLElement) => {
+    console.log('handleNavHover called:', sectionKey, !!triggerElement)
+    
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current)
     }
 
-    if (sectionKey) {
+    if (sectionKey && triggerElement) {
+      const position = calculateDropdownPosition(triggerElement)
+      console.log('Setting dropdown position:', position)
+      setDropdownPosition(position)
       setActiveDropdown(sectionKey)
     } else {
       timeoutRef.current = setTimeout(() => {
         setActiveDropdown(null)
+        setDropdownPosition(null)
       }, 150)
     }
   }
@@ -441,13 +457,17 @@ export function SiteNavigation({
                 <React.Fragment key={item.href}>
                   <div 
                     className="relative px-0.5 py-0 mx-1"
-                    onMouseEnter={() => {
+                    onMouseEnter={(e) => {
                       setHoveredPath(item.href)
-                      handleNavHover(sectionKey)
+                      if (item.dropdownContent) {
+                        handleNavHover(sectionKey, e.currentTarget)
+                      }
                     }}
                     onMouseLeave={() => {
                       setHoveredPath(null)
-                      handleNavHover(null)
+                      if (item.dropdownContent) {
+                        handleNavHover(null)
+                      }
                     }}
                   >
                     {/* Tactical Equipment Case Highlight */}
@@ -538,85 +558,6 @@ export function SiteNavigation({
                       </Link>
                     </div>
 
-                    {/* Enhanced Dropdown with Proper Mica Effect */}
-                    {item.dropdownContent && isDropdownOpen && (
-                      <MotionDiv
-                        className="absolute top-full left-0 w-80 z-50 mt-1 rounded-lg border border-border shadow-lg"
-                        style={{
-                          background: 'rgba(248, 246, 241, 0.9)'
-                        }}
-                        initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                        transition={{ 
-                          duration: 0.2, 
-                          ease: [0.25, 0.46, 0.45, 0.94]
-                        }}
-                      >
-                        {/* Backdrop blur pseudo-element to fix Chrome nested backdrop-filter issue */}
-                        <div 
-                          className="absolute inset-0 -z-10 rounded-lg"
-                          style={{
-                            backdropFilter: 'blur(16px) saturate(1.8)',
-                            WebkitBackdropFilter: 'blur(16px) saturate(1.8)'
-                          }}
-                        />
-                        <div className="p-4">
-                          {/* Header */}
-                          <div className="mb-4 border-b border-border/50 pb-3">
-                            <div className="flex items-center gap-3">
-                              <div className={cn(
-                                "w-10 h-10 rounded-lg flex items-center justify-center bg-muted/20",
-                                getActiveTextClass(item.color)
-                              )}>
-                                <Icon className="w-5 h-5" />
-                              </div>
-                              <div>
-                                <h3 className="font-semibold text-lg">{item.label}</h3>
-                                <p className="text-sm text-muted-foreground">{item.description}</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Search */}
-                          <div className="mb-4">
-                            <div className="relative">
-                              <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                              <input
-                                type="text"
-                                placeholder={`Search ${item.label.toLowerCase()}...`}
-                                className="w-full pl-10 pr-4 py-2 text-sm bg-muted/50 border border-border/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
-                              />
-                            </div>
-                          </div>
-
-                          {/* Menu Items */}
-                          <div className="space-y-1">
-                            {item.dropdownContent.map((dropdownItem, idx) => (
-                              <MotionDiv
-                                key={dropdownItem.href}
-                                initial={{ opacity: 0, x: -10 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: idx * 0.05, duration: 0.2 }}
-                              >
-                                <Link
-                                  href={dropdownItem.href}
-                                  className={`block p-3 rounded-lg transition-all duration-200 group hover:translate-x-1 ${getHoverClasses(item.color)}`}
-                                  onClick={() => setActiveDropdown(null)}
-                                >
-                                  <div className={`font-medium text-sm transition-colors group-hover:${getActiveTextClass(item.color).replace('text-', '')}`}>
-                                    {dropdownItem.label}
-                                  </div>
-                                  <div className="text-xs text-muted-foreground mt-0.5 group-hover:text-muted-foreground/80 transition-colors">
-                                    {dropdownItem.description}
-                                  </div>
-                                </Link>
-                              </MotionDiv>
-                            ))}
-                          </div>
-                        </div>
-                      </MotionDiv>
-                    )}
                   </div>
                   
                   {/* Separator lines */}
@@ -633,7 +574,9 @@ export function SiteNavigation({
 
           {/* Right side */}
           <div className="flex items-center space-x-4">
-            <NavbarWeatherWidget className="hidden lg:block" />
+            <div className="hidden lg:block">
+              <NavbarWeatherWidget />
+            </div>
             <AuthButton showTrialButton={false} />
             
             <Button
@@ -693,6 +636,44 @@ export function SiteNavigation({
       {customContent && (
         <div className="border-t border-border/50">
           {customContent}
+        </div>
+      )}
+
+      {/* Portal-style dropdown outside navbar backdrop-filter context */}
+      {activeDropdown && dropdownPosition && (
+        <div 
+          className="fixed z-[100] w-80 animate-in fade-in-0 zoom-in-95 slide-in-from-top-2 duration-200 border-2 border-red-500"
+          style={{
+            top: dropdownPosition.top,
+            left: dropdownPosition.left,
+            backdropFilter: 'blur(18px) saturate(2.3) contrast(1.2)',
+            WebkitBackdropFilter: 'blur(18px) saturate(2.3) contrast(1.2)',
+            background: 'rgba(248, 246, 241, 0.9)',
+            isolation: 'isolate'
+          }}
+          onMouseEnter={() => handleNavHover(activeDropdown)}
+          onMouseLeave={() => handleNavHover(null)}
+        >
+          <div className="relative overflow-hidden shadow-present rounded-xs bg-background/90 border border-border/30">
+            <div className="absolute inset-0 bg-gradient-to-r from-nav-intel/5 via-transparent to-nav-intel/5 pointer-events-none" />
+            <div className="p-4">
+              {navigationItems.find(item => item.label.toLowerCase().replace(' & ', '').replace(' ', '') === activeDropdown)?.dropdownContent?.map((dropdownItem, idx) => (
+                <Link
+                  key={dropdownItem.href}
+                  href={dropdownItem.href}
+                  className="block p-3 rounded-lg transition-all duration-200 group hover:bg-muted/50"
+                  onClick={() => setActiveDropdown(null)}
+                >
+                  <div className="font-medium text-sm">
+                    {dropdownItem.label}
+                  </div>
+                  <div className="text-xs text-muted-foreground mt-0.5">
+                    {dropdownItem.description}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       )}
     </nav>

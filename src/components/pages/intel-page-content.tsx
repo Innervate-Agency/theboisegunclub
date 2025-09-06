@@ -14,10 +14,10 @@
 import { ArrowTrendingUpIcon, ArrowUpIcon, CameraIcon, ChartBarIcon, ChatBubbleBottomCenterTextIcon, ChatBubbleLeftRightIcon, ChevronDownIcon, ChevronRightIcon, ClockIcon, CursorArrowRaysIcon, ExclamationTriangleIcon, FunnelIcon, GlobeAltIcon, ListBulletIcon, MagnifyingGlassIcon, MapPinIcon, NewspaperIcon, PlusIcon, RectangleGroupIcon, RectangleStackIcon, ShareIcon, ShieldCheckIcon, Squares2X2Icon, StarIcon, TableCellsIcon, ViewColumnsIcon, WindowIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { UnifiedGalleryFactory } from '@/components/ui/unified-gallery-factory'
 import { SectionDivider } from '@/components/ui/section-divider'
 import { WeatherConditionsTicker } from '@/components/ui/weather-conditions-ticker'
 import { ContentBridgeSection } from '@/components/ui/content-bridge-section'
@@ -25,10 +25,10 @@ import { intelContentBridge } from '@/lib/content-bridge-intel'
 import { TrustIndicators } from '@/components/ui/trust-indicators'
 import { ContributionCTA } from '@/components/ui/contribution-cta'
 import { EmptyState } from '@/components/ui/empty-state'
+import { UnifiedIntelCard } from '@/components/ui/unified-intel-card'
 import { CardSkeleton } from '@/components/ui/card-skeleton'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
 import { useCardPageFilters } from '@/hooks/useCardPageFilters'
-import { cn } from '@/lib/utils'
 import { shootingLocations, getLocationStats, featuredWeatherLocations } from '@/lib/intel-locations-data'
 
 
@@ -115,7 +115,7 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
     items: shootingLocations,
     initialTab: 'all',
     initialSortBy: 'distance',
-    initialViewMode: 'grid',
+    initialViewMode: 'waterfall',
     initialItemsPerPage: 12,
     perPageOptions: [8, 12, 24, 48],
     enableInfiniteScroll: false,
@@ -476,7 +476,8 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
         </section>
       )}
 
-      
+      {/* Intel Content Section - Unified Layout with cards left, content right */}
+      <ContentBridgeSection {...intelContentBridge} />
 
       {/* Shooting Locations Gallery - Full Width Amazon Style */}
       <section className="py-4xl bg-background/50">
@@ -630,40 +631,40 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                       <Squares2X2Icon className="size-4" />
                     </Button>
                     <Button
-                      variant={filters.viewMode === 'dense' ? 'default' : 'ghost'}
+                      variant={filters.viewMode === 'waterfall' ? 'default' : 'ghost'}
                       size="sm"
-                      onClick={() => filters.setViewMode('dense')}
+                      onClick={() => filters.setViewMode('waterfall')}
                       className="rounded-none"
-                      title="Dense Grid - Maximum items"
+                      title="Waterfall - Natural flow layout"
                     >
-                      <ListBulletIcon className="size-4" />
+                      <RectangleStackIcon className="size-4" />
                     </Button>
                     <Button
                       variant={filters.viewMode === 'grid' ? 'default' : 'ghost'}
                       size="sm"
                       onClick={() => filters.setViewMode('grid')}
                       className="rounded-none"
-                      title="Standard Grid"
+                      title="Grid - Equal height cards"
                     >
                       <Squares2X2Icon className="size-4" />
                     </Button>
                     <Button
-                      variant={filters.viewMode === 'card' ? 'default' : 'ghost'}
+                      variant={filters.viewMode === 'list' ? 'default' : 'ghost'}
                       size="sm"
-                      onClick={() => filters.setViewMode('card')}
+                      onClick={() => filters.setViewMode('list')}
                       className="rounded-none"
-                      title="Large Cards"
+                      title="List - Compact rows"
                     >
-                      <RectangleGroupIcon className="size-4" />
+                      <ListBulletIcon className="size-4" />
                     </Button>
                     <Button
-                      variant={filters.viewMode === 'masonry' ? 'default' : 'ghost'}
+                      variant={filters.viewMode === 'compact' ? 'default' : 'ghost'}
                       size="sm"
-                      onClick={() => filters.setViewMode('masonry')}
+                      onClick={() => filters.setViewMode('compact')}
                       className="rounded-none"
-                      title="Masonry Layout"
+                      title="Compact - Dense information"
                     >
-                      <RectangleStackIcon className="size-4" />
+                      <RectangleGroupIcon className="size-4" />
                     </Button>
                     <Button
                       variant={filters.viewMode === 'table' ? 'default' : 'ghost'}
@@ -699,17 +700,30 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
                   className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-lg"
                 />
               ) : (
-                {UnifiedGalleryFactory.createIntelGallery({
-                  items: shootingLocations,
-                  filteredItems: filters.paginatedItems,
-                  viewMode: filters.viewMode,
-                  isLoading: filters.isLoading,
-                  emptyStateMessage: "No locations found",
-                  emptyStateAction: {
-                    label: "Clear Filters",
-                    href: "#"
-                  }
-                })}
+                <div className={filters.getGridClassName()}>
+                  {filters.paginatedItems.length > 0 ? (
+                    filters.paginatedItems.map((location, index) => (
+                      <UnifiedIntelCard
+                        key={`${location.name}-${index}`}
+                        {...location}
+                        viewMode={filters.viewMode}
+                      />
+                    ))
+                  ) : (
+                <EmptyState
+                  icon={MapPinIcon}
+                  title="No locations found"
+                  description="Try adjusting your filters or search terms"
+                  actionText="Clear Filters"
+                  onAction={() => {
+                    filters.setSearchQuery("")
+                    filters.setActiveTab("all")
+                  }}
+                />
+              )}
+                </div>
+              )}
+              
               {/* Pagination or Load More */}
               {!filters.isLoading && filters.filteredItems.length > filters.itemsPerPage && (
                 <div className="mt-xl flex justify-center">
@@ -740,9 +754,6 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
           </div>
         </div>
       </section>
-
-      {/* Intel Content Section - Unified Layout with cards left, content right */}
-      <ContentBridgeSection {...intelContentBridge} />
 
       {/* Section Divider */}
       <SectionDivider variant="sights" spacing="none" />
@@ -910,6 +921,49 @@ export function IntelPageContent({ liveWeatherConditions: initialLive, allWeathe
             <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
               Real-time conditions, verified locations, and community-contributed intel for safe and responsible shooting across Idaho's public lands.
             </p>
+          </div>
+        </section>
+
+        {/* Learn More Section - Bottom CTA */}
+        <section className="py-4xl bg-gradient-to-br from-nav-intel/10 to-nav-intel/5">
+          <div className="container mx-auto max-w-site px-lg text-center">
+            <div className="max-w-2xl mx-auto space-y-lg">
+              <div className="space-y-base">
+                <div className="flex items-center justify-center gap-xs">
+                  <MapPinIcon className="h-6 w-6 text-nav-intel" />
+                  <h2 className="font-rajdhani text-heading-lg font-bold text-card-foreground">
+                    Discover Idaho's Best Shooting Locations
+                  </h2>
+                </div>
+                <p className="text-body-base text-muted-foreground">
+                  Access real-time conditions, verified locations, and community intel for safe and responsible shooting across Idaho's public lands and ranges.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-base justify-center items-center">
+                <Button 
+                  size="lg"
+                  className="bg-nav-intel hover:bg-nav-intel/90 text-white font-rajdhani font-bold min-w-[200px]"
+                >
+                  <MapPinIcon className="h-5 w-5 mr-xs" />
+                  Explore Locations
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="border-nav-intel text-nav-intel hover:bg-nav-intel hover:text-white font-rajdhani font-bold min-w-[200px]"
+                >
+                  <PlusIcon className="h-5 w-5 mr-xs" />
+                  Contribute Intel
+                </Button>
+              </div>
+              
+              <div className="pt-base border-t border-border/50">
+                <p className="text-sm text-muted-foreground">
+                  Over <span className="font-bold text-nav-intel">150+ verified locations</span> across Idaho
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 

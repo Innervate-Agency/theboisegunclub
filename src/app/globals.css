@@ -324,31 +324,31 @@ body {
     --input: var(--color-rich-loam);
     --ring: var(--color-rusty-orange);
     
-    /* Dark Theme Shadow System - Warm tactical shadows with earth tones */
-    --shadow-whisper: 0 1px 3px 0 rgba(101, 67, 33, 0.25), 0 0 0 1px rgba(184, 134, 11, 0.05);
-    --shadow-present: 0 4px 12px 0 rgba(101, 67, 33, 0.35), 0 1px 3px 0 rgba(184, 134, 11, 0.1);
-    --shadow-elevated: 0 8px 24px 0 rgba(101, 67, 33, 0.45), 0 2px 6px 0 rgba(184, 134, 11, 0.15);
-    --shadow-prominent: 0 12px 32px 0 rgba(101, 67, 33, 0.55), 0 4px 8px 0 rgba(184, 134, 11, 0.2);
-    --shadow-commanding: 0 16px 40px 0 rgba(101, 67, 33, 0.65), 0 6px 12px 0 rgba(184, 134, 11, 0.25);
-    --shadow-hero: 0 24px 60px 0 rgba(101, 67, 33, 0.75), 0 8px 16px 0 rgba(184, 134, 11, 0.3);
-    --shadow-modal: 0 32px 80px 0 rgba(101, 67, 33, 0.85), 0 12px 24px 0 rgba(184, 134, 11, 0.35);
+    /* Dark Theme Shadow System - Darker brown-based shadows for natural depth */
+    --shadow-whisper: 0 1px 3px 0 rgba(10, 5, 3, 0.4), 0 0 0 1px rgba(26, 15, 13, 0.2);
+    --shadow-present: 0 4px 12px 0 rgba(10, 5, 3, 0.5), 0 1px 3px 0 rgba(26, 15, 13, 0.3);
+    --shadow-elevated: 0 8px 24px 0 rgba(10, 5, 3, 0.6), 0 2px 6px 0 rgba(26, 15, 13, 0.4);
+    --shadow-prominent: 0 12px 32px 0 rgba(10, 5, 3, 0.7), 0 4px 8px 0 rgba(26, 15, 13, 0.5);
+    --shadow-commanding: 0 16px 40px 0 rgba(10, 5, 3, 0.8), 0 6px 12px 0 rgba(26, 15, 13, 0.6);
+    --shadow-hero: 0 24px 60px 0 rgba(10, 5, 3, 0.9), 0 8px 16px 0 rgba(26, 15, 13, 0.7);
+    --shadow-modal: 0 32px 80px 0 rgba(10, 5, 3, 1.0), 0 12px 24px 0 rgba(26, 15, 13, 0.8);
   }
 
   /* Dark Theme Tailwind Shadow Class Overrides */
   .dark .shadow-whisper {
-    box-shadow: 0 1px 3px 0 rgba(101, 67, 33, 0.25), 0 0 0 1px rgba(184, 134, 11, 0.05) !important;
+    box-shadow: 0 1px 3px 0 rgba(10, 5, 3, 0.4), 0 0 0 1px rgba(26, 15, 13, 0.2) !important;
   }
   .dark .shadow-present {
-    box-shadow: 0 4px 12px 0 rgba(101, 67, 33, 0.35), 0 1px 3px 0 rgba(184, 134, 11, 0.1) !important;
+    box-shadow: 0 4px 12px 0 rgba(10, 5, 3, 0.5), 0 1px 3px 0 rgba(26, 15, 13, 0.3) !important;
   }
   .dark .shadow-elevated {
-    box-shadow: 0 8px 24px 0 rgba(101, 67, 33, 0.45), 0 2px 6px 0 rgba(184, 134, 11, 0.15) !important;
+    box-shadow: 0 8px 24px 0 rgba(10, 5, 3, 0.6), 0 2px 6px 0 rgba(26, 15, 13, 0.4) !important;
   }
   .dark .hover\\:shadow-whisper:hover {
-    box-shadow: 0 1px 3px 0 rgba(101, 67, 33, 0.25), 0 0 0 1px rgba(184, 134, 11, 0.05) !important;
+    box-shadow: 0 1px 3px 0 rgba(10, 5, 3, 0.4), 0 0 0 1px rgba(26, 15, 13, 0.2) !important;
   }
   .dark .hover\\:shadow-elevated:hover {
-    box-shadow: 0 8px 24px 0 rgba(101, 67, 33, 0.45), 0 2px 6px 0 rgba(184, 134, 11, 0.15) !important;
+    box-shadow: 0 8px 24px 0 rgba(10, 5, 3, 0.6), 0 2px 6px 0 rgba(26, 15, 13, 0.4) !important;
 
     /* Dark navigation colors */
     --nav-home: var(--color-nav-home-dark);
@@ -2951,6 +2951,236 @@ body[class*="forums"] .navbar-widget-item a {
   .border-rusty-orange { border-color: var(--color-rusty-orange); }
   .border-slate-blue { border-color: var(--color-slate-blue); }
   .border-foothills-purple { border-color: var(--color-foothills-purple); }
+  .bg-blued-steel { background-color: var(--color-slate-blue); }
+  .bg-range-white { background-color: var(--color-light-peachy); }
+  .bg-walnut-stock { background-color: var(--color-warm-stone); }
+  .bg-rifling-green { background-color: var(--color-sagebrush-green); }
+  .bg-sight-gold { background-color: var(--color-sandy-ochre); }
+  .bg-safety-red { background-color: var(--color-rusty-orange); }
+  
+  /* Additional text colors */
+  .text-blued-steel { color: var(--color-slate-blue); }
+  .text-walnut-stock { color: var(--color-warm-stone); }
+  .text-rifling-green { color: var(--color-sagebrush-green); }
+  .text-sight-gold { color: var(--color-sandy-ochre); }
+  .text-safety-red { color: var(--color-rusty-orange); }
+  
+  /* Additional border colors */
+  .border-blued-steel { border-color: var(--color-slate-blue); }
+  .border-walnut-stock { border-color: var(--color-warm-stone); }
+  .border-rifling-green { border-color: var(--color-sagebrush-green); }
+  .border-sight-gold { border-color: var(--color-sandy-ochre); }
+  .border-safety-red { border-color: var(--color-rusty-orange); }
   .border-sagebrush-green { border-color: var(--color-sagebrush-green); }
 }
 
+
+/* Component-Friendly Shadow Classes - Bridge between design tokens and component usage */
+.shadow-flat {
+  box-shadow: var(--shadow-whisper);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-elevated {
+  box-shadow: var(--shadow-present);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-premium {
+  box-shadow: var(--shadow-prominent);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-xs {
+  box-shadow: var(--shadow-whisper);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-floating {
+  box-shadow: var(--shadow-elevated);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-dramatic {
+  box-shadow: var(--shadow-commanding);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-hero {
+  box-shadow: var(--shadow-hero);
+  transition: box-shadow 300ms ease-out;
+}
+
+/* Hover variants for component-friendly classes */
+.hover\:shadow-flat:hover {
+  box-shadow: var(--shadow-whisper);
+}
+
+.hover\:shadow-elevated:hover {
+  box-shadow: var(--shadow-present);
+}
+
+.hover\:shadow-premium:hover {
+  box-shadow: var(--shadow-prominent);
+}
+
+.hover\:shadow-floating:hover {
+  box-shadow: var(--shadow-elevated);
+}
+
+.hover\:shadow-dramatic:hover {
+  box-shadow: var(--shadow-commanding);
+}
+
+.hover\:shadow-hero:hover {
+  box-shadow: var(--shadow-hero);
+}
+
+/* Dark theme shadow overrides */
+.dark .shadow-flat {
+  box-shadow: 0 1px 3px 0 rgba(10, 5, 3, 0.4), 0 0 0 1px rgba(26, 15, 13, 0.2);
+}
+
+.dark .shadow-elevated {
+  box-shadow: 0 4px 12px 0 rgba(10, 5, 3, 0.5), 0 1px 3px 0 rgba(26, 15, 13, 0.3);
+}
+
+.dark .shadow-premium {
+  box-shadow: 0 12px 32px 0 rgba(10, 5, 3, 0.7), 0 4px 8px 0 rgba(26, 15, 13, 0.5);
+}
+
+.dark .shadow-floating {
+  box-shadow: 0 8px 24px 0 rgba(10, 5, 3, 0.6), 0 2px 6px 0 rgba(26, 15, 13, 0.4);
+}
+
+.dark .shadow-dramatic {
+  box-shadow: 0 16px 40px 0 rgba(10, 5, 3, 0.8), 0 6px 12px 0 rgba(26, 15, 13, 0.6);
+}
+
+.dark .shadow-hero {
+  box-shadow: 0 24px 60px 0 rgba(10, 5, 3, 0.9), 0 8px 16px 0 rgba(26, 15, 13, 0.7);
+}
+
+
+/* Missing shadow utility classes matching design tokens */
+.shadow-whisper {
+  box-shadow: var(--shadow-whisper);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-present {
+  box-shadow: var(--shadow-present);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-prominent {
+  box-shadow: var(--shadow-prominent);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-commanding {
+  box-shadow: var(--shadow-commanding);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-gentle {
+  box-shadow: var(--shadow-present);
+  transition: box-shadow 300ms ease-out;
+}
+
+/* Hover variants for missing shadow classes */
+.hover\:shadow-whisper:hover {
+  box-shadow: var(--shadow-present);
+}
+
+.hover\:shadow-present:hover {
+  box-shadow: var(--shadow-elevated);
+}
+
+.hover\:shadow-prominent:hover {
+  box-shadow: var(--shadow-commanding);
+}
+
+.hover\:shadow-commanding:hover {
+  box-shadow: var(--shadow-hero);
+}
+
+/* Missing heritage color utility classes */
+.bg-heritage-gold {
+  background-color: var(--color-weathered-gold);
+}
+
+.text-heritage-charcoal {
+  color: var(--color-dark-chocolate);
+}
+
+.bg-heritage-charcoal {
+  background-color: var(--color-dark-chocolate);
+}
+
+.text-heritage-gold {
+  color: var(--color-weathered-gold);
+}
+
+.border-heritage-gold {
+  border-color: var(--color-weathered-gold);
+}
+
+.border-heritage-charcoal {
+  border-color: var(--color-dark-chocolate);
+}
+
+/* Additional missing shadow utility classes referenced in stories */
+.shadow-brass {
+  box-shadow: var(--shadow-present);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-container {
+  box-shadow: var(--shadow-elevated);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-copper {
+  box-shadow: var(--shadow-present);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-elite {
+  box-shadow: var(--shadow-commanding);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-glass {
+  box-shadow: var(--shadow-whisper);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-inset {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-prominent);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-none {
+  box-shadow: none;
+}
+
+.shadow-rifling-green {
+  box-shadow: var(--shadow-present);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-scope-blue {
+  box-shadow: var(--shadow-present);
+  transition: box-shadow 300ms ease-out;
+}
+
+.shadow-sm {
+  box-shadow: var(--shadow-whisper);
+  transition: box-shadow 300ms ease-out;
+}

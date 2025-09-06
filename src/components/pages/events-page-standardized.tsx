@@ -32,7 +32,7 @@ import { DirectoryStatsGrid } from '@/components/ui/directory-stats-grid'
 import { JoinMovementCTA } from '@/components/ui/join-movement-cta'
 import { SidebarCalendar } from '@/components/ui/sidebar-calendar'
 import { ModernFilterSidebar } from '@/components/ui/modern-filter-sidebar'
-import { ArrowRightIcon, CalendarDaysIcon, CheckCircleIcon, ChevronRightIcon, ClockIcon, CursorArrowRaysIcon, FunnelIcon, ListBulletIcon, MagnifyingGlassIcon, MapPinIcon, PlusIcon, RectangleGroupIcon, SparklesIcon, Squares2X2Icon, StarIcon, TicketIcon, TrophyIcon, UsersIcon, ViewColumnsIcon, WindowIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, CalendarDaysIcon, CheckCircleIcon, ChevronRightIcon, ClockIcon, CursorArrowRaysIcon, FunnelIcon, ListBulletIcon, MagnifyingGlassIcon, MapPinIcon, PlusIcon, RectangleGroupIcon, RectangleStackIcon, SparklesIcon, Squares2X2Icon, StarIcon, TableCellsIcon, TicketIcon, TrophyIcon, UsersIcon, ViewColumnsIcon, WindowIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 // Simple color mapping for filter categories
 const getFilterColor = (category: string, type: string): string => {
@@ -109,7 +109,7 @@ export function EventsPageStandardized() {
     items: calendarFilteredEvents,
     initialTab: 'all',
     initialSortBy: 'date',
-    initialViewMode: 'grid',
+    initialViewMode: 'waterfall',
     initialItemsPerPage: 12,
     perPageOptions: [8, 12, 24, 48],
     enableInfiniteScroll: false,
@@ -654,52 +654,52 @@ export function EventsPageStandardized() {
                 
                 {/* View Controls - Mobile responsive */}
                 <div className="flex items-center gap-sm sm:gap-base">
-                  {/* Enhanced View Mode Toggle - Multiple Layouts */}
+                  {/* Enhanced View Mode Toggle - Modern 2025 Options */}
                   <div className="hidden sm:flex items-center border rounded-xs overflow-x-auto">
                     <Button
-                      variant={filters.viewMode === 'compact' ? 'default' : 'ghost'}
+                      variant={filters.viewMode === 'waterfall' ? 'default' : 'ghost'}
                       size="sm"
-                      onClick={() => filters.setViewMode('compact')}
+                      onClick={() => filters.setViewMode('waterfall')}
                       className="rounded-none border-none shadow-none"
-                      title="Compact - 4-6 items per row"
+                      title="Waterfall - Natural flow layout"
                     >
-                      <Squares2X2Icon className="size-4" />
-                    </Button>
-                    <Button
-                      variant={filters.viewMode === 'dense' ? 'default' : 'ghost'}
-                      size="sm"
-                      onClick={() => filters.setViewMode('dense')}
-                      className="rounded-none border-none shadow-none"
-                      title="Dense Grid - Maximum items"
-                    >
-                      <ListBulletIcon className="size-4" />
+                      <RectangleStackIcon className="size-4" />
                     </Button>
                     <Button
                       variant={filters.viewMode === 'grid' ? 'default' : 'ghost'}
                       size="sm"
                       onClick={() => filters.setViewMode('grid')}
                       className="rounded-none border-none shadow-none"
-                      title="Standard Grid"
+                      title="Grid - Equal height cards"
                     >
                       <Squares2X2Icon className="size-4" />
-                    </Button>
-                    <Button
-                      variant={filters.viewMode === 'card' ? 'default' : 'ghost'}
-                      size="sm"
-                      onClick={() => filters.setViewMode('card')}
-                      className="rounded-none border-none shadow-none"
-                      title="Large Cards"
-                    >
-                      <RectangleGroupIcon className="size-4" />
                     </Button>
                     <Button
                       variant={filters.viewMode === 'list' ? 'default' : 'ghost'}
                       size="sm"
                       onClick={() => filters.setViewMode('list')}
                       className="rounded-none border-none shadow-none"
-                      title="ListBulletIcon View"
+                      title="List - Compact rows"
                     >
                       <ListBulletIcon className="size-4" />
+                    </Button>
+                    <Button
+                      variant={filters.viewMode === 'compact' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => filters.setViewMode('compact')}
+                      className="rounded-none border-none shadow-none"
+                      title="Compact - Dense information"
+                    >
+                      <RectangleGroupIcon className="size-4" />
+                    </Button>
+                    <Button
+                      variant={filters.viewMode === 'table' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => filters.setViewMode('table')}
+                      className="rounded-none border-none shadow-none"
+                      title="Table - Data view"
+                    >
+                      <TableCellsIcon className="size-4" />
                     </Button>
                   </div>
                   {/* Clear Date Filter Button */}
@@ -800,6 +800,49 @@ export function EventsPageStandardized() {
       <div className="mt-4xl">
         <ContentBridgeSection {...eventsContentBridge} />
       </div>
+
+      {/* Learn More Section - Bottom CTA */}
+      <section className="py-4xl bg-gradient-to-br from-nav-events/10 to-nav-events/5">
+        <div className="container mx-auto max-w-site px-lg text-center">
+          <div className="max-w-2xl mx-auto space-y-lg">
+            <div className="space-y-base">
+              <div className="flex items-center justify-center gap-xs">
+                <TicketIcon className="h-6 w-6 text-nav-events" />
+                <h2 className="font-rajdhani text-heading-lg font-bold text-card-foreground">
+                  Ready to Join the Action?
+                </h2>
+              </div>
+              <p className="text-body-base text-muted-foreground">
+                Discover upcoming events, connect with fellow shooters, and be part of Idaho's vibrant firearms community. From competitions to training sessions, there's something for every skill level.
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-base justify-center items-center">
+              <Button 
+                size="lg"
+                className="bg-nav-events hover:bg-nav-events/90 text-white font-rajdhani font-bold min-w-[200px]"
+              >
+                <CalendarDaysIcon className="h-5 w-5 mr-xs" />
+                Browse All Events
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-nav-events text-nav-events hover:bg-nav-events hover:text-white font-rajdhani font-bold min-w-[200px]"
+              >
+                <UsersIcon className="h-5 w-5 mr-xs" />
+                Join Community
+              </Button>
+            </div>
+            
+            <div className="pt-base border-t border-border/50">
+              <p className="text-sm text-muted-foreground">
+                Over <span className="font-bold text-nav-events">50+ events</span> happening this year across Idaho
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

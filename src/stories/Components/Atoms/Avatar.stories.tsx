@@ -11,71 +11,80 @@ const meta: Meta<typeof Avatar> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs', 'stable', 'atom', 'display'],
+  tags: ['autodocs'],
   argTypes: {
-    variant: {
-      control: 'select',
-      options: ['default', 'premium', 'glass'],
-    },
-    size: {
-      control: 'select',
-      options: ['sm', 'default', 'lg', 'xl'],
+    className: {
+      control: 'text',
+      description: 'Custom CSS classes for styling the avatar size and appearance',
     },
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Avatar>;
 
 export const Default: Story = {
-  args: {
-    size: 'default',
-    variant: 'default',
-  },
   render: (args) => (
     <Avatar {...args}>
-      <AvatarImage src="/images/Fractal/15.webp" alt="Shooter Profile" />
-      <AvatarFallback>CN</AvatarFallback>
+      <AvatarImage src="/images/Fractal/15.webp" alt="User Avatar" />
+      <AvatarFallback>JD</AvatarFallback>
     </Avatar>
   ),
 };
 
-export const Premium: Story = {
-  args: {
-    size: 'lg',
-    variant: 'premium',
-  },
+export const WithFallback: Story = {
   render: (args) => (
     <Avatar {...args}>
-      <AvatarImage src="/images/Fractal/15.webp" alt="Shooter Profile" />
-      <AvatarFallback>CN</AvatarFallback>
+      <AvatarImage src="/nonexistent-image.jpg" alt="User Avatar" />
+      <AvatarFallback>JD</AvatarFallback>
     </Avatar>
   ),
 };
 
-export const Glass: Story = {
+export const Small: Story = {
   args: {
-    size: 'xl',
-    variant: 'glass',
-  },
-  render: (args) => (
-    <div className="relative p-10 bg-cover bg-center rounded-sm" style={{ backgroundImage: "url('/images/Smoke/Background_05.webp')" }}>
-      <Avatar {...args}>
-        <AvatarImage src="/images/Fractal/15.webp" alt="Shooter Profile" />
-        <AvatarFallback>CN</AvatarFallback>
-      </Avatar>
-    </div>
-  ),
-};
-
-export const Fallback: Story = {
-  args: {
-    size: 'default',
+    className: "size-6",
   },
   render: (args) => (
     <Avatar {...args}>
-      <AvatarImage src="https://example.com/non-existent-image.png" alt="Fallback" />
-      <AvatarFallback>FB</AvatarFallback>
+      <AvatarImage src="/images/Fractal/15.webp" alt="Small Avatar" />
+      <AvatarFallback className="text-xs">JS</AvatarFallback>
+    </Avatar>
+  ),
+};
+
+export const Large: Story = {
+  args: {
+    className: "size-16",
+  },
+  render: (args) => (
+    <Avatar {...args}>
+      <AvatarImage src="/images/Fractal/15.webp" alt="Large Avatar" />
+      <AvatarFallback className="text-xl">JD</AvatarFallback>
+    </Avatar>
+  ),
+};
+
+export const ExtraLarge: Story = {
+  args: {
+    className: "size-24",
+  },
+  render: (args) => (
+    <Avatar {...args}>
+      <AvatarImage src="/images/Fractal/15.webp" alt="Extra Large Avatar" />
+      <AvatarFallback className="text-2xl">JD</AvatarFallback>
+    </Avatar>
+  ),
+};
+
+export const CustomStyling: Story = {
+  args: {
+    className: "size-12 ring-2 ring-primary ring-offset-2",
+  },
+  render: (args) => (
+    <Avatar {...args}>
+      <AvatarImage src="/images/Fractal/15.webp" alt="Custom Styled Avatar" />
+      <AvatarFallback>CS</AvatarFallback>
     </Avatar>
   ),
 };

@@ -2,7 +2,8 @@
 
 import React from 'react'
 import { UnifiedGalleryCard } from './unified-gallery-card'
-import { CloudIcon, ExclamationTriangleIcon, MapPinIcon, ClockIcon, ThermometerIcon } from '@heroicons/react/24/outline'
+import { CloudIcon, ExclamationTriangleIcon, MapPinIcon, ClockIcon, ThermometerIcon, ArrowTrendingUpIcon, GlobeAltIcon, StarIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
+import { getContentTypeGradient, getContentTypeColor, generateGradientCSS } from '@/lib/content-type-colors'
 
 /**
  * Unified Intel Card
@@ -15,95 +16,93 @@ import { CloudIcon, ExclamationTriangleIcon, MapPinIcon, ClockIcon, ThermometerI
  */
 
 export interface UnifiedIntelCardProps {
-  locationName: string
-  locationType: string
-  address?: string
-  currentTemp?: number
-  conditions?: string
-  windSpeed?: number
-  visibility?: string
-  alerts?: string[]
-  hours?: string
-  access?: 'Public' | 'Members Only' | 'Permit Required' | 'Restricted'
+  name: string
+  type?: string
+  category: string
   description?: string
-  lastUpdated?: string
+  address?: string
+  distanceFromBoise: number
+  access: string
+  difficulty: string
+  elevation: number
+  amenities?: string[]
+  verified: boolean
+  rating?: number
+  hours?: string
   slug?: string
   href?: string
-  viewMode?: 'grid' | 'dense' | 'card' | 'compact' | 'list' | 'table'
+  viewMode?: 'waterfall' | 'grid' | 'list' | 'compact' | 'table'
 }
 
 export function UnifiedIntelCard({
-  locationName,
-  locationType,
-  address,
-  currentTemp,
-  conditions,
-  windSpeed,
-  visibility,
-  alerts = [],
-  hours,
-  access = 'Public',
+  name,
+  type,
+  category,
   description,
-  lastUpdated,
+  address,
+  distanceFromBoise,
+  access,
+  difficulty,
+  elevation,
+  amenities = [],
+  verified,
+  rating,
+  hours,
   slug,
   href,
-  viewMode = 'grid'
+  viewMode = 'waterfall'
 }: UnifiedIntelCardProps) {
   
   // Generate href if not provided
-  const intelHref = href || `/intel/${slug || locationName.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-')}`
+  const intelHref = href || `/intel/locations/${slug || name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-')}`
   
-  // Get location type gradient
-  const getLocationTypeGradient = (type: string) => {
-    switch (type) {
-      case 'Shooting Range': 
-        return 'bg-gradient-to-br from-nav-intel via-scope-blue to-info-river'
-      case 'Public Land': 
-        return 'bg-gradient-to-br from-sagebrush-green via-lodgepole-green to-info-river'
-      case 'BLM Area': 
-        return 'bg-gradient-to-br from-warm-stone via-aged-paper to-parchment'
-      case 'National Forest': 
-        return 'bg-gradient-to-br from-lodgepole-green via-sagebrush-green to-nav-intel'
-      case 'State Park': 
-        return 'bg-gradient-to-br from-slate-blue via-nav-intel to-scope-blue'
-      default: 
-        return 'bg-gradient-to-br from-nav-intel via-scope-blue to-info-river'
-    }
+  // Generate subtitle from location data (matching Events pattern)
+  const getLocationSubtitle = () => {
+    const elements = []
+    
+    if (verified) elements.push('Verified Location')
+    elements.push(`${distanceFromBoise} mi from Boise`)
+    if (access?.toLowerCase().includes('free')) elements.push('Free Access')
+    if (difficulty) elements.push(difficulty)
+    
+    return elements.join(' • ')
   }
   
-  // Get access level color
-  const getAccessColor = (access: string) => {
-    switch (access) {
-      case 'Public': return 'sagebrush-green'
-      case 'Members Only': return 'slate-blue'
-      case 'Permit Required': return 'sandy-ochre'
-      case 'Restricted': return 'canyon-clay'
+  // Get category gradient using content type system (matching Events)
+  const getCategoryGradient = (category: string) => {
+    const gradientColors = getContentTypeGradient('intel', category)
+    return generateGradientCSS(gradientColors, 'to-br')
+  }
+  
+  // Get category color using content type system (matching Events)
+  const getCategoryColor = (category: string) => {
+    return getContentTypeColor('intel', category)
+  }
+  
+  // Get difficulty color
+  const getDifficultyColor = (difficulty: string) => {
+    switch (difficulty.toLowerCase()) {
+      case 'easy': return 'sagebrush-green'
+      case 'moderate': return 'sandy-ochre'
+      case 'difficult': return 'rusty-orange'
       default: return 'nav-intel'
     }
   }
   
-  // Weather info for hero section
+  // Enhanced hero section with distance and category info (matching Events style)
   const heroContent = (
-    <div className="absolute top-lg right-lg">
+    <div className="absolute top-lg left-lg">
       <div className="bg-black/40 backdrop-blur-sm rounded-xs p-sm border border-white/20">
-        <div className="text-center">
+        <div className="text-center space-y-xs">
           <div className="font-rajdhani font-bold text-xs text-white uppercase tracking-wide">
-            {locationType}
+            {distanceFromBoise}
           </div>
-          {currentTemp && (
-            <div className="flex items-center justify-center gap-xs mt-xs">
-              <ThermometerIcon className="size-4 text-white" />
-              <span className="text-sm font-bold text-white">{currentTemp}°F</span>
-            </div>
-          )}
-          {conditions && (
-            <div className="font-rajdhani text-xs text-white/90 mt-xs">
-              {conditions}
-            </div>
-          )}
-          {alerts.length > 0 && (
-            <ExclamationTriangleIcon className="size-4 text-red-400 mx-auto mt-xs" />
-          )}
+          <div className="font-rajdhani font-black text-xl text-white leading-none">
+            MI
+          </div>
+          <div className="text-[10px] text-white/80 font-medium uppercase tracking-wider">
+            {difficulty}
+          </div>
         </div>
       </div>
     </div>
@@ -113,30 +112,41 @@ export function UnifiedIntelCard({
     <UnifiedGalleryCard
       section="intel"
       viewMode={viewMode}
-      title={locationName}
+      title={name}
+      subtitle={getLocationSubtitle()}
       description={description}
       href={intelHref}
-      heroGradient={getLocationTypeGradient(locationType)}
+      heroGradient={getCategoryGradient(category)}
       heroContent={heroContent}
+      contentType={category}
       badges={[
         { 
-          label: access.toUpperCase(), 
+          label: category, 
           variant: "outline",
-          color: getAccessColor(access)
+          color: getCategoryColor(category)
         },
-        ...(alerts.length > 0 ? [{ 
-          label: `${alerts.length} ALERT${alerts.length > 1 ? 'S' : ''}`, 
+        { 
+          label: verified ? 'Verified' : 'Needs Verification', 
           variant: "outline",
-          color: "canyon-clay"
-        }] : [])
+          color: verified ? 'sagebrush-green' : 'warning-amber'
+        },
+        { 
+          label: difficulty, 
+          variant: "outline",
+          color: getDifficultyColor(difficulty)
+        },
+        ...(access?.toLowerCase().includes('free') ? [{ label: 'Free Access', variant: "outline", color: "sagebrush-green" }] : []),
+        ...(difficulty === 'Difficult' ? [{ label: '4WD Required', variant: "outline", color: "rusty-orange" }] : [])
       ]}
       metadata={[
-        ...(address ? [{ icon: MapPinIcon, label: "Location", value: address }] : []),
-        ...(windSpeed ? [{ icon: CloudIcon, label: "Wind", value: `${windSpeed} mph` }] : []),
-        ...(hours ? [{ icon: ClockIcon, label: "Hours", value: hours }] : [])
+        { icon: MapPinIcon, label: "Category", value: category },
+        { icon: ArrowTrendingUpIcon, label: "Elevation", value: `${elevation}ft` },
+        { icon: GlobeAltIcon, label: "Access", value: access },
+        ...(rating && rating > 0 ? [{ icon: StarIcon, label: "Rating", value: `${rating.toFixed(1)} stars` }] : []),
+        ...(amenities.length > 0 ? [{ icon: ShieldCheckIcon, label: "Features", value: `${amenities.length} amenities` }] : [])
       ]}
       primaryAction={{
-        label: "View Conditions",
+        label: "View Details",
         href: intelHref
       }}
     />

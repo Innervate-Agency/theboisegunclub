@@ -51,27 +51,26 @@ export function UnifiedGalleryContainer<T>({
   containerClassName
 }: UnifiedGalleryContainerProps<T>) {
   
-  // Get grid class based on view mode
+  // Get grid class based on view mode - Modern 2025 Options
   const getGridClassName = (viewMode: ViewMode): string => {
     switch (viewMode) {
+      case 'waterfall':
+        // Natural flow masonry layout - Pinterest/Medium style
+        return "columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-lg space-y-0 [&>*]:break-inside-avoid [&>*]:mb-lg"
       case 'grid':
+        // Equal height grid - Traditional card layout
         return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-lg [grid-auto-rows:1fr]"
-      case 'dense':
-        return "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-md [grid-auto-rows:1fr]"
-      case 'card':
-        return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-xl [grid-auto-rows:1fr]"
-      case 'compact':
-        return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-sm [grid-auto-rows:1fr]"
-      case 'masonry':
-        return "columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-lg space-y-lg"
-      case 'magazine':
-        return "grid grid-cols-12 gap-lg [grid-auto-rows:min-content]"
-      case 'table':
-        return "flex flex-col gap-0 border border-border rounded-lg overflow-hidden"
       case 'list':
-        return "flex flex-col gap-base"
+        // Compact list view - Information dense
+        return "flex flex-col gap-sm divide-y divide-border"
+      case 'compact':
+        // Dense information display - Maximum items per row
+        return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-md [grid-auto-rows:min-content]"
+      case 'table':
+        // Tabular data view - Structured information
+        return "flex flex-col gap-0 border border-border rounded-lg overflow-hidden"
       default:
-        return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-lg"
+        return "columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-lg space-y-0 [&>*]:break-inside-avoid [&>*]:mb-lg"
     }
   }
   

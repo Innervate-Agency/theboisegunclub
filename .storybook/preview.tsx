@@ -1,10 +1,9 @@
 import React from 'react'
 import type { Preview } from '@storybook/nextjs-vite'
 import { Rajdhani, Noto_Sans, Noto_Serif } from 'next/font/google'
-import { ThemeProvider } from 'next-themes'
 import '../src/app/globals.css'
 
-// Load the same fonts as the main app - EXACT MATCH to layout.tsx
+// Load fonts exactly as in production
 const rajdhani = Rajdhani({
   variable: "--font-rajdhani",
   subsets: ["latin"],
@@ -36,40 +35,27 @@ const preview: Preview = {
       },
     },
     backgrounds: {
-      default: 'tbgc-light',
-      values: [
-        {
-          name: 'tbgc-light',
-          value: '#F2D4D6', // light-peachy from design system
-        },
-        {
-          name: 'tbgc-dark', 
-          value: '#260F07', // dark-chocolate from design system
-        },
-        {
-          name: 'rich-loam',
-          value: '#311A0E', // rich-loam from design system
-        },
-        {
-          name: 'white',
-          value: '#ffffff',
-        },
-      ],
+      disable: true, // Use our design system backgrounds instead
     },
+    layout: 'fullscreen', // Let components control their own layout
     docs: {
-      canvas: {
-        sourceState: 'shown',
+      story: {
+        inline: true,
       },
     },
   },
   globalTypes: {
     theme: {
       name: 'Theme',
-      description: 'Global theme for components',
+      description: 'Theme for components',
       defaultValue: 'light',
       toolbar: {
         icon: 'circlehollow',
-        items: ['light', 'dark'],
+        items: [
+          { value: 'light', icon: 'sun', title: 'Light' },
+          { value: 'dark', icon: 'moon', title: 'Dark' },
+          { value: 'gruvbox', icon: 'star', title: 'Gruvbox' }
+        ],
         showName: true,
       },
     },
@@ -77,11 +63,23 @@ const preview: Preview = {
   decorators: [
     (Story, context) => {
       const { theme } = context.globals;
-      const themeClass = theme === 'dark' ? 'dark' : '';
+      
+      let themeClass = '';
+      if (theme === 'dark') {
+        themeClass = 'dark';
+      } else if (theme === 'gruvbox') {
+        themeClass = 'gruvbox';
+      }
+
+      React.useEffect(() => {
+        // Apply theme to both html and body for proper CSS custom property inheritance
+        document.documentElement.className = `${rajdhani.variable} ${notoSans.variable} ${notoSerif.variable} ${themeClass}`;
+        document.body.className = `${rajdhani.variable} ${notoSans.variable} ${notoSerif.variable} font-noto-sans antialiased ${themeClass}`;
+      }, [themeClass]);
 
       return (
-        <div className={`${rajdhani.variable} ${notoSans.variable} ${notoSerif.variable} font-noto-sans antialiased ${themeClass}`}>
-          <div className="min-h-screen bg-background text-foreground">
+        <div className={`${rajdhani.variable} ${notoSans.variable} ${notoSerif.variable} font-noto-sans antialiased ${themeClass}`} style={{ minHeight: '100vh' }}>
+          <div className="bg-background text-foreground p-4">
             <Story />
           </div>
         </div>

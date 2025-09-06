@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Badge } from '@/components/ui/badge';
+import { CheckCircleIcon, ExclamationTriangleIcon, InformationCircleIcon, MapPinIcon, BuildingOfficeIcon, CalendarIcon, TrophyIcon } from '@heroicons/react/24/outline';
 
 const meta: Meta<typeof Badge> = {
   title: 'Design System/Atoms/Badge',
@@ -10,105 +11,100 @@ const meta: Meta<typeof Badge> = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'secondary', 'destructive', 'outline', 'success', 'warning', 'info', 'premium', 'elite'],
+      options: [
+        // Intel variants
+        'intel-location', 'intel-verified', 'intel-priority', 'intel-restricted',
+        // Directory variants  
+        'directory-business', 'directory-verified', 'directory-ffl',
+        // Events variants
+        'events-featured', 'events-competition', 'events-training'
+      ],
     },
     size: {
       control: 'select',
       options: ['sm', 'default', 'lg'],
+    },
+    hideIcon: {
+      control: 'boolean',
     },
   },
   tags: ['autodocs'],
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Badge>;
 
-export const Default: Story = {
+export const IntelLocation: Story = {
   args: {
-    children: 'Badge',
+    variant: 'intel-location',
+    children: 'Public Range',
   },
 };
 
-export const Secondary: Story = {
+export const IntelVerified: Story = {
   args: {
-    variant: 'secondary',
-    children: 'Secondary',
+    variant: 'intel-verified',
+    children: 'Verified',
   },
 };
 
-export const Destructive: Story = {
+export const DirectoryBusiness: Story = {
   args: {
-    variant: 'destructive',
-    children: 'Destructive',
+    variant: 'directory-business',
+    children: 'FFL Dealer',
   },
 };
 
-export const Outline: Story = {
+export const EventsFeatured: Story = {
   args: {
-    variant: 'outline',
-    children: 'Outline',
+    variant: 'events-featured',
+    children: 'Featured Event',
   },
 };
 
-export const Success: Story = {
+export const WithCustomIcon: Story = {
   args: {
-    variant: 'success',
-    children: 'Success',
+    variant: 'intel-location',
+    icon: <MapPinIcon className="h-3 w-3" />,
+    children: 'Custom Icon',
   },
 };
 
-export const Warning: Story = {
+export const WithoutIcon: Story = {
   args: {
-    variant: 'warning',
-    children: 'Warning',
+    variant: 'directory-business',
+    hideIcon: true,
+    children: 'No Icon',
   },
 };
 
-export const InformationCircleIcon: Story = {
+export const SmallSize: Story = {
   args: {
-    variant: 'info',
-    children: 'InformationCircleIcon',
+    variant: 'events-featured',
+    size: 'sm',
+    children: 'Small',
   },
 };
 
-export const Premium: Story = {
+export const LargeSize: Story = {
   args: {
-    variant: 'premium',
-    children: 'Premium',
+    variant: 'events-featured',
+    size: 'lg',
+    children: 'Large',
   },
 };
 
-export const Elite: Story = {
-  args: {
-    variant: 'elite',
-    children: 'Elite',
-  },
-};
-
-// Showcase all variants
-export const AllVariants: Story = {
+export const ShowcaseGroup: Story = {
   render: () => (
     <div className="flex flex-wrap gap-2">
-      <Badge>Default</Badge>
-      <Badge variant="outline">Secondary</Badge>
-      <Badge variant="destructive">Destructive</Badge>
-      <Badge variant="outline">Outline</Badge>
-      <Badge variant="secondary">Success</Badge>
-      <Badge variant="destructive">Warning</Badge>
-      <Badge variant="secondary">InformationCircleIcon</Badge>
-      <Badge variant="default">Premium</Badge>
-      <Badge variant="default">Elite</Badge>
-    </div>
-  ),
-};
-
-// Showcase sizes
-export const Sizes: Story = {
-  render: () => (
-    <div className="flex items-center gap-4">
-      <Badge size="sm" variant="default">Small</Badge>
-      <Badge size="default" variant="default">Default</Badge>
-      <Badge variant="default">Large</Badge>
+      <Badge variant="intel-location">Location</Badge>
+      <Badge variant="intel-verified">Verified</Badge>
+      <Badge variant="intel-priority">Priority</Badge>
+      <Badge variant="directory-business">Business</Badge>
+      <Badge variant="directory-ffl">FFL</Badge>
+      <Badge variant="events-featured">Featured</Badge>
+      <Badge variant="events-competition">Competition</Badge>
+      <Badge variant="events-training">Training</Badge>
     </div>
   ),
 };

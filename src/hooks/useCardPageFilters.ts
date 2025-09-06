@@ -38,7 +38,7 @@ export function useCardPageFilters<T>({
   items,
   initialTab = 'all',
   initialSortBy = 'default',
-  initialViewMode = 'grid',
+  initialViewMode = 'waterfall',
   initialItemsPerPage = 12,
   perPageOptions = [12, 24, 48, 96],
   enableInfiniteScroll = false,

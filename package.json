@@ -120,7 +120,6 @@
     "@storybook/addon-a11y": "^9.1.4",
     "@storybook/addon-docs": "^9.1.4",
     "@storybook/addon-onboarding": "^9.1.4",
-    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/addon-vitest": "^9.1.4",
     "@storybook/nextjs": "^9.1.4",
     "@storybook/nextjs-vite": "^9.1.4",

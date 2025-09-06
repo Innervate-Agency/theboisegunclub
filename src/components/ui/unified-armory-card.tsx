@@ -2,50 +2,57 @@
 
 import React from 'react'
 import { UnifiedGalleryCard } from './unified-gallery-card'
-import { CurrencyDollarIcon, StarIcon, TagIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline'
+import { BookOpenIcon, ClockIcon, EyeIcon, UserIcon, ScaleIcon, ShieldCheckIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline'
+import { getContentTypeColor, getContentTypeGradient, generateGradientCSS } from '@/lib/content-type-colors'
 
 /**
  * Unified Armory Card
  * 
- * ARMORY-SPECIFIC IMPLEMENTATION:
- * - Gear reviews and ratings
- * - Price information and availability
- * - Category and manufacturer details
- * - User recommendations and testing notes
+ * MATCHES EVENTS CARD STYLE:
+ * - Same hero section with gradient background
+ * - Consistent metadata structure with icons
+ * - Article-specific content (category, author, read time, views)
+ * - Same hover states and animations
  */
 
 export interface UnifiedArmoryCardProps {
   title: string
+  excerpt: string
   category: string
-  manufacturer?: string
-  model?: string
-  price?: string
-  rating?: number
-  reviewCount?: number
-  availability?: 'In Stock' | 'Limited' | 'Out of Stock' | 'Pre-Order'
-  description?: string
-  testedBy?: string
-  recommendedFor?: string[]
+  author: {
+    name: string
+    title?: string
+    bio?: string
+  }
+  publishDate: string
+  readTime: number
+  views: number
+  likes: number
+  comments: number
+  featured?: boolean
+  tags: string[]
+  image?: string
   slug?: string
   href?: string
-  viewMode?: 'grid' | 'dense' | 'card' | 'compact' | 'list' | 'table'
+  viewMode?: 'waterfall' | 'grid' | 'list' | 'compact' | 'table'
 }
 
 export function UnifiedArmoryCard({
   title,
+  excerpt,
   category,
-  manufacturer,
-  model,
-  price,
-  rating,
-  reviewCount,
-  availability = 'In Stock',
-  description,
-  testedBy,
-  recommendedFor = [],
+  author,
+  publishDate,
+  readTime,
+  views,
+  likes,
+  comments,
+  featured = false,
+  tags,
+  image,
   slug,
   href,
-  viewMode = 'grid'
+  viewMode = 'waterfall'
 }: UnifiedArmoryCardProps) {
   
   // Generate href if not provided
