@@ -7,6 +7,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
 import { MotionDiv } from '@/components/ui/optimized-motion'
+import { MegaMenu } from '@/components/ui/navigation-mega-menu'
 import { 
   BanknotesIcon, 
   Bars3Icon, 
@@ -327,10 +328,13 @@ export function SiteNavigation({
     }
 
     if (sectionKey && triggerElement) {
-      const position = calculateDropdownPosition(triggerElement)
-      console.log('Setting dropdown position:', position)
-      setDropdownPosition(position)
-      setActiveDropdown(sectionKey)
+      // Add a small delay before showing dropdown to prevent accidental triggers
+      timeoutRef.current = setTimeout(() => {
+        const position = calculateDropdownPosition(triggerElement)
+        console.log('Setting dropdown position:', position)
+        setDropdownPosition(position)
+        setActiveDropdown(sectionKey)
+      }, 200) // 200ms delay for more intentional hover
     } else {
       timeoutRef.current = setTimeout(() => {
         setActiveDropdown(null)
@@ -459,15 +463,11 @@ export function SiteNavigation({
                     className="relative px-0.5 py-0 mx-1"
                     onMouseEnter={(e) => {
                       setHoveredPath(item.href)
-                      if (item.dropdownContent) {
-                        handleNavHover(sectionKey, e.currentTarget)
-                      }
+                      handleNavHover(sectionKey, e.currentTarget)
                     }}
                     onMouseLeave={() => {
                       setHoveredPath(null)
-                      if (item.dropdownContent) {
-                        handleNavHover(null)
-                      }
+                      handleNavHover(null)
                     }}
                   >
                     {/* Tactical Equipment Case Highlight */}
@@ -548,7 +548,10 @@ export function SiteNavigation({
                                 animate={{ 
                                   rotate: isDropdownOpen ? 90 : 0
                                 }}
-                                transition={{ duration: 0.25 }}
+                                transition={{ 
+                                  duration: 0.3, 
+                                  ease: [0.25, 0.46, 0.45, 0.94] // Custom easing for smooth rotation
+                                }}
                               >
                                 <ArrowRightIcon className="w-3 h-3" />
                               </MotionDiv>
@@ -577,7 +580,26 @@ export function SiteNavigation({
             <div className="hidden lg:block">
               <NavbarWeatherWidget />
             </div>
-            <AuthButton showTrialButton={false} />
+            
+            {/* Mega Menu Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              className="hidden lg:flex items-center gap-2 text-foreground hover:text-primary"
+              onClick={() => setActiveDropdown(activeDropdown ? null : 'mega')}
+            >
+              <Bars3Icon className="h-4 w-4" />
+              <span className="font-rajdhani font-medium">Menu</span>
+            </Button>
+            
+            {/* Simplified Auth Button */}
+            <Button
+              variant="outline"
+              size="sm"
+              className="font-rajdhani font-medium"
+            >
+              Login
+            </Button>
             
             <Button
               variant="ghost"
@@ -639,43 +661,55 @@ export function SiteNavigation({
         </div>
       )}
 
-      {/* Portal-style dropdown outside navbar backdrop-filter context */}
-      {activeDropdown && dropdownPosition && (
-        <div 
-          className="fixed z-[100] w-80 animate-in fade-in-0 zoom-in-95 slide-in-from-top-2 duration-200 border-2 border-red-500"
+      {/* Navigation Dropdowns */}
+      {activeDropdown && activeDropdown !== 'mega' && (
+        <MotionDiv
+          className="absolute left-0 right-0 bg-card mica-overlay border-t border-border/20 shadow-deep z-40"
           style={{
-            top: dropdownPosition.top,
-            left: dropdownPosition.left,
-            backdropFilter: 'blur(18px) saturate(2.3) contrast(1.2)',
-            WebkitBackdropFilter: 'blur(18px) saturate(2.3) contrast(1.2)',
-            background: 'rgba(248, 246, 241, 0.9)',
-            isolation: 'isolate'
+            top: '100%'
           }}
-          onMouseEnter={() => handleNavHover(activeDropdown)}
-          onMouseLeave={() => handleNavHover(null)}
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
         >
-          <div className="relative overflow-hidden shadow-present rounded-xs bg-background/90 border border-border/30">
-            <div className="absolute inset-0 bg-gradient-to-r from-nav-intel/5 via-transparent to-nav-intel/5 pointer-events-none" />
-            <div className="p-4">
-              {navigationItems.find(item => item.label.toLowerCase().replace(' & ', '').replace(' ', '') === activeDropdown)?.dropdownContent?.map((dropdownItem, idx) => (
-                <Link
-                  key={dropdownItem.href}
-                  href={dropdownItem.href}
-                  className="block p-3 rounded-lg transition-all duration-200 group hover:bg-muted/50"
-                  onClick={() => setActiveDropdown(null)}
-                >
-                  <div className="font-medium text-sm">
-                    {dropdownItem.label}
-                  </div>
-                  <div className="text-xs text-muted-foreground mt-0.5">
-                    {dropdownItem.description}
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
+          {(() => {
+            const currentItem = navigationItems.find(item => 
+              item.label.toLowerCase().replace(' & ', '').replace(' ', '') === activeDropdown
+            )
+            if (!currentItem?.dropdownContent) return null
+            
+            return (
+              <div className="container mx-auto px-4 py-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {currentItem.dropdownContent.map((dropdownItem) => (
+                    <Link
+                      key={dropdownItem.href}
+                      href={dropdownItem.href}
+                      className="flex flex-col p-3 rounded-md hover:bg-accent/50 transition-colors group"
+                      onClick={() => setActiveDropdown(null)}
+                    >
+                      <span className="font-rajdhani font-semibold text-sm text-foreground group-hover:text-primary mb-1">
+                        {dropdownItem.label}
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {dropdownItem.description}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )
+          })()}
+        </MotionDiv>
       )}
+
+      {/* Tactical Mega Menu */}
+      <MegaMenu 
+        isOpen={activeDropdown === 'mega'}
+        onClose={() => setActiveDropdown(null)}
+      />
+
     </nav>
   )
 }

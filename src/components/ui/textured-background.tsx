@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { cn } from '@/lib/utils'
-import { getTextureStyle, TEXTURE_PRESETS, type TextureOptions, getMaskingStyle, type MaskingOptions } from '@/utils/tacticalTextures'
+import { getTextureStyle, TEXTURE_PRESETS, type TextureOptions, getMaskingStyle, type MaskingOptions } from '@/utils/siteTextures'
 
 interface TexturedBackgroundProps {
   /** Preset texture configuration */

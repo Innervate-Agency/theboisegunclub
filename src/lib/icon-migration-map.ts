@@ -7,11 +7,10 @@
 
 export const ICON_MIGRATION_MAP = {
   // Navigation & Core UI  
-  'BookOpenIcon': 'UserGroupIcon',
+  'BookOpenIcon': 'BookOpenIcon',
   'ShieldCheckIcon': 'ShieldCheckIcon', 
   'CursorArrowRaysIcon': 'MapPinIcon', // No BullseyeIcon in Heroicons, use MapPinIcon as targeting icon
   'BuildingStorefrontIcon': 'BuildingStorefrontIcon',
-  'BookOpenIcon': 'BookOpenIcon',
   'CalendarDaysIcon': 'CalendarDaysIcon',
   'MapPinIcon': 'MapPinIcon',
   'Phone': 'PhoneIcon',
@@ -87,7 +86,7 @@ export const ICON_MIGRATION_MAP = {
 export const IMPORT_REPLACEMENTS = {
   // Phosphor imports to Heroicons imports
   "import { AcademicCapIcon, ArrowRightIcon, ArrowRightOnRectangleIcon, ArrowTrendingUpIcon, BanknotesIcon, BoltIcon, BookOpenIcon, BuildingStorefrontIcon, BullseyeIcon, CalendarDaysIcon, CameraIcon, ChartBarIcon, ChatBubbleLeftEllipsisIcon, CheckCircleIcon, CheckIcon, ChevronRightIcon, ClockIcon, CogIcon, CompassIcon, ComputerDesktopIcon, CreditCardIcon, CursorArrowRaysIcon, Diamond, DocumentTextIcon, EnvelopeIcon, ExclamationTriangleIcon, EyeIcon, EyeSlashIcon, FireIcon, GlobeAltIcon, HeartIcon, InformationCircleIcon, LockClosedIcon, MapIcon, MapPinIcon, MinusIcon, PauseIcon, PhoneIcon, PhotoIcon, PlayIcon, PlusIcon, ReceiptRefundIcon, ScaleIcon, ShieldCheckIcon, ShoppingBagIcon, StarIcon, TrophyIcon, UserEllipsisHorizontalIcon, UserGroupIcon, UserIcon, WrenchScrewdriverIcon, XMarkIcon } from '@heroicons/react/24/outline'": 
-    "import { TacticalReticleLogo } from '@/components/ui/tactical-reticle-logo'",
+    "import { TacticalReticleLogo } from '@/components/ui/reticle-logo'",
   
   "from '@heroicons/react/24/outline'": 
     "from '@heroicons/react/24/outline'",

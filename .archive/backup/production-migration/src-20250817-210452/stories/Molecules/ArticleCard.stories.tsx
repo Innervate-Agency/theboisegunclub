@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import ArticleCard from '@/components/molecules/ArticleCard';
 
 const meta: Meta<typeof ArticleCard> = {

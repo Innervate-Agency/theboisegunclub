@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import AlternatingFeatureSpotlight from '@/components/organisms/AlternatingFeatureSpotlight';
 import { Search, Calendar, MessageSquare, ShieldCheck, List, Star, Users, Lock, Store } from 'lucide-react';
 

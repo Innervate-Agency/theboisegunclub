@@ -32,10 +32,8 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div className="min-h-screen p-8 font-sans bg-background text-foreground">
-        <div className="antialiased">
-          <Story />
-        </div>
+      <div className="min-h-screen p-8 font-sans">
+        <Story />
       </div>
     ),
   ],

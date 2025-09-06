@@ -15,7 +15,7 @@ import {
   FireIcon
 } from '@heroicons/react/24/outline'
 import { cn } from '@/lib/utils'
-import { useTacticalTracker } from '@/hooks/useTacticalTracker'
+import { useTacticalTracker } from '@/hooks/useTracker'
 import { adaptiveRecommendations } from '@/lib/adaptive-recommendations'
 
 interface NavigationDropdownProps {

@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/nextjs'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { VendorCard } from '../../components/ui/VendorCard'
 
 const meta: Meta<typeof VendorCard> = {

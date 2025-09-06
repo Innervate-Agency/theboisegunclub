@@ -23,7 +23,7 @@ import {
   ArcheryIcon,
   PaintballIcon,
   AirsoftIcon
-} from './tactical-icons';
+} from './site-icons';
 
 // Business category definitions with icons and styling
 export interface BusinessCategory {

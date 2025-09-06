@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/nextjs';
+import { ComponentStory, ComponentMeta } from '@storybook/nextjs-vite';
 import { FeatureTrustPoints } from '@/components/ui/FeatureTrustPoints';
 import { Search, CheckCircle, Star, Shield } from 'lucide-react';
 

@@ -13,7 +13,7 @@ import { AuthButton } from '@/components/auth/auth-button'
 import { NavbarWeatherWidget } from './navbar-weather-widget'
 import { NavigationTexture } from './textured-background'
 import { useAuth } from '@/components/auth/auth-context'
-import { useTacticalTracker } from '@/hooks/useTacticalTracker'
+import { useTacticalTracker } from '@/hooks/useTracker'
 import { useKonamiCode } from '@/hooks/useKonamiCode'
 import { useNightOpsTheme } from '@/hooks/useNightOpsTheme'
 

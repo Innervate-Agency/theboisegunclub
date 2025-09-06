@@ -11,7 +11,7 @@ import {
   tacticalIconMapping, 
   getTacticalIcon,
   type TacticalIconName 
-} from './tactical-icons';
+} from './site-icons';
 
 // Complete mapping from Phosphor names to Heroicons
 export const iconMapping = {

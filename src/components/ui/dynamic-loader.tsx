@@ -50,8 +50,8 @@ export const DynamicScrollProgressBar = dynamic(
   }
 )
 
-export const DynamicTacticalMegamenu = dynamic(
-  () => import('@/components/ui/tactical-megamenu').then(mod => ({ default: mod.TacticalMegamenu })),
+export const DynamicNavigationMegamenu = dynamic(
+  () => import('@/components/ui/navigation-mega-menu').then(mod => ({ default: mod.MegaMenu })),
   {
     ssr: false,
     loading: () => <LoadingFallback height="h-16" description="Loading navigation menu" />

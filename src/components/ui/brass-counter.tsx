@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { MotionDiv } from '@/components/ui/optimized-motion'
-import { useTacticalTracker } from '@/hooks/useTacticalTracker'
+import { useTacticalTracker } from '@/hooks/useTracker'
 import { CursorArrowRaysIcon, StarIcon } from '@heroicons/react/24/outline';
 
 interface BrassCounterProps {
